@@ -210,6 +210,7 @@ const DEFAULT_PRESETS = [
     name: "ABSTRACT ART",
     message: "Take a picture in the style of Abstract Modern Art. Non-representational shapes, bold composition."
   },
+  {
     name: "ABSTRACT EXPRESSIONISM",
     message: "Take a picture and transform the image into Abstract Expressionist style. Energetic splatters, layered textures, and dynamic forms while subject partially visible."
   },
@@ -307,7 +308,7 @@ const DEFAULT_PRESETS = [
   },
   {
     name: "BAROQUE",
-    message: "Take a picture in the style of Baroque painting. Dramatic lighting, deep contrasts, dynamic composition, ornate details, and theatrical visual richness.""
+    message: "Take a picture in the style of Baroque painting. Dramatic lighting, deep contrasts, dynamic composition, ornate details, and theatrical visual richness."
   },
   {
     name: "BAUHAUS",
@@ -1369,7 +1370,7 @@ const DEFAULT_PRESETS = [
   {
     name: "TOPIARY",
     message: "Take a picture and transform the subject into a living topiary sculpture. Preserve the subject’s recognizable facial structure, hairstyle silhouette, body proportions, and clothing shapes translated into carefully trimmed foliage and greenery. Use dense leaves, hedges, vines, and floral textures shaped with precision pruning. The subject must appear grown organically from plants, not carved stone. Natural outdoor lighting, garden environment, and botanical realism with visible leaf detail and depth."
-  }, 
+  },
   {
     name: "TRADING CARD",
     message: "Take a picture and transform the subject into a fully visible collectible sports trading card with a vintage 1980s/1990s style. Ensure the entire card—including all borders, portrait, background, stats, and flavor text—is fully visible and centered in the frame. Randomly assign a sport (e.g., basketball, soccer, baseball, football, tennis) for each render.\n\nInclude a clear portrait of the subject, a stylized action background, and a card border with realistic texture, embossing, and glossy surfaces. Apply worn effects such as yellowed edges, scratches, and slight discoloration for a vintage look.\n\nAdd the subject’s name, a mock team name or mascot, absurd over-the-top stats inspired by the subject’s appearance, pose, or personality (e.g., “99% chance to eat pizza mid-game,” “Can balance a coffee cup while dribbling”), and humorous flavor text describing the subject. Allow external master prompt text to be appended to the flavor text.\n\nEnsure everything is legible on a small screen, the subject remains instantly recognizable, and the final image clearly shows the full card without cropping."
@@ -3464,21 +3465,20 @@ function loadMotionSettings() {
       continuousCheckbox.checked = motionContinuousEnabled;
     }
       
-      const cooldownSlider = document.getElementById('motion-cooldown-slider');
-      if (cooldownSlider) {
-        cooldownSlider.value = motionCooldown;
-      }
-
-      const startDelaySlider = document.getElementById('motion-start-delay-slider');
-      const startDelayValue = document.getElementById('motion-start-delay-value');
-      if (startDelaySlider && startDelayValue) {
-        const sliderValue = getStartDelaySliderValue();
-        startDelaySlider.value = sliderValue;
-        startDelayValue.textContent = MOTION_START_DELAYS[sliderValue].label;
-      }      
-
-      updateMotionDisplay();
+    const cooldownSlider = document.getElementById('motion-cooldown-slider');
+    if (cooldownSlider) {
+      cooldownSlider.value = motionCooldown;
     }
+
+    const startDelaySlider = document.getElementById('motion-start-delay-slider');
+    const startDelayValue = document.getElementById('motion-start-delay-value');
+    if (startDelaySlider && startDelayValue) {
+      const sliderValue = getStartDelaySliderValue();
+      startDelaySlider.value = sliderValue;
+      startDelayValue.textContent = MOTION_START_DELAYS[sliderValue].label;
+    }
+
+    updateMotionDisplay();
   } catch (err) {
     console.error('Failed to load motion settings:', err);
   }
@@ -4790,10 +4790,6 @@ function capturePhoto() {
   } else {
     resetButton.style.display = 'block';
   }
-  } else {
-    resetButton.style.display = 'none';
-  }
-  // above three lines may be wrong
 
   const cameraButton = document.getElementById('camera-button');
   if (cameraButton) {
@@ -5650,7 +5646,7 @@ function showUnifiedMenu() {
   menu.style.display = 'flex';
 }
 
-function hideUnifiedMenu() {
+async function hideUnifiedMenu() {
   isMenuOpen = false;
   menuScrollEnabled = false;
   currentMenuIndex = 0;
