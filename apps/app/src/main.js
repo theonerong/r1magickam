@@ -183,6 +183,10 @@ const DEFAULT_PRESETS = [
     message: "Take a picture and transform the image into a French Impressionist painting. Preserve subject identity. Use loose, visible brushstrokes, soft edges, and blended colors emphasizing natural light and atmosphere. Painterly oil-on-canvas texture with warm, luminous tones."
   },
   {
+    name: "3D PRINT FAILED",
+    message: "Take a picture and transform the subject into a real, physical 3D-printed object that has partially failed during printing. The subject must appear made from plastic filament with clearly visible horizontal layer lines across the entire surface.\n\nIntroduce obvious 3D-printing failures such as warped or shifted layers, missing sections, drooping filament, collapsed overhangs, stringing, and incomplete geometry as if the print stopped or misaligned mid-job.\n\nThe subject should appear as a photographed 3D print sitting on a workbench or print bed, with realistic shadows, shallow depth of field, and neutral lighting. Use a single solid filament color or limited two-color print. Avoid smooth, sculpted, or digital-rendered surfaces. The final image must clearly look like a failed physical 3D print, not a CGI model or statue."
+  },
+  {
     name: "AI-BUY",
     message: "Analyze the image and identify purchasable items. Provide product names, estimated prices, and purchase links. Present results in a clean, structured list and email it to me."
   },
@@ -208,6 +212,10 @@ const DEFAULT_PRESETS = [
   },
     name: "ABSTRACT EXPRESSIONISM",
     message: "Take a picture and transform the image into Abstract Expressionist style. Energetic splatters, layered textures, and dynamic forms while subject partially visible."
+  },
+  {
+    name: "ACCIDENT SCENE",
+    message: "Take a picture and transform the main subject so it appears to have recently been involved in an accident. Preserve the original subject while adding realistic damage appropriate to its type.\n\nExamples include:\n• A car with dents, cracked lights, bent panels, or deployed airbags\n• A bicycle with twisted wheels, scraped paint, or a broken chain\n• A scooter, skateboard, or similar object with visible impact damage\n\nAdd subtle environmental clues such as skid marks, fallen debris, or disturbed surroundings when appropriate. The final image should look like a realistic aftermath photo, and remain clear on small screens."
   },
   {
     name: "ADVERTISEMENT",
@@ -254,6 +262,10 @@ const DEFAULT_PRESETS = [
   message: "Take a picture and transform it into an archeological field documentation sheet. Include a large, visible photograph of the subject as the central element, printed on aged paper. The photo should appear weathered, sun-faded, dusty, and slightly warped, as if it has been exposed at an excavation site for weeks. Identify the subject’s species or type using scientific or pseudo-scientific labeling. Add subtle field notes, specimen numbers, scale bars, and catalog markings around the photo. The final image should feel like an authentic archeological record centered around the photograph."
   },
   {
+    name: "ARCHITECTURAL SCALE MODEL",
+    message: "Take a picture and convert the scene into an architectural scale model. Subjects and objects should appear as miniature figurines within a foam-board or plastic model environment. Use clean edges, painted surfaces, and overhead lighting typical of design studios. Maintain proportional scale across all elements."
+  },
+  {
     name: "ARCHIVED PHOTO",
     message: "Take a picture and transform it into a damaged archival photograph. Add scratches, dust, faded tones, and slight warping. Portions of the image may be torn, stained, or missing. Use muted sepia or desaturated colors. The subject should feel historical, fragile, and partially lost to time."
   },
@@ -290,6 +302,10 @@ const DEFAULT_PRESETS = [
     message: "Take a picture in the style of a balloon animal or character.  Shiny latex texture."
   },
   {
+    name: "BARBIE WORLD",
+    message: "Take a picture and transform the entire scene into a bright, stylized Barbie World composed entirely of physical toys.\n\nAnalyze the subject and environment and apply the following transformations:\n\n• If the primary subject appears feminine, transform them into a Barbie doll.\n• If the primary subject appears masculine, transform them into a Ken doll.\n\nThe doll’s face should retain the subject’s recognizable facial structure, proportions, and expression, but be rendered with smooth plastic skin, simplified features, glossy eyes, and the polished look of a physical Barbie or Ken toy.\n\nEnvironmental logic:\n• If the scene appears indoors, place the subject inside a Barbie Dreamhouse interior with pastel-colored plastic furniture, toy-like proportions, and miniature physical details.\n• If the scene appears outdoors, place the subject inside or next to a Barbie convertible with realistic toy textures, bright colors, and a glossy finish.\n\nUse high-key lighting, realistic toy textures, reflections, and scale consistency to ensure the subject and environment appear as physical toys rather than drawings or digital illustrations. Keep the composition bold, cheerful, and clearly readable on small screens."
+  },
+  {
     name: "BAROQUE",
     message: "Take a picture in the style of Baroque painting. Dramatic lighting, deep contrasts, dynamic composition, ornate details, and theatrical visual richness.""
   },
@@ -304,6 +320,10 @@ const DEFAULT_PRESETS = [
   {
     name: "BIBLICAL ILLUSTRATION",
     message: "Take a picture in the style of a Medieval Biblical illustration. Illuminated manuscript style.  The result should be a full view of the illustration with a relevant background behind the illustration."
+  },
+  {
+    name: "BILLBOARD",
+    message: "Take a picture and transform it into a large outdoor billboard featuring the subject. Include a clearly readable humorous headline and a calling number that can be appended via an external master prompt. The billboard should appear photographed from the street, with realistic perspective, lighting, shadows, and surrounding environment (sky, buildings, street). Ensure the subject is integrated naturally into the billboard image, and the text and number are large and legible even on a small screen."
   },
   {
     name: "BIRTHDAY CARD",
@@ -330,6 +350,10 @@ const DEFAULT_PRESETS = [
     message: "Take a picture and transform it into a realistic breaking-news television broadcast scene. Place the subject as the central focus of the news coverage, integrated naturally into the scene. Design an authentic news layout including lower-third graphics, headline banners, and on-screen text. Generate a breaking-news headline and brief caption using flavor text inspired by the subject’s appearance, actions, or surroundings, incorporating any externally provided details naturally. Ensure all text is clearly readable within the image. Match professional broadcast lighting, camera angles, and visual polish so the image convincingly resembles a real live news report."
   },
   {
+    name: "BUMPER STICKER",
+    message: "Take a picture and place a realistic bumper sticker on a car or object featuring the subject. The sticker should contain a humorous saying based on the subject’s traits, which can be supplied via external master prompt. Ensure the sticker looks physically attached, with correct perspective, lighting, texture, and slight surface curvature. The subject should be recognizable in the sticker image if included, and the overall composition should read instantly as a real bumper sticker."
+  },
+  {
   name: "BUT CAN IT PLAY DOOM?",
   message: "Take a picture and transform the subject into a classic early-1990s first-person shooter space marine rendered as a low-resolution pixel-art sprite. Preserve recognizable facial features, body proportions, and clothing identity while adapting them into a gritty, combat-ready sprite suitable for pseudo-3D FPS gameplay. Render the subject using chunky pixel shading, a limited retro color palette, visible dithering, and a forward-facing or slightly angled sprite orientation typical of early PC shooters. The character must appear natively integrated into the scene, not composited. Compose the image as a static gameplay frame from a first-person shooter perspective inside a dark industrial sci-fi environment with metallic corridors, harsh lighting, and ominous atmosphere. Include a bottom-of-screen retro FPS status interface featuring generic numeric indicators for health, armor, and ammunition, along with a small pixel-art player portrait that reflects the subject’s condition. Ensure the entire image reads clearly as a single authentic gameplay screenshot from a 1990s-era PC shooter, with crisp pixel edges, strong silhouette clarity, and cohesive retro aesthetics optimized for small screens."
   },
@@ -348,6 +372,10 @@ const DEFAULT_PRESETS = [
   {
     name: "CELTIC ART",
     message: "Take a picture and convert it into a Celtic art piece inspired by the Book of Kells; highly detailed, intricate knotwork, flowing lines, and mystical geometry with the visual language of ancient Celtic art; ornate patterns and symbolic forms."
+  },
+  {
+    name: "CERAMIC FIGURINE",
+    message: "Take a picture and transform the subject into a small ceramic figurine. The subject should appear glazed, hand-painted, and slightly imperfect, like a decorative shelf figurine. Use realistic reflections, chips, and glaze texture so it looks like a real ceramic object photographed on a table or shelf."
   },
   {
     name: "CERAMIC TILE",
@@ -374,6 +402,10 @@ const DEFAULT_PRESETS = [
     message: "Take a picture and transform the image into a traditional Chinese ink wash painting. Use flowing brushstrokes, monochrome tones, soft gradients, and poetic negative space."
   },
   {
+    name: "CHOCOLATE SCULPTURE",
+    message: "Take a picture and transform the subject into a sculpted chocolate figure. The chocolate should appear glossy, slightly textured, and solid, with realistic reflections and subtle imperfections from molding.\n\nInclude a clearly visible bite taken from the subject, showing the inner texture of the chocolate. Preserve the subject’s recognizable facial structure and details through the chocolate form while maintaining realistic thickness and volume.\n\nThe subject should appear as a real chocolate sculpture placed on a surface, with appropriate shadows and lighting. Avoid CGI or drawn appearance. Ensure the composition is readable on a small screen and the chocolate looks physically edible."
+  },
+  {
     name: "CINEMATIC HORROR",
     message: "Take a picture and transform the subject into a cinematic horror character while preserving the subject’s recognizable facial structure, body proportions, and identity. Apply unsettling but non-graphic visual traits such as desaturated or ashen skin tones, darkened eye areas, an intense or vacant gaze, and subtly distressed clothing.  Ensure the subject appears physically present in the scene and fully integrated with the surroundings. Render the final image with photorealistic detail and a suspenseful horror aesthetic."
   },
@@ -386,6 +418,10 @@ const DEFAULT_PRESETS = [
     message: "Take a picture and transform the image into claymation-style. Characters appear sculpted from clay with fingerprints and textures."
   },
   {
+    name: "CLEANUP CHAOS",
+    message: "Take a picture of a room or indoor space. Analyze the scene to determine whether it appears mostly clean or messy.\n\nIf the room appears messy or cluttered, transform it into a clean, organized version of the same space. Remove clutter, straighten objects, clean surfaces, neatly arrange items, and improve overall order while preserving the original layout, furniture, and lighting.\n\nIf the room appears clean or orderly, transform it into a realistically messy version. Add believable clutter such as scattered clothes, papers, cups, toys, or everyday items. Introduce mild disorder without destroying the room or making it unsafe.\n\nMaintain realism, consistent lighting, and the same camera perspective. The transformation should feel like the same room before and after tidying or neglect, and remain clearly readable on a small screen."
+  },
+  {
     name: "COLLAGE",
     message: "Take a picture in the style of an artistic paper collage with visible cut edges and layered materials."
   },
@@ -396,6 +432,10 @@ const DEFAULT_PRESETS = [
   {
     name: "COMIC SUPERHERO",
     message: "Take a picture and transform the subject into a superhero inspired by their own traits, personality, or clothing. Preserve the subject’s recognizable facial features and body while designing a unique superhero identity based on what they are wearing or their notable characteristics. The superhero must wear a flowing cape integrated naturally into the costume. Show a full comic-book page with multiple panels depicting the subject in action, using powers or skills derived from their personal traits. Bold inks, vibrant colors, dynamic composition, and expressive onomatopoeia. Ensure the subject remains clearly identifiable while fully integrated into the comic-book superhero narrative."
+  },
+  {
+    name: "CONNECT THE DOTS",
+    message: "Take a picture and transform it into a classic printable connect-the-dots puzzle. Reduce the image to a clean line-art outline that captures the essential shape and silhouette of the subject while removing unnecessary detail.\n\nPlace numbered dots along the outline and key interior contours in a **logical sequential order starting with number 1**, so that connecting the dots in order will clearly reveal the subject. Dots should be large, evenly spaced, and easy to follow.\n\nShow very minimal lines or connecting guides—only enough to hint at the outline if necessary, but primarily rely on the numbered dots. Avoid background details, shading, or other guides. Use high-contrast dots suitable for printing. Do not include text, instructions, or labels. The final image should resemble a traditional connect-the-dots puzzle where the user draws all connecting lines by hand, always beginning with dot 1."
   },
   {
     name: "CONSTELLATION",
@@ -490,6 +530,10 @@ const DEFAULT_PRESETS = [
     message: "Take a picture and transform the image into an M.C. Escher-inspired impossible space. Non-Euclidean architecture."
   },
   {
+    name: "ETCH A SKETCH",
+    message: "Take a picture and recreate the subject as a classic Etch A Sketch drawing displayed inside a realistic Etch A Sketch toy. The entire red Etch A Sketch frame should be visible, including the screen area and the two control knobs at the bottom, so it feels like a photographed physical toy rather than a digital effect.\n\nRender the subject using continuous, thin, single-line strokes characteristic of Etch A Sketch drawings. Use simple outlines and minimal detail while preserving the subject’s recognizable shape and expression. The drawing should appear slightly imperfect, with subtle line wobble and overlaps consistent with manual knob control.\n\nEnsure the background is the Etch A Sketch screen texture, and keep the overall composition clean and centered. Do not add text or extra graphics. The final image should feel nostalgic, tactile, and immediately recognizable on a small screen."
+  },
+  {
     name: "EXAGGERATED TRAIT",
     message: "Take a picture and transform the subject by exaggerating a single physical trait while preserving the subject’s recognizable identity and overall proportions. The exaggerated feature should be visually prominent but anatomically coherent, blending naturally with the subject’s face and body. Adapt lighting, shadows, and perspective so the transformation feels intentional rather than distorted. Integrate the subject seamlessly into the scene, maintaining realism or stylized realism depending on the chosen direction. Ensure the final result feels playful and striking."
   },
@@ -499,7 +543,7 @@ const DEFAULT_PRESETS = [
   },
   {
     name: "EXTREME SPORTS MOMENT",
-    message: "Take a picture and transform the subject into a randomly selected sporting competition, such as a professional team sport, individual athletic event, or outdoor extreme sport. Depict the subject performing the most dramatic, high-impact moment possible within that sport — for example, a powerful slam dunk, a full sprint at the finish line, a massive aerial maneuver, or a daring ascent. Preserve the subject’s recognizable facial features, expression, and identity while adapting clothing, gear, and posture appropriate to the sport. Place the subject in an authentic, dynamic environment with motion, energy, and cinematic lighting so the action feels intense and exhilarating. The scene should capture a peak, frozen-in-time moment of athletic achievement with realistic scale, motion blur, and photorealistic detail."
+    message: "Take a picture and transform the subject into a randomly selected sporting competition, such as a professional team sport, individual athletic event, or outdoor extreme sport. Depict the subject performing the most dramatic, high-impact moment possible within that sport — for example, a powerful slam dunk, a full sprint at the finish line, a massive aerial maneuver, or a daring ascent up a mountain. Preserve the subject’s recognizable facial features, expression, and identity while adapting clothing, gear, and posture appropriate to the sport. Place the subject in an authentic, dynamic environment with motion, energy, and cinematic lighting so the action feels intense and exhilarating. The scene should capture a peak, frozen-in-time moment of athletic achievement with realistic scale, motion blur, and photorealistic detail."
   },
   {
     name: "FAIRYTALE PAGE",
@@ -538,6 +582,10 @@ const DEFAULT_PRESETS = [
     message: "Take a picture and transform the image into classic film noir style. High-contrast black and white. Hard directional lighting, deep shadows, Venetian blind light patterns. Moody, dramatic composition."
   },
   {
+    name: "FILTH MODE",
+    message: "Take a picture and identify the main subject or object. Transform it so it appears dirty, neglected, or gross while preserving its shape and identity.\n\nAdd realistic grime such as dirt, mud, stains, splashes, smears, or dried mess. If appropriate, include cartoonishly unpleasant elements like poop, sludge, or foul residue applied to the object’s surface without obscuring it completely.\n\nEnsure the filth follows the object’s contours, texture, and lighting so it looks physically present rather than overlaid. The result should be visually obvious, humorous or shocking, and immediately readable on a small screen."
+  },
+  {
     name: "FIND ME",
     message: "Take a picture and transform the image so the subject is fully visible yet intentionally hidden through perfect visual camouflage. The subject’s clothing, colors, textures, and patterns must precisely match and continue the surrounding environment, making the subject difficult to distinguish at first glance. Do not remove or blur the subject — instead, conceal them through seamless pattern alignment, color continuity, and texture matching. The subject must remain physically present with accurate scale, lighting, shadows, and depth, so they clearly exist once noticed. Avoid outlines, highlights, or obvious separation; the concealment should feel deliberate, intelligent, and visually satisfying when discovered."
   },
@@ -546,8 +594,16 @@ const DEFAULT_PRESETS = [
     message: "Take a picture and place the subject into a scene that uses forced perspective to create a clever visual illusion. The subject should appear to interact with large or distant objects using scale tricks (for example: pinching the sun, holding the moon, pushing a skyscraper, balancing a mountain on their palm). Carefully align scale, depth, and camera angle so the illusion looks intentional and realistic. Preserve the subject’s identity and integrate lighting, shadows, and perspective so the interaction feels physically believable and visually playful."
   },
   {
+    name: "FOREVER STAMP",
+    message: "Take a picture and transform the subject into a large physical postage stamp. Show perforated edges, printed texture, ink dot patterns, and slight wear."
+  },
+  {
     name: "FRACTAL",
     message: "Take a picture and transform the image using fractal geometry. Recursive patterns, infinite detail."
+  },
+  {
+    name: "FROZEN IN ICE",
+    message: "Take a picture and make it appear as if the subject is frozen inside a clear block of ice. The ice should have realistic cracks, bubbles, frost, and refraction. The subject must be clearly visible through the ice, distorted slightly by thickness and trapped depth."
   },
   {
     name: "FUNKO POP",
@@ -631,7 +687,7 @@ const DEFAULT_PRESETS = [
   },
   {
     name: "I AM WITH STOOPID",
-    message: "Take a picture and transform it so the subject appears to be wearing a classic 'I'm with Stupid' t-shirt. The shirt should clearly display the text 'I'm with Stupid' in bold lettering with a large upward-pointing arrow aimed toward the subject’s head. Ensure the t-shirt fits naturally on the subject’s body, matching perspective, lighting, and folds. Keep the design simple and high-contrast so the text and arrow are clearly readable on a small screen."
+    message: "Take a picture and transform it so one subject appears to be wearing an 'I'm with Stoopid' t-shirt that looks physically printed on the fabric, not digitally overlaid. The shirt should include natural folds, fabric texture, slight ink distortion, and perspective warping so the design follows the body realistically.\n\nIf only one subject is detected, display the text 'I'm with Stoopid' with a single large arrow pointing upward toward the wearer’s own head.\n\nIf two or more subjects are detected, place the shirt on the primary subject and display the text 'I'm with Stoopid' with one or more arrows pointing sideways or diagonally toward the other visible subjects. Arrows should clearly indicate the other subjects without overlapping faces.\n\nEnsure the text and arrows remain bold, high-contrast, and legible on small screens while maintaining a believable printed-shirt appearance. Preserve lighting consistency, fabric shading, and natural wrinkles so the shirt feels worn, not pasted."
   },
   {
     name: "I AM WITH THE BAND",
@@ -658,9 +714,14 @@ const DEFAULT_PRESETS = [
     message: "Take a picture in the style of an inkblot-style artwork. Abstract symmetry, flowing ink forms on paper."
   },
   {
-    name: "IPHONE CAMERA",
+    name: "iPHONE CAMERA",
     message: "Take a picture and transform it into an early smartphone camera photo. Use soft focus, blown highlights, muted colors, and slight motion blur. The subject should feel casual, imperfect, and authentically early-mobile."
   },
+  {
+    name: "IS IT CAKE?",
+    message: "Take a picture and transform the subject so it appears to be a realistic hyper-detailed cake. The subject should retain recognizable features but clearly be made of cake, frosting, fondant, and icing textures. Optionally show a slice cut out or a knife mid-cut revealing cake layers inside."
+  },
+
   {
     name: "ISLAMIC MINIATURE",
     message: "Take a picture and transform the picture into an Islamic miniature style painting. Flattened perspective, decorative borders, fine line work, intricate patterns, and vivid colors."
@@ -703,7 +764,7 @@ const DEFAULT_PRESETS = [
   },
   {
     name: "LEGO",
-    message: "Take a picture and transform the image into a LEGO minifigure scene. Convert all subjects into LEGO minifigures while preserving recognizable traits.  The subjects are built entirely from LEGO bricks. Environment built entirely from LEGO bricks with toy-photography lighting."
+    message: "Take a picture and transform the image into a realistic LEGO minifigure scene. Convert all subjects into LEGO minifigures with correct minifigure proportions: cylindrical torsos, blocky legs, movable arms and hands, and **classic LEGO minifigure heads**.\n\nThe subject’s head must be a smooth, cylindrical LEGO head with **all facial features painted directly onto the head**, including eyes, eyebrows, mouth, expression, facial hair, freckles, glasses, or other defining traits. Do NOT render realistic human heads, sculpted hair, or detailed facial geometry. Any hairstyle or head covering must appear only as a separate LEGO accessory piece (helmet, hat, hair piece), not as part of the head itself.\n\nTranslate the subject’s recognizable traits into simplified LEGO-style printed facial graphics while maintaining the iconic LEGO look.\n\nBuild the environment entirely from LEGO bricks at toy scale using plates, bricks, tiles, and accessories. Use realistic toy-photography lighting with soft shadows and subtle reflections so the scene looks like a photograph of an actual LEGO diorama. Keep the composition clear, proportional, and readable on small screens."
   },
   {
     name: "LETTERHEAD",
@@ -728,6 +789,10 @@ const DEFAULT_PRESETS = [
   {
     name: "LINOLEUM PRINT",
     message: "Take a picture and transform the image into a linoleum block print. Organic carved textures. Flat ink colors."
+  },
+  {
+    name: "LITE-BRITE",
+    message: "Take a picture and recreate the subject as a Lite-Brite pegboard artwork displayed inside a physical Lite-Brite toy frame. The entire toy should be visible, including the dark backing, grid of holes, and colorful glowing pegs, so it appears as a photographed Lite-Brite rather than a digital overlay.\n\nTransform the subject entirely using the Lite-Brite peg layout: the subject’s shape, facial features, and key details must be composed only of circular light pegs aligned to the pegboard grid. Do not use lines, shading, or any elements outside the peg layout to define the subject.\n\nUse bright, saturated colors for each peg with subtle glow and soft bloom to emulate the light pegs. Simplify details as necessary to maintain recognizability while fully adhering to the pegboard constraints.\n\nKeep the composition centered and uncluttered. Avoid text or extra graphics. The final image should feel tactile, nostalgic, and clearly readable on a small screen, looking like a true physical Lite-Brite creation."
   },
   {
     name: "LIVING TATTOO",
@@ -762,12 +827,16 @@ const DEFAULT_PRESETS = [
     message: "Take a picture and transform the subject into a classic Mad Magazine-style caricature. Preserve the subject’s recognizable facial features and personality while exaggerating key traits with over-the-top humor: enlarged head, expressive eyes, exaggerated expressions, and comically small or distorted body. Include irreverent, satirical flavor text, visual gags, and props that parody everyday life or pop culture. Bold linework, bright colors, and chaotic, playful composition. Ensure the subject is clearly identifiable within the humorous scene."
   },
   {
+    name: "MAGIC EYE",
+    message: "Take a picture and transform it into a single-image autostereogram (Magic Eye–style illusion). Encode the subject’s shape and depth into a repeating patterned texture so the image appears abstract at first glance but reveals the subject when viewed with relaxed or unfocused eyes.\n\nUse a dense, repeating pattern with subtle depth cues that form the subject’s silhouette and major features in three dimensions. Do not include outlines, labels, or hints. The subject should not be immediately obvious without proper viewing.\n\nEnsure the pattern is clean, evenly tiled, and centered. The final image should resemble a classic Magic Eye print that is visually stable and readable on a small screen."
+  },
+  {
     name: "MARIONETTE PUPPET",
     message: "Take a picture and transform the subject into a handcrafted marionette puppet. Preserve recognizable facial features, expressions, proportions, and clothing identity, adapted into carved wood, painted surfaces, stitched fabric, and jointed limbs. Visible strings extend upward from the limbs and head to a wooden marionette controller held above the frame or partially visible. The puppet must show realistic wear, grain, seams, and articulation points. Studio or theatrical lighting with shallow depth of field. The subject must clearly remain the same individual, now reimagined as a controlled puppet."
   },
   {
     name: "MASCOT",
-    message: "Take a picture and transform the subject into a dynamic sports team fluffy mascot. Use the subject’s clothing, colors, accessories, and personality traits to inspire the mascot’s overall design. Incorporate a logo-like emblem, team colors, and stylized features into the mascot costume naturally, while preserving the subject’s recognizable facial characteristics. Adapt the subject into a bold, illustrative, energetic style suitable for a sports team mascot, emphasizing strong shapes, clear outlines, and vibrant colors."
+    message: "Take a picture and transform the subject into a realistic dynamic sports team fluffy mascot. Use the subject’s clothing, colors, accessories, and personality traits to inspire the mascot’s overall design. Incorporate a logo-like emblem, team colors, and stylized features into the mascot costume naturally, while preserving the subject’s recognizable facial characteristics. Adapt the subject into a bold, illustrative, energetic style suitable for a sports team mascot, emphasizing strong shapes, clear outlines, and vibrant colors."
   },
   {
     name: "MATRIX",
@@ -803,7 +872,7 @@ const DEFAULT_PRESETS = [
   },
   {
     name: "MINIATURE SET",
-    message: "Take a picture and transform the scene into a handcrafted miniature set. Model-making textures and scale realism."
+    message: "Take a picture and transform the entire scene into a handcrafted miniature diorama. Scale all subjects and objects to match the proportions of a physical miniature set, so they appear small and in proportion to each other. Render surfaces with handcrafted textures such as clay, painted wood, cardboard, fabric, or tiny props, giving the scene a realistic, tactile feel.\n\nUse shallow depth of field, soft studio lighting, and subtle shadows to emulate macro photography of a real miniature model. Ensure the composition reads clearly, maintains visual depth, and feels like a meticulously constructed miniature set. Keep subjects and environment clearly recognizable and readable on small screens, with a handcrafted, physical toy-like aesthetic."
   },
   {
     name: "MINIMALISM",
@@ -840,6 +909,10 @@ const DEFAULT_PRESETS = [
   {
     name: "MOVIE SCENE INSERT",
     message: "Take a picture and place the subject inside a cinematic movie scene as if they were an original character in the film. Preserve the subject’s recognizable facial features, body proportions, clothing identity, and personality. Match the exact cinematography of the chosen movie including lens type, depth of field, film grain, color grading, lighting direction, production design, and era-accurate costuming if required. The subject must appear physically present in the scene with correct scale, shadows, reflections, and environmental interaction. The background, props, and atmosphere must be authentic to the movie’s world, making the subject indistinguishable from the original cast and fully integrated into the scene."
+  },
+  {
+    name: "MR. POTATO HEAD",
+    message: "Take a picture and transform the subject into a Mr. Potato Head–style toy. Preserve the subject’s recognizable facial features and general expression, but adapt them into the characteristic potato-shaped body with smooth, slightly shiny plastic texture.\n\nInclude toy-accurate removable parts such as eyes, eyebrows, nose, mouth, ears, arms, and accessories (hat, glasses, etc.). Arrange them on the potato body in a playful, semi-realistic way that preserves the subject’s identity while emphasizing the modular, interchangeable nature of the toy.\n\nMaintain proper scale, shadows, and lighting so the subject appears as a real physical toy. Do not add text or background clutter; keep the composition clean and readable on small screens. The final image should feel nostalgic, playful, and instantly recognizable as a Mr. Potato Head toy version of the subject."
   },
   {
     name: "MUG SHOT",
@@ -887,7 +960,7 @@ const DEFAULT_PRESETS = [
   },
   {
     name: "NEWSPAPER",
-    message: "Take a picture and Transform the image into a newspaper print. Halftone dots, grayscale ink. Newsprint texture. Include flavor text headline and story text inspired by the content of the image. The result should be a full view of the newspaper page with the name of the newspaper and date visible with a relevant background behind the newspaper."
+    message: "Take a picture and Transform the image into a newspaper print. Halftone dots, grayscale ink. Newsprint texture. Include flavor text headline and story text inspired by the content of the image. The result should be a full view of the newspaper page with the newspaper header and date visible with a relevant background behind the newspaper."
   },
   {
     name: "NIGHT VISION",
@@ -934,6 +1007,10 @@ const DEFAULT_PRESETS = [
     message: "Take a picture in the style of a Peanuts cartoon strip. Have the subject speaking through a text bubble that reads GOOD GRIEF!"
   },
   {
+    name: "PHOTO PUZZLE",
+    message: "Take a picture and transform it into a printable jigsaw puzzle layout. Preserve the original photograph clearly while overlaying visible puzzle piece cut lines across the entire image.\n\nGenerate a classic jigsaw pattern with interlocking pieces of varied shapes and sizes. Ensure pieces are large enough to be easily cut out and assembled by hand. Avoid overly small or complex pieces. Keep the image centered and unobstructed so the subject remains recognizable even when divided.\n\nUse clean, high-contrast cut lines that are clearly visible on small screens and when printed. Do not add numbers, text, or labels. The final image should look like a ready-to-print puzzle sheet that can be cut out and assembled in real life."
+  },
+  {
     name: "PICTURE PERFECT",
     message: "Take a picture and make it picture perfect - improve lighting, colors, and overall composition. Professional perfection. Correct lighting, color, sharpness, and realism. Remove any imperfections.  Make it photorealistic.  8k resolution."
   },
@@ -950,6 +1027,10 @@ const DEFAULT_PRESETS = [
     message: "Take a picture in the style of Pointillism Art. Complementary colors are placed next to each other to intensify each hue and create vibrancy as the viewer eye optically blends the dots from a distance. Made entirely of tiny, colorful dots."
   },
   {
+    name: "POLICE SKETCH",
+    message: "Take a picture and transform the subject into a classic police sketch as if created from a witness description. Depict the subject as a hand-drawn pencil or charcoal sketch on off-white paper, using strong line work, cross-hatching, and shading to define facial structure and key features.\n\nSimplify and alter details so the sketch is approximate rather than an exact replica of the subject. Preserve general identifying characteristics such as face shape, eyes, nose, mouth, hairline, and expression, but introduce small deviations consistent with a sketch from memory.\n\nUse a neutral background with slight paper texture. Add text and police case numbers. The final image should feel serious, observational, and readable on a small screen, reflecting the imperfection of eyewitness recall."
+  },
+  {
     name: "POLLOCK",
     message: "Take a picture and reinterpret it through abstract expressionism inspired by Jackson Pollock. Overlay energetic splatters, drips, and layered paint textures while allowing hints of the original subject to remain visible beneath the chaos. The final image should feel raw, spontaneous, and motion-filled."
   },
@@ -964,6 +1045,10 @@ const DEFAULT_PRESETS = [
   {
     name: "POP ART",
     message: "Take a picture and make it Pop Art. Employs vibrant, bold colors, simplified imagery, and techniques from the commercial world like screen-printing, often with a sense of humor, irony, or wit."
+  },
+  {
+    name: "POP-UP BOOK",
+    message: "Take a picture and transform the scene into a pop-up book spread. The subject should rise from folded paper layers, with visible creases, tabs, and paper hinges. The entire book should be visible, photographed open on a surface."
   },
   {
     name: "PORCELAIN",
@@ -1106,6 +1191,10 @@ const DEFAULT_PRESETS = [
     message: "Take a picture and transform the image into Scandinavian folk art style art. Decorative patterns, muted earthy tones, simple geometry, and traditional motifs."
   },
   {
+    name: "SCREAM",
+    message: "Take a picture and transform the subject so their face appears as a Ghostface-style mask while preserving the subject’s underlying facial structure, proportions, and expression. The mask should be smooth white with elongated eyes and mouth, subtly shaped by the subject’s face so it feels worn rather than pasted on.\n\nDress the subject in a flowing black hooded robe inspired by the classic Ghostface costume. Ensure the hood frames the mask naturally, with realistic fabric folds, shadows, and texture. Match lighting, perspective, and depth so the costume integrates seamlessly with the original scene.\n\nMaintain a clean, non-graphic horror aesthetic. Do not add blood, weapons, or violent elements. The final image should feel eerie, iconic, and cinematic while remaining clearly readable on small screens."
+  },
+  {
     name: "SECURITY CAMERA FOOTAGE",
     message: "Take a picture and transform it into low-quality security camera footage. Render the image in washed-out grayscale or green-tinted night vision with heavy noise and compression artifacts. Add a timestamp and camera label (e.g., CAM 03, 02:14 AM) in a blocky digital font. The framing should feel awkward or off-center, with slight motion blur or ghosting. Reduce detail and sharpness while preserving the subject’s silhouette. The image should feel surveilled, impersonal, and slightly unsettling."
   },
@@ -1128,6 +1217,10 @@ const DEFAULT_PRESETS = [
   {
     name: "SHOPPING LIST",
     message: "Take a picture and create a pictured shopping list identifying the main subject and all notable objects. Do not display a single full reference photo. Instead, separate each identified item and create a small cropped image or thumbnail of each subject or object. Present a numbered shopping list where each number is paired with its corresponding small image and a short description. Keep the layout clean and optimized for a small screen, with each item visually distinct and easy to scan."
+  },
+  {
+    name: "SHOULDNT HAVE DONE THAT",
+    message: "Take a picture and subtly make it look like the subject is doing something they absolutely should not be doing. The humor should come from obvious poor judgment."
   },
   {
     name: "SILHOUETTE",
@@ -1166,6 +1259,10 @@ const DEFAULT_PRESETS = [
     message: "Take a picture and transform the image into a painting in the style of Diego Velázquez or similar Spanish Baroque painters. Use realistic lighting, subtle color palettes, and detailed textures. Capture the subject naturally, with dramatic depth and elegant composition reminiscent of 17th-century Spanish portraiture. Imbue the image with profound religious fervor, stark realism, and dramatic use of tenebrism to evoke strong emotions and piety."
   },
   {
+    name: "SPOT THE DIFFERENCE",
+    message: "Take a picture and duplicate it into two side-by-side frames showing the same scene. Keep the left frame as the original reference image.\n\nEnsure the subject and all objects remain **exactly in the same position and fully visible** in both frames unless an object is intentionally removed. The subject should not be tilted or cropped out of frame; the entire area should be consistently in view on both sides.\n\nIn the right frame, introduce **5–7 subtle but clearly noticeable differences** in objects, colors, accessories, or minor details, such as:\n• Removing or adding small objects\n• Altering colors of items or clothing\n• Slightly repositioning accessories or props (without moving the subject)\n• Changing minor details of clothing, eyes, haircolor, hairstyle, or props\n• Adjusting the size of small items or background elements\n\nDo not add labels, arrows, or text. The two images should be aligned, evenly sized, and easy to compare on a small screen. The final result should resemble a classic children’s \"find the differences\" puzzle, with differences discoverable but the overall scene consistent and fully framed."
+  },
+  {
     name: "STAINED GLASS",
     message: "Take a picture and transform the image into a stained-glass artwork. Bold lead outlines, translucent color panels. Light glowing through the glass."
   },
@@ -1190,10 +1287,6 @@ const DEFAULT_PRESETS = [
     message: "Take a picture in the style of Stencil Art. High contrast, limited color palette."
   },
   {
-    name: "STEREOGRAM",
-    message: "Take a picture and generate a fully functional 3D stereogram inspired by the subject’s colors, tones, and textures. Do not include any recognizable parts or features of the subject. Instead, create a generic depth shape that matches the subject’s category (for example, if the subject is a person, create a generic human silhouette; if a building, a generic building shape). Use the subject’s colors, tones, and textures to decorate the stereogram, but keep the form abstract and stylized. Generate a repeating pattern of dots derived from the subject’s colors, so that the resulting stereogram is visually seamless, colorful, and fully 3D when viewed with parallel or cross-eye technique. To construct the stereogram. Ensure the hidden shape is completely embedded within the pattern, making the stereogram visually seamless and fully 3D when viewed with parallel or cross-eye technique. Keep the final image abstract, colorful, and visually engaging."
-  },
-  {
     name: "STEREOSCOPE",
     message: "Take a picture and create a stereoscopic 3D side-by-side image from the photo. Maintain alignment and scale between left and right views. Subtle parallax for depth without distortion."
   },
@@ -1204,6 +1297,10 @@ const DEFAULT_PRESETS = [
   {
     name: "STREET ART",
     message: "Take a picture and transform the image into contemporary street art. Gritty textures, stenciled patterns, expressive composition, and urban color palette on a concrete or brick surface."
+  },
+  {
+    name: "STRETCH ARMSTRONG",
+    message: "Take a picture and transform the subject into a Stretch Armstrong–style action figure made of thick, rubbery material. Preserve the subject’s recognizable facial features while adapting them into a toy-like appearance with smooth skin, simplified details, and a slightly exaggerated jaw and expression.\n\nDepict the subject’s arms, legs, or torso being stretched far beyond normal proportions, as if pulled by unseen hands or tension just outside the frame. The stretched areas should look elastic and dense, with believable thickness, subtle surface creases, and realistic stretch deformation rather than thin distortion.\n\nEnsure the subject still resembles a physical toy: solid core, rounded forms, and consistent material texture. Use lighting and shadows that emphasize volume and rubbery sheen. Do not show injuries or damage. The final image should feel playful, nostalgic, and clearly readable on small screens."
   },
   {
     name: "STUDENT ID",
@@ -1272,6 +1369,10 @@ const DEFAULT_PRESETS = [
   {
     name: "TOPIARY",
     message: "Take a picture and transform the subject into a living topiary sculpture. Preserve the subject’s recognizable facial structure, hairstyle silhouette, body proportions, and clothing shapes translated into carefully trimmed foliage and greenery. Use dense leaves, hedges, vines, and floral textures shaped with precision pruning. The subject must appear grown organically from plants, not carved stone. Natural outdoor lighting, garden environment, and botanical realism with visible leaf detail and depth."
+  }, 
+  {
+    name: "TRADING CARD",
+    message: "Take a picture and transform the subject into a fully visible collectible sports trading card with a vintage 1980s/1990s style. Ensure the entire card—including all borders, portrait, background, stats, and flavor text—is fully visible and centered in the frame. Randomly assign a sport (e.g., basketball, soccer, baseball, football, tennis) for each render.\n\nInclude a clear portrait of the subject, a stylized action background, and a card border with realistic texture, embossing, and glossy surfaces. Apply worn effects such as yellowed edges, scratches, and slight discoloration for a vintage look.\n\nAdd the subject’s name, a mock team name or mascot, absurd over-the-top stats inspired by the subject’s appearance, pose, or personality (e.g., “99% chance to eat pizza mid-game,” “Can balance a coffee cup while dribbling”), and humorous flavor text describing the subject. Allow external master prompt text to be appended to the flavor text.\n\nEnsure everything is legible on a small screen, the subject remains instantly recognizable, and the final image clearly shows the full card without cropping."
   },
   {
     name: "TV DRAMA",
@@ -1318,6 +1419,10 @@ const DEFAULT_PRESETS = [
     message: "Take a picture and style it as if it were a retro-futuristic vaporwave album cover. Dreamy neon colors, glitchy textures, and retro-futuristic vibes. Inspired by 90s aesthetics and early internet culture, giving the photo a surreal, nostalgic feel, like a lost scene from an old VHS tape or a synthwave album cover."
   },
   {
+    name: "VENDING MACHINE ITEM R1",
+    message: "Take a picture and place the subject inside a vending machine slot as if they are a purchasable item. Show spiral coils, price tags without readable text, glass reflections, and interior lighting. The subject should appear physically contained behind the glass."
+  },
+  {
     name: "VHS 80s",
     message: "Take a picture and transform the image into 1980s VHS footage. Soft focus, scanlines, color bleed, timestamp artifacts. Analog nostalgia aesthetic."
   },
@@ -1352,6 +1457,10 @@ const DEFAULT_PRESETS = [
   {
     name: "WANTED POSTER",
     message: "Take a picture in the style of an Old West Wanted Poster. Aged parchment, bullet holes. Title: \"WANTED\"."
+  },
+  {
+    name: "WARNER BROS CARTOON",
+    message: "Take a picture and transform the subject in the style of a classic Warner Bros. cartoon placed inside a classic Warner Bros. cartoon world inspired by mid-20th-century theatrical animation. Preserve the subject’s facial structure and recognizability while adapting lighting, color, outlines, and shading so the subject feels naturally integrated into a hand-painted cel-animation environment.\n\nThe scene should follow one of the following Warner Bros.–style formats:\n• A classic theatrical end-card inspired by the iconic \"That’s all folks!\" closing, where the subject’s face replaces the central character within concentric rings.\n• A classic cartoon scene where the subject appears alongside well-known Warner Bros. characters.\n\nUse bold black outlines, saturated colors, soft cel-style shading, exaggerated expressions, and simple painted backgrounds consistent with classic Warner Bros. cartoons. Ensure scale, eye-line, and pose interactions feel believable and playful. Keep the composition clear and readable on small screens.\n\nAllow externally provided instructions to specify the exact character(s), scene type, setting, or tone. If no external instructions are provided, automatically choose a fitting Warner Bros.–style scene."
   },
   {
     name: "WATERCOLOR",
