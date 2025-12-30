@@ -1049,7 +1049,7 @@ const DEFAULT_PRESETS = [
   },
   {
     name: "POP-UP BOOK",
-    message: "Take a picture and transform the scene into a pop-up book spread. The subject should rise from folded paper layers, with visible creases, tabs, and paper hinges. The entire book should be visible, photographed open on a surface."
+    message: "Take a picture and transform the entire scene into a physical pop-up book made of paper. The subject should be constructed entirely as a pop-up paper structure that rises upward from folded paper layers attached to the book’s pages.\n\nThe subject must emerge directly from the page through visible folds, hinges, tabs, and layered paper planes. The body, face, and features should be formed from flat paper pieces assembled into a three-dimensional pop-up mechanism, clearly connected to the page surface.\n\nShow the open book with two facing pages visible. The pop-up elements should clearly originate from the folds of the pages and extend upward, as if they would collapse flat when the book is closed.\n\nUse realistic paper textures, visible creases, cut edges, and paper thickness. All materials must look like paper—no skin, fabric, plastic, or realistic surfaces. Lighting and shadows should emphasize the layered paper construction. The final image should look like a photographed pop-up book page where the subject is part of the paper engineering itself."
   },
   {
     name: "PORCELAIN",
