@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>MagicCam</title>
+  <script type="module" crossorigin src="./assets/main-4w_Jx1pC.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/main-CJB3GHGL.css">
+</head>
+<body>
+    <div id="app">
+        <div class="start-screen" id="start-screen">
+            <h1>✨ Magic Kamera ✨</h1>
+            <p class="start-text">Scroll to select style or Add style with Magic Button</p>
+            <button id="start-button" class="start-button">Start Camera</button>
+        </div>
+        <div class="camera-container" id="camera-container" style="display: none;">
+            <video id="video" autoplay playsinline muted></video>
+            <img id="captured-image" style="display: none;" alt="Captured photo">
+            <canvas id="canvas" style="display: none;"></canvas>
+        </div>
+        <p id="status" class="status-text" style="display: none;">Initializing camera...</p>
+        <button id="reset-button" class="reset-button" style="display: none;">New Photo</button>
+        <button id="camera-button" class="camera-button" title="Switch Camera" style="display: none;">📷</button>
+<button id="random-toggle" class="random-toggle" title="Toggle Random Mode" style="display: none;">
+    🎲
+</button>
+<button id="menu-button" class="menu-button" title="Menu" style="display: none;">☰</button>
+<button id="burst-toggle" class="burst-toggle" title="Toggle Burst Mode" style="display: none;">
+    <span class="burst-icon">📸⚡</span>
+</button>
+        
+        <!-- Style Name Reveal -->
+        <div id="style-reveal" class="style-reveal" style="display: none;">
+            <span id="style-reveal-text"></span>
+        </div>
+        
+        <!-- Connection Status -->
+        <div id="connection-status" class="connection-status online" style="display: none;">
+            <span id="connection-text">Online</span>
+        </div>
+        
+        <!-- Queue Status -->
+        <div id="queue-status" class="queue-status" style="display: none;">
+            <span id="queue-count">0</span> queued
+        </div>
+        
+        <!-- Sync Button -->
+        <button id="sync-button" class="sync-button" title="Sync Queued Photos" style="display: none;">
+            🔄 Sync (<span id="sync-count">0</span>)
+        </button>
+        
+        <!-- Unified Menu -->
+<div id="unified-menu" class="styles-menu" style="display: none;">
+    <div class="styles-menu-content">
+        <div class="styles-menu-header">
+            <h2>Menu</h2>
+            <button id="close-menu" class="close-button">×</button>
+        </div>
+        
+        <!-- Resolution Section -->
+        <div class="menu-section">
+            <h3 class="menu-section-title">Resolution</h3>
+            <div id="menu-resolution-list" class="menu-list">
+                <!-- Resolution options will be dynamically added here -->
+            </div>
+        </div>
+        
+        <!-- Burst Settings Section -->
+        <div class="menu-section">
+            <h3 class="menu-section-title">Burst Settings</h3>
+            <div class="burst-settings">
+                <div class="burst-setting-item">
+                    <label for="burst-count-slider">Photos per burst: <span id="burst-count-value">5</span></label>
+                    <input type="range" id="burst-count-slider" min="2" max="10" value="5" step="1">
+                </div>
+                <div class="burst-setting-item">
+                    <label for="burst-speed-slider">Burst speed: <span id="burst-speed-value">Medium</span></label>
+                    <input type="range" id="burst-speed-slider" min="1" max="3" value="2" step="1">
+                    <div class="burst-speed-labels">
+                        <span>Slow</span>
+                        <span>Medium</span>
+                        <span>Fast</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Styles Section -->
+        <div class="menu-section">
+            <h3 class="menu-section-title">AI Styles</h3>
+            <div id="menu-styles-list" class="menu-list">
+                <!-- Styles will be dynamically added here -->
+            </div>
+            <button id="add-style-menu" class="add-style-button">+ Add New Style</button>
+        </div>
+    </div>
+</div>
+        
+        <!-- Style Editor Modal -->
+        <div id="style-editor" class="style-editor" style="display: none;">
+            <div class="style-editor-content">
+                <div class="style-editor-header">
+                    <h3 id="editor-title">Edit Style</h3>
+                    <button id="close-editor" class="close-button">×</button>
+                </div>
+                <div class="style-editor-body">
+                    <input type="text" id="style-name" class="style-input" placeholder="Style name" maxlength="20">
+                    <textarea id="style-message" class="style-textarea" placeholder="AI prompt for this style" maxlength="200"></textarea>
+                    <div class="editor-buttons">
+                        <button id="save-style" class="save-button">Save</button>
+                        <button id="delete-style" class="delete-button" style="display: none;">Delete</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Queue Manager Modal -->
+        <div id="queue-manager" class="queue-manager" style="display: none;">
+            <div class="queue-manager-content">
+                <div class="queue-manager-header">
+                    <h3>Queued Photos</h3>
+                    <button id="close-queue-manager" class="close-button">×</button>
+                </div>
+                <div id="queue-list" class="queue-list">
+                    <!-- Queued items will be dynamically added here -->
+                </div>
+                <div class="queue-actions">
+                    <button id="sync-all" class="sync-button">Sync All</button>
+                    <button id="clear-queue" class="delete-button">Clear Queue</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
