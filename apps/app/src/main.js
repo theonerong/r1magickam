@@ -1421,7 +1421,7 @@ const DEFAULT_PRESETS = [
   },
   {
     name: "VENDING MACHINE ITEM R1",
-    message: "Take a picture and place the subject inside a vending machine slot as if they are a purchasable item. Show spiral coils, price tags without readable text, glass reflections, and interior lighting. The subject should appear physically contained behind the glass."
+    message: "Take a picture and transform the subject into a novelty vending machine product. The subject should appear as a toy, figurine, or packaged novelty item clearly designed to be sold.\n\nPlace the product inside a vending machine slot behind glass. Show spiral coils, price tags without readable text, glass reflections, and interior vending machine lighting. The subject should appear scaled appropriately to fit the slot as a product, not as a real person.\n\nEnsure the scene reads as playful and humorous, like a novelty item for sale, with the vending machine fully visible and the product clearly displayed inside."
   },
   {
     name: "VHS 80s",
