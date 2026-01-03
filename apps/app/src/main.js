@@ -137,6 +137,8 @@ let isTimerSubmenuOpen = false;
 let isMasterPromptSubmenuOpen = false;
 let isMotionSubmenuOpen = false;
 let isTutorialSubmenuOpen = false;
+let isPresetBuilderSubmenuOpen = false;
+let editingPresetBuilderIndex = -1;
 let currentGalleryIndex = 0;
 let currentViewerIndex = 0;
 let currentEditorIndex = 0;
@@ -175,1320 +177,1830 @@ let multiPresetImageId = null;
 let styleFilterText = '';
 let presetFilterText = '';
 let presetListScrollPosition = 0;
+let visiblePresetsFilterByCategory = ''; // Track selected category filter
+let mainMenuFilterByCategory = ''; // Track selected category filter for main menu
+let galleryPresetFilterByCategory = ''; // Track selected category filter for gallery preset selector
+
+// Preset Builder templates
+const PRESET_TEMPLATES = {
+  transform: "Take a picture and transform the image into [DESCRIBE TRANSFORMATION]. [ADD SPECIFIC DETAILS ABOUT STYLE, APPEARANCE, COLORS, ETC.]",
+  transform_subject: "Take a picture and transform the subject into [WHAT THE SUBJECT BECOMES]. Preserve the subject's recognizable facial structure and identity. [ADD DETAILS ABOUT NEW APPEARANCE, ENVIRONMENT, LIGHTING].",
+  convert: "Take a picture and convert the scene into [DESCRIBE NEW FORMAT/MEDIUM]. [ADD DETAILS ABOUT MATERIALS, TEXTURES, SCALE].",
+  style: "Take a picture in the style of [ARTISTIC STYLE/ARTIST]. [ADD DETAILS ABOUT TECHNIQUE, COLORS, COMPOSITION].",
+  place: "Take a picture and place the subject in [DESCRIBE SCENE/LOCATION]. [ADD DETAILS ABOUT LIGHTING, ATMOSPHERE, INTEGRATION].",
+  recreate: "Take a picture and recreate [FAMOUS WORK/SCENE]. Replace [DESCRIBE WHAT TO REPLACE]. Preserve the iconic [DESCRIBE KEY ELEMENTS TO KEEP].",
+  render: "Take a picture and render it as [FORMAT/MEDIUM]. [ADD DETAILS ABOUT APPEARANCE, TEXTURE, TECHNICAL SPECIFICS].",
+  make: "Take a picture and make the subject into [CHARACTER/CREATURE]. [ADD DETAILS ABOUT APPEARANCE, TRAITS, SETTING]. Make it photorealistic.",
+  analyze: "Analyze the image and [DESCRIBE WHAT TO ANALYZE/EXTRACT]. [ADD DETAILS ABOUT OUTPUT FORMAT] and email it to me.",
+  custom: ""
+};
 
 // Default camera presets
 const DEFAULT_PRESETS = [
   {
     name: "IMPRESSIONISM",
+    category: ["ART", "PAINTING", "CLASSIC"],
     message: "Take a picture and transform the image into a French Impressionist painting. Preserve subject identity. Use loose, visible brushstrokes, soft edges, and blended colors emphasizing natural light and atmosphere. Painterly oil-on-canvas texture with warm, luminous tones."
   },
   {
     name: "3D PRINT FAILED",
+    category: ["HUMOR", "TECH", "3D"],
     message: "Take a picture and transform the subject into a real, physical 3D-printed object that has partially failed during printing. The subject must appear made from plastic filament with clearly visible horizontal layer lines across the entire surface.\n\nIntroduce obvious 3D-printing failures such as warped or shifted layers, missing sections, drooping filament, collapsed overhangs, stringing, and incomplete geometry as if the print stopped or misaligned mid-job.\n\nThe subject should appear as a photographed 3D print sitting on a workbench or print bed, with realistic shadows, shallow depth of field, and neutral lighting. Use a single solid filament color or limited two-color print. Avoid smooth, sculpted, or digital-rendered surfaces. The final image must clearly look like a failed physical 3D print, not a CGI model or statue."
   },
   {
     name: "AI-BUY",
+    category: ["UTILITY", "AI", "SHOPPING"],
     message: "Analyze the image and identify purchasable items. Provide product names, estimated prices, and purchase links. Present results in a clean, structured list and email it to me."
   },
   {
     name: "AI-IDENTIFY",
+    category: ["UTILITY", "AI", "ANALYSIS"],
     message: "Analyze the image in detail. Identify people, objects, environment, actions, expressions, and context. Provide a comprehensive, factual description without speculation and email it to me."
   },
   {
     name: "AI-SUMMARIZE",
+    category: ["UTILITY", "AI", "ANALYSIS"],
     message: "Analyze the image and provide a comprehensive summary of what is depicted, including context, activity, and notable visual details and email it to me."
   },
   {
     name: "AI-TRANSLATE",
+    category: ["UTILITY", "AI", "LANGUAGE"],
     message: "Analyze the image and detect any visible text in the image and translate it accurately into English. Preserve formatting where possible and email it to me."
   },
   {
     name: "A WHO",
+    category: ["HUMOR", "MOVIES", "CHRISTMAS", "POP CULTURE"],
     message: "Take a picture and make the subject into a Who from Whoville from Dr. Seuss. Make it photorealistic."
   },
   {
     name: "ABSTRACT ART",
+    category: ["ART", "MODERN", "ABSTRACT"],
     message: "Take a picture in the style of Abstract Modern Art. Non-representational shapes, bold composition."
   },
   {
     name: "ABSTRACT EXPRESSIONISM",
+    category: ["ART", "PAINTING", "MODERN"],
     message: "Take a picture and transform the image into Abstract Expressionist style. Energetic splatters, layered textures, and dynamic forms while subject partially visible."
   },
   {
     name: "ACCIDENT SCENE",
+    category: ["HUMOR", "DAMAGE", "DRAMATIC"],
     message: "Take a picture and transform the main subject so it appears to have recently been involved in an accident. Preserve the original subject while adding realistic damage appropriate to its type.\n\nExamples include:\n• A car with dents, cracked lights, bent panels, or deployed airbags\n• A bicycle with twisted wheels, scraped paint, or a broken chain\n• A scooter, skateboard, or similar object with visible impact damage\n\nAdd subtle environmental clues such as skid marks, fallen debris, or disturbed surroundings when appropriate. The final image should look like a realistic aftermath photo, and remain clear on small screens."
   },
   {
     name: "ADVERTISEMENT",
+    category: ["MASTER PROMPT", "COMMERCIAL", "MARKETING", "PROFESSIONAL"],
     message: "Take a picture and transform it into a polished magazine-style advertisement while preserving clear facial likeness and identity of the subject. Present the subject naturally holding, wearing, or interacting with the featured product as the central focus of the ad. Primary information source: If product details are provided via externally supplied information, showcase that product accurately as the main advertised item. Incorporate the product’s name, type, and defining qualities into the visual presentation, slogan, and flavor text without altering or misrepresenting the product. Secondary enhancement: If no product details are externally provided, infer a plausible featured product based on what the subject is visibly holding, wearing, or using. If inference is required, keep the product generic and clearly implied rather than naming a specific real-world brand. Design the final image as a compact, mobile-friendly magazine advertisement layout optimized for small screens. Include a bold, high-contrast headline or slogan, a short block of engaging flavor text, and subtle supporting copy if space allows. Ensure all text is legible at small sizes with clean spacing and strong visual hierarchy. Use flattering, high-quality lighting, refined composition, and a modern editorial aesthetic. Maintain visual clarity, balanced framing, and an immediately recognizable advertising look. The result should be a full view of the page with a relevant background behind the page."
   },
   {
+    name: "AESOPS FABLE",
+    category: ["STORYBOOK", "KIDS", "LESSON"],
+    message: "Take a picture and transform the subject into a character within an Aesop’s fable. Select a fable based on the subject’s appearance, posture, expression, or perceived traits (such as confidence, cleverness, laziness, pride, patience), OR use a specific fable provided via external master prompt.\n\nDepict the subject as a story character (human or animal) fully integrated into a classic fable scene, not as a modern person placed into an illustration. The environment, props, and other characters should visually support the chosen fable.\n\nRender the image as a single illustrated storybook page. Ensure the entire page is fully visible within the frame, including margins, illustration, and text area. Do not crop or cut off any part of the page.\n\nInclude the **title of the selected fable** prominently and clearly within the page layout, such as at the top of the page or in a decorative storybook header. The title must be fully visible and immediately identifiable to the viewer.\n\nInclude the moral of the fable displayed clearly within the page, such as on a parchment banner, book page caption, or decorative text panel. The moral must be short, legible, and directly related to the scene.\n\nUse a traditional storybook illustration style inspired by classic engraved or painted children’s book art. Keep the composition simple, symbolic, and clearly readable on a small screen. The final image should feel like a complete, intact page from an illustrated fable book."
+  },
+  {
     name: "AFRICAN TRIBAL MASK",
+    category: ["ART", "CULTURAL", "MASK"],
     message: "Take a picture and transform the image into African tribal mask art. Simplify facial features, use bold geometric shapes, earthy colors, carved-wood textures, and ceremonial symbolism while keeping the subject recognizable."
   },
   {
     name: "ALIEN",
+    category: ["SCI FI", "CREATURE", "FANTASY"],
     message: "Take a picture and transform the subject into an alien being while preserving the subject’s core facial structure and identity. Introduce extraterrestrial traits such as altered skin color or texture, subtle bioluminescence, unusual eyes, or refined anatomical variations that still clearly resemble the subject. Place the subject naturally into a sci-fi environment such as an alien world, spacecraft interior, or futuristic city. Match lighting, perspective, and atmospheric effects so the subject appears genuinely part of the scene. Render the final image with photorealistic sci-fi realism and cinematic depth."
   },
   {
     name: "ALIENS",
+    category: ["MOVIES", "SCI FI", "HORROR"],
     message: "Take a picture and place the subject in a scene from the movie Aliens. Dark sci-fi realism. Make it photorealistic."
   },
   {
     name: "ALTER EGO",
+    category: ["PERSONALITY", "TRANSFORMATION", "CREATIVE"],
     message: "Take a picture and transform the image to reveal an alternate version of the subject. Same facial identity, different personality and visual style."
   },
   {
     name: "AMBIGRAM",
+    category: ["TEXT", "ART", "TYPOGRAPHY"],
     message: "Take a picture of the given text and create a true ambigram that reads exactly the same when viewed upside-down (rotated 180 degrees). Use creative typography and design, but do not mirror, flip, or distort the letters in a way that changes the readable order. Randomize styles, fonts, and decorative elements for each attempt, but ensure the text is fully legible and maintains identical meaning when inverted. Include only the ambigram in the image, no extra text or captions."
   },
   {
     name: "AMERICAN GOTHIC",
+    category: ["ART", "PAINTING", "CLASSIC", "PARODY"],
     message: "Take a picture and recreate the classic painting American Gothic. Replace one figure in the painting with the subject. If the subject is male, replace the male figure. If the subject is female, replace the female figure. If two subjects are present, replace both figures accordingly. Preserve the iconic composition, clothing style, background, and serious tone of the original artwork while integrating the subject naturally. The final image should be instantly recognizable as American Gothic with a humorous modern twist."
   },
   {
     name: "ANAMORPHIC ART",
+    category: ["ART", "ILLUSION", "3D"],
     message: "Take a picture and create an anamorphic image that appears distorted unless viewed from a specific angle. Correct perspective reveals the subject."
   },
   {
     name: "ANDY WARHOL",
+    category: ["ART", "POP ART", "ARTIST"],
     message: "Take a picture in the style of Andy Warhol. Pop Art with the use of four duplicated images in a frame."
   },
   {
     name: "AOL AIM PROFILE",
+    category: ["RETRO", "INTERNET", "2000S"],
     message: "Take a picture and transform it into a tiny, low-resolution AOL Instant Messenger profile photo. Crop awkwardly, reduce detail, and add heavy compression. The subject should remain recognizable but pixelated and informal."
   },
   {
-  name: "ARCHEOLOGICAL PHOTO",
-  message: "Take a picture and transform it into an archeological field documentation sheet. Include a large, visible photograph of the subject as the central element, printed on aged paper. The photo should appear weathered, sun-faded, dusty, and slightly warped, as if it has been exposed at an excavation site for weeks. Identify the subject’s species or type using scientific or pseudo-scientific labeling. Add subtle field notes, specimen numbers, scale bars, and catalog markings around the photo. The final image should feel like an authentic archeological record centered around the photograph."
+    name: "ARCHEOLOGICAL PHOTO",
+    category: ["MASTER PROMPT", "SCIENCE", "DOCUMENTARY"],
+    message: "Take a picture and transform it into an archeological field documentation sheet. Include a large, visible photograph of the subject as the central element, printed on aged paper. The photo should appear weathered, sun-faded, dusty, and slightly warped, as if it has been exposed at an excavation site for weeks. Identify the subject’s species or type using scientific or pseudo-scientific labeling. Add subtle field notes, specimen numbers, scale bars, and catalog markings around the photo. The final image should feel like an authentic archeological record centered around the photograph."
   },
   {
     name: "ARCHITECTURAL SCALE MODEL",
+    category: ["MINIATURE", "ARCHITECTURE", "MODEL"],
     message: "Take a picture and convert the scene into an architectural scale model. Subjects and objects should appear as miniature figurines within a foam-board or plastic model environment. Use clean edges, painted surfaces, and overhead lighting typical of design studios. Maintain proportional scale across all elements."
   },
   {
     name: "ARCHIVED PHOTO",
+    category: ["VINTAGE", "DAMAGED", "HISTORICAL"],
     message: "Take a picture and transform it into a damaged archival photograph. Add scratches, dust, faded tones, and slight warping. Portions of the image may be torn, stained, or missing. Use muted sepia or desaturated colors. The subject should feel historical, fragile, and partially lost to time."
   },
   {
     name: "ART BRUT",
+    category: ["ART", "NAIVE", "OUTSIDER"],
     message: "Take a picture and transform the image into Art Brut (outsider art) style painting. Use raw lines, naive proportions, uneven coloring, and spontaneous visual energy while preserving the subject."
   },
   {
     name: "ART DECO",
+    category: ["ART", "DESIGN", "VINTAGE", "GEOMETRIC"],
     message: "Take a picture and transform the image into Art Deco poster style. Bold geometric shapes, metallic or pastel palette, stylized subject, decorative typography optional."
   },
   {
     name: "ART NOUVEAU",
+    category: ["ART", "DESIGN", "VINTAGE", "ORGANIC"],
     message: "Take a picture and transform the image into a into an Art Nouveau illustration. Preserve the subject's identity, facial features, proportions, and pose. Use flowing, organic lines inspired by natural forms such as vines, flowers, and hair. Emphasize elegant curves, ornamental borders, and rhythmic linework. Flat or softly shaded color areas with muted, harmonious palettes. Decorative background integrated into the composition rather than separate. Poster-like composition inspired by Alphonse Mucha and late 19th-century European Art Nouveau. Painterly illustration style, not photorealistic. No modern elements, no Art Deco geometry, no hard angles."
   },
   {
     name: "ASCII ART",
+    category: ["TEXT", "RETRO", "COMPUTER"],
     message: "Take a picture and render it in ASCII format, where shapes and tones are created using punctuation and letters and using only keyboard characters to form the image. Built entirely from text characters, using letters, numbers, and symbols arranged in clever patterns. The image has a retro, digital feel, like something you would see on an old computer screen or printed in a vintage tech lab."
   },
   {
     name: "ASHCAN SCHOOL",
+    category: ["ART", "PAINTING", "REALISM"],
     message: "Take a picture and transform the image into an Ashcan School style painting. Gritty realism, urban atmosphere, loose brushwork, and muted tones. Subject feels candid and grounded."
   },
   {
     name: "AUSTRALIAN ABORIGINAL DOT PAINTING",
+    category: ["ART", "CULTURAL", "INDIGENOUS"],
     message: "Take a picture and transform the image into Aboriginal dot painting style. Use dot patterns, symbolic shapes, earthy palettes, and rhythmic repetition while preserving the subject’s silhouette."
   },
   {
   name: "AVATAR",
+  category: ["MOVIES", "SCI FI", "CREATURE"],
   message: "Take a picture and transform the subject into a realistic Na’vi character from the movie Avatar. Preserve the subject’s recognizable facial structure, eye shape, expressions, body proportions, and personality while adapting them to authentic Na’vi anatomy—tall, slender physique, elongated limbs, blue bioluminescent skin with natural striping, feline nose structure, large expressive eyes, pointed ears, and long braided hair with neural queue. Translate the subject’s clothing and accessories into culturally accurate Na’vi attire and materials. Match the exact cinematic lighting, color grading, skin translucency, subsurface scattering, and environmental interaction seen in Avatar. The subject must appear fully native to Pandora, not human-painted blue, with realistic scale, shadows, and immersion in the world."
   },
   {
     name: "BALLOON",
+    category: ["TOY", "INFLATABLE", "FUN"],
     message: "Take a picture in the style of a balloon animal or character.  Shiny latex texture."
   },
   {
     name: "BARBIE WORLD",
+    category: ["TOY", "PINK", "DOLL", "POP CULTURE"],
     message: "Take a picture and transform the entire scene into a bright, stylized Barbie World composed entirely of physical toys.\n\nAnalyze the subject and environment and apply the following transformations:\n\n• If the primary subject appears feminine, transform them into a Barbie doll.\n• If the primary subject appears masculine, transform them into a Ken doll.\n\nThe doll’s face should retain the subject’s recognizable facial structure, proportions, and expression, but be rendered with smooth plastic skin, simplified features, glossy eyes, and the polished look of a physical Barbie or Ken toy.\n\nEnvironmental logic:\n• If the scene appears indoors, place the subject inside a Barbie Dreamhouse interior with pastel-colored plastic furniture, toy-like proportions, and miniature physical details.\n• If the scene appears outdoors, place the subject inside or next to a Barbie convertible with realistic toy textures, bright colors, and a glossy finish.\n\nUse high-key lighting, realistic toy textures, reflections, and scale consistency to ensure the subject and environment appear as physical toys rather than drawings or digital illustrations. Keep the composition bold, cheerful, and clearly readable on small screens."
   },
   {
     name: "BAROQUE",
+    category: ["ART", "PAINTING", "CLASSIC", "DRAMATIC"],
     message: "Take a picture in the style of Baroque painting. Dramatic lighting, deep contrasts, dynamic composition, ornate details, and theatrical visual richness."
   },
   {
     name: "BAUHAUS",
+    category: ["ART", "DESIGN", "MODERN", "GEOMETRIC"],
     message: "Take a picture and transform the image into Bauhaus style art. Reduce the subject to functional geometric forms, clean lines, primary colors, and minimal composition."
   },
   {
     name: "BBS DOWNLOAD",
+    category: ["RETRO", "INTERNET", "90S", "GLITCH"],
     message: "Take a picture and transform it into the experience of a slow-loading 1990s internet image over a dial-up connection. Render the image as if it is partially downloaded, frozen mid-load, or failing to fully render. Randomly select and display exactly ONE of the following on-screen status messages, styled in a simple early-web or system monospace font:\n• \"Stuck at 87%\"\n• \"Connection Lost\"\n• \"Retrying…\"\n• \"Image Failed to Load (Alt Text Only)\"\n• \"Low Bandwidth Mode\"\n\nVisually reflect the selected status message in the image rendering:\n- If partially loaded, reveal only sections of the image using horizontal loading bands, blocky color fills, or coarse pixel previews.\n- If failed, leave large portions blank, replaced by placeholder space, broken image icons, or alt-text-style text.\n- If retrying, show uneven clarity with duplicated or misaligned segments. Preserve the subject’s recognizable features even when incomplete. Simulate authentic early-internet artifacts such as compression noise, color banding, abrupt resolution jumps, and unstable alignment. Include a minimal progress indicator or percentage counter when appropriate, ensuring all text is large and legible on small screens. The final image should feel frozen in time—nostalgic, frustrating, and unmistakably mid-download."
   },
   {
+  name: "BIBLE VERSE",
+  category: ["RELIGIOUS", "LESSON"],
+  message: "Take a picture and analyze the subject’s appearance, expression, posture, and surrounding context. Select a Bible verse that best reflects the situation, moral lesson, warning, encouragement, or judgment suggested by the image, OR use a specific verse provided via external master prompt.\n\nTransform the image into a reverent, illustrated or photographic composition where the subject is visually connected to the chosen verse. The subject may appear within a symbolic scene, subtle vignette, or respectful setting that reinforces the meaning of the passage.\n\nInclude the full text of the selected Bible verse clearly displayed within the image, along with the book, chapter, and verse reference (for example: Proverbs 17:28). Ensure the text is legible on a small screen.\n\nUse a restrained, respectful tone. Avoid parody. The final image should feel like a devotional illustration or inspirational Bible page where the verse meaningfully corresponds to the subject’s traits or actions."
+  },
+  {
     name: "BIBLICAL ILLUSTRATION",
+    category: ["ART", "RELIGIOUS", "MEDIEVAL"],
     message: "Take a picture in the style of a Medieval Biblical illustration. Illuminated manuscript style.  The result should be a full view of the illustration with a relevant background behind the illustration."
   },
   {
     name: "BILLBOARD",
+    category: ["COMMERCIAL", "MASTER PROMPT", "ADVERTISING", "LARGE FORMAT"],
     message: "Take a picture and transform it into a large outdoor billboard featuring the subject. Include a clearly readable humorous headline and a calling number that can be appended via an external master prompt. The billboard should appear photographed from the street, with realistic perspective, lighting, shadows, and surrounding environment (sky, buildings, street). Ensure the subject is integrated naturally into the billboard image, and the text and number are large and legible even on a small screen."
   },
   {
     name: "BIRTHDAY CARD",
+    category: ["GREETING", "MASTER PROMPT", "CELEBRATION", "CARD"],
     message: "Take a picture and transform it into a polished birthday greeting card design. Place the subject as the centerpiece of the card, integrated naturally into a celebratory scene with decorations such as balloons, streamers, confetti, or candles appropriate to the birthday theme. Generate a warm, fun, or heartfelt birthday message using flavor text inspired by the subject’s appearance, personality, and surroundings. Incorporate any externally provided birthday details naturally into the design. Ensure the full birthday message is clearly visible within the image. The final result should look like a professionally designed greeting card with cohesive layout, festive lighting, and joyful atmosphere.  The result should be a full view of the card with a relevant background behind the card."
   },
   {
     name: "BLADE RUNNER",
+    category: ["MOVIES", "SCI FI", "CYBERPUNK"],
     message: "Take a picture and transform the image into a Blade Runner-inspired cinematic scene. Rain-soaked neon city, fog, reflections. High contrast, cyber-noir lighting. Photorealistic sci-fi atmosphere."
   },
   {
     name: "BLUEPRINT",
+    category: ["TECHNICAL", "DESIGN", "ARCHITECTURE"],
     message: "Take a picture and transform the image into a blueprint technical drawing. White linework on blue background. Precise, schematic style."
   },
   {
+    name: "BOBBLEHEAD",
+    category: ["TOY", "HUMOR", "MASTER PROMPT"],
+    message: "Take a picture and transform the subject into a collectible bobblehead figurine. The head must be fully **toy-like**, made of smooth, glossy plastic with subtle reflections and soft highlights — it should **look like a manufactured bobblehead head**, not a human head. Enlarge the head relative to the body in true bobblehead style, with slightly exaggerated cartoonish features while keeping the subject recognizable. Simplify details for a playful, toy-like appearance.\n\nRender the body smaller, proportionally correct for a bobblehead, with a plastic finish and soft shadows to make it look tangible. Place the bobblehead on a small pedestal, fully visible in the frame.\n\nGenerate the honorary title dynamically using humorous flavor text derived from the subject’s traits, pose, expression, clothing, or environment. For example, 'Supreme Caffeine Conqueror' for someone holding a coffee cup, or 'Master of Stillness' for someone sitting cross-legged. Keep the title bold, funny, and absurd.\n\nEnsure the full bobblehead and pedestal are visible, fully contained in the frame, and clearly readable on small screens. The final image should feel playful, exaggerated, **immediately humorous**, and unmistakably a **toy bobblehead** rather than a human figure."
+  },
+  {
     name: "BODY TYPE INVERSION",
+    category: ["TRANSFORMATION", "BODY", "SWAP"],
     message: "Take a picture and transform the subject into a contrasting physique while preserving the subject’s recognizable facial structure, identity, posture, and personality. Adjust overall body proportions in a realistic and natural way, maintaining anatomical plausibility, balanced proportions, and consistent lighting. Adapt clothing to fit the updated physique naturally. Ensure the subject remains clearly identifiable and fully integrated into the scene, rendered with photorealistic detail."
   },
   {
     name: "BOKEH PHOTOGRAPHY",
+    category: ["PHOTOGRAPHY", "ARTISTIC", "BLUR"],
     message: "Take a picture in the style of Bokeh photography. Give it the aesthetic quality of the blur in the out-of-focus areas of a photograph with soft, circular light spots. Wide aperture and a fast lens, with the subject at a different focal plane from the background. Creates a shallow depth of field, blurring the background to make the subject stand out and adding a dreamy or artistic quality to the image."
   },
   {
     name: "BREAKING NEWS",
+    category: ["NEWS", "TV", "DRAMATIC", "MASTER PROMPT"],
     message: "Take a picture and transform it into a realistic breaking-news television broadcast scene. Place the subject as the central focus of the news coverage, integrated naturally into the scene. Design an authentic news layout including lower-third graphics, headline banners, and on-screen text. Generate a breaking-news headline and brief caption using flavor text inspired by the subject’s appearance, actions, or surroundings, incorporating any externally provided details naturally. Ensure all text is clearly readable within the image. Match professional broadcast lighting, camera angles, and visual polish so the image convincingly resembles a real live news report."
   },
   {
     name: "BUMPER STICKER",
+    category: ["HUMOR", "CAR", "TEXT", "MASTER PROMPT"],
     message: "Take a picture and place a realistic bumper sticker on a car or object featuring the subject. The sticker should contain a humorous saying based on the subject’s traits, which can be supplied via external master prompt. Ensure the sticker looks physically attached, with correct perspective, lighting, texture, and slight surface curvature. The subject should be recognizable in the sticker image if included, and the overall composition should read instantly as a real bumper sticker."
   },
   {
   name: "BUT CAN IT PLAY DOOM?",
+  category: ["RETRO", "GAMING", "90S", "PIXEL"],
   message: "Take a picture and transform the subject into a classic early-1990s first-person shooter space marine rendered as a low-resolution pixel-art sprite. Preserve recognizable facial features, body proportions, and clothing identity while adapting them into a gritty, combat-ready sprite suitable for pseudo-3D FPS gameplay. Render the subject using chunky pixel shading, a limited retro color palette, visible dithering, and a forward-facing or slightly angled sprite orientation typical of early PC shooters. The character must appear natively integrated into the scene, not composited. Compose the image as a static gameplay frame from a first-person shooter perspective inside a dark industrial sci-fi environment with metallic corridors, harsh lighting, and ominous atmosphere. Include a bottom-of-screen retro FPS status interface featuring generic numeric indicators for health, armor, and ammunition, along with a small pixel-art player portrait that reflects the subject’s condition. Ensure the entire image reads clearly as a single authentic gameplay screenshot from a 1990s-era PC shooter, with crisp pixel edges, strong silhouette clarity, and cohesive retro aesthetics optimized for small screens."
   },
   {
     name: "BYZANTINE ICONOGRAPHY",
+    category: ["ART", "RELIGIOUS", "MEDIEVAL", "GOLD"],
     message: "Take a picture and transform the image into a Byzantine-style religious icon. Place the subject in the center with a gilded halo, frontal pose, and flat symbolic colors. Add ornamental borders. The subject remains recognizable while adopting the solemn, formal, and spiritual style."
   },
   {
     name: "CANDY",
+    category: ["FOOD", "SWEET", "TRANSFORMATION", "COLORFUL"],
     message: "Take a picture and make everything made out of candy. Glossy sweets, playful textures."
   },
   {
     name: "CARICATURE",
+    category: ["HUMOR", "ART", "EXAGGERATED"],
     message: "Take a picture and make it a caricature. Defined by exaggerated features, bold expressions, and a humorous twist while preserving likeness. It captures the essence of a person or scene in a fun, over-the-top way, like something you would get from a street artist at a fair, bursting with personality and charm."
   },
   {
     name: "CELTIC ART",
+    category: ["ART", "CULTURAL", "MEDIEVAL", "KNOTS"],
     message: "Take a picture and convert it into a Celtic art piece inspired by the Book of Kells; highly detailed, intricate knotwork, flowing lines, and mystical geometry with the visual language of ancient Celtic art; ornate patterns and symbolic forms."
   },
   {
     name: "CERAMIC FIGURINE",
+    category: ["TOY", "COLLECTIBLE", "MINIATURE"],
     message: "Take a picture and transform the subject into a small ceramic figurine. The subject should appear glazed, hand-painted, and slightly imperfect, like a decorative shelf figurine. Use realistic reflections, chips, and glaze texture so it looks like a real ceramic object photographed on a table or shelf."
   },
   {
     name: "CERAMIC TILE",
+    category: ["ART", "MOSAIC", "DECORATIVE"],
     message: "Take a picture and convert the image into painted ceramic tiles. Glossy glaze, repeating patterns."
   },
   {
     name: "CHARACTER BOARD",
+    category: ["HUMOR", "TOURIST", "CUTOUT"],
     message: "Take a picture and transform it into a classic tourist character board photo. Place the subject’s face inside a cut-out hole of a painted character illustration, while the rest of the body is a flat, illustrated scene. The board may depict a humorous, heroic, historical, or themed character. Align the subject’s face naturally with the cut-out and slightly exaggerate expression for comedic effect. The painted board should look weathered or hand-painted, as if found at a tourist attraction. The final image should feel playful, kitschy, and instantly recognizable as a face-in-the-hole photo."
   },
   {
     name: "CHARCOAL",
+    category: ["ART", "DRAWING", "SKETCH"],
     message: "Take a picture and convert the image into a detailed charcoal sketch. Rich grayscale tones, textured shading, and expressive strokes on paper."
   },
   {
     name: "CHILDHOOD VERSION",
+    category: ["AGE", "TRANSFORMATION", "YOUNG"],
     message: "Take a picture and depict the subject as a child while preserving recognizable traits. Soft lighting, nostalgic tone."
   },
   {
     name: "CHILD SKETCH ARTIST",
+    category: ["ART", "NAIVE", "CHILD LIKE"],
     message: "Take a picture and make the subject look like a childlike black and white sketch using simple shapes as if drawn by a six year old."
   },
   {
     name: "CHINESE INK WASH",
+    category: ["ART", "PAINTING", "ASIAN", "INK"],
     message: "Take a picture and transform the image into a traditional Chinese ink wash painting. Use flowing brushstrokes, monochrome tones, soft gradients, and poetic negative space."
   },
   {
     name: "CHOCOLATE SCULPTURE",
+    category: ["FOOD", "SCULPTURE", "SWEET"],
     message: "Take a picture and transform the subject into a sculpted chocolate figure. The chocolate should appear glossy, slightly textured, and solid, with realistic reflections and subtle imperfections from molding.\n\nInclude a clearly visible bite taken from the subject, showing the inner texture of the chocolate. Preserve the subject’s recognizable facial structure and details through the chocolate form while maintaining realistic thickness and volume.\n\nThe subject should appear as a real chocolate sculpture placed on a surface, with appropriate shadows and lighting. Avoid CGI or drawn appearance. Ensure the composition is readable on a small screen and the chocolate looks physically edible."
   },
   {
     name: "CINEMATIC HORROR",
+    category: ["HORROR", "MOVIES", "DARK"],
     message: "Take a picture and transform the subject into a cinematic horror character while preserving the subject’s recognizable facial structure, body proportions, and identity. Apply unsettling but non-graphic visual traits such as desaturated or ashen skin tones, darkened eye areas, an intense or vacant gaze, and subtly distressed clothing.  Ensure the subject appears physically present in the scene and fully integrated with the surroundings. Render the final image with photorealistic detail and a suspenseful horror aesthetic."
   },
   {
     name: "CITY IN TIME",
+    category: ["MASTER PROMPT", "TRAVEL", "HISTORICAL", "LOCATION"],
     message: "Take a picture and place the subject standing naturally within a realistic urban environment. The city, location, and date are defined externally. Integrate the subject seamlessly into the scene so they appear physically present, with correct scale, perspective, lighting, shadows, and reflections. Match architecture, street layout, vehicles, signage, clothing styles, weather, and overall atmosphere appropriate to the specified city and date. Preserve the subject’s facial identity, proportions, posture, and personality while making the scene photorealistic and historically or contemporarily accurate."
   },
   {
     name: "CLAYMATION",
+    category: ["ANIMATION", "CLAY", "STOP MOTION"],
     message: "Take a picture and transform the image into claymation-style. Characters appear sculpted from clay with fingerprints and textures."
   },
   {
     name: "CLEANUP CHAOS",
+    category: ["UTILITY", "ROOM", "TRANSFORMATION"],
     message: "Take a picture of a room or indoor space. Analyze the scene to determine whether it appears mostly clean or messy.\n\nIf the room appears messy or cluttered, transform it into a clean, organized version of the same space. Remove clutter, straighten objects, clean surfaces, neatly arrange items, and improve overall order while preserving the original layout, furniture, and lighting.\n\nIf the room appears clean or orderly, transform it into a realistically messy version. Add believable clutter such as scattered clothes, papers, cups, toys, or everyday items. Introduce mild disorder without destroying the room or making it unsafe.\n\nMaintain realism, consistent lighting, and the same camera perspective. The transformation should feel like the same room before and after tidying or neglect, and remain clearly readable on a small screen."
   },
   {
     name: "COLLAGE",
+    category: ["ART", "MIXED MEDIA", "PAPER"],
     message: "Take a picture in the style of an artistic paper collage with visible cut edges and layered materials."
   },
   {
     name: "COLLECTIBLE TOY",
+    category: ["TOY", "PACKAGING", "COLLECTIBLE"],
     message: "Take a picture and transform the subject into a collectible toy encased inside its original packaging. Adapt the packaging style to match the type of toy: for example, a car becomes a Matchbox or Hot Wheels package, an action figure or superhero becomes a classic action figure box, a person becomes a Barbie-style doll package, etc. Use the subject’s characteristics, clothing, and personality to inspire the toy design and accessories. Generate flavor text and captions on the packaging based on the subject’s appearance, traits, and surroundings, making it feel like an authentic collectible. Ensure the subject remains recognizable while fully integrated as a toy. Render the final image in high detail with realistic reflections, packaging materials, and lighting, so it looks like a real collectible ready for display."
   },
   {
     name: "COMIC SUPERHERO",
+    category: ["COMICS", "SUPERHERO", "ACTION"],
     message: "Take a picture and transform the subject into a superhero inspired by their own traits, personality, or clothing. Preserve the subject’s recognizable facial features and body while designing a unique superhero identity based on what they are wearing or their notable characteristics. The superhero must wear a flowing cape integrated naturally into the costume. Show a full comic-book page with multiple panels depicting the subject in action, using powers or skills derived from their personal traits. Bold inks, vibrant colors, dynamic composition, and expressive onomatopoeia. Ensure the subject remains clearly identifiable while fully integrated into the comic-book superhero narrative."
   },
   {
+    name: "COMPANY BADGE",
+    category: ["OFFICE","HUMOR","DOCUMENT","PHOTO EFFECT", "MASTER PROMPT"],
+    message: "Take a picture and transform the subject into an authentic corporate employee ID badge.\n\nThe final image must show the **entire badge fully visible** within the frame, oriented vertically or horizontally like a real workplace ID. Include realistic badge proportions, rounded corners, clip hole or lanyard slot, and slight plastic glare or lamination texture. The badge should appear photographed or scanned flat, not floating in space.\n\nPlace the subject’s photo in a standard ID photo area. The portrait should look like a real badge photo: neutral lighting, centered framing, simple background, and mild compression or sharpening typical of office badges.\n\nInclude the following badge details, all rendered clearly and legibly:\n• **Employee Name:** Generate a humorous but plausible name based on the subject’s appearance, expression, or clothing (unless overridden by external master prompt).\n• **Job Title:** Create a funny or exaggerated job title inspired by the subject’s visible traits or environment (e.g., \"Senior Snack Analyst,\" \"Head of Vibes,\" \"Chief Button Presser\").\n• **Employee ID Number:** Use a fictional numeric or alphanumeric code.\n• **Department:** Optional, humorous department name derived from context.\n\nInclude a **company name and logo**:\n• If a real company logo or branding is visible in the image, adapt the logo.\n• If a company name or logo is provided via external master prompt, use that name and create a believable logo mark to match.\n\nAdd small realistic badge elements such as barcodes, QR codes, issue dates, expiration dates, or security stripes. Text should look official but contain subtle humor when read closely.\n\nEnsure the badge feels professionally designed yet gently ridiculous. Avoid overt meme styling. The final image should feel like a real corporate badge that someone accidentally made funny, and it must be clearly readable on a small screen."
+  },
+  {
     name: "CONNECT THE DOTS",
+    category: ["PUZZLE", "ACTIVITY", "LINE ART"],
     message: "Take a picture and transform it into a classic printable connect-the-dots puzzle. Reduce the image to a clean line-art outline that captures the essential shape and silhouette of the subject while removing unnecessary detail.\n\nPlace numbered dots along the outline and key interior contours in a **logical sequential order starting with number 1**, so that connecting the dots in order will clearly reveal the subject. Dots should be large, evenly spaced, and easy to follow.\n\nShow very minimal lines or connecting guides—only enough to hint at the outline if necessary, but primarily rely on the numbered dots. Avoid background details, shading, or other guides. Use high-contrast dots suitable for printing. Do not include text, instructions, or labels. The final image should resemble a traditional connect-the-dots puzzle where the user draws all connecting lines by hand, always beginning with dot 1."
   },
   {
     name: "CONSTELLATION",
+    category: ["SPACE", "STARS", "NIGHT SKY"],
     message: "Take a picture and transform the subject into a living constellation in the night sky. Reimagine the subject’s silhouette, facial features, and pose as a pattern of glowing stars connected by faint celestial lines, while keeping their identity recognizable. Surround the subject with a deep, cosmic backdrop filled with nebulae, subtle stardust, and distant galaxies. Use soft glows, luminous highlights, and gentle gradients to create a magical, astronomical aesthetic. The subject should appear formed entirely from stars and light, as if they are part of the universe itself, rendered with crisp detail and awe-inspiring atmosphere."
   },
   {
     name: "CONSTRUCTIVISM",
+    category: ["ART", "DESIGN", "SOVIET", "GEOMETRIC"],
     message: "Take a picture and transform the image into Constructivism style art. Bold geometry, diagonal compositions, limited color palettes, and graphic poster-like structure."
   },
   {
+    name: "COPY MACHINE COPY",
+    category: ["OFFICE","RETRO","HUMOR","DEGRADED"],
+    message: "Take a picture and transform it into an authentic photocopier copy made by pressing the subject directly against the copier glass.\n\nThe final image must resemble a single sheet of copier paper viewed flat and fully visible within the frame, including paper edges and margins. Do not crop the page.\n\nThe subject should appear distorted from being pressed against the glass: flattened features, slightly squashed face or objects, widened nose, compressed cheeks, stretched hands or fingers, and uneven contact areas. The distortion should feel physical and silly, not warped digitally.\n\nApply classic photocopier artifacts: harsh black-and-white or muddy grayscale tones, blown highlights, crushed shadows, toner speckling, faint streaks, edge shadows from the copier lid, uneven exposure, and slight skew or rotation. Include faint dust marks or smudges typical of a well-used office copier.\n\nLighting should feel internal to the copier — flat, overexposed, and directionless — not like studio lighting. The background should be blank or show subtle shadows from the copier lid.\n\nOptionally include a small copier interface imprint or margin text such as page numbers, contrast indicators, or misaligned registration marks, rendered faintly and partially cut off.\n\nIf external master prompt text is provided, use it to influence the subject’s pose (e.g., face, hands, object pressed to glass) or tone of humor. The result should feel unmistakably like a dumb, impulsive office photocopy — absurd, tactile, and clearly readable on a small screen."
+  },
+  {
+    name: "CUBAN ART STYLE",
+    category: ["ART", "PAINTING", "MODERN"],
+    message: "Take a picture and transform it into a Cuban art style illustration inspired by Cuban Modernism and Afro-Cuban visual traditions. Use bold tropical colors, strong outlines, flattened perspective, and expressive shapes.\n\nIncorporate cultural rhythms through movement, pattern, and color. The subject should feel integrated into a warm, vibrant Cuban environment, with subtle influences of Afro-Cuban symbolism, music, and everyday life.\n\nThe final image should feel expressive, soulful, colorful, and culturally rich rather than realistic or photographic."
+  },
+  {
     name: "CUBISM",
+    category: ["ART", "PAINTING", "MODERN", "GEOMETRIC"],
     message: "Take a picture in the style of Cubist Art. Break objects into geometric forms and reassemble them from multiple viewpoints simultaneously, challenging traditional perspective and depth to emphasize the two-dimensional canvas."
   },
   {
     name: "CYBERPUNK",
+    category: ["SCI FI", "NEON", "FUTURISTIC"],
     message: "Take a picture and transform the image into a cyberpunk scene. Neon lighting, futuristic city elements, holographic accents, and high-contrast color palette. Cinematic night lighting with tech-inspired details."
   },
   {
     name: "DADA",
+    category: ["ART", "SURREAL", "ABSURD"],
     message: "Take a picture and transform the image into a Dada-style collage. Combine cut-and-paste textures, absurd juxtapositions, and fragmented composition. Subject recognizable within surreal elements."
   },
   {
     name: "DALÍ",
+    category: ["ART", "SURREAL", "ARTIST"],
     message: "Take a picture and transform it into a painting of a surreal scene inspired by Salvador Dalí. Preserve the subject’s photographic realism while introducing dreamlike distortions, warped perspectives, melting forms, or impossible juxtapositions. Lighting should feel dramatic and hyper-real. The final image should feel uncanny, symbolic, and visually unsettling while still rooted in the original photo."
   },
   {
     name: "DATING PROFILE",
+    category: ["HUMOR", "SOCIAL MEDIA", "PROFILE", "MASTER PROMPT"],
     message: "Take a picture and create a dating profile–style image of the subject. Present the subject as approachable, charismatic, and recognizable, integrated naturally into a clean and appealing profile-style layout. Generate humorous or charming flavor text and a short bio inspired by the subject’s appearance, clothing, accessories, and surroundings, incorporating any externally provided profile details naturally. Ensure all text is clearly readable within the image. Render the final result with flattering lighting, clear focus, photorealistic detail, and a lively, engaging composition."
   },
   {
+    name: "DEEP THOUGHTS BY JACK HANDEY",
+    category: ["HUMOR", "ABSURD"],
+    message: "Take a picture and transform it into a minimalist, deadpan inspirational-style image inspired by 'Deep Thoughts by Jack Handey.' The subject should appear calm, neutral, or unintentionally serious, regardless of how absurd the final message is.\n\nSelect ONE original 'Deep Thoughts by Jack Handey' quote and present it as the affirmation text. The humor should come from the contrast between the sincere visual tone and the unexpectedly absurd or philosophical text.\n\nCompose the image simply and cleanly: the subject centered or thoughtfully framed, with the quote displayed clearly beneath or overlaid in an understated font. Do not explain the joke. Do not exaggerate expressions. Let the humor remain dry and subtle.\n\nEnsure the entire image and text are fully visible and easily readable on a small screen. The final result should feel like a serious inspirational poster that accidentally delivers an absurd, ironic truth."
+  },
+  {
     name: "DICTIONARY",
+    category: ["TEXT", "REFERENCE", "DEFINITION"],
     message: "Take a picture and transform it into a dictionary-style entry. Include a small, clearly visible photograph of the subject placed beside or beneath the definition, similar to a modern illustrated dictionary. Allow externally provided language to define the entry name. Use a clean, minimal layout with strong typography. The photo should act as a visual reference for the word, reinforcing the definition."
   },
   {
     name: "DISNEY",
+    category: ["ANIMATION", "CARTOON", "CLASSIC", "DISNEY"],
     message: "Take a picture in the style of a hand-drawn Disney character portrait from the golden age of animation."
   },
   {
+    name: "DOLLAR BOB",
+    category: ["DOCUMENT","HUMOR","VINTAGE","PARODY", "MASTER PROMPT"],
+    message: "Take a picture and transform it into a parody paper currency bill with the subject’s face replacing the central portrait.\n\nThe final image must show the **entire bill fully visible** within the frame, flat and uncropped, with realistic proportions, borders, and margins of a classic U.S.-style dollar bill. Do not zoom in or cut off edges.\n\nRender the subject’s face as an engraved-style portrait suitable for currency printing. Preserve recognizable facial structure and expression, but translate it into fine linework, cross-hatching, and stippling so it looks printed, not photographic. The portrait should feel integrated into the bill design, not pasted on.\n\nDesign the bill with traditional currency elements:\n• Ornamental borders and scrollwork\n• Decorative frames and rosettes\n• Serial numbers (fictional)\n• Treasury-style seals (parody, non-official)\n• Micro-pattern textures and guilloché lines\n\nReplace all real-world identifiers with humorous equivalents:\n• Use a fictional denomination (e.g., \"$1 DOLLAR BOB,\" \"$3 DOLLAR BOB,\" \"$100 DOLLAR BOB\")\n• Replace national mottos with absurd or playful phrases inspired by the subject’s traits or posture\n• Include a humorous title beneath the portrait instead of a real name (e.g., \"In Snacks We Trust,\" \"Certified Snack Authority\")\n\nColor palette should resemble classic green-and-black currency ink on aged paper. Add subtle wear such as folds, creases, ink bleed, or slight yellowing for realism.\n\nIf external master prompt text is provided, use it to influence the denomination, slogan, title, or tone of the bill.\n\nAll text, seals, and symbols must be clearly fictional and parody-based. The final image should feel like a real banknote someone printed as a joke — detailed, tactile, nostalgic, and clearly readable on a small screen."
+  },
+  {
     name: "DOUBLE EXPOSURE",
+    category: ["PHOTOGRAPHY", "ARTISTIC", "LAYERED"],
     message: "Take a picture and create a double-exposure composition.    Blend the subject with a secondary scene using transparent overlays. Clear silhouette, balanced negative space. Moody, artistic tone."
   },
   {
     name: "DREAM LOGIC",
+    category: ["SURREAL", "ABSTRACT", "DREAMY"],
     message: "Take a picture and transform the image using dream logic. Disjointed scale, symbolic elements. Unreal but emotionally coherent."
   },
   {
     name: "DRIVERS LICENSE",
+    category: ["HUMOR", "ID", "DOCUMENT", "MASTER PROMPT"],
     message: "Take a picture and create a realistic but clearly fictional driver’s license–style image featuring the subject’s photo. Randomly select a U.S. state and replicate the general visual layout, color scheme, typography style, and design motifs associated with that state’s driver license, while clearly presenting it as a non-functional, artistic replica. Use placeholder information, fictional identifiers, and decorative text rather than real personal data. Preserve the subject’s recognizable facial features and neutral ID-style expression. The final image should resemble a stylized prop or novelty card, not a real or usable identification document."
   },
   {
     name: "DUTCH GOLDEN AGE",
+    category: ["ART", "PAINTING", "CLASSIC", "REALISTIC"],
     message: "Take a picture and transform the image into Dutch Golden Age painting. Realistic textures, warm tones, precise detail, dramatic lighting, and naturalistic surroundings."
   },
   {
     name: "DWARF",
+    category: ["FANTASY", "CREATURE", "RPG"],
     message: "Take a picture and transform the subject into a fantasy dwarf while preserving the subject’s recognizable facial features, expressions, and identity. Adjust proportions to reflect a classic dwarf physique—shorter stature, sturdy build—while maintaining realism. Adapt clothing and gear into a believable fantasy style such as armor, leather, or artisan attire inspired by the subject’s original outfit. Place the subject into a detailed fantasy environment like a mountain hall, forge, or underground city. Use cinematic lighting, rich textures, and realistic materials to ensure the subject feels fully integrated into the fantasy world."
   },
   {
     name: "DYSTOPIAN",
+    category: ["SCI FI", "DARK", "APOCALYPTIC"],
     message: "Take a picture in the style of a Dystopian future. Bleak atmosphere. Make it photorealistic."
   },
   {
     name: "EDO LANDSCAPE",
+    category: ["ART", "ASIAN", "JAPANESE", "LANDSCAPE"],
     message: "Take a picture and transform it in the style of Japanese Edo period landscape prints. Include the subject in the scene while using clean outlines, flat color areas, and traditional compositional elements such as mountains, rivers, or bridges. The final image should feel elegant, balanced, and illustrative."
   },
   {
     name: "ELEMENTAL SELF",
+    category: ["FANTASY", "ELEMENTAL", "MAGICAL"],
     message: "Take a picture of the subject and transform only the subject into a human embodiment of a natural element: fire, water, earth, wind, or lightning. The subject’s body, clothing, and aura should visually integrate the chosen element, flowing naturally with their pose and expression. For fire, incorporate flames, embers, and glowing heat; for water, use flowing currents, ripples, and reflective surfaces; for earth, integrate rocks, soil, foliage, or crystals; for wind, show swirling air currents, leaves, or flowing garments; for lightning, incorporate electric arcs, sparks, and glowing energy. Preserve the subject’s recognizable facial features, identity, and proportions. The background should remain completely normal and unaltered, making the elemental subject clearly stand out. Use dramatic lighting, dynamic motion, and atmospheric effects on the subject only, rendered in ultra-realistic detail with vivid colors, depth, and surreal impact."
   },
   {
     name: "EMBROIDERY",
+    category: ["ART", "TEXTILE", "CRAFTS"],
     message: "Take a picture and transform the image into embroidery art. Thread textures, stitched lines, fabric background."
   },
   {
     name: "EMOJI THIS",
+    category: ["EMOJI", "MODERN", "EXPRESSIVE"],
     message: "Take a picture and reinterpret the subject using expressive emoji language while preserving the photo’s composition, body posture, clothing, and context. Emojis should visually translate what is seen in the image using the following SIX priority categories, selecting at most ONE emoji from each category when applicable:\n\n1) Face / Emotion (highest priority):\nIf the subject is a human face, replace or overlay the face with ONE emoji matching the apparent expression or mood:\n• Happy / Smiling → 😀 😄 😁 😊\n• Laughing / Playful → 😂 🤣 😆 😹\n• Calm / Relaxed → 🙂 😌 😴 🧘\n• Surprised / Shocked → 😲 😮 😯 😱\n• Sad / Tired → 😢 😞 😔 😪\n• Angry / Intense → 😠 😡 🤬 😤\n• Confused / Dizzy → 😕 🤔 😵‍💫 🌀\n• Love / Affection → 🥰 😍 😘 ❤️\n\n2) Animal (if present):\nIf an animal is visible, include ONE appropriate animal emoji matching species and apparent mood:\n🐶 🐱 🐰 🐭 🐹 🐻 🐼 🐨 🐯 🦊 🐸 🐵 🐔 🐦 🐤 🐢 🐍 🐠 🐟\n\n3) Food & Drink:\nIf food or drink is visible or being consumed, include ONE relevant emoji:\n🍕 🍔 🌭 🌮 🍣 🍩 🍪 🍰 🥐 🥞 ☕ 🍺 🍷 🧃 🥤 🍎 🍌 🍓\n\n4) Objects / Tech / Props:\nIf the subject is holding or interacting with an object, include ONE relevant emoji:\n📱 💻 🎧 📷 🕶️ ⌚ 🎮 📚 💼 🔑 🧸 🎁 🛒\n\n5) Clothing / Accessories:\nIf notable clothing or accessories are present, include ONE emoji that best represents them:\n👕 👗 🧢 👒 👟 👠 👜 🎒 🧥 🧤 🕶️ 👓\n\n6) Activity / Context (lowest priority):\nIf the image clearly implies an activity or setting, include ONE emoji to reflect it:\n🎵 🎸 🎨 🏀 ⚽ 🚲 🎮 🧘 🏖️ 🏕️ 🏙️ ✈️ 🎉\n\nComposition Rules:\n• Use UP TO SIX emojis total, at most ONE per category.\n• Emojis should be large, clear, and visually blended into the scene.\n• Preserve the original photo’s background, body posture, and spatial layout.\n\nThe final image should feel playful, expressive, and instantly readable, as if the photo itself has been translated into emoji language."
   },
   {
     name: "EMOJI EXPLOSION",
+    category: ["EMOJI", "ANIMATED", "EXPRESSIVE"],
     message: "Take a picture and reinterpret the subject using expressive emoji language. Render emojis as animated visual elements with subtle looping motion baked into the image. Match animation style to emotion and context:\n\n• Happy or playful emojis gently bounce or bob\n• Calm emojis softly pulse or breathe\n• Sad emojis slowly drift downward\n• Angry emojis subtly shake or vibrate\n• Surprised emojis pop or wobble briefly\n\nLimit motion to smooth, readable loops suitable for small screens. Preserve body posture, background, and context. The final output should feel alive, playful, and expressive, with animation enhancing—not distracting from—the image."
   },
   {
     name: "ENCYCLOPEDIA",
+    category: ["MASTER PROMPT", "TEXT", "REFERENCE", "EDUCATIONAL"],
     message: "Take a picture and transform it into a fake encyclopedia entry. Include a clear photograph of the subject placed near the top or alongside the text as a reference image. Style the layout like a printed encyclopedia page with columns, captions, and figure labels. Use authoritative yet humorous flavor text describing the subject’s background, significance, or behavior. The photograph should feel like an official illustrative plate supporting the article."
   },
   {
     name: "ERA FILTER",
+    category: ["MASTER PROMPT", "HISTORICAL", "TIME TRAVEL", "VINTAGE"],
     message: "Take a picture and transform the subject and scene to accurately reflect the era specified externally. Adapt clothing, hairstyle, accessories, environment, color palette, materials, technology, and overall visual language to match the chosen historical or cultural era. Preserve the subject’s recognizable facial features, proportions, and identity while blending them naturally into the era’s aesthetic. Ensure lighting, textures, and image quality reflect the photographic or artistic limitations typical of that time period. The final image should appear as if the subject genuinely existed and was photographed in that era, with no modern elements visible."
   },
   {
     name: "ESCHER",
+    category: ["ART", "ILLUSION", "IMPOSSIBLE", "ARTIST"],
     message: "Take a picture and transform the image into an M.C. Escher-inspired impossible space. Non-Euclidean architecture."
   },
   {
     name: "ETCH A SKETCH",
+    category: ["TOY", "RETRO", "LINE ART"],
     message: "Take a picture and recreate the subject as a classic Etch A Sketch drawing displayed inside a realistic Etch A Sketch toy. The entire red Etch A Sketch frame should be visible, including the screen area and the two control knobs at the bottom, so it feels like a photographed physical toy rather than a digital effect.\n\nRender the subject using continuous, thin, single-line strokes characteristic of Etch A Sketch drawings. Use simple outlines and minimal detail while preserving the subject’s recognizable shape and expression. The drawing should appear slightly imperfect, with subtle line wobble and overlaps consistent with manual knob control.\n\nEnsure the background is the Etch A Sketch screen texture, and keep the overall composition clean and centered. Do not add text or extra graphics. The final image should feel nostalgic, tactile, and immediately recognizable on a small screen."
   },
   {
     name: "EXAGGERATED TRAIT",
+    category: ["HUMOR", "CARICATURE", "TRANSFORMATION", "MASTER PROMPT"],
     message: "Take a picture and transform the subject by exaggerating a single physical trait while preserving the subject’s recognizable identity and overall proportions. The exaggerated feature should be visually prominent but anatomically coherent, blending naturally with the subject’s face and body. Adapt lighting, shadows, and perspective so the transformation feels intentional rather than distorted. Integrate the subject seamlessly into the scene, maintaining realism or stylized realism depending on the chosen direction. Ensure the final result feels playful and striking."
   },
   {
     name: "EXPRESSIONISM",
+    category: ["ART", "PAINTING", "EMOTIONAL"],
     message: "Take a picture in the Expressionism artistic movement emphasizing subjective emotions and inner experiences, often distorting reality to convey intense emotions and psychological states."
   },
   {
     name: "EXTREME SPORTS MOMENT",
+    category: ["SPORTS", "ACTION", "DRAMATIC"],
     message: "Take a picture and transform the subject into a randomly selected sporting competition, such as a professional team sport, individual athletic event, or outdoor extreme sport. Depict the subject performing the most dramatic, high-impact moment possible within that sport — for example, a powerful slam dunk, a full sprint at the finish line, a massive aerial maneuver, or a daring ascent up a mountain. Preserve the subject’s recognizable facial features, expression, and identity while adapting clothing, gear, and posture appropriate to the sport. Place the subject in an authentic, dynamic environment with motion, energy, and cinematic lighting so the action feels intense and exhilarating. The scene should capture a peak, frozen-in-time moment of athletic achievement with realistic scale, motion blur, and photorealistic detail."
   },
   {
     name: "FAIRYTALE PAGE",
+    category: ["BOOK", "FANTASY", "ILLUSTRATION"],
     message: "Take a picture and make it into a page from a magical children fairytale book. Like a page pulled from a magical tale, a whimsical world of castles, forests, and enchanted creatures. Soft textures, rich colors, and fairytale-like details giving the image a dreamy, otherworldly feel.  The result should be a full view of the page with a relevant background behind the page."
   },
   {
     name: "FAIRYTALE MORAL",
+    category: ["BOOK", "FABLE", "LESSON"],
     message: "Take a picture and transform it into an illustrated fairytale moral or fable lesson. Depict the subject as the central figure in a symbolic, storybook-style scene. Generate a short moral or lesson written beneath or beside the illustration using flavor text inspired by the subject’s appearance, actions, or surroundings, incorporating any externally provided details naturally. The moral should read like a classic fable conclusion. Ensure all text is clearly visible. The overall tone should feel whimsical, wise, and timeless.  The result should be a full view of the illustration with a relevant background behind the illustration."
   },
   {
     name: "FATE BOOK",
+    category: ["FANTASY", "MYSTICAL", "PROPHECY"],
     message: "Take a picture and transform it into a dramatic illustrated page from an ancient Book of Fate or Destiny. Present the subject as the central figure of a foretold prophecy, depicted in a mythic or symbolic scene that reflects their appearance, posture, and personality. Surround the subject with aged parchment textures, arcane symbols, constellations, or subtle mystical motifs. Generate a short prophecy-style passage written in poetic language inspired by the subject’s visual traits and surroundings, incorporating any externally provided details naturally. Ensure the entire prophecy text is fully visible and integrated into the page design. The final image should resemble a sacred manuscript or legendary tome, with cinematic lighting, rich detail, and an epic, timeless atmosphere.  The result should be a full view of the page with a relevant background behind the page."
   },
   {
     name: "FAUVISM",
+    category: ["ART", "PAINTING", "COLORFUL"],
     message: "Take a picture and transform the image into Fauvist style painting. Intense, vivid colors, simplified forms, and expressive brushwork while keeping the subject identifiable."
   },
   {
     name: "FAX MACHINE COPY",
-    message: "Take a picture and transform it into a low-quality fax machine print. Use high contrast, noise, streaking lines, and warped textural artifacts. The subject should appear degraded but still identifiable."
+    category: ["RETRO","OFFICE","DEGRADED","HUMOR", "MASTER PROMPT"],
+    message: "Take a picture and transform it into an authentic single-page fax machine transmission from the 1980s–1990s.\n\nThe final image must look like a full sheet of faxed paper viewed flat and fully visible within the frame, including margins, header, and body. Do not crop the page.\n\nApply classic fax artifacts: harsh black-and-white contrast, dithering, streaking scan lines, slight skew, uneven toner density, paper curl shadows, compression noise, and faint horizontal banding. The subject should appear embedded within the faxed image area and degraded but still identifiable.\n\nAt the top of the page, include a standard fax cover header with the following sections, all rendered in simple monospace or office-style fonts and visibly degraded:\n\n• **From (Sender):** A humorous sender name, company, fax number, and phone number inspired by the subject’s appearance, clothing, posture, or environment (e.g., \"Gary from Accounting,\" \"Dept. of Snacks,\" \"Fax: 555-0199\").\n• **To (Recipient):** A humorous recipient name, organization, and fax number, derived from scene context or absurd office logic.\n• **Date:** A plausible transmission date (can be generic or stylized).\n• **Subject / Re:** A short, funny description of the fax contents based on the subject or scene (e.g., \"Urgent: Hat Situation,\" \"Re: Chair Malfunction Update\").\n• **Pages:** Include a page count such as \"1 of 1\".\n\nBelow the header, include a **Confidentiality Notice** in small text, written humorously but styled like a real legal disclaimer (e.g., warning unintended recipients to destroy the fax immediately or consult a supervisor named something absurd).\n\nAll names, numbers, and text must be fictional, non-sensitive, and clearly comedic. If external master prompt text is provided, use it to override or guide sender, recipient, subject line, or tone.\n\nEnsure the overall result unmistakably resembles a real faxed document rather than a modern filter. The page should feel outdated, bureaucratic, slightly ridiculous, and clearly readable on a small screen."
   },
   {
     name: "FELT PUPPET",
+    category: ["TOY", "PUPPET", "CRAFTS"],
     message: "Take a picture and transform the image into a felt puppet scene. Soft fabric textures, handcrafted appearance."
   },
   {
     name: "FEUDAL JAPAN",
+    category: ["HISTORICAL", "ASIAN", "SAMURAI"],
     message: "Take a picture and place the subject in feudal Japan as a samurai. Preserve facial identity and physique. Authentic armor, period setting, cinematic lighting."
   },
   {
     name: "FIELD GUIDE",
+    category: ["NATURE", "REFERENCE", "MASTER PROMPT", "SCIENTIFIC"],
     message: "Take a picture and transform it into a field guide page. Include a clear photograph of the subject as the main reference image, labeled as a specimen photo. Add a species name (real or humorous), habitat, behavior notes, and identifying traits. Use the visual style of a naturalist’s guidebook. The photograph should appear as a documented observation supporting the entry."
   },
   {
     name: "FILM NOIR",
+    category: ["MOVIES", "BLACK AND WHITE", "VINTAGE", "DRAMATIC"],
     message: "Take a picture and transform the image into classic film noir style. High-contrast black and white. Hard directional lighting, deep shadows, Venetian blind light patterns. Moody, dramatic composition."
   },
   {
     name: "FILTH MODE",
+    category: ["HUMOR", "DIRTY", "GROSS"],
     message: "Take a picture and identify the main subject or object. Transform it so it appears dirty, neglected, or gross while preserving its shape and identity.\n\nAdd realistic grime such as dirt, mud, stains, splashes, smears, or dried mess. If appropriate, include cartoonishly unpleasant elements like poop, sludge, or foul residue applied to the object’s surface without obscuring it completely.\n\nEnsure the filth follows the object’s contours, texture, and lighting so it looks physically present rather than overlaid. The result should be visually obvious, humorous or shocking, and immediately readable on a small screen."
   },
   {
     name: "FIND ME",
+    category: ["ILLUSION", "HIDDEN", "CAMOUFLAGE"],
     message: "Take a picture and transform the image so the subject is fully visible yet intentionally hidden through perfect visual camouflage. The subject’s clothing, colors, textures, and patterns must precisely match and continue the surrounding environment, making the subject difficult to distinguish at first glance. Do not remove or blur the subject — instead, conceal them through seamless pattern alignment, color continuity, and texture matching. The subject must remain physically present with accurate scale, lighting, shadows, and depth, so they clearly exist once noticed. Avoid outlines, highlights, or obvious separation; the concealment should feel deliberate, intelligent, and visually satisfying when discovered."
   },
   {
     name: "FORCED PERSPECTIVE",
+    category: ["ILLUSION", "PHOTOGRAPHY", "TRICK"],
     message: "Take a picture and place the subject into a scene that uses forced perspective to create a clever visual illusion. The subject should appear to interact with large or distant objects using scale tricks (for example: pinching the sun, holding the moon, pushing a skyscraper, balancing a mountain on their palm). Carefully align scale, depth, and camera angle so the illusion looks intentional and realistic. Preserve the subject’s identity and integrate lighting, shadows, and perspective so the interaction feels physically believable and visually playful."
   },
   {
     name: "FOREVER STAMP",
+    category: ["POSTAL", "MINIATURE", "VINTAGE"],
     message: "Take a picture and transform the subject into a large physical postage stamp. Show perforated edges, printed texture, ink dot patterns, and slight wear."
   },
   {
     name: "FRACTAL",
+    category: ["MATHEMATICAL", "PATTERN", "ABSTRACT"],
     message: "Take a picture and transform the image using fractal geometry. Recursive patterns, infinite detail."
   },
   {
+    name: "FREAKY FRIDAY",
+    category: ["HUMOR", "SWAP", "TRANSFORMATION"],
+    message: "Take a picture and if the picture contains two or more clearly visible subjects, perform a realistic multi-subject head swap by exchanging their heads between bodies. Preserve body posture, clothing, lighting direction, skin tone consistency, and camera perspective. Maintain natural neck alignment and correct scale so each swapped head fits the new body believably.\n\nIf exactly one subject is detected, perform an inverse face transformation by subtly mirroring or inverting the subject’s facial features while preserving overall realism, expression, and identity. The result should feel intentionally uncanny but not distorted.\n\nIf no subjects are detected, return the original image unchanged. The final image should be visually coherent and readable on small screens."
+  },
+  {
+    name: "FRIDGE ART",
+    category: ["ART", "HUMOR", "NAIVE", "CHILD LIKE"], 
+    message: "Take a picture and transform the subject into a child’s crayon drawing displayed on a refrigerator.\n\nRender the subject as a deliberately crude crayon drawing with uneven proportions, simple shapes, wobbly outlines, and flat scribbled coloring. Facial features and limbs should be exaggerated or misaligned in a childlike way while still being loosely recognizable.\n\nUse a plain white or lightly stained paper background with visible crayon texture and pressure marks. Add misspelled handwritten text such as a name, age, or caption written in childlike lettering.\n\nAttach the drawing to a refrigerator using colorful magnets. Show part of the fridge surface, smudges, and nearby papers or photos.\n\nEnsure the entire drawing and fridge context are fully visible. The final image should feel innocent, funny, and unmistakably like real fridge art made by a child."
+  },
+  {
+    name: "FROSTING CAKE ART",
+    category: ["FOOD","HUMOR", "MASTER PROMPT"],
+    message: "Take a picture and transform the subject into frosting-style artwork applied flat on the top of a cake. The subject should lie flush on the frosting surface — fully integrated — but the frosting itself should have realistic texture: piped swirls, slight ridges, creaminess, and subtle shadows so it clearly looks like real icing, not a topper.\n\nRender the subject simply, preserving only the most recognizable facial features, posture, or silhouette. Avoid overly detailed or three-dimensional features; the design should be believable as hand-piped or painted frosting.\n\nInclude realistic cake decorations such as frosting borders, small swirls, sprinkles, or minor fondant accents. If no external message is provided via master prompt, automatically add playful flavor text based on the subject: e.g., 'Happy 1st Birthday!' if the subject appears young, or 'Happy Retirement!' if the subject appears older.\n\nIf an external message is provided, append it naturally using piping-style lettering around the subject. Ensure the full cake top and subject are fully visible in the frame. Use soft, realistic lighting and perspective so the subject and frosting appear tactile and integrated. The final image should feel festive, humorous, and clearly readable on small screens, while lying flat on the cake surface."
+  },
+  {
     name: "FROZEN IN ICE",
+    category: ["COLD", "ICE", "PRESERVED"],
     message: "Take a picture and make it appear as if the subject is frozen inside a clear block of ice. The ice should have realistic cracks, bubbles, frost, and refraction. The subject must be clearly visible through the ice, distorted slightly by thickness and trapped depth."
   },
   {
+    name: "FUN-FLATABLE",
+    category: ["FUN", "INFLATABLE", "HUMOR"],
+    message: "Take a picture and transform the subject into an over-the-top inflatable mascot costume. Exaggerate proportions so the body is comically large and rounded, but keep the subject’s facial features visible on the inflated surface. Include whimsical folds, wrinkles, and inflated textures. Place the subject in a fun environment such as a stadium, street parade, or party. Ensure the entire inflatable is fully visible and clearly readable on a small screen, emphasizing absurd humor and playful energy."
+  },
+  {
     name: "FUNKO POP",
+    category: ["TOY", "COLLECTIBLE", "POP CULTURE"],
     message: "Take a picture and turn the subject into a Funko Pop. Oversized head, simplified body."
   },
   {
     name: "FUTURE SELF",
+    category: ["AGE", "TRANSFORMATION", "OLD"],
     message: "Take a picture and depict the subject 20-40 years in the future. Preserve facial structure with realistic aging."
   },
   {
     name: "GAMEBOY",
+    category: ["RETRO", "GAMING", "90S", "PIXEL"],
     message: "Take a picture and transform the subject into an authentic early-1990s monochrome handheld console display using a classic green dot-matrix screen aesthetic. Render the entire image as if it is displayed on a low-resolution reflective LCD with a pea-green color palette, dark olive shadows, and pale green highlights. Convert the subject into true dot-matrix pixel art using a visible grid of circular pixels, limited tonal steps, and strong contrast. Preserve the subject’s recognizable facial features and silhouette while adapting them to the constraints of a handheld screen resolution. Simulate real screen characteristics including pixel ghosting, motion blur trails, uneven refresh, slight vertical smearing, faint scan artifacts, and subtle screen noise. Avoid smooth gradients—everything should appear quantized and grid-based. Frame the image strictly as the handheld screen view itself, with a thin dark border suggesting the screen edge. Do not include logos, branding, or copyrighted UI elements. Optional minimal pixel indicators (numbers or icons only) may appear at the edges of the screen. Optimize for small screens with bold shapes, clear separation, and immediate readability. The final image should feel indistinguishable from a real dot-matrix handheld screen captured mid-use—nostalgic, tactile, and unmistakably retro."
   },
   {
+  name: "GARDEN GNOME",
+  category: ["HUMOR","TOY"],
+  message: "Take a picture and transform the subject into a classic, life-sized garden gnome. Preserve facial recognition while giving the subject gnome features such as a pointed hat, whimsical clothing, and small props (e.g., shovel, lantern, mushroom). Place the gnome in a backyard or garden environment. Ensure the full gnome is visible, standing naturally, and clearly readable on a small screen. The final image should feel humorous, whimsical, and integrated into the scene."
+  },
+  {
     name: "GENDER INVERSION",
+    category: ["HUMOR", "TRANSFORMATION", "GENDER", "SWAP"],
     message: "Take a picture and transform the subject into the opposite gender while preserving the subject’s core facial structure, expressions, and identity. Adjust facial features, body shape, hair, and secondary characteristics in a realistic and anatomically plausible way. Adapt clothing and styling to suit the transformed gender presentation while maintaining the subject’s original personality and essence. Ensure the subject appears naturally integrated into the scene, with consistent lighting, proportions, and photorealistic realism."
   },
   {
     name: "GHIBLI CAM",
+    category: ["ANIMATION", "ANIME", "JAPANESE"],
     message: "Take a picture in the Studio Ghibli anime style-soft colors, whimsical atmosphere, and hand-drawn aesthetic."
   },
   {
     name: "GIANT WORLD",
+    category: ["SIZE", "GIANT", "SCALE"],
     message: "Take a picture and transform the subject into a giant towering over the environment. Realistic scale interaction."
   },
   {
     name: "GLASS",
+    category: ["MATERIAL", "TRANSPARENT", "SCULPTURE"],
     message: "Take a picture and transform everything into transparent glass. Refraction, reflections, caustic lighting."
   },
   {
     name: "GLITCH REALITY",
+    category: ["DIGITAL", "GLITCH", "ERROR"],
     message: "Take a picture and introduce digital glitches into a realistic scene. Pixel tearing, compression artifacts. Reality appears corrupted."
   },
   {
     name: "GLOSSARY",
+    category: ["MASTER PROMPT", "TEXT", "REFERENCE", "LABELED"],
     message: "Take a picture and create an image of a glossary identifying the main subject and a limited number of notable objects. Include the photograph prominently in the layout. Overlay clear letter markers (A, B, C, etc.) directly on or near each identified object in the image. Beneath the photo, create a glossary-style list where each entry begins with the matching letter and provides a brief description blending factual identification and light humor. Keep the layout simple and legible for a small screen. The photograph should clearly correspond to the labeled glossary entries."
   },
   {
+    name: "GOTHIC MEDIEVAL ART",
+    category: ["ART", "PAINTING", "MEDIEVAL", "GOTHIC", "ILLUSTRATION"],
+    message: "Take a picture and transform the subject into a Gothic medieval-style artwork. Render the subject with elongated, dramatic proportions, stylized drapery, intricate patterns, and muted, earthy colors typical of 12th–15th century Gothic art. Include characteristic elements such as pointed arches, cathedral-like backgrounds, stained glass windows, ornate borders, and symbolic motifs.\n\nUse flat or slightly sculptural lighting with subtle gold leaf accents, emphasizing solemnity and reverence. Preserve the subject’s facial features and expression while adapting them to the medieval aesthetic.\n\nInclude a simple decorative frame, text banners, or illuminated manuscript-style captions if relevant, ensuring all elements are fully visible in the final composition. The final image should feel like a historical Gothic painting, dramatic and atmospheric, clearly readable on small screens, and fully contained within the frame."
+  },
+  {
     name: "GOUACHE ILLUSTRATION",
+    category: ["ART", "PAINTING", "ILLUSTRATION"],
     message: "Take a picture and transform the image into a gouache illustration. Matte textures, bold shapes, opaque color layers, and crisp edges while preserving subject identity."
   },
   {
     name: "GRAFFITI",
+    category: ["ART", "STREET", "URBAN"],
     message: "Take a picture in the style of Graffiti Art. Spray paint textures, urban wall surface."
   },
   {
+    name: "GRIMMS FAIRY TALE",
+    category: ["STORYBOOK", "KIDS", "LESSON"],
+    message: "Take a picture and transform the subject into a character within a Grimm’s fairy tale. Select a fairy tale based on the subject’s appearance, posture, expression, or perceived traits (such as innocence, cleverness, arrogance, bravery, curiosity), OR use a specific fairy tale provided via external master prompt.\n\nDepict the subject as a story character fully integrated into a classic Grimm-style fairy tale scene, not as a modern person placed into an illustration. The subject may appear as a human, villager, traveler, child, noble, or fairy-tale creature as appropriate to the chosen story. The environment and supporting elements should clearly reflect a traditional fairy tale setting such as forests, cottages, castles, roads, or village scenes.\n\nRender the image as a single illustrated storybook page. Ensure the entire page is fully visible within the frame, including margins, illustration, and text area. Do not crop or cut off any part of the page.\n\nInclude the **title of the selected fairy tale** prominently and clearly within the page layout, such as at the top of the page or as a decorative storybook heading. The title must be fully visible and immediately identifiable to the viewer.\n\nInclude a short fairy-tale caption or lesson within the page, such as a brief story excerpt, warning, or thematic line appropriate to Grimm’s fairy tales. The text should be legible, concise, and directly connected to the scene.\n\nUse a traditional fairy-tale illustration style inspired by 18th–19th century book engravings or painted storybook art. The tone may be whimsical, eerie, or cautionary, but not graphic. Keep the composition symbolic, atmospheric, and clearly readable on a small screen. The final image should feel like a complete, intact page from a Grimm’s fairy tale book."
+  },
+  {
     name: "HAIKU",
+    category: ["POETRY", "JAPANESE", "ZEN"],
     message: "Take a picture and create a serene, minimalist scene inspired by classical Japanese aesthetics in the spirit of Matsuo Bashō. Emphasize simplicity, natural elements, quiet atmosphere, and contemplative mood. Use flavor text drawn from the subject’s presence, expression, and surroundings to compose a traditional haiku. Display the complete haiku fully and clearly within the image, ensuring all lines are legible and unobstructed. Integrate the text harmoniously into the scene, such as on parchment, a wooden plaque, or subtle calligraphy-style overlay. Render the final image with refined detail, soft lighting, and a calm, poetic visual balance."
   },
   {
     name: "HAITIAN NAÏVE ART",
+    category: ["ART", "CULTURAL", "COLORFUL"],
     message: "Take a picture and transform the image into Haitian naïve style art. Bright colors, flattened depth, decorative storytelling elements, and joyful visual rhythm."
   },
   {
+    name: "HANS CHRISTIAN ANDERSEN",
+    category: ["STORYBOOK", "KIDS", "LESSON"],
+  message: "Take a picture and transform the subject into a character within a Hans Christian Andersen fairy tale. Select a tale based on the subject’s appearance, posture, expression, or perceived traits (such as innocence, longing, pride, loneliness, hope, sacrifice, or wonder), OR use a specific Andersen tale provided via external master prompt.\n\nDepict the subject as a story character fully integrated into a classic Andersen-style fairy tale scene, not as a modern person placed into an illustration. The subject may appear as a human, child, mermaid, toy, animal, noble, or symbolic figure depending on the chosen tale. The environment should reflect romantic, storybook settings such as seaside villages, snowy streets, royal halls, moonlit gardens, or candlelit interiors.\n\nRender the image as a single illustrated storybook page. Ensure the entire page is fully visible within the frame, including margins, illustration, and text area. Do not crop or cut off any part of the page.\n\nInclude the title of the fairy tale clearly displayed on the page (for example: 'The Little Mermaid,' 'The Ugly Duckling,' 'The Emperor’s New Clothes,' 'The Snow Queen,' or 'The Princess and the Pea'). The title must be legible and visually distinct so the viewer immediately recognizes the story.\n\nInclude a short poetic line, lesson, or emotional reflection appropriate to Hans Christian Andersen’s style. This may express a moral, irony, or bittersweet truth rather than a direct lesson. The text should be concise, legible, and emotionally connected to the scene.\n\nUse a classic 19th-century storybook illustration style inspired by delicate engravings, soft watercolor washes, or romantic ink drawings. The tone should feel whimsical, emotional, and slightly melancholic rather than comedic or dark. Keep the composition symbolic, gentle, and clearly readable on a small screen. The final image should feel like a complete, intact page from a Hans Christian Andersen fairy tale book."
+  },
+  {
     name: "HAPPY HOLIDAYS",
+    category: ["MASTER PROMPT", "CELEBRATION", "HOLIDAY", "COSTUME"],
     message: "Take a picture and place the subject in a festive holiday-themed scene based on the closest holiday to the current date. Dress the subject in holiday-appropriate attire: for Christmas, an ugly Christmas sweater; Halloween, a generic costume; 4th of July, an Uncle Sam outfit; Oktoberfest, lederhosen; Thanksgiving, a Pilgrim outfit; Easter, a bunny outfit; New Year’s, a baby’s diaper or Father Time clothing with hourglass; Valentine’s Day, a Cupid outfit with bow and heart arrow; St. Patrick’s Day, a Leprechaun outfit; Cinco de Mayo, a Mexican sombrero. Integrate the subject naturally into a scene reflecting the holiday’s environment, decorations, and mood. Generate a humorous or festive holiday message caption based on the chosen holiday. Preserve facial identity, proportions, and personality while making the scene photorealistic, vibrant, and lively."
   },
   {
     name: "HAUNTED EPITAPH",
+    category: ["MASTER PROMPT", "HORROR", "HALLOWEEN", "SPOOKY", "TEXT"],
     message: "Take a picture and transform it into a playful, haunted graveyard scene inspired by classic theme-park haunted mansion aesthetics. Depict the subject as a stylized carved portrait, bust, or ghostly cameo associated with a decorative tombstone or memorial plaque, without implying real death. Create a humorous rhyming epitaph in the spirit of whimsical haunted mansion gravestones, using clever wordplay and flavor text inspired by the subject’s appearance, personality, clothing, or surroundings. Ensure the full rhyming epitaph is clearly visible and readable within the image. Use atmospheric lighting, fog, moonlight, and ornate stonework to create a spooky-but-fun tone. Keep the overall mood lighthearted, imaginative, and theatrical rather than dark or morbid.  The result should be a full view of the epitaph with a relevant background behind the epitaph."
   },
   {
-    name: "HEAD SWAP",
-    message: "Take a picture and if the picture contains two or more clearly visible subjects, perform a realistic multi-subject head swap by exchanging their heads between bodies. Preserve body posture, clothing, lighting direction, skin tone consistency, and camera perspective. Maintain natural neck alignment and correct scale so each swapped head fits the new body believably.\n\nIf exactly one subject is detected, perform an inverse face transformation by subtly mirroring or inverting the subject’s facial features while preserving overall realism, expression, and identity. The result should feel intentionally uncanny but not distorted.\n\nIf no subjects are detected, return the original image unchanged. The final image should be visually coherent and readable on small screens."
-  },
-  {
     name: "HIDDEN DETAILS",
+    category: ["ILLUSION", "PUZZLE", "HIDDEN"],
     message: "Take a picture and transform the image so subtle hidden elements are embedded. Viewer should discover details only after close inspection."
   },
   {
     name: "HIEROGLYPHICS",
+    category: ["TEXT", "ANCIENT", "EGYPTIAN"],
     message: "Take a picture and make it hieroglyphic art. Everything is converted to pictures and symbols etched onto a stone monument or drawn onto papyrus."
   },
   {
     name: "HISTORY",
+    category: ["MASTER PROMPT", "HISTORICAL", "EDUCATIONAL", "TIME TRAVEL"],
     message: "Take a picture and place the subject seamlessly into a historical event that occurred on the date specified externally. Preserve the subject’s facial features, clothing, and posture while adapting them naturally to the historical setting, lighting, and perspective. Ensure the subject interacts believably with the environment, props, or people in the scene so they appear as an authentic part of the moment. Make the final image photorealistic and historically accurate, with no elements appearing out of place."
   },
   {
     name: "HOPPER",
+    category: ["ART", "PAINTING", "AMERICAN", "ARTIST"],
     message: "Take a picture and transform it into a scene inspired by Edward Hopper. Preserve the photographic framing but simplify forms and use strong directional lighting. Emphasize isolation, stillness, and quiet atmosphere. Colors should be muted and shadows deliberate. The final image should feel contemplative and emotionally distant."
   },
   {
-    name: "I AM WITH STOOPID",
+    name: "HOROSCOPE",
+    category: ["MASTER PROMPT", "HUMOR", "TEXT"],
+    message: "Take a picture and transform it into a deliberately silly horoscope-style image.\n\nDetermine the subject’s astrological sign based on externally provided input or infer one arbitrarily if none is supplied. Clearly display the astrological sign name and symbol.\n\nWrite ONE short horoscope message based on the subject’s visible traits, expression, posture, clothing, or situation. The horoscope must be humorous, blunt, and confidently ridiculous — it should sound specific, obvious, and completely unserious.\n\nUse flavor text to exaggerate mundane or trivial traits (e.g., procrastination, overconfidence, distraction, stubbornness) as if they are unavoidable cosmic truths. Avoid mystical language, poetic ambiguity, or generic fortune-cookie phrasing.\n\nInclude a clearly labeled \"Lucky Number\" that is intentionally useless, impractical, or meaningless (e.g., decimals, extremely large numbers, fractions, timestamps, negative numbers, or oddly specific values). The lucky number must not be applicable to gambling, dates, clocks, or real-world decisions.\n\nCompose the image like a fake astrology card or newspaper horoscope box. Keep the layout clean, bold, and readable on a small screen. Ensure the full card, sign, horoscope text, and lucky number are fully visible.\n\nDo not explain the joke. Do not add disclaimers. Treat the horoscope as completely accurate, no matter how absurd."
+  },
+  {
+    name: "I'M HUNGRY",
+    category: ["FOOD", "TRANSFORMATION", "MASTER PROMPT"],
+    message: "Take a picture and transform the subject into a figure entirely made out of real, non-candy food items (vegetables, fruits, grains, bread, pasta, cheese, etc.). Preserve recognizable features, proportions, and posture while rendering them in edible textures — e.g., eyes made of olives, hair as leafy greens, clothing patterns from colorful produce. Avoid candy or chocolate elements.\n\nPlace the food figure in a simple, neutral background such as a kitchen counter, plate, or wooden surface, with natural lighting and subtle shadows to make it appear tangible and realistic. Ensure the entire subject is fully visible.\n\nAdd playful flavor text to the scene automatically based on the subject, like 'Dinner is served!' or 'Eat your vegetables!' or allow the user to append a custom message via master prompt.\n\nThe final image should feel whimsical, absurd, humorous, and clearly readable on small screens, emphasizing the creativity of using ordinary food items to replicate the subject."
+  },
+  {
+    name: "I'M WITH STOOPID",
+    category: ["HUMOR", "TEXT", "SHIRT"],
     message: "Take a picture and transform it so one subject appears to be wearing an 'I'm with Stoopid' t-shirt that looks physically printed on the fabric, not digitally overlaid. The shirt should include natural folds, fabric texture, slight ink distortion, and perspective warping so the design follows the body realistically.\n\nIf only one subject is detected, display the text 'I'm with Stoopid' with a single large arrow pointing upward toward the wearer’s own head.\n\nIf two or more subjects are detected, place the shirt on the primary subject and display the text 'I'm with Stoopid' with one or more arrows pointing sideways or diagonally toward the other visible subjects. Arrows should clearly indicate the other subjects without overlapping faces.\n\nEnsure the text and arrows remain bold, high-contrast, and legible on small screens while maintaining a believable printed-shirt appearance. Preserve lighting consistency, fabric shading, and natural wrinkles so the shirt feels worn, not pasted."
   },
   {
     name: "I AM WITH THE BAND",
+    category: ["MUSIC", "PERFORMANCE", "CELEBRITY", "MASTER PROMPT"],
     message: "Take a picture and place the subject as a member of a famous singer’s band or musical group. Preserve the subject’s facial features, personality, and clothing while transforming them into a musician integrated into the ensemble. The subject should be holding or playing a musical instrument appropriate to the scene (guitar, drums, keyboard, etc.) and positioned naturally among other group members. Capture stage lighting, performance energy, and the dynamic interaction of a live or recorded music setting. Ensure the subject remains clearly identifiable while fully integrated into the famous singer’s group performance."
   },
   {
     name: "ICE SCULPTURE",
+    category: ["SCULPTURE", "ICE", "COLD"],
     message: "Take a picture and make subject into an ice sculpture. The sculpture has the clarity and sparkle of ice, often enhanced by lighting, to showcase its form. Clear, chiseled ice with internal refraction."
   },
   {
     name: "IDIOM",
+    category: ["HUMOR", "LANGUAGE", "LITERAL"],
     message: "Take a picture and visually interpret a common idiom or phrase in a completely literal way. Place the subject directly inside the literal version of the expression (for example: head in the clouds, walking on thin ice, burning the midnight oil). Preserve realism in lighting and composition while embracing the absurdity of the literal interpretation. The scene should be instantly readable, humorous, and visually clever without requiring any text."
   },
   {
     name: "IKEA INSTRUCTION MANUAL",
+    category: ["HUMOR", "INSTRUCTIONS", "DIAGRAM"],
     message: "Take a picture and transform the subject into an illustrated instruction manual page, similar to a flat-pack assembly guide. Depict simplified, diagram-style versions of the subject in multiple steps, showing how the subject is assembled or functions. Use clean line art, minimal colors, arrows, step numbers, icons, and humorous warning symbols inspired by the subject’s personality, clothing, or posture. Avoid text-heavy explanations; rely on visual storytelling and pictograms. Present the final image as a complete instruction manual page with a clean layout and playful, clever tone."
   },
   {
+    name: "INFLATABLE POOL TOY",
+    category: ["FUN", "INFLATABLE", "HUMOR", "TOY"],
+    message: "Take a picture and transform the subject into a single, continuous inflatable pool toy. The subject’s entire body, including the head and face, must be made of inflated vinyl material — the subject is the pool float itself, not wearing or sitting in one.\n\nRender the face as part of the inflatable surface with printed or molded features, subtle distortions, and glossy reflections consistent with air-filled vinyl. Include seams, air valves, and slight shape irregularities.\n\nPlace the inflatable subject floating in water or resting poolside. Use realistic reflections, highlights, and water interaction. Ensure the entire inflatable is fully visible and readable on a small screen."
+  },
+  {
     name: "INFRARED",
+    category: ["PHOTOGRAPHY", "TECHNICAL", "THERMAL"],
     message: "Take a picture and transform the image into infrared photography. Bright foliage, dark skies. Surreal tonal contrast."
   },
   {
     name: "INKBLOT",
+    category: ["ART", "ABSTRACT", "PSYCHOLOGY"],
     message: "Take a picture in the style of an inkblot-style artwork. Abstract symmetry, flowing ink forms on paper."
   },
   {
     name: "iPHONE CAMERA",
+    category: ["PHOTOGRAPHY", "RETRO", "SMARTPHONE"],
     message: "Take a picture and transform it into an early smartphone camera photo. Use soft focus, blown highlights, muted colors, and slight motion blur. The subject should feel casual, imperfect, and authentically early-mobile."
   },
   {
     name: "IS IT CAKE?",
+    category: ["HUMOR", "FOOD", "ILLUSION"],
     message: "Take a picture and transform the subject so it appears to be a realistic hyper-detailed cake. The subject should retain recognizable features but clearly be made of cake, frosting, fondant, and icing textures. Optionally show a slice cut out or a knife mid-cut revealing cake layers inside."
   },
 
   {
     name: "ISLAMIC MINIATURE",
+    category: ["ART", "CULTURAL", "MIDDLE EASTERN"],
     message: "Take a picture and transform the picture into an Islamic miniature style painting. Flattened perspective, decorative borders, fine line work, intricate patterns, and vivid colors."
   },
   {
     name: "ISOMETRIC",
+    category: ["DESIGN", "3D", "GEOMETRIC"],
     message: "Take a picture and transform the scene into isometric perspective. Clean geometry, consistent angles. Game-like layout."
   },
   {
     name: "JAVERT PHOTOBOMB",
+    category: ["HUMOR", "MOVIES", "PHOTOBOMB"],
     message: "Take a picture and add in the background Russell Crowe as Javert from Les Miserable photobombing the subject. Match lighting realistically."
   },
   {
     name: "JAPANESE SUMI-E",
+    category: ["ART", "ASIAN", "INK", "ZEN"],
     message: "Take a picture and transform the image into Japanese sumi-e ink painting. Minimal brushstrokes, expressive ink flow, restrained composition, and elegant simplicity."
   },
   {
     name: "JOHANNES VERMEER",
+    category: ["ART", "PAINTING", "CLASSIC", "ARTIST"],
     message: "Take a picture a make it into a vibrant, painterly portrait into a Dutch Golden Age portrait inspired by Vermeer. Soft window lighting, rich detail, oil paint texture, calm atmosphere."
   },
   {
     name: "KAHLO",
+    category: ["ART", "PAINTING", "ARTIST", "MEXICAN"],
     message: "Take a picture and transform it into a portrait inspired by Frida Kahlo. Center the subject prominently with symbolic elements drawn from nature or personal identity. Use bold colors, flat backgrounds, and strong outlines. The subject should feel emotionally direct, intimate, and iconic."
   },
   {
     name: "KEITH HARING",
+    category: ["ART", "POP ART", "ARTIST", "GRAFFITI"],
     message: "Take a picture in the style of the American artist, Keith Haring. Bold black lines, energetic figures, flat colors."
   },
   {
     name: "KITSCH",
+    category: ["ART", "TACKY", "COLORFUL"],
     message: "Take a picture and transform the image into kitsch style art. Over-the-top colors, exaggerated sentimentality, playful excess, and intentionally cheesy visual elements."
   },
   {
     name: "KLINGON TRANSFORMATION",
+    category: ["SCI FI", "STAR TREK", "ALIEN", "TRANSFORMATION"],
     message: "Take a picture and transform the subject into a realistic Klingon warrior. Preserve recognizable facial structure, expressions, body proportions, and personality while adapting them to authentic Klingon anatomy including pronounced ridged forehead, heavier brow, deeper-set eyes, rougher skin texture, and powerful build. Translate the subject’s clothing into Klingon armor or garments appropriate to their status while retaining the original clothing’s silhouette and identity cues. Cinematic sci-fi lighting, gritty realism, and cultural authenticity. The subject must appear fully Klingon, not human with prosthetics, and naturally integrated into their environment."
   },
   {
     name: "LANDMARKS",
+    category: ["TRAVEL", "TOURIST", "LOCATION", "MASTER PROMPT"],
     message: "Take a picture and place the subject naturally in front of a randomly selected famous world landmark. Preserve the subject’s recognizable facial features, proportions, and identity while matching the lighting, perspective, color temperature, and camera style of the landmark environment. Ensure correct scale, shadows, reflections, and atmospheric depth so the subject appears physically present at the location rather than composited. Adapt clothing, posture, and environment subtly to fit the climate, culture, and setting without turning it into a costume. The landmark and surroundings should remain authentic and recognizable, with the subject fully integrated into the scene. Render with photorealistic detail and travel-photography realism."
   },
   {
     name: "LEGO",
+    category: ["TOY", "BRICK", "MINIATURE"],
     message: "Take a picture and transform the image into a realistic LEGO minifigure scene. Convert all subjects into LEGO minifigures with correct minifigure proportions: cylindrical torsos, blocky legs, movable arms and hands, and **classic LEGO minifigure heads**.\n\nThe subject’s head must be a smooth, cylindrical LEGO head with **all facial features painted directly onto the head**, including eyes, eyebrows, mouth, expression, facial hair, freckles, glasses, or other defining traits. Do NOT render realistic human heads, sculpted hair, or detailed facial geometry. Any hairstyle or head covering must appear only as a separate LEGO accessory piece (helmet, hat, hair piece), not as part of the head itself.\n\nTranslate the subject’s recognizable traits into simplified LEGO-style printed facial graphics while maintaining the iconic LEGO look.\n\nBuild the environment entirely from LEGO bricks at toy scale using plates, bricks, tiles, and accessories. Use realistic toy-photography lighting with soft shadows and subtle reflections so the scene looks like a photograph of an actual LEGO diorama. Keep the composition clear, proportional, and readable on small screens."
   },
   {
     name: "LETTERHEAD",
+    category: ["BUSINESS", "UTILITY", "DOCUMENT", "PROFESSIONAL", "MASTER PROMPT"],
     message: "Take a picture of a sign, document, business card, storefront, or any visible branding related to a person or organization. Identify and extract readable text such as names, titles, addresses, phone numbers, email addresses, taglines, or other identifying information.\n\nIf the source image contains a visual logo, emblem, icon, symbol, or recognizable graphic mark, recreate a simplified, clean version of that logo at the top of the letterhead. The logo should be visually derived from the image itself (shapes, symbols, icons, or imagery), not generated from appended text. Preserve recognizability while simplifying for professional print use.\n\nIf no visual logo is present, construct a refined text-based header using the extracted name or business name, without inventing imagery.\n\nIf externally provided information is supplied (such as name, address, phone, email, or website), merge it seamlessly as supporting text beneath or beside the logo or header. Do not transform externally provided text into a logo or symbol.\n\nDesign a clean, professional, print-ready letterhead layout. Present the logo or header prominently at the top, followed by secondary details arranged with balanced alignment and spacing. Use modern, understated typography, subtle dividers, restrained color accents, and generous white space. Avoid novelty fonts, decorative graphics, or poster-like styling.\n\nEnsure all text is crisp, readable, and properly aligned. The background should be clean and uncluttered, resembling a legitimate business letterhead suitable for formal correspondence or PDF export. Optimize for small screens while maintaining realistic print proportions."
   },
   {
     name: "LET THEM EAT CAKE",
+    category: ["HISTORICAL", "FRENCH", "ROYAL"],
     message: "Take a picture and transform the subject into a member of Marie Antoinette’s 18th-century French royal court. Dress the subject in elaborate Rococo-era court attire with silk fabrics, lace, ribbons, and embroidery. Apply period-accurate makeup including pale powdered skin, subtle rouge, and defined beauty marks. Add a tall, powdered white wig styled with curls and decorative ornaments. Preserve the subject’s facial features while placing them in an elegant Versailles-style interior with soft lighting and refined posture. The final image should resemble a formal aristocratic court portrait from late 18th-century France."
   },
   {
     name: "LIGHT",
+    category: ["ABSTRACT", "GLOWING", "LUMINOUS"],
     message: "Take a picture and have everything made of light.  Varied colored lights with a glowing, ethereal, radiant effect."
   },
   {
   name: "LIMERICK",
+  category: ["POETRY", "HUMOR", "TEXT", "MASTER PROMPT"],
   message: "Take a picture and transform the scene into a playful, cartoon-style illustration with exaggerated shapes, expressive features, and bright, cheerful colors. Use flavor text inspired by the subject’s appearance, pose, clothing, and surroundings to create a humorous limerick. Place the complete limerick clearly and fully visible beneath or alongside the cartoon image, ensuring all five lines are readable and unobstructed. The text should feel integrated into the cartoon design, such as on a sign, speech panel, or decorative text box. Maintain a lighthearted, whimsical tone throughout the final image.  The result should be a full view of the illustration with a relevant background behind the illustration."
   },
   {
     name: "LINE DRAWING",
+    category: ["ART", "SKETCH", "MINIMAL"],
     message: "Take a picture and convert the image into a hand-drawn line illustration. Black ink only, no color or shading. Clean white background with expressive line weight."
   },
   {
     name: "LINOLEUM PRINT",
+    category: ["ART", "PRINT", "CARVED"],
     message: "Take a picture and transform the image into a linoleum block print. Organic carved textures. Flat ink colors."
   },
   {
     name: "LITE-BRITE",
+    category: ["TOY", "RETRO", "GLOWING"],
     message: "Take a picture and recreate the subject as a Lite-Brite pegboard artwork displayed inside a physical Lite-Brite toy frame. The entire toy should be visible, including the dark backing, grid of holes, and colorful glowing pegs, so it appears as a photographed Lite-Brite rather than a digital overlay.\n\nTransform the subject entirely using the Lite-Brite peg layout: the subject’s shape, facial features, and key details must be composed only of circular light pegs aligned to the pegboard grid. Do not use lines, shading, or any elements outside the peg layout to define the subject.\n\nUse bright, saturated colors for each peg with subtle glow and soft bloom to emulate the light pegs. Simplify details as necessary to maintain recognizability while fully adhering to the pegboard constraints.\n\nKeep the composition centered and uncluttered. Avoid text or extra graphics. The final image should feel tactile, nostalgic, and clearly readable on a small screen, looking like a true physical Lite-Brite creation."
   },
   {
     name: "LIVING TATTOO",
+    category: ["TATTOO", "BODY ART", "INK", "MASTER PROMPT"],
     message: "Take a picture and transform the subject into a realistic tattoo design as if the image itself has been tattooed onto skin. Reinterpret the subject as linework, shading, and ink textures while preserving recognizable facial features, pose, and personality. Render the subject using authentic tattoo styles such as fine-line blackwork, illustrative shading, stippling, or limited-color ink with bold linework and strong contrast. Avoid photorealism—everything should read clearly as tattoo art, not a photo. Place the tattoo naturally on a realistic skin surface (e.g., forearm, upper arm, shoulder, calf, or back), following proper body curvature, muscle flow, and skin texture. Include realistic ink characteristics such as slight bleed, skin texture with visible pores and hair follicles, natural redness around fresh ink, and subtle shading variations. Ensure the tattoo integrates organically with the skin—correct perspective, natural stretching, soft shadowing, and seamless edges—without looking pasted or flat. The tattoo may include optional framing elements like banners, borders, decorative flourishes, dates, small symbols, or brief text captions if contextually appropriate. Optimize for small screens with clean composition and clearly readable details. The final image should look like a professional tattoo artist's finished work—convincing, stylized, and something someone would actually get inked."
   },
   {
     name: "LOGO FROM TEXT",
+    category: ["DESIGN", "LOGO", "BRANDING", "MASTER PROMPT"],
     message: "Take a picture and extract prominent readable word(s) from the source image. Use only the extracted word or concept as inspiration to generate a simple, professional logo symbol that visually represents the meaning of the word rather than its letterforms. For example, if the extracted word is an animal, object, or concept, depict a clean symbolic representation of that subject.\n\nLimit logo generation strictly to the extracted source text. Do not transform, symbolize, or reinterpret any externally appended or supplemental text.\n\nIf additional text such as a name, address, phone number, or tagline is provided externally, render that text as literal, readable typography arranged neatly beneath or beside the logo symbol. Maintain clear separation between the logo mark and supporting text.\n\nApply a minimal, modern design style suitable for headers or branding: balanced proportions, restrained color usage, and clear negative space. Avoid illustrative complexity, mascots, or decorative effects. The final result should resemble a legitimate logo-and-header lockup suitable for professional use."
   },
   {
     name: "LONG EXPOSURE",
+    category: ["PHOTOGRAPHY", "MOTION", "BLUR"],
     message: "Take a picture and apply long-exposure photography style. Light trails, motion blur on moving elements. Static subject remains sharp."
   },
   {
     name: "LOST AND FOUND",
+    category: ["HUMOR", "POSTER", "MISSING", "MASTER PROMPT"],
     message: "Take a picture and transform it into a humorous lost-and-found poster. Present the subject as the missing item or person, framed in a simple poster layout with bold headings and tear-off–style design cues. Generate playful descriptive flavor text based on the subject’s appearance, clothing, expression, or surroundings, incorporating any externally provided details naturally. The tone should be clearly humorous and lighthearted. Ensure all text is fully visible and readable, and the subject remains recognizable. Render the final image with realistic paper texture, casual lighting, and authentic public-notice styling."
   },
   {
     name: "LOVE ACTUALLY",
+    category: ["MASTER PROMPT", "MOVIES", "ROMANCE", "SIGNS"],
     message: "Take a picture and create a cinematic two-panel composition where the subject communicates an emotional message using handwritten signs. Preserve clear facial likeness and identity while presenting the subject in a quiet, sincere moment. Design constraint: Render a single image split into exactly two side-by-side panels of equal size. In each panel, show the subject holding one handwritten sign facing the viewer. Limit the total number of signs to a maximum of two, with one short line of text per sign. Do not imply motion, animation, or time-based progression. Primary information source: If message text is provided via externally supplied details, divide the message across the two signs. Ensure the wording is original, natural, and emotionally resonant, and does not reference or recreate any specific copyrighted scene, dialogue, or characters. Secondary enhancement: If no message text is provided, infer a gentle, original two-line message based on the subject’s expression and context. Optimize the layout for small screens with bold, high-contrast handwritten text, clean spacing, and minimal clutter. Use soft, cinematic lighting, shallow depth of field, and a warm, intimate tone. Maintain an original setting and composition. Do not add additional panels, cards, or text beyond the two signs."
   },
   {
     name: "LOW POLY",
+    category: ["3D", "GEOMETRIC", "GAMING"],
     message: "Take a picture using very low-poly modeling use minimal detail, faceted surfaces, and angular edges."
   },
   {
     name: "MACRO",
+    category: ["PHOTOGRAPHY", "CLOSE UP", "DETAILED"],
     message: "Take a picture and transform the image into macro photography. Extreme close-up detail. Shallow depth of field, high texture clarity."
   },
   {
+    name: "MACY'S PARADE BALLOON",
+    category: ["INFLATABLE", "POP CULTURE", "HUMOR"],
+    message: "Take a picture and transform the subject into a giant inflatable parade balloon, like those seen in a Macy’s-style parade. Render the subject fully in balloon form — all features, including hair, clothing, and accessories, should appear as smooth, glossy, inflated balloons. Use tubular, rounded, or segment-like shapes typical of balloon sculpture. Exaggerate facial features slightly for comedic effect while keeping the subject recognizable.\n\nInclude parade context: ropes, handlers, and a city street environment to show scale. Ensure the balloon is fully visible, oversized, and clearly readable on a small screen. Use bright colors, subtle reflections, and soft highlights to reinforce the balloon material. The final image should feel absurdly playful, humorous, larger-than-life, and unmistakably made of balloons."
+  },
+  {
     name: "MAD MAGAZINE",
+    category: ["HUMOR", "SATIRE", "CARICATURE"],
     message: "Take a picture and transform the subject into a classic Mad Magazine-style caricature. Preserve the subject’s recognizable facial features and personality while exaggerating key traits with over-the-top humor: enlarged head, expressive eyes, exaggerated expressions, and comically small or distorted body. Include irreverent, satirical flavor text, visual gags, and props that parody everyday life or pop culture. Bold linework, bright colors, and chaotic, playful composition. Ensure the subject is clearly identifiable within the humorous scene."
   },
   {
     name: "MAGIC EYE",
+    category: ["ILLUSION", "STEREOGRAM", "3D"],
     message: "Take a picture and transform it into a single-image autostereogram (Magic Eye–style illusion). Encode the subject’s shape and depth into a repeating patterned texture so the image appears abstract at first glance but reveals the subject when viewed with relaxed or unfocused eyes.\n\nUse a dense, repeating pattern with subtle depth cues that form the subject’s silhouette and major features in three dimensions. Do not include outlines, labels, or hints. The subject should not be immediately obvious without proper viewing.\n\nEnsure the pattern is clean, evenly tiled, and centered. The final image should resemble a classic Magic Eye print that is visually stable and readable on a small screen."
   },
   {
     name: "MARIONETTE PUPPET",
+    category: ["TOY", "PUPPET", "STRINGS"],
     message: "Take a picture and transform the subject into a handcrafted marionette puppet. Preserve recognizable facial features, expressions, proportions, and clothing identity, adapted into carved wood, painted surfaces, stitched fabric, and jointed limbs. Visible strings extend upward from the limbs and head to a wooden marionette controller held above the frame or partially visible. The puppet must show realistic wear, grain, seams, and articulation points. Studio or theatrical lighting with shallow depth of field. The subject must clearly remain the same individual, now reimagined as a controlled puppet."
   },
   {
     name: "MASCOT",
-    message: "Take a picture and transform the subject into a realistic dynamic sports team fluffy mascot. Use the subject’s clothing, colors, accessories, and personality traits to inspire the mascot’s overall design. Incorporate a logo-like emblem, team colors, and stylized features into the mascot costume naturally, while preserving the subject’s recognizable facial characteristics. Adapt the subject into a bold, illustrative, energetic style suitable for a sports team mascot, emphasizing strong shapes, clear outlines, and vibrant colors."
+    category: ["SPORTS", "CHARACTER", "COSTUME"],
+    message: "Take a picture and transform the subject into a realistic, full-body sports team mascot costume. The mascot must appear as a physical, wearable suit with a large oversized mascot head, visible seams, plush or foam textures, and costume proportions typical of real stadium mascots.\n\nPreserve the subject’s recognizable traits by translating facial characteristics into the mascot head design, not by using the real face. Eyes, mouth, and expression should be part of the costume head.\n\nUse photoreal lighting and materials so the mascot looks like a real person wearing a professional mascot suit, not a cartoon or illustration. Place the mascot in a stadium, field, or arena environment.\n\nEnsure the full mascot body is visible and properly proportioned. The final image should look like a real sports mascot photographed during a live event."
   },
   {
     name: "MATRIX",
+    category: ["MOVIES", "SCI FI", "CODE"],
     message: "Take a picture in the style of the Matrix. Include Matrix Rain."
   },
   {
     name: "MAYHEM",
+    category: ["HUMOR", "CHAOS", "ABSURD"],
     message: "Take a picture and transform the scene into an outrageously funny visual scenario centered on the subject. Use exaggerated scale, unexpected objects, absurd logic, and chaotic interactions to create instant visual comedy. Preserve the subject’s recognizable face and identity while placing them in a situation that is wildly implausible yet visually coherent. The humor should be obvious at first glance, relying on visual absurdity rather than text, jokes, or captions. Push the scene to the edge of chaos while maintaining clear lighting, sharp detail, and readable composition."
   },
   {
     name: "MEME",
+    category: ["HUMOR", "INTERNET", "TEXT", "MASTER PROMPT"],
     message: "Take a picture and make it into a MEME, adding ironic humor and flavor text inspired by the content of the image. Clean composition with readable typography.  The result should be a full view of the meme."
   },
   {
     name: "MERMAID",
+    category: ["FANTASY", "CREATURE", "UNDERWATER"],
     message: "Take a picture and transform the subject into a realistic mermaid. Preserve the subject’s recognizable facial features, expressions, body proportions, and personality while adapting the lower body into a natural, anatomically believable fish tail with detailed scales and fins. The subject wears ocean-appropriate, functional aquatic attire designed for a mermaid, integrated naturally with the anatomy. Create a photorealistic underwater environment with flowing hair, suspended particles, coral reefs, and aquatic life. Use realistic underwater lighting with sunlight rays filtering through the water, emphasizing scale, depth, and immersion. The subject must appear fully native to the underwater world, not costumed."
   },
   {
     name: "MESOPOTAMIAN RELIEF",
+    category: ["ART", "ANCIENT", "MIDDLE EASTERN"],
     message: "Take a picture and Transform the image into a Mesopotamian bas-relief style. Flatten forms, use profile poses, and emphasize symbolic gestures. Apply sandstone textures and ancient ornamental borders."
   },
   {
     name: "MEXICAN MURALISM",
+    category: ["ART", "PAINTING", "MEXICAN", "MURAL"],
     message: "Take a picture and transform the image into Mexican muralism style art. Bold figures, narrative storytelling, strong outlines, social symbolism, and monumental composition."
   },
   {
   name: "MILK CARTON",
+  category: ["HUMOR", "MISSING", "VINTAGE", "MASTER PROMPT"],
   message: "Take a picture and place the subject on the side of a classic milk carton as a missing person feature. Design the carton with realistic packaging details, typography, and layout. Generate humorous descriptive flavor text for the missing person section based on the subject’s appearance, clothing, expression, or personality, incorporating any externally provided details naturally. Keep the tone playful and clearly fictional. Ensure the subject’s image is integrated naturally into the carton design and remains recognizable. Render the final image photorealistically with believable lighting, carton texture, and packaging realism."
   },
   {
     name: "MINECRAFT",
+    category: ["GAMING", "PIXEL", "BLOCKY"],
     message: "Take a picture in the style of Minecraft. Blocky geometry, pixel textures."
   },
   {
     name: "MINIATURE SET",
+    category: ["MINIATURE", "DIORAMA", "MODEL"],
     message: "Take a picture and transform the entire scene into a handcrafted miniature diorama. Scale all subjects and objects to match the proportions of a physical miniature set, so they appear small and in proportion to each other. Render surfaces with handcrafted textures such as clay, painted wood, cardboard, fabric, or tiny props, giving the scene a realistic, tactile feel.\n\nUse shallow depth of field, soft studio lighting, and subtle shadows to emulate macro photography of a real miniature model. Ensure the composition reads clearly, maintains visual depth, and feels like a meticulously constructed miniature set. Keep subjects and environment clearly recognizable and readable on small screens, with a handcrafted, physical toy-like aesthetic."
   },
   {
     name: "MINIMALISM",
+    category: ["ART", "SIMPLE", "MODERN"],
     message: "Take a picture and transform the image into the Minimalism style. Simplify shapes, reduce color palette, and remove extraneous detail while keeping subject identifiable."
   },
   {
     name: "MIRROR WORLD",
+    category: ["ILLUSION", "REFLECTION", "SURREAL"],
     message: "Take a picture and create a mirrored reality where reflection differs from reality. Subtle narrative differences."
   },
   {
     name: "MONDRIAN",
+    category: ["ART", "GEOMETRIC", "ARTIST", "ABSTRACT"],
     message: "Take a picture and reinterpret it in the style of Piet Mondrian. Reduce the scene into a grid of bold black lines and flat blocks of primary colors with white space. Abstract the subject while maintaining a clear structural reference to the original composition. The final image should feel balanced, geometric, and modernist."
   },
   {
     name: "MONSTER",
+    category: ["HORROR", "CREATURE", "SCARY"],
     message: "Take a picture and transform the subject into a cinematic monster while preserving the subject’s recognizable facial structure, body proportions, and identity. Reimagine the subject with exaggerated, otherworldly features such as altered skin texture, enhanced musculature, claws, horns, scales, or glowing eyes, inspired by the subject’s original traits. Place the subject naturally into a dark, immersive environment that complements the creature’s design. Use dramatic lighting, shadows, and environmental interaction to ensure the monster appears physically present in the scene. Render in photorealistic detail with a powerful, intimidating atmosphere."
   },
   {
     name: "MOON",
+    category: ["SPACE", "ASTRONAUT", "SCI FI"],
     message: "Take a picture and place subject on the moon. Subject is wearing an astronaut suit. Subject face is visible through the helmet visor. The Earth is in the background. Make it photorealistic. Make it 8k resolution."
   },
   {
     name: "MOSAIC",
+    category: ["ART", "TILE", "COLORFUL"],
     message: "Take a picture in the style of a glass Mosaic. Small tiles, reflective surfaces."
   },
   {
     name: "MOUNT RUSHMORE",
+    category: ["LANDMARK", "SCULPTURE", "AMERICAN"],
     message: "Take a picture and make the subject face a carved head placed on Mount Rushmore. Make it photorealistic."
   },
   {
     name: "MOVIE REEL",
+    category: ["MOVIES", "VINTAGE", "FILM"],
     message: "Take a picture and make the scene into a movie reel with multiple frames. Move the subject slightly from one frame to the next to simulate movement."
   },
   {
     name: "MOVIE SCENE INSERT",
+    category: ["MOVIES", "CINEMATIC", "MASHUP", "MASTER PROMPT"],
     message: "Take a picture and place the subject inside a cinematic movie scene as if they were an original character in the film. Preserve the subject’s recognizable facial features, body proportions, clothing identity, and personality. Match the exact cinematography of the chosen movie including lens type, depth of field, film grain, color grading, lighting direction, production design, and era-accurate costuming if required. The subject must appear physically present in the scene with correct scale, shadows, reflections, and environmental interaction. The background, props, and atmosphere must be authentic to the movie’s world, making the subject indistinguishable from the original cast and fully integrated into the scene."
   },
   {
     name: "MR. POTATO HEAD",
+    category: ["TOY", "RETRO", "POTATO"],
     message: "Take a picture and transform the subject into a Mr. Potato Head–style toy. Preserve the subject’s recognizable facial features and general expression, but adapt them into the characteristic potato-shaped body with smooth, slightly shiny plastic texture.\n\nInclude toy-accurate removable parts such as eyes, eyebrows, nose, mouth, ears, arms, and accessories (hat, glasses, etc.). Arrange them on the potato body in a playful, semi-realistic way that preserves the subject’s identity while emphasizing the modular, interchangeable nature of the toy.\n\nMaintain proper scale, shadows, and lighting so the subject appears as a real physical toy. Do not add text or background clutter; keep the composition clean and readable on small screens. The final image should feel nostalgic, playful, and instantly recognizable as a Mr. Potato Head toy version of the subject."
   },
   {
     name: "MUG SHOT",
+    category: ["HUMOR", "MASTER PROMPT", "POLICE", "PHOTO"],
     message: "Take a picture of the subject and transform it into a realistic mug shot–style image. Use a neutral or plain background, institutional lighting, and a straight-on camera angle with the subject facing forward. Include a height chart behind the subject. Add a placard held by the subject featuring humorous or descriptive flavor text inspired by the subject’s appearance, clothing, expression, or characteristics, incorporating any externally provided details naturally. Preserve the subject’s recognizable facial features, posture, and expression while maintaining a realistic, photorealistic composition. Include subtle imperfections typical of ID photography, such as slightly uneven lighting, mild shadows, or imperfect framing, to enhance authenticity."
   },
   {
     name: "MULTIVERSE",
+    category: ["SCI FI", "PARALLEL", "ALTERNATE"],
     message: "Take a picture and create a parallel version of the same subject in a different reality. Parallel version is subtly different in style, clothing, or environment."
   },
   {
     name: "MUPPET",
+    category: ["PUPPET", "TV", "FELT"],
     message: "Take a picture and make it a Muppet. Felt textures, button eyes, puppet proportions. Preserve subject personality."
   },
   {
     name: "MUSEUM EXHIBIT",
+    category: ["MUSEUM", "DISPLAY", "EDUCATIONAL"],
     message: "Take a picture and present the subject as a museum exhibit on display. Place the subject behind glass or on a pedestal within a realistic museum gallery environment, with proper lighting, barriers, and signage. Generate an exhibit placard using descriptive or humorous flavor text inspired by the subject’s appearance, clothing, pose, or surroundings, incorporating any externally provided details naturally. The placard should include a title, short description, and optional faux historical or cultural context. Ensure the subject appears seamlessly integrated into the exhibit, with realistic scale, reflections, and museum ambiance. Render the final image photorealistically, as if photographed inside a real museum."
   },
   {
     name: "MYSTICAL",
+    category: ["FANTASY", "MAGICAL", "GLOWING"],
     message: "Take a picture and transform it into a realistic, detailed mystical world, where trees have faces and bioluminescent plants and objects light up."
   },
   {
     name: "MYTHOLOGY",
+    category: ["FANTASY", "MYTHOLOGY", "CREATURE"],
     message: "Take a picture and make the subject into a Greek or Roman mythological creature while preserving recognizable characteristics of the subject. Epic, classical atmosphere."
   },
   {
     name: "N64 BLUR FILTER",
+    category: ["RETRO", "GAMING", "90S", "BLUR"],
     message: "Take a picture and transform it using a Nintendo 64–style blur and texture smoothing. Apply soft focus, smeared textures, and simplified geometry. Colors should feel slightly muddy but warm. The subject should look nostalgic and dreamlike, as if remembered from an old cartridge game."
   },
   {
     name: "NEGATIVE SPACE",
+    category: ["ART", "MINIMAL", "SILHOUETTE"],
     message: "Take a picture and use negative space to define the subject. Primary form emerges from absence rather than detail. Minimalist composition."
   },
   {
     name: "NEOCLASSICAL",
+    category: ["ART", "PAINTING", "CLASSIC"],
     message: "Take a picture and transform the image into Neoclassical style painting. Strong lines, realistic proportions, muted colors, classical architecture or drapery elements, and dignified subject presentation."
   },
   {
     name: "NEOLITHIC CAVE PAINTING",
+    category: ["ART", "ANCIENT", "PREHISTORIC"],
     message: "Take a picture and transform the image into a prehistoric cave painting. Render the subject using simplified, abstracted shapes, ochre and charcoal colors, and textured rock surfaces. The subject should remain identifiable while blending with ancient cave wall aesthetics."
   },
   {
     name: "NEON SIGN",
+    category: ["NEON", "GLOWING", "URBAN"],
     message: "Take a picture and transform the subject into a glowing neon sign. Recreate the subject’s silhouette, facial features, and defining characteristics using luminous neon tubing and light trails, while keeping the subject clearly recognizable. Use vibrant neon colors with realistic glow, reflections, and light bleed against a dark or urban-inspired background such as brick, concrete, or night scenery. Arrange the neon lines as if they were hand-bent glass tubes, with subtle imperfections and mounting hardware for realism. Render the final image with crisp detail, strong contrast, and a striking nighttime atmosphere."
   },
   {
     name: "NEWSPAPER",
+    category: ["NEWS", "VINTAGE", "MASTER PROMPT", "TEXT", "PRINT"],
     message: "Take a picture and Transform the image into a newspaper print. Halftone dots, grayscale ink. Newsprint texture. Include flavor text headline and story text inspired by the content of the image. The result should be a full view of the newspaper page with the newspaper header and date visible with a relevant background behind the newspaper."
   },
   {
     name: "NIGHT VISION",
+    category: ["PHOTOGRAPHY", "GREEN", "MILITARY"],
     message: "Take a picture and transform the image into night vision style. Green monochrome, sensor noise."
   },
   {
+    name: "NOT IT!",
+    category: ["HUMOR","SOCIAL","PHOTO EFFECT"],
+    message: "Take a picture and transform the scene so it appears the subjects are playing the classic game of \"Not It.\"\n\nAnalyze the number of visible subjects:\n• If multiple subjects are present, show all but one touching their index finger to their nose in a synchronized, quick-reaction pose.\n• One subject should clearly be \"too late\" — their finger either not yet touching their nose, hovering just short, or their hand still moving — making it obvious they are now \"it.\"\n\nBody language and facial expressions are critical:\n• The non-it subjects should look relieved, smug, amused, or triumphant.\n• The subject who is \"it\" should look surprised, annoyed, resigned, or caught off-guard.\n\nEnsure everyone remains in the same moment in time, as if the action was frozen immediately after the call of \"Not it!\" No motion blur — clarity is more important than realism.\n\nDo not add text, arrows, or labels. The concept must be communicated purely through pose, gesture, and expression.\n\nMatch lighting, perspective, and scale so the scene feels like a candid photo capturing a spontaneous social moment. Keep the composition readable on a small screen, with all hands and faces clearly visible."
+  },
+  {
+    name: "NURSERY RHYME STORYBOOK",
+    category: ["STORYBOOK", "KIDS", "LESSON"],
+    message: "Take a picture and transform the subject into the main character of a classic nursery rhyme. Select the nursery rhyme based on the subject’s appearance, personality, posture, environment, or externally provided instructions.\n\nExamples include, but are not limited to: Jack and Jill (subject as Jack or Jill), Little Miss Muffet (subject as Miss Muffet), Mary Had a Little Lamb (subject as Mary), Humpty Dumpty (subject fully transformed into Humpty), Old MacDonald Had a Farm (subject as Old MacDonald), Row Row Row Your Boat (subject rowing the boat), Jack Be Nimble (subject as Jack), Little Bo Peep (subject as Bo Peep), Little Boy Blue (subject as Little Boy Blue), or similar well-known rhymes.\n\nTransform the subject accordingly so they appear fully integrated into the nursery rhyme world — not posing on top of it. Costumes, props, environment, and proportions should make the subject look like they belong inside the story.\n\nRender the scene in a whimsical, illustrated storybook style with soft colors, painterly textures, gentle lighting, and classic children’s book charm. Avoid modern objects or settings unless intentionally playful.\n\nInclude the **title of the nursery rhyme** prominently and clearly at the top or bottom of the image. Display a **short, complete version of the nursery rhyme text** within the scene in large, legible lettering, styled like a storybook page. All text must be fully visible and readable.\n\nThe final image should resemble a single open illustrated page from a nursery rhyme book, with the subject and all text fully contained within the frame, suitable for viewing on a small screen. The tone should be magical, nostalgic, and immediately recognizable."
+  },
+  {
   name: "O’KEEFFE",
+  category: ["ART", "PAINTING", "ARTIST", "ORGANIC"],  
   message: "Take a picture and reinterpret it in the style of Georgia O’Keeffe. Simplify the subject into flowing organic forms with smooth gradients and soft transitions. Emphasize shape, color, and scale over detail. The final image should feel calm, intimate, and abstracted."
   },
   {
     name: "OBJECT MOSAIC",
+    category: ["ART", "MOSAIC", "TEXTURE"],
     message: "Take a picture and recreate the subject so that their entire face and body are constructed exclusively from hundreds or thousands of small physical objects such as coins, pennies, jellybeans, M&Ms, bottlecaps, beads, stones, buttons, or similar items. There must be NO visible skin, fabric, or underlying human form anywhere in the image. Every facial feature, contour, shadow, and body shape must be defined only by the placement, color, density, and orientation of the objects. From a distance, the subject must be clearly recognizable; up close, the image must resolve entirely into individual objects. Use realistic lighting, depth, and perspective so the objects cast shadows and feel physically present. Do not overlay or decorate a normal body — the objects themselves ARE the subject."
   },
   {
     name: "ONE SECOND BEFORE DISASTER",
+    category: ["HUMOR", "DRAMATIC", "SUSPENSE"],
     message: "Take a picture and depict the subject frozen in time exactly one second before a dramatic, chaotic, or humorous event occurs. Capture tension and anticipation in the subject’s pose and expression (for example: a falling object mid-air, a near collision, an imminent spill, or an unexpected surprise). Use cinematic lighting, motion cues, and environmental storytelling to make it obvious that something is about to happen, without actually showing the outcome."
   },
   {
     name: "OPPOSITE SELF",
+    category: ["TRANSFORMATION", "OPPOSITE", "SWAP"],
     message: "Take a picture and transform the subject into their opposite self while preserving the subject’s recognizable facial structure, expressions, posture, and identity. Invert key physical characteristics in a realistic and anatomically plausible way, such as body type and gender presentation, while maintaining the subject’s personality and essence. Adapt facial features, body proportions, hair, and clothing naturally to fit the transformed appearance. Ensure the subject remains clearly identifiable and fully integrated into the scene with consistent lighting, perspective, and environment. Render the final image with photorealistic detail and believable realism."
   },
   {
     name: "OPTICAL ILLUSION",
+    category: ["ILLUSION", "VISUAL", "TRICK"],
     message: "Take a picture and convert the image into an optical illusion. Perspective shifts depending on viewing angle. Hidden secondary images emerge upon inspection."
   },
   {
     name: "PAPER SHADOW BOX",
+    category: ["ART", "PAPER", "3D", "LAYERED"],
     message: "Take a picture and transform the image into a layered paper shadow-box. Multiple cut paper layers creating depth. Soft directional lighting"
   },
   {
     name: "PAPERCRAFT",
+    category: ["ART", "PAPER", "3D", "CRAFTS"],
     message: "Take a picture in the style of three-dimensional Papercraft. Folded paper textures and layered construction."
   },
   {
     name: "PARALLEL UNIVERSE HISTORY",
+    category: ["HISTORICAL", "ALTERNATE", "EDUCATIONAL"],
     message: "Take a picture and place the subject at the center of a universally recognizable moment in human history, replacing the original figure with the subject while preserving the significance, symbolism, and emotional weight of the event. The subject must be clearly recognizable and portrayed as the individual performing the defining action of the moment. Do not depict or reference the original historical figure by name or likeness. Instead, recreate the setting, era-appropriate environment, clothing, and atmosphere so the moment is immediately identifiable through visual context alone. Use implicit inference from the subject’s appearance, posture, and expression to select an appropriate historic theme (e.g., leadership, discovery, courage, progress, unity). If externally provided details are supplied, incorporate them as factual context for the moment. Present the image as a clean, collectible flashcard optimized for small screens. Include concise, readable text such as: \n• Title of the historic moment\n• Year or era\n• One-sentence description of the event’s significance\n• A short, respectful caption describing the subject’s role. Ensure cinematic lighting, strong composition, and emotional impact. The final image should feel iconic, respectful, and timeless—like a photograph history forgot to record."
   },
   {
     name: "PATRON SAINT",
+    category: ["MASTER PROMPT", "RELIGIOUS", "SAINT", "HOLY"],
     message: "Take a picture and transform the subject into a patron saint–style depiction while preserving clear facial likeness and identity. Present the subject in saintly attire with symbolic garments, colors, and iconography. Use a reverent, dignified pose with soft halo lighting and a subtle divine glow, rendered in a classical yet photorealistic aesthetic. Primary information source: If a saint name is provided via externally supplied details, accurately incorporate all historically associated information for that saint, including name, patronage domains, feast day, biographical summary, notable traditions, and fun facts. Do not alter or contradict known historical associations. Secondary enhancement: Use implicit visual inference from the subject’s appearance, clothing, accessories, environment, and expression to enhance symbolism, visual motifs, and flavor text, without overriding factual saint information. Fallback behavior: If no saint name is externally provided, create a clearly labeled symbolic or archetypal \“Saint of [inferred theme]\” based on implicit inference from the subject. Avoid naming or implying a real historical saint, omit specific feast dates, and present patronage and fun facts as symbolic rather than historical. Design the final image as a compact, mobile-friendly flash card or holy card layout optimized for small screens. Ensure all text is concise, high-contrast, and legible at small sizes, with clear hierarchy and minimal clutter. Maintain visual clarity, balanced composition, and immediate recognizability.  The result should be a full view of the card with a relevant background behind the card."
   },
   {
     name: "PEANUTS",
+    category: ["COMICS", "CARTOON", "VINTAGE"],
     message: "Take a picture in the style of a Peanuts cartoon strip. Have the subject speaking through a text bubble that reads GOOD GRIEF!"
   },
   {
     name: "PHOTO PUZZLE",
+    category: ["PUZZLE", "JIGSAW", "ACTIVITY"],
     message: "Take a picture and transform it into a printable jigsaw puzzle layout. Preserve the original photograph clearly while overlaying visible puzzle piece cut lines across the entire image.\n\nGenerate a classic jigsaw pattern with interlocking pieces of varied shapes and sizes. Ensure pieces are large enough to be easily cut out and assembled by hand. Avoid overly small or complex pieces. Keep the image centered and unobstructed so the subject remains recognizable even when divided.\n\nUse clean, high-contrast cut lines that are clearly visible on small screens and when printed. Do not add numbers, text, or labels. The final image should look like a ready-to-print puzzle sheet that can be cut out and assembled in real life."
   },
   {
+    name: "PICTIONARY",
+    category: ["PUZZLE", "HUMOR", "GAME"],
+    message: "Take a picture and transform the subject into a classic Pictionary-style drawing.\n\nRender the subject as a rough, hand-drawn black marker sketch on a clean whiteboard or paper background. The drawing should look like it was made quickly by an amateur player under time pressure — uneven lines, simple shapes, minimal detail, and imperfect proportions.\n\nPreserve just enough of the subject’s pose, silhouette, and key features so the intended idea is still recognizable, but clearly simplified into crude line art rather than a realistic portrait.\n\nOptional visual cues may be included sparingly, such as motion lines, arrows, or simple icons (e.g., sweat drops, exclamation marks) to suggest action or intent, as commonly seen in Pictionary drawings.\n\nDo NOT include written words, letters, numbers, labels, or clues. The image must rely entirely on the drawing to communicate the idea.\n\nFrame the image so the entire drawing surface is visible, as if photographed during a real game of Pictionary. The final result should feel playful, messy, and immediately readable on a small screen."
+  },
+  {
     name: "PICTURE PERFECT",
+    category: ["PHOTOGRAPHY", "ENHANCED", "PERFECT"],
     message: "Take a picture and make it picture perfect - improve lighting, colors, and overall composition. Professional perfection. Correct lighting, color, sharpness, and realism. Remove any imperfections.  Make it photorealistic.  8k resolution."
   },
   {
     name: "PIXAR",
+    category: ["ANIMATION", "3D", "CARTOON", "DISNEY"],
     message: "Take a picture in the style of Pixar signature 3D animation.  Use the Pixar style of blending realism with cartoon expressiveness. Vibrant colors, soft shadows, big eyes, rounded features, emotional depth, and animated charm."
   },
   {
+  name: "PLAYBILL",
+  category: ["DOCUMENT","VINTAGE", "THEATER", "MASTER PROMPT"],
+  message: "Take a picture and transform it into a complete, physical Playbill theater program booklet. The entire Playbill booklet must be fully visible within the frame, including the cover, edges, and proportions of a real printed program.\n\nDesign the front cover in classic Playbill style, with the bold Playbill header at the top and a theatrical production title beneath it. Feature the subject prominently on the cover as the star performer, rendered in a dramatic or comedic stage pose and integrated naturally into the cover art.\n\nEnsure the subject appears printed on the cover itself, not floating above it, with realistic lighting, paper texture, slight wear, and subtle printing imperfections. Add stage-themed design elements such as curtains, spotlights, marquee lights, or silhouettes to reinforce the theatrical setting.\n\nInclude humorous or over-the-top flavor text describing the subject’s role or performance (e.g., 'A One-Person Musical About Snacks,' 'Winner of Seven Imaginary Awards'). All text should be legible and balanced for small screens.\n\nThe booklet should appear photographed against a relevant background (theater seat, stage floor, lobby surface, or neutral setting). Keep the entire Playbill booklet, including borders and corners, fully in frame and clearly readable. The final image should feel like an authentic, collectible theater program."
+  },
+  {
     name: "PLUSH TOY",
+    category: ["TOY", "SOFT", "STUFFED"],
     message: "Take a picture and transform the subject into a plush toy. Soft fabric, stitching details. Cute proportions."
   },
   {
     name: "POINTILLISM",
+    category: ["ART", "PAINTING", "DOTS"],
     message: "Take a picture in the style of Pointillism Art. Complementary colors are placed next to each other to intensify each hue and create vibrancy as the viewer eye optically blends the dots from a distance. Made entirely of tiny, colorful dots."
   },
   {
     name: "POLICE SKETCH",
+    category: ["SKETCH", "POLICE", "WITNESS", "DRAWING", "MASTER PROMPT"],
     message: "Take a picture and transform the subject into a classic police sketch as if created from a witness description. Depict the subject as a hand-drawn pencil or charcoal sketch on off-white paper, using strong line work, cross-hatching, and shading to define facial structure and key features.\n\nSimplify and alter details so the sketch is approximate rather than an exact replica of the subject. Preserve general identifying characteristics such as face shape, eyes, nose, mouth, hairline, and expression, but introduce small deviations consistent with a sketch from memory.\n\nUse a neutral background with slight paper texture. Add text and police case numbers. The final image should feel serious, observational, and readable on a small screen, reflecting the imperfection of eyewitness recall."
   },
   {
     name: "POLLOCK",
+    category: ["ART", "PAINTING", "ARTIST", "ABSTRACT"],
     message: "Take a picture and reinterpret it through abstract expressionism inspired by Jackson Pollock. Overlay energetic splatters, drips, and layered paint textures while allowing hints of the original subject to remain visible beneath the chaos. The final image should feel raw, spontaneous, and motion-filled."
   },
   {
     name: "POKEMON CARD",
+    category: ["GAMING", "CARD", "COLLECTIBLE"],
     message: "Take a picture and make it into a pokemon card, add abilities and flavor text inspired by the content of the image. The result should be a full view of the card with a relevant background behind the card."
   },
   {
     name: "POLAROID",
+    category: ["PHOTOGRAPHY", "INSTANT", "VINTAGE"],
     message: "Take a picture and transform it into an authentic instant-film photograph aesthetic. Frame the image within a classic Polaroid-style border with a thicker white margin at the bottom. Apply subtle film grain, soft focus, slight color fading, and natural vignetting consistent with instant photography. Include gentle imperfections such as light leaks or minor exposure variation for realism. Ensure the subject remains clearly recognizable and centered within the frame. Render the final image to convincingly resemble a real printed instant photo."
   },
   {
+    name: "POOR RICHARD'S ALMANACK",
+    category: ["DOCUMENT", "VINTAGE", "HUMOR", "HISTORICAL", "TEXT"],
+    message: "Take a picture and transform it into an authentic page from Poor Richard's Almanack by Benjamin Franklin. Render the subject as a central illustration in the style of 18th-century woodcut engravings with bold linework, cross-hatching, and period-accurate colonial American aesthetic. Surround the illustration with aged, yellowed paper showing foxing, stains, and worn edges typical of 1730s–1750s printed almanacs.\n\nInclude period-accurate typography using blackletter or colonial serif fonts for headers. Feature a famous Benjamin Franklin saying or proverb prominently on the page in large, clear text, such as 'Early to bed and early to rise, makes a man healthy, wealthy, and wise,' 'A penny saved is a penny earned,' or 'Well done is better than well said.' Ensure this saying is the **most prominent text element** and fully visible.\n\nOptionally, add small marginal notes, weather predictions, or astronomical observations in smaller text around the edges. Include decorative borders, flourishes, and printer's ornaments typical of colonial printing. Render realistic ink impressions, slight printing misalignments, and other subtle imperfections to emulate a true 18th-century printed page.\n\nPlace the page fully within the frame with a relevant background behind it. Keep the entire almanac page, including borders, subject illustration, and text, **clearly visible and readable on small screens**. The final image should feel historically authentic, detailed, and visually rich while keeping the subject integrated into the almanac page."
+  },
+  {
     name: "POP ART",
+    category: ["ART", "POP ART", "COLORFUL"],
     message: "Take a picture and make it Pop Art. Employs vibrant, bold colors, simplified imagery, and techniques from the commercial world like screen-printing, often with a sense of humor, irony, or wit."
   },
   {
-    name: "POP-UP BOOK",
-    message: "Take a picture and transform the entire scene into a physical pop-up book made of paper. The subject should be constructed entirely as a pop-up paper structure that rises upward from folded paper layers attached to the book’s pages.\n\nThe subject must emerge directly from the page through visible folds, hinges, tabs, and layered paper planes. The body, face, and features should be formed from flat paper pieces assembled into a three-dimensional pop-up mechanism, clearly connected to the page surface.\n\nShow the open book with two facing pages visible. The pop-up elements should clearly originate from the folds of the pages and extend upward, as if they would collapse flat when the book is closed.\n\nUse realistic paper textures, visible creases, cut edges, and paper thickness. All materials must look like paper—no skin, fabric, plastic, or realistic surfaces. Lighting and shadows should emphasize the layered paper construction. The final image should look like a photographed pop-up book page where the subject is part of the paper engineering itself."
+  name: "POP-UP BOOK",
+  category: ["BOOK", "PAPER", "3D"],
+  message: "Take a picture and transform the entire scene into a physical pop-up book made of paper. The subject should be constructed entirely as a pop-up paper structure that rises upward from folded paper layers attached to the book’s pages.\n\nThe subject must emerge directly from the page through visible folds, hinges, tabs, and layered paper planes. The body, face, and features should be formed from flat paper pieces assembled into a three-dimensional pop-up mechanism, clearly connected to the page surface.\n\nShow the open book with two facing pages visible. The pop-up elements should clearly originate from the folds of the pages and extend upward, as if they would collapse flat when the book is closed.\n\nUse realistic paper textures, visible creases, cut edges, and paper thickness. All materials must look like paper—no skin, fabric, plastic, or realistic surfaces. Lighting and shadows should emphasize the layered paper construction. The final image should look like a photographed pop-up book page where the subject is part of the paper engineering itself."
   },
   {
     name: "PORCELAIN",
+    category: ["SCULPTURE", "CERAMIC", "DELICATE"],
     message: "Take a picture and make the subject a porcelain sculpture. Glossy ceramic finish."
   },
   {
     name: "PORTRAIT",
+    category: ["PHOTOGRAPHY", "PORTRAIT", "FRAMED"],
     message: "Take a picture in the style of Photorealistic Portrait. Frame the picture in a dark black wood frame."
   },
   {
     name: "POSTCARD",
+    category: ["TRAVEL", "VINTAGE", "GREETING"],
     message: "Take a picture in the style of a vintage postcard. Add text: \"WISH YOU WERE HERE\". The result should be a full view of the postcard with a relevant background behind the card."
   },
   {
     name: "POTATO",
+    category: ["HUMOR", "FOOD", "POTATO"],
     message: "Take a picture and make the subject into a potato.  Preserve recognizable traits humorously."
   },
   {
     name: "POTTER",
+    category: ["MOVIES", "MASTER PROMPT", "FANTASY", "MAGIC"],
     message: "Take a picture and place the subject naturally within a detailed, cinematic scene from the Harry Potter universe. Preserve the subject’s facial identity. Surround the subject with authentic Hogwarts scenery—enchanted castle halls, floating candles, spell effects, and magical ambiance. Match the film’s lighting and color grading for realism. Capture depth and atmosphere similar to the movies, with subtle magical motion or glow around wands and objects. Maintain the subject’s natural facial features and proportions while blending clothing and environment into the Hogwarts world. Render in ultra-realistic 8K, with soft volumetric lighting, depth of field, and fantasy realism. Based on the subject’s personality, traits, and characteristics, assign the subject to one of the four Hogwarts houses and have them wear the corresponding house robes: Gryffindor (brave, daring, chivalrous, red & gold, lion), Slytherin (ambitious, cunning, resourceful, green & silver, serpent), Ravenclaw (wise, creative, intellectual, blue & bronze, eagle), or Hufflepuff (loyal, kind, hardworking, yellow & black, badger). Ensure the house choice aligns with the subject’s personality and integrates naturally into the scene."
   },
   {
     name: "POWERPUFF GIRLS",
+    category: ["ANIMATION", "CARTOON", "TV"],
     message: "Take a picture in the style of a Powerpuff girls animation."
   },
   {
     name: "PRE-RAPHAELITE",
+    category: ["ART", "PAINTING", "ROMANTIC"],
     message: "Take a picture and transform the image into Pre-Raphaelite style painting. Vivid colors, detailed textures, medieval or literary elements, and highly idealized subject portrayal."
   },
   {
+    name: "PRODUCT SAFETY RECALL",
+    category: ["HUMOR", "MASTER PROMPT", "TEXT", "DOCUMENT"],
+    message: "Take a picture and transform it into a professional-looking product safety recall notice featuring the subject as the recalled product.\n\nDesign the image as a formal corporate recall poster or notice with a clean layout, neutral colors, and official warning-style formatting. Include a large product photo of the subject centered on the page.\n\nAdd humorous recall language such as 'Affected units may unexpectedly…' or 'Discontinue use if symptoms include…' based on the subject’s appearance or expression.\n\nInclude fake batch numbers, model codes, inspection stamps, and circular diagram callouts pointing to parts of the subject with labels. The text should be legible but clearly parody.\n\nEnsure the entire recall notice page is fully visible, including margins and layout elements. The final image should feel like a real corporate recall document at first glance, with humor revealed on closer inspection."
+  },
+  {
     name: "PROFILE",
+    category: ["HUMOR", "MASTER PROMPT", "FBI", "TEXT", "DOCUMENT"],
     message: "Take a picture and transform it into a humorous FBI-style profile page. Design the layout to resemble an official dossier with structured sections such as subject name, profile photo, and case notes. Generate playful flavor text, including a fictional name and lighthearted, clearly fictional infractions inspired by the subject’s appearance, expression, clothing, and surroundings, incorporating any externally provided details naturally. Maintain a realistic document aesthetic while ensuring the tone is clearly comedic. Render the final image photorealistically with crisp text, believable formatting, and polished presentation."
   },
   {
+    name: "PROTEST",
+    category: ["HUMOR", "MASTER PROMPT", "POLITICS", "TEXT"],
+    message: "Take a picture and place the subject naturally into a realistic, non-political protest or demonstration scene. The subject should blend into a crowd of ordinary people as if they are genuinely participating, not staged or spotlighted.\n\nThe subject must be holding a clearly visible protest sign with a humorous, absurd, or lighthearted message inspired by the subject’s appearance, posture, expression, or surrounding context. The message should be playful and harmless (e.g., 'More Snacks, Less Responsibilities,' 'Justice for Left Socks,' 'End Meetings That Could’ve Been Emails'). The exact wording may be influenced by external flavor text or master prompts.\n\nEnsure the sign looks authentic: handmade poster board or cardboard, bold marker lettering, slightly uneven edges, realistic hand grip, and natural perspective distortion. The sign text must be fully readable and entirely visible within the frame.\n\nThe environment should resemble a real protest setting (street, park, plaza, sidewalk) with believable crowd density, natural lighting, candid body language, and realistic depth of field. Avoid political slogans, symbols, or identifiable political figures.\n\nThe subject should not be isolated or overly centered — they should feel discovered within the crowd. Clothing, expressions, and posture should appear spontaneous and believable.\n\nThe final image must show the subject, their full protest sign, and enough surrounding context to clearly read the scene on a small screen. The tone should be comedic, observational, and visually convincing."
+  },
+  {
     name: "PS1 POLYGON MEMORY",
+    category: ["RETRO", "GAMING", "90S", "3D"],
     message: "Take a picture and transform it into a PlayStation 1–era 3D render. Use low-polygon geometry, warped textures, visible seams, and jittery perspective. Lighting should be flat or uneven. The subject should appear slightly uncanny, as if rendered by early 3D hardware."
   },
   {
     name: "PSYCHEDELIC 60s",
+    category: ["ART", "PSYCHEDELIC", "60S", "COLORFUL"],
     message: "Take a picture and transform the image into 1960s psychedelic art. Swirling colors, distorted shapes, vibrant patterns, and dreamlike visual intensity."
   },
   {
     name: "PUNCHLINE",
+    category: ["HUMOR", "VISUAL", "CLEVER"],
     message: "Take a picture and transform it into a visually coherent scene that sets up a clear, believable expectation involving the subject, then delivers a clever visual punchline that subverts that expectation without using captions, speech bubbles, or overt comedy props. The humor must be communicated entirely through visual context, timing, and composition rather than exaggeration or parody. Preserve the subject’s recognizable identity and integrate them naturally into the scene so the punchline feels intentional and discovered rather than obvious. The image should read as normal at first glance, with the punchline revealing itself a moment later upon closer inspection. Render with realistic lighting, scale, and detail so the scene feels grounded despite the twist."
   },
   {
+    name: "QR CODE ME",
+    category: ["DESIGN","DOCUMENT","HUMOR","ABSTRACT", "MASTER PROMPT"],
+    message: "Take a picture and transform it into a QR-code-style graphic derived from the subject.\n\nThe final image must show a single, square QR code fully visible within the frame, centered and uncropped, printed or displayed on a flat surface such as paper, a screen, or a label. Do not crop the edges of the code.\n\nGenerate a QR-code-like pattern where the arrangement of black-and-white modules visually encodes the subject’s face, silhouette, or key shapes when viewed as a whole. From a distance, the QR code should subtly resemble the subject; up close, it should read as a dense matrix of square blocks.\n\nDo NOT attempt to generate a functional or scannable QR code. This is a visual interpretation only.\n\nOptionally integrate small visual cues inspired by QR codes, such as alignment squares or finder patterns, while keeping the overall pattern artistically abstract and non-functional.\n\nIf external master prompt text is provided, use it as the conceptual ‘encoded content’ (e.g., a phrase, name, or idea) and allow it to influence the visual density or structure of the code.\n\nUse high contrast, clean edges, and a minimalist palette. The final image should feel like modern design art — clever, conceptual, and clearly readable on a small screen."
+  },
+  {
     name: "QUASI-MUTATION",
+    category: ["HORROR", "TRANSFORMATION", "CREATURE"],
     message: "Take a picture and transform the subject as if undergoing a dramatic mutation into a powerful alternate form. Randomly select a creature or archetype such as a werewolf, Hyde-style transformation, monstrous hybrid, or other iconic mutated form. Preserve the subject’s recognizable facial structure, eyes, expression, and identity while exaggerating musculature, posture, skin texture, or anatomy appropriate to the transformation. Blend human and creature features convincingly so the subject still feels like the same individual mid- or post-mutation. Integrate the subject naturally into the scene with cinematic lighting, dynamic pose, and realistic interaction with the environment. Render the final image with photorealistic detail, dramatic contrast, and a sense of raw power and transformation."
   },
   {
     name: "R-ROLL",
+    category: ["HUMOR", "MEME", "PHOTOBOMB", "RICK ASTLEY"],
     message: "Take a picture and include a singing Rick Astley standing next to the subject.  Make it photorealistic."
   },
   {
     name: "RAGDOLL",
+    category: ["TOY", "DOLL", "SOFT"],
     message: "Take a picture and turn the subject into a ragdoll. Maintain the characteristics of the subject. Fabric textures, stitched seams."
   },
   {
     name: "RANDOM PROFESSIONAL",
+    category: ["OCCUPATION", "COSTUME", "PROFESSIONAL"],
     message: "Take a picture and transform the subject into a randomly selected professional role. Select from a broad range of contemporary professions across industries. The chosen profession should be clearly recognizable through accurate, real-world attire, accessories, and tools associated with that role. Preserve the subject’s recognizable facial structure, expression, and identity while adapting hairstyle, clothing, and posture to suit the profession naturally. Place the subject in a realistic environment appropriate to the profession, with consistent lighting, scale, and perspective so the transformation feels authentic rather than like a costume. Ensure the subject appears fully integrated into the scene, as if genuinely working in that profession. Render with photorealistic detail and believable realism."
   },
   {
     name: "REAL-LUNGING",
+    category: ["HUMOR", "SCARY", "ANIMATED"],
     message: "Take a picture and make the inanimate object real and make it lunging at me. Make it photorealistic."
   },
   {
     name: "REAL-NOT LUNGING",
+    category: ["TRANSFORMATION", "REALISTIC", "ANIMATED"],
     message: "Take a picture and make the inanimate object real. Make it photorealistic."
   },
   {
     name: "RECIPE CARD-FUNNY",
+    category: ["HUMOR", "FOOD", "CARD"],
     message: "Take a picture and transform it into a humorous recipe card. Include the photograph at the top as the featured image. Treat the subject as if it were a recipe concept rather than literal food. Write playful, metaphorical ingredients and preparation steps that describe the subject’s personality, appearance, or vibe. Keep the layout simple and readable for a small screen. The final image should feel whimsical and intentionally absurd."
   },
   {
     name: "RECIPE CARD-SERIOUS",
+    category: ["RECIPE", "FOOD", "CARD"],
     message: "Take a picture and identify the subject. If the subject is food or appears edible, generate a real, practical recipe based on it. Include the photograph at the top of the layout as the featured image. Present a clear ingredients list and simple preparation steps. Use a clean, readable recipe-card style optimized for a small screen. The photograph should clearly represent the dish being described."
   },
   {
     name: "RECURSIVE IMAGE",
+    category: ["ILLUSION", "INFINITE", "FRACTAL"],
     message: "Take a picture and transform the image into infinite visual recursion. The image contains itself within itself."
   },
   {
     name: "REMBRANDT",
+    category: ["ART", "PAINTING", "CLASSIC", "ARTIST"],
     message: "Take a picture in the style of Rembrandt van Rijn, Dutch Golden Age painting, oil painting, chiaroscuro masterpiece. Dramatic chiaroscuro lighting. Add atmospheric texture: rich oil painting texture, thick impasto brushstrokes, moody and spiritual atmosphere."
   },
   {
     name: "RENAISSANCE",
+    category: ["ART", "PAINTING", "CLASSIC"],
     message: "Take a picture in the style of a Renaissance Painting. Include linear perspective, depth and realism. Focus on human expression, dynamic poses, and realistic landscapes. Feature a wide range of natural pigments like lead white, azurite, verdigris, ochers, malachite, vermilion, and lapis lazuli, used with binders such as egg tempera and oil, to create vibrant, naturalistic colors and complex effects. Focus on light, shadow, and harmonious blending to create realism and naturalism."
   },
   {
     name: "RICK AND MORTY",
+    category: ["ANIMATION", "CARTOON", "TV", "SCI FI"],
     message: "Take a picture in the style of a Rick and Morty episode scene-colorful, chaotic, and slightly grotesque. Convert characters from the Rick and Morty multiverse, complete with wacky gadgets, bizarre outfits, angular features, and offbeat personalities."
   },
   {
     name: "RIDE PHOTO MOMENT",
+    category: ["MASTER PROMPT", "AMUSEMENT PARK", "ROLLER COASTER", "ACTION"],
     message: "Take a picture and transform it into an official amusement park ride photo captured at the peak moment of excitement. Place the subject seated in a ride vehicle, mid-action, with wind-blown hair, dramatic expressions, and dynamic motion blur. Add an on-ride camera angle and a branded photo-frame overlay typical of theme park ride photos. Leave room for externally provided language to specify the amusement park name and ride name, and seamlessly incorporate those details into signage, ride branding, or the photo border. The final image should feel energetic, candid, and like a souvenir photo taken at the ride’s most thrilling moment."
   },
   {
     name: "RISOGRAPH",
+    category: ["ART", "PRINT", "VINTAGE"],
     message: "Take a picture and transform the image into risograph print style. Layered ink colors, misregistration. Paper grain texture."
   },
   {
+    name: "ROAD SIGN",
+    category: ["MASTER PROMPT", "SIGN", "HUMOR"],
+    message: "Take a picture and transform it into a realistic roadside warning or informational sign featuring the subject. The sign must conform to standard road sign design conventions: simple shapes, high-contrast colors, bold sans-serif lettering, and minimal visual clutter.\n\nPlace the subject as a simplified, sign-style pictogram or silhouette illustration (not photoreal) rendered in the same visual language as pedestrian, animal, or caution signs. The subject should clearly resemble the person but be stylized to match real traffic sign iconography.\n\nInclude a short sign message such as '[NAME] CROSSING,' 'BEWARE OF [NAME],' or similar wording. Text must be large, centered, and legible from a distance.\n\nMount the sign on a realistic metal post in a roadside or urban environment. Ensure the entire sign, including edges and post, is fully visible within the frame. The final image should look like a real, installed road sign that someone could encounter in the wild."
+  },
+  {
     name: "ROBLOX",
+    category: ["GAMING", "3D", "BLOCKY"],
     message: "Take a picture in the style of Roblox. Simplified 3D characters."
   },
   {
     name: "ROBOT",
+    category: ["SCI FI", "ROBOT", "MECHANICAL"],
     message: "Take a picture and make everything into mechanical robots that maintain the characteristics of the objects. Make it photorealistic."
   },
   {
     name: "ROCKWELL",
+    category: ["ART", "PAINTING", "AMERICAN", "ARTIST"],
     message: "Take a picture in the style of a Norman Rockwell illustration. Render with meticulous detail and vibrant colors to portray realistic, yet idealized nostalgic Americana."
   },
   {
     name: "ROCOCO",
+    category: ["ART", "PAINTING", "ORNATE", "CLASSIC"],
     message: "Take a picture and transform the image into Rococo style painting. Pastel colors, ornamental patterns, playful composition, delicate brushstrokes, floral and interior details."
   },
   {
     name: "ROMANTICISM",
+    category: ["ART", "PAINTING", "ROMANTIC", "DRAMATIC"],
     message: "Take a picture in the style of a Romanticism painting. Moody lighting, emotional intensity, dramatic composition, and expressive colors. Subject central and impactful."
   },
   {
     name: "ROMANESQUE PAINTING",
+    category: ["ART", "PAINTING", "MEDIEVAL"],
     message: "Take a picture and transform the image into Romanesque-style painting. Simplify forms, use bold outlines, flat areas of color, and stylized faces. Include architectural or decorative elements inspired by early medieval European art. Keep the subject recognizable while appearing as if part of a historical religious or historical scene."
   },
   {
     name: "RPG PORTRAIT",
+    category: ["GAMING", "RPG", "PORTRAIT"],
     message: "Take a picture and transform the subject into an RPG character portrait. Fantasy UI frame, stat panel styling. Painted character art. The result should be a full view of the portrait with a relevant background behind the portrait."
   },
   {
     name: "RUBBER HOSE",
+    category: ["ANIMATION", "CARTOON", "VINTAGE", "30S"],
     message: "Take a picture and transform the image into 1930s rubber hose animation style. Bouncy limbs, simple faces. Vintage cartoon aesthetic."
   },
   {
     name: "RUSSIAN ICONOGRAPHY",
+    category: ["ART", "RELIGIOUS", "RUSSIAN"],
     message: "Take a picture and transform the image into Russian iconography style art. Stylized facial features, gold accents, symbolic colors, frontal composition, and spiritual solemnity."
   },
   {
     name: "SCANDINAVIAN FOLK ART",
+    category: ["ART", "CULTURAL", "SCANDINAVIAN"],
     message: "Take a picture and transform the image into Scandinavian folk art style art. Decorative patterns, muted earthy tones, simple geometry, and traditional motifs."
   },
   {
+    name: "SCARY MOVIE",
+    category: ["HUMOR", "MOVIES", "MASK"],
+    message: "Take a picture and transform the subject so their face appears as a Ghostface-style mask while preserving the subject’s underlying facial structure, proportions, and expression. The mask should be smooth white with elongated eyes and mouth, subtly shaped by the subject’s face so it feels worn rather than pasted on.\n\nIntroduce **subtle subject-specific variations** to the mask so each render is visually distinct while remaining unmistakably Ghostface-inspired. These variations should be inspired by the subject’s real traits, accessories, or appearance and may include, but are not limited to:\n• faint contour impressions reflecting the subject’s cheekbones or jawline\n• subtle asymmetry in eye or mouth openings based on the subject’s expression\n• molded impressions suggesting glasses, sunglasses, or facial accessories if the subject is wearing them\n• slight surface imperfections, hairline cracks, gloss variation, or patina unique to the subject\n\nDo NOT turn the mask into a parody, novelty mask, or decorative redesign. Changes must remain restrained, eerie, and believable.\n\nDress the subject in a flowing black hooded robe inspired by the classic Ghostface costume. Ensure the hood frames the mask naturally, with realistic fabric folds, shadows, and texture. Match lighting, perspective, and depth so the costume integrates seamlessly with the original scene.\n\nMaintain a clean, non-graphic horror aesthetic. Do not add blood, weapons, or violent elements. The final image should feel eerie, iconic, cinematic, and subtly personalized, while remaining clearly readable on small screens."
+  },
+  {
     name: "SCREAM",
+    category: ["HORROR", "MOVIES", "MASK"],
     message: "Take a picture and transform the subject so their face appears as a Ghostface-style mask while preserving the subject’s underlying facial structure, proportions, and expression. The mask should be smooth white with elongated eyes and mouth, subtly shaped by the subject’s face so it feels worn rather than pasted on.\n\nDress the subject in a flowing black hooded robe inspired by the classic Ghostface costume. Ensure the hood frames the mask naturally, with realistic fabric folds, shadows, and texture. Match lighting, perspective, and depth so the costume integrates seamlessly with the original scene.\n\nMaintain a clean, non-graphic horror aesthetic. Do not add blood, weapons, or violent elements. The final image should feel eerie, iconic, and cinematic while remaining clearly readable on small screens."
   },
   {
     name: "SECURITY CAMERA FOOTAGE",
+    category: ["SURVEILLANCE", "LOW QUALITY", "SECURITY"],
     message: "Take a picture and transform it into low-quality security camera footage. Render the image in washed-out grayscale or green-tinted night vision with heavy noise and compression artifacts. Add a timestamp and camera label (e.g., CAM 03, 02:14 AM) in a blocky digital font. The framing should feel awkward or off-center, with slight motion blur or ghosting. Reduce detail and sharpness while preserving the subject’s silhouette. The image should feel surveilled, impersonal, and slightly unsettling."
   },
   {
     name: "SEND IN THE CLOWNS",
+    category: ["HUMOR", "INTERPRETATION", "CLOWN", "CIRCUS"],
     message: "Take a picture and transform the subject into a clown, adapting the clown’s style based on the subject’s facial expression. Preserve the subject’s facial structure and identity while applying expressive clown makeup and costume details. Automatically select ONE of the following interpretations based on the subject’s apparent emotion:\n\n• Happy Clown — if the subject is smiling or joyful, use bright colors, a rounded red nose, cheerful face paint, and playful costume elements.\n• Sad Clown — if the subject appears sad or frowning, use muted colors, downward eye makeup, a single painted tear, softer lighting, and a melancholic expression.\n• Evil Clown — if the subject appears angry, intense, or menacing, use darker colors, sharp makeup lines, exaggerated shadows, unsettling grin or glare, and dramatic lighting.\n\nEnsure the chosen clown type is visually clear and emotionally consistent. The final image should feel theatrical, expressive, and unmistakably clown-like while keeping the subject recognizable."
   },
   {
     name: "SENTIENT OBJECT",
+    category: ["HUMOR", "OBJECT", "FACE"],
     message: "Take a picture and transform the subject into a sentient everyday object while preserving recognizable facial features, expressions, and personality. Choose an object that feels thematically connected to the subject’s clothing, pose, or surroundings, such as a vending machine, toaster, mailbox, lamp, or appliance. Integrate the subject’s face naturally into the object’s design so it appears alive and expressive. Place the character in a believable environment where the object would normally exist, with consistent lighting, scale, and shadows. Render the final image with surreal realism and a humorous, imaginative tone."
   },
   {
     name: "SEUSS",
+    category: ["BOOK", "CARTOON", "WHIMSICAL"],
     message: "Take a picture and transform the subject and the surrounding scene into a whimsical Dr. Seuss book illustration. Preserve the subject’s recognizable facial features and personality while adapting their appearance to the exaggerated, fantastical style of Dr. Seuss characters with playful proportions, quirky shapes, and vibrant colors. The environment should include imaginative, surreal elements typical of Seuss worlds—twisting landscapes, unusual plants, and whimsical architecture. Add accompanying flavor text transformed into a short rhyming poem or verse that complements the scene and subject, in the signature playful, rhythmic, and nonsensical style of Dr. Seuss. Ensure the subject remains clearly identifiable and fully integrated into the Seussian world."
   },
   {
     name: "SHAKESPEAREAN",
+    category: ["THEATER", "CLASSIC", "COSTUME"],
     message: "Take a picture and make the subject an actor in a Shakespearean play. Dress the subject in period-accurate costume in the same style as the chosen Shakespearean play, apply stage lighting, and dramatic theatrical pose."
   },
   {
     name: "SHOPPING LIST",
+    category: ["UTILITY", "LIST", "SHOPPING"],
     message: "Take a picture and create a pictured shopping list identifying the main subject and all notable objects. Do not display a single full reference photo. Instead, separate each identified item and create a small cropped image or thumbnail of each subject or object. Present a numbered shopping list where each number is paired with its corresponding small image and a short description. Keep the layout clean and optimized for a small screen, with each item visually distinct and easy to scan."
   },
   {
     name: "SHOULDNT HAVE DONE THAT",
+    category: ["HUMOR", "MISTAKE", "REGRET"],
     message: "Take a picture and subtly make it look like the subject is doing something they absolutely should not be doing. The humor should come from obvious poor judgment."
   },
   {
     name: "SILHOUETTE",
+    category: ["ART", "SILHOUETTE", "MINIMAL"],
     message: "Take a picture and convert the subject into a solid black silhouette. Subject interior filled with the background image. Outer background pure white."
   },
   {
     name: "SIMPSONS",
+    category: ["ANIMATION", "CARTOON", "TV"],
     message: "Take a picture in the style of a Simpsons cartoon scene, with yellow skin tones and Springfield vibes.  Complete with cartoon proportions and bright palettes. Preserve facial identity."
   },
   {
     name: "SKETCH ART",
+    category: ["ART", "SKETCH", "COLORFUL"],
     message: "Take a picture in the style of colorful Sketch Art. A rapidly executed, freehand drawing that serves as a preliminary step for a more detailed, finished work."
   },
   {
     name: "SNOW GLOBE",
+    category: ["TOY", "MINIATURE", "WINTER"],
     message: "Take a picture and encapsulate the scene inside a snow globe. Glass refraction, floating snow particles."
   },
   {
     name: "SOLARPUNK",
+    category: ["SCI FI", "NATURE", "UTOPIAN"],
     message: "Take a picture and transform the scene into a solarpunk future. Green architecture, renewable energy, optimistic tone."
   },
   {
     name: "SOUTH PARK",
+    category: ["ANIMATION", "CARTOON", "TV"],   
     message: "Take a picture in the style of a South Park cartoon scene with flat colors and exaggerated expressions.  Blocky limbs, simple shapes, and expressive faces."
   },
   {
     name: "SOUVENIR GONE WRONG",
+    category: ["HUMOR", "TOURIST", "TRAVEL"],
     message: "Take a picture and frame the subject like a classic tourist souvenir photo in front of a famous landmark. The subject should be posing confidently as if capturing a perfect travel photo, while unexpected chaos, absurd events, or humorous interruptions happen in the background (for example: animals photobombing, sudden weather, confused crowds, or strange events). Keep the subject calm and unaware while the background tells a funny or surprising story."
   },
   {
     name: "SPACE",
+    category: ["SPACE", "ASTRONAUT", "SCI FI"],
     message: "Take a picture and place the subject in a space station wearing a space suit. The Earth is visible in the background. Make it photorealistic."
   },
   {
     name: "SPANISH BAROQUE",
+    category: ["ART", "PAINTING", "SPANISH", "CLASSIC"],
     message: "Take a picture and transform the image into a painting in the style of Diego Velázquez or similar Spanish Baroque painters. Use realistic lighting, subtle color palettes, and detailed textures. Capture the subject naturally, with dramatic depth and elegant composition reminiscent of 17th-century Spanish portraiture. Imbue the image with profound religious fervor, stark realism, and dramatic use of tenebrism to evoke strong emotions and piety."
   },
   {
     name: "SPOT THE DIFFERENCE",
+    category: ["PUZZLE", "GAME", "ACTIVITY"],
     message: "Take a picture and duplicate it into two side-by-side frames showing the same scene. Keep the left frame as the original reference image.\n\nEnsure the subject and all objects remain **exactly in the same position and fully visible** in both frames unless an object is intentionally removed. The subject should not be tilted or cropped out of frame; the entire area should be consistently in view on both sides.\n\nIn the right frame, introduce **5–7 subtle but clearly noticeable differences** in objects, colors, accessories, or minor details, such as:\n• Removing or adding small objects\n• Altering colors of items or clothing\n• Slightly repositioning accessories or props (without moving the subject)\n• Changing minor details of clothing, eyes, haircolor, hairstyle, or props\n• Adjusting the size of small items or background elements\n\nDo not add labels, arrows, or text. The two images should be aligned, evenly sized, and easy to compare on a small screen. The final result should resemble a classic children’s \"find the differences\" puzzle, with differences discoverable but the overall scene consistent and fully framed."
   },
   {
+    name: "STADIUM CROWD SIGN",
+    category: ["HUMOR","MASTER PROMPT", "SPORTS", "PHOTO EFFECT"],
+    message: "Take a picture and place the subject inside a live sports stadium crowd. The subject should blend naturally into the audience, wearing a team jersey and appearing as one of many fans.\n\nThe subject must be holding a handmade or printed sign with a funny message inspired by flavor text or externally appended language. The sign should be readable but not oversized, matching real fan-made stadium signs.\n\nCompose the scene so the subject is not immediately obvious at first glance. The viewer should discover the subject by scanning the crowd. Use realistic stadium lighting, depth, motion blur, and crowd density.\n\nEnsure the subject, sign, and surrounding fans feel cohesive and photoreal. The final image should feel like a real moment captured during a live sporting event."
+  },
+  {
     name: "STAINED GLASS",
+    category: ["ART", "GLASS", "CHURCH"],
     message: "Take a picture and transform the image into a stained-glass artwork. Bold lead outlines, translucent color panels. Light glowing through the glass."
   },
   {
     name: "STANDING NEXT TO",
+    category: ["HUMOR", "CELEBRITY", "MASTER PROMPT", "MASHUP"],
     message: "Take a picture and add a FAMOUS PERSON standing next to the subject. Match lighting and scale realistically."
   },
   {
     name: "STAR TREK",
+    category: ["TV", "SCI FI", "SPACE", "STAR TREK"],
     message: "Take a picture and place the subject on the bridge of the Starship Enterprise dressed in a Star Trek uniform. Make it photorealistic."
   },
   {
     name: "STAR WARS",
+    category: ["MOVIES", "SCI FI", "SPACE", "STAR WARS"],
     message: "Take a picture and place the subject in a scene from the movie Start Wars.  Subject is dressed like a character in the movie. Make it photorealistic. Sci-fi realism."
   },
   {
     name: "STATUE",
+    category: ["SCULPTURE", "BRONZE", "MONUMENT"],
     message: "Take a picture and make subject into a bronze statue. Aged patina, sculptural realism."
   },
   {
     name: "STENCIL",
+    category: ["ART", "GRAFFITI", "STREET"],
     message: "Take a picture in the style of Stencil Art. High contrast, limited color palette."
   },
   {
     name: "STEREOSCOPE",
+    category: ["PHOTOGRAPHY", "3D", "VINTAGE"],
     message: "Take a picture and create a stereoscopic 3D side-by-side image from the photo. Maintain alignment and scale between left and right views. Subtle parallax for depth without distortion."
   },
   {
     name: "STORY MOMENT",
+    category: ["NARRATIVE", "DRAMATIC", "CINEMATIC"],
     message: "Take a picture and transform the image into a single dramatic story moment. Imply what happened before and what will happen next through visual clues. Cinematic composition."
   },
   {
     name: "STREET ART",
+    category: ["ART", "GRAFFITI", "URBAN"],
     message: "Take a picture and transform the image into contemporary street art. Gritty textures, stenciled patterns, expressive composition, and urban color palette on a concrete or brick surface."
   },
   {
     name: "STRETCH ARMSTRONG",
+    category: ["TOY", "RETRO", "STRETCHED"],
     message: "Take a picture and transform the subject into a Stretch Armstrong–style action figure made of thick, rubbery material. Preserve the subject’s recognizable facial features while adapting them into a toy-like appearance with smooth skin, simplified details, and a slightly exaggerated jaw and expression.\n\nDepict the subject’s arms, legs, or torso being stretched far beyond normal proportions, as if pulled by unseen hands or tension just outside the frame. The stretched areas should look elastic and dense, with believable thickness, subtle surface creases, and realistic stretch deformation rather than thin distortion.\n\nEnsure the subject still resembles a physical toy: solid core, rounded forms, and consistent material texture. Use lighting and shadows that emphasize volume and rubbery sheen. Do not show injuries or damage. The final image should feel playful, nostalgic, and clearly readable on small screens."
   },
   {
     name: "STUDENT ID",
+    category: ["HUMOR", "ID", "MASTER PROMPT", "SCHOOL"],
     message: "Take a picture and create a realistic but clearly fictional student identification card featuring the subject’s photo. Style the photo to resemble a typical campus ID picture, with slightly awkward framing, flat lighting, mild motion blur or softness, and an unpolished snapshot quality rather than a flattering portrait. Design the ID to resemble the general style of a school or university commonly found near the subject’s location, using a fictional institution name inspired by regional themes. Include placeholder text, sample ID numbers, and decorative elements only. Preserve the subject’s recognizable facial features and neutral or mildly awkward expression. The final image should appear as a novelty or prop-style student ID, clearly non-functional and created for artistic purposes."
   },
   {
     name: "SUPERHERO",
+    category: ["COMICS", "SUPERHERO", "ACTION"],
     message: "Take a picture and transform the subject into a superhero from the DC or Marvel universe, preserving recognizable facial features and characteristics. Depict the subject performing an act of heroism or saving the day in a dramatic action scene, such as stopping a runaway train, rescuing civilians, or confronting a villain. Include dynamic superhero attire inspired by the subject’s clothing, colors, and traits, with capes, emblems, and iconic superhero elements. Use cinematic lighting, dramatic angles, and dynamic motion for a visually striking composition."
   },
   {
     name: "SURREAL LANDSCAPE",
+    category: ["ART", "SURREAL", "LANDSCAPE"],
     message: "Take a picture and transform into a surreal landscape featuring a dreamlike quality pushing the boundaries of reality. Conjure a scene that has imaginative and otherworldly elements."
   },
   {
     name: "SURREALISM",
+    category: ["ART", "SURREAL", "DREAMLIKE"],
     message: "Take a picture in the style of Surrealist art. Include dreamlike imagery, illogical juxtapositions, automatism, vivid dream imagery, symbolism, and a sense of absurdity."
   },
   {
     name: "TABLOID",
+    category: ["NEWS", "SENSATIONAL", "SCANDAL"],
     message: "Take a picture in the style of a Newspaper tabloid. The tabloid is the National Equirer. Headline: \"SCANDAL!!!\"."
   },
   {
     name: "TAPESTRY",
+    category: ["ART", "TEXTILE", "MEDIEVAL"],
     message: "Take a picture and convert the image into a woven tapestry. Textile texture, medieval storytelling style."
   },
   {
     name: "TAROT CARD",
+    category: ["MYSTICAL", "CARD", "FORTUNE"],
     message: "Take a picture and transform the subject into a detailed tarot card illustration. Depict the subject as the central figure, preserving recognizable facial features and posture while adapting them into a stylized, symbolic art style inspired by traditional tarot imagery. Surround the subject with meaningful symbols, patterns, and motifs drawn from the subject’s appearance and surroundings. Include a decorative border and a card title at the top or bottom. Ensure the composition resembles a complete tarot card, with balanced layout, rich illustration detail, and a timeless, mystical aesthetic. The result should be a full view of the card with a relevant background behind the card."
   },
   {
     name: "TEXT LOGO",
+    category: ["DESIGN", "UTILITY", "LOGO", "TYPOGRAPHY"],
     message: "Take a picture and generate a minimal logo derived purely from text, such as initials, monograms, or typographic lettermarks. This mode affects header branding only.\n\nDo not introduce pictorial icons, illustrations, or decorative graphics. The logo should be subtle, professional, and typography-driven, integrating naturally into the existing header without altering layout hierarchy.\n\nIf other document or legal modes are active, ensure the logo remains understated and does not compete with formal structure."
   },
   {
     name: "THERMAL",
+    category: ["PHOTOGRAPHY", "THERMAL", "HEAT"],
     message: "Take a picture and transform the image into thermal imaging. False-color heat mapping. High contrast."
   },
   {
     name: "TIBETAN THANGKA",
+    category: ["ART", "RELIGIOUS", "ASIAN"],
     message: "Take a picture and transform the image into Tibetan Thangka style painting. Highly detailed line work, symbolic composition, rich colors, and spiritual iconography."
   },
   {
     name: "TILT-SHIFT",
+    category: ["PHOTOGRAPHY", "MINIATURE", "BLUR"],
     message: "Take a picture and Apply tilt-shift photography effect. Selective focus creating a miniature diorama look. Blurred foreground and background."
   },
   {
     name: "TIME DILATION",
+    category: ["SCI FI", "TIME", "MOTION"],
     message: "Take a picture and depict the image as if time is slowed or fractured. Motion echoes, temporal distortions."
   },
   {
     name: "TIME MAGAZINE",
+    category: ["NEWS", "MAGAZINE", "COVER"],
     message: "Take a picture in the style of a polished TIME magazine cover. Title: \"PERSON OF THE YEAR\"."
   },
   {
     name: "TINY SELVES",
+    category: ["ILLUSION", "MOSAIC", "RECURSIVE"],
     message: "Take a picture and transform the subject so that their entire face and body are composed exclusively from hundreds of tiny, complete versions of the subject. There must be NO underlying full-size face, skin, or body visible anywhere. Every facial feature (eyes, nose, mouth), contour, and body shape must be formed only by the placement, density, and orientation of the tiny figures. The tiny versions should act like living building blocks, posed and arranged to define edges, shading, and structure. From a distance, the subject must read clearly as a complete human figure; up close, the image must resolve entirely into individual miniature subjects. Use consistent lighting and perspective so the construction feels intentional, surreal, and visually mind-bending. Do not partially fill, overlay, or decorate a normal body — the tiny figures ARE the body."
   },
   {
     name: "TINY WORLD",
+    category: ["MINIATURE", "TILT SHIFT", "SMALL"],
     message: "Take a picture and transform the scene so the subject appears miniature. Environment becomes massive. Tilt-shift realism."
   },
   {
     name: "TONIGHT SHOW INTERVIEW",
+    category: ["TV", "TALK SHOW", "CELEBRITY"],
     message: "Take a picture and place the subject on the late-night talk show set of The Tonight Show. Preserve the subject’s facial features, personality, and clothing while adapting them naturally to the environment. Include the iconic desk, host chair, stage lighting, and background elements such as cityscape backdrops. Show the subject interacting with the host, engaging in conversation, or reacting to jokes. Ensure the scene captures the lively, polished, and humorous atmosphere of the late-night talk show while keeping the subject clearly identifiable."
   },
   {
     name: "TOPIARY",
+    category: ["NATURE", "SCULPTURE", "GARDEN"],
     message: "Take a picture and transform the subject into a living topiary sculpture. Preserve the subject’s recognizable facial structure, hairstyle silhouette, body proportions, and clothing shapes translated into carefully trimmed foliage and greenery. Use dense leaves, hedges, vines, and floral textures shaped with precision pruning. The subject must appear grown organically from plants, not carved stone. Natural outdoor lighting, garden environment, and botanical realism with visible leaf detail and depth."
   },
   {
     name: "TRADING CARD",
+    category: ["SPORTS", "MASTER PROMPT", "CARD", "COLLECTIBLE"],
     message: "Take a picture and transform the subject into a fully visible collectible sports trading card with a vintage 1980s/1990s style. Ensure the entire card—including all borders, portrait, background, stats, and flavor text—is fully visible and centered in the frame. Randomly assign a sport (e.g., basketball, soccer, baseball, football, tennis) for each render.\n\nInclude a clear portrait of the subject, a stylized action background, and a card border with realistic texture, embossing, and glossy surfaces. Apply worn effects such as yellowed edges, scratches, and slight discoloration for a vintage look.\n\nAdd the subject’s name, a mock team name or mascot, absurd over-the-top stats inspired by the subject’s appearance, pose, or personality (e.g., “99% chance to eat pizza mid-game,” “Can balance a coffee cup while dribbling”), and humorous flavor text describing the subject. Allow external master prompt text to be appended to the flavor text.\n\nEnsure everything is legible on a small screen, the subject remains instantly recognizable, and the final image clearly shows the full card without cropping."
   },
   {
     name: "TV DRAMA",
+    category: ["TV", "DRAMA", "CINEMATIC", "MASTER PROMPT"],
     message: "Take a picture and place the subject into a famous dramatic television series scene. Preserve the subject’s facial features, expressions, and clothing while adapting them to the television drama style. Include cinematic lighting, moody atmosphere, and emotionally charged interactions with other characters or surroundings. The composition should convey tension, suspense, or deep narrative context, fully integrating the subject into the dramatic storyline of the show."
   },
   {
     name: "TV GAME SHOW",
+    category: ["TV", "GAME SHOW", "ENTERTAINMENT", "MASTER PROMPT"],
     message: "Take a picture and place the subject into a famous television game show set. Preserve the subject’s facial features, personality, and clothing while transforming them into a contestant or host in the game show style. Include colorful set design, bright stage lighting, game props, podiums, or audience elements. Convey excitement, engagement, and fun, fully integrating the subject into the lively, competitive environment of the television show."
   },
   {
     name: "TV SITCOM",
+    category: ["TV", "SITCOM", "COMEDY", "MASTER PROMPT"],
     message: "Take a picture and place the subject into a famous television sitcom scene. Preserve the subject’s facial features, personality, and clothing while adapting them to the sitcom style. Include bright, cheerful lighting, a recognizable multi-camera set or typical sitcom living room, and humorous interactions with other characters or props. Ensure the scene conveys comedic timing, lightheartedness, and laugh-track energy, fully integrating the subject into the television comedy environment." 
   },
   {
     name: "TYPICAL TOURIST",
+    category: ["TOURIST", "TRAVEL", "FORCED PERSPECTIVE"],
     message: "Take a picture and place the subject in front of a randomly selected famous world landmark using classic forced-perspective tourist photography. The subject is intentionally interacting with the landmark through optical illusion—such as pinching it between their fingers, holding it up, pushing it, leaning against it, or framing it with their hands—while maintaining realistic scale and perspective from the camera’s point of view. Preserve the subject’s recognizable facial features, proportions, and identity. Carefully match camera angle, focal length, lighting direction, shadows, depth of field, and atmospheric perspective so the illusion feels natural and intentional rather than composited. The subject’s pose, hand placement, and eye line must align perfectly with the landmark to sell the visual trick. Capture the moment as if snapped at the exact perfect second. Render the final image with photorealistic travel-photo realism, playful humor, and precise forced-perspective accuracy."
   },
   {
     name: "UK POSTER ART 1930s",
+    category: ["ART", "VINTAGE", "POSTER", "30S"],
     message: "Take a picture and transform the image into a 1930s British travel poster style art. Simplified shapes, bold typography, stylized landscapes, and clean graphic composition."
   },
   {
     name: "UNDER THE SEA",
+    category: ["UNDERWATER", "OCEAN", "NATURE"],
     message: "Take a picture and place the subject underwater in a natural ocean environment. The subject is wearing streamlined, sport-style swimwear suitable for ocean swimming, styled realistically for an underwater setting. Create a photorealistic underwater seascape capturing the beauty of the ocean depths. Include coral reefs, exotic fish, and aquatic plants, with sunlight filtering through the water to create dramatic lighting and rich color variation. Emphasize realism, scale, and natural movement in the water."
   },
   {
     name: "VACATION",
+    category: ["TRAVEL", "MASTER PROMPT", "TOURIST", "LOCATION"],
     message: "Take a picture and have the subject standing in the middle of a CITY street somewhere in the world, with iconic and easily recognizable landmarks from that CITY in the background. The scene should capture the CITY life, detailed architecture, and natural lighting, with the person dressed in modern casual clothing, blending naturally into the environment. Make it photorealistic. 8k resolution."
   },
   {
     name: "VALENTINE",
+    category: ["ROMANCE", "VALENTINE", "HEART"],
     message: "Take a picture and frame the subject inside a visually prominent heart shape. Create a romantic Valentine’s Day–themed scene with warm colors, soft lighting, and gentle decorative elements. Extract subtle flavor text and inspiration from the subject’s appearance, expression, clothing, and surroundings to generate a heartfelt Valentine’s Day poem. Display the complete poem clearly and fully within the image, ensuring all lines are legible and unobstructed. Integrate the poem naturally into the composition, such as on a decorative card, ribbon, or elegant text panel, while keeping the subject as the central focus. Render the final image with polished, high-quality detail."
   },
   {
     name: "VAMPIRE",
+    category: ["HORROR", "VAMPIRE", "GOTHIC"],
     message: "Take a picture and transform the subject into a realistic vampire while preserving the subject’s recognizable facial structure, body proportions, and identity. Subtly enhance features with pale, luminous skin, sharp yet refined fangs, intense eyes, and an elegant, supernatural presence. Adapt the subject’s clothing to a dark, timeless vampire aesthetic while maintaining their original style and personality. Place the subject naturally into a moody, atmospheric environment such as a gothic interior, moonlit street, or candlelit chamber. Use cinematic lighting, deep shadows, and rich textures to create a seductive, mysterious tone. Ensure the subject appears fully integrated into the scene and render the final image in photorealistic detail with depth, realism, and supernatural elegance."
   },
   {
     name: "VAN GOGH",
+    category: ["ART", "PAINTING", "ARTIST", "IMPRESSIONISM"],
     message: "Take a picture and transform it into a painted scene inspired by Vincent van Gogh. Preserve the photographic composition but reinterpret it using bold, swirling brushstrokes, thick paint texture, and expressive movement. Use vivid blues, yellows, and greens with visible directional strokes. The subject should remain clearly recognizable while the surrounding scene feels alive with motion and emotion."
   },
   {
     name: "VAPORWAVE",
+    category: ["ART", "RETRO", "90S", "AESTHETIC"],
     message: "Take a picture and style it as if it were a retro-futuristic vaporwave album cover. Dreamy neon colors, glitchy textures, and retro-futuristic vibes. Inspired by 90s aesthetics and early internet culture, giving the photo a surreal, nostalgic feel, like a lost scene from an old VHS tape or a synthwave album cover."
   },
   {
     name: "VENDING MACHINE ITEM R1",
+    category: ["HUMOR", "VENDING", "PACKAGED", "MASTER PROMPT"],
     message: "Take a picture and transform the subject into a novelty vending machine product. The subject should appear as a toy, figurine, or packaged novelty item clearly designed to be sold.\n\nPlace the product inside a vending machine slot behind glass. Show spiral coils, price tags without readable text, glass reflections, and interior vending machine lighting. The subject should appear scaled appropriately to fit the slot as a product, not as a real person.\n\nEnsure the scene reads as playful and humorous, like a novelty item for sale, with the vending machine fully visible and the product clearly displayed inside."
   },
   {
     name: "VHS 80s",
+    category: ["RETRO", "80S", "VHS", "VIDEO"],
     message: "Take a picture and transform the image into 1980s VHS footage. Soft focus, scanlines, color bleed, timestamp artifacts. Analog nostalgia aesthetic."
   },
   {
     name: "VICTORIAN ENGRAVING",
+    category: ["ART", "VINTAGE", "ENGRAVING"],
     message: "Take a picture and transform the image into a Victorian engraving. Fine linework, cross-hatching, monochrome or sepia tones, and antique print texture."
   },
   {
     name: "VICTORIAN PHOTO",
+    category: ["PHOTOGRAPHY", "VINTAGE", "VICTORIAN"],
     message: "Take a picture in the style of a Vintage photo of a Victorian family. Sepia tones, period attire."
   },
   {
     name: "VIDEO GAME AVATAR",
+    category: ["GAMING", "CHARACTER", "AVATAR", "MASTER PROMPT"],
     message: "Take a picture and place the subject inside a popular video   game world (randomized across classic side-scrollers, platformers, fighting games, action-adventure, open-world RPGs, and modern AAA titles). Transform the subject into a fully playable in-game character while preserving recognizable facial features, body shape, clothing identity, and personality. Match the exact art style, rendering technique, camera perspective, UI scale, and lighting of the chosen game. The subject must look natively integrated into the game world—not composited—with correct proportions, animation-ready pose, and environmental interaction. Entire background, props, and effects must be authentic to the video game universe."
   },
   {
     name: "VINTAGE POSTER",
+    category: ["ART", "VINTAGE", "POSTER", "MOVIES", "MASTER PROMPT"],
     message: "Take a picture in the style of a vintage movie poster. The poster uses lithography for printing on lightweight paper, and includes hand-painted illustrations. Add flavor text to the film title, director, and actor names inspired by the content of the image."
   },
   {
     name: "VISUAL POETRY",
+    category: ["ART", "POETRY", "METAPHOR"],
     message: "Take a picture and transform the image into visual poetry. Metaphor-driven imagery with emotional rhythm."
   },
   {
     name: "VULCAN TRANSFORMATION",
+    category: ["SCI FI", "STAR TREK", "TRANSFORMATION", "ALIEN"],
     message: "Take a picture and transform the subject into a realistic Vulcan. Preserve the subject’s recognizable facial features, bone structure, body proportions, and personality while adapting them to authentic Vulcan traits including pointed ears, subtle brow structure, calm expression, and controlled posture. Maintain the subject’s clothing identity translated into Vulcan-appropriate garments or Starfleet attire with clean lines and logical design. Neutral, disciplined body language, precise lighting, and understated realism. The subject must appear fully Vulcan, not human with cosmetic alterations."
   },
   {
     name: "WALDO",
+    category: ["PUZZLE", "HIDDEN", "GAME"],
     message: "Take a picture in the style of a Where’s Waldo illustration. The subject appears as Waldo with preserved traits, surrounded by many similar figures in a busy scene."
   },
   {
     name: "WANTED POSTER",
+    category: ["WESTERN", "VINTAGE", "POSTER"],
     message: "Take a picture in the style of an Old West Wanted Poster. Aged parchment, bullet holes. Title: \"WANTED\"."
   },
   {
     name: "WARNER BROS CARTOON",
+    category: ["ANIMATION", "CARTOON", "CLASSIC"],
     message: "Take a picture and transform the subject in the style of a classic Warner Bros. cartoon placed inside a classic Warner Bros. cartoon world inspired by mid-20th-century theatrical animation. Preserve the subject’s facial structure and recognizability while adapting lighting, color, outlines, and shading so the subject feels naturally integrated into a hand-painted cel-animation environment.\n\nThe scene should follow one of the following Warner Bros.–style formats:\n• A classic theatrical end-card inspired by the iconic \"That’s all folks!\" closing, where the subject’s face replaces the central character within concentric rings.\n• A classic cartoon scene where the subject appears alongside well-known Warner Bros. characters.\n\nUse bold black outlines, saturated colors, soft cel-style shading, exaggerated expressions, and simple painted backgrounds consistent with classic Warner Bros. cartoons. Ensure scale, eye-line, and pose interactions feel believable and playful. Keep the composition clear and readable on small screens.\n\nAllow externally provided instructions to specify the exact character(s), scene type, setting, or tone. If no external instructions are provided, automatically choose a fitting Warner Bros.–style scene."
   },
   {
     name: "WATERCOLOR",
+    category: ["ART", "PAINTING", "WATERCOLOR"],
     message: "Take a picture in the style of a Watercolor painting. The pigments are mixed with water and applied to paper, creating luminous, transparent washes of color."
   },
   {
+    name: "WEDDING CAKE TOPPER",
+    category: ["WEDDING", "HUMOR"],
+    message: "Take a picture and transform the subject(s) into the traditional two-figure wedding cake topper. If only one subject is provided, assign them to one of the two figures; if two subjects are provided, each becomes one of the figures.\n\nRender the figures as small, cheap plastic or resin figurines with smooth, slightly glossy surfaces and simplified, mass-produced detailing. The faces and features should retain recognizable aspects of the subjects but remain stylized and clearly toy-like. Clothing details (tuxedo, suit, wedding gown, veil, bouquet) should be painted on, not fabric.\n\nPlace the two figures securely on the top tier of a multi-layer wedding cake. Include realistic frosting textures, piped borders, subtle crumbs, and decorations such as flowers or fondant accents.\n\nPosition the toppers close together in the classic wedding pose, slightly off-center if needed to reflect a real hand-placed topper. The figures must clearly appear as part of the cake, not floating or separate.\n\nSet the scene on a wedding reception table with soft lighting, pastel or neutral tones, and subtle background elements like table linens, flowers, or candles.\n\nEnsure the entire top tier and both figurines are fully visible within the frame. Scale, shadows, and perspective must reinforce that the subject(s) are physical cheap plastic wedding cake toppers. The final image should feel charming, humorous, and recognizably a wedding cake topper scene."
+  },
+  {
     name: "WES ANDERSON",
+    category: ["MOVIES", "CINEMATIC", "SYMMETRICAL"],
     message: "Take a picture and transform the image into a Wes Anderson-style scene. Perfect symmetry, centered composition. Pastel color palette, soft lighting. Whimsical, storybook tone."
   },
   {
     name: "WESTERN",
+    category: ["WESTERN", "COWBOY", "VINTAGE"],
     message: "Take a picture and have the setting be an Old West town.  Make it photorealistic cowboy setting."
   },
   {
+    name: "WHEATIES BOX",
+    category: ["ADVERTISING", "HUMOR", "MASTER PROMPT"],
+    message: "Take a picture and transform it into a complete, three-dimensional Wheaties cereal box. The entire box must be fully visible within the frame, including front face, edges, top flap, and box proportions.\n\nDesign the front panel in classic Wheaties style with a bold orange background. Feature the subject prominently as the heroic athlete printed on the box front. The subject must appear integrated into the printed packaging, not floating or cropped.\n\nAdd an absurd, over-the-top achievement based on the subject’s traits, posture, or environment. Display this achievement prominently like a headline.\n\nInclude exaggerated, playful flavor text inspired by cereal-box marketing copy. Use vintage-inspired typography and graphic accents without copying real slogans.\n\nApply realistic cardboard texture, slight wear, subtle creases, and printing imperfections. The box should appear photographed in a real environment. Ensure all text and the subject are readable on a small screen."
+  },
+  {
     name: "WOODCUT",
+    category: ["ART", "PRINT", "CARVED"],
     message: "Take a picture and transform the image into a traditional woodcut print. Bold carved lines, high contrast. Limited color palette."
   },
   {
     name: "X-RAY",
+    category: ["MEDICAL", "X RAY", "TECHNICAL"],
     message: "Take a picture and transform the image into an X-ray view. Semi-transparent layers revealing internal structure. Monochrome glow."
   },
   {
+  name: "YARD SALE ITEM",
+  category: ["HUMOR", "SALE"],
+  message: "Take a picture and transform the subject into an item being sold at a casual neighborhood yard sale.\n\nDepict the subject posed stiffly or passively like merchandise, with a strip of masking tape on their chest or body displaying a handwritten price. The price and text should be humorous, such as 'Still Works,' 'No Returns,' or 'As-Is.'\n\nInclude a handwritten yard-sale sign nearby with casual marker lettering and uneven lines. Surround the subject with typical yard sale items like folding tables, boxes, old toys, lamps, or clothes racks.\n\nUse natural daylight and slightly cluttered suburban surroundings to sell the realism. The subject should feel like an object for sale, not a person shopping at the sale.\n\nEnsure the full subject and sale setup are fully visible within the frame. The tone should be funny, awkward, and unmistakably a yard sale scenario."
+  },
+  {
     name: "YEARBOOK",
+    category: ["SCHOOL", "PHOTO", "AWKWARD"],
     message: "Take a picture and make the subject appear in an awkward, unflattering yearbook photo. Retro school photo style."
   },
   {
   name: "ZOO-TOPIA",
+  category: ["MOVIES", "ANIMAL", "ANTHROPOMORPHIC", "DISNEY"],
   message: "Take a picture and transform the subject into a realistic anthropomorphized animal character (Zootopia-style realism). Choose an animal form that naturally fits the subject’s facial structure, body type, and personality. Preserve recognizable facial features, expressions, proportions, hairstyle equivalents (fur patterns), and the subject’s exact clothing translated accurately onto the animal anatomy. The character must stand upright with human-like posture, hands, and gestures while retaining believable animal anatomy, fur detail, and species-specific traits. Photorealistic fur, skin, and fabric interaction with cinematic lighting. The subject must clearly remain the same individual, now reimagined as a believable anthropomorphic animal in a realistic world."
   }
 ];
@@ -1515,6 +2027,12 @@ const STORAGE_KEY = 'r1_camera_styles';
 // Local storage key (for the ARRAY of favorite style names)
 let favoriteStyles = []; 
 const FAVORITE_STYLES_KEY = 'r1_camera_favorites';
+const VISIBLE_PRESETS_KEY = 'r1_camera_visible_presets';
+let visiblePresets = []; // Array of preset names that should be shown
+let isVisiblePresetsSubmenuOpen = false;
+let currentVisiblePresetsIndex = 0;
+let visiblePresetsFilterText = '';
+let visiblePresetsScrollEnabled = true;
 
 // Style reveal functionality
 function showStyleReveal(styleName) {
@@ -2032,9 +2550,16 @@ function hidePresetSelector() {
   
   document.getElementById('preset-selector').style.display = 'none';
   presetFilterText = '';
+  galleryPresetFilterByCategory = ''; // Clear category filter
   document.getElementById('preset-filter').value = '';
   isPresetSelectorOpen = false;
   currentPresetIndex_Gallery = 0;
+  
+  // Hide category hint
+  const categoryHint = document.getElementById('preset-selector-category-hint');
+  if (categoryHint) {
+    categoryHint.style.display = 'none';
+  }
 
   // Clear special mode flags
   isBatchPresetSelectionActive = false;
@@ -2050,7 +2575,7 @@ function scrollPresetListUp() {
   const items = presetList.querySelectorAll('.preset-item');
   if (items.length === 0) return;
 
-  currentPresetIndex_Gallery = (currentPresetIndex_Gallery - 1 + items.length) % items.length;
+  currentPresetIndex_Gallery = Math.max(0, currentPresetIndex_Gallery - 1);
   updatePresetSelection();
 }
 
@@ -2063,7 +2588,7 @@ function scrollPresetListDown() {
   const items = presetList.querySelectorAll('.preset-item');
   if (items.length === 0) return;
 
-  currentPresetIndex_Gallery = (currentPresetIndex_Gallery + 1) % items.length;
+  currentPresetIndex_Gallery = Math.min(items.length - 1, currentPresetIndex_Gallery + 1);
   updatePresetSelection();
 }
 
@@ -2086,10 +2611,57 @@ function updatePresetSelection() {
     
     // Scroll item into view
     currentItem.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    
+    // Show category hint with individually clickable categories
+    const presetName = currentItem.querySelector('.preset-name').textContent;
+    const preset = CAMERA_PRESETS.find(p => p.name === presetName);
+    const categoryHint = document.getElementById('preset-selector-category-hint');
+    if (categoryHint && preset && preset.category) {
+      // Clear previous content
+      categoryHint.innerHTML = '';
+      categoryHint.style.display = 'block';
+      
+      // Create a clickable span for each category
+      preset.category.forEach((cat, index) => {
+        const categorySpan = document.createElement('span');
+        categorySpan.textContent = cat;
+        categorySpan.style.cursor = 'pointer';
+        categorySpan.style.padding = '0 2px';
+        
+        // Highlight if this category is currently being filtered
+        if (galleryPresetFilterByCategory === cat) {
+          categorySpan.style.textDecoration = 'underline';
+          categorySpan.style.fontWeight = 'bold';
+        }
+        
+        // Make each category clickable
+        categorySpan.onclick = (e) => {
+          e.stopPropagation();
+          // If already filtering by this category, clear the filter
+          if (galleryPresetFilterByCategory === cat) {
+            galleryPresetFilterByCategory = '';
+          } else {
+            // Filter by this category
+            galleryPresetFilterByCategory = cat;
+          }
+          currentPresetIndex_Gallery = 0;
+          populatePresetList();
+        };
+        
+        categoryHint.appendChild(categorySpan);
+        
+        // Add comma separator if not the last category
+        if (index < preset.category.length - 1) {
+          const comma = document.createElement('span');
+          comma.textContent = ', ';
+          categoryHint.appendChild(comma);
+        }
+      });
+    } else if (categoryHint) {
+      categoryHint.style.display = 'none';
+    }
   }
 }
-
-// Add right after updatePresetSelection()
 
 function scrollSettingsUp() {
   if (!isSettingsSubmenuOpen) return;
@@ -2100,7 +2672,7 @@ function scrollSettingsUp() {
   const items = submenu.querySelectorAll('.menu-section-button');
   if (items.length === 0) return;
 
-  currentSettingsIndex = (currentSettingsIndex - 1 + items.length) % items.length;
+  currentSettingsIndex = Math.max(0, currentSettingsIndex - 1);
   updateSettingsSelection();
 }
 
@@ -2113,7 +2685,7 @@ function scrollSettingsDown() {
   const items = submenu.querySelectorAll('.menu-section-button');
   if (items.length === 0) return;
 
-  currentSettingsIndex = (currentSettingsIndex + 1) % items.length;
+  currentSettingsIndex = Math.min(items.length - 1, currentSettingsIndex + 1);
   updateSettingsSelection();
 }
 
@@ -2251,6 +2823,30 @@ function scrollMotionDown() {
   }
 }
 
+function scrollPresetBuilderUp() {
+  if (!isPresetBuilderSubmenuOpen) return;
+  
+  const submenu = document.getElementById('preset-builder-submenu');
+  if (!submenu || submenu.style.display !== 'flex') return;
+  
+  const container = submenu.querySelector('.preset-builder-form');
+  if (container) {
+    container.scrollTop = Math.max(0, container.scrollTop - 80);
+  }
+}
+
+function scrollPresetBuilderDown() {
+  if (!isPresetBuilderSubmenuOpen) return;
+  
+  const submenu = document.getElementById('preset-builder-submenu');
+  if (!submenu || submenu.style.display !== 'flex') return;
+  
+  const container = submenu.querySelector('.preset-builder-form');
+  if (container) {
+    container.scrollTop = Math.min(container.scrollHeight - container.clientHeight, container.scrollTop + 80);
+  }
+}
+
 function scrollGalleryUp() {
   const modal = document.getElementById('gallery-modal');
   if (!modal || modal.style.display !== 'flex') return;
@@ -2351,11 +2947,23 @@ function populatePresetList() {
   const list = document.getElementById('preset-list');
   list.innerHTML = '';
   
-  const filtered = CAMERA_PRESETS.filter(preset => {
-    if (!presetFilterText) return true;
-    const searchText = presetFilterText.toLowerCase();
-    return preset.name.toLowerCase().includes(searchText) || 
-           preset.message.toLowerCase().includes(searchText);
+  const filtered = getVisiblePresets().filter(preset => {
+    // First apply text search filter
+    if (presetFilterText) {
+      const searchText = presetFilterText.toLowerCase();
+      const categoryMatch = preset.category && preset.category.some(cat => cat.toLowerCase().includes(searchText));
+      const textMatch = preset.name.toLowerCase().includes(searchText) || 
+             preset.message.toLowerCase().includes(searchText) ||
+             categoryMatch;
+      if (!textMatch) return false;
+    }
+    
+    // Then apply category filter if active
+    if (galleryPresetFilterByCategory) {
+      return preset.category && preset.category.includes(galleryPresetFilterByCategory);
+    }
+    
+    return true;
   });
   
   // Sort alphabetically by name
@@ -2595,7 +3203,7 @@ async function processBatchImages(preset, imagesToProcess) {
       document.getElementById('batch-current').textContent = processed;
       document.getElementById('batch-progress-fill').style.width = `${(processed / total) * 100}%`;
       
-      await new Promise(resolve => setTimeout(resolve, 500));
+      await new Promise(resolve => setTimeout(resolve, 2000));
     } catch (error) {
       console.error(`Failed to process image ${imageId}:`, error);
     }
@@ -2782,7 +3390,7 @@ async function applyMultiplePresets() {
       document.getElementById('batch-current').textContent = processed;
       document.getElementById('batch-progress-fill').style.width = `${(processed / presetsToApply.length) * 100}%`;
       
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      await new Promise(resolve => setTimeout(resolve, 2000));
     } catch (error) {
       console.error(`Failed to apply preset ${preset.name}:`, error);
     }
@@ -2881,10 +3489,57 @@ function updateMenuSelection() {
       behavior: 'smooth',
       block: 'nearest'
     });
+    
+    // Show category hint with individually clickable categories
+    const presetIndex = parseInt(currentItem.dataset.index);
+    const preset = CAMERA_PRESETS[presetIndex];
+    const categoryHint = document.getElementById('menu-category-hint');
+    if (categoryHint && preset && preset.category) {
+      // Clear previous content
+      categoryHint.innerHTML = '';
+      categoryHint.style.display = 'block';
+      
+      // Create a clickable span for each category
+      preset.category.forEach((cat, index) => {
+        const categorySpan = document.createElement('span');
+        categorySpan.textContent = cat;
+        categorySpan.style.cursor = 'pointer';
+        categorySpan.style.padding = '0 2px';
+        
+        // Highlight if this category is currently being filtered
+        if (mainMenuFilterByCategory === cat) {
+          categorySpan.style.textDecoration = 'underline';
+          categorySpan.style.fontWeight = 'bold';
+        }
+        
+        // Make each category clickable
+        categorySpan.onclick = (e) => {
+          e.stopPropagation();
+          // If already filtering by this category, clear the filter
+          if (mainMenuFilterByCategory === cat) {
+            mainMenuFilterByCategory = '';
+          } else {
+            // Filter by this category
+            mainMenuFilterByCategory = cat;
+          }
+          currentMenuIndex = 0;
+          populateStylesList();
+        };
+        
+        categoryHint.appendChild(categorySpan);
+        
+        // Add comma separator if not the last category
+        if (index < preset.category.length - 1) {
+          const comma = document.createElement('span');
+          comma.textContent = ', ';
+          categoryHint.appendChild(comma);
+        }
+      });
+    } else if (categoryHint) {
+      categoryHint.style.display = 'none';
+    }
   }
 }
-
-// Add these NEW functions after updateMenuSelection()
 
 let currentSubmenuIndex = 0;
 
@@ -2933,7 +3588,7 @@ function scrollMenuUp() {
   const items = stylesList.querySelectorAll('.style-item');
   if (items.length === 0) return;
 
-  currentMenuIndex = (currentMenuIndex - 1 + items.length) % items.length;
+  currentMenuIndex = Math.max(0, currentMenuIndex - 1);
   updateMenuSelection();
 }
 
@@ -2946,7 +3601,7 @@ function scrollMenuDown() {
   const items = stylesList.querySelectorAll('.style-item');
   if (items.length === 0) return;
 
-  currentMenuIndex = (currentMenuIndex + 1) % items.length;
+  currentMenuIndex = Math.min(items.length - 1, currentMenuIndex + 1);
   updateMenuSelection();
 }
 
@@ -2984,9 +3639,9 @@ function loadStyles() {
         try {
             const loadedStyles = JSON.parse(storedStyles);
             
-            CAMERA_PRESETS = CAMERA_PRESETS.filter(p => p.internal);
-            
-            CAMERA_PRESETS.push(...loadedStyles);
+            // Only add custom presets (those with internal: false)
+            const customPresets = loadedStyles.filter(p => p.internal === false);
+            CAMERA_PRESETS.push(...customPresets);
         } catch (e) {
             console.error("Error loading styles:", e);
         }
@@ -3009,6 +3664,40 @@ function loadStyles() {
     
     loadResolution();
     loadWhiteBalanceSettings();
+    
+    // Load visible presets
+    const visibleJson = localStorage.getItem(VISIBLE_PRESETS_KEY);
+    if (visibleJson) {
+        try {
+            visiblePresets = JSON.parse(visibleJson);
+            if (!Array.isArray(visiblePresets)) {
+                visiblePresets = [];
+            }
+        } catch (e) {
+            console.error("Error parsing visible presets:", e);
+            visiblePresets = [];
+        }
+    }
+    
+    // If no visible presets saved, show all by default
+    if (visiblePresets.length === 0) {
+        visiblePresets = CAMERA_PRESETS.map(p => p.name);
+        saveVisiblePresets();
+    }
+}
+
+// Save visible presets to localStorage
+function saveVisiblePresets() {
+    try {
+        localStorage.setItem(VISIBLE_PRESETS_KEY, JSON.stringify(visiblePresets));
+    } catch (err) {
+        console.error('Error saving visible presets:', err);
+    }
+}
+
+// Get only visible presets
+function getVisiblePresets() {
+    return CAMERA_PRESETS.filter(preset => visiblePresets.includes(preset.name));
 }
 
 // Save resolution setting
@@ -3221,7 +3910,7 @@ function loadResolution() {
 }
 
 function getStylesLists() {
-    const presets = CAMERA_PRESETS.filter(p => !p.internal);
+    const presets = CAMERA_PRESETS.filter(p => visiblePresets.includes(p.name));
     
     const sortedAll = presets.slice().sort((a, b) => a.name.localeCompare(b.name));
     
@@ -3234,8 +3923,10 @@ function getStylesLists() {
 
 function getSortedPresets() {
     const { favorites, regular } = getStylesLists();
-    // Return favorites first, then regular presets
-    return [...favorites, ...regular];
+    // Filter to only visible presets
+    const visibleFavorites = favorites.filter(p => visiblePresets.includes(p.name));
+    const visibleRegular = regular.filter(p => visiblePresets.includes(p.name));
+    return [...visibleFavorites, ...visibleRegular];
 }
 
 // Get the current preset's position in the sorted array
@@ -3255,7 +3946,9 @@ function getOriginalIndexFromSorted(sortedIndex) {
 // Save styles to localStorage
 function saveStyles() {
   try {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(CAMERA_PRESETS));
+    // Only save custom presets (internal: false), not the 360 defaults
+    const customPresets = CAMERA_PRESETS.filter(p => p.internal === false);
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(customPresets));
   } catch (err) {
     console.error('Error saving styles:', err);
   }
@@ -3285,13 +3978,24 @@ function createStyleMenuItem(preset) {
     
     const editBtn = document.createElement('button');
     editBtn.className = 'style-edit';
-    editBtn.textContent = 'Edit';
-    editBtn.onclick = (e) => {
-        e.stopPropagation();
-        editStyle(originalIndex);
-    };
     
-     
+    // Check if this is a user-created preset (has internal: false explicitly set)
+    const isUserPreset = (preset.internal === false);
+    
+    if (isUserPreset) {
+        editBtn.textContent = 'Builder';
+        editBtn.onclick = (e) => {
+            e.stopPropagation();
+            editPresetInBuilder(originalIndex);
+        };
+    } else {
+        editBtn.textContent = 'Edit';
+        editBtn.onclick = (e) => {
+            e.stopPropagation();
+            editStyle(originalIndex);
+        };
+    }
+         
     item.appendChild(favBtn);
     item.appendChild(name);
     item.appendChild(editBtn);
@@ -3416,6 +4120,498 @@ function hideMotionSubmenu() {
   showSettingsSubmenu();
 }
 
+function showVisiblePresetsSubmenu() {
+  document.getElementById('settings-submenu').style.display = 'none';
+  document.getElementById('visible-presets-submenu').style.display = 'flex';
+  isMenuOpen = false; // ADD THIS LINE
+  isVisiblePresetsSubmenuOpen = true;
+  visiblePresetsScrollEnabled = true;
+  isSettingsSubmenuOpen = false;
+  currentVisiblePresetsIndex = 0;
+  visiblePresetsFilterText = '';
+  document.getElementById('visible-presets-filter').value = '';
+  populateVisiblePresetsList();
+  updateVisiblePresetsDisplay();
+}
+
+function hideVisiblePresetsSubmenu() {
+  document.getElementById('visible-presets-submenu').style.display = 'none';
+  isVisiblePresetsSubmenuOpen = false;
+  visiblePresetsScrollEnabled = false;
+  currentVisiblePresetsIndex = 0;
+  visiblePresetsFilterText = '';
+  visiblePresetsFilterByCategory = ''; // Clear category filter
+  // Hide category hint
+  const categoryHint = document.getElementById('visible-presets-category-hint');
+  if (categoryHint) {
+    categoryHint.style.display = 'none';
+  }
+  showSettingsSubmenu();
+}
+
+// Show Preset Builder submenu
+function showPresetBuilderSubmenu() {
+  document.getElementById('settings-submenu').style.display = 'none';
+  document.getElementById('preset-builder-submenu').style.display = 'flex';
+  
+  isMenuOpen = false;
+  isSettingsSubmenuOpen = false;
+  isPresetBuilderSubmenuOpen = true;
+  
+  // Clear the form
+  clearPresetBuilderForm();
+}
+
+function hidePresetBuilderSubmenu() {
+  document.getElementById('preset-builder-submenu').style.display = 'none';
+  isPresetBuilderSubmenuOpen = false;
+  editingPresetBuilderIndex = -1;
+  
+  // Hide delete button when closing
+  const deleteButton = document.getElementById('preset-builder-delete');
+  if (deleteButton) deleteButton.style.display = 'none';
+  
+  showSettingsSubmenu();
+}
+
+// Clear Preset Builder form
+function clearPresetBuilderForm() {
+  editingPresetBuilderIndex = -1;
+  document.getElementById('preset-builder-name').value = '';
+  document.getElementById('preset-builder-category').value = '';
+  document.getElementById('preset-builder-template').value = '';
+  document.getElementById('preset-builder-prompt').value = '';
+  
+  // Show clear button and hide delete button when creating new preset
+  const deleteButton = document.getElementById('preset-builder-delete');
+  if (deleteButton) deleteButton.style.display = 'none';
+  
+  const clearButton = document.getElementById('preset-builder-clear');
+  if (clearButton) clearButton.style.display = 'flex';
+  
+  // Close all chip sections when clearing
+  document.querySelectorAll('.chip-section-content').forEach(c => {
+    c.style.display = 'none';
+  });
+  document.querySelectorAll('.chip-section-header').forEach(h => {
+    h.classList.remove('expanded');
+  });
+}
+
+// Edit preset in builder
+function editPresetInBuilder(index) {
+  const preset = CAMERA_PRESETS[index];
+  
+  // Show the submenu first
+  showPresetBuilderSubmenu();
+  
+  // Set the editing index AFTER showing (which clears the form)
+  editingPresetBuilderIndex = index;
+  
+ // Use setTimeout to ensure DOM is ready before populating
+  setTimeout(() => {
+    const nameInput = document.getElementById('preset-builder-name');
+    const categoryInput = document.getElementById('preset-builder-category');
+    const promptTextarea = document.getElementById('preset-builder-prompt');
+    const templateSelect = document.getElementById('preset-builder-template');
+    const deleteButton = document.getElementById('preset-builder-delete');
+    const clearButton = document.getElementById('preset-builder-clear');
+    
+    if (nameInput) nameInput.value = preset.name;
+    if (categoryInput) categoryInput.value = preset.category ? preset.category.join(', ') : '';
+    if (promptTextarea) promptTextarea.value = preset.message;
+    if (templateSelect) templateSelect.value = '';
+    
+    // Show delete button and hide clear button when editing existing preset
+    if (deleteButton) {
+      deleteButton.style.display = 'flex';
+    }
+    if (clearButton) {
+      clearButton.style.display = 'none';
+    }
+  }, 100);
+}
+
+// Handle template selection
+function handleTemplateSelection() {
+  const templateSelect = document.getElementById('preset-builder-template');
+  const promptTextarea = document.getElementById('preset-builder-prompt');
+  const selectedTemplate = templateSelect.value;
+  
+  if (selectedTemplate && PRESET_TEMPLATES[selectedTemplate] !== undefined) {
+    promptTextarea.value = PRESET_TEMPLATES[selectedTemplate];
+  }
+}
+
+// Get all unique categories from existing presets
+function getAllCategories() {
+  const categoriesSet = new Set();
+  CAMERA_PRESETS.forEach(preset => {
+    if (preset.category && Array.isArray(preset.category)) {
+      preset.category.forEach(cat => {
+        categoriesSet.add(cat.toUpperCase());
+      });
+    }
+  });
+  return Array.from(categoriesSet).sort();
+}
+
+// Save custom preset
+function saveCustomPreset() {
+  const name = document.getElementById('preset-builder-name').value.trim();
+  const categoryInput = document.getElementById('preset-builder-category').value.trim();
+  const prompt = document.getElementById('preset-builder-prompt').value.trim();
+  
+  // Validation
+  if (!name) {
+    alert('Please enter a preset name');
+    return;
+  }
+  
+  if (!prompt) {
+    alert('Please enter a prompt');
+    return;
+  }
+  
+// Parse categories
+  const categories = categoryInput 
+    ? categoryInput.split(',').map(cat => cat.trim().toUpperCase()).filter(cat => cat.length > 0)
+    : ['CUSTOM'];
+  
+  // Check if we're editing an existing preset
+  if (editingPresetBuilderIndex >= 0) {
+    // Editing mode
+    const oldName = CAMERA_PRESETS[editingPresetBuilderIndex].name;
+    CAMERA_PRESETS[editingPresetBuilderIndex] = {
+      name: name.toUpperCase(),
+      category: categories,
+      message: prompt,
+      internal: false
+    };
+    
+    // If name changed, update visiblePresets array
+    if (oldName !== name.toUpperCase()) {
+      const visIndex = visiblePresets.indexOf(oldName);
+      if (visIndex > -1) {
+        visiblePresets[visIndex] = name.toUpperCase();
+      }
+    }
+  } else {
+    // Creating new preset - check if name already exists
+    const existingIndex = CAMERA_PRESETS.findIndex(p => p.name.toUpperCase() === name.toUpperCase());
+    if (existingIndex !== -1) {
+      if (!confirm(`A preset named "${name}" already exists. Do you want to overwrite it?`)) {
+        return;
+      }
+      // Remove the existing preset
+      CAMERA_PRESETS.splice(existingIndex, 1);
+    }
+    
+    // Create new preset object
+    const newPreset = {
+      name: name.toUpperCase(),
+      category: categories,
+      message: prompt,
+      internal: false
+    };
+    
+    // Add to presets array
+    CAMERA_PRESETS.push(newPreset);
+    
+    // Add to visible presets (always make new presets visible by default)
+    if (!visiblePresets.includes(newPreset.name)) {
+      visiblePresets.push(newPreset.name);
+    }
+  }
+  
+  // Save to localStorage (save visible presets BEFORE custom presets)
+  saveVisiblePresets();
+  saveStyles();
+  
+  // Show success message
+  alert(editingPresetBuilderIndex >= 0 ? `Preset "${name}" updated!` : `Preset "${name}" saved successfully!`);
+  
+  // Clear form and go back
+  clearPresetBuilderForm();
+  hidePresetBuilderSubmenu();
+  
+  // Refresh menu if it's open
+  if (isMenuOpen) {
+    populateStylesList();
+  }
+}
+
+// Delete custom preset from builder
+function deleteCustomPreset() {
+  if (editingPresetBuilderIndex < 0) {
+    alert('No preset selected for deletion');
+    return;
+  }
+  
+  const preset = CAMERA_PRESETS[editingPresetBuilderIndex];
+  
+  // Verify this is a user-created preset
+  if (preset.internal !== false) {
+    alert('Cannot delete built-in presets');
+    return;
+  }
+  
+  if (!confirm(`Delete preset "${preset.name}"? This cannot be undone.`)) {
+    return;
+  }
+  
+  // Remove from CAMERA_PRESETS
+  CAMERA_PRESETS.splice(editingPresetBuilderIndex, 1);
+  
+  // Remove from visible presets
+  const visIndex = visiblePresets.indexOf(preset.name);
+  if (visIndex > -1) {
+    visiblePresets.splice(visIndex, 1);
+    saveVisiblePresets();
+  }
+  
+  // Adjust current preset index if needed
+  if (currentPresetIndex >= CAMERA_PRESETS.length) {
+    currentPresetIndex = CAMERA_PRESETS.length - 1;
+  }
+  
+  // Save changes
+  saveStyles();
+  
+  alert(`Preset "${preset.name}" deleted successfully!`);
+  
+  // Clear form and go back
+  clearPresetBuilderForm();
+  hidePresetBuilderSubmenu();
+  
+  // Refresh menu if open
+  if (isMenuOpen) {
+    populateStylesList();
+  }
+}
+
+function populateVisiblePresetsList() {
+  const list = document.getElementById('visible-presets-list');
+  list.innerHTML = '';
+  
+  const allPresets = CAMERA_PRESETS.filter(p => !p.internal);
+  const filtered = allPresets.filter(preset => {
+    // First apply text search filter
+    if (visiblePresetsFilterText) {
+      const searchText = visiblePresetsFilterText.toLowerCase();
+      const categoryMatch = preset.category && preset.category.some(cat => cat.toLowerCase().includes(searchText));
+      const textMatch = preset.name.toLowerCase().includes(searchText) || categoryMatch;
+      if (!textMatch) return false;
+    }
+    
+    // Then apply category filter if active (filter by single category)
+    if (visiblePresetsFilterByCategory) {
+      return preset.category && preset.category.includes(visiblePresetsFilterByCategory);
+    }
+    
+    return true;
+  });
+  
+  const sorted = filtered.sort((a, b) => a.name.localeCompare(b.name));
+  
+  const fragment = document.createDocumentFragment();
+  
+  sorted.forEach(preset => {
+    const item = document.createElement('div');
+    item.className = 'style-item';
+    item.dataset.presetName = preset.name;
+    
+    const checkbox = document.createElement('input');
+    checkbox.type = 'checkbox';
+    checkbox.className = 'master-prompt-checkbox';
+    checkbox.checked = visiblePresets.includes(preset.name);
+    checkbox.style.marginRight = '3vw';
+    
+    const name = document.createElement('span');
+    name.className = 'style-name';
+    name.textContent = preset.name;
+    
+    item.appendChild(checkbox);
+    item.appendChild(name);
+    
+    checkbox.onclick = (e) => {
+      e.stopPropagation();
+      toggleVisiblePreset(preset.name, checkbox.checked);
+    };
+    
+    item.onclick = () => {
+      checkbox.checked = !checkbox.checked;
+      toggleVisiblePreset(preset.name, checkbox.checked);
+    };
+    
+    fragment.appendChild(item);
+  });
+  
+  list.appendChild(fragment);
+  
+  const countElement = document.getElementById('visible-presets-count');
+  if (countElement) {
+    const visibleCount = sorted.filter(p => visiblePresets.includes(p.name)).length;
+    countElement.textContent = visibleCount;
+  }
+// Update selection after render
+  setTimeout(() => {
+    updateVisiblePresetsSelection();
+  }, 50);
+}
+
+function toggleVisiblePreset(presetName, isVisible) {
+  const index = visiblePresets.indexOf(presetName);
+  
+  if (isVisible && index === -1) {
+    visiblePresets.push(presetName);
+  } else if (!isVisible && index > -1) {
+    visiblePresets.splice(index, 1);
+  }
+  
+  saveVisiblePresets();
+  updateVisiblePresetsDisplay();
+  populateVisiblePresetsList(); // Update the current submenu list
+  
+  // Always update main menu count (even if not open)
+  const stylesCountElement = document.getElementById('styles-count');
+  if (stylesCountElement) {
+    const { favorites, regular } = getStylesLists();
+    const totalVisible = favorites.length + regular.length;
+    stylesCountElement.textContent = totalVisible;
+  }
+  
+  // Refresh main menu if open
+  if (isMenuOpen) {
+    populateStylesList();
+  }
+}
+
+function updateVisiblePresetsDisplay() {
+  const display = document.getElementById('current-visible-presets-display');
+  if (display) {
+    const total = CAMERA_PRESETS.filter(p => !p.internal).length;
+    const visible = visiblePresets.length;
+    display.textContent = visible === total ? 'All Visible' : `${visible} of ${total}`;
+  }
+}
+
+function scrollVisiblePresetsUp() {
+  if (!isVisiblePresetsSubmenuOpen || !visiblePresetsScrollEnabled) return;
+  
+  const visiblePresetsList = document.getElementById('visible-presets-list');
+  if (!visiblePresetsList) return;
+
+  const items = visiblePresetsList.querySelectorAll('.style-item');
+  if (items.length === 0) return;
+
+  currentVisiblePresetsIndex = Math.max(0, currentVisiblePresetsIndex - 1);
+  updateVisiblePresetsSelection();
+}
+
+function scrollVisiblePresetsDown() {
+  if (!isVisiblePresetsSubmenuOpen || !visiblePresetsScrollEnabled) return;
+  
+  const visiblePresetsList = document.getElementById('visible-presets-list');
+  if (!visiblePresetsList) return;
+
+  const items = visiblePresetsList.querySelectorAll('.style-item');
+  if (items.length === 0) return;
+
+  currentVisiblePresetsIndex = Math.min(items.length - 1, currentVisiblePresetsIndex + 1);
+  updateVisiblePresetsSelection();
+}
+
+function updateVisiblePresetsSelection() {
+  if (!isVisiblePresetsSubmenuOpen) return;
+
+  const visiblePresetsList = document.getElementById('visible-presets-list');
+  if (!visiblePresetsList) return;
+
+  const items = visiblePresetsList.querySelectorAll('.style-item');
+  if (items.length === 0) return;
+
+  items.forEach(item => {
+    item.classList.remove('menu-selected');
+  });
+
+  currentVisiblePresetsIndex = Math.max(0, Math.min(currentVisiblePresetsIndex, items.length - 1));
+
+  const currentItem = items[currentVisiblePresetsIndex];
+  if (currentItem) {
+    currentItem.classList.add('menu-selected');
+    
+    currentItem.scrollIntoView({
+      behavior: 'smooth',
+      block: 'nearest'
+    });
+    
+    // Show category hint with individually clickable categories
+    const presetName = currentItem.dataset.presetName;
+    const preset = CAMERA_PRESETS.find(p => p.name === presetName);
+    const categoryHint = document.getElementById('visible-presets-category-hint');
+    if (categoryHint && preset && preset.category) {
+      // Clear previous content
+      categoryHint.innerHTML = '';
+      categoryHint.style.display = 'block';
+      
+      // Create a clickable span for each category
+      preset.category.forEach((cat, index) => {
+        const categorySpan = document.createElement('span');
+        categorySpan.textContent = cat;
+        categorySpan.style.cursor = 'pointer';
+        categorySpan.style.padding = '0 2px';
+        
+        // Highlight if this category is currently being filtered
+        if (visiblePresetsFilterByCategory === cat) {
+          categorySpan.style.textDecoration = 'underline';
+          categorySpan.style.fontWeight = 'bold';
+        }
+        
+        // Make each category clickable
+        categorySpan.onclick = (e) => {
+          e.stopPropagation();
+          // If already filtering by this category, clear the filter
+          if (visiblePresetsFilterByCategory === cat) {
+            visiblePresetsFilterByCategory = '';
+          } else {
+            // Filter by this category
+            visiblePresetsFilterByCategory = cat;
+          }
+          currentVisiblePresetsIndex = 0;
+          populateVisiblePresetsList();
+        };
+        
+        categoryHint.appendChild(categorySpan);
+        
+        // Add comma separator if not the last category
+        if (index < preset.category.length - 1) {
+          const comma = document.createElement('span');
+          comma.textContent = ', ';
+          categoryHint.appendChild(comma);
+        }
+      });
+    } else if (categoryHint) {
+      categoryHint.style.display = 'none';
+    }
+  }
+}
+
+function selectCurrentVisiblePresetsItem() {
+  if (!isVisiblePresetsSubmenuOpen || !visiblePresetsScrollEnabled) return;
+
+  const visiblePresetsList = document.getElementById('visible-presets-list');
+  if (!visiblePresetsList) return;
+
+  const items = visiblePresetsList.querySelectorAll('.style-item');
+  if (items.length === 0 || currentVisiblePresetsIndex >= items.length) return;
+
+  const currentItem = items[currentVisiblePresetsIndex];
+  if (currentItem) {
+    currentItem.click();
+  }
+}
+
 function updateMotionDisplay() {
   const sensitivityLabels = ['Very Low', 'Low', 'Medium', 'High', 'Very High'];
   const currentMotionDisplay = document.getElementById('current-motion-display');
@@ -3465,20 +4661,20 @@ function loadMotionSettings() {
       continuousCheckbox.checked = motionContinuousEnabled;
     }
       
-    const cooldownSlider = document.getElementById('motion-cooldown-slider');
-    if (cooldownSlider) {
-      cooldownSlider.value = motionCooldown;
-    }
+      const cooldownSlider = document.getElementById('motion-cooldown-slider');
+      if (cooldownSlider) {
+        cooldownSlider.value = motionCooldown;
+      }
 
-    const startDelaySlider = document.getElementById('motion-start-delay-slider');
-    const startDelayValue = document.getElementById('motion-start-delay-value');
-    if (startDelaySlider && startDelayValue) {
-      const sliderValue = getStartDelaySliderValue();
-      startDelaySlider.value = sliderValue;
-      startDelayValue.textContent = MOTION_START_DELAYS[sliderValue].label;
-    }
+      const startDelaySlider = document.getElementById('motion-start-delay-slider');
+      const startDelayValue = document.getElementById('motion-start-delay-value');
+      if (startDelaySlider && startDelayValue) {
+        const sliderValue = getStartDelaySliderValue();
+        startDelaySlider.value = sliderValue;
+        startDelayValue.textContent = MOTION_START_DELAYS[sliderValue].label;
+      }      
 
-    updateMotionDisplay();
+      updateMotionDisplay();
   } catch (err) {
     console.error('Failed to load motion settings:', err);
   }
@@ -3528,7 +4724,8 @@ function loadNoMagicMode() {
 function showTutorialSubmenu() {
   document.getElementById('settings-submenu').style.display = 'none';
   document.getElementById('tutorial-submenu').style.display = 'flex';
-  
+
+  isMenuOpen = false; // ADD THIS LINE  
   isTutorialOpen = true;
   tutorialScrollEnabled = true; // Enable scrolling immediately
   isTutorialSubmenuOpen = true;
@@ -3613,11 +4810,9 @@ function scrollTutorialUp() {
   const contentArea = document.getElementById('tutorial-content-area');
   if (!contentArea || contentArea.style.display !== 'flex') return;
   
-  const tutorialContent = contentArea.querySelector('.tutorial-content');
-  if (!tutorialContent) {
-    // Fallback - scroll the content area itself
-    contentArea.scrollTop = Math.max(0, contentArea.scrollTop - 100);
-    return;
+  const tutorialContent = contentArea.querySelector('.submenu-list.tutorial-content');
+  if (tutorialContent) {
+    tutorialContent.scrollTop = Math.max(0, tutorialContent.scrollTop - 80);
   }
 }
 
@@ -4356,13 +5551,28 @@ function startTimerCountdown(captureCallback) {
         // Execute the capture callback
         captureCallback();
         
-        // MODIFY THIS SECTION - Use timerRepeatInterval instead of hardcoded 1000
+        // In continuous mode, auto-return to camera and continue
         if (timerRepeatEnabled && isTimerMode) {
+          // Auto-return to camera view after brief delay
           setTimeout(() => {
-            if (isTimerMode) { // Check again in case user turned it off
+            if (capturedImage.style.display === 'block') {
+              capturedImage.style.display = 'none';
+              video.style.display = 'block';
+              
+              // Restore camera switch button if multiple cameras available
+              const cameraButton = document.getElementById('camera-button');
+              if (cameraButton && availableCameras.length > 1) {
+                cameraButton.style.display = 'flex';
+              }
+            }
+          }, 500);
+          
+          // Continue timer loop
+          setTimeout(() => {
+            if (isTimerMode) {
               startTimerCountdown(captureCallback);
             }
-          }, timerRepeatInterval * 1000); // Convert seconds to milliseconds
+          }, timerRepeatInterval * 1000);
         }
       }, 500);
     }
@@ -4387,7 +5597,7 @@ function loadTimerSettings() {
       const settings = JSON.parse(saved);
       timerDelay = settings.delay || 10;
       timerRepeatEnabled = settings.repeat || false;
-      timerRepeatInterval = settings.repeatInterval || 1; // ADD THIS LINE
+      timerRepeatInterval = settings.repeatInterval || 1;
     }
   } catch (err) {
     console.error('Error loading timer settings:', err);
@@ -4784,8 +5994,8 @@ function capturePhoto() {
   capturedImage.style.transform = 'none';
   video.style.display = 'none';
   
-  // Hide reset button completely when motion detection is active
-  if (isMotionDetectionMode) {
+  // Hide reset button when motion detection OR continuous timer is active
+  if (isMotionDetectionMode || (isTimerMode && timerRepeatEnabled)) {
     resetButton.style.display = 'none';
   } else {
     resetButton.style.display = 'block';
@@ -4871,7 +6081,7 @@ async function syncQueuedPhotos() {
         }));
       }
       
-      await new Promise(resolve => setTimeout(resolve, 500));
+      await new Promise(resolve => setTimeout(resolve, 2000));
       
       if (isOnline) {
         photoQueue.shift();
@@ -4883,7 +6093,7 @@ async function syncQueuedPhotos() {
         break;
       }
       
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      await new Promise(resolve => setTimeout(resolve, 2000));
       
     } catch (error) {
       console.error('Sync error:', error);
@@ -5002,6 +6212,26 @@ window.addEventListener('sideClick', () => {
     }
     return;
   }
+
+ // Visible Presets submenu - select current item
+  if (isVisiblePresetsSubmenuOpen) {
+    selectCurrentVisiblePresetsItem();
+    return;
+  }
+
+  // Tutorial submenu - select current item
+  if (isTutorialSubmenuOpen) {
+    const glossary = document.getElementById('tutorial-glossary');
+    if (glossary && glossary.style.display !== 'none') {
+      // In glossary view - select the highlighted item
+      const items = glossary.querySelectorAll('.glossary-item');
+      if (items.length > 0 && currentTutorialGlossaryIndex < items.length) {
+        items[currentTutorialGlossaryIndex].click();
+      }
+    }
+    // If in content view, side button does nothing (just scrolls)
+    return;
+  }
   
   // Resolution submenu - select current item
   if (isResolutionSubmenuOpen) {
@@ -5114,19 +6344,31 @@ window.addEventListener('scrollUp', () => {
   
   // Preset selector (gallery)
   if (isPresetSelectorOpen) {
-    scrollPresetListUp();
+    scrollPresetListUp(); // or Down
     return;
   }
   
+  // Tutorial submenu - CHECK BEFORE MAIN MENU
+  if (isTutorialSubmenuOpen) {
+    scrollTutorialUp(); // or Down
+    return;
+  }
+
+    // Preset Builder submenu
+  if (isPresetBuilderSubmenuOpen) {
+    scrollPresetBuilderUp();
+    return;
+  }  
+  
+  // Visible Presets submenu - CHECK BEFORE MAIN MENU
+  if (isVisiblePresetsSubmenuOpen) {
+    scrollVisiblePresetsUp(); // or Down
+    return;
+  }
+
   // Main menu
   if (isMenuOpen && menuScrollEnabled) {
-    scrollMenuUp();
-    return;
-  }
-  
-  // Tutorial - CHECK BEFORE Settings submenu
-  if (isTutorialSubmenuOpen) {
-    scrollTutorialUp();
+    scrollMenuUp(); // or Down
     return;
   }
   
@@ -5135,7 +6377,7 @@ window.addEventListener('scrollUp', () => {
     scrollMotionUp();
     return;
   }
-  
+
   // Master prompt submenu
   if (isMasterPromptSubmenuOpen) {
     scrollMasterPromptUp();
@@ -5238,19 +6480,31 @@ window.addEventListener('scrollDown', () => {
     scrollPresetListDown();
     return;
   }
+
+  // Tutorial - CHECK BEFORE Settings submenu
+  if (isTutorialSubmenuOpen) {
+    scrollTutorialDown();
+    return;
+  }
+
+    // Preset Builder submenu
+  if (isPresetBuilderSubmenuOpen) {
+    scrollPresetBuilderDown();
+    return;
+  }
+
+ // Visible Presets submenu
+  if (isVisiblePresetsSubmenuOpen) {
+    scrollVisiblePresetsDown();
+    return;
+  }
   
   // Main menu
   if (isMenuOpen && menuScrollEnabled) {
     scrollMenuDown();
     return;
   }
-  
-  // Tutorial - CHECK BEFORE Settings submenu
-  if (isTutorialSubmenuOpen) {
-    scrollTutorialDown();
-    return;
-  }
-  
+
   // Motion submenu
   if (isMotionSubmenuOpen) {
     scrollMotionDown();
@@ -5631,7 +6885,9 @@ function showUnifiedMenu() {
   // Initialize styles count display
   const stylesCountElement = document.getElementById('styles-count');
   if (stylesCountElement) {
-    stylesCountElement.textContent = CAMERA_PRESETS.length;
+    const { favorites, regular } = getStylesLists();
+    const totalVisible = favorites.length + regular.length;
+    stylesCountElement.textContent = totalVisible;
   }
   updateResolutionDisplay();
   updateBurstDisplay();
@@ -5651,7 +6907,15 @@ async function hideUnifiedMenu() {
   menuScrollEnabled = false;
   currentMenuIndex = 0;
   styleFilterText = '';
+  mainMenuFilterByCategory = ''; // Clear category filter
   document.getElementById('style-filter').value = '';
+  
+  // Hide category hint
+  const categoryHint = document.getElementById('menu-category-hint');
+  if (categoryHint) {
+    categoryHint.style.display = 'none';
+  }
+  
   document.getElementById('unified-menu').style.display = 'none';
   await resumeCamera();
 }
@@ -5669,6 +6933,7 @@ function showSettingsSubmenu() {
   menu.style.display = 'none';
   pauseCamera();
   submenu.style.display = 'flex';
+  isMenuOpen = false; // ADD THIS LINE
   isSettingsSubmenuOpen = true;
   currentSettingsIndex = 0;
   
@@ -5706,13 +6971,21 @@ function showTimerSettingsSubmenu() {
     repeatCheckbox.checked = timerRepeatEnabled;
   }
   
-  // ADD THIS SECTION FOR REPEAT INTERVAL
-  const intervalSlider = document.getElementById('timer-repeat-interval-slider');
-  const intervalValue = document.getElementById('timer-repeat-interval-value');
-  if (intervalSlider && intervalValue) {
-    const currentKey = getTimerRepeatIntervalKey();
-    intervalSlider.value = currentKey;
-    intervalValue.textContent = TIMER_REPEAT_INTERVALS[currentKey].label;
+  // Load repeat interval input values
+  const intervalInput = document.getElementById('timer-repeat-interval-input');
+  const intervalUnit = document.getElementById('timer-repeat-interval-unit');
+  if (intervalInput && intervalUnit) {
+    // Determine best unit and value
+    if (timerRepeatInterval >= 3600 && timerRepeatInterval % 3600 === 0) {
+      intervalInput.value = timerRepeatInterval / 3600;
+      intervalUnit.value = '3600';
+    } else if (timerRepeatInterval >= 60 && timerRepeatInterval % 60 === 0) {
+      intervalInput.value = timerRepeatInterval / 60;
+      intervalUnit.value = '60';
+    } else {
+      intervalInput.value = timerRepeatInterval;
+      intervalUnit.value = '1';
+    }
   }
   
   settingsMenu.style.display = 'none';
@@ -5965,17 +7238,41 @@ function populateStylesList() {
     const { favorites, regular } = getStylesLists();
     
     const filteredFavorites = favorites.filter(preset => {
-      if (!styleFilterText) return true;
-      const searchText = styleFilterText.toLowerCase();
-      return preset.name.toLowerCase().includes(searchText) || 
-             preset.message.toLowerCase().includes(searchText);
+      // First apply text search filter
+      if (styleFilterText) {
+        const searchText = styleFilterText.toLowerCase();
+        const categoryMatch = preset.category && preset.category.some(cat => cat.toLowerCase().includes(searchText));
+        const textMatch = preset.name.toLowerCase().includes(searchText) || 
+               preset.message.toLowerCase().includes(searchText) ||
+               categoryMatch;
+        if (!textMatch) return false;
+      }
+      
+      // Then apply category filter if active
+      if (mainMenuFilterByCategory) {
+        return preset.category && preset.category.includes(mainMenuFilterByCategory);
+      }
+      
+      return true;
     });
     
     const filtered = regular.filter(preset => {
-      if (!styleFilterText) return true;
-      const searchText = styleFilterText.toLowerCase();
-      return preset.name.toLowerCase().includes(searchText) || 
-             preset.message.toLowerCase().includes(searchText);
+      // First apply text search filter
+      if (styleFilterText) {
+        const searchText = styleFilterText.toLowerCase();
+        const categoryMatch = preset.category && preset.category.some(cat => cat.toLowerCase().includes(searchText));
+        const textMatch = preset.name.toLowerCase().includes(searchText) || 
+               preset.message.toLowerCase().includes(searchText) ||
+               categoryMatch;
+        if (!textMatch) return false;
+      }
+      
+      // Then apply category filter if active
+      if (mainMenuFilterByCategory) {
+        return preset.category && preset.category.includes(mainMenuFilterByCategory);
+      }
+      
+      return true;
     });
 
     if (filteredFavorites.length > 0) {
@@ -6014,17 +7311,18 @@ function populateStylesList() {
     // Single event listener for the entire list using event delegation
     newList.addEventListener('click', handleStyleListClick);
 
-    // Update styles count
+// Update styles count - count from getStylesLists which already filters to visible
   const stylesCountElement = document.getElementById('styles-count');
   if (stylesCountElement) {
-    const totalCount = filteredFavorites.length + filtered.length;
-    stylesCountElement.textContent = totalCount;
+    const { favorites, regular } = getStylesLists();
+    const totalVisible = favorites.length + regular.length;
+    stylesCountElement.textContent = totalVisible;
   }
     
+    currentMenuIndex = 0;
     updateMenuSelection();
 }
 
-// Add this new function
 function createStyleMenuItemFast(preset) {
     const originalIndex = CAMERA_PRESETS.findIndex(p => p === preset);
     
@@ -6048,8 +7346,11 @@ function createStyleMenuItemFast(preset) {
     
     const editBtn = document.createElement('button');
     editBtn.className = 'style-edit';
-    editBtn.textContent = 'Edit';
-    editBtn.dataset.action = 'edit';
+    
+    // Check if this is a user-created preset (has internal: false)
+    const isUserPreset = (preset.internal === false);
+    editBtn.textContent = isUserPreset ? 'Builder' : 'Edit';
+    editBtn.dataset.action = isUserPreset ? 'builder' : 'edit';
     editBtn.dataset.index = originalIndex;
     
     item.appendChild(favBtn);
@@ -6079,6 +7380,14 @@ function handleStyleListClick(e) {
         return;
     }
     
+    // Handle builder button click
+    if (target.dataset.action === 'builder') {
+        e.stopPropagation();
+        const index = parseInt(target.dataset.index);
+        editPresetInBuilder(index);
+        return;
+    }
+    
     // Handle item click
     const item = target.closest('.style-item');
     if (item) {
@@ -6101,6 +7410,10 @@ function hideStyleEditor() {
   document.getElementById('style-editor').style.display = 'none';
   document.getElementById('style-name').value = '';
   document.getElementById('style-message').value = '';
+  const categoryInput = document.getElementById('style-category');
+  if (categoryInput) {
+    categoryInput.value = '';
+  }
   document.getElementById('delete-style').style.display = 'none';
   editingStyleIndex = -1;
 }
@@ -6111,6 +7424,12 @@ function editStyle(index) {
   
   document.getElementById('style-name').value = preset.name;
   document.getElementById('style-message').value = preset.message;
+  
+  const categoryInput = document.getElementById('style-category');
+  if (categoryInput) {
+    categoryInput.value = preset.category ? preset.category.join(', ') : '';
+  }
+  
   document.getElementById('delete-style').style.display = 'block';
   
   showStyleEditor('Edit Style');
@@ -6119,6 +7438,12 @@ function editStyle(index) {
 function saveStyle() {
   const name = document.getElementById('style-name').value.trim();
   const message = document.getElementById('style-message').value.trim();
+  const categoryInput = document.getElementById('style-category').value.trim();
+  
+  // Parse categories from comma-separated string
+  const category = categoryInput ? 
+    categoryInput.split(',').map(c => c.trim().toUpperCase()).filter(c => c.length > 0) : 
+    [];
   
   if (!name || !message) {
     alert('Please fill in both name and AI prompt');
@@ -6126,12 +7451,28 @@ function saveStyle() {
   }
   
   if (editingStyleIndex >= 0) {
-    CAMERA_PRESETS[editingStyleIndex] = { name, message };
+    const oldName = CAMERA_PRESETS[editingStyleIndex].name;
+    CAMERA_PRESETS[editingStyleIndex] = { name, category, message };
+    
+    // If name changed, update visiblePresets array
+    if (oldName !== name) {
+      const visIndex = visiblePresets.indexOf(oldName);
+      if (visIndex > -1) {
+        visiblePresets[visIndex] = name;
+        saveVisiblePresets();
+      }
+    }
   } else {
-    CAMERA_PRESETS.push({ name, message });
+    CAMERA_PRESETS.push({ name, category, message });
+    // ADD NEW PRESET TO VISIBLE LIST AUTOMATICALLY
+    visiblePresets.push(name);
+    saveVisiblePresets();
   }
   
   saveStyles();
+  
+  alert(editingStyleIndex >= 0 ? `Preset "${name}" updated!` : `Preset "${name}" saved!`);
+  
   hideStyleEditor();
   showUnifiedMenu();
 }
@@ -6462,7 +7803,262 @@ if (startBtn) {
   if (motionBackBtn) {
     motionBackBtn.addEventListener('click', hideMotionSubmenu);
   }
+
+  const visiblePresetsSettingsBtn = document.getElementById('visible-presets-settings-button');
+  if (visiblePresetsSettingsBtn) {
+    visiblePresetsSettingsBtn.addEventListener('click', showVisiblePresetsSubmenu);
+  }
   
+  const visiblePresetsBackBtn = document.getElementById('visible-presets-back');
+  if (visiblePresetsBackBtn) {
+    visiblePresetsBackBtn.addEventListener('click', hideVisiblePresetsSubmenu);
+  }
+
+  // Preset Builder
+  const presetBuilderBtn = document.getElementById('preset-builder-button');
+  if (presetBuilderBtn) {
+    presetBuilderBtn.addEventListener('click', showPresetBuilderSubmenu);
+  }
+  
+  const presetBuilderBack = document.getElementById('preset-builder-back');
+  if (presetBuilderBack) {
+    presetBuilderBack.addEventListener('click', hidePresetBuilderSubmenu);
+  }
+  
+  // Enable scroll for preset builder
+  const presetBuilderJumpUp = document.getElementById('preset-builder-jump-up');
+  if (presetBuilderJumpUp) {
+    presetBuilderJumpUp.addEventListener('click', scrollPresetBuilderUp);
+  }
+  
+  const presetBuilderJumpDown = document.getElementById('preset-builder-jump-down');
+  if (presetBuilderJumpDown) {
+    presetBuilderJumpDown.addEventListener('click', scrollPresetBuilderDown);
+  }
+  
+  const presetBuilderTemplate = document.getElementById('preset-builder-template');
+  if (presetBuilderTemplate) {
+    presetBuilderTemplate.addEventListener('change', handleTemplateSelection);
+  }
+  
+  // Handle Enter key navigation in preset builder
+  const presetBuilderName = document.getElementById('preset-builder-name');
+  if (presetBuilderName) {
+    presetBuilderName.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        document.getElementById('preset-builder-category')?.focus();
+      }
+    });
+  }
+  
+  const presetBuilderCategory = document.getElementById('preset-builder-category');
+  const categoryAutocomplete = document.getElementById('category-autocomplete');
+  
+  if (presetBuilderCategory && categoryAutocomplete) {
+    // Show autocomplete suggestions
+    const showCategorySuggestions = () => {
+      const inputValue = presetBuilderCategory.value;
+      const lastComma = inputValue.lastIndexOf(',');
+      const currentCategory = (lastComma >= 0 ? inputValue.substring(lastComma + 1) : inputValue).trim().toUpperCase();
+      
+      const allCategories = getAllCategories();
+      const filteredCategories = currentCategory 
+        ? allCategories.filter(cat => cat.includes(currentCategory))
+        : allCategories;
+      
+      if (filteredCategories.length > 0) {
+        categoryAutocomplete.innerHTML = filteredCategories
+          .map(cat => `<div class="category-autocomplete-item" data-category="${cat}">${cat}</div>`)
+          .join('');
+        categoryAutocomplete.style.display = 'block';
+      } else {
+        categoryAutocomplete.style.display = 'none';
+      }
+    };
+    
+    // Insert selected category
+    const insertCategory = (category) => {
+      const inputValue = presetBuilderCategory.value;
+      const lastComma = inputValue.lastIndexOf(',');
+      
+      if (lastComma >= 0) {
+        // Replace the last category after the comma
+        presetBuilderCategory.value = inputValue.substring(0, lastComma + 1) + ' ' + category + ', ';
+      } else {
+        // Replace entire input
+        presetBuilderCategory.value = category + ', ';
+      }
+      
+      categoryAutocomplete.style.display = 'none';
+      presetBuilderCategory.focus();
+    };
+    
+    // Show suggestions on input
+    presetBuilderCategory.addEventListener('input', showCategorySuggestions);
+    
+    // Show suggestions on focus
+    presetBuilderCategory.addEventListener('focus', showCategorySuggestions);
+    
+    // Handle clicking on autocomplete items
+    categoryAutocomplete.addEventListener('click', (e) => {
+      if (e.target.classList.contains('category-autocomplete-item')) {
+        const category = e.target.getAttribute('data-category');
+        insertCategory(category);
+      }
+    });
+    
+    // Hide autocomplete when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!presetBuilderCategory.contains(e.target) && !categoryAutocomplete.contains(e.target)) {
+        categoryAutocomplete.style.display = 'none';
+      }
+    });
+    
+    // Handle Enter key
+    presetBuilderCategory.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        categoryAutocomplete.style.display = 'none';
+        document.getElementById('preset-builder-template')?.focus();
+      }
+    });
+  }
+  
+  const presetBuilderSave = document.getElementById('preset-builder-save');
+  if (presetBuilderSave) {
+    presetBuilderSave.addEventListener('click', saveCustomPreset);
+  }
+  
+  const presetBuilderClear = document.getElementById('preset-builder-clear');
+  if (presetBuilderClear) {
+    presetBuilderClear.addEventListener('click', clearPresetBuilderForm);
+  }
+
+  const presetBuilderDelete = document.getElementById('preset-builder-delete');
+  if (presetBuilderDelete) {
+    presetBuilderDelete.addEventListener('click', deleteCustomPreset);
+  }
+
+  // Collapsible chip sections
+  const chipSectionHeaders = document.querySelectorAll('.chip-section-header');
+  chipSectionHeaders.forEach(header => {
+    header.addEventListener('click', () => {
+      const section = header.getAttribute('data-section');
+      const content = document.getElementById('section-' + section);
+      const isExpanded = content.style.display === 'block';
+      
+      // Close all sections
+      document.querySelectorAll('.chip-section-content').forEach(c => {
+        c.style.display = 'none';
+      });
+      document.querySelectorAll('.chip-section-header').forEach(h => {
+        h.classList.remove('expanded');
+      });
+      
+      // Toggle current section
+      if (!isExpanded) {
+        content.style.display = 'block';
+        header.classList.add('expanded');
+      }
+    });
+  });
+
+  // Preset Builder chip buttons
+  const presetChips = document.querySelectorAll('.preset-chip');
+  presetChips.forEach(chip => {
+    chip.addEventListener('click', (e) => {
+      const textToAdd = e.target.getAttribute('data-text');
+      const promptTextarea = document.getElementById('preset-builder-prompt');
+      const currentText = promptTextarea.value;
+      
+      // Add text at the end
+      if (currentText.trim()) {
+        promptTextarea.value = currentText + ' ' + textToAdd;
+      } else {
+        promptTextarea.value = textToAdd;
+      }
+      
+      // Scroll to bottom of textarea
+      promptTextarea.scrollTop = promptTextarea.scrollHeight;
+    });
+  });
+  
+   // Quality dropdown
+  const qualitySelect = document.getElementById('preset-builder-quality');
+  if (qualitySelect) {
+    qualitySelect.addEventListener('change', (e) => {
+      const textToAdd = e.target.value;
+      if (textToAdd) {
+        const promptTextarea = document.getElementById('preset-builder-prompt');
+        const currentText = promptTextarea.value;
+        
+        if (currentText.trim()) {
+          promptTextarea.value = currentText + ' ' + textToAdd;
+        } else {
+          promptTextarea.value = textToAdd;
+        }
+        
+        // Reset dropdown
+        e.target.value = '';
+        promptTextarea.scrollTop = promptTextarea.scrollHeight;
+      }
+    });
+  }
+
+  const visiblePresetsFilter = document.getElementById('visible-presets-filter');
+  if (visiblePresetsFilter) {
+    visiblePresetsFilter.addEventListener('input', (e) => {
+      visiblePresetsFilterText = e.target.value;
+      populateVisiblePresetsList();
+    });
+  }
+  
+  const visiblePresetsSelectAll = document.getElementById('visible-presets-select-all');
+  if (visiblePresetsSelectAll) {
+    visiblePresetsSelectAll.addEventListener('click', () => {
+      const allPresets = CAMERA_PRESETS.filter(p => !p.internal);
+      visiblePresets = allPresets.map(p => p.name);
+      saveVisiblePresets();
+      populateVisiblePresetsList();
+      updateVisiblePresetsDisplay();
+      if (isMenuOpen) populateStylesList();
+    });
+  }
+  
+  const visiblePresetsDeselectAll = document.getElementById('visible-presets-deselect-all');
+  if (visiblePresetsDeselectAll) {
+    visiblePresetsDeselectAll.addEventListener('click', () => {
+      visiblePresets = [];
+      saveVisiblePresets();
+      populateVisiblePresetsList();
+      updateVisiblePresetsDisplay();
+      if (isMenuOpen) populateStylesList();
+    });
+  }
+  
+  const visiblePresetsJumpUp = document.getElementById('visible-presets-jump-up');
+  if (visiblePresetsJumpUp) {
+    visiblePresetsJumpUp.addEventListener('click', () => {
+      currentVisiblePresetsIndex = 0;
+      updateVisiblePresetsSelection();
+    });
+  }
+  
+  const visiblePresetsJumpDown = document.getElementById('visible-presets-jump-down');
+  if (visiblePresetsJumpDown) {
+    visiblePresetsJumpDown.addEventListener('click', () => {
+      const list = document.getElementById('visible-presets-list');
+      if (list) {
+        const items = list.querySelectorAll('.style-item');
+        if (items.length > 0) {
+          currentVisiblePresetsIndex = items.length - 1;
+          updateVisiblePresetsSelection();
+        }
+      }
+    });
+  }
+
   // White Balance Settings
   const whiteBalanceSettingsBtn = document.getElementById('white-balance-settings-button');
   if (whiteBalanceSettingsBtn) {
@@ -6585,15 +8181,7 @@ if (startBtn) {
       }, 150); // Wait 150ms after user stops typing
     });
   }
-  
-  const addStyleMenuBtn = document.getElementById('add-style-menu');
-  if (addStyleMenuBtn) {
-    addStyleMenuBtn.addEventListener('click', () => {
-      editingStyleIndex = -1;
-      showStyleEditor('Add New Style');
-    });
-  }
-  
+   
   const burstCountSlider = document.getElementById('burst-count-slider');
   const burstSpeedSlider = document.getElementById('burst-speed-slider');
   
@@ -6645,17 +8233,20 @@ if (startBtn) {
     });
   }
 
-  // ADD THESE NEW LISTENERS FOR REPEAT INTERVAL
-  const timerRepeatIntervalSlider = document.getElementById('timer-repeat-interval-slider');
-  const timerRepeatIntervalValue = document.getElementById('timer-repeat-interval-value');
-  if (timerRepeatIntervalSlider && timerRepeatIntervalValue) {
-    timerRepeatIntervalSlider.addEventListener('input', (e) => {
-      const key = parseInt(e.target.value);
-      timerRepeatInterval = TIMER_REPEAT_INTERVALS[key].seconds;
-      timerRepeatIntervalValue.textContent = TIMER_REPEAT_INTERVALS[key].label;
+  // Timer repeat interval input
+  const timerRepeatIntervalInput = document.getElementById('timer-repeat-interval-input');
+  const timerRepeatIntervalUnit = document.getElementById('timer-repeat-interval-unit');
+  if (timerRepeatIntervalInput && timerRepeatIntervalUnit) {
+    const updateRepeatInterval = () => {
+      const value = parseInt(timerRepeatIntervalInput.value) || 1;
+      const multiplier = parseInt(timerRepeatIntervalUnit.value);
+      timerRepeatInterval = value * multiplier;
       saveTimerSettings();
       updateTimerDisplay();
-    });
+    };
+    
+    timerRepeatIntervalInput.addEventListener('input', updateRepeatInterval);
+    timerRepeatIntervalUnit.addEventListener('change', updateRepeatInterval);
   }
 
   loadBurstSettings();
@@ -6813,6 +8404,28 @@ if (startBtn) {
     });
   }
   
+  const presetSelectorJumpUp = document.getElementById('preset-selector-jump-up');
+  if (presetSelectorJumpUp) {
+    presetSelectorJumpUp.addEventListener('click', () => {
+      currentPresetIndex_Gallery = 0;
+      updatePresetSelection();
+    });
+  }
+  
+  const presetSelectorJumpDown = document.getElementById('preset-selector-jump-down');
+  if (presetSelectorJumpDown) {
+    presetSelectorJumpDown.addEventListener('click', () => {
+      const list = document.getElementById('preset-list');
+      if (list) {
+        const items = list.querySelectorAll('.preset-item');
+        if (items.length > 0) {
+          currentPresetIndex_Gallery = items.length - 1;
+          updatePresetSelection();
+        }
+      }
+    });
+  }
+
   const magicBtn = document.getElementById('magic-button');
   if (magicBtn) {
     magicBtn.addEventListener('click', submitMagicTransform);
