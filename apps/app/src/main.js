@@ -1366,7 +1366,7 @@ const DEFAULT_PRESETS = [
   {
     name: "PASSPORT PHOTO",
     category: ["UTILITY", "DOCUMENT", "PROFESSIONAL"],
-    message: "Take a picture and format it as an official passport photo. Plain white or light grey background, centered frontal view of subject's face and shoulders, neutral expression, even lighting with no shadows, proper passport photo dimensions and composition. Clean, sharp focus, official government ID document style. Subject should be clearly visible and meet standard passport photo requirements."
+    message: "Take a picture and transform it into an official passport photo embedded within a realistic passport identity page.\n\nThe subject’s image must appear printed directly onto the passport page as part of the document layout, not as a standalone or floating photo. Integrate the photo naturally into the passport design with proper borders, alignment, and scale consistent with real passports.\n\nUse a plain white or light grey background within the photo area. The subject should have a centered frontal view of the face and shoulders, a neutral expression, and even lighting with no harsh shadows. Maintain clean, sharp focus and accurate proportions.\n\nSurround the photo with realistic passport elements such as text fields, lines, security patterns, microprint textures, and subtle holographic or watermark-style design details (without copying any specific real country’s passport).\n\nEnsure the overall result looks like a legitimate government passport ID page, with the photo clearly integrated into the document and the full page visible within the frame."
   },
   {
     name: "PATRON SAINT",
