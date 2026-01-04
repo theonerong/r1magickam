@@ -608,6 +608,11 @@ const DEFAULT_PRESETS = [
     message: "Take a picture and transform it into a minimalist, deadpan inspirational-style image inspired by 'Deep Thoughts by Jack Handey.' The subject should appear calm, neutral, or unintentionally serious, regardless of how absurd the final message is.\n\nSelect ONE original 'Deep Thoughts by Jack Handey' quote and present it as the affirmation text. The humor should come from the contrast between the sincere visual tone and the unexpectedly absurd or philosophical text.\n\nCompose the image simply and cleanly: the subject centered or thoughtfully framed, with the quote displayed clearly beneath or overlaid in an understated font. Do not explain the joke. Do not exaggerate expressions. Let the humor remain dry and subtle.\n\nEnsure the entire image and text are fully visible and easily readable on a small screen. The final result should feel like a serious inspirational poster that accidentally delivers an absurd, ironic truth."
   },
   {
+    name: "DESOMETRIC ART",
+    category: ["ART"],
+    message: "Take a picture in the style of desometric art."
+  },
+  {
     name: "DICTIONARY",
     category: ["TEXT", "REFERENCE", "DEFINITION"],
     message: "Take a picture and transform it into a dictionary-style entry. Include a small, clearly visible photograph of the subject placed beside or beneath the definition, similar to a modern illustrated dictionary. Allow externally provided language to define the entry name. Use a clean, minimal layout with strong typography. The photo should act as a visual reference for the word, reinforcing the definition."
