@@ -1699,6 +1699,11 @@ const DEFAULT_PRESETS = [
     message: "Take a picture and make the subject an actor in a Shakespearean play. Dress the subject in period-accurate costume in the same style as the chosen Shakespearean play, apply stage lighting, and dramatic theatrical pose."
   },
   {
+    name: "SHARP CALM LATTE",
+    category: ["DESIGN", "EDITORIAL", "STYLIZED", "MODERN"],
+    message: "Take a picture and transform it into a sharp-edged, depth-simulated calm-latte visual style.\n\nConvert the image into layered visual planes with clear foreground, midground, and background separation. Each layer should have crisp, clean edges, as if cut from paper or vector shapes, with subtle depth created through shadow offsets and scale rather than blur.\n\nUse a restrained, calming latte-inspired color palette: warm creams, oat beige, soft tan, muted caramel, light clay, and gentle espresso browns. Avoid bright or saturated colors. The palette should feel modern, minimal, and soothing.\n\nPreserve subject recognizability through shape, posture, and silhouette, but simplify surface detail. Reduce texture noise and photographic realism in favor of smooth surfaces and intentional form.\n\nLighting should feel soft and even, with artificial depth cues instead of real photographic depth of field. Do not use bokeh or lens blur.\n\nThe final image should feel like a contemporary design poster or editorial graphic — calm, refined, sharply defined, and visually layered. Ensure the composition is clean, balanced, and readable on a small screen."
+  },
+  {
     name: "SHOPPING LIST",
     category: ["UTILITY", "LIST", "SHOPPING"],
     message: "Take a picture and create a pictured shopping list identifying the main subject and all notable objects. Do not display a single full reference photo. Instead, separate each identified item and create a small cropped image or thumbnail of each subject or object. Present a numbered shopping list where each number is paired with its corresponding small image and a short description. Keep the layout clean and optimized for a small screen, with each item visually distinct and easy to scan."
@@ -1717,6 +1722,11 @@ const DEFAULT_PRESETS = [
     name: "SIMPSONS",
     category: ["ANIMATION", "CARTOON", "TV"],
     message: "Take a picture in the style of a Simpsons cartoon scene, with yellow skin tones and Springfield vibes.  Complete with cartoon proportions and bright palettes. Preserve facial identity."
+  },
+  {
+    name: "SIN CITY",
+    category: ["CINEMATIC", "NOIR", "COMIC", "DRAMATIC", "MOVIES"],
+    message: "Take a picture and transform it into a Sin City–inspired graphic novel scene.\n\nRender the image almost entirely in stark black and white with extreme contrast. Use deep, inky blacks and bright whites with very little midtone gray. Lighting should feel harsh, directional, and dramatic, emphasizing silhouettes, shadows, and negative space.\n\nAllow only one or two selective color accents at most (such as red lips, blood-red elements, a glowing cigarette ember, or neon signage). All other elements must remain strictly monochrome.\n\nConvert the subject into a stylized, high-contrast noir figure with sharp edges, heavy shadowing, and simplified facial features. Preserve recognizability through bold shapes and expression rather than realism.\n\nThe environment should feel urban and gritty — rain-soaked streets, fire escapes, alleyways, venetian-blind shadows, brick walls, or smoky interiors. Backgrounds may fade into black to heighten drama.\n\nThe final image should resemble a single panel from a dark neo-noir graphic novel. Avoid soft gradients, painterly textures, or photographic realism. The result must feel illustrated, cinematic, and unmistakably Sin City in tone, clearly readable on a small screen."
   },
   {
     name: "SKETCH ART",
