@@ -478,6 +478,11 @@ const DEFAULT_PRESETS = [
     message: "Take a picture and convert the image into a detailed charcoal sketch. Rich grayscale tones, textured shading, and expressive strokes on paper."
   },
   {
+    name: "CHEESE TOUCH",
+    category: ["HUMOR", "FOOD", "ABSURD"],
+    message: "Take a picture and transform the entire scene as if everything has been infected by a mysterious 'cheese touch.'\n\nConvert the subject, clothing, nearby objects, and visible environment into cheese-based versions of themselves. Use a variety of recognizable cheeses (cheddar, Swiss, mozzarella, brie, blue cheese, etc.) with appropriate textures, holes, melts, crumbles, and rinds.\n\nThe subject should still be clearly identifiable, but their skin, hair, and clothing should appear sculpted from cheese rather than flesh or fabric. Objects should retain their original shapes but be unmistakably made of cheese.\n\nAvoid cartoon flatness — cheese should look tactile, slightly glossy or matte depending on type, with realistic imperfections. Use playful lighting to emphasize texture.\n\nEnsure the entire composition remains readable on a small screen. The result should feel ridiculous, slightly disturbing, and very funny — as if reality itself has turned into cheese."
+  },
+  {
     name: "CHILDHOOD VERSION",
     category: ["AGE", "TRANSFORMATION", "YOUNG"],
     message: "Take a picture and depict the subject as a child while preserving recognizable traits. Soft lighting, nostalgic tone."
@@ -1169,6 +1174,11 @@ const DEFAULT_PRESETS = [
     message: "Take a picture and transform the image into the Minimalism style. Simplify shapes, reduce color palette, and remove extraneous detail while keeping subject identifiable."
   },
   {
+    name: "MINION MODE",
+    category: ["HUMOR","POP_CULTURE","TRANSFORMATION"],
+    message: "Take a picture and transform the subject into a small, yellow, gibberish-speaking cartoon minion.\n\nAdapt the subject’s facial structure, expression, and personality into a simplified, rounded, toy-like character with yellow skin, large expressive eyes behind goggles, and a compact body. Preserve recognizable traits such as smile shape, eyebrow energy, or posture.\n\nDress the character in classic minion-style overalls or a similar worker outfit. Proportions should be exaggerated and playful, not realistic.\n\nThe environment should be simplified and colorful to match an animated comedy world. Lighting should be bright and cheerful.\n\nDo not include text. The final image should feel mischievous, energetic, and immediately recognizable as a minion-style parody while remaining readable on a small screen."
+  },
+  {
     name: "MIRROR WORLD",
     category: ["ILLUSION", "REFLECTION", "SURREAL"],
     message: "Take a picture and create a mirrored reality where reflection differs from reality. Subtle narrative differences."
@@ -1217,6 +1227,11 @@ const DEFAULT_PRESETS = [
     name: "MUG SHOT",
     category: ["HUMOR", "MASTER PROMPT", "POLICE", "PHOTO"],
     message: "Take a picture of the subject and transform it into a realistic mug shot–style image. Use a neutral or plain background, institutional lighting, and a straight-on camera angle with the subject facing forward. Include a height chart behind the subject. Add a placard held by the subject featuring humorous or descriptive flavor text inspired by the subject’s appearance, clothing, expression, or characteristics, incorporating any externally provided details naturally. Preserve the subject’s recognizable facial features, posture, and expression while maintaining a realistic, photorealistic composition. Include subtle imperfections typical of ID photography, such as slightly uneven lighting, mild shadows, or imperfect framing, to enhance authenticity."
+  },
+  {
+    name: "MULTIPLICITY",
+    category: ["HUMOR", "ABSURD", "PHOTO EFFECT"],
+    message: "Take a picture and transform the scene so the subject appears duplicated multiple times within the same frame.\n\nCreate several copies of the subject, each placed naturally into the environment with consistent lighting, scale, and perspective. The duplicates should feel like they coexist in the same moment rather than layered edits.\n\nEach version of the subject should have a slightly different pose, expression, or attitude to suggest personality divergence — for example: confident, confused, bored, overexcited, distracted, or plotting.\n\nAvoid obvious repetition. Vary posture, head tilt, facial expression, or interaction with the environment so each duplicate feels intentional.\n\nKeep the composition readable on a small screen. Ensure no duplicate is cropped or partially hidden. The final image should feel funny, surreal, and immediately understandable — as if reality accidentally made too many copies of the same person."
   },
   {
     name: "MULTIVERSE",
@@ -1302,6 +1317,11 @@ const DEFAULT_PRESETS = [
     name: "ONE SECOND BEFORE DISASTER",
     category: ["HUMOR", "DRAMATIC", "SUSPENSE"],
     message: "Take a picture and depict the subject frozen in time exactly one second before a dramatic, chaotic, or humorous event occurs. Capture tension and anticipation in the subject’s pose and expression (for example: a falling object mid-air, a near collision, an imminent spill, or an unexpected surprise). Use cinematic lighting, motion cues, and environmental storytelling to make it obvious that something is about to happen, without actually showing the outcome."
+  },
+  {
+    name: "OPERATION",
+    category: ["HUMOR", "GAME", "PARODY", "DESIGN"],
+    message: "Take a picture and transform it into the board-game Operation.\n\nThe final image must show the **entire game board fully visible** within the frame, viewed from above like a real tabletop game. Do not crop any part of the board.\n\nUse a familiar Operation-style layout: a human body diagram with outlined cavities, exaggerated organs, bright colors, and clean, bold shapes. Replace the traditional game head with the subject’s head, adapted into a flat, illustrated style that matches the board aesthetic while remaining recognizable.\n\nIntegrate humorous, fictional items into the body cavities inspired by the subject’s traits or environment (e.g., snacks, phone, keys, coffee cup, tangled thoughts). Items should be cartoonish and clearly readable.\n\nInclude parody game elements such as:\n• Stylized cavity outlines\n• Plastic-board textures\n• Simplified medical tools (tweezers, wires) as decorative elements\n• Playful warning lights or buzz indicators (visual only, no text required)\n\nThis must be a humorous, original parody inspired by the classic game format.\n\nEnsure colors are bold, shapes are clean, and all elements are readable on a small screen. The final image should feel like a ridiculous but believable board game someone could actually play."
   },
   {
     name: "OPPOSITE SELF",
