@@ -468,6 +468,11 @@ const DEFAULT_PRESETS = [
     message: "Take a picture and convert the image into painted ceramic tiles. Glossy glaze, repeating patterns."
   },
   {
+    name: "CH-CH-CH-CHIA PET",
+    category: ["HUMOR", "RETRO", "TRANSFORM"],
+    message: "Take a picture and transform the subject into a Chia Pet terracotta planter. Subject should be shaped like a clay pottery figurine in terracotta orange-brown color with porous ceramic texture. Dense green chia sprouts growing from the top and surfaces, creating hair/fur effect with small green leaves. 1980s infomercial product aesthetic, sitting on surface, 'Ch-ch-ch-chia!' retro novelty gift appearance. Handmade pottery look with chia seeds sprouting lush greenery."
+  },
+  {
     name: "CHARACTER BOARD",
     category: ["HUMOR", "TOURIST", "CUTOUT"],
     message: "Take a picture and transform it into a classic tourist character board photo. Place the subject’s face inside a cut-out hole of a painted character illustration, while the rest of the body is a flat, illustrated scene. The board may depict a humorous, heroic, historical, or themed character. Align the subject’s face naturally with the cut-out and slightly exaggerate expression for comedic effect. The painted board should look weathered or hand-painted, as if found at a tourist attraction. The final image should feel playful, kitschy, and instantly recognizable as a face-in-the-hole photo."
@@ -881,6 +886,11 @@ const DEFAULT_PRESETS = [
     name: "HAITIAN NAÏVE ART",
     category: ["ART", "CULTURAL", "COLORFUL"],
     message: "Take a picture and transform the image into Haitian naïve style art. Bright colors, flattened depth, decorative storytelling elements, and joyful visual rhythm."
+  },
+  {
+    name: "HANNA-BARBERA",
+    category: ["ART", "CARTOON", "RETRO"],
+    message: "Take a picture and transform the subject into a classic Hanna-Barbera cartoon character placed in an iconic 1960s-70s animated scene. Subject drawn in limited animation style with bold black outlines, flat cel-shaded colors, simple geometric shapes, and minimal shading. Distinctive Hanna-Barbera aesthetic with large expressive eyes and exaggerated features. Place character in a vintage cartoon environment - could be prehistoric Bedrock, futuristic space city, mystery van interior, or suburban backyard. Include classic Hanna-Barbera background elements: repeating background patterns, retro furniture, vintage technology. Bright primary colors, hand-drawn animation quality, Saturday morning cartoon style like The Flintstones, Scooby-Doo, Yogi Bear, Magilla Gorilla, Johnny Quest, Josie and the Pussycats, Hong Kong Phooey, Wacky Races, Super Friends, Space Ghost, or The Jetsons. The scene should feel like a freeze-frame from a classic TV episode."
   },
   {
     name: "HANS CHRISTIAN ANDERSEN",
@@ -1354,6 +1364,11 @@ const DEFAULT_PRESETS = [
     message: "Take a picture and place the subject at the center of a universally recognizable moment in human history, replacing the original figure with the subject while preserving the significance, symbolism, and emotional weight of the event. The subject must be clearly recognizable and portrayed as the individual performing the defining action of the moment. Do not depict or reference the original historical figure by name or likeness. Instead, recreate the setting, era-appropriate environment, clothing, and atmosphere so the moment is immediately identifiable through visual context alone. Use implicit inference from the subject’s appearance, posture, and expression to select an appropriate historic theme (e.g., leadership, discovery, courage, progress, unity). If externally provided details are supplied, incorporate them as factual context for the moment. Present the image as a clean, collectible flashcard optimized for small screens. Include concise, readable text such as: \n• Title of the historic moment\n• Year or era\n• One-sentence description of the event’s significance\n• A short, respectful caption describing the subject’s role. Ensure cinematic lighting, strong composition, and emotional impact. The final image should feel iconic, respectful, and timeless—like a photograph history forgot to record."
   },
   {
+    name: "PASSPORT PHOTO",
+    category: ["UTILITY", "DOCUMENT", "PROFESSIONAL"],
+    message: "Take a picture and format it as an official passport photo. Plain white or light grey background, centered frontal view of subject's face and shoulders, neutral expression, even lighting with no shadows, proper passport photo dimensions and composition. Clean, sharp focus, official government ID document style. Subject should be clearly visible and meet standard passport photo requirements."
+  },
+  {
     name: "PATRON SAINT",
     category: ["MASTER PROMPT", "RELIGIOUS", "SAINT", "HOLY"],
     message: "Take a picture and transform the subject into a patron saint–style depiction while preserving clear facial likeness and identity. Present the subject in saintly attire with symbolic garments, colors, and iconography. Use a reverent, dignified pose with soft halo lighting and a subtle divine glow, rendered in a classical yet photorealistic aesthetic. Primary information source: If a saint name is provided via externally supplied details, accurately incorporate all historically associated information for that saint, including name, patronage domains, feast day, biographical summary, notable traditions, and fun facts. Do not alter or contradict known historical associations. Secondary enhancement: Use implicit visual inference from the subject’s appearance, clothing, accessories, environment, and expression to enhance symbolism, visual motifs, and flavor text, without overriding factual saint information. Fallback behavior: If no saint name is externally provided, create a clearly labeled symbolic or archetypal \“Saint of [inferred theme]\” based on implicit inference from the subject. Avoid naming or implying a real historical saint, omit specific feast dates, and present patronage and fun facts as symbolic rather than historical. Design the final image as a compact, mobile-friendly flash card or holy card layout optimized for small screens. Ensure all text is concise, high-contrast, and legible at small sizes, with clear hierarchy and minimal clutter. Maintain visual clarity, balanced composition, and immediate recognizability.  The result should be a full view of the card with a relevant background behind the card."
@@ -1614,6 +1629,11 @@ const DEFAULT_PRESETS = [
     message: "Take a picture and transform the subject into an RPG character portrait. Fantasy UI frame, stat panel styling. Painted character art. The result should be a full view of the portrait with a relevant background behind the portrait."
   },
   {
+    name: "RUBBER DUCKIE",
+    category: ["HUMOR", "TOY", "TRANSFORM"],
+    message: "Take a picture and transform the subject into a yellow rubber duck bath toy. Bright yellow rubber material with orange beak, glossy plastic surface with light reflections, squeezable toy texture, black dot eyes. The subject's recognizable features should be incorporated into the duck's shape and form. Bath toy appearance, floating in water with subtle ripples, playful and whimsical."
+  },
+  {
     name: "RUBBER HOSE",
     category: ["ANIMATION", "CARTOON", "VINTAGE", "30S"],
     message: "Take a picture and transform the image into 1930s rubber hose animation style. Bouncy limbs, simple faces. Vintage cartoon aesthetic."
@@ -1632,6 +1652,11 @@ const DEFAULT_PRESETS = [
     name: "SCARY MOVIE",
     category: ["HUMOR", "MOVIES", "MASK"],
     message: "Take a picture and transform the subject so their face appears as a Ghostface-style mask while preserving the subject’s underlying facial structure, proportions, and expression. The mask should be smooth white with elongated eyes and mouth, subtly shaped by the subject’s face so it feels worn rather than pasted on.\n\nIntroduce **subtle subject-specific variations** to the mask so each render is visually distinct while remaining unmistakably Ghostface-inspired. These variations should be inspired by the subject’s real traits, accessories, or appearance and may include, but are not limited to:\n• faint contour impressions reflecting the subject’s cheekbones or jawline\n• subtle asymmetry in eye or mouth openings based on the subject’s expression\n• molded impressions suggesting glasses, sunglasses, or facial accessories if the subject is wearing them\n• slight surface imperfections, hairline cracks, gloss variation, or patina unique to the subject\n\nDo NOT turn the mask into a parody, novelty mask, or decorative redesign. Changes must remain restrained, eerie, and believable.\n\nDress the subject in a flowing black hooded robe inspired by the classic Ghostface costume. Ensure the hood frames the mask naturally, with realistic fabric folds, shadows, and texture. Match lighting, perspective, and depth so the costume integrates seamlessly with the original scene.\n\nMaintain a clean, non-graphic horror aesthetic. Do not add blood, weapons, or violent elements. The final image should feel eerie, iconic, cinematic, and subtly personalized, while remaining clearly readable on small screens."
+  },
+  {
+    name: "SCOOBY-DOO ENDING",
+    category: ["CARTOON", "HUMOR", "RETRO"],
+    message: "Take a picture and place the subject in a classic Scooby-Doo unmasking scene ending. Subject shown as the unmasked villain with shocked/guilty expression, surrounded by the Mystery Inc. gang (Fred, Daphne, Velma, Shaggy, and Scooby-Doo) pointing accusingly. Subject drawn in Hanna-Barbera animation style with bold black outlines and flat cel-shaded colors. Include speech bubble with 'And I would have gotten away with it too, if it weren't for you meddling kids!' Classic 1970s Scooby-Doo art style, vintage cartoon aesthetic, iconic reveal moment from the show's ending. Spooky background setting like haunted mansion or abandoned amusement park."
   },
   {
     name: "SCREAM",
@@ -1687,6 +1712,11 @@ const DEFAULT_PRESETS = [
     name: "SKETCH ART",
     category: ["ART", "SKETCH", "COLORFUL"],
     message: "Take a picture in the style of colorful Sketch Art. A rapidly executed, freehand drawing that serves as a preliminary step for a more detailed, finished work."
+  },
+  {
+    name: "SMURFED!",
+    category: ["CARTOON", "TRANSFORM", "HUMOR"],
+    message: "Take a picture and transform the subject into a Smurf character. Bright blue skin covering entire body, small stature (three apples high), distinctive white Phrygian cap, white pants, no shoes. Large expressive eyes, button nose, cheerful smile. Subject's recognizable facial features should be adapted to Smurf proportions. Place in magical Smurf Village setting with mushroom houses, forest environment, whimsical fairy-tale atmosphere. Classic Peyo cartoon style with smooth shading and vibrant colors. Friendly, cheerful, and enchanting storybook illustration quality."
   },
   {
     name: "SNOW GLOBE",
