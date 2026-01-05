@@ -208,6 +208,11 @@ const DEFAULT_PRESETS = [
     message: "Take a picture and transform the subject into a real, physical 3D-printed object that has partially failed during printing. The subject must appear made from plastic filament with clearly visible horizontal layer lines across the entire surface.\n\nIntroduce obvious 3D-printing failures such as warped or shifted layers, missing sections, drooping filament, collapsed overhangs, stringing, and incomplete geometry as if the print stopped or misaligned mid-job.\n\nThe subject should appear as a photographed 3D print sitting on a workbench or print bed, with realistic shadows, shallow depth of field, and neutral lighting. Use a single solid filament color or limited two-color print. Avoid smooth, sculpted, or digital-rendered surfaces. The final image must clearly look like a failed physical 3D print, not a CGI model or statue."
   },
   {
+    name: "80s PROM DATE",
+    category: ["RETRO", "HUMOR", "PHOTOGRAPHY", "POP CULTURE"],
+    message: "Take a picture and transform it into an awkward 1980s prom photo taken at a high school prom.\n\nThe image should look like a posed flash photograph from the 1980s: harsh on-camera flash, flat lighting, soft focus, slight film grain, and muted color tones. Include typical prom decorations such as metallic balloons, crepe paper, tinsel, streamers, and a banner with the school name and graduation year (use external master prompt text if provided; otherwise invent a generic school name and year).\n\nDress all subjects in unmistakably tacky 1980s prom attire. Examples include oversized tuxedos, pastel or ruffled dresses, lace gloves, corsages, bow ties, cummerbunds, sequins, and shiny fabrics. Hairstyles must be exaggerated and era-accurate: big teased hair, feathered bangs, mullets, perms, or excessive hairspray volume.\n\nSubject logic:\n• If there is ONE subject and the subject appears masculine, add an older woman who plausibly looks like the subject’s mother as the prom date. She should be dressed formally but slightly out of place.\n• If there is ONE subject and the subject appears feminine, add a younger boy who plausibly looks like a younger brother as the prom date. He should appear underdressed or uncomfortable.\n• If there are TWO human subjects, present them as prom dates together, standing close but visibly awkward, stiff, or uncomfortable.\n\nBody language should feel forced and uncomfortable: stiff smiles, arms held too rigidly, hands awkwardly placed, or obvious personal space tension. No one should look confident or natural.\n\nEnsure the entire photo is fully visible within the frame, like a complete printed prom photo. The final image should feel painfully nostalgic, humorously awkward, and unmistakably 1980s — readable and funny on a small screen."
+  },
+  {
     name: "AI-BUY",
     category: ["UTILITY", "AI", "SHOPPING"],
     message: "Analyze the image and identify purchasable items. Provide product names, estimated prices, and purchase links. Present results in a clean, structured list and email it to me."
@@ -288,7 +293,7 @@ const DEFAULT_PRESETS = [
     message: "Take a picture and recreate the classic painting American Gothic. Replace one figure in the painting with the subject. If the subject is male, replace the male figure. If the subject is female, replace the female figure. If two subjects are present, replace both figures accordingly. Preserve the iconic composition, clothing style, background, and serious tone of the original artwork while integrating the subject naturally. The final image should be instantly recognizable as American Gothic with a humorous modern twist."
   },
   {
-    name: "ANAGLYPH 3D (3D GLASSES NEEDED)",
+    name: "ANAGLYPH 3D (3D Glasses Needed)",
     category: ["3D", "RETRO", "STEREOSCOPIC", "OPTICAL"],
     message: "Take a picture and transform it into a classic red/blue anaglyph 3D image designed to be viewed with red/cyan or red/blue 3D glasses.\n\nCreate two slightly offset views of the scene representing left-eye and right-eye perspectives. Overlay the left-eye view in red and the right-eye view in cyan/blue, aligning them to produce a convincing stereoscopic depth effect.\n\nDepth should be readable through horizontal parallax: foreground elements should show noticeable red/blue separation, while background elements should align more closely.\n\nPreserve the subject’s recognizability while allowing controlled color channel separation. Avoid excessive ghosting or misalignment that would make the image uncomfortable to view.\n\nLighting, shading, and form should remain realistic so the depth effect feels natural when viewed through 3D glasses.\n\nDo not include Magic Eye patterns, lenticular effects, or split-frame stereoscopy. The image must be a single combined anaglyph composition.\n\nThe final image should clearly appear flat without glasses and distinctly three-dimensional when viewed through red/blue 3D glasses. Ensure the entire composition remains visible and readable on a small screen."
   },
@@ -428,6 +433,11 @@ const DEFAULT_PRESETS = [
     message: "Take a picture in the style of Bokeh photography. Give it the aesthetic quality of the blur in the out-of-focus areas of a photograph with soft, circular light spots. Wide aperture and a fast lens, with the subject at a different focal plane from the background. Creates a shallow depth of field, blurring the background to make the subject stand out and adding a dreamy or artistic quality to the image."
   },
   {
+    name: "BOOK COVER",
+    category: ["HUMOR", "PUBLISHING", "DESIGN", "POP CULTURE"],
+    message: "Take a picture and transform it into a fully designed book cover featuring the subject as the author and central figure.\n\nDesign a complete, realistic book cover layout that is fully visible within the frame, including title, subtitle, author name, and background artwork. The subject should be integrated into the cover art itself (illustrated or photo-based depending on style), not pasted on top.\n\nGenerate the book’s title and subtitle using humorous flavor text inspired by the subject’s appearance, posture, expression, clothing, or environment. Examples:\n• \"How I Almost Had It Together\"\n• \"Leadership, Luck, and Lowered Expectations\"\n• \"The Art of Trying\"\n\nUse professional book-cover typography and composition appropriate to the genre (self-help, memoir, motivational, or absurd nonfiction). Optionally include fake bestseller badges, review blurbs, or award seals for added humor.\n\nIf external master prompt text is provided, use it to influence the book’s title, subtitle, or genre.\n\nEnsure the entire book cover is visible, centered, and readable on a small screen. The final image should feel like a real book you might actually see in a bookstore — polished, believable, and funny."
+  },
+  {
     name: "BREAKING NEWS",
     category: ["NEWS", "TV", "DRAMATIC", "MASTER PROMPT"],
     message: "Take a picture and transform it into a realistic breaking-news television broadcast scene. Place the subject as the central focus of the news coverage, integrated naturally into the scene. Design an authentic news layout including lower-third graphics, headline banners, and on-screen text. Generate a breaking-news headline and brief caption using flavor text inspired by the subject’s appearance, actions, or surroundings, incorporating any externally provided details naturally. Ensure all text is clearly readable within the image. Match professional broadcast lighting, camera angles, and visual polish so the image convincingly resembles a real live news report."
@@ -523,6 +533,11 @@ const DEFAULT_PRESETS = [
     message: "Take a picture and place the subject standing naturally within a realistic urban environment. The city, location, and date are defined externally. Integrate the subject seamlessly into the scene so they appear physically present, with correct scale, perspective, lighting, shadows, and reflections. Match architecture, street layout, vehicles, signage, clothing styles, weather, and overall atmosphere appropriate to the specified city and date. Preserve the subject’s facial identity, proportions, posture, and personality while making the scene photorealistic and historically or contemporarily accurate."
   },
   {
+    name: "CLASSIC TV COMMERCIAL",
+    category: ["RETRO", "ADVERTISING", "HUMOR", "POP CULTURE"],
+    message: "Take a picture and transform the subject into a scene from a famous classic television commercial. Select the commercial automatically based on the subject’s surroundings, visible objects, clothing, actions, or mood — for example:\n• A soda or bottle → Coca-Cola or Dr Pepper\n• Fast food context → Wendy’s or McDonald’s\n• Party or outdoor gathering → Budweiser\n• Family or wholesome setting → classic Coca-Cola or cereal ads\n\nPlace the subject directly INTO the commercial as if they are the main actor or spokesperson, fully integrated into the scene rather than pasted on. Adapt wardrobe, pose, expression, and lighting so the subject naturally belongs in the advertisement.\n\nRecreate the commercial’s iconic visual language: era-appropriate color grading, film grain, lighting style, set design, camera framing, and product placement. Use a cinematic still-frame composition that feels like a paused moment from a TV ad.\n\nInclude a famous, recognizable tagline from the chosen commercial displayed clearly within the scene (on-screen text, signage, packaging, or lower-third caption). The tagline must be fully visible, legible, and feel naturally embedded in the ad design.\n\nIf a real brand logo or product appears in the original image or is provided via external master prompt, prioritize selecting that brand’s commercial.\n\nEnsure the full frame is visible with no cropping of the subject, product, or tagline. When a brand is selected, prioritize its most iconic and culturally recognizable catchphrase from classic television commercials (e.g., Wendy’s “Where’s the Beef?”, Budweiser “Whassup!”, Coca-Cola “I’d Like to Buy the World a Coke”), and display it prominently. The scene should feel like a nostalgic parody or affectionate homage to the original commercial, not a modern advertisement or exact recreation. The final image should feel nostalgic, instantly recognizable, humorous, and clearly readable on a small screen — like a classic commercial screenshot frozen in time."
+  },
+  {
     name: "CLAYMATION",
     category: ["ANIMATION", "CLAY", "STOP MOTION"],
     message: "Take a picture and transform the image into claymation-style. Characters appear sculpted from clay with fingerprints and textures."
@@ -601,6 +616,11 @@ const DEFAULT_PRESETS = [
     name: "DALÍ",
     category: ["ART", "SURREAL", "ARTIST"],
     message: "Take a picture and transform it into a painting of a surreal scene inspired by Salvador Dalí. Preserve the subject’s photographic realism while introducing dreamlike distortions, warped perspectives, melting forms, or impossible juxtapositions. Lighting should feel dramatic and hyper-real. The final image should feel uncanny, symbolic, and visually unsettling while still rooted in the original photo."
+  },
+  {
+    name: "DANCING WITH THE STARS",
+    category: ["HUMOR", "TV", "ENTERTAINMENT", "POP CULTURE"],
+    message: "Take a picture and transform the subject into a scene from a glamorous ballroom dance competition show inspired by 'Dancing with the Stars.'\n\nDress the subject in an over-the-top, flashy dance costume — sequins, rhinestones, dramatic colors, exaggerated styling — appropriate for professional ballroom dancing.\n\nPose the subject mid-dance in a way that clearly suggests they do NOT know how to dance: awkward posture, stiff limbs, off-balance stance, mistimed spin, or exaggerated confusion. The humor should come from the contrast between the elegant setting and the subject’s obvious lack of dance skill.\n\nPlace the subject on a polished ballroom stage with dramatic lighting, spotlight beams, glossy floors, and a cheering audience in the background. The environment should feel high-budget and televised.\n\nOptionally include subtle show elements like judges’ tables, score paddles, or stage graphics — without copying logos.\n\nIf external master prompt text is provided, use it to influence the dance style, outfit theme, or tone (romantic, intense, chaotic, overly dramatic).\n\nEnsure the full subject, costume, and stage are visible and clearly readable on a small screen. The final image should feel like a frozen TV broadcast moment — glamorous, ridiculous, and instantly funny."
   },
   {
     name: "DATING PROFILE",
@@ -731,6 +751,11 @@ const DEFAULT_PRESETS = [
     name: "FAIRYTALE MORAL",
     category: ["BOOK", "FABLE", "LESSON"],
     message: "Take a picture and transform it into an illustrated fairytale moral or fable lesson. Depict the subject as the central figure in a symbolic, storybook-style scene. Generate a short moral or lesson written beneath or beside the illustration using flavor text inspired by the subject’s appearance, actions, or surroundings, incorporating any externally provided details naturally. The moral should read like a classic fable conclusion. Ensure all text is clearly visible. The overall tone should feel whimsical, wise, and timeless.  The result should be a full view of the illustration with a relevant background behind the illustration."
+  },
+  {
+    name: "FAMILY HOLIDAY PHOTO",
+    category: ["RETRO", "HUMOR", "PHOTOGRAPHY", "FAMILY"],
+    message: "Take a picture and transform it into an awkward family holiday photo from the late 1980s or early 1990s.\n\nSelect a holiday automatically at random (e.g., Christmas, Thanksgiving, Easter, Halloween, Valentine’s Day, Fourth of July, New Year’s, or another widely recognized holiday), OR use a specific holiday provided via external master prompt.\n\nThe image should look like a staged holiday portrait taken with an on-camera flash: flat lighting, slight red-eye, soft focus, mild film grain, and dated color tones. The setting should feel like a living room or photo studio decorated for the chosen holiday.\n\nInclude classic, slightly tacky holiday decorations appropriate to the selected holiday. Decorations should feel excessive, mismatched, or unevenly arranged (e.g., too many balloons, awkward banners, cheap props, cluttered tables, or off-theme color combinations).\n\nDress all subjects in era-appropriate holiday clothing that clashes or feels uncomfortable. Examples include ugly sweaters, oversized cardigans, patterned vests, turtlenecks, stiff dresses, themed novelty outfits, or poorly coordinated formalwear. Hairstyles should be dated and awkward: big teased hair, perms, mullets, bowl cuts, feathered bangs, or obvious hairspray volume.\n\nSubject logic:\n• If there is ONE subject, surround them with added family members (parents, siblings, or relatives) who look mismatched or emotionally disconnected.\n• If there are MULTIPLE subjects, present them as a family group standing or sitting closely together.\n\nBody language should feel tense or unnatural: forced smiles, blank stares, crossed arms, stiff posture, uneven spacing, or someone clearly looking away from the camera. Not everyone should appear happy at the same time.\n\nOptionally include a dated holiday banner, sign, or photo caption naming the holiday and year (use external master prompt text if provided; otherwise invent a plausible holiday label and year).\n\nEnsure the entire photo is fully visible within the frame, like a complete printed holiday portrait. The final image should feel uncomfortably nostalgic, unintentionally funny, and instantly recognizable as an awkward family holiday photo — clearly readable on a small screen."
   },
   {
     name: "FATE BOOK",
@@ -900,7 +925,7 @@ const DEFAULT_PRESETS = [
   {
     name: "HANNA-BARBERA",
     category: ["ART", "CARTOON", "RETRO"],
-    message: "Take a picture and transform the subject into a classic Hanna-Barbera cartoon character placed in an iconic 1960s-70s animated scene. Subject drawn in limited animation style with bold black outlines, flat cel-shaded colors, simple geometric shapes, and minimal shading. Distinctive Hanna-Barbera aesthetic with large expressive eyes and exaggerated features. Place character in a vintage cartoon environment - could be prehistoric Bedrock, futuristic space city, mystery van interior, or suburban backyard. Include classic Hanna-Barbera background elements: repeating background patterns, retro furniture, vintage technology. Bright primary colors, hand-drawn animation quality, Saturday morning cartoon style like The Flintstones, Scooby-Doo, Yogi Bear, Magilla Gorilla, Johnny Quest, Josie and the Pussycats, Hong Kong Phooey, Wacky Races, Super Friends, Space Ghost, or The Jetsons. The scene should feel like a freeze-frame from a classic TV episode."
+    message: "Take a picture and transform the subject into a classic Hanna-Barbera cartoon character rendered in authentic 1960s–1970s Hanna-Barbera animation style. Use bold black outlines, flat cel-shaded colors, limited animation aesthetics, simple geometric forms, and minimal shading. The subject should be fully redrawn to match the Hanna-Barbera look, not pasted or modernized.\n\nSelect ONE iconic Hanna-Barbera franchise and its signature setting, or lightly incorporate supporting characters from that franchise. Do NOT default to Scooby-Doo or Jetsons unless they are explicitly selected.\n\nPossible franchises and signature settings include, but are not limited to:\n• The Flintstones – prehistoric Bedrock, stone houses, foot-powered cars\n• The Jetsons – futuristic apartment, floating city, conveyor walkways\n• Yogi Bear – Jellystone Park with picnic tables and ranger elements\n• Super Friends – Hall of Justice with heroic poses and iconic silhouettes\n• Wacky Races – exaggerated race vehicles and chaotic motion\n• Hong Kong Phooey – janitor’s closet transforming into a hero scene\n• Josie and the Pussycats – live band performance on stage\n• Captain Caveman – cave interiors and club-based antics\n• Johnny Quest – adventure or science-lab environments\n• Space Ghost – retro space settings or villain confrontations\n• Fat Albert and the Cosby Kids – urban neighborhood streets, junkyard clubhouses, schoolyards, stoops, or classrooms with warm, grounded slice-of-life tone\n\nIntegrate the subject naturally into the chosen cartoon world as if they are a regular character in that series. The subject’s clothing, posture, and expression should adapt to the selected franchise’s style (for example: heavier rounded shapes and softer expressions for Fat Albert).\n\nUse era-accurate Hanna-Barbera background techniques such as painted cel backgrounds, stylized repeating scenery, retro props, and limited-animation staging. Color palette and line thickness should match the chosen franchise’s specific visual identity.\n\nThe final image should feel like a freeze-frame from an authentic Hanna-Barbera TV episode, nostalgic, playful, and clearly readable on a small screen."
   },
   {
     name: "HANS CHRISTIAN ANDERSEN",
@@ -1459,9 +1484,9 @@ const DEFAULT_PRESETS = [
     message: "Take a picture and make it Pop Art. Employs vibrant, bold colors, simplified imagery, and techniques from the commercial world like screen-printing, often with a sense of humor, irony, or wit."
   },
   {
-  name: "POP-UP BOOK",
-  category: ["BOOK", "PAPER", "3D"],
-  message: "Take a picture and transform the entire scene into a physical pop-up book made of paper. The subject should be constructed entirely as a pop-up paper structure that rises upward from folded paper layers attached to the book’s pages.\n\nThe subject must emerge directly from the page through visible folds, hinges, tabs, and layered paper planes. The body, face, and features should be formed from flat paper pieces assembled into a three-dimensional pop-up mechanism, clearly connected to the page surface.\n\nShow the open book with two facing pages visible. The pop-up elements should clearly originate from the folds of the pages and extend upward, as if they would collapse flat when the book is closed.\n\nUse realistic paper textures, visible creases, cut edges, and paper thickness. All materials must look like paper—no skin, fabric, plastic, or realistic surfaces. Lighting and shadows should emphasize the layered paper construction. The final image should look like a photographed pop-up book page where the subject is part of the paper engineering itself."
+    name: "POP-UP BOOK",
+    category: ["BOOK", "PAPER", "3D"],
+    message: "Take a picture and transform the entire scene into a physical pop-up book made of paper. The subject should be constructed entirely as a pop-up paper structure that rises upward from folded paper layers attached to the book’s pages.\n\nThe subject must emerge directly from the page through visible folds, hinges, tabs, and layered paper planes. The body, face, and features should be formed from flat paper pieces assembled into a three-dimensional pop-up mechanism, clearly connected to the page surface.\n\nShow the open book with two facing pages visible. The pop-up elements should clearly originate from the folds of the pages and extend upward, as if they would collapse flat when the book is closed.\n\nUse realistic paper textures, visible creases, cut edges, and paper thickness. All materials must look like paper—no skin, fabric, plastic, or realistic surfaces. Lighting and shadows should emphasize the layered paper construction. The final image should look like a photographed pop-up book page where the subject is part of the paper engineering itself."
   },
   {
     name: "PORCELAIN",
@@ -1665,8 +1690,8 @@ const DEFAULT_PRESETS = [
   },
   {
     name: "SCARY MOVIE",
-    category: ["HUMOR", "MOVIES", "MASK"],
-    message: "Take a picture and transform the subject so their face appears as a Ghostface-style mask while preserving the subject’s underlying facial structure, proportions, and expression. The mask should be smooth white with elongated eyes and mouth, subtly shaped by the subject’s face so it feels worn rather than pasted on.\n\nIntroduce **subtle subject-specific variations** to the mask so each render is visually distinct while remaining unmistakably Ghostface-inspired. These variations should be inspired by the subject’s real traits, accessories, or appearance and may include, but are not limited to:\n• faint contour impressions reflecting the subject’s cheekbones or jawline\n• subtle asymmetry in eye or mouth openings based on the subject’s expression\n• molded impressions suggesting glasses, sunglasses, or facial accessories if the subject is wearing them\n• slight surface imperfections, hairline cracks, gloss variation, or patina unique to the subject\n\nDo NOT turn the mask into a parody, novelty mask, or decorative redesign. Changes must remain restrained, eerie, and believable.\n\nDress the subject in a flowing black hooded robe inspired by the classic Ghostface costume. Ensure the hood frames the mask naturally, with realistic fabric folds, shadows, and texture. Match lighting, perspective, and depth so the costume integrates seamlessly with the original scene.\n\nMaintain a clean, non-graphic horror aesthetic. Do not add blood, weapons, or violent elements. The final image should feel eerie, iconic, cinematic, and subtly personalized, while remaining clearly readable on small screens."
+    category: ["HUMOR", "MOVIES", "PARODY", "MASK"],
+    message: "Take a picture and transform the subject so their face appears as a comedic parody mask inspired by the exaggerated 'Whassup' character style from the Scary Movie films.\n\nThe mask MUST be solid white or off-white in color. Do NOT use skin tones, flesh colors, beige, pink, or realistic human coloration. The mask should clearly read as a white costume mask.\n\nThe mask should be clearly rubbery and costume-like, not realistic or eerie. Use a droopy, stretched face shape with oversized eye holes, exaggerated mouth opening, and slightly uneven proportions. The expression should feel goofy, slack, and intentionally silly rather than threatening.\n\nSubtly adapt the mask to the subject so each render feels unique while staying comedic. Variations may include:\n• mouth shape loosely matching the subject’s expression (open, smirking, surprised)\n• uneven eye openings influenced by the subject’s eye spacing\n• stretched or sagging areas reflecting the subject’s face shape\n• molded impressions suggesting glasses or accessories if present\n\nDress the subject in a loose black hooded robe that looks like a cheap Halloween costume rather than a cinematic outfit. Fabric should appear lightweight, wrinkled, and slightly ill-fitting for comedic effect.\n\nThe overall tone must be humorous and absurd, not scary. Do not add blood, weapons, or horror elements. Lighting and composition should feel casual and playful, as if captured during a parody scene.\n\nThe final image should immediately read as a Scary Movie–style spoof — goofy, recognizable, and funny — while remaining clear and readable on small screens."
   },
   {
     name: "SCOOBY-DOO ENDING",
@@ -4101,7 +4126,16 @@ function saveFavoriteStyle(styleName) {
 
     localStorage.setItem(FAVORITE_STYLES_KEY, JSON.stringify(favoriteStyles));
     
-    showUnifiedMenu(); 
+    // Save current scroll position before repopulating
+    const scrollContainer = document.querySelector('.styles-menu-scroll-container');
+    const scrollPosition = scrollContainer ? scrollContainer.scrollTop : 0;
+    
+    populateStylesList();
+    
+    // Restore scroll position after repopulating
+    if (scrollContainer) {
+        scrollContainer.scrollTop = scrollPosition;
+    }
 }
 
 function loadLastUsedStyle() {
@@ -6080,6 +6114,10 @@ function capturePhoto() {
   } else {
     resetButton.style.display = 'block';
   }
+  // } else {
+  //   resetButton.style.display = 'none';
+  // }
+  // above three lines may be wrong
 
   const cameraButton = document.getElementById('camera-button');
   if (cameraButton) {
@@ -7305,7 +7343,7 @@ function getFinalPrompt(basePrompt) {
   return basePrompt;
 }
 
-function populateStylesList() {
+function populateStylesList(preserveScroll = false) {
     const list = document.getElementById('menu-styles-list');
     list.innerHTML = '';
     
@@ -7399,8 +7437,10 @@ function populateStylesList() {
     stylesCountElement.textContent = totalVisible;
   }
     
-    currentMenuIndex = 0;
-    updateMenuSelection();
+    if (!preserveScroll) {
+        currentMenuIndex = 0;
+        updateMenuSelection();
+    }
 }
 
 function createStyleMenuItemFast(preset) {
