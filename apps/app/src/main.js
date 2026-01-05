@@ -1000,8 +1000,8 @@ const DEFAULT_PRESETS = [
   },
   {
     name: "ISOMETRIC",
-    category: ["DESIGN", "3D", "GEOMETRIC"],
-    message: "Take a picture and transform the scene into isometric perspective. Clean geometry, consistent angles. Game-like layout."
+    category: ["DESIGN", "3D", "GEOMETRIC", "STRUCTURAL"],
+    message: "Take a picture and completely reconstruct the scene using strict isometric projection.\n\nAll elements must be viewed from a fixed isometric angle (approximately 30–45 degrees) with no vanishing points, no perspective convergence, and no camera lens distortion. Parallel lines must remain parallel.\n\nRebuild the scene as simplified geometric forms aligned to an isometric grid. Convert subjects, objects, and environments into clean, block-like or planar shapes while preserving recognizable proportions and silhouettes.\n\nDepth must be represented only through isometric extrusion, vertical offsets, overlap, and stacking — not through blur, bokeh, or atmospheric effects.\n\nUse consistent lighting and shading across all surfaces to reinforce form and depth. Shadows should be crisp, directional, and uniform, matching the isometric angle.\n\nSurface detail should be simplified or removed. Avoid photographic textures, skin pores, fabric weave, or noise. Favor smooth, stylized surfaces suitable for a game map, architectural diagram, or technical illustration.\n\nThe final image should resemble a high-quality isometric game environment or design diagram — clean, readable, geometric, and clearly structured. Ensure the entire scene fits within the frame and remains legible on a small screen."
   },
   {
     name: "JAVERT PHOTOBOMB",
