@@ -268,6 +268,11 @@ const DEFAULT_PRESETS = [
     message: "Take a picture and transform the image into African tribal mask art. Simplify facial features, use bold geometric shapes, earthy colors, carved-wood textures, and ceremonial symbolism while keeping the subject recognizable."
   },
   {
+    name: "ALBUM TRACKLIST COVER",
+    category: ["MUSIC", "ART", "POP CULTURE", "RETRO"],
+    message: "Take a picture and transform the subject into the main artist featured on a full vinyl record album cover.\n\nThe subject must be styled, dressed, and posed to clearly match a specific music genre and era inferred from their appearance, expression, clothing, environment, or mood. The visual aesthetic must strongly reflect a historically appropriate vinyl-era release year. For example:\n• 1960s–70s Rock → analog grain, warm tones, natural light, leather or denim\n• 1970s Disco → glossy photography, bold colors, dramatic poses\n• 1980s Pop → neon accents, airbrushed look, studio lighting\n• 1990s Grunge / Hip-hop → gritty texture, muted colors, urban realism\n• 1950s–60s Jazz → monochrome or sepia, elegant composition\n• Punk → raw, DIY photocopy look\n\nIf the genre is unclear, choose the most fitting genre and era based on the subject’s vibe and surroundings.\n\nDesign the image as a complete, square vinyl record cover. The subject must be clearly identifiable as the singer or band front-person, fully integrated into the composition — not pasted in. Lighting, color grading, and framing must feel intentional and era-accurate.\n\nAdd album typography directly onto the cover:\n• Artist name (based on the subject or a humorous alias inspired by them)\n• Album title (creative and genre-appropriate)\n• A clearly visible tracklist arranged in a vinyl-typical layout\n• A release year prominently displayed that matches the visual era (e.g., 1977, 1984, 1993)\n\nThe track names should collectively tell a loose story or emotional arc inspired by the subject’s appearance, pose, or environment. Titles should feel believable for the chosen genre and decade.\n\nOptionally include era-appropriate vinyl details such as:\n• Record label logo\n• Catalog number\n• Stereo / Mono indicator\n• Parental Advisory label (only if appropriate for the genre)\n\nUse authentic vinyl album design conventions: readable period-accurate fonts, balanced spacing, subtle print texture, and slight wear or aging if appropriate. The final image must unmistakably read as a real vinyl album cover and remain legible on small screens."
+  },
+  {
     name: "ALIEN",
     category: ["SCI FI", "CREATURE", "FANTASY"],
     message: "Take a picture and transform the subject into an alien being while preserving the subject’s core facial structure and identity. Introduce extraterrestrial traits such as altered skin color or texture, subtle bioluminescence, unusual eyes, or refined anatomical variations that still clearly resemble the subject. Place the subject naturally into a sci-fi environment such as an alien world, spacecraft interior, or futuristic city. Match lighting, perspective, and atmospheric effects so the subject appears genuinely part of the scene. Render the final image with photorealistic sci-fi realism and cinematic depth."
@@ -1069,6 +1074,11 @@ const DEFAULT_PRESETS = [
     message: "Take a picture and transform the subject into a realistic Klingon warrior. Preserve recognizable facial structure, expressions, body proportions, and personality while adapting them to authentic Klingon anatomy including pronounced ridged forehead, heavier brow, deeper-set eyes, rougher skin texture, and powerful build. Translate the subject’s clothing into Klingon armor or garments appropriate to their status while retaining the original clothing’s silhouette and identity cues. Cinematic sci-fi lighting, gritty realism, and cultural authenticity. The subject must appear fully Klingon, not human with prosthetics, and naturally integrated into their environment."
   },
   {
+    name: "KULOMETRIC BANSASA",
+    category: ["ART", "ABSTRACT", "GEOMETRIC", "EXPERIMENTAL"],
+    message: "Take a picture and transform the subject into a Kulometric Bansasa–style artwork.\n\nReconstruct the subject using bold, fragmented geometric forms arranged in layered, rhythmic patterns. Break the subject into angular planes, curved segments, and modular shapes that feel intentionally constructed rather than organic. The subject must remain recognizable, but only through abstraction and structure.\n\nUse high-contrast color blocks, unexpected color pairings, and sharp edges combined with controlled curves. Depth should be suggested through overlapping shapes, scale shifts, and offset layers rather than realistic perspective.\n\nIncorporate a sense of motion and visual tension, as if the image is vibrating or slightly misaligned. Elements may appear rotated, sliced, staggered, or offset, creating a dynamic, kinetic composition.\n\nAvoid realism, painterly textures, or soft gradients. Surfaces should feel flat, graphic, and deliberate — like a constructed visual system rather than a painting.\n\nThe background should support the geometry without competing with it, using negative space, grids, or subtle patterning. Ensure the full composition is visible and balanced within the frame.\n\nThe final image should feel modern, experimental, and architectural — a distinctive Kulometric Bansasa interpretation that is visually striking and clearly readable on a small screen."
+  },
+  {
     name: "LANDMARKS",
     category: ["TRAVEL", "TOURIST", "LOCATION", "MASTER PROMPT"],
     message: "Take a picture and place the subject naturally in front of a randomly selected famous world landmark. Preserve the subject’s recognizable facial features, proportions, and identity while matching the lighting, perspective, color temperature, and camera style of the landmark environment. Ensure correct scale, shadows, reflections, and atmospheric depth so the subject appears physically present at the location rather than composited. Adapt clothing, posture, and environment subtly to fit the climate, culture, and setting without turning it into a costume. The landmark and surroundings should remain authentic and recognizable, with the subject fully integrated into the scene. Render with photorealistic detail and travel-photography realism."
@@ -1132,6 +1142,11 @@ const DEFAULT_PRESETS = [
     name: "LOST AND FOUND",
     category: ["HUMOR", "POSTER", "MISSING", "MASTER PROMPT"],
     message: "Take a picture and transform it into a humorous lost-and-found poster. Present the subject as the missing item or person, framed in a simple poster layout with bold headings and tear-off–style design cues. Generate playful descriptive flavor text based on the subject’s appearance, clothing, expression, or surroundings, incorporating any externally provided details naturally. The tone should be clearly humorous and lighthearted. Ensure all text is fully visible and readable, and the subject remains recognizable. Render the final image with realistic paper texture, casual lighting, and authentic public-notice styling."
+  },
+  {
+    name: "LOUSY T-SHIRT",
+    category: ["HUMOR", "RETRO", "APPAREL", "POP CULTURE"],
+    message: "Take a picture and transform the subject so they appear to be wearing a souvenir-style t-shirt with a classic tourist-shop design.\n\nThe t-shirt should feature the phrase: “My friend went to [CITY] and all I got was this lousy t-shirt.” Use a city name and friend’s name provided via external master prompt. If none is provided, randomly select a well-known city and use a generic phrase without a name.\n\nDesign the shirt using common souvenir t-shirt aesthetics appropriate to the chosen city. Examples include:\n• bold block lettering\n• playful or cheesy fonts\n• city skyline silhouettes\n• landmark illustrations\n• stars, flags, or decorative borders\n• exaggerated colors or slightly faded screen-print ink\n\nThe design should look like it was purchased at a tourist gift shop — slightly tacky, mass-produced, and proudly obvious. The print should appear realistically applied to the fabric with natural folds, wrinkles, lighting, and slight distortion from the shirt’s movement.\n\nEnsure the shirt fits naturally on the subject’s body and matches perspective, lighting, and fabric texture. The text must be fully visible and legible on a small screen.\n\nAvoid modern minimalist branding or luxury fashion aesthetics. The final image should feel humorous, nostalgic, and unmistakably like a real souvenir t-shirt someone actually owns."
   },
   {
     name: "LOVE ACTUALLY",
@@ -1500,8 +1515,8 @@ const DEFAULT_PRESETS = [
   },
   {
     name: "POSTCARD",
-    category: ["TRAVEL", "VINTAGE", "GREETING"],
-    message: "Take a picture in the style of a vintage postcard. Add text: \"WISH YOU WERE HERE\". The result should be a full view of the postcard with a relevant background behind the card."
+    category: ["TRAVEL", "VINTAGE", "GREETING", "SOUVENIR"],
+    message: "Take a picture and transform it into a physical vintage-style tourist postcard.\n\nDesign the postcard using classic souvenir postcard aesthetics: bold city lettering, saturated colors, slightly dated typography, and a cheerful, kitschy layout. Select a city automatically or use one provided via external master prompt.\n\nIntegrate the subject naturally into the postcard image as part of the photographed scene, not pasted on top. The subject should feel printed directly onto the card.\n\nInclude prominent text reading \"WISH YOU WERE HERE\" in a large, playful postcard-style font. The text must be clearly legible and feel printed on the card surface.\n\nAdd subtle wear details such as rounded corners, slight fading, paper texture, minor creases, or edge wear so the postcard feels handled and mailed.\n\nEnsure the entire postcard is fully visible within the frame, including borders. The postcard should appear resting on a surface or held, with a relevant background visible behind the card.\n\nThe final image should feel nostalgic, friendly, and unmistakably like a real souvenir postcard — clearly readable on a small screen."
   },
   {
     name: "POTATO",
@@ -1770,8 +1785,8 @@ const DEFAULT_PRESETS = [
   },
   {
     name: "SNOW GLOBE",
-    category: ["TOY", "MINIATURE", "WINTER"],
-    message: "Take a picture and encapsulate the scene inside a snow globe. Glass refraction, floating snow particles."
+    category: ["TOY", "MINIATURE", "WINTER", "SOUVENIR"],
+    message: "Take a picture and encapsulate the subject and scene inside a physical souvenir snow globe.\n\nMiniaturize the subject and place them within a tiny, detailed environment inside the globe. If a city or location is provided via external master prompt, construct a miniature city scene inside the globe featuring simplified landmarks, buildings, or visual cues associated with that place. If no location is provided, create a generic charming miniature environment.\n\nThe subject should appear as a small figurine integrated into the miniature city scene — not floating, not full-sized, and not dominating the globe.\n\nRender a clear glass sphere with realistic reflections, refraction, highlights, and slight distortion caused by the curved glass. Floating snow particles or glitter should be suspended throughout the globe at varying depths.\n\nInclude a visible snow globe base made of plastic or resin, styled like a tourist souvenir. The base should include a decorative plaque or label showing the city or location name (use external master prompt text if provided; otherwise invent a plausible destination name).\n\nEnsure the entire snow globe — glass sphere and base — is fully visible within the frame. The globe should appear photographed on a surface or held in a hand, not floating in space.\n\nThe final image should feel charming, slightly kitschy, nostalgic, and unmistakably like a real souvenir snow globe, clearly readable on a small screen."
   },
   {
     name: "SOLARPUNK",
@@ -4302,14 +4317,6 @@ function clearPresetBuilderForm() {
   
   const clearButton = document.getElementById('preset-builder-clear');
   if (clearButton) clearButton.style.display = 'flex';
-  
-  // Close all chip sections when clearing
-  document.querySelectorAll('.chip-section-content').forEach(c => {
-    c.style.display = 'none';
-  });
-  document.querySelectorAll('.chip-section-header').forEach(h => {
-    h.classList.remove('expanded');
-  });
 }
 
 // Edit preset in builder
