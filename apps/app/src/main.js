@@ -5,10 +5,14 @@ let videoTrack = null;
 
 // Resolution settings
 const RESOLUTION_PRESETS = [
-  { name: 'Low (640x480)', width: 640, height: 480 },
-  { name: 'Medium (1280x720)', width: 1280, height: 720 },
-  { name: 'High (1920x1080)', width: 1920, height: 1080 },
-  { name: 'Ultra (2560x1440)', width: 2560, height: 1440 }
+  { name: 'VGA (640x480)', width: 640, height: 480 },
+  { name: 'SVGA (800x600)', width: 800, height: 600 },
+  { name: 'XGA (1024x768)', width: 1024, height: 768 },
+  { name: 'SXGA (1280x960)', width: 1280, height: 960 },
+  { name: 'SXGA+ (1400x1050)', width: 1400, height: 1050 },
+  { name: 'UXGA (1600x1200)', width: 1600, height: 1200 },
+  { name: '2K (2048x1080)', width: 2048, height: 1080 },
+  { name: '4K (3840x2160)', width: 3840, height: 2160 }
 ];
 let currentResolutionIndex = 0; // Default to Low (640x480)
 const RESOLUTION_STORAGE_KEY = 'r1_camera_resolution';
@@ -78,6 +82,8 @@ let masterPromptText = '';
 let masterPromptEnabled = false;
 const MASTER_PROMPT_STORAGE_KEY = 'r1_camera_master_prompt';
 const MASTER_PROMPT_ENABLED_KEY = 'r1_camera_master_prompt_enabled';
+const ASPECT_RATIO_STORAGE_KEY = 'r1_camera_aspect_ratio';
+let selectedAspectRatio = 'none'; // 'none', '1:1', or '16:9'
 
 // Randomizer variables
 let isRandomMode = false;
@@ -136,6 +142,8 @@ let isBurstSubmenuOpen = false;
 let isTimerSubmenuOpen = false;
 let isMasterPromptSubmenuOpen = false;
 let isMotionSubmenuOpen = false;
+let isAspectRatioSubmenuOpen = false;
+let currentAspectRatioIndex = 0;
 let isTutorialSubmenuOpen = false;
 let isPresetBuilderSubmenuOpen = false;
 let editingPresetBuilderIndex = -1;
@@ -313,6 +321,16 @@ const DEFAULT_PRESETS = [
     message: "Take a picture in the style of Andy Warhol. Pop Art with the use of four duplicated images in a frame."
   },
   {
+    name: "ANGULAR MONOCHROMATIC",
+    category: ["ART", "DESIGN", "VECTOR", "ABSTRACT"],
+    message: "Take a picture and transform it into a bold, stylized vector illustration.\n\nRender the image using flat geometric shapes and a strictly monochromatic color palette derived from the single dominant color of the original photo. Use variations of that color only (light, mid-tone, and dark values) rather than multiple hues or gradients.\n\nStrongly abstract fine detail and simplify all forms into large angular planes that loosely describe the subject and environment. Define edges using hard transitions between adjacent color regions instead of line art. Do not use outlines.\n\nConvey shading entirely through neighboring flat color fields, producing a graphic, poster-like quality reminiscent of cut paper, stencil art, or posterization.\n\nSlightly round all corners of the color block shapes to avoid sharp points while maintaining an angular, faceted appearance.\n\nAvoid texture, brush strokes, realism, or painterly effects. The final image should feel minimal, graphic, modern, and clearly readable on a small screen."
+  },
+  {
+    name: "ANGULAR POLYCHROMATIC",
+    category: ["ART", "DESIGN", "VECTOR", "ABSTRACT"],
+    message: "Take a picture and transform it into a bold, stylized vector illustration.\n\nRender the image using flat geometric shapes and a vibrant polychromatic color palette derived from the original colors of the photo. Strongly abstract fine detail and organize colors into distinct light, mid-tone, and dark blocks rather than smooth gradients.\n\nSimplify all forms into large angular planes that loosely describe the subject and environment. Define edges using hard transitions between adjacent color regions instead of line art. Do not use outlines.\n\nConvey shading entirely through neighboring flat color fields, creating a graphic, poster-like quality reminiscent of cut paper, posterization, or modern vector art.\n\nSlightly round all corners of the color block shapes to avoid harsh points while maintaining an angular, faceted appearance.\n\nAvoid texture, brush strokes, realism, or painterly effects. The final image should feel clean, graphic, modern, and clearly readable on a small screen."
+  },
+  {
     name: "AOL AIM PROFILE",
     category: ["RETRO", "INTERNET", "2000S"],
     message: "Take a picture and transform it into a tiny, low-resolution AOL Instant Messenger profile photo. Crop awkwardly, reduce detail, and add heavy compression. The subject should remain recognizable but pixelated and informal."
@@ -366,6 +384,11 @@ const DEFAULT_PRESETS = [
   name: "AVATAR",
   category: ["MOVIES", "SCI FI", "CREATURE"],
   message: "Take a picture and transform the subject into a realistic Na’vi character from the movie Avatar. Preserve the subject’s recognizable facial structure, eye shape, expressions, body proportions, and personality while adapting them to authentic Na’vi anatomy—tall, slender physique, elongated limbs, blue bioluminescent skin with natural striping, feline nose structure, large expressive eyes, pointed ears, and long braided hair with neural queue. Translate the subject’s clothing and accessories into culturally accurate Na’vi attire and materials. Match the exact cinematic lighting, color grading, skin translucency, subsurface scattering, and environmental interaction seen in Avatar. The subject must appear fully native to Pandora, not human-painted blue, with realistic scale, shadows, and immersion in the world."
+  },
+  {
+    name: "BACKUP SINGER",
+    category: ["MUSIC", "HUMOR", "PERFORMANCE"],
+    message: "Take a picture and place the subject into a live music performance as an off-key backup singer standing behind a talented lead singer or group.\n\nThe subject should be holding a microphone and singing enthusiastically but clearly out of sync or off-key. Other singers should be visibly reacting — giving awkward looks, side-eyes, or confused expressions.\n\nStage lighting, concert atmosphere, and microphones must feel realistic. The subject should be fully integrated into the performance, not pasted in.\n\nThe scene should feel funny, musical, and visually readable even on small screens."
   },
   {
     name: "BALLOON",
@@ -423,6 +446,11 @@ const DEFAULT_PRESETS = [
     message: "Take a picture and transform the image into a blueprint technical drawing. White linework on blue background. Precise, schematic style."
   },
   {
+    name: "BOARD GAME",
+    category: ["HUMOR", "GAME", "RETRO", "POP CULTURE"],
+    message: "Take a picture and transform the subject into the featured character on the front of a classic mass-market board game box inspired by iconic Hasbro or Mattel games (such as Life, Monopoly, Chutes and Ladders, Sorry!, Candy Land, or Trouble).\n\nDesign the image as a FULL, front-facing board game box, completely visible within the frame with no cropping. Show the box edges, title banner, age range, player count, and bottom information strip so it clearly reads as a real retail board game.\n\nSelect the specific game style automatically based on the subject’s appearance, mood, or environment:\n• Formal, confident, or businesslike → Monopoly-style\n• Cheerful, family-friendly, playful → Life-style\n• Childlike, whimsical, or silly → Chutes & Ladders or Candy Land-style\n• Chaotic or mischievous → Sorry! or Trouble-style\n\nIllustrate the subject in the exaggerated, cheerful illustration style typical of classic board game box art — expressive pose, simplified features, bright saturated colors, and bold outlines. The subject should feel like part of the original game universe, not a modern photo pasted onto a box.\n\nCreate a humorous game title or subtitle inspired by the subject, written in large, bold, vintage-style typography that closely resembles classic board game branding without copying exact logos.\n\nInclude playful, absurd supporting details such as:\n• fake player count and age range\n• a ridiculous but family-friendly game objective\n• small icon badges or bursts (\"Family Favorite!\", \"New Edition!\", \"Now With More Drama!\")\n\nEnsure everything is readable on a small screen. The final image should feel instantly recognizable as a classic toy-store board game from the 1960s–1990s — nostalgic, colorful, wholesome, and funny."
+  },
+  {
     name: "BOBBLEHEAD",
     category: ["TOY", "HUMOR", "MASTER PROMPT"],
     message: "Take a picture and transform the subject into a collectible bobblehead figurine. The head must be fully **toy-like**, made of smooth, glossy plastic with subtle reflections and soft highlights — it should **look like a manufactured bobblehead head**, not a human head. Enlarge the head relative to the body in true bobblehead style, with slightly exaggerated cartoonish features while keeping the subject recognizable. Simplify details for a playful, toy-like appearance.\n\nRender the body smaller, proportionally correct for a bobblehead, with a plastic finish and soft shadows to make it look tangible. Place the bobblehead on a small pedestal, fully visible in the frame.\n\nGenerate the honorary title dynamically using humorous flavor text derived from the subject’s traits, pose, expression, clothing, or environment. For example, 'Supreme Caffeine Conqueror' for someone holding a coffee cup, or 'Master of Stillness' for someone sitting cross-legged. Keep the title bold, funny, and absurd.\n\nEnsure the full bobblehead and pedestal are visible, fully contained in the frame, and clearly readable on small screens. The final image should feel playful, exaggerated, **immediately humorous**, and unmistakably a **toy bobblehead** rather than a human figure."
@@ -463,6 +491,11 @@ const DEFAULT_PRESETS = [
     message: "Take a picture and transform the image into a Byzantine-style religious icon. Place the subject in the center with a gilded halo, frontal pose, and flat symbolic colors. Add ornamental borders. The subject remains recognizable while adopting the solemn, formal, and spiritual style."
   },
   {
+    name: "CALENDAR PIN-UP",
+    category: ["HUMOR", "CALENDAR", "GLAMOUR"],
+    message: "Take a picture and transform the subject into a playful, over-the-top calendar pin-up page in the style of novelty wall calendars sold in gift shops.\n\nIf the subject is male: place them as a heroic firefighter model wearing an open uniform shirt or tank top, helmet, and suspenders, posed confidently in front of a firehouse or fire truck.\n\nIf the subject is female: place them as a swimsuit calendar model wearing a stylish, tasteful swimsuit, posed confidently at a beach or poolside.\n\nThe mood should be fun, cheeky, and glamorous — never sexualized. Poses should feel like a commercial calendar shoot, not suggestive or explicit.\n\nInclude a full calendar layout with month name, dates, and a bold calendar title at the top. The final image should feel like a real novelty pin-up calendar page that someone might hang in an office or garage."
+  },
+  {
     name: "CANDY",
     category: ["FOOD", "SWEET", "TRANSFORMATION", "COLORFUL"],
     message: "Take a picture and make everything made out of candy. Glossy sweets, playful textures."
@@ -501,6 +534,11 @@ const DEFAULT_PRESETS = [
     name: "CHARCOAL",
     category: ["ART", "DRAWING", "SKETCH"],
     message: "Take a picture and convert the image into a detailed charcoal sketch. Rich grayscale tones, textured shading, and expressive strokes on paper."
+  },
+  {
+    name: "CHEER-LEADER",
+    category: ["HUMOR", "SPORTS", "COSTUME"],
+    message: "Take a picture and transform the subject into a female cheerleader regardless of their gender. Dress them in a classic cheerleading outfit with pom-poms, skirt, and team colors.\n\nGive them energetic poses, big smiles, and stadium or gymnasium background.\n\nThe result should be playful, confident, and clearly recognizable as a cheerleader scene."
   },
   {
     name: "CHEESE TOUCH",
@@ -566,6 +604,11 @@ const DEFAULT_PRESETS = [
     name: "COLLECTIBLE TOY",
     category: ["TOY", "PACKAGING", "COLLECTIBLE"],
     message: "Take a picture and transform the subject into a collectible toy encased inside its original packaging. Adapt the packaging style to match the type of toy: for example, a car becomes a Matchbox or Hot Wheels package, an action figure or superhero becomes a classic action figure box, a person becomes a Barbie-style doll package, etc. Use the subject’s characteristics, clothing, and personality to inspire the toy design and accessories. Generate flavor text and captions on the packaging based on the subject’s appearance, traits, and surroundings, making it feel like an authentic collectible. Ensure the subject remains recognizable while fully integrated as a toy. Render the final image in high detail with realistic reflections, packaging materials, and lighting, so it looks like a real collectible ready for display."
+  },
+  {
+    name: "COMIC BOOK COVER",
+    category: ["COMICS", "ART", "POP CULTURE"],
+    message: "Take a picture and transform the subject into the star of a comic book cover in the style of either Marvel or DC.\n\nDesign a full comic book cover layout including:\n• Title logo\n• Issue number\n• Month and year\n• Price (e.g., $1.25, 75¢, $3.99)\n• Publisher seals, barcodes, or approval stamps\n\nThe subject should appear as a superhero or central character within a dramatic comic scene. Style can be classic or modern depending on external master prompt.\n\nIf external master prompt text specifies a franchise or hero (Spider-Man, Batman, Wonder Woman, Avengers, Justice League, etc.), base the cover on that property.\n\nThe final image must look like a real printed comic book cover."
   },
   {
     name: "COMIC SUPERHERO",
@@ -738,6 +781,11 @@ const DEFAULT_PRESETS = [
     message: "Take a picture and transform the subject by exaggerating a single physical trait while preserving the subject’s recognizable identity and overall proportions. The exaggerated feature should be visually prominent but anatomically coherent, blending naturally with the subject’s face and body. Adapt lighting, shadows, and perspective so the transformation feels intentional rather than distorted. Integrate the subject seamlessly into the scene, maintaining realism or stylized realism depending on the chosen direction. Ensure the final result feels playful and striking."
   },
   {
+   name: "EXPECTING?",
+   category: ["HUMOR", "LIFE", "TRANSFORMATION"],
+   message: "Take a picture and transform the subject into a visibly pregnant person regardless of gender.\n\nThe subject should appear proud and glowing, with a round belly, maternity clothing, and gentle, warm lighting.\n\nThe tone should be lighthearted, wholesome, and humorous rather than medical."
+  },
+  {
     name: "EXPRESSIONISM",
     category: ["ART", "PAINTING", "EMOTIONAL"],
     message: "Take a picture in the Expressionism artistic movement emphasizing subjective emotions and inner experiences, often distorting reality to convey intense emotions and psychological states."
@@ -853,6 +901,11 @@ const DEFAULT_PRESETS = [
     message: "Take a picture and turn the subject into a Funko Pop. Oversized head, simplified body."
   },
   {
+    name: "FUTURAMA",
+    category: ["CARTOON", "SCI-FI", "RETRO", "POP CULTURE"],
+    message: "Take a picture and transform the subject into an animated character placed directly inside a Futurama-style scene alongside recognizable characters from the show.\n\nRender the subject in the same visual style as Futurama characters: clean bold outlines, flat cel shading, simplified geometric facial features, exaggerated eyes, smooth rounded head shapes, and bright saturated colors. Preserve the subject’s recognizability while fully adapting them into the cartoon style.\n\nPlace the subject INTO an iconic Futurama environment and scene, selected based on context or randomly, such as:\n• inside the Planet Express building or conference room\n• standing with Fry, Leela, and Bender in the Planet Express crew lineup\n• walking through New New York with futuristic buildings and flying cars\n• inside MomCorp, the Head Museum, or a sci-fi lab\n• in a space scene with Futurama characters reacting to the subject\n\nExisting Futurama characters may appear in the scene as supporting characters, background figures, or interaction partners, drawn accurately in their recognizable cartoon style. The subject should feel like a guest character naturally written into an episode, not pasted on top.\n\nAdapt the subject’s clothing into Futurama-appropriate outfits — delivery uniforms, sci-fi jumpsuits, futuristic casual wear, or humorous future attire inspired by their real clothing.\n\nUse simple painted backgrounds, clean animation lighting, and minimal texture consistent with hand-drawn cel animation. Avoid realistic shading or painterly effects.\n\nEnsure the full scene is visible and readable on a small screen, with the subject clearly identifiable among the Futurama characters. The final image should feel like a freeze-frame from an actual Futurama episode where the subject unexpectedly appears."
+  },
+  {
     name: "FUTURE SELF",
     category: ["AGE", "TRANSFORMATION", "OLD"],
     message: "Take a picture and depict the subject 20-40 years in the future. Preserve facial structure with realistic aging."
@@ -918,9 +971,29 @@ const DEFAULT_PRESETS = [
     message: "Take a picture and transform the subject into a character within a Grimm’s fairy tale. Select a fairy tale based on the subject’s appearance, posture, expression, or perceived traits (such as innocence, cleverness, arrogance, bravery, curiosity), OR use a specific fairy tale provided via external master prompt.\n\nDepict the subject as a story character fully integrated into a classic Grimm-style fairy tale scene, not as a modern person placed into an illustration. The subject may appear as a human, villager, traveler, child, noble, or fairy-tale creature as appropriate to the chosen story. The environment and supporting elements should clearly reflect a traditional fairy tale setting such as forests, cottages, castles, roads, or village scenes.\n\nRender the image as a single illustrated storybook page. Ensure the entire page is fully visible within the frame, including margins, illustration, and text area. Do not crop or cut off any part of the page.\n\nInclude the **title of the selected fairy tale** prominently and clearly within the page layout, such as at the top of the page or as a decorative storybook heading. The title must be fully visible and immediately identifiable to the viewer.\n\nInclude a short fairy-tale caption or lesson within the page, such as a brief story excerpt, warning, or thematic line appropriate to Grimm’s fairy tales. The text should be legible, concise, and directly connected to the scene.\n\nUse a traditional fairy-tale illustration style inspired by 18th–19th century book engravings or painted storybook art. The tone may be whimsical, eerie, or cautionary, but not graphic. Keep the composition symbolic, atmospheric, and clearly readable on a small screen. The final image should feel like a complete, intact page from a Grimm’s fairy tale book."
   },
   {
+    name: "H. P. LOVECRAFT",
+    category: ["HORROR", "FANTASY", "SURREAL"],
+    message: "Take a picture and place the subject into a dark, cosmic-horror world inspired by H. P. Lovecraft.\n\nThe subject should appear small or vulnerable within a vast, eerie environment filled with ancient ruins, strange symbols, impossible architecture, and unknowable cosmic forces.\n\nSubtle tentacles, eldritch shapes, or alien geometries may appear in the background, but do not overwhelm the subject.\n\nThe mood should feel ominous, mysterious, and otherworldly rather than gory."
+  },
+  {
     name: "HAIKU",
     category: ["POETRY", "JAPANESE", "ZEN"],
     message: "Take a picture and create a serene, minimalist scene inspired by classical Japanese aesthetics in the spirit of Matsuo Bashō. Emphasize simplicity, natural elements, quiet atmosphere, and contemplative mood. Use flavor text drawn from the subject’s presence, expression, and surroundings to compose a traditional haiku. Display the complete haiku fully and clearly within the image, ensuring all lines are legible and unobstructed. Integrate the text harmoniously into the scene, such as on parchment, a wooden plaque, or subtle calligraphy-style overlay. Render the final image with refined detail, soft lighting, and a calm, poetic visual balance."
+  },
+  {
+    name: "HAIR COLOR TRY-ON",
+    category: ["BEAUTY", "STYLE", "UTILITY"],
+    message: "Take a picture of the subject and generate a 2×2 square grid showing four different hair colors applied to the same person. The face, hairstyle, lighting, and background must remain identical in all four panels — only the hair color changes.\n\nUse realistic hair coloring with natural highlights, shadows, and root blending. Avoid flat or painted-on color.\n\nSelect four distinct colors (such as blonde, brunette, black, red, fantasy colors, etc.), chosen to complement the subject’s skin tone.\n\nIf external master prompt text is provided (such as decade, fashion style, fantasy theme, or celebrity), apply it to the color choices.\n\nThe result should look like a professional salon color preview."
+  },
+  {
+    name: "HAIRSTYLE TRY-ON",
+    category: ["BEAUTY", "STYLE", "UTILITY"],
+    message: "Take a picture of the subject and generate a 2×2 square grid showing four different realistic hairstyles on the same person. The subject’s face, lighting, pose, and background must remain identical in all four panels — only the hairstyle changes.\n\nEach panel should feature a distinct hairstyle (for example: short, long, curly, straight, layered, undercut, etc.), chosen to suit the subject’s face shape and hairline.\n\nUse high-quality, photorealistic hair rendering with correct lighting, shadows, and blending so the hair looks naturally attached to the subject’s scalp.\n\nIf external master prompt text is provided (such as era, fashion decade, celebrity inspiration, or theme), apply it consistently across all four hairstyles.\n\nThe final output must be a clean square grid with thin borders separating each option, designed to look like a professional virtual makeover preview."
+  },
+  {
+    name: "HAIRSTYLE TRY-ON (FUNNY)",
+    category: ["HUMOR", "STYLE"],
+    message: "Take a picture of the subject and generate a 2×2 grid showing four wildly different, funny, or exaggerated hairstyles on the same person. Keep the face and pose identical in all panels.\n\nInclude ridiculous, over-the-top, or unexpected styles (for example: disco afro, medieval wig, anime hair, mullet, punk spikes, powdered wig, etc.).\n\nThe hair should still be well-rendered and attached realistically, even when silly.\n\nIf external master prompt text is provided (like era or theme), exaggerate it humorously.\n\nThe final result should feel like a comedy makeover show."
   },
   {
     name: "HAITIAN NAÏVE ART",
@@ -941,6 +1014,11 @@ const DEFAULT_PRESETS = [
     name: "HAPPY HOLIDAYS",
     category: ["MASTER PROMPT", "CELEBRATION", "HOLIDAY", "COSTUME"],
     message: "Take a picture and place the subject in a festive holiday-themed scene based on the closest holiday to the current date. Dress the subject in holiday-appropriate attire: for Christmas, an ugly Christmas sweater; Halloween, a generic costume; 4th of July, an Uncle Sam outfit; Oktoberfest, lederhosen; Thanksgiving, a Pilgrim outfit; Easter, a bunny outfit; New Year’s, a baby’s diaper or Father Time clothing with hourglass; Valentine’s Day, a Cupid outfit with bow and heart arrow; St. Patrick’s Day, a Leprechaun outfit; Cinco de Mayo, a Mexican sombrero. Integrate the subject naturally into a scene reflecting the holiday’s environment, decorations, and mood. Generate a humorous or festive holiday message caption based on the chosen holiday. Preserve facial identity, proportions, and personality while making the scene photorealistic, vibrant, and lively."
+  },
+  {
+    name: "HAPPY MEAL PROMO",
+    category: ["HUMOR", "TOY", "FAST FOOD", "RETRO"],
+    message: "Take a picture and transform the subject into a featured kids’ fast-food meal toy promotion inspired by classic Happy Meal–style campaigns.\n\nPresent the subject as a small, inexpensive plastic toy figure with simplified proportions, glossy molded surfaces, visible seams, and limited articulation. The figure should clearly look like a real mass-produced kids’ meal toy — slightly stiff, charmingly cheap, and intentionally basic — not a cartoon illustration or realistic figurine.\n\nThe image MUST include a fully visible kids’ meal box in the frame. The box should be front-facing and unmistakable, with recognizable fast-food kids’ meal proportions (folded cardboard box with handle or clamshell shape). The toy should appear either:\n• displayed in front of the box, or\n• pictured on the box artwork itself, or\n• shown as part of a promotional display alongside the box\n\nDesign the scene as a complete toy promotion image with everything fully visible and uncropped. Include:\n• the kids’ meal box with bold colors and playful graphics\n• a toy name or toy series title inspired by the subject\n• an overly enthusiastic promotional phrase (e.g., \"Only in Kids’ Meals!\", \"Fun Inside!\", \"Playtime Included!\")\n• optional callouts like \"Collect Them All!\" or \"Limited Time\"\n\nThe toy’s pose, accessories, or expression should be humorously derived from the subject’s real traits, clothing, posture, or environment.\n\nAvoid using real fast-food brand logos unless explicitly provided via external master prompt. Instead, evoke a generic fast-food kids’ meal aesthetic through color, layout, typography, and packaging style.\n\nEnsure the entire kids’ meal box, toy, and promotional elements are fully visible and readable on a small screen. The final image should feel nostalgic, playful, slightly tacky, and instantly recognizable as a classic kids’ fast-food toy promotion from the 1990s–2000s."
   },
   {
     name: "HAUNTED EPITAPH",
@@ -1144,6 +1222,11 @@ const DEFAULT_PRESETS = [
     message: "Take a picture and transform it into a humorous lost-and-found poster. Present the subject as the missing item or person, framed in a simple poster layout with bold headings and tear-off–style design cues. Generate playful descriptive flavor text based on the subject’s appearance, clothing, expression, or surroundings, incorporating any externally provided details naturally. The tone should be clearly humorous and lighthearted. Ensure all text is fully visible and readable, and the subject remains recognizable. Render the final image with realistic paper texture, casual lighting, and authentic public-notice styling."
   },
   {
+    name: "LOST PET",
+    category: ["HUMOR", "POSTER", "PARODY"],
+    message: "Take a picture and transform the subject into the focus of a classic lost pet flyer.\n\nPresent the image as a full, vertically oriented paper flyer taped or stapled to a public surface such as a telephone pole, bulletin board, or wall. The entire flyer must be fully visible within the frame, including margins, tape, and pull tabs at the bottom.\n\nRender the subject as the missing ‘pet’ — even if the subject is clearly not an animal. The subject should appear naturally integrated into the photo area of the flyer, cropped or posed the way lost pet photos typically are.\n\nInclude the following flyer elements in a photocopied, black-and-white or faded color style:\n• Large headline: \"LOST PET\" or \"HAVE YOU SEEN THIS PET?\"\n• A short, humorous description based on the subject’s appearance, posture, clothing, or expression (e.g., \"Easily distracted,\" \"Responds to snacks,\" \"Last seen avoiding responsibility\")\n• A vague or absurd last-seen location inspired by the scene or subject\n• A reward that is comically low, oddly specific, or useless (e.g., \"$7,\" \"half a sandwich,\" \"emotional closure\")\n• Tear-off phone number tabs along the bottom with repeated, generic numbers (not readable real phone numbers)\n\nAll text should feel hastily written or cheaply printed, like a real neighborhood flyer. If external master prompt text is provided, incorporate it naturally into the description, reward, or headline.\n\nThe tone should be dry, deadpan, and immediately readable as a joke. The final image should look like a real lost pet poster at first glance — then land the humor on closer inspection."
+  },
+  {
     name: "LOUSY T-SHIRT",
     category: ["HUMOR", "RETRO", "APPAREL", "POP CULTURE"],
     message: "Take a picture and transform the subject so they appear to be wearing a souvenir-style t-shirt with a classic tourist-shop design.\n\nThe t-shirt should feature the phrase: “My friend went to [CITY] and all I got was this lousy t-shirt.” Use a city name and friend’s name provided via external master prompt. If none is provided, randomly select a well-known city and use a generic phrase without a name.\n\nDesign the shirt using common souvenir t-shirt aesthetics appropriate to the chosen city. Examples include:\n• bold block lettering\n• playful or cheesy fonts\n• city skyline silhouettes\n• landmark illustrations\n• stars, flags, or decorative borders\n• exaggerated colors or slightly faded screen-print ink\n\nThe design should look like it was purchased at a tourist gift shop — slightly tacky, mass-produced, and proudly obvious. The print should appear realistically applied to the fabric with natural folds, wrinkles, lighting, and slight distortion from the shirt’s movement.\n\nEnsure the shirt fits naturally on the subject’s body and matches perspective, lighting, and fabric texture. The text must be fully visible and legible on a small screen.\n\nAvoid modern minimalist branding or luxury fashion aesthetics. The final image should feel humorous, nostalgic, and unmistakably like a real souvenir t-shirt someone actually owns."
@@ -1219,6 +1302,11 @@ const DEFAULT_PRESETS = [
     message: "Take a picture and transform the image into Mexican muralism style art. Bold figures, narrative storytelling, strong outlines, social symbolism, and monumental composition."
   },
   {
+    name: "MIKE JUDGE ME",
+    category: ["CARTOON", "SATIRE", "RETRO", "POP CULTURE"],
+    message: "Take a picture and transform the subject into an animated character placed directly inside a scene from the world of Mike Judge cartoons.\n\nRender the subject in a Mike Judge–style character design: slightly awkward proportions, stiff posture, minimal facial expression, uneven line work, flat cel-shaded colors, and intentionally plain or unflattering details. Preserve the subject’s recognizability while adapting them fully into the cartoon style.\n\nPlace the subject INTO a recognizable Mike Judge cartoon scene, selected based on context or randomly. The scene should clearly reflect one of the following shows and environments, and may include recognizable characters from that show:\n\n• King of the Hill — suburban Arlen, Texas (backyard fence chats, alleyways, living rooms, Strickland Propane). Characters may include Hank Hill, Peggy, Bobby, Dale, Bill, or Boomhauer.\n• Beavis and Butt-Head — grimy neighborhood streets, living room couch, fast-food joints, school hallways. Characters may include Beavis, Butt-Head, or classmates reacting to the subject.\n• Daria — school hallways, classrooms, coffee shops, or suburban interiors. Characters may include Daria, Jane, Quinn, or classmates observing the subject.\n• Office Space–style environment — dull corporate office, cubicle farms, break rooms, printer destruction areas. Characters may include bored coworkers or management-style figures inspired by the film’s tone.\n\nExisting characters should appear as supporting or background characters interacting with or reacting to the subject. The subject should feel like a guest character awkwardly dropped into the episode, not replacing anyone.\n\nAdapt the subject’s clothing into simplified everyday outfits typical of Mike Judge cartoons — plain t-shirts, polos, jeans, boring office attire, or aggressively normal suburban clothing.\n\nUse muted, slightly washed-out color palettes, flat lighting, and simple painted backgrounds. Avoid exaggerated animation, flashy effects, or glossy textures.\n\nEnsure the full scene is visible and readable on a small screen, with the subject clearly identifiable among the characters. The final image should feel like a freeze-frame from an actual Mike Judge episode — dry, awkward, observational, and quietly brutal."
+  },
+  {
   name: "MILK CARTON",
   category: ["HUMOR", "MISSING", "VINTAGE", "MASTER PROMPT"],
   message: "Take a picture and place the subject on the side of a classic milk carton as a missing person feature. Design the carton with realistic packaging details, typography, and layout. Generate humorous descriptive flavor text for the missing person section based on the subject’s appearance, clothing, expression, or personality, incorporating any externally provided details naturally. Keep the tone playful and clearly fictional. Ensure the subject’s image is integrated naturally into the carton design and remains recognizable. Render the final image photorealistically with believable lighting, carton texture, and packaging realism."
@@ -1240,13 +1328,18 @@ const DEFAULT_PRESETS = [
   },
   {
     name: "MINION MODE",
-    category: ["HUMOR","POP_CULTURE","TRANSFORMATION"],
+    category: ["HUMOR","POP CULTURE","TRANSFORMATION"],
     message: "Take a picture and transform the subject into a small, yellow, gibberish-speaking cartoon minion.\n\nAdapt the subject’s facial structure, expression, and personality into a simplified, rounded, toy-like character with yellow skin, large expressive eyes behind goggles, and a compact body. Preserve recognizable traits such as smile shape, eyebrow energy, or posture.\n\nDress the character in classic minion-style overalls or a similar worker outfit. Proportions should be exaggerated and playful, not realistic.\n\nThe environment should be simplified and colorful to match an animated comedy world. Lighting should be bright and cheerful.\n\nDo not include text. The final image should feel mischievous, energetic, and immediately recognizable as a minion-style parody while remaining readable on a small screen."
   },
   {
     name: "MIRROR WORLD",
     category: ["ILLUSION", "REFLECTION", "SURREAL"],
     message: "Take a picture and create a mirrored reality where reflection differs from reality. Subtle narrative differences."
+  },
+  {
+    name: "MONA LISA",
+    category: ["ART", "CLASSIC", "PARODY", "PAINTING"],
+    message: "Take a picture and transform the subject into the Mona Lisa painting.\n\nReplace the Mona Lisa’s face with the subject, carefully adapting their facial features, expression, and posture to match the iconic pose, angle, and calm demeanor of the original artwork. The subject should feel painted into the scene, not pasted on.\n\nRender the image in a classical Renaissance oil painting style with soft brushwork, subtle gradients, muted earth tones, and realistic canvas texture. Preserve the iconic background landscape, atmospheric depth, and lighting.\n\nGently adapt the subject’s hair or accessories into period-appropriate forms while maintaining recognizable traits (for example, modern glasses subtly reinterpreted as period-style frames).\n\nEnsure the full painting is visible within the frame, including the subject, background, and edges of the artwork. The final image should feel like a museum-worthy reinterpretation — respectful, believable, and quietly humorous through contrast."
   },
   {
     name: "MONDRIAN",
@@ -1286,7 +1379,7 @@ const DEFAULT_PRESETS = [
   {
     name: "MR. POTATO HEAD",
     category: ["TOY", "RETRO", "POTATO"],
-    message: "Take a picture and transform the subject into a Mr. Potato Head–style toy. Preserve the subject’s recognizable facial features and general expression, but adapt them into the characteristic potato-shaped body with smooth, slightly shiny plastic texture.\n\nInclude toy-accurate removable parts such as eyes, eyebrows, nose, mouth, ears, arms, and accessories (hat, glasses, etc.). Arrange them on the potato body in a playful, semi-realistic way that preserves the subject’s identity while emphasizing the modular, interchangeable nature of the toy.\n\nMaintain proper scale, shadows, and lighting so the subject appears as a real physical toy. Do not add text or background clutter; keep the composition clean and readable on small screens. The final image should feel nostalgic, playful, and instantly recognizable as a Mr. Potato Head toy version of the subject."
+    message: "Take a picture and transform the subject into a Mr. Potato Head–style toy.\n\nConvert the subject into a smooth, potato-shaped plastic body with a slightly shiny, molded toy texture. The subject’s original human facial anatomy MUST NOT remain visible. All facial features (eyes, nose, mouth, ears, eyebrows) must be represented ONLY as removable Mr. Potato Head–style toy parts.\n\nImportant facial replacement rules:\n• REMOVE the subject’s real nose, mouth, eyes, and ears entirely\n• REPLACE them with toy-style plug-in parts mounted directly onto the potato surface\n• Do NOT allow any human facial features to appear behind or beneath the toy parts\n• Ensure correct positioning: the toy nose must sit centered above the toy mouth, with clear separation between parts\n\nArrange classic Mr. Potato Head components — eyes, eyebrows, nose, mouth, ears, arms, and optional accessories (hat, glasses, mustache) — snapped into visible peg holes or implied mounting points. Parts should feel modular, slightly misaligned, and intentionally toy-like, but never overlapping or duplicated.\n\nPreserve the subject’s identity through:\n• eye shape or spacing translated into toy eyes\n• mouth expression adapted into a toy mouth\n• accessories inspired by the subject (glasses, hat, etc.)\n\nMaintain realistic toy scale, lighting, and soft shadows so the figure appears as a real physical plastic toy photographed in the real world.\n\nAvoid cartoon drawing styles or painterly rendering. This must look like a tangible Mr. Potato Head toy, not an illustration.\n\nKeep the composition clean and centered. Ensure the full toy is visible and clearly readable on small screens. The final image should feel nostalgic, playful, and unmistakably a Mr. Potato Head version of the subject — with no anatomical confusion."
   },
   {
     name: "MUG SHOT",
@@ -1397,6 +1490,11 @@ const DEFAULT_PRESETS = [
     name: "OPTICAL ILLUSION",
     category: ["ILLUSION", "VISUAL", "TRICK"],
     message: "Take a picture and convert the image into an optical illusion. Perspective shifts depending on viewing angle. Hidden secondary images emerge upon inspection."
+  },
+  {
+   name: "OUTFIT TRY-ON",
+   category: ["FASHION", "STYLE", "UTILITY"],
+   message: "Take a picture of the subject and generate a 2×2 square grid showing four different complete outfits on the same person. The subject’s pose, face, and environment must remain identical — only the clothing changes.\n\nEach outfit should represent a distinct style (for example: casual, formal, streetwear, business, fantasy, retro, etc.).\n\nClothing must fit the subject’s body naturally with correct folds, shadows, and proportions.\n\nIf external master prompt text is provided (such as era, genre, or theme), use it to guide the outfit designs.\n\nThe final image should resemble a digital fashion fitting room."
   },
   {
     name: "PAPER SHADOW BOX",
@@ -1706,7 +1804,7 @@ const DEFAULT_PRESETS = [
   {
     name: "SCARY MOVIE",
     category: ["HUMOR", "MOVIES", "PARODY", "MASK"],
-    message: "Take a picture and transform the subject so their face appears as a comedic parody mask inspired by the exaggerated 'Whassup' character style from the Scary Movie films.\n\nThe mask MUST be solid white or off-white in color. Do NOT use skin tones, flesh colors, beige, pink, or realistic human coloration. The mask should clearly read as a white costume mask.\n\nThe mask should be clearly rubbery and costume-like, not realistic or eerie. Use a droopy, stretched face shape with oversized eye holes, exaggerated mouth opening, and slightly uneven proportions. The expression should feel goofy, slack, and intentionally silly rather than threatening.\n\nSubtly adapt the mask to the subject so each render feels unique while staying comedic. Variations may include:\n• mouth shape loosely matching the subject’s expression (open, smirking, surprised)\n• uneven eye openings influenced by the subject’s eye spacing\n• stretched or sagging areas reflecting the subject’s face shape\n• molded impressions suggesting glasses or accessories if present\n\nDress the subject in a loose black hooded robe that looks like a cheap Halloween costume rather than a cinematic outfit. Fabric should appear lightweight, wrinkled, and slightly ill-fitting for comedic effect.\n\nThe overall tone must be humorous and absurd, not scary. Do not add blood, weapons, or horror elements. Lighting and composition should feel casual and playful, as if captured during a parody scene.\n\nThe final image should immediately read as a Scary Movie–style spoof — goofy, recognizable, and funny — while remaining clear and readable on small screens."
+    message: "Take a picture and transform the subject so their face appears as a comedic parody mask inspired by the exaggerated 'Whassup' character style from the Scary Movie films.\n\nThe mask MUST be solid white in color. Do NOT use skin tones, flesh colors, beige, pink, or realistic human coloration. The mask should clearly read as a white costume mask.\n\nThe mask should be clearly rubbery and costume-like, not realistic or eerie. Use a droopy, stretched face shape with oversized eye holes, exaggerated mouth opening, and slightly uneven proportions. The expression should feel goofy, slack, and intentionally silly rather than threatening.\n\nSubtly adapt the mask to the subject so each render feels unique while staying comedic. Variations may include:\n• mouth shape loosely matching the subject’s expression (open, smirking, surprised)\n• uneven eye openings influenced by the subject’s eye spacing\n• stretched or sagging areas reflecting the subject’s face shape\n• molded impressions suggesting glasses or accessories if present\n\nDress the subject in a loose black hooded robe that looks like a cheap Halloween costume rather than a cinematic outfit. Fabric should appear lightweight, wrinkled, and slightly ill-fitting for comedic effect.\n\nThe overall tone must be humorous and absurd, not scary. Do not add blood, weapons, or horror elements. Lighting and composition should feel casual and playful, as if captured during a parody scene.\n\nThe final image should immediately read as a Scary Movie–style spoof — goofy, recognizable, and funny — while remaining clear and readable on small screens."
   },
   {
     name: "SCOOBY-DOO ENDING",
@@ -1794,6 +1892,11 @@ const DEFAULT_PRESETS = [
     message: "Take a picture and transform the scene into a solarpunk future. Green architecture, renewable energy, optimistic tone."
   },
   {
+    name: "SOUL-VANA",
+    category: ["HUMOR", "SATIRE", "URBAN", "ABSURD"],
+    message: "Take a picture and transform the scene into a massive human-dispensing tower inspired by car vending machines.\n\nReplace cars with people. The tower should be a tall, cylindrical or rectangular glass structure filled with individual human-sized compartments, each containing a different person posed stiffly like a display item. The subject must appear inside one of the compartments, clearly visible, as if they are waiting to be dispensed.\n\nRender the humans as intact, clothed, and calm — no distress, no danger, no violence. The tone should be surreal and comedic, not dark. Humans should feel more like oversized gumballs or capsule toys than trapped people.\n\nInclude clear visual cues that this is a vending-style system:\n• a large mechanical claw, elevator platform, or rotating carousel mechanism\n• numbered slots or bays\n• soft interior lighting inside each compartment\n• reflections and glass glare to sell realism\n\nAdd bold branding on the tower reading “SOUL-VANA” in large, modern lettering. Optional smaller flavor text may include humorous corporate slogans such as:\n• “Dispensing Personalities Since Today”\n• “Find Your Next You”\n• “Low Mileage Humans Available Now”\n\nIf external master prompt text is provided, use it to customize:\n• the city or location of the tower\n• slogans, labels, or marketing copy\n• which slot the subject occupies\n\nThe environment should resemble an urban plaza or parking structure, with scale clearly communicated by surrounding buildings or people. Ensure the entire tower and the subject’s compartment are fully visible within the frame.\n\nThe final image should feel like a glossy promotional photo for an absurd tech startup — clean, corporate, ridiculous, and immediately readable on a small screen."
+  },
+  {
     name: "SOUTH PARK",
     category: ["ANIMATION", "CARTOON", "TV"],   
     message: "Take a picture in the style of a South Park cartoon scene with flat colors and exaggerated expressions.  Blocky limbs, simple shapes, and expressive faces."
@@ -1832,6 +1935,11 @@ const DEFAULT_PRESETS = [
     name: "STANDING NEXT TO",
     category: ["HUMOR", "CELEBRITY", "MASTER PROMPT", "MASHUP"],
     message: "Take a picture and add a FAMOUS PERSON standing next to the subject. Match lighting and scale realistically."
+  },
+  {
+    name: "STAND-UP COMEDIAN",
+    category: ["HUMOR", "PERFORMANCE", "STAGE", "POP CULTURE"],
+    message: "Take a picture and transform the subject into a stand-up comedian performing live on stage.\n\nPlace the subject on a comedy club stage with a microphone stand, spotlight lighting, and a classic stand-up backdrop such as a brick wall or dark curtain. The subject should appear mid-performance, holding or standing near the microphone, with posture and expression adapted from the subject’s real demeanor (confident, awkward, smug, confused, etc.).\n\nDress the subject in classic stand-up attire appropriate to a comedy club — casual jacket, button-down, t-shirt, or minimalist stage outfit — adapted naturally from the subject’s original clothing when possible.\n\nInclude ONE clearly readable on-screen joke caption, presented as part of the performance (subtitle, lower-third, or stage sign). The joke should be EITHER:\n\n• a REAL, VERBATIM one-liner (under 90 characters) from a famous one-liner comedian, OR\n• an ORIGINAL one-liner written in the STYLE of those comedians\n\nWhen using a verbatim joke, randomly select from the comedic voices of:\n• Stephen Wright\n• Rodney Dangerfield\n• Mitch Hedberg\n• Norm Macdonald\n• Anthony Jeselnik\n• Jimmy Carr\n• Henny Youngman\n\nVerbatim jokes must be short, classic one-liners only (no long bits, no monologues), and must remain under 90 characters.\n\nOptionally include subtle comedy-club details such as:\n• a fake venue name or special title inspired by the subject\n• a small audience silhouette or dimly lit crowd\n• a mock comedy special title using flavor text (e.g., “Live From Poor Decisions”)\n\nEnsure the full stage scene, subject, and joke text are fully visible and readable on a small screen. The final image should feel like a paused frame from a real comedy set — uncomfortable, confident, funny, and unmistakably stand-up."
   },
   {
     name: "STAR TREK",
@@ -2097,6 +2205,11 @@ const DEFAULT_PRESETS = [
     name: "WHEATIES BOX",
     category: ["ADVERTISING", "HUMOR", "MASTER PROMPT"],
     message: "Take a picture and transform it into a complete, three-dimensional Wheaties cereal box. The entire box must be fully visible within the frame, including front face, edges, top flap, and box proportions.\n\nDesign the front panel in classic Wheaties style with a bold orange background. Feature the subject prominently as the heroic athlete printed on the box front. The subject must appear integrated into the printed packaging, not floating or cropped.\n\nAdd an absurd, over-the-top achievement based on the subject’s traits, posture, or environment. Display this achievement prominently like a headline.\n\nInclude exaggerated, playful flavor text inspired by cereal-box marketing copy. Use vintage-inspired typography and graphic accents without copying real slogans.\n\nApply realistic cardboard texture, slight wear, subtle creases, and printing imperfections. The box should appear photographed in a real environment. Ensure all text and the subject are readable on a small screen."
+  },
+  {
+    name: "WHO'S A GOOD HUMAN?",
+    category: ["HUMOR", "ROLE REVERSAL", "SURREAL", "PETS"],
+    message: "Take a picture and apply a role-reversal between humans and pets.\n\nFirst determine the type of subject:\n\n• If the subject is an ANIMAL (dog, cat, bird, etc.): place them into a realistic human situation such as working in an office, driving a car, shopping, cooking, using a phone, or sitting in a café. The animal should behave like a person while still clearly being an animal. Use proper perspective, props, and body positioning so it looks natural and believable.\n\n• If the subject is a HUMAN: transform them into a pet owned by an animal. The human should be on a leash, being carried, sitting in a pet carrier, or being walked by a dog, cat, or other animal. The animal must clearly be the owner and in control.\n\nThe scene should be funny but not mean-spirited — playful, surreal, and instantly understandable at a glance.\n\nMaintain realistic lighting, scale, and contact between characters so the interaction feels physically real. The subject must be fully integrated into the scene, not pasted on.\n\nIf external master prompt text is provided, use it to influence the setting (for example: city, park, medieval, sci-fi, luxury, etc.).\n\nThe final image should feel like a clever visual gag you’d see on a magazine cover or viral poster."
   },
   {
     name: "WOODCUT",
@@ -7303,6 +7416,29 @@ async function hideMasterPromptSubmenu() {
   showSettingsSubmenu();
 }
 
+function showAspectRatioSubmenu() {
+  document.getElementById('settings-submenu').style.display = 'none';
+  pauseCamera();
+  
+  const submenu = document.getElementById('aspect-ratio-submenu');
+  submenu.style.display = 'flex';
+  isAspectRatioSubmenuOpen = true;
+  isSettingsSubmenuOpen = false;
+}
+
+async function hideAspectRatioSubmenu() {
+  document.getElementById('aspect-ratio-submenu').style.display = 'none';
+  isAspectRatioSubmenuOpen = false;
+  showSettingsSubmenu();
+}
+
+function updateAspectRatioDisplay() {
+  const display = document.getElementById('current-aspect-ratio-display');
+  if (display) {
+    display.textContent = selectedAspectRatio === 'none' ? 'None' : selectedAspectRatio;
+  }
+}
+
 function updateMasterPromptDisplay() {
   const display = document.getElementById('current-master-prompt-display');
   if (display) {
@@ -7321,6 +7457,7 @@ function saveMasterPrompt() {
   try {
     localStorage.setItem(MASTER_PROMPT_STORAGE_KEY, masterPromptText);
     localStorage.setItem(MASTER_PROMPT_ENABLED_KEY, masterPromptEnabled.toString());
+    localStorage.setItem(ASPECT_RATIO_STORAGE_KEY, selectedAspectRatio);
   } catch (err) {
     console.error('Failed to save master prompt:', err);
   }
@@ -7338,16 +7475,45 @@ function loadMasterPrompt() {
     if (savedEnabled !== null) {
       masterPromptEnabled = savedEnabled === 'true';
     }
+    
+    // Load aspect ratio
+    const savedAspectRatio = localStorage.getItem(ASPECT_RATIO_STORAGE_KEY);
+    if (savedAspectRatio) {
+      selectedAspectRatio = savedAspectRatio;
+      
+      // Update checkboxes
+      const checkbox1_1 = document.getElementById('aspect-ratio-1-1');
+      const checkbox16_9 = document.getElementById('aspect-ratio-16-9');
+      
+      if (checkbox1_1) checkbox1_1.checked = (selectedAspectRatio === '1:1');
+      if (checkbox16_9) checkbox16_9.checked = (selectedAspectRatio === '16:9');
+      
+      // Update display
+      const displayElement = document.getElementById('current-aspect-ratio-display');
+      if (displayElement) {
+        displayElement.textContent = selectedAspectRatio === 'none' ? 'None' : selectedAspectRatio;
+      }
+    }
   } catch (err) {
     console.error('Failed to load master prompt:', err);
   }
 }
 
 function getFinalPrompt(basePrompt) {
+  let finalPrompt = basePrompt;
+  
   if (masterPromptEnabled && masterPromptText.trim()) {
-    return `${basePrompt} ${masterPromptText}`;
+    finalPrompt = `${basePrompt} ${masterPromptText}`;
   }
-  return basePrompt;
+  
+  // Add aspect ratio override at the very end
+  if (selectedAspectRatio === '1:1') {
+    finalPrompt += ' Use a square aspect ratio.';
+  } else if (selectedAspectRatio === '16:9') {
+    finalPrompt += ' Use a square aspect ratio, but pad the image with black bars at top and bottom to simulate a 16:9 aspect ratio.';
+  }
+  
+  return finalPrompt;
 }
 
 function populateStylesList(preserveScroll = false) {
@@ -7921,6 +8087,46 @@ if (startBtn) {
     masterPromptBackBtn.addEventListener('click', hideMasterPromptSubmenu);
   }
   
+  const aspectRatioSettingsBtn = document.getElementById('aspect-ratio-settings-button');
+  if (aspectRatioSettingsBtn) {
+    aspectRatioSettingsBtn.addEventListener('click', showAspectRatioSubmenu);
+  }
+  
+  const aspectRatioBackBtn = document.getElementById('aspect-ratio-back');
+  if (aspectRatioBackBtn) {
+    aspectRatioBackBtn.addEventListener('click', hideAspectRatioSubmenu);
+  }
+  
+  // Aspect ratio checkboxes - make them mutually exclusive
+  const aspectRatio1_1 = document.getElementById('aspect-ratio-1-1');
+  const aspectRatio16_9 = document.getElementById('aspect-ratio-16-9');
+  
+  if (aspectRatio1_1) {
+    aspectRatio1_1.addEventListener('change', (e) => {
+      if (e.target.checked) {
+        selectedAspectRatio = '1:1';
+        if (aspectRatio16_9) aspectRatio16_9.checked = false;
+      } else {
+        selectedAspectRatio = 'none';
+      }
+      saveMasterPrompt();
+      updateAspectRatioDisplay();
+    });
+  }
+  
+  if (aspectRatio16_9) {
+    aspectRatio16_9.addEventListener('change', (e) => {
+      if (e.target.checked) {
+        selectedAspectRatio = '16:9';
+        if (aspectRatio1_1) aspectRatio1_1.checked = false;
+      } else {
+        selectedAspectRatio = 'none';
+      }
+      saveMasterPrompt();
+      updateAspectRatioDisplay();
+    });
+  }
+
   const motionSettingsBtn = document.getElementById('motion-settings-button');
   if (motionSettingsBtn) {
     motionSettingsBtn.addEventListener('click', showMotionSubmenu);
