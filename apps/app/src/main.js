@@ -391,6 +391,16 @@ const DEFAULT_PRESETS = [
     message: "Take a picture and place the subject into a live music performance as an off-key backup singer standing behind a talented lead singer or group.\n\nThe subject should be holding a microphone and singing enthusiastically but clearly out of sync or off-key. Other singers should be visibly reacting — giving awkward looks, side-eyes, or confused expressions.\n\nStage lighting, concert atmosphere, and microphones must feel realistic. The subject should be fully integrated into the performance, not pasted in.\n\nThe scene should feel funny, musical, and visually readable even on small screens."
   },
   {
+    name: "BALD",
+    category: ["HUMOR", "PORTRAIT", "TRANSFORMATION"],
+    message: "Take a picture of the subject, human or animal, and make them completely bald.\n\nRemove all hair or fur from the head area so the scalp is fully visible.\n\nThe bald look should be smooth, clean, and slightly exaggerated for comedic effect.\n\nMake sure the head shape and lighting look natural so the baldness feels believable.\n\nThe final image should look like the subject has truly gone hairless, creating a funny and surprising transformation."
+  },
+  {
+    name: "BALLERINA",
+    category: ["HUMOR", "COSTUME", "PORTRAIT"],
+    message: "Take a picture of the subject and dress them in a classic pink ballerina costume with a tutu, ballet slippers, and hair styled like a stage performer.\n\nThe same pink ballerina outfit must be used regardless of the subject’s gender or age.\n\nPlace the subject in a graceful ballet pose on a stage or in a dance studio, with soft theatrical lighting.\n\nThe contrast between the elegant ballerina outfit and the subject’s normal appearance should be part of the humor.\n\nThe final image should look like a real ballet photo shoot with playful, unexpected casting."
+  },
+  {
     name: "BALLOON",
     category: ["TOY", "INFLATABLE", "FUN"],
     message: "Take a picture in the style of a balloon animal or character.  Shiny latex texture."
@@ -506,6 +516,16 @@ const DEFAULT_PRESETS = [
     message: "Take a picture and make it a caricature. Defined by exaggerated features, bold expressions, and a humorous twist while preserving likeness. It captures the essence of a person or scene in a fun, over-the-top way, like something you would get from a street artist at a fair, bursting with personality and charm."
   },
   {
+    name: "CARRY ME",
+    category: ["HUMOR", "PHOTO", "SITUATIONAL", "MASTER PROMPT"],
+    message: "Take a picture and transform it into a scene where one person is carrying the subject on their shoulders.\n\nIf there are TWO subjects in the image: Have one subject carrying the other on their shoulders. Choose based on context, size, or humor - the carrier should look strained, proud, or playfully struggling while the person being carried shows excitement, triumph, or awkward balance.\n\nIf there is only ONE subject in the image: A famous person (specified via master prompt, or choose an appropriate celebrity if none specified) will either carry the subject on their shoulders OR the subject will carry the famous person. The interaction should feel natural and humorous.\n\nBoth people should have realistic expressions: the carrier might show effort, determination, or playful annoyance; the person on shoulders might show joy, victory, fear of falling, or awkward balance with arms outstretched.\n\nPreserve recognizable facial features and body proportions for all people. The physical interaction must look believable - proper hand placement on legs/thighs, realistic weight distribution, natural body positioning.\n\nSet the scene in an appropriate context: concert crowd, celebration, sporting event victory, parade, beach, park, or casual outdoor setting. Include realistic background elements and other people reacting to the moment.\n\nLighting and photography should be photorealistic, as if captured during an actual candid moment. The final image must look like a real photograph of this playful, triumphant, or humorous shoulder-carrying moment."
+  },
+  {
+    name: "CELL PHONE WALLPAPER",
+    category: ["WALLPAPER", "MOBILE", "HUMOR", "DESIGN"],
+    message: "Take a picture and transform the subject into a vertical smartphone wallpaper that looks like a fake, humorous phone operating system.\n\nUse a tall portrait aspect ratio (about 9:16 or taller). The subject should be the main character of the ‘phone,’ either as the lock-screen wallpaper or as a character integrated into the interface.\n\nOverlay a fake phone UI including:\n• a fake clock and date\n• silly or themed app icons inspired by the subject’s traits (e.g., \"Fart Tracker\", \"Overthinking\", \"Drama Meter\", \"Nap Mode\")\n• fake battery, Wi-Fi, and signal indicators with humorous labels\n\nAdd subtle cracked-glass lines across the screen — fine hairline fractures, small chips, or spiderweb cracks — so it looks like a phone with a lightly damaged display. The cracks should sit on top of the image like real broken glass, but must not block the subject’s face or important UI text.\n\nDesign the interface so it feels like a real smartphone screen but with absurd, playful details. Icons should be large, readable, and placed naturally like a real phone home screen.\n\nLeave the top and bottom areas clear enough that the subject’s face or main features are not blocked by UI elements.\n\nThe final image should feel like the subject owns their own ridiculous, slightly broken custom smartphone — funny, charming, and clearly readable on a small screen."
+  },
+  {
     name: "CELTIC ART",
     category: ["ART", "CULTURAL", "MEDIEVAL", "KNOTS"],
     message: "Take a picture and convert it into a Celtic art piece inspired by the Book of Kells; highly detailed, intricate knotwork, flowing lines, and mystical geometry with the visual language of ancient Celtic art; ornate patterns and symbolic forms."
@@ -534,6 +554,11 @@ const DEFAULT_PRESETS = [
     name: "CHARCOAL",
     category: ["ART", "DRAWING", "SKETCH"],
     message: "Take a picture and convert the image into a detailed charcoal sketch. Rich grayscale tones, textured shading, and expressive strokes on paper."
+  },
+  {
+    name: "CHECKMATE",
+    category: ["HUMOR", "CHESS", "GAME", "STRATEGIC"],
+    message: "Take a picture and transform the subject into ALL the chess pieces from one side (either white or black) positioned on an actual chessboard.\n\nThe subject's facial features, expressions, and personality should be adapted into EACH of the six different chess piece types: King, Queen, Rook (2), Knight (2), Bishop (2), and Pawn (8). Each piece should be a miniature sculptural version of the subject, maintaining recognizable identity while adapted to the specific piece's form and role.\n\nDesign variations for each piece type:\n- KING: Subject with crown, regal posture, tallest and most ornate\n- QUEEN: Subject with elaborate crown/headpiece, powerful stance, second tallest\n- BISHOPS: Subject with pointed mitre hat, diagonal-moving poses\n- KNIGHTS: Subject with horse-themed elements, dynamic action poses\n- ROOKS: Subject as tower/castle form, strong geometric base\n- PAWNS: Subject in simplified form, smallest and most numerous\n\nAll pieces should follow classic Staunton chess piece proportions but personalized with the subject's features, clothing details, or characteristics. Each piece should be clearly identifiable as both the subject AND the chess piece type.\n\nArrange all 16 pieces (1 King, 1 Queen, 2 Rooks, 2 Knights, 2 Bishops, 8 Pawns) in proper starting chess positions on a realistic wooden or marble chessboard. Include opposing traditional chess pieces on the other side for context and scale.\n\nLighting should be dramatic and strategic, casting shadows that emphasize the three-dimensional sculptural quality of each piece. Use proper perspective showing the full board setup.\n\nThe final image should look like a photograph of a complete custom chess set where every piece on one side is a personalized version of the subject, ready for an actual game. The subject becomes an entire army of chess pieces, not just one."
   },
   {
     name: "CHEER-LEADER",
@@ -626,6 +651,11 @@ const DEFAULT_PRESETS = [
     message: "Take a picture and transform it into a classic printable connect-the-dots puzzle. Reduce the image to a clean line-art outline that captures the essential shape and silhouette of the subject while removing unnecessary detail.\n\nPlace numbered dots along the outline and key interior contours in a **logical sequential order starting with number 1**, so that connecting the dots in order will clearly reveal the subject. Dots should be large, evenly spaced, and easy to follow.\n\nShow very minimal lines or connecting guides—only enough to hint at the outline if necessary, but primarily rely on the numbered dots. Avoid background details, shading, or other guides. Use high-contrast dots suitable for printing. Do not include text, instructions, or labels. The final image should resemble a traditional connect-the-dots puzzle where the user draws all connecting lines by hand, always beginning with dot 1."
   },
   {
+    name: "CONSPIRACY WALL",
+    category: ["HUMOR", "MYSTERY", "DOCUMENT", "ABSURD"],
+    message: "Take a picture and transform the subject into the center of a chaotic conspiracy investigation wall.\n\nPlace the subject’s photo (or multiple cropped versions of them) pinned to a corkboard, surrounded by printed photos, scribbled notes, newspaper clippings, diagrams, and red string connecting everything.\n\nThe conspiracy theme should be automatically invented based on the subject’s appearance, environment, or actions — OR be influenced by external master prompt text if provided (for example: \"pizza\", \"aliens\", \"taxes\", \"office drama\", \"time travel\", etc.).\n\nUse absurd, humorous conspiracy logic. Examples:\n• 'Always near the coffee machine'\n• 'Was present every time the printer jammed'\n• 'Knows too much about Tuesdays'\n• 'Connected to the dog somehow'\n\nDo not include readable real-world sensitive data. All notes should be fictional, funny, and harmless.\n\nInclude red string connecting photos, arrows, circles, and question marks drawn in marker. The board should feel cluttered, frantic, and obsessed.\n\nEnsure the entire corkboard is fully visible in the frame. The final image should look like a deranged investigator has been tracking the subject for years."
+  },
+  {
     name: "CONSTELLATION",
     category: ["SPACE", "STARS", "NIGHT SKY"],
     message: "Take a picture and transform the subject into a living constellation in the night sky. Reimagine the subject’s silhouette, facial features, and pose as a pattern of glowing stars connected by faint celestial lines, while keeping their identity recognizable. Surround the subject with a deep, cosmic backdrop filled with nebulae, subtle stardust, and distant galaxies. Use soft glows, luminous highlights, and gentle gradients to create a magical, astronomical aesthetic. The subject should appear formed entirely from stars and light, as if they are part of the universe itself, rendered with crisp detail and awe-inspiring atmosphere."
@@ -639,6 +669,11 @@ const DEFAULT_PRESETS = [
     name: "COPY MACHINE COPY",
     category: ["OFFICE","RETRO","HUMOR","DEGRADED"],
     message: "Take a picture and transform it into an authentic photocopier copy made by pressing the subject directly against the copier glass.\n\nThe final image must resemble a single sheet of copier paper viewed flat and fully visible within the frame, including paper edges and margins. Do not crop the page.\n\nThe subject should appear distorted from being pressed against the glass: flattened features, slightly squashed face or objects, widened nose, compressed cheeks, stretched hands or fingers, and uneven contact areas. The distortion should feel physical and silly, not warped digitally.\n\nApply classic photocopier artifacts: harsh black-and-white or muddy grayscale tones, blown highlights, crushed shadows, toner speckling, faint streaks, edge shadows from the copier lid, uneven exposure, and slight skew or rotation. Include faint dust marks or smudges typical of a well-used office copier.\n\nLighting should feel internal to the copier — flat, overexposed, and directionless — not like studio lighting. The background should be blank or show subtle shadows from the copier lid.\n\nOptionally include a small copier interface imprint or margin text such as page numbers, contrast indicators, or misaligned registration marks, rendered faintly and partially cut off.\n\nIf external master prompt text is provided, use it to influence the subject’s pose (e.g., face, hands, object pressed to glass) or tone of humor. The result should feel unmistakably like a dumb, impulsive office photocopy — absurd, tactile, and clearly readable on a small screen."
+  },
+  {
+    name: "COURTROOM SKETCH",
+    category: ["HUMOR", "DOCUMENT", "SKETCH", "CRIME"],
+    message: "Take a picture and transform the subject into a courtroom sketch drawn by a courtroom artist.\n\nRender the subject in a loose, expressive pencil or charcoal style on off-white paper, with exaggerated but recognizable facial features, messy line work, and rough shading. The drawing should look like it was made quickly while observing the subject live in court.\n\nPlace the subject seated at a courtroom table or in the witness stand, with simplified figures of a judge, lawyers, or jury in the background.\n\nAdd subtle emotion based on the subject’s expression or posture — nervous, confused, smug, bored, or guilty — even if they are innocent.\n\nInclude a small caption area or handwritten label such as \"The Defendant\" or \"Key Witness\" (do not include real names unless provided via master prompt).\n\nThe entire sketch page should be fully visible within the frame, including paper edges. The final image should feel like a real courtroom artist drawing from a televised trial."
   },
   {
     name: "CUBAN ART STYLE",
@@ -704,6 +739,11 @@ const DEFAULT_PRESETS = [
     name: "DOUBLE EXPOSURE",
     category: ["PHOTOGRAPHY", "ARTISTIC", "LAYERED"],
     message: "Take a picture and create a double-exposure composition.    Blend the subject with a secondary scene using transparent overlays. Clear silhouette, balanced negative space. Moody, artistic tone."
+  },
+  {
+    name: "DRAG ME",
+    category: ["HUMOR", "TRANSFORMATION", "GLAMOUR"],
+    message: "Take a picture and transform the subject into a fabulous, over-the-top drag queen persona.\n\nPreserve the subject's recognizable facial structure and features while applying full drag transformation: dramatic contouring, bold eye makeup with exaggerated lashes and colorful eyeshadow, sculpted cheekbones, overdrawn lips with glossy or matte finish, and flawlessly blended foundation.\n\nAdd a show-stopping drag wig: big hair with volume, vibrant colors, styled with curls, waves, or dramatic height. The wig should be theatrical and attention-grabbing.\n\nDress the subject in glamorous drag attire: sequined gowns, feather boas, rhinestone-covered garments, platform heels, dramatic jewelry, or avant-garde fashion pieces. The outfit should be bold, confident, and unapologetically fabulous.\n\nPose and expression should exude confidence, sass, and star power - fierce, playful, or elegantly commanding.\n\nLighting should be stage-quality with a touch of theatrical glamour. Background can be a runway, stage, club setting, or dramatic backdrop with spotlights.\n\nThe final image must be photorealistic, celebrating drag artistry with respect, humor, and fabulous energy. Make it fierce, make it fun, make it unforgettable."
   },
   {
     name: "DREAM LOGIC",
@@ -826,6 +866,11 @@ const DEFAULT_PRESETS = [
     message: "Take a picture and transform it into an authentic single-page fax machine transmission from the 1980s–1990s.\n\nThe final image must look like a full sheet of faxed paper viewed flat and fully visible within the frame, including margins, header, and body. Do not crop the page.\n\nApply classic fax artifacts: harsh black-and-white contrast, dithering, streaking scan lines, slight skew, uneven toner density, paper curl shadows, compression noise, and faint horizontal banding. The subject should appear embedded within the faxed image area and degraded but still identifiable.\n\nAt the top of the page, include a standard fax cover header with the following sections, all rendered in simple monospace or office-style fonts and visibly degraded:\n\n• **From (Sender):** A humorous sender name, company, fax number, and phone number inspired by the subject’s appearance, clothing, posture, or environment (e.g., \"Gary from Accounting,\" \"Dept. of Snacks,\" \"Fax: 555-0199\").\n• **To (Recipient):** A humorous recipient name, organization, and fax number, derived from scene context or absurd office logic.\n• **Date:** A plausible transmission date (can be generic or stylized).\n• **Subject / Re:** A short, funny description of the fax contents based on the subject or scene (e.g., \"Urgent: Hat Situation,\" \"Re: Chair Malfunction Update\").\n• **Pages:** Include a page count such as \"1 of 1\".\n\nBelow the header, include a **Confidentiality Notice** in small text, written humorously but styled like a real legal disclaimer (e.g., warning unintended recipients to destroy the fax immediately or consult a supervisor named something absurd).\n\nAll names, numbers, and text must be fictional, non-sensitive, and clearly comedic. If external master prompt text is provided, use it to override or guide sender, recipient, subject line, or tone.\n\nEnsure the overall result unmistakably resembles a real faxed document rather than a modern filter. The page should feel outdated, bureaucratic, slightly ridiculous, and clearly readable on a small screen."
   },
   {
+    name: "FAZZINO POP ART",
+    category: ["ART", "POP ART", "LAYERED", "3D", "COLORFUL"],
+    message: "Take a picture and transform it into a vibrant 3D layered pop art composition with multiple raised paper-cut levels creating extreme visual depth at miniature scale.\n\nStyle characteristics: Ultra-bright saturated colors with bold black outlines, flat color fills with minimal shading, playful exaggerated proportions and perspectives. The aesthetic should resemble colorful painted cardstock or screen-printed paper sheets stacked at different heights, rendered with realistic miniature scale and physical dimensionality.\n\nLayering structure: Divide the scene into at least 5-7 distinct depth levels with strong cast shadows between each layer emphasizing the sculptural three-dimensional quality.\n\nCRITICAL - PACK THE SCENE WITH MINIATURES: Fill every inch of the composition with abundant miniature elements densely arranged: tiny buildings with architectural details, miniature cars and vehicles, small-scale people figures, street signs, storefronts, windows, decorative patterns, architectural ornaments, repeating shapes, whimsical embellishments, busy textures, trees, street lamps, and countless playful visual elements. The scene should feel like a bustling miniature cityscape or metropolitan diorama with an overwhelming joyful abundance of tiny detailed objects all bunched together. No empty space - every area should be filled with miniature sculptural elements.\n\nTransform the subject into a three-dimensional miniature figure within this densely packed layered diorama. The subject should appear as a small-scale sculptural element - like a detailed figurine - NOT as a flat photograph. They must have physical depth and dimension, integrated among all the other miniature buildings, cars, and people at the same miniature scale.\n\nThe final result should look like a physical framed miniature diorama or shadow box photographed straight-on, showcasing vibrant metropolitan energy with extreme visual depth, realistic three-dimensional construction, miniature scale throughout, overwhelming joyful abundance of densely packed tiny details, and clear dimensional separation between layers. Everything should appear as real miniature sculptural objects bunched together in a busy, celebratory cityscape."
+  },
+  {
     name: "FELT PUPPET",
     category: ["TOY", "PUPPET", "CRAFTS"],
     message: "Take a picture and transform the image into a felt puppet scene. Soft fabric textures, handcrafted appearance."
@@ -839,6 +884,11 @@ const DEFAULT_PRESETS = [
     name: "FIELD GUIDE",
     category: ["NATURE", "REFERENCE", "MASTER PROMPT", "SCIENTIFIC"],
     message: "Take a picture and transform it into a field guide page. Include a clear photograph of the subject as the main reference image, labeled as a specimen photo. Add a species name (real or humorous), habitat, behavior notes, and identifying traits. Use the visual style of a naturalist’s guidebook. The photograph should appear as a documented observation supporting the entry."
+  },
+  {
+    name: "FIGHT CLUB",
+    category: ["HUMOR", "INJURY", "ACTION", "TOUGH"],
+    message: "Take a picture and transform the subject to look like they've just been in a serious physical fight, with realistic battle damage and injuries.\n\nAdd visible injuries: a swollen black eye with dark purple bruising, a bloody nose with blood dripping or smeared on face, swollen or split lip, cuts and scrapes on face, reddened areas from impacts.\n\nClothing should be disheveled, torn, or stained with blood spots. Hair should be messy and out of place from the struggle.\n\nThe subject's expression should show exhaustion, defiance, toughness, or the aftermath of adrenaline - perhaps breathing heavily, grimacing, or showing a tough determined look despite the damage.\n\nOptional context: Background could suggest where the fight occurred (alley, gym, street, parking lot), possibly with other visual clues of the altercation.\n\nKeep all injuries photorealistic as if this is an actual photograph taken immediately after a fight. The damage should look fresh and recent with appropriate coloring for bruises (dark purple, red, swelling) and blood (realistic red, properly placed).\n\nPreserve the subject's recognizable facial features while adding realistic fight injuries and tough, battle-worn appearance. The mood can be serious or darkly humorous depending on the subject's expression."
   },
   {
     name: "FILM NOIR",
@@ -1026,6 +1076,11 @@ const DEFAULT_PRESETS = [
     message: "Take a picture and transform it into a playful, haunted graveyard scene inspired by classic theme-park haunted mansion aesthetics. Depict the subject as a stylized carved portrait, bust, or ghostly cameo associated with a decorative tombstone or memorial plaque, without implying real death. Create a humorous rhyming epitaph in the spirit of whimsical haunted mansion gravestones, using clever wordplay and flavor text inspired by the subject’s appearance, personality, clothing, or surroundings. Ensure the full rhyming epitaph is clearly visible and readable within the image. Use atmospheric lighting, fog, moonlight, and ornate stonework to create a spooky-but-fun tone. Keep the overall mood lighthearted, imaginative, and theatrical rather than dark or morbid.  The result should be a full view of the epitaph with a relevant background behind the epitaph."
   },
   {
+    name: "HEAD SHOT",
+    category: ["HUMOR", "PORTRAIT", "ACTING"],
+    message: "Take a picture of the subject and turn it into a professional actor’s head shot.\n\nUse a clean studio background, flattering lighting, and a confident or dramatic pose.\n\nUse external master prompt text to supply an actor name and optional flavor text.\n\nAdd a humorous talent list next to or under the portrait, including strange or ridiculous talents no one would normally list, such as 'Expert at Awkward Silence', 'Professional Stand-up Philosopher', or 'Can Cry on Command When Impaled'.\n\nThe final result should look like a real casting profile with a ridiculous twist."
+  },
+  {
     name: "HIDDEN DETAILS",
     category: ["ILLUSION", "PUZZLE", "HIDDEN"],
     message: "Take a picture and transform the image so subtle hidden elements are embedded. Viewer should discover details only after close inspection."
@@ -1076,9 +1131,19 @@ const DEFAULT_PRESETS = [
     message: "Take a picture and visually interpret a common idiom or phrase in a completely literal way. Place the subject directly inside the literal version of the expression (for example: head in the clouds, walking on thin ice, burning the midnight oil). Preserve realism in lighting and composition while embracing the absurdity of the literal interpretation. The scene should be instantly readable, humorous, and visually clever without requiring any text."
   },
   {
+    name: "IF YOU THINK IT'S TRUE, IT'S SNOT",
+    category: ["HUMOR", "GROSS", "EMBARRASSING"],
+    message: "Take a picture and transform it into one of two embarrassing nasal situations - RANDOMLY CHOOSE ONE:\n\nOPTION 1 - VISIBLE BOOGERS: The subject is completely unaware they have visible nasal discharge (boogers) hanging from or under their nose. Add realistic mucus visible at the nostrils - it could be hanging, crusty, or dripping slightly. The subject's expression must show they are completely oblivious - looking normal, happy, confident, or engaged in conversation. They think everything is fine, making the situation more awkward and humorous.\n\nOPTION 2 - NOSE PICKING: The subject is actively picking their nose with their finger inserted into their nostril. They are completely absorbed in the act, unaware they're being photographed. The finger should be realistically positioned in the nose with appropriate hand placement. Their expression should show concentration or absent-minded focus on the task. This could be in a public setting, during a meeting, in a car, or any situation where nose-picking would be particularly inappropriate.\n\nFor both options: Include optional context that makes it worse - professional setting (meeting, presentation, date, interview), talking to someone, or what they think is a nice photo opportunity.\n\nKeep lighting and photography photorealistic. The humor comes from either the subject's obliviousness to the visible boogers OR being caught in the act of nose-picking.\n\nPreserve recognizable facial features while adding the unfortunate nasal situation."
+  },
+  {
     name: "IKEA INSTRUCTION MANUAL",
     category: ["HUMOR", "INSTRUCTIONS", "DIAGRAM"],
     message: "Take a picture and transform the subject into an illustrated instruction manual page, similar to a flat-pack assembly guide. Depict simplified, diagram-style versions of the subject in multiple steps, showing how the subject is assembled or functions. Use clean line art, minimal colors, arrows, step numbers, icons, and humorous warning symbols inspired by the subject’s personality, clothing, or posture. Avoid text-heavy explanations; rely on visual storytelling and pictograms. Present the final image as a complete instruction manual page with a clean layout and playful, clever tone."
+  },
+  {
+    name: "INFINITY MIRROR",
+    category: ["ART", "OPTICAL", "LIGHT", "INSTALLATION", "SURREAL"],
+    message: "Take a picture and transform the subject into a real infinity-mirror light sculpture.\n\nThe subject must remain clearly recognizable (face, body, or object). Do NOT replace the subject with abstract light.\n\nConvert the interior of the subject into a two-way mirror cavity that creates infinite visual depth. The inside of the subject should look hollow and reflective, like a real infinity mirror, with reflections repeating deeper and deeper inside the subject’s shape.\n\nOutline the subject’s silhouette, facial features, or body shape using thin LED light strips (neon-style). These LEDs form the FRAME of the infinity mirror. The lights must only run along the subject’s edges, eyes, mouth, body outline, or major contours — NOT across the background.\n\nInside those glowing outlines, the mirror reflections should multiply the LEDs endlessly, creating the illusion of a glowing tunnel extending inward.\n\nThe surrounding environment should be dark or neutral so the infinity effect stands out, but the subject must not disappear into the background.\n\nDo NOT render this as a painting, illustration, or glowing person. It must look like a real physical infinity-mirror sculpture or wall installation photographed in a gallery.\n\nThe final image should look like a recognizable subject made of light and mirrors, with endless depth visible inside their face or body."
   },
   {
     name: "INFLATABLE POOL TOY",
@@ -1140,6 +1205,11 @@ const DEFAULT_PRESETS = [
     name: "KEITH HARING",
     category: ["ART", "POP ART", "ARTIST", "GRAFFITI"],
     message: "Take a picture in the style of the American artist, Keith Haring. Bold black lines, energetic figures, flat colors."
+  },
+  {
+    name: "KISS CAM",
+    category: ["HUMOR", "PHOTO", "SITUATIONAL"],
+    message: "Take a picture of one or more subjects and transform it into a humorous 'Kiss Cam' moment at a sporting event.\n\nRender the scene photorealistically as if captured by a live stadium camera. The subjects should have exaggerated expressions of shock, embarrassment, awkwardness, or confusion - not cartoonish.\n\nInclude realistic background elements: stadium seating, cheering crowd in soft focus, jumbotron screens, arena lighting, and authentic sporting venue atmosphere.\n\nThe awkwardness should feel authentic and relatable: subjects might be leaning away, covering their faces, looking in opposite directions, holding drinks or food awkwardly, or clearly unprepared for the moment.\n\nOptional realistic details: other audience members reacting in the background, stadium signage, team colors and branding, or humorous but believable context clues.\n\nOptional props or signs in the background may add to the humor, e.g., 'Halitosis', 'Not Interested', 'Wrong Partner'.\n\nThe final image must look like an actual photograph taken at a real sporting event - authentic lighting, natural skin tones, realistic fabric and textures, and genuine human expressions. The humor comes from the real, relatable awkwardness of the situation, not cartoon exaggeration."
   },
   {
     name: "KITSCH",
@@ -1255,6 +1325,11 @@ const DEFAULT_PRESETS = [
     name: "MAD MAGAZINE",
     category: ["HUMOR", "SATIRE", "CARICATURE"],
     message: "Take a picture and transform the subject into a classic Mad Magazine-style caricature. Preserve the subject’s recognizable facial features and personality while exaggerating key traits with over-the-top humor: enlarged head, expressive eyes, exaggerated expressions, and comically small or distorted body. Include irreverent, satirical flavor text, visual gags, and props that parody everyday life or pop culture. Bold linework, bright colors, and chaotic, playful composition. Ensure the subject is clearly identifiable within the humorous scene."
+  },
+  {
+    name: "MADAME TUSSAUDS",
+    category: ["HUMOR", "PORTRAIT", "STATUE"],
+    message: "Take a picture of the subject and transform them into a wax museum figure, like a Madame Tussauds exhibit.\n\nThe subject should look like a lifelike wax replica of themselves, with smooth, slightly shiny skin, glassy eyes, and stiff, posed posture.\n\nLighting should resemble a museum display, with spotlights and a clean background.\n\nThe final image should clearly look like a wax statue of the subject, not a real person, while still closely resembling them."
   },
   {
     name: "MAGIC EYE",
@@ -1497,6 +1572,11 @@ const DEFAULT_PRESETS = [
    message: "Take a picture of the subject and generate a 2×2 square grid showing four different complete outfits on the same person. The subject’s pose, face, and environment must remain identical — only the clothing changes.\n\nEach outfit should represent a distinct style (for example: casual, formal, streetwear, business, fantasy, retro, etc.).\n\nClothing must fit the subject’s body naturally with correct folds, shadows, and proportions.\n\nIf external master prompt text is provided (such as era, genre, or theme), use it to guide the outfit designs.\n\nThe final image should resemble a digital fashion fitting room."
   },
   {
+    name: "OVER-THE-TOP BEARD",
+    category: ["HUMOR", "PORTRAIT", "TRANSFORMATION"],
+    message: "Take a picture of the subject, human or animal, and give them an extremely large, exaggerated beard.\n\nThe beard should be far bigger than normal, thick, fluffy, and dramatic — long enough to reach the chest or even lower.\n\nThe style can be wild, curly, braided, or oddly shaped, but it should clearly be the main visual focus.\n\nThe beard should look real and textured, even if its size is ridiculous.\n\nThe final image should look believable but absurd, as if the subject suddenly grew an epic, legendary beard."
+  },
+  {
     name: "PAPER SHADOW BOX",
     category: ["ART", "PAPER", "3D", "LAYERED"],
     message: "Take a picture and transform the image into a layered paper shadow-box. Multiple cut paper layers creating depth. Soft directional lighting"
@@ -1525,6 +1605,11 @@ const DEFAULT_PRESETS = [
     name: "PEANUTS",
     category: ["COMICS", "CARTOON", "VINTAGE"],
     message: "Take a picture in the style of a Peanuts cartoon strip. Have the subject speaking through a text bubble that reads GOOD GRIEF!"
+  },
+  {
+    name: "PHOTO BOOTH STRIP",
+    category: ["HUMOR", "PHOTO", "CARTOON", "PORTRAIT"],
+    message: "Take a picture of the subject(s) and turn it into a classic photo booth strip with 3-4 frames vertically aligned.\n\nEach frame should show a different funny or exaggerated pose or expression. Include props like hats, glasses, silly signs, or hand gestures to increase humor.\n\nBackground should resemble a traditional photo booth curtain, with soft lighting and simple textures. Include slight visual imperfections like film grain, light streaks, or small scratches to emulate a real photo strip.\n\nThe final result should feel like a tangible photo booth keepsake, with high readability, playful exaggeration, and a touch of nostalgia."
   },
   {
     name: "PHOTO PUZZLE",
@@ -1585,6 +1670,16 @@ const DEFAULT_PRESETS = [
     name: "POLAROID",
     category: ["PHOTOGRAPHY", "INSTANT", "VINTAGE"],
     message: "Take a picture and transform it into an authentic instant-film photograph aesthetic. Frame the image within a classic Polaroid-style border with a thicker white margin at the bottom. Apply subtle film grain, soft focus, slight color fading, and natural vignetting consistent with instant photography. Include gentle imperfections such as light leaks or minor exposure variation for realism. Ensure the subject remains clearly recognizable and centered within the frame. Render the final image to convincingly resemble a real printed instant photo."
+  },
+  {
+  name: "POLITICAL BANNER",
+  category: ["HUMOR", "PARODY", "POSTER", "CAMPAIGN"],
+  message: "Take a picture and transform the subject into the star of a humorous political campaign banner.\n\nDesign the image to look like a real campaign poster or rally banner with bold typography, patriotic colors, stars, stripes, and dramatic lighting. The subject should appear as a confident candidate or mascot, posed heroically like they are running for office.\n\nInvent a completely fictional, absurd campaign theme based on the subject’s appearance, clothing, pose, or environment — or use external master prompt text as the campaign platform. Examples:\n• 'Running for President of Florida'\n• 'Vote for Steve: More Coffee, Less Meetings'\n• '2028: The Only One Who Knows Where the Remote Is'\n\nInclude:\n• a fake campaign slogan\n• a fictional office or cause\n• a large election year (real or ridiculous)\n\nDo NOT reference real politicians, real political parties, or real political issues. Everything must be parody, fictional, and harmless.\n\nThe banner should feel like a real political sign or rally poster, but the content should be clearly silly and satirical. Ensure all text and the subject are fully visible and readable on a small screen."
+  },
+  {
+    name: "POLITICAL CARTOON",
+    category: ["HUMOR", "CARTOON", "SATIRE", "EDITORIAL"],
+    message: "Take a picture and transform the subject into a classic political cartoon–style illustration.\n\nRender the subject with exaggerated facial features, oversized expressions, and bold ink outlines, like a newspaper editorial cartoon. The subject should be the main caricature, not a background figure.\n\nInvent a fictional, humorous issue, campaign, or cause based on the subject’s appearance, posture, clothing, or environment — or use external master prompt text as the cartoon’s theme. Examples:\n• 'The Flatulence Shortage'\n• 'The War on Baldness'\n• 'The Campaign For Less Body Odor'\n\nPlace the subject into a symbolic scene that visually represents the joke — such as standing at a podium, arguing with a cartoon object, battling a pile of paperwork, or leading a ridiculous parade.\n\nInclude cartoon-style labels on objects, signs, or banners to explain the joke (e.g., 'Too Many Emails', 'Monday Morning', 'Broken Remote Control').\n\nDo NOT reference real political parties, politicians, or real-world political issues. Everything must be fictional, absurd, and clearly satirical.\n\nThe final image should look like a newspaper editorial cartoon: hand-drawn ink style, flat colors, strong linework, humorous exaggeration, and instantly readable on a small screen."
   },
   {
     name: "POOR RICHARD'S ALMANACK",
@@ -1690,6 +1785,11 @@ const DEFAULT_PRESETS = [
     name: "RANDOM PROFESSIONAL",
     category: ["OCCUPATION", "COSTUME", "PROFESSIONAL"],
     message: "Take a picture and transform the subject into a randomly selected professional role. Select from a broad range of contemporary professions across industries. The chosen profession should be clearly recognizable through accurate, real-world attire, accessories, and tools associated with that role. Preserve the subject’s recognizable facial structure, expression, and identity while adapting hairstyle, clothing, and posture to suit the profession naturally. Place the subject in a realistic environment appropriate to the profession, with consistent lighting, scale, and perspective so the transformation feels authentic rather than like a costume. Ensure the subject appears fully integrated into the scene, as if genuinely working in that profession. Render with photorealistic detail and believable realism."
+  },
+  {
+    name: "RANGE OF EMOTIONS",
+    category: ["HUMOR", "PORTRAIT", "EMOTION", "GRID"],
+    message: "Take a picture of the subject and transform it into a 2×2 grid showing four different emotional states.\n\nEach panel must show the same subject with a different exaggerated emotion chosen from: happy, sad, crying, mad, angry, depressed, shocked, or confused.\n\nThe expressions should be strong and clearly readable: wide smiles, tears, frowns, clenched jaws, or dramatic eye contact.\n\nLighting and framing should stay consistent so it looks like a real emotional photo shoot.\n\nThe final image should look like a professional but humorous acting range card, instantly showing how many moods the subject can portray."
   },
   {
     name: "REAL-LUNGING",
@@ -1877,6 +1977,11 @@ const DEFAULT_PRESETS = [
     message: "Take a picture in the style of colorful Sketch Art. A rapidly executed, freehand drawing that serves as a preliminary step for a more detailed, finished work."
   },
   {
+    name: "SLIMED",
+    category: ["HUMOR", "ACTION", "MESSY"],
+    message: "Take a picture of the subject and capture the moment they are being hit on the head by bright green slime.\n\nThe slime should be mid-impact or just beginning to cover their hair and face.\n\nThe subject should have a shocked or panicked expression as the slime lands.\n\nThe slime should look thick, glossy, and cartoonishly gooey.\n\nThe final image should freeze the exact moment of impact for maximum comedy."
+  },
+  {
     name: "SMURFED!",
     category: ["CARTOON", "TRANSFORM", "HUMOR"],
     message: "Take a picture and transform the subject into a Smurf character. Bright blue skin covering entire body, small stature (three apples high), distinctive white Phrygian cap, white pants, no shoes. Large expressive eyes, button nose, cheerful smile. Subject's recognizable facial features should be adapted to Smurf proportions. Place in magical Smurf Village setting with mushroom houses, forest environment, whimsical fairy-tale atmosphere. Classic Peyo cartoon style with smooth shading and vibrant colors. Friendly, cheerful, and enchanting storybook illustration quality."
@@ -1885,6 +1990,11 @@ const DEFAULT_PRESETS = [
     name: "SNOW GLOBE",
     category: ["TOY", "MINIATURE", "WINTER", "SOUVENIR"],
     message: "Take a picture and encapsulate the subject and scene inside a physical souvenir snow globe.\n\nMiniaturize the subject and place them within a tiny, detailed environment inside the globe. If a city or location is provided via external master prompt, construct a miniature city scene inside the globe featuring simplified landmarks, buildings, or visual cues associated with that place. If no location is provided, create a generic charming miniature environment.\n\nThe subject should appear as a small figurine integrated into the miniature city scene — not floating, not full-sized, and not dominating the globe.\n\nRender a clear glass sphere with realistic reflections, refraction, highlights, and slight distortion caused by the curved glass. Floating snow particles or glitter should be suspended throughout the globe at varying depths.\n\nInclude a visible snow globe base made of plastic or resin, styled like a tourist souvenir. The base should include a decorative plaque or label showing the city or location name (use external master prompt text if provided; otherwise invent a plausible destination name).\n\nEnsure the entire snow globe — glass sphere and base — is fully visible within the frame. The globe should appear photographed on a surface or held in a hand, not floating in space.\n\nThe final image should feel charming, slightly kitschy, nostalgic, and unmistakably like a real souvenir snow globe, clearly readable on a small screen."
+  },
+  {
+    name: "SOAKED",
+    category: ["HUMOR", "REALISM", "WATER"],
+    message: "Take a picture of the subject and make it look like they have just been completely drenched with water.\n\nHair, clothing, and skin should all appear visibly wet, with dripping water and darkened fabric.\n\nThe subject should look surprised, annoyed, or exhausted from being soaked.\n\nWater droplets, puddles, or splashes should be visible to sell the realism.\n\nThe final image should look like it was captured seconds after a big splash or water dump."
   },
   {
     name: "SOLARPUNK",
@@ -2067,6 +2177,11 @@ const DEFAULT_PRESETS = [
     message: "Take a picture and transform the subject into a living topiary sculpture. Preserve the subject’s recognizable facial structure, hairstyle silhouette, body proportions, and clothing shapes translated into carefully trimmed foliage and greenery. Use dense leaves, hedges, vines, and floral textures shaped with precision pruning. The subject must appear grown organically from plants, not carved stone. Natural outdoor lighting, garden environment, and botanical realism with visible leaf detail and depth."
   },
   {
+    name: "TOUPEE",
+    category: ["HUMOR", "PORTRAIT", "COSTUME"],
+    message: "Take a picture of the subject, human or animal, and give them a very obvious, poorly fitting toupee.\n\nThe hairpiece should look fake, crooked, or slightly mismatched in color and style, making it clear it does not belong.\n\nThe subject’s original hair or fur may still be partially visible around the edges of the toupee.\n\nThe goal is for the toupee to look awkward and humorous, like it is about to fall off.\n\nThe final image should look realistic but absurd, with the bad hairpiece being the center of the joke."
+  },
+  {
     name: "TRADING CARD",
     category: ["SPORTS", "MASTER PROMPT", "CARD", "COLLECTIBLE"],
     message: "Take a picture and transform the subject into a fully visible collectible sports trading card with a vintage 1980s/1990s style. Ensure the entire card—including all borders, portrait, background, stats, and flavor text—is fully visible and centered in the frame. Randomly assign a sport (e.g., basketball, soccer, baseball, football, tennis) for each render.\n\nInclude a clear portrait of the subject, a stylized action background, and a card border with realistic texture, embossing, and glossy surfaces. Apply worn effects such as yellowed edges, scratches, and slight discoloration for a vintage look.\n\nAdd the subject’s name, a mock team name or mascot, absurd over-the-top stats inspired by the subject’s appearance, pose, or personality (e.g., “99% chance to eat pizza mid-game,” “Can balance a coffee cup while dribbling”), and humorous flavor text describing the subject. Allow external master prompt text to be appended to the flavor text.\n\nEnsure everything is legible on a small screen, the subject remains instantly recognizable, and the final image clearly shows the full card without cropping."
@@ -2102,6 +2217,11 @@ const DEFAULT_PRESETS = [
     message: "Take a picture and place the subject underwater in a natural ocean environment. The subject is wearing streamlined, sport-style swimwear suitable for ocean swimming, styled realistically for an underwater setting. Create a photorealistic underwater seascape capturing the beauty of the ocean depths. Include coral reefs, exotic fish, and aquatic plants, with sunlight filtering through the water to create dramatic lighting and rich color variation. Emphasize realism, scale, and natural movement in the water."
   },
   {
+    name: "UNKEMPT",
+    category: ["HUMOR", "GROOMING", "EXAGGERATED"],
+    message: "Take a picture and transform the subject into someone who desperately needs grooming, with exaggerated overgrown hair in unfortunate places.\n\nAdd extremely bushy, thick, unruly eyebrows that are wild and untamed - possibly connected in the middle (unibrow), with hairs going in all directions.\n\nShow visible nose hairs protruding noticeably from the nostrils - long enough to be clearly visible and unkempt.\n\nAdd ear hair visibly growing out from the ear openings - bushy tufts that are clearly overgrown and neglected.\n\nThe subject's facial hair (if applicable) should also be scraggly, patchy, or unkempt. Overall hair should look messy and in need of a cut.\n\nThe subject's expression can be neutral, unaware, or even proud - making the lack of grooming more humorous. Alternatively, they could look disheveled and tired.\n\nKeep the image photorealistic so the grooming issues look like an actual photograph of someone who has seriously neglected personal maintenance. The exaggeration should be humorous but believable.\n\nPreserve the subject's recognizable facial structure and features while adding these exaggerated grooming problems."
+  },
+  {
     name: "VACATION",
     category: ["TRAVEL", "MASTER PROMPT", "TOURIST", "LOCATION"],
     message: "Take a picture and have the subject standing in the middle of a CITY street somewhere in the world, with iconic and easily recognizable landmarks from that CITY in the background. The scene should capture the CITY life, detailed architecture, and natural lighting, with the person dressed in modern casual clothing, blending naturally into the environment. Make it photorealistic. 8k resolution."
@@ -2132,6 +2252,11 @@ const DEFAULT_PRESETS = [
     message: "Take a picture and transform the subject into a novelty vending machine product. The subject should appear as a toy, figurine, or packaged novelty item clearly designed to be sold.\n\nPlace the product inside a vending machine slot behind glass. Show spiral coils, price tags without readable text, glass reflections, and interior vending machine lighting. The subject should appear scaled appropriately to fit the slot as a product, not as a real person.\n\nEnsure the scene reads as playful and humorous, like a novelty item for sale, with the vending machine fully visible and the product clearly displayed inside."
   },
   {
+    name: "VENTRILOQUIST DUMMY",
+    category: ["HUMOR", "PORTRAIT", "PUPPET"],
+    message: "Take a picture of the subject and transform them into a classic ventriloquist dummy.\n\nThe subject should look like a wooden puppet version of themselves, with a glossy painted face, carved features, and a hinged jaw line.\n\nGive them slightly exaggerated eyes, a stiff posture, and a stylized puppet outfit such as a suit, bow tie, or dress.\n\nThe wood texture, joint seams, and mouth hinge should be clearly visible so it unmistakably looks like a ventriloquist dummy.\n\nThe final image should look like a lifelike puppet replica of the subject, humorous, eerie, and unmistakably artificial."
+  },
+  {
     name: "VHS 80s",
     category: ["RETRO", "80S", "VHS", "VIDEO"],
     message: "Take a picture and transform the image into 1980s VHS footage. Soft focus, scanlines, color bleed, timestamp artifacts. Analog nostalgia aesthetic."
@@ -2155,6 +2280,11 @@ const DEFAULT_PRESETS = [
     name: "VINTAGE POSTER",
     category: ["ART", "VINTAGE", "POSTER", "MOVIES", "MASTER PROMPT"],
     message: "Take a picture in the style of a vintage movie poster. The poster uses lithography for printing on lightweight paper, and includes hand-painted illustrations. Add flavor text to the film title, director, and actor names inspired by the content of the image."
+  },
+  {
+    name: "VIRTUOSO",
+    category: ["HUMOR", "MUSIC", "DRAMATIC"],
+    message: "Take a picture of the subject and transform them into a solo musical virtuoso performing on stage.\n\nThe subject should be playing a single instrument such as a piano, violin, cello, guitar, trumpet, or another orchestral instrument.\n\nBehind the subject, show a full orchestra performing along with them in a grand concert hall.\n\nSpotlight the subject as the star of the performance while the orchestra supports them.\n\nThe scene should look dramatic, cinematic, and impressive, like a world-class concert starring the subject."
   },
   {
     name: "VISUAL POETRY",
@@ -2212,6 +2342,11 @@ const DEFAULT_PRESETS = [
     message: "Take a picture and apply a role-reversal between humans and pets.\n\nFirst determine the type of subject:\n\n• If the subject is an ANIMAL (dog, cat, bird, etc.): place them into a realistic human situation such as working in an office, driving a car, shopping, cooking, using a phone, or sitting in a café. The animal should behave like a person while still clearly being an animal. Use proper perspective, props, and body positioning so it looks natural and believable.\n\n• If the subject is a HUMAN: transform them into a pet owned by an animal. The human should be on a leash, being carried, sitting in a pet carrier, or being walked by a dog, cat, or other animal. The animal must clearly be the owner and in control.\n\nThe scene should be funny but not mean-spirited — playful, surreal, and instantly understandable at a glance.\n\nMaintain realistic lighting, scale, and contact between characters so the interaction feels physically real. The subject must be fully integrated into the scene, not pasted on.\n\nIf external master prompt text is provided, use it to influence the setting (for example: city, park, medieval, sci-fi, luxury, etc.).\n\nThe final image should feel like a clever visual gag you’d see on a magazine cover or viral poster."
   },
   {
+    name: "WINDOWS WALLPAPER",
+    category: ["WALLPAPER", "DESKTOP", "HUMOR", "DESIGN"],
+    message: "Take a picture and transform the subject into a widescreen desktop wallpaper that looks like a fake, humorous Windows-style computer desktop.\n\nUse a wide landscape aspect ratio (about 16:9 or wider). The subject should appear as the main wallpaper image — either posed inside a scene or interacting with the ‘desktop.’\n\nOverlay a fake desktop interface including:\n• fake desktop icons with funny names based on the subject’s personality (e.g., \"Tax Panic\", \"Selfies\", \"Emotional Support Folder\", \"Definitely Not Work\")\n• a fake taskbar with a clock, system tray, and silly system notifications\n• at least one humorous pop-up or error message related to the subject\n\nIcons should be placed around the subject so they do not block the face or important features.\n\nThe overall look should feel like a real computer desktop that someone paused mid-chaos — silly, cluttered, and personality-driven.\n\nThe final image should feel like a snapshot of the subject’s ridiculous personal computer, clearly readable on a large screen."
+  },
+  {
     name: "WOODCUT",
     category: ["ART", "PRINT", "CARVED"],
     message: "Take a picture and transform the image into a traditional woodcut print. Bold carved lines, high contrast. Limited color palette."
@@ -2230,6 +2365,11 @@ const DEFAULT_PRESETS = [
     name: "YEARBOOK",
     category: ["SCHOOL", "PHOTO", "AWKWARD"],
     message: "Take a picture and make the subject appear in an awkward, unflattering yearbook photo. Retro school photo style."
+  },
+  {
+    name: "YOU SMELL",
+    category: ["HUMOR", "SOCIAL", "REACTION"],
+    message: "Take a picture of the subject and place them in a public setting such as a bus, office, party, or line.\n\nThe subject should have visible dark sweat stains under their arms.\n\nPeople around the subject should be reacting to the smell using exaggerated gestures such as holding their nose, covering their mouth, leaning away, or making disgusted faces.\n\nThe subject should look unaware or embarrassed.\n\nThe scene should look realistic but humorous, with the reactions clearly selling the joke."
   },
   {
   name: "ZOO-TOPIA",
@@ -4895,20 +5035,20 @@ function loadMotionSettings() {
       continuousCheckbox.checked = motionContinuousEnabled;
     }
       
-      const cooldownSlider = document.getElementById('motion-cooldown-slider');
-      if (cooldownSlider) {
-        cooldownSlider.value = motionCooldown;
-      }
+    const cooldownSlider = document.getElementById('motion-cooldown-slider');
+    if (cooldownSlider) {
+      cooldownSlider.value = motionCooldown;
+    }
 
-      const startDelaySlider = document.getElementById('motion-start-delay-slider');
-      const startDelayValue = document.getElementById('motion-start-delay-value');
-      if (startDelaySlider && startDelayValue) {
-        const sliderValue = getStartDelaySliderValue();
-        startDelaySlider.value = sliderValue;
-        startDelayValue.textContent = MOTION_START_DELAYS[sliderValue].label;
-      }      
+    const startDelaySlider = document.getElementById('motion-start-delay-slider');
+    const startDelayValue = document.getElementById('motion-start-delay-value');
+    if (startDelaySlider && startDelayValue) {
+      const sliderValue = getStartDelaySliderValue();
+      startDelaySlider.value = sliderValue;
+      startDelayValue.textContent = MOTION_START_DELAYS[sliderValue].label;
+    }
 
-      updateMotionDisplay();
+    updateMotionDisplay();
   } catch (err) {
     console.error('Failed to load motion settings:', err);
   }
