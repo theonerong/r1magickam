@@ -556,6 +556,11 @@ const DEFAULT_PRESETS = [
     message: "Take a picture and convert the image into a detailed charcoal sketch. Rich grayscale tones, textured shading, and expressive strokes on paper."
   },
   {
+    name: "EL CHAVO",
+    category: ["TV", "COMEDY", "MEXICAN", "RETRO", "SITCOM"],
+    message: "Take a picture and transform the subject into a character from the classic Mexican television show El Chavo del Ocho.\n\nIf the subject is MALE: Transform them into either Quico or El Chavo del Ocho. Preserve the subject's recognizable facial features while adapting their appearance to match the character's iconic look - period-appropriate clothing from the 1970s Mexican sitcom, characteristic hairstyle, and the comedic expression associated with the character. El Chavo wears his iconic barrel-striped shirt and cap, while Quico wears his sailor suit or formal attire.\n\nIf the subject is FEMALE: Transform them into La Chilindrina. Preserve recognizable facial features while adapting to her iconic appearance - including her signature freckles, pigtails with bows, colorful patterned dress, and thick-framed glasses. Capture her mischievous, playful expression.\n\nThe setting should reflect the show's environment: the vecindad (neighborhood courtyard), with its characteristic architecture, stairs, doorways, and the nostalgic 1970s Mexican aesthetic. Include warm, slightly vintage color tones and lighting that matches the show's classic filmed appearance.\n\nThe transformation should be photorealistic but capture the comedic, innocent, and nostalgic spirit of the beloved show. Expressions should be playful, exaggerated, or characteristic of the specific character's personality - El Chavo's innocent confusion, Quico's spoiled bratty attitude, or La Chilindrina's clever mischievousness.\n\nMaintain the subject's identity while fully immersing them in the iconic visual world of El Chavo del Ocho with period-accurate costumes, setting, and the show's signature warm, nostalgic atmosphere."
+  },
+  {
     name: "CHECKMATE",
     category: ["HUMOR", "CHESS", "GAME", "STRATEGIC"],
     message: "Take a picture and transform the subject into ALL the chess pieces from one side (either white or black) positioned on an actual chessboard.\n\nThe subject's facial features, expressions, and personality should be adapted into EACH of the six different chess piece types: King, Queen, Rook (2), Knight (2), Bishop (2), and Pawn (8). Each piece should be a miniature sculptural version of the subject, maintaining recognizable identity while adapted to the specific piece's form and role.\n\nDesign variations for each piece type:\n- KING: Subject with crown, regal posture, tallest and most ornate\n- QUEEN: Subject with elaborate crown/headpiece, powerful stance, second tallest\n- BISHOPS: Subject with pointed mitre hat, diagonal-moving poses\n- KNIGHTS: Subject with horse-themed elements, dynamic action poses\n- ROOKS: Subject as tower/castle form, strong geometric base\n- PAWNS: Subject in simplified form, smallest and most numerous\n\nAll pieces should follow classic Staunton chess piece proportions but personalized with the subject's features, clothing details, or characteristics. Each piece should be clearly identifiable as both the subject AND the chess piece type.\n\nArrange all 16 pieces (1 King, 1 Queen, 2 Rooks, 2 Knights, 2 Bishops, 8 Pawns) in proper starting chess positions on a realistic wooden or marble chessboard. Include opposing traditional chess pieces on the other side for context and scale.\n\nLighting should be dramatic and strategic, casting shadows that emphasize the three-dimensional sculptural quality of each piece. Use proper perspective showing the full board setup.\n\nThe final image should look like a photograph of a complete custom chess set where every piece on one side is a personalized version of the subject, ready for an actual game. The subject becomes an entire army of chess pieces, not just one."
@@ -1770,6 +1775,11 @@ const DEFAULT_PRESETS = [
     name: "QUASI-MUTATION",
     category: ["HORROR", "TRANSFORMATION", "CREATURE"],
     message: "Take a picture and transform the subject as if undergoing a dramatic mutation into a powerful alternate form. Randomly select a creature or archetype such as a werewolf, Hyde-style transformation, monstrous hybrid, or other iconic mutated form. Preserve the subject’s recognizable facial structure, eyes, expression, and identity while exaggerating musculature, posture, skin texture, or anatomy appropriate to the transformation. Blend human and creature features convincingly so the subject still feels like the same individual mid- or post-mutation. Integrate the subject naturally into the scene with cinematic lighting, dynamic pose, and realistic interaction with the environment. Render the final image with photorealistic detail, dramatic contrast, and a sense of raw power and transformation."
+  },
+  {
+    name: "QUE PASA USA?",
+    category: ["TV", "COMEDY", "CUBAN", "RETRO", "SITCOM", "70S"],
+    message: "Take a picture and transform the subject into a scene from the classic bilingual Cuban-American sitcom 'Que Pasa USA?' from the 1970s.\n\nPlace the subject into the iconic Peña family household setting with the show's original characters present in the scene: the grandparents (Abuela and Abuelo), parents (Juana and Joe), and teenagers (Carmen and Joe Jr). The subject should be integrated naturally as if they are a family member, friend, or visitor interacting with the characters.\n\nThe setting should capture the show's characteristic environment: the modest Miami household interior with 1970s decor, furniture, and styling. Include authentic period details like vintage appliances, wallpaper patterns, family photos on walls, and the warm, lived-in feel of a Cuban-American home.\n\nCapture the show's signature visual aesthetic: slightly grainy film quality from 1970s television production, warm indoor lighting, and the authentic multicamera sitcom look. Use the color palette and lighting that matches the original show's appearance.\n\nThe subject should be dressed in period-appropriate 1970s clothing that fits the scene. Their expression and body language should suggest they're part of a typical sitcom moment - family discussion, comedic misunderstanding, cultural clash between generations, or bilingual conversation.\n\nOther characters in the scene should look authentic to the show - maintaining the actors' appearances from the original series. The interaction should feel natural and capture the show's themes of Cuban-American family life, generational differences, and the immigrant experience.\n\nThe final image should look like an actual still frame from the show, with the subject seamlessly integrated into this beloved piece of Cuban-American television history. Include the warm, nostalgic atmosphere and the show's signature blend of English and Spanish cultural elements."
   },
   {
     name: "R-ROLL",
@@ -5035,20 +5045,20 @@ function loadMotionSettings() {
       continuousCheckbox.checked = motionContinuousEnabled;
     }
       
-    const cooldownSlider = document.getElementById('motion-cooldown-slider');
-    if (cooldownSlider) {
-      cooldownSlider.value = motionCooldown;
-    }
+      const cooldownSlider = document.getElementById('motion-cooldown-slider');
+      if (cooldownSlider) {
+        cooldownSlider.value = motionCooldown;
+      }
 
-    const startDelaySlider = document.getElementById('motion-start-delay-slider');
-    const startDelayValue = document.getElementById('motion-start-delay-value');
-    if (startDelaySlider && startDelayValue) {
-      const sliderValue = getStartDelaySliderValue();
-      startDelaySlider.value = sliderValue;
-      startDelayValue.textContent = MOTION_START_DELAYS[sliderValue].label;
-    }
+      const startDelaySlider = document.getElementById('motion-start-delay-slider');
+      const startDelayValue = document.getElementById('motion-start-delay-value');
+      if (startDelaySlider && startDelayValue) {
+        const sliderValue = getStartDelaySliderValue();
+        startDelaySlider.value = sliderValue;
+        startDelayValue.textContent = MOTION_START_DELAYS[sliderValue].label;
+      }      
 
-    updateMotionDisplay();
+      updateMotionDisplay();
   } catch (err) {
     console.error('Failed to load motion settings:', err);
   }
