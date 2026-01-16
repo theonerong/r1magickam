@@ -217,7 +217,7 @@ const DEFAULT_PRESETS = [
   },
   {
     name: "80s AND 90s ACTION FILMS",
-    category: ["HUMOR", "MOVIE", "SCENE", "ACTION"],
+    category: ["HUMOR", "MOVIES", "SCENE", "ACTION"],
     message: "Take a picture of the subject and place them into a scene from a classic 1980s or 1990s action film, such as *Die Hard*, *Lethal Weapon*, *Terminator*, or *Speed*.\n\nThe subject should appear as the action hero or main participant, performing a dramatic stunt, holding a weapon, or interacting with the environment in an exaggerated way.\n\nProps, lighting, and costumes should match the era and style of the film, including explosions, helicopters, cars, or city backdrops.\n\nOptional flavor text from the master prompt can add humorous twists, like awkward poses, improbable stunts, or ridiculous expressions.\n\nThe final image should look like a cinematic action movie still with the subject as the star, funny, dramatic, and larger-than-life."
   },
   {
@@ -532,7 +532,7 @@ const DEFAULT_PRESETS = [
   },
   {
     name: "CARRY ME",
-    category: ["HUMOR", "PHOTO", "SITUATIONAL", "MASTER PROMPT"],
+    category: ["HUMOR", "SITUATIONAL", "MASTER PROMPT"],
     message: "Take a picture and transform it into a scene where one person is carrying the subject on their shoulders.\n\nIf there are TWO subjects in the image: Have one subject carrying the other on their shoulders. Choose based on context, size, or humor - the carrier should look strained, proud, or playfully struggling while the person being carried shows excitement, triumph, or awkward balance.\n\nIf there is only ONE subject in the image: A famous person (specified via master prompt, or choose an appropriate celebrity if none specified) will either carry the subject on their shoulders OR the subject will carry the famous person. The interaction should feel natural and humorous.\n\nBoth people should have realistic expressions: the carrier might show effort, determination, or playful annoyance; the person on shoulders might show joy, victory, fear of falling, or awkward balance with arms outstretched.\n\nPreserve recognizable facial features and body proportions for all people. The physical interaction must look believable - proper hand placement on legs/thighs, realistic weight distribution, natural body positioning.\n\nSet the scene in an appropriate context: concert crowd, celebration, sporting event victory, parade, beach, park, or casual outdoor setting. Include realistic background elements and other people reacting to the moment.\n\nLighting and photography should be photorealistic, as if captured during an actual candid moment. The final image must look like a real photograph of this playful, triumphant, or humorous shoulder-carrying moment."
   },
   {
@@ -557,8 +557,13 @@ const DEFAULT_PRESETS = [
   },
   {
     name: "CH-CH-CH-CHIA PET",
-    category: ["HUMOR", "RETRO", "TRANSFORM"],
+    category: ["HUMOR", "RETRO", "TRANSFORMATION"],
     message: "Take a picture and transform the subject into a Chia Pet terracotta planter. Subject should be shaped like a clay pottery figurine in terracotta orange-brown color with porous ceramic texture. Dense green chia sprouts growing from the top and surfaces, creating hair/fur effect with small green leaves. 1980s infomercial product aesthetic, sitting on surface, 'Ch-ch-ch-chia!' retro novelty gift appearance. Handmade pottery look with chia seeds sprouting lush greenery."
+  },
+  {
+    name: "CHAPULÍN COLORADO",
+    category: ["TV", "COMEDY", "MEXICAN", "SUPERHERO", "TRANSFORMATION"],
+    message: "Take a picture and transform the subject into El Chapulín Colorado, the beloved Mexican comedy superhero. The subject should wear the iconic red suit with yellow heart emblem on the chest, red and yellow striped short sleeves and pant legs, red antennae on the head, and carry the chipote chillón (squeaky hammer). Preserve the subject's recognizable facial features but add El Chapulín's characteristic expression - wide-eyed, earnest, and slightly confused. Place them in a comedic action scene with dramatic lighting but humorous situation - perhaps striking an exaggerated heroic pose while something comical happens around them. Include other elements from the show like the chirimoya (horn of plenty device) or antenitas de vinil. Use bright, saturated colors typical of the classic TV show. Capture the essence of this beloved character - well-meaning, clumsy, but ultimately heroic. Make it photorealistic as if the subject actually became El Chapulín Colorado."
   },
   {
     name: "CHARACTER BOARD",
@@ -571,12 +576,7 @@ const DEFAULT_PRESETS = [
     message: "Take a picture and convert the image into a detailed charcoal sketch. Rich grayscale tones, textured shading, and expressive strokes on paper."
   },
   {
-    name: "CIRCUS STAR",
-    category: ["HUMOR", "STAGE", "SPECTACLE"],
-    message: "Take a picture of the subject and place them as the star performer in a grand circus.\n\nThe subject should be in the spotlight as a ringmaster, acrobat, strong person, lion tamer, or other dramatic circus role.\n\nThe background should include a big top tent, audience, lights, and circus atmosphere.\n\nThe subject should be the clear center of attention, performing something impressive or ridiculous.\n\nThe final image should look colorful, theatrical, and larger-than-life, like a classic circus poster brought to life."
-  },
-  {
-    name: "EL CHAVO",
+    name: "CHAVO DEL OCHO",
     category: ["TV", "COMEDY", "MEXICAN", "RETRO", "SITCOM"],
     message: "Take a picture and transform the subject into a character from the classic Mexican television show El Chavo del Ocho.\n\nIf the subject is MALE: Transform them into either Quico or El Chavo del Ocho. Preserve the subject's recognizable facial features while adapting their appearance to match the character's iconic look - period-appropriate clothing from the 1970s Mexican sitcom, characteristic hairstyle, and the comedic expression associated with the character. El Chavo wears his iconic barrel-striped shirt and cap, while Quico wears his sailor suit or formal attire.\n\nIf the subject is FEMALE: Transform them into La Chilindrina. Preserve recognizable facial features while adapting to her iconic appearance - including her signature freckles, pigtails with bows, colorful patterned dress, and thick-framed glasses. Capture her mischievous, playful expression.\n\nThe setting should reflect the show's environment: the vecindad (neighborhood courtyard), with its characteristic architecture, stairs, doorways, and the nostalgic 1970s Mexican aesthetic. Include warm, slightly vintage color tones and lighting that matches the show's classic filmed appearance.\n\nThe transformation should be photorealistic but capture the comedic, innocent, and nostalgic spirit of the beloved show. Expressions should be playful, exaggerated, or characteristic of the specific character's personality - El Chavo's innocent confusion, Quico's spoiled bratty attitude, or La Chilindrina's clever mischievousness.\n\nMaintain the subject's identity while fully immersing them in the iconic visual world of El Chavo del Ocho with period-accurate costumes, setting, and the show's signature warm, nostalgic atmosphere."
   },
@@ -621,6 +621,11 @@ const DEFAULT_PRESETS = [
     message: "Take a picture and transform the subject into a cinematic horror character while preserving the subject’s recognizable facial structure, body proportions, and identity. Apply unsettling but non-graphic visual traits such as desaturated or ashen skin tones, darkened eye areas, an intense or vacant gaze, and subtly distressed clothing.  Ensure the subject appears physically present in the scene and fully integrated with the surroundings. Render the final image with photorealistic detail and a suspenseful horror aesthetic."
   },
   {
+    name: "CIRCUS STAR",
+    category: ["HUMOR", "STAGE", "SPECTACLE"],
+    message: "Take a picture of the subject and place them as the star performer in a grand circus.\n\nThe subject should be in the spotlight as a ringmaster, acrobat, strong person, lion tamer, or other dramatic circus role.\n\nThe background should include a big top tent, audience, lights, and circus atmosphere.\n\nThe subject should be the clear center of attention, performing something impressive or ridiculous.\n\nThe final image should look colorful, theatrical, and larger-than-life, like a classic circus poster brought to life."
+  },
+  {
     name: "CITY IN TIME",
     category: ["MASTER PROMPT", "TRAVEL", "HISTORICAL", "LOCATION"],
     message: "Take a picture and place the subject standing naturally within a realistic urban environment. The city, location, and date are defined externally. Integrate the subject seamlessly into the scene so they appear physically present, with correct scale, perspective, lighting, shadows, and reflections. Match architecture, street layout, vehicles, signage, clothing styles, weather, and overall atmosphere appropriate to the specified city and date. Preserve the subject’s facial identity, proportions, posture, and personality while making the scene photorealistic and historically or contemporarily accurate."
@@ -646,6 +651,11 @@ const DEFAULT_PRESETS = [
     message: "Take a picture and transform the subject so it appears **entirely made of clouds**, with no remaining human, animal, or object materials visible.\n\nThe subject’s **entire form — head, body, limbs, and features — must be constructed exclusively from cloud matter**. Do not show skin, clothing, solid surfaces, or mixed materials. The subject must not appear inside clouds; the subject itself is the cloud.\n\nThe **overall cloud shape must follow the subject’s silhouette, posture, and proportions**. The subject’s outline governs the form.\n\nDetermine the cloud **type** as follows:\n• If the subject is animate (person or animal), select the cloud type based on the subject’s apparent emotion:\n  – Happy or playful → **Cumulus** (bright, puffy, well-defined)\n  – Sad, tired, or withdrawn → **Nimbostratus** (heavy, low, rain-filled)\n  – Angry, intense, or aggressive → **Cumulonimbus** (towering, dense, storm-like)\n  – Calm or neutral → **Stratus** (smooth, layered, subdued)\n• If the subject is inanimate, use **Altocumulus** clouds with a neutral, evenly spaced texture.\n\nUse cloud density, lighting, internal shadow, and volume to imply facial features, limbs, and expression without outlines or solid edges.\n\nAvoid solid ground unless contextually appropriate. Use sky gradients, mist, or distant horizons to support the illusion.\n\nEnsure the silhouette remains readable on a small screen. The final image should feel surreal, expressive, and poetic — as if the subject fully transformed into a specific type of weather."
   },
   {
+    name: "COEN BROTHERS FILM",
+    category: ["MOVIES", "DIRECTOR", "QUIRKY", "DRAMATIC"],
+    message: "Take a picture and place the subject into a Coen Brothers film scene. Use their distinctive visual style: perfectly composed symmetrical framing, absurdist dark comedy situations, eccentric character styling, and deadpan cinematography. Show the subject as a quirky character in an oddball situation - perhaps caught in circumstances beyond their control with a bewildered or stoic expression. Include Coen Brothers elements: retro Americana settings, vintage cars, small-town locations, period-specific costumes and props. Use their characteristic lighting - naturalistic but carefully composed, often featuring golden hour warmth or harsh fluorescent interiors. Capture their blend of dark humor and existential dread - situations that are simultaneously funny and unsettling. Make it look like a frame from Fargo, The Big Lebowski, or No Country for Old Men with that unique Coen Brothers tone."
+  },
+  {
     name: "COLLAGE",
     category: ["ART", "MIXED MEDIA", "PAPER"],
     message: "Take a picture in the style of an artistic paper collage with visible cut edges and layered materials."
@@ -657,7 +667,7 @@ const DEFAULT_PRESETS = [
   },
   {
     name: "COMEDY CLASSIC",
-    category: ["HUMOR", "MOVIE", "SCENE", "COMEDY"],
+    category: ["HUMOR", "MOVIES", "SCENE", "COMEDY"],
     message: "Take a picture of the subject and place them into a scene from a cult comedy film, such as *Ghostbusters*, *Animal House*, *Caddyshack*, *Some Like it Hot*, *Blazing Saddles*, *Annie Hall*, *Planes, Trains and Automobiles*, *The Hangover*, *Coming to America*, *Beverly Hills Cop*, *Trading Places*, *A Fish Called Wanda*, *Big Lebowski*, *Dazed and Confused*, or *Wayne's World*.\n\nThe subject should be integrated as the central focus, interacting with the environment and versions of the scene’s characters.\n\nProps, costumes, and lighting should match the film style, making the scene look like a real movie still.\n\nOptional flavor text from the master prompt can guide which gag or absurd twist is included (e.g., subject holding the proton pack upside-down, bowling in an exaggerated pose, or mimicking a famous line with a ridiculous expression).\n\nThe final image should be funny, cinematic, and instantly recognizable as a cult comedy film, with the subject as the star."
   },
   {
@@ -724,6 +734,11 @@ const DEFAULT_PRESETS = [
     name: "DADA",
     category: ["ART", "SURREAL", "ABSURD"],
     message: "Take a picture and transform the image into a Dada-style collage. Combine cut-and-paste textures, absurd juxtapositions, and fragmented composition. Subject recognizable within surreal elements."
+  },
+  {
+    name: "DAD DANCING",
+    category: ["HUMOR", "DANCE", "EMBARRASSING", "FAMILY"],
+    message: "Take a picture and transform the subject into peak 'dad dancing' at a family event. Show them doing exaggerated, awkward, out-of-rhythm dance moves with complete confidence - finger guns, lawnmower move, shopping cart, sprinkler, or other classic dad moves. They should be wearing typical dad attire - tucked-in polo shirt, khakis or cargo shorts, white New Balance sneakers, maybe a fanny pack. Place them at a wedding reception, school dance, or family party. Include mortified teenagers (presumably their kids) in the background covering their faces, other dads joining in enthusiastically, and normal dancers clearing space around the dad dance zone. The subject should have pure joy and zero self-awareness on their face. Add disco ball lighting, DJ booth, or party decorations. Capture that specific energy of dads who dance like nobody's watching despite everyone definitely watching. Make it look like a candid photo of maximum dad embarrassment caught mid-dance move."
   },
   {
     name: "DALÍ",
@@ -876,6 +891,11 @@ const DEFAULT_PRESETS = [
     message: "Take a picture and transform it into an illustrated fairytale moral or fable lesson. Depict the subject as the central figure in a symbolic, storybook-style scene. Generate a short moral or lesson written beneath or beside the illustration using flavor text inspired by the subject’s appearance, actions, or surroundings, incorporating any externally provided details naturally. The moral should read like a classic fable conclusion. Ensure all text is clearly visible. The overall tone should feel whimsical, wise, and timeless.  The result should be a full view of the illustration with a relevant background behind the illustration."
   },
   {
+    name: "FALLOUT",
+    category: ["GAME", "POSTAPOC", "RETRO"],
+    message: "Take a picture and place the subject directly into the Fallout video game world. Transform the scene into a post-apocalyptic wasteland environment with destroyed buildings, rusted vehicles, barren landscapes, and nuclear fallout atmosphere. Apply the distinctive Fallout visual style: desaturated greenish-brown color grading, enhanced contrast, subtle film grain, and slight vignette. Include Fallout-specific elements like radiation barrels, Pip-Boy interface hints, retro-futuristic 1950s technology, weathered propaganda posters, and wasteland debris. The subject should appear as a survivor or vault dweller in this world, wearing appropriate wasteland gear. Maintain photorealistic quality with gritty, dramatic lighting and authentic post-nuclear war atmosphere - do not make it cartoonish."
+  },
+  {
     name: "FAMILY CREST",
     category: ["HUMOR", "HERALDRY", "PORTRAIT"],
     message: "Take a picture of the subject and turn them into the centerpiece of a grand family crest or coat of arms.\n\nPlace the subject’s face in the center of a shield surrounded by decorative symbols, banners, and icons that humorously represent their personality, habits, or interests.\n\nThe crest should include ornate scrollwork, ribbons, and classic heraldic styling.\n\nUse external master prompt text, if provided, to influence the motto, symbols, or family name.\n\nThe final image should look like a serious, medieval-style coat of arms, but with silly or absurd details that make it funny."
@@ -997,7 +1017,7 @@ const DEFAULT_PRESETS = [
   },
   {
     name: "FUTURAMA",
-    category: ["CARTOON", "SCI-FI", "RETRO", "POP CULTURE"],
+    category: ["CARTOON", "SCI FI", "RETRO", "POP CULTURE"],
     message: "Take a picture and transform the subject into an animated character placed directly inside a Futurama-style scene alongside recognizable characters from the show.\n\nRender the subject in the same visual style as Futurama characters: clean bold outlines, flat cel shading, simplified geometric facial features, exaggerated eyes, smooth rounded head shapes, and bright saturated colors. Preserve the subject’s recognizability while fully adapting them into the cartoon style.\n\nPlace the subject INTO an iconic Futurama environment and scene, selected based on context or randomly, such as:\n• inside the Planet Express building or conference room\n• standing with Fry, Leela, and Bender in the Planet Express crew lineup\n• walking through New New York with futuristic buildings and flying cars\n• inside MomCorp, the Head Museum, or a sci-fi lab\n• in a space scene with Futurama characters reacting to the subject\n\nExisting Futurama characters may appear in the scene as supporting characters, background figures, or interaction partners, drawn accurately in their recognizable cartoon style. The subject should feel like a guest character naturally written into an episode, not pasted on top.\n\nAdapt the subject’s clothing into Futurama-appropriate outfits — delivery uniforms, sci-fi jumpsuits, futuristic casual wear, or humorous future attire inspired by their real clothing.\n\nUse simple painted backgrounds, clean animation lighting, and minimal texture consistent with hand-drawn cel animation. Avoid realistic shading or painterly effects.\n\nEnsure the full scene is visible and readable on a small screen, with the subject clearly identifiable among the Futurama characters. The final image should feel like a freeze-frame from an actual Futurama episode where the subject unexpectedly appears."
   },
   {
@@ -1026,6 +1046,11 @@ const DEFAULT_PRESETS = [
     message: "Take a picture in the Studio Ghibli anime style-soft colors, whimsical atmosphere, and hand-drawn aesthetic."
   },
   {
+    name: "GIANT MONSTER",
+    category: ["HUMOR", "SCI FI", "KAIJU"],
+    message: "Take a picture and transform the subject into a giant Kaiju-style monster attacking a city. The subject should tower over buildings at massive scale (100+ feet tall), with their recognizable features enlarged and made monstrous. Place them in an urban environment with skyscrapers, fleeing crowds, emergency vehicles, and destruction. Add cinematic disaster movie atmosphere with dramatic lighting, dust clouds, debris, and chaos. Include details like the monster's massive footprints crushing cars, toppling buildings, and helicopters circling. Make it look like a scene from a classic monster movie with photorealistic destruction and scale."
+  },
+  {
     name: "GIANT WORLD",
     category: ["SIZE", "GIANT", "SCALE"],
     message: "Take a picture and transform the subject into a giant towering over the environment. Realistic scale interaction."
@@ -1044,6 +1069,11 @@ const DEFAULT_PRESETS = [
     name: "GLOSSARY",
     category: ["MASTER PROMPT", "TEXT", "REFERENCE", "LABELED"],
     message: "Take a picture and create an image of a glossary identifying the main subject and a limited number of notable objects. Include the photograph prominently in the layout. Overlay clear letter markers (A, B, C, etc.) directly on or near each identified object in the image. Beneath the photo, create a glossary-style list where each entry begins with the matching letter and provides a brief description blending factual identification and light humor. Keep the layout simple and legible for a small screen. The photograph should clearly correspond to the labeled glossary entries."
+  },
+  {
+    name: "GOO GOO GAA GAA",
+    category: ["HUMOR", "TRANSFORMATION", "BABY"],
+    message: "Take a picture and transform the subject into a baby while preserving their recognizable facial features and identity. Place the subject's actual face onto a realistic baby's body (approximately 6-12 months old). Show the baby in typical baby situations such as crawling on the floor, sitting in a high chair making a mess with food, playing with baby toys, or lying in a crib. The scene should be photorealistic with appropriate scale, baby proportions, soft lighting, and natural baby behavior. Include realistic details like baby clothes, nursery environment, and age-appropriate activities."
   },
   {
     name: "GOTHIC MEDIEVAL ART",
@@ -1141,6 +1171,11 @@ const DEFAULT_PRESETS = [
     message: "Take a picture and place the subject seamlessly into a historical event that occurred on the date specified externally. Preserve the subject’s facial features, clothing, and posture while adapting them naturally to the historical setting, lighting, and perspective. Ensure the subject interacts believably with the environment, props, or people in the scene so they appear as an authentic part of the moment. Make the final image photorealistic and historically accurate, with no elements appearing out of place."
   },
   {
+    name: "HITCHCOCK FILM",
+    category: ["MOVIES", "SUSPENSE", "DIRECTOR", "THRILLER"],
+    message: "Take a picture and place the subject into an iconic Alfred Hitchcock thriller scene. Use Hitchcock's distinctive visual style: dramatic high or low camera angles, bold shadows and noir lighting, vertiginous perspectives, and tension-filled composition. Show the subject in a moment of suspense or danger - pursued, discovering something shocking, or caught in psychological terror. Include Hitchcock's signature elements: stark lighting contrasts, expressionistic shadows, voyeuristic framing, and color schemes from his films (cool blues, deep reds). Place them in classic Hitchcock settings like shadowy staircases, fog-shrouded streets, elegant apartments, or dizzying heights. Capture that signature Hitchcock atmosphere of elegant dread and mounting psychological tension. Make it look like a frame from an actual Hitchcock masterpiece."
+  },
+  {
     name: "HOARDERS",
     category: ["HUMOR", "TV", "REALITY", "MESSY"],
     message: "Take a picture and transform it into a scene from the reality show 'Hoarders' with the subject surrounded by extreme clutter and accumulated items.\n\nThe subject should be standing or sitting in the middle of a severely cluttered room filled floor-to-ceiling with piles of stuff: stacks of newspapers and magazines, boxes overflowing with items, bags of belongings, old furniture piled up, random objects everywhere, narrow pathways through the clutter. The mess should be overwhelming and chaotic.\n\nItems can be themed for humor: all garden gnomes, excessive craft supplies, thousands of fast food condiment packets, walls of VHS tapes, mountains of beanie babies, or traditional hoarding clutter. Make it densely packed and overwhelming.\n\nThe subject's expression should show they see nothing wrong with the situation - casual, defensive, or attached to their items. Clothing can be casual or slightly disheveled.\n\nLighting should match reality TV documentary style - natural indoor lighting, slightly dim, authentic and unglamorous. The scene should feel claustrophobic with limited space to move.\n\nOptional elements: Concerned family member visible in background looking horrified, professional organizer or therapist trying to help, pets navigating through the clutter, visible dust or cobwebs adding to the neglected atmosphere.\n\nThe final image should look like an actual still from the Hoarders TV show - overwhelming clutter, reality TV documentary aesthetic, raw and authentic. The humor comes from the absurd amount of stuff and the subject's obliviousness to the extreme situation. Photorealistic with proper lighting and that specific reality TV look."
@@ -1156,8 +1191,8 @@ const DEFAULT_PRESETS = [
     message: "Take a picture and transform it into a deliberately silly horoscope-style image.\n\nDetermine the subject’s astrological sign based on externally provided input or infer one arbitrarily if none is supplied. Clearly display the astrological sign name and symbol.\n\nWrite ONE short horoscope message based on the subject’s visible traits, expression, posture, clothing, or situation. The horoscope must be humorous, blunt, and confidently ridiculous — it should sound specific, obvious, and completely unserious.\n\nUse flavor text to exaggerate mundane or trivial traits (e.g., procrastination, overconfidence, distraction, stubbornness) as if they are unavoidable cosmic truths. Avoid mystical language, poetic ambiguity, or generic fortune-cookie phrasing.\n\nInclude a clearly labeled \"Lucky Number\" that is intentionally useless, impractical, or meaningless (e.g., decimals, extremely large numbers, fractions, timestamps, negative numbers, or oddly specific values). The lucky number must not be applicable to gambling, dates, clocks, or real-world decisions.\n\nCompose the image like a fake astrology card or newspaper horoscope box. Keep the layout clean, bold, and readable on a small screen. Ensure the full card, sign, horoscope text, and lucky number are fully visible.\n\nDo not explain the joke. Do not add disclaimers. Treat the horoscope as completely accurate, no matter how absurd."
   },
   {
-    name: "CLASSIC HORROR FILMS",
-    category: ["HUMOR", "MOVIE", "SCENE", "HORROR"],
+    name: "HORROR FILMS",
+    category: ["HUMOR", "MOVIES", "SCENE", "HORROR"],
     message: "Take a picture of the subject and place them into a scene from a classic horror film, such as *Friday the 13th*, *Nightmare on Elm Street*, *The Shining*, or *Psycho*.\n\nThe subject should be the central figure, reacting to the horror environment or villain in a dramatic or exaggerated way.\n\nLighting, perspective, and props should match the iconic horror style — dark shadows, eerie lighting, and creepy set pieces.\n\nOptional master prompt text can add humorous twists (e.g., subject holding a comically oversized weapon, screaming dramatically, or unintentionally scaring the villain).\n\nThe final image should feel cinematic, instantly recognizable as a classic horror scene, and funny or absurd depending on the subject’s pose or expression."
   },
   {
@@ -1258,7 +1293,7 @@ const DEFAULT_PRESETS = [
   },
   {
     name: "JOHN HUGHES FILM",
-    category: ["HUMOR", "MOVIE", "SCENE", "CULT CLASSIC"],
+    category: ["HUMOR", "MOVIES", "SCENE", "CULT CLASSIC"],
     message: "Take a picture of the subject and place them into a scene from a classic John Hughes film, such as *The Breakfast Club*, *Ferris Bueller's Day Off*, *Weird Science*, or *Sixteen Candles*.\n\nThe subject should be fully integrated into the scene, interacting naturally with the environment and other characters as if they are the main focus.\n\nCostumes, lighting, and props should match the era of the film — 1980s high school or suburban settings, vintage cars, lockers, diners, etc.\n\nOptional flavor text from the master prompt can influence the scene, such as having the subject deliver a famous line, partake in iconic antics, or create a humorous twist.\n\nThe final image should be cinematic, instantly recognizable as a John Hughes film, and funny or absurd depending on the subject’s pose or expression."
   },
   {
@@ -1273,12 +1308,12 @@ const DEFAULT_PRESETS = [
   },
   {
     name: "KING OF THE WORLD!",
-    category: ["HUMOR", "MOVIE", "SCENE", "ROMANCE"],
+    category: ["HUMOR", "MOVIES", "SCENE", "ROMANCE"],
     message: "Take a picture of the subject and place them in the iconic *Titanic* scene on the ship’s bow, arms outstretched, shouting 'I’m the king of the world!'\n\nThe subject should be the central figure, fully integrated with realistic lighting, wind effects, and perspective from the bow of the ship.\n\nOptional flavor text from the master prompt can influence the subject’s pose, facial expression, or humorous twist (e.g., over-the-top excitement, exaggerated wind-blown hair, or slipping slightly).\n\nThe final image should feel like a dramatic cinematic still, instantly recognizable as the famous scene, but humorous and starring the subject as the protagonist."
   },
   {
     name: "KISS CAM",
-    category: ["HUMOR", "PHOTO", "SITUATIONAL"],
+    category: ["HUMOR", "SITUATIONAL"],
     message: "Take a picture of one or more subjects and transform it into a humorous 'Kiss Cam' moment at a sporting event.\n\nRender the scene photorealistically as if captured by a live stadium camera. The subjects should have exaggerated expressions of shock, embarrassment, awkwardness, or confusion - not cartoonish.\n\nInclude realistic background elements: stadium seating, cheering crowd in soft focus, jumbotron screens, arena lighting, and authentic sporting venue atmosphere.\n\nThe awkwardness should feel authentic and relatable: subjects might be leaning away, covering their faces, looking in opposite directions, holding drinks or food awkwardly, or clearly unprepared for the moment.\n\nOptional realistic details: other audience members reacting in the background, stadium signage, team colors and branding, or humorous but believable context clues.\n\nOptional props or signs in the background may add to the humor, e.g., 'Halitosis', 'Not Interested', 'Wrong Partner'.\n\nThe final image must look like an actual photograph taken at a real sporting event - authentic lighting, natural skin tones, realistic fabric and textures, and genuine human expressions. The humor comes from the real, relatable awkwardness of the situation, not cartoon exaggeration."
   },
   {
@@ -1290,6 +1325,11 @@ const DEFAULT_PRESETS = [
     name: "KLINGON TRANSFORMATION",
     category: ["SCI FI", "STAR TREK", "ALIEN", "TRANSFORMATION"],
     message: "Take a picture and transform the subject into a realistic Klingon warrior. Preserve recognizable facial structure, expressions, body proportions, and personality while adapting them to authentic Klingon anatomy including pronounced ridged forehead, heavier brow, deeper-set eyes, rougher skin texture, and powerful build. Translate the subject’s clothing into Klingon armor or garments appropriate to their status while retaining the original clothing’s silhouette and identity cues. Cinematic sci-fi lighting, gritty realism, and cultural authenticity. The subject must appear fully Klingon, not human with prosthetics, and naturally integrated into their environment."
+  },
+  {
+    name: "KUBRICK FILM",
+    category: ["MOVIES", "CINEMATIC", "DIRECTOR", "DRAMATIC"],
+    message: "Take a picture and place the subject into an iconic Stanley Kubrick film scene. Use Kubrick's distinctive visual style: perfectly symmetrical one-point perspective composition, stark geometric framing, dramatic lighting with strong contrast, and meticulous attention to detail. The subject should be centered in the frame with symmetrical elements on both sides. Use Kubrick's characteristic wide-angle lens look, slow deliberate camera movement aesthetic, and painterly color palette. Place them in settings reminiscent of his films - sterile futuristic spaces, grand hotel corridors, war rooms, or baroque mansions. Include atmospheric tension, psychological intensity, and that precise, controlled Kubrick aesthetic. Make it look like a frame from an actual Kubrick film with his signature compositional perfection and haunting atmosphere."
   },
   {
     name: "KULOMETRIC BANSASA",
@@ -1427,6 +1467,11 @@ const DEFAULT_PRESETS = [
     message: "Take a picture and transform the scene into an outrageously funny visual scenario centered on the subject. Use exaggerated scale, unexpected objects, absurd logic, and chaotic interactions to create instant visual comedy. Preserve the subject’s recognizable face and identity while placing them in a situation that is wildly implausible yet visually coherent. The humor should be obvious at first glance, relying on visual absurdity rather than text, jokes, or captions. Push the scene to the edge of chaos while maintaining clear lighting, sharp detail, and readable composition."
   },
   {
+    name: "MEDIEVAL KNIGHT",
+    category: ["HUMOR", "HISTORICAL", "FANTASY", "MEDIEVAL"],
+    message: "Take a picture and transform the subject into a medieval knight in full plate armor. Place them in a medieval castle courtyard or battlefield setting. Include authentic armor details like chainmail, helmet with visor, sword, shield with heraldic design, and royal banner. Preserve the subject's facial features visible through an open visor. Use dramatic medieval lighting, castle stone architecture, and period-appropriate atmosphere. Make it photorealistic as if the subject actually traveled back to medieval times. Include details like weathered metal, leather straps, and battle-worn equipment."
+  },
+  {
     name: "MEME",
     category: ["HUMOR", "INTERNET", "TEXT", "MASTER PROMPT"],
     message: "Take a picture and make it into a MEME, adding ironic humor and flavor text inspired by the content of the image. Clean composition with readable typography.  The result should be a full view of the meme."
@@ -1440,6 +1485,11 @@ const DEFAULT_PRESETS = [
     name: "MESOPOTAMIAN RELIEF",
     category: ["ART", "ANCIENT", "MIDDLE EASTERN"],
     message: "Take a picture and Transform the image into a Mesopotamian bas-relief style. Flatten forms, use profile poses, and emphasize symbolic gestures. Apply sandstone textures and ancient ornamental borders."
+  },
+  {
+    name: "METAL SCULPTURE",
+    category: ["ART", "METAL", "MODERN", "SCULPTURE"],
+    message: "Take a picture and transform the subject into a modern abstract metal sculpture. The subject should be constructed from welded metal pieces - steel plates, curved sheets, angular fragments, metal rods, and geometric forms all assembled together. Use brushed steel, rusted iron, oxidized copper, and weathered bronze surfaces with visible welds, seams, and rivets.\n\nThe sculpture should have an industrial, contemporary art feel with bold geometric shapes, flowing curves, and dynamic angles that suggest the subject's form and pose without literal representation. Include negative space and cutouts within the metal structure. Show the sculptural mass as solid, heavy metalwork with thickness and weight.\n\nSurfaces should display authentic metal textures: brushed finish with directional grain, rust patina with orange and brown oxidation, verdigris green copper aging, polished reflective sections, and rough hammered areas. Include realistic weathering, scratches, and industrial fabrication marks.\n\nPlace the sculpture in an appropriate setting: museum gallery with spotlights, outdoor plaza, sculpture garden, or contemporary art space. Use dramatic lighting that creates strong highlights on polished metal surfaces and deep shadows in recesses. Show metal's reflective properties catching light.\n\nThe sculpture should be clearly recognizable as the subject through its overall form, proportions, and gesture, but rendered as an abstract modernist metalwork piece - an artistic interpretation rather than realistic statue. Make it look like a photograph of an actual large-scale metal sculpture by a contemporary artist, with impressive craftsmanship and artistic vision."
   },
   {
     name: "MEXICAN MURALISM",
@@ -1507,6 +1557,11 @@ const DEFAULT_PRESETS = [
     message: "Take a picture in the style of a glass Mosaic. Small tiles, reflective surfaces."
   },
   {
+    name: "MOTIVATIONAL CAT POSTER",
+    category: ["HUMOR", "PARODY", "OFFICE"],
+    message: "Take a picture and transform the subject into a cat hanging from a tree branch for a motivational poster parody. Replace the subject's body with a cute kitten's body while preserving their face, show them gripping a branch with tiny paws, and include the classic 'HANG IN THERE!' text at the bottom. Use that distinctive 1980s motivational poster aesthetic with gradient background, inspirational font, and slightly faded photo quality as if it's been hanging in an office for decades."
+  },
+  {
     name: "MOUNT RUSHMORE",
     category: ["LANDMARK", "SCULPTURE", "AMERICAN"],
     message: "Take a picture and make the subject face a carved head placed on Mount Rushmore. Make it photorealistic."
@@ -1528,7 +1583,7 @@ const DEFAULT_PRESETS = [
   },
   {
     name: "MUG SHOT",
-    category: ["HUMOR", "MASTER PROMPT", "POLICE", "PHOTO"],
+    category: ["HUMOR", "MASTER PROMPT", "POLICE"],
     message: "Take a picture of the subject and transform it into a realistic police booking photo (mugshot).\n\nBackground and framing: Position the subject against a height measurement wall with horizontal lines and measurement markers clearly visible behind them. Use a neutral institutional background with the measurement scale. Camera angle should be straight-on with subject facing forward in standard mugshot pose.\n\nPlacement and details: The subject should be holding a placard or booking board displaying booking number, date, and police department name. Generate humorous or descriptive arrest charge text on the placard inspired by the subject's appearance, clothing, expression, or characteristics (examples: 'Public Nudity at Costco,' 'Theft of Garden Gnome,' 'Excessive Karaoke'), incorporating any externally provided details from master prompt naturally.\n\nSubject appearance: Show signs of a rough day - disheveled hair, tired or defiant expression, smudged makeup (if applicable), wrinkled or slightly torn clothing, possibly minor injuries like a black eye or scrapes. Expression can be deadpan, angry, smirking, crying, or showing attitude. Include details suggesting what they were doing when arrested through their outfit or appearance.\n\nLighting and quality: Use harsh, unflattering institutional fluorescent lighting typical of police stations - flat, bright, casting slight shadows under eyes and emphasizing imperfections. Colors should be slightly washed out or have that institutional quality. Include subtle imperfections typical of ID photography: slightly uneven lighting, mild shadows, imperfect framing, or slight camera artifacts to enhance authenticity.\n\nThe final image should look exactly like an actual police booking photograph - institutional, unflattering, official documentation style with that specific harsh government facility aesthetic. Preserve the subject's recognizable facial features, posture, and expression while maintaining a realistic, photorealistic composition that captures the authentic look and feel of a real mugshot."
   },
   {
@@ -1553,7 +1608,7 @@ const DEFAULT_PRESETS = [
   },
   {
     name: "MUSICAL MOMENTS",
-    category: ["HUMOR", "MOVIE", "SCENE", "MUSICAL"],
+    category: ["HUMOR", "MOVIES", "SCENE", "MUSICAL"],
     message: "Take a picture of the subject and place them into a scene from a classic movie musical, such as *Grease*, *Footloose*, *Singin’ in the Rain*, or *The Sound of Music*.\n\nThe subject should be actively participating in the musical moment — dancing, singing, or dramatically posing — while fully integrated into the scene with background dancers, instruments, or choreography.\n\nCostumes, props, lighting, and setting should match the original musical style and era.\n\nOptional flavor text from the master prompt can influence the song, scene, or humorous twist (e.g., the subject missing a step, dramatically belting a line, or accidentally knocking over props).\n\nThe final image should look like a real movie still from the musical, cinematic, and humorous with the subject as the star."
   },
   {
@@ -1620,6 +1675,11 @@ const DEFAULT_PRESETS = [
     name: "OBJECT MOSAIC",
     category: ["ART", "MOSAIC", "TEXTURE"],
     message: "Take a picture and recreate the subject so that their entire face and body are constructed exclusively from hundreds or thousands of small physical objects such as coins, pennies, jellybeans, M&Ms, bottlecaps, beads, stones, buttons, or similar items. There must be NO visible skin, fabric, or underlying human form anywhere in the image. Every facial feature, contour, shadow, and body shape must be defined only by the placement, color, density, and orientation of the objects. From a distance, the subject must be clearly recognizable; up close, the image must resolve entirely into individual objects. Use realistic lighting, depth, and perspective so the objects cast shadows and feel physically present. Do not overlay or decorate a normal body — the objects themselves ARE the subject."
+  },
+  {
+    name: "OBJECT WORLD",
+    category: ["TRANSFORMATION", "SURREAL", "ABSTRACT", "ANTHROPOMORPHIC"],
+    message: "Take a picture and transform the subject into a sentient anthropomorphic version of an inanimate object, while converting the entire world into that same type of object. First, determine what object best represents the subject based on their appearance, clothing, or context. The subject becomes that object while retaining their characteristics - their clothing colors/patterns become the object's colors and surface design, any text or logos on their outfit appear as labels or markings on the object, their facial expression translates to the object's 'face' (using natural features of that object type), their body proportions determine the object's shape and size. The entire environment must also be constructed from the same type of object - if subject becomes a car, the world is all cars; if a book, everything is books; if a bottle, all bottles; if furniture, all furniture pieces. Buildings, trees, ground, sky, other people - everything transforms into creative arrangements of that one object type. The objects should have personality and life while remaining recognizable as that object. Use photorealistic rendering with authentic material textures - metal, plastic, wood, glass, fabric depending on object type. Make it look like a parallel universe where this one object type has evolved into an entire functional ecosystem. Preserve the subject's identity through their object-form's unique colors, patterns, markings, and expressive features."
   },
   {
     name: "ONE SECOND BEFORE DISASTER",
@@ -1689,11 +1749,11 @@ const DEFAULT_PRESETS = [
   {
     name: "PENNIES",
     category: ["TRANSFORMATION", "METAL", "MONEY", "COPPER", "SCULPTURE"],
-    message: "Take a picture and transform the subject and entire environment into a composition made entirely of pennies.\n\nThe subject's body, clothing, face, and all features should be constructed from pennies arranged to create three-dimensional form and detail. Use pennies at various angles to catch light differently - some showing Lincoln's profile, others showing the memorial or shield back, creating texture and depth through the varied orientations and tarnish levels of the coins.\n\nInclude pennies of different conditions and ages: shiny new copper pennies, aged darker brown pennies, tarnished green pennies, worn smooth pennies. Use this variation to create shadows, highlights, and dimensional depth. Arrange pennies in overlapping patterns like scales or tiles to build up the subject's form.\n\nThe entire environment should also be made of pennies - floor, walls, furniture, background objects, everything constructed from stacked, arranged, or layered pennies. Create architectural elements and environmental details through penny arrangements.\n\nLighting should emphasize the metallic copper surfaces - warm reddish-brown tones, reflective highlights catching on raised coin edges, shadows between overlapping pennies creating depth. The composition should have realistic metallic sheen and texture.\n\nThe subject should remain recognizable through the arrangement and density of the pennies - use tighter penny arrangements for detailed areas like the face, looser arrangements for larger surfaces. The three-dimensional form should be clear despite being made entirely of circular coins.\n\nThe final image should look like an actual photograph of an elaborate sculpture or installation artwork where everything visible - subject, environment, objects - is constructed from real pennies, creating a unified copper-toned metallic world with impressive detail and dimensional quality."
+    message: "Take a picture and transform the subject into a sculpture constructed entirely from real pennies. The subject must be MADE OF pennies, not covered in them - every part of their body, face, clothing, and hair should be built from individual copper pennies arranged like tiles or scales to form the three-dimensional shape.\n\nUse pennies at various angles and orientations: some showing Lincoln's head, others showing the memorial or shield back, creating texture and shading through the different faces of the coins. Include pennies in different conditions - bright shiny copper, aged brown, tarnished with green patina, worn smooth - to create dimensional depth, highlights, and shadows.\n\nThe pennies should be arranged in overlapping patterns similar to fish scales or roof tiles, building up the volumetric form. Tighter, more densely packed penny arrangements for fine details like facial features; slightly looser arrangements for larger body areas. The circular shape of individual pennies should be visible throughout.\n\nThe background and environment should also be constructed from pennies - walls, floor, furniture, all made from stacked and arranged pennies creating a complete penny-constructed world.\n\nPhotorealistic lighting with warm copper/reddish-brown metallic tones, highlights catching on raised coin edges, and shadows between overlapping layers. The final image should look like a photograph of an actual physical artwork where literally everything is built from real pennies - a penny mosaic sculpture in three dimensions."
   },
   {
     name: "PHOTO BOOTH STRIP",
-    category: ["HUMOR", "PHOTO", "CARTOON", "PORTRAIT"],
+    category: ["HUMOR", "PORTRAIT"],
     message: "Take a picture of the subject(s) and turn it into a classic photo booth strip with 3-4 frames vertically aligned.\n\nEach frame should show a different funny or exaggerated pose or expression. Include props like hats, glasses, silly signs, or hand gestures to increase humor.\n\nBackground should resemble a traditional photo booth curtain, with soft lighting and simple textures. Include slight visual imperfections like film grain, light streaks, or small scratches to emulate a real photo strip.\n\nThe final result should feel like a tangible photo booth keepsake, with high readability, playful exaggeration, and a touch of nostalgia."
   },
   {
@@ -1942,8 +2002,18 @@ const DEFAULT_PRESETS = [
     message: "Take a picture and transform it into an official amusement park ride photo captured at the peak moment of excitement. Place the subject seated in a ride vehicle, mid-action, with wind-blown hair, dramatic expressions, and dynamic motion blur. Add an on-ride camera angle and a branded photo-frame overlay typical of theme park ride photos. Leave room for externally provided language to specify the amusement park name and ride name, and seamlessly incorporate those details into signage, ride branding, or the photo border. The final image should feel energetic, candid, and like a souvenir photo taken at the ride’s most thrilling moment."
   },
   {
+    name: "RIDICULOUSNESS",
+    category: ["HUMOR", "FAIL", "STUNT", "DISASTER"],
+    message: "Take a picture and transform it into a freeze-frame moment from a ridiculous stunt gone wrong, captured just before disaster strikes. Show the subject mid-fail during an absurd stunt attempt - jumping off something they shouldn't, attempting parkour badly, riding something not meant to be ridden, or performing an ill-advised trick. Freeze the exact moment where you can see the disaster about to happen: losing balance, mid-fall, eyes wide with realization, face showing instant regret. Include environmental chaos - objects flying, water splashing, things breaking, friends in background reacting with shock or laughter. Add that characteristic shaky smartphone camera quality, slightly blurred from motion, awkward angle as if filmed by a friend. Include visual indicators of the impending pain - skateboard flying away, pool approaching fast, fence about to be hit, gravity taking over. Capture that specific energy of amateur stunt videos where you can see the exact moment they realized 'this was a terrible idea.' Make it look like a paused frame from a viral fail video compilation with comedic timing showing the split-second before impact."
+  },
+  {
+    name: "RIDLEY SCOTT EPIC",
+    category: ["MOVIES", "DIRECTOR", "HISTORICAL", "EPIC"],
+    message: "Take a picture and place the subject into a Ridley Scott historical epic. Use his distinctive visual style: massive scale battle scenes, golden hour lighting with dust particles in sunbeams, smoke and atmosphere, grand architectural vistas, and gritty realistic period detail. Show the subject as a warrior, gladiator, or historical figure in an epic moment - addressing troops, mid-battle, or standing before monumental ancient architecture. Include Scott's signature elements: sandstorms, dramatic skies, thousands of extras suggested in composition, authentic period armor and weapons, Mediterranean or ancient settings. Use his characteristic cinematography - sweeping crane shots compressed into dramatic angles, sun backlight creating silhouettes and lens flares, rich earthy color palettes. Capture that Ridley Scott sense of epic scale and historical authenticity. Make it look like a frame from Gladiator, Kingdom of Heaven, or The Last Duel."
+  },
+  {
     name: "RIPLEY'S BELIEVE-IT-OR-NOT",
-    category: ["HUMOR", "VINTAGE", "HISTORY", "CARTOON"],
+    category: ["HUMOR", "VINTAGE", "HISTORICAL", "CARTOON"],
     message: "Take a picture of the subject and transform it into a vintage newspaper oddities feature in the style of early 1900s 'Believe It or Not' cartoons.\n\nThe subject should be presented as part of a famous real-life historical oddity. Choose or invent a presentation based on one of these real, well-known curiosities:\n• A man who could eat metal, bicycles, or glass\n• A person with extremely long hair or beard\n• An extremely tall or extremely short person\n• A human with unusual physical abilities or endurance\n• A bizarre but real historical record\n\nPlace the subject into the scene as the star of this oddity — performing, displaying, or being photographed as the incredible attraction.\n\nDesign the image like a classic newspaper cartoon with ink lines, bold headlines, arrows, labels, and dramatic captions explaining the unbelievable fact.\n\nUse external master prompt text, if provided, to influence name of subject, which oddity is shown or to add humorous headline flavor.\n\nThe final image should look like a real historical 'believe it or not' newspaper feature: exaggerated, educational, and absurd, but grounded in a real type of recorded human curiosity."
   },
   {
@@ -1968,7 +2038,7 @@ const DEFAULT_PRESETS = [
   },
   {
     name: "ROB REINER FILM",
-    category: ["HUMOR", "MOVIE", "SCENE", "CULT CLASSIC"],
+    category: ["HUMOR", "MOVIES", "SCENE", "CULT CLASSIC"],
     message: "Take a picture of the subject and place them into a famous scene from a Rob Reiner film, such as *The Princess Bride*, *When Harry Met Sally*, *Stand by Me*, or *Misery*.\n\nThe subject should be integrated naturally into the scene, interacting with the environment and other characters in a way that makes them the central focus.\n\nLighting, perspective, and costume should match the film style and era, making it look like a real frame from the movie.\n\nOptional flavor text from the master prompt can influence which film or scene to use, or what absurd twist to add (e.g., subject delivers the iconic line, performs the fencing duel, or sits in the famous diner scene with a ridiculous expression).\n\nThe final image should be humorous, cinematic, and instantly recognizable as a reimagined Rob Reiner movie scene starring the subject."
   },
   {
@@ -1992,8 +2062,13 @@ const DEFAULT_PRESETS = [
     message: "Take a picture and transform the image into Romanesque-style painting. Simplify forms, use bold outlines, flat areas of color, and stylized faces. Include architectural or decorative elements inspired by early medieval European art. Keep the subject recognizable while appearing as if part of a historical religious or historical scene."
   },
   {
+    name: "RON HOWARD FILM",
+    category: ["MOVIES", "DIRECTOR", "DRAMA", "INSPIRATIONAL"],
+    message: "Take a picture and place the subject into a Ron Howard film scene. Use Howard's distinctive visual style: warm naturalistic lighting, golden hour cinematography, earnest emotional moments, sweeping crane shots suggesting epic scale, and polished mainstream Hollywood aesthetics. Show the subject in an uplifting dramatic moment - overcoming adversity, making a crucial decision, experiencing triumph, or in a heartfelt human connection. Include Ron Howard signature elements: based-on-true-story authenticity, period-accurate details (1960s space race, 1800s whaling ships, Depression-era settings), blue-collar American heroes, family dynamics, or historical events. Use his characteristic cinematography - warm amber tones, soft diffused lighting for emotional scenes, dramatic backlighting, clean compositions that feel accessible yet cinematic. Capture his style of inspirational storytelling - moments that feel genuine, hopeful, and emotionally resonant without cynicism. Include visual motifs of determination, teamwork, or human perseverance. Make it look like a frame from Apollo 13, A Beautiful Mind, Cinderella Man, or Rush with that polished Ron Howard blend of emotional authenticity and crowd-pleasing cinema."
+  },
+  {
      name: "ROYAL PORTRAIT",
-     category: ["HUMOR", "HISTORY", "PORTRAIT"],
+     category: ["HUMOR", "HISTORICAL", "PORTRAIT"],
      message: "Take a picture of the subject and transform them into a royal figure in a classic painted portrait.\n\nDress the subject in elegant royal clothing such as crowns, robes, medals, or gowns.\n\nPlace them in a grand palace or painted studio background.\n\nThe style should resemble a formal oil painting with dramatic lighting and rich colors.\n\nThe subject should look powerful, noble, and slightly over-the-top, like a legendary monarch."
   },
   {
@@ -2003,7 +2078,7 @@ const DEFAULT_PRESETS = [
   },
   {
     name: "RUBBER DUCKIE",
-    category: ["HUMOR", "TOY", "TRANSFORM"],
+    category: ["HUMOR", "TOY", "TRANSFORMATION"],
     message: "Take a picture and transform the subject into a yellow rubber duck bath toy. Bright yellow rubber material with orange beak, glossy plastic surface with light reflections, squeezable toy texture, black dot eyes. The subject's recognizable features should be incorporated into the duck's shape and form. Bath toy appearance, floating in water with subtle ripples, playful and whimsical."
   },
   {
@@ -2108,7 +2183,7 @@ const DEFAULT_PRESETS = [
   },
   {
     name: "SMURFED!",
-    category: ["CARTOON", "TRANSFORM", "HUMOR"],
+    category: ["CARTOON", "TRANSFORMATION", "HUMOR"],
     message: "Take a picture and transform the subject into a Smurf character. Bright blue skin covering entire body, small stature (three apples high), distinctive white Phrygian cap, white pants, no shoes. Large expressive eyes, button nose, cheerful smile. Subject's recognizable facial features should be adapted to Smurf proportions. Place in magical Smurf Village setting with mushroom houses, forest environment, whimsical fairy-tale atmosphere. Classic Peyo cartoon style with smooth shading and vibrant colors. Friendly, cheerful, and enchanting storybook illustration quality."
   },
   {
@@ -2153,8 +2228,13 @@ const DEFAULT_PRESETS = [
   },
   {
     name: "SPIELBERG FILM",
-    category: ["HUMOR", "MOVIE", "SCENE", "ADVENTURE"],
+    category: ["HUMOR", "MOVIES", "SCENE", "ADVENTURE"],
     message: "Take a picture of the subject and place them into a famous Spielberg movie scene, such as *E.T.*, *Jaws*, *Saving Private Ryan*, *Schindler's List*, *The Goonies*, *Jurassic Park*, or *Indiana Jones*.\n\nThe subject should appear as the central figure, interacting with the iconic environment or objects — holding the glowing finger in E.T., facing a dinosaur, or pulling a dramatic stunt in Indiana Jones style.\n\nLighting, perspective, and props should match the original film, making it cinematic and realistic.\n\nOptional master prompt text can influence which film or scene is used, or add a humorous twist (e.g., subject holding the alien wrong, tripping over a dinosaur, or wearing a ridiculous explorer hat).\n\nThe final image should feel like a real movie still starring the subject, instantly recognizable as Spielberg-style adventure, with humor or absurdity added."
+  },
+  {
+    name: "SPORTS TROPHY",
+    category: ["HUMOR", "AWARD", "METALLIC"],
+    message: "Take a picture and transform the subject into an actual sports trophy. The subject's upper body and head should be rendered in shiny gold, silver, or bronze metal posed triumphantly on a wooden or marble base. Preserve their facial features and expression in metallic form as if they're a commemorative statue-trophy. Include an engraved plaque on the base with humorous award text. Show realistic metal reflections, trophy cup handles if appropriate, and that distinctive trophy sheen. Place on a shelf or display case with dramatic lighting."
   },
   {
     name: "SPOT THE DIFFERENCE",
@@ -2222,13 +2302,23 @@ const DEFAULT_PRESETS = [
     message: "Take a picture and transform the subject into a Stretch Armstrong–style action figure made of thick, rubbery material. Preserve the subject’s recognizable facial features while adapting them into a toy-like appearance with smooth skin, simplified details, and a slightly exaggerated jaw and expression.\n\nDepict the subject’s arms, legs, or torso being stretched far beyond normal proportions, as if pulled by unseen hands or tension just outside the frame. The stretched areas should look elastic and dense, with believable thickness, subtle surface creases, and realistic stretch deformation rather than thin distortion.\n\nEnsure the subject still resembles a physical toy: solid core, rounded forms, and consistent material texture. Use lighting and shadows that emphasize volume and rubbery sheen. Do not show injuries or damage. The final image should feel playful, nostalgic, and clearly readable on small screens."
   },
   {
+    name: "STUCK IN WASHING MACHINE",
+    category: ["HUMOR", "PREDICAMENT", "SITCOM"],
+    message: "Take a picture and transform the scene into a classic sitcom predicament: the subject hilariously stuck halfway in a front-loading washing machine. Show legs kicking outside the machine, upper body inside surrounded by wet laundry, in a laundry room setting. Include a second person looking bewildered or trying to help pull them out. Exaggerated physical comedy pose, bright sitcom lighting, and that specific energy of 'how did we get into this situation?' Make it look like a freeze-frame from a 90s family sitcom with the subject in an absurd but family-friendly stuck position."
+  },
+  {
     name: "STUDENT ID",
     category: ["HUMOR", "ID", "MASTER PROMPT", "SCHOOL"],
     message: "Take a picture and create a realistic but clearly fictional student identification card featuring the subject’s photo. Style the photo to resemble a typical campus ID picture, with slightly awkward framing, flat lighting, mild motion blur or softness, and an unpolished snapshot quality rather than a flattering portrait. Design the ID to resemble the general style of a school or university commonly found near the subject’s location, using a fictional institution name inspired by regional themes. Include placeholder text, sample ID numbers, and decorative elements only. Preserve the subject’s recognizable facial features and neutral or mildly awkward expression. The final image should appear as a novelty or prop-style student ID, clearly non-functional and created for artistic purposes."
   },
   {
+    name: "STUNT PERFORMER",
+    category: ["ACTION", "MOVIES", "DRAMATIC", "ATHLETIC"],
+    message: "Take a picture and transform the subject into a professional stunt performer executing an incredible action stunt. Show them mid-stunt in a dramatic freeze-frame moment - leaping between buildings, diving through explosions, hanging from helicopters, performing precision motorcycle jumps, or executing complex martial arts moves in mid-air. The subject should look intense, focused, and athletic with perfect form despite the danger. Include cinematic action movie elements: explosions with fire and debris in background, shattered glass particles frozen in air, dramatic backlighting, motion blur on fast-moving elements while subject stays sharp, sparks flying, smoke and dust clouds. Use dynamic camera angles - low angle hero shots, dramatic perspectives that emphasize height or danger. Show safety wires digitally removed for that authentic stunt aesthetic. Include protective gear where appropriate - knee pads under ripped jeans, practical costume that allows movement, maybe visible bruises or dirt showing this is real physical work. Capture that Hollywood action movie magic moment with perfect timing, dramatic lighting with rim lights and practical fire sources, and that sense of controlled chaos. Make it look like a frame from a big-budget action film where the subject is the fearless stunt double performing an impossible feat."
+  },
+  {
     name: "SUBWAY AD",
-    category: ["HUMOR", "ADVERTISEMENT", "SCENE"],
+    category: ["HUMOR", "ADVERTISING", "SCENE"],
     message: "Take a picture of the subject and place them inside a subway car covered in a large, awkward public advertisement featuring them.\n\nThe ad should imply the subject has a mildly embarrassing but non-explicit problem such as bad breath, flatulence, excessive sweating, or bladder leaks.\n\nChoose one of these situations at random and build the ad around it:\n• Bad breath → a real mint or mouthwash product\n• Flatulence → a real digestive aid or deodorizing spray\n• Heavy sweating → a real strong deodorant\n• Bladder leaks → real protective undergarments\n\nThe ad should show the subject’s face with a big headline and product branding, making it look like they are the unfortunate model for the problem.\n\nPeople around the subject in the subway should be reacting awkwardly, staring, or trying not to laugh.\n\nThe final image should look like a real transit advertisement gone terribly wrong, with bold text, clean design, and very public embarrassment."
   },
   {
@@ -2255,6 +2345,11 @@ const DEFAULT_PRESETS = [
     name: "TAPESTRY",
     category: ["ART", "TEXTILE", "MEDIEVAL"],
     message: "Take a picture and convert the image into a woven tapestry. Textile texture, medieval storytelling style."
+  },
+  {
+    name: "TARANTINO FILM",
+    category: ["MOVIES", "DIRECTOR", "ACTION", "DRAMATIC"],
+    message: "Take a picture and place the subject into a Quentin Tarantino film scene. Use Tarantino's signature visual style: bold saturated colors, Dutch angles, dramatic low-angle hero shots, and stylized violence aesthetic. Show the subject in a tense standoff, cool walking shot, or intense dialogue moment. Include Tarantino's trademark elements: retro 1970s aesthetics, vintage cars, diners or seedy locations, bold typography for potential chapter titles. Use high contrast lighting, sunlit exteriors with lens flares, or moody interior amber lighting. Capture his style of making ordinary people look impossibly cool - sharp suits, leather jackets, sunglasses, confident poses. Add that Tarantino energy of stylized realism where everything is heightened, dangerous, and effortlessly badass. Make it look like a freeze-frame from Pulp Fiction, Kill Bill, or Reservoir Dogs."
   },
   {
     name: "TAROT CARD",
@@ -2325,6 +2420,11 @@ const DEFAULT_PRESETS = [
     name: "TRADING CARD",
     category: ["SPORTS", "MASTER PROMPT", "CARD", "COLLECTIBLE"],
     message: "Take a picture and transform the subject into a fully visible collectible sports trading card with a vintage 1980s/1990s style. Ensure the entire card—including all borders, portrait, background, stats, and flavor text—is fully visible and centered in the frame. Randomly assign a sport (e.g., basketball, soccer, baseball, football, tennis) for each render.\n\nInclude a clear portrait of the subject, a stylized action background, and a card border with realistic texture, embossing, and glossy surfaces. Apply worn effects such as yellowed edges, scratches, and slight discoloration for a vintage look.\n\nAdd the subject’s name, a mock team name or mascot, absurd over-the-top stats inspired by the subject’s appearance, pose, or personality (e.g., “99% chance to eat pizza mid-game,” “Can balance a coffee cup while dribbling”), and humorous flavor text describing the subject. Allow external master prompt text to be appended to the flavor text.\n\nEnsure everything is legible on a small screen, the subject remains instantly recognizable, and the final image clearly shows the full card without cropping."
+  },
+  {
+    name: "TRON",
+    category: ["MOVIES", "SCI FI", "NEON", "CYBERPUNK"],
+    message: "Take a picture and place the subject inside the digital world of Tron. Show them either riding a light cycle leaving glowing trails of neon light behind them as they race across the game grid, or participating in the disc battle game throwing and catching glowing identity discs. The subject should wear the iconic Tron suit with glowing circuit patterns - black suit with bright neon blue, orange, or white illuminated lines tracing across the body and helmet. The environment should be the dark geometric game grid with glowing floor lines, dramatic perspective, and that distinctive early CGI aesthetic. Use heavy contrast between deep blacks and vibrant neon colors. Include motion blur on light trails, reflective surfaces, and the surreal digital atmosphere of the Grid. Make it look like the subject is actually inside the Tron movie universe in an intense action moment."
   },
   {
     name: "TV DRAMA",
@@ -2483,7 +2583,7 @@ const DEFAULT_PRESETS = [
   },
   {
   name: "WHAT IF?",
-  category: ["HUMOR", "HISTORY", "ALTERNATE", "SCENE"],
+  category: ["HUMOR", "HISTORICAL", "ALTERNATE", "SCENE"],
   message: "Take a picture of the subject and place them into a famous historical moment, as if they personally changed the course of history.\n\nThe subject should be the central figure in the scene, interacting directly with a major historical event such as signing an important document, making a dramatic discovery, stopping a disaster, leading a crowd, or inventing something world-changing.\n\nThe setting, clothing, and environment should match the historical era being shown, making the scene feel authentic and cinematic.\n\nUse external master prompt text, if provided, to suggest the historical moment or twist.\n\nThe tone should be playful and humorous, presenting the subject as an unexpected hero or key figure who altered history in a surprising way."
   },
   {
@@ -2518,13 +2618,18 @@ const DEFAULT_PRESETS = [
   },
   {
     name: "YEARBOOK",
-    category: ["SCHOOL", "PHOTO", "AWKWARD"],
+    category: ["SCHOOL", "HUMOR", "AWKWARD"],
     message: "Take a picture and make the subject appear in an awkward, unflattering yearbook photo. Retro school photo style."
   },
   {
     name: "YOU SMELL",
     category: ["HUMOR", "SOCIAL", "REACTION"],
     message: "Take a picture of the subject and place them in a public setting such as a bus, office, party, or line.\n\nThe subject should have visible dark sweat stains under their arms.\n\nPeople around the subject should be reacting to the smell using exaggerated gestures such as holding their nose, covering their mouth, leaning away, or making disgusted faces.\n\nThe subject should look unaware or embarrassed.\n\nThe scene should look realistic but humorous, with the reactions clearly selling the joke."
+  },
+  {
+    name: "ZOOM CALL DISASTER",
+    category: ["HUMOR", "MODERN", "RELATABLE", "EMBARRASSING"],
+    message: "Take a picture and transform it into a catastrophic Zoom call moment frozen in time. Show the subject in a split-screen grid layout with multiple video call windows. The main window shows the subject caught in an embarrassing situation - maybe in pajama bottoms while standing up, cat walking across keyboard, kid bursting in, unmuted during private moment, or inappropriate background visible. Include other participant windows showing shocked, amused, or secondhand-embarrassment faces reacting. Add authentic Zoom interface elements: mute/video buttons, participant names, 'You are muted' notification, grid view layout, poor lighting, pixelated video quality, frozen buffering frames. Capture that specific modern horror of professional facade collapsing during video conference. Make it look like an actual screenshot of a Zoom disaster moment."
   },
   {
   name: "ZOO-TOPIA",
@@ -4759,6 +4864,16 @@ function editPresetInBuilder(index) {
       clearButton.style.display = 'none';
     }
   }, 100);
+}
+
+// Close all chip sections when clearing
+function closeAllChipSections() {
+  document.querySelectorAll('.chip-section-content').forEach(c => {
+    c.style.display = 'none';
+  });
+  document.querySelectorAll('.chip-section-header').forEach(h => {
+    h.classList.remove('expanded');
+  });
 }
 
 // Handle template selection
