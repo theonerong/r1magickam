@@ -582,8 +582,8 @@ const DEFAULT_PRESETS = [
   },
   {
     name: "CANDY",
-    category: ["FOOD", "SWEET", "TRANSFORMATION", "COLORFUL"],
-    message: "Take a picture and transform the ENTIRE image so that EVERYTHING is made entirely out of candy.\n\nThe subject, background, environment, and all objects must be constructed from candy materials such as gummies (gummy worms or gummy bears) and gumballs, hard candy (like Werther's Originals, Nerds, Jolly Ranchers), chocolate (like Tootsie rolls or Hershey's kisses), licorice (like Twizzlers or Red Vines), lollipops, chewy candy (like Jelly Belly jelly beans, Bayside Candy Fruit Slices, candy corn or gum drops), sugar crystals (like Pop Rocks), and wrappers.\n\nShow realistic candy properties:\n• Gloss and shine\n• Stickiness\n• Melting edges\n• Sugar texture\n\nDO NOT overlay candy textures on real surfaces.\nDO NOT leave any non-candy materials visible.\n\nThe final image must look like a real candy sculpture world."
+    category: ["FOOD", "SWEET", "TRANSFORMATION", "COLORFUL", "MATERIAL"],
+    message: "Take a picture and completely REBUILD the entire image so that EVERYTHING is made entirely out of candy.\n\nABSOLUTE REQUIREMENT: No photographic pixels, skin, fabric, metal, plastic, paper, or real-world materials may remain.\n\nThe subject, clothing, facial features, hair, background, environment, objects, shadows, and depth must ALL be constructed entirely from candy materials.\n\nDO NOT apply candy textures to a photo.\nDO NOT overlay candy on top of existing objects.\nDO NOT trace, mask, silhouette, or reuse the original photograph’s structure.\n\nThe image must look as if the original photograph never existed and was replaced by a fully constructed candy sculpture world.\n\nCandy materials may include (used structurally, not decoratively):\n• Gummies (gummy worms, gummy bears)\n• Gumballs\n• Hard candy (Werther’s Originals, Nerds, Jolly Ranchers)\n• Chocolate (Tootsie Rolls, Hershey’s Kisses)\n• Licorice (Twizzlers, Red Vines)\n• Lollipops\n• Chewy candy (Jelly Belly jelly beans, Bayside Candy fruit slices, candy corn, gumdrops)\n• Sugar crystals and popping candy (Pop Rocks)\n• Marshmallows, caramel, sprinkles, candy canes\n• Candy wrappers ONLY if physically folded, crinkled, and used structurally\n\nCandy construction rules:\n• Hard candy for rigid forms (bones, structure, buildings)\n• Gummies for flexible areas (skin, muscles, cheeks, folds)\n• Chocolate for smooth surfaces and large masses\n• Licorice and candy ropes for joints, outlines, and connections\n\nShading and depth MUST be created ONLY by:\n• Candy translucency\n• Color variation\n• Gloss and reflection\n• Candy density, layering, and stacking\n\nLighting must behave like real candy:\n• Glossy highlights\n• Sticky reflections\n• Subsurface glow in translucent candies\n• Slight melting, sagging, or stretching where appropriate\n\nFINAL VALIDATION RULE:\nIf the image looks like a normal photograph with candy placed on top, IT IS WRONG.\n\nThe final image must look like a real, physical candy sculpture or candy-built environment photographed in real lighting."
   },
   {
     name: "CARICATURE",
@@ -641,9 +641,9 @@ const DEFAULT_PRESETS = [
     message: "Take a picture and convert the image into a detailed charcoal sketch. Rich grayscale tones, textured shading, and expressive strokes on paper."
   },
   {
-  name: "CHARLOTTE'S WEB",
-  category: ["TRANSFORMATION", "LITERARY", "SPIDER", "TEXT", "MASTER PROMPT"],
-  message: "Take a picture and transform the subject AND THE ENTIRE IMAGE into a single, cohesive spider web composition.\n\nThe subject’s form, facial features, body, background, depth, shading, and environment must ALL be constructed entirely from spider web silk strands.\n\nDO NOT paste, overlay, trace, mask, or place the subject onto a web.\n\nThe subject MUST BE BUILT FROM WEB STRANDS THEMSELVES.\n\nUse tighter, denser silk weaving to form darker areas and facial detail. Use looser, wider-spaced strands for highlights and negative space.\n\nThe web must use authentic orb-web structure including:\n• Radial support strands\n• Spiral catching threads\n• Anchor points connected to the surrounding environment\n\nThe subject’s likeness must emerge naturally from the strategic placement and density of silk — as if a spider intentionally wove the subject into the web.\n\nWithin the web, spell out readable text woven directly into the silk strands.\n\nIf master prompt text is provided, weave that text prominently into the web.\n\nIf no master prompt text is provided, use classic Charlotte’s Web phrases such as:\n'SOME PIG', 'TERRIFIC', 'RADIANT', or 'HUMBLE'.\n\nThe lettering must appear structurally woven — not floating, not printed.\n\nShow realistic spider web qualities:\n• Delicate translucent silk\n• Dew drops clinging to strands\n• Subtle sagging and tension\n• Backlighting or morning light causing silk to glow\n\nThe entire composition must be spider silk. NO SOLID SURFACES PERMITTED: There must be no skin, fabric, walls, sky, objects, or photographic surfaces visible beneath the web. Every visible edge, contour, shadow, and form must be defined exclusively by spider silk strands and the empty space between them. If a strand were removed, nothing solid would exist behind it.\n\nThe subject IS the web — not on it.\n\nThe final image must look like a real, intricate spider web photograph that somehow forms the subject and message through masterful weaving."
+    name: "CHARLOTTE'S WEB",
+    category: ["TRANSFORMATION", "LITERARY", "SPIDER", "TEXT", "MASTER PROMPT"],
+    message: "Take a picture and completely RECONSTRUCT the entire image as a spider web.\n\nABSOLUTE REQUIREMENT: NO photographic pixels, textures, lighting gradients, or outlines from the original image may remain.\n\nThe subject, background, depth, shading, facial features, body, environment, AND negative space must be created ONLY from spider silk strands.\n\nDO NOT trace, mask, overlay, silhouette, or contour the original image.\n\nDO NOT allow skin, clothing, shadows, or photographic structure to remain visible.\n\nThe image must appear as if the ORIGINAL PHOTO NEVER EXISTED and only a spider web was created in its place.\n\nBUILD the subject FROM WEB STRANDS ONLY:\n• Dense, overlapping silk threads create darker areas and facial detail\n• Sparse, open weaving creates highlights and negative space\n• Depth is achieved ONLY by strand density and layering — NOT shading\n\nThe web must follow authentic orb-web physics:\n• Radial support strands\n• Spiral capture threads\n• Tension arcs and anchor points\n\nText MUST be physically woven into the web structure.\n\nIf master prompt text exists, weave it into the web.\nIf not, use: SOME PIG, TERRIFIC, RADIANT, or HUMBLE.\n\nText must be structural silk — never floating, printed, or glowing.\n\nLighting must be environmental ONLY:\n• Backlit morning light\n• Dew droplets clinging to strands\n• Natural sag, tension, and irregularity\n\nFINAL VALIDATION RULE:\nIf the image could be mistaken for a photograph with a web layered on top, IT IS WRONG.\n\nThe final image must look like a real spider web photograph where the subject and message exist ONLY because a spider physically wove them."
   },
   {
     name: "CHAVO DEL OCHO",
@@ -1470,6 +1470,11 @@ const DEFAULT_PRESETS = [
     name: "LANDMARKS",
     category: ["TRAVEL", "TOURIST", "LOCATION", "MASTER PROMPT"],
     message: "Take a picture and place the subject naturally in front of a randomly selected famous world landmark. Preserve the subject’s recognizable facial features, proportions, and identity while matching the lighting, perspective, color temperature, and camera style of the landmark environment. Ensure correct scale, shadows, reflections, and atmospheric depth so the subject appears physically present at the location rather than composited. Adapt clothing, posture, and environment subtly to fit the climate, culture, and setting without turning it into a costume. The landmark and surroundings should remain authentic and recognizable, with the subject fully integrated into the scene. Render with photorealistic detail and travel-photography realism."
+  },
+  {
+    name: "LATTE ART",
+    category: ["FOOD", "COFFEE", "TRANSFORMATION", "MATERIAL", "ART"],
+    message: "Take a picture and completely REBUILD the entire image so that EVERYTHING exists only as latte art on the surface of an espresso.\n\nABSOLUTE REQUIREMENT: No photographic pixels, skin, fabric, metal, plastic, paper, or real-world materials may remain.\n\nThe subject, facial features, body, clothing, background, environment, shadows, and depth must ALL be formed exclusively as latte art patterns within espresso crema and milk foam.\n\nDO NOT place latte art on top of a photo.\nDO NOT overlay foam or coffee textures.\nDO NOT trace, mask, silhouette, or reuse the original photograph’s structure.\n\nThe image must look as if the original photograph never existed and was replaced by a single top-down or angled view of a cup of espresso containing an intricate latte art composition.\n\nLatte art construction rules:\n• Espresso crema (dark brown) forms depth, shadows, and negative space\n• Steamed milk foam (white to off-white) forms highlights and primary shapes\n• Microfoam gradients create smooth transitions and contours\n• Contrast is achieved ONLY through coffee-to-milk ratios\n\nThe subject must be recognizable ONLY through:\n• Foam flow patterns\n• Crema contrast\n• Swirls, rosettas, hearts, tulips, free-pour curves, and etched detailing\n\nShading and depth MUST be created ONLY by:\n• Crema density\n• Milk diffusion\n• Foam thickness\n• Natural liquid flow and feathering\n\nLighting rules:\n• Soft café lighting\n• Subtle surface reflections on liquid\n• No hard edges, outlines, or artificial highlights\n\nEnvironment rules:\n• The background must be limited to the espresso surface\n• The cup rim may be visible but must remain secondary\n• No tables, hands, faces, or external objects\n\nFINAL VALIDATION RULE:\nIf the image looks like a normal photo with latte art added on top, IT IS WRONG.\n\nThe final image must look like a real cup of espresso photographed from above, where the subject exists only as expertly poured latte art."
   },
   {
     name: "LEGO",
@@ -2607,6 +2612,11 @@ const DEFAULT_PRESETS = [
     message: "Take a picture and transform the subject into a detailed tarot card illustration. Depict the subject as the central figure, preserving recognizable facial features and posture while adapting them into a stylized, symbolic art style inspired by traditional tarot imagery. Surround the subject with meaningful symbols, patterns, and motifs drawn from the subject’s appearance and surroundings. Include a decorative border and a card title at the top or bottom. Ensure the composition resembles a complete tarot card, with balanced layout, rich illustration detail, and a timeless, mystical aesthetic. The result should be a full view of the card with a relevant background behind the card."
   },
   {
+    name: "TEA FOAM / MATCHA ART",
+    category: ["BEVERAGE", "TEA", "FOAM ART", "TRANSFORMATION", "MASTER PROMPT"],
+    message: "Take a picture and transform the subject so that the subject exists ONLY as tea foam or matcha powder art on the surface of a real cup of tea.\n\nThe subject MUST be formed entirely from:\n• Milk foam\n• Tea foam\n• Matcha powder\n• Tea crema\n• Natural liquid contrast\n\nABSOLUTE REQUIREMENT:\nThe subject may NOT exist as a photograph, reflection, illustration, or object inside the cup.\n\nDO NOT paste, overlay, trace, silhouette, or embed the subject into the drink.\n\nThe subject MUST be CREATED by foam density, powder placement, liquid flow, and contrast — as if crafted by a skilled tea artist.\n\nAllowed beverages include:\n• Matcha latte\n• Green tea with foam\n• Milk tea\n• Chai latte\n• Hojicha latte\n• Foam-topped herbal tea\n\nConstruction rules:\n• Dark areas formed by dense matcha powder or tea crema\n• Light areas formed by milk foam or microfoam\n• Lines and edges formed by natural foam separation or etched tool strokes\n\nShading and detail MUST come ONLY from:\n• Foam thickness variation\n• Powder density\n• Liquid diffusion\n• Subtle etching marks made with a tea pick or toothpick\n\nThe foam must behave realistically:\n• Soft edges\n• Slight bubbles\n• Uneven texture\n• Natural liquid bleed\n• No hard graphic outlines\n\nThe cup, rim, and environment must look real and photographic.\n\nThe subject MUST appear only on the surface of the tea.\n\nFINAL VALIDATION RULE:\nIf the image looks like a normal photo placed inside a cup, IT IS WRONG.\n\nThe final image must look like a real cup of tea photographed in natural light, with the subject miraculously formed from tea foam or matcha art."
+  },
+  {
     name: "TEXT LOGO",
     category: ["DESIGN", "UTILITY", "LOGO", "TYPOGRAPHY"],
     message: "Take a picture and generate a minimal logo derived purely from text, such as initials, monograms, or typographic lettermarks. This mode affects header branding only.\n\nDo not introduce pictorial icons, illustrations, or decorative graphics. The logo should be subtle, professional, and typography-driven, integrating naturally into the existing header without altering layout hierarchy.\n\nIf other document or legal modes are active, ensure the logo remains understated and does not compete with formal structure."
@@ -2883,8 +2893,8 @@ const DEFAULT_PRESETS = [
   },
   {
     name: "WOOD CARVING",
-    category: ["ART", "SCULPTURE", "MATERIAL", "SURREAL"],
-    message: "Take a picture of the subject(s) and transform them into a carved wooden sculpture.\n\nOnly the subject(s) should be made of carved wood. Their body, features, and clothing must appear fully sculpted, with realistic wood grain, texture, depth, and carving details.\n\nThe environment, background, and objects around the subject must remain as in the original photo and should not be transformed.\n\nLighting, shadows, and perspective must match the original scene, interacting naturally with the wooden texture of the subject.\n\nThe final image must look like a real photograph of the subject as a carved wooden figure, fully integrated into the scene without altering any other elements."
+    category: ["ART", "SCULPTURE", "MATERIAL"],
+    message: "Take a picture of the subject and completely transform ONLY the subject into a carved wooden sculpture.\n\nABSOLUTE REQUIREMENT: The subject must be 100% wood — no skin, fabric, metal, plastic, or photographic texture may remain.\n\nThe subject must appear SOLID and VOLUMETRIC, as if carved from a single block of wood.\n\nWood characteristics MUST include:\n• Continuous wood grain wrapping around the entire body\n• Visible carving marks, chisel lines, and tool imperfections\n• Grain direction that follows anatomy (face, limbs, torso)\n• Natural wood seams, knots, and density variation\n\nDO NOT apply wood as a surface texture.\nDO NOT allow pores, fabric weave, or skin shading to remain.\n\nClothing, hair, facial features, and accessories must ALL be carved wood — not separate materials.\n\nLighting must behave like real wood:\n• Diffuse reflection\n• No skin subsurface scattering\n• Subtle grain-based shadow breakup\n\nThe environment MUST remain fully photographic and unchanged.\n\nFINAL VALIDATION RULE:\nIf the subject looks like a person with a wood filter applied, IT IS WRONG.\n\nThe final image must look like a real wooden statue placed into the photographed environment."
   },
   {
     name: "WOODCUT",
@@ -5115,6 +5125,14 @@ function clearPresetBuilderForm() {
   
   const clearButton = document.getElementById('preset-builder-clear');
   if (clearButton) clearButton.style.display = 'flex';
+  
+  // Close all chip sections when clearing
+  document.querySelectorAll('.chip-section-content').forEach(c => {
+    c.style.display = 'none';
+  });
+  document.querySelectorAll('.chip-section-header').forEach(h => {
+    h.classList.remove('expanded');
+  });
 }
 
 // Edit preset in builder
@@ -5580,20 +5598,20 @@ function loadMotionSettings() {
       continuousCheckbox.checked = motionContinuousEnabled;
     }
       
-      const cooldownSlider = document.getElementById('motion-cooldown-slider');
-      if (cooldownSlider) {
-        cooldownSlider.value = motionCooldown;
-      }
+    const cooldownSlider = document.getElementById('motion-cooldown-slider');
+    if (cooldownSlider) {
+      cooldownSlider.value = motionCooldown;
+    }
 
-      const startDelaySlider = document.getElementById('motion-start-delay-slider');
-      const startDelayValue = document.getElementById('motion-start-delay-value');
-      if (startDelaySlider && startDelayValue) {
-        const sliderValue = getStartDelaySliderValue();
-        startDelaySlider.value = sliderValue;
-        startDelayValue.textContent = MOTION_START_DELAYS[sliderValue].label;
-      }      
+    const startDelaySlider = document.getElementById('motion-start-delay-slider');
+    const startDelayValue = document.getElementById('motion-start-delay-value');
+    if (startDelaySlider && startDelayValue) {
+      const sliderValue = getStartDelaySliderValue();
+      startDelaySlider.value = sliderValue;
+      startDelayValue.textContent = MOTION_START_DELAYS[sliderValue].label;
+    }
 
-      updateMotionDisplay();
+    updateMotionDisplay();
   } catch (err) {
     console.error('Failed to load motion settings:', err);
   }
