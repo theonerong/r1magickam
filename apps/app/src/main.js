@@ -642,8 +642,8 @@ const DEFAULT_PRESETS = [
   },
   {
     name: "CHARLOTTE'S WEB",
-    category: ["TRANSFORMATION", "LITERARY", "SPIDER", "TEXT", "MASTER PROMPT"],
-    message: "Take a picture and completely RECONSTRUCT the entire image as a spider web.\n\nABSOLUTE REQUIREMENT: NO photographic pixels, textures, lighting gradients, or outlines from the original image may remain.\n\nThe subject, background, depth, shading, facial features, body, environment, AND negative space must be created ONLY from spider silk strands.\n\nDO NOT trace, mask, overlay, silhouette, or contour the original image.\n\nDO NOT allow skin, clothing, shadows, or photographic structure to remain visible.\n\nThe image must appear as if the ORIGINAL PHOTO NEVER EXISTED and only a spider web was created in its place.\n\nBUILD the subject FROM WEB STRANDS ONLY:\n• Dense, overlapping silk threads create darker areas and facial detail\n• Sparse, open weaving creates highlights and negative space\n• Depth is achieved ONLY by strand density and layering — NOT shading\n\nThe web must follow authentic orb-web physics:\n• Radial support strands\n• Spiral capture threads\n• Tension arcs and anchor points\n\nText MUST be physically woven into the web structure.\n\nIf master prompt text exists, weave it into the web.\nIf not, use: SOME PIG, TERRIFIC, RADIANT, or HUMBLE.\n\nText must be structural silk — never floating, printed, or glowing.\n\nLighting must be environmental ONLY:\n• Backlit morning light\n• Dew droplets clinging to strands\n• Natural sag, tension, and irregularity\n\nFINAL VALIDATION RULE:\nIf the image could be mistaken for a photograph with a web layered on top, IT IS WRONG.\n\nThe final image must look like a real spider web photograph where the subject and message exist ONLY because a spider physically wove them."
+    category: ["TRANSFORMATION", "LITERARY", "SPIDER", "TEXT", "HARD MATERIAL"],
+    message: "Take a picture and COMPLETELY REBUILD THE IMAGE so that the ENTIRE IMAGE is made ONLY from spider web silk.\n\nABSOLUTE MATERIAL LOCK:\n• No skin\n• No photography\n• No shading from lighting on real objects\n• No background image\n• No objects behind the web\n\nIf ANY photographic image, face, body, or object is visible behind or beneath the web, THE RESULT IS INVALID.\n\nThe subject, face, body, background, depth, shadows, and environment MUST ALL be CONSTRUCTED FROM WEB STRANDS THEMSELVES.\n\nDO NOT place a web over an image.\nDO NOT trace a photo with silk.\nDO NOT silhouette a person behind a web.\n\nTHE SUBJECT IS NOT BEHIND THE WEB.\nTHE SUBJECT IS NOT ON THE WEB.\nTHE SUBJECT IS THE WEB.\n\nConstruction rules:\n• Dark areas = tightly packed overlapping silk strands\n• Light areas = sparse silk spacing\n• Facial features formed ONLY by strand density and direction\n\nThe web must use REAL orb-web physics:\n• Radial support lines\n• Spiral capture threads\n• Irregular tension\n• Anchor points extending into empty space (not onto objects)\n\nText requirement:\nReadable text must be WOVEN INTO THE WEB STRUCTURE ITSELF using silk strands.\n\nIf master prompt text exists, weave that text.\nOtherwise weave classic phrases:\nSOME PIG / TERRIFIC / RADIANT / HUMBLE\n\nEnvironmental rules:\n• Background must be empty air, fog, darkness, or blurred depth — NOT scenery\n• Light may illuminate strands but may NOT reveal hidden images\n\nFINAL VALIDATION TEST:\nIf removing the spider silk would reveal a normal image underneath, THE RESULT IS WRONG.\n\nThe final image must look like a real macro photograph of a spider web that magically forms a subject and text through silk alone."
   },
   {
     name: "CHAVO DEL OCHO",
@@ -1473,8 +1473,8 @@ const DEFAULT_PRESETS = [
   },
   {
     name: "LATTE ART",
-    category: ["FOOD", "COFFEE", "TRANSFORMATION", "MATERIAL", "ART"],
-    message: "Take a picture and completely REBUILD the entire image so that EVERYTHING exists only as latte art on the surface of an espresso.\n\nABSOLUTE REQUIREMENT: No photographic pixels, skin, fabric, metal, plastic, paper, or real-world materials may remain.\n\nThe subject, facial features, body, clothing, background, environment, shadows, and depth must ALL be formed exclusively as latte art patterns within espresso crema and milk foam.\n\nDO NOT place latte art on top of a photo.\nDO NOT overlay foam or coffee textures.\nDO NOT trace, mask, silhouette, or reuse the original photograph’s structure.\n\nThe image must look as if the original photograph never existed and was replaced by a single top-down or angled view of a cup of espresso containing an intricate latte art composition.\n\nLatte art construction rules:\n• Espresso crema (dark brown) forms depth, shadows, and negative space\n• Steamed milk foam (white to off-white) forms highlights and primary shapes\n• Microfoam gradients create smooth transitions and contours\n• Contrast is achieved ONLY through coffee-to-milk ratios\n\nThe subject must be recognizable ONLY through:\n• Foam flow patterns\n• Crema contrast\n• Swirls, rosettas, hearts, tulips, free-pour curves, and etched detailing\n\nShading and depth MUST be created ONLY by:\n• Crema density\n• Milk diffusion\n• Foam thickness\n• Natural liquid flow and feathering\n\nLighting rules:\n• Soft café lighting\n• Subtle surface reflections on liquid\n• No hard edges, outlines, or artificial highlights\n\nEnvironment rules:\n• The background must be limited to the espresso surface\n• The cup rim may be visible but must remain secondary\n• No tables, hands, faces, or external objects\n\nFINAL VALIDATION RULE:\nIf the image looks like a normal photo with latte art added on top, IT IS WRONG.\n\nThe final image must look like a real cup of espresso photographed from above, where the subject exists only as expertly poured latte art."
+    category: ["BEVERAGE", "COFFEE", "FOAM ART", "HARD MATERIAL"],
+    message: "Take a picture and COMPLETELY TRANSFORM the subject so that the subject exists ONLY as latte foam art on the surface of an espresso drink.\n\nABSOLUTE REQUIREMENT:\nThe subject MUST EXIST ONLY AS FOAM PATTERNS ON LIQUID.\n\nThe subject may NOT exist as:\n• A photograph\n• A reflection\n• A printed image\n• A floating face\n• A submerged object\n• A picture inside the cup\n\nDO NOT paste or place the subject into the drink.\nDO NOT insert a photo into liquid.\nDO NOT treat the coffee surface as a screen.\n\nThe subject MUST BE CREATED ONLY BY:\n• Milk foam density\n• Microfoam contrast\n• Espresso crema flow\n• Natural pour patterns\n• Etched foam lines\n\nConstruction rules:\n• Dark areas = espresso crema\n• Light areas = milk microfoam\n• Detail = foam thickness variation and etching\n\nNO hard outlines.\nNO graphic edges.\nNO photographic texture.\n\nThe foam must behave realistically:\n• Soft bleed\n• Imperfect edges\n• Liquid diffusion\n• Slight asymmetry\n\nThe cup, rim, and environment should look real and photographic.\n\nFINAL VALIDATION TEST:\nIf the latte surface were stirred, the subject would be destroyed.\nIf the image looks like a photo placed into coffee, IT IS WRONG.\n\nThe final image must look like a real café latte photographed from above, with the subject miraculously formed ONLY from foam and crema."
   },
   {
     name: "LEGO",
@@ -5598,20 +5598,20 @@ function loadMotionSettings() {
       continuousCheckbox.checked = motionContinuousEnabled;
     }
       
-    const cooldownSlider = document.getElementById('motion-cooldown-slider');
-    if (cooldownSlider) {
-      cooldownSlider.value = motionCooldown;
-    }
+      const cooldownSlider = document.getElementById('motion-cooldown-slider');
+      if (cooldownSlider) {
+        cooldownSlider.value = motionCooldown;
+      }
 
-    const startDelaySlider = document.getElementById('motion-start-delay-slider');
-    const startDelayValue = document.getElementById('motion-start-delay-value');
-    if (startDelaySlider && startDelayValue) {
-      const sliderValue = getStartDelaySliderValue();
-      startDelaySlider.value = sliderValue;
-      startDelayValue.textContent = MOTION_START_DELAYS[sliderValue].label;
-    }
+      const startDelaySlider = document.getElementById('motion-start-delay-slider');
+      const startDelayValue = document.getElementById('motion-start-delay-value');
+      if (startDelaySlider && startDelayValue) {
+        const sliderValue = getStartDelaySliderValue();
+        startDelaySlider.value = sliderValue;
+        startDelayValue.textContent = MOTION_START_DELAYS[sliderValue].label;
+      }      
 
-    updateMotionDisplay();
+      updateMotionDisplay();
   } catch (err) {
     console.error('Failed to load motion settings:', err);
   }
