@@ -271,6 +271,11 @@ const DEFAULT_PRESETS = [
     message: "Take a picture of the subject or subjects performing extreme, fantastical acrobatic feats.\n\nInclude:\n• Multi-person stacked formations, human pyramids, or chains\n• Impossible balances, mid-air catches, and synchronized aerial stunts\n• Gravity-defying choreography that appears physically implausible yet believable\n\nBodies must interact realistically with visible tension, grip, and support — showing weight distribution and contact points.\n\nSubjects can be dressed in circus, acrobatic, or performance attire appropriate for the scene.\n\nLighting, environment, and perspective should match a professional acrobatic stage, circus tent, or performance arena.\n\nThe final image should capture a surreal, awe-inspiring moment frozen in time, looking like a real performance photograph of impossible acrobatics."
   },
   {
+    name: "ADVENTURE TIME",
+    category: ["CARTOON", "ANIMATION", "ABSURD", "FANTASY"],
+    message: "Take a picture and transform the subject into a colorful, surreal cartoon world inspired by Adventure Time.\n\nSTYLE & CHARACTER RULES:\n• Simple rounded shapes and elastic anatomy\n• Bold outlines and flat, vibrant colors\n• Whimsical proportions and exaggerated expressions\n• Include multiple quirky cartoon characters native to this world\n• Characters may be creatures, humanoids, or bizarre fantasy beings\n\nSCENE & TONE:\n• Playful, absurd, and slightly chaotic\n• Bright candy-colored environments\n• Cartoon physics and exaggerated motion allowed\n\nThe final image should look like a fully composed Adventure Time–style hand-drawn illustration with the subject and additional characters integrated seamlessly into the world."
+  },
+  {
     name: "ADVERTISEMENT",
     category: ["MASTER PROMPT", "COMMERCIAL", "MARKETING", "PROFESSIONAL"],
     message: "Take a picture and transform it into a polished magazine-style advertisement while preserving clear facial likeness and identity of the subject. Present the subject naturally holding, wearing, or interacting with the featured product as the central focus of the ad. Primary information source: If product details are provided via externally supplied information, showcase that product accurately as the main advertised item. Incorporate the product’s name, type, and defining qualities into the visual presentation, slogan, and flavor text without altering or misrepresenting the product. Secondary enhancement: If no product details are externally provided, infer a plausible featured product based on what the subject is visibly holding, wearing, or using. If inference is required, keep the product generic and clearly implied rather than naming a specific real-world brand. Design the final image as a compact, mobile-friendly magazine advertisement layout optimized for small screens. Include a bold, high-contrast headline or slogan, a short block of engaging flavor text, and subtle supporting copy if space allows. Ensure all text is legible at small sizes with clean spacing and strong visual hierarchy. Use flattering, high-quality lighting, refined composition, and a modern editorial aesthetic. Maintain visual clarity, balanced framing, and an immediately recognizable advertising look. The result should be a full view of the page with a relevant background behind the page."
@@ -479,6 +484,11 @@ const DEFAULT_PRESETS = [
     name: "BBS DOWNLOAD",
     category: ["RETRO", "INTERNET", "90S", "GLITCH"],
     message: "Take a picture and transform it into the experience of a slow-loading 1990s internet image over a dial-up connection. Render the image as if it is partially downloaded, frozen mid-load, or failing to fully render. Randomly select and display exactly ONE of the following on-screen status messages, styled in a simple early-web or system monospace font:\n• \"Stuck at 87%\"\n• \"Connection Lost\"\n• \"Retrying…\"\n• \"Image Failed to Load (Alt Text Only)\"\n• \"Low Bandwidth Mode\"\n\nVisually reflect the selected status message in the image rendering:\n- If partially loaded, reveal only sections of the image using horizontal loading bands, blocky color fills, or coarse pixel previews.\n- If failed, leave large portions blank, replaced by placeholder space, broken image icons, or alt-text-style text.\n- If retrying, show uneven clarity with duplicated or misaligned segments. Preserve the subject’s recognizable features even when incomplete. Simulate authentic early-internet artifacts such as compression noise, color banding, abrupt resolution jumps, and unstable alignment. Include a minimal progress indicator or percentage counter when appropriate, ensuring all text is large and legible on small screens. The final image should feel frozen in time—nostalgic, frustrating, and unmistakably mid-download."
+  },
+  {
+    name: "BERENSTAIN",
+    category: ["CARTOON", "ILLUSTRATION", "CHILDRENS BOOK", "CLASSIC"],
+    message: "Take a picture and transform the subject into a warm, storybook-style cartoon inspired by classic Berenstain Bears illustrations.\n\nSTYLE & CHARACTER RULES:\n• Soft ink outlines with watercolor-style coloring\n• Cozy, rounded character designs\n• Gentle facial expressions and readable emotions\n• Include multiple friendly animal characters in a family or town setting\n\nSCENE & TONE:\n• Wholesome, educational, and nostalgic\n• Domestic or small-town environments\n• Storybook composition and warmth\n\nThe final image should look like a fully composed Berenstain Bears–style hand-drawn illustration with the subject and additional characters integrated seamlessly into the world."
   },
   {
   name: "BIBLE VERSE",
@@ -891,6 +901,11 @@ const DEFAULT_PRESETS = [
     message: "Take a picture and transform it into a dictionary-style entry. Include a small, clearly visible photograph of the subject placed beside or beneath the definition, similar to a modern illustrated dictionary. Allow externally provided language to define the entry name. Use a clean, minimal layout with strong typography. The photo should act as a visual reference for the word, reinforcing the definition."
   },
   {
+    name: "DIGITAL CIRCUS",
+    category: ["CARTOON", "ANIMATION", "SURREAL", "DARK HUMOR"],
+    message: "Take a picture and transform the subject into a surreal digital cartoon world inspired by The Amazing Digital Circus.\n\nSTYLE & CHARACTER RULES:\n• Bold outlines and exaggerated cartoon anatomy\n• High-contrast colors and uncanny proportions\n• Include bizarre, unsettling cartoon performers or mascots\n\nSCENE & TONE:\n• Chaotic, unsettling, and absurd\n• Circus or digital void environments\n• Bright colors contrasted with psychological tension\n\nThe final image should look like a fully composed Digital Circus–style hand-drawn illustration with the subject and additional characters integrated seamlessly into the world."
+  },
+  {
     name: "DISNEY",
     category: ["ANIMATION", "CARTOON", "CLASSIC", "DISNEY"],
     message: "Take a picture in the style of a hand-drawn Disney character portrait from the golden age of animation. Smooth linework, expressive poses, elegant shapes, vibrant but flat colors, and classic animation charm.\n\nThe final image should look like a fully composed Disney hand-drawn illustration with the subject and additional characters integrated seamlessly into the world."
@@ -944,6 +959,11 @@ const DEFAULT_PRESETS = [
     name: "DYSTOPIAN",
     category: ["SCI FI", "DARK", "APOCALYPTIC"],
     message: "Take a picture in the style of a Dystopian future. Bleak atmosphere. Make it photorealistic."
+  },
+  {
+    name: "ECCE MONO",
+    category: ["HUMOR", "ART", "RESTORATION", "FAIL"],
+    message: "Take a picture of the subject and transform them into a badly restored artwork, inspired by infamous art restoration failures like the Ecce Homo / Ecce Mono incident.\n\nThe subject IS the artwork that has been restored incorrectly — not a viewer and not a separate person.\n\nRESTORATION FAILURE (CRITICAL):\n• The subject’s facial features must be distorted, simplified, or clumsily repainted\n• Eyes may be uneven, misshapen, or misplaced\n• Nose and mouth may be smudged, blobby, or incorrectly proportioned\n• Expression should appear unintentionally humorous or confused\n\nMEDIUM & TEXTURE:\n• Painted fresco, mural, or aged religious-style artwork\n• Visible brush strokes, uneven repainting, smeared paint\n• Cracked plaster or wall texture beneath paint\n• Colors slightly muddy or mismatched, as if an amateur attempted the restoration\n\nIDENTITY PRESERVATION:\n• The subject must still be faintly recognizable despite the failed restoration\n• Facial structure and general likeness should be present but poorly executed\n\nCOMPOSITION:\n• Frame the image as a photograph of the restored artwork on a wall\n• Optional plaque or wall label suggesting it was recently restored\n\nFINAL RESULT:\nThe image should clearly look like a well-meaning but disastrous art restoration where the subject’s face became unintentionally funny, awkward, or infamous — as if the artwork went viral for all the wrong reasons."
   },
   {
     name: "EDO LANDSCAPE",
@@ -1236,6 +1256,11 @@ const DEFAULT_PRESETS = [
     message: "Take a picture in the style of Graffiti Art. Spray paint textures, urban wall surface."
   },
   {
+    name: "GRAVITY FALLS",
+    category: ["CARTOON", "ANIMATION", "MYSTERY", "PARANORMAL"],
+    message: "Take a picture and transform the subject into a mysterious cartoon world inspired by Gravity Falls.\n\nSTYLE & CHARACTER RULES:\n• Clean linework with slightly angular proportions\n• Muted but warm color palette\n• Expressive faces with grounded cartoon realism\n• Include eccentric townsfolk or supernatural creatures\n\nSCENE & TONE:\n• Small-town mystery and paranormal weirdness\n• Forests, cabins, roadside attractions, or strange landmarks\n• Subtle humor mixed with intrigue\n\nThe final image should look like a fully composed Gravity Falls–style hand-drawn illustration with the subject and additional characters integrated seamlessly into the world."
+  },
+  {
     name: "GRIMMS FAIRY TALE",
     category: ["STORYBOOK", "KIDS", "LESSON"],
     message: "Take a picture and transform the subject into a character within a Grimm’s fairy tale. Select a fairy tale based on the subject’s appearance, posture, expression, or perceived traits (such as innocence, cleverness, arrogance, bravery, curiosity), OR use a specific fairy tale provided via external master prompt.\n\nDepict the subject as a story character fully integrated into a classic Grimm-style fairy tale scene, not as a modern person placed into an illustration. The subject may appear as a human, villager, traveler, child, noble, or fairy-tale creature as appropriate to the chosen story. The environment and supporting elements should clearly reflect a traditional fairy tale setting such as forests, cottages, castles, roads, or village scenes.\n\nRender the image as a single illustrated storybook page. Ensure the entire page is fully visible within the frame, including margins, illustration, and text area. Do not crop or cut off any part of the page.\n\nInclude the **title of the selected fairy tale** prominently and clearly within the page layout, such as at the top of the page or as a decorative storybook heading. The title must be fully visible and immediately identifiable to the viewer.\n\nInclude a short fairy-tale caption or lesson within the page, such as a brief story excerpt, warning, or thematic line appropriate to Grimm’s fairy tales. The text should be legible, concise, and directly connected to the scene.\n\nUse a traditional fairy-tale illustration style inspired by 18th–19th century book engravings or painted storybook art. The tone may be whimsical, eerie, or cautionary, but not graphic. Keep the composition symbolic, atmospheric, and clearly readable on a small screen. The final image should feel like a complete, intact page from a Grimm’s fairy tale book."
@@ -1311,6 +1336,11 @@ const DEFAULT_PRESETS = [
     message: "Take a picture of the subject and turn it into a professional actor’s head shot.\n\nUse a clean studio background, flattering lighting, and a confident or dramatic pose.\n\nUse external master prompt text to supply an actor name and optional flavor text.\n\nAdd a humorous talent list next to or under the portrait, including strange or ridiculous talents no one would normally list, such as 'Expert at Awkward Silence', 'Professional Stand-up Philosopher', or 'Can Cry on Command When Impaled'.\n\nThe final result should look like a real casting profile with a ridiculous twist."
   },
   {
+    name: "HENRY DANGER",
+    category: ["TV", "SUPERHERO", "HUMOR"],
+    message: "Transform the subject into Henry Danger.\n\nCORE RULE:\n• The subject must be wearing the full Henry Danger costume\n• The subject’s face replaces Henry Danger’s face under the mask\n\nFACE INTEGRATION:\n• The mask must fit the subject’s facial structure\n• The face must look like it belongs to the character\n\nFINAL RESULT:\nThe image should look like the subject IS Henry Danger in costume, not a face overlay."
+  },
+  {
     name: "HIDDEN DETAILS",
     category: ["ILLUSION", "PUZZLE", "HIDDEN"],
     message: "Take a picture and transform the image so subtle hidden elements are embedded. Viewer should discover details only after close inspection."
@@ -1378,7 +1408,7 @@ const DEFAULT_PRESETS = [
   {
     name: "IDIOM",
     category: ["HUMOR", "LANGUAGE", "LITERAL"],
-    message: "Take a picture and visually interpret a common idiom or phrase in a completely literal way. Place the subject directly inside the literal version of the expression (for example: head in the clouds, walking on thin ice, burning the midnight oil). Preserve realism in lighting and composition while embracing the absurdity of the literal interpretation. The scene should be instantly readable, humorous, and visually clever without requiring any text."
+    message: "Take a picture of the subject and interpret a common phrase or idiom in the most painfully literal visual way possible.\n\nIDIOM SELECTION:\n• Randomly choose a well-known idiom or saying\n• Interpret it visually without metaphor or restraint\n\nEXAMPLES (DO NOT SHOW TEXT):\n• 'Head in the clouds'\n• 'Breaking the ice'\n• 'Burning the midnight oil'\n• 'Walking on thin ice'\n• 'Under pressure'\n• 'Spilling the beans'\n\nSUBJECT RULES:\n• The subject must be the one experiencing the literal situation\n• Preserve facial identity and expression\n\nSTYLE:\n• Photorealistic or painterly\n• The absurdity comes from literal interpretation, not cartoon style\n\nFINAL RESULT:\nThe image should make the viewer instantly recognize the idiom and laugh at how aggressively literal it has been made."
   },
   {
     name: "IF YOU THINK IT'S TRUE, IT'S SNOT",
@@ -1389,6 +1419,11 @@ const DEFAULT_PRESETS = [
     name: "IKEA INSTRUCTION MANUAL",
     category: ["HUMOR", "INSTRUCTIONS", "DIAGRAM"],
     message: "Take a picture and transform the subject into an illustrated instruction manual page, similar to a flat-pack assembly guide. Depict simplified, diagram-style versions of the subject in multiple steps, showing how the subject is assembled or functions. Use clean line art, minimal colors, arrows, step numbers, icons, and humorous warning symbols inspired by the subject’s personality, clothing, or posture. Avoid text-heavy explanations; rely on visual storytelling and pictograms. Present the final image as a complete instruction manual page with a clean layout and playful, clever tone."
+  },
+  {
+    name: "INANIMATE INSANITY",
+    category: ["CARTOON", "ANIMATION", "OBJECT", "CHAOS"],
+    message: "Take a picture and transform the subject into an expressive cartoon object-character inspired by Inanimate Insanity.\n\nSTYLE & CHARACTER RULES:\n• The subject becomes a sentient object with a face\n• Simple shapes with thick outlines\n• Bright, saturated colors\n• Include multiple competing object-characters surrounding the subject\n\nSCENE & TONE:\n• Competitive, energetic, and chaotic\n• Simple abstract or game-like environments\n• Exaggerated expressions and poses\n\nThe final image should look like a fully composed Inanimate Insanity–style hand-drawn illustration with the subject and additional characters integrated seamlessly into the world."
   },
   {
     name: "INFINITY MIRROR",
@@ -1635,6 +1670,11 @@ const DEFAULT_PRESETS = [
     name: "MAGNUM CONTACT SHEET",
     category: ["PHOTOGRAPHY", "DOCUMENTARY", "JOURNALISM", "CONTACT SHEET"],
     message: "Take a picture and transform it into a Magnum Photos–style contact sheet from a documentary photo shoot.\n\nCORE STRUCTURE:\n• The final image must be a full contact sheet\n• Multiple small rectangular frames arranged in a grid\n• Visible film borders between frames\n\nSUBJECT APPEARANCE:\n• The subject must appear in MANY frames\n• Slight variations in pose, expression, movement, or timing\n• Some frames awkward, blurry, off-balance, or transitional\n\nPHOTOGRAPHIC STYLE:\n• Black-and-white photography\n• Documentary realism\n• Natural lighting only\n• Imperfect exposure and focus variation\n\nEDITORIAL MARKINGS:\n• Include grease-pencil or marker edits:\n  – Circles\n  – X marks\n  – Crop lines\n• One or two frames should be clearly \"selected\" as the best shot\n\nCOMPOSITION RULES:\n• Frames should feel sequential, as if moments apart\n• The subject should appear candid, not posed\n• Environment must remain consistent across frames\n\nTEXT & DETAILS:\n• Optional handwritten frame numbers\n• Optional date or roll number\n• Handwritten notes may appear in margins\n\nABSOLUTE PROHIBITIONS:\n• NO single-image presentation\n• NO polished final-photo look\n• NO modern digital UI elements\n\nFINAL RESULT:\nThe image must look like a real Magnum photographer’s contact sheet — raw, observational, imperfect, and revealing the process of capturing a meaningful moment involving the subject."
+  },
+  {
+    name: "MANDELA EFFECT",
+    category: ["HUMOR", "HISTORY", "PARADOX"],
+    message: "Transform the subject into a scene depicting a well-known Mandela Effect misremembered version of reality.\n\nSELECT ONE SCENARIO:\n• Subject as Henry VIII eating a turkey leg\n• Subject as Mr. Monopoly wearing a monocle\n• Subject holding Jiffy peanut butter\n• Subject eating Fruit Loops cereal\n• Subject watching Looney Toons\n• Subject reading Berenstein Bears\n• Subject holding Oscar Meyer wieners\n• Subject viewing a map with New Zealand northeast of Australia\n• Subject eating Double Stuff Oreos\n• Subject holding Kit-Kat chocolate\n• Subject holding Cheez-Itz box\n• Subject holding a Curious George doll with a tail\n• Ed McMahon handing the subject a Publishers Clearing House check\n• Subject wearing Sketchers shoes\n• Subject spraying Febreeze\n\nCORE RULE:\n• The incorrect version must be presented as completely normal\n• No explanation or acknowledgment of error\n\nFINAL RESULT:\nThe image should confidently depict the wrong version of reality as if it were always correct."
   },
   {
     name: "MARGARET KEANE",
@@ -1985,6 +2025,16 @@ const DEFAULT_PRESETS = [
     name: "PENNIES",
     category: ["TRANSFORMATION", "METAL", "MONEY", "COPPER", "SCULPTURE"],
     message: "Take a picture and transform the subject into a sculpture constructed entirely from real pennies. The subject must be MADE OF pennies, not covered in them - every part of their body, face, clothing, and hair should be built from individual copper pennies arranged like tiles or scales to form the three-dimensional shape.\n\nUse pennies at various angles and orientations: some showing Lincoln's head, others showing the memorial or shield back, creating texture and shading through the different faces of the coins. Include pennies in different conditions - bright shiny copper, aged brown, tarnished with green patina, worn smooth - to create dimensional depth, highlights, and shadows.\n\nThe pennies should be arranged in overlapping patterns similar to fish scales or roof tiles, building up the volumetric form. Tighter, more densely packed penny arrangements for fine details like facial features; slightly looser arrangements for larger body areas. The circular shape of individual pennies should be visible throughout.\n\nThe background and environment should also be constructed from pennies - walls, floor, furniture, all made from stacked and arranged pennies creating a complete penny-constructed world.\n\nPhotorealistic lighting with warm copper/reddish-brown metallic tones, highlights catching on raised coin edges, and shadows between overlapping layers. The final image should look like a photograph of an actual physical artwork where literally everything is built from real pennies - a penny mosaic sculpture in three dimensions."
+  },
+  {
+    name: "PEPPA PIG",
+    category: ["CARTOON", "ANIMATION", "CHILDLIKE", "MINIMAL"],
+    message: "Take a picture and transform the subject into a flat, minimal cartoon world inspired by Peppa Pig.\n\nSTYLE & CHARACTER RULES:\n• Extremely simple shapes and thick outlines\n• Flat colors with no shading\n• Side-facing or slightly turned characters\n• Include multiple simple animal characters\n\nSCENE & TONE:\n• Bright, cheerful, and childlike\n• Simple outdoor or indoor settings\n• Naive perspective and playful composition\n\nThe final image should look like a fully composed Peppa Pig–style hand-drawn illustration with the subject and additional characters integrated seamlessly into the world."
+  },
+  {
+    name: "PHOTOBOMB",
+    category: ["HUMOR", "PHOTO", "SCENE"],
+    message: "Take a picture and create a scene where the subject is NOT the main focus, but is instead photobombing another photo.\n\nCORE RULE:\n• The main subject of the photo must be someone or something else\n• The subject must appear unexpectedly in the background or edge of the frame\n\nPHOTOBOMB BEHAVIOR:\n• Exaggerated facial expression, awkward pose, or deliberate attention-seeking\n• Leaning into frame, popping up behind someone, or staring directly at camera\n• The photobomb should be unmistakable and intentional\n\nCOMPOSITION:\n• The main subject must remain fully visible and centered\n• The subject must be partially obscured or off-center\n• Do NOT crop the main subject\n\nFINAL RESULT:\nThe image should clearly read as a normal photo ruined (or improved) by the subject aggressively photobombing it."
   },
   {
     name: "PHOTO BOOTH STRIP",
@@ -2377,6 +2427,11 @@ const DEFAULT_PRESETS = [
     message: "Take a picture and transform the subject into a school boy or school girl wearing a culturally accurate school uniform.\n\nChoose or vary the style based on geography: Japanese, American, European, British, or other international school uniforms.\n\nUniforms should include appropriate elements such as blazers, ties, skirts, shorts, knee socks, backpacks, or loafers depending on region.\n\nThe subject should appear naturally dressed, not in cosplay. Clothing should fit realistically with proper fabric folds and wear.\n\nBackgrounds may include classrooms, hallways, schoolyards, or chalkboards.\n\nThe final image should be humorous due to contrast with the subject’s age or demeanor, but visually realistic."
   },
   {
+    name: "SCHOOLHOUSE ROCK!",
+    category: ["HUMOR", "CARTOON", "EDUCATIONAL", "RETRO"],
+    message: "Take a picture of the subject and recreate them as an animated character in the classic Schoolhouse Rock! cartoon style.\n\nSTYLE & MEDIUM (CRITICAL):\n• 1970s hand-drawn animation style\n• Thick outlines, flat colors, simple shapes\n• Limited animation feel with playful exaggeration\n• Bright, educational color palette\n\nCHARACTER TRANSFORMATION:\n• The subject becomes a cartoon character rendered in Schoolhouse Rock! style\n• Preserve recognizable facial features and overall likeness\n• Simplify features into cartoon form — not photorealistic\n\nEPISODE RANDOMIZATION:\n• Randomly select ONE of the original Schoolhouse Rock! episode themes (e.g. grammar, math, civics, history, science, economics)\n• The scene, props, and environment should reflect the chosen episode’s topic\n\nTEXT & BUBBLES (CRITICAL):\n• Include speech bubbles, title cards, or lyric-style text\n• Text should explain or humorously reference the selected educational topic\n• If external master prompt flavor text is provided, reinterpret it as educational lyrics or dialogue\n\nBACKGROUND:\n• Abstract shapes, moving diagrams, or symbolic elements typical of the cartoons\n• Blackboard motifs, arrows, labels, or bouncing icons\n\nFINAL RESULT:\nThe image should look like a genuine frame from a Schoolhouse Rock! episode where the subject has been turned into a cheerful, slightly goofy educational cartoon character teaching a lesson."
+  },
+  {
     name: "SCOOBY-DOO ENDING",
     category: ["CARTOON", "HUMOR", "RETRO"],
     message: "Take a picture and place the subject in a classic Scooby-Doo unmasking scene ending. Subject shown as the unmasked villain with shocked/guilty expression, surrounded by the Mystery Inc. gang (Fred, Daphne, Velma, Shaggy, and Scooby-Doo) pointing accusingly. Subject drawn in Hanna-Barbera animation style with bold black outlines and flat cel-shaded colors. Include speech bubble with 'And I would have gotten away with it too, if it weren't for you meddling kids!' Classic 1970s Scooby-Doo art style, vintage cartoon aesthetic, iconic reveal moment from the show's ending. Spooky background setting like haunted mansion or abandoned amusement park."
@@ -2522,6 +2577,11 @@ const DEFAULT_PRESETS = [
     message: "Take a picture of the subject and place them into a famous Spielberg movie scene, such as *E.T.*, *Jaws*, *Saving Private Ryan*, *Schindler's List*, *The Goonies*, *Jurassic Park*, or *Indiana Jones*.\n\nThe subject should appear as the central figure, interacting with the iconic environment or objects — holding the glowing finger in E.T., facing a dinosaur, or pulling a dramatic stunt in Indiana Jones style.\n\nLighting, perspective, and props should match the original film, making it cinematic and realistic.\n\nOptional master prompt text can influence which film or scene is used, or add a humorous twist (e.g., subject holding the alien wrong, tripping over a dinosaur, or wearing a ridiculous explorer hat).\n\nThe final image should feel like a real movie still starring the subject, instantly recognizable as Spielberg-style adventure, with humor or absurdity added."
   },
   {
+    name: "SPONGEBOB SQUAREPANTS",
+    category: ["CARTOON", "ANIMATION", "ABSURD", "UNDERWATER"],
+    message: "Take a picture and transform the subject into a bright, underwater cartoon world inspired by SpongeBob SquarePants.\n\nSTYLE & CHARACTER RULES:\n• Thick black outlines and highly simplified shapes\n• Bright, saturated colors with minimal shading\n• Exaggerated facial expressions and elastic cartoon anatomy\n• The subject must be transformed into a SpongeBob-style character while retaining recognizable facial features\n• Include multiple underwater cartoon characters native to this world\n\nSCENE & TONE:\n• Underwater setting with coral, sand, bubbles, and whimsical ocean props\n• Absurd, energetic, and slapstick tone\n• Cartoon physics encouraged — stretched poses, goofy expressions, exaggerated reactions\n\nCOMPOSITION:\n• Clear, readable foreground characters\n• Simple but iconic underwater environments\n• No realism, no cinematic lighting, no gritty textures\n\nThe final image should look like a fully composed SpongeBob SquarePants–style hand-drawn illustration with the subject and additional characters integrated seamlessly into the world."
+  },
+  {
     name: "SPORTS TROPHY",
     category: ["HUMOR", "AWARD", "METALLIC"],
     message: "Take a picture and transform the subject into an actual sports trophy. The subject's upper body and head should be rendered in shiny gold, silver, or bronze metal posed triumphantly on a wooden or marble base. Preserve their facial features and expression in metallic form as if they're a commemorative statue-trophy. Include an engraved plaque on the base with humorous award text. Show realistic metal reflections, trophy cup handles if appropriate, and that distinctive trophy sheen. Place on a shelf or display case with dramatic lighting."
@@ -2572,6 +2632,11 @@ const DEFAULT_PRESETS = [
     message: "Take a picture and make subject into a bronze statue. Aged patina, sculptural realism."
   },
   {
+    name: "STATUE OF LIBERTY",
+    category: ["HISTORY", "MONUMENT", "TRANSFORMATION", "ICONIC"],
+    message: "Take a picture and transform the subject so their face becomes the face of the Statue of Liberty.\n\nCORE REQUIREMENT:\n• The subject’s face must be transformed to appear as if it were sculpted as part of the Statue of Liberty\n• This is NOT a face overlay or pasted photograph\n\nFACIAL TRANSFORMATION (CRITICAL):\n• Convert the subject’s facial features into carved stone form\n• Match the Statue of Liberty’s scale, proportions, and facial structure\n• Apply the statue’s oxidized copper-green coloration uniformly\n• Texture must resemble aged metal or stone, not skin\n• Facial expression should remain neutral and stoic\n\nINTEGRATION RULES:\n• The subject’s likeness must remain recognizable through sculptural form\n• No photographic skin, pores, or modern detail\n• No visible seams, edges, or overlays\n\nSCENE & STYLE:\n• Match the lighting and atmosphere of the real Statue of Liberty\n• Sky, torch, crown, and drapery should feel monumental and authentic\n• No cartoon exaggeration\n\nFINAL RESULT:\nAn image where the subject looks as if they were the original sculptural model for the Statue of Liberty, fully integrated into the statue’s material, scale, and historic presence."
+  },
+  {
     name: "STENCIL",
     category: ["ART", "GRAFFITI", "STREET"],
     message: "Take a picture in the style of Stencil Art. High contrast, limited color palette."
@@ -2582,6 +2647,11 @@ const DEFAULT_PRESETS = [
     message: "Take a picture and create a stereoscopic 3D side-by-side image from the photo. Maintain alignment and scale between left and right views. Subtle parallax for depth without distortion."
   },
   {
+    name: "STEVEN UNIVERSE",
+    category: ["CARTOON", "ANIMATION", "PASTEL", "EMOTIONAL"],
+    message: "Take a picture and transform the subject into a soft, pastel-toned cartoon world inspired by Steven Universe.\n\nSTYLE & CHARACTER RULES:\n• Rounded, gentle character designs\n• Soft linework and warm pastel color palette\n• Expressive but calm facial expressions\n• Include multiple humanoid or magical characters that feel emotionally grounded\n\nSCENE & TONE:\n• Dreamlike, peaceful, and emotionally resonant\n• Scenic backgrounds such as beaches, temples, or abstract landscapes\n• Emphasis on mood and harmony\n\nThe final image should look like a fully composed Steven Universe–style hand-drawn illustration with the subject and additional characters integrated seamlessly into the world."
+  },
+  {
     name: "STL FILE PREVIEW",
     category: ["3D", "TECH", "MODELING", "DIGITAL"],
     message: "Take a picture and transform the subject into a 3D STL file mesh preview as seen in 3D modeling software. Convert the subject into a three-dimensional triangulated mesh model displayed in typical STL viewer aesthetic. Show the subject rendered entirely as a polygonal mesh surface made of countless small triangles - visible triangle faces covering the entire form, sharp geometric facets, no smooth surfaces. Use monochrome solid color typical of STL previews - light gray, white, or cyan mesh on dark background. Display the model in 3D modeling software interface style: floating in black or gradient void, visible XYZ axis indicators (red X, green Y, blue Z arrows), grid floor plane underneath, wireframe or solid shaded view. Include technical overlay elements: triangle/polygon count displayed, file size, dimensions in millimeters, rotation widgets, view controls (front/side/top buttons). Show the model from a 3/4 perspective view revealing dimensional depth. Add 3D software UI elements around edges: toolbar icons, mesh info panel, layer controls. The mesh should have that characteristic low-poly STL look - geometric approximation of curves, stair-stepping on rounded edges, visible faceting, hard angles where triangles meet. Make it look like a screenshot from 3D printing software (Cura, PrusaSlicer) or CAD viewer showing the subject as a ready-to-print 3D model file with technical mesh visualization."
@@ -2590,6 +2660,11 @@ const DEFAULT_PRESETS = [
     name: "STORY MOMENT",
     category: ["NARRATIVE", "DRAMATIC", "CINEMATIC"],
     message: "Take a picture and transform the image into a single dramatic story moment. Imply what happened before and what will happen next through visual clues. Cinematic composition."
+  },
+  {
+    name: "STRANGER THINGS",
+    category: ["TV", "SCI-FI", "HORROR", "RETRO", "80S"],
+    message: "Take a picture and place the subject directly into the world of an 1980s supernatural small-town thriller inspired by Stranger Things.\n\nSUBJECT INTEGRATION:\n• The subject must appear as a character living in this world, not pasted or staged\n• Preserve the subject’s recognizable facial features and likeness\n• Age, wardrobe, and styling should feel appropriate to the mid-1980s\n• The subject may appear as a kid, teen, or adult depending on the photo\n\nSTYLE & AESTHETIC:\n• Cinematic, moody lighting with strong shadows\n• Cool blue tones mixed with warm practical lights (lamps, flashlights, neon signage)\n• Subtle film grain and shallow depth of field\n• Realistic but stylized TV-cinematic look — not cartoonish\n\nWORLD & ENVIRONMENT:\n• Small-town 1980s settings: suburban streets, school hallways, basements, forests, arcades, or labs\n• Include period-accurate details: bikes, walkie-talkies, arcade machines, CRT TVs, cassette tapes\n• Optional supernatural elements: flickering lights, creeping shadows, strange particles in the air, organic otherworldly textures\n\nSUPERNATURAL RULES:\n• Horror should feel tense and atmospheric, not gory\n• Any creatures or anomalies must remain partially obscured, silhouetted, or hinted at\n• Emphasize suspense, curiosity, and mystery\n\nEMOTIONAL TONE:\n• Unease mixed with wonder\n• Friendship, bravery, and small-town isolation\n• The feeling that something strange is happening just out of view\n\nCOMPOSITION RULES:\n• The subject must be clearly part of the scene, interacting naturally with the environment\n• No modern objects or clothing\n• No parody or satire\n\nFINAL RESULT:\nThe image must look like a dramatic frame from an 80s supernatural TV series, with the subject seamlessly integrated into a Stranger Things–inspired world, as if they were always part of the story."
   },
   {
     name: "STREAMING",
@@ -2687,6 +2762,11 @@ const DEFAULT_PRESETS = [
     message: "Take a picture and transform the image into thermal imaging. False-color heat mapping. High contrast."
   },
   {
+    name: "THREE WISE MONKEYS",
+    category: ["HUMOR", "POSE", "SYMBOLIC", "CLASSIC"],
+    message: "Take a picture of the subject and recreate the classic 'Three Wise' concept: See No Evil, Hear No Evil, Speak No Evil — using the subject’s head and hands.\n\nCOMPOSITION (CRITICAL):\n• Create THREE versions of the subject in a single image\n• All three must be the same subject, evenly spaced side-by-side\n\nPOSES:\n1) See No Evil:\n• Subject’s hands fully cover their eyes\n\n2) Hear No Evil:\n• Subject’s hands fully cover their ears\n\n3) Speak No Evil:\n• Subject’s hands fully cover their mouth\n\nRULES:\n• Hands must physically block the features — not float or hover\n• Facial proportions, lighting, and perspective must remain consistent across all three figures\n• Each version must clearly resemble the same subject\n\nSTYLE:\n• Can be realistic, painterly, or stylized, but must feel intentional and cohesive\n• Neutral or simple background to emphasize the poses\n\nFINAL RESULT:\nThe image should read instantly as a humorous, symbolic 'Three Wise' interpretation using the subject themselves, clearly showing all three concepts without ambiguity."
+  },
+  {
     name: "TIBETAN THANGKA",
     category: ["ART", "RELIGIOUS", "ASIAN"],
     message: "Take a picture and transform the image into Tibetan Thangka style painting. Highly detailed line work, symbolic composition, rich colors, and spiritual iconography."
@@ -2757,6 +2837,11 @@ const DEFAULT_PRESETS = [
     message: "Take a picture and transform the subject into wearing traditional attire from a specific country. \n\nIf an external master prompt specifies a country, dress the subject in authentic traditional clothing of that country. If no country is specified, randomly select a country from the list below.\n\nCountries and example traditional attire:\n\n- Cuba: Guayaberas, traditional Cuban dresses\n- Dominican Republic: Traditional ceremonial attire\n- Nicaragua: Traditional Nicaraguan dress\n- Mexico: Mariachi suits, Charras outfits\n- Africa: Zulu attire, African prince/princess costumes\n- Norway: Bunad\n- Jamaica: Quadrille dress, Rastafarian\n- Japan: Kimono (long T-shaped silk robe, wide sleeves, seasonal patterns)\n- India: Sari, Sherwani, Salwar Kameez, Sikh attire\n- Korea: Hanbok (jeogori jacket with chima skirt for women, baji pants for men)\n- Poland: White blouse with long skirt and apron for women, long-sleeved shirt with trousers for men\n- Russia: Sarafan dress with kokoshnik for women, traditional embroidered menswear\n- Mongolia: Colorful ethnic costumes with intricate patterns\n- Chile: Vibrant polleras, ponchos\n- Ghana: Kente cloth attire\n- UAE: Kandura for men, Abaya for women\n- Argentina: Poncho, bombacha trousers, wide-brimmed hat, pollera skirts\n- Peru: Poncho, pollera, chullo hat\n- Brazil: Baiana dress, Bombacha trousers, Camisa de Botão\n- Colombia: Sombrero Vueltiao, colorful polleras\n- Canada: Hudson's Bay blanket coats, buckskin dresses, Mackinaw jackets\n- USA: Colonial attire, Christian folk costumes\n- Algeria: Djellaba, haik, Karako, burnous\n- Tunisia: Jebba, Kaftans, Djebba, Kamis\n- Nigeria: Agbada, Isiagu, Babban Riga, Buba, Sokoto\n- Morocco: Djellaba, Kaftan\n- Egypt: Kalasiris dress, tunics, head coverings\n- Armenia: Taraz attire, long embroidered robes\n- Malaysia: Baju Melayu for men, Baju Kurung for women\n- Pakistan: Shalwar Kameez, Sherwani\n- Iran: Qaba, Chador, Pirahan, Aba\n- Turkey: Kaftan, Yelek, Şalvar, Fes\n- Syria: Thoub robe, Sirwal pants, Bisht cloak, Abaya\n- China: Hanfu, Zhongshan outfit, Cheongsam, Tang suit\n- Finland: Kalevala-inspired attire, traditional coastal dresses\n- Sweden: Folkdräkt, Sami Gákti, Dala costume\n- Germany: Lederhosen, Dirndl, Hessian Trachten\n- Ireland: Aran sweater, brat cloak\n- Romania: Fota, embroidered blouse dress combinations\n- Denmark: Skjorte, Læderbukser, embroidered blouses with skirts\n- Britain: Tweed jackets, Barbour jackets, kilts\n- Switzerland: Dirndl, Appenzeller Tracht, Lederhosen\n- Scotland: Kilt, Ghillie shirts, tartan patterns\n- France: Paletot coats, Rococo gowns\n- Spain: Flamenco dress, Castilian dress, Baturro/Baturra costume, Chulapo/Chulapa costume, Baserritarra costume, Fallero/Fallera outfits\n- Italy: Regional festival attire, lacework and vibrant southern patterns\n- Portugal: Peasant dresses, nobility suits, embroidered wraps\n- Greece: Chiton, Fustanella, himation\n- Australia: Akubra hats, Aboriginal ceremonial wear\n\nThe subject must wear the **full traditional attire** including **headgear, footwear, jewelry, and accessories**.\n\nThe environment must **reflect the country visually**, including flags, cultural motifs, landscapes, or cityscapes recognizable to viewers.\n\nLighting, perspective, and shadows must remain realistic. The subject should appear fully integrated into the scene.\n\nDO NOT overlay clothing textures on the original photo. DO NOT leave non-traditional or modern clothing visible. DO NOT use unrelated props.\n\nThe final image must look like a **photograph of a person authentically dressed in traditional attire in the corresponding country**."
   },
   {
+    name: "TRICK OR TREAT",
+    category: ["HALLOWEEN", "COSTUME", "HUMOR", "SEASONAL"],
+    message: "Take a picture and transform the subject into a playful Halloween trick-or-treater.\n\nCORE CONCEPT:\n• The subject’s HEAD must be preserved and clearly recognizable\n• The BODY must be scaled down to the size and proportions of a child\n• This is a stylized, humorous proportion shift — NOT realism\n\nSUBJECT TRANSFORMATION:\n• Place the subject’s head onto a child-sized body\n• Head should be slightly oversized relative to the small body for a fun, cartoon-like effect\n• Match lighting, angle, and perspective so the head looks naturally attached\n• No floating heads or mismatched scale\n\nCOSTUME SELECTION (IMPORTANT):\n• If an external master prompt suggests a specific costume, USE THAT COSTUME\n• If no costume is provided externally, default to classic Halloween costumes such as:\n  – Witch\n  – Vampire\n  – Ghost\n  – Superhero\n  – Monster\n• Costume must fully cover the child-sized body\n\nCOSTUME & PROPS:\n• The subject must be holding an orange pumpkin candy pail (jack-o’-lantern style)\n• The pose should clearly suggest asking for candy (pail held forward or at waist level)\n\nSCENE & ENVIRONMENT:\n• Halloween night setting\n• Suburban neighborhood, front porch, or doorway\n• Autumn decorations encouraged: pumpkins, porch lights, leaves, spooky décor\n• Warm porch lighting or soft night lighting\n\nSTYLE & TONE:\n• Wholesome, humorous, and playful\n• No horror, fear, or menace\n• No realism that implies an actual child — this is a stylized character transformation\n\nCOMPOSITION RULES:\n• Keep the subject centered and clearly visible\n• Preserve a full-body view of the child-sized figure\n• No cropping that removes the pumpkin pail or costume details\n\nFINAL RESULT:\nA fun Halloween image where the subject appears as a trick-or-treater with their recognizable head on a child-sized costumed body, holding a pumpkin candy pail and joyfully asking for candy."
+  },
+  {
     name: "TROGLODYTE",
     category: ["PREHISTORIC", "TRANSFORMATION", "ANTHROPOLOGY", "ANCIENT"],
     message: "Take a picture and transform the subject into an early human ancestor species. Choose from: Homo neanderthalensis (stocky build, prominent brow ridge, receding forehead, large nose, robust frame), Homo habilis (smaller brain case, protruding face, ape-like features), Homo erectus (elongated skull, thick brow ridges, flat nose, muscular build), Homo heidelbergensis (large brow ridge, massive jaw, robust features), Homo floresiensis (very small stature 'hobbit', proportionally small brain), Denisovans (broad face, large molars, robust features), or Homo naledi (small brain, curved fingers, primitive and modern trait mix). Transform the subject's facial features and body structure to match the chosen species' anthropologically accurate characteristics - modify skull shape, brow ridges, jaw structure, nose, facial proportions, body build, and posture. Dress them in primitive Stone Age clothing - animal hide wraps, fur pelts, leather straps, bone ornaments, crude necklaces. Show body hair appropriate to the species. Place them in a prehistoric setting - cave entrance, rocky outcrop, savanna landscape, stone tool workshop, campfire scene. Include period-appropriate elements - stone tools, wooden spears, animal bones, primitive shelter, cave paintings in background. Use natural outdoor lighting - firelight, dawn/dusk, or cave shadows. The subject should maintain recognizable identity through coloring and general features while clearly displaying the anatomical characteristics of early hominid species. Add a text label at the bottom of the image displaying the species name in scientific format (e.g., 'Homo neanderthalensis' or 'Homo erectus') in a museum placard or documentary style with italicized Latin nomenclature. Make it photorealistic as if this is an actual reconstruction of what the subject would look like as that prehistoric human ancestor. Use scientifically accurate paleoanthropological features based on fossil evidence."
@@ -2790,6 +2875,11 @@ const DEFAULT_PRESETS = [
     name: "UK POSTER ART 1930s",
     category: ["ART", "VINTAGE", "POSTER", "30S"],
     message: "Take a picture and transform the image into a 1930s British travel poster style art. Simplified shapes, bold typography, stylized landscapes, and clean graphic composition."
+  },
+  {
+    name: "UNCLE SAM",
+    category: ["HISTORY", "PROPAGANDA", "ICONIC", "POSTER"],
+    message: "Take a picture and transform the subject into Uncle Sam as seen in a classic wartime recruitment poster.\n\nCORE REQUIREMENT:\n• The subject’s face must replace Uncle Sam’s face in a way that looks modeled, not pasted\n• The result must look like the subject was the original inspiration for Uncle Sam\n\nFACIAL INTEGRATION (CRITICAL):\n• Adapt the subject’s facial features to match the illustrated style of the original poster\n• Preserve Uncle Sam’s expression, gaze, and pointing pose\n• Match linework, shading, color palette, and illustration texture\n• No photographic realism\n• No visible overlay or cutout edges\n\nSTYLE & MEDIUM:\n• Vintage illustration or lithograph style\n• Slightly aged paper texture\n• Muted reds, blues, and off-whites\n• Period-accurate ink and paint feel\n\nTEXT & COMPOSITION:\n• Preserve the classic poster layout and typography\n• The subject’s face must integrate seamlessly with the illustration\n• Do NOT modernize clothing, text, or design\n\nFINAL RESULT:\nA convincing wartime Uncle Sam poster where the subject clearly appears to be the illustrated model for Uncle Sam, fully embedded in the historic art style with no modern or photographic elements."
   },
   {
     name: "UNDER THE SEA",
@@ -2925,6 +3015,11 @@ const DEFAULT_PRESETS = [
     name: "WEDDING CAKE TOPPER",
     category: ["WEDDING", "HUMOR"],
     message: "Take a picture and transform the subject(s) into the traditional two-figure wedding cake topper. If only one subject is provided, assign them to one of the two figures; if two subjects are provided, each becomes one of the figures.\n\nRender the figures as small, cheap plastic or resin figurines with smooth, slightly glossy surfaces and simplified, mass-produced detailing. The faces and features should retain recognizable aspects of the subjects but remain stylized and clearly toy-like. Clothing details (tuxedo, suit, wedding gown, veil, bouquet) should be painted on, not fabric.\n\nPlace the two figures securely on the top tier of a multi-layer wedding cake. Include realistic frosting textures, piped borders, subtle crumbs, and decorations such as flowers or fondant accents.\n\nPosition the toppers close together in the classic wedding pose, slightly off-center if needed to reflect a real hand-placed topper. The figures must clearly appear as part of the cake, not floating or separate.\n\nSet the scene on a wedding reception table with soft lighting, pastel or neutral tones, and subtle background elements like table linens, flowers, or candles.\n\nEnsure the entire top tier and both figurines are fully visible within the frame. Scale, shadows, and perspective must reinforce that the subject(s) are physical cheap plastic wedding cake toppers. The final image should feel charming, humorous, and recognizably a wedding cake topper scene."
+  },
+  {
+    name: "WEEKEND UPDATE",
+    category: ["HUMOR", "SATIRE", "TELEVISION", "NEWS"],
+    message: "Take a picture and transform the scene into a Weekend Update segment from Saturday Night Live.\n\nCORE REQUIREMENT (CRITICAL):\n• The image MUST include a recognizable Weekend Update anchor seated at the desk (e.g., Colin Jost or Michael Che anchor)\n• The anchor must appear as part of the scene, not implied or cropped out\n\nSCENE SETUP:\n• Classic Weekend Update desk and backdrop\n• Clean studio lighting and broadcast camera framing\n• The anchor is visible on one side of the frame at the desk\n• A topic image box appears beside the anchor, as seen in real Weekend Update segments\n\nSUBJECT PRESENTATION:\n• The subject appears ONLY inside the topic image box next to the anchor\n• The subject image must look like a broadcast graphic, not a pasted photograph\n• Match studio lighting, scale, and perspective of real Weekend Update graphics\n• The subject must remain recognizable\n\nHEADLINE / CHYRON (CRITICAL):\n• A humorous headline or caption must appear directly beneath or over the subject’s image\n• Headline must feel like authentic SNL Weekend Update writing\n• Use external master prompt flavor text to influence the joke or headline\n• If no external flavor text is provided, invent a sharp, absurd, or ironic headline\n\nCOMPOSITION RULES:\n• Preserve the full Weekend Update framing\n• Do NOT zoom into the subject image\n• Do NOT remove the anchor\n• The anchor and subject graphic must clearly coexist in the same shot\n\nSTYLE & TONE:\n• Broadcast news realism\n• Sharp, legible typography\n• Comedic, satirical tone consistent with Weekend Update\n\nFINAL RESULT:\nThe image must look like a real Weekend Update moment, with a visible anchor delivering a joke while the subject appears in the on-screen topic graphic with a humorous headline."
   },
   {
     name: "WEIRD SCIENCE",
@@ -5195,14 +5290,6 @@ function clearPresetBuilderForm() {
   
   const clearButton = document.getElementById('preset-builder-clear');
   if (clearButton) clearButton.style.display = 'flex';
-  
-  // Close all chip sections when clearing
-  document.querySelectorAll('.chip-section-content').forEach(c => {
-    c.style.display = 'none';
-  });
-  document.querySelectorAll('.chip-section-header').forEach(h => {
-    h.classList.remove('expanded');
-  });
 }
 
 // Edit preset in builder
@@ -5668,20 +5755,20 @@ function loadMotionSettings() {
       continuousCheckbox.checked = motionContinuousEnabled;
     }
       
-    const cooldownSlider = document.getElementById('motion-cooldown-slider');
-    if (cooldownSlider) {
-      cooldownSlider.value = motionCooldown;
-    }
+      const cooldownSlider = document.getElementById('motion-cooldown-slider');
+      if (cooldownSlider) {
+        cooldownSlider.value = motionCooldown;
+      }
 
-    const startDelaySlider = document.getElementById('motion-start-delay-slider');
-    const startDelayValue = document.getElementById('motion-start-delay-value');
-    if (startDelaySlider && startDelayValue) {
-      const sliderValue = getStartDelaySliderValue();
-      startDelaySlider.value = sliderValue;
-      startDelayValue.textContent = MOTION_START_DELAYS[sliderValue].label;
-    }
+      const startDelaySlider = document.getElementById('motion-start-delay-slider');
+      const startDelayValue = document.getElementById('motion-start-delay-value');
+      if (startDelaySlider && startDelayValue) {
+        const sliderValue = getStartDelaySliderValue();
+        startDelaySlider.value = sliderValue;
+        startDelayValue.textContent = MOTION_START_DELAYS[sliderValue].label;
+      }      
 
-    updateMotionDisplay();
+      updateMotionDisplay();
   } catch (err) {
     console.error('Failed to load motion settings:', err);
   }
