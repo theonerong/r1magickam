@@ -352,6 +352,11 @@ const DEFAULT_PRESETS = [
     message: "Take a picture and create an anamorphic image that appears distorted unless viewed from a specific angle. Correct perspective reveals the subject."
   },
   {
+    name: "ANATO-YOU / ANATOMY",
+    category: ["ANATOMY", "EDUCATIONAL", "SURREAL", "TRANSFORMATION"],
+    message: "Take a picture and transform the subject so that their internal structures are fully visible while the subject remains completely intact and undamaged.\n\nCRITICAL — NO INJURY OR DAMAGE:\n• Subject is NOT cut open\n• No wounds, blood, tears, or breaks\n• Skin appears transparent or selectively absent\n• Internal systems visible as if revealed by science, not trauma\n• The subject is whole, alive, and structurally intact\n\nINTERNAL VISIBILITY:\n• Reveal internal anatomy aligned perfectly with the subject’s body\n• Organs, skeleton, muscles, or internal systems shown in correct positions\n• Nothing displaced, removed, or distorted\n• Internal structures appear suspended naturally inside the body\n• Exterior form remains complete and undamaged\n\nSYSTEM SELECTION:\n• AI may reveal one or more systems:\n  - Skeletal\n  - Muscular\n  - Circulatory\n  - Nervous\n  - Respiratory\n  - Digestive\n• Systems must be anatomically accurate\n• Multiple systems may overlap cleanly without clutter\n\nVISUAL STYLE:\n• Clean scientific visualization\n• Medical illustration or museum exhibit aesthetic\n• No horror or gore\n• Calm, neutral, educational tone\n• Subtle lighting to distinguish layers\n\nTRANSPARENCY LOGIC:\n• Skin may be semi-transparent, glass-like, or softly faded\n• Internal elements clearly visible through exterior\n• No harsh cutaway edges\n• No glowing fantasy effects unless subtle and educational\n\nSUBJECT RECOGNITION:\n• Subject’s identity remains recognizable through silhouette, posture, and proportions\n• Face remains intact and identifiable\n• Eyes and expression preserved\n\nBACKGROUND:\n• Simple studio, gradient, or neutral environment\n• Background must not distract from anatomy\n• Subject remains central and fully visible\n\nNOT ALLOWED:\n• Surgery imagery\n• X-ray clichés\n• Horror aesthetics\n• Exploded or separated body parts\n• Any implication of pain or injury\n\nFINAL RESULT:\nThe image should depict the subject fully intact while their internal anatomy is clearly visible and anatomically accurate, appearing as a seamless scientific reveal rather than damage — a calm, educational visualization where exterior and interior coexist naturally in a single complete figure."
+  },
+  {
     name: "ANCIENT TIMES",
     category: ["HISTORY", "ANCIENT", "COSTUME", "CIVILIZATION"],
     message: "Take a picture and transform the subject into wearing ancient civilization attire.\n\nCIVILIZATION SELECTION (CRITICAL):\n• If an external master prompt specifies a civilization, USE THAT CIVILIZATION\n• If none is specified, SELECT EXACTLY ONE using the PRE-CALCULATED values\n• These values are MANDATORY - you MUST use them for selection\n• Use LAST TWO DIGITS modulo 30:\n  - 0: Ancient Spartan (Greece - red cloak, bronze helmet, hoplite armor, lambda shield)\n  - 1: Ancient Athenian (Greece - chiton, himation cloak, olive wreath, classical philosopher or citizen)\n  - 2: Roman Legionnaire (Rome - lorica segmentata armor, gladius, scutum shield, centurion plume)\n  - 3: Roman Senator (Rome - white toga with purple stripe, laurel wreath)\n  - 4: Ancient Egyptian Pharaoh (Egypt - nemes headdress, false beard, was scepter, golden collar)\n  - 5: Ancient Egyptian Common (Egypt - linen kilt/dress, simple jewelry, working attire)\n  - 6: Mesopotamian (Babylon/Sumeria - long robes, conical hat, cuneiform tablets)\n  - 7: Persian (Persia - elaborate robes, tiara, jeweled clothing)\n  - 8: Viking Warrior (Scandinavia - chainmail, horned or winged helmet, round shield, axe)\n  - 9: Viking Settler (Scandinavia - wool tunic, cloak, braided hair)\n  - 10: Celtic Warrior (Britain/Gaul - woad paint, torcs, plaid patterns, long sword)\n  - 11: Ancient Chinese (Han Dynasty - silk hanfu, topknot, jade accessories)\n  - 12: Ancient Japanese (Yayoi - simple robes, samurai ancestor attire)\n  - 13: Mayan (Mesoamerica - jade jewelry, elaborate headdress, glyphs)\n  - 14: Aztec Warrior (Mesoamerica - feathered headdress, obsidian weapons, animal skins)\n  - 15: Incan (South America - colorful textiles, gold ornaments, llama wool)\n  - 16: Ancient Indian (Indus Valley - draped clothing, jewelry, turbans)\n  - 17: Phoenician Trader (Mediterranean - merchant robes, purple dye, trading goods)\n  - 18: Carthaginian (North Africa - Punic robes, military dress, Hannibal-era)\n  - 19: Ancient Hebrew (Israel - biblical robes, head covering, sandals)\n  - 20: Assyrian (Mesopotamia - long beards, conical hats, layered robes)\n  - 21: Hittite (Anatolia - pointed shoes, long robes, ancient warrior)\n  - 22: Minoan (Crete - colorful frescoed clothing, bare-chested style)\n  - 23: Mycenaean (Greece - bronze age armor, boar tusk helmet)\n  - 24: Etruscan (Italy - pre-Roman togas, bronze armor)\n  - 25: Scythian (Central Asia - nomadic horseman, pointed hat, bow)\n  - 26: Nubian (Sudan - gold jewelry, leopard skins, pharaoh rival)\n  - 27: Ancient Korean (Goguryeo - layered robes, topknot, ancestor of hanbok)\n  - 28: Mongol (Central Asia - fur-trimmed deel, horse rider, Genghis Khan era)\n  - 29: Ancient Thai (Siam - simple wrapped clothing, golden jewelry)\n\nPLACE THE SUBJECT:\n• In period-appropriate setting (temple, battlefield, palace, marketplace)\n• Surrounded by architecture appropriate to that civilization\n• With period-appropriate props (weapons, tools, scrolls, pottery)\n• Other people in background wearing similar attire\n\nATTIRE DETAILS:\n• Full authentic costume including headwear, footwear, jewelry\n• Weapons or tools appropriate to role (warrior, scholar, ruler, common person)\n• Fabrics and materials historically accurate\n• Colors and patterns specific to that civilization\n\nSTYLE:\n• Photorealistic or classical painting style\n• Epic, historical atmosphere\n• Lighting appropriate to setting (torch-lit, sunlit, temple interior)\n• Subject appears as genuine member of ancient civilization\n\nFINAL RESULT:\nThe image should look like a historical recreation or period photograph showing the subject authentically dressed and positioned within their chosen ancient civilization."
@@ -707,7 +712,7 @@ const DEFAULT_PRESETS = [
     message: "Take a picture and convert it into a Celtic art piece inspired by the Book of Kells; highly detailed, intricate knotwork, flowing lines, and mystical geometry with the visual language of ancient Celtic art; ornate patterns and symbolic forms."
   },
   {
-    name: 'CENSORED',
+    name: "CENSORED",
     category: ["HUMOR", "PARODY", "COMEDY"],
     message: "Take a picture and add comedic censorship elements to make it look like something inappropriate is being hidden, when in reality nothing inappropriate is actually present. The humor comes from the implication and overreaction of censorship.\n\nCENSORSHIP TYPE SELECTION (CRITICAL):\n• If an external master prompt suggests a specific censorship type, USE THAT TYPE\n• If no type is provided externally, SELECT EXACTLY ONE type using the RANDOM SEED\n• Use the LAST TWO DIGITS of the RANDOM SEED modulo 10:\n  - 0: Black censorship bar over eyes (like witness protection)\n  - 1: Pixelated blur over face or object\n  - 2: Large \"CENSORED\" text banner covering part of image\n  - 3: Black rectangles blocking out random innocent objects\n  - 4: Cartoon-style sign with symbols (stars, spirals, @#$%!) held in front of mouth\n  - 5: Japanese-style mosaic blur over completely normal items\n  - 6: Subject with arm extended, hand blurred/censored (implying rude gesture)\n  - 7: Multiple small \"CENSORED\" boxes scattered over innocent details\n  - 8: Solid black silhouette of subject with \"IDENTITY PROTECTED\" label\n  - 9: Aggressive scribbled-out marker lines over mundane objects\n\nCORE REQUIREMENTS:\n• Subject's features should still be somewhat recognizable despite censorship\n• Nothing actually inappropriate in the original or censored image\n• Censorship applied to completely innocent things for comedic effect\n• Over-the-top dramatic censorship treatment\n• The absurdity comes from censoring normal, harmless content\n\nCENSORSHIP APPLICATION:\n• Apply censorship to random innocent elements (coffee cup, plant, hand gesture, smile, etc.)\n• For option 6: Subject positioned with arm outstretched, hand prominently blurred or pixelated to imply offensive gesture\n• Make it look official and serious despite censoring nothing scandalous\n• Can include warning labels like \"VIEWER DISCRETION ADVISED\" or \"INAPPROPRIATE CONTENT REMOVED\"\n• Official-looking \"CENSORED BY [AUTHORITY]\" stamps\n• Parody of overzealous content moderation\n\nSTYLE:\n• Realistic censorship graphics (actual blur effects, official-looking bars)\n• High contrast black bars or bright pixelation\n• Professional broadcast censorship aesthetic\n• Can include fake ratings labels (MATURE, EXPLICIT, etc.) for comedic effect\n\nHUMOR APPROACH:\n• Suggest something scandalous while showing something completely benign\n• Censorship is disproportionate to actual content\n• Multiple unnecessary censorship layers\n• Comedic overreaction to innocent imagery\n• Parody of media censorship and content warnings\n\nFINAL RESULT:\nAn image with dramatic, official-looking censorship applied to completely innocent elements, creating humor through the implication that something inappropriate is being hidden when nothing scandalous exists. The subject should be recognizable but the absurd over-censorship of normal objects creates the comedy."
   },
@@ -2292,6 +2297,11 @@ const DEFAULT_PRESETS = [
     message: "Take a picture and depict the subject frozen in time exactly one second before a dramatic, chaotic, or humorous event occurs. Capture tension and anticipation in the subject’s pose and expression (for example: a falling object mid-air, a near collision, an imminent spill, or an unexpected surprise). Use cinematic lighting, motion cues, and environmental storytelling to make it obvious that something is about to happen, without actually showing the outcome."
   },
   {
+    name: "ONE SHAPE",
+    category: ["ABSTRACT", "GEOMETRIC", "CONSTRAINT", "TRANSFORMATION"],
+    message: "Take a picture and reconstruct the entire image using ONLY ONE geometric shape.\n\nSHAPE SELECTION (CRITICAL):\n• If an external master prompt specifies a shape, USE THAT SHAPE\n• If none is specified, SELECT EXACTLY ONE using the RANDOM SEED\n• Use LAST TWO DIGITS modulo 8:\n  - 0: Circles\n  - 1: Squares\n  - 2: Triangles\n  - 3: Rectangles\n  - 4: Hexagons\n  - 5: Lines\n  - 6: Dots\n  - 7: Cubes\n\nABSOLUTE CONSTRAINT:\n• EVERY visible element must be composed exclusively of the selected shape\n• Subject, background, shadows, highlights — ALL shapes\n• NO mixed geometry\n• NO hidden curves or blended forms\n• NO photographic textures\n\nSUBJECT RECONSTRUCTION:\n• Subject must remain recognizable through shape arrangement\n• Identity preserved via silhouette, proportions, and pose\n• Facial features implied through density, spacing, or scale of shapes\n• Clothing suggested through patterning and clustering\n\nSHAPE BEHAVIOR:\n• Shapes may vary in size, rotation, opacity, and density\n• Overlapping allowed ONLY if shape integrity remains clear\n• Shapes may be stacked, tiled, or layered\n• No shape deformation outside its geometric definition\n\nDEPTH & LIGHTING:\n• Depth created via scale, spacing, and opacity\n• Lighting implied through shape density\n• Shadows formed using the same shape\n• No gradients unless formed by repeated shapes\n\nBACKGROUND:\n• Background must also obey the one-shape rule\n• Negative space allowed\n• Clean composition preferred\n\nSTYLE:\n• Abstract but intentional\n• Mathematical and structured\n• Visually striking and disciplined\n• Modern art or generative design aesthetic\n\nNOT ALLOWED:\n• Mixed shapes\n• Raster photo textures\n• Painted strokes\n• Organic curves (unless shape is circle)\n• Cheating via blur or noise\n\nFINAL RESULT:\nThe image should appear as a fully reconstructed version of the original scene made entirely from a single geometric shape selected by the random seed, with the subject clearly recognizable through disciplined shape placement, scale, and density — a strict, rule-driven abstraction that feels deliberate, intelligent, and visually coherent."
+  },
+  {
     name: "ONLINE LISTING",
     category: ["HUMOR", "SATIRE", "E-COMMERCE", "PRODUCT"],
     message: "Take a picture and transform the subject into a realistic online product listing, as if the subject themselves are being sold on a major e-commerce platform.\n\nPLATFORM SELECTION (CRITICAL):\n• If an external master prompt specifies a platform, USE THAT PLATFORM\n• If none is specified, SELECT EXACTLY ONE using the PRE-CALCULATED values\n• These values are MANDATORY - you MUST use them for selection\n• Use LAST TWO DIGITS modulo 10:\n  - 0: Amazon\n  - 1: eBay\n  - 2: Etsy\n  - 3: Walmart\n  - 4: Wayfair\n  - 5: Best Buy\n  - 6: Facebook Marketplace\n  - 7: Target\n  - 8: Temu\n  - 9: Newegg\n\nTRANSFORM THE SUBJECT:\n• Subject MUST remain clearly recognizable\n• Subject is the product being sold\n• No costumes unless naturally implied by listing style\n• Neutral facial expression preferred (stock-photo realism)\n• Gender-neutral presentation\n• No caricature or cartoon effects\n\nLISTING CONTENT & FLAVOR TEXT:\n• Platform-accurate layout and tone\n• Product title describing the subject humorously but deadpan\n• Bullet-point feature list describing personality traits, habits, or quirks\n• Include a product rating (e.g. ★★★☆☆, ★★★★★, etc.) with review count\n• Include a price — either absurdly cheap or ridiculously expensive\n• Include availability status (In Stock, Limited Stock, Only 1 Left, etc.)\n• Include Prime / Buy Now / Add to Cart style UI depending on platform\n• Include subtle platform-specific visual cues (buttons, badges, icons)\n\nPLATFORM BEHAVIOR DETAILS:\n• Amazon / Walmart / Target: clean corporate listing, Prime-style shipping badges\n• eBay / Facebook Marketplace: casual seller tone, slightly chaotic description\n• Etsy: handcrafted, emotional, overly sincere description\n• Temu: suspiciously cheap price, exaggerated claims\n• Newegg / Best Buy: technical specs listed even if meaningless\n• Wayfair: elegant staging, oddly specific dimensions\n\nSETTING & COMPOSITION:\n• Subject photographed like a product\n• Neutral or lifestyle background depending on platform\n• Full-body product view preferred\n• FULL image visible with all four corners present\n• No cropping of subject or UI elements\n\nSTYLE:\n• Ultra-realistic e-commerce photography\n• Looks indistinguishable from a real listing screenshot\n• Humor comes from accuracy and commitment\n• No memes, no visual jokes, no exaggeration\n\nFINAL RESULT:\nThe image should convincingly resemble a real online marketplace listing where the subject is the product being sold — complete with platform-accurate UI, pricing, ratings, and flavor text — subtle, dry, and uncomfortably believable, with the subject fully visible from head to toe."
@@ -3064,7 +3074,7 @@ const DEFAULT_PRESETS = [
   {
     name: "STAND-UP COMEDIAN",
     category: ["HUMOR", "PERFORMANCE", "STAGE", "POP CULTURE"],
-    message: "Take a picture and transform the subject into a stand-up comedian performing live on stage.\n\nPlace the subject on a comedy club stage with a microphone stand, spotlight lighting, and a classic stand-up backdrop such as a brick wall or dark curtain. The subject should appear mid-performance, holding or standing near the microphone, with posture and expression adapted from the subject's real demeanor (confident, awkward, smug, confused, etc.).\n\nDress the subject in classic stand-up attire appropriate to a comedy club — casual jacket, button-down, t-shirt, or minimalist stage outfit — adapted naturally from the subject's original clothing when possible.\n\nJOKE COMEDIAN STYLE SELECTION (CRITICAL):\n• If an external master prompt suggests a comedian's style, USE THAT COMEDIAN'S STYLE\n• If no comedian's style is provided externally, SELECT EXACTLY ONE comedian's style using the RANDOM SEED\n• If the RANDOM SEED ends in 0: SELECT Stephen Wright\n• If the RANDOM SEED ends in 1: SELECT Rodney Dangerfield\n• If the RANDOM SEED ends in 2,3: SELECT Mitch Hedberg\n• If the RANDOM SEED ends in 4: SELECT Norm Macdonald\n• If the RANDOM SEED ends in 5,6: SELECT Anthony Jeselnik\n• If the RANDOM SEED ends in 7: SELECT Jimmy Carr\n• If the RANDOM SEED ends in 8,9: SELECT Henny Youngman\n\nInclude ONE clearly readable on-screen joke caption, presented as part of the performance (subtitle, lower-third, or stage sign). The joke should be EITHER a REAL, VERBATIM one-liner (under 90 characters) from the selected comedian, OR an ORIGINAL one-liner written in the STYLE of that comedian.\n\nOptionally include subtle comedy-club details such as:\n• a fake venue name or special title inspired by the subject\n• a small audience silhouette or dimly lit crowd\n• a mock comedy special title using flavor text (e.g., 'Live From Poor Decisions')\n\nEnsure the full stage scene, subject, and joke text are fully visible and readable on a small screen. The final image should feel like a paused frame from a real comedy set — uncomfortable, confident, funny, and unmistakably stand-up."
+    message: "Take a picture and transform the subject into a stand-up comedian performing live on stage.\n\nPlace the subject on a comedy club stage with a microphone stand, spotlight lighting, and a classic stand-up backdrop such as a brick wall or dark curtain. The subject should appear mid-performance, holding or standing near the microphone, with posture and expression adapted from the subject's real demeanor (confident, awkward, smug, confused, etc.).\n\nDress the subject in classic stand-up attire appropriate to a comedy club — casual jacket, button-down, t-shirt, or minimalist stage outfit — adapted naturally from the subject's original clothing when possible.\n\nJOKE COMEDIAN STYLE SELECTION (CRITICAL):\n• If an external master prompt suggests a comedian's style, USE THAT COMEDIAN'S STYLE\n• If no comedian's style is provided externally, SELECT EXACTLY ONE comedian's style using the RANDOM SEED\n• If the RANDOM SEED ends in 0: SELECT Stephen Wright\n• If the RANDOM SEED ends in 1: SELECT Rodney Dangerfield\n• If the RANDOM SEED ends in 2,3: SELECT Mitch Hedberg\n• If the RANDOM SEED ends in 4: SELECT Norm Macdonald\n• If the RANDOM SEED ends in 5,6: SELECT Anthony Jeselnik\n• If the RANDOM SEED ends in 7: SELECT Jimmy Carr\n• If the RANDOM SEED ends in 8,9: SELECT Henny Youngman\n\nInclude ONE clearly readable on-screen joke caption, presented as part of the performance (subtitle, lower-third, or stage sign). The joke should be EITHER a REAL, VERBATIM one-liner (under 90 characters) from the selected comedian, OR an ORIGINAL one-liner written in the STYLE of that comedian.\n\nOptionally include subtle comedy-club details such as:\n• a fake venue name or special title inspired by the subject\n• a small audience silhouette or dimly lit crowd\n• a mock comedy special title using flavor text (e.g., Live From Poor Decisions)\n\nEnsure the full stage scene, subject, and joke text are fully visible and readable on a small screen. The final image should feel like a paused frame from a real comedy set — uncomfortable, confident, funny, and unmistakably stand-up."
   },
   {
     name: "STAR TREK",
@@ -3129,7 +3139,7 @@ const DEFAULT_PRESETS = [
   {
     name: "STREAMING",
     category: ["ENTERTAINMENT", "TV", "FILM", "PARODY", "PLATFORM UI"],
-    message: "Take a picture and place the subject into an existing streaming-platform show or movie presentation.\n\nPLATFORM SELECTION (CRITICAL):\n• If an external master prompt suggests a streaming platform, USE THAT STREAMING PLATFORM\n• If no streaming platform is provided externally, SELECT EXACTLY ONE streaming platform using the RANDOM SEED\n• If the RANDOM SEED ends in 0,1: SELECT Netflix\n• If the RANDOM SEED ends in 2,3: SELECT Disney+\n• If the RANDOM SEED ends in 4: SELECT Paramount+\n• If the RANDOM SEED ends in 5,6: SELECT HBO Max\n• If the RANDOM SEED ends in 7,8: SELECT Hulu\n• If the RANDOM SEED ends in 9: SELECT Amazon Prime Video\n\nThe final image MUST look like the ACTUAL SCREEN INTERFACE of the selected platform — not just a scene from a show.\n\nCRITICAL PLATFORM UI REQUIREMENTS:\n• The image must be framed as a streaming app screen\n• Include recognizable UI elements appropriate to the platform:\n  – Platform-specific layout style\n  – Content tiles, thumbnails, or hero banner\n  – Progress bar, play button, episode selector, or category row styling\n• Typography, spacing, and layout must clearly resemble the chosen platform's real interface\n• The subject must appear INSIDE the show/movie artwork or scene — not floating above the UI\n\nSUBJECT INTEGRATION:\n• The subject replaces or joins a character within the selected show or movie\n• Lighting, costume, pose, and environment must match the original production\n• The subject should look like they were actually cast in the show or film\n• Preserve realism — not cartoon or illustration\n\nSHOW / MOVIE PRESENTATION:\n• Display a title card, hero banner, or featured tile\n• Include flavor text describing the show or movie in the style of the platform\n• Flavor text may be humorous, absurd, or exaggerated, but must feel authentic to streaming descriptions\n\nFLAVOR TEXT RULES:\n• Written like a real streaming synopsis\n• May describe the subject's role, bizarre plot twist, or ridiculous premise\n• If master prompt text is provided, use it as the synopsis or tagline\n• Otherwise invent a parody description appropriate to the platform\n\nEXAMPLES (STYLE ONLY):\n• 'A gritty reimagining nobody asked for.'\n• 'One person. One mistake. Eight episodes too many.'\n• 'Critics hated it. Viewers watched it anyway.'\n\nABSOLUTE PROHIBITIONS:\n• DO NOT show a generic TV screen\n• DO NOT invent fake platforms\n• DO NOT ignore platform-specific UI styling\n• DO NOT place the subject outside the show artwork\n\nFINAL RESULT:\nThe image must look like a real screenshot of a streaming platform interface, featuring an actual show or movie with the subject seamlessly integrated as part of the cast — complete with authentic layout, platform-specific visual language, and humorous but believable streaming flavor text."
+    message: "Take a picture and place the subject into an existing streaming-platform show or movie presentation.\n\nPLATFORM SELECTION (CRITICAL):\n• If an external master prompt suggests a streaming platform, USE THAT STREAMING PLATFORM\n• If no streaming platform is provided externally, SELECT EXACTLY ONE streaming platform using the RANDOM SEED\n• If the RANDOM SEED ends in 0,1: SELECT Netflix\n• If the RANDOM SEED ends in 2,3: SELECT Disney+\n• If the RANDOM SEED ends in 4: SELECT Paramount+\n• If the RANDOM SEED ends in 5,6: SELECT HBO Max\n• If the RANDOM SEED ends in 7,8: SELECT Hulu\n• If the RANDOM SEED ends in 9: SELECT Amazon Prime Video\n\nThe final image MUST look like the ACTUAL SCREEN INTERFACE of the selected platform — not just a scene from a show.\n\nCRITICAL PLATFORM UI REQUIREMENTS:\n• The image must be framed as a streaming app screen\n• Include recognizable UI elements appropriate to the platform:\n  – Platform-specific layout style\n  – Content tiles, thumbnails, or hero banner\n  – Progress bar, play button, episode selector, or category row styling\n• Typography, spacing, and layout must clearly resemble the chosen platform's real interface\n• The subject must appear INSIDE the show/movie artwork or scene — not floating above the UI\n\nSUBJECT INTEGRATION:\n• The subject replaces or joins a character within the selected show or movie\n• Lighting, costume, pose, and environment must match the original production\n• The subject should look like they were actually cast in the show or film\n• Preserve realism — not cartoon or illustration\n\nSHOW / MOVIE PRESENTATION:\n• Display a title card, hero banner, or featured tile\n• Include flavor text describing the show or movie in the style of the platform\n• Flavor text may be humorous, absurd, or exaggerated, but must feel authentic to streaming descriptions\n\nFLAVOR TEXT RULES:\n• Written like a real streaming synopsis\n• May describe the subject's role, bizarre plot twist, or ridiculous premise\n• If master prompt text is provided, use it as the synopsis or tagline\n• Otherwise invent a parody description appropriate to the platform\n\nEXAMPLES (STYLE ONLY):\n• A gritty reimagining nobody asked for.\n• One person. One mistake. Eight episodes too many.\n• Critics hated it. Viewers watched it anyway.\n\nABSOLUTE PROHIBITIONS:\n• DO NOT show a generic TV screen\n• DO NOT invent fake platforms\n• DO NOT ignore platform-specific UI styling\n• DO NOT place the subject outside the show artwork\n\nFINAL RESULT:\nThe image must look like a real screenshot of a streaming platform interface, featuring an actual show or movie with the subject seamlessly integrated as part of the cast — complete with authentic layout, platform-specific visual language, and humorous but believable streaming flavor text."
   },
   {
     name: "STREET ART",
@@ -6305,20 +6315,20 @@ function loadMotionSettings() {
       continuousCheckbox.checked = motionContinuousEnabled;
     }
       
-      const cooldownSlider = document.getElementById('motion-cooldown-slider');
-      if (cooldownSlider) {
-        cooldownSlider.value = motionCooldown;
-      }
+    const cooldownSlider = document.getElementById('motion-cooldown-slider');
+    if (cooldownSlider) {
+      cooldownSlider.value = motionCooldown;
+    }
 
-      const startDelaySlider = document.getElementById('motion-start-delay-slider');
-      const startDelayValue = document.getElementById('motion-start-delay-value');
-      if (startDelaySlider && startDelayValue) {
-        const sliderValue = getStartDelaySliderValue();
-        startDelaySlider.value = sliderValue;
-        startDelayValue.textContent = MOTION_START_DELAYS[sliderValue].label;
-      }      
+    const startDelaySlider = document.getElementById('motion-start-delay-slider');
+    const startDelayValue = document.getElementById('motion-start-delay-value');
+    if (startDelaySlider && startDelayValue) {
+      const sliderValue = getStartDelaySliderValue();
+      startDelaySlider.value = sliderValue;
+      startDelayValue.textContent = MOTION_START_DELAYS[sliderValue].label;
+    }
 
-      updateMotionDisplay();
+    updateMotionDisplay();
   } catch (err) {
     console.error('Failed to load motion settings:', err);
   }
@@ -10172,6 +10182,16 @@ if (startBtn) {
     deleteViewerBtn.addEventListener('click', deleteViewerImage);
   }
   
+  const uploadViewerBtn = document.getElementById('upload-viewer-image');
+  if (uploadViewerBtn) {
+    uploadViewerBtn.addEventListener('click', uploadViewerImage);
+  }
+  
+  const closeQrModalBtn = document.getElementById('close-qr-modal');
+  if (closeQrModalBtn) {
+    closeQrModalBtn.addEventListener('click', closeQrModal);
+  }
+
   const startDateBtn = document.getElementById('gallery-start-date-btn');
   const startDateInput = document.getElementById('gallery-start-date');
   if (startDateBtn && startDateInput) {
@@ -10328,5 +10348,115 @@ if (startBtn) {
 window.removeFromQueue = removeFromQueue;
 window.previewQueueItem = previewQueueItem;
 window.clearQueue = clearQueue;
+
+// Upload image to gofile.io
+async function uploadViewerImage() {
+  if (currentViewerImageIndex < 0) return;
+  
+  const statusElement = document.getElementById('status');
+  const uploadBtn = document.getElementById('upload-viewer-image');
+  
+  try {
+    // Disable button and show status
+    uploadBtn.disabled = true;
+    uploadBtn.textContent = '⏳';
+    if (statusElement) {
+      statusElement.style.display = 'block';
+      statusElement.textContent = 'Uploading image...';
+    }
+    
+    const imageData = galleryImages[currentViewerImageIndex];
+    // Convert base64 to blob
+    const base64Data = imageData.imageBase64.split(',')[1];
+    const byteCharacters = atob(base64Data);
+    const byteNumbers = new Array(byteCharacters.length);
+    for (let i = 0; i < byteCharacters.length; i++) {
+      byteNumbers[i] = byteCharacters.charCodeAt(i);
+    }
+    const byteArray = new Uint8Array(byteNumbers);
+    const blob = new Blob([byteArray], { type: 'image/png' });
+    
+    // Create form data for gofile.io
+    const formData = new FormData();
+    formData.append('file', blob, `magic-kamera-${Date.now()}.png`);
+    
+    // Upload to gofile.io with token parameter
+    const response = await fetch('https://store2.gofile.io/uploadFile?token=', {
+      method: 'POST',
+      body: formData
+    });
+    
+    if (!response.ok) {
+      throw new Error('Upload failed - status: ' + response.status);
+    }
+    
+    // gofile.io returns JSON with the download URL
+    const result = await response.json();
+    
+    if (result.status !== 'ok' || !result.data.downloadPage) {
+      throw new Error('Upload failed: ' + JSON.stringify(result));
+    }
+    
+    const uploadUrl = result.data.downloadPage;
+    
+    if (statusElement) {
+      statusElement.textContent = 'Upload successful!';
+      setTimeout(() => {
+        statusElement.style.display = 'none';
+      }, 2000);
+    }
+    
+    // Show QR code
+    showQrCode(uploadUrl.trim());
+    
+  } catch (error) {
+    if (statusElement) {
+      statusElement.textContent = 'Upload failed. Please try again.';
+      setTimeout(() => {
+        statusElement.style.display = 'none';
+      }, 3000);
+    }
+  } finally {
+    // Re-enable button
+    uploadBtn.disabled = false;
+    uploadBtn.textContent = '📤';
+  }
+}
+
+// Show QR code modal
+function showQrCode(url) {
+  const qrModal = document.getElementById('qr-modal');
+  const qrContainer = document.getElementById('qr-code-container');
+  const qrUrlText = document.getElementById('qr-url-text');
+  
+  if (!qrModal || !qrContainer || !qrUrlText) return;
+  
+  // Clear previous QR code
+  qrContainer.innerHTML = '';
+  
+  // Generate new QR code
+  new QRCode(qrContainer, {
+    text: url,
+    width: 128,
+    height: 128,
+    colorDark: '#000000',
+    colorLight: '#ffffff',
+    correctLevel: QRCode.CorrectLevel.H
+  });
+  
+  // Set URL text
+  qrUrlText.textContent = url;
+  
+  // Show modal
+  qrModal.style.display = 'flex';
+}
+
+// Close QR code modal
+function closeQrModal() {
+  const qrModal = document.getElementById('qr-modal');
+  if (qrModal) {
+    qrModal.style.display = 'none';
+  }
+}
 
 console.log('AI Camera Styles app initialized!');
