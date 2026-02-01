@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>Magic Kamera</title>
-  <script type="module" crossorigin src="./assets/main-BaKPrzjR.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/main-CHhDND_M.css">
+  <script type="module" crossorigin src="./assets/main-FX5UPVWQ.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/main-X4Eb7Xr_.css">
 </head>
 <body>
     <div id="app">
@@ -700,7 +700,7 @@
                    <div id="section-ai-presets" class="tutorial-section">
                         <h4 class="tutorial-heading">✨ AI Presets</h4>
                         <p class="tutorial-text">
-                            Browse over 600 unique AI presets! Scroll through styles like Impressionism, Cyberpunk, Anime, Watercolor, Caricature, and much more. Each preset transforms your photo with a specific artistic style or effect. The current preset name appears at the bottom of the main screen.
+                            Browse over 600 unique AI presets! Scroll through styles like Impressionism, Cyberpunk, Anime, Watercolor, Caricature, and much more. The current preset name appears at the bottom of the main screen. Each preset transforms your photo with a specific artistic style or effect. Some presets are created to truly randomize(using the RonDom Method©) options within the preset.   
                         </p>
                     </div>
 
@@ -723,6 +723,7 @@
                             <strong>Apply Presets:</strong> Transform saved photos with "Load Preset" or "Multi Preset". Click twice on preset to apply.<br>
                             <strong>Batch Operations:</strong> Select multiple images to apply one preset or single/batch delete. Click on select button to do this. And make sure to click DONE button, when done (if not, the program returns to select screen and not to prior screen). When applying presets, click twice on preset to apply.<br>
                             <strong>Sort & Filter:</strong> Organize by newest/oldest, filter by date range (if selecting a date, make sure to select the next day as well. Example: If you want all images from December 25, then choose From December 25 to December 26.)<br>
+                            <strong>Upload to gofile.io</strong> Upload saved gallery images to gofile.io and get the qr code to access your uploaded photo - link/image expires after 24 hours.<br>
                             <strong>Magic Transform:</strong> Type custom prompts or use presets on gallery images
                         </p>
                     </div>
@@ -773,7 +774,7 @@
                         <h4 class="tutorial-heading">🔍 Troubleshooting</h4>
                         <p class="tutorial-text">
                             <strong>AI transformation not working:</strong> If you took a picture and the rabbit did not respond indicating picture is being transformed/prepared, first check your settings to see if NO MAGIC mode is enabled. Disable if you want the Magic to happen. If this is not the solution, check your network connections. <br>
-All of the presets are optimized to avoid "camera ran dry" or "content filter" issues.  However, if you get a camera ran dry or content filter message. Sometimes it helps re-prompting it over and over until you break through the content filer overlords. You may also edit the prompt (avoid using offensive language, and trademark/copyrighted words). *v3 Magic Kamera MDRE ©2026
+All of the presets are optimized to avoid "camera ran dry" or "content filter" issues.  However, if you get a camera ran dry or content filter message. Sometimes it helps re-prompting it over and over until you break through the content filer overlords. You may also edit the prompt (avoid using offensive language, and trademark/copyrighted words). *v4 Magic Kamera MDRE ©2026
                         </p>
                     </div>
 
@@ -856,9 +857,10 @@ All of the presets are optimized to avoid "camera ran dry" or "content filter" i
         
         <!-- Image Viewer Modal -->
         <div id="image-viewer" class="image-viewer" style="display: none;">
-            <div class="image-viewer-content">
-                <button id="delete-viewer-image" class="viewer-delete-button">🗑️</button>
-                <button id="close-viewer" class="viewer-close-button">×</button>
+    <div class="image-viewer-content">
+        <button id="upload-viewer-image" class="viewer-upload-button">📤</button>
+        <button id="delete-viewer-image" class="viewer-delete-button">🗑️</button>
+        <button id="close-viewer" class="viewer-close-button">×</button>
                 <div class="image-viewer-container">
                     <img id="viewer-image" class="viewer-image" alt="Viewing image">
                 </div>
@@ -908,8 +910,22 @@ All of the presets are optimized to avoid "camera ran dry" or "content filter" i
                     <button id="sync-all" class="sync-button">Sync All</button>
                     <button id="clear-queue" class="delete-button">Clear Queue</button>
                 </div>
+           </div>
+        </div>
+
+        <!-- QR Code Modal -->
+        <div id="qr-modal" class="qr-modal" style="display: none;">
+            <div class="qr-modal-content">
+                <div class="qr-modal-header">
+                    <h4>Scan to View Image</h4>
+                    <button id="close-qr-modal" class="close-button">×</button>
+                </div>
+                <div id="qr-code-container" class="qr-code-container"></div>
+                <p id="qr-url-text" class="qr-url-text"></p>
+                <p class="qr-expiry-text">Link expires in 24 hours</p>
             </div>
         </div>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 </body>
 </html>
