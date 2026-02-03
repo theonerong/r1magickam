@@ -18,6 +18,19 @@ const RESOLUTION_PRESETS = [
 ];
 let currentResolutionIndex = 0; // Default to Low (640x480)
 const RESOLUTION_STORAGE_KEY = 'r1_camera_resolution';
+
+// Import resolution settings
+const IMPORT_RESOLUTION_OPTIONS = [
+  { name: 'VGA (640x480)', width: 640, height: 480 },
+  { name: 'SVGA (800x600)', width: 800, height: 600 },
+  { name: 'XGA (1024x768)', width: 1024, height: 768 },
+  { name: 'SXGA (1280x960)', width: 1280, height: 960 },
+  { name: 'UXGA (1600x1200)', width: 1600, height: 1200 },
+  { name: '2K (2048x1080)', width: 2048, height: 1080 }
+];
+let currentImportResolutionIndex = 0; // Default to VGA (640x480)
+const IMPORT_RESOLUTION_STORAGE_KEY = 'r1_import_resolution';
+
 // White balance settings
 const WHITE_BALANCE_MODES = [
   { name: 'Auto', value: 'auto' },
@@ -151,6 +164,8 @@ let isMasterPromptSubmenuOpen = false;
 let isMotionSubmenuOpen = false;
 let isAspectRatioSubmenuOpen = false;
 let currentAspectRatioIndex = 0;
+let isImportResolutionSubmenuOpen = false;
+let currentImportResolutionIndex_Menu = 0;
 let isTutorialSubmenuOpen = false;
 let isPresetBuilderSubmenuOpen = false;
 let editingPresetBuilderIndex = -1;
@@ -2409,6 +2424,14 @@ function clearPresetBuilderForm() {
   
   const clearButton = document.getElementById('preset-builder-clear');
   if (clearButton) clearButton.style.display = 'flex';
+  
+  // Close all chip sections when clearing
+  document.querySelectorAll('.chip-section-content').forEach(c => {
+    c.style.display = 'none';
+  });
+  document.querySelectorAll('.chip-section-header').forEach(h => {
+    h.classList.remove('expanded');
+  });
 }
 
 // Edit preset in builder
@@ -2443,14 +2466,6 @@ function editPresetInBuilder(index) {
       clearButton.style.display = 'none';
     }
   }, 100);
-  
-  // Close all chip sections when clearing
-  document.querySelectorAll('.chip-section-content').forEach(c => {
-    c.style.display = 'none';
-  });
-  document.querySelectorAll('.chip-section-header').forEach(h => {
-    h.classList.remove('expanded');
-  });
 }
 
 // Handle template selection
@@ -2881,21 +2896,21 @@ function loadMotionSettings() {
     if (continuousCheckbox) {
       continuousCheckbox.checked = motionContinuousEnabled;
     }
-      
-      const cooldownSlider = document.getElementById('motion-cooldown-slider');
-      if (cooldownSlider) {
-        cooldownSlider.value = motionCooldown;
-      }
+    
+    const cooldownSlider = document.getElementById('motion-cooldown-slider');
+    if (cooldownSlider) {
+      cooldownSlider.value = motionCooldown;
+    }
 
-      const startDelaySlider = document.getElementById('motion-start-delay-slider');
-      const startDelayValue = document.getElementById('motion-start-delay-value');
-      if (startDelaySlider && startDelayValue) {
-        const sliderValue = getStartDelaySliderValue();
-        startDelaySlider.value = sliderValue;
-        startDelayValue.textContent = MOTION_START_DELAYS[sliderValue].label;
-      }      
+    const startDelaySlider = document.getElementById('motion-start-delay-slider');
+    const startDelayValue = document.getElementById('motion-start-delay-value');
+    if (startDelaySlider && startDelayValue) {
+      const sliderValue = getStartDelaySliderValue();
+      startDelaySlider.value = sliderValue;
+      startDelayValue.textContent = MOTION_START_DELAYS[sliderValue].label;
+    }
 
-      updateMotionDisplay();
+    updateMotionDisplay();
   } catch (err) {
     console.error('Failed to load motion settings:', err);
   }
@@ -2939,6 +2954,29 @@ function loadNoMagicMode() {
     }
   } catch (err) {
     console.error('Failed to load No Magic mode:', err);
+  }
+}
+
+// Load import resolution setting
+function loadImportResolution() {
+  const saved = localStorage.getItem(IMPORT_RESOLUTION_STORAGE_KEY);
+  if (saved !== null) {
+    currentImportResolutionIndex = parseInt(saved, 10);
+  }
+  updateImportResolutionDisplay();
+}
+
+// Save import resolution setting
+function saveImportResolution() {
+  localStorage.setItem(IMPORT_RESOLUTION_STORAGE_KEY, currentImportResolutionIndex.toString());
+  updateImportResolutionDisplay();
+}
+
+// Update import resolution display
+function updateImportResolutionDisplay() {
+  const display = document.getElementById('current-import-resolution-display');
+  if (display) {
+    display.textContent = IMPORT_RESOLUTION_OPTIONS[currentImportResolutionIndex].name;
   }
 }
 
@@ -3081,6 +3119,40 @@ function updateTutorialGlossarySelection() {
     // Scroll item into view
     currentItem.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   }
+}
+
+// Show import resolution submenu
+function showImportResolutionSubmenu() {
+  document.getElementById('settings-submenu').style.display = 'none';
+  const submenu = document.getElementById('import-resolution-submenu');
+  const list = document.getElementById('import-resolution-list');
+  
+  list.innerHTML = '';
+  IMPORT_RESOLUTION_OPTIONS.forEach((res, index) => {
+    const item = document.createElement('div');
+    item.className = 'resolution-item';
+    if (index === currentImportResolutionIndex) {
+      item.classList.add('selected');
+    }
+    item.textContent = res.name;
+    item.onclick = () => {
+      currentImportResolutionIndex = index;
+      saveImportResolution();
+      hideImportResolutionSubmenu();
+    };
+    list.appendChild(item);
+  });
+  
+  submenu.style.display = 'flex';
+  isImportResolutionSubmenuOpen = true;
+  currentImportResolutionIndex_Menu = 0;
+}
+
+// Hide import resolution submenu
+function hideImportResolutionSubmenu() {
+  document.getElementById('import-resolution-submenu').style.display = 'none';
+  document.getElementById('settings-submenu').style.display = 'flex';
+  isImportResolutionSubmenuOpen = false;
 }
 
 function startMotionDetection() {
@@ -6685,6 +6757,7 @@ if (startBtn) {
   loadTimerSettings();
   loadMotionSettings();
   loadNoMagicMode();
+  loadImportResolution();
 
   const resetBtn = document.getElementById('reset-button');
   if (resetBtn) {
@@ -6699,6 +6772,16 @@ if (startBtn) {
   const closeEditorBtn = document.getElementById('close-editor');
   if (closeEditorBtn) {
     closeEditorBtn.addEventListener('click', hideStyleEditor);
+  }
+  
+  const importResolutionBtn = document.getElementById('import-resolution-settings-button');
+  if (importResolutionBtn) {
+    importResolutionBtn.addEventListener('click', showImportResolutionSubmenu);
+  }
+  
+  const importResolutionBackBtn = document.getElementById('import-resolution-back');
+  if (importResolutionBackBtn) {
+    importResolutionBackBtn.addEventListener('click', hideImportResolutionSubmenu);
   }
   
   const saveStyleBtn = document.getElementById('save-style');
@@ -7278,7 +7361,9 @@ async function importFromQRCode() {
       statusElement.textContent = 'Optimizing image...';
     }
     
-    blob = await resizeAndCompressImage(blob, 640, 480, 0.85);
+    // Use user's selected import resolution
+    const importRes = IMPORT_RESOLUTION_OPTIONS[currentImportResolutionIndex];
+    blob = await resizeAndCompressImage(blob, importRes.width, importRes.height, 0.85);
     
     const newSize = Math.round(blob.size / 1024);
     if (statusElement) {
