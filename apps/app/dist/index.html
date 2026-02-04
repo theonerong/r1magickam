@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>Magic Kamera</title>
-  <script type="module" crossorigin src="./assets/main-BRnqg42M.js"></script>
+  <script type="module" crossorigin src="./assets/main-BXuEf9x6.js"></script>
   <link rel="stylesheet" crossorigin href="./assets/main-DEOx3dyy.css">
 </head>
 <body>
@@ -203,11 +203,11 @@
                         </button>
                     </div>
 
-                    <!-- Import Resolution Settings -->
+                    <!-- Import Settings -->
                     <div class="menu-section">
                         <button id="import-resolution-settings-button" class="menu-section-button">
-                            <span class="menu-section-title">Import Resolution</span>
-                            <span id="current-import-resolution-display" class="menu-section-value">VGA (640x480)</span>
+                            <span class="menu-section-title">Import Settings</span>
+                            <span id="current-import-resolution-display" class="menu-section-value">QR: OFF, VGA</span>
                             <span class="menu-section-arrow">›</span>
                         </button>
                     </div>
@@ -663,10 +663,22 @@
             <div class="submenu-content">
                 <div class="submenu-header">
                     <button id="import-resolution-back" class="back-button">‹ Back</button>
-                    <h3>Import Resolution</h3>
+                    <h3>Import Settings</h3>
                 </div>
-                <div id="import-resolution-list" class="submenu-list">
-                    <!-- Import resolution options will be dynamically added here -->
+                <div class="submenu-list">
+                    <!-- QR Detection Toggle -->
+                    <div class="menu-section">
+                        <button id="qr-detection-toggle-button" class="menu-section-button">
+                            <span class="menu-section-title">QR Detection</span>
+                            <span id="qr-detection-status" class="menu-section-value">Disabled</span>
+                        </button>
+                    </div>
+                    
+                    <!-- Import Resolution List -->
+                    <h4 style="padding: 2vw; color: #FE5F00; font-size: 4vw;">Import Resolution</h4>
+                    <div id="import-resolution-list">
+                        <!-- Import resolution options will be dynamically added here -->
+                    </div>
                 </div>
             </div>
         </div>
@@ -759,13 +771,15 @@
                         <p class="tutorial-text">
                             You can import images from the web directly into your gallery using QR codes. Here's how:<br><br>
                             <strong>Step-by-Step Process:</strong><br>
-                            1. Upload your image to <strong>catbox.moe</strong> (free, no account needed)<br>
-                            2. Copy the <strong>direct link</strong> (must end in .png, .jpg, .jpeg, .gif, or .webp)<br>
-                            3. Go to <strong>qr-code-generator.com</strong> and paste the direct link<br>
-                            4. Generate and download/display the QR code<br>
-                            5. Point your R1 camera at the QR code<br>
-                            6. When the <strong>Import button (📥 Import)</strong> appears, click it<br>
-                            7. The image will be optimized and saved to your gallery!<br><br>
+                            1. Enable QR detection in the Import Settings Menu (Disable when done importing)<br>
+                            2. Select the resolution of the image<br>
+                            3. Upload your image to <strong>catbox.moe</strong> (free, no account needed)<br>
+                            4. Copy the <strong>direct link</strong> (must end in .png, .jpg, .jpeg, .gif, or .webp)<br>
+                            5. Go to <strong>qr-code-generator.com</strong> and paste the direct link<br>
+                            6. Generate and download/display the QR code<br>
+                            7. Point your R1 camera at the QR code<br>
+                            8. When the <strong>Import button (📥 Import)</strong> appears, click it<br>
+                            9. The image will be optimized and saved to your gallery!<br><br>
                             
                             <strong>⚠️ IMPORTANT - Verify Your Link:</strong><br>
                             Before generating the QR code, paste the link into a browser:<br>
