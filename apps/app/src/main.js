@@ -30,6 +30,8 @@ const IMPORT_RESOLUTION_OPTIONS = [
 ];
 let currentImportResolutionIndex = 0; // Default to VGA (640x480)
 const IMPORT_RESOLUTION_STORAGE_KEY = 'r1_import_resolution';
+let qrDetectionEnabled = false; // QR detection OFF by default
+const QR_DETECTION_ENABLED_KEY = 'r1_qr_detection_enabled';
 
 // White balance settings
 const WHITE_BALANCE_MODES = [
@@ -1430,7 +1432,7 @@ async function processBatchImages(preset, imagesToProcess) {
       document.getElementById('batch-current').textContent = processed;
       document.getElementById('batch-progress-fill').style.width = `${(processed / total) * 100}%`;
       
-      await new Promise(resolve => setTimeout(resolve, 2000));
+      await new Promise(resolve => setTimeout(resolve, 3000));
     } catch (error) {
       console.error(`Failed to process image ${imageId}:`, error);
     }
@@ -1617,7 +1619,7 @@ async function applyMultiplePresets() {
       document.getElementById('batch-current').textContent = processed;
       document.getElementById('batch-progress-fill').style.width = `${(processed / presetsToApply.length) * 100}%`;
       
-      await new Promise(resolve => setTimeout(resolve, 2000));
+      await new Promise(resolve => setTimeout(resolve, 3000));
     } catch (error) {
       console.error(`Failed to apply preset ${preset.name}:`, error);
     }
@@ -2896,21 +2898,21 @@ function loadMotionSettings() {
     if (continuousCheckbox) {
       continuousCheckbox.checked = motionContinuousEnabled;
     }
-    
-    const cooldownSlider = document.getElementById('motion-cooldown-slider');
-    if (cooldownSlider) {
-      cooldownSlider.value = motionCooldown;
-    }
+      
+      const cooldownSlider = document.getElementById('motion-cooldown-slider');
+      if (cooldownSlider) {
+        cooldownSlider.value = motionCooldown;
+      }
 
-    const startDelaySlider = document.getElementById('motion-start-delay-slider');
-    const startDelayValue = document.getElementById('motion-start-delay-value');
-    if (startDelaySlider && startDelayValue) {
-      const sliderValue = getStartDelaySliderValue();
-      startDelaySlider.value = sliderValue;
-      startDelayValue.textContent = MOTION_START_DELAYS[sliderValue].label;
-    }
+      const startDelaySlider = document.getElementById('motion-start-delay-slider');
+      const startDelayValue = document.getElementById('motion-start-delay-value');
+      if (startDelaySlider && startDelayValue) {
+        const sliderValue = getStartDelaySliderValue();
+        startDelaySlider.value = sliderValue;
+        startDelayValue.textContent = MOTION_START_DELAYS[sliderValue].label;
+      }      
 
-    updateMotionDisplay();
+      updateMotionDisplay();
   } catch (err) {
     console.error('Failed to load motion settings:', err);
   }
@@ -2976,7 +2978,9 @@ function saveImportResolution() {
 function updateImportResolutionDisplay() {
   const display = document.getElementById('current-import-resolution-display');
   if (display) {
-    display.textContent = IMPORT_RESOLUTION_OPTIONS[currentImportResolutionIndex].name;
+    const qrStatus = qrDetectionEnabled ? 'ON' : 'OFF';
+    const resName = IMPORT_RESOLUTION_OPTIONS[currentImportResolutionIndex].name.replace(/\s*\(.*?\)/, ''); // Remove resolution details
+    display.textContent = `QR: ${qrStatus}, ${resName}`;
   }
 }
 
@@ -4216,6 +4220,11 @@ async function resumeCamera() {
       });
       
       video.style.display = 'block';
+      
+      // Restart QR detection if it's enabled
+      if (qrDetectionEnabled && !qrDetectionActive) {
+        startQRDetection();
+      }
     } catch (err) {
       console.error('Failed to resume camera:', err);
       statusElement.textContent = 'Camera resume failed';
@@ -4384,7 +4393,7 @@ async function syncQueuedPhotos() {
         }));
       }
       
-      await new Promise(resolve => setTimeout(resolve, 2000));
+      await new Promise(resolve => setTimeout(resolve, 3000));
       
       if (isOnline) {
         photoQueue.shift();
@@ -4396,7 +4405,7 @@ async function syncQueuedPhotos() {
         break;
       }
       
-      await new Promise(resolve => setTimeout(resolve, 2000));
+      await new Promise(resolve => setTimeout(resolve, 3000));
       
     } catch (error) {
       console.error('Sync error:', error);
@@ -6758,6 +6767,7 @@ if (startBtn) {
   loadMotionSettings();
   loadNoMagicMode();
   loadImportResolution();
+  loadQRDetectionEnabled();
 
   const resetBtn = document.getElementById('reset-button');
   if (resetBtn) {
@@ -6782,6 +6792,11 @@ if (startBtn) {
   const importResolutionBackBtn = document.getElementById('import-resolution-back');
   if (importResolutionBackBtn) {
     importResolutionBackBtn.addEventListener('click', hideImportResolutionSubmenu);
+  }
+  
+  const qrDetectionToggleBtn = document.getElementById('qr-detection-toggle-button');
+  if (qrDetectionToggleBtn) {
+    qrDetectionToggleBtn.addEventListener('click', toggleQRDetection);
   }
   
   const saveStyleBtn = document.getElementById('save-style');
@@ -7123,9 +7138,9 @@ function closeQrModal() {
   }
 }
 
-// Start QR code detection
 function startQRDetection() {
-  if (qrDetectionActive || !video || video.style.display === 'none') return;
+  // Only start if user has enabled QR detection
+  if (!qrDetectionEnabled || qrDetectionActive || !video || video.style.display === 'none') return;
   
   qrDetectionActive = true;
   qrDetectionInterval = setInterval(detectQRCode, QR_DETECTION_INTERVAL);
@@ -7140,6 +7155,46 @@ function stopQRDetection() {
   }
   lastDetectedQR = null;
   hideQRImportButton();
+}
+
+// Toggle QR detection
+function toggleQRDetection() {
+  qrDetectionEnabled = !qrDetectionEnabled;
+  saveQRDetectionEnabled();
+  
+  if (qrDetectionEnabled) {
+    // Start QR detection if camera is active
+    startQRDetection();
+  } else {
+    // Stop QR detection
+    stopQRDetection();
+  }
+}
+
+// Load QR detection enabled setting
+function loadQRDetectionEnabled() {
+  const saved = localStorage.getItem(QR_DETECTION_ENABLED_KEY);
+  if (saved !== null) {
+    qrDetectionEnabled = saved === 'true';
+  }
+  updateQRDetectionDisplay();
+  updateImportResolutionDisplay();
+}
+
+// Save QR detection enabled setting
+function saveQRDetectionEnabled() {
+  localStorage.setItem(QR_DETECTION_ENABLED_KEY, qrDetectionEnabled.toString());
+  updateQRDetectionDisplay();
+  updateImportResolutionDisplay();
+}
+
+// Update QR detection status display
+function updateQRDetectionDisplay() {
+  const status = document.getElementById('qr-detection-status');
+  if (status) {
+    status.textContent = qrDetectionEnabled ? 'Enabled' : 'Disabled';
+    status.style.color = qrDetectionEnabled ? '#4CAF50' : '#999';
+  }
 }
 
 // Detect QR code in video stream
