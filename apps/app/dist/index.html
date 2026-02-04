@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>Magic Kamera</title>
-  <script type="module" crossorigin src="./assets/main-BXuEf9x6.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/main-DEOx3dyy.css">
+  <script type="module" crossorigin src="./assets/main-mSiIQ_Y4.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/main-BygAHK-g.css">
 </head>
 <body>
     <div id="app">
@@ -47,7 +47,6 @@
         </button>
         <button id="timer-toggle" class="timer-toggle" title="Toggle Timer Mode" style="display: none;">⏱️</button>
         <button id="gallery-button" class="gallery-button" title="Gallery" style="display: none;">🖼️</button>
-        <button id="qr-import-button" class="qr-import-button" title="Import from QR Code" style="display: none;">📥 Import</button>
         
         <!-- Style Name Reveal -->
         <div id="style-reveal" class="style-reveal" style="display: none;">
@@ -207,7 +206,7 @@
                     <div class="menu-section">
                         <button id="import-resolution-settings-button" class="menu-section-button">
                             <span class="menu-section-title">Import Settings</span>
-                            <span id="current-import-resolution-display" class="menu-section-value">QR: OFF, VGA</span>
+                            <span id="current-import-resolution-display" class="menu-section-value">VGA</span>
                             <span class="menu-section-arrow">›</span>
                         </button>
                     </div>
@@ -666,14 +665,6 @@
                     <h3>Import Settings</h3>
                 </div>
                 <div class="submenu-list">
-                    <!-- QR Detection Toggle -->
-                    <div class="menu-section">
-                        <button id="qr-detection-toggle-button" class="menu-section-button">
-                            <span class="menu-section-title">QR Detection</span>
-                            <span id="qr-detection-status" class="menu-section-value">Disabled</span>
-                        </button>
-                    </div>
-                    
                     <!-- Import Resolution List -->
                     <h4 style="padding: 2vw; color: #FE5F00; font-size: 4vw;">Import Resolution</h4>
                     <div id="import-resolution-list">
@@ -728,7 +719,6 @@
                             <strong>Camera Button (📷):</strong> Switch between front (selfie)/back camera<br>
                             <strong>Menu Button (☰):</strong> Access settings and presets<br>
                             <strong>Gallery Button (🖼️):</strong> View/Modify/Delete saved photos and re-prompt<br>
-                            <strong>Import Button (📥 Import):</strong> Appears only when QR code detected - imports images to gallery (see Uploading Images section below)<br>
                             <strong>New Photo Button:</strong> Return to camera after capture. Can also be done with side button.
                         </p>
                     </div>
@@ -757,10 +747,11 @@
                         <h4 class="tutorial-heading">🖼️ Gallery Features</h4>
                         <p class="tutorial-text">
                             <strong>View Photos:</strong> Tap any image to view full-screen<br>
+                            <strong>Import Photos:</strong> Click on import button(full instructions under Uploading Images below)<br>     
                             <strong>Apply Presets:</strong> Transform saved photos with "Load Preset" or "Multi Preset". Click twice on preset to apply.<br>
                             <strong>Batch Operations:</strong> Select multiple images to apply one preset or single/batch delete. Click on select button to do this. And make sure to click DONE button, when done (if not, the program returns to select screen and not to prior screen). When applying presets, click twice on preset to apply.<br>
                             <strong>Sort & Filter:</strong> Organize by newest/oldest, filter by date range (if selecting a date, make sure to select the next day as well. Example: If you want all images from December 25, then choose From December 25 to December 26.)<br>
-                            <strong>Upload to gofile.io</strong> Upload saved gallery images to gofile.io and get the qr code to access your uploaded photo - link/image expires after 24 hours.<br>
+                            <strong>Upload to gofile.io</strong> Upload saved gallery images to gofile.io and get the qr code to access your uploaded photo - link/image expires after 24 hours. Please note that this function is mainly for No Magic Mode because your captured photos are already uploaded to the rabbit hole.<br>
                             <strong>Magic Transform:</strong> Type custom prompts or use presets on gallery images
                         </p>
                     </div>
@@ -769,25 +760,28 @@
                     <div id="section-uploading-images" class="tutorial-section">
                         <h4 class="tutorial-heading">📥 Uploading Images</h4>
                         <p class="tutorial-text">
-                            You can import images from the web directly into your gallery using QR codes. Here's how:<br><br>
+                            You can import images from the web directly into your gallery using QR codes (special thanks to WWTV). Here's how:<br><br>
                             <strong>Step-by-Step Process:</strong><br>
-                            1. Enable QR detection in the Import Settings Menu (Disable when done importing)<br>
-                            2. Select the resolution of the image<br>
-                            3. Upload your image to <strong>catbox.moe</strong> (free, no account needed)<br>
-                            4. Copy the <strong>direct link</strong> (must end in .png, .jpg, .jpeg, .gif, or .webp)<br>
-                            5. Go to <strong>qr-code-generator.com</strong> and paste the direct link<br>
-                            6. Generate and download/display the QR code<br>
-                            7. Point your R1 camera at the QR code<br>
-                            8. When the <strong>Import button (📥 Import)</strong> appears, click it<br>
-                            9. The image will be optimized and saved to your gallery!<br><br>
+                            1. Upload your image you want imported to <strong>catbox.moe</strong> (free, no account needed)<br>
+                            2. Copy the <strong>direct link</strong> (must end in .png, .jpg, .jpeg, .gif, or .webp)<br>
+                            3. Go to <strong>qr-code-generator.com</strong> and paste the direct link<br>
+                            4. Generate and download/display the QR code<br>
+                            5. Go to menu (☰)/settings in the Magic Kamera plugin<br>
+                            6. Select the resolution of the image under Import Settings<br>
+                            7. Exit settings and menu<br>  
+                            8. Go to gallery (🖼️)<br>
+                            9. Press the Import button<br>
+                            10. Press the Scan QR Code button<br>
+                            11. Point your R1 camera at the QR code<br>
+                            12. Wait a few...the modal will close and the image will be optimized and saved to your gallery!<br><br>
                             
                             <strong>⚠️ IMPORTANT - Verify Your Link:</strong><br>
                             Before generating the QR code, paste the link into a browser:<br>
                             ✅ <strong>GOOD:</strong> Shows ONLY the image (no webpage around it) - will work!<br>
                             ❌ <strong>BAD:</strong> Shows a webpage with the image embedded - won't work!<br><br>
                             <strong>Notes:</strong><br>
-                            • Imported images are automatically resized to 640x480 for optimal storage<br>
-                            • Images are saved permanently to your gallery<br>
+                            • Imported images are automatically default resized to 640x480 for optimal storage (changed in the settings/Import Settings)<br>
+                            • Images are saved to your gallery just like captured photos<br>
                             • You can apply AI presets to imported images just like captured photos
                         </p>
                     </div>
@@ -805,8 +799,10 @@
                             <strong>Motion Detection:</strong> Sensitivity, start delay, continuous capture<br>
                             <strong>Visible Presets:</strong> Select presets you want to see in preset menus. Default all. Can select all, remove individually or remove all (the Ron setting). Each preset has categories indicated at the bottom of the visible preset menu.<br>
                             <strong>Preset Builder:</strong> Made to follow a sequence. Click return to go to next selection. Select prompt templates and chips to help you create new and exciting presets you want to see in preset menus. Categories must be separated by commas. This is a very useful tool that includes prompting tips.<br>
-                            <strong>No Magic Mode:</strong> Use as regular camera without AI processing. Photos will only save in plugin gallery. Photos will not save to rabbit hole or magic gallery. This setting does not affect prompting in gallery.
-                        </p>
+                            <strong>No Magic Mode:</strong> Use as regular camera without AI processing. Photos will only save in plugin gallery. Photos will not save to rabbit hole or magic gallery. This setting does not affect prompting in gallery.<br>
+                            <strong>Import Settings:</strong> Select import resolution for external image imported through gallery.<br>
+                            <strong>Tutorial:</strong> What you are currently reading.
+                       </p>
                     </div>
 
                     <!-- Tips & Tricks -->
@@ -872,9 +868,10 @@ All of the presets are optimized to avoid "camera ran dry" or "content filter" i
             <div class="gallery-content">
                 <div class="gallery-header">
                     <h3>Gallery (<span id="gallery-count">0</span>)</h3>
+                    <button id="gallery-import-button" class="batch-toggle-button">Import</button>
                     <button id="batch-mode-toggle" class="batch-toggle-button">Select</button>
                     <button id="close-gallery" class="close-button">×</button>
-                </div>
+            </div>
                 
                 <!-- Batch Selection Controls -->
                 <div id="batch-controls" class="batch-controls" style="display: none;">
@@ -975,6 +972,22 @@ All of the presets are optimized to avoid "camera ran dry" or "content filter" i
                     <button id="clear-queue" class="delete-button">Clear Queue</button>
                 </div>
            </div>
+        </div>
+
+        <!-- QR Scanner Modal -->
+        <div id="qr-scanner-modal" class="qr-scanner-modal" style="display: none;">
+            <div class="qr-scanner-content">
+                <div class="qr-scanner-header">
+                    <h4>Scan QR Code to Import</h4>
+                    <button id="close-qr-scanner" class="close-button">×</button>
+                </div>
+                <div class="qr-scanner-video-container">
+                    <video id="qr-scanner-video" autoplay playsinline></video>
+                    <canvas id="qr-scanner-canvas" style="display: none;"></canvas>
+                </div>
+                <div id="qr-scanner-status" class="qr-scanner-status">Ready to scan</div>
+                <button id="qr-scan-button" class="qr-scan-button">Scan QR Code</button>
+            </div>
         </div>
 
         <!-- QR Code Modal -->
