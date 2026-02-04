@@ -30,8 +30,6 @@ const IMPORT_RESOLUTION_OPTIONS = [
 ];
 let currentImportResolutionIndex = 0; // Default to VGA (640x480)
 const IMPORT_RESOLUTION_STORAGE_KEY = 'r1_import_resolution';
-let qrDetectionEnabled = false; // QR detection OFF by default
-const QR_DETECTION_ENABLED_KEY = 'r1_qr_detection_enabled';
 
 // White balance settings
 const WHITE_BALANCE_MODES = [
@@ -646,6 +644,21 @@ async function hideGallery() {
   document.getElementById('gallery-modal').style.display = 'none';
   currentGalleryPage = 1;
   await resumeCamera(); // Now this only happens when truly closing gallery
+  
+  // Re-show the style reveal footer
+  if (isTimerMode || isBurstMode || isMotionDetectionMode || isRandomMode || isMultiPresetMode) {
+    let modeName = '';
+    if (isTimerMode) modeName = '⏱️ Timer Mode';
+    else if (isBurstMode) modeName = '📸 Burst Mode';
+    else if (isMotionDetectionMode) modeName = '👁️ Motion Detection';
+    else if (isRandomMode) modeName = '🎲 Random Mode';
+    showStyleReveal(modeName);
+  } else {
+    // Show current preset name
+    if (CAMERA_PRESETS && CAMERA_PRESETS[currentPresetIndex]) {
+      showStyleReveal(CAMERA_PRESETS[currentPresetIndex].name);
+    }
+  }
 }
 
 function nextGalleryPage() {
@@ -2307,8 +2320,9 @@ function toggleMotionDetection() {
   if (isMotionDetectionMode) {
     btn.classList.add('active');
     btn.title = 'Motion Detection: ON';
-    showStatus('Motion Detection enabled - Press side button to start', 3000);
-  } else {
+    statusElement.textContent = `Motion Detection mode ON • ${CAMERA_PRESETS[currentPresetIndex].name}`;
+    showStyleReveal('👁️ Motion Detection');
+    } else {
     btn.classList.remove('active');
     btn.title = 'Motion Detection: OFF';
     stopMotionDetection();
@@ -2332,7 +2346,11 @@ function toggleMotionDetection() {
       cameraButton.style.display = 'flex';
     }
     
-    showStatus('Motion Detection OFF', 2000);
+    // Show current preset when motion detection is turned off
+    if (CAMERA_PRESETS && CAMERA_PRESETS[currentPresetIndex]) {
+      statusElement.textContent = `Style: ${CAMERA_PRESETS[currentPresetIndex].name}`;
+      showStyleReveal(CAMERA_PRESETS[currentPresetIndex].name);
+    }
   }
 }
 
@@ -2899,20 +2917,20 @@ function loadMotionSettings() {
       continuousCheckbox.checked = motionContinuousEnabled;
     }
       
-      const cooldownSlider = document.getElementById('motion-cooldown-slider');
-      if (cooldownSlider) {
-        cooldownSlider.value = motionCooldown;
-      }
+    const cooldownSlider = document.getElementById('motion-cooldown-slider');
+    if (cooldownSlider) {
+      cooldownSlider.value = motionCooldown;
+    }
 
-      const startDelaySlider = document.getElementById('motion-start-delay-slider');
-      const startDelayValue = document.getElementById('motion-start-delay-value');
-      if (startDelaySlider && startDelayValue) {
-        const sliderValue = getStartDelaySliderValue();
-        startDelaySlider.value = sliderValue;
-        startDelayValue.textContent = MOTION_START_DELAYS[sliderValue].label;
-      }      
+    const startDelaySlider = document.getElementById('motion-start-delay-slider');
+    const startDelayValue = document.getElementById('motion-start-delay-value');
+    if (startDelaySlider && startDelayValue) {
+      const sliderValue = getStartDelaySliderValue();
+      startDelaySlider.value = sliderValue;
+      startDelayValue.textContent = MOTION_START_DELAYS[sliderValue].label;
+    }      
 
-      updateMotionDisplay();
+    updateMotionDisplay();
   } catch (err) {
     console.error('Failed to load motion settings:', err);
   }
@@ -2978,9 +2996,8 @@ function saveImportResolution() {
 function updateImportResolutionDisplay() {
   const display = document.getElementById('current-import-resolution-display');
   if (display) {
-    const qrStatus = qrDetectionEnabled ? 'ON' : 'OFF';
-    const resName = IMPORT_RESOLUTION_OPTIONS[currentImportResolutionIndex].name.replace(/\s*\(.*?\)/, ''); // Remove resolution details
-    display.textContent = `QR: ${qrStatus}, ${resName}`;
+    const res = IMPORT_RESOLUTION_OPTIONS[currentImportResolutionIndex];
+    display.textContent = res.name.split(' ')[0];
   }
 }
 
@@ -3204,6 +3221,10 @@ function startMotionDetection() {
           btn.classList.remove('active');
           btn.title = 'Motion Detection: OFF';
           showStatus('Motion capture complete - Press eye button to reactivate', 3000);
+          // Show current preset when motion detection auto-stops
+          if (CAMERA_PRESETS && CAMERA_PRESETS[currentPresetIndex]) {
+            showStyleReveal(CAMERA_PRESETS[currentPresetIndex].name);
+          }
         }
       }, motionCooldown * 1000);
     }
@@ -3265,9 +3286,14 @@ function toggleRandomMode() {
   if (isRandomMode) {
     randomToggle.classList.add('random-active');
     statusElement.textContent = `Random mode ON • ${CAMERA_PRESETS[currentPresetIndex].name}`;
+    showStyleReveal('🎲 Random Mode');
   } else {
     randomToggle.classList.remove('random-active');
     updatePresetDisplay();
+    // Show current preset when random mode is turned off
+    if (CAMERA_PRESETS && CAMERA_PRESETS[currentPresetIndex]) {
+      showStyleReveal(CAMERA_PRESETS[currentPresetIndex].name);
+    }
   }
   
   if (typeof PluginMessageHandler !== 'undefined') {
@@ -3760,9 +3786,14 @@ function toggleBurstMode() {
   if (isBurstMode) {
     burstToggle.classList.add('burst-active');
     statusElement.textContent = `Burst mode ON (${burstCount} photos) • ${CAMERA_PRESETS[currentPresetIndex].name}`;
+    showStyleReveal('📸 Burst Mode');
   } else {
     burstToggle.classList.remove('burst-active');
     updatePresetDisplay();
+    // Show current preset when burst mode is turned off
+    if (CAMERA_PRESETS && CAMERA_PRESETS[currentPresetIndex]) {
+      showStyleReveal(CAMERA_PRESETS[currentPresetIndex].name);
+    }
   }
   
   if (typeof PluginMessageHandler !== 'undefined') {
@@ -3783,6 +3814,7 @@ function toggleTimerMode() {
   if (isTimerMode) {
     timerToggle.classList.add('timer-active');
     statusElement.textContent = `Timer mode ON (${timerDelay}s delay) • ${CAMERA_PRESETS[currentPresetIndex].name}`;
+    showStyleReveal('⏱️ Timer Mode');
   } else {
     timerToggle.classList.remove('timer-active');
     // Cancel any active timer
@@ -3792,6 +3824,10 @@ function toggleTimerMode() {
       document.getElementById('timer-countdown').style.display = 'none';
     }
     updatePresetDisplay();
+    // Show current preset when timer mode is turned off
+    if (CAMERA_PRESETS && CAMERA_PRESETS[currentPresetIndex]) {
+      showStyleReveal(CAMERA_PRESETS[currentPresetIndex].name);
+    }
   }
   
   if (typeof PluginMessageHandler !== 'undefined') {
@@ -4220,11 +4256,7 @@ async function resumeCamera() {
       });
       
       video.style.display = 'block';
-      
-      // Restart QR detection if it's enabled
-      if (qrDetectionEnabled && !qrDetectionActive) {
-        startQRDetection();
-      }
+            
     } catch (err) {
       console.error('Failed to resume camera:', err);
       statusElement.textContent = 'Camera resume failed';
@@ -5233,6 +5265,21 @@ async function hideUnifiedMenu() {
   
   document.getElementById('unified-menu').style.display = 'none';
   await resumeCamera();
+  
+  // Re-show the style reveal footer
+  if (isTimerMode || isBurstMode || isMotionDetectionMode || isRandomMode) {
+    let modeName = '';
+    if (isTimerMode) modeName = '⏱️ Timer Mode';
+    else if (isBurstMode) modeName = '📸 Burst Mode';
+    else if (isMotionDetectionMode) modeName = '👁️ Motion Detection';
+    else if (isRandomMode) modeName = '🎲 Random Mode';
+    showStyleReveal(modeName);
+  } else {
+    // Show current preset name
+    if (CAMERA_PRESETS && CAMERA_PRESETS[currentPresetIndex]) {
+      showStyleReveal(CAMERA_PRESETS[currentPresetIndex].name);
+    }
+  }
 }
 
 // Show Settings submenu
@@ -6767,7 +6814,6 @@ if (startBtn) {
   loadMotionSettings();
   loadNoMagicMode();
   loadImportResolution();
-  loadQRDetectionEnabled();
 
   const resetBtn = document.getElementById('reset-button');
   if (resetBtn) {
@@ -6793,12 +6839,7 @@ if (startBtn) {
   if (importResolutionBackBtn) {
     importResolutionBackBtn.addEventListener('click', hideImportResolutionSubmenu);
   }
-  
-  const qrDetectionToggleBtn = document.getElementById('qr-detection-toggle-button');
-  if (qrDetectionToggleBtn) {
-    qrDetectionToggleBtn.addEventListener('click', toggleQRDetection);
-  }
-  
+    
   const saveStyleBtn = document.getElementById('save-style');
   if (saveStyleBtn) {
     saveStyleBtn.addEventListener('click', saveStyle);
@@ -6841,16 +6882,27 @@ if (startBtn) {
     galleryBtn.addEventListener('click', showGallery);
   }
   
-  const qrImportBtn = document.getElementById('qr-import-button');
-  if (qrImportBtn) {
-    qrImportBtn.addEventListener('click', importFromQRCode);
-  }
-  
   const closeGalleryBtn = document.getElementById('close-gallery');
   if (closeGalleryBtn) {
     closeGalleryBtn.addEventListener('click', hideGallery);
   }
   
+  // Gallery Import Button
+  const galleryImportBtn = document.getElementById('gallery-import-button');
+  if (galleryImportBtn) {
+    galleryImportBtn.addEventListener('click', () => {
+      openQRScannerModal();
+    });
+  }
+  
+  // QR Scanner Close Button
+  const closeQRScannerBtn = document.getElementById('close-qr-scanner');
+  if (closeQRScannerBtn) {
+    closeQRScannerBtn.addEventListener('click', () => {
+      closeQRScannerModal();
+    });
+  }
+
   const closeViewerBtn = document.getElementById('close-viewer');
   if (closeViewerBtn) {
     closeViewerBtn.addEventListener('click', closeImageViewer);
@@ -6866,6 +6918,27 @@ if (startBtn) {
     uploadViewerBtn.addEventListener('click', uploadViewerImage);
   }
   
+  // QR Scan Button
+  const qrScanBtn = document.getElementById('qr-scan-button');
+  if (qrScanBtn) {
+    qrScanBtn.addEventListener('click', () => {
+      const scanBtn = document.getElementById('qr-scan-button');
+      const scannerVideo = document.getElementById('qr-scanner-video');
+      
+      if (scanBtn) {
+        scanBtn.disabled = true;
+      }
+      
+      // Start video playback when scan button is pressed
+      if (scannerVideo && scannerVideo.paused) {
+        scannerVideo.play();
+      }
+      
+      updateQRScannerStatus('Scanning...', '');
+      startQRDetection();
+    });
+  }
+
   const closeQrModalBtn = document.getElementById('close-qr-modal');
   if (closeQrModalBtn) {
     closeQrModalBtn.addEventListener('click', closeQrModal);
@@ -7138,9 +7211,91 @@ function closeQrModal() {
   }
 }
 
+// Open QR Scanner Modal
+function openQRScannerModal() {
+  const scannerModal = document.getElementById('qr-scanner-modal');
+  const scannerVideo = document.getElementById('qr-scanner-video');
+  
+  if (!scannerModal || !scannerVideo) return;
+  
+  // Show modal
+  scannerModal.style.display = 'flex';
+  
+  // Start camera for QR scanning (but don't start detection yet)
+  startQRScannerCamera();
+  
+  // Reset status
+  updateQRScannerStatus('Ready to scan', '');
+  
+  // Enable scan button
+  const scanBtn = document.getElementById('qr-scan-button');
+  if (scanBtn) {
+    scanBtn.disabled = false;
+  }
+}
+
+// Close QR Scanner Modal
+function closeQRScannerModal() {
+  const scannerModal = document.getElementById('qr-scanner-modal');
+  if (scannerModal) {
+    scannerModal.style.display = 'none';
+  }
+  
+  // Stop QR detection and camera
+  stopQRDetection();
+  stopQRScannerCamera();
+  
+  // Reset status
+  updateQRScannerStatus('Point camera at QR code...', '');
+}
+
+// Start camera for QR scanner
+async function startQRScannerCamera() {
+  const scannerVideo = document.getElementById('qr-scanner-video');
+  
+  try {
+    const stream = await navigator.mediaDevices.getUserMedia({
+      video: { facingMode: 'environment' }
+    });
+    
+    scannerVideo.srcObject = stream;
+    
+    // Pause the video until user presses scan button
+    scannerVideo.onloadedmetadata = () => {
+      scannerVideo.pause();
+      updateQRScannerStatus('Ready to scan', '');
+    };
+  } catch (error) {
+    console.error('Error starting QR scanner camera:', error);
+    updateQRScannerStatus('Camera access denied', 'error');
+  }
+}
+
+// Stop QR scanner camera
+function stopQRScannerCamera() {
+  const scannerVideo = document.getElementById('qr-scanner-video');
+  
+  if (scannerVideo && scannerVideo.srcObject) {
+    const tracks = scannerVideo.srcObject.getTracks();
+    tracks.forEach(track => track.stop());
+    scannerVideo.srcObject = null;
+  }
+}
+
+// Update QR scanner status message
+function updateQRScannerStatus(message, type = '') {
+  const statusElement = document.getElementById('qr-scanner-status');
+  if (statusElement) {
+    statusElement.textContent = message;
+    statusElement.className = 'qr-scanner-status';
+    if (type) {
+      statusElement.classList.add(type);
+    }
+  }
+}
+
 function startQRDetection() {
-  // Only start if user has enabled QR detection
-  if (!qrDetectionEnabled || qrDetectionActive || !video || video.style.display === 'none') return;
+  if (qrDetectionActive) return;
   
   qrDetectionActive = true;
   qrDetectionInterval = setInterval(detectQRCode, QR_DETECTION_INTERVAL);
@@ -7153,61 +7308,22 @@ function stopQRDetection() {
     clearInterval(qrDetectionInterval);
     qrDetectionInterval = null;
   }
-  lastDetectedQR = null;
-  hideQRImportButton();
-}
-
-// Toggle QR detection
-function toggleQRDetection() {
-  qrDetectionEnabled = !qrDetectionEnabled;
-  saveQRDetectionEnabled();
-  
-  if (qrDetectionEnabled) {
-    // Start QR detection if camera is active
-    startQRDetection();
-  } else {
-    // Stop QR detection
-    stopQRDetection();
-  }
-}
-
-// Load QR detection enabled setting
-function loadQRDetectionEnabled() {
-  const saved = localStorage.getItem(QR_DETECTION_ENABLED_KEY);
-  if (saved !== null) {
-    qrDetectionEnabled = saved === 'true';
-  }
-  updateQRDetectionDisplay();
-  updateImportResolutionDisplay();
-}
-
-// Save QR detection enabled setting
-function saveQRDetectionEnabled() {
-  localStorage.setItem(QR_DETECTION_ENABLED_KEY, qrDetectionEnabled.toString());
-  updateQRDetectionDisplay();
-  updateImportResolutionDisplay();
-}
-
-// Update QR detection status display
-function updateQRDetectionDisplay() {
-  const status = document.getElementById('qr-detection-status');
-  if (status) {
-    status.textContent = qrDetectionEnabled ? 'Enabled' : 'Disabled';
-    status.style.color = qrDetectionEnabled ? '#4CAF50' : '#999';
-  }
+  // Don't clear lastDetectedQR here - it's needed for import
+  // It will be cleared after successful import in importFromQRCode()
 }
 
 // Detect QR code in video stream
 function detectQRCode() {
-  if (!video || video.readyState !== video.HAVE_ENOUGH_DATA) return;
+  const scannerVideo = document.getElementById('qr-scanner-video');
+  if (!scannerVideo || scannerVideo.readyState !== scannerVideo.HAVE_ENOUGH_DATA) return;
   
   const tempCanvas = document.createElement('canvas');
   const context = tempCanvas.getContext('2d');
   
-  tempCanvas.width = video.videoWidth;
-  tempCanvas.height = video.videoHeight;
+  tempCanvas.width = scannerVideo.videoWidth;
+  tempCanvas.height = scannerVideo.videoHeight;
   
-  context.drawImage(video, 0, 0, tempCanvas.width, tempCanvas.height);
+  context.drawImage(scannerVideo, 0, 0, tempCanvas.width, tempCanvas.height);
   const imageData = context.getImageData(0, 0, tempCanvas.width, tempCanvas.height);
   
   // Use jsQR library to detect QR code
@@ -7218,22 +7334,21 @@ function detectQRCode() {
     if (isValidURL(code.data)) {
       if (lastDetectedQR !== code.data) {
         lastDetectedQR = code.data;
-        showQRImportButton();
+        updateQRScannerStatus('QR Code detected! Importing...', 'success');
+        
+        // Stop scanning once QR is detected
+        stopQRDetection();
+        
+        // Auto-import when QR code is detected
+        setTimeout(() => {
+          importFromQRCode();
+        }, 500);
       }
     } else {
-      lastDetectedQR = null;
-      hideQRImportButton();
+      updateQRScannerStatus('Invalid QR code - must be a valid URL', 'error');
     }
   } else {
-    if (lastDetectedQR) {
-      // Keep button visible for a moment after QR disappears
-      setTimeout(() => {
-        if (lastDetectedQR === lastDetectedQR) {
-          lastDetectedQR = null;
-          hideQRImportButton();
-        }
-      }, 2000);
-    }
+    updateQRScannerStatus('Scanning...', '');
   }
 }
 
@@ -7244,22 +7359,6 @@ function isValidURL(string) {
     return url.protocol === 'http:' || url.protocol === 'https:';
   } catch (_) {
     return false;
-  }
-}
-
-// Show QR import button
-function showQRImportButton() {
-  const importBtn = document.getElementById('qr-import-button');
-  if (importBtn && video && video.style.display !== 'none' && capturedImage.style.display === 'none') {
-    importBtn.style.display = 'block';
-  }
-}
-
-// Hide QR import button
-function hideQRImportButton() {
-  const importBtn = document.getElementById('qr-import-button');
-  if (importBtn) {
-    importBtn.style.display = 'none';
   }
 }
 
@@ -7321,32 +7420,13 @@ async function resizeAndCompressImage(blob, maxWidth = 640, maxHeight = 480, qua
 
 // Import image from QR code
 async function importFromQRCode() {
-  const statusElement = document.getElementById('status');
-  const importBtn = document.getElementById('qr-import-button');
-  const originalText = '📥 Import';
-  
   if (!lastDetectedQR) {
-    if (statusElement) {
-      statusElement.style.display = 'block';
-      statusElement.textContent = 'ERROR: No QR code detected';
-      setTimeout(() => {
-        statusElement.style.display = 'none';
-      }, 3000);
-    }
+    updateQRScannerStatus('ERROR: No QR code detected', 'error');
     return;
   }
   
   try {
-    // UI Updates
-    if (importBtn) {
-      importBtn.disabled = true;
-      importBtn.textContent = '⏳ Importing...';
-    }
-    
-    if (statusElement) {
-      statusElement.style.display = 'block';
-      statusElement.textContent = 'Downloading image...';
-    }
+    updateQRScannerStatus('Downloading image...', '');
     
     const imageUrl = lastDetectedQR.trim();
     
@@ -7365,9 +7445,7 @@ async function importFromQRCode() {
       try {
         const fetchUrl = proxies[i] ? proxies[i] + encodeURIComponent(imageUrl) : imageUrl;
         
-        if (statusElement) {
-          statusElement.textContent = `Trying method ${i + 1}/${proxies.length}...`;
-        }
+        updateQRScannerStatus(`Trying method ${i + 1}/${proxies.length}...`, '');
         
         const controller = new AbortController();
         const timeoutId = setTimeout(() => controller.abort(), 8000);
@@ -7379,9 +7457,7 @@ async function importFromQRCode() {
         clearTimeout(timeoutId);
         
         if (response.ok) {
-          if (statusElement) {
-            statusElement.textContent = 'Download successful!';
-          }
+          updateQRScannerStatus('Download successful!', 'success');
           break; // Success!
         }
       } catch (error) {
@@ -7394,16 +7470,12 @@ async function importFromQRCode() {
       throw new Error('All download methods failed');
     }
     
-    if (statusElement) {
-      statusElement.textContent = 'Reading image data...';
-    }
+    updateQRScannerStatus('Reading image data...', '');
     
     let blob = await response.blob();
     
     const originalSize = Math.round(blob.size / 1024);
-    if (statusElement) {
-      statusElement.textContent = 'Original size: ' + originalSize + 'KB';
-    }
+    updateQRScannerStatus('Original size: ' + originalSize + 'KB', '');
     
     // Check if it's an image
     if (blob.type && !blob.type.startsWith('image/')) {
@@ -7412,22 +7484,16 @@ async function importFromQRCode() {
     
     // Resize/compress large images to match camera capabilities
     // Use UXGA (1600x1200) as max to balance quality and storage
-    if (statusElement) {
-      statusElement.textContent = 'Optimizing image...';
-    }
+    updateQRScannerStatus('Optimizing image...', '');
     
     // Use user's selected import resolution
     const importRes = IMPORT_RESOLUTION_OPTIONS[currentImportResolutionIndex];
     blob = await resizeAndCompressImage(blob, importRes.width, importRes.height, 0.85);
     
     const newSize = Math.round(blob.size / 1024);
-    if (statusElement) {
-      statusElement.textContent = 'Compressed: ' + originalSize + 'KB → ' + newSize + 'KB';
-    }
+    updateQRScannerStatus('Compressed: ' + originalSize + 'KB → ' + newSize + 'KB', '');
     
-    if (statusElement) {
-      statusElement.textContent = 'Converting to base64...';
-    }
+    updateQRScannerStatus('Converting to base64...', '');
     
     // Convert to base64 with timeout protection
     const base64Data = await new Promise((resolve, reject) => {
@@ -7450,9 +7516,7 @@ async function importFromQRCode() {
       reader.readAsDataURL(blob);
     });
     
-    if (statusElement) {
-      statusElement.textContent = 'Saving to gallery...';
-    }
+    updateQRScannerStatus('Saving to gallery...', '');
     
     // Save to gallery
     const imageData = {
@@ -7467,37 +7531,26 @@ async function importFromQRCode() {
     // Save to IndexedDB
     await saveImageToDB(imageData);
     
-    if (statusElement) {
-      statusElement.textContent = '✅ Import successful!';
-      setTimeout(() => {
-        statusElement.style.display = 'none';
-      }, 2000);
-    }
-    
-    // Reset button
-    if (importBtn) {
-      importBtn.disabled = false;
-      importBtn.textContent = originalText;
-    }
-    
+    updateQRScannerStatus('✅ Import successful!', 'success');
+      
     lastDetectedQR = null;
-    hideQRImportButton();
+    
+    // Refresh gallery to show new image
+    await showGallery();
+    
+    // Close scanner modal after successful import
+    setTimeout(() => {
+      closeQRScannerModal();
+    }, 2000);
     
   } catch (error) {
-    if (statusElement) {
-      const errorMsg = error.name === 'AbortError' 
-        ? '❌ Timeout' 
-        : '❌ ' + error.message;
-      statusElement.textContent = errorMsg;
-      setTimeout(() => {
-        statusElement.style.display = 'none';
-      }, 5000);
-    }
+    updateQRScannerStatus('Import failed: ' + error.message, 'error');
+    lastDetectedQR = null;
     
-    if (importBtn) {
-      importBtn.disabled = false;
-      importBtn.textContent = originalText;
-    }
+    // Allow retry after error
+    setTimeout(() => {
+      updateQRScannerStatus('Point camera at QR code...', '');
+    }, 3000);
   }
 }
 
