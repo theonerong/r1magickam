@@ -2494,14 +2494,6 @@ function clearPresetBuilderForm() {
   
   const clearButton = document.getElementById('preset-builder-clear');
   if (clearButton) clearButton.style.display = 'flex';
-  
-  // Close all chip sections when clearing
-  document.querySelectorAll('.chip-section-content').forEach(c => {
-    c.style.display = 'none';
-  });
-  document.querySelectorAll('.chip-section-header').forEach(h => {
-    h.classList.remove('expanded');
-  });
 }
 
 // Edit preset in builder
@@ -2967,10 +2959,10 @@ function loadMotionSettings() {
       continuousCheckbox.checked = motionContinuousEnabled;
     }
       
-    const cooldownSlider = document.getElementById('motion-cooldown-slider');
-    if (cooldownSlider) {
-      cooldownSlider.value = motionCooldown;
-    }
+      const cooldownSlider = document.getElementById('motion-cooldown-slider');
+      if (cooldownSlider) {
+        cooldownSlider.value = motionCooldown;
+      }
 
     const startDelaySlider = document.getElementById('motion-start-delay-slider');
     const startDelayValue = document.getElementById('motion-start-delay-value');
@@ -2979,7 +2971,7 @@ function loadMotionSettings() {
       startDelaySlider.value = sliderValue;
       startDelayValue.textContent = MOTION_START_DELAYS[sliderValue].label;
     }
-
+    
     updateMotionDisplay();
   } catch (err) {
     console.error('Failed to load motion settings:', err);
@@ -5741,16 +5733,20 @@ function getFinalPrompt(basePrompt, presetName = '') {
     finalPrompt = `${basePrompt} ${masterPromptText}`;
   }
   
-  // Get selection history for this preset
-  const history = getPresetHistory(presetName);
+  // Check if preset has random selection options
+  const hasRandomOptions = /RANDOM|SELECT|SELECTION|CHOOSE|modulo|LAST DIGIT|LAST TWO DIGITS|LAST THREE DIGITS/i.test(basePrompt);
   
-  // Always add random seed directive (regardless of master prompt setting)
-  const seed = Date.now();
-  const lastDigit = seed % 10;
-  const lastTwoDigits = seed % 100;
-  const lastThreeDigits = seed % 1000;
+  // Only add random seed directive if preset has random options
+  if (hasRandomOptions) {
+    // Get selection history for this preset
+    const history = getPresetHistory(presetName);
+    
+    const seed = Date.now();
+    const lastDigit = seed % 10;
+    const lastTwoDigits = seed % 100;
+    const lastThreeDigits = seed % 1000;
 
-  finalPrompt += `
+    finalPrompt += `
 
 GLOBAL RANDOMIZATION DIRECTIVE (CRITICAL - ABSOLUTE PRIORITY):
 - Any section labeled RANDOM, SELECT, or CHOOSE must use the PRE-CALCULATED values below
@@ -5770,14 +5766,15 @@ SELECTION ENFORCEMENT:
 - Match the number to the corresponding option in the list
 - This is MANDATORY and overrides all other selection preferences`;
 
-  // Add selection history if available
-  if (history.length > 0) {
-    finalPrompt += `
+    // Add selection history if available
+    if (history.length > 0) {
+      finalPrompt += `
 
 SELECTION HISTORY (CRITICAL):
 - The following options were recently used for this preset
 - AVOID selecting these options - choose something different
 - Recently used: ${history.join(', ')}`;
+    }
   }
   
   // Add aspect ratio override at the very end
@@ -7371,6 +7368,28 @@ function updateQRScannerStatus(message, type = '') {
   }
 }
 
+// Show gallery status message
+function showGalleryStatusMessage(message, type = 'info', duration = 3000) {
+  const statusElement = document.getElementById('gallery-status-message');
+  if (!statusElement) return;
+  
+  statusElement.textContent = message;
+  statusElement.className = 'gallery-status-message';
+  
+  if (type === 'error') {
+    statusElement.classList.add('error');
+  } else if (type === 'success') {
+    statusElement.classList.add('success');
+  }
+  
+  statusElement.style.display = 'block';
+  
+  // Auto-hide after duration
+  setTimeout(() => {
+    statusElement.style.display = 'none';
+  }, duration);
+}
+
 function startQRDetection() {
   if (qrDetectionActive) return;
   
@@ -7422,7 +7441,9 @@ function detectQRCode() {
         }, 500);
       }
     } else {
-      updateQRScannerStatus('Invalid QR code - must be a valid URL', 'error');
+      stopQRDetection();
+      closeQRScannerModal();
+      showGalleryStatusMessage('Invalid QR code - must be a valid URL', 'error', 4000);
     }
   } else {
     updateQRScannerStatus('Scanning...', '');
@@ -7498,7 +7519,8 @@ async function resizeAndCompressImage(blob, maxWidth = 640, maxHeight = 480, qua
 // Import image from QR code
 async function importFromQRCode() {
   if (!lastDetectedQR) {
-    updateQRScannerStatus('ERROR: No QR code detected', 'error');
+    closeQRScannerModal();
+    showGalleryStatusMessage('No QR code detected', 'error', 3000);
     return;
   }
   
@@ -7612,22 +7634,19 @@ async function importFromQRCode() {
       
     lastDetectedQR = null;
     
-    // Refresh gallery to show new image
-    await showGallery();
-    
     // Close scanner modal after successful import
-    setTimeout(() => {
-      closeQRScannerModal();
-    }, 2000);
+    closeQRScannerModal();
+    
+    // Refresh gallery to show new image and show success message
+    await showGallery();
+    showGalleryStatusMessage('Image imported successfully!', 'success', 3000);
     
   } catch (error) {
-    updateQRScannerStatus('Import failed: ' + error.message, 'error');
     lastDetectedQR = null;
     
-    // Allow retry after error
-    setTimeout(() => {
-      updateQRScannerStatus('Point camera at QR code...', '');
-    }, 3000);
+    // Close modal and show error in gallery
+    closeQRScannerModal();
+    showGalleryStatusMessage('Import failed: ' + error.message, 'error', 4000);
   }
 }
 

@@ -1,3 +1,18 @@
+/* Power Grotesk Font */
+@font-face {
+    font-family: 'Power Grotesk';
+    src: url('https://fonts.cdnfonts.com/s/95219/PowerGrotesk-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Power Grotesk';
+    src: url('https://fonts.cdnfonts.com/s/95219/PowerGrotesk-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+
 /* Base styles for R1 device (240x320px portrait) */
 * {
     margin: 0;
@@ -11,7 +26,7 @@ html, body {
     min-height: 100vh;
     background-color: #000;
     color: #fff;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-family: 'Power Grotesk', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     font-size: 5vw; /* Base font size relative to viewport width */
     overflow: hidden;
     -webkit-user-select: none;
@@ -3145,4 +3160,32 @@ button:disabled {
 
 .factory-reset-btn:active {
   transform: scale(0.98);
+}
+
+/* Gallery Status Message */
+.gallery-status-message {
+  position: absolute;
+  bottom: 3vh;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.95);
+  color: #fff;
+  padding: 2vw 4vw;
+  border-radius: 1vw;
+  font-size: 3.5vw;
+  z-index: 1001;
+  max-width: 70%;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  border: 1px solid #FE5F00;
+}
+
+.gallery-status-message.error {
+  background: rgba(220, 38, 38, 0.95);
+  border-color: #ff6b6b;
+}
+
+.gallery-status-message.success {
+  background: rgba(34, 197, 94, 0.95);
+  border-color: #4ade80;
 }
