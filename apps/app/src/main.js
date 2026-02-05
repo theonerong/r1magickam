@@ -2494,6 +2494,14 @@ function clearPresetBuilderForm() {
   
   const clearButton = document.getElementById('preset-builder-clear');
   if (clearButton) clearButton.style.display = 'flex';
+  
+  // Close all chip sections when clearing
+  document.querySelectorAll('.chip-section-content').forEach(c => {
+    c.style.display = 'none';
+  });
+  document.querySelectorAll('.chip-section-header').forEach(h => {
+    h.classList.remove('expanded');
+  });
 }
 
 // Edit preset in builder
@@ -2959,10 +2967,10 @@ function loadMotionSettings() {
       continuousCheckbox.checked = motionContinuousEnabled;
     }
       
-      const cooldownSlider = document.getElementById('motion-cooldown-slider');
-      if (cooldownSlider) {
-        cooldownSlider.value = motionCooldown;
-      }
+    const cooldownSlider = document.getElementById('motion-cooldown-slider');
+    if (cooldownSlider) {
+      cooldownSlider.value = motionCooldown;
+    }
 
     const startDelaySlider = document.getElementById('motion-start-delay-slider');
     const startDelayValue = document.getElementById('motion-start-delay-value');
@@ -2970,8 +2978,8 @@ function loadMotionSettings() {
       const sliderValue = getStartDelaySliderValue();
       startDelaySlider.value = sliderValue;
       startDelayValue.textContent = MOTION_START_DELAYS[sliderValue].label;
-    }
-    
+    }      
+
     updateMotionDisplay();
   } catch (err) {
     console.error('Failed to load motion settings:', err);
