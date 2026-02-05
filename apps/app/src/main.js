@@ -1,4 +1,5 @@
 import { DEFAULT_PRESETS } from './presets.js';
+import { presetStorage } from './storage.js';
 
 // Camera elements
 let video, canvas, capturedImage, statusElement, resetButton;
@@ -233,7 +234,8 @@ const PRESET_TEMPLATES = {
 };
 
 // Load styles from localStorage or use defaults
-let CAMERA_PRESETS = [...DEFAULT_PRESETS];
+let CAMERA_PRESETS = [];
+const factoryPresets = [...DEFAULT_PRESETS];
 let currentPresetIndex = 0;
 let editingStyleIndex = -1;
 let isOnline = navigator.onLine;
@@ -1875,7 +1877,14 @@ function selectCurrentMenuItem() {
 }
 
 // Load saved styles
-function loadStyles() {
+async function loadStyles() {
+    // Initialize IndexedDB storage
+    await presetStorage.init();
+    
+    // Merge factory presets with user modifications
+    CAMERA_PRESETS = await mergePresetsWithStorage();
+    
+    // Still load old localStorage custom presets for migration
     const storedStyles = localStorage.getItem(STORAGE_KEY);
     if (storedStyles) {
         try {
@@ -1883,7 +1892,17 @@ function loadStyles() {
             
             // Only add custom presets (those with internal: false)
             const customPresets = loadedStyles.filter(p => p.internal === false);
-            CAMERA_PRESETS.push(...customPresets);
+            
+            // Migrate old custom presets to new storage
+            for (const preset of customPresets) {
+                await presetStorage.saveNewPreset(preset);
+                if (!CAMERA_PRESETS.find(p => p.name === preset.name)) {
+                    CAMERA_PRESETS.push(preset);
+                }
+            }
+            
+            // Clear old storage after migration
+            localStorage.removeItem(STORAGE_KEY);
         } catch (e) {
             console.error("Error loading styles:", e);
         }
@@ -1926,6 +1945,37 @@ function loadStyles() {
         visiblePresets = CAMERA_PRESETS.map(p => p.name);
         saveVisiblePresets();
     }
+}
+
+async function mergePresetsWithStorage() {
+  const modifications = await presetStorage.getAllModifications();
+  const deletedNames = new Set();
+  const modifiedData = new Map();
+  const newPresets = [];
+
+  // Process all stored modifications
+  for (const record of modifications) {
+    if (record.type === 'deletion') {
+      deletedNames.add(record.name);
+    } else if (record.type === 'modification') {
+      modifiedData.set(record.name, record.data);
+    } else if (record.type === 'new') {
+      newPresets.push(record.data);
+    }
+  }
+
+  // Start with factory presets, apply modifications, filter deletions
+  const mergedPresets = factoryPresets
+    .filter(preset => !deletedNames.has(preset.name))
+    .map(preset => {
+      if (modifiedData.has(preset.name)) {
+        return { ...preset, ...modifiedData.get(preset.name) };
+      }
+      return { ...preset };
+    });
+
+  // Add new user-created presets
+  return [...mergedPresets, ...newPresets];
 }
 
 // Save visible presets to localStorage
@@ -2928,7 +2978,7 @@ function loadMotionSettings() {
       const sliderValue = getStartDelaySliderValue();
       startDelaySlider.value = sliderValue;
       startDelayValue.textContent = MOTION_START_DELAYS[sliderValue].label;
-    }      
+    }
 
     updateMotionDisplay();
   } catch (err) {
@@ -5954,7 +6004,7 @@ function editStyle(index) {
   showStyleEditor('Edit Style');
 }
 
-function saveStyle() {
+async function saveStyle() {
   const name = document.getElementById('style-name').value.trim();
   const message = document.getElementById('style-message').value.trim();
   const categoryInput = document.getElementById('style-category').value.trim();
@@ -5973,6 +6023,19 @@ function saveStyle() {
     const oldName = CAMERA_PRESETS[editingStyleIndex].name;
     CAMERA_PRESETS[editingStyleIndex] = { name, category, message };
     
+    // Save modification to storage
+    const isFactoryPreset = factoryPresets.some(p => p.name === oldName);
+    if (isFactoryPreset) {
+      await presetStorage.saveModification(oldName, {
+        name: name,
+        message: message,
+        category: category
+      });
+    } else {
+      // User-created preset
+      await presetStorage.saveNewPreset({ name, category, message });
+    }
+    
     // If name changed, update visiblePresets array
     if (oldName !== name) {
       const visIndex = visiblePresets.indexOf(oldName);
@@ -5982,7 +6045,9 @@ function saveStyle() {
       }
     }
   } else {
-    CAMERA_PRESETS.push({ name, category, message });
+    const newPreset = { name, category, message };
+    await presetStorage.saveNewPreset(newPreset);
+    CAMERA_PRESETS.push(newPreset);
     // ADD NEW PRESET TO VISIBLE LIST AUTOMATICALLY
     visiblePresets.push(name);
     saveVisiblePresets();
@@ -5996,9 +6061,21 @@ function saveStyle() {
   showUnifiedMenu();
 }
 
-function deleteStyle() {
+async function deleteStyle() {
   if (editingStyleIndex >= 0 && CAMERA_PRESETS.length > 1) {
     if (confirm('Delete this style?')) {
+      const presetName = CAMERA_PRESETS[editingStyleIndex].name;
+      
+      // Check if it's a factory preset or user-created
+      const isFactoryPreset = factoryPresets.some(p => p.name === presetName);
+      
+      if (isFactoryPreset) {
+        await presetStorage.saveDeletion(presetName);
+      } else {
+        // For user-created presets, actually remove from storage
+        await presetStorage.removeModification(presetName);
+      }
+      
       CAMERA_PRESETS.splice(editingStyleIndex, 1);
       
       if (currentPresetIndex >= CAMERA_PRESETS.length) {
@@ -7553,5 +7630,20 @@ async function importFromQRCode() {
     }, 3000);
   }
 }
+
+// Factory reset handler
+document.getElementById('factory-reset-button').addEventListener('click', async () => {
+  if (confirm('This will restore all factory presets to their original state. Your custom presets will be kept. Continue?')) {
+    await presetStorage.clearFactoryPresetModifications();
+    CAMERA_PRESETS = await mergePresetsWithStorage();
+    
+    // Update visible presets list to include restored presets
+    visiblePresets = CAMERA_PRESETS.map(p => p.name);
+    saveVisiblePresets();
+    
+    renderMenuStyles();
+    alert('Factory presets restored successfully!');
+  }
+});
 
 console.log('AI Camera Styles app initialized!');
