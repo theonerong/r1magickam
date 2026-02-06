@@ -2494,6 +2494,14 @@ function clearPresetBuilderForm() {
   
   const clearButton = document.getElementById('preset-builder-clear');
   if (clearButton) clearButton.style.display = 'flex';
+  
+  // Close all chip sections when clearing
+  document.querySelectorAll('.chip-section-content').forEach(c => {
+    c.style.display = 'none';
+  });
+  document.querySelectorAll('.chip-section-header').forEach(h => {
+    h.classList.remove('expanded');
+  });
 }
 
 // Edit preset in builder
@@ -2964,15 +2972,15 @@ function loadMotionSettings() {
         cooldownSlider.value = motionCooldown;
       }
 
-      const startDelaySlider = document.getElementById('motion-start-delay-slider');
-      const startDelayValue = document.getElementById('motion-start-delay-value');
-      if (startDelaySlider && startDelayValue) {
-        const sliderValue = getStartDelaySliderValue();
-        startDelaySlider.value = sliderValue;
-        startDelayValue.textContent = MOTION_START_DELAYS[sliderValue].label;
-      }      
+    const startDelaySlider = document.getElementById('motion-start-delay-slider');
+    const startDelayValue = document.getElementById('motion-start-delay-value');
+    if (startDelaySlider && startDelayValue) {
+      const sliderValue = getStartDelaySliderValue();
+      startDelaySlider.value = sliderValue;
+      startDelayValue.textContent = MOTION_START_DELAYS[sliderValue].label;
+    }      
 
-      updateMotionDisplay();
+    updateMotionDisplay();
   } catch (err) {
     console.error('Failed to load motion settings:', err);
   }
@@ -4205,24 +4213,9 @@ async function initCamera() {
       menuButton.style.display = 'flex';
     }
     
-    const burstToggle = document.getElementById('burst-toggle');
-    if (burstToggle) {
-      burstToggle.style.display = 'flex';
-    }
-
-    const randomToggle = document.getElementById('random-toggle');
-    if (randomToggle) {
-      randomToggle.style.display = 'flex';
-    }
-
-    const timerToggle = document.getElementById('timer-toggle');
-    if (timerToggle) {
-      timerToggle.style.display = 'flex';
-    }
-    
-    const motionToggle = document.getElementById('motion-toggle');
-    if (motionToggle) {
-      motionToggle.style.display = 'flex';
+    const modeCarousel = document.getElementById('mode-carousel');
+    if (modeCarousel) {
+      modeCarousel.style.display = 'block';
     }
 
     const galleryButton = document.getElementById('gallery-button');
@@ -7662,6 +7655,30 @@ document.getElementById('factory-reset-button').addEventListener('click', async 
     
     renderMenuStyles();
     alert('Factory presets restored successfully!');
+  }
+});
+
+// Carousel infinite scroll logic
+document.addEventListener('DOMContentLoaded', function() {
+  const carousel = document.querySelector('.mode-carousel-track');
+  
+  if (carousel) {
+    
+// Re-attach event listeners to cloned buttons
+    const allButtons = carousel.querySelectorAll('.mode-button');
+    allButtons.forEach(button => {
+      const mode = button.getAttribute('data-mode');
+      if (mode === 'random') {
+        button.addEventListener('click', toggleRandomMode);
+      } else if (mode === 'motion') {
+        button.addEventListener('click', toggleMotionDetection);
+      } else if (mode === 'burst') {
+        button.addEventListener('click', toggleBurstMode);
+      } else if (mode === 'timer') {
+        button.addEventListener('click', toggleTimerMode);
+      }
+    });
+
   }
 });
 
