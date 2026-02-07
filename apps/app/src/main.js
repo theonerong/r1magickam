@@ -2955,7 +2955,8 @@ function loadMotionSettings() {
       motionStartDelay = settings.motionStartDelay || 3;
     }
     
-    // Always update UI elements whether saved settings exist or not
+    // Update UI elements
+    {
     const sensitivitySlider = document.getElementById('motion-sensitivity-slider');
     if (sensitivitySlider) {
       const sliderValue = Math.floor((50 - motionThreshold) / 10) + 1;
@@ -2972,15 +2973,16 @@ function loadMotionSettings() {
         cooldownSlider.value = motionCooldown;
       }
 
-    const startDelaySlider = document.getElementById('motion-start-delay-slider');
-    const startDelayValue = document.getElementById('motion-start-delay-value');
-    if (startDelaySlider && startDelayValue) {
-      const sliderValue = getStartDelaySliderValue();
-      startDelaySlider.value = sliderValue;
-      startDelayValue.textContent = MOTION_START_DELAYS[sliderValue].label;
-    }      
+      const startDelaySlider = document.getElementById('motion-start-delay-slider');
+      const startDelayValue = document.getElementById('motion-start-delay-value');
+      if (startDelaySlider && startDelayValue) {
+        const sliderValue = getStartDelaySliderValue();
+        startDelaySlider.value = sliderValue;
+        startDelayValue.textContent = MOTION_START_DELAYS[sliderValue].label;
+      }      
 
-    updateMotionDisplay();
+      updateMotionDisplay();
+    }
   } catch (err) {
     console.error('Failed to load motion settings:', err);
   }
@@ -4153,8 +4155,17 @@ async function initCamera() {
     statusElement = document.getElementById('status');
     resetButton = document.getElementById('reset-button');
     
-    document.getElementById('start-screen').querySelector('.start-text').textContent = 'Loading camera...';
-    document.getElementById('start-button').disabled = true;
+    const startScreen = document.getElementById('start-screen');
+    if (startScreen) {
+      const startText = startScreen.querySelector('.start-text');
+      if (startText) {
+        startText.textContent = 'Requesting camera access...';
+      }
+      const startButton = document.getElementById('start-button');
+      if (startButton) {
+        startButton.disabled = true;
+      }
+    }
     
     await enumerateCameras();
     
@@ -4236,6 +4247,17 @@ async function initCamera() {
   } catch (err) {
     console.error('Camera access error:', err);
     statusElement.textContent = 'Camera access denied';
+    
+    // RE-ENABLE THE START BUTTON SO USER CAN TRY AGAIN
+    const startButton = document.getElementById('start-button');
+    if (startButton) {
+      startButton.disabled = false;
+    }
+    const startScreen = document.getElementById('start-screen');
+    if (startScreen) {
+      startScreen.style.display = 'block';
+    }
+    
     if (typeof PluginMessageHandler !== 'undefined') {
       PluginMessageHandler.postMessage(JSON.stringify({ 
         status: 'camera_error',
@@ -4245,8 +4267,6 @@ async function initCamera() {
     }
   }
   
-  // Start QR detection after camera initializes
-  // startQRDetection();
 }
 
 // Pause camera stream to reduce lag
@@ -7686,29 +7706,29 @@ console.log('AI Camera Styles app initialized!');
 
 // --- Swipe Detection for Mode Carousel ---
 let touchStartX = 0;
-let carouselIsVisible = false;
 
 document.addEventListener('touchstart', (e) => {
     touchStartX = e.touches[0].clientX;
 }, { passive: true });
 
 document.addEventListener('touchend', (e) => {
+    const touchEndX = e.changedTouches[0].clientX;
+    const diffX = touchStartX - touchEndX; // Positive = Swipe Left
     const carousel = document.querySelector('.mode-carousel');
+
     if (!carousel) return;
 
-    const touchEndX = e.changedTouches[0].clientX;
-    const diffX = touchStartX - touchEndX;
-    const swipeThreshold = 30;
-    const edgeZone = window.innerWidth * 0.5;
+    const swipeThreshold = 30; 
+    // Detects if swipe starts on the right 40% of screen
+    const edgeZone = window.innerWidth * 0.5; 
 
     // SHOW MENU: Swipe Left
-    if (touchStartX > edgeZone && diffX > swipeThreshold && !carouselIsVisible) {
+    if (touchStartX > edgeZone && diffX > swipeThreshold) {
         carousel.classList.add('show');
-        carouselIsVisible = true;
     }
+
     // HIDE MENU: Swipe Right
-    else if (diffX < -swipeThreshold && carouselIsVisible) {
+    if (diffX < -swipeThreshold) {
         carousel.classList.remove('show');
-        carouselIsVisible = false;
     }
 }, { passive: true });
