@@ -2494,7 +2494,7 @@ function clearPresetBuilderForm() {
   
   const clearButton = document.getElementById('preset-builder-clear');
   if (clearButton) clearButton.style.display = 'flex';
-  
+
   // Close all chip sections when clearing
   document.querySelectorAll('.chip-section-content').forEach(c => {
     c.style.display = 'none';
@@ -2955,7 +2955,8 @@ function loadMotionSettings() {
       motionStartDelay = settings.motionStartDelay || 3;
     }
     
-    // Always update UI elements whether saved settings exist or not
+    // Update UI elements
+    {
     const sensitivitySlider = document.getElementById('motion-sensitivity-slider');
     if (sensitivitySlider) {
       const sliderValue = Math.floor((50 - motionThreshold) / 10) + 1;
@@ -2972,15 +2973,16 @@ function loadMotionSettings() {
         cooldownSlider.value = motionCooldown;
       }
 
-    const startDelaySlider = document.getElementById('motion-start-delay-slider');
-    const startDelayValue = document.getElementById('motion-start-delay-value');
-    if (startDelaySlider && startDelayValue) {
-      const sliderValue = getStartDelaySliderValue();
-      startDelaySlider.value = sliderValue;
-      startDelayValue.textContent = MOTION_START_DELAYS[sliderValue].label;
-    }      
+      const startDelaySlider = document.getElementById('motion-start-delay-slider');
+      const startDelayValue = document.getElementById('motion-start-delay-value');
+      if (startDelaySlider && startDelayValue) {
+        const sliderValue = getStartDelaySliderValue();
+        startDelaySlider.value = sliderValue;
+        startDelayValue.textContent = MOTION_START_DELAYS[sliderValue].label;
+      }      
 
-    updateMotionDisplay();
+      updateMotionDisplay();
+    }
   } catch (err) {
     console.error('Failed to load motion settings:', err);
   }
@@ -7683,3 +7685,32 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 console.log('AI Camera Styles app initialized!');
+
+// --- Swipe Detection for Mode Carousel ---
+let touchStartX = 0;
+
+document.addEventListener('touchstart', (e) => {
+    touchStartX = e.touches[0].clientX;
+}, { passive: true });
+
+document.addEventListener('touchend', (e) => {
+    const touchEndX = e.changedTouches[0].clientX;
+    const diffX = touchStartX - touchEndX; // Positive = Swipe Left
+    const carousel = document.querySelector('.mode-carousel');
+
+    if (!carousel) return;
+
+    const swipeThreshold = 30; 
+    // Detects if swipe starts on the right 40% of screen
+    const edgeZone = window.innerWidth * 0.5; 
+
+    // SHOW MENU: Swipe Left
+    if (touchStartX > edgeZone && diffX > swipeThreshold) {
+        carousel.classList.add('show');
+    }
+
+    // HIDE MENU: Swipe Right
+    if (diffX < -swipeThreshold) {
+        carousel.classList.remove('show');
+    }
+}, { passive: true });

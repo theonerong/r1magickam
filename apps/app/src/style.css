@@ -487,6 +487,7 @@ html, body {
     padding: 5vw 10vw;
     font-size: 6vw;
     font-weight: 700;
+    color: #ffffff;
     background: linear-gradient(135deg, #FE5F00 0%, #cc4c00 100%);
     border: 3px solid #ff7a33;
     box-shadow: 0 6px 25px rgba(254, 95, 0, 0.5), 0 0 40px rgba(254, 95, 0, 0.2);
@@ -611,9 +612,11 @@ button:disabled {
 }
 
 .connection-status.online {
-    background-color: rgba(76, 175, 80, 0.9);
+    background-color: rgba(76, 175, 80, 0.2);
     color: #fff;
-    border: 1px solid rgba(76, 175, 80, 0.5);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(76, 175, 80, 0.3);
 }
 
 .connection-status.offline {
@@ -1455,14 +1458,43 @@ button:disabled {
 /* Mode Carousel Container */
 .mode-carousel {
     position: absolute;
-    right: -2vw;
+    right: -2vw; 
     top: 22vh;
     bottom: 8vh;
-    width: 24vw; /* Slightly wider to give the buttons room */
+    width: 24vw; 
     display: flex;
     flex-direction: column;
     z-index: 100;
-    overflow: hidden; /* Changed from visible to hidden to contain the track */
+    overflow: visible; /* Changed to visible so the handle can stick out */
+    
+    /* Reveal Animation */
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    /* Hidden state: Leaves ~8px of the handle visible on the edge */
+    transform: translateX(calc(100% - 8px)); 
+}
+
+/* The visual "Pull-Tab" Indicator */
+.mode-carousel::before {
+    content: '';
+    position: absolute;
+    left: -10px; /* Positions it just outside the left edge of the container */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 40px;
+    background: #FE5F00;
+    border-radius: 4px;
+    opacity: 0.6;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
+}
+
+/* When the menu is shown, we hide the handle or make it subtle */
+.mode-carousel.show {
+    transform: translateX(0);
+}
+
+.mode-carousel.show::before {
+    opacity: 0.2; /* Dims the handle when the menu is actually open */
 }
 
 .mode-carousel-track {
