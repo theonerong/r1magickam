@@ -77,6 +77,9 @@ html, body {
     justify-content: center;
     background-color: #000;
     overflow: hidden;
+    /* GPU acceleration for container */
+    will-change: transform;
+    transform: translate3d(0, 0, 0);
 }
 
 /* Video and image styling - simple fullscreen display */
@@ -93,7 +96,9 @@ html, body {
     transition: transform 0.1s ease-out;
     /* Force GPU acceleration */
     will-change: transform;
-    transform: translateZ(0);
+    transform: translate3d(0, 0, 0);
+    /* Prevent offscreen rendering calculations */
+    contain: layout style paint;
 }
 
 #captured-image {
@@ -1470,7 +1475,8 @@ button:disabled {
     /* Reveal Animation */
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     /* Hidden state: Leaves ~8px of the handle visible on the edge */
-    transform: translateX(calc(100% - 8px)); 
+    transform: translateX(calc(100% - 8px));
+    pointer-events: none; 
 }
 
 /* The visual "Pull-Tab" Indicator */
@@ -1491,6 +1497,7 @@ button:disabled {
 /* When the menu is shown, we hide the handle or make it subtle */
 .mode-carousel.show {
     transform: translateX(0);
+    pointer-events: auto;
 }
 
 .mode-carousel.show::before {

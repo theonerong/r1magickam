@@ -2955,8 +2955,7 @@ function loadMotionSettings() {
       motionStartDelay = settings.motionStartDelay || 3;
     }
     
-    // Update UI elements
-    {
+    // Always update UI elements whether saved settings exist or not
     const sensitivitySlider = document.getElementById('motion-sensitivity-slider');
     if (sensitivitySlider) {
       const sliderValue = Math.floor((50 - motionThreshold) / 10) + 1;
@@ -2973,16 +2972,15 @@ function loadMotionSettings() {
         cooldownSlider.value = motionCooldown;
       }
 
-      const startDelaySlider = document.getElementById('motion-start-delay-slider');
-      const startDelayValue = document.getElementById('motion-start-delay-value');
-      if (startDelaySlider && startDelayValue) {
-        const sliderValue = getStartDelaySliderValue();
-        startDelaySlider.value = sliderValue;
-        startDelayValue.textContent = MOTION_START_DELAYS[sliderValue].label;
-      }      
+    const startDelaySlider = document.getElementById('motion-start-delay-slider');
+    const startDelayValue = document.getElementById('motion-start-delay-value');
+    if (startDelaySlider && startDelayValue) {
+      const sliderValue = getStartDelaySliderValue();
+      startDelaySlider.value = sliderValue;
+      startDelayValue.textContent = MOTION_START_DELAYS[sliderValue].label;
+    }      
 
-      updateMotionDisplay();
-    }
+    updateMotionDisplay();
   } catch (err) {
     console.error('Failed to load motion settings:', err);
   }
@@ -4248,7 +4246,7 @@ async function initCamera() {
   }
   
   // Start QR detection after camera initializes
-  startQRDetection();
+  // startQRDetection();
 }
 
 // Pause camera stream to reduce lag
@@ -7688,29 +7686,29 @@ console.log('AI Camera Styles app initialized!');
 
 // --- Swipe Detection for Mode Carousel ---
 let touchStartX = 0;
+let carouselIsVisible = false;
 
 document.addEventListener('touchstart', (e) => {
     touchStartX = e.touches[0].clientX;
 }, { passive: true });
 
 document.addEventListener('touchend', (e) => {
-    const touchEndX = e.changedTouches[0].clientX;
-    const diffX = touchStartX - touchEndX; // Positive = Swipe Left
     const carousel = document.querySelector('.mode-carousel');
-
     if (!carousel) return;
 
-    const swipeThreshold = 30; 
-    // Detects if swipe starts on the right 40% of screen
-    const edgeZone = window.innerWidth * 0.5; 
+    const touchEndX = e.changedTouches[0].clientX;
+    const diffX = touchStartX - touchEndX;
+    const swipeThreshold = 30;
+    const edgeZone = window.innerWidth * 0.5;
 
     // SHOW MENU: Swipe Left
-    if (touchStartX > edgeZone && diffX > swipeThreshold) {
+    if (touchStartX > edgeZone && diffX > swipeThreshold && !carouselIsVisible) {
         carousel.classList.add('show');
+        carouselIsVisible = true;
     }
-
     // HIDE MENU: Swipe Right
-    if (diffX < -swipeThreshold) {
+    else if (diffX < -swipeThreshold && carouselIsVisible) {
         carousel.classList.remove('show');
+        carouselIsVisible = false;
     }
 }, { passive: true });
