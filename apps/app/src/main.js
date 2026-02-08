@@ -1945,6 +1945,9 @@ async function loadStyles() {
         visiblePresets = CAMERA_PRESETS.map(p => p.name);
         saveVisiblePresets();
     }
+    
+    // Update the display to show correct count on startup
+    updateVisiblePresetsDisplay();
 }
 
 async function mergePresetsWithStorage() {
@@ -4076,8 +4079,11 @@ function captureBurstPhoto(photoNumber) {
     currentPresetIndex = getRandomPresetIndex();
   }
   
-  canvas.width = video.videoWidth;
-  canvas.height = video.videoHeight;
+  // Only resize if dimensions actually changed to save CPU
+  if (canvas.width !== video.videoWidth || canvas.height !== video.videoHeight) {
+    canvas.width = video.videoWidth;
+    canvas.height = video.videoHeight;
+  }
   
   const ctx = canvas.getContext('2d', { willReadFrequently: false, alpha: false });
   
@@ -4210,7 +4216,7 @@ async function initCamera() {
       };
     });
     
-    document.getElementById('start-screen').style.display = 'none';
+    document.getElementById('start-screen').remove(); // Deletes from memory
     document.getElementById('camera-container').style.display = 'flex';
     statusElement.style.display = 'block';
     
@@ -4328,8 +4334,11 @@ function capturePhoto() {
     showStyleReveal(CAMERA_PRESETS[currentPresetIndex].name);
   }
   
-  canvas.width = video.videoWidth;
-  canvas.height = video.videoHeight;
+  // Only resize if dimensions actually changed to save CPU
+  if (canvas.width !== video.videoWidth || canvas.height !== video.videoHeight) {
+    canvas.width = video.videoWidth;
+    canvas.height = video.videoHeight;
+  }
   
   const ctx = canvas.getContext('2d', { willReadFrequently: false, alpha: false });
   

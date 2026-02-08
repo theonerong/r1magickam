@@ -92,8 +92,9 @@ html, body {
     /* Enable smooth zoom transitions */
     transition: transform 0.1s ease-out;
     /* Force GPU acceleration */
-    will-change: transform;
-    transform: translateZ(0);
+    will-change: transform, opacity;
+    transform: translate3d(0,0,0);
+    -webkit-transform: translate3d(0,0,0);
 }
 
 #captured-image {
@@ -1470,7 +1471,8 @@ button:disabled {
     /* Reveal Animation */
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     /* Hidden state: Leaves ~8px of the handle visible on the edge */
-    transform: translateX(calc(100% - 8px)); 
+    transform: translateX(calc(100% - 8px));
+    pointer-events: none; /* Add this line */ 
 }
 
 /* The visual "Pull-Tab" Indicator */
@@ -1491,6 +1493,7 @@ button:disabled {
 /* When the menu is shown, we hide the handle or make it subtle */
 .mode-carousel.show {
     transform: translateX(0);
+    pointer-events: auto; /* Reactivate touches when open */
 }
 
 .mode-carousel.show::before {
