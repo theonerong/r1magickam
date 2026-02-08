@@ -3469,8 +3469,9 @@ function getCameraConstraints() {
     return {
       video: {
         facingMode: 'environment',
-        width: { ideal: resolution.width },
-        height: { ideal: resolution.height }
+        width: { exact: resolution.width },
+        height: { exact: resolution.height },
+        frameRate: { ideal: 30, max: 30 }
       }
     };
   }
@@ -3479,8 +3480,9 @@ function getCameraConstraints() {
   const constraints = {
     video: {
       deviceId: { exact: currentCamera.deviceId },
-      width: { ideal: resolution.width },
-      height: { ideal: resolution.height }
+      width: { exact: resolution.width },
+      height: { exact: resolution.height },
+      frameRate: { ideal: 30, max: 30 }
     }
   };
   
@@ -4214,7 +4216,6 @@ async function initCamera() {
           await video.play();
           applyVideoTransform();
           applyZoom(1);
-          video.addEventListener('playing', applyVideoTransform);
           setTimeout(resolve, 100);
         } catch (err) {
           console.error('Video play error:', err);
@@ -4279,7 +4280,6 @@ async function initCamera() {
       }));
     }
   }
-  
 }
 
 // Pause camera stream to reduce lag
@@ -4347,7 +4347,11 @@ function capturePhoto() {
     canvas.height = video.videoHeight;
   }
   
-  const ctx = canvas.getContext('2d', { willReadFrequently: false, alpha: false });
+  const ctx = canvas.getContext('2d', { 
+    willReadFrequently: false, 
+    alpha: false,
+    desynchronized: true
+  });
   
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   
@@ -5166,129 +5170,129 @@ videoElement.addEventListener('touchend', (e) => {
 }
 
 // Add tap-to-focus functionality
-function setupTapToFocus() {
-  const videoElement = document.getElementById('video');
-  let longPressTimer = null;
-  let isLongPress = false;
-  
-  videoElement.addEventListener('touchstart', (e) => {
-    if (!isMenuOpen && capturedImage.style.display === 'none') {
-      isLongPress = false;
-      
-      // Start long-press timer (500ms)
-      longPressTimer = setTimeout(() => {
-        isLongPress = true;
-        
-        // Visual feedback for long-press
-        const touch = e.touches[0];
-        const rect = videoElement.getBoundingClientRect();
-        const x = touch.clientX - rect.left;
-        const y = touch.clientY - rect.top;
-        
-        const captureIndicator = document.createElement('div');
-        captureIndicator.style.position = 'absolute';
-        captureIndicator.style.left = x + 'px';
-        captureIndicator.style.top = y + 'px';
-        captureIndicator.style.width = '80px';
-        captureIndicator.style.height = '80px';
-        captureIndicator.style.border = '3px solid #4CAF50';
-        captureIndicator.style.borderRadius = '50%';
-        captureIndicator.style.transform = 'translate(-50%, -50%)';
-        captureIndicator.style.pointerEvents = 'none';
-        captureIndicator.style.animation = 'capturePulse 0.4s ease-out';
-        captureIndicator.style.zIndex = '150';
-        captureIndicator.style.backgroundColor = 'rgba(76, 175, 80, 0.2)';
-        
-        document.getElementById('camera-container').appendChild(captureIndicator);
-        
-        setTimeout(() => {
-          captureIndicator.remove();
-        }, 400);
-        
-        // Take photo
-        capturePhoto();
-        
-        // Haptic feedback if available
-        if (navigator.vibrate) {
-          navigator.vibrate(50);
-        }
-      }, 500);
-    }
-  });
-  
-  videoElement.addEventListener('touchend', (e) => {
-    if (longPressTimer) {
-      clearTimeout(longPressTimer);
-      longPressTimer = null;
-    }
-    
-    // If it wasn't a long press, do tap-to-focus
-    if (!isLongPress && !isMenuOpen && capturedImage.style.display === 'none') {
-      triggerFocus();
-      
-      const touch = e.changedTouches[0];
-      const rect = videoElement.getBoundingClientRect();
-      const x = touch.clientX - rect.left;
-      const y = touch.clientY - rect.top;
-      
-      const focusIndicator = document.createElement('div');
-      focusIndicator.style.position = 'absolute';
-      focusIndicator.style.left = x + 'px';
-      focusIndicator.style.top = y + 'px';
-      focusIndicator.style.width = '60px';
-      focusIndicator.style.height = '60px';
-      focusIndicator.style.border = '2px solid #FE5F00';
-      focusIndicator.style.borderRadius = '50%';
-      focusIndicator.style.transform = 'translate(-50%, -50%)';
-      focusIndicator.style.pointerEvents = 'none';
-      focusIndicator.style.animation = 'focusPulse 0.6s ease-out';
-      focusIndicator.style.zIndex = '150';
-      
-      document.getElementById('camera-container').appendChild(focusIndicator);
-      
-      setTimeout(() => {
-        focusIndicator.remove();
-      }, 600);
-    }
-  });
-  
-  videoElement.addEventListener('touchcancel', (e) => {
-    if (longPressTimer) {
-      clearTimeout(longPressTimer);
-      longPressTimer = null;
-    }
-  });
-  
-  // Keep click event for non-touch devices (tap-to-focus only)
-  videoElement.addEventListener('click', (e) => {
-    if (!isMenuOpen && capturedImage.style.display === 'none') {
-      triggerFocus();
-      
-      const rect = videoElement.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      
-      const focusIndicator = document.createElement('div');
-      focusIndicator.style.position = 'absolute';
-      focusIndicator.style.left = x + 'px';
-      focusIndicator.style.top = y + 'px';
-      focusIndicator.style.width = '60px';
-      focusIndicator.style.height = '60px';
-      focusIndicator.style.border = '2px solid #FE5F00';
-      focusIndicator.style.borderRadius = '50%';
-      focusIndicator.style.transform = 'translate(-50%, -50%)';
-      focusIndicator.style.pointerEvents = 'none';
-      focusIndicator.style.animation = 'focusPulse 0.6s ease-out';
-      focusIndicator.style.zIndex = '150';
-      
-      document.getElementById('camera-container').appendChild(focusIndicator);
-      
-      setTimeout(() => {
-        focusIndicator.remove();
-      }, 600);
-    }
-  });
-}
+//function setupTapToFocus() {
+//  const videoElement = document.getElementById('video');
+//  let longPressTimer = null;
+//  let isLongPress = false;
+//  
+//  videoElement.addEventListener('touchstart', (e) => {
+//    if (!isMenuOpen && capturedImage.style.display === 'none') {
+//      isLongPress = false;
+//      
+//      // Start long-press timer (500ms)
+//      longPressTimer = setTimeout(() => {
+//        isLongPress = true;
+//        
+//        // Visual feedback for long-press
+//        const touch = e.touches[0];
+//        const rect = videoElement.getBoundingClientRect();
+//        const x = touch.clientX - rect.left;
+//        const y = touch.clientY - rect.top;
+//        
+//        const captureIndicator = document.createElement('div');
+//        captureIndicator.style.position = 'absolute';
+//        captureIndicator.style.left = x + 'px';
+//        captureIndicator.style.top = y + 'px';
+//        captureIndicator.style.width = '80px';
+//        captureIndicator.style.height = '80px';
+//        captureIndicator.style.border = '3px solid #4CAF50';
+//        captureIndicator.style.borderRadius = '50%';
+//        captureIndicator.style.transform = 'translate(-50%, -50%)';
+//        captureIndicator.style.pointerEvents = 'none';
+//        captureIndicator.style.animation = 'capturePulse 0.4s ease-out';
+//        captureIndicator.style.zIndex = '150';
+//        captureIndicator.style.backgroundColor = 'rgba(76, 175, 80, 0.2)';
+//        
+//        document.getElementById('camera-container').appendChild(captureIndicator);
+//        
+//        setTimeout(() => {
+//          captureIndicator.remove();
+//        }, 400);
+//        
+//        // Take photo
+//        capturePhoto();
+//        
+//        // Haptic feedback if available
+//        if (navigator.vibrate) {
+//          navigator.vibrate(50);
+//        }
+//      }, 500);
+//    }
+//  });
+//  
+//  videoElement.addEventListener('touchend', (e) => {
+//    if (longPressTimer) {
+//      clearTimeout(longPressTimer);
+//      longPressTimer = null;
+//    }
+//    
+//    // If it wasn't a long press, do tap-to-focus
+//    if (!isLongPress && !isMenuOpen && capturedImage.style.display === 'none') {
+//      triggerFocus();
+//      
+//      const touch = e.changedTouches[0];
+//      const rect = videoElement.getBoundingClientRect();
+//      const x = touch.clientX - rect.left;
+//      const y = touch.clientY - rect.top;
+//      
+//      const focusIndicator = document.createElement('div');
+//      focusIndicator.style.position = 'absolute';
+//      focusIndicator.style.left = x + 'px';
+//      focusIndicator.style.top = y + 'px';
+//      focusIndicator.style.width = '60px';
+//      focusIndicator.style.height = '60px';
+//      focusIndicator.style.border = '2px solid #FE5F00';
+//      focusIndicator.style.borderRadius = '50%';
+//      focusIndicator.style.transform = 'translate(-50%, -50%)';
+//      focusIndicator.style.pointerEvents = 'none';
+//      focusIndicator.style.animation = 'focusPulse 0.6s ease-out';
+//      focusIndicator.style.zIndex = '150';
+//      
+//      document.getElementById('camera-container').appendChild(focusIndicator);
+//      
+//      setTimeout(() => {
+//        focusIndicator.remove();
+//      }, 600);
+//    }
+//  });
+//  
+//  videoElement.addEventListener('touchcancel', (e) => {
+//    if (longPressTimer) {
+//      clearTimeout(longPressTimer);
+//      longPressTimer = null;
+//    }
+//  });
+//  
+//  // Keep click event for non-touch devices (tap-to-focus only)
+//  videoElement.addEventListener('click', (e) => {
+//    if (!isMenuOpen && capturedImage.style.display === 'none') {
+//      triggerFocus();
+//      
+//      const rect = videoElement.getBoundingClientRect();
+//      const x = e.clientX - rect.left;
+//      const y = e.clientY - rect.top;
+//      
+//      const focusIndicator = document.createElement('div');
+//      focusIndicator.style.position = 'absolute';
+//      focusIndicator.style.left = x + 'px';
+//      focusIndicator.style.top = y + 'px';
+//      focusIndicator.style.width = '60px';
+//      focusIndicator.style.height = '60px';
+//      focusIndicator.style.border = '2px solid #FE5F00';
+//      focusIndicator.style.borderRadius = '50%';
+//      focusIndicator.style.transform = 'translate(-50%, -50%)';
+//      focusIndicator.style.pointerEvents = 'none';
+//      focusIndicator.style.animation = 'focusPulse 0.6s ease-out';
+//      focusIndicator.style.zIndex = '150';
+//      
+//      document.getElementById('camera-container').appendChild(focusIndicator);
+//      
+//      setTimeout(() => {
+//        focusIndicator.remove();
+//      }, 600);
+//    }
+//  });
+//}
 
 // Unified menu functions
 function showUnifiedMenu() {
@@ -6292,7 +6296,7 @@ window.addEventListener('load', () => {
   loadMasterPrompt();
   loadSelectionHistory();
   setupPinchZoom();
-  setupTapToFocus();
+//  setupTapToFocus();
   
   const startBtn = document.getElementById('start-button');
 if (startBtn) {
@@ -7714,7 +7718,6 @@ document.addEventListener('DOMContentLoaded', function() {
         button.addEventListener('click', toggleTimerMode);
       }
     });
-
   }
 });
 

@@ -86,15 +86,13 @@ html, body {
     object-fit: cover;
     object-position: center;
     background-color: #000;
-    /* Prevent iOS Safari from zooming */
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    /* Enable smooth zoom transitions */
-    transition: transform 0.1s ease-out;
-    /* Force GPU acceleration */
-    will-change: transform, opacity;
-    transform: translate3d(0,0,0);
-    -webkit-transform: translate3d(0,0,0);
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+}
+
+#video::before {
+    content: '';
+    position: absolute;
 }
 
 #captured-image {
