@@ -1301,18 +1301,25 @@ function submitMagicTransform() {
   }
   
   const promptInput = document.getElementById('viewer-prompt');
-  const prompt = promptInput.value.trim();
+  let prompt = promptInput.value.trim();
+  let presetName = 'Custom Prompt';
   
+  // If no prompt entered, use a random preset
   if (!prompt) {
-    alert('Please enter a prompt or load a preset');
-    return;
+    const randomIndex = getRandomPresetIndex();
+    const randomPreset = CAMERA_PRESETS[randomIndex];
+    prompt = randomPreset.message;
+    presetName = randomPreset.name;
+    
+    // Show which preset was randomly selected
+    alert(`Using random preset: ${presetName}`);
   }
   
   const item = galleryImages[currentViewerImageIndex];
   
   if (typeof PluginMessageHandler !== 'undefined') {
     PluginMessageHandler.postMessage(JSON.stringify({
-      message: getFinalPrompt(prompt, 'Custom Prompt'),
+      message: getFinalPrompt(prompt, presetName),
       pluginId: 'com.r1.pixelart',
       imageBase64: item.imageBase64
     }));
