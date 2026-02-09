@@ -32,18 +32,18 @@ const IMPORT_RESOLUTION_OPTIONS = [
 let currentImportResolutionIndex = 0; // Default to VGA (640x480)
 const IMPORT_RESOLUTION_STORAGE_KEY = 'r1_import_resolution';
 
-// White balance settings
-const WHITE_BALANCE_MODES = [
-  { name: 'Auto', value: 'auto' },
-  { name: 'Daylight', value: 'daylight' },
-  { name: 'Cloudy', value: 'cloudy' },
-  { name: 'Tungsten', value: 'tungsten' },
-  { name: 'Fluorescent', value: 'fluorescent' },
-  { name: 'Candlelight', value: 'candlelight' },
-  { name: 'Moonlight', value: 'moonlight' }
-];
-let currentWhiteBalanceIndex = 0; // Default to Auto
-const WHITE_BALANCE_STORAGE_KEY = 'r1_camera_white_balance';
+// White balance settings - COMMENTED OUT
+// const WHITE_BALANCE_MODES = [
+//   { name: 'Auto', value: 'auto' },
+//   { name: 'Daylight', value: 'daylight' },
+//   { name: 'Cloudy', value: 'cloudy' },
+//   { name: 'Tungsten', value: 'tungsten' },
+//   { name: 'Fluorescent', value: 'fluorescent' },
+//   { name: 'Candlelight', value: 'candlelight' },
+//   { name: 'Moonlight', value: 'moonlight' }
+// ];
+// let currentWhiteBalanceIndex = 0; // Default to Auto
+// const WHITE_BALANCE_STORAGE_KEY = 'r1_camera_white_balance';
 
 // Camera switching variables
 let currentCameraIndex = 0;
@@ -1931,7 +1931,7 @@ async function loadStyles() {
     loadLastUsedStyle(); 
     
     loadResolution();
-    loadWhiteBalanceSettings();
+    // loadWhiteBalanceSettings();
     
     // Load visible presets
     const visibleJson = localStorage.getItem(VISIBLE_PRESETS_KEY);
@@ -2011,190 +2011,192 @@ function saveResolution(index) {
   }
 }
 
-// Load white balance settings
-function loadWhiteBalanceSettings() {
-  const saved = localStorage.getItem(WHITE_BALANCE_STORAGE_KEY);
-  if (saved !== null) {
-    currentWhiteBalanceIndex = parseInt(saved);
-  }
-}
+// ========== WHITE BALANCE FUNCTIONS - COMMENTED OUT ==========
+// // Load white balance settings
+// function loadWhiteBalanceSettings() {
+//   const saved = localStorage.getItem(WHITE_BALANCE_STORAGE_KEY);
+//   if (saved !== null) {
+//     currentWhiteBalanceIndex = parseInt(saved);
+//   }
+// }
 
-// Save white balance settings
-function saveWhiteBalanceSettings() {
-  localStorage.setItem(WHITE_BALANCE_STORAGE_KEY, currentWhiteBalanceIndex.toString());
-}
+// // Save white balance settings
+// function saveWhiteBalanceSettings() {
+//   localStorage.setItem(WHITE_BALANCE_STORAGE_KEY, currentWhiteBalanceIndex.toString());
+// }
 
-// Apply white balance filter
-function applyWhiteBalance() {
-  if (!video) return;
-  
-  // Small delay to ensure video is ready
-  setTimeout(() => {
-    const mode = WHITE_BALANCE_MODES[currentWhiteBalanceIndex];
-    
-    // Remove existing filter
-    video.style.filter = '';
-    
-    // Apply CSS filter based on mode
-    switch(mode.value) {
-      case 'daylight':
-        video.style.filter = 'brightness(1.05) saturate(1.1)';
-        break;
-      case 'cloudy':
-        video.style.filter = 'brightness(1.1) saturate(0.95) sepia(0.05)';
-        break;
-      case 'tungsten':
-        video.style.filter = 'brightness(0.95) saturate(1.15) hue-rotate(-10deg)';
-        break;
-      case 'fluorescent':
-        video.style.filter = 'brightness(1.02) saturate(1.05) hue-rotate(5deg)';
-        break;
-      case 'candlelight':
-        video.style.filter = 'brightness(0.85) saturate(1.3) sepia(0.15) hue-rotate(-15deg)';
-        break;
-      case 'moonlight':
-        video.style.filter = 'brightness(0.7) saturate(0.8) hue-rotate(15deg) contrast(1.1)';
-        break;
-      case 'auto':
-      default:
-        video.style.filter = '';
-        break;
-    }
-  }, 50);
-}
+// // Apply white balance filter
+// function applyWhiteBalance() {
+//   if (!video) return;
+//   
+//   // Small delay to ensure video is ready
+//   setTimeout(() => {
+//     const mode = WHITE_BALANCE_MODES[currentWhiteBalanceIndex];
+//     
+//     // Remove existing filter
+//     video.style.filter = '';
+//     
+//     // Apply CSS filter based on mode
+//     switch(mode.value) {
+//       case 'daylight':
+//         video.style.filter = 'brightness(1.05) saturate(1.1)';
+//         break;
+//       case 'cloudy':
+//         video.style.filter = 'brightness(1.1) saturate(0.95) sepia(0.05)';
+//         break;
+//       case 'tungsten':
+//         video.style.filter = 'brightness(0.95) saturate(1.15) hue-rotate(-10deg)';
+//         break;
+//       case 'fluorescent':
+//         video.style.filter = 'brightness(1.02) saturate(1.05) hue-rotate(5deg)';
+//         break;
+//       case 'candlelight':
+//         video.style.filter = 'brightness(0.85) saturate(1.3) sepia(0.15) hue-rotate(-15deg)';
+//         break;
+//       case 'moonlight':
+//         video.style.filter = 'brightness(0.7) saturate(0.8) hue-rotate(15deg) contrast(1.1)';
+//         break;
+//       case 'auto':
+//       default:
+//         video.style.filter = '';
+//         break;
+//     }
+//   }, 50);
+// }
 
-function applyWhiteBalanceToCanvas(ctx, width, height) {
-  const mode = WHITE_BALANCE_MODES[currentWhiteBalanceIndex];
-  
-  if (mode.value === 'auto') {
-    return; // No adjustment needed
-  }
-  
-  // Get image data
-  const imageData = ctx.getImageData(0, 0, width, height);
-  const data = imageData.data;
-  
-  // Define adjustments for each mode
-  let brightness = 1.0;
-  let saturation = 1.0;
-  let warmth = 0; // Positive = warmer (red/yellow), Negative = cooler (blue)
-  let contrast = 1.0;
-  
-  switch(mode.value) {
-    case 'daylight':
-      brightness = 1.05;
-      saturation = 1.1;
-      warmth = 5;
-      break;
-    case 'cloudy':
-      brightness = 1.1;
-      saturation = 0.95;
-      warmth = 10;
-      break;
-    case 'tungsten':
-      brightness = 0.95;
-      saturation = 1.15;
-      warmth = -20;
-      break;
-    case 'fluorescent':
-      brightness = 1.02;
-      saturation = 1.05;
-      warmth = -10;
-      break;
-    case 'candlelight':
-      brightness = 0.85;
-      saturation = 1.3;
-      warmth = 25;
-      contrast = 0.95;
-      break;
-    case 'moonlight':
-      brightness = 0.7;
-      saturation = 0.8;
-      warmth = -15;
-      contrast = 1.1;
-      break;
-  }
-  
-  // Apply adjustments to each pixel
-  for (let i = 0; i < data.length; i += 4) {
-    let r = data[i];
-    let g = data[i + 1];
-    let b = data[i + 2];
-    
-    // Apply warmth (shift towards red/yellow or blue)
-    if (warmth > 0) {
-      r = Math.min(255, r + warmth);
-      g = Math.min(255, g + warmth * 0.5);
-    } else if (warmth < 0) {
-      b = Math.min(255, b - warmth);
-    }
-    
-    // Apply brightness
-    r *= brightness;
-    g *= brightness;
-    b *= brightness;
-    
-    // Apply saturation
-    const gray = 0.2989 * r + 0.5870 * g + 0.1140 * b;
-    r = gray + saturation * (r - gray);
-    g = gray + saturation * (g - gray);
-    b = gray + saturation * (b - gray);
-    
-    // Apply contrast
-    r = ((r / 255 - 0.5) * contrast + 0.5) * 255;
-    g = ((g / 255 - 0.5) * contrast + 0.5) * 255;
-    b = ((b / 255 - 0.5) * contrast + 0.5) * 255;
-    
-    // Clamp values
-    data[i] = Math.max(0, Math.min(255, r));
-    data[i + 1] = Math.max(0, Math.min(255, g));
-    data[i + 2] = Math.max(0, Math.min(255, b));
-  }
-  
-  // Put modified image data back
-  ctx.putImageData(imageData, 0, 0);
-}
+// function applyWhiteBalanceToCanvas(ctx, width, height) {
+//   const mode = WHITE_BALANCE_MODES[currentWhiteBalanceIndex];
+//   
+//   if (mode.value === 'auto') {
+//     return; // No adjustment needed
+//   }
+//   
+//   // Get image data
+//   const imageData = ctx.getImageData(0, 0, width, height);
+//   const data = imageData.data;
+//   
+//   // Define adjustments for each mode
+//   let brightness = 1.0;
+//   let saturation = 1.0;
+//   let warmth = 0; // Positive = warmer (red/yellow), Negative = cooler (blue)
+//   let contrast = 1.0;
+//   
+//   switch(mode.value) {
+//     case 'daylight':
+//       brightness = 1.05;
+//       saturation = 1.1;
+//       warmth = 5;
+//       break;
+//     case 'cloudy':
+//       brightness = 1.1;
+//       saturation = 0.95;
+//       warmth = 10;
+//       break;
+//     case 'tungsten':
+//       brightness = 0.95;
+//       saturation = 1.15;
+//       warmth = -20;
+//       break;
+//     case 'fluorescent':
+//       brightness = 1.02;
+//       saturation = 1.05;
+//       warmth = -10;
+//       break;
+//     case 'candlelight':
+//       brightness = 0.85;
+//       saturation = 1.3;
+//       warmth = 25;
+//       contrast = 0.95;
+//       break;
+//     case 'moonlight':
+//       brightness = 0.7;
+//       saturation = 0.8;
+//       warmth = -15;
+//       contrast = 1.1;
+//       break;
+//   }
+//   
+//   // Apply adjustments to each pixel
+//   for (let i = 0; i < data.length; i += 4) {
+//     let r = data[i];
+//     let g = data[i + 1];
+//     let b = data[i + 2];
+//     
+//     // Apply warmth (shift towards red/yellow or blue)
+//     if (warmth > 0) {
+//       r = Math.min(255, r + warmth);
+//       g = Math.min(255, g + warmth * 0.5);
+//     } else if (warmth < 0) {
+//       b = Math.min(255, b - warmth);
+//     }
+//     
+//     // Apply brightness
+//     r *= brightness;
+//     g *= brightness;
+//     b *= brightness;
+//     
+//     // Apply saturation
+//     const gray = 0.2989 * r + 0.5870 * g + 0.1140 * b;
+//     r = gray + saturation * (r - gray);
+//     g = gray + saturation * (g - gray);
+//     b = gray + saturation * (b - gray);
+//     
+//     // Apply contrast
+//     r = ((r / 255 - 0.5) * contrast + 0.5) * 255;
+//     g = ((g / 255 - 0.5) * contrast + 0.5) * 255;
+//     b = ((b / 255 - 0.5) * contrast + 0.5) * 255;
+//     
+//     // Clamp values
+//     data[i] = Math.max(0, Math.min(255, r));
+//     data[i + 1] = Math.max(0, Math.min(255, g));
+//     data[i + 2] = Math.max(0, Math.min(255, b));
+//   }
+//   
+//   // Put modified image data back
+//   ctx.putImageData(imageData, 0, 0);
+// }
 
-function showWhiteBalanceSubmenu() {
-  document.getElementById('settings-submenu').style.display = 'none';
-  
-  const submenu = document.getElementById('white-balance-submenu');
-  const list = document.getElementById('white-balance-list');
-  list.innerHTML = '';
-  
-  WHITE_BALANCE_MODES.forEach((mode, index) => {
-    const item = document.createElement('div');
-    item.className = 'resolution-item';
-    if (index === currentWhiteBalanceIndex) {
-      item.classList.add('active');
-    }
-    
-    const name = document.createElement('span');
-    name.className = 'resolution-name';
-    name.textContent = mode.name;
-    
-    item.appendChild(name);
-    
-    item.onclick = () => {
-      currentWhiteBalanceIndex = index;
-      saveWhiteBalanceSettings();
-      document.getElementById('current-white-balance-display').textContent = mode.name;
-      if (stream) {
-        applyWhiteBalance();
-      }
-      hideWhiteBalanceSubmenu();
-    };
-    
-    list.appendChild(item);
-  });
-  
-  submenu.style.display = 'flex';
-}
+// function showWhiteBalanceSubmenu() {
+//   document.getElementById('settings-submenu').style.display = 'none';
+//   
+//   const submenu = document.getElementById('white-balance-submenu');
+//   const list = document.getElementById('white-balance-list');
+//   list.innerHTML = '';
+//   
+//   WHITE_BALANCE_MODES.forEach((mode, index) => {
+//     const item = document.createElement('div');
+//     item.className = 'resolution-item';
+//     if (index === currentWhiteBalanceIndex) {
+//       item.classList.add('active');
+//     }
+//     
+//     const name = document.createElement('span');
+//     name.className = 'resolution-name';
+//     name.textContent = mode.name;
+//     
+//     item.appendChild(name);
+//     
+//     item.onclick = () => {
+//       currentWhiteBalanceIndex = index;
+//       saveWhiteBalanceSettings();
+//       document.getElementById('current-white-balance-display').textContent = mode.name;
+//       if (stream) {
+//         applyWhiteBalance();
+//       }
+//       hideWhiteBalanceSubmenu();
+//     };
+//     
+//     list.appendChild(item);
+//   });
+//   
+//   submenu.style.display = 'flex';
+// }
 
-function hideWhiteBalanceSubmenu() {
-  document.getElementById('white-balance-submenu').style.display = 'none';
-  document.getElementById('settings-submenu').style.display = 'flex';
-}
+// function hideWhiteBalanceSubmenu() {
+//   document.getElementById('white-balance-submenu').style.display = 'none';
+//   document.getElementById('settings-submenu').style.display = 'flex';
+// }
+// ========== END WHITE BALANCE FUNCTIONS ==========
 
 // Load resolution setting
 function loadResolution() {
@@ -3513,9 +3515,9 @@ async function changeResolution(newIndex) {
     video.srcObject = stream;
     videoTrack = stream.getVideoTracks()[0];
     // Apply white balance
-    setTimeout(() => {
-      applyWhiteBalance();
-    }, 100);
+    // setTimeout(() => {
+    //   applyWhiteBalance();
+    // }, 100);
     
     await new Promise((resolve) => {
       video.onloadedmetadata = async () => {
@@ -3776,9 +3778,9 @@ async function switchCamera() {
     video.srcObject = stream;
     videoTrack = stream.getVideoTracks()[0];
     // Apply white balance
-    setTimeout(() => {
-      applyWhiteBalance();
-    }, 100);
+    // setTimeout(() => {
+    //  applyWhiteBalance();
+    // }, 100);
     
     await new Promise((resolve) => {
       video.onloadedmetadata = async () => {
@@ -4138,8 +4140,8 @@ function captureBurstPhoto(photoNumber) {
     );
   }
   
-  // Apply white balance adjustments to canvas pixels
-  applyWhiteBalanceToCanvas(ctx, canvas.width, canvas.height);
+  // Apply white balance adjustments to canvas pixels - COMMENTED OUT
+  // applyWhiteBalanceToCanvas(ctx, canvas.width, canvas.height);
   
   // Use lower quality for higher resolutions to reduce file size
   const quality = currentResolutionIndex >= 2 ? 0.7 : 0.8;
@@ -4201,9 +4203,9 @@ async function initCamera() {
     video.srcObject = stream;
     videoTrack = stream.getVideoTracks()[0];
     // Apply white balance
-    setTimeout(() => {
-      applyWhiteBalance();
-    }, 100);
+    // setTimeout(() => {
+    //  applyWhiteBalance();
+    // }, 100);
     
     console.log('Camera initialized:', getCurrentCameraLabel());
 
@@ -4305,9 +4307,9 @@ async function resumeCamera() {
       video.srcObject = stream;
       videoTrack = stream.getVideoTracks()[0];
       // Apply white balance
-      setTimeout(() => {
-        applyWhiteBalance();
-      }, 100);
+      // setTimeout(() => {
+      //  applyWhiteBalance();
+      // }, 100);
       
       await new Promise((resolve) => {
         video.onloadedmetadata = async () => {
@@ -4396,7 +4398,7 @@ function capturePhoto() {
   }
   
   // Apply white balance adjustments to canvas pixels
-  applyWhiteBalanceToCanvas(ctx, canvas.width, canvas.height);
+  // applyWhiteBalanceToCanvas(ctx, canvas.width, canvas.height);
   
   // Use lower quality for higher resolutions to reduce file size
   const quality = currentResolutionIndex >= 2 ? 0.7 : 0.8;
@@ -6726,16 +6728,16 @@ if (startBtn) {
     });
   }
 
-  // White Balance Settings
-  const whiteBalanceSettingsBtn = document.getElementById('white-balance-settings-button');
-  if (whiteBalanceSettingsBtn) {
-    whiteBalanceSettingsBtn.addEventListener('click', showWhiteBalanceSubmenu);
-  }
+  // White Balance Settings - COMMENTED OUT
+  // const whiteBalanceSettingsBtn = document.getElementById('white-balance-settings-button');
+  // if (whiteBalanceSettingsBtn) {
+  //   whiteBalanceSettingsBtn.addEventListener('click', showWhiteBalanceSubmenu);
+  // }
   
-  const whiteBalanceBackBtn = document.getElementById('white-balance-back');
-  if (whiteBalanceBackBtn) {
-    whiteBalanceBackBtn.addEventListener('click', hideWhiteBalanceSubmenu);
-  }
+  // const whiteBalanceBackBtn = document.getElementById('white-balance-back');
+  // if (whiteBalanceBackBtn) {
+  //   whiteBalanceBackBtn.addEventListener('click', hideWhiteBalanceSubmenu);
+  // }
 
   const motionSensitivitySlider = document.getElementById('motion-sensitivity-slider');
   const motionSensitivityValue = document.getElementById('motion-sensitivity-value');
