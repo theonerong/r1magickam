@@ -6782,39 +6782,24 @@ function openImageEditor() {
 function renderEditorImage() {
   if (!editorCurrentImage || !editorCanvas) return;
   
-  // Set canvas size to fit container while maintaining aspect ratio
-  const container = document.querySelector('.editor-image-container');
-  const maxWidth = container.clientWidth;
-  const maxHeight = container.clientHeight;
-  
-  let width = editorCurrentImage.width;
-  let height = editorCurrentImage.height;
-  
-  const aspectRatio = width / height;
-  
-  if (width > maxWidth) {
-    width = maxWidth;
-    height = width / aspectRatio;
-  }
-  
-  if (height > maxHeight) {
-    height = maxHeight;
-    width = height * aspectRatio;
-  }
-  
-  editorCanvas.width = width;
-  editorCanvas.height = height;
+  // CRITICAL: Keep canvas at ORIGINAL resolution - don't downscale!
+  // Canvas dimensions = actual image dimensions
+  editorCanvas.width = editorCurrentImage.width;
+  editorCanvas.height = editorCurrentImage.height;
   
   // Clear canvas
-  editorCtx.clearRect(0, 0, width, height);
+  editorCtx.clearRect(0, 0, editorCanvas.width, editorCanvas.height);
   
-  // Draw image
-  editorCtx.drawImage(editorCurrentImage, 0, 0, width, height);
+  // Draw image at FULL original resolution
+  editorCtx.drawImage(editorCurrentImage, 0, 0);
   
   // Apply brightness and contrast
   if (editorBrightness !== 0 || editorContrast !== 0) {
     applyBrightnessContrast();
   }
+  
+  // Let CSS handle the display scaling (canvas will auto-scale to fit container)
+  // The .editor-canvas CSS already has max-width: 100%; max-height: 100%;
 }
 
 // Apply brightness and contrast
