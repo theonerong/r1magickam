@@ -32,6 +32,8 @@ const IMPORT_RESOLUTION_OPTIONS = [
 let currentImportResolutionIndex = 0; // Default to VGA (640x480)
 const IMPORT_RESOLUTION_STORAGE_KEY = 'r1_import_resolution';
 
+
+
 // White balance settings - COMMENTED OUT
 // const WHITE_BALANCE_MODES = [
 //   { name: 'Auto', value: 'auto' },
@@ -6727,6 +6729,548 @@ if (startBtn) {
       }
     });
   }
+
+// ========== IMAGE EDITOR FUNCTIONALITY ==========
+let editorCanvas = null;
+let editorCtx = null;
+let editorOriginalImage = null;
+let editorCurrentImage = null;
+let editorHistory = [];
+let editorCurrentRotation = 0;
+let editorBrightness = 0;
+let editorContrast = 0;
+let isCropMode = false;
+let cropPoint1 = null;
+let cropPoint2 = null;
+
+// Open image editor
+function openImageEditor() {
+  const imageToEdit = galleryImages[currentViewerImageIndex];
+  if (!imageToEdit) return;
+  
+  // Hide viewer, show editor
+  document.getElementById('image-viewer').style.display = 'none';
+  document.getElementById('image-editor-modal').style.display = 'flex';
+  
+  // Initialize canvas
+  editorCanvas = document.getElementById('editor-canvas');
+  editorCtx = editorCanvas.getContext('2d', { willReadFrequently: true });
+  
+  // Load image
+  const img = new Image();
+  img.onload = () => {
+    editorOriginalImage = img;
+    editorCurrentImage = img;
+    editorHistory = [];
+    editorCurrentRotation = 0;
+    editorBrightness = 0;
+    editorContrast = 0;
+    
+    // Reset sliders
+    document.getElementById('brightness-slider').value = 0;
+    document.getElementById('contrast-slider').value = 0;
+    document.getElementById('brightness-value').textContent = '0';
+    document.getElementById('contrast-value').textContent = '0';
+    
+    renderEditorImage();
+    updateUndoButton();
+  };
+  img.src = imageToEdit.imageBase64;
+}
+
+// Render current image to canvas
+function renderEditorImage() {
+  if (!editorCurrentImage || !editorCanvas) return;
+  
+  // Set canvas size to fit container while maintaining aspect ratio
+  const container = document.querySelector('.editor-image-container');
+  const maxWidth = container.clientWidth;
+  const maxHeight = container.clientHeight;
+  
+  let width = editorCurrentImage.width;
+  let height = editorCurrentImage.height;
+  
+  const aspectRatio = width / height;
+  
+  if (width > maxWidth) {
+    width = maxWidth;
+    height = width / aspectRatio;
+  }
+  
+  if (height > maxHeight) {
+    height = maxHeight;
+    width = height * aspectRatio;
+  }
+  
+  editorCanvas.width = width;
+  editorCanvas.height = height;
+  
+  // Clear canvas
+  editorCtx.clearRect(0, 0, width, height);
+  
+  // Draw image
+  editorCtx.drawImage(editorCurrentImage, 0, 0, width, height);
+  
+  // Apply brightness and contrast
+  if (editorBrightness !== 0 || editorContrast !== 0) {
+    applyBrightnessContrast();
+  }
+}
+
+// Apply brightness and contrast
+function applyBrightnessContrast() {
+  const imageData = editorCtx.getImageData(0, 0, editorCanvas.width, editorCanvas.height);
+  const data = imageData.data;
+  
+  const brightness = editorBrightness;
+  const contrast = (editorContrast + 100) / 100;
+  
+  for (let i = 0; i < data.length; i += 4) {
+    // Apply contrast
+    data[i] = ((data[i] / 255 - 0.5) * contrast + 0.5) * 255;
+    data[i + 1] = ((data[i + 1] / 255 - 0.5) * contrast + 0.5) * 255;
+    data[i + 2] = ((data[i + 2] / 255 - 0.5) * contrast + 0.5) * 255;
+    
+    // Apply brightness
+    data[i] += brightness;
+    data[i + 1] += brightness;
+    data[i + 2] += brightness;
+    
+    // Clamp values
+    data[i] = Math.max(0, Math.min(255, data[i]));
+    data[i + 1] = Math.max(0, Math.min(255, data[i + 1]));
+    data[i + 2] = Math.max(0, Math.min(255, data[i + 2]));
+  }
+  
+  editorCtx.putImageData(imageData, 0, 0);
+}
+
+// Rotate image
+function rotateImage() {
+  saveToHistory();
+  
+  editorCurrentRotation = (editorCurrentRotation + 90) % 360;
+  
+  // Create temporary canvas for rotation
+  const tempCanvas = document.createElement('canvas');
+  const tempCtx = tempCanvas.getContext('2d');
+  
+  // Swap width/height for 90° or 270° rotations
+  if (editorCurrentRotation === 90 || editorCurrentRotation === 270) {
+    tempCanvas.width = editorCurrentImage.height;
+    tempCanvas.height = editorCurrentImage.width;
+  } else {
+    tempCanvas.width = editorCurrentImage.width;
+    tempCanvas.height = editorCurrentImage.height;
+  }
+  
+  // Perform rotation
+  tempCtx.translate(tempCanvas.width / 2, tempCanvas.height / 2);
+  tempCtx.rotate((editorCurrentRotation * Math.PI) / 180);
+  tempCtx.drawImage(editorCurrentImage, -editorCurrentImage.width / 2, -editorCurrentImage.height / 2);
+  
+  // Create new image from rotated canvas
+  const rotatedImg = new Image();
+  rotatedImg.onload = () => {
+    editorCurrentImage = rotatedImg;
+    renderEditorImage();
+  };
+  rotatedImg.src = tempCanvas.toDataURL('image/jpeg', 0.95);
+}
+
+// Sharpen image
+function sharpenImage() {
+  saveToHistory();
+  
+  const imageData = editorCtx.getImageData(0, 0, editorCanvas.width, editorCanvas.height);
+  const data = imageData.data;
+  const width = editorCanvas.width;
+  const height = editorCanvas.height;
+  
+  // Create output array
+  const output = new Uint8ClampedArray(data);
+  
+  // Sharpening kernel (3x3)
+  const kernel = [
+    0, -1, 0,
+    -1, 5, -1,
+    0, -1, 0
+  ];
+  
+  // Apply convolution
+  for (let y = 1; y < height - 1; y++) {
+    for (let x = 1; x < width - 1; x++) {
+      for (let c = 0; c < 3; c++) { // RGB channels only
+        let sum = 0;
+        for (let ky = -1; ky <= 1; ky++) {
+          for (let kx = -1; kx <= 1; kx++) {
+            const pixelIndex = ((y + ky) * width + (x + kx)) * 4 + c;
+            const kernelIndex = (ky + 1) * 3 + (kx + 1);
+            sum += data[pixelIndex] * kernel[kernelIndex];
+          }
+        }
+        output[(y * width + x) * 4 + c] = Math.max(0, Math.min(255, sum));
+      }
+    }
+  }
+  
+  // Copy output back to imageData
+  for (let i = 0; i < data.length; i += 4) {
+    data[i] = output[i];
+    data[i + 1] = output[i + 1];
+    data[i + 2] = output[i + 2];
+  }
+  
+  editorCtx.putImageData(imageData, 0, 0);
+  
+  // Save current canvas as new image
+  const newImg = new Image();
+  newImg.onload = () => {
+    editorCurrentImage = newImg;
+    renderEditorImage();
+  };
+  newImg.src = editorCanvas.toDataURL('image/jpeg', 0.95);
+}
+
+// Auto-correct (simple enhancement)
+function autoCorrect() {
+  saveToHistory();
+  
+  const imageData = editorCtx.getImageData(0, 0, editorCanvas.width, editorCanvas.height);
+  const data = imageData.data;
+  
+  // Simple auto-enhance: increase contrast and saturation slightly
+  const contrast = 1.15;
+  const saturation = 1.2;
+  const brightness = 5;
+  
+  for (let i = 0; i < data.length; i += 4) {
+    let r = data[i];
+    let g = data[i + 1];
+    let b = data[i + 2];
+    
+    // Apply contrast
+    r = ((r / 255 - 0.5) * contrast + 0.5) * 255;
+    g = ((g / 255 - 0.5) * contrast + 0.5) * 255;
+    b = ((b / 255 - 0.5) * contrast + 0.5) * 255;
+    
+    // Apply saturation
+    const gray = 0.2989 * r + 0.5870 * g + 0.1140 * b;
+    r = gray + saturation * (r - gray);
+    g = gray + saturation * (g - gray);
+    b = gray + saturation * (b - gray);
+    
+    // Apply brightness
+    r += brightness;
+    g += brightness;
+    b += brightness;
+    
+    // Clamp values
+    data[i] = Math.max(0, Math.min(255, r));
+    data[i + 1] = Math.max(0, Math.min(255, g));
+    data[i + 2] = Math.max(0, Math.min(255, b));
+  }
+  
+  editorCtx.putImageData(imageData, 0, 0);
+  
+  // Save current canvas as new image
+  const newImg = new Image();
+  newImg.onload = () => {
+    editorCurrentImage = newImg;
+    renderEditorImage();
+  };
+  newImg.src = editorCanvas.toDataURL('image/jpeg', 0.95);
+}
+
+// Enter crop mode
+function enterCropMode() {
+  isCropMode = !isCropMode;
+  const cropOverlay = document.getElementById('crop-overlay');
+  const cropButton = document.getElementById('crop-button');
+  
+  if (isCropMode) {
+    cropOverlay.style.display = 'block';
+    cropButton.classList.add('active');
+    cropPoint1 = null;
+    cropPoint2 = null;
+    
+    // Reset crop corners to default positions
+    const container = document.querySelector('.editor-image-container');
+    const containerRect = container.getBoundingClientRect();
+    const canvasRect = editorCanvas.getBoundingClientRect();
+    
+    const topLeft = document.querySelector('.crop-top-left');
+    const bottomRight = document.querySelector('.crop-bottom-right');
+    
+    topLeft.style.left = ((canvasRect.left - containerRect.left) + canvasRect.width * 0.1) + 'px';
+    topLeft.style.top = ((canvasRect.top - containerRect.top) + canvasRect.height * 0.1) + 'px';
+    
+    bottomRight.style.right = (containerRect.right - canvasRect.right + canvasRect.width * 0.1) + 'px';
+    bottomRight.style.bottom = (containerRect.bottom - canvasRect.bottom + canvasRect.height * 0.1) + 'px';
+    
+  } else {
+    cropOverlay.style.display = 'none';
+    cropButton.classList.remove('active');
+  }
+}
+
+// Perform crop
+function performCrop() {
+  if (!isCropMode) return;
+  
+  saveToHistory();
+  
+  const container = document.querySelector('.editor-image-container');
+  const containerRect = container.getBoundingClientRect();
+  const canvasRect = editorCanvas.getBoundingClientRect();
+  
+  const topLeft = document.querySelector('.crop-top-left');
+  const bottomRight = document.querySelector('.crop-bottom-right');
+  
+  const topLeftRect = topLeft.getBoundingClientRect();
+  const bottomRightRect = bottomRight.getBoundingClientRect();
+  
+  // Calculate crop coordinates relative to canvas
+  const x1 = topLeftRect.left - canvasRect.left;
+  const y1 = topLeftRect.top - canvasRect.top;
+  const x2 = bottomRightRect.right - canvasRect.left;
+  const y2 = bottomRightRect.bottom - canvasRect.top;
+  
+  const cropWidth = x2 - x1;
+  const cropHeight = y2 - y1;
+  
+  if (cropWidth <= 0 || cropHeight <= 0) {
+    alert('Invalid crop area');
+    return;
+  }
+  
+  // Create cropped image
+  const scaleX = editorCurrentImage.width / canvasRect.width;
+  const scaleY = editorCurrentImage.height / canvasRect.height;
+  
+  const sourceX = x1 * scaleX;
+  const sourceY = y1 * scaleY;
+  const sourceWidth = cropWidth * scaleX;
+  const sourceHeight = cropHeight * scaleY;
+  
+  const tempCanvas = document.createElement('canvas');
+  tempCanvas.width = sourceWidth;
+  tempCanvas.height = sourceHeight;
+  const tempCtx = tempCanvas.getContext('2d');
+  
+  tempCtx.drawImage(
+    editorCurrentImage,
+    sourceX, sourceY, sourceWidth, sourceHeight,
+    0, 0, sourceWidth, sourceHeight
+  );
+  
+  // Create new image from cropped canvas
+  const croppedImg = new Image();
+  croppedImg.onload = () => {
+    editorCurrentImage = croppedImg;
+    isCropMode = false;
+    document.getElementById('crop-overlay').style.display = 'none';
+    document.getElementById('crop-button').classList.remove('active');
+    renderEditorImage();
+  };
+  croppedImg.src = tempCanvas.toDataURL('image/jpeg', 0.95);
+}
+
+// Save current state to history
+function saveToHistory() {
+  const historyItem = {
+    image: editorCurrentImage,
+    rotation: editorCurrentRotation,
+    brightness: editorBrightness,
+    contrast: editorContrast
+  };
+  editorHistory.push(historyItem);
+  updateUndoButton();
+}
+
+// Undo last action
+function undoEdit() {
+  if (editorHistory.length === 0) return;
+  
+  const previousState = editorHistory.pop();
+  editorCurrentImage = previousState.image;
+  editorCurrentRotation = previousState.rotation;
+  editorBrightness = previousState.brightness;
+  editorContrast = previousState.contrast;
+  
+  document.getElementById('brightness-slider').value = editorBrightness;
+  document.getElementById('contrast-slider').value = editorContrast;
+  document.getElementById('brightness-value').textContent = editorBrightness;
+  document.getElementById('contrast-value').textContent = editorContrast;
+  
+  renderEditorImage();
+  updateUndoButton();
+}
+
+// Update undo button state
+function updateUndoButton() {
+  const undoButton = document.getElementById('undo-edit-button');
+  undoButton.disabled = editorHistory.length === 0;
+}
+
+// Save edited image
+async function saveEditedImage() {
+  // Get final canvas with all adjustments
+  const finalCanvas = document.createElement('canvas');
+  finalCanvas.width = editorCanvas.width;
+  finalCanvas.height = editorCanvas.height;
+  const finalCtx = finalCanvas.getContext('2d');
+  
+  // Copy current canvas
+  finalCtx.drawImage(editorCanvas, 0, 0);
+  
+  // Convert to base64
+  const editedBase64 = finalCanvas.toDataURL('image/jpeg', 0.9);
+  
+  // Create new image entry
+  const newImageData = {
+    id: Date.now().toString() + '-' + Math.random().toString(36).substr(2, 9),
+    imageBase64: editedBase64,
+    timestamp: Date.now()
+  };
+  
+  // Add to gallery
+  galleryImages.unshift(newImageData);
+  await saveImageToDB(newImageData);
+  
+  // Update the viewer to show the NEW edited image
+  currentViewerImageIndex = 0; // The new image is now at index 0
+  const viewerImg = document.getElementById('viewer-image');
+  viewerImg.src = editedBase64;
+  viewerImg.style.transform = 'scale(1) translate(0, 0)';
+  viewerZoom = 1;
+  
+  // Close editor
+  closeImageEditor();
+  
+  // Refresh gallery
+  await showGallery();
+  showGalleryStatusMessage('Edited image saved!', 'success', 3000);
+}
+
+// Close image editor
+function closeImageEditor() {
+  document.getElementById('image-editor-modal').style.display = 'none';
+  document.getElementById('image-viewer').style.display = 'flex';
+  
+  // Reset crop mode
+  isCropMode = false;
+  document.getElementById('crop-overlay').style.display = 'none';
+  document.getElementById('crop-button').classList.remove('active');
+}
+
+// Event listeners for image editor
+document.getElementById('edit-viewer-image')?.addEventListener('click', openImageEditor);
+document.getElementById('close-image-editor')?.addEventListener('click', closeImageEditor);
+document.getElementById('rotate-button')?.addEventListener('click', rotateImage);
+document.getElementById('sharpen-button')?.addEventListener('click', sharpenImage);
+document.getElementById('autocorrect-button')?.addEventListener('click', autoCorrect);
+document.getElementById('undo-edit-button')?.addEventListener('click', undoEdit);
+document.getElementById('save-edit-button')?.addEventListener('click', saveEditedImage);
+
+// Crop button toggles crop mode, then applies crop on second click
+let cropClickCount = 0;
+document.getElementById('crop-button')?.addEventListener('click', () => {
+  if (!isCropMode) {
+    enterCropMode();
+    cropClickCount = 0;
+  } else {
+    performCrop();
+  }
+});
+
+// Brightness slider
+document.getElementById('brightness-slider')?.addEventListener('input', (e) => {
+  editorBrightness = parseInt(e.target.value);
+  document.getElementById('brightness-value').textContent = editorBrightness;
+  renderEditorImage();
+});
+
+// Contrast slider
+document.getElementById('contrast-slider')?.addEventListener('input', (e) => {
+  editorContrast = parseInt(e.target.value);
+  document.getElementById('contrast-value').textContent = editorContrast;
+  renderEditorImage();
+});
+
+// Drag crop corners
+let draggedCorner = null;
+
+document.querySelectorAll('.crop-corner').forEach(corner => {
+  corner.addEventListener('touchstart', (e) => {
+    e.preventDefault();
+    draggedCorner = corner;
+  });
+});
+
+document.addEventListener('touchmove', (e) => {
+  if (!draggedCorner || !isCropMode) return;
+  e.preventDefault();
+  
+  const touch = e.touches[0];
+  const container = document.querySelector('.editor-image-container');
+  const containerRect = container.getBoundingClientRect();
+  const canvasRect = editorCanvas.getBoundingClientRect();
+  
+  // Calculate position relative to container
+  let x = touch.clientX - containerRect.left;
+  let y = touch.clientY - containerRect.top;
+  
+  // Get canvas boundaries relative to container
+  const canvasLeft = canvasRect.left - containerRect.left;
+  const canvasTop = canvasRect.top - containerRect.top;
+  const canvasRight = canvasRect.right - containerRect.left;
+  const canvasBottom = canvasRect.bottom - containerRect.top;
+  
+  // Get corner size
+  const cornerSize = draggedCorner.offsetWidth;
+  
+  if (draggedCorner.classList.contains('crop-top-left')) {
+    // Clamp to canvas boundaries
+    x = Math.max(canvasLeft, Math.min(x, canvasRight - cornerSize));
+    y = Math.max(canvasTop, Math.min(y, canvasBottom - cornerSize));
+    
+    // Also ensure it doesn't go past bottom-right corner
+    const bottomRight = document.querySelector('.crop-bottom-right');
+    const bottomRightRect = bottomRight.getBoundingClientRect();
+    const maxX = bottomRightRect.right - containerRect.left - cornerSize * 2;
+    const maxY = bottomRightRect.bottom - containerRect.top - cornerSize * 2;
+    
+    x = Math.min(x, maxX);
+    y = Math.min(y, maxY);
+    
+    draggedCorner.style.left = x + 'px';
+    draggedCorner.style.top = y + 'px';
+    
+  } else if (draggedCorner.classList.contains('crop-bottom-right')) {
+    // Clamp to canvas boundaries
+    x = Math.max(canvasLeft + cornerSize, Math.min(x, canvasRight));
+    y = Math.max(canvasTop + cornerSize, Math.min(y, canvasBottom));
+    
+    // Also ensure it doesn't go past top-left corner
+    const topLeft = document.querySelector('.crop-top-left');
+    const topLeftRect = topLeft.getBoundingClientRect();
+    const minX = topLeftRect.right - containerRect.left + cornerSize;
+    const minY = topLeftRect.bottom - containerRect.top + cornerSize;
+    
+    x = Math.max(x, minX);
+    y = Math.max(y, minY);
+    
+    draggedCorner.style.right = (containerRect.width - x) + 'px';
+    draggedCorner.style.bottom = (containerRect.height - y) + 'px';
+  }
+});
+
+document.addEventListener('touchend', () => {
+  draggedCorner = null;
+});
+
+// ========== END IMAGE EDITOR ==========
 
   // White Balance Settings - COMMENTED OUT
   // const whiteBalanceSettingsBtn = document.getElementById('white-balance-settings-button');

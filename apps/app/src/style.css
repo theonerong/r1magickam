@@ -1938,6 +1938,33 @@ button:disabled {
     color: #000;
 }
 
+/* Edit Button */
+.viewer-edit-button {
+    position: absolute;
+    top: 25vh;
+    left: 1vw;
+    width: 12vw;
+    height: 12vw;
+    min-width: 44px;
+    min-height: 44px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #4CAF50;
+    border: 2px solid #4CAF50;
+    border-radius: 2vw;
+    font-size: 6vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 2001;
+    padding: 0;
+}
+
+.viewer-edit-button:active {
+    background-color: #4CAF50;
+    color: #000;
+}
+
 .image-viewer-container {
     flex: 1;
     min-height: 50vh;
@@ -3176,4 +3203,263 @@ button:disabled {
 .gallery-status-message.success {
   background: rgba(34, 197, 94, 0.95);
   border-color: #4ade80;
+}
+
+/* ========== IMAGE EDITOR MODAL ========== */
+.image-editor-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3000;
+}
+
+.image-editor-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #000;
+}
+
+.image-editor-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2vw;
+    background-color: #1a1a1a;
+    border-bottom: 2px solid #FE5F00;
+    min-height: 44px;
+    flex-shrink: 0;
+}
+
+.editor-header-buttons {
+    display: flex;
+    gap: 2vw;
+    align-items: center;
+}
+
+.image-editor-header h3 {
+    font-size: 5vw;
+    color: #FE5F00;
+    margin: 0;
+}
+
+/* Top Controls (Sliders on top of image) */
+.editor-top-controls {
+    display: flex;
+    gap: 2vw;
+    padding: 1.5vw;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-bottom: 1px solid #333;
+    flex-shrink: 0;
+}
+
+.editor-slider-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5vw;
+}
+
+.editor-slider-group label {
+    font-size: 2.5vw;
+    color: #FE5F00;
+    font-weight: bold;
+}
+
+.editor-slider-group input[type="range"] {
+    width: 100%;
+    height: 5vw;
+    background: #333;
+    border-radius: 1vw;
+    outline: none;
+}
+
+.editor-slider-group input[type="range"]::-webkit-slider-thumb {
+    width: 4vw;
+    height: 4vw;
+    background: #FE5F00;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.editor-slider-group span {
+    font-size: 2.5vw;
+    color: #fff;
+    text-align: center;
+}
+
+/* Main Editor Area - Image Left, Buttons Right */
+.editor-main-area {
+    flex: 1;
+    display: flex;
+    gap: 1vw;
+    padding: 1vw;
+    background-color: #000;
+    overflow: hidden;
+    min-height: 0;
+}
+
+/* Image Container - Takes up left side */
+.editor-image-container {
+    flex: 1;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000;
+    overflow: hidden;
+    min-height: 0;
+    min-width: 0;
+}
+
+.editor-canvas {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+/* Crop Overlay */
+.crop-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.crop-corner {
+    position: absolute;
+    width: 12vw;
+    height: 12vw;
+    border: 4px solid #FE5F00;
+    background-color: rgba(254, 95, 0, 0.5);
+    pointer-events: auto;
+    cursor: pointer;
+    touch-action: none;
+    z-index: 100;
+    box-shadow: 0 0 10px rgba(254, 95, 0, 0.8);
+}
+
+.crop-top-left {
+    top: 10%;
+    left: 10%;
+    border-right: none;
+    border-bottom: none;
+}
+
+.crop-bottom-right {
+    bottom: 10%;
+    right: 10%;
+    border-left: none;
+    border-top: none;
+}
+
+.crop-hint {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #FE5F00;
+    padding: 2vw 4vw;
+    border-radius: 2vw;
+    font-size: 3vw;
+    pointer-events: none;
+}
+
+/* Right Side Button Column */
+.editor-button-column {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5vw;
+    width: 18vw;
+    flex-shrink: 0;
+}
+
+.editor-action-button {
+    width: 100%;
+    padding: 2vw 1vw;
+    background-color: #222;
+    color: #FE5F00;
+    border: 2px solid #FE5F00;
+    border-radius: 2vw;
+    font-size: 3vw;
+    font-weight: bold;
+    cursor: pointer;
+    min-height: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5vw;
+}
+
+.editor-action-button:active {
+    background-color: #FE5F00;
+    color: #000;
+}
+
+.editor-action-button.active {
+    background-color: #FE5F00;
+    color: #000;
+}
+
+/* Bottom Controls removed since buttons are on the right */
+.editor-bottom-controls {
+    display: none;
+}
+
+/* Save/Undo in header */
+.editor-save-controls {
+    display: none;
+}
+
+.editor-header-undo-button {
+    width: 18vw;
+    padding: 2vw 1vw;
+    background-color: #222;
+    color: #ff9800;
+    border: 2px solid #ff9800;
+    border-radius: 2vw;
+    font-size: 3vw;
+    font-weight: bold;
+    cursor: pointer;
+    min-height: 44px;
+}
+
+.editor-header-undo-button:active {
+    background-color: #ff9800;
+    color: #000;
+}
+
+.editor-header-undo-button:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.editor-header-save-button {
+    width: 18vw;
+    padding: 2vw 1vw;
+    background-color: #4CAF50;
+    color: #fff;
+    border: 2px solid #4CAF50;
+    border-radius: 2vw;
+    font-size: 3vw;
+    font-weight: bold;
+    cursor: pointer;
+    min-height: 44px;
+}
+
+.editor-header-save-button:active {
+    background-color: #45a049;
+    transform: scale(0.98);
 }
