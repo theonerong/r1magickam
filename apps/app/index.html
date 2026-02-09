@@ -718,6 +718,7 @@
                         <button class="glossary-item" data-section="special-modes">🎯 Special Modes</button>
                         <button class="glossary-item" data-section="gallery-features">🖼️ Gallery Features</button>
                         <button class="glossary-item" data-section="uploading-images">📥 Uploading Images</button>
+                        <button class="glossary-item" data-section="edit-image">✏️ Edit Image Features</button>
                         <button class="glossary-item" data-section="settings">⚙️ Settings</button>
                         <button class="glossary-item" data-section="tips-tricks">💡 Tips & Tricks</button>
                         <button class="glossary-item" data-section="advanced-features">🔧 Advanced Features</button>
@@ -781,7 +782,8 @@
                             <strong>Batch Operations:</strong> Select multiple images to apply one preset or single/batch delete. Click on select button to do this. And make sure to click DONE button, when done (if not, the program returns to select screen and not to prior screen). When applying presets, click twice on preset to apply.<br>
                             <strong>Sort & Filter:</strong> Organize by newest/oldest, filter by date range (if selecting a date, make sure to select the next day as well. Example: If you want all images from December 25, then choose From December 25 to December 26.)<br>
                             <strong>Upload to gofile.io</strong> Upload saved gallery images to gofile.io and get the qr code to access your uploaded photo - link/image expires after 24 hours. Please note that this function is mainly for No Magic Mode because your captured photos are already uploaded to the rabbit hole.<br>
-                            <strong>Magic Transform:</strong> Type custom prompts or use presets on gallery images. If none used, click Magic button to randomize.
+                            <strong>Magic Transform:</strong> Type custom prompts or use presets on gallery images. If none used, click Magic button to randomize.<br>
+                            <strong>Edit Images:</strong> Tap the Edit button (✏️) when viewing a photo to access professional editing tools (see Edit Image Features section below for full details).
                         </p>
                     </div>
 
@@ -812,6 +814,43 @@
                             • Imported images are automatically default resized to 640x480 for optimal storage (changed in the settings/Import Settings)<br>
                             • Images are saved to your gallery just like captured photos<br>
                             • You can apply AI presets to imported images just like captured photos
+                        </p>
+                    </div>
+             
+                    <!-- Edit Image Features -->
+                    <div id="section-edit-image" class="tutorial-section">
+                        <h4 class="tutorial-heading">✏️ Edit Image Features</h4>
+                        <p class="tutorial-text">
+                            <strong>How to Access:</strong> While viewing any photo in full-screen, tap the Edit button (✏️) located in the top-right corner of the screen.<br><br>
+                            
+                            <strong>Available Tools:</strong><br>
+                            The image editor provides several professional editing tools located on the right side of the screen:<br><br>
+                            
+                            <span style="display: inline-block; background: #222; color: #FE5F00; border: 2px solid #FE5F00; border-radius: 8px; padding: 8px 12px; margin: 4px; font-weight: bold;">✂️<br>Crop</span> <strong>Crop:</strong> Tap to activate crop mode. Two orange corner markers appear on your image. Tap and drag the top-left and bottom-right corners to select your desired crop area. Tap Crop again to apply the crop.<br><br>
+                            
+                            <span style="display: inline-block; background: #222; color: #FE5F00; border: 2px solid #FE5F00; border-radius: 8px; padding: 8px 12px; margin: 4px; font-weight: bold;">🔄<br>Rotate</span> <strong>Rotate:</strong> Rotates your image 90 degrees clockwise. Tap multiple times to rotate to your desired orientation (90°, 180°, 270°, or back to 0°).<br><br>
+                            
+                            <span style="display: inline-block; background: #222; color: #FE5F00; border: 2px solid #FE5F00; border-radius: 8px; padding: 8px 12px; margin: 4px; font-weight: bold;">🔍<br>Sharp</span> <strong>Sharpen:</strong> Enhances image sharpness and detail. Tap to apply sharpening effect to make edges and details more crisp and defined.<br><br>
+                            
+                            <span style="display: inline-block; background: #222; color: #FE5F00; border: 2px solid #FE5F00; border-radius: 8px; padding: 8px 12px; margin: 4px; font-weight: bold;">✨<br>Auto</span> <strong>Auto Correct:</strong> Automatically adjusts brightness, contrast, and color balance for optimal image quality. Great for quickly improving photos.<br><br>
+                            
+                            <strong>Brightness & Contrast Sliders:</strong> Located at the top of the editor, these sliders allow you to manually adjust:<br>
+                            • <strong>Brightness:</strong> Range from -100 (darker) to +100 (brighter)<br>
+                            • <strong>Contrast:</strong> Range from -100 (less contrast) to +100 (more contrast)<br>
+                            Drag the sliders left or right to adjust values in real-time.<br><br>
+                            
+                            <strong>Saving & Undoing:</strong><br>
+                            Located in the top-right corner next to the Edit Image title:<br>
+                            <span style="display: inline-block; background: #222; color: #ff9800; border: 2px solid #ff9800; border-radius: 8px; padding: 8px 12px; margin: 4px; font-weight: bold;">↶ Undo</span> <strong>Undo:</strong> Reverts your last edit. You can undo multiple times to step back through your editing history.<br>
+                            <span style="display: inline-block; background: #4CAF50; color: #fff; border: 2px solid #4CAF50; border-radius: 8px; padding: 8px 12px; margin: 4px; font-weight: bold;">💾 Save</span> <strong>Save:</strong> Saves all changes to your image. The edited image replaces the original in your gallery.<br>
+                            <strong>×</strong> <strong>Close:</strong> Exits the editor without saving changes (unless you've already tapped Save).<br><br>
+                            
+                            <strong>Editing Tips:</strong><br>
+                            • All edits are applied in the order you make them<br>
+                            • Use Undo if you make a mistake or want to try a different adjustment<br>
+                            • The Auto Correct feature works great as a starting point before manual adjustments<br>
+                            • You can combine multiple edits (crop, rotate, sharpen, and adjust brightness/contrast) on the same image<br>
+                            • Remember to tap Save when you're happy with your edits!
                         </p>
                     </div>
 
@@ -952,6 +991,7 @@ All of the presets are optimized to avoid "camera ran dry" or "content filter" i
     <div class="image-viewer-content">
         <button id="upload-viewer-image" class="viewer-upload-button">📤</button>
         <button id="delete-viewer-image" class="viewer-delete-button">🗑️</button>
+        <button id="edit-viewer-image" class="viewer-edit-button">✏️</button>
         <button id="close-viewer" class="viewer-close-button">×</button>
                 <div class="image-viewer-container">
                     <img id="viewer-image" class="viewer-image" alt="Viewing image">
@@ -966,6 +1006,55 @@ All of the presets are optimized to avoid "camera ran dry" or "content filter" i
                 </div>
             </div>
         </div>
+            </div>
+        </div>
+        
+        <!-- Image Editor Modal -->
+        <div id="image-editor-modal" class="image-editor-modal" style="display: none;">
+            <div class="image-editor-content">
+                <div class="image-editor-header">
+                    <h3>Edit Image</h3>
+                    <div class="editor-header-buttons">
+                        <button id="undo-edit-button" class="editor-header-undo-button">↶ Undo</button>
+                        <button id="save-edit-button" class="editor-header-save-button">💾 Save</button>
+                        <button id="close-image-editor" class="close-button">×</button>
+                    </div>
+                </div>
+                
+                <!-- Brightness and Contrast Sliders (on top of image) -->
+                <div class="editor-top-controls">
+                    <div class="editor-slider-group">
+                        <label>Brightness</label>
+                        <input type="range" id="brightness-slider" min="-100" max="100" value="0" step="1">
+                        <span id="brightness-value">0</span>
+                    </div>
+                    <div class="editor-slider-group">
+                        <label>Contrast</label>
+                        <input type="range" id="contrast-slider" min="-100" max="100" value="0" step="1">
+                        <span id="contrast-value">0</span>
+                    </div>
+                </div>
+                
+                <!-- Main Editor Area: Image Left, Buttons Right -->
+                <div class="editor-main-area">
+                    <!-- Image Canvas Area -->
+                    <div class="editor-image-container">
+                        <canvas id="editor-canvas" class="editor-canvas"></canvas>
+                        <div id="crop-overlay" class="crop-overlay" style="display: none;">
+                            <div class="crop-corner crop-top-left"></div>
+                            <div class="crop-corner crop-bottom-right"></div>
+                            <div class="crop-hint">Tap corners</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Edit Buttons Column (right side) -->
+                    <div class="editor-button-column">
+                        <button id="crop-button" class="editor-action-button">✂️<br>Crop</button>
+                        <button id="rotate-button" class="editor-action-button">🔄<br>Rotate</button>
+                        <button id="sharpen-button" class="editor-action-button">🔍<br>Sharpen</button>
+                        <button id="autocorrect-button" class="editor-action-button">✨<br>Auto</button>
+                    </div>
+                </div>
             </div>
         </div>
         
