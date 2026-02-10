@@ -858,7 +858,7 @@
                     <div id="section-settings" class="tutorial-section">
                         <h4 class="tutorial-heading">⚙️ Settings</h4>
                         <p class="tutorial-text">
-                            <strong>Resolution:</strong> VGA (640x480) to 4K (3840x2160). If you want images to appear in magic gallery, choose lower settings.<br>
+                            <strong>Resolution:</strong> VGA (640x480) to HD (3264x2448). If you want images to appear in magic gallery, choose lower settings.<br>
                             <strong>Aspect Ratio:</strong> Choose 1:1 square or 16:9 letterbox, or if unchecked neither. Default is neither.<br>
                             <strong>Burst Settings:</strong> Number of photos and capture speed<br>
                             <!-- <strong>White Balance:</strong> Adjust color temperature of image so white objects appear white and colors realistic<br> -->
@@ -918,16 +918,16 @@ All of the presets are optimized to avoid "camera ran dry" or "content filter" i
             <div class="style-editor-content">
                 <div class="style-editor-header">
                     <h3 id="editor-title">Edit Style</h3>
-                    <button id="close-editor" class="close-button">×</button>
-                </div>
-                <div class="style-editor-body">
-                    <input type="text" id="style-name" class="style-input" placeholder="Style name">
-                    <input type="text" id="style-category" class="style-input" placeholder="Categories (comma-separated, e.g. ART, HUMOR)">
-                    <textarea id="style-message" class="style-textarea" placeholder="AI prompt for this style"></textarea>
-                    <div class="editor-buttons">
-                        <button id="save-style" class="save-button">Save</button>
-                        <button id="delete-style" class="delete-button" style="display: none;">Delete</button>
+                    <div class="style-editor-header-buttons">
+                        <button id="save-style" class="save-button-header">Save</button>
+                        <button id="delete-style" class="delete-button-header" style="display: none;">Delete</button>
+                        <button id="close-editor" class="close-button">×</button>
                     </div>
+                </div>
+                <div class="style-editor-body" tabindex="0">
+                    <input type="text" id="style-name" class="style-input" placeholder="Style name">
+                    <input type="text" id="style-category" class="style-input" placeholder="Categories (comma-separated)">
+                    <textarea id="style-message" class="style-textarea" placeholder="AI prompt for this style"></textarea>
                 </div>
             </div>
         </div>
