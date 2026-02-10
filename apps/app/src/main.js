@@ -15,7 +15,7 @@ const RESOLUTION_PRESETS = [
   { name: 'SXGA+ (1400x1050)', width: 1400, height: 1050 },
   { name: 'UXGA (1600x1200)', width: 1600, height: 1200 },
   { name: '2K (2048x1080)', width: 2048, height: 1080 },
-  { name: '4K (3840x2160)', width: 3840, height: 2160 }
+  { name: 'HD (3264x2448)', width: 3264, height: 2448 }
 ];
 let currentResolutionIndex = 0; // Default to Low (640x480)
 const RESOLUTION_STORAGE_KEY = 'r1_camera_resolution';
@@ -765,6 +765,24 @@ async function deleteViewerImage() {
 
 function showPresetSelector() {
   const modal = document.getElementById('preset-selector');
+  
+  // CRITICAL FIX: Reset multi-preset mode when entering single-select mode
+  isMultiPresetMode = false;
+  isBatchPresetSelectionActive = false;
+  selectedPresets = [];
+  
+  // Hide multi-preset controls if they exist
+  const multiControls = document.getElementById('multi-preset-controls');
+  if (multiControls) {
+    multiControls.style.display = 'none';
+  }
+  
+  // Reset header to single-select mode
+  const header = modal.querySelector('.preset-selector-header h3');
+  if (header) {
+    header.innerHTML = 'Select Preset (<span id="preset-count">0</span>)';
+  }
+  
   populatePresetList();
 
   // Initialize preset count display
@@ -1523,21 +1541,23 @@ function openMultiPresetSelector(imageId) {
   
   const modal = document.getElementById('preset-selector');
   const header = modal.querySelector('.preset-selector-header h3');
-  header.innerHTML = 'Select Presets (Multi-Select) <span id="multi-preset-count" style="font-size: 12px; color: #666;">(0 selected)</span>';
+  header.innerHTML = 'Select Presets <span id="multi-preset-count" style="font-size: 12px; color: #666;">(0 selected)</span>';
   
   // Add multi-select controls if not already there
   let multiControls = document.getElementById('multi-preset-controls');
   if (!multiControls) {
     multiControls = document.createElement('div');
     multiControls.id = 'multi-preset-controls';
-    multiControls.style.cssText = 'padding: 8px; background: #f5f5f5; border-bottom: 1px solid #ddd; display: flex; gap: 8px; justify-content: space-between;';
+    multiControls.style.cssText = 'padding: 0 8px; background: #f5f5f5; border-bottom: 1px solid #ddd; display: flex; gap: 8px; justify-content: space-between; align-items: stretch;';
     multiControls.innerHTML = `
       <button id="multi-preset-apply" class="batch-control-button" style="background: #4CAF50; color: white;">Apply Selected</button>
       <button id="multi-preset-cancel" class="batch-control-button">Cancel</button>
     `;
     
     const presetFilter = document.getElementById('preset-filter');
-    presetFilter.parentNode.insertBefore(multiControls, presetFilter.nextSibling);
+    const presetList = document.getElementById('preset-list');
+    presetFilter.parentNode.insertBefore(multiControls, presetFilter);
+    presetFilter.parentNode.insertBefore(presetFilter, presetList);
   }
   multiControls.style.display = 'flex';
   
@@ -6007,6 +6027,67 @@ function showStyleEditor(title = 'Add New Style') {
   const editor = document.getElementById('style-editor');
   document.getElementById('editor-title').textContent = title;
   editor.style.display = 'flex';
+  
+  // Focus the scrollable body to enable R1 scroll wheel
+  setTimeout(() => {
+    const editorBody = document.querySelector('.style-editor-body');
+    if (editorBody) {
+      editorBody.focus();
+    }
+  }, 100);
+}
+
+// Detect keyboard visibility and adjust style editor layout
+let styleEditorKeyboardVisible = false;
+
+// Detect when inputs receive focus (keyboard likely opening)
+function handleStyleEditorInputFocus() {
+  if (!styleEditorKeyboardVisible) {
+    styleEditorKeyboardVisible = true;
+    const editorBody = document.querySelector('.style-editor-body');
+    if (editorBody) {
+      editorBody.style.gap = '0.5vh';
+      editorBody.style.paddingBottom = '0.5vw';
+    }
+  }
+}
+
+// Detect when inputs lose focus (keyboard likely closing)
+function handleStyleEditorInputBlur() {
+  // Only reset if no other input in the editor has focus
+  setTimeout(() => {
+    const editorInputs = document.querySelectorAll('.style-input, .style-textarea');
+    const anyFocused = Array.from(editorInputs).some(input => input === document.activeElement);
+    
+    if (!anyFocused && styleEditorKeyboardVisible) {
+      styleEditorKeyboardVisible = false;
+      const editorBody = document.querySelector('.style-editor-body');
+      if (editorBody) {
+        editorBody.style.gap = '1vh';
+        editorBody.style.paddingBottom = '1vw';
+      }
+    }
+  }, 100);
+}
+
+// Add event listeners to style editor inputs
+const styleNameInput = document.getElementById('style-name');
+const styleCategoryInput = document.getElementById('style-category');
+const styleMessageTextarea = document.getElementById('style-message');
+
+if (styleNameInput) {
+  styleNameInput.addEventListener('focus', handleStyleEditorInputFocus);
+  styleNameInput.addEventListener('blur', handleStyleEditorInputBlur);
+}
+
+if (styleCategoryInput) {
+  styleCategoryInput.addEventListener('focus', handleStyleEditorInputFocus);
+  styleCategoryInput.addEventListener('blur', handleStyleEditorInputBlur);
+}
+
+if (styleMessageTextarea) {
+  styleMessageTextarea.addEventListener('focus', handleStyleEditorInputFocus);
+  styleMessageTextarea.addEventListener('blur', handleStyleEditorInputBlur);
 }
 
 function hideStyleEditor() {
@@ -7468,6 +7549,30 @@ document.addEventListener('touchend', () => {
     closeEditorBtn.addEventListener('click', hideStyleEditor);
   }
   
+  // Add scroll wheel support for style editor
+//  const styleEditorBody = document.querySelector('.style-editor-body');
+//  if (styleEditorBody) {
+//    styleEditorBody.addEventListener('wheel', (e) => {
+//      e.stopPropagation();
+//      const delta = e.deltaY;
+//      styleEditorBody.scrollTop += delta;
+//    }, { passive: true });
+//  }
+
+  // Add scroll wheel support for style message textarea
+//  const styleMessageTextarea = document.getElementById('style-message');
+//  if (styleMessageTextarea) {
+//    styleMessageTextarea.addEventListener('wheel', (e) => {
+//      const atTop = styleMessageTextarea.scrollTop === 0;
+//      const atBottom = styleMessageTextarea.scrollTop + styleMessageTextarea.clientHeight >= styleMessageTextarea.scrollHeight;
+//    
+    // Only allow scrolling within textarea if not at boundaries
+//      if ((e.deltaY < 0 && !atTop) || (e.deltaY > 0 && !atBottom)) {
+//        e.stopPropagation();
+//      }
+//    }, { passive: true });
+//  }
+
   const importResolutionBtn = document.getElementById('import-resolution-settings-button');
   if (importResolutionBtn) {
     importResolutionBtn.addEventListener('click', showImportResolutionSubmenu);
@@ -7657,6 +7762,34 @@ document.addEventListener('touchend', () => {
     presetFilter.addEventListener('input', (e) => {
       presetFilterText = e.target.value;
       populatePresetList();
+    });
+    
+    // Hide footer and controls when user starts typing (keyboard appears)
+    presetFilter.addEventListener('focus', () => {
+      // Hide category footer
+      const categoryHint = document.getElementById('preset-selector-category-hint');
+      if (categoryHint) {
+        categoryHint.style.display = 'none';
+      }
+      
+      // Hide multi-preset controls if they exist
+      const multiControls = document.getElementById('multi-preset-controls');
+      if (multiControls) {
+        multiControls.style.display = 'none';
+      }
+    });
+    
+    // Show them back when user is done typing (keyboard dismissed)
+    presetFilter.addEventListener('blur', () => {
+      // Only restore multi-preset controls if we're in multi-preset mode
+      if (isMultiPresetMode) {
+        const multiControls = document.getElementById('multi-preset-controls');
+        if (multiControls) {
+          multiControls.style.display = 'flex';
+        }
+      }
+      
+      // Category footer will be restored by updatePresetSelection when needed
     });
   }
   
