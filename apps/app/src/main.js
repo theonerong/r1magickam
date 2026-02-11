@@ -1152,23 +1152,35 @@ function scrollViewerDown() {
 }
 
 function scrollEditorUp() {
-  const editor = document.getElementById('style-editor');
-  if (!editor || editor.style.display !== 'flex') return;
-  
-  const container = editor.querySelector('.style-editor-body');
-  if (container) {
-    container.scrollTop = Math.max(0, container.scrollTop - 80);
-  }
+    const editor = document.getElementById('style-editor');
+    if (!editor || editor.style.display !== 'flex') return;
+    
+    const messageField = document.getElementById('style-message');
+    const container = editor.querySelector('.style-editor-body');
+
+    // If you are typing in the message field, scroll the field itself
+    if (document.activeElement === messageField) {
+        messageField.scrollTop = Math.max(0, messageField.scrollTop - 100);
+    } else if (container) {
+        // Otherwise scroll the whole modal
+        container.scrollTop = Math.max(0, container.scrollTop - 200);
+    }
 }
 
 function scrollEditorDown() {
-  const editor = document.getElementById('style-editor');
-  if (!editor || editor.style.display !== 'flex') return;
-  
-  const container = editor.querySelector('.style-editor-body');
-  if (container) {
-    container.scrollTop = Math.min(container.scrollHeight - container.clientHeight, container.scrollTop + 80);
-  }
+    const editor = document.getElementById('style-editor');
+    if (!editor || editor.style.display !== 'flex') return;
+    
+    const messageField = document.getElementById('style-message');
+    const container = editor.querySelector('.style-editor-body');
+
+    // If you are typing in the message field, scroll the field itself
+    if (document.activeElement === messageField) {
+        messageField.scrollTop = Math.min(messageField.scrollHeight - messageField.clientHeight, messageField.scrollTop + 100);
+    } else if (container) {
+        // Otherwise scroll the whole modal
+        container.scrollTop = Math.min(container.scrollHeight - container.clientHeight, container.scrollTop + 200);
+    }
 }
 
 function scrollQueueUp() {
@@ -4785,6 +4797,12 @@ window.addEventListener('sideClick', () => {
 window.addEventListener('scrollUp', () => {
   console.log('Scroll wheel: up');
   
+  // Style Editor
+  if (document.getElementById('style-editor').style.display === 'flex') {
+      scrollEditorUp();
+      return;
+  }
+
   // Preset selector (gallery)
   if (isPresetSelectorOpen) {
     scrollPresetListUp(); // or Down
@@ -4917,6 +4935,12 @@ window.addEventListener('scrollUp', () => {
 
 window.addEventListener('scrollDown', () => {
   console.log('Scroll wheel: down');
+
+  // Style Editor
+  if (document.getElementById('style-editor').style.display === 'flex') {
+      scrollEditorDown();
+      return;
+  }
   
   // Preset selector (gallery)
   if (isPresetSelectorOpen) {
