@@ -990,6 +990,16 @@
     "message": "Take a picture and completely REBUILD the entire image so that EVERYTHING is made entirely out of candy.\n\nABSOLUTE REQUIREMENT: No photographic pixels, skin, fabric, metal, plastic, paper, or real-world materials may remain.\n\nThe subject, clothing, facial features, hair, background, environment, objects, shadows, and depth must ALL be constructed entirely from candy materials.\n\nDO NOT apply candy textures to a photo.\nDO NOT overlay candy on top of existing objects.\nDO NOT trace, mask, silhouette, or reuse the original photograph’s structure.\n\nThe image must look as if the original photograph never existed and was replaced by a fully constructed candy sculpture world.\n\nCandy materials may include (used structurally, not decoratively):\n• Gummies (gummy worms, gummy bears)\n• Gumballs\n• Hard candy (Werther’s Originals, Nerds, Jolly Ranchers)\n• Chocolate (Tootsie Rolls, Hershey’s Kisses)\n• Licorice (Twizzlers, Red Vines)\n• Lollipops\n• Chewy candy (Jelly Belly jelly beans, Bayside Candy fruit slices, candy corn, gumdrops)\n• Sugar crystals and popping candy (Pop Rocks)\n• Marshmallows, caramel, sprinkles, candy canes\n• Candy wrappers ONLY if physically folded, crinkled, and used structurally\n\nCandy construction rules:\n• Hard candy for rigid forms (bones, structure, buildings)\n• Gummies for flexible areas (skin, muscles, cheeks, folds)\n• Chocolate for smooth surfaces and large masses\n• Licorice and candy ropes for joints, outlines, and connections\n\nShading and depth MUST be created ONLY by:\n• Candy translucency\n• Color variation\n• Gloss and reflection\n• Candy density, layering, and stacking\n\nLighting must behave like real candy:\n• Glossy highlights\n• Sticky reflections\n• Subsurface glow in translucent candies\n• Slight melting, sagging, or stretching where appropriate\n\nFINAL VALIDATION RULE:\nIf the image looks like a normal photograph with candy placed on top, IT IS WRONG.\n\nThe final image must look like a real, physical candy sculpture or candy-built environment photographed in real lighting."
   },
   {
+    "name": "CAPTCHA VERIFICATION",
+    "category": [
+      "HUMOR",
+      "TECH",
+      "PARODY",
+      "UI"
+    ],
+    "message": "Take a picture and transform the subject into a realistic CAPTCHA verification screen where the subject appears inside a 3x3 or 4x4 image grid.\n\nFORMAT (CRITICAL):\n• The image must look exactly like a legitimate CAPTCHA challenge\n• Clean web interface layout\n• Subtle browser window framing\n• Realistic UI typography\n• Checkbox labeled: \"I am not a robot\"\n\nCAPTCHA INSTRUCTION (CRITICAL):\n• The instruction must begin with: \"Select all squares with…\"\n• Use observational flavor text about the subject's visible traits\n• The text must describe real, observable details (clothing, posture, expression, accessories, context)\n• No abstract concepts (no happiness, no intelligence, no emotions)\n\nEXAMPLES OF VALID INSTRUCTION STYLE:\n• Select all squares with visible forehead shine\n• Select all squares with uneven button alignment\n• Select all squares containing suspicious side-eye\n• Select all squares with visible collar fold\n• Select all squares with mid-blink timing\n• Select all squares with untucked fabric\n• Select all squares containing mild confusion\n\nGRID RULES:\n• The subject must be divided naturally into squares\n• Some squares clearly match the instruction\n• Some squares clearly do not\n• Subtle checkmarks may appear in selected boxes\n\nSTYLE:\n• Clean white UI background\n• Light gray borders\n• Modern sans-serif font\n• Slight drop shadow around grid\n• High realism — must look like a real verification test\n\nIMPORTANT:\n• Humor comes from specificity\n• Do not distort the subject unnaturally\n• Keep identity recognizable\n• Avoid meme-style graphics\n\nFINAL RESULT:\nThe image should convincingly look like an authentic CAPTCHA verification challenge featuring the subject divided into clickable squares with a hyper-specific observational instruction."
+  },
+  {
     "name": "CARDBOARDALITY",
     "category": [
       "SURREAL",
@@ -5265,6 +5275,16 @@
       "3D"
     ],
     "message": "Take a picture and transform it into a PlayStation 1–era 3D render. Use low-polygon geometry, warped textures, visible seams, and jittery perspective. Lighting should be flat or uneven. The subject should appear slightly uncanny, as if rendered by early 3D hardware."
+  },
+  {
+    "name": "PSA WARNING POSTER",
+    "category": [
+      "HUMOR",
+      "RETRO",
+      "POSTER",
+      "PARODY"
+    ],
+    "message": "Take a picture and transform the subject into a realistic public safety warning poster or official PSA announcement featuring the subject as the cautionary example.\n\nFORMAT (CRITICAL):\n• The headline must begin with either \"WARNING!\" or \"BEWARE!\"\n• Large bold block lettering at the top\n• Serious official tone\n• The poster must look authentic — as if printed by a government agency, school district, or public health office\n• No meme formatting\n\nHEADLINE STYLE EXAMPLES:\n• WARNING! DRUGS ARE BAD\n• BEWARE! LOOKS SMARTER IN PICTURES\n• WARNING! STOP WHEN YOU FEEL RESISTANCE\n• WARNING! STAY IN SCHOOL\n• BEWARE! USE BIRTH CONTROL\n• WARNING! MAY CAUSE DROWSINESS\n• BEWARE! WORLD NEEDS AN UNDO BUTTON\n• WARNING! DON'T SNIFF GLUE\n• BEWARE! ACCIDENTS CAN HAPPEN\n• WARNING! THERE REALLY IS ONE BORN EVERY MINUTE\n• BEWARE! WHAT HAPPENS WHEN YOU FORGET TO BREATHE\n• WARNING! DO NOT FEED AFTER MIDNIGHT\n\nPOSTER DESIGN:\n• Bold red, yellow, or black color scheme\n• Vintage halftone or light print grain optional\n• Official-looking seal or department name (fictional but realistic)\n• Smaller explanatory paragraph beneath headline\n• Subject shown actively demonstrating the behavior being warned against\n\nCRITICAL:\n• The subject must appear to be doing the warned behavior\n• It must look like a legitimate instructional poster\n• Serious layout, not cartoonish\n• Clean typography hierarchy\n\nSTYLE OPTIONS:\n• 1970s government PSA\n• 1980s school safety poster\n• 1990s public health campaign\n\nIMPORTANT:\n• Humor must feel dry and official\n• No exaggerated cartoon effects\n• Keep the tone straight-faced and formal\n\nFINAL RESULT:\nThe final image should look like a professionally printed public safety warning poster featuring the subject as the real-world example of the cautionary message."
   },
   {
     "name": "PSYCH",
