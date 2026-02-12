@@ -1,5 +1,8 @@
-import { DEFAULT_PRESETS } from './presets.js';
 import { presetStorage } from './storage.js';
+import { presetImporter } from './preset-import.js';
+
+// No need for DEFAULT_PRESETS - will load from JSON when needed
+let DEFAULT_PRESETS = [];
 
 // Camera elements
 let video, canvas, capturedImage, statusElement, resetButton;
@@ -31,8 +34,6 @@ const IMPORT_RESOLUTION_OPTIONS = [
 ];
 let currentImportResolutionIndex = 0; // Default to VGA (640x480)
 const IMPORT_RESOLUTION_STORAGE_KEY = 'r1_import_resolution';
-
-
 
 // White balance settings - COMMENTED OUT
 // const WHITE_BALANCE_MODES = [
@@ -237,7 +238,8 @@ const PRESET_TEMPLATES = {
 
 // Load styles from localStorage or use defaults
 let CAMERA_PRESETS = [];
-const factoryPresets = [...DEFAULT_PRESETS];
+let factoryPresets = [];
+let hasImportedPresets = false; // Track if we're using imported presets
 let currentPresetIndex = 0;
 let editingStyleIndex = -1;
 let isOnline = navigator.onLine;
@@ -1921,9 +1923,38 @@ function selectCurrentMenuItem() {
 async function loadStyles() {
     // Initialize IndexedDB storage
     await presetStorage.init();
+    await presetImporter.init();
     
-    // Merge factory presets with user modifications
-    CAMERA_PRESETS = await mergePresetsWithStorage();
+    // Check if this is truly a first-time user
+    const importedPresets = await presetImporter.loadImportedPresets();
+    const hasImports = importedPresets.length > 0;
+    
+    // Check if there are any user modifications
+    const modifications = await presetStorage.getAllModifications();
+    const hasModifications = modifications.length > 0;
+    
+    // Only load presets if user has imports or modifications
+    if (hasImports || hasModifications) {
+        // Merge factory presets with user modifications
+        CAMERA_PRESETS = await mergePresetsWithStorage();
+    } else {
+        // First time user - don't load anything yet
+        CAMERA_PRESETS = [];
+        
+        // Show a message that they need to import presets
+        setTimeout(() => {
+            const shouldImport = confirm('Welcome! You should import presets to get started. Would you like to import now?');
+            if (shouldImport) {
+                document.getElementById('menu-button').click();
+                setTimeout(() => {
+                    document.getElementById('settings-menu-button').click();
+                    setTimeout(() => {
+                        document.getElementById('import-presets-button').click();
+                    }, 100);
+                }, 100);
+            }
+        }, 500);
+    }
     
     // Still load old localStorage custom presets for migration
     const storedStyles = localStorage.getItem(STORAGE_KEY);
@@ -1976,13 +2007,13 @@ async function loadStyles() {
                 visiblePresets = [];
             }
         } catch (e) {
-            console.error("Error parsing visible presets:", e);
+            console.error("Error parsing visible presets:", error);
             visiblePresets = [];
         }
     }
     
     // If no visible presets saved, show all by default
-    if (visiblePresets.length === 0) {
+    if (visiblePresets.length === 0 && CAMERA_PRESETS.length > 0) {
         visiblePresets = CAMERA_PRESETS.map(p => p.name);
         saveVisiblePresets();
     }
@@ -2008,8 +2039,32 @@ async function mergePresetsWithStorage() {
     }
   }
 
-  // Start with factory presets, apply modifications, filter deletions
-  const mergedPresets = factoryPresets
+  // Check if user has imported presets
+  const importedPresets = await presetImporter.loadImportedPresets();
+  hasImportedPresets = importedPresets.length > 0;
+  
+  let basePresets;
+  
+  if (hasImportedPresets) {
+    // Use imported presets
+    basePresets = importedPresets;
+  } else {
+    // First time user - load factory presets only now
+    if (factoryPresets.length === 0) {
+      const response = await fetch('./presets.json');
+      if (response.ok) {
+        DEFAULT_PRESETS = await response.json();
+        factoryPresets = [...DEFAULT_PRESETS];
+      } else {
+        DEFAULT_PRESETS = [];
+        factoryPresets = [];
+      }
+    }
+    basePresets = factoryPresets;
+  }
+
+  // Apply modifications and filter deletions
+  const mergedPresets = basePresets
     .filter(preset => !deletedNames.has(preset.name))
     .map(preset => {
       if (modifiedData.has(preset.name)) {
@@ -4809,6 +4864,12 @@ window.addEventListener('scrollUp', () => {
     return;
   }
   
+  // Import presets modal
+  if (presetImporter.isImportModalOpen) {
+    presetImporter.scrollImportUp();
+    return;
+  }
+
   // Tutorial submenu - CHECK BEFORE MAIN MENU
   if (isTutorialSubmenuOpen) {
     scrollTutorialUp(); // or Down
@@ -4945,6 +5006,12 @@ window.addEventListener('scrollDown', () => {
   // Preset selector (gallery)
   if (isPresetSelectorOpen) {
     scrollPresetListDown();
+    return;
+  }
+
+  // Import presets modal
+  if (presetImporter.isImportModalOpen) {
+    presetImporter.scrollImportDown();
     return;
   }
 
@@ -6162,16 +6229,19 @@ async function saveStyle() {
     const oldName = CAMERA_PRESETS[editingStyleIndex].name;
     CAMERA_PRESETS[editingStyleIndex] = { name, category, message };
     
-    // Save modification to storage
+    // Check if it's a factory preset OR imported preset
     const isFactoryPreset = factoryPresets.some(p => p.name === oldName);
-    if (isFactoryPreset) {
+    const isImportedPreset = hasImportedPresets && presetImporter.getImportedPresets().some(p => p.name === oldName);
+    
+    if (isFactoryPreset || isImportedPreset) {
+      // Save as modification (doesn't change the original)
       await presetStorage.saveModification(oldName, {
         name: name,
         message: message,
         category: category
       });
     } else {
-      // User-created preset
+      // User-created preset - update it directly
       await presetStorage.saveNewPreset({ name, category, message });
     }
     
@@ -6205,17 +6275,29 @@ async function deleteStyle() {
     if (confirm('Delete this style?')) {
       const presetName = CAMERA_PRESETS[editingStyleIndex].name;
       
-      // Check if it's a factory preset or user-created
+      // Check if it's a factory preset, imported preset, or user-created
       const isFactoryPreset = factoryPresets.some(p => p.name === presetName);
+      const isImportedPreset = hasImportedPresets && presetImporter.getImportedPresets().some(p => p.name === presetName);
       
-      if (isFactoryPreset) {
+      if (isImportedPreset) {
+        // Delete from imported presets
+        await presetImporter.deletePreset(presetName);
+      } else if (isFactoryPreset) {
+        // Mark factory preset as deleted
         await presetStorage.saveDeletion(presetName);
       } else {
-        // For user-created presets, actually remove from storage
+        // Remove user-created preset
         await presetStorage.removeModification(presetName);
       }
       
       CAMERA_PRESETS.splice(editingStyleIndex, 1);
+      
+      // Remove from visible presets
+      const visIndex = visiblePresets.indexOf(presetName);
+      if (visIndex > -1) {
+        visiblePresets.splice(visIndex, 1);
+        saveVisiblePresets();
+      }
       
       if (currentPresetIndex >= CAMERA_PRESETS.length) {
         currentPresetIndex = CAMERA_PRESETS.length - 1;
@@ -6224,6 +6306,8 @@ async function deleteStyle() {
       saveStyles();
       hideStyleEditor();
       showUnifiedMenu();
+      
+      alert(`Preset "${presetName}" deleted successfully!`);
     }
   }
 }
@@ -7431,6 +7515,42 @@ document.addEventListener('touchend', () => {
     tutorialBackBtn.addEventListener('click', hideTutorialSubmenu);
   }
   
+// Import presets button handler
+  const importPresetsBtn = document.getElementById('import-presets-button');
+  if (importPresetsBtn) {
+    importPresetsBtn.addEventListener('click', async () => {
+      try {
+        const result = await presetImporter.import();
+        
+        if (result.success) {
+          // Reload presets (merges imported + modifications)
+          CAMERA_PRESETS = await mergePresetsWithStorage();
+          
+          // Update visible presets to include all presets
+          visiblePresets = CAMERA_PRESETS.map(p => p.name);
+          saveVisiblePresets();
+          
+          // Update menu display
+          populateStylesList();
+          updateVisiblePresetsDisplay();
+          
+          // Update styles count
+          const stylesCountElement = document.getElementById('styles-count');
+          if (stylesCountElement) {
+            const visibleCount = CAMERA_PRESETS.filter(p => visiblePresets.includes(p.name)).length;
+            stylesCountElement.textContent = visibleCount;
+          }
+          
+          alert(result.message);
+        } else if (result.message !== 'cancelled' && result.message !== 'No presets selected') {
+          alert('Import failed: ' + result.message);
+        }
+      } catch (error) {
+        alert('Import error: ' + error.message);
+      }
+    });
+  }
+
   // Glossary navigation
   const glossaryItems = document.querySelectorAll('.glossary-item');
   glossaryItems.forEach(item => {
@@ -8373,7 +8493,11 @@ async function importFromQRCode() {
 
 // Factory reset handler
 document.getElementById('factory-reset-button').addEventListener('click', async () => {
-  if (confirm('This will restore all factory presets to their original state. Your custom presets will be kept. Continue?')) {
+  const message = hasImportedPresets 
+    ? 'This will reset to your imported preset list. Your custom presets will be kept. Continue?'
+    : 'This will restore all factory presets to their original state. Your custom presets will be kept. Continue?';
+  
+  if (confirm(message)) {
     await presetStorage.clearFactoryPresetModifications();
     CAMERA_PRESETS = await mergePresetsWithStorage();
     
@@ -8382,7 +8506,11 @@ document.getElementById('factory-reset-button').addEventListener('click', async 
     saveVisiblePresets();
     
     renderMenuStyles();
-    alert('Factory presets restored successfully!');
+    
+    const successMessage = hasImportedPresets
+      ? 'Presets reset to imported list!'
+      : 'Factory presets restored successfully!';
+    alert(successMessage);
   }
 });
 
