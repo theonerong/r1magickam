@@ -9,6 +9,16 @@
     "message": "Take a picture and transform the image into a French Impressionist painting. Preserve subject identity. Use loose, visible brushstrokes, soft edges, and blended colors emphasizing natural light and atmosphere. Painterly oil-on-canvas texture with warm, luminous tones."
   },
   {
+    "name": "#NOFILTER",
+    "category": [
+      "HUMOR",
+      "SOCIAL MEDIA",
+      "SATIRE",
+      "BEAUTY FILTER"
+    ],
+    "message": "Take a picture of the subject and transform it into a dramatic BEFORE vs AFTER social media comparison labeled \"#NOFILTER\".\n\nDISPLAY MODE SELECTION (CRITICAL):\n• If an external master prompt specifies \"UI visible\" or \"UI hidden\", USE THAT\n• If none is specified, SELECT EXACTLY ONE using LAST DIGIT modulo 2\n  - 0: OBVIOUS FILTER MODE (filter icons, sparkles, exaggerated UI visible)\n  - 1: SECRET FILTER MODE (no visible filter icons or sparkles — looks \"natural\" but is heavily altered)\n\nCOMPOSITION (MANDATORY):\n• Two clear panels\n• LEFT SIDE: \"Before\" (natural, realistic photo)\n• RIGHT SIDE: \"#NOFILTER\"\n• Clear label text for both panels\n\nBEFORE PANEL REQUIREMENTS:\n• Natural lighting\n• Realistic skin texture\n• Authentic proportions\n• Minor imperfections preserved\n• No beautification\n\nAFTER PANEL — FILTERED VERSION (CRITICAL TRANSFORMATION):\n• Ultra-smooth poreless skin\n• Enlarged glossy eyes\n• Slimmed nose and sharpened jawline\n• Plumped lips\n• Evened skin tone\n• Brightened whites of eyes\n• Artificial glow\n• Subtle facial reshaping\n• Slight soft-focus depth blur\n\nIF OBVIOUS FILTER MODE (0):\n• Visible beauty filter UI icons\n• Sparkle overlays\n• Soft glow effects\n• Filter sliders maxed out\n• \"Beauty Mode: MAX\" or similar on-screen indicator\n• Optional heat waves or slight smoke from phone for satire\n\nIF SECRET FILTER MODE (1):\n• NO visible UI elements\n• NO sparkle graphics\n• NO obvious digital overlays\n• Must appear like a \"natural\" selfie\n• Alterations should be extreme but disguised as subtle\n• Viewer should suspect heavy filtering despite the claim of \"#NOFILTER\"\n\nSTYLE:\n• Vertical smartphone selfie aesthetic\n• High-resolution modern phone camera look\n• Social media caption style optional\n• Clean split comparison layout\n\nIDENTITY PRESERVATION:\n• Subject must remain clearly recognizable\n• Do not replace the person\n• Do not alter ethnicity, age category, or core facial structure\n\nHUMOR GOAL:\n• Satirize exaggerated social media beautification\n• Contrast honesty vs digital manipulation\n• Emphasize irony of the \"#NOFILTER\" label\n\nFINAL RESULT:\nThe final image must clearly show a realistic \"Before\" beside a heavily beautified \"#NOFILTER\" version, either obviously filtered (with UI visible) or deceptively filtered (no visible UI), determined strictly by the modulo selection."
+  },
+  {
     "name": "21st DOCTOR",
     "category": [
       "SCI-FI",
