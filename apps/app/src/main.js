@@ -2799,6 +2799,11 @@ function deleteCustomPreset() {
 
 function populateVisiblePresetsList() {
   const list = document.getElementById('visible-presets-list');
+  
+  // Save current scroll position from the scroll container (like favorites does)
+  const scrollContainer = document.querySelector('#visible-presets-submenu .submenu-list');
+  const scrollPosition = scrollContainer ? scrollContainer.scrollTop : 0;
+  
   list.innerHTML = '';
   
   const allPresets = CAMERA_PRESETS.filter(p => !p.internal);
@@ -2861,6 +2866,7 @@ function populateVisiblePresetsList() {
     const visibleCount = sorted.filter(p => visiblePresets.includes(p.name)).length;
     countElement.textContent = visibleCount;
   }
+  
 // Update selection after render
   setTimeout(() => {
     updateVisiblePresetsSelection();
@@ -2878,7 +2884,19 @@ function toggleVisiblePreset(presetName, isVisible) {
   
   saveVisiblePresets();
   updateVisiblePresetsDisplay();
+  
+// Save scroll position before repopulating (like favorites does)
+  const scrollContainer = document.querySelector('#visible-presets-submenu .submenu-list');
+  const scrollPosition = scrollContainer ? scrollContainer.scrollTop : 0;
+  
   populateVisiblePresetsList(); // Update the current submenu list
+  
+  // Restore scroll position after repopulating - use requestAnimationFrame to ensure DOM is updated
+  if (scrollContainer) {
+    requestAnimationFrame(() => {
+      scrollContainer.scrollTop = scrollPosition;
+    });
+  }
   
   // Always update main menu count (even if not open)
   const stylesCountElement = document.getElementById('styles-count');
@@ -5835,12 +5853,6 @@ function saveSelectionHistory() {
   }
 }
 
-// Get history for a specific preset
-function getPresetHistory(presetName) {
-  if (!presetName) return [];
-  return selectionHistory[presetName] || [];
-}
-
 // Add a selection to history
 function addToHistory(presetName, selection) {
   if (!presetName || !selection) return;
@@ -5884,45 +5896,16 @@ function getFinalPrompt(basePrompt, presetName = '') {
   // Check if preset has random selection options
   const hasRandomOptions = /RANDOM|SELECT|SELECTION|CHOOSE|modulo|LAST DIGIT|LAST TWO DIGITS|LAST THREE DIGITS/i.test(basePrompt);
   
-  // Only add random seed directive if preset has random options
+  // Only process random seed if preset has random options
   if (hasRandomOptions) {
-    // Get selection history for this preset
-    const history = getPresetHistory(presetName);
-    
+    // Generate random seed
     const seed = Date.now();
     const lastDigit = seed % 10;
     const lastTwoDigits = seed % 100;
     const lastThreeDigits = seed % 1000;
-
-    finalPrompt += `
-
-GLOBAL RANDOMIZATION DIRECTIVE (CRITICAL - ABSOLUTE PRIORITY):
-- Any section labeled RANDOM, SELECT, or CHOOSE must use the PRE-CALCULATED values below
-- These values are MANDATORY - you MUST use them for selection
-- Do NOT choose based on popularity, visual interest, or defaults
-- Do NOT deviate from the calculated selection
-
-RANDOM SEED: ${seed}
-LAST DIGIT: ${lastDigit}
-LAST TWO DIGITS: ${lastTwoDigits}
-LAST THREE DIGITS: ${lastThreeDigits}
-
-SELECTION ENFORCEMENT:
-- When the preset says "use LAST DIGIT" → use the value ${lastDigit} above
-- When the preset says "use LAST TWO DIGITS" → use the value ${lastTwoDigits} above
-- When the preset says "use LAST THREE DIGITS" → use the value ${lastThreeDigits} above
-- Match the number to the corresponding option in the list
-- This is MANDATORY and overrides all other selection preferences`;
-
-    // Add selection history if available
-    if (history.length > 0) {
-      finalPrompt += `
-
-SELECTION HISTORY (CRITICAL):
-- The following options were recently used for this preset
-- AVOID selecting these options - choose something different
-- Recently used: ${history.join(', ')}`;
-    }
+    
+    // Process the prompt to extract and select from options
+    finalPrompt = processRandomSelections(finalPrompt, lastDigit, lastTwoDigits, lastThreeDigits, presetName);
   }
   
   // Add aspect ratio override at the very end
@@ -5935,6 +5918,130 @@ SELECTION HISTORY (CRITICAL):
   console.log('FINAL PROMPT:', finalPrompt);
   
   return finalPrompt;
+}
+
+function processRandomSelections(prompt, lastDigit, lastTwoDigits, lastThreeDigits, presetName) {
+  // Find all selection blocks in the prompt
+  // Pattern: Section with "SELECTION", "SELECT", "CHOOSE" followed by options with dashes or bullets
+  
+  // Look for patterns like:
+  // "If the RANDOM SEED ends in EVEN/ODD" or "use LAST DIGIT" or "use LAST TWO DIGITS"
+  
+  // Pattern 1: EVEN/ODD selection (50/50)
+  const evenOddPattern = /•\s*If[^•]*RANDOM SEED ends in an? (EVEN|ODD)[^•]*SELECT ([^\n]+)\n•\s*If[^•]*RANDOM SEED ends in an? (EVEN|ODD)[^•]*SELECT ([^\n]+)/gi;
+  
+  prompt = prompt.replace(evenOddPattern, (match, type1, option1, type2, option2) => {
+    const isEven = lastDigit % 2 === 0;
+    
+    let selectedOption;
+    if (type1.toUpperCase() === 'EVEN') {
+      selectedOption = isEven ? option1.trim() : option2.trim();
+    } else {
+      selectedOption = isEven ? option2.trim() : option1.trim();
+    }
+    
+    // Track selection
+    trackSelection(presetName, selectedOption);
+    
+    return `SELECTED OPTION: ${selectedOption}\n(Automatically selected using random seed)`;
+  });
+  
+  // Pattern 2: Modulo-based selection with numbered list
+  // Example: "use LAST DIGIT:\n  - 0: Option A\n  - 1: Option B"
+  const moduloPattern = /(use LAST (DIGIT|TWO DIGITS|THREE DIGITS)[^:]*:)([\s\S]*?)(?=\n\n|$)/gi;
+  
+  prompt = prompt.replace(moduloPattern, (match, header, digitType, optionsList) => {
+    // Parse the options list
+    const options = [];
+    const optionPattern = /[-–]\s*(\d+):\s*([^\n]+)/g;
+    let optionMatch;
+    
+    while ((optionMatch = optionPattern.exec(optionsList)) !== null) {
+      const number = parseInt(optionMatch[1]);
+      const option = optionMatch[2].trim();
+      options.push({ number, option });
+    }
+    
+    if (options.length === 0) return match; // No options found, keep original
+    
+    // Determine which value to use
+    let selectedValue;
+    if (digitType === 'DIGIT') {
+      selectedValue = lastDigit;
+    } else if (digitType === 'TWO DIGITS') {
+      selectedValue = lastTwoDigits;
+    } else if (digitType === 'THREE DIGITS') {
+      selectedValue = lastThreeDigits;
+    }
+    
+    // Find the max number in options
+    const maxNumber = Math.max(...options.map(o => o.number));
+    const totalOptions = maxNumber + 1;
+    
+    // Calculate modulo if needed
+    const selectionIndex = selectedValue % totalOptions;
+    
+    // Find the matching option
+    const selected = options.find(o => o.number === selectionIndex);
+    
+    if (selected) {
+      // Track selection
+      trackSelection(presetName, selected.option);
+      
+      return `SELECTED OPTION: ${selected.option}\n(Automatically selected using random seed)`;
+    }
+    
+    return match; // Fallback to original if no match
+  });
+  
+  // Remove the entire selection instruction sections
+  // Remove lines starting with "• If" related to random selection
+  prompt = prompt.replace(/•\s*If[^\n]*RANDOM SEED[^\n]*\n/gi, '');
+  
+  // Remove "SELECTION" or "CHOOSE" section headers if they're now empty
+  prompt = prompt.replace(/\n*[A-Z\s]+(SELECTION|CHOOSE|SELECT)[^\n]*\(CRITICAL\):?\n+(?=\n[A-Z])/gi, '\n');
+  
+  // Clean up multiple blank lines
+  prompt = prompt.replace(/\n{3,}/g, '\n\n');
+  
+  return prompt;
+}
+
+function trackSelection(presetName, selectedOption) {
+  if (!presetName || !selectedOption) return;
+  
+  // Get current history
+  const history = getPresetHistory(presetName);
+  
+  // Add new selection to beginning
+  history.unshift(selectedOption);
+  
+  // Keep only last 5 selections
+  if (history.length > MAX_HISTORY_PER_PRESET) {
+    history.splice(MAX_HISTORY_PER_PRESET);
+  }
+  
+  // Save back to storage
+  selectionHistory[presetName] = history;
+  localStorage.setItem(SELECTION_HISTORY_KEY, JSON.stringify(selectionHistory));
+}
+
+function getPresetHistory(presetName) {
+  if (!presetName) return [];
+  
+  // Load history from storage if not in memory
+  if (!selectionHistory[presetName]) {
+    const stored = localStorage.getItem(SELECTION_HISTORY_KEY);
+    if (stored) {
+      try {
+        selectionHistory = JSON.parse(stored);
+      } catch (e) {
+        selectionHistory = {};
+      }
+    }
+  }
+  
+  return selectionHistory[presetName] || [];
 }
 
 function populateStylesList(preserveScroll = false) {
@@ -6305,7 +6412,19 @@ async function deleteStyle() {
       
       saveStyles();
       hideStyleEditor();
+      
+      // Save scroll position before showing menu
+      const scrollContainer = document.querySelector('.styles-menu-scroll-container');
+      const scrollPosition = scrollContainer ? scrollContainer.scrollTop : 0;
+      
       showUnifiedMenu();
+      
+      // Restore scroll position after menu is shown
+      if (scrollContainer) {
+        requestAnimationFrame(() => {
+          scrollContainer.scrollTop = scrollPosition;
+        });
+      }
       
       alert(`Preset "${presetName}" deleted successfully!`);
     }
