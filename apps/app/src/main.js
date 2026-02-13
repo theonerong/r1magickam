@@ -2020,6 +2020,48 @@ async function loadStyles() {
     
     // Update the display to show correct count on startup
     updateVisiblePresetsDisplay();
+
+// Check for updates after loading
+  setTimeout(() => {
+    checkForPresetsUpdates();
+  }, 1000);
+}
+
+// Check for updates on startup
+async function checkForPresetsUpdates() {
+  try {
+    const response = await fetch('./presets.json');
+    if (!response.ok) return;
+    
+    const jsonPresets = await response.json();
+    const importedPresets = presetImporter.getImportedPresets();
+    
+    if (importedPresets.length === 0) return;
+    
+    let hasUpdates = false;
+    const importedNames = new Set(importedPresets.map(p => p.name));
+    
+    // Check for updated or new presets
+    for (const jsonPreset of jsonPresets) {
+      const existing = importedPresets.find(p => p.name === jsonPreset.name);
+      if (!existing || existing.message !== jsonPreset.message) {
+        hasUpdates = true;
+        break;
+      }
+    }
+    
+    if (hasUpdates) {
+      // Add NEW badge to button
+      const statusElement = document.getElementById('updates-status');
+      if (statusElement) {
+        statusElement.textContent = '🔴 Updates available';
+        statusElement.style.color = '#FF5722';
+        statusElement.style.fontWeight = 'bold';
+      }
+    }
+  } catch (error) {
+    console.log('Could not check for updates:', error);
+  }
 }
 
 async function mergePresetsWithStorage() {
@@ -5945,86 +5987,34 @@ function processRandomSelections(prompt, lastDigit, lastTwoDigits, lastThreeDigi
     }
     
     console.log('EVEN/ODD Selection:', selectedOption);
-    
-    // Track selection
     trackSelection(presetName, selectedOption);
     
     return `SELECTED OPTION: ${selectedOption}\n(Automatically selected using random seed)`;
   });
   
-  // Pattern 2: Modulo-based selection with numbered list
-  // More flexible pattern that handles:
-  // "use LAST DIGIT", "using LAST TWO DIGITS", "SELECT EXACTLY ONE using LAST THREE DIGITS modulo X"
-  const moduloPattern = /(?:use|using)\s+LAST\s+(DIGIT|TWO DIGITS|THREE DIGITS)(?:[^\n]*modulo\s+\d+)?[:\n]+([\s\S]*?)(?=\n[A-Z][A-Z\s]+(?:RULE|FORMAT|REQUIREMENTS|TARGETING|SUBJECT|POSTER|STYLE|HISTORICAL|COMPOSITION|FINAL|TONE|IMPORTANT|ENVIRONMENT)|\n\n[A-Z]|$)/gi;
+  // Pattern 2A: "use/using LAST DIGIT(S) modulo X:"
+  // STOPS AT: Any line that starts with an all-caps word followed by optional all-caps words, then optional (CRITICAL)/etc
+  const moduloPatternA = /(?:use|using)\s+(?:the\s+)?LAST\s+(DIGIT|TWO DIGITS|THREE DIGITS)(?:\s+of\s+the\s+RANDOM\s+SEED)?(?:[^\n]*?)\s+modulo\s+(\d+)[^\n]*?:\s*([\s\S]*?)(?=\n[A-Z][A-Z\s]+(?:\([A-Z]+\))?:|\n\n|$)/gi;
   
-  prompt = prompt.replace(moduloPattern, (match, digitType, contentBlock) => {
-    console.log('Found modulo block for:', digitType);
-    console.log('Content block:', contentBlock.substring(0, 200));
-    
-    // Parse the options list - handle both "- 0:" and "  - 0:" formats
-    const options = [];
-    const optionPattern = /^\s*[-–]\s*(\d+):\s*(.+?)$/gm;
-    let optionMatch;
-    
-    while ((optionMatch = optionPattern.exec(contentBlock)) !== null) {
-      const number = parseInt(optionMatch[1]);
-      const option = optionMatch[2].trim();
-      options.push({ number, option });
-      console.log(`  Found option ${number}: ${option}`);
-    }
-    
-    if (options.length === 0) {
-      console.log('  No options found, keeping original');
-      return match;
-    }
-    
-    // Determine which value to use
-    let selectedValue;
-    if (digitType === 'DIGIT') {
-      selectedValue = lastDigit;
-    } else if (digitType === 'TWO DIGITS') {
-      selectedValue = lastTwoDigits;
-    } else if (digitType === 'THREE DIGITS') {
-      selectedValue = lastThreeDigits;
-    }
-    
-    console.log('  Selected value before modulo:', selectedValue);
-    
-    // Find the max number in options
-    const maxNumber = Math.max(...options.map(o => o.number));
-    const totalOptions = maxNumber + 1;
-    
-    console.log('  Total options:', totalOptions);
-    
-    // Calculate modulo
-    const selectionIndex = selectedValue % totalOptions;
-    console.log('  Selection index after modulo:', selectionIndex);
-    
-    // Find the matching option
-    const selected = options.find(o => o.number === selectionIndex);
-    
-    if (selected) {
-      console.log('  SELECTED:', selected.option);
-      
-      // Track selection
-      trackSelection(presetName, selected.option);
-      
-      return `SELECTED OPTION: ${selected.option}\n(Automatically selected using random seed)`;
-    }
-    
-    console.log('  No matching option found!');
-    return match;
+  prompt = prompt.replace(moduloPatternA, (match, digitType, moduloNumber, contentBlock) => {
+    console.log('Found modulo pattern A for:', digitType, 'modulo', moduloNumber);
+    return processModuloSelection(digitType, moduloNumber, contentBlock, lastDigit, lastTwoDigits, lastThreeDigits, presetName, match);
   });
   
-  // Remove the entire selection instruction sections
-  // Remove lines starting with "• If" related to random selection
-  prompt = prompt.replace(/•\s*If[^\n]*(?:RANDOM SEED|none is specified)[^\n]*\n/gi, '');
+  // Pattern 2B: "SELECT using RANDOM SEED modulo X:"
+  const moduloPatternB = /SELECT(?:\s+EXACTLY\s+ONE)?(?:\s+\w+)?\s+using\s+RANDOM\s+SEED\s+modulo\s+(\d+)[^\n]*?:\s*([\s\S]*?)(?=\n[A-Z][A-Z\s]+(?:\([A-Z]+\))?:|\n\n|$)/gi;
   
-  // Remove "MODULO OPTIONS:" header lines
-  prompt = prompt.replace(/^\s*MODULO OPTIONS:\s*$/gm, '');
+  prompt = prompt.replace(moduloPatternB, (match, moduloNumber, contentBlock) => {
+    console.log('Found modulo pattern B (RANDOM SEED) modulo', moduloNumber);
+    return processModuloSelection('TWO DIGITS', moduloNumber, contentBlock, lastDigit, lastTwoDigits, lastThreeDigits, presetName, match);
+  });
   
-  // Remove "SELECTION" or "CHOOSE" section headers if they're now empty
-  prompt = prompt.replace(/\n*[A-Z\s]+(SELECTION|CHOOSE|SELECT)[^\n]*\(CRITICAL\):?\s*\n+(?=SELECTED OPTION:|[A-Z][A-Z\s]+(?:RULE|FORMAT))/gi, '\n');
+  // Clean up selection instruction lines
+  prompt = prompt.replace(/•\s*If[^\n]*(?:RANDOM SEED|none is specified|no \w+ is specified)[^\n]*\n/gi, '');
+  prompt = prompt.replace(/•\s*Otherwise\s+SELECT[^\n]*\n/gi, '');
+  
+  // Remove any standalone section headers that are now orphaned (all-caps line ending with colon)
+  prompt = prompt.replace(/^\s*[A-Z][A-Z\s]+:\s*$/gm, '');
   
   // Clean up multiple blank lines
   prompt = prompt.replace(/\n{3,}/g, '\n\n');
@@ -6032,6 +6022,56 @@ function processRandomSelections(prompt, lastDigit, lastTwoDigits, lastThreeDigi
   console.log('=== FINISHED PROCESSING ===');
   
   return prompt;
+}
+
+// Helper function to process modulo selections
+function processModuloSelection(digitType, moduloNumber, contentBlock, lastDigit, lastTwoDigits, lastThreeDigits, presetName, originalMatch) {
+  // Parse the options list
+  const options = [];
+  const optionPattern = /^\s*[-–]\s*(\d+):\s*(.+?)$/gm;
+  let optionMatch;
+  
+  while ((optionMatch = optionPattern.exec(contentBlock)) !== null) {
+    const number = parseInt(optionMatch[1]);
+    const option = optionMatch[2].trim();
+    options.push({ number, option });
+    console.log(`  Found option ${number}: ${option.substring(0, 50)}`);
+  }
+  
+  if (options.length === 0) {
+    console.log('  No options found, keeping original');
+    return originalMatch;
+  }
+  
+  // Determine which value to use
+  let selectedValue;
+  if (digitType === 'DIGIT') {
+    selectedValue = lastDigit;
+  } else if (digitType === 'TWO DIGITS') {
+    selectedValue = lastTwoDigits;
+  } else if (digitType === 'THREE DIGITS') {
+    selectedValue = lastThreeDigits;
+  }
+  
+  console.log('  Selected value before modulo:', selectedValue);
+  
+  // Calculate modulo
+  const totalOptions = parseInt(moduloNumber);
+  const selectionIndex = selectedValue % totalOptions;
+  
+  console.log('  Selection index after modulo:', selectionIndex);
+  
+  // Find the matching option
+  const selected = options.find(o => o.number === selectionIndex);
+  
+  if (selected) {
+    console.log('  SELECTED:', selected.option);
+    trackSelection(presetName, selected.option);
+    return `SELECTED OPTION: ${selected.option}\n(Automatically selected using random seed)`;
+  }
+  
+  console.log('  No matching option found!');
+  return originalMatch;
 }
 
 function trackSelection(presetName, selectedOption) {
@@ -7939,6 +7979,85 @@ document.addEventListener('touchend', () => {
   if (galleryImportBtn) {
     galleryImportBtn.addEventListener('click', () => {
       openQRScannerModal();
+    });
+  }
+
+  // Check for updates button handler
+  const checkUpdatesBtn = document.getElementById('check-updates-button');
+  if (checkUpdatesBtn) {
+    checkUpdatesBtn.addEventListener('click', async () => {
+      try {
+        // Load presets from JSON
+        const response = await fetch('./presets.json');
+        if (!response.ok) {
+          alert('Could not load presets.json');
+          return;
+        }
+        
+        const jsonPresets = await response.json();
+        const importedPresets = presetImporter.getImportedPresets();
+        
+        if (importedPresets.length === 0) {
+          alert('No presets imported yet. Use "Import Presets" first.');
+          return;
+        }
+        
+        // Check for updates and new presets
+        let updatedCount = 0;
+        let newCount = 0;
+        
+        const importedNames = new Set(importedPresets.map(p => p.name));
+        
+        jsonPresets.forEach(jsonPreset => {
+          if (importedNames.has(jsonPreset.name)) {
+            // Check if content is different (updated)
+            const existing = importedPresets.find(p => p.name === jsonPreset.name);
+            if (existing && existing.message !== jsonPreset.message) {
+              updatedCount++;
+            }
+          } else {
+            // New preset
+            newCount++;
+          }
+        });
+        
+        if (updatedCount === 0 && newCount === 0) {
+          alert('✅ All presets are up to date!');
+          return;
+        }
+        
+        // Show update prompt
+        const updateMsg = [];
+        if (updatedCount > 0) updateMsg.push(`${updatedCount} updated preset(s)`);
+        if (newCount > 0) updateMsg.push(`${newCount} new preset(s)`);
+        
+        const shouldUpdate = confirm(
+          `Found ${updateMsg.join(' and ')} available.\n\n` +
+          `Would you like to import all updates now?`
+        );
+        
+        if (shouldUpdate) {
+          // Trigger import with all presets selected
+          const result = await presetImporter.import();
+          
+          if (result.success) {
+            // Reload presets
+            CAMERA_PRESETS = await mergePresetsWithStorage();
+            
+            // Update visible presets
+            visiblePresets = CAMERA_PRESETS.map(p => p.name);
+            saveVisiblePresets();
+            
+            // Update menu
+            populateStylesList();
+            updateVisiblePresetsDisplay();
+            
+            alert(result.message);
+          }
+        }
+      } catch (error) {
+        alert('Error checking for updates: ' + error.message);
+      }
     });
   }
   

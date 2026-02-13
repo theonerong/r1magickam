@@ -385,16 +385,41 @@ footerSection.innerHTML = `
         return { success: false, message: 'No presets selected' };
       }
 
-      const existingNames = new Set(this.importedPresets.map(p => p.name));
-      const newPresets = selectedPresets.filter(p => !existingNames.has(p.name));
-      const allImported = [...this.importedPresets, ...newPresets];
+      // NEW LOGIC: Replace existing presets with same name (updates), add new ones
+      const existingMap = new Map(this.importedPresets.map(p => [p.name, p]));
+      let updatedCount = 0;
+      let newCount = 0;
+      
+      selectedPresets.forEach(preset => {
+        if (existingMap.has(preset.name)) {
+          // Update existing preset
+          existingMap.set(preset.name, preset);
+          updatedCount++;
+        } else {
+          // Add new preset
+          existingMap.set(preset.name, preset);
+          newCount++;
+        }
+      });
+      
+      const allImported = Array.from(existingMap.values());
       
       await this.saveImportedPresets(allImported);
 
+      let message = '';
+      if (updatedCount > 0 && newCount > 0) {
+        message = `Updated ${updatedCount}, imported ${newCount} new. Total: ${allImported.length}`;
+      } else if (updatedCount > 0) {
+        message = `Updated ${updatedCount} preset(s). Total: ${allImported.length}`;
+      } else {
+        message = `Imported ${newCount} new preset(s). Total: ${allImported.length}`;
+      }
+
       return { 
         success: true, 
-        message: `Imported ${selectedPresets.length}. Total: ${allImported.length}`,
-        count: selectedPresets.length,
+        message: message,
+        updated: updatedCount,
+        new: newCount,
         total: allImported.length
       };
     } catch (error) {
