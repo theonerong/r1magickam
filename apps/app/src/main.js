@@ -8052,6 +8052,14 @@ document.addEventListener('touchend', () => {
             populateStylesList();
             updateVisiblePresetsDisplay();
             
+            // Clear the update flag after successful import
+            const statusElement = document.getElementById('updates-status');
+            if (statusElement) {
+              statusElement.textContent = 'Check for Updates';
+              statusElement.style.color = '';
+              statusElement.style.fontWeight = '';
+            }
+            
             alert(result.message);
           }
         }
