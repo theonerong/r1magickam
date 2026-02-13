@@ -2448,19 +2448,21 @@ function isFavoriteStyle(styleName) {
 
 // Get random preset index from favorites (or all presets if no favorites)
 function getRandomPresetIndex() {
-  const favoritedPresets = CAMERA_PRESETS.filter(p => 
-    !p.internal && isFavoriteStyle(p.name)
-  );
+  // Get visible presets using the same logic as scroll wheel
+  const sortedPresets = getSortedPresets();
   
-  if (favoritedPresets.length > 0) {
-    const randomPreset = favoritedPresets[Math.floor(Math.random() * favoritedPresets.length)];
+  if (sortedPresets.length === 0) return 0;
+  
+  // Filter to only favorites if they exist
+  const favoritedVisible = sortedPresets.filter(p => isFavoriteStyle(p.name));
+  
+  if (favoritedVisible.length > 0) {
+    const randomPreset = favoritedVisible[Math.floor(Math.random() * favoritedVisible.length)];
     return CAMERA_PRESETS.findIndex(p => p === randomPreset);
   }
   
-  const allPresets = CAMERA_PRESETS.filter(p => !p.internal);
-  if (allPresets.length === 0) return 0;
-  
-  const randomPreset = allPresets[Math.floor(Math.random() * allPresets.length)];
+  // Otherwise pick from all visible presets
+  const randomPreset = sortedPresets[Math.floor(Math.random() * sortedPresets.length)];
   return CAMERA_PRESETS.findIndex(p => p === randomPreset);
 }
 
@@ -5174,6 +5176,9 @@ function updatePresetDisplay() {
     if (statusElement) {
         statusElement.textContent = `Style: ${currentPreset.name}`;
     }
+    
+    // Show style reveal on screen (middle text)
+    showStyleReveal(currentPreset.name);
 
     localStorage.setItem(LAST_USED_PRESET_KEY, currentPresetIndex.toString());
 
@@ -5921,11 +5926,10 @@ function getFinalPrompt(basePrompt, presetName = '') {
 }
 
 function processRandomSelections(prompt, lastDigit, lastTwoDigits, lastThreeDigits, presetName) {
-  // Find all selection blocks in the prompt
-  // Pattern: Section with "SELECTION", "SELECT", "CHOOSE" followed by options with dashes or bullets
-  
-  // Look for patterns like:
-  // "If the RANDOM SEED ends in EVEN/ODD" or "use LAST DIGIT" or "use LAST TWO DIGITS"
+  console.log('=== PROCESSING RANDOM SELECTIONS ===');
+  console.log('Last Digit:', lastDigit);
+  console.log('Last Two Digits:', lastTwoDigits);
+  console.log('Last Three Digits:', lastThreeDigits);
   
   // Pattern 1: EVEN/ODD selection (50/50)
   const evenOddPattern = /•\s*If[^•]*RANDOM SEED ends in an? (EVEN|ODD)[^•]*SELECT ([^\n]+)\n•\s*If[^•]*RANDOM SEED ends in an? (EVEN|ODD)[^•]*SELECT ([^\n]+)/gi;
@@ -5940,6 +5944,8 @@ function processRandomSelections(prompt, lastDigit, lastTwoDigits, lastThreeDigi
       selectedOption = isEven ? option2.trim() : option1.trim();
     }
     
+    console.log('EVEN/ODD Selection:', selectedOption);
+    
     // Track selection
     trackSelection(presetName, selectedOption);
     
@@ -5947,22 +5953,30 @@ function processRandomSelections(prompt, lastDigit, lastTwoDigits, lastThreeDigi
   });
   
   // Pattern 2: Modulo-based selection with numbered list
-  // Example: "use LAST DIGIT:\n  - 0: Option A\n  - 1: Option B"
-  const moduloPattern = /(use LAST (DIGIT|TWO DIGITS|THREE DIGITS)[^:]*:)([\s\S]*?)(?=\n\n|$)/gi;
+  // More flexible pattern that handles:
+  // "use LAST DIGIT", "using LAST TWO DIGITS", "SELECT EXACTLY ONE using LAST THREE DIGITS modulo X"
+  const moduloPattern = /(?:use|using)\s+LAST\s+(DIGIT|TWO DIGITS|THREE DIGITS)(?:[^\n]*modulo\s+\d+)?[:\n]+([\s\S]*?)(?=\n[A-Z][A-Z\s]+(?:RULE|FORMAT|REQUIREMENTS|TARGETING|SUBJECT|POSTER|STYLE|HISTORICAL|COMPOSITION|FINAL|TONE|IMPORTANT|ENVIRONMENT)|\n\n[A-Z]|$)/gi;
   
-  prompt = prompt.replace(moduloPattern, (match, header, digitType, optionsList) => {
-    // Parse the options list
+  prompt = prompt.replace(moduloPattern, (match, digitType, contentBlock) => {
+    console.log('Found modulo block for:', digitType);
+    console.log('Content block:', contentBlock.substring(0, 200));
+    
+    // Parse the options list - handle both "- 0:" and "  - 0:" formats
     const options = [];
-    const optionPattern = /[-–]\s*(\d+):\s*([^\n]+)/g;
+    const optionPattern = /^\s*[-–]\s*(\d+):\s*(.+?)$/gm;
     let optionMatch;
     
-    while ((optionMatch = optionPattern.exec(optionsList)) !== null) {
+    while ((optionMatch = optionPattern.exec(contentBlock)) !== null) {
       const number = parseInt(optionMatch[1]);
       const option = optionMatch[2].trim();
       options.push({ number, option });
+      console.log(`  Found option ${number}: ${option}`);
     }
     
-    if (options.length === 0) return match; // No options found, keep original
+    if (options.length === 0) {
+      console.log('  No options found, keeping original');
+      return match;
+    }
     
     // Determine which value to use
     let selectedValue;
@@ -5974,35 +5988,48 @@ function processRandomSelections(prompt, lastDigit, lastTwoDigits, lastThreeDigi
       selectedValue = lastThreeDigits;
     }
     
+    console.log('  Selected value before modulo:', selectedValue);
+    
     // Find the max number in options
     const maxNumber = Math.max(...options.map(o => o.number));
     const totalOptions = maxNumber + 1;
     
-    // Calculate modulo if needed
+    console.log('  Total options:', totalOptions);
+    
+    // Calculate modulo
     const selectionIndex = selectedValue % totalOptions;
+    console.log('  Selection index after modulo:', selectionIndex);
     
     // Find the matching option
     const selected = options.find(o => o.number === selectionIndex);
     
     if (selected) {
+      console.log('  SELECTED:', selected.option);
+      
       // Track selection
       trackSelection(presetName, selected.option);
       
       return `SELECTED OPTION: ${selected.option}\n(Automatically selected using random seed)`;
     }
     
-    return match; // Fallback to original if no match
+    console.log('  No matching option found!');
+    return match;
   });
   
   // Remove the entire selection instruction sections
   // Remove lines starting with "• If" related to random selection
-  prompt = prompt.replace(/•\s*If[^\n]*RANDOM SEED[^\n]*\n/gi, '');
+  prompt = prompt.replace(/•\s*If[^\n]*(?:RANDOM SEED|none is specified)[^\n]*\n/gi, '');
+  
+  // Remove "MODULO OPTIONS:" header lines
+  prompt = prompt.replace(/^\s*MODULO OPTIONS:\s*$/gm, '');
   
   // Remove "SELECTION" or "CHOOSE" section headers if they're now empty
-  prompt = prompt.replace(/\n*[A-Z\s]+(SELECTION|CHOOSE|SELECT)[^\n]*\(CRITICAL\):?\n+(?=\n[A-Z])/gi, '\n');
+  prompt = prompt.replace(/\n*[A-Z\s]+(SELECTION|CHOOSE|SELECT)[^\n]*\(CRITICAL\):?\s*\n+(?=SELECTED OPTION:|[A-Z][A-Z\s]+(?:RULE|FORMAT))/gi, '\n');
   
   // Clean up multiple blank lines
   prompt = prompt.replace(/\n{3,}/g, '\n\n');
+  
+  console.log('=== FINISHED PROCESSING ===');
   
   return prompt;
 }
@@ -6406,11 +6433,25 @@ async function deleteStyle() {
         saveVisiblePresets();
       }
       
-      if (currentPresetIndex >= CAMERA_PRESETS.length) {
-        currentPresetIndex = CAMERA_PRESETS.length - 1;
+      // Determine new current preset index after deletion
+      if (editingStyleIndex === currentPresetIndex) {
+        // We deleted the currently selected preset
+        // Move to previous preset, or stay at 0 if we deleted the first one
+        currentPresetIndex = Math.max(0, editingStyleIndex - 1);
+      } else if (editingStyleIndex < currentPresetIndex) {
+        // We deleted a preset before the current one, so shift current index down
+        currentPresetIndex = currentPresetIndex - 1;
       }
+      // If we deleted a preset after the current one, currentPresetIndex stays the same
+      
+      // Ensure index is within bounds
+      currentPresetIndex = Math.max(0, Math.min(currentPresetIndex, CAMERA_PRESETS.length - 1));
       
       saveStyles();
+      
+      // Update the preset display BEFORE hiding editor
+      updatePresetDisplay();
+      
       hideStyleEditor();
       
       // Save scroll position before showing menu
