@@ -1440,6 +1440,16 @@
     "message": "Take a picture and transform the subject into a superhero inspired by their own traits, personality, or clothing. Preserve the subject’s recognizable facial features and body while designing a unique superhero identity based on what they are wearing or their notable characteristics. The superhero must wear a flowing cape integrated naturally into the costume. Show a full comic-book page with multiple panels depicting the subject in action, using powers or skills derived from their personal traits. Bold inks, vibrant colors, dynamic composition, and expressive onomatopoeia. Ensure the subject remains clearly identifiable while fully integrated into the comic-book superhero narrative."
   },
   {
+    "name": "REAL UPCOMING MOVIE TEASER",
+    "category": [
+      "CINEMATIC",
+      "MOVIES",
+      "TRAILER",
+      "DRAMA"
+    ],
+    "message": "Take a picture and transform the subject into the lead character of a real theatrical movie currently in production or scheduled for release.\n\nSELECTION (CRITICAL):\n• If an external master prompt specifies a real movie title and year, USE THAT exact movie\n• The subject MUST be rendered in the same visual medium and artistic style as that film\n• If none is specified, SELECT EXACTLY ONE using LAST DIGIT modulo 5:\n  - 0: Major Studio Live-Action Sci-Fi Release\n  - 1: Prestige Live-Action Award Drama\n  - 2: Big Budget Action Franchise Installment\n  - 3: Stylized Animated Feature Film\n  - 4: Dark Psychological Thriller\n\nSTYLE MATCHING (MANDATORY):\n• If the selected or specified film is live-action, render photorealistic cinematic photography\n• If the selected or specified film is 3D animated, render the subject as a fully 3D animated character\n• If the selected or specified film is stylized animation, match its artistic medium\n• The subject must not remain photographic if the film is animated\n• The entire scene must inherit the production style of the selected movie\n\nCORE CONCEPT:\n• The subject must appear as the undisputed lead\n• Official teaser poster framing\n• High production value\n• No parody tone\n\nTEASER ELEMENTS:\n• Realistic movie title typography\n• Dramatic tagline\n• \"Coming Soon\" or accurate release window\n• Production credit block at bottom\n• Authentic theatrical poster layout\n\nSUBJECT PRESENTATION:\n• Wardrobe and environment must match film genre\n• Expression and pose must match film tone\n• Strong lead-character presence\n\nIMPORTANT:\n• When a real movie is specified, match its tone, lighting, genre, and visual medium\n• Do not mix live-action realism with animated style unless the film itself does so\n• Avoid satire unless master prompt demands it\n• Maintain studio-level realism\n\nFINAL RESULT:\nThe final image should look indistinguishable from an official teaser poster for a real upcoming theatrical release starring the subject, rendered in the exact same visual medium and production style as the selected film."
+  },
+  {
     "name": "COMPANY BADGE",
     "category": [
       "OFFICE",
