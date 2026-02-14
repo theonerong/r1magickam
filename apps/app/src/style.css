@@ -1,18 +1,3 @@
-/* Power Grotesk Font */
-@font-face {
-    font-family: 'Power Grotesk';
-    src: url('https://fonts.cdnfonts.com/s/95219/PowerGrotesk-Regular.woff') format('woff');
-    font-weight: 400;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Power Grotesk';
-    src: url('https://fonts.cdnfonts.com/s/95219/PowerGrotesk-Bold.woff') format('woff');
-    font-weight: 700;
-    font-style: normal;
-}
-
 /* Base styles for R1 device (240x320px portrait) */
 * {
     margin: 0;
@@ -1992,6 +1977,34 @@ button:disabled {
 
 .viewer-edit-button:active {
     background-color: #4CAF50;
+    color: #000;
+}
+
+/* MP Button - Half size of edit button */
+.viewer-mp-button {
+    position: absolute;
+    bottom: calc(50vh - 6vw);
+    left: 1vw;
+    width: 12vw;
+    height: 8vw;
+    min-width: 44px;
+    min-height: 22px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #FF9800;
+    border: 2px solid #FF9800;
+    border-radius: 1vw;
+    font-size: 3vw;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 2001;
+    padding: 0;
+}
+
+.viewer-mp-button:active {
+    background-color: #FF9800;
     color: #000;
 }
 

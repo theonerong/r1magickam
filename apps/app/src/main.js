@@ -141,6 +141,10 @@ const MOTION_START_DELAYS = {
 let noMagicMode = false;
 const NO_MAGIC_MODE_KEY = 'r1_camera_no_magic_mode';
 
+// Track if we entered Master Prompt from gallery
+let returnToGalleryFromMasterPrompt = false;
+let savedViewerImageIndex = -1;
+
 // Style reveal elements
 let styleRevealElement, styleRevealText;
 let styleRevealTimeout = null;
@@ -245,6 +249,7 @@ let editingStyleIndex = -1;
 let isOnline = navigator.onLine;
 let photoQueue = [];
 let isSyncing = false;
+
 // Scroll debouncing variables
 let scrollTimeout = null;
 let lastScrollTime = 0;
@@ -5562,6 +5567,21 @@ function showSettingsSubmenu() {
 
 // Hide Settings submenu
 function hideSettingsSubmenu() {
+  // Check if we should return to gallery
+  if (returnToGalleryFromMasterPrompt) {
+    returnToGalleryFromMasterPrompt = false;
+    document.getElementById('settings-submenu').style.display = 'none';
+    isSettingsSubmenuOpen = false;
+    document.getElementById('unified-menu').style.display = 'none';
+    isMenuOpen = false;
+    menuScrollEnabled = false;
+    // Show gallery first, then reopen the image viewer
+    showGallery().then(() => {
+      openImageViewer(savedViewerImageIndex);
+    });
+    return;
+  }
+  
   document.getElementById('settings-submenu').style.display = 'none';
   isSettingsSubmenuOpen = false;
   currentSettingsIndex = 0;
@@ -5789,6 +5809,22 @@ function showMasterPromptSubmenu() {
 }
 
 async function hideMasterPromptSubmenu() {
+  // Check if we should return to gallery
+  if (returnToGalleryFromMasterPrompt) {
+    returnToGalleryFromMasterPrompt = false;
+    document.getElementById('master-prompt-submenu').style.display = 'none';
+    isMasterPromptSubmenuOpen = false;
+    document.getElementById('settings-submenu').style.display = 'none';
+    isSettingsSubmenuOpen = false;
+    document.getElementById('unified-menu').style.display = 'none';
+    isMenuOpen = false;
+    menuScrollEnabled = false;
+    // Show gallery first, then reopen the image viewer
+    await showGallery();
+    openImageViewer(savedViewerImageIndex);
+    return;
+  }
+  
   document.getElementById('master-prompt-submenu').style.display = 'none';
   isMasterPromptSubmenuOpen = false;
   // await resumeCamera();
@@ -8109,6 +8145,31 @@ document.addEventListener('touchend', () => {
   const uploadViewerBtn = document.getElementById('upload-viewer-image');
   if (uploadViewerBtn) {
     uploadViewerBtn.addEventListener('click', uploadViewerImage);
+  }
+
+  const mpViewerBtn = document.getElementById('mp-viewer-button');
+  if (mpViewerBtn) {
+    mpViewerBtn.addEventListener('click', () => {
+      // Save current viewer image index
+      savedViewerImageIndex = currentViewerImageIndex;
+      
+      // Close image viewer and gallery
+      document.getElementById('image-viewer').style.display = 'none';
+      document.getElementById('gallery-modal').style.display = 'none';
+      
+      // Set flag to return to gallery
+      returnToGalleryFromMasterPrompt = true;
+      
+      // Open settings → master prompt
+      document.getElementById('unified-menu').style.display = 'flex';
+      isMenuOpen = true;
+      document.getElementById('settings-submenu').style.display = 'flex';
+      isSettingsSubmenuOpen = true;
+      document.getElementById('master-prompt-submenu').style.display = 'flex';
+      isMasterPromptSubmenuOpen = true;
+      currentMasterPromptIndex = 0;
+      updateMasterPromptSelection();
+    });
   }
   
   // QR Scan Button
