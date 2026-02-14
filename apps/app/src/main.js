@@ -8160,15 +8160,14 @@ document.addEventListener('touchend', () => {
       // Set flag to return to gallery
       returnToGalleryFromMasterPrompt = true;
       
-      // Open settings → master prompt
+      // Open settings submenu first
       document.getElementById('unified-menu').style.display = 'flex';
       isMenuOpen = true;
       document.getElementById('settings-submenu').style.display = 'flex';
       isSettingsSubmenuOpen = true;
-      document.getElementById('master-prompt-submenu').style.display = 'flex';
-      isMasterPromptSubmenuOpen = true;
-      currentMasterPromptIndex = 0;
-      updateMasterPromptSelection();
+      
+      // Use the proper function to show master prompt (loads values correctly)
+      showMasterPromptSubmenu();
     });
   }
   
