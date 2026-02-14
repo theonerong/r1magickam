@@ -5969,52 +5969,71 @@ function getFinalPrompt(basePrompt, presetName = '') {
 
 function processRandomSelections(prompt, lastDigit, lastTwoDigits, lastThreeDigits, presetName) {
   console.log('=== PROCESSING RANDOM SELECTIONS ===');
-  console.log('Last Digit:', lastDigit);
-  console.log('Last Two Digits:', lastTwoDigits);
-  console.log('Last Three Digits:', lastThreeDigits);
   
-  // Pattern 1: EVEN/ODD selection (50/50)
-  const evenOddPattern = /•\s*If[^•]*RANDOM SEED ends in an? (EVEN|ODD)[^•]*SELECT ([^\n]+)\n•\s*If[^•]*RANDOM SEED ends in an? (EVEN|ODD)[^•]*SELECT ([^\n]+)/gi;
+  // Pattern 1: Even/Odd (50/50)
+  const evenOddPattern = /•\s*If\s+(?:the\s+)?(?:LAST\s+DIGIT|RANDOM\s+SEED)(?:\s+of\s+the\s+RANDOM\s+SEED)?(?:\s+ends\s+in)?[^\n]*?(?:is\s+)?(?:an?\s+)?(EVEN|ODD)(?:\s+number)?[^\n]*?:\s*(?:SELECT\s+)?(.+?)(?=\n•|\n\n|$)/gi;
   
-  prompt = prompt.replace(evenOddPattern, (match, type1, option1, type2, option2) => {
-    const isEven = lastDigit % 2 === 0;
+  prompt = prompt.replace(evenOddPattern, (match, evenOrOdd, option) => {
+    console.log('Found even/odd pattern for:', evenOrOdd);
     
-    let selectedOption;
-    if (type1.toUpperCase() === 'EVEN') {
-      selectedOption = isEven ? option1.trim() : option2.trim();
+    const isEven = lastDigit % 2 === 0;
+    const shouldSelect = (evenOrOdd.toUpperCase() === 'EVEN' && isEven) || (evenOrOdd.toUpperCase() === 'ODD' && !isEven);
+    
+    if (shouldSelect) {
+      const selectedOption = option.trim();
+      console.log('SELECTED (even/odd):', selectedOption);
+      trackSelection(presetName, selectedOption);
+      return '';
+    }
+    return '';
+  });
+  
+  // After even/odd, capture the selected option
+  prompt = prompt.replace(/If\s+Option\s+([AB]):\s*\n([\s\S]*?)(?=\nIf\s+Option\s+[AB]:|\n[A-Z][A-Z\s]+(?:\([A-Z]+\))?:|\n\n|$)/gi, (match, optionLetter, content) => {
+    return '';
+  });
+  
+  const selectedOptionPattern = /If\s+Option\s+([AB]):\s*\n([\s\S]*?)(?=\nIf\s+Option|$)/gi;
+  let selectedOption = null;
+  
+  prompt.replace(selectedOptionPattern, (match, optionLetter, content) => {
+    if (!selectedOption) {
+      selectedOption = content.trim();
+    }
+    return match;
+  });
+  
+  if (selectedOption) {
+    trackSelection(presetName, selectedOption);
+    prompt = `SELECTED OPTION: ${selectedOption}\n(Automatically selected using random seed)`;
+  }
+  
+  // UNIFIED MODULO PATTERN - CASE INSENSITIVE (i flag handles Use, USE, use, Via, VIA, via, By, BY, by, etc.)
+  const unifiedModuloPattern = /(?:select|choose|pick)?(?:\s+exactly\s+one)?[^\n]*?(?:use|using|with|via|by)\s+(?:the\s+)?(?:last\s+(digit|two\s+digits|three\s+digits)|random\s+seed)(?:\s+of\s+the\s+random\s+seed)?[^\n]*?\s+modulo\s+(\d+)[^\n]*?:\s*\n((?:\s*-\s*\d+:.*(?:\n|$))*)/gi;
+  
+  prompt = prompt.replace(unifiedModuloPattern, (match, digitType, moduloNumber, contentBlock) => {
+    let actualDigitType;
+    if (!digitType) {
+      actualDigitType = 'TWO DIGITS';
+    } else if (digitType.toLowerCase().includes('three')) {
+      actualDigitType = 'THREE DIGITS';
+    } else if (digitType.toLowerCase().includes('two')) {
+      actualDigitType = 'TWO DIGITS';
     } else {
-      selectedOption = isEven ? option2.trim() : option1.trim();
+      actualDigitType = 'DIGIT';
     }
     
-    console.log('EVEN/ODD Selection:', selectedOption);
-    trackSelection(presetName, selectedOption);
-    
-    return `SELECTED OPTION: ${selectedOption}\n(Automatically selected using random seed)`;
-  });
-  
-  // Pattern 2A: "use/using LAST DIGIT(S) modulo X:"
-  // STOPS AT: Any line that starts with an all-caps word followed by optional all-caps words, then optional (CRITICAL)/etc
-  const moduloPatternA = /(?:use|using)\s+(?:the\s+)?LAST\s+(DIGIT|TWO DIGITS|THREE DIGITS)(?:\s+of\s+the\s+RANDOM\s+SEED)?(?:[^\n]*?)\s+modulo\s+(\d+)[^\n]*?:\s*([\s\S]*?)(?=\n[A-Z][A-Z\s]+(?:\([A-Z]+\))?:|\n\n|$)/gi;
-  
-  prompt = prompt.replace(moduloPatternA, (match, digitType, moduloNumber, contentBlock) => {
-    console.log('Found modulo pattern A for:', digitType, 'modulo', moduloNumber);
-    return processModuloSelection(digitType, moduloNumber, contentBlock, lastDigit, lastTwoDigits, lastThreeDigits, presetName, match);
-  });
-  
-  // Pattern 2B: "SELECT using RANDOM SEED modulo X:"
-  const moduloPatternB = /SELECT(?:\s+EXACTLY\s+ONE)?(?:\s+\w+)?\s+using\s+RANDOM\s+SEED\s+modulo\s+(\d+)[^\n]*?:\s*([\s\S]*?)(?=\n[A-Z][A-Z\s]+(?:\([A-Z]+\))?:|\n\n|$)/gi;
-  
-  prompt = prompt.replace(moduloPatternB, (match, moduloNumber, contentBlock) => {
-    console.log('Found modulo pattern B (RANDOM SEED) modulo', moduloNumber);
-    return processModuloSelection('TWO DIGITS', moduloNumber, contentBlock, lastDigit, lastTwoDigits, lastThreeDigits, presetName, match);
+    console.log('Found modulo pattern:', actualDigitType, 'modulo', moduloNumber);
+    return processModuloSelection(actualDigitType, moduloNumber, contentBlock, lastDigit, lastTwoDigits, lastThreeDigits, presetName, match);
   });
   
   // Clean up selection instruction lines
-  prompt = prompt.replace(/•\s*If[^\n]*(?:RANDOM SEED|none is specified|no \w+ is specified)[^\n]*\n/gi, '');
+  prompt = prompt.replace(/•\s*If\s+none\s+is\s+specified[^\n]*\n/gi, '');
+  prompt = prompt.replace(/•\s*If\s+no\s+\w+\s+is\s+specified[^\n]*\n/gi, '');
   prompt = prompt.replace(/•\s*Otherwise\s+SELECT[^\n]*\n/gi, '');
   
-  // Remove any standalone section headers that are now orphaned (all-caps line ending with colon)
-  prompt = prompt.replace(/^\s*[A-Z][A-Z\s]+:\s*$/gm, '');
+  // Remove orphaned section headers
+  prompt = prompt.replace(/^\s*[A-Z][A-Z\s]+(?:\([A-Z]+\))?:\s*$/gm, '');
   
   // Clean up multiple blank lines
   prompt = prompt.replace(/\n{3,}/g, '\n\n');
