@@ -531,6 +531,16 @@
     "message": "Take a picture and transform the subject into a realistic Na’vi character from the movie Avatar. Preserve the subject’s recognizable facial structure, eye shape, expressions, body proportions, and personality while adapting them to authentic Na’vi anatomy—tall, slender physique, elongated limbs, blue bioluminescent skin with natural striping, feline nose structure, large expressive eyes, pointed ears, and long braided hair with neural queue. Translate the subject’s clothing and accessories into culturally accurate Na’vi attire and materials. Match the exact cinematic lighting, color grading, skin translucency, subsurface scattering, and environmental interaction seen in Avatar. The subject must appear fully native to Pandora, not human-painted blue, with realistic scale, shadows, and immersion in the world."
   },
   {
+    "name": "BACK IN THE DAY POSTER",
+    "category": [
+      "TRANSFORM",
+      "RETRO",
+      "NOSTALGIA",
+      "HISTORICAL"
+  ],
+    "message": "Take a picture and create a 'Back in the Day' commemorative poster featuring the subject. If an external master prompt specifies a year, USE THAT YEAR. If no year is specified, analyze the subject's apparent age and estimate their birth year (e.g., if they appear 40 years old, use a year approximately 40 years ago). Design a vintage poster with the subject's portrait centered, surrounded by a collage of iconic images from that specific year: major world events and news headlines, popular movies and TV shows, music albums and top songs, new inventions and technology, popular vehicles and cars, sports championships, fashion trends and cultural icons, and cost of living data. Title at top: 'BACK IN THE DAY - [YEAR]'. Use vintage newspaper/magazine aesthetic with 8-12 labeled images arranged around the central portrait. Period-appropriate fonts, color schemes, and nostalgic design that looks like an authentic gift shop commemorative poster. Photorealistic rendering."
+  },
+  {
     "name": "BACKUP SINGER",
     "category": [
       "MUSIC",
@@ -4051,6 +4061,16 @@
     "message": "Take a picture and transform it into a microfiche-style archival image.\n\nCONTENT SELECTION (CRITICAL):\n• If an external master prompt specifies document content, USE THAT\n• If not specified, SELECT EXACTLY ONE using the RANDOM SEED\n• Use the LAST DIGIT of the RANDOM SEED modulo 4:\n  - 0: Newspaper clippings and headlines\n  - 1: Government records and forms\n  - 2: Technical manuals and schematics\n  - 3: Personal records and photographs\n\nSTYLE:\n• High-contrast monochrome\n• Dense information layout\n• Grid-based microfilm structure\n• Subject remains recognizable\n\nFINAL RESULT:\nThe image should resemble a scanned microfiche frame packed with archival information."
   },
   {
+    "name": "MIDDLE EARTH",
+    "category": [
+      "FANTASY",
+      "LOTR",
+      "HOBBIT",
+      "TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform the subject into a Middle-earth race. Preserve recognizable facial structure, expressions, body proportions, and personality while adapting them to authentic race features. Translate clothing into race-appropriate attire, armor, or robes while retaining original silhouette and identity cues. Cinematic Peter Jackson aesthetic with proper lighting and atmosphere. The subject must appear fully as the race, naturally integrated into appropriate Middle-earth environment (Rivendell, Moria, Shire, Rohan, Lothlorien, Mordor, forests, mountains).\n\nSELECTION (CRITICAL):\n• If an external master prompt specifies a race, USE THAT RACE\n• If none is specified, SELECT EXACTLY ONE using LAST TWO DIGITS modulo 20:\n  - 0: High Elf (pointed ears, ethereal beauty, ageless grace, noble bearing of Rivendell)\n  - 1: Wood Elf (pointed ears, forest warrior, keen senses, Mirkwood guardians like Legolas)\n  - 2: Dark Elf/Noldor (pointed ears, intense features, tragic history, great craftsmen)\n  - 3: Half-Elf (pointed ears, choice of mortality, both human and elvish qualities)\n  - 4: Dwarf of Durin's Folk (robust build, thick magnificent beard, sturdy features, Moria heritage)\n  - 5: Dwarf of the Iron Hills (battle-hardened, fierce warrior, heavily armored)\n  - 6: Dwarf of the Blue Mountains (skilled craftsmen, exiled nobility, refined features)\n  - 7: Hobbit of the Shire (shorter stature, curly hair, bare furry feet, cheerful appearance)\n  - 8: Hobbit Fallohide (taller hobbit, adventurous spirit, slender build like Bilbo)\n  - 9: Uruk-hai (muscular orc, war-painted, battle-scarred warrior, Saruman's creation)\n  - 10: Orc of Mordor (twisted features, dark skin, vicious appearance, Sauron's armies)\n  - 11: Goblin of Misty Mountains (smaller orc, pale skin, cave-dweller, sneaky appearance)\n  - 12: Ent (tree-like humanoid, bark skin, ancient wise features, shepherd of forests)\n  - 13: Cave Troll (large humanoid, stone-like skin, brutish features, underground dweller)\n  - 14: Mountain Troll (massive humanoid, thick hide, savage appearance, turns to stone in sunlight)\n  - 15: Wizard/Istari (Maiar spirit, ancient wise features, powerful presence like Gandalf)\n  - 16: Balrog-touched Maiar (fiery features, shadow and flame, corrupted angelic being)\n  - 17: Nazgûl/Ringwraith (spectral humanoid form, corrupted king, dark robes, terrifying presence)\n  - 18: Dunlending Wild Man (rugged features, tribal appearance, Rohan's enemies)\n  - 19: Wose/Drúedain (stocky build, primitive features, ancient forest guardians, Púkel-men)"
+  },
+  {
     "name": "MIKE JUDGE ME",
     "category": [
       "CARTOON",
@@ -6362,6 +6382,16 @@
     "message": "Take a picture and place the subject on the bridge of the Starship Enterprise dressed in a Star Trek uniform. Make it photorealistic."
   },
   {
+    "name": "STAR TREK UNIVERSE",
+    "category": [
+      "SCI-FI",
+      "STAR TREK",
+      "ALIEN",
+      "TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform the subject into a Star Trek species. Preserve recognizable facial structure, expressions, body proportions, and personality while adapting them to authentic alien anatomy. Translate clothing into species-appropriate uniform or attire while retaining original silhouette and identity cues. Cinematic sci-fi lighting, photorealistic rendering, and cultural authenticity. The subject must appear fully as the species, naturally integrated into a Star Trek environment (starship bridge, engineering, planet surface, space station).\n\nSELECTION (CRITICAL):\n• If an external master prompt specifies a species, USE THAT SPECIES\n• If none is specified, SELECT EXACTLY ONE using LAST TWO DIGITS modulo 48:\n  - 0: Klingon (prominent forehead ridges, warrior appearance, powerful build)\n  - 1: Vulcan (pointed ears, arched eyebrows, logical demeanor, copper-based blood)\n  - 2: Romulan (pointed ears, V-shaped forehead ridges, stern militaristic bearing)\n  - 3: Borg (cybernetic implants, pale skin, one mechanical eye, collective consciousness)\n  - 4: Ferengi (large lobed ears, pronounced brow, sharp teeth, commercial demeanor)\n  - 5: Cardassian (ridged neck and forehead, spoon-shaped central ridge, gray skin)\n  - 6: Orion (green skin, athletic build, exotic appearance, slave trader culture)\n  - 7: Andorian (blue skin, white hair, antennae on head, warrior culture)\n  - 8: Betazoid (human-like with dark eyes, telepathic bearing, elegant features)\n  - 9: Trill (spotted pattern from forehead to toes, symbiont host markings)\n  - 10: Bajoran (ridged nose bridge, spiritual appearance, earring worn)\n  - 11: Bolian (blue skin, vertical ridge down face center, bald or light hair)\n  - 12: Tellarite (pig-like snout, heavy beard, stocky build, argumentative demeanor)\n  - 13: Benzite (blue skin, catfish-like whiskers, breathing apparatus)\n  - 14: El-Aurian (human-like, wise appearance, excellent listeners, long-lived)\n  - 15: Ocampa (pointed ears, fair skin, short lifespan appearance, psychic abilities)\n  - 16: Kazon (ridged forehead in sections, warrior appearance, tribal aesthetic)\n  - 17: Vidiian (diseased skin patches, medical implants, desperate appearance)\n  - 18: Talaxian (spotted skin, whiskers, optimistic cheerful demeanor like Neelix)\n  - 19: Krenim (ridged forehead, temporal scientist appearance, calculating demeanor)\n  - 20: Hirogen (armored ridged face, predatory hunter appearance, tall build)\n  - 21: Vorta (pale skin, violet eyes, diplomatic smooth features, Dominion servants)\n  - 22: Jem'Hadar (scaled gray skin, horned ridges, soldier physique, Dominion warriors)\n  - 23: Breen (fully helmeted and suited, mysterious masked appearance)\n  - 24: Gorn (reptilian humanoid, scaled green skin, powerful lizard-like features)\n  - 25: Nausicaan (large tusks, aggressive features, pirate-like appearance, tall)\n  - 26: Reman (pale gray skin, bat-like features, adapted to darkness, Romulan slaves)\n  - 27: Xindi-Primate (ape-like features, pronounced brow, intelligent appearance)\n  - 28: Xindi-Arboreal (sloth-like features, gentle appearance, tree-dwelling nature)\n  - 29: Suliban (mottled skin, enhanced genetics, shapeshifting appearance)\n  - 30: Denobulan (ridged forehead, wide smile, friendly optimistic appearance)\n  - 31: Rigelian (blue skin, cranial ridges, scholarly appearance)\n  - 32: Ktarian (cranial ridge with horn-like protrusions, distinctive forehead)\n  - 33: Vorgon (ridged face, time-traveling appearance, distinctive features)\n  - 34: Zaldan (hairless head, brutally honest demeanor, direct features)\n  - 35: Tamarian (ridged forehead and face, metaphorical language users)\n  - 36: Efrosian (white hair, distinctive ridged features, council member appearance)\n  - 37: Tiburonian (distinctive cranial ridge, Federation member appearance)\n  - 38: Haliian (cranial ridge, diplomatic appearance, peaceful demeanor)\n  - 39: Kaelon (human-like with subtle cranial differences, scientific appearance)\n  - 40: Dopterian (wrinkled face, large ears, shifty merchant appearance)\n  - 41: Corvallen (distinctive ridged features, smuggler appearance)\n  - 42: Antican (dog-like features, canine appearance, carnivorous culture)\n  - 43: Selay (snake-like features, reptilian appearance, rival to Anticans)\n  - 44: Xepolite (pale wrinkled skin, bald head, body trader appearance)\n  - 45: Pakled (simple appearance, thick features, deceptively intelligent)\n  - 46: Son'a (stretched skin from cosmetic procedures, decadent appearance)\n  - 47: Ba'ku (youthful ageless appearance, peaceful serene features)"
+  },
+  {
     "name": "STAR WARS",
     "category": [
       "MOVIES",
@@ -6370,6 +6400,16 @@
       "STAR WARS"
     ],
     "message": "Take a picture and place the subject in a scene from the movie Start Wars.  Subject is dressed like a character in the movie. Make it photorealistic. Sci-fi realism."
+  },
+  {
+    "name": "STAR WARS UNIVERSE",
+    "category": [
+      "SCI-FI",
+      "STAR WARS",
+      "ALIEN",
+      "TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform the subject into a Star Wars species. Preserve recognizable facial structure, expressions, body proportions, and personality while adapting them to authentic alien anatomy. Translate clothing into species-appropriate attire or armor while retaining original silhouette and identity cues. Cinematic Star Wars lighting, photorealistic rendering with film aesthetic. The subject must appear fully as the species, naturally integrated into an iconic Star Wars environment (cantina, starship, desert planet, forest moon, spaceport).\n\nSELECTION (CRITICAL):\n• If an external master prompt specifies a species, USE THAT SPECIES\n• If none is specified, SELECT EXACTLY ONE using LAST TWO DIGITS modulo 20:\n  - 0: Twi'lek (head-tails/lekku, distinctive skin colors, graceful appearance)\n  - 1: Zabrak (horned head, facial tattoos like Darth Maul, warrior appearance)\n  - 2: Togruta (montrals and head-tails, facial markings like Ahsoka, predatory heritage)\n  - 3: Chiss (blue skin, red glowing eyes, black hair, strategic military bearing)\n  - 4: Mirialan (green skin, geometric facial tattoos, spiritual appearance)\n  - 5: Nautolan (tentacle head-tails, large black eyes like Kit Fisto, amphibious features)\n  - 6: Rodian (green skin, large multifaceted eyes, snout like Greedo, bounty hunter)\n  - 7: Wookiee (full body fur, tall stature like Chewbacca, powerful build, loyal nature)\n  - 8: Pantoran (blue skin, yellow eyes, golden facial markings, cold-world adaptation)\n  - 9: Kel Dor (masked face, breathing apparatus like Plo Koon, protective goggles)\n  - 10: Duros (blue-green skin, large red eyes, hairless, skilled pilots and explorers)\n  - 11: Mon Calamari (salmon-colored skin, large fish-like eyes, webbed hands, Admiral Ackbar)\n  - 12: Quarren (squid-like head tentacles, deep-set eyes, aquatic species)\n  - 13: Ithorian (long curved neck, two mouths, gentle herbivore appearance, Hammerhead)\n  - 14: Trandoshan (reptilian scaled skin, yellow-orange eyes, clawed hands like Bossk)\n  - 15: Weequay (leathery tan skin, topknot hairstyle, Jabba's skiff guards)\n  - 16: Gran (three-eyestalks, tan skin, goat-like snout, herd species mentality)\n  - 17: Sullustan (large ears, jowls, mouse-like features like Nien Nunb, skilled pilots)\n  - 18: Aqualish (walrus-like tusks, four eyes (or two), aggressive Ponda Baba appearance)\n  - 19: Iktotchi (downward-curving horns, precognitive abilities, Force-sensitive species)"
   },
   {
     "name": "STATUE",
@@ -7553,6 +7593,16 @@
       "TECHNICAL"
     ],
     "message": "Take a picture and transform the image into an X-ray view. Semi-transparent layers revealing internal structure. Monochrome glow."
+  },
+  {
+    "name": "XENOMORPH CHEST BURST",
+    "category": [
+      "HORROR",
+      "SCI-FI",
+      "TRANSFORMATION",
+      "ALIEN"
+    ],
+    "message": "Take a picture and add an alien xenomorph chest protrusion to the subject as seen in the movie Aliens. The subject's face and body remain completely normal and recognizable. A small alien xenomorph is bursting through or protruding from the center of the subject's chest in mid-emergence - partially visible with distinctive elongated head and metallic biomechanical appearance. Include tearing and distortion of clothing around the emergence point with appropriate biological effects (small amount of alien matter, tension in fabric). Subject's expression shows surprise, shock, or remains neutral. Keep it visually striking but not overly gory. Photorealistic rendering with dramatic lighting emphasizing the moment. Make it look like a behind-the-scenes promotional photo or movie still from the Alien franchise with cinematic quality."
   },
   {
     "name": "YARD SALE ITEM",
