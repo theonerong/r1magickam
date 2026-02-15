@@ -218,6 +218,9 @@ let presetListScrollPosition = 0;
 let visiblePresetsFilterByCategory = ''; // Track selected category filter
 let mainMenuFilterByCategory = ''; // Track selected category filter for main menu
 let galleryPresetFilterByCategory = ''; // Track selected category filter for gallery preset selector
+let isStyleFilterFocused = false; // ADD THIS
+let isVisiblePresetsFilterFocused = false; // ADD THIS
+let isPresetFilterFocused = false; // ADD THISr
 
 // QR Code detection variables
 let qrDetectionInterval = null;
@@ -236,7 +239,110 @@ const PRESET_TEMPLATES = {
   render: "Take a picture and render it as [FORMAT/MEDIUM]. [ADD DETAILS ABOUT APPEARANCE, TEXTURE, TECHNICAL SPECIFICS].",
   make: "Take a picture and make the subject into [CHARACTER/CREATURE]. [ADD DETAILS ABOUT APPEARANCE, TRAITS, SETTING]. Make it photorealistic.",
   analyze: "Analyze the image and [DESCRIBE WHAT TO ANALYZE/EXTRACT]. [ADD DETAILS ABOUT OUTPUT FORMAT] and email it to me.",
-  random: "Take a picture and [DESCRIBE BASE TRANSFORMATION].\n\n[CATEGORY NAME] SELECTION (CRITICAL):\n• SELECT EXACTLY ONE option using the PRE-CALCULATED values\n• These values are MANDATORY - you MUST use them for selection\n• Do NOT choose based on popularity, visual interest, or defaults\n\nFor 2 options (50/50 split):\n• If LAST DIGIT is EVEN (0,2,4,6,8): SELECT [OPTION 1]\n• If LAST DIGIT is ODD (1,3,5,7,9): SELECT [OPTION 2]\n\nFor 3-10 options:\n• Use LAST DIGIT to select:\n  - 0: [OPTION 1]\n  - 1: [OPTION 2]\n  - 2: [OPTION 3]\n  - 3: [OPTION 4]\n  - (continue pattern)\n\nFor 11-20 options:\n• Use LAST TWO DIGITS modulo [number of options]:\n  - 0: [OPTION 1]\n  - 1: [OPTION 2]\n  - (continue pattern)\n\nFor 21+ options:\n• Use LAST TWO DIGITS modulo [number of options] to distribute evenly\n• Map each result to corresponding option in list\n\n[ADD DETAILS ABOUT HOW THE SELECTED OPTION SHOULD AFFECT THE IMAGE].",
+  
+  // Random Selection Templates
+  random_even_odd: `Take a picture and transform [DESCRIBE BASE TRANSFORMATION].
+
+SELECTION (CRITICAL):
+- If an external master prompt specifies [WHAT CAN BE SPECIFIED], USE THAT
+- If the RANDOM SEED ends in an EVEN number (0,2,4,6,8): SELECT Option A
+- If the RANDOM SEED ends in an ODD number (1,3,5,7,9): SELECT Option B
+
+If Option A:
+[DESCRIBE WHAT HAPPENS IN OPTION A - BE SPECIFIC ABOUT VISUAL DETAILS, STYLE, SETTING, ETC.]
+
+If Option B:
+[DESCRIBE WHAT HAPPENS IN OPTION B - BE SPECIFIC ABOUT VISUAL DETAILS, STYLE, SETTING, ETC.]
+
+[ADD ANY ADDITIONAL INSTRUCTIONS THAT APPLY TO BOTH OPTIONS - LIGHTING, QUALITY, PRESERVATION, ETC.]`,
+
+  random_last_digit: `Take a picture and transform [DESCRIBE BASE TRANSFORMATION].
+
+SELECTION (CRITICAL):
+- If an external master prompt specifies [WHAT CAN BE SPECIFIED], USE THAT
+- If none is specified, SELECT EXACTLY ONE using LAST DIGIT modulo [NUMBER 2-10]:
+  - 0: [OPTION 1 DESCRIPTION]
+  - 1: [OPTION 2 DESCRIPTION]
+  - 2: [OPTION 3 DESCRIPTION]
+  - 3: [OPTION 4 DESCRIPTION]
+  - 4: [OPTION 5 DESCRIPTION]
+  - 5: [OPTION 6 DESCRIPTION]
+  - 6: [OPTION 7 DESCRIPTION]
+  - 7: [OPTION 8 DESCRIPTION]
+  - 8: [OPTION 9 DESCRIPTION]
+  - 9: [OPTION 10 DESCRIPTION]
+
+[ADD ANY ADDITIONAL INSTRUCTIONS THAT APPLY TO ALL OPTIONS - STYLE, QUALITY, TECHNICAL DETAILS, ETC.]
+
+IMPORTANT:
+- Replace [NUMBER 2-10] with the actual number of options you have (between 2 and 10)
+- Remove any unused option lines (e.g., if you only have 5 options, remove lines 5-9)
+- Each option should be a distinct visual variation or transformation
+- For exactly 10 options, use LAST DIGIT modulo 10 (covers digits 0-9)`,
+
+  random_last_two: `Take a picture and transform [DESCRIBE BASE TRANSFORMATION].
+
+SELECTION (CRITICAL):
+- If an external master prompt specifies [WHAT CAN BE SPECIFIED], USE THAT
+- If none is specified, SELECT EXACTLY ONE using LAST TWO DIGITS modulo [NUMBER 11-99]:
+  - 0: [OPTION 1 DESCRIPTION]
+  - 1: [OPTION 2 DESCRIPTION]
+  - 2: [OPTION 3 DESCRIPTION]
+  - 3: [OPTION 4 DESCRIPTION]
+  - 4: [OPTION 5 DESCRIPTION]
+  - 5: [OPTION 6 DESCRIPTION]
+  - 6: [OPTION 7 DESCRIPTION]
+  - 7: [OPTION 8 DESCRIPTION]
+  - 8: [OPTION 9 DESCRIPTION]
+  - 9: [OPTION 10 DESCRIPTION]
+  - 10: [OPTION 11 DESCRIPTION]
+  - 11: [OPTION 12 DESCRIPTION]
+  - 12: [OPTION 13 DESCRIPTION]
+  - 13: [OPTION 14 DESCRIPTION]
+  - 14: [OPTION 15 DESCRIPTION]
+  - 15: [OPTION 16 DESCRIPTION]
+  - 16: [OPTION 17 DESCRIPTION]
+  - 17: [OPTION 18 DESCRIPTION]
+  - 18: [OPTION 19 DESCRIPTION]
+  - 19: [OPTION 20 DESCRIPTION]
+  - 20: [OPTION 21 DESCRIPTION]
+
+[ADD ANY ADDITIONAL INSTRUCTIONS THAT APPLY TO ALL OPTIONS]
+
+IMPORTANT:
+- Replace [NUMBER 11-99] with the actual number of options (between 11 and 99)
+- Add or remove option lines to match your number of options
+- Use LAST TWO DIGITS only when you have MORE than 10 options
+- Ensure the colon (:) comes immediately after the modulo number
+- Use exactly 2 spaces before each dash (-)
+- Keep all options in one continuous list with no blank lines`,
+
+  random_last_three: `Take a picture and transform [DESCRIBE BASE TRANSFORMATION].
+
+SELECTION (CRITICAL):
+- If an external master prompt specifies [WHAT CAN BE SPECIFIED], USE THAT
+- If none is specified, SELECT EXACTLY ONE using LAST THREE DIGITS modulo [NUMBER 100+]:
+  - 0: [OPTION 1 DESCRIPTION]
+  - 1: [OPTION 2 DESCRIPTION]
+  - 2: [OPTION 3 DESCRIPTION]
+  - 3: [OPTION 4 DESCRIPTION]
+  - 4: [OPTION 5 DESCRIPTION]
+  (continue numbering for all your options)
+  - 98: [OPTION 99 DESCRIPTION]
+  - 99: [OPTION 100 DESCRIPTION]
+  - 100: [OPTION 101 DESCRIPTION]
+
+[ADD ANY ADDITIONAL INSTRUCTIONS THAT APPLY TO ALL OPTIONS]
+
+IMPORTANT:
+- Replace [NUMBER 100+] with the actual number of options (101 or more)
+- Add option lines for every option you want to include
+- Use LAST THREE DIGITS only when you have 101 or more options
+- Ensure the colon (:) comes immediately after the modulo number
+- Use exactly 2 spaces before each dash (-)
+- Keep all options in one continuous list with no blank lines
+- This format is ideal for large preset collections like 120 Star Trek species or 150 character types`,
+  
   custom: ""
 };
 
@@ -728,6 +834,16 @@ function openImageViewer(index) {
   
   promptInput.value = '';
   
+  // Light up MP button if master prompt is enabled
+  const mpBtn = document.getElementById('mp-viewer-button');
+  if (mpBtn) {
+    if (masterPromptEnabled) {
+      mpBtn.classList.add('enabled');
+    } else {
+      mpBtn.classList.remove('enabled');
+    }
+  }
+  
   viewer.style.display = 'flex';
   
   // hideGallery();
@@ -887,7 +1003,7 @@ function updatePresetSelection() {
     const presetName = currentItem.querySelector('.preset-name').textContent;
     const preset = CAMERA_PRESETS.find(p => p.name === presetName);
     const categoryHint = document.getElementById('preset-selector-category-hint');
-    if (categoryHint && preset && preset.category) {
+    if (categoryHint && preset && preset.category && !isPresetFilterFocused) {
       // Clear previous content
       categoryHint.innerHTML = '';
       categoryHint.style.display = 'block';
@@ -1786,7 +1902,7 @@ function updateMenuSelection() {
     const presetIndex = parseInt(currentItem.dataset.index);
     const preset = CAMERA_PRESETS[presetIndex];
     const categoryHint = document.getElementById('menu-category-hint');
-    if (categoryHint && preset && preset.category) {
+    if (categoryHint && preset && preset.category && !isStyleFilterFocused) {
       // Clear previous content
       categoryHint.innerHTML = '';
       categoryHint.style.display = 'block';
@@ -2056,16 +2172,29 @@ async function checkForPresetsUpdates() {
     }
     
     if (hasUpdates) {
-      // Add NEW badge to button
+      // Add NEW badge to button in settings
       const statusElement = document.getElementById('updates-status');
       if (statusElement) {
         statusElement.textContent = '🔴 Updates available';
         statusElement.style.color = '#FF5722';
         statusElement.style.fontWeight = 'bold';
       }
+      
+      // Store that updates are available
+      window.hasPresetsUpdates = true;
     }
   } catch (error) {
     console.log('Could not check for updates:', error);
+  }
+}
+
+// Update master prompt indicator visibility
+function updateMasterPromptIndicator() {
+  const mpIndicator = document.getElementById('master-prompt-indicator');
+  const startScreen = document.getElementById('start-screen');
+  if (mpIndicator) {
+    // Only show if master prompt enabled AND start screen is gone
+    mpIndicator.style.display = (masterPromptEnabled && !startScreen) ? 'block' : 'none';
   }
 }
 
@@ -3024,7 +3153,7 @@ function updateVisiblePresetsSelection() {
     const presetName = currentItem.dataset.presetName;
     const preset = CAMERA_PRESETS.find(p => p.name === presetName);
     const categoryHint = document.getElementById('visible-presets-category-hint');
-    if (categoryHint && preset && preset.category) {
+    if (categoryHint && preset && preset.category && !isVisiblePresetsFilterFocused) {
       // Clear previous content
       categoryHint.innerHTML = '';
       categoryHint.style.display = 'block';
@@ -3557,7 +3686,7 @@ function updateConnectionStatus() {
       connectionStatusElement.className = 'connection-status offline';
       connectionStatusElement.querySelector('#connection-text').textContent = 'Offline';
     }
-    connectionStatusElement.style.display = 'block';
+    // connectionStatusElement.style.display = 'block'; // not auto-showing only shown on init
   }
   
   updateQueueDisplay();
@@ -4407,6 +4536,29 @@ async function initCamera() {
     }
 
     updatePresetDisplay();
+    
+    // Show online indicator for 3 seconds
+    const connectionStatus = document.getElementById('connection-status');
+    if (connectionStatus && isOnline) {
+      connectionStatus.style.display = 'block';
+      setTimeout(() => {
+        connectionStatus.style.display = 'none';
+      }, 3000);
+    }
+    
+    // Show updates indicator for 3 seconds if updates are available
+    if (window.hasPresetsUpdates) {
+      const updatesIndicator = document.getElementById('updates-indicator');
+      if (updatesIndicator) {
+        updatesIndicator.style.display = 'block';
+        setTimeout(() => {
+          updatesIndicator.style.display = 'none';
+        }, 3000);
+      }
+    }
+    
+    // Show master prompt indicator if enabled
+    updateMasterPromptIndicator();
     
     if (typeof PluginMessageHandler !== 'undefined') {
       PluginMessageHandler.postMessage(JSON.stringify({ 
@@ -5891,6 +6043,9 @@ function loadMasterPrompt() {
       masterPromptEnabled = savedEnabled === 'true';
     }
     
+    // Initialize master prompt indicator
+    updateMasterPromptIndicator();
+    
     // Load aspect ratio
     const savedAspectRatio = localStorage.getItem(ASPECT_RATIO_STORAGE_KEY);
     if (savedAspectRatio) {
@@ -7127,6 +7282,21 @@ if (startBtn) {
       visiblePresetsFilterText = e.target.value;
       populateVisiblePresetsList();
     });
+    
+    // Hide category footer when field is focused (keyboard appears)
+    visiblePresetsFilter.addEventListener('focus', () => {
+      isVisiblePresetsFilterFocused = true;
+      const categoryHint = document.getElementById('visible-presets-category-hint');
+      if (categoryHint) {
+        categoryHint.style.display = 'none';
+      }
+    });
+    
+    // Show category footer when keyboard dismissed
+    visiblePresetsFilter.addEventListener('blur', () => {
+      isVisiblePresetsFilterFocused = false;
+      // Category footer will be restored by updateVisiblePresetsSelection when needed
+    });
   }
   
   const visiblePresetsSelectAll = document.getElementById('visible-presets-select-all');
@@ -7829,6 +7999,13 @@ document.addEventListener('touchend', () => {
         textarea.disabled = !masterPromptEnabled;
       }
       saveMasterPrompt();
+      
+      // Update main screen indicator
+      const mpIndicator = document.getElementById('master-prompt-indicator');
+      if (mpIndicator) {
+        mpIndicator.style.display = masterPromptEnabled ? 'block' : 'none';
+      }
+
       updateMasterPromptDisplay();
     });
   }
@@ -7846,7 +8023,7 @@ document.addEventListener('touchend', () => {
     });
   }
 
-  const styleFilter = document.getElementById('style-filter');
+ const styleFilter = document.getElementById('style-filter');
   let filterDebounceTimeout = null;
   if (styleFilter) {
     styleFilter.addEventListener('input', (e) => {
@@ -7857,6 +8034,21 @@ document.addEventListener('touchend', () => {
       filterDebounceTimeout = setTimeout(() => {
         populateStylesList();
       }, 150); // Wait 150ms after user stops typing
+    });
+    
+    // Hide category footer when field is focused (keyboard appears)
+    styleFilter.addEventListener('focus', () => {
+      isStyleFilterFocused = true;
+      const categoryHint = document.getElementById('menu-category-hint');
+      if (categoryHint) {
+        categoryHint.style.display = 'none';
+      }
+    });
+    
+    // Show category footer when keyboard dismissed
+    styleFilter.addEventListener('blur', () => {
+      isStyleFilterFocused = false;
+      // Category footer will be restored by updateMenuSelection when needed
     });
   }
    
@@ -8276,6 +8468,7 @@ document.addEventListener('touchend', () => {
     
     // Hide footer and controls when user starts typing (keyboard appears)
     presetFilter.addEventListener('focus', () => {
+      isPresetFilterFocused = true;
       // Hide category footer
       const categoryHint = document.getElementById('preset-selector-category-hint');
       if (categoryHint) {
@@ -8291,6 +8484,7 @@ document.addEventListener('touchend', () => {
     
     // Show them back when user is done typing (keyboard dismissed)
     presetFilter.addEventListener('blur', () => {
+      isPresetFilterFocused = false;
       // Only restore multi-preset controls if we're in multi-preset mode
       if (isMultiPresetMode) {
         const multiControls = document.getElementById('multi-preset-controls');
