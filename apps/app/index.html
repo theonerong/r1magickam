@@ -80,6 +80,16 @@
         <div id="connection-status" class="connection-status online" style="display: none;">
             <span id="connection-text">Online</span>
         </div>
+
+        <!-- Master Prompt Indicator -->
+        <div id="master-prompt-indicator" class="master-prompt-indicator" style="display: none;">
+            <span>MASTER ON</span>
+        </div>
+        
+        <!-- Updates Available Indicator -->
+        <div id="updates-indicator" class="updates-indicator" style="display: none;">
+            <span>🔴 Updates</span>
+        </div>
         
         <!-- Queue Status -->
         <div id="queue-status" class="queue-status" style="display: none;">
@@ -532,6 +542,10 @@
                                 <option value="render">Render as format/medium</option>
                                 <option value="make">Make subject into character</option>
                                 <option value="analyze">Analyze and process (AI utility)</option>
+                                <option value="random_even_odd">🎲 Random: Even/Odd (2 options)</option>
+                                <option value="random_last_digit">🎲 Random: Last Digit (2-10 options)</option>
+                                <option value="random_last_two">🎲 Random: Last Two Digits (11-100 options)</option>
+                                <option value="random_last_three">🎲 Random: Last Three Digits (100+ options)</option>
                                 <option value="custom">Start from scratch</option>
                             </select>
                         </div>
@@ -692,6 +706,12 @@
                                 <li>Mention "preserve subject identity" if needed</li>
                                 <li>Specify "photorealistic" or artistic style</li>
                                 <li>Consider small screen clarity</li>
+                                <li><strong>Random Selection:</strong> Use 🎲 templates for variety across photos</li>
+                                <li><strong>Even/Odd:</strong> Perfect for 2 options (50/50 split)</li>
+                                <li><strong>Last Digit:</strong> Use for 2-10 options with LAST DIGIT modulo</li>
+                                <li><strong>Last Two Digits:</strong> Use for 11-100 options with LAST TWO DIGITS modulo</li>
+                                <li><strong>Last Three Digits:</strong> Use for 100+ options with LAST THREE DIGITS modulo</li>
+                                <li><strong>Critical Formatting:</strong> Colon immediately after modulo number, 2 spaces before dash, no blank lines between options</li>
                             </ul>
                         </div>
                     </div>
@@ -770,7 +790,7 @@
                    <div id="section-ai-presets" class="tutorial-section">
                         <h4 class="tutorial-heading">✨ AI Presets</h4>
                         <p class="tutorial-text">
-                            Browse over 700 unique and fun AI presets! Scroll through styles like Impressionism, Cyberpunk, Anime Art, Watercolor, Caricature, and much more. The current preset name appears at the bottom of the main screen. Each preset transforms your photo with a specific artistic style or effect. Some presets are created to truly randomize(using the RonDom Method©) options within the preset.   
+                            Browse over 800 unique and fun AI presets! Scroll through styles like Impressionism, Cyberpunk, Anime Art, Watercolor, Caricature, and much more. The current preset name appears at the bottom of the main screen. Each preset transforms your photo with a specific artistic style or effect. Some presets are created to truly randomize(using the RonDom Method©) options within the preset.   
                         </p>
                     </div>
 
@@ -842,13 +862,13 @@
                             <strong>Available Tools:</strong><br>
                             The image editor provides several professional editing tools located on the right side of the screen:<br><br>
                             
-                            <span style="display: inline-block; background: #222; color: #FE5F00; border: 2px solid #FE5F00; border-radius: 8px; padding: 8px 12px; margin: 4px; font-weight: bold;">✂️<br>Crop</span> <strong>Crop:</strong> Tap to activate crop mode. Two orange corner markers appear on your image. Tap and drag the top-left and bottom-right corners to select your desired crop area. Tap Crop again to apply the crop.<br><br>
+                            <strong>✂️ Crop:</strong> Tap to activate crop mode. Two orange corner markers appear on your image. Tap and drag the top-left and bottom-right corners to select your desired crop area. Tap Crop again to apply the crop.<br>
                             
-                            <span style="display: inline-block; background: #222; color: #FE5F00; border: 2px solid #FE5F00; border-radius: 8px; padding: 8px 12px; margin: 4px; font-weight: bold;">🔄<br>Rotate</span> <strong>Rotate:</strong> Rotates your image 90 degrees clockwise. Tap multiple times to rotate to your desired orientation (90°, 180°, 270°, or back to 0°).<br><br>
+                            <strong>🔄 Rotate:</strong> Rotates your image 90 degrees clockwise. Tap multiple times to rotate to your desired orientation (90°, 180°, 270°, or back to 0°).<br>
                             
-                            <span style="display: inline-block; background: #222; color: #FE5F00; border: 2px solid #FE5F00; border-radius: 8px; padding: 8px 12px; margin: 4px; font-weight: bold;">🔍<br>Sharp</span> <strong>Sharpen:</strong> Enhances image sharpness and detail. Tap to apply sharpening effect to make edges and details more crisp and defined.<br><br>
+                            <strong>🔍 Sharpen:</strong> Enhances image sharpness and detail. Tap to apply sharpening effect to make edges and details more crisp and defined.<br>
                             
-                            <span style="display: inline-block; background: #222; color: #FE5F00; border: 2px solid #FE5F00; border-radius: 8px; padding: 8px 12px; margin: 4px; font-weight: bold;">✨<br>Auto</span> <strong>Auto Correct:</strong> Automatically adjusts brightness, contrast, and color balance for optimal image quality. Great for quickly improving photos.<br><br>
+                            <strong>✨ Auto Correct:</strong> Automatically adjusts brightness, contrast, and color balance for optimal image quality. Great for quickly improving photos.<br>
                             
                             <strong>Brightness & Contrast Sliders:</strong> Located at the top of the editor, these sliders allow you to manually adjust:<br>
                             • <strong>Brightness:</strong> Range from -100 (darker) to +100 (brighter)<br>
@@ -857,8 +877,8 @@
                             
                             <strong>Saving & Undoing:</strong><br>
                             Located in the top-right corner next to the Edit Image title:<br>
-                            <span style="display: inline-block; background: #222; color: #ff9800; border: 2px solid #ff9800; border-radius: 8px; padding: 8px 12px; margin: 4px; font-weight: bold;">↶ Undo</span> <strong>Undo:</strong> Reverts your last edit. You can undo multiple times to step back through your editing history.<br>
-                            <span style="display: inline-block; background: #4CAF50; color: #fff; border: 2px solid #4CAF50; border-radius: 8px; padding: 8px 12px; margin: 4px; font-weight: bold;">💾 Save</span> <strong>Save:</strong> Saves all changes to your image. The edited image replaces the original in your gallery.<br>
+                            <strong>↶ Undo:</strong> Reverts your last edit. You can undo multiple times to step back through your editing history.<br>
+                            <strong>💾 Save:</strong> Saves all changes to your image. The edited image replaces the original in your gallery.<br>
                             <strong>×</strong> <strong>Close:</strong> Exits the editor without saving changes (unless you've already tapped Save).<br><br>
                             
                             <strong>Editing Tips:</strong><br>
