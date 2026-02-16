@@ -11,7 +11,7 @@ html, body {
     min-height: 100vh;
     background-color: #000;
     color: #fff;
-    font-family: 'Power Grotesk', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     font-size: 5vw; /* Base font size relative to viewport width */
     overflow: hidden;
     -webkit-user-select: none;

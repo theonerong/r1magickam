@@ -762,6 +762,11 @@ async function hideGallery() {
   currentGalleryPage = 1;
   await resumeCamera(); // Now this only happens when truly closing gallery
   
+  // Restore status element display (in case it was hidden by upload function)
+  if (statusElement) {
+    statusElement.style.display = 'block';
+  }
+  
   // Re-show the style reveal footer
   if (isTimerMode || isBurstMode || isMotionDetectionMode || isRandomMode || isMultiPresetMode) {
     let modeName = '';
@@ -8689,6 +8694,24 @@ async function uploadViewerImage() {
     uploadBtn.textContent = '⏳';
     if (statusElement) {
       statusElement.style.display = 'block';
+      statusElement.textContent = 'Getting server...';
+    }
+    
+    // Step 1: Get the best server from gofile.io
+    const serverResponse = await fetch('https://api.gofile.io/servers');
+    if (!serverResponse.ok) {
+      throw new Error('Failed to get upload server');
+    }
+    const serverData = await serverResponse.json();
+    
+    if (serverData.status !== 'ok' || !serverData.data || !serverData.data.servers || serverData.data.servers.length === 0) {
+      throw new Error('No upload servers available');
+    }
+    
+    // Use the first available server
+    const server = serverData.data.servers[0].name;
+    
+    if (statusElement) {
       statusElement.textContent = 'Uploading image...';
     }
     
@@ -8707,8 +8730,9 @@ async function uploadViewerImage() {
     const formData = new FormData();
     formData.append('file', blob, `magic-kamera-${Date.now()}.png`);
     
-    // Upload to gofile.io with token parameter
-    const response = await fetch('https://store2.gofile.io/uploadFile?token=', {
+    // Step 2: Upload to the assigned server (no token needed for guest uploads)
+    const uploadUrl = `https://${server}.gofile.io/uploadFile`;
+    const response = await fetch(uploadUrl, {
       method: 'POST',
       body: formData
     });
@@ -8720,11 +8744,11 @@ async function uploadViewerImage() {
     // gofile.io returns JSON with the download URL
     const result = await response.json();
     
-    if (result.status !== 'ok' || !result.data.downloadPage) {
-      throw new Error('Upload failed: ' + JSON.stringify(result));
+    if (result.status !== 'ok' || !result.data || !result.data.downloadPage) {
+      throw new Error('Upload failed: ' + (result.status || 'unknown error'));
     }
     
-    const uploadUrl = result.data.downloadPage;
+    const downloadUrl = result.data.downloadPage;
     
     if (statusElement) {
       statusElement.textContent = 'Upload successful!';
@@ -8734,14 +8758,15 @@ async function uploadViewerImage() {
     }
     
     // Show QR code
-    showQrCode(uploadUrl.trim());
+    showQrCode(downloadUrl.trim());
     
   } catch (error) {
+    console.error('Upload error:', error);
     if (statusElement) {
-      statusElement.textContent = 'Upload failed. Please try again.';
+      statusElement.textContent = 'Upload failed: ' + error.message;
       setTimeout(() => {
         statusElement.style.display = 'none';
-      }, 3000);
+      }, 4000);
     }
   } finally {
     // Re-enable button
