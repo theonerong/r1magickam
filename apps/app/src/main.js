@@ -2133,6 +2133,16 @@ async function loadStyles() {
         }
     }
     
+    // Clean up visible presets - remove any preset names that no longer exist in CAMERA_PRESETS
+    const validPresetNames = new Set(CAMERA_PRESETS.map(p => p.name));
+    const originalLength = visiblePresets.length;
+    visiblePresets = visiblePresets.filter(name => validPresetNames.has(name));
+    
+    // If we removed any invalid names, save the cleaned list
+    if (originalLength !== visiblePresets.length) {
+        saveVisiblePresets();
+    }
+    
     // If no visible presets saved, show all by default
     if (visiblePresets.length === 0 && CAMERA_PRESETS.length > 0) {
         visiblePresets = CAMERA_PRESETS.map(p => p.name);
@@ -2955,13 +2965,32 @@ function deleteCustomPreset() {
     saveVisiblePresets();
   }
   
+  // Check if we deleted the currently active preset
+  const wasCurrentPreset = (editingPresetBuilderIndex === currentPresetIndex);
+  
   // Adjust current preset index if needed
   if (currentPresetIndex >= CAMERA_PRESETS.length) {
     currentPresetIndex = CAMERA_PRESETS.length - 1;
   }
   
+  // If we deleted the current preset, switch to first visible preset
+  if (wasCurrentPreset) {
+    const visiblePresetObjects = CAMERA_PRESETS.filter(p => visiblePresets.includes(p.name));
+    if (visiblePresetObjects.length > 0) {
+      currentPresetIndex = CAMERA_PRESETS.findIndex(p => p.name === visiblePresetObjects[0].name);
+    } else if (CAMERA_PRESETS.length > 0) {
+      // No visible presets, just use first available
+      currentPresetIndex = 0;
+    }
+    // Update the camera footer immediately
+    updatePresetDisplay();
+  }
+  
   // Save changes
   saveStyles();
+  
+  // Update visible presets display to reflect deletion
+  updateVisiblePresetsDisplay();
   
   alert(`Preset "${preset.name}" deleted successfully!`);
   
@@ -3062,6 +3091,19 @@ function toggleVisiblePreset(presetName, isVisible) {
   
   saveVisiblePresets();
   updateVisiblePresetsDisplay();
+  
+  // Check if the currently active preset was just made invisible
+  const currentPreset = CAMERA_PRESETS[currentPresetIndex];
+  if (currentPreset && !isVisible && currentPreset.name === presetName) {
+    // Current preset was made invisible - switch to first visible preset
+    const visiblePresetObjects = CAMERA_PRESETS.filter(p => visiblePresets.includes(p.name));
+    if (visiblePresetObjects.length > 0) {
+      // Find index of first visible preset in CAMERA_PRESETS
+      currentPresetIndex = CAMERA_PRESETS.findIndex(p => p.name === visiblePresetObjects[0].name);
+      // Update the camera footer immediately
+      updatePresetDisplay();
+    }
+  }
   
 // Save scroll position before repopulating (like favorites does)
   const scrollContainer = document.querySelector('#visible-presets-submenu .submenu-list');
@@ -6683,6 +6725,9 @@ async function deleteStyle() {
         saveVisiblePresets();
       }
       
+      // Save whether we're deleting the currently active preset BEFORE modifying currentPresetIndex
+      const deletingCurrentPreset = (editingStyleIndex === currentPresetIndex);
+      
       // Determine new current preset index after deletion
       if (editingStyleIndex === currentPresetIndex) {
         // We deleted the currently selected preset
@@ -6699,8 +6744,35 @@ async function deleteStyle() {
       
       saveStyles();
       
-      // Update the preset display BEFORE hiding editor
+      // If we deleted the currently active preset, switch to first visible preset
+      if (deletingCurrentPreset) {
+        const visiblePresetObjects = CAMERA_PRESETS.filter(p => visiblePresets.includes(p.name));
+        if (visiblePresetObjects.length > 0) {
+          currentPresetIndex = CAMERA_PRESETS.findIndex(p => p.name === visiblePresetObjects[0].name);
+        } else if (CAMERA_PRESETS.length > 0) {
+          // No visible presets, just use first available
+          currentPresetIndex = 0;
+        }
+      }
+      
+      // After deletion, verify the current preset is visible; if not, switch to first visible
+      const currentPreset = CAMERA_PRESETS[currentPresetIndex];
+      if (currentPreset && !visiblePresets.includes(currentPreset.name)) {
+        // Current preset is not visible, switch to first visible preset
+        const visiblePresetObjects = CAMERA_PRESETS.filter(p => visiblePresets.includes(p.name));
+        if (visiblePresetObjects.length > 0) {
+          currentPresetIndex = CAMERA_PRESETS.findIndex(p => p.name === visiblePresetObjects[0].name);
+        } else if (CAMERA_PRESETS.length > 0) {
+          // No visible presets, just use first available
+          currentPresetIndex = 0;
+        }
+      }
+      
+      // Update the preset display to reflect the switch
       updatePresetDisplay();
+      
+      // Update visible presets display to reflect deletion
+      updateVisiblePresetsDisplay();
       
       hideStyleEditor();
       
@@ -7945,14 +8017,28 @@ document.addEventListener('touchend', () => {
   if (importPresetsBtn) {
     importPresetsBtn.addEventListener('click', async () => {
       try {
-        const result = await presetImporter.import();
+const result = await presetImporter.import();
         
         if (result.success) {
+          // Save preset names that existed BEFORE import (to detect truly new presets)
+          const presetsBeforeImport = new Set(CAMERA_PRESETS.map(p => p.name));
+          
           // Reload presets (merges imported + modifications)
           CAMERA_PRESETS = await mergePresetsWithStorage();
           
-          // Update visible presets to include all presets
-          visiblePresets = CAMERA_PRESETS.map(p => p.name);
+          // Clean up visible presets after reloading and add only NEW presets
+          const validPresetNames = new Set(CAMERA_PRESETS.map(p => p.name));
+          
+          // Keep existing visible presets that are still valid
+          visiblePresets = visiblePresets.filter(name => validPresetNames.has(name));
+          
+          // Add ONLY truly NEW presets (ones that didn't exist before import) as visible by default
+          CAMERA_PRESETS.forEach(preset => {
+            if (!presetsBeforeImport.has(preset.name) && !visiblePresets.includes(preset.name)) {
+              visiblePresets.push(preset.name);
+            }
+          });
+          
           saveVisiblePresets();
           
           // Update menu display
@@ -8285,14 +8371,28 @@ document.addEventListener('touchend', () => {
         
         if (shouldUpdate) {
           // Trigger import with all presets selected
-          const result = await presetImporter.import();
+const result = await presetImporter.import();
           
           if (result.success) {
+            // Save preset names that existed BEFORE import (to detect truly new presets)
+            const presetsBeforeImport = new Set(CAMERA_PRESETS.map(p => p.name));
+            
             // Reload presets
             CAMERA_PRESETS = await mergePresetsWithStorage();
             
-            // Update visible presets
-            visiblePresets = CAMERA_PRESETS.map(p => p.name);
+            // Clean up visible presets after reloading and add only NEW presets
+            const validPresetNames = new Set(CAMERA_PRESETS.map(p => p.name));
+            
+            // Keep existing visible presets that are still valid
+            visiblePresets = visiblePresets.filter(name => validPresetNames.has(name));
+            
+            // Add ONLY truly NEW presets (ones that didn't exist before import) as visible by default
+            CAMERA_PRESETS.forEach(preset => {
+              if (!presetsBeforeImport.has(preset.name) && !visiblePresets.includes(preset.name)) {
+                visiblePresets.push(preset.name);
+              }
+            });
+            
             saveVisiblePresets();
             
             // Update menu
@@ -9060,6 +9160,11 @@ document.getElementById('factory-reset-button').addEventListener('click', async 
   if (confirm(message)) {
     await presetStorage.clearFactoryPresetModifications();
     CAMERA_PRESETS = await mergePresetsWithStorage();
+    
+    // Clean up visible presets after reloading
+    const validPresetNames = new Set(CAMERA_PRESETS.map(p => p.name));
+    visiblePresets = visiblePresets.filter(name => validPresetNames.has(name));
+    saveVisiblePresets();
     
     // Update visible presets list to include restored presets
     visiblePresets = CAMERA_PRESETS.map(p => p.name);
