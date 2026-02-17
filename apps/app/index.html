@@ -1161,6 +1161,16 @@ All of the presets are optimized to avoid "camera ran dry" or "content filter" i
                 <p class="qr-expiry-text">Link expires in 24 hours</p>
             </div>
         </div>
+        <!-- Custom Alert/Confirm Modal -->
+        <div id="custom-alert-modal" class="custom-alert-modal" style="display: none;">
+          <div class="custom-alert-overlay"></div>
+          <div class="custom-alert-content">
+            <div class="custom-alert-message" id="custom-alert-message"></div>
+            <div class="custom-alert-buttons" id="custom-alert-buttons">
+              <button class="custom-alert-btn custom-alert-btn-primary" id="custom-alert-ok">OK</button>
+            </div>
+          </div>
+        </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
     <script src="https://unpkg.com/jsqr@1.4.0/dist/jsQR.js"></script>
