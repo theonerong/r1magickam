@@ -1,3 +1,18 @@
+/* Power Grotesk Font */
+@font-face {
+    font-family: 'Power Grotesk';
+    src: url('https://fonts.cdnfonts.com/s/95219/PowerGrotesk-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Power Grotesk';
+    src: url('https://fonts.cdnfonts.com/s/95219/PowerGrotesk-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+
 /* Base styles for R1 device (240x320px portrait) */
 * {
     margin: 0;
@@ -11,7 +26,7 @@ html, body {
     min-height: 100vh;
     background-color: #000;
     color: #fff;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-family: 'Power Grotesk', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     font-size: 5vw; /* Base font size relative to viewport width */
     overflow: hidden;
     -webkit-user-select: none;
@@ -3564,4 +3579,196 @@ button:disabled {
 .editor-header-save-button:active {
     background-color: #45a049;
     transform: scale(0.98);
+}
+
+/* ===== CUSTOM ALERT/CONFIRM MODAL ===== */
+
+.custom-alert-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.2s ease;
+}
+
+.custom-alert-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.custom-alert-content {
+  position: relative;
+  background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+  border-radius: 12px;
+  padding: 20px 24px;
+  max-width: 85%;
+  width: 340px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  animation: slideUp 0.25s ease;
+}
+
+.custom-alert-message {
+  font-family: 'Power Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 14px;
+  line-height: 1.4;
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 16px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.custom-alert-buttons {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.custom-alert-btn {
+  font-family: 'Power Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  min-width: 80px;
+}
+
+.custom-alert-btn-primary {
+  background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+  color: white;
+  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+}
+
+.custom-alert-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(76, 175, 80, 0.4);
+}
+
+.custom-alert-btn-primary:active {
+  transform: translateY(0);
+}
+
+.custom-alert-btn-secondary {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.custom-alert-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+.custom-alert-btn-secondary:active {
+  transform: translateY(0);
+}
+
+.custom-alert-btn-danger {
+  background: linear-gradient(135deg, #f44336 0%, #d32f2f 100%);
+  color: white;
+  box-shadow: 0 4px 12px rgba(244, 67, 54, 0.3);
+}
+
+.custom-alert-btn-danger:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(244, 67, 54, 0.4);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .custom-alert-content {
+    width: 80%;
+    padding: 16px 20px;
+  }
+  
+  .custom-alert-message {
+    font-size: 13px;
+  }
+  
+  .custom-alert-btn {
+    padding: 7px 16px;
+    font-size: 12px;
+    min-width: 70px;
+  }
+}
+
+/* ===== IMPORT PRESET TICKET BADGES ===== */
+
+.preset-ticket {
+  display: inline-block;
+  font-family: 'Power Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  padding: 3px 8px;
+  margin-left: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  position: relative;
+  line-height: 1;
+  clip-path: polygon(
+    0% 20%, 3% 0%, 97% 0%, 100% 20%,
+    100% 80%, 97% 100%, 3% 100%, 0% 80%
+  );
+}
+
+.preset-ticket-new {
+  background: linear-gradient(135deg, #f44336 0%, #d32f2f 100%);
+  color: white;
+  box-shadow: 0 2px 4px rgba(244, 67, 54, 0.3);
+}
+
+.preset-ticket-updated {
+  background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+  color: white;
+  box-shadow: 0 2px 4px rgba(76, 175, 80, 0.3);
+  animation: ticketPulse 2s ease-in-out infinite;
+}
+
+/* Pulse animation for UPDATED tickets only */
+@keyframes ticketPulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.85;
+    transform: scale(1.05);
+  }
 }

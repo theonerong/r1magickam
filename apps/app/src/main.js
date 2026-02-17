@@ -9,6 +9,85 @@ let video, canvas, capturedImage, statusElement, resetButton;
 let stream = null;
 let videoTrack = null;
 
+// ===== CUSTOM ALERT & CONFIRM SYSTEM =====
+
+// Custom styled alert to replace browser alert()
+function customAlert(message, type = 'info') {
+  return new Promise((resolve) => {
+    const modal = document.getElementById('custom-alert-modal');
+    const messageEl = document.getElementById('custom-alert-message');
+    const buttonsEl = document.getElementById('custom-alert-buttons');
+    
+    // Set message
+    messageEl.textContent = message;
+    
+    // Set up single OK button
+    buttonsEl.innerHTML = '<button class="custom-alert-btn custom-alert-btn-primary" id="custom-alert-ok">OK</button>';
+    
+    // Show modal
+    modal.style.display = 'flex';
+    
+    // Handle OK button
+    const okBtn = document.getElementById('custom-alert-ok');
+    const handleOk = () => {
+      modal.style.display = 'none';
+      okBtn.removeEventListener('click', handleOk);
+      resolve();
+    };
+    okBtn.addEventListener('click', handleOk);
+  });
+}
+
+// Custom styled confirm to replace browser confirm()
+function customConfirm(message, options = {}) {
+  return new Promise((resolve) => {
+    const modal = document.getElementById('custom-alert-modal');
+    const messageEl = document.getElementById('custom-alert-message');
+    const buttonsEl = document.getElementById('custom-alert-buttons');
+    
+    // Set message
+    messageEl.textContent = message;
+    
+    // Set up Yes/No buttons
+    const yesText = options.yesText || 'Yes';
+    const noText = options.noText || 'No';
+    const danger = options.danger ? 'custom-alert-btn-danger' : 'custom-alert-btn-primary';
+    
+    buttonsEl.innerHTML = `
+      <button class="custom-alert-btn custom-alert-btn-secondary" id="custom-confirm-no">${noText}</button>
+      <button class="custom-alert-btn ${danger}" id="custom-confirm-yes">${yesText}</button>
+    `;
+    
+    // Show modal
+    modal.style.display = 'flex';
+    
+    // Handle buttons
+    const yesBtn = document.getElementById('custom-confirm-yes');
+    const noBtn = document.getElementById('custom-confirm-no');
+    
+    const handleYes = () => {
+      modal.style.display = 'none';
+      yesBtn.removeEventListener('click', handleYes);
+      noBtn.removeEventListener('click', handleNo);
+      resolve(true);
+    };
+    
+    const handleNo = () => {
+      modal.style.display = 'none';
+      yesBtn.removeEventListener('click', handleYes);
+      noBtn.removeEventListener('click', handleNo);
+      resolve(false);
+    };
+    
+    yesBtn.addEventListener('click', handleYes);
+    noBtn.addEventListener('click', handleNo);
+  });
+}
+
+// Override native alert and confirm (optional - for easier migration)
+window.alert = customAlert;
+window.confirm = customConfirm;
+
 // Resolution settings
 const RESOLUTION_PRESETS = [
   { name: 'VGA (640x480)', width: 640, height: 480 },
@@ -2068,8 +2147,8 @@ async function loadStyles() {
         CAMERA_PRESETS = [];
         
         // Show a message that they need to import presets
-        setTimeout(() => {
-            const shouldImport = confirm('Welcome! You should import presets to get started. Would you like to import now?');
+        setTimeout(async () => {
+            const shouldImport = await confirm('Welcome! You should import presets to get started. Would you like to import now?');
             if (shouldImport) {
                 document.getElementById('menu-button').click();
                 setTimeout(() => {

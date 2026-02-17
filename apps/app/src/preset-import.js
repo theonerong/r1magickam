@@ -216,7 +216,24 @@ export class PresetImporter {
           const nameSpan = document.createElement('span');
           nameSpan.className = 'menu-item-name';
           nameSpan.textContent = preset.name;
-          nameSpan.style.cssText = 'flex: 1; text-align: left; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-weight: bold; color: #000; font-size: 12px;';
+          nameSpan.style.cssText = 'flex: 1; text-align: left; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-weight: bold; color: #000; font-size: 12px; display: flex; align-items: center;';
+
+          // Check if preset is NEW or UPDATED
+          const existingPreset = this.importedPresets.find(p => p.name === preset.name);
+          
+          if (!existingPreset) {
+            // This is a NEW preset - show RED ticket
+            const ticket = document.createElement('span');
+            ticket.className = 'preset-ticket preset-ticket-new';
+            ticket.textContent = 'NEW';
+            nameSpan.appendChild(ticket);
+          } else if (existingPreset.message !== preset.message) {
+            // This preset has been UPDATED - show GREEN ticket with pulse
+            const ticket = document.createElement('span');
+            ticket.className = 'preset-ticket preset-ticket-updated';
+            ticket.textContent = 'UPDATED';
+            nameSpan.appendChild(ticket);
+          }
 
           item.appendChild(checkbox);
           item.appendChild(nameSpan);
