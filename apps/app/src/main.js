@@ -469,10 +469,10 @@ function showStyleReveal(styleName) {
     styleRevealText = document.getElementById('style-reveal-text');
   }
 
-  
   if (!styleRevealElement || !styleRevealText) return;
   
-  styleRevealText.textContent = styleName;
+  // If NO MAGIC MODE is on, always show NO MAGIC MODE in popup
+  styleRevealText.textContent = noMagicMode ? '⚡ NO MAGIC MODE' : styleName;
   styleRevealElement.style.display = 'block';
   
   styleRevealTimeout = setTimeout(() => {
@@ -847,18 +847,20 @@ async function hideGallery() {
   }
   
   // Re-show the style reveal footer
-  if (isTimerMode || isBurstMode || isMotionDetectionMode || isRandomMode || isMultiPresetMode) {
+  if (noMagicMode) {
+    if (statusElement) statusElement.textContent = '⚡ NO MAGIC MODE';
+    showStyleReveal('⚡ NO MAGIC MODE');
+  } else if (isTimerMode || isBurstMode || isMotionDetectionMode || isRandomMode || isMultiPresetMode) {
     let modeName = '';
     if (isTimerMode) modeName = '⏱️ Timer Mode';
     else if (isBurstMode) modeName = '📸 Burst Mode';
     else if (isMotionDetectionMode) modeName = '👁️ Motion Detection';
     else if (isRandomMode) modeName = '🎲 Random Mode';
+    if (statusElement) statusElement.textContent = `${modeName} • ${CAMERA_PRESETS[currentPresetIndex] ? CAMERA_PRESETS[currentPresetIndex].name : ''}`;
     showStyleReveal(modeName);
   } else {
-    // Show current preset name
-    if (CAMERA_PRESETS && CAMERA_PRESETS[currentPresetIndex]) {
-      showStyleReveal(CAMERA_PRESETS[currentPresetIndex].name);
-    }
+    // Update both footer AND popup immediately
+    updatePresetDisplay();
   }
 }
 
@@ -953,7 +955,7 @@ async function deleteViewerImage() {
     return;
   }
   
-  if (confirm('Delete this image from gallery?')) {
+  if (await confirm('Delete this image from gallery?')) {
     const imageToDelete = galleryImages[currentViewerImageIndex];
     
     // Remove from IndexedDB
@@ -1712,7 +1714,7 @@ async function batchDeleteImages() {
   if (selectedBatchImages.size === 0) return;
   
   const count = selectedBatchImages.size;
-  const confirmed = confirm(`Are you sure you want to delete ${count} selected image${count > 1 ? 's' : ''}? This cannot be undone.`);
+  const confirmed = await confirm(`Are you sure you want to delete ${count} selected image${count > 1 ? 's' : ''}? This cannot be undone.`);
   
   if (!confirmed) return;
   
@@ -2743,7 +2745,9 @@ function toggleMotionDetection() {
   if (isMotionDetectionMode) {
     btn.classList.add('active');
     btn.title = 'Motion Detection: ON';
-    statusElement.textContent = `Motion Detection mode ON • ${CAMERA_PRESETS[currentPresetIndex].name}`;
+    statusElement.textContent = noMagicMode 
+      ? `⚡ NO MAGIC MODE • 👁️ Motion Detection`
+      : `Motion Detection mode ON • ${CAMERA_PRESETS[currentPresetIndex].name}`;
     showStyleReveal('👁️ Motion Detection');
     } else {
     btn.classList.remove('active');
@@ -2771,7 +2775,9 @@ function toggleMotionDetection() {
     
     // Show current preset when motion detection is turned off
     if (CAMERA_PRESETS && CAMERA_PRESETS[currentPresetIndex]) {
-      statusElement.textContent = `Style: ${CAMERA_PRESETS[currentPresetIndex].name}`;
+      statusElement.textContent = noMagicMode
+        ? `⚡ NO MAGIC MODE`
+        : `Style: ${CAMERA_PRESETS[currentPresetIndex].name}`;
       showStyleReveal(CAMERA_PRESETS[currentPresetIndex].name);
     }
   }
@@ -2936,7 +2942,7 @@ function getAllCategories() {
 }
 
 // Save custom preset
-function saveCustomPreset() {
+async function saveCustomPreset() {
   const name = document.getElementById('preset-builder-name').value.trim();
   const categoryInput = document.getElementById('preset-builder-category').value.trim();
   const prompt = document.getElementById('preset-builder-prompt').value.trim();
@@ -2979,7 +2985,7 @@ function saveCustomPreset() {
     // Creating new preset - check if name already exists
     const existingIndex = CAMERA_PRESETS.findIndex(p => p.name.toUpperCase() === name.toUpperCase());
     if (existingIndex !== -1) {
-      if (!confirm(`A preset named "${name}" already exists. Do you want to overwrite it?`)) {
+      if (!await confirm(`A preset named "${name}" already exists. Do you want to overwrite it?`)) {
         return;
       }
       // Remove the existing preset
@@ -3021,7 +3027,7 @@ function saveCustomPreset() {
 }
 
 // Delete custom preset from builder
-function deleteCustomPreset() {
+async function deleteCustomPreset() {
   if (editingPresetBuilderIndex < 0) {
     alert('No preset selected for deletion');
     return;
@@ -3035,7 +3041,7 @@ function deleteCustomPreset() {
     return;
   }
   
-  if (!confirm(`Delete preset "${preset.name}"? This cannot be undone.`)) {
+  if (!await confirm(`Delete preset "${preset.name}"? This cannot be undone.`)) {
     return;
   }
   
@@ -3427,6 +3433,9 @@ function toggleNoMagicMode() {
     console.error('Failed to save No Magic mode:', err);
   }
   
+  // Update the camera footer immediately
+  updateNoMagicFooter();
+  
   if (noMagicMode) {
     showStatus('No Magic Mode ON - Camera only', 2000);
   } else {
@@ -3446,9 +3455,24 @@ function loadNoMagicMode() {
         statusElement.style.color = noMagicMode ? '#4CAF50' : '';
         statusElement.style.fontWeight = noMagicMode ? '600' : '';
       }
+      
+      // Update the camera footer on startup if NO MAGIC is active
+      updateNoMagicFooter();
     }
   } catch (err) {
     console.error('Failed to load No Magic mode:', err);
+  }
+}
+
+function updateNoMagicFooter() {
+  if (!window.cameraStarted) return;
+  
+  if (noMagicMode) {
+    if (statusElement) {
+      statusElement.textContent = '⚡ NO MAGIC MODE';
+    }
+  } else {
+    updatePresetDisplay();
   }
 }
 
@@ -3760,7 +3784,9 @@ function toggleRandomMode() {
   const randomToggle = document.getElementById('random-toggle');
   if (isRandomMode) {
     randomToggle.classList.add('random-active');
-    statusElement.textContent = `Random mode ON • ${CAMERA_PRESETS[currentPresetIndex].name}`;
+    statusElement.textContent = noMagicMode
+      ? `⚡ NO MAGIC MODE • 🎲 Random Mode`
+      : `Random mode ON • ${CAMERA_PRESETS[currentPresetIndex].name}`;
     showStyleReveal('🎲 Random Mode');
   } else {
     randomToggle.classList.remove('random-active');
@@ -4262,7 +4288,9 @@ function toggleBurstMode() {
   const burstToggle = document.getElementById('burst-toggle');
   if (isBurstMode) {
     burstToggle.classList.add('burst-active');
-    statusElement.textContent = `Burst mode ON (${burstCount} photos) • ${CAMERA_PRESETS[currentPresetIndex].name}`;
+    statusElement.textContent = noMagicMode
+      ? `⚡ NO MAGIC MODE • 📸 Burst Mode`
+      : `Burst mode ON (${burstCount} photos) • ${CAMERA_PRESETS[currentPresetIndex].name}`;
     showStyleReveal('📸 Burst Mode');
   } else {
     burstToggle.classList.remove('burst-active');
@@ -4290,7 +4318,9 @@ function toggleTimerMode() {
   const timerToggle = document.getElementById('timer-toggle');
   if (isTimerMode) {
     timerToggle.classList.add('timer-active');
-    statusElement.textContent = `Timer mode ON (${timerDelay}s delay) • ${CAMERA_PRESETS[currentPresetIndex].name}`;
+    statusElement.textContent = noMagicMode
+      ? `⚡ NO MAGIC MODE • ⏱️ Timer Mode`
+      : `Timer mode ON (${timerDelay}s delay) • ${CAMERA_PRESETS[currentPresetIndex].name}`;
     showStyleReveal('⏱️ Timer Mode');
   } else {
     timerToggle.classList.remove('timer-active');
@@ -4487,7 +4517,9 @@ async function startBurstCapture() {
   
   setTimeout(() => {
     if (isBurstMode) {
-      statusElement.textContent = `Burst mode ON (${burstCount} photos) • ${CAMERA_PRESETS[currentPresetIndex].name}`;
+      statusElement.textContent = noMagicMode
+        ? `⚡ NO MAGIC MODE • 📸 Burst Mode`
+        : `Burst mode ON (${burstCount} photos) • ${CAMERA_PRESETS[currentPresetIndex].name}`;
     } else {
       updatePresetDisplay();
     }
@@ -5029,8 +5061,8 @@ function hideQueueManager() {
 }
 
 // Remove item from queue
-function removeFromQueue(index) {
-  if (confirm('Remove this photo from the sync queue?')) {
+async function removeFromQueue(index) {
+  if (await confirm('Remove this photo from the sync queue?')) {
     photoQueue.splice(index, 1);
     saveQueue();
     updateQueueDisplay();
@@ -5045,8 +5077,8 @@ function previewQueueItem(index) {
 }
 
 // Clear entire queue
-function clearQueue() {
-  if (confirm('Clear all photos from the queue? This cannot be undone.')) {
+async function clearQueue() {
+  if (await confirm('Clear all photos from the queue? This cannot be undone.')) {
     photoQueue = [];
     saveQueue();
     updateQueueDisplay();
@@ -5322,7 +5354,7 @@ window.addEventListener('scrollUp', () => {
     
     const currentPreset = CAMERA_PRESETS[currentPresetIndex];
     if (currentPreset) {
-      showStyleReveal(currentPreset.name);
+      showStyleReveal(noMagicMode ? '⚡ NO MAGIC MODE' : currentPreset.name);
     }
     
     updatePresetDisplay();
@@ -5467,7 +5499,7 @@ window.addEventListener('scrollDown', () => {
     
     const currentPreset = CAMERA_PRESETS[currentPresetIndex];
     if (currentPreset) {
-      showStyleReveal(currentPreset.name);
+      showStyleReveal(noMagicMode ? '⚡ NO MAGIC MODE' : currentPreset.name);
     }
     
     updatePresetDisplay();
@@ -5499,7 +5531,9 @@ function updatePresetDisplay() {
     }
 
     if (statusElement) {
-        statusElement.textContent = `Style: ${currentPreset.name}`;
+        statusElement.textContent = noMagicMode 
+          ? `⚡ NO MAGIC MODE`
+          : `Style: ${currentPreset.name}`;
     }
     
     // Show style reveal on screen (middle text)
@@ -5805,18 +5839,21 @@ async function hideUnifiedMenu() {
   await resumeCamera();
   
   // Re-show the style reveal footer
-  if (isTimerMode || isBurstMode || isMotionDetectionMode || isRandomMode) {
+  if (noMagicMode) {
+    // NO MAGIC MODE overrides everything in footer and popup
+    if (statusElement) statusElement.textContent = '⚡ NO MAGIC MODE';
+    showStyleReveal('⚡ NO MAGIC MODE');
+  } else if (isTimerMode || isBurstMode || isMotionDetectionMode || isRandomMode) {
     let modeName = '';
     if (isTimerMode) modeName = '⏱️ Timer Mode';
     else if (isBurstMode) modeName = '📸 Burst Mode';
     else if (isMotionDetectionMode) modeName = '👁️ Motion Detection';
     else if (isRandomMode) modeName = '🎲 Random Mode';
+    if (statusElement) statusElement.textContent = `${modeName} • ${CAMERA_PRESETS[currentPresetIndex] ? CAMERA_PRESETS[currentPresetIndex].name : ''}`;
     showStyleReveal(modeName);
   } else {
-    // Show current preset name
-    if (CAMERA_PRESETS && CAMERA_PRESETS[currentPresetIndex]) {
-      showStyleReveal(CAMERA_PRESETS[currentPresetIndex].name);
-    }
+    // Update both footer AND popup immediately
+    updatePresetDisplay();
   }
 }
 
@@ -6782,7 +6819,7 @@ async function saveStyle() {
 
 async function deleteStyle() {
   if (editingStyleIndex >= 0 && CAMERA_PRESETS.length > 1) {
-    if (confirm('Delete this style?')) {
+    if (await confirm('Delete this style?')) {
       const presetName = CAMERA_PRESETS[editingStyleIndex].name;
       
       // Check if it's a factory preset, imported preset, or user-created
@@ -8235,7 +8272,9 @@ const result = await presetImporter.import();
       updateBurstDisplay();
       
       if (isBurstMode) {
-        statusElement.textContent = `Burst mode ON (${burstCount} photos) • ${CAMERA_PRESETS[currentPresetIndex].name}`;
+        statusElement.textContent = noMagicMode
+          ? `⚡ NO MAGIC MODE • 📸 Burst Mode`
+          : `Burst mode ON (${burstCount} photos) • ${CAMERA_PRESETS[currentPresetIndex].name}`;
       }
     });
   }
@@ -8448,7 +8487,7 @@ const result = await presetImporter.import();
         if (updatedCount > 0) updateMsg.push(`${updatedCount} updated preset(s)`);
         if (newCount > 0) updateMsg.push(`${newCount} new preset(s)`);
         
-        const shouldUpdate = confirm(
+        const shouldUpdate = await confirm(
           `Found ${updateMsg.join(' and ')} available.\n\n` +
           `Would you like to import all updates now?`
         );
@@ -9261,7 +9300,7 @@ document.getElementById('factory-reset-button').addEventListener('click', async 
     ? 'This will reset to your imported preset list. Your custom presets will be kept. Continue?'
     : 'This will restore all factory presets to their original state. Your custom presets will be kept. Continue?';
   
-  if (confirm(message)) {
+  if (await confirm(message)) {
     await presetStorage.clearFactoryPresetModifications();
     CAMERA_PRESETS = await mergePresetsWithStorage();
     
