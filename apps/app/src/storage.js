@@ -78,6 +78,21 @@ class PresetStorage {
     });
   }
 
+  async clearAll() {
+    return new Promise((resolve, reject) => {
+      const transaction = this.db.transaction([STORE_NAME], 'readwrite');
+      const store = transaction.objectStore(STORE_NAME);
+      
+      // Clear everything - modifications, deletions, AND custom presets
+      const clearRequest = store.clear();
+      
+      clearRequest.onsuccess = () => resolve();
+      clearRequest.onerror = () => reject(clearRequest.error);
+      
+      transaction.onerror = () => reject(transaction.error);
+    });
+  }
+
   async clearFactoryPresetModifications() {
     return new Promise((resolve, reject) => {
       const transaction = this.db.transaction([STORE_NAME], 'readwrite');

@@ -2610,8 +2610,11 @@ function getOriginalIndexFromSorted(sortedIndex) {
 
 // Save styles to localStorage
 function saveStyles() {
+  // LEGACY FUNCTION - kept for backward compatibility during migration period
+  // New presets are saved to IndexedDB via presetStorage.saveNewPreset()
+  // This function only exists to support old localStorage-based presets
+  // and can be removed in a future version after migration period
   try {
-    // Only save custom presets (internal: false), not the 360 defaults
     const customPresets = CAMERA_PRESETS.filter(p => p.internal === false);
     localStorage.setItem(STORAGE_KEY, JSON.stringify(customPresets));
   } catch (err) {
@@ -3009,9 +3012,19 @@ async function saveCustomPreset() {
     }
   }
   
-  // Save to localStorage (save visible presets BEFORE custom presets)
+  // Save visible presets first
   saveVisiblePresets();
-  saveStyles();
+  
+  // Save custom preset to IndexedDB
+  if (editingPresetBuilderIndex >= 0) {
+    // Editing existing custom preset
+    const preset = CAMERA_PRESETS[editingPresetBuilderIndex];
+    await presetStorage.saveNewPreset(preset);
+  } else {
+    // New custom preset
+    const newPreset = CAMERA_PRESETS[CAMERA_PRESETS.length - 1]; // Just added
+    await presetStorage.saveNewPreset(newPreset);
+  }
   
   // Show success message
   alert(editingPresetBuilderIndex >= 0 ? `Preset "${name}" updated!` : `Preset "${name}" saved successfully!`);
@@ -3076,7 +3089,12 @@ async function deleteCustomPreset() {
     updatePresetDisplay();
   }
   
-  // Save changes
+  // Remove from IndexedDB
+  const transaction = presetStorage.db.transaction(['presets'], 'readwrite');
+  const store = transaction.objectStore('presets');
+  await store.delete(`new_${preset.name}`);
+  
+  // Also remove from old localStorage (legacy)
   saveStyles();
   
   // Update visible presets display to reflect deletion
@@ -6820,7 +6838,7 @@ async function saveStyle() {
     saveVisiblePresets();
   }
   
-  saveStyles();
+  // saveStyles(); // REMOVED - redundant, already saved to IndexedDB above
   
   alert(editingStyleIndex >= 0 ? `Preset "${name}" updated!` : `Preset "${name}" saved!`);
   
@@ -9305,32 +9323,30 @@ async function importFromQRCode() {
   }
 }
 
-// Factory reset handler
+// Database reset handler - clears ALL modifications and custom presets
 document.getElementById('factory-reset-button').addEventListener('click', async () => {
   const message = hasImportedPresets 
-    ? 'This will reset to your imported preset list. Your custom presets will be kept. Continue?'
-    : 'This will restore all factory presets to their original state. Your custom presets will be kept. Continue?';
+    ? 'This will delete ALL custom presets and undo ALL modifications, returning to your clean imported preset list. This cannot be undone. Continue?'
+    : 'This will delete ALL custom presets and restore all presets to their original state. This cannot be undone. Continue?';
   
   if (await confirm(message)) {
-    await presetStorage.clearFactoryPresetModifications();
+    // Clear ALL records from preset storage (modifications, deletions, AND custom presets)
+    await presetStorage.clearAll();
+    
+    // Reload presets from imported list or factory presets
     CAMERA_PRESETS = await mergePresetsWithStorage();
     
-    // Clean up visible presets after reloading - only keep presets that still exist
-    const validPresetNames = new Set(CAMERA_PRESETS.map(p => p.name));
-    visiblePresets = visiblePresets.filter(name => validPresetNames.has(name));
-    
-    // If no visible presets remain after cleanup, restore all as visible
-    if (visiblePresets.length === 0 && CAMERA_PRESETS.length > 0) {
+    // Reset visible presets to show everything (fresh start)
+    if (CAMERA_PRESETS.length > 0) {
         visiblePresets = CAMERA_PRESETS.map(p => p.name);
+        saveVisiblePresets();
     }
-    
-    saveVisiblePresets();
     
     renderMenuStyles();
     
     const successMessage = hasImportedPresets
-      ? 'Presets reset to imported list!'
-      : 'Factory presets restored successfully!';
+      ? 'All custom presets deleted and modifications cleared. Reset to imported presets!'
+      : 'All custom presets deleted and modifications cleared!';
     alert(successMessage);
   }
 });
