@@ -3103,7 +3103,18 @@ function populateVisiblePresetsList() {
   
   list.innerHTML = '';
   
-  const allPresets = CAMERA_PRESETS.filter(p => !p.internal);
+  // Only show presets that were explicitly imported or are user-created custom presets
+// Do NOT show factory presets from JSON that weren't imported
+const importedPresetNames = new Set(presetImporter.getImportedPresets().map(p => p.name));
+const allPresets = CAMERA_PRESETS.filter(p => {
+  if (p.internal) return false;  // Never show internal presets
+  
+  // Show if: explicitly imported OR user-created custom preset
+  const isImported = importedPresetNames.has(p.name);
+  const isCustom = !factoryPresets.some(fp => fp.name === p.name);
+  
+  return isImported || isCustom;
+});
   const filtered = allPresets.filter(preset => {
     // First apply text search filter
     if (visiblePresetsFilterText) {
@@ -8489,7 +8500,7 @@ const result = await presetImporter.import();
         
         const shouldUpdate = await confirm(
           `Found ${updateMsg.join(' and ')} available.\n\n` +
-          `Would you like to import all updates now?`
+          `Would you like to import updates now?`
         );
         
         if (shouldUpdate) {
@@ -9304,13 +9315,15 @@ document.getElementById('factory-reset-button').addEventListener('click', async 
     await presetStorage.clearFactoryPresetModifications();
     CAMERA_PRESETS = await mergePresetsWithStorage();
     
-    // Clean up visible presets after reloading
+    // Clean up visible presets after reloading - only keep presets that still exist
     const validPresetNames = new Set(CAMERA_PRESETS.map(p => p.name));
     visiblePresets = visiblePresets.filter(name => validPresetNames.has(name));
-    saveVisiblePresets();
     
-    // Update visible presets list to include restored presets
-    visiblePresets = CAMERA_PRESETS.map(p => p.name);
+    // If no visible presets remain after cleanup, restore all as visible
+    if (visiblePresets.length === 0 && CAMERA_PRESETS.length > 0) {
+        visiblePresets = CAMERA_PRESETS.map(p => p.name);
+    }
+    
     saveVisiblePresets();
     
     renderMenuStyles();
