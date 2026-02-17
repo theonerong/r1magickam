@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>Magic Kamera</title>
-  <script type="module" crossorigin src="./assets/main-yYQskcpI.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/main-CStZIYF8.css">
+  <script type="module" crossorigin src="./assets/main-NplQbB9j.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/main-D9k2h0JC.css">
 </head>
 <body>
     <div id="app">
@@ -1161,6 +1161,16 @@ All of the presets are optimized to avoid "camera ran dry" or "content filter" i
                 <p id="qr-url-text" class="qr-url-text"></p>
                 <p class="qr-expiry-text">Link expires in 24 hours</p>
             </div>
+        </div>
+        <!-- Custom Alert/Confirm Modal -->
+        <div id="custom-alert-modal" class="custom-alert-modal" style="display: none;">
+          <div class="custom-alert-overlay"></div>
+          <div class="custom-alert-content">
+            <div class="custom-alert-message" id="custom-alert-message"></div>
+            <div class="custom-alert-buttons" id="custom-alert-buttons">
+              <button class="custom-alert-btn custom-alert-btn-primary" id="custom-alert-ok">OK</button>
+            </div>
+          </div>
         </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
