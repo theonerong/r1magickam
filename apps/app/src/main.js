@@ -2966,10 +2966,15 @@ async function saveCustomPreset() {
     ? categoryInput.split(',').map(cat => cat.trim().toUpperCase()).filter(cat => cat.length > 0)
     : ['CUSTOM'];
   
+  // Store oldName BEFORE modifying for IndexedDB cleanup later
+  let oldNameForDB = null;
+  
   // Check if we're editing an existing preset
   if (editingPresetBuilderIndex >= 0) {
     // Editing mode
     const oldName = CAMERA_PRESETS[editingPresetBuilderIndex].name;
+    oldNameForDB = oldName; // Store for IndexedDB cleanup
+    
     CAMERA_PRESETS[editingPresetBuilderIndex] = {
       name: name.toUpperCase(),
       category: categories,
@@ -2991,6 +2996,8 @@ async function saveCustomPreset() {
       if (!await confirm(`A preset named "${name}" already exists. Do you want to overwrite it?`)) {
         return;
       }
+      // Store old name for IndexedDB cleanup
+      oldNameForDB = CAMERA_PRESETS[existingIndex].name;
       // Remove the existing preset
       CAMERA_PRESETS.splice(existingIndex, 1);
     }
@@ -3016,15 +3023,19 @@ async function saveCustomPreset() {
   saveVisiblePresets();
   
   // Save custom preset to IndexedDB
-  if (editingPresetBuilderIndex >= 0) {
-    // Editing existing custom preset
-    const preset = CAMERA_PRESETS[editingPresetBuilderIndex];
-    await presetStorage.saveNewPreset(preset);
-  } else {
-    // New custom preset
-    const newPreset = CAMERA_PRESETS[CAMERA_PRESETS.length - 1]; // Just added
-    await presetStorage.saveNewPreset(newPreset);
+  const finalPreset = editingPresetBuilderIndex >= 0 
+    ? CAMERA_PRESETS[editingPresetBuilderIndex]
+    : CAMERA_PRESETS[CAMERA_PRESETS.length - 1];
+  
+  // If name changed from old name, delete old IndexedDB record first
+  if (oldNameForDB && oldNameForDB !== finalPreset.name) {
+    const transaction = presetStorage.db.transaction(['presets'], 'readwrite');
+    const store = transaction.objectStore('presets');
+    await store.delete(`new_${oldNameForDB}`);
   }
+  
+  // Save new/updated preset to IndexedDB
+  await presetStorage.saveNewPreset(finalPreset);
   
   // Show success message
   alert(editingPresetBuilderIndex >= 0 ? `Preset "${name}" updated!` : `Preset "${name}" saved successfully!`);
