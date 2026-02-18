@@ -218,6 +218,15 @@
     "message": "Take a picture and transform the image into African tribal mask art. Simplify facial features, use bold geometric shapes, earthy colors, carved-wood textures, and ceremonial symbolism while keeping the subject recognizable."
   },
   {
+    "name": "AFROFUTURISM",
+    "category": [
+      "SCI-FI",
+      "CULTURAL",
+      "FUTURISM"
+    ],
+    "message": "Take a picture and transform the image into an Afrofuturist visual narrative.\n\nSELECTION (CRITICAL):\n• If an external master prompt specifies mythological or technological emphasis, USE THAT\n• If none is specified, blend futuristic technology with cultural symbolism\n\nSTYLE REQUIREMENTS (MANDATORY):\n• Science fiction fused with African mythology\n• Vibrant color palette\n• Advanced technology integrated with cultural patterns\n• Themes of liberation and identity\n\nFINAL RESULT:\nThe final image should depict a vibrant, culturally rooted, technologically advanced future vision."
+  },
+  {
     "name": "AIRPORT SECURITY SCAN",
     "category": [
       "HUMOR",
@@ -429,6 +438,15 @@
       "CLASSIC"
     ],
     "message": "Take a picture and transform it into the photographic style of Ansel Adams.\n\nMEDIUM & TECHNIQUE (CRITICAL):\n• Black-and-white photography ONLY\n• Large-format camera look\n• Extreme tonal range using the Zone System\n• Crisp focus and deep depth of field\n\nTONAL CONTROL:\n• Rich blacks with detail\n• Bright highlights without clipping\n• Strong midtone separation\n• Dramatic contrast without harshness\n\nSUBJECT & SCENE:\n• The subject may be human or environmental\n• If human, they must feel small within the scene\n• Emphasis on scale, form, texture, and light\n\nTEXTURE EMPHASIS:\n• Rock, clouds, trees, skin, fabric, water\n• Fine grain — never noisy\n\nLIGHTING:\n• Natural light only\n• Emphasis on dramatic skies, clouds, and shadows\n• No artificial light sources\n\nABSOLUTE PROHIBITIONS:\n• NO color\n• NO painterly effects\n• NO modern HDR\n• NO soft-focus aesthetics\n\nFINAL RESULT:\nThe image must look like a meticulously exposed and printed Ansel Adams photograph — timeless, monumental, and technically precise."
+  },
+  {
+    "name": "ANTIDESIGN",
+    "category": [
+      "GRAPHIC",
+      "EXPERIMENTAL",
+      "REBELLIOUS"
+    ],
+    "message": "Take a picture and transform the image into an anti-design graphic aesthetic.\n\nSELECTION (CRITICAL):\n• If an external master prompt specifies color intensity or typography focus, USE THAT\n• If none is specified, apply chaotic layout principles\n\nSTYLE REQUIREMENTS (MANDATORY):\n• Clashing colors\n• Distorted typography\n• Asymmetry\n• Intentionally chaotic composition\n\nFINAL RESULT:\nThe final image should resemble a rebellious, anti-minimalist graphic design piece."
   },
   {
     "name": "ANTIQUES",
@@ -1280,6 +1298,15 @@
     "message": "Take a picture and transform the image into a traditional Chinese ink wash painting. Use flowing brushstrokes, monochrome tones, soft gradients, and poetic negative space."
   },
   {
+    "name": "CHINOISERIE",
+    "category": [
+      "ART",
+      "HISTORICAL",
+      "DECORATIVE"
+    ],
+    "message": "Take a picture and transform the image into the Chinoiserie decorative art style.\n\nSELECTION (CRITICAL):\n• If an external master prompt specifies a particular color palette or emphasis, USE THAT\n• If none is specified, apply a balanced traditional Chinoiserie interpretation\n\nSTYLE REQUIREMENTS (MANDATORY):\n• 17th–18th century European decorative interpretation of East Asian art\n• Rococo-influenced asymmetry\n• Elegant, romanticized composition\n\nTHEMES & MOTIFS:\n• Pagodas, delicate landscapes, sprawling gardens\n• Exotic birds, peonies, florals\n• Dragons, phoenixes, flowing clouds\n• Graceful figures in stylized scenery\n\nCOLOR PALETTE:\n• Rich reds, deep blues, gold accents\n• Or soft sage green, charcoal, muted ivory\n\nVISUAL STYLE:\n• Ornate detailing\n• Decorative surface design aesthetic\n• Hand-painted porcelain or wallpaper appearance\n\nFINAL RESULT:\nThe final image should resemble a refined Chinoiserie decorative artwork with whimsical, romantic, Rococo-influenced elegance."
+  },
+  {
     "name": "CHOCOLATE SCULPTURE",
     "category": [
       "FOOD",
@@ -1591,6 +1618,15 @@
     "message": "Take a picture and transform it into an authentic photocopier copy made by pressing the subject directly against the copier glass.\n\nThe final image must resemble a single sheet of copier paper viewed flat and fully visible within the frame, including paper edges and margins. Do not crop the page.\n\nThe subject should appear distorted from being pressed against the glass: flattened features, slightly squashed face or objects, widened nose, compressed cheeks, stretched hands or fingers, and uneven contact areas. The distortion should feel physical and silly, not warped digitally.\n\nApply classic photocopier artifacts: harsh black-and-white or muddy grayscale tones, blown highlights, crushed shadows, toner speckling, faint streaks, edge shadows from the copier lid, uneven exposure, and slight skew or rotation. Include faint dust marks or smudges typical of a well-used office copier.\n\nLighting should feel internal to the copier — flat, overexposed, and directionless — not like studio lighting. The background should be blank or show subtle shadows from the copier lid.\n\nOptionally include a small copier interface imprint or margin text such as page numbers, contrast indicators, or misaligned registration marks, rendered faintly and partially cut off.\n\nIf external master prompt text is provided, use it to influence the subject’s pose (e.g., face, hands, object pressed to glass) or tone of humor. The result should feel unmistakably like a dumb, impulsive office photocopy — absurd, tactile, and clearly readable on a small screen."
   },
   {
+    "name": "COTTAGECORE",
+    "category": [
+      "AESTHETIC",
+      "NATURE",
+      "ROMANTIC"
+    ],
+    "message": "Take a picture and transform the image into Cottagecore art.\n\nSELECTION (CRITICAL):\n• If an external master prompt specifies season or mood, USE THAT\n• If none is specified, apply a cozy pastoral setting\n\nSTYLE REQUIREMENTS (MANDATORY):\n• Soft pastel or earthy tones\n• Gardens, wildflowers, cottages\n• Warm nostalgic atmosphere\n\nFINAL RESULT:\nThe final image should resemble a romantic pastoral illustration celebrating rural simplicity."
+  },
+  {
     "name": "COURTROOM SKETCH",
     "category": [
       "HUMOR",
@@ -1803,6 +1839,15 @@
       "DEFINITION"
     ],
     "message": "Take a picture and transform it into a dictionary-style entry. Include a small, clearly visible photograph of the subject placed beside or beneath the definition, similar to a modern illustrated dictionary. Allow externally provided language to define the entry name. Use a clean, minimal layout with strong typography. The photo should act as a visual reference for the word, reinforcing the definition."
+  },
+  {
+    "name": "DIESELPUNK",
+    "category": [
+      "SCI-FI",
+      "RETRO FUTURE",
+      "INDUSTRIAL"
+    ],
+    "message": "Take a picture and transform the image into a Dieselpunk retro-futuristic aesthetic.\n\nSELECTION (CRITICAL):\n• If an external master prompt specifies a setting, USE THAT\n• If none is specified, apply a gritty interwar-to-1950s industrial setting\n\nSTYLE REQUIREMENTS (MANDATORY):\n• 1920s–1950s diesel-era technology\n• Oil-driven machinery and heavy industry\n• Industrial war-era influence\n• Slight dystopian tone\n\nVISUAL ELEMENTS:\n• Riveted steel, smokestacks, zeppelins\n• Heavy coats, goggles, military silhouettes\n• Brutalist or industrial architecture\n\nCOLOR PALETTE:\n• Sepia, oil-stained metals, gunmetal gray, muted browns\n\nFINAL RESULT:\nThe final image should look like a gritty diesel-powered alternate-history world from the interwar period."
   },
   {
     "name": "DIGITAL CIRCUS",
@@ -3520,6 +3565,15 @@
     "message": "Take a picture and transform the subject into a novelty souvenir item.\n\nITEM TYPE SELECTION (CRITICAL):\n• If an external master prompt suggests an item type, USE THAT ITEM TYPE\n• If no item type is provided externally, SELECT EXACTLY ONE type using the RANDOM SEED\n• If the RANDOM SEED ends in an EVEN number (0,2,4,6,8): SELECT keychain charm\n• If the RANDOM SEED ends in an ODD number (1,3,5,7,9): SELECT refrigerator magnet\n\nIf KEYCHAIN: The subject should be miniaturized as a small keychain trinket - plastic figure, acrylic photo charm, rubber PVC character, metal engraved pendant, or resin-encased image. Show metal split ring or ball chain attachment, small metal loop at top, compact size (1-3 inches). The subject's likeness as molded plastic figurine, flat acrylic photo card, rubber cutout, stamped metal relief, or clear resin dome. Include slight wear, scratches, other keys attached. Place it laying on table with keys, hanging from backpack, or in hand showing tiny scale.\n\nIf REFRIGERATOR MAGNET: The subject as a flat or slightly dimensional magnet - printed photo magnet, vinyl die-cut shape, ceramic tile, or resin-molded figure. Show flat backing with dark magnetic strip visible on reverse (if angled view), rectangular or custom die-cut shape, laminated surface. The subject as glossy photo print, colorful vinyl illustration, ceramic with glazed image, or puffy sticker style. Show it stuck to refrigerator among other magnets, holding papers, or on magnetic board in kitchen setting. Add magnet details: edge curl, faded colors, fingerprints, thin flat profile (2-4 inches).\n\nBoth should look like actual souvenir items you'd buy at a gift shop featuring the subject. Make it photorealistic as one or the other."
   },
   {
+    "name": "KIDCORE",
+    "category": [
+      "NOSTALGIA",
+      "POP",
+      "PLAYFUL"
+    ],
+    "message": "Take a picture and transform the image into Kidcore art style.\n\nSELECTION (CRITICAL):\n• If an external master prompt specifies decade emphasis, USE THAT\n• If none is specified, apply 1990s–early 2000s nostalgia\n\nSTYLE REQUIREMENTS (MANDATORY):\n• Bright neon or primary colors\n• Bold outlines\n• Flat perspective\n• Playful chaotic composition\n\nIMAGERY:\n• Rainbows, stickers, toys, playground elements\n• Graphic tees, overalls, chunky jewelry\n\nFINAL RESULT:\nThe final image should resemble a vibrant, nostalgic 90s/Y2K childhood-inspired artwork full of color and playful energy."
+  },
+  {
     "name": "KINETIC ART",
     "category": [
       "ART",
@@ -3818,6 +3872,15 @@
     "message": "Take a picture and create a cinematic two-panel composition where the subject communicates an emotional message using handwritten signs. Preserve clear facial likeness and identity while presenting the subject in a quiet, sincere moment. Design constraint: Render a single image split into exactly two side-by-side panels of equal size. In each panel, show the subject holding one handwritten sign facing the viewer. Limit the total number of signs to a maximum of two, with one short line of text per sign. Do not imply motion, animation, or time-based progression. Primary information source: If message text is provided via externally supplied details, divide the message across the two signs. Ensure the wording is original, natural, and emotionally resonant, and does not reference or recreate any specific copyrighted scene, dialogue, or characters. Secondary enhancement: If no message text is provided, infer a gentle, original two-line message based on the subject’s expression and context. Optimize the layout for small screens with bold, high-contrast handwritten text, clean spacing, and minimal clutter. Use soft, cinematic lighting, shallow depth of field, and a warm, intimate tone. Maintain an original setting and composition. Do not add additional panels, cards, or text beyond the two signs."
   },
   {
+    "name": "LOWBROW ART",
+    "category": [
+      "ART",
+      "POP SURREALISM",
+      "UNDERGROUND"
+    ],
+    "message": "Take a picture and transform the image into Lowbrow art (Pop Surrealism).\n\nSELECTION (CRITICAL):\n• If an external master prompt specifies tone (dark, humorous, rebellious), USE THAT\n• If none is specified, apply a balanced pop surrealist approach\n\nSTYLE REQUIREMENTS (MANDATORY):\n• Underground Los Angeles aesthetic\n• Blend of punk, comics, graffiti, hot-rod culture\n• Whimsical yet detailed rendering\n\nVISUAL CHARACTERISTICS:\n• Bold outlines\n• Saturated colors\n• Satirical or surreal narrative elements\n• Accessible but highly detailed painting style\n\nFINAL RESULT:\nThe final image should resemble a detailed, rebellious pop surrealist painting with humorous or surreal undertones."
+  },
+  {
     "name": "LOW POLY",
     "category": [
       "3D",
@@ -3891,6 +3954,15 @@
       "COVER"
     ],
     "message": "Take a picture and place the subject on the cover of a famous magazine with the magazine's most iconic cover format.\n\nMAGAZINE SELECTION (CRITICAL):\n• If an external master prompt specifies a magazine, USE THAT MAGAZINE\n• If none is specified, SELECT EXACTLY ONE using the PRE-CALCULATED values\n• These values are MANDATORY - you MUST use them for selection\n• Use LAST TWO DIGITS modulo 20:\n  - 0: TIME Magazine - \"Person of the Year\", red border, portrait, serious journalism\n  - 1: People Magazine - \"50 Most Beautiful People\" or \"Sexiest Man/Woman Alive\", celebrity glamour\n  - 2: Sports Illustrated Swimsuit Issue - beach location, athletic pose, iconic swimsuit photography\n  - 3: Rolling Stone - rock star portrait, music culture, bold typography, celebrity interview\n  - 4: Vogue - high fashion editorial, elegant pose, sophisticated styling, Anna Wintour era\n  - 5: National Geographic - explorer/nature, yellow border, documentary photography, world culture\n  - 6: Forbes - \"World's Most Powerful People\" or billionaire list, business portrait, success\n  - 7: Cosmopolitan - bold headlines, beauty close-up, pink branding, \"Fun Fearless Female\"\n  - 8: GQ (Gentlemen's Quarterly) - men's fashion, sharp suit, sophisticated male styling\n  - 9: Vanity Fair - Hollywood glamour, Oscar issue style, artistic celebrity photography\n  - 10: Entertainment Weekly - pop culture, movie/TV star, yellow background era\n  - 11: Teen Beat/Tiger Beat - teen idol, colorful, young celebrity heartthrob, poster-like\n  - 12: TV Guide - television star, classic TV listings magazine, retro covers\n  - 13: WIRED - tech innovator, digital culture, futuristic styling, tech CEO portrait\n  - 14: Elle - fashion forward, editorial styling, beauty and culture\n  - 15: Esquire - literary masculinity, sharp photography, \"What I've Learned\" feature\n  - 16: MAD Magazine - satirical cartoon portrait, Alfred E. Neuman style, humor parody\n  - 17: The New Yorker - illustrated portrait or photography, intellectual culture, sophisticated\n  - 18: Harper's Bazaar - high fashion avant-garde, artistic editorial photography\n  - 19: Playboy - interview subject or feature (PG version), sophisticated men's magazine aesthetic\n\nCRITICAL - FULL COVER VIEW:\n• The result should be a FULL VIEW of the magazine cover\n• Entire cover visible from top to bottom\n• All four corners of magazine visible\n• Complete magazine layout shown\n• NOT cropped - full magazine page\n• Could be photographed lying flat or standing\n• Magazine edges clearly defined\n• Complete cover composition visible\n\nMAGAZINE COVER DESIGN:\n• Authentic magazine nameplate/logo at top\n• Cover date (month/year)\n• Barcode in corner\n• Issue number\n• Price ($4.99, $5.99, etc.)\n• Magazine-specific color scheme and branding\n• Coverlines (teaser headlines)\n• Main headline related to subject\n• Authentic typography for that publication\n\nSUBJECT PHOTOGRAPHY:\n• Professional magazine-quality photography\n• Studio or location appropriate to magazine\n• Lighting style matching publication standards\n• Pose and expression appropriate to magazine type:\n  - TIME: Serious, authoritative\n  - Vogue: High fashion, editorial\n  - Sports Illustrated: Athletic, dynamic\n  - Rolling Stone: Cool, rebellious\n  - Forbes: Confident, successful\n\nCOVER HEADLINES:\n• Main headline featuring subject\n• Magazine-specific language and tone:\n  - TIME: \"Person of the Year: [Subject Name]\"\n  - People: \"[Subject]: The Story You Haven't Heard\"\n  - SI Swimsuit: \"[Subject]: This Year's Cover Model\"\n  - Forbes: \"How [Subject] Built an Empire\"\n  - Cosmo: \"[Subject] Tells All: Love, Life & Success\"\n\nCOVERLINES (Side headlines):\n• 3-6 additional story teasers\n• Magazine-appropriate topics\n• Positioned around subject (not covering face)\n• Authentic to that publication's style\n\nSTYLING:\n• Hair and makeup professional\n• Wardrobe appropriate to magazine:\n  - Vogue/Elle: Designer fashion\n  - GQ: Sharp tailoring\n  - Forbes: Business attire\n  - Rolling Stone: Rock star casual\n  - Sports Illustrated: Athletic wear or swimwear\n\nPHOTOGRAPHY STYLE:\n• Magazine-specific photo aesthetic:\n  - National Geographic: Documentary, natural lighting\n  - Vogue: High fashion editorial\n  - TIME: Authoritative portrait\n  - Rolling Stone: Cool rock photography\n  - Vanity Fair: Hollywood glamour\n\nBACKGROUND:\n• Studio backdrop or location shoot\n• Clean professional background\n• OR iconic setting for that magazine\n• Nothing competing with subject for attention\n\nLAYOUT:\n• Subject prominent and central\n• Face clearly visible\n• Text doesn't obscure subject excessively\n• Professional graphic design\n• Authentic to specific magazine's layout style\n\nERA:\n• Modern contemporary magazine design\n• OR vintage era for specific magazines (1970s Rolling Stone, 1990s Teen Beat, etc.)\n\nFINAL RESULT:\nThe result should be a FULL VIEW of the magazine cover from the selected publication with the subject as the cover star, complete with all cover elements (logo, headlines, coverlines, barcode, date), professional photography appropriate to that magazine's style, and authentic graphic design matching that publication's specific aesthetic and format - showing the entire magazine cover clearly visible and not cropped."
+  },
+  {
+    "name": "MOEBIUS STYLE",
+    "category": [
+      "ART",
+      "SCI-FI",
+      "ILLUSTRATION"
+    ],
+    "message": "Take a picture and transform the image into a detailed Franco-Belgian science fiction illustration style inspired by Jean Giraud (Moebius).\n\nSELECTION (CRITICAL):\n• If an external master prompt specifies a setting, USE THAT\n• If none is specified, apply an expansive surreal sci-fi landscape\n\nSTYLE REQUIREMENTS (MANDATORY):\n• Intricate line work\n• Surreal yet grounded realism\n• Dreamlike environments\n• Vibrant or psychedelic palette\n\nFINAL RESULT:\nThe final image should resemble a lavishly illustrated European sci-fi graphic novel panel."
   },
   {
     "name": "MAGIC EYE",
@@ -4327,6 +4399,15 @@
       "ARTISTIC"
     ],
     "message": "Take a picture and convert the image into a professional monochrome photograph using a single selected color tone.\n\nCOLOR SELECTION (CRITICAL):\n• If an external master prompt specifies a color, USE THAT COLOR\n• If none is specified, SELECT EXACTLY ONE using the RANDOM SEED\n• Use LAST TWO DIGITS modulo 12:\n  - 0: Sepia (Warm Brown)\n  - 1: Cyan\n  - 2: Deep Blue\n  - 3: Teal\n  - 4: Emerald Green\n  - 5: Crimson Red\n  - 6: Magenta\n  - 7: Purple\n  - 8: Amber\n  - 9: Gold\n  - 10: Rose\n  - 11: Slate Gray-Blue\n\nCONVERSION RULES (CRITICAL):\n• Convert the image to shades of the selected color only\n• Preserve full tonal range from darkest shade of the chosen color to its lightest tint\n• No secondary hues or color contamination\n• This is not a color filter — it must be a true monochrome tonal conversion\n\nPHOTOGRAPHIC QUALITY:\n• Maintain realistic lighting and shadow detail\n• Strong contrast and smooth tonal transitions\n• Professional fine-art or cinematic photography aesthetic\n\nIMAGE INTEGRITY:\n• Do NOT alter composition, objects, or facial features\n• Preserve original framing and perspective\n• No additional artistic stylization beyond monochrome conversion\n\nFINAL RESULT:\nThe final image must look like a professionally shot monochrome photograph rendered entirely in the selected color tone, with rich depth, clean tonal separation, and high photographic realism."
+  },
+  {
+    "name": "MONOLINE ILLUSTRATION",
+    "category": [
+      "MINIMAL",
+      "ILLUSTRATION",
+      "VECTOR"
+    ],
+    "message": "Take a picture and transform the image into a monoline illustration.\n\nSELECTION (CRITICAL):\n• If an external master prompt specifies branding use, USE THAT\n• If none is specified, apply clean minimalist icon-style rendering\n\nSTYLE REQUIREMENTS (MANDATORY):\n• Consistent line weight\n• Simplified shapes\n• No shading gradients\n• Modern minimalist aesthetic\n\nFINAL RESULT:\nThe final image should resemble a clean vector-style monoline illustration suitable for branding."
   },
   {
     "name": "MONSTER",
@@ -5033,6 +5114,15 @@
     "message": "Take a picture and transform the subject into a classic Pictionary-style drawing.\n\nRender the subject as a rough, hand-drawn black marker sketch on a clean whiteboard or paper background. The drawing should look like it was made quickly by an amateur player under time pressure — uneven lines, simple shapes, minimal detail, and imperfect proportions.\n\nPreserve just enough of the subject’s pose, silhouette, and key features so the intended idea is still recognizable, but clearly simplified into crude line art rather than a realistic portrait.\n\nOptional visual cues may be included sparingly, such as motion lines, arrows, or simple icons (e.g., sweat drops, exclamation marks) to suggest action or intent, as commonly seen in Pictionary drawings.\n\nDo NOT include written words, letters, numbers, labels, or clues. The image must rely entirely on the drawing to communicate the idea.\n\nFrame the image so the entire drawing surface is visible, as if photographed during a real game of Pictionary. The final result should feel playful, messy, and immediately readable on a small screen."
   },
   {
+    "name": "PICTOGRAM",
+    "category": [
+      "MINIMAL",
+      "ICON",
+      "GRAPHIC"
+    ],
+    "message": "Take a picture and transform the image into a pictogram-style visual symbol.\n\nSELECTION (CRITICAL):\n• If an external master prompt specifies context (signage, UI, infographic), USE THAT\n• If none is specified, apply universal signage style\n\nSTYLE REQUIREMENTS (MANDATORY):\n• Simplified shapes\n• Flat color blocks\n• High recognizability\n• Clean vector aesthetic\n\nFINAL RESULT:\nThe final image should resemble a universally recognizable pictogram symbol."
+  },
+  {
     "name": "PICTURE PERFECT",
     "category": [
       "PHOTOGRAPHY",
@@ -5718,6 +5808,15 @@
     "message": "Take a picture and transform the image into infinite visual recursion. The image contains itself within itself."
   },
   {
+    "name": "REGENCYCORE",
+    "category": [
+      "HISTORICAL",
+      "ROMANTIC",
+      "ELEGANT"
+    ],
+    "message": "Take a picture and transform the image into Regencycore aesthetic.\n\nSELECTION (CRITICAL):\n• If an external master prompt specifies drama or romance emphasis, USE THAT\n• If none is specified, apply romantic Regency elegance\n\nSTYLE REQUIREMENTS (MANDATORY):\n• Gilded accents\n• Floral motifs\n• Ornate fashion\n• Soft dramatic lighting\n\nFINAL RESULT:\nThe final image should resemble a romantic, opulent Regency-era portrait with modern flair."
+  },
+  {
     "name": "RELIGIOUS CONVERSION",
     "category": [
       "CULTURAL",
@@ -5862,6 +5961,15 @@
       "CULT CLASSIC"
     ],
     "message": "Take a picture of the subject and place them into a famous scene from a Rob Reiner film.\n\nFILM SELECTION (CRITICAL):\n• If an external master prompt suggests a Rob Reiner film, USE THAT FILM\n• If no film is provided externally, SELECT EXACTLY ONE film using the RANDOM SEED\n• If the RANDOM SEED ends in 0,1: SELECT The Princess Bride\n• If the RANDOM SEED ends in 2,3: SELECT When Harry Met Sally\n• If the RANDOM SEED ends in 4,5: SELECT Stand by Me\n• If the RANDOM SEED ends in 6: SELECT Misery\n• If the RANDOM SEED ends in 7: SELECT This Is Spinal Tap\n• If the RANDOM SEED ends in 8: SELECT A Few Good Men\n• If the RANDOM SEED ends in 9: SELECT The American President\n\nThe subject should be integrated naturally into the scene, interacting with the environment and other characters in a way that makes them the central focus.\n\nLighting, perspective, and costume should match the film style and era, making it look like a real frame from the movie.\n\nOptional flavor text from the master prompt can influence which film or scene to use, or what absurd twist to add (e.g., subject delivers the iconic line, performs the fencing duel, or sits in the famous diner scene with a ridiculous expression).\n\nThe final image should be humorous, cinematic, and instantly recognizable as a reimagined Rob Reiner movie scene starring the subject."
+  },
+  {
+    "name": "ROCKETPUNK",
+    "category": [
+      "SCI-FI",
+      "RETRO FUTURE",
+      "SPACE AGE"
+    ],
+    "message": "Take a picture and transform the image into a Rocketpunk retro-futuristic style.\n\nSELECTION (CRITICAL):\n• If an external master prompt specifies tone (optimistic or gritty), USE THAT\n• If none is specified, apply classic 1950s–1960s Space Age optimism\n\nSTYLE REQUIREMENTS (MANDATORY):\n• Sleek finned rockets\n• Bubble helmets\n• Raygun Gothic architecture\n• Mid-century atomic-age aesthetics\n\nCOLOR PALETTE:\n• Bold reds, teals, yellows\n• Chrome accents\n\nFINAL RESULT:\nThe final image should resemble a 1950s pulp sci-fi illustration envisioning an optimistic interplanetary future."
   },
   {
     "name": "ROCKWELL",
@@ -6947,7 +7055,7 @@
       "PARODY",
       "TRANSFORMATION"
     ],
-    "message": "Take a picture and transform the subject and entire scene into an ultra-budget knockoff version of itself, as if everything were produced as the cheapest possible imitation.\n\nCORE RULES (CRITICAL):\n• Do NOT add any new text to the image\n• Do NOT add listing graphics, banners, prices, or UI elements\n• Only modify text that already exists in the image\n• If an object contains visible writing or branding, subtly misspell or alter it to look like a knockoff\n• If no text exists in the image, do not add any\n\nMATERIAL DOWNGRADE RULES:\n• Metal → thin plastic or rubber\n• Glass → cloudy plastic\n• Plastic → flimsy paper or foam\n• Leather → shiny vinyl\n• Fabric → thin synthetic material\n• Wood → particle board\n• Jewelry → painted plastic imitation\n• Electronics → hollow toy-like casing\n\nSUBJECT TRANSFORMATION:\n• Clothing becomes cheaper material\n• Stitching slightly uneven\n• Fit slightly awkward but not exaggerated\n• Accessories become low-cost versions\n• Hair slightly less styled but still recognizable\n• Maintain identity — do not distort facial structure\n\nENVIRONMENT DOWNGRADE:\n• Furniture looks unstable or hollow\n• Surfaces look thin or flimsy\n• Paint slightly uneven\n• Slight color inaccuracy\n• Cheap texture substitutions\n\nTEXT MODIFICATION RULE:\n• Only alter text that already exists in the scene\n• Examples: \"Adidas\" → \"Adibas\"\n• \"Nike\" → \"Nake\"\n• \"Gucci\" → \"Guchi\"\n• Misspellings must look like cheap imitation branding\n• Do not add labels where none existed\n\nSTYLE:\n• Realistic photography\n• Bright flat lighting\n• Slight quality reduction\n• Subtle compression artifacts allowed\n• Must still look like a photograph — not a meme\n\nIMPORTANT:\n• Humor must come entirely from material downgrade and craftsmanship\n• No added captions\n• No overlays\n• No UI elements\n• The subject must remain recognizable\n\nFINAL RESULT:\nThe final image should look like a real photograph of the original scene, but every object, material, and brand has been converted into an obvious low-budget knockoff version without adding any new text or graphic elements."
+    "message": "Take a picture and transform the subject and entire scene into an ultra-budget knockoff version of itself, as if everything were produced as the cheapest possible imitation.\n\nCORE RULES (CRITICAL):\n• Do NOT add any new text to the image\n• Do NOT add listing graphics, banners, prices, or UI elements\n• Only modify text that already exists in the image\n• If an object contains visible writing or branding, subtly misspell or alter it to look like a knockoff\n• If no text exists in the image, do not add any\n\nMATERIAL DOWNGRADE RULES:\n• Metal → thin plastic or rubber\n• Glass → cloudy plastic\n• Plastic → flimsy paper or foam\n• Leather → shiny vinyl\n• Fabric → thin synthetic material\n• Wood → particle board\n• Jewelry → painted plastic imitation\n• Electronics → hollow toy-like casing\n\nOBJECT DOWNGRADE RULE (CRITICAL):\n• If an item can be replaced with a significantly cheaper functional equivalent, convert it\n• The downgrade should reduce quality, status, and durability\n• Example: A trumpet becomes a kazoo\n• A grand piano becomes a small plastic keyboard\n• A luxury watch becomes a toy watch\n• A designer handbag becomes a thin vinyl tote\n• Maintain recognizable intent, but clearly cheaper execution\n\nSUBJECT TRANSFORMATION:\n• Clothing becomes cheaper material\n• Stitching slightly uneven\n• Fit slightly awkward but not exaggerated\n• Accessories become low-cost versions\n• Hair slightly less styled but still recognizable\n• Maintain identity — do not distort facial structure\n\nENVIRONMENT DOWNGRADE:\n• Furniture looks unstable or hollow\n• Surfaces look thin or flimsy\n• Paint slightly uneven\n• Slight color inaccuracy\n• Cheap texture substitutions\n\nTEXT MODIFICATION RULE:\n• Only alter text that already exists in the scene\n• Examples: \"Adidas\" → \"Adibas\"\n• \"Nike\" → \"Nake\"\n• \"Gucci\" → \"Guchi\"\n• Misspellings must look like cheap imitation branding\n• Do not add labels where none existed\n\nSTYLE:\n• Realistic photography\n• Bright flat lighting\n• Slight quality reduction\n• Subtle compression artifacts allowed\n• Must still look like a photograph — not a meme\n\nIMPORTANT:\n• Humor must come entirely from material downgrade and craftsmanship\n• No added captions\n• No overlays\n• No UI elements\n• The subject must remain recognizable\n\nFINAL RESULT:\nThe final image should look like a real photograph of the original scene, but every object, material, brand, and where appropriate even object category has been converted into an obvious low-budget knockoff version without adding any new text or graphic elements."
   },
   {
     "name": "TERMINATOR VISION",
@@ -7238,6 +7346,15 @@
       "ANALYSIS"
     ],
     "message": "Take a picture and transform it into a Starfleet tricorder display screen showing real-time sensor analysis and data about the subject.\n\nCORE REQUIREMENTS:\n• Authentic tricorder interface from Star Trek (TNG/DS9/VOY era preferred)\n• Small handheld device screen proportions\n• Characteristic blue-green display with gold/orange accents\n• Grid-based technical readout aesthetic\n• Multiple small data panels and sensor readouts\n\nCONTENT GENERATION:\n• Analyze the image subject and generate appropriate tricorder scan data:\n  - If person: Life signs, species, vital statistics, bioscan, health status\n  - If object: Material composition, energy reading, mass, atomic structure\n  - If location: Environmental scan, atmosphere, temperature, radiation, geological data\n  - If creature: Xenobiology scan, DNA sequence, threat assessment, behavior patterns\n• Use technical flavor text with Star Trek scientific terminology\n• Include numeric readouts, waveforms, and scanning graphs\n• Add contextual data: scan mode, range, signal strength, accuracy percentage\n\nINTERFACE ELEMENTS:\n• Top header with \"TRICORDER\" and Starfleet insignia\n• Small central viewing window showing subject or sensor visualization\n• Surrounding data panels with multi-colored status bars\n• Waveform displays and oscilloscope-style readings\n• Numeric data fields with labels (temperature, pressure, composition, etc.)\n• Bottom status bar with scan mode and battery/power level\n• Grid lines and technical overlay on subject image\n• \"SCANNING\" or \"ANALYSIS COMPLETE\" status indicator\n\nSTYLE:\n• Compact handheld device screen format\n• Slightly curved display edges (matching tricorder hardware)\n• Backlit blue-green screen with subtle glow\n• High-tech but readable 24th-century design\n• Small, efficient use of space like a real scanner device\n• Subject visible through sensor overlay/scan grid\n\nFINAL RESULT:\nA complete, authentic tricorder display showing active sensor analysis of the photographed subject with technical data, vital readings, and Star Trek-appropriate scientific information in the classic handheld scanner format."
+  },
+  {
+    "name": "TRINKET DESIGN",
+    "category": [
+      "NOSTALGIC",
+      "COLLECTOR",
+      "SCRAPBOOK"
+    ],
+    "message": "Take a picture and transform the subject into a trinket design composition.\n\nSELECTION (CRITICAL):\n• If an external master prompt specifies archival layout type, USE THAT\n• If none is specified, apply curated grid layout\n\nSTYLE REQUIREMENTS (MANDATORY):\n• Small collectible charm aesthetic\n• Scrapbook or museum display layout\n• Grid or clustered arrangement\n• Subtle labeling or numbering\n\nFINAL RESULT:\nThe final image should resemble a curated nostalgic collection display of small artifacts."
   },
   {
     "name": "TROGLODYTE",
