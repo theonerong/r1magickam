@@ -220,6 +220,11 @@ const MOTION_START_DELAYS = {
 let noMagicMode = false;
 const NO_MAGIC_MODE_KEY = 'r1_camera_no_magic_mode';
 
+// Manual Options mode
+let manualOptionsMode = false;
+const MANUAL_OPTIONS_KEY = 'r1_camera_manual_options';
+let manuallySelectedOption = null;
+
 // Track if we entered Master Prompt from gallery
 let returnToGalleryFromMasterPrompt = false;
 let savedViewerImageIndex = -1;
@@ -1535,7 +1540,7 @@ async function selectPreset(preset) {
   hidePresetSelector();
 }
 
-function submitMagicTransform() {
+async function submitMagicTransform() {
   if (currentViewerImageIndex < 0 || currentViewerImageIndex >= galleryImages.length) {
     alert('No image selected');
     return;
@@ -1544,11 +1549,22 @@ function submitMagicTransform() {
   const promptInput = document.getElementById('viewer-prompt');
   let prompt = promptInput.value.trim();
   let presetName = 'Custom Prompt';
+  let matchedPreset = null;
+  let manualSelection = null;
+  
+  // Check if this prompt matches a known preset (loaded via "Load Preset")
+  if (prompt) {
+    matchedPreset = CAMERA_PRESETS.find(p => p.message === prompt);
+    if (matchedPreset) {
+      presetName = matchedPreset.name;
+    }
+  }
   
   // If no prompt entered, use a random preset
   if (!prompt) {
     const randomIndex = getRandomPresetIndex();
     const randomPreset = CAMERA_PRESETS[randomIndex];
+    matchedPreset = randomPreset;
     prompt = randomPreset.message;
     presetName = randomPreset.name;
     
@@ -1556,11 +1572,27 @@ function submitMagicTransform() {
     alert(`Using random preset: ${presetName}`);
   }
   
+  // Handle manual options for gallery
+  // Manual Options does NOT work with No Magic Mode
+  if (manualOptionsMode && !noMagicMode && matchedPreset) {
+    const options = parsePresetOptions(matchedPreset.message);
+    
+    if (options.length > 0) {
+      const selectedValue = await showManualOptionsModal(matchedPreset, options);
+      
+      if (selectedValue === null) {
+        return; // User cancelled
+      }
+      
+      manualSelection = selectedValue;
+    }
+  }
+  
   const item = galleryImages[currentViewerImageIndex];
   
   if (typeof PluginMessageHandler !== 'undefined') {
     PluginMessageHandler.postMessage(JSON.stringify({
-      message: getFinalPrompt(prompt, presetName),
+      message: getFinalPrompt(prompt, presetName, manualSelection),
       pluginId: 'com.r1.pixelart',
       imageBase64: item.imageBase64
     }));
@@ -2161,7 +2193,6 @@ async function loadStyles() {
                 }, 100);
             }
         }, 500);
-    }
     
     // Still load old localStorage custom presets for migration
     const storedStyles = localStorage.getItem(STORAGE_KEY);
@@ -2242,6 +2273,7 @@ async function loadStyles() {
   setTimeout(() => {
     checkForPresetsUpdates();
   }, 1000);
+}
 }
 
 // Check for updates on startup
@@ -3504,12 +3536,158 @@ function loadNoMagicMode() {
   }
 }
 
+// Manual Options Mode Toggle
+function toggleManualOptionsMode() {
+  manualOptionsMode = !manualOptionsMode;
+  
+  const statusElement = document.getElementById('manual-options-status');
+  if (statusElement) {
+    statusElement.textContent = manualOptionsMode ? 'Enabled' : 'Disabled';
+    statusElement.style.color = manualOptionsMode ? '#4CAF50' : '';
+    statusElement.style.fontWeight = manualOptionsMode ? '600' : '';
+  }
+  
+  try {
+    localStorage.setItem(MANUAL_OPTIONS_KEY, JSON.stringify(manualOptionsMode));
+  } catch (err) {
+    console.error('Failed to save Manual Select mode:', err);
+  }
+  
+  updateNoMagicFooter();
+  
+  if (manualOptionsMode) {
+    // Check for conflicting modes
+    const modeCheck = canUseManualOptions();
+    if (!modeCheck.allowed) {
+      showStatus(`⚠️ ${modeCheck.reason}`, 3000);
+    } else {
+      showStatus('Manual Select ON - Only works with Random mode', 2500);
+    }
+  } else {
+    showStatus('Manual Select OFF - Random selection active', 2000);
+  }
+}
+
+// Load Manual Options Mode from storage
+function loadManualOptionsMode() {
+  try {
+    const saved = localStorage.getItem(MANUAL_OPTIONS_KEY);
+    if (saved !== null) {
+      manualOptionsMode = JSON.parse(saved);
+      
+      const statusElement = document.getElementById('manual-options-status');
+      if (statusElement) {
+        statusElement.textContent = manualOptionsMode ? 'Enabled' : 'Disabled';
+        statusElement.style.color = manualOptionsMode ? '#4CAF50' : '';
+        statusElement.style.fontWeight = manualOptionsMode ? '600' : '';
+      }
+      
+      updateNoMagicFooter();
+    }
+  } catch (err) {
+    console.error('Failed to load Manual Select mode:', err);
+  }
+}
+
+// Show manual options modal and wait for user selection
+async function showManualOptionsModal(preset, options) {
+  return new Promise((resolve) => {
+    const modal = document.getElementById('manual-options-modal');
+    const list = document.getElementById('manual-options-list');
+    const presetNameEl = document.getElementById('manual-options-preset-name');
+    
+    if (!modal || !list || !presetNameEl) {
+      console.error('Manual select modal elements not found');
+      resolve(null);
+      return;
+    }
+    
+    presetNameEl.textContent = preset.name;
+    list.innerHTML = '';
+    
+    options.forEach((option, index) => {
+      const item = document.createElement('div');
+      item.className = 'style-item';
+      item.style.padding = '12px';
+      item.style.cursor = 'pointer';
+      item.style.display = 'flex';
+      item.style.alignItems = 'center';
+      
+      const radio = document.createElement('input');
+      radio.type = 'radio';
+      radio.name = 'manual-option';
+      radio.id = `manual-option-${index}`;
+      radio.value = option.value;
+      radio.style.marginRight = '10px';
+      
+      const label = document.createElement('label');
+      label.htmlFor = `manual-option-${index}`;
+      label.textContent = option.label;
+      label.style.cursor = 'pointer';
+      label.style.flex = '1';
+      label.style.fontSize = '12px';
+      
+      item.appendChild(radio);
+      item.appendChild(label);
+      
+      item.onclick = () => {
+        radio.checked = true;
+      };
+      
+      list.appendChild(item);
+    });
+    
+    if (options.length > 0) {
+      const firstRadio = list.querySelector('input[type="radio"]');
+      if (firstRadio) firstRadio.checked = true;
+    }
+    
+    modal.style.display = 'flex';
+    
+    const closeBtn = document.getElementById('close-manual-options');
+    const cancelBtn = document.getElementById('cancel-manual-options');
+    const confirmBtn = document.getElementById('confirm-manual-options');
+    
+    const cleanup = () => {
+      modal.style.display = 'none';
+      if (closeBtn) closeBtn.onclick = null;
+      if (cancelBtn) cancelBtn.onclick = null;
+      if (confirmBtn) confirmBtn.onclick = null;
+    };
+    
+    const handleClose = () => {
+      cleanup();
+      resolve(null);
+    };
+    
+    const handleConfirm = () => {
+      const selected = list.querySelector('input[type="radio"]:checked');
+      if (selected) {
+        const value = parseInt(selected.value);
+        cleanup();
+        resolve(value);
+      } else {
+        cleanup();
+        resolve(null);
+      }
+    };
+    
+    if (closeBtn) closeBtn.onclick = handleClose;
+    if (cancelBtn) cancelBtn.onclick = handleClose;
+    if (confirmBtn) confirmBtn.onclick = handleConfirm;
+  });
+}
+
 function updateNoMagicFooter() {
   if (!window.cameraStarted) return;
   
   if (noMagicMode) {
     if (statusElement) {
       statusElement.textContent = '⚡ NO MAGIC MODE';
+    }
+  } else if (manualOptionsMode) {
+    if (statusElement) {
+      statusElement.textContent = '🎯 MANUALLY SELECT';
     }
   } else {
     updatePresetDisplay();
@@ -4949,10 +5127,55 @@ function capturePhoto() {
     timestamp: Date.now()
   };
   
+  // Add to queue BEFORE showing modal
   photoQueue.push(queueItem);
   saveQueue();
   updateQueueDisplay();
   
+  // If Manual Options is enabled and preset has options, show modal
+  // BUT: Manual Options does NOT work with Timer, Motion Detection, or Burst modes
+  // It ONLY works with Random mode or no special mode
+  const isIncompatibleMode = isTimerMode || isMotionDetectionMode || isBurstMode;
+  
+  if (manualOptionsMode && !noMagicMode && !isIncompatibleMode) {
+    const options = parsePresetOptions(currentPreset.message);
+    
+    if (options.length > 0) {
+      // Show modal and wait for selection
+      showManualOptionsModal(currentPreset, options).then((selectedValue) => {
+        if (selectedValue !== null) {
+          // User selected an option - update the queue item
+          const queueIndex = photoQueue.findIndex(item => item.id === queueItem.id);
+          if (queueIndex !== -1) {
+            photoQueue[queueIndex].manualSelection = selectedValue;
+            saveQueue();
+          }
+          
+          // Trigger sync
+          if (isOnline && !noMagicMode) {
+            statusElement.textContent = 'Photo saved! Uploading...';
+            if (!isSyncing) {
+              syncQueuedPhotos();
+            }
+          } else {
+            statusElement.textContent = `Photo queued (${photoQueue.length} in queue)`;
+          }
+        } else {
+          // User cancelled - remove from queue
+          const queueIndex = photoQueue.findIndex(item => item.id === queueItem.id);
+          if (queueIndex !== -1) {
+            photoQueue.splice(queueIndex, 1);
+            saveQueue();
+            updateQueueDisplay();
+          }
+          statusElement.textContent = 'Photo not sent - cancelled';
+        }
+      });
+      return; // Exit early - modal will handle sync
+    }
+  }
+  
+  // No manual options needed - proceed normally
   if (isOnline) {
     const message = noMagicMode 
       ? 'Photo saved!'
@@ -5002,7 +5225,7 @@ async function syncQueuedPhotos() {
       
       if (typeof PluginMessageHandler !== 'undefined' && !noMagicMode) {
         PluginMessageHandler.postMessage(JSON.stringify({
-          message: getFinalPrompt(item.preset.message, item.preset.name),
+          message: getFinalPrompt(item.preset.message, item.preset.name, item.manualSelection || null),
           pluginId: 'com.r1.pixelart',
           imageBase64: item.imageBase64
         }));
@@ -5571,10 +5794,13 @@ function updatePresetDisplay() {
     }
 
     if (statusElement) {
-        statusElement.textContent = noMagicMode 
-          ? `⚡ NO MAGIC MODE`
-          : `Style: ${currentPreset.name}`;
-    }
+        if (noMagicMode) {
+            statusElement.textContent = '⚡ NO MAGIC MODE';
+        } else if (manualOptionsMode) {
+            statusElement.textContent = `🎯 MANUALLY SELECT | Style: ${currentPreset.name}`;
+        } else {
+            statusElement.textContent = `Style: ${currentPreset.name}`;
+        }
     
     // Show style reveal on screen (middle text)
     showStyleReveal(currentPreset.name);
@@ -5584,6 +5810,7 @@ function updatePresetDisplay() {
     if (isMenuOpen) {
         updateMenuSelection();
     }
+}
 }
 
 // Listen for plugin messages (responses from AI)
@@ -6327,7 +6554,150 @@ function clearAllHistory() {
   saveSelectionHistory();
 }
 
-function getFinalPrompt(basePrompt, presetName = '') {
+// Check if Manual Options can be used based on current mode
+function canUseManualOptions() {
+  if (noMagicMode) {
+    return { 
+      allowed: false, 
+      reason: 'Manual Select disabled: No Magic Mode is active' 
+    };
+  }
+  
+  if (isTimerMode) {
+    return { 
+      allowed: false, 
+      reason: 'Manual Select disabled: Timer Mode is active' 
+    };
+  }
+  
+  if (isMotionDetectionMode) {
+    return { 
+      allowed: false, 
+      reason: 'Manual Select disabled: Motion Detection is active' 
+    };
+  }
+  
+  if (isBurstMode) {
+    return { 
+      allowed: false, 
+      reason: 'Manual Select disabled: Burst Mode is active' 
+    };
+  }
+  
+  return { allowed: true };
+}
+
+// Parse preset message to extract random options for manual selection
+function parsePresetOptions(message) {
+  const options = [];
+  
+  // Pattern 1: MODULO patterns
+  const moduloMatch = message.match(/modulo\s+(\d+)/i);
+  if (moduloMatch) {
+    const count = parseInt(moduloMatch[1]);
+    const lines = message.split('\n');
+    let inOptionsList = false;
+    let optionNumber = 0;
+    
+    for (let i = 0; i < lines.length; i++) {
+      const line = lines[i].trim();
+      
+      if (line.match(/^[-–]\s*0\s*:/i) && !inOptionsList) {
+        inOptionsList = true;
+      }
+      
+      if (inOptionsList && optionNumber < count) {
+        const optionMatch = line.match(/^[-–]\s*(\d+)\s*:\s*(.+)/);
+        if (optionMatch) {
+          const description = optionMatch[2].trim();
+          const shortDesc = description.substring(0, 80);
+          options.push({
+            value: optionNumber,
+            label: `${optionNumber}: ${shortDesc}${description.length > 80 ? '...' : ''}`
+          });
+          optionNumber++;
+        }
+      }
+      
+      if (optionNumber >= count) break;
+    }
+  }
+  
+  // Pattern 2: EVEN/ODD patterns
+  if (options.length === 0) {
+    const evenOddPattern = /If\s+(?:the\s+)?(?:LAST\s+DIGIT|RANDOM\s+SEED)[^\n]*?(?:is\s+)?(?:an?\s+)?(EVEN|ODD)[^\n]*?:\s*(?:SELECT\s+)?(.+?)(?=\n|$)/gi;
+    let evenOption = null;
+    let oddOption = null;
+    let match;
+    
+    while ((match = evenOddPattern.exec(message)) !== null) {
+      const evenOrOdd = match[1].toUpperCase();
+      const option = match[2].trim();
+      
+      if (evenOrOdd === 'EVEN') {
+        evenOption = option;
+      } else if (evenOrOdd === 'ODD') {
+        oddOption = option;
+      }
+    }
+    
+    if (evenOption && oddOption) {
+      options.push({ 
+        value: 0, 
+        label: `0 (EVEN): ${evenOption.substring(0, 70)}${evenOption.length > 70 ? '...' : ''}` 
+      });
+      options.push({ 
+        value: 1, 
+        label: `1 (ODD): ${oddOption.substring(0, 70)}${oddOption.length > 70 ? '...' : ''}` 
+      });
+    }
+  }
+  
+  return options;
+}
+
+// Inject manual selection into prompt
+function injectManualSelection(prompt, selectedValue) {
+  console.log('Injecting manual selection:', selectedValue);
+  
+  // For modulo patterns - find the selected option
+  const moduloPattern = /modulo\s+\d+[^\n]*:\s*\n((?:\s*[-–]\s*\d+:.*(?:\n|$))*)/gi;
+  
+  prompt = prompt.replace(moduloPattern, (match, optionsList) => {
+    const lines = optionsList.split('\n');
+    for (const line of lines) {
+      const optionMatch = line.match(/^\s*[-–]\s*(\d+)\s*:\s*(.+)/);
+      if (optionMatch) {
+        const optionNum = parseInt(optionMatch[1]);
+        const optionText = optionMatch[2].trim();
+        
+        if (optionNum === selectedValue) {
+          console.log('Selected option:', optionText);
+          return `SELECTED OPTION: ${optionText}\n(Manually selected by user)`;
+        }
+      }
+    }
+    return match;
+  });
+  
+  // For even/odd patterns
+  const isEven = selectedValue === 0;
+  const evenOddPattern = /If\s+(?:the\s+)?(?:LAST\s+DIGIT|RANDOM\s+SEED)[^\n]*?(?:is\s+)?(?:an?\s+)?(EVEN|ODD)[^\n]*?:\s*(?:SELECT\s+)?(.+?)(?=\n|$)/gi;
+  
+  prompt = prompt.replace(evenOddPattern, (match, evenOrOdd, option) => {
+    const shouldSelect = (evenOrOdd.toUpperCase() === 'EVEN' && isEven) || 
+                         (evenOrOdd.toUpperCase() === 'ODD' && !isEven);
+    
+    if (shouldSelect) {
+      return `SELECTED OPTION: ${option.trim()}\n(Manually selected by user)`;
+    }
+    return '';
+  });
+  
+  return prompt;
+}
+
+function getFinalPrompt(basePrompt, presetName = '', manualSelection = null) {
   let finalPrompt = basePrompt;
   
   if (masterPromptEnabled && masterPromptText.trim()) {
@@ -6344,6 +6714,12 @@ function getFinalPrompt(basePrompt, presetName = '') {
     const lastDigit = seed % 10;
     const lastTwoDigits = seed % 100;
     const lastThreeDigits = seed % 1000;
+    
+    // If manual selection is provided, inject it BEFORE processing random selections
+    if (manualSelection !== null) {
+      console.log('Using manual selection:', manualSelection);
+      finalPrompt = injectManualSelection(finalPrompt, manualSelection);
+    }
     
     // Process the prompt to extract and select from options
     finalPrompt = processRandomSelections(finalPrompt, lastDigit, lastTwoDigits, lastThreeDigits, presetName);
@@ -8163,6 +8539,11 @@ document.addEventListener('touchend', () => {
     noMagicToggleBtn.addEventListener('click', toggleNoMagicMode);
   }
 
+  const manualOptionsToggleBtn = document.getElementById('manual-options-toggle-button');
+  if (manualOptionsToggleBtn) {
+    manualOptionsToggleBtn.addEventListener('click', toggleManualOptionsMode);
+  }
+
   const tutorialBtn = document.getElementById('tutorial-button');
   if (tutorialBtn) {
     tutorialBtn.addEventListener('click', showTutorialSubmenu);
@@ -8372,6 +8753,7 @@ const result = await presetImporter.import();
   loadTimerSettings();
   loadMotionSettings();
   loadNoMagicMode();
+  loadManualOptionsMode();
   loadImportResolution();
 
   const resetBtn = document.getElementById('reset-button');
