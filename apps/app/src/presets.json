@@ -4697,6 +4697,16 @@
     "message": "Take a picture and transform the subject into a glowing neon sign. Recreate the subject’s silhouette, facial features, and defining characteristics using luminous neon tubing and light trails, while keeping the subject clearly recognizable. Use vibrant neon colors with realistic glow, reflections, and light bleed against a dark or urban-inspired background such as brick, concrete, or night scenery. Arrange the neon lines as if they were hand-bent glass tubes, with subtle imperfections and mounting hardware for realism. Render the final image with crisp detail, strong contrast, and a striking nighttime atmosphere."
   },
   {
+    "name": "NERDS!",
+    "category": [
+      "HUMOR",
+      "TRANSFORMATION",
+      "RETRO",
+      "CHARACTER"
+    ],
+    "message": "Take a picture and transform the subject into an exaggerated, classic sitcom-style geek character.\n\nSELECTION (CRITICAL):\n• If an external master prompt specifies era (1950s, 1980s, modern tech geek), USE THAT\n• If none is specified, apply a retro 1980s academic stereotype aesthetic\n\nCORE TRANSFORMATION RULES:\n• Maintain the subject’s recognizability\n• Do not distort facial structure\n• The transformation must look like a realistic costume and styling change\n• The final result MUST be photorealistic\n• It must look like a real photograph of a real person wearing these clothes — not a cartoon, illustration, caricature, CGI, or AI art style\n\nWARDROBE REQUIREMENTS:\n• Button-up shirt fully buttoned to the collar\n• Shirt tucked high at the waist\n• Slightly mismatched or awkward color combinations\n• Pants worn high and slightly too short at the ankles\n• Visible belt\n• Orthopedic-style or practical lace-up shoes\n\nACCESSORIES (MANDATORY):\n• Thick black plastic frame glasses\n• Glasses bridge taped at the center\n• Pocket protector filled with pens and pencils\n• Optional calculator watch or oversized wristwatch\n\nGROOMING STYLE:\n• Hair slightly messy or rigidly parted\n• Overly neat but unfashionable styling\n• Slightly stiff posture\n\nBODY LANGUAGE:\n• Slightly hunched shoulders\n• Hands clasped nervously or holding books\n• Earnest, overly serious expression\n\nREALISM REQUIREMENTS (CRITICAL):\n• Natural skin texture\n• Real fabric folds and stitching\n• Accurate lighting and shadows\n• No exaggerated proportions\n• No cartoon stylization\n• No parody poster effects\n• No text overlays\n\nIMPORTANT:\n• The tone must remain playful, not insulting\n• Avoid medical exaggerations or skin conditions\n• Do not distort body proportions\n• Humor must come from wardrobe, posture, and styling only\n\nFINAL RESULT:\nThe final image should look like a genuine high-resolution photograph of the subject realistically transformed into a classic retro sitcom-style geek character, fully photorealistic and believable."
+  },
+  {
     "name": "NESTING DOLLS",
     "category": [
       "HUMOR",
