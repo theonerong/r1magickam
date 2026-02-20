@@ -230,6 +230,14 @@
                         </button>
                     </div>
 
+                    <!-- Manual Options Toggle -->
+                    <div class="menu-section">
+                        <button id="manual-options-toggle-button" class="menu-section-button">
+                            <span class="menu-section-title">Manually Select Options</span>
+                            <span id="manual-options-status" class="menu-section-value">Disabled</span>
+                        </button>
+                    </div>
+
                     <!-- Import Settings -->
                     <div class="menu-section">
                         <button id="import-resolution-settings-button" class="menu-section-button">
@@ -904,6 +912,7 @@
                             <strong>Visible Presets:</strong> Select the imported presets you want to see in preset menus. Default all. Can select all, remove individually or remove all (the Ron setting). Each preset has categories indicated at the bottom of the visible preset menu.<br>
                             <strong>Preset Builder:</strong> Made to follow a sequence. Click return to go to next selection. Select prompt templates and chips to help you create new and exciting presets you want to see in preset menus. Categories must be separated by commas. This is a very useful tool that includes prompting tips.<br>
                             <strong>No Magic Mode:</strong> Use as regular camera without AI processing. Photos will only save in plugin gallery. Photos will not save to rabbit hole or magic gallery. This setting does not affect prompting in gallery.<br>
+                            <strong>Manually Select Options Mode:</strong> Enable/Disable. When enabled, if you choose a preset with options, a modal will appear asking you to pick from one of the options in the preset. Only this option is fed as the final prompt for generating the magical image. This setting does not work with No Magic Mode, Motion Sensor, Burst or Timer. It will work with Randomizer. Currently, only working with single shot photos in main camera screen and single image/single preset in gallery.<br>
                             <strong>Import Settings:</strong> Select import resolution for external image imported through gallery.<br>
                             <strong>Reset Database:</strong> Nuclear Option. Only imported presets remain.  All custom work deleted.<br>
                             <strong>📥 Import Presets:</strong> Import from our external library of presets. Import only the ones you want by checking them individually or ✓ All (Ron setting - ✗ None). Once you select the ones you want to import, click the Import button. NOTE: Previously imported presets remain checked. To delete previously imported presets from the Magic Kamera, delete them from the Main Menu. You can import them again if you like. Any new presets added to our external library of presets, will be unchecked (check regularly for new ones as we are constantly updating this list).<br>
@@ -1170,6 +1179,29 @@ All of the presets are optimized to avoid "camera ran dry" or "content filter" i
               <button class="custom-alert-btn custom-alert-btn-primary" id="custom-alert-ok">OK</button>
             </div>
           </div>
+        </div>
+    </div>
+    <!-- Manual Options Modal -->
+    <div id="manual-options-modal" class="styles-menu" style="display: none;">
+        <div class="styles-menu-content">
+            <div class="styles-menu-header">
+                <h2>Select Option(s)</h2>
+                <button id="close-manual-options" class="close-button">×</button>
+            </div>
+            <div class="styles-menu-scroll-container">
+                <div style="padding: 10px; color: #aaa; font-size: 11px; border-bottom: 1px solid #333; margin-bottom: 10px;">
+                    <strong id="manual-options-preset-name"></strong>
+                </div>
+                <div class="menu-list" id="manual-options-list"></div>
+            </div>
+            <div style="display: flex; gap: 5px; padding: 10px; background: #1a1a1a; border-top: 1px solid #333;">
+                <button id="confirm-manual-options" style="flex: 1; padding: 10px; background: #4CAF50; color: white; border: none; border-radius: 4px; font-size: 13px; font-weight: bold; cursor: pointer;">
+                    Send
+                </button>
+                <button id="cancel-manual-options" style="flex: 1; padding: 10px; background: #666; color: white; border: none; border-radius: 4px; font-size: 13px; cursor: pointer;">
+                    Cancel
+                </button>
+            </div>
         </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
