@@ -11,6 +11,7 @@
   {
     "name": "#NOFILTER",
     "category": [
+      "OPTIONS",
       "HUMOR",
       "SOCIAL MEDIA",
       "SATIRE",
@@ -31,6 +32,7 @@
   {
     "name": "3D FIGURINE",
     "category": [
+      "OPTIONS",
       "3D",
       "FIGURINE",
       "COLLECTIBLE"
@@ -49,6 +51,7 @@
   {
     "name": "3D PRINT",
     "category": [
+      "OPTIONS",
       "HUMOR",
       "TECH",
       "3D"
@@ -58,6 +61,7 @@
   {
     "name": "80s AND 90s ACTION FILMS",
     "category": [
+      "OPTIONS",
       "HUMOR",
       "MOVIES",
       "SCENE",
@@ -162,6 +166,7 @@
   {
     "name": "ACHEIROPOIETA",
     "category": [
+      "OPTIONS",
       "RELIGIOUS",
       "ICONOGRAPHY",
       "HISTORICAL",
@@ -229,6 +234,7 @@
   {
     "name": "AIRPORT SECURITY SCAN",
     "category": [
+      "OPTIONS",
       "HUMOR",
       "MODERN",
       "TRAVEL"
@@ -238,6 +244,7 @@
   {
     "name": "ALBUM COVER",
     "category": [
+      "OPTIONS",
       "MUSIC",
       "ALBUM",
       "ICONIC",
@@ -258,6 +265,7 @@
   {
     "name": "ALEXANDER THE PRETTY GOOD",
     "category": [
+      "OPTIONS",
       "HISTORY",
       "HUMOR",
       "PORTRAIT",
@@ -314,7 +322,7 @@
     "message": "Take a picture and recreate the classic painting American Gothic. Replace one figure in the painting with the subject. If the subject is male, replace the male figure. If the subject is female, replace the female figure. If two subjects are present, replace both figures accordingly. Preserve the iconic composition, clothing style, background, and serious tone of the original artwork while integrating the subject naturally. The final image should be instantly recognizable as American Gothic with a humorous modern twist."
   },
   {
-    "name": "ANAGLYPH 3D (3D Glasses Needed)",
+    "name": "ANAGLYPH 3D (3D GLASSES NEEDED)",
     "category": [
       "3D",
       "RETRO",
@@ -345,6 +353,7 @@
   {
     "name": "ANCIENT TIMES",
     "category": [
+      "OPTIONS",
       "HISTORY",
       "ANCIENT",
       "COSTUME",
@@ -355,6 +364,7 @@
   {
     "name": "ANDROID",
     "category": [
+      "OPTIONS",
       "SCI-FI",
       "TECHNOLOGY",
       "ROBOT",
@@ -412,6 +422,7 @@
   {
     "name": "ANIME ART",
     "category": [
+      "OPTIONS",
       "ANIME",
       "ANIMATION",
       "JAPANESE",
@@ -610,6 +621,7 @@
   {
     "name": "BALLOON",
     "category": [
+      "OPTIONS",
       "TOY",
       "INFLATABLE",
       "TRANSFORMATION"
@@ -669,6 +681,7 @@
   {
     "name": "BEAM ME UP SCOTTY",
     "category": [
+      "OPTIONS",
       "SCI-FI",
       "TRANSPORTATION",
       "CINEMATIC",
@@ -689,6 +702,7 @@
   {
     "name": "BEHIND BARS",
     "category": [
+      "OPTIONS",
       "DRAMA",
       "REALISM",
       "ENVIRONMENT"
@@ -698,6 +712,7 @@
   {
     "name": "BEVERAGE MASCOT",
     "category": [
+      "OPTIONS",
       "ADVERTISING",
       "MASCOT",
       "BRAND",
@@ -716,6 +731,7 @@
   {
     "name": "BIBLICAL",
     "category": [
+      "OPTIONS",
       "RELIGIOUS",
       "BIBLICAL",
       "HISTORY",
@@ -813,6 +829,7 @@
   {
     "name": "BOARD GAME",
     "category": [
+      "OPTIONS",
       "HUMOR",
       "GAME",
       "RETRO",
@@ -860,6 +877,7 @@
   {
     "name": "BOND",
     "category": [
+      "OPTIONS",
       "MOVIES",
       "ACTION",
       "ICONIC",
@@ -870,6 +888,7 @@
   {
     "name": "BOOK COVER",
     "category": [
+      "OPTIONS",
       "HUMOR",
       "PUBLISHING",
       "DESIGN",
@@ -890,6 +909,7 @@
   {
     "name": "BOSS BATTLE",
     "category": [
+      "OPTIONS",
       "GAMING",
       "BOSS",
       "VIDEO GAME",
@@ -910,6 +930,7 @@
   {
     "name": "BROADWAY MUSICAL",
     "category": [
+      "OPTIONS",
       "THEATER",
       "MUSICAL",
       "BROADWAY",
@@ -931,6 +952,7 @@
   {
     "name": "BULLFIGHTER",
     "category": [
+      "OPTIONS",
       "FESTIVAL",
       "SPAIN",
       "CULTURE",
@@ -951,6 +973,7 @@
   {
     "name": "BUNKED",
     "category": [
+      "OPTIONS",
       "HUMOR",
       "HISTORY",
       "MYTHS",
@@ -972,6 +995,7 @@
   {
     "name": "BUSTED",
     "category": [
+      "OPTIONS",
       "CRIME",
       "DRAMATIC",
       "REALISM",
@@ -982,6 +1006,7 @@
   {
     "name": "BUT CAN IT PLAY DOOM?",
     "category": [
+      "OPTIONS",
       "RETRO",
       "GAMING",
       "90S",
@@ -1002,6 +1027,7 @@
   {
     "name": "CABINET",
     "category": [
+      "OPTIONS",
       "POLITICAL",
       "FORMAL",
       "GOVERNMENT",
@@ -1022,6 +1048,7 @@
   {
     "name": "CALENDAR PIN-UP",
     "category": [
+      "OPTIONS",
       "HUMOR",
       "CALENDAR",
       "GLAMOUR"
@@ -1080,6 +1107,7 @@
   {
     "name": "CAUGHT IN THE ACT",
     "category": [
+      "OPTIONS",
       "STORY",
       "HUMOR",
       "MISCHIEF",
@@ -1110,6 +1138,7 @@
   {
     "name": "CENSORED",
     "category": [
+      "OPTIONS",
       "HUMOR",
       "PARODY",
       "COMEDY"
@@ -1176,6 +1205,7 @@
   {
     "name": "CHARACTER CREATION SCREEN",
     "category": [
+      "OPTIONS",
       "HUMOR",
       "VIDEO GAME"
     ],
@@ -1272,6 +1302,7 @@
   {
     "name": "CHILDHOOD VERSION",
     "category": [
+      "OPTIONS",
       "AGE",
       "TRANSFORMATION",
       "YOUNG"
@@ -1327,6 +1358,7 @@
   {
     "name": "CIRCUS STAR",
     "category": [
+      "OPTIONS",
       "CIRCUS",
       "CARNIVAL",
       "PERFORMANCE",
@@ -1357,6 +1389,7 @@
   {
     "name": "CLASSIC TV COMMERCIAL-FORCED",
     "category": [
+      "OPTIONS",
       "RETRO",
       "ADVERTISING",
       "HUMOR",
@@ -1385,6 +1418,7 @@
   {
     "name": "CLONE",
     "category": [
+      "OPTIONS",
       "HUMOR",
       "DUPLICATION",
       "VISUAL GAG",
@@ -1404,6 +1438,7 @@
   {
     "name": "CLUE",
     "category": [
+      "OPTIONS",
       "BOARD GAME",
       "MYSTERY",
       "CHARACTER CARD",
@@ -1414,6 +1449,7 @@
   {
     "name": "COEN BROTHERS FILM",
     "category": [
+      "OPTIONS",
       "MOVIES",
       "DIRECTOR",
       "QUIRKY",
@@ -1435,6 +1471,7 @@
   {
     "name": "COINS",
     "category": [
+      "OPTIONS",
       "NUMISMATICS",
       "CURRENCY",
       "REALISM",
@@ -1473,6 +1510,7 @@
   {
     "name": "COMEDY CLASSIC",
     "category": [
+      "OPTIONS",
       "HUMOR",
       "MOVIES",
       "SCENE",
@@ -1483,6 +1521,7 @@
   {
     "name": "COMIC BOOK COVER",
     "category": [
+      "OPTIONS",
       "COMICS",
       "ART",
       "POP CULTURE"
@@ -1499,8 +1538,9 @@
     "message": "Take a picture and transform the subject into a superhero inspired by their own traits, personality, or clothing. Preserve the subject’s recognizable facial features and body while designing a unique superhero identity based on what they are wearing or their notable characteristics. The superhero must wear a flowing cape integrated naturally into the costume. Show a full comic-book page with multiple panels depicting the subject in action, using powers or skills derived from their personal traits. Bold inks, vibrant colors, dynamic composition, and expressive onomatopoeia. Ensure the subject remains clearly identifiable while fully integrated into the comic-book superhero narrative."
   },
   {
-    "name": "REAL UPCOMING MOVIE TEASER",
+    "name": "COMING SOON",
     "category": [
+      "OPTIONS",
       "CINEMATIC",
       "MOVIES",
       "TRAILER",
@@ -1522,6 +1562,7 @@
   {
     "name": "COMPETITION BROADCAST",
     "category": [
+      "OPTIONS",
       "TV",
       "COMPETITION",
       "PERFORMANCE",
@@ -1550,6 +1591,7 @@
   {
     "name": "CONSPIRACY THEORY",
     "category": [
+      "OPTIONS",
       "HUMOR",
       "PARANORMAL",
       "CONSPIRACY",
@@ -1599,6 +1641,7 @@
   {
     "name": "COPY-CAT",
     "category": [
+      "OPTIONS",
       "HUMOR",
       "BACKGROUND GAG",
       "ANIMALS",
@@ -1659,6 +1702,7 @@
   {
     "name": "CREEPYPASTA",
     "category": [
+      "OPTIONS",
       "HORROR",
       "INTERNET",
       "URBAN LEGEND",
@@ -1689,6 +1733,7 @@
   {
     "name": "CRYSTALLIZED",
     "category": [
+      "OPTIONS",
       "TRANSFORMATION",
       "CRYSTAL",
       "GEMSTONE",
@@ -1727,6 +1772,7 @@
   {
     "name": "CYBORG",
     "category": [
+      "OPTIONS",
       "SCI-FI",
       "TECHNOLOGY",
       "AUGMENTED",
