@@ -9618,7 +9618,42 @@ async function resizeAndCompressImage(blob, maxWidth = 640, maxHeight = 480, qua
     
     img.onerror = () => {
       URL.revokeObjectURL(url);
-      reject(new Error('Failed to load image for resizing'));
+      // If blob has no type or wrong type, retry by forcing it as image/png
+      if (blob.type !== 'image/png' && blob.type !== 'image/jpeg') {
+        const retypedBlob = new Blob([blob], { type: 'image/png' });
+        const retryUrl = URL.createObjectURL(retypedBlob);
+        const retryImg = new Image();
+        retryImg.onload = () => {
+          URL.revokeObjectURL(retryUrl);
+          const canvas = document.createElement('canvas');
+          let w = retryImg.width;
+          let h = retryImg.height;
+          if (w > maxWidth || h > maxHeight) {
+            const aspectRatio = w / h;
+            if (w > h) { w = maxWidth; h = w / aspectRatio; }
+            else { h = maxHeight; w = h * aspectRatio; }
+          }
+          canvas.width = w;
+          canvas.height = h;
+          const ctx = canvas.getContext('2d');
+          ctx.drawImage(retryImg, 0, 0, w, h);
+          canvas.toBlob(
+            (resizedBlob) => {
+              if (resizedBlob) resolve(resizedBlob);
+              else reject(new Error('Failed to compress image'));
+            },
+            'image/jpeg',
+            quality
+          );
+        };
+        retryImg.onerror = () => {
+          URL.revokeObjectURL(retryUrl);
+          reject(new Error('Failed to load image for resizing'));
+        };
+        retryImg.src = retryUrl;
+      } else {
+        reject(new Error('Failed to load image for resizing'));
+      }
     };
     
     img.src = url;
@@ -9686,7 +9721,10 @@ async function importFromQRCode() {
     updateQRScannerStatus('Original size: ' + originalSize + 'KB', '');
     
     // Check if it's an image
-    if (blob.type && !blob.type.startsWith('image/')) {
+    // Allow image/* types AND octet-stream (some proxies return PNG as octet-stream)
+    const isImageType = blob.type.startsWith('image/');
+    const isOctetStream = blob.type === 'application/octet-stream' || blob.type === '';
+    if (blob.type && !isImageType && !isOctetStream) {
       throw new Error('Not an image: ' + blob.type);
     }
     

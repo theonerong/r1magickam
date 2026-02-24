@@ -1,7 +1,7 @@
 // storage.js - IndexedDB management for preset persistence
 
 const DB_NAME = 'CameraPresetsDB';
-const DB_VERSION = 1;
+const DB_VERSION = 2;
 const STORE_NAME = 'presets';
 
 class PresetStorage {

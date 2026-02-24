@@ -1,7 +1,7 @@
 // preset-import.js - Handle external preset importing
 
 const IMPORT_DB_NAME = 'ImportedPresetsDB';
-const IMPORT_DB_VERSION = 1;
+const IMPORT_DB_VERSION = 2;
 const IMPORT_STORE_NAME = 'imported_presets';
 
 export class PresetImporter {
