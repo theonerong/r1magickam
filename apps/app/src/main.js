@@ -9807,6 +9807,11 @@ document.getElementById('factory-reset-button').addEventListener('click', async 
     // Clear ALL records from preset storage (modifications, deletions, AND custom presets)
     await presetStorage.clearAll();
     
+    // Clear any corrupt or stale photo queue from localStorage
+    photoQueue = [];
+    saveQueue();
+    updateQueueDisplay();
+    
     // Reload presets from imported list or factory presets
     CAMERA_PRESETS = await mergePresetsWithStorage();
     
@@ -9819,8 +9824,8 @@ document.getElementById('factory-reset-button').addEventListener('click', async 
     renderMenuStyles();
     
     const successMessage = hasImportedPresets
-      ? 'All custom presets deleted and modifications cleared. Reset to imported presets!'
-      : 'All custom presets deleted and modifications cleared!';
+      ? 'All custom presets deleted, modifications cleared, and queue reset. Reset to imported presets!'
+      : 'All custom presets deleted, modifications cleared, and queue reset!';
     alert(successMessage);
   }
 });
