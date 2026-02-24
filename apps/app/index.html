@@ -1204,8 +1204,16 @@ All of the presets are optimized to avoid "camera ran dry" or "content filter" i
             </div>
         </div>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-    <script src="https://unpkg.com/jsqr@1.4.0/dist/jsQR.js"></script>
     <script type="module" src="./src/main.js"></script>
+    <script>
+      window.addEventListener('load', function() {
+        var s1 = document.createElement('script');
+        s1.src = 'https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js';
+        document.body.appendChild(s1);
+        var s2 = document.createElement('script');
+        s2.src = 'https://unpkg.com/jsqr@1.4.0/dist/jsQR.js';
+        document.body.appendChild(s2);
+      });
+    </script>
 </body>
 </html>
