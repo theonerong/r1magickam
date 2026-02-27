@@ -710,6 +710,16 @@
     "message": "Take a picture and place the subject behind prison bars in a realistic jail or prison setting wearing appropriate prison attire.\n\nPRISON SETTING SELECTION (CRITICAL):\n• If an external master prompt specifies a setting, USE THAT SETTING\n• If none is specified, SELECT EXACTLY ONE using the RANDOM SEED\n• Use LAST DIGIT modulo 5:\n  - 0: Classic jail cell with iron bars - orange jumpsuit\n  - 1: Modern prison cell - beige or gray prison uniform\n  - 2: Police holding cell - casual clothes or orange jumpsuit\n  - 3: Old stone prison - striped black and white prisoner outfit\n  - 4: Minimalist detention room - plain prison scrubs\n\nPLACE THE SUBJECT:\n• Subject positioned behind bars or secured barrier\n• Wearing appropriate prison garb matching the setting\n• Natural posture — standing, sitting, or leaning\n• Expression neutral, contemplative, or resigned\n• No exaggerated fear or aggression\n• Subject's facial features preserved and recognizable\n\nAUTHENTICITY RULES:\n• Realistic materials (metal bars, concrete walls)\n• Institutional lighting (cool, flat, or fluorescent)\n• Accurate spatial depth and shadows\n• Prison clothing fits naturally on subject's body\n\nEXCLUSIONS:\n• No violence or restraints\n• No caricature or parody tone\n\nCOMPOSITION & FRAME:\n• Bars clearly visible in foreground\n• Subject fully visible behind barrier\n• FULL image visible with all four corners present\n• No dramatic cropping or cinematic angles\n\nSTYLE:\n• Photorealistic\n• Serious, grounded tone\n• Looks like a still from a documentary or crime drama\n\nFINAL RESULT:\nThe image should depict the subject realistically placed behind prison bars wearing appropriate prison attire in a believable correctional environment, maintaining realism and respectful tone."
   },
   {
+    "name": "BENDY AND THE INK MACHINE",
+    "category": [
+      "CARTOON",
+      "HORROR",
+      "GAME",
+      "ANIMATION"
+    ],
+    "message": "Take a picture and transform the image into the art style of Bendy and the Ink Machine. Convert everything into a 1930s rubber hose cartoon aesthetic drenched in black ink. Apply heavy black outlines, stark black-and-white contrast with sepia undertones, and dripping ink effects on surfaces and edges. Transform subjects into exaggerated cartoon characters with large round eyes, simple curved shapes, and fluid rubbery limbs. Add ink splatter stains, film grain, scratches, and a worn vintage animation cel texture. The overall mood should feel like a creepy, abandoned cartoon studio frozen in time."
+  },
+  {
     "name": "BEVERAGE MASCOT",
     "category": [
       "OPTIONS",
