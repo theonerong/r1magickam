@@ -5791,15 +5791,6 @@
     "message": "Take a picture and include a singing Rick Astley standing next to the subject.  Make it photorealistic."
   },
   {
-    "name": "RABBIT R1",
-    "category": [
-      "TECH",
-      "DEVICE",
-      "CREATIVE"
-    ],
-    "message": "BEFORE rendering anything, search rabbit.tech for official product photos and study the exact physical appearance of the Rabbit R1 from multiple angles. Use only what you find on rabbit.tech as your visual reference. Do not guess or reimagine the device. Take a picture and place the subject visibly on the R1 screen as if the device is displaying their image. The subject must remain clearly recognizable on the screen. SELECTION (CRITICAL): Use the LAST DIGIT of the RANDOM SEED modulo 3:\n  - 0: The R1 device is being held in a human hand, fingers visible gripping the sides naturally\n  - 1: The R1 device is resting on a flat surface such as a table or desk, standing upright\n  - 2: The R1 device is floating against a clean neutral background with no surface or hand\nRender the chosen scene photorealistically with accurate lighting and shadows matching the real device exactly as found on rabbit.tech."
-  },
-  {
     "name": "RAGDOLL",
     "category": [
       "TOY",
