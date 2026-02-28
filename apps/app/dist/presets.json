@@ -5791,6 +5791,15 @@
     "message": "Take a picture and include a singing Rick Astley standing next to the subject.  Make it photorealistic."
   },
   {
+    "name": "RABBIT R1",
+    "category": [
+      "TECH",
+      "DEVICE",
+      "CREATIVE"
+    ],
+    "message": "Take a picture and place the subject inside the small square screen of a Rabbit R1 device. The Rabbit R1 is a compact, chunky, bright orange handheld AI device with a retro-toy aesthetic, rounded rectangular body, a small square display screen, a rotating cylindrical camera called the rabbit eye, and a side scroll wheel. Show the full physical device with the subject visibly displayed on its screen as if the R1 is showing their photo or video. The device should be held or resting on a surface. Keep the orange hardware photorealistic and detailed. The subject on the screen should be clearly recognizable."
+  },
+  {
     "name": "RAGDOLL",
     "category": [
       "TOY",
