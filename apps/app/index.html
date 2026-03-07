@@ -28,8 +28,12 @@
     </div>
     <h1 class="magic-title">✨ Magic Kamera ✨</h1>
     <p class="start-text">Tutorial located in menu (☰) under settings</p>
-    <button id="start-button" class="start-button">Start Camera</button>    
-</div>
+    <div style="display:flex;gap:3vw;justify-content:center;align-items:center;width:100%;">
+        <button id="start-button" class="start-button" style="min-width:0;flex:1;max-width:42vw;padding:5vw 3vw;font-size:5vw;">Start</button>
+        <button id="splash-tour-button" class="start-button" style="min-width:0;flex:1;max-width:42vw;padding:5vw 3vw;font-size:5vw;background:linear-gradient(135deg,#333 0%,#111 100%);border-color:#FE5F00;box-shadow:0 6px 25px rgba(254,95,0,0.3);">▶ Tour</button>
+    </div>
+    <p id="app-version" style="font-size:10px;color:#888;margin-top:8px;"></p>    
+    </div>
         <div class="camera-container" id="camera-container" style="display: none;">
             <video id="video" autoplay playsinline muted></video>
             <img id="captured-image" style="display: none;" alt="Captured photo">
@@ -703,7 +707,50 @@
                                     </div>
                                 </div>
                             </div>
+                         </div>
+<!-- Randomize Options Toggle -->
+                    <div class="preset-builder-field" style="margin-top: 12px;">
+                        <label class="preset-builder-label">
+                            <input type="checkbox" id="preset-builder-randomize" style="margin-right: 8px;">
+                            Enable Random Options
+                        </label>
+                        <div style="font-size: 11px; color: #888; margin-top: 4px;">
+                            Check this if preset has options that should be randomly selected
                         </div>
+                    </div>
+
+                    <!-- Selection Type -->
+                    <div class="preset-builder-field" id="selection-type-container" style="display: none;">
+                        <label class="preset-builder-label">Selection Type</label>
+                        <select id="preset-builder-selection-type" class="preset-builder-select">
+                            <option value="single">Single Selection (one choice from list)</option>
+                            <option value="multi">Multi-Selection (choose from multiple groups)</option>
+                        </select>
+                    </div>
+
+                    <!-- Single Selection Options -->
+                    <div class="preset-builder-field" id="single-options-container" style="display: none;">
+                        <label class="preset-builder-label">Options List</label>
+                        <div id="single-options-list" style="margin-top: 8px;"></div>
+                        <button type="button" id="add-single-option" style="margin-top: 6px; padding: 0 10px; height: 22px; line-height: 22px; background: #4CAF50; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 11px; display: inline-block;">
+                            + Add Option
+                        </button>
+                    </div>
+
+                    <!-- Multi-Selection Option Groups -->
+                    <div class="preset-builder-field" id="multi-options-container" style="display: none;">
+                        <label class="preset-builder-label">Option Groups</label>
+                        <div id="multi-options-groups" style="margin-top: 8px;"></div>
+                        <button type="button" id="add-option-group" style="margin-top: 6px; padding: 0 10px; height: 22px; line-height: 22px; background: #4CAF50; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 11px; display: inline-block;">
+                            + Add Group
+                        </button>
+                    </div>
+
+                    <!-- Additional Instructions -->
+                    <div class="preset-builder-field" style="margin-top: 12px;">
+                        <label class="preset-builder-label">Additional Instructions (CRITICAL/MANDATORY rules)</label>
+                        <textarea id="preset-builder-additional" class="preset-builder-input" style="min-height: 120px; font-family: monospace; font-size: 12px;" placeholder="CRITICAL RULES:&#10;• Rule 1&#10;• Rule 2&#10;&#10;MANDATORY:&#10;• Requirement 1"></textarea>
+                    </div>
 
                         <!-- Prompt Tips -->
                         <div class="preset-builder-tips">
@@ -715,11 +762,8 @@
                                 <li>Specify "photorealistic" or artistic style</li>
                                 <li>Consider small screen clarity</li>
                                 <li><strong>Random Selection:</strong> Use 🎲 templates for variety across photos</li>
-                                <li><strong>Even/Odd:</strong> Perfect for 2 options (50/50 split)</li>
-                                <li><strong>Last Digit:</strong> Use for 2-10 options with LAST DIGIT modulo</li>
-                                <li><strong>Last Two Digits:</strong> Use for 11-100 options with LAST TWO DIGITS modulo</li>
-                                <li><strong>Last Three Digits:</strong> Use for 100+ options with LAST THREE DIGITS modulo</li>
-                                <li><strong>Critical Formatting:</strong> Colon immediately after modulo number, 2 spaces before dash, no blank lines between options</li>
+                                <li><strong>Single Selection:</strong> Enable Random Options and choose Single Selection to add a list of options — one will be randomly picked each time the preset runs or you can manually select the options if manually select options is enabled in the settings</li>
+                                <li><strong>Multi-Selection:</strong> Use Multi-Selection to create multiple option groups — one option is randomly or manually picked from each group, allowing combinations across categories (e.g. style + setting + mood)</li>
                             </ul>
                         </div>
                     </div>
@@ -755,6 +799,7 @@
                 <!-- Glossary Menu -->
                 <div id="tutorial-glossary" class="tutorial-glossary">
                     <h4 class="glossary-title">Quick Navigation</h4>
+                    <button id="start-guided-tour" onclick="startGuidedTour()" style="display:block;width:100%;margin-bottom:10px;padding:10px;background:#FE5F00;color:#000;border:none;border-radius:6px;font-size:14px;font-weight:700;cursor:pointer;">▶ Start Audio Guided Tour</button>
                     <div class="glossary-items">
                         <button class="glossary-item" data-section="getting-started">🚀 Getting Started</button>
                         <button class="glossary-item" data-section="basic-controls">📸 Basic Controls</button>
@@ -777,7 +822,7 @@
                     <div id="section-getting-started" class="tutorial-section">
                         <h4 class="tutorial-heading">🚀 Getting Started</h4>
                         <p class="tutorial-text">
-                            Magic Kamera MDRE is a powerful plugin for the Rabbit r1 that transforms your photos with many AI-powered presets. Point, shoot, and watch your images come to life with artistic styles, effects, and transformations. Customize captured photos to create your own presets or re-prompt captured photo. Can also work as a security device with motion detection. A collaboration between M Domko, Ron G, WWTV and RabbitJesus(JET).
+                            Magic Kamera MDRE is a powerful plugin for the Rabbit r1 that transforms your photos with many AI-powered presets. Point, shoot, and watch your images come to life with artistic styles, effects, and transformations. Customize captured photos to create your own presets or re-prompt captured photos. You can do things you cannot do with regular Magic Camera (eg. zoom in/out, import photos, re-prompt photos, timer and burst).  Magic Kamera can also work as a security device with motion detection. A collaboration between M Domko, Ron G, WWTV and RabbitJesus(JET).
                         </p>
                     </div>
 
@@ -798,8 +843,8 @@
                    <div id="section-ai-presets" class="tutorial-section">
                         <h4 class="tutorial-heading">✨ AI Presets</h4>
                         <p class="tutorial-text">
-                            Browse over 800 unique and fun AI presets! Scroll through styles like Impressionism, Cyberpunk, Anime Art, Watercolor, Caricature, and much more. The current preset name appears at the bottom of the main screen. Each preset transforms your photo with a specific artistic style or effect. Some presets are created to truly randomize(using the RonDom Method©) options within the preset.   
-                        </p>
+                            Browse over 800 unique and fun AI presets! We are constantly updating and adding presets. Scroll through styles like Impressionism, Cyberpunk, Anime Art, Watercolor, Caricature, and much more. The current preset name appears at the bottom of the main screen. Each preset transforms your photo with a specific artistic style or effect. Some presets are created to truly randomize(using the RonDom Method©) options within the preset and you can also enable manually select options to select which of the options you want to create. Since there are so many presets from which to choose. <strong>🔊 Hear Preset Info:</strong> When browsing presets in the Import Presets menu, tap any preset ONCE to hear its description read aloud. Use the 🔊 mute button in the header to toggle audio on or off.
+</p>
                     </div>
 
                     <!-- Special Modes -->
@@ -910,12 +955,13 @@
                             <strong>Master Prompt:</strong> Append text to every AI transformation to customize. This can be accessed from the gallery by pressing the MASTER button in the gallery<br>
                             <strong>Motion Detection:</strong> Sensitivity, start delay, continuous capture<br>
                             <strong>Visible Presets:</strong> Select the imported presets you want to see in preset menus. Default all. Can select all, remove individually or remove all (the Ron setting). Each preset has categories indicated at the bottom of the visible preset menu.<br>
-                            <strong>Preset Builder:</strong> Made to follow a sequence. Click return to go to next selection. Select prompt templates and chips to help you create new and exciting presets you want to see in preset menus. Categories must be separated by commas. This is a very useful tool that includes prompting tips.<br>
+                            <strong>Preset Builder:</strong> Made to follow a sequence. Click return to go to next selection. Select prompt templates and chips to help you create new and exciting presets you want to see in preset menus. Categories must be separated by commas. You can also create multiple option presets with single or multi-selection! This is a very useful tool that includes prompting tips.<br>
                             <strong>No Magic Mode:</strong> Use as regular camera without AI processing. Photos will only save in plugin gallery. Photos will not save to rabbit hole or magic gallery. This setting does not affect prompting in gallery.<br>
                             <strong>Manually Select Options Mode:</strong> Enable/Disable. When enabled, if you choose a preset with options, a modal will appear asking you to pick from one of the options in the preset. Only this option is fed as the final prompt for generating the magical image. This setting does not work with No Magic Mode, Motion Sensor, Burst or Timer. It will work with Randomizer. Currently, only working with single shot photos in main camera screen and single image/single preset in gallery.<br>
                             <strong>Import Settings:</strong> Select import resolution for external image imported through gallery.<br>
                             <strong>Reset Database:</strong> Nuclear Option. Only imported presets remain.  All custom work deleted.<br>
-                            <strong>📥 Import Presets:</strong> Import from our external library of presets. Import only the ones you want by checking them individually or ✓ All (Ron setting - ✗ None). Once you select the ones you want to import, click the Import button. NOTE: Previously imported presets remain checked. To delete previously imported presets from the Magic Kamera, delete them from the Main Menu. You can import them again if you like. Any new presets added to our external library of presets, will be unchecked (check regularly for new ones as we are constantly updating this list).<br>
+                            <strong>📥 Import Presets:</strong> Import from our external library of presets. Import only the ones you want by checking them individually or ✓ All (Ron setting - ✗ None). Once you select the ones you want to import, click the Import button. NOTE: Previously imported presets remain checked. To delete previously imported presets from the Magic Kamera, delete them from the Main Menu. You can import them again if you like. Any new presets added to our external library of presets, will be unchecked (check regularly for new ones as we are constantly updating this list). <strong>🔊 Hear Preset Info:</strong> When browsing presets in the Import Presets menu, tap any preset ONCE to hear its description read aloud. Use the 🔊 mute button in the header to toggle audio on or off.
+<br>
                             <strong>🔄 Check for Updates:</strong> Check for new or modified presets.<br>
                             <strong>Tutorial:</strong> What you are currently reading.
                        </p>
@@ -949,9 +995,13 @@
                     <div id="section-troubleshooting" class="tutorial-section">
                         <h4 class="tutorial-heading">🔍 Troubleshooting</h4>
                         <p class="tutorial-text">
-                            <strong>AI transformation not working:</strong> If you took a picture and the rabbit did not respond indicating picture is being transformed/prepared, first check your settings to see if NO MAGIC mode is enabled. Disable if you want the Magic to happen. If this is not the solution, check your network connections. <br>
-All of the presets are optimized to avoid "camera ran dry" or "content filter" issues.  However, if you get a camera ran dry or content filter message. Sometimes it helps re-prompting it over and over until you break through the content filer overlords. You may also edit the prompt (avoid using offensive language, and trademark/copyrighted words). *v5 Magic Kamera MDRE ©2026
+                            <strong>Camera not working:</strong> You need to make certain that you import at least one preset or create your own preset in the preset builder for the camera to work.  Otherwise, you will get a Camera access denied error at the footer of the main camera screen. 
                         </p>
+                        <p class="tutorial-text">
+                            <strong>AI transformation not working:</strong> If you took a picture and the rabbit did not respond indicating picture is being transformed/prepared, first check your settings to see if NO MAGIC mode is enabled. Disable if you want the Magic to happen. If this is not the solution, check your network connections. <br>
+All of the presets are optimized to avoid "camera ran dry" or "content filter" issues.  However, if you get a camera ran dry or content filter message. Sometimes it helps re-prompting it over and over until you break through the content filer overlords. You may also edit the prompt (avoid using offensive language, and trademark/copyrighted words). 
+                        </p>
+                        
                     </div>
 
                 </div>
@@ -959,7 +1009,28 @@ All of the presets are optimized to avoid "camera ran dry" or "content filter" i
             </div>
         </div>
 
-
+        <!-- Guided Tour Overlay -->
+        <div id="guided-tour-overlay" style="display:none;position:fixed;inset:0;z-index:99999;pointer-events:none;">
+            <div id="tour-backdrop" style="position:absolute;inset:0;background:rgba(0,0,0,0.85);pointer-events:none;"></div>
+            <div id="tour-card" style="position:absolute;background:#111;border:2px solid #FE5F00;border-radius:12px;padding:14px;width:94vw;z-index:2;box-shadow:0 8px 32px rgba(0,0,0,0.7);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:auto;">
+                <div style="display:flex;align-items:center;gap:6px;margin-bottom:6px;overflow:hidden;">
+                    <span id="tour-step-badge" style="font-size:10px;font-weight:700;color:#FE5F00;background:rgba(254,95,0,0.15);padding:1px 6px;border-radius:20px;border:1px solid #FE5F00;white-space:nowrap;flex-shrink:0;"></span>
+                    <span id="tour-section-label" style="font-size:10px;color:#888;text-transform:uppercase;letter-spacing:0.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;flex:1;"></span>
+                </div>
+                <h3 id="tour-card-title" style="font-size:14px;font-weight:700;color:#FE5F00;margin:0 0 6px 0;line-height:1.3;"></h3>
+                <p id="tour-card-body" style="font-size:13px;color:#ddd;line-height:1.6;margin:0 0 8px 0;"></p>
+                <div style="display:flex;justify-content:space-between;align-items:center;">
+                    <button id="tour-btn-skip" style="font-size:9px;color:#888;background:none;border:1px solid #333;border-radius:4px;padding:2px 6px;cursor:pointer;pointer-events:auto;line-height:1;">Skip</button>
+                    <div style="display:flex;gap:4px;">
+                        <button id="tour-btn-back" style="padding:2px 8px;border-radius:6px;font-size:10px;font-weight:700;cursor:pointer;background:#222;color:#fff;border:1px solid #444;pointer-events:auto;line-height:1.4;">‹ Back</button>
+                        <button id="tour-btn-next" style="padding:2px 8px;border-radius:6px;font-size:10px;font-weight:700;cursor:pointer;background:#FE5F00;color:#000;border:none;pointer-events:auto;line-height:1.4;">Next ›</button>
+                    </div>
+                </div>
+                <div style="height:2px;background:#222;border-radius:2px;margin-top:6px;overflow:hidden;">
+                    <div id="tour-progress-fill" style="height:100%;background:#FE5F00;border-radius:2px;transition:width 0.35s ease;width:0%;"></div>
+                </div>
+            </div>
+        </div>
         <!-- Style Editor Modal -->
         <div id="style-editor" class="style-editor" style="display: none;">
             <div class="style-editor-content">
@@ -975,6 +1046,39 @@ All of the presets are optimized to avoid "camera ran dry" or "content filter" i
                     <input type="text" id="style-name" class="style-input" placeholder="Style name">
                     <input type="text" id="style-category" class="style-input" placeholder="Categories (comma-separated)">
                     <textarea id="style-message" class="style-textarea" placeholder="AI prompt for this style"></textarea>
+
+                    <!-- Randomize Options Toggle -->
+                    <label class="style-option-label">
+                        <input type="checkbox" id="style-randomize" class="style-option-checkbox">
+                        Enable Random Options
+                    </label>
+
+                    <!-- Selection Type -->
+                    <div id="style-selection-type-container" style="display: none;">
+                        <div class="style-option-label">Selection Type</div>
+                        <select id="style-selection-type" class="style-input" style="height: 8vw; min-height: 32px;">
+                            <option value="single">Single Selection</option>
+                            <option value="multi">Multi-Selection (groups)</option>
+                        </select>
+                    </div>
+
+                    <!-- Single Selection Options -->
+                    <div id="style-single-options-container" style="display: none;">
+                        <div class="style-option-label">Options List</div>
+                        <div id="style-single-options-list"></div>
+                        <button type="button" id="style-add-single-option" class="style-option-add-btn">+ Add Option</button>
+                    </div>
+
+                    <!-- Multi-Selection Option Groups -->
+                    <div id="style-multi-options-container" style="display: none;">
+                        <div class="style-option-label">Option Groups</div>
+                        <div id="style-multi-options-groups"></div>
+                        <button type="button" id="style-add-option-group" class="style-option-add-btn">+ Add Group</button>
+                    </div>
+
+                    <!-- Additional Instructions -->
+                    <div class="style-option-label">Additional Instructions</div>
+                    <textarea id="style-additional" class="style-textarea" style="min-height: 20vw; flex: none;" placeholder="CRITICAL RULES:&#10;• Rule 1&#10;• Rule 2"></textarea>
                 </div>
             </div>
         </div>
