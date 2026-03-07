@@ -12,6 +12,35 @@ export class PresetImporter {
     this.currentImportScrollIndex = 0;
     this.importFilterText = '';
     this.checkboxStates = new Map(); // Track checkbox states across filters
+
+    // Audio system for reading preset messages
+    this.isMuted = false;
+
+    this.speakMessage = (text) => {
+      if (this.isMuted) return;
+      // Take only the first sentence, capped at 200 characters, so the R1 finishes quickly
+      const firstSentence = text.split(/[.!?\n]/)[0].trim().substring(0, 200);
+      if (window.speechSynthesis) {
+        window.speechSynthesis.cancel();
+      }
+      if (typeof PluginMessageHandler !== 'undefined') {
+        PluginMessageHandler.postMessage(JSON.stringify({
+          message: firstSentence,
+          wantsR1Response: true
+        }));
+      } else if (window.speechSynthesis) {
+        const utterance = new SpeechSynthesisUtterance(firstSentence);
+        utterance.rate = 0.9;
+        utterance.pitch = 1.0;
+        window.speechSynthesis.speak(utterance);
+      }
+    };
+
+    this.stopSpeaking = () => {
+      if (window.speechSynthesis) {
+        window.speechSynthesis.cancel();
+      }
+    };
   }
 
   async init() {
@@ -109,14 +138,53 @@ export class PresetImporter {
     }
   }
 
+  buildPresetIndex(availablePresets) {
+    // Build imported presets map once — O(n) instead of O(n²) per keypress
+    const importedMap = new Map(this.importedPresets.map(p => [p.name, p]));
+
+    const newPresets = [];
+    const updatedPresets = [];
+    const normalPresets = [];
+
+    availablePresets.forEach(preset => {
+      const existing = importedMap.get(preset.name);
+      if (!existing) {
+        newPresets.push(preset);
+      } else if (existing.message !== preset.message) {
+        updatedPresets.push(preset);
+      } else {
+        normalPresets.push(preset);
+      }
+    });
+
+    newPresets.sort((a, b) => a.name.localeCompare(b.name));
+    updatedPresets.sort((a, b) => a.name.localeCompare(b.name));
+    normalPresets.sort((a, b) => a.name.localeCompare(b.name));
+
+    this._sortedPresets = [...newPresets, ...updatedPresets, ...normalPresets];
+
+    // Pre-build lowercase search strings once — reused on every keypress
+    this._searchIndex = this._sortedPresets.map(preset => {
+      const name = preset.name.toLowerCase();
+      const message = (preset.message || '').toLowerCase();
+      const cats = Array.isArray(preset.category) ? preset.category.join(' ').toLowerCase() : '';
+      return name + ' ' + message + ' ' + cats;
+    });
+  }
+
   getFilteredPresets(availablePresets) {
-    if (!this.importFilterText.trim()) {
-      return availablePresets;
+    // Build index only if not yet built for this session
+    if (!this._sortedPresets) {
+      this.buildPresetIndex(availablePresets);
     }
-    
+
+    if (!this.importFilterText.trim()) {
+      return this._sortedPresets;
+    }
+
     const filterLower = this.importFilterText.toLowerCase();
-    return availablePresets.filter(preset => 
-      preset.name.toLowerCase().includes(filterLower)
+    return this._sortedPresets.filter((preset, i) =>
+      this._searchIndex[i].includes(filterLower)
     );
   }
 
@@ -125,6 +193,8 @@ export class PresetImporter {
       this.isImportModalOpen = true;
       this.currentImportScrollIndex = 0;
       this.importFilterText = '';
+      this._sortedPresets = null;
+      this._searchIndex = null;
       
       // Initialize checkbox states - mark currently imported presets as checked
       this.checkboxStates.clear();
@@ -148,6 +218,7 @@ export class PresetImporter {
       header.innerHTML = `
         <h2 style="font-size: 14px;">Import (<span id="import-preset-count">${availablePresets.length}</span>)</h2>
         <div class="menu-nav-buttons">
+          <button id="import-mute-toggle" class="menu-jump-button" title="Mute/Unmute">🔊</button>          
           <button id="import-jump-to-top" class="menu-jump-button" title="Jump to top">↑</button>
           <button id="import-jump-to-bottom" class="menu-jump-button" title="Jump to bottom">↓</button>
           <button id="close-import-modal" class="close-button">×</button>
@@ -192,7 +263,7 @@ export class PresetImporter {
           item.dataset.presetIndex = index;
           item.dataset.presetName = preset.name;
           // Added margin-bottom: 2px for small space between presets
-          item.style.cssText = 'display: flex; align-items: center; padding: 6px 15px; min-height: 30px; width: 100%; justify-content: flex-start; margin-bottom: 2px;';
+          item.style.cssText = 'display: flex; align-items: flex-start; padding: 6px 15px; width: 100%; justify-content: flex-start; margin-bottom: 2px;';
 
           const checkbox = document.createElement('input');
           checkbox.type = 'checkbox';
@@ -213,10 +284,23 @@ export class PresetImporter {
             this.checkboxStates.set(preset.name, checkbox.checked);
           };
 
+          const firstLine = (preset.message || '').split('\n')[0].trim();
+
           const nameSpan = document.createElement('span');
           nameSpan.className = 'menu-item-name';
-          nameSpan.textContent = preset.name;
-          nameSpan.style.cssText = 'flex: 1; text-align: left; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-weight: bold; color: #000; font-size: 12px; display: flex; align-items: center;';
+          nameSpan.style.cssText = 'flex: 1; text-align: left; overflow: hidden; font-size: 12px; display: flex; flex-direction: column; align-items: flex-start; gap: 1px;';
+
+          const nameRow = document.createElement('span');
+          nameRow.textContent = preset.name;
+          nameRow.style.cssText = 'font-weight: bold; color: #000; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; width: 100%; display: flex; align-items: center;';
+
+          const previewRow = document.createElement('span');
+          previewRow.textContent = firstLine;
+          previewRow.style.cssText = 'font-weight: normal; color: #fff; font-size: 10px; width: 100%; white-space: normal; word-break: break-word;';
+          previewRow.className = 'import-preview-row';
+
+          nameSpan.appendChild(nameRow);
+          nameSpan.appendChild(previewRow);
 
           // Check if preset is NEW or UPDATED
           const existingPreset = this.importedPresets.find(p => p.name === preset.name);
@@ -226,13 +310,13 @@ export class PresetImporter {
             const ticket = document.createElement('span');
             ticket.className = 'preset-ticket preset-ticket-new';
             ticket.textContent = 'NEW';
-            nameSpan.appendChild(ticket);
+            nameRow.appendChild(ticket);
           } else if (existingPreset.message !== preset.message) {
             // This preset has been UPDATED - show GREEN ticket with pulse
             const ticket = document.createElement('span');
             ticket.className = 'preset-ticket preset-ticket-updated';
             ticket.textContent = 'UPDATED';
-            nameSpan.appendChild(ticket);
+            nameRow.appendChild(ticket);
           }
 
           item.appendChild(checkbox);
@@ -242,6 +326,10 @@ export class PresetImporter {
             if (e.target !== checkbox) {
               checkbox.checked = !checkbox.checked;
               this.checkboxStates.set(preset.name, checkbox.checked);
+            }
+            // Only speak when checking ON, not when unchecking
+            if (checkbox.checked) {
+              this.speakMessage(preset.message);
             }
           };
 
@@ -307,11 +395,23 @@ footerSection.innerHTML = `
 
       // Event listeners
       const filterInput = document.getElementById('import-preset-filter');
+      let importFilterDebounce = null;
       filterInput.addEventListener('input', (e) => {
         this.importFilterText = e.target.value;
         this.currentImportScrollIndex = 0;
-        renderPresetsList();
+        if (importFilterDebounce) clearTimeout(importFilterDebounce);
+        importFilterDebounce = setTimeout(() => {
+          renderPresetsList();
+        }, 150);
       });
+
+      document.getElementById('import-mute-toggle').onclick = () => {
+        this.isMuted = !this.isMuted;
+        if (this.isMuted) {
+          this.stopSpeaking();
+        }
+        document.getElementById('import-mute-toggle').textContent = this.isMuted ? '🔇' : '🔊';
+      };
 
       document.getElementById('select-all-presets').onclick = () => {
         const filteredPresets = this.getFilteredPresets(availablePresets);
@@ -331,6 +431,7 @@ footerSection.innerHTML = `
 
       const closeModal = () => {
         this.isImportModalOpen = false;
+        this.stopSpeaking();
         document.body.removeChild(modal);
       };
 

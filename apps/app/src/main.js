@@ -223,6 +223,16 @@ const NO_MAGIC_MODE_KEY = 'r1_camera_no_magic_mode';
 // Manual Options mode
 let manualOptionsMode = false;
 const MANUAL_OPTIONS_KEY = 'r1_camera_manual_options';
+const TOUR_PROGRESS_KEY = 'r1_camera_tour_progress';
+const APP_VERSION = (() => {
+  const d = new Date(document.lastModified);
+  const mm = String(d.getMonth() + 1).padStart(2, '0');
+  const dd = String(d.getDate()).padStart(2, '0');
+  const yyyy = d.getFullYear();
+  const hh = String(d.getHours()).padStart(2, '0');
+  const min = String(d.getMinutes()).padStart(2, '0');
+  return 'v' + mm + '.' + dd + '.' + yyyy + '.' + hh + '.' + min;
+})();
 let manuallySelectedOption = null;
 
 // Track if we entered Master Prompt from gallery
@@ -261,6 +271,8 @@ let currentImportResolutionIndex_Menu = 0;
 let isTutorialSubmenuOpen = false;
 let isPresetBuilderSubmenuOpen = false;
 let editingPresetBuilderIndex = -1;
+let singleOptionCounter = 0;
+let optionGroupCounter = 0;
 let currentGalleryIndex = 0;
 let currentViewerIndex = 0;
 let currentEditorIndex = 0;
@@ -946,6 +958,7 @@ function closeImageViewer() {
   document.getElementById('image-viewer').style.display = 'none';
   currentViewerImageIndex = -1;
   viewerZoom = 1;
+  window.viewerLoadedPreset = null;
   
   // Show gallery again without resuming camera
   const modal = document.getElementById('gallery-modal');
@@ -1534,9 +1547,36 @@ async function selectPreset(preset) {
     return;
   }
   
-  // Normal preset selection for viewer
+ // Normal preset selection for viewer
+  // Build full readable text including options and additional instructions
   const promptInput = document.getElementById('viewer-prompt');
-  promptInput.value = preset.message;
+  let fullText = preset.message;
+
+  if (preset.randomizeOptions) {
+    if (preset.optionGroups && preset.optionGroups.length > 0) {
+      preset.optionGroups.forEach(group => {
+        fullText += '\n\n' + group.title + ':\n';
+        group.options.forEach((opt, i) => {
+          fullText += '  ' + i + ': ' + opt.text + '\n';
+        });
+      });
+    } else if (preset.options && preset.options.length > 0) {
+      fullText += '\n\nOPTIONS:\n';
+      preset.options.forEach((opt, i) => {
+        fullText += '  ' + i + ': ' + opt.text + '\n';
+      });
+    }
+  }
+
+  if (preset.additionalInstructions && preset.additionalInstructions.trim()) {
+    fullText += '\n\n' + preset.additionalInstructions;
+  }
+
+  promptInput.value = fullText;
+
+  // Store the original preset so the Magic button uses the correct structured data
+  window.viewerLoadedPreset = preset;
+
   hidePresetSelector();
 }
 
@@ -1552,8 +1592,12 @@ async function submitMagicTransform() {
   let matchedPreset = null;
   let manualSelection = null;
   
-  // Check if this prompt matches a known preset (loaded via "Load Preset")
-  if (prompt) {
+ // Check if this prompt matches a known preset (loaded via "Load Preset")
+  // Use stored preset directly - textarea may contain expanded text so don't compare by message
+  if (window.viewerLoadedPreset) {
+    matchedPreset = window.viewerLoadedPreset;
+    presetName = matchedPreset.name;
+  } else if (prompt) {
     matchedPreset = CAMERA_PRESETS.find(p => p.message === prompt);
     if (matchedPreset) {
       presetName = matchedPreset.name;
@@ -1572,10 +1616,10 @@ async function submitMagicTransform() {
     alert(`Using random preset: ${presetName}`);
   }
   
-  // Handle manual options for gallery
+ // Handle manual options for gallery
   // Manual Options does NOT work with No Magic Mode
   if (manualOptionsMode && !noMagicMode && matchedPreset) {
-    const options = parsePresetOptions(matchedPreset.message);
+    const options = parsePresetOptions(matchedPreset);
     
     if (options.length > 0) {
       const selectedValue = await showManualOptionsModal(matchedPreset, options);
@@ -1588,11 +1632,19 @@ async function submitMagicTransform() {
     }
   }
   
+  // If manual options mode is OFF, check if user made inline selections in the viewer
+  if (!manualOptionsMode && matchedPreset && matchedPreset.randomizeOptions) {
+    const inlineSelection = collectViewerSelectedOptions(matchedPreset);
+    if (inlineSelection !== null) {
+      manualSelection = inlineSelection;
+    }
+  }
+  
   const item = galleryImages[currentViewerImageIndex];
   
   if (typeof PluginMessageHandler !== 'undefined') {
     PluginMessageHandler.postMessage(JSON.stringify({
-      message: getFinalPrompt(prompt, presetName, manualSelection),
+      message: getFinalPrompt(matchedPreset || {name: presetName, message: prompt, options: [], randomizeOptions: false, additionalInstructions: ''}, manualSelection),
       pluginId: 'com.r1.pixelart',
       imageBase64: item.imageBase64
     }));
@@ -1713,7 +1765,7 @@ async function processBatchImages(preset, imagesToProcess) {
     if (!image) continue;
     
     try {
-      const finalPrompt = getFinalPrompt(preset.message, preset.name);
+      const finalPrompt = getFinalPrompt(preset);
       
       if (typeof PluginMessageHandler !== 'undefined') {
         PluginMessageHandler.postMessage(JSON.stringify({
@@ -1902,7 +1954,7 @@ async function applyMultiplePresets() {
   
   for (const preset of presetsToApply) {
     try {
-      const finalPrompt = getFinalPrompt(preset.message, preset.name);
+      const finalPrompt = getFinalPrompt(preset);
       
       if (typeof PluginMessageHandler !== 'undefined') {
         PluginMessageHandler.postMessage(JSON.stringify({
@@ -2894,6 +2946,507 @@ function hidePresetBuilderSubmenu() {
   showSettingsSubmenu();
 }
 
+// ============================================================
+// VIEWER PRESET OPTIONS (Gallery - Load Preset)
+// ============================================================
+
+// Show option fields in the gallery viewer when a preset with options is loaded
+function showViewerPresetOptions(preset) {
+  const container = document.getElementById('viewer-options-container');
+  const singleDiv = document.getElementById('viewer-single-options');
+  const multiDiv = document.getElementById('viewer-multi-options');
+  
+  if (!container) return;
+  
+  // Clear previous
+  document.getElementById('viewer-single-options-list').innerHTML = '';
+  document.getElementById('viewer-multi-options-groups').innerHTML = '';
+  
+  if (!preset.randomizeOptions) {
+    container.style.display = 'none';
+    return;
+  }
+  
+  container.style.display = 'block';
+  
+  if (preset.optionGroups && preset.optionGroups.length > 0) {
+    // Multi-selection
+    singleDiv.style.display = 'none';
+    multiDiv.style.display = 'block';
+    const groupsContainer = document.getElementById('viewer-multi-options-groups');
+    
+    preset.optionGroups.forEach((group, groupIndex) => {
+      const groupDiv = document.createElement('div');
+      groupDiv.style.marginBottom = '10px';
+      
+      const label = document.createElement('div');
+      label.style.cssText = 'font-size: 11px; color: #aaa; margin-bottom: 6px;';
+      label.textContent = group.title + ':';
+      groupDiv.appendChild(label);
+      
+      group.options.forEach((opt, optIndex) => {
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.dataset.groupIndex = groupIndex;
+        btn.dataset.optIndex = optIndex;
+        btn.textContent = opt.text;
+        btn.style.cssText = 'display: block; width: 100%; text-align: left; padding: 8px 12px; margin-bottom: 4px; background: #2a2a2a; color: #fff; border: 1px solid #444; border-radius: 4px; cursor: pointer; font-size: 12px;';
+        btn.addEventListener('click', () => {
+          // Deselect others in same group
+          groupDiv.querySelectorAll('button').forEach(b => {
+            b.style.background = '#2a2a2a';
+            b.style.borderColor = '#444';
+            b.removeAttribute('data-selected');
+          });
+          btn.style.background = '#4CAF50';
+          btn.style.borderColor = '#4CAF50';
+          btn.setAttribute('data-selected', 'true');
+        });
+        groupDiv.appendChild(btn);
+      });
+      
+      groupsContainer.appendChild(groupDiv);
+    });
+  } else if (preset.options && preset.options.length > 0) {
+    // Single selection
+    multiDiv.style.display = 'none';
+    singleDiv.style.display = 'block';
+    const listContainer = document.getElementById('viewer-single-options-list');
+    
+    preset.options.forEach((opt, optIndex) => {
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.dataset.optIndex = optIndex;
+      btn.textContent = opt.text;
+      btn.style.cssText = 'display: block; width: 100%; text-align: left; padding: 8px 12px; margin-bottom: 4px; background: #2a2a2a; color: #fff; border: 1px solid #444; border-radius: 4px; cursor: pointer; font-size: 12px;';
+      btn.addEventListener('click', () => {
+        // Deselect all others
+        listContainer.querySelectorAll('button').forEach(b => {
+          b.style.background = '#2a2a2a';
+          b.style.borderColor = '#444';
+          b.removeAttribute('data-selected');
+        });
+        btn.style.background = '#4CAF50';
+        btn.style.borderColor = '#4CAF50';
+        btn.setAttribute('data-selected', 'true');
+      });
+      listContainer.appendChild(btn);
+    });
+  } else {
+    container.style.display = 'none';
+  }
+}
+
+// Collect the viewer's selected options (returns manualSelection or null for random)
+function collectViewerSelectedOptions(preset) {
+  if (!preset || !preset.randomizeOptions) return null;
+  
+  if (preset.optionGroups && preset.optionGroups.length > 0) {
+    const groupsContainer = document.getElementById('viewer-multi-options-groups');
+    if (!groupsContainer) return null;
+    const selections = [];
+    const groupDivs = groupsContainer.children;
+    let anySelected = false;
+    
+    for (let i = 0; i < groupDivs.length; i++) {
+      const selectedBtn = groupDivs[i].querySelector('button[data-selected]');
+      if (selectedBtn) {
+        selections.push(parseInt(selectedBtn.dataset.optIndex));
+        anySelected = true;
+      } else {
+        selections.push(null); // No selection for this group
+      }
+    }
+    
+    // If none selected, return null (will randomize)
+    return anySelected ? selections.map(s => s === null ? 0 : s) : null;
+    
+  } else if (preset.options && preset.options.length > 0) {
+    const listContainer = document.getElementById('viewer-single-options-list');
+    if (!listContainer) return null;
+    const selectedBtn = listContainer.querySelector('button[data-selected]');
+    return selectedBtn ? parseInt(selectedBtn.dataset.optIndex) : null;
+  }
+  
+  return null;
+}
+
+// ============================================================
+// STYLE EDITOR OPTION MANAGEMENT
+// ============================================================
+
+let styleOptionCounter = 0;
+let styleGroupCounter = 0;
+
+function toggleStyleRandomizeOptions() {
+  const checkbox = document.getElementById('style-randomize');
+  const selectionTypeContainer = document.getElementById('style-selection-type-container');
+  
+  if (checkbox.checked) {
+    selectionTypeContainer.style.display = 'block';
+    updateStyleSelectionTypeVisibility();
+  } else {
+    selectionTypeContainer.style.display = 'none';
+    document.getElementById('style-single-options-container').style.display = 'none';
+    document.getElementById('style-multi-options-container').style.display = 'none';
+  }
+}
+
+function updateStyleSelectionTypeVisibility() {
+  const selectionType = document.getElementById('style-selection-type').value;
+  if (selectionType === 'single') {
+    document.getElementById('style-single-options-container').style.display = 'block';
+    document.getElementById('style-multi-options-container').style.display = 'none';
+  } else {
+    document.getElementById('style-single-options-container').style.display = 'none';
+    document.getElementById('style-multi-options-container').style.display = 'block';
+  }
+}
+
+function addStyleSingleOption(text = '', enabled = true) {
+  const list = document.getElementById('style-single-options-list');
+  const div = document.createElement('div');
+  div.className = 'option-item';
+  div.style.cssText = 'display:flex; align-items:center; gap:0;';
+  
+  const checkbox = document.createElement('input');
+  checkbox.type = 'checkbox';
+  checkbox.checked = enabled;
+  checkbox.title = 'Include this option';
+  checkbox.className = 'style-option-checkbox';
+  checkbox.style.cssText = 'margin:0; padding:0; flex-shrink:0;';
+  checkbox.dataset.role = 'option-enabled';
+  
+  const input = document.createElement('input');
+  input.type = 'text';
+  input.placeholder = 'Option description';
+  input.value = text;
+  input.style.cssText = 'flex:1; min-width:0;';
+  
+  const removeBtn = document.createElement('button');
+  removeBtn.textContent = 'Remove';
+  removeBtn.onclick = () => div.remove();
+  
+  div.appendChild(checkbox);
+  div.appendChild(input);
+  div.appendChild(removeBtn);
+  list.appendChild(div);
+}
+
+function addStyleOptionGroup(title = '', options = []) {
+  const container = document.getElementById('style-multi-options-groups');
+  const groupId = `style-group-${styleGroupCounter++}`;
+  
+  const groupDiv = document.createElement('div');
+  groupDiv.className = 'option-group';
+  groupDiv.dataset.groupId = groupId;
+  
+  const header = document.createElement('div');
+  header.className = 'option-group-header';
+  
+  const titleInput = document.createElement('input');
+  titleInput.type = 'text';
+  titleInput.placeholder = 'Group Title (e.g., "COLOR", "STYLE")';
+  titleInput.value = title;
+  titleInput.dataset.role = 'group-title';
+  
+  const removeGroupBtn = document.createElement('button');
+  removeGroupBtn.textContent = 'Remove Group';
+  removeGroupBtn.onclick = () => groupDiv.remove();
+  
+  header.appendChild(titleInput);
+  header.appendChild(removeGroupBtn);
+  groupDiv.appendChild(header);
+  
+  const optionsDiv = document.createElement('div');
+  optionsDiv.className = 'option-group-options';
+  optionsDiv.dataset.role = 'group-options';
+  groupDiv.appendChild(optionsDiv);
+  
+  const addBtn = document.createElement('button');
+  addBtn.className = 'add-group-option';
+  addBtn.textContent = '+ Add Option to Group';
+  addBtn.onclick = () => addStyleGroupOption(groupId);
+  groupDiv.appendChild(addBtn);
+  
+  container.appendChild(groupDiv);
+  
+  if (options.length > 0) {
+    options.forEach(opt => addStyleGroupOption(groupId, opt.text, opt.enabled !== false));
+  } else {
+    addStyleGroupOption(groupId);
+  }
+}
+
+function addStyleGroupOption(groupId, text = '', enabled = true) {
+  const group = document.querySelector(`[data-group-id="${groupId}"]`);
+  if (!group) return;
+  
+  const optionsContainer = group.querySelector('[data-role="group-options"]');
+  const div = document.createElement('div');
+  div.className = 'option-item';
+  div.style.cssText = 'display:flex; align-items:center; gap:0;';
+  
+  const checkbox = document.createElement('input');
+  checkbox.type = 'checkbox';
+  checkbox.checked = enabled;
+  checkbox.title = 'Include this option';
+  checkbox.className = 'style-option-checkbox';
+  checkbox.style.cssText = 'margin:0; padding:0; flex-shrink:0;';
+  checkbox.dataset.role = 'option-enabled';
+  
+  const input = document.createElement('input');
+  input.type = 'text';
+  input.placeholder = 'Option description';
+  input.value = text;
+  input.style.cssText = 'flex:1; min-width:0;';
+  
+  const removeBtn = document.createElement('button');
+  removeBtn.textContent = 'Remove';
+  removeBtn.onclick = () => div.remove();
+  
+  div.appendChild(checkbox);
+  div.appendChild(input);
+  div.appendChild(removeBtn);
+  optionsContainer.appendChild(div);
+}
+
+function collectStyleSingleOptions() {
+  const list = document.getElementById('style-single-options-list');
+  const items = list.querySelectorAll('.option-item');
+  const options = [];
+  items.forEach((div, index) => {
+    const input = div.querySelector('input[type="text"]');
+    const checkbox = div.querySelector('input[type="checkbox"]');
+    const text = input ? input.value.trim() : '';
+    if (text) {
+      options.push({ id: String(index + 1).padStart(3, '0'), text, enabled: checkbox ? checkbox.checked : true });
+    }
+  });
+  return options;
+}
+
+function collectStyleOptionGroups() {
+  const container = document.getElementById('style-multi-options-groups');
+  const groups = container.querySelectorAll('.option-group');
+  const optionGroups = [];
+  groups.forEach(group => {
+    const titleInput = group.querySelector('[data-role="group-title"]');
+    const title = titleInput.value.trim().toUpperCase();
+    if (!title) return;
+    const optionDivs = group.querySelectorAll('[data-role="group-options"] .option-item');
+    const options = [];
+    optionDivs.forEach((div, index) => {
+      const input = div.querySelector('input[type="text"]');
+      const checkbox = div.querySelector('input[type="checkbox"]');
+      const text = input ? input.value.trim() : '';
+      if (text) options.push({ id: String(index + 1).padStart(3, '0'), text, enabled: checkbox ? checkbox.checked : true });
+    });
+    if (options.length > 0) optionGroups.push({ title, options });
+  });
+  return optionGroups;
+}
+
+function clearStyleEditorOptionFields() {
+  const checkbox = document.getElementById('style-randomize');
+  if (checkbox) checkbox.checked = false;
+  const additional = document.getElementById('style-additional');
+  if (additional) additional.value = '';
+  const singleList = document.getElementById('style-single-options-list');
+  if (singleList) singleList.innerHTML = '';
+  const multiGroups = document.getElementById('style-multi-options-groups');
+  if (multiGroups) multiGroups.innerHTML = '';
+  const selTypeCont = document.getElementById('style-selection-type-container');
+  if (selTypeCont) selTypeCont.style.display = 'none';
+  const singleCont = document.getElementById('style-single-options-container');
+  if (singleCont) singleCont.style.display = 'none';
+  const multiCont = document.getElementById('style-multi-options-container');
+  if (multiCont) multiCont.style.display = 'none';
+  styleOptionCounter = 0;
+  styleGroupCounter = 0;
+}
+
+// Toggle randomize options visibility
+function toggleRandomizeOptions() {
+  const randomizeCheckbox = document.getElementById('preset-builder-randomize');
+  const selectionTypeContainer = document.getElementById('selection-type-container');
+  const selectionType = document.getElementById('preset-builder-selection-type');
+  
+  if (randomizeCheckbox.checked) {
+    selectionTypeContainer.style.display = 'block';
+    updateSelectionTypeVisibility();
+  } else {
+    selectionTypeContainer.style.display = 'none';
+    document.getElementById('single-options-container').style.display = 'none';
+    document.getElementById('multi-options-container').style.display = 'none';
+  }
+}
+
+// Update which option container is visible
+function updateSelectionTypeVisibility() {
+  const selectionType = document.getElementById('preset-builder-selection-type').value;
+  const singleContainer = document.getElementById('single-options-container');
+  const multiContainer = document.getElementById('multi-options-container');
+  
+  if (selectionType === 'single') {
+    singleContainer.style.display = 'block';
+    multiContainer.style.display = 'none';
+  } else {
+    singleContainer.style.display = 'none';
+    multiContainer.style.display = 'block';
+  }
+}
+
+// Add single option
+function addSingleOption(text = '') {
+  const list = document.getElementById('single-options-list');
+  const id = `single-option-${singleOptionCounter++}`;
+  
+  const div = document.createElement('div');
+  div.className = 'option-item';
+  div.dataset.optionId = id;
+  
+  const input = document.createElement('input');
+  input.type = 'text';
+  input.placeholder = 'Option description (e.g., "Red background with blue text")';
+  input.value = text;
+  
+  const removeBtn = document.createElement('button');
+  removeBtn.textContent = 'Remove';
+  removeBtn.onclick = () => div.remove();
+  
+  div.appendChild(input);
+  div.appendChild(removeBtn);
+  list.appendChild(div);
+}
+
+// Add option group
+function addOptionGroup(title = '', options = []) {
+  const container = document.getElementById('multi-options-groups');
+  const groupId = `option-group-${optionGroupCounter++}`;
+  
+  const groupDiv = document.createElement('div');
+  groupDiv.className = 'option-group';
+  groupDiv.dataset.groupId = groupId;
+  
+  // Group header
+  const header = document.createElement('div');
+  header.className = 'option-group-header';
+  
+  const titleInput = document.createElement('input');
+  titleInput.type = 'text';
+  titleInput.placeholder = 'Group Title (e.g., "COLOR", "SIZE", "STYLE")';
+  titleInput.value = title;
+  titleInput.dataset.role = 'group-title';
+  
+  const removeGroupBtn = document.createElement('button');
+  removeGroupBtn.textContent = 'Remove Group';
+  removeGroupBtn.onclick = () => groupDiv.remove();
+  
+  header.appendChild(titleInput);
+  header.appendChild(removeGroupBtn);
+  groupDiv.appendChild(header);
+  
+  // Options container
+  const optionsDiv = document.createElement('div');
+  optionsDiv.className = 'option-group-options';
+  optionsDiv.dataset.role = 'group-options';
+  groupDiv.appendChild(optionsDiv);
+  
+  // Add option button
+  const addBtn = document.createElement('button');
+  addBtn.className = 'add-group-option';
+  addBtn.textContent = '+ Add Option to Group';
+  addBtn.onclick = () => addGroupOption(groupId);
+  groupDiv.appendChild(addBtn);
+  
+  container.appendChild(groupDiv);
+  
+  // Add initial options if provided
+  if (options.length > 0) {
+    options.forEach(opt => addGroupOption(groupId, opt.text));
+  } else {
+    // Add one empty option by default
+    addGroupOption(groupId);
+  }
+}
+
+// Add option to specific group
+function addGroupOption(groupId, text = '') {
+  const group = document.querySelector(`[data-group-id="${groupId}"]`);
+  if (!group) return;
+  
+  const optionsContainer = group.querySelector('[data-role="group-options"]');
+  
+  const div = document.createElement('div');
+  div.className = 'option-item';
+  
+  const input = document.createElement('input');
+  input.type = 'text';
+  input.placeholder = 'Option description';
+  input.value = text;
+  
+  const removeBtn = document.createElement('button');
+  removeBtn.textContent = 'Remove';
+  removeBtn.onclick = () => div.remove();
+  
+  div.appendChild(input);
+  div.appendChild(removeBtn);
+  optionsContainer.appendChild(div);
+}
+
+// Collect single options from UI
+function collectSingleOptions() {
+  const list = document.getElementById('single-options-list');
+  const items = list.querySelectorAll('.option-item input');
+  const options = [];
+  
+  items.forEach((input, index) => {
+    const text = input.value.trim();
+    if (text) {
+      options.push({
+        id: String(index + 1).padStart(3, '0'),
+        text: text
+      });
+    }
+  });
+  
+  return options;
+}
+
+// Collect option groups from UI
+function collectOptionGroups() {
+  const container = document.getElementById('multi-options-groups');
+  const groups = container.querySelectorAll('.option-group');
+  const optionGroups = [];
+  
+  groups.forEach(group => {
+    const titleInput = group.querySelector('[data-role="group-title"]');
+    const title = titleInput.value.trim().toUpperCase();
+    
+    if (!title) return; // Skip groups without title
+    
+    const optionInputs = group.querySelectorAll('[data-role="group-options"] .option-item input');
+    const options = [];
+    
+    optionInputs.forEach((input, index) => {
+      const text = input.value.trim();
+      if (text) {
+        options.push({
+          id: String(index + 1).padStart(3, '0'),
+          text: text
+        });
+      }
+    });
+    
+    if (options.length > 0) {
+      optionGroups.push({ title, options });
+    }
+  });
+  
+  return optionGroups;
+}
+
 // Clear Preset Builder form
 function clearPresetBuilderForm() {
   editingPresetBuilderIndex = -1;
@@ -2916,6 +3469,16 @@ function clearPresetBuilderForm() {
   document.querySelectorAll('.chip-section-header').forEach(h => {
     h.classList.remove('expanded');
   });
+// Clear new fields
+  document.getElementById('preset-builder-randomize').checked = false;
+  document.getElementById('preset-builder-additional').value = '';
+  document.getElementById('single-options-list').innerHTML = '';
+  document.getElementById('multi-options-groups').innerHTML = '';
+  document.getElementById('selection-type-container').style.display = 'none';
+  document.getElementById('single-options-container').style.display = 'none';
+  document.getElementById('multi-options-container').style.display = 'none';
+  singleOptionCounter = 0;
+  optionGroupCounter = 0;
 }
 
 // Edit preset in builder
@@ -2941,6 +3504,55 @@ function editPresetInBuilder(index) {
     if (categoryInput) categoryInput.value = preset.category ? preset.category.join(', ') : '';
     if (promptTextarea) promptTextarea.value = preset.message;
     if (templateSelect) templateSelect.value = '';
+    
+    // Load additional instructions
+    const additionalTextarea = document.getElementById('preset-builder-additional');
+    if (additionalTextarea) {
+      additionalTextarea.value = preset.additionalInstructions || '';
+    }
+    
+    // Load randomize options and option data into UI
+    const randomizeCheckboxLoad = document.getElementById('preset-builder-randomize');
+    const selectionTypeLoad = document.getElementById('preset-builder-selection-type');
+    
+    // Clear existing option UI first
+    document.getElementById('single-options-list').innerHTML = '';
+    document.getElementById('multi-options-groups').innerHTML = '';
+    singleOptionCounter = 0;
+    optionGroupCounter = 0;
+    
+    if (randomizeCheckboxLoad) {
+      randomizeCheckboxLoad.checked = preset.randomizeOptions || false;
+      
+      if (preset.randomizeOptions) {
+        document.getElementById('selection-type-container').style.display = 'block';
+        
+        if (preset.optionGroups && preset.optionGroups.length > 0) {
+          // Multi-selection
+          selectionTypeLoad.value = 'multi';
+          document.getElementById('single-options-container').style.display = 'none';
+          document.getElementById('multi-options-container').style.display = 'block';
+          preset.optionGroups.forEach(group => {
+            addOptionGroup(group.title, group.options);
+          });
+        } else if (preset.options && preset.options.length > 0) {
+          // Single selection
+          selectionTypeLoad.value = 'single';
+          document.getElementById('single-options-container').style.display = 'block';
+          document.getElementById('multi-options-container').style.display = 'none';
+          preset.options.forEach(opt => {
+            addSingleOption(opt.text);
+          });
+        } else {
+          document.getElementById('single-options-container').style.display = 'none';
+          document.getElementById('multi-options-container').style.display = 'none';
+        }
+      } else {
+        document.getElementById('selection-type-container').style.display = 'none';
+        document.getElementById('single-options-container').style.display = 'none';
+        document.getElementById('multi-options-container').style.display = 'none';
+      }
+    }
     
     // Show delete button and hide clear button when editing existing preset
     if (deleteButton) {
@@ -3007,10 +3619,31 @@ async function saveCustomPreset() {
     const oldName = CAMERA_PRESETS[editingPresetBuilderIndex].name;
     oldNameForDB = oldName; // Store for IndexedDB cleanup
     
+    // Collect options data
+    const randomizeCheckbox = document.getElementById('preset-builder-randomize');
+    const selectionType = document.getElementById('preset-builder-selection-type');
+    const additionalInstructions = document.getElementById('preset-builder-additional').value.trim();
+    
+    const randomizeOptions = randomizeCheckbox.checked;
+    let options = [];
+    let optionGroups = [];
+    
+    if (randomizeOptions) {
+      if (selectionType.value === 'single') {
+        options = collectSingleOptions();
+      } else {
+        optionGroups = collectOptionGroups();
+      }
+    }
+    
     CAMERA_PRESETS[editingPresetBuilderIndex] = {
       name: name.toUpperCase(),
       category: categories,
       message: prompt,
+      options: options,
+      optionGroups: optionGroups,
+      randomizeOptions: randomizeOptions,
+      additionalInstructions: additionalInstructions,
       internal: false
     };
     
@@ -3035,10 +3668,31 @@ async function saveCustomPreset() {
     }
     
     // Create new preset object
+    // Collect options data
+    const randomizeCheckbox = document.getElementById('preset-builder-randomize');
+    const selectionType = document.getElementById('preset-builder-selection-type');
+    const additionalInstructions = document.getElementById('preset-builder-additional').value.trim();
+    
+    const randomizeOptions = randomizeCheckbox.checked;
+    let options = [];
+    let optionGroups = [];
+    
+    if (randomizeOptions) {
+      if (selectionType.value === 'single') {
+        options = collectSingleOptions();
+      } else {
+        optionGroups = collectOptionGroups();
+      }
+    }
+    
     const newPreset = {
       name: name.toUpperCase(),
       category: categories,
       message: prompt,
+      options: options,
+      optionGroups: optionGroups,
+      randomizeOptions: randomizeOptions,
+      additionalInstructions: additionalInstructions,
       internal: false
     };
     
@@ -3876,6 +4530,153 @@ function updateTutorialGlossarySelection() {
     // Scroll item into view
     currentItem.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   }
+}
+
+// =============================================
+// GUIDED TOUR ENGINE
+// =============================================
+
+let tourCurrentStep = 0;
+let tourActive = false;
+
+const TOUR_STEPS = [
+  { section: 'Welcome', title: '👋 Welcome to the Guided Tour!', body: 'This tour walks you through every feature of Magic Kamera MDRE. Use Next and Back to navigate, or your scroll wheel. Tap Skip Tour at any time to exit.' },
+  { section: 'Basic Controls', title: '📸 Side Button — Take a Photo', body: 'Press the physical side button on your R1 to capture a photo. It is instantly sent for AI transformation using the active preset.' },
+  { section: 'Basic Controls', title: '🔄 Scroll Wheel — Change Presets', body: 'Rotate the scroll wheel up or down to cycle through all 800 plus AI presets. The current preset name is shown at the bottom of the screen.' },
+  { section: 'Basic Controls', title: '📷 Camera Switch Button', body: 'Tap the camera icon to toggle between front selfie and back camera at any time before taking a photo.' },
+  { section: 'Basic Controls', title: '☰ Menu Button', body: 'Opens the main menu where you access all settings, preset management, import tools, and this tutorial.' },
+  { section: 'Basic Controls', title: '🖼️ Gallery Button', body: 'Opens your saved photo gallery. View, edit, re-prompt, batch process, or delete your images from here.' },
+  { section: 'Basic Controls', title: '🔁 New Photo Button', body: 'After a photo is captured and processed, tap New Photo or press the side button again to return to the live camera view.' },
+  { section: 'AI Presets', title: '✨ What Are AI Presets?', body: 'Presets are AI transformation instructions. Each one tells the AI how to reimagine your photo — as a comic book cover, oil painting, 3D print, and 800 more styles.' },
+  { section: 'AI Presets', title: '⭐ Favorites', body: 'In the main menu, tap the star next to any preset to mark it as a favorite. Favorites are used by Random Mode when favorites are selected.' },
+  { section: 'AI Presets', title: '🔍 Filter Presets', body: 'Use the search box in the main menu to quickly find presets by name or category. Tap a category tag at the bottom to filter by style.' },
+  { section: 'AI Presets', title: '🔊 Hear Preset Info', body: 'When browsing presets in the Import screen, tap any preset name to hear its description read aloud. Use the mute button in the header to toggle audio on or off.' },
+  { section: 'Special Modes', title: '🎯 Special Modes — How to Access', body: 'Swipe left from the right edge of the main screen to reveal the Special Modes carousel.' },
+  { section: 'Special Modes', title: '🎲 Random Mode', body: 'Picks a random preset for every photo you take. If you have favorites selected it draws only from those, otherwise from all presets.' },
+  { section: 'Special Modes', title: '⏱️ Timer Mode', body: 'Set a countdown of 3, 5, or 10 seconds before each shot. Enable repeat mode so it automatically keeps taking photos at a set interval.' },
+  { section: 'Special Modes', title: '📸⚡ Burst Mode', body: 'Captures 3 to 10 photos rapidly in one press. Choose slow, medium, or fast burst speed in Settings. Great for action shots or getting multiple variations.' },
+  { section: 'Special Modes', title: '👁️ Motion Detection', body: 'Automatically captures when movement is detected in frame. Set sensitivity, start delay, and cooldown interval. The eye icon pulses when motion is triggered.' },
+  { section: 'Gallery', title: '🖼️ Viewing Photos', body: 'Tap any image in the gallery to view it full-screen. Pinch to zoom in and out.' },
+  { section: 'Gallery', title: '🎨 Applying Presets in Gallery', body: 'While viewing a photo, tap Load Preset or Multi Preset to transform a saved image. Click twice on a preset to apply it. You can stack multiple transformations.' },
+  { section: 'Gallery', title: '☑️ Batch Operations', body: 'Tap the Select button to enter batch mode. Select multiple images, then apply one preset to all of them or delete them in bulk. Always tap DONE when finished.' },
+  { section: 'Gallery', title: '📅 Sort and Filter', body: 'Sort by newest or oldest. Filter by date range. When filtering, always select the day after your end date. For example, to see December 25 photos, filter from December 25 to December 26.' },
+  { section: 'Gallery', title: '🌐 Upload to gofile.io', body: 'Share a gallery image by uploading it to gofile.io. You get a QR code with a link that expires after 24 hours. Most useful in No Magic Mode.' },
+  { section: 'Gallery', title: '✏️ Edit Image', body: 'Tap the Edit button when viewing any photo to open the image editor with crop, rotate, sharpen, auto-correct, and brightness and contrast controls.' },
+  { section: 'Image Editor', title: '✂️ Crop Tool', body: 'Tap Crop to activate. Two orange corner markers appear. Drag them to frame your desired area. Tap Crop again to apply.' },
+  { section: 'Image Editor', title: '🔄 Rotate Tool', body: 'Rotates your image 90 degrees clockwise each tap. Tap multiple times to reach 180, 270, or back to 0 degrees.' },
+  { section: 'Image Editor', title: '🔍 Sharpen and Auto Correct', body: 'Sharpen makes edges crisper. Auto Correct automatically balances brightness, contrast, and color. Great as a first step before manual tweaks.' },
+  { section: 'Image Editor', title: '☀️ Brightness and Contrast Sliders', body: 'At the top of the editor, drag the sliders to adjust brightness and contrast anywhere from negative 100 to positive 100 in real time.' },
+  { section: 'Image Editor', title: '↶ Undo and Save', body: 'Undo steps back through your edit history one step at a time. Save replaces the original image in your gallery. Close exits without saving.' },
+  { section: 'Uploading Images', title: '📥 Importing External Images', body: 'Bring any image from the web into your gallery using a QR code. Upload the image to catbox dot moe, copy the direct link, and generate a QR code at qr-code-generator dot com.' },
+  { section: 'Uploading Images', title: '📷 Scanning the QR Code', body: 'In the gallery, press Import then Scan QR Code. Point your R1 camera at the QR code and wait. The image will be automatically saved to your gallery.' },
+  { section: 'Uploading Images', title: '⚠️ Verify Your Link First', body: 'Before making the QR code, paste the link into a browser. If it shows only the image with nothing around it, it will work. If it shows a webpage with the image embedded, it will not work.' },
+  { section: 'Settings', title: '⚙️ Resolution', body: 'Choose from VGA 640 by 480 up to HD 3264 by 2448. Lower resolutions are recommended if you want images to appear in the magic gallery.' },
+  { section: 'Settings', title: '📐 Aspect Ratio', body: 'Choose 1 to 1 square or 16 to 9 letterbox. Leave both unchecked for neither. Default is neither.' },
+  { section: 'Settings', title: '📝 Master Prompt', body: 'Appends custom text to every AI transformation. Enable it first, then type your additions. Adding a name and occasion lets presets like Happy Holidays personalize automatically.' },
+  { section: 'Settings', title: '👁️ Visible Presets', body: 'Choose which imported presets appear in your menus. Select All, deselect individually, or remove all. Category tags show at the bottom when a preset is highlighted.' },
+  { section: 'Settings', title: '🔨 Preset Builder', body: 'Build your own custom AI presets. Choose a template, add chips for quality and style, enable random options with single or multi-selection groups, add critical rules, then save.' },
+  { section: 'Settings', title: '🚫 No Magic Mode', body: 'Disables AI processing and works as a regular camera. Photos save only to the plugin gallery, not to the rabbit hole or magic gallery.' },
+  { section: 'Settings', title: '🎛️ Manually Select Options Mode', body: 'When enabled and you choose a preset with options, a popup asks you to pick which option to use. Only works with single shots in the main camera and single image per preset in gallery.' },
+  { section: 'Settings', title: '📥 Import Presets', body: 'Browse the external preset library. Check individual presets or use the checkmark All to select everything. New additions are unchecked so check regularly for updates.' },
+  { section: 'Settings', title: '🔄 Check for Updates', body: 'Checks for new or modified presets in the library. Any updates are flagged so you can re-import changed presets.' },
+  { section: 'Tips and Advanced', title: '🏷️ Category Searching', body: 'Every preset has categories. When a preset is highlighted in the Visible Presets menu, its categories appear at the bottom. Tap a category to filter all presets in that group.' },
+  { section: 'Tips and Advanced', title: '🧠 Master Prompt Power Tip', body: 'Search for master or master prompt in the Visible Presets menu to find all presets designed to work with Master Prompt. These respond to names, occasions, and custom context you provide.' },
+  { section: 'Tips and Advanced', title: '📶 Offline Queue', body: 'If you take photos while offline, they queue automatically and sync to the rabbit hole once your connection returns. The queue count shows on screen.' },
+  { section: 'Tips and Advanced', title: '🔁 Reset Database', body: 'The nuclear option in Settings. Wipes all custom presets and settings. Only imported presets from the library remain. Use only if something is seriously broken.' },
+  { section: 'Tips and Advanced', title: '💀 Content Filter Error', body: 'If you go into your rabbit hole and you receive a content filter image error. This happens because AI is quirky. The beauty of Magic Kamera is, you can reprompt! Keep trying until successful.' },
+  { section: 'Troubleshooting', title: '❌ Camera Access Denied', body: 'This error will appear at the bottom of your main camera screen if you do not have any active presets (either imported or made with the preset builder).' },
+  { section: 'Done!', title: '🎉 Tour Complete!', body: `That's Magic Kamera. Now go make magic! This tour or the text tutorial in this menu is here if you need a refresher. If you come across The One Ron G, The One Hashtag Cyber or The One Rabbit Jesus, tell them you enjoy this program.` },
+];
+
+function tourSpeak(text) {
+  if (typeof PluginMessageHandler !== 'undefined') {
+    PluginMessageHandler.postMessage(JSON.stringify({
+      message: text,
+      wantsR1Response: true
+    }));
+  } else if (window.speechSynthesis) {
+    window.speechSynthesis.cancel();
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.rate = 0.9;
+    utterance.pitch = 1.0;
+    window.speechSynthesis.speak(utterance);
+  }
+}
+
+function tourStopSpeaking() {
+  if (window.speechSynthesis) {
+    window.speechSynthesis.cancel();
+  }
+}
+
+function startGuidedTour() {
+  const saved = localStorage.getItem(TOUR_PROGRESS_KEY);
+  tourCurrentStep = saved ? parseInt(saved, 10) : 0;
+  if (isNaN(tourCurrentStep) || tourCurrentStep >= TOUR_STEPS.length) tourCurrentStep = 0;
+  tourActive = true;
+  hideTutorialSubmenu();
+  document.getElementById('guided-tour-overlay').style.display = 'block';
+  setTimeout(() => { renderTourStep(true); }, 300);
+}
+
+function endGuidedTour() {
+  tourActive = false;
+  tourStopSpeaking();
+  // Save progress so user can resume later — clear it if they finished the last step
+  if (tourCurrentStep >= TOUR_STEPS.length - 1) {
+    localStorage.removeItem(TOUR_PROGRESS_KEY);
+  } else {
+    localStorage.setItem(TOUR_PROGRESS_KEY, tourCurrentStep.toString());
+  }
+  document.getElementById('guided-tour-overlay').style.display = 'none';
+  document.getElementById('tour-spotlight').style.display = 'none';
+  showTutorialSubmenu();
+}
+
+function tourNext() {
+  tourStopSpeaking();
+  if (tourCurrentStep < TOUR_STEPS.length - 1) {
+    tourCurrentStep++;
+    renderTourStep(true);
+  } else {
+    endGuidedTour();
+  }
+}
+
+function tourBack() {
+  tourStopSpeaking();
+  if (tourCurrentStep > 0) {
+    tourCurrentStep--;
+    renderTourStep(true);
+  }
+}
+
+function renderTourStep(speak) {
+  const step = TOUR_STEPS[tourCurrentStep];
+  const total = TOUR_STEPS.length;
+
+  document.getElementById('tour-step-badge').textContent = 'Step ' + (tourCurrentStep + 1) + ' of ' + total;
+  document.getElementById('tour-section-label').textContent = step.section;
+  document.getElementById('tour-card-title').textContent = step.title;
+  document.getElementById('tour-card-body').textContent = step.body;
+  document.getElementById('tour-progress-fill').style.width = (((tourCurrentStep + 1) / total) * 100) + '%';
+
+  const backBtn = document.getElementById('tour-btn-back');
+  if (backBtn) backBtn.disabled = tourCurrentStep === 0;
+
+  const nextBtn = document.getElementById('tour-btn-next');
+  if (nextBtn) nextBtn.textContent = tourCurrentStep === total - 1 ? 'Finish ✓' : 'Next ›';
+
+  // Only speak when user navigates, not on first load
+  if (speak) {
+    tourSpeak(step.title.replace(/[\p{Emoji}]/gu, '') + '. ' + step.body);
+  }
+
+  // Always center the card
+  const card = document.getElementById('tour-card');
+  card.style.transform = 'translate(-50%, -50%)';
+  card.style.top = '50%';
+  card.style.left = '50%';
 }
 
 // Show import resolution submenu
@@ -5157,7 +5958,7 @@ function capturePhoto() {
   const isIncompatibleMode = isTimerMode || isMotionDetectionMode || isBurstMode;
   
   if (manualOptionsMode && !noMagicMode && !isIncompatibleMode) {
-    const options = parsePresetOptions(currentPreset.message);
+    const options = parsePresetOptions(currentPreset);
     
     if (options.length > 0) {
       // Show modal and wait for selection
@@ -5244,7 +6045,7 @@ async function syncQueuedPhotos() {
       
       if (typeof PluginMessageHandler !== 'undefined' && !noMagicMode) {
         PluginMessageHandler.postMessage(JSON.stringify({
-          message: getFinalPrompt(item.preset.message, item.preset.name, item.manualSelection || null),
+          message: getFinalPrompt(item.preset, item.manualSelection || null),
           pluginId: 'com.r1.pixelart',
           imageBase64: item.imageBase64
         }));
@@ -5371,7 +6172,13 @@ async function clearQueue() {
 // Side button handler
 window.addEventListener('sideClick', () => {
   console.log('Side button pressed');
-  
+
+  // Block side button during guided tour — advance to next step instead
+  if (tourActive) {
+    tourNext();
+    return;
+  }
+
   // Settings submenu - select current item
   if (isSettingsSubmenuOpen) {
     const submenu = document.getElementById('settings-submenu');
@@ -5529,6 +6336,12 @@ window.addEventListener('scrollUp', () => {
     return;
   }
 
+  // Guided tour
+  if (tourActive) {
+    tourBack();
+    return;
+  }
+
   // Tutorial submenu - CHECK BEFORE MAIN MENU
   if (isTutorialSubmenuOpen) {
     scrollTutorialUp(); // or Down
@@ -5671,6 +6484,12 @@ window.addEventListener('scrollDown', () => {
   // Import presets modal
   if (presetImporter.isImportModalOpen) {
     presetImporter.scrollImportDown();
+    return;
+  }
+
+  // Guided tour
+  if (tourActive) {
+    tourNext();
     return;
   }
 
@@ -6608,302 +7427,128 @@ function canUseManualOptions() {
 
 // Parse preset message to extract random options for manual selection
 // Returns array of sections: [{ title, options: [{value, label}] }]
-function parsePresetOptions(message) {
+function parsePresetOptions(preset) {
   const sections = [];
-
-  // Pattern: find all modulo blocks with their section title
-  // Match lines like "CHARACTER SELECTION (CRITICAL):" or "LOCATION CARD SELECTION:"
-  // followed later by "modulo N:" and the options list
-  const lines = message.split('\n');
   
-  // Find all modulo occurrences and their positions
-  const moduloPositions = [];
-  for (let i = 0; i < lines.length; i++) {
-    const moduloMatch = lines[i].match(/modulo\s+(\d+)/i);
-    if (moduloMatch) {
-      moduloPositions.push({ lineIndex: i, count: parseInt(moduloMatch[1]) });
-    }
-  }
-
-  if (moduloPositions.length === 0) {
-    // Fallback: EVEN/ODD pattern, return as single section with no title
-    const evenOddPattern = /If\s+(?:the\s+)?(?:LAST\s+DIGIT|RANDOM\s+SEED)[^\n]*?(?:is\s+)?(?:an?\s+)?(EVEN|ODD)[^\n]*?:\s*(?:SELECT\s+)?(.+?)(?=\n|$)/gi;
-    let evenOption = null;
-    let oddOption = null;
-    let match;
-    while ((match = evenOddPattern.exec(message)) !== null) {
-      const evenOrOdd = match[1].toUpperCase();
-      const option = match[2].trim();
-      if (evenOrOdd === 'EVEN') evenOption = option;
-      else if (evenOrOdd === 'ODD') oddOption = option;
-    }
-    if (evenOption && oddOption) {
+  // NEW FORMAT: Check if preset has optionGroups (multi-selection like FRIENDS)
+  if (preset.optionGroups && preset.optionGroups.length > 0) {
+    preset.optionGroups.forEach(group => {
+      const activeOptions = group.options
+        .map((opt, index) => ({ opt, index }))
+        .filter(({ opt }) => opt.enabled !== false);
+      const pool = activeOptions.length > 0 ? activeOptions : group.options.map((opt, index) => ({ opt, index }));
       sections.push({
-        title: 'SELECT',
-        options: [
-          { value: 0, label: `0 (EVEN): ${evenOption.substring(0, 70)}${evenOption.length > 70 ? '...' : ''}` },
-          { value: 1, label: `1 (ODD): ${oddOption.substring(0, 70)}${oddOption.length > 70 ? '...' : ''}` }
-        ]
+        title: group.title,
+        options: pool.map(({ opt, index }) => ({
+          value: index,
+          label: `${index}: ${opt.text}`
+        }))
       });
-    }
+    });
     return sections;
   }
-
-  // For each modulo block, find the section title by scanning backwards
-  for (const { lineIndex, count } of moduloPositions) {
-    // Scan backwards up to 15 lines to find a section header (ALL CAPS line ending in : or containing SELECTION/SELECTION)
-    let title = '';
-    for (let j = lineIndex - 1; j >= Math.max(0, lineIndex - 15); j--) {
-      const candidate = lines[j].trim();
-      // Match lines like "CHARACTER SELECTION (CRITICAL):" or "WEAPON CARD SELECTION:"
-      if (/^[A-Z][A-Z\s]+(?:\([A-Z\s]+\))?:?\s*$/.test(candidate) && candidate.length > 2) {
-        // Clean it up: remove trailing colon and parenthetical
-        title = candidate.replace(/\s*\([^)]*\)\s*:?\s*$/, '').replace(/:$/, '').trim();
-        break;
-      }
-    }
-    if (!title) title = `SELECTION ${sections.length + 1}`;
-
-    // Now collect the options starting from lineIndex + 1
-    const options = [];
-    let optionNumber = 0;
-    let inOptions = false;
-    for (let i = lineIndex; i < lines.length && optionNumber < count; i++) {
-      const line = lines[i].trim();
-      if (line.match(/^[-–]\s*0\s*:/)) inOptions = true;
-      if (inOptions) {
-        const optionMatch = line.match(/^[-–]\s*(\d+)\s*:\s*(.+)/);
-        if (optionMatch) {
-          const description = optionMatch[2].trim();
-          const shortDesc = description.substring(0, 80);
-          options.push({
-            value: optionNumber,
-            label: `${optionNumber}: ${shortDesc}${description.length > 80 ? '...' : ''}`
-          });
-          optionNumber++;
-        }
-      }
-    }
-
-    if (options.length > 0) {
-      sections.push({ title, options });
-    }
-  }
-
-  return sections;
-}
-
-// Inject manual selection into prompt
-// selectedValue: single number (legacy/even-odd) OR array of numbers (multi-modulo)
-function injectManualSelection(prompt, selectedValue) {
-  console.log('Injecting manual selection:', selectedValue);
   
-  const isArray = Array.isArray(selectedValue);
-  let sectionIndex = 0;
-
-  // For modulo patterns - replace each block in order with the corresponding selection
-  const moduloPattern = /[^\n]*modulo\s+\d+[^\n]*:\s*\n((?:\s*[-–]\s*\d+:.*(?:\n|$))*)/gi;
-  
-  prompt = prompt.replace(moduloPattern, (match, optionsList) => {
-    const valueToUse = isArray ? (selectedValue[sectionIndex] ?? 0) : selectedValue;
-    sectionIndex++;
-
-    const lines = optionsList.split('\n');
-    for (const line of lines) {
-      const optionMatch = line.match(/^\s*[-–]\s*(\d+)\s*:\s*(.+)/);
-      if (optionMatch) {
-        const optionNum = parseInt(optionMatch[1]);
-        const optionText = optionMatch[2].trim();
-        if (optionNum === valueToUse) {
-          console.log('Selected option:', optionText);
-          return `SELECTED OPTION: ${optionText}\n(Manually selected by user)`;
-        }
-      }
-    }
-    return match;
-  });
-  
-  // For even/odd patterns (only applies when single value / non-array)
-  const singleValue = isArray ? selectedValue[0] : selectedValue;
-  const isEven = singleValue === 0;
-  const evenOddPattern = /If\s+(?:the\s+)?(?:LAST\s+DIGIT|RANDOM\s+SEED)[^\n]*?(?:is\s+)?(?:an?\s+)?(EVEN|ODD)[^\n]*?:\s*(?:SELECT\s+)?(.+?)(?=\n|$)/gi;
-  
-  prompt = prompt.replace(evenOddPattern, (match, evenOrOdd, option) => {
-    const shouldSelect = (evenOrOdd.toUpperCase() === 'EVEN' && isEven) || 
-                         (evenOrOdd.toUpperCase() === 'ODD' && !isEven);
-    if (shouldSelect) {
-      return `SELECTED OPTION: ${option.trim()}\n(Manually selected by user)`;
-    }
-    return '';
-  });
-  
-  return prompt;
-}
-
-function getFinalPrompt(basePrompt, presetName = '', manualSelection = null) {
-  let finalPrompt = basePrompt;
-  
-  if (masterPromptEnabled && masterPromptText.trim()) {
-    finalPrompt = `${basePrompt} ${masterPromptText}`;
+  // NEW FORMAT: Check if preset has options array (single-selection)
+  if (preset.options && preset.options.length > 0) {
+    const activeOptions = preset.options
+      .map((opt, index) => ({ opt, index }))
+      .filter(({ opt }) => opt.enabled !== false);
+    const pool = activeOptions.length > 0 ? activeOptions : preset.options.map((opt, index) => ({ opt, index }));
+    sections.push({
+      title: 'SELECT',
+      options: pool.map(({ opt, index }) => ({
+        value: index,
+        label: `${index}: ${opt.text}`
+      }))
+    });
+    return sections;
   }
   
-  // Check if preset has random selection options
-  const hasRandomOptions = /RANDOM|SELECT|SELECTION|CHOOSE|modulo|LAST DIGIT|LAST TWO DIGITS|LAST THREE DIGITS/i.test(basePrompt);
+  // No options - return empty
+  return [];
+}
+
+function getFinalPrompt(preset, manualSelection = null) {
+  // Build prompt from clean preset structure
+  let finalPrompt = preset.message;
   
-  // Only process random seed if preset has random options
-  if (hasRandomOptions) {
-    // Generate random seed
-    const seed = Date.now();
-    const lastDigit = seed % 10;
-    const lastTwoDigits = seed % 100;
-    const lastThreeDigits = seed % 1000;
-    
-    // If manual selection is provided, inject it BEFORE processing random selections
+  // Handle options if preset uses randomization
+  if (preset.randomizeOptions) {
     if (manualSelection !== null) {
-      console.log('Using manual selection:', manualSelection);
-      finalPrompt = injectManualSelection(finalPrompt, manualSelection);
+      // User manually selected options
+      finalPrompt += '\n\n' + buildSelectedOptionsText(preset, manualSelection);
+    } else {
+      // Random selection
+      finalPrompt += '\n\n' + buildRandomOptionsText(preset);
     }
-    
-    // Process the prompt to extract and select from options
-    finalPrompt = processRandomSelections(finalPrompt, lastDigit, lastTwoDigits, lastThreeDigits, presetName);
+  }
+  
+  // Add master prompt at the end as concrete override instructions
+  if (masterPromptEnabled && masterPromptText.trim()) {
+    finalPrompt += `\n\nOVERRIDE INSTRUCTIONS (these take priority over everything above - apply exactly as specified):\n${masterPromptText}`;
+  }
+  
+  // Add additional instructions (CRITICAL/MANDATORY sections)
+  if (preset.additionalInstructions && preset.additionalInstructions.trim()) {
+    finalPrompt += '\n\n' + preset.additionalInstructions;
   }
   
   // Add aspect ratio override at the very end
   if (selectedAspectRatio === '1:1') {
-    finalPrompt += ' Use a square aspect ratio.';
+    finalPrompt += '\n\nUse a square aspect ratio.';
   } else if (selectedAspectRatio === '16:9') {
-    finalPrompt += ' Use a square aspect ratio, but pad the image with black bars at top and bottom to simulate a 16:9 aspect ratio.';
+    finalPrompt += '\n\nUse a square aspect ratio, but pad the image with black bars at top and bottom to simulate a 16:9 aspect ratio.';
   }
   
   console.log('FINAL PROMPT:', finalPrompt);
-  
   return finalPrompt;
 }
 
-function processRandomSelections(prompt, lastDigit, lastTwoDigits, lastThreeDigits, presetName) {
-  console.log('=== PROCESSING RANDOM SELECTIONS ===');
+// Helper: Build text for manually selected options
+function buildSelectedOptionsText(preset, selection) {
+  let text = 'SELECTED OPTIONS:\n';
   
-  // Pattern 1: Even/Odd (50/50)
-  const evenOddPattern = /•\s*If\s+(?:the\s+)?(?:LAST\s+DIGIT|RANDOM\s+SEED)(?:\s+of\s+the\s+RANDOM\s+SEED)?(?:\s+ends\s+in)?[^\n]*?(?:is\s+)?(?:an?\s+)?(EVEN|ODD)(?:\s+number)?[^\n]*?:\s*(?:SELECT\s+)?(.+?)(?=\n•|\n\n|$)/gi;
-  
-  prompt = prompt.replace(evenOddPattern, (match, evenOrOdd, option) => {
-    console.log('Found even/odd pattern for:', evenOrOdd);
-    
-    const isEven = lastDigit % 2 === 0;
-    const shouldSelect = (evenOrOdd.toUpperCase() === 'EVEN' && isEven) || (evenOrOdd.toUpperCase() === 'ODD' && !isEven);
-    
-    if (shouldSelect) {
-      const selectedOption = option.trim();
-      console.log('SELECTED (even/odd):', selectedOption);
-      trackSelection(presetName, selectedOption);
-      return '';
-    }
-    return '';
-  });
-  
-  // After even/odd, capture the selected option
-  prompt = prompt.replace(/If\s+Option\s+([AB]):\s*\n([\s\S]*?)(?=\nIf\s+Option\s+[AB]:|\n[A-Z][A-Z\s]+(?:\([A-Z]+\))?:|\n\n|$)/gi, (match, optionLetter, content) => {
-    return '';
-  });
-  
-  const selectedOptionPattern = /If\s+Option\s+([AB]):\s*\n([\s\S]*?)(?=\nIf\s+Option|$)/gi;
-  let selectedOption = null;
-  
-  prompt.replace(selectedOptionPattern, (match, optionLetter, content) => {
-    if (!selectedOption) {
-      selectedOption = content.trim();
-    }
-    return match;
-  });
-  
-  if (selectedOption) {
-    trackSelection(presetName, selectedOption);
-    prompt = `SELECTED OPTION: ${selectedOption}\n(Automatically selected using random seed)`;
+  // Multi-selection (array of selections)
+  if (Array.isArray(selection)) {
+    preset.optionGroups.forEach((group, index) => {
+      const selectedOption = group.options[selection[index]];
+      text += `• ${group.title}: ${selectedOption.text}\n`;
+    });
+  }
+  // Single selection (single number)
+  else {
+    const selectedOption = preset.options[selection];
+    text += `• ${selectedOption.text}`;
   }
   
-  // UNIFIED MODULO PATTERN - CASE INSENSITIVE (i flag handles Use, USE, use, Via, VIA, via, By, BY, by, etc.)
-  const unifiedModuloPattern = /(?:select|choose|pick)?(?:\s+exactly\s+one)?[^\n]*?(?:use|using|with|via|by)\s+(?:the\s+)?(?:last\s+(digit|two\s+digits|three\s+digits)|random\s+seed)(?:\s+of\s+the\s+random\s+seed)?[^\n]*?\s+modulo\s+(\d+)[^\n]*?:\s*\n((?:\s*-\s*\d+:.*(?:\n|$))*)/gi;
-  
-  prompt = prompt.replace(unifiedModuloPattern, (match, digitType, moduloNumber, contentBlock) => {
-    let actualDigitType;
-    if (!digitType) {
-      actualDigitType = 'TWO DIGITS';
-    } else if (digitType.toLowerCase().includes('three')) {
-      actualDigitType = 'THREE DIGITS';
-    } else if (digitType.toLowerCase().includes('two')) {
-      actualDigitType = 'TWO DIGITS';
-    } else {
-      actualDigitType = 'DIGIT';
-    }
-    
-    console.log('Found modulo pattern:', actualDigitType, 'modulo', moduloNumber);
-    return processModuloSelection(actualDigitType, moduloNumber, contentBlock, lastDigit, lastTwoDigits, lastThreeDigits, presetName, match);
-  });
-  
-  // Clean up selection instruction lines
-  prompt = prompt.replace(/•\s*If\s+none\s+is\s+specified[^\n]*\n/gi, '');
-  prompt = prompt.replace(/•\s*If\s+no\s+\w+\s+is\s+specified[^\n]*\n/gi, '');
-  prompt = prompt.replace(/•\s*Otherwise\s+SELECT[^\n]*\n/gi, '');
-  
-  // Remove orphaned section headers
-  prompt = prompt.replace(/^\s*[A-Z][A-Z\s]+(?:\([A-Z]+\))?:\s*\n(?=\s*\n|SELECTED OPTION:|•\s*If\s+external)/gm, '');
-  
-  // Clean up multiple blank lines
-  prompt = prompt.replace(/\n{3,}/g, '\n\n');
-  
-  console.log('=== FINISHED PROCESSING ===');
-  
-  return prompt;
+  return text;
 }
 
-// Helper function to process modulo selections
-function processModuloSelection(digitType, moduloNumber, contentBlock, lastDigit, lastTwoDigits, lastThreeDigits, presetName, originalMatch) {
-  // Parse the options list
-  const options = [];
-  const optionPattern = /^\s*[-–]\s*(\d+):\s*(.+?)$/gm;
-  let optionMatch;
+// Helper: Build text for random selections
+function buildRandomOptionsText(preset) {
+  const seed = Date.now();
+  let text = 'SELECTED OPTIONS (Random):\n';
   
-  while ((optionMatch = optionPattern.exec(contentBlock)) !== null) {
-    const number = parseInt(optionMatch[1]);
-    const option = optionMatch[2].trim();
-    options.push({ number, option });
-    console.log(`  Found option ${number}: ${option.substring(0, 50)}`);
+  // Multi-selection preset
+  if (preset.optionGroups && preset.optionGroups.length > 0) {
+    preset.optionGroups.forEach((group, index) => {
+      const activeOptions = group.options.filter(o => o.enabled !== false);
+      const pool = activeOptions.length > 0 ? activeOptions : group.options;
+      const selectedIndex = (seed + index * 13) % pool.length;
+      const selectedOption = pool[selectedIndex];
+      text += `• ${group.title}: ${selectedOption.text}\n`;
+    });
+  }
+  // Single selection preset
+  else if (preset.options && preset.options.length > 0) {
+    const activeOptions = preset.options.filter(o => o.enabled !== false);
+    const pool = activeOptions.length > 0 ? activeOptions : preset.options;
+    const selectedIndex = seed % pool.length;
+    const selectedOption = pool[selectedIndex];
+    text += `• ${selectedOption.text}`;
   }
   
-  if (options.length === 0) {
-    console.log('  No options found, keeping original');
-    return originalMatch;
-  }
-  
-  // Determine which value to use
-  let selectedValue;
-  if (digitType === 'DIGIT') {
-    selectedValue = lastDigit;
-  } else if (digitType === 'TWO DIGITS') {
-    selectedValue = lastTwoDigits;
-  } else if (digitType === 'THREE DIGITS') {
-    selectedValue = lastThreeDigits;
-  }
-  
-  console.log('  Selected value before modulo:', selectedValue);
-  
-  // Calculate modulo
-  const totalOptions = parseInt(moduloNumber);
-  const selectionIndex = selectedValue % totalOptions;
-  
-  console.log('  Selection index after modulo:', selectionIndex);
-  
-  // Find the matching option
-  const selected = options.find(o => o.number === selectionIndex);
-  
-  if (selected) {
-    console.log('  SELECTED:', selected.option);
-    trackSelection(presetName, selected.option);
-    return `SELECTED OPTION: ${selected.option}\n(Automatically selected using random seed)`;
-  }
-  
-  console.log('  No matching option found!');
-  return originalMatch;
+  return text;
 }
 
 function trackSelection(presetName, selectedOption) {
@@ -7211,6 +7856,34 @@ function editStyle(index) {
     categoryInput.value = preset.category ? preset.category.join(', ') : '';
   }
   
+  // Clear and reload option fields
+  clearStyleEditorOptionFields();
+  
+  // Load additional instructions
+  const additionalEl = document.getElementById('style-additional');
+  if (additionalEl) additionalEl.value = preset.additionalInstructions || '';
+  
+  // Load randomize options and options data
+  const randomizeEl = document.getElementById('style-randomize');
+  const selectionTypeEl = document.getElementById('style-selection-type');
+  
+  if (randomizeEl && preset.randomizeOptions) {
+    randomizeEl.checked = true;
+    document.getElementById('style-selection-type-container').style.display = 'block';
+    
+    if (preset.optionGroups && preset.optionGroups.length > 0) {
+      selectionTypeEl.value = 'multi';
+      document.getElementById('style-single-options-container').style.display = 'none';
+      document.getElementById('style-multi-options-container').style.display = 'block';
+      preset.optionGroups.forEach(group => addStyleOptionGroup(group.title, group.options));
+    } else if (preset.options && preset.options.length > 0) {
+      selectionTypeEl.value = 'single';
+      document.getElementById('style-single-options-container').style.display = 'block';
+      document.getElementById('style-multi-options-container').style.display = 'none';
+      preset.options.forEach(opt => addStyleSingleOption(opt.text, opt.enabled !== false));
+    }
+  }
+  
   document.getElementById('delete-style').style.display = 'block';
   
   showStyleEditor('Edit Style');
@@ -7231,9 +7904,25 @@ async function saveStyle() {
     return;
   }
   
+  // Collect option fields
+  const styleRandomize = document.getElementById('style-randomize');
+  const styleSelectionType = document.getElementById('style-selection-type');
+  const styleAdditional = document.getElementById('style-additional');
+  const randomizeOptions = styleRandomize ? styleRandomize.checked : false;
+  const additionalInstructions = styleAdditional ? styleAdditional.value.trim() : '';
+  let options = [];
+  let optionGroups = [];
+  if (randomizeOptions && styleSelectionType) {
+    if (styleSelectionType.value === 'single') {
+      options = collectStyleSingleOptions();
+    } else {
+      optionGroups = collectStyleOptionGroups();
+    }
+  }
+  
   if (editingStyleIndex >= 0) {
     const oldName = CAMERA_PRESETS[editingStyleIndex].name;
-    CAMERA_PRESETS[editingStyleIndex] = { name, category, message };
+    CAMERA_PRESETS[editingStyleIndex] = { name, category, message, options, optionGroups, randomizeOptions, additionalInstructions };
     
     // Check if it's a factory preset OR imported preset
     const isFactoryPreset = factoryPresets.some(p => p.name === oldName);
@@ -7244,11 +7933,15 @@ async function saveStyle() {
       await presetStorage.saveModification(oldName, {
         name: name,
         message: message,
-        category: category
+        category: category,
+        options: options,
+        optionGroups: optionGroups,
+        randomizeOptions: randomizeOptions,
+        additionalInstructions: additionalInstructions
       });
     } else {
       // User-created preset - update it directly
-      await presetStorage.saveNewPreset({ name, category, message });
+      await presetStorage.saveNewPreset({ name, category, message, options, optionGroups, randomizeOptions, additionalInstructions });
     }
     
     // If name changed, update visiblePresets array
@@ -7260,7 +7953,7 @@ async function saveStyle() {
       }
     }
   } else {
-    const newPreset = { name, category, message };
+    const newPreset = { name, category, message, options, optionGroups, randomizeOptions, additionalInstructions };
     await presetStorage.saveNewPreset(newPreset);
     CAMERA_PRESETS.push(newPreset);
     // ADD NEW PRESET TO VISIBLE LIST AUTOMATICALLY
@@ -7553,8 +8246,25 @@ window.addEventListener('load', () => {
   setupPinchZoom();
 //  setupTapToFocus();
   
+  const versionEl = document.getElementById('app-version');
+     if (versionEl) versionEl.textContent = APP_VERSION;
+
+  const splashTourBtn = document.getElementById('splash-tour-button');
+  if (splashTourBtn) {
+    splashTourBtn.addEventListener('click', () => {
+      document.getElementById('start-screen').style.display = 'none';
+      initCamera();
+      startGuidedTour();
+    });
+    splashTourBtn.addEventListener('touchend', (e) => {
+      e.preventDefault();
+      document.getElementById('start-screen').style.display = 'none';
+      initCamera();
+      startGuidedTour();
+    });
+  }
   const startBtn = document.getElementById('start-button');
-if (startBtn) {
+  if (startBtn) {
   startBtn.addEventListener('click', () => {
     // Play shutter sound
     playCameraShutterSound();
@@ -7860,6 +8570,48 @@ if (startBtn) {
   const presetBuilderDelete = document.getElementById('preset-builder-delete');
   if (presetBuilderDelete) {
     presetBuilderDelete.addEventListener('click', deleteCustomPreset);
+  }
+
+  // Style Editor option fields
+  const styleRandomizeEl = document.getElementById('style-randomize');
+  if (styleRandomizeEl) {
+    styleRandomizeEl.addEventListener('change', toggleStyleRandomizeOptions);
+  }
+  const styleSelectionTypeEl = document.getElementById('style-selection-type');
+  if (styleSelectionTypeEl) {
+    styleSelectionTypeEl.addEventListener('change', updateStyleSelectionTypeVisibility);
+  }
+  const styleAddSingleBtn = document.getElementById('style-add-single-option');
+  if (styleAddSingleBtn) {
+    styleAddSingleBtn.addEventListener('click', () => addStyleSingleOption());
+  }
+  const styleAddGroupBtn = document.getElementById('style-add-option-group');
+  if (styleAddGroupBtn) {
+    styleAddGroupBtn.addEventListener('click', () => addStyleOptionGroup());
+  }
+
+  // Preset Builder - Randomize options checkbox
+  const randomizeCheckboxEl = document.getElementById('preset-builder-randomize');
+  if (randomizeCheckboxEl) {
+    randomizeCheckboxEl.addEventListener('change', toggleRandomizeOptions);
+  }
+  
+  // Preset Builder - Selection type dropdown
+  const selectionTypeSelectEl = document.getElementById('preset-builder-selection-type');
+  if (selectionTypeSelectEl) {
+    selectionTypeSelectEl.addEventListener('change', updateSelectionTypeVisibility);
+  }
+  
+  // Preset Builder - Add single option button
+  const addSingleOptionBtn = document.getElementById('add-single-option');
+  if (addSingleOptionBtn) {
+    addSingleOptionBtn.addEventListener('click', () => addSingleOption());
+  }
+  
+  // Preset Builder - Add option group button
+  const addOptionGroupBtn = document.getElementById('add-option-group');
+  if (addOptionGroupBtn) {
+    addOptionGroupBtn.addEventListener('click', () => addOptionGroup());
   }
 
   // Collapsible chip sections
@@ -8661,6 +9413,30 @@ const result = await presetImporter.import();
     backToGlossaryBtn.addEventListener('click', showTutorialGlossary);
   }
 
+  const startTourBtn = document.getElementById('start-guided-tour');
+  if (startTourBtn) {
+    startTourBtn.addEventListener('click', startGuidedTour);
+    startTourBtn.addEventListener('touchend', (e) => { e.preventDefault(); startGuidedTour(); });
+  }
+
+  const tourSkipBtn = document.getElementById('tour-btn-skip');
+  if (tourSkipBtn) {
+    tourSkipBtn.addEventListener('click', endGuidedTour);
+    tourSkipBtn.addEventListener('touchend', (e) => { e.preventDefault(); endGuidedTour(); });
+  }
+
+  const tourBackBtn = document.getElementById('tour-btn-back');
+  if (tourBackBtn) {
+    tourBackBtn.addEventListener('click', tourBack);
+    tourBackBtn.addEventListener('touchend', (e) => { e.preventDefault(); tourBack(); });
+  }
+
+  const tourNextBtn = document.getElementById('tour-btn-next');
+  if (tourNextBtn) {
+    tourNextBtn.addEventListener('click', tourNext);
+    tourNextBtn.addEventListener('touchend', (e) => { e.preventDefault(); tourNext(); });
+  }  
+
   const masterPromptCheckbox = document.getElementById('master-prompt-enabled');
   if (masterPromptCheckbox) {
     masterPromptCheckbox.addEventListener('change', (e) => {
@@ -9142,6 +9918,14 @@ const result = await presetImporter.import();
     });
   }
 
+  // Clear loaded preset when user manually edits the viewer prompt
+  const viewerPromptInput = document.getElementById('viewer-prompt');
+  if (viewerPromptInput) {
+    viewerPromptInput.addEventListener('input', () => {
+      window.viewerLoadedPreset = null;
+    });
+  }
+
   const closePresetSelectorBtn = document.getElementById('close-preset-selector');
   if (closePresetSelectorBtn) {
     closePresetSelectorBtn.addEventListener('click', hidePresetSelector);
@@ -9263,6 +10047,10 @@ const result = await presetImporter.import();
 window.removeFromQueue = removeFromQueue;
 window.previewQueueItem = previewQueueItem;
 window.clearQueue = clearQueue;
+window.tourNext = tourNext;
+window.tourBack = tourBack;
+window.endGuidedTour = endGuidedTour;
+window.startGuidedTour = startGuidedTour;
 
 // Upload image to gofile.io
 async function uploadViewerImage() {
