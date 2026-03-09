@@ -4588,7 +4588,7 @@ const TOUR_STEPS = [
   { section: 'Uploading Images', title: '📷 Scanning the QR Code', body: 'In the gallery, press Import then Scan QR Code. Point your R1 camera at the QR code and wait. The image will be automatically saved to your gallery.' },
   { section: 'Uploading Images', title: '⚠️ Verify Your Link First', body: 'Before making the QR code, paste the link into a browser. If it shows only the image with nothing around it, it will work. If it shows a webpage with the image embedded, it will not work.' },
   { section: 'Settings', title: '▣ Resolution', body: 'Choose from VGA 640 by 480 up to HD 3264 by 2448. Lower resolutions are recommended if you want images to appear in the magic gallery.' },
-  { section: 'Settings', title: '📐 Aspect Ratio', body: 'Choose 1 to 1 square or 16 to 9 letterbox. Leave both unchecked for neither. Default is neither. We recommend choosing square or letterbox for best image results.' },
+  { section: 'Settings', title: '📐 Aspect Ratio', body: 'Choose 1 to 1 square or 16 to 9 letterbox. Leave both unchecked for neither. Default is neither. We recommend choosing an aspect ratio to display the full image, preventing accidental cropping.' },
   { section: 'Settings', title: '📝 Master Prompt', body: 'Appends custom text to every AI transformation. Enable it first, then type your additions. Adding a name and occasion lets presets like Happy Holidays personalize automatically.' },
   { section: 'Settings', title: '👁️ Visible Presets', body: 'Choose which imported presets appear in your menus. Select All, deselect individually, or remove all. Category tags show at the bottom when a preset is highlighted.' },
   { section: 'Settings', title: '🔨 Preset Builder', body: 'Build your own custom AI presets. Choose a template, add chips for quality and style, enable random options with single or multi-selection groups, add critical rules, then save.' },
@@ -6656,6 +6656,7 @@ function updatePresetDisplay() {
         } else {
             statusElement.textContent = `Style: ${currentPreset.name}`;
         }
+    }
     
     // Show style reveal on screen (middle text)
     showStyleReveal(currentPreset.name);
@@ -6665,7 +6666,6 @@ function updatePresetDisplay() {
     if (isMenuOpen) {
         updateMenuSelection();
     }
-}
 }
 
 // Listen for plugin messages (responses from AI)
