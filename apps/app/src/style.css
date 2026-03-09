@@ -761,7 +761,7 @@ button:disabled {
     width: 98%;
     height: 92%;
     background-color: #111;
-    border-radius: 1vw;
+    border-radius: 2vw;
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -1681,7 +1681,7 @@ button:disabled {
     width: 98%;
     height: 98%;
     background-color: #111;
-    border-radius: 1vw;
+    border-radius: 2vw;
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -1723,15 +1723,17 @@ button:disabled {
     width: 100%;
     height: 100%;
     overflow: hidden;
-    border-radius: 1vw;
+    border-radius: 2vw;
     cursor: pointer;
-    border: 2px solid #333;
+    border: 1px solid #2a2a2a;
     position: relative;
     background-color: #111;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
 }
 
 .gallery-item:active {
     border-color: #FE5F00;
+    box-shadow: 0 0 10px rgba(254, 95, 0, 0.4);
 }
 
 .gallery-item img {
@@ -2298,9 +2300,9 @@ button:disabled {
 .menu-section-button {
     width: 100%;
     padding: 2vw;
-    background-color: #222;
+    background: linear-gradient(180deg, #272727 0%, #1e1e1e 100%);
     color: #fff;
-    border: 1px solid #444;
+    border: 1px solid #3a3a3a;
     border-radius: 2vw;
     cursor: pointer;
     display: flex;
@@ -2322,21 +2324,21 @@ button:disabled {
 }
 
 .menu-section-button.menu-selected {
-    background-color: #FE5F00;
+    background-color: transparent;
     border-color: #FE5F00;
-    color: #000;
+    color: #fff;
 }
 
 .menu-section-button.menu-selected .menu-section-title {
-    color: #000;
+    color: #fff;
 }
 
 .menu-section-button.menu-selected .menu-section-value {
-    color: #333;
+    color: #ccc;
 }
 
 .menu-section-button.menu-selected .menu-section-arrow {
-    color: #000;
+    color: #fff;
 }
 
 .menu-section-title {
@@ -2373,7 +2375,7 @@ button:disabled {
     width: 98%;
     height: 92%;
     background-color: #111;
-    border-radius: 1vw;
+    border-radius: 2vw;
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -2399,7 +2401,7 @@ button:disabled {
 .back-button {
     padding: 1vw 3vw;
     font-size: 4vw;
-    background-color: #333;
+    background-color: transparent;
     color: #FE5F00;
     border: 1px solid #FE5F00;
     border-radius: 1.5vw;
@@ -2888,25 +2890,27 @@ button:disabled {
   top: 100%;
   left: 0;
   right: 0;
-  background: white;
-  border: 1px solid #ddd;
+  background: #1e1e1e;
+  border: 1px solid #FE5F00;
   border-top: none;
   max-height: 200px;
   overflow-y: auto;
   z-index: 1000;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+  border-radius: 0 0 2vw 2vw;
 }
 
 .category-autocomplete-item {
   padding: 8px 12px;
   cursor: pointer;
-  border-bottom: 1px solid #f0f0f0;
-  color: #333;
-  background: white;
+  border-bottom: 1px solid #2a2a2a;
+  color: #fff;
+  background: #1e1e1e;
 }
 
 .category-autocomplete-item:hover {
-  background: #f5f5f5;
+  background: #2a2a2a;
+  color: #FE5F00;
 }
 
 .category-autocomplete-item:last-child {
@@ -2969,8 +2973,8 @@ button:disabled {
 
 /* Tutorial Styles */
 .tutorial-glossary {
-    padding: 8px;
-    background: #000;
+    padding: 2vw;
+    background: #111;
     flex: 1;
     overflow-y: auto;
     display: flex;
@@ -2992,21 +2996,24 @@ button:disabled {
 }
 
 .glossary-item {
-    padding: 8px 12px;
-    background: #000;
-    border: 2px solid #FE5F00;
-    border-radius: 4px;
+    padding: 2vw;
+    background: linear-gradient(180deg, #272727 0%, #1e1e1e 100%);
+    border: 1px solid #3a3a3a;
+    border-radius: 2vw;
     text-align: left;
-    font-size: 12px;
+    font-size: 4vw;
     font-weight: 500;
-    color: #fff;
+    color: #FE5F00;
     cursor: pointer;
     transition: all 0.2s ease;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
 }
 
 .glossary-item:hover {
-    background: #FE5F00;
-    color: #000;
+    background: linear-gradient(180deg, #272727 0%, #1e1e1e 100%);
+    color: #fff;
     border-color: #FE5F00;
 }
 
@@ -3020,8 +3027,8 @@ button:disabled {
 }
 
 .glossary-item.menu-selected {
-    background: #FE5F00;
-    color: #000;
+    background: linear-gradient(180deg, #272727 0%, #1e1e1e 100%);
+    color: #fff;
     border-color: #FE5F00;
 }
 
@@ -3058,7 +3065,7 @@ button:disabled {
     overflow-y: auto;
     flex: 1;
     min-height: 0;
-    background: #000;
+    background: #111;
 }
 
 .tutorial-section {
