@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>Magic Kamera</title>
-  <script type="module" crossorigin src="./assets/main-M3qHI2pU.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/main-BzyDvXbk.css">
+  <script type="module" crossorigin src="./assets/main-B9UFbBsm.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/main-DcRTZoX4.css">
 </head>
 <body>
     <div id="app">
@@ -28,7 +28,7 @@
         </div>
     </div>
     <h1 class="magic-title">✨ Magic Kamera ✨</h1>
-    <p class="start-text">Tutorial located in menu (☰) under settings</p>
+    <p class="start-text">Text tutorial located in menu (☰) under settings (⚙️)</p>
     <div style="display:flex;gap:3vw;justify-content:center;align-items:center;width:100%;">
         <button id="start-button" class="start-button" style="min-width:0;flex:1;max-width:42vw;padding:5vw 3vw;font-size:5vw;">Start</button>
         <button id="splash-tour-button" class="start-button" style="min-width:0;flex:1;max-width:42vw;padding:5vw 3vw;font-size:5vw;background:linear-gradient(135deg,#333 0%,#111 100%);border-color:#FE5F00;box-shadow:0 6px 25px rgba(254,95,0,0.3);">▶ Tour</button>
@@ -112,19 +112,13 @@
                 <div class="styles-menu-header">
                     <h2>Menu</h2>
                     <div class="menu-nav-buttons">
+                        <button id="settings-menu-button" class="menu-jump-button" title="Settings">⚙️</button>
                         <button id="jump-to-top" class="menu-jump-button" title="Jump to top">↑</button>
                         <button id="jump-to-bottom" class="menu-jump-button" title="Jump to bottom">↓</button>
                         <button id="close-menu" class="close-button">×</button>
                     </div>
                 </div>
                 <div class="styles-menu-scroll-container">
-                <!-- Settings Section -->
-                <div class="menu-section">
-                    <button id="settings-menu-button" class="menu-section-button">
-                        <span class="menu-section-title">Settings</span>
-                        <span class="menu-section-arrow">›</span>
-                    </button>
-                </div>
 
                 <!-- Styles Section -->
                 <div class="menu-section">
@@ -177,7 +171,7 @@
                     <!-- Burst Settings -->
                     <div class="menu-section">
                         <button id="burst-settings-button" class="menu-section-button">
-                            <span class="menu-section-title">Burst Settings</span>
+                            <span class="menu-section-title">Burst</span>
                             <span id="current-burst-display" class="menu-section-value">5 photos, Medium</span>
                             <span class="menu-section-arrow">›</span>
                         </button>
@@ -186,7 +180,7 @@
                     <!-- Timer Settings -->
                     <div class="menu-section">
                         <button id="timer-settings-button" class="menu-section-button">
-                            <span class="menu-section-title">Timer Settings</span>
+                            <span class="menu-section-title">Timer</span>
                             <span id="current-timer-display" class="menu-section-value">10s, No Repeat</span>
                             <span class="menu-section-arrow">›</span>
                         </button>
@@ -246,7 +240,7 @@
                     <!-- Import Settings -->
                     <div class="menu-section">
                         <button id="import-resolution-settings-button" class="menu-section-button">
-                            <span class="menu-section-title">Import Settings</span>
+                            <span class="menu-section-title">Import Resolution</span>
                             <span id="current-import-resolution-display" class="menu-section-value">VGA</span>
                             <span class="menu-section-arrow">›</span>
                         </button>
@@ -733,7 +727,7 @@
                     <div class="preset-builder-field" id="single-options-container" style="display: none;">
                         <label class="preset-builder-label">Options List</label>
                         <div id="single-options-list" style="margin-top: 8px;"></div>
-                        <button type="button" id="add-single-option" style="margin-top: 6px; padding: 0 10px; height: 22px; line-height: 22px; background: #4CAF50; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 11px; display: inline-block;">
+                        <button type="button" id="add-single-option" style="margin-top: 6px; padding: 0 3vw; height: 5vw; min-height: 22px; background: #4CAF50; color: white; border: none; border-radius: 2vw; cursor: pointer; font-size: 3vw; font-weight: bold; display: flex; align-items: center; justify-content: center; box-sizing: border-box;">
                             + Add Option
                         </button>
                     </div>
@@ -742,7 +736,7 @@
                     <div class="preset-builder-field" id="multi-options-container" style="display: none;">
                         <label class="preset-builder-label">Option Groups</label>
                         <div id="multi-options-groups" style="margin-top: 8px;"></div>
-                        <button type="button" id="add-option-group" style="margin-top: 6px; padding: 0 10px; height: 22px; line-height: 22px; background: #4CAF50; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 11px; display: inline-block;">
+                        <button type="button" id="add-option-group" style="margin-top: 6px; padding: 0 3vw; height: 5vw; min-height: 22px; background: #4CAF50; color: white; border: none; border-radius: 2vw; cursor: pointer; font-size: 3vw; font-weight: bold; display: flex; align-items: center; justify-content: center; box-sizing: border-box;">
                             + Add Group
                         </button>
                     </div>
@@ -800,7 +794,7 @@
                 <!-- Glossary Menu -->
                 <div id="tutorial-glossary" class="tutorial-glossary">
                     <h4 class="glossary-title">Quick Navigation</h4>
-                    <button id="start-guided-tour" onclick="startGuidedTour()" style="display:block;width:100%;margin-bottom:10px;padding:10px;background:#FE5F00;color:#000;border:none;border-radius:6px;font-size:14px;font-weight:700;cursor:pointer;">▶ Start Audio Guided Tour</button>
+                    <button id="start-guided-tour" onclick="startGuidedTour()" style="display:block;width:100%;margin-bottom:2vw;padding:2vw;background:#FE5F00;color:#000;border:none;border-radius:2vw;font-size:4vw;font-weight:700;cursor:pointer;">▶ Start Audio Guided Tour</button>
                     <div class="glossary-items">
                         <button class="glossary-item" data-section="getting-started">🚀 Getting Started</button>
                         <button class="glossary-item" data-section="basic-controls">📸 Basic Controls</button>
@@ -844,7 +838,7 @@
                    <div id="section-ai-presets" class="tutorial-section">
                         <h4 class="tutorial-heading">✨ AI Presets</h4>
                         <p class="tutorial-text">
-                            Browse over 800 unique and fun AI presets! We are constantly updating and adding presets. Scroll through styles like Impressionism, Cyberpunk, Anime Art, Watercolor, Caricature, and much more. The current preset name appears at the bottom of the main screen. Each preset transforms your photo with a specific artistic style or effect. Some presets are created to truly randomize(using the RonDom Method©) options within the preset and you can also enable manually select options to select which of the options you want to create. Since there are so many presets from which to choose. <strong>🔊 Hear Preset Info:</strong> When browsing presets in the Import Presets menu, tap any preset ONCE to hear its description read aloud. Use the 🔊 mute button in the header to toggle audio on or off.
+                            Browse <span id="tutorial-preset-count">800</span> unique and fun AI presets! We are constantly updating and adding presets. Scroll through styles like Impressionism, Cyberpunk, Anime Art, Watercolor, Caricature, and much more. The current preset name appears at the bottom of the main screen. Each preset transforms your photo with a specific artistic style or effect. Some presets are created to truly randomize(using the RonDom Method©) options within the preset and you can also enable manually select options to select which of the options you want to create. Since there are so many presets from which to choose. <strong>🔊 Hear Preset Info:</strong> When browsing presets in the Import Presets menu, tap any preset ONCE to hear its description read aloud. Use the 🔊 mute button in the header to toggle audio on or off.
 </p>
                     </div>
 
@@ -887,7 +881,7 @@
                             2. Copy the <strong>direct link</strong> (must end in .png, .jpg, .jpeg, .gif, or .webp)<br>
                             3. Go to <strong>qr-code-generator.com</strong> and paste the direct link<br>
                             4. Generate and download/display the QR code<br>
-                            5. Go to menu (☰)/settings in the Magic Kamera plugin<br>
+                            5. Go to menu (☰)/settings (⚙️) in the Magic Kamera plugin<br>
                             6. Select the resolution of the image under Import Settings<br>
                             7. Exit settings and menu<br>  
                             8. Go to gallery (🖼️)<br>
@@ -950,16 +944,16 @@
                         <p class="tutorial-text">
                             <strong>Resolution:</strong> VGA (640x480) to HD (3264x2448). If you want images to appear in magic gallery, choose lower settings.<br>
                             <strong>Aspect Ratio:</strong> Choose 1:1 square or 16:9 letterbox, or if unchecked neither. Default is neither.<br>
-                            <strong>Burst Settings:</strong> Number of photos and capture speed<br>
+                            <strong>Burst:</strong> Number of photos and capture speed<br>
                             <!-- <strong>White Balance:</strong> Adjust color temperature of image so white objects appear white and colors realistic<br> -->
-                            <strong>Timer Settings:</strong> Countdown time and repeat interval<br>
+                            <strong>Timer:</strong> Countdown time and repeat interval<br>
                             <strong>Master Prompt:</strong> Append text to every AI transformation to customize. This can be accessed from the gallery by pressing the MASTER button in the gallery<br>
                             <strong>Motion Detection:</strong> Sensitivity, start delay, continuous capture<br>
                             <strong>Visible Presets:</strong> Select the imported presets you want to see in preset menus. Default all. Can select all, remove individually or remove all (the Ron setting). Each preset has categories indicated at the bottom of the visible preset menu.<br>
                             <strong>Preset Builder:</strong> Made to follow a sequence. Click return to go to next selection. Select prompt templates and chips to help you create new and exciting presets you want to see in preset menus. Categories must be separated by commas. You can also create multiple option presets with single or multi-selection! This is a very useful tool that includes prompting tips.<br>
                             <strong>No Magic Mode:</strong> Use as regular camera without AI processing. Photos will only save in plugin gallery. Photos will not save to rabbit hole or magic gallery. This setting does not affect prompting in gallery.<br>
                             <strong>Manually Select Options Mode:</strong> Enable/Disable. When enabled, if you choose a preset with options, a modal will appear asking you to pick from one of the options in the preset. Only this option is fed as the final prompt for generating the magical image. This setting does not work with No Magic Mode, Motion Sensor, Burst or Timer. It will work with Randomizer. Currently, only working with single shot photos in main camera screen and single image/single preset in gallery.<br>
-                            <strong>Import Settings:</strong> Select import resolution for external image imported through gallery.<br>
+                            <strong>Import Resolution:</strong> Select import resolution for external image imported through gallery.<br>
                             <strong>Reset Database:</strong> Nuclear Option. Only imported presets remain.  All custom work deleted.<br>
                             <strong>📥 Import Presets:</strong> Import from our external library of presets. Import only the ones you want by checking them individually or ✓ All (Ron setting - ✗ None). Once you select the ones you want to import, click the Import button. NOTE: Previously imported presets remain checked. To delete previously imported presets from the Magic Kamera, delete them from the Main Menu. You can import them again if you like. Any new presets added to our external library of presets, will be unchecked (check regularly for new ones as we are constantly updating this list). <strong>🔊 Hear Preset Info:</strong> When browsing presets in the Import Presets menu, tap any preset ONCE to hear its description read aloud. Use the 🔊 mute button in the header to toggle audio on or off.
 <br>
