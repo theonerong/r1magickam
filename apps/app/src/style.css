@@ -2077,6 +2077,45 @@ button:disabled {
     color: #000;
 }
 
+.viewer-options-button {
+    position: absolute;
+    bottom: calc(50vh - 6vw);
+    right: 1vw;
+    width: 12vw;
+    height: 8vw;
+    min-width: 44px;
+    min-height: 22px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    border: 2px solid #ff4444;
+    border-radius: 1vw;
+    font-size: 3vw;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 2001;
+    padding: 0;
+}
+
+.viewer-options-button:active {
+    background-color: #ff4444;
+    color: #000;
+}
+
+.viewer-options-button.enabled {
+    background-color: rgba(76, 175, 80, 0.3);
+    border-color: #4CAF50;
+    color: #fff;
+    box-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
+}
+
+.viewer-options-button.enabled:active {
+    background-color: #4CAF50;
+    color: #000;
+}
+
 .image-viewer-container {
     flex: 1;
     min-height: 50vh;

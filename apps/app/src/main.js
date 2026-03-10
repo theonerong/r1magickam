@@ -240,6 +240,9 @@ let manuallySelectedOption = null;
 let returnToGalleryFromMasterPrompt = false;
 let savedViewerImageIndex = -1;
 
+// Track if we opened an editor from the gallery viewer prompt tap
+let returnToGalleryFromViewerEdit = false;
+
 // Style reveal elements
 let styleRevealElement, styleRevealText;
 let styleRevealTimeout = null;
@@ -945,6 +948,16 @@ function openImageViewer(index) {
       mpBtn.classList.add('enabled');
     } else {
       mpBtn.classList.remove('enabled');
+    }
+  }
+
+  // Light up Options button if manual options mode is enabled
+  const optionsBtn = document.getElementById('options-viewer-button');
+  if (optionsBtn) {
+    if (manualOptionsMode) {
+      optionsBtn.classList.add('enabled');
+    } else {
+      optionsBtn.classList.remove('enabled');
     }
   }
   
@@ -2250,6 +2263,10 @@ async function loadStyles() {
         setTimeout(async () => {
             const shouldImport = await confirm('Welcome! You should import presets to get started. Would you like to import now?');
             if (shouldImport) {
+                // Initialize the camera first so the user can exit the menu normally after importing
+                document.getElementById('start-screen').style.display = 'none';
+                await initCamera();
+                // Now open the menu straight to the import screen
                 document.getElementById('menu-button').click();
                 setTimeout(() => {
                     document.getElementById('settings-menu-button').click();
@@ -2938,6 +2955,66 @@ function hideVisiblePresetsSubmenu() {
   showSettingsSubmenu();
 }
 
+// Called when user taps the viewer prompt text area
+function handleViewerPromptTap() {
+  const hasLoadedPreset = !!window.viewerLoadedPreset;
+  
+  if (!hasLoadedPreset) {
+    // No preset loaded: open Preset Builder to create a new one
+    returnToGalleryFromViewerEdit = true;
+    // Close the image viewer and gallery modal so builder has full screen
+    document.getElementById('image-viewer').style.display = 'none';
+    document.getElementById('gallery-modal').style.display = 'none';
+    // Close main menu if open
+    document.getElementById('unified-menu').style.display = 'none';
+    isMenuOpen = false;
+    // Open settings submenu first (needed as parent context), then go to builder
+    document.getElementById('settings-submenu').style.display = 'flex';
+    isSettingsSubmenuOpen = true;
+    // Open preset builder
+    document.getElementById('settings-submenu').style.display = 'none';
+    document.getElementById('preset-builder-submenu').style.display = 'flex';
+    isSettingsSubmenuOpen = false;
+    isPresetBuilderSubmenuOpen = true;
+    clearPresetBuilderForm();
+  } else {
+    // A preset is loaded — check if it is a custom preset (made with the builder)
+    const loadedPreset = window.viewerLoadedPreset;
+    const isCustomPreset = !factoryPresets.some(fp => fp.name === loadedPreset.name) &&
+      !(hasImportedPresets && presetImporter.getImportedPresets().some(p => p.name === loadedPreset.name));
+    
+    if (isCustomPreset) {
+      // It's a custom preset: open Preset Builder in edit mode
+      returnToGalleryFromViewerEdit = true;
+      const presetIndex = CAMERA_PRESETS.findIndex(p => p.name === loadedPreset.name);
+      document.getElementById('image-viewer').style.display = 'none';
+      document.getElementById('gallery-modal').style.display = 'none';
+      document.getElementById('unified-menu').style.display = 'none';
+      isMenuOpen = false;
+      document.getElementById('preset-builder-submenu').style.display = 'flex';
+      isSettingsSubmenuOpen = false;
+      isPresetBuilderSubmenuOpen = true;
+      if (presetIndex >= 0) {
+        loadPresetIntoBuilder(presetIndex);
+      } else {
+        clearPresetBuilderForm();
+      }
+    } else {
+      // It's a factory/imported preset: open Style Editor in edit mode
+      returnToGalleryFromViewerEdit = true;
+      const presetIndex = CAMERA_PRESETS.findIndex(p => p.name === loadedPreset.name);
+      document.getElementById('image-viewer').style.display = 'none';
+      document.getElementById('gallery-modal').style.display = 'none';
+      document.getElementById('unified-menu').style.display = 'none';
+      isMenuOpen = false;
+      if (presetIndex >= 0) {
+        editStyle(presetIndex);
+        showStyleEditor('Edit Style');
+      }
+    }
+  }
+}
+
 // Show Preset Builder submenu
 function showPresetBuilderSubmenu() {
   document.getElementById('settings-submenu').style.display = 'none';
@@ -2959,6 +3036,15 @@ function hidePresetBuilderSubmenu() {
   // Hide delete button when closing
   const deleteButton = document.getElementById('preset-builder-delete');
   if (deleteButton) deleteButton.style.display = 'none';
+  
+  // If we came from the gallery viewer, return there instead of settings
+  if (returnToGalleryFromViewerEdit) {
+    returnToGalleryFromViewerEdit = false;
+    document.getElementById('settings-submenu').style.display = 'none';
+    isSettingsSubmenuOpen = false;
+    openImageViewer(currentViewerImageIndex);
+    return;
+  }
   
   showSettingsSubmenu();
 }
@@ -4211,6 +4297,7 @@ function loadNoMagicMode() {
 function toggleManualOptionsMode() {
   manualOptionsMode = !manualOptionsMode;
   
+  // Update the settings menu status label
   const statusElement = document.getElementById('manual-options-status');
   if (statusElement) {
     statusElement.textContent = manualOptionsMode ? 'Enabled' : 'Disabled';
@@ -4218,24 +4305,24 @@ function toggleManualOptionsMode() {
     statusElement.style.fontWeight = manualOptionsMode ? '600' : '';
   }
   
+  // Save to localStorage
   try {
     localStorage.setItem(MANUAL_OPTIONS_KEY, JSON.stringify(manualOptionsMode));
   } catch (err) {
     console.error('Failed to save Manual Select mode:', err);
   }
   
+  // Update the camera footer
   updateNoMagicFooter();
   
-  if (manualOptionsMode) {
-    // Check for conflicting modes
-    const modeCheck = canUseManualOptions();
-    if (!modeCheck.allowed) {
-      showStatus(`⚠️ ${modeCheck.reason}`, 3000);
+  // Sync the gallery Options button color if it exists
+  const optionsBtn = document.getElementById('options-viewer-button');
+  if (optionsBtn) {
+    if (manualOptionsMode) {
+      optionsBtn.classList.add('enabled');
     } else {
-      showStatus('Manual Select ON - Only works with Random mode', 2500);
+      optionsBtn.classList.remove('enabled');
     }
-  } else {
-    showStatus('Manual Select OFF - Random selection active', 2000);
   }
 }
 
@@ -4602,7 +4689,7 @@ const TOUR_STEPS = [
   { section: 'Tips and Advanced', title: '🔁 Reset Database', body: 'The nuclear option in Settings. Wipes all custom presets and settings. Only imported presets from the library remain. Use only if something is seriously broken.' },
   { section: 'Tips and Advanced', title: '💀 Content Filter Error', body: 'If you go into your rabbit hole and you receive a content filter image error. This happens because AI is quirky. The beauty of Magic Kamera is, you can reprompt! Keep trying until successful.' },
   { section: 'Troubleshooting', title: '❌ Camera Access Denied', body: 'This error will appear at the bottom of your main camera screen if you do not have any active presets (either imported or made with the preset builder).' },
-  { section: 'Done!', title: '🎉 Tour Complete!', body: "That's Magic Kamera. Now go make magic! This tour or the text tutorial in this menu is here if you need a refresher. If you come across The One Ron G, The One Hashtag Cyber or The One Rabbit Jesus, tell them you enjoy this program." },
+  { section: 'Done!', title: '🎉 Tour Complete!', body: 'That\'s Magic Kamera. Now go make magic! This tour or the text tutorial in this menu is here if you need a refresher. If you come across The One Ron G, The One Hashtag Cyber or The One Rabbit Jesus, tell them you enjoy this program.' },
 ];
 
 function tourSpeak(text) {
@@ -7859,6 +7946,13 @@ function hideStyleEditor() {
   }
   document.getElementById('delete-style').style.display = 'none';
   editingStyleIndex = -1;
+  
+  // If we came from the gallery viewer, return there instead of menu
+  if (returnToGalleryFromViewerEdit) {
+    returnToGalleryFromViewerEdit = false;
+    openImageViewer(currentViewerImageIndex);
+    return;
+  }
 }
 
 function editStyle(index) {
@@ -9844,6 +9938,18 @@ const result = await presetImporter.import();
     });
   }
   
+  const optionsViewerBtn = document.getElementById('options-viewer-button');
+  if (optionsViewerBtn) {
+    optionsViewerBtn.addEventListener('click', () => {
+      toggleManualOptionsMode();
+      if (manualOptionsMode) {
+        optionsViewerBtn.classList.add('enabled');
+      } else {
+        optionsViewerBtn.classList.remove('enabled');
+      }
+    });
+  }
+
   // QR Scan Button
   const qrScanBtn = document.getElementById('qr-scan-button');
   if (qrScanBtn) {
@@ -9935,9 +10041,15 @@ const result = await presetImporter.import();
     });
   }
 
-  // Clear loaded preset when user manually edits the viewer prompt
+  // Tapping the viewer prompt opens the right editor instead of keyboard
   const viewerPromptInput = document.getElementById('viewer-prompt');
   if (viewerPromptInput) {
+    viewerPromptInput.addEventListener('focus', (e) => {
+      // Prevent keyboard from appearing
+      viewerPromptInput.blur();
+      // Open the correct editor based on loaded preset state
+      handleViewerPromptTap();
+    });
     viewerPromptInput.addEventListener('input', () => {
       window.viewerLoadedPreset = null;
     });
