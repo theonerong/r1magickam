@@ -15458,6 +15458,165 @@
     "additionalInstructions": ""
   },
   {
+    "name": "MILLENNIALS",
+    "category": [
+      "HUMOR",
+      "CREATIVE",
+      "NOSTALGIA",
+      "POP CULTURE",
+      "RETRO"
+    ],
+    "message": "Take a picture and transform the entire scene by replacing every modern element with its 1990s or early 2000s Millennial counterpart based on the selected options. This is a full scene transformation — nothing post-2005 survives in the selected categories. The result should feel like the photo was taken between 1993 and 2004. Apply every selected transformation with maximum authenticity, accuracy, and era-specific detail.",
+  "randomizeOptions": true,
+  "optionGroups": [
+    {
+      "title": "VEHICLE",
+      "options": [
+        { "id": "V00", "text": "SAME (no vehicle transformation)" },
+        { "id": "V01", "text": "A 1995 Dodge Neon in Lemon Twist yellow with the base steel wheels and the NEON badge on the trunk and the Hi logo on the dash visible through the windshield" },
+        { "id": "V02", "text": "A tricked-out 1995 Honda Civic hatchback in the Fast and Furious style — lowered on coilovers, huge aftermarket wing, flame decals, and a coffee-can exhaust tip" },
+        { "id": "V03", "text": "A 1999 Volkswagen New Beetle in Cyber Green with a flower in the dashboard bud vase and a daisy antenna topper" },
+        { "id": "V04", "text": "A 1994 Ford Explorer in two-tone green and gray with a Thule roof rack, a ski rack, and a Dream Catcher hanging from the rearview mirror" },
+        { "id": "V05", "text": "A 2001 PT Cruiser in black with the chrome grille accents, a flame hood decal, and a fuzzy dice hanging from the mirror" },
+        { "id": "V06", "text": "A 1998 Pontiac Firebird Trans Am in black with the T-tops removed, a CD visor organizer visible on the sun visor, and a MiniDisc player in the cupholder" },
+        { "id": "V07", "text": "A 1997 Toyota RAV4 in Electric Teal with the side-mounted spare tire on the rear door and a collection of bumper stickers from national parks and ski resorts" },
+        { "id": "V08", "text": "A tricked-out 1993 Chevy Caprice on 22-inch Dayton wire wheels sitting on hydraulics with a hydraulic switch box console visible inside" },
+        { "id": "V09", "text": "A 2002 Mini Cooper in British Racing Green with the white roof, the go-kart proportions, and a Union Jack sticker on the roof" },
+        { "id": "V10", "text": "A Scooby-Doo or Teenage Mutant Ninja Turtles van repainted in 90s cartoon colors with the characters airbrushed on the side panels" }
+      ]
+    },
+    {
+      "title": "PHONE AND COMMUNICATION",
+      "options": [
+        { "id": "P00", "text": "SAME (no phone transformation)" },
+        { "id": "P01", "text": "A Nokia 3310 in translucent blue with the interchangeable Xpress-On cover and the Snake game visible on the tiny monochrome screen" },
+        { "id": "P02", "text": "A Motorola StarTAC flip phone in silver — flipped open to reveal the tiny screen and the numeric keypad" },
+        { "id": "P03", "text": "A Nextel Motorola i1000 push-to-talk Walkie Talkie phone with the orange PTT button on the side and a belt clip holster" },
+        { "id": "P04", "text": "A numeric alphanumeric pager with the belt clip displaying a message typed in T9 pager shorthand" },
+        { "id": "P05", "text": "A Sidekick T-Mobile Hiptop with the swivel screen flipped up to reveal the full QWERTY keyboard underneath" },
+        { "id": "P06", "text": "A clear landline telephone with all the internal circuit board and wires fully visible through the transparent casing" },
+        { "id": "P07", "text": "An AOL Instant Messenger window open on a CRT monitor showing a conversation in the classic AIM interface with a buddy list on the right" },
+        { "id": "P08", "text": "A pay phone with a local Yellow Pages book chained below it and a handwritten number in Sharpie on the metal shelf" },
+        { "id": "P09", "text": "A cordless phone in gray with a long rubber antenna and a base station with a blinking green charge light" },
+        { "id": "P10", "text": "A disposable Kodak Fun Saver camera being held up for a photo — the cardboard packaging still around the edges with the flash cube on top" }
+      ]
+    },
+    {
+      "title": "HAIRSTYLE",
+      "options": [
+        { "id": "H00", "text": "SAME (no hairstyle transformation)" },
+        { "id": "H01", "text": "The Rachel — Jennifer Aniston's iconic Friends layered shag with the heavily highlighted chunky face-framing layers and the flipped-out ends" },
+        { "id": "H02", "text": "Frosted tips — short hair on top with just the very ends bleached platinum blond while the roots stay dark brown" },
+        { "id": "H03", "text": "Cornrows with beaded ends — small tight braids going straight back from the forehead with small colored plastic beads at the tips" },
+        { "id": "H04", "text": "A chunky highlight dye job with thick alternating stripes of honey blonde and warm brown throughout medium-length hair" },
+        { "id": "H05", "text": "A bowl cut with a hard undercut — the top section left thick and round like a helmet with a shaved line running above the ears" },
+        { "id": "H06", "text": "Straightened hair with a flat iron — pin-straight glossy black hair parted severely in the center falling to the shoulders" },
+        { "id": "H07", "text": "A spiked frosted top — short hair on top gelled into individual spikes with each tip dipped in platinum bleach" },
+        { "id": "H08", "text": "A high bun with two face-framing tendrils pulled out and curled — the classic 90s prom and homecoming updo" },
+        { "id": "H09", "text": "Space buns — two small buns pinned high on either side of the top of the head with bobby pins visible and a center part" },
+        { "id": "H10", "text": "Crimped hair with chunky highlights — 90s crimping iron zigzag texture throughout highlighted hair with a butterfly clip holding back one side" }
+      ]
+    },
+    {
+      "title": "MAKEUP",
+      "options": [
+        { "id": "M00", "text": "SAME (no makeup transformation)" },
+        { "id": "M01", "text": "Brown matte lipstick — very dark cool-toned brown lip color with a slightly darker lip liner pencil drawn just outside the natural lip line" },
+        { "id": "M02", "text": "Thin over-plucked arched eyebrows with a barely-there pencil line filling in the sparse hair left after aggressive waxing" },
+        { "id": "M03", "text": "Frosted white or pale pink lipgloss applied heavily so the lips appear wet and reflect light" },
+        { "id": "M04", "text": "Brown or taupe eyeshadow smudged softly across the lid with no blending and a thin dark pencil on the waterline" },
+        { "id": "M05", "text": "Heavy matte foundation two shades too light for the skin tone with no blending at the jawline creating a visible mask line" },
+        { "id": "M06", "text": "Glitter gel applied directly to the upper eyelid and cheekbones — loose cosmetic glitter in silver or holographic" },
+        { "id": "M07", "text": "A dark liner lip with a pale nude fill — dark brown lip liner outlining the lips filled in with a much lighter beige lipstick inside" },
+        { "id": "M08", "text": "Blue or purple nail polish on square-shaped long nails with a top coat that has fine silver glitter suspended in it" },
+        { "id": "M09", "text": "Minimal grunge no-makeup makeup — pale skin, slightly smudged dark kohl, bare lips, and deliberately messy concealer application" },
+        { "id": "M10", "text": "Spice Girls glitter face paint — small star or heart shapes drawn on the cheekbone in silver body glitter with face gems beside them" }
+      ]
+    },
+    {
+      "title": "CLOTHING",
+      "options": [
+        { "id": "C00", "text": "SAME (no clothing transformation)" },
+        { "id": "C01", "text": "JNCO ultra-wide leg jeans with leg openings so enormous they completely cover the shoes and drag on the ground — in dark indigo with embroidered JNCO logo on the back pocket" },
+        { "id": "C02", "text": "A baby tee — a tiny cropped t-shirt with a tight fit and a graphic print in neon or pastel on a white background, paired with low-rise flare jeans" },
+        { "id": "C03", "text": "Low-rise flare jeans with a visible whale tail — the waistband sitting four inches below the navel with the back pocket embroidery of a butterfly or flower" },
+        { "id": "C04", "text": "A velour Juicy Couture tracksuit in pink or powder blue with Juicy written across the seat of the pants in rhinestones" },
+        { "id": "C05", "text": "A frosted denim jacket covered in patches, pins, and iron-on letters spelling out a band name or a slogan" },
+        { "id": "C06", "text": "Biker shorts in black worn under an oversized flannel shirt tied at the waist with the sleeves rolled up" },
+        { "id": "C07", "text": "A plaid grunge flannel over a Nirvana or Pearl Jam band t-shirt with oversized straight-leg jeans and a chain wallet" },
+        { "id": "C08", "text": "Overalls with one strap undone hanging down — in denim or in bright solid color corduroy, worn over a striped long-sleeve shirt" },
+        { "id": "C09", "text": "A butterfly-print or floral slip dress in a bias cut worn over a plain white t-shirt underneath and chunky sandals" },
+        { "id": "C10", "text": "Cargo pants in olive green or khaki with every pocket stuffed and bulging — worn low with a wallet chain connecting the front belt loop to the back pocket" }
+      ]
+    },
+    {
+      "title": "SHOES",
+      "options": [
+        { "id": "S00", "text": "SAME (no shoe transformation)" },
+        { "id": "S01", "text": "Buffalo platform sneakers — the enormous chunky sole platform sneaker in white leather with a sole at least three inches thick" },
+        { "id": "S02", "text": "Steve Madden Slinky mule heels in snake print or a solid color with the signature chunky block heel and open toe" },
+        { "id": "S03", "text": "Nike Air Max 95 in the original black, neon yellow, and gray gradient colorway with the visible Air unit in the heel" },
+        { "id": "S04", "text": "Skechers Shape-Ups or Energy Sport — chunky dad sneakers in a two-tone leather with a thick curved rocker sole" },
+        { "id": "S05", "text": "Doc Martens 1460 eight-hole boots in oxblood with yellow stitching, a visible steel toe cap, and the Airwair bouncing soles tag on the heel" },
+        { "id": "S06", "text": "Timberland 6-inch premium waterproof boots in wheat nubuck with the Timberland tree logo and the lug sole" },
+        { "id": "S07", "text": "Chunky Spice Girls-style platform sandals with a clear acrylic platform wedge and ankle straps in a metallic color" },
+        { "id": "S08", "text": "Heelys — sneakers with a retractable wheel embedded in the heel, in a two-tone blue and silver colorway" },
+        { "id": "S09", "text": "Vans Half Cab in black suede with the Vans side stripe and the signature Tony Hawk pro skater sole" },
+        { "id": "S10", "text": "Etnies Kingpin skate shoes in black and white suede with a padded tongue and the Etnies 'e' logo on the side" }
+      ]
+    },
+    {
+      "title": "ACCESSORIES AND WATCH",
+      "options": [
+        { "id": "A00", "text": "SAME (no accessories transformation)" },
+        { "id": "A01", "text": "A Tamagotchi or Nano Pet digital pet clipped to a belt loop or key ring — the small egg-shaped device with the three tiny buttons" },
+        { "id": "A02", "text": "A Starter jacket in the team color of a 90s team — an NFL or NBA satin bomber jacket with the embroidered team logo on the chest and a snap-button front" },
+        { "id": "A03", "text": "A butterfly hair clip in iridescent pastel plastic — the spring-loaded clamp jaw style holding back one side of the hair" },
+        { "id": "A04", "text": "A choker necklace — either a black tattoo choker in stretchy plastic lace or a thin velvet ribbon tied in a bow at the back" },
+        { "id": "A05", "text": "A chain wallet with a silver carabiner or lobster clasp connecting a thick link chain from the front belt loop to the back pocket of cargo pants" },
+        { "id": "A06", "text": "A Discman CD player clipped to a waistband with foam headphones around the neck and a clear CD case held in the hand" },
+        { "id": "A07", "text": "A frosted iMac G3 in Bondi Blue or Tangerine orange on a desk — the all-in-one rounded teardrop shape with the matching keyboard and hockey puck mouse" },
+        { "id": "A08", "text": "A Game Boy Color in Atomic Purple with Pokemon Red or Yellow visible on the screen and a Worm Light plugged into the top" },
+        { "id": "A09", "text": "Tiny tinted oval sunglasses in yellow or blue lens with thin wire frames — the John Lennon style popularized by 90s pop stars" },
+        { "id": "A10", "text": "A JanSport backpack in a tie-dye or solid color with the suede bottom panel and every pocket opened with a carabiner hanging off the zipper pull" }
+      ]
+    },
+    {
+      "title": "TELEVISION AND MEDIA",
+      "options": [
+        { "id": "T00", "text": "SAME (no television transformation)" },
+        { "id": "T01", "text": "A 27-inch Sony Trinitron CRT television on a wood-grain entertainment center with a PlayStation 1 on the shelf below and a stack of jewel case PS1 games" },
+        { "id": "T02", "text": "A Blockbuster Video clamshell VHS rental box with the blue and gold label, a BE KIND REWIND sticker, and a due date card in the plastic sleeve on the back" },
+        { "id": "T03", "text": "An SNES or Sega Genesis with two controllers tangled together on the floor in front of the TV and a pile of cartridges beside the console" },
+        { "id": "T04", "text": "A boxy Sony Watchman portable TV with a small screen, a telescoping antenna, and a carrying strap" },
+        { "id": "T05", "text": "A stack of recorded VHS tapes with handwritten labels in Sharpie reading TGIF RECORDINGS or MTVE SPRING BREAK 1997" },
+        { "id": "T06", "text": "A Nintendo 64 with a four-controller hub attached, GoldenEye 007 cartridge inserted, and a CRT TV showing the four-player split screen" },
+        { "id": "T07", "text": "A TiVo Series 1 DVR with the TiVo guy logo on the front and a blinking red record light indicating it is currently recording Friends or The X-Files" },
+        { "id": "T08", "text": "A boombox with a six-disc CD changer visible through the window and a cassette door on the side for recording" },
+        { "id": "T09", "text": "An MTV Spring Break or TRL broadcast visible on screen — a crowd of people in 90s swimwear and Carson Daly at the countdown board" },
+        { "id": "T10", "text": "A portable CD player holder clipped to a car sun visor with individual jewel cases for Alanis Morissette, Tupac, and Backstreet Boys visible" }
+      ]
+    },
+    {
+      "title": "COMPUTER AND TECH",
+      "options": [
+        { "id": "O00", "text": "SAME (no computer transformation)" },
+        { "id": "O01", "text": "An iMac G3 in Bondi Blue or Grape purple — the rounded translucent all-in-one teardrop shape with the matching hockey puck mouse and the slot-loading CD drive" },
+        { "id": "O02", "text": "A Windows 98 desktop PC with a beige tower, a CRT monitor showing the Windows 98 desktop with My Computer and Recycle Bin icons, and a dialup modem making connection sounds" },
+        { "id": "O03", "text": "An AOL startup disc in the plastic sleeve with the 1000 Hours Free offer printed on it sitting beside a bulky external 56k modem" },
+        { "id": "O04", "text": "A Napster or Kazaa download progress bar frozen at 98 percent on a Windows Media Player skin on a CRT screen" },
+        { "id": "O05", "text": "A MiniDisc player and recorder with a stack of labeled MiniDisc cases — handwritten setlists and mixtape names visible on the tiny label" },
+        { "id": "O06", "text": "An original Palm Pilot PDA with the stylus being held against the Graffiti input area and a calendar appointment visible on screen" },
+        { "id": "O07", "text": "A digital camera — the original boxy point and shoot style with a floppy disk slot on the side and a one-inch LCD preview screen on the back" },
+        { "id": "O08", "text": "A GeoCities homepage displayed on a CRT monitor — animated GIFs, a visitor counter at the bottom, a marquee scrolling text, and a background that tiles a galaxy or flames image" },
+        { "id": "O09", "text": "An original black PlayStation 2 standing vertically on its stand with a DVD spinning and the green power light glowing" },
+        { "id": "O10", "text": "A Furby sitting on a desk — the original 1998 model with the large ear tufts, the blinking animatronic eyes, and the beak opening mid-word in Furbish" }
+      ]
+    }
+  ],
+  "additionalInstructions": "Every selected category must be fully and authentically transformed. No post-2005 elements should survive in any selected category. The era-specific details must be precise — get the logos right, the proportions right, and the color palettes right. Lean into the most visually iconic and recognizable Millennial touchstones from 1993 to 2004. The final image should be impossible to date to anything outside that window. If a category option says SAME, leave that element exactly as it appears in the original image."
+  },
+  {
     "name": "MIME",
     "category": [
       "PERFORMANCE",
@@ -21027,6 +21186,21 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "ABSOLUTE PROHIBITIONS:\n• NO modern digital illustration styles\n• NO painterly abstraction\n• NO parody exaggeration\n• NO busy collage layouts\n\nFINAL RESULT:\nThe image must look like an authentic Norman Rockwell Saturday Evening Post cover — warm, narrative-driven, nostalgic, and centered on a single human story moment starring the subject.\n\nSUBJECT REQUIREMENTS:"
+  },
+  {
+    "name": "SAVED BY THE BELL",
+    "category": [
+      "HUMOR",
+      "CREATIVE",
+      "NOSTALGIA",
+      "POP CULTURE",
+      "RETRO",
+      "TV"
+  ],
+  "message": "Take a picture and transform the entire scene into a scene from the television show Saved by the Bell, the Saturday morning NBC sitcom that aired from 1989 to 1993 set at Bayside High School in Palisades, California. This is a total scene transformation — nothing modern survives. Every person, object, location, and detail must be replaced with an authentic Saved by the Bell equivalent. The final image must look like a production still or a behind-the-scenes photo taken on set between 1989 and 1993.\n\nCHARACTERS: Populate the scene with the core cast of Saved by the Bell. Zack Morris — tall, blonde, perfectly feathered hair, wide confident smile, wearing a pastel polo shirt tucked into khaki pants or acid-washed jeans, always holding or reaching for his enormous Motorola DynaTAC brick phone. A.C. Slater — muscular, dark curly hair, wearing a sleeveless muscle shirt or a varsity jacket, sometimes in wrestling gear, always sitting backwards on a chair. Kelly Kapowski — the girl-next-door cheerleader, long dark wavy hair, wearing a Bayside cheerleader uniform or a bright floral top with high-waisted shorts, warm wholesome smile. Lisa Turtle — fashionable, trendsetting, wearing the most elaborate and colorful 90s fashion in the scene including coordinated accessories, always looking stylish and slightly judgmental. Jessie Spano — tall, curly red-brown hair, wearing a blazer over a turtleneck or a colorful oversized sweater, often holding a textbook or a protest sign. Screech Powers — lanky, frizzy dark hair, wearing a loud printed shirt with suspenders or an oversized geometric sweater, wide-eyed expression, often caught mid-disaster. Principal Richard Belding — heavyset, thinning dark hair with a wide mustache, wearing a brown or tan blazer over a bolo tie or a wide patterned necktie, looking exasperated and pointing or wagging a finger. Place all or several of these characters into the transformed scene interacting naturally with the subject of the original photo. Characters should react to and engage with the subject as if they are all hanging out together at Bayside.\n\nLOCATIONS: Transform the setting into one of the iconic Saved by the Bell locations based on the context of the original image — The Max diner with its neon signs, checkered floor, vinyl booths, and Max the magician behind the counter; the Bayside High hallway with the orange and blue lockers, linoleum floors, and hand-painted spirit banners hanging from the ceiling; the Bayside classroom with the alphabet strip above the chalkboard, wooden desks with attached chairs, and an overhead projector in the back; the school gym with the Bayside Tiders basketball court markings, retractable bleachers, and a scoreboard on the wall; or Zack Morris's bedroom with the wood-paneled walls, a poster of a sports car, a Macintosh computer on the desk, and a neon lamp on the nightstand.\n\nCLOTHING: Transform all clothing into authentic early 1990s Saved by the Bell fashion — neon and pastel color-blocked tops, oversized graphic t-shirts with bold logos or geometric patterns, acid-washed or stonewashed denim jeans with a high waist and a tapered leg, biker shorts worn under an oversized shirt, Bayside High varsity letterman jackets in orange and blue, crop tops with matching high-waisted shorts, floral sundresses, stirrup pants, and baseball caps worn slightly sideways. All shirts should be tucked in or tied in a knot at the hip. Belts should be wide and visible.\n\nHAIR: Transform all hairstyles into early 1990s Saved by the Bell styles — Zack Morris-style perfectly feathered and sculpted blonde hair, high-volume side-swept bangs with the rest curled and hairsprayed, a high side ponytail with a scrunchie the size of a softball, a perm with tight uniform spiral curls, a flat-top fade for any male characters, or a short layered bob with bangs. Every hairstyle should look like it required a full can of Aqua Net and a curling iron the diameter of a soup can.\n\nACCESSORIES: Add era-specific accessories throughout the scene — oversized plastic hoop earrings in neon colors, multiple friendship bracelets stacked on both wrists, a charm bracelet with school-themed charms, a slap bracelet, a Swatch watch, a scrunchie on every wrist even when not in the hair, a Bayside High backpack covered in buttons and keychains, a spiral-bound Trapper Keeper with stickers, and chunky plastic rings on multiple fingers.\n\nTECHNOLOGY: Replace all modern technology with early 1990s equivalents — Zack Morris's iconic giant brick Motorola DynaTAC phone is always present somewhere in the scene even if just visible on a table or in a backpack side pocket. Replace any laptop with a bulky Macintosh desktop computer with a floppy drive. Replace any streaming with a boxy television set playing a VHS tape with a VCR on top. Replace any smartphone with a pager clipped to a belt or waistband. Add a Sony Discman with foam headphones on a table or hanging from a backpack.\n\nATMOSPHERE: The overall color palette should be saturated and bright — lots of teal, coral, neon yellow, hot pink, electric blue, and orange. The lighting should be flat and even like a three-camera sitcom with a live studio audience. Add a laugh track indicator in the corner of the scene as a subtle joke — a small sign reading AUDIENCE LAUGHS HERE. Lockers should be visible in any hallway shot. Spirit banners reading GO TIDERS or BAYSIDE or TIGER PRIDE should hang in the background. Every surface should have at least one thing on it that belongs to one of the six main characters.",
+  "options": [],
+  "randomizeOptions": false,
+  "additionalInstructions": "The transformation must be total — no modern phones, no flat screens, no contemporary clothing, no current hairstyles, no modern vehicles. Every anachronism must be replaced. The characters of Saved by the Bell must be present and identifiable. The scene must be immediately recognizable as being from the show. Lean into the specific visual language of the series — the oversaturated colors, the flat sitcom lighting, the impossibly clean high school, the fashion that was aspirational in 1991. The more specific the details the better. Zack Morris must have his brick phone. Screech must look bewildered. Kelly must look wholesome. Slater must be on or near a chair facing backwards."
   },
   {
     "name": "SCANDINAVIAN FOLK ART",
