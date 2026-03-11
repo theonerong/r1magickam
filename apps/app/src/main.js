@@ -311,6 +311,13 @@ let isBatchPresetSelectionActive = false;
 let selectedPresets = [];
 let multiPresetImageId = null;
 
+// Camera multi-preset variables
+let isCameraMultiPresetActive = false;
+let cameraSelectedPresets = []; // The presets selected for next capture
+let cameraMultiManualSelections = {}; // Saved manual option selections per preset name
+const CAMERA_MULTI_PRESET_KEY = 'r1_camera_multi_presets';
+const CAMERA_MULTI_SELECTIONS_KEY = 'r1_camera_multi_selections';
+
 // Style filter
 let styleFilterText = '';
 let presetFilterText = '';
@@ -1469,9 +1476,13 @@ function populatePresetList() {
     if (presetFilterText) {
       const searchText = presetFilterText.toLowerCase();
       const categoryMatch = preset.category && preset.category.some(cat => cat.toLowerCase().includes(searchText));
+      const optionsMatch = (
+        (preset.options && preset.options.some(o => o.text && o.text.toLowerCase().includes(searchText))) ||
+        (preset.optionGroups && preset.optionGroups.some(g => g.title && g.title.toLowerCase().includes(searchText) || g.options && g.options.some(o => o.text && o.text.toLowerCase().includes(searchText))))
+      );
       const textMatch = preset.name.toLowerCase().includes(searchText) || 
              preset.message.toLowerCase().includes(searchText) ||
-             categoryMatch;
+             categoryMatch || optionsMatch;
       if (!textMatch) return false;
     }
     
@@ -1536,9 +1547,13 @@ async function selectPreset(preset) {
   // Multi-preset mode
   if (isMultiPresetMode) {
     const index = selectedPresets.findIndex(p => p.name === preset.name);
-    if (index > -1) {
+    if (index !== -1) {
       selectedPresets.splice(index, 1);
     } else {
+      if (selectedPresets.length >= 20) {
+        alert('Maximum 20 presets allowed. Deselect one first.');
+        return;
+      }
       selectedPresets.push(preset);
     }
     updateMultiPresetList();
@@ -1913,6 +1928,127 @@ function updateMultiPresetList() {
   if (countSpan) {
     countSpan.textContent = `(${selectedPresets.length} selected)`;
   }
+}
+
+// Open multi-preset selector from the main camera carousel button
+function openCameraMultiPresetSelector() {
+  // Disabled when No Magic Mode is on
+  if (noMagicMode) {
+    if (statusElement) statusElement.textContent = '⚡ NO MAGIC MODE — Multi Preset unavailable';
+    setTimeout(() => updatePresetDisplay(), 2000);
+    return;
+  }
+  // Disabled when burst, motion, or random mode is active
+  if (isBurstMode || isMotionDetectionMode || isRandomMode) {
+    if (statusElement) statusElement.textContent = 'Turn off other modes before using Multi Preset';
+    setTimeout(() => updatePresetDisplay(), 2000);
+    return;
+  }
+
+  // Re-use the gallery preset selector modal
+  const modal = document.getElementById('preset-selector');
+  const header = modal.querySelector('.preset-selector-header h3');
+  header.innerHTML = 'Select Presets (max 5) <span id="multi-preset-count" style="font-size: 12px; color: #aaa;">(0 selected)</span>';
+
+  // Switch to camera-multi mode (not gallery multi mode)
+  isMultiPresetMode = true;
+  isCameraMultiPresetActive = false; // will be set true on Apply
+  selectedPresets = [...cameraSelectedPresets]; // pre-populate with current selections
+
+  // Add multi-select controls
+  let multiControls = document.getElementById('multi-preset-controls');
+  if (!multiControls) {
+    multiControls = document.createElement('div');
+    multiControls.id = 'multi-preset-controls';
+    multiControls.style.cssText = 'padding: 0 8px; background: #1a1a1a; border-bottom: 1px solid #333; display: flex; gap: 8px; justify-content: space-between; align-items: stretch;';
+    multiControls.innerHTML = `
+      <button id="multi-preset-apply" class="batch-control-button" style="background: #4CAF50; color: white;">Apply Selected</button>
+      <button id="multi-preset-cancel" class="batch-control-button">Cancel</button>
+    `;
+    const presetFilter = document.getElementById('preset-filter');
+    const presetList = document.getElementById('preset-list');
+    presetFilter.parentNode.insertBefore(multiControls, presetFilter);
+    presetFilter.parentNode.insertBefore(presetFilter, presetList);
+  }
+  multiControls.style.display = 'flex';
+
+  populatePresetList();
+  updateMultiPresetList();
+  modal.style.display = 'flex';
+  isPresetSelectorOpen = true;
+  currentPresetIndex_Gallery = 0;
+  updatePresetSelection();
+
+  // Wire up buttons for camera context
+  document.getElementById('multi-preset-apply').onclick = applyCameraMultiPresets;
+  document.getElementById('multi-preset-cancel').onclick = cancelCameraMultiPresetSelector;
+}
+
+function cancelCameraMultiPresetSelector() {
+  isMultiPresetMode = false;
+  selectedPresets = [];
+  const multiControls = document.getElementById('multi-preset-controls');
+  if (multiControls) multiControls.style.display = 'none';
+  const header = document.querySelector('.preset-selector-header h3');
+  if (header) header.textContent = 'Select Preset';
+  hidePresetSelector();
+  // Return to camera, no changes
+}
+
+function applyCameraMultiPresets() {
+  if (selectedPresets.length === 0) {
+    alert('Please select at least one preset');
+    return;
+  }
+  if (selectedPresets.length > 20) {
+    alert('Maximum 20 presets allowed');
+    return;
+  }
+
+  cameraSelectedPresets = [...selectedPresets];
+  cameraMultiManualSelections = {};
+  isCameraMultiPresetActive = true;
+
+  isMultiPresetMode = false;
+  selectedPresets = [];
+  const multiControls = document.getElementById('multi-preset-controls');
+  if (multiControls) multiControls.style.display = 'none';
+  const header = document.querySelector('.preset-selector-header h3');
+  if (header) header.textContent = 'Select Preset';
+  hidePresetSelector();
+
+  // Highlight the carousel button
+  const btn = document.getElementById('camera-multi-preset-toggle');
+  if (btn) btn.classList.add('camera-multi-active');
+
+  // If manual options is enabled, gather selections for all selected presets now
+  if (manualOptionsMode && !noMagicMode) {
+    gatherCameraMultiManualSelections(0);
+  } else {
+    saveCameraMultiPresets();
+    updatePresetDisplay();
+  }
+}
+
+// Collect manual option selections one preset at a time before the photo is taken
+async function gatherCameraMultiManualSelections(index) {
+  if (index >= cameraSelectedPresets.length) {
+    // All gathered - save and update display
+    saveCameraMultiPresets();
+    updatePresetDisplay();
+    return;
+  }
+
+  const preset = cameraSelectedPresets[index];
+  const options = parsePresetOptions(preset);
+
+  if (options.length > 0) {
+    const selectedValue = await showManualOptionsModal(preset, options);
+    if (selectedValue !== null) {
+      cameraMultiManualSelections[preset.name] = selectedValue;
+    }
+  }
+  gatherCameraMultiManualSelections(index + 1);
 }
 
 function cancelMultiPresetMode() {
@@ -4326,6 +4462,30 @@ function toggleManualOptionsMode() {
   }
 }
 
+// Save camera multi-preset state to localStorage
+function saveCameraMultiPresets() {
+  try {
+    localStorage.setItem(CAMERA_MULTI_PRESET_KEY, JSON.stringify(cameraSelectedPresets.map(p => p.name)));
+    localStorage.setItem(CAMERA_MULTI_SELECTIONS_KEY, JSON.stringify(cameraMultiManualSelections));
+  } catch (err) {
+    console.error('Failed to save camera multi presets:', err);
+  }
+}
+
+// Clear camera multi-preset state
+function clearCameraMultiPresets() {
+  cameraSelectedPresets = [];
+  cameraMultiManualSelections = {};
+  isCameraMultiPresetActive = false;
+  try {
+    localStorage.removeItem(CAMERA_MULTI_PRESET_KEY);
+    localStorage.removeItem(CAMERA_MULTI_SELECTIONS_KEY);
+  } catch (err) {}
+  const btn = document.getElementById('camera-multi-preset-toggle');
+  if (btn) btn.classList.remove('camera-multi-active');
+  updatePresetDisplay();
+}
+
 // Load Manual Options Mode from storage
 function loadManualOptionsMode() {
   try {
@@ -4660,6 +4820,7 @@ const TOUR_STEPS = [
   { section: 'Special Modes', title: '⏱️ Timer Mode', body: 'Set a countdown of 3, 5, or 10 seconds before each shot. Enable repeat mode so it automatically keeps taking photos at a set interval.' },
   { section: 'Special Modes', title: '📸⚡ Burst Mode', body: 'Captures 3 to 10 photos rapidly in one press. Choose slow, medium, or fast burst speed in Settings. Great for action shots or getting multiple variations.' },
   { section: 'Special Modes', title: '👁️ Motion Detection', body: 'Automatically captures when movement is detected in frame. Set sensitivity, start delay, and cooldown interval. The eye icon pulses when motion is triggered. Great for security.' },
+  { section: 'Special Modes', title: '🎞️ Multi Preset', body: 'Select up to 20 presets to apply to a single photo. Tap the film strip button in the carousel, choose presets, and tap Apply Selected. When you take a photo, each preset is sent in order with a 3 second gap between them.' },
   { section: 'Gallery', title: '🖼️ Viewing Photos', body: 'Tap any image in the gallery to view it full-screen. Pinch to zoom in and out.' },
   { section: 'Gallery', title: '🎨 Applying Presets in Gallery', body: 'While viewing a photo, tap Load Preset or Multi Preset to transform a saved image. Click twice on a preset to apply it. You can stack multiple transformations.' },
   { section: 'Gallery', title: '☑️ Batch Operations', body: 'Tap the Select button to enter batch mode. Select multiple images, then apply one preset to all of them or delete them in bulk. Always tap DONE when finished.' },
@@ -5472,6 +5633,10 @@ function toggleTimerMode() {
       timerCountdown = null;
       document.getElementById('timer-countdown').style.display = 'none';
     }
+    // Clear camera multi-preset if timer is being turned off
+        if (isCameraMultiPresetActive) {
+          clearCameraMultiPresets();
+        }
     updatePresetDisplay();
     // Show current preset when timer mode is turned off
     if (CAMERA_PRESETS && CAMERA_PRESETS[currentPresetIndex]) {
@@ -6042,6 +6207,42 @@ function capturePhoto() {
   
   addToGallery(dataUrl);
   
+  // ── CAMERA MULTI-PRESET PATH ──────────────────────────────────────
+  if (isCameraMultiPresetActive && cameraSelectedPresets.length > 0) {
+    // Queue one item per selected preset, all sharing the same image
+    const presetsToApply = [...cameraSelectedPresets];
+    for (let i = 0; i < presetsToApply.length; i++) {
+      const preset = presetsToApply[i];
+      const manualSelection = cameraMultiManualSelections[preset.name] || null;
+      const queueItem = {
+        id: Date.now().toString() + '-mp' + i,
+        imageBase64: dataUrl,
+        preset: preset,
+        manualSelection: manualSelection,
+        timestamp: Date.now()
+      };
+      photoQueue.push(queueItem);
+    }
+    saveQueue();
+    updateQueueDisplay();
+
+    if (isOnline && !noMagicMode) {
+      statusElement.textContent = `Multi: sending ${presetsToApply.length} presets...`;
+      if (!isSyncing) {
+        syncQueuedPhotos();
+      }
+    } else {
+      statusElement.textContent = `${presetsToApply.length} presets queued`;
+    }
+
+    // If timer is NOT active, clear multi-preset state after firing
+    if (!isTimerMode) {
+      clearCameraMultiPresets();
+    }
+    return;
+  }
+  // ── END CAMERA MULTI-PRESET PATH ─────────────────────────────────
+
   const currentPreset = CAMERA_PRESETS[currentPresetIndex];
   
   const queueItem = {
@@ -6738,6 +6939,8 @@ function updatePresetDisplay() {
     if (statusElement) {
         if (noMagicMode) {
             statusElement.textContent = '⚡ NO MAGIC MODE';
+        } else if (isCameraMultiPresetActive && cameraSelectedPresets.length > 0) {
+            statusElement.textContent = `🎞️ MULTI PRESETS (${cameraSelectedPresets.length})`;
         } else if (manualOptionsMode) {
             statusElement.textContent = `🎯 MANUALLY SELECT | Style: ${currentPreset.name}`;
         } else {
@@ -6746,7 +6949,11 @@ function updatePresetDisplay() {
     }
     
     // Show style reveal on screen (middle text)
-    showStyleReveal(currentPreset.name);
+    if (isCameraMultiPresetActive && cameraSelectedPresets.length > 0) {
+      showStyleReveal('🎞️ MULTI PRESETS');
+    } else {
+      showStyleReveal(currentPreset.name);
+    }
 
     localStorage.setItem(LAST_USED_PRESET_KEY, currentPresetIndex.toString());
 
@@ -7708,11 +7915,15 @@ function populateStylesList(preserveScroll = false) {
       // First apply text search filter
       if (styleFilterText) {
         const searchText = styleFilterText.toLowerCase();
-        const categoryMatch = preset.category && preset.category.some(cat => cat.toLowerCase().includes(searchText));
-        const textMatch = preset.name.toLowerCase().includes(searchText) || 
-               preset.message.toLowerCase().includes(searchText) ||
-               categoryMatch;
-        if (!textMatch) return false;
+                   const categoryMatch = preset.category && preset.category.some(cat => cat.toLowerCase().includes(searchText));
+                   const optionsMatch = (
+        (preset.options && preset.options.some(o => o.text && o.text.toLowerCase().includes(searchText))) ||
+        (preset.optionGroups && preset.optionGroups.some(g => g.title && g.title.toLowerCase().includes(searchText) || g.options && g.options.some(o => o.text && o.text.toLowerCase().includes(searchText))))
+      );
+                   const textMatch = preset.name.toLowerCase().includes(searchText) || 
+                                   preset.message.toLowerCase().includes(searchText) ||
+                                   categoryMatch || optionsMatch;
+                   if (!textMatch) return false;
       }
       
       // Then apply category filter if active
@@ -7728,9 +7939,13 @@ function populateStylesList(preserveScroll = false) {
       if (styleFilterText) {
         const searchText = styleFilterText.toLowerCase();
         const categoryMatch = preset.category && preset.category.some(cat => cat.toLowerCase().includes(searchText));
+        const optionsMatch = (
+          (preset.options && preset.options.some(o => o.text && o.text.toLowerCase().includes(searchText))) ||
+          (preset.optionGroups && preset.optionGroups.some(g => g.title && g.title.toLowerCase().includes(searchText) || g.options && g.options.some(o => o.text && o.text.toLowerCase().includes(searchText))))
+        );
         const textMatch = preset.name.toLowerCase().includes(searchText) || 
-               preset.message.toLowerCase().includes(searchText) ||
-               categoryMatch;
+                         preset.message.toLowerCase().includes(searchText) ||
+                         categoryMatch || optionsMatch;
         if (!textMatch) return false;
       }
       
@@ -8427,6 +8642,11 @@ window.addEventListener('load', () => {
     motionToggleBtn.addEventListener('click', toggleMotionDetection);
   }
   
+  const cameraMultiPresetBtn = document.getElementById('camera-multi-preset-toggle');
+    if (cameraMultiPresetBtn) {
+      cameraMultiPresetBtn.addEventListener('click', openCameraMultiPresetSelector);
+    }
+
   const menuBtn = document.getElementById('menu-button');
   if (menuBtn) {
     menuBtn.addEventListener('click', showUnifiedMenu);
@@ -10765,6 +10985,8 @@ document.addEventListener('DOMContentLoaded', function() {
         button.addEventListener('click', toggleBurstMode);
       } else if (mode === 'timer') {
         button.addEventListener('click', toggleTimerMode);
+      } else if (mode === 'camera-multi') {
+        button.addEventListener('click', openCameraMultiPresetSelector);
       }
     });
   }

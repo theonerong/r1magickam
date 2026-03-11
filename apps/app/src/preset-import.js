@@ -168,7 +168,9 @@ export class PresetImporter {
       const name = preset.name.toLowerCase();
       const message = (preset.message || '').toLowerCase();
       const cats = Array.isArray(preset.category) ? preset.category.join(' ').toLowerCase() : '';
-      return name + ' ' + message + ' ' + cats;
+      const opts = Array.isArray(preset.options) ? preset.options.map(o => o.text || '').join(' ').toLowerCase() : '';
+      const groupOpts = Array.isArray(preset.optionGroups) ? preset.optionGroups.map(g => (g.title || '') + ' ' + (g.options ? g.options.map(o => o.text || '').join(' ') : '')).join(' ').toLowerCase() : '';
+      return name + ' ' + message + ' ' + cats + ' ' + opts + ' ' + groupOpts;
     });
   }
 
@@ -284,7 +286,9 @@ export class PresetImporter {
             this.checkboxStates.set(preset.name, checkbox.checked);
           };
 
-          const firstLine = (preset.message || '').split('\n')[0].trim();
+          const msg = preset.message || '';
+          const periodIndex = msg.indexOf('.');
+          const firstLine = periodIndex !== -1 ? msg.substring(0, periodIndex + 1).trim() : msg.substring(0, 160).trim();
 
           const nameSpan = document.createElement('span');
           nameSpan.className = 'menu-item-name';
