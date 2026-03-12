@@ -6280,10 +6280,10 @@
       "BLACK AND WHITE",
       "GEOMETRIC"
     ],
-    "message": "Take a picture and reconstruct the subject as parabolic string art on graph paper — the mathematical art form where numbered points are marked at equal intervals along two axes and bold straight lines are drawn connecting point 1 on one axis to point 1 on another axis, point 2 to point 2, point 3 to point 3, and so on. The accumulation of these individually visible bold straight lines creates the optical illusion of a curve or parabola through their collective envelope. Each individual line must be clearly visible to the naked eye as a distinct bold pencil stroke.\n\nGRAPH PAPER FOUNDATION: The background is a sheet of graph paper with a pale cream or off-white tone. The grid lines are fine and light gray — clearly visible but subordinate to the bold art lines drawn over them. Major grid intervals every fifth square are slightly darker. The paper has subtle grain and texture as if it is physical paper. X and Y axes are drawn as slightly bolder lines than the grid, with evenly spaced numbered tick marks along each axis — numbers 1, 2, 3, 4 and so on marked at each interval in small neat pencil handwriting.\n\nLINE CONSTRUCTION — THIS IS THE CORE OF THE IMAGE: Bold straight pencil lines are drawn connecting specific numbered coordinates. Each line runs from a point on one axis to a point on another axis — for example a line from X=1 to Y=20, then X=2 to Y=19, then X=3 to Y=18, and so on. The lines are thick enough to be clearly individually visible — approximately the weight of a sharp HB pencil pressed firmly. You can see each line as a separate stroke. Where lines cross each other they create visible intersection points. The overall collection of lines forms the shape of the subject through the parabolic envelope they collectively describe. Multiple separate line families originating from different axis corners or axis segments combine to construct the full subject — one family of lines might construct the left side of a face, another the right, another the top of the head.\n\nSCALE AND VISIBILITY: The lines must be BOLD and SPARSE enough to see individually — this is not a dense texture or a smudged tone. A viewer looking at the image should be able to trace any single line from its origin point on one axis all the way to its terminus point on the other axis. The beauty of the art form is that each line is simple and straight but together they create complex curves. Approximately 15 to 40 lines per curve family is the correct density — enough to define the curve clearly but sparse enough that each line remains individually distinguishable.\n\nSUBJECT RECONSTRUCTION: The silhouette and major curves of the subject are each rendered as a separate parabolic line family. A portrait subject would have separate line families for the jaw curve, the top of the skull, each cheek, the curve of the neck and shoulders. Each family fans out from two axis segments with lines connecting sequential points. The subject is recognizable from the overall shape described by these curve families, not from photographic detail.\n\nBACKGROUND: Areas outside the subject contain simpler and more widely spaced line families creating geometric corner fills — the classic right-angle parabolic curve filling the corners of the graph paper with its own fan of lines.",
+    "message": "Take a picture and reconstruct the subject using ONLY straight lines drawn between numbered coordinate points on a graph. Nothing else exists in this image except graph paper, axis labels, and straight lines connecting coordinates. This is parabolic coordinate line art — the same technique used in mathematical string art.\n\nWHAT THIS IMAGE CONTAINS — THE COMPLETE LIST:\n1. Graph paper background with visible grid\n2. Numbered tick marks on X and Y axes\n3. Bold straight pencil lines connecting point numbers on one axis to point numbers on another axis\nTHAT IS ALL. Nothing else.\n\nWHAT THIS IMAGE MUST NEVER CONTAIN:\n• NO shading of any kind\n• NO pencil fill or tonal fill of any area\n• NO hatching or cross-hatching\n• NO smudging or blending\n• NO drawing of facial features, outlines, or contours as strokes\n• NO photographic elements\n• NO color\n• NO solid filled areas of any color including black or gray\n• NO texture rendering\n• NO illustration or painting technique of any kind\n\nHOW THE IMAGE WORKS: The subject shape exists ONLY because of where the straight lines go. A curve appears because line 1 connects X1 to Y20, line 2 connects X2 to Y19, line 3 connects X3 to Y18 — and the collective edge of all those lines together creates the optical illusion of a curved shape. The subject has NO outline drawn around it. It has NO filled areas. It has NO shaded regions. It is made ENTIRELY AND EXCLUSIVELY of individually visible straight lines going from one numbered axis point to another numbered axis point.\n\nLINE APPEARANCE: Each line is a single bold straight stroke. A viewer can follow any one line from its numbered origin on one axis to its numbered terminus on another axis. Lines are dark pencil gray to black. Each line is individually visible and countable. There are approximately 20 to 50 lines per curve family — sparse enough that every line is distinct, dense enough that the curve shape is clear.\n\nGRAPH PAPER: Pale cream background. Light gray grid lines. Slightly bolder lines at every fifth grid interval. X and Y axes with sequential numbers 1, 2, 3 marked at each tick. The grid shows through everywhere because nothing is filled in over it.\n\nSUBJECT: The shape of the subject emerges entirely from the negative space defined by line families fanning across the graph. Different curve families handle different parts of the shape — one fan of lines traces one curve of the subject, another fan traces another curve. Where line families from different directions intersect, more complex shapes emerge. The subject is recognizable purely from the geometry of the line arrangement.",
   "options": [],
   "randomizeOptions": false,
-  "additionalInstructions": "The single most important rule: every individual line must be visible as a bold distinct pencil stroke going from one numbered axis point to another numbered axis point. This is NOT a painting. This is NOT a texture. This is NOT microscopic hatching. It is bold separate lines — like string art but drawn with pencil on graph paper. A viewer must be able to count the individual lines. The numbered tick marks on the axes must be visible. The graph paper grid must show through. The subject shape emerges only from the collective envelope of these sparse bold lines — not from shading, not from fill, not from any photographic element. If the lines are not individually countable the image is wrong."
+  "additionalInstructions": "FINAL RULE THAT OVERRIDES EVERYTHING: If any part of this image was created by shading, filling, smudging, hatching, drawing, painting, or any technique other than drawing a straight line from one numbered coordinate point to another numbered coordinate point — that part is wrong and must not exist. The only mark-making permitted in this entire image is a straight line from point A on one axis to point B on another axis. The subject shape is an optical illusion created by line placement alone. There is no other way to create any part of this image. Every square centimeter of this image that is not graph paper background is covered only by straight lines connecting axis coordinates. Count the lines — you should be able to see and count every single one."
   },
   {
     "name": "CROSS-SECTION",
@@ -19346,6 +19346,20 @@
     "additionalInstructions": ""
   },
   {
+    "name": "PIN AND THREAD ART",
+    "category": [
+      "ART",
+      "GEOMETRIC",
+      "CREATIVE",
+      "MINIMALIST",
+      "SCULPTURE"
+    ],
+    "message": "Take a picture and reconstruct the entire subject as pin and thread art — the technique pioneered by artist Petros Vrellis where a single continuous thread is wound between dozens of small nails hammered around the border and interior of a wooden board or gallery-wrapped canvas, and the cumulative overlapping of straight thread lines creates the illusion of smooth curves, depth, shading, and photographic detail.\n\nPHYSICAL CONSTRUCTION OF THE BOARD: The base must look like a real physical object — a rectangular gallery-wrapped canvas or a smooth-sanded wooden board with visible wood grain on the sides. The surface of the board is dark — either matte black painted wood or black gesso on canvas. Small sturdy silver or steel nail heads are visible around the perimeter of the board and scattered at key interior positions, each nail a small bright metallic dome protruding from the dark surface. The nails should look physically real — slightly reflective metal hemispheres with the faint circular impression of the hammer strike visible around their base. The board should be photographed at a very slight angle so the thickness of the wooden frame or canvas wrap is visible along one or two edges, confirming it is a three-dimensional physical object.\n\nTHREAD APPEARANCE: A single continuous thread is wound between the nails in a complex path that visits every nail multiple times. The thread is light colored — white, cream, or pale gold — against the dark board surface. Each segment of thread is a perfectly straight taut line running from nail to nail. The thread has the physical appearance of real polyester or cotton thread — a very slight cylindrical thickness, a subtle fiber texture, and a faint sheen where light catches the strand. Where the thread crosses over itself the overlapping strands stack visibly, with each layer slightly shadowing the layer beneath it. The more times the thread passes through a region the brighter and denser that region appears against the dark background.\n\nHOW THE IMAGE IS BUILT — NON-NEGOTIABLE: The subject is reconstructed ENTIRELY from straight thread segments running nail to nail. There is no drawing, no painting, no shading, no fill, no airbrushing, no digital rendering of the subject itself. The face or subject emerges purely because of where the thread is dense and where it is sparse. Regions that should appear bright in the subject — highlights on a cheekbone, the whites of eyes, a light sky — have many overlapping thread passes creating a dense bright area. Regions that should appear dark — shadows, hair, dark clothing — have few or no thread passes, leaving the dark board surface exposed. The subject has no outline. It has no drawn features. Every element of the image that is not the dark board or a nail head is a straight thread segment.\n\nDENSITY AND TONAL MAPPING: The brightness of any area is determined exclusively by thread density. Maximum brightness is achieved where 30 to 50 thread passes overlap in a small area, creating an almost solid white mass of thread. Midtones are achieved with 10 to 20 overlapping passes where individual thread strands are still distinguishable but the cumulative effect creates a medium gray tone. Dark areas are the bare black board with zero or one thread passes, showing the raw surface. This three-level system of dense thread, sparse thread, and bare board creates the full tonal range of the subject.\n\nNAIL PLACEMENT: Nails ring the entire perimeter of the board at evenly spaced intervals — approximately one nail every 5 to 8mm around the full border. Additional nails are placed at key interior positions corresponding to important structural points in the subject. Every nail is a destination and origin point for thread segments. The nail heads catch the light and create a decorative halo of small bright metallic dots around the border of the board.\n\nPORTRAIT RECONSTRUCTION: If the subject is a person, the face must be fully recognizable from the thread density map alone. The eyes, nose, lips, jaw line, and hairline must all emerge from the pattern of dense and sparse thread regions without any drawn lines defining them. The hair should be rendered as a region of moderate thread density with slightly directional thread paths suggesting the flow of hair. The background outside the subject should be nearly bare dark board with only a few sparse thread lines crossing it.\n\nFINISHED OBJECT PRESENTATION: The final image should look like a professional photograph of a finished physical pin and thread artwork hanging on a white gallery wall. The board casts a subtle shadow on the wall behind it. The lighting is soft and directional from slightly above, catching the metallic nail heads and the sheen of individual thread strands. The image should be indistinguishable from a photograph of a real artwork that took an artist dozens of hours to complete.",
+  "options": [],
+  "randomizeOptions": false,
+  "additionalInstructions": "The most critical rule: the subject is built from thread density alone — no drawing, no painting, no shading technique, no digital illustration of any kind. If any part of the subject was created by any method other than the overlapping of straight thread lines between nails, that part is wrong. The dark board surface is the shadow. The dense overlapping white thread is the light. Nothing else creates the image. Every line in the image is a straight taut thread segment running from one nail head to another nail head. The board must look physically real — wood grain on the edges, real nail heads, real thread fiber texture, real cast shadow on the wall. The final result must be indistinguishable from a photograph of a real physical pin and thread portrait artwork."
+  },
+  {
     "name": "PIP-BOY",
     "category": [
       "RETRO",
@@ -21418,6 +21432,181 @@
   "options": [],
   "randomizeOptions": false,
   "additionalInstructions": "The transformation must be total — no modern phones, no flat screens, no contemporary clothing, no current hairstyles, no modern vehicles. Every anachronism must be replaced. The characters of Saved by the Bell must be present and identifiable. The scene must be immediately recognizable as being from the show. Lean into the specific visual language of the series — the oversaturated colors, the flat sitcom lighting, the impossibly clean high school, the fashion that was aspirational in 1991. The more specific the details the better. Zack Morris must have his brick phone. Screech must look bewildered. Kelly must look wholesome. Slater must be on or near a chair facing backwards."
+  },
+  {
+    "name": "sAW TRAP",
+    "category": [
+      "HORROR",
+      "GAMING",
+      "CREATIVE",
+      "DARK",
+      "MOVIES"
+    ],
+    "message": "Take a picture and place the subject into a hyper-realistic scene from the SAW horror franchise — specifically inside one of the elaborate mechanical death contraptions designed by John Kramer, the Jigsaw Killer. The scene must look like a production still or a behind-the-scenes photograph taken on the actual SAW film set, matching the gritty, industrial, dimly lit visual language of the franchise.\n\nSET DESIGN AND ATMOSPHERE: The environment must match the SAW franchise's signature visual style — a filthy abandoned industrial space. Walls should be raw concrete, crumbling brick, or rusted corrugated metal with water stains, mold patches, and peeling paint. The floor should be wet concrete with pooled dirty water. Bare incandescent bulbs on wire hang from the ceiling, some flickering, some dead. The overall color grade should be desaturated with a heavy green-yellow tint — the signature SAW color palette. Shadows are deep and crushed to near black.\n\nMANDATORY ELEMENTS: A red digital countdown timer with large LED numerals must be visible somewhere on the device showing a time between 00:47 and 02:13. A Billy the Puppet on a tricycle must be visible somewhere in the background or on a wall-mounted monitor — white porcelain face, red spiral cheeks, black suit, partially in shadow. A microcassette recorder or reel-to-reel tape player must be visible near the subject. The words LIVE OR DIE — MAKE YOUR CHOICE must appear somewhere in the scene scratched into the wall, written in dried blood, or displayed on a flickering CRT monitor.\n\nSUBJECT INTEGRATION: The subject must be fully and convincingly integrated into the selected trap — their limbs, head, and body must interact physically and believably with the mechanical components. Clothing should be torn and dirty. Any exposed skin should show grime, sweat, and the early marks of the trap beginning to engage. The subject's facial expression should convey terror, desperation, or grim determination. The subject must remain recognizable as themselves.\n\nLIGHTING: One strong practical light source from above casting hard shadows downward. The rim of the trap's mechanical components should catch the light with metallic specular highlights on steel edges and chain links. The subject's face should be partially in shadow with one eye lit and one in darkness.",
+  "randomizeOptions": true,
+  "options": [
+    {
+      "id": "001",
+      "text": "THE REVERSE BEAR TRAP — SAW 1 — A massive metal apparatus is bolted into the subject's upper and lower jaws with a spring-loaded hinge spanning the face. Two curved arms extend from the temples. A red countdown timer is mounted to the side of the device. When triggered the mechanism snaps open like a bear trap in reverse, tearing the mouth apart. The key to unlock it hangs visible just out of reach across the room."
+    },
+    {
+      "id": "002",
+      "text": "THE BATHROOM TRAP — SAW 1 — The subject is chained at the ankle by a heavy steel shackle bolted to a rusted pipe along the baseboard of a filthy tiled bathroom. A hacksaw lies on the wet floor nearby. A decomposing body lies in the center of the room holding a gun. The walls are covered in scrawled clues and the single bare bulb overhead flickers. The chain is too strong to break — the only option the hacksaw implies is clear."
+    },
+    {
+      "id": "003",
+      "text": "THE RAZOR WIRE MAZE — SAW 1 — The subject is positioned at the entrance of a narrow corridor filled wall to wall and floor to ceiling with a dense tangle of razor wire. The only exit is a heavy door on the far side with a timer above it counting down. Every inch of progress through the maze requires crawling through wire that slices through clothing and skin. Blood-stained drag marks on the floor indicate someone tried this before."
+    },
+    {
+      "id": "004",
+      "text": "THE KNIFE CHAIR — SAW 1 — The subject is strapped into a heavy metal chair with their arms and legs restrained. Eight large knives are arranged in a semicircle directly in front of the subject's face and chest, pointed inward. A pressure plate is positioned so that leaning forward is the only way to trigger the release mechanism — driving the subject's face into the blades. A note attached to the chair reads: PUSH FORWARD."
+    },
+    {
+      "id": "005",
+      "text": "THE FLAMMABLE JELLY TRAP — SAW 1 — The subject stands in a dark room coated from head to toe in a clear gel that glistens under a single overhead light. A candle on a timer stands in the center of the room. Numbers cover every wall from floor to ceiling. A combination safe in the corner holds the antidote. The subject has seconds to identify the correct code before the candle tips and ignites the flammable gel covering their body."
+    },
+    {
+      "id": "006",
+      "text": "THE NEEDLE PIT — SAW 2 — The subject is submerged from the waist down in a deep square pit filled to the brim with thousands of used hypodermic syringes. Needles cover every visible surface of the pit walls as well. A key on a chain hangs from a hook embedded in the ceiling of the pit just below the surface of the needles. The subject must plunge their arms and face into the mass of syringes to retrieve it."
+    },
+    {
+      "id": "007",
+      "text": "THE VENUS FLY TRAP HELMET — SAW 2 — A large spiked metal helmet is locked onto the subject's head. The helmet is designed like a Venus flytrap — two hinged halves lined with inward-pointing steel spikes that will snap shut and drive through the skull when the timer expires. A small numbered dial on the front of the helmet can be unlocked with the correct combination found somewhere in the surrounding filthy room."
+    },
+    {
+      "id": "008",
+      "text": "THE NERVE GAS HOUSE — SAW 2 — The subject stands in a decaying room wearing a timer collar around their neck. Green-tinted gas slowly seeps through vents in the baseboards, visibly coiling along the floor. The subject's eyes are red and watering. Antidote syringes are visible through a locked glass cabinet on the wall. Other chained victims in adjacent rooms are visible through barred windows, all competing for the same limited supply of antidote."
+    },
+    {
+      "id": "009",
+      "text": "THE ANGEL DEVICE — SAW 3 — The subject is strapped face-down to a large cruciform metal frame suspended from the ceiling. Two mechanical arms extend from a central spine brace bolted across the subject's back. The arms are hinged to curved hooks that have been inserted through the skin and tissue of the back on both sides of the spine. When the timer releases the mechanism the arms spread outward, peeling the skin of the back open into the shape of wings."
+    },
+    {
+      "id": "010",
+      "text": "THE RACK — SAW 3 — The subject stands upright with each limb — both arms and both legs — inserted into a separate rotating metal ring mechanism mounted on a central steel frame. Each ring is capable of rotating the inserted limb 360 degrees in the wrong direction, twisting and breaking bones in sequence from the extremities inward. The hands go first, then the forearms, then the upper arms, then the legs. A timer on the frame counts down to the next rotation."
+    },
+    {
+      "id": "011",
+      "text": "THE FREEZING ROOM — SAW 3 — The subject is chained to a pipe in a sub-zero industrial freezer. They are dressed only in a thin hospital gown. Ice crystals have already begun forming on the eyebrows, eyelashes, and exposed skin. Their breath is a dense fog. Above them a sprinkler system periodically douses them in water that instantly begins to freeze on contact, encasing limbs in ice. The lock on the chain requires a key frozen inside a block of ice across the room."
+    },
+    {
+      "id": "012",
+      "text": "THE PIG VATS — SAW 3 — The subject is chained at the wrists to a drain grate at the bottom of a large cylindrical industrial vat. Above them a conveyor system carries decomposing pig carcasses toward an industrial grinder mounted at the top of the vat. The grinder liquifies the rotting pigs and pours the putrid slurry downward. The level of rancid liquid rises steadily around the subject's feet, ankles, knees."
+    },
+    {
+      "id": "013",
+      "text": "THE SHOTGUN CAROUSEL — SAW 6 — The subject is strapped to one of six seats on a large slowly rotating metal carousel inside a chain-link animal enclosure. A pump-action shotgun is mounted on a pivot on the enclosure bars, tracking the carousel's rotation so the barrel always points at whoever is in the forward position. A control panel outside the enclosure can pause the carousel to save two of the six riders. The other four cannot be saved."
+    },
+    {
+      "id": "014",
+      "text": "THE CEILING JARS TRAP — SAW 2 — The subject stands in a room where the ceiling is lined with dozens of glass mason jars, each containing a key, an antidote, or a deadly substance. A mechanism causes the jars to drop one at a time at irregular intervals, shattering on the concrete floor. The correct jar holds the key to the subject's ankle shackle. The wrong ones release acid, gas, or broken glass across the floor."
+    },
+    {
+      "id": "015",
+      "text": "THE MAUSOLEUM TRAP — SAW 4 — The subject is chained inside a large stone burial vault in an abandoned mausoleum. The walls of the vault are lined with exposed metal spikes pointing inward. A hydraulic mechanism slowly compresses the walls inward on a timer. The subject must locate a hidden key embedded somewhere in the stone of the vault floor using only their fingers before the walls reach them."
+    },
+    {
+      "id": "016",
+      "text": "THE SCALPING SEAT — SAW 4 — The subject is seated in a heavy iron chair with their hair fed into a motorized metal drum mounted directly above the headrest. The drum slowly rotates, winding the hair tighter and tighter around the mechanism. A timer counts down. As the drum turns it will tear the scalp completely from the skull. Bolt cutters visible across the room could cut the hair free — if the subject can reach them."
+    },
+    {
+      "id": "017",
+      "text": "THE ICE BLOCK TRAP — SAW 4 — The subject stands on a metal platform in the center of a room with a rope looped around their neck connected to a pulley above. Two large blocks of ice hang suspended on either side of them on chains, slowly melting under heat lamps. As the ice melts the blocks descend and the pulley tightens the rope. The subject must find the release mechanism before the ice is gone and the rope lifts them off the platform."
+    },
+    {
+      "id": "018",
+      "text": "THE CLASSROOM TRAP — SAW 2 — The subject is chained to a chair bolted to the floor of an abandoned classroom, a crude metal rod passed through their jaw and Achilles tendons and locked to the chair frame. A bomb with a visible timer is bolted to the desk in front of them. The door at the front of the room has been welded shut. The chalkboard behind them reads: THE KEY IS INSIDE YOU."
+    },
+    {
+      "id": "019",
+      "text": "THE LASER COLLAR — JIGSAW 2017 — A heavy metal collar is locked around the subject's neck. Eight laser emitters are embedded in the collar at equidistant points around the circumference, each one aimed inward. When the timer reaches zero all eight lasers activate simultaneously, slicing the collar's contents into eight equal segments. The collar is controlled by a remote held by another person in the room who must make a confession to stop it."
+    },
+    {
+      "id": "020",
+      "text": "THE BUCKET HEAD TRAP — JIGSAW 2017 — A metal bucket with a locking mechanism is sealed over the subject's head. Two buzzsaws on extending mechanical arms are positioned at either side of the bucket. The arms are slowly extending inward on a timer. A slot in the front of the bucket requires a blood sacrifice — a cut to the palm pressed against the slot — to trigger the release. The subject cannot see or hear anything inside the bucket."
+    },
+    {
+      "id": "021",
+      "text": "THE BRAIN SURGERY TRAP — SAW X — The subject is bound to a modified dentist chair wearing a metal helmet fitted with heat coils along the interior. A camera above feeds to a monitor. Medical instruments are laid out on a tray beside the chair. A digital timer counts down three minutes. The only way to deactivate the helmet before the coils activate and cook the skull is to use the instruments to perform a specific surgical procedure on themselves guided only by the monitor."
+    },
+    {
+      "id": "022",
+      "text": "THE WATER ELECTROCUTION TRAP — SPIRAL — The subject is seated in a large industrial water tank, wrists clamped into metal finger sheaths connected by wires to a motor mechanism. A cage helmet with two metal bars spans the mouth. The tank slowly fills with water rising around the subject's waist and chest. Biting down on the bars activates a motor that tears the fingers from the clamps — the only way to escape before the rising water electrocutes the subject."
+    },
+    {
+      "id": "023",
+      "text": "THE HORSEPOWER TRAP — SAW 3D — The subject is strapped spread-eagle to a metal frame with each limb attached by a cable to a large automotive engine block bolted to the floor. The engine is running. The cables are wound around the drive shaft. As the engine revs the cables tighten, pulling each limb toward the spinning machinery. A kill switch is visible on the wall behind the subject — just out of reach of every cable length."
+    },
+    {
+      "id": "024",
+      "text": "THE PUBLIC EXECUTION TRAP — SAW 3D — The subject is strapped to a large metal assembly bolted to the underside of a car on a lift in a public auto garage. Three other participants are connected to the same mechanism at different stations around the car. The lift holds the car above the subject. A timer controls the hydraulics. Solving the puzzle at each station in sequence is the only way to keep the car from dropping. The other participants have already failed."
+    },
+    {
+      "id": "025",
+      "text": "THE FISH HOOK TRAP — SAW 3D — The subject is seated across a small table from another participant. Between them is a glass box containing a key. A fishing line runs from a hook embedded in the subject's lower jaw, over a pulley, and connects to a rod that will drive four metal spikes through the neck of the other participant if pulled. The subject must retrieve the key from inside the box using a method that does not involve pulling the line — while the box is locked."
+    },
+    {
+      "id": "026",
+      "text": "THE PIANO WIRE TRAP — SAW 1 — The subject is positioned in a room where dozens of razor-sharp piano wires have been strung taut at varying heights and angles across every inch of the space, invisible in the low light until they catch a glint. A light source on the far wall reveals the only safe path through the wires. Moving too quickly or veering from the exact correct path means the wires slice through whatever they contact. The exit door is on the far side."
+    },
+    {
+      "id": "027",
+      "text": "THE LAWNMOWER TRAP — SAW 3D — The subject is suspended face down horizontally above three parallel industrial lawnmower blades mounted on a rising platform. Their wrists are tied behind their back. A second participant is suspended above them face up. A timer controls the platform, which rises steadily toward the suspended subjects. The subject must find a way to swing their body to reach a release cable visible on the wall before the blades reach them."
+    },
+    {
+      "id": "028",
+      "text": "THE NECK DRILL CHAIR — SAW 3 — The subject is seated in a heavy iron chair with a steel neck brace locking their head completely immobile. Two industrial power drills are mounted on articulating arms positioned at either side of the neck, their bits pointed directly at the carotid artery. The drill arms are on a slow-advancing timer mechanism. A keypad on the arm of the chair requires a four-digit code to stop the advance. The code is written on the back of the key that is nailed to the ceiling above."
+    },
+    {
+      "id": "029",
+      "text": "THE BONE SAW TABLE — SAW 5 — Five participants including the subject are seated around a large circular table with their hands strapped to the surface. Five spinning circular saw blades are mounted on a rotating arm above the table. The arm rotates slowly, passing a blade over each set of hands in sequence. A blood collection basin in the center of the table has a gauge showing the required ten pints needed to unlock the exit. The math does not favor everyone surviving."
+    },
+    {
+      "id": "030",
+      "text": "THE COFFIN TRAP — SAW 5 — The subject is sealed inside a narrow wooden coffin with a small air hole. The coffin is positioned beneath a large industrial press. Explosive charges in the walls of the room are on a timer. The only safe space when they detonate is inside the coffin — but the press activates at the same moment the charges blow. A tape recorder inside the coffin explains that two people must occupy the space for the weight to stop the press."
+    },
+    {
+      "id": "031",
+      "text": "THE BOILER ROOM TRAP — SAW 5 — The subject is chained to a pipe inside a brick boiler room. The boiler is active and the room temperature is rising visibly — heat shimmer distorts the air and the pipe the subject is chained to is beginning to glow red. A key is hanging inside the boiler's firebox, visible through the small iron grate door. The subject's chain is long enough to reach the boiler door. The interior of the firebox is approximately 600 degrees."
+    },
+    {
+      "id": "032",
+      "text": "THE TUMBLING ROOM — SAW 3 — The subject is locked inside a large cube-shaped room fitted with industrial spikes protruding from every wall, floor, and ceiling. A rotating mechanism in the room's frame slowly rotates the entire cube. As the room turns, new spike-covered surfaces become the floor. The subject must stay in the safe zone — a narrow unlined section of floor — as the room turns, moving with the rotation to avoid being impaled."
+    },
+    {
+      "id": "033",
+      "text": "THE SYRINGE TRAP — SAW 6 — The subject is strapped to a vertical metal frame with a grid of loaded hypodermic syringes mounted on motorized arms positioned inches from every major vein and artery in the body. A dial on the frame controls which syringes fire. Another participant in the room controls the dial and must choose which injections the subject receives — some are antidote, some are acid, some are lethal. The other participant cannot see the labels."
+    },
+    {
+      "id": "034",
+      "text": "THE BEAR TRAP PIT — SAW 3D — The subject stands on a platform suspended over a large pit filled with dozens of open bear traps, their jaws upturned. The platform is on a timer and will drop in sections from the outer edges inward. The subject must work their way toward the center of the platform to stay on the shrinking surface while locating a release bar embedded in the center post before the final section drops."
+    },
+    {
+      "id": "035",
+      "text": "THE MAGNUM EYEHOLE — SAW 2 — The subject kneels in a narrow room facing a heavy metal door with a small eyehole at face level. Through the eyehole the room beyond is visible. The only apparent action is to look through the hole. A loaded magnum revolver is mounted on the opposite side of the door aimed directly at the eyehole. A voice on the tape recorder beside the door explains that the trigger is on a timer — but so is the poison in the subject's bloodstream."
+    },
+    {
+      "id": "036",
+      "text": "THE CAGE TRAP — SAW 6 — Six participants are locked into individual metal cages on a rotating platform inside a chain-link enclosure that resembles an abandoned zoo exhibit. The platform rotates to present one cage at a time to a mounted shotgun on the enclosure wall. One participant outside the cage holds a control panel and must choose who is spared and who is not. The subject is in one of the cages, the platform turning slowly toward the gun."
+    },
+    {
+      "id": "037",
+      "text": "THE POUND OF FLESH TRAP — SAW 6 — Two participants face each other on opposite sides of a large industrial scale. The scale requires a combined ten pounds of flesh to unlock a door. Surgical instruments are provided. Each participant must carve flesh from their own body and place it on their side of the scale. The participant who contributes the lesser amount when time expires is held in place while a pneumatic spike drives through their skull from the headrest of their station."
+    },
+    {
+      "id": "038",
+      "text": "THE FLAILING ROOM — SAW 3D — The subject is secured to a central pole in a small room by a single long chain attached to their ankle. Four other participants are chained to the walls. A rotating blade arm extends from the central pole at ankle height, slowly spinning in an expanding arc. The subject must use the chain length to jump the blade as it passes. As time progresses the blade arm extends outward, eventually reaching the wall-chained participants who cannot move."
+    },
+    {
+      "id": "039",
+      "text": "THE REVERSE RACK — SAW X — The subject is suspended upside down from a ceiling frame by their ankles, arms spread and wrists inserted into rotating cuff mechanisms. The device works in reverse of gravity — the weight of the hanging body provides the tension that drives the rotation. As long as the subject remains tense and holds their body rigid the rotation slows. The moment they relax from exhaustion the weight of their own body completes the mechanism."
+    },
+    {
+      "id": "040",
+      "text": "THE OPERATING TABLE — SAW 3 — The subject is strapped to a surgical table under a powerful overhead light in a makeshift operating theater. A surgeon is chained to the table as well, forced to perform a procedure to remove a diseased section of the subject's brain using only the tools on a rusted tray beside the table. A heart rate monitor is connected to both — if either flatlines the table releases a blade mechanism underneath both of them. The surgeon's hands are shaking."
+    }
+  ],
+  "additionalInstructions": "The scene must be indistinguishable from an actual SAW film production still. The selected trap must look physically engineered and mechanically real — welded steel, bolted iron, rusted chains, industrial cable, hydraulic pistons, clock gears, and repurposed medical equipment. Every component must show visible rust, grease, and wear. The industrial environment, desaturated green-yellow color grade, Billy puppet, countdown timer, and LIVE OR DIE text are all mandatory. The subject must be physically and convincingly inside the selected trap with their actual body interacting with the mechanical components. The lighting must be motivated by practical light sources. This must look like the subject was actually on the SAW film set."
   },
   {
     "name": "SCANDINAVIAN FOLK ART",
