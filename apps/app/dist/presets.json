@@ -78,6 +78,20 @@
     "additionalInstructions": "FINAL RESULT:\nThe image should resemble a high-quality 3D collectible figurine."
   },
   {
+    "name": "3D PIN ART TOY",
+    "category": [
+      "ART",
+      "3D",
+      "CREATIVE",
+      "TOYS",
+      "SCULPTURE"
+    ],
+    "message": "Take a picture and transform the subject into a hyper-realistic 3D pin art impression toy — the classic rectangular metal pin board toy where thousands of thin steel pins can be pushed through a frame to record the shape of any object pressed against it. Render the result as if the subject or person in the photo physically pressed their face, hands, or body against the front face of the pin board and the pins on the reverse side were pushed outward to create an exact three-dimensional relief impression.\n\nPIN BOARD CONSTRUCTION: The pin board itself should be a rectangular aluminum or brushed steel frame, approximately the proportions of a large picture frame or a tablet. The frame should have visible metal edges with a matte silver finish and rounded corners. The pins should be cylindrical steel rods, each about 2mm in diameter, packed together in a perfectly uniform square grid with no gaps between them. The entire face of the board should be covered edge to edge in pins.\n\nIMPRESSION SIDE — FRONT FACE: The front face of the board — the side where the subject pressed in — should show the pins pushed back into the frame at varying depths. Where the subject's face, hands, or body made contact, the pins are pushed furthest back, revealing the raised areas. The deepest recesses correspond to the highest points of the subject — the nose tip, the knuckles, the forehead. The pins that were not touched remain at full extension at the front, creating a flat plane around the impression. The transition from pressed to untouched should be gradual and anatomically accurate.\n\nIMPRESSION SIDE — REVERSE FACE: Show the reverse side of the board simultaneously — either as a split view, a slight rotation of the board showing both faces, or as a transparent ghost overlay. On the reverse side the pins protrude outward from the frame in an identical mirror impression — where the subject pressed in on the front, the pins push out on the back, creating a positive relief sculpture of the subject's pressed surface. This reverse impression should appear as a silver metallic bas-relief portrait or hand impression.\n\nLIGHTING AND MATERIAL: Light the entire scene with a single strong directional light source from the upper left at roughly 45 degrees. This lighting is critical — it should cast individual pin-length shadows across the impression, making every pin visible as a separate cylindrical element and revealing the depth of the impression through shadow gradients. The metal pins should have a realistic brushed steel appearance with specular highlights on the tip of each pin catching the light. The deepest parts of the impression should be in shadow, the highest raised pins should be brightest.\n\nBACKGROUND AND SETTING: Place the pin board on a clean flat surface — a white desk or a light gray table — as if it was just picked up and set down after use. Add a subtle shadow beneath the frame. The background should be clean and simple — a white or light gray gradient — so all visual attention remains on the pin impression. Optionally add a second identical pin board leaning against a wall in the background showing a different impression, slightly out of focus.",
+  "options": [],
+  "randomizeOptions": false,
+  "additionalInstructions": "The physical realism of the pins is the entire point — each individual pin must be visible and rendered as a separate cylindrical metal rod. The impression must be anatomically accurate to the subject in the original photo — a face impression should show the nose protruding furthest, the eye sockets receding, the cheekbones at mid depth. Hands should show individual finger impressions with knuckle ridges visible. The directional lighting casting pin shadows is mandatory. The reverse-side impression showing the positive relief must be included in the composition. The overall image should be indistinguishable from a professional product photograph of a real pin art board with a real impression in it."
+  },
+  {
     "name": "3D PLAYFUL ART",
     "category": [
       "ART",
@@ -10702,6 +10716,20 @@
   "additionalInstructions": "Apply only the selected transformation options but apply each one with total commitment and maximum era accuracy. Get the logos right, the proportions right, the color palettes right. Every selected category must be transformed completely — no modern anachronisms survive within a selected category. The more specific and obscure the Gen-X reference the better. The final image must be impossible to date to anything other than 1975 to 1989. The overall image should feel like a photograph actually taken during that period — grain, color temperature, and all."
   },
   {
+    "name": "GEOMETRIC MONOCHROME",
+    "category": [
+      "ART",
+      "ABSTRACT",
+      "GEOMETRIC",
+      "MINIMALIST",
+      "BLACK AND WHITE"
+    ],
+    "message": "Take a picture and convert the entire image into a high contrast monochrome composition made entirely of geometric shapes. No photography, no gradients, no organic curves, no freehand lines — the final image must look like it was constructed entirely from flat vector polygons in pure black and pure white with no gray values anywhere.\n\nSHAPE LANGUAGE: Deconstruct every element of the original photo into its essential geometric components using only triangles, rectangles, squares, trapezoids, parallelograms, hexagons, and diamonds. Curved objects should be approximated with many small flat-faced polygon segments — a circle becomes a high-sided polygon, a curve becomes a series of short straight edges at angles. No smooth curves are permitted anywhere in the image. Every line must be perfectly straight and every angle must be deliberate.\n\nCONTRAST AND VALUE: Use only two values — absolute pure black and absolute pure white. No gray, no antialiasing, no soft edges. Where the original photo has a light area place white shapes. Where the original photo has a shadow or dark area place black shapes. The boundary between black and white should be perfectly sharp with zero feathering. The overall composition should read clearly as a recognizable subject when viewed from a distance, using the high contrast pattern of shapes to create the illusion of depth and form the way a mosaic creates an image from tiles.\n\nCOMPOSITION: Maintain the original composition and framing of the photo. The subject should be clearly identifiable in the geometric reconstruction. Key features — eyes, the horizon line, the silhouette of a building, the edge of a hand — should be preserved as recognizable geometric landmarks in the abstract reconstruction. The background should be broken into large simple geometric fields. The subject should be rendered with more numerous and smaller polygons to convey detail while the background uses large bold shapes.\n\nSTYLE REFERENCE: The final image should resemble a combination of Mondrian geometric abstraction, the faceted polygon art of early computer graphics, Bauhaus poster design, and low-polygon 3D game art from the early 1990s. It should feel like a deliberate artistic choice — a portrait or scene that a graphic designer chose to rebuild from scratch using only black and white triangles and rectangles.",
+  "options": [],
+  "randomizeOptions": false,
+  "additionalInstructions": "Absolute rules — no gray values of any kind, no smooth curves, no gradients, no photographic texture, no freehand or organic lines. Every single shape must have straight edges and sharp corners. The subject must remain recognizable. The contrast between black and white regions must create a clear readable image. Think of it as a Mondrian meets a low-poly game character portrait in pure black and white."
+  },
+  {
     "name": "GHIBLI CAM",
     "category": [
       "ANIMATION",
@@ -11375,6 +11403,19 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "HAUNTED PAINTING",
+    "category": [
+      "HORROR",
+      "ART",
+      "SUPERNATURAL",
+      "HUMOR"
+    ],
+    "message": "Take a picture and transform the subject into a haunted painting hanging in a spooky mansion — the kind where the eyes follow you and the expression changes when you're not looking.\n\nCOMPOSITION:\n• An ornate, gilded frame (slightly tarnished and dusty) hangs on a dark wood-paneled wall\n• The subject is painted in a classical portrait style (oil on canvas)\n• The painting shows subtle signs of being \"alive\":\n  • The eyes have an unnatural gleam, seeming to track the viewer\n  • A slight smirk that wasn't there a moment ago\n  • One hand has moved slightly from its original position\n  • A shadow in the painting doesn't match the lighting\n• The wall around the painting shows signs of disturbance: crooked nearby frames, scratch marks, cold condensation\n• Cobwebs connect the frame to the wall\n• A small brass plaque reads the subject's name with suspicious dates\n\nSTYLE:\n• Classical oil portrait technique (think 18th-century aristocratic portrait)\n• Craquelure (fine cracks in the paint surface) suggesting great age\n• Warm candlelight illumination from below\n• The mansion setting should be visible: dark hallway, flickering sconces, dusty carpet\n\nTONE:\n• Creepy but with a dark humor edge — the painting seems amused by the viewer's fear",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "IDENTITY PRESERVATION:\n• Subject must be clearly recognizable as the painting's subject\n• Dressed in period-appropriate aristocratic clothing\n\nFINAL RESULT:\nA spooky mansion scene featuring the subject as a haunted portrait whose eyes definitely follow you and whose expression definitely just changed."
   },
   {
     "name": "HEADLESS",
@@ -13212,6 +13253,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "KALEIDOSCOPE",
+    "category": [
+      "ART",
+      "ABSTRACT",
+      "PATTERNS",
+      "CREATIVE",
+      "PSYCHEDELIC"
+    ],
+    "message": "Take a picture and transform the entire image into a mesmerizing kaleidoscope. Use the subject and colors of the original photo as the source material for the pattern. Reflect and rotate the image content into perfectly symmetrical mandala-like segments radiating outward from a central point. The number of segments should be between 8 and 16, all perfectly mirrored and rotationally symmetric. The original subject should be recognizable in fragmented form within the repeating pattern — a face becomes repeating eye and lip segments, a landscape becomes repeating horizon and tree fragments, an object becomes repeating edge and color slices. The color palette should be drawn entirely from the original photo but intensified — saturate all colors to their maximum vibrancy, deepen shadows to pure black, and blow out highlights to pure white so the contrast between segments is sharp and dramatic. Add a subtle iridescent shimmer to the brightest areas as if light is refracting through glass or crystal. The overall shape of the kaleidoscope should be circular, contained within a dark vignette border that fades to deep black at the edges. The center of the pattern should have the highest detail and complexity, with the pattern becoming slightly more abstract and color-field-like toward the outer edges. The final image should look like it was captured by pointing a camera into the end of a crystal kaleidoscope tube filled with the original photo's colors and shapes.",
+  "options": [],
+  "randomizeOptions": false,
+  "additionalInstructions": "The symmetry must be mathematically perfect — no segment should differ from its mirror counterpart by even a single pixel of misalignment. The original photo content must be genuinely incorporated as the pattern source, not replaced with generic geometric shapes. The result should feel like the photo was dissolved into light and reassembled as a piece of stained glass or a crystal formation. Colors must be rich and jewel-toned. The black vignette border is mandatory."
   },
   {
     "name": "KAREN",
@@ -17584,6 +17639,141 @@
     "additionalInstructions": ""
   },
   {
+    "name": "NPC",
+    "category": [
+      "OPTIONS",
+      "HUMOR",
+      "GAMING",
+      "RPG",
+      "DIALOGUE"
+    ],
+    "message": "Take a picture and transform the subject into an NPC (Non-Player Character) in a video game, shown in a dialogue interaction screen where the player has approached them.\n\nCOMPOSITION (MANDATORY):\n• The subject appears as an NPC in the selected game style\n• A dialogue box at the bottom of the screen shows their speech\n• The NPC says something hilariously mundane, cryptic, or unhelpful\n• Player dialogue options are shown below (all equally useless)\n• The NPC has a quest marker or interaction icon above their head\n• Game UI elements visible: minimap, health bar, inventory icons\n• The environment matches the game style\n\nSTYLE:\n• Match the visual style of the selected game type\n• The dialogue box should use the appropriate game's font and style\n• Include the NPC's name and title above the dialogue\n• The quest they offer should be absurdly mundane\n\nHUMOR:\n• The NPC dialogue should be the kind of thing you'd skip through\n• Player response options should all lead to the same outcome\n• The quest should be something like \"Fetch me 47 slightly different rocks\"",
+  "options": [
+    {
+      "id": "001",
+      "text": "SKYRIM STYLE — Nordic village setting, the NPC says \"I used to be an adventurer like you, then I took an arrow in the knee ...\" but with a mundane twist"
+    },
+    {
+      "id": "002",
+      "text": "ZELDA STYLE — Colorful village, the NPC repeats the same hint endlessly, \"!\" icon above head"
+    },
+    {
+      "id": "003",
+      "text": "DARK SOULS STYLE — Grim, dark setting, the NPC gives cryptic advice that's actually about lunch"
+    },
+    {
+      "id": "004",
+      "text": "ANIMAL CROSSING STYLE — Cute pastel village, the NPC is passive-aggressively commenting on how long since you last played"
+    },
+    {
+      "id": "005",
+      "text": "FALLOUT STYLE — Post-apocalyptic wasteland, the NPC offers a quest with a [SPEECH 100] check for something trivial"
+    },
+    {
+      "id": "006",
+      "text": "POKEMON STYLE — Tall grass route, the NPC blocks your path until you listen to their entire life story"
+    },
+    {
+      "id": "007",
+      "text": "FINAL FANTASY VII STYLE — Midgar slums backdrop, JRPG dialogue window with ATB bars visible, the NPC has an overwrought emotional monologue about needing someone to find their chocobo"
+    },
+    {
+      "id": "008",
+      "text": "STARDEW VALLEY STYLE — Cozy pixel art farm town, the NPC gives a friendship heart rating and passive-aggressively mentions you gave them a terrible gift last Tuesday"
+    },
+    {
+      "id": "009",
+      "text": "WITCHER 3 STYLE — Gritty medieval village, morally grey dialogue choices, the NPC presents what appears to be a world-altering decision that is actually about borrowing a wheelbarrow"
+    },
+    {
+      "id": "010",
+      "text": "MASS EFFECT STYLE — Sci-fi space station, full Paragon and Renegade response options visible, the NPC is a bureaucrat who needs Shepard to fill out Form 27-B in triplicate"
+    },
+    {
+      "id": "011",
+      "text": "RESIDENT EVIL 4 STYLE — Dimly lit Spanish village, the NPC says \"What are ya buyin?\" and has an inexplicably incredible merchant inventory of mundane household items at absurd prices"
+    },
+    {
+      "id": "012",
+      "text": "MINECRAFT STYLE — Blocky pixelated village, the villager NPC has no dialogue at all — just \"Hmm\" — and their trade offer is one emerald for 47 sticks"
+    },
+    {
+      "id": "013",
+      "text": "CYBERPUNK 2077 STYLE — Neon-drenched Night City back alley, the NPC has chrome implants and a glitching dialogue box that freezes mid-sentence, their quest involves retrieving a flathead screwdriver from a rival corpo"
+    },
+    {
+      "id": "014",
+      "text": "DRAGON QUEST STYLE — Bright colorful JRPG town with Akira Toriyama character art style, the NPC speaks entirely in exclamation points and their quest requires you to find the \"Legendary Spatula of Doom\""
+    },
+    {
+      "id": "015",
+      "text": "BALDUR'S GATE 3 STYLE — Detailed Forgotten Realms tavern, full party visible behind the player, the NPC triggers a Persuasion dice roll for a DC 4 check to convince them their hat looks fine"
+    },
+    {
+      "id": "016",
+      "text": "RED DEAD REDEMPTION 2 STYLE — Dusty 1890s frontier town, cinematic letterbox bars, the NPC tips their hat and delivers a three-minute monologue about honor before asking you to mail a letter"
+    },
+    {
+      "id": "017",
+      "text": "HADES STYLE — Underworld throne room, beautiful hand-drawn art style, the NPC is a god of Olympus offering a boon that does absolutely nothing useful and commenting on your escape attempt with mild disappointment"
+    },
+    {
+      "id": "018",
+      "text": "OBLIVION STYLE — Imperial City marketplace, the NPC delivers their one line of voiced dialogue and then immediately repeats it word for word, their quest marker leads directly to a locked door for which the key costs 5000 gold"
+    },
+    {
+      "id": "019",
+      "text": "CHRONO TRIGGER STYLE — 16-bit SNES pixel art, colorful medieval era town, the NPC stands in a doorway preventing all passage and says only \"...\" while the quest log updates to read \"Talk to the man who will not move\""
+    },
+    {
+      "id": "020",
+      "text": "DISCO ELYSIUM STYLE — Grim painterly watercolor art, the NPC triggers two competing internal monologue skill checks — Inland Empire says the NPC is secretly a lighthouse and Electrochemistry wants a cigarette"
+    },
+    {
+      "id": "021",
+      "text": "ELDEN RING STYLE — Crumbling Lands Between ruins, the NPC sits against a wall in a forlorn posture, speaks in a whisper about the Erdtree, and their entire quest chain requires finding three items whose locations are described only as \"somewhere near the grace... perhaps\""
+    },
+    {
+      "id": "022",
+      "text": "FIRE EMBLEM STYLE — Colorful strategy RPG support conversation, portrait art with emotional expressions, the NPC confesses their support rank is only C and they would like to talk about beans for the next four conversations"
+    },
+    {
+      "id": "023",
+      "text": "RUNESCAPE STYLE — Classic MMO interface with the old-school pixel art style, the NPC greets you with \"Fancy a game of chance?\" and their quest requires 99 Woodcutting skill to chop one normal tree"
+    },
+    {
+      "id": "024",
+      "text": "WORLD OF WARCRAFT STYLE — Auction house or Stormwind city backdrop, the NPC has an exclamation mark over their head and their quest text is eight paragraphs of lore about a war that ended 3000 years ago before asking you to kill ten wolves"
+    },
+    {
+      "id": "025",
+      "text": "PERSONA 5 STYLE — Stylish Tokyo Shibuya backdrop with the Phantom Thieves art aesthetic, anime portrait with dramatic lighting, the NPC is a Social Link contact who needs help studying for exams and gives Charm +2 for listening to their problems"
+    },
+    {
+      "id": "026",
+      "text": "MORROWIND STYLE — Ash-covered Vvardenfell landscape, the NPC directions are \"Go to the north, then slightly north-northwest, cross the bridge that may or may not still be there, and look for a rock that resembles a sleeping guar\""
+    },
+    {
+      "id": "027",
+      "text": "STAR WARS KNIGHTS OF THE OLD REPUBLIC STYLE — Taris city-planet setting, the NPC offers a Dark Side or Light Side dialogue choice and both options result in being asked to carry cargo no questions asked"
+    },
+    {
+      "id": "028",
+      "text": "UNDERTALE STYLE — Simple geometric pixel art, the NPC breaks the fourth wall, checks your SOUL stats, mentions they can see your save file, and asks why you reloaded three times before talking to them"
+    },
+    {
+      "id": "029",
+      "text": "GRAND THEFT AUTO V STYLE — Los Santos street corner, the NPC has a cell phone in hand, calls you an unsolicited slur with regional flavor, and their mission marker leads to a parking garage where the objective is simply \"Wait\""
+    },
+    {
+      "id": "030",
+      "text": "BIOSHOCK STYLE — Flooded Art Deco Rapture corridor, the NPC crackles through a radio speaker rather than appearing in person, delivers a philosophical monologue about objectivism, and the quest is to find a vending machine that sells \"something worth dying for\""
+    }
+  ],
+  "randomizeOptions": true,
+  "additionalInstructions": "IDENTITY PRESERVATION:\n• The NPC must clearly resemble the subject\n\nFINAL RESULT:\nA video game dialogue screen featuring the subject as an NPC with hilariously mundane dialogue and an absurd quest to offer."
+  },
+  {
     "name": "NURSERY RHYME STORYBOOK",
     "category": [
       "STORYBOOK",
@@ -19205,6 +19395,19 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "PIZZA BOX ART",
+    "category": [
+      "HUMOR",
+      "FOOD",
+      "ART",
+      "ILLUSTRATION"
+    ],
+    "message": "Take a picture and transform the subject into the illustrated mascot on a local pizza box — the kind of charmingly terrible art found on independent pizzeria boxes everywhere.\n\nCOMPOSITION:\n• Full pizza box lid design with the subject as the cartoon mascot\n• The mascot version of the subject is a mustachioed Italian chef (regardless of actual appearance) tossing pizza dough\n• A fictional pizzeria name in a mix of fonts that don't match\n• \"BEST PIZZA IN TOWN!\" claim despite no evidence\n• A phone number with a local area code\n• Clip art-quality Italian flag, Leaning Tower of Pisa, and checkered tablecloth elements\n• \"FREE DELIVERY\" in a starburst graphic (minimum order: $847)\n• The pizza illustrated looks nothing like actual pizza — too perfect, too shiny\n• Include \"SINCE 1987\" (or similar) establishment date\n• A small map that's completely unhelpful\n\nSTYLE:\n• Charmingly amateur illustration style typical of local pizza boxes\n• Mix of hand-drawn and clip art elements\n• Colors are slightly off-register (cheap printing effect)\n• The overall design looks like it was made in 1994 and never updated\n• Grease stain on one corner for authenticity\n\nTONE:\n• Celebrate the specific aesthetic of local pizzeria box art\n• The subject should look heroically Italian regardless of their actual ethnicity\n• Every design choice should be confidently wrong",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "IDENTITY PRESERVATION:\n• The cartoon mascot must clearly resemble the subject (with added mustache)\n\nFINAL RESULT:\nA complete pizza box lid design featuring the subject as the enthusiastic chef mascot of a fictional local pizzeria with charmingly terrible graphic design."
   },
   {
     "name": "PIZZA THE HUTT",
@@ -23831,6 +24034,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "SYNTHWAVE VIBE",
+    "category": [
+      "ART",
+      "RETRO",
+      "CREATIVE",
+      "SCI-FI",
+      "NEON"
+    ],
+    "message": "Take a picture and transform the entire scene into a synthwave and retrowave aesthetic inspired by 1980s science fiction, outrun art, and the visual language of artists like Carpenter Brut, Perturbator, and the Hotline Miami visual style. The final image should look like an album cover or a full-page illustration from a 1986 science fiction magazine or video game box art.\n\nCOLOR PALETTE: Strip the original photo's natural colors and replace the entire palette with the canonical synthwave color set — deep midnight purple and navy as the dominant background tones, hot magenta and electric pink as the primary accent colors, cyan and electric blue for secondary lighting and rim light effects, acid yellow-green for small highlight pops, and deep orange and coral for any warm tones. All colors should glow as if backlit by neon tubes. No naturalistic or desaturated colors survive.\n\nSKY AND BACKGROUND: Replace any sky or background with the classic synthwave sky — a deep purple-to-black gradient at the top transitioning to a hot pink and orange horizon glow at the bottom. Place a massive sun or moon on the horizon in solid neon pink or magenta with horizontal scan lines running across it at perfectly even intervals like a CRT display artifact. Add a star field of small sharp white dots in the upper portion of the sky.\n\nGROUND AND PERSPECTIVE GRID: Replace any ground, floor, or flat surface with the iconic perspective grid — a flat plane of glowing cyan or purple grid lines on a black surface converging to a single vanishing point at the horizon. The grid squares should appear to stretch toward the viewer in perfect one-point perspective. The grid lines should glow with a subtle bloom effect as if they are lit from below.\n\nNEON LIGHTING: Apply strong neon rim lighting to the subject and all foreground elements. The light sources should be hot pink from one side and cyan from the other, creating a dramatic dual-tone neon split-light effect on every surface and face. Add lens flare streaks radiating from any bright light source. Add a subtle chromatic aberration effect — a slight red and blue channel separation at the edges of all high-contrast shapes.\n\nSUBJECT TREATMENT: Render the subject in a semi-realistic style that combines photographic detail in the face and hands with more graphic and illustrated treatment on clothing and background elements. Add a dark outline around the subject silhouette. If there is a human subject add glowing pink or cyan eyes. Replace any clothing with synthwave-appropriate garments — a black leather jacket with neon pink piping, mirrored aviator sunglasses, or a neon windbreaker.\n\nTYPOGRAPHY AND OVERLAY: Add a thin chrome or holographic grid overlay to the entire image at very low opacity. Add faint horizontal scan lines across the whole image as if viewed on a CRT monitor. In the upper or lower corner add a small retro digital readout in a green monospace font showing a fake date in the format like OCT 17 1987 or coordinates like 34.0N 118.2W.",
+  "options": [],
+  "randomizeOptions": false,
+  "additionalInstructions": "The neon glow must be intense and genuine — every light source should bloom and bleed into surrounding areas. The perspective grid is mandatory if any ground or floor is visible. The horizon sun with scan lines is mandatory if any sky or open background is visible. The dual pink and cyan rim lighting on the subject is mandatory. The overall image must feel like it belongs on the cover of a vinyl record or a VHS tape from 1986. No natural daylight colors, no contemporary design elements, no flat modern aesthetics."
   },
   {
     "name": "TABLOID",
