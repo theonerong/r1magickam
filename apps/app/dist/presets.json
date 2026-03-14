@@ -7288,14 +7288,14 @@
     "additionalInstructions": ""
   },
   {
-    "name": "DOG CHAIN GLASS ART",
+    "name": "DOG CHAIN ART",
     "category": [
       "ART",
       "ABSTRACT",
       "3D",
       "CREATIVE"
     ],
-    "message": "Take a picture and transform the entire image into a modernized dog chain art style rendered in full photorealistic 3D. Every element of the scene is reconstructed using interlocking chain links — varying in size, thickness, and orientation to sculpt form, depth, and shadow. The chains are rendered in hazy colored glass — translucent, refractive, and luminous — casting soft prismatic light and color bleed onto surrounding surfaces. The glass tones shift across the image using the original scene's color palette as a base, tinted and diffused through the glass material. The 3D rendering must show realistic light refraction through each link, subsurface scattering within the glass, realistic reflections on the chain surfaces, and dramatic depth of field that pulls focus to the central subject. The result should feel like a museum-quality sculptural glass chain installation photographed under professional studio lighting.",
+    "message": "Take a picture and transform the entire image into a modernized dog chain art style rendered in full photorealistic 3D. Every element of the scene is reconstructed using interlocking chain links — varying in size, thickness, and orientation to sculpt form, depth, and shadow. The chains are rendered in  colored glass-like surface with rich vibrant colors. The color tones shift across the image using the original scene's color palette as a base, tinted and diffused through the glass material. The result should feel like a museum-quality sculptural chain installation photographed under professional studio lighting.",
   "randomizeOptions": false,
   "options": [],
   "optionGroups": [],
