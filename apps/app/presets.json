@@ -7288,6 +7288,20 @@
     "additionalInstructions": ""
   },
   {
+    "name": "DOG CHAIN GLASS ART",
+    "category": [
+      "ART",
+      "ABSTRACT",
+      "3D",
+      "CREATIVE"
+    ],
+    "message": "Take a picture and transform the entire image into a modernized dog chain art style rendered in full photorealistic 3D. Every element of the scene is reconstructed using interlocking chain links — varying in size, thickness, and orientation to sculpt form, depth, and shadow. The chains are rendered in hazy colored glass — translucent, refractive, and luminous — casting soft prismatic light and color bleed onto surrounding surfaces. The glass tones shift across the image using the original scene's color palette as a base, tinted and diffused through the glass material. The 3D rendering must show realistic light refraction through each link, subsurface scattering within the glass, realistic reflections on the chain surfaces, and dramatic depth of field that pulls focus to the central subject. The result should feel like a museum-quality sculptural glass chain installation photographed under professional studio lighting.",
+  "randomizeOptions": false,
+  "options": [],
+  "optionGroups": [],
+  "additionalInstructions": ""
+  },
+  {
     "name": "DOLLAR BOB",
     "category": [
       "DOCUMENT",
@@ -8936,6 +8950,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "FINAL RESULT:\nThe final image must look like an authentic frame from a 1960s Twilight Zone episode. In single-subject images, the lone subject must appear as one of the grotesque 'normal' citizens. In multi-subject images, grotesque citizens must visibly judge and reject the lone human-looking subject. The logic branches must never overlap."
+  },
+  {
+    "name": "FABIO DREAMER",
+    "category": [
+      "ART",
+      "CREATIVE",
+      "PORTRAIT",
+      "PAINTERLY"
+    ],
+    "message": "Take a picture and convert the entire image into a richly expressive acrylic painting by a contemporary European master known for emotionally charged portraiture and figurative work. The style is characterized by deeply saturated jewel-toned colors with velvety shadow depths and luminous skin highlights, confident gestural brushwork that is loose and expressive in the background but intimate and precise at the focal point, thick impasto acrylic texture with visible palette knife strokes and paint ridges that catch the light across the canvas surface, warm emotional intimacy in the treatment of the subject with softly diffused edges dissolving the figure into the painterly background, and a sophisticated use of complementary color contrast — deep teals burning against warm oranges, rich purples vibrating against golden yellows — that gives the image a living energetic quality. The background is handled with broad expressive strokes in moody atmospheric color while the subject's face and hands receive tender careful detail. Transform the entire scene using this full large-format acrylic canvas treatment — rich saturated pigment throughout, heavy physical paint texture, bold mark-making, and deep emotional warmth. The final image must look like an original exhibition-quality acrylic painting stretched on a large canvas.",
+  "randomizeOptions": false,
+  "options": [],
+  "optionGroups": [],
+  "additionalInstructions": ""
   },
   {
     "name": "FAIR RIDE",
@@ -10851,18 +10879,46 @@
   "additionalInstructions": "Apply only the selected transformation options but apply each one with total commitment and maximum era accuracy. Get the logos right, the proportions right, the color palettes right. Every selected category must be transformed completely — no modern anachronisms survive within a selected category. The more specific and obscure the Gen-X reference the better. The final image must be impossible to date to anything other than 1975 to 1989. The overall image should feel like a photograph actually taken during that period — grain, color temperature, and all."
   },
   {
-    "name": "GEOMETRIC MONOCHROME",
+    "name": "GEOMETRIC MONOCHROME RICE EXPRESSION",
     "category": [
       "ART",
       "ABSTRACT",
       "GEOMETRIC",
-      "MINIMALIST",
-      "BLACK AND WHITE"
+      "MINIMALIST"
     ],
-    "message": "Take a picture and reconstruct the subject as a three-dimensional wireframe model filled with geometric polygon facets, rendered in pure black and white with no gray values, no gradients, no photographic texture, and no organic curves anywhere in the image.\n\nWIREFRAME STRUCTURE: The subject must be rendered as if it were scanned by a 3D modeling program and converted into a low-polygon mesh. Every surface of the subject — face, body, objects, background elements — must be broken into visible flat triangular and quadrilateral facets. The edges of every facet must be drawn as clean sharp black lines on white, or white lines on black, creating a visible wireframe grid across every surface. The wireframe lines must follow the contours of the subject — they should curve around a cheek, follow the ridge of a nose, trace the angle of a shoulder — so the underlying anatomy is communicated through the mesh topology.\n\nFACET FILL: Each polygon facet between the wireframe lines must be filled with either pure solid black or pure solid white — determined by the original light and shadow of that surface area. Facets that were in light in the original photo are white. Facets that were in shadow are black. No in-between values. The resulting pattern of black and white facets should create a readable three-dimensional impression of the subject through contrast alone, the same way a low-polygon game model reads as a face from a distance even though it is made of flat triangles.\n\nPOLYGON DENSITY: The subject itself — particularly any face or the main focal point — should have a higher polygon density with smaller facets to preserve recognizable detail. The background and negative space should have much larger, simpler polygon facets — big bold triangles and rectangles covering large areas. This creates a natural depth hierarchy where the eye is drawn to the detailed wireframe subject against the simpler geometric background.\n\nBACKGROUND TREATMENT: The background must also be fully reconstructed in geometric facets — not left as a plain white or black field. The entire image from edge to edge must be covered in wireframe polygon geometry. Background facets should be large and simple. Background wireframe lines should be thinner or less prominent than the subject wireframe lines so the subject reads as foreground.\n\nSTYLE REFERENCE: The final image must look like a screenshot from a 3D modeling application showing a low-polygon mesh render, or a technical illustration of a wireframe sculpture, or a poster from a 1990s computer graphics conference showing a polygon face model. It must not look like Mondrian, it must not look like collage, it must not look like abstract painting. It must look like geometry describing three-dimensional form through flat facets and visible edge lines.",
-  "options": [],
-  "randomizeOptions": false,
-  "additionalInstructions": "Absolute rules — no gray values anywhere, no gradients, no smooth curves, no photographic texture, no Mondrian-style color block art. Every surface must show visible wireframe edge lines. Every facet between lines must be filled with only pure black or pure white. The wireframe topology must follow and describe the three-dimensional form of the subject — the lines should wrap around volumes, not just tile randomly. The subject must be recognizable as a low-polygon 3D model of itself. Think early PlayStation 1 era character models, or a ZBrush low-poly sculpt, or a technical wireframe render from a 3D animation studio — rendered in pure black and white only."
+    "message": "Take a picture and transform the art style to high contrast monochrome high dynamic range geometric rice expression.",
+    "options": [
+        {
+          "id": "001",
+          "text": "the dominant colors are black and white"
+        },
+        {
+          "id": "002",
+          "text": "the dominant color is chartreuse"
+        },
+        {
+          "id": "003",
+          "text": "the dominant color is caput mortuum"
+        },
+        {
+          "id": "004",
+          "text": "the dominant color is lusty-gallant"
+        },
+        {
+          "id": "005",
+          "text": "the dominant color is milk and water"
+        },
+        {
+          "id": "006",
+          "text": "the dominant color is eau-de-nil"
+        },
+        {
+          "id": "007",
+          "text": "the dominant color is puce"
+        }
+      ],
+  "randomizeOptions": true,
+  "additionalInstructions": ""
   },
   {
     "name": "GHIBLI CAM",
