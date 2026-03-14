@@ -3202,7 +3202,32 @@ function hidePresetBuilderSubmenu() {
     returnToGalleryFromViewerEdit = false;
     document.getElementById('settings-submenu').style.display = 'none';
     isSettingsSubmenuOpen = false;
+    // Remember which preset was loaded before we open the viewer (openImageViewer blanks the field)
+    const presetToRestore = window.viewerLoadedPreset;
     openImageViewer(currentViewerImageIndex);
+    // If a preset was loaded when the user tapped the text field, restore it
+    if (presetToRestore) {
+      const updatedPreset = CAMERA_PRESETS.find(p => p.name === presetToRestore.name);
+      const presetToShow = updatedPreset || presetToRestore;
+      window.viewerLoadedPreset = presetToShow;
+      let fullText = presetToShow.message;
+      if (presetToShow.randomizeOptions) {
+        if (presetToShow.optionGroups && presetToShow.optionGroups.length > 0) {
+          presetToShow.optionGroups.forEach(group => {
+            fullText += '\n\n' + group.title + ':\n';
+            group.options.forEach((opt, i) => { fullText += '  ' + i + ': ' + opt.text + '\n'; });
+          });
+        } else if (presetToShow.options && presetToShow.options.length > 0) {
+          fullText += '\n\nOPTIONS:\n';
+          presetToShow.options.forEach((opt, i) => { fullText += '  ' + i + ': ' + opt.text + '\n'; });
+        }
+      }
+      if (presetToShow.additionalInstructions && presetToShow.additionalInstructions.trim()) {
+        fullText += '\n\n' + presetToShow.additionalInstructions;
+      }
+      const promptInput = document.getElementById('viewer-prompt');
+      if (promptInput) promptInput.value = fullText;
+    }
     return;
   }
   
@@ -4865,7 +4890,7 @@ const TOUR_STEPS = [
   { section: 'Settings', title: '👁️ Visible Presets', body: 'Choose which imported presets appear in your menus. Select All, deselect individually, or remove all. Category tags show at the bottom when a preset is highlighted.' },
   { section: 'Settings', title: '🔨 Preset Builder', body: 'Build your own custom AI presets. Choose a template, add chips for quality and style, enable random options with single or multi-selection groups, add critical rules, then save.' },
   { section: 'Settings', title: '🚫 No Magic Mode', body: 'Disables AI processing and works as a regular camera. Photos save only to the plugin gallery, not to the rabbit hole or magic gallery.' },
-  { section: 'Settings', title: '🎛️ Manually Select Options Mode', body: 'When enabled and you choose a preset with options, a popup asks you to pick which option to use. Only works with single shots in the main camera and single image per preset in gallery.' },
+  { section: 'Settings', title: '🎛️ Manually Select Options Mode', body: 'When enabled and you choose a preset with options, a popup asks you to pick which option to use rather than randomize the options.' },
   { section: 'Settings', title: '📥 Import Presets', body: 'Browse the external preset library. Check individual presets or use the checkmark All to select everything. New additions are unchecked so check regularly for updates.' },
   { section: 'Settings', title: '🔄 Check for Updates', body: 'Checks for new or modified presets in the library. Any updates are flagged so you can re-import changed presets.' },
   { section: 'Tips and Advanced', title: '🏷️ Category Searching', body: 'Every preset has categories. When a preset is highlighted in the Visible Presets menu, its categories appear at the bottom. Tap a category to filter all presets in that group.' },
@@ -7961,15 +7986,15 @@ function populateStylesList(preserveScroll = false) {
     const filtered = regular.filter(preset => {
       if (styleFilterText) {
         const searchText = styleFilterText.toLowerCase();
-          const categoryMatch = preset.category && preset.category.some(cat => cat.toLowerCase().includes(searchText));
-          const optionsMatch = (
-        (preset.options && preset.options.some(o => o.text && o.text.toLowerCase().includes(searchText))) ||
-        (preset.optionGroups && preset.optionGroups.some(g => g.title && g.title.toLowerCase().includes(searchText) || g.options && g.options.some(o => o.text && o.text.toLowerCase().includes(searchText))))
-      );
-          const textMatch = preset.name.toLowerCase().includes(searchText) || 
+        const categoryMatch = preset.category && preset.category.some(cat => cat.toLowerCase().includes(searchText));
+        const optionsMatch = (
+          (preset.options && preset.options.some(o => o.text && o.text.toLowerCase().includes(searchText))) ||
+          (preset.optionGroups && preset.optionGroups.some(g => g.title && g.title.toLowerCase().includes(searchText) || g.options && g.options.some(o => o.text && o.text.toLowerCase().includes(searchText))))
+        );
+        const textMatch = preset.name.toLowerCase().includes(searchText) || 
                          preset.message.toLowerCase().includes(searchText) ||
                          categoryMatch || optionsMatch;
-          if (!textMatch) return false;
+        if (!textMatch) return false;
       }
       
       // Then apply category filter if active
@@ -8188,7 +8213,32 @@ function hideStyleEditor() {
   // If we came from the gallery viewer, return there instead of menu
   if (returnToGalleryFromViewerEdit) {
     returnToGalleryFromViewerEdit = false;
+    // Remember which preset was loaded before we open the viewer (openImageViewer blanks the field)
+    const presetToRestore = window.viewerLoadedPreset;
     openImageViewer(currentViewerImageIndex);
+    // If a preset was loaded when the user tapped the text field, restore it
+    if (presetToRestore) {
+      const updatedPreset = CAMERA_PRESETS.find(p => p.name === presetToRestore.name);
+      const presetToShow = updatedPreset || presetToRestore;
+      window.viewerLoadedPreset = presetToShow;
+      let fullText = presetToShow.message;
+      if (presetToShow.randomizeOptions) {
+        if (presetToShow.optionGroups && presetToShow.optionGroups.length > 0) {
+          presetToShow.optionGroups.forEach(group => {
+            fullText += '\n\n' + group.title + ':\n';
+            group.options.forEach((opt, i) => { fullText += '  ' + i + ': ' + opt.text + '\n'; });
+          });
+        } else if (presetToShow.options && presetToShow.options.length > 0) {
+          fullText += '\n\nOPTIONS:\n';
+          presetToShow.options.forEach((opt, i) => { fullText += '  ' + i + ': ' + opt.text + '\n'; });
+        }
+      }
+      if (presetToShow.additionalInstructions && presetToShow.additionalInstructions.trim()) {
+        fullText += '\n\n' + presetToShow.additionalInstructions;
+      }
+      const promptInput = document.getElementById('viewer-prompt');
+      if (promptInput) promptInput.value = fullText;
+    }
     return;
   }
 }
