@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>Magic Kamera</title>
-  <script type="module" crossorigin src="./assets/main-Be2B-WnQ.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/main-BArzg4_n.css">
+  <script type="module" crossorigin src="./assets/main-BMAt6RvE.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/main-DaaVxu_k.css">
 </head>
 <body>
     <div id="app">
@@ -116,6 +116,7 @@
                 <div class="styles-menu-header">
                     <h2>Menu</h2>
                     <div class="menu-nav-buttons">
+                        <button id="menu-add-preset-button" class="menu-jump-button" title="Add Preset">+</button>
                         <button id="settings-menu-button" class="menu-jump-button" title="Settings">⚙️</button>
                         <button id="jump-to-top" class="menu-jump-button" title="Jump to top">↑</button>
                         <button id="jump-to-bottom" class="menu-jump-button" title="Jump to bottom">↓</button>
@@ -127,7 +128,10 @@
                 <!-- Styles Section -->
                 <div class="menu-section">
     <h3 class="menu-section-title">AI Styles (<span id="styles-count">0</span>)</h3>
-    <input type="text" id="style-filter" class="style-filter" placeholder="Filter styles...">
+    <div class="filter-row">
+        <input type="text" id="style-filter" class="style-filter" placeholder="Filter styles...">
+        <button class="filter-blur-btn" id="style-filter-blur-btn" title="Dismiss keyboard">×</button>
+    </div>
                     <div id="menu-styles-list" class="menu-list">
                         <!-- Styles will be dynamically added here -->
                     </div>
@@ -498,7 +502,10 @@
                     <button id="visible-presets-deselect-all" class="batch-control-button" style="flex: 1;">Deselect All</button>
                 </div>
             </div>
-            <input type="text" id="visible-presets-filter" class="style-filter" placeholder="Filter presets...">
+            <div class="filter-row">
+                <input type="text" id="visible-presets-filter" class="style-filter" placeholder="Filter presets...">
+                <button class="filter-blur-btn" id="visible-presets-filter-blur-btn" title="Dismiss keyboard">×</button>
+            </div>
             <div id="visible-presets-list" class="menu-list">
                 <!-- Presets will be dynamically added here -->
             </div>
@@ -832,8 +839,8 @@
                             <strong>Press Side Button:</strong> Take a photo<br>
                             <strong>Scroll Wheel Up/Down:</strong> Change AI presets<br>
                             <strong>Camera Button (📷):</strong> Switch between front (selfie)/back camera<br>
-                            <strong>Menu Button (☰):</strong> Access settings and presets<br>
-                            <strong>Gallery Button (🖼️):</strong> View/Modify/Delete saved photos and re-prompt<br>
+                            <strong>Menu Button (☰):</strong> Access settings and presets. The main menu has a settings button (⚙️) to access settings and a <strong>+</strong> button in the header to build new presets with the Preset Builder.<br>
+                            <strong>Gallery Button (🖼️):</strong> View/Modify/Delete saved photos and re-prompt.<br>
                             <strong>New Photo Button:</strong> Return to camera after capture. Can also be done with side button.
                         </p>
                     </div>
@@ -865,14 +872,29 @@
                     <div id="section-gallery-features" class="tutorial-section">
                         <h4 class="tutorial-heading">🖼️ Gallery Features</h4>
                         <p class="tutorial-text">
-                            <strong>View Photos:</strong> Tap any image to view full-screen<br>
-                            <strong>Import Photos:</strong> Click on import button(full instructions under Uploading Images below)<br>     
-                            <strong>Apply Presets:</strong> Transform saved photos with "Load Preset" or "Multi Preset". Click twice on preset to apply.<br>
-                            <strong>Batch Operations:</strong> Select multiple images to apply one preset or single/batch delete. Click on select button to do this. And make sure to click DONE button, when done (if not, the program returns to select screen and not to prior screen). When applying presets, click twice on preset to apply.<br>
-                            <strong>Sort & Filter:</strong> Organize by newest/oldest, filter by date range (if selecting a date, make sure to select the next day as well. Example: If you want all images from December 25, then choose From December 25 to December 26.)<br>
-                            <strong>Upload to gofile.io</strong> Upload saved gallery images to gofile.io and get the qr code to access your uploaded photo - link/image expires after 24 hours. Please note that this function is mainly for No Magic Mode because your captured photos are already uploaded to the rabbit hole.<br>
-                            <strong>Magic Transform:</strong> Type custom prompts or use presets on gallery images. If none used, click Magic button to randomize (.<br>
-                            <strong>Edit Images:</strong> Tap the Edit button (✏️) when viewing a photo to access professional editing tools (see Edit Image Features section below for full details).
+                            <strong>Import Photos:</strong> Click the Import button in the gallery list view (full instructions under Uploading Images below).<br><br>
+
+                            <strong>Batch Operations:</strong> Select multiple images to apply one preset or delete in bulk. Click the Select button. Make sure to click DONE when finished.<br><br>
+
+                            <strong>Sort &amp; Filter:</strong> Organize by newest/oldest, filter by date range. When picking a date range, always select the day after your end date. For example for December 25 images, choose December 25 to December 26.<br><br>
+
+                            <strong>View Photos:</strong> Tap any image to view it full-screen. The viewer is redesigned to give your photo maximum screen space.<br><br>
+
+                            <strong>Preset Header:</strong> At the very top of the image viewer, a header shows the name of the currently loaded preset. If no preset is loaded it reads NO PRESET LOADED. If a preset is loaded, tap the header to read and hear the preset name and the first sentence of its description. <br><br>
+
+                            <strong>Delete (🗑️) and Close (×):</strong> Delete button, located at the top-left, deletes the selected image, Close button, located at the top-right, closes the single image viewer. <br><br>
+
+                            <strong>MASTER and OPTIONS Buttons:</strong> Below the delete button on the left side within a carousel. The Master button accesses Master Prompt settings. Glows green when enabled.  The OPTIONS button toggles Manually Select Options mode on or off. Glows green when enabled. These buttons are visible by default. However, you can hide them by swiping left towards the left edge of the screen. Swipe right to reveal them.<br><br>
+
+                            <strong>Edit and Export Images:</strong> Swipe left from the right edge of the image viewer to reveal the side carousel. It contains two buttons — ✏️ Edit (opens the image editor) and 📤 Export (uploads to gofile.io). Swipe right to hide the carousel again.<br><br>
+
+                            <strong>Upload to gofile.io:</strong> Use the Export button in the carousel inside the image viewer. Link expires after 24 hours. Mainly useful in No Magic Mode.<br><br>
+
+                            <strong>Bottom Bar — Four Buttons:</strong><br>
+                            • <strong>PROMPT:</strong> Opens an editor based on whether a preset is loaded. If no preset is loaded, opens the Preset Builder so you can create a new one.<br>
+                            • <strong>LOAD:</strong> Opens the preset selector so you can choose a preset to apply to this image.<br>
+                            • <strong>MULTI:</strong> Opens the multi-preset selector to apply several presets in sequence to this image.<br>
+                            • <strong>✨ MAGIC:</strong> Sends the image for AI transformation using the loaded preset. If no preset is loaded and nothing has been entered, it picks a random preset automatically.                           
                         </p>
                     </div>
 
@@ -910,7 +932,7 @@
                     <div id="section-edit-image" class="tutorial-section">
                         <h4 class="tutorial-heading">✏️ Edit Image Features</h4>
                         <p class="tutorial-text">
-                            <strong>How to Access:</strong> While viewing any photo in full-screen, tap the Edit button (✏️) located in the top-right corner of the screen.<br><br>
+                            <strong>How to Access:</strong> While viewing any photo in full-screen, swipe left from the right edge of the screen to reveal the side carousel, then tap the ✏️ Edit button.<br><br>
                             
                             <strong>Available Tools:</strong><br>
                             The image editor provides several professional editing tools located on the right side of the screen:<br><br>
@@ -955,7 +977,7 @@
                             <strong>Master Prompt:</strong> Append text to every AI transformation to customize. This can be accessed from the gallery by pressing the MASTER button in the gallery<br>
                             <strong>Motion Detection:</strong> Sensitivity, start delay, continuous capture<br>
                             <strong>Visible Presets:</strong> Select the imported presets you want to see in preset menus. Default all. Can select all, remove individually or remove all (the Ron setting). Each preset has categories indicated at the bottom of the visible preset menu.<br>
-                            <strong>Preset Builder:</strong> Made to follow a sequence. Click return to go to next selection. Select prompt templates and chips to help you create new and exciting presets you want to see in preset menus. Categories must be separated by commas. You can also create multiple option presets with single or multi-selection! This is a very useful tool that includes prompting tips.<br>
+                            <strong>Preset Builder:</strong> Made to follow a sequence. Click return to go to next selection. Select prompt templates and chips to help you create new and exciting presets. Categories must be separated by commas. You can also create multiple option presets with single or multi-selection! This is a very useful tool that includes prompting tips. You can access the Preset Builder from Settings, or directly from the main menu by tapping the <strong>+</strong> button in the menu header.<br>
                             <strong>No Magic Mode:</strong> Use as regular camera without AI processing. Photos will only save in plugin gallery. Photos will not save to rabbit hole or magic gallery. This setting does not affect prompting in gallery.<br>
                             <strong>Manually Select Options Mode:</strong> Enable/Disable. When enabled, if you choose a preset with options, a modal will appear asking you to pick from one of the options in the preset. Only this option is fed as the final prompt for generating the magical image. This setting does not work with No Magic Mode, Motion Sensor, Burst or Timer. It will work with Randomizer. The manually select options mode can be toggled from the gallery by pressing the OPTIONS button in the gallery<br>
                             <strong>Import Resolution:</strong> Select import resolution for external image imported through gallery.<br>
@@ -972,10 +994,10 @@
                         <h4 class="tutorial-heading">💡 Tips & Tricks</h4>
                         <p class="tutorial-text">
                             • <strong>Add to Favorites:</strong> In the menu, tap the star (☆) next to presets you love<br>
-                            • <strong>Filter Presets:</strong> Use the search box to quickly find styles<br>
+                            • <strong>Filter Presets:</strong> Use the search box to quickly find styles. Because of the size of the r1 screen, if you click on the search bar, a keyboard appears. Once you finish typing your search, click on the x next to the filter text box to remove the keyboard. If you double click on the x, it resets the filter text box.<br>
                             • <strong>Pinch to Zoom:</strong> Zoom in/out on the camera feed. Gallery also supports pinch to zoom<br>
-                            • <strong>Aspect Ratio change:</strong> Get the best results with either 1:1 or 16:9<br>
-                            • <strong>Custom Prompts:</strong> In gallery, type your own AI instructions<br>
+                            • <strong>Aspect Ratio change:</strong> Get the best results with either 1:1 or 16:9. The default is None, but we strongly recommend setting it to either 1:1 or 16:9 to avoid image cropping.<br>
+                            • <strong>PROMPT Button:</strong> In the gallery image viewer, tap PROMPT to create or edit the preset associated with your image. No preset loaded opens the builder. A loaded preset opens the editor automatically.<br>
                             • <strong>Multiple Presets:</strong> Apply several styles to one photo sequentially<br>
                             • <strong>Offline Queue:</strong> Photos queue automatically when offline and sync later
                         </p>
@@ -1140,24 +1162,37 @@ All of the presets are optimized to avoid "camera ran dry" or "content filter" i
         <!-- Image Viewer Modal -->
         <div id="image-viewer" class="image-viewer" style="display: none;">
     <div class="image-viewer-content">
-        <button id="upload-viewer-image" class="viewer-upload-button">📤</button>
+        <!-- Top corners: Delete (left) and Close (right) -->
         <button id="delete-viewer-image" class="viewer-delete-button">🗑️</button>
-        <button id="edit-viewer-image" class="viewer-edit-button">✏️</button>
-        <button id="mp-viewer-button" class="viewer-mp-button">MASTER</button>
-                   <button id="options-viewer-button" class="viewer-options-button">OPTIONS</button>
         <button id="close-viewer" class="viewer-close-button">×</button>
-                <div class="image-viewer-container">
-                    <img id="viewer-image" class="viewer-image" alt="Viewing image">
-                </div>
-                <div class="viewer-controls">
-            <div class="viewer-prompt-section">
-                 <textarea id="viewer-prompt" class="viewer-prompt-input" placeholder="Enter prompt or load preset. If you do not, tapping the Magic button randomizes the preset..."></textarea>
-                <div>
-                    <button id="load-preset-button" class="load-preset-button">Load Preset</button>
-                    <button id="multi-preset-button" class="load-preset-button" style="background: #9C27B0;">Multi Preset</button>
-                    <button id="magic-button" class="magic-button">✨ Magic</button>
-                </div>
+        <!-- Preset name header between delete and close — tappable -->
+        <div id="viewer-preset-header" class="viewer-preset-header">NO PRESET LOADED</div>
+        <!-- Left carousel: MASTER and OPTIONS — default visible, swipe left to hide -->
+        <div id="viewer-left-carousel" class="viewer-left-carousel">
+            <div class="viewer-left-carousel-track">
+                <button id="mp-viewer-button" class="viewer-left-carousel-btn">MASTER</button>
+                <button id="options-viewer-button" class="viewer-left-carousel-btn">OPTIONS</button>
             </div>
+        </div>
+        <!-- Right-side carousel: Edit and Export -->
+        <div id="viewer-carousel" class="viewer-carousel">
+            <div class="viewer-carousel-track">
+                <button id="edit-viewer-image" class="viewer-carousel-button">✏️<br><span class="viewer-carousel-label">Edit</span></button>
+                <button id="upload-viewer-image" class="viewer-carousel-button">📤<br><span class="viewer-carousel-label">Export</span></button>
+            </div>
+        </div>
+        <!-- Image fills remaining space -->
+        <div class="image-viewer-container">
+            <img id="viewer-image" class="viewer-image" alt="Viewing image">
+        </div>
+        <!-- Hidden textarea kept for compatibility with existing JS logic -->
+        <textarea id="viewer-prompt" class="viewer-prompt-hidden" readonly></textarea>
+        <!-- Bottom row: PROMPT | LOAD | MULTI | ✨ MAGIC -->
+        <div class="viewer-bottom-bar">
+            <button id="viewer-editor-button" class="viewer-bottom-btn">PROMPT</button>
+            <button id="load-preset-button" class="viewer-bottom-btn">LOAD</button>
+            <button id="multi-preset-button" class="viewer-bottom-btn">MULTI</button>
+            <button id="magic-button" class="viewer-bottom-btn">✨ MAGIC</button>
         </div>
             </div>
         </div>
@@ -1222,7 +1257,10 @@ All of the presets are optimized to avoid "camera ran dry" or "content filter" i
         <button id="close-preset-selector" class="close-button">×</button>
     </div>
 </div>
-                <input type="text" id="preset-filter" class="style-filter" placeholder="Filter presets...">
+                <div class="filter-row">
+                    <input type="text" id="preset-filter" class="style-filter" placeholder="Filter presets...">
+                    <button class="filter-blur-btn" id="preset-filter-blur-btn" title="Dismiss keyboard">×</button>
+                </div>
                 <div id="preset-list" class="preset-list">
                     <!-- Presets will be dynamically added here -->
                 </div>
