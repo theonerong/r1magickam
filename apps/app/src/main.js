@@ -242,6 +242,8 @@ let savedViewerImageIndex = -1;
 
 // Track if we opened an editor from the gallery viewer prompt tap
 let returnToGalleryFromViewerEdit = false;
+let returnToMainMenuFromBuilder = false;
+let isPresetInfoModalOpen = false;
 
 // Style reveal elements
 let styleRevealElement, styleRevealText;
@@ -947,6 +949,8 @@ function openImageViewer(index) {
   viewerZoom = 1;
   
   promptInput.value = '';
+  const presetHeader = document.getElementById('viewer-preset-header');
+  if (presetHeader) presetHeader.textContent = 'NO PRESET LOADED';
   
   // Light up MP button if master prompt is enabled
   const mpBtn = document.getElementById('mp-viewer-button');
@@ -1606,6 +1610,10 @@ async function selectPreset(preset) {
   // Store the original preset so the Magic button uses the correct structured data
   window.viewerLoadedPreset = preset;
 
+  // Update the preset name header
+  const presetHeader = document.getElementById('viewer-preset-header');
+  if (presetHeader) presetHeader.textContent = preset.name;
+
   hidePresetSelector();
 }
 
@@ -2161,7 +2169,29 @@ function setupViewerPinchZoom() {
   let startX = 0;
   let startY = 0;
   let isDragging = false;
-  
+
+  // Clamp pan so the image never moves outside the container bounds
+  function clampTranslate(tx, ty) {
+    const containerW = container.clientWidth;
+    const containerH = container.clientHeight;
+    const imgW = img.naturalWidth || img.clientWidth;
+    const imgH = img.naturalHeight || img.clientHeight;
+
+    // How much the scaled image overflows each side
+    // The image is displayed at object-fit:contain so its rendered size fits inside container
+    const renderedW = Math.min(containerW, imgW * (containerH / imgH));
+    const renderedH = Math.min(containerH, imgH * (containerW / imgW));
+
+    // Max translation: half the overflow in each direction, in unscaled pixels
+    const maxX = Math.max(0, (renderedW * viewerZoom - containerW) / 2 / viewerZoom);
+    const maxY = Math.max(0, (renderedH * viewerZoom - containerH) / 2 / viewerZoom);
+
+    return {
+      x: Math.max(-maxX, Math.min(maxX, tx)),
+      y: Math.max(-maxY, Math.min(maxY, ty))
+    };
+  }
+
   container.addEventListener('touchstart', (e) => {
     if (e.touches.length === 2) {
       e.preventDefault();
@@ -2181,13 +2211,22 @@ function setupViewerPinchZoom() {
       const currentDistance = getDistance(e.touches[0], e.touches[1]);
       const scale = currentDistance / viewerInitialPinchDistance;
       viewerZoom = Math.max(1, Math.min(viewerInitialZoom * scale, 5));
-      
+
+      // Re-clamp translation at the new zoom level
+      const clamped = clampTranslate(translateX, translateY);
+      translateX = clamped.x;
+      translateY = clamped.y;
+
       img.style.transform = `scale(${viewerZoom}) translate(${translateX}px, ${translateY}px)`;
     } else if (isDragging && e.touches.length === 1 && viewerZoom > 1) {
       e.preventDefault();
-      translateX = e.touches[0].clientX - startX;
-      translateY = e.touches[0].clientY - startY;
-      
+      const rawX = e.touches[0].clientX - startX;
+      const rawY = e.touches[0].clientY - startY;
+
+      const clamped = clampTranslate(rawX, rawY);
+      translateX = clamped.x;
+      translateY = clamped.y;
+
       img.style.transform = `scale(${viewerZoom}) translate(${translateX}px, ${translateY}px)`;
     }
   }, { passive: false });
@@ -3227,7 +3266,16 @@ function hidePresetBuilderSubmenu() {
       }
       const promptInput = document.getElementById('viewer-prompt');
       if (promptInput) promptInput.value = fullText;
+      const presetHeader = document.getElementById('viewer-preset-header');
+      if (presetHeader) presetHeader.textContent = presetToShow.name;
     }
+    return;
+  }
+
+  // If we came from the main menu + button, return to main menu
+  if (returnToMainMenuFromBuilder) {
+    returnToMainMenuFromBuilder = false;
+    showUnifiedMenu();
     return;
   }
   
@@ -4857,48 +4905,54 @@ const TOUR_STEPS = [
   { section: 'Basic Controls', title: '📸 Side Button — Take a Photo', body: 'Press the physical side button on your R1 to capture a photo. It is instantly sent for AI transformation using the active preset.' },
   { section: 'Basic Controls', title: '🔄 Scroll Wheel — Change Presets', get body() { return `Rotate the scroll wheel up or down to cycle through all ${totalFactoryPresetCount || 800} AI presets. The current preset name is shown at the bottom of the screen.`; } },
   { section: 'Basic Controls', title: '📷 Camera Switch Button', body: 'Tap the camera icon to toggle between front selfie and back camera at any time before taking a photo.' },
-  { section: 'Basic Controls', title: '☰ Menu Button', body: 'Opens the main menu where you access all settings, preset management, import tools, and this tutorial.' },
-  { section: 'Basic Controls', title: '🖼️ Gallery Button', body: 'Opens your saved photo gallery. View, edit, re-prompt, batch process, or delete your images from here.' },
+  { section: 'Basic Controls', title: '☰ Menu Button', body: 'Opens the main menu where you access all settings ⚙️, preset management, import preset tools, and this tutorial. The main menu has a plus <strong>+</strong> button in the header to create new presets.' },
+  { section: 'Basic Controls', title: '🖼️ Gallery Button', body: 'Opens your saved photo gallery. View, re-prompt, batch process, or delete your images from here.' },
   { section: 'Basic Controls', title: '🔁 New Photo Button', body: 'After a photo is captured and processed, tap New Photo or press the side button again to return to the live camera view.' },
-  { section: 'AI Presets', title: '✨ What Are AI Presets?', get body() { return `Presets are AI transformation instructions. Each one tells the AI how to reimagine your photo — as a comic book cover, oil painting, 3D print,  ${totalFactoryPresetCount || 800} styles in all.`; } },
+  { section: 'AI Presets', title: '✨ What Are AI Presets?', get body() { return `Presets are AI transformation instructions. Each one tells the AI how to reimagine your photo — as a comic book cover, oil painting, 3D print, ${totalFactoryPresetCount || 800} styles in all.`; } },
   { section: 'AI Presets', title: '⭐ Favorites', body: 'In the main menu, tap the star next to any preset to mark it as a favorite. Favorites are used by Random Mode when favorites are selected.' },
-  { section: 'AI Presets', title: '🔍 Filter Presets', body: 'Use the search box in the main menu to quickly find presets by name or category. Tap a category tag at the bottom to filter by style.' },
+  { section: 'AI Presets', title: '🔍 Filter Presets', body: 'Use the search box in the main menu to quickly find presets by name or category. Tap a category tag at the bottom to filter by style. Tapping on the x next to the search box removes the keyboard. Double click to clear.' },
   { section: 'AI Presets', title: '🔊 Hear Preset Info', body: 'When browsing presets in the Import screen, tap any preset name to hear its description read aloud. Use the mute button in the header to toggle audio on or off.' },
-  { section: 'Special Modes', title: '🎯 Special Modes — How to Access', body: 'Swipe left from the right edge of the main screen to reveal the Special Modes carousel.' },
+  { section: 'Special Modes', title: '🎯 Special Modes — How to Access', body: 'Swipe left from the right edge of the main camera screen to reveal the Special Modes carousel.' },
   { section: 'Special Modes', title: '🎲 Random Mode', body: 'Picks a random preset for every photo you take. If you have favorites selected it draws only from those, otherwise from all visible presets.' },
   { section: 'Special Modes', title: '⏱️ Timer Mode', body: 'Set a countdown of 3, 5, or 10 seconds before each shot. Enable repeat mode so it automatically keeps taking photos at a set interval.' },
   { section: 'Special Modes', title: '📸⚡ Burst Mode', body: 'Captures 3 to 10 photos rapidly in one press. Choose slow, medium, or fast burst speed in Settings. Great for action shots or getting multiple variations.' },
-  { section: 'Special Modes', title: '👁️ Motion Detection', body: 'Automatically captures when movement is detected in frame. Set sensitivity, start delay, and cooldown interval. The eye icon pulses when motion is triggered. Great for security.' },
+  { section: 'Special Modes', title: '👁️ Motion Detection', body: 'Automatically captures when movement is detected in frame. Set sensitivity, start delay, and cooldown interval. The eye icon pulses when motion is triggered.' },
   { section: 'Special Modes', title: '🎞️ Multi Preset', body: 'Select up to 20 presets to apply to a single photo. Tap the film strip button in the carousel, choose presets, and tap Apply Selected. When you take a photo, each preset is sent in order with a 3 second gap between them.' },
-  { section: 'Gallery', title: '🖼️ Viewing Photos', body: 'Tap any image in the gallery to view it full-screen. Pinch to zoom in and out.' },
-  { section: 'Gallery', title: '🎨 Applying Presets in Gallery', body: 'While viewing a photo, tap Load Preset or Multi Preset to transform a saved image. Click twice on a preset to apply it. You can stack multiple transformations.' },
+  { section: 'Gallery', title: '🖼️ Gallery Activities', body: 'Within the gallery there are thumbnails of captured images. You can either select multiple images to apply a preset, or select a single image to either edit, export or apply one or several presets.' },
+  { section: 'Uploading Images', title: '📥 Importing External Images', body: 'In the gallery, you may also bring any image from the web into the gallery using a QR code. Upload the image to catbox.moe, copy the direct link, and generate a QR code at qr-code-generator.com.' },
+  { section: 'Uploading Images', title: '📷 Scanning the QR Code', body: 'In the gallery, press Import then Scan QR Code. Point your R1 camera at the QR code and wait. The image will be automatically saved to your gallery.' },
+  { section: 'Uploading Images', title: '⚠️ Verify Your Link First', body: 'Before making the QR code, paste the link into a browser. If it shows only the image with nothing around it, it will work. If it shows a webpage with the image embedded, it will not work.' },
   { section: 'Gallery', title: '☑️ Batch Operations', body: 'Tap the Select button to enter batch mode. Select multiple images, then apply one preset to all of them or delete them in bulk. Always tap DONE when finished.' },
   { section: 'Gallery', title: '📅 Sort and Filter', body: 'Sort by newest or oldest. Filter by date range. When filtering, always select the day after your end date. For example, to see December 25 photos, filter from December 25 to December 26.' },
-  { section: 'Gallery', title: '🌐 Upload to gofile.io', body: 'Share a gallery image by uploading it to gofile.io. You get a QR code with a link that expires after 24 hours. Most useful in No Magic Mode to export your images.' },
-  { section: 'Gallery', title: '✏️ Edit Image', body: 'Tap the Edit button when viewing any photo to open the image editor with crop, rotate, sharpen, auto-correct, and brightness and contrast controls.' },
+  { section: 'Gallery', title: '🖼️ Image Viewer', body: 'Tap a thumbnail image in the gallery to view it full-screen. The viewer is redesigned to give your photo maximum screen space. Pinch to zoom in and out.' },
+  { section: 'Gallery', title: '🎨 Applying Presets to Single Image', body: 'After clicking on a single image, Tap LOAD or MULTI to transform a saved image. Click twice on a preset to apply it. You can stack multiple transformations.' },
+  { section: 'Gallery', title: '🏷️ Preset Header', body: 'At the very top of the image viewer a header shows the name of the currently loaded preset. Tap the header to hear the preset name and description.' },
+  { section: 'Gallery', title: '⬅️ Left Side Button', body: 'The delete button is in the top-left corner.' },
+  { section: 'Gallery', title: '🎠 Left Carousel', body: 'Below the delete button, the two left buttons are MASTER and OPTIONS. They are visible by default. Swipe left to hide them. The MASTER button toggles Master Prompt on or off. The OPTIONS button toggles Manually Select Options mode.' },
+  { section: 'Gallery', title: '🎠 Right Carousel', body: 'Swipe left from the right edge of the image viewer to reveal the side carousel which has two buttons — Edit which opens the image editor, and Export which uploads to gofile.io.' },
+  { section: 'Gallery', title: '⬇️ Bottom Bar Buttons', body: 'Four buttons on the bottom of image viewer. PROMPT opens editor. LOAD opens preset selector. MULTI opens multi-preset selector. MAGIC transforms image using the loaded preset, or picks randomly if nothing is loaded.' },
+  { section: 'Gallery', title: '🌐 Export to gofile.io', body: 'Share a gallery image by swiping left in the image viewer to reveal the carousel, then tapping Export. You get a QR code with a link that expires after 24 hours. Most useful in No Magic Mode.' },
+  { section: 'Image Editor', title: '✏️ Opening the Editor', body: 'While viewing any photo, swipe left from the right edge to reveal the image viewer carousel, then tap the Edit button. The editor opens with crop, rotate, sharpen, auto-correct, and brightness and contrast controls.' },
   { section: 'Image Editor', title: '✂️ Crop Tool', body: 'Tap Crop to activate. Two orange corner markers appear. Drag them to frame your desired area. Tap Crop again to apply.' },
   { section: 'Image Editor', title: '🔄 Rotate Tool', body: 'Rotates your image 90 degrees clockwise each tap. Tap multiple times to reach 180, 270, or back to 0 degrees.' },
   { section: 'Image Editor', title: '🔍 Sharpen and Auto Correct', body: 'Sharpen makes edges crisper. Auto Correct automatically balances brightness, contrast, and color. Great as a first step before manual tweaks.' },
   { section: 'Image Editor', title: '☀️ Brightness and Contrast Sliders', body: 'At the top of the editor, drag the sliders to adjust brightness and contrast anywhere from negative 100 to positive 100 in real time.' },
   { section: 'Image Editor', title: '↶ Undo and Save', body: 'Undo steps back through your edit history one step at a time. Saving an edited image creates a new image in your gallery. Close exits without saving.' },
-  { section: 'Uploading Images', title: '📥 Importing External Images', body: 'Bring any image from the web into your gallery using a QR code. Upload the image to catbox.moe, copy the direct link, and generate a QR code at qr-code-generator.com.' },
-  { section: 'Uploading Images', title: '📷 Scanning the QR Code', body: 'In the gallery, press Import then Scan QR Code. Point your R1 camera at the QR code and wait. The image will be automatically saved to your gallery.' },
-  { section: 'Uploading Images', title: '⚠️ Verify Your Link First', body: 'Before making the QR code, paste the link into a browser. If it shows only the image with nothing around it, it will work. If it shows a webpage with the image embedded, it will not work.' },
   { section: 'Settings', title: '▣ Resolution', body: 'Choose from VGA 640 by 480 up to HD 3264 by 2448. Lower resolutions are recommended if you want images to appear in the magic gallery.' },
   { section: 'Settings', title: '📐 Aspect Ratio', body: 'Choose 1 to 1 square or 16 to 9 letterbox. Leave both unchecked for neither. Default is neither. We recommend choosing an aspect ratio to display the full image, preventing accidental cropping.' },
-  { section: 'Settings', title: '📝 Master Prompt', body: 'Appends custom text to every AI transformation. Enable it first, then type your additions. Adding a name and occasion lets presets like Happy Holidays personalize automatically.' },
+  { section: 'Settings', title: '📝 Master Prompt', body: 'Appends custom text to every AI transformation. Enable it first, then type your additions. Adding a name and occasion lets presets like Happy Holidays personalize automatically. Can also be toggled from the MASTER button inside the image viewer.' },
   { section: 'Settings', title: '👁️ Visible Presets', body: 'Choose which imported presets appear in your menus. Select All, deselect individually, or remove all. Category tags show at the bottom when a preset is highlighted.' },
-  { section: 'Settings', title: '🔨 Preset Builder', body: 'Build your own custom AI presets. Choose a template, add chips for quality and style, enable random options with single or multi-selection groups, add critical rules, then save.' },
+  { section: 'Settings', title: '🔨 Preset Builder', body: 'Build your own custom AI presets. Choose a template, add chips for quality and style, enable random options with single or multi-selection groups, add critical rules, then save. Also accessible directly from the main menu plus button.' },
   { section: 'Settings', title: '🚫 No Magic Mode', body: 'Disables AI processing and works as a regular camera. Photos save only to the plugin gallery, not to the rabbit hole or magic gallery.' },
-  { section: 'Settings', title: '🎛️ Manually Select Options Mode', body: 'When enabled and you choose a preset with options, a popup asks you to pick which option to use rather than randomize the options.' },
+  { section: 'Settings', title: '🎛️ Manually Select Options Mode', body: 'When enabled and you choose a preset with options, a popup asks you to pick which option to use rather than randomize. Can also be toggled from the OPTIONS button inside the image viewer.' },
   { section: 'Settings', title: '📥 Import Presets', body: 'Browse the external preset library. Check individual presets or use the checkmark All to select everything. New additions are unchecked so check regularly for updates.' },
   { section: 'Settings', title: '🔄 Check for Updates', body: 'Checks for new or modified presets in the library. Any updates are flagged so you can re-import changed presets.' },
   { section: 'Tips and Advanced', title: '🏷️ Category Searching', body: 'Every preset has categories. When a preset is highlighted in the Visible Presets menu, its categories appear at the bottom. Tap a category to filter all presets in that group.' },
   { section: 'Tips and Advanced', title: '🧠 Master Prompt Power Tip', body: 'Search for master or master prompt in the Visible Presets menu to find all presets designed to work with Master Prompt. These respond to names, occasions, and custom context you provide.' },
   { section: 'Tips and Advanced', title: '📶 Offline Queue', body: 'If you take photos while offline, they queue automatically and sync to the rabbit hole once your connection returns. The queue count shows on screen.' },
   { section: 'Tips and Advanced', title: '🔁 Reset Database', body: 'The nuclear option in Settings. Wipes all custom presets and settings. Only imported presets from the library remain. Use only if something is seriously broken.' },
-  { section: 'Tips and Advanced', title: '💀 Content Filter Error', body: 'If you go into your rabbit hole and you receive a content filter image error. This happens because AI is quirky. The beauty of Magic Kamera is, you can reprompt! Keep trying until successful.' },
-  { section: 'Troubleshooting', title: '❌ Camera Access Denied', body: 'This error will appear at the bottom of your main camera screen if you do not have any active presets (either imported or made with the preset builder).' },
+  { section: 'Tips and Advanced', title: '💀 Content Filter Error', body: 'If you go into your rabbit hole and you receive a content filter image error, this happens because AI is quirky. The beauty of Magic Kamera is you can reprompt. Keep trying until successful.' },
+  { section: 'Troubleshooting', title: '❌ Camera Access Denied', body: 'This error will appear at the bottom of your main camera screen if you do not have any active presets, either imported or made with the preset builder.' },
   { section: 'Done!', title: '🎉 Tour Complete!', body: 'That\'s Magic Kamera. Now go make magic! This tour or the text tutorial in this menu is here if you need a refresher. If you come across The One Ron G, The One Hashtag Cyber or The One Rabbit Jesus, tell them you enjoy this program.' },
 ];
 
@@ -6761,6 +6815,13 @@ window.addEventListener('scrollUp', () => {
     scrollGalleryUp();
     return;
   }
+
+  // Preset info modal (header tap modal)
+  if (isPresetInfoModalOpen) {
+    const body = document.querySelector('#preset-info-overlay div div:nth-child(2)');
+    if (body) body.scrollTop = Math.max(0, body.scrollTop - 60);
+    return;
+  }
   
   // Image viewer
   if (document.getElementById('image-viewer')?.style.display === 'flex') {
@@ -6913,6 +6974,13 @@ window.addEventListener('scrollDown', () => {
     return;
   }
   
+  // Preset info modal (header tap modal)
+  if (isPresetInfoModalOpen) {
+    const body = document.querySelector('#preset-info-overlay div div:nth-child(2)');
+    if (body) body.scrollTop = Math.min(body.scrollHeight - body.clientHeight, body.scrollTop + 60);
+    return;
+  }
+  
   // Image viewer
   if (document.getElementById('image-viewer')?.style.display === 'flex') {
     scrollViewerDown();
@@ -6995,7 +7063,6 @@ function updatePresetDisplay() {
         } else {
             statusElement.textContent = `Style: ${currentPreset.name}`;
         }
-    }
     
     // Show style reveal on screen (middle text)
     if (isCameraMultiPresetActive && cameraSelectedPresets.length > 0) {
@@ -7008,6 +7075,7 @@ function updatePresetDisplay() {
 
     if (isMenuOpen) {
         updateMenuSelection();
+    }
     }
 }
 
@@ -8238,6 +8306,8 @@ function hideStyleEditor() {
       }
       const promptInput = document.getElementById('viewer-prompt');
       if (promptInput) promptInput.value = fullText;
+      const presetHeader = document.getElementById('viewer-preset-header');
+              if (presetHeader) presetHeader.textContent = presetToShow.name;
     }
     return;
   }
@@ -8364,8 +8434,11 @@ async function saveStyle() {
   
   alert(editingStyleIndex >= 0 ? `Preset "${name}" updated!` : `Preset "${name}" saved!`);
   
+  const cameFromViewer = returnToGalleryFromViewerEdit;
   hideStyleEditor();
-  showUnifiedMenu();
+  if (!cameFromViewer) {
+    showUnifiedMenu();
+  }
 }
 
 async function deleteStyle() {
@@ -8446,19 +8519,22 @@ async function deleteStyle() {
       // Update visible presets display to reflect deletion
       updateVisiblePresetsDisplay();
       
+      const cameFromViewer = returnToGalleryFromViewerEdit;
       hideStyleEditor();
       
-      // Save scroll position before showing menu
-      const scrollContainer = document.querySelector('.styles-menu-scroll-container');
-      const scrollPosition = scrollContainer ? scrollContainer.scrollTop : 0;
-      
-      showUnifiedMenu();
-      
-      // Restore scroll position after menu is shown
-      if (scrollContainer) {
-        requestAnimationFrame(() => {
-          scrollContainer.scrollTop = scrollPosition;
-        });
+      if (!cameFromViewer) {
+        // Save scroll position before showing menu
+        const scrollContainer = document.querySelector('.styles-menu-scroll-container');
+        const scrollPosition = scrollContainer ? scrollContainer.scrollTop : 0;
+        
+        showUnifiedMenu();
+        
+        // Restore scroll position after menu is shown
+        if (scrollContainer) {
+          requestAnimationFrame(() => {
+            scrollContainer.scrollTop = scrollPosition;
+          });
+        }
       }
       
       alert(`Preset "${presetName}" deleted successfully!`);
@@ -8745,6 +8821,155 @@ window.addEventListener('load', () => {
     settingsMenuBtn.addEventListener('click', showSettingsSubmenu);
   }
   
+  // + button in main menu header — opens preset builder, returns to main menu on exit
+  const menuAddPresetBtn = document.getElementById('menu-add-preset-button');
+  if (menuAddPresetBtn) {
+    menuAddPresetBtn.addEventListener('click', () => {
+      returnToMainMenuFromBuilder = true;
+      hideUnifiedMenu();
+      document.getElementById('preset-builder-submenu').style.display = 'flex';
+      isMenuOpen = false;
+      isSettingsSubmenuOpen = false;
+      isPresetBuilderSubmenuOpen = true;
+      clearPresetBuilderForm();
+    });
+  }
+
+  // Tapping the preset header shows a scrollable modal with fixed name, scrollable body, fixed buttons
+  const viewerPresetHeader = document.getElementById('viewer-preset-header');
+  if (viewerPresetHeader) {
+    viewerPresetHeader.addEventListener('click', () => {
+
+      // Helper that builds and shows the overlay modal
+      function showPresetInfoModal(titleText, bodyText, speakText) {
+        const overlay = document.createElement('div');
+        overlay.id = 'preset-info-overlay';
+        overlay.style.cssText = `
+          position: fixed; inset: 0; z-index: 200000;
+          display: flex; align-items: center; justify-content: center;
+          background: rgba(0,0,0,0.75); backdrop-filter: blur(4px);
+        `;
+
+        // Read button only shown when there is something to speak
+        const readBtnHTML = speakText ? `<button id="preset-info-speak-btn" style="background:rgba(255,255,255,0.1);color:#fff;border:1px solid rgba(255,255,255,0.2);border-radius:5px;font-size:10px;font-weight:600;padding:0 10px;height:22px !important;min-height:0 !important;line-height:22px;min-width:52px;cursor:pointer;text-transform:uppercase;letter-spacing:0.3px;box-sizing:border-box;display:inline-flex;align-items:center;justify-content:center;">🔊 Read</button>` : '';
+
+        overlay.innerHTML = `
+          <div style="
+            position: relative;
+            background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.6);
+            width: 85vw;
+            max-width: 340px;
+            max-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+          ">
+            <!-- Fixed title -->
+            <div style="
+              padding: 12px 16px 8px;
+              border-bottom: 1px solid rgba(255,255,255,0.1);
+              flex-shrink: 0;
+            ">
+              <div style="
+                font-size: 13px;
+                font-weight: 700;
+                color: #FE5F00;
+                text-align: center;
+                text-transform: uppercase;
+                letter-spacing: 0.05em;
+                word-break: break-word;
+              ">${titleText}</div>
+            </div>
+            <!-- Scrollable body -->
+            <div style="
+              padding: 10px 16px;
+              overflow-y: auto;
+              flex: 1;
+              min-height: 40px;
+              -webkit-overflow-scrolling: touch;
+            ">
+              <div style="
+                font-size: 13px;
+                line-height: 1.5;
+                color: #ddd;
+                word-wrap: break-word;
+                white-space: pre-wrap;
+              ">${bodyText}</div>
+            </div>
+            <!-- Fixed button row -->
+            <div style="
+              padding: 6px 16px 8px;
+              border-top: 1px solid rgba(255,255,255,0.1);
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              flex-shrink: 0;
+              gap: 12px;
+            ">
+              ${readBtnHTML}
+              <button id="preset-info-exit-btn" style="background:linear-gradient(135deg,#4CAF50 0%,#45a049 100%);color:#fff;border:none;border-radius:5px;font-size:10px;font-weight:600;padding:0 10px;height:22px !important;min-height:0 !important;line-height:22px;min-width:52px;cursor:pointer;text-transform:uppercase;letter-spacing:0.3px;box-sizing:border-box;display:inline-flex;align-items:center;justify-content:center;margin-left:auto;">EXIT</button>
+            </div>
+          </div>
+        `;
+
+        document.body.appendChild(overlay);
+                   isPresetInfoModalOpen = true;
+
+        const exitBtn = document.getElementById('preset-info-exit-btn');
+        const speakBtn = document.getElementById('preset-info-speak-btn');
+
+        const closeModal = () => {
+          tourStopSpeaking();
+          isPresetInfoModalOpen = false;
+          exitBtn.removeEventListener('click', closeModal);
+          if (speakBtn) speakBtn.removeEventListener('click', handleSpeak);
+          if (overlay.parentNode) overlay.parentNode.removeChild(overlay);
+        };
+
+        const handleSpeak = () => {
+          tourSpeak(speakText);
+          if (speakBtn) {
+            speakBtn.style.background = 'rgba(254, 95, 0, 0.7)';
+            speakBtn.style.borderColor = '#FE5F00';
+            speakBtn.style.color = '#fff';
+            setTimeout(() => {
+              if (speakBtn) {
+                speakBtn.style.background = 'rgba(255,255,255,0.1)';
+                speakBtn.style.borderColor = 'rgba(255,255,255,0.2)';
+                speakBtn.style.color = '#fff';
+              }
+            }, 1500);
+          }
+        };
+
+        exitBtn.addEventListener('click', closeModal);
+        if (speakBtn) speakBtn.addEventListener('click', handleSpeak);
+      }
+
+      // No preset loaded — show info modal with Magic button hint
+      if (!window.viewerLoadedPreset) {
+        showPresetInfoModal(
+          'No Preset Loaded',
+          'No preset is currently loaded.\n\nIf you tap the ✨ MAGIC button without loading a preset, it will automatically pick a random preset for you.',
+          null
+        );
+        return;
+      }
+
+      // Preset is loaded — show name and first sentence
+      const preset = window.viewerLoadedPreset;
+      const firstSentence = preset.message.split('.')[0].trim() + '.';
+      showPresetInfoModal(
+        preset.name,
+        firstSentence,
+        preset.name + '. ' + firstSentence
+      );
+    });
+  }
+
   const settingsBackBtn = document.getElementById('settings-back');
   if (settingsBackBtn) {
     settingsBackBtn.addEventListener('click', hideSettingsSubmenu);
@@ -9874,6 +10099,46 @@ const result = await presetImporter.import();
     });
   }
 
+ // Filter blur buttons — first click dismisses keyboard, second click clears text
+  function makeFilterBlurBtn(btnId, filterId, onClear) {
+    const btn = document.getElementById(btnId);
+    if (!btn) return;
+    let blurClickCount = 0;
+    let blurClickTimer = null;
+    btn.addEventListener('click', () => {
+      const f = document.getElementById(filterId);
+      if (!f) return;
+      blurClickCount++;
+      if (blurClickCount === 1) {
+        // First click: just dismiss keyboard
+        f.blur();
+        blurClickTimer = setTimeout(() => { blurClickCount = 0; }, 1000);
+      } else {
+        // Second click within 1 second: clear the field
+        clearTimeout(blurClickTimer);
+        blurClickCount = 0;
+        f.value = '';
+        f.dispatchEvent(new Event('input', { bubbles: true }));
+        if (onClear) onClear();
+      }
+    });
+  }
+
+  makeFilterBlurBtn('style-filter-blur-btn', 'style-filter', () => {
+    styleFilterText = '';
+    populateStylesList();
+  });
+
+  makeFilterBlurBtn('visible-presets-filter-blur-btn', 'visible-presets-filter', () => {
+    visiblePresetsFilterText = '';
+    populateVisiblePresetsList();
+  });
+
+  makeFilterBlurBtn('preset-filter-blur-btn', 'preset-filter', () => {
+    presetFilterText = '';
+    populatePresetList();
+  });
+
  const styleFilter = document.getElementById('style-filter');
   let filterDebounceTimeout = null;
   if (styleFilter) {
@@ -10334,15 +10599,15 @@ const result = await presetImporter.import();
     });
   }
 
-  // Tapping the viewer prompt opens the right editor instead of keyboard
+  // EDITOR button now handles what the viewer prompt used to handle
+  const viewerEditorBtn = document.getElementById('viewer-editor-button');
+  if (viewerEditorBtn) {
+    viewerEditorBtn.addEventListener('click', handleViewerPromptTap);
+  }
+
+  // Keep the hidden textarea from triggering anything
   const viewerPromptInput = document.getElementById('viewer-prompt');
   if (viewerPromptInput) {
-    viewerPromptInput.addEventListener('focus', (e) => {
-      // Prevent keyboard from appearing
-      viewerPromptInput.blur();
-      // Open the correct editor based on loaded preset state
-      handleViewerPromptTap();
-    });
     viewerPromptInput.addEventListener('input', () => {
       window.viewerLoadedPreset = null;
     });
@@ -10484,7 +10749,7 @@ async function uploadViewerImage() {
   try {
     // Disable button and show status
     uploadBtn.disabled = true;
-    uploadBtn.textContent = '⏳';
+      uploadBtn.innerHTML = '⏳';
     if (statusElement) {
       statusElement.style.display = 'block';
       statusElement.textContent = 'Getting server...';
@@ -10564,7 +10829,7 @@ async function uploadViewerImage() {
   } finally {
     // Re-enable button
     uploadBtn.disabled = false;
-    uploadBtn.textContent = '📤';
+      uploadBtn.innerHTML = '📤<br><span class="viewer-carousel-label">Export</span>';
   }
 }
 
@@ -11064,6 +11329,48 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 });
+
+// Viewer carousel swipe logic — right carousel (Edit/Export) and left carousel (MASTER/OPTIONS)
+(function() {
+  let vcTouchStartX = 0;
+  const viewerEl = document.getElementById('image-viewer');
+  if (!viewerEl) return;
+
+  viewerEl.addEventListener('touchstart', (e) => {
+    vcTouchStartX = e.touches[0].clientX;
+  }, { passive: true });
+
+  viewerEl.addEventListener('touchend', (e) => {
+    const rightCarousel = document.getElementById('viewer-carousel');
+    const leftCarousel = document.getElementById('viewer-left-carousel');
+    const endX = e.changedTouches[0].clientX;
+    const diff = vcTouchStartX - endX; // positive = swipe left, negative = swipe right
+    const rightEdgeZone = window.innerWidth * 0.5;
+    const leftEdgeZone = window.innerWidth * 0.5;
+
+    // RIGHT carousel: swipe left from right half to show, swipe right to hide
+    if (rightCarousel) {
+      if (vcTouchStartX > rightEdgeZone && diff > 30) {
+        rightCarousel.classList.add('show');
+      }
+      if (diff < -30) {
+        rightCarousel.classList.remove('show');
+      }
+    }
+
+    // LEFT carousel: swipe left from left half to hide, swipe right from left half to show
+    if (leftCarousel) {
+      if (vcTouchStartX < leftEdgeZone && diff > 30) {
+        // Swipe left on left side — hide the left carousel
+        leftCarousel.classList.add('hidden');
+      }
+      if (vcTouchStartX < leftEdgeZone && diff < -30) {
+        // Swipe right on left side — show the left carousel
+        leftCarousel.classList.remove('hidden');
+      }
+    }
+  }, { passive: true });
+})();
 
 console.log('AI Camera Styles app initialized!');
 

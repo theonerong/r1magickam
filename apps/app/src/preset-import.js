@@ -238,7 +238,10 @@ export class PresetImporter {
       filterSection.className = 'menu-section';
       filterSection.style.cssText = 'position: sticky; top: 0; background: #1a1a1a; z-index: 10; padding: 5px 0; margin: 0; border-bottom: 1px solid #333;';
       filterSection.innerHTML = `
-        <input type="text" id="import-preset-filter" class="style-filter" placeholder="Filter..." style="width: 100%; margin: 0; height: 24px; font-size: 12px;">
+        <div class="filter-row" style="margin: 0;">
+          <input type="text" id="import-preset-filter" class="style-filter" placeholder="Filter..." style="margin: 0; height: 24px; font-size: 12px;">
+          <button class="filter-blur-btn" id="import-filter-blur-btn" title="Dismiss keyboard">×</button>
+        </div>
       `;
 
       const presetsSection = document.createElement('div');
@@ -398,6 +401,26 @@ footerSection.innerHTML = `
       renderPresetsList();
 
       // Event listeners
+      const importFilterBlurBtn = document.getElementById('import-filter-blur-btn');
+      if (importFilterBlurBtn) {
+        let importBlurClickCount = 0;
+        let importBlurClickTimer = null;
+        importFilterBlurBtn.addEventListener('click', () => {
+          importBlurClickCount++;
+          if (importBlurClickCount === 1) {
+            filterInput.blur();
+            importBlurClickTimer = setTimeout(() => { importBlurClickCount = 0; }, 1000);
+          } else {
+            clearTimeout(importBlurClickTimer);
+            importBlurClickCount = 0;
+            filterInput.value = '';
+            this.importFilterText = '';
+            this.currentImportScrollIndex = 0;
+            renderPresetsList();
+          }
+        });
+      }
+
       const filterInput = document.getElementById('import-preset-filter');
       let importFilterDebounce = null;
       filterInput.addEventListener('input', (e) => {
