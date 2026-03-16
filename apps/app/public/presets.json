@@ -2907,6 +2907,20 @@
     "additionalInstructions": ""
   },
   {
+    "name": "BRITTO ART STYLE",
+    "category": [
+      "ART",
+      "CREATIVE",
+      "POP ART",
+      "MODERN",
+      "CONTEMPORARY"
+    ],
+    "message": "Take a picture and transform the image into a vibrant, bold artwork defined by thick black outlines that form geometric and curved shapes interlocked like a joyful mosaic. Fill every shape with flat, saturated, high-contrast colors — electric blues, hot pinks, sunny yellows, vivid greens, and bright reds — leaving no space uncolored or empty. Layer hearts, stars, flowers, checks, stripes, dots, and playful geometric patterns densely inside each shape to create an explosion of energy and happiness. The composition should feel celebratory, optimistic, and full of life. Use a signature Pop Art meets Cubism aesthetic where figures, faces, animals, or objects are broken into stylized interlocking color blocks outlined in bold black. Every inch of the canvas must be filled with pattern and color. The result should radiate positivity, movement, and a sense of childlike wonder rendered in a sophisticated, graphic art style.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "CRITICAL: Every region must be filled with flat saturated color. Black outlines must be thick and bold throughout. No gradients, no photorealism, no empty white space. Pattern must appear inside shapes — not just as background."
+  },
+  {
     "name": "BROADWAY MUSICAL",
     "category": [
       "OPTIONS",
@@ -11647,6 +11661,21 @@
     "additionalInstructions": "FINAL RESULT:\nThe image should look like the subject IS Henry Danger in costume, not a face overlay."
   },
   {
+    "name": "HERMANAS SCULL ART",
+    "category": [
+      "ART",
+      "FOLK ART",
+      "CUBAN",
+      "CREATIVE",
+      "COLORFUL",
+      "3D ART"
+    ],
+    "message": "Take a picture and transform the image into a Cuban folk art diorama in the style of the Scull Sisters from Cuba. The background is a flat acrylic painted canvas depicting Old Havana or South Florida street scenes — colorful colonial architecture, arched doorways, palm trees, vintage cars, and tropical skies in warm Caribbean colors. The subjects from this image must appear as tiny scaled paper mache figurines and miniature sculptural objects — proportionally small enough to exist naturally within the painted and 3d street scene background behind them, as if placed into a shadow box diorama. These miniature figurines are hand-sculpted from paper mache and wire, painted with bright acrylic folk art colors with visible brushstrokes on their small surfaces, and physically mounted onto the canvas at the correct scale so they appear to inhabit the painted street behind them. A figurine standing in front of a painted doorway must be the correct height relative to that doorway. A miniature car must be to scale with the painted road. The figurines cast small natural shadows onto the painted canvas beneath them, confirming they are real three-dimensional objects resting on the flat painted surface. Figures are slightly caricatured and humorous, stocky and expressive. The result must look like a miniature diorama — a shadow box where tiny hand-crafted paper mache objects and figurines live inside a painted world.",
+  "options": [],
+  "randomizeOptions": false,
+  "additionalInstructions": "CRITICAL: The paper mache figures and objects MUST be miniature and to scale with the painted background behind them. They must look like small figurines placed into a painted scene, not large flat shapes pasted onto a canvas. Scale accuracy between the tiny sculpted figures and the painted architectural background is the defining requirement of this style. Cast shadows from the figurines onto the canvas surface must be visible."
+  },
+  {
     "name": "HIDDEN DETAILS",
     "category": [
       "ILLUSION",
@@ -19185,6 +19214,21 @@
     "additionalInstructions": "FINAL RESULT:\nA grainy, long-lens paparazzi photograph with tabloid watermarks focusing on the subject as if they're the celebrity being stalked, while an actual famous person accidentally appears in the background, blurred, distant, or at the edge of frame — completely incidental to the shot. The humor comes from treating the subject as the star while ignoring the real celebrity.\n\nCORE REQUIREMENTS:"
   },
   {
+    "name": "PAPER MACHE ART",
+    "category": [
+      "ART",
+      "SCULPTURE",
+      "CREATIVE",
+      "3D ART",
+      "CRAFT",
+      "MIXED MEDIA"
+    ],
+    "message": "Take a picture and transform the subject into a paper mache sculpture art piece. The entire subject — figures, objects, animals, or scenes — must appear to be physically hand-crafted from torn and layered paper mache, shaped over wire armatures and dried into solid sculptural forms. The surface texture must show the characteristic rough, slightly bumpy, fibrous quality of dried paper mache — visible layers of torn paper strips with slightly raised edges, small surface imperfections, and the organic texture of glued newsprint or craft paper built up in layers. Once shaped, the sculpture must appear painted with bright, flat acrylic folk art colors applied directly onto the paper mache surface with visible brushstrokes that follow the contours of the form. Colors should be bold and saturated — reds, blues, yellows, greens — with simple decorative painted details like dots, stripes, and patterns added on top. The overall result must look exactly like a completed paper mache craft sculpture — tactile, handmade, slightly imperfect, and joyfully colorful — not a painting, not a digital render, not a smooth ceramic or plastic object.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "CRITICAL: The paper mache texture is mandatory — visible layered paper strips, fibrous surface, slight bumps and imperfections from the construction process must be clearly present. The piece must look physically handmade and three-dimensional. Smooth, clean, or digitally perfect surfaces are incorrect. Acrylic paint applied directly onto the rough paper mache surface with visible brushstrokes is required."
+  },
+  {
     "name": "PAPER SHADOW BOX",
     "category": [
       "ART",
@@ -22314,6 +22358,21 @@
     ],
     "randomizeOptions": true,
     "additionalInstructions": "IMPORTANT:\n• The original movie must be real and culturally recognizable\n• The sequel may be fictional but must feel plausible within that universe\n• Maintain cinematic realism even when the tagline is humorous\n• Do not distort into absurd parody — it should look like an actual studio sequel announcement\n\nFINAL RESULT:\nThe final image should look like an official theatrical poster for a sequel to a famous real movie, starring the subject as the lead, with the number 2 clearly in the title and the humorous sequel tagline determined strictly by the modulo random seed unless overridden by external master prompt."
+  },
+  {
+    "name": "SERIGRAPHY",
+    "category": [
+      "ART",
+      "CREATIVE",
+      "PAINTING",
+      "CONTEMPORARY",
+      "FIGURATIVE",
+      "FINE ART"
+    ],
+    "message": "Take a picture and transform the image into a serigraph-style fine art print with the warm, intimate aesthetic of mid-century Mediterranean figurative painting. Render figures — especially elegant women in café settings, leisurely scenes, or quiet moments — using soft, flowing brushwork translated into flat color separations as if printed through silk screens. Use a warm, sun-drenched palette of ochres, terracottas, dusty roses, soft teals, lavenders, and creamy whites with gently muted tones. Figures should appear graceful and elongated with loosely defined features, surrounded by suggestion of environment rather than precise detail. Outlines should be soft and painterly, not harsh. Each color should sit in its own layer with slight visible separation between tones, mimicking the layered ink passes of serigraphy. The overall mood should be romantic, sophisticated, and timeless — evoking sun-soaked European leisure and quiet feminine elegance rendered in the style of a limited-edition signed art print.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "CRITICAL: Maintain the layered, flat-color screen-print aesthetic throughout. Warm Mediterranean palette only. Figures must appear graceful and stylized, not photorealistic. Background should be loosely rendered with impressionistic detail."
   },
   {
     "name": "SEUSS",
