@@ -1906,9 +1906,9 @@ function openMultiPresetSelector(imageId) {
     `;
     
     const presetFilter = document.getElementById('preset-filter');
+    const filterRow = presetFilter.closest('.filter-row') || presetFilter.parentNode;
     const presetList = document.getElementById('preset-list');
-    presetFilter.parentNode.insertBefore(multiControls, presetFilter);
-    presetFilter.parentNode.insertBefore(presetFilter, presetList);
+    filterRow.parentNode.insertBefore(multiControls, filterRow);
   }
   multiControls.style.display = 'flex';
   
@@ -1983,9 +1983,9 @@ function openCameraMultiPresetSelector() {
       <button id="multi-preset-cancel" class="batch-control-button">Cancel</button>
     `;
     const presetFilter = document.getElementById('preset-filter');
+    const filterRow = presetFilter.closest('.filter-row') || presetFilter.parentNode;
     const presetList = document.getElementById('preset-list');
-    presetFilter.parentNode.insertBefore(multiControls, presetFilter);
-    presetFilter.parentNode.insertBefore(presetFilter, presetList);
+    filterRow.parentNode.insertBefore(multiControls, filterRow);
   }
   multiControls.style.display = 'flex';
 
