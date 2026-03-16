@@ -220,7 +220,7 @@ export class PresetImporter {
       header.innerHTML = `
         <h2 style="font-size: 14px;">Import (<span id="import-preset-count">${availablePresets.length}</span>)</h2>
         <div class="menu-nav-buttons">
-          <button id="import-mute-toggle" class="menu-jump-button" title="Mute/Unmute">🔊</button>          
+          <button id="import-mute-toggle" class="menu-jump-button" title="Mute/Unmute">${this.isMuted ? '🔇' : '🔊'}</button>          
           <button id="import-jump-to-top" class="menu-jump-button" title="Jump to top">↑</button>
           <button id="import-jump-to-bottom" class="menu-jump-button" title="Jump to bottom">↓</button>
           <button id="close-import-modal" class="close-button">×</button>

@@ -3177,35 +3177,32 @@ function handleViewerPromptTap() {
     isPresetBuilderSubmenuOpen = true;
     clearPresetBuilderForm();
   } else {
-    // A preset is loaded — check if it is a custom preset (made with the builder)
+    // A preset is loaded — use internal flag to determine editor (same logic as main menu)
     const loadedPreset = window.viewerLoadedPreset;
-    const isCustomPreset = !factoryPresets.some(fp => fp.name === loadedPreset.name) &&
-      !(hasImportedPresets && presetImporter.getImportedPresets().some(p => p.name === loadedPreset.name));
-    
+    // Find the current version of this preset in CAMERA_PRESETS
+    const presetIndex = CAMERA_PRESETS.findIndex(p => p.name === loadedPreset.name);
+    const currentPresetObj = presetIndex >= 0 ? CAMERA_PRESETS[presetIndex] : loadedPreset;
+    const isCustomPreset = (currentPresetObj.internal === false);
+
+    returnToGalleryFromViewerEdit = true;
+    document.getElementById('image-viewer').style.display = 'none';
+    document.getElementById('gallery-modal').style.display = 'none';
+    document.getElementById('unified-menu').style.display = 'none';
+    isMenuOpen = false;
+
     if (isCustomPreset) {
-      // It's a custom preset: open Preset Builder in edit mode
-      returnToGalleryFromViewerEdit = true;
-      const presetIndex = CAMERA_PRESETS.findIndex(p => p.name === loadedPreset.name);
-      document.getElementById('image-viewer').style.display = 'none';
-      document.getElementById('gallery-modal').style.display = 'none';
-      document.getElementById('unified-menu').style.display = 'none';
-      isMenuOpen = false;
-      document.getElementById('preset-builder-submenu').style.display = 'flex';
-      isSettingsSubmenuOpen = false;
-      isPresetBuilderSubmenuOpen = true;
+      // Custom preset (internal: false): open Preset Builder in edit mode
       if (presetIndex >= 0) {
-        loadPresetIntoBuilder(presetIndex);
+        editPresetInBuilder(presetIndex);
       } else {
+        // Preset not found by name — clear form for new entry
+        document.getElementById('preset-builder-submenu').style.display = 'flex';
+        isSettingsSubmenuOpen = false;
+        isPresetBuilderSubmenuOpen = true;
         clearPresetBuilderForm();
       }
     } else {
-      // It's a factory/imported preset: open Style Editor in edit mode
-      returnToGalleryFromViewerEdit = true;
-      const presetIndex = CAMERA_PRESETS.findIndex(p => p.name === loadedPreset.name);
-      document.getElementById('image-viewer').style.display = 'none';
-      document.getElementById('gallery-modal').style.display = 'none';
-      document.getElementById('unified-menu').style.display = 'none';
-      isMenuOpen = false;
+      // Factory/imported preset: open Style Editor in edit mode
       if (presetIndex >= 0) {
         editStyle(presetIndex);
         showStyleEditor('Edit Style');
@@ -3230,6 +3227,7 @@ function showPresetBuilderSubmenu() {
 function hidePresetBuilderSubmenu() {
   document.getElementById('preset-builder-submenu').style.display = 'none';
   isPresetBuilderSubmenuOpen = false;
+  const savedBuilderIndex = editingPresetBuilderIndex;
   editingPresetBuilderIndex = -1;
   
   // Hide delete button when closing
@@ -3246,7 +3244,11 @@ function hidePresetBuilderSubmenu() {
     openImageViewer(currentViewerImageIndex);
     // If a preset was loaded when the user tapped the text field, restore it
     if (presetToRestore) {
-      const updatedPreset = CAMERA_PRESETS.find(p => p.name === presetToRestore.name);
+      // Try by name first; if preset was renamed, use the saved builder index position
+      let updatedPreset = CAMERA_PRESETS.find(p => p.name === presetToRestore.name);
+      if (!updatedPreset && savedBuilderIndex >= 0 && CAMERA_PRESETS[savedBuilderIndex]) {
+        updatedPreset = CAMERA_PRESETS[savedBuilderIndex];
+      }
       const presetToShow = updatedPreset || presetToRestore;
       window.viewerLoadedPreset = presetToShow;
       let fullText = presetToShow.message;
@@ -3269,6 +3271,7 @@ function hidePresetBuilderSubmenu() {
       const presetHeader = document.getElementById('viewer-preset-header');
       if (presetHeader) presetHeader.textContent = presetToShow.name;
     }
+    updatePresetDisplay();
     return;
   }
 
@@ -4118,9 +4121,15 @@ async function deleteCustomPreset() {
       // No visible presets, just use first available
       currentPresetIndex = 0;
     }
-    // Update the camera footer immediately
-    updatePresetDisplay();
   }
+
+  // Always update the camera footer after deletion
+  updatePresetDisplay();
+
+  // Clear viewer loaded preset and reset gallery header since the preset is gone
+  window.viewerLoadedPreset = null;
+  const presetHeader = document.getElementById('viewer-preset-header');
+  if (presetHeader) presetHeader.textContent = 'NO PRESET LOADED';
   
   // Remove from IndexedDB
   const transaction = presetStorage.db.transaction(['presets'], 'readwrite');
@@ -8054,15 +8063,15 @@ function populateStylesList(preserveScroll = false) {
     const filtered = regular.filter(preset => {
       if (styleFilterText) {
         const searchText = styleFilterText.toLowerCase();
-        const categoryMatch = preset.category && preset.category.some(cat => cat.toLowerCase().includes(searchText));
-        const optionsMatch = (
-          (preset.options && preset.options.some(o => o.text && o.text.toLowerCase().includes(searchText))) ||
-          (preset.optionGroups && preset.optionGroups.some(g => g.title && g.title.toLowerCase().includes(searchText) || g.options && g.options.some(o => o.text && o.text.toLowerCase().includes(searchText))))
-        );
-        const textMatch = preset.name.toLowerCase().includes(searchText) || 
+          const categoryMatch = preset.category && preset.category.some(cat => cat.toLowerCase().includes(searchText));
+          const optionsMatch = (
+        (preset.options && preset.options.some(o => o.text && o.text.toLowerCase().includes(searchText))) ||
+        (preset.optionGroups && preset.optionGroups.some(g => g.title && g.title.toLowerCase().includes(searchText) || g.options && g.options.some(o => o.text && o.text.toLowerCase().includes(searchText))))
+      );
+          const textMatch = preset.name.toLowerCase().includes(searchText) || 
                          preset.message.toLowerCase().includes(searchText) ||
                          categoryMatch || optionsMatch;
-        if (!textMatch) return false;
+          if (!textMatch) return false;
       }
       
       // Then apply category filter if active
@@ -8276,6 +8285,7 @@ function hideStyleEditor() {
     categoryInput.value = '';
   }
   document.getElementById('delete-style').style.display = 'none';
+  const savedEditingStyleIndex = editingStyleIndex;
   editingStyleIndex = -1;
   
   // If we came from the gallery viewer, return there instead of menu
@@ -8286,7 +8296,11 @@ function hideStyleEditor() {
     openImageViewer(currentViewerImageIndex);
     // If a preset was loaded when the user tapped the text field, restore it
     if (presetToRestore) {
-      const updatedPreset = CAMERA_PRESETS.find(p => p.name === presetToRestore.name);
+      // Try by name first; if preset was renamed, use the saved index position
+      let updatedPreset = CAMERA_PRESETS.find(p => p.name === presetToRestore.name);
+      if (!updatedPreset && savedEditingStyleIndex >= 0 && CAMERA_PRESETS[savedEditingStyleIndex]) {
+        updatedPreset = CAMERA_PRESETS[savedEditingStyleIndex];
+      }
       const presetToShow = updatedPreset || presetToRestore;
       window.viewerLoadedPreset = presetToShow;
       let fullText = presetToShow.message;
@@ -8307,8 +8321,9 @@ function hideStyleEditor() {
       const promptInput = document.getElementById('viewer-prompt');
       if (promptInput) promptInput.value = fullText;
       const presetHeader = document.getElementById('viewer-preset-header');
-              if (presetHeader) presetHeader.textContent = presetToShow.name;
+      if (presetHeader) presetHeader.textContent = presetToShow.name;
     }
+    updatePresetDisplay();
     return;
   }
 }
@@ -8391,7 +8406,8 @@ async function saveStyle() {
   
   if (editingStyleIndex >= 0) {
     const oldName = CAMERA_PRESETS[editingStyleIndex].name;
-    CAMERA_PRESETS[editingStyleIndex] = { name, category, message, options, optionGroups, randomizeOptions, additionalInstructions };
+    const wasCustom = CAMERA_PRESETS[editingStyleIndex].internal === false;
+      CAMERA_PRESETS[editingStyleIndex] = { name, category, message, options, optionGroups, randomizeOptions, additionalInstructions, internal: wasCustom ? false : undefined };
     
     // Check if it's a factory preset OR imported preset
     const isFactoryPreset = factoryPresets.some(p => p.name === oldName);
@@ -8409,8 +8425,8 @@ async function saveStyle() {
         additionalInstructions: additionalInstructions
       });
     } else {
-      // User-created preset - update it directly
-      await presetStorage.saveNewPreset({ name, category, message, options, optionGroups, randomizeOptions, additionalInstructions });
+      // User-created preset - update it directly, preserving internal: false
+      await presetStorage.saveNewPreset({ name, category, message, options, optionGroups, randomizeOptions, additionalInstructions, internal: false });
     }
     
     // If name changed, update visiblePresets array
@@ -8514,13 +8530,18 @@ async function deleteStyle() {
       }
       
       // Update the preset display to reflect the switch
-      updatePresetDisplay();
+        updatePresetDisplay();
       
-      // Update visible presets display to reflect deletion
-      updateVisiblePresetsDisplay();
+        // Update visible presets display to reflect deletion
+        updateVisiblePresetsDisplay();
+
+        // Clear viewer loaded preset and reset gallery header since the preset is gone
+        window.viewerLoadedPreset = null;
+        const deletedPresetHeader = document.getElementById('viewer-preset-header');
+        if (deletedPresetHeader) deletedPresetHeader.textContent = 'NO PRESET LOADED';
       
-      const cameFromViewer = returnToGalleryFromViewerEdit;
-      hideStyleEditor();
+        const cameFromViewer = returnToGalleryFromViewerEdit;
+        hideStyleEditor();
       
       if (!cameFromViewer) {
         // Save scroll position before showing menu
