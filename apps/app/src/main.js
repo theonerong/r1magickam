@@ -7063,6 +7063,7 @@ function updatePresetDisplay() {
         } else {
             statusElement.textContent = `Style: ${currentPreset.name}`;
         }
+    }
     
     // Show style reveal on screen (middle text)
     if (isCameraMultiPresetActive && cameraSelectedPresets.length > 0) {
@@ -7075,7 +7076,6 @@ function updatePresetDisplay() {
 
     if (isMenuOpen) {
         updateMenuSelection();
-    }
     }
 }
 

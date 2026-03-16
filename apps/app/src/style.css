@@ -2044,7 +2044,7 @@ button:disabled {
     height: 40px;
     background: #ff4444;
     border-radius: 4px;
-    opacity: 0.6;
+    opacity: 0.2;
 }
 
 .viewer-left-carousel.hidden {
