@@ -2907,6 +2907,20 @@
     "additionalInstructions": ""
   },
   {
+    "name": "BRITTO ART STYLE",
+    "category": [
+      "ART",
+      "CREATIVE",
+      "POP ART",
+      "MODERN",
+      "CONTEMPORARY"
+    ],
+    "message": "Take a picture and transform the image into a vibrant, bold artwork defined by thick black outlines that form geometric and curved shapes interlocked like a joyful mosaic. Fill every shape with flat, saturated, high-contrast colors — electric blues, hot pinks, sunny yellows, vivid greens, and bright reds — leaving no space uncolored or empty. Layer hearts, stars, flowers, checks, stripes, dots, and playful geometric patterns densely inside each shape to create an explosion of energy and happiness. The composition should feel celebratory, optimistic, and full of life. Use a signature Pop Art meets Cubism aesthetic where figures, faces, animals, or objects are broken into stylized interlocking color blocks outlined in bold black. Every inch of the canvas must be filled with pattern and color. The result should radiate positivity, movement, and a sense of childlike wonder rendered in a sophisticated, graphic art style.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "CRITICAL: Every region must be filled with flat saturated color. Black outlines must be thick and bold throughout. No gradients, no photorealism, no empty white space. Pattern must appear inside shapes — not just as background."
+  },
+  {
     "name": "BROADWAY MUSICAL",
     "category": [
       "OPTIONS",
@@ -7288,14 +7302,14 @@
     "additionalInstructions": ""
   },
   {
-    "name": "DOG CHAIN GLASS ART",
+    "name": "DOG CHAIN ART",
     "category": [
       "ART",
       "ABSTRACT",
       "3D",
       "CREATIVE"
     ],
-    "message": "Take a picture and transform the entire image into a modernized dog chain art style rendered in full photorealistic 3D. Every element of the scene is reconstructed using interlocking chain links — varying in size, thickness, and orientation to sculpt form, depth, and shadow. The chains are rendered in hazy colored glass — translucent, refractive, and luminous — casting soft prismatic light and color bleed onto surrounding surfaces. The glass tones shift across the image using the original scene's color palette as a base, tinted and diffused through the glass material. The 3D rendering must show realistic light refraction through each link, subsurface scattering within the glass, realistic reflections on the chain surfaces, and dramatic depth of field that pulls focus to the central subject. The result should feel like a museum-quality sculptural glass chain installation photographed under professional studio lighting.",
+    "message": "Take a picture and transform the entire image into a modernized dog chain art style rendered in full photorealistic 3D. Every element of the scene is reconstructed using interlocking chain links — varying in size, thickness, and orientation to sculpt form, depth, and shadow. The chains are rendered in  colored glass-like surface with rich vibrant colors. The color tones shift across the image using the original scene's color palette as a base, tinted and diffused through the glass material. The result should feel like a museum-quality sculptural chain installation photographed under professional studio lighting.",
   "randomizeOptions": false,
   "options": [],
   "optionGroups": [],
@@ -11645,6 +11659,21 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "FINAL RESULT:\nThe image should look like the subject IS Henry Danger in costume, not a face overlay."
+  },
+  {
+    "name": "HERMANAS SCULL ART",
+    "category": [
+      "ART",
+      "FOLK ART",
+      "CUBAN",
+      "CREATIVE",
+      "COLORFUL",
+      "3D ART"
+    ],
+    "message": "Take a picture and transform the image into a real physical mixed-media artwork in the style of Cuban collaborative folk artists, the Scull Sisters. The artwork must look like an actual handmade object that exists in the real world — not a painting, not a digital illustration, not a drawing. The base is a flat rectangular canvas board painted with acrylic paint showing a colorful Old Havana or South Florida street scene — colonial buildings with ornate facades, arched doorways, wrought iron balconies, palm trees, tropical skies, and cobblestone streets, all rendered as flat paint on the canvas surface. On top of this painted canvas, real physical three-dimensional structures are mounted — some of the buildings and architectural elements are constructed from actual paper mache and wire, shaped into miniature building facades, balconies, storefronts, and street elements, then painted with acrylic and glued directly onto the canvas so they protrude physically from the surface. The subject of this image must appear as a small hand-sculpted paper mache figurine — a compact, slightly caricatured, little figure built from paper mache over a wire armature, painted with bright acrylic colors, and physically placed and mounted onto the canvas surface at a scale matching the miniature buildings around it. The figurine and the paper mache buildings physically cast real shadows onto the flat painted canvas beneath them because they are real objects sitting on top of the painted surface. The final image of this artwork must show the entire piece with physical depth and dimension of the mounted paper mache elements that are clearly visible — you can see that the figurine and some buildings actually stick out from the flat painted canvas behind them. The overall piece looks like a finished folk art collectible or museum display piece — part flat painting, part physical sculpture, entirely handmade.",
+  "options": [],
+  "randomizeOptions": false,
+  "additionalInstructions": "CRITICAL: This must look like a real physical handmade artwork — not a painting or illustration of a scene. The flat painted canvas background and the physically mounted paper mache figurine and building elements must be clearly distinguishable. The subject must be a small compact paper mache figurine to scale with the miniature buildings. Real cast shadows from the three-dimensional elements onto the flat painted canvas are mandatory. Any result that looks like a drawing, painting, or flat digital art is completely wrong."
   },
   {
     "name": "HIDDEN DETAILS",
@@ -19185,6 +19214,21 @@
     "additionalInstructions": "FINAL RESULT:\nA grainy, long-lens paparazzi photograph with tabloid watermarks focusing on the subject as if they're the celebrity being stalked, while an actual famous person accidentally appears in the background, blurred, distant, or at the edge of frame — completely incidental to the shot. The humor comes from treating the subject as the star while ignoring the real celebrity.\n\nCORE REQUIREMENTS:"
   },
   {
+    "name": "PAPER MACHE ART",
+    "category": [
+      "ART",
+      "SCULPTURE",
+      "CREATIVE",
+      "3D ART",
+      "CRAFT",
+      "MIXED MEDIA"
+    ],
+    "message": "Take a picture and transform the subject into a real physical paper mache sculpture. The result must look like an actual handmade three-dimensional sculptural object — not a painting, not a drawing, not a digital render. The subject — whether a person, animal, or object — is recreated as a compact  paper mache sculpture built by hand over a wire armature. The surface of the sculpture shows the unmistakable physical texture of real paper mache — layers of torn paper strips soaked in paste and dried, creating a rough, bumpy, fibrous surface with visible raised paper edges, slight lumps, and the organic imperfection of a handmade object. The sculpture is painted with bright flat acrylic folk art colors applied with a brush directly onto the dried paper mache surface — visible brushstrokes follow the contours and curves of the sculpted form. Bold solid colors fill each section of the figure with simple hand-painted decorative details such as dots, stripes, and geometric patterns layered on top.",
+  "options": [],
+  "randomizeOptions": false,
+  "additionalInstructions": "CRITICAL: The result must look like a real paper mache sculpture of the subject. The rough layered paper strip texture on the surface is mandatory and must be clearly visible. The sculpture must be three-dimensional and physically convincing."
+  },
+  {
     "name": "PAPER SHADOW BOX",
     "category": [
       "ART",
@@ -22314,6 +22358,21 @@
     ],
     "randomizeOptions": true,
     "additionalInstructions": "IMPORTANT:\n• The original movie must be real and culturally recognizable\n• The sequel may be fictional but must feel plausible within that universe\n• Maintain cinematic realism even when the tagline is humorous\n• Do not distort into absurd parody — it should look like an actual studio sequel announcement\n\nFINAL RESULT:\nThe final image should look like an official theatrical poster for a sequel to a famous real movie, starring the subject as the lead, with the number 2 clearly in the title and the humorous sequel tagline determined strictly by the modulo random seed unless overridden by external master prompt."
+  },
+  {
+    "name": "SERIGRAPHY",
+    "category": [
+      "ART",
+      "CREATIVE",
+      "PAINTING",
+      "CONTEMPORARY",
+      "FIGURATIVE",
+      "FINE ART"
+    ],
+    "message": "Take a picture and transform the image into a serigraph-style fine art print with the warm, intimate aesthetic of mid-century Mediterranean figurative painting. Render figures — especially elegant women in café settings, leisurely scenes, or quiet moments — using soft, flowing brushwork translated into flat color separations as if printed through silk screens. Use a warm, sun-drenched palette of ochres, terracottas, dusty roses, soft teals, lavenders, and creamy whites with gently muted tones. Figures should appear graceful and elongated with loosely defined features, surrounded by suggestion of environment rather than precise detail. Outlines should be soft and painterly, not harsh. Each color should sit in its own layer with slight visible separation between tones, mimicking the layered ink passes of serigraphy. The overall mood should be romantic, sophisticated, and timeless — evoking sun-soaked European leisure and quiet feminine elegance rendered in the style of a limited-edition signed art print.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "CRITICAL: Maintain the layered, flat-color screen-print aesthetic throughout. Warm Mediterranean palette only. Figures must appear graceful and stylized, not photorealistic. Background should be loosely rendered with impressionistic detail."
   },
   {
     "name": "SEUSS",
