@@ -42,9 +42,23 @@
         <p id="status" class="status-text" style="display: none;">Initializing camera...</p>
         <button id="reset-button" class="reset-button" style="display: none;">New Photo</button>
         <button id="camera-button" class="camera-button" title="Switch Camera" style="display: none;">📷</button>
-        <button id="menu-button" class="menu-button" title="Menu" style="display: none;">
-    <span class="button-icon">☰</span>
-</button>
+        <!-- Left carousel: Menu, Gallery, Master Prompt, Options — default visible -->
+        <div id="left-cam-carousel" class="left-cam-carousel" style="display: none;">
+            <div class="left-cam-carousel-track">
+                <button id="menu-button" class="left-cam-btn" title="Menu">
+                    <span class="button-icon">☰</span>
+                </button>
+                <button id="gallery-button" class="left-cam-btn" title="Gallery">
+                    <span class="button-icon">🖼️</span>
+                </button>
+                <button id="cam-master-prompt-btn" class="left-cam-btn" title="Master Prompt">
+                    <span class="button-icon">📝</span>
+                </button>
+                <button id="cam-options-btn" class="left-cam-btn" title="Toggle Options">
+                    <span class="button-icon">🎛️</span>
+                </button>
+            </div>
+        </div>
         <!-- Mode Buttons Carousel Container -->
 <div id="mode-carousel" class="mode-carousel" style="display: none;">
     <div class="mode-carousel-track">
@@ -70,10 +84,7 @@
         </button>
     </div>
 </div>
-        <button id="gallery-button" class="gallery-button" title="Gallery" style="display: none;">
-    <span class="button-icon">🖼️</span>
-</button>
-        
+                
         <!-- Style Name Reveal -->
         <div id="style-reveal" class="style-reveal" style="display: none;">
             <span id="style-reveal-text"></span>
@@ -856,14 +867,15 @@
                     <div id="section-special-modes" class="tutorial-section">
                         <h4 class="tutorial-heading">🎯 Special Modes</h4>
                         <h5 style="color: #ffffff; font-style: italic; margin-bottom: 10px; font-size: 6vw; font-weight: 700;">
-    *Swipe Left from Right-Edge of Main Screen to reveal modes*
+    *Double click on the main camera screen to hide/reveal buttons*
 </h5>
                         <p class="tutorial-text">
                             <strong>🎲 Random Mode:</strong> Surprises you with a random preset for each photo, selecting from favorites only if favorites selected. If no favorites are selected, selecting from all presets.<br>
                             <strong>⏱️ Timer Mode:</strong> Set a countdown (3-10s) and optional repeat intervals<br>
                             <strong>📸⚡ Burst Mode:</strong> Capture 3-10 photos rapidly (slow/medium/fast)<br>
                             <strong>👁️ Motion Detection:</strong> Automatically captures when movement is detected. Interval settings for repeat capture. Repeat capture is default. You must uncheck repeat capture to do single capture. Select start delay from 3 seconds to 30 minutes. This mode triggers when you press the eye icon and activates/starts when you press the side button. Motion detection deactivates/stops when you press the eye icon again. The eye pulses if motion detection is triggered. Best if used with NO MAGIC MODE enabled.<br>
-                            <strong>🎞️ Multi Preset:</strong> Select up to 20 presets to apply to a single photo in sequence. Tap the 🎞️ button in the carousel to open the preset selector. Choose your presets and tap Apply Selected. The footer and screen will show MULTI PRESETS while active. When you take a photo, all selected presets are queued and sent one by one with a 3 second interval between each. Works with Timer Mode — multi preset stays active until the timer is turned off. Cannot be used with Burst, Motion Detection, Random Mode, or No Magic Mode. If Manually Select Options is enabled, you will be prompted to choose options for each selected preset before the photo is taken. Multi preset is a one-shot mode — it resets automatically after all presets are sent, unless Timer Mode is active.
+                            <strong>🎞️ Multi Preset:</strong> Select up to 20 presets to apply to a single photo in sequence. Tap the 🎞️ button in the carousel to open the preset selector. Choose your presets and tap Apply Selected. The footer and screen will show MULTI PRESETS while active. When you take a photo, all selected presets are queued and sent one by one with a 3 second interval between each. Works with Timer Mode — multi preset stays active until the timer is turned off. Cannot be used with Burst, Motion Detection, Random Mode, or No Magic Mode. If Manually Select Options is enabled, you will be prompted to choose options for each selected preset before the photo is taken. Multi preset is a one-shot mode — it resets automatically after all presets are sent, unless Timer Mode is active.<br>
+                            <strong>📝 MASTER and 🎛️ OPTIONS Buttons:</strong> Below the Menu (☰) button on the left side within a carousel(that also includes the Menu (☰) and Gallery (🖼️) Buttons). The Master button (📝) accesses Master Prompt settings. Glows green when enabled. The OPTIONS (🎛️) button toggles Manually Select Options mode on or off. Glows green when enabled. All the main camera buttons (except for the camera (📷) button) are in the left carousel and are visible by default. However, you can hide them (except for the camera (📷) button) by double clicking on the main camera screen to hide/reveal buttons.<br><br>
                         </p>
                     </div>
 
@@ -875,6 +887,8 @@
 
                             <strong>Batch Operations:</strong> Select multiple images to apply one preset or delete in bulk. Click the Select button. Make sure to click DONE when finished.<br><br>
 
+                            <strong>Batch Operations-Combine:</strong> Select two images to combine them to feed to r1 thereby creating AI generated images from two of your gallery saved images. Click the Select button. Select the two images and click Combine. It will open up the Combined Image Viewer to prompt them and edit them. If you do not edit the combined picture and then save, it will be deleted after you exit the Combined Image Viewer. Saving an edited combined picture saves it to your gallery as a new image.<br><br>
+
                             <strong>Sort &amp; Filter:</strong> Organize by newest/oldest, filter by date range. When picking a date range, always select the day after your end date. For example for December 25 images, choose December 25 to December 26.<br><br>
 
                             <strong>View Photos:</strong> Tap any image to view it full-screen. The viewer is redesigned to give your photo maximum screen space.<br><br>
@@ -883,9 +897,9 @@
 
                             <strong>Delete (🗑️) and Close (×):</strong> Delete button, located at the top-left, deletes the selected image, Close button, located at the top-right, closes the single image viewer. <br><br>
 
-                            <strong>MASTER and OPTIONS Buttons:</strong> Below the delete button on the left side within a carousel. The Master button accesses Master Prompt settings. Glows green when enabled.  The OPTIONS button toggles Manually Select Options mode on or off. Glows green when enabled. These buttons are visible by default. However, you can hide them by swiping left towards the left edge of the screen. Swipe right to reveal them.<br><br>
+                            <strong>MASTER and OPTIONS Buttons:</strong> Below the delete button on the left side within a carousel. The Master button accesses Master Prompt settings. Glows green when enabled.  The OPTIONS button toggles Manually Select Options mode on or off. Glows green when enabled. These buttons are visible by default. However, you can hide them by double clicking the screen. Double click again to reveal them.<br><br>
 
-                            <strong>Edit and Export Images:</strong> Swipe left from the right edge of the image viewer to reveal the side carousel. It contains two buttons — ✏️ Edit (opens the image editor) and 📤 Export (uploads to gofile.io). Swipe right to hide the carousel again.<br><br>
+                            <strong>Edit and Export Images:</strong> The image viewer screen contains two buttons — ✏️ Edit (opens the image editor) and 📤 Export (uploads to gofile.io). Double click on the image viewer screen to hide the carousels.<br><br>
 
                             <strong>Upload to gofile.io:</strong> Use the Export button in the carousel inside the image viewer. Link expires after 24 hours. Mainly useful in No Magic Mode.<br><br>
 
@@ -931,7 +945,7 @@
                     <div id="section-edit-image" class="tutorial-section">
                         <h4 class="tutorial-heading">✏️ Edit Image Features</h4>
                         <p class="tutorial-text">
-                            <strong>How to Access:</strong> While viewing any photo in full-screen, swipe left from the right edge of the screen to reveal the side carousel, then tap the ✏️ Edit button.<br><br>
+                            <strong>How to Access:</strong> While viewing any photo in full-screen, tap the ✏️ Edit button. Double click on the screen to hide.<br><br>
                             
                             <strong>Available Tools:</strong><br>
                             The image editor provides several professional editing tools located on the right side of the screen:<br><br>
@@ -1148,7 +1162,8 @@ All of the presets are optimized to avoid "camera ran dry" or "content filter" i
             <div id="batch-action-bar" class="batch-action-bar" style="display: none;">
                     <span id="batch-selected-count" class="batch-selected-count">0 selected</span>
                     <div class="batch-actions-group">
-                        <button id="batch-apply-preset" class="batch-action-button" disabled>Apply Preset</button>
+                        <button id="batch-apply-preset" class="batch-action-button" disabled>Preset</button>
+                        <button id="batch-combine" class="batch-action-button combine" disabled title="Select exactly 2 images to combine">Combine</button>
                         <button id="batch-delete" class="batch-action-button delete" disabled>Delete</button>
                     </div>
                 </div>
@@ -1164,9 +1179,11 @@ All of the presets are optimized to avoid "camera ran dry" or "content filter" i
         <!-- Top corners: Delete (left) and Close (right) -->
         <button id="delete-viewer-image" class="viewer-delete-button">🗑️</button>
         <button id="close-viewer" class="viewer-close-button">×</button>
+        <!-- Combined image indicator — shows above preset header when in combine mode -->
+        <div id="viewer-combined-indicator" class="viewer-combined-indicator">⬛ COMBINED IMAGE</div>
         <!-- Preset name header between delete and close — tappable -->
         <div id="viewer-preset-header" class="viewer-preset-header">NO PRESET LOADED</div>
-        <!-- Left carousel: MASTER and OPTIONS — default visible, swipe left to hide -->
+        <!-- Left carousel: MASTER and OPTIONS — default visible, double click to hide -->
         <div id="viewer-left-carousel" class="viewer-left-carousel">
             <div class="viewer-left-carousel-track">
                 <button id="mp-viewer-button" class="viewer-left-carousel-btn">MASTER</button>
