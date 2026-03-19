@@ -949,8 +949,19 @@ function openImageViewer(index) {
   viewerZoom = 1;
   
   promptInput.value = '';
+
+  // Always reset preset header and loaded preset when opening a new image
+  // (will be restored if returning from editor)
+  window.viewerLoadedPreset = null;
   const presetHeader = document.getElementById('viewer-preset-header');
   if (presetHeader) presetHeader.textContent = 'NO PRESET LOADED';
+
+  // Show combined indicator if in combined mode
+  const combinedIndicator = document.getElementById('viewer-combined-indicator');
+  if (combinedIndicator) {
+    if (window.isCombinedMode) combinedIndicator.classList.add('visible');
+    else combinedIndicator.classList.remove('visible');
+  }
   
   // Light up MP button if master prompt is enabled
   const mpBtn = document.getElementById('mp-viewer-button');
@@ -973,7 +984,9 @@ function openImageViewer(index) {
   }
   
   viewer.style.display = 'flex';
-  
+  // Ensure both carousels are visible when viewer opens
+  if (window.initViewerCarousels) window.initViewerCarousels();
+
   // hideGallery();
 
   document.getElementById('gallery-modal').style.display = 'none';
@@ -984,7 +997,19 @@ function closeImageViewer() {
   currentViewerImageIndex = -1;
   viewerZoom = 1;
   window.viewerLoadedPreset = null;
-  
+  // When user exits the viewer, delete the combined temp image and clear combined mode
+  if (window.isCombinedMode && window.pendingCombinedImageId) {
+    const tempId = window.pendingCombinedImageId;
+    window.isCombinedMode = false;
+    window.pendingCombinedImageId = null;
+    const tempIndex = galleryImages.findIndex(img => img.id === tempId);
+    if (tempIndex >= 0) galleryImages.splice(tempIndex, 1);
+    deleteImageFromDB(tempId).catch(err => console.error('Failed to delete temp combined image:', err));
+  }
+  // Hide combined indicator
+  const combinedIndicator = document.getElementById('viewer-combined-indicator');
+  if (combinedIndicator) combinedIndicator.classList.remove('visible');
+
   // Show gallery again without resuming camera
   const modal = document.getElementById('gallery-modal');
   modal.style.display = 'flex';
@@ -1685,9 +1710,12 @@ async function submitMagicTransform() {
       pluginId: 'com.r1.pixelart',
       imageBase64: item.imageBase64
     }));
-    
+
+    // Combined image stays active until user closes the viewer
+
     alert('Magic transform submitted! You can submit again with a different prompt.');
   } else {
+    // Combined image stays active until user closes the viewer
     alert('Magic transform sent: ' + prompt.substring(0, 50) + '...');
   }
 }
@@ -1721,11 +1749,16 @@ function updateBatchSelection() {
   const countElement = document.getElementById('batch-selected-count');
   const applyButton = document.getElementById('batch-apply-preset');
   const deleteButton = document.getElementById('batch-delete');
+  const combineButton = document.getElementById('batch-combine');
   
   countElement.textContent = `${selectedBatchImages.size} selected`;
   applyButton.disabled = selectedBatchImages.size === 0;
   if (deleteButton) {
     deleteButton.disabled = selectedBatchImages.size === 0;
+  }
+  // Combine only active when exactly 2 images selected
+  if (combineButton) {
+    combineButton.disabled = selectedBatchImages.size !== 2;
   }
 }
 
@@ -1838,6 +1871,150 @@ async function processBatchImages(preset, imagesToProcess) {
   toggleBatchMode();
   
   alert(`Batch processing complete! ${processed} of ${total} images submitted.`);
+}
+
+async function combineTwoImages() {
+  if (selectedBatchImages.size !== 2) {
+    alert('Please select exactly 2 images to combine.');
+    return;
+  }
+
+  const ids = Array.from(selectedBatchImages);
+  const imgA = galleryImages.find(img => img.id === ids[0]);
+  const imgB = galleryImages.find(img => img.id === ids[1]);
+
+  if (!imgA || !imgB) {
+    alert('Could not find selected images.');
+    return;
+  }
+
+  try {
+    showGalleryStatusMessage('Combining images...', 'info', 0);
+
+    const loadImage = (src) => new Promise((resolve, reject) => {
+      const image = new Image();
+      image.onload = () => resolve(image);
+      image.onerror = () => reject(new Error('Failed to load image'));
+      image.src = src;
+    });
+
+    const [imageA, imageB] = await Promise.all([
+      loadImage(imgA.imageBase64),
+      loadImage(imgB.imageBase64)
+    ]);
+
+    // Scale both images to the same height (the taller one sets the height)
+    // then place side by side — no cropping
+    const targetHeight = Math.max(imageA.height, imageB.height);
+
+    // Scale each image proportionally to targetHeight
+    const scaleA = targetHeight / imageA.height;
+    const scaleB = targetHeight / imageB.height;
+    const scaledWidthA = Math.round(imageA.width * scaleA);
+    const scaledWidthB = Math.round(imageB.width * scaleB);
+    const totalWidth = scaledWidthA + scaledWidthB;
+
+    // Enforce 3:4 aspect ratio (width:height = 3:4) for the combined canvas
+    // Fit within this ratio without cropping — pad with black if needed
+    const targetRatioW = 3;
+    const targetRatioH = 4;
+
+    // Canvas height based on 3:4 from total width
+    let canvasWidth = totalWidth;
+    let canvasHeight = Math.round(canvasWidth * targetRatioH / targetRatioW);
+
+    // If the images at targetHeight are taller than the 3:4 canvas, scale down
+    if (targetHeight > canvasHeight) {
+      canvasHeight = targetHeight;
+      canvasWidth = Math.round(canvasHeight * targetRatioW / targetRatioH);
+    }
+
+    // Cap at 2048px wide to stay within safe canvas limits
+    const MAX_WIDTH = 2048;
+    if (canvasWidth > MAX_WIDTH) {
+      const downScale = MAX_WIDTH / canvasWidth;
+      canvasWidth = MAX_WIDTH;
+      canvasHeight = Math.round(canvasHeight * downScale);
+    }
+
+    // Recalculate image widths to fit within the canvas width (half each)
+    const halfCanvas = Math.floor(canvasWidth / 2);
+    const finalHeightA = Math.round(imageA.height * (halfCanvas / imageA.width));
+    const finalHeightB = Math.round(imageB.height * (halfCanvas / imageB.width));
+
+    const canvas = document.createElement('canvas');
+    canvas.width = canvasWidth;
+    canvas.height = canvasHeight;
+    const ctx = canvas.getContext('2d');
+
+    // Black background
+    ctx.fillStyle = '#000000';
+    ctx.fillRect(0, 0, canvasWidth, canvasHeight);
+
+    // Draw image A on left half, vertically centred, no cropping
+    const offsetAY = Math.floor((canvasHeight - finalHeightA) / 2);
+    ctx.drawImage(imageA, 0, offsetAY, halfCanvas, finalHeightA);
+
+    // Draw image B on right half, vertically centred, no cropping
+    const offsetBY = Math.floor((canvasHeight - finalHeightB) / 2);
+    ctx.drawImage(imageB, halfCanvas, offsetBY, halfCanvas, finalHeightB);
+
+    // Dividing line
+    ctx.strokeStyle = 'rgba(255,255,255,0.3)';
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.moveTo(halfCanvas, 0);
+    ctx.lineTo(halfCanvas, canvasHeight);
+    ctx.stroke();
+
+    const combinedBase64 = canvas.toDataURL('image/jpeg', 0.92);
+
+    // Save as temporary combined image — flagged for deletion after use
+    const tempId = Date.now().toString() + '-combined-' + Math.random().toString(36).substr(2, 9);
+    const newImageData = {
+      id: tempId,
+      imageBase64: combinedBase64,
+      timestamp: Date.now(),
+      isCombinedTemp: true
+    };
+
+    galleryImages.unshift(newImageData);
+    await saveImageToDB(newImageData);
+
+    // Store the combined image ID so we can delete it after sending
+    window.pendingCombinedImageId = tempId;
+    window.isCombinedMode = true;
+
+    // Exit batch mode silently
+    isBatchMode = false;
+    selectedBatchImages.clear();
+    const toggleBtn = document.getElementById('batch-mode-toggle');
+    const batchControls = document.getElementById('batch-controls');
+    const batchActionBar = document.getElementById('batch-action-bar');
+    if (toggleBtn) { toggleBtn.textContent = 'Select'; toggleBtn.classList.remove('active'); }
+    if (batchControls) batchControls.style.display = 'none';
+    if (batchActionBar) batchActionBar.style.display = 'none';
+
+    // Open the combined image in the viewer immediately
+    await showGallery();
+    const newIndex = galleryImages.findIndex(img => img.id === tempId);
+    if (newIndex >= 0) {
+      document.getElementById('gallery-modal').style.display = 'none';
+      openImageViewer(newIndex);
+    }
+
+    showGalleryStatusMessage(
+      '✅ Images combined! Now select a preset and tap ✨ MAGIC to transform both subjects.',
+      'success',
+      5000
+    );
+
+  } catch (err) {
+    window.isCombinedMode = false;
+    window.pendingCombinedImageId = null;
+    console.error('Combine failed:', err);
+    showGalleryStatusMessage('Failed to combine images: ' + err.message, 'error', 4000);
+  }
 }
 
 async function batchDeleteImages() {
@@ -3242,14 +3419,24 @@ function hidePresetBuilderSubmenu() {
     // Remember which preset was loaded before we open the viewer (openImageViewer blanks the field)
     const presetToRestore = window.viewerLoadedPreset;
     openImageViewer(currentViewerImageIndex);
-    // If a preset was loaded when the user tapped the text field, restore it
+    // Determine which preset to load into the viewer
+    let presetToShow = null;
     if (presetToRestore) {
-      // Try by name first; if preset was renamed, use the saved builder index position
+      // Editing existing — find by name first, fall back to saved index
       let updatedPreset = CAMERA_PRESETS.find(p => p.name === presetToRestore.name);
       if (!updatedPreset && savedBuilderIndex >= 0 && CAMERA_PRESETS[savedBuilderIndex]) {
         updatedPreset = CAMERA_PRESETS[savedBuilderIndex];
       }
-      const presetToShow = updatedPreset || presetToRestore;
+      presetToShow = updatedPreset || presetToRestore;
+    } else if (savedBuilderIndex >= 0 && CAMERA_PRESETS[savedBuilderIndex]) {
+      // Edited existing preset with no prior loaded preset
+      presetToShow = CAMERA_PRESETS[savedBuilderIndex];
+    } else {
+      // Brand new preset — it was just pushed to CAMERA_PRESETS, find it by internal:false at end
+      const newPresets = CAMERA_PRESETS.filter(p => p.internal === false);
+      if (newPresets.length > 0) presetToShow = newPresets[newPresets.length - 1];
+    }
+    if (presetToShow) {
       window.viewerLoadedPreset = presetToShow;
       let fullText = presetToShow.message;
       if (presetToShow.randomizeOptions) {
@@ -4556,6 +4743,7 @@ function toggleManualOptionsMode() {
   
   // Update the camera footer
   updateNoMagicFooter();
+  updatePresetDisplay();
   
   // Sync the gallery Options button color if it exists
   const optionsBtn = document.getElementById('options-viewer-button');
@@ -4565,6 +4753,13 @@ function toggleManualOptionsMode() {
     } else {
       optionsBtn.classList.remove('enabled');
     }
+  }
+
+  // Sync the camera left carousel Options button
+  const camOptBtn = document.getElementById('cam-options-btn');
+  if (camOptBtn) {
+    if (manualOptionsMode) camOptBtn.classList.add('enabled');
+    else camOptBtn.classList.remove('enabled');
   }
 }
 
@@ -4921,27 +5116,29 @@ const TOUR_STEPS = [
   { section: 'AI Presets', title: '⭐ Favorites', body: 'In the main menu, tap the star next to any preset to mark it as a favorite. Favorites are used by Random Mode when favorites are selected.' },
   { section: 'AI Presets', title: '🔍 Filter Presets', body: 'Use the search box in the main menu to quickly find presets by name or category. Tap a category tag at the bottom to filter by style. Tapping on the x next to the search box removes the keyboard. Double click to clear.' },
   { section: 'AI Presets', title: '🔊 Hear Preset Info', body: 'When browsing presets in the Import screen, tap any preset name to hear its description read aloud. Use the mute button in the header to toggle audio on or off.' },
-  { section: 'Special Modes', title: '🎯 Special Modes — How to Access', body: 'Swipe left from the right edge of the main camera screen to reveal the Special Modes carousel.' },
+  { section: 'Special Modes', title: '🎯 Special Modes — How to Access', body: 'They are default visible. Double click on the main camera screen to hide the Special Modes carousel.' },
   { section: 'Special Modes', title: '🎲 Random Mode', body: 'Picks a random preset for every photo you take. If you have favorites selected it draws only from those, otherwise from all visible presets.' },
   { section: 'Special Modes', title: '⏱️ Timer Mode', body: 'Set a countdown of 3, 5, or 10 seconds before each shot. Enable repeat mode so it automatically keeps taking photos at a set interval.' },
   { section: 'Special Modes', title: '📸⚡ Burst Mode', body: 'Captures 3 to 10 photos rapidly in one press. Choose slow, medium, or fast burst speed in Settings. Great for action shots or getting multiple variations.' },
   { section: 'Special Modes', title: '👁️ Motion Detection', body: 'Automatically captures when movement is detected in frame. Set sensitivity, start delay, and cooldown interval. The eye icon pulses when motion is triggered.' },
   { section: 'Special Modes', title: '🎞️ Multi Preset', body: 'Select up to 20 presets to apply to a single photo. Tap the film strip button in the carousel, choose presets, and tap Apply Selected. When you take a photo, each preset is sent in order with a 3 second gap between them.' },
+  { section: 'Special Modes', title: '📝 Master and 🎛️ Options', body: 'Located below the Menu button on the left side within a carousel. The Master button accesses Master Prompt settings. The OPTIONS button toggles Manually Select Options mode. Both Glow green when enabled.' },
   { section: 'Gallery', title: '🖼️ Gallery Activities', body: 'Within the gallery there are thumbnails of captured images. You can either select multiple images to apply a preset, or select a single image to either edit, export or apply one or several presets.' },
   { section: 'Uploading Images', title: '📥 Importing External Images', body: 'In the gallery, you may also bring any image from the web into the gallery using a QR code. Upload the image to catbox.moe, copy the direct link, and generate a QR code at qr-code-generator.com.' },
   { section: 'Uploading Images', title: '📷 Scanning the QR Code', body: 'In the gallery, press Import then Scan QR Code. Point your R1 camera at the QR code and wait. The image will be automatically saved to your gallery.' },
   { section: 'Uploading Images', title: '⚠️ Verify Your Link First', body: 'Before making the QR code, paste the link into a browser. If it shows only the image with nothing around it, it will work. If it shows a webpage with the image embedded, it will not work.' },
   { section: 'Gallery', title: '☑️ Batch Operations', body: 'Tap the Select button to enter batch mode. Select multiple images, then apply one preset to all of them or delete them in bulk. Always tap DONE when finished.' },
+  { section: 'Gallery', title: '👥 Combine Images', body: 'Tap the Select button to enter batch mode. Select two images, then click Combine to create one image. You can apply presets to create combined subjects into one final image using existing presets.' },
   { section: 'Gallery', title: '📅 Sort and Filter', body: 'Sort by newest or oldest. Filter by date range. When filtering, always select the day after your end date. For example, to see December 25 photos, filter from December 25 to December 26.' },
   { section: 'Gallery', title: '🖼️ Image Viewer', body: 'Tap a thumbnail image in the gallery to view it full-screen. The viewer is redesigned to give your photo maximum screen space. Pinch to zoom in and out.' },
   { section: 'Gallery', title: '🎨 Applying Presets to Single Image', body: 'After clicking on a single image, Tap LOAD or MULTI to transform a saved image. Click twice on a preset to apply it. You can stack multiple transformations.' },
   { section: 'Gallery', title: '🏷️ Preset Header', body: 'At the very top of the image viewer a header shows the name of the currently loaded preset. Tap the header to hear the preset name and description.' },
   { section: 'Gallery', title: '⬅️ Left Side Button', body: 'The delete button is in the top-left corner.' },
-  { section: 'Gallery', title: '🎠 Left Carousel', body: 'Below the delete button, the two left buttons are MASTER and OPTIONS. They are visible by default. Swipe left to hide them. The MASTER button toggles Master Prompt on or off. The OPTIONS button toggles Manually Select Options mode.' },
-  { section: 'Gallery', title: '🎠 Right Carousel', body: 'Swipe left from the right edge of the image viewer to reveal the side carousel which has two buttons — Edit which opens the image editor, and Export which uploads to gofile.io.' },
+  { section: 'Gallery', title: '🎠 Left Carousel', body: 'Below the delete button are two left buttons-MASTER and OPTIONS. They are visible by default. Double click on screen to hide them. The MASTER button toggles Master Prompt on or off. The OPTIONS button toggles Manually Select Options mode.' },
+  { section: 'Gallery', title: '🎠 Right Carousel', body: 'The side carousel has two buttons — Edit which opens the image editor, and Export which uploads to gofile.io. Double click on screen to hide the buttons.' },
   { section: 'Gallery', title: '⬇️ Bottom Bar Buttons', body: 'Four buttons on the bottom of image viewer. PROMPT opens editor. LOAD opens preset selector. MULTI opens multi-preset selector. MAGIC transforms image using the loaded preset, or picks randomly if nothing is loaded.' },
-  { section: 'Gallery', title: '🌐 Export to gofile.io', body: 'Share a gallery image by swiping left in the image viewer to reveal the carousel, then tapping Export. You get a QR code with a link that expires after 24 hours. Most useful in No Magic Mode.' },
-  { section: 'Image Editor', title: '✏️ Opening the Editor', body: 'While viewing any photo, swipe left from the right edge to reveal the image viewer carousel, then tap the Edit button. The editor opens with crop, rotate, sharpen, auto-correct, and brightness and contrast controls.' },
+  { section: 'Gallery', title: '🌐 Export to gofile.io', body: 'Tapping Export in the right carousel. You get a QR code with a link that expires after 24 hours. Most useful in No Magic Mode.' },
+  { section: 'Image Editor', title: '✏️ Opening the Editor', body: 'While viewing any photo, the image viewer carousel contains the Edit button. Tap it. The editor opens with crop, rotate, sharpen, auto-correct, and brightness and contrast controls.' },
   { section: 'Image Editor', title: '✂️ Crop Tool', body: 'Tap Crop to activate. Two orange corner markers appear. Drag them to frame your desired area. Tap Crop again to apply.' },
   { section: 'Image Editor', title: '🔄 Rotate Tool', body: 'Rotates your image 90 degrees clockwise each tap. Tap multiple times to reach 180, 270, or back to 0 degrees.' },
   { section: 'Image Editor', title: '🔍 Sharpen and Auto Correct', body: 'Sharpen makes edges crisper. Auto Correct automatically balances brightness, contrast, and color. Great as a first step before manual tweaks.' },
@@ -6097,20 +6294,15 @@ async function initCamera() {
       cameraButton.style.display = 'flex';
     }
     
-    const menuButton = document.getElementById('menu-button');
-    if (menuButton) {
-      menuButton.style.display = 'flex';
-    }
-    
-    const modeCarousel = document.getElementById('mode-carousel');
-    if (modeCarousel) {
-      modeCarousel.style.display = 'block';
-    }
+    const leftCamCarousel = document.getElementById('left-cam-carousel');
+      if (leftCamCarousel) {
+        leftCamCarousel.style.display = 'flex';
+      }
 
-    const galleryButton = document.getElementById('gallery-button');
-    if (galleryButton) {
-      galleryButton.style.display = 'flex';
-    }
+      const modeCarousel = document.getElementById('mode-carousel');
+      if (modeCarousel) {
+        modeCarousel.style.display = 'block';
+      }
 
     updatePresetDisplay();
     
@@ -7072,7 +7264,6 @@ function updatePresetDisplay() {
         } else {
             statusElement.textContent = `Style: ${currentPreset.name}`;
         }
-    }
     
     // Show style reveal on screen (middle text)
     if (isCameraMultiPresetActive && cameraSelectedPresets.length > 0) {
@@ -7085,6 +7276,7 @@ function updatePresetDisplay() {
 
     if (isMenuOpen) {
         updateMenuSelection();
+    }
     }
 }
 
@@ -7681,9 +7873,38 @@ async function hideMasterPromptSubmenu() {
     openImageViewer(savedViewerImageIndex);
     return;
   }
+
+  // Check if opened from the camera left carousel
+  if (window.masterPromptFromCamera) {
+    window.masterPromptFromCamera = false;
+    document.getElementById('master-prompt-submenu').style.display = 'none';
+    isMasterPromptSubmenuOpen = false;
+    isSettingsSubmenuOpen = false;
+    // Sync the carousel MP button color
+    const camMpBtn = document.getElementById('cam-master-prompt-btn');
+    if (camMpBtn) {
+      if (masterPromptEnabled) camMpBtn.classList.add('enabled');
+      else camMpBtn.classList.remove('enabled');
+    }
+    // Update all indicators and display
+    updateMasterPromptIndicator();
+    updateMasterPromptDisplay();
+    updatePresetDisplay();
+    // Show left carousel again and resume camera
+    const leftCamCarousel = document.getElementById('left-cam-carousel');
+    if (leftCamCarousel) leftCamCarousel.style.display = 'flex';
+    await resumeCamera();
+    return;
+  }
   
   document.getElementById('master-prompt-submenu').style.display = 'none';
   isMasterPromptSubmenuOpen = false;
+  // Sync camera left carousel MP button color
+  const camMpBtnHide = document.getElementById('cam-master-prompt-btn');
+  if (camMpBtnHide) {
+    if (masterPromptEnabled) camMpBtnHide.classList.add('enabled');
+    else camMpBtnHide.classList.remove('enabled');
+  }
   // await resumeCamera();
   showSettingsSubmenu();
 }
@@ -7908,6 +8129,13 @@ function parsePresetOptions(preset) {
 function getFinalPrompt(preset, manualSelection = null) {
   // Build prompt from clean preset structure
   let finalPrompt = preset.message;
+
+  // If this is a combined image, replace the opening "Take a picture" with the combine preamble
+  if (window.isCombinedMode) {
+    const combinePreamble = 'Take a picture of this image containing two photos placed side by side — the left half is Subject A and the right half is Subject B. Take both subjects and transform them together into a single unified image —';
+    // Replace ONLY the words "Take a picture" at the very start, preserving the rest of the sentence
+    finalPrompt = finalPrompt.replace(/^Take a picture/i, combinePreamble);
+  }
   
   // Handle options if preset uses randomization
   if (preset.randomizeOptions) {
@@ -8063,15 +8291,15 @@ function populateStylesList(preserveScroll = false) {
     const filtered = regular.filter(preset => {
       if (styleFilterText) {
         const searchText = styleFilterText.toLowerCase();
-          const categoryMatch = preset.category && preset.category.some(cat => cat.toLowerCase().includes(searchText));
-          const optionsMatch = (
-        (preset.options && preset.options.some(o => o.text && o.text.toLowerCase().includes(searchText))) ||
-        (preset.optionGroups && preset.optionGroups.some(g => g.title && g.title.toLowerCase().includes(searchText) || g.options && g.options.some(o => o.text && o.text.toLowerCase().includes(searchText))))
-      );
-          const textMatch = preset.name.toLowerCase().includes(searchText) || 
+        const categoryMatch = preset.category && preset.category.some(cat => cat.toLowerCase().includes(searchText));
+        const optionsMatch = (
+          (preset.options && preset.options.some(o => o.text && o.text.toLowerCase().includes(searchText))) ||
+          (preset.optionGroups && preset.optionGroups.some(g => g.title && g.title.toLowerCase().includes(searchText) || g.options && g.options.some(o => o.text && o.text.toLowerCase().includes(searchText))))
+        );
+        const textMatch = preset.name.toLowerCase().includes(searchText) || 
                          preset.message.toLowerCase().includes(searchText) ||
                          categoryMatch || optionsMatch;
-          if (!textMatch) return false;
+        if (!textMatch) return false;
       }
       
       // Then apply category filter if active
@@ -8294,14 +8522,23 @@ function hideStyleEditor() {
     // Remember which preset was loaded before we open the viewer (openImageViewer blanks the field)
     const presetToRestore = window.viewerLoadedPreset;
     openImageViewer(currentViewerImageIndex);
-    // If a preset was loaded when the user tapped the text field, restore it
+    // Determine which preset to load into the viewer
+    let presetToShow = null;
     if (presetToRestore) {
-      // Try by name first; if preset was renamed, use the saved index position
+      // Editing existing — find by name first, fall back to saved index
       let updatedPreset = CAMERA_PRESETS.find(p => p.name === presetToRestore.name);
       if (!updatedPreset && savedEditingStyleIndex >= 0 && CAMERA_PRESETS[savedEditingStyleIndex]) {
         updatedPreset = CAMERA_PRESETS[savedEditingStyleIndex];
       }
-      const presetToShow = updatedPreset || presetToRestore;
+      presetToShow = updatedPreset || presetToRestore;
+    } else if (savedEditingStyleIndex >= 0 && CAMERA_PRESETS[savedEditingStyleIndex]) {
+      // Edited existing with no prior loaded preset
+      presetToShow = CAMERA_PRESETS[savedEditingStyleIndex];
+    } else {
+      // Brand new preset saved from style editor — find most recently saved
+      presetToShow = CAMERA_PRESETS[CAMERA_PRESETS.length - 1] || null;
+    }
+    if (presetToShow) {
       window.viewerLoadedPreset = presetToShow;
       let fullText = presetToShow.message;
       if (presetToShow.randomizeOptions) {
@@ -10104,6 +10341,12 @@ const result = await presetImporter.import();
       }
 
       updateMasterPromptDisplay();
+      // Sync camera left carousel MP button color
+      const camMpBtnChk = document.getElementById('cam-master-prompt-btn');
+      if (camMpBtnChk) {
+        if (masterPromptEnabled) camMpBtnChk.classList.add('enabled');
+        else camMpBtnChk.classList.remove('enabled');
+      }
     });
   }
   
@@ -10729,6 +10972,11 @@ const result = await presetImporter.import();
     batchApplyPreset.addEventListener('click', applyPresetToBatch);
   }
 
+  const batchCombine = document.getElementById('batch-combine');
+  if (batchCombine) {
+    batchCombine.addEventListener('click', combineTwoImages);
+  }
+
   const batchDelete = document.getElementById('batch-delete');
   if (batchDelete) {
     batchDelete.addEventListener('click', batchDeleteImages);
@@ -11351,75 +11599,175 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
-// Viewer carousel swipe logic — right carousel (Edit/Export) and left carousel (MASTER/OPTIONS)
+// Gallery image viewer — double-tap to toggle both carousels
 (function() {
-  let vcTouchStartX = 0;
   const viewerEl = document.getElementById('image-viewer');
   if (!viewerEl) return;
 
-  viewerEl.addEventListener('touchstart', (e) => {
-    vcTouchStartX = e.touches[0].clientX;
-  }, { passive: true });
+  let lastTapTime = 0;
+  let lastTapX = 0;
+  let lastTapY = 0;
+  const DOUBLE_TAP_DELAY = 300;
+  const DOUBLE_TAP_RADIUS = 40;
+
+  let leftVisible = true;
+  let rightVisible = true;
+
+  // Set right carousel visible by default on open
+  function initViewerCarousels() {
+    const right = document.getElementById('viewer-carousel');
+    const left = document.getElementById('viewer-left-carousel');
+    if (right) { right.classList.remove('hidden'); rightVisible = true; }
+    if (left) { left.classList.remove('hidden'); leftVisible = true; }
+  }
+  // Expose so openImageViewer can call it
+  window.initViewerCarousels = initViewerCarousels;
 
   viewerEl.addEventListener('touchend', (e) => {
-    const rightCarousel = document.getElementById('viewer-carousel');
-    const leftCarousel = document.getElementById('viewer-left-carousel');
-    const endX = e.changedTouches[0].clientX;
-    const diff = vcTouchStartX - endX; // positive = swipe left, negative = swipe right
-    const rightEdgeZone = window.innerWidth * 0.5;
-    const leftEdgeZone = window.innerWidth * 0.5;
+    if (e.changedTouches.length !== 1) return;
 
-    // RIGHT carousel: swipe left from right half to show, swipe right to hide
-    if (rightCarousel) {
-      if (vcTouchStartX > rightEdgeZone && diff > 30) {
-        rightCarousel.classList.add('show');
-      }
-      if (diff < -30) {
-        rightCarousel.classList.remove('show');
-      }
-    }
+    const touch = e.changedTouches[0];
+    const now = Date.now();
+    const timeDiff = now - lastTapTime;
+    const distX = Math.abs(touch.clientX - lastTapX);
+    const distY = Math.abs(touch.clientY - lastTapY);
 
-    // LEFT carousel: swipe left from left half to hide, swipe right from left half to show
-    if (leftCarousel) {
-      if (vcTouchStartX < leftEdgeZone && diff > 30) {
-        // Swipe left on left side — hide the left carousel
-        leftCarousel.classList.add('hidden');
+    if (timeDiff < DOUBLE_TAP_DELAY && distX < DOUBLE_TAP_RADIUS && distY < DOUBLE_TAP_RADIUS) {
+      const right = document.getElementById('viewer-carousel');
+      const left = document.getElementById('viewer-left-carousel');
+
+      leftVisible = !leftVisible;
+      rightVisible = !rightVisible;
+
+      if (left) {
+        if (leftVisible) left.classList.remove('hidden');
+        else left.classList.add('hidden');
       }
-      if (vcTouchStartX < leftEdgeZone && diff < -30) {
-        // Swipe right on left side — show the left carousel
-        leftCarousel.classList.remove('hidden');
+      if (right) {
+        if (rightVisible) right.classList.remove('hidden');
+        else right.classList.add('hidden');
       }
+
+      lastTapTime = 0;
+    } else {
+      lastTapTime = now;
+      lastTapX = touch.clientX;
+      lastTapY = touch.clientY;
     }
   }, { passive: true });
 })();
 
+// ===== LEFT CAMERA CAROUSEL =====
+(function() {
+  // Sync enabled state of MP and Options buttons on load
+  function syncLeftCamBtns() {
+    const mpBtn = document.getElementById('cam-master-prompt-btn');
+    const optBtn = document.getElementById('cam-options-btn');
+    if (mpBtn) {
+      if (masterPromptEnabled) mpBtn.classList.add('enabled');
+      else mpBtn.classList.remove('enabled');
+    }
+    if (optBtn) {
+      if (manualOptionsMode) optBtn.classList.add('enabled');
+      else optBtn.classList.remove('enabled');
+    }
+  }
+
+  // Master Prompt button — opens master prompt submenu directly, returns to camera on exit
+  const camMpBtn = document.getElementById('cam-master-prompt-btn');
+  if (camMpBtn) {
+    camMpBtn.addEventListener('click', () => {
+      // Hide carousel so settings has full screen
+      document.getElementById('left-cam-carousel').style.display = 'none';
+      // Open settings submenu as required parent context
+      document.getElementById('unified-menu').style.display = 'none';
+      isMenuOpen = false;
+      // Go directly to master prompt submenu
+      showMasterPromptSubmenu();
+      // Flag so hideMasterPromptSubmenu knows to return to camera not settings
+      window.masterPromptFromCamera = true;
+    });
+  }
+
+  // Options toggle button — toggles manualOptionsMode immediately
+  const camOptBtn = document.getElementById('cam-options-btn');
+  if (camOptBtn) {
+    camOptBtn.addEventListener('click', () => {
+      toggleManualOptionsMode();
+      // Sync this button's color
+      if (manualOptionsMode) camOptBtn.classList.add('enabled');
+      else camOptBtn.classList.remove('enabled');
+    });
+  }
+
+  // Initial sync after a brief delay to ensure state is loaded
+  setTimeout(syncLeftCamBtns, 200);
+})();
+
 console.log('AI Camera Styles app initialized!');
 
-// --- Swipe Detection for Mode Carousel ---
-let touchStartX = 0;
+// --- Double-tap to toggle BOTH main camera carousels ---
+(function() {
+  let lastTapTime = 0;
+  let lastTapX = 0;
+  let lastTapY = 0;
+  const DOUBLE_TAP_DELAY = 300;   // max ms between taps to count as double-tap
+  const DOUBLE_TAP_RADIUS = 40;   // max px movement between taps
 
-document.addEventListener('touchstart', (e) => {
-    touchStartX = e.touches[0].clientX;
-}, { passive: true });
+  // Track whether carousels are currently visible
+  let leftVisible = true;
+  let rightVisible = true;
 
-document.addEventListener('touchend', (e) => {
-    const touchEndX = e.changedTouches[0].clientX;
-    const diffX = touchStartX - touchEndX; // Positive = Swipe Left
-    const carousel = document.querySelector('.mode-carousel');
+  // Right carousel visible state controlled by CSS and .hidden class only
 
-    if (!carousel) return;
+  document.addEventListener('touchend', (e) => {
+    // Only on main camera screen
+    if (document.getElementById('gallery-modal')?.style.display === 'flex') return;
+    if (document.getElementById('image-viewer')?.style.display === 'flex') return;
+    if (document.getElementById('unified-menu')?.style.display === 'flex') return;
+    if (document.getElementById('settings-submenu')?.style.display === 'flex') return;
+    if (document.getElementById('master-prompt-submenu')?.style.display === 'flex') return;
+    if (document.getElementById('preset-builder-submenu')?.style.display === 'flex') return;
 
-    const swipeThreshold = 30; 
-    // Detects if swipe starts on the right 40% of screen
-    const edgeZone = window.innerWidth * 0.5; 
+    // Ignore if more than one finger (pinch to zoom)
+    if (e.changedTouches.length !== 1) return;
 
-    // SHOW MENU: Swipe Left
-    if (touchStartX > edgeZone && diffX > swipeThreshold) {
-        carousel.classList.add('show');
+    const touch = e.changedTouches[0];
+    const now = Date.now();
+    const timeDiff = now - lastTapTime;
+    const distX = Math.abs(touch.clientX - lastTapX);
+    const distY = Math.abs(touch.clientY - lastTapY);
+
+    if (timeDiff < DOUBLE_TAP_DELAY && distX < DOUBLE_TAP_RADIUS && distY < DOUBLE_TAP_RADIUS) {
+      // Valid double-tap — toggle both carousels
+      const leftCarousel = document.getElementById('left-cam-carousel');
+      const rightCarousel = document.querySelector('.mode-carousel');
+
+      leftVisible = !leftVisible;
+      rightVisible = !rightVisible;
+
+      if (leftCarousel) {
+        if (leftVisible) leftCarousel.classList.remove('hidden');
+        else leftCarousel.classList.add('hidden');
+      }
+
+      if (rightCarousel) {
+        if (rightVisible) {
+          rightCarousel.style.transform = 'translateX(0)';
+          rightCarousel.style.pointerEvents = 'auto';
+        } else {
+          rightCarousel.style.transform = 'translateX(calc(100% + 8px))';
+          rightCarousel.style.pointerEvents = 'none';
+        }
+      }
+
+      // Reset so triple-tap doesn't re-trigger
+      lastTapTime = 0;
+    } else {
+      // First tap — record it
+      lastTapTime = now;
+      lastTapX = touch.clientX;
+      lastTapY = touch.clientY;
     }
-
-    // HIDE MENU: Swipe Right
-    if (diffX < -swipeThreshold) {
-        carousel.classList.remove('show');
-    }
-}, { passive: true });
+  }, { passive: true });
+})();

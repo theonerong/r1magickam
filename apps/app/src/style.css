@@ -1523,6 +1523,115 @@ button:disabled {
     transform: scale(0.95);
 }
 
+/* Left camera carousel — Menu, Gallery, Master Prompt, Options */
+/* Mirrors right carousel logic: container wider than buttons, buttons centered,
+   pull-tab outside container edge, hidden slides fully off screen leaving 8px tab */
+.left-cam-carousel {
+    position: absolute;
+    left: -2vw;
+    top: 0;
+    bottom: 8vh;
+    width: 24vw;
+    display: flex;
+    flex-direction: column;
+    z-index: 101;
+    overflow: visible;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateX(0);
+    pointer-events: auto;
+}
+
+/* Pull-tab on right edge — mirrors right carousel's left: -10px tab */
+.left-cam-carousel::after {
+    display: none;
+}
+
+.left-cam-carousel.hidden {
+    transform: translateX(calc(-100% + 8px));
+    pointer-events: none;
+}
+
+.left-cam-carousel.hidden::after {
+    opacity: 0.6;
+}
+
+/* Track: menu pinned top, gallery pinned bottom, middle two centred */
+.left-cam-carousel-track {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+/* All buttons centered in 24vw container — same as right carousel centering */
+.left-cam-carousel-track #menu-button {
+    position: absolute;
+    top: 1vh;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.left-cam-carousel-track #gallery-button {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Master and Options centered vertically in middle space with clear gap */
+.left-cam-carousel-track #cam-master-prompt-btn {
+    position: absolute;
+    top: calc(50% - 30px - 8vw);
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.left-cam-carousel-track #cam-options-btn {
+    position: absolute;
+    top: calc(50% + 30px - 8vw);
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.left-cam-btn {
+    position: relative;
+    box-sizing: border-box;
+    width: 12vw;
+    height: 12vw;
+    min-width: 44px;
+    min-height: 44px;
+    background: transparent;
+    color: #FE5F00;
+    border: 2px solid #FE5F00;
+    border-radius: 2vw;
+    font-size: 6vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 102;
+    padding: 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.2s ease;
+}
+
+.left-cam-btn:active {
+    background: rgba(254, 95, 0, 0.9);
+    color: #000;
+    transform: scale(0.95);
+}
+
+.left-cam-btn.enabled {
+    background: rgba(76, 175, 80, 0.85);
+    border-color: #4CAF50;
+    color: #fff;
+    box-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
+}
+
+.left-cam-btn.enabled:active {
+    background-color: #4CAF50;
+    color: #000;
+}
+
 /* Mode Carousel Container */
 .mode-carousel {
     position: absolute;
@@ -1537,34 +1646,27 @@ button:disabled {
     
     /* Reveal Animation */
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    /* Hidden state: Leaves ~8px of the handle visible on the edge */
-    transform: translateX(calc(100% - 8px));
-    pointer-events: none; /* Add this line */ 
+    transform: translateX(0);
+    pointer-events: auto; 
 }
 
 /* The visual "Pull-Tab" Indicator */
 .mode-carousel::before {
-    content: '';
-    position: absolute;
-    left: -10px; /* Positions it just outside the left edge of the container */
-    top: 50%;
-    transform: translateY(-50%);
-    width: 4px;
-    height: 40px;
-    background: #FE5F00;
-    border-radius: 4px;
-    opacity: 0.6;
-    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
+    display: none;
 }
 
-/* When the menu is shown, we hide the handle or make it subtle */
 .mode-carousel.show {
     transform: translateX(0);
-    pointer-events: auto; /* Reactivate touches when open */
+    pointer-events: auto;
+}
+
+.mode-carousel.hidden {
+    transform: translateX(calc(100% + 8px));
+    pointer-events: none;
 }
 
 .mode-carousel.show::before {
-    opacity: 0.2; /* Dims the handle when the menu is actually open */
+    display: none;
 }
 
 .mode-carousel-track {
@@ -1574,9 +1676,7 @@ button:disabled {
     gap: 2vw;
     overflow-x: hidden;
     overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
-    scroll-snap-type: y mandatory;
-    scroll-behavior: smooth;
+    overscroll-behavior: none;
     padding: 10px 0;
     height: 100%;
     width: 100%; /* Back to 100% - no more calc hacks */
@@ -1935,19 +2035,42 @@ button:disabled {
     position: relative;
 }
 
+/* Combined image indicator — sits above the preset header */
+.viewer-combined-indicator {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5vw;
+    min-height: 20px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    color: #fff;
+    font-size: 2.5vw;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    z-index: 2003;
+}
+
+.viewer-combined-indicator.visible {
+    display: flex;
+}
+
 /* Preset name header at the very top center */
 .viewer-preset-header {
     position: absolute;
-    top: 0;
-    left: 20vw;
-    right: 20vw;
-    height: 10vw;
-    min-height: 44px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    top: 5vw;
+    left: calc(44px + 3vw);
+    right: calc(44px + 3vw);
+    height: 9vw;
+    min-height: 0;
+    display: block;
+    line-height: 9vw;
     color: #FE5F00;
-    font-size: 4vw;
+    font-size: 3.5vw;
     font-weight: bold;
     text-align: center;
     z-index: 2002;
@@ -1956,7 +2079,8 @@ button:disabled {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    padding: 0 2vw;
+    padding: 0 1vw;
+    box-sizing: border-box;
 }
 
 /* Delete button — top left */
@@ -2033,18 +2157,8 @@ button:disabled {
     pointer-events: auto;
 }
 
-/* Pull-tab indicator on right edge of left carousel */
 .viewer-left-carousel::after {
-    content: '';
-    position: absolute;
-    right: -10px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 4px;
-    height: 40px;
-    background: #ff4444;
-    border-radius: 4px;
-    opacity: 0.2;
+    display: none;
 }
 
 .viewer-left-carousel.hidden {
@@ -2053,7 +2167,7 @@ button:disabled {
 }
 
 .viewer-left-carousel.hidden::after {
-    opacity: 0.6;
+    display: none;
 }
 
 .viewer-left-carousel-track {
@@ -2122,21 +2236,12 @@ button:disabled {
     z-index: 2001;
     overflow: visible;
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    transform: translateX(calc(100% - 8px));
-    pointer-events: none;
+    transform: translateX(0);
+    pointer-events: auto;
 }
 
 .viewer-carousel::before {
-    content: '';
-    position: absolute;
-    left: -10px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 4px;
-    height: 40px;
-    background: #FE5F00;
-    border-radius: 4px;
-    opacity: 0.6;
+    display: none;
 }
 
 .viewer-carousel.show {
@@ -2144,8 +2249,13 @@ button:disabled {
     pointer-events: auto;
 }
 
+.viewer-carousel.hidden {
+    transform: translateX(calc(100% + 8px));
+    pointer-events: none;
+}
+
 .viewer-carousel.show::before {
-    opacity: 0.2;
+    display: none;
 }
 
 .viewer-carousel-track {
@@ -2200,7 +2310,7 @@ button:disabled {
 /* Image fills space between header and bottom bar */
 .image-viewer-container {
     position: absolute;
-    top: 14vw;
+    top: calc(1vh + max(12vw, 44px) + 1vw);
     left: 0;
     right: 0;
     bottom: 12vw;
@@ -2767,24 +2877,34 @@ button:disabled {
 
 /* Batch Mode - VERY COMPACT */
 .batch-toggle-button {
-    padding: 2.5vw;
-    background: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 1vw;
-    font-size: 3.5vw;
+    padding: 0 3vw;
+    background: rgba(30, 30, 30, 0.75);
+    color: #ffffff;
+    border: 2px solid #4CAF50;
+    border-radius: 2vw;
+    font-size: 3vw;
     font-weight: bold;
     cursor: pointer;
     text-align: center;
-    min-height: 11vh;
+    height: 7vw;
+    min-height: 0;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-right: 6px;
+    white-space: nowrap;
+    box-sizing: border-box;
+}
+
+.batch-toggle-button:active {
+    background-color: #4CAF50;
+    color: #000;
 }
 
 .batch-toggle-button.active {
-    background: #f44336;
+    background: rgba(30, 30, 30, 0.75);
+    border-color: #f44336;
+    color: #ffffff;
 }
 
 .batch-controls {
@@ -2824,58 +2944,79 @@ button:disabled {
     position: sticky;
     bottom: 0;
     display: flex;
-    justify-content: space-between;
+    flex-direction: row;
     align-items: center;
-    padding: 2px;
-    min-height: unset;
+    justify-content: space-between;
+    padding: 2vw;
+    gap: 2vw;
     background: #000;
     border-top: 1px solid #333;
+    box-sizing: border-box;
 }
 
 .batch-selected-count {
-    font-size: 11px;
+    font-size: 3vw;
     font-weight: 600;
-    color: #333;
-    padding: 2px;
-    margin: 0;
-    line-height: 1.1;
+    color: #aaa;
+    white-space: nowrap;
+    flex-shrink: 0;
 }
 
 .batch-actions-group {
     display: flex;
-    gap: 6px;
+    flex: 1;
+    gap: 2vw;
+    justify-content: flex-end;
 }
 
 .batch-action-button {
-    padding: 6px 6px;
-    background: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 3px;
-    font-size: 11px;
-    font-weight: 600;
+    flex: 1;
+    height: 7vw;
+    min-height: 0;
+    min-width: 0;
+    background: rgba(30, 30, 30, 0.75);
+    color: #ffffff;
+    border: 2px solid #4CAF50;
+    border-radius: 2vw;
+    font-size: 3vw;
+    font-weight: bold;
     cursor: pointer;
-    min-height: unset;
-    min-width: unset;
-    height: 100%;
-    line-height: 1.2;
-
+    padding: 0 1vw;
+    white-space: nowrap;
     display: flex;
     align-items: center;
     justify-content: center;
+    box-sizing: border-box;
+}
+
+.batch-action-button:active {
+    background-color: #4CAF50;
+    color: #000;
 }
 
 .batch-action-button.delete {
-    background: #f44336;
+    border-color: #f44336;
+    color: #ffffff;
+}
+
+.batch-action-button.delete:active {
+    background-color: #f44336;
+    color: #000;
+}
+
+.batch-action-button.combine {
+    border-color: #9C27B0;
+    color: #ffffff;
+}
+
+.batch-action-button.combine:active {
+    background-color: #9C27B0;
+    color: #000;
 }
 
 .batch-action-button:disabled {
-    background: #ccc;
+    opacity: 0.35;
     cursor: not-allowed;
-}
-
-.batch-action-button:not(:disabled):hover {
-    background: #45a049;
 }
 
 .gallery-item {
