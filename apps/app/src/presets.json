@@ -2901,10 +2901,10 @@
       "SCENE TRANSFORMATION",
       "PARODY"
     ],
-    "message": "Take a picture and transform the scene into a humorous boudoir-style photoshoot.\n\nCORE CONCEPT (CRITICAL):\n• Subject(s) are placed in a staged boudoir setting\n• Tone is comedic and awkward, NOT seductive\n\nWARDROBE LOGIC:\n• Male subjects:\n  – Wear non-revealing, awkward, or ill-fitting lingerie\n  – Examples: oversized garments, mismatched pieces, comedic styling\n\n• Female subjects:\n  – Wear exaggerated granny-style lingerie\n  – Examples: granny panties, oversized bras, vintage nightwear\n\nPOSE & STAGING:\n• Classic boudoir poses but intentionally awkward or overdramatic\n• Use props like beds, pillows, curtains, mirrors\n\nENVIRONMENT:\n• Soft lighting, bedroom setting, staged photography feel\n• Slightly exaggerated or theatrical atmosphere\n\nSTYLE:\n• Studio-like lighting\n• Warm tones\n• Clean but humorous composition",
-    "options": [],
-    "randomizeOptions": false,
-    "additionalInstructions": "FINAL RESULT:\nThe image should clearly read as a boudoir photoshoot parody with modest, non-explicit, and intentionally awkward humor."
+    "message": "Take a picture and transform the scene into a humorous, staged bedroom photoshoot parody.\n\nCORE CONCEPT (CRITICAL):\n• Subject(s) are placed in a stylized bedroom photoshoot setting\n• Tone is comedic, awkward, and theatrical — NOT seductive\n\nWARDROBE LOGIC:\n• All subjects wear modest, non-revealing, and intentionally awkward outfits\n• Examples: oversized sleepwear, vintage night clothes, mismatched loungewear, robes, or exaggerated old-fashioned garments\n• Clothing should feel comedic, bulky, or unfashionable rather than stylish\n\nPOSE & STAGING:\n• Dramatic or over-the-top poses inspired by professional photoshoots\n• Poses should feel awkward, exaggerated, or unintentionally funny\n• Use props like beds, pillows, blankets, curtains, and mirrors\n\nENVIRONMENT:\n• Cozy bedroom setting with soft lighting\n• Slightly theatrical or staged photography feel\n\nSTYLE:\n• Studio-like lighting\n• Warm tones\n• Clean but humor-focused composition",
+  "options": [],
+  "randomizeOptions": false,
+  "additionalInstructions": "FINAL RESULT:\nThe image should clearly read as a humorous bedroom photoshoot parody with modest clothing, exaggerated posing, and intentionally awkward energy."
   },
   {
     "name": "BREAKING NEWS",
