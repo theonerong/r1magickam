@@ -7300,17 +7300,9 @@ function updatePresetDisplay() {
 }
 
 // Listen for plugin messages (responses from AI)
-window.onPluginMessage = function(data) {
-  console.log('Received plugin message:', data);
-  
-  if (data && data.status === 'processing') {
-    statusElement.textContent = 'AI is processing your image...';
-  } else if (data && data.status === 'complete') {
-    statusElement.textContent = 'AI transformation complete!';
-  } else if (data && data.error) {
-    statusElement.textContent = 'Error: ' + data.error;
-  }
-};
+// NOTE: The full handler including PTT speech-to-text is defined
+// at the bottom of this file. This placeholder is kept for reference only.
+window.onPluginMessage = window.onPluginMessage || function(data) {};
 
 // Check if Flutter is available
 if (typeof PluginMessageHandler !== 'undefined') {
@@ -8310,15 +8302,15 @@ function populateStylesList(preserveScroll = false) {
     const filtered = regular.filter(preset => {
       if (styleFilterText) {
         const searchText = styleFilterText.toLowerCase();
-          const categoryMatch = preset.category && preset.category.some(cat => cat.toLowerCase().includes(searchText));
-          const optionsMatch = (
-        (preset.options && preset.options.some(o => o.text && o.text.toLowerCase().includes(searchText))) ||
-        (preset.optionGroups && preset.optionGroups.some(g => g.title && g.title.toLowerCase().includes(searchText) || g.options && g.options.some(o => o.text && o.text.toLowerCase().includes(searchText))))
-      );
-          const textMatch = preset.name.toLowerCase().includes(searchText) || 
+        const categoryMatch = preset.category && preset.category.some(cat => cat.toLowerCase().includes(searchText));
+        const optionsMatch = (
+          (preset.options && preset.options.some(o => o.text && o.text.toLowerCase().includes(searchText))) ||
+          (preset.optionGroups && preset.optionGroups.some(g => g.title && g.title.toLowerCase().includes(searchText) || g.options && g.options.some(o => o.text && o.text.toLowerCase().includes(searchText))))
+        );
+        const textMatch = preset.name.toLowerCase().includes(searchText) || 
                          preset.message.toLowerCase().includes(searchText) ||
                          categoryMatch || optionsMatch;
-          if (!textMatch) return false;
+        if (!textMatch) return false;
       }
       
       // Then apply category filter if active
@@ -11789,4 +11781,132 @@ console.log('AI Camera Styles app initialized!');
       lastTapY = touch.clientY;
     }
   }, { passive: true });
+})();
+
+// ===== PTT (Push-to-Talk) for Text Fields =====
+// When the user taps into any text input or textarea, pressing the
+// r1 side button will start/stop speech-to-text and insert the result.
+
+(function() {
+  // This tracks whichever text field or textarea the user last tapped into.
+  // It starts as null, meaning no field is active.
+  let activePttField = null;
+
+  // The list of every text input and textarea in the app that should
+  // support PTT. Each one is found by its id from the HTML.
+  const pttFieldIds = [
+    'style-filter',           // Filter styles search box in the menu
+    'visible-presets-filter', // Filter presets search box in settings
+    'preset-filter',          // Filter presets search box in preset selector
+    'master-prompt-text',     // Master prompt textarea in settings
+    'preset-builder-prompt',  // AI prompt textarea in preset builder
+    'preset-builder-name',    // Preset name field in preset builder
+    'preset-builder-category',// Category field in preset builder
+    'preset-builder-additional', // Additional rules textarea in preset builder
+    'style-name',             // Style name field in edit style
+    'style-category',         // Category field in edit style
+    'style-message',          // AI prompt textarea in edit style
+    'style-additional'        // Additional rules textarea in edit style
+  ];
+
+  // When the user taps INTO a field, remember it as the active PTT target.
+  // When the user taps AWAY from all fields, clear the active target so
+  // that the side button goes back to doing its normal camera functions.
+  function attachPttListeners() {
+    pttFieldIds.forEach(function(id) {
+      const field = document.getElementById(id);
+      if (!field) return;
+
+      field.addEventListener('focus', function() {
+        activePttField = field;
+      });
+
+      field.addEventListener('blur', function() {
+        // Small delay so a tap on the PTT button doesn't
+        // clear the field before the button event fires.
+        setTimeout(function() {
+          if (document.activeElement !== field) {
+            activePttField = null;
+          }
+        }, 300);
+      });
+    });
+  }
+
+  // Run immediately for fields that exist on page load,
+  // and again after a short delay to catch fields that are
+  // built dynamically by the app after startup.
+  attachPttListeners();
+  setTimeout(attachPttListeners, 2000);
+
+  // The import filter field is created dynamically when the import
+  // modal opens, so we watch for it and attach PTT when it appears.
+  const importObserver = new MutationObserver(function() {
+    const importField = document.getElementById('import-preset-filter');
+    if (importField && !importField.dataset.pttAttached) {
+      importField.dataset.pttAttached = 'true';
+      importField.addEventListener('focus', function() {
+        activePttField = importField;
+      });
+      importField.addEventListener('blur', function() {
+        setTimeout(function() {
+          if (document.activeElement !== importField) {
+            activePttField = null;
+          }
+        }, 300);
+      });
+    }
+  });
+  importObserver.observe(document.body, { childList: true, subtree: true });
+
+  // Listen for the r1 side button being pressed down.
+  // Only act if the user is currently inside a text field.
+  window.addEventListener('longPressStart', function() {
+    if (!activePttField) return; // Not in a text field — let other handlers take over
+    CreationVoiceHandler.postMessage('start');
+  });
+
+  // Listen for the r1 side button being released.
+  // Only act if the user is currently inside a text field.
+  window.addEventListener('longPressEnd', function() {
+    if (!activePttField) return; // Not in a text field — let other handlers take over
+    CreationVoiceHandler.postMessage('stop');
+  });
+
+  // When the r1 device finishes listening and sends back the
+  // spoken words, insert them into whichever field is active.
+  // This also keeps the original AI image response handling working.
+  window.onPluginMessage = function(data) {
+
+    // --- Original AI image response handling ---
+    if (data && data.status === 'processing') {
+      statusElement.textContent = 'AI is processing your image...';
+    } else if (data && data.status === 'complete') {
+      statusElement.textContent = 'AI transformation complete!';
+    } else if (data && data.error) {
+      statusElement.textContent = 'Error: ' + data.error;
+    }
+
+    // --- PTT speech-to-text handling ---
+    if (data.type === 'sttEnded' && data.transcript) {
+      if (activePttField) {
+        // Insert the spoken text at the cursor position inside the field.
+        const field = activePttField;
+        const start = field.selectionStart;
+        const end = field.selectionEnd;
+        const before = field.value.substring(0, start);
+        const after = field.value.substring(end);
+        field.value = before + data.transcript + after;
+
+        // Move the cursor to just after the inserted text.
+        const newPos = start + data.transcript.length;
+        field.setSelectionRange(newPos, newPos);
+
+        // Fire an input event so the app knows the field changed
+        // (important for the filter fields that search as you type).
+        field.dispatchEvent(new Event('input', { bubbles: true }));
+      }
+    }
+  };
+
 })();
