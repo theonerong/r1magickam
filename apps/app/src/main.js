@@ -765,17 +765,19 @@ function getFilteredAndSortedGallery() {
   return sortGalleryImages(filtered);
 }
 
-async function showGallery() {
-  pauseCamera();
-  cancelTimerCountdown();
+async function showGallery(renderOnly = false) {
+  if (!renderOnly) {
+    pauseCamera();
+    cancelTimerCountdown();
 
-  // Clear any captured image before opening gallery
-  if (capturedImage && capturedImage.style.display === 'block') {
-    resetToCamera();
+    // Clear any captured image before opening gallery
+    if (capturedImage && capturedImage.style.display === 'block') {
+      resetToCamera();
+    }
+    
+    // Reload gallery from IndexedDB to ensure we have latest data
+    await loadGallery();
   }
-  
-  // Reload gallery from IndexedDB to ensure we have latest data
-  await loadGallery();
   const modal = document.getElementById('gallery-modal');
   const grid = document.getElementById('gallery-grid');
   const pagination = document.getElementById('gallery-pagination');
@@ -813,6 +815,7 @@ async function showGallery() {
     pageImages.forEach((item) => {
       const imgContainer = document.createElement('div');
       imgContainer.className = 'gallery-item';
+      imgContainer.dataset.imageId = item.id;
       
       if (isBatchMode && selectedBatchImages.has(item.id)) {
         imgContainer.classList.add('selected');
@@ -840,7 +843,6 @@ async function showGallery() {
       imgContainer.onclick = () => {
         if (isBatchMode) {
           toggleBatchImageSelection(item.id);
-          showGallery(); // Refresh to update checkboxes
         } else {
           const originalIndex = galleryImages.findIndex(i => i.id === item.id);
           openImageViewer(originalIndex);
@@ -899,14 +901,14 @@ function nextGalleryPage() {
   const totalPages = Math.ceil(filteredImages.length / ITEMS_PER_PAGE);
   if (currentGalleryPage < totalPages) {
     currentGalleryPage++;
-    showGallery();
+    showGallery(true);
   }
 }
 
 function prevGalleryPage() {
   if (currentGalleryPage > 1) {
     currentGalleryPage--;
-    showGallery();
+    showGallery(true);
   }
 }
 
@@ -1767,13 +1769,13 @@ function selectAllBatchImages() {
   selectedBatchImages.clear();
   filteredImages.forEach(img => selectedBatchImages.add(img.id));
   updateBatchSelection();
-  showGallery();
+  showGallery(true);
 }
 
 function deselectAllBatchImages() {
   selectedBatchImages.clear();
   updateBatchSelection();
-  showGallery();
+  showGallery(true);
 }
 
 function toggleBatchImageSelection(imageId) {
@@ -1783,6 +1785,23 @@ function toggleBatchImageSelection(imageId) {
     selectedBatchImages.add(imageId);
   }
   updateBatchSelection();
+
+  // Update the checkbox and highlight directly in the DOM
+  // so we don't need a full page reload on every click
+  const grid = document.getElementById('gallery-grid');
+  if (!grid) return;
+  grid.querySelectorAll('.gallery-item').forEach(container => {
+    if (container.dataset.imageId === imageId) {
+      const checkbox = container.querySelector('.gallery-item-checkbox');
+      const selected = selectedBatchImages.has(imageId);
+      if (checkbox) checkbox.checked = selected;
+      if (selected) {
+        container.classList.add('selected');
+      } else {
+        container.classList.remove('selected');
+      }
+    }
+  });
 }
 
 async function applyPresetToBatch() {
@@ -7264,6 +7283,7 @@ function updatePresetDisplay() {
         } else {
             statusElement.textContent = `Style: ${currentPreset.name}`;
         }
+    }
     
     // Show style reveal on screen (middle text)
     if (isCameraMultiPresetActive && cameraSelectedPresets.length > 0) {
@@ -7276,7 +7296,6 @@ function updatePresetDisplay() {
 
     if (isMenuOpen) {
         updateMenuSelection();
-    }
     }
 }
 
@@ -8291,15 +8310,15 @@ function populateStylesList(preserveScroll = false) {
     const filtered = regular.filter(preset => {
       if (styleFilterText) {
         const searchText = styleFilterText.toLowerCase();
-        const categoryMatch = preset.category && preset.category.some(cat => cat.toLowerCase().includes(searchText));
-        const optionsMatch = (
-          (preset.options && preset.options.some(o => o.text && o.text.toLowerCase().includes(searchText))) ||
-          (preset.optionGroups && preset.optionGroups.some(g => g.title && g.title.toLowerCase().includes(searchText) || g.options && g.options.some(o => o.text && o.text.toLowerCase().includes(searchText))))
-        );
-        const textMatch = preset.name.toLowerCase().includes(searchText) || 
+          const categoryMatch = preset.category && preset.category.some(cat => cat.toLowerCase().includes(searchText));
+          const optionsMatch = (
+        (preset.options && preset.options.some(o => o.text && o.text.toLowerCase().includes(searchText))) ||
+        (preset.optionGroups && preset.optionGroups.some(g => g.title && g.title.toLowerCase().includes(searchText) || g.options && g.options.some(o => o.text && o.text.toLowerCase().includes(searchText))))
+      );
+          const textMatch = preset.name.toLowerCase().includes(searchText) || 
                          preset.message.toLowerCase().includes(searchText) ||
                          categoryMatch || optionsMatch;
-        if (!textMatch) return false;
+          if (!textMatch) return false;
       }
       
       // Then apply category filter if active
