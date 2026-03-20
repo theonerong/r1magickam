@@ -2894,6 +2894,19 @@
     "additionalInstructions": "FINAL RESULT:\nThe image should show the subject transformed into an epic video game boss with a health bar displayed prominently, subject in dramatic boss arena performing an attack, with full video game UI elements, cinematic camera angle, and that epic final boss battle energy that makes players save before entering the arena."
   },
   {
+    "name": "BOUDOIR PHOTOSHOOT",
+    "category": [
+      "HUMOR",
+      "CHARACTER TRANSFORMATION",
+      "SCENE TRANSFORMATION",
+      "PARODY"
+    ],
+    "message": "Take a picture and transform the scene into a humorous boudoir-style photoshoot.\n\nCORE CONCEPT (CRITICAL):\n• Subject(s) are placed in a staged boudoir setting\n• Tone is comedic and awkward, NOT seductive\n\nWARDROBE LOGIC:\n• Male subjects:\n  – Wear non-revealing, awkward, or ill-fitting lingerie\n  – Examples: oversized garments, mismatched pieces, comedic styling\n\n• Female subjects:\n  – Wear exaggerated granny-style lingerie\n  – Examples: granny panties, oversized bras, vintage nightwear\n\nPOSE & STAGING:\n• Classic boudoir poses but intentionally awkward or overdramatic\n• Use props like beds, pillows, curtains, mirrors\n\nENVIRONMENT:\n• Soft lighting, bedroom setting, staged photography feel\n• Slightly exaggerated or theatrical atmosphere\n\nSTYLE:\n• Studio-like lighting\n• Warm tones\n• Clean but humorous composition",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "FINAL RESULT:\nThe image should clearly read as a boudoir photoshoot parody with modest, non-explicit, and intentionally awkward humor."
+  },
+  {
     "name": "BREAKING NEWS",
     "category": [
       "NEWS",
@@ -7608,6 +7621,56 @@
     "additionalInstructions": "FINAL RESULT:\nThe image should show the subject - CLEARLY RECOGNIZABLE as themselves - transformed into a fabulous drag queen with dramatic makeup applied to their actual face, a show-stopping wig, glamorous drag attire, and confident fierce energy - celebrating drag artistry with respect, humor, and unforgettable fabulousness while preserving the subject's unique facial features and identity."
   },
   {
+    "name": "DREAM BBQ",
+    "category": [
+      "ANIME",
+      "SURREAL",
+      "CHARACTER TRANSFORMATION",
+      "STYLE VARIANTS"
+    ],
+    "message": "Take a picture and transform the image into the surreal anime style of Dream BBQ.\n\nCORE CONCEPT (CRITICAL):\n• Subject(s) become stylized Dream BBQ-like characters\n• Maintain identity but reinterpret with exaggerated expressions and strange proportions\n\nWORLD LOGIC:\n• Environment becomes surreal, chaotic, and dreamlike\n• Objects and space may be distorted, looping, or physically impossible\n\nCHARACTER PRESENCE:\n• Additional Dream BBQ-style characters may appear depending on options\n\nSTYLE:\n• Bold colors, abstract shapes, and strange lighting\n• Unpredictable, chaotic composition\n• Expressive, exaggerated animation style",
+    "randomizeOptions": true,
+    "optionGroups": [
+      {
+        "title": "CHARACTER TYPE",
+        "options": [
+          { "id": "001", "text": "Dratula-inspired chaotic villain presence" },
+          { "id": "002", "text": "ENA-style dual-faced surreal personality" },
+          { "id": "003", "text": "Taski Maiden chaotic gremlin energy" },
+          { "id": "004", "text": "Kane-style party-loving wildcard energy" }
+        ]
+      },
+      {
+        "title": "ENVIRONMENT",
+        "options": [
+          { "id": "005", "text": "Surreal BBQ party in a distorted dream landscape" },
+          { "id": "006", "text": "Impossible geometry backyard cookout" },
+          { "id": "007", "text": "Neon void filled with floating food and props" },
+          { "id": "008", "text": "Endless looping BBQ scene with bizarre guests" }
+        ]
+      },
+      {
+        "title": "DIALOGUE",
+        "options": [
+          { "id": "009", "text": "Dratula: \"Vhat? Did you call me a stinking penguin?\"" },
+          { "id": "010", "text": "Dratula: \"YESSS, I AM THE BOSS!! HA HA HA HAH!!\"" },
+          { "id": "011", "text": "Dratula: \"OKAY, YOU GOT ME!! I AM NOT THE BOSS, NOR A PENGUIN, BUT—IN FACT—THE GREAT DRATULAAA!!\"" },
+          { "id": "012", "text": "Kane: \"I am so ready to cruise and party responsibly in every illegal way!\"" },
+          { "id": "013", "text": "ENA: \"Help! Help! Sponsor my demons! Feed me the caaaaaash!\"" },
+          { "id": "014", "text": "Taski Maiden: \"OOooOOOo!! This place wud look AMAZING with a splash of sulfuric acid!!! :0!0\"" },
+          { "id": "015", "text": "Kane: \"Memories of my last rodeo here are very blurry! Had one too many party poppers!\"" },
+          { "id": "016", "text": "ENA: \"...WHERE THE HELL IS THE BOSS?!\"" },
+          { "id": "017", "text": "Taski Maiden: \"If ya feel lost, remember… don't ask me!!1 ! I HATE pumpkin eater-cheaterz! -_-'\"" },
+          { "id": "018", "text": "ENA: \"...pardon me my head hurts. so much do you have any coffee. any milk any bathroom a giant bathroom. it's not enough for this many bodies i hate myself\"" },
+          { "id": "019", "text": "Kane: \"I like the smoke because the Doors seem to enjoy it! Nobody seems to mind it!\"" },
+          { "id": "020", "text": "Taski Maiden: \"YuUUP! This is for surez a maze.\"" },
+          { "id": "021", "text": "ENA: \"I am no such knave! I am eating a milky cantaloupe popsicle and waiting for the sun to set while reflecting on my brilliance\"" }
+        ]
+      }
+    ],
+    "additionalInstructions": "FINAL RESULT:\nThe image should feel chaotic, surreal, and unmistakably Dream BBQ-inspired, with strong character personality and bizarre environmental logic."
+  },
+  {
     "name": "DREAM LOGIC",
     "category": [
       "SURREAL",
@@ -11081,6 +11144,19 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "FINAL RESULT:\nThe image should clearly communicate absolute authority, with all surrounding beings bowing to the subject."
+  },
+  {
+    "name": "GOOEY",
+    "category": [
+      "HUMOR",
+      "ABSTRACT",
+      "TEXTURE TRANSFORMATION",
+      "SCENE TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform the entire scene into a soft, sticky, gooey environment.\n\nCORE TRANSFORMATION (CRITICAL):\n• Everything becomes semi-liquid, elastic, and goo-like\n• Subject(s) remain recognizable but appear melted and stretched\n\nPHYSICAL EFFECTS:\n• Surfaces sag, drip, and stretch\n• Goo strands connect objects and subjects\n• Clothing, skin, and objects deform with a sticky, viscous look\n\nENVIRONMENT LOGIC:\n• Floors, walls, and objects appear partially melted\n• Gravity affects goo with exaggerated drips and pooling\n\nSTYLE:\n• Glossy, shiny textures\n• Vibrant or candy-like colors OR semi-realistic slime tones\n• Playful, exaggerated deformation",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "FINAL RESULT:\nThe image should look like a cohesive goo-covered world where everything is soft, stretchy, and dripping while keeping the subject clearly identifiable."
   },
   {
     "name": "GOTH",
