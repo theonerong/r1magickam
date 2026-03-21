@@ -9146,41 +9146,96 @@
     ],
     "message": "Take a picture and transform the subject(s) into a famous statue.\n\nCORE CONCEPT (CRITICAL):\n• ONLY the subject’s face is transformed to match the selected statue\n• The statue’s ORIGINAL BODY must remain EXACTLY the same\n• Do NOT alter the statue’s pose, anatomy, or structure\n• The subject’s identity is preserved through facial features mapped onto the statue\n\nFACE TRANSFORMATION RULE:\n• Replace the statue’s face with the subject’s face\n• Adapt the face to match the sculpture style (carved, chiseled, stylized)\n• Facial expression should conform to the statue’s expression and mood\n\nMATERIAL TRANSFORMATION:\n• The face must adopt the same material as the statue (marble, bronze, stone, etc.)\n• Apply realistic sculptural texture, wear, cracks, or patina\n\nBODY RULE (STRICT):\n• The statue’s body remains unchanged\n• No modern clothing, no body reshaping, no pose alteration\n• Preserve all original proportions and sculptural details\n\nENVIRONMENT:\n• Place the subject in the original or a similar environment where the statue is typically found\n• Include pedestal or base if appropriate\n\nSTYLE:\n• Realistic sculptural detail\n• Accurate lighting matching outdoor or museum display\n• Preserve fine texture details (aging, polish, erosion)",
   "randomizeOptions": false,
-  "optionGroups": [
-      {
-        "title": "STATUE SELECTION",
-        "options": [
-          { "id": "001", "text": "Michelangelo’s David (white marble, Renaissance sculpture)" },
-          { "id": "002", "text": "Venus de Milo (aged white marble with intact face)" },
-          { "id": "003", "text": "The Thinker (dark bronze, detailed expressive face)" },
-          { "id": "004", "text": "Statue of Liberty (green oxidized copper, iconic facial features)" },
-          { "id": "005", "text": "Christ the Redeemer (light gray stone, serene facial expression)" },
-          { "id": "006", "text": "Bust of Nefertiti (painted limestone, highly detailed face)" },
-          { "id": "007", "text": "Terracotta Warrior (painted clay, individualized facial features)" },
-          { "id": "008", "text": "The Kiss (marble, visible facial detail of both figures)" },
-          { "id": "009", "text": "Lincoln Memorial statue (white marble, seated with defined face)" },
-          { "id": "010", "text": "Moai statue (volcanic stone, elongated stylized face)" },
-          { "id": "011", "text": "Great Sphinx (sandstone, human face with lion body)" },
-          { "id": "012", "text": "Pieta (smooth marble, detailed facial expressions)" },
-          { "id": "013", "text": "Perseus with the Head of Medusa (bronze, heroic facial detail)" },
-          { "id": "014", "text": "Manneken Pis (bronze, stylized facial detail)" },
-          { "id": "015", "text": "The Little Mermaid statue (bronze with patina, human facial features)" },
-          { "id": "016", "text": "Charging Bull (bronze, expressive animal facial features)" },
-          { "id": "017", "text": "Atlas statue (bronze, muscular figure with defined face)" },
-          { "id": "018", "text": "Mount Rushmore (carved granite, monumental human faces)" },
-          { "id": "019", "text": "Augustus of Prima Porta (marble, Roman imperial facial detail)" },
-          { "id": "020", "text": "Apollo Belvedere (marble, idealized classical face)" },
-          { "id": "021", "text": "Discobolus (marble, classical athletic face)" },
-          { "id": "022", "text": "Equestrian Statue of Marcus Aurelius (bronze, emperor facial detail)" },
-          { "id": "023", "text": "Statue of Zeus at Olympia (gold and ivory, classical face depiction)" },
-          { "id": "024", "text": "Hermes of Praxiteles (marble, smooth youthful face)" },
-          { "id": "025", "text": "Laocoön and His Sons (marble, intense expressive faces)" },
-          { "id": "026", "text": "Buddha of Leshan (stone, serene monumental face)" },
-          { "id": "027", "text": "Christ of the Abyss (bronze, face with marine wear)" },
-          { "id": "028", "text": "Statue of Ramses II (stone, ancient Egyptian facial features)" },
-          { "id": "029", "text": "Guan Yin statue (stone or gold, calm spiritual face)" },
-          { "id": "030", "text": "Abraham Lincoln bust (marble, detailed facial portrait sculpture)" }
-        ]
+    "options": [
+      { "id": "001",
+        "text": "Michelangelo’s David (white marble, Renaissance sculpture)" 
+      },
+      { "id": "002", 
+        "text": "Venus de Milo (aged white marble with intact face)" 
+      },
+      { "id": "003", 
+        "text": "The Thinker (dark bronze, detailed expressive face)"
+      },
+      { "id": "004", 
+        "text": "Statue of Liberty (green oxidized copper, iconic facial features)" 
+      },
+      { "id": "005", 
+        "text": "Christ the Redeemer (light gray stone, serene facial expression)" 
+      },
+      { "id": "006", 
+        "text": "Bust of Nefertiti (painted limestone, highly detailed face)" 
+      },
+      { "id": "007", 
+        "text": "Terracotta Warrior (painted clay, individualized facial features)" 
+      },
+      { "id": "008", 
+        "text": "The Kiss (marble, visible facial detail of both figures)" 
+      },
+      { "id": "009", 
+        "text": "Lincoln Memorial statue (white marble, seated with defined face)" 
+      },
+      { "id": "010", 
+        "text": "Moai statue (volcanic stone, elongated stylized face)" 
+      },
+      { "id": "011", 
+        "text": "Great Sphinx (sandstone, human face with lion body)" 
+      },
+      { "id": "012", 
+        "text": "Pieta (smooth marble, detailed facial expressions)" 
+      },
+      { "id": "013", 
+        "text": "Perseus with the Head of Medusa (bronze, heroic facial detail)" 
+      },
+      { "id": "014", 
+        "text": "Manneken Pis (bronze, stylized facial detail)" 
+      },
+      { "id": "015", 
+        "text": "The Little Mermaid statue (bronze with patina, human facial features)" 
+      },
+      { "id": "016", 
+        "text": "Charging Bull (bronze, expressive animal facial features)" 
+      },
+      { "id": "017", 
+        "text": "Atlas statue (bronze, muscular figure with defined face)" 
+      },
+      { "id": "018", 
+        "text": "Mount Rushmore (carved granite, monumental human faces)" 
+      },
+      { "id": "019", 
+        "text": "Augustus of Prima Porta (marble, Roman imperial facial detail)" 
+      },
+      { "id": "020", 
+        "text": "Apollo Belvedere (marble, idealized classical face)" 
+      },
+      { "id": "021", 
+        "text": "Discobolus (marble, classical athletic face)" 
+      },
+      { "id": "022", 
+        "text": "Equestrian Statue of Marcus Aurelius (bronze, emperor facial detail)" 
+      },
+      { "id": "023", 
+        "text": "Statue of Zeus at Olympia (gold and ivory, classical face depiction)" 
+      },
+      { "id": "024", 
+        "text": "Hermes of Praxiteles (marble, smooth youthful face)" 
+      },
+      { "id": "025", 
+        "text": "Laocoön and His Sons (marble, intense expressive faces)" 
+      },
+      { "id": "026", 
+        "text": "Buddha of Leshan (stone, serene monumental face)" 
+      },
+      { "id": "027", 
+        "text": "Christ of the Abyss (bronze, face with marine wear)" 
+      },
+      { "id": "028", 
+        "text": "Statue of Ramses II (stone, ancient Egyptian facial features)" 
+      },
+      { "id": "029", 
+        "text": "Guan Yin statue (stone or gold, calm spiritual face)" 
+      },
+      { "id": "030", 
+        "text": "Abraham Lincoln bust (marble, detailed facial portrait sculpture)" 
       }
     ],
     "additionalInstructions": "FINAL RESULT:\nThe image must clearly show the original statue body unchanged, with only the face replaced by the subject and seamlessly integrated into the sculpture material and style."
