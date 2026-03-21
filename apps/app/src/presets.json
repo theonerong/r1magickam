@@ -9137,6 +9137,55 @@
     "additionalInstructions": "FINAL RESULT:\nThe image should capture the subject in a thrilling moment on a carnival or amusement park ride, with dynamic motion, authentic carnival atmosphere, and the genuine excitement (or terror) of the ride experience frozen in a perfect action shot."
   },
   {
+    "name": "FAMOUS STATUES",
+    "category": [
+      "HISTORY",
+      "ART",
+      "SCULPTURE",
+      "CHARACTER TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform the subject(s) into a famous statue.\n\nCORE CONCEPT (CRITICAL):\n• ONLY the subject’s face is transformed to match the selected statue\n• The statue’s ORIGINAL BODY must remain EXACTLY the same\n• Do NOT alter the statue’s pose, anatomy, or structure\n• The subject’s identity is preserved through facial features mapped onto the statue\n\nFACE TRANSFORMATION RULE:\n• Replace the statue’s face with the subject’s face\n• Adapt the face to match the sculpture style (carved, chiseled, stylized)\n• Facial expression should conform to the statue’s expression and mood\n\nMATERIAL TRANSFORMATION:\n• The face must adopt the same material as the statue (marble, bronze, stone, etc.)\n• Apply realistic sculptural texture, wear, cracks, or patina\n\nBODY RULE (STRICT):\n• The statue’s body remains unchanged\n• No modern clothing, no body reshaping, no pose alteration\n• Preserve all original proportions and sculptural details\n\nENVIRONMENT:\n• Place the subject in the original or a similar environment where the statue is typically found\n• Include pedestal or base if appropriate\n\nSTYLE:\n• Realistic sculptural detail\n• Accurate lighting matching outdoor or museum display\n• Preserve fine texture details (aging, polish, erosion)",
+  "randomizeOptions": false,
+  "optionGroups": [
+      {
+        "title": "STATUE SELECTION",
+        "options": [
+          { "id": "001", "text": "Michelangelo’s David (white marble, Renaissance sculpture)" },
+          { "id": "002", "text": "Venus de Milo (aged white marble with intact face)" },
+          { "id": "003", "text": "The Thinker (dark bronze, detailed expressive face)" },
+          { "id": "004", "text": "Statue of Liberty (green oxidized copper, iconic facial features)" },
+          { "id": "005", "text": "Christ the Redeemer (light gray stone, serene facial expression)" },
+          { "id": "006", "text": "Bust of Nefertiti (painted limestone, highly detailed face)" },
+          { "id": "007", "text": "Terracotta Warrior (painted clay, individualized facial features)" },
+          { "id": "008", "text": "The Kiss (marble, visible facial detail of both figures)" },
+          { "id": "009", "text": "Lincoln Memorial statue (white marble, seated with defined face)" },
+          { "id": "010", "text": "Moai statue (volcanic stone, elongated stylized face)" },
+          { "id": "011", "text": "Great Sphinx (sandstone, human face with lion body)" },
+          { "id": "012", "text": "Pieta (smooth marble, detailed facial expressions)" },
+          { "id": "013", "text": "Perseus with the Head of Medusa (bronze, heroic facial detail)" },
+          { "id": "014", "text": "Manneken Pis (bronze, stylized facial detail)" },
+          { "id": "015", "text": "The Little Mermaid statue (bronze with patina, human facial features)" },
+          { "id": "016", "text": "Charging Bull (bronze, expressive animal facial features)" },
+          { "id": "017", "text": "Atlas statue (bronze, muscular figure with defined face)" },
+          { "id": "018", "text": "Mount Rushmore (carved granite, monumental human faces)" },
+          { "id": "019", "text": "Augustus of Prima Porta (marble, Roman imperial facial detail)" },
+          { "id": "020", "text": "Apollo Belvedere (marble, idealized classical face)" },
+          { "id": "021", "text": "Discobolus (marble, classical athletic face)" },
+          { "id": "022", "text": "Equestrian Statue of Marcus Aurelius (bronze, emperor facial detail)" },
+          { "id": "023", "text": "Statue of Zeus at Olympia (gold and ivory, classical face depiction)" },
+          { "id": "024", "text": "Hermes of Praxiteles (marble, smooth youthful face)" },
+          { "id": "025", "text": "Laocoön and His Sons (marble, intense expressive faces)" },
+          { "id": "026", "text": "Buddha of Leshan (stone, serene monumental face)" },
+          { "id": "027", "text": "Christ of the Abyss (bronze, face with marine wear)" },
+          { "id": "028", "text": "Statue of Ramses II (stone, ancient Egyptian facial features)" },
+          { "id": "029", "text": "Guan Yin statue (stone or gold, calm spiritual face)" },
+          { "id": "030", "text": "Abraham Lincoln bust (marble, detailed facial portrait sculpture)" }
+        ]
+      }
+    ],
+    "additionalInstructions": "FINAL RESULT:\nThe image must clearly show the original statue body unchanged, with only the face replaced by the subject and seamlessly integrated into the sculpture material and style."
+  },
+  {
     "name": "FAIRY",
     "category": [
       "FANTASY",
@@ -10642,6 +10691,19 @@
     ],
     "randomizeOptions": true,
     "additionalInstructions": "EXCLUSIONS:\n• No extreme frailty\n• No medical conditions or illness\n• No dramatic weight change unless age-appropriate\n• No horror, fantasy, or sci-fi elements\n\nCLOTHING & STYLING:\n• Clothing style should feel plausible for the subject at that age\n• Outfit should remain realistic and contemporary\n• No costumes or era shifts\n• Hair and grooming consistent with natural aging\n\nSETTING & COMPOSITION:\n• Same environment and framing as original\n• Full-body view preferred\n• FULL image visible with all four corners present\n• No cropping, zooming, or reframing\n\nSTYLE:\n• Photorealistic\n• Neutral, respectful tone\n• Looks like a legitimate age-progression photograph\n• Suitable for family, legal, or personal reference use\n\nFINAL RESULT:\nThe image should depict a convincing future version of the subject aged 20–40 years, preserving identity while showing realistic, respectful age progression — seamless, natural, and visually believable."
+  },
+  {
+    "name": "FUTURISM STYLE",
+    "category": [
+      "ART",
+      "PAINTING",
+      "STYLE TRANSFORMATION",
+      "MODERN"
+    ],
+    "message": "Take a picture and transform the image into a Futurism-style painting.\n\nCORE CONCEPT (CRITICAL):\n• The scene is reimagined with a strong sense of motion, speed, and energy\n• Subject(s) must remain recognizable but dynamically transformed\n• Emphasize movement, repetition, and technological dynamism\n\nSTYLE CHARACTERISTICS:\n• Repeated forms or overlapping silhouettes to suggest motion\n• Motion blur effects translated into painted form\n• Fragmented or angular shapes conveying speed and force\n• Dynamic lines and directional energy flows\n\nARTISTIC INTERPRETATION:\n• Objects and subjects may appear multiplied or stretched across space\n• Perspective may be distorted to emphasize motion\n• Mechanical or industrial elements may be enhanced\n\nTEXTURE & MEDIUM:\n• Bold, energetic brushstrokes\n• Layered paint suggesting movement and vibration\n• Oil or mixed-media canvas appearance\n\nENVIRONMENT:\n• Transform the background to reflect motion and energy\n• Surroundings may appear in flux, fragmented, or speed-driven\n\nSTYLE:\n• High contrast and vivid or metallic color tones\n• Energetic, chaotic, and forward-moving composition\n• Strong sense of rhythm and visual acceleration",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "FINAL RESULT:\nThe image should look like a dynamic Futurist painting filled with motion, energy, and speed, with the subject appearing in motion through repetition and fragmentation."
   },
   {
     "name": "GAMEBOY",
@@ -12950,6 +13012,19 @@
     "additionalInstructions": "NOT ALLOWED:\n• Surgery imagery\n• X-ray clichés\n• Horror aesthetics\n• Exploded or separated body parts\n• Any implication of pain or injury\n\nFINAL RESULT:\nThe image should depict the subject fully intact while their internal anatomy is clearly visible and anatomically accurate, appearing as a seamless scientific reveal rather than damage — a calm, educational visualization where exterior and interior coexist naturally in a single complete figure."
   },
   {
+    "name": "INSTALLATION ART STYLE",
+    "category": [
+      "ART",
+      "CONTEMPORARY",
+      "SCENE TRANSFORMATION",
+      "CONCEPTUAL"
+    ],
+    "message": "Take a picture and transform the scene into an Installation Art-style experience.\n\nCORE CONCEPT (CRITICAL):\n• The image becomes a large-scale, immersive art installation\n• Subject(s) are integrated as part of the installation itself\n• The scene should feel intentionally designed as a conceptual artwork\n\nINSTALLATION LOGIC:\n• Elements of the scene are rearranged into a curated artistic display\n• Objects may be suspended, repeated, stacked, or spatially arranged\n• Materials and structures may be exaggerated or recontextualized\n\nSUBJECT ROLE:\n• Subject(s) may become part of the installation (living sculpture, centerpiece, or participant)\n• Pose and placement should feel deliberate and artistic\n\nENVIRONMENT:\n• Transform the setting into a gallery, museum, or immersive exhibit space\n• Include lighting elements such as spotlights, projections, or ambient effects\n\nSTYLE:\n• Concept-driven composition\n• Experimental, abstract, or symbolic presentation\n• Clean or chaotic depending on artistic intent\n\nMATERIALS & TEXTURE:\n• Mixed media appearance (metal, fabric, plastic, light, etc.)\n• Emphasize scale, space, and physical presence",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "FINAL RESULT:\nThe image should feel like a curated installation artwork displayed in a gallery or immersive space, with the subject integrated into a conceptual and visually striking composition."
+  },
+  {
     "name": "INTERVENTION",
     "category": [
       "HUMOR",
@@ -13628,13 +13703,14 @@
     "name": "KINETIC ART",
     "category": [
       "ART",
-      "MOVEMENT",
-      "OPTICAL"
+      "CONTEMPORARY",
+      "STYLE TRANSFORMATION",
+      "ABSTRACT"
     ],
-    "message": "Take a picture and render the image in the kinetic art style, creating visual illusions of movement and motion in a static image. Use curved, flowing lines that suggest movement paths and trajectories through space. Apply strategic motion blur effects to specific elements while keeping anchor points and focal areas sharp for contrast. Create visual rhythm through repeated elements that vary in size, spacing, rotation, or intensity to suggest animation frames. Incorporate spiraling patterns, radiating lines, and dynamic compositions that make the eye travel across the image. Use high contrast between moving and static elements. The subject should appear to be in energetic motion even though the image is still. Op-art influences, dynamic composition, illusion of kinetic energy, visual momentum.",
+    "message": "Take a picture and transform the image into a Kinetic Art-style composition.\n\nCORE CONCEPT (CRITICAL):\n• The scene is reimagined as an artwork that conveys real or implied motion\n• Subject(s) remain recognizable but are integrated into moving or motion-driven elements\n\nMOTION LOGIC:\n• Incorporate mechanical or optical movement (spinning, swinging, rotating, shifting)\n• Use repeated patterns, layered elements, or optical illusions to suggest motion\n• Parts of the scene may appear animated, modular, or in continuous motion\n\nSTRUCTURE & DESIGN:\n• Elements may be suspended, balanced, or connected like a mobile or mechanical sculpture\n• Use geometric shapes, lines, and rhythmic repetition\n• Composition should feel engineered for movement and interaction\n\nENVIRONMENT:\n• Place the scene in a gallery or open space suitable for kinetic installations\n• Include supports, wires, joints, or mechanical components where appropriate\n\nSTYLE:\n• Clean, modern, and experimental\n• Emphasis on motion, rhythm, and interaction\n• Balanced between art and engineering aesthetics\n\nMATERIALS & TEXTURE:\n• Metal, plastic, glass, or mixed materials\n• Smooth surfaces with reflective or matte finishes\n• Subtle lighting that enhances motion and form",
     "options": [],
     "randomizeOptions": false,
-    "additionalInstructions": ""
+    "additionalInstructions": "FINAL RESULT:\nThe image should feel like a dynamic kinetic artwork, where movement—real or implied—is central, and the subject is seamlessly integrated into a motion-driven artistic structure."
   },
   {
     "name": "KING OF THE WORLD!",
@@ -20230,6 +20306,19 @@
     "additionalInstructions": "FINAL RESULT:\nThe image should show the subject on a complete poster in the selected style with accurate era-specific design, typography, and humorous genre-aware flavor text, appearing as a believable real-world poster while embracing over-the-top parody."
   },
   {
+    "name": "POST-IMPRESSIONISM STYLE",
+    "category": [
+      "ART",
+      "PAINTING",
+      "STYLE TRANSFORMATION",
+      "CLASSICAL"
+    ],
+    "message": "Take a picture and transform the image into a Post-Impressionist-style painting.\n\nCORE CONCEPT (CRITICAL):\n• The scene is reinterpreted through a Post-Impressionist artistic lens\n• Subject(s) must remain recognizable but stylized\n• Emphasis on emotion, structure, and artistic expression over realism\n\nSTYLE CHARACTERISTICS:\n• Bold, expressive brushstrokes\n• Enhanced or non-naturalistic color palettes\n• Strong outlines or defined forms\n• Flattened perspective or simplified depth\n\nARTISTIC INTERPRETATION:\n• Shapes may be exaggerated or slightly distorted for effect\n• Lighting and color used to convey mood rather than accuracy\n• Composition may feel more structured or symbolic\n\nTEXTURE & MEDIUM:\n• Visible paint texture and directional brushwork\n• Oil-on-canvas appearance with rich pigment\n\nENVIRONMENT:\n• Preserve core scene elements but reinterpret with artistic freedom\n• Backgrounds may be simplified or stylized\n\nSTYLE:\n• Vibrant, expressive, and painterly\n• Balanced between structure and abstraction\n• Inspired by classic Post-Impressionist techniques",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "FINAL RESULT:\nThe image should resemble a classic Post-Impressionist painting with bold color, expressive brushwork, and stylized yet recognizable subject matter."
+  },
+  {
     "name": "POTATO",
     "category": [
       "HUMOR",
@@ -20859,6 +20948,19 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "REALISM ART STYLE",
+    "category": [
+      "ART",
+      "PAINTING",
+      "STYLE TRANSFORMATION",
+      "CLASSICAL"
+    ],
+    "message": "Take a picture and transform the image into a Realism-style painting.\n\nCORE CONCEPT (CRITICAL):\n• The scene is rendered as a traditional Realism painting\n• Subject(s) must remain highly recognizable and true to life\n• No stylization that exaggerates or distorts reality\n\nSTYLE CHARACTERISTICS:\n• Accurate proportions, perspective, and anatomy\n• Fine detail and sharp clarity\n• Natural lighting and shadow\n• True-to-life color tones\n\nTEXTURE & MEDIUM:\n• Subtle visible brushwork or smooth blended paint\n• Oil painting or classical canvas texture\n• Minimal abstraction — focus on lifelike rendering\n\nENVIRONMENT:\n• Preserve the original scene composition\n• Enhance with painterly depth and realism\n\nSTYLE:\n• Balanced contrast and natural tones\n• Museum-quality classical painting finish\n• Clean, detailed, and grounded in reality",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "FINAL RESULT:\nThe image should look like a high-quality classical Realism painting that closely replicates real life with precise detail, natural lighting, and accurate representation."
   },
   {
     "name": "REALITY TV SHOW",
