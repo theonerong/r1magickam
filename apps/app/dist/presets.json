@@ -9145,7 +9145,6 @@
       "CHARACTER TRANSFORMATION"
     ],
     "message": "Take a picture and transform the subject(s) into a famous statue.\n\nCORE CONCEPT (CRITICAL):\n• ONLY the subject’s face is transformed to match the selected statue\n• The statue’s ORIGINAL BODY must remain EXACTLY the same\n• Do NOT alter the statue’s pose, anatomy, or structure\n• The subject’s identity is preserved through facial features mapped onto the statue\n\nFACE TRANSFORMATION RULE:\n• Replace the statue’s face with the subject’s face\n• Adapt the face to match the sculpture style (carved, chiseled, stylized)\n• Facial expression should conform to the statue’s expression and mood\n\nMATERIAL TRANSFORMATION:\n• The face must adopt the same material as the statue (marble, bronze, stone, etc.)\n• Apply realistic sculptural texture, wear, cracks, or patina\n\nBODY RULE (STRICT):\n• The statue’s body remains unchanged\n• No modern clothing, no body reshaping, no pose alteration\n• Preserve all original proportions and sculptural details\n\nENVIRONMENT:\n• Place the subject in the original or a similar environment where the statue is typically found\n• Include pedestal or base if appropriate\n\nSTYLE:\n• Realistic sculptural detail\n• Accurate lighting matching outdoor or museum display\n• Preserve fine texture details (aging, polish, erosion)",
-  "randomizeOptions": false,
     "options": [
       { "id": "001",
         "text": "Michelangelo’s David (white marble, Renaissance sculpture)" 
@@ -9238,6 +9237,7 @@
         "text": "Abraham Lincoln bust (marble, detailed facial portrait sculpture)" 
       }
     ],
+    "randomizeOptions": true,
     "additionalInstructions": "FINAL RESULT:\nThe image must clearly show the original statue body unchanged, with only the face replaced by the subject and seamlessly integrated into the sculpture material and style."
   },
   {
