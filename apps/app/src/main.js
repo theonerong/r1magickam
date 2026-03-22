@@ -1705,12 +1705,13 @@ async function submitMagicTransform() {
   }
   
   const item = galleryImages[currentViewerImageIndex];
+  const resizedImageBase64 = await resizeImageForSubmission(item.imageBase64);
   
   if (typeof PluginMessageHandler !== 'undefined') {
     PluginMessageHandler.postMessage(JSON.stringify({
       message: getFinalPrompt(matchedPreset || {name: presetName, message: prompt, options: [], randomizeOptions: false, additionalInstructions: ''}, manualSelection),
       pluginId: 'com.r1.pixelart',
-      imageBase64: item.imageBase64
+      imageBase64: resizedImageBase64
     }));
 
     // Combined image stays active until user closes the viewer
@@ -1864,12 +1865,13 @@ async function processBatchImages(preset, imagesToProcess) {
     
     try {
       const finalPrompt = getFinalPrompt(preset, batchManualSelection);
+      const resizedImageBase64 = await resizeImageForSubmission(image.imageBase64);
       
       if (typeof PluginMessageHandler !== 'undefined') {
         PluginMessageHandler.postMessage(JSON.stringify({
           message: finalPrompt,
           pluginId: 'com.r1.pixelart',
-          imageBase64: image.imageBase64
+          imageBase64: resizedImageBase64
         }));
       }
       
@@ -1890,6 +1892,58 @@ async function processBatchImages(preset, imagesToProcess) {
   toggleBatchMode();
   
   alert(`Batch processing complete! ${processed} of ${total} images submitted.`);
+}
+
+// Resize a base64 image to fit within 2048px wide while maintaining 3:4 aspect ratio
+// Returns a new base64 string at the corrected size
+async function resizeImageForSubmission(imageBase64) {
+  return new Promise((resolve) => {
+    const img = new Image();
+    img.onload = () => {
+      const MAX_WIDTH = 2048;
+      const TARGET_RATIO_W = 3;
+      const TARGET_RATIO_H = 4;
+
+      // Calculate canvas size to match 3:4 aspect ratio
+      let canvasWidth = img.width;
+      let canvasHeight = Math.round(canvasWidth * TARGET_RATIO_H / TARGET_RATIO_W);
+
+      // If the image is taller than the 3:4 canvas, anchor to height instead
+      if (img.height > canvasHeight) {
+        canvasHeight = img.height;
+        canvasWidth = Math.round(canvasHeight * TARGET_RATIO_W / TARGET_RATIO_H);
+      }
+
+      // Cap at 2048px wide
+      if (canvasWidth > MAX_WIDTH) {
+        const downScale = MAX_WIDTH / canvasWidth;
+        canvasWidth = MAX_WIDTH;
+        canvasHeight = Math.round(canvasHeight * downScale);
+      }
+
+      const canvas = document.createElement('canvas');
+      canvas.width = canvasWidth;
+      canvas.height = canvasHeight;
+      const ctx = canvas.getContext('2d');
+
+      // Black background (fills any letterbox padding)
+      ctx.fillStyle = '#000000';
+      ctx.fillRect(0, 0, canvasWidth, canvasHeight);
+
+      // Scale image to fit within the canvas, preserving its aspect ratio
+      const scale = Math.min(canvasWidth / img.width, canvasHeight / img.height);
+      const drawW = Math.round(img.width * scale);
+      const drawH = Math.round(img.height * scale);
+      const offsetX = Math.floor((canvasWidth - drawW) / 2);
+      const offsetY = Math.floor((canvasHeight - drawH) / 2);
+
+      ctx.drawImage(img, offsetX, offsetY, drawW, drawH);
+
+      resolve(canvas.toDataURL('image/jpeg', 0.92));
+    };
+    img.onerror = () => resolve(imageBase64); // Fall back to original if load fails
+    img.src = imageBase64;
+  });
 }
 
 async function combineTwoImages() {
@@ -2329,6 +2383,8 @@ async function applyMultiplePresets() {
   
   let processed = 0;
   
+  const resizedImageBase64 = await resizeImageForSubmission(image.imageBase64);
+
   for (const preset of presetsToApply) {
     try {
       const manualSelection = galleryMultiManualSelections[preset.name] || null;
@@ -2338,7 +2394,7 @@ async function applyMultiplePresets() {
         PluginMessageHandler.postMessage(JSON.stringify({
           message: finalPrompt,
           pluginId: 'com.r1.pixelart',
-          imageBase64: image.imageBase64
+          imageBase64: resizedImageBase64
         }));
       }
       
@@ -7283,7 +7339,6 @@ function updatePresetDisplay() {
         } else {
             statusElement.textContent = `Style: ${currentPreset.name}`;
         }
-    }
     
     // Show style reveal on screen (middle text)
     if (isCameraMultiPresetActive && cameraSelectedPresets.length > 0) {
@@ -7296,6 +7351,7 @@ function updatePresetDisplay() {
 
     if (isMenuOpen) {
         updateMenuSelection();
+    }
     }
 }
 
