@@ -48,6 +48,19 @@
     "additionalInstructions": "FINAL RESULT:\nThe final image must look like a real promotional still or episode frame from Doctor Who, with the subject fully embodied as the Doctor, equipped with iconic gadgets, placed in a season-accurate setting, and seamlessly integrated into the Doctor Who universe."
   },
   {
+    "name": "3D BLIND BOX / POP MART",
+    "category": [
+      "3D",
+      "CHARACTER TRANSFORMATION",
+      "TOY",
+      "STYLE TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform the subject into a 3D blind box collectible toy in the style of designer figures.\n\nCORE CONCEPT (CRITICAL):\n• Subject is converted into a stylized collectible toy figure\n• Maintain recognizable identity while simplifying features\n• Emphasize cute, collectible, and display-ready design\n\nCHARACTER DESIGN:\n• Large head-to-body ratio\n• Simplified facial features with expressive eyes\n• Rounded shapes and smooth contours\n\nMATERIAL & TEXTURE:\n• Matte or semi-gloss plastic finish\n• Smooth, polished surfaces\n• Subtle toy-like seams or molding details\n\nPOSE & PRESENTATION:\n• Static collectible pose\n• Centered composition like product display\n• Optional base or stand\n\nENVIRONMENT:\n• Clean display setting or minimal background\n• May include packaging elements or toy box aesthetic\n\nSTYLE:\n• Cute, stylized, and high-end collectible feel\n• Bright, clean colors\n• Professional product-style lighting",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "FINAL RESULT:\nThe image should look like a premium designer toy figure, with the subject transformed into a stylized collectible that feels like part of a blind box series."
+  },
+  {
     "name": "3D FIGURINE",
     "category": [
       "OPTIONS",
@@ -2066,6 +2079,19 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "BATIK",
+    "category": [
+      "ART",
+      "TEXTILE",
+      "PATTERN",
+      "STYLE TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform the image into a Batik-style artwork.\n\nCORE CONCEPT (CRITICAL):\n• The scene is reinterpreted as a traditional batik textile design\n• Subject(s) remain recognizable but stylized into patterns and shapes\n\nPATTERN LOGIC:\n• Use repeating motifs and decorative elements\n• Incorporate organic shapes, florals, or geometric designs\n• Break down forms into patterned segments\n\nTECHNIQUE STYLE:\n• Wax-resist dye aesthetic\n• Visible crackle lines and dye boundaries\n• Layered color application with defined edges\n\nCOLOR & TEXTURE:\n• Earth tones or rich traditional colors\n• Fabric-like texture\n• Slight irregularities to mimic handmade process\n\nENVIRONMENT:\n• Entire scene treated as a textile surface\n• Background and subject integrated into a unified pattern\n\nSTYLE:\n• Decorative, cultural, and intricate\n• Balanced between abstraction and recognition\n• Handcrafted artistic feel",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "FINAL RESULT:\nThe image should resemble a handcrafted batik textile, with the subject integrated into intricate patterns, visible dye textures, and traditional decorative motifs."
   },
   {
     "name": "BAUHAUS",
@@ -22063,6 +22089,19 @@
   "additionalInstructions": "CRITICAL FRAMING: This is a themed escape room and haunted attraction promotional photograph styled after the SAW horror film franchise. The subject is a costumed performer. Every device is a foam, rubber, and painted plastic theatrical prop built by a professional props department. The visual style must match official SAW franchise promotional materials and Universal Studios Halloween Horror Nights marketing photography — the kind of image used in studio and theme park advertising. No gore. No wounds. No blood effects. No injury of any kind. The subject looks startled and theatrical. The trap is a dramatic backdrop prop. Style the final image as a professional horror movie poster photograph with the SAW franchise's signature desaturated green-yellow color grade, industrial set design, Billy the Puppet visible in the background, and the countdown timer on the prop device."
   },
   {
+    "name": "SCANDINAVIAN DESIGN",
+    "category": [
+      "DESIGN",
+      "MINIMALISM",
+      "INTERIOR",
+      "STYLE TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform the scene into a Scandinavian design aesthetic.\n\nCORE CONCEPT (CRITICAL):\n• The scene is simplified into a clean, minimal, and functional design\n• Subject(s) remain natural and integrated into the environment\n\nDESIGN PRINCIPLES:\n• Minimalism and simplicity\n• Functionality and clean composition\n• Open space and uncluttered layout\n\nCOLOR & MATERIALS:\n• Neutral color palette (whites, grays, soft earth tones)\n• Light wood textures and natural materials\n• Soft textiles and subtle accents\n\nENVIRONMENT:\n• Bright, airy spaces with natural light\n• Clean lines and modern furniture\n• Organized and clutter-free surroundings\n\nSTYLE:\n• Calm, cozy, and balanced\n• Emphasis on comfort and simplicity\n• Soft lighting and natural tones\n\nTEXTURE:\n• Smooth surfaces with subtle natural textures\n• Matte finishes and soft materials",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "FINAL RESULT:\nThe image should feel like a clean, modern Scandinavian space with minimal clutter, soft natural lighting, and a calm, functional aesthetic."
+  },
+  {
     "name": "SCANDINAVIAN FOLK ART",
     "category": [
       "ART",
@@ -24850,6 +24889,19 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "IMPORTANT:\n• Humor must come entirely from material downgrade and craftsmanship\n• No added captions\n• No overlays\n• No UI elements\n• The subject must remain recognizable\n\nFINAL RESULT:\nThe final image should look like a real photograph of the original scene, but every object, material, brand, and where appropriate even object category has been converted into an obvious low-budget knockoff version without adding any new text or graphic elements."
+  },
+  {
+    "name": "TENEBRISM",
+    "category": [
+      "ART",
+      "PAINTING",
+      "STYLE TRANSFORMATION",
+      "CLASSICAL"
+    ],
+    "message": "Take a picture and transform the image into a Tenebrism-style painting.\n\nCORE CONCEPT (CRITICAL):\n• The scene is dominated by dramatic contrast between light and darkness\n• Subject(s) emerge from deep shadow into intense illumination\n• Maintain recognizable subject identity\n\nLIGHTING:\n• Strong, focused light source illuminating key areas\n• Large portions of the scene fall into near-black shadow\n• Sharp contrast between highlights and darkness\n\nSTYLE CHARACTERISTICS:\n• Minimal mid-tones\n• High drama and emotional intensity\n• Deep shadows engulfing background and surroundings\n\nARTISTIC INTERPRETATION:\n• Light guides attention to the subject’s face and form\n• Background details may be obscured or completely lost in shadow\n\nTEXTURE & MEDIUM:\n• Oil painting texture\n• Rich, dark pigments with luminous highlights\n\nENVIRONMENT:\n• Simplified or nearly invisible background\n• Emphasis on subject emerging from darkness\n\nSTYLE:\n• Cinematic, dramatic, and intense\n• Classical Baroque influence\n• Strong visual storytelling through light",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "FINAL RESULT:\nThe image should resemble a dramatic Tenebrism painting, with the subject illuminated by a powerful light source against a dark, shadow-filled background."
   },
   {
     "name": "TERMINATOR VISION",
