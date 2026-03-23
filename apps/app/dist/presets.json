@@ -52,13 +52,13 @@
     "category": [
       "3D",
       "CHARACTER TRANSFORMATION",
-      "TOY",
-      "STYLE TRANSFORMATION"
+      "STYLE TRANSFORMATION",
+      "CARTOON"
     ],
-    "message": "Take a picture and transform the subject into a 3D blind box collectible toy in the style of designer figures.\n\nCORE CONCEPT (CRITICAL):\n• Subject is converted into a stylized collectible toy figure\n• Maintain recognizable identity while simplifying features\n• Emphasize cute, collectible, and display-ready design\n\nCHARACTER DESIGN:\n• Large head-to-body ratio\n• Simplified facial features with expressive eyes\n• Rounded shapes and smooth contours\n\nMATERIAL & TEXTURE:\n• Matte or semi-gloss plastic finish\n• Smooth, polished surfaces\n• Subtle toy-like seams or molding details\n\nPOSE & PRESENTATION:\n• Static collectible pose\n• Centered composition like product display\n• Optional base or stand\n\nENVIRONMENT:\n• Clean display setting or minimal background\n• May include packaging elements or toy box aesthetic\n\nSTYLE:\n• Cute, stylized, and high-end collectible feel\n• Bright, clean colors\n• Professional product-style lighting",
+    "message": "Take a picture and transform the subject into a 3D blind box / designer toy character style while keeping them naturally integrated within the original scene.\n\nCORE CONCEPT (CRITICAL):\n• The transformation is purely stylistic\n• Subject remains in the original environment and position\n• Do NOT isolate the subject or present them as a product or collectible display\n• Do NOT add packaging, boxes, pedestals, or product staging\n\nCHARACTER STYLE:\n• Large head-to-body ratio\n• Simplified facial features with expressive eyes\n• Rounded proportions and smooth geometry\n• Soft, toy-like stylization while preserving identity\n\nSCENE INTEGRATION:\n• The environment remains realistic or stylized consistently with the subject\n• Other people and objects may also adopt simplified or toy-like forms for consistency\n• Perspective and lighting must match the original scene\n\nMATERIAL & TEXTURE:\n• Smooth, plastic-like surface shading\n• Clean edges and simplified detail\n• Subtle reflections or soft highlights typical of vinyl figures\n\nSTYLE:\n• Cute, stylized, and playful\n• Cohesive transformation across subject and scene\n• Maintain the natural composition of the photograph",
     "options": [],
     "randomizeOptions": false,
-    "additionalInstructions": "FINAL RESULT:\nThe image should look like a premium designer toy figure, with the subject transformed into a stylized collectible that feels like part of a blind box series."
+    "additionalInstructions": "FINAL RESULT:\nThe image should look like the real-world scene has been transformed into a stylized 3D designer-toy universe, with the subject still present in the scene rather than displayed as a collectible object."
   },
   {
     "name": "3D FIGURINE",
@@ -22091,15 +22091,15 @@
   {
     "name": "SCANDINAVIAN DESIGN",
     "category": [
-      "DESIGN",
-      "MINIMALISM",
-      "INTERIOR",
-      "STYLE TRANSFORMATION"
+      "ART",
+      "PAINTING",
+      "STYLE TRANSFORMATION",
+      "MINIMALISM"
     ],
-    "message": "Take a picture and transform the scene into a Scandinavian design aesthetic.\n\nCORE CONCEPT (CRITICAL):\n• The scene is simplified into a clean, minimal, and functional design\n• Subject(s) remain natural and integrated into the environment\n\nDESIGN PRINCIPLES:\n• Minimalism and simplicity\n• Functionality and clean composition\n• Open space and uncluttered layout\n\nCOLOR & MATERIALS:\n• Neutral color palette (whites, grays, soft earth tones)\n• Light wood textures and natural materials\n• Soft textiles and subtle accents\n\nENVIRONMENT:\n• Bright, airy spaces with natural light\n• Clean lines and modern furniture\n• Organized and clutter-free surroundings\n\nSTYLE:\n• Calm, cozy, and balanced\n• Emphasis on comfort and simplicity\n• Soft lighting and natural tones\n\nTEXTURE:\n• Smooth surfaces with subtle natural textures\n• Matte finishes and soft materials",
+    "message": "Take a picture and transform the image into a Scandinavian design art-style creation.\n\nCORE CONCEPT (CRITICAL):\n• The scene is reinterpreted as a piece of Scandinavian-inspired artwork\n• Emphasis on simplicity, minimalism, and artistic composition\n• Subject(s) remain recognizable but stylized\n\nSTYLE CHARACTERISTICS:\n• Clean lines and simplified forms\n• Minimal detail with intentional negative space\n• Soft, balanced compositions\n\nCOLOR & TONE:\n• Muted, neutral palette (whites, grays, soft blues, earthy tones)\n• Limited color usage with subtle contrast\n\nARTISTIC INTERPRETATION:\n• Reduce complexity while preserving essential shapes\n• Focus on calm, harmony, and visual balance\n• Slight abstraction while maintaining recognizability\n\nTEXTURE & MEDIUM:\n• Flat or lightly textured painted surface\n• Illustration or modern painting feel\n\nENVIRONMENT:\n• Background simplified into minimal shapes or soft gradients\n• Remove clutter and unnecessary detail\n\nSTYLE:\n• Calm, clean, and refined\n• Minimalist artistic expression\n• Balanced and visually quiet composition",
     "options": [],
     "randomizeOptions": false,
-    "additionalInstructions": "FINAL RESULT:\nThe image should feel like a clean, modern Scandinavian space with minimal clutter, soft natural lighting, and a calm, functional aesthetic."
+    "additionalInstructions": "FINAL RESULT:\nThe image should look like a minimalist Scandinavian design-style artwork, with simplified forms, soft colors, and a calm, balanced composition."
   },
   {
     "name": "SCANDINAVIAN FOLK ART",
