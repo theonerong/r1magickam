@@ -17825,6 +17825,19 @@
     "additionalInstructions": ""
   },
   {
+    "name": "NEEDLEPOINT",
+    "category": [
+      "ART",
+      "TEXTILE",
+      "CRAFT",
+      "STYLE TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform the image into a needlepoint-style textile artwork.\n\nCORE CONCEPT (CRITICAL):\n• The entire image is reinterpreted as a stitched needlepoint piece\n• Subject(s) must remain recognizable but rendered through stitched patterns\n\nSTITCH LOGIC:\n• Use uniform, grid-based stitching (needlepoint/canvas style)\n• Visible individual stitches forming the image\n• Diagonal or cross-stitch patterns with consistent spacing\n\nTEXTURE & MATERIAL:\n• Fabric canvas background (woven texture)\n• Thread fibers visible with slight thickness and softness\n• Slight irregularities to mimic handmade stitching\n\nCOLOR & DETAIL:\n• Limited color blending due to thread constraints\n• Subtle color transitions using stitched patterns\n• Slight pixel-like simplification of fine details\n\nENVIRONMENT:\n• Entire scene treated as a flat textile surface\n• Background and subject integrated into one stitched composition\n\nSTYLE:\n• Handmade, tactile, and decorative\n• Warm, crafted aesthetic\n• Clean but slightly imperfect stitching",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "FINAL RESULT:\nThe image should look like a handcrafted needlepoint artwork, with visible stitches, fabric texture, and the subject clearly recognizable through the stitched design."
+  },
+  {
     "name": "NEGATIVE SPACE",
     "category": [
       "ART",
@@ -19581,6 +19594,19 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "PATCHWORK QUILT",
+    "category": [
+      "ART",
+      "TEXTILE",
+      "CRAFT",
+      "SCENE TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform the image into a multi-sectional patchwork quilt.\n\nCORE CONCEPT (CRITICAL):\n• The entire scene is reinterpreted as a quilt made of multiple stitched sections\n• Subject(s) must remain recognizable across the quilt panels\n\nPANEL LOGIC:\n• Divide the image into multiple quilt blocks or sections\n• Each section depicts a different variation, moment, or interpretation of the subject based on visual cues\n• Sections may show alternate poses, expressions, simplified icons, or symbolic elements\n\nARTISTIC INTERPRETATION:\n• Use key elements from the original image (colors, objects, clothing, background) to inspire each panel\n• Some panels may be literal representations, others more abstract or symbolic\n\nTEXTURE & MATERIAL:\n• Fabric pieces with visible stitching seams between sections\n• Quilted texture with slight puffing or padding\n• Mixed fabrics (cotton, patterned cloth, stitched appliqué)\n\nCOLOR & PATTERN:\n• Coordinated but varied color palette across panels\n• Use repeating motifs, patterns, and decorative stitching\n\nENVIRONMENT:\n• Entire image presented as a single quilt surface\n• Slight folds, fabric depth, or hanging presentation may be visible\n\nSTYLE:\n• Handmade, warm, and crafted aesthetic\n• Slight imperfections for authenticity\n• Balanced composition across all quilt sections",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "FINAL RESULT:\nThe image should look like a handcrafted patchwork quilt, with multiple stitched sections that each reinterpret the subject in different but cohesive ways, all integrated into a single fabric artwork."
   },
   {
     "name": "PATRON SAINT",
