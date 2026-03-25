@@ -8064,37 +8064,37 @@
       {
         "title": "EVA UNIT",
         "options": [
-          { "id": "005", "text": "Evangelion Unit-01 towering behind the subject" },
-          { "id": "006", "text": "Evangelion Unit-02 in an aggressive stance nearby" },
-          { "id": "007", "text": "Evangelion Unit-00 standing guard in the background" },
-          { "id": "008", "text": "Multiple Evangelion units present in the scene" }
+          { "id": "001", "text": "Evangelion Unit-01 towering behind the subject" },
+          { "id": "002", "text": "Evangelion Unit-02 in an aggressive stance nearby" },
+          { "id": "003", "text": "Evangelion Unit-00 standing guard in the background" },
+          { "id": "004", "text": "Multiple Evangelion units present in the scene" }
         ]
       },
       {
         "title": "ANGEL THREAT",
         "options": [
-          { "id": "009", "text": "A massive abstract Angel looming in the sky" },
-          { "id": "010", "text": "An Angel attacking the city with energy blasts" },
-          { "id": "011", "text": "A surreal geometric Angel hovering nearby" },
-          { "id": "012", "text": "No Angel present, tense calm before battle" }
+          { "id": "001", "text": "A massive abstract Angel looming in the sky" },
+          { "id": "002", "text": "An Angel attacking the city with energy blasts" },
+          { "id": "003", "text": "A surreal geometric Angel hovering nearby" },
+          { "id": "004", "text": "No Angel present, tense calm before battle" }
         ]
       },
       {
         "title": "ENVIRONMENT",
         "options": [
-          { "id": "013", "text": "Tokyo-3 cityscape with retracting buildings" },
-          { "id": "014", "text": "Destroyed urban battlefield with debris and smoke" },
-          { "id": "015", "text": "NERV headquarters interior with futuristic panels" },
-          { "id": "016", "text": "Open landscape under a dramatic red sky" }
+          { "id": "001", "text": "Tokyo-3 cityscape with retracting buildings" },
+          { "id": "002", "text": "Destroyed urban battlefield with debris and smoke" },
+          { "id": "003", "text": "NERV headquarters interior with futuristic panels" },
+          { "id": "004", "text": "Open landscape under a dramatic red sky" }
         ]
       },
       {
         "title": "MOOD",
         "options": [
-          { "id": "017", "text": "Intense and action-packed moment" },
-          { "id": "018", "text": "Quiet, emotional, and introspective tone" },
-          { "id": "019", "text": "Dark and ominous atmosphere" },
-          { "id": "020", "text": "Epic cinematic battle energy" }
+          { "id": "001", "text": "Intense and action-packed moment" },
+          { "id": "002", "text": "Quiet, emotional, and introspective tone" },
+          { "id": "003", "text": "Dark and ominous atmosphere" },
+          { "id": "004", "text": "Epic cinematic battle energy" }
         ]
       }
     ],
