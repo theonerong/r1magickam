@@ -3955,7 +3955,7 @@
       {
         "title": "CHAIN COMPLEXITY",
         "options": [
-          { "id": "001, "text": "Simple chain with 3–4 clear steps" },
+          { "id": "001", "text": "Simple chain with 3–4 clear steps" },
           { "id": "002", "text": "Moderate chain with 5–7 steps" },
           { "id": "003", "text": "Complex chain with many interconnected steps" }
         ]
