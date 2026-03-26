@@ -1947,6 +1947,19 @@
     "additionalInstructions": ""
   },
   {
+    "name": "ASH DISINTEGRATION",
+    "category": [
+      "SURREAL",
+      "SCENE TRANSFORMATION",
+      "PARTICLE EFFECT",
+      "STYLE TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform the scene so that parts of the subject are disintegrating into drifting ash.\n\nCORE CONCEPT (CRITICAL):\n• Subject(s) remain recognizable but are partially breaking apart\n• Disintegration occurs gradually, not all at once\n\nDISINTEGRATION LOGIC:\n• Edges of the subject crumble into fine ash particles\n• Transition from solid form to scattered particles is smooth and progressive\n• Ash drifts outward naturally as if carried by air\n\nPARTICLE BEHAVIOR:\n• Fine, lightweight ash fragments\n• Particles vary in size from small flakes to dust\n• Movement suggests gentle wind or natural dispersion\n\nENVIRONMENT:\n• Surrounding scene may contain drifting ash particles\n• Background remains mostly intact unless subtly affected\n\nSTYLE:\n• Atmospheric and slightly dramatic\n• Emphasis on motion and gradual decay\n• Balanced between realism and stylization",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "FINAL RESULT:\nThe image should show the subject partially disintegrating into drifting ash, with smooth transitions from solid form to particles while keeping the subject clearly recognizable."
+  },
+  {
     "name": "AUSTIN DANGER POWERS",
     "category": [
       "CINEMATIC",
