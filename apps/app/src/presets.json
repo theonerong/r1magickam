@@ -468,6 +468,19 @@
     "additionalInstructions": "FINAL RESULT:\nThe final image should depict a vibrant, culturally rooted, technologically advanced future vision."
   },
   {
+    "name": "AIRBRUSH 80s",
+    "category": [
+      "ART",
+      "RETRO",
+      "STYLE TRANSFORMATION",
+      "ILLUSTRATION"
+    ],
+    "message": "Take a picture and transform the image into a 1980s airbrush illustration style.\n\nCORE CONCEPT (CRITICAL):\n• The scene is rendered like a retro 80s airbrushed artwork\n• Subject(s) remain recognizable but stylized\n\nSTYLE CHARACTERISTICS:\n• Smooth gradient shading with soft transitions\n• Glossy highlights and polished surfaces\n• Slightly idealized or glamorized appearance\n\nCOLOR & TONE:\n• Vibrant neon or pastel color palette\n• High contrast with glowing highlights\n• Retro color combinations (pinks, purples, blues, oranges)\n\nARTISTIC INTERPRETATION:\n• Add dramatic lighting and stylized glow effects\n• Slight soft-focus or dreamy finish\n\nENVIRONMENT:\n• Background may include gradients, light streaks, or abstract retro elements\n\nSTYLE:\n• Sleek, polished, and nostalgic\n• Retro-futuristic aesthetic\n• Clean, vibrant, and visually bold",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "FINAL RESULT:\nThe image should resemble a polished 1980s airbrushed illustration with smooth gradients, vibrant colors, and a nostalgic retro aesthetic."
+  },
+  {
     "name": "AIRPORT SECURITY SCAN",
     "category": [
       "OPTIONS",
@@ -3919,6 +3932,63 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "CHAIN REACTION",
+    "category": [
+      "SURREAL",
+      "SCENE TRANSFORMATION",
+      "LOGIC"
+    ],
+    "message": "Take a picture and transform the scene into a connected chain reaction where every element is part of a cause-and-effect sequence.\n\nCORE CONCEPT (CRITICAL):\n• The entire scene becomes a continuous chain reaction\n• Every action leads to another in a clear visual sequence\n• Subject(s) remain recognizable and actively involved in the chain\n\nCHAIN LOGIC:\n• Start with a clear initiating action\n• Build a sequence of connected steps across the scene\n• Each step must visually trigger the next (no randomness)\n• End with a final payoff or result\n\nSTRUCTURE:\n• Objects, people, and environment are linked through motion or interaction\n• Use directional flow (left to right, foreground to background, etc.)\n• Ensure readability — viewer can follow the sequence step-by-step\n\nENVIRONMENT:\n• Adapt the existing scene to support the chain\n• Add objects or mechanisms if needed to maintain continuity\n\nSTYLE:\n• Playful, clever, and visually engaging\n• Balanced complexity — detailed but understandable\n• Slightly exaggerated physics for clarity and fun",
+    "randomizeOptions": true,
+    "optionGroups": [
+      {
+        "title": "STARTING ACTION",
+        "options": [
+          { "id": "001", "text": "Subject accidentally knocking something over" },
+          { "id": "002", "text": "Subject intentionally triggering the sequence" },
+          { "id": "003", "text": "An object falling or slipping out of place" },
+          { "id": "004", "text": "A small unexpected event starting the chain" }
+        ]
+      },
+      {
+        "title": "CHAIN COMPLEXITY",
+        "options": [
+          { "id": "001, "text": "Simple chain with 3–4 clear steps" },
+          { "id": "002", "text": "Moderate chain with 5–7 steps" },
+          { "id": "003", "text": "Complex chain with many interconnected steps" }
+        ]
+      },
+      {
+        "title": "INTERACTION TYPE",
+        "options": [
+          { "id": "001", "text": "Physical objects colliding and triggering movement" },
+          { "id": "002", "text": "Mechanical or Rube Goldberg-style contraptions" },
+          { "id": "003", "text": "Environmental interactions (falling, sliding, tipping)" },
+          { "id": "004", "text": "Mixed interactions combining objects, people, and environment" }
+        ]
+      },
+      {
+        "title": "FINAL OUTCOME",
+        "options": [
+          { "id": "001", "text": "A humorous or unexpected payoff" },
+          { "id": "002", "text": "A perfectly completed task or goal" },
+          { "id": "003", "text": "A chaotic or messy ending" },
+          { "id": "004", "text": "A near-miss or almost-failed result" }
+        ]
+      },
+      {
+        "title": "TONE",
+        "options": [
+          { "id": "001", "text": "Lighthearted and playful" },
+          { "id": "002", "text": "Overly dramatic and cinematic" },
+          { "id": "003", "text": "Precise and engineered" },
+          { "id": "004", "text": "Absurd and exaggerated" }
+        ]
+      }
+    ],
+    "additionalInstructions": "FINAL RESULT:\nThe image should clearly depict a connected chain reaction where each step logically leads to the next, forming a complete and satisfying visual sequence from start to finish."
   },
   {
     "name": "CHALKBOARD ILLUSTRATION",
@@ -13441,6 +13511,19 @@
     "additionalInstructions": "IMPORTANT RESTRICTIONS:\n• Do not reproduce copyrighted logos, album artwork, or official branding\n• Maintain photorealistic production quality\n• Avoid obvious parody or comedy unless explicitly requested\n• Subject must remain clearly recognizable as themselves\n• Do not simply paste subject's face onto the original video - fully transform them into the artist\n\nFINAL RESULT:\nA powerful, instantly recognizable still frame from the selected iconic music video with the subject as the lead performer holding the EXACT same instruments/props as the original artist, surrounded by authentic band members or backup performers. The subject appears as the undisputed star of the performance, positioned and styled as the main vocalist/performer. The scene captures a signature moment from that specific video with era-accurate production quality, professional cinematography, correct instruments/props, and the collaborative energy of a real music video shoot. Optional song title overlay at bottom corner for context."
   },
   {
+    "name": "INK BLEED",
+    "category": [
+      "ART",
+      "ABSTRACT",
+      "STYLE TRANSFORMATION",
+      "PAINTING"
+    ],
+    "message": "Take a picture and transform the image into an ink bleed artwork.\n\nCORE CONCEPT (CRITICAL):\n• The image appears as ink spreading and bleeding across a surface\n• Subject(s) remain recognizable through flowing ink shapes\n\nINK LOGIC:\n• Ink diffuses outward with soft, organic edges\n• Shapes dissolve and blend into surrounding areas\n• Gradual transitions between dark and light ink densities\n\nTEXTURE & MEDIUM:\n• Paper or absorbent surface texture\n• Soft feathered edges where ink spreads\n• Occasional pooling or saturation points\n\nCOLOR & TONE:\n• Primarily monochrome or limited color palette\n• Strong dark ink contrasted with lighter washed areas\n\nENVIRONMENT:\n• Entire scene treated as an ink composition\n• Background and subject blend seamlessly through diffusion\n\nSTYLE:\n• Fluid, organic, and expressive\n• Soft, atmospheric transitions\n• Balanced between abstraction and recognizability",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "FINAL RESULT:\nThe image should look like ink has spread and bled across a surface to form the scene, with soft edges and fluid transitions while keeping the subject recognizable."
+  },
+  {
     "name": "JAVERT PHOTOBOMB",
     "category": [
       "HUMOR",
@@ -15464,6 +15547,19 @@
     ],
     "randomizeOptions": true,
     "additionalInstructions": "FINAL RESULT:\nThe image should show the subject in an iconic Mel Brooks comedy scene with over-the-top theatrical performance, sight gags, genre parody elements, and that distinctive Mel Brooks blend of slapstick, wordplay, fourth-wall-breaking meta-humor, and affectionate mockery of cinema."
+  },
+  {
+    "name": "MELTED WAX",
+    "category": [
+      "SURREAL",
+      "TEXTURE TRANSFORMATION",
+      "SCENE TRANSFORMATION",
+      "ABSTRACT"
+    ],
+    "message": "Take a picture and transform the entire scene into a melted wax composition.\n\nCORE CONCEPT (CRITICAL):\n• Everything appears partially melted like soft candle wax\n• Subject(s) remain recognizable despite deformation\n\nMELTING LOGIC:\n• Surfaces droop, sag, and drip downward\n• Wax forms thick drips, pools, and stretched shapes\n• Facial features and objects distort but remain identifiable\n\nTEXTURE & MATERIAL:\n• Smooth, semi-gloss wax surface\n• Soft edges and rounded forms\n• Subtle translucency in thinner areas\n\nENVIRONMENT:\n• Entire scene affected consistently by melting\n• Surfaces may pool or collect melted material\n\nSTYLE:\n• Surreal and fluid\n• Warm tones or candle-like coloration\n• Emphasis on gravity-driven deformation",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "FINAL RESULT:\nThe image should look like a wax sculpture that has begun melting, with visible drips and distortion while keeping the subject recognizable."
   },
   {
     "name": "MELTING",
@@ -23463,6 +23559,19 @@
     ],
     "randomizeOptions": true,
     "additionalInstructions": "The final image must look like a genuine Spotify artist or chart page. Match Spotify's exact dark background, green accent color, circular artist photo format, and typography. All chart data, song titles, streaming numbers, and surrounding artists must be real data from the target date, never fabricated."
+  },
+  {
+    "name": "SPRAY FOAM",
+    "category": [
+      "TEXTURE TRANSFORMATION",
+      "SURREAL",
+      "SCENE TRANSFORMATION",
+      "ABSTRACT"
+    ],
+    "message": "Take a picture and transform the entire scene into a spray foam-covered environment.\n\nCORE CONCEPT (CRITICAL):\n• Expanding foam covers and overtakes the scene\n• Subject(s) remain visible but partially engulfed\n\nFOAM LOGIC:\n• Foam expands outward in thick, irregular blobs\n• Surfaces are coated, filled, or overflowing with foam\n• Foam may drip, bulge, and harden into uneven shapes\n\nTEXTURE & MATERIAL:\n• Puffy, bubbly surface with porous texture\n• Matte or slightly glossy foam finish\n• Irregular expansion patterns and organic forms\n\nENVIRONMENT:\n• Foam interacts with all objects and surfaces\n• Gaps, corners, and openings filled or overflowing\n\nSTYLE:\n• Playful yet chaotic\n• Emphasis on volume and expansion\n• Slightly exaggerated growth patterns",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "FINAL RESULT:\nThe image should look like the scene has been overtaken by expanding spray foam, with the subject still recognizable beneath or within the foam-covered environment."
   },
   {
     "name": "STADIUM CROWD SIGN",
