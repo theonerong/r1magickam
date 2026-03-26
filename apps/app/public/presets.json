@@ -4248,6 +4248,19 @@
     "additionalInstructions": ""
   },
   {
+    "name": "CHINESE BRUSH PAINTING",
+    "category": [
+      "ART",
+      "PAINTING",
+      "TRADITIONAL",
+      "STYLE TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform the image into a Chinese brush painting.\n\nCORE CONCEPT (CRITICAL):\n• The scene is rendered using expressive brush strokes\n• Subject(s) remain recognizable but simplified\n\nSTYLE CHARACTERISTICS:\n• Fluid ink brush strokes\n• Minimal detail with strong composition\n\nCOLOR & TONE:\n• Ink wash (black, gray) with optional subtle color accents\n\nENVIRONMENT:\n• Use negative space intentionally\n\nSTYLE:\n• Elegant, minimal, and expressive\n• Balanced and harmonious composition",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "FINAL RESULT:\nThe image should resemble a traditional Chinese brush painting with expressive strokes and elegant simplicity."
+  },
+  {
     "name": "CHINESE INK WASH",
     "category": [
       "ART",
@@ -6541,6 +6554,19 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "FINAL RESULT:\nThe image should show reality cleanly opened by a single precise cross-section, revealing a logical, structured interior while leaving the exterior intact. The effect should feel educational, calm, and inevitable — as if the world was always designed to be viewed this way."
+  },
+  {
+    "name": "CROSS-STITCH",
+    "category": [
+      "ART",
+      "TEXTILE",
+      "CRAFT",
+      "STYLE TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform the image into a cross-stitch artwork.\n\nCORE CONCEPT (CRITICAL):\n• The image is recreated using a grid of stitched X patterns\n• Subject(s) remain recognizable through pixel-like stitching\n\nSTYLE CHARACTERISTICS:\n• Uniform grid layout\n• Visible X-shaped stitches\n\nCOLOR & DETAIL:\n• Limited color blending\n• Slightly pixelated simplification\n\nSTYLE:\n• Handmade and structured\n• Decorative and nostalgic",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "FINAL RESULT:\nThe image should resemble a cross-stitch pattern with visible X-shaped stitches forming the subject."
   },
   {
     "name": "CRYSTALLIZED",
@@ -14552,6 +14578,19 @@
     "additionalInstructions": ""
   },
   {
+    "name": "LOOM ART",
+    "category": [
+      "ART",
+      "TEXTILE",
+      "CRAFT",
+      "STYLE TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform the image into a woven loom artwork.\n\nCORE CONCEPT (CRITICAL):\n• The image is recreated through interlaced threads\n• Subject(s) remain recognizable through woven patterns\n\nSTYLE CHARACTERISTICS:\n• Horizontal and vertical thread structure\n• Visible weave pattern\n\nTEXTURE:\n• Fabric-like surface with interlocking fibers\n\nSTYLE:\n• Handmade and structured\n• Subtle blending through thread layering",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "FINAL RESULT:\nThe image should resemble a woven textile created on a loom with visible thread interlacing."
+  },
+  {
     "name": "LOST AND FOUND",
     "category": [
       "HUMOR",
@@ -14691,6 +14730,19 @@
     "additionalInstructions": "FINAL RESULT:\nThe subject transformed into a complete M&M candy character - entire body is the candy shell in the selected color (red, yellow, blue, green, orange, or brown) with white stick arms/legs, white gloves/boots, and white \"m\" logo - the M&M's face shows the subject's characteristics (glasses, eyebrows, expression, facial hair, age, etc.) all rendered in the candy color, creating a perfect blend of the subject's identity within a realistic CGI M&M mascot like from the commercials."
   },
   {
+    "name": "MACRAMÉ",
+    "category": [
+      "ART",
+      "TEXTILE",
+      "CRAFT",
+      "STYLE TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform the image into a macramé artwork.\n\nCORE CONCEPT (CRITICAL):\n• The scene is constructed from knotted rope patterns\n• Subject(s) remain recognizable through knot structures\n\nSTYLE CHARACTERISTICS:\n• Repeating knot patterns\n• Flowing rope arrangements\n\nTEXTURE:\n• Thick fiber strands\n• Soft shadows and depth between knots\n\nSTYLE:\n• Handmade and organic\n• Decorative and tactile",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "FINAL RESULT:\nThe image should look like a macramé piece made from knotted rope forming the subject and scene."
+  },
+  {
     "name": "MACRO",
     "category": [
       "PHOTOGRAPHY",
@@ -14737,6 +14789,19 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "MADHUBANI",
+    "category": [
+      "ART",
+      "FOLK ART",
+      "CULTURAL",
+      "STYLE TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform the image into Madhubani-style folk art.\n\nCORE CONCEPT (CRITICAL):\n• The scene is reinterpreted with intricate patterns and linework\n• Subject(s) remain recognizable but stylized\n\nSTYLE CHARACTERISTICS:\n• Bold outlines and detailed patterns\n• Decorative filling of all spaces\n\nCOLOR & TONE:\n• Bright, flat colors\n• Strong contrast\n\nSTYLE:\n• Dense, decorative, and symbolic\n• Traditional folk art aesthetic",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "FINAL RESULT:\nThe image should resemble a detailed Madhubani painting filled with patterns, bold outlines, and vibrant colors."
   },
   {
     "name": "MAGAZINE COVER",
@@ -15782,6 +15847,19 @@
     ],
     "randomizeOptions": true,
     "additionalInstructions": "FINAL RESULT:\nThe image should resemble a scanned microfiche frame packed with archival information."
+  },
+  {
+    "name": "MID-CENTURY ILLUSTRATION",
+    "category": [
+      "ART",
+      "ILLUSTRATION",
+      "RETRO",
+      "STYLE TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform the image into a mid-century modern illustration style.\n\nCORE CONCEPT (CRITICAL):\n• The scene is simplified into flat, graphic shapes\n• Subject(s) remain recognizable but stylized\n\nSTYLE CHARACTERISTICS:\n• Clean geometric forms\n• Minimal detail with strong composition\n• Stylized proportions and simplified features\n\nCOLOR & TONE:\n• Muted retro palette (teal, mustard, orange, cream)\n• Flat color fills with little to no gradients\n\nENVIRONMENT:\n• Background simplified into abstract shapes\n• Decorative and balanced composition\n\nSTYLE:\n• Retro, clean, and graphic\n• Playful but structured\n• Strong design-driven aesthetic",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "FINAL RESULT:\nThe image should resemble a mid-century illustration with flat shapes, bold composition, and a clean retro aesthetic."
   },
   {
     "name": "MIDDLE EARTH",
@@ -20966,6 +21044,19 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "QUILLING",
+    "category": [
+      "ART",
+      "PAPER",
+      "CRAFT",
+      "STYLE TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform the image into a quilling artwork.\n\nCORE CONCEPT (CRITICAL):\n• The image is recreated using rolled and shaped paper strips\n• Subject(s) remain recognizable through paper forms\n\nSTYLE CHARACTERISTICS:\n• Coiled and curved paper strips\n• Layered paper shapes forming the image\n\nTEXTURE:\n• Paper edges and thickness visible\n\nSTYLE:\n• Decorative and intricate\n• Handmade paper art aesthetic",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "FINAL RESULT:\nThe image should look like a detailed quilling artwork made from rolled paper strips forming the scene."
   },
   {
     "name": "R-ROLL",
