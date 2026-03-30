@@ -1769,6 +1769,12 @@ button:disabled {
     border-color: rgba(255, 193, 7, 0.9);
 }
 
+.mode-button[data-mode="camera-combine"].combine-active {
+    background: rgba(0, 188, 212, 0.7);
+    color: #fff;
+    border-color: rgba(0, 188, 212, 0.9);
+}
+
 /* Gallery Modal */
 .gallery-modal {
     position: fixed;

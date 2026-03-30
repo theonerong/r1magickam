@@ -1946,6 +1946,201 @@ async function resizeImageForSubmission(imageBase64) {
   });
 }
 
+// ── CAMERA LIVE COMBINE MODE ──────────────────────────────────────────────
+
+// Toggles camera live combine mode on/off.
+// Blocked during burst, timer, and motion detection.
+function toggleCameraLiveCombineMode() {
+  if (isBurstMode || isTimerMode || isMotionDetectionMode) {
+    alert('Combine mode is not available with Burst, Timer, or Motion Detection.');
+    return;
+  }
+  window.isCameraLiveCombineMode = !window.isCameraLiveCombineMode;
+  window.cameraCombineFirstPhoto = null; // reset any pending first photo
+
+  const btn = document.getElementById('camera-combine-toggle');
+  if (btn) {
+    if (window.isCameraLiveCombineMode) {
+      btn.classList.add('combine-active');
+      if (statusElement) statusElement.textContent = '🖼️🖼️ Combine ON — press side button to take first photo';
+    } else {
+      btn.classList.remove('combine-active');
+      if (statusElement) updatePresetDisplay();
+    }
+  }
+}
+
+// Takes two base64 images and returns a combined base64 using the same
+// side-by-side 3:4 canvas logic as the gallery combine function.
+async function buildCombinedImageBase64(base64A, base64B) {
+  // Resize each photo to valid resolution and 3:4 aspect ratio before combining,
+  // so the combined canvas dimensions are consistent with gallery combine behaviour.
+  const [resizedA, resizedB] = await Promise.all([
+    resizeImageForSubmission(base64A),
+    resizeImageForSubmission(base64B)
+  ]);
+
+  const loadImg = (src) => new Promise((resolve, reject) => {
+    const img = new Image();
+    img.onload = () => resolve(img);
+    img.onerror = () => reject(new Error('Image load failed'));
+    img.src = src;
+  });
+
+  const [imageA, imageB] = await Promise.all([loadImg(resizedA), loadImg(resizedB)]);
+
+  const targetHeight = Math.max(imageA.height, imageB.height);
+  const scaleA = targetHeight / imageA.height;
+  const scaleB = targetHeight / imageB.height;
+  const totalWidth = Math.round(imageA.width * scaleA) + Math.round(imageB.width * scaleB);
+
+  const targetRatioW = 3;
+  const targetRatioH = 4;
+  let canvasWidth = totalWidth;
+  let canvasHeight = Math.round(canvasWidth * targetRatioH / targetRatioW);
+
+  if (targetHeight > canvasHeight) {
+    canvasHeight = targetHeight;
+    canvasWidth = Math.round(canvasHeight * targetRatioW / targetRatioH);
+  }
+
+  const MAX_WIDTH = 2048;
+  if (canvasWidth > MAX_WIDTH) {
+    const downScale = MAX_WIDTH / canvasWidth;
+    canvasWidth = MAX_WIDTH;
+    canvasHeight = Math.round(canvasHeight * downScale);
+  }
+
+  const halfCanvas = Math.floor(canvasWidth / 2);
+  const finalHeightA = Math.round(imageA.height * (halfCanvas / imageA.width));
+  const finalHeightB = Math.round(imageB.height * (halfCanvas / imageB.width));
+
+  const canvas = document.createElement('canvas');
+  canvas.width = canvasWidth;
+  canvas.height = canvasHeight;
+  const ctx = canvas.getContext('2d');
+
+  ctx.fillStyle = '#000000';
+  ctx.fillRect(0, 0, canvasWidth, canvasHeight);
+
+  ctx.drawImage(imageA, 0, Math.floor((canvasHeight - finalHeightA) / 2), halfCanvas, finalHeightA);
+  ctx.drawImage(imageB, halfCanvas, Math.floor((canvasHeight - finalHeightB) / 2), halfCanvas, finalHeightB);
+
+  ctx.strokeStyle = 'rgba(255,255,255,0.3)';
+  ctx.lineWidth = 2;
+  ctx.beginPath();
+  ctx.moveTo(halfCanvas, 0);
+  ctx.lineTo(halfCanvas, canvasHeight);
+  ctx.stroke();
+
+  return canvas.toDataURL('image/jpeg', 0.92);
+}
+
+// Called after both photos are taken in camera live combine mode.
+// Combines them and sends the result with the appropriate preset.
+async function finalizeCameraLiveCombine(photo1Base64, photo2Base64, presetOverride, isVoiceMode) {
+  try {
+    statusElement.textContent = '🖼️ Combining photos...';
+
+    const combinedBase64 = await buildCombinedImageBase64(photo1Base64, photo2Base64);
+    // Combined image is kept in memory only — not saved to the gallery.
+    // The two individual photos were already saved to the gallery when captured.
+
+    // Determine which preset to use
+    let preset;
+    if (presetOverride) {
+      // Voice mode: use the spoken preset exactly as-is, no combine preamble
+      preset = presetOverride;
+    } else if (isCameraMultiPresetActive && cameraSelectedPresets.length > 0) {
+      // Multi-preset mode: handled separately below
+      preset = null;
+    } else if (isRandomMode) {
+      currentPresetIndex = getRandomPresetIndex();
+      preset = CAMERA_PRESETS[currentPresetIndex];
+      showStyleReveal(preset.name);
+    } else {
+      preset = CAMERA_PRESETS[currentPresetIndex];
+    }
+
+    // Build the queue item(s) and send
+    if (isCameraMultiPresetActive && cameraSelectedPresets.length > 0 && !presetOverride) {
+      // Multi-preset combine: one queue item per preset, all with the combined image
+      const presetsToApply = [...cameraSelectedPresets];
+      for (let i = 0; i < presetsToApply.length; i++) {
+        const p = presetsToApply[i];
+        const manualSelection = cameraMultiManualSelections[p.name] || null;
+
+        // Apply combine preamble for multi-preset (not voice mode)
+        window.isCombinedMode = true;
+        const finalPrompt = getFinalPrompt(p, manualSelection);
+        window.isCombinedMode = false;
+
+        const queueItem = {
+          id: Date.now().toString() + '-cam-comb-mp' + i,
+          imageBase64: combinedBase64,
+          preset: p,
+          manualSelection: manualSelection,
+          timestamp: Date.now()
+        };
+        photoQueue.push(queueItem);
+      }
+      saveQueue();
+      updateQueueDisplay();
+
+      if (isOnline && !noMagicMode) {
+        statusElement.textContent = `Multi combine: sending ${presetsToApply.length} presets...`;
+        if (!isSyncing) syncQueuedPhotos();
+      } else {
+        statusElement.textContent = `${presetsToApply.length} combined presets queued`;
+      }
+
+    } else if (preset) {
+      // Single preset path
+      // For voice mode the preset message is already the full spoken intent —
+      // do NOT apply the combine preamble (user described what they wanted).
+      // For normal/random mode, apply the combine preamble.
+      let finalPrompt;
+      if (isVoiceMode) {
+        finalPrompt = getFinalPrompt(preset, null); // no combine preamble
+      } else {
+        window.isCombinedMode = true;
+        finalPrompt = getFinalPrompt(preset, null);
+        window.isCombinedMode = false;
+      }
+
+      const queueItem = {
+        id: Date.now().toString() + '-cam-comb',
+        imageBase64: combinedBase64,
+        preset: preset,
+        timestamp: Date.now()
+      };
+      photoQueue.push(queueItem);
+      saveQueue();
+      updateQueueDisplay();
+
+      if (isOnline && !noMagicMode) {
+        statusElement.textContent = '🖼️🖼️ Combined photo sent!';
+        if (!isSyncing) syncQueuedPhotos();
+      } else {
+        statusElement.textContent = '🖼️🖼️ Combined photo queued';
+      }
+    }
+
+    // Clean up combine mode state
+    window.isCameraLiveCombineMode = false;
+    window.cameraCombineFirstPhoto = null;
+    const btn = document.getElementById('camera-combine-toggle');
+    if (btn) btn.classList.remove('combine-active');
+
+  } catch (err) {
+    console.error('Camera live combine failed:', err);
+    statusElement.textContent = '❌ Combine failed: ' + err.message;
+    window.cameraCombineFirstPhoto = null;
+  }
+}
+
+// ── END CAMERA LIVE COMBINE MODE ─────────────────────────────────────────
+
 async function combineTwoImages() {
   if (selectedBatchImages.size !== 2) {
     alert('Please select exactly 2 images to combine.');
@@ -2727,7 +2922,6 @@ async function loadStyles() {
                 }, 100);
             }
         }, 500);
-    }
     
     // Still load old localStorage custom presets for migration
     const storedStyles = localStorage.getItem(STORAGE_KEY);
@@ -2808,6 +3002,7 @@ async function loadStyles() {
   setTimeout(() => {
     checkForPresetsUpdates();
   }, 1000);
+}
 }
 
 // Check for updates on startup
@@ -3311,6 +3506,10 @@ function getRandomPresetIndex() {
 }
 
 function toggleMotionDetection() {
+  if (window.isCameraLiveCombineMode) {
+    alert('Turn off Combine mode before enabling Motion Detection.');
+    return;
+  }
   isMotionDetectionMode = !isMotionDetectionMode;
   const btn = document.getElementById('motion-toggle');
   
@@ -5181,7 +5380,7 @@ let tourActive = false;
 
 const TOUR_STEPS = [
   { section: 'Welcome', title: '👋 Welcome to the Audio Tour!', body: 'This tour walks you through every feature of Magic Kamera MDRE. Use Next and Back or scroll wheel to navigate. Pressing the side button advances the tour. Tap Skip Tour to exit.' },
-  { section: 'Basic Controls', title: '📸 Side Button — Take a Photo', body: 'Press the physical side button on your R1 to capture a photo. It is instantly sent for AI transformation using the active preset.' },
+  { section: 'Basic Controls', title: '📸 Side Button — Take a Photo', body: 'Press the side button on your R1 to capture a photo. It is sent for AI transformation using the active preset. You may also speak your preset with a long press.' },
   { section: 'Basic Controls', title: '🔄 Scroll Wheel — Change Presets', get body() { return `Rotate the scroll wheel up or down to cycle through all ${totalFactoryPresetCount || 800} AI presets. The current preset name is shown at the bottom of the screen.`; } },
   { section: 'Basic Controls', title: '📷 Camera Switch Button', body: 'Tap the camera icon to toggle between front selfie and back camera at any time before taking a photo.' },
   { section: 'Basic Controls', title: '☰ Menu Button', body: 'Opens the main menu where you access all settings ⚙️, preset management, import preset tools, and this tutorial. The main menu has a plus <strong>+</strong> button in the header to create new presets.' },
@@ -5197,13 +5396,14 @@ const TOUR_STEPS = [
   { section: 'Special Modes', title: '📸⚡ Burst Mode', body: 'Captures 3 to 10 photos rapidly in one press. Choose slow, medium, or fast burst speed in Settings. Great for action shots or getting multiple variations.' },
   { section: 'Special Modes', title: '👁️ Motion Detection', body: 'Automatically captures when movement is detected in frame. Set sensitivity, start delay, and cooldown interval. The eye icon pulses when motion is triggered.' },
   { section: 'Special Modes', title: '🎞️ Multi Preset', body: 'Select up to 20 presets to apply to a single photo. Tap the film strip button in the carousel, choose presets, and tap Apply Selected. When you take a photo, each preset is sent in order with a 3 second gap between them.' },
+  { section: 'Special Modes', title: '🖼️🖼️ Combine images:', body: 'Located at the bottom of the right carousel. Click to take two images and apply a combined image preset instruction with your selected preset or speak the preset with long press of side button.' },
   { section: 'Special Modes', title: '📝 Master and 🎛️ Options', body: 'Located below the Menu button on the left side within a carousel. The Master button accesses Master Prompt settings. The OPTIONS button toggles Manually Select Options mode. Both Glow green when enabled.' },
   { section: 'Gallery', title: '🖼️ Gallery Activities', body: 'Within the gallery there are thumbnails of captured images. You can either select multiple images to apply a preset, or select a single image to either edit, export or apply one or several presets.' },
   { section: 'Uploading Images', title: '📥 Importing External Images', body: 'In the gallery, you may also bring any image from the web into the gallery using a QR code. Upload the image to catbox.moe, copy the direct link, and generate a QR code at qr-code-generator.com.' },
   { section: 'Uploading Images', title: '📷 Scanning the QR Code', body: 'In the gallery, press Import then Scan QR Code. Point your R1 camera at the QR code and wait. The image will be automatically saved to your gallery.' },
   { section: 'Uploading Images', title: '⚠️ Verify Your Link First', body: 'Before making the QR code, paste the link into a browser. If it shows only the image with nothing around it, it will work. If it shows a webpage with the image embedded, it will not work.' },
   { section: 'Gallery', title: '☑️ Batch Operations', body: 'Tap the Select button to enter batch mode. Select multiple images, then apply one preset to all of them or delete them in bulk. Always tap DONE when finished.' },
-  { section: 'Gallery', title: '👥 Combine Images', body: 'Tap the Select button to enter batch mode. Select two images, then click Combine to create one image. You can apply presets to create combined subjects into one final image using existing presets.' },
+  { section: 'Gallery', title: '🖼️🖼️ Combine Images', body: 'Tap the Select button to enter batch mode. Select two images, then click Combine to create one image. You can apply presets to create combined subjects into one final image using existing presets.' },
   { section: 'Gallery', title: '📅 Sort and Filter', body: 'Sort by newest or oldest. Filter by date range. When filtering, always select the day after your end date. For example, to see December 25 photos, filter from December 25 to December 26.' },
   { section: 'Gallery', title: '🖼️ Image Viewer', body: 'Tap a thumbnail image in the gallery to view it full-screen. The viewer is redesigned to give your photo maximum screen space. Pinch to zoom in and out.' },
   { section: 'Gallery', title: '🎨 Applying Presets to Single Image', body: 'After clicking on a single image, Tap LOAD or MULTI to transform a saved image. Click twice on a preset to apply it. You can stack multiple transformations.' },
@@ -5970,6 +6170,10 @@ function saveBurstSettings(count, speed) {
 
 // Toggle burst mode
 function toggleBurstMode() {
+  if (window.isCameraLiveCombineMode) {
+    alert('Turn off Combine mode before enabling Burst mode.');
+    return;
+  }
   isBurstMode = !isBurstMode;
   
   const burstToggle = document.getElementById('burst-toggle');
@@ -6000,6 +6204,10 @@ function toggleBurstMode() {
 
 // Toggle timer mode
 function toggleTimerMode() {
+  if (window.isCameraLiveCombineMode) {
+    alert('Turn off Combine mode before enabling Timer mode.');
+    return;
+  }
   isTimerMode = !isTimerMode;
   
   const timerToggle = document.getElementById('timer-toggle');
@@ -6188,6 +6396,8 @@ async function startBurstCapture() {
   }
   
   isBursting = false;
+  // Clear the voice preset now that all burst shots have been taken.
+  window.voicePreset = null;
   statusElement.textContent = `Burst complete! ${burstCount} photos saved.`;
   
   if (isOnline && !isSyncing) {
@@ -6278,9 +6488,11 @@ function captureBurstPhoto(photoNumber) {
   // applyWhiteBalanceToCanvas(ctx, canvas.width, canvas.height);
   
   // Use lower quality for higher resolutions to reduce file size
-  const quality = currentResolutionIndex >= 2 ? 0.7 : 0.8;
+const quality = currentResolutionIndex >= 2 ? 0.7 : 0.8;
   const dataUrl = canvas.toDataURL('image/jpeg', quality);
-  const currentPreset = CAMERA_PRESETS[currentPresetIndex];
+  // Use the voice preset if set — all burst shots share the same voice preset.
+  // voicePreset is cleared by startBurstCapture after the loop finishes.
+  const currentPreset = window.voicePreset || CAMERA_PRESETS[currentPresetIndex];
   
   // Add to gallery
   addToGallery(dataUrl);
@@ -6622,7 +6834,10 @@ function capturePhoto() {
   }
   // ── END CAMERA MULTI-PRESET PATH ─────────────────────────────────
 
-  const currentPreset = CAMERA_PRESETS[currentPresetIndex];
+  // Use the voice preset if the user just spoke one, then clear it
+  // so the next photo goes back to the normally selected preset.
+  const currentPreset = window.voicePreset || CAMERA_PRESETS[currentPresetIndex];
+  window.voicePreset = null;
   
   const queueItem = {
     id: Date.now().toString(),
@@ -6853,6 +7068,46 @@ async function clearQueue() {
   }
 }
 
+// Captures the current camera frame and returns it as a base64 data URL.
+// Used by camera live combine mode to grab each photo without triggering
+// the full capturePhoto queue/sync flow.
+function captureRawPhotoDataUrl() {
+  if (!stream) return null;
+
+  if (canvas.width !== video.videoWidth || canvas.height !== video.videoHeight) {
+    canvas.width = video.videoWidth;
+    canvas.height = video.videoHeight;
+  }
+
+  const ctx = canvas.getContext('2d', { willReadFrequently: false, alpha: false, desynchronized: true });
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  const zoomedWidth = canvas.width / currentZoom;
+  const zoomedHeight = canvas.height / currentZoom;
+  const offsetX = (canvas.width - zoomedWidth) / 2;
+  const offsetY = (canvas.height - zoomedHeight) / 2;
+
+  if (!isFrontCamera()) {
+    ctx.save();
+    ctx.scale(-1, 1);
+    ctx.drawImage(video, offsetX, offsetY, zoomedWidth, zoomedHeight, -canvas.width, 0, canvas.width, canvas.height);
+    ctx.restore();
+    const tempCanvas = document.createElement('canvas');
+    tempCanvas.width = canvas.width;
+    tempCanvas.height = canvas.height;
+    const tempCtx = tempCanvas.getContext('2d');
+    tempCtx.scale(-1, 1);
+    tempCtx.drawImage(canvas, -canvas.width, 0);
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.drawImage(tempCanvas, 0, 0);
+  } else {
+    ctx.drawImage(video, offsetX, offsetY, zoomedWidth, zoomedHeight, 0, 0, canvas.width, canvas.height);
+  }
+
+  const quality = currentResolutionIndex >= 2 ? 0.7 : 0.8;
+  return canvas.toDataURL('image/jpeg', quality);
+}
+
 // Side button handler
 window.addEventListener('sideClick', () => {
   console.log('Side button pressed');
@@ -6924,7 +7179,21 @@ window.addEventListener('sideClick', () => {
     }, 100);
     
   } else if (capturedImage && capturedImage.style.display === 'block') {
-    resetToCamera();
+    // If we are in combine mode and waiting for photo 2, don't reset — capture instead
+    if (window.isCameraLiveCombineMode && window.cameraCombineFirstPhoto) {
+      // Take photo 2 immediately
+      const dataUrl = captureRawPhotoDataUrl();
+      if (dataUrl) {
+        addToGallery(dataUrl);
+        const photo1 = window.cameraCombineFirstPhoto;
+        window.cameraCombineFirstPhoto = null;
+        const voicePresetForCombine = window.cameraCombineVoicePreset || null;
+        window.cameraCombineVoicePreset = null;
+        finalizeCameraLiveCombine(photo1, dataUrl, voicePresetForCombine, voicePresetForCombine !== null);
+      }
+    } else {
+      resetToCamera();
+    }
   } else {
     // If motion detection is active, side button starts the delay countdown
     if (isMotionDetectionMode) {
@@ -6980,6 +7249,34 @@ window.addEventListener('sideClick', () => {
     }
     
     // Normal photo capture (not in motion detection mode)
+    // If camera combine mode is active, handle the two-shot sequence
+    if (window.isCameraLiveCombineMode) {
+      if (!window.cameraCombineFirstPhoto) {
+        // Take photo 1 — capture it raw, save to gallery, then wait for photo 2
+        const dataUrl = captureRawPhotoDataUrl();
+        if (dataUrl) {
+          addToGallery(dataUrl);
+          window.cameraCombineFirstPhoto = dataUrl;
+          // Return to live camera view so user can see what they are shooting for photo 2
+          capturedImage.style.display = 'none';
+          video.style.display = 'block';
+          statusElement.textContent = '✅ First photo taken! Press side button for second photo';
+        }
+      } else {
+        // Take photo 2
+        const dataUrl = captureRawPhotoDataUrl();
+        if (dataUrl) {
+          addToGallery(dataUrl);
+          const photo1 = window.cameraCombineFirstPhoto;
+          window.cameraCombineFirstPhoto = null;
+          const voicePresetForCombine = window.cameraCombineVoicePreset || null;
+          window.cameraCombineVoicePreset = null;
+          finalizeCameraLiveCombine(photo1, dataUrl, voicePresetForCombine, voicePresetForCombine !== null);
+        }
+      }
+      return;
+    }
+
     // Check if timer is active
     if (isTimerMode) {
       if (isBurstMode) {
@@ -7339,6 +7636,7 @@ function updatePresetDisplay() {
         } else {
             statusElement.textContent = `Style: ${currentPreset.name}`;
         }
+    }
     
     // Show style reveal on screen (middle text)
     if (isCameraMultiPresetActive && cameraSelectedPresets.length > 0) {
@@ -7351,7 +7649,6 @@ function updatePresetDisplay() {
 
     if (isMenuOpen) {
         updateMenuSelection();
-    }
     }
 }
 
@@ -8356,6 +8653,7 @@ function populateStylesList(preserveScroll = false) {
     });
     
     const filtered = regular.filter(preset => {
+      // First apply text search filter
       if (styleFilterText) {
         const searchText = styleFilterText.toLowerCase();
         const categoryMatch = preset.category && preset.category.some(cat => cat.toLowerCase().includes(searchText));
@@ -9120,6 +9418,11 @@ window.addEventListener('load', () => {
     if (cameraMultiPresetBtn) {
       cameraMultiPresetBtn.addEventListener('click', openCameraMultiPresetSelector);
     }
+
+  const cameraCombineBtn = document.getElementById('camera-combine-toggle');
+  if (cameraCombineBtn) {
+    cameraCombineBtn.addEventListener('click', toggleCameraLiveCombineMode);
+  }
 
   const menuBtn = document.getElementById('menu-button');
   if (menuBtn) {
@@ -11661,6 +11964,8 @@ document.addEventListener('DOMContentLoaded', function() {
         button.addEventListener('click', toggleTimerMode);
       } else if (mode === 'camera-multi') {
         button.addEventListener('click', openCameraMultiPresetSelector);
+      } else if (mode === 'camera-combine') {
+        button.addEventListener('click', toggleCameraLiveCombineMode);
       }
     });
   }
@@ -11916,17 +12221,55 @@ console.log('AI Camera Styles app initialized!');
   importObserver.observe(document.body, { childList: true, subtree: true });
 
   // Listen for the r1 side button being pressed down.
-  // Only act if the user is currently inside a text field.
   window.addEventListener('longPressStart', function() {
-    if (!activePttField) return; // Not in a text field — let other handlers take over
-    CreationVoiceHandler.postMessage('start');
+
+    // --- TEXT FIELD MODE ---
+    // If the user is inside a text field, do speech-to-text into that field.
+    if (activePttField) {
+      CreationVoiceHandler.postMessage('start');
+      return;
+    }
+
+    // --- CAMERA VOICE PRESET MODE ---
+    // If we are on the main camera screen (no menus open, no text field active),
+    // a long press starts listening to create a spoken custom preset.
+    // This does NOT work if No Magic Mode is on, Random Mode is on,
+    // or Multi-Preset Mode is active — those modes have their own behaviour.
+    const galleryOpen = document.getElementById('gallery-modal')?.style.display === 'flex';
+    const viewerOpen = document.getElementById('image-viewer')?.style.display === 'flex';
+    const menuOpen = document.getElementById('unified-menu')?.style.display === 'flex';
+    const settingsOpen = document.getElementById('settings-submenu')?.style.display === 'flex';
+    const masterPromptOpen = document.getElementById('master-prompt-submenu')?.style.display === 'flex';
+    const presetBuilderOpen = document.getElementById('preset-builder-submenu')?.style.display === 'flex';
+    const anyScreenOpen = galleryOpen || viewerOpen || menuOpen || settingsOpen || masterPromptOpen || presetBuilderOpen;
+
+    if (!anyScreenOpen && !noMagicMode && !isRandomMode && !isCameraMultiPresetActive) {
+      window.isVoicePresetListening = true;
+      if (window.isCameraLiveCombineMode) {
+        statusElement.textContent = '🎙️ Listening... speak your combine preset';
+      } else {
+        statusElement.textContent = '🎙️ Listening... speak your preset';
+      }
+      CreationVoiceHandler.postMessage('start');
+    }
   });
 
   // Listen for the r1 side button being released.
-  // Only act if the user is currently inside a text field.
   window.addEventListener('longPressEnd', function() {
-    if (!activePttField) return; // Not in a text field — let other handlers take over
-    CreationVoiceHandler.postMessage('stop');
+
+    // --- TEXT FIELD MODE ---
+    if (activePttField) {
+      CreationVoiceHandler.postMessage('stop');
+      return;
+    }
+
+    // --- CAMERA VOICE PRESET MODE ---
+    // Stop listening and wait for the transcript to come back via onPluginMessage.
+    if (window.isVoicePresetListening) {
+      CreationVoiceHandler.postMessage('stop');
+      // isVoicePresetListening stays true until the transcript arrives
+      // so onPluginMessage knows to treat the result as a camera preset
+    }
   });
 
   // When the r1 device finishes listening and sends back the
@@ -11945,22 +12288,73 @@ console.log('AI Camera Styles app initialized!');
 
     // --- PTT speech-to-text handling ---
     if (data.type === 'sttEnded' && data.transcript) {
+
+      // TEXT FIELD: insert spoken words into the active field
       if (activePttField) {
-        // Insert the spoken text at the cursor position inside the field.
         const field = activePttField;
         const start = field.selectionStart;
         const end = field.selectionEnd;
         const before = field.value.substring(0, start);
         const after = field.value.substring(end);
         field.value = before + data.transcript + after;
-
-        // Move the cursor to just after the inserted text.
         const newPos = start + data.transcript.length;
         field.setSelectionRange(newPos, newPos);
-
-        // Fire an input event so the app knows the field changed
-        // (important for the filter fields that search as you type).
         field.dispatchEvent(new Event('input', { bubbles: true }));
+
+      // CAMERA VOICE PRESET: transcript becomes the custom preset,
+      // then the camera fires immediately
+      } else if (window.isVoicePresetListening) {
+        window.isVoicePresetListening = false;
+
+        // Build a one-time preset object from the spoken words
+        window.voicePreset = {
+          name: 'Voice Preset',
+          message: data.transcript,
+          options: [],
+          randomizeOptions: false,
+          additionalInstructions: ''
+        };
+
+        statusElement.textContent = '🎙️ Got it! Taking photo...';
+
+        // If camera combine mode is active, the voice preset drives the combine flow.
+        // Take photo 1 immediately, save to gallery, then prompt for photo 2.
+        if (window.isCameraLiveCombineMode) {
+          const dataUrl = captureRawPhotoDataUrl();
+          if (dataUrl) {
+            addToGallery(dataUrl);
+            window.cameraCombineFirstPhoto = dataUrl;
+            // Return to live camera view so user can see what they are shooting for photo 2
+            capturedImage.style.display = 'none';
+            video.style.display = 'block';
+            // Store the voice preset so finalizeCameraLiveCombine can use it
+            const spokenPreset = window.voicePreset;
+            window.voicePreset = null;
+            statusElement.textContent = '✅ First photo taken! Press side button for second photo';
+            // Override the sideClick for next press to capture photo 2 with this voice preset
+            window.cameraCombineVoicePreset = spokenPreset;
+          }
+          return;
+        }
+
+        // Normal (non-combine) voice preset — trigger the camera as usual
+        if (!isMotionDetectionMode) {
+          if (isTimerMode) {
+            if (isBurstMode) {
+              startTimerCountdown(() => startBurstCapture());
+            } else {
+              startTimerCountdown(() => capturePhoto());
+            }
+          } else {
+            if (isBurstMode) {
+              startBurstCapture();
+            } else {
+              capturePhoto();
+            }
+          }
+        }
+        // Motion detection: voicePreset is now set and will be picked up
+        // automatically the next time motion triggers capturePhoto()
       }
     }
   };
