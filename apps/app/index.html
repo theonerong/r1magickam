@@ -82,6 +82,10 @@
             <span class="mode-icon">🎞️</span>
             <span class="mode-label">Multi</span>
         </button>
+        <button id="camera-combine-toggle" class="mode-button" title="Combine Mode" data-mode="camera-combine">
+            <span class="mode-icon">🖼️🖼️</span>
+            <span class="mode-label">Combine</span>
+        </button>
     </div>
 </div>
                 
@@ -846,12 +850,12 @@
                    <div id="section-basic-controls" class="tutorial-section">
                         <h4 class="tutorial-heading">📸 Basic Controls</h4>
                         <p class="tutorial-text">
-                            <strong>Press Side Button:</strong> Take a photo<br>
+                            <strong>Press Side Button:</strong> Take a photo. Click side button to take a picture with a selected preset or long press the side button to speak your preset.<br>
                             <strong>Scroll Wheel Up/Down:</strong> Change AI presets<br>
                             <strong>Camera Button (📷):</strong> Switch between front (selfie)/back camera<br>
                             <strong>Menu Button (☰):</strong> Access settings and presets. The main menu has a settings button (⚙️) to access settings and a <strong>+</strong> button in the header to build new presets with the Preset Builder.<br>
                             <strong>Gallery Button (🖼️):</strong> View/Modify/Delete saved photos and re-prompt.<br>
-                            <strong>New Photo Button:</strong> Return to camera after capture. Can also be done with side button.
+                            <strong>New Photo Button:</strong> Return to camera after capture. Can also be done with side button. Click side button to take a picture with a selected preset or long press the side button to speak your preset.
                         </p>
                     </div>
 
@@ -875,6 +879,7 @@
                             <strong>📸⚡ Burst Mode:</strong> Capture 3-10 photos rapidly (slow/medium/fast)<br>
                             <strong>👁️ Motion Detection:</strong> Automatically captures when movement is detected. Interval settings for repeat capture. Repeat capture is default. You must uncheck repeat capture to do single capture. Select start delay from 3 seconds to 30 minutes. This mode triggers when you press the eye icon and activates/starts when you press the side button. Motion detection deactivates/stops when you press the eye icon again. The eye pulses if motion detection is triggered. Best if used with NO MAGIC MODE enabled.<br>
                             <strong>🎞️ Multi Preset:</strong> Select up to 20 presets to apply to a single photo in sequence. Tap the 🎞️ button in the carousel to open the preset selector. Choose your presets and tap Apply Selected. The footer and screen will show MULTI PRESETS while active. When you take a photo, all selected presets are queued and sent one by one with a 3 second interval between each. Works with Timer Mode — multi preset stays active until the timer is turned off. Cannot be used with Burst, Motion Detection, Random Mode, or No Magic Mode. If Manually Select Options is enabled, you will be prompted to choose options for each selected preset before the photo is taken. Multi preset is a one-shot mode — it resets automatically after all presets are sent, unless Timer Mode is active.<br>
+                            <strong>🖼️🖼️ Combine images:</strong> Works with either a selected preset or by speaking your preset. Take a picture of two images to combine them to feed to r1 thereby creating AI generated images from two images. Only works with random mode or multi-select presets mode in main camera screen.<br>
                             <strong>📝 MASTER and 🎛️ OPTIONS Buttons:</strong> Below the Menu (☰) button on the left side within a carousel(that also includes the Menu (☰) and Gallery (🖼️) Buttons). The Master button (📝) accesses Master Prompt settings. Glows green when enabled. The OPTIONS (🎛️) button toggles Manually Select Options mode on or off. Glows green when enabled. All the main camera buttons (except for the camera (📷) button) are in the left carousel and are visible by default. However, you can hide them (except for the camera (📷) button) by double clicking on the main camera screen to hide/reveal buttons.<br><br>
                         </p>
                     </div>
@@ -1007,7 +1012,7 @@
                         <h4 class="tutorial-heading">💡 Tips & Tricks</h4>
                         <p class="tutorial-text">
                             • <strong>Add to Favorites:</strong> In the menu, tap the star (☆) next to presets you love<br>
-                            • <strong>Filter Presets:</strong> Use the search box to quickly find styles. Because of the size of the r1 screen, if you click on the search bar, a keyboard appears. Once you finish typing your search, click on the x next to the filter text box to remove the keyboard. If you double click on the x, it resets the filter text box.<br>
+                            • <strong>Filter Presets:</strong> Use the search box to quickly find styles. Because of the size of the r1 screen, if you click on the search bar, a keyboard appears. You can either speak your search or type your search. Once you finish speaking or typing your search, click on the x next to the filter text box to remove the keyboard. If you double click on the x, it resets the filter text box.<br>
                             • <strong>Pinch to Zoom:</strong> Zoom in/out on the camera feed. Gallery also supports pinch to zoom<br>
                             • <strong>Aspect Ratio change:</strong> Get the best results with either 1:1 or 16:9. The default is None, but we strongly recommend setting it to either 1:1 or 16:9 to avoid image cropping.<br>
                             • <strong>PROMPT Button:</strong> In the gallery image viewer, tap PROMPT to create or edit the preset associated with your image. No preset loaded opens the builder. A loaded preset opens the editor automatically.<br>
@@ -1180,7 +1185,7 @@ All of the presets are optimized to avoid "camera ran dry" or "content filter" i
         <button id="delete-viewer-image" class="viewer-delete-button">🗑️</button>
         <button id="close-viewer" class="viewer-close-button">×</button>
         <!-- Combined image indicator — shows above preset header when in combine mode -->
-        <div id="viewer-combined-indicator" class="viewer-combined-indicator">⬛ COMBINED IMAGE</div>
+        <div id="viewer-combined-indicator" class="viewer-combined-indicator">🖼️🖼️ COMBINED IMAGE</div>
         <!-- Preset name header between delete and close — tappable -->
         <div id="viewer-preset-header" class="viewer-preset-header">NO PRESET LOADED</div>
         <!-- Left carousel: MASTER and OPTIONS — default visible, double click to hide -->
