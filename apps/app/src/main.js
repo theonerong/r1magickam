@@ -2923,30 +2923,32 @@ async function loadStyles() {
             }
         }, 500);
     
-    // Still load old localStorage custom presets for migration
-    const storedStyles = localStorage.getItem(STORAGE_KEY);
-    if (storedStyles) {
-        try {
-            const loadedStyles = JSON.parse(storedStyles);
-            
-            // Only add custom presets (those with internal: false)
-            const customPresets = loadedStyles.filter(p => p.internal === false);
-            
-            // Migrate old custom presets to new storage
-            for (const preset of customPresets) {
-                await presetStorage.saveNewPreset(preset);
-                if (!CAMERA_PRESETS.find(p => p.name === preset.name)) {
-                    CAMERA_PRESETS.push(preset);
+        // Still load old localStorage custom presets for migration
+        const storedStyles = localStorage.getItem(STORAGE_KEY);
+        if (storedStyles) {
+            try {
+                const loadedStyles = JSON.parse(storedStyles);
+                
+                // Only add custom presets (those with internal: false)
+                const customPresets = loadedStyles.filter(p => p.internal === false);
+                
+                // Migrate old custom presets to new storage
+                for (const preset of customPresets) {
+                    await presetStorage.saveNewPreset(preset);
+                    if (!CAMERA_PRESETS.find(p => p.name === preset.name)) {
+                        CAMERA_PRESETS.push(preset);
+                    }
                 }
+                
+                // Clear old storage after migration
+                localStorage.removeItem(STORAGE_KEY);
+            } catch (e) {
+                console.error("Error loading styles:", e);
             }
-            
-            // Clear old storage after migration
-            localStorage.removeItem(STORAGE_KEY);
-        } catch (e) {
-            console.error("Error loading styles:", e);
         }
     }
-    
+
+    // Load favorites — runs for all users every startup
     const favoritesJson = localStorage.getItem(FAVORITE_STYLES_KEY);
     if (favoritesJson) {
         try {
@@ -2965,7 +2967,7 @@ async function loadStyles() {
     loadResolution();
     // loadWhiteBalanceSettings();
     
-    // Load visible presets
+    // Load visible presets — runs for all users every startup
     const visibleJson = localStorage.getItem(VISIBLE_PRESETS_KEY);
     if (visibleJson) {
         try {
@@ -2974,7 +2976,7 @@ async function loadStyles() {
                 visiblePresets = [];
             }
         } catch (e) {
-            console.error("Error parsing visible presets:", error);
+            console.error("Error parsing visible presets:", e);
             visiblePresets = [];
         }
     }
@@ -2998,11 +3000,10 @@ async function loadStyles() {
     // Update the display to show correct count on startup
     updateVisiblePresetsDisplay();
 
-// Check for updates after loading
-  setTimeout(() => {
-    checkForPresetsUpdates();
-  }, 1000);
-}
+    // Check for updates after loading
+    setTimeout(() => {
+        checkForPresetsUpdates();
+    }, 1000);
 }
 
 // Check for updates on startup
@@ -8653,7 +8654,6 @@ function populateStylesList(preserveScroll = false) {
     });
     
     const filtered = regular.filter(preset => {
-      // First apply text search filter
       if (styleFilterText) {
         const searchText = styleFilterText.toLowerCase();
         const categoryMatch = preset.category && preset.category.some(cat => cat.toLowerCase().includes(searchText));
