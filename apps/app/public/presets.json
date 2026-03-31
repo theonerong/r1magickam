@@ -29550,6 +29550,20 @@
     "additionalInstructions": "FINAL RESULT:\nThe image should clearly depict the subject as the selected WWE wrestler. The face must remain the subject's, while adopting the wrestler’s attire, facial hair (if applicable), and signature expression or mannerism in a dramatic wrestling setting."
   },
   {
+    "name": "X-MEN MUTANT",
+    "category": [
+      "SUPERHERO",
+      "MUTATION",
+      "CHARACTER TRANSFORMATION",
+      "CINEMATIC",
+      "IMMERSIVE"
+    ],
+    "message": "Take a picture and transform the subject into a powerful mutant as if they exist within a cinematic X-Men-style universe. The subject's mutation must be intelligently derived from their observable physical traits, clothing, expression, or environment.\n\nCORE CONCEPT (CRITICAL):\n• The subject becomes a unique mutant with abilities based on visible characteristics\n• The transformation must feel natural, creative, and logical\n• The subject remains recognizable while gaining enhanced mutant features\n• Powers must be visibly active and clearly demonstrated in the scene\n\nMUTATION LOGIC (CRITICAL):\n• Analyze the subject’s observable traits and derive powers accordingly, including but NOT limited to:\n  - Clothing (color, style, accessories)\n  - Physical traits (hair, facial features, build)\n  - Props or objects in the scene\n  - Pose, expression, or attitude\n  - Environmental context\n\n• Examples of transformation logic (DO NOT LIMIT TO THESE):\n  - Glasses → optic energy, laser vision, or perception-based abilities\n  - Hairy or rugged appearance → beast-like mutation, enhanced strength or agility\n  - Athletic stance → speed, strength, or combat-based powers\n  - Dark clothing → shadow manipulation or stealth abilities\n  - Bright colors → energy projection or elemental powers\n\n• The system must creatively generate ORIGINAL mutant abilities beyond these examples\n\nCHARACTER TRANSFORMATION:\n• Subject becomes a superhero-style mutant\n• Costume adapts to match powers (sleek suits, tactical gear, or stylized outfits)\n• Subtle or dramatic physical mutations may appear:\n  - Glowing eyes\n  - Energy veins or aura\n  - Altered skin texture (metallic, crystalline, elemental)\n  - Claws, wings, or other extensions if appropriate\n\n• Facial identity must remain recognizable\n\nPOWER VISUALIZATION (MANDATORY):\n• The subject’s abilities must be actively displayed in the image\n• Examples include:\n  - Energy beams, auras, or blasts\n  - Telekinetic effects (objects floating or bending)\n  - Elemental control (fire, ice, electricity, wind, etc.)\n  - Environmental distortion (warping, cracking, glowing)\n\n• Effects must interact with the environment realistically\n\nENVIRONMENT INTEGRATION:\n• The surrounding scene reacts to the subject’s powers\n• Examples:\n  - Ground cracking under force\n  - Objects levitating or disintegrating\n  - Lighting changes based on power type\n  - Atmospheric effects (smoke, sparks, energy waves)\n\nSTYLE:\n• Cinematic superhero aesthetic\n• High-detail, dramatic lighting\n• Dynamic composition and action-ready poses\n• Modern film-quality rendering\n\nLIGHTING & MOOD:\n• Dramatic contrast\n• Power-driven light sources (glows, flashes)\n• Heroic or intense tone depending on subject\n\nSCENE COMPOSITION:\n• Subject is the focal point\n• Dynamic framing (hero shot, action stance, or mid-power activation)\n• Background supports and enhances the power display\n\nCOLOR AND STYLE:\n• Colors influenced by the subject’s mutation\n• High contrast and saturation for powers\n• Balanced cinematic grading",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "FINAL RESULT:\nThe image should depict the subject as a fully realized mutant with a unique, visually compelling power set derived from their observable traits. Their abilities must be clearly visible and actively affecting the environment. The subject remains recognizable while appearing as a cinematic superhero, with dynamic effects, dramatic lighting, and a believable integration into a high-stakes, X-Men-style world."
+    },
+  {
     "name": "X-RAY",
     "category": [
       "MEDICAL",
