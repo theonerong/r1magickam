@@ -896,6 +896,8 @@
 
                             <strong>Sort &amp; Filter:</strong> Organize by newest/oldest, filter by date range. When picking a date range, always select the day after your end date. For example for December 25 images, choose December 25 to December 26.<br><br>
 
+                            <strong>📁+ New Folder:</strong> Create a new folder to organize your saved images. Name the folder and save. Once the folder is created, long press on the folder to edit the name. Images may be moved by clicking select, selecting all the images you want to move, then long pressing the last image. A modal will appear, choose the folder to move the image or select gallery to move the image back to the gallery.<br><br>
+
                             <strong>View Photos:</strong> Tap any image to view it full-screen. The viewer is redesigned to give your photo maximum screen space.<br><br>
 
                             <strong>Preset Header:</strong> At the very top of the image viewer, a header shows the name of the currently loaded preset. If no preset is loaded it reads NO PRESET LOADED. If a preset is loaded, tap the header to read and hear the preset name and the first sentence of its description. <br><br>
@@ -1135,9 +1137,21 @@ All of the presets are optimized to avoid "camera ran dry" or "content filter" i
                 
                 <!-- Batch Selection Controls -->
                 <div id="batch-controls" class="batch-controls" style="display: none;">
+                    <button id="batch-new-folder" class="batch-control-button" title="New Folder">📁+</button>
                     <button id="batch-select-all" class="batch-control-button">Select All</button>
                     <button id="batch-deselect-all" class="batch-control-button">Deselect All</button>
                     <button id="batch-cancel" class="batch-control-button">Cancel</button>
+                </div>
+
+                <!-- Move to Folder Modal -->
+                <div id="move-to-folder-modal" class="move-to-folder-modal" style="display:none;">
+                    <div class="move-to-folder-content">
+                        <div class="move-to-folder-header">
+                            <h4>Move to...</h4>
+                            <button id="close-move-to-folder" class="close-button">×</button>
+                        </div>
+                        <div id="move-to-folder-list" class="move-to-folder-list"></div>
+                    </div>
                 </div>
                  
                 <div class="gallery-scroll-container">
