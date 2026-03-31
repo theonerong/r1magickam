@@ -307,6 +307,13 @@ let gallerySortOrder = 'newest';
 let isBatchMode = false;
 let selectedBatchImages = new Set();
 
+// GALLERY FOLDERS
+
+const FOLDERS_STORAGE_KEY = 'r1_gallery_folders';
+let galleryFolders = []; // [{ id, name, createdAt }]
+let currentFolderView = null; // null = root gallery, string = folderId
+// END GALLERY FOLDERS
+
 // Multiple preset variables
 let isMultiPresetMode = false;
 let isBatchPresetSelectionActive = false;
@@ -635,7 +642,7 @@ async function saveImageToDB(imageItem) {
     
     const transaction = db.transaction([STORE_NAME], 'readwrite');
     const objectStore = transaction.objectStore(STORE_NAME);
-    const request = objectStore.add(imageItem);
+    const request = objectStore.put(imageItem);
     
     return new Promise((resolve, reject) => {
       request.onsuccess = () => {
@@ -797,30 +804,143 @@ async function showGallery(renderOnly = false) {
     sortOrderSelect.value = gallerySortOrder;
   }
   
-  const filteredImages = getFilteredAndSortedGallery();
-  
-  if (filteredImages.length === 0) {
-    grid.innerHTML = '<div class="gallery-empty">No photos match the selected filter.</div>';
+  // Show or hide the folder breadcrumb bar
+  let breadcrumb = document.getElementById('gallery-folder-breadcrumb');
+  if (!breadcrumb) {
+    breadcrumb = document.createElement('div');
+    breadcrumb.id = 'gallery-folder-breadcrumb';
+    breadcrumb.className = 'gallery-folder-breadcrumb';
+    grid.parentNode.insertBefore(breadcrumb, grid);
+  }
+  if (currentFolderView !== null) {
+    const folder = galleryFolders.find(f => f.id === currentFolderView);
+    breadcrumb.style.display = 'flex';
+    breadcrumb.innerHTML = '';
+    const backBtn = document.createElement('button');
+    backBtn.className = 'gallery-folder-breadcrumb-back';
+    backBtn.textContent = '← Back';
+    backBtn.addEventListener('click', closeFolderView);
+    const label = document.createElement('span');
+    label.textContent = `📁 ${folder ? folder.name : 'Folder'}`;
+    breadcrumb.appendChild(backBtn);
+    breadcrumb.appendChild(label);
+  } else {
+    breadcrumb.style.display = 'none';
+  }
+
+  // Get images for current view (root or folder)
+  const viewImages = getImagesInCurrentView();
+  const filteredImages = viewImages.filter(img => {
+    if (!galleryStartDate && !galleryEndDate) return true;
+    const d = new Date(img.timestamp);
+    d.setHours(0,0,0,0);
+    const t = d.getTime();
+    if (galleryStartDate && t < new Date(galleryStartDate).getTime()) return false;
+    if (galleryEndDate && t > new Date(galleryEndDate).getTime()) return false;
+    return true;
+  });
+  const sortedImages = gallerySortOrder === 'oldest'
+    ? [...filteredImages].sort((a,b) => a.timestamp - b.timestamp)
+    : [...filteredImages].sort((a,b) => b.timestamp - a.timestamp);
+
+  // Build items: folders first (only at root), then images
+  const fragment = document.createDocumentFragment();
+
+  // Render folders only when at root and not filtering by date
+  if (currentFolderView === null && !galleryStartDate && !galleryEndDate) {
+    galleryFolders.forEach(folder => {
+      const folderEl = document.createElement('div');
+      folderEl.className = 'gallery-item gallery-folder';
+      folderEl.dataset.folderId = folder.id;
+
+      if (isBatchMode && selectedBatchImages.has(folder.id)) {
+        folderEl.classList.add('selected');
+      }
+
+      if (isBatchMode) {
+        const checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+        checkbox.className = 'gallery-item-checkbox';
+        checkbox.checked = selectedBatchImages.has(folder.id);
+        checkbox.addEventListener('click', (e) => {
+          e.stopPropagation();
+          toggleBatchImageSelection(folder.id);
+        });
+        folderEl.appendChild(checkbox);
+      }
+
+      const icon = document.createElement('div');
+      icon.className = 'gallery-folder-icon';
+      icon.textContent = '📁';
+      folderEl.appendChild(icon);
+
+      const nameEl = document.createElement('div');
+      nameEl.className = 'gallery-folder-name';
+      nameEl.textContent = folder.name;
+      folderEl.appendChild(nameEl);
+
+      // Long press to rename; tap to open (or select in batch)
+      let pressTimer = null;
+      folderEl.addEventListener('touchstart', (e) => {
+        pressTimer = setTimeout(() => {
+          pressTimer = null;
+          if (!isBatchMode) startFolderRename(folder.id);
+        }, 600);
+      }, { passive: true });
+      folderEl.addEventListener('touchend', () => {
+        if (pressTimer) { clearTimeout(pressTimer); pressTimer = null; }
+      });
+      folderEl.addEventListener('touchmove', () => {
+        if (pressTimer) { clearTimeout(pressTimer); pressTimer = null; }
+      });
+
+      folderEl.onclick = (e) => {
+        if (isBatchMode) {
+          // If the click came from the checkbox itself, let it handle its own toggle
+          if (e.target.type === 'checkbox') return;
+          // If clicked in the top-left checkbox zone (approx 30% of width, 30% of height),
+          // treat as a checkbox tap — toggle selection
+          const rect = folderEl.getBoundingClientRect();
+          const relX = e.clientX - rect.left;
+          const relY = e.clientY - rect.top;
+          if (relX < rect.width * 0.4 && relY < rect.height * 0.4) {
+            toggleBatchImageSelection(folder.id);
+          } else {
+            // Clicked the folder body — open the folder
+            openFolderView(folder.id);
+          }
+        } else {
+          openFolderView(folder.id);
+        }
+      };
+
+      fragment.appendChild(folderEl);
+    });
+  }
+
+  if (sortedImages.length === 0 && galleryFolders.length === 0) {
+    grid.innerHTML = '<div class="gallery-empty">No photos yet.</div>';
+    pagination.style.display = 'none';
+  } else if (sortedImages.length === 0 && currentFolderView !== null) {
+    grid.innerHTML = '<div class="gallery-empty">This folder is empty.</div>';
     pagination.style.display = 'none';
   } else {
-    const totalPages = Math.ceil(filteredImages.length / ITEMS_PER_PAGE);
+    const totalPages = Math.ceil(sortedImages.length / ITEMS_PER_PAGE) || 1;
     currentGalleryPage = Math.min(currentGalleryPage, totalPages);
-    
+
     const startIndex = (currentGalleryPage - 1) * ITEMS_PER_PAGE;
-    const endIndex = Math.min(startIndex + ITEMS_PER_PAGE, filteredImages.length);
-    const pageImages = filteredImages.slice(startIndex, endIndex);
-    
-    const fragment = document.createDocumentFragment();
-    
+    const endIndex = Math.min(startIndex + ITEMS_PER_PAGE, sortedImages.length);
+    const pageImages = sortedImages.slice(startIndex, endIndex);
+
     pageImages.forEach((item) => {
       const imgContainer = document.createElement('div');
       imgContainer.className = 'gallery-item';
       imgContainer.dataset.imageId = item.id;
-      
+
       if (isBatchMode && selectedBatchImages.has(item.id)) {
         imgContainer.classList.add('selected');
       }
-      
+
       if (isBatchMode) {
         const checkbox = document.createElement('input');
         checkbox.type = 'checkbox';
@@ -832,14 +952,34 @@ async function showGallery(renderOnly = false) {
         });
         imgContainer.appendChild(checkbox);
       }
-      
+
       const img = document.createElement('img');
       img.src = item.imageBase64;
       img.alt = 'Gallery image';
       img.loading = 'lazy';
-      
       imgContainer.appendChild(img);
-      
+
+      // Long press on image in batch mode = show move-to-folder modal
+      let imgPressTimer = null;
+      if (isBatchMode) {
+        imgContainer.addEventListener('touchstart', (e) => {
+          imgPressTimer = setTimeout(() => {
+            imgPressTimer = null;
+            // Select this image then show move modal
+            if (!selectedBatchImages.has(item.id)) {
+              toggleBatchImageSelection(item.id);
+            }
+            showMoveToFolderModal();
+          }, 600);
+        }, { passive: true });
+        imgContainer.addEventListener('touchend', () => {
+          if (imgPressTimer) { clearTimeout(imgPressTimer); imgPressTimer = null; }
+        });
+        imgContainer.addEventListener('touchmove', () => {
+          if (imgPressTimer) { clearTimeout(imgPressTimer); imgPressTimer = null; }
+        });
+      }
+
       imgContainer.onclick = () => {
         if (isBatchMode) {
           toggleBatchImageSelection(item.id);
@@ -848,13 +988,14 @@ async function showGallery(renderOnly = false) {
           openImageViewer(originalIndex);
         }
       };
-      
+
       fragment.appendChild(imgContainer);
     });
-    
+
+    // Only append fragment if grid was cleared
     grid.innerHTML = '';
     grid.appendChild(fragment);
-    
+
     if (totalPages > 1) {
       pagination.style.display = 'flex';
       pageInfo.textContent = `Page ${currentGalleryPage} of ${totalPages}`;
@@ -864,7 +1005,7 @@ async function showGallery(renderOnly = false) {
       pagination.style.display = 'none';
     }
   }
-  
+
   modal.style.display = 'flex';
 }
 
@@ -1766,9 +1907,13 @@ function updateBatchSelection() {
 }
 
 function selectAllBatchImages() {
-  const filteredImages = getFilteredAndSortedGallery();
   selectedBatchImages.clear();
-  filteredImages.forEach(img => selectedBatchImages.add(img.id));
+  // Include folders if at root
+  if (currentFolderView === null) {
+    galleryFolders.forEach(f => selectedBatchImages.add(f.id));
+  }
+  // Include images in current view
+  getImagesInCurrentView().forEach(img => selectedBatchImages.add(img.id));
   updateBatchSelection();
   showGallery(true);
 }
@@ -2139,7 +2284,153 @@ async function finalizeCameraLiveCombine(photo1Base64, photo2Base64, presetOverr
   }
 }
 
-// ── END CAMERA LIVE COMBINE MODE ─────────────────────────────────────────
+// END CAMERA LIVE COMBINE MODE
+
+// GALLERY FOLDER FUNCTIONS
+
+function loadFolders() {
+  try {
+    const saved = localStorage.getItem(FOLDERS_STORAGE_KEY);
+    galleryFolders = saved ? JSON.parse(saved) : [];
+    if (!Array.isArray(galleryFolders)) galleryFolders = [];
+  } catch (e) {
+    galleryFolders = [];
+  }
+}
+
+function saveFolders() {
+  localStorage.setItem(FOLDERS_STORAGE_KEY, JSON.stringify(galleryFolders));
+}
+
+function createNewFolder() {
+  const id = 'folder-' + Date.now() + '-' + Math.random().toString(36).substr(2, 6);
+  const folder = { id, name: 'New Folder', createdAt: Date.now() };
+  galleryFolders.push(folder);
+  saveFolders();
+  showGallery(true);
+  // Immediately enter rename mode for the new folder
+  setTimeout(() => startFolderRename(id), 100);
+}
+
+function startFolderRename(folderId) {
+  const el = document.querySelector(`.gallery-folder[data-folder-id="${folderId}"]`);
+  if (!el) return;
+  el.classList.add('gallery-folder-renaming');
+  const nameEl = el.querySelector('.gallery-folder-name');
+  const folder = galleryFolders.find(f => f.id === folderId);
+  if (!folder) return;
+
+  const input = document.createElement('input');
+  input.type = 'text';
+  input.className = 'gallery-folder-rename-input';
+  input.value = folder.name === 'New Folder' ? '' : folder.name;
+  input.placeholder = 'Folder name';
+  input.maxLength = 30;
+  el.appendChild(input);
+  input.focus();
+
+  const save = () => {
+    const newName = input.value.trim() || 'New Folder';
+    folder.name = newName;
+    saveFolders();
+    el.classList.remove('gallery-folder-renaming');
+    input.remove();
+    if (nameEl) nameEl.textContent = newName;
+  };
+
+  input.addEventListener('blur', save);
+  input.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') { e.preventDefault(); save(); }
+  });
+}
+
+function openFolderView(folderId) {
+  currentFolderView = folderId;
+  currentGalleryPage = 1;
+  showGallery(true);
+}
+
+function closeFolderView() {
+  currentFolderView = null;
+  currentGalleryPage = 1;
+  showGallery(true);
+}
+
+function getImagesInCurrentView() {
+  // Returns images belonging to the current view (root or folder)
+  if (currentFolderView === null) {
+    return galleryImages.filter(img => !img.folderId && !img.isCombinedTemp);
+  } else {
+    return galleryImages.filter(img => img.folderId === currentFolderView);
+  }
+}
+
+async function moveSelectedImagesToFolder(targetFolderId) {
+  // targetFolderId = null means move to root gallery
+  const ids = Array.from(selectedBatchImages);
+  for (const imageId of ids) {
+    const img = galleryImages.find(i => i.id === imageId);
+    if (!img) continue;
+    if (targetFolderId === null) {
+      delete img.folderId;
+    } else {
+      img.folderId = targetFolderId;
+    }
+    // Persist the updated folderId to IndexedDB
+    await saveImageToDB(img);
+  }
+  selectedBatchImages.clear();
+  updateBatchSelection();
+  showGallery(true);
+}
+
+function showMoveToFolderModal() {
+  if (selectedBatchImages.size === 0) return;
+  const modal = document.getElementById('move-to-folder-modal');
+  const list = document.getElementById('move-to-folder-list');
+  list.innerHTML = '';
+
+  // Gallery (root) option
+  const rootItem = document.createElement('div');
+  rootItem.className = 'move-to-folder-item gallery-root';
+  rootItem.innerHTML = '🖼️ Gallery (root)';
+  rootItem.addEventListener('click', async () => {
+    modal.style.display = 'none';
+    await moveSelectedImagesToFolder(null);
+  });
+  list.appendChild(rootItem);
+
+  // Each folder
+  galleryFolders.forEach(folder => {
+    const item = document.createElement('div');
+    item.className = 'move-to-folder-item';
+    item.innerHTML = `📁 ${folder.name}`;
+    item.addEventListener('click', async () => {
+      modal.style.display = 'none';
+      await moveSelectedImagesToFolder(folder.id);
+    });
+    list.appendChild(item);
+  });
+
+  modal.style.display = 'flex';
+}
+
+async function deleteFolderAndContents(folderId) {
+  // When a folder is deleted, move its images back to root
+  for (const img of galleryImages) {
+    if (img.folderId === folderId) {
+      delete img.folderId;
+      await saveImageToDB(img);
+    }
+  }
+  galleryFolders = galleryFolders.filter(f => f.id !== folderId);
+  saveFolders();
+  if (currentFolderView === folderId) {
+    currentFolderView = null;
+  }
+}
+
+// END GALLERY FOLDER FUNCTIONS
 
 async function combineTwoImages() {
   if (selectedBatchImages.size !== 2) {
@@ -2293,7 +2584,14 @@ async function batchDeleteImages() {
   
   if (!confirmed) return;
   
-  const imagesToDelete = Array.from(selectedBatchImages);
+  // Separate folders from images in the selection
+  const foldersToDelete = Array.from(selectedBatchImages).filter(id => id.startsWith('folder-'));
+  const imagesToDelete = Array.from(selectedBatchImages).filter(id => !id.startsWith('folder-'));
+
+  // Delete selected folders (images inside move to root)
+  for (const folderId of foldersToDelete) {
+    await deleteFolderAndContents(folderId);
+  }
   
   // Show progress
   const overlay = document.createElement('div');
@@ -2320,14 +2618,25 @@ async function batchDeleteImages() {
   }
   
   document.body.removeChild(overlay);
-  
-  // Exit batch mode and reload gallery
+
+  // Exit batch mode cleanly — set flag first then update UI without toggling
   isBatchMode = false;
   selectedBatchImages.clear();
   await loadGallery();
-  toggleBatchMode();
-  
-  alert(`${deleted} of ${count} image${deleted > 1 ? 's' : ''} deleted successfully.`);
+
+  // Update UI to reflect batch mode is off without calling toggleBatchMode()
+  // (toggleBatchMode would flip isBatchMode back to true since it's already false)
+  const toggleBtn = document.getElementById('batch-mode-toggle');
+  const batchControls = document.getElementById('batch-controls');
+  const batchActionBar = document.getElementById('batch-action-bar');
+  if (toggleBtn) { toggleBtn.textContent = 'Select'; toggleBtn.classList.remove('active'); }
+  if (batchControls) batchControls.style.display = 'none';
+  if (batchActionBar) batchActionBar.style.display = 'none';
+
+  showGallery(true);
+
+  const totalDeleted = deleted + foldersToDelete.length;
+  alert(`${totalDeleted} item${totalDeleted !== 1 ? 's' : ''} deleted successfully.`);
 }
 
 function openMultiPresetSelector(imageId) {
@@ -8634,25 +8943,22 @@ function populateStylesList(preserveScroll = false) {
       // First apply text search filter
       if (styleFilterText) {
         const searchText = styleFilterText.toLowerCase();
-                   const categoryMatch = preset.category && preset.category.some(cat => cat.toLowerCase().includes(searchText));
-                   const optionsMatch = (
-        (preset.options && preset.options.some(o => o.text && o.text.toLowerCase().includes(searchText))) ||
-        (preset.optionGroups && preset.optionGroups.some(g => g.title && g.title.toLowerCase().includes(searchText) || g.options && g.options.some(o => o.text && o.text.toLowerCase().includes(searchText))))
-      );
-                   const textMatch = preset.name.toLowerCase().includes(searchText) || 
-                                   preset.message.toLowerCase().includes(searchText) ||
-                                   categoryMatch || optionsMatch;
-                   if (!textMatch) return false;
+        const categoryMatch = preset.category && preset.category.some(cat => cat.toLowerCase().includes(searchText));
+        const optionsMatch = (
+          (preset.options && preset.options.some(o => o.text && o.text.toLowerCase().includes(searchText))) ||
+          (preset.optionGroups && preset.optionGroups.some(g => g.title && g.title.toLowerCase().includes(searchText) || g.options && g.options.some(o => o.text && o.text.toLowerCase().includes(searchText))))
+        );
+        const textMatch = preset.name.toLowerCase().includes(searchText) ||
+                         preset.message.toLowerCase().includes(searchText) ||
+                         categoryMatch || optionsMatch;
+        if (!textMatch) return false;
       }
-      
-      // Then apply category filter if active
       if (mainMenuFilterByCategory) {
         return preset.category && preset.category.includes(mainMenuFilterByCategory);
       }
-      
       return true;
     });
-    
+
     const filtered = regular.filter(preset => {
       if (styleFilterText) {
         const searchText = styleFilterText.toLowerCase();
@@ -8661,17 +8967,14 @@ function populateStylesList(preserveScroll = false) {
           (preset.options && preset.options.some(o => o.text && o.text.toLowerCase().includes(searchText))) ||
           (preset.optionGroups && preset.optionGroups.some(g => g.title && g.title.toLowerCase().includes(searchText) || g.options && g.options.some(o => o.text && o.text.toLowerCase().includes(searchText))))
         );
-        const textMatch = preset.name.toLowerCase().includes(searchText) || 
+        const textMatch = preset.name.toLowerCase().includes(searchText) ||
                          preset.message.toLowerCase().includes(searchText) ||
                          categoryMatch || optionsMatch;
         if (!textMatch) return false;
       }
-      
-      // Then apply category filter if active
       if (mainMenuFilterByCategory) {
         return preset.category && preset.category.includes(mainMenuFilterByCategory);
       }
-      
       return true;
     });
 
@@ -11322,9 +11625,21 @@ const result = await presetImporter.import();
     batchModeToggle.addEventListener('click', toggleBatchMode);
   }
 
+  const batchNewFolder = document.getElementById('batch-new-folder');
+  if (batchNewFolder) {
+    batchNewFolder.addEventListener('click', createNewFolder);
+  }
+
   const batchSelectAll = document.getElementById('batch-select-all');
   if (batchSelectAll) {
     batchSelectAll.addEventListener('click', selectAllBatchImages);
+  }
+
+  const closeMoveToFolder = document.getElementById('close-move-to-folder');
+  if (closeMoveToFolder) {
+    closeMoveToFolder.addEventListener('click', () => {
+      document.getElementById('move-to-folder-modal').style.display = 'none';
+    });
   }
 
   const batchDeselectAll = document.getElementById('batch-deselect-all');
@@ -11351,6 +11666,9 @@ const result = await presetImporter.import();
   if (batchDelete) {
     batchDelete.addEventListener('click', batchDeleteImages);
   }
+
+  // Load folder structure
+  loadFolders();
 
   // Initialize IndexedDB and load gallery
   initDB().then(async () => {
@@ -11972,6 +12290,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Gallery image viewer — double-tap to toggle both carousels
+
 (function() {
   const viewerEl = document.getElementById('image-viewer');
   if (!viewerEl) return;
@@ -12030,6 +12349,7 @@ document.addEventListener('DOMContentLoaded', function() {
 })();
 
 // ===== LEFT CAMERA CAROUSEL =====
+
 (function() {
   // Sync enabled state of MP and Options buttons on load
   function syncLeftCamBtns() {
@@ -12079,6 +12399,7 @@ document.addEventListener('DOMContentLoaded', function() {
 console.log('AI Camera Styles app initialized!');
 
 // --- Double-tap to toggle BOTH main camera carousels ---
+
 (function() {
   let lastTapTime = 0;
   let lastTapX = 0;

@@ -3025,6 +3025,160 @@ button:disabled {
     cursor: not-allowed;
 }
 
+/* ── GALLERY FOLDERS ─────────────────────────────── */
+
+.gallery-folder {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
+    border: 2px solid #FE5F00;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-sizing: border-box;
+    overflow: hidden;
+    padding: 4px;
+}
+
+.gallery-folder-icon {
+    font-size: 8vw;
+    line-height: 1;
+    flex-shrink: 0;
+}
+
+.gallery-folder-name {
+    font-family: 'Georgia', serif;
+    font-size: 2.4vw;
+    color: #FE5F00;
+    text-align: center;
+    word-break: break-word;
+    overflow: hidden;
+    max-height: 4.5em;
+    line-height: 1.2;
+    padding: 0 2px;
+    width: 100%;
+}
+
+.gallery-folder.selected {
+    outline: 3px solid #FE5F00;
+    background: rgba(254, 95, 0, 0.15);
+}
+
+.gallery-folder-renaming .gallery-folder-name {
+    display: none;
+}
+
+.gallery-folder-rename-input {
+    width: 90%;
+    background: #111;
+    color: #FE5F00;
+    border: 1px solid #FE5F00;
+    border-radius: 3px;
+    font-size: 2.8vw;
+    text-align: center;
+    padding: 2px;
+    font-family: 'Georgia', serif;
+}
+
+/* Current folder breadcrumb bar */
+.gallery-folder-breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 1vw;
+    background: #111;
+    border-bottom: 1px solid #333;
+    font-size: 3vw;
+    color: #FE5F00;
+    min-height: 0;
+    box-sizing: border-box;
+}
+
+.gallery-folder-breadcrumb-back {
+    background: rgba(30, 30, 30, 0.75);
+    border: 2px solid #4CAF50;
+    color: #ffffff;
+    border-radius: 2vw;
+    font-size: 3vw;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 0 3vw;
+    height: 7vw;
+    min-height: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    box-sizing: border-box;
+    flex-shrink: 0;
+}
+
+/* Move to folder modal */
+.move-to-folder-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,0.75);
+}
+
+.move-to-folder-content {
+    background: #1a1a1a;
+    border: 1px solid #444;
+    border-radius: 8px;
+    width: 80vw;
+    max-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.move-to-folder-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 12px;
+    border-bottom: 1px solid #333;
+}
+
+.move-to-folder-header h4 {
+    margin: 0;
+    color: #fff;
+    font-size: 14px;
+}
+
+.move-to-folder-list {
+    overflow-y: auto;
+    flex: 1;
+}
+
+.move-to-folder-item {
+    padding: 12px 16px;
+    color: #fff;
+    font-size: 13px;
+    border-bottom: 1px solid #222;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.move-to-folder-item:active {
+    background: rgba(254, 95, 0, 0.2);
+}
+
+.move-to-folder-item.gallery-root {
+    color: #FE5F00;
+    font-weight: bold;
+}
+/* ── END GALLERY FOLDERS ─────────────────────────── */
+
 .gallery-item {
     position: relative;
 }
