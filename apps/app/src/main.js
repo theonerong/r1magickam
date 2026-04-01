@@ -510,6 +510,10 @@ function showStyleReveal(styleName) {
   
   // If NO MAGIC MODE is on, always show NO MAGIC MODE in popup
   styleRevealText.textContent = noMagicMode ? '⚡ NO MAGIC MODE' : styleName;
+  // Force the CSS animation to restart cleanly on every call
+  styleRevealElement.style.display = 'none';
+  // Trigger reflow so the browser registers the display change before showing again
+  void styleRevealElement.offsetHeight;
   styleRevealElement.style.display = 'block';
   
   styleRevealTimeout = setTimeout(() => {
@@ -517,7 +521,7 @@ function showStyleReveal(styleName) {
       styleRevealElement.style.display = 'none';
     }
     styleRevealTimeout = null;
-  }, 1200);
+  }, 1800);
 }
 
 // ===================================
@@ -843,156 +847,161 @@ async function showGallery(renderOnly = false) {
     ? [...filteredImages].sort((a,b) => a.timestamp - b.timestamp)
     : [...filteredImages].sort((a,b) => b.timestamp - a.timestamp);
 
-  // Build items: folders first (only at root), then images
+  // Build a combined list of all items for the current view.
+  // At root: folders come first (as pseudo-items), then images.
+  // Inside a folder: images only.
+  const showFolders = currentFolderView === null && !galleryStartDate && !galleryEndDate;
+
+  // Each entry is either { type:'folder', folder } or { type:'image', item }
+  const allItems = [];
+  if (showFolders) {
+    galleryFolders.forEach(folder => allItems.push({ type: 'folder', folder }));
+  }
+  sortedImages.forEach(item => allItems.push({ type: 'image', item }));
+
   const fragment = document.createDocumentFragment();
 
-  // Render folders only when at root and not filtering by date
-  if (currentFolderView === null && !galleryStartDate && !galleryEndDate) {
-    galleryFolders.forEach(folder => {
-      const folderEl = document.createElement('div');
-      folderEl.className = 'gallery-item gallery-folder';
-      folderEl.dataset.folderId = folder.id;
-
-      if (isBatchMode && selectedBatchImages.has(folder.id)) {
-        folderEl.classList.add('selected');
-      }
-
-      if (isBatchMode) {
-        const checkbox = document.createElement('input');
-        checkbox.type = 'checkbox';
-        checkbox.className = 'gallery-item-checkbox';
-        checkbox.checked = selectedBatchImages.has(folder.id);
-        checkbox.addEventListener('click', (e) => {
-          e.stopPropagation();
-          toggleBatchImageSelection(folder.id);
-        });
-        folderEl.appendChild(checkbox);
-      }
-
-      const icon = document.createElement('div');
-      icon.className = 'gallery-folder-icon';
-      icon.textContent = '📁';
-      folderEl.appendChild(icon);
-
-      const nameEl = document.createElement('div');
-      nameEl.className = 'gallery-folder-name';
-      nameEl.textContent = folder.name;
-      folderEl.appendChild(nameEl);
-
-      // Long press to rename; tap to open (or select in batch)
-      let pressTimer = null;
-      folderEl.addEventListener('touchstart', (e) => {
-        pressTimer = setTimeout(() => {
-          pressTimer = null;
-          if (!isBatchMode) startFolderRename(folder.id);
-        }, 600);
-      }, { passive: true });
-      folderEl.addEventListener('touchend', () => {
-        if (pressTimer) { clearTimeout(pressTimer); pressTimer = null; }
-      });
-      folderEl.addEventListener('touchmove', () => {
-        if (pressTimer) { clearTimeout(pressTimer); pressTimer = null; }
-      });
-
-      folderEl.onclick = (e) => {
-        if (isBatchMode) {
-          // If the click came from the checkbox itself, let it handle its own toggle
-          if (e.target.type === 'checkbox') return;
-          // If clicked in the top-left checkbox zone (approx 30% of width, 30% of height),
-          // treat as a checkbox tap — toggle selection
-          const rect = folderEl.getBoundingClientRect();
-          const relX = e.clientX - rect.left;
-          const relY = e.clientY - rect.top;
-          if (relX < rect.width * 0.4 && relY < rect.height * 0.4) {
-            toggleBatchImageSelection(folder.id);
-          } else {
-            // Clicked the folder body — open the folder
-            openFolderView(folder.id);
-          }
-        } else {
-          openFolderView(folder.id);
-        }
-      };
-
-      fragment.appendChild(folderEl);
-    });
-  }
-
-  if (sortedImages.length === 0 && galleryFolders.length === 0) {
-    grid.innerHTML = '<div class="gallery-empty">No photos yet.</div>';
-    pagination.style.display = 'none';
-  } else if (sortedImages.length === 0 && currentFolderView !== null) {
-    grid.innerHTML = '<div class="gallery-empty">This folder is empty.</div>';
+  if (allItems.length === 0) {
+    grid.innerHTML = currentFolderView !== null
+      ? '<div class="gallery-empty">This folder is empty.</div>'
+      : '<div class="gallery-empty">No photos yet.</div>';
     pagination.style.display = 'none';
   } else {
-    const totalPages = Math.ceil(sortedImages.length / ITEMS_PER_PAGE) || 1;
+    const totalPages = Math.ceil(allItems.length / ITEMS_PER_PAGE) || 1;
     currentGalleryPage = Math.min(currentGalleryPage, totalPages);
 
     const startIndex = (currentGalleryPage - 1) * ITEMS_PER_PAGE;
-    const endIndex = Math.min(startIndex + ITEMS_PER_PAGE, sortedImages.length);
-    const pageImages = sortedImages.slice(startIndex, endIndex);
+    const endIndex = Math.min(startIndex + ITEMS_PER_PAGE, allItems.length);
+    const pageItems = allItems.slice(startIndex, endIndex);
 
-    pageImages.forEach((item) => {
-      const imgContainer = document.createElement('div');
-      imgContainer.className = 'gallery-item';
-      imgContainer.dataset.imageId = item.id;
+    pageItems.forEach(entry => {
+      if (entry.type === 'folder') {
+        const folder = entry.folder;
+        const folderEl = document.createElement('div');
+        folderEl.className = 'gallery-item gallery-folder';
+        folderEl.dataset.folderId = folder.id;
 
-      if (isBatchMode && selectedBatchImages.has(item.id)) {
-        imgContainer.classList.add('selected');
-      }
+        if (isBatchMode && selectedBatchImages.has(folder.id)) {
+          folderEl.classList.add('selected');
+        }
 
-      if (isBatchMode) {
-        const checkbox = document.createElement('input');
-        checkbox.type = 'checkbox';
-        checkbox.className = 'gallery-item-checkbox';
-        checkbox.checked = selectedBatchImages.has(item.id);
-        checkbox.addEventListener('click', (e) => {
-          e.stopPropagation();
-          toggleBatchImageSelection(item.id);
-        });
-        imgContainer.appendChild(checkbox);
-      }
+        if (isBatchMode) {
+          const checkbox = document.createElement('input');
+          checkbox.type = 'checkbox';
+          checkbox.className = 'gallery-item-checkbox';
+          checkbox.checked = selectedBatchImages.has(folder.id);
+          checkbox.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleBatchImageSelection(folder.id);
+          });
+          folderEl.appendChild(checkbox);
+        }
 
-      const img = document.createElement('img');
-      img.src = item.imageBase64;
-      img.alt = 'Gallery image';
-      img.loading = 'lazy';
-      imgContainer.appendChild(img);
+        const icon = document.createElement('div');
+        icon.className = 'gallery-folder-icon';
+        icon.textContent = '📁';
+        folderEl.appendChild(icon);
 
-      // Long press on image in batch mode = show move-to-folder modal
-      let imgPressTimer = null;
-      if (isBatchMode) {
-        imgContainer.addEventListener('touchstart', (e) => {
-          imgPressTimer = setTimeout(() => {
-            imgPressTimer = null;
-            // Select this image then show move modal
-            if (!selectedBatchImages.has(item.id)) {
-              toggleBatchImageSelection(item.id);
-            }
-            showMoveToFolderModal();
+        const nameEl = document.createElement('div');
+        nameEl.className = 'gallery-folder-name';
+        nameEl.textContent = folder.name;
+        folderEl.appendChild(nameEl);
+
+        // Long press to rename; tap to open (or select in batch)
+        let pressTimer = null;
+        folderEl.addEventListener('touchstart', () => {
+          pressTimer = setTimeout(() => {
+            pressTimer = null;
+            if (!isBatchMode) startFolderRename(folder.id);
           }, 600);
         }, { passive: true });
-        imgContainer.addEventListener('touchend', () => {
-          if (imgPressTimer) { clearTimeout(imgPressTimer); imgPressTimer = null; }
+        folderEl.addEventListener('touchend', () => {
+          if (pressTimer) { clearTimeout(pressTimer); pressTimer = null; }
         });
-        imgContainer.addEventListener('touchmove', () => {
-          if (imgPressTimer) { clearTimeout(imgPressTimer); imgPressTimer = null; }
+        folderEl.addEventListener('touchmove', () => {
+          if (pressTimer) { clearTimeout(pressTimer); pressTimer = null; }
         });
-      }
 
-      imgContainer.onclick = () => {
-        if (isBatchMode) {
-          toggleBatchImageSelection(item.id);
-        } else {
-          const originalIndex = galleryImages.findIndex(i => i.id === item.id);
-          openImageViewer(originalIndex);
+        folderEl.onclick = (e) => {
+          if (isBatchMode) {
+            if (e.target.type === 'checkbox') return;
+            const rect = folderEl.getBoundingClientRect();
+            const relX = e.clientX - rect.left;
+            const relY = e.clientY - rect.top;
+            if (relX < rect.width * 0.4 && relY < rect.height * 0.4) {
+              toggleBatchImageSelection(folder.id);
+            } else {
+              openFolderView(folder.id);
+            }
+          } else {
+            openFolderView(folder.id);
+          }
+        };
+
+        fragment.appendChild(folderEl);
+
+      } else {
+        // Image entry
+        const item = entry.item;
+        const imgContainer = document.createElement('div');
+        imgContainer.className = 'gallery-item';
+        imgContainer.dataset.imageId = item.id;
+
+        if (isBatchMode && selectedBatchImages.has(item.id)) {
+          imgContainer.classList.add('selected');
         }
-      };
 
-      fragment.appendChild(imgContainer);
+        if (isBatchMode) {
+          const checkbox = document.createElement('input');
+          checkbox.type = 'checkbox';
+          checkbox.className = 'gallery-item-checkbox';
+          checkbox.checked = selectedBatchImages.has(item.id);
+          checkbox.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleBatchImageSelection(item.id);
+          });
+          imgContainer.appendChild(checkbox);
+        }
+
+        const img = document.createElement('img');
+        img.src = item.imageBase64;
+        img.alt = 'Gallery image';
+        img.loading = 'lazy';
+        imgContainer.appendChild(img);
+
+        // Long press on image in batch mode = show move-to-folder modal
+        let imgPressTimer = null;
+        if (isBatchMode) {
+          imgContainer.addEventListener('touchstart', () => {
+            imgPressTimer = setTimeout(() => {
+              imgPressTimer = null;
+              if (!selectedBatchImages.has(item.id)) {
+                toggleBatchImageSelection(item.id);
+              }
+              showMoveToFolderModal();
+            }, 600);
+          }, { passive: true });
+          imgContainer.addEventListener('touchend', () => {
+            if (imgPressTimer) { clearTimeout(imgPressTimer); imgPressTimer = null; }
+          });
+          imgContainer.addEventListener('touchmove', () => {
+            if (imgPressTimer) { clearTimeout(imgPressTimer); imgPressTimer = null; }
+          });
+        }
+
+        imgContainer.onclick = () => {
+          if (isBatchMode) {
+            toggleBatchImageSelection(item.id);
+          } else {
+            const originalIndex = galleryImages.findIndex(i => i.id === item.id);
+            openImageViewer(originalIndex);
+          }
+        };
+
+        fragment.appendChild(imgContainer);
+      }
     });
 
-    // Only append fragment if grid was cleared
     grid.innerHTML = '';
     grid.appendChild(fragment);
 
@@ -1038,8 +1047,12 @@ async function hideGallery() {
 }
 
 function nextGalleryPage() {
-  const filteredImages = getFilteredAndSortedGallery();
-  const totalPages = Math.ceil(filteredImages.length / ITEMS_PER_PAGE);
+  // Count folders + images together, matching how showGallery paginates
+  const showFolders = currentFolderView === null && !galleryStartDate && !galleryEndDate;
+  const folderCount = showFolders ? galleryFolders.length : 0;
+  const imageCount = getFilteredAndSortedGallery().length;
+  const totalItems = folderCount + imageCount;
+  const totalPages = Math.ceil(totalItems / ITEMS_PER_PAGE);
   if (currentGalleryPage < totalPages) {
     currentGalleryPage++;
     showGallery(true);
@@ -2108,6 +2121,7 @@ function toggleCameraLiveCombineMode() {
     if (window.isCameraLiveCombineMode) {
       btn.classList.add('combine-active');
       if (statusElement) statusElement.textContent = '🖼️🖼️ Combine ON — press side button to take first photo';
+      showStyleReveal('🖼️🖼️ COMBINE ON\nTAKE 1ST PHOTO');
     } else {
       btn.classList.remove('combine-active');
       if (statusElement) updatePresetDisplay();
@@ -2225,6 +2239,7 @@ async function finalizeCameraLiveCombine(photo1Base64, photo2Base64, presetOverr
           imageBase64: combinedBase64,
           preset: p,
           manualSelection: manualSelection,
+          isCombined: true,
           timestamp: Date.now()
         };
         photoQueue.push(queueItem);
@@ -2257,6 +2272,7 @@ async function finalizeCameraLiveCombine(photo1Base64, photo2Base64, presetOverr
         id: Date.now().toString() + '-cam-comb',
         imageBase64: combinedBase64,
         preset: preset,
+        isCombined: !isVoiceMode,
         timestamp: Date.now()
       };
       photoQueue.push(queueItem);
@@ -3193,23 +3209,23 @@ async function loadStyles() {
     const modifications = await presetStorage.getAllModifications();
     const hasModifications = modifications.length > 0;
     
-    // Always fetch total factory count from presets.json for display purposes
-    try {
-        const countResponse = await fetch('./presets.json');
-        if (countResponse.ok) {
-            const allFactoryPresets = await countResponse.json();
-            totalFactoryPresetCount = allFactoryPresets.length;
-            const tutorialCountEl = document.getElementById('tutorial-preset-count');
-            if (tutorialCountEl) tutorialCountEl.textContent = totalFactoryPresetCount;
-        }
-    } catch (e) {
-        console.log('Could not fetch preset count:', e);
-    }
-
     // Only load presets if user has imports or modifications
     if (hasImports || hasModifications) {
         // Merge factory presets with user modifications
         CAMERA_PRESETS = await mergePresetsWithStorage();
+
+        // Fetch total factory count for display — only needed for returning users
+        try {
+            const countResponse = await fetch('./presets.json');
+            if (countResponse.ok) {
+                const allFactoryPresets = await countResponse.json();
+                totalFactoryPresetCount = allFactoryPresets.length;
+                const tutorialCountEl = document.getElementById('tutorial-preset-count');
+                if (tutorialCountEl) tutorialCountEl.textContent = totalFactoryPresetCount;
+            }
+        } catch (e) {
+            console.log('Could not fetch preset count:', e);
+        }
     } else {
         // First time user - don't load anything yet
         CAMERA_PRESETS = [];
@@ -7253,8 +7269,11 @@ async function syncQueuedPhotos() {
       statusElement.textContent = `Syncing ${successCount + 1}/${originalCount}...`;
       
       if (typeof PluginMessageHandler !== 'undefined' && !noMagicMode) {
+        if (item.isCombined) window.isCombinedMode = true;
+        const syncedPrompt = getFinalPrompt(item.preset, item.manualSelection || null);
+        if (item.isCombined) window.isCombinedMode = false;
         PluginMessageHandler.postMessage(JSON.stringify({
-          message: getFinalPrompt(item.preset, item.manualSelection || null),
+          message: syncedPrompt,
           pluginId: 'com.r1.pixelart',
           imageBase64: item.imageBase64
         }));
@@ -7571,6 +7590,7 @@ window.addEventListener('sideClick', () => {
           capturedImage.style.display = 'none';
           video.style.display = 'block';
           statusElement.textContent = '✅ First photo taken! Press side button for second photo';
+          showStyleReveal('📸 1st done!\nTake 2nd photo');
         }
       } else {
         // Take photo 2
@@ -12652,6 +12672,7 @@ console.log('AI Camera Styles app initialized!');
             const spokenPreset = window.voicePreset;
             window.voicePreset = null;
             statusElement.textContent = '✅ First photo taken! Press side button for second photo';
+            showStyleReveal('📸 1st done!\nTake 2nd photo');
             // Override the sideClick for next press to capture photo 2 with this voice preset
             window.cameraCombineVoicePreset = spokenPreset;
           }
