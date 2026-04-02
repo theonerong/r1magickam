@@ -20929,6 +20929,20 @@
     "additionalInstructions": "FINAL RESULT:\nA complete thermal imaging transformation of the scene as viewed through a Predator's bio-mask helmet display. Every element is rendered as heat signatures with the iconic yellow-to-purple color gradient, featuring bright yellow/white human silhouettes with visible internal heat patterns, cooler blue/purple environmental elements, distinctive scan lines and electronic interference, alien HUD elements with targeting reticles and Yautja script, and the characteristic rounded vignette of viewing through helmet optics. The image must be instantly recognizable as Predator vision while maintaining the composition and recognizability of the original scene's subjects and spatial relationships. The effect should be cinematic, faithful to the films, and evoke the alien hunter's technological advantage - seeing the world through heat and allowing nothing to hide."
   },
   {
+    "name": "PRODUCT LABEL",
+    "category": [
+      "HUMOR",
+      "COMMERCIAL",
+      "PARODY",
+      "DESIGN",
+      "BRANDING"
+    ],
+    "message": "Take a picture and transform the subject into a fully designed commercial product label or packaging.\n\nCORE CONCEPT (CRITICAL):\n• The subject becomes the centerpiece branding of a product\n• The product type is determined from visual clues in the image\n\nPRODUCT GENERATION:\n• Analyze the image for personality, mood, colors, and objects\n• Generate a product type that fits the subject\n• Possible products include:\n  – Beverage bottles or cans\n  – Cereal boxes\n  – Snack packaging (chips, crackers, candy)\n  – Household products\n  – Shoes or sneakers\n  – Specialty or novelty items\n\nBRANDING ELEMENTS:\n• Create a product name based on the subject and image cues\n• Include a slogan or tagline\n• Add humorous or clever marketing language\n\nTEXT CONTENT:\n• Product name (large, bold)\n• Tagline or catchphrase\n• Short product description or benefits\n• Optional “flavor” or variation label\n\nDESIGN STYLE:\n• Professional packaging design\n• Bright, eye-catching layout\n• Clean typography and branding structure\n\nSUBJECT HANDLING:\n• Subject remains recognizable\n• Integrated into label artwork or packaging design\n• May appear illustrated, photographed, or stylized depending on product\n\nENVIRONMENT:\n• Replace or frame original scene as packaging background\n• Add brand elements like logos, icons, or badges\n\nTONE:\n• Humorous, clever, and marketable\n• Should feel like a real product with a comedic twist",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "FINAL RESULT:\nA polished product label or packaging design featuring the subject as the central brand element. The product type, name, and marketing text are creatively derived from the image, resulting in a believable but humorous commercial product."
+  },
+  {
     "name": "PRODUCT PLACEMENT OVERLOAD",
     "category": [
       "HUMOR",
@@ -24337,6 +24351,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "STORYBOARD",
+    "category": [
+      "CINEMATIC",
+      "CREATIVE",
+      "SCENE TRANSFORMATION",
+      "STORY",
+      "VISUAL DESIGN"
+    ],
+    "message": "Take a picture and transform the subject and environment into a cinematic movie storyboard sequence.\n\nCORE CONCEPT (CRITICAL):\n• Convert the image into a multi-panel storyboard\n• Panels must depict a sequence of scenes from a fictional movie\n• The story must be derived from visual clues in the image\n\nSTORY GENERATION:\n• Analyze the image for characters, setting, mood, and actions\n• Create a short narrative premise based on those observations\n• Each panel represents a different moment in the story\n\nPANEL STRUCTURE:\n• 3 to 6 storyboard panels\n• Panels may include:\n  – Wide establishing shot\n  – Medium character interaction\n  – Close-up emotional or dramatic moment\n  – Action or conflict scene\n• Arrange panels in a clean storyboard layout\n\nTEXT ELEMENTS:\n• Include handwritten or sketched captions under panels\n• Include brief scene descriptions or dialogue snippets\n• Add a movie title at the top based on the generated premise\n\nVISUAL STYLE:\n• Pencil sketch, inked storyboard, or rough cinematic concept art\n• Visible sketch lines, framing marks, or notes\n• Slightly rough, pre-production aesthetic\n\nSUBJECT HANDLING:\n• Keep subject recognizable across panels\n• Maintain consistent character appearance throughout\n\nENVIRONMENT:\n• Adapt the original setting into cinematic scenes\n• Expand or exaggerate environment if needed to support story\n\nTONE:\n• Dramatic, adventurous, comedic, or suspenseful depending on image cues",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "FINAL RESULT:\nA complete storyboard page that looks like a film pre-production sketch, with multiple panels telling a cohesive story derived from the original image. The subject appears consistently across scenes, and the storyboard includes a title and short captions that reflect a believable movie concept."
   },
   {
     "name": "STRANGER THINGS",
