@@ -899,6 +899,20 @@
     "additionalInstructions": ""
   },
   {
+    "name": "ANCHORMAN",
+    "category": [
+      "HUMOR",
+      "CHARACTER TRANSFORMATION",
+      "MOVIE",
+      "PARODY",
+      "RETRO"
+    ],
+    "message": "Take a picture and transform the subject into a classic 1970s-style television news anchor inspired by the iconic Anchorman persona.\n\nCORE CONCEPT (CRITICAL):\n• Subject becomes a confident, over-the-top news anchor\n• Face must remain recognizable\n• Add a thick, well-groomed 1970s-style moustache\n\nCHARACTER TRANSFORMATION:\n• Subject wears a vintage news anchor outfit:\n  – Burgundy or brightly colored suit\n  – Wide lapels\n  – Dress shirt and tie\n• Hair is styled in a classic 1970s broadcast fashion\n• Expression should be confident, smug, or dramatically serious\n\nPOSE & STAGING:\n• Subject may be seated at a news desk or standing in a broadcast pose\n• Classic anchor posture: hands folded, pointing, or gesturing confidently\n\nENVIRONMENT:\n• Retro newsroom setting\n• Desk with microphones, papers, or a news logo backdrop\n• 1970s television studio aesthetic\n\nSTYLE:\n• Slightly cinematic but grounded in realism\n• Warm tones and vintage color grading\n• Clean but stylized composition\n\nTONE:\n• Confident, dramatic, and slightly comedic\n• Parody of classic broadcast journalism",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "FINAL RESULT:\nThe image should clearly depict the subject as a classic 1970s-style news anchor with a signature moustache, bold suit, and confident on-air presence. The result should feel like a humorous but believable vintage broadcast scene while keeping the subject recognizable."
+  },
+  {
     "name": "ANCIENT TIMES",
     "category": [
       "OPTIONS",
