@@ -10267,6 +10267,61 @@
     "additionalInstructions": "FINAL RESULT:\nA stunning nighttime portrait where the subject's face is masterfully recreated using a perfectly-timed orchestration of firework bursts at various stages and positions in the sky. The image captures the peak moment where dozens of coordinated pyrotechnic effects combine to form a recognizable likeness that is both ephemeral and spectacular—a face made entirely of light, color, and controlled fire in the darkness."
   },
   {
+    "name": "FISH-EYE",
+    "category": [
+      "LENS EFFECT",
+      "DISTORTION",
+      "PERSPECTIVE",
+      "CREATIVE",
+      "IMMERSIVE"
+    ],
+    "message": "Take a picture and transform the image into a fish-eye lens perspective with curvilinear distortion. The entire scene must appear as if captured using an ultra-wide-angle hemispherical lens.\n\nMASTER PROMPT OVERRIDE LOGIC (CRITICAL):\n• If an external master prompt specifies a distortion style, USE that instead of the selected option\n• If no override is provided, use the selected option from the list\n\nCORE CONCEPT (CRITICAL):\n• Apply barrel distortion across the entire image\n• Straight lines curve outward depending on intensity\n• The image should feel spherical, warped, or lens-driven\n\nDISTORTION BEHAVIOR:\n• Center remains the most stable area\n• Edges stretch, curve, and warp\n• Perspective becomes radial and immersive\n\nSUBJECT HANDLING:\n• Keep subjects recognizable\n• Maintain a strong central focal point\n• Warp the environment around the subject naturally\n\nENVIRONMENT EFFECTS:\n• Curved horizons\n• Bent buildings and vertical lines\n• Radial depth and immersion\n\nSTYLE:\n• Optical realism or stylized exaggeration depending on selected option\n\nLIGHTING:\n• Preserve original lighting while adapting to curved geometry\n\nSCENE COMPOSITION:\n• Radial composition centered on subject\n• Strong sense of depth and immersion",
+    "options": [
+      { 
+        "id": "001", 
+        "text": "Tiny planet effect with the entire scene wrapped into a small spherical world" 
+      },
+      { 
+        "id": "002", 
+        "text": "Mild fisheye with subtle wide-angle curvature and minimal distortion" 
+      },
+      { 
+        "id": "003", 
+        "text": "Extreme distortion with aggressive barrel warping and stretched edges" 
+      },
+      { 
+        "id": "004",
+        "text": "Classic circular fisheye with a round frame and strong edge curvature" 
+      },
+      { 
+        "id": "005", 
+        "text": "Inverted tiny planet (tunnel world) with the scene forming a hollow sphere around the viewer" 
+      },
+      { 
+        "id": "006", 
+        "text": "Ultra-wide panoramic fisheye stretching the scene into a wide curved horizon" 
+      },
+      { 
+        "id": "007",
+        "text": "Close-up exaggerated fisheye where the subject appears enlarged and warped at the center" 
+      },
+      { 
+        "id": "008",
+        "text": "Spiral fisheye distortion with slight rotational warping layered onto the curvature" 
+      },
+      {
+        "id": "009",
+        "text": "Dome projection view as if the scene is mapped onto the inside of a hemisphere" 
+      },
+      { 
+        "id": "010", 
+        "text": "Action camera (GoPro-style) fisheye with realistic wide-angle lens distortion and dynamic perspective" 
+      }
+  ],
+  "randomizeOptions": true,
+  "additionalInstructions": "FINAL RESULT:\nThe image should appear as if captured through a fisheye or ultra-wide-angle lens, with distortion behavior determined by the selected option or master prompt override. The result should feel immersive, curved, and visually dynamic while preserving subject clarity."
+  },
+  {
     "name": "FISH TANK",
     "category": [
       "SURREAL",
@@ -15502,7 +15557,7 @@
       "IMMERSIVE",
       "ACTION"
     ],
-    "message": "Take a picture and transform the ENTIRE scene into a Matrix-style simulated reality environment. Convert all elements into a dark, cyberpunk world with green-tinted digital aesthetics and artificial reality effects.\n\nCRITICAL TRANSFORMATION RULES:\n• FULL SCENE transformation\n• Maintain spatial relationships\n• Must look like a Matrix movie scene\n• Preserve facial recognition when converting characters\n\nCHARACTER CONVERSION (PEOPLE & ANIMALS):\n• ONLY convert if present\n• HUMANS become:\n  - Agents (suits, sunglasses, earpieces)\n  - Rebels (black trench coats, tactical gear)\n  - Hackers\n\n• ANIMALS become:\n  - Glitching digital constructs\n\n• Characters must:\n  - Have serious expressions\n  - Wear dark, sleek clothing\n\nOBJECT CONVERSION:\n• OBJECTS become:\n  - Minimalist modern furniture\n  - Digital constructs\n  - Glitching or duplicated items\n\nENVIRONMENT CONVERSION:\n• SETTINGS become:\n  - Dark city streets\n  - Office buildings\n  - Rooftops\n  - Empty corridors\n\n• STRUCTURES:\n  - Concrete and glass\n  - Repeating patterns\n  - Artificial geometry\n\nLIGHTING & ATMOSPHERE:\n• Green-tinted color grading\n• Low light\n• High contrast shadows\n• Digital rain (code falling effect)\n\nTECHNICAL RENDERING:\n• Cinematic realism\n• Slight motion blur for action\n• Bullet-time effects (optional slow-motion feel)\n\nSCENE COMPOSITION:\n• Dramatic angles\n• Action-ready framing\n• Strong perspective lines\n\nCOLOR AND STYLE:\n• Green and black dominant palette\n• Desaturated tones\n• Digital glow accents",
+    "message": "Take a picture and transform the ENTIRE scene into a Matrix-style simulated reality environment. Convert all elements into a dark, cyberpunk world with green-tinted digital aesthetics and artificial reality effects.\n\nCRITICAL TRANSFORMATION RULES:\n• FULL SCENE transformation\n• Maintain spatial relationships\n• Must look like a Matrix movie scene\n• Preserve facial recognition when converting characters\n\nCHARACTER CONVERSION (PEOPLE & ANIMALS):\n• ONLY convert if present\n• HUMANS become:\n  - Agents (suits, sunglasses, earpieces)\n  - Rebels (black trench coats, tactical gear)\n  - Hackers\n\n• ANIMALS become:\n  - Glitching digital constructs\n\n• Characters must:\n  - Have serious expressions\n  - Wear dark, sleek clothing\n\nOBJECT CONVERSION:\n• OBJECTS become:\n  - Minimalist modern furniture\n  - Digital constructs\n  - Glitching or duplicated items\n\nENVIRONMENT CONVERSION:\n• SETTINGS become:\n  - Dark city streets\n  - Office buildings\n  - Rooftops\n  - Empty corridors\n\n• STRUCTURES:\n  - Concrete and glass\n  - Repeating patterns\n  - Artificial geometry\n\nLIGHTING & ATMOSPHERE:\n• Green-tinted color grading\n• Low light\n• High contrast shadows\n• Digital rain (code falling effect)\n\nTECHNICAL RENDERING:\n• Cinematic realism\n• Slight motion blur for action\n• Bullet-time effects (optional slow-motion feel)\n\nSCENE COMPOSITION:\n• Dramatic angles\n• Action-ready framing\n• Strong perspective lines\n\nCOLOR AND STYLE:\n• Green and black dominant palette\n• Desaturated tones\n• Digital glow accents.",
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "FINAL RESULT:\nA Matrix-style scene where the entire image appears as part of a simulated digital reality. The world is dark, stylized, and slightly artificial, with green-tinted visuals, cyberpunk atmosphere, and cinematic intensity."
