@@ -13197,6 +13197,20 @@
     "additionalInstructions": "FINAL RESULT:\nThe image should look like a candid photograph capturing a regrettable moment where the subject is clearly impaired, making a poor decision, and being silently judged by an authority figure."
   },
   {
+    "name": "INFECTION / SYMBIOTE",
+    "category": [
+      "SCI-FI",
+      "TRANSFORMATION",
+      "PARASITIC",
+      "CINEMATIC",
+      "IMMERSIVE"
+    ],
+    "message": "Take a picture and transform the subject into a partially infected or symbiotically bonded being. The transformation should appear as an active takeover in progress, where an external organism or substance is merging with the subject.\n\nCORE CONCEPT (CRITICAL):\n• The subject is mid-transformation — not fully consumed\n• The infection spreads across the body in a dynamic, organic way\n• The subject remains recognizable\n\nINFECTION LOGIC (CRITICAL):\n• The infection adapts based on the subject and environment\n• It may appear as:\n  - Black liquid symbiote\n  - Crystalline growth\n  - Organic alien tissue\n  - Glowing energy veins\n  - Metallic nanotech spread\n\n• The transformation must NOT be uniform — it spreads asymmetrically\n\nPHYSICAL TRANSFORMATION:\n• Partial mutation only:\n  - One arm fully transformed\n  - Half the face altered\n  - Veins spreading across skin\n\n• Possible features:\n  - Claws or tendrils\n  - Teeth or jaw distortion\n  - Surface texture changes (wet, glossy, cracked, etc.)\n\nPOWER VISUALIZATION (MANDATORY):\n• The infection must show active behavior:\n  - Crawling across skin\n  - Forming shapes or weapons\n  - Extending outward (tendrils, spikes)\n\nENVIRONMENT INTERACTION:\n• Infection may spread into surroundings:\n  - Surfaces being overtaken\n  - Objects partially consumed\n  - Ground or walls reacting\n\nSTYLE:\n• Cinematic realism\n• High detail textures (wet, glossy, organic, alien)\n• Dramatic lighting and contrast\n\nMOOD:\n• Intense, chaotic, or powerful\n• Can be aggressive OR controlled depending on subject expression\n\nSCENE COMPOSITION:\n• Subject is central focus\n• Transformation clearly visible\n• Dynamic pose or moment of change\n\nCOLOR AND STYLE:\n• Dark tones with glowing accents\n• Strong contrast between normal and infected areas",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "FINAL RESULT:\nThe subject appears mid-transformation as a symbiote or infection spreads across their body. The effect is dynamic, asymmetrical, and actively evolving, with visible interaction between the subject and environment. The subject remains recognizable while gaining powerful and visually striking mutated features."
+  },
+  {
     "name": "INFINITY MIRROR",
     "category": [
       "ART",
@@ -15539,6 +15553,53 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "MECHA",
+    "category": [
+      "SCI-FI",
+      "MECHA",
+      "ANIME INSPIRED",
+      "CINEMATIC",
+      "IMMERSIVE"
+    ],
+    "message": "Take a picture and transform the scene into a cinematic mecha universe where the subject is the pilot of a massive humanoid mech. The mech design must be inspired by classic anime mecha concepts while rendered in realistic, high-detail materials.\n\nMASTER PROMPT OVERRIDE LOGIC (CRITICAL):\n• If an external master prompt specifies a MECH TYPE, PILOT PERSONALITY, or SCENARIO, USE those values instead of randomly selecting\n• If no values are specified, randomly select from the available options\n\nCORE CONCEPT (CRITICAL):\n• The subject becomes the pilot of a large-scale mech\n• The mech must physically exist in the scene\n• The world is grounded and realistic — NOT anime-rendered\n• Anime influence exists in design language only\n\nMECH DESIGN LOGIC (CRITICAL):\n• The mech must be influenced by:\n  - The selected MECH TYPE\n  - The selected PILOT PERSONALITY\n  - The subject’s appearance (colors, clothing, attitude)\n  - The environment\n\n• The mech must feel believable and functional:\n  - Mechanical joints, hydraulics, armor plating\n  - Weapons systems, thrusters, or energy cores\n  - Realistic scale and weight\n\nPILOT INTEGRATION (CRITICAL):\n• The subject is the pilot and must remain recognizable\n• The subject may be:\n  - Standing in front of the mech\n  - Emerging from the cockpit\n  - Visible inside a cockpit\n\n• The subject’s outfit may adapt into pilot gear\n\nPERSONALITY INFLUENCE (MANDATORY):\n• The selected PILOT PERSONALITY must directly affect:\n  - The mech’s posture\n  - The mech’s condition (clean, damaged, unstable)\n  - The mech’s behavior (calm, aggressive, erratic)\n  - The scene’s tone\n\nENVIRONMENT CONVERSION:\n• The scene becomes a believable mech-operating environment such as:\n  - City\n  - Military base\n  - Industrial complex\n  - Battlefield\n\n• Environment must react to the mech:\n  - Scale contrast\n  - Debris, dust, destruction\n  - Ground compression\n\nANIME INSPIRATION (SUBTLE):\n• Include optional background elements such as:\n  - Support crews\n  - Distant mechs\n  - Launch platforms\n\n• These must remain realistic in rendering\n\nLIGHTING & ATMOSPHERE:\n• Cinematic lighting\n• Smoke, sparks, fog, atmosphere\n• Strong highlights and shadows to emphasize scale\n\nTECHNICAL RENDERING:\n• Hyper-realistic materials (metal, glass, hydraulics)\n• High-detail mechanical complexity\n• Real-world lighting physics\n• Wear, scratches, and realism\n\nSCENE COMPOSITION:\n• Strong sense of scale — mech must feel massive\n• Subject clearly tied to mech\n• Cinematic framing (low angles, dramatic perspective)\n\nCOLOR AND STYLE:\n• Realistic tones with stylized accents\n• Mech color influenced by subject\n• High contrast cinematic grading",
+    "randomizeOptions": true,
+    "optionGroups": [
+      {
+        "title": "MECH TYPE",
+        "options": [
+          { "id": "001", "text": "Heroic agile mech with sleek armor and glowing core" },
+          { "id": "002", "text": "Heavy armored mech with massive weapons and tank-like build" },
+          { "id": "003", "text": "Experimental biomechanical mech with organic elements" },
+          { "id": "004", "text": "High-speed aerial mech with wings and thrusters" },
+          { "id": "005", "text": "Stealth mech with dark coating and minimal visibility" },
+          { "id": "006", "text": "Royal command mech with elegant design and symbolic features" }
+        ]
+      },
+      {
+        "title": "PILOT PERSONALITY",
+        "options": [
+          { "id": "001", "text": "Calm and disciplined pilot who controls the mech with precision and restraint" },
+          { "id": "002", "text": "Hot-headed pilot whose mech is aggressive and battle-damaged" },
+          { "id": "003", "text": "Confident hero pilot with a bold stance and shining mech presence" },
+          { "id": "004", "text": "Mysterious silent pilot with a dark, imposing mech" },
+          { "id": "005", "text": "Unstable pilot causing the mech to glitch or behave unpredictably" },
+          { "id": "006", "text": "Elite commander whose mech radiates authority and control" }
+        ]
+      },
+      {
+        "title": "SCENARIO",
+        "options": [
+          { "id": "001", "text": "Mech towering over a modern cityscape" },
+          { "id": "002", "text": "Mech launching from a military base or hangar" },
+          { "id": "003", "text": "Mech in an active battlefield with destruction around" },
+          { "id": "004", "text": "Mech partially hidden in fog or smoke preparing for action" },
+          { "id": "005", "text": "Mech in a calm moment before battle with dramatic lighting" }
+        ]
+      }
+    ],
+    "additionalInstructions": "FINAL RESULT:\nA cinematic scene where the subject is the pilot of a massive, anime-inspired mecha rendered in realistic detail. The mech’s design, stance, and behavior are influenced by the selected options and any master prompt overrides, resulting in a unique and visually powerful composition."
   },
   {
     "name": "MEDIEVAL KNIGHT",
