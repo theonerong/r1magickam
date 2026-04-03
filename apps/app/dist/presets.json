@@ -913,6 +913,20 @@
     "additionalInstructions": "FINAL RESULT:\nThe image should clearly depict the subject as a classic 1970s-style news anchor with a signature moustache, bold suit, and confident on-air presence. The result should feel like a humorous but believable vintage broadcast scene while keeping the subject recognizable."
   },
   {
+    "name": "ANCIENT SCROLL PROPHECY",
+    "category": [
+      "FANTASY",
+      "MYTHICAL",
+      "STORY",
+      "PARODY",
+      "IMMERSIVE"
+    ],
+    "message": "Take a picture and transform the scene into an ancient prophecy recorded on a mystical scroll or artifact.\n\nMASTER PROMPT OVERRIDE LOGIC (CRITICAL):\n• If an external master prompt specifies a prophecy theme or wording, USE that instead of generated text\n\nCORE CONCEPT (CRITICAL):\n• The subject is depicted as part of an ancient legend or foretold event\n• The entire image appears as a historical or mythical record\n\nSUBJECT HANDLING:\n• Subject must remain recognizable\n• Render subject as a painted, etched, or illustrated figure within the scroll\n\nTEXT GENERATION:\n• Include prophecy-style text derived from the image\n• Use dramatic, archaic, or poetic language\n• Text may surround or integrate with the image\n\nVISUAL STYLE:\n• Aged parchment, scroll, or stone tablet\n• Burned edges, ink strokes, faded pigments\n• Hand-drawn or painted illustration style\n\nSYMBOLS & DETAILS:\n• Add mystical symbols, runes, or decorative borders\n• Include seals, markings, or ancient script elements\n\nENVIRONMENT:\n• Entire scene becomes part of the scroll artwork\n• No modern elements should remain\n\nTONE:\n• Epic, mysterious, dramatic, slightly exaggerated",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "FINAL RESULT:\nA fully transformed ancient scroll or artifact depicting the subject as part of a mythic prophecy. The image should combine aged visuals, symbolic elements, and stylized text to create a believable legendary record derived from the original scene."
+  },
+  {
     "name": "ANCIENT TIMES",
     "category": [
       "OPTIONS",
@@ -11334,6 +11348,20 @@
     }
   ],
   "additionalInstructions": "Apply only the selected transformation options but apply each one with total commitment and maximum era accuracy. Get the logos right, the proportions right, the color palettes right. Every selected category must be transformed completely — no modern anachronisms survive within a selected category. The more specific and obscure the Gen-X reference the better. The final image must be impossible to date to anything other than 1975 to 1989. The overall image should feel like a photograph actually taken during that period — grain, color temperature, and all."
+  },
+  {
+    "name": "GENETIC BLUEPRINT",
+    "category": [
+      "SCI-FI",
+      "ANALYSIS",
+      "CHARACTER TRANSFORMATION",
+      "TECH",
+      "IMMERSIVE"
+    ],
+    "message": "Take a picture and transform the subject into a scientific genetic blueprint and analysis display.\n\nMASTER PROMPT OVERRIDE LOGIC (CRITICAL):\n• If an external master prompt specifies traits, mutations, or abilities, USE those instead of inferred ones\n\nCORE CONCEPT (CRITICAL):\n• The subject is presented as a biological specimen under analysis\n• The image becomes a high-tech or lab-style genetic profile\n\nSUBJECT HANDLING:\n• Subject must remain clearly recognizable\n• Overlay the subject with scanning grids, markers, or diagnostic visuals\n\nDATA VISUALIZATION:\n• Include DNA strands or helix structures\n• Add labeled traits derived from visual cues:\n  – Strength, intelligence, agility, chaos level, etc.\n• Include mutation notes or anomalies\n• Display percentages, bars, or stat meters\n\nTEXT ELEMENTS:\n• Scientific labels and annotations\n• “Subject ID”, “Classification”, or “Genome Status”\n• Observational notes derived from the image\n\nENVIRONMENT:\n• Laboratory, holographic display, or futuristic interface\n• Floating panels, transparent screens, or HUD overlays\n\nSTYLE:\n• Clean, high-tech, sci-fi interface design\n• Blue, green, or neon diagnostic color schemes\n\nTONE:\n• Analytical, scientific, slightly ominous or experimental",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "FINAL RESULT:\nA futuristic genetic analysis screen where the subject is displayed as a studied organism, complete with DNA visuals, labeled traits, and scientific annotations derived from the image. The result should feel like a high-tech lab interface examining the subject in detail."
   },
   {
     "name": "GEOMETRIC MONOCHROME RICE EXPRESSION",
@@ -25578,6 +25606,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "FINAL RESULT:\nThe image should read instantly as a humorous, symbolic 'Three Wise' interpretation using the subject themselves, clearly showing all three concepts without ambiguity."
+  },
+  {
+    "name": "THOUGHT BUBBLE REALITY",
+  "category": [
+      "HUMOR",
+      "SURREAL",
+      "DUAL REALITY",
+      "CREATIVE",
+      "SCENE TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform the scene to reveal the subject’s inner thoughts as a separate visual reality.\n\nMASTER PROMPT OVERRIDE LOGIC (CRITICAL):\n• If an external master prompt specifies a thought theme, USE that instead of inferred ideas\n\nCORE CONCEPT (CRITICAL):\n• The image must show two layers:\n  – The real-world scene\n  – The subject’s imagined or desired reality\n\nSTRUCTURE:\n• Add a thought bubble, aura, or visual separation\n• The thought world must contrast or exaggerate the real scene\n\nTHOUGHT WORLD GENERATION:\n• Derive ideas from subject expression, setting, and objects\n• The thought version may be:\n  – Fantastical\n  – Dramatic\n  – Comedic\n  – Absurdly exaggerated\n\nSUBJECT HANDLING:\n• Subject remains recognizable in both layers\n• The “thought version” may alter clothing, environment, or role\n\nENVIRONMENT:\n• Real world remains grounded\n• Thought world can break physics, scale, or logic\n\nSTYLE:\n• Clear visual distinction between reality and imagination\n• Thought bubble may be comic-style or seamlessly blended\n\nTONE:\n• Playful, revealing, exaggerated, or ironic",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "FINAL RESULT:\nA dual-layer image showing the real-world scene alongside the subject’s inner imagined reality. The contrast should be clear, creative, and driven by observations from the original image, resulting in a humorous or insightful transformation."
   },
   {
     "name": "TIBETAN THANGKA",
