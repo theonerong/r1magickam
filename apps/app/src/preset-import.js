@@ -127,7 +127,7 @@ export class PresetImporter {
       const presets = await response.json();
       
       const validPresets = presets.filter(p => 
-        p.name && p.message && Array.isArray(p.category)
+        p.name && Array.isArray(p.category)
       );
 
       // Alphabetize presets by name
