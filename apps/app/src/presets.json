@@ -22869,6 +22869,20 @@
     "additionalInstructions": "IDENTITY PRESERVATION:\n• Subject’s facial structure must be readable via line work\n• Expression preserved through contour scratches\n• Simplification allowed, but not abstraction\n\nANTI-CHEATING RULES:\n• NO painted strokes\n• NO digital glow effects\n• NO gradient shading\n• NO photographic textures\n• Black areas must remain fully opaque\n\nCOMPOSITION:\n• Flat scratch-art board surface\n• Clean rectangular or card-like format\n• Tool marks may vary in width and pressure\n\nFINAL RESULT:\nThe image must look like a real scratch art piece created by physically etching lines through black wax to reveal colorful layers beneath — tactile, imperfect, and unmistakably analog."
   },
   {
+    "name": "SCRATCHBOARD ART",
+    "category": [
+      "ART STYLE",
+      "ILLUSTRATION",
+      "BLACK AND WHITE",
+      "TEXTURE",
+      "CLASSIC"
+    ],
+    "message": "Take a picture and transform the image into a scratchboard (scraperboard) style illustration.\n\nCORE CONCEPT (CRITICAL):\n• The entire image must appear as if created using a subtractive engraving technique\n• The artwork is formed by scratching away a black surface to reveal a white layer beneath\n\nTECHNIQUE SIMULATION:\n• Convert the image into high-contrast black and white\n• Use fine engraved lines, cross-hatching, and etched marks to define shapes\n• Light areas are created by dense scratch marks\n• Dark areas remain solid black\n\nLINE WORK:\n• Emphasize detailed line engraving\n• Use directional strokes to suggest depth, shading, and texture\n• Vary line thickness and density for realism\n\nSUBJECT HANDLING:\n• Preserve the recognizability of subjects\n• Facial features and important details must be carefully etched\n• Avoid soft shading — everything is defined through lines and scratches\n\nTEXTURE & DETAIL:\n• Add intricate textures to surfaces (skin, fabric, background)\n• Use cross-hatching, stippling, and fine cuts\n• Surfaces should feel carved rather than painted\n\nENVIRONMENT:\n• Entire scene must be converted into engraved form\n• Backgrounds simplified but still detailed through line work\n\nSTYLE:\n• Traditional illustration look\n• Hand-crafted, etched aesthetic\n• No grayscale blending — only black, white, and line density\n\nLIGHTING:\n• Strong contrast between light and shadow\n• Highlights revealed through dense scratching\n\nSCENE COMPOSITION:\n• Maintain original composition\n• Reinterpret depth and form using engraving techniques only",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "FINAL RESULT:\nA detailed scratchboard-style illustration where the entire image appears engraved into a black surface, revealing white beneath. The result should feel hand-crafted, highly textured, and defined entirely through etched lines, cross-hatching, and contrast, with no soft gradients or painterly effects."
+  },
+  {
     "name": "SCREAM",
     "category": [
       "HORROR",
