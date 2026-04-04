@@ -5477,11 +5477,11 @@ function buildCombinedLayerPrompt(layerPresets, manualSelections = {}) {
       .trim();
   }
 
-  // 1. Single-image enforcement at the very top
-  let finalPrompt = 'CRITICAL: Output ONE single image only. Do NOT create a grid, collage, side-by-side, or multiple images.\n\n';
+  // 1. Start with the primary message
+  let finalPrompt = primaryPreset.message || '';
 
-  // 2. Start with the primary message
-  finalPrompt += primaryPreset.message || '';
+  // 2. Single-image reminder after the primary message
+  finalPrompt += '\n\nPlease apply all style instructions to the same single image.';
 
   // 3. Primary preset options — manual selection if available, otherwise random
   if (primaryPreset.randomizeOptions) {
