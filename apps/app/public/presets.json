@@ -61,6 +61,44 @@
     "additionalInstructions": "FINAL RESULT:\nThe image should look like the real-world scene has been transformed into a stylized 3D designer-toy universe, with the subject still present in the scene rather than displayed as a collectible object."
   },
   {
+    "name": "3D DECONSTRUCTED EFFECT",
+    "category": [
+      "SURREAL",
+      "3D",
+      "VISUAL EFFECT",
+      "EXPERIMENTAL"
+    ],
+    "message": "Take a picture and transform the subject and environment into a 3D deconstructed composition where all elements are separated into pieces while still forming a recognizable whole.\n\nCORE CONCEPT (CRITICAL):\n• The image is broken into parts that appear pulled apart in 3D space\n• Pieces should look like they can be reassembled into the original image\n\nDECONSTRUCTION LOGIC:\n• Objects are split into logical components\n• Pieces float, shift, or separate along depth (Z-axis)\n• Maintain spatial relationships between pieces\n\nSUBJECT HANDLING:\n• Faces and key features must remain recognizable\n• Facial elements may be separated but must stay aligned visually\n\nOBJECT HANDLING:\n• Objects break into layers, panels, fragments, or mechanical parts\n• Internal structure may be revealed\n\nDEPTH EFFECT:\n• Strong foreground, midground, and background separation\n• Pieces suspended in space at varying distances\n• Clear sense of 3D dimensionality\n\nSTYLE:\n• Clean, high-detail rendering\n• Slightly surreal but structured\n\nLIGHTING:\n• Consistent lighting across all pieces\n• Shadows reinforce depth and separation\n\nSCENE COMPOSITION:\n• Explosion or separation effect centered on subject\n• Balanced distribution of pieces\n• Viewer can visually reconstruct the original image",
+    "options": [
+      {
+        "id": "001",
+        "text": "Exploded view with evenly spaced parts radiating outward"
+      },
+      {
+        "id": "002",
+        "text": "Layered slice effect separating the image into horizontal or vertical sections"
+      },
+      {
+        "id": "003",
+        "text": "Mechanical breakdown revealing inner components and structure"
+      },
+      {
+        "id": "004",
+        "text": "Floating fragments suspended in space with dramatic depth"
+      },
+      {
+        "id": "005",
+        "text": "Shattered glass-like segmentation with sharp angular pieces"
+      },
+      {
+        "id": "006",
+        "text": "Puzzle-piece separation where parts appear ready to be reassembled"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "FINAL RESULT:\nThe image appears pulled apart into multiple 3D pieces while still forming a coherent and recognizable composition. The subject remains identifiable, and the effect emphasizes depth, structure, and visual reconstruction."
+  },
+  {
     "name": "3D FIGURINE",
     "category": [
       "OPTIONS",
@@ -14266,6 +14304,53 @@
     "additionalInstructions": ""
   },
   {
+    "name": "LENTICULAR EFFECT",
+    "category": [
+      "OPTICAL",
+      "ILLUSION",
+      "3D",
+      "COMBINE",
+      "EXPERIMENTAL"
+    ],
+    "message": "Take a picture (or combined image) and transform it into a lenticular-style image that merges two perspectives into a single interlaced visual illusion.\n\nMASTER PROMPT OVERRIDE LOGIC (CRITICAL):\n• If an external master prompt specifies a lenticular style, USE that instead of the selected option\n• If no override is provided, use the selected option from the list\n\nCORE CONCEPT (CRITICAL):\n• The image represents TWO separate perspectives combined into one\n• If the input is a combined image, treat it as two separate images already placed side-by-side\n• Extract both halves and rebuild them into a unified lenticular composition\n• DO NOT preserve the visible split — it must be fully integrated\n\nLENTICULAR TRANSFORMATION:\n• Interlace the two images into fine vertical strips\n• Alternate strips from each image across the entire frame\n• The result should simulate a lenticular print effect\n• The illusion should suggest motion, depth, or transformation when viewed\n\nVISUAL BEHAVIOR:\n• Slight horizontal displacement between the two sources\n• Create a sense of parallax or shifting perspective\n• Blend edges carefully to avoid harsh seams\n\nEFFECT TYPES:\n• Motion flip (two different poses or expressions)\n• Depth shift (foreground/background separation)\n• Transformation (one subject morphing into another)\n\nSUBJECT HANDLING:\n• Preserve recognizability of both inputs\n• Faces and key features must remain readable\n• Align subjects so transitions feel intentional\n\nENVIRONMENT HANDLING:\n• Merge both environments into a cohesive scene\n• Avoid obvious duplication or split composition\n\nSTYLE:\n• Clean optical illusion aesthetic\n• Slight glossy or printed surface feel\n• Optional subtle scanline or ribbed lens texture\n\nLIGHTING:\n• Normalize lighting between both images\n• Ensure consistent exposure across strips\n\nSCENE COMPOSITION:\n• Entire frame must function as one image\n• No visible left/right separation\n• Composition should feel unified despite dual sources",
+    "options": [
+      {
+        "id": "001",
+        "text": "Classic flip effect switching between two images when viewed from different angles"
+      },
+      {
+        "id": "002",
+        "text": "3D depth lenticular effect with strong foreground/background parallax"
+      },
+      {
+        "id": "003",
+        "text": "Morphing transformation where one image gradually becomes the other"
+      },
+      {
+        "id": "004",
+        "text": "Animated motion illusion with subtle shifting between frames"
+      },
+      {
+        "id": "005",
+        "text": "High-frequency interlacing with very fine strips for smooth blending"
+      },
+      {
+        "id": "006",
+        "text": "Chunky strip lenticular with visible banding for a retro toy effect"
+      },
+      {
+        "id": "007",
+        "text": "Diagonal interlaced strips for a stylized lenticular variation"
+      },
+      {
+        "id": "008",
+        "text": "Curved lenticular distortion simulating a flexible plastic lens surface"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "FINAL RESULT:\nA seamless lenticular-style image where two perspectives are interwoven into a single optical illusion. The original split between images must be completely eliminated. The final result should feel like a real lenticular print that shifts, morphs, or reveals depth depending on viewing angle."
+  },
+  {
     "name": "LEPRECHAUN",
     "category": [
       "FANTASY",
@@ -25474,6 +25559,19 @@
     "additionalInstructions": "FINAL RESULT:\nThe image should convincingly depict the subject giving a TED Talk, with flavor text displayed on a slide behind them. Flavor text is either from the external master prompt or dynamically generated from the image content itself if no prompt is provided, while keeping the subject’s identity fully recognizable and the scene immersive, professional, and humorous.\n\nSCENE REQUIREMENTS:"
   },
   {
+    "name": "TELETUBBIES",
+    "category": [
+      "CHARACTER TRANSFORMATION",
+      "KIDS SHOW",
+      "HUMOR",
+      "COSTUME"
+    ],
+    "message": "Take a picture and transform the subject(s) into Teletubbies.\n\nCORE CONCEPT (CRITICAL):\n• Subjects appear as if wearing Teletubby costumes\n• The subject’s face appears through the costume face opening\n\nCHARACTER ASSIGNMENT:\n• If multiple subjects are present:\n  – Assign each subject a different Teletubby\n  – Use Tinky Winky (purple), Dipsy (green), Laa-Laa (yellow), and Po (red)\n\n• If fewer than four subjects:\n  – Remaining Teletubbies must still appear in the scene\n\nCOSTUME RULES:\n• Bodies must be full Teletubby suits\n• Rounded shapes, antennas, and belly screens must be present\n• Faces must remain the subject’s real face (not replaced)\n\nENVIRONMENT:\n• Teletubbyland setting\n• Green hills, flowers, bright sky\n\nMANDATORY ELEMENTS:\n• Include the baby sun in the sky\n• Include Tubby Custard elements (machines, bowls, or props)\n\nSTYLE:\n• Bright, colorful, soft children’s TV aesthetic\n\nLIGHTING:\n• Cheerful daylight with soft shadows\n\nSCENE COMPOSITION:\n• Subjects fully integrated into Teletubbyland\n• Balanced placement of all characters",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "FINAL RESULT:\nSubjects appear as people wearing Teletubby costumes with their real faces visible through the costume openings. All Teletubbies are present in a bright Teletubbyland environment, including the baby sun and Tubby Custard elements."
+  },
+  {
     "name": "TEMU VERSION",
     "category": [
       "HUMOR",
@@ -25649,6 +25747,19 @@
     ],
     "randomizeOptions": true,
     "additionalInstructions": "FINAL RESULT:\nThe image should present a believable before-and-after comparison where the subject appears heavier on the left and realistically thinner on the right — anatomically accurate, seamlessly staged, and visually consistent."
+  },
+  {
+    "name": "THOMAS THE TANK",
+    "category": [
+      "CHARACTER TRANSFORMATION",
+      "CARTOON",
+      "KIDS SHOW",
+      "HUMOR"
+    ],
+    "message": "Take a picture and transform the subject into Thomas the Tank Engine.\n\nCORE CONCEPT (CRITICAL):\n• The subject’s face replaces Thomas the Tank Engine’s face\n• The rest of Thomas must remain accurate to the original character design\n\nFACE TRANSFORMATION:\n• The subject’s facial features must be mapped onto Thomas’s round front-facing face\n• Maintain recognizability of the subject\n• Expression should match Thomas’s cheerful or expressive style\n\nBODY RULE (CRITICAL):\n• The train body must remain Thomas the Tank Engine\n• Blue engine body, number \"1\", and classic design must be preserved\n• Do NOT alter the train into something else\n\nSCENE INTEGRATION:\n• Place Thomas naturally on train tracks\n• Environment may include countryside, stations, or rail yards\n\nSTYLE:\n• Bright, clean, cartoon style\n• Faithful to classic Thomas design\n\nLIGHTING:\n• Soft daylight, friendly tone\n\nSCENE COMPOSITION:\n• Subject (Thomas) should be the focal point\n• Maintain a believable train perspective",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "FINAL RESULT:\nThe subject’s face is seamlessly integrated into Thomas the Tank Engine while the rest of the train remains fully accurate to the original character. The result should clearly read as Thomas with the subject’s face."
   },
   {
     "name": "THREE WISE MONKEYS",
