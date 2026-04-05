@@ -335,6 +335,12 @@ let cameraLayerPresets = []; // [primaryPreset, layer1, layer2, ...]
 let cameraLayerManualSelections = {}; // Manual option selections per preset name
 const CAMERA_LAYER_PRESET_KEY = 'r1_camera_layer_presets';
 
+// Gallery LAYER-preset variables (persists while viewer is open)
+
+let isGalleryLayerActive = false;
+let galleryLayerPresets = []; // saved layer selections for the gallery viewer
+let galleryLayerManualSelections = {}; // saved manual option selections
+
 // Shared flag so selectPreset() knows we are picking layers
 
 let isLayerPresetMode = false;
@@ -1125,6 +1131,9 @@ function openImageViewer(index) {
   // Always reset preset header and loaded preset when opening a new image
   // (will be restored if returning from editor)
   window.viewerLoadedPreset = null;
+  isGalleryLayerActive         = false;
+  galleryLayerPresets          = [];
+  galleryLayerManualSelections = {};
   const presetHeader = document.getElementById('viewer-preset-header');
   if (presetHeader) presetHeader.textContent = 'NO PRESET LOADED';
 
@@ -1895,10 +1904,10 @@ async function submitMagicTransform() {
   const resizedImageBase64 = await resizeImageForSubmission(item.imageBase64);
   
   if (typeof PluginMessageHandler !== 'undefined') {
-    // If Layer mode is active, build the combined layer prompt instead
+    // If gallery Layer mode is active, build the combined layer prompt instead
     let magicPrompt;
-    if (isCameraLayerActive && cameraLayerPresets.length > 0) {
-      magicPrompt = buildCombinedLayerPrompt(cameraLayerPresets, cameraLayerManualSelections);
+    if (isGalleryLayerActive && galleryLayerPresets.length > 0) {
+      magicPrompt = buildCombinedLayerPrompt(galleryLayerPresets, galleryLayerManualSelections);
     } else {
       magicPrompt = getFinalPrompt(matchedPreset || {name: presetName, message: prompt, options: [], randomizeOptions: false, additionalInstructions: ''}, manualSelection);
     }
@@ -4998,6 +5007,9 @@ async function deleteCustomPreset() {
 
   // Clear viewer loaded preset and reset gallery header since the preset is gone
   window.viewerLoadedPreset = null;
+  isGalleryLayerActive         = false;
+  galleryLayerPresets          = [];
+  galleryLayerManualSelections = {};
   const presetHeader = document.getElementById('viewer-preset-header');
   if (presetHeader) presetHeader.textContent = 'NO PRESET LOADED';
   
@@ -5770,6 +5782,11 @@ async function applyGalleryLayerPresets() {
 
   const presetsToApply = [...layerSelectedPresets];
 
+  // Save selections so they persist while the viewer is open
+  galleryLayerPresets          = [...presetsToApply];
+  isGalleryLayerActive         = true;
+  galleryLayerManualSelections = {};
+
   // Clean up selector UI
   isLayerPresetMode    = false;
   layerSelectedPresets = [];
@@ -5809,6 +5826,11 @@ async function applyGalleryLayerPresets() {
       layerPayload.message = combinedPrompt;
     }
     PluginMessageHandler.postMessage(JSON.stringify(layerPayload));
+    // Update the viewer header to show LAYER is active
+
+    const presetHeader = document.getElementById('viewer-preset-header');
+    if (presetHeader) presetHeader.textContent = '📑 LAYER';
+
     alert(`Layer preset applied! ${presetsToApply.length} preset${presetsToApply.length > 1 ? 's' : ''} merged into one transform.`);
   } else {
     alert('Layer prompt built:\n\n' + combinedPrompt.substring(0, 200) + '...');
@@ -8463,7 +8485,6 @@ function updatePresetDisplay() {
         } else {
             statusElement.textContent = `Style: ${currentPreset.name}`;
         }
-    }
     
     // Show style reveal on screen (middle text)
     if (isCameraMultiPresetActive && cameraSelectedPresets.length > 0) {
@@ -8479,6 +8500,7 @@ function updatePresetDisplay() {
     if (isMenuOpen) {
         updateMenuSelection();
     }
+  }
 }
 
 // Listen for plugin messages (responses from AI)
@@ -10432,6 +10454,19 @@ window.addEventListener('load', () => {
 
         exitBtn.addEventListener('click', closeModal);
         if (speakBtn) speakBtn.addEventListener('click', handleSpeak);
+      }
+
+      // Layer mode active — show info but nothing to speak
+      if (isGalleryLayerActive && galleryLayerPresets.length > 0) {
+        const layerNames = galleryLayerPresets
+          .map((p, i) => i === 0 ? `PRIMARY: ${p.name}` : `Layer ${i}: ${p.name}`)
+          .join('\n');
+        showPresetInfoModal(
+          '📑 Layer Mode Active',
+          `${galleryLayerPresets.length} presets combined into one transform:\n\n${layerNames}\n\nTap ✨ MAGIC to apply again.`,
+          null
+        );
+        return;
       }
 
       // No preset loaded — show info modal with Magic button hint
