@@ -1833,6 +1833,9 @@ async function selectPreset(preset) {
   // Store the original preset so the Magic button uses the correct structured data
   window.viewerLoadedPreset = preset;
 
+  // If layer mode was active, clear it — user has chosen a new single preset
+  clearGalleryLayerState();
+
   // Update the preset name header
   const presetHeader = document.getElementById('viewer-preset-header');
   if (presetHeader) presetHeader.textContent = preset.name;
@@ -2339,15 +2342,14 @@ async function finalizeCameraLiveCombine(photo1Base64, photo2Base64, presetOverr
         statusElement.textContent = `📑🖼️🖼️ Layer combine queued`;
       }
 
-      if (!isTimerMode) {
-        clearCameraLayerPresets();
-      }
+        // Layer mode persists — user must tap the lit button to clear it
 
-    } else if (preset) {
+      } else if (preset) {
       // Single preset path
       // For voice mode the preset message is already the full spoken intent —
       // do NOT apply the combine preamble (user described what they wanted).
       // For normal/random mode, apply the combine preamble.
+
       let finalPrompt;
       if (isVoiceMode) {
         finalPrompt = getFinalPrompt(preset, null); // no combine preamble
@@ -2962,7 +2964,12 @@ async function applyMultiplePresets() {
   
   // Save presets before canceling mode (which clears the array)
   const presetsToApply = [...selectedPresets];
-  
+
+  // Clear layer mode — user has chosen new multi presets
+  clearGalleryLayerState();
+  const multiHeader = document.getElementById('viewer-preset-header');
+  if (multiHeader) multiHeader.textContent = `🎞️ MULTI (${presetsToApply.length})`;
+
   cancelMultiPresetMode();
 
   // If Manual Options mode is on, collect selections for each preset one at a time BEFORE feeding
@@ -3424,6 +3431,7 @@ async function loadStyles() {
 }
 
 // Check for updates on startup
+
 async function checkForPresetsUpdates() {
   try {
     const response = await fetch('./presets.json');
@@ -3460,6 +3468,45 @@ async function checkForPresetsUpdates() {
     }
   } catch (error) {
     console.log('Could not check for updates:', error);
+  }
+}
+
+// Re-checks presets.json against currently imported presets and updates
+// the settings button indicator to accurately reflect remaining updates.
+
+async function recheckForUpdates() {
+  try {
+    const response = await fetch('./presets.json');
+    if (!response.ok) return;
+
+    const jsonPresets = await response.json();
+    const importedPresets = presetImporter.getImportedPresets();
+
+    let stillHasUpdates = false;
+    for (const jsonPreset of jsonPresets) {
+      const existing = importedPresets.find(p => p.name === jsonPreset.name);
+      if (!existing || existing.message !== jsonPreset.message) {
+        stillHasUpdates = true;
+        break;
+      }
+    }
+
+    window.hasPresetsUpdates = stillHasUpdates;
+
+    const statusElement = document.getElementById('updates-status');
+    if (statusElement) {
+      if (stillHasUpdates) {
+        statusElement.textContent = '🔴 Updates available';
+        statusElement.style.color = '#FF5722';
+        statusElement.style.fontWeight = 'bold';
+      } else {
+        statusElement.textContent = 'Check for Updates';
+        statusElement.style.color = '';
+        statusElement.style.fontWeight = '';
+      }
+    }
+  } catch (error) {
+    console.log('Could not recheck for updates:', error);
   }
 }
 
@@ -5721,6 +5768,16 @@ function clearCameraLayerPresets() {
   updatePresetDisplay();
 }
 
+// Clears gallery layer state and resets the header indicator.
+// Called whenever the user picks a new preset, edits a prompt, or selects multi.
+
+function clearGalleryLayerState() {
+  if (!isGalleryLayerActive) return; // nothing to clear
+  isGalleryLayerActive         = false;
+  galleryLayerPresets          = [];
+  galleryLayerManualSelections = {};
+}
+
 // GALLERY LAYER 
 
 // Opens the preset selector in Layer mode from the gallery image viewer.
@@ -5798,22 +5855,22 @@ async function applyGalleryLayerPresets() {
   hidePresetSelector();
 
   // Gather manual option selections if Manual Options mode is on
-
-  const layerManualSelections = {};
+  // and save them to galleryLayerManualSelections so MAGIC button reuses them
+  galleryLayerManualSelections = {};
   if (manualOptionsMode && !noMagicMode) {
     for (const preset of presetsToApply) {
       const options = parsePresetOptions(preset);
       if (options.length > 0) {
         const selectedValue = await showManualOptionsModal(preset, options);
         if (selectedValue !== null) {
-          layerManualSelections[preset.name] = selectedValue;
+          galleryLayerManualSelections[preset.name] = selectedValue;
         }
       }
     }
   }
 
   // Build ONE combined prompt from all selected layers
-  const combinedPrompt = buildCombinedLayerPrompt(presetsToApply, layerManualSelections);
+  const combinedPrompt = buildCombinedLayerPrompt(presetsToApply, galleryLayerManualSelections);
 
   const resizedImageBase64 = await resizeImageForSubmission(image.imageBase64);
 
@@ -6213,9 +6270,9 @@ const TOUR_STEPS = [
   { section: 'Gallery', title: '🎨 Applying Presets to Single Image', body: 'After clicking on a single image, Tap LOAD or MULTI to transform a saved image. Click twice on a preset to apply it. You can stack multiple transformations.' },
   { section: 'Gallery', title: '🏷️ Preset Header', body: 'At the very top of the image viewer a header shows the name of the currently loaded preset. Tap the header to hear the preset name and description.' },
   { section: 'Gallery', title: '⬅️ Left Side Button', body: 'The delete button is in the top-left corner.' },
-  { section: 'Gallery', title: '🎠 Left Carousel', body: 'Below the delete button are two left buttons-MASTER and OPTIONS. They are visible by default. Double click on screen to hide them. The MASTER button toggles Master Prompt on or off. The OPTIONS button toggles Manually Select Options mode.' },
-  { section: 'Gallery', title: '🎠 Right Carousel', body: 'The right side carousel has three buttons — ✏️ Edit which opens the image editor, 📤 Export which uploads to gofile.io, and 📑 Layer which combines presets to single image. Double click on screen to hide the buttons.' },
-  { section: 'Gallery', title: '⬇️ Bottom Bar Buttons', body: 'Four buttons on the bottom of image viewer. PROMPT opens editor. LOAD opens preset selector. MULTI opens multi-preset selector. MAGIC transforms image using the loaded preset, or picks randomly if nothing is loaded.' },
+  { section: 'Gallery', title: '🎠 Left Carousel', body: 'Below the delete button are two left buttons-MASTER and OPTIONS. They are visible by default. Double click screen to hide. The MASTER button toggles Master Prompt. The OPTIONS button toggles Manually Select Options mode.' },
+  { section: 'Gallery', title: '🎠 Right Carousel', body: 'The right side carousel has three buttons — ✏️ Edit which opens the image editor, 📤 Export which uploads to gofile.io, and 📑 Layer which combines presets to single image. Double click screen to hide the buttons.' },
+  { section: 'Gallery', title: '⬇️ Bottom Bar Buttons', body: 'Four buttons on the bottom of image viewer. PROMPT opens editor. LOAD opens preset selector. MULTI opens multi-preset selector. MAGIC transforms image using the loaded preset, or randomly if nothing is loaded.' },
   { section: 'Gallery', title: '📤 Export to gofile.io', body: 'Tapping Export in the right carousel. You get a QR code with a link that expires after 24 hours. Most useful in No Magic Mode.' },
   { section: 'Image Editor', title: '✏️ Opening the Editor', body: 'While viewing any photo, the image viewer carousel contains the Edit button. Tap it. The editor opens with crop, rotate, sharpen, auto-correct, and brightness and contrast controls.' },
   { section: 'Image Editor', title: '✂️ Crop Tool', body: 'Tap Crop to activate. Two orange corner markers appear. Drag them to frame your desired area. Tap Crop again to apply.' },
@@ -7667,10 +7724,7 @@ function capturePhoto() {
       statusElement.textContent = `📑 Layer prompt queued (${cameraLayerPresets.length} presets merged)`;
     }
 
-    // Clear layer mode after firing unless timer keeps it alive
-    if (!isTimerMode) {
-      clearCameraLayerPresets();
-    }
+    // Layer mode persists — user must tap the lit button to clear it
     return;
   }
   // END CAMERA LAYER-PRESET PATH
@@ -8475,16 +8529,17 @@ function updatePresetDisplay() {
         }
     }
 
-    if (statusElement) {
-        if (noMagicMode) {
-            statusElement.textContent = '⚡ NO MAGIC MODE';
-        } else if (isCameraMultiPresetActive && cameraSelectedPresets.length > 0) {
-            statusElement.textContent = `🎞️ MULTI PRESETS (${cameraSelectedPresets.length})`;
-        } else if (manualOptionsMode) {
-            statusElement.textContent = `🎯 MANUALLY SELECT | Style: ${currentPreset.name}`;
-        } else {
-            statusElement.textContent = `Style: ${currentPreset.name}`;
-        }
+    if (noMagicMode) {
+        statusElement.textContent = '⚡ NO MAGIC MODE';
+    } else if (isCameraMultiPresetActive && cameraSelectedPresets.length > 0) {
+        statusElement.textContent = `🎞️ MULTI PRESETS (${cameraSelectedPresets.length})`;
+    } else if (isCameraLayerActive && cameraLayerPresets.length > 0) {
+        statusElement.textContent = `📑 LAYER (${cameraLayerPresets.length} presets)`;
+    } else if (manualOptionsMode) {
+        statusElement.textContent = `🎯 MANUALLY SELECT | Style: ${currentPreset.name}`;
+    } else {
+        statusElement.textContent = `Style: ${currentPreset.name}`;
+    }
     
     // Show style reveal on screen (middle text)
     if (isCameraMultiPresetActive && cameraSelectedPresets.length > 0) {
@@ -8500,7 +8555,6 @@ function updatePresetDisplay() {
     if (isMenuOpen) {
         updateMenuSelection();
     }
-  }
 }
 
 // Listen for plugin messages (responses from AI)
@@ -10456,7 +10510,21 @@ window.addEventListener('load', () => {
         if (speakBtn) speakBtn.addEventListener('click', handleSpeak);
       }
 
+      // Multi preset mode active in gallery viewer
+      if (!window.viewerLoadedPreset && !isGalleryLayerActive) {
+        const multiHeader = document.getElementById('viewer-preset-header');
+        if (multiHeader && multiHeader.textContent.startsWith('🎞️ MULTI')) {
+          showPresetInfoModal(
+            multiHeader.textContent,
+            'Multiple presets are queued to apply to this image sequentially.\n\nTap ✨ MAGIC to apply them.',
+            null
+          );
+          return;
+        }
+      }
+      
       // Layer mode active — show info but nothing to speak
+
       if (isGalleryLayerActive && galleryLayerPresets.length > 0) {
         const layerNames = galleryLayerPresets
           .map((p, i) => i === 0 ? `PRIMARY: ${p.name}` : `Layer ${i}: ${p.name}`)
@@ -11537,6 +11605,9 @@ const result = await presetImporter.import();
             const visibleCount = CAMERA_PRESETS.filter(p => visiblePresets.includes(p.name)).length;
             stylesCountElement.textContent = visibleCount;
           }
+
+          // Re-check accurately how many updates remain after import
+          await recheckForUpdates();
           
           alert(result.message);
         } else if (result.message !== 'cancelled' && result.message !== 'No presets selected') {
@@ -11958,13 +12029,8 @@ const result = await presetImporter.import();
             populateStylesList();
             updateVisiblePresetsDisplay();
             
-            // Clear the update flag after successful import
-            const statusElement = document.getElementById('updates-status');
-            if (statusElement) {
-              statusElement.textContent = 'Check for Updates';
-              statusElement.style.color = '';
-              statusElement.style.fontWeight = '';
-            }
+            // Re-check accurately how many updates remain after import
+            await recheckForUpdates();
             
             alert(result.message);
           }
@@ -12136,6 +12202,10 @@ const result = await presetImporter.import();
   if (viewerPromptInput) {
     viewerPromptInput.addEventListener('input', () => {
       window.viewerLoadedPreset = null;
+      // Clear layer mode — user is now typing a custom prompt
+      clearGalleryLayerState();
+      const promptHeader = document.getElementById('viewer-preset-header');
+      if (promptHeader) promptHeader.textContent = 'CUSTOM PROMPT';
     });
   }
 
