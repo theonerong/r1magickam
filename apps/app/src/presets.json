@@ -14312,43 +14312,35 @@
       "COMBINE",
       "EXPERIMENTAL"
     ],
-    "message": "Take a picture (or combined image) and transform it into a lenticular-style image that merges two perspectives into a single interlaced visual illusion.\n\nMASTER PROMPT OVERRIDE LOGIC (CRITICAL):\n• If an external master prompt specifies a lenticular style, USE that instead of the selected option\n• If no override is provided, use the selected option from the list\n\nCORE CONCEPT (CRITICAL):\n• The image represents TWO separate perspectives combined into one\n• If the input is a combined image, treat it as two separate images already placed side-by-side\n• Extract both halves and rebuild them into a unified lenticular composition\n• DO NOT preserve the visible split — it must be fully integrated\n\nLENTICULAR TRANSFORMATION:\n• Interlace the two images into fine vertical strips\n• Alternate strips from each image across the entire frame\n• The result should simulate a lenticular print effect\n• The illusion should suggest motion, depth, or transformation when viewed\n\nVISUAL BEHAVIOR:\n• Slight horizontal displacement between the two sources\n• Create a sense of parallax or shifting perspective\n• Blend edges carefully to avoid harsh seams\n\nEFFECT TYPES:\n• Motion flip (two different poses or expressions)\n• Depth shift (foreground/background separation)\n• Transformation (one subject morphing into another)\n\nSUBJECT HANDLING:\n• Preserve recognizability of both inputs\n• Faces and key features must remain readable\n• Align subjects so transitions feel intentional\n\nENVIRONMENT HANDLING:\n• Merge both environments into a cohesive scene\n• Avoid obvious duplication or split composition\n\nSTYLE:\n• Clean optical illusion aesthetic\n• Slight glossy or printed surface feel\n• Optional subtle scanline or ribbed lens texture\n\nLIGHTING:\n• Normalize lighting between both images\n• Ensure consistent exposure across strips\n\nSCENE COMPOSITION:\n• Entire frame must function as one image\n• No visible left/right separation\n• Composition should feel unified despite dual sources",
+    "message": "Take a picture (or combined image) and transform it into a TRUE lenticular interlaced image.\n\nMASTER PROMPT OVERRIDE LOGIC (CRITICAL):\n• If an external master prompt specifies a lenticular style, USE that instead of the selected option\n• If no override is provided, use the selected option from the list\n\nCORE CONCEPT (CRITICAL):\n• The input contains TWO images combined side-by-side\n• You MUST treat them as two completely separate source images\n• You MUST fully extract BOTH images before rendering\n• You MUST completely DESTROY the original side-by-side layout\n• The final image must NOT resemble two images placed next to each other in ANY way\n\nLENTICULAR RECONSTRUCTION (MANDATORY):\n• Rebuild the image from scratch using alternating vertical pixel strips\n• Each strip must come from ONLY ONE of the two source images\n• Strip order must alternate consistently across the entire image (A/B/A/B/A/B...)\n• Strips must be UNIFORM in width and span the FULL height of the image\n• There must be NO large continuous regions from a single image\n• The original images must NOT remain intact anywhere\n\nHARD CONSTRAINTS (DO NOT VIOLATE):\n• DO NOT overlay lines on top of the original images\n• DO NOT keep a left/right split\n• DO NOT show two separate scenes\n• DO NOT partially blend the images\n• DO NOT keep large chunks from either image\n\nVISUAL BEHAVIOR:\n• The image should appear “shimmering” or shifting depending on viewing angle\n• Slight horizontal offset between strips to simulate parallax\n• Fine strip density preferred for stronger illusion\n\nSUBJECT HANDLING:\n• Align key features between both images where possible\n• Faces must remain recognizable but interwoven\n\nENVIRONMENT HANDLING:\n• Merge both environments into a single cohesive composition\n• Avoid duplication or split-scene appearance\n\nSTYLE:\n• Clean optical illusion aesthetic\n• Optional subtle lenticular plastic texture\n\nLIGHTING:\n• Normalize lighting across both images for consistency\n\nSCENE COMPOSITION:\n• Entire frame must function as ONE unified image\n• No visible separation between sources\n\nFINAL INSTRUCTION (CRITICAL):\n• If the result still looks like two images side-by-side, it is WRONG — rebuild it again using finer alternating strips",
     "options": [
       {
         "id": "001",
-        "text": "Classic flip effect switching between two images when viewed from different angles"
+        "text": "Ultra-fine strip interlacing for a smooth high-quality lenticular illusion"
       },
       {
         "id": "002",
-        "text": "3D depth lenticular effect with strong foreground/background parallax"
+        "text": "Medium strip interlacing with visible banding for a classic lenticular look"
       },
       {
         "id": "003",
-        "text": "Morphing transformation where one image gradually becomes the other"
+        "text": "Strong parallax effect with noticeable horizontal displacement between strips"
       },
       {
         "id": "004",
-        "text": "Animated motion illusion with subtle shifting between frames"
+        "text": "Morphing transition where one image gradually shifts into the other across strips"
       },
       {
         "id": "005",
-        "text": "High-frequency interlacing with very fine strips for smooth blending"
+        "text": "High-contrast alternating strips for a bold optical illusion effect"
       },
       {
         "id": "006",
-        "text": "Chunky strip lenticular with visible banding for a retro toy effect"
-      },
-      {
-        "id": "007",
-        "text": "Diagonal interlaced strips for a stylized lenticular variation"
-      },
-      {
-        "id": "008",
-        "text": "Curved lenticular distortion simulating a flexible plastic lens surface"
+        "text": "Micro-strip density creating a near-blended holographic illusion"
       }
     ],
     "randomizeOptions": true,
-    "additionalInstructions": "FINAL RESULT:\nA seamless lenticular-style image where two perspectives are interwoven into a single optical illusion. The original split between images must be completely eliminated. The final result should feel like a real lenticular print that shifts, morphs, or reveals depth depending on viewing angle."
+    "additionalInstructions": "FINAL RESULT:\nA TRUE lenticular interlaced image where BOTH original images are completely broken down and rebuilt into alternating vertical strips across the ENTIRE frame. There must be NO visible split or separation. The image should behave like a real lenticular print, appearing to shift, morph, or change depending on viewing angle."
   },
   {
     "name": "LEPRECHAUN",
