@@ -12456,6 +12456,54 @@
     "additionalInstructions": "FINAL RESULT:\nThe image should show the subject with their real face sticking through a circular hole in a large novelty costume of an inanimate object (hot dog, pizza, toilet, fruit, etc.), appearing as a classic tourist photo op or boardwalk attraction with bright colors, hand-painted aesthetic, and silly wholesome humor - the face integrated into the object design in a kitschy, fun, family-friendly way."
   },
   {
+    "name": "HOLOGRAPHIC TRADING CARD",
+    "category": [
+      "OPTICAL",
+      "ILLUSION",
+      "CARD",
+      "COLLECTIBLE",
+      "3D",
+      "PREMIUM"
+    ],
+    "message": "Take a picture and transform it into a premium holographic trading card with multi-layer depth, reflective foil effects, and angle-dependent visual shifts.\n\nMASTER PROMPT OVERRIDE LOGIC (CRITICAL):\n• If an external master prompt specifies a card type, rarity, or style, USE that instead of the selected option\n• If no override is provided, use the selected option from the list\n\nCORE CONCEPT (CRITICAL):\n• The image must become a physical trading card\n• The card must simulate holographic foil, depth layering, and shifting reflections\n• The result must feel like a real collectible card photographed in the real world\n\nMULTI-LAYER DEPTH (MANDATORY):\n• Separate the image into foreground, midground, and background layers\n• Each layer must have visible depth separation\n• Foreground elements should \"pop out\" toward the viewer\n• Background elements should recede naturally\n\nHOLOGRAPHIC EFFECT (MANDATORY):\n• Apply reflective foil patterns across the card surface\n• Simulate light reacting differently across angles\n• Use rainbow diffraction, spectral highlights, or metallic shimmer\n• Reflection must NOT be flat — it must vary across the surface\n\nANGLE-DEPENDENT ILLUSION:\n• Different parts of the image should appear to shift depending on viewing angle\n• Slight positional offsets between layers to simulate parallax\n• Subtle motion illusion embedded into the design\n\nSURFACE MATERIAL (CRITICAL):\n• The card must look like printed cardboard with holographic foil\n• Slight gloss, reflective coating, and light-catching edges\n• Optional embossed or textured foil regions\n\nSUBJECT HANDLING:\n• The subject becomes the central featured character or element of the card\n• Must remain recognizable but enhanced into a collectible-style design\n\nCARD DESIGN ELEMENTS:\n• Add a structured card layout (border, frame, or design language)\n• Include title text area, stats area, or decorative UI\n• Maintain clean composition — do not clutter\n\nENVIRONMENT:\n• Background should support depth layering and holographic effects\n• May include energy effects, gradients, or abstract patterns\n\nLIGHTING:\n• Strong directional lighting to emphasize reflections\n• Highlights must move across surfaces realistically\n• Metallic shimmer and specular highlights required\n\nSTYLE:\n• Premium collectible aesthetic\n• High-detail, polished, and cinematic\n\nSCENE COMPOSITION:\n• Slight tilt or perspective to emphasize card physicality\n• Card may be shown at a slight angle to reveal reflections\n• Entire image must read as a single physical object\n\nHARD CONSTRAINTS (DO NOT VIOLATE):\n• DO NOT produce a flat image with a holographic overlay\n• DO NOT apply simple rainbow filters\n• DO NOT keep the original image unchanged\n• The holographic effect must be physically believable and integrated\n\nFINAL INSTRUCTION (CRITICAL):\n• If the image looks like a normal picture with effects applied, it is WRONG\n• The result must look like a real holographic trading card photographed in real life",
+    "options": [
+      {
+        "id": "001",
+        "text": "Rainbow foil holographic with full-spectrum light diffraction"
+      },
+      {
+        "id": "002",
+        "text": "Gold rare card with metallic reflective highlights and embossed foil"
+      },
+      {
+        "id": "003",
+        "text": "Dark holographic with neon spectral reflections and deep contrast"
+      },
+      {
+        "id": "004",
+        "text": "Anime-style collectible card with dynamic energy effects and holographic shine"
+      },
+      {
+        "id": "005",
+        "text": "Sci-fi holographic card with futuristic UI overlays and glowing elements"
+      },
+      {
+        "id": "006",
+        "text": "Prismatic crystal foil with sharp geometric reflections"
+      },
+      {
+        "id": "007",
+        "text": "Minimalist premium card with subtle shifting highlights and clean design"
+      },
+      {
+        "id": "008",
+        "text": "Ultra-rare legendary card with intense glow, aura effects, and layered holography"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "FINAL RESULT:\nA highly realistic holographic trading card with visible depth layers, reflective foil, and angle-dependent visual effects. The card must look like a real physical collectible item, not a digital image with filters. The holographic illusion, lighting, and material must all work together to create a convincing premium card."
+  },
+  {
     "name": "HOPPER",
     "category": [
       "ART",
