@@ -1848,7 +1848,26 @@ async function submitMagicTransform() {
     alert('No image selected');
     return;
   }
-  
+
+  // GALLERY LAYER MODE
+  // This prevents the random preset picker and wrong manual options modal from firing.
+
+  if (isGalleryLayerActive && galleryLayerPresets.length > 0) {
+    const item = galleryImages[currentViewerImageIndex];
+    const resizedImageBase64 = await resizeImageForSubmission(item.imageBase64);
+    const magicPrompt = buildCombinedLayerPrompt(galleryLayerPresets, galleryLayerManualSelections);
+    if (typeof PluginMessageHandler !== 'undefined') {
+      const layerMagicPayload = { pluginId: 'com.r1.pixelart', imageBase64: resizedImageBase64 };
+      if (magicPrompt && magicPrompt.trim()) layerMagicPayload.message = magicPrompt;
+      PluginMessageHandler.postMessage(JSON.stringify(layerMagicPayload));
+      alert('Magic transform submitted! You can submit again with a different prompt.');
+    } else {
+      alert('Layer prompt built:\n\n' + magicPrompt.substring(0, 200) + '...');
+    }
+    return;
+  }
+  // END GALLERY LAYER MODE 
+
   const promptInput = document.getElementById('viewer-prompt');
   let prompt = promptInput.value.trim();
   let presetName = 'Custom Prompt';

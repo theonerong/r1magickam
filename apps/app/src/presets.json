@@ -5931,7 +5931,7 @@
       }
     ],
     "randomizeOptions": true,
-    "additionalInstructions": "FINAL RESULT:\nThe final image must display the FULL comic book cover with the subject as the superhero with their face in the hero's characteristic color (green for Hulk, blue for Beast, steel for Colossus, etc.) — if the hero wears a full mask/helmet, it must be removed, open, or partially off so the subject's color-transformed face is clearly visible and recognizable — showing the complete cover with all four corners visible, including all publishing details, dramatic action scene, bold comic art style, and professional cover design."
+    "additionalInstructions": "FINAL RESULT:\nThe final image must display the FULL comic book cover with the subject as the superhero with their face in the hero's characteristic color — if the hero wears a full mask/helmet, it must be removed, open, or partially off so the subject's color-transformed face is clearly visible and recognizable — showing the complete cover with all four corners visible, including all publishing details, dramatic action scene, bold comic art style, and professional cover design."
   },
   {
     "name": "COMIC SUPERHERO",
