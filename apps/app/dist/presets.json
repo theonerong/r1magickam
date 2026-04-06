@@ -14314,6 +14314,45 @@
     "additionalInstructions": ""
   },
   {
+    "name": "LASER INK",
+    "category": [
+      "MINIMAL",
+      "GLOW",
+      "SCI-FI",
+      "OUTLINE",
+      "STYLIZED"
+    ],
+    "message": "Take a picture and transform the subject and scene into a laser-projected outline image, as if drawn entirely with a single-color laser onto a surface.\n\nMASTER PROMPT OVERRIDE LOGIC (CRITICAL):\n• If an external master prompt specifies a laser color or intensity, USE that instead of the selected option\n• If no override is provided, use the selected option from the list\n\nCORE CONCEPT (CRITICAL):\n• The image must be reduced to a laser-style outline representation\n• The entire image is drawn using a single laser color only\n• No full-color rendering is allowed\n\nLASER RENDERING (MANDATORY):\n• Convert all forms into clean, simplified outlines and essential contours\n• Lines should appear as glowing laser strokes\n• The image should feel projected or burned with light\n\nCOLOR RULE (CRITICAL):\n• Use ONLY ONE color for the laser (no gradients unless subtle glow variation)\n• Background must be dark or neutral to emphasize the laser\n• No natural colors from the original image should remain\n\nDETAIL REDUCTION:\n• Remove fine detail and texture\n• Focus on edges, silhouettes, and key features\n• Simplify complex areas into readable linework\n\nSUBJECT HANDLING:\n• Subject must remain recognizable through outline and shape\n• Facial features reduced to minimal but expressive lines\n\nGLOW EFFECT:\n• Lines should emit a soft glow\n• Slight bloom or halo around laser strokes\n• Light falloff into the background\n\nSURFACE EFFECT:\n• Optional subtle projection surface (wall, smoke, fog, or dark space)\n• Laser may appear slightly diffused or projected\n\nSTYLE:\n• Clean, minimal, high-contrast\n• Futuristic or sci-fi laser aesthetic\n\nSCENE COMPOSITION:\n• Strong silhouette readability\n• Balanced line density — not too cluttered\n\nHARD CONSTRAINTS (DO NOT VIOLATE):\n• DO NOT keep original colors\n• DO NOT render full shaded objects\n• DO NOT create a detailed realistic image with glow added\n• The image must be primarily line-based\n\nFINAL INSTRUCTION (CRITICAL):\n• The result must look like it was drawn entirely with a laser beam — not painted, not shaded, not photographic",
+    "options": [
+      {
+        "id": "001",
+        "text": "Red laser with intense glow and sharp outlines"
+      },
+      {
+        "id": "002",
+        "text": "Green laser with classic holographic projection feel"
+      },
+      {
+        "id": "003",
+        "text": "Blue laser with cool sci-fi aesthetic"
+      },
+      {
+        "id": "004",
+        "text": "Purple laser with soft neon glow"
+      },
+      {
+        "id": "005",
+        "text": "White laser with high-intensity clean projection"
+      },
+      {
+        "id": "006",
+        "text": "Flickering unstable laser with slight distortion and breaks in lines"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "FINAL RESULT:\nA minimal, high-contrast laser outline image rendered in a single glowing color. The subject and scene are reduced to clean, recognizable contours as if projected by a laser onto a surface."
+  },
+  {
     "name": "LATTE ART",
     "category": [
       "BEVERAGE",
@@ -16941,6 +16980,49 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "MOTION BLUR",
+    "category": [
+      "PHOTOGRAPHY",
+      "MOTION",
+      "EFFECT",
+      "DYNAMIC",
+      "CINEMATIC"
+    ],
+    "message": "Take a picture and transform the image into a motion blur style as if captured with movement during exposure.\n\nMASTER PROMPT OVERRIDE LOGIC (CRITICAL):\n• If an external master prompt specifies a motion direction or style, USE that instead of the selected option\n• If no override is provided, use the selected option from the list\n\nCORE CONCEPT (CRITICAL):\n• The image must simulate real motion captured over time\n• Blur must feel physically accurate — not a simple filter\n\nMOTION SIMULATION (MANDATORY):\n• Stretch and smear elements in a consistent direction or pattern\n• Blur must follow believable motion paths (horizontal, vertical, radial, or subject-based)\n• Preserve structure while conveying speed or movement\n\nSUBJECT HANDLING:\n• Subject must remain partially recognizable\n• Key features (especially faces) should retain clarity in at least one region\n• Use directional blur — not full image softness\n\nENVIRONMENT HANDLING:\n• Background may blur more than the subject to simulate camera tracking\n• Alternatively, subject may blur while background stays stable (depending on motion type)\n\nBLUR CHARACTERISTICS:\n• Streaking, trailing, or ghosting effects\n• Multiple exposure feel or light trails where appropriate\n• Smooth blending between sharp and blurred regions\n\nSTYLE:\n• Cinematic or photographic realism\n• Natural motion physics\n\nLIGHTING:\n• Light sources may stretch into streaks\n• Highlights should elongate realistically\n\nSCENE COMPOSITION:\n• Motion direction must be visually clear\n• Composition should emphasize speed, movement, or energy\n\nHARD CONSTRAINTS (DO NOT VIOLATE):\n• DO NOT apply uniform blur across the entire image\n• DO NOT make the image completely unrecognizable\n• DO NOT simulate blur as a simple filter overlay\n\nFINAL INSTRUCTION (CRITICAL):\n• The blur must feel like real motion captured in-camera — not a digital effect",
+    "options": [
+      {
+        "id": "001",
+        "text": "Horizontal motion blur simulating fast lateral movement"
+      },
+      {
+        "id": "002",
+        "text": "Vertical motion blur simulating upward or falling movement"
+      },
+      {
+        "id": "003",
+        "text": "Radial zoom blur radiating outward from the center"
+      },
+      {
+        "id": "004",
+        "text": "Subject tracking blur where the subject is sharp and background streaks"
+      },
+      {
+        "id": "005",
+        "text": "Ghosted multi-exposure motion with repeated subject silhouettes"
+      },
+      {
+        "id": "006",
+        "text": "Light trail motion blur with glowing streaks from highlights"
+      },
+      {
+        "id": "007",
+        "text": "Rotational motion blur as if the camera is spinning"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "FINAL RESULT:\nA dynamic motion-blurred image that convincingly simulates real movement captured over time. The result should feel energetic, directional, and physically believable."
   },
   {
     "name": "MOTION TRAIL",
