@@ -20073,6 +20073,84 @@
     "additionalInstructions": "FINAL RESULT:\nA grainy, long-lens paparazzi photograph with tabloid watermarks focusing on the subject as if they're the celebrity being stalked, while an actual famous person accidentally appears in the background, blurred, distant, or at the edge of frame — completely incidental to the shot. The humor comes from treating the subject as the star while ignoring the real celebrity.\n\nCORE REQUIREMENTS:"
   },
   {
+    "name": "PAPER CUTOUT ILLUSTRATION",
+    "category": [
+      "ILLUSTRATION",
+      "PAPER",
+      "COLLAGE",
+      "HANDCRAFT",
+      "MINIMAL"
+    ],
+    "message": "Take a picture and transform the image into a handcrafted paper cutout illustration, as if the entire scene were created by cutting shapes from paper and layering them together.\n\nMASTER PROMPT OVERRIDE LOGIC (CRITICAL):\n• If an external master prompt specifies color palette or paper style, USE that instead of the selected option\n\nCORE CONCEPT (CRITICAL):\n• The entire image must be reconstructed from flat paper pieces\n• Every object and subject must appear as a separate cut piece of paper\n• The scene must resemble a handmade collage\n\nPAPER CONSTRUCTION (MANDATORY):\n• Break the image into simplified shapes\n• Each shape should look like it was cut with scissors or a craft knife\n• Edges must be clean or slightly rough like cut paper\n\nLAYERING EFFECT:\n• Foreground, midground, and background must appear as stacked paper layers\n• Slight drop shadows should appear between layers\n• Pieces must overlap naturally like physical paper\n\nOUTLINE STYLE:\n• Bold black or dark outlines around major shapes\n• Outline thickness should resemble drawn marker or ink\n• Shapes must remain simple and graphic\n\nDETAIL REDUCTION:\n• Remove photographic detail and texture\n• Replace details with simple shapes and paper pieces\n• Faces and features simplified but recognizable\n\nSURFACE MATERIAL:\n• Paper or cardstock texture\n• Slight fiber grain or matte craft paper look\n• Subtle imperfections allowed\n\nSTYLE:\n• Handmade collage aesthetic\n• Playful and graphic\n• Inspired by traditional paper animation\n\nLIGHTING:\n• Soft directional lighting to create paper shadows\n• Shadows should emphasize layered depth\n\nSCENE COMPOSITION:\n• Entire image must look like a physical collage photographed from above\n• Paper pieces must clearly define shapes\n\nHARD CONSTRAINTS (DO NOT VIOLATE):\n• DO NOT keep photographic realism\n• DO NOT render smooth digital shapes\n• DO NOT use gradients or complex shading\n• Everything must appear as flat paper cutouts\n\nFINAL INSTRUCTION (CRITICAL):\n• The final image must look like it was physically assembled from colored paper pieces and photographed on a table",
+    "options": [
+    {
+      "id": "001",
+      "text": "Minimal black and white paper cut silhouette style"
+    },
+    {
+      "id": "002",
+      "text": "Colorful layered craft paper collage with visible paper texture"
+    },
+    {
+      "id": "003",
+      "text": "Torn paper edges with rough handmade collage aesthetic"
+    },
+    {
+      "id": "004",
+      "text": "Children’s book style paper cut illustration"
+    },
+    {
+      "id": "005",
+      "text": "Vintage storybook shadow puppet silhouette style"
+    },
+    {
+      "id": "006",
+      "text": "Graphic poster-style paper cut design with thick outlines"
+    }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "FINAL RESULT:\nA handcrafted paper collage where every element of the scene appears to be made from layered paper shapes with bold outlines and subtle shadows."
+  },
+  {
+    "name": "PAPER CUTOUT OUTLINE",
+    "category": [
+      "PAPER",
+      "CUTOUT",
+      "BLACK AND WHITE",
+      "OUTLINE",
+      "ANIMATION"
+    ],
+    "message": "Take a picture and transform it into a stylized paper cutout illustration made from flat black and white paper shapes with bold outline edges.\n\nMASTER PROMPT OVERRIDE LOGIC (CRITICAL):\n• If an external master prompt specifies a paper style, use that instead\n• Otherwise use the selected option from the list\n\nCORE CONCEPT (CRITICAL):\n• The image must look like it was physically assembled from cut paper pieces\n• All subjects and objects become simplified paper shapes\n• The final image should resemble black-and-white stop-motion cutout animation or layered paper illustration\n\nPAPER CUTOUT TRANSFORMATION (MANDATORY):\n• Break every visible object into separate flat paper layers\n• Convert forms into simplified silhouettes with distinct cut edges\n• Every piece should look hand-cut from paper with slightly imperfect edges\n• Use large bold black outlines around every piece\n\nBLACK AND WHITE RULE (CRITICAL):\n• Use only black, white, and optional very light gray paper tones\n• No color is allowed\n• Strong contrast between shapes is required\n\nOUTLINE STYLE:\n• Thick black contour lines around all characters and objects\n• Minimal interior detail\n• Facial features reduced to a few simple black lines or cutout shapes\n• Use negative space and white cut lines to separate features\n\nPAPER MATERIAL:\n• Visible paper texture, cardstock texture, or matte construction paper\n• Slight layered shadow between paper pieces\n• Pieces should appear stacked physically on top of one another\n\nSUBJECT HANDLING:\n• Keep the subject recognizable through silhouette and major features\n• Simplify hair, clothing, and face into flat graphic forms\n• If multiple subjects are present, each should become its own separate paper puppet\n\nENVIRONMENT HANDLING:\n• Background should also become layered paper scenery\n• Trees, buildings, furniture, and props become simple cutout shapes\n• Depth created through overlapping paper layers\n\nSTYLE REFERENCES (MANDATORY):\n• Inspired by black-and-white paper cutout animation\n• Similar to handmade stop-motion paper puppets\n• Similar to photocopied or stencil-cut illustrations with bold outlines\n\nHARD CONSTRAINTS (DO NOT VIOLATE):\n• DO NOT keep photographic texture\n• DO NOT use smooth digital shading\n• DO NOT create a realistic drawing with an outline filter added\n• DO NOT use color\n• The result must look physically cut from paper\n\nFINAL INSTRUCTION (CRITICAL):\n• If the image looks like a normal photo with black outlines added, it is WRONG\n• The result must look like real black-and-white paper cutouts layered together by hand",
+    "options": [
+    {
+      "id": "001",
+      "text": "High-contrast black paper silhouettes on a white background with thick outlines"
+    },
+    {
+      "id": "002",
+      "text": "White paper cutouts on a black background with reverse outlines"
+    },
+    {
+      "id": "003",
+      "text": "Photocopied paper puppet style with rough edges and layered shadows"
+    },
+    {
+      "id": "004",
+      "text": "Minimalist paper collage with very simple shapes and strong negative space"
+    },
+    {
+      "id": "005",
+      "text": "Stop-motion paper puppet style with visible joints and separate movable pieces"
+    },
+    {
+      "id": "006",
+      "text": "Stencil-like cutout style with extra bold black borders and minimal detail"
+    }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "FINAL RESULT:\nA monochrome image that looks physically assembled from cut black-and-white paper pieces with bold outlines, visible layered depth, and a handmade stop-motion or photocopied cutout aesthetic."
+  },
+  {
     "name": "PAPER MACHE ART",
     "category": [
       "ART",
