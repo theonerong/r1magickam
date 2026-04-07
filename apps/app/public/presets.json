@@ -506,6 +506,19 @@
     "additionalInstructions": "FINAL RESULT:\nThe final image should depict a vibrant, culturally rooted, technologically advanced future vision."
   },
   {
+    "name": "AIRBRUSH",
+    "category": [
+      "ART",
+      "RETRO",
+      "GRADIENT",
+      "SMOOTH"
+    ],
+    "message": "Take a picture and transform the image into an airbrush-style illustration.\n\nCORE CONCEPT (CRITICAL):\n• Smooth gradient transitions\n• No visible brush strokes\n\nSTYLE:\n• Soft blending\n• Slight retro aesthetic",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "FINAL RESULT:FINAL RESULT:\nA polished airbrush image with ultra-smooth gradients and soft transitions."
+  },
+  {
     "name": "AIRBRUSH 80s",
     "category": [
       "ART",
@@ -1989,6 +2002,19 @@
     "additionalInstructions": ""
   },
   {
+    "name": "ARTE POVERA",
+    "category": [
+      "ART",
+      "RAW",
+      "TEXTURE",
+      "EXPERIMENTAL"
+    ],
+    "message": "Take a picture and reconstruct the entire scene using raw, everyday materials in the Arte Povera style.\n• Subject must appear built from rough materials\n• Preserve form but change material reality\n\nSCENE COMPOSITION:\n• Organic, imperfect layout\n• Rough assembly of elements\n\nCAMERA & EFFECTS:\n• Natural lighting\n• Visible imperfections\n\nSTYLE:\n• Dirt, wood, fabric, metal\n• Unpolished textures\n• Raw aesthetic",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "FINAL RESULT:\nA raw, tactile composition where everything appears constructed from rough, everyday materials.\n\nCORE REQUIREMENTS:\n• NO polished surfaces\n• HEAVY texture\n• IMPERFECTION required"
+  },
+  {
     "name": "ASCII ART",
     "category": [
       "TEXT",
@@ -2196,7 +2222,7 @@
     "message": "Take a picture and transform the image into Bauhaus style art. Reduce the subject to functional geometric forms, clean lines, primary colors, and minimal composition.",
     "options": [],
     "randomizeOptions": false,
-    "additionalInstructions": ""
+    "additionalInstructions": "FINAL RESULT:\nA Bauhaus-inspired composition where the subject and scene are reduced to geometric shapes and primary colors, creating a clean, functional, and modern design aesthetic."
   },
   {
     "name": "BBS DOWNLOAD",
@@ -3130,6 +3156,19 @@
     ],
     "randomizeOptions": true,
     "additionalInstructions": ""
+  },
+  {
+    "name": "BRUTALISM",
+    "category": [
+      "ART", 
+      "GRAPHIC DESIGN",
+      "MODERN", 
+      "RAW"
+    ],
+    "message": "Take a picture and transform the image into a brutalist graphic design style.\n\nCORE CONCEPT (CRITICAL):\n• Raw, unpolished layout\n\nSTYLE:\n• Harsh contrasts\n• Bold typography-like shapes.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "FINAL RESULT:\nA stark, raw composition with strong contrast and minimal refinement."
   },
   {
     "name": "BULLET TIME",
@@ -4255,6 +4294,19 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "CHIAROSCURO",
+    "category": [
+      "ART", 
+      "DRAMATIC", 
+      "LIGHTING",
+      "CLASSICAL"
+    ],
+    "message": "Take a picture and transform the image into a dramatic Chiaroscuro-style composition dominated by extreme contrast between light and shadow.\n• Subject must emerge from darkness into intense illumination\n• Preserve facial identity while adapting to dramatic lighting\n• Most of the scene must be in deep shadow\n• Bright highlights define form and structure\n\nSCENE COMPOSITION:\n• Subject positioned in a spotlight-like beam\n• Background mostly obscured by darkness\n• Strong directional composition guiding the eye\n\nCAMERA & EFFECTS:\n• Single dominant light source\n• Deep shadow falloff\n• High contrast exposure\n\nSTYLE:\n• Classical Baroque lighting\n• Dark, moody palette\n• Dramatic theatrical intensity",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "FINAL RESULT:\nA striking, high-contrast composition where the subject is dramatically illuminated against deep shadow, emphasizing form, depth, and intensity.\n\nCORE REQUIREMENTS:\n• EXTREME light/dark contrast\n• SINGLE dominant light source\n• SHADOW-dominated composition"
   },
   {
     "name": "CHILDHOOD VERSION",
@@ -6961,6 +7013,19 @@
     "additionalInstructions": ""
   },
   {
+    "name": "DE STIJL",
+    "category": [
+      "ART",
+      "ABSTRACT",
+      "GEOMETRIC",
+      "MODERN"
+    ],
+    "message": "Take a picture and transform the image into a De Stijl composition using strict geometric structure and primary colors.\n\nCORE CONCEPT (CRITICAL):\n• Use only vertical and horizontal lines\n• Reduce scene to rectangles and blocks\n\nSUBJECT HANDLING:\n• Abstract subject into grid-based structure\n• Maintain general layout\n\nCOLOR:\n• Red, blue, yellow\n• Black lines and white spaces\n\nSTYLE:\n• Clean, precise geometry\n• Balanced composition\n\nCAMERA & EFFECTS:\n• Flat design\n• No depth realism",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "FINAL RESULT:\nA De Stijl composition where the image is transformed into a grid of primary-colored rectangles with strict geometric order and balance."
+  },
+  {
     "name": "DECADE STYLE",
     "category": [
       "RETRO",
@@ -7502,6 +7567,19 @@
     ],
     "randomizeOptions": true,
     "additionalInstructions": "RESTRICTIONS:\n• No cartoon or illustrated styles\n• No text overlays or captions\n• No modern digital glitch effects\n\nFINAL RESULT:\nThe image should look like a rare, physically damaged film negative — unsettling, tactile, and visually haunting, while still clearly depicting the subject."
+  },
+  {
+    "name": "DIVISIONISM",
+    "category": [
+      "ART",
+      "PAINTING",
+      "COLOR",
+      "IMPRESSIONISM"
+    ],
+    "message": "Take a picture and transform the image into a Divisionism-style painting using separated dots or strokes of pure color. The subject and environment must be built through optical color blending.\n\nCORE CONCEPT (CRITICAL):\n• Use distinct dots or strokes of color\n• Colors blend visually from a distance\n• Avoid mixing colors directly\n\nSUBJECT HANDLING:\n• Preserve recognizable shapes\n• Construct using colored dots or strokes\n\nCOLOR:\n• Bright, pure colors\n• Contrasting tones placed side-by-side\n\nSTYLE:\n• Highly textured surface\n• Pointillist technique\n\nLIGHTING:\n• Vibrant, shimmering effect\n\nCAMERA & EFFECTS:\n• Slight softness at distance\n• Detail visible up close",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "FINAL RESULT:\nA Divisionist painting composed of small dots or strokes of pure color that blend visually, creating a vibrant and shimmering interpretation of the original scene."
   },
   {
     "name": "DI-Y ME?",
@@ -8121,6 +8199,19 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "ENCAUSTIC",
+    "category": [
+      "ART",
+      "TEXTURE",
+      "PAINTERLY",
+      "CLASSICAL"
+    ],
+    "message": "Take a picture and transform the image into an encaustic wax painting.\n• Use thick wax-like layering\n• Semi-translucent depth effects\n\nSCENE COMPOSITION:\n• Layered visual depth\n• Soft blending through wax\n\nCAMERA & EFFECTS:\n• Light diffusion through layers\n• Slight surface irregularities\n\nSTYLE:\n• Wax texture\n• Soft blending\n• Organic layering",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "FINAL RESULT:\nA richly layered wax painting with depth and translucency.\n\nCORE REQUIREMENTS:\n• WAX texture\n• LAYERING visible\n• SOFT diffusion"
   },
   {
     "name": "ENCYCLOPEDIA (HUMOR)",
@@ -8783,7 +8874,7 @@
     "message": "Take a picture in the Expressionism artistic movement emphasizing subjective emotions and inner experiences, often distorting reality to convey intense emotions and psychological states.",
     "options": [],
     "randomizeOptions": false,
-    "additionalInstructions": ""
+    "additionalInstructions": "FINAL RESULT:\nAn emotionally charged painting with distorted forms and energetic brushwork.\n\nCORE REQUIREMENTS:\n• CHAOTIC composition\n• STRONG emotion\n• VISIBLE brush energy"
   },
   {
     "name": "EXPRESSIONS",
@@ -10811,6 +10902,19 @@
     "additionalInstructions": ""
   },
   {
+    "name": "FRESCO",
+    "category": [
+      "ART", 
+      "CLASSICAL",
+      "TEXTURE",
+      "HISTORICAL"
+    ],
+    "message": "Take a picture and transform the image into a fresco painted directly onto a plaster wall.\n• Subject must appear embedded into the wall surface\n• Colors slightly faded and aged\n\nSCENE COMPOSITION:\n• Wall-based composition\n• Slightly worn and weathered\n\nCAMERA & EFFECTS:\n• Matte surface rendering\n• Crack and aging effects\n\nSTYLE:\n• Renaissance fresco technique\n• Earthy tones\n• Historical aesthetic",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "FINAL RESULT:\nA wall-painted fresco with visible plaster texture and aged characteristics.\n\nCORE REQUIREMENTS:\n• WALL texture visible\n• AGING effects\n• MATTE finish"
+  },
+  {
     "name": "FRIDGE ART",
     "category": [
       "ART",
@@ -10928,6 +11032,19 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "FROTTAGE",
+    "category": [
+      "ART",
+      "TEXTURE",
+      "SURREAL",
+      "DRAWING"
+    ],
+    "message": "Take a picture and transform the image into a frottage-style artwork where textures are revealed through rubbing techniques.\n\nCORE CONCEPT (CRITICAL):\n• Emphasize texture over detail\n• Surfaces appear imprinted or transferred\n\nSUBJECT HANDLING:\n• Preserve shapes through texture patterns\n• Reduce fine detail\n\nSTYLE:\n• Grainy, textured appearance\n• Organic and surreal patterns\n\nENVIRONMENT:\n• Surfaces dominate visual experience\n\nCAMERA & EFFECTS:\n• Flattened texture focus",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "FINAL RESULT:\nA frottage-style image where textures dominate the composition, giving the appearance of rubbed or transferred surface patterns forming the subject."
   },
   {
     "name": "FROZEN IN ICE",
@@ -14942,6 +15059,19 @@
     "additionalInstructions": ""
   },
   {
+    "name": "LUMINISM",
+    "category": [
+      "ART",
+      "PAINTING",
+      "LIGHT",
+      "REALISM"
+    ],
+    "message": "Take a picture and transform the image into a Luminism-style painting emphasizing the effects of light and atmosphere. The subject and environment must appear as if rendered in a tranquil, highly detailed landscape where light is the primary storytelling element.\n\nCORE CONCEPT (CRITICAL):\n• Focus on calm, reflective scenes\n• Light must define the composition\n• Atmosphere should feel still and serene\n\nSUBJECT HANDLING:\n• Preserve recognizable features\n• Integrate subject naturally into environment\n• Subject should feel part of the landscape, not separate\n\nLIGHTING:\n• Soft, glowing light (sunrise or sunset preferred)\n• Gentle reflections on water or surfaces\n• Subtle gradients and tonal transitions\n\nENVIRONMENT:\n• Calm landscapes, water, skies\n• Minimal movement, peaceful tone\n• Clean horizon lines and depth\n\nSTYLE:\n• Highly detailed realism\n• Smooth brushwork with minimal visible strokes\n• Emphasis on clarity and calmness\n\nCAMERA & EFFECTS:\n• Wide scenic composition\n• Balanced framing\n• No dramatic distortion",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "FINAL RESULT:\nA peaceful Luminism-style painting where light and atmosphere dominate the composition. The subject is naturally integrated into a calm, glowing environment with smooth gradients, soft reflections, and a serene, timeless mood."
+  },
+  {
     "name": "LUNCH BOX",
     "category": [
       "RETRO",
@@ -18391,6 +18521,19 @@
     "additionalInstructions": ""
   },
   {
+    "name": "NEO-EXPRESSIONISM",
+    "category": [
+      "ART",
+      "CONTEMPORARY",
+      "PAINTERLY",
+      "RAW"
+    ],
+    "message": "Transform this image into a Neo-Expressionist masterpiece. Emphasize a 'Bad Painting' aesthetic with massive scale, heavy impasto textures, and a raw, visceral energy. Incorporate elements of urban grit, historical myth, or primitive figuration with aggressive, gestural brushwork.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "FINAL RESULT:\nA monumental, maximalist painting featuring thick, tactile textures and raw narrative symbols.\n\nCORE REQUIREMENTS:\n• HEAVY IMPOSTO (visibly thick paint and grit)\n• GESTURAL AGGRESSION (violent, rapid strokes)\n• MAXIMALIST composition with primitive or urban motifs\n• VIVID but often muddy or clashing color palettes"
+  },
+  {
     "name": "NEOCLASSICAL",
     "category": [
       "ART",
@@ -19357,6 +19500,19 @@
     "additionalInstructions": ""
   },
   {
+    "name": "OP ART",
+    "category": [
+      "ART", 
+      "OPTICAL",
+      "ILLUSION",
+      "PATTERN"
+    ],
+    "message": "Take a picture and transform the image into an Op Art optical illusion composition.\n• Replace forms with repeating patterns\n• Create visual vibration and motion illusions\n\nSCENE COMPOSITION:\n• Pattern-dominated layout\n• Illusion of depth or movement\n\nCAMERA & EFFECTS:\n• High contrast rendering\n• Pattern distortion effects\n\nSTYLE:\n• Black and white or limited palette\n• Geometric repetition\n• Optical illusion focus",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "FINAL RESULT:\nA visually dynamic image that appears to move or vibrate due to optical illusion patterns.\n\nCORE REQUIREMENTS:\n• STRONG optical illusion\n• HIGH contrast\n• PATTERN dominance"
+  },
+  {
     "name": "OPERATION",
     "category": [
       "HUMOR",
@@ -20073,82 +20229,43 @@
     "additionalInstructions": "FINAL RESULT:\nA grainy, long-lens paparazzi photograph with tabloid watermarks focusing on the subject as if they're the celebrity being stalked, while an actual famous person accidentally appears in the background, blurred, distant, or at the edge of frame — completely incidental to the shot. The humor comes from treating the subject as the star while ignoring the real celebrity.\n\nCORE REQUIREMENTS:"
   },
   {
-    "name": "PAPER CUTOUT ILLUSTRATION",
-    "category": [
-      "ILLUSTRATION",
-      "PAPER",
-      "COLLAGE",
-      "HANDCRAFT",
-      "MINIMAL"
-    ],
-    "message": "Take a picture and transform the image into a handcrafted paper cutout illustration, as if the entire scene were created by cutting shapes from paper and layering them together.\n\nMASTER PROMPT OVERRIDE LOGIC (CRITICAL):\n• If an external master prompt specifies color palette or paper style, USE that instead of the selected option\n\nCORE CONCEPT (CRITICAL):\n• The entire image must be reconstructed from flat paper pieces\n• Every object and subject must appear as a separate cut piece of paper\n• The scene must resemble a handmade collage\n\nPAPER CONSTRUCTION (MANDATORY):\n• Break the image into simplified shapes\n• Each shape should look like it was cut with scissors or a craft knife\n• Edges must be clean or slightly rough like cut paper\n\nLAYERING EFFECT:\n• Foreground, midground, and background must appear as stacked paper layers\n• Slight drop shadows should appear between layers\n• Pieces must overlap naturally like physical paper\n\nOUTLINE STYLE:\n• Bold black or dark outlines around major shapes\n• Outline thickness should resemble drawn marker or ink\n• Shapes must remain simple and graphic\n\nDETAIL REDUCTION:\n• Remove photographic detail and texture\n• Replace details with simple shapes and paper pieces\n• Faces and features simplified but recognizable\n\nSURFACE MATERIAL:\n• Paper or cardstock texture\n• Slight fiber grain or matte craft paper look\n• Subtle imperfections allowed\n\nSTYLE:\n• Handmade collage aesthetic\n• Playful and graphic\n• Inspired by traditional paper animation\n\nLIGHTING:\n• Soft directional lighting to create paper shadows\n• Shadows should emphasize layered depth\n\nSCENE COMPOSITION:\n• Entire image must look like a physical collage photographed from above\n• Paper pieces must clearly define shapes\n\nHARD CONSTRAINTS (DO NOT VIOLATE):\n• DO NOT keep photographic realism\n• DO NOT render smooth digital shapes\n• DO NOT use gradients or complex shading\n• Everything must appear as flat paper cutouts\n\nFINAL INSTRUCTION (CRITICAL):\n• The final image must look like it was physically assembled from colored paper pieces and photographed on a table",
-    "options": [
-    {
-      "id": "001",
-      "text": "Minimal black and white paper cut silhouette style"
-    },
-    {
-      "id": "002",
-      "text": "Colorful layered craft paper collage with visible paper texture"
-    },
-    {
-      "id": "003",
-      "text": "Torn paper edges with rough handmade collage aesthetic"
-    },
-    {
-      "id": "004",
-      "text": "Children’s book style paper cut illustration"
-    },
-    {
-      "id": "005",
-      "text": "Vintage storybook shadow puppet silhouette style"
-    },
-    {
-      "id": "006",
-      "text": "Graphic poster-style paper cut design with thick outlines"
-    }
-    ],
-    "randomizeOptions": true,
-    "additionalInstructions": "FINAL RESULT:\nA handcrafted paper collage where every element of the scene appears to be made from layered paper shapes with bold outlines and subtle shadows."
-  },
-  {
-    "name": "PAPER CUTOUT OUTLINE",
+    "name": "PAPER CUTOUT",
     "category": [
       "PAPER",
       "CUTOUT",
-      "BLACK AND WHITE",
-      "OUTLINE",
-      "ANIMATION"
+      "MIXED REALITY",
+      "HANDMADE",
+      "STYLIZED"
     ],
-    "message": "Take a picture and transform it into a stylized paper cutout illustration made from flat black and white paper shapes with bold outline edges.\n\nMASTER PROMPT OVERRIDE LOGIC (CRITICAL):\n• If an external master prompt specifies a paper style, use that instead\n• Otherwise use the selected option from the list\n\nCORE CONCEPT (CRITICAL):\n• The image must look like it was physically assembled from cut paper pieces\n• All subjects and objects become simplified paper shapes\n• The final image should resemble black-and-white stop-motion cutout animation or layered paper illustration\n\nPAPER CUTOUT TRANSFORMATION (MANDATORY):\n• Break every visible object into separate flat paper layers\n• Convert forms into simplified silhouettes with distinct cut edges\n• Every piece should look hand-cut from paper with slightly imperfect edges\n• Use large bold black outlines around every piece\n\nBLACK AND WHITE RULE (CRITICAL):\n• Use only black, white, and optional very light gray paper tones\n• No color is allowed\n• Strong contrast between shapes is required\n\nOUTLINE STYLE:\n• Thick black contour lines around all characters and objects\n• Minimal interior detail\n• Facial features reduced to a few simple black lines or cutout shapes\n• Use negative space and white cut lines to separate features\n\nPAPER MATERIAL:\n• Visible paper texture, cardstock texture, or matte construction paper\n• Slight layered shadow between paper pieces\n• Pieces should appear stacked physically on top of one another\n\nSUBJECT HANDLING:\n• Keep the subject recognizable through silhouette and major features\n• Simplify hair, clothing, and face into flat graphic forms\n• If multiple subjects are present, each should become its own separate paper puppet\n\nENVIRONMENT HANDLING:\n• Background should also become layered paper scenery\n• Trees, buildings, furniture, and props become simple cutout shapes\n• Depth created through overlapping paper layers\n\nSTYLE REFERENCES (MANDATORY):\n• Inspired by black-and-white paper cutout animation\n• Similar to handmade stop-motion paper puppets\n• Similar to photocopied or stencil-cut illustrations with bold outlines\n\nHARD CONSTRAINTS (DO NOT VIOLATE):\n• DO NOT keep photographic texture\n• DO NOT use smooth digital shading\n• DO NOT create a realistic drawing with an outline filter added\n• DO NOT use color\n• The result must look physically cut from paper\n\nFINAL INSTRUCTION (CRITICAL):\n• If the image looks like a normal photo with black outlines added, it is WRONG\n• The result must look like real black-and-white paper cutouts layered together by hand",
+    "message": "Take a picture and transform ONLY the subject into a physical paper cutout while keeping the rest of the scene realistic and unchanged.\n\nMASTER PROMPT OVERRIDE LOGIC (CRITICAL):\n• If an external master prompt specifies a cutout style, USE that instead\n• Otherwise use the selected option from the list\n\nCORE CONCEPT (CRITICAL):\n• The subject must become a real, physical paper cutout object\n• The environment must remain photographic and realistic\n• Strong contrast between real world and handmade subject is REQUIRED\n\nSUBJECT TRANSFORMATION (MANDATORY):\n• Convert the subject into a flat paper cutout version of themselves\n• Use simplified shapes, bold outlines, and minimal detail\n• The subject must look physically cut from paper (not digitally filtered)\n• Edges should be slightly imperfect, like cut with scissors or a blade\n\nPAPER MATERIAL (CRITICAL):\n• Visible paper or cardstock texture\n• Matte surface (no gloss unless specified)\n• Slight warping, bending, or curling edges allowed\n\nOUTLINE STYLE:\n• Thick black outline around the entire subject\n• Minimal interior detail — use simple lines or cut shapes\n• Facial features simplified but still recognizable\n\nDEPTH & PHYSICALITY (VERY IMPORTANT):\n• The cutout must exist IN the scene — not float unnaturally\n• Add realistic shadow beneath or behind the cutout\n• Slight separation from background (like it's placed or held)\n• Optional: slight tilt, lean, or perspective distortion\n\nINTERACTION WITH ENVIRONMENT:\n• The cutout may be:\n  - Held by a hand\n  - Standing on a surface\n  - Leaning against an object\n  - Taped or pinned\n• Lighting must match the real scene\n\nBACKGROUND RULE (CRITICAL):\n• DO NOT stylize the background\n• Background remains fully realistic\n• This contrast is REQUIRED for the effect to work\n\nSTYLE REFERENCES (MANDATORY):\n• Handmade paper puppet\n• Stop-motion cutout character\n• Photographed craft object\n\nHARD CONSTRAINTS (DO NOT VIOLATE):\n• DO NOT convert the entire image into paper style\n• DO NOT apply a flat filter to the subject\n• DO NOT keep photographic detail inside the subject\n• DO NOT make the cutout look like a sticker overlay\n\nFINAL INSTRUCTION (CRITICAL):\n• The subject must look like a real, physical paper cutout placed into a real-world photo — not a digital effect",
     "options": [
-    {
-      "id": "001",
-      "text": "High-contrast black paper silhouettes on a white background with thick outlines"
-    },
-    {
-      "id": "002",
-      "text": "White paper cutouts on a black background with reverse outlines"
-    },
-    {
-      "id": "003",
-      "text": "Photocopied paper puppet style with rough edges and layered shadows"
-    },
-    {
-      "id": "004",
-      "text": "Minimalist paper collage with very simple shapes and strong negative space"
-    },
-    {
-      "id": "005",
-      "text": "Stop-motion paper puppet style with visible joints and separate movable pieces"
-    },
-    {
-      "id": "006",
-      "text": "Stencil-like cutout style with extra bold black borders and minimal detail"
-    }
+      {
+        "id": "001",
+        "text": "Black and white high-contrast paper cutout with bold outlines"
+      },
+      {
+        "id": "002",
+        "text": "Colored construction paper cutout with layered pieces"
+      },
+      {
+        "id": "003",
+        "text": "Rough handmade cutout with jagged scissor edges"
+      },
+      {
+        "id": "004",
+        "text": "Clean vector-like cutout with smooth precise edges"
+      },
+      {
+        "id": "005",
+        "text": "Paper puppet style with visible joints and movable parts"
+      },
+      {
+        "id": "006",
+        "text": "Collage style with multiple overlapping paper layers"
+      }
     ],
     "randomizeOptions": true,
-    "additionalInstructions": "FINAL RESULT:\nA monochrome image that looks physically assembled from cut black-and-white paper pieces with bold outlines, visible layered depth, and a handmade stop-motion or photocopied cutout aesthetic."
+    "additionalInstructions": "FINAL RESULT:\nA realistic photo where the subject has been transformed into a physical paper cutout placed within the scene, with proper shadows, texture, and depth. The contrast between the real environment and the handmade subject must be clear and convincing."
   },
   {
     "name": "PAPER MACHE ART",
@@ -22100,6 +22217,19 @@
     "additionalInstructions": ""
   },
   {
+    "name": "RETRO FUTURISM",
+    "category": [
+      "ART",
+      "SCI-FI",
+      "RETRO",
+      "VINTAGE"
+    ],
+    "message": "Take a picture and transform the image into a retro-futuristic artwork.\n\nCORE CONCEPT (CRITICAL):\n• Depict the future as imagined in the past\n\nSTYLE:\n• Vintage sci-fi elements\n• Chrome, rockets, bold shapes",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "FINAL RESULT:\nA nostalgic futuristic scene inspired by mid-20th century visions of the future."
+  },
+  {
     "name": "RICK AND MORTY",
     "category": [
       "ANIMATION",
@@ -23115,9 +23245,22 @@
     "additionalInstructions": "IDENTITY PRESERVATION:\n• Subject’s facial structure must be readable via line work\n• Expression preserved through contour scratches\n• Simplification allowed, but not abstraction\n\nANTI-CHEATING RULES:\n• NO painted strokes\n• NO digital glow effects\n• NO gradient shading\n• NO photographic textures\n• Black areas must remain fully opaque\n\nCOMPOSITION:\n• Flat scratch-art board surface\n• Clean rectangular or card-like format\n• Tool marks may vary in width and pressure\n\nFINAL RESULT:\nThe image must look like a real scratch art piece created by physically etching lines through black wax to reveal colorful layers beneath — tactile, imperfect, and unmistakably analog."
   },
   {
+    "name": "SCRATCH FILM",
+    "category": [
+      "ART",
+      "EXPERIMENTAL",
+      "LINE",
+      "ANALOG"
+    ],
+    "message": "Take a picture and transform the image into a scratch film animation style.\n\nCORE CONCEPT (CRITICAL):\n• White lines scratched onto black surface\n\nSTYLE:\n• Rough, jittery line work\n• High contrast black background",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "FINAL RESULT:\nA stark, high-contrast image composed of scratch-like white lines on black."
+  },
+  {
     "name": "SCRATCHBOARD ART",
     "category": [
-      "ART STYLE",
+      "ART",
       "ILLUSTRATION",
       "BLACK AND WHITE",
       "TEXTURE",
@@ -23429,6 +23572,19 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "SFUMATO",
+    "category": [
+      "ART",
+      "RENAISSANCE",
+      "SOFT", 
+      "CLASSICAL"
+    ],
+    "message": "Take a picture and transform the image into a Renaissance Sfumato-style painting where all edges dissolve into soft atmospheric blending.\n• Subject must appear naturally painted, not filtered\n• Preserve recognizable facial features while softly blending contours\n• No hard edges or sharp outlines anywhere in the image\n• Transitions between light and shadow must be gradual and smoky\n\nSCENE COMPOSITION:\n• Balanced classical composition\n• Background fades softly into atmosphere\n• Depth created through tonal layering instead of sharp perspective\n\nCAMERA & EFFECTS:\n• Soft focus across entire image\n• Subtle blur at edges of forms\n• No digital sharpness or clarity artifacts\n\nSTYLE:\n• Muted Renaissance color palette\n• Smooth tonal gradients\n• Atmospheric softness throughout\n• Leonardo da Vinci-inspired rendering technique",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "FINAL RESULT:\nA soft, atmospheric Renaissance painting where all elements blend seamlessly into one another with no visible hard edges, creating a lifelike yet dreamlike image.\n\nCORE REQUIREMENTS:\n• NO sharp edges\n• NO digital artifacts\n• FULL tonal blending across entire image"
   },
   {
     "name": "SHAKESPEAREAN",
@@ -24606,6 +24762,19 @@
     "additionalInstructions": ""
   },
   {
+    "name": "STENCIL GRAFFITI",
+    "category": [
+       "ART", 
+       "URBAN", 
+       "SPRAY", 
+       "STREET"
+    ],
+    "message": "Take a picture and transform the image into a stencil graffiti artwork.\n\nCORE CONCEPT (CRITICAL):\n• Use stencil-based shapes and spray paint textures\n\nSTYLE:\n• Hard edges\n• Limited color palette\n• Wall texture background",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "FINAL RESULT:\nA street-art style image resembling spray-painted stencil graffiti."
+  },
+  {
     "name": "STEREOSCOPE",
     "category": [
       "PHOTOGRAPHY",
@@ -25537,6 +25706,19 @@
     ],
     "randomizeOptions": true,
     "additionalInstructions": "FINAL RESULT:\nThe image should capture the subject in the exact moment of gaining superpowers through the selected origin method, with dramatic visual effects, appropriate environment, civilian clothing, and that epic cinematic superhero movie moment where an ordinary person becomes extraordinary."
+  },
+  {
+    "name": "SUPREMATISM",
+    "category": [
+      "ABSTRACT",
+      "ART",
+      "GEOMETRIC",
+      "MODERN"
+    ],
+    "message": "Take a picture and transform the image into a Suprematism-style abstract composition using pure geometric forms. The original subject and environment must be reduced into fundamental shapes and color blocks.\n\nCORE CONCEPT (CRITICAL):\n• Eliminate realism entirely\n• Focus on squares, circles, lines, and rectangles\n• Composition must feel balanced and intentional\n\nSUBJECT HANDLING:\n• Reduce subject into abstract geometry\n• Preserve rough spatial positioning only\n• No detailed features\n\nCOLOR:\n• Limited palette (red, black, white, blue, yellow)\n• Flat colors with no gradients\n\nENVIRONMENT:\n• Remove realistic environment\n• Replace with floating geometric arrangement\n\nSTYLE:\n• Minimalist, bold abstraction\n• Flat planes and clean edges\n\nCAMERA & EFFECTS:\n• No perspective realism\n• Floating composition",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "FINAL RESULT:\nA bold Suprematist composition made of clean geometric shapes and flat colors, abstracting the original image into a minimalist arrangement focused purely on form and balance."
   },
   {
     "name": "SUPREMES",
@@ -27660,6 +27842,19 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "IMPORTANT: Female prehistoric humans should look distinctly MORE DELICATE and FEMININE than males of the same species while still maintaining the species' characteristic features. The sexual dimorphism should be clearly visible.\n\nTRANSFORMATION FEATURES (Applied TO subject, not replacing):\n• ADD brow ridges to subject's existing forehead (heavy for males, lighter for females)\n• MODIFY subject's jaw to be more robust (or delicate for females)\n• ADJUST subject's nose to species characteristics\n• ADD appropriate body hair to subject\n• ENHANCE subject's build to be muscular/robust (or slender for females)\n• Subject's eyes, eye color, facial proportions PRESERVED\n• Subject's hair color maintained (just styled primitively)\n• Subject's skin tone preserved (just weathered)\n• Subject clearly recognizable as themselves transformed\n\nPRIMITIVE CLOTHING:\n• Animal hide wraps and pelts\n• Fur clothing (bear, mammoth, deer)\n• Leather straps and ties\n• Bone ornaments and necklaces\n• Shell or tooth jewelry\n• Crude belt or waistband\n• Minimal clothing appropriate to Stone Age\n• Gender-appropriate primitive attire:\n  - Males: Animal hide loincloth, fur shoulder wrap\n  - Females: Animal hide dress or wrap, more decorative jewelry\n\nPREHISTORIC SETTING:\n• Cave entrance or rock shelter\n• Rocky outcrop or cliff\n• Savanna landscape\n• Forest clearing\n• Stone tool workshop area\n• Campfire scene\n• Near water source\n• Open grassland\n\nPERIOD ELEMENTS:\n• Stone tools (hand axes, scrapers, points)\n• Wooden spears or clubs\n• Animal bones scattered\n• Primitive shelter structure\n• Cave paintings on walls in background\n• Fire pit with stones\n• Animal skins drying\n• Primitive food preparation area\n\nBODY CHARACTERISTICS:\n• Species-appropriate hair coverage (on subject's body)\n• Weathered, sun-exposed skin (subject's skin tone)\n• Calloused hands and feet\n• Muscular from physical lifestyle (males more so)\n• Posture appropriate to species\n• Bare feet or primitive footwear\n• Natural, unkempt hair (subject's hair color)\n\nLIGHTING:\n• Natural outdoor lighting\n• Firelight glow\n• Dawn or dusk golden hour\n• Cave shadows and torch light\n• Harsh prehistoric sun\n• Dramatic natural lighting\n\nPHOTOGRAPHY STYLE:\n• Photorealistic reconstruction\n• Museum diorama quality\n• Documentary/National Geographic aesthetic\n• Scientific accuracy\n• Paleoanthropological precision\n• Could be from natural history exhibit\n\nSCIENTIFIC LABEL:\n• Text label at bottom of image\n• Species name in italicized Latin (e.g., *Homo neanderthalensis*)\n• Museum placard or documentary style\n• Scientific nomenclature format\n• Could include time period (e.g., \"300,000-30,000 years ago\")\n• Location if relevant (e.g., \"Europe and Western Asia\")\n\nANTHROPOLOGICAL ACCURACY:\n• Based on fossil evidence\n• Scientifically accurate features\n• Correct anatomical proportions for species\n• Realistic prehistoric human appearance\n• Paleoanthropology research-based\n• Could be museum reconstruction\n\nFINAL RESULT:\nThe image should show the subject - CLEARLY RECOGNIZABLE with their own face, eyes, and features - transformed into a scientifically accurate early human ancestor with species-specific anatomical features added to their existing face and body, with CLEAR GENDER DIFFERENCES (males more robust, females more delicate), dressed in primitive Stone Age clothing, in a prehistoric setting with period-appropriate elements and natural lighting, complete with a scientific label - appearing as a photorealistic paleoanthropological reconstruction where you can definitively say 'that's [subject's name] as a Neanderthal.'"
+  },
+  {
+    "name": "TROMPE-L'OEIL",
+    "category": [
+      "ART", 
+      "ILLUSION", 
+      "REALISM", 
+      "CLASSICAL"
+    ],
+    "message": "Take a picture and transform the image into a Trompe-l'oeil illusion where elements appear to physically break out of a flat surface.\n• Subject must appear as if emerging from or interacting with the frame\n• Preserve identity while adapting to illusion perspective\n• Shadows and depth must reinforce physical realism\n\nSCENE COMPOSITION:\n• Include a visible flat surface or frame boundary\n• Elements overlap and extend beyond edges\n• Strong perspective alignment\n\nCAMERA & EFFECTS:\n• Hyper-realistic depth cues\n• Precise shadow casting\n• Perspective exaggeration for illusion\n\nSTYLE:\n• Ultra-realistic painting technique\n• Crisp detail and dimensional accuracy\n• Illusion-focused rendering",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "FINAL RESULT:\nA convincing illusion where the image appears to exist physically in real space, breaking out of its surface.\n\nCORE REQUIREMENTS:\n• STRONG 3D illusion\n• CORRECT perspective\n• REALISTIC shadows"
   },
   {
     "name": "TRON",
@@ -30190,6 +30385,19 @@
     ],
     "randomizeOptions": true,
     "additionalInstructions": "The final image must look like a genuine YouTube video or trending page. Match YouTube's exact white background, red accent color, thumbnail grid layout, and typography. All view counts, like counts, video titles, and surrounding trending videos must be real data from the target date, never fabricated. Thumbnails must follow real YouTube viral thumbnail conventions with bold text, bright colors, and expressive faces."
+  },
+  {
+    "name": "ZENTANGLE",
+    "category": [
+      "ART",
+      "PATTERN",
+      "DETAILED",
+      "INK"
+    ],
+    "message": "Take a picture and transform the image into a Zentangle-style illustration.\n\nCORE CONCEPT (CRITICAL):\n• Fill forms with intricate repeating patterns\n\nSTYLE:\n• Black ink on white\n• Highly detailed geometric patterns",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "FINAL RESULT:\nA highly detailed black-and-white image composed of structured repeating patterns."
   },
   {
     "name": "ZODIAC SIGN",
