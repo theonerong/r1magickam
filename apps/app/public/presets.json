@@ -9141,6 +9141,19 @@
     "additionalInstructions": "The subject's core identity and recognizable features must always be preserved. Only the facial expression changes. The transformation must be dramatic and exaggerated enough that the expression is immediately and unmistakably readable. Do not make subtle changes — the expression should be the most extreme possible version of itself while still looking like the same person."
   },
   {
+    "name": "EXTREME DETAIL MODE",
+    "category": [
+      "DETAIL",
+      "REALISM",
+      "TEXTURE",
+      "ENHANCEMENT"
+    ],
+    "message": "Take a picture and enhance the image to extreme levels of detail, revealing ultra-fine textures and micro-structures across the entire scene.\n\nMASTER PROMPT OVERRIDE LOGIC (CRITICAL):\n• If an external master prompt specifies a detail level, USE that instead\n• If no override is provided, apply maximum detail enhancement\n\nCORE CONCEPT (CRITICAL):\n• Push detail far beyond normal human perception\n• Reveal micro-textures in skin, fabric, surfaces, and environment\n\nSUBJECT HANDLING:\n• Maintain perfect recognizability\n• Enhance pores, hair strands, fabric fibers, and tiny imperfections\n\nDETAIL LEVELS:\n• Skin pores, wrinkles, micro-hairs\n• Fabric weave and stitching\n• Surface scratches, dust, and particles\n• Environmental micro-detail\n\nSTYLE:\n• Hyper-realistic\n• Sharp, crisp clarity\n\nLIGHTING:\n• Balanced to reveal detail without overexposure\n• Micro-shadows enhance texture depth\n\nCAMERA EFFECT:\n• Macro-level clarity across entire image\n• Deep focus (everything in sharp detail)\n\nSCENE COMPOSITION:\n• Maintain original framing\n• No abstraction—pure enhancement",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "FINAL RESULT:\nAn ultra-detailed image where every surface reveals extreme micro-level detail, making the entire scene appear hyper-realistic and sharper than natural human vision."
+  },
+  {
     "name": "EXTREME SPORTS MOMENT",
     "category": [
       "SPORTS",
@@ -10678,6 +10691,19 @@
     "additionalInstructions": "NOT ALLOWED:\n• Subject photo with flowers placed on it\n• Subject holding flowers\n• Flowers floating around subject\n• Floral overlay on photo\n• Any photorealistic human skin/features\n• Subject behind flowers\n\nTEXTURE:\n• Soft velvet petals\n• Delicate thin petals\n• Thick waxy petals\n• Smooth rose petals\n• Ruffled carnation texture\n• Natural organic botanical texture\n\nDETAIL LEVEL:\n• Face clearly recognizable through flower types and colors\n• Expression suggested by flower arrangement\n• Pose and gesture evident\n• Proportions maintained\n• Fine details (fingers, facial features) all flowers\n• Complete transformation head to toe\n\nFRESHNESS:\n• Flowers appear fresh and vibrant\n• Not wilted or dying\n• Peak bloom appearance\n• Dewy, just-picked quality\n• Living botanical material\n• Fragrant and beautiful\n\nFINAL RESULT:\nThe image should show the subject completely transformed into a three-dimensional sculpture made entirely of fresh flowers - with varied flower types, sizes, and colors creating form and detail, natural botanical textures, and the subject's shape, pose, and identity recognizable through the arrangement and layering of countless blooms, petals, stems, and leaves - NOT a photograph decorated with flowers, but the actual subject reconstructed as an elaborate floral sculpture like a festival parade float or botanical art installation."
   },
   {
+    "name": "FOAM SCULPTURE",
+    "category": [
+      "MATERIAL",
+      "TEXTURE",
+      "SCULPTURE",
+      "CREATIVE"
+    ],
+    "message": "Take a picture and transform the subject and environment into a carved foam or styrofoam sculpture.\n\nMASTER PROMPT OVERRIDE LOGIC (CRITICAL):\n• If an external master prompt specifies a material, USE that instead of foam\n• If no override is provided, use foam/styrofoam transformation\n\nCORE CONCEPT (CRITICAL):\n• Entire image appears carved from foam blocks\n• Rough, lightweight material with visible texture\n• Imperfect edges and tool marks\n\nSUBJECT HANDLING:\n• Preserve recognizable shape and features\n• Simplify fine detail into carved forms\n• Slightly blocky or hand-shaped appearance\n\nMATERIAL PROPERTIES:\n• Porous texture (tiny bead-like structure)\n• Matte white or lightly tinted surface\n• Rough carved edges and imperfections\n\nENVIRONMENT:\n• Background also carved from foam\n• Objects appear lightweight and sculpted\n\nSTYLE:\n• Handmade sculptural aesthetic\n• Slightly rough and imperfect\n\nLIGHTING:\n• Soft shadows\n• Minimal reflections (matte surface)\n\nSCENE COMPOSITION:\n• Maintain original structure but simplify geometry",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "FINAL RESULT:\nA handcrafted foam sculpture version of the scene where all elements appear carved from styrofoam, with rough textures, visible tool marks, and simplified forms while preserving the subject's identity."
+  },
+  {
     "name": "FOLLOW THE YELLOW BRICK ROAD",
     "category": [
       "MOVIES",
@@ -10849,6 +10875,19 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "FRACTAL RECURSION",
+    "category": [
+      "FRACTAL",
+      "ABSTRACT",
+      "SCI-FI",
+      "IMMERSIVE"
+    ],
+    "message": "Take a picture and transform the image into a single continuous fractal recursion where the entire scene is composed of repeating, self-similar structures at every scale.\n\nMASTER PROMPT OVERRIDE LOGIC (CRITICAL):\n• If an external master prompt specifies a fractal type or recursion style, USE that instead\n• If no override is provided, use natural recursive self-similarity\n\nCRITICAL OUTPUT RULES (NON-NEGOTIABLE):\n• OUTPUT ONLY ONE SINGLE IMAGE\n• DO NOT create multiple panels, frames, or separate images\n• DO NOT show zoomed-in cutaways or step-by-step recursion views\n• DO NOT include diagrams, labels, or overlays\n• The entire effect must exist within ONE seamless image\n\nCORE CONCEPT (CRITICAL):\n• The image must exhibit self-similarity at multiple scales\n• Larger structures are made of smaller versions of themselves\n• Patterns repeat infinitely inward\n\nRECURSION BEHAVIOR:\n• The subject and environment are recursively constructed from smaller versions of their own shapes\n• Each level of detail resembles the overall structure\n• Recursion must feel natural and continuous, not tiled or copy-pasted\n\nSUBJECT HANDLING:\n• Subject remains recognizable at first glance\n• On closer inspection, the subject is made of smaller repeating forms of itself or related shapes\n\nVISUAL STRUCTURE:\n• Fractal-like branching, spirals, or recursive geometry\n• Patterns emerge within patterns within patterns\n• No hard transitions between levels\n\nSTYLE:\n• Organic fractal realism or geometric fractal abstraction\n• Smooth blending between macro and micro levels\n\nLIGHTING:\n• Consistent across all scales\n• Subtle glow or energy effects may appear in deeper recursion levels\n\nSCENE COMPOSITION:\n• Maintain the original layout at the largest scale\n• Embed recursive structures within all surfaces and forms\n\nIMMERSION:\n• The viewer should feel like they can zoom infinitely and always find similar structures repeating\n• Every zoom level reveals meaningful new detail without breaking continuity",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "FINAL RESULT:\nA single seamless image where the entire scene is built from recursive, self-similar patterns. The subject remains recognizable at first, but upon closer inspection, everything is composed of repeating structures that echo the whole image at smaller scales. There must be NO panels, NO separate zoom views, and NO cutaways—only one continuous fractal reality with infinite visual depth."
   },
   {
     "name": "FREAKSHOW POSTER",
@@ -13878,6 +13917,19 @@
     "additionalInstructions": "IMPORTANT RESTRICTIONS:\n• Do not reproduce copyrighted logos, album artwork, or official branding\n• Maintain photorealistic production quality\n• Avoid obvious parody or comedy unless explicitly requested\n• Subject must remain clearly recognizable as themselves\n• Do not simply paste subject's face onto the original video - fully transform them into the artist\n\nFINAL RESULT:\nA powerful, instantly recognizable still frame from the selected iconic music video with the subject as the lead performer holding the EXACT same instruments/props as the original artist, surrounded by authentic band members or backup performers. The subject appears as the undisputed star of the performance, positioned and styled as the main vocalist/performer. The scene captures a signature moment from that specific video with era-accurate production quality, professional cinematography, correct instruments/props, and the collaborative energy of a real music video shoot. Optional song title overlay at bottom corner for context."
   },
   {
+  "name": "INFINITE ZOOM",
+    "category": [
+      "SCI-FI",
+      "DETAIL",
+      "FRACTAL",
+      "IMMERSIVE"
+    ],
+    "message": "Take a picture and transform the image into a single, ultra-high-detail scene where increasing levels of detail are embedded within the same image, allowing the viewer to zoom in and continuously discover deeper layers of structure down to microscopic and atomic scales.\n\nMASTER PROMPT OVERRIDE LOGIC (CRITICAL):\n• If an external master prompt specifies zoom depth or focus, USE that instead\n• If no override is provided, extend detail down to atomic level\n\nCRITICAL OUTPUT RULES (NON-NEGOTIABLE):\n• OUTPUT ONLY ONE SINGLE IMAGE\n• DO NOT create multiple panels, frames, or separate images\n• DO NOT show zoomed-in cutaways, side-by-side comparisons, or step-by-step scales\n• DO NOT include diagrams, labels, or scientific callouts\n• The entire effect must exist within ONE continuous image\n\nCORE CONCEPT (CRITICAL):\n• The image must appear normal at first glance\n• As the viewer zooms in, new detail naturally emerges within the same image\n• Detail is not duplicated—it is progressively revealed\n\nDETAIL EMBEDDING (CRITICAL):\n• Surface textures must contain hidden micro-detail\n• Micro-detail must contain deeper structures (fibers → cells → molecules → atoms)\n• Each level must feel physically connected to the previous level\n• NO visible “cut transitions” between levels\n\nSUBJECT HANDLING:\n• Subject remains fully recognizable at normal viewing distance\n• Fine details (skin, fabric, surfaces) contain embedded deeper structures\n\nVISUAL BEHAVIOR:\n• Looks like a normal high-quality image at first\n• Zooming reveals:\n  - Ultra-fine textures\n  - Cellular patterns embedded in surfaces\n  - Molecular-like structures within those patterns\n  - Atomic/energy-level structures at extreme zoom\n\nSTYLE:\n• Hyper-realistic at macro level\n• Scientifically inspired at micro levels\n• Slight artistic interpretation allowed ONLY at atomic scale\n\nLIGHTING:\n• Natural at normal scale\n• Subtle glow or energy effects ONLY at extreme microscopic levels\n\nSCENE COMPOSITION:\n• Maintain original composition completely\n• No overlays, no added frames, no UI elements\n\nIMMERSION:\n• The viewer should feel like the image has infinite depth\n• The deeper you zoom, the more detail exists—without ever breaking the single image illusion",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "FINAL RESULT:\nA single, seamless image that looks normal at first but contains extreme embedded detail at every level. As the viewer zooms in, increasingly complex structures are revealed (micro, cellular, molecular, atomic), all within the SAME image. There must be NO multi-panel layouts, NO cutaways, and NO separate zoom views—only one continuous, deeply detailed image."
+  },
+  {
     "name": "INK BLEED",
     "category": [
       "ART",
@@ -14686,6 +14738,19 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "LIQUID METAL",
+    "category": [
+      "MATERIAL",
+      "SCI-FI",
+      "TRANSFORMATION",
+      "REFLECTIVE"
+    ],
+    "message": "Take a picture and transform the subject and environment into a flowing liquid metal form, as if everything is made of reflective molten chrome.\n\nMASTER PROMPT OVERRIDE LOGIC (CRITICAL):\n• If an external master prompt specifies a material type, USE that instead of liquid metal\n• If no override is provided, use liquid metal transformation\n\nCORE CONCEPT (CRITICAL):\n• Entire scene becomes fluid metallic material\n• Surfaces appear melted, flowing, and reshaping\n• Reflectivity is extremely high (mirror-like chrome)\n\nSUBJECT HANDLING:\n• Preserve recognizable facial features and structure\n• Blend edges slightly to feel fluid\n• Subject appears partially morphing or reforming\n\nMATERIAL PROPERTIES:\n• Smooth, reflective chrome finish\n• Rippling and flowing surface motion frozen in time\n• Distorted reflections of the environment\n\nENVIRONMENT:\n• All objects converted into liquid metal equivalents\n• Surfaces ripple, drip, or stretch naturally\n\nLIGHTING:\n• Strong reflections and highlights\n• High contrast between light and shadow\n• Metallic shine dominates scene\n\nSTYLE:\n• Sci-fi realism\n• Polished, cinematic look\n\nSCENE COMPOSITION:\n• Maintain original layout\n• Emphasize fluid continuity across all elements",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "FINAL RESULT:\nA hyper-realistic liquid metal scene where everything appears made of reflective chrome, with fluid motion frozen mid-transformation. The subject remains recognizable but fully integrated into a seamless metallic environment."
   },
   {
     "name": "LITE-BRITE",
@@ -22081,12 +22146,12 @@
     "category": [
       "ILLUSION",
       "INFINITE",
-      "FRACTAL"
+      "RECURSION"
     ],
-    "message": "Take a picture and transform the image into infinite visual recursion. The image contains itself within itself.",
+    "message": "Take a picture and transform the image into a visual recursion effect where the image contains smaller versions of itself repeating inward infinitely.\n\nCORE CONCEPT (CRITICAL):\n• The image appears inside itself repeatedly\n• Each iteration becomes smaller and continues inward\n\nRECURSION STYLE:\n• Frame-within-frame or scene-within-scene\n• Perspective may create a tunnel or mirror effect\n\nSUBJECT HANDLING:\n• Subject remains recognizable at each level\n• Each recursive layer preserves the full composition\n\nSTYLE:\n• Clean, optical illusion style\n• Clear separation between recursion layers\n\nSCENE COMPOSITION:\n• Strong central focus for recursion\n• Depth emphasized through repetition",
     "options": [],
     "randomizeOptions": false,
-    "additionalInstructions": ""
+    "additionalInstructions": "FINAL RESULT:\nA visually clear recursive image where the entire scene repeats within itself in smaller and smaller iterations, creating a tunnel-like or infinite mirror effect."
   },
   {
     "name": "REGENCYCORE",
