@@ -4296,6 +4296,18 @@
     "additionalInstructions": ""
   },
   {
+    "name": "CHEMICAL STRUCTURE",
+    "category": [
+       "SCIENCE",
+       "ABSTRACT",
+       "STRUCTURAL"
+    ],
+    "message": "Take a picture and reconstruct the entire scene using chemical and molecular structures.\n\nMASTER PROMPT OVERRIDE LOGIC:\n• If an external master prompt specifies molecule type, USE that\n\nCRITICAL OUTPUT RULES:\n• OUTPUT ONLY ONE IMAGE\n• DO NOT overlay molecules on top of objects\n\nCORE CONCEPT:\n• Objects must be BUILT from molecular structures\n• Structures define the shape of the scene.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "FINAL RESULT:\nA cohesive image where all elements are constructed from integrated chemical structures forming the scene itself."
+  },
+  {
     "name": "CHIAROSCURO",
     "category": [
       "ART", 
@@ -8238,6 +8250,18 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "EXCLUSIONS:\n• No parody\n• No invented facts\n• No speculation beyond established knowledge\n\nCOMPOSITION & FRAME:\n• The FULL encyclopedia page must be visible\n• All columns, images, captions, and text fully in frame\n• All four corners visible\n• No cropping, zooming, or partial views\n\nSTYLE:\n• Academic, neutral, professional\n• Museum or reference-book quality\n\nFINAL RESULT:\nThe image should appear as a complete, real encyclopedia page about a single object from the photo, presenting accurate factual information with a formal printed layout and a reference image derived from the original picture."
+  },
+  {
+    "name": "ENERGY FIELD",
+    "category": [
+      "SCI-FI",
+      "ABSTRACT",
+      "IMMERSIVE"
+    ],
+    "message": "Take a picture and reveal the invisible energy fields flowing through all elements in the scene.\n\nMASTER PROMPT OVERRIDE LOGIC:\n• If an external master prompt specifies energy type, USE that\n\nCRITICAL OUTPUT RULES:\n• OUTPUT ONLY ONE IMAGE\n• DO NOT create random glowing effects without structure\n\nCORE CONCEPT:\n• Everything emits and interacts through energy\n• Energy flows must follow logical paths\n\nVISUAL BEHAVIOR:\n• Fields appear as waves, currents, or lines\n• Interactions between objects must be visible.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "FINAL RESULT:\nA single dynamic image showing structured energy fields flowing through the entire scene."
   },
   {
     "name": "ENVIRONMENTAL FUSION",
@@ -13917,17 +13941,17 @@
     "additionalInstructions": "IMPORTANT RESTRICTIONS:\n• Do not reproduce copyrighted logos, album artwork, or official branding\n• Maintain photorealistic production quality\n• Avoid obvious parody or comedy unless explicitly requested\n• Subject must remain clearly recognizable as themselves\n• Do not simply paste subject's face onto the original video - fully transform them into the artist\n\nFINAL RESULT:\nA powerful, instantly recognizable still frame from the selected iconic music video with the subject as the lead performer holding the EXACT same instruments/props as the original artist, surrounded by authentic band members or backup performers. The subject appears as the undisputed star of the performance, positioned and styled as the main vocalist/performer. The scene captures a signature moment from that specific video with era-accurate production quality, professional cinematography, correct instruments/props, and the collaborative energy of a real music video shoot. Optional song title overlay at bottom corner for context."
   },
   {
-  "name": "INFINITE ZOOM",
+    "name": "INFINITE ZOOM",
     "category": [
       "SCI-FI",
       "DETAIL",
       "FRACTAL",
       "IMMERSIVE"
     ],
-    "message": "Take a picture and transform the image into a single, ultra-high-detail scene where increasing levels of detail are embedded within the same image, allowing the viewer to zoom in and continuously discover deeper layers of structure down to microscopic and atomic scales.\n\nMASTER PROMPT OVERRIDE LOGIC (CRITICAL):\n• If an external master prompt specifies zoom depth or focus, USE that instead\n• If no override is provided, extend detail down to atomic level\n\nCRITICAL OUTPUT RULES (NON-NEGOTIABLE):\n• OUTPUT ONLY ONE SINGLE IMAGE\n• DO NOT create multiple panels, frames, or separate images\n• DO NOT show zoomed-in cutaways, side-by-side comparisons, or step-by-step scales\n• DO NOT include diagrams, labels, or scientific callouts\n• The entire effect must exist within ONE continuous image\n\nCORE CONCEPT (CRITICAL):\n• The image must appear normal at first glance\n• As the viewer zooms in, new detail naturally emerges within the same image\n• Detail is not duplicated—it is progressively revealed\n\nDETAIL EMBEDDING (CRITICAL):\n• Surface textures must contain hidden micro-detail\n• Micro-detail must contain deeper structures (fibers → cells → molecules → atoms)\n• Each level must feel physically connected to the previous level\n• NO visible “cut transitions” between levels\n\nSUBJECT HANDLING:\n• Subject remains fully recognizable at normal viewing distance\n• Fine details (skin, fabric, surfaces) contain embedded deeper structures\n\nVISUAL BEHAVIOR:\n• Looks like a normal high-quality image at first\n• Zooming reveals:\n  - Ultra-fine textures\n  - Cellular patterns embedded in surfaces\n  - Molecular-like structures within those patterns\n  - Atomic/energy-level structures at extreme zoom\n\nSTYLE:\n• Hyper-realistic at macro level\n• Scientifically inspired at micro levels\n• Slight artistic interpretation allowed ONLY at atomic scale\n\nLIGHTING:\n• Natural at normal scale\n• Subtle glow or energy effects ONLY at extreme microscopic levels\n\nSCENE COMPOSITION:\n• Maintain original composition completely\n• No overlays, no added frames, no UI elements\n\nIMMERSION:\n• The viewer should feel like the image has infinite depth\n• The deeper you zoom, the more detail exists—without ever breaking the single image illusion",
+    "message": "Take a picture and transform the image into a single ultra-high-detail scene where deeper levels of structure are HIDDEN within the image and only become visible upon zooming, not at normal viewing distance.\n\nMASTER PROMPT OVERRIDE LOGIC (CRITICAL):\n• If an external master prompt specifies zoom depth or focus, USE that instead\n• If no override is provided, extend detail conceptually down to microscopic and atomic levels\n\nCRITICAL OUTPUT RULES (NON-NEGOTIABLE):\n• OUTPUT ONLY ONE SINGLE IMAGE\n• DO NOT create multiple panels, frames, or separate images\n• DO NOT show zoomed-in cutaways, side-by-side comparisons, or step-by-step scales\n• DO NOT include diagrams, labels, atoms, molecules, or scientific visuals at normal viewing distance\n• The entire effect must exist within ONE continuous, natural-looking image\n\nCORE CONCEPT (CRITICAL):\n• The image must look completely normal at first glance\n• Hidden detail is embedded within textures—not visibly separated\n• Detail must be DISCOVERED only when zooming, not presented upfront\n\nDETAIL EMBEDDING (CRITICAL):\n• Surface textures (skin, fabric, walls, objects) must contain extremely fine, realistic micro-detail\n• Micro-detail must feel like natural material structure (pores, fibers, grain, imperfections)\n• At deeper levels, textures subtly imply finer structure—but NEVER explicitly show atoms or diagrams\n• NO floating atomic symbols, NO stylized particles, NO visible scientific overlays\n\nPROGRESSIVE DETAIL LOGIC:\n• Level 1 (normal view): realistic image, nothing unusual\n• Level 2 (zoom): extremely fine textures emerge\n• Level 3 (deep zoom): complex micro-patterns appear within materials\n• Level 4 (extreme zoom): highly intricate, almost abstract structural detail\n• Each level must feel like a natural continuation of the previous—not a switch in style\n\nSUBJECT HANDLING:\n• Subject must remain fully recognizable at normal scale\n• Facial features, clothing, and environment must appear natural\n• All enhanced detail is embedded within surfaces, not added as visible elements\n\nSTYLE:\n• Photorealistic at macro level\n• Hyper-detailed realism at micro levels\n• Abstract complexity allowed ONLY at the deepest implied level—and must remain subtle\n\nLIGHTING:\n• Fully natural lighting\n• No glowing particles or artificial “energy” effects unless extremely subtle at deep levels\n\nSCENE COMPOSITION:\n• Preserve original composition exactly\n• No overlays, no UI, no diagrams\n\nIMMERSION:\n• The viewer should feel the image has infinite resolution\n• Zooming reveals more detail, not new objects\n• The illusion must never break into separate visual layers",
     "options": [],
     "randomizeOptions": false,
-    "additionalInstructions": "FINAL RESULT:\nA single, seamless image that looks normal at first but contains extreme embedded detail at every level. As the viewer zooms in, increasingly complex structures are revealed (micro, cellular, molecular, atomic), all within the SAME image. There must be NO multi-panel layouts, NO cutaways, and NO separate zoom views—only one continuous, deeply detailed image."
+    "additionalInstructions": "FINAL RESULT:\nA single seamless image that appears completely normal at first glance but contains deeply embedded detail within its textures. As the viewer zooms in, increasingly complex and fine structures are revealed naturally within the same image. There must be NO visible atoms, NO scientific diagrams, NO overlays, and NO multi-image layouts—only one continuous image with hidden depth."
   },
   {
     "name": "INK BLEED",
@@ -15547,6 +15571,18 @@
     "additionalInstructions": "IMPORTANT:\n• Do not make the subject into a historical character\n• Avoid parody or satire\n• Avoid excessive, unrealistic gold overload\n• Maintain realism\n• Everything must feel plausible for the wealthiest individual alive today\n\nFINAL RESULT:\nThe final image should look like a high-end luxury magazine feature showing the subject as the wealthiest person in the modern world, surrounded by the finest architecture, materials, fashion, and objects available anywhere on Earth."
   },
   {
+    "name": "MAP PROJECTION",
+    "category": [
+      "CARTOGRAPHY",
+      "DESIGN",
+      "CONCEPTUAL"
+    ],
+    "message": "Take a picture and transform the entire scene into a detailed cartographic map representation.\n\nMASTER PROMPT OVERRIDE LOGIC:\n• If an external master prompt specifies map type, USE that\n\nCRITICAL OUTPUT RULES:\n• OUTPUT ONLY ONE IMAGE\n• DO NOT create UI overlays or external legends\n\nCORE CONCEPT:\n• The environment becomes a stylized map\n• Terrain, objects, and structures are represented cartographically\n\nDETAIL REQUIREMENTS:\n• Use topographic lines, map textures, and stylized labeling\n• Labels must be subtle and integrated—not dominant.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "FINAL RESULT:\nA single image rendered as a cohesive cartographic representation of the original scene."
+  },
+  {
     "name": "MARATHON",
     "category": [
       "CINEMATIC",
@@ -15737,6 +15773,18 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "MASK REVEAL",
+    "category": [
+      "PSYCHOLOGICAL",
+      "SURREAL",
+      "PORTRAIT"
+    ],
+    "message": "Take a picture and reveal hidden identities of the subject through layered masks.\n\nMASTER PROMPT OVERRIDE LOGIC:\n• If an external master prompt specifies identity types, USE that\n\nCRITICAL OUTPUT RULES:\n• OUTPUT ONLY ONE IMAGE\n• DO NOT create collage or separate faces\n\nCORE CONCEPT:\n• Masks peel away naturally from the subject\n• Layers must be physically integrated.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "FINAL RESULT:\nA single seamless image where multiple identities are revealed beneath the subject’s surface through natural mask-like layers."
   },
   {
     "name": "MATRIMONY",
@@ -17175,6 +17223,18 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "MOSAIC MICRO-IMAGES",
+    "category": [
+      "DETAIL",
+      "COMPOSITION",
+      "ARTISTIC"
+    ],
+    "message": "Take a picture and reconstruct the entire image using thousands of tiny images that seamlessly form the larger scene.\n\nMASTER PROMPT OVERRIDE LOGIC (CRITICAL):\n• If an external master prompt specifies mosaic theme, USE that instead\n\nCRITICAL OUTPUT RULES:\n• OUTPUT ONLY ONE IMAGE\n• DO NOT create visible grid lines or borders\n• DO NOT create repeated identical tiles\n\nCORE CONCEPT:\n• The image appears normal at a distance\n• Up close, it is composed of unique mini-images\n\nDETAIL REQUIREMENTS:\n• Each micro-image must be distinct and meaningful\n• Tiles must blend seamlessly into the full composition\n\nSUBJECT HANDLING:\n• Subject must remain recognizable at full scale.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "FINAL RESULT:\nA seamless single image composed of thousands of unique micro-images forming the full scene without visible tiling artifacts."
   },
   {
     "name": "MOTION BLUR",
@@ -22154,6 +22214,18 @@
     "additionalInstructions": "FINAL RESULT:\nA visually clear recursive image where the entire scene repeats within itself in smaller and smaller iterations, creating a tunnel-like or infinite mirror effect."
   },
   {
+    "name": "REFLECTION WORLD",
+    "category": [
+      "ILLUSION", 
+      "SURREAL",
+      "IMMERSIVE"
+    ],
+    "message": "Take a picture and transform the scene so that EVERYTHING is only visible through reflections. There must be no direct view of any object—reality exists only through reflective surfaces.\n\nMASTER PROMPT OVERRIDE LOGIC (CRITICAL):\n• If an external master prompt specifies reflection type or material, USE that instead\n\nCRITICAL OUTPUT RULES (NON-NEGOTIABLE):\n• OUTPUT ONLY ONE SINGLE IMAGE\n• DO NOT create panels, overlays, or split compositions\n• DO NOT show any object directly—everything must be seen via reflection\n\nCORE CONCEPT (CRITICAL):\n• The entire scene is perceived through mirrors, glass, chrome, or reflective materials\n• No direct surfaces exist\n\nREFLECTION BEHAVIOR:\n• Reflections must obey realistic angles and distortion\n• Multiple reflections may show different perspectives\n\nSUBJECT HANDLING:\n• Subject must ONLY appear through reflections\n• No direct visible version of the subject\n\nSTYLE:\n• Highly realistic reflections\n• Clean, seamless integration.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "FINAL RESULT:\nA single cohesive image where the entire scene is only visible through reflections, creating a surreal but physically believable mirrored reality."
+  },
+  {
     "name": "REGENCYCORE",
     "category": [
       "HISTORICAL",
@@ -26170,6 +26242,20 @@
     "additionalInstructions": "FINAL RESULT:\nA fully transformed Thomas the Tank Engine where the subject’s identity is sculpted into the face as a smooth, molded, toy-like surface. The result must resemble a professionally crafted model where the face is part of the structure, not an applied image."
   },
   {
+    "name": "THOUGHT BUBBLE REALITY",
+    "category": [
+      "HUMOR",
+      "SURREAL",
+      "DUAL REALITY",
+      "CREATIVE",
+      "SCENE TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform the scene to reveal the subject’s inner thoughts as a separate visual reality.\n\nMASTER PROMPT OVERRIDE LOGIC (CRITICAL):\n• If an external master prompt specifies a thought theme, USE that instead of inferred ideas\n\nCORE CONCEPT (CRITICAL):\n• The image must show two layers:\n  – The real-world scene\n  – The subject’s imagined or desired reality\n\nSTRUCTURE:\n• Add a thought bubble, aura, or visual separation\n• The thought world must contrast or exaggerate the real scene\n\nTHOUGHT WORLD GENERATION:\n• Derive ideas from subject expression, setting, and objects\n• The thought version may be:\n  – Fantastical\n  – Dramatic\n  – Comedic\n  – Absurdly exaggerated\n\nSUBJECT HANDLING:\n• Subject remains recognizable in both layers\n• The “thought version” may alter clothing, environment, or role\n\nENVIRONMENT:\n• Real world remains grounded\n• Thought world can break physics, scale, or logic\n\nSTYLE:\n• Clear visual distinction between reality and imagination\n• Thought bubble may be comic-style or seamlessly blended\n\nTONE:\n• Playful, revealing, exaggerated, or ironic",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "FINAL RESULT:\nA dual-layer image showing the real-world scene alongside the subject’s inner imagined reality. The contrast should be clear, creative, and driven by observations from the original image, resulting in a humorous or insightful transformation."
+  },
+  {
     "name": "THREE WISE MONKEYS",
     "category": [
       "HUMOR",
@@ -26181,20 +26267,6 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "FINAL RESULT:\nThe image should read instantly as a humorous, symbolic 'Three Wise' interpretation using the subject themselves, clearly showing all three concepts without ambiguity."
-  },
-  {
-    "name": "THOUGHT BUBBLE REALITY",
-  "category": [
-      "HUMOR",
-      "SURREAL",
-      "DUAL REALITY",
-      "CREATIVE",
-      "SCENE TRANSFORMATION"
-    ],
-    "message": "Take a picture and transform the scene to reveal the subject’s inner thoughts as a separate visual reality.\n\nMASTER PROMPT OVERRIDE LOGIC (CRITICAL):\n• If an external master prompt specifies a thought theme, USE that instead of inferred ideas\n\nCORE CONCEPT (CRITICAL):\n• The image must show two layers:\n  – The real-world scene\n  – The subject’s imagined or desired reality\n\nSTRUCTURE:\n• Add a thought bubble, aura, or visual separation\n• The thought world must contrast or exaggerate the real scene\n\nTHOUGHT WORLD GENERATION:\n• Derive ideas from subject expression, setting, and objects\n• The thought version may be:\n  – Fantastical\n  – Dramatic\n  – Comedic\n  – Absurdly exaggerated\n\nSUBJECT HANDLING:\n• Subject remains recognizable in both layers\n• The “thought version” may alter clothing, environment, or role\n\nENVIRONMENT:\n• Real world remains grounded\n• Thought world can break physics, scale, or logic\n\nSTYLE:\n• Clear visual distinction between reality and imagination\n• Thought bubble may be comic-style or seamlessly blended\n\nTONE:\n• Playful, revealing, exaggerated, or ironic",
-    "options": [],
-    "randomizeOptions": false,
-    "additionalInstructions": "FINAL RESULT:\nA dual-layer image showing the real-world scene alongside the subject’s inner imagined reality. The contrast should be clear, creative, and driven by observations from the original image, resulting in a humorous or insightful transformation."
   },
   {
     "name": "TIBETAN THANGKA",
