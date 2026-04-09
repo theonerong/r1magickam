@@ -6344,38 +6344,23 @@
     "additionalInstructions": ""
   },
   {
-    "name": "COOKING A RECIPE",
-    "category": [
-      "TRANSFORMATION",
-      "CREATIVE",
-      "LOGIC",
-      "IMMERSIVE"
-    ],
-    "message": "Take a picture containing two primary subjects and transform them into a SINGLE unified result that represents what those two subjects would create together, as if they were ingredients in a recipe.\n\nMASTER PROMPT OVERRIDE LOGIC (CRITICAL):\n• If an external master prompt specifies the result or cooking level, USE that instead of the selected option\n\nCRITICAL OUTPUT RULES (NON-NEGOTIABLE):\n• OUTPUT ONLY ONE SINGLE RESULT\n• DO NOT show both original subjects separately\n• DO NOT blend or overlay subjects\n• The result MUST be a NEW creation\n\nCORE CONCEPT (CRITICAL):\n• The two subjects are treated as ingredients\n• The result must feel like a logical or imaginative outcome of combining them\n• The selected cooking option MUST control the stage, complexity, and nature of the result\n\nCOMBINATION RULES:\n• HUMAN + HUMAN → genetic result (never split faces)\n• FOOD + FOOD → real dish\n• OBJECT + OBJECT → functional invention\n• NATURE → growth result\n• MIXED → logical or symbolic fusion\n\nENFORCEMENT:\n• The output MUST clearly reflect the selected cooking level\n• If the cooking level is not obvious, the result is incorrect",
-    "options": [
-      {
-        "id": "001",
-        "text": "Simple cooking — produce ONLY an early-stage result (infant, sprout, crude prototype, raw or minimally prepared dish). Must feel incomplete or just beginning."
-      },
-      {
-        "id": "002",
-        "text": "Moderate cooking — produce a mid-stage result (child/teen, growing plant, functional but simple invention, standard cooked dish)."
-      },
-      {
-        "id": "003",
-        "text": "Complex cooking — produce a fully completed and realistic result (adult, full-grown plant, polished invention, finished high-quality dish)."
-      },
-      {
-        "id": "004",
-        "text": "Elaborate cooking — produce an enhanced, premium, or stylized version of the completed result (idealized human, gourmet dish, luxury or futuristic invention)."
-      },
-      {
-        "id": "005",
-        "text": "Chaotic cooking — produce a visibly exaggerated, surreal, or absurd version of the result while still reflecting both inputs (mutation, impossible structure, bizarre invention, unstable or explosive dish)."
-      }
-    ],
-    "randomizeOptions": false,
-    "additionalInstructions": "FINAL RESULT:\nA single cohesive image showing the final recipe result. The cooking level must clearly determine the stage and nature of the result. The output must NOT look like a blend or overlay, but a completely new creation."
+  "name": "COOKING A RECIPE",
+  "category": [
+    "TRANSFORMATION",
+    "CREATIVE",
+    "LOGIC",
+    "IMMERSIVE"
+  ],
+  "message": "Take a picture containing two primary subjects and transform them into a SINGLE unified result that represents what those two subjects would create together, as if they were ingredients in a recipe.\n\nMASTER PROMPT OVERRIDE LOGIC (CRITICAL):\n• If an external master prompt specifies the fusion result or cooking level, USE that instead\n\nCRITICAL OUTPUT RULES (NON-NEGOTIABLE):\n• OUTPUT ONLY ONE SINGLE RESULT\n• DO NOT show both original subjects separately\n• DO NOT blend or overlay subjects\n• The result MUST be a NEW creation\n\nCORE CONCEPT (CRITICAL):\n• The two subjects are ingredients\n• The result is the FINAL product of a 'recipe'\n• The cooking level MUST drastically change the TYPE of result\n\nCOOKING LEVEL ENFORCEMENT (STRICT):\n• The selected cooking level MUST completely change the stage of the result\n• Each level represents a DIFFERENT POINT in a transformation timeline\n\nCOOKING LEVEL DEFINITIONS (MANDATORY):\n\n• SIMPLE COOKING:\n  - Show ONLY the earliest possible stage\n  - Examples:\n    • Humans → baby/infant\n    • Seed + water → sprout\n    • Objects → crude prototype\n    • Food → raw or minimally prepared dish\n  - MUST feel incomplete or just started\n\n• MODERATE COOKING:\n  - Show a mid-development stage\n  - Examples:\n    • Humans → child/teen\n    • Plant → growing plant\n    • Objects → working but simple invention\n    • Food → cooked but basic meal\n\n• COMPLEX COOKING:\n  - Show FULLY COMPLETED, realistic result\n  - Examples:\n    • Humans → adult\n    • Plant → fully grown tree\n    • Objects → polished, functional product\n    • Food → finished, high-quality dish\n\n• ELABORATE COOKING:\n  - Same as complex BUT upgraded to premium/stylized\n  - Examples:\n    • Humans → idealized/perfected version\n    • Food → gourmet plated dish\n    • Objects → luxury or futuristic version\n\n• CHAOTIC COOKING:\n  - MUST BREAK realism in a visible way\n  - MUST exaggerate the result\n  - Examples:\n    • Humans → mutated hybrid or surreal form\n    • Plant → impossible oversized or bizarre structure\n    • Objects → absurd invention with exaggerated features\n    • Food → explosive, melting, or impossible dish\n\nCOMBINATION RULES:\n\n• HUMAN + HUMAN:\n  - MUST follow age progression based on cooking level\n  - NEVER show two faces merged — must be genetic result\n\n• FOOD + FOOD:\n  - MUST result in a believable dish\n  - Cooking level changes preparation complexity\n\n• OBJECT + OBJECT:\n  - MUST create a functional invention\n  - Cooking level changes sophistication\n\n• NATURE:\n  - MUST follow natural growth stages\n\n• MIXED TYPES:\n  - MUST produce a logical or symbolic result\n\nENFORCEMENT RULE:\n• If the output does not clearly match the cooking level stage, it is WRONG and must be corrected\n\nSTYLE:\n• Keep visually consistent and believable unless chaotic is selected\n\nSCENE:\n• Focus entirely on the final result\n",
+  "options": [
+    { "id": "001", "text": "Simple cooking" },
+    { "id": "002", "text": "Moderate cooking" },
+    { "id": "003", "text": "Complex cooking" },
+    { "id": "004", "text": "Elaborate cooking" },
+    { "id": "005", "text": "Chaotic cooking" }
+  ],
+  "randomizeOptions": false,
+  "additionalInstructions": "FINAL RESULT:\nA single image showing ONLY the final recipe result. The result must clearly reflect the cooking level as a stage of development (early → mid → complete → premium → chaotic). If the stage is not obvious, the result is incorrect."
   },
   {
     "name": "COPY-CAT",
