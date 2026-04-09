@@ -6359,7 +6359,7 @@
     { "id": "004", "text": "Elaborate cooking" },
     { "id": "005", "text": "Chaotic cooking" }
   ],
-  "randomizeOptions": false,
+  "randomizeOptions": true,
   "additionalInstructions": "FINAL RESULT:\nA single image showing ONLY the final recipe result. The result must clearly reflect the cooking level as a stage of development (early → mid → complete → premium → chaotic). If the stage is not obvious, the result is incorrect."
   },
   {
