@@ -6351,31 +6351,31 @@
       "LOGIC",
       "IMMERSIVE"
     ],
-    "message": "Take a picture containing two primary subjects and transform them into a SINGLE unified result that represents what those two subjects would create together, as if they were ingredients in a recipe.\n\nMASTER PROMPT OVERRIDE LOGIC (CRITICAL):\n• If an external master prompt specifies the fusion result or cooking level, USE that instead of the selected option\n• If no override is provided, use the selected option as the cooking intensity\n\nCRITICAL OUTPUT RULES (NON-NEGOTIABLE):\n• OUTPUT ONLY ONE SINGLE IMAGE\n• DO NOT create side-by-side comparisons or before/after panels\n• DO NOT simply blend or merge the two subjects visually\n• DO NOT overlay one subject on top of the other\n\nCORE CONCEPT (CRITICAL):\n• The two subjects are treated as ingredients in a recipe\n• The result must be a NEW creation—not a mashup\n• The output must feel like a logical or imaginative outcome of combining the two inputs\n\nRECIPE LOGIC (VERY IMPORTANT):\n• Identify BOTH primary subjects clearly\n• Determine how they would combine if treated as ingredients\n• Produce a result that reflects their combined purpose, traits, or meaning\n\nCOMBINATION RULES BY TYPE:\n\n• HUMAN + HUMAN:\n  - Create a child or descendant that naturally inherits traits from both\n  - Facial features must be genetically blended—not split or stitched\n\n• FOOD + FOOD:\n  - Create a realistic dish made from those ingredients\n  - Must resemble actual cuisine, not abstract blending\n\n• OBJECT + OBJECT:\n  - Create a functional or conceptual invention combining both purposes\n  - Must feel like a believable or imaginative product\n\n• NATURE ELEMENTS (seed, water, etc.):\n  - Show natural growth or environmental result\n\n• MIXED TYPES:\n  - Create a creative but logical outcome combining their meanings or uses\n\nCOOKING BEHAVIOR:\n• The result must be ONE cohesive subject\n• No visible remnants of the original two separate items\n• The output must feel intentional—not accidental\n\nSUBJECT HANDLING:\n• Preserve recognizable traits in the final result\n• Avoid distortion or grotesque blending unless required by option\n\nSTYLE:\n• Realistic or stylized depending on cooking level\n• Clean, believable integration\n\nSCENE COMPOSITION:\n• Focus on the final result as the main subject\n• Background may support the context of creation\n",
+    "message": "Take a picture containing two primary subjects and transform them into a SINGLE unified result that represents what those two subjects would create together, as if they were ingredients in a recipe.\n\nMASTER PROMPT OVERRIDE LOGIC (CRITICAL):\n• If an external master prompt specifies the result or cooking level, USE that instead of the selected option\n\nCRITICAL OUTPUT RULES (NON-NEGOTIABLE):\n• OUTPUT ONLY ONE SINGLE RESULT\n• DO NOT show both original subjects separately\n• DO NOT blend or overlay subjects\n• The result MUST be a NEW creation\n\nCORE CONCEPT (CRITICAL):\n• The two subjects are treated as ingredients\n• The result must feel like a logical or imaginative outcome of combining them\n• The selected cooking option MUST control the stage, complexity, and nature of the result\n\nCOMBINATION RULES:\n• HUMAN + HUMAN → genetic result (never split faces)\n• FOOD + FOOD → real dish\n• OBJECT + OBJECT → functional invention\n• NATURE → growth result\n• MIXED → logical or symbolic fusion\n\nENFORCEMENT:\n• The output MUST clearly reflect the selected cooking level\n• If the cooking level is not obvious, the result is incorrect",
     "options": [
       {
         "id": "001",
-        "text": "Simple cooking — a basic and early-stage result (e.g., baby, simple dish, sprout, basic invention)"
+        "text": "Simple cooking — produce ONLY an early-stage result (infant, sprout, crude prototype, raw or minimally prepared dish). Must feel incomplete or just beginning."
       },
       {
         "id": "002",
-        "text": "Moderate cooking — a more developed result (e.g., young child, prepared dish, growing plant, refined invention)"
+        "text": "Moderate cooking — produce a mid-stage result (child/teen, growing plant, functional but simple invention, standard cooked dish)."
       },
       {
         "id": "003",
-        "text": "Complex cooking — a fully realized and advanced result (e.g., mature person, gourmet dish, full-grown plant, complete invention)"
+        "text": "Complex cooking — produce a fully completed and realistic result (adult, full-grown plant, polished invention, finished high-quality dish)."
       },
       {
         "id": "004",
-        "text": "Elaborate cooking — a highly detailed, stylized, or premium version of the result (e.g., artistic, luxurious, or enhanced outcome)"
+        "text": "Elaborate cooking — produce an enhanced, premium, or stylized version of the completed result (idealized human, gourmet dish, luxury or futuristic invention)."
       },
       {
         "id": "005",
-        "text": "Chaotic cooking — an exaggerated, surreal, or absurd result that still reflects both inputs in a wild or unexpected way"
+        "text": "Chaotic cooking — produce a visibly exaggerated, surreal, or absurd version of the result while still reflecting both inputs (mutation, impossible structure, bizarre invention, unstable or explosive dish)."
       }
     ],
     "randomizeOptions": false,
-    "additionalInstructions": "FINAL RESULT:\nA single cohesive image showing the final 'recipe' result of the two subjects. The output must NOT look like a blend or overlay, but rather a new creation that logically or creatively results from combining both inputs. The transformation must reflect the selected cooking level, ranging from simple and realistic to complex or chaotic, while always remaining a unified single subject."
+    "additionalInstructions": "FINAL RESULT:\nA single cohesive image showing the final recipe result. The cooking level must clearly determine the stage and nature of the result. The output must NOT look like a blend or overlay, but a completely new creation."
   },
   {
     "name": "COPY-CAT",
