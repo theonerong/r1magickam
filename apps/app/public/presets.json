@@ -3158,6 +3158,61 @@
     "additionalInstructions": ""
   },
   {
+    "name": "BROKEN CAMERA",
+    "category": [
+      "PHOTOGRAPHY",
+      "GLITCH",
+      "OPTICS",
+      "EXPERIMENTAL",
+      "IMMERSIVE"
+    ],
+    "message": "Take a picture and transform the image as if it were captured by a physically imperfect or unconventional camera system. The entire scene must reflect a camera-based anomaly affecting how the image is captured, not just a visual filter.\n\nMASTER PROMPT OVERRIDE LOGIC (CRITICAL):\n• If an external master prompt specifies a camera anomaly, USE that instead of the selected option\n\nCRITICAL OUTPUT RULES (NON-NEGOTIABLE):\n• The effect must be caused by simulated camera behavior—not post-processing overlays\n• The distortion must affect the ENTIRE image consistently\n• The subject and environment must both be impacted by the anomaly\n• DO NOT apply generic blur, glow, or filters without physical justification\n\nCORE CONCEPT (CRITICAL):\n• The image must feel like it was captured incorrectly due to camera limitations or experimental capture methods\n• The anomaly must change geometry, motion, timing, or exposure—not just color\n\nSUBJECT HANDLING:\n• Keep subjects recognizable but affected by the anomaly\n• Motion, shape, or position may be altered depending on the camera behavior\n\nENVIRONMENT:\n• Background and foreground must obey the same camera rules\n• Distortion must be spatially consistent across the frame\n\nLIGHTING:\n• Must behave according to the simulated camera limitation (exposure, timing, or sensor behavior)\n\nSCENE COMPOSITION:\n• Maintain original composition, but reinterpret it through the anomaly\n\nENFORCEMENT:\n• If the effect could be mistaken for a simple filter, it is incorrect\n• The result must clearly demonstrate a unique camera capture phenomenon",
+    "options": [
+      {
+        "id": "001",
+        "text": "Rolling shutter distortion — vertical lines bend and skew due to staggered sensor readout, especially during motion"
+      },
+      {
+        "id": "002",
+        "text": "Long exposure trails — moving elements leave continuous motion trails while static elements remain sharp"
+      },
+      {
+        "id": "003",
+        "text": "Double exposure — two moments in time overlap within the same frame, creating ghosted duplicates and layered motion"
+      },
+      {
+        "id": "004",
+        "text": "Chromatic aberration overload — extreme lens separation causes heavy red, green, and blue channel misalignment at edges"
+      },
+      {
+        "id": "005",
+        "text": "Focus breathing distortion — parts of the image shift in scale due to changing focal distance during capture"
+      },
+      {
+        "id": "006",
+        "text": "Tilt-shift anomaly — selective focus creates a miniature or model-like effect with exaggerated depth blur"
+      },
+      {
+        "id": "007",
+        "text": "Lens compression anomaly — extreme telephoto compression flattens depth, making distant objects appear unnaturally close"
+      },
+      {
+        "id": "008",
+        "text": "Wide-angle edge warp — aggressive lens curvature stretches and distorts objects near the edges of the frame"
+      },
+      {
+        "id": "009",
+        "text": "Multi-flash strobe capture — sequential flashes freeze motion in multiple positions within a single image"
+      },
+      {
+        "id": "010",
+        "text": "Sensor bloom overload — bright light sources bleed and expand, washing over surrounding areas with intense glow"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "FINAL RESULT:\nA single image that appears to have been captured using a flawed or experimental camera system. The selected anomaly must visibly and physically affect the entire scene in a way that cannot be mistaken for a simple filter. The result should feel like a real photographic phenomenon caused by lens behavior, sensor limitations, or exposure timing."
+  },
+  {
     "name": "BRUTALISM",
     "category": [
       "ART", 
@@ -4876,6 +4931,28 @@
     ],
     "randomizeOptions": true,
     "additionalInstructions": "RESTRICTIONS:\n• No cartoon or animated styles\n• No text overlays or captions\n• No additional clones beyond one\n\nFINAL RESULT:\nThe image should feel like a normal photo at first glance, with a single mischievous clone quietly hiding or photobombing the scene once the viewer notices."
+  },
+  {
+    "name": "CLOSED CAPTIONING",
+    "category": [
+      "TEXT",
+      "HUMOR",
+      "CINEMATIC",
+      "NARRATIVE"
+    ],
+    "message": "Take a picture and transform the image by adding realistic closed captioning text as if the scene were part of a film or television broadcast. The caption must be integrated naturally into the image and reflect the content of the scene.\n\nMASTER PROMPT OVERRIDE LOGIC (CRITICAL):\n• If an external master prompt specifies caption tone or content, USE that instead of the selected option\n\nCRITICAL OUTPUT RULES (NON-NEGOTIABLE):\n• The caption must be embedded into the image—not floating randomly\n• The caption must appear like authentic closed captioning (film/TV style)\n• Use proper placement: bottom of frame or contextually appropriate position\n• DO NOT create multiple captions unless necessary for realism\n• The caption must directly relate to the visible scene\n\nCORE CONCEPT (CRITICAL):\n• The image becomes a moment captured from a show or movie\n• The caption represents what is being said, thought, or implied in the scene\n• The selected option MUST control the tone and intent of the caption\n\nCAPTION STYLE:\n• Clean, readable font typical of subtitles\n• White or light text with subtle outline or shadow for visibility\n• Proper cinematic placement\n\nSUBJECT HANDLING:\n• Caption should reflect subject behavior, expression, or situation\n• Caption must feel contextually accurate to the scene\n\nSCENE COMPOSITION:\n• Maintain the original image\n• Caption enhances—not distracts from—the scene\n\nENFORCEMENT:\n• If the caption does not clearly match the selected tone, the result is incorrect",
+    "options": [
+      {
+        "id": "001",
+        "text": "Funny caption — generate a humorous, witty, or sarcastic caption based on the scene. The caption should act as a punchline, unexpected interpretation, or comedic twist that contrasts or exaggerates what is happening."
+      },
+      {
+        "id": "002",
+        "text": "Serious caption — generate an accurate, descriptive caption that clearly explains what is happening in the scene as if it were a documentary or film subtitle."
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "FINAL RESULT:\nA single image with realistic closed captioning integrated into the scene. The caption must match the selected tone—either humorous or serious—and feel like a natural subtitle from a film or broadcast. The text should be clearly readable, properly placed, and directly connected to the visual content of the image."
   },
   {
     "name": "CLOUD NINE",
