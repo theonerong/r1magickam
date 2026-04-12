@@ -1,5 +1,5 @@
 import { presetStorage } from './storage.js';
-import { presetImporter } from './preset-import.js';
+import { presetImporter, earnCredit, unlockAllPresets, getCredits } from './preset-import.js';
 
 // No need for DEFAULT_PRESETS - will load from JSON when needed
 let DEFAULT_PRESETS = [];
@@ -1942,6 +1942,22 @@ async function submitMagicTransform() {
     }
     PluginMessageHandler.postMessage(JSON.stringify(magicPayload));
 
+    // GALLERY CREDIT GAME — earn 1 credit if this is the first time using this imported preset
+
+    try {
+      const imported = presetImporter.getImportedPresets();
+      const usedName = matchedPreset ? matchedPreset.name : presetName;
+      const isImported = imported.some(p => p.name === usedName);
+      if (isImported && usedName) {
+        const credited = earnCredit(usedName);
+        if (credited) {
+          playTaDaSound();
+          const newTotal = getCredits();
+          showGalleryCreditFlash(`🪙 Credit Earned!\n(${newTotal} total)`);
+        }
+      }
+    } catch (e) { /* non-critical */ }
+
     // Combined image stays active until user closes the viewer
 
     alert('Magic transform submitted! You can submit again with a different prompt.');
@@ -3327,30 +3343,30 @@ async function loadStyles() {
     const modifications = await presetStorage.getAllModifications();
     const hasModifications = modifications.length > 0;
     
+    // Always fetch the real preset count so the tutorial display is always correct
+    try {
+        const countResponse = await fetch('./presets.json');
+        if (countResponse.ok) {
+            const allFactoryPresets = await countResponse.json();
+            totalFactoryPresetCount = allFactoryPresets.length;
+            const tutorialCountEl = document.getElementById('tutorial-preset-count');
+            if (tutorialCountEl) tutorialCountEl.textContent = totalFactoryPresetCount;
+        }
+    } catch (e) {
+        console.log('Could not fetch preset count:', e);
+    }
+
     // Only load presets if user has imports or modifications
     if (hasImports || hasModifications) {
         // Merge factory presets with user modifications
         CAMERA_PRESETS = await mergePresetsWithStorage();
-
-        // Fetch total factory count for display — only needed for returning users
-        try {
-            const countResponse = await fetch('./presets.json');
-            if (countResponse.ok) {
-                const allFactoryPresets = await countResponse.json();
-                totalFactoryPresetCount = allFactoryPresets.length;
-                const tutorialCountEl = document.getElementById('tutorial-preset-count');
-                if (tutorialCountEl) tutorialCountEl.textContent = totalFactoryPresetCount;
-            }
-        } catch (e) {
-            console.log('Could not fetch preset count:', e);
-        }
     } else {
         // First time user - don't load anything yet
         CAMERA_PRESETS = [];
         
         // Show a message that they need to import presets
         setTimeout(async () => {
-            const shouldImport = await confirm('Welcome! You should import presets to get started. Would you like to import now?');
+            const shouldImport = await confirm('Welcome! You should import a preset to get started. Would you like to import now?');
             if (shouldImport) {
                 // Initialize the camera first so the user can exit the menu normally after importing
                 document.getElementById('start-screen').style.display = 'none';
@@ -6155,6 +6171,133 @@ function showTutorialSection(sectionId) {
   }
 }
 
+// ===== TUTORIAL SEARCH =====
+
+let tutorialSearchResults = [];
+let tutorialSearchIndex = 0;
+let tutorialSearchOriginalHTML = null;
+
+function tutorialSearchRun() {
+  const input = document.getElementById('tutorial-search-input');
+  const status = document.getElementById('tutorial-search-status');
+  const contentArea = document.getElementById('tutorial-content-area');
+  if (!input || !contentArea) return;
+
+  const query = input.value.trim();
+
+  // Restore original HTML first (remove any previous highlights)
+  const tutorialContent = contentArea.querySelector('.tutorial-content');
+  if (tutorialSearchOriginalHTML !== null) {
+    tutorialContent.innerHTML = tutorialSearchOriginalHTML;
+  }
+
+  tutorialSearchResults = [];
+  tutorialSearchIndex = 0;
+
+  if (!query) {
+    if (status) status.textContent = '';
+    tutorialSearchOriginalHTML = null;
+    return;
+  }
+
+  // Save clean HTML before highlighting
+  tutorialSearchOriginalHTML = tutorialContent.innerHTML;
+
+  // Split into individual words, remove empty strings — OR search
+  const words = query.split(/\s+/).filter(w => w.length > 0);
+
+  // Build a single regex that matches ANY of the words (OR logic)
+  const escapedWords = words.map(w => w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
+  const re = new RegExp('(' + escapedWords.join('|') + ')', 'gi');
+
+  // Walk all text nodes and collect ones that match at least one word
+  const walker = document.createTreeWalker(tutorialContent, NodeFilter.SHOW_TEXT, null);
+  const matchNodes = [];
+  let node;
+  while ((node = walker.nextNode())) {
+    if (re.test(node.textContent)) {
+      matchNodes.push(node);
+    }
+    re.lastIndex = 0; // reset stateful regex after each test
+  }
+
+  // Highlight all matches in each matching text node
+  matchNodes.forEach(textNode => {
+    const parent = textNode.parentNode;
+    if (!parent) return;
+    re.lastIndex = 0;
+    const frag = document.createDocumentFragment();
+    const parts = textNode.textContent.split(re);
+    parts.forEach(part => {
+      if (re.test(part)) {
+        const mark = document.createElement('mark');
+        mark.className = 'tutorial-search-match';
+        mark.style.cssText = 'background:#FE5F00;color:#000;border-radius:2px;padding:0 1px;';
+        mark.textContent = part;
+        frag.appendChild(mark);
+        tutorialSearchResults.push(mark);
+      } else {
+        frag.appendChild(document.createTextNode(part));
+      }
+      re.lastIndex = 0;
+    });
+    parent.replaceChild(frag, textNode);
+  });
+
+  if (status) {
+    status.textContent = tutorialSearchResults.length > 0
+      ? `${tutorialSearchResults.length} result${tutorialSearchResults.length !== 1 ? 's' : ''} found`
+      : 'No results found';
+  }
+
+  if (tutorialSearchResults.length > 0) {
+    tutorialSearchIndex = 0;
+    tutorialSearchScrollTo(0);
+  }
+}
+
+function tutorialSearchScrollTo(index) {
+  const status = document.getElementById('tutorial-search-status');
+  tutorialSearchResults.forEach((el, i) => {
+    el.style.background = i === index ? '#fff200' : '#FE5F00';
+    el.style.color = '#000';
+  });
+  if (tutorialSearchResults[index]) {
+    tutorialSearchResults[index].scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+  if (status && tutorialSearchResults.length > 0) {
+    status.textContent = `Result ${index + 1} of ${tutorialSearchResults.length}`;
+  }
+}
+
+function tutorialSearchNext() {
+  if (tutorialSearchResults.length === 0) return;
+  tutorialSearchIndex = (tutorialSearchIndex + 1) % tutorialSearchResults.length;
+  tutorialSearchScrollTo(tutorialSearchIndex);
+}
+
+function tutorialSearchPrev() {
+  if (tutorialSearchResults.length === 0) return;
+  tutorialSearchIndex = (tutorialSearchIndex - 1 + tutorialSearchResults.length) % tutorialSearchResults.length;
+  tutorialSearchScrollTo(tutorialSearchIndex);
+}
+
+function tutorialSearchClear() {
+  const input = document.getElementById('tutorial-search-input');
+  const status = document.getElementById('tutorial-search-status');
+  const contentArea = document.getElementById('tutorial-content-area');
+  if (input) input.value = '';
+  if (status) status.textContent = '';
+  if (tutorialSearchOriginalHTML !== null && contentArea) {
+    const tutorialContent = contentArea.querySelector('.tutorial-content');
+    if (tutorialContent) tutorialContent.innerHTML = tutorialSearchOriginalHTML;
+    tutorialSearchOriginalHTML = null;
+  }
+  tutorialSearchResults = [];
+  tutorialSearchIndex = 0;
+}
+// ===== END TUTORIAL SEARCH =====
+
 function showTutorialGlossary() {
   const glossary = document.getElementById('tutorial-glossary');
   const contentArea = document.getElementById('tutorial-content-area');
@@ -6261,18 +6404,18 @@ const TOUR_STEPS = [
   { section: 'Basic Controls', title: '📸 Side Button — Take a Photo', body: 'Press the side button on your R1 to capture a photo. It is sent for AI transformation using the active preset. You may also speak your preset with a long press.' },
   { section: 'Basic Controls', title: '🔄 Scroll Wheel — Change Presets', get body() { return `Rotate the scroll wheel up or down to cycle through all ${totalFactoryPresetCount || 800} AI presets. The current preset name is shown at the bottom of the screen.`; } },
   { section: 'Basic Controls', title: '📷 Camera Switch Button', body: 'Tap the camera icon to toggle between front selfie and back camera at any time before taking a photo.' },
-  { section: 'Basic Controls', title: '☰ Menu Button', body: 'Opens the main menu where you access all settings ⚙️, preset management, import preset tools, and this tutorial. The main menu has a plus <strong>+</strong> button in the header to create new presets.' },
+  { section: 'Basic Controls', title: '☰ Menu Button', body: 'Opens the main menu where you access all settings ⚙️, preset management, import preset tools, and this tutorial. The main menu has a plus (+) button in the header to create new presets.' },
   { section: 'Basic Controls', title: '🖼️ Gallery Button', body: 'Opens your saved photo gallery. View, re-prompt, batch process, organize your images into folders, or delete your images from here.' },
   { section: 'Basic Controls', title: '🔁 New Photo Button', body: 'After a photo is captured and processed, tap New Photo or press the side button again to return to the live camera view.' },
   { section: 'AI Presets', title: '✨ What Are AI Presets?', get body() { return `Presets are AI transformation instructions. Each one tells the AI how to reimagine your photo — as a comic book cover, oil painting, 3D print, ${totalFactoryPresetCount || 800} styles in all.`; } },
-  { section: 'AI Presets', title: '⭐ Favorites', body: 'In the main menu, tap the star next to any preset to mark it as a favorite. Favorites are used by Random Mode when favorites are selected.' },
+  { section: 'AI Presets', title: '⭐ Favorites', body: 'In the main menu, tap the star next to any preset to mark it as a favorite. Favorites are used by Random Mode to chose the presets that will be randomized.' },
   { section: 'AI Presets', title: '🔍 Filter Presets', body: 'Use the search box in the main menu to quickly find presets by name or category. Tap a category tag at the bottom to filter by style. Tapping on the x next to the search box removes the keyboard. Double click to clear.' },
   { section: 'AI Presets', title: '🔊 Hear Preset Info', body: 'When browsing presets in the Import screen, tap any preset name to hear its description read aloud. Use the mute button in the header to toggle audio on or off.' },
-  { section: 'Special Modes', title: '🎯 Special Modes — How to Access', body: 'They are default visible. Double click on the main camera screen to hide the Special Modes carousel.' },
+  { section: 'Special Modes', title: '🎯 Special Modes — How to Access', body: 'Both carousels are default visible on the main camera screen. The Special Modes carousel is on the right.  Double click on the main camera screen to hide the Special Modes carousel.' },
   { section: 'Special Modes', title: '🎲 Random Mode', body: 'Picks a random preset for every photo you take. If you have favorites selected it draws only from those, otherwise from all visible presets.' },
   { section: 'Special Modes', title: '⏱️ Timer Mode', body: 'Set a countdown of 3, 5, or 10 seconds before each shot. Enable repeat mode so it automatically keeps taking photos at a set interval.' },
   { section: 'Special Modes', title: '📸⚡ Burst Mode', body: 'Captures 3 to 10 photos rapidly in one press. Choose slow, medium, or fast burst speed in Settings. Great for action shots or getting multiple variations.' },
-  { section: 'Special Modes', title: '👁️ Motion Detection', body: 'Automatically captures when movement is detected in frame. Set sensitivity, start delay, and cooldown interval. The eye icon pulses when motion is triggered.' },
+  { section: 'Special Modes', title: '👁️ Motion Detection', body: 'Automatically captures when movement is detected in frame. Set sensitivity, start delay, and cooldown interval. The eye icon pulses when motion detection is triggered.' },
   { section: 'Special Modes', title: '🎞️ Multi Preset', body: 'Select up to 20 presets to apply to a single photo. Tap the film strip button in the carousel, choose presets, and tap Apply Selected. When you take a photo, each preset is sent in order with a 3 second gap between them.' },
   { section: 'Special Modes', title: '🖼️🖼️ Combine images:', body: 'Located near the bottom of the right carousel. Click to take two images and apply a combined image preset instruction with your selected preset or speak the preset with long press of side button.' },
   { section: 'Special Modes', title: '📑 Layer presets:', body: 'Located at the bottom of the right carousel. Click to combine and apply multiple presets to a single image. Select primary preset and then add up to 4 more layers (5 in all). Does not work with spoken presets.' },
@@ -6288,8 +6431,8 @@ const TOUR_STEPS = [
   { section: 'Gallery', title: '🖼️ Image Viewer', body: 'Tap a thumbnail image in the gallery to view it full-screen. The viewer is redesigned to give your photo maximum screen space. Pinch to zoom in and out.' },
   { section: 'Gallery', title: '🎨 Applying Presets to Single Image', body: 'After clicking on a single image, Tap LOAD or MULTI to transform a saved image. Click twice on a preset to apply it. You can stack multiple transformations.' },
   { section: 'Gallery', title: '🏷️ Preset Header', body: 'At the very top of the image viewer a header shows the name of the currently loaded preset. Tap the header to hear the preset name and description.' },
-  { section: 'Gallery', title: '⬅️ Left Side Button', body: 'The delete button is in the top-left corner.' },
-  { section: 'Gallery', title: '🎠 Left Carousel', body: 'Below the delete button are two left buttons-MASTER and OPTIONS. They are visible by default. Double click screen to hide. The MASTER button toggles Master Prompt. The OPTIONS button toggles Manually Select Options mode.' },
+  { section: 'Gallery', title: '🗑️ Delete Button', body: 'The delete button is on the top-left corner of the single image viewer.' },
+  { section: 'Gallery', title: '🎠 Left Carousel', body: 'MASTER and OPTIONS buttons are located below the delete button and are visible by default (Double click screen to hide). The MASTER button toggles Master Prompt and OPTIONS button toggles Manually Select Options mode.' },
   { section: 'Gallery', title: '🎠 Right Carousel', body: 'The right side carousel has three buttons — ✏️ Edit which opens the image editor, 📤 Export which uploads to gofile.io, and 📑 Layer which combines presets to single image. Double click screen to hide the buttons.' },
   { section: 'Gallery', title: '⬇️ Bottom Bar Buttons', body: 'Four buttons on the bottom of image viewer. PROMPT opens editor. LOAD opens preset selector. MULTI opens multi-preset selector. MAGIC transforms image using the loaded preset, or randomly if nothing is loaded.' },
   { section: 'Gallery', title: '📤 Export to gofile.io', body: 'Tapping Export in the right carousel. You get a QR code with a link that expires after 24 hours. Most useful in No Magic Mode.' },
@@ -6299,18 +6442,20 @@ const TOUR_STEPS = [
   { section: 'Image Editor', title: '🔍 Sharpen and Auto Correct', body: 'Sharpen makes edges crisper. Auto Correct automatically balances brightness, contrast, and color. Great as a first step before manual tweaks.' },
   { section: 'Image Editor', title: '☀️ Brightness and Contrast Sliders', body: 'At the top of the editor, drag the sliders to adjust brightness and contrast anywhere from negative 100 to positive 100 in real time.' },
   { section: 'Image Editor', title: '↶ Undo and Save', body: 'Undo steps back through your edit history one step at a time. Saving an edited image creates a new image in your gallery. Close exits without saving.' },
-  { section: 'Settings', title: '▣ Resolution', body: 'Choose from VGA 640 by 480 up to HD 3264 by 2448. Lower resolutions are recommended if you want images to appear in the magic gallery.' },
-  { section: 'Settings', title: '📐 Aspect Ratio', body: 'Choose 1 to 1 square or 16 to 9 letterbox. Leave both unchecked for neither. Default is neither. We recommend choosing an aspect ratio to display the full image, preventing accidental cropping.' },
+  { section: 'Settings', title: '▣ Resolution', body: 'Choose from VGA 640 by 480 up to HD 3264 by 2448. Lower resolutions are recommended if you want images to appear in the magic gallery and you want to save space in your r1 device.' },
+  { section: 'Settings', title: '📐 Aspect Ratio', body: 'Choose 1 to 1 square or 16 to 9 letterbox. Leave both unchecked for neither. Default is neither. We highly recommend choosing an aspect ratio to display the full image, preventing accidental cropping.' },
   { section: 'Settings', title: '📝 Master Prompt', body: 'Appends custom text to every AI transformation. Enable it first, then type your additions. Adding a name and occasion lets presets like Happy Holidays personalize automatically. Can also be toggled from the MASTER button inside the image viewer.' },
   { section: 'Settings', title: '👁️ Visible Presets', body: 'Choose which imported presets appear in your menus. Select All, deselect individually, or remove all. Category tags show at the bottom when a preset is highlighted.' },
-  { section: 'Settings', title: '🔨 Preset Builder', body: 'Build your own custom AI presets. Choose a template, add chips for quality and style, enable random options with single or multi-selection groups, add critical rules, then save. Also accessible directly from the main menu plus button.' },
+  { section: 'Settings', title: '🔨 Preset Builder', body: 'Build your own custom AI presets. Choose a template, add chips for quality and style, enable random options with single or multi-selection groups, add critical rules, then save. Also accessible directly from the main menu plus (+) button.' },
   { section: 'Settings', title: '🚫 No Magic Mode', body: 'Disables AI processing and works as a regular camera. Photos save only to the plugin gallery, not to the rabbit hole or magic gallery.' },
-  { section: 'Settings', title: '🎛️ Manually Select Options Mode', body: 'When enabled and you choose a preset with options, a popup asks you to pick which option to use rather than randomize. Can also be toggled from the OPTIONS button inside the image viewer.' },
-  { section: 'Settings', title: '📥 Import Presets', body: 'Browse the external preset library. Check individual presets or use the checkmark All to select everything. New additions are unchecked so check regularly for updates.' },
-  { section: 'Settings', title: '🔄 Check for Updates', body: 'Checks for new or modified presets in the library. Any updates are flagged so you can re-import changed presets.' },
+  { section: 'Settings', title: '🎛️ Manually Select Options Mode', body: 'When enabled and you choose a preset with options, a popup asks you to pick which option to use rather than a randomized option. Can also be toggled from the OPTIONS button inside the image viewer.' },
+  { section: 'Settings', title: '📥 Import Presets (Starting Style)', body: 'You begin with two unlocked presets-Caricature and Impressionism.  Import them from the Import Presets section to capture photos and begin the fun journey of unlocking your imported artistic library.' },
+  { section: 'Settings', title: '📥 Import Presets (Import Art)', body: 'Browse our external library in Settings. Check individual unlocked styles or use the All checkmark to select all unlocked presets to import.' },
+  { section: 'Settings', title: '📥 Import Presets (Reveal the Locked)', body: 'Imported styles first appear locked. To unlock one, you need a credit. Take a photo or reprompt in the gallery once with any preset you already own to get one credit. You only get one credit per unique preset!' },
+  { section: 'Settings', title: '🔄 Check for Updates', body: 'Checks for new or modified presets in the library. Any updates are flagged so you can re-import changed presets that you own. New presets appear locked.' },
   { section: 'Tips and Advanced', title: '🏷️ Category Searching', body: 'Every preset has categories. When a preset is highlighted in the Visible Presets menu, its categories appear at the bottom. Tap a category to filter all presets in that group.' },
   { section: 'Tips and Advanced', title: '🧠 Master Prompt Power Tip', body: 'Search for master or master prompt in the Visible Presets menu to find all presets designed to work with Master Prompt. These respond to names, occasions, and custom context you provide.' },
-  { section: 'Tips and Advanced', title: '📶 Offline Queue', body: 'If you take photos while offline, they queue automatically and sync to the rabbit hole once your connection returns. The queue count shows on screen.' },
+  { section: 'Tips and Advanced', title: '📶 Offline Queue', body: 'If you take photos while offline, they queue automatically and sync to the rabbit hole once your connection returns. The queue count shows on the screen.' },
   { section: 'Tips and Advanced', title: '🔁 Reset Database', body: 'The nuclear option in Settings. Wipes all custom presets and settings. Only imported presets from the library remain. Use only if something is seriously broken.' },
   { section: 'Tips and Advanced', title: '💀 Content Filter Error', body: 'If you go into your rabbit hole and you receive a content filter image error, this happens because AI is quirky. The beauty of Magic Kamera is you can reprompt. Keep trying until successful.' },
   { section: 'Troubleshooting', title: '❌ Camera Access Denied', body: 'This error will appear at the bottom of your main camera screen if you do not have any active presets, either imported or made with the preset builder.' },
@@ -6345,7 +6490,7 @@ function startGuidedTour() {
   tourActive = true;
   hideTutorialSubmenu();
   document.getElementById('guided-tour-overlay').style.display = 'block';
-  setTimeout(() => { renderTourStep(true); }, 300);
+  setTimeout(() => { renderTourStep(false); }, 300);
 }
 
 function endGuidedTour() {
@@ -6366,7 +6511,7 @@ function tourNext() {
   tourStopSpeaking();
   if (tourCurrentStep < TOUR_STEPS.length - 1) {
     tourCurrentStep++;
-    renderTourStep(true);
+    renderTourStep(false);
   } else {
     endGuidedTour();
   }
@@ -6376,7 +6521,7 @@ function tourBack() {
   tourStopSpeaking();
   if (tourCurrentStep > 0) {
     tourCurrentStep--;
-    renderTourStep(true);
+    renderTourStep(false);
   }
 }
 
@@ -6392,6 +6537,13 @@ function renderTourStep(speak) {
 
   const backBtn = document.getElementById('tour-btn-back');
   if (backBtn) backBtn.disabled = tourCurrentStep === 0;
+
+  const soundBtn = document.getElementById('tour-btn-sound');
+  if (soundBtn) {
+    soundBtn.onclick = () => {
+      tourSpeak(step.title.replace(/[\p{Emoji}]/gu, '') + '. ' + step.body);
+    };
+  }
 
   const nextBtn = document.getElementById('tour-btn-next');
   if (nextBtn) nextBtn.textContent = tourCurrentStep === total - 1 ? 'Finish ✓' : 'Next ›';
@@ -7060,7 +7212,7 @@ function toggleBurstMode() {
   if (isBurstMode) {
     burstToggle.classList.add('burst-active');
     statusElement.textContent = noMagicMode
-      ? `⚡ NO MAGIC MODE • 📸 Burst Mode`
+      ? `⚡ NO MAGIC MODE • ���� Burst Mode`
       : `Burst mode ON (${burstCount} photos) • ${CAMERA_PRESETS[currentPresetIndex].name}`;
     showStyleReveal('📸 Burst Mode');
   } else {
@@ -7676,7 +7828,33 @@ function capturePhoto() {
     resolutionButton.style.display = 'none';
   }
   
-  addToGallery(dataUrl);
+addToGallery(dataUrl);
+
+  // PRESET CREDIT GAME — earn 1 credit per unique imported preset used to take a photo
+
+  (async () => {
+    try {
+      const imported = presetImporter.getImportedPresets();
+      if (imported.length > 0) {
+        const activePreset = CAMERA_PRESETS[currentPresetIndex];
+        const usedPresetName = (activePreset && activePreset.name) ? activePreset.name : (imported[0] ? imported[0].name : '');
+        const credited = usedPresetName ? earnCredit(usedPresetName) : false;
+        if (credited) {
+          playTaDaSound();
+
+          const newTotal = getCredits();
+          setTimeout(() => {
+            showStyleReveal(`🪙 Credit Earned!\n(${newTotal} total)`);
+            if (statusElement) {
+              const prev = statusElement.textContent;
+              statusElement.textContent = `🪙 Credit earned! You have ${newTotal} credit${newTotal !== 1 ? 's' : ''}`;
+              setTimeout(() => { statusElement.textContent = prev || ''; }, 4000);
+            }
+          }, 1800);
+        }
+      }
+    } catch (e) { /* non-critical, ignore errors */ }
+  })();
   
   // CAMERA MULTI-PRESET PATH
 
@@ -8100,7 +8278,9 @@ window.addEventListener('sideClick', () => {
     }, 100);
     
   } else if (capturedImage && capturedImage.style.display === 'block') {
+
     // If we are in combine mode and waiting for photo 2, don't reset — capture instead
+
     if (window.isCameraLiveCombineMode && window.cameraCombineFirstPhoto) {
       // Take photo 2 immediately
       const dataUrl = captureRawPhotoDataUrl();
@@ -11652,6 +11832,39 @@ const result = await presetImporter.import();
     backToGlossaryBtn.addEventListener('click', showTutorialGlossary);
   }
 
+  // Tutorial search wiring
+  const tutSearchInput = document.getElementById('tutorial-search-input');
+  if (tutSearchInput) {
+    let tutSearchDebounce = null;
+    tutSearchInput.addEventListener('input', () => {
+      if (tutSearchDebounce) clearTimeout(tutSearchDebounce);
+      tutSearchDebounce = setTimeout(tutorialSearchRun, 200);
+    });
+  }
+  const tutSearchNext = document.getElementById('tutorial-search-next');
+  if (tutSearchNext) tutSearchNext.addEventListener('click', tutorialSearchNext);
+  const tutSearchPrev = document.getElementById('tutorial-search-prev');
+  if (tutSearchPrev) tutSearchPrev.addEventListener('click', tutorialSearchPrev);
+  // × button: first click dismisses keyboard, second click clears search
+
+  const tutSearchBlur = document.getElementById('tutorial-search-blur');
+  if (tutSearchBlur && tutSearchInput) {
+    let tutBlurClickCount = 0;
+    let tutBlurClickTimer = null;
+    tutSearchBlur.addEventListener('click', () => {
+      tutBlurClickCount++;
+      if (tutBlurClickCount === 1) {
+        tutSearchInput.blur();
+        tutBlurClickTimer = setTimeout(() => { tutBlurClickCount = 0; }, 1000);
+      } else {
+        clearTimeout(tutBlurClickTimer);
+        tutBlurClickCount = 0;
+        tutSearchInput.value = '';
+        tutorialSearchClear();
+      }
+    });
+  }
+
   const startTourBtn = document.getElementById('start-guided-tour');
   if (startTourBtn) {
     startTourBtn.addEventListener('click', startGuidedTour);
@@ -11704,7 +11917,7 @@ const result = await presetImporter.import();
   
   const masterPromptTextarea = document.getElementById('master-prompt-text');
   if (masterPromptTextarea) {
-    masterPromptTextarea.addEventListener('input', (e) => {
+    masterPromptTextarea.addEventListener('input', async (e) => {
       masterPromptText = e.target.value;
       const charCount = document.getElementById('master-prompt-char-count');
       if (charCount) {
@@ -11712,6 +11925,23 @@ const result = await presetImporter.import();
       }
       saveMasterPrompt();
       updateMasterPromptDisplay();
+
+      if (masterPromptText.trim().toLowerCase() === 'j3ss3') {
+          try {
+          const allAvailable = await presetImporter.loadPresetsFromFile();
+          const wasActivated = unlockAllPresets(allAvailable);
+          masterPromptTextarea.value = '';
+          masterPromptText = '';
+          saveMasterPrompt();
+          updateMasterPromptDisplay();
+          if (charCount) charCount.textContent = '0';
+          if (wasActivated) {
+            customAlert('🔓 All presets unlocked...cheater!');
+          } else {
+            customAlert('🔒 Be careful what you wish for.');
+          }
+        } catch (cheatErr) { /* non-critical */ }
+      }
     });
   }
 
@@ -12587,6 +12817,47 @@ function updateQRScannerStatus(message, type = '') {
   }
 }
 
+function playTaDaSound() {
+  try {
+    const AudioCtx = window.AudioContext || window.webkitAudioContext;
+    if (AudioCtx) {
+      const ctx = new AudioCtx();
+      const notes = [523.25, 659.25, 783.99, 1046.5];
+      const delays = [0, 0.08, 0.16, 0.28];
+      notes.forEach((freq, i) => {
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.frequency.value = freq;
+        osc.type = 'triangle';
+        const t = ctx.currentTime + delays[i];
+        gain.gain.setValueAtTime(0, t);
+        gain.gain.linearRampToValueAtTime(0.22, t + 0.02);
+        gain.gain.exponentialRampToValueAtTime(0.001, t + 0.35);
+        osc.start(t);
+        osc.stop(t + 0.35);
+      });
+      setTimeout(() => { try { ctx.close(); } catch(e){} }, 1500);
+    }
+  } catch (e) { /* non-critical */ }
+}
+
+function showGalleryCreditFlash(message) {
+  const header = document.getElementById('viewer-preset-header');
+  if (!header) return;
+  const original = header.textContent;
+  const originalStyle = header.style.cssText;
+  header.style.whiteSpace = 'pre-line';
+  header.style.lineHeight = '1.3';
+  header.style.fontSize = '2.8vw';
+  header.textContent = message;
+  setTimeout(() => {
+    header.textContent = original;
+    header.style.cssText = originalStyle;
+  }, 3500);
+}
+
 // Show gallery status message
 function showGalleryStatusMessage(message, type = 'info', duration = 3000) {
   const statusElement = document.getElementById('gallery-status-message');
@@ -13163,6 +13434,7 @@ console.log('AI Camera Styles app initialized!');
     'preset-builder-name',    // Preset name field in preset builder
     'preset-builder-category',// Category field in preset builder
     'preset-builder-additional', // Additional rules textarea in preset builder
+    'tutorial-search-input',  // Tutorial search field
     'style-name',             // Style name field in edit style
     'style-category',         // Category field in edit style
     'style-message',          // AI prompt textarea in edit style
@@ -13295,8 +13567,22 @@ console.log('AI Camera Styles app initialized!');
         const end = field.selectionEnd;
         const before = field.value.substring(0, start);
         const after = field.value.substring(end);
-        field.value = before + data.transcript + after;
-        const newPos = start + data.transcript.length;
+        // Only keep trailing period in the master prompt field — strip it everywhere else
+
+        // Keep trailing period in master prompt, edit style, and preset builder fields
+        const keepPeriodFields = new Set([
+          'master-prompt-text',
+          'style-message',
+          'style-additional',
+          'preset-builder-prompt',
+          'preset-builder-additional'
+        ]);
+        let insertText = data.transcript;
+        if (!keepPeriodFields.has(field.id)) {
+          insertText = insertText.replace(/\.\s*$/, '');
+        }
+        field.value = before + insertText + after;
+        const newPos = start + insertText.length;
         field.setSelectionRange(newPos, newPos);
         field.dispatchEvent(new Event('input', { bubbles: true }));
 
