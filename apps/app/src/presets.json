@@ -6896,6 +6896,18 @@
     "additionalInstructions": ""
   },
   {
+    "name": "CURRENCY ENGRAVING",
+    "category": [
+      "ART",
+      "VINTAGE",
+      "DETAILED",
+      "ILLUSTRATION"
+    ],
+    "message": "Take a picture and transform the image into a highly detailed engraved illustration in the style of traditional currency printing. The entire scene must appear as if it were meticulously etched using fine engraved lines like those found on banknotes.\n\nMASTER PROMPT OVERRIDE LOGIC (CRITICAL):\n• If an external master prompt specifies engraving intensity or detail, USE that instead\n\nCRITICAL OUTPUT RULES (NON-NEGOTIABLE):\n• The image must be constructed entirely from fine line engravings\n• NO smooth gradients—shading must be achieved through line density and cross-hatching\n• The entire image must feel like it was printed using an engraving plate\n\nCORE CONCEPT:\n• Fine linework defines all shapes, shadows, and textures\n• Depth created through dense cross-hatching and line variation\n\nSUBJECT HANDLING:\n• Preserve facial recognition but render entirely in engraved lines\n\nSTYLE:\n• Black and white or limited monochrome palette\n• Extremely detailed, precise linework.",
+    "randomizeOptions": false,
+    "additionalInstructions": "FINAL RESULT:\nA banknote-style engraved illustration where the entire image is composed of intricate linework and cross-hatching, resembling official currency printing."
+  },
+  {
     "name": "CYANOTYPE",
     "category": [
       "ART",
@@ -12190,6 +12202,44 @@
     "additionalInstructions": ""
   },
   {
+    "name": "GROSS ANATOMY",
+    "category": [
+      "MEDICAL",
+      "SCIENTIFIC",
+      "ILLUSTRATION",
+      "DETAILED"
+    ],
+    "message": "Take a picture and transform the subject into a detailed medical-style gross anatomy illustration, revealing internal biological systems with clean, educational clarity. The subject must appear as if rendered for a professional anatomical diagram, with layered biological structures accurately organized.\n\nMASTER PROMPT OVERRIDE LOGIC (CRITICAL):\n• If an external master prompt specifies a system layer or depth, USE that instead of the selected option\n\nCRITICAL OUTPUT RULES (NON-NEGOTIABLE):\n• The result must be ONE single image\n• DO NOT create multiple panels, exploded diagrams, or separate views\n• DO NOT create side-by-side comparisons of layers\n• All anatomical layers must exist within the SAME continuous figure\n\nCORE CONCEPT (CRITICAL):\n• The subject is partially revealed in layers, like a medical illustration\n• Outer and inner systems must coexist visually in a clean, readable way\n• Layers should feel integrated—not cut apart\n\nANATOMICAL STRUCTURE RULES:\n• Skin may be partially transparent, peeled back, or subtly revealed\n• Underlying systems must align anatomically with the subject\n• Each system must be clearly distinguishable but visually integrated\n\nSYSTEM RENDERING:\n• Skin: natural outer appearance with partial reveal\n• Muscles: red fiber structure with anatomical accuracy\n• Organs: simplified but recognizable internal organs\n• Nervous system: branching neural network with fine detail\n• Skeleton: structural bone framework aligned with the body\n\nSTYLE:\n• Clean medical illustration aesthetic\n• Slightly stylized but scientifically inspired\n• Smooth shading with clear separation between systems\n\nLIGHTING:\n• Neutral, clinical lighting\n• Subtle highlights to define depth between layers\n\nSCENE COMPOSITION:\n• Maintain original pose and proportions of subject\n• Focus on clarity and readability of anatomical layers\n\nENFORCEMENT:\n• If the systems appear random, messy, or disconnected, the result is incorrect",
+  "options": [
+    {
+      "id": "001",
+      "text": "Skin-focused anatomy — mostly external appearance with subtle partial transparency revealing underlying structures"
+    },
+    {
+      "id": "002",
+      "text": "Muscular system emphasis — skin partially removed or transparent, prominently showing muscle groups and fiber structure"
+    },
+    {
+      "id": "003",
+      "text": "Organ system emphasis — internal organs clearly visible and anatomically placed within the body"
+    },
+    {
+      "id": "004",
+      "text": "Nervous system emphasis — intricate network of nerves highlighted throughout the body with high detail"
+    },
+    {
+      "id": "005",
+      "text": "Skeletal system emphasis — bones clearly visible and forming the structural framework of the subject"
+    },
+    {
+      "id": "006",
+      "text": "Full layered anatomy — all systems (skin, muscle, organs, nerves, skeleton) visible together in a clean, integrated medical illustration"
+    }
+  ],
+  "randomizeOptions": true,
+  "additionalInstructions": "FINAL RESULT:\nA single, highly detailed medical-style anatomical illustration of the subject, where internal biological systems are revealed in layered form within the same image. The selected option determines which system is emphasized, but all elements must remain anatomically aligned, visually integrated, and clearly readable without breaking the single-image rule."
+  },
+  {
     "name": "GUMBY",
     "category": [
       "ANIMATION",
@@ -14858,6 +14908,19 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "LIQUID MARBLING",
+      "category": [
+      "ART",
+      "FLUID",
+      "ABSTRACT",
+      "COLORFUL"
+    ],
+    "message": "Take a picture and transform the image into a liquid marbling pattern where all elements are reinterpreted as swirling, fluid paint suspended in motion. The entire scene must appear as if created by pigments floating and mixing in liquid.\n\nCRITICAL OUTPUT RULES:\n• No solid edges—everything must flow and swirl\n• Shapes must be defined by fluid movement\n• Colors must blend organically\n\nCORE CONCEPT:\n• The image behaves like liquid pigment in water\n\nSTYLE:\n• Smooth gradients and flowing patterns\n• Organic, unpredictable shapes.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "FINAL RESULT:\nA fluid marbled composition where the entire image is formed from swirling paint patterns and flowing color transitions."
   },
   {
     "name": "LIQUID METAL",
@@ -23517,6 +23580,18 @@
     "additionalInstructions": ""
   },
   {
+    "name": "SCRIBBLE SKETCH",
+    "category": [
+      "ART",
+      "SKETCH",
+      "ABSTRACT",
+      "EXPRESSIVE"
+    ],
+    "message": "Take a picture and transform the image into a chaotic scribble sketch composed of loose, overlapping hand-drawn lines. The entire image must appear as if drawn quickly with expressive, energetic strokes.\n\nCRITICAL OUTPUT RULES:\n• The image must be built entirely from scribbled lines\n• Lines should overlap, intersect, and vary in intensity\n• NO clean outlines or polished rendering\n\nCORE CONCEPT:\n• Form emerges from chaos\n• Density of lines defines shading and depth\n\nSTYLE:\n• Hand-drawn, messy, energetic\n• Varying line thickness and pressure.",
+    "randomizeOptions": false,
+    "additionalInstructions": "FINAL RESULT:\nA loose, expressive scribble drawing where the subject and environment are formed entirely from chaotic layered sketch lines."
+  },
+  {
     "name": "SEALED",
     "category": [
       "OFFICIAL",
@@ -26289,6 +26364,19 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "THERMOGRAPHIC PRINT",
+    "category": [
+      "ART",
+      "PRINT",
+      "TEXTURE",
+      "REALISTIC"
+    ],
+    "message": "Take a picture and transform the image into a thermographic print where all visible elements appear as raised, glossy ink on a flat surface. The image must look like it was printed using heat-raised ink techniques.\n\nCRITICAL OUTPUT RULES:\n• All lines and shapes must appear slightly raised from the surface\n• Surfaces must reflect light subtly like glossy ink\n• The image must feel tactile and embossed\n\nCORE CONCEPT:\n• Ink sits on top of the surface, not blended into it\n• Light interacts with raised edges\n\nSTYLE:\n• Clean shapes with slight dimensional lift\n• Subtle shine and texture.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "FINAL RESULT:\nA raised-ink printed image where all details appear embossed and glossy, as if physically printed using thermographic techniques."
   },
   {
     "name": "THINNER",
