@@ -11220,6 +11220,19 @@
     "additionalInstructions": ""
   },
   {
+    "name": "FROST FORMATION",
+    "category": [
+      "ART",
+      "CRYSTAL",
+      "COLD",
+      "FRACTAL"
+    ],
+    "message": "Take a picture and completely reconstruct the image as if it is formed entirely from frost and ice crystal growth patterns. The scene must be built from crystalline frost structures, not overlaid effects.\n\nCRITICAL OUTPUT RULES:\n• No original surfaces may remain\n• All forms must be constructed from frost-like crystalline patterns\n• Frost must define edges, shapes, and textures\n\nCORE CONCEPT:\n• Ice crystals grow outward to form the image\n• Fractal branching patterns define structure\n\nSTRUCTURE RULES:\n• Fine branching frost patterns\n• Sharp crystalline edges\n• Layered frost density for depth\n\nSUBJECT HANDLING:\n• Subject must be recognizable through frost structure alone\n\nSTYLE:\n• Cool tones (white, blue, pale cyan)\n• Subtle translucency and sparkle\n\nENFORCEMENT:\n• If frost appears as a surface overlay, the result is incorrect.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "FINAL RESULT:\nA fully reconstructed image made entirely of frost and crystalline ice formations, with no underlying original image visible."
+  },
+  {
     "name": "FROSTING CAKE ART",
     "category": [
       "FOOD",
@@ -13823,6 +13836,19 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "INK DIFFUSION",
+    "category": [
+      "ART",
+      "FLUID",
+      "INK",
+      "ABSTRACT"
+    ],
+    "message": "Take a picture and completely reconstruct the image as if it is formed from ink dispersing in liquid. The entire scene must be built from flowing ink clouds and diffusion patterns.\n\nCRITICAL OUTPUT RULES:\n• NO solid edges or hard surfaces\n• NO original image textures may remain\n• The image must be formed entirely from ink diffusion behavior\n\nCORE CONCEPT:\n• Ink spreads organically through fluid\n• Density and flow define shapes\n\nFLUID BEHAVIOR:\n• Soft, billowing edges\n• Gradual transitions in density\n• Swirling motion patterns\n\nSUBJECT HANDLING:\n• Subject must remain recognizable through ink density and flow\n\nSTYLE:\n• Monochrome or limited ink palette\n• Soft gradients and organic shapes\n\nENFORCEMENT:\n• If the image appears as a photo with ink overlay, the result is incorrect.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "FINAL RESULT:\nA fully fluid composition where the entire image is formed from diffusing ink clouds suspended in liquid, with no solid surfaces remaining."
   },
   {
     "name": "INSIDE OUT",
@@ -21711,6 +21737,19 @@
     "additionalInstructions": "FINAL RESULT:\nA complete thermal imaging transformation of the scene as viewed through a Predator's bio-mask helmet display. Every element is rendered as heat signatures with the iconic yellow-to-purple color gradient, featuring bright yellow/white human silhouettes with visible internal heat patterns, cooler blue/purple environmental elements, distinctive scan lines and electronic interference, alien HUD elements with targeting reticles and Yautja script, and the characteristic rounded vignette of viewing through helmet optics. The image must be instantly recognizable as Predator vision while maintaining the composition and recognizability of the original scene's subjects and spatial relationships. The effect should be cinematic, faithful to the films, and evoke the alien hunter's technological advantage - seeing the world through heat and allowing nothing to hide."
   },
   {
+    "name": "PRISM DISPERSION",
+    "category": [
+      "ART",
+      "LIGHT",
+      "SPECTRUM",
+      "REFRACTION"
+    ],
+    "message": "Take a picture and completely reconstruct the entire image as if all visible light is being refracted through a prism, splitting into its full spectral components. The scene must be rebuilt using dispersed light, not overlaid effects.\n\nMASTER PROMPT OVERRIDE LOGIC (CRITICAL):\n• If an external master prompt specifies spectrum intensity or direction, USE that instead\n\nCRITICAL OUTPUT RULES (NON-NEGOTIABLE):\n• DO NOT overlay rainbow effects onto the original image\n• The original colors and surfaces must NOT remain intact\n• The image must be reconstructed entirely through refracted spectral light\n\nCORE CONCEPT (CRITICAL):\n• White light splits into a full spectrum (red through violet)\n• All forms are defined through refracted, separated light paths\n\nLIGHT BEHAVIOR:\n• Colors must spatially separate and shift\n• Edges create rainbow splitting\n• Multiple refractions may overlap and intersect\n\nSUBJECT HANDLING:\n• Subject must remain recognizable through dispersed spectral structure\n\nENVIRONMENT:\n• Entire scene participates in light splitting\n\nENFORCEMENT:\n• If the image looks like a normal photo with rainbow overlay, the result is incorrect.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "FINAL RESULT:\nA fully reconstructed image made entirely from refracted spectral light, with all shapes defined by prism dispersion rather than solid surfaces."
+  },
+  {
     "name": "PRODUCT LABEL",
     "category": [
       "HUMOR",
@@ -29443,6 +29482,19 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "VORONOI STRUCTURE",
+    "category": [
+      "ART",
+      "GEOMETRIC",
+      "ABSTRACT",
+      "STRUCTURAL"
+    ],
+    "message": "Take a picture and completely reconstruct the image using a Voronoi cell structure, where the entire scene is divided into irregular polygonal regions that define the image.\n\nCRITICAL OUTPUT RULES:\n• The entire image must be composed ONLY of Voronoi cells\n• No original smooth surfaces or gradients may remain\n• Each cell must have clear boundaries\n\nCORE CONCEPT:\n• The image is broken into organic polygon regions\n• Cell size and density define detail and shading\n\nSTRUCTURE RULES:\n• Smaller cells = more detail\n• Larger cells = less detail\n• Boundaries must be visible and consistent\n\nSUBJECT HANDLING:\n• Subject must remain recognizable through cell arrangement\n\nSTYLE:\n• Flat or slightly shaded polygon regions\n\nENFORCEMENT:\n• If smooth gradients or original textures remain, the result is incorrect.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "FINAL RESULT:\nA fully reconstructed image made entirely of Voronoi polygon cells, where structure and detail are defined by cell distribution."
   },
   {
     "name": "VULCAN TRANSFORMATION",
