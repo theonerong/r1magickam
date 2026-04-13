@@ -15835,6 +15835,61 @@
     "additionalInstructions": "FINAL RESULT:\nThe image should confidently depict the wrong version of reality as if it were always correct, with strong variety across uses and no single Mandela Effect dominating the output."
   },
   {
+    "name": "MANGA PAGE",
+    "category": [
+      "MANGA",
+      "COMIC",
+      "CINEMATIC",
+      "STORY",
+      "MULTI-PANEL"
+    ],
+    "message": "Take a picture and transform it into a single full-page Japanese manga comic page. The image must be completely reconstructed as a multi-panel manga layout, not a collage or overlay.\n\nThe subject becomes the main human character. Their face must remain recognizable but be adapted into a heroic, old-school manga design. The character appears as a masked, agile antihero with intense focus and strong presence.\n\nMASTER PROMPT OVERRIDE LOGIC (CRITICAL):\n• If an external master prompt specifies manga license, panel count, or color style, USE that instead\n\nCRITICAL OUTPUT RULES (NON-NEGOTIABLE):\n• The output must be ONE single manga page\n• The page must contain EXACTLY the number of panels selected in options\n• Panels must be integrated into a cohesive page layout (NOT separate images)\n• DO NOT generate multiple images or stacked pages\n• DO NOT overlay panels onto the original image\n• The entire scene must be fully redrawn in manga style\n\nCORE CONCEPT (CRITICAL):\n• A cinematic manga battle sequence across multiple panels\n• The subject is the main protagonist in a supernatural conflict\n• ONLY characters from the selected manga universe may appear\n• The enemy must match the tone and world of the selected license\n• NO extra characters, creatures, or unrelated elements\n\nCHARACTER DESIGN:\n• Subject becomes a stylized manga antihero\n• Masked or partially masked appearance\n• Strong silhouette and dramatic pose\n• Facial features preserved but stylized into manga proportions\n\nENVIRONMENT:\n• Ruined battlefield (stone, debris, shattered ground)\n• Atmospheric effects: dust, rain haze, smoke\n• Mythic, high-stakes combat setting\n\nMANGA STYLE (CRITICAL):\n• 1980s–1990s action manga aesthetic\n• Heavy black ink shadows\n• Hand-drawn screentones\n• Speed lines and motion bursts\n• High contrast lighting\n• Expressive faces and dynamic poses\n• NO modern glossy or digital comic style\n\nPANEL FLOW (DYNAMIC BASED ON PANEL COUNT):\n• Panels must tell a continuous story\n• Include:\n  - Enemy reveal\n  - First clash\n  - Escalation or counterattack\n  - Philosophical exchange\n  - Final decisive stance\n• If fewer panels are selected, combine beats intelligently\n• If more panels are selected, expand action and pacing\n\nDIALOGUE:\n• English text inside manga speech bubbles and caption boxes\n• Tone must be:\n  - Philosophical\n  - Serious\n  - Slightly cocky\n  - Mythic\n  - Dryly humorous\n• NO parody or comedic tone\n\nVISUAL PRIORITIES:\n• Clear panel readability\n• Strong cinematic composition\n• Iconic final panel\n• Clean panel borders\n• Balanced layout across the page\n\nENFORCEMENT (CRITICAL):\n• If it looks like a photo with manga overlay, the result is incorrect\n• If panels are separate images instead of one page, the result is incorrect\n• If non-license characters appear, the result is incorrect\n\nFINAL RESULT:\nA single, fully illustrated manga page with the selected number of panels, featuring the subject as a manga protagonist in a dramatic battle within the chosen universe. The page must feel like an authentic serialized manga publication with strong storytelling, panel flow, and visual intensity.",
+    "optionGroups": [
+      {
+        "title": "Franchise",
+        "options": [
+        { "id": "001", "text": "Naruto universe (shinobi, chakra, Akatsuki-style enemies)" },
+        { "id": "002", "text": "My Hero Academia universe (quirks, pro heroes, villains)" },
+        { "id": "003", "text": "One Punch Man universe (overpowered heroes, monsters)" },
+        { "id": "004", "text": "One Piece universe (pirates, devil fruit powers)" },
+        { "id": "005", "text": "Demon Slayer universe (demons, breathing techniques)" },
+        { "id": "006", "text": "Dragon Ball Z universe (energy battles, god-tier combat)" },
+        { "id": "007", "text": "Attack on Titan universe (titans, survival combat)" },
+        { "id": "008", "text": "Bleach universe (soul reapers, hollow enemies)" },
+        { "id": "009", "text": "Jujutsu Kaisen universe (curses, sorcery battles)" },
+        { "id": "010", "text": "Fullmetal Alchemist universe (alchemy combat)" },
+        { "id": "011", "text": "Hunter x Hunter universe (Nen abilities)" },
+        { "id": "012", "text": "Tokyo Ghoul universe (ghouls, dark tone)" },
+        { "id": "013", "text": "Chainsaw Man universe (devils, chaotic combat)" },
+        { "id": "014", "text": "Fairy Tail universe (magic guild battles)" },
+        { "id": "015", "text": "Yu Yu Hakusho universe (spirit energy combat)" },
+        { "id": "016", "text": "Black Clover universe (magic knights)" },
+        { "id": "017", "text": "Trigun universe (gunslinger sci-fi western)" },
+        { "id": "018", "text": "Samurai Champloo universe (stylized sword combat)" },
+        { "id": "019", "text": "Inuyasha universe (feudal demon battles)" },
+        { "id": "020", "text": "Original manga universe (no existing IP, fully original characters)" }
+        ]
+      },
+      {
+        "title": "Color Style",
+        "options": [
+        { "id": "001", "text": "Black and white classic manga with screentones" },
+        { "id": "002", "text": "Full color modern manga rendering (while preserving vintage style)" }
+        ]
+      },
+      {
+        "title": "Panel Count",
+        "options": [
+        { "id": "001", "text": "3 panels (condensed cinematic storytelling)" },
+        { "id": "002", "text": "5 panels (balanced pacing and storytelling)" },
+        { "id": "003", "text": "7 panels (extended action and narrative detail)" }
+        ]
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "FINAL RESULT:\nA single-page manga composition with the selected number of panels, featuring a cohesive battle narrative, strong panel flow, and authentic manga rendering. The subject must be the central protagonist, seamlessly integrated into the chosen universe, with clear storytelling and a powerful final panel."
+  },
+  {
     "name": "MANNEQUIN",
     "category": [
       "TRANSFORMATION",
