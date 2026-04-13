@@ -2199,6 +2199,19 @@
     "additionalInstructions": ""
   },
   {
+    "name": "BASALT COLUMN FORMATION",
+    "category": [
+      "ART",
+      "GEOLOGICAL",
+      "STRUCTURAL",
+      "NATURAL"
+    ],
+    "message": "Take a picture and completely reconstruct the entire image as a geological formation made of basalt columns, similar to natural hexagonal column structures. The scene must be built entirely from vertically extruded stone columns.\n\nMASTER PROMPT OVERRIDE LOGIC (CRITICAL):\n• If an external master prompt specifies column density, height variation, or scale, USE that instead\n\nCRITICAL OUTPUT RULES (NON-NEGOTIABLE):\n• The original image must NOT be visible in any way\n• DO NOT overlay stone columns onto the image\n• The entire scene must be rebuilt from basalt columns only\n\nCORE CONCEPT (CRITICAL):\n• The image is formed by vertical columns of varying height\n• Column height defines shape and depth\n\nSTRUCTURE RULES:\n• Columns must be tightly packed and mostly hexagonal\n• Heights vary to form contours of the subject\n• Taller columns = brighter/closer areas\n• Shorter columns = darker/recessed areas\n\nSURFACE DETAIL:\n• Rough stone texture\n• Natural cracks and imperfections\n\nSUBJECT HANDLING:\n• The subject must be recognizable through column height variation alone\n\nENFORCEMENT (CRITICAL):\n• If columns appear as decoration or overlay, the result is incorrect\n• If flat surfaces remain, the result is incorrect.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "FINAL RESULT:\nA fully reconstructed scene where all forms are created from vertically extruded basalt columns, forming a geological structure that defines the subject through height variation."
+  }, 
+  {
     "name": "BATIK",
     "category": [
       "ART",
@@ -3375,6 +3388,19 @@
     ],
     "randomizeOptions": true,
     "additionalInstructions": "FINAL RESULT:\nThe image should show the subject in a scene that humorously PROVES a common myth or misconception as if it were actually true - with exaggerated visual evidence, appropriate setting, and the subject actively participating in validating the false belief - combining satire with education by showing myths as absurdly real in a deadpan, comedic way called BUNKED because we're confirming these myths exist in this alternate reality."
+  },
+  {
+    "name": "BURN / SCORCH ART",
+    "category": [
+      "ART",
+      "TEXTURE",
+      "DESTRUCTIVE",
+      "ORGANIC"
+    ],
+    "message": "Take a picture and completely reconstruct the image as if it has been created through burning or scorching onto a surface such as paper, wood, or fabric. The entire image must be formed through burn marks, heat damage, and charred textures.\n\nMASTER PROMPT OVERRIDE LOGIC (CRITICAL):\n• If an external master prompt specifies burn intensity or material, USE that instead\n\nCRITICAL OUTPUT RULES (NON-NEGOTIABLE):\n• NO original image detail may remain\n• DO NOT overlay burn effects onto the image\n• The image must be entirely formed through scorching patterns\n\nCORE CONCEPT (CRITICAL):\n• Darkened, charred areas define the image\n• Heat intensity controls tone and detail\n\nBURN BEHAVIOR:\n• Deep burns = darkest areas\n• Light scorching = midtones\n• Untouched or lightly singed areas = highlights\n• Irregular edges, singe marks, and burn spread must be visible\n\nSURFACE RULES:\n• Surface must show realistic burn response (paper curling, wood grain charring, etc.)\n• Texture must reflect heat damage\n\nSUBJECT HANDLING:\n• Subject must be recognizable through burn contrast alone\n\nSTYLE:\n• High contrast, organic, destructive texture\n\nENFORCEMENT (CRITICAL):\n• If the image looks like a photo with burn overlay, the result is incorrect\n• If smooth gradients exist without burn texture, the result is incorrect.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "FINAL RESULT:\nA fully reconstructed image created entirely through burn and scorch patterns, where the subject emerges from charred material and heat-induced texture."
   },
   {
     "name": "BUSBY BERKELEY MUSICAL",
@@ -10376,6 +10402,19 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "FEATHER STRUCTURE",
+    "category": [
+      "ART",
+      "ORGANIC",
+      "TEXTURE",
+      "NATURAL"
+    ],
+    "message": "Take a picture and completely reconstruct the entire image using layered feathers as the fundamental building material. The scene must be formed entirely from overlapping feather structures.\n\nMASTER PROMPT OVERRIDE LOGIC (CRITICAL):\n• If an external master prompt specifies feather type, density, or arrangement, USE that instead\n\nCRITICAL OUTPUT RULES (NON-NEGOTIABLE):\n• The original image must NOT be visible\n• DO NOT overlay feathers onto the image\n• The entire image must be built from feathers only\n\nCORE CONCEPT (CRITICAL):\n• Feathers act as structural elements that define shape and texture\n• Layering and orientation create form\n\nSTRUCTURE RULES:\n• Feathers must overlap and interlock naturally\n• Orientation must follow contours of the subject\n• Density of feathers controls shading and detail\n\nDETAIL RULES:\n• Individual feather barbs and shafts must be visible\n• Fine texture contributes to realism\n\nSUBJECT HANDLING:\n• The subject must be recognizable through feather arrangement alone\n\nSTYLE:\n• Organic flow, soft edges, natural layering\n\nENFORCEMENT (CRITICAL):\n• If feathers appear pasted on top of the image, the result is incorrect\n• If non-feather surfaces are visible, the result is incorrect.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "FINAL RESULT:\nA fully reconstructed image where the entire scene is composed of layered feathers, with structure and detail defined by feather orientation, density, and overlap."
   },
   {
     "name": "FELT PUPPET",
