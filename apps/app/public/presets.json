@@ -4260,6 +4260,19 @@
     "additionalInstructions": ""
   },
   {
+    "name": "CHARCOAL SMEAR",
+    "category": [
+      "ART",
+      "DRAWING",
+      "GRITTY",
+      "TEXTURE"
+    ],
+    "message": "Take a picture and transform the image into a charcoal smear drawing with heavy shadows and smudged textures.\n\nCRITICAL OUTPUT RULES:\n• Visible smudging and finger-blended shading\n• Dark, dramatic contrast\n• Dusty charcoal texture\n\nCORE CONCEPT:\n• Form created through smears and pressure.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "FINAL RESULT:\nA gritty charcoal drawing with deep shadows and expressive smudging."
+  },  
+  {
     "name": "CHARLIE'S ANGELS POSE",
     "category": [
       "TV",
@@ -6904,6 +6917,7 @@
       "ILLUSTRATION"
     ],
     "message": "Take a picture and transform the image into a highly detailed engraved illustration in the style of traditional currency printing. The entire scene must appear as if it were meticulously etched using fine engraved lines like those found on banknotes.\n\nMASTER PROMPT OVERRIDE LOGIC (CRITICAL):\n• If an external master prompt specifies engraving intensity or detail, USE that instead\n\nCRITICAL OUTPUT RULES (NON-NEGOTIABLE):\n• The image must be constructed entirely from fine line engravings\n• NO smooth gradients—shading must be achieved through line density and cross-hatching\n• The entire image must feel like it was printed using an engraving plate\n\nCORE CONCEPT:\n• Fine linework defines all shapes, shadows, and textures\n• Depth created through dense cross-hatching and line variation\n\nSUBJECT HANDLING:\n• Preserve facial recognition but render entirely in engraved lines\n\nSTYLE:\n• Black and white or limited monochrome palette\n• Extremely detailed, precise linework.",
+    "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "FINAL RESULT:\nA banknote-style engraved illustration where the entire image is composed of intricate linework and cross-hatching, resembling official currency printing."
   },
@@ -10836,6 +10850,19 @@
     "additionalInstructions": "FINAL RESULT:\nA handcrafted foam sculpture version of the scene where all elements appear carved from styrofoam, with rough textures, visible tool marks, and simplified forms while preserving the subject's identity."
   },
   {
+    "name": "FOIL EMBOSS",
+    "category": [
+      "ART",
+      "METALLIC",
+      "REFLECTIVE",
+      "PRINT"
+    ],
+    "message": "Take a picture and transform the image into a foil-embossed print where all elements appear stamped in reflective metallic foil.\n\nCRITICAL OUTPUT RULES:\n• Surfaces must reflect light dynamically\n• Metallic sheen with color shifting highlights\n• Slight raised embossed effect\n\nCORE CONCEPT:\n• Light interaction defines the image.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "FINAL RESULT:\nA reflective foil-stamped image with metallic shine and embossed depth."
+  },  
+  {
     "name": "FOLLOW THE YELLOW BRICK ROAD",
     "category": [
       "MOVIES",
@@ -11830,6 +11857,19 @@
     "additionalInstructions": ""
   },
   {
+    "name": "GLITCH MOSAIC",
+    "category": [
+      "ART",
+      "DIGITAL",
+      "GLITCH",
+      "ABSTRACT"
+    ],
+    "message": "Take a picture and transform the image into a glitch mosaic composed of fragmented tiles and digital distortions.\n\nCRITICAL OUTPUT RULES:\n• Image broken into blocks or tiles\n• Misalignment and displacement\n• Controlled digital chaos\n\nCORE CONCEPT:\n• Image fragmentation and reconstruction.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "FINAL RESULT:\nA mosaic of distorted digital fragments forming the image."
+  },
+  {
     "name": "GLITCH REALITY",
     "category": [
       "DIGITAL",
@@ -11840,7 +11880,7 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
-  },
+  },  
   {
     "name": "GLOSSARY",
     "category": [
@@ -13798,6 +13838,19 @@
     "additionalInstructions": "NOT ALLOWED:\n• Surgery imagery\n• X-ray clichés\n• Horror aesthetics\n• Exploded or separated body parts\n• Any implication of pain or injury\n\nFINAL RESULT:\nThe image should depict the subject fully intact while their internal anatomy is clearly visible and anatomically accurate, appearing as a seamless scientific reveal rather than damage — a calm, educational visualization where exterior and interior coexist naturally in a single complete figure."
   },
   {
+    "name": "INTAGLIO PRINT",
+    "category": [
+      "ART",
+      "PRINT",
+      "VINTAGE",
+      "DETAILED"
+    ],
+    "message": "Take a picture and transform the image into an intaglio print where all details are formed by ink sitting inside engraved grooves. The image must appear as if etched into a metal plate and printed under pressure.\n\nCRITICAL OUTPUT RULES:\n• Ink must appear inside recessed lines, not on the surface\n• Fine engraved lines define all shapes and shading\n• Subtle plate embossing around edges\n\nCORE CONCEPT:\n• Depth is created by engraved grooves holding ink\n\nSTYLE:\n• Black or limited monochrome\n• Ultra-fine linework and cross-hatching.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "FINAL RESULT:\nA physical-looking intaglio print with recessed ink lines and subtle embossing."
+  },
+  {
     "name": "INSTALLATION ART STYLE",
     "category": [
       "ART",
@@ -14858,6 +14911,19 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "LIGHT PAINTING",
+    "category": [
+      "ART",
+      "LIGHT",
+      "LONG EXPOSURE",
+      "CREATIVE"
+    ],
+    "message": "Take a picture and transform the image into a long-exposure light painting where the subject is formed from glowing light trails.\n\nCRITICAL OUTPUT RULES:\n• Subject defined by light trails\n• Dark background\n• Motion trails visible\n\nCORE CONCEPT:\n• Light replaces physical form.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "FINAL RESULT:\nA glowing composition where the subject is formed entirely from light streaks."
   },
   {
     "name": "LIMERICK",
@@ -19356,6 +19422,19 @@
     "additionalInstructions": "FINAL RESULT:\nThe final image must look like a real photograph of a child — either the believable offspring of two subjects, or a randomized child version of a single subject — natural, respectful, and emotionally neutral."
   },
   {
+    "name": "OIL IMPASTO",
+    "category": [
+      "ART",
+      "PAINTING",
+      "TEXTURE",
+      "CLASSIC"
+    ],
+    "message": "Take a picture and transform the image into an oil impasto painting with thick, heavy paint strokes.\n\nCRITICAL OUTPUT RULES:\n• Paint must appear thick and raised\n• Visible brush strokes\n• Light interacts with paint texture\n\nCORE CONCEPT:\n• Texture defines the image.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "FINAL RESULT:\nA thick oil painting with raised brush strokes and rich texture."
+  },
+  {
     "name": "OLD MACDONALD HAD A FARM",
     "category": [
       "HUMOR",
@@ -23588,6 +23667,7 @@
       "EXPRESSIVE"
     ],
     "message": "Take a picture and transform the image into a chaotic scribble sketch composed of loose, overlapping hand-drawn lines. The entire image must appear as if drawn quickly with expressive, energetic strokes.\n\nCRITICAL OUTPUT RULES:\n• The image must be built entirely from scribbled lines\n• Lines should overlap, intersect, and vary in intensity\n• NO clean outlines or polished rendering\n\nCORE CONCEPT:\n• Form emerges from chaos\n• Density of lines defines shading and depth\n\nSTYLE:\n• Hand-drawn, messy, energetic\n• Varying line thickness and pressure.",
+    "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "FINAL RESULT:\nA loose, expressive scribble drawing where the subject and environment are formed entirely from chaotic layered sketch lines."
   },
@@ -23895,6 +23975,19 @@
     "additionalInstructions": "FINAL RESULT:\nA soft, atmospheric Renaissance painting where all elements blend seamlessly into one another with no visible hard edges, creating a lifelike yet dreamlike image.\n\nCORE REQUIREMENTS:\n• NO sharp edges\n• NO digital artifacts\n• FULL tonal blending across entire image"
   },
   {
+    "name": "SGRAFFITO",
+    "category": [
+      "ART",
+      "ETCHED",
+      "TEXTURE",
+      "CRAFT"
+    ],
+    "message": "Take a picture and transform the image into a sgraffito artwork where a top layer is scratched away to reveal contrasting layers beneath.\n\nCRITICAL OUTPUT RULES:\n• Visible scratch marks define shapes\n• Multiple color layers revealed underneath\n• Rough, carved texture\n\nCORE CONCEPT:\n• Image created by subtracting the surface.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "FINAL RESULT:\nA layered surface where the image is scratched into the top layer revealing contrasting colors below."
+  },
+  {
     "name": "SHAKESPEAREAN",
     "category": [
       "THEATER",
@@ -24178,6 +24271,19 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "SMOKE FORM",
+    "category": [
+      "ART",
+      "ABSTRACT",
+      "ATMOSPHERIC",
+      "SOFT"
+    ],
+    "message": "Take a picture and transform the image into a composition made entirely from smoke and vapor.\n\nCRITICAL OUTPUT RULES:\n• No solid edges\n• Semi-transparent forms\n• Shapes defined by density of smoke\n\nCORE CONCEPT:\n• Form emerges from vapor\n\nFINAL RESULT:\nAn image formed entirely from swirling smoke with soft, ethereal structure.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "FINAL RESULT:\nA glowing composition where the subject is formed entirely from light streaks."
   },
   {
     "name": "SMURFED!",
@@ -29733,6 +29839,19 @@
     "randomizeOptions": false,
     "additionalInstructions": ""
   },
+  {
+    "name": "WATERCOLOR BLEED",
+    "category": [
+      "ART",
+      "PAINTING",
+      "FLUID",
+      "SOFT"
+    ],
+    "message": "Take a picture and transform the image into a watercolor painting with visible pigment bleeding and water diffusion.\n\nCRITICAL OUTPUT RULES:\n• Colors must bleed beyond edges\n• Soft transitions and pooling\n• Paper texture visible\n\nCORE CONCEPT:\n• Water flow controls the image.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "FINAL RESULT:\nA watercolor image with organic bleeding edges and fluid color blending."
+  },  
   {
     "name": "WEDDING CAKE TOPPER",
     "category": [
