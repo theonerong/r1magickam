@@ -1043,7 +1043,7 @@ async function showGallery(renderOnly = false) {
 async function hideGallery() {
   document.getElementById('gallery-modal').style.display = 'none';
   currentGalleryPage = 1;
-  await resumeCamera(); // Now this only happens when truly closing gallery
+  await reinitializeCamera(); // Re-initialize fully so camera switch works after gallery
   
   // Restore status element display (in case it was hidden by upload function)
   if (statusElement) {
@@ -1196,7 +1196,7 @@ function closeImageViewer() {
   modal.style.display = 'flex';
   // Don't call showGallery() as it would reload everything
   // Just refresh the grid
-  showGallery();
+  showGallery(true);
 }
 
 async function deleteViewerImage() {
@@ -1217,7 +1217,7 @@ async function deleteViewerImage() {
     currentViewerImageIndex = -1;
     viewerZoom = 1;
     
-    showGallery();
+    showGallery(true);
   }
 }
 
@@ -1981,14 +1981,14 @@ function toggleBatchMode() {
     batchActionBar.style.display = 'flex';
     selectedBatchImages.clear();
     updateBatchSelection();
-    showGallery();
+    showGallery(true);
   } else {
     toggleBtn.textContent = 'Select';
     toggleBtn.classList.remove('active');
     batchControls.style.display = 'none';
     batchActionBar.style.display = 'none';
     selectedBatchImages.clear();
-    showGallery();
+    showGallery(true);
   }
 }
 
@@ -7139,17 +7139,31 @@ async function switchCamera() {
     // }, 100);
     
     await new Promise((resolve) => {
-      video.onloadedmetadata = async () => {
-        try {
-          await video.play();
+      if (video.readyState >= 1) {
+        video.play().then(() => {
           applyVideoTransform();
-          await applyZoom(currentZoom);
+          applyZoom(currentZoom);
           setTimeout(resolve, 100);
-        } catch (err) {
+        }).catch((err) => {
           console.error('Video play error:', err);
           resolve();
-        }
-      };
+        });
+      } else {
+        video.onloadedmetadata = async () => {
+          video.onloadedmetadata = null;
+          try {
+            await video.play();
+            applyVideoTransform();
+            await applyZoom(currentZoom);
+            setTimeout(resolve, 100);
+          } catch (err) {
+            console.error('Video play error:', err);
+            resolve();
+          }
+        };
+        // Safety timeout so we never hang forever
+        setTimeout(resolve, 3000);
+      }
     });
     
     updatePresetDisplay();
@@ -7212,7 +7226,7 @@ function toggleBurstMode() {
   if (isBurstMode) {
     burstToggle.classList.add('burst-active');
     statusElement.textContent = noMagicMode
-      ? `⚡ NO MAGIC MODE • ���� Burst Mode`
+      ? `⚡ NO MAGIC MODE • 📸 Burst Mode`
       : `Burst mode ON (${burstCount} photos) • ${CAMERA_PRESETS[currentPresetIndex].name}`;
     showStyleReveal('📸 Burst Mode');
   } else {
@@ -7681,14 +7695,108 @@ async function initCamera() {
 }
 
 // Pause camera stream to reduce lag
+
 function pauseCamera() {
   if (stream && video) {
-    // Stop all tracks to actually disable the camera hardware
-    stream.getTracks().forEach(track => {
-      track.stop();
-    });
+    stream.getTracks().forEach(track => track.stop());
     video.style.display = 'none';
     video.srcObject = null;
+    stream = null;
+    videoTrack = null;
+    isLoadingCamera = false;
+  }
+}
+
+async function reinitializeCamera() {
+  if (!video) return;
+  try {
+    // Stop any existing stream completely
+    if (stream) {
+      stream.getTracks().forEach(track => track.stop());
+      stream = null;
+      videoTrack = null;
+    }
+
+    // Get a temporary stream so the browser reveals real camera device IDs
+    let tempStream = null;
+    try {
+      tempStream = await navigator.mediaDevices.getUserMedia({ video: true });
+    } catch (e) {
+      console.warn('Could not get temp stream for device enumeration:', e);
+    }
+
+    // Enumerate cameras now that a stream is active — real device IDs are available
+    await enumerateCameras();
+
+    // Stop the temporary stream before starting the real one
+    if (tempStream) {
+      tempStream.getTracks().forEach(track => track.stop());
+    }
+
+    // Small pause to let the browser fully release the temp stream
+    await new Promise(resolve => setTimeout(resolve, 200));
+
+    // Start the real camera stream with full device constraints
+    const constraints = getCameraConstraints();
+    stream = await navigator.mediaDevices.getUserMedia(constraints);
+
+    video.srcObject = stream;
+    videoTrack = stream.getVideoTracks()[0];
+
+    await new Promise((resolve) => {
+      if (video.readyState >= 1) {
+        video.play().then(() => {
+          applyVideoTransform();
+          applyZoom(currentZoom);
+          setTimeout(resolve, 100);
+        }).catch((err) => {
+          console.error('Video reinit error:', err);
+          resolve();
+        });
+      } else {
+        video.onloadedmetadata = async () => {
+          video.onloadedmetadata = null;
+          try {
+            await video.play();
+            applyVideoTransform();
+            await applyZoom(currentZoom);
+            setTimeout(resolve, 100);
+          } catch (err) {
+            console.error('Video reinit error:', err);
+            resolve();
+          }
+        };
+        setTimeout(resolve, 3000);
+      }
+    });
+
+    video.style.display = 'block';
+    console.log('Camera fully re-initialized. Available cameras:', availableCameras.length);
+
+  } catch (err) {
+    console.error('Failed to re-initialize camera:', err);
+    if (statusElement) statusElement.textContent = 'Camera restart failed';
+  }
+
+  // Restore status element display
+  if (statusElement) {
+    statusElement.style.display = 'block';
+  }
+
+  // Re-show the style reveal footer
+  if (noMagicMode) {
+    if (statusElement) statusElement.textContent = '⚡ NO MAGIC MODE';
+    showStyleReveal('⚡ NO MAGIC MODE');
+  } else if (isTimerMode || isBurstMode || isMotionDetectionMode || isRandomMode || isMultiPresetMode) {
+    let modeName = '';
+    if (isTimerMode) modeName = '⏱️ Timer Mode';
+    else if (isBurstMode) modeName = '📸 Burst Mode';
+    else if (isMotionDetectionMode) modeName = '👁️ Motion Detection';
+    else if (isRandomMode) modeName = '🎲 Random Mode';
+    if (statusElement) statusElement.textContent = `${modeName} • ${CAMERA_PRESETS[currentPresetIndex] ? CAMERA_PRESETS[currentPresetIndex].name : ''}`;
+    showStyleReveal(modeName);
+  } else {
+    updatePresetDisplay();
   }
 }
 
@@ -7696,29 +7804,58 @@ function pauseCamera() {
 async function resumeCamera() {
   if (video) {
     try {
-      // Restart the camera with the same constraints
+      // Get a temporary stream first so enumerateDevices() can return real device IDs.
+      // Without an active stream, browsers hide camera device IDs for privacy,
+      // which causes switchCamera() to fail after closing the gallery.
+      let tempStream = null;
+      try {
+        tempStream = await navigator.mediaDevices.getUserMedia({ video: true });
+      } catch (e) {
+        console.warn('Could not get temp stream for device enumeration:', e);
+      }
+
+      // Re-enumerate cameras now that a stream is active — real device IDs will be returned
+      await enumerateCameras();
+
+      // Stop the temporary stream before starting the real one
+      if (tempStream) {
+        tempStream.getTracks().forEach(track => track.stop());
+      }
+
+      // Restart the camera with the correct constraints (proper device IDs now available)
       const constraints = getCameraConstraints();
       stream = await navigator.mediaDevices.getUserMedia(constraints);
       
       video.srcObject = stream;
       videoTrack = stream.getVideoTracks()[0];
-      // Apply white balance
-      // setTimeout(() => {
-      //  applyWhiteBalance();
-      // }, 100);
-      
+
       await new Promise((resolve) => {
-        video.onloadedmetadata = async () => {
-          try {
-            await video.play();
+        // If metadata is already available, don't wait for the event
+        if (video.readyState >= 1) {
+          video.play().then(() => {
             applyVideoTransform();
-            await applyZoom(currentZoom);
+            applyZoom(currentZoom);
             setTimeout(resolve, 100);
-          } catch (err) {
+          }).catch((err) => {
             console.error('Video resume error:', err);
             resolve();
-          }
-        };
+          });
+        } else {
+          video.onloadedmetadata = async () => {
+            video.onloadedmetadata = null;
+            try {
+              await video.play();
+              applyVideoTransform();
+              await applyZoom(currentZoom);
+              setTimeout(resolve, 100);
+            } catch (err) {
+              console.error('Video resume error:', err);
+              resolve();
+            }
+          };
+          // Safety timeout so we never hang forever
+          setTimeout(resolve, 3000);
+        }
       });
       
       video.style.display = 'block';
@@ -9093,7 +9230,7 @@ function hideSettingsSubmenu() {
     isMenuOpen = false;
     menuScrollEnabled = false;
     // Show gallery first, then reopen the image viewer
-    showGallery().then(() => {
+    showGallery(true).then(() => {
       openImageViewer(savedViewerImageIndex);
     });
     return;
@@ -9337,7 +9474,7 @@ async function hideMasterPromptSubmenu() {
     isMenuOpen = false;
     menuScrollEnabled = false;
     // Show gallery first, then reopen the image viewer
-    await showGallery();
+    await showGallery(true);
     openImageViewer(savedViewerImageIndex);
     return;
   }
@@ -11568,7 +11705,7 @@ async function saveEditedImage() {
   closeImageEditor();
   
   // Refresh gallery
-  await showGallery();
+  await showGallery(true);
   showGalleryStatusMessage('Edited image saved!', 'success', 3000);
 }
 
