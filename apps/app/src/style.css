@@ -2017,7 +2017,7 @@ button:disabled {
 }
 
 .pagination-button {
-    padding: 2.5vw;
+    padding: 0 2.5vw;
     background-color: #FE5F00;
     color: #000;
     border: none;
@@ -2025,7 +2025,8 @@ button:disabled {
     font-size: 3.5vw;
     font-weight: bold;
     cursor: pointer;
-    min-height: 11vh;
+    height: 7vw;
+    min-height: 0;
     display: flex;
     align-items: center;
     justify-content: center;
