@@ -2052,6 +2052,19 @@
     "additionalInstructions": "FINAL RESULT:\nThe image should show the subject partially disintegrating into drifting ash, with smooth transitions from solid form to particles while keeping the subject clearly recognizable."
   },
   {
+    "name": "ASH / DUST FORMATION",
+    "category": [
+      "ART",
+      "PARTICLE",
+      "FRAGILE",
+      "ATMOSPHERIC"
+    ],
+    "message": "Take a picture and completely reconstruct the image as if it is formed from ash or dust particles suspended in space. The entire scene must be composed of particulate matter.\n\nCRITICAL OUTPUT RULES:\n• NO solid surfaces may remain\n• DO NOT overlay dust\n• Entire image must be particle-based\n\nCORE CONCEPT:\n• Density of particles defines structure\n• Loose and fragile composition\n\nSTRUCTURE RULES:\n• Clusters form shapes\n• Particles disperse at edges\n• Soft transitions between densities\n\nENFORCEMENT:\n• If solid forms exist, the result is incorrect.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "FINAL RESULT:\nA fully reconstructed image formed from floating ash or dust particles."
+  },
+  {
     "name": "AUSTIN DANGER POWERS",
     "category": [
       "CINEMATIC",
@@ -4675,6 +4688,19 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "CIRCUIT BOARD TRACE ART",
+    "category": [
+      "ART",
+      "TECH",
+      "STRUCTURAL",
+      "LINEWORK"
+    ],
+    "message": "Take a picture and completely reconstruct the image as a circuit board layout, where all forms are created from electronic traces and components.\n\nCRITICAL OUTPUT RULES:\n• NO original image may remain\n• DO NOT overlay circuits\n• Entire image must be PCB-based\n\nCORE CONCEPT:\n• Lines (traces) define structure\n• Nodes represent connection points\n\nSTRUCTURE RULES:\n• Thin conductive paths\n• Right-angle or curved routing\n• Layered electronic layout\n\nENFORCEMENT:\n• If circuits appear decorative, the result is incorrect.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "FINAL RESULT:\nA fully reconstructed image formed from circuit traces and electronic structures."
   },
   {
     "name": "CIRCUS STAR",
@@ -10429,6 +10455,19 @@
     "additionalInstructions": ""
   },
   {
+    "name": "FERROFLUID SCULPTURE",
+    "category": [
+      "ART",
+      "FLUID",
+      "SCIENCE",
+      "STRUCTURAL"
+    ],
+    "message": "Take a picture and completely reconstruct the image as if it is formed from ferrofluid reacting to magnetic fields. The entire scene must be built from spiked liquid structures.\n\nCRITICAL OUTPUT RULES:\n• NO original surfaces may remain\n• DO NOT overlay fluid effects\n• Entire image must be ferrofluid\n\nCORE CONCEPT:\n• Magnetic fields create spikes and ridges\n• Fluid forms dynamic structures\n\nSTRUCTURE RULES:\n• Spiky protrusions\n• Glossy black liquid\n• Directional patterns from magnetic influence\n\nENFORCEMENT:\n• If it looks like fluid on top of a photo, the result is incorrect.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "FINAL RESULT:\nA fully reconstructed image formed from ferrofluid spikes and magnetic flow patterns."
+  },
+  {
     "name": "FESTIVE-ALL!",
     "category": [
       "FESTIVAL",
@@ -15762,6 +15801,19 @@
     "additionalInstructions": "FINAL RESULT:\nThe portrait should look polished, natural, and realistic."
   },
   {
+    "name": "MANDALA CONSTRUCTION",
+    "category": [
+      "ART",
+      "SYMMETRY",
+      "GEOMETRIC",
+      "STRUCTURAL"
+    ],
+    "message": "Take a picture and completely reconstruct the image as a radial mandala originating from a central point. The entire scene must be reorganized into symmetrical, repeating geometric structures.\n\nCRITICAL OUTPUT RULES:\n• NO original composition may remain\n• DO NOT overlay symmetry\n• The image must be rebuilt radially\n\nCORE CONCEPT:\n• Everything radiates from a central origin\n• Repetition and symmetry define structure\n\nSTRUCTURE RULES:\n• Perfect or near-perfect radial symmetry\n• Repeating geometric segments\n• Balanced distribution around center\n\nENFORCEMENT:\n• If the image looks like a mirrored photo, the result is incorrect.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "FINAL RESULT:\nA fully reconstructed mandala where the subject is integrated into a symmetrical radial design."
+  },  
+  {
     "name": "MANDELA EFFECT",
     "category": [
       "HUMOR",
@@ -19553,6 +19605,19 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "FINAL RESULT:\nA thick oil painting with raised brush strokes and rich texture."
+  },
+  {
+    "name": "OIL SLICK INTERFERENCE",
+    "category": [
+      "ART",
+      "COLOR",
+      "SURFACE",
+      "PHYSICS"
+    ],
+    "message": "Take a picture and completely reconstruct the image as if it is formed by thin-film interference patterns, like oil on water. The entire image must be composed of shifting iridescent colors.\n\nCRITICAL OUTPUT RULES:\n• NO original colors may remain\n• DO NOT overlay oil effect\n• Entire image must be interference-based\n\nCORE CONCEPT:\n• Color arises from light interference\n• Surface tension patterns define structure\n\nSTRUCTURE RULES:\n• Smooth flowing gradients\n• Iridescent rainbow shifts\n• Organic surface flow patterns\n\nENFORCEMENT:\n• If it looks like a normal image with color overlay, the result is incorrect.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "FINAL RESULT:\nA fully reconstructed image formed from iridescent thin-film interference patterns."
   },
   {
     "name": "OLD MACDONALD HAD A FARM",
