@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>Magic Kamera</title>
-  <script type="module" crossorigin src="./assets/main-DdSpe96d.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/main-DT1Zjmty.css">
+  <script type="module" crossorigin src="./assets/main-DlvCLmSG.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/main-DV4g8-ov.css">
 </head>
 <body>
     <div id="app">
@@ -164,8 +164,8 @@
         <div id="settings-submenu" class="submenu" style="display: none;">
             <div class="submenu-content">
                 <div class="submenu-header">
-                    <button id="settings-back" class="back-button">‹ Back</button>
                     <h3>Settings</h3>
+                    <button id="settings-back" class="close-button">×</button>
                 </div>
                 <div class="submenu-list">
                     <!-- Resolution Settings -->
@@ -314,8 +314,8 @@
         <div id="resolution-submenu" class="submenu" style="display: none;">
             <div class="submenu-content">
                 <div class="submenu-header">
-                    <button id="resolution-back" class="back-button">‹ Back</button>
                     <h3>Resolution</h3>
+                    <button id="resolution-back" class="close-button">×</button>
                 </div>
                 <div id="resolution-list" class="submenu-list">
                     <!-- Resolution options will be dynamically added here -->
@@ -327,8 +327,8 @@
 <div id="aspect-ratio-submenu" class="submenu" style="display: none;">
     <div class="submenu-content">
         <div class="submenu-header">
-            <button id="aspect-ratio-back" class="back-button">‹ Back</button>
             <h3>Aspect Ratio</h3>
+            <button id="aspect-ratio-back" class="close-button">×</button>
         </div>
         <div class="submenu-list">
             <label class="resolution-item" style="cursor: pointer; display: flex; align-items: center;">
@@ -347,8 +347,8 @@
         <div id="burst-submenu" class="submenu" style="display: none;">
             <div class="submenu-content">
                 <div class="submenu-header">
-                    <button id="burst-back" class="back-button">‹ Back</button>
                     <h3>Burst Settings</h3>
+                    <button id="burst-back" class="close-button">×</button>
                 </div>
                 <div class="submenu-list">
                     <div class="burst-setting-item">
@@ -385,8 +385,8 @@
 <div id="timer-settings-submenu" class="submenu" style="display: none;">
     <div class="submenu-content">
         <div class="submenu-header">
-            <button id="timer-settings-back" class="back-button">‹ Back</button>
             <h3>Timer Settings</h3>
+            <button id="timer-settings-back" class="close-button">×</button>
         </div>
         <div class="submenu-list">
             <div class="burst-setting-item">
@@ -426,8 +426,8 @@
 <div id="master-prompt-submenu" class="submenu" style="display: none;">
     <div class="submenu-content">
         <div class="submenu-header">
-            <button id="master-prompt-back" class="back-button">‹ Back</button>
             <h3>Master Prompt</h3>
+            <button id="master-prompt-back" class="close-button">×</button>
         </div>
         <div class="submenu-list">
             <div class="master-prompt-setting-item">
@@ -451,8 +451,8 @@
         <div id="motion-submenu" class="submenu" style="display: none;">
             <div class="submenu-content">
                 <div class="submenu-header">
-                    <button id="motion-back" class="back-button">‹ Back</button>
                     <h3>Motion Detection</h3>
+                    <button id="motion-back" class="close-button">×</button>
                 </div>
                 <div class="submenu-list">
                     <div class="burst-setting-item">
@@ -507,11 +507,11 @@
 <div id="visible-presets-submenu" class="submenu" style="display: none;">
     <div class="submenu-content">
         <div class="submenu-header">
-    <button id="visible-presets-back" class="back-button">‹ Back</button>
     <h3>Visible Presets (<span id="visible-presets-count">0</span>)</h3>
     <div class="menu-nav-buttons">
         <button id="visible-presets-jump-up" class="menu-jump-button" title="Scroll up">↑</button>
         <button id="visible-presets-jump-down" class="menu-jump-button" title="Scroll down">↓</button>
+        <button id="visible-presets-back" class="close-button">×</button>
     </div>
 </div>
         <div class="submenu-list">
@@ -537,12 +537,12 @@
         <div id="preset-builder-submenu" class="submenu" style="display: none;">
             <div class="submenu-content">
                 <div class="submenu-header">
-    <button id="preset-builder-back" class="back-button">‹ Back</button>
     <h3>Preset Builder</h3>
     <div class="menu-nav-buttons">
         <button id="preset-builder-delete" class="menu-jump-button" style="display: none; background: #d32f2f;">Delete</button>
         <button id="preset-builder-save" class="menu-jump-button">Save</button>
         <button id="preset-builder-clear" class="menu-jump-button">Clear</button>
+        <button id="preset-builder-back" class="close-button">×</button>
     </div>
 </div>
                 <div class="preset-builder-container">
@@ -800,8 +800,8 @@
         <div id="import-resolution-submenu" class="submenu" style="display: none;">
             <div class="submenu-content">
                 <div class="submenu-header">
-                    <button id="import-resolution-back" class="back-button">‹ Back</button>
                     <h3>Import Settings</h3>
+                    <button id="import-resolution-back" class="close-button">×</button>
                 </div>
                 <div class="submenu-list">
                     <!-- Import Resolution List -->
@@ -817,9 +817,11 @@
         <div id="tutorial-submenu" class="submenu" style="display: none;">
             <div class="submenu-content">
                 <div class="submenu-header">
-                    <button id="tutorial-back" class="back-button">‹ Back</button>
                     <h3>Tutorial</h3>
-                    <button id="back-to-glossary" class="back-to-glossary" style="display: none;">← Index</button>
+                    <div class="menu-nav-buttons">
+                        <button id="back-to-glossary" class="menu-jump-button" style="display: none; margin-right: auto;">Index</button>
+                        <button id="tutorial-back" class="close-button">×</button>
+                    </div>
                 </div>
                 <!-- Glossary Menu -->
                 <div id="tutorial-glossary" class="tutorial-glossary">
@@ -1224,16 +1226,16 @@ All of the presets are optimized to avoid "camera ran dry" or "content filter" i
         <!-- Left carousel: MASTER and OPTIONS — default visible, double click to hide -->
         <div id="viewer-left-carousel" class="viewer-left-carousel">
             <div class="viewer-left-carousel-track">
-                <button id="mp-viewer-button" class="viewer-left-carousel-btn">MASTER</button>
-                <button id="options-viewer-button" class="viewer-left-carousel-btn">OPTIONS</button>
+                <button id="mp-viewer-button" class="viewer-left-carousel-btn">📝<br><span style="font-size:2.5vw;line-height:1;color:#fff;margin-top:1.5vw;display:block;">MASTER</span></button>
+<button id="options-viewer-button" class="viewer-left-carousel-btn">🎛️<br><span style="font-size:2.5vw;line-height:1;color:#fff;margin-top:1.5vw;display:block;">OPTIONS</span></button>
             </div>
         </div>
         <!-- Right-side carousel: Edit and Export -->
         <div id="viewer-carousel" class="viewer-carousel">
             <div class="viewer-carousel-track">
-                <button id="edit-viewer-image" class="viewer-carousel-button">✏️<br><span class="viewer-carousel-label">Edit</span></button>
-                <button id="upload-viewer-image" class="viewer-carousel-button">📤<br><span class="viewer-carousel-label">Export</span></button>
-                <button id="layer-preset-viewer-button" class="viewer-carousel-button">📑<br><span class="viewer-carousel-label">Layer</span></button>
+                <button id="edit-viewer-image" class="viewer-carousel-button">✏️<br><span class="viewer-carousel-label">EDIT</span></button>
+                <button id="upload-viewer-image" class="viewer-carousel-button">📤<br><span class="viewer-carousel-label">EXPORT</span></button>
+                <button id="layer-preset-viewer-button" class="viewer-carousel-button">📑<br><span class="viewer-carousel-label">LAYER</span></button>
             </div>
         </div>
         <!-- Image fills remaining space -->
