@@ -26752,6 +26752,20 @@
     "additionalInstructions": "FINAL RESULT:\nA raised-ink printed image where all details appear embossed and glossy, as if physically printed using thermographic techniques."
   },
   {
+    "name": "THEY LIVE",
+    "category": [
+      "SCI-FI",
+      "HORROR",
+      "SOCIAL",
+      "CINEMATIC",
+      "TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform the scene as if viewed through the special sunglasses from the 1988 film They Live, revealing the hidden truth behind reality.\n\nMASTER PROMPT OVERRIDE LOGIC (CRITICAL):\n• If an external master prompt specifies reveal intensity or subject classification, USE that instead\n\nCRITICAL OUTPUT RULES (NON-NEGOTIABLE):\n• The entire image must be transformed into the 'revealed reality' version\n• DO NOT show a split view or before/after comparison\n• DO NOT create multiple images\n• The result must be ONE cohesive scene\n\nCORE CONCEPT (CRITICAL):\n• The image reveals hidden control systems behind reality\n• Some humans are actually disguised skull-faced aliens\n• Written language contains subliminal commands\n\nVISUAL STYLE:\n• High-contrast black-and-white or desaturated palette\n• Harsh lighting and stark shadows\n• Slight gritty film texture (1980s aesthetic)\n\nALIEN TRANSFORMATION RULES:\n• Randomly assign some human subjects to be disguised aliens\n• Aliens must resemble skull-faced humanoids (NOT generic monsters)\n• Maintain original pose and position\n• Facial structure becomes skeletal but still aligned with the subject\n\nHUMAN SUBJECT RULES:\n• Some people remain human\n• Humans should appear unaware or neutral\n\nBALANCE RULE (CRITICAL):\n• NOT all people are aliens\n• NOT all people are human\n• Maintain believable distribution\n\nTEXT TRANSFORMATION (CRITICAL):\n• ANY visible text must be rewritten into subliminal messaging\n• KEEP the original structure/layout of the text\n• DO NOT remove or replace text completely\n• OVERLAY or transform wording into commands such as:\n  - OBEY\n  - CONSUME\n  - CONFORM\n  - WATCH TV\n  - SUBMIT\n  - NO INDEPENDENT THOUGHT\n  - BUY / SPEND / SLEEP\n\nTEXT STYLE:\n• Bold, blocky, stark lettering\n• Integrated into signs, billboards, packaging, screens\n• Feels like hidden messaging revealed\n\nENVIRONMENT EFFECTS:\n• Subtle distortion of reality\n• Hidden symbols or patterns embedded in environment\n• Slight surreal tension without chaos\n\nTONE:\n• Paranoid\n• Controlled\n• Oppressive\n• Serious (NOT comedic)\n\nENFORCEMENT (CRITICAL):\n• If aliens look like random monsters, the result is incorrect\n• If text is removed instead of transformed, the result is incorrect\n• If the image looks like a normal photo with effects, the result is incorrect.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "FINAL RESULT:\nA single transformed image showing the hidden reality behind the scene, where some people are revealed as skull-faced aliens and all visible text exposes subliminal control messages, rendered in a stark, cinematic They Live style."
+  },
+  {
     "name": "THINNER",
     "category": [
       "TRANSFORMATION",
