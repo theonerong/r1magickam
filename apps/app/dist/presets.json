@@ -15035,6 +15035,20 @@
     "additionalInstructions": "FINAL RESULT:\nThe final image must look like a dramatic mid-20th-century pop art comic panel printed with bold ink lines, flat primary colors, and visible halftone dot shading, clearly graphic and print-based rather than painterly or digitally filtered."
   },
   {
+    "name": "LIDAR SCAN",
+    "category": [
+      "TECH",
+      "SCAN",
+      "POINT CLOUD",
+      "3D",
+      "STRUCTURAL"
+    ],
+    "message": "Take a picture and completely reconstruct the entire image as a LiDAR scan visualization, where the scene is captured as a 3D point cloud made ONLY of discrete scan points.\n\nMASTER PROMPT OVERRIDE LOGIC (CRITICAL):\n• If an external master prompt specifies scan density or style, USE that instead\n\nCRITICAL OUTPUT RULES (NON-NEGOTIABLE):\n• COMPLETELY DESTROY the original image before reconstruction\n• DO NOT preserve ANY original surfaces, textures, gradients, or shading\n• DO NOT overlay scan points on top of the image\n• The final image must be a FULL RECONSTRUCTION from scan data only\n\nCORE CONCEPT (CRITICAL):\n• The image is a LiDAR point cloud visualization\n• Everything is represented ONLY by discrete spatial points\n• The background must be empty (black or dark), not an image\n\nPOINT CLOUD RULES (NUCLEAR):\n• The entire image must be composed ONLY of separated points (dots)\n• NO underlying photo or color image may be visible\n• NO gradients, NO shading, NO surfaces\n• Points must NEVER connect to form lines, meshes, or surfaces\n• Points must float in space with visible gaps between them\n• Density of points defines form, depth, and detail\n\nSCAN BEHAVIOR:\n• Simulate real LiDAR capture (depth-based sampling)\n• Foreground = higher density of points\n• Background = sparse or fading points\n• Occlusion must exist (missing data in hidden areas)\n• Edges may appear incomplete or fragmented\n\nCOLOR RULE (CRITICAL):\n• Use ONLY monochrome scan colors:\n  - White points on black background OR\n  - Cyan/blue points on black background\n• DO NOT use full color images\n• DO NOT preserve original colors in any form\n\nSUBJECT HANDLING:\n• Subject must remain recognizable ONLY through point distribution\n• Facial features must emerge from density—not shading or lines\n\nENVIRONMENT RULES:\n• Entire environment must also be reconstructed as points\n• Empty space between points is REQUIRED\n\nSTYLE:\n• Scientific / LiDAR scan visualization\n• Raw, technical, slightly noisy\n• Not artistic, not stylized photography\n\nENFORCEMENT (CRITICAL):\n• If ANY original image or color is visible, the result is incorrect\n• If dots are placed over a visible photo, the result is incorrect\n• If gradients or shading appear, the result is incorrect\n• If the image looks like a photo with effects, the result is incorrect.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "FINAL RESULT:\nA fully reconstructed LiDAR scan image made ONLY of white or blue points on a black background, forming a recognizable subject purely through point density with no underlying image."
+  },
+  {
     "name": "LIGHT",
     "category": [
       "ABSTRACT",
@@ -22346,14 +22360,14 @@
       "TECHNICAL",
       "RENDERING"
     ],
-    "message": "Take a picture and completely reconstruct the image as if it were generated using ray tracing with 3D primitives and light sampling.\n\nMASTER PROMPT OVERRIDE LOGIC (CRITICAL):\n• If an external master prompt specifies sampling, geometry, or lighting, USE that instead\n\nCRITICAL OUTPUT RULES (NON-NEGOTIABLE):\n• NO original image detail may remain\n• DO NOT apply lighting effects to a photo\n• The entire image must be rebuilt from light interaction\n\nCORE CONCEPT (CRITICAL):\n• The image is formed from light samples, reflections, and illumination\n• Objects are simplified into 3D primitives or point samples\n\nSTRUCTURE RULES:\n• Surfaces must appear built from sampled light or discrete light points\n• Light defines form, NOT texture\n\nGEOMETRY RULES:\n• Objects reduced to primitive shapes OR point-based reconstruction depending on mode\n• Clean, simplified 3D structure\n\nLIGHT BEHAVIOR:\n• Global illumination\n• Reflections and highlights\n• Physically consistent shadows\n\nSUBJECT HANDLING:\n• Subject must remain recognizable through lighting and form\n\nENFORCEMENT (CRITICAL):\n• If it looks like a photo with lighting added, the result is incorrect\n• If textures dominate instead of light, the result is incorrect\n• If solid surfaces remain in dot mode, the result is incorrect.",
+    "message": "Take a picture and completely reconstruct the image as if it were generated using physically accurate ray tracing with 3D geometry and light interaction.\n\nMASTER PROMPT OVERRIDE LOGIC (CRITICAL):\n• If an external master prompt specifies geometry or lighting, USE that instead\n\nCRITICAL OUTPUT RULES (NON-NEGOTIABLE):\n• NO original image detail may remain\n• DO NOT apply lighting effects to a photo\n• The entire image must be rebuilt as a fully rendered 3D scene\n\nCORE CONCEPT (CRITICAL):\n• The image is formed through physically accurate light interaction\n• Objects exist as solid 3D geometry with real surfaces\n• The result must clearly look like a COMPUTER-GENERATED RENDER, not a real photograph\n\nSTRUCTURE RULES:\n• All objects must have continuous, solid surfaces\n• Surfaces must be smooth or faceted depending on geometry\n• NO dots, NO particles, NO point-based rendering of any kind\n• NO broken or disconnected geometry\n\nGEOMETRY RULES:\n• Objects reduced to simplified or slightly imperfect 3D primitives\n• Subtle geometric imperfections must be visible (non-perfect curves, slight faceting, simplified topology)\n\nLIGHT BEHAVIOR:\n• Global illumination (light bouncing between surfaces)\n• Accurate reflections and specular highlights\n• Refractions where appropriate (glass, transparent materials)\n• Soft and hard shadows based on light sources\n\nMATERIAL RULES:\n• Surfaces must have physically-based materials (metal, plastic, matte, glass, etc.)\n• Materials should appear slightly artificial or synthetic (CG look)\n\nRENDER IMPERFECTIONS (CRITICAL):\n• Slight rendering noise or grain may be visible\n• Minor aliasing or edge sharpness inconsistencies allowed\n• Surfaces may appear slightly too smooth or plasticky\n• Lighting may have subtle bias or non-photoreal balance\n• The image must feel like a rendered frame—not reality\n\nSUBJECT HANDLING:\n• Subject must remain recognizable through form, lighting, and geometry\n• Facial features must look like a 3D model (not real skin)\n\nENFORCEMENT (CRITICAL):\n• If the image looks like a real photograph, the result is incorrect\n• If skin or surfaces look photoreal instead of rendered, the result is incorrect\n• If textures dominate instead of geometry and lighting, the result is incorrect\n• If surfaces are not continuous and physically solid, the result is incorrect",
     "optionGroups": [
       {
         "title": "Sample Density",
         "options": [
-          { "id": "001", "text": "Low sample count producing grainy, noisy light sampling" },
-          { "id": "002", "text": "Medium sample count with balanced smoothness and detail" },
-          { "id": "003", "text": "High sample count producing clean, smooth, high-quality rendering" }
+          { "id": "001", "text": "Low quality rendering with visible noise and rough light calculation" },
+          { "id": "002", "text": "Balanced rendering with moderate smoothness and clarity" },
+          { "id": "003", "text": "High quality rendering with clean but still visibly computer-generated lighting" }
         ]
       },
       {
@@ -22371,18 +22385,10 @@
           { "id": "002", "text": "HDRI environment lighting with realistic global illumination" },
           { "id": "003", "text": "Dramatic lighting with strong contrast and directional shadows" }
         ]
-      },
-      {
-        "title": "Reconstruction Mode",
-        "options": [
-          { "id": "001", "text": "Surface-based rendering using smooth ray-traced geometry" },
-          { "id": "002", "text": "Hybrid rendering mixing surfaces with visible light sampling points" },
-          { "id": "003", "text": "Pure point-sampled reconstruction where the entire image is built ONLY from light dots with no solid surfaces" }
-        ]
       }
     ],
     "randomizeOptions": true,
-    "additionalInstructions": "FINAL RESULT:\nA physically-based rendered scene where sample density, primitive geometry, lighting style, and reconstruction mode directly control the visual structure."
+    "additionalInstructions": "FINAL RESULT:\nA fully ray-traced 3D render that clearly looks computer-generated, with solid geometry, physically-based lighting, and subtle rendering imperfections. The result must NOT resemble a real photograph."
   },
   {
     "name": "READ ACROSS AMERICA",
