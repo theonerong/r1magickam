@@ -1611,22 +1611,22 @@ button:disabled {
 
 .left-cam-carousel-track #gallery-button {
     position: absolute;
-    bottom: 0;
+    bottom: 2vh;
     left: 50%;
     transform: translateX(-50%);
 }
 
-/* Master and Options centered vertically in middle space with clear gap */
+/* Master and Options centered in the space between menu bottom and gallery top */
 .left-cam-carousel-track #cam-master-prompt-btn {
     position: absolute;
-    top: calc(50% - 30px - 8vw);
+    top: calc(1vh + 12vw + (100% - 1vh - 12vw - 12vw - 12vw - 12vw) / 3);
     left: 50%;
     transform: translateX(-50%);
 }
 
 .left-cam-carousel-track #cam-options-btn {
     position: absolute;
-    top: calc(50% + 30px - 8vw);
+    top: calc(1vh + 12vw + (100% - 1vh - 12vw - 12vw - 12vw - 12vw) / 3 + 12vw + 8vw);
     left: 50%;
     transform: translateX(-50%);
 }
@@ -1676,7 +1676,7 @@ button:disabled {
     position: absolute;
     right: -2vw; 
     top: 22vh;
-    bottom: 8vh;
+    bottom: 10vh;
     width: 24vw; 
     display: flex;
     flex-direction: column;

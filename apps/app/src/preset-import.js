@@ -357,7 +357,7 @@ export class PresetImporter {
       filterSection.className = 'menu-section';
       filterSection.style.cssText = 'position: sticky; top: 0; background: #1a1a1a; z-index: 10; padding: 5px 0; margin: 0; border-bottom: 1px solid #333;';
       filterSection.innerHTML = `
-        <div class="filter-row" style="margin: 0;">
+        <div class="filter-row" style="margin: 0; padding-right: calc(8vw + 2vw);">
           <input type="text" id="import-preset-filter" class="style-filter" placeholder="Filter..." style="margin: 0; height: 24px; font-size: 12px;">
           <button class="filter-blur-btn" id="import-filter-blur-btn" title="Dismiss keyboard">×</button>
         </div>
