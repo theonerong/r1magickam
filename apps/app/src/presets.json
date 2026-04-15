@@ -10648,6 +10648,36 @@
     "additionalInstructions": ""
   },
   {
+    "name": "FINGERPRINT STRUCTURE",
+    "category": [
+      "ART",
+      "BIOMETRIC",
+      "LINEWORK",
+      "STRUCTURAL"
+    ],
+    "message": "Take a picture and completely reconstruct the entire image using fingerprint ridge patterns as the ONLY structural element.\n\nMASTER PROMPT OVERRIDE LOGIC (CRITICAL):\n• If an external master prompt specifies ridge pattern or density, USE that instead\n\nCRITICAL OUTPUT RULES (NON-NEGOTIABLE):\n• NO original image detail may remain\n• DO NOT overlay fingerprint lines\n• The entire image must be formed from continuous ridge lines only\n\nCORE CONCEPT (CRITICAL):\n• Continuous flowing ridge lines define ALL shapes\n• Density and spacing of lines create shading\n\nSTRUCTURE RULES:\n• Lines must flow organically (no sketching, no crosshatching)\n• Entire image must behave as ONE unified fingerprint system\n• Ridge curvature must define form and depth\n\nSUBJECT HANDLING:\n• Subject must remain recognizable using ridge flow alone\n\nENFORCEMENT (CRITICAL):\n• If the image looks like a photo with lines on top, the result is incorrect\n• If shading exists without line structure, the result is incorrect\n\nFINAL RESULT:\nA fully reconstructed image composed entirely of fingerprint ridge patterns, where flow and density define the subject.",
+    "optionGroups": [
+      {
+        "title": "Ridge Pattern Type",
+        "options": [
+          { "id": "001", "text": "Whorl-dominant pattern with circular and spiral ridge flows" },
+          { "id": "002", "text": "Loop-dominant pattern with sweeping curved ridge flows" },
+          { "id": "003", "text": "Arch-dominant pattern with wave-like rising ridge flows" }
+        ]
+      },
+      {
+        "title": "Ridge Density",
+        "options": [
+          { "id": "001", "text": "Tight density with closely packed fine ridge lines for high detail" },
+          { "id": "002", "text": "Balanced density with moderate spacing for clarity and readability" },
+          { "id": "003", "text": "Loose density with widely spaced ridges creating a minimal abstract look" }
+        ]
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "FINAL RESULT:\nA unified fingerprint-based composition where ridge pattern type and density directly control the structure, detail level, and visual flow of the entire image."
+  },
+  {
     "name": "FIREWORKS",
     "category": [
       "CELEBRATION",
@@ -22306,6 +22336,45 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "FINAL RESULT:\nThe final image must look like a real Olympic breakdancing moment where the subject is earnestly performing but clearly outmatched, while other competitors and officials react with confusion or mockery. The humor should come from the contrast between seriousness and failure — painfully memorable and unmistakable."
+  },
+  {
+    "name": "RAY TRACED",
+    "category": [
+      "ART",
+      "3D",
+      "LIGHT",
+      "TECHNICAL",
+      "RENDERING"
+    ],
+    "message": "Take a picture and completely reconstruct the image as if it were generated using ray tracing with 3D primitives and light sampling.\n\nMASTER PROMPT OVERRIDE LOGIC (CRITICAL):\n• If an external master prompt specifies sampling, geometry, or lighting, USE that instead\n\nCRITICAL OUTPUT RULES (NON-NEGOTIABLE):\n• NO original image detail may remain\n• DO NOT apply lighting effects to a photo\n• The entire image must be rebuilt from light interaction\n\nCORE CONCEPT (CRITICAL):\n• The image is formed from light samples, reflections, and illumination\n• Objects are simplified into 3D primitives\n\nSTRUCTURE RULES:\n• Surfaces must appear built from sampled light points\n• Light defines form, NOT texture\n\nGEOMETRY RULES:\n• Objects reduced to primitive shapes\n• Clean, simplified 3D structure\n\nLIGHT BEHAVIOR:\n• Global illumination\n• Reflections and highlights\n• Physically consistent shadows\n\nSUBJECT HANDLING:\n• Subject must remain recognizable through lighting and form\n\nENFORCEMENT (CRITICAL):\n• If it looks like a photo with lighting added, the result is incorrect\n• If textures dominate instead of light, the result is incorrect\n\nFINAL RESULT:\nA fully reconstructed ray-traced image where lighting and primitive geometry define the entire scene.",
+    "optionGroups": [
+      {
+        "title": "Sample Density",
+        "options": [
+          { "id": "001", "text": "Low sample count producing grainy, noisy light sampling" },
+          { "id": "002", "text": "Medium sample count with balanced smoothness and detail" },
+          { "id": "003", "text": "High sample count producing clean, smooth, high-quality rendering" }
+        ]
+      },
+      {
+        "title": "Primitive Type",
+        "options": [
+          { "id": "001", "text": "Spheres only creating smooth rounded geometry" },
+          { "id": "002", "text": "Mixed primitives (spheres, cubes, planes) forming varied geometry" },
+          { "id": "003", "text": "Sharp-edged primitives emphasizing angular and faceted structure" }
+        ]
+      },
+      {
+        "title": "Lighting Style",
+        "options": [
+          { "id": "001", "text": "Studio lighting with controlled highlights and soft shadows" },
+          { "id": "002", "text": "HDRI environment lighting with realistic global illumination" },
+          { "id": "003", "text": "Dramatic lighting with strong contrast and directional shadows" }
+        ]
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "FINAL RESULT:\nA physically-based rendered scene where sample density, primitive geometry, and lighting style directly control the visual quality, structure, and realism of the image."
   },
   {
     "name": "READ ACROSS AMERICA",
