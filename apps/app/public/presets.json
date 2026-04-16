@@ -3911,6 +3911,19 @@
     "additionalInstructions": "ABSOLUTE REQUIREMENT: No photographic pixels, skin, fabric, metal, plastic, paper, or real-world materials may remain."
   },
   {
+    "name": "CANDY WRAPPER COLLAGE",
+    "category": [
+      "ART",
+      "COLLAGE",
+      "COLORFUL",
+      "RECYCLED"
+    ],
+    "message": "Take a picture and reconstruct the subject's portrait entirely from flattened candy wrappers, chocolate bar foils, and sweet packaging arranged as a collage. Each wrapper should be a real, recognizable candy brand — Snickers, M&Ms, Skittles, Reese's, Kit Kat, Twix, Starburst, and others — flattened and arranged to create the portrait through color matching. The metallic foils of chocolate wrappers create highlights, dark chocolate packaging creates shadows, and colorful candy wrappers provide the mid-tones. Each wrapper should be individually identifiable with visible brand logos, text, and distinctive packaging designs. The wrappers should overlap slightly like fish scales or mosaic tiles. The portrait should be clearly recognizable from a distance while resolving into individual candy wrappers up close. Photograph flat with even lighting to show the glossy, crinkled texture of the wrappers.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "FINAL RESULT:\nA candy wrapper collage portrait where the subject is constructed from recognizable flattened candy packaging, with brand logos visible and colors creating the portrait through strategic arrangement."
+  },  
+  {
     "name": "CAPTCHA VERIFICATION",
     "category": [
       "HUMOR",
@@ -10544,6 +10557,19 @@
     "additionalInstructions": "FINAL RESULT:\nThe image should be a black and white single-panel Far Side cartoon with the subject drawn in the distinctive style, placed in the selected absurdist scenario, with the scenario's caption at the bottom - capturing unique blend of dark humor, anthropomorphic animals, and deadpan absurdity."
   },
   {
+    "name": "FASHION SKETCH",
+    "category": [
+      "ART",
+      "FASHION",
+      "ILLUSTRATION",
+      "DESIGN"
+    ],
+    "message": "Take a picture and transform the subject into a high-fashion illustration sketch in the style of fashion designers' croquis drawings. Elongate the subject's proportions to the exaggerated 9-10 head-height fashion illustration standard. Render using loose, confident ink strokes with selective watercolor washes for color. The subject's clothing should be reimagined as haute couture — dramatic silhouettes, exaggerated proportions, and avant-garde design elements. Include fashion sketch conventions: fabric swatches pinned to the corner, handwritten notes about materials and construction details, color palette dots, and the designer's signature. The pose should be a classic fashion illustration stance — one hip cocked, elongated legs, and an attitude of effortless elegance. Use a mix of fine-line pen work for details and broad marker strokes for shadows. The sketch should appear on high-quality illustration paper with visible paper texture.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "FINAL RESULT:\nA professional fashion illustration with elongated proportions, loose ink and watercolor technique, fabric swatches, designer notes, and haute couture reimagining of the subject's outfit."
+  },
+  {
     "name": "FAST FOOD MASCOT",
     "category": [
       "ADVERTISING",
@@ -14999,6 +15025,20 @@
     "additionalInstructions": "Final result:\nA cinematic still that evokes an iconic romantic ship-bow moment, clearly starring the subject, humorous and dramatic."
   },
   {
+    "name": "KINTSUKUROI",
+    "category": [
+      "ART",
+      "JAPANESE",
+      "PHILOSOPHY",
+      "GOLD",
+      "TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform the subject as if they were a ceramic vessel that has been broken and repaired using the Japanese art of Kintsugi (Kintsukuroi) — filling the cracks with gold. The subject's skin and clothing should appear as fine porcelain or ceramic with visible crack lines running across the surface, each crack filled with gleaming liquid gold or gold lacquer. The cracks should follow natural contours of the face and body, creating beautiful golden seam patterns. The porcelain surface should be smooth, matte, and slightly translucent. Gold fills should catch light realistically with metallic sheen. The overall mood should convey beauty in imperfection, resilience, and the philosophy that breakage and repair are part of the history of an object rather than something to disguise.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "FINAL RESULT:\nA stunning Kintsugi-inspired transformation where the subject appears as repaired porcelain with golden crack lines, embodying the Japanese philosophy of finding beauty in imperfection."
+  },
+  {
     "name": "KISS CAM",
     "category": [
       "HUMOR",
@@ -16572,6 +16612,19 @@
     "additionalInstructions": "FINAL RESULT:\nA single seamless image where multiple identities are revealed beneath the subject’s surface through natural mask-like layers."
   },
   {
+    "name": "MATCHSTICK MODEL",
+    "category": [
+      "CRAFT",
+      "SCULPTURE",
+      "MINIATURE",
+      "DETAILED"
+    ],
+    "message": "Take a picture and transform the subject into an intricate model constructed entirely from wooden matchsticks. Every surface, feature, and detail must be built from individual matchsticks glued together — some with red phosphorus heads visible, others with the heads removed showing bare wood. The matchsticks should be arranged in various orientations: parallel rows for flat surfaces, radiating patterns for curved areas, and cross-hatched arrangements for structural support. The wood grain of individual matchsticks should be visible. Include realistic construction details: tiny drops of dried glue at joints, slight irregularities in alignment, and the warm honey-brown color of wooden matchsticks. The model should appear as a museum-quality craft piece photographed with soft studio lighting that emphasizes the three-dimensional matchstick construction.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "FINAL RESULT:\nAn intricate matchstick model of the subject with individually visible wooden matchsticks, construction details, and museum-quality craft presentation."
+  },
+  {
     "name": "MATRIMONY",
     "category": [
       "HUMOR",
@@ -17213,6 +17266,19 @@
     ],
     "randomizeOptions": true,
     "additionalInstructions": "FINAL RESULT:\nThe image should resemble a scanned microfiche frame packed with archival information."
+  },
+  {
+    "name": "MICROSCOPE SLIDE",
+    "category": [
+      "SCIENCE",
+      "MEDICAL",
+      "MAGNIFICATION",
+      "EDUCATIONAL"
+    ],
+    "message": "Take a picture and transform the subject as if viewed through a microscope. The subject should appear as a biological specimen on a glass slide, stained with histological dyes (hematoxylin and eosin creating purple and pink tones, or Gram stain creating blue and red). The image should show the characteristic circular field of view of a microscope eyepiece with dark vignetting around the edges. Include realistic microscopy artifacts: slight chromatic aberration, depth-of-field blur on out-of-focus planes, and the distinctive lighting of transmitted light microscopy. The subject's features should be recognizable but rendered as if they were cellular structures — skin becomes tissue layers, hair becomes fiber bundles, eyes become organelle-like structures. Add a scale bar and magnification indicator (e.g., '400x') in the corner.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "FINAL RESULT:\nA convincing microscope view where the subject appears as a stained biological specimen with authentic microscopy optics, staining, and scientific labeling."
   },
   {
     "name": "MID-CENTURY ILLUSTRATION",
@@ -19532,6 +19598,19 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "NEWSPAPER COLLAGE",
+    "category": [
+      "ART",
+      "COLLAGE",
+      "MIXED MEDIA",
+      "TYPOGRAPHY"
+    ],
+    "message": "Take a picture and reconstruct the subject entirely from torn and cut newspaper clippings arranged as a collage. Use a mix of newspaper elements: headlines in bold black type for dark areas, body text columns for mid-tones, white margins for highlights, and photographs from newspapers for textured areas. Each piece of newspaper should be individually visible with readable text fragments, column layouts, and the distinctive gray-on-newsprint appearance. The torn edges of paper pieces should be visible and irregular. Layer the newspaper pieces to create depth and dimension. The subject should be clearly recognizable through the strategic arrangement of light and dark newspaper elements. Include a variety of newspaper sections: news headlines, sports scores, classified ads, comic strips, and weather maps. The newsprint should show realistic yellowing, ink transfer, and paper texture.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "FINAL RESULT:\nA newspaper collage portrait with torn and cut clippings showing readable text, headlines, and newsprint texture, arranged to create a recognizable likeness of the subject."
   },
   {
     "name": "NIFTY FIFTY",
@@ -25018,6 +25097,19 @@
     "additionalInstructions": ""
   },
   {
+    "name": "SOCIAL REALISM",
+    "category": [
+      "ART",
+      "PAINTING",
+      "POLITICAL",
+      "HISTORICAL"
+    ],
+    "message": "Take a picture and transform the image into a Social Realism painting style. Depict the subject with unflinching honesty and dignity, emphasizing the human condition, labor, and everyday struggle. Use a muted, earthy color palette with strong directional lighting that highlights the subject's hands, face, and posture. Apply visible brushwork with thick, confident strokes. The composition should feel grounded, serious, and empathetic — celebrating ordinary people with monumental presence. Reference the styles of Diego Rivera, Ben Shahn, or Dorothea Lange's photographic realism translated into paint. No idealization or glamorization — raw, honest, and powerful.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "FINAL RESULT:\nA powerful Social Realism painting with honest depiction, earthy tones, strong lighting, and dignified treatment of the subject as an ordinary person with extraordinary presence."
+  },
+  {
     "name": "SOLARIZATION",
     "category": [
       "OPTIONS",
@@ -27077,6 +27169,19 @@
     "additionalInstructions": "FINAL RESULT:\nSubjects appear as people wearing Teletubby costumes with their real faces visible through the costume openings. All Teletubbies are present in a bright Teletubbyland environment, including the baby sun and Tubby Custard elements."
   },
   {
+    "name": "TEMPERA ON WOOD PANEL",
+    "category": [
+      "ART",
+      "PAINTING",
+      "CLASSIC",
+      "MEDIEVAL"
+    ],
+    "message": "Take a picture and transform the image into an egg tempera painting on a wood panel, in the style of early Renaissance or Byzantine icon painting.\n\nCORE STYLE (CRITICAL):\n• Smooth, matte surface characteristic of egg tempera medium\n• Fine, precise brushwork with visible hatched strokes for modeling\n• Rich, saturated colors with a slightly chalky quality\n• Gold leaf background or gold leaf halos and decorative elements\n\nTECHNIQUE:\n• Cross-hatched brushstrokes for tonal gradation (tempera dries too fast for blending)\n• Thin, translucent layers building up color depth\n• Precise, deliberate line work — no loose or gestural marks\n• Verdaccio (green-gray) underpainting visible in shadow areas of skin\n\nMATERIAL APPEARANCE:\n• Wood panel visible at edges or through worn areas\n• Gold leaf with tooled patterns (punched dots, incised lines) in background areas\n• Slight craquelure (age cracking) across the painted surface\n• Gesso ground visible where paint has worn thin\n\nSUBJECT TREATMENT:\n• Faces rendered with serene, idealized expressions\n• Elongated proportions typical of Byzantine/early Renaissance style\n• Clothing depicted with elaborate drapery and decorative patterns\n• Hands positioned in meaningful, deliberate gestures\n\nCOLOR PALETTE:\n• Ultramarine blue, vermillion red, terre verte green, yellow ochre, gold\n• Rich but matte finish — no glossy areas\n• Warm skin tones built over green underpainting\n\nFRAMING:\n• Arched top or rectangular panel shape\n• Decorative painted or carved border\n• Panel edges visible showing wood grain",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "FINAL RESULT:\nThe final image must look like an authentic egg tempera painting on a wood panel with fine cross-hatched brushwork, gold leaf elements, chalky matte colors, and the precise, luminous quality of early Renaissance or Byzantine painting. The subject must be recognizable while transformed into this devotional art style with appropriate craquelure aging."
+  },
+  {
     "name": "TEMU VERSION",
     "category": [
       "HUMOR",
@@ -27206,6 +27311,19 @@
     ],
     "randomizeOptions": true,
     "additionalInstructions": "FINAL RESULT:\nThe image should depict a convincing human–fly hybrid where the subject’s recognizable human head is attached to a realistic fly body — disturbing, believable, and cinematic — with the entire form fully visible and framed like a serious science fiction transformation scene.\n\nFLY BODY REQUIREMENTS:"
+  },
+  {
+    "name": "THEME PARK MAP",
+    "category": [
+      "ILLUSTRATION",
+      "MAP",
+      "HUMOR",
+      "DESIGN"
+    ],
+    "message": "Take a picture and transform the scene into an illustrated theme park map in the style of classic Disneyland or Universal Studios souvenir maps. Convert the environment into a bird's-eye-view illustrated map showing themed lands, attractions, pathways, and landmarks — all inspired by elements visible in the original image. The subject should appear as a small illustrated figure on the map, positioned at a 'You Are Here' marker. Use the characteristic theme park map illustration style: slightly tilted isometric perspective, warm watercolor-like coloring, hand-drawn quality with precise detail, and whimsical exaggeration of building sizes. Include map elements: a compass rose, attraction labels in playful fonts, dotted pathways, decorative borders, and a legend. Name the fictional theme park based on the subject or scene context. The map should feel like a genuine souvenir you'd unfold at a theme park.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "FINAL RESULT:\nAn illustrated theme park souvenir map with the subject as a small figure, themed lands derived from the original scene, whimsical isometric illustration, and authentic map design elements."
   },
   {
     "name": "THERMAL",
@@ -27712,6 +27830,19 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "TOOTHPICK SCULPTURE",
+    "category": [
+      "CRAFT",
+      "SCULPTURE",
+      "MINIATURE",
+      "STRUCTURAL"
+    ],
+    "message": "Take a picture and transform the subject into a delicate sculpture constructed entirely from wooden toothpicks. The structure should use thousands of individual toothpicks arranged in geometric patterns — triangulated trusses for structural support, radial fan patterns for curved surfaces, and dense parallel arrangements for solid areas. Each toothpick should be individually visible as a thin, pointed wooden rod. The sculpture should have an open, lattice-like quality where you can see through the structure in places, with denser toothpick concentrations defining the subject's features and form. Include realistic details: tiny glue joints, slight bending of toothpicks under structural stress, and the pale birch-wood color of natural toothpicks. Photograph the sculpture against a clean background with dramatic side lighting that casts intricate shadows through the lattice structure.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "FINAL RESULT:\nA delicate toothpick sculpture with individually visible wooden toothpicks forming geometric lattice patterns, dramatic shadow casting, and recognizable subject form."
   },
   {
     "name": "TOPIARY",
@@ -28952,6 +29083,19 @@
     ],
     "randomizeOptions": true,
     "additionalInstructions": "FINAL RESULT:\nThe image should function as a precise visual translation guide rendered entirely in a fictional constructed language, accurately labeling visible objects and replacing all readable text while preserving the realism and full-frame integrity of the original photo.\n\nFOOTER REQUIREMENT:"
+  },
+  {
+    "name": "TREASURE MAP",
+    "category": [
+      "ADVENTURE",
+      "MAP",
+      "VINTAGE",
+      "PIRATE"
+    ],
+    "message": "Take a picture and transform the scene into an aged pirate treasure map drawn on weathered parchment. Convert the environment into a hand-drawn map with the subject's location marked by a large red X. Include classic treasure map elements: a compass rose with ornate cardinal directions, sea monsters in ocean areas, dotted trail paths, skull-and-crossbones danger markers, palm tree illustrations, mountain ranges drawn in profile, a sailing ship, and cryptic clues written in old-fashioned handwriting. The parchment should appear authentically aged: yellowed, stained with coffee or tea rings, burned edges, fold creases, and water damage spots. Use brown ink for the main drawing with occasional red ink for important markers. Include a scale bar measured in 'paces' and a title cartouche with an elaborate border. The map should feel like a genuine artifact discovered in a bottle or old chest.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "FINAL RESULT:\nAn authentic-looking pirate treasure map on aged parchment with hand-drawn illustrations, cryptic clues, compass rose, sea monsters, and the subject's location marked with a red X."
   },
   {
     "name": "TRICK OR TREAT",
