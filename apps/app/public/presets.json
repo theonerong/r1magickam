@@ -2672,6 +2672,41 @@
     "additionalInstructions": ""
   },
   {
+    "name": "BIOME IMMERSION",
+    "category": [
+      "OPTIONS",
+      "NATURE",
+      "ENVIRONMENT",
+      "TRANSFORMATION",
+      "CREATIVE"
+    ],
+    "message": "Take a picture and transform the subject so they are fully immersed in and partially merging with the selected biome. Their form should be transitioning between human and environment — skin becoming terrain, hair becoming vegetation, clothing becoming landscape features.\n\nIF CORAL REEF (0): Subject's skin becomes living coral in vibrant pinks, oranges, and purples. Hair flows as sea anemones. Tropical fish swim through their translucent form. Underwater caustic light patterns play across everything.\nIF RAINFOREST CANOPY (1): Subject's body becomes a massive tree trunk, arms extending as branches, hair as a dense canopy of leaves. Orchids, bromeliads, and moss grow from their surface. Toucans and tree frogs inhabit their form.\nIF ARCTIC TUNDRA (2): Subject's form is composed of ice, snow, and frozen earth. Their skin is permafrost with lichen patterns. Polar bears and arctic foxes shelter in the curves of their body. Northern lights shimmer above.\nIF VOLCANIC (3): Subject emerges from volcanic rock — skin of cooling basalt with glowing magma visible in the cracks. Their hair is a plume of volcanic ash and smoke. Lava flows from their form into steaming pools.\nIF DEEP OCEAN (4): Subject exists in the abyssal zone — their form bioluminescent in the absolute darkness, anglerfish lights dotting their silhouette, giant squid tentacles extending from their hair, hydrothermal vents steaming at their feet.",
+    "options": [
+      {
+        "id": "001",
+        "text": "CORAL REEF — living coral skin, anemone hair, tropical fish, underwater light"
+      },
+      {
+        "id": "002",
+        "text": "RAINFOREST CANOPY — tree trunk body, branch arms, leaf canopy hair, wildlife"
+      },
+      {
+        "id": "003",
+        "text": "ARCTIC TUNDRA — ice and permafrost form, lichen skin, polar wildlife, aurora"
+      },
+      {
+        "id": "004",
+        "text": "VOLCANIC — basalt skin with magma cracks, ash plume hair, lava flows"
+      },
+      {
+        "id": "005",
+        "text": "DEEP OCEAN — bioluminescent form, anglerfish lights, abyssal darkness"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "FINAL RESULT:\nThe final image must show the subject merging with the selected biome — their human form transitioning into landscape, with flora and fauna inhabiting their body. The subject must remain recognizable despite the environmental transformation. The biome details must be scientifically plausible and visually stunning."
+  },
+  {
     "name": "BIOMORPHIC ABSTRACTION",
     "category": [
       "ABSTRACT",
@@ -15012,6 +15047,20 @@
     "additionalInstructions": "FINAL RESULT:\nThe image should feel like a dynamic kinetic artwork, where movement—real or implied—is central, and the subject is seamlessly integrated into a motion-driven artistic structure."
   },
   {
+    "name": "KINETIC TYPOGRAPHY",
+    "category": [
+      "DESIGN",
+      "TYPOGRAPHY",
+      "MOTION",
+      "GRAPHIC",
+      "CREATIVE"
+    ],
+    "message": "Take a picture and transform the image into a kinetic typography portrait. Reconstruct the entire subject using only text characters, words, and typographic elements — but arranged to suggest dynamic motion and energy. Unlike static ASCII art, this should feel like a freeze-frame from a motion graphics sequence. Letters and words should flow along the contours of the subject's form, varying in size (large bold headlines to tiny body text), weight (ultra-light to black), and orientation (following curves, spiraling, radiating outward). The text content should be thematically relevant — words describing the subject, stream-of-consciousness text, poetry, or meaningful quotes. Different typefaces should be mixed: serif, sans-serif, script, and display faces. The tonal values of the original image should be recreated through text density — dark areas packed with heavy black type, light areas using thin, widely-spaced letterforms. Include motion blur on some text elements and sharp focus on others to create depth and dynamism.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "FINAL RESULT:\nThe final image must be constructed entirely from typographic elements — letters, words, and text arranged to form the subject's likeness while suggesting dynamic motion. The subject must be clearly recognizable through the text composition. The overall effect should feel like a sophisticated motion graphics freeze-frame."
+  },
+  {
     "name": "KING OF THE WORLD!",
     "category": [
       "HUMOR",
@@ -18100,6 +18149,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "FINAL RESULT:\nA seamless single image composed of thousands of unique micro-images forming the full scene without visible tiling artifacts."
+  },
+  {
+    "name": "MOSS GRAFFITI",
+    "category": [
+      "ART",
+      "NATURE",
+      "STREET ART",
+      "ORGANIC",
+      "GREEN"
+    ],
+    "message": "Take a picture and transform the image into a moss graffiti (eco-graffiti) artwork. The subject should appear as if grown from living moss on an urban wall surface — a concrete, brick, or stone wall where someone has painted a mixture of moss, buttermilk, and water in the shape of the subject, and the moss has grown to fill the form. The moss should be lush, green, and three-dimensional — not flat paint but actual living plant material with visible individual moss fronds, varying shades of green from bright chartreuse new growth to deep forest green mature patches, and tiny droplets of moisture catching the light. The wall surface around the moss should be typical urban texture — weathered concrete with water stains, old brick with crumbling mortar, or rough stone. The contrast between the living green moss and the dead gray urban surface is the key visual tension. Include subtle details: small ferns or other plants colonizing the edges, tiny insects, and the way moss thins at the edges of the painted area where the growing medium was thinner.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "FINAL RESULT:\nThe final image must look like genuine moss graffiti on an urban wall — living green moss grown in the shape of the subject against weathered concrete or brick. The moss must appear three-dimensional and alive, with realistic botanical detail. The subject must be clearly recognizable in the moss growth pattern."
   },
   {
     "name": "MOTION BLUR",
@@ -24559,6 +24622,41 @@
     "randomizeOptions": true,
     "additionalInstructions": "FINAL RESULT:\nAn official-looking governmental or state seal that appears authentic in every detail except that the subject's face has seamlessly replaced the historical figure, as if the subject were the original inspiration for this important governmental emblem. The seal maintains all heraldic elements, official typography, symbolic imagery, and artistic style of the genuine article, creating the impression of an alternate history where the subject was the foundational figure commemorated in this seal of authority."
   },
+    {
+    "name": "SEASONS TRANSFORMATION",
+    "category": [
+      "OPTIONS",
+      "NATURE",
+      "SEASONS",
+      "PHOTOGRAPHY",
+      "MOOD"
+    ],
+    "message": "Take a picture and transform the entire scene to reflect the selected season at its most extreme and characteristic. The subject, their environment, lighting, and color palette must all embody the essence of that season.\n\nIF SPRING (0): Cherry blossoms and wildflowers everywhere, soft diffused light through fresh green leaves, gentle rain with visible droplets, the subject surrounded by new growth and baby animals, pastel color palette, the specific quality of spring morning light.\nIF SUMMER (1): Blazing golden sunlight, heat shimmer visible in the air, lush deep green foliage, dramatic cumulus clouds, the subject in bright summer attire with visible sun-kissed skin, saturated warm colors, long lazy afternoon shadows.\nIF AUTUMN (2): Spectacular fall foliage in reds, oranges, and golds, leaves actively falling, warm low-angle golden light, the subject surrounded by harvest elements (pumpkins, apples, corn stalks), cozy layered clothing, the specific amber quality of October light.\nIF WINTER (3): Fresh snow covering everything, bare tree branches, the subject's breath visible in cold air, icicles, frost on surfaces, the cool blue-white palette of winter with warm accent lighting from windows or fires, the specific flat gray light of overcast winter sky.\nIF MONSOON (4): Dramatic tropical downpour, the subject drenched but joyful, massive rain drops visible, flooded streets reflecting neon signs, lush tropical vegetation, the specific warm humidity and dramatic cloud formations of monsoon season.",
+    "options": [
+      {
+        "id": "001",
+        "text": "SPRING — cherry blossoms, fresh growth, soft light, pastels, gentle rain"
+      },
+      {
+        "id": "002",
+        "text": "SUMMER — blazing sun, heat shimmer, deep green, saturated warm colors"
+      },
+      {
+        "id": "003",
+        "text": "AUTUMN — spectacular foliage, falling leaves, harvest elements, amber light"
+      },
+      {
+        "id": "004",
+        "text": "WINTER — fresh snow, frost, visible breath, cool blue-white palette"
+      },
+      {
+        "id": "005",
+        "text": "MONSOON — tropical downpour, drenched joy, flooded reflections, dramatic clouds"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "FINAL RESULT:\nThe final image must completely transform the scene to embody the selected season at its most characteristic — lighting, color palette, weather, vegetation, and atmosphere must all be authentically seasonal. The subject must be recognizable and appropriately dressed/positioned for the season. The seasonal transformation must be dramatic and immersive."
+  },
   {
     "name": "SECOND TO LAST SUPPER",
     "category": [
@@ -24596,6 +24694,18 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "SELECTIVE MOTION",
+    "category": [
+      "ART",
+      "EDITORIAL",
+      "CONTRAST"
+    ],
+    "message": "Keep the entire environment and background tack-sharp and perfectly clear. Apply a heavy, directional motion blur strictly to the primary subject, making them appear to be moving at high speed while the rest of the world is frozen.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "FINAL RESULT:\nA striking contrast between a crisp, detailed scene and a blurred, fluid subject.\n\nCORE REQUIREMENTS:\n• TACK-SHARP environment\n• NO camera shake\n• SUBJECT-ONLY motion blur\n• GHOSTING effect on the moving figure"
   },
   {
     "name": "SEND IN THE CLOWNS",
@@ -27661,6 +27771,41 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "TIME OF DAY MOOD LIGHTING",
+    "category": [
+      "OPTIONS",
+      "PHOTOGRAPHY",
+      "LIGHTING",
+      "MOOD",
+      "CINEMATIC"
+    ],
+    "message": "Take a picture and transform the image to capture the specific lighting, color, and atmospheric mood of the selected time of day. The entire scene should be re-lit and color-graded to authentically represent that moment.\n\nIF GOLDEN HOUR (0): Warm amber light streaming horizontally, long dramatic shadows, lens flare, skin glowing with warm tones, the specific quality of sunlight 20 minutes before sunset.\nIF BLUE HOUR (1): The deep cobalt blue of twilight, city lights beginning to glow, the sky a gradient from deep blue to pale orange at the horizon, cool tones with warm artificial light accents.\nIF HIGH NOON (2): Harsh overhead sun, minimal shadows directly below, bleached-out highlights, squinting eyes, the brutal flat light of midday that fashion photographers avoid.\nIF MIDNIGHT (3): Deep darkness with selective illumination — moonlight, streetlamps, or neon creating pools of light in surrounding blackness. Cool blue moonlight on skin, warm orange from artificial sources.\nIF STORM LIGHT (4): The eerie yellow-green light before a thunderstorm, dark purple clouds, everything lit with an otherworldly glow, the specific atmospheric tension of approaching severe weather.",
+    "options": [
+      {
+        "id": "001",
+        "text": "GOLDEN HOUR — warm amber horizontal light, long shadows, lens flare, skin glow"
+      },
+      {
+        "id": "002",
+        "text": "BLUE HOUR — deep cobalt twilight, city lights emerging, cool-warm contrast"
+      },
+      {
+        "id": "003",
+        "text": "HIGH NOON — harsh overhead sun, minimal shadows, bleached highlights, squinting"
+      },
+      {
+        "id": "004",
+        "text": "MIDNIGHT — selective illumination, moonlight pools, deep darkness, cool-warm mix"
+      },
+      {
+        "id": "005",
+        "text": "STORM LIGHT — eerie yellow-green, dark purple clouds, otherworldly tension"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "FINAL RESULT:\nThe final image must convincingly recreate the specific lighting conditions of the selected time of day — not just a color filter but authentic directional lighting, shadow behavior, and atmospheric quality. The subject must be clearly recognizable under the transformed lighting conditions."
   },
   {
     "name": "TIME TRAVELER",
@@ -31649,6 +31794,41 @@
     "additionalInstructions": "FINAL RESULT:\nThe image must look like a real travel photograph taken in a famous international park or garden."
   },
   {
+    "name": "WRITING SYSTEM PORTRAIT",
+    "category": [
+      "OPTIONS",
+      "TYPOGRAPHY",
+      "CULTURAL",
+      "CREATIVE",
+      "TEXT"
+    ],
+    "message": "Take a picture and transform the subject into a portrait composed entirely of characters from the selected writing system. The text should form the image through varying density, size, and arrangement — dark areas using dense, heavy characters and light areas using sparse, thin characters.\n\nIF ARABIC CALLIGRAPHY (0): The portrait composed of flowing Arabic script in various calligraphic styles (Naskh, Thuluth, Diwani) — the cursive connections creating flowing contours, diacritical marks adding texture detail, gold and deep blue ink on cream paper.\nIF CHINESE CHARACTERS (1): The portrait built from Chinese hanzi characters — each character chosen for thematic relevance, varying brush stroke weight creating tonal values, traditional ink-on-rice-paper aesthetic, red seal stamp in the corner.\nIF DEVANAGARI (2): The portrait composed of Devanagari script — the characteristic horizontal headline (shirorekha) creating structural lines, the flowing curves of the letters forming facial contours, traditional Indian ink colors.\nIF RUNIC (3): The portrait built from Elder Futhark runes — angular characters carved into stone or wood texture, the straight lines of runic script creating a geometric interpretation of the face, weathered stone surface.\nIF HIEROGLYPHIC (4): The portrait composed of Egyptian hieroglyphs — pictographic characters arranged in registers (horizontal bands), cartouche frames around key features, painted in traditional Egyptian palette on papyrus or limestone.",
+    "options": [
+      {
+        "id": "001",
+        "text": "ARABIC CALLIGRAPHY — flowing script, multiple styles, gold and blue ink, cream paper"
+      },
+      {
+        "id": "002",
+        "text": "CHINESE CHARACTERS — hanzi, brush stroke weight variation, ink on rice paper, red seal"
+      },
+      {
+        "id": "003",
+        "text": "DEVANAGARI — headline bars, flowing curves, traditional Indian ink colors"
+      },
+      {
+        "id": "004",
+        "text": "RUNIC — Elder Futhark, angular characters, carved stone/wood texture, geometric"
+      },
+      {
+        "id": "005",
+        "text": "HIEROGLYPHIC — pictographic characters, registers, cartouche frames, papyrus"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "FINAL RESULT:\nThe final image must depict the subject as a portrait composed entirely of characters from the selected writing system — the text forming the image through density and arrangement. The subject must be recognizable through the typographic composition. The writing system must be authentically rendered with appropriate materials and cultural context."
+  },
+  {
     "name": "WWE WRESTLER",
     "category": [
       "OPTIONS",
@@ -31829,6 +32009,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "FINAL RESULT:\nA highly detailed black-and-white image composed of structured repeating patterns."
+  },
+  {
+    "name": "ZINE COLLAGE",
+    "category": [
+      "ART",
+      "COLLAGE",
+      "PUNK",
+      "DIY",
+      "GRAPHIC"
+    ],
+    "message": "Take a picture and transform the image into a raw, authentic punk zine collage page. The composition should look like it was assembled with scissors, glue stick, and a photocopier at 2 AM. Cut out the subject with rough, visible scissor edges and paste them onto a chaotic background of layered elements: torn newspaper headlines, ransom-note style mixed typography, hand-drawn arrows and stars, photocopied textures with heavy black toner marks, coffee ring stains, tape marks, and staple holes. Include hand-scrawled annotations, crossed-out words, and doodles in ballpoint pen and Sharpie marker. The overall aesthetic should be high-contrast black and white with occasional pops of color from highlighter or colored paper scraps. Text elements should be cut from different sources at different sizes and angles. The page should feel urgent, personal, and deliberately anti-polished — the visual equivalent of a shouted manifesto.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "FINAL RESULT:\nThe final image must look like an authentic page torn from a DIY punk zine — chaotic, layered, high-contrast, and full of raw energy. The subject must be recognizable but integrated into the collage aesthetic with rough cut edges and photocopier distortion. The overall feel should be genuinely handmade and rebellious."
   },
   {
     "name": "ZODIAC SIGN",
