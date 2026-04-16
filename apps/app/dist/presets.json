@@ -19649,6 +19649,19 @@
     "additionalInstructions": ""
   },
   {
+    "name": "NEUE SACHLICHKEIT",
+    "category": [
+      "ART",
+      "PAINTING",
+      "GERMAN",
+      "REALISM"
+    ],
+    "message": "Take a picture and transform the image into a Neue Sachlichkeit (New Objectivity) painting. Preserve subject identity. Use sharp, precise realism with a cool, detached observation style inspired by Otto Dix and George Grosz. Emphasize unflinching detail, social commentary, and a clinical clarity that reveals uncomfortable truths beneath surface appearances.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": ""
+  },
+  {
     "name": "NEWSPAPER",
     "category": [
       "NEWS",
@@ -20653,6 +20666,18 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "FINAL RESULT:\nThe image should show the subject transformed into a fantasy orc warrior with green/gray skin, prominent tusks, muscular build, crude armor and brutal weapons, tribal markings, and aggressive pose - the subject's face clearly recognizable with orcish features added, in a dark fantasy battlefield or tribal setting with dramatic lighting and that savage warrior energy."
+  },
+  {
+    "name": "ORPHISM",
+    "category": [
+      "ART",
+      "PAINTING",
+      "ABSTRACT"
+    ],
+    "message": "Take a picture and transform the image into an Orphism painting. Preserve subject identity. Use pure, vibrant colors arranged in circular and prismatic forms inspired by Robert Delaunay and Sonia Delaunay. Emphasize simultaneous contrast, rhythmic color harmonies, and luminous abstract compositions suggesting movement and music through color.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": ""
   },
   {
     "name": "ORIGA-ME",
@@ -21822,6 +21847,19 @@
     "additionalInstructions": "FINAL RESULT:\nThe final image must look like a believable photograph of the subject dressed as a pirate — adventurous, playful, and grounded in reality, as if taken during a high-quality costume shoot or film still."
   },
   {
+    "name": "PITTURA METAFISICA",
+    "category": [
+      "ART",
+      "PAINTING",
+      "ITALIAN",
+      "SURREAL"
+    ],
+    "message": "Take a picture and transform the image into a Pittura Metafisica (Metaphysical Painting). Preserve subject identity. Use dreamlike architectural spaces, elongated shadows, classical statues, and enigmatic still-life objects inspired by Giorgio de Chirico. Emphasize eerie silence, deep perspective, warm Mediterranean light, and an unsettling sense of mystery.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": ""
+  },  
+  {
     "name": "PIXAR",
     "category": [
       "ANIMATION",
@@ -22945,6 +22983,19 @@
     ],
     "randomizeOptions": true,
     "additionalInstructions": "FINAL RESULT: A physically-based rendered scene where sample density, primitive geometry, and lighting style directly control the visual quality, structure, and realism of the image."
+  },
+  {
+    "name": "RAYONISM",
+    "category": [
+      "ART",
+      "PAINTING",
+      "ABSTRACT",
+      "RUSSIAN"
+    ],
+    "message": "Take a picture and transform the image into a Rayonism painting. Preserve subject identity. Use dynamic rays of color crossing and intersecting, inspired by Mikhail Larionov and Natalia Goncharova. Emphasize beams of light rendered as slashing diagonal lines of brilliant color, creating an energetic, semi-abstract composition.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": ""
   },
   {
     "name": "READ ACROSS AMERICA",
@@ -26419,6 +26470,18 @@
     "additionalInstructions": ""
   },
   {
+    "name": "STUCKISM",
+    "category": [
+      "ART",
+      "PAINTING",
+      "CONTEMPORARY"
+    ],
+    "message": "Take a picture and transform the image into a Stuckist painting. Preserve subject identity. Use expressive, figurative painting with raw emotional intensity. Emphasize authentic personal expression through bold brushwork, vivid colors, and unpolished figurative representation that rejects conceptual art in favor of direct painterly communication.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": ""
+  },
+  {
     "name": "STUDENT ID",
     "category": [
       "HUMOR",
@@ -26452,6 +26515,19 @@
       "SCENE"
     ],
     "message": "Take a picture of the subject and place them inside a subway car covered in a large, awkward public advertisement featuring them.\n\nThe ad should imply the subject has a mildly embarrassing but non-explicit problem such as bad breath, flatulence, excessive sweating, or bladder leaks.\n\nChoose one of these situations at random and build the ad around it:\n• Bad breath → a real mint or mouthwash product\n• Flatulence → a real digestive aid or deodorizing spray\n• Heavy sweating → a real strong deodorant\n• Bladder leaks → real protective undergarments\n\nThe ad should show the subject’s face with a big headline and product branding, making it look like they are the unfortunate model for the problem.\n\nPeople around the subject in the subway should be reacting awkwardly, staring, or trying not to laugh.\n\nThe final image should look like a real transit advertisement gone terribly wrong, with bold text, clean design, and very public embarrassment.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": ""
+  },
+  {
+    "name": "SUPERFLAT",
+    "category": [
+      "ART",
+      "JAPANESE",
+      "CONTEMPORARY",
+      "POP"
+    ],
+    "message": "Take a picture and transform the image into a Superflat artwork. Preserve subject identity. Use flat, two-dimensional compositions inspired by Takashi Murakami, blending Japanese anime and manga aesthetics with fine art. Emphasize bold outlines, flat color fields, kawaii elements, and a flattened picture plane that merges high and low culture.",
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
@@ -27116,6 +27192,18 @@
       "SENSORY"
     ],
     "message": "Take a picture and convert the image into a synesthesia experience where sounds become colors and senses blend through flowing, organic compositions. Use flowing, organic shapes that suggest sound waves, musical phrases, or sensory vibrations translated into visual form. Apply smooth color gradients that transition seamlessly, like musical tones moving through different pitches and harmonies. Layer multiple transparent elements to create the complex sensory overlap that defines synesthetic experiences - colors you can hear, sounds you can see. Incorporate radiating patterns, aurora-like flows, and chromatic aberration effects. The subject should be recognizable but dissolved into waves of color and energy. Ethereal, dreamlike, multi-sensory visual experience, abstract expressionism meets neuroscience visualization.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": ""
+  },
+  {
+    "name": "SYNTHETISM",
+    "category": [
+      "ART",
+      "PAINTING",
+      "POST-IMPRESSIONIST"
+    ],
+    "message": "Take a picture and transform the image into a Synthetist painting. Preserve subject identity. Use bold outlines, flat areas of vivid color, and simplified forms inspired by Paul Gauguin and Émile Bernard. Emphasize decorative patterns, non-naturalistic color, and a synthesis of observed reality with artistic imagination.",
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
@@ -30534,6 +30622,19 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "CORE REQUIREMENT:\nThis must be a TRUE Voronoi partitioning system driven by spatial logic and variable density. The image must not resemble mosaic, tiles, or decorative patterns—it must feel computational, organic, and structurally derived. \n\nFINAL RESULT:\nA fully reconstructed image where the entire scene is divided into irregular Voronoi regions, with cell size and distribution dynamically adapting to the structure of the subject. The result must feel like a natural spatial partitioning system—not a mosaic or tile effect."
+  },
+  {
+    "name": "VORTICISM",
+    "category": [
+      "ART",
+      "PAINTING",
+      "BRITISH",
+      "ABSTRACT"
+    ],
+    "message": "Take a picture and transform the image into a Vorticist artwork. Preserve subject identity. Use bold, angular, machine-like geometric forms inspired by Wyndham Lewis and the early 20th-century British avant-garde. Emphasize sharp diagonals, fragmented planes, dynamic energy, and an industrial aesthetic celebrating the modern machine age.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": ""
   },
   {
     "name": "VULCAN TRANSFORMATION",
