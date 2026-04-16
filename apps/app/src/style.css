@@ -1638,19 +1638,21 @@ button:disabled {
     height: 12vw;
     min-width: 44px;
     min-height: 44px;
-    background: transparent;
-    color: #FE5F00;
+    background: #000;
+    color: #fff;
     border: 2px solid #FE5F00;
     border-radius: 2vw;
     font-size: 6vw;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     z-index: 102;
-    padding: 0;
+    padding: 1px 0;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
     transition: all 0.2s ease;
+    gap: 0;
 }
 
 .left-cam-btn:active {
@@ -1744,15 +1746,15 @@ button:disabled {
     flex-shrink: 0;
     margin: 0;
     border-radius: 2vw;
-    background: transparent;
-    color: #FE5F00;
+    background: #000;
+    color: #fff;
     border: 2px solid #FE5F00;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 0;
-    padding: 0;
+    padding: 1px 0;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
     transition: all 0.2s ease;
     cursor: pointer;
@@ -1760,17 +1762,42 @@ button:disabled {
 }
 
 .mode-icon {
-    font-size: 5vw;
+    font-size: 4vw;
     line-height: 1;
 }
 
 .mode-label {
-    display: none;
+    display: block;
+    font-size: 1.8vw;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: 0.02em;
+    margin-top: 1.5vw;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
 }
 
 .button-icon {
-    font-size: 6vw;
+    font-size: 4vw;
     line-height: 1;
+}
+
+.button-label {
+    font-size: 1.8vw;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: 0.02em;
+    margin-top: 1.5vw;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
 }
 
 .mode-button:active {

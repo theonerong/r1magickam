@@ -697,17 +697,44 @@ footerSection.innerHTML = `
         }, 200);
       };
 
+      let importUpTapTimer = null;
       document.getElementById('import-jump-to-top').onclick = () => {
-        scrollContainer.scrollTop = 0;
-        this.currentImportScrollIndex = 0;
-        updateImportSelection();
+        if (importUpTapTimer) {
+          // Double-tap: jump to very top
+          clearTimeout(importUpTapTimer);
+          importUpTapTimer = null;
+          scrollContainer.scrollTop = 0;
+          this.currentImportScrollIndex = 0;
+          updateImportSelection();
+        } else {
+          importUpTapTimer = setTimeout(() => {
+            importUpTapTimer = null;
+            // Single-tap: page up
+            scrollContainer.scrollTop = Math.max(0, scrollContainer.scrollTop - scrollContainer.clientHeight);
+          }, 300);
+        }
       };
 
+      let importDownTapTimer = null;
       document.getElementById('import-jump-to-bottom').onclick = () => {
-        scrollContainer.scrollTop = scrollContainer.scrollHeight;
-        const items = presetsList.querySelectorAll('.menu-item');
-        this.currentImportScrollIndex = items.length - 1;
-        updateImportSelection();
+        if (importDownTapTimer) {
+          // Double-tap: jump to very bottom
+          clearTimeout(importDownTapTimer);
+          importDownTapTimer = null;
+          scrollContainer.scrollTop = scrollContainer.scrollHeight;
+          const items = presetsList.querySelectorAll('.menu-item');
+          this.currentImportScrollIndex = items.length - 1;
+          updateImportSelection();
+        } else {
+          importDownTapTimer = setTimeout(() => {
+            importDownTapTimer = null;
+            // Single-tap: page down
+            scrollContainer.scrollTop = Math.min(
+              scrollContainer.scrollHeight - scrollContainer.clientHeight,
+              scrollContainer.scrollTop + scrollContainer.clientHeight
+            );
+          }, 300);
+        }
       };
 
       this.scrollImportUp = () => {

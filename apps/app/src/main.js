@@ -1952,8 +1952,10 @@ async function submitMagicTransform() {
         const credited = earnCredit(usedName);
         if (credited) {
           playTaDaSound();
-          const newTotal = getCredits();
-          showGalleryCreditFlash(`🪙 Credit Earned!\n(${newTotal} total)`);
+          setTimeout(() => {
+            const newTotal = getCredits();
+            showGalleryCreditFlash(`🪙 Credit Earned!\n(${newTotal} total)`);
+          }, 300);
         }
       }
     } catch (e) { /* non-critical */ }
@@ -3918,6 +3920,8 @@ function createStyleMenuItem(preset) {
         editBtn.textContent = 'Builder';
         editBtn.onclick = (e) => {
             e.stopPropagation();
+            returnToMainMenuFromBuilder = true;
+            hideUnifiedMenu();
             editPresetInBuilder(originalIndex);
         };
     } else {
@@ -6408,10 +6412,10 @@ const TOUR_STEPS = [
   { section: 'Basic Controls', title: '🖼️ Gallery Button', body: 'Opens your saved photo gallery. View, re-prompt, batch process, organize your images into folders, or delete your images from here.' },
   { section: 'Basic Controls', title: '🔁 New Photo Button', body: 'After a photo is captured and processed, tap New Photo or press the side button again to return to the live camera view.' },
   { section: 'AI Presets', title: '✨ What Are AI Presets?', get body() { return `Presets are AI transformation instructions. Each one tells the AI how to reimagine your photo — as a comic book cover, oil painting, 3D print, ${totalFactoryPresetCount || 800} styles in all.`; } },
-  { section: 'AI Presets', title: '⭐ Favorites', body: 'In the main menu, tap the star next to any preset to mark it as a favorite. Favorites are used by Random Mode to chose the presets that will be randomized.' },
+  { section: 'AI Presets', title: '⭐ Favorites', body: 'In the main menu, tap the star next to any preset to mark it as a favorite. Favorites are used by Random Mode to chose the presets that will be randomized. If no favorites are chosen, random mode chooses between all visible presets.' },
   { section: 'AI Presets', title: '🔍 Filter Presets', body: 'Use the search box in the main menu to quickly find presets by name or category. Tap a category tag at the bottom to filter by style. Tapping on the x next to the search box removes the keyboard. Double click to clear.' },
   { section: 'AI Presets', title: '🔊 Hear Preset Info', body: 'When browsing presets in the Import screen, tap any preset name to hear its description read aloud. Use the mute button in the header to toggle audio on or off.' },
-  { section: 'Special Modes', title: '🎯 Special Modes — How to Access', body: 'Both carousels are default visible on the main camera screen. The Special Modes carousel is on the right.  Double click on the main camera screen to hide the Special Modes carousel.' },
+  { section: 'Special Modes', title: '🎯 Special Modes — How to Access', body: 'Both carousels are default visible on the main camera screen. The Special Modes carousel is on the right.  Double click on the main camera screen to hide/reveal the carousel buttons.' },
   { section: 'Special Modes', title: '🎲 Random Mode', body: 'Picks a random preset for every photo you take. If you have favorites selected it draws only from those, otherwise from all visible presets.' },
   { section: 'Special Modes', title: '⏱️ Timer Mode', body: 'Set a countdown of 3, 5, or 10 seconds before each shot. Enable repeat mode so it automatically keeps taking photos at a set interval.' },
   { section: 'Special Modes', title: '📸⚡ Burst Mode', body: 'Captures 3 to 10 photos rapidly in one press. Choose slow, medium, or fast burst speed in Settings. Great for action shots or getting multiple variations.' },
@@ -6419,7 +6423,7 @@ const TOUR_STEPS = [
   { section: 'Special Modes', title: '🎞️ Multi Preset', body: 'Select up to 20 presets to apply to a single photo. Tap the film strip button in the carousel, choose presets, and tap Apply Selected. When you take a photo, each preset is sent in order with a 3 second gap between them.' },
   { section: 'Special Modes', title: '🖼️🖼️ Combine images:', body: 'Located near the bottom of the right carousel. Click to take two images and apply a combined image preset instruction with your selected preset or speak the preset with long press of side button.' },
   { section: 'Special Modes', title: '📑 Layer presets:', body: 'Located at the bottom of the right carousel. Click to combine and apply multiple presets to a single image. Select primary preset and then add up to 4 more layers (5 in all). Does not work with spoken presets.' },
-  { section: 'Special Modes', title: '📝 Master and 🎛️ Options', body: 'Located below the Menu button on the left side within a carousel. The Master button accesses Master Prompt settings. The OPTIONS button toggles Manually Select Options mode. Both Glow green when enabled.' },
+  { section: 'Special Modes', title: '📝 Master and 🎛️ Options', body: 'Located below the Menu button on the left side within a carousel. The MASTER button accesses Master Prompt settings. The OPTIONS button toggles Manually Select Options mode. Both Glow green when enabled.' },
   { section: 'Gallery', title: '🖼️ Gallery Activities', body: 'Within the gallery there are thumbnails of captured images. You can either select multiple images to apply a preset, or select a single image to either edit, export or apply one or several presets.' },
   { section: 'Uploading Images', title: '📥 Importing External Images', body: 'In the gallery, you may also bring any image from the web into the gallery using a QR code. Upload the image to catbox.moe, copy the direct link, and generate a QR code at qr-code-generator.com.' },
   { section: 'Uploading Images', title: '📷 Scanning the QR Code', body: 'In the gallery, press Import then Scan QR Code. Point your R1 camera at the QR code and wait. The image will be automatically saved to your gallery.' },
@@ -6433,10 +6437,10 @@ const TOUR_STEPS = [
   { section: 'Gallery', title: '🏷️ Preset Header', body: 'At the very top of the image viewer a header shows the name of the currently loaded preset. Tap the header to hear the preset name and description.' },
   { section: 'Gallery', title: '🗑️ Delete Button', body: 'The delete button is on the top-left corner of the single image viewer.' },
   { section: 'Gallery', title: '🎠 Left Carousel', body: 'MASTER and OPTIONS buttons are located below the delete button and are visible by default (Double click screen to hide). The MASTER button toggles Master Prompt and OPTIONS button toggles Manually Select Options mode.' },
-  { section: 'Gallery', title: '🎠 Right Carousel', body: 'The right side carousel has three buttons — ✏️ Edit which opens the image editor, 📤 Export which uploads to gofile.io, and 📑 Layer which combines presets to single image. Double click screen to hide the buttons.' },
+  { section: 'Gallery', title: '🎠 Right Carousel', body: 'The right side carousel has three buttons — ✏️ EDIT which opens the image editor, 📤 EXPORT which uploads to gofile.io, and 📑 LAYER which combines presets to single image. Double click screen to hide the buttons.' },
   { section: 'Gallery', title: '⬇️ Bottom Bar Buttons', body: 'Four buttons on the bottom of image viewer. PROMPT opens editor. LOAD opens preset selector. MULTI opens multi-preset selector. MAGIC transforms image using the loaded preset, or randomly if nothing is loaded.' },
-  { section: 'Gallery', title: '📤 Export to gofile.io', body: 'Tapping Export in the right carousel. You get a QR code with a link that expires after 24 hours. Most useful in No Magic Mode.' },
-  { section: 'Image Editor', title: '✏️ Opening the Editor', body: 'While viewing any photo, the image viewer carousel contains the Edit button. Tap it. The editor opens with crop, rotate, sharpen, auto-correct, and brightness and contrast controls.' },
+  { section: 'Gallery', title: '📤 Export to gofile.io', body: 'Tapping EXPORT in the right carousel. You get a QR code with a link that expires after 24 hours. Most useful in No Magic Mode.' },
+  { section: 'Image Editor', title: '✏️ Opening the Editor', body: 'While viewing any photo, the image viewer carousel contains the EDIT button. Tap it. The editor opens with crop, rotate, sharpen, auto-correct, and brightness and contrast controls.' },
   { section: 'Image Editor', title: '✂️ Crop Tool', body: 'Tap Crop to activate. Two orange corner markers appear. Drag them to frame your desired area. Tap Crop again to apply.' },
   { section: 'Image Editor', title: '🔄 Rotate Tool', body: 'Rotates your image 90 degrees clockwise each tap. Tap multiple times to reach 180, 270, or back to 0 degrees.' },
   { section: 'Image Editor', title: '🔍 Sharpen and Auto Correct', body: 'Sharpen makes edges crisper. Auto Correct automatically balances brightness, contrast, and color. Great as a first step before manual tweaks.' },
@@ -6444,20 +6448,21 @@ const TOUR_STEPS = [
   { section: 'Image Editor', title: '↶ Undo and Save', body: 'Undo steps back through your edit history one step at a time. Saving an edited image creates a new image in your gallery. Close exits without saving.' },
   { section: 'Settings', title: '▣ Resolution', body: 'Choose from VGA 640 by 480 up to HD 3264 by 2448. Lower resolutions are recommended if you want images to appear in the magic gallery and you want to save space in your r1 device.' },
   { section: 'Settings', title: '📐 Aspect Ratio', body: 'Choose 1 to 1 square or 16 to 9 letterbox. Leave both unchecked for neither. Default is neither. We highly recommend choosing an aspect ratio to display the full image, preventing accidental cropping.' },
-  { section: 'Settings', title: '📝 Master Prompt', body: 'Appends custom text to every AI transformation. Enable it first, then type your additions. Adding a name and occasion lets presets like Happy Holidays personalize automatically. Can also be toggled from the MASTER button inside the image viewer.' },
+  { section: 'Settings', title: '📝 Master Prompt', body: 'Appends custom text to every AI transformation. Enable it first, then type your additions. Adding a name and occasion lets presets like Happy Holidays personalize automatically. Can also be toggled from the MASTER button inside the image viewer or on the main camera screen.' },
   { section: 'Settings', title: '👁️ Visible Presets', body: 'Choose which imported presets appear in your menus. Select All, deselect individually, or remove all. Category tags show at the bottom when a preset is highlighted.' },
   { section: 'Settings', title: '🔨 Preset Builder', body: 'Build your own custom AI presets. Choose a template, add chips for quality and style, enable random options with single or multi-selection groups, add critical rules, then save. Also accessible directly from the main menu plus (+) button.' },
   { section: 'Settings', title: '🚫 No Magic Mode', body: 'Disables AI processing and works as a regular camera. Photos save only to the plugin gallery, not to the rabbit hole or magic gallery.' },
-  { section: 'Settings', title: '🎛️ Manually Select Options Mode', body: 'When enabled and you choose a preset with options, a popup asks you to pick which option to use rather than a randomized option. Can also be toggled from the OPTIONS button inside the image viewer.' },
+  { section: 'Settings', title: '🎛️ Manually Select Options Mode', body: 'When enabled and you choose a preset with options, a popup asks you to pick which option to use rather than a randomized option. Can also be toggled from the OPTIONS button inside the image viewer or on the main camera screen.' },
   { section: 'Settings', title: '📥 Import Presets (Starting Style)', body: 'You begin with two unlocked presets-Caricature and Impressionism.  Import them from the Import Presets section to capture photos and begin the fun journey of unlocking your imported artistic library.' },
   { section: 'Settings', title: '📥 Import Presets (Import Art)', body: 'Browse our external library in Settings. Check individual unlocked styles or use the All checkmark to select all unlocked presets to import.' },
-  { section: 'Settings', title: '📥 Import Presets (Reveal the Locked)', body: 'Imported styles first appear locked. To unlock one, you need a credit. Take a photo or reprompt in the gallery once with any preset you already own to get one credit. You only get one credit per unique preset!' },
-  { section: 'Settings', title: '🔄 Check for Updates', body: 'Checks for new or modified presets in the library. Any updates are flagged so you can re-import changed presets that you own. New presets appear locked.' },
+  { section: 'Settings', title: '📥 Import Presets (Unlocking Presets)', body: 'Imported styles first appear locked. To unlock one, you need a credit. Take a photo or reprompt in the gallery once with any preset you already own to get one credit. You only get one credit per unique preset!' },
+  { section: 'Settings', title: '🔄 Check for Updates', body: 'Checks for new or modified presets in the library. Any updates are flagged so you can re-import changed/updated presets that you own. If you do not import updated presets, the updates will not apply. New presets appear locked.' },
   { section: 'Tips and Advanced', title: '🏷️ Category Searching', body: 'Every preset has categories. When a preset is highlighted in the Visible Presets menu, its categories appear at the bottom. Tap a category to filter all presets in that group.' },
-  { section: 'Tips and Advanced', title: '🧠 Master Prompt Power Tip', body: 'Search for master or master prompt in the Visible Presets menu to find all presets designed to work with Master Prompt. These respond to names, occasions, and custom context you provide.' },
-  { section: 'Tips and Advanced', title: '📶 Offline Queue', body: 'If you take photos while offline, they queue automatically and sync to the rabbit hole once your connection returns. The queue count shows on the screen.' },
+  { section: 'Tips and Advanced', title: '🧠 Master Prompt Power Tip', body: 'Search for master or master prompt in the Visible Presets menu to find all presets designed to work with Master Prompt. These respond to names, occasions, and custom context you provide. All presets may be affected by the Master Prompt.' },
+  { section: 'Tips and Advanced', title: '📶 Offline Queue', body: 'If you take photos and the program goes offline - no worries - photos queue automatically and may be synced to the rabbit hole once your connection returns. The queue count shows on the screen.' },
   { section: 'Tips and Advanced', title: '🔁 Reset Database', body: 'The nuclear option in Settings. Wipes all custom presets and settings. Only imported presets from the library remain. Use only if something is seriously broken.' },
   { section: 'Tips and Advanced', title: '💀 Content Filter Error', body: 'If you go into your rabbit hole and you receive a content filter image error, this happens because AI is quirky. The beauty of Magic Kamera is you can reprompt. Keep trying until successful.' },
+  { section: 'Tips and Advanced', title: '↑↓ Jump Navigation', body: 'In the setting or areas in the program with presets, clicking the up/down arrows once will move to the next section/page.  If you double click on the up/down arrow, it will jump to the top/bottom of the list.' },
   { section: 'Troubleshooting', title: '❌ Camera Access Denied', body: 'This error will appear at the bottom of your main camera screen if you do not have any active presets, either imported or made with the preset builder.' },
   { section: 'Done!', title: '🎉 Tour Complete!', body: 'That\'s Magic Kamera. Now go make magic! This tour or the text tutorial in this menu is here if you need a refresher. If you come across The One Ron G, The One Hashtag Cyber or The One Rabbit Jesus, tell them you enjoy this program.' },
 ];
@@ -10029,6 +10034,8 @@ function handleStyleListClick(e) {
     if (target.dataset.action === 'builder') {
         e.stopPropagation();
         const index = parseInt(target.dataset.index);
+        returnToMainMenuFromBuilder = true;
+        hideUnifiedMenu();
         editPresetInBuilder(index);
         return;
     }
@@ -10705,12 +10712,49 @@ window.addEventListener('load', () => {
 
   const jumpToTopBtn = document.getElementById('jump-to-top');
   if (jumpToTopBtn) {
-    jumpToTopBtn.addEventListener('click', jumpToTopOfMenu);
+    let menuUpTapTimer = null;
+    jumpToTopBtn.addEventListener('click', () => {
+      if (menuUpTapTimer) {
+        // Double-tap: jump to very top
+        clearTimeout(menuUpTapTimer);
+        menuUpTapTimer = null;
+        jumpToTopOfMenu();
+      } else {
+        menuUpTapTimer = setTimeout(() => {
+          menuUpTapTimer = null;
+          // Single-tap: scroll up one page
+          const scrollContainer = document.querySelector('.styles-menu-scroll-container');
+          if (scrollContainer) {
+            scrollContainer.scrollTop = Math.max(0, scrollContainer.scrollTop - scrollContainer.clientHeight);
+          }
+        }, 300);
+      }
+    });
   }
-  
+
   const jumpToBottomBtn = document.getElementById('jump-to-bottom');
   if (jumpToBottomBtn) {
-    jumpToBottomBtn.addEventListener('click', jumpToBottomOfMenu);
+    let menuDownTapTimer = null;
+    jumpToBottomBtn.addEventListener('click', () => {
+      if (menuDownTapTimer) {
+        // Double-tap: jump to very bottom
+        clearTimeout(menuDownTapTimer);
+        menuDownTapTimer = null;
+        jumpToBottomOfMenu();
+      } else {
+        menuDownTapTimer = setTimeout(() => {
+          menuDownTapTimer = null;
+          // Single-tap: scroll down one page
+          const scrollContainer = document.querySelector('.styles-menu-scroll-container');
+          if (scrollContainer) {
+            scrollContainer.scrollTop = Math.min(
+              scrollContainer.scrollHeight - scrollContainer.clientHeight,
+              scrollContainer.scrollTop + scrollContainer.clientHeight
+            );
+          }
+        }, 300);
+      }
+    });
   }
   
   const settingsMenuBtn = document.getElementById('settings-menu-button');
@@ -10899,6 +10943,77 @@ window.addEventListener('load', () => {
     settingsBackBtn.addEventListener('click', hideSettingsSubmenu);
   }
   
+  const settingsJumpUpBtn = document.getElementById('settings-jump-up');
+  if (settingsJumpUpBtn) {
+    let settingsUpTapTimer = null;
+    settingsJumpUpBtn.addEventListener('click', () => {
+      if (settingsUpTapTimer) {
+        // Double-tap: jump to top
+        clearTimeout(settingsUpTapTimer);
+        settingsUpTapTimer = null;
+        currentSettingsIndex = 0;
+        updateSettingsSelection();
+      } else {
+        // Single-tap: wait to see if double-tap follows
+        settingsUpTapTimer = setTimeout(() => {
+          settingsUpTapTimer = null;
+          // Page up: move up by several items
+          const submenu = document.getElementById('settings-submenu');
+          if (submenu) {
+            const container = submenu.querySelector('.submenu-list');
+            if (container) {
+              const pageHeight = container.clientHeight;
+              container.scrollTop = Math.max(0, container.scrollTop - pageHeight);
+            }
+          }
+          const submenu2 = document.getElementById('settings-submenu');
+          if (submenu2) {
+            const items = submenu2.querySelectorAll('.menu-section-button');
+            const pageItems = Math.max(1, Math.floor(items.length / 3));
+            currentSettingsIndex = Math.max(0, currentSettingsIndex - pageItems);
+            updateSettingsSelection();
+          }
+        }, 300);
+      }
+    });
+  }
+
+  const settingsJumpDownBtn = document.getElementById('settings-jump-down');
+  if (settingsJumpDownBtn) {
+    let settingsDownTapTimer = null;
+    settingsJumpDownBtn.addEventListener('click', () => {
+      if (settingsDownTapTimer) {
+        // Double-tap: jump to bottom
+        clearTimeout(settingsDownTapTimer);
+        settingsDownTapTimer = null;
+        const submenu = document.getElementById('settings-submenu');
+        if (submenu) {
+          const items = submenu.querySelectorAll('.menu-section-button');
+          currentSettingsIndex = items.length - 1;
+          updateSettingsSelection();
+        }
+      } else {
+        // Single-tap: wait to see if double-tap follows
+        settingsDownTapTimer = setTimeout(() => {
+          settingsDownTapTimer = null;
+          // Page down
+          const submenu = document.getElementById('settings-submenu');
+          if (submenu) {
+            const container = submenu.querySelector('.submenu-list');
+            if (container) {
+              const pageHeight = container.clientHeight;
+              container.scrollTop = Math.min(container.scrollHeight - container.clientHeight, container.scrollTop + pageHeight);
+            }
+            const items = submenu.querySelectorAll('.menu-section-button');
+            const pageItems = Math.max(1, Math.floor(items.length / 3));
+            currentSettingsIndex = Math.min(items.length - 1, currentSettingsIndex + pageItems);
+            updateSettingsSelection();
+          }
+        }, 300);
+      }
+    });
+  }
+
   const resolutionSettingsBtn = document.getElementById('resolution-settings-button');
   if (resolutionSettingsBtn) {
     resolutionSettingsBtn.addEventListener('click', showResolutionSubmenu);
@@ -11281,22 +11396,61 @@ window.addEventListener('load', () => {
   
   const visiblePresetsJumpUp = document.getElementById('visible-presets-jump-up');
   if (visiblePresetsJumpUp) {
+    let vpUpTapTimer = null;
     visiblePresetsJumpUp.addEventListener('click', () => {
-      currentVisiblePresetsIndex = 0;
-      updateVisiblePresetsSelection();
+      if (vpUpTapTimer) {
+        // Double-tap: jump to very top
+        clearTimeout(vpUpTapTimer);
+        vpUpTapTimer = null;
+        currentVisiblePresetsIndex = 0;
+        updateVisiblePresetsSelection();
+      } else {
+        vpUpTapTimer = setTimeout(() => {
+          vpUpTapTimer = null;
+          // Single-tap: page up
+          const submenu = document.getElementById('visible-presets-submenu');
+          if (submenu) {
+            const container = submenu.querySelector('.submenu-list');
+            if (container) {
+              container.scrollTop = Math.max(0, container.scrollTop - container.clientHeight);
+            }
+          }
+        }, 300);
+      }
     });
   }
-  
+
   const visiblePresetsJumpDown = document.getElementById('visible-presets-jump-down');
   if (visiblePresetsJumpDown) {
+    let vpDownTapTimer = null;
     visiblePresetsJumpDown.addEventListener('click', () => {
-      const list = document.getElementById('visible-presets-list');
-      if (list) {
-        const items = list.querySelectorAll('.style-item');
-        if (items.length > 0) {
-          currentVisiblePresetsIndex = items.length - 1;
-          updateVisiblePresetsSelection();
+      if (vpDownTapTimer) {
+        // Double-tap: jump to very bottom
+        clearTimeout(vpDownTapTimer);
+        vpDownTapTimer = null;
+        const list = document.getElementById('visible-presets-list');
+        if (list) {
+          const items = list.querySelectorAll('.style-item');
+          if (items.length > 0) {
+            currentVisiblePresetsIndex = items.length - 1;
+            updateVisiblePresetsSelection();
+          }
         }
+      } else {
+        vpDownTapTimer = setTimeout(() => {
+          vpDownTapTimer = null;
+          // Single-tap: page down
+          const submenu = document.getElementById('visible-presets-submenu');
+          if (submenu) {
+            const container = submenu.querySelector('.submenu-list');
+            if (container) {
+              container.scrollTop = Math.min(
+                container.scrollHeight - container.clientHeight,
+                container.scrollTop + container.clientHeight
+              );
+            }
+          }
+        }, 300);
       }
     });
   }
@@ -12640,22 +12794,55 @@ const result = await presetImporter.import();
   
   const presetSelectorJumpUp = document.getElementById('preset-selector-jump-up');
   if (presetSelectorJumpUp) {
+    let psUpTapTimer = null;
     presetSelectorJumpUp.addEventListener('click', () => {
-      currentPresetIndex_Gallery = 0;
-      updatePresetSelection();
+      if (psUpTapTimer) {
+        // Double-tap: jump to very top
+        clearTimeout(psUpTapTimer);
+        psUpTapTimer = null;
+        currentPresetIndex_Gallery = 0;
+        updatePresetSelection();
+      } else {
+        psUpTapTimer = setTimeout(() => {
+          psUpTapTimer = null;
+          // Single-tap: page up
+          const container = document.querySelector('.preset-list');
+          if (container) {
+            container.scrollTop = Math.max(0, container.scrollTop - container.clientHeight);
+          }
+        }, 300);
+      }
     });
   }
-  
+
   const presetSelectorJumpDown = document.getElementById('preset-selector-jump-down');
   if (presetSelectorJumpDown) {
+    let psDownTapTimer = null;
     presetSelectorJumpDown.addEventListener('click', () => {
-      const list = document.getElementById('preset-list');
-      if (list) {
-        const items = list.querySelectorAll('.preset-item');
-        if (items.length > 0) {
-          currentPresetIndex_Gallery = items.length - 1;
-          updatePresetSelection();
+      if (psDownTapTimer) {
+        // Double-tap: jump to very bottom
+        clearTimeout(psDownTapTimer);
+        psDownTapTimer = null;
+        const list = document.getElementById('preset-list');
+        if (list) {
+          const items = list.querySelectorAll('.preset-item');
+          if (items.length > 0) {
+            currentPresetIndex_Gallery = items.length - 1;
+            updatePresetSelection();
+          }
         }
+      } else {
+        psDownTapTimer = setTimeout(() => {
+          psDownTapTimer = null;
+          // Single-tap: page down
+          const container = document.querySelector('.preset-list');
+          if (container) {
+            container.scrollTop = Math.min(
+              container.scrollHeight - container.clientHeight,
+              container.scrollTop + container.clientHeight
+            );
+          }
+        }, 300);
       }
     });
   }
