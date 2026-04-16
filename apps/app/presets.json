@@ -2065,6 +2065,19 @@
     "additionalInstructions": "FINAL RESULT:\nA fully reconstructed image formed from floating ash or dust particles."
   },
   {
+    "name": "ATOMPUNK",
+    "category": [
+      "RETRO-FUTURISM",
+      "SCI-FI",
+      "1950s",
+      "AESTHETIC"
+    ],
+    "message": "Take a picture and transform the image into the Atompunk aesthetic — the optimistic, atomic-age retro-futurism of the 1950s and early 1960s. Preserve subject identity. Place the subject in a world where the Space Age promises of the Atomic Era came true. The environment should feature Googie architecture with sweeping curves and starbursts, chrome-plated surfaces, tail-finned vehicles, bubble-domed helmets, and ray gun-styled devices. The color palette should combine the warm pastels of 1950s suburbia (mint green, powder pink, cream, turquoise) with metallic chrome and atomic-orange accents. Lighting should be bright, optimistic, and clean — the future as imagined in a 1955 World's Fair exhibit. Incorporate atomic motifs: electron orbit symbols, starbursts, boomerang shapes, and the iconic atom logo. The overall mood should radiate mid-century optimism about nuclear power, space travel, and the gleaming technological future that was just around the corner. Retro illustration style with clean lines and a vintage advertising aesthetic.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": ""
+  },
+  {
     "name": "AUSTIN DANGER POWERS",
     "category": [
       "CINEMATIC",
@@ -2644,6 +2657,19 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "IMPORTANT:\nThe transformation should feel like a playful caricature of a fictional rural comedy character, not a judgment of real people.\n\nThe subject’s identity must remain recognizable beneath the exaggerated styling."
+  },
+  {
+    "name": "BIOLUMINESCENT",
+    "category": [
+      "NATURE",
+      "FANTASY",
+      "GLOW",
+      "UNDERWATER"
+    ],
+    "message": "Take a picture and transform the subject into a bioluminescent being — as if they have evolved to produce their own light like deep-sea creatures, fireflies, or glowing fungi. Preserve subject identity. The subject should emit a soft, organic glow from within, with bioluminescent patterns tracing along their features: glowing lines following the contours of their face and body like deep-sea fish photophores, luminous spots and patches reminiscent of comb jellies or dinoflagellates, and trailing wisps of light like bioluminescent plankton disturbed in dark water. The color palette should be the authentic colors of bioluminescence: electric blue, cyan, soft green, and occasional warm bioluminescent yellows and oranges. The background should be very dark — deep ocean black or midnight forest — to make the bioluminescence the primary light source. The glow should illuminate the subject's immediate surroundings with a soft, ethereal light. Include environmental bioluminescent elements: glowing particles floating in the air like marine snow, luminous fungi or coral formations nearby, and trails of light in the subject's wake. The mood should be magical, alien, and serene — the beauty of nature's own light show.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": ""
   },
   {
     "name": "BIOMORPHIC ABSTRACTION",
@@ -3935,6 +3961,20 @@
     "additionalInstructions": ""
   },
   {
+    "name": "CASSETTE FUTURISM",
+    "category": [
+      "ART",
+      "RETRO",
+      "SCI-FI",
+      "AESTHETIC",
+      "TECHNOLOGY"
+    ],
+    "message": "Take a picture and transform the image into the Cassette Futurism aesthetic — the chunky, analog-tech visual language of 1970s and 1980s science fiction. Preserve subject identity. Render the scene as if it exists inside a retro-futuristic world where technology advanced but never went digital. All surfaces should have the tactile quality of beige plastic casings, brushed aluminum panels, and rubber-coated buttons. Incorporate CRT monitor green-phosphor glow, amber LED readouts, chunky toggle switches, reel-to-reel tape mechanisms, and analog dials with physical needles. The color palette should be earth tones (tan, brown, olive) punctuated by glowing amber, red, and green indicator lights against dark backgrounds. Lighting should be moody and functional — fluorescent overhead strips casting harsh shadows on control panels. The aesthetic should reference the production design of Alien (1979), Blade Runner control rooms, and early Space Shuttle cockpit instrumentation. Matte photography finish with film grain and slight lens distortion.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": ""
+  },  
+  {
     "name": "CAUGHT IN THE ACT",
     "category": [
       "OPTIONS",
@@ -4678,6 +4718,36 @@
     "additionalInstructions": ""
   },
   {
+    "name": "CHROMATIC ABERRATION",
+    "category": [
+      "OPTIONS",
+      "PHOTOGRAPHY",
+      "EFFECT",
+      "EXPERIMENTAL"
+    ],
+    "message": "Take a picture and apply a dramatic chromatic aberration effect to the image, simulating the optical distortion where a lens fails to focus all wavelengths of color to the same convergence point. Preserve subject identity.",
+    "options": [
+      {
+        "id": "001",
+        "text": "SUBTLE FRINGE — Delicate red-cyan color separation along high-contrast edges only, barely noticeable at center, increasing toward image corners. Elegant and photographic."
+      },
+      {
+        "id": "002",
+        "text": "RGB SPLIT — Aggressive separation of the red, green, and blue channels offset in different directions, creating a bold triple-image effect. Graphic and intentional."
+      },
+      {
+        "id": "003",
+        "text": "PRISMATIC EXPLOSION — Extreme rainbow spectrum dispersion radiating outward from the subject, as if viewed through a prism. Every edge bleeds the full visible spectrum."
+      },
+      {
+        "id": "004",
+        "text": "ANAGLYPH STYLE — Classic red-blue 3D glasses offset effect, with the red channel shifted left and cyan shifted right, creating a retro stereoscopic look."
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "IDENTITY PRESERVATION:\n• Subject must remain clearly recognizable despite the color distortion\n• The effect should enhance the image artistically, not destroy legibility\n\nFINAL RESULT:\nThe image should look like a deliberate artistic application of chromatic aberration, not a camera malfunction."
+  },
+  {
     "name": "CINEMATIC HORROR",
     "category": [
       "HORROR",
@@ -4963,6 +5033,19 @@
     "additionalInstructions": ""
   },
   {
+    "name": "CLOISONNISM",
+    "category": [
+      "ART",
+      "PAINTING",
+      "POST-IMPRESSIONIST",
+      "CLASSIC"
+    ],
+    "message": "Take a picture and transform the image into a Cloisonnist painting in the style of Émile Bernard and Paul Gauguin. Preserve subject identity. The entire image must be composed of flat areas of bold, vivid, unmixed color separated by strong dark outlines, resembling a stained glass window or cloisonné enamelwork. No gradients or shading within color areas — each zone of color should be flat and uniform. Outlines should be thick, confident, and dark (black or very dark brown). The color palette should be rich and saturated: deep reds, vibrant blues, emerald greens, golden yellows, and warm oranges. Simplify forms into their essential shapes. The composition should feel decorative and rhythmic, with a strong sense of pattern. Painterly texture on canvas with visible but controlled brushwork within each color zone.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": ""
+  },
+  {
     "name": "CLONE",
     "category": [
       "OPTIONS",
@@ -5168,6 +5251,19 @@
       }
     ],
     "additionalInstructions": "FINAL RESULT:\nThe image must convincingly depict a CLUE gameplay moment, showing a valid player guess — for example: Reverend Green in the Study with the Dagger — with the subject’s recognizable face on the character card, alongside authentic location and weapon cards, as if laid down during an actual game."
+  },
+  {
+    "name": "CLUTTERCORE",
+    "category": [
+      "AESTHETIC",
+      "MAXIMALIST",
+      "COLORFUL",
+      "ECLECTIC"
+    ],
+    "message": "Take a picture and transform the image into the Cluttercore aesthetic — a maximalist celebration of organized chaos, personal collections, and joyful visual excess. Preserve subject identity. Surround the subject with an overwhelming abundance of colorful, eclectic objects: stacked books, vintage toys, potted plants overflowing from every surface, mismatched patterned textiles, wall-to-wall art and posters, collections of figurines, candles, crystals, postcards, and curiosities covering every available surface. Nothing matches but everything belongs. The color palette should be vibrant and varied — every color of the rainbow represented across the collected objects. Patterns clash deliberately: florals next to stripes next to polka dots next to plaid. Lighting should be warm and inviting, making the chaos feel cozy rather than stressful. The subject should look perfectly at home in this maximalist paradise, as if every single object has a story and a purpose. Bright, warm photography with rich color saturation and sharp detail on the many objects.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": ""
   },
   {
     "name": "COEN BROTHERS FILM",
@@ -7162,6 +7258,49 @@
     "additionalInstructions": ""
   },
   {
+    "name": "DARK ACADEMIA",
+    "category": [
+      "AESTHETIC",
+      "LITERARY",
+      "VINTAGE",
+      "SCHOLARLY"
+    ],
+    "message": "Take a picture and transform the image into the Dark Academia aesthetic — the moody, intellectual visual world of old universities, classical literature, and scholarly obsession. Preserve subject identity. Dress the subject in Dark Academia attire: tweed blazers, cable-knit sweaters, Oxford shirts, wool trousers, and leather accessories. Place them in an environment of dark wood-paneled libraries, Gothic university architecture, candlelit study rooms, or rain-soaked stone courtyards. The color palette should be rich and warm but dark: deep brown, burgundy, forest green, navy, cream, and antique gold. Lighting should be moody and atmospheric — warm lamplight, candlelight, or overcast daylight filtering through leaded glass windows. Surround the subject with leather-bound books, handwritten manuscripts, fountain pens, vintage globes, and cups of black coffee. The mood should evoke the romantic intensity of studying ancient texts at midnight in a centuries-old library. Warm, slightly desaturated photography with a vintage film quality.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": ""
+  },
+  {
+    "name": "DATAMOSH",
+    "category": [
+      "OPTIONS",
+      "GLITCH",
+      "DIGITAL",
+      "EXPERIMENTAL"
+    ],
+    "message": "Take a picture and apply a datamoshing glitch art effect — simulating the visual artifacts that occur when video compression data is intentionally corrupted. Preserve subject identity while introducing controlled digital chaos.",
+    "options": [
+      {
+        "id": "001",
+        "text": "PIXEL BLEED — Blocks of pixels from one area of the image smear and flow into adjacent areas, as if the image is melting digitally. Colors streak horizontally in corrupted bands."
+      },
+      {
+        "id": "002",
+        "text": "BLOCK CORRUPTION — Random rectangular blocks of the image are displaced, duplicated, or filled with wrong color data. Some blocks show fragments of other parts of the image."
+      },
+      {
+        "id": "003",
+        "text": "MOTION GHOST — The subject appears to have motion interpolation artifacts, with ghostly stretched copies of their form trailing behind them as if the compression predicted movement that didn't happen."
+      },
+      {
+        "id": "004",
+        "text": "FULL CORRUPTION — Extreme datamosh combining all effects: pixel bleeding, block displacement, color channel errors, and compression artifacts. The image is barely holding together but the subject is still recognizable."
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "IDENTITY PRESERVATION:\n• Subject must remain recognizable despite glitch effects\n• The corruption should look like authentic video compression artifacts, not random noise\n\nFINAL RESULT:\nThe image should look like a corrupted video frame — the kind of beautiful digital destruction that glitch artists deliberately create."
+  },
+  {
     "name": "DATING PROFILE",
     "category": [
       "HUMOR",
@@ -8047,6 +8186,19 @@
     "additionalInstructions": ""
   },
   {
+    "name": "DOUBLE MOON",
+    "category": [
+      "FANTASY",
+      "SCI-FI",
+      "LANDSCAPE",
+      "OTHERWORLDLY"
+    ],
+    "message": "Take a picture and transform the scene so the subject exists on an alien world with two moons visible in the sky — a breathtaking science fiction landscape that feels both beautiful and unmistakably extraterrestrial. Preserve subject identity. The sky should feature two moons of different sizes and colors: one large and close with visible surface detail (craters, maria, or alien geological features), and one smaller and more distant. The sky itself should have an unusual color — perhaps a deep violet twilight, a green-tinged atmosphere, or a burnt orange alien sunset. The landscape should be subtly alien: familiar enough to feel like a real place but with details that are clearly not Earth — unusual rock formations, vegetation in non-green colors (purple, red, or bioluminescent blue), unfamiliar constellations in the sky, or rings visible on the horizon like Saturn's. The lighting should be complex, with each moon casting its own subtle shadow in a different direction. The mood should be one of awe and wonder — the subject standing on the surface of a world no human has ever visited, gazing at an alien sky. Cinematic science fiction photography with rich atmospheric effects.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": ""
+  },
+  {
     "name": "DOUGLAS DOUGIE POWERS (DR. EVIL)",
     "category": [
       "CINEMATIC",
@@ -8174,6 +8326,36 @@
     "additionalInstructions": "FINAL RESULT:\nA breathtaking nighttime aerial light display where hundreds of coordinated drones recreate the subject's face in the sky as a massive, glowing, three-dimensional portrait made entirely of individual points of colored light. The image is pointillistic and abstract—recognizable through the arrangement and color of light dots rather than photographic realism. Each drone is a visible pixel of light with dark sky between them, creating a floating constellation portrait that captures the subject's likeness through technological precision and artistic light arrangement. The effect should look like a real drone show, not a projected image or solid light sculpture."
   },
   {
+    "name": "DROSTE EFFECT",
+    "category": [
+      "OPTIONS",
+      "RECURSIVE",
+      "ILLUSION",
+      "CREATIVE"
+    ],
+    "message": "Take a picture and apply the Droste effect — a recursive visual technique where the image contains a smaller version of itself, which contains an even smaller version, creating an infinite visual loop. Preserve subject identity.",
+    "options": [
+      {
+        "id": "001",
+        "text": "FRAME WITHIN FRAME — The subject is holding or standing next to a framed picture that contains the same scene, which contains another framed picture, recursing at least 4-5 levels deep."
+      },
+      {
+        "id": "002",
+        "text": "SCREEN RECURSION — The subject is visible on a screen (TV, phone, laptop) within the image, and that screen shows the same scene with another screen, creating a digital hall of mirrors effect."
+      },
+      {
+        "id": "003",
+        "text": "SPIRAL RECURSION — The image spirals inward toward a central point, with each revolution containing a progressively smaller and rotated version of the full image, creating a mesmerizing vortex."
+      },
+      {
+        "id": "004",
+        "text": "MIRROR TUNNEL — The recursive copies recede into the distance as if reflected between two parallel mirrors, creating an infinite corridor of diminishing copies stretching to a vanishing point."
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "IDENTITY PRESERVATION:\n• Subject must be clearly recognizable at the primary level and at least 2-3 recursive levels\n\nFINAL RESULT:\nThe image should create a satisfying sense of infinite recursion — the viewer should feel drawn into the image trying to see how deep the recursion goes."
+  },
+  {
     "name": "DUKE NUKEM 3D NPC",
     "category": [
       "VIDEO GAME",
@@ -8211,6 +8393,44 @@
     ],
     "randomizeOptions": true,
     "additionalInstructions": "RESTRICTIONS:\n• No modern graphics or realism\n• No HUD overlays or UI text\n• No cartoon or illustrative styles\n\nFINAL RESULT:\nThe image should convincingly place the subject as a recognizable NPC inside the Duke Nukem 3D universe, perfectly matching the original game’s visual language, scale, and tone."
+  },
+  {
+    "name": "DUOTONE",
+    "category": [
+      "OPTIONS",
+      "GRAPHIC DESIGN",
+      "COLOR",
+      "MODERN"
+    ],
+    "message": "Take a picture and transform it into a bold duotone image — a graphic design technique where the image is rendered using only two contrasting colors. Preserve subject identity. The image should first be converted to grayscale values, then mapped to a gradient between the two selected colors, creating a striking, poster-like effect.",
+    "options": [
+      {
+        "id": "001",
+        "text": "MIDNIGHT GOLD — Deep navy blue shadows transitioning to warm metallic gold highlights. Luxurious and editorial."
+      },
+      {
+        "id": "002",
+        "text": "ELECTRIC CORAL — Hot magenta-pink shadows transitioning to bright coral-orange highlights. Vibrant and energetic."
+      },
+      {
+        "id": "003",
+        "text": "FOREST CREAM — Deep emerald green shadows transitioning to warm cream highlights. Natural and sophisticated."
+      },
+      {
+        "id": "004",
+        "text": "ULTRAVIOLET — Deep purple shadows transitioning to electric cyan highlights. Futuristic and bold."
+      },
+      {
+        "id": "005",
+        "text": "BLOOD MOON — Dark crimson red shadows transitioning to pale bone-white highlights. Dramatic and intense."
+      },
+      {
+        "id": "006",
+        "text": "SUNSET FADE — Deep burnt sienna shadows transitioning to warm peach highlights. Warm and nostalgic."
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "IDENTITY PRESERVATION:\n• Subject must remain clearly recognizable\n• Tonal detail should be preserved — the duotone effect maps values, it doesn't flatten them\n\nFINAL RESULT:\nThe image should look like a professional graphic design duotone treatment suitable for a magazine cover or concert poster."
   },
   {
     "name": "DUTCH GOLDEN AGE",
@@ -11378,6 +11598,20 @@
     "additionalInstructions": ""
   },
   {
+    "name": "FRUTIGER AERO",
+    "category": [
+      "ART",
+      "DESIGN",
+      "Y2K",
+      "DIGITAL",
+      "AESTHETIC"
+    ],
+    "message": "Take a picture and transform the image into the Frutiger Aero design aesthetic — the glossy, nature-meets-technology visual language of the early 2000s. Preserve subject identity. Apply the signature Frutiger Aero look: ultra-glossy surfaces with soft reflections, translucent glass-like elements, gentle gradients in sky blue, aqua green, and cloud white. Incorporate nature motifs seamlessly blended with technology — water droplets on glass, floating bubbles, lush green leaves, blue skies with wispy clouds, and aurora-like light effects. All UI-like elements should have rounded corners, soft shadows, and a skeuomorphic three-dimensional quality. The color palette should be predominantly blues, greens, and whites with occasional warm accents. The overall mood should be optimistic, clean, and utopian — as if technology and nature exist in perfect harmony. Glossy digital rendering with soft depth-of-field blur and luminous highlights.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": ""
+  },
+  {
     "name": "FRUSTRATIONAL POSTER",
     "category": [
       "HUMOR",
@@ -12363,6 +12597,20 @@
     "additionalInstructions": ""
   },
   {
+    "name": "GRISAILLE",
+    "category": [
+      "ART",
+      "PAINTING",
+      "MONOCHROME",
+      "CLASSIC",
+      "TECHNIQUE"
+    ],
+    "message": "Take a picture and transform the image into a Grisaille painting — a monochromatic work executed entirely in shades of gray. Preserve subject identity with careful attention to form and volume. The entire image must use only neutral grays ranging from pure white to deep black, with no color whatsoever. Render the subject with the precision and dimensionality of a sculptural relief, using subtle gradations of tone to create a convincing illusion of three-dimensional form. Lighting should be dramatic and directional, with strong highlights and deep shadows that define every contour. The technique should reference Renaissance and Northern European grisaille traditions, where monochrome paintings were used to simulate stone sculpture or as underpaintings. Smooth oil painting texture with refined, controlled brushwork and seamless tonal transitions.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": ""
+  },
+  {
     "name": "GROSS ANATOMY",
     "category": [
       "MEDICAL",
@@ -12644,6 +12892,32 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "IDENTITY PRESERVATION:\n• Subject must be clearly recognizable as the painting's subject\n• Dressed in period-appropriate aristocratic clothing\n\nFINAL RESULT:\nA spooky mansion scene featuring the subject as a haunted portrait whose eyes definitely follow you and whose expression definitely just changed."
+  },
+  {
+    "name": "HDR EXTREME",
+    "category": [
+      "OPTIONS",
+      "PHOTOGRAPHY",
+      "PROCESSING",
+      "DRAMATIC"
+    ],
+    "message": "Take a picture and apply an extreme HDR (High Dynamic Range) processing effect that pushes the technique far beyond natural-looking results into hyper-detailed, almost painterly territory. Preserve subject identity.",
+    "options": [
+      {
+        "id": "001",
+        "text": "GRUNGE HDR — Maximum local contrast, heavy tone mapping, dark gritty shadows with glowing highlights. Every texture is amplified to an extreme degree. Halos visible around high-contrast edges. The look of early 2010s HDR photography pushed to the maximum."
+      },
+      {
+        "id": "002",
+        "text": "SURREAL HDR — Otherworldly color saturation with impossible dynamic range. Shadows are fully illuminated, highlights retain all detail, and colors are boosted to psychedelic levels. The scene looks like a hyperreal dream."
+      },
+      {
+        "id": "003",
+        "text": "PAINTERLY HDR — Tone mapping so aggressive that the photograph begins to look like an oil painting. Textures become exaggerated brushstroke-like patterns, and the image takes on a thick, impasto quality while remaining photographic in origin."
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "IDENTITY PRESERVATION:\n• Subject must remain clearly recognizable\n• The HDR effect should enhance detail, not obscure it\n\nFINAL RESULT:\nThe image should look like HDR processing cranked to 11 — the kind of over-processed look that HDR enthusiasts love and photographers debate endlessly."
   },
   {
     "name": "HEADLESS",
@@ -15043,10 +15317,45 @@
       "3D",
       "STRUCTURAL"
     ],
-    "message": "Take a picture and completely reconstruct the entire image as a LiDAR scan visualization, where the scene is captured as a 3D point cloud made ONLY of discrete scan points.\n\nMASTER PROMPT OVERRIDE LOGIC (CRITICAL):\n• If an external master prompt specifies scan density or style, USE that instead\n\nCRITICAL OUTPUT RULES (NON-NEGOTIABLE):\n• COMPLETELY DESTROY the original image before reconstruction\n• DO NOT preserve ANY original surfaces, textures, gradients, or shading\n• DO NOT overlay scan points on top of the image\n• The final image must be a FULL RECONSTRUCTION from scan data only\n\nCORE CONCEPT (CRITICAL):\n• The image is a LiDAR point cloud visualization\n• Everything is represented ONLY by discrete spatial points\n• The background must be empty (black or dark), not an image\n\nPOINT CLOUD RULES (NUCLEAR):\n• The entire image must be composed ONLY of separated points (dots)\n• NO underlying photo or color image may be visible\n• NO gradients, NO shading, NO surfaces\n• Points must NEVER connect to form lines, meshes, or surfaces\n• Points must float in space with visible gaps between them\n• Density of points defines form, depth, and detail\n\nSCAN BEHAVIOR:\n• Simulate real LiDAR capture (depth-based sampling)\n• Foreground = higher density of points\n• Background = sparse or fading points\n• Occlusion must exist (missing data in hidden areas)\n• Edges may appear incomplete or fragmented\n\nCOLOR RULE (CRITICAL):\n• Use ONLY monochrome scan colors:\n  - White points on black background OR\n  - Cyan/blue points on black background\n• DO NOT use full color images\n• DO NOT preserve original colors in any form\n\nSUBJECT HANDLING:\n• Subject must remain recognizable ONLY through point distribution\n• Facial features must emerge from density—not shading or lines\n\nENVIRONMENT RULES:\n• Entire environment must also be reconstructed as points\n• Empty space between points is REQUIRED\n\nSTYLE:\n• Scientific / LiDAR scan visualization\n• Raw, technical, slightly noisy\n• Not artistic, not stylized photography\n\nENFORCEMENT (CRITICAL):\n• If ANY original image or color is visible, the result is incorrect\n• If dots are placed over a visible photo, the result is incorrect\n• If gradients or shading appear, the result is incorrect\n• If the image looks like a photo with effects, the result is incorrect.",
-    "options": [],
-    "randomizeOptions": false,
-    "additionalInstructions": "FINAL RESULT:\nA fully reconstructed LiDAR scan image made ONLY of white or blue points on a black background, forming a recognizable subject purely through point density with no underlying image."
+    "message": "Take a picture and completely reconstruct the entire image as a LiDAR scan visualization, where the scene is captured as a 3D point cloud made ONLY of discrete scan points.\n\nMASTER PROMPT OVERRIDE LOGIC (CRITICAL):\n• If an external master prompt specifies scan density or style, USE that instead\n\nCRITICAL OUTPUT RULES (NON-NEGOTIABLE):\n• COMPLETELY DESTROY the original image before reconstruction\n• DO NOT preserve ANY original surfaces, textures, gradients, shading, or silhouettes\n• DO NOT overlay scan points on top of the image\n• The final image must contain ZERO photographic information\n• The result must be a FULL reconstruction using ONLY point data\n\nCORE CONCEPT (CRITICAL):\n• The image is NOT a picture—it is a spatial scan visualization\n• Everything must be represented ONLY by discrete points in space\n\nPOINT CLOUD RULES (ABSOLUTE):\n• The entire image must be composed ONLY of separated points (dots)\n• If a pixel is not a dot, it must be empty (black)\n• There is NO such thing as a surface, gradient, or filled area\n• Points must NEVER connect, blend, blur, or form continuous shapes\n• No anti-aliasing, no soft edges, no glow halos\n\nBINARY RENDER RULE (CRITICAL):\n• Each visible element must be either:\n  - A single sharp point of light\n  - OR pure black empty space\n• NOTHING in between is allowed\n\nSCAN BEHAVIOR:\n• Simulate real LiDAR capture (depth-based sampling)\n• Uneven density (clusters and gaps)\n• Occlusion and missing data required\n• Fragmented edges and incomplete geometry encouraged\n\nCOLOR RULE (HARD LIMIT):\n• Use ONLY:\n  - White points on black background OR\n  - Cyan/blue points on black background\n• NO color variation from the original image\n• NO gradients, NO shading, NO color blending\n\nSUBJECT HANDLING:\n• Subject must be recognizable ONLY through point distribution\n• Recognition must come from density—not outlines or shading\n\nENVIRONMENT RULES:\n• Entire scene must be reconstructed as points\n• Background must be completely black\n• No atmospheric effects, no depth blur\n\nSTYLE:\n• Raw LiDAR / scan data visualization\n• Technical, unpolished, data-driven\n• NOT artistic, NOT cinematic\n\nENFORCEMENT (CRITICAL):\n• If ANY part of the original image is visible, the result is incorrect\n• If dots appear on top of a visible image, the result is incorrect\n• If gradients, shading, or smooth forms appear, the result is incorrect\n• If the image looks like a stylized photo instead of scan data, the result is incorrect",
+    "optionGroups": [
+      {
+        "title": "Scan Density",
+        "options": [
+          {
+            "id": "001",
+            "text": "Sparse scan with minimal points, heavy gaps, and low recognizability"
+          },
+          {
+            "id": "002",
+            "text": "Moderate scan density balancing structure and missing data"
+          },
+          {
+            "id": "003",
+            "text": "High-density scan with detailed point distribution and strong subject clarity"
+          }
+        ]
+      },
+      {
+        "title": "Scan Style",
+        "options": [
+          {
+            "id": "001",
+            "text": "Raw LiDAR capture with uneven distribution, noise, and fragmented geometry"
+          },
+          {
+            "id": "002",
+            "text": "Clean technical scan with consistent point spacing and structured depth layering"
+          },
+          {
+            "id": "003",
+            "text": "Glitch scan with dropout regions, broken clusters, and irregular sampling artifacts"
+          }
+        ]
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "FINAL RESULT:\nA pure LiDAR scan visualization where the entire scene is reconstructed ONLY from discrete white or blue points on a black background, with no surfaces, no shading, and no underlying image—only raw point data forming the subject. Selected options must directly control point density and scan behavior without introducing surfaces or gradients."
   },
   {
     "name": "LIGHT",
@@ -15085,6 +15394,41 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "LIMINAL SPACE",
+    "category": [
+      "OPTIONS",
+      "AESTHETIC",
+      "SURREAL",
+      "PHOTOGRAPHY",
+      "UNCANNY"
+    ],
+    "message": "Take a picture and transform it into a liminal space photograph — placing the subject in an eerie, empty, transitional environment that feels familiar yet deeply unsettling. Preserve subject identity.",
+    "options": [
+      {
+        "id": "001",
+        "text": "EMPTY MALL — Subject standing alone in a vast, abandoned shopping mall with flickering fluorescent lights, closed storefronts, and polished floors reflecting the empty space. Late 1990s architecture."
+      },
+      {
+        "id": "002",
+        "text": "INFINITE HALLWAY — Subject at the end of an impossibly long, identical hotel corridor with repeating doors, patterned carpet, and warm yellowish lighting that seems to go on forever."
+      },
+      {
+        "id": "003",
+        "text": "POOL ROOMS — Subject in a vast, empty indoor pool complex with pale blue water, white tile walls, and humid fluorescent lighting. No windows, no exits visible. The water is perfectly still."
+      },
+      {
+        "id": "004",
+        "text": "EMPTY CLASSROOM — Subject alone in a school classroom at night. Fluorescent lights buzzing, chairs stacked on desks, a clock on the wall showing 3:00 AM. Chalkboard has been partially erased."
+      },
+      {
+        "id": "005",
+        "text": "PARKING STRUCTURE — Subject in a vast, empty concrete parking garage at 2 AM. Harsh sodium vapor lighting casting orange pools of light. Every parking space empty. Distant echo feeling."
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "IDENTITY PRESERVATION:\n• Subject must remain clearly recognizable\n• The subject should look slightly out of place — like they wandered into a space that shouldn't have anyone in it\n\nFINAL RESULT:\nThe image should evoke the uncanny, nostalgic unease of liminal space photography — familiar places rendered deeply strange by their emptiness and the subject's solitary presence."
   },
   {
     "name": "LINE DRAWING",
@@ -16697,6 +17041,20 @@
       "MASTER PROMPT"
     ],
     "message": "Take a picture and make it into a MEME, adding ironic humor and flavor text inspired by the content of the image. Clean composition with readable typography.  The result should be a full view of the meme.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": ""
+  },
+  {
+    "name": "MEMPHIS DESIGN",
+    "category": [
+      "ART",
+      "DESIGN",
+      "POSTMODERN",
+      "1980s",
+      "GRAPHIC"
+    ],
+    "message": "Take a picture and transform the image into a Memphis Design Group composition inspired by Ettore Sottsass and the radical 1980s Italian design collective. Preserve subject identity. Apply the signature Memphis aesthetic: bold clashing colors (hot pink, electric blue, sunshine yellow, neon green, bright red), scattered geometric shapes (triangles, circles, squiggles, zigzags), and playful asymmetric patterns. Surfaces should be covered in the iconic Memphis terrazzo-like speckle patterns, laminate textures, and confetti-like decorative elements. The composition should feel deliberately chaotic and anti-minimalist — a joyful explosion of postmodern excess. Outlines should be thick and graphic. Typography elements and decorative borders are encouraged. The overall aesthetic should scream 1980s Italian radical design with maximum visual energy and zero restraint. Flat graphic illustration style with bold fills and hard edges.",
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
@@ -20207,6 +20565,49 @@
     "additionalInstructions": ""
   },
   {
+    "name": "PALETTE KNIFE",
+    "category": [
+      "OPTIONS",
+      "ART",
+      "PAINTING",
+      "TECHNIQUE"
+    ],
+    "message": "Take a picture and transform it into a palette knife painting — a technique where thick paint is applied and shaped with a flat metal palette knife rather than a brush, creating bold, textured, sculptural surfaces. Preserve subject identity.",
+    "options": [
+      {
+        "id": "001",
+        "text": "THICK IMPASTO — Extremely heavy paint application with visible ridges and peaks. Each stroke is a thick slab of color laid down with confident, broad knife strokes. Paint texture casts actual shadows."
+      },
+      {
+        "id": "002",
+        "text": "MOSAIC FACETS — The image is built from small, flat, angular patches of color applied with the edge of the knife, creating a faceted, almost mosaic-like surface where each patch is a distinct plane of color."
+      },
+      {
+        "id": "003",
+        "text": "SWEEPING STROKES — Long, dramatic sweeping strokes that follow the contours of the subject. Each stroke blends multiple colors in a single pass, creating beautiful gradient transitions within individual knife marks."
+      },
+      {
+        "id": "004",
+        "text": "SCRAPED LAYERS — Multiple layers of paint applied and then partially scraped away, revealing underlayers of different colors. The surface shows the history of its creation with visible color archaeology."
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "IDENTITY PRESERVATION:\n• Subject must remain clearly recognizable\n• The palette knife technique should enhance the subject with bold texture, not obscure it\n\nFINAL RESULT:\nThe image should have the unmistakable look of a palette knife painting — thick, sculptural paint surfaces with bold color and confident, visible tool marks. The texture should feel almost three-dimensional."
+  },
+  {
+    "name": "PALEWAVE",
+    "category": [
+      "AESTHETIC",
+      "FASHION",
+      "MINIMALIST",
+      "SOFT"
+    ],
+    "message": "Take a picture and transform the image into the Palewave aesthetic — a soft, muted, minimalist visual style characterized by washed-out pastels and quiet understatement. Preserve subject identity. Apply a heavily desaturated color palette where all colors are reduced to their palest, most diluted versions: powder blue, dusty rose, light lavender, pale mint, cream white, and soft gray. Dress the subject in relaxed, understated clothing in these same pale tones — oversized light-colored shirts, soft knit sweaters, pale denim, and white sneakers. The environment should be clean, minimal, and bathed in soft, diffused natural light — think overcast skies, white walls, light wood surfaces, and open airy spaces. All shadows should be soft and barely present. The overall mood should be calm, quiet, and contemplative — the visual equivalent of a whisper. No bold colors, no harsh contrasts, no visual noise. Everything exists in a gentle, washed-out harmony. Soft-focus photography with lifted shadows and reduced contrast.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": ""
+  },
+  {
     "name": "PAPARAZZI",
     "category": [
       "HUMOR",
@@ -21927,6 +22328,19 @@
     "additionalInstructions": ""
   },
   {
+    "name": "PRECISIONISM",
+    "category": [
+      "ART",
+      "PAINTING",
+      "MODERN",
+      "AMERICAN"
+    ],
+    "message": "Take a picture and transform the image into a Precisionist painting in the style of Charles Sheeler and Charles Demuth. Preserve subject identity. Render all forms with razor-sharp geometric clarity and clean, crisp edges. Simplify the subject into abstracted planes and angular shapes while maintaining recognizability. Use a restrained, cool color palette with muted industrial tones — steel grays, slate blues, warm tans, brick reds, and cream whites. Lighting should be flat and even, with subtle shadows that define geometric volumes. Eliminate unnecessary detail and texture — surfaces should appear smooth and almost machine-finished. The composition should feel ordered, balanced, and monumental, celebrating the clean geometry of modern architecture and industrial forms. Oil painting finish with immaculate, nearly invisible brushwork.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": ""
+  },
+  {
     "name": "PREDATOR VISION",
     "category": [
       "SCI-FI",
@@ -22360,35 +22774,35 @@
       "TECHNICAL",
       "RENDERING"
     ],
-    "message": "Take a picture and completely reconstruct the image as if it were generated using physically accurate ray tracing with 3D geometry and light interaction.\n\nMASTER PROMPT OVERRIDE LOGIC (CRITICAL):\n• If an external master prompt specifies geometry or lighting, USE that instead\n\nCRITICAL OUTPUT RULES (NON-NEGOTIABLE):\n• NO original image detail may remain\n• DO NOT apply lighting effects to a photo\n• The entire image must be rebuilt as a fully rendered 3D scene\n\nCORE CONCEPT (CRITICAL):\n• The image is formed through physically accurate light interaction\n• Objects exist as solid 3D geometry with real surfaces\n• The result must clearly look like a COMPUTER-GENERATED RENDER, not a real photograph\n\nSTRUCTURE RULES:\n• All objects must have continuous, solid surfaces\n• Surfaces must be smooth or faceted depending on geometry\n• NO dots, NO particles, NO point-based rendering of any kind\n• NO broken or disconnected geometry\n\nGEOMETRY RULES:\n• Objects reduced to simplified or slightly imperfect 3D primitives\n• Subtle geometric imperfections must be visible (non-perfect curves, slight faceting, simplified topology)\n\nLIGHT BEHAVIOR:\n• Global illumination (light bouncing between surfaces)\n• Accurate reflections and specular highlights\n• Refractions where appropriate (glass, transparent materials)\n• Soft and hard shadows based on light sources\n\nMATERIAL RULES:\n• Surfaces must have physically-based materials (metal, plastic, matte, glass, etc.)\n• Materials should appear slightly artificial or synthetic (CG look)\n\nRENDER IMPERFECTIONS (CRITICAL):\n• Slight rendering noise or grain may be visible\n• Minor aliasing or edge sharpness inconsistencies allowed\n• Surfaces may appear slightly too smooth or plasticky\n• Lighting may have subtle bias or non-photoreal balance\n• The image must feel like a rendered frame—not reality\n\nSUBJECT HANDLING:\n• Subject must remain recognizable through form, lighting, and geometry\n• Facial features must look like a 3D model (not real skin)\n\nENFORCEMENT (CRITICAL):\n• If the image looks like a real photograph, the result is incorrect\n• If skin or surfaces look photoreal instead of rendered, the result is incorrect\n• If textures dominate instead of geometry and lighting, the result is incorrect\n• If surfaces are not continuous and physically solid, the result is incorrect",
+    "message": "Take a picture and completely reconstruct the image as if it were generated using ray tracing with 3D primitives and light sampling. MASTER PROMPT OVERRIDE LOGIC (CRITICAL): • If an external master prompt specifies sampling, geometry, or lighting, USE that instead CRITICAL OUTPUT RULES (NON-NEGOTIABLE): • NO original image detail may remain • DO NOT apply lighting effects to a photo • The entire image must be rebuilt from light interaction CORE CONCEPT (CRITICAL): • The image is formed from light samples, reflections, and illumination • Objects are simplified into 3D primitives STRUCTURE RULES: • Surfaces must appear built from sampled light points • Light defines form, NOT texture GEOMETRY RULES: • Objects reduced to primitive shapes • Clean, simplified 3D structure LIGHT BEHAVIOR: • Global illumination • Reflections and highlights • Physically consistent shadows SUBJECT HANDLING: • Subject must remain recognizable through lighting and form ENFORCEMENT (CRITICAL): • If it looks like a photo with lighting added, the result is incorrect • If textures dominate instead of light, the result is incorrect FINAL RESULT: A fully reconstructed ray-traced image where lighting and primitive geometry define the entire scene.",
     "optionGroups": [
-      {
-        "title": "Sample Density",
-        "options": [
-          { "id": "001", "text": "Low quality rendering with visible noise and rough light calculation" },
-          { "id": "002", "text": "Balanced rendering with moderate smoothness and clarity" },
-          { "id": "003", "text": "High quality rendering with clean but still visibly computer-generated lighting" }
-        ]
-      },
-      {
-        "title": "Primitive Type",
-        "options": [
-          { "id": "001", "text": "Spheres only creating smooth rounded geometry" },
-          { "id": "002", "text": "Mixed primitives (spheres, cubes, planes) forming varied geometry" },
-          { "id": "003", "text": "Sharp-edged primitives emphasizing angular and faceted structure" }
-        ]
-      },
-      {
-        "title": "Lighting Style",
-        "options": [
-          { "id": "001", "text": "Studio lighting with controlled highlights and soft shadows" },
-          { "id": "002", "text": "HDRI environment lighting with realistic global illumination" },
-          { "id": "003", "text": "Dramatic lighting with strong contrast and directional shadows" }
-        ]
+    {
+      "title": "Sample Density",
+      "options": [
+        { "id": "001", "text": "Low sample count producing grainy, noisy light sampling" },
+        { "id": "002", "text": "Medium sample count with balanced smoothness and detail" },
+        { "id": "003", "text": "High sample count producing clean, smooth, high-quality rendering" }
+      ]
+    },
+    {
+      "title": "Primitive Type",
+      "options": [
+        { "id": "001", "text": "Spheres only creating smooth rounded geometry" },
+        { "id": "002", "text": "Mixed primitives (spheres, cubes, planes) forming varied geometry" },
+        { "id": "003", "text": "Sharp-edged primitives emphasizing angular and faceted structure" }
+      ]
+    },
+    {
+      "title": "Lighting Style",
+      "options": [
+        { "id": "001", "text": "Studio lighting with controlled highlights and soft shadows" },
+        { "id": "002", "text": "HDRI environment lighting with realistic global illumination" },
+        { "id": "003", "text": "Dramatic lighting with strong contrast and directional shadows" }
+      ]
       }
     ],
     "randomizeOptions": true,
-    "additionalInstructions": "FINAL RESULT:\nA fully ray-traced 3D render that clearly looks computer-generated, with solid geometry, physically-based lighting, and subtle rendering imperfections. The result must NOT resemble a real photograph."
+    "additionalInstructions": "FINAL RESULT: A physically-based rendered scene where sample density, primitive geometry, and lighting style directly control the visual quality, structure, and realism of the image."
   },
   {
     "name": "READ ACROSS AMERICA",
@@ -24604,6 +25018,33 @@
     "additionalInstructions": ""
   },
   {
+    "name": "SOLARIZATION",
+    "category": [
+      "OPTIONS",
+      "PHOTOGRAPHY",
+      "DARKROOM",
+      "EXPERIMENTAL",
+      "SURREAL"
+    ],
+    "message": "Take a picture and apply a solarization effect inspired by Man Ray and the Sabattier effect — the darkroom technique where partial tonal reversal creates a surreal, otherworldly image. Preserve subject identity.",
+    "options": [
+      {
+        "id": "001",
+        "text": "CLASSIC SILVER — Traditional black-and-white solarization with metallic silver tonal reversal. Dark areas glow with an eerie luminous quality. Mackie lines visible along tonal boundaries."
+      },
+      {
+        "id": "002",
+        "text": "COLOR SOLARIZATION — Full-color solarization where hues shift and invert unpredictably. Skin tones become alien, skies turn strange colors, and shadows glow with complementary hues."
+      },
+      {
+        "id": "003",
+        "text": "PARTIAL REVERSAL — Only the midtones are reversed while highlights and deep shadows remain normal, creating a haunting effect where the image seems to exist between positive and negative."
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "IDENTITY PRESERVATION:\n• Subject must remain recognizable despite tonal manipulation\n\nFINAL RESULT:\nThe image should evoke the surreal, dreamlike quality of Man Ray's experimental darkroom photography — existing in an uncanny space between reality and abstraction."
+  },
+  {
     "name": "SOLARPUNK",
     "category": [
       "SCI-FI",
@@ -24675,6 +25116,19 @@
       "TRAVEL"
     ],
     "message": "Take a picture and frame the subject like a classic tourist souvenir photo in front of a famous landmark. The subject should be posing confidently as if capturing a perfect travel photo, while unexpected chaos, absurd events, or humorous interruptions happen in the background (for example: animals photobombing, sudden weather, confused crowds, or strange events). Keep the subject calm and unaware while the background tells a funny or surprising story.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": ""
+  },
+  {
+    "name": "SOVIETWAVE",
+    "category": [
+      "AESTHETIC",
+      "RETRO",
+      "NOSTALGIA",
+      "ARCHITECTURE"
+    ],
+    "message": "Take a picture and transform the image into the Sovietwave aesthetic — a nostalgic, melancholic reimagining of Soviet-era visual culture. Preserve subject identity. Place the subject in a world of monumental Brutalist concrete architecture, vast empty plazas, and faded Socialist Realist murals. The color palette should be desaturated and cool: concrete gray, faded teal, muted mustard yellow, dusty rose, and washed-out sky blue — the colors of aging Soviet apartment blocks and metro stations. Incorporate visual elements of Soviet daily life: mosaic wall art, angular Cyrillic typography, geometric public art installations, and the distinctive rounded forms of Soviet-era electronics and vehicles. Lighting should be soft, diffused, and slightly melancholic — late afternoon light casting long shadows across empty boulevards. The mood should evoke bittersweet nostalgia for a future that was promised but never arrived — beautiful in its faded grandeur, haunting in its emptiness. Slightly grainy photographic quality with muted color processing.",
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
@@ -26491,6 +26945,19 @@
     "additionalInstructions": ""
   },
   {
+    "name": "TACHISME",
+    "category": [
+      "ART",
+      "PAINTING",
+      "ABSTRACT",
+      "MODERN"
+    ],
+    "message": "Take a picture and transform the image into a Tachiste abstract painting in the tradition of the European Art Informel movement. Preserve the general composition and color mood of the original subject but dissolve all precise forms into spontaneous, gestural marks. The image should be built from splashes, drips, blobs, and stains of paint applied with raw, intuitive energy. No geometric shapes or deliberate patterns — every mark should feel impulsive and automatic. Use rich, layered color with visible paint texture: thick impasto passages alongside thin washes and accidental drips. The palette should be expressive and emotionally charged, drawn from the mood of the original image but intensified. The final result should resemble a canvas attacked with passionate urgency, where the subject's essence is felt rather than seen. Heavy oil paint texture with visible material presence.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": ""
+  },
+  {
     "name": "TAPESTRY",
     "category": [
       "ART",
@@ -27204,6 +27671,19 @@
       "SMALL"
     ],
     "message": "Take a picture and transform the scene so the subject appears miniature. Environment becomes massive. Tilt-shift realism.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": ""
+  },
+  {
+    "name": "TONALISM",
+    "category": [
+      "ART",
+      "PAINTING",
+      "LANDSCAPE",
+      "CLASSIC"
+    ],
+    "message": "Take a picture and transform the image into a Tonalist landscape painting. Preserve subject identity. Apply a muted, atmospheric palette dominated by soft greens, deep blues, warm browns, and smoky grays. Emphasize mood and tonal harmony over sharp detail. Use soft, diffused edges with no hard outlines. Render the scene as if viewed through a veil of twilight mist or early morning fog. Brushwork should be loose and blended, evoking the contemplative, meditative quality of George Inness and James McNeill Whistler's nocturnes. The overall feeling should be one of quiet, poetic stillness — as if the landscape is breathing slowly. Oil-on-canvas texture with a narrow tonal range and luminous atmospheric depth.",
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
@@ -29272,6 +29752,20 @@
     "additionalInstructions": ""
   },
   {
+    "name": "VERDACCIO",
+    "category": [
+      "ART",
+      "PAINTING",
+      "RENAISSANCE",
+      "TECHNIQUE",
+      "CLASSIC"
+    ],
+    "message": "Take a picture and transform the image into a Verdaccio underpainting — the distinctive green-gray monochromatic technique used by Early Renaissance Italian masters as a foundation for painting flesh tones. Preserve subject identity. The entire image should be rendered in a limited palette of olive green, gray-green, and warm gray tones mixed with white, as if the painting has been left at the underpainting stage before final color glazes were applied. Skin tones should have a characteristic greenish cast that gives the figures an ethereal, almost spectral quality. Use careful modeling of light and shadow to create convincing three-dimensional form despite the restricted palette. The technique should reference the methods of Cennino Cennini and early works of Giotto and Fra Angelico. Egg tempera on gesso panel texture with fine, precise brushwork and smooth tonal gradations.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": ""
+  },
+  {
     "name": "VHS 80s",
     "category": [
       "RETRO",
@@ -29766,6 +30260,20 @@
     "additionalInstructions": ""
   },
   {
+    "name": "WABI-SABI",
+    "category": [
+      "ART",
+      "JAPANESE",
+      "PHILOSOPHY",
+      "AESTHETIC",
+      "MINIMALIST"
+    ],
+    "message": "Take a picture and transform the image into a visual embodiment of the Japanese wabi-sabi aesthetic — the philosophy of finding beauty in imperfection, impermanence, and incompleteness. Preserve subject identity. Apply a muted, earthy color palette: weathered browns, soft moss greens, faded indigos, warm stone grays, and aged cream whites. All surfaces should show signs of natural aging, wear, and patina — cracked textures, worn edges, faded areas, and gentle decay. The composition should embrace asymmetry, roughness, and simplicity. Remove anything that feels polished, perfect, or artificial. Lighting should be soft, natural, and contemplative — like late afternoon light filtering through a paper screen. The mood should evoke quiet acceptance of transience and the profound beauty of things that are modest, humble, and authentically weathered by time. Matte, textured finish with a handmade, organic quality.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": ""
+  },
+  {
     "name": "WALDO",
     "category": [
       "PUZZLE",
@@ -30196,6 +30704,37 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "FINAL RESULT:\nThe image must look like a real Weekend Update moment, with a visible anchor delivering a joke while the subject appears in the on-screen topic graphic with a humorous headline."
+  },
+  {
+    "name": "WEIRDCORE",
+    "category": [
+      "OPTIONS",
+      "AESTHETIC",
+      "SURREAL",
+      "DIGITAL",
+      "UNCANNY"
+    ],
+    "message": "Take a picture and transform it into the Weirdcore internet aesthetic — a surreal, unsettling digital art style characterized by low-quality imagery, distorted reality, and an overwhelming sense of nostalgic unease. Preserve subject identity.",
+    "options": [
+      {
+        "id": "001",
+        "text": "EYES EVERYWHERE — The subject's eyes are subtly duplicated and superimposed in unexpected places throughout the image — on walls, in the sky, reflected in surfaces. Low resolution, washed-out colors."
+      },
+      {
+        "id": "002",
+        "text": "WRONG PLACE — The subject is composited into a surreal, impossible environment where scale, gravity, and architecture don't make sense. Early 2000s digital camera quality. Oversaturated yet faded."
+      },
+      {
+        "id": "003",
+        "text": "SMILING STATIC — The subject's smile is slightly too wide, the image has VHS tracking lines, and the background is a familiar place that feels subtly wrong. Text overlays with cryptic messages like \"you've been here before\" in Comic Sans."
+      },
+      {
+        "id": "004",
+        "text": "DREAMCORE BLEND — Soft, hazy, dreamlike distortion where the subject floats in a pastel void with fragmented memories of childhood places — playgrounds, bedrooms, hallways — all slightly melted and overlapping."
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "IDENTITY PRESERVATION:\n• Subject must remain recognizable despite surreal distortions\n• The uncanny quality should come from the environment and processing, not from destroying the subject's features\n\nFINAL RESULT:\nThe image should evoke the specific internet aesthetic of Weirdcore — nostalgic, unsettling, and dreamlike, as if recovered from a corrupted hard drive full of childhood photos that don't quite match your memories."
   },
   {
     "name": "WEIRD SCIENCE",
