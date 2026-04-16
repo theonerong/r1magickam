@@ -6858,7 +6858,7 @@ function getCameraConstraints() {
 
 // Change resolution and restart camera
 async function changeResolution(newIndex) {
-  if (newIndex === currentResolutionIndex || !stream) return;
+  if (newIndex === currentResolutionIndex) return;
   
   currentResolutionIndex = newIndex;
   saveResolution(newIndex);
