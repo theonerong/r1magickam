@@ -2797,10 +2797,10 @@ function openMultiPresetSelector(imageId) {
   if (!multiControls) {
     multiControls = document.createElement('div');
     multiControls.id = 'multi-preset-controls';
-    multiControls.style.cssText = 'padding: 0 8px; background: #f5f5f5; border-bottom: 1px solid #ddd; display: flex; gap: 8px; justify-content: space-between; align-items: stretch;';
+    multiControls.style.cssText = 'padding: 1vw 8px; background: #000; border-bottom: 1px solid #333; display: flex; gap: 2vw; justify-content: flex-start; align-items: center;';
     multiControls.innerHTML = `
-      <button id="multi-preset-apply" class="batch-control-button" style="background: #4CAF50; color: white;">Apply Selected</button>
-      <button id="multi-preset-cancel" class="batch-control-button">Cancel</button>
+      <button id="multi-preset-apply" class="batch-control-button" style="background: #4CAF50; color: white; height: 8vw; min-height: 32px;">Apply Selected</button>
+      <button id="multi-preset-cancel" class="batch-control-button" style="height: 8vw; min-height: 32px;">Cancel</button>
     `;
     
     const presetFilter = document.getElementById('preset-filter');
@@ -2875,10 +2875,10 @@ function openCameraMultiPresetSelector() {
   if (!multiControls) {
     multiControls = document.createElement('div');
     multiControls.id = 'multi-preset-controls';
-    multiControls.style.cssText = 'padding: 0 8px; background: #1a1a1a; border-bottom: 1px solid #333; display: flex; gap: 8px; justify-content: space-between; align-items: stretch;';
+    multiControls.style.cssText = 'padding: 1vw 8px; background: #000; border-bottom: 1px solid #333; display: flex; gap: 2vw; justify-content: flex-start; align-items: center;';
     multiControls.innerHTML = `
-      <button id="multi-preset-apply" class="batch-control-button" style="background: #4CAF50; color: white;">Apply Selected</button>
-      <button id="multi-preset-cancel" class="batch-control-button">Cancel</button>
+      <button id="multi-preset-apply" class="batch-control-button" style="background: #4CAF50; color: white; height: 8vw; min-height: 32px;">Apply Selected</button>
+      <button id="multi-preset-cancel" class="batch-control-button" style="height: 8vw; min-height: 32px;">Cancel</button>
     `;
     const presetFilter = document.getElementById('preset-filter');
     const filterRow = presetFilter.closest('.filter-row') || presetFilter.parentNode;
@@ -13903,7 +13903,7 @@ console.log('AI Camera Styles app initialized!');
         ]);
         let insertText = data.transcript;
         if (!keepPeriodFields.has(field.id)) {
-          insertText = insertText.replace(/\.\s*$/, '');
+          insertText = insertText.replace(/[.,!?;:]+\s*$/, '');
         }
         field.value = before + insertText + after;
         const newPos = start + insertText.length;
