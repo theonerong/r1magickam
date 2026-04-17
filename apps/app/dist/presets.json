@@ -26716,10 +26716,10 @@
       "CONTEMPORARY",
       "POP"
     ],
-    "message": "Take a picture and transform the image into a Superflat artwork. Preserve subject identity. Use flat, two-dimensional compositions inspired by Takashi Murakami, blending Japanese anime and manga aesthetics with fine art. Emphasize bold outlines, flat color fields, kawaii elements, and a flattened picture plane that merges high and low culture.",
+    "message": "Take a picture and transform the image into a Superflat-style artwork. Preserve the subject's recognizable features while adapting them into a flat, two-dimensional composition.\n\nCORE STYLE:\n• Flat, graphic composition with no depth or perspective\n• Bold, clean outlines\n• Large areas of solid, unshaded color\n• Bright, saturated color palette\n• Minimal gradients or shading\n\nAESTHETIC INFLUENCES:\n• Japanese pop-art inspired visual language\n• Fusion of graphic illustration and contemporary art\n• Playful, stylized, and highly polished design elements\n\nVISUAL RULES:\n• Completely flattened picture plane (no depth)\n• Decorative patterns and repeating motifs allowed\n• Smooth, clean vector-like finish\n\nENFORCEMENT:\n• If the image contains realistic depth or shading, the result is incorrect\n• If textures or photographic detail remain, the result is incorrect\n• If the image looks like a filtered photo instead of a fully redrawn flat artwork, the result is incorrect",
     "options": [],
     "randomizeOptions": false,
-    "additionalInstructions": ""
+    "additionalInstructions": "FINAL RESULT:\nA fully flattened, bold, graphic artwork with clean outlines and vibrant color fields, maintaining subject recognizability while transforming the image into a polished Superflat-style composition."
   },
   {
     "name": "SUPER MARIO MODE",
