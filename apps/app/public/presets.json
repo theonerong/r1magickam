@@ -380,6 +380,19 @@
     "additionalInstructions": "FINAL RESULT:\nA breathtaking cinematic image of a narrow elongated translucent tube of glowing alien water rising from a dark ocean surface, with the subject's recognizable face formed entirely from water at the very tip of the column. The tube is smooth, cylindrical, and bioluminescent - a single clean column of living water with no branches, no hair, no body - just the pure water pseudopod exactly as seen in James Cameron's 1989 film. The face at the tip has no hair, no neck, no shoulders - it emerges directly from the water column as a fluid dynamic expression of alien curiosity, the features formed from surface tension alone, tilted slightly as if examining the viewer with otherworldly intelligence. The surrounding environment is near-total darkness lit only by the eerie blue-white glow emanating from within the alien water column."
   },
   {
+    "name": "ACADEMIC ART",
+    "category": [
+      "ART",
+      "PAINTING",
+      "CLASSIC",
+      "REALISM"
+    ],
+    "message": "Take a picture and transform the image into an Academic Art painting. Preserve subject identity. Use highly polished, technically masterful realism in the tradition of 19th-century French Académie des Beaux-Arts. Emphasize idealized forms, smooth blending, classical composition, dramatic lighting, and meticulous anatomical accuracy with rich oil-on-canvas texture.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": ""
+  },
+  {
     "name": "ACCIDENT SCENE",
     "category": [
       "HUMOR",
@@ -2199,6 +2212,19 @@
     "additionalInstructions": ""
   },
   {
+    "name": "BARBIZON SCHOOL",
+    "category": [
+      "ART",
+      "PAINTING",
+      "LANDSCAPE",
+      "FRENCH"
+    ],
+    "message": "Take a picture and transform the image into a Barbizon School painting. Preserve subject identity. Use soft, naturalistic landscape painting with earthy tones and gentle light inspired by Jean-François Millet and Théodore Rousseau. Emphasize rural scenes, pastoral tranquility, and direct observation of nature with warm, muted color harmonies.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": ""
+  },
+  {
     "name": "BARN BILLBOARD",
     "category": [
       "HUMOR",
@@ -3932,6 +3958,19 @@
     "additionalInstructions": "FINAL RESULT:\nA complete calendar pin-up page featuring the subject in appropriate glamorous pose with a functional, accurate calendar grid for the specified (or randomly selected) month and year, designed like a real novelty wall calendar from a gift shop."
   },
   {
+    "name": "CAMDEN TOWN GROUP",
+    "category": [
+      "ART",
+      "PAINTING",
+      "BRITISH",
+      "POST-IMPRESSIONIST"
+    ],
+    "message": "Take a picture and transform the image into a Camden Town Group painting. Preserve subject identity. Use muted, earthy tones with visible brushwork depicting everyday urban life in early 20th-century London, inspired by Walter Sickert. Emphasize intimate interior scenes, subdued lighting, and an honest, unglamorous portrayal of ordinary domestic moments.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": ""
+  },
+  {
     "name": "CANDY",
     "category": [
       "FOOD",
@@ -5314,6 +5353,19 @@
     "additionalInstructions": ""
   },
   {
+    "name": "COBRA MOVEMENT",
+    "category": [
+      "ART",
+      "PAINTING",
+      "EXPRESSIONIST",
+      "EUROPEAN"
+    ],
+    "message": "Take a picture and transform the image into a CoBrA movement painting. Preserve subject identity. Use wild, childlike spontaneity with vivid primary colors and crude, energetic brushwork inspired by Karel Appel and Asger Jorn. Emphasize primitive figuration, raw expressiveness, and an uninhibited, playful approach to form and color.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": ""
+  },
+  {
     "name": "COEN BROTHERS FILM",
     "category": [
       "OPTIONS",
@@ -5654,6 +5706,18 @@
     "randomizeOptions": false,
     "additionalInstructions": ""
   },
+  {
+    "name": "COLOR FIELD PAINTING",
+    "category": [
+      "ART",
+      "PAINTING",
+      "ABSTRACT"
+    ],
+    "message": "Take a picture and transform the image into a Color Field painting. Preserve subject identity as a subtle form within large expanses of flat, saturated color. Use broad areas of unbroken color inspired by Mark Rothko and Helen Frankenthaler. Emphasize luminous, stained color washes, soft edges, and an immersive, meditative quality.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": ""
+  }, 
   {
     "name": "COMEDY CLASSIC",
     "category": [
@@ -12928,6 +12992,19 @@
     "additionalInstructions": ""
   },
   {
+    "name": "HARD-EDGE PAINTING",
+    "category": [
+      "ART",
+      "PAINTING",
+      "ABSTRACT",
+      "GEOMETRIC"
+    ],
+    "message": "Take a picture and transform the image into a Hard-Edge painting. Preserve subject identity through crisp geometric abstraction. Use sharply defined boundaries between flat areas of bold, uniform color inspired by Ellsworth Kelly and Frank Stella. Emphasize clean lines, precise shapes, and vivid chromatic contrasts with no visible brushwork.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": ""
+  },
+  {
     "name": "HAUNTED EPITAPH",
     "category": [
       "MASTER PROMPT",
@@ -13402,6 +13479,31 @@
       }
     ],
     "randomizeOptions": true,
+    "additionalInstructions": ""
+  },
+  {
+    "name": "HUDSON RIVER SCHOOL",
+    "category": [
+      "ART",
+      "PAINTING",
+      "LANDSCAPE",
+      "AMERICAN"
+    ],
+    "message": "Take a picture and transform the image into a Hudson River School painting. Preserve subject identity. Place the subject within a grand, luminous American landscape with dramatic skies, pristine wilderness, and golden light inspired by Thomas Cole and Frederic Edwin Church. Emphasize sublime natural beauty, detailed foliage, and romantic atmosphere.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": ""
+  },
+  {
+    "name": "HYPERREALISM",
+    "category": [
+      "ART",
+      "PAINTING",
+      "CONTEMPORARY"
+    ],
+    "message": "Take a picture and transform the image into a Hyperrealist painting. Preserve subject identity. Go beyond photographic accuracy to create an enhanced, super-detailed rendering with emotional resonance. Emphasize extreme textural detail, luminous skin tones, and a heightened sense of presence that makes the painted image feel more real than a photograph.",
+    "options": [],
+    "randomizeOptions": false,
     "additionalInstructions": ""
   },
   {
@@ -16210,6 +16312,19 @@
     "additionalInstructions": ""
   },
   {
+    "name": "MAGIC REALISM",
+    "category": [
+      "ART",
+      "PAINTING",
+      "REALISM",
+      "SURREAL"
+    ],
+    "message": "Take a picture and transform the image into a Magic Realist painting. Preserve subject identity. Use precise, realistic rendering combined with subtle fantastical or uncanny elements. Emphasize sharp detail, smooth surfaces, and an atmosphere of quiet strangeness where ordinary scenes contain mysterious or impossible elements presented matter-of-factly.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": ""
+  },
+  {
     "name": "MAGICIAN FAIL",
     "category": [
       "HUMOR",
@@ -16430,6 +16545,19 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "FINAL RESULT:\nThe image should depict the subject fully transformed into a believable retail mannequin, with their facial structure preserved through sculpted plastic features, clearly manufactured materials, and molded hair, ensuring it appears as a mannequin created from the subject — not a photograph applied to one."
+  },
+  {
+    "name": "MANNERISM",
+    "category": [
+      "ART",
+      "PAINTING",
+      "CLASSIC",
+      "RENAISSANCE"
+    ],
+    "message": "Take a picture and transform the image into a Mannerist painting. Preserve subject identity. Use elongated proportions, unusual spatial compositions, and sophisticated artificiality inspired by Parmigianino and Pontormo. Emphasize elegant distortion, complex poses, vivid and sometimes discordant colors, and a refined, intellectual approach to beauty.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": ""
   },
   {
     "name": "MANSA MUSA",
@@ -19460,6 +19588,19 @@
     "additionalInstructions": ""
   },
   {
+    "name": "NABIS",
+    "category": [
+      "ART",
+      "PAINTING",
+      "POST-IMPRESSIONIST",
+      "FRENCH"
+    ],
+    "message": "Take a picture and transform the image into a Nabis painting. Preserve subject identity. Use flat decorative patterns, bold color areas, and intimate domestic scenes inspired by Pierre Bonnard and Édouard Vuillard. Emphasize patterned surfaces, warm interior light, and a tapestry-like quality that blurs the boundary between fine art and decoration.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": ""
+  },
+  {
     "name": "NAPKIN DOODLE",
     "category": [
       "ART",
@@ -19534,6 +19675,18 @@
     "randomizeOptions": true,
     "additionalInstructions": "FINAL RESULT:\nThe image should show the subject caught in a dramatic natural disaster with realistic environmental effects, destruction, and atmospheric conditions, captured as if by a news photographer or disaster film cinematographer - intense, dynamic, and emphasizing the raw power of nature."
   },
+  {
+    "name": "NATURALISM",
+    "category": [
+      "ART",
+      "PAINTING",
+      "REALISM"
+    ],
+    "message": "Take a picture and transform the image into a Naturalist painting. Preserve subject identity. Use faithful, unidealized representation of the subject in their natural environment. Emphasize accurate depiction of light, atmosphere, and everyday reality without romanticization, inspired by Jules Bastien-Lepage and the plein-air tradition.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": ""
+  },  
   {
     "name": "NAZCA LINES",
     "category": [
@@ -21731,6 +21884,18 @@
     "additionalInstructions": ""
   },
   {
+    "name": "PHOTOREALISM",
+    "category": [
+      "ART",
+      "PAINTING",
+      "HYPERREALISM"
+    ],
+    "message": "Take a picture and transform the image into a Photorealist painting. Preserve subject identity. Use extremely precise, photograph-like detail rendered in paint, inspired by Chuck Close and Richard Estes. Emphasize meticulous reproduction of photographic qualities including reflections, depth of field, and surface textures with oil or acrylic on canvas.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": ""
+  },
+  {
     "name": "PICTIONARY",
     "category": [
       "PUZZLE",
@@ -21881,6 +22046,18 @@
       "ABSTRACT"
     ],
     "message": "Take a picture and transform it into authentic pixel art.\n\nRebuild the image entirely using a low-resolution pixel grid. The subject must be constructed from visible, square pixels only — no smooth gradients, no blur, no vector lines, and no photographic textures.\n\nLimit the color palette to a small, intentional set (approximately 8–24 colors total). Use flat color blocks with hard pixel edges. Shading should be achieved only through pixel placement and color stepping, not softness or blending.\n\nPreserve the subject’s recognizability through simplified shapes, silhouettes, and key features rather than detail. Facial features, if present, should be minimal and symbolic.\n\nChoose a classic pixel-art style inspired by retro video games (8-bit, 16-bit, or early handheld), but do not copy any specific copyrighted game or character.\n\nEnsure the entire pixel artwork is visible, centered, and readable on a small screen. The final image should feel handcrafted, nostalgic, and unmistakably pixel art — not a filtered photo.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": ""
+  },
+  {
+    "name": "PIXEL SORTING",
+    "category": [
+      "DIGITAL",
+      "GLITCH",
+      "EXPERIMENTAL"
+    ],
+    "message": "Take a picture and transform the image using Pixel Sorting techniques. Preserve subject identity while selectively sorting rows or columns of pixels by brightness, hue, or saturation. Create dramatic streaking effects where sorted pixels cascade through the image, blending digital precision with organic visual distortion.",
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
@@ -22043,6 +22220,18 @@
     ],
     "randomizeOptions": true,
     "additionalInstructions": "FINAL RESULT:\nThe image should look like an actual ornate playing card with the subject's face as the royal character, complete with symmetrical mirrored design, suit symbols, and traditional playing card styling and decoration."
+  },
+  {
+    "name": "PLOTTER ART",
+    "category": [
+      "DIGITAL",
+      "DRAWING",
+      "GENERATIVE"
+    ],
+    "message": "Take a picture and transform the image into Plotter Art. Preserve subject identity. Render the scene as if drawn by a mechanical pen plotter using continuous line work, hatching, and stippling. Emphasize precise, machine-drawn lines on white paper with ink, creating detailed imagery through systematic pen strokes and geometric patterns.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": ""
   },
   {
     "name": "PLUSH TOY",
@@ -27185,6 +27374,18 @@
     "additionalInstructions": ""
   },
   {
+    "name": "SYMBOLISM",
+    "category": [
+      "ART",
+      "PAINTING",
+      "MYSTICAL"
+    ],
+    "message": "Take a picture and transform the image into a Symbolist painting. Preserve subject identity. Use dreamlike imagery, rich jewel-toned colors, and mysterious atmosphere inspired by Gustave Moreau and Odilon Redon. Emphasize mythological and spiritual themes, ethereal lighting, and evocative visual metaphors that suggest hidden meanings beyond surface reality.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": ""
+  },
+  {
     "name": "SYNESTHESIA",
     "category": [
       "ART",
@@ -32186,6 +32387,19 @@
     ],
     "randomizeOptions": true,
     "additionalInstructions": "FINAL RESULT:\nThe image should show the subject as a living embodiment of their zodiac sign, blending human features with symbolic animal characteristics in a mystical, astrological setting that captures the essence and energy of that sign."
+  },
+  {
+    "name": "ZOETROPE STRIP",
+    "category": [
+      "ART",
+      "ANIMATION",
+      "VINTAGE",
+      "OPTICAL"
+    ],
+    "message": "Take a picture and transform the image into a Zoetrope animation strip. Preserve subject identity. Create a horizontal strip of sequential animation frames showing the subject in progressive motion, designed for a spinning cylinder viewer. Emphasize Victorian-era illustration, sequential movement, and the charming simplicity of pre-cinema animation.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": ""
   },
   {
     "name": "ZOOM CALL DISASTER",
