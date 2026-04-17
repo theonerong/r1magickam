@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>Magic Kamera</title>
-  <script type="module" crossorigin src="./assets/main-DKLS1BdH.js"></script>
+  <script type="module" crossorigin src="./assets/main-DFhjzmaP.js"></script>
   <link rel="stylesheet" crossorigin href="./assets/main-Dl0fvLIw.css">
 </head>
 <body>
@@ -297,6 +297,22 @@
                         <button id="check-updates-button" class="menu-section-button">
                             <span class="menu-section-title">🔄 Check for Updates</span>
                             <span class="menu-section-value" id="updates-status">Check Library</span>
+                        </button>
+                    </div>
+
+                    <!-- Main Camera Screen Settings -->
+                    <div class="menu-section">
+                        <button id="main-cam-screen-settings-button" class="menu-section-button">
+                            <span class="menu-section-title">Main Camera Screen</span>
+                            <span class="menu-section-arrow">›</span>
+                        </button>
+                    </div>
+
+                    <!-- Gallery Image Viewer Screen Settings -->
+                    <div class="menu-section">
+                        <button id="gallery-viewer-screen-settings-button" class="menu-section-button">
+                            <span class="menu-section-title">Gallery Image Viewer Screen</span>
+                            <span class="menu-section-arrow">›</span>
                         </button>
                     </div>
 
@@ -892,7 +908,7 @@
                     <div id="section-special-modes" class="tutorial-section">
                         <h4 class="tutorial-heading">🎯 Special Modes (Right Carousel)</h4>
                         <h5 style="color: #ffffff; font-style: italic; margin-bottom: 10px; font-size: 6vw; font-weight: 700;">
-    *Double click on the main camera screen to hide/reveal buttons*
+    *Single click (Default) on the main camera screen to hide/reveal buttons*
 </h5>
                         <p class="tutorial-text">
                             <strong>🎲 Random Mode:</strong> Surprises you with a random preset for each photo, selecting from favorites only if any favorites are selected. If no favorites are selected, it selects from all visible presets.<br>
@@ -902,7 +918,7 @@
                             <strong>🎞️ Multi Preset:</strong> Select up to 20 presets to apply to a single photo in sequence. Tap the 🎞️ MULTI button in the carousel to open the preset selector. Choose your presets and tap Apply Selected. The footer and screen will show MULTI PRESETS while active. When you take a photo, all selected presets are queued and sent one by one with a 3 second interval between each. Works with Timer Mode — multi preset stays active until the timer is turned off. Cannot be used with Burst, Motion Detection, Random Mode, or No Magic Mode. If Manually Select Options is enabled, you will be prompted to choose options for each selected preset before the photo is taken. Multi preset is a one-shot mode — it resets automatically after all presets are sent, unless Timer Mode is active.<br>
                             <strong>🖼️🖼️ Combine images:</strong> Works with either a selected preset or by speaking your preset. Take a picture of two images to combine them to feed to r1 thereby creating AI generated images from two images. Only works with random mode or multi-select presets mode in main camera screen.<br>
                             <strong>📑 Layer presets:</strong> Select up to 5 presets to combine and apply to a photo. Tap the 📑 LAYER button in the carousel to open the preset selector. Choose your presets starting with the primary (or dominant) layer. Then select up to 4 more presets to add as layers to that primary preset. Once you finish selecting, tap Apply Selected. Cannot be used with Random Mode or No Magic Mode. If Manually Select Options is enabled, you will be prompted once to choose options for each selected preset before the photo is taken. Once  Layer is enabled, it will continue applying same chosen layers with selected options until it is disabled.<br>
-                            <strong>📝 MASTER and 🎛️ OPTIONS Buttons (Left Carousel):</strong> Below the Menu (☰) button on the left side within a carousel(which also includes the MENU (☰) and GALLERY (🖼️) Buttons). The MASTER button (📝) accesses Master Prompt settings. Glows green when enabled. The OPTIONS (🎛️) button toggles Manually Select Options mode on or off. Glows green when enabled. All the camera buttons (except for the switch camera (📷) button) are in carousels and are visible by default. However, you can hide them (except for the switch camera (📷) button) by double clicking on the main camera screen to hide/reveal buttons.<br><br>
+                            <strong>📝 MASTER and 🎛️ OPTIONS Buttons (Left Carousel):</strong> Below the Menu (☰) button on the left side within a carousel(which also includes the MENU (☰) and GALLERY (🖼️) Buttons). The MASTER button (📝) accesses Master Prompt settings. Glows green when enabled. The OPTIONS (🎛️) button toggles Manually Select Options mode on or off. Glows green when enabled. All the camera buttons (except for the switch camera (📷) button) are in carousels and are visible by default. However, you can hide them (except for the switch camera (📷) button) by single clicking on the main camera screen to hide/reveal buttons. This may be adjusted in the Main Camera Screen subsection within settings.<br><br>
                         </p>
                     </div>
 
@@ -926,9 +942,9 @@
 
                             <strong>Delete (🗑️) and Close (×):</strong> Delete button, located at the top-left, deletes the selected image, Close button, located at the top-right, closes the single image viewer. <br><br>
 
-                            <strong>Master and Options Buttons:</strong> Below the delete button on the left side within a carousel. The MASTER button accesses Master Prompt settings. Glows green when enabled.  The OPTIONS button toggles Manually Select Options mode on or off. Glows green when enabled. These buttons are visible by default. However, you can hide them by double clicking the screen. Double click again to reveal them.<br><br>
+                            <strong>Master and Options Buttons:</strong> Below the delete button on the left side within a carousel. The MASTER button accesses Master Prompt settings. Glows green when enabled.  The OPTIONS button toggles Manually Select Options mode on or off. Glows green when enabled. These buttons are visible by default. However, you can hide them by single clicking the screen. Single click again to reveal them. This is the default setting and may be adjusted in the Gallery Image Viewer Screen submenu within the settings<br><br>
 
-                            <strong>Edit and Export Images:</strong> The image viewer screen right carousel contains three buttons — ✏️ EDIT (opens the image editor), 📤 EXPORT (uploads to gofile.io), and 📑 LAYER (combine and apply multiple presets to a single image). Select primary preset and then add up to 4 more layers (5 in all). Double click on the image viewer screen to hide the carousels.<br><br>
+                            <strong>Edit and Export Images:</strong> The image viewer screen right carousel contains three buttons — ✏️ EDIT (opens the image editor), 📤 EXPORT (uploads to gofile.io), and 📑 LAYER (combine and apply multiple presets to a single image). Select primary preset and then add up to 4 more layers (5 in all). Single click (default) on the image viewer screen to hide the carousels.<br><br>
 
                             <strong>Upload to gofile.io:</strong> Use the Export button in the carousel inside the image viewer. Link expires after 24 hours. Mainly useful in No Magic Mode (because in No Magic Mode, images are not sent to the rabbit hole).<br><br>
 
@@ -974,7 +990,7 @@
                     <div id="section-edit-image" class="tutorial-section">
                         <h4 class="tutorial-heading">✏️ Edit Image Features</h4>
                         <p class="tutorial-text">
-                            <strong>How to Access:</strong> While viewing any photo in full-screen, tap the ✏️ EDIT button. Double click on the screen to hide.<br><br>
+                            <strong>How to Access:</strong> While viewing any photo in full-screen, tap the ✏️ EDIT button. Single click (default) on the screen to hide.<br><br>
                             
                             <strong>Available Tools:</strong><br>
                             The image editor provides several professional editing tools located on the right side of the screen:<br><br>
@@ -1027,6 +1043,8 @@
                             <strong>📥 Import Presets:</strong> When you first start, import a preset from our external library of presets. The presets are locked except for Caricature and Impressionism. Import them to capture photos and begin the fun journey of unlocking your imported artistic library. To unlock more presets, take a photo with any preset you already own or reprompt a photo in the gallery. One snap with a unique imported preset, or a click on the magic button in the gallery, provides a credit to buy more presets-unlocking a new surprise to your collection! Import only the unlocked presets you want using your earned credits by checking them individually or ✓ All (or ✗ None). Once you select the ones you want to import, click the Import button. NOTE: Previously imported presets remain checked. To delete previously imported presets from the Magic Kamera, delete them from the Main Menu. You can import them again if you like. Any new presets added to our external library of presets, will be locked (check regularly for new ones as we are constantly updating this list). <strong>🔊 Hear Preset Info:</strong> When browsing presets in the Import Presets menu, tap any preset ONCE to hear its description read aloud. Use the 🔊 mute button in the header to toggle audio on or off.
 <br>
                             <strong>🔄 Check for Updates:</strong> Check for new or modified presets. Updated Presets you own will appear on the top of the Import Presets list. You need to select (if they are not already selected) the updated preset and click the Import button to update your owned preset.<br>
+                            <strong>⚙️ Main Camera Screen (settings):</strong> The main camera screen carousel buttons are default solid and black. In this section, you may select different colors for buttons and text in the main camera screen. You may also select opacity (default solid) and set how many taps to hide/reveal the buttons.<br>
+                            <strong>⚙️ Gallery Image Viewer Screen (settings):</strong> The gallery single image viewer screen carousel buttons are default solid and black. In this section, you may select different colors for buttons and text in the gallery image viewer screen. You may also select opacity (default solid) and set how many taps to hide/reveal the buttons.<br>
                             <strong>Tutorial:</strong> What you are currently reading. This tutorial includes the audio tour on the top of the quick navigation. Use the top search field to search for key words or topics. Click within the search field to either speak your search (using the rabbit r1's side button) or type your search. Once you finish speaking or typing your search, click on the x next to the filter text box to remove the keyboard. If you double click on the x, it resets the filter text box. 
                        </p>
                     </div>
@@ -1054,7 +1072,7 @@
 
                             <strong>Navigating:</strong> Up and down arrows in the sections with lists move up/down per page when clicked or jump down/up to the bottom/top of the list if double-clicked.<br>
 
-                            <strong>Hiding/Reveal Buttons:</strong> There are left and right carousels in the main camera screen and the image viewer in the gallery.  Double click the screen to hide/reveal the carousels.<br>
+                            <strong>Hiding/Reveal Buttons:</strong> There are left and right carousels in the main camera screen and the image viewer in the gallery.  Single click the screen to hide/reveal the carousels. You may adjust these settings (as well as the opacity of the carousel buttons) within settings (in the Main Camera Screen and Gallery Image Viewer Screen subsections).<br>
 
                             <strong>Category Searching:</strong> All presets are categorized. You can see these categories at the bottom of the Visible Preset list menu when a particular preset is highlighted. Therefore, if you see a preset that you like, you can do a search for similar presets that share that category (*best to do this in the Visible Preset Menu). You can also click on the desired category on the bottom to filter all presets in that category as well.<br>
 
@@ -1232,7 +1250,7 @@ All of the presets are optimized to avoid "camera ran dry" or "content filter" i
         <div id="viewer-combined-indicator" class="viewer-combined-indicator">🖼️🖼️ COMBINED IMAGE</div>
         <!-- Preset name header between delete and close — tappable -->
         <div id="viewer-preset-header" class="viewer-preset-header">NO PRESET LOADED</div>
-        <!-- Left carousel: MASTER and OPTIONS — default visible, double click to hide -->
+        <!-- Left carousel: MASTER and OPTIONS — default visible, single click to hide -->
         <div id="viewer-left-carousel" class="viewer-left-carousel">
             <div class="viewer-left-carousel-track">
                 <button id="mp-viewer-button" class="viewer-left-carousel-btn">📝<br><span style="font-size:2.5vw;line-height:1;color:#fff;margin-top:1.5vw;display:block;">MASTER</span></button>
@@ -1331,6 +1349,92 @@ All of the presets are optimized to avoid "camera ran dry" or "content filter" i
                     <!-- Presets will be dynamically added here -->
                 </div>
                 <div id="preset-selector-category-hint" class="preset-selector-category-footer" style="display: none;"></div>
+            </div>
+        </div>
+
+        <!-- Main Camera Screen Submenu -->
+        <div id="main-cam-screen-submenu" class="submenu" style="display: none;">
+            <div class="submenu-content">
+                <div class="submenu-header">
+                    <h3>Main Camera Screen</h3>
+                    <button id="main-cam-screen-back" class="close-button">×</button>
+                </div>
+                <div class="submenu-list">
+                    <div class="burst-setting-item">
+                        <label>Button Color</label>
+                        <div style="display: flex; align-items: center; gap: 12px; margin-top: 8px;">
+                            <input type="color" id="cam-btn-color-picker" value="#000000" style="width: 52px; height: 38px; border: none; padding: 2px; cursor: pointer; border-radius: 4px;">
+                            <button id="cam-btn-color-default" class="batch-control-button">Default</button>
+                        </div>
+                    </div>
+                    <div class="burst-setting-item" style="padding-top: 16px;">
+                        <label>Button Opacity: <span id="cam-btn-opacity-value">100%</span></label>
+                        <input type="range" id="cam-btn-opacity-slider" min="0" max="100" value="100" step="1">
+                        <p class="setting-hint">0% = fully transparent, 100% = fully solid</p>
+                    </div>
+                    <div class="burst-setting-item">
+                        <label>Text Color</label>
+                        <div style="display: flex; align-items: center; gap: 12px; margin-top: 8px;">
+                            <input type="color" id="cam-btn-font-color-picker" value="#ffffff" style="width: 52px; height: 38px; border: none; padding: 2px; cursor: pointer; border-radius: 4px;">
+                            <button id="cam-btn-font-color-default" class="batch-control-button">Default</button>
+                        </div>
+                    </div>
+                    <div class="burst-setting-item" style="padding-top: 16px;">
+                        <label>Taps to Hide / Reveal Buttons</label>
+                        <p class="setting-hint">Does not affect the camera switch button (top right).</p>
+                        <div style="display: flex; gap: 10px; margin-top: 8px;">
+                            <button id="cam-tap-single" class="batch-control-button" style="flex: 1;">Single Tap</button>
+                            <button id="cam-tap-double" class="batch-control-button" style="flex: 1;">Double Tap</button>
+                        </div>
+                        <p class="setting-hint" id="cam-tap-current-hint">Current: Single Tap</p>
+                    </div>
+                    <div class="burst-setting-item" style="margin-top: 20px; border-top: 1px solid #333; padding-top: 15px;">
+                        <button id="cam-screen-reset-all" class="batch-control-button" style="width: 100%;">Reset All to Default</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Gallery Image Viewer Screen Submenu -->
+        <div id="gallery-viewer-screen-submenu" class="submenu" style="display: none;">
+            <div class="submenu-content">
+                <div class="submenu-header">
+                    <h3>Gallery Image Viewer Screen</h3>
+                    <button id="gallery-viewer-screen-back" class="close-button">×</button>
+                </div>
+                <div class="submenu-list">
+                    <div class="burst-setting-item">
+                        <label>Button Color</label>
+                        <div style="display: flex; align-items: center; gap: 12px; margin-top: 8px;">
+                            <input type="color" id="viewer-btn-color-picker" value="#000000" style="width: 52px; height: 38px; border: none; padding: 2px; cursor: pointer; border-radius: 4px;">
+                            <button id="viewer-btn-color-default" class="batch-control-button">Default</button>
+                        </div>
+                    </div>
+                    <div class="burst-setting-item" style="padding-top: 16px;">
+                        <label>Button Opacity: <span id="viewer-btn-opacity-value">100%</span></label>
+                        <input type="range" id="viewer-btn-opacity-slider" min="0" max="100" value="100" step="1">
+                        <p class="setting-hint">0% = fully transparent, 100% = fully solid</p>
+                    </div>
+                    <div class="burst-setting-item">
+                        <label>Text Color</label>
+                        <div style="display: flex; align-items: center; gap: 12px; margin-top: 8px;">
+                            <input type="color" id="viewer-btn-font-color-picker" value="#ffffff" style="width: 52px; height: 38px; border: none; padding: 2px; cursor: pointer; border-radius: 4px;">
+                            <button id="viewer-btn-font-color-default" class="batch-control-button">Default</button>
+                        </div>
+                    </div>
+                    <div class="burst-setting-item" style="padding-top: 16px;">
+                        <label>Taps to Hide / Reveal Buttons</label>
+                        <p class="setting-hint">Does not affect the trash (🗑️) and close (×) buttons.</p>
+                        <div style="display: flex; gap: 10px; margin-top: 8px;">
+                            <button id="viewer-tap-single" class="batch-control-button" style="flex: 1;">Single Tap</button>
+                            <button id="viewer-tap-double" class="batch-control-button" style="flex: 1;">Double Tap</button>
+                        </div>
+                        <p class="setting-hint" id="viewer-tap-current-hint">Current: Single Tap</p>
+                    </div>
+                    <div class="burst-setting-item" style="margin-top: 20px; border-top: 1px solid #333; padding-top: 15px;">
+                        <button id="viewer-screen-reset-all" class="batch-control-button" style="width: 100%;">Reset All to Default</button>
+                    </div>
+                </div>
             </div>
         </div>
         
