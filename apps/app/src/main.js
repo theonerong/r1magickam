@@ -6457,8 +6457,7 @@ const TOUR_STEPS = [
   { section: 'Settings', title: '📥 Import Presets (Import Art)', body: 'Browse our external library in Settings. Check individual unlocked styles or use the All checkmark to select all unlocked presets to import.' },
   { section: 'Settings', title: '📥 Import Presets (Unlocking Presets)', body: 'Imported styles first appear locked. To unlock one, you need a credit. Take a photo or reprompt in the gallery once with any preset you already own to get one credit. You only get one credit per unique preset!' },
   { section: 'Settings', title: '🔄 Check for Updates', body: 'Checks for new or modified presets in the library. Any updates are flagged so you can re-import changed/updated presets that you own. If you do not import updated presets, the updates will not apply. New presets appear locked.' },
-  { section: 'Settings', title: '⚙️ Main Camera Screen', body: 'Includes the settings for the main camera screen carousel buttons. You may select different colors for buttons and text in the main camera screen. You may also select opacity (default solid) and set how many taps to hide/reveal the buttons.' },
-  { section: 'Settings', title: '⚙️ Gallery Image Viewer Screen', body: 'Includes the settings for the gallery\u0027s image viewer screen carousel buttons. You may select different colors for buttons and text in the image viewer screen. You may also select opacity (default solid) and set how many taps to hide/reveal the buttons.' },
+  { section: 'Settings', title: '⚙️ Button Settings', body: 'Includes the settings for the main camera screen carousel and the Gallery Image Viewer screen carousel buttons. You may select different colors for buttons and text in the main camera and gallery image viewer screens. You may also select opacity (default solid) and set how many taps to hide/reveal the buttons.' },
   { section: 'Settings', title: '📖 Tutorial', body: 'Last section in the settings. This area includes this audio tour. It also includes an indexed tutorial with a search engine. Type to search or click on the search field and press the side button to speak the query.' },
   { section: 'Tips and Advanced', title: '🏷️ Category Searching', body: 'Every preset has categories. When a preset is highlighted in the Visible Presets menu, its categories appear at the bottom. Tap a category to filter all presets in that group.' },
   { section: 'Tips and Advanced', title: '🧠 Master Prompt Power Tip', body: 'Search for master or master prompt in the Visible Presets menu to find all presets designed to work with Master Prompt. These respond to names, occasions, and custom context you provide. All presets may be affected by the Master Prompt.' },
@@ -9545,30 +9544,6 @@ function updateCamTapHighlight(mode) {
   }
 }
 
-function showMainCamScreenSubmenu() {
-  document.getElementById('settings-submenu').style.display = 'none';
-  const submenu = document.getElementById('main-cam-screen-submenu');
-  const s = window._camBtnSettings || { bgColor: '#000000', opacity: 100, fontColor: '#ffffff', tapMode: 'single' };
-  const colorPicker = document.getElementById('cam-btn-color-picker');
-  const opacitySlider = document.getElementById('cam-btn-opacity-slider');
-  const opacityValue = document.getElementById('cam-btn-opacity-value');
-  const fontColorPicker = document.getElementById('cam-btn-font-color-picker');
-  const tapHint = document.getElementById('cam-tap-current-hint');
-  if (colorPicker) colorPicker.value = s.bgColor;
-  if (opacitySlider) opacitySlider.value = s.opacity;
-  if (opacityValue) opacityValue.textContent = s.opacity + '%';
-  if (fontColorPicker) fontColorPicker.value = s.fontColor;
-  if (tapHint) tapHint.textContent = 'Current: ' + (s.tapMode === 'single' ? 'Single Tap' : 'Double Tap');
-  updateCamTapHighlight(s.tapMode || 'single');
-  submenu.style.display = 'flex';
-  isSettingsSubmenuOpen = false;
-}
-
-function hideMainCamScreenSubmenu() {
-  document.getElementById('main-cam-screen-submenu').style.display = 'none';
-  showSettingsSubmenu();
-}
-
 function updateViewerTapHighlight(mode) {
   const singleBtn = document.getElementById('viewer-tap-single');
   const doubleBtn = document.getElementById('viewer-tap-double');
@@ -9592,10 +9567,23 @@ function updateViewerTapHighlight(mode) {
   }
 }
 
-function showGalleryViewerScreenSubmenu() {
-  document.getElementById('settings-submenu').style.display = 'none';
-  const submenu = document.getElementById('gallery-viewer-screen-submenu');
-  const s = window._viewerBtnSettings || { bgColor: '#000000', opacity: 100, fontColor: '#ffffff', tapMode: 'single' };
+function _syncBtnSettingsCamTab() {
+  const s = window._camBtnSettings || { bgColor: '#000000', opacity: 100, fontColor: '#ffffff', tapMode: 'double' };
+  const colorPicker = document.getElementById('cam-btn-color-picker');
+  const opacitySlider = document.getElementById('cam-btn-opacity-slider');
+  const opacityValue = document.getElementById('cam-btn-opacity-value');
+  const fontColorPicker = document.getElementById('cam-btn-font-color-picker');
+  const tapHint = document.getElementById('cam-tap-current-hint');
+  if (colorPicker) colorPicker.value = s.bgColor;
+  if (opacitySlider) opacitySlider.value = s.opacity;
+  if (opacityValue) opacityValue.textContent = s.opacity + '%';
+  if (fontColorPicker) fontColorPicker.value = s.fontColor;
+  if (tapHint) tapHint.textContent = 'Current: ' + (s.tapMode === 'single' ? 'Single Tap' : 'Double Tap');
+  updateCamTapHighlight(s.tapMode || 'double');
+}
+
+function _syncBtnSettingsGalleryTab() {
+  const s = window._viewerBtnSettings || { bgColor: '#000000', opacity: 100, fontColor: '#ffffff', tapMode: 'double' };
   const colorPicker = document.getElementById('viewer-btn-color-picker');
   const opacitySlider = document.getElementById('viewer-btn-opacity-slider');
   const opacityValue = document.getElementById('viewer-btn-opacity-value');
@@ -9606,15 +9594,46 @@ function showGalleryViewerScreenSubmenu() {
   if (opacityValue) opacityValue.textContent = s.opacity + '%';
   if (fontColorPicker) fontColorPicker.value = s.fontColor;
   if (tapHint) tapHint.textContent = 'Current: ' + (s.tapMode === 'single' ? 'Single Tap' : 'Double Tap');
-  updateViewerTapHighlight(s.tapMode || 'single');
-  submenu.style.display = 'flex';
+  updateViewerTapHighlight(s.tapMode || 'double');
+}
+
+function _switchBtnSettingsTab(tab) {
+  const camTab = document.getElementById('btn-tab-cam');
+  const galleryTab = document.getElementById('btn-tab-gallery');
+  const camPanel = document.getElementById('btn-panel-cam');
+  const galleryPanel = document.getElementById('btn-panel-gallery');
+  if (tab === 'cam') {
+    if (camTab) camTab.classList.add('active');
+    if (galleryTab) galleryTab.classList.remove('active');
+    if (camPanel) camPanel.classList.add('active');
+    if (galleryPanel) galleryPanel.classList.remove('active');
+  } else {
+    if (camTab) camTab.classList.remove('active');
+    if (galleryTab) galleryTab.classList.add('active');
+    if (camPanel) camPanel.classList.remove('active');
+    if (galleryPanel) galleryPanel.classList.add('active');
+  }
+}
+
+function showButtonSettingsSubmenu(tab) {
+  document.getElementById('settings-submenu').style.display = 'none';
+  _syncBtnSettingsCamTab();
+  _syncBtnSettingsGalleryTab();
+  _switchBtnSettingsTab(tab || 'cam');
+  document.getElementById('button-settings-submenu').style.display = 'flex';
   isSettingsSubmenuOpen = false;
 }
 
-function hideGalleryViewerScreenSubmenu() {
-  document.getElementById('gallery-viewer-screen-submenu').style.display = 'none';
+function hideButtonSettingsSubmenu() {
+  document.getElementById('button-settings-submenu').style.display = 'none';
   showSettingsSubmenu();
 }
+
+// Aliases so any other code that calls the old names still works
+function showMainCamScreenSubmenu() { showButtonSettingsSubmenu('cam'); }
+function hideMainCamScreenSubmenu() { hideButtonSettingsSubmenu(); }
+function showGalleryViewerScreenSubmenu() { showButtonSettingsSubmenu('gallery'); }
+function hideGalleryViewerScreenSubmenu() { hideButtonSettingsSubmenu(); }
 
 function showAspectRatioSubmenu() {
   document.getElementById('settings-submenu').style.display = 'none';
@@ -11151,16 +11170,26 @@ window.addEventListener('load', () => {
     masterPromptBackBtn.addEventListener('click', hideMasterPromptSubmenu);
   }
   
-  // Main Camera Screen Settings 
+  // Button Settings (combined Main Camera + Gallery tabs)
 
-  const mainCamScreenSettingsBtn = document.getElementById('main-cam-screen-settings-button');
-  if (mainCamScreenSettingsBtn) {
-    mainCamScreenSettingsBtn.addEventListener('click', showMainCamScreenSubmenu);
+  const buttonSettingsBtn = document.getElementById('button-settings-button');
+  if (buttonSettingsBtn) {
+    buttonSettingsBtn.addEventListener('click', () => showButtonSettingsSubmenu('cam'));
   }
 
-  const mainCamScreenBackBtn = document.getElementById('main-cam-screen-back');
-  if (mainCamScreenBackBtn) {
-    mainCamScreenBackBtn.addEventListener('click', hideMainCamScreenSubmenu);
+  const buttonSettingsBackBtn = document.getElementById('button-settings-back');
+  if (buttonSettingsBackBtn) {
+    buttonSettingsBackBtn.addEventListener('click', hideButtonSettingsSubmenu);
+  }
+
+  const btnTabCam = document.getElementById('btn-tab-cam');
+  if (btnTabCam) {
+    btnTabCam.addEventListener('click', () => _switchBtnSettingsTab('cam'));
+  }
+
+  const btnTabGallery = document.getElementById('btn-tab-gallery');
+  if (btnTabGallery) {
+    btnTabGallery.addEventListener('click', () => _switchBtnSettingsTab('gallery'));
   }
 
   const camBtnColorPicker = document.getElementById('cam-btn-color-picker');
@@ -11262,18 +11291,6 @@ window.addEventListener('load', () => {
     });
   }
   // ── End Main Camera Screen Settings ─────────────────────────────
-
-  // ── Gallery Image Viewer Screen Settings ─────────────────────────────
-
-  const galleryViewerScreenSettingsBtn = document.getElementById('gallery-viewer-screen-settings-button');
-  if (galleryViewerScreenSettingsBtn) {
-    galleryViewerScreenSettingsBtn.addEventListener('click', showGalleryViewerScreenSubmenu);
-  }
-
-  const galleryViewerScreenBackBtn = document.getElementById('gallery-viewer-screen-back');
-  if (galleryViewerScreenBackBtn) {
-    galleryViewerScreenBackBtn.addEventListener('click', hideGalleryViewerScreenSubmenu);
-  }
 
   const viewerBtnColorPicker = document.getElementById('viewer-btn-color-picker');
   if (viewerBtnColorPicker) {
@@ -14125,8 +14142,7 @@ console.log('AI Camera Styles app initialized!');
     if (document.getElementById('settings-submenu')?.style.display === 'flex') return false;
     if (document.getElementById('master-prompt-submenu')?.style.display === 'flex') return false;
     if (document.getElementById('preset-builder-submenu')?.style.display === 'flex') return false;
-    if (document.getElementById('main-cam-screen-submenu')?.style.display === 'flex') return false;
-    if (document.getElementById('gallery-viewer-screen-submenu')?.style.display === 'flex') return false;
+    if (document.getElementById('button-settings-submenu')?.style.display === 'flex') return false;
     if (document.getElementById('resolution-submenu')?.style.display === 'flex') return false;
     if (document.getElementById('aspect-ratio-submenu')?.style.display === 'flex') return false;
     if (document.getElementById('burst-submenu')?.style.display === 'flex') return false;

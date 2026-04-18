@@ -2810,6 +2810,46 @@ button:disabled {
     padding: 1vw;
 }
 
+/* Button Settings — tab bar */
+.btn-settings-tab-bar {
+    display: flex;
+    background: #000;
+    border-bottom: 1px solid #333;
+    flex-shrink: 0;
+}
+
+.btn-settings-tab {
+    flex: 1;
+    padding: 3vw 2vw;
+    font-size: 4vw;
+    background: #111;
+    color: #aaa;
+    border: none;
+    border-bottom: 3px solid transparent;
+    cursor: pointer;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    transition: color 0.15s, border-color 0.15s;
+}
+
+.btn-settings-tab.active {
+    color: #FE5F00;
+    border-bottom-color: #FE5F00;
+    background: #1a1a1a;
+}
+
+/* Button Settings — content panels */
+.btn-settings-panel {
+    display: none;
+    flex: 1;
+    overflow-y: auto;
+    padding: 1vw;
+}
+
+.btn-settings-panel.active {
+    display: block;
+}
+
 /* Focus pulse animation */
 @keyframes focusPulse {
     0% {
