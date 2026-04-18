@@ -7885,6 +7885,18 @@
     "additionalInstructions": "FINAL RESULT:\nThe image should look like a sincere inspirational poster with the subject appearing thoughtful and composed, with one randomly selected Jack Handey 'Deep Thought' quote displayed clearly and readably - the humor coming entirely from the contrast between the earnest visual presentation and the unexpectedly absurd philosophical text."
   },
   {
+    "name": "DEMOSCENE",
+    "category": [
+      "DIGITAL",
+      "RETRO",
+      "COMPUTER ART"
+    ],
+    "message": "Take a picture and transform the image into Demoscene art. Preserve subject identity. Use the aesthetic of 1990s computer demo competitions with plasma effects, tunnel renders, copper bars, and scrolling text. Emphasize technical showmanship, Amiga/Atari-era color palettes, and real-time rendered visual effects.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": ""
+  },
+  {
     "name": "DÍA DE LOS MUERTOS — CATRINA / CATRÍN",
     "category": [
       "CULTURE",
@@ -19815,6 +19827,18 @@
     "additionalInstructions": ""
   },
   {
+    "name": "NEURAL STYLE TRANSFER",
+    "category": [
+      "DIGITAL",
+      "AI",
+      "EXPERIMENTAL"
+    ],
+    "message": "Take a picture and transform the image using a Neural Style Transfer aesthetic. Preserve subject identity while applying swirling, painterly textures that blend content and style. Emphasize the characteristic look of deep neural network art with flowing organic patterns, dream-like texture blending, and psychedelic color harmonics.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": ""
+  },
+  {
     "name": "NEWSPAPER",
     "category": [
       "NEWS",
@@ -28191,6 +28215,20 @@
     "additionalInstructions": "FINAL RESULT:\nThe image should show the subject as a modern time traveler holding or using a modern device (smartphone, tablet, camera, etc.) in a critical historical moment, actively using that technology to intervene and alter history, with historical figures reacting in confusion to both the subject and the futuristic device, period-accurate setting contrasting with subject's modern appearance and tech, capturing that moment where one person with a smartphone could change the entire course of history."
   },
   {
+    "name": "TINGATINGA",
+    "category": [
+      "ART",
+      "CULTURAL",
+      "AFRICAN",
+      "PAINTING"
+    ],
+    "message": "Take a picture and transform the image into Tingatinga art. Preserve subject identity. Use the vibrant Tanzanian painting style founded by Edward Said Tingatinga. Render with bold, flat colors, simplified forms, and enamel-paint-like finish depicting wildlife and nature. Emphasize bright saturated colors, decorative patterns, and joyful energy.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": ""
+  },
+
+  {
     "name": "TINY BUBBLES",
     "category": [
       "TRANSFORMATION",
@@ -30983,6 +31021,19 @@
       "PHOTOREALISTIC"
     ],
     "message": "Take a picture of the subject frozen in a moment where their clothing is tearing, misfitting (shrunk or undersized), or hilariously failing.\n\nThe tear or malfunction must be physically integrated with the clothing texture and anatomy — fabric stretches, rips, or folds realistically across the subject’s body.\n\nInclude realistic lighting, shadows, and environmental context, such as a street, stage, gym, or indoor setting.\n\nThe final image must look like a real photograph capturing the exact comedic moment — absurd but believable, with no digital overlays or pasted elements.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": ""
+  },
+  {
+    "name": "WARLI ART",
+    "category": [
+      "ART",
+      "CULTURAL",
+      "INDIAN",
+      "TRIBAL"
+    ],
+    "message": "Take a picture and transform the image into Warli Art. Preserve subject identity. Use the traditional tribal art style of the Warli people of Maharashtra, India. Render figures and scenes using simple geometric shapes — circles, triangles, and lines — in white pigment on a terracotta or dark brown background. Emphasize rhythmic patterns and community scenes.",
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
