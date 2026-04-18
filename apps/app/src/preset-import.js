@@ -206,6 +206,10 @@ export class PresetImporter {
   }
 
   async loadPresetsFromFile() {
+    // If already loaded this session, return the cached copy instantly
+    if (window._cachedFactoryPresets) {
+      return window._cachedFactoryPresets;
+    }
     try {
       const response = await fetch('./presets.json');
       if (!response.ok) {
@@ -219,7 +223,11 @@ export class PresetImporter {
       );
 
       // Alphabetize presets by name
-      return validPresets.sort((a, b) => a.name.localeCompare(b.name));
+      const sorted = validPresets.sort((a, b) => a.name.localeCompare(b.name));
+
+      // Store in memory so every other call this session skips the download
+      window._cachedFactoryPresets = sorted;
+      return sorted;
     } catch (error) {
       console.error('Error loading presets.json:', error);
       throw new Error('Could not load presets.json file');
@@ -573,6 +581,8 @@ footerSection.innerHTML = `
       document.body.appendChild(modal);
 
       renderPresetsList();
+      // Hide the loading spinner now that the list is fully rendered and visible
+      if (window._hideLoadingOverlay) window._hideLoadingOverlay();
 
       // Event listeners
       const importFilterBlurBtn = document.getElementById('import-filter-blur-btn');
@@ -629,25 +639,33 @@ footerSection.innerHTML = `
 
       document.getElementById('select-all-presets').onclick = () => {
         flashBtn('select-all-presets', '#aaa');
-        const filteredPresets = this.getFilteredPresets(availablePresets);
-        filteredPresets.forEach(preset => {
-          // UNLOCK GAME: skip locked presets when selecting all
-          const isAlreadyImported = this.importedPresets.some(p => p.name === preset.name);
-          const isLocked = !isAlreadyImported && !unlockedNames.has(preset.name);
-          if (!isLocked) {
-            this.checkboxStates.set(preset.name, true);
-          }
-        });
-        renderPresetsList();
+        // Show inline spinner while the list re-renders
+        presetsList.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;padding:30px;gap:12px;"><div class="mk-loading-spinner-sm"></div><span style="color:#aaa;font-size:13px;">Selecting all unlocked presets...</span></div>';
+        setTimeout(() => {
+          const filteredPresets = this.getFilteredPresets(availablePresets);
+          filteredPresets.forEach(preset => {
+            // UNLOCK GAME: skip locked presets when selecting all
+            const isAlreadyImported = this.importedPresets.some(p => p.name === preset.name);
+            const isLocked = !isAlreadyImported && !unlockedNames.has(preset.name);
+            if (!isLocked) {
+              this.checkboxStates.set(preset.name, true);
+            }
+          });
+          renderPresetsList();
+        }, 20);
       };
 
       document.getElementById('deselect-all-presets').onclick = () => {
         flashBtn('deselect-all-presets', '#aaa');
-        const filteredPresets = this.getFilteredPresets(availablePresets);
-        filteredPresets.forEach(preset => {
-          this.checkboxStates.set(preset.name, false);
-        });
-        renderPresetsList();
+        // Show inline spinner while the list re-renders
+        presetsList.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;padding:30px;gap:12px;"><div class="mk-loading-spinner-sm"></div><span style="color:#aaa;font-size:13px;">Deselecting all...</span></div>';
+        setTimeout(() => {
+          const filteredPresets = this.getFilteredPresets(availablePresets);
+          filteredPresets.forEach(preset => {
+            this.checkboxStates.set(preset.name, false);
+          });
+          renderPresetsList();
+        }, 20);
       };
 
       const closeModal = () => {

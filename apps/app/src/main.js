@@ -1,6 +1,32 @@
 import { presetStorage } from './storage.js';
 import { presetImporter, earnCredit, unlockAllPresets, getCredits } from './preset-import.js';
 
+// Loading overlay helpers 
+
+function showLoadingOverlay(label) {
+  let overlay = document.getElementById('mk-loading-overlay');
+  if (!overlay) {
+    overlay = document.createElement('div');
+    overlay.id = 'mk-loading-overlay';
+    overlay.className = 'mk-loading-overlay';
+    overlay.innerHTML = '<div class="mk-loading-spinner"></div><div class="mk-loading-label" id="mk-loading-label"></div>';
+    document.body.appendChild(overlay);
+  }
+  const labelEl = document.getElementById('mk-loading-label');
+  if (labelEl) labelEl.textContent = label || 'Loading...';
+  overlay.style.display = 'flex';
+}
+
+function hideLoadingOverlay() {
+  const overlay = document.getElementById('mk-loading-overlay');
+  if (overlay) overlay.style.display = 'none';
+}
+
+// Expose so preset-import.js can call hideLoadingOverlay when the import modal opens
+
+window._hideLoadingOverlay = hideLoadingOverlay;
+
+
 // No need for DEFAULT_PRESETS - will load from JSON when needed
 let DEFAULT_PRESETS = [];
 let totalFactoryPresetCount = 0;
@@ -3347,15 +3373,15 @@ async function loadStyles() {
     
     // Always fetch the real preset count so the tutorial display is always correct
     try {
-        const countResponse = await fetch('./presets.json');
-        if (countResponse.ok) {
-            const allFactoryPresets = await countResponse.json();
-            totalFactoryPresetCount = allFactoryPresets.length;
-            const tutorialCountEl = document.getElementById('tutorial-preset-count');
-            if (tutorialCountEl) tutorialCountEl.textContent = totalFactoryPresetCount;
-        }
+        showLoadingOverlay('Loading presets...');
+        const allFactoryPresets = await presetImporter.loadPresetsFromFile();
+        totalFactoryPresetCount = allFactoryPresets.length;
+        const tutorialCountEl = document.getElementById('tutorial-preset-count');
+        if (tutorialCountEl) tutorialCountEl.textContent = totalFactoryPresetCount;
     } catch (e) {
         console.log('Could not fetch preset count:', e);
+    } finally {
+        hideLoadingOverlay();
     }
 
     // Only load presets if user has imports or modifications
@@ -3471,10 +3497,7 @@ async function loadStyles() {
 
 async function checkForPresetsUpdates() {
   try {
-    const response = await fetch('./presets.json');
-    if (!response.ok) return;
-    
-    const jsonPresets = await response.json();
+    const jsonPresets = await presetImporter.loadPresetsFromFile();
     const importedPresets = presetImporter.getImportedPresets();
     
     if (importedPresets.length === 0) return;
@@ -3513,10 +3536,7 @@ async function checkForPresetsUpdates() {
 
 async function recheckForUpdates() {
   try {
-    const response = await fetch('./presets.json');
-    if (!response.ok) return;
-
-    const jsonPresets = await response.json();
+    const jsonPresets = await presetImporter.loadPresetsFromFile();
     const importedPresets = presetImporter.getImportedPresets();
 
     let stillHasUpdates = false;
@@ -3586,14 +3606,13 @@ async function mergePresetsWithStorage() {
   } else {
     // First time user - load factory presets only now
     if (factoryPresets.length === 0) {
-      const response = await fetch('./presets.json');
-      if (response.ok) {
-        DEFAULT_PRESETS = await response.json();
+      try {
+        DEFAULT_PRESETS = await presetImporter.loadPresetsFromFile();
         factoryPresets = [...DEFAULT_PRESETS];
         totalFactoryPresetCount = DEFAULT_PRESETS.length;
         const tutorialCountEl = document.getElementById('tutorial-preset-count');
         if (tutorialCountEl) tutorialCountEl.textContent = totalFactoryPresetCount;
-      } else {
+      } catch (e) {
         DEFAULT_PRESETS = [];
         factoryPresets = [];
       }
@@ -12399,6 +12418,9 @@ document.addEventListener('touchend', () => {
   if (importPresetsBtn) {
     importPresetsBtn.addEventListener('click', async () => {
       try {
+        showLoadingOverlay('Loading presets...');
+        // Wait one frame so the browser actually paints the spinner before the heavy work starts
+        await new Promise(resolve => setTimeout(resolve, 30));
 const result = await presetImporter.import();
         
         if (result.success) {
@@ -12828,14 +12850,10 @@ const result = await presetImporter.import();
   if (checkUpdatesBtn) {
     checkUpdatesBtn.addEventListener('click', async () => {
       try {
-        // Load presets from JSON
-        const response = await fetch('./presets.json');
-        if (!response.ok) {
-          alert('Could not load presets.json');
-          return;
-        }
-        
-        const jsonPresets = await response.json();
+        showLoadingOverlay('Checking for updates...');
+        // Load presets from JSON (uses cached copy if already loaded this session)
+        const jsonPresets = await presetImporter.loadPresetsFromFile();
+        hideLoadingOverlay();
         const importedPresets = presetImporter.getImportedPresets();
         
         if (importedPresets.length === 0) {
@@ -12878,6 +12896,9 @@ const result = await presetImporter.import();
         );
         
         if (shouldUpdate) {
+          showLoadingOverlay('Loading presets...');
+          // Wait one frame so the browser actually paints the spinner before the heavy work starts
+          await new Promise(resolve => setTimeout(resolve, 30));
           // Trigger import with all presets selected
 const result = await presetImporter.import();
           
