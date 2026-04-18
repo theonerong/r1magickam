@@ -5853,7 +5853,7 @@
     "randomizeOptions": true,
     "additionalInstructions": ""
   },
-  {
+{
     "name": "COMIC BOOK COVER",
     "category": [
       "OPTIONS",
@@ -5861,491 +5861,491 @@
       "ART",
       "POP CULTURE"
     ],
-    "message": "Take a picture and transform the subject into the star of a comic book cover.\n\nFRANCHISE/\nSUBJECT FACE COLOR TRANSFORMATION (CRITICAL):\n• Subject's facial features MUST remain recognizable\n• Subject's skin tone MUST change to match hero's characteristic color:\n  — Hulk/She-Hulk: GREEN skin\n  — Beast: BLUE fur-covered skin\n  — Colossus: METALLIC STEEL silver skin\n  — Vision: RED synthetic skin\n  — Nightcrawler: DARK BLUE fuzzy skin\n  — Martian Manhunter: GREEN Martian skin\n  — Dr. Manhattan: GLOWING BLUE skin\n  — Ghost Rider: FLAMING SKULL (face becomes skull on fire)\n  — Hellboy: RED demon skin with filed horns\n  — Swamp Thing: GREEN plant matter skin\n  — The Mask: BRIGHT GREEN cartoon skin\n  — Groot: BROWN wooden bark skin\n  — Savage Dragon: GREEN with head fin\n  — Gamora: GREEN alien skin\n  — Drax: GRAY/GREEN tattooed skin\n  — Starfire: ORANGE alien skin\n  — Raven: GRAY/PURPLE skin\n  — Beast Boy: GREEN shape-shifter skin\n  — Concrete: GRAY STONE texture skin\n  — The Tick: BRIGHT BLUE skin\n  — TMNT: GREEN turtle skin\n  — Normal human heroes (Superman, Batman, Spider-Man, etc.): Normal human skin tone\n• Preserve eye shape, nose, mouth, facial structure — just change the COLOR\n• Subject still looks like themselves, just in hero's skin color\n\nMASK/HELMET VISIBILITY (CRITICAL):\n• If hero wears FULL MASK or FULL HELMET (covering entire face), the mask/helmet MUST be:\n  - Removed completely, OR\n  - Partially removed (lifted up, pulled back), OR\n  - Open/retracted (like Iron Man's faceplate opening)\n• Subject's face MUST be clearly visible and recognizable (in appropriate hero color)\n• Examples:\n  - Iron Man: Faceplate open revealing face, arc reactor glowing\n  - Spider-Man: Mask pulled up to forehead or partially off\n  - Deadpool: Mask pulled up or torn showing face\n  - Batman: Cowl pulled back or removed\n  - Black Panther: Mask retracted or held in hand\n  - Judge Dredd: Helmet off (rare dramatic moment)\n  - The Mask: Green mask held in hand, face is bright green\n  - Spawn: Cape hood pulled back showing face\n  - Iron Fist: Mask down or removed\n  - Moon Knight: Hood and mask pulled back\n• Half-masks (Daredevil, Robin, Nightwing) can remain on as face is visible\n• No mask (Superman, Wonder Woman, Hulk, etc.) — no change needed\n• Goal: Subject's recognizable face in hero's skin color\n\nFULL COVER DISPLAY (CRITICAL):\n• The final image must show the COMPLETE comic book cover\n• All four corners of the comic visible\n• Entire cover from top to bottom shown\n• NOT cropped - full page layout visible\n• Comic book edges clearly defined\n• Complete professional cover composition\n\nCOMIC COVER DESIGN:\n• Title logo prominent at top\n• Issue number clearly visible\n• Cover date (month and year)\n• Cover price appropriate to era\n• Publisher logo (Marvel, DC, Image, Dark Horse, Valiant, IDW, etc.)\n• Barcode for modern, Comics Code for vintage\n\nSUBJECT AS HERO:\n• Subject's face as the hero's face — CLEARLY recognizable with hero's skin color\n• Wearing the iconic costume (with mask/helmet removed or open if full-face)\n• Dynamic superhero pose\n• Subject IS the superhero\n• Heroic proportions\n\nCOMIC ART STYLE:\n• Classic or modern comic book illustration\n• Bold outlines, dynamic composition\n• Sound effects (WHAM! POW! THWIP!)\n• Motion lines and speed effects\n• Bright bold colors\n\nCOVER SCENE:\n• Dramatic action moment\n• Villain or threat visible if appropriate\n• Appropriate background\n• Cover blurb text",
+    "message": "Take a picture and transform the subject into the star of a comic book cover.\n\nFRANCHISE/\nSUBJECT FACE COLOR TRANSFORMATION (CRITICAL):\n• Subject's facial features MUST remain recognizable\n• Subject's skin/material MUST match the hero’s canonical appearance\n• ONLY color/material changes — preserve identity\n\nMASK/HELMET VISIBILITY (CRITICAL):\n• Full masks/helmets MUST be removed, opened, or partially removed\n• Face MUST be visible unless the character canonically has no human face\n\nFULL COVER DISPLAY (CRITICAL):\n• Entire comic cover visible (all four corners)\n\nCOMIC COVER DESIGN:\n• Title, issue number, date, price, publisher, barcode\n\nSUBJECT AS HERO:\n• Subject IS the hero with correct skin/material applied\n\nCOMIC ART STYLE:\n• Professional comic illustration\n\nCOVER SCENE:\n• Dramatic action composition",
     "options": [
       {
         "id": "001",
-        "text": "Spider-Man (Marvel) - web-slinging, New York City"
+        "text": "Spider-Man — mask partially removed, subject face visible, NORMAL human skin tone, web-swinging action, web-shooters"
       },
-      {
+      { 
         "id": "002",
-        "text": "Batman (DC) - dark Gotham nights, cape and cowl"
+        "text": "Batman — cowl removed or pulled back, subject face visible, NORMAL human skin tone, dark Gotham tone, batarangs, grapnel gun"
       },
       {
-        "id": "003",
-        "text": "Superman (DC) - flying heroically, red cape"
+        "id": "003", 
+        "text": "Superman — subject face visible, NORMAL human skin tone, flying heroic pose, heat vision"
       },
-      {
+      { 
         "id": "004",
-        "text": "Wonder Woman (DC) - lasso of truth, tiara"
+        "text": "Wonder Woman — subject face visible, NORMAL human skin tone, warrior stance, Lasso of Truth, sword, shield"
       },
-      {
+      { 
         "id": "005",
-        "text": "X-Men (Marvel) - team of mutants"
+        "text": "X-Men — apply correct mutant skin/material (Beast BLUE fur, Nightcrawler DARK BLUE, etc.), face visible, powers/abilities appropriate to character"
       },
-      {
-        "id": "006",
-        "text": "Avengers (Marvel) - Earth's Mightiest Heroes"
+      { 
+        "id": "006", 
+        "text": "Avengers — apply correct hero skin/material (Hulk GREEN, etc.), face visible where applicable, weapons/gear appropriate (shield, hammer, repulsors)"
       },
-      {
+      { 
         "id": "007",
-        "text": "Justice League (DC) - DC's premier team"
+        "text": "Justice League — correct hero skin/material, face visible, weapons/gear appropriate"
       },
       {
         "id": "008",
-        "text": "Iron Man (Marvel) - armored hero, arc reactor"
+        "text": "Iron Man — helmet open, subject face visible, NORMAL human skin tone, repulsor blasts, arc reactor"
+      },
+      { 
+        "id": "009", 
+        "text": "Flash — face visible, NORMAL human skin tone, speed effects, lightning trails"
       },
       {
-        "id": "009",
-        "text": "The Flash (DC) - speed force, lightning"
+        "id": "010", 
+        "text": "Hulk — subject face MUST be GREEN skin, massive muscular form, smashing force"
       },
-      {
-        "id": "010",
-        "text": "Hulk (Marvel) - green rage monster"
+      { 
+        "id": "011", 
+        "text": "Captain America — face visible, NORMAL human skin tone, shield pose, vibranium shield"
       },
-      {
-        "id": "011",
-        "text": "Captain America (Marvel) - star-spangled hero"
-      },
-      {
+      { 
         "id": "012",
-        "text": "Green Lantern (DC) - power ring, constructs"
+        "text": "Green Lantern — face visible, NORMAL human skin tone, glowing constructs, power ring"
       },
-      {
+      { 
         "id": "013",
-        "text": "Thor (Marvel) - God of Thunder, Mjolnir"
+        "text": "Thor — face visible, NORMAL human skin tone, lightning effects, Mjolnir or Stormbreaker"
       },
-      {
-        "id": "014",
-        "text": "Fantastic Four (Marvel) - First Family"
+      { 
+        "id": "014", 
+        "text": "Fantastic Four — apply correct transformations (Thing ORANGE rock, Human Torch flame, Invisible Woman, etc.), powers active"
       },
-      {
+      { 
         "id": "015",
-        "text": "Teen Titans (DC) - young heroes"
+        "text": "Teen Titans — apply Starfire ORANGE, Raven GRAY/PURPLE, Beast Boy GREEN, face visible, powers active"
       },
-      {
+      { 
         "id": "016",
-        "text": "Daredevil (Marvel) - Hell's Kitchen vigilante"
+        "text": "Daredevil — face visible or mask partial, NORMAL human skin tone, billy clubs"
       },
-      {
+      { 
         "id": "017",
-        "text": "Black Panther (Marvel) - Wakanda, vibranium"
+        "text": "Black Panther — mask removed or retracted, face visible, NORMAL human skin tone, vibranium suit, claws"
       },
-      {
+      { 
         "id": "018",
-        "text": "Aquaman (DC) - King of Atlantis"
+        "text": "Aquaman — face visible, NORMAL human skin tone, aquatic theme, trident"
       },
-      {
+      { 
         "id": "019",
-        "text": "Wolverine (Marvel) - adamantium claws"
+        "text": "Wolverine — mask removed, face visible, NORMAL human skin tone, adamantium claws"
       },
-      {
+      { 
         "id": "020",
-        "text": "Deadpool (Marvel) - fourth-wall breaking"
+        "text": "Deadpool — mask torn or lifted, face visible, NORMAL human skin tone, dual katanas, guns"
       },
-      {
+      { 
         "id": "021",
-        "text": "Green Arrow (DC) - emerald archer"
+        "text": "Green Arrow — face visible, NORMAL human skin tone, bow and arrows"
       },
-      {
+      { 
         "id": "022",
-        "text": "Black Widow (Marvel) - Russian spy"
+        "text": "Black Widow — face visible, NORMAL human skin tone, pistols, batons"
       },
-      {
+      { 
         "id": "023",
-        "text": "Hawkeye (Marvel) - master archer"
+        "text": "Hawkeye — face visible, NORMAL human skin tone, bow and arrows"
       },
-      {
+      { 
         "id": "024",
-        "text": "Nightwing (DC) - acrobat, former Robin"
+        "text": "Nightwing — face visible, NORMAL human skin tone, escrima sticks"
       },
-      {
+      { 
         "id": "025",
-        "text": "Punisher (Marvel) - skull logo, vigilante"
+        "text": "Punisher — face visible, NORMAL human skin tone, firearms, tactical gear"
       },
-      {
+      { 
         "id": "026",
-        "text": "Catwoman (DC) - cat burglar"
+        "text": "Catwoman — face visible, NORMAL human skin tone, whip"
       },
-      {
+      { 
         "id": "027",
-        "text": "Doctor Strange (Marvel) - sorcerer supreme"
+        "text": "Doctor Strange — face visible, NORMAL human skin tone, mystical effects, Eye of Agamotto"
       },
-      {
+      { 
         "id": "028",
-        "text": "Scarlet Witch (Marvel) - chaos magic"
+        "text": "Scarlet Witch — face visible, NORMAL human skin tone, chaos magic energy"
       },
-      {
+      { 
         "id": "029",
-        "text": "Vision (Marvel) - synthezoid"
+        "text": "Vision — subject face MUST be RED synthetic skin, energy beam"
       },
-      {
+      { 
         "id": "030",
-        "text": "Cyborg (DC) - half-man half-machine"
+        "text": "Cyborg — face partially mechanical, metallic cybernetic material visible, arm cannon"
       },
-      {
+      { 
         "id": "031",
-        "text": "Shazam (DC) - magic lightning"
+        "text": "Shazam — face visible, NORMAL human skin tone, lightning magic"
       },
-      {
+      { 
         "id": "032",
-        "text": "Ghost Rider (Marvel) - flaming skull"
+        "text": "Ghost Rider — head MUST be FLAMING SKULL, no human face, flaming chain"
       },
-      {
+      { 
         "id": "033",
-        "text": "Moon Knight (Marvel) - white cape"
+        "text": "Moon Knight — mask removed or pulled back, face visible, NORMAL human skin tone, crescent darts"
       },
-      {
+      { 
         "id": "034",
-        "text": "Batgirl (DC) - purple cowl"
+        "text": "Batgirl — mask partial, face visible, NORMAL human skin tone, batarangs"
       },
-      {
+      { 
         "id": "035",
-        "text": "She-Hulk (Marvel) - green lawyer"
+        "text": "She-Hulk — subject face MUST be GREEN skin, super strength"
       },
-      {
+      { 
         "id": "036",
-        "text": "Martian Manhunter (DC) - shape-shifter"
+        "text": "Martian Manhunter — subject face MUST be GREEN alien skin, telepathy, shapeshifting"
       },
-      {
+      { 
         "id": "037",
-        "text": "Ant-Man (Marvel) - shrinking hero"
+        "text": "Ant-Man — helmet open, face visible, NORMAL human skin tone, size-changing tech"
       },
-      {
+      { 
         "id": "038",
-        "text": "Wasp (Marvel) - wings, blasters"
+        "text": "Wasp — face visible, NORMAL human skin tone, wings, energy blasts"
       },
-      {
+      { 
         "id": "039",
-        "text": "Guardians of the Galaxy (Marvel) - space team"
+        "text": "Guardians of the Galaxy — apply Gamora GREEN, Drax GRAY/GREEN, etc., weapons (blasters, knives)"
       },
-      {
+      { 
         "id": "040",
-        "text": "Suicide Squad (DC) - villain team"
+        "text": "Suicide Squad — face visible, correct skin/material per character, weapons (guns, blades)"
       },
-      {
+      { 
         "id": "041",
-        "text": "Silver Surfer (Marvel) - cosmic surfer"
+        "text": "Silver Surfer — subject face MUST be CHROME metallic skin, cosmic board"
       },
-      {
+      { 
         "id": "042",
-        "text": "Harley Quinn (DC) - mallet, jester"
+        "text": "Harley Quinn — face visible, NORMAL human skin tone, mallet, bat"
       },
-      {
+      { 
         "id": "043",
-        "text": "Constantine (DC/Vertigo) - occult detective"
+        "text": "Constantine — face visible, NORMAL human skin tone, occult tools, cigarette"
       },
-      {
+      { 
         "id": "044",
-        "text": "Spawn (Image) - hell-spawn, chains, cape"
+        "text": "Spawn — mask/hood pulled back, face visible, altered demonic skin allowed, chains, cape"
       },
-      {
+      { 
         "id": "045",
-        "text": "Hellboy (Dark Horse) - Right Hand of Doom, BPRD"
+        "text": "Hellboy — subject face MUST be RED demon skin with horns, Right Hand of Doom, revolver"
       },
-      {
+      { 
         "id": "046",
-        "text": "The Tick (Independent) - blue parody hero"
+        "text": "The Tick — subject face MUST be BRIGHT BLUE skin, comedic hero strength"
       },
-      {
+      { 
         "id": "047",
-        "text": "Teenage Mutant Ninja Turtles (IDW) - pizza, sewer"
+        "text": "TMNT — subject face MUST be GREEN turtle skin, ninja weapons (katanas, sai, bo staff, nunchaku)"
       },
-      {
+      { 
         "id": "048",
-        "text": "Blade (Marvel) - vampire hunter"
+        "text": "Blade — face visible, NORMAL human skin tone, sword, guns"
       },
-      {
+      { 
         "id": "049",
-        "text": "Storm (Marvel) - weather control"
+        "text": "Storm — face visible, NORMAL human skin tone, lightning control"
       },
-      {
+      { 
         "id": "050",
-        "text": "Rogue (Marvel) - power absorption"
+        "text": "Rogue — face visible, NORMAL human skin tone, power absorption"
       },
       {
         "id": "051",
-        "text": "Gambit (Marvel) - kinetic cards"
+        "text": "Gambit — face visible, NORMAL human skin tone, kinetic cards, staff"
       },
       {
         "id": "052",
-        "text": "Cyclops (Marvel) - optic blast"
+        "text": "Cyclops — visor removed or lifted, face visible, NORMAL human skin tone, optic blast"
       },
       {
         "id": "053",
-        "text": "Iceman (Marvel) - ice powers"
+        "text": "Iceman — subject body MUST be ICE/crystalline form, ice projection"
       },
       {
         "id": "054",
-        "text": "Beast (Marvel) - blue fur genius"
+        "text": "Beast — subject face MUST be BLUE fur-covered skin, brute strength"
       },
       {
         "id": "055",
-        "text": "Nightcrawler (Marvel) - teleportation"
+        "text": "Nightcrawler — subject face MUST be DARK BLUE skin, teleportation"
       },
       {
         "id": "056",
-        "text": "Colossus (Marvel) - steel skin"
+        "text": "Colossus — subject face MUST be METALLIC STEEL skin, heavy strikes"
       },
       {
         "id": "057",
-        "text": "Hawkman (DC) - wings, mace"
+        "text": "Hawkman — face visible, NORMAL human skin tone, wings, mace"
       },
       {
         "id": "058",
-        "text": "Hawkgirl (DC) - wings, warrior"
+        "text": "Hawkgirl — face visible, NORMAL human skin tone, wings, mace"
       },
       {
         "id": "059",
-        "text": "Blue Beetle (DC) - scarab armor"
+        "text": "Blue Beetle — helmet open, face visible, NORMAL human skin tone, energy weapons"
       },
       {
         "id": "060",
-        "text": "Booster Gold (DC) - time traveler"
+        "text": "Booster Gold — face visible, NORMAL human skin tone, energy gauntlets"
       },
       {
         "id": "061",
-        "text": "Zatanna (DC) - stage magician"
+        "text": "Zatanna — face visible, NORMAL human skin tone, magic spells"
       },
       {
         "id": "062",
-        "text": "Swamp Thing (DC/Vertigo) - plant elemental"
+        "text": "Swamp Thing — subject face MUST be GREEN plant matter, vines"
       },
       {
         "id": "063",
-        "text": "Sandman (DC/Vertigo) - Dream of the Endless"
+        "text": "Sandman — face visible or stylized, ethereal material allowed, dream manipulation"
       },
       {
         "id": "064",
-        "text": "Jessica Jones (Marvel) - private detective"
+        "text": "Jessica Jones — face visible, NORMAL human skin tone, super strength"
       },
       {
         "id": "065",
-        "text": "Luke Cage (Marvel) - Power Man"
+        "text": "Luke Cage — face visible, NORMAL human skin tone, indestructible skin"
       },
       {
         "id": "066",
-        "text": "Iron Fist (Marvel) - glowing fist"
+        "text": "Iron Fist — face visible, NORMAL human skin tone, glowing fist"
       },
       {
         "id": "067",
-        "text": "Elektra (Marvel) - ninja assassin"
+        "text": "Elektra — face visible, NORMAL human skin tone, sai weapons"
       },
       {
         "id": "068",
-        "text": "Captain Marvel (Marvel) - cosmic power"
+        "text": "Captain Marvel — face visible, NORMAL human skin tone, glowing energy blasts"
       },
       {
         "id": "069",
-        "text": "Ms. Marvel (Marvel) - Kamala Khan"
+        "text": "Ms. Marvel — face visible, NORMAL human skin tone, stretching powers"
       },
       {
         "id": "070",
-        "text": "Star-Lord (Marvel) - space outlaw"
+        "text": "Star-Lord — helmet removed, face visible, NORMAL human skin tone, dual blasters"
       },
       {
         "id": "071",
-        "text": "Rocket Raccoon (Marvel) - weapons expert"
+        "text": "Rocket Raccoon — subject transformed into raccoon-like furred character, heavy weapons"
       },
       {
         "id": "072",
-        "text": "Groot (Marvel) - \"I am Groot\""
+        "text": "Groot — subject face MUST be BROWN wooden bark texture, vine growth"
       },
       {
         "id": "073",
-        "text": "Drax (Marvel) - destroyer"
+        "text": "Drax — subject face MUST be GRAY/GREEN tattooed skin, knives"
       },
       {
         "id": "074",
-        "text": "Gamora (Marvel) - deadliest woman"
+        "text": "Gamora — subject face MUST be GREEN alien skin, sword"
       },
       {
         "id": "075",
-        "text": "Nova (Marvel) - cosmic cop"
+        "text": "Nova — face visible, NORMAL human skin tone, cosmic energy blasts"
       },
       {
         "id": "076",
-        "text": "Venom (Marvel) - symbiote"
+        "text": "Venom — subject face MUST be BLACK symbiote with white eyes, tendrils, fangs"
       },
       {
         "id": "077",
-        "text": "Carnage (Marvel) - red symbiote"
+        "text": "Carnage — subject face MUST be RED symbiote, tendrils, blades"
       },
       {
         "id": "078",
-        "text": "Miles Morales (Marvel) - Brooklyn Spider-Man"
+        "text": "Miles Morales — mask lifted, face visible, NORMAL human skin tone, bio-electric venom blast"
       },
       {
         "id": "079",
-        "text": "Spider-Gwen (Marvel) - Ghost-Spider"
+        "text": "Spider-Gwen — mask lifted, face visible, NORMAL human skin tone, web-shooters"
       },
       {
         "id": "080",
-        "text": "Scarlet Spider (Marvel) - clone"
+        "text": "Scarlet Spider — mask lifted, face visible, NORMAL human skin tone, web-shooters"
       },
       {
         "id": "081",
-        "text": "Spider-Man 2099 (Marvel) - future"
+        "text": "Spider-Man 2099 — mask partially removed, face visible, NORMAL human skin tone, claws, webbing"
       },
       {
         "id": "082",
-        "text": "Red Hood (DC) - Jason Todd, guns"
+        "text": "Red Hood — helmet removed, face visible, NORMAL human skin tone, pistols"
       },
       {
         "id": "083",
-        "text": "Robin (DC) - boy wonder"
+        "text": "Robin — face visible, NORMAL human skin tone, staff"
       },
       {
         "id": "084",
-        "text": "Batwoman (DC) - red hair"
+        "text": "Batwoman — face visible, NORMAL human skin tone, batarangs"
       },
       {
         "id": "085",
-        "text": "Supergirl (DC) - Kara Zor-El"
+        "text": "Supergirl — face visible, NORMAL human skin tone, heat vision"
       },
       {
         "id": "086",
-        "text": "Power Girl (DC) - Kryptonian"
+        "text": "Power Girl — face visible, NORMAL human skin tone, super strength"
       },
       {
         "id": "087",
-        "text": "Starfire (DC) - alien princess"
+        "text": "Starfire — subject face MUST be ORANGE alien skin, energy blasts"
       },
       {
         "id": "088",
-        "text": "Raven (DC) - demon daughter"
+        "text": "Raven — subject face MUST be GRAY/PURPLE skin, dark magic"
       },
       {
         "id": "089",
-        "text": "Beast Boy (DC) - shape-shifter"
+        "text": "Beast Boy — subject face MUST be GREEN skin, animal transformation"
       },
       {
         "id": "090",
-        "text": "Lobo (DC) - space biker"
+        "text": "Lobo — face visible, pale alien tone, chain, hook weapon"
       },
       {
         "id": "091",
-        "text": "Plastic Man (DC) - stretching"
+        "text": "Plastic Man — elastic stylized body, face visible, stretching attacks"
       },
       {
         "id": "092",
-        "text": "The Question (DC) - faceless detective"
+        "text": "The Question — featureless face (no visible features), detective presence"
       },
       {
         "id": "093",
-        "text": "Rorschach (DC/Watchmen) - inkblot mask"
+        "text": "Rorschach — mask partially removed, face visible, NORMAL human skin tone, grappling weapon"
       },
       {
         "id": "094",
-        "text": "Dr. Manhattan (DC/Watchmen) - blue god"
+        "text": "Dr. Manhattan — subject face MUST be GLOWING BLUE skin, energy manipulation"
       },
       {
         "id": "095",
-        "text": "The Crow (Image) - undead vengeance"
+        "text": "The Crow — pale undead skin, face visible, katana"
       },
       {
         "id": "096",
-        "text": "Invincible (Image) - Viltrumite"
+        "text": "Invincible — face visible, NORMAL human skin tone, flight, strength"
       },
       {
         "id": "097",
-        "text": "Savage Dragon (Image) - green fin cop"
+        "text": "Savage Dragon — subject face MUST be GREEN skin with fin, brute force"
       },
       {
         "id": "098",
-        "text": "Witchblade (Image) - mystical gauntlet"
+        "text": "Witchblade — face visible, NORMAL human skin tone with armor growth, blade tendrils"
       },
       {
         "id": "099",
-        "text": "The Mask (Dark Horse) - green face, cartoon powers"
+        "text": "The Mask — subject face MUST be BRIGHT GREEN cartoon skin, exaggerated weapons (giant mallets, guns)"
       },
       {
         "id": "100",
-        "text": "Judge Dredd (2000 AD) - law enforcer"
+        "text": "Judge Dredd — helmet removed, face visible, NORMAL human skin tone, Lawgiver pistol"
       },
       {
         "id": "101",
-        "text": "Concrete (Dark Horse) - man in stone body"
+        "text": "Concrete — subject face MUST be GRAY stone texture, massive strength"
       },
       {
         "id": "102",
-        "text": "X (Dark Horse) - masked vigilante"
+        "text": "X — mask removed, face visible, NORMAL human skin tone, firearms"
       },
       {
         "id": "103",
-        "text": "Ghost (Dark Horse) - white female hero"
+        "text": "Ghost — face visible, pale white skin tone, dual pistols"
       },
       {
         "id": "104",
-        "text": "Barb Wire (Dark Horse) - bounty hunter"
+        "text": "Barb Wire — face visible, NORMAL human skin tone, firearms"
       },
       {
         "id": "105",
-        "text": "The Goon (Dark Horse) - Depression-era tough guy"
+        "text": "The Goon — face visible, NORMAL human skin tone, brute force, weapons"
       },
       {
         "id": "106",
-        "text": "Usagi Yojimbo (Dark Horse) - samurai rabbit"
+        "text": "Usagi Yojimbo — subject transformed into anthropomorphic rabbit samurai, katana"
       },
       {
         "id": "107",
-        "text": "Sin City (Dark Horse) - noir crime fighter"
+        "text": "Sin City — face visible, high-contrast black-and-white skin rendering, noir weapons (guns)"
       },
       {
         "id": "108",
-        "text": "300 (Dark Horse) - Spartan warrior"
+        "text": "300 — face visible, NORMAL human skin tone, Spartan spear and shield"
       },
       {
         "id": "109",
-        "text": "Nexus (Dark Horse) - cosmic executioner"
+        "text": "Nexus — face visible, NORMAL human skin tone, energy blasts"
       },
       {
         "id": "110",
-        "text": "Aliens vs Predator (Dark Horse) - space marines"
+        "text": "Aliens vs Predator — subject transformed into alien or predator creature, claws, blades"
       },
       {
         "id": "111",
-        "text": "Buffy the Vampire Slayer (Dark Horse) - slayer"
+        "text": "Buffy — face visible, NORMAL human skin tone, stake"
       },
       {
         "id": "112",
-        "text": "Conan the Barbarian (Dark Horse) - sword and sorcery"
+        "text": "Conan — face visible, NORMAL human skin tone, sword"
       },
       {
         "id": "113",
-        "text": "Tarzan (Dark Horse) - jungle lord"
+        "text": "Tarzan — face visible, NORMAL human skin tone, spear"
       },
       {
         "id": "114",
-        "text": "The Shadow (Dark Horse) - 1930s crime fighter"
+        "text": "The Shadow — face visible, NORMAL human skin tone, dual pistols"
       },
       {
         "id": "115",
-        "text": "Magnus Robot Fighter (Dark Horse/Valiant) - 4000 AD hero"
+        "text": "Magnus Robot Fighter — face visible, NORMAL human skin tone, combat strikes"
       },
       {
         "id": "116",
-        "text": "Turok (Dark Horse/Valiant) - dinosaur hunter"
+        "text": "Turok — face visible, NORMAL human skin tone, bow, spear"
       },
       {
         "id": "117",
-        "text": "X-O Manowar (Valiant) - alien armor"
+        "text": "X-O Manowar — helmet open, face visible, NORMAL human skin tone, energy weapon armor"
       },
       {
         "id": "118",
-        "text": "Harbinger (Valiant) - psiots with powers"
+        "text": "Harbinger — face visible, NORMAL human skin tone, psychic powers"
       },
       {
         "id": "119",
-        "text": "Bloodshot (Valiant) - nanite-powered soldier"
+        "text": "Bloodshot — subject face MUST be PALE white skin with red chest accent, firearms"
       },
       {
         "id": "120",
-        "text": "Archer & Armstrong (Valiant) - immortal and drunk"
+        "text": "Archer & Armstrong — face visible, NORMAL human skin tone, bow, melee combat"
       }
     ],
     "randomizeOptions": true,
-    "additionalInstructions": "FINAL RESULT:\nThe final image must display the FULL comic book cover with the subject as the superhero with their face in the hero's characteristic color — if the hero wears a full mask/helmet, it must be removed, open, or partially off so the subject's color-transformed face is clearly visible and recognizable — showing the complete cover with all four corners visible, including all publishing details, dramatic action scene, bold comic art style, and professional cover design."
+    "additionalInstructions": "FINAL RESULT:\nThe final image must display the Full comic book cover, subject recognizable, correct skin/material applied, face visible — showing the complete cover with all four corners visible, including all publishing details, dramatic action scene, bold comic art style, and professional cover design."
   },
   {
     "name": "COMIC SUPERHERO",
