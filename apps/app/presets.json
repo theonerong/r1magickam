@@ -11315,6 +11315,18 @@
     "additionalInstructions": "NOT ALLOWED:\n• Subject photo with flowers placed on it\n• Subject holding flowers\n• Flowers floating around subject\n• Floral overlay on photo\n• Any photorealistic human skin/features\n• Subject behind flowers\n\nTEXTURE:\n• Soft velvet petals\n• Delicate thin petals\n• Thick waxy petals\n• Smooth rose petals\n• Ruffled carnation texture\n• Natural organic botanical texture\n\nDETAIL LEVEL:\n• Face clearly recognizable through flower types and colors\n• Expression suggested by flower arrangement\n• Pose and gesture evident\n• Proportions maintained\n• Fine details (fingers, facial features) all flowers\n• Complete transformation head to toe\n\nFRESHNESS:\n• Flowers appear fresh and vibrant\n• Not wilted or dying\n• Peak bloom appearance\n• Dewy, just-picked quality\n• Living botanical material\n• Fragrant and beautiful\n\nFINAL RESULT:\nThe image should show the subject completely transformed into a three-dimensional sculpture made entirely of fresh flowers - with varied flower types, sizes, and colors creating form and detail, natural botanical textures, and the subject's shape, pose, and identity recognizable through the arrangement and layering of countless blooms, petals, stems, and leaves - NOT a photograph decorated with flowers, but the actual subject reconstructed as an elaborate floral sculpture like a festival parade float or botanical art installation."
   },
   {
+    "name": "FLUXUS",
+    "category": [
+      "ART",
+      "AVANT-GARDE",
+      "CONCEPTUAL"
+    ],
+    "message": "Take a picture and transform the image into a Fluxus-inspired artwork. Preserve subject identity. Use playful, anti-art aesthetics combining everyday objects, text, and humor inspired by George Maciunas and Yoko Ono. Emphasize simplicity, wit, chance operations, and a democratic, accessible approach that blurs boundaries between art and life.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": ""
+  },
+  {
     "name": "FOAM SCULPTURE",
     "category": [
       "MATERIAL",
@@ -32388,6 +32400,18 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "FINAL RESULT:\nA highly detailed black-and-white image composed of structured repeating patterns."
+  },
+  {
+    "name": "ZERO GROUP",
+    "category": [
+      "ART",
+      "MINIMALIST",
+      "EUROPEAN"
+    ],
+    "message": "Take a picture and transform the image into a ZERO Group artwork. Preserve subject identity. Use light, movement, and monochrome surfaces inspired by Heinz Mack, Otto Piene, and Günther Uecker. Emphasize pure white or metallic surfaces, nail reliefs, light patterns, and a meditative, reductive aesthetic that celebrates vibration and luminosity.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": ""
   },
   {
     "name": "ZINE COLLAGE",
