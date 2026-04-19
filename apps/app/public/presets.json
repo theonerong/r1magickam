@@ -17133,6 +17133,99 @@
     "additionalInstructions": "FINAL RESULT:\nA cinematic scene where the subject is the pilot of a massive, anime-inspired mecha rendered in realistic detail. The mech’s design, stance, and behavior are influenced by the selected options and any master prompt overrides, resulting in a unique and visually powerful composition."
   },
   {
+    "name": "MEDICAL VISION EFFECTS",
+    "category": [
+      "MEDICAL SIMULATION",
+      "VISION EFFECTS",
+      "REALITY DISTORTION"
+    ],
+    "message": "Take a picture and transform the image into a realistic simulation of a medical vision condition affecting how the scene is perceived.",
+    "options": [
+      {
+        "id": "001",
+        "text": "Visual Snow Syndrome — full-frame fine static noise, flickering grain, tiny dancing dots, mild afterimages, light sensitivity glow"
+      },
+      {
+        "id": "002",
+        "text": "Migraine Aura — shimmering zigzag patterns, bright flashing arcs, partial blind spots (scotomas), distorted geometry"
+      },
+      {
+        "id": "003",
+        "text": "Macular Degeneration — central vision loss, large blurred or dark spot in the center, peripheral vision intact"
+      },
+      {
+        "id": "004",
+        "text": "Glaucoma — tunnel vision effect, darkened edges, severe peripheral vision loss"
+      },
+      {
+        "id": "005",
+        "text": "Diabetic Retinopathy — floating dark spots, blotches, mild blur, inconsistent focus, patchy vision"
+      },
+      {
+        "id": "006",
+        "text": "Retinal Detachment — shadow or curtain effect creeping across part of the image, flashes of light"
+      },
+      {
+        "id": "007",
+        "text": "Astigmatism — smeared light sources, streaking glare, soft blur across entire image"
+      },
+      {
+        "id": "008",
+        "text": "Cataracts — cloudy, hazy overlay, reduced contrast, muted colors, light bloom"
+      },
+      {
+        "id": "009",
+        "text": "Diplopia (Double Vision) — duplicated offset image, ghosting effect, slight misalignment between layers"
+      },
+      {
+        "id": "010",
+        "text": "Nyctalopia (Night Blindness) — extremely darkened scene, heavy noise, low visibility except bright areas"
+      },
+      {
+        "id": "011",
+        "text": "Photophobia — exaggerated brightness, blown-out highlights, strong glare and halos around light sources"
+      },
+      {
+        "id": "012",
+        "text": "Floaters — semi-transparent drifting shapes, strands, and blobs across the field of view"
+      },
+      {
+        "id": "013",
+        "text": "Color Blindness (Deuteranopia) — reduced green sensitivity, muted reds/greens, altered color palette"
+      },
+      {
+        "id": "014",
+        "text": "Color Blindness (Protanopia) — reduced red perception, darker reds, color confusion"
+      },
+      {
+        "id": "015",
+        "text": "Color Blindness (Tritanopia) — reduced blue/yellow differentiation, unusual color shifts"
+      },
+      {
+        "id": "016",
+        "text": "Palinopsia — strong trailing afterimages following moving objects, persistent visual echoes"
+      },
+      {
+        "id": "017",
+        "text": "Alice in Wonderland Syndrome — warped scale perception, objects appear stretched, shrunken, or distorted"
+      },
+      {
+        "id": "018",
+        "text": "HPPD (Hallucinogen Persisting Perception Disorder) — visual trails, color enhancement, geometric overlays, mild static"
+      },
+      {
+        "id": "019",
+        "text": "Scotoma — localized blind spot(s), black or gray patches obscuring parts of the scene"
+      },
+      {
+        "id": "020",
+        "text": "Chromatic Aberration Vision — color fringing on edges, red/blue separation, distorted focus"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "FINAL RESULT: Apply ONLY the selected condition. The effect must feel medically grounded and perceptually realistic, not artistic or stylized. Preserve the original scene while overlaying or altering vision in a way that accurately reflects how the condition impacts sight."
+  },
+  {
     "name": "MEDIEVAL KNIGHT",
     "category": [
       "HISTORICAL",
