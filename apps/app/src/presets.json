@@ -12759,12 +12759,13 @@
     "additionalInstructions": "FINAL RESULT:\nThe image should depict the subject as the living embodiment of the selected Greek/Roman deity, with all their iconic symbols and divine attributes, in a mythological setting that captures their godly domain and power."
   },
   {
-  "name": "GREETING CARD",
+  "name": "GREETING CARD — PRO",
   "category": [
     "OPTIONS",
     "GREETING CARD",
     "LAYOUT",
-    "PRINT"
+    "PRINT",
+    "PRO"
   ],
   "message": "Take a picture and transform the subject(s) into a printable four-panel greeting card arranged in a 1:1 square layout designed to be folded into a physical card.\n\nMASTER PROMPT RULE:\n• If a master prompt provides specific holiday, tone, message, names, or context — PRIORITIZE and USE that information\n\nGENERAL REQUIREMENTS:\n• Maintain recognizable subject(s)\n• Integrate subject(s) ONLY on the front cover panel\n• Match tone, colors, and visuals to the selected Holiday and Style\n• Treat this as PRINT PRODUCTION LAYOUT, not artistic interpretation\n",
   "randomizeOptions": true,
@@ -12808,6 +12809,13 @@
       ]
     },
     {
+      "title": "TONE MODE",
+      "options": [
+        { "id": "001", "text": "Hallmark Style — sincere, heartfelt, emotional, polished" },
+        { "id": "002", "text": "Funny Style — humorous, witty, playful, slightly exaggerated" }
+      ]
+    },
+    {
       "title": "PAPER SIMULATION",
       "options": [
         { "id": "001", "text": "Matte cardstock — smooth, non-reflective" },
@@ -12819,7 +12827,7 @@
       ]
     }
   ],
-  "additionalInstructions": "FINAL RESULT:\n\nABSOLUTE LAYOUT (NON-NEGOTIABLE):\n• Perfect 1:1 square\n• Exact 2x2 grid\n• Clean, straight panel divisions\n\nPANEL RULES (STRICT — NO EXCEPTIONS):\n\nTOP LEFT (BACK PANEL):\n• COMPLETELY BLANK\n• NO text\n• NO images\n• ONLY paper texture allowed\n\nTOP RIGHT (FRONT COVER):\n• ONLY panel with subject(s)\n• Main design + title text\n\nBOTTOM LEFT (INSIDE MESSAGE — GLYPH INVERSION):\n• MUST contain ALL greeting text\n• DO NOT rotate the panel\n• INSTEAD: render ALL text using upside-down (inverted) characters\n\nGLYPH INVERSION RULE:\n• Convert normal readable text into flipped/inverted Unicode-style characters\n• The text must LOOK upside down while remaining in an upright panel\n\nEXAMPLE (STYLE REFERENCE ONLY):\n• Normal: Happy Birthday\n• Inverted: ʎɐpɥʇɹıq ʎddɐɥ\n\nSTRICT TEXT RULES:\n• NO normal readable text allowed in this panel\n• ALL letters must appear inverted\n• Text must look incorrect when read normally\n• Text should appear correct ONLY when mentally flipped\n\nBOTTOM RIGHT (INSIDE FRONT):\n• COMPLETELY BLANK\n• NO text\n• NO images\n\nFAIL CONDITIONS (INVALID IF ANY OCCUR):\n• ANY content in top-left → FAIL\n• ANY content in bottom-right → FAIL\n• ANY normal readable text in bottom-left → FAIL\n\nSTYLE & MATERIAL:\n• Apply STYLE consistently\n• Apply PAPER texture realistically\n\nQUALITY:\n• Print-ready\n• Ultra sharp text\n• High detail (4K-quality)\n• Clean edges\n• No blur or artifacts"
+  "additionalInstructions": "FINAL RESULT:\n\nABSOLUTE LAYOUT (NON-NEGOTIABLE):\n• Perfect 1:1 square\n• Exact 2x2 grid\n• Clean, straight panel divisions\n\nPANEL RULES (STRICT — NO EXCEPTIONS):\n\nTOP LEFT (BACK PANEL):\n• COMPLETELY BLANK\n• NO text\n• NO images\n• ONLY paper texture allowed\n\nTOP RIGHT (FRONT COVER):\n• ONLY panel with subject(s)\n• Main design + ALL text content\n\nTEXT STRUCTURE (FONT HIERARCHY — STRICT):\n• HEADLINE (PRIMARY MESSAGE):\n  - Large, dominant, immediately readable\n  - Positioned prominently (top or center)\n  - Short phrase (2–8 words preferred)\n\n• BODY TEXT (SUPPORTING MESSAGE):\n  - Smaller than headline\n  - Clearly secondary in size and emphasis\n  - Placed below or separate from headline\n  - 1–3 short lines max\n\n• SIGNATURE LINE (OPTIONAL):\n  - Smallest text size\n  - Positioned at bottom or corner\n  - Example: \"— From John\" or \"Love, Sarah\"\n\n• CLEAR VISUAL CONTRAST between headline and body text is REQUIRED\n\nBOTTOM LEFT (INSIDE MESSAGE PANEL):\n• DESIGN ELEMENTS ONLY\n• NO readable text\n• Decorative graphics, patterns, or subtle themed artwork allowed\n• Must visually match the selected Holiday and Style\n\nBOTTOM RIGHT (INSIDE FRONT):\n• COMPLETELY BLANK\n• NO text\n• NO images\n\nTONE MODE RULES (STRICT):\n\nIF \"HALLMARK STYLE\":\n• Language MUST be sincere, warm, and emotionally genuine\n• Avoid sarcasm, jokes, or irony\n• Use poetic or heartfelt phrasing\n• Focus on relationships, appreciation, gratitude, or love\n\nIF \"FUNNY STYLE\":\n• Language MUST be clearly humorous or witty\n• Can include exaggeration, playful sarcasm, or light jokes\n• Keep it friendly — NOT offensive or mean-spirited\n• Humor should be immediately understandable at a glance\n\nFAIL CONDITIONS (INVALID IF ANY OCCUR):\n• ANY content in top-left → FAIL\n• ANY content in bottom-right → FAIL\n• ANY readable text in bottom-left → FAIL\n• No clear headline/body hierarchy → FAIL\n• Tone does not match selected mode → FAIL\n\nSTYLE & MATERIAL:\n• Apply STYLE consistently\n• Apply PAPER texture realistically\n\nQUALITY:\n• Print-ready\n• Ultra sharp text\n• High detail (4K-quality)\n• Clean edges\n• No blur or artifacts"
   },
   {
     "name": "GRIMMS FAIRY TALE",
