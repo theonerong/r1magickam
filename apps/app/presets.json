@@ -3164,6 +3164,18 @@
     "additionalInstructions": "FINAL RESULT:\nThe image should show the subject transformed into an epic video game boss with a health bar displayed prominently, subject in dramatic boss arena performing an attack, with full video game UI elements, cinematic camera angle, and that epic final boss battle energy that makes players save before entering the arena."
   },
   {
+      "name": "BOTERO STYLE",
+      "category": [
+        "ART",
+        "MODERN",
+        "FIGURATIVE"
+      ],
+      "message": "Take a picture and transform the image into a modern artwork featuring exaggerated, rounded, and voluminous figures with a playful and stylized appearance inspired by the art of Fernando Botero. Emphasize enlarged proportions, smooth curves, and a sense of weight and softness.",
+      "options": [],
+      "randomizeOptions": false,
+      "additionalInstructions": "FINAL RESULT: All subjects should appear with inflated, rounded forms—full faces, thick limbs, and expanded bodies while remaining recognizable. Use bold, rich colors and smooth shading. The composition should feel balanced and slightly whimsical, with a polished painted-art look. Avoid sharp angles—favor soft curves and simplified detail throughout."
+  },
+  {
     "name": "BOUDOIR PHOTOSHOOT",
     "category": [
       "HUMOR",
