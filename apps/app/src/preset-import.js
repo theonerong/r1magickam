@@ -639,29 +639,32 @@ footerSection.innerHTML = `
 
       document.getElementById('select-all-presets').onclick = () => {
         flashBtn('select-all-presets', '#aaa');
-        // Count how many locked presets will be skipped and warn if credits are insufficient
+        // Count locked presets among the current filtered list
         const filteredForCheck = this.getFilteredPresets(availablePresets);
-        let lockedSkippedCount = 0;
+        let lockedCount = 0;
         filteredForCheck.forEach(preset => {
           const isAlreadyImported = this.importedPresets.some(p => p.name === preset.name);
           const isLocked = !isAlreadyImported && !unlockedNames.has(preset.name);
-          if (isLocked) lockedSkippedCount++;
+          if (isLocked) lockedCount++;
         });
         const currentCredits = loadUnlockState().credits || 0;
-        if (lockedSkippedCount > 0 && currentCredits < lockedSkippedCount) {
+        // Decide now — before the spinner — whether locked presets can be included
+        const canSelectLocked = lockedCount > 0 && currentCredits >= lockedCount;
+        if (lockedCount > 0 && !canSelectLocked) {
           showImportMessage(
-            `${lockedSkippedCount} locked preset${lockedSkippedCount !== 1 ? 's' : ''} skipped — you have ${currentCredits} credit${currentCredits !== 1 ? 's' : ''} (need ${lockedSkippedCount}). Select locked presets individually to use your credits.`
+            `${lockedCount} locked preset${lockedCount !== 1 ? 's' : ''} skipped — you have ${currentCredits} credit${currentCredits !== 1 ? 's' : ''} (need ${lockedCount}). Select locked presets individually to use your credits.`
           );
         }
+        const spinnerLabel = canSelectLocked ? 'Selecting all presets...' : 'Selecting all unlocked presets...';
         // Show inline spinner while the list re-renders
-        presetsList.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;padding:30px;gap:12px;"><div class="mk-loading-spinner-sm" style="width:28px;height:28px;min-width:28px;min-height:28px;aspect-ratio:1/1;flex-shrink:0;"></div><span style="color:#aaa;font-size:13px;">Selecting all unlocked presets...</span></div>';
+        presetsList.innerHTML = `<div style="display:flex;align-items:center;justify-content:center;padding:30px;gap:12px;"><div class="mk-loading-spinner-sm" style="width:28px;height:28px;min-width:28px;min-height:28px;aspect-ratio:1/1;flex-shrink:0;"></div><span style="color:#aaa;font-size:13px;">${spinnerLabel}</span></div>`;
         setTimeout(() => {
           const filteredPresets = this.getFilteredPresets(availablePresets);
           filteredPresets.forEach(preset => {
-            // UNLOCK GAME: skip locked presets when selecting all
             const isAlreadyImported = this.importedPresets.some(p => p.name === preset.name);
             const isLocked = !isAlreadyImported && !unlockedNames.has(preset.name);
-            if (!isLocked) {
+            // Select everything if credits cover all locked presets, otherwise skip locked ones
+            if (!isLocked || canSelectLocked) {
               this.checkboxStates.set(preset.name, true);
             }
           });
