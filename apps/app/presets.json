@@ -32501,10 +32501,10 @@
       "MINIMALIST",
       "EUROPEAN"
     ],
-    "message": "Take a picture and transform the image into a ZERO Group artwork. Preserve subject identity. Use light, movement, and monochrome surfaces inspired by Heinz Mack, Otto Piene, and Günther Uecker. Emphasize pure white or metallic surfaces, nail reliefs, light patterns, and a meditative, reductive aesthetic that celebrates vibration and luminosity.",
+    "message": "Take a picture and transform the image into a ZERO Group artwork, a minimalist light-based artwork focused on repetition, texture, and luminous surfaces.  Emphasize monochrome tones, especially white and metallic finishes, with subtle patterns, rhythmic structures, and light interaction.. Preserve subject identity.",
     "options": [],
     "randomizeOptions": false,
-    "additionalInstructions": ""
+    "additionalInstructions": FINAL RESULT: The image should feel clean, meditative, and reductive. Use repeated textures such as raised patterns or structured surfaces, with soft shadows and controlled lighting. Avoid complex colors—favor white, silver, and neutral tones. Maintain recognizable subject structure while simplifying detail into abstract, light-driven forms."
   },
   {
     "name": "ZINE COLLAGE",
