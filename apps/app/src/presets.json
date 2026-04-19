@@ -2015,6 +2015,19 @@
     "additionalInstructions": ""
   },
   {
+    "name": "ARTE INFORMALE",
+    "category": [
+      "ART",
+      "PAINTING",
+      "ABSTRACT",
+      "EUROPEAN"
+    ],
+    "message": "Take a picture and transform the image into an Arte Informale painting. Preserve subject identity within raw, gestural abstraction. Use spontaneous, unstructured mark-making with heavy impasto and earthy tones inspired by Alberto Burri and Jean Fautrier. Emphasize textural surfaces, material experimentation, and primal expressive energy.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": ""
+  },
+  {
     "name": "ARTE POVERA",
     "category": [
       "ART",
@@ -23106,6 +23119,19 @@
       "GRID"
     ],
     "message": "Take a picture of the subject and transform it into a 2×2 grid showing four different emotional states.\n\nEach panel must show the same subject with a different exaggerated emotion chosen from: happy, sad, crying, mad, angry, depressed, shocked, or confused.\n\nThe expressions should be strong and clearly readable: wide smiles, tears, frowns, clenched jaws, or dramatic eye contact.\n\nLighting and framing should stay consistent so it looks like a real emotional photo shoot.\n\nThe final image should look like a professional but humorous acting range card, instantly showing how many moods the subject can portray.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": ""
+  },
+  {
+    "name": "RANGOLI",
+    "category": [
+      "ART",
+      "CULTURAL",
+      "INDIAN",
+      "DECORATIVE"
+    ],
+    "message": "Take a picture and transform the image into Rangoli art. Preserve subject identity within an elaborate floor art design. Use the traditional Indian decorative art of colored powders, flower petals, and rice. Emphasize symmetrical geometric and floral patterns, vibrant colors, and the intricate mandala-like compositions created for festivals and celebrations.",
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
