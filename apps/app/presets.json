@@ -12766,60 +12766,60 @@
       "LAYOUT",
       "PRINT"
     ],
-    "message": "Take a picture and transform the subject(s) into a printable four-panel greeting card arranged in a 1:1 square layout designed to be folded into a physical card.\n\nMASTER PROMPT RULE:\n• If a master prompt provides specific holiday, tone, message, names, or context — PRIORITIZE and USE that information instead of default assumptions\n\nGENERAL REQUIREMENTS:\n• Maintain recognizable subject(s)\n• Integrate subject(s) naturally into the card design\n• Match tone, colors, and visuals to the selected Holiday and Style\n",
+    "message": "Take a picture and transform the subject(s) into a printable four-panel greeting card arranged in a 1:1 square layout designed to be folded into a physical card.\n\nMASTER PROMPT RULE:\n• If a master prompt provides specific holiday, tone, message, names, or context — PRIORITIZE and USE that information\n\nGENERAL REQUIREMENTS:\n• Maintain recognizable subject(s)\n• Integrate subject(s) ONLY on the front cover panel\n• Match tone, colors, and visuals to the selected Holiday and Style\n• Treat this as PRINT PRODUCTION LAYOUT, not artistic interpretation\n",
     "randomizeOptions": true,
     "optionGroups": [
       {
         "title": "HOLIDAY",
         "options": [
-          { "id": "001", "text": "Birthday — festive, colorful, celebratory" },
-          { "id": "002", "text": "Mother’s Day — warm, loving, floral" },
-          { "id": "003", "text": "Father’s Day — bold, warm, appreciative" },
-          { "id": "004", "text": "Valentine’s Day — romantic, soft, heartfelt" },
-          { "id": "005", "text": "Anniversary — elegant, romantic" },
-          { "id": "006", "text": "Graduation — achievement, academic celebration" },
-          { "id": "007", "text": "Christmas — festive, cozy, winter holiday" },
-          { "id": "008", "text": "New Year — fireworks, celebration, fresh start" },
-          { "id": "009", "text": "Thanksgiving — warm autumn, gratitude" },
-          { "id": "010", "text": "Easter — pastel, spring, renewal" },
-          { "id": "011", "text": "Baby Shower — soft, welcoming, gentle" },
-          { "id": "012", "text": "Wedding — elegant, formal, romantic" },
-          { "id": "013", "text": "Get Well Soon — uplifting, calming" },
-          { "id": "014", "text": "Sympathy — respectful, minimal, subdued" },
-          { "id": "015", "text": "Congratulations — celebratory milestone" },
-          { "id": "016", "text": "Retirement — relaxed, life transition" },
-          { "id": "017", "text": "Housewarming — warm, welcoming home" },
-          { "id": "018", "text": "Friendship — fun, casual, heartfelt" },
-          { "id": "019", "text": "Apology — sincere, minimal" },
-          { "id": "020", "text": "Just Because — flexible, thoughtful" }
+        { "id": "001", "text": "Birthday — festive, colorful, celebratory" },
+        { "id": "002", "text": "Mother’s Day — warm, loving, floral" },
+        { "id": "003", "text": "Father’s Day — bold, warm, appreciative" },
+        { "id": "004", "text": "Valentine’s Day — romantic, soft, heartfelt" },
+        { "id": "005", "text": "Anniversary — elegant, romantic" },
+        { "id": "006", "text": "Graduation — achievement, academic celebration" },
+        { "id": "007", "text": "Christmas — festive, cozy, winter holiday" },
+        { "id": "008", "text": "New Year — fireworks, celebration, fresh start" },
+        { "id": "009", "text": "Thanksgiving — warm autumn, gratitude" },
+        { "id": "010", "text": "Easter — pastel, spring, renewal" },
+        { "id": "011", "text": "Baby Shower — soft, welcoming, gentle" },
+        { "id": "012", "text": "Wedding — elegant, formal, romantic" },
+        { "id": "013", "text": "Get Well Soon — uplifting, calming" },
+        { "id": "014", "text": "Sympathy — respectful, minimal, subdued" },
+        { "id": "015", "text": "Congratulations — celebratory milestone" },
+        { "id": "016", "text": "Retirement — relaxed, life transition" },
+        { "id": "017", "text": "Housewarming — warm, welcoming home" },
+        { "id": "018", "text": "Friendship — fun, casual, heartfelt" },
+        { "id": "019", "text": "Apology — sincere, minimal" },
+        { "id": "020", "text": "Just Because — flexible, thoughtful" }
         ]
       },
       {
         "title": "STYLE",
         "options": [
-          { "id": "001", "text": "Elegant — refined typography, soft gradients, minimal decoration" },
-          { "id": "002", "text": "Playful — bright colors, whimsical elements, humorous and fun composition" },
-          { "id": "003", "text": "Modern Minimal — clean layout, lots of white space, subtle accents" },
-          { "id": "004", "text": "Luxury — gold accents, rich tones, premium feel" },
-          { "id": "005", "text": "Vintage — aged textures, muted palette, classic typography" },
-          { "id": "006", "text": "Handmade Craft — paper textures, cutout look, scrapbook feel" },
-          { "id": "007", "text": "Bold Graphic — strong contrast, large typography, poster-like" },
-          { "id": "008", "text": "Cute & Cartoon — soft shapes, rounded forms, friendly tone" }
+        { "id": "001", "text": "Elegant — refined typography, soft gradients" },
+        { "id": "002", "text": "Playful — bright colors, humorous, fun" },
+        { "id": "003", "text": "Modern Minimal — clean, white space" },
+        { "id": "004", "text": "Luxury — gold accents, rich tones" },
+        { "id": "005", "text": "Vintage — aged textures, muted palette" },
+        { "id": "006", "text": "Handmade Craft — scrapbook, paper textures" },
+        { "id": "007", "text": "Bold Graphic — strong contrast, large typography" },
+        { "id": "008", "text": "Cute & Cartoon — soft shapes, friendly tone" }
         ]
       },
       {
         "title": "PAPER SIMULATION",
         "options": [
-          { "id": "001", "text": "Matte cardstock — smooth, non-reflective, soft finish" },
-          { "id": "002", "text": "Glossy photo paper — vibrant colors, slight reflections" },
-          { "id": "003", "text": "Linen textured paper — subtle woven texture" },
-          { "id": "004", "text": "Recycled paper — slight grain, natural tone" },
-          { "id": "005", "text": "Embossed paper — raised elements and tactile surface" },
-          { "id": "006", "text": "Foil-accent paper — metallic highlights (gold/silver accents)" }
+        { "id": "001", "text": "Matte cardstock — smooth, non-reflective" },
+        { "id": "002", "text": "Glossy photo paper — vibrant, slight reflections" },
+        { "id": "003", "text": "Linen textured paper — woven texture" },
+        { "id": "004", "text": "Recycled paper — natural grain" },
+        { "id": "005", "text": "Embossed paper — raised texture" },
+        { "id": "006", "text": "Foil-accent paper — metallic highlights" }
         ]
       }
     ],
-    "additionalInstructions": "FINAL RESULT:\n\nLAYOUT (CRITICAL — DO NOT BREAK):\n• The final image MUST be a perfect 1:1 square divided into a 2x2 grid\n\nPANEL POSITIONS:\n• Top Left: BACK of card — mostly blank or subtle design\n• Top Right: FRONT COVER — main image with subject(s) and large title text\n• Bottom Left: INSIDE MESSAGE — MUST be rotated 180° (upside down relative to full image)\n• Bottom Right: INSIDE FRONT — secondary design, supporting visuals, or continuation of theme\n\nFOLDING LOGIC:\n• The card must assemble correctly when folded horizontally then vertically\n• Orientation must ensure all panels read correctly after folding\n\nTEXT GENERATION:\n• Create a meaningful greeting or short poem matching the selected Holiday\n• Tone MUST match the Holiday and Style\n• If a master prompt provides names, relationships, or context — INCLUDE them\n• Optionally reference visual elements from the image in the message\n\nSTYLE & MATERIAL:\n• Apply the selected STYLE consistently across all panels\n• Simulate the selected PAPER type with realistic texture, lighting, and material response\n\nQUALITY:\n• Clean, print-ready composition\n• Balanced spacing between panels\n• Clear, readable typography\n\nSTRICT RULES:\n• Do NOT break the 2x2 grid\n• Do NOT misplace panel positions\n• Bottom-left text MUST be inverted correctly\n• Maintain subject recognizability. Render at very high detail with crisp, sharp edges. Ensure text is clean, legible, and print-ready. Avoid blur, noise, or compression artifacts. Maintain high clarity across all panels, especially small text areas. Preserve fine texture detail (especially paper simulation). Maintain precise alignment of grid lines and panel edges. Output should resemble a high-resolution (4K-quality) print design."
+    "additionalInstructions": "FINAL RESULT:\n\nABSOLUTE LAYOUT (NON-NEGOTIABLE):\n• Perfect 1:1 square\n• Exact 2x2 grid\n• Clean, straight panel divisions\n\nPANEL RULES (STRICT — NO EXCEPTIONS):\n\nTOP LEFT (BACK PANEL):\n• COMPLETELY BLANK\n• NO text\n• NO images\n• NO subject\n• ONLY plain paper texture allowed\n\nTOP RIGHT (FRONT COVER):\n• ONLY panel with subject(s)\n• Main design + title text\n• No overflow into other panels\n\nBOTTOM LEFT (INSIDE MESSAGE):\n• MUST contain ALL text\n• MUST be rotated EXACTLY 180° (UPSIDE DOWN in final image)\n• Text must appear inverted in the raw image\n• Include greeting/poem matching Holiday\n\nBOTTOM RIGHT (INSIDE FRONT):\n• COMPLETELY BLANK\n• NO text\n• NO images\n\nORIENTATION ENFORCEMENT:\n• Bottom-left panel MUST be upside down\n• If viewed normally, text must look inverted\n\nFAIL CONDITIONS (INVALID IF ANY OCCUR):\n• ANY content in top-left → FAIL\n• ANY content in bottom-right → FAIL\n• Bottom-left NOT inverted → FAIL\n• Misaligned grid → FAIL\n\nSTYLE & MATERIAL:\n• Apply STYLE consistently\n• Apply PAPER texture realistically\n\nQUALITY:\n• Print-ready\n• Ultra sharp text\n• High detail (4K-quality)\n• Clean edges\n• No blur or artifacts"
   },
   {
     "name": "GRIMMS FAIRY TALE",
