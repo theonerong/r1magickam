@@ -7408,6 +7408,18 @@
     "additionalInstructions": ""
   },
   {
+    "name": "DATABENDING",
+    "category": [
+      "DIGITAL",
+      "GLITCH",
+      "EXPERIMENTAL"
+    ],
+    "message": "Take a picture and transform the image using Databending techniques. Preserve subject identity while introducing controlled digital corruption. Open the image data as raw audio or text and reinterpret it, creating colorful distortions, shifted color channels, and fragmented visual artifacts that reveal the hidden structure of digital data.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": ""
+  },
+  {
     "name": "DATAMOSH",
     "category": [
       "OPTIONS",
@@ -12424,6 +12436,19 @@
     "additionalInstructions": ""
   },
   {
+    "name": "GOND ART",
+    "category": [
+      "ART",
+      "CULTURAL",
+      "INDIAN",
+      "TRIBAL"
+    ],
+    "message": "Take a picture and transform the image into Gond Art. Preserve subject identity. Use the traditional art style of the Gond tribe of central India. Fill forms with intricate dots, dashes, and fine lines creating elaborate patterns within bold outlines. Emphasize vibrant colors, nature motifs, and detailed internal patterning inspired by forest life.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": ""
+  },
+  {
     "name": "GOO GOO GAA GAA",
     "category": [
       "HUMOR",
@@ -13602,6 +13627,19 @@
       "AMERICAN"
     ],
     "message": "Take a picture and transform the image into a Hudson River School painting. Preserve subject identity. Place the subject within a grand, luminous American landscape with dramatic skies, pristine wilderness, and golden light inspired by Thomas Cole and Frederic Edwin Church. Emphasize sublime natural beauty, detailed foliage, and romantic atmosphere.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": ""
+  },
+  {
+    "name": "HUICHOL BEADWORK",
+    "category": [
+      "ART",
+      "CULTURAL",
+      "MEXICAN",
+      "INDIGENOUS"
+    ],
+    "message": "Take a picture and transform the image into Huichol Beadwork art. Preserve subject identity. Use the traditional Wixáritari (Huichol) art style of Mexico with intricate bead-by-bead patterns in vivid neon colors. Emphasize psychedelic symmetrical designs, sacred symbols like peyote and deer, and densely packed colorful bead textures.",
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
@@ -15169,6 +15207,19 @@
       "MEXICAN"
     ],
     "message": "Take a picture and transform it into a portrait inspired by Frida Kahlo. Center the subject prominently with symbolic elements drawn from nature or personal identity. Use bold colors, flat backgrounds, and strong outlines. The subject should feel emotionally direct, intimate, and iconic.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": ""
+  },
+  {
+    "name": "KALAMKARI",
+    "category": [
+      "ART",
+      "CULTURAL",
+      "INDIAN",
+      "TEXTILE"
+    ],
+    "message": "Take a picture and transform the image into Kalamkari art. Preserve subject identity. Use the traditional Indian hand-painted or block-printed textile art style. Render with fine pen-like outlines filled with natural dye colors — deep reds, indigo, mustard, and black. Emphasize flowing botanical motifs, mythological scenes, and intricate detail.",
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
@@ -18295,6 +18346,19 @@
     ],
     "randomizeOptions": true,
     "additionalInstructions": "RESTRICTIONS:\n• No text overlays or captions\n• No additional scale changes elsewhere in the image\n• No surreal or abstract styles\n\nFINAL RESULT:\nThe image should look like a normal photograph at first glance, except for one unmistakably wrong-scale object that creates a clean, humorous visual gag."
+  },
+  {
+    "name": "MOLAS",
+    "category": [
+      "ART",
+      "CULTURAL",
+      "TEXTILE",
+      "PANAMANIAN"
+    ],
+    "message": "Take a picture and transform the image into Mola art. Preserve subject identity. Use the traditional reverse-appliqué textile art of the Kuna people of Panama and Colombia. Render with multiple layers of bright, contrasting colors revealed through cut-away fabric layers. Emphasize bold geometric and organic forms with vibrant color combinations.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": ""
   },
   {
     "name": "MONA LISA",
@@ -21888,6 +21952,19 @@
     "additionalInstructions": ""
   },
   {
+    "name": "PATTACHITRA",
+    "category": [
+      "ART",
+      "CULTURAL",
+      "INDIAN",
+      "TRADITIONAL"
+    ],
+    "message": "Take a picture and transform the image into Pattachitra art. Preserve subject identity. Use the traditional scroll painting style from Odisha and West Bengal, India. Render with bold outlines, rich natural pigments, and intricate mythological narrative scenes. Emphasize detailed borders, vibrant reds and yellows, and classical Indian iconography.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": ""
+  },
+  {
     "name": "PEACOCKING",
     "category": [
       "HUMOR",
@@ -22953,6 +23030,18 @@
     "additionalInstructions": "FINAL RESULT:\nA fully reconstructed image made entirely from refracted spectral light, with all shapes defined by prism dispersion rather than solid surfaces."
   },
   {
+    "name": "PROCEDURAL TEXTURE",
+    "category": [
+      "DIGITAL",
+      "3D",
+      "TECHNICAL"
+    ],
+    "message": "Take a picture and transform the image into a Procedural Texture artwork. Preserve subject identity. Render surfaces using mathematically generated textures — Perlin noise, Voronoi cells, marble veins, and wood grain patterns. Emphasize the beauty of algorithmic material generation with photorealistic yet clearly computed surface detail.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": ""
+  },
+  {
     "name": "PRODUCT LABEL",
     "category": [
       "HUMOR",
@@ -23910,6 +23999,19 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "FINAL RESULT:\nA nostalgic futuristic scene inspired by mid-20th century visions of the future."
+  },
+  {
+    "name": "REVERSE GLASS PAINTING",
+    "category": [
+      "ART",
+      "CULTURAL",
+      "FOLK",
+      "GLASS"
+    ],
+    "message": "Take a picture and transform the image into a Reverse Glass Painting. Preserve subject identity. Use the traditional technique of painting on the back of glass, creating a luminous, jewel-like quality. Render with bold outlines, flat vivid colors, and folk art motifs. Emphasize the glossy, translucent surface quality and rich color saturation.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": ""
   },
   {
     "name": "RICK AND MORTY",
