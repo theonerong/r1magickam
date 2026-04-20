@@ -26015,7 +26015,7 @@
     "EFFECT",
     "DISTORTION"
   ],
-  "message": "Transform the image into psychedelic spin art, as if paint were applied and the canvas was spun rapidly in a centrifugal art machine.\n\nMASTER PROMPT RULE:\n• If a master prompt specifies intensity, colors, or focus — PRIORITIZE and USE that information\n\nGENERAL REQUIREMENTS:\n• Maintain partial recognizability unless fully abstracted by option\n• Simulate real centrifugal motion — not random swirl\n• Motion must radiate from a clear center point\n",
+  "message": "Take a picture and transform the image into psychedelic spin art, as if paint were applied and the canvas was spun rapidly in a centrifugal art machine.\n\nMASTER PROMPT RULE:\n• If a master prompt specifies intensity, colors, or focus — PRIORITIZE and USE that information\n\nGENERAL REQUIREMENTS:\n• Maintain partial recognizability unless fully abstracted by option\n• Simulate real centrifugal motion — not random swirl\n• Motion must radiate from a clear center point\n",
   "randomizeOptions": true,
   "optionGroups": [
     {
@@ -28238,7 +28238,7 @@
     "STYLE",
     "EFFECT"
   ],
-  "message": "Transform the subject or scene using a vibrant tie-dye color palette while preserving the original structure and recognizable features.\n\nMASTER PROMPT RULE:\n• If a master prompt provides specific colors, mood, or theme — PRIORITIZE and USE that information\n\nGENERAL REQUIREMENTS:\n• Maintain recognizable subject(s)\n• Do NOT distort proportions or shapes\n• Apply color treatment only — not structural changes\n",
+  "message": "Take a picture and transform the subject or scene using a vibrant tie-dye color palette while preserving the original structure and recognizable features.\n\nMASTER PROMPT RULE:\n• If a master prompt provides specific colors, mood, or theme — PRIORITIZE and USE that information\n\nGENERAL REQUIREMENTS:\n• Maintain recognizable subject(s)\n• Do NOT distort proportions or shapes\n• Apply color treatment only — not structural changes\n",
   "randomizeOptions": true,
   "optionGroups": [
     {
