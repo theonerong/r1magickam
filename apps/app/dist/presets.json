@@ -26008,6 +26008,56 @@
     "additionalInstructions": ""
   },
   {
+  "name": "SPIN ART",
+  "category": [
+    "OPTIONS",
+    "STYLE",
+    "EFFECT",
+    "DISTORTION"
+  ],
+  "message": "Transform the image into psychedelic spin art, as if paint were applied and the canvas was spun rapidly in a centrifugal art machine.\n\nMASTER PROMPT RULE:\n• If a master prompt specifies intensity, colors, or focus — PRIORITIZE and USE that information\n\nGENERAL REQUIREMENTS:\n• Maintain partial recognizability unless fully abstracted by option\n• Simulate real centrifugal motion — not random swirl\n• Motion must radiate from a clear center point\n",
+  "randomizeOptions": true,
+  "optionGroups": [
+    {
+      "title": "SPIN TARGET",
+      "options": [
+        { "id": "001", "text": "Subject Only — subject is spun, background remains stable" },
+        { "id": "002", "text": "Background Only — subject remains intact, background spins" },
+        { "id": "003", "text": "Entire Scene — everything spins together" }
+      ]
+    },
+    {
+      "title": "SPIN STYLE",
+      "options": [
+        { "id": "001", "text": "Classic Radial — smooth circular centrifugal streaks" },
+        { "id": "002", "text": "Paint Splatter — droplets stretch outward into streaks" },
+        { "id": "003", "text": "Liquid Melt — soft flowing blended spin distortion" },
+        { "id": "004", "text": "Sharp Streaks — high-speed stretched lines" },
+        { "id": "005", "text": "Hypnotic Spiral — tight vortex-like rotation" }
+      ]
+    },
+    {
+      "title": "SPIN INTENSITY",
+      "options": [
+        { "id": "001", "text": "Light — subtle motion blur, mostly recognizable" },
+        { "id": "002", "text": "Medium — clear spinning distortion" },
+        { "id": "003", "text": "Heavy — strong centrifugal stretching" },
+        { "id": "004", "text": "Extreme — near-abstract swirl" }
+      ]
+    },
+    {
+      "title": "COLOR MODE",
+      "options": [
+        { "id": "001", "text": "Original Colors — preserve original palette" },
+        { "id": "002", "text": "Enhanced — boosted saturation and contrast" },
+        { "id": "003", "text": "Neon — high-energy psychedelic colors" },
+        { "id": "004", "text": "Tie-Dye Fusion — blended rainbow dye effect" }
+      ]
+    }
+  ],
+  "additionalInstructions": "SPIN PHYSICS (CRITICAL):\n\n• Motion must originate from a SINGLE central axis\n• All streaks must curve or radiate consistently from that center\n• NO random warping — must feel like true rotation\n\nTARGET RULES (STRICT):\n\nIF \"SUBJECT ONLY\":\n• Subject is distorted by spin\n• Background remains stable and undistorted\n\nIF \"BACKGROUND ONLY\":\n• Subject remains sharp and readable\n• Background is fully spun\n\nIF \"ENTIRE SCENE\":\n• Everything follows the same rotational motion\n\nEDGE CONTROL:\n• Do NOT smear entire image into uniform blur\n• Maintain detail near the spin center\n• Outer edges can stretch more dramatically\n\nFAIL CONDITIONS:\n• No clear spin center → FAIL\n• Looks like generic blur instead of rotation → FAIL\n• Subject disappears unintentionally (unless Extreme) → FAIL\n• Mixed or conflicting motion directions → FAIL\n\nQUALITY:\n• Smooth radial motion\n• High detail\n• No pixel tearing or artifacts\n• Visually dynamic and fluid"
+  },
+  {
     "name": "SPONGEBOB SQUAREPANTS",
     "category": [
       "CARTOON",
@@ -28180,6 +28230,50 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+  "name": "TIE-DYE PALETTE",
+  "category": [
+    "COLOR",
+    "STYLE",
+    "EFFECT"
+  ],
+  "message": "Transform the subject or scene using a vibrant tie-dye color palette while preserving the original structure and recognizable features.\n\nMASTER PROMPT RULE:\n• If a master prompt provides specific colors, mood, or theme — PRIORITIZE and USE that information\n\nGENERAL REQUIREMENTS:\n• Maintain recognizable subject(s)\n• Do NOT distort proportions or shapes\n• Apply color treatment only — not structural changes\n",
+  "randomizeOptions": true,
+  "optionGroups": [
+    {
+      "title": "TIE-DYE STYLE",
+      "options": [
+        { "id": "001", "text": "Spiral — classic radial swirl from a central point" },
+        { "id": "002", "text": "Crinkle — chaotic, organic bursts and folds" },
+        { "id": "003", "text": "Stripes — flowing horizontal or diagonal bands" },
+        { "id": "004", "text": "Sunburst — radiating light explosion pattern" },
+        { "id": "005", "text": "Wave — soft flowing gradients like liquid color" },
+        { "id": "006", "text": "Kaleidoscope — symmetrical mirrored color patterns" }
+      ]
+    },
+    {
+      "title": "COLOR INTENSITY",
+      "options": [
+        { "id": "001", "text": "Soft Pastel — light, airy, washed tones" },
+        { "id": "002", "text": "Balanced — vibrant but not overpowering" },
+        { "id": "003", "text": "Neon — extremely bright, high saturation" },
+        { "id": "004", "text": "Vintage Fade — slightly muted, retro wash" }
+      ]
+    },
+    {
+      "title": "COLOR PALETTE",
+      "options": [
+        { "id": "001", "text": "Rainbow — full spectrum multicolor" },
+        { "id": "002", "text": "Warm — reds, oranges, yellows" },
+        { "id": "003", "text": "Cool — blues, greens, purples" },
+        { "id": "004", "text": "Sunset — pink, orange, purple blend" },
+        { "id": "005", "text": "Ocean — teal, blue, aqua tones" },
+        { "id": "006", "text": "Psychedelic — unexpected contrasting color combos" }
+      ]
+    }
+  ],
+  "additionalInstructions": "EFFECT RULES (STRICT):\n\n• Apply tie-dye colors as a surface overlay or texture\n• Colors should blend smoothly with soft transitions\n• Avoid harsh digital edges unless style explicitly calls for it\n• Preserve lighting, shadows, and depth of the original image\n\nSUBJECT PROTECTION:\n• Faces must remain clear and recognizable\n• Important details must NOT be obscured by color overload\n\nFAIL CONDITIONS:\n• Subject becomes unrecognizable → FAIL\n• Colors appear as flat filters instead of blended dye → FAIL\n• Pattern looks like simple gradient instead of tie-dye → FAIL\n\nQUALITY:\n• High detail\n• Smooth color blending\n• No banding or artifacts\n• Visually rich and dynamic"
   },
   {
     "name": "TIKTOK CHALLENGE",
