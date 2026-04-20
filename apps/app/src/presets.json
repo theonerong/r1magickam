@@ -26056,7 +26056,7 @@
     }
   ],
   "additionalInstructions": "SPIN PHYSICS (CRITICAL):\n\n• Apply ROTATIONAL TRANSFORMATION to existing pixels\n• Image must appear physically rotated and stretched from a central axis\n• DO NOT draw, paint, or overlay motion lines\n• DO NOT simulate motion using added streak graphics\n\nANTI-CHEAT RULE (STRICT):\n• Every streak or smear must come from displaced original image content\n• If streaks appear as separate drawn lines → FAIL\n• If background looks \"decorated\" instead of rotated → FAIL\n\nTARGET RULES (STRICT):\n\nIF \"SUBJECT ONLY\":\n• ONLY the subject pixels are rotationally distorted\n• Background pixels remain completely unchanged\n\nIF \"BACKGROUND ONLY\":\n• Background pixels must be physically rotated and stretched\n• Subject must remain sharp, undistorted, and NOT duplicated\n• NO spin lines behind subject — only warped background content\n\nIF \"ENTIRE SCENE\":\n• All pixels follow the same rotational transformation\n\nEDGE CONTROL:\n• Maintain detail near the spin center\n• Increase distortion gradually toward edges\n• Avoid uniform blur — must show directional rotation\n\nFAIL CONDITIONS:\n• No clear spin center → FAIL\n• Use of overlay streaks or drawn lines → FAIL\n• Background not actually warped in \"Background Only\" → FAIL\n• Subject distorted in \"Background Only\" → FAIL\n• Generic blur instead of rotational motion → FAIL\n\nQUALITY:\n• True radial motion\n• High detail\n• No artificial overlays\n• No pixel tearing or artifacts\n• Physically believable spin effect"
-  }.
+  },
   {
     "name": "SPONGEBOB SQUAREPANTS",
     "category": [
