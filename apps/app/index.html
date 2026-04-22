@@ -1343,86 +1343,122 @@ All of the presets are optimized to avoid "camera ran dry" or "content filter" i
         </div>
 
         <!-- Button Settings Submenu (Main Camera + Gallery tabs) -->
-        <div id="button-settings-submenu" class="submenu" style="display: none;">
-            <div class="submenu-content">
-                <div class="submenu-header">
-                    <h3>Button Settings</h3>
-                    <button id="button-settings-back" class="close-button">×</button>
-                </div>
-                <div class="btn-settings-tab-bar">
-                    <button id="btn-tab-cam" class="btn-settings-tab active">Main Camera</button>
-                    <button id="btn-tab-gallery" class="btn-settings-tab">Gallery</button>
-                </div>
-                <!-- Main Camera panel -->
-                <div id="btn-panel-cam" class="btn-settings-panel submenu-list active">
-                    <div class="burst-setting-item">
-                        <label>Button Color</label>
-                        <div style="display: flex; align-items: center; gap: 12px; margin-top: 8px;">
-                            <input type="color" id="cam-btn-color-picker" value="#000000" style="width: 52px; height: 38px; border: none; padding: 2px; cursor: pointer; border-radius: 4px;">
-                            <button id="cam-btn-color-default" class="batch-control-button">Default</button>
-                        </div>
-                    </div>
-                    <div class="burst-setting-item" style="padding-top: 16px;">
-                        <label>Button Opacity: <span id="cam-btn-opacity-value">100%</span></label>
-                        <input type="range" id="cam-btn-opacity-slider" min="0" max="100" value="100" step="1">
-                        <p class="setting-hint">0% = fully transparent, 100% = fully solid</p>
-                    </div>
-                    <div class="burst-setting-item">
-                        <label>Text Color</label>
-                        <div style="display: flex; align-items: center; gap: 12px; margin-top: 8px;">
-                            <input type="color" id="cam-btn-font-color-picker" value="#ffffff" style="width: 52px; height: 38px; border: none; padding: 2px; cursor: pointer; border-radius: 4px;">
-                            <button id="cam-btn-font-color-default" class="batch-control-button">Default</button>
-                        </div>
-                    </div>
-                    <div class="burst-setting-item" style="padding-top: 16px;">
-                        <label>Taps to Hide / Reveal Buttons</label>
-                        <p class="setting-hint">Does not affect the camera switch button (top right).</p>
-                        <div style="display: flex; gap: 10px; margin-top: 8px;">
-                            <button id="cam-tap-single" class="batch-control-button" style="flex: 1;">Single Tap</button>
-                            <button id="cam-tap-double" class="batch-control-button" style="flex: 1;">Double Tap</button>
-                        </div>
-                        <p class="setting-hint" id="cam-tap-current-hint">Current: Single Tap</p>
-                    </div>
-                    <div class="burst-setting-item" style="margin-top: 20px; border-top: 1px solid #333; padding-top: 15px;">
-                        <button id="cam-screen-reset-all" class="batch-control-button" style="width: 100%;">Reset All to Default</button>
-                    </div>
-                </div>
-                <!-- Gallery panel -->
-                <div id="btn-panel-gallery" class="btn-settings-panel submenu-list">
-                    <div class="burst-setting-item">
-                        <label>Button Color</label>
-                        <div style="display: flex; align-items: center; gap: 12px; margin-top: 8px;">
-                            <input type="color" id="viewer-btn-color-picker" value="#000000" style="width: 52px; height: 38px; border: none; padding: 2px; cursor: pointer; border-radius: 4px;">
-                            <button id="viewer-btn-color-default" class="batch-control-button">Default</button>
-                        </div>
-                    </div>
-                    <div class="burst-setting-item" style="padding-top: 16px;">
-                        <label>Button Opacity: <span id="viewer-btn-opacity-value">100%</span></label>
-                        <input type="range" id="viewer-btn-opacity-slider" min="0" max="100" value="100" step="1">
-                        <p class="setting-hint">0% = fully transparent, 100% = fully solid</p>
-                    </div>
-                    <div class="burst-setting-item">
-                        <label>Text Color</label>
-                        <div style="display: flex; align-items: center; gap: 12px; margin-top: 8px;">
-                            <input type="color" id="viewer-btn-font-color-picker" value="#ffffff" style="width: 52px; height: 38px; border: none; padding: 2px; cursor: pointer; border-radius: 4px;">
-                            <button id="viewer-btn-font-color-default" class="batch-control-button">Default</button>
-                        </div>
-                    </div>
-                    <div class="burst-setting-item" style="padding-top: 16px;">
-                        <label>Taps to Hide / Reveal Buttons</label>
-                        <p class="setting-hint">Does not affect the trash (🗑️) and close (×) buttons.</p>
-                        <div style="display: flex; gap: 10px; margin-top: 8px;">
-                            <button id="viewer-tap-single" class="batch-control-button" style="flex: 1;">Single Tap</button>
-                            <button id="viewer-tap-double" class="batch-control-button" style="flex: 1;">Double Tap</button>
-                        </div>
-                        <p class="setting-hint" id="viewer-tap-current-hint">Current: Single Tap</p>
-                    </div>
-                    <div class="burst-setting-item" style="margin-top: 20px; border-top: 1px solid #333; padding-top: 15px;">
-                        <button id="viewer-screen-reset-all" class="batch-control-button" style="width: 100%;">Reset All to Default</button>
-                    </div>
+<div id="button-settings-submenu" class="submenu" style="display: none;">
+    <div class="submenu-content">
+        <div class="submenu-header">
+            <h3>Button Settings</h3>
+            <button id="button-settings-back" class="close-button">×</button>
+        </div>
+        <div class="btn-settings-tab-bar" style="margin-bottom: 2px;">
+            <button id="btn-tab-cam" class="btn-settings-tab active">Main Camera</button>
+            <button id="btn-tab-gallery" class="btn-settings-tab">Gallery</button>
+        </div>
+
+        <div id="btn-panel-cam" class="btn-settings-panel submenu-list active">
+            <div class="burst-setting-item">
+                <label>Button Color</label>
+                <div style="display: flex; align-items: center; gap: 12px; margin-top: 4px;">
+                    <input type="color" id="cam-btn-color-picker" value="#000000" style="width: 52px; height: 38px; border: none; padding: 2px; cursor: pointer; border-radius: 4px;">
+                    <button id="cam-btn-color-default" class="batch-control-button">Default</button>
                 </div>
             </div>
+
+            <div class="burst-setting-item" style="padding-top: 16px;">
+                <label>Button Opacity: <span id="cam-btn-opacity-value">100%</span></label>
+                <input type="range" id="cam-btn-opacity-slider" min="0" max="100" value="100" step="1" style="margin-top: 4px;">
+                <p class="setting-hint">0% = fully transparent, 100% = fully solid</p>
+            </div>
+
+            <div class="burst-setting-item" style="padding-top: 16px;">
+                <label>Text Color</label>
+                <div style="display: flex; align-items: center; gap: 12px; margin-top: 4px;">
+                    <input type="color" id="cam-btn-font-color-picker" value="#ffffff" style="width: 52px; height: 38px; border: none; padding: 2px; cursor: pointer; border-radius: 4px;">
+                    <button id="cam-btn-font-color-default" class="batch-control-button">Default</button>
+                </div>
+            </div>
+
+            <div class="burst-setting-item" style="padding-top: 16px;">
+                <label>Border Color</label>
+                <div style="display: flex; align-items: center; gap: 12px; margin-top: 4px;">
+                    <input type="color" id="cam-btn-border-color-picker" value="#FE5F00" style="width: 52px; height: 38px; border: none; padding: 2px; cursor: pointer; border-radius: 4px;">
+                    <button id="cam-btn-border-color-default" class="batch-control-button">Default</button>
+                </div>
+            </div>
+
+            <div class="burst-setting-item" style="padding-top: 16px;">
+                <label>Border Opacity: <span id="cam-btn-border-opacity-value">100%</span></label>
+                <input type="range" id="cam-btn-border-opacity-slider" min="0" max="100" value="100" step="1" style="margin-top: 4px;">
+                <p class="setting-hint">0% = fully transparent, 100% = fully solid</p>
+            </div>
+
+            <div class="burst-setting-item" style="padding-top: 16px;">
+                <label>Taps to Hide / Reveal Buttons</label>
+                <p class="setting-hint">Does not affect the camera switch button (top right).</p>
+                <div style="display: flex; gap: 10px; margin-top: 4px;">
+                    <button id="cam-tap-single" class="batch-control-button" style="flex: 1;">Single Tap</button>
+                    <button id="cam-tap-double" class="batch-control-button" style="flex: 1;">Double Tap</button>
+                </div>
+                <p class="setting-hint" id="cam-tap-current-hint">Current: Single Tap</p>
+            </div>
+
+            <div class="burst-setting-item" style="margin-top: 20px; border-top: 1px solid #333; padding-top: 15px;">
+                <button id="cam-screen-reset-all" class="batch-control-button" style="width: 100%;">Reset All to Default</button>
+            </div>
         </div>
+
+        <div id="btn-panel-gallery" class="btn-settings-panel submenu-list">
+            <div class="burst-setting-item">
+                <label>Button Color</label>
+                <div style="display: flex; align-items: center; gap: 12px; margin-top: 4px;">
+                    <input type="color" id="viewer-btn-color-picker" value="#000000" style="width: 52px; height: 38px; border: none; padding: 2px; cursor: pointer; border-radius: 4px;">
+                    <button id="viewer-btn-color-default" class="batch-control-button">Default</button>
+                </div>
+            </div>
+
+            <div class="burst-setting-item" style="padding-top: 16px;">
+                <label>Button Opacity: <span id="viewer-btn-opacity-value">100%</span></label>
+                <input type="range" id="viewer-btn-opacity-slider" min="0" max="100" value="100" step="1" style="margin-top: 4px;">
+                <p class="setting-hint">0% = fully transparent, 100% = fully solid</p>
+            </div>
+
+            <div class="burst-setting-item" style="padding-top: 16px;">
+                <label>Text Color</label>
+                <div style="display: flex; align-items: center; gap: 12px; margin-top: 4px;">
+                    <input type="color" id="viewer-btn-font-color-picker" value="#ffffff" style="width: 52px; height: 38px; border: none; padding: 2px; cursor: pointer; border-radius: 4px;">
+                    <button id="viewer-btn-font-color-default" class="batch-control-button">Default</button>
+                </div>
+            </div>
+
+            <div class="burst-setting-item" style="padding-top: 16px;">
+                <label>Border Color</label>
+                <div style="display: flex; align-items: center; gap: 12px; margin-top: 4px;">
+                    <input type="color" id="viewer-btn-border-color-picker" value="#FE5F00" style="width: 52px; height: 38px; border: none; padding: 2px; cursor: pointer; border-radius: 4px;">
+                    <button id="viewer-btn-border-color-default" class="batch-control-button">Default</button>
+                </div>
+            </div>
+
+            <div class="burst-setting-item" style="padding-top: 16px;">
+                <label>Border Opacity: <span id="viewer-btn-border-opacity-value">100%</span></label>
+                <input type="range" id="viewer-btn-border-opacity-slider" min="0" max="100" value="100" step="1" style="margin-top: 4px;">
+                <p class="setting-hint">0% = fully transparent, 100% = fully solid</p>
+            </div>
+
+            <div class="burst-setting-item" style="padding-top: 16px;">
+                <label>Taps to Hide / Reveal Buttons</label>
+                <p class="setting-hint">Does not affect the trash (🗑️) and close (×) buttons.</p>
+                <div style="display: flex; gap: 10px; margin-top: 4px;">
+                    <button id="viewer-tap-single" class="batch-control-button" style="flex: 1;">Single Tap</button>
+                    <button id="viewer-tap-double" class="batch-control-button" style="flex: 1;">Double Tap</button>
+                </div>
+                <p class="setting-hint" id="viewer-tap-current-hint">Current: Single Tap</p>
+            </div>
+
+            <div class="burst-setting-item" style="margin-top: 20px; border-top: 1px solid #333; padding-top: 15px;">
+                <button id="viewer-screen-reset-all" class="batch-control-button" style="width: 100%;">Reset All to Default</button>
+            </div>
+        </div>
+    </div>
+</div>
         
         <!-- Queue Manager Modal -->
         <div id="queue-manager" class="queue-manager" style="display: none;">

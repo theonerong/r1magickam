@@ -12,18 +12,6 @@
     "additionalInstructions": ""
   },
   {
-    "name": "TEST",
-    "category": [
-      "ART",
-      "PAINTING",
-      "CLASSIC"
-    ],
-    "message": "Take a picture and transform the image into a French Impressionist painting. Preserve subject identity. Use loose, visible brushstrokes, soft edges, and blended colors emphasizing natural light and atmosphere. Painterly oil-on-canvas texture with warm, luminous tones.",
-    "options": [],
-    "randomizeOptions": false,
-    "additionalInstructions": ""
-  },
-  {
     "name": "#NOFILTER",
     "category": [
       "OPTIONS",
@@ -932,6 +920,18 @@
       "PARODY"
     ],
     "message": "Take a picture and recreate the classic painting American Gothic. Replace one figure in the painting with the subject. If the subject is male, replace the male figure. If the subject is female, replace the female figure. If two subjects are present, replace both figures accordingly. Preserve the iconic composition, clothing style, background, and serious tone of the original artwork while integrating the subject naturally. The final image should be instantly recognizable as American Gothic with a humorous modern twist.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": ""
+  },
+  {
+    "name": "AMBROTYPE",
+    "category": [
+      "PHOTOGRAPHY",
+      "VINTAGE",
+      "HISTORICAL"
+    ],
+    "message": "Take a picture and transform the image into an Ambrotype photograph. Preserve subject identity. Simulate the 1850s glass-plate photographic process. Render with a delicate, luminous quality on glass, warm sepia tones, and soft detail. Place against a dark velvet backing and within a decorative brass mat and hinged case.",
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
@@ -7537,6 +7537,18 @@
     "additionalInstructions": "FINAL RESULT:\nThe image should look like an authentic photograph taken during that decade, with the subject fully integrated into the era's fashion, culture, and aesthetic."
   },
   {
+    "name": "DECOUPAGE",
+    "category": [
+      "ART",
+      "MIXED MEDIA",
+      "DECORATIVE"
+    ],
+    "message": "Take a picture and transform the image into Decoupage art. Preserve subject identity. Render as if composed of carefully cut and layered paper elements — vintage illustrations, botanical prints, maps, and decorative papers — sealed under a glossy lacquer finish. Emphasize the layered, collaged quality and antique paper textures.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": ""
+  },
+  {
     "name": "DEEP THOUGHTS BY JACK HANDEY",
     "category": [
       "HUMOR",
@@ -12422,6 +12434,46 @@
     "additionalInstructions": ""
   },
   {
+    "name": "GLASS DISTORTION",
+    "category": [
+      "OPTIONS",
+      "STYLE",
+      "EFFECT",
+      "REFRACTION"
+    ],
+    "message": "Take a picture and transform it as if viewed through distorted glass or transparent material.\n\nMASTER PROMPT RULE:\n• If a master prompt specifies material or distortion type — PRIORITIZE and USE that information\n\nGENERAL REQUIREMENTS:\n• Preserve underlying image\n• Distortion must simulate real optical refraction\n",
+    "randomizeOptions": true,
+    "optionGroups": [
+      {
+        "title": "GLASS TYPE",
+        "options": [
+          { "id": "001", "text": "Ripple Glass — wavy surface distortion" },
+          { "id": "002", "text": "Magnifying Lens — localized enlargement" },
+          { "id": "003", "text": "Frosted Glass — blurred diffusion" },
+          { "id": "004", "text": "Cracked Glass — fractured distortion lines" },
+          { "id": "005", "text": "Water Droplets — multiple lens distortions" }
+        ]
+      },
+      {
+        "title": "DISTORTION INTENSITY",
+        "options": [
+          { "id": "001", "text": "Light — subtle warping" },
+          { "id": "002", "text": "Medium — noticeable distortion" },
+          { "id": "003", "text": "Heavy — strong bending of shapes" }
+        ]
+      },
+      {
+        "title": "DISTORTION COVERAGE",
+        "options": [
+          { "id": "001", "text": "Full Surface — entire image affected" },
+          { "id": "002", "text": "Partial Areas — localized distortion zones" },
+          { "id": "003", "text": "Edge Focus — distortion strongest near edges" }
+        ]
+      }
+    ],
+    "additionalInstructions": "OPTICAL RULES:\n\n• Distortion must bend and refract existing pixels\n• Shapes behind glass must shift position realistically\n\nANTI-CHEAT RULES:\n• DO NOT apply simple blur filters\n• DO NOT overlay fake glass textures without distortion\n• Glass must alter geometry of what is behind it\n\nFAIL CONDITIONS:\n• Looks like blur instead of refraction → FAIL\n• Texture added without distortion → FAIL\n• No visible bending of lines → FAIL\n\nQUALITY:\n• Realistic refraction\n• Smooth distortion gradients\n• Clear depth and transparency"
+  },
+  {
     "name": "GLITCH MOSAIC",
     "category": [
       "ART",
@@ -12933,6 +12985,18 @@
   ],
   "randomizeOptions": true,
   "additionalInstructions": "FINAL RESULT:\nA single, highly detailed medical-style anatomical illustration of the subject, where internal biological systems are revealed in layered form within the same image. The selected option determines which system is emphasized, but all elements must remain anatomically aligned, visually integrated, and clearly readable without breaking the single-image rule."
+  },
+  {
+    "name": "GUM BICHROMATE",
+    "category": [
+      "PHOTOGRAPHY",
+      "ALTERNATIVE PROCESS",
+      "FINE ART"
+    ],
+    "message": "Take a picture and transform the image into a Gum Bichromate print. Preserve subject identity. Simulate the hand-coated, painterly photographic process. Render with soft, impressionistic detail, visible brushstrokes in the emulsion, and rich watercolor-like pigment tones. Emphasize the handmade, one-of-a-kind quality with multiple color layers.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": ""
   },
   {
     "name": "GUMBY",
@@ -15844,6 +15908,47 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+  "name": "LIQUID DISPLACEMENT",
+  "category": [
+    "OPTIONS",
+    "STYLE",
+    "EFFECT",
+    "TRANSFORMATION"
+  ],
+  "message": "Take a picture and transform it as if parts of the image are dissolving into or being displaced by liquid.\n\nMASTER PROMPT RULE:\n• If a master prompt specifies liquid type or direction — PRIORITIZE and USE that information\n\nGENERAL REQUIREMENTS:\n• Maintain partial subject recognition unless heavily displaced\n• Motion must follow fluid behavior\n",
+  "randomizeOptions": true,
+  "optionGroups": [
+    {
+      "title": "LIQUID TYPE",
+      "options": [
+        { "id": "001", "text": "Water — clear fluid with smooth flow" },
+        { "id": "002", "text": "Paint — thick, colorful splashes" },
+        { "id": "003", "text": "Ink — wispy diffusion patterns" },
+        { "id": "004", "text": "Mercury — reflective metallic fluid" }
+      ]
+    },
+    {
+      "title": "DISPLACEMENT STYLE",
+      "options": [
+        { "id": "001", "text": "Splash Outward — bursts away from subject" },
+        { "id": "002", "text": "Drip Down — gravity-driven flow" },
+        { "id": "003", "text": "Swirl — fluid motion wrapping around subject" },
+        { "id": "004", "text": "Dissolve — gradual breakup into liquid" }
+      ]
+    },
+    {
+      "title": "INTENSITY",
+      "options": [
+        { "id": "001", "text": "Light — small liquid effects" },
+        { "id": "002", "text": "Medium — clear transformation" },
+        { "id": "003", "text": "Heavy — major portions displaced" },
+        { "id": "004", "text": "Extreme — near full liquid conversion" }
+      ]
+    }
+  ],
+  "additionalInstructions": "FLUID RULES:\n\n• Liquid must flow naturally based on gravity or motion\n• Edges must stretch, drip, or break apart into fluid forms\n\nANTI-CHEAT RULES:\n• DO NOT overlay stock splash graphics\n• Liquid must originate from subject pixels\n• No random blobs disconnected from the subject\n\nFAIL CONDITIONS:\n• Liquid appears pasted on → FAIL\n• No connection between subject and fluid → FAIL\n• Motion ignores gravity or flow direction → FAIL\n\nQUALITY:\n• Smooth fluid motion\n• High detail splashes and edges\n• Realistic blending between solid and liquid"
   },
   {
     "name": "LIQUID MARBLING",
@@ -21203,6 +21308,19 @@
     "additionalInstructions": ""
   },
   {
+    "name": "PAISLEY",
+    "category": [
+      "ART",
+      "TEXTILE",
+      "DECORATIVE",
+      "PATTERN"
+    ],
+    "message": "Take a picture and transform the image into a Paisley pattern artwork. Preserve subject identity within elaborate paisley (boteh) motifs. Use the traditional teardrop-shaped design originating from Persian and Indian textiles. Emphasize intricate internal detailing, flowing curves, rich jewel tones, and the mesmerizing repetition of the iconic paisley form.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": ""
+  },
+  {
     "name": "PALETTE KNIFE",
     "category": [
       "OPTIONS",
@@ -22069,6 +22187,18 @@
     "additionalInstructions": ""
   },
   {
+    "name": "PEN AND INK ILLUSTRATION",
+    "category": [
+      "ILLUSTRATION",
+      "DRAWING",
+      "CLASSIC"
+    ],
+    "message": "Take a picture and transform the image into a Pen and Ink Illustration. Preserve subject identity. Render with fine-nibbed pen using hatching, cross-hatching, stippling, and contour lines on white paper. Emphasize the rich tonal range achievable through varied line density, inspired by classic book illustration and the works of Aubrey Beardsley.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": ""
+  },
+  {
     "name": "PENNIES",
     "category": [
       "TRANSFORMATION",
@@ -22223,6 +22353,18 @@
       "ACTIVITY"
     ],
     "message": "Take a picture and transform it into a printable jigsaw puzzle layout. Preserve the original photograph clearly while overlaying visible puzzle piece cut lines across the entire image.\n\nGenerate a classic jigsaw pattern with interlocking pieces of varied shapes and sizes. Ensure pieces are large enough to be easily cut out and assembled by hand. Avoid overly small or complex pieces. Keep the image centered and unobstructed so the subject remains recognizable even when divided.\n\nUse clean, high-contrast cut lines that are clearly visible on small screens and when printed. Do not add numbers, text, or labels. The final image should look like a ready-to-print puzzle sheet that can be cut out and assembled in real life.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": ""
+  },
+  {
+    "name": "PHOTOGRAM",
+    "category": [
+      "PHOTOGRAPHY",
+      "ALTERNATIVE PROCESS",
+      "ABSTRACT"
+    ],
+    "message": "Take a picture and transform the image into a Photogram. Preserve subject identity as a silhouette-like form. Simulate the camera-less technique of placing objects directly on photographic paper. Render with high-contrast white silhouettes against deep black or blue backgrounds, inspired by Man Ray's Rayographs and László Moholy-Nagy.",
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
@@ -23404,6 +23546,45 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+  "name": "RADIAL ZOOM BURST",
+  "category": [
+    "OPTIONS",
+    "STYLE",
+    "EFFECT",
+    "DISTORTION"
+  ],
+  "message": "Take a picture and transform it into a radial zoom burst effect, as if the image was captured during rapid forward camera zoom.\n\nMASTER PROMPT RULE:\n• If a master prompt specifies focus, direction, or intensity — PRIORITIZE and USE that information\n\nGENERAL REQUIREMENTS:\n• Maintain central focus unless otherwise specified\n• Motion must radiate from a single vanishing point\n",
+  "randomizeOptions": true,
+  "optionGroups": [
+    {
+      "title": "ZOOM TARGET",
+      "options": [
+        { "id": "001", "text": "Subject Focus — subject remains more defined, surroundings stretch" },
+        { "id": "002", "text": "Background Focus — background remains clearer, subject stretches" },
+        { "id": "003", "text": "Full Frame — entire image stretches evenly" }
+      ]
+    },
+    {
+      "title": "ZOOM INTENSITY",
+      "options": [
+        { "id": "001", "text": "Light — subtle streaking" },
+        { "id": "002", "text": "Medium — clear zoom motion" },
+        { "id": "003", "text": "Heavy — strong radial stretch" },
+        { "id": "004", "text": "Extreme — near abstract burst" }
+      ]
+    },
+    {
+      "title": "ZOOM CENTER",
+      "options": [
+        { "id": "001", "text": "Centered — exact middle of frame" },
+        { "id": "002", "text": "Subject Anchored — center aligned to subject" },
+        { "id": "003", "text": "Off-Center — dynamic angled burst" }
+      ]
+    }
+  ],
+  "additionalInstructions": "PHYSICAL RULES:\n\n• Apply radial motion blur from a single vanishing point\n• ALL streaks must radiate outward in straight lines from the center\n\nANTI-CHEAT RULES:\n• DO NOT overlay speed lines or graphics\n• Motion must come from stretching original pixels\n• NO directional blur that is not radial\n\nFAIL CONDITIONS:\n• No clear center point → FAIL\n• Looks like generic blur → FAIL\n• Multiple conflicting directions → FAIL\n\nQUALITY:\n• Clean radial streaks\n• Strong sense of motion\n• High detail retention near center"
   },
   {
     "name": "RAGDOLL",
@@ -26004,6 +26185,18 @@
     "additionalInstructions": ""
   },
   {
+    "name": "SPEED PAINTING",
+    "category": [
+      "DIGITAL",
+      "PAINTING",
+      "CONCEPT ART"
+    ],
+    "message": "Take a picture and transform the image into a Speed Painting. Preserve subject identity. Render with the bold, efficient brushwork of digital concept art speed painting — large gestural strokes, dramatic lighting, atmospheric perspective, and selective detail. Emphasize cinematic mood, dynamic composition, and the energetic spontaneity of rapid digital painting.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": ""
+  },
+  {
     "name": "SPIELBERG FILM",
     "category": [
       "HUMOR",
@@ -26810,6 +27003,18 @@
     "additionalInstructions": ""
   },
   {
+    "name": "STEREOVIEW",
+    "category": [
+      "PHOTOGRAPHY",
+      "VINTAGE",
+      "3D"
+    ],
+    "message": "Take a picture and transform the image into a Victorian Stereoview card. Preserve subject identity. Create a side-by-side stereoscopic pair mounted on period card stock with printed caption below. Render with sepia or albumen print tones, period-appropriate staging, and the characteristic format of 1860s-1890s parlor entertainment.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": ""
+  },
+  {
     "name": "STEVEN UNIVERSE",
     "category": [
       "CARTOON",
@@ -26848,6 +27053,18 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "ABSOLUTE PROHIBITIONS:\n• No missing outlines, bleed, or cut guides\n• No low-contrast or muddy colors\n• No single-sticker outputs\n\nFINAL RESULT:\nThe final image must look like a professionally prepared sticker sheet ready for commercial printing, with clear bleed, cut guides, bold outlines, and multiple expressive sticker versions of the subject."
+  },
+  {
+    "name": "STIPPLE ENGRAVING",
+    "category": [
+      "ART",
+      "PRINTMAKING",
+      "ILLUSTRATION"
+    ],
+    "message": "Take a picture and transform the image into a Stipple Engraving. Preserve subject identity. Render entirely using tiny dots of varying density to create tonal gradations, inspired by 18th-century reproductive engraving. Emphasize delicate dot patterns, fine detail, and the elegant, refined quality of hand-engraved copper plate printing on cream paper.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": ""
   },
   {
     "name": "STL FILE PREVIEW",
@@ -31392,7 +31609,7 @@
     "additionalInstructions": "ABSOLUTE PROHIBITIONS:\n• DO NOT alter the subject’s face\n• DO NOT add facial identifiers, accessories, or markings\n• DO NOT exaggerate the subject’s features\n• DO NOT simplify or reduce surrounding Waldos\n\nFINAL RESULT:\nThe final image must function as a real Where’s Waldo puzzle where the only way to find the subject is by recognizing their real face hidden among many identical Waldos.\n\nSTYLE REQUIREMENTS:"
   },
   {
-    "name": "PHARAOH",
+    "name": "WALK LIKE AN EGYPTIAN",
     "category": [
       "HISTORICAL",
       "ANCIENT",
@@ -31996,6 +32213,18 @@
       "MASTER PROMPT"
     ],
     "message": "Take a picture and transform it into a complete, three-dimensional Wheaties cereal box. The entire box must be fully visible within the frame, including front face, edges, top flap, and box proportions.\n\nDesign the front panel in classic Wheaties style with a bold orange background. Feature the subject prominently as the heroic athlete printed on the box front. The subject must appear integrated into the printed packaging, not floating or cropped.\n\nAdd an absurd, over-the-top achievement based on the subject’s traits, posture, or environment. Display this achievement prominently like a headline.\n\nInclude exaggerated, playful flavor text inspired by cereal-box marketing copy. Use vintage-inspired typography and graphic accents without copying real slogans.\n\nApply realistic cardboard texture, slight wear, subtle creases, and printing imperfections. The box should appear photographed in a real environment. Ensure all text and the subject are readable on a small screen.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": ""
+  },
+  {
+    "name": "WHEAT PASTE ART",
+    "category": [
+      "ART",
+      "STREET ART",
+      "POSTER"
+    ],
+    "message": "Take a picture and transform the image into Wheat Paste street art. Preserve subject identity. Render as a large-scale wheat-pasted poster on an urban wall, with characteristic paper texture, slight peeling edges, and layered over previous posters. Emphasize bold graphic imagery, weathered urban surfaces, and the raw aesthetic of street poster art.",
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
