@@ -28036,6 +28036,50 @@
     "additionalInstructions": ""
   },
   {
+    "name": "SURROUNDED",
+    "category": [
+      "OPTIONS",
+      "STYLE",
+      "COMPOSITION",
+      "RECONSTRUCTION"
+    ],
+    "message": "Take a picture and transform the subject into an object-based mosaic composed entirely of items derived from the surrounding environment.\n\nThe final image must show the subject reconstructed using many smaller objects arranged to form the subject’s shape, placed on a clean background.\n\nMASTER PROMPT RULE:\n• If a master prompt specifies object types, density, or style — PRIORITIZE and USE that information\n\nGENERAL REQUIREMENTS:\n• The subject must be fully formed using objects\n• Objects must act as 'pixels' or 'tiles' to construct the subject\n• Maintain recognizable silhouette and proportions\n",
+    "randomizeOptions": true,
+    "optionGroups": [
+      {
+        "title": "OBJECT SOURCE",
+        "options": [
+          { "id": "001", "text": "Original Objects — only use items visible in the image" },
+          { "id": "002", "text": "Reconstructed Objects — generate similar items based on detected objects" }
+        ]
+      },
+      {
+        "title": "BACKGROUND",
+        "options": [
+          { "id": "001", "text": "White Background — clean white backdrop" },
+          { "id": "002", "text": "Black Background — deep black backdrop" }
+        ]
+      },
+      {
+        "title": "MOSAIC DENSITY",
+        "options": [
+          { "id": "001", "text": "Low — larger objects, more abstract form" },
+          { "id": "002", "text": "Medium — balanced detail and object visibility" },
+          { "id": "003", "text": "High — many small objects forming detailed structure" }
+        ]
+      },
+      {
+        "title": "OBJECT STYLE",
+        "options": [
+          { "id": "001", "text": "Natural Placement — loosely arranged objects" },
+          { "id": "002", "text": "Tight Packing — dense, puzzle-like arrangement" },
+          { "id": "003", "text": "Layered Depth — overlapping objects with depth" }
+        ]
+      }
+    ],
+    "additionalInstructions": "CORE STRUCTURE (CRITICAL):\n\n• The subject must be BUILT from objects — not covered by them\n• Objects must collectively form the silhouette and internal features\n• Background must be completely clean (pure white or pure black)\n\nOBJECT RULES:\n\nIF \"ORIGINAL OBJECTS\":\n• Only use items actually present in the image\n• Reuse them in multiple instances if needed\n\nIF \"RECONSTRUCTED OBJECTS\":\n• Generate visually similar objects based on detected items\n• Example: spoon → multiple varied spoons, plant → varied plants\n\nANTI-CHEAT RULES:\n\n• DO NOT overlay objects on top of an intact subject\n• DO NOT fade the original subject beneath objects\n• DO NOT keep original textures visible\n• Subject must NOT exist except through object composition\n\nSHAPE ENFORCEMENT:\n\n• Maintain accurate proportions of the subject\n• Objects must follow contours of face/body\n• Facial features must be formed using object placement\n\nFAIL CONDITIONS:\n\n• Subject still visible underneath → FAIL\n• Objects floating randomly without forming subject → FAIL\n• Background not clean (white or black) → FAIL\n• Objects used as decoration instead of structure → FAIL\n\nQUALITY:\n\n• Strong silhouette readability\n• Clear object detail\n• Cohesive composition\n• Visually satisfying balance between subject and components"
+  },
+  {
     "name": "SYMBOLISM",
     "category": [
       "ART",
