@@ -14646,3 +14646,289 @@ console.log('AI Camera Styles app initialized!');
   };
 
 })();
+
+// ===== HSV COLOR PICKER =====
+(function () {
+  'use strict';
+
+  // --- Efficient HSV ↔ RGB conversion (branchless math, no lookup tables) ---
+
+  function hsvToRgb(h, s, v) {
+    // h: 0–360, s/v: 0–1  →  [r, g, b]: 0–255 integers
+    const f = (n) => {
+      const k = (n + h / 60) % 6;
+      return (v - v * s * Math.max(0, Math.min(k, 4 - k, 1))) * 255 | 0;
+    };
+    return [f(5), f(3), f(1)];
+  }
+
+  function rgbToHsv(r, g, b) {
+    r /= 255; g /= 255; b /= 255;
+    const max = Math.max(r, g, b), min = Math.min(r, g, b), d = max - min;
+    const s = max ? d / max : 0, v = max;
+    let h = 0;
+    if (d) {
+      if      (max === r) h = ((g - b) / d + 6) % 6;
+      else if (max === g) h = (b - r) / d + 2;
+      else                h = (r - g) / d + 4;
+      h *= 60;
+    }
+    return [h, s, v];
+  }
+
+  function hexToRgb(hex) {
+    const n = parseInt(hex.replace('#', ''), 16);
+    return [(n >> 16) & 255, (n >> 8) & 255, n & 255];
+  }
+
+  function rgbToHex(r, g, b) {
+    return '#' + [r, g, b].map(x => (x | 0).toString(16).padStart(2, '0')).join('');
+  }
+
+  // --- Shared state ---
+  let activeInputId = null;
+  let hue = 0, sat = 1, val = 1;
+  let _originalHex = '#000000';
+
+  const SV_W = 210, SV_H = 185, HUE_H = 18;
+
+  // --- Build popup DOM once ---
+  const popup = document.createElement('div');
+  popup.id = '_hsv-popup';
+  Object.assign(popup.style, {
+    display: 'none', position: 'fixed', zIndex: '99999',
+    background: '#1c1c1c', border: '1px solid #484848',
+    borderRadius: '9px', padding: '10px',
+    boxShadow: '0 8px 28px rgba(0,0,0,0.88)',
+    width: (SV_W + 20) + 'px', boxSizing: 'border-box',
+    userSelect: 'none', WebkitUserSelect: 'none'
+  });
+  popup.innerHTML =
+    '<canvas id="_hsv-sv" width="' + SV_W + '" height="' + SV_H + '" ' +
+      'style="display:block;cursor:crosshair;border-radius:5px 5px 0 0;touch-action:none;"></canvas>' +
+    '<canvas id="_hsv-hue" width="' + SV_W + '" height="' + HUE_H + '" ' +
+      'style="display:block;margin-top:3px;cursor:crosshair;border-radius:0 0 5px 5px;touch-action:none;"></canvas>' +
+    '<div style="display:flex;align-items:center;gap:7px;margin-top:9px;">' +
+      '<div id="_hsv-prev" style="width:32px;height:32px;border-radius:5px;border:1px solid #555;flex-shrink:0;"></div>' +
+      '<input id="_hsv-hex" type="text" maxlength="7" spellcheck="false" ' +
+        'style="flex:1;padding:6px 8px;background:#272727;color:#fff;border:1px solid #555;' +
+               'border-radius:5px;font-size:12px;font-family:monospace;min-width:0;">' +
+      '<button id="_hsv-ok" type="button" ' +
+        'style="padding:6px 12px;background:#2a2a2a;color:#fff;border:1px solid #555;' +
+               'border-radius:5px;cursor:pointer;font-size:15px;flex-shrink:0;">✓</button>' +
+      '<button id="_hsv-cancel" type="button" ' +
+        'style="padding:6px 12px;background:#2a2a2a;color:#ff5555;border:1px solid #555;' +
+               'border-radius:5px;cursor:pointer;font-size:15px;flex-shrink:0;">✕</button>' +
+    '</div>';
+  document.body.appendChild(popup);
+
+  const svCanvas  = document.getElementById('_hsv-sv');
+  const hueCanvas = document.getElementById('_hsv-hue');
+  const prevBox   = document.getElementById('_hsv-prev');
+  const hexInput  = document.getElementById('_hsv-hex');
+  const okBtn     = document.getElementById('_hsv-ok');
+  const cancelBtn = document.getElementById('_hsv-cancel');
+  const svCtx     = svCanvas.getContext('2d');
+  const hueCtx    = hueCanvas.getContext('2d');
+
+  // --- Drawing ---
+  function drawSV() {
+    const [r, g, b] = hsvToRgb(hue, 1, 1);
+    // Horizontal: white → pure hue colour
+    const gH = svCtx.createLinearGradient(0, 0, SV_W, 0);
+    gH.addColorStop(0, '#fff');
+    gH.addColorStop(1, 'rgb(' + r + ',' + g + ',' + b + ')');
+    svCtx.fillStyle = gH;
+    svCtx.fillRect(0, 0, SV_W, SV_H);
+    // Vertical: transparent → black
+    const gV = svCtx.createLinearGradient(0, 0, 0, SV_H);
+    gV.addColorStop(0, 'rgba(0,0,0,0)');
+    gV.addColorStop(1, '#000');
+    svCtx.fillStyle = gV;
+    svCtx.fillRect(0, 0, SV_W, SV_H);
+    // Cursor: outer dark ring + inner white ring
+    const cx = sat * SV_W, cy = (1 - val) * SV_H;
+    svCtx.beginPath(); svCtx.arc(cx, cy, 8, 0, 6.2832);
+    svCtx.strokeStyle = 'rgba(0,0,0,0.55)'; svCtx.lineWidth = 2.5; svCtx.stroke();
+    svCtx.beginPath(); svCtx.arc(cx, cy, 6, 0, 6.2832);
+    svCtx.strokeStyle = '#fff'; svCtx.lineWidth = 2; svCtx.stroke();
+  }
+
+  function drawHue() {
+    // Full spectrum gradient
+    const g = hueCtx.createLinearGradient(0, 0, SV_W, 0);
+    for (let i = 0; i <= 6; i++) g.addColorStop(i / 6, 'hsl(' + (i * 60) + ',100%,50%)');
+    hueCtx.fillStyle = g;
+    hueCtx.fillRect(0, 0, SV_W, HUE_H);
+    // Cursor: thin white bar with dark outline
+    const x = (hue / 360) * SV_W;
+    hueCtx.fillStyle = 'rgba(0,0,0,0.45)';
+    hueCtx.fillRect(x - 3, 0, 6, HUE_H);
+    hueCtx.fillStyle = '#fff';
+    hueCtx.fillRect(x - 2, 0, 4, HUE_H);
+  }
+
+  function clamp(v, lo, hi) { return v < lo ? lo : v > hi ? hi : v; }
+
+  function commitColor() {
+    const [r, g, b] = hsvToRgb(hue, sat, val);
+    const hex = rgbToHex(r, g, b);
+    prevBox.style.background = hex;
+    hexInput.value = hex;
+    if (activeInputId) {
+      const inp = document.getElementById(activeInputId);
+      if (inp) {
+        inp.value = hex; // triggers patched setter → updates swatch background
+        inp.dispatchEvent(new Event('input', { bubbles: true }));
+      }
+    }
+  }
+
+  function redrawAndCommit() { drawSV(); drawHue(); commitColor(); }
+
+  // rAF throttle — collapses multiple pointer events into one draw per frame
+  let _rafPending = false;
+  let _pendingDraw = null;
+  function scheduleRedraw(drawFn) {
+    _pendingDraw = drawFn;
+    if (!_rafPending) {
+      _rafPending = true;
+      requestAnimationFrame(function () {
+        _rafPending = false;
+        if (_pendingDraw) { _pendingDraw(); _pendingDraw = null; }
+        commitColor();
+      });
+    }
+  }
+
+  // --- Pointer drag for SV canvas ---
+  svCanvas.addEventListener('pointerdown', (e) => {
+    svCanvas.setPointerCapture(e.pointerId);
+    const r = svCanvas.getBoundingClientRect();
+    sat = clamp((e.clientX - r.left) / SV_W, 0, 1);
+    val = clamp(1 - (e.clientY - r.top) / SV_H, 0, 1);
+    redrawAndCommit(); // immediate on first touch — no rAF delay
+  });
+  svCanvas.addEventListener('pointermove', (e) => {
+    if (e.buttons > 0) {
+      const r = svCanvas.getBoundingClientRect();
+      sat = clamp((e.clientX - r.left) / SV_W, 0, 1);
+      val = clamp(1 - (e.clientY - r.top) / SV_H, 0, 1);
+      scheduleRedraw(drawSV); // hue bar unchanged — skip redrawing it
+    }
+  });
+
+  // --- Pointer drag for hue bar ---
+  hueCanvas.addEventListener('pointerdown', (e) => {
+    hueCanvas.setPointerCapture(e.pointerId);
+    const r = hueCanvas.getBoundingClientRect();
+    hue = clamp((e.clientX - r.left) / SV_W, 0, 1) * 360;
+    redrawAndCommit(); // immediate on first touch — no rAF delay
+  });
+  hueCanvas.addEventListener('pointermove', (e) => {
+    if (e.buttons > 0) {
+      const r = hueCanvas.getBoundingClientRect();
+      hue = clamp((e.clientX - r.left) / SV_W, 0, 1) * 360;
+      scheduleRedraw(function () { drawSV(); drawHue(); }); // hue changed — both canvases need redraw
+    }
+  });
+
+  // --- Hex text field ---
+  hexInput.addEventListener('input', (e) => {
+    const v = e.target.value.trim();
+    if (/^#[0-9a-fA-F]{6}$/.test(v)) {
+      const [r, g, b] = hexToRgb(v);
+      [hue, sat, val] = rgbToHsv(r, g, b);
+      drawSV(); drawHue();
+      prevBox.style.background = v;
+      if (activeInputId) {
+        const inp = document.getElementById(activeInputId);
+        if (inp) {
+          inp.value = v;
+          inp.dispatchEvent(new Event('input', { bubbles: true }));
+        }
+      }
+    }
+  });
+  hexInput.addEventListener('keydown', (e) => { if (e.key === 'Enter') closePopup(); });
+
+  // Close on ✓ button or click outside
+  okBtn.addEventListener('click', closePopup);
+  cancelBtn.addEventListener('click', () => {
+    if (activeInputId) {
+      const inp = document.getElementById(activeInputId);
+      if (inp) {
+        inp.value = _originalHex;
+        inp.dispatchEvent(new Event('input', { bubbles: true }));
+      }
+    }
+    closePopup();
+  });
+  document.addEventListener('pointerdown', (e) => {
+    if (popup.style.display === 'none') return;
+    if (!popup.contains(e.target) && !e.target.classList.contains('hsv-swatch-btn')) {
+      closePopup();
+    }
+  }, true);
+
+  function closePopup() {
+    popup.style.display = 'none';
+    activeInputId = null;
+  }
+
+  // --- Open picker when a swatch button is tapped ---
+  function openPicker(btn) {
+    activeInputId = btn.dataset.for;
+    const inp = document.getElementById(activeInputId);
+    const hex = (inp && inp.value) ? inp.value : '#000000';
+    const [r, g, b] = hexToRgb(hex);
+    [hue, sat, val] = rgbToHsv(r, g, b);
+
+    // Position popup so it stays on screen
+    const rect  = btn.getBoundingClientRect();
+    const popW  = SV_W + 20;
+    const popH  = SV_H + HUE_H + 70;
+    let left    = rect.left;
+    let top     = rect.bottom + 5;
+    if (left + popW > window.innerWidth  - 8) left = window.innerWidth  - popW - 8;
+    if (top  + popH > window.innerHeight - 8) top  = rect.top - popH - 5;
+    if (top < 8) top = 8;
+    if (left < 8) left = 8;
+    popup.style.left = left + 'px';
+    popup.style.top  = top  + 'px';
+    _originalHex = (inp && inp.value) ? inp.value : '#000000';
+    popup.style.display = 'block';
+    redrawAndCommit();
+  }
+
+  // Single delegated click listener for all swatch buttons
+  document.addEventListener('click', (e) => {
+    if (e.target.classList.contains('hsv-swatch-btn')) openPicker(e.target);
+  });
+
+  // --- Patch the .value setter on each hidden input so the swatch
+  //     background always stays in sync when existing code sets values
+  //     (default buttons, reset-all, sync-on-open functions, etc.) ---
+  [
+    'cam-btn-color-picker',
+    'cam-btn-font-color-picker',
+    'cam-btn-border-color-picker',
+    'viewer-btn-color-picker',
+    'viewer-btn-font-color-picker',
+    'viewer-btn-border-color-picker'
+  ].forEach(function (id) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    let _v = el.getAttribute('value') || '#000000';
+    Object.defineProperty(el, 'value', {
+      configurable: true,
+      get: function () { return _v; },
+      set: function (v) {
+        _v = v;
+        const swatch = document.querySelector('.hsv-swatch-btn[data-for="' + id + '"]');
+        if (swatch) swatch.style.background = v;
+      }
+    });
+  });
+
+})();
