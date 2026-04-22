@@ -534,9 +534,16 @@ const STORAGE_KEY = 'r1_camera_styles';
 
 // Local storage key (for the ARRAY of favorite style names)
 let favoriteStyles = []; 
+let _favoriteStylesSet = new Set(); // Fast O(1) lookup mirror for favoriteStyles
+let _stylesListCache = null;        // Cached result of getStylesLists()
+let _stylesDataVersion = 0;         // Incremented whenever presets/visibility/favorites change
+let _stylesListCacheVersion = -1;   // Version when cache was last built
+let _listDOMVersion = -1;           // _stylesDataVersion when the menu DOM was last fully built
+let _listDOMIsFiltered = false;     // true when the current menu DOM was built with a filter active
 const FAVORITE_STYLES_KEY = 'r1_camera_favorites';
 const VISIBLE_PRESETS_KEY = 'r1_camera_visible_presets';
 let visiblePresets = []; // Array of preset names that should be shown
+let _visiblePresetsSet = new Set(); // Fast O(1) lookup mirror for visiblePresets
 let isVisiblePresetsSubmenuOpen = false;
 let currentVisiblePresetsIndex = 0;
 let visiblePresetsFilterText = '';
@@ -3388,9 +3395,11 @@ async function loadStyles() {
     if (hasImports || hasModifications) {
         // Merge factory presets with user modifications
         CAMERA_PRESETS = await mergePresetsWithStorage();
+        _stylesDataVersion++;
     } else {
         // First time user - don't load anything yet
         CAMERA_PRESETS = [];
+        _stylesDataVersion++;
         
         // Show a message that they need to import presets
         setTimeout(async () => {
@@ -3448,6 +3457,7 @@ async function loadStyles() {
             favoriteStyles = []; 
         }
     }
+    _favoriteStylesSet = new Set(favoriteStyles);
     
     loadLastUsedStyle(); 
     
@@ -3472,6 +3482,7 @@ async function loadStyles() {
     const validPresetNames = new Set(CAMERA_PRESETS.map(p => p.name));
     const originalLength = visiblePresets.length;
     visiblePresets = visiblePresets.filter(name => validPresetNames.has(name));
+    _visiblePresetsSet = new Set(visiblePresets);
     
     // If we removed any invalid names, save the cleaned list
     if (originalLength !== visiblePresets.length) {
@@ -3636,6 +3647,8 @@ async function mergePresetsWithStorage() {
 
 // Save visible presets to localStorage
 function saveVisiblePresets() {
+    _visiblePresetsSet = new Set(visiblePresets);
+    _stylesDataVersion++;
     try {
         localStorage.setItem(VISIBLE_PRESETS_KEY, JSON.stringify(visiblePresets));
     } catch (err) {
@@ -3645,7 +3658,7 @@ function saveVisiblePresets() {
 
 // Get only visible presets
 function getVisiblePresets() {
-    return CAMERA_PRESETS.filter(preset => visiblePresets.includes(preset.name));
+    return CAMERA_PRESETS.filter(preset => _visiblePresetsSet.has(preset.name));
 }
 
 // Save resolution setting
@@ -3860,23 +3873,22 @@ function loadResolution() {
 }
 
 function getStylesLists() {
-    const presets = CAMERA_PRESETS.filter(p => visiblePresets.includes(p.name));
-    
+    if (_stylesListCache && _stylesListCacheVersion === _stylesDataVersion) {
+        return _stylesListCache;
+    }
+    const presets = CAMERA_PRESETS.filter(p => _visiblePresetsSet.has(p.name));
     const sortedAll = presets.slice().sort((a, b) => a.name.localeCompare(b.name));
-    
     const favorites = sortedAll.filter(p => isFavoriteStyle(p.name));
-    
     const regular = sortedAll.filter(p => !isFavoriteStyle(p.name));
-
-    return { favorites, regular };
+    _stylesListCache = { favorites, regular };
+    _stylesListCacheVersion = _stylesDataVersion;
+    return _stylesListCache;
 }
 
 function getSortedPresets() {
     const { favorites, regular } = getStylesLists();
-    // Filter to only visible presets
-    const visibleFavorites = favorites.filter(p => visiblePresets.includes(p.name));
-    const visibleRegular = regular.filter(p => visiblePresets.includes(p.name));
-    return [...visibleFavorites, ...visibleRegular];
+    // getStylesLists already filters to visible presets — just combine them
+    return [...favorites, ...regular];
 }
 
 // Get the current preset's position in the sorted array
@@ -3970,10 +3982,13 @@ function saveFavoriteStyle(styleName) {
     
     if (index > -1) {
         favoriteStyles.splice(index, 1);
+        _favoriteStylesSet.delete(styleName);
     } else {
         favoriteStyles.push(styleName);
+        _favoriteStylesSet.add(styleName);
     }
 
+    _stylesDataVersion++;
     localStorage.setItem(FAVORITE_STYLES_KEY, JSON.stringify(favoriteStyles));
     
     // Save current scroll position before repopulating
@@ -4005,7 +4020,7 @@ function loadLastUsedStyle() {
 
 // Check if style is favorited
 function isFavoriteStyle(styleName) {
-    return favoriteStyles.includes(styleName);
+    return _favoriteStylesSet.has(styleName);
 }
 
 // Get random preset index from favorites (or all presets if no favorites)
@@ -5023,7 +5038,7 @@ async function saveCustomPreset() {
     CAMERA_PRESETS.push(newPreset);
     
     // Add to visible presets (always make new presets visible by default)
-    if (!visiblePresets.includes(newPreset.name)) {
+    if (!_visiblePresetsSet.has(newPreset.name)) {
       visiblePresets.push(newPreset.name);
     }
   }
@@ -5098,7 +5113,7 @@ async function deleteCustomPreset() {
   
   // If we deleted the current preset, switch to first visible preset
   if (wasCurrentPreset) {
-    const visiblePresetObjects = CAMERA_PRESETS.filter(p => visiblePresets.includes(p.name));
+    const visiblePresetObjects = CAMERA_PRESETS.filter(p => _visiblePresetsSet.has(p.name));
     if (visiblePresetObjects.length > 0) {
       currentPresetIndex = CAMERA_PRESETS.findIndex(p => p.name === visiblePresetObjects[0].name);
     } else if (CAMERA_PRESETS.length > 0) {
@@ -5106,7 +5121,7 @@ async function deleteCustomPreset() {
       currentPresetIndex = 0;
     }
   }
-
+  
   // Always update the camera footer after deletion
   updatePresetDisplay();
 
@@ -5141,7 +5156,7 @@ async function deleteCustomPreset() {
   }
 }
 
-function populateVisiblePresetsList() {
+function populateVisiblePresetsList(skipScrollSync = false) {
   const list = document.getElementById('visible-presets-list');
   
   // Save current scroll position from the scroll container (like favorites does)
@@ -5191,7 +5206,7 @@ const allPresets = CAMERA_PRESETS.filter(p => {
     const checkbox = document.createElement('input');
     checkbox.type = 'checkbox';
     checkbox.className = 'master-prompt-checkbox';
-    checkbox.checked = visiblePresets.includes(preset.name);
+    checkbox.checked = _visiblePresetsSet.has(preset.name);
     checkbox.style.marginRight = '3vw';
     
     const name = document.createElement('span');
@@ -5218,14 +5233,16 @@ const allPresets = CAMERA_PRESETS.filter(p => {
   
   const countElement = document.getElementById('visible-presets-count');
   if (countElement) {
-    const visibleCount = sorted.filter(p => visiblePresets.includes(p.name)).length;
+    const visibleCount = sorted.filter(p => _visiblePresetsSet.has(p.name)).length;
     countElement.textContent = visibleCount;
   }
   
-// Update selection after render
-  setTimeout(() => {
-    updateVisiblePresetsSelection();
-  }, 50);
+// Update selection after render — skipped when caller manages scroll position itself
+  if (!skipScrollSync) {
+    setTimeout(() => {
+      updateVisiblePresetsSelection();
+    }, 50);
+  }
 }
 
 function toggleVisiblePreset(presetName, isVisible) {
@@ -5244,7 +5261,7 @@ function toggleVisiblePreset(presetName, isVisible) {
   const currentPreset = CAMERA_PRESETS[currentPresetIndex];
   if (currentPreset && !isVisible && currentPreset.name === presetName) {
     // Current preset was made invisible - switch to first visible preset
-    const visiblePresetObjects = CAMERA_PRESETS.filter(p => visiblePresets.includes(p.name));
+    const visiblePresetObjects = CAMERA_PRESETS.filter(p => _visiblePresetsSet.has(p.name));
     if (visiblePresetObjects.length > 0) {
       // Find index of first visible preset in CAMERA_PRESETS
       currentPresetIndex = CAMERA_PRESETS.findIndex(p => p.name === visiblePresetObjects[0].name);
@@ -5257,9 +5274,10 @@ function toggleVisiblePreset(presetName, isVisible) {
   const scrollContainer = document.querySelector('#visible-presets-submenu .submenu-list');
   const scrollPosition = scrollContainer ? scrollContainer.scrollTop : 0;
   
-  populateVisiblePresetsList(); // Update the current submenu list
+  // Pass true to skip the internal scrollIntoView — we restore the position ourselves below
+  populateVisiblePresetsList(true);
   
-  // Restore scroll position after repopulating - use requestAnimationFrame to ensure DOM is updated
+  // Restore scroll position after repopulating
   if (scrollContainer) {
     requestAnimationFrame(() => {
       scrollContainer.scrollTop = scrollPosition;
@@ -7743,26 +7761,9 @@ async function reinitializeCamera() {
       videoTrack = null;
     }
 
-    // Get a temporary stream so the browser reveals real camera device IDs
-    let tempStream = null;
-    try {
-      tempStream = await navigator.mediaDevices.getUserMedia({ video: true });
-    } catch (e) {
-      console.warn('Could not get temp stream for device enumeration:', e);
-    }
-
-    // Enumerate cameras now that a stream is active — real device IDs are available
-    await enumerateCameras();
-
-    // Stop the temporary stream before starting the real one
-    if (tempStream) {
-      tempStream.getTracks().forEach(track => track.stop());
-    }
-
-    // Small pause to let the browser fully release the temp stream
-    await new Promise(resolve => setTimeout(resolve, 200));
-
-    // Start the real camera stream with full device constraints
+    // Open the correct camera directly — no temporary stream needed.
+    // The original device IDs from initCamera are still valid and will
+    // open the right camera without any front-camera cycling flash.
     const constraints = getCameraConstraints();
     stream = await navigator.mediaDevices.getUserMedia(constraints);
 
@@ -7777,6 +7778,7 @@ async function reinitializeCamera() {
           setTimeout(resolve, 100);
         }).catch((err) => {
           console.error('Video reinit error:', err);
+          applyVideoTransform();
           resolve();
         });
       } else {
@@ -7789,6 +7791,7 @@ async function reinitializeCamera() {
             setTimeout(resolve, 100);
           } catch (err) {
             console.error('Video reinit error:', err);
+            applyVideoTransform();
             resolve();
           }
         };
@@ -7797,6 +7800,21 @@ async function reinitializeCamera() {
     });
 
     video.style.display = 'block';
+
+    // NOW that the real camera stream is active, re-enumerate cameras.
+    // This gives us real device IDs so switchCamera() works correctly after
+    // returning from the gallery or menu — without opening any extra camera.
+    await enumerateCameras();
+
+    // Keep currentCameraIndex in sync with the camera that actually opened.
+    if (videoTrack) {
+      const trackSettings = videoTrack.getSettings ? videoTrack.getSettings() : {};
+      if (trackSettings.deviceId && availableCameras.length > 0) {
+        const matchIdx = availableCameras.findIndex(c => c.deviceId === trackSettings.deviceId);
+        if (matchIdx !== -1) currentCameraIndex = matchIdx;
+      }
+    }
+
     console.log('Camera fully re-initialized. Available cameras:', availableCameras.length);
 
   } catch (err) {
@@ -7830,25 +7848,9 @@ async function reinitializeCamera() {
 async function resumeCamera() {
   if (video) {
     try {
-      // Get a temporary stream first so enumerateDevices() can return real device IDs.
-      // Without an active stream, browsers hide camera device IDs for privacy,
-      // which causes switchCamera() to fail after closing the gallery.
-      let tempStream = null;
-      try {
-        tempStream = await navigator.mediaDevices.getUserMedia({ video: true });
-      } catch (e) {
-        console.warn('Could not get temp stream for device enumeration:', e);
-      }
-
-      // Re-enumerate cameras now that a stream is active — real device IDs will be returned
-      await enumerateCameras();
-
-      // Stop the temporary stream before starting the real one
-      if (tempStream) {
-        tempStream.getTracks().forEach(track => track.stop());
-      }
-
-      // Restart the camera with the correct constraints (proper device IDs now available)
+      // Open the camera directly using current constraints.
+      // No temporary stream needed — the original device IDs are still valid
+      // and open the right camera without any front-camera cycling flash.
       const constraints = getCameraConstraints();
       stream = await navigator.mediaDevices.getUserMedia(constraints);
       
@@ -7856,7 +7858,6 @@ async function resumeCamera() {
       videoTrack = stream.getVideoTracks()[0];
 
       await new Promise((resolve) => {
-        // If metadata is already available, don't wait for the event
         if (video.readyState >= 1) {
           video.play().then(() => {
             applyVideoTransform();
@@ -7864,6 +7865,7 @@ async function resumeCamera() {
             setTimeout(resolve, 100);
           }).catch((err) => {
             console.error('Video resume error:', err);
+            applyVideoTransform();
             resolve();
           });
         } else {
@@ -7876,15 +7878,28 @@ async function resumeCamera() {
               setTimeout(resolve, 100);
             } catch (err) {
               console.error('Video resume error:', err);
+              applyVideoTransform();
               resolve();
             }
           };
-          // Safety timeout so we never hang forever
           setTimeout(resolve, 3000);
         }
       });
       
       video.style.display = 'block';
+
+      // Re-enumerate cameras now that the real stream is active.
+      // This populates real device IDs so switchCamera() works correctly.
+      await enumerateCameras();
+
+      // Keep currentCameraIndex in sync with the camera that actually opened.
+      if (videoTrack) {
+        const trackSettings = videoTrack.getSettings ? videoTrack.getSettings() : {};
+        if (trackSettings.deviceId && availableCameras.length > 0) {
+          const matchIdx = availableCameras.findIndex(c => c.deviceId === trackSettings.deviceId);
+          if (matchIdx !== -1) currentCameraIndex = matchIdx;
+        }
+      }
             
     } catch (err) {
       console.error('Failed to resume camera:', err);
@@ -9164,26 +9179,44 @@ function showUnifiedMenu() {
   if (capturedImage && capturedImage.style.display === 'block') {
     resetToCamera();
   }
-  
-  populateStylesList();
-  // Initialize styles count display
-  const stylesCountElement = document.getElementById('styles-count');
-  if (stylesCountElement) {
-    const { favorites, regular } = getStylesLists();
-    const totalVisible = favorites.length + regular.length;
-    stylesCountElement.textContent = totalVisible;
-  }
+
   updateResolutionDisplay();
   updateBurstDisplay();
   updateMasterPromptDisplay();
   updateTimerDisplay();
-  
+
   isMenuOpen = true;
   menuScrollEnabled = true;
-  
-  pauseCamera();
-  cancelTimerCountdown();
-  menu.style.display = 'flex';
+
+  // Peek at whether the list is already current so we know before doing any work
+  const menuList = document.getElementById('menu-styles-list');
+  const willFastPath = !styleFilterText && !mainMenuFilterByCategory &&
+      !_listDOMIsFiltered &&
+      _listDOMVersion === _stylesDataVersion &&
+      menuList?.children.length > 0;
+
+  if (willFastPath) {
+    // List is already correct — just update the active highlight and show
+    pauseCamera();
+    cancelTimerCountdown();
+    menu.style.display = 'flex';
+    populateStylesList();
+    // Defer hiding so the browser has time to actually paint the spinner
+    // before it disappears — without this, the spinner shows and hides
+    // in the same frame and the user never sees it.
+    setTimeout(() => hideLoadingOverlay(), 50);
+  } else {
+    // List needs a full rebuild — show the loading overlay IMMEDIATELY so the user
+    // sees a spinner at once rather than a frozen camera or settings screen.
+    showLoadingOverlay('Opening menu...');
+    pauseCamera();
+    cancelTimerCountdown();
+    menu.style.display = 'flex';
+    setTimeout(() => {
+      populateStylesList();
+      hideLoadingOverlay();
+    }, 30);
+  }
 }
 
 async function hideUnifiedMenu() {
@@ -9262,10 +9295,22 @@ function hideSettingsSubmenu() {
     return;
   }
   
-  document.getElementById('settings-submenu').style.display = 'none';
+// Show the spinner IMMEDIATELY — it paints over the settings screen,
+  // which is still visible at this point. This is intentional: we keep
+  // settings visible during the 30ms paint window so the overlay appears
+  // on top of settings, not on top of the camera behind it.
+  showLoadingOverlay('Opening menu...');
+
   isSettingsSubmenuOpen = false;
   currentSettingsIndex = 0;
-  showUnifiedMenu();
+
+  // Wait one paint frame so the browser renders the spinner over settings,
+  // THEN hide settings and open the menu. The overlay stays up until
+  // showUnifiedMenu hides it once the list is ready.
+  setTimeout(() => {
+    document.getElementById('settings-submenu').style.display = 'none';
+    showUnifiedMenu();
+  }, 30);
 }
 
 // Show Timer Settings submenu
@@ -9598,6 +9643,12 @@ function _syncBtnSettingsCamTab() {
   if (opacityValue) opacityValue.textContent = s.opacity + '%';
   if (fontColorPicker) fontColorPicker.value = s.fontColor;
   if (tapHint) tapHint.textContent = 'Current: ' + (s.tapMode === 'single' ? 'Single Tap' : 'Double Tap');
+  const camBorderPicker = document.getElementById('cam-btn-border-color-picker');
+  const camBorderOpacitySlider = document.getElementById('cam-btn-border-opacity-slider');
+  const camBorderOpacityValue = document.getElementById('cam-btn-border-opacity-value');
+  if (camBorderPicker) camBorderPicker.value = s.borderColor || '#FE5F00';
+  if (camBorderOpacitySlider) camBorderOpacitySlider.value = s.borderOpacity !== undefined ? s.borderOpacity : 100;
+  if (camBorderOpacityValue) camBorderOpacityValue.textContent = (s.borderOpacity !== undefined ? s.borderOpacity : 100) + '%';
   updateCamTapHighlight(s.tapMode || 'double');
 }
 
@@ -9613,6 +9664,12 @@ function _syncBtnSettingsGalleryTab() {
   if (opacityValue) opacityValue.textContent = s.opacity + '%';
   if (fontColorPicker) fontColorPicker.value = s.fontColor;
   if (tapHint) tapHint.textContent = 'Current: ' + (s.tapMode === 'single' ? 'Single Tap' : 'Double Tap');
+  const viewerBorderPicker = document.getElementById('viewer-btn-border-color-picker');
+  const viewerBorderOpacitySlider = document.getElementById('viewer-btn-border-opacity-slider');
+  const viewerBorderOpacityValue = document.getElementById('viewer-btn-border-opacity-value');
+  if (viewerBorderPicker) viewerBorderPicker.value = s.borderColor || '#FE5F00';
+  if (viewerBorderOpacitySlider) viewerBorderOpacitySlider.value = s.borderOpacity !== undefined ? s.borderOpacity : 100;
+  if (viewerBorderOpacityValue) viewerBorderOpacityValue.textContent = (s.borderOpacity !== undefined ? s.borderOpacity : 100) + '%';
   updateViewerTapHighlight(s.tapMode || 'double');
 }
 
@@ -10007,16 +10064,55 @@ function getPresetHistory(presetName) {
   return selectionHistory[presetName] || [];
 }
 
+function _escapeHTML(str) {
+    return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+
+function buildStyleItemHTML(preset, indexMap, activeIndex) {
+    const originalIndex = indexMap.get(preset);
+    const activeClass = originalIndex === activeIndex ? ' active' : '';
+    const favText = isFavoriteStyle(preset.name) ? '⭐' : '☆';
+    const isUserPreset = (preset.internal === false);
+    const editAction = isUserPreset ? 'builder' : 'edit';
+    const editText = isUserPreset ? 'Builder' : 'Edit';
+    const escapedName = _escapeHTML(preset.name);
+    return `<div class="style-item${activeClass}" data-index="${originalIndex}"><button class="style-favorite" data-action="favorite" data-style-name="${escapedName}">${favText}</button><span class="style-name">${escapedName}</span><button class="style-edit" data-action="${editAction}" data-index="${originalIndex}">${editText}</button></div>`;
+}
+
 function populateStylesList(preserveScroll = false) {
     const list = document.getElementById('menu-styles-list');
-    list.innerHTML = '';
-    
-    // Remove old event listener if it exists
-    list.replaceWith(list.cloneNode(false));
-    const newList = document.getElementById('menu-styles-list');
-    
-    const fragment = document.createDocumentFragment();
-    
+
+    // ── Fast path: skip full rebuild if data hasn't changed and no filter is active ──
+    // The existing DOM nodes are still correct — just update the active highlight.
+    if (!styleFilterText && !mainMenuFilterByCategory &&
+        !_listDOMIsFiltered &&
+        _listDOMVersion === _stylesDataVersion &&
+        list.children.length > 0) {
+
+        // Update active-preset highlight — touch only the 2 affected nodes, not all 800
+        const prevActive = list.querySelector('.style-item.active');
+        if (prevActive) prevActive.classList.remove('active');
+        const activeItem = list.querySelector(`.style-item[data-index="${currentPresetIndex}"]`);
+        if (activeItem) activeItem.classList.add('active');
+
+        if (!preserveScroll) {
+            currentMenuIndex = 0;
+        }
+        return;
+    }
+
+    // Slow path: rebuild needed — caller is responsible for visual feedback via overlay
+    _doPopulateStylesList(list, preserveScroll);
+}
+
+function _doPopulateStylesList(list, preserveScroll) {
+    // Remove the old delegation listener before re-adding below
+    list.removeEventListener('click', handleStyleListClick);
+    const newList = list;
+
+    // Build a one-time index map so we can look up originalIndex in O(1)
+    const presetIndexMap = new Map(CAMERA_PRESETS.map((p, i) => [p, i]));
+
     const { favorites, regular } = getStylesLists();
     
     const filteredFavorites = favorites.filter(preset => {
@@ -10058,58 +10154,55 @@ function populateStylesList(preserveScroll = false) {
       return true;
     });
 
-    if (filteredFavorites.length > 0) {
-        const favHeader = document.createElement('h3');
-        favHeader.className = 'menu-section-header';
-        favHeader.textContent = '★ Favorites';
-        fragment.appendChild(favHeader);
+    // Build HTML as a string — 10x faster than createElement for large lists
+    const parts = [];
 
+    if (filteredFavorites.length > 0) {
+        parts.push('<h3 class="menu-section-header">★ Favorites</h3>');
         filteredFavorites.forEach(preset => {
-            const item = createStyleMenuItemFast(preset);
-            fragment.appendChild(item);
+            parts.push(buildStyleItemHTML(preset, presetIndexMap, currentPresetIndex));
         });
     }
 
     if (filtered.length > 0) {
-        const regularHeader = document.createElement('h3');
-        regularHeader.className = 'menu-section-header';
-        regularHeader.textContent = styleFilterText ? 'Search Results' : 'All Styles';
-        fragment.appendChild(regularHeader);
-        
+        const headerText = styleFilterText ? 'Search Results' : 'All Styles';
+        parts.push(`<h3 class="menu-section-header">${headerText}</h3>`);
         filtered.forEach(preset => {
-            const item = createStyleMenuItemFast(preset);
-            fragment.appendChild(item);
+            parts.push(buildStyleItemHTML(preset, presetIndexMap, currentPresetIndex));
         });
     }
-    
+
     if (filtered.length === 0 && filteredFavorites.length === 0 && styleFilterText) {
-      const emptyMsg = document.createElement('div');
-      emptyMsg.className = 'menu-empty';
-      emptyMsg.textContent = 'No styles found';
-      fragment.appendChild(emptyMsg);
+        parts.push('<div class="menu-empty">No styles found</div>');
     }
 
-    newList.appendChild(fragment);
+    newList.innerHTML = parts.join('');
+
+    // Track whether this DOM represents a filtered or full list
+    _listDOMIsFiltered = !!(styleFilterText || mainMenuFilterByCategory);
+    if (!_listDOMIsFiltered) {
+        _listDOMVersion = _stylesDataVersion;
+    }
     
     // Single event listener for the entire list using event delegation
     newList.addEventListener('click', handleStyleListClick);
 
-// Update styles count - count from getStylesLists which already filters to visible
-  const stylesCountElement = document.getElementById('styles-count');
-  if (stylesCountElement) {
-    const { favorites, regular } = getStylesLists();
-    const totalVisible = favorites.length + regular.length;
-    stylesCountElement.textContent = totalVisible;
-  }
+    // Update styles count — reuse already-computed filtered lists
+    const stylesCountElement = document.getElementById('styles-count');
+    if (stylesCountElement) {
+        stylesCountElement.textContent = filteredFavorites.length + filtered.length;
+    }
     
     if (!preserveScroll) {
         currentMenuIndex = 0;
-        updateMenuSelection();
+        if (isMenuOpen && document.getElementById('unified-menu')?.style.display === 'flex') {
+            updateMenuSelection();
+        }
     }
 }
 
-function createStyleMenuItemFast(preset) {
-    const originalIndex = CAMERA_PRESETS.findIndex(p => p === preset);
+function createStyleMenuItemFast(preset, indexMap) {
+    const originalIndex = indexMap ? indexMap.get(preset) : CAMERA_PRESETS.findIndex(p => p === preset);
     
     const item = document.createElement('div');
     item.className = 'style-item';
@@ -10494,7 +10587,7 @@ async function deleteStyle() {
       
       // If we deleted the currently active preset, switch to first visible preset
       if (deletingCurrentPreset) {
-        const visiblePresetObjects = CAMERA_PRESETS.filter(p => visiblePresets.includes(p.name));
+        const visiblePresetObjects = CAMERA_PRESETS.filter(p => _visiblePresetsSet.has(p.name));
         if (visiblePresetObjects.length > 0) {
           currentPresetIndex = CAMERA_PRESETS.findIndex(p => p.name === visiblePresetObjects[0].name);
         } else if (CAMERA_PRESETS.length > 0) {
@@ -10505,9 +10598,9 @@ async function deleteStyle() {
       
       // After deletion, verify the current preset is visible; if not, switch to first visible
       const currentPreset = CAMERA_PRESETS[currentPresetIndex];
-      if (currentPreset && !visiblePresets.includes(currentPreset.name)) {
+      if (currentPreset && !_visiblePresetsSet.has(currentPreset.name)) {
         // Current preset is not visible, switch to first visible preset
-        const visiblePresetObjects = CAMERA_PRESETS.filter(p => visiblePresets.includes(p.name));
+        const visiblePresetObjects = CAMERA_PRESETS.filter(p => _visiblePresetsSet.has(p.name));
         if (visiblePresetObjects.length > 0) {
           currentPresetIndex = CAMERA_PRESETS.findIndex(p => p.name === visiblePresetObjects[0].name);
         } else if (CAMERA_PRESETS.length > 0) {
@@ -11293,7 +11386,7 @@ window.addEventListener('load', () => {
   const camScreenResetAllBtn = document.getElementById('cam-screen-reset-all');
   if (camScreenResetAllBtn) {
     camScreenResetAllBtn.addEventListener('click', () => {
-      window._camBtnSettings = { bgColor: '#000000', opacity: 100, fontColor: '#ffffff', tapMode: 'single' };
+      window._camBtnSettings = { bgColor: '#000000', opacity: 100, fontColor: '#ffffff', tapMode: 'single', borderColor: '#FE5F00', borderOpacity: 100 };
       const colorPickerEl = document.getElementById('cam-btn-color-picker');
       const opacitySliderEl = document.getElementById('cam-btn-opacity-slider');
       const opacityValueEl = document.getElementById('cam-btn-opacity-value');
@@ -11304,7 +11397,45 @@ window.addEventListener('load', () => {
       if (opacityValueEl) opacityValueEl.textContent = '100%';
       if (fontColorPickerEl) fontColorPickerEl.value = '#ffffff';
       if (tapHintEl) tapHintEl.textContent = 'Current: Single Tap';
+      const camBorderPickerEl = document.getElementById('cam-btn-border-color-picker');
+      const camBorderOpacitySliderEl = document.getElementById('cam-btn-border-opacity-slider');
+      const camBorderOpacityValueEl = document.getElementById('cam-btn-border-opacity-value');
+      if (camBorderPickerEl) camBorderPickerEl.value = '#FE5F00';
+      if (camBorderOpacitySliderEl) camBorderOpacitySliderEl.value = 100;
+      if (camBorderOpacityValueEl) camBorderOpacityValueEl.textContent = '100%';
       updateCamTapHighlight('single');
+      window._applyCamBtnStyles();
+      localStorage.setItem('r1_cam_btn_settings', JSON.stringify(window._camBtnSettings));
+    });
+  }
+
+  const camBtnBorderColorPicker = document.getElementById('cam-btn-border-color-picker');
+  if (camBtnBorderColorPicker) {
+    camBtnBorderColorPicker.addEventListener('input', (e) => {
+      window._camBtnSettings.borderColor = e.target.value;
+      window._applyCamBtnStyles();
+      localStorage.setItem('r1_cam_btn_settings', JSON.stringify(window._camBtnSettings));
+    });
+  }
+
+  const camBtnBorderColorDefaultBtn = document.getElementById('cam-btn-border-color-default');
+  if (camBtnBorderColorDefaultBtn) {
+    camBtnBorderColorDefaultBtn.addEventListener('click', () => {
+      window._camBtnSettings.borderColor = '#FE5F00';
+      const pickerEl = document.getElementById('cam-btn-border-color-picker');
+      if (pickerEl) pickerEl.value = '#FE5F00';
+      window._applyCamBtnStyles();
+      localStorage.setItem('r1_cam_btn_settings', JSON.stringify(window._camBtnSettings));
+    });
+  }
+
+  const camBtnBorderOpacitySlider = document.getElementById('cam-btn-border-opacity-slider');
+  if (camBtnBorderOpacitySlider) {
+    camBtnBorderOpacitySlider.addEventListener('input', (e) => {
+      const val = parseInt(e.target.value);
+      window._camBtnSettings.borderOpacity = val;
+      const opacityValueEl = document.getElementById('cam-btn-border-opacity-value');
+      if (opacityValueEl) opacityValueEl.textContent = val + '%';
       window._applyCamBtnStyles();
       localStorage.setItem('r1_cam_btn_settings', JSON.stringify(window._camBtnSettings));
     });
@@ -11393,7 +11524,7 @@ window.addEventListener('load', () => {
   const viewerScreenResetAllBtn = document.getElementById('viewer-screen-reset-all');
   if (viewerScreenResetAllBtn) {
     viewerScreenResetAllBtn.addEventListener('click', () => {
-      window._viewerBtnSettings = { bgColor: '#000000', opacity: 100, fontColor: '#ffffff', tapMode: 'single' };
+      window._viewerBtnSettings = { bgColor: '#000000', opacity: 100, fontColor: '#ffffff', tapMode: 'single', borderColor: '#FE5F00', borderOpacity: 100 };
       const colorPickerEl = document.getElementById('viewer-btn-color-picker');
       const opacitySliderEl = document.getElementById('viewer-btn-opacity-slider');
       const opacityValueEl = document.getElementById('viewer-btn-opacity-value');
@@ -11404,7 +11535,45 @@ window.addEventListener('load', () => {
       if (opacityValueEl) opacityValueEl.textContent = '100%';
       if (fontColorPickerEl) fontColorPickerEl.value = '#ffffff';
       if (tapHintEl) tapHintEl.textContent = 'Current: Single Tap';
+      const viewerBorderPickerEl = document.getElementById('viewer-btn-border-color-picker');
+      const viewerBorderOpacitySliderEl = document.getElementById('viewer-btn-border-opacity-slider');
+      const viewerBorderOpacityValueEl = document.getElementById('viewer-btn-border-opacity-value');
+      if (viewerBorderPickerEl) viewerBorderPickerEl.value = '#FE5F00';
+      if (viewerBorderOpacitySliderEl) viewerBorderOpacitySliderEl.value = 100;
+      if (viewerBorderOpacityValueEl) viewerBorderOpacityValueEl.textContent = '100%';
       updateViewerTapHighlight('single');
+      window._applyViewerBtnStyles();
+      localStorage.setItem('r1_viewer_btn_settings', JSON.stringify(window._viewerBtnSettings));
+    });
+  }
+
+  const viewerBtnBorderColorPicker = document.getElementById('viewer-btn-border-color-picker');
+  if (viewerBtnBorderColorPicker) {
+    viewerBtnBorderColorPicker.addEventListener('input', (e) => {
+      window._viewerBtnSettings.borderColor = e.target.value;
+      window._applyViewerBtnStyles();
+      localStorage.setItem('r1_viewer_btn_settings', JSON.stringify(window._viewerBtnSettings));
+    });
+  }
+
+  const viewerBtnBorderColorDefaultBtn = document.getElementById('viewer-btn-border-color-default');
+  if (viewerBtnBorderColorDefaultBtn) {
+    viewerBtnBorderColorDefaultBtn.addEventListener('click', () => {
+      window._viewerBtnSettings.borderColor = '#FE5F00';
+      const pickerEl = document.getElementById('viewer-btn-border-color-picker');
+      if (pickerEl) pickerEl.value = '#FE5F00';
+      window._applyViewerBtnStyles();
+      localStorage.setItem('r1_viewer_btn_settings', JSON.stringify(window._viewerBtnSettings));
+    });
+  }
+
+  const viewerBtnBorderOpacitySlider = document.getElementById('viewer-btn-border-opacity-slider');
+  if (viewerBtnBorderOpacitySlider) {
+    viewerBtnBorderOpacitySlider.addEventListener('input', (e) => {
+      const val = parseInt(e.target.value);
+      window._viewerBtnSettings.borderOpacity = val;
+      const opacityValueEl = document.getElementById('viewer-btn-border-opacity-value');
+      if (opacityValueEl) opacityValueEl.textContent = val + '%';
       window._applyViewerBtnStyles();
       localStorage.setItem('r1_viewer_btn_settings', JSON.stringify(window._viewerBtnSettings));
     });
@@ -11707,9 +11876,13 @@ window.addEventListener('load', () => {
 
   const visiblePresetsFilter = document.getElementById('visible-presets-filter');
   if (visiblePresetsFilter) {
+    let visiblePresetsFilterDebounce = null;
     visiblePresetsFilter.addEventListener('input', (e) => {
       visiblePresetsFilterText = e.target.value;
-      populateVisiblePresetsList();
+      if (visiblePresetsFilterDebounce) clearTimeout(visiblePresetsFilterDebounce);
+      visiblePresetsFilterDebounce = setTimeout(() => {
+        populateVisiblePresetsList();
+      }, 150);
     });
     
     // Hide category footer when field is focused (keyboard appears)
@@ -12429,6 +12602,7 @@ const result = await presetImporter.import();
           
           // Reload presets (merges imported + modifications)
           CAMERA_PRESETS = await mergePresetsWithStorage();
+          _stylesDataVersion++;
           
           // Clean up visible presets after reloading and add only NEW presets
           const validPresetNames = new Set(CAMERA_PRESETS.map(p => p.name));
@@ -12438,7 +12612,7 @@ const result = await presetImporter.import();
           
           // Add ONLY truly NEW presets (ones that didn't exist before import) as visible by default
           CAMERA_PRESETS.forEach(preset => {
-            if (!presetsBeforeImport.has(preset.name) && !visiblePresets.includes(preset.name)) {
+            if (!presetsBeforeImport.has(preset.name) && !_visiblePresetsSet.has(preset.name)) {
               visiblePresets.push(preset.name);
             }
           });
@@ -12452,7 +12626,7 @@ const result = await presetImporter.import();
           // Update styles count
           const stylesCountElement = document.getElementById('styles-count');
           if (stylesCountElement) {
-            const visibleCount = CAMERA_PRESETS.filter(p => visiblePresets.includes(p.name)).length;
+            const visibleCount = CAMERA_PRESETS.filter(p => _visiblePresetsSet.has(p.name)).length;
             stylesCountElement.textContent = visibleCount;
           }
 
@@ -12908,6 +13082,7 @@ const result = await presetImporter.import();
             
             // Reload presets
             CAMERA_PRESETS = await mergePresetsWithStorage();
+            _stylesDataVersion++;
             
             // Clean up visible presets after reloading and add only NEW presets
             const validPresetNames = new Set(CAMERA_PRESETS.map(p => p.name));
@@ -12917,7 +13092,7 @@ const result = await presetImporter.import();
             
             // Add ONLY truly NEW presets (ones that didn't exist before import) as visible by default
             CAMERA_PRESETS.forEach(preset => {
-              if (!presetsBeforeImport.has(preset.name) && !visiblePresets.includes(preset.name)) {
+              if (!presetsBeforeImport.has(preset.name) && !_visiblePresetsSet.has(preset.name)) {
                 visiblePresets.push(preset.name);
               }
             });
@@ -13115,9 +13290,13 @@ const result = await presetImporter.import();
   
   const presetFilter = document.getElementById('preset-filter');
   if (presetFilter) {
+    let presetFilterDebounce = null;
     presetFilter.addEventListener('input', (e) => {
       presetFilterText = e.target.value;
-      populatePresetList();
+      if (presetFilterDebounce) clearTimeout(presetFilterDebounce);
+      presetFilterDebounce = setTimeout(() => {
+        populatePresetList();
+      }, 150);
     });
     
     // Hide footer and controls when user starts typing (keyboard appears)
@@ -13878,6 +14057,7 @@ document.getElementById('factory-reset-button').addEventListener('click', async 
     
     // Reload presets from imported list or factory presets
     CAMERA_PRESETS = await mergePresetsWithStorage();
+    _stylesDataVersion++;
     
     // Reset visible presets to show everything (fresh start)
     if (CAMERA_PRESETS.length > 0) {
@@ -13997,7 +14177,7 @@ document.addEventListener('DOMContentLoaded', function() {
 // --- Gallery Image Viewer Screen: Button Styles ---
 
 (function() {
-  const DEFAULT_VIEWER_SETTINGS = { bgColor: '#000000', opacity: 100, fontColor: '#ffffff', tapMode: 'single' };
+  const DEFAULT_VIEWER_SETTINGS = { bgColor: '#000000', opacity: 100, fontColor: '#ffffff', tapMode: 'single', borderColor: '#FE5F00', borderOpacity: 100 };
   let viewerSettings = { ...DEFAULT_VIEWER_SETTINGS };
   try {
     const saved = localStorage.getItem('r1_viewer_btn_settings');
@@ -14019,6 +14199,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const a = s.opacity / 100;
     const bg = `rgba(${r}, ${g}, ${b}, ${a})`;
     const fc = s.fontColor;
+    const bc = hexToRgb(s.borderColor || '#FE5F00');
+    const ba = (s.borderOpacity !== undefined ? s.borderOpacity : 100) / 100;
+    const border = `rgba(${bc.r}, ${bc.g}, ${bc.b}, ${ba})`;
 
     let styleEl = document.getElementById('_viewer-btn-custom-style');
     if (!styleEl) {
@@ -14027,10 +14210,11 @@ document.addEventListener('DOMContentLoaded', function() {
       document.head.appendChild(styleEl);
     }
     styleEl.textContent = `
-      .viewer-carousel-button { background: ${bg} !important; color: ${fc} !important; }
+      .viewer-carousel-button { background: ${bg} !important; color: ${fc} !important; border-color: ${border} !important; }
       .viewer-carousel-label { color: ${fc} !important; }
-      .viewer-left-carousel-btn { background: ${bg} !important; color: ${fc} !important; }
-      .viewer-bottom-btn { background: ${bg} !important; color: ${fc} !important; }
+      .viewer-left-carousel-btn:not(.enabled) { background: ${bg} !important; border-color: ${border} !important; }
+      .viewer-left-carousel-btn { color: ${fc} !important; }
+      .viewer-bottom-btn { background: ${bg} !important; color: ${fc} !important; border-color: ${border} !important; }
       .viewer-delete-button { background: ${bg} !important; color: ${fc} !important; }
       .viewer-close-button { background: ${bg} !important; color: ${fc} !important; }
     `;
@@ -14095,7 +14279,7 @@ console.log('AI Camera Styles app initialized!');
 (function() {
   // ── Load saved settings
 
-  const DEFAULT_SETTINGS = { bgColor: '#000000', opacity: 100, fontColor: '#ffffff', tapMode: 'single' };
+  const DEFAULT_SETTINGS = { bgColor: '#000000', opacity: 100, fontColor: '#ffffff', tapMode: 'single', borderColor: '#FE5F00', borderOpacity: 100 };
   let settings = { ...DEFAULT_SETTINGS };
   try {
     const saved = localStorage.getItem('r1_cam_btn_settings');
@@ -14120,8 +14304,10 @@ console.log('AI Camera Styles app initialized!');
     const a = s.opacity / 100;
     const bg = `rgba(${r}, ${g}, ${b}, ${a})`;
     const fc = s.fontColor;
+    const bc = hexToRgb(s.borderColor || '#FE5F00');
+    const ba = (s.borderOpacity !== undefined ? s.borderOpacity : 100) / 100;
+    const border = `rgba(${bc.r}, ${bc.g}, ${bc.b}, ${ba})`;
 
-    // Use an injected <style> tag so CSS class-based active states (enabled, random-active, etc.) still work
     let styleEl = document.getElementById('_cam-btn-custom-style');
     if (!styleEl) {
       styleEl = document.createElement('style');
@@ -14129,11 +14315,11 @@ console.log('AI Camera Styles app initialized!');
       document.head.appendChild(styleEl);
     }
     styleEl.textContent = `
-      .left-cam-btn:not(.enabled) { background: ${bg} !important; }
+      .left-cam-btn:not(.enabled) { background: ${bg} !important; border-color: ${border} !important; }
       .left-cam-btn { color: ${fc} !important; }
-      .mode-button:not(.random-active):not(.active):not(.burst-active):not(.timer-active):not(.camera-multi-active):not(.combine-active):not(.layer-active) { background: ${bg} !important; }
+      .mode-button:not(.random-active):not(.active):not(.burst-active):not(.timer-active):not(.camera-multi-active):not(.combine-active):not(.layer-active) { background: ${bg} !important; border-color: ${border} !important; }
       .mode-button { color: ${fc} !important; }
-      .camera-button { background: ${bg} !important; }
+      .camera-button { background: ${bg} !important; border-color: ${border} !important; }
       .mode-label { color: ${fc} !important; }
       .button-label { color: ${fc} !important; }
     `;
