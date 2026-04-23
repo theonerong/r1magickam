@@ -4914,36 +4914,45 @@
       "OPTIONS",
       "OPTICAL",
       "ILLUSION",
-      "PIXEL",
-      "STRUCTURE"
+      "COLOR",
+      "DEPTH"
     ],
-    "message": "Take a picture and transform the subject into a chromostereopsis pixel image using ONLY two colors arranged in a strict pixel grid.\n\nThe final image must be constructed entirely from solid color pixel blocks — no gradients, no blending, no shading.\n\nMASTER PROMPT RULE:\n• If a master prompt specifies intensity or color pairing — PRIORITIZE and USE that information\n\nGENERAL REQUIREMENTS:\n• Maintain recognizable subject using pixel reconstruction\n• Entire image must be built from discrete square pixels\n• Use strict two-color chromostereopsis palette\n",
-    "randomizeOptions": true,
-    "optionGroups": [
+    "message": "Take a picture and transform the subject into a chromostereopsis depth illusion using strict color separation between subject and background.\n\nThe final image must create depth using controlled color domains — NOT mixed color application.\n\nMASTER PROMPT RULE:\n• If a master prompt specifies intensity — PRIORITIZE and USE that information\n\nGENERAL REQUIREMENTS:\n• Maintain recognizable subject\n• Subject and background must use completely separate color systems\n• Use color contrast to simulate depth perception\n",
+  "randomizeOptions": true,
+  "optionGroups": [
     {
-      "title": "COLOR MODE",
+      "title": "BACKGROUND COLOR MODE",
       "options": [
-        { "id": "001", "text": "Red / Blue — classic chromostereopsis" },
-        { "id": "002", "text": "Red / Green — alternative chromostereopsis" }
+        { "id": "001", "text": "Blue / Black — classic chromostereopsis background" },
+        { "id": "002", "text": "Green / Black — alternative chromostereopsis background" }
       ]
     },
     {
-      "title": "PIXEL SIZE",
+      "title": "DEPTH INTENSITY",
       "options": [
-        { "id": "001", "text": "Fine — small tight pixel grid" },
-        { "id": "002", "text": "Medium — balanced pixel size" },
-        { "id": "003", "text": "Large — chunky pixel blocks" }
+        { "id": "001", "text": "Subtle — light separation" },
+        { "id": "002", "text": "Medium — clear depth illusion" },
+        { "id": "003", "text": "Strong — pronounced pop-out" },
+        { "id": "004", "text": "Extreme — aggressive visual separation" }
       ]
     },
     {
-      "title": "DEPTH STYLE",
+      "title": "FOCUS PLANE",
       "options": [
-        { "id": "001", "text": "Face Priority — facial region pops forward" },
-        { "id": "002", "text": "Full Subject — entire subject pops forward" }
+        { "id": "001", "text": "Face Priority — face pops forward most" },
+        { "id": "002", "text": "Subject Full — entire subject pops forward" },
+        { "id": "003", "text": "Layered Depth — multiple depth layers" }
+      ]
+    },
+    {
+      "title": "NEON MODE",
+      "options": [
+        { "id": "001", "text": "Off — controlled saturation" },
+        { "id": "002", "text": "On — intense neon glow" }
       ]
     }
     ],
-    "additionalInstructions": "PIXEL CONSTRUCTION (CRITICAL):\n\n• The entire image MUST be built from square pixel blocks\n• Pixels must be uniform in size and aligned to a grid\n• Each pixel must be a SOLID color — NO gradients, NO blending\n\nCOLOR RESTRICTION (ABSOLUTE):\n\n• Use ONLY TWO COLORS in the entire image:\n  - RED + BLUE OR\n  - RED + GREEN\n\n• No additional colors allowed anywhere in the image except black edge outline\n\nSUBJECT RECONSTRUCTION:\n\n• Subject must be recreated using ONLY the two-color pixel grid\n• Recognizability must come from pixel placement — NOT shading\n\nBACKGROUND RULE (CRITICAL):\n\n• Original background must be COMPLETELY REMOVED\n• Background must also be reconstructed using the SAME pixel grid\n• Background must consist ONLY of the same two colors arranged in pixel blocks\n\nEDGE OUTLINE (MANDATORY):\n\n• The OUTER EDGE of the subject must be defined with a thin BLACK outline\n• Black is ONLY allowed for this edge outline\n• No black pixels anywhere else in the image\n\nDEPTH / CHROMOSTEREOPSIS RULES:\n\n• One color must visually advance (typically RED)\n• The other color must visually recede (BLUE or GREEN)\n• Pixel placement must create depth illusion through color contrast\n\nANTI-CHEAT RULES:\n\n• DO NOT use gradients\n• DO NOT use blur\n• DO NOT use transparency\n• DO NOT mix colors inside a pixel\n• DO NOT add extra colors beyond the allowed two + black edge\n• DO NOT keep original background\n\nFAIL CONDITIONS:\n\n• Any gradient present → FAIL\n• Any non-approved color present → FAIL\n• Background not pixelated → FAIL\n• Subject not fully pixelated → FAIL\n• Missing black edge outline → FAIL\n\nQUALITY:\n\n• Clean grid alignment\n• Consistent pixel sizing\n• Strong visual contrast\n• Clear subject silhouette\n• Bold chromostereopsis effect"
+    "additionalInstructions": "COLOR DOMAIN SEPARATION (ABSOLUTE — CRITICAL):\n\nSUBJECT COLOR RULES:\n• Subject must be rendered using ONLY RED and BLACK\n• No blue or green allowed anywhere on the subject\n• Red must be the dominant visible color\n• Black used for shading and structure\n\nBACKGROUND COLOR RULES:\n• Background must be rendered using ONLY:\n  - BLUE + BLACK OR\n  - GREEN + BLACK\n• No red allowed anywhere in the background\n\n• Subject and background colors must NEVER mix\n\nEDGE OUTLINE (MANDATORY):\n\n• The outer edge of the subject must have a clean BLACK outline\n• This outline must clearly separate subject from background\n• Black is allowed here regardless of color domain separation\n\nCHROMOSTEREOPSIS DEPTH LOGIC:\n\n• RED (subject) must visually advance toward viewer\n• BLUE or GREEN (background) must visually recede\n• Depth must be driven by color contrast — NOT blur or distortion\n\nFOCUS PLANE CONTROL:\n\nIF \"FACE PRIORITY\":\n• Face must have strongest red intensity and contrast\n\nIF \"SUBJECT FULL\":\n• Entire subject must consistently advance forward\n\nIF \"LAYERED DEPTH\":\n• Different parts of subject vary in red intensity for depth layering\n\nNEON MODE (WHEN ENABLED):\n\n• Increase saturation of RED and background color\n• Add subtle glow ONLY within same color domain\n• Glow must NOT bleed across subject/background boundary\n\nEDGE SEPARATION:\n\n• Optional slight offset may be applied but must remain clean\n• DO NOT create double images or ghosting\n\nBACKGROUND & STRUCTURE:\n\n• Background must be fully replaced (no original image remnants)\n• Background must be clean and uniform in its color system\n\nANTI-CHEAT RULES:\n\n• DO NOT mix red into background\n• DO NOT mix blue/green into subject\n• DO NOT apply full-image color wash\n• DO NOT use gradients that blend color domains\n• DO NOT leave any original colors visible\n\nFAIL CONDITIONS:\n\n• Any color crossover between subject/background → FAIL\n• Subject not strictly red/black → FAIL\n• Background not strictly blue/black or green/black → FAIL\n• Weak or no depth effect → FAIL\n\nQUALITY:\n\n• Strong foreground/background separation\n• High contrast visual impact\n• Clean color boundaries\n• Recognizable subject with bold stylization\n• Clear chromostereopsis pop-out effect"
   },
   {
     "name": "CHRONOPHOTOGRAPHY",
