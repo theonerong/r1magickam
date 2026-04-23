@@ -4917,7 +4917,7 @@
       "COLOR",
       "DEPTH"
     ],
-    "message": "Take a picture and transform the subject into a chromostereopsis depth illusion using strict color separation between subject and background.\n\nThe final image must be constructed using visible pixel blocks to enhance the depth illusion.\n\nMASTER PROMPT RULE:\n• If a master prompt specifies intensity — PRIORITIZE and USE that information\n\nGENERAL REQUIREMENTS:\n• Maintain recognizable subject\n• Subject and background must use completely separate color systems\n• Use color contrast and pixel structure to simulate depth perception\n",
+    "message": "Take a picture and transform the subject into a chromostereopsis depth illusion using strict color separation and Bayer dithering.\n\nThe final image must use fixed, unchanging colors and a fine Bayer dither pattern to create the illusion.\n\nMASTER PROMPT RULE:\n• If a master prompt specifies intensity — PRIORITIZE and USE that information\n\nGENERAL REQUIREMENTS:\n• Maintain recognizable subject\n• Subject and background must use completely separate color systems\n• Use color contrast and Bayer pixel distribution to simulate depth perception\n",
     "randomizeOptions": true,
     "optionGroups": [
     {
@@ -4943,23 +4943,9 @@
         { "id": "002", "text": "Subject Full — entire subject pops forward" },
         { "id": "003", "text": "Layered Depth — multiple depth layers" }
       ]
-    },
-    {
-      "title": "NEON MODE",
-      "options": [
-        { "id": "001", "text": "Off — controlled saturation" },
-        { "id": "002", "text": "On — intense neon glow" }
-      ]
-    },
-    {
-      "title": "PIXEL SIZE",
-      "options": [
-        { "id": "001", "text": "Fine — small visible pixel grid" },
-        { "id": "002", "text": "Medium — clearly defined pixel blocks" }
-      ]
     }
     ],
-    "additionalInstructions": "PIXEL GRID CONSTRUCTION (CRITICAL):\n\n• The entire image MUST be constructed using visible square pixel blocks\n• Pixel grid must be clearly visible at normal viewing size\n• Pixels must be uniform in size and aligned to a strict grid\n• Each pixel must be a SOLID color — NO gradients, NO blending inside pixels\n\n• The image must look like a pixel-based reconstruction, NOT a smooth image\n\nCOLOR DOMAIN SEPARATION (ABSOLUTE — CRITICAL):\n\nSUBJECT COLOR RULES:\n• Subject must be rendered using ONLY RED and BLACK\n• No blue or green allowed anywhere on the subject\n• Red must be the dominant visible color\n\nBACKGROUND COLOR RULES:\n• Background must be rendered using ONLY:\n  - BLUE + BLACK OR\n  - GREEN + BLACK\n• No red allowed anywhere in the background\n\n• Subject and background colors must NEVER mix\n\nEDGE OUTLINE (MANDATORY):\n\n• The outer edge of the subject must have a clean BLACK outline\n• This outline must remain crisp within the pixel grid\n• Black is allowed ONLY for subject structure and edge outline\n\nCHROMOSTEREOPSIS DEPTH LOGIC:\n\n• RED (subject) must visually advance toward viewer\n• BLUE or GREEN (background) must visually recede\n• Depth must be driven by color contrast and pixel structure\n\nFOCUS PLANE CONTROL:\n\nIF \"FACE PRIORITY\":\n• Face must have strongest red contrast and pixel clarity\n\nIF \"SUBJECT FULL\":\n• Entire subject must consistently advance forward\n\nIF \"LAYERED DEPTH\":\n• Different regions vary in red intensity using pixel distribution\n\nNEON MODE (WHEN ENABLED):\n\n• Increase saturation of RED and background color\n• Glow must be simulated through pixel intensity — NOT blur\n• NO soft glow or gradients allowed\n\nEDGE SEPARATION:\n\n• Edges must remain sharp within the pixel grid\n• DO NOT create ghosting or double images\n\nBACKGROUND & STRUCTURE:\n\n• Background must be fully replaced (no original image remnants)\n• Background must follow the same pixel grid system\n\nANTI-CHEAT RULES:\n\n• DO NOT use gradients anywhere\n• DO NOT use blur or smooth shading\n• DO NOT use anti-aliasing\n• DO NOT mix colors inside pixels\n• DO NOT break pixel grid alignment\n• DO NOT leave any non-pixelated areas\n\nFAIL CONDITIONS:\n\n• Pixels not clearly visible → FAIL\n• Any smooth or blended areas → FAIL\n• Any color crossover between subject/background → FAIL\n• Subject not strictly red/black → FAIL\n• Background not strictly blue/black or green/black → FAIL\n\nQUALITY:\n\n• Clean, consistent pixel grid\n• Strong color contrast\n• High visual clarity of subject\n• Bold chromostereopsis illusion\n• Sharp, block-based rendering"
+    "additionalInstructions": "ABSOLUTE COLOR LOCK (HIGHEST PRIORITY):\n\n• ONLY these colors are allowed in the entire image:\n  - ONE RED (subject)\n  - ONE BLUE OR ONE GREEN (background)\n  - BLACK\n\n• NO OTHER COLORS ALLOWED:\n  - NO white\n  - NO gray\n  - NO color variation\n\n• Each color must be a SINGLE, EXACT, UNCHANGING value\n\nPIXEL + BAYER DITHERING (CRITICAL):\n\n• Entire image must be constructed from SMALL square pixels\n• Use a TRUE ORDERED BAYER DITHER PATTERN (checker-style threshold grid)\n• Pixels must follow a repeating structured pattern — NOT random noise\n\n• Colors must be INTERSPERSED at the pixel level using Bayer distribution\n• NO large solid color regions\n\n• Dithering is the ONLY method of creating detail\n• DO NOT use gradients, shading, or blending\n\nSUBJECT RULES:\n\n• Subject must use ONLY RED and BLACK\n• No blue or green anywhere in subject\n• Detail must be formed using red/black Bayer dithering\n\nBACKGROUND RULES:\n\n• Background must use ONLY:\n  - BLUE + BLACK OR\n  - GREEN + BLACK\n\n• No red anywhere in background\n• Background must also use Bayer dithering\n\nEDGE OUTLINE (MANDATORY):\n\n• Subject must have a BLACK outline\n• Outline must align to pixel grid\n\nCHROMOSTEREOPSIS DEPTH:\n\n• RED must visually advance\n• BLUE/GREEN must visually recede\n• Depth comes from color contrast + pixel interleaving ONLY\n\nFOCUS PLANE:\n\n• Face Priority → densest red pixel concentration on face\n• Subject Full → consistent red density across subject\n• Layered → depth via pixel density changes (NOT color change)\n\nANTI-CHEAT RULES:\n\n• DO NOT use gradients\n• DO NOT use blur\n• DO NOT use glow\n• DO NOT use anti-aliasing\n• DO NOT introduce extra colors\n• DO NOT smooth pixel edges\n• DO NOT cluster pixels into large blocks\n\nFAIL CONDITIONS:\n\n• Any color outside allowed set → FAIL\n• Any gradients or shading → FAIL\n• Pixels not clearly visible → FAIL\n• Colors not Bayer-interspersed → FAIL\n\nQUALITY:\n\n• Fine, consistent pixel grid\n• Clean Bayer pattern structure\n• Strong optical vibration effect\n• Clear subject silhouette\n• High contrast chromostereopsis illusion"
   },
   {
     "name": "CHRONOPHOTOGRAPHY",
