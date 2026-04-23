@@ -4908,7 +4908,63 @@
     "randomizeOptions": true,
     "additionalInstructions": "IDENTITY PRESERVATION:\n• Subject must remain clearly recognizable despite the color distortion\n• The effect should enhance the image artistically, not destroy legibility\n\nFINAL RESULT:\nThe image should look like a deliberate artistic application of chromatic aberration, not a camera malfunction."
   },
+  {
+    "name": "CHROMOSTEREOPSIS TORUS",
+    "category": [
+      "OPTIONS",
+      "OPTICAL",
+      "ILLUSION",
+      "3D",
+      "ABSTRACT",
+      "EFFECT"
+    ],
+    "message": "Take a picture and transform the subject into a hypnotic chromostereopsis torus — a three-dimensional donut-shaped structure using red/blue depth illusion, rendered with WebGL-style shading.\n\nThe subject must be embedded into the torus structure itself.\n\nMASTER PROMPT RULE:\n• If a master prompt specifies color intensity, motion, or abstraction — PRIORITIZE and USE that information\n\nGENERAL REQUIREMENTS:\n• Maintain recognizable subject elements within the torus\n• The final image must be a torus (3D donut shape), not a flat ring\n• Apply chromostereopsis depth illusion using red and blue color separation\n",
+    "randomizeOptions": true,
+    "optionGroups": [
     {
+      "title": "TORUS INTEGRATION",
+      "options": [
+        { "id": "001", "text": "Surface Wrap — subject texture wraps around torus surface" },
+        { "id": "002", "text": "Fragmented — subject broken into segments forming torus" },
+        { "id": "003", "text": "Abstract Blend — subject colors and shapes fused into torus" }
+      ]
+    },
+    {
+      "title": "CHROMOSTEREOPSIS INTENSITY",
+      "options": [
+        { "id": "001", "text": "Subtle — light red/blue separation" },
+        { "id": "002", "text": "Medium — clear depth illusion" },
+        { "id": "003", "text": "Strong — pronounced red/blue pop-out effect" }
+      ]
+    },
+    {
+      "title": "ROTATION STYLE",
+      "options": [
+        { "id": "001", "text": "Static Frame — frozen moment of rotation" },
+        { "id": "002", "text": "Motion Blur — slight rotational streaking" },
+        { "id": "003", "text": "Multi-Phase — layered rotation positions" }
+      ]
+    },
+    {
+      "title": "SURFACE DETAIL",
+      "options": [
+        { "id": "001", "text": "Smooth — clean glossy surface" },
+        { "id": "002", "text": "Pixel Noise — fine digital noise texture" },
+        { "id": "003", "text": "Grainy — rough analog texture" }
+      ]
+    },
+    {
+      "title": "LIGHTING",
+      "options": [
+        { "id": "001", "text": "Subtle Reflection — soft white highlight" },
+        { "id": "002", "text": "Glossy Highlight — strong reflective shine" },
+        { "id": "003", "text": "Neon Glow — luminous edge lighting" }
+      ]
+    }
+    ],
+    "additionalInstructions": "TORUS STRUCTURE (CRITICAL):\n\n• The shape MUST be a true 3D torus (donut geometry)\n• Must show inner hole and outer curvature\n• Must have visible depth, shading, and perspective\n\nCHROMOSTEREOPSIS RULES (CRITICAL):\n\n• Use saturated RED and BLUE color separation to create depth illusion\n• Red elements should visually advance toward viewer\n• Blue elements should visually recede\n\n• Color separation must align with depth — NOT random coloring\n\nWEBGL STYLE RENDERING:\n\n• Use smooth gradient shading like real-time 3D rendering\n• Include subtle pixel-noise or digital texture\n• Lighting must simulate a 3D shader pipeline\n\nLIGHTING RULES:\n\n• Include a subtle white specular highlight on the torus surface\n• Highlight must follow curvature of the torus\n\nROTATION ILLUSION:\n\n• If motion is implied, it must follow circular rotation around the torus axis\n• Motion blur or multi-phase layering must be consistent with rotation\n\nANTI-CHEAT RULES:\n\n• DO NOT create a flat ring or circle\n• DO NOT apply red/blue randomly without depth logic\n• DO NOT overlay subject on top of torus — subject must be part of structure\n• DO NOT use simple glow effects as substitute for depth\n\nFAIL CONDITIONS:\n\n• Shape appears flat → FAIL\n• No visible inner hole → FAIL\n• Red/blue not tied to depth → FAIL\n• Subject not integrated into torus → FAIL\n\nQUALITY:\n\n• Strong 3D illusion\n• Clean color separation\n• Smooth shading and lighting\n• Hypnotic, visually striking composition"
+  },
+  {
     "name": "CHRONOPHOTOGRAPHY",
     "category": [
       "PHOTOGRAPHY",
