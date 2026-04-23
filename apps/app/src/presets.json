@@ -2153,6 +2153,18 @@
     "additionalInstructions": ""
   },
   {
+    "name": "AUTOCHROME",
+    "category": [
+      "PHOTOGRAPHY",
+      "VINTAGE",
+      "COLOR"
+    ],
+    "message": "Take a picture and transform the image into an Autochrome photograph. Preserve subject identity. Simulate the first practical color photography process from 1907. Render with the characteristic soft, pointillist color created by dyed potato starch grains — dreamy, slightly grainy, with muted pastel tones and a romantic, Impressionistic quality.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": ""
+  },
+  {
     "name": "AVATAR",
     "category": [
       "MOVIES",
@@ -2167,7 +2179,7 @@
   {
     "name": "BACK IN THE DAY POSTER",
     "category": [
-      "TRANSFORM",
+      "TRANSFORMATION",
       "RETRO",
       "NOSTALGIA",
       "HISTORICAL"
@@ -4715,7 +4727,7 @@
   {
     "name": "CHINESE ZODIAC",
     "category": [
-      "TRANSFORM",
+      "TRANSFORMATION",
       "CHARACTER",
       "MYTHOLOGY",
       "PORTRAIT"
@@ -4932,6 +4944,82 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "FINAL RESULT:\nA fully reconstructed image formed from circuit traces and electronic structures."
+  },
+  {
+  "name": "CIRCUS POSTER",
+  "category": [
+    "OPTIONS",
+    "CIRCUS",
+    "CARNIVAL",
+    "POSTER",
+    "VINTAGE",
+    "PRINT"
+  ],
+  "message": "Take a picture and transform the subject into the headlining performer of a vintage circus poster from the golden age of traveling American circuses.\n\nThe final image must be a fully designed old-time circus poster — NOT a photograph.\n\nMASTER PROMPT RULE:\n• If a master prompt specifies name, tagline, or theme — PRIORITIZE and USE that information\n\nGENERAL REQUIREMENTS:\n• Subject remains recognizable\n• Subject becomes the MAIN HEADLINER of the poster\n• Entire image must be a designed poster composition\n• Use authentic vintage circus poster style (late 1800s–early 1900s)\n",
+  "randomizeOptions": true,
+  "options": [
+    {
+      "id": "001",
+      "text": "Ringmaster - red tailcoat, top hat, white gloves, handlebar mustache, whip or baton, commanding presence"
+    },
+    {
+      "id": "002",
+      "text": "Clown - colorful costume, exaggerated makeup, comedic pose"
+    },
+    {
+      "id": "003",
+      "text": "Trapeze Artist - mid-air pose, dramatic height, graceful form"
+    },
+    {
+      "id": "004",
+      "text": "Lion Tamer - commanding stance with lions, fearless expression"
+    },
+    {
+      "id": "005",
+      "text": "Strongman - lifting massive weights, exaggerated strength pose"
+    },
+    {
+      "id": "006",
+      "text": "Bearded Lady - elegant Victorian styling, dignified presentation"
+    },
+    {
+      "id": "007",
+      "text": "Contortionist - impossible flexibility pose"
+    },
+    {
+      "id": "008",
+      "text": "Juggler - multiple objects in motion, dynamic composition"
+    },
+    {
+      "id": "009",
+      "text": "Tightrope Walker - high-wire balance, dramatic vertical composition"
+    },
+    {
+      "id": "010",
+      "text": "Human Cannonball - explosive launch pose, cannon included"
+    },
+    {
+      "id": "011",
+      "text": "Sword Swallower - theatrical dangerous act"
+    },
+    {
+      "id": "012",
+      "text": "Fire Breather - flames and dramatic lighting"
+    },
+    {
+      "id": "013",
+      "text": "Acrobat - athletic mid-motion pose"
+    },
+    {
+      "id": "014",
+      "text": "Knife Thrower - dramatic action pose"
+    },
+    {
+      "id": "015",
+      "text": "Fortune Teller - mystical carnival aesthetic"
+    }
+  ],
+  "additionalInstructions": "POSTER FORMAT (CRITICAL):\n\n• The image MUST be a flat vintage poster design\n• NOT a real-world scene, NOT a photograph\n• Subject must be illustrated/painted in vintage lithograph style\n\nLAYOUT STRUCTURE (STRICT):\n\n• TOP: Large circus name banner (example styles: \"GRAND TRAVELING CIRCUS\", \"WORLD FAMOUS SHOW\")\n• CENTER: SUBJECT as dominant headliner image\n• SUBJECT must be largest visual element\n• BOTTOM: Supporting text blocks, taglines, or performance highlights\n\nCIRCUS BRANDING (REQUIRED):\n• Poster must reference a classic traveling circus style such as:\n  - \"P.T. Barnum's Grand Traveling Museum\"\n  - \"Forepaugh & Sells Bros. Circus\"\n  - \"Hagenbeck-Wallace Circus\"\n• Use era-appropriate naming variations if needed\n\nTYPOGRAPHY RULES:\n\n• Use vintage circus fonts (bold slab serif, decorative, engraved styles)\n• Large headline text at top\n• Secondary descriptive text below subject\n• Text must feel hand-lettered or printed, NOT modern digital fonts\n\nSTYLE (STRICT):\n\n• Vintage lithograph illustration style\n• Slightly limited color palette (reds, yellows, blues, aged tones)\n• Visible ink texture or print imperfections\n• Decorative borders, flourishes, banners, and frames\n\nANTI-CHEAT RULES:\n\n• DO NOT place subject into a real environment\n• DO NOT create a photograph with text overlay\n• DO NOT use modern fonts or layouts\n• Poster must be fully integrated design — text and image unified\n\nFAIL CONDITIONS:\n\n• Looks like a photo instead of poster → FAIL\n• Subject not clearly the headliner → FAIL\n• Missing large headline text → FAIL\n• Modern typography → FAIL\n\nQUALITY:\n\n• Strong central composition\n• Authentic vintage feel\n• Clear readable hierarchy\n• High-detail illustration\n• Print-style finish"
   },
   {
     "name": "CIRCUS STAR",
@@ -11716,7 +11804,7 @@
     "name": "FRIENDS",
     "category": [
       "OPTIONS",
-      "TRANSFORM",
+      "TRANSFORMATION",
       "CHARACTER",
       "TV",
       "SCENE"
@@ -13167,6 +13255,18 @@
       "COLORFUL"
     ],
     "message": "Take a picture and transform the image into Haitian naïve style art. Bright colors, flattened depth, decorative storytelling elements, and joyful visual rhythm.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": ""
+  },
+  {
+    "name": "HAND-TINTED PHOTOGRAPH",
+    "category": [
+      "PHOTOGRAPHY",
+      "VINTAGE",
+      "HAND-COLORED"
+    ],
+    "message": "Take a picture and transform the image into a Hand-Tinted Photograph. Preserve subject identity. Start with a black-and-white photograph and apply delicate, translucent color tints by hand using oils or watercolors. Emphasize subtle, pastel-like coloring, visible brushwork in tinted areas, and the charming, slightly artificial quality of pre-color-photography hand-coloring.",
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
@@ -15522,6 +15622,19 @@
       "TRANSFORMATION"
     ],
     "message": "Take a picture and transform the subject into a realistic Klingon warrior. Preserve recognizable facial structure, expressions, body proportions, and personality while adapting them to authentic Klingon anatomy including pronounced ridged forehead, heavier brow, deeper-set eyes, rougher skin texture, and powerful build. Translate the subject’s clothing into Klingon armor or garments appropriate to their status while retaining the original clothing’s silhouette and identity cues. Cinematic sci-fi lighting, gritty realism, and cultural authenticity. The subject must appear fully Klingon, not human with prosthetics, and naturally integrated into their environment.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": ""
+  },
+  {
+    "name": "KODACHROME",
+    "category": [
+      "PHOTOGRAPHY",
+      "VINTAGE",
+      "COLOR",
+      "FILM"
+    ],
+    "message": "Take a picture and transform the image into a Kodachrome photograph. Preserve subject identity. Simulate the legendary Kodak color slide film with its distinctive warm color palette — rich reds, deep blues, warm skin tones, and slightly elevated contrast. Emphasize the nostalgic, saturated color quality that defined mid-20th-century color photography.",
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
@@ -19371,7 +19484,7 @@
   {
     "name": "MR. AND MRS. POTATO HEAD",
     "category": [
-      "TRANSFORM",
+      "TRANSFORMATION",
       "CHARACTER",
       "TOY",
       "PORTRAIT"
@@ -20207,7 +20320,7 @@
       "PAINTERLY",
       "RAW"
     ],
-    "message": "Transform this image into a Neo-Expressionist masterpiece. Emphasize a 'Bad Painting' aesthetic with massive scale, heavy impasto textures, and a raw, visceral energy. Incorporate elements of urban grit, historical myth, or primitive figuration with aggressive, gestural brushwork.",
+    "message": "Take a picture and transform this image into a Neo-Expressionist masterpiece. Emphasize a 'Bad Painting' aesthetic with massive scale, heavy impasto textures, and a raw, visceral energy. Incorporate elements of urban grit, historical myth, or primitive figuration with aggressive, gestural brushwork.",
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "FINAL RESULT:\nA monumental, maximalist painting featuring thick, tactile textures and raw narrative symbols.\n\nCORE REQUIREMENTS:\n• HEAVY IMPOSTO (visibly thick paint and grit)\n• GESTURAL AGGRESSION (violent, rapid strokes)\n• MAXIMALIST composition with primitive or urban motifs\n• VIVID but often muddy or clashing color palettes"
@@ -22040,6 +22153,19 @@
     "additionalInstructions": "FINAL RESULT:\nA grainy, long-lens paparazzi photograph with tabloid watermarks focusing on the subject as if they're the celebrity being stalked, while an actual famous person accidentally appears in the background, blurred, distant, or at the edge of frame — completely incidental to the shot. The humor comes from treating the subject as the star while ignoring the real celebrity.\n\nCORE REQUIREMENTS:"
   },
   {
+    "name": "PAPEL PICADO",
+    "category": [
+      "ART",
+      "CULTURAL",
+      "MEXICAN",
+      "PAPER"
+    ],
+    "message": "Take a picture and transform the image into Papel Picado art. Preserve subject identity. Use the traditional Mexican cut-paper art with intricate designs chiseled through layers of colorful tissue paper. Emphasize the delicate lacework quality, festive bright colors, and the characteristic scalloped edges and symmetrical cut-out patterns.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": ""
+  },
+  {
     "name": "PAPER CUTOUT",
     "category": [
       "PAPER",
@@ -22980,6 +23106,19 @@
     "additionalInstructions": ""
   },
   {
+    "name": "POMPEIAN FRESCO",
+    "category": [
+      "ART",
+      "CULTURAL",
+      "ROMAN",
+      "ANCIENT"
+    ],
+    "message": "Take a picture and transform the image into a Pompeian Fresco. Preserve subject identity. Use the ancient Roman wall painting style with rich Pompeian red backgrounds, architectural trompe-l'oeil, mythological scenes, and naturalistic figures. Emphasize the four Pompeian styles of wall decoration with vivid colors preserved as if freshly excavated.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": ""
+  },
+  {
     "name": "POOR RICHARD'S ALMANACK",
     "category": [
       "DOCUMENT",
@@ -23384,6 +23523,18 @@
       "DOCUMENT"
     ],
     "message": "Take a picture and transform it into a humorous FBI-style profile page. Design the layout to resemble an official dossier with structured sections such as subject name, profile photo, and case notes. Generate playful flavor text, including a fictional name and lighthearted, clearly fictional infractions inspired by the subject’s appearance, expression, clothing, and surroundings, incorporating any externally provided details naturally. Maintain a realistic document aesthetic while ensuring the tone is clearly comedic. Render the final image photorealistically with crisp text, believable formatting, and polished presentation.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": ""
+  },
+  {
+    "name": "PROJECTION MAPPING",
+    "category": [
+      "ART",
+      "DIGITAL",
+      "INSTALLATION"
+    ],
+    "message": "Take a picture and transform the image into a Projection Mapping installation. Preserve subject identity. Project vivid, animated imagery onto architectural surfaces, transforming buildings into dynamic canvases. Emphasize the interplay of projected light and physical architecture, with geometric patterns, flowing colors, and the spectacular scale of video mapping.",
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
@@ -25409,6 +25560,18 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "FINAL RESULT:\nA loose, expressive scribble drawing where the subject and environment are formed entirely from chaotic layered sketch lines."
+  },
+  {
+    "name": "SCRIMSHAW",
+    "category": [
+      "ART",
+      "ENGRAVING",
+      "MARITIME"
+    ],
+    "message": "Take a picture and transform the image into Scrimshaw art. Preserve subject identity. Render with the traditional maritime art of fine engraving on ivory or bone surfaces. Use delicate incised lines filled with dark ink on a cream-white surface. Emphasize nautical themes, fine crosshatching, and the intimate scale of sailor folk art.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": ""
   },
   {
     "name": "SEALED",
@@ -28421,6 +28584,18 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "FINAL RESULT:\nA complete machine vision transformation of the scene as viewed through a Terminator's optical sensors. The entire image is rendered in deep red monochrome with the iconic CRT scanline aesthetic, featuring targeting boxes and threat assessment data around human subjects, a Connor identity search targeting females as Sarah Connor and males as John Connor, object identification tags throughout the environment, mission parameter readouts, Cyberdyne Systems HUD elements, facial recognition scanning overlays, a verbal response selection panel showing the machine computing optimal social replies, and the characteristic blocky terminal font data displays. The image must be instantly recognizable as Terminator vision - cold, calculating, mechanical, and menacing - with every element analyzed and catalogued by machine intelligence. The effect should be faithful to the films, evoking the terrifying perspective of an unstoppable machine seeing the world purely as data, targets, and mission parameters."
+  },
+  {
+    "name": "TERRAZZO",
+    "category": [
+      "ART",
+      "DECORATIVE",
+      "ARCHITECTURAL"
+    ],
+    "message": "Take a picture and transform the image into Terrazzo art. Preserve subject identity. Render with the composite material aesthetic of marble, quartz, granite, and glass chips set in polished cement or resin. Emphasize the speckled, confetti-like pattern of colorful stone fragments in a smooth, polished surface with a contemporary design sensibility.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": ""
   },
   {
     "name": "TEXT LOGO",
