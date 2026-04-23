@@ -2103,6 +2103,18 @@
     "additionalInstructions": "FINAL RESULT:\nA fully reconstructed image formed from floating ash or dust particles."
   },
   {
+    "name": "ASSEMBLAGE ART",
+    "category": [
+      "ART",
+      "MIXED MEDIA",
+      "SCULPTURE"
+    ],
+    "message": "Take a picture and transform the image into Assemblage Art. Preserve subject identity. Construct the scene from found objects, salvaged materials, and repurposed items arranged into a three-dimensional composition inspired by Robert Rauschenberg and Louise Nevelson. Emphasize texture, layering, and the transformation of discarded objects into art.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": ""
+  },
+  {
     "name": "ATOMPUNK",
     "category": [
       "RETRO-FUTURISM",
@@ -2915,6 +2927,19 @@
     ],
     "randomizeOptions": true,
     "additionalInstructions": "FINAL RESULT:\nA complete vintage board game box design featuring the subject as the main illustrated character in classic board game art style, with humorous game title, fake details, and authentic retro packaging design that looks like it came straight from a toy store shelf.\n\nCORE REQUIREMENTS:"
+  },
+  {
+    "name": "BOBBIN LACE",
+    "category": [
+      "ART",
+      "TEXTILE",
+      "EUROPEAN",
+      "LACE"
+    ],
+    "message": "Take a picture and transform the image into Bobbin Lace art. Preserve subject identity rendered in delicate lace patterns. Simulate the intricate European lace-making technique with interwoven threads creating elaborate floral and geometric openwork patterns. Emphasize the ethereal, translucent quality of fine handmade lace against a contrasting background.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": ""
   },
   {
     "name": "BOBBLEHEAD",
@@ -4870,6 +4895,18 @@
     ],
     "randomizeOptions": true,
     "additionalInstructions": "IDENTITY PRESERVATION:\n• Subject must remain clearly recognizable despite the color distortion\n• The effect should enhance the image artistically, not destroy legibility\n\nFINAL RESULT:\nThe image should look like a deliberate artistic application of chromatic aberration, not a camera malfunction."
+  },
+    {
+    "name": "CHRONOPHOTOGRAPHY",
+    "category": [
+      "PHOTOGRAPHY",
+      "SCIENTIFIC",
+      "MOTION"
+    ],
+    "message": "Take a picture and transform the image into Chronophotography. Preserve subject identity. Simulate Étienne-Jules Marey's multiple-exposure motion study technique. Render with sequential overlapping exposures of the subject in progressive motion phases against a dark background. Emphasize the scientific beauty of decomposed movement and temporal analysis.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": ""
   },
   {
     "name": "CINEMATIC HORROR",
@@ -13038,6 +13075,19 @@
     "additionalInstructions": ""
   },
   {
+    "name": "GYOTAKU",
+    "category": [
+      "ART",
+      "CULTURAL",
+      "JAPANESE",
+      "PRINTMAKING"
+    ],
+    "message": "Take a picture and transform the image into Gyotaku (fish rubbing) art. Preserve subject identity. Use the traditional Japanese technique of printing directly from fish and marine life. Render with the characteristic direct-impression quality, showing detailed scale patterns, fin textures, and the organic beauty of nature printing in sumi ink on rice paper.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": ""
+  },
+  {
     "name": "H. P. LOVECRAFT",
     "category": [
       "HORROR",
@@ -16911,6 +16961,18 @@
       "STRINGS"
     ],
     "message": "Take a picture and transform the subject into a handcrafted marionette puppet. Preserve recognizable facial features, expressions, proportions, and clothing identity, adapted into carved wood, painted surfaces, stitched fabric, and jointed limbs. Visible strings extend upward from the limbs and head to a wooden marionette controller held above the frame or partially visible. The puppet must show realistic wear, grain, seams, and articulation points. Studio or theatrical lighting with shallow depth of field. The subject must clearly remain the same individual, now reimagined as a controlled puppet.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": ""
+  },
+  {
+    "name": "MARQUETRY",
+    "category": [
+      "ART",
+      "WOODWORK",
+      "DECORATIVE"
+    ],
+    "message": "Take a picture and transform the image into Marquetry woodwork. Preserve subject identity. Render with the decorative technique of applying thin veneers of different colored woods to create pictorial or geometric designs on furniture surfaces. Emphasize the natural grain patterns, warm wood tones, and precise craftsmanship of wood veneer art.",
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
@@ -22370,6 +22432,19 @@
     "additionalInstructions": ""
   },
   {
+    "name": "PHOTOMONTAGE",
+    "category": [
+      "ART",
+      "PHOTOGRAPHY",
+      "COLLAGE",
+      "DADA"
+    ],
+    "message": "Take a picture and transform the image into a Photomontage. Preserve subject identity. Create a composite image from cut and reassembled photographs in the tradition of Hannah Höch and John Heartfield. Emphasize jarring juxtapositions, scale shifts, visible cut edges, and the politically charged, Dadaist aesthetic of photographic collage.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": ""
+  },
+  {
     "name": "PHOTOREALISM",
     "category": [
       "ART",
@@ -22457,6 +22532,18 @@
   "options": [],
   "randomizeOptions": false,
   "additionalInstructions": "The only test that matters: if you removed every thread from the board, the dark surface left behind should be completely blank with no image on it whatsoever — just dark wood and nail heads. The image exists ONLY in the thread. If any part of the subject would still be visible after all thread was removed — because it was drawn, painted, or shaded onto the board — that part is wrong and must not exist. Do not draw anything. Do not paint anything. Do not shade anything. Place thread between nails. That is the only permitted action. The subject must be fully recognizable from thread density alone."
+  },
+  {
+    "name": "PINHOLE PHOTOGRAPHY",
+    "category": [
+      "PHOTOGRAPHY",
+      "ALTERNATIVE PROCESS",
+      "EXPERIMENTAL"
+    ],
+    "message": "Take a picture and transform the image into Pinhole Photography. Preserve subject identity. Simulate the lensless camera technique with infinite depth of field, soft overall focus, long exposure motion blur, and subtle vignetting. Emphasize the dreamy, ethereal quality and slight distortion characteristic of pinhole optics.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": ""
   },
   {
     "name": "PIP-BOY",
@@ -25012,6 +25099,18 @@
       "SCANDINAVIAN"
     ],
     "message": "Take a picture and transform the image into Scandinavian folk art style art. Decorative patterns, muted earthy tones, simple geometry, and traditional motifs.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": ""
+  },
+  {
+    "name": "SCANOGRAPHY",
+    "category": [
+      "PHOTOGRAPHY",
+      "DIGITAL",
+      "EXPERIMENTAL"
+    ],
+    "message": "Take a picture and transform the image into Scanography (scanner photography). Preserve subject identity. Simulate the technique of using a flatbed scanner as a camera. Render with the characteristic shallow depth of field, ultra-high resolution surface detail, and the slightly distorted, dreamlike quality of scanner-captured imagery with rich, saturated colors.",
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
