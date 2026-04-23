@@ -13730,6 +13730,54 @@
     "additionalInstructions": "FINAL RESULT:\nThe image should show the subject with their real face sticking through a circular hole in a large novelty costume of an inanimate object (hot dog, pizza, toilet, fruit, etc.), appearing as a classic tourist photo op or boardwalk attraction with bright colors, hand-painted aesthetic, and silly wholesome humor - the face integrated into the object design in a kitschy, fun, family-friendly way."
   },
   {
+    "name": "HOLLOW DEPTH ILLUSION",
+    "category": [
+      "OPTIONS",
+      "OPTICAL",
+      "ILLUSION",
+      "DEPTH",
+      "PERCEPTION"
+    ],
+    "message": "Take a picture and transform the subject into a hollow (concave) depth illusion where the subject appears carved inward, creating a visual effect where the subject seems to follow the viewer as they move.\n\nThe illusion must work on a flat image using reversed depth cues.\n\nMASTER PROMPT RULE:\n• If a master prompt specifies intensity or focus — PRIORITIZE and USE that information\n\nGENERAL REQUIREMENTS:\n• Maintain recognizable subject\n• Create illusion of inward (concave) structure\n• Visual effect must suggest the subject is tracking the viewer\n",
+    "randomizeOptions": true,
+    "optionGroups": [
+    {
+      "title": "DEPTH STYLE",
+      "options": [
+        { "id": "001", "text": "Hollow Face — concave facial structure illusion" },
+        { "id": "002", "text": "Relief Carving — subject appears carved into surface" },
+        { "id": "003", "text": "Inverted Sculpture — full subject appears inside-out" }
+      ]
+    },
+    {
+      "title": "ILLUSION STRENGTH",
+      "options": [
+        { "id": "001", "text": "Subtle — slight inward depth" },
+        { "id": "002", "text": "Medium — clear concave illusion" },
+        { "id": "003", "text": "Strong — pronounced hollow effect" },
+        { "id": "004", "text": "Extreme — deeply inverted structure" }
+      ]
+    },
+    {
+      "title": "SURFACE STYLE",
+      "options": [
+        { "id": "001", "text": "Smooth — soft sculpted surface" },
+        { "id": "002", "text": "Carved — chiseled or engraved look" },
+        { "id": "003", "text": "Painted Illusion — flat surface painted to simulate depth" }
+      ]
+    },
+    {
+      "title": "LIGHTING DIRECTION",
+      "options": [
+        { "id": "001", "text": "Top Light — inverted highlights and shadows" },
+        { "id": "002", "text": "Side Light — strong directional illusion" },
+        { "id": "003", "text": "Spotlight — dramatic theatrical lighting" }
+      ]
+    }
+  ],
+    "additionalInstructions": "CORE ILLUSION RULES (CRITICAL):\n\n• The subject must appear physically concave (curving inward)\n• Lighting must be REVERSED compared to normal depth\n• Highlights and shadows must contradict actual form\n\nPERCEPTION TRICK:\n\n• Human brain should interpret the concave shape as convex\n• This creates the illusion that the subject follows the viewer\n\nANTI-CHEAT RULES:\n\n• DO NOT create a normal 3D face or raised surface\n• DO NOT rely on blur or perspective alone\n• DO NOT produce a flat image without depth cues\n\nDEPTH CONSTRUCTION:\n\n• Eye sockets, cheeks, and facial structure must curve inward\n• Shadows must fall in unnatural directions for convex interpretation\n\nFOLLOW EFFECT REQUIREMENT:\n\n• Subject gaze must be centered and forward-facing\n• Depth cues must support perceived rotation when viewer moves\n\nFAIL CONDITIONS:\n\n• Face appears convex (normal) → FAIL\n• Lighting matches real-world depth → FAIL\n• No inward curvature visible → FAIL\n• No illusion of tracking/following → FAIL\n\nQUALITY:\n\n• Strong perceptual illusion\n• Clean shading transitions\n• Convincing concave structure\n• Recognizable subject with distorted depth"
+  },
+  {
     "name": "HOLOGRAPHIC TRADING CARD",
     "category": [
       "OPTICAL",
@@ -21392,6 +21440,56 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "OPTICAL 3D EFFECT",
+    "category": [
+      "OPTIONS",
+      "STYLE",
+      "OPTICAL",
+      "ILLUSION",
+      "3D",
+      "DEPTH"
+    ],
+    "message": "Take a picture and transform the subject into a visually convincing 3D illusion using lighting, shadow, perspective, and color separation techniques.\n\nThe final image must appear three-dimensional to the naked eye WITHOUT requiring 3D glasses.\n\nMASTER PROMPT RULE:\n• If a master prompt specifies depth strength or style — PRIORITIZE and USE that information\n\nGENERAL REQUIREMENTS:\n• Maintain recognizable subject\n• Create the illusion of depth using visual cues only\n• Emphasize volume, contour, and spatial separation\n",
+    "randomizeOptions": true,
+    "optionGroups": [
+    {
+      "title": "DEPTH STYLE",
+      "options": [
+        { "id": "001", "text": "Trompe-l'œil — hyper-real depth using shadow and perspective" },
+        { "id": "002", "text": "Anaglyph Hint — subtle red/cyan edge separation (no glasses required)" },
+        { "id": "003", "text": "Sculpted Light — strong highlights and shadows shaping form" },
+        { "id": "004", "text": "Cutout Depth — layered paper-like depth separation" }
+      ]
+    },
+    {
+      "title": "DEPTH INTENSITY",
+      "options": [
+        { "id": "001", "text": "Subtle — gentle depth enhancement" },
+        { "id": "002", "text": "Medium — clear dimensional effect" },
+        { "id": "003", "text": "Strong — pronounced 3D illusion" },
+        { "id": "004", "text": "Extreme — exaggerated pop-out effect" }
+      ]
+    },
+    {
+      "title": "EDGE TREATMENT",
+      "options": [
+        { "id": "001", "text": "Clean — sharp edges with depth shading" },
+        { "id": "002", "text": "Soft Glow — slight halo enhancing separation" },
+        { "id": "003", "text": "Color Offset — slight red/cyan edge shift" }
+      ]
+    },
+    {
+      "title": "BACKGROUND DEPTH",
+      "options": [
+        { "id": "001", "text": "Flat Background — subject pops forward" },
+        { "id": "002", "text": "Receding Background — depth extends backward" },
+        { "id": "003", "text": "Floating Space — subject appears suspended" }
+      ]
+    }
+  ],
+  "additionalInstructions": "DEPTH CREATION RULES (CRITICAL):\n\n• Use LIGHT and SHADOW to define volume\n• Use contrast to separate foreground and background\n• Use perspective scaling where appropriate\n• Depth must be readable without special viewing tools\n\nANAGLYPH CONTROL (IF USED):\n\n• Red/cyan separation must be subtle and aligned with edges\n• DO NOT create full double images\n• Effect must enhance depth, not distort readability\n\nANTI-CHEAT RULES:\n\n• DO NOT rely on blur alone to simulate depth\n• DO NOT create a flat image with simple drop shadow\n• DO NOT produce a standard stereoscopic image requiring glasses\n\nDEPTH VALIDATION:\n\n• Subject must appear to extend forward or backward in space\n• Edges must show clear spatial separation\n• Lighting must reinforce 3D form\n\nFAIL CONDITIONS:\n\n• Image appears flat → FAIL\n• Excessive color separation causing double vision → FAIL\n• Depth only created by blur → FAIL\n• No clear foreground/background separation → FAIL\n\nQUALITY:\n\n• Strong illusion of depth\n• Clean edges and lighting\n• Visually striking 3D effect without distortion\n• High clarity and detail"
   },
   {
     "name": "OPTICAL ILLUSION",
