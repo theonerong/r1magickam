@@ -4909,60 +4909,66 @@
     "additionalInstructions": "IDENTITY PRESERVATION:\n• Subject must remain clearly recognizable despite the color distortion\n• The effect should enhance the image artistically, not destroy legibility\n\nFINAL RESULT:\nThe image should look like a deliberate artistic application of chromatic aberration, not a camera malfunction."
   },
   {
-    "name": "CHROMOSTEREOPSIS TORUS",
+    "name": "CHROMOSTEREOPSIS",
     "category": [
       "OPTIONS",
       "OPTICAL",
       "ILLUSION",
-      "3D",
-      "ABSTRACT",
-      "EFFECT"
+      "COLOR",
+      "DEPTH"
     ],
-    "message": "Take a picture and transform the subject into a hypnotic chromostereopsis torus — a three-dimensional donut-shaped structure using red/blue depth illusion, rendered with WebGL-style shading.\n\nThe subject must be embedded into the torus structure itself.\n\nMASTER PROMPT RULE:\n• If a master prompt specifies color intensity, motion, or abstraction — PRIORITIZE and USE that information\n\nGENERAL REQUIREMENTS:\n• Maintain recognizable subject elements within the torus\n• The final image must be a torus (3D donut shape), not a flat ring\n• Apply chromostereopsis depth illusion using red and blue color separation\n",
+    "message": "Take a picture and transform the subject into a chromostereopsis depth illusion using saturated color separation.\n\nThe final image must create a strong sense of depth using color alone (no stereoscopic rendering).\n\nMASTER PROMPT RULE:\n• If a master prompt specifies color scheme or intensity — PRIORITIZE and USE that information\n\nGENERAL REQUIREMENTS:\n• Maintain recognizable subject\n• Use color to simulate depth perception\n• Emphasize subject separation from background\n",
     "randomizeOptions": true,
     "optionGroups": [
     {
-      "title": "TORUS INTEGRATION",
+      "title": "COLOR MODE",
       "options": [
-        { "id": "001", "text": "Surface Wrap — subject texture wraps around torus surface" },
-        { "id": "002", "text": "Fragmented — subject broken into segments forming torus" },
-        { "id": "003", "text": "Abstract Blend — subject colors and shapes fused into torus" }
+        { "id": "001", "text": "Red / Blue — classic chromostereopsis effect" },
+        { "id": "002", "text": "Red / Green — alternative depth illusion" }
       ]
     },
     {
-      "title": "CHROMOSTEREOPSIS INTENSITY",
+      "title": "DEPTH INTENSITY",
       "options": [
-        { "id": "001", "text": "Subtle — light red/blue separation" },
+        { "id": "001", "text": "Subtle — light color separation" },
         { "id": "002", "text": "Medium — clear depth illusion" },
-        { "id": "003", "text": "Strong — pronounced red/blue pop-out effect" }
+        { "id": "003", "text": "Strong — pronounced visual pop-out" },
+        { "id": "004", "text": "Extreme — aggressive separation and visual tension" }
       ]
     },
     {
-      "title": "ROTATION STYLE",
+      "title": "FOCUS PLANE",
       "options": [
-        { "id": "001", "text": "Static Frame — frozen moment of rotation" },
-        { "id": "002", "text": "Motion Blur — slight rotational streaking" },
-        { "id": "003", "text": "Multi-Phase — layered rotation positions" }
+        { "id": "001", "text": "Face Priority — face pops forward, background recedes" },
+        { "id": "002", "text": "Subject Full — entire subject pops forward" },
+        { "id": "003", "text": "Layered Depth — multiple depth layers across subject" }
+      ]
+    },
+    {
+      "title": "NEON MODE",
+      "options": [
+        { "id": "001", "text": "Off — natural saturation" },
+        { "id": "002", "text": "On — high saturation neon glow" }
+      ]
+    },
+    {
+      "title": "EDGE TREATMENT",
+      "options": [
+        { "id": "001", "text": "Clean — sharp color-separated edges" },
+        { "id": "002", "text": "Soft Glow — slight halo enhancing depth" },
+        { "id": "003", "text": "Noise Blend — pixel-noise integrated edges" }
       ]
     },
     {
       "title": "SURFACE DETAIL",
       "options": [
-        { "id": "001", "text": "Smooth — clean glossy surface" },
-        { "id": "002", "text": "Pixel Noise — fine digital noise texture" },
-        { "id": "003", "text": "Grainy — rough analog texture" }
-      ]
-    },
-    {
-      "title": "LIGHTING",
-      "options": [
-        { "id": "001", "text": "Subtle Reflection — soft white highlight" },
-        { "id": "002", "text": "Glossy Highlight — strong reflective shine" },
-        { "id": "003", "text": "Neon Glow — luminous edge lighting" }
+        { "id": "001", "text": "Smooth — minimal texture" },
+        { "id": "002", "text": "Pixel Noise — fine digital noise shading" },
+        { "id": "003", "text": "Grain — analog texture" }
       ]
     }
     ],
-    "additionalInstructions": "TORUS STRUCTURE (CRITICAL):\n\n• The shape MUST be a true 3D torus (donut geometry)\n• Must show inner hole and outer curvature\n• Must have visible depth, shading, and perspective\n\nCHROMOSTEREOPSIS RULES (CRITICAL):\n\n• Use saturated RED and BLUE color separation to create depth illusion\n• Red elements should visually advance toward viewer\n• Blue elements should visually recede\n\n• Color separation must align with depth — NOT random coloring\n\nWEBGL STYLE RENDERING:\n\n• Use smooth gradient shading like real-time 3D rendering\n• Include subtle pixel-noise or digital texture\n• Lighting must simulate a 3D shader pipeline\n\nLIGHTING RULES:\n\n• Include a subtle white specular highlight on the torus surface\n• Highlight must follow curvature of the torus\n\nROTATION ILLUSION:\n\n• If motion is implied, it must follow circular rotation around the torus axis\n• Motion blur or multi-phase layering must be consistent with rotation\n\nANTI-CHEAT RULES:\n\n• DO NOT create a flat ring or circle\n• DO NOT apply red/blue randomly without depth logic\n• DO NOT overlay subject on top of torus — subject must be part of structure\n• DO NOT use simple glow effects as substitute for depth\n\nFAIL CONDITIONS:\n\n• Shape appears flat → FAIL\n• No visible inner hole → FAIL\n• Red/blue not tied to depth → FAIL\n• Subject not integrated into torus → FAIL\n\nQUALITY:\n\n• Strong 3D illusion\n• Clean color separation\n• Smooth shading and lighting\n• Hypnotic, visually striking composition"
+    "additionalInstructions": "CHROMOSTEREOPSIS RULES (CRITICAL):\n\n• Use saturated color separation to simulate depth\n• Foreground elements must use the advancing color (typically RED)\n• Background elements must use the receding color (BLUE or GREEN)\n\n• Color must FOLLOW DEPTH — NOT random placement\n\nFOCUS PLANE CONTROL (CRITICAL):\n\nIF \"FACE PRIORITY\":\n• Face must be the strongest advancing element\n• Facial features receive the highest color separation\n• Background and body recede more strongly\n\nIF \"SUBJECT FULL\":\n• Entire subject advances toward viewer\n• Background strongly recedes\n\nIF \"LAYERED DEPTH\":\n• Different parts of subject must exist at different depth levels\n• Foreground parts (hands, face, edges) advance more\n• Mid and background elements recede progressively\n\nNEON MODE (WHEN ENABLED):\n\n• Increase saturation significantly\n• Add subtle glow to color edges\n• Glow must follow depth separation — NOT random bloom\n• Maintain clean separation — glow must NOT blur structure\n\nEDGE SEPARATION:\n\n• Apply slight horizontal color offset at edges to enhance illusion\n• Offset must be controlled and consistent\n• DO NOT create full double images\n\nBACKGROUND & FRAMING (CRITICAL):\n\n• Background must be deep solid black\n• Surround the subject with a clean black border\n• High contrast between subject and background is REQUIRED\n\nLIGHTING:\n\n• Add subtle white specular highlights on subject\n• Highlights must enhance form and separation\n\nANTI-CHEAT RULES:\n\n• DO NOT randomly colorize the image\n• DO NOT apply full red/blue overlay across entire image\n• DO NOT create blurry or ghosted duplicates\n• DO NOT flatten depth into a single plane\n\nDEPTH VALIDATION:\n\n• Subject must appear to advance toward viewer\n• Background must visually recede\n• Edges must clearly separate in color space\n\nFAIL CONDITIONS:\n\n• Colors not tied to depth → FAIL\n• No visible pop-out effect → FAIL\n• Background not black → FAIL\n• Excessive double image effect → FAIL\n\nQUALITY:\n\n• Strong perceptual depth\n• Clean color separation\n• High contrast presentation\n• Crisp edges with controlled offset\n• Visually striking illusion"
   },
   {
     "name": "CHRONOPHOTOGRAPHY",
