@@ -15844,6 +15844,43 @@
     "additionalInstructions": ""
   },
   {
+    "name": "LENTICULAR INTERLACE",
+    "category": [
+      "OPTIONS",
+      "STEREO",
+      "OPTICAL",
+      "PRINT",
+      "STRUCTURE"
+    ],
+    "message": "Take a picture and create a stereoscopic (left-eye and right-eye) version of the subject, then combine them into a single lenticular interlaced image using precise vertical strip alternation.\n\nThe final image must simulate a true lenticular print layout.\n\nMASTER PROMPT RULE:\n• If a master prompt specifies depth or subject separation — PRIORITIZE and USE that information\n\nGENERAL REQUIREMENTS:\n• First generate TWO distinct views: LEFT and RIGHT perspective\n• Then interlace them into one image using vertical strips\n• Maintain strict structural accuracy\n",
+    "randomizeOptions": true,
+    "optionGroups": [
+    {
+      "title": "DEPTH STRENGTH",
+      "options": [
+        { "id": "001", "text": "Subtle — small stereo shift" },
+        { "id": "002", "text": "Medium — noticeable depth" },
+        { "id": "003", "text": "Strong — pronounced stereo separation" }
+      ]
+    },
+    {
+      "title": "STRIP DENSITY",
+      "options": [
+        { "id": "001", "text": "Medium — visible but tight strips" },
+        { "id": "002", "text": "High — very thin strips for smoother illusion" }
+      ]
+    },
+    {
+      "title": "ALIGNMENT",
+      "options": [
+        { "id": "001", "text": "Centered — subject aligned between both views" },
+        { "id": "002", "text": "Foreground Shift — subject pops forward" }
+      ]
+    }
+    ],
+    "additionalInstructions": "PROCESS (MANDATORY ORDER):\n\nSTEP 1 — DUAL IMAGE GENERATION (CRITICAL):\n\n• The model MUST create TWO COMPLETE and FULLY INDEPENDENT images:\n  - LEFT VIEW (entire frame)\n  - RIGHT VIEW (entire frame)\n\n• These MUST be placed side-by-side in the SAME canvas:\n  - LEFT image occupies the left half\n  - RIGHT image occupies the right half\n\n• Each half must be a complete, finished image\n• There must be a clean vertical split between them\n• NO blending, NO overlap, NO shared pixels\n\n• The LEFT and RIGHT images must show a clear horizontal perspective shift\n\nSTEP 2 — DESTRUCTIVE PREPARATION:\n\n• Treat BOTH halves as separate source images\n• Prepare to slice BOTH images into vertical strips\n\nSTEP 3 — SLICE:\n\n• Slice BOTH LEFT and RIGHT images into equal-width vertical strips\n• Strip width must be UNIFORM across entire image\n• Strips must be perfectly vertical and evenly spaced\n\nSTEP 4 — DESTRUCTIVE INTERLACE (CRITICAL):\n\n• DISCARD the original side-by-side layout completely\n• Rebuild a NEW single image using alternating strips\n\nSTRICT ORDER (MANDATORY):\n• Strip 1 = RIGHT\n• Strip 2 = LEFT\n• Strip 3 = RIGHT\n• Strip 4 = LEFT\n• Strip 5 = RIGHT\n• Strip 6 = LEFT\n• Continue this exact alternating pattern across the entire width\n\nCRITICAL STRUCTURE RULES:\n\n• Strip width MUST remain constant (no variation)\n• Strips must be perfectly vertical (no curves, no warping)\n• NO blending between strips\n• NO gradients between left/right views\n• NO averaging of pixels\n\nANTI-CHEAT RULES:\n\n• DO NOT generate a single image and fake stereo\n• DO NOT apply striping to only one image\n• DO NOT blend LEFT and RIGHT images together\n• DO NOT overlay images transparently\n• DO NOT approximate striping — must be exact alternating sequence\n• IF two distinct full images are not clearly created first → FAIL\n\nVISUAL REQUIREMENT:\n\n• Before interlacing, LEFT and RIGHT images must be visibly different\n• After interlacing, the image must show fine vertical strip pattern\n• Strip sequence must be consistent from edge to edge\n\nFAIL CONDITIONS:\n\n• Only one image used → FAIL\n• LEFT and RIGHT not clearly different → FAIL\n• Irregular strip width → FAIL\n• Missing strict alternation → FAIL\n• Blended or softened strip edges → FAIL\n• Side-by-side layout still visible → FAIL\n\nQUALITY:\n\n• Clean, sharp strip boundaries\n• Precise alignment\n• Consistent spacing across entire image\n• High detail retained in both views"
+  },
+  {
     "name": "LEPRECHAUN",
     "category": [
       "FANTASY",
