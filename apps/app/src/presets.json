@@ -4917,35 +4917,10 @@
       "COLOR",
       "DEPTH"
     ],
-    "message": "Take a picture and transform the subject into a chromostereopsis depth illusion using strict color separation and Bayer dithering.\n\nThe final image must use fixed, unchanging colors and a fine Bayer dither pattern to create the illusion.\n\nMASTER PROMPT RULE:\n• If a master prompt specifies intensity — PRIORITIZE and USE that information\n\nGENERAL REQUIREMENTS:\n• Maintain recognizable subject\n• Subject and background must use completely separate color systems\n• Use color contrast and Bayer pixel distribution to simulate depth perception\n",
-    "randomizeOptions": true,
-    "optionGroups": [
-    {
-      "title": "BACKGROUND COLOR MODE",
-      "options": [
-        { "id": "001", "text": "Blue / Black — classic chromostereopsis background" },
-        { "id": "002", "text": "Green / Black — alternative chromostereopsis background" }
-      ]
-    },
-    {
-      "title": "DEPTH INTENSITY",
-      "options": [
-        { "id": "001", "text": "Subtle — light separation" },
-        { "id": "002", "text": "Medium — clear depth illusion" },
-        { "id": "003", "text": "Strong — pronounced pop-out" },
-        { "id": "004", "text": "Extreme — aggressive visual separation" }
-      ]
-    },
-    {
-      "title": "FOCUS PLANE",
-      "options": [
-        { "id": "001", "text": "Face Priority — face pops forward most" },
-        { "id": "002", "text": "Subject Full — entire subject pops forward" },
-        { "id": "003", "text": "Layered Depth — multiple depth layers" }
-      ]
-    }
-    ],
-    "additionalInstructions": "ABSOLUTE COLOR LOCK (HIGHEST PRIORITY):\n\n• ONLY these colors are allowed in the entire image:\n  - ONE RED (subject)\n  - ONE BLUE OR ONE GREEN (background)\n  - BLACK\n\n• NO OTHER COLORS ALLOWED:\n  - NO white\n  - NO gray\n  - NO color variation\n\n• Each color must be a SINGLE, EXACT, UNCHANGING value\n\nPIXEL + BAYER DITHERING (CRITICAL):\n\n• Entire image must be constructed from SMALL square pixels\n• Use a TRUE ORDERED BAYER DITHER PATTERN (checker-style threshold grid)\n• Pixels must follow a repeating structured pattern — NOT random noise\n\n• Colors must be INTERSPERSED at the pixel level using Bayer distribution\n• NO large solid color regions\n\n• Dithering is the ONLY method of creating detail\n• DO NOT use gradients, shading, or blending\n\nSUBJECT RULES:\n\n• Subject must use ONLY RED and BLACK\n• No blue or green anywhere in subject\n• Detail must be formed using red/black Bayer dithering\n\nBACKGROUND RULES:\n\n• Background must use ONLY:\n  - BLUE + BLACK OR\n  - GREEN + BLACK\n\n• No red anywhere in background\n• Background must also use Bayer dithering\n\nEDGE OUTLINE (MANDATORY):\n\n• Subject must have a BLACK outline\n• Outline must align to pixel grid\n\nCHROMOSTEREOPSIS DEPTH:\n\n• RED must visually advance\n• BLUE/GREEN must visually recede\n• Depth comes from color contrast + pixel interleaving ONLY\n\nFOCUS PLANE:\n\n• Face Priority → densest red pixel concentration on face\n• Subject Full → consistent red density across subject\n• Layered → depth via pixel density changes (NOT color change)\n\nANTI-CHEAT RULES:\n\n• DO NOT use gradients\n• DO NOT use blur\n• DO NOT use glow\n• DO NOT use anti-aliasing\n• DO NOT introduce extra colors\n• DO NOT smooth pixel edges\n• DO NOT cluster pixels into large blocks\n\nFAIL CONDITIONS:\n\n• Any color outside allowed set → FAIL\n• Any gradients or shading → FAIL\n• Pixels not clearly visible → FAIL\n• Colors not Bayer-interspersed → FAIL\n\nQUALITY:\n\n• Fine, consistent pixel grid\n• Clean Bayer pattern structure\n• Strong optical vibration effect\n• Clear subject silhouette\n• High contrast chromostereopsis illusion"
+      "message": "Take a picture and transform the subject into a chromostereopsis optical illusion using only three colors: Vibrant Red, Electric Blue, and Pitch Black. Use a stochastic noise and dithering effect to create depth perception differences.",
+      "options": [],
+      "randomizeOptions": false,
+      "additionalInstructions": "FINAL RESULT:\nA high-contrast optical illusion where the red elements appear to float at a different depth than the blue.\n\nCORE REQUIREMENTS:\n• STRICT COLOR PALETTE: Only #FF0000 (Red), #0000FF (Blue), and #000000 (Black). No gradients, shades, or mid-tones.\n• SUBJECT TREATMENT: Render the main subject using only Vibrant Red and Pitch Black stochastic noise.\n• BACKGROUND TREATMENT: Render the background using only Electric Blue and Pitch Black stochastic noise.\n• ISOLATION BORDER: The subject must be separated from the background by a distinct, solid Pitch Black border.\n• TEXTURE: Use dense, random pixel dithering to simulate digital static."
   },
   {
     "name": "CHRONOPHOTOGRAPHY",
