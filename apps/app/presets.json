@@ -28780,32 +28780,32 @@
       "FACE",
       "DISTORTION"
     ],
-    "message": "Take a picture and modify the subject’s face by rotating selected facial features.\n\nGENERAL REQUIREMENTS:\n• Keep the face upright\n• Preserve identity exactly\n• Only modify selected features\n",
-    "randomizeOptions": true,
-    "optionGroups": [
+  "message": "Take a picture and modify the subject’s face by replacing selected facial features with rotated versions of themselves.\n\nGENERAL REQUIREMENTS:\n• Keep the face upright\n• Preserve identity exactly\n• Only modify selected features\n",
+  "randomizeOptions": true,
+  "optionGroups": [
     {
       "title": "EYES",
       "options": [
         { "id": "001", "text": "None" },
-        { "id": "002", "text": "Rotate — rotate both eyes 180°" }
+        { "id": "002", "text": "Replace — replace both eyes with rotated versions" }
       ]
     },
     {
       "title": "MOUTH",
       "options": [
         { "id": "001", "text": "None" },
-        { "id": "002", "text": "Rotate — rotate mouth 180°" }
+        { "id": "002", "text": "Replace — replace mouth with rotated version" }
       ]
     },
     {
       "title": "NOSE",
       "options": [
         { "id": "001", "text": "None" },
-        { "id": "002", "text": "Rotate — rotate nose 180°" }
+        { "id": "002", "text": "Replace — replace nose with rotated version" }
       ]
     }
   ],
-  "additionalInstructions": "EDIT METHOD (MANDATORY):\n\nFor each selected feature:\n\n• Isolate the feature itself (eyes, mouth, or nose only)\n• Rotate that feature EXACTLY 180°\n• Place it back in the SAME position\n\nSTRICT RULES:\n\n• Do not draw or show any guides, boxes, outlines, or markers\n• Do not move the feature\n• Do not resize the feature\n• Do not stretch or distort the feature\n• Do not redraw or reinterpret the feature\n\n• Only rotate the existing feature in place\n\nIMAGE INTEGRITY:\n\n• All unselected parts of the face must remain unchanged\n• Preserve lighting, color, and skin texture\n• Keep transitions clean and natural\n\nANTI-CHEAT:\n\n• Do not apply global distortion\n• Do not modify the full face\n• Do not generate a new face\n\nFAIL CONDITIONS:\n\n• Any visible boxes, outlines, or guides → FAIL\n• Feature not rotated 180° → FAIL\n• Feature stretched or altered → FAIL\n• Feature moved from original position → FAIL\n\nQUALITY:\n\n• Clean, natural integration\n• Photorealistic result\n• Precise feature rotation only"
+  "additionalInstructions": "FORCED EDIT PROCESS (MANDATORY):\n\nFor each selected feature:\n\nSTEP 1:\n• Duplicate the ORIGINAL feature exactly as it appears\n\nSTEP 2:\n• Rotate the duplicated feature EXACTLY 180°\n\nSTEP 3:\n• Delete the original feature from the face\n\nSTEP 4:\n• Insert the rotated duplicate into the EXACT SAME location\n\nNON-NEGOTIABLE RULES:\n\n• The inserted feature MUST be visibly rotated 180°\n• The feature must appear upside down relative to the rest of the face\n\nSTRICT LIMITS:\n\n• Do not stretch, warp, liquify, or distort the feature\n• Do not redraw or reinterpret the feature\n• Do not generate a new version of the feature\n\n• Use the SAME feature, only rotated\n\nPOSITIONING:\n\n• The feature must stay in the same place on the face\n• Do not shift alignment\n• Do not resize\n\nIMAGE INTEGRITY:\n\n• All other parts of the face must remain unchanged\n• Preserve lighting, color, and texture\n• Blend edges cleanly without altering structure\n\nANTI-CHEAT:\n\n• Do not simulate inversion with distortion\n• Do not apply global effects\n• Do not modify the entire face\n• Do not ignore rotation instruction\n\nFAIL CONDITIONS:\n\n• Feature is not clearly upside down → FAIL\n• Feature is stretched or altered → FAIL\n• Feature position changes → FAIL\n• A new or different feature is generated → FAIL\n\nQUALITY:\n\n• Photorealistic\n• Clean integration\n• Clearly rotated features\n• No artifacts"
   },
   {
     "name": "THE BIGGEST LOSER",
