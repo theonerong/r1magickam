@@ -28772,6 +28772,49 @@
     "additionalInstructions": "IDENTITY PRESERVATION (CRITICAL):\n• The subject's facial features must remain recognizable\n• Distinctive features preserved through text density and contour following\n• The text is the MEDIUM, not a mask - the person is still clearly visible\n• Do not idealize or alter the subject's features\n• The three-quarter angle should reflect the subject's actual face angle and proportions\n\nFINAL RESULT:\nA stunning 8K typographic art portrait in a three-quarter view where the subject's likeness is constructed entirely from flowing white calligraphic text on a single deep high-contrast background color. The portrait shows the subject at approximately 45 degrees - not a side profile, not fully frontal - creating natural dimension and depth. Every facial feature and contour is formed by text lines following the natural curves of the face, with text density creating the illusion of light and shadow. If a master prompt provided specific text, that text and only that text fills the entire portrait. If no text was provided, original flavor text inspired by the image fills the portrait. The outer portrait edge is razor sharp, the background completely flat, and absolutely no watermarks, signatures, or branding of any kind appear anywhere in the image. The result is a clean, professional typographic portrait that is simultaneously a work of art and an unmistakable likeness of the subject."
   },
   {
+    "name": "THATCHERIZER",
+    "category": [
+      "OPTIONS",
+      "OPTICAL",
+      "ILLUSION",
+      "FACE",
+      "DISTORTION"
+    ],
+    "message": "Take a picture and transform the subject's face into a Thatcher illusion.\n\nThe final image must display the ENTIRE face upside down, while selected facial features are rotated upright relative to the viewer, creating a perceptual distortion that looks normal when inverted but disturbing when viewed upright.\n\nMASTER PROMPT RULE:\n• If a master prompt specifies which features to distort — PRIORITIZE and USE that information\n\nGENERAL REQUIREMENTS:\n• Maintain recognizable identity\n• Apply distortion ONLY to selected facial features\n• Do not reposition features — rotation only\n• Preserve photorealism\n",
+    "randomizeOptions": true,
+    "optionGroups": [
+    {
+      "title": "EYES",
+      "options": [
+        { "id": "001", "text": "None — eyes remain inverted with face" },
+        { "id": "002", "text": "Invert — rotate both eyes upright" }
+      ]
+    },
+    {
+      "title": "MOUTH",
+      "options": [
+        { "id": "001", "text": "None — mouth remains inverted with face" },
+        { "id": "002", "text": "Invert — rotate mouth upright" }
+      ]
+    },
+    {
+      "title": "NOSE",
+      "options": [
+        { "id": "001", "text": "None — nose remains inverted with face" },
+        { "id": "002", "text": "Invert — rotate nose upright" }
+      ]
+    },
+    {
+      "title": "EARS",
+      "options": [
+        { "id": "001", "text": "None — ears remain inverted with face" },
+        { "id": "002", "text": "Invert — rotate ears upright" }
+      ]
+    }
+    ],
+    "additionalInstructions": "CORE THATCHER EFFECT (CRITICAL):\n\n• The ENTIRE HEAD must be rotated 180° (upside down)\n• The final image must show ONLY the upside-down face (no side-by-side comparisons)\n\nFEATURE INVERSION LOGIC:\n\n• Selected features (eyes, mouth, nose, ears) must be rotated 180° relative to the face\n• This makes them appear upright to the viewer while the face is upside down\n\n• Unselected features remain inverted with the face\n\nPOSITIONING RULES:\n\n• DO NOT move features from their anatomical position\n• DO NOT stretch or warp features\n• ONLY rotate selected features in place\n\n• Features must align naturally within the face structure\n\nPERCEPTUAL REQUIREMENT:\n\n• When the image is viewed upside down → face appears relatively normal\n• When the image is viewed upright → face appears distorted or unsettling\n\nREALISM:\n\n• Maintain consistent lighting across face and features\n• Match skin tone, texture, and shading\n• Avoid visible seams or cut-and-paste artifacts\n\nANTI-CHEAT RULES:\n\n• DO NOT flip the entire image back upright\n• DO NOT create two images or comparison layouts\n• DO NOT exaggerate features beyond realistic proportions\n• DO NOT reposition facial elements\n\nFAIL CONDITIONS:\n\n• Face not upside down → FAIL\n• Features moved instead of rotated → FAIL\n• Multiple images shown → FAIL\n• Effect not perceptually disturbing upright → FAIL\n\nQUALITY:\n\n• Photorealistic result\n• Clean feature integration\n• Subtle but effective illusion\n• Strong perceptual flip effect when rotated"
+  },
+  {
     "name": "THE BIGGEST LOSER",
     "category": [
       "TRANSFORMATION",
