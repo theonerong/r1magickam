@@ -28780,7 +28780,7 @@
       "FACE",
       "DISTORTION"
     ],
-    "message": "Take a picture and modify the subject’s face by rotating selected facial features.\n\nGENERAL REQUIREMENTS:\n• Keep the face upright\n• Preserve identity\n• Make only precise edits to selected features\n",
+    "message": "Take a picture and modify the subject’s face by rotating selected facial features using precise region-based editing.\n\nGENERAL REQUIREMENTS:\n• Keep the face upright\n• Preserve identity exactly\n• Only modify selected regions\n",
     "randomizeOptions": true,
     "optionGroups": [
     {
@@ -28812,7 +28812,7 @@
       ]
     }
     ],
-    "additionalInstructions": "EDIT METHOD (MANDATORY):\n\nFor each selected feature:\n\n• Either:\n  (A) Rotate the existing feature exactly 180°\n  OR\n  (B) Remove the feature and replace it with the same feature rotated 180°\n\nSTRICT RULES:\n\n• Do not move the feature from its original position\n• Do not resize the feature\n• Do not stretch or warp the feature\n• Do not redraw or reinterpret the feature\n\n• Perform a direct rotation or replacement only\n\nIMAGE RULES:\n\n• Keep the rest of the face unchanged\n• Maintain original lighting and skin tone\n• Avoid visible seams or artifacts\n\nANTI-CHEAT:\n\n• Do not apply distortion filters\n• Do not modify unselected features\n• Do not generate a new face\n\nFAIL CONDITIONS:\n\n• Feature is stretched or distorted → FAIL\n• Feature is not rotated 180° → FAIL\n• Feature position changes → FAIL\n\nQUALITY:\n\n• Clean edits\n• Photorealistic result\n• Precise alignment"
+    "additionalInstructions": "PRECISION EDIT MODE (MANDATORY):\n\nEach selected feature must be treated as a FIXED RECTANGULAR REGION (BOUNDING BOX).\n\nSTEP 1 — REGION DEFINITION:\n\n• Define a tight rectangular box around each selected feature:\n  - Eyes → one box covering both eyes\n  - Mouth → one box around mouth area\n  - Nose → one box around nose\n  - Ears → one box covering both ears\n\n• The box must:\n  - fully contain the feature\n  - not extend excessively into surrounding face\n\nSTEP 2 — EXTRACTION:\n\n• Copy the EXACT pixel content inside the box\n• Do not recreate or reinterpret\n\nSTEP 3 — ROTATION:\n\n• Rotate the copied region EXACTLY 180°\n• Rotation must be rigid (no warping, no scaling)\n\nSTEP 4 — REPLACEMENT:\n\n• Place the rotated region back into the SAME bounding box\n• The box position must NOT change\n\nSTRICT RULES:\n\n• Do not move the bounding box\n• Do not resize the bounding box\n• Do not stretch or distort pixels\n• Do not redraw or regenerate features\n\n• Only perform: COPY → ROTATE → REPLACE\n\nIMAGE INTEGRITY:\n\n• All unselected areas must remain unchanged\n• Preserve lighting, color, and texture\n• Keep edges clean with minimal blending\n\nANTI-CHEAT:\n\n• Do not simulate rotation with distortion\n• Do not apply face-wide edits\n• Do not alter geometry outside bounding boxes\n• Do not generate a new face\n\nFAIL CONDITIONS:\n\n• Region not clearly rotated 180° → FAIL\n• Feature shape altered → FAIL\n• Bounding box shifted → FAIL\n• Any stretching or warping → FAIL\n\nQUALITY:\n\n• Precise alignment\n• Clean region edges\n• Photorealistic output\n• Exact feature preservation"
   },
   {
     "name": "THE BIGGEST LOSER",
