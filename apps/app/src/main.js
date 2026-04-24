@@ -8395,6 +8395,10 @@ window.addEventListener('sideClick', () => {
     return;
   }
 
+  // Block side button when the gallery thumbnail screen is open
+  const galleryModalOpen = document.getElementById('gallery-modal')?.style.display === 'flex';
+  if (galleryModalOpen) return;
+
   // Settings submenu - select current item
   if (isSettingsSubmenuOpen) {
     const submenu = document.getElementById('settings-submenu');

@@ -2733,11 +2733,12 @@ button:disabled {
 .menu-section-title {
     font-weight: bold;
     color: #FE5F00;
+    font-size: 5vw;
 }
 
 .menu-section-value {
     color: #aaa;
-    font-size: 3.5vw;
+    font-size: 4vw;
 }
 
 .menu-section-arrow {
