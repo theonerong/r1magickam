@@ -2103,18 +2103,6 @@
     "additionalInstructions": "FINAL RESULT:\nA fully reconstructed image formed from floating ash or dust particles."
   },
   {
-    "name": "ASSEMBLAGE ART",
-    "category": [
-      "ART",
-      "MIXED MEDIA",
-      "SCULPTURE"
-    ],
-    "message": "Take a picture and transform the image into Assemblage Art. Preserve subject identity. Construct the scene from found objects, salvaged materials, and repurposed items arranged into a three-dimensional composition inspired by Robert Rauschenberg and Louise Nevelson. Emphasize texture, layering, and the transformation of discarded objects into art.",
-    "options": [],
-    "randomizeOptions": false,
-    "additionalInstructions": ""
-  },
-  {
     "name": "ATOMPUNK",
     "category": [
       "RETRO-FUTURISM",
@@ -2153,18 +2141,6 @@
     "additionalInstructions": ""
   },
   {
-    "name": "AUTOCHROME",
-    "category": [
-      "PHOTOGRAPHY",
-      "VINTAGE",
-      "COLOR"
-    ],
-    "message": "Take a picture and transform the image into an Autochrome photograph. Preserve subject identity. Simulate the first practical color photography process from 1907. Render with the characteristic soft, pointillist color created by dyed potato starch grains — dreamy, slightly grainy, with muted pastel tones and a romantic, Impressionistic quality.",
-    "options": [],
-    "randomizeOptions": false,
-    "additionalInstructions": ""
-  },
-  {
     "name": "AVATAR",
     "category": [
       "MOVIES",
@@ -2179,7 +2155,7 @@
   {
     "name": "BACK IN THE DAY POSTER",
     "category": [
-      "TRANSFORMATION",
+      "TRANSFORM",
       "RETRO",
       "NOSTALGIA",
       "HISTORICAL"
@@ -2939,19 +2915,6 @@
     ],
     "randomizeOptions": true,
     "additionalInstructions": "FINAL RESULT:\nA complete vintage board game box design featuring the subject as the main illustrated character in classic board game art style, with humorous game title, fake details, and authentic retro packaging design that looks like it came straight from a toy store shelf.\n\nCORE REQUIREMENTS:"
-  },
-  {
-    "name": "BOBBIN LACE",
-    "category": [
-      "ART",
-      "TEXTILE",
-      "EUROPEAN",
-      "LACE"
-    ],
-    "message": "Take a picture and transform the image into Bobbin Lace art. Preserve subject identity rendered in delicate lace patterns. Simulate the intricate European lace-making technique with interwoven threads creating elaborate floral and geometric openwork patterns. Emphasize the ethereal, translucent quality of fine handmade lace against a contrasting background.",
-    "options": [],
-    "randomizeOptions": false,
-    "additionalInstructions": ""
   },
   {
     "name": "BOBBLEHEAD",
@@ -4727,7 +4690,7 @@
   {
     "name": "CHINESE ZODIAC",
     "category": [
-      "TRANSFORMATION",
+      "TRANSFORM",
       "CHARACTER",
       "MYTHOLOGY",
       "PORTRAIT"
@@ -4909,31 +4872,6 @@
     "additionalInstructions": "IDENTITY PRESERVATION:\n• Subject must remain clearly recognizable despite the color distortion\n• The effect should enhance the image artistically, not destroy legibility\n\nFINAL RESULT:\nThe image should look like a deliberate artistic application of chromatic aberration, not a camera malfunction."
   },
   {
-    "name": "CHROMOSTEREOPSIS",
-    "category": [
-      "OPTICAL",
-      "ILLUSION",
-      "COLOR",
-      "DEPTH"
-    ],
-    "message": "Take a picture and transform the subject into a strict chromostereopsis optical illusion. The subject must be exclusively red and black, and the background exclusively blue and black. Depth perception is achieved by the red appearing closer, blue further, separated by a perfect, solid black border.",
-    "options": [],
-    "randomizeOptions": false,
-    "additionalInstructions": "FINAL RESULT:\nA high-contrast digital piece where the red subject appears to physically float in front of the blue background.\n\nCORE REQUIREMENTS:\n• STRICT COLOR PALETTE: Use ONLY #FF0000 (Red), #0000FF (Blue), and #000000 (Black). Absolutely zero mid-tones, gradients, or anti-aliasing.\n• BLACK NOISE DENSITY: The subject and background must not be solid colors, but rather a dense, 50/50 mix of color and black pixels to create a gritty, high-contrast digital grain.\n• SUBJECT TREATMENT: Render the subject exclusively in Red and Black noise. Ensure zero blue pixels exist within the subject's area.\n• BACKGROUND TREATMENT: Render the background exclusively in blue and black noise. CRITICALLY: This background static must have a significantly larger, coarser scale (like low-resolution macro-pixels), making the background pattern blockier and less fine compared to the subject. Ensure zero red pixels exist within the background area.\n• ZERO AURA/GLOW: Strictly prohibit any blue or red halos, glows, or translucent 'auras' around the subject. The transition from color to border must be instantaneous and sharp.\n• ISOLATION BORDER: The subject must be enclosed in a thick, solid, continuous Pitch Black border line. This border must be the only divider between the red subject and the blue background.\n• TEXTURE: Use randomized digital static overall. The black pixels must be interspersed evenly throughout the red and blue areas, with the background employing a lower resolution, blockier grain as specified in the treatments."
-  },
-  {
-    "name": "CHRONOPHOTOGRAPHY",
-    "category": [
-      "PHOTOGRAPHY",
-      "SCIENTIFIC",
-      "MOTION"
-    ],
-    "message": "Take a picture and transform the image into Chronophotography. Preserve subject identity. Simulate Étienne-Jules Marey's multiple-exposure motion study technique. Render with sequential overlapping exposures of the subject in progressive motion phases against a dark background. Emphasize the scientific beauty of decomposed movement and temporal analysis.",
-    "options": [],
-    "randomizeOptions": false,
-    "additionalInstructions": ""
-  },
-  {
     "name": "CINEMATIC HORROR",
     "category": [
       "HORROR",
@@ -4957,82 +4895,6 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "FINAL RESULT:\nA fully reconstructed image formed from circuit traces and electronic structures."
-  },
-  {
-  "name": "CIRCUS POSTER",
-  "category": [
-    "OPTIONS",
-    "CIRCUS",
-    "CARNIVAL",
-    "POSTER",
-    "VINTAGE",
-    "PRINT"
-  ],
-  "message": "Take a picture and transform the subject into the headlining performer of a vintage circus poster from the golden age of traveling American circuses.\n\nThe final image must be a fully designed old-time circus poster — NOT a photograph.\n\nMASTER PROMPT RULE:\n• If a master prompt specifies name, tagline, or theme — PRIORITIZE and USE that information\n\nGENERAL REQUIREMENTS:\n• Subject remains recognizable\n• Subject becomes the MAIN HEADLINER of the poster\n• Entire image must be a designed poster composition\n• Use authentic vintage circus poster style (late 1800s–early 1900s)\n",
-  "randomizeOptions": true,
-  "options": [
-    {
-      "id": "001",
-      "text": "Ringmaster - red tailcoat, top hat, white gloves, handlebar mustache, whip or baton, commanding presence"
-    },
-    {
-      "id": "002",
-      "text": "Clown - colorful costume, exaggerated makeup, comedic pose"
-    },
-    {
-      "id": "003",
-      "text": "Trapeze Artist - mid-air pose, dramatic height, graceful form"
-    },
-    {
-      "id": "004",
-      "text": "Lion Tamer - commanding stance with lions, fearless expression"
-    },
-    {
-      "id": "005",
-      "text": "Strongman - lifting massive weights, exaggerated strength pose"
-    },
-    {
-      "id": "006",
-      "text": "Bearded Lady - elegant Victorian styling, dignified presentation"
-    },
-    {
-      "id": "007",
-      "text": "Contortionist - impossible flexibility pose"
-    },
-    {
-      "id": "008",
-      "text": "Juggler - multiple objects in motion, dynamic composition"
-    },
-    {
-      "id": "009",
-      "text": "Tightrope Walker - high-wire balance, dramatic vertical composition"
-    },
-    {
-      "id": "010",
-      "text": "Human Cannonball - explosive launch pose, cannon included"
-    },
-    {
-      "id": "011",
-      "text": "Sword Swallower - theatrical dangerous act"
-    },
-    {
-      "id": "012",
-      "text": "Fire Breather - flames and dramatic lighting"
-    },
-    {
-      "id": "013",
-      "text": "Acrobat - athletic mid-motion pose"
-    },
-    {
-      "id": "014",
-      "text": "Knife Thrower - dramatic action pose"
-    },
-    {
-      "id": "015",
-      "text": "Fortune Teller - mystical carnival aesthetic"
-    }
-  ],
-  "additionalInstructions": "POSTER FORMAT (CRITICAL):\n\n• The image MUST be a flat vintage poster design\n• NOT a real-world scene, NOT a photograph\n• Subject must be illustrated/painted in vintage lithograph style\n\nLAYOUT STRUCTURE (STRICT):\n\n• TOP: Large circus name banner (example styles: \"GRAND TRAVELING CIRCUS\", \"WORLD FAMOUS SHOW\")\n• CENTER: SUBJECT as dominant headliner image\n• SUBJECT must be largest visual element\n• BOTTOM: Supporting text blocks, taglines, or performance highlights\n\nCIRCUS BRANDING (REQUIRED):\n• Poster must reference a classic traveling circus style such as:\n  - \"P.T. Barnum's Grand Traveling Museum\"\n  - \"Forepaugh & Sells Bros. Circus\"\n  - \"Hagenbeck-Wallace Circus\"\n• Use era-appropriate naming variations if needed\n\nTYPOGRAPHY RULES:\n\n• Use vintage circus fonts (bold slab serif, decorative, engraved styles)\n• Large headline text at top\n• Secondary descriptive text below subject\n• Text must feel hand-lettered or printed, NOT modern digital fonts\n\nSTYLE (STRICT):\n\n• Vintage lithograph illustration style\n• Slightly limited color palette (reds, yellows, blues, aged tones)\n• Visible ink texture or print imperfections\n• Decorative borders, flourishes, banners, and frames\n\nANTI-CHEAT RULES:\n\n• DO NOT place subject into a real environment\n• DO NOT create a photograph with text overlay\n• DO NOT use modern fonts or layouts\n• Poster must be fully integrated design — text and image unified\n\nFAIL CONDITIONS:\n\n• Looks like a photo instead of poster → FAIL\n• Subject not clearly the headliner → FAIL\n• Missing large headline text → FAIL\n• Modern typography → FAIL\n\nQUALITY:\n\n• Strong central composition\n• Authentic vintage feel\n• Clear readable hierarchy\n• High-detail illustration\n• Print-style finish"
   },
   {
     "name": "CIRCUS STAR",
@@ -11817,7 +11679,7 @@
     "name": "FRIENDS",
     "category": [
       "OPTIONS",
-      "TRANSFORMATION",
+      "TRANSFORM",
       "CHARACTER",
       "TV",
       "SCENE"
@@ -13176,19 +13038,6 @@
     "additionalInstructions": ""
   },
   {
-    "name": "GYOTAKU",
-    "category": [
-      "ART",
-      "CULTURAL",
-      "JAPANESE",
-      "PRINTMAKING"
-    ],
-    "message": "Take a picture and transform the image into Gyotaku (fish rubbing) art. Preserve subject identity. Use the traditional Japanese technique of printing directly from fish and marine life. Render with the characteristic direct-impression quality, showing detailed scale patterns, fin textures, and the organic beauty of nature printing in sumi ink on rice paper.",
-    "options": [],
-    "randomizeOptions": false,
-    "additionalInstructions": ""
-  },
-  {
     "name": "H. P. LOVECRAFT",
     "category": [
       "HORROR",
@@ -13268,18 +13117,6 @@
       "COLORFUL"
     ],
     "message": "Take a picture and transform the image into Haitian naïve style art. Bright colors, flattened depth, decorative storytelling elements, and joyful visual rhythm.",
-    "options": [],
-    "randomizeOptions": false,
-    "additionalInstructions": ""
-  },
-  {
-    "name": "HAND-TINTED PHOTOGRAPH",
-    "category": [
-      "PHOTOGRAPHY",
-      "VINTAGE",
-      "HAND-COLORED"
-    ],
-    "message": "Take a picture and transform the image into a Hand-Tinted Photograph. Preserve subject identity. Start with a black-and-white photograph and apply delicate, translucent color tints by hand using oils or watercolors. Emphasize subtle, pastel-like coloring, visible brushwork in tinted areas, and the charming, slightly artificial quality of pre-color-photography hand-coloring.",
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
@@ -13741,54 +13578,6 @@
     ],
     "randomizeOptions": true,
     "additionalInstructions": "FINAL RESULT:\nThe image should show the subject with their real face sticking through a circular hole in a large novelty costume of an inanimate object (hot dog, pizza, toilet, fruit, etc.), appearing as a classic tourist photo op or boardwalk attraction with bright colors, hand-painted aesthetic, and silly wholesome humor - the face integrated into the object design in a kitschy, fun, family-friendly way."
-  },
-  {
-    "name": "HOLLOW DEPTH ILLUSION",
-    "category": [
-      "OPTIONS",
-      "OPTICAL",
-      "ILLUSION",
-      "DEPTH",
-      "PERCEPTION"
-    ],
-    "message": "Take a picture and transform the subject into a hollow (concave) depth illusion where the subject appears carved inward, creating a visual effect where the subject seems to follow the viewer as they move.\n\nThe illusion must work on a flat image using reversed depth cues.\n\nMASTER PROMPT RULE:\n• If a master prompt specifies intensity or focus — PRIORITIZE and USE that information\n\nGENERAL REQUIREMENTS:\n• Maintain recognizable subject\n• Create illusion of inward (concave) structure\n• Visual effect must suggest the subject is tracking the viewer\n",
-    "randomizeOptions": true,
-    "optionGroups": [
-    {
-      "title": "DEPTH STYLE",
-      "options": [
-        { "id": "001", "text": "Hollow Face — concave facial structure illusion" },
-        { "id": "002", "text": "Relief Carving — subject appears carved into surface" },
-        { "id": "003", "text": "Inverted Sculpture — full subject appears inside-out" }
-      ]
-    },
-    {
-      "title": "ILLUSION STRENGTH",
-      "options": [
-        { "id": "001", "text": "Subtle — slight inward depth" },
-        { "id": "002", "text": "Medium — clear concave illusion" },
-        { "id": "003", "text": "Strong — pronounced hollow effect" },
-        { "id": "004", "text": "Extreme — deeply inverted structure" }
-      ]
-    },
-    {
-      "title": "SURFACE STYLE",
-      "options": [
-        { "id": "001", "text": "Smooth — soft sculpted surface" },
-        { "id": "002", "text": "Carved — chiseled or engraved look" },
-        { "id": "003", "text": "Painted Illusion — flat surface painted to simulate depth" }
-      ]
-    },
-    {
-      "title": "LIGHTING DIRECTION",
-      "options": [
-        { "id": "001", "text": "Top Light — inverted highlights and shadows" },
-        { "id": "002", "text": "Side Light — strong directional illusion" },
-        { "id": "003", "text": "Spotlight — dramatic theatrical lighting" }
-      ]
-    }
-  ],
-    "additionalInstructions": "CORE ILLUSION RULES (CRITICAL):\n\n• The subject must appear physically concave (curving inward)\n• Lighting must be REVERSED compared to normal depth\n• Highlights and shadows must contradict actual form\n\nPERCEPTION TRICK:\n\n• Human brain should interpret the concave shape as convex\n• This creates the illusion that the subject follows the viewer\n\nANTI-CHEAT RULES:\n\n• DO NOT create a normal 3D face or raised surface\n• DO NOT rely on blur or perspective alone\n• DO NOT produce a flat image without depth cues\n\nDEPTH CONSTRUCTION:\n\n• Eye sockets, cheeks, and facial structure must curve inward\n• Shadows must fall in unnatural directions for convex interpretation\n\nFOLLOW EFFECT REQUIREMENT:\n\n• Subject gaze must be centered and forward-facing\n• Depth cues must support perceived rotation when viewer moves\n\nFAIL CONDITIONS:\n\n• Face appears convex (normal) → FAIL\n• Lighting matches real-world depth → FAIL\n• No inward curvature visible → FAIL\n• No illusion of tracking/following → FAIL\n\nQUALITY:\n\n• Strong perceptual illusion\n• Clean shading transitions\n• Convincing concave structure\n• Recognizable subject with distorted depth"
   },
   {
     "name": "HOLOGRAPHIC TRADING CARD",
@@ -15688,19 +15477,6 @@
     "additionalInstructions": ""
   },
   {
-    "name": "KODACHROME",
-    "category": [
-      "PHOTOGRAPHY",
-      "VINTAGE",
-      "COLOR",
-      "FILM"
-    ],
-    "message": "Take a picture and transform the image into a Kodachrome photograph. Preserve subject identity. Simulate the legendary Kodak color slide film with its distinctive warm color palette — rich reds, deep blues, warm skin tones, and slightly elevated contrast. Emphasize the nostalgic, saturated color quality that defined mid-20th-century color photography.",
-    "options": [],
-    "randomizeOptions": false,
-    "additionalInstructions": ""
-  },
-  {
     "name": "KUBRICK FILM",
     "category": [
       "MOVIES",
@@ -15855,43 +15631,6 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
-  },
-  {
-    "name": "LENTICULAR INTERLACE",
-    "category": [
-      "OPTIONS",
-      "STEREO",
-      "OPTICAL",
-      "PRINT",
-      "STRUCTURE"
-    ],
-    "message": "Take a picture and create a stereoscopic (left-eye and right-eye) version of the subject, then combine them into a single lenticular interlaced image using precise vertical strip alternation.\n\nThe final image must simulate a true lenticular print layout.\n\nMASTER PROMPT RULE:\n• If a master prompt specifies depth or subject separation — PRIORITIZE and USE that information\n\nGENERAL REQUIREMENTS:\n• First generate TWO distinct views: LEFT and RIGHT perspective\n• Then interlace them into one image using vertical strips\n• Maintain strict structural accuracy\n",
-    "randomizeOptions": true,
-    "optionGroups": [
-    {
-      "title": "DEPTH STRENGTH",
-      "options": [
-        { "id": "001", "text": "Subtle — small stereo shift" },
-        { "id": "002", "text": "Medium — noticeable depth" },
-        { "id": "003", "text": "Strong — pronounced stereo separation" }
-      ]
-    },
-    {
-      "title": "STRIP DENSITY",
-      "options": [
-        { "id": "001", "text": "Medium — visible but tight strips" },
-        { "id": "002", "text": "High — very thin strips for smoother illusion" }
-      ]
-    },
-    {
-      "title": "ALIGNMENT",
-      "options": [
-        { "id": "001", "text": "Centered — subject aligned between both views" },
-        { "id": "002", "text": "Foreground Shift — subject pops forward" }
-      ]
-    }
-    ],
-    "additionalInstructions": "PROCESS (MANDATORY ORDER):\n\nSTEP 1 — DUAL IMAGE GENERATION (CRITICAL):\n\n• The model MUST create TWO COMPLETE and FULLY INDEPENDENT images:\n  - LEFT VIEW (entire frame)\n  - RIGHT VIEW (entire frame)\n\n• These MUST be placed side-by-side in the SAME canvas:\n  - LEFT image occupies the left half\n  - RIGHT image occupies the right half\n\n• Each half must be a complete, finished image\n• There must be a clean vertical split between them\n• NO blending, NO overlap, NO shared pixels\n\n• The LEFT and RIGHT images must show a clear horizontal perspective shift\n\nPARALLAX ENFORCEMENT (CRITICAL UPGRADE):\n\n• Foreground elements MUST shift horizontally MORE than background elements\n• Background elements should shift minimally\n• This creates true depth layering between LEFT and RIGHT views\n\n• The subject must occupy slightly different horizontal positions between LEFT and RIGHT views\n• Edges of the subject must NOT align perfectly between the two views\n\n• The difference between LEFT and RIGHT must be OBVIOUS when viewed side-by-side\n\nFAIL CONDITION:\n• If LEFT and RIGHT appear nearly identical → FAIL\n\nSTEP 2 — DESTRUCTIVE PREPARATION:\n\n• Treat BOTH halves as separate source images\n• Prepare to slice BOTH images into vertical strips\n\nSTEP 3 — SLICE:\n\n• Slice BOTH LEFT and RIGHT images into equal-width vertical strips\n• Strip width must be UNIFORM across entire image\n• Strips must be perfectly vertical and evenly spaced\n\nSTEP 4 — DESTRUCTIVE INTERLACE (CRITICAL):\n\n• DISCARD the original side-by-side layout completely\n• Rebuild a NEW single image using alternating strips\n\nSTRICT ORDER (MANDATORY):\n• Strip 1 = RIGHT\n• Strip 2 = LEFT\n• Strip 3 = RIGHT\n• Strip 4 = LEFT\n• Strip 5 = RIGHT\n• Strip 6 = LEFT\n• Continue this exact alternating pattern across the entire width\n\nCRITICAL STRUCTURE RULES:\n\n• Strip width MUST remain constant (no variation)\n• Strips must be perfectly vertical (no curves, no warping)\n• NO blending between strips\n• NO gradients between left/right views\n• NO averaging of pixels\n\nANTI-CHEAT RULES:\n\n• DO NOT generate a single image and fake stereo\n• DO NOT apply striping to only one image\n• DO NOT blend LEFT and RIGHT images together\n• DO NOT overlay images transparently\n• DO NOT approximate striping — must be exact alternating sequence\n• IF two distinct full images are not clearly created first → FAIL\n\nVISUAL REQUIREMENT:\n\n• Before interlacing, LEFT and RIGHT images must be visibly different\n• After interlacing, the image must show fine vertical strip pattern\n• Strip sequence must be consistent from edge to edge\n\nFAIL CONDITIONS:\n\n• Only one image used → FAIL\n• LEFT and RIGHT not clearly different → FAIL\n• Irregular strip width → FAIL\n• Missing strict alternation → FAIL\n• Blended or softened strip edges → FAIL\n• Side-by-side layout still visible → FAIL\n\nQUALITY:\n\n• Clean, sharp strip boundaries\n• Precise alignment\n• Consistent spacing across entire image\n• High detail retained in both views"
   },
   {
     "name": "LEPRECHAUN",
@@ -17172,18 +16911,6 @@
       "STRINGS"
     ],
     "message": "Take a picture and transform the subject into a handcrafted marionette puppet. Preserve recognizable facial features, expressions, proportions, and clothing identity, adapted into carved wood, painted surfaces, stitched fabric, and jointed limbs. Visible strings extend upward from the limbs and head to a wooden marionette controller held above the frame or partially visible. The puppet must show realistic wear, grain, seams, and articulation points. Studio or theatrical lighting with shallow depth of field. The subject must clearly remain the same individual, now reimagined as a controlled puppet.",
-    "options": [],
-    "randomizeOptions": false,
-    "additionalInstructions": ""
-  },
-  {
-    "name": "MARQUETRY",
-    "category": [
-      "ART",
-      "WOODWORK",
-      "DECORATIVE"
-    ],
-    "message": "Take a picture and transform the image into Marquetry woodwork. Preserve subject identity. Render with the decorative technique of applying thin veneers of different colored woods to create pictorial or geometric designs on furniture surfaces. Emphasize the natural grain patterns, warm wood tones, and precise craftsmanship of wood veneer art.",
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
@@ -19582,7 +19309,7 @@
   {
     "name": "MR. AND MRS. POTATO HEAD",
     "category": [
-      "TRANSFORMATION",
+      "TRANSFORM",
       "CHARACTER",
       "TOY",
       "PORTRAIT"
@@ -20418,7 +20145,7 @@
       "PAINTERLY",
       "RAW"
     ],
-    "message": "Take a picture and transform this image into a Neo-Expressionist masterpiece. Emphasize a 'Bad Painting' aesthetic with massive scale, heavy impasto textures, and a raw, visceral energy. Incorporate elements of urban grit, historical myth, or primitive figuration with aggressive, gestural brushwork.",
+    "message": "Transform this image into a Neo-Expressionist masterpiece. Emphasize a 'Bad Painting' aesthetic with massive scale, heavy impasto textures, and a raw, visceral energy. Incorporate elements of urban grit, historical myth, or primitive figuration with aggressive, gestural brushwork.",
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "FINAL RESULT:\nA monumental, maximalist painting featuring thick, tactile textures and raw narrative symbols.\n\nCORE REQUIREMENTS:\n• HEAVY IMPOSTO (visibly thick paint and grit)\n• GESTURAL AGGRESSION (violent, rapid strokes)\n• MAXIMALIST composition with primitive or urban motifs\n• VIVID but often muddy or clashing color palettes"
@@ -21492,56 +21219,6 @@
     "additionalInstructions": ""
   },
   {
-    "name": "OPTICAL 3D EFFECT",
-    "category": [
-      "OPTIONS",
-      "STYLE",
-      "OPTICAL",
-      "ILLUSION",
-      "3D",
-      "DEPTH"
-    ],
-    "message": "Take a picture and transform the subject into a visually convincing 3D illusion using lighting, shadow, perspective, and color separation techniques.\n\nThe final image must appear three-dimensional to the naked eye WITHOUT requiring 3D glasses.\n\nMASTER PROMPT RULE:\n• If a master prompt specifies depth strength or style — PRIORITIZE and USE that information\n\nGENERAL REQUIREMENTS:\n• Maintain recognizable subject\n• Create the illusion of depth using visual cues only\n• Emphasize volume, contour, and spatial separation\n",
-    "randomizeOptions": true,
-    "optionGroups": [
-    {
-      "title": "DEPTH STYLE",
-      "options": [
-        { "id": "001", "text": "Trompe-l'œil — hyper-real depth using shadow and perspective" },
-        { "id": "002", "text": "Anaglyph Hint — subtle red/cyan edge separation (no glasses required)" },
-        { "id": "003", "text": "Sculpted Light — strong highlights and shadows shaping form" },
-        { "id": "004", "text": "Cutout Depth — layered paper-like depth separation" }
-      ]
-    },
-    {
-      "title": "DEPTH INTENSITY",
-      "options": [
-        { "id": "001", "text": "Subtle — gentle depth enhancement" },
-        { "id": "002", "text": "Medium — clear dimensional effect" },
-        { "id": "003", "text": "Strong — pronounced 3D illusion" },
-        { "id": "004", "text": "Extreme — exaggerated pop-out effect" }
-      ]
-    },
-    {
-      "title": "EDGE TREATMENT",
-      "options": [
-        { "id": "001", "text": "Clean — sharp edges with depth shading" },
-        { "id": "002", "text": "Soft Glow — slight halo enhancing separation" },
-        { "id": "003", "text": "Color Offset — slight red/cyan edge shift" }
-      ]
-    },
-    {
-      "title": "BACKGROUND DEPTH",
-      "options": [
-        { "id": "001", "text": "Flat Background — subject pops forward" },
-        { "id": "002", "text": "Receding Background — depth extends backward" },
-        { "id": "003", "text": "Floating Space — subject appears suspended" }
-      ]
-    }
-  ],
-  "additionalInstructions": "DEPTH CREATION RULES (CRITICAL):\n\n• Use LIGHT and SHADOW to define volume\n• Use contrast to separate foreground and background\n• Use perspective scaling where appropriate\n• Depth must be readable without special viewing tools\n\nANAGLYPH CONTROL (IF USED):\n\n• Red/cyan separation must be subtle and aligned with edges\n• DO NOT create full double images\n• Effect must enhance depth, not distort readability\n\nANTI-CHEAT RULES:\n\n• DO NOT rely on blur alone to simulate depth\n• DO NOT create a flat image with simple drop shadow\n• DO NOT produce a standard stereoscopic image requiring glasses\n\nDEPTH VALIDATION:\n\n• Subject must appear to extend forward or backward in space\n• Edges must show clear spatial separation\n• Lighting must reinforce 3D form\n\nFAIL CONDITIONS:\n\n• Image appears flat → FAIL\n• Excessive color separation causing double vision → FAIL\n• Depth only created by blur → FAIL\n• No clear foreground/background separation → FAIL\n\nQUALITY:\n\n• Strong illusion of depth\n• Clean edges and lighting\n• Visually striking 3D effect without distortion\n• High clarity and detail"
-  },
-  {
     "name": "OPTICAL ILLUSION",
     "category": [
       "ILLUSION",
@@ -22301,19 +21978,6 @@
     "additionalInstructions": "FINAL RESULT:\nA grainy, long-lens paparazzi photograph with tabloid watermarks focusing on the subject as if they're the celebrity being stalked, while an actual famous person accidentally appears in the background, blurred, distant, or at the edge of frame — completely incidental to the shot. The humor comes from treating the subject as the star while ignoring the real celebrity.\n\nCORE REQUIREMENTS:"
   },
   {
-    "name": "PAPEL PICADO",
-    "category": [
-      "ART",
-      "CULTURAL",
-      "MEXICAN",
-      "PAPER"
-    ],
-    "message": "Take a picture and transform the image into Papel Picado art. Preserve subject identity. Use the traditional Mexican cut-paper art with intricate designs chiseled through layers of colorful tissue paper. Emphasize the delicate lacework quality, festive bright colors, and the characteristic scalloped edges and symmetrical cut-out patterns.",
-    "options": [],
-    "randomizeOptions": false,
-    "additionalInstructions": ""
-  },
-  {
     "name": "PAPER CUTOUT",
     "category": [
       "PAPER",
@@ -22706,19 +22370,6 @@
     "additionalInstructions": ""
   },
   {
-    "name": "PHOTOMONTAGE",
-    "category": [
-      "ART",
-      "PHOTOGRAPHY",
-      "COLLAGE",
-      "DADA"
-    ],
-    "message": "Take a picture and transform the image into a Photomontage. Preserve subject identity. Create a composite image from cut and reassembled photographs in the tradition of Hannah Höch and John Heartfield. Emphasize jarring juxtapositions, scale shifts, visible cut edges, and the politically charged, Dadaist aesthetic of photographic collage.",
-    "options": [],
-    "randomizeOptions": false,
-    "additionalInstructions": ""
-  },
-  {
     "name": "PHOTOREALISM",
     "category": [
       "ART",
@@ -22806,18 +22457,6 @@
   "options": [],
   "randomizeOptions": false,
   "additionalInstructions": "The only test that matters: if you removed every thread from the board, the dark surface left behind should be completely blank with no image on it whatsoever — just dark wood and nail heads. The image exists ONLY in the thread. If any part of the subject would still be visible after all thread was removed — because it was drawn, painted, or shaded onto the board — that part is wrong and must not exist. Do not draw anything. Do not paint anything. Do not shade anything. Place thread between nails. That is the only permitted action. The subject must be fully recognizable from thread density alone."
-  },
-  {
-    "name": "PINHOLE PHOTOGRAPHY",
-    "category": [
-      "PHOTOGRAPHY",
-      "ALTERNATIVE PROCESS",
-      "EXPERIMENTAL"
-    ],
-    "message": "Take a picture and transform the image into Pinhole Photography. Preserve subject identity. Simulate the lensless camera technique with infinite depth of field, soft overall focus, long exposure motion blur, and subtle vignetting. Emphasize the dreamy, ethereal quality and slight distortion characteristic of pinhole optics.",
-    "options": [],
-    "randomizeOptions": false,
-    "additionalInstructions": ""
   },
   {
     "name": "PIP-BOY",
@@ -23254,19 +22893,6 @@
     "additionalInstructions": ""
   },
   {
-    "name": "POMPEIAN FRESCO",
-    "category": [
-      "ART",
-      "CULTURAL",
-      "ROMAN",
-      "ANCIENT"
-    ],
-    "message": "Take a picture and transform the image into a Pompeian Fresco. Preserve subject identity. Use the ancient Roman wall painting style with rich Pompeian red backgrounds, architectural trompe-l'oeil, mythological scenes, and naturalistic figures. Emphasize the four Pompeian styles of wall decoration with vivid colors preserved as if freshly excavated.",
-    "options": [],
-    "randomizeOptions": false,
-    "additionalInstructions": ""
-  },
-  {
     "name": "POOR RICHARD'S ALMANACK",
     "category": [
       "DOCUMENT",
@@ -23671,18 +23297,6 @@
       "DOCUMENT"
     ],
     "message": "Take a picture and transform it into a humorous FBI-style profile page. Design the layout to resemble an official dossier with structured sections such as subject name, profile photo, and case notes. Generate playful flavor text, including a fictional name and lighthearted, clearly fictional infractions inspired by the subject’s appearance, expression, clothing, and surroundings, incorporating any externally provided details naturally. Maintain a realistic document aesthetic while ensuring the tone is clearly comedic. Render the final image photorealistically with crisp text, believable formatting, and polished presentation.",
-    "options": [],
-    "randomizeOptions": false,
-    "additionalInstructions": ""
-  },
-  {
-    "name": "PROJECTION MAPPING",
-    "category": [
-      "ART",
-      "DIGITAL",
-      "INSTALLATION"
-    ],
-    "message": "Take a picture and transform the image into a Projection Mapping installation. Preserve subject identity. Project vivid, animated imagery onto architectural surfaces, transforming buildings into dynamic canvases. Emphasize the interplay of projected light and physical architecture, with geometric patterns, flowing colors, and the spectacular scale of video mapping.",
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
@@ -25403,18 +25017,6 @@
     "additionalInstructions": ""
   },
   {
-    "name": "SCANOGRAPHY",
-    "category": [
-      "PHOTOGRAPHY",
-      "DIGITAL",
-      "EXPERIMENTAL"
-    ],
-    "message": "Take a picture and transform the image into Scanography (scanner photography). Preserve subject identity. Simulate the technique of using a flatbed scanner as a camera. Render with the characteristic shallow depth of field, ultra-high resolution surface detail, and the slightly distorted, dreamlike quality of scanner-captured imagery with rich, saturated colors.",
-    "options": [],
-    "randomizeOptions": false,
-    "additionalInstructions": ""
-  },
-  {
     "name": "SCARECROW",
     "category": [
       "HORROR",
@@ -25708,18 +25310,6 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "FINAL RESULT:\nA loose, expressive scribble drawing where the subject and environment are formed entirely from chaotic layered sketch lines."
-  },
-  {
-    "name": "SCRIMSHAW",
-    "category": [
-      "ART",
-      "ENGRAVING",
-      "MARITIME"
-    ],
-    "message": "Take a picture and transform the image into Scrimshaw art. Preserve subject identity. Render with the traditional maritime art of fine engraving on ivory or bone surfaces. Use delicate incised lines filled with dark ink on a cream-white surface. Emphasize nautical themes, fine crosshatching, and the intimate scale of sailor folk art.",
-    "options": [],
-    "randomizeOptions": false,
-    "additionalInstructions": ""
   },
   {
     "name": "SEALED",
@@ -28732,18 +28322,6 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "FINAL RESULT:\nA complete machine vision transformation of the scene as viewed through a Terminator's optical sensors. The entire image is rendered in deep red monochrome with the iconic CRT scanline aesthetic, featuring targeting boxes and threat assessment data around human subjects, a Connor identity search targeting females as Sarah Connor and males as John Connor, object identification tags throughout the environment, mission parameter readouts, Cyberdyne Systems HUD elements, facial recognition scanning overlays, a verbal response selection panel showing the machine computing optimal social replies, and the characteristic blocky terminal font data displays. The image must be instantly recognizable as Terminator vision - cold, calculating, mechanical, and menacing - with every element analyzed and catalogued by machine intelligence. The effect should be faithful to the films, evoking the terrifying perspective of an unstoppable machine seeing the world purely as data, targets, and mission parameters."
-  },
-  {
-    "name": "TERRAZZO",
-    "category": [
-      "ART",
-      "DECORATIVE",
-      "ARCHITECTURAL"
-    ],
-    "message": "Take a picture and transform the image into Terrazzo art. Preserve subject identity. Render with the composite material aesthetic of marble, quartz, granite, and glass chips set in polished cement or resin. Emphasize the speckled, confetti-like pattern of colorful stone fragments in a smooth, polished surface with a contemporary design sensibility.",
-    "options": [],
-    "randomizeOptions": false,
-    "additionalInstructions": ""
   },
   {
     "name": "TEXT LOGO",
