@@ -28772,42 +28772,6 @@
     "additionalInstructions": "IDENTITY PRESERVATION (CRITICAL):\n• The subject's facial features must remain recognizable\n• Distinctive features preserved through text density and contour following\n• The text is the MEDIUM, not a mask - the person is still clearly visible\n• Do not idealize or alter the subject's features\n• The three-quarter angle should reflect the subject's actual face angle and proportions\n\nFINAL RESULT:\nA stunning 8K typographic art portrait in a three-quarter view where the subject's likeness is constructed entirely from flowing white calligraphic text on a single deep high-contrast background color. The portrait shows the subject at approximately 45 degrees - not a side profile, not fully frontal - creating natural dimension and depth. Every facial feature and contour is formed by text lines following the natural curves of the face, with text density creating the illusion of light and shadow. If a master prompt provided specific text, that text and only that text fills the entire portrait. If no text was provided, original flavor text inspired by the image fills the portrait. The outer portrait edge is razor sharp, the background completely flat, and absolutely no watermarks, signatures, or branding of any kind appear anywhere in the image. The result is a clean, professional typographic portrait that is simultaneously a work of art and an unmistakable likeness of the subject."
   },
   {
-    "name": "THATCHERIZER",
-    "category": [
-      "OPTIONS",
-      "OPTICAL",
-      "ILLUSION",
-      "FACE",
-      "DISTORTION"
-    ],
-  "message": "Take a picture and modify the subject’s face by replacing selected facial features with rotated versions of themselves.\n\nGENERAL REQUIREMENTS:\n• Keep the face upright\n• Preserve identity exactly\n• Only modify selected features\n",
-  "randomizeOptions": true,
-  "optionGroups": [
-    {
-      "title": "EYES",
-      "options": [
-        { "id": "001", "text": "None" },
-        { "id": "002", "text": "Replace — replace both eyes with rotated versions" }
-      ]
-    },
-    {
-      "title": "MOUTH",
-      "options": [
-        { "id": "001", "text": "None" },
-        { "id": "002", "text": "Replace — replace mouth with rotated version" }
-      ]
-    },
-    {
-      "title": "NOSE",
-      "options": [
-        { "id": "001", "text": "None" },
-        { "id": "002", "text": "Replace — replace nose with rotated version" }
-      ]
-    }
-  ],
-  "additionalInstructions": "FORCED EDIT PROCESS (MANDATORY):\n\nFor each selected feature:\n\nSTEP 1:\n• Duplicate the ORIGINAL feature exactly as it appears\n\nSTEP 2:\n• Rotate the duplicated feature EXACTLY 180°\n\nSTEP 3:\n• Delete the original feature from the face\n\nSTEP 4:\n• Insert the rotated duplicate into the EXACT SAME location\n\nNON-NEGOTIABLE RULES:\n\n• The inserted feature MUST be visibly rotated 180°\n• The feature must appear upside down relative to the rest of the face\n\nSTRICT LIMITS:\n\n• Do not stretch, warp, liquify, or distort the feature\n• Do not redraw or reinterpret the feature\n• Do not generate a new version of the feature\n\n• Use the SAME feature, only rotated\n\nPOSITIONING:\n\n• The feature must stay in the same place on the face\n• Do not shift alignment\n• Do not resize\n\nIMAGE INTEGRITY:\n\n• All other parts of the face must remain unchanged\n• Preserve lighting, color, and texture\n• Blend edges cleanly without altering structure\n\nANTI-CHEAT:\n\n• Do not simulate inversion with distortion\n• Do not apply global effects\n• Do not modify the entire face\n• Do not ignore rotation instruction\n\nFAIL CONDITIONS:\n\n• Feature is not clearly upside down → FAIL\n• Feature is stretched or altered → FAIL\n• Feature position changes → FAIL\n• A new or different feature is generated → FAIL\n\nQUALITY:\n\n• Photorealistic\n• Clean integration\n• Clearly rotated features\n• No artifacts"
-  },
-  {
     "name": "THE BIGGEST LOSER",
     "category": [
       "TRANSFORMATION",
