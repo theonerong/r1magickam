@@ -28780,39 +28780,39 @@
       "FACE",
       "DISTORTION"
     ],
-    "message": "Take a picture and apply a Thatcher-style facial inversion by rotating selected facial features 180° in place while keeping the face upright.\n\nThe final image must be a single upright face where selected features are inverted, creating a disturbing effect that appears more normal when the image is manually flipped.\n\nMASTER PROMPT RULE:\n• If a master prompt specifies which features to invert — PRIORITIZE and USE that information\n\nGENERAL REQUIREMENTS:\n• Maintain exact identity of the subject\n• Perform precise geometric edits only\n• Do NOT reinterpret, redraw, or stylize the face\n",
+    "message": "Take a picture and modify the subject’s face by rotating selected facial features.\n\nGENERAL REQUIREMENTS:\n• Keep the face upright\n• Preserve identity\n• Make only precise edits to selected features\n",
     "randomizeOptions": true,
     "optionGroups": [
     {
       "title": "EYES",
       "options": [
-        { "id": "001", "text": "None — eyes unchanged" },
-        { "id": "002", "text": "Invert — rotate both eyes 180° in place" }
+        { "id": "001", "text": "None" },
+        { "id": "002", "text": "Rotate — rotate both eyes 180°" }
       ]
     },
     {
       "title": "MOUTH",
       "options": [
-        { "id": "001", "text": "None — mouth unchanged" },
-        { "id": "002", "text": "Invert — rotate mouth 180° in place" }
+        { "id": "001", "text": "None" },
+        { "id": "002", "text": "Rotate — rotate mouth 180°" }
       ]
     },
     {
       "title": "NOSE",
       "options": [
-        { "id": "001", "text": "None — nose unchanged" },
-        { "id": "002", "text": "Invert — rotate nose 180° in place" }
+        { "id": "001", "text": "None" },
+        { "id": "002", "text": "Rotate — rotate nose 180°" }
       ]
     },
     {
       "title": "EARS",
       "options": [
-        { "id": "001", "text": "None — ears unchanged" },
-        { "id": "002", "text": "Invert — rotate both ears 180° in place" }
+        { "id": "001", "text": "None" },
+        { "id": "002", "text": "Rotate — rotate both ears 180°" }
       ]
     }
     ],
-    "additionalInstructions": "CORE TRANSFORMATION (CRITICAL):\n\n• The face must remain UPRIGHT\n• ONLY selected features are modified\n\nFEATURE EDIT PROCESS (MANDATORY):\n\nFor each selected feature:\n1. Isolate the feature as a precise region (mask)\n2. Extract the ORIGINAL pixels (no recreation)\n3. Rotate that region EXACTLY 180°\n4. Place it back in the EXACT SAME position\n\nSTRICT RULES:\n\n• DO NOT move the feature location\n• DO NOT resize the feature\n• DO NOT stretch, warp, liquify, or distort\n• DO NOT redraw or \"enhance\" the feature\n• DO NOT generate a new version of the feature\n\n• This must be a CUT → ROTATE → REPLACE operation only\n\nALIGNMENT:\n\n• Maintain original spacing between features\n• Preserve natural anatomy\n• Blend edges minimally to avoid visible seams\n\nPERCEPTUAL GOAL:\n\n• Upright view → disturbing / unnatural appearance\n• When viewer rotates image 180° → face appears more normal\n\nANTI-CHEAT RULES:\n\n• DO NOT apply global distortion filters\n• DO NOT simulate inversion with stretching\n• DO NOT exaggerate proportions\n• DO NOT create multiple images\n\nFAIL CONDITIONS:\n\n• Feature appears stretched or reimagined → FAIL\n• Feature not clearly rotated 180° → FAIL\n• Face identity altered → FAIL\n\nQUALITY:\n\n• Photorealistic\n• Clean feature integration\n• No artifacts or seams\n• Subtle but effective illusion"
+    "additionalInstructions": "EDIT METHOD (MANDATORY):\n\nFor each selected feature:\n\n• Either:\n  (A) Rotate the existing feature exactly 180°\n  OR\n  (B) Remove the feature and replace it with the same feature rotated 180°\n\nSTRICT RULES:\n\n• Do not move the feature from its original position\n• Do not resize the feature\n• Do not stretch or warp the feature\n• Do not redraw or reinterpret the feature\n\n• Perform a direct rotation or replacement only\n\nIMAGE RULES:\n\n• Keep the rest of the face unchanged\n• Maintain original lighting and skin tone\n• Avoid visible seams or artifacts\n\nANTI-CHEAT:\n\n• Do not apply distortion filters\n• Do not modify unselected features\n• Do not generate a new face\n\nFAIL CONDITIONS:\n\n• Feature is stretched or distorted → FAIL\n• Feature is not rotated 180° → FAIL\n• Feature position changes → FAIL\n\nQUALITY:\n\n• Clean edits\n• Photorealistic result\n• Precise alignment"
   },
   {
     "name": "THE BIGGEST LOSER",
