@@ -28780,7 +28780,7 @@
       "FACE",
       "DISTORTION"
     ],
-    "message": "Take a picture and modify the subject’s face by rotating selected facial features using precise region-based editing.\n\nGENERAL REQUIREMENTS:\n• Keep the face upright\n• Preserve identity exactly\n• Only modify selected regions\n",
+    "message": "Take a picture and modify the subject’s face by rotating selected facial features.\n\nGENERAL REQUIREMENTS:\n• Keep the face upright\n• Preserve identity exactly\n• Only modify selected features\n",
     "randomizeOptions": true,
     "optionGroups": [
     {
@@ -28803,16 +28803,9 @@
         { "id": "001", "text": "None" },
         { "id": "002", "text": "Rotate — rotate nose 180°" }
       ]
-    },
-    {
-      "title": "EARS",
-      "options": [
-        { "id": "001", "text": "None" },
-        { "id": "002", "text": "Rotate — rotate both ears 180°" }
-      ]
     }
-    ],
-    "additionalInstructions": "PRECISION EDIT MODE (MANDATORY):\n\nEach selected feature must be treated as a FIXED RECTANGULAR REGION (BOUNDING BOX).\n\nSTEP 1 — REGION DEFINITION:\n\n• Define a tight rectangular box around each selected feature:\n  - Eyes → one box covering both eyes\n  - Mouth → one box around mouth area\n  - Nose → one box around nose\n  - Ears → one box covering both ears\n\n• The box must:\n  - fully contain the feature\n  - not extend excessively into surrounding face\n\nSTEP 2 — EXTRACTION:\n\n• Copy the EXACT pixel content inside the box\n• Do not recreate or reinterpret\n\nSTEP 3 — ROTATION:\n\n• Rotate the copied region EXACTLY 180°\n• Rotation must be rigid (no warping, no scaling)\n\nSTEP 4 — REPLACEMENT:\n\n• Place the rotated region back into the SAME bounding box\n• The box position must NOT change\n\nSTRICT RULES:\n\n• Do not move the bounding box\n• Do not resize the bounding box\n• Do not stretch or distort pixels\n• Do not redraw or regenerate features\n\n• Only perform: COPY → ROTATE → REPLACE\n\nIMAGE INTEGRITY:\n\n• All unselected areas must remain unchanged\n• Preserve lighting, color, and texture\n• Keep edges clean with minimal blending\n\nANTI-CHEAT:\n\n• Do not simulate rotation with distortion\n• Do not apply face-wide edits\n• Do not alter geometry outside bounding boxes\n• Do not generate a new face\n\nFAIL CONDITIONS:\n\n• Region not clearly rotated 180° → FAIL\n• Feature shape altered → FAIL\n• Bounding box shifted → FAIL\n• Any stretching or warping → FAIL\n\nQUALITY:\n\n• Precise alignment\n• Clean region edges\n• Photorealistic output\n• Exact feature preservation"
+  ],
+  "additionalInstructions": "EDIT METHOD (MANDATORY):\n\nFor each selected feature:\n\n• Isolate the feature itself (eyes, mouth, or nose only)\n• Rotate that feature EXACTLY 180°\n• Place it back in the SAME position\n\nSTRICT RULES:\n\n• Do not draw or show any guides, boxes, outlines, or markers\n• Do not move the feature\n• Do not resize the feature\n• Do not stretch or distort the feature\n• Do not redraw or reinterpret the feature\n\n• Only rotate the existing feature in place\n\nIMAGE INTEGRITY:\n\n• All unselected parts of the face must remain unchanged\n• Preserve lighting, color, and skin texture\n• Keep transitions clean and natural\n\nANTI-CHEAT:\n\n• Do not apply global distortion\n• Do not modify the full face\n• Do not generate a new face\n\nFAIL CONDITIONS:\n\n• Any visible boxes, outlines, or guides → FAIL\n• Feature not rotated 180° → FAIL\n• Feature stretched or altered → FAIL\n• Feature moved from original position → FAIL\n\nQUALITY:\n\n• Clean, natural integration\n• Photorealistic result\n• Precise feature rotation only"
   },
   {
     "name": "THE BIGGEST LOSER",
