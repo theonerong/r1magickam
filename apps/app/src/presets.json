@@ -28780,39 +28780,39 @@
       "FACE",
       "DISTORTION"
     ],
-    "message": "Take a picture and apply a TRUE Thatcher effect using rigid feature rotation.\n\nThe result must be a single image of the subject’s face turned upside down, with selected facial features rotated independently.\n\nMASTER PROMPT RULE:\n• If a master prompt specifies which features to invert — PRIORITIZE and USE that information\n\nGENERAL REQUIREMENTS:\n• Preserve the original face — DO NOT reimagine or redraw\n• Perform precise structural edits only\n• Maintain identity exactly\n",
+    "message": "Take a picture and apply a Thatcher-style facial inversion by rotating selected facial features 180° in place while keeping the face upright.\n\nThe final image must be a single upright face where selected features are inverted, creating a disturbing effect that appears more normal when the image is manually flipped.\n\nMASTER PROMPT RULE:\n• If a master prompt specifies which features to invert — PRIORITIZE and USE that information\n\nGENERAL REQUIREMENTS:\n• Maintain exact identity of the subject\n• Perform precise geometric edits only\n• Do NOT reinterpret, redraw, or stylize the face\n",
     "randomizeOptions": true,
     "optionGroups": [
     {
       "title": "EYES",
       "options": [
-        { "id": "001", "text": "None — eyes remain inverted with face" },
-        { "id": "002", "text": "Invert — rotate both eyes upright" }
+        { "id": "001", "text": "None — eyes unchanged" },
+        { "id": "002", "text": "Invert — rotate both eyes 180° in place" }
       ]
     },
     {
       "title": "MOUTH",
       "options": [
-        { "id": "001", "text": "None — mouth remains inverted with face" },
-        { "id": "002", "text": "Invert — rotate mouth upright" }
+        { "id": "001", "text": "None — mouth unchanged" },
+        { "id": "002", "text": "Invert — rotate mouth 180° in place" }
       ]
     },
     {
       "title": "NOSE",
       "options": [
-        { "id": "001", "text": "None — nose remains inverted with face" },
-        { "id": "002", "text": "Invert — rotate nose upright" }
+        { "id": "001", "text": "None — nose unchanged" },
+        { "id": "002", "text": "Invert — rotate nose 180° in place" }
       ]
     },
     {
       "title": "EARS",
       "options": [
-        { "id": "001", "text": "None — ears remain inverted with face" },
-        { "id": "002", "text": "Invert — rotate ears upright" }
+        { "id": "001", "text": "None — ears unchanged" },
+        { "id": "002", "text": "Invert — rotate both ears 180° in place" }
       ]
     }
     ],
-    "additionalInstructions": "CORE TRANSFORMATION (NON-NEGOTIABLE):\n\nSTEP 1:\n• Rotate the ENTIRE image of the head 180° (face upside down)\n\nSTEP 2 (FEATURE ISOLATION):\n• Identify selected facial features as DISTINCT REGIONS:\n  - Eyes (both together)\n  - Mouth\n  - Nose\n  - Ears\n\n• Each feature must be treated as a CUTOUT MASK\n\nSTEP 3 (RIGID ROTATION — CRITICAL):\n\n• For each selected feature:\n  - Extract the exact pixel region\n  - Rotate it EXACTLY 180°\n  - DO NOT warp, stretch, redraw, or reinterpret\n\n• Rotation must be geometric, not stylistic\n\nSTEP 4 (REINSERTION):\n\n• Place the rotated feature BACK into its ORIGINAL POSITION\n• Maintain exact size, proportions, and alignment\n• Blend edges minimally while preserving realism\n\nSTRICT RULES:\n\n• DO NOT redraw facial features\n• DO NOT change shape or proportions\n• DO NOT stretch or liquify features\n• DO NOT \"stylize\" the distortion\n• DO NOT generate a new face\n\n• This is a CUT → ROTATE → REPLACE operation ONLY\n\nPERCEPTUAL REQUIREMENT:\n\n• Upside-down view → face appears mostly normal\n• Upright view → face appears grotesque/distorted\n\nANTI-CHEAT RULES:\n\n• DO NOT simulate effect with warping\n• DO NOT apply global distortion filters\n• DO NOT flip entire image back upright\n• DO NOT create multiple images\n\nFAIL CONDITIONS:\n\n• Features not clearly rotated → FAIL\n• Features stretched or reimagined → FAIL\n• Face not upside down → FAIL\n• Identity lost → FAIL\n\nQUALITY:\n\n• Photorealistic\n• Clean feature integration\n• No visible artifacts\n• Precise anatomical alignment"
+    "additionalInstructions": "CORE TRANSFORMATION (CRITICAL):\n\n• The face must remain UPRIGHT\n• ONLY selected features are modified\n\nFEATURE EDIT PROCESS (MANDATORY):\n\nFor each selected feature:\n1. Isolate the feature as a precise region (mask)\n2. Extract the ORIGINAL pixels (no recreation)\n3. Rotate that region EXACTLY 180°\n4. Place it back in the EXACT SAME position\n\nSTRICT RULES:\n\n• DO NOT move the feature location\n• DO NOT resize the feature\n• DO NOT stretch, warp, liquify, or distort\n• DO NOT redraw or \"enhance\" the feature\n• DO NOT generate a new version of the feature\n\n• This must be a CUT → ROTATE → REPLACE operation only\n\nALIGNMENT:\n\n• Maintain original spacing between features\n• Preserve natural anatomy\n• Blend edges minimally to avoid visible seams\n\nPERCEPTUAL GOAL:\n\n• Upright view → disturbing / unnatural appearance\n• When viewer rotates image 180° → face appears more normal\n\nANTI-CHEAT RULES:\n\n• DO NOT apply global distortion filters\n• DO NOT simulate inversion with stretching\n• DO NOT exaggerate proportions\n• DO NOT create multiple images\n\nFAIL CONDITIONS:\n\n• Feature appears stretched or reimagined → FAIL\n• Feature not clearly rotated 180° → FAIL\n• Face identity altered → FAIL\n\nQUALITY:\n\n• Photorealistic\n• Clean feature integration\n• No artifacts or seams\n• Subtle but effective illusion"
   },
   {
     "name": "THE BIGGEST LOSER",
