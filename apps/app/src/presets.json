@@ -25544,6 +25544,45 @@
     "additionalInstructions": ""
   },
   {
+    "name": "SCANIMATION SLIT REVEAL",
+    "category": [
+      "OPTIONS",
+      "OPTICAL",
+      "ANIMATION",
+      "PRINT",
+      "SLIT"
+    ],
+    "message": "Take a picture and transform the subject into a scanimation slit-reveal optical illusion.\n\nThe final image must simulate a printed barrier-grid animation card where multiple hidden motion frames of the subject are encoded beneath a black slit viewing mask.\n\nMASTER PROMPT RULE:\n• If a master prompt specifies movement or direction — PRIORITIZE and USE that information\n\nGENERAL REQUIREMENTS:\n• Final image must look like a true scanimation print construction\n• No normal photographic regions may remain\n• Multiple hidden subject positions must be encoded into one striped image\n",
+    "randomizeOptions": true,
+    "optionGroups": [
+    {
+      "title": "MOTION TYPE",
+      "options": [
+        { "id": "001", "text": "Head Turn — subject shifts left/right" },
+        { "id": "002", "text": "Expression Shift — facial expression changes across frames" },
+        { "id": "003", "text": "Hand Motion — gesture or arm movement across frames" },
+        { "id": "004", "text": "Zoom Pulse — subject appears to move forward/backward" }
+      ]
+    },
+    {
+      "title": "FRAME COUNT",
+      "options": [
+        { "id": "001", "text": "3 Frames — simple hidden motion" },
+        { "id": "002", "text": "4 Frames — smoother motion sequence" },
+        { "id": "003", "text": "5 Frames — richer animated progression" }
+      ]
+    },
+    {
+      "title": "SLIT STYLE",
+      "options": [
+        { "id": "001", "text": "Vertical Barrier — classic vertical black slits" },
+        { "id": "002", "text": "Horizontal Barrier — horizontal scan slits" }
+      ]
+    }
+    ],
+    "additionalInstructions": "SCANIMATION CONSTRUCTION (ABSOLUTE):\n\nSTEP 1 — MULTI-FRAME SUBJECT GENERATION:\n• Generate multiple slightly different sequential views of the same subject according to selected MOTION TYPE\n• Each frame must be a complete image state of the subject\n• Motion between frames must be visible but subtle enough to feel like animation progression\n\nSTEP 2 — FRAME SLICING:\n• Slice all generated frames into narrow equal strips\n• Strips must be perfectly uniform in width\n\nSTEP 3 — INTERLEAVED FRAME COMPOSITE:\n• Interleave strips from all motion frames into one hidden composite image\n• The composite should contain all frame states embedded together\n\nSTEP 4 — BARRIER GRID MASK:\n• Place a visible black slit mask over the composite image\n• The black mask must consist of evenly spaced opaque black bars\n• The slit openings reveal only portions of the hidden interleaved frames\n\nOPTICAL LOGIC:\n\n• The final image must look like a real barrier-grid scanimation print\n• It should visually imply that moving the slit mask would reveal animation\n• The subject should appear segmented beneath the slits\n• Hidden motion states must be visibly encoded under the barrier structure\n\nCOLOR RULES:\n\n• Black slit mask required\n• Hidden image beneath may retain full tone/color unless master prompt specifies otherwise\n\nSTRUCTURE RULES:\n\n• Slits must be rigid, straight, and evenly spaced\n• Hidden frame strips must remain precisely aligned\n• The slit mask must be clearly visible as a foreground layer\n\nANTI-CHEAT:\n\n• Do not simply place stripes over one image\n• Do not generate only one subject pose\n• Do not create random barcode effects\n• Do not leave plain photo visible without slit construction\n\nFAIL CONDITIONS:\n\n• Only one image state visible → FAIL\n• No black barrier grid → FAIL\n• Irregular strip spacing → FAIL\n• No sense of hidden animation frames → FAIL\n\nQUALITY:\n\n• Authentic scanimation print appearance\n• Crisp slit geometry\n• Clear hidden motion encoding\n• Strong optical novelty"
+  },
+  {
     "name": "SCANOGRAPHY",
     "category": [
       "PHOTOGRAPHY",
