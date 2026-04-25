@@ -18840,27 +18840,35 @@
       "ILLUSION",
       "LINES"
     ],
-    "message": "Take a picture and transform the subject into a moiré displacement optical illusion using two separate repeating line systems.\n\nThe final image must create visibility through pattern-frequency contrast between subject and background.\n\nMASTER PROMPT RULE:\n• If a master prompt specifies distortion strength — PRIORITIZE and USE that information\n\nGENERAL REQUIREMENTS:\n• Subject and background must be built from DIFFERENT line densities\n• Entire image must be black and white only\n• No normal photographic regions may remain\n",
+    "message": "Take a picture and transform the subject into a kinetic moiré masking optical illusion built from two superimposed black-and-white pattern systems.\n\nThe final image must simulate a hidden portrait encoded beneath an oscillating interference mask.\n\nMASTER PROMPT RULE:\n• If a master prompt specifies intensity or vibration — PRIORITIZE and USE that information\n\nGENERAL REQUIREMENTS:\n• Entire image must be black and white only\n• No normal photographic regions may remain\n• Final image must visibly contain TWO overlapping pattern layers\n",
     "randomizeOptions": true,
     "optionGroups": [
     {
-      "title": "LINE STYLE",
+      "title": "MASK STYLE",
       "options": [
-        { "id": "001", "text": "Horizontal — repeating horizontal bands" },
-        { "id": "002", "text": "Vertical — repeating vertical bands" },
-        { "id": "003", "text": "Circular — repeating concentric rings" }
+        { "id": "001", "text": "Vertical Shutter — dense vertical interference bars" },
+        { "id": "002", "text": "Horizontal Scan — dense horizontal interference bars" },
+        { "id": "003", "text": "Wave Mask — repeating oscillating wave bars" }
       ]
     },
     {
-      "title": "DISPLACEMENT",
+      "title": "VIBRATION LEVEL",
       "options": [
-        { "id": "001", "text": "Subtle — light optical shift" },
-        { "id": "002", "text": "Medium — visible interference" },
-        { "id": "003", "text": "Strong — aggressive moiré vibration" }
+        { "id": "001", "text": "Subtle — light optical shimmer" },
+        { "id": "002", "text": "Medium — clear interference vibration" },
+        { "id": "003", "text": "Strong — aggressive hidden-image pop-out" }
+      ]
+    },
+    {
+      "title": "ENCODE DEPTH",
+      "options": [
+        { "id": "001", "text": "Face Priority — face encoded most strongly" },
+        { "id": "002", "text": "Subject Full — full subject encoded" },
+        { "id": "003", "text": "High Contrast Silhouette — bold hidden form" }
       ]
     }
     ],
-    "additionalInstructions": "DUAL PATTERN DOMAIN SEPARATION (ABSOLUTE):\n\nSUBJECT PATTERN RULES:\n• The subject must be reconstructed from a FINE, TIGHT, HIGH-FREQUENCY repeating line pattern\n• Lines must be closely spaced\n• Subject details are formed only by displacement/warping of this fine pattern\n\nBACKGROUND PATTERN RULES:\n• The background must be reconstructed from a CHUNKIER, WIDER, LOWER-FREQUENCY repeating line pattern\n• Background spacing must be visibly larger than the subject spacing\n• Background must use the SAME directional family as selected LINE STYLE\n\n• Subject pattern and background pattern must remain visually distinct in density\n\nMOIRÉ INTERFERENCE LOGIC:\n\n• Visibility of the subject must come from the collision between the fine subject field and coarse background field\n• At subject boundaries there should be strong optical interference and vibration\n• The eye should perceive hidden form through pattern conflict\n\nCOLOR RULES:\n\n• STRICT black and white only\n• No gray\n• No color\n• No photographic tones\n\nPATTERN CONSTRUCTION:\n\n• Entire image must be built only from repeating lines/rings/bands\n• No smooth shaded areas\n• No untouched photo regions\n\nANTI-CHEAT:\n\n• Do not simply overlay moiré lines on a photo\n• Do not use the same line spacing for subject and background\n• Do not leave visible natural textures\n• Do not create random abstract stripes\n\nFAIL CONDITIONS:\n\n• Subject/background use same density → FAIL\n• Regular photo visible underneath → FAIL\n• No clear optical vibration → FAIL\n• Gray shading instead of line construction → FAIL\n\nQUALITY:\n\n• Strong hidden-image illusion\n• High optical tension\n• Crisp black/white linework\n• Clear density contrast"
+    "additionalInstructions": "TWO-LAYER OPTICAL CONSTRUCTION (ABSOLUTE):\n\nLAYER 1 — ENCODED IMAGE FIELD:\n• First build a dense black-and-white high-contrast striped image field\n• The subject must be hidden/reconstructed inside this field using line displacement, line thickness variation, and phase interruption\n• The subject should appear encoded inside the stripe structure — not as a normal photo\n\n• Subject details must emerge only through structural interruption of the base pattern\n\nLAYER 2 — OSCILLATING MASK FIELD:\n• Place a SECOND visible repeating interference mask over the entire image\n• This mask must be a separate stripe/bar/wave system\n• The mask must slightly conflict with the encoded base layer in spacing or phase\n• The mask must visibly sit on top of the encoded portrait layer\n\nINTERFERENCE LOGIC:\n\n• The two layers must create optical vibration, shimmer, and moiré tension\n• The eye should perceive a hidden portrait that appears to pulse or pop through the mask\n• Subject visibility should feel partially concealed and partially revealed by the overlay mask\n\nCOLOR RULES:\n\n• STRICT black and white only\n• No gray\n• No color\n• No photographic shading\n\nPATTERN DENSITY:\n\n• Encoded subject layer must use finer tighter line density\n• Overlay kinetic mask may be slightly chunkier and more visible\n• The two layers must not share identical spacing\n\nANTI-CHEAT:\n\n• Do not simply place stripes over a photo\n• Do not generate only one pattern field\n• Do not leave plain photographic areas visible\n• Do not create decorative op-art without hidden subject encoding\n\nFAIL CONDITIONS:\n\n• Only one visible pattern system → FAIL\n• Subject visible as ordinary photo → FAIL\n• No strong optical interference → FAIL\n• Gray tones or gradients visible → FAIL\n\nQUALITY:\n\n• Strong kinetic shimmer\n• High optical vibration\n• Clear hidden portrait reveal\n• Crisp black/white pattern engineering"
   },
   {
     "name": "MOLAS",
