@@ -5295,6 +5295,36 @@
     "additionalInstructions": ""
   },
   {
+    "name": "CLOCKWORK AUTOMATON",
+    "category": [
+      "OPTIONS",
+      "MECHANICAL",
+      "STEAMPUNK",
+      "VICTORIAN",
+      "GEARS"
+    ],
+    "message": "Take a picture and transform the subject into a Victorian clockwork automaton.\n\nThe final image must reinterpret the subject as a brass mechanical humanoid filled with gears, springs, dials, and ornate machinery.\n\nMASTER PROMPT RULE:\n• If a master prompt specifies complexity or elegance — PRIORITIZE and USE that information\n",
+    "randomizeOptions": true,
+    "optionGroups": [
+    {
+      "title": "MECHANICAL DENSITY",
+      "options": [
+        { "id": "001", "text": "Light — subtle exposed gears" },
+        { "id": "002", "text": "Medium — clear automaton conversion" },
+        { "id": "003", "text": "Heavy — dense machinery and clockwork" }
+      ]
+    },
+    {
+      "title": "STYLE MODE",
+      "options": [
+        { "id": "001", "text": "Elegant Brass — polished Victorian machinery" },
+        { "id": "002", "text": "Industrial Steam — darker soot-covered mechanisms" }
+      ]
+    }
+    ],
+    "additionalInstructions": "• Subject must remain recognizable but mechanical\n• Use brass, copper, steel gears, springs, rivets, and clock parts\n• Victorian craftsmanship required\n• No modern robot styling"
+  },
+  {
     "name": "CLOISONNISM",
     "category": [
       "ART",
@@ -16171,6 +16201,45 @@
     "additionalInstructions": ""
   },
   {
+    "name": "LIQUID CHROME",
+    "category": [
+      "OPTIONS",
+      "METALLIC",
+      "LIQUID",
+      "REFLECTIVE",
+      "SURREAL"
+    ],
+    "message": "Take a picture and transform the subject into flowing liquid chrome.\n\nThe final image must reinterpret the subject as if made from reflective molten mirror-metal with fluid deformation and surreal mercury-like shine.\n\nMASTER PROMPT RULE:\n• If a master prompt specifies intensity or environment — PRIORITIZE and USE that information\n\nGENERAL REQUIREMENTS:\n• Maintain recognizable subject silhouette\n• Convert all visible surfaces into reflective liquid chrome\n• Emphasize mirror reflections and metallic fluidity\n",
+    "randomizeOptions": true,
+    "optionGroups": [
+    {
+      "title": "FLOW STYLE",
+      "options": [
+        { "id": "001", "text": "Smooth Mercury — gentle flowing chrome surfaces" },
+        { "id": "002", "text": "Dripping Chrome — elongated molten drips" },
+        { "id": "003", "text": "Ribbon Stretch — curling chrome strands" }
+      ]
+    },
+    {
+      "title": "REFLECTION INTENSITY",
+      "options": [
+        { "id": "001", "text": "Soft Mirror — muted reflections" },
+        { "id": "002", "text": "High Mirror — strong reflective shine" },
+        { "id": "003", "text": "Blinding Chrome — extreme specular highlights" }
+      ]
+    },
+    {
+      "title": "SURREAL LEVEL",
+      "options": [
+        { "id": "001", "text": "Subtle — mostly intact form" },
+        { "id": "002", "text": "Medium — strong fluid deformation" },
+        { "id": "003", "text": "Extreme — dramatic melting surrealism" }
+      ]
+    }
+    ],
+    "additionalInstructions": "• Subject must appear made entirely of reflective chrome liquid\n• Surface must be mirror-like and glossy\n• No matte metal allowed\n• Maintain recognizable subject while allowing fluid melt behavior\n• Strong white specular highlights required\n• No non-metal textures"
+  },
+  {
   "name": "LIQUID DISPLACEMENT",
   "category": [
     "OPTIONS",
@@ -18761,6 +18830,37 @@
     ],
     "randomizeOptions": true,
     "additionalInstructions": "RESTRICTIONS:\n• No text overlays or captions\n• No additional scale changes elsewhere in the image\n• No surreal or abstract styles\n\nFINAL RESULT:\nThe image should look like a normal photograph at first glance, except for one unmistakably wrong-scale object that creates a clean, humorous visual gag."
+  },
+  {
+    "name": "MOIRÉ DISPLACEMENT",
+    "category": [
+      "OPTIONS",
+      "OPTICAL",
+      "PATTERN",
+      "ILLUSION",
+      "LINES"
+    ],
+    "message": "Take a picture and transform the subject into a moiré displacement optical illusion built from dense repeating line structures.\n\nThe final image must use layered interference lines to reconstruct the subject.\n\nMASTER PROMPT RULE:\n• If a master prompt specifies line density or distortion — PRIORITIZE and USE that information\n\nGENERAL REQUIREMENTS:\n• Subject must remain visible through line interference\n• Entire image built from optical line fields\n",
+    "randomizeOptions": true,
+    "optionGroups": [
+    {
+      "title": "LINE STYLE",
+      "options": [
+        { "id": "001", "text": "Horizontal — dense horizontal moiré lines" },
+        { "id": "002", "text": "Vertical — dense vertical moiré lines" },
+        { "id": "003", "text": "Circular — concentric moiré waves" }
+      ]
+    },
+    {
+      "title": "DISPLACEMENT",
+      "options": [
+        { "id": "001", "text": "Subtle — light interference" },
+        { "id": "002", "text": "Medium — visible pattern distortion" },
+        { "id": "003", "text": "Strong — aggressive optical vibration" }
+      ]
+    }
+    ],
+    "additionalInstructions": "• Entire image must be reconstructed from repeating black and white line fields\n• Subject visibility comes from line displacement only\n• No normal photographic regions should remain\n• Strong optical vibration required\n• Must feel like a printed moiré illusion"
   },
   {
     "name": "MOLAS",
@@ -24629,6 +24729,37 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "RIBBON DISINTEGRATION",
+    "category": [
+      "OPTIONS",
+      "SURREAL",
+      "DECONSTRUCTION",
+      "FLOW",
+      "STRIPS"
+    ],
+    "message": "Take a picture and transform the subject as if unraveling into long flowing ribbons.\n\nThe final image must show the subject partially intact and partially disintegrating into stretched strips.\n\nMASTER PROMPT RULE:\n• If a master prompt specifies intensity or direction — PRIORITIZE and USE that information\n",
+    "randomizeOptions": true,
+    "optionGroups": [
+    {
+      "title": "DISINTEGRATION LEVEL",
+      "options": [
+        { "id": "001", "text": "Light — small ribbon unraveling" },
+        { "id": "002", "text": "Medium — major sections unraveling" },
+        { "id": "003", "text": "Extreme — dramatic strip dissolution" }
+      ]
+    },
+    {
+      "title": "RIBBON STYLE",
+      "options": [
+        { "id": "001", "text": "Smooth Fabric — silky flowing strips" },
+        { "id": "002", "text": "Paper Strips — torn flat ribbons" },
+        { "id": "003", "text": "Energy Bands — luminous stretched bands" }
+      ]
+    }
+    ],
+    "additionalInstructions": "• Subject must visibly unravel into elongated ribbons\n• Ribbons must originate from actual body/clothing surfaces\n• Maintain partial recognizability\n• Motion must feel fluid and directional\n• No random particle disintegration"
   },
   {
     "name": "RICK AND MORTY",
