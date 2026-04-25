@@ -18840,27 +18840,27 @@
       "ILLUSION",
       "LINES"
     ],
-    "message": "Take a picture and transform the subject into a moiré displacement optical illusion built from dense repeating line structures.\n\nThe final image must use layered interference lines to reconstruct the subject.\n\nMASTER PROMPT RULE:\n• If a master prompt specifies line density or distortion — PRIORITIZE and USE that information\n\nGENERAL REQUIREMENTS:\n• Subject must remain visible through line interference\n• Entire image built from optical line fields\n",
+    "message": "Take a picture and transform the subject into a moiré displacement optical illusion using two separate repeating line systems.\n\nThe final image must create visibility through pattern-frequency contrast between subject and background.\n\nMASTER PROMPT RULE:\n• If a master prompt specifies distortion strength — PRIORITIZE and USE that information\n\nGENERAL REQUIREMENTS:\n• Subject and background must be built from DIFFERENT line densities\n• Entire image must be black and white only\n• No normal photographic regions may remain\n",
     "randomizeOptions": true,
     "optionGroups": [
     {
       "title": "LINE STYLE",
       "options": [
-        { "id": "001", "text": "Horizontal — dense horizontal moiré lines" },
-        { "id": "002", "text": "Vertical — dense vertical moiré lines" },
-        { "id": "003", "text": "Circular — concentric moiré waves" }
+        { "id": "001", "text": "Horizontal — repeating horizontal bands" },
+        { "id": "002", "text": "Vertical — repeating vertical bands" },
+        { "id": "003", "text": "Circular — repeating concentric rings" }
       ]
     },
     {
       "title": "DISPLACEMENT",
       "options": [
-        { "id": "001", "text": "Subtle — light interference" },
-        { "id": "002", "text": "Medium — visible pattern distortion" },
-        { "id": "003", "text": "Strong — aggressive optical vibration" }
+        { "id": "001", "text": "Subtle — light optical shift" },
+        { "id": "002", "text": "Medium — visible interference" },
+        { "id": "003", "text": "Strong — aggressive moiré vibration" }
       ]
     }
     ],
-    "additionalInstructions": "• Entire image must be reconstructed from repeating black and white line fields\n• Subject visibility comes from line displacement only\n• No normal photographic regions should remain\n• Strong optical vibration required\n• Must feel like a printed moiré illusion"
+    "additionalInstructions": "DUAL PATTERN DOMAIN SEPARATION (ABSOLUTE):\n\nSUBJECT PATTERN RULES:\n• The subject must be reconstructed from a FINE, TIGHT, HIGH-FREQUENCY repeating line pattern\n• Lines must be closely spaced\n• Subject details are formed only by displacement/warping of this fine pattern\n\nBACKGROUND PATTERN RULES:\n• The background must be reconstructed from a CHUNKIER, WIDER, LOWER-FREQUENCY repeating line pattern\n• Background spacing must be visibly larger than the subject spacing\n• Background must use the SAME directional family as selected LINE STYLE\n\n• Subject pattern and background pattern must remain visually distinct in density\n\nMOIRÉ INTERFERENCE LOGIC:\n\n• Visibility of the subject must come from the collision between the fine subject field and coarse background field\n• At subject boundaries there should be strong optical interference and vibration\n• The eye should perceive hidden form through pattern conflict\n\nCOLOR RULES:\n\n• STRICT black and white only\n• No gray\n• No color\n• No photographic tones\n\nPATTERN CONSTRUCTION:\n\n• Entire image must be built only from repeating lines/rings/bands\n• No smooth shaded areas\n• No untouched photo regions\n\nANTI-CHEAT:\n\n• Do not simply overlay moiré lines on a photo\n• Do not use the same line spacing for subject and background\n• Do not leave visible natural textures\n• Do not create random abstract stripes\n\nFAIL CONDITIONS:\n\n• Subject/background use same density → FAIL\n• Regular photo visible underneath → FAIL\n• No clear optical vibration → FAIL\n• Gray shading instead of line construction → FAIL\n\nQUALITY:\n\n• Strong hidden-image illusion\n• High optical tension\n• Crisp black/white linework\n• Clear density contrast"
   },
   {
     "name": "MOLAS",
