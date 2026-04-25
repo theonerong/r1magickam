@@ -1,6 +1,13 @@
 import { presetStorage } from './storage.js';
 import { presetImporter, earnCredit, unlockAllPresets, getCredits } from './preset-import.js';
 
+// Accent-insensitive search helper — strips diacritics so "cafe" finds "café"
+// NFC → NFD decomposes accented chars; removing \u0300-\u036F strips the accent marks.
+// The resulting string is the same length as the NFC original, so character positions align.
+function stripAccents(str) {
+  return (str || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+}
+
 // Loading overlay helpers 
 
 function showLoadingOverlay(label) {
@@ -1717,14 +1724,14 @@ function populatePresetList() {
   const filtered = getVisiblePresets().filter(preset => {
     // First apply text search filter
     if (presetFilterText) {
-      const searchText = presetFilterText.toLowerCase();
-      const categoryMatch = preset.category && preset.category.some(cat => cat.toLowerCase().includes(searchText));
+      const searchText = stripAccents(presetFilterText.toLowerCase());
+      const categoryMatch = preset.category && preset.category.some(cat => stripAccents(cat.toLowerCase()).includes(searchText));
       const optionsMatch = (
-        (preset.options && preset.options.some(o => o.text && o.text.toLowerCase().includes(searchText))) ||
-        (preset.optionGroups && preset.optionGroups.some(g => g.title && g.title.toLowerCase().includes(searchText) || g.options && g.options.some(o => o.text && o.text.toLowerCase().includes(searchText))))
+        (preset.options && preset.options.some(o => o.text && stripAccents(o.text.toLowerCase()).includes(searchText))) ||
+        (preset.optionGroups && preset.optionGroups.some(g => g.title && stripAccents(g.title.toLowerCase()).includes(searchText) || g.options && g.options.some(o => o.text && stripAccents(o.text.toLowerCase()).includes(searchText))))
       );
-      const textMatch = preset.name.toLowerCase().includes(searchText) || 
-             (preset.message || '').toLowerCase().includes(searchText) ||
+      const textMatch = stripAccents(preset.name.toLowerCase()).includes(searchText) ||
+             stripAccents((preset.message || '').toLowerCase()).includes(searchText) ||
              categoryMatch || optionsMatch;
       if (!textMatch) return false;
     }
@@ -3098,6 +3105,28 @@ async function applyMultiplePresets() {
   }
   
   document.body.removeChild(overlay);
+
+  // GALLERY MULTI-PRESET CREDIT GAME — earn credits for each unique imported preset used
+  try {
+    const imported = presetImporter.getImportedPresets();
+    if (imported.length > 0) {
+      const importedNames = new Set(imported.map(p => p.name));
+      let totalNewCredits = 0;
+      for (const preset of presetsToApply) {
+        if (preset.name && importedNames.has(preset.name)) {
+          if (earnCredit(preset.name)) totalNewCredits++;
+        }
+      }
+      if (totalNewCredits > 0) {
+        playTaDaSound();
+        const newTotal = getCredits();
+        setTimeout(() => {
+          showGalleryCreditFlash(`🪙 ${totalNewCredits > 1 ? totalNewCredits + ' Credits' : 'Credit'} Earned!\n(${newTotal} total)`);
+        }, 300);
+      }
+    }
+  } catch (e) { /* non-critical */ }
+
   alert(`${processed} preset${processed > 1 ? 's' : ''} applied successfully!`);
 }
 
@@ -5180,9 +5209,9 @@ const allPresets = CAMERA_PRESETS.filter(p => {
   const filtered = allPresets.filter(preset => {
     // First apply text search filter
     if (visiblePresetsFilterText) {
-      const searchText = visiblePresetsFilterText.toLowerCase();
-      const categoryMatch = preset.category && preset.category.some(cat => cat.toLowerCase().includes(searchText));
-      const textMatch = preset.name.toLowerCase().includes(searchText) || categoryMatch;
+      const searchText = stripAccents(visiblePresetsFilterText.toLowerCase());
+      const categoryMatch = preset.category && preset.category.some(cat => stripAccents(cat.toLowerCase()).includes(searchText));
+      const textMatch = stripAccents(preset.name.toLowerCase()).includes(searchText) || categoryMatch;
       if (!textMatch) return false;
     }
     
@@ -6244,44 +6273,52 @@ function tutorialSearchRun() {
   // Save clean HTML before highlighting
   tutorialSearchOriginalHTML = tutorialContent.innerHTML;
 
-  // Split into individual words, remove empty strings — OR search
+  // Split into individual words, strip accents so "cafe" finds "café"
   const words = query.split(/\s+/).filter(w => w.length > 0);
+  const normalizedWords = words.map(w => stripAccents(w.toLowerCase()));
 
-  // Build a single regex that matches ANY of the words (OR logic)
-  const escapedWords = words.map(w => w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
+  // Build regex from accent-stripped words
+  const escapedWords = normalizedWords.map(w => w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
   const re = new RegExp('(' + escapedWords.join('|') + ')', 'gi');
 
-  // Walk all text nodes and collect ones that match at least one word
+  // Walk all text nodes — test against accent-stripped content so "cafe" hits "café"
   const walker = document.createTreeWalker(tutorialContent, NodeFilter.SHOW_TEXT, null);
   const matchNodes = [];
   let node;
   while ((node = walker.nextNode())) {
-    if (re.test(node.textContent)) {
+    const normalized = stripAccents(node.textContent);
+    if (re.test(normalized)) {
       matchNodes.push(node);
     }
-    re.lastIndex = 0; // reset stateful regex after each test
+    re.lastIndex = 0;
   }
 
-  // Highlight all matches in each matching text node
+  // Highlight matches — match positions in normalized text align 1:1 with original,
+  // so we can slice the original text using positions found in the normalized version.
   matchNodes.forEach(textNode => {
     const parent = textNode.parentNode;
     if (!parent) return;
+    const original = textNode.textContent;
+    const normalized = stripAccents(original);
     re.lastIndex = 0;
     const frag = document.createDocumentFragment();
-    const parts = textNode.textContent.split(re);
-    parts.forEach(part => {
-      if (re.test(part)) {
-        const mark = document.createElement('mark');
-        mark.className = 'tutorial-search-match';
-        mark.style.cssText = 'background:#FE5F00;color:#000;border-radius:2px;padding:0 1px;';
-        mark.textContent = part;
-        frag.appendChild(mark);
-        tutorialSearchResults.push(mark);
-      } else {
-        frag.appendChild(document.createTextNode(part));
+    let lastIndex = 0;
+    let match;
+    while ((match = re.exec(normalized)) !== null) {
+      if (match.index > lastIndex) {
+        frag.appendChild(document.createTextNode(original.slice(lastIndex, match.index)));
       }
-      re.lastIndex = 0;
-    });
+      const mark = document.createElement('mark');
+      mark.className = 'tutorial-search-match';
+      mark.style.cssText = 'background:#FE5F00;color:#000;border-radius:2px;padding:0 1px;';
+      mark.textContent = original.slice(match.index, match.index + match[0].length);
+      frag.appendChild(mark);
+      tutorialSearchResults.push(mark);
+      lastIndex = match.index + match[0].length;
+    }
+    if (lastIndex < original.length) {
+      frag.appendChild(document.createTextNode(original.slice(lastIndex)));
+    }
     parent.replaceChild(frag, textNode);
   });
 
@@ -8009,23 +8046,40 @@ function capturePhoto() {
 addToGallery(dataUrl);
 
   // PRESET CREDIT GAME — earn 1 credit per unique imported preset used to take a photo
+  // Works for single preset, multi-preset, and layer modes
 
   (async () => {
     try {
       const imported = presetImporter.getImportedPresets();
       if (imported.length > 0) {
-        const activePreset = CAMERA_PRESETS[currentPresetIndex];
-        const usedPresetName = (activePreset && activePreset.name) ? activePreset.name : (imported[0] ? imported[0].name : '');
-        const credited = usedPresetName ? earnCredit(usedPresetName) : false;
-        if (credited) {
-          playTaDaSound();
+        const importedNames = new Set(imported.map(p => p.name));
 
+        // Collect which presets are actually being used this shot
+        let presetsUsed = [];
+        if (isCameraMultiPresetActive && cameraSelectedPresets.length > 0) {
+          // Multi-preset: check every selected preset
+          presetsUsed = cameraSelectedPresets.filter(p => p.name && importedNames.has(p.name));
+        } else {
+          // Single preset (including random and voice modes)
+          const activePreset = CAMERA_PRESETS[currentPresetIndex];
+          if (activePreset && activePreset.name && importedNames.has(activePreset.name)) {
+            presetsUsed = [activePreset];
+          }
+        }
+
+        let totalNewCredits = 0;
+        for (const p of presetsUsed) {
+          if (earnCredit(p.name)) totalNewCredits++;
+        }
+
+        if (totalNewCredits > 0) {
+          playTaDaSound();
           const newTotal = getCredits();
           setTimeout(() => {
-            showStyleReveal(`🪙 Credit Earned!\n(${newTotal} total)`);
+            showStyleReveal(`🪙 ${totalNewCredits > 1 ? totalNewCredits + ' Credits' : 'Credit'} Earned!\n(${newTotal} total)`);
             if (statusElement) {
               const prev = statusElement.textContent;
-              statusElement.textContent = `🪙 Credit earned! You have ${newTotal} credit${newTotal !== 1 ? 's' : ''}`;
+              statusElement.textContent = `🪙 Credit${totalNewCredits > 1 ? 's' : ''} earned! You have ${newTotal} credit${newTotal !== 1 ? 's' : ''}`;
               setTimeout(() => { statusElement.textContent = prev || ''; }, 4000);
             }
           }, 1800);
@@ -10122,14 +10176,14 @@ function _doPopulateStylesList(list, preserveScroll) {
     const filteredFavorites = favorites.filter(preset => {
       // First apply text search filter
       if (styleFilterText) {
-        const searchText = styleFilterText.toLowerCase();
-        const categoryMatch = preset.category && preset.category.some(cat => cat.toLowerCase().includes(searchText));
+        const searchText = stripAccents(styleFilterText.toLowerCase());
+        const categoryMatch = preset.category && preset.category.some(cat => stripAccents(cat.toLowerCase()).includes(searchText));
         const optionsMatch = (
-          (preset.options && preset.options.some(o => o.text && o.text.toLowerCase().includes(searchText))) ||
-          (preset.optionGroups && preset.optionGroups.some(g => g.title && g.title.toLowerCase().includes(searchText) || g.options && g.options.some(o => o.text && o.text.toLowerCase().includes(searchText))))
+          (preset.options && preset.options.some(o => o.text && stripAccents(o.text.toLowerCase()).includes(searchText))) ||
+          (preset.optionGroups && preset.optionGroups.some(g => g.title && stripAccents(g.title.toLowerCase()).includes(searchText) || g.options && g.options.some(o => o.text && stripAccents(o.text.toLowerCase()).includes(searchText))))
         );
-        const textMatch = preset.name.toLowerCase().includes(searchText) ||
-                         (preset.message || '').toLowerCase().includes(searchText) ||
+        const textMatch = stripAccents(preset.name.toLowerCase()).includes(searchText) ||
+                         stripAccents((preset.message || '').toLowerCase()).includes(searchText) ||
                          categoryMatch || optionsMatch;
         if (!textMatch) return false;
       }
@@ -10141,14 +10195,14 @@ function _doPopulateStylesList(list, preserveScroll) {
 
     const filtered = regular.filter(preset => {
       if (styleFilterText) {
-        const searchText = styleFilterText.toLowerCase();
-        const categoryMatch = preset.category && preset.category.some(cat => cat.toLowerCase().includes(searchText));
+        const searchText = stripAccents(styleFilterText.toLowerCase());
+        const categoryMatch = preset.category && preset.category.some(cat => stripAccents(cat.toLowerCase()).includes(searchText));
         const optionsMatch = (
-          (preset.options && preset.options.some(o => o.text && o.text.toLowerCase().includes(searchText))) ||
-          (preset.optionGroups && preset.optionGroups.some(g => g.title && g.title.toLowerCase().includes(searchText) || g.options && g.options.some(o => o.text && o.text.toLowerCase().includes(searchText))))
+          (preset.options && preset.options.some(o => o.text && stripAccents(o.text.toLowerCase()).includes(searchText))) ||
+          (preset.optionGroups && preset.optionGroups.some(g => g.title && stripAccents(g.title.toLowerCase()).includes(searchText) || g.options && g.options.some(o => o.text && stripAccents(o.text.toLowerCase()).includes(searchText))))
         );
-        const textMatch = preset.name.toLowerCase().includes(searchText) ||
-                         (preset.message || '').toLowerCase().includes(searchText) ||
+        const textMatch = stripAccents(preset.name.toLowerCase()).includes(searchText) ||
+                         stripAccents((preset.message || '').toLowerCase()).includes(searchText) ||
                          categoryMatch || optionsMatch;
         if (!textMatch) return false;
       }

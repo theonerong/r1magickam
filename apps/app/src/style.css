@@ -4679,3 +4679,78 @@ button:disabled {
 .hsv-swatch-btn:active {
     transform: scale(0.93);
 }
+
+/* ===== VISUAL POLISH ===== */
+
+/* Slightly glowing orange border on all full-screen panel headers */
+.gallery-header,
+.styles-menu-header,
+.style-editor-header {
+    box-shadow: 0 1px 8px rgba(254, 95, 0, 0.18);
+}
+
+/* Gallery thumbnail: warm lift effect on press */
+.gallery-item:active {
+    box-shadow: 0 0 14px rgba(254, 95, 0, 0.55);
+    transform: scale(0.97);
+    transition: transform 0.08s ease, box-shadow 0.08s ease;
+}
+
+/* Preset list items: subtle left accent bar on selection */
+.menu-item.menu-selected {
+    border-left: 3px solid #FE5F00;
+}
+
+/* Style list items: inner glow when active */
+.style-item.active,
+.style-item.menu-selected {
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.25), 0 2px 8px rgba(254, 95, 0, 0.25);
+}
+
+/* Scrollbars — thin and orange-tinted throughout */
+::-webkit-scrollbar {
+    width: 3px;
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background: rgba(254, 95, 0, 0.45);
+    border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:active {
+    background: rgba(254, 95, 0, 0.8);
+}
+
+/* Preset tickets: sharper shadow and slightly raised look */
+.preset-ticket {
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.45), 0 1px 0 rgba(255,255,255,0.1) inset;
+}
+
+/* Panel backgrounds: very subtle warm gradient instead of flat black */
+.styles-menu-content,
+.gallery-content,
+.style-editor-content {
+    background: linear-gradient(160deg, #141414 0%, #111 100%);
+}
+
+/* Filter input: focus glow */
+.style-filter:focus,
+#import-preset-filter:focus {
+    border-color: rgba(254, 95, 0, 0.6);
+    box-shadow: 0 0 0 2px rgba(254, 95, 0, 0.12);
+    outline: none;
+}
+
+/* Jump buttons: slight glow on press */
+.menu-jump-button:active,
+.menu-jump-button-small:active {
+    box-shadow: 0 0 8px rgba(254, 95, 0, 0.4);
+}
+
+/* Close button: red tint on press */
+.close-button:active {
+    border-color: #f44336;
+    color: #f44336;
+    box-shadow: 0 0 6px rgba(244, 67, 54, 0.35);
+}

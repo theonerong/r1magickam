@@ -1,5 +1,21 @@
 // preset-import.js - Handle external preset importing
 
+// Deep comparison for UPDATED detection — checks all meaningful preset fields
+function presetsAreDifferent(a, b) {
+  if (a.message !== b.message) return true;
+  if (a.additionalInstructions !== b.additionalInstructions) return true;
+  if (!!a.randomizeOptions !== !!b.randomizeOptions) return true;
+  if (JSON.stringify(a.category || []) !== JSON.stringify(b.category || [])) return true;
+  if (JSON.stringify(a.options || []) !== JSON.stringify(b.options || [])) return true;
+  if (JSON.stringify(a.optionGroups || []) !== JSON.stringify(b.optionGroups || [])) return true;
+  return false;
+}
+
+// Strip accents so searches work without typing them (e.g. "cafe" finds "café")
+function stripAccents(str) {
+  return (str || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+}
+
 const IMPORT_DB_NAME = 'ImportedPresetsDB';
 const IMPORT_DB_VERSION = 2;
 const IMPORT_STORE_NAME = 'imported_presets';
@@ -246,7 +262,7 @@ export class PresetImporter {
       const existing = importedMap.get(preset.name);
       if (!existing) {
         newPresets.push(preset);
-      } else if (existing.message !== preset.message) {
+      } else if (presetsAreDifferent(existing, preset)) {
         updatedPresets.push(preset);
       } else {
         normalPresets.push(preset);
@@ -284,11 +300,11 @@ export class PresetImporter {
 
     // Pre-build lowercase search strings once — reused on every keypress
     this._searchIndex = this._sortedPresets.map(preset => {
-      const name = preset.name.toLowerCase();
-      const message = (preset.message || '').toLowerCase();
-      const cats = Array.isArray(preset.category) ? preset.category.join(' ').toLowerCase() : '';
-      const opts = Array.isArray(preset.options) ? preset.options.map(o => o.text || '').join(' ').toLowerCase() : '';
-      const groupOpts = Array.isArray(preset.optionGroups) ? preset.optionGroups.map(g => (g.title || '') + ' ' + (g.options ? g.options.map(o => o.text || '').join(' ') : '')).join(' ').toLowerCase() : '';
+      const name = stripAccents(preset.name.toLowerCase());
+      const message = stripAccents((preset.message || '').toLowerCase());
+      const cats = Array.isArray(preset.category) ? stripAccents(preset.category.join(' ').toLowerCase()) : '';
+      const opts = Array.isArray(preset.options) ? stripAccents(preset.options.map(o => o.text || '').join(' ').toLowerCase()) : '';
+      const groupOpts = Array.isArray(preset.optionGroups) ? stripAccents(preset.optionGroups.map(g => (g.title || '') + ' ' + (g.options ? g.options.map(o => o.text || '').join(' ') : '')).join(' ').toLowerCase()) : '';
       return name + ' ' + message + ' ' + cats + ' ' + opts + ' ' + groupOpts;
     });
   }
@@ -303,7 +319,7 @@ export class PresetImporter {
       return this._sortedPresets;
     }
 
-    const filterLower = this.importFilterText.toLowerCase();
+    const filterLower = stripAccents(this.importFilterText.toLowerCase());
     return this._sortedPresets.filter((preset, i) =>
       this._searchIndex[i].includes(filterLower)
     );
@@ -465,7 +481,7 @@ export class PresetImporter {
             ticket.className = 'preset-ticket preset-ticket-new';
             ticket.textContent = 'NEW';
             nameRow.appendChild(ticket);
-          } else if (existingPreset.message !== preset.message) {
+          } else if (presetsAreDifferent(existingPreset, preset)) {
             const ticket = document.createElement('span');
             ticket.className = 'preset-ticket preset-ticket-updated';
             ticket.textContent = 'UPDATED';
