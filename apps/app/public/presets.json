@@ -18840,18 +18840,19 @@
       "ILLUSION",
       "LINES"
     ],
-    "message": "Transform the subject into a high-clarity moiré interference illusion using a controlled frequency hierarchy.\n\nThe final image must produce a strong, stable emergence effect where the subject clearly breaks through a deep receding background field.\n\nThis preset prioritizes consistency and readability over chaotic vibration.\n\nGENERAL REQUIREMENTS:\n• Strict black and white only\n• No grayscale, no gradients\n• No normal photo visibility\n• Clean, engineered pattern system\n",
-    "randomizeOptions": false,
-    "optionGroups": [
-    {
-      "title": "STRUCTURE MODE",
-      "options": [
-        { "id": "001", "text": "Radial Depth Field — background converges inward like a black hole" },
-        { "id": "002", "text": "Linear Depth Field — background compresses into directional distance" }
-      ]
-    }
+    "message": "Take a picture and transform the subject into a true moiré interference illusion where the subject is entirely constructed from the same line system as the background.\n\nThe final image must show the subject emerging ONLY through changes in line frequency, spacing, and thickness — not through outlines, shading, or separation.\n\nGENERAL REQUIREMENTS:\n• Strict black and white only\n• No grayscale, no gradients\n• No visible original photo\n• Entire image must be composed of continuous line systems\n",
+    "options": [
+      {
+        "id": "001",
+        "text": "Radial Depth Field — background converges inward like a black hole" 
+      },
+      { 
+        "id": "002",
+        "text": "Linear Depth Field — background compresses into directional distance" 
+      }
     ],
-    "additionalInstructions": "CORE SYSTEM (NON-NEGOTIABLE):\n\nFREQUENCY HIERARCHY (CRITICAL):\n• Background = very fine, dense line frequency\n• Subject = noticeably thicker, coarser line structures\n• Subject must visibly dominate the background frequency\n\n• Overlay interference layer = slightly coarser than background BUT finer than subject\n• This ensures visible moiré without destroying structure\n\n• Do NOT use uniform line thickness across the image\n\nBACKGROUND DEPTH FIELD (BLACK HOLE EFFECT):\n• Background must visually recede into depth\n• Use radial or directional compression of lines\n• Line spacing should tighten as it moves inward or away\n• Slight curvature or convergence must create a tunnel or void effect\n\n• The background must feel like it is pulling inward infinitely\n\nSUBJECT STRUCTURAL DOMINANCE:\n• Subject must be constructed using thicker, bolder pattern structures\n• The subject must interrupt and override the background field\n• Avoid subtle encoding — the subject must be clearly extractable\n\n• Subject edges must feel like they are pushing against the background pressure\n\nCONTROLLED INTERFERENCE:\n• Apply a secondary pattern layer to create moiré interaction\n• Interference must be visible but stable\n• Avoid chaotic or extreme vibration\n\n• Target: steady shimmer, not aggressive distortion\n\nISOLATION & SEPARATION:\n• Maintain a subtle separation between subject and background via pattern break or density shift\n• Do NOT draw outlines\n\nEDGE TREATMENT:\n• Edges of the image should maintain the depth field\n• No borders or framing\n\nCOLOR RULES:\n• Pure black and white only\n\nANTI-FAIL CONDITIONS:\n• If subject blends into background → FAIL\n• If all line frequencies are similar → FAIL\n• If vibration is chaotic or unreadable → FAIL\n• If background does not feel deep → FAIL\n\nQUALITY TARGET:\n• Clear subject emergence\n• Strong depth illusion\n• Stable moiré shimmer\n• High readability\n• Consistent, repeatable output"
+    "randomizeOptions": true,
+    "additionalInstructions": "CORE RULE (ABSOLUTE):\n• The subject MUST be constructed entirely from the same continuous line system as the background\n• The image must NOT contain a drawn subject with lines placed on top\n• There must be no separation between subject and background systems\n\nFREQUENCY HIERARCHY (CRITICAL):\n• Background = very fine, tightly spaced lines\n• Subject = coarser, thicker, more widely spaced lines\n• This contrast MUST be clearly visible\n\n• The subject must emerge ONLY through this frequency shift\n• Do NOT use shading, fill, or tone to define the subject\n\nCONTINUITY ENFORCEMENT:\n• Lines must flow continuously through both background and subject regions\n• No breaks, gaps, or black bands around the subject\n• No halos, glows, or isolation zones\n\n• If a black aura or outline appears → REMOVE IT\n\nBACKGROUND DEPTH FIELD:\n• Background must create a receding depth effect (black hole or distance field)\n• Achieve this through gradual line compression and directional convergence\n• The depth must be created ONLY with line spacing and curvature\n\nSUBJECT FORMATION:\n• The subject must distort the background line field\n• Use displacement, thickness change, and spacing variation\n• The subject should feel like a structural disturbance in the field\n\n• The subject must NOT look drawn or illustrated\n\nINTERFERENCE LAYER (MOIRÉ GENERATION):\n• Apply a second line system across the entire image\n• This layer must be slightly coarser than the background but finer than the subject\n• Offset the two layers slightly to create visible moiré interaction\n\n• Keep interference stable — avoid chaotic vibration\n\nANTI-AURA / ANTI-OUTLINE (STRICT):\n• Do NOT create any black band, glow, or empty space around the subject\n• Do NOT outline the subject in any way\n• Do NOT isolate the subject from the background\n\n• Subject edges must be defined ONLY by frequency transition\n\nANTI-FAIL CONDITIONS:\n• Subject drawn separately from lines → FAIL\n• Any outline, halo, or aura → FAIL\n• Background and subject using same frequency → FAIL\n• Broken line continuity → FAIL\n\nQUALITY TARGET:\n• Subject clearly visible through line frequency contrast\n• Continuous line system across entire image\n• Strong depth in background\n• Clean, stable moiré shimmer\n• No artificial separation artifacts."
   },
   {
     "name": "MOLAS",
