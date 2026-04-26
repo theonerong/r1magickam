@@ -13876,6 +13876,37 @@
     "additionalInstructions": "CORE ILLUSION RULES (CRITICAL):\n\n• The subject must appear physically concave (curving inward)\n• Lighting must be REVERSED compared to normal depth\n• Highlights and shadows must contradict actual form\n\nPERCEPTION TRICK:\n\n• Human brain should interpret the concave shape as convex\n• This creates the illusion that the subject follows the viewer\n\nANTI-CHEAT RULES:\n\n• DO NOT create a normal 3D face or raised surface\n• DO NOT rely on blur or perspective alone\n• DO NOT produce a flat image without depth cues\n\nDEPTH CONSTRUCTION:\n\n• Eye sockets, cheeks, and facial structure must curve inward\n• Shadows must fall in unnatural directions for convex interpretation\n\nFOLLOW EFFECT REQUIREMENT:\n\n• Subject gaze must be centered and forward-facing\n• Depth cues must support perceived rotation when viewer moves\n\nFAIL CONDITIONS:\n\n• Face appears convex (normal) → FAIL\n• Lighting matches real-world depth → FAIL\n• No inward curvature visible → FAIL\n• No illusion of tracking/following → FAIL\n\nQUALITY:\n\n• Strong perceptual illusion\n• Clean shading transitions\n• Convincing concave structure\n• Recognizable subject with distorted depth"
   },
   {
+    "name": "HOLOGRAPHIC FOIL SHIFT",
+    "category": [
+      "OPTIONS",
+      "OPTICAL",
+      "HOLOGRAPHIC",
+      "FOIL",
+      "REFLECTIVE"
+    ],
+    "message": "Take a picture and transform the subject into a holographic diffraction foil illusion.\n\nThe final image must look like the subject is printed on reflective rainbow security foil with shifting iridescent optical surfaces.\n\nMASTER PROMPT RULE:\n• If a master prompt specifies holographic color preference — PRIORITIZE and USE that information\n\nGENERAL REQUIREMENTS:\n• Maintain recognizable subject\n• Entire image must appear foil printed\n• Strong metallic diffraction shimmer\n",
+    "randomizeOptions": true,
+    "optionGroups": [
+    {
+      "title": "FOIL DENSITY",
+      "options": [
+        { "id": "001", "text": "Light — subtle reflective foil" },
+        { "id": "002", "text": "Medium — visible holographic shimmer" },
+        { "id": "003", "text": "Heavy — aggressive rainbow diffraction" }
+      ]
+    },
+    {
+      "title": "SURFACE TYPE",
+      "options": [
+        { "id": "001", "text": "Smooth Security Foil — sleek metallic sheen" },
+        { "id": "002", "text": "Cracked Prism Foil — fragmented diffraction planes" },
+        { "id": "003", "text": "Wave Foil — flowing reflective bands" }
+      ]
+    }
+    ],
+    "additionalInstructions": "• Entire portrait must be rebuilt as reflective holographic foil\n• Rainbow diffraction should follow subject contours\n• Metallic highlights and spectral shine are mandatory\n• Background must also carry holographic foil texture\n• No normal matte surfaces allowed"
+  },
+  {
     "name": "HOLOGRAPHIC TRADING CARD",
     "category": [
       "OPTICAL",
@@ -22545,6 +22576,37 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "PARALLAX PAPER CUT DEPTH",
+    "category": [
+      "OPTIONS",
+      "OPTICAL",
+      "PAPER",
+      "DEPTH",
+      "LAYERED"
+    ],
+    "message": "Take a picture and transform the subject into a dimensional parallax papercut illusion built from stacked cut-paper layers.\n\nThe final image must look like a handcrafted multi-layer tunnel portrait with physical depth.\n\nMASTER PROMPT RULE:\n• If a master prompt specifies color palette or theme — PRIORITIZE and USE that information\n\nGENERAL REQUIREMENTS:\n• Maintain recognizable subject\n• Entire image reconstructed from stacked paper slices\n• Strong foreground/background separation\n",
+    "randomizeOptions": true,
+    "optionGroups": [
+    {
+      "title": "LAYER COUNT",
+      "options": [
+        { "id": "001", "text": "Low — 4 to 6 paper layers" },
+        { "id": "002", "text": "Medium — 7 to 10 paper layers" },
+        { "id": "003", "text": "High — 11+ paper layers" }
+      ]
+    },
+    {
+      "title": "CUT STYLE",
+      "options": [
+        { "id": "001", "text": "Smooth Curves — flowing silhouette cuts" },
+        { "id": "002", "text": "Sharp Geometry — angular cut planes" },
+        { "id": "003", "text": "Mixed Organic — varied handcrafted contours" }
+      ]
+    }
+    ],
+    "additionalInstructions": "• Build the portrait from suspended paper cut layers receding backward\n• Every layer must cast realistic shadow onto the next\n• Subject should emerge as a dimensional tunnel sculpture\n• No flat photographic regions may remain\n• Strong handcrafted depth illusion required"
   },
   {
     "name": "PARALLEL UNIVERSE HISTORY",

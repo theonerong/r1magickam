@@ -1271,10 +1271,14 @@ function showPresetSelector() {
   
   // Hide multi-preset controls if they exist
   const multiControls = document.getElementById('multi-preset-controls');
-  if (multiControls) {
-    multiControls.style.display = 'none';
-  }
-  
+  if (multiControls) multiControls.style.display = 'none';
+
+  // Hide layer-preset controls if they exist
+  const layerControls = document.getElementById('layer-preset-controls');
+  if (layerControls) layerControls.style.display = 'none';
+  isLayerPresetMode = false;
+  layerSelectedPresets = [];
+
   // Reset header to single-select mode
   const header = modal.querySelector('.preset-selector-header h3');
   if (header) {
@@ -2849,6 +2853,12 @@ function openMultiPresetSelector(imageId) {
     filterRow.parentNode.insertBefore(multiControls, filterRow);
   }
   multiControls.style.display = 'flex';
+
+  // Hide layer controls if leftover from a previous session
+  const layerControls = document.getElementById('layer-preset-controls');
+  if (layerControls) layerControls.style.display = 'none';
+  isLayerPresetMode = false;
+  layerSelectedPresets = [];
   
   populatePresetList();
   updateMultiPresetList();
@@ -2871,7 +2881,7 @@ function updateMultiPresetList() {
     const isSelected = selectedPresets.some(p => p.name === presetName);
     
     if (isSelected) {
-      item.style.background = '#e8f5e9';
+      item.style.background = 'rgba(76,175,80,0.20)';
       item.style.border = '2px solid #4CAF50';
     } else {
       item.style.background = '';
@@ -2926,6 +2936,12 @@ function openCameraMultiPresetSelector() {
     filterRow.parentNode.insertBefore(multiControls, filterRow);
   }
   multiControls.style.display = 'flex';
+
+  // Hide layer controls if leftover from a previous session
+  const layerControls = document.getElementById('layer-preset-controls');
+  if (layerControls) layerControls.style.display = 'none';
+  isLayerPresetMode = false;
+  layerSelectedPresets = [];
 
   populatePresetList();
   updateMultiPresetList();

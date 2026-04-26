@@ -514,19 +514,19 @@ export class PresetImporter {
 
             const lockSpan = document.createElement('span');
             lockSpan.textContent = '🔒';
-            lockSpan.style.display = isSessionUnlocked ? 'none' : '';
+            lockSpan.style.display = isSessionUnlocked ? 'none' : 'inline';
 
             const unlockSpan = document.createElement('span');
             unlockSpan.textContent = '🔓';
-            unlockSpan.style.display = isSessionUnlocked ? '' : 'none';
+            unlockSpan.style.display = isSessionUnlocked ? 'inline' : 'none';
 
             lockWrapper.appendChild(lockSpan);
             lockWrapper.appendChild(unlockSpan);
             nameRow.insertBefore(lockWrapper, nameRow.firstChild);
 
             lockIcon = {
-              showLocked:   () => { lockSpan.style.display = '';     unlockSpan.style.display = 'none'; },
-              showUnlocked: () => { lockSpan.style.display = 'none'; unlockSpan.style.display = '';     }
+              showLocked:   () => { lockSpan.style.display = 'inline'; unlockSpan.style.display = 'none';   },
+              showUnlocked: () => { lockSpan.style.display = 'none';   unlockSpan.style.display = 'inline'; }
             };
           }
 
