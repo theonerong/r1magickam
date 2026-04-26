@@ -2165,6 +2165,37 @@
     "additionalInstructions": ""
   },
   {
+    "name": "AUTOSTEREOGRAM DEPTH FIELD",
+    "category": [
+      "OPTIONS",
+      "OPTICAL",
+      "STEREOGRAM",
+      "DEPTH",
+      "PATTERN"
+    ],
+    "message": "Take a picture and transform the subject into an autostereogram depth field optical illusion.\n\nThe final image must simulate a Magic-Eye style hidden-depth stereogram built entirely from repeating horizontal micro-patterns.\n\nMASTER PROMPT RULE:\n• If a master prompt specifies depth emergence or hidden visibility — PRIORITIZE and USE that information\n\nGENERAL REQUIREMENTS:\n• Entire image must appear as a repeating patterned stereogram\n• Subject depth must be hidden inside horizontal pattern offsets\n• No normal photographic regions may remain\n",
+    "randomizeOptions": true,
+    "optionGroups": [
+      {
+        "title": "PATTERN FAMILY",
+        "options": [
+          { "id": "001", "text": "Geometric Noise — repeating abstract symbols" },
+          { "id": "002", "text": "Dot Texture — repeating stereogram dots" },
+          { "id": "003", "text": "Micro Tiles — repeating tiny patterned blocks" }
+        ] 
+      },
+      {
+        "title": "DEPTH EMERGENCE",
+        "options": [
+          { "id": "001", "text": "Face Forward — face hidden in strongest depth" },
+          { "id": "002", "text": "Subject Full — full subject hidden in depth field" },
+          { "id": "003", "text": "Layered Relief — multiple depth zones" }
+        ]
+      }
+    ],
+    "additionalInstructions": "• Build the entire image from repeating horizontal stereogram pattern bands\n• Encode hidden subject depth by tiny horizontal pattern shifts only\n• No visible normal portrait should remain\n• Subject must be concealed inside repeating stereogram texture\n• Must resemble a true autostereogram print"
+  },
+  {
     "name": "AVATAR",
     "category": [
       "MOVIES",
@@ -16197,6 +16228,37 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "LINE PORTRAIT DECODER",
+    "category": [
+      "OPTIONS",
+      "OPTICAL",
+      "HIDDEN",
+      "DECODER",
+      "LINES"
+    ],
+    "message": "Take a picture and transform the subject into a hidden line portrait decoder illusion.\n\nThe final image must simulate a printed encoded portrait concealed inside dense linear noise, designed to be revealed by a striped decoder overlay.\n\nMASTER PROMPT RULE:\n• If a master prompt specifies concealment or visibility — PRIORITIZE and USE that information\n\nGENERAL REQUIREMENTS:\n• Final image should appear mostly abstract at first glance\n• Subject portrait must be hidden structurally inside line modulation\n• Entire image must be black and white only\n",
+    "randomizeOptions": true,
+    "optionGroups": [
+      {
+        "title": "LINE ORIENTATION",
+        "options": [
+          { "id": "001", "text": "Vertical — hidden portrait inside vertical code lines" },
+          { "id": "002", "text": "Horizontal — hidden portrait inside horizontal code lines" },
+          { "id": "003", "text": "Radial — hidden portrait inside radiating decoder lines" }
+        ]
+      },
+      {
+        "title": "VISIBILITY LEVEL",
+        "options": [
+          { "id": "001", "text": "Deep Hidden — portrait barely visible" },
+          { "id": "002", "text": "Medium Hidden — portrait subtly detectable" },
+          { "id": "003", "text": "Decoder Ready — portrait partially readable through code" }
+        ]
+      }
+    ],
+    "additionalInstructions": "• Build the entire image from dense repeating black and white line code\n• Encode the subject only by changing line thickness, spacing, interruptions, and local modulation\n• No normal grayscale photo regions may remain\n• Portrait must feel concealed inside the code field\n• Must resemble a hidden decoder print"
   },
   {
     "name": "LINOCUT PRINT",
