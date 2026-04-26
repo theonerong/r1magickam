@@ -2300,6 +2300,37 @@
     "additionalInstructions": ""
   },
   {
+    "name": "BAS-RELIEF COIN PORTRAIT",
+    "category": [
+      "OPTIONS",
+      "COIN",
+      "ENGRAVED",
+      "RELIEF",
+      "VINTAGE"
+    ],
+    "message": "Take a picture and transform the subject into a minted bas-relief coin engraving portrait.\n\nThe final image must look like the subject is struck into an antique commemorative medallion.\n\nMASTER PROMPT RULE:\n• If a master prompt specifies denomination or theme — PRIORITIZE and USE that information\n\nGENERAL REQUIREMENTS:\n• Maintain recognizable subject profile\n• Entire image rendered as coin engraving\n• Antique mint realism required\n",
+    "randomizeOptions": true,
+    "optionGroups": [
+    {
+      "title": "COIN STYLE",
+      "options": [
+        { "id": "001", "text": "Classical Medal — formal commemorative portrait" },
+        { "id": "002", "text": "Currency Coin — government mint style" },
+        { "id": "003", "text": "Ornate Token — decorative carnival medallion" }
+      ]
+    },
+    {
+      "title": "ENGRAVING DEPTH",
+      "options": [
+        { "id": "001", "text": "Fine — shallow engraved lines" },
+        { "id": "002", "text": "Medium — clear minted relief" },
+        { "id": "003", "text": "Deep — dramatic sculpted coin face" }
+      ]
+    }
+    ],
+    "additionalInstructions": "• Entire portrait must be rebuilt as engraved metal coin linework\n• Add radial mint scratches, stamped rim, and antique metallic wear\n• Subject must feel struck into the surface\n• No photo regions may remain\n• Strong numismatic realism required"
+  },
+  {
     "name": "BASALT COLUMN FORMATION",
     "category": [
       "ART",
@@ -8562,38 +8593,6 @@
     "additionalInstructions": "FINAL RESULT:\nThe image should look like a real photograph capturing the exact moment the subject steps through a physical door from another realm into the viewer’s reality, with their face visible and both worlds clearly connected by the doorway."
   },
   {
-    "name": "DUAL IMAGE AMBIGRAM GRID",
-    "category": [
-      "OPTIONS",
-      "OPTICAL",
-      "DUAL",
-      "GRID",
-      "HYBRID"
-    ],
-    "message": "Take a picture and transform the subject into a dual-image ambigram grid optical illusion.\n\nThe final image must contain two separate subject states embedded into one tiled matrix so that different viewing distances imply different images.\n\nMASTER PROMPT RULE:\n• If a master prompt specifies alternate identity or hidden second state — PRIORITIZE and USE that information\n\nGENERAL REQUIREMENTS:\n• Final image must look like a hybrid tiled construction\n• Two hidden subject versions must coexist\n• Entire image must be built from repeating tile units\n",
-    "randomizeOptions": true,
-    "optionGroups": [
-    {
-      "title": "SECOND STATE",
-      "options": [
-        { "id": "001", "text": "Monster Variant — hidden monstrous alternate" },
-        { "id": "002", "text": "Older Variant — hidden aged version" },
-        { "id": "003", "text": "Expression Variant — hidden emotional change" },
-        { "id": "004", "text": "Abstract Variant — hidden surreal reinterpretation" }
-      ]
-    },
-    {
-      "title": "GRID SIZE",
-      "options": [
-        { "id": "001", "text": "Fine Tiles — subtle hybrid mosaic" },
-        { "id": "002", "text": "Medium Tiles — visible dual matrix" },
-        { "id": "003", "text": "Chunky Tiles — aggressive optical switching" }
-      ]
-    }
-    ],
-    "additionalInstructions": "• Generate IMAGE A and IMAGE B of the subject\n• Reconstruct both images simultaneously using repeating square tile units\n• Tile luminance/detail must favor IMAGE A at close inspection and IMAGE B at distant inspection\n• Entire image must look like a hybrid mosaic grid\n• Two subject states must visibly coexist inside one matrix"
-  },
-  {
     "name": "DOUBLE EXPOSURE",
     "category": [
       "PHOTOGRAPHY",
@@ -13555,6 +13554,37 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "HEATMAP TOPOGRAPHIC FACE",
+    "category": [
+      "OPTIONS",
+      "OPTICAL",
+      "TOPOGRAPHIC",
+      "CONTOUR",
+      "DEPTH"
+    ],
+    "message": "Take a picture and transform the subject into a topographic contour-map illusion built from stacked elevation bands.\n\nThe final image must reconstruct the subject using layered contour lines and elevation zones like a dimensional terrain scan.\n\nMASTER PROMPT RULE:\n• If a master prompt specifies palette or terrain aggression — PRIORITIZE and USE that information\n\nGENERAL REQUIREMENTS:\n• Maintain recognizable subject\n• Entire image built from contour/elevation systems\n• Strong dimensional mapping effect\n",
+    "randomizeOptions": true,
+    "optionGroups": [
+    {
+      "title": "CONTOUR STYLE",
+      "options": [
+        { "id": "001", "text": "Smooth Bands — flowing terrain layers" },
+        { "id": "002", "text": "Sharp Terraces — stepped elevation cuts" },
+        { "id": "003", "text": "Mixed Survey — engineering map contour blend" }
+      ]
+    },
+    {
+      "title": "DEPTH STACK",
+      "options": [
+        { "id": "001", "text": "Low — gentle elevation" },
+        { "id": "002", "text": "Medium — visible terrain face" },
+        { "id": "003", "text": "High — dramatic stacked relief" }
+      ]
+    }
+    ],
+    "additionalInstructions": "• Entire portrait must be rebuilt from nested contour levels\n• Subject form should emerge through elevation changes only\n• Add dimensional terrain shadows between contour bands\n• No normal photographic textures may remain\n• Final result should feel like a 3D geological face map"
   },
   {
     "name": "HENRY DANGER",
