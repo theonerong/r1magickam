@@ -19141,35 +19141,35 @@
       "GRAYSCALE",
       "TECHNICAL"
     ],
-    "message": "Take a picture and transform the entire image into a monocular depth estimation grayscale map.\n\nThe final image must visualize perceived scene depth only.\n\nLighter grayscale values represent objects closer to the viewer.\nDarker grayscale values represent objects further from the viewer.\n\nMASTER PROMPT RULE:\n• If a master prompt specifies focus subject or distance emphasis — PRIORITIZE and USE that information\n\nGENERAL REQUIREMENTS:\n• Entire image must become a depth field visualization\n• No normal photographic color may remain\n• Depth must be represented only by grayscale brightness\n",
+    "message": "Take a picture and transform the entire scene into an exaggerated z-depth relief map.\n\nThe final image must look like a carved three-dimensional grayscale terrain where brightness represents distance from the viewer.\n\nThis is NOT an ordinary black-and-white photo.\nThis is a sculpted depth relief visualization.\n\nMASTER PROMPT RULE:\n• If a master prompt specifies foreground emphasis or dramatic depth — PRIORITIZE and USE that information\n\nGENERAL REQUIREMENTS:\n• Entire image must become a depth-carved relief field\n• No normal photographic rendering may remain\n• Strong three-dimensional embossing required\n",
     "randomizeOptions": true,
     "optionGroups": [
     {
-      "title": "DEPTH FOCUS",
+      "title": "RELIEF FOCUS",
       "options": [
-        { "id": "001", "text": "Face Priority — face rendered as nearest bright zone" },
-        { "id": "002", "text": "Subject Full — entire subject emphasized as foreground" },
-        { "id": "003", "text": "Scene Balanced — all objects mapped by natural distance" }
+        { "id": "001", "text": "Face Relief — face becomes dominant carved foreground" },
+        { "id": "002", "text": "Subject Relief — full subject raised forward" },
+        { "id": "003", "text": "Scene Relief — entire scene mapped in layered terrain" }
       ]
     },
     {
-      "title": "MAP STYLE",
+      "title": "DEPTH TERRACING",
       "options": [
-        { "id": "001", "text": "Soft Gradient — smooth grayscale transitions" },
-        { "id": "002", "text": "Technical Hard Map — more abrupt depth banding" },
-        { "id": "003", "text": "Topographic Layers — stepped contour-like depth zones" }
+        { "id": "001", "text": "Medium Steps — visible depth bands" },
+        { "id": "002", "text": "Hard Steps — aggressive topographic terraces" },
+        { "id": "003", "text": "Extreme Steps — strong contour slicing" }
       ]
     },
     {
-      "title": "DEPTH CONTRAST",
+      "title": "BACKGROUND DROP",
       "options": [
-        { "id": "001", "text": "Subtle — compressed depth range" },
-        { "id": "002", "text": "Medium — clear foreground/background separation" },
-        { "id": "003", "text": "Strong — aggressive near/far brightness spread" }
+        { "id": "001", "text": "Moderate — background recedes dark" },
+        { "id": "002", "text": "Heavy — background collapses into black void" },
+        { "id": "003", "text": "Abyss — near-total black distance field" }
       ]
     }
     ],
-    "additionalInstructions": "DEPTH MAPPING RULES (ABSOLUTE):\n\n• Reinterpret the entire scene as a monocular inferred depth map\n• Every visible object must be assigned brightness strictly by perceived distance from camera\n\nDEPTH BRIGHTNESS LOGIC:\n\n• Closest visible surfaces = light gray to white\n• Mid-distance surfaces = medium gray\n• Furthest visible surfaces = dark gray to black\n\n• Brightness must follow spatial depth only — NOT object color or lighting from original photo\n\nSUBJECT DEPTH HANDLING:\n\nIF \"FACE PRIORITY\":\n• Nose, cheeks, forehead and facial front planes must become brightest\n• Hair, ears, neck and background recede darker\n\nIF \"SUBJECT FULL\":\n• Entire subject treated as nearest dominant object\n• Background pushed significantly darker\n\nIF \"SCENE BALANCED\":\n• All objects mapped proportionally by actual perceived distance\n\nMAP STYLE CONTROL:\n\nIF \"SOFT GRADIENT\":\n• Smooth continuous grayscale blending allowed\n\nIF \"TECHNICAL HARD MAP\":\n• More segmented grayscale bands\n• Slight machine-vision feel\n\nIF \"TOPOGRAPHIC LAYERS\":\n• Visible stepped depth contour zones allowed\n\nANTI-CHEAT RULES:\n\n• Do NOT simply desaturate photo\n• Do NOT preserve original photographic shading\n• Do NOT use original light source as brightness guide\n• Use distance-from-viewer only\n\nFAIL CONDITIONS:\n\n• Looks like ordinary black-and-white photo → FAIL\n• Brightness tied to original lighting instead of depth → FAIL\n• Weak foreground/background separation → FAIL\n\nQUALITY:\n\n• Clean machine-vision depth field\n• Strong readable spatial layering\n• Entire scene converted to technical grayscale depth visualization"
+    "additionalInstructions": "Z-DEPTH RELIEF ENGINEERING (ABSOLUTE):\n\n• Reconstruct the image as if converted into a machine-generated z-buffer terrain sculpture\n• Every visible surface must be assigned a depth elevation value\n• Closest forms rise forward like embossed relief\n• Distant forms sink backward into dark recesses\n\nDEPTH VALUE LOGIC:\n\n• Nearest surfaces = bright white to very light gray plateaus\n• Mid surfaces = stepped descending gray terraces\n• Furthest surfaces = dark gray to black sink regions\n\n• The tonal transition must be AGGRESSIVE — not subtle photographic shading\n\nRELIEF TERRACING (CRITICAL):\n\n• Depth must be segmented into visible contour bands\n• Forms should feel sliced into elevation layers\n• Smooth photo gradients are discouraged\n• Tonal steps should resemble topographic or CNC relief carving\n\nCONTOUR RIDGE EMPHASIS:\n\n• At every major depth transition, create a sharp tonal ridge or cliff\n• Subject edges must feel embossed and raised from the background\n• Facial planes, shoulders, limbs, and foreground objects need carved separation lines\n\nRELIEF FOCUS CONTROL:\n\nIF \"FACE RELIEF\":\n• Nose, brow, cheeks, lips and chin become strongest elevated white planes\n• Hairline and ears drop back darker\n\nIF \"SUBJECT RELIEF\":\n• Entire subject becomes the dominant raised object\n• Surrounding environment recedes rapidly\n\nIF \"SCENE RELIEF\":\n• All visible objects mapped in descending spatial terraces\n\nBACKGROUND DROP CONTROL:\n\n• Background must lose normal scene readability\n• Background should collapse into broad dark depth zones\n• Fine background details should be suppressed into depth darkness\n\nANTI-PHOTOGRAPHIC RULES:\n\n• Do NOT simply desaturate image\n• Do NOT preserve natural lighting model\n• Do NOT create a grayscale photograph\n• Build a synthetic carved depth field only\n\nANTI-CHEAT:\n\n• No ordinary shadows used as substitute for depth\n• No soft foggy gradients\n• No retained color remnants\n\nFAIL CONDITIONS:\n\n• Looks like black-and-white photo → FAIL\n• Weak tonal depth separation → FAIL\n• Background still normally readable → FAIL\n• No carved embossed relief feel → FAIL\n\nQUALITY:\n\n• Strong sculpted 3D embossing\n• Aggressive near/far terrain separation\n• Machine-generated topographic depth aesthetic\n• Powerful dimensional pop"
   },
   {
     "name": "MONOLINE ILLUSTRATION",
