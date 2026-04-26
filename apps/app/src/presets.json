@@ -2165,20 +2165,6 @@
     "additionalInstructions": ""
   },
   {
-    "name": "AUTOSTEREOGRAM DEPTH FIELD",
-    "category": [
-      "OPTIONS",
-      "OPTICAL",
-      "STEREOGRAM",
-      "DEPTH",
-      "PATTERN"
-    ],
-    "message": "Take a picture and generate a technical, true random dot autostereogram (RDS). The output must be a seamless, static field of uniform noise (like high-frequency binary salt-and-pepper grain or fine static). The subject must be 100% encoded in the pattern displacement, leaving *no* visual traces to the naked eye.\n\n### MANDATORY INSTRUCTIONS:\n• CONCEALMENT FIRST: The hidden subject must not show any edges, shadows, highlights, outlines, silhouettes, or shading difference within the flat pattern field.\n• TEXTURE UNIFORMITY: Every pixel of the image must maintain identical texture frequency and color value probability. No part of the canvas can be identified as 'foreground' or 'subject' under normal observation.\n• HORIZONTAL TILING: The image must utilize a mathematically repeating 'wallpaper' design logic. Tiny horizontal shifts are the ONLY valid method of defining depth. If the object can be recognized without 'staring through' the image, the generation has failed.",
-    "options": [],
-    "randomizeOptions": false,
-    "additionalInstructions": "• Style: Technical optical illusion print.\n• Composition: A borderless, flat field of dense, fine-grain random dots (black/white or grayscale).\n• Requirement: The image must appear completely flat and meaningless to the casual viewer."
-  },
-  {
     "name": "AVATAR",
     "category": [
       "MOVIES",
@@ -8574,6 +8560,38 @@
     ],
     "randomizeOptions": true,
     "additionalInstructions": "FINAL RESULT:\nThe image should look like a real photograph capturing the exact moment the subject steps through a physical door from another realm into the viewer’s reality, with their face visible and both worlds clearly connected by the doorway."
+  },
+  {
+    "name": "DUAL IMAGE AMBIGRAM GRID",
+    "category": [
+      "OPTIONS",
+      "OPTICAL",
+      "DUAL",
+      "GRID",
+      "HYBRID"
+    ],
+    "message": "Take a picture and transform the subject into a dual-image ambigram grid optical illusion.\n\nThe final image must contain two separate subject states embedded into one tiled matrix so that different viewing distances imply different images.\n\nMASTER PROMPT RULE:\n• If a master prompt specifies alternate identity or hidden second state — PRIORITIZE and USE that information\n\nGENERAL REQUIREMENTS:\n• Final image must look like a hybrid tiled construction\n• Two hidden subject versions must coexist\n• Entire image must be built from repeating tile units\n",
+    "randomizeOptions": true,
+    "optionGroups": [
+    {
+      "title": "SECOND STATE",
+      "options": [
+        { "id": "001", "text": "Monster Variant — hidden monstrous alternate" },
+        { "id": "002", "text": "Older Variant — hidden aged version" },
+        { "id": "003", "text": "Expression Variant — hidden emotional change" },
+        { "id": "004", "text": "Abstract Variant — hidden surreal reinterpretation" }
+      ]
+    },
+    {
+      "title": "GRID SIZE",
+      "options": [
+        { "id": "001", "text": "Fine Tiles — subtle hybrid mosaic" },
+        { "id": "002", "text": "Medium Tiles — visible dual matrix" },
+        { "id": "003", "text": "Chunky Tiles — aggressive optical switching" }
+      ]
+    }
+    ],
+    "additionalInstructions": "• Generate IMAGE A and IMAGE B of the subject\n• Reconstruct both images simultaneously using repeating square tile units\n• Tile luminance/detail must favor IMAGE A at close inspection and IMAGE B at distant inspection\n• Entire image must look like a hybrid mosaic grid\n• Two subject states must visibly coexist inside one matrix"
   },
   {
     "name": "DOUBLE EXPOSURE",
@@ -16988,18 +17006,6 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "FINAL RESULT:\nThe final image should resemble a lavishly illustrated European sci-fi graphic novel panel."
-  },
-  {
-    "name": "MAGIC EYE",
-    "category": [
-      "ILLUSION",
-      "STEREOGRAM",
-      "3D"
-    ],
-    "message": "Take a picture and transform it into a single-image autostereogram (Magic Eye–style illusion). Encode the subject’s shape and depth into a repeating patterned texture so the image appears abstract at first glance but reveals the subject when viewed with relaxed or unfocused eyes.\n\nUse a dense, repeating pattern with subtle depth cues that form the subject’s silhouette and major features in three dimensions. Do not include outlines, labels, or hints. The subject should not be immediately obvious without proper viewing.\n\nEnsure the pattern is clean, evenly tiled, and centered. The final image should resemble a classic Magic Eye print that is visually stable and readable on a small screen.",
-    "options": [],
-    "randomizeOptions": false,
-    "additionalInstructions": ""
   },
   {
     "name": "MAGIC REALISM",
