@@ -2863,6 +2863,37 @@
     "additionalInstructions": ""
   },
   {
+    "name": "BLUEPRINT WIREFRAME GHOST",
+    "category": [
+      "OPTIONS",
+      "TECH",
+      "BLUEPRINT",
+      "WIREFRAME",
+      "GHOST"
+    ],
+    "message": "Take a picture and transform the subject into a luminous blueprint wireframe ghost rendering.\n\nThe final image must look like a technical engineering hologram made of glowing drafting lines over a dark field.\n\nMASTER PROMPT RULE:\n• If a master prompt specifies technical density or sci-fi level — PRIORITIZE and USE that information\n\nGENERAL REQUIREMENTS:\n• Maintain recognizable subject\n• Entire image reconstructed from wireframe drafting geometry\n• Strong luminous technical feel\n",
+    "randomizeOptions": true,
+    "optionGroups": [
+    {
+      "title": "WIRE DENSITY",
+      "options": [
+        { "id": "001", "text": "Light — sparse blueprint edges" },
+        { "id": "002", "text": "Medium — full drafting mesh" },
+        { "id": "003", "text": "Heavy — dense CAD wireframe" }
+      ]
+    },
+    {
+      "title": "GLOW LEVEL",
+      "options": [
+        { "id": "001", "text": "Soft — subtle neon blueprint glow" },
+        { "id": "002", "text": "Medium — visible electric edges" },
+        { "id": "003", "text": "Strong — holographic energy lines" }
+      ]
+    }
+    ],
+    "additionalInstructions": "• Entire subject must be drawn from luminous blueprint wire contours\n• Add construction lines, technical guide marks, and CAD mesh hints\n• Background should remain dark for contrast\n• No solid photo surfaces may remain\n• Final image should feel like an engineering ghost projection"
+  },
+  {
     "name": "BLUEY",
     "category": [
       "CARTOON",
@@ -20638,6 +20669,37 @@
     "additionalInstructions": ""
   },
   {
+  "name": "NEGATIVE SPACE SILHOUETTE",
+  "category": [
+    "OPTIONS",
+    "OPTICAL",
+    "SILHOUETTE",
+    "POSTER",
+    "GRAPHIC"
+  ],
+  "message": "Take a picture and reconstruct the subject using negative space silhouette engineering.\n\nThe final image must reveal the subject by the absence of material rather than by direct rendering.\n\nGENERAL REQUIREMENTS:\n• Subject must remain recognizable through contour only\n• Entire composition must be high contrast graphic design\n• Final image must feel like hidden portrait cut from a patterned field",
+  "randomizeOptions": true,
+  "optionGroups": [
+    {
+      "title": "FIELD TYPE",
+      "options": [
+        { "id": "001", "text": "Solid Black Field — subject cut from black mass" },
+        { "id": "002", "text": "Textured Pattern Field — subject cut from repeating texture" },
+        { "id": "003", "text": "Line Field — subject cut from dense line work" }
+      ]
+    },
+    {
+      "title": "SUBJECT VISIBILITY",
+      "options": [
+        { "id": "001", "text": "Head Only — portrait silhouette" },
+        { "id": "002", "text": "Upper Body — bust silhouette" },
+        { "id": "003", "text": "Full Figure — full body cutout" }
+      ]
+    }
+  ],
+  "additionalInstructions": "• Subject must be formed entirely by empty negative space\n• Background field must be continuous and uninterrupted outside subject cutout\n• No photographic shading allowed\n• Clean silhouette readability required"
+  },
+  {
     "name": "NEO-EXPRESSIONISM",
     "category": [
       "ART",
@@ -22779,6 +22841,36 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "PEGBOARD PORTRAIT",
+    "category": [
+      "OPTIONS",
+      "DOT",
+      "GRID",
+      "PORTRAIT",
+      "MECHANICAL"
+    ],
+    "message": "Take a picture and reconstruct the subject using only circular pegboard holes or pegs arranged on a strict industrial grid.\n\nGENERAL REQUIREMENTS:\n• Entire image built from evenly spaced circular dots\n• Subject visibility from density variation only\n• Mechanical monochrome feel",
+    "randomizeOptions": true,
+    "optionGroups": [
+    {
+      "title": "DOT TYPE",
+      "options": [
+        { "id": "001", "text": "Indented Holes — recessed pegboard holes" },
+        { "id": "002", "text": "Raised Pegs — protruding pegs" }
+      ]
+    },
+    {
+      "title": "DOT SCALE",
+      "options": [
+        { "id": "001", "text": "Fine Grid — small dense dots" },
+        { "id": "002", "text": "Medium Grid — visible peg spacing" },
+        { "id": "003", "text": "Chunky Grid — large industrial dots" }
+      ]
+    }
+    ],
+    "additionalInstructions": "• Dot spacing must remain mathematically uniform\n• Subject formed only by peg depth or tonal density\n• No normal shading beyond peg logic"
   },
   {
     "name": "PEN AND INK ILLUSTRATION",
@@ -26397,6 +26489,37 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "SHATTER MOSAIC",
+    "category": [
+      "OPTIONS",
+      "MOSAIC",
+      "FRACTURE",
+      "OPTICAL",
+      "GEOMETRIC"
+    ],
+    "message": "Take a picture and reconstruct the subject as a fractured shatter mosaic built from angular shards.\n\nGENERAL REQUIREMENTS:\n• Entire image built from broken polygon fragments\n• Subject remains recognizable through shard placement\n• Dynamic explosive geometry",
+    "randomizeOptions": true,
+    "optionGroups": [
+    {
+      "title": "SHARD SIZE",
+      "options": [
+        { "id": "001", "text": "Fine Cracks — many small shards" },
+        { "id": "002", "text": "Medium Breaks — balanced fractures" },
+        { "id": "003", "text": "Large Plates — dramatic broken chunks" }
+      ]
+    },
+    {
+      "title": "DISPERSION",
+      "options": [
+        { "id": "001", "text": "Contained — subject mostly intact" },
+        { "id": "002", "text": "Bursting — outer fragments displaced" },
+        { "id": "003", "text": "Explosion — major outward fracture" }
+      ]
+    }
+    ],
+    "additionalInstructions": "• Subject geometry must be built from angular broken pieces\n• Sharp shard boundaries required\n• No soft blending\n• Optical energy should feel explosive"
   },
   {
     "name": "SHATTERING",
