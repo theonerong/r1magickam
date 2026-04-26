@@ -4934,6 +4934,29 @@
     "additionalInstructions": ""
   },
   {
+    "name": "CIGAR BAND PORTRAIT",
+    "category": [
+      "OPTIONS",
+      "VINTAGE",
+      "ORNATE",
+      "LABEL",
+      "PRINT"
+    ],
+    "message": "Take a picture and transform the subject into a luxurious vintage cigar band portrait.\n\nThe final image must resemble an ornate engraved cigar label with the subject as the noble centerpiece.\n\nMASTER PROMPT RULE:\n• If a master prompt specifies elegance or title — PRIORITIZE and USE that information\n",
+    "randomizeOptions": true,
+    "options": [
+      {
+        "id": "001",
+        "text": "Classic — rich decorative frame"
+      },
+      { 
+        "id": "002",
+        "text": "Royal — extreme gold filigree and medallions"
+      }
+    ],
+    "additionalInstructions": "• Subject must appear as engraved noble portrait medallion\n• Add gold filigree, scrollwork, seals, banners, and vintage cigar typography\n• Rich old-world luxury label design required."
+  },
+  {
     "name": "CINEMATIC HORROR",
     "category": [
       "HORROR",
@@ -32078,6 +32101,29 @@
     ],
     "randomizeOptions": true,
     "additionalInstructions": "FINAL RESULT:\nThe image should depict the subject as one member of the Village People, fully costumed and recognizable, performing or posing together with the other five characters in an authentic, energetic 1970s disco scene."
+  },
+  {
+    "name": "VINTAGE MATCHBOX LABEL",
+    "category": [
+      "OPTIONS",
+      "PACKAGING",
+      "VINTAGE",
+      "LABEL",
+      "PRINT"
+    ],
+    "message": "Take a picture and transform the subject into an illustrated vintage matchbox label design.\n\nThe final image must look like an old printed matchbox cover with the subject as the central brand artwork.\n\nMASTER PROMPT RULE:\n• If a master prompt specifies humor or product branding — PRIORITIZE and USE that information\n",
+    "randomizeOptions": true,
+    "options": [
+      { 
+        "id": "001",
+        "text": "Victorian Ornate — decorative engraved label" 
+      },
+      { 
+        "id": "002", 
+        "text": "Midcentury Bold — simplified printed branding"
+      }
+    ],
+    "additionalInstructions": "• Add authentic product label typography\n• Subject becomes central illustrated mascot or emblem\n• Decorative border and printed wear encouraged\n• Must look like vintage commercial packaging."
   },
   {
     "name": "VINTAGE POSTER",
