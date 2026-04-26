@@ -3245,11 +3245,16 @@ function updateMenuSelection() {
   const currentItem = items[currentMenuIndex];
   if (currentItem) {
     currentItem.classList.add('menu-selected');
-    
-    currentItem.scrollIntoView({
-      behavior: 'smooth',
-      block: 'nearest'
-    });
+
+    if (currentMenuIndex === 0) {
+      const scrollContainer = document.querySelector('.styles-menu-scroll-container');
+      if (scrollContainer) scrollContainer.scrollTop = 0;
+    } else {
+      currentItem.scrollIntoView({
+        behavior: 'smooth',
+        block: 'nearest'
+      });
+    }
     
     // Show category hint with individually clickable categories
     const presetIndex = parseInt(currentItem.dataset.index);

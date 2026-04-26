@@ -939,15 +939,21 @@ button:disabled {
 }
 
 .style-item.active {
-    background-color: #FE5F00;
-    color: #000;
-    border-color: #FE5F00;
+    background: linear-gradient(90deg, rgba(254,95,0,0.18) 0%, #222 100%);
+    border-left: 3px solid #FE5F00;
+    border-top-color: #444;
+    border-right-color: #444;
+    border-bottom-color: #444;
+    color: #fff;
 }
 
 .style-item.menu-selected {
-    background-color: #FE5F00;
-    border-color: #FE5F00;
-    color: #000;
+    background: linear-gradient(90deg, rgba(254,95,0,0.18) 0%, #222 100%);
+    border-left: 3px solid #FE5F00;
+    border-top-color: #444;
+    border-right-color: #444;
+    border-bottom-color: #444;
+    color: #fff;
 }
 
 .style-name {
@@ -2588,23 +2594,26 @@ button:disabled {
 }
 
 .preset-item.preset-selected {
-    background-color: #FE5F00;
-    border-color: #FE5F00;
-    color: #000;
+    background: linear-gradient(90deg, rgba(254,95,0,0.18) 0%, #222 100%);
+    border-left: 3px solid #FE5F00;
+    border-top-color: #444;
+    border-right-color: #444;
+    border-bottom-color: #444;
+    color: #fff;
 }
 
 .preset-item.preset-selected .preset-name {
-    color: #000;
+    color: #FE5F00;
 }
 
 .preset-item.preset-selected .preset-description {
-    color: #333;
+    color: #aaa;
 }
 
 .preset-name {
     font-size: 4.5vw;
     font-weight: bold;
-    color: #FE5F00;
+    color: #fff;
     margin-bottom: 1vw;
 }
 
@@ -2712,22 +2721,27 @@ button:disabled {
     border-color: #FE5F00;
 }
 
+.menu-section-button .menu-section-title {
+    color: #fff;
+}
+
 .menu-section-button.menu-selected {
-    background-color: transparent;
-    border-color: #FE5F00;
+    background: linear-gradient(90deg, rgba(254,95,0,0.18) 0%, #1e1e1e 100%);
+    box-shadow: inset 3px 0 0 #FE5F00;
+    border-color: #3a3a3a;
     color: #fff;
 }
 
 .menu-section-button.menu-selected .menu-section-title {
-    color: #fff;
+    color: #FE5F00;
 }
 
 .menu-section-button.menu-selected .menu-section-value {
-    color: #ccc;
+    color: #aaa;
 }
 
 .menu-section-button.menu-selected .menu-section-arrow {
-    color: #fff;
+    color: #FE5F00;
 }
 
 .menu-section-title {
@@ -3634,12 +3648,12 @@ button:disabled {
 }
 
 .menu-item.menu-selected {
-  background-color: #FE5F00;
-  border-color: #FE5F00;
-  color: #000;
+  background: linear-gradient(90deg, rgba(254,95,0,0.18) 0%, #2a2a2a 100%);
+  border-left: 3px solid #FE5F00;
+  color: #fff;
 }
 .menu-item.menu-selected .import-preview-row {
-  color: #000;
+  color: #aaa;
 }
 
 .glossary-item.menu-selected {
@@ -4753,4 +4767,231 @@ button:disabled {
     border-color: #f44336;
     color: #f44336;
     box-shadow: 0 0 6px rgba(244, 67, 54, 0.35);
+}
+
+/* ===== EXTENDED VISUAL POLISH ===== */
+
+/* ── Typography refinement ── */
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+/* ── Header: stronger separator line with orange underglow ── */
+.styles-menu-header,
+.gallery-header {
+    border-bottom: 1px solid rgba(254, 95, 0, 0.35);
+    background: linear-gradient(180deg, #1f1f1f 0%, #191919 100%);
+}
+
+/* ── Menu items: refined hover/selected state with left glow bar ── */
+.menu-item {
+    border-left: 3px solid transparent;
+    transition: border-color 0.12s, background 0.12s;
+}
+
+.menu-item.menu-selected {
+    border-left-color: #FE5F00;
+    background: linear-gradient(90deg, rgba(254,95,0,0.09) 0%, transparent 100%);
+}
+
+/* ── Preset tickets: pill shape with sharper contrast ── */
+.preset-ticket-new {
+    border-radius: 9px;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.4);
+}
+
+.preset-ticket-updated {
+    border-radius: 9px;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.4);
+}
+
+/* ── Import footer buttons: more polished ── */
+#select-all-presets,
+#deselect-all-presets,
+#confirm-import-presets,
+#cancel-import-presets {
+    transition: filter 0.1s, transform 0.1s;
+    letter-spacing: 0.03em;
+}
+
+#select-all-presets:active,
+#deselect-all-presets:active,
+#cancel-import-presets:active {
+    filter: brightness(1.25);
+    transform: scale(0.96);
+}
+
+#confirm-import-presets:active {
+    filter: brightness(1.2);
+    transform: scale(0.96);
+}
+
+/* ── Credits display: subtle glow when credits are available ── */
+#import-credits-display {
+    letter-spacing: 0.04em;
+    text-shadow: 0 0 8px rgba(254, 95, 0, 0.3);
+}
+
+/* ── Filter input: pill shape and refined placeholder color ── */
+.style-filter,
+#import-preset-filter {
+    border-radius: 20px;
+    padding-left: 12px;
+    transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.style-filter::placeholder,
+#import-preset-filter::placeholder {
+    color: rgba(170, 170, 170, 0.5);
+    font-style: italic;
+}
+
+/* ── Gallery grid: refined gap and subtle inner shadow on modal ── */
+.gallery-modal {
+    box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.6);
+}
+
+.gallery-grid {
+    gap: 3px;
+}
+
+.gallery-item img {
+    transition: opacity 0.15s;
+}
+
+/* ── Spinner: orange pulse glow while loading ── */
+@keyframes mkSpinGlow {
+    0%   { box-shadow: 0 0 0px rgba(254, 95, 0, 0); }
+    50%  { box-shadow: 0 0 10px rgba(254, 95, 0, 0.5); }
+    100% { box-shadow: 0 0 0px rgba(254, 95, 0, 0); }
+}
+
+.mk-loading-spinner {
+    animation: mkSpin 0.8s linear infinite, mkSpinGlow 1.6s ease-in-out infinite;
+}
+
+/* ── Section dividers: thin warm line instead of flat grey ── */
+.menu-section {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+/* ── Menu section title: orange text with slight tracking ── */
+.menu-section-title {
+    letter-spacing: 0.02em;
+}
+
+/* ── HSV swatch button: more polished border ── */
+.hsv-swatch-btn {
+    border-radius: 6px;
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.12),
+        inset 0 -1px 0 rgba(0,0,0,0.25),
+        0 2px 8px rgba(0,0,0,0.5);
+}
+
+/* ── Close button: smooth color transition ── */
+.close-button {
+    transition: color 0.15s, border-color 0.15s, box-shadow 0.15s;
+}
+
+/* ── Submenu: deeper shadow for layered feel ── */
+.submenu {
+    box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.7);
+}
+
+/* ── Image viewer: vignette edge darkening ── */
+#image-viewer {
+    box-shadow: inset 0 0 60px rgba(0, 0, 0, 0.5);
+}
+
+/* ── Bottom bar / control row: subtle top separator glow ── */
+.bottom-controls,
+.viewer-bottom-controls {
+    border-top: 1px solid rgba(254, 95, 0, 0.15);
+    box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* ═══════════════════════════════════════════════════
+   DEFINITIVE UNIFIED THEME — final authority
+   All list items: dark gray · white text · orange left bar on select
+   ═══════════════════════════════════════════════════ */
+
+/* ── menu-item base: override global button orange background ── */
+.menu-item {
+    background-color: #2a2a2a;
+    color: #fff;
+    border-left: 3px solid transparent;
+    transition: none;
+}
+
+/* ── style-item and preset-item base: reserve the left-bar slot ── */
+.style-item,
+.preset-item {
+    border-left: 3px solid transparent;
+    transition: none;
+}
+
+/* ── All selected/active background and bar — same everywhere ── */
+.menu-item.menu-selected,
+.style-item.active,
+.style-item.menu-selected,
+.preset-item.preset-selected {
+    background: linear-gradient(90deg, rgba(254,95,0,0.18) 0%, #222 100%);
+    border-left: 3px solid #FE5F00;
+    border-top-color: #444;
+    border-right-color: #444;
+    border-bottom-color: #444;
+    box-shadow: none;
+    color: #fff;
+}
+
+/* ── Name text turns orange when selected ── */
+.menu-item.menu-selected .menu-item-name {
+    color: #FE5F00;
+}
+
+.style-item.active .style-name,
+.style-item.menu-selected .style-name {
+    color: #FE5F00;
+}
+
+.preset-item.preset-selected .preset-name {
+    color: #FE5F00;
+}
+
+/* ── Preview / description text stays subtle ── */
+.menu-item.menu-selected .import-preview-row {
+    color: #aaa;
+}
+
+.preset-item.preset-selected .preset-description {
+    color: #aaa;
+}
+
+/* ── Jump buttons: instant orange, zero transition lag ── */
+.menu-jump-button,
+.menu-jump-button-small {
+    transition: none;
+}
+
+.menu-jump-button:active,
+.menu-jump-button-small:active {
+    background-color: #FE5F00;
+    color: #000;
+    border-color: #FE5F00;
+    box-shadow: none;
+    transform: none;
+    transition: none;
+}
+
+/* ── Override: Gold border for active preset ── */
+
+.style-item.active {
+    border: 3px solid #FFD700;
 }

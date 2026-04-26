@@ -69,11 +69,11 @@ export function earnCredit(importedPresetName) {
 
 export function unlockPresetWithCredit(presetName) {
   const state = loadUnlockState();
+  // If already unlocked, don't charge again — just confirm success
+  if (state.unlockedPresets.includes(presetName)) return true;
   if ((state.credits || 0) < 1) return false;
   state.credits -= 1;
-  if (!state.unlockedPresets.includes(presetName)) {
-    state.unlockedPresets.push(presetName);
-  }
+  state.unlockedPresets.push(presetName);
   state.lastUnlocked = presetName;
   saveUnlockState(state);
   return true;
@@ -482,7 +482,7 @@ export class PresetImporter {
 
           const nameRow = document.createElement('span');
           nameRow.textContent = preset.name;
-          nameRow.style.cssText = 'font-weight: bold; color: #000; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; width: 100%; display: flex; align-items: center;';
+          nameRow.style.cssText = 'font-weight: bold; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; width: 100%; display: flex; align-items: center;';
 
           const previewRow = document.createElement('span');
           previewRow.textContent = firstLine;
@@ -507,11 +507,27 @@ export class PresetImporter {
           }
 
           let lockIcon = null;
-          if (isLocked) {
-            lockIcon = document.createElement('span');
-            lockIcon.textContent = '🔒';
-            lockIcon.style.cssText = 'margin-right: 4px; font-size: 11px; flex-shrink: 0;';
-            nameRow.insertBefore(lockIcon, nameRow.firstChild);
+          const isSessionUnlocked = sessionUnlocked.has(preset.name);
+          if (isLocked || isSessionUnlocked) {
+            const lockWrapper = document.createElement('span');
+            lockWrapper.style.cssText = 'margin-right: 4px; flex-shrink: 0; display: inline-flex; align-items: center;';
+
+            const lockSpan = document.createElement('span');
+            lockSpan.textContent = '🔒';
+            lockSpan.style.display = isSessionUnlocked ? 'none' : '';
+
+            const unlockSpan = document.createElement('span');
+            unlockSpan.textContent = '🔓';
+            unlockSpan.style.display = isSessionUnlocked ? '' : 'none';
+
+            lockWrapper.appendChild(lockSpan);
+            lockWrapper.appendChild(unlockSpan);
+            nameRow.insertBefore(lockWrapper, nameRow.firstChild);
+
+            lockIcon = {
+              showLocked:   () => { lockSpan.style.display = '';     unlockSpan.style.display = 'none'; },
+              showUnlocked: () => { lockSpan.style.display = 'none'; unlockSpan.style.display = '';     }
+            };
           }
 
           item.appendChild(checkbox);
@@ -529,14 +545,14 @@ export class PresetImporter {
               unlockPresetWithCredit(preset.name);
               sessionUnlocked.add(preset.name);
               unlockedNames.add(preset.name);
-              if (lockIcon) lockIcon.textContent = '🔓';
+              if (lockIcon) lockIcon.showUnlocked();
               updateCreditDisplay();
             } else if (!newChecked && sessionUnlocked.has(preset.name)) {
               // Unchecking a session-unlocked preset that hasn't been imported — refund credit
               refundCredit(preset.name);
               sessionUnlocked.delete(preset.name);
               unlockedNames.delete(preset.name);
-              if (lockIcon) lockIcon.textContent = '🔒';
+              if (lockIcon) lockIcon.showLocked();
               updateCreditDisplay();
             }
             return true;
@@ -579,7 +595,11 @@ export class PresetImporter {
         if (this.currentImportScrollIndex >= 0 && this.currentImportScrollIndex < items.length) {
           const currentItem = items[this.currentImportScrollIndex];
           currentItem.classList.add('menu-selected');
-          currentItem.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          if (this.currentImportScrollIndex === 0) {
+            scrollContainer.scrollTop = 0;
+          } else {
+            currentItem.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          }
         }
       };
 
@@ -700,6 +720,7 @@ footerSection.innerHTML = `
         // Spend credits immediately for all locked presets if we can cover them all
         if (canSelectLocked) {
           lockedPresets.forEach(preset => {
+            if (sessionUnlocked.has(preset.name)) return; // already spent this session, skip
             unlockPresetWithCredit(preset.name);
             sessionUnlocked.add(preset.name);
             unlockedNames.add(preset.name);
