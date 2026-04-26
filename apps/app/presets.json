@@ -19133,6 +19133,45 @@
     "additionalInstructions": "FINAL RESULT:\nThe final image must look like a professionally shot monochrome photograph rendered entirely in the selected color tone, with rich depth, clean tonal separation, and high photographic realism."
   },
   {
+    "name": "MONOCULAR DEPTH MAP",
+    "category": [
+      "OPTIONS",
+      "DEPTH",
+      "VISION",
+      "GRAYSCALE",
+      "TECHNICAL"
+    ],
+    "message": "Take a picture and transform the entire image into a monocular depth estimation grayscale map.\n\nThe final image must visualize perceived scene depth only.\n\nLighter grayscale values represent objects closer to the viewer.\nDarker grayscale values represent objects further from the viewer.\n\nMASTER PROMPT RULE:\n• If a master prompt specifies focus subject or distance emphasis — PRIORITIZE and USE that information\n\nGENERAL REQUIREMENTS:\n• Entire image must become a depth field visualization\n• No normal photographic color may remain\n• Depth must be represented only by grayscale brightness\n",
+    "randomizeOptions": true,
+    "optionGroups": [
+    {
+      "title": "DEPTH FOCUS",
+      "options": [
+        { "id": "001", "text": "Face Priority — face rendered as nearest bright zone" },
+        { "id": "002", "text": "Subject Full — entire subject emphasized as foreground" },
+        { "id": "003", "text": "Scene Balanced — all objects mapped by natural distance" }
+      ]
+    },
+    {
+      "title": "MAP STYLE",
+      "options": [
+        { "id": "001", "text": "Soft Gradient — smooth grayscale transitions" },
+        { "id": "002", "text": "Technical Hard Map — more abrupt depth banding" },
+        { "id": "003", "text": "Topographic Layers — stepped contour-like depth zones" }
+      ]
+    },
+    {
+      "title": "DEPTH CONTRAST",
+      "options": [
+        { "id": "001", "text": "Subtle — compressed depth range" },
+        { "id": "002", "text": "Medium — clear foreground/background separation" },
+        { "id": "003", "text": "Strong — aggressive near/far brightness spread" }
+      ]
+    }
+    ],
+    "additionalInstructions": "DEPTH MAPPING RULES (ABSOLUTE):\n\n• Reinterpret the entire scene as a monocular inferred depth map\n• Every visible object must be assigned brightness strictly by perceived distance from camera\n\nDEPTH BRIGHTNESS LOGIC:\n\n• Closest visible surfaces = light gray to white\n• Mid-distance surfaces = medium gray\n• Furthest visible surfaces = dark gray to black\n\n• Brightness must follow spatial depth only — NOT object color or lighting from original photo\n\nSUBJECT DEPTH HANDLING:\n\nIF \"FACE PRIORITY\":\n• Nose, cheeks, forehead and facial front planes must become brightest\n• Hair, ears, neck and background recede darker\n\nIF \"SUBJECT FULL\":\n• Entire subject treated as nearest dominant object\n• Background pushed significantly darker\n\nIF \"SCENE BALANCED\":\n• All objects mapped proportionally by actual perceived distance\n\nMAP STYLE CONTROL:\n\nIF \"SOFT GRADIENT\":\n• Smooth continuous grayscale blending allowed\n\nIF \"TECHNICAL HARD MAP\":\n• More segmented grayscale bands\n• Slight machine-vision feel\n\nIF \"TOPOGRAPHIC LAYERS\":\n• Visible stepped depth contour zones allowed\n\nANTI-CHEAT RULES:\n\n• Do NOT simply desaturate photo\n• Do NOT preserve original photographic shading\n• Do NOT use original light source as brightness guide\n• Use distance-from-viewer only\n\nFAIL CONDITIONS:\n\n• Looks like ordinary black-and-white photo → FAIL\n• Brightness tied to original lighting instead of depth → FAIL\n• Weak foreground/background separation → FAIL\n\nQUALITY:\n\n• Clean machine-vision depth field\n• Strong readable spatial layering\n• Entire scene converted to technical grayscale depth visualization"
+  },
+  {
     "name": "MONOLINE ILLUSTRATION",
     "category": [
       "MINIMAL",
