@@ -7729,15 +7729,7 @@ async function initCamera() {
       cameraButton.style.display = 'flex';
     }
     
-    const leftCamCarousel = document.getElementById('left-cam-carousel');
-      if (leftCamCarousel) {
-        leftCamCarousel.style.display = 'flex';
-      }
-
-      const modeCarousel = document.getElementById('mode-carousel');
-      if (modeCarousel) {
-        modeCarousel.style.display = 'block';
-      }
+    if (window._showCamCarousels) window._showCamCarousels();
 
     updatePresetDisplay();
     
@@ -9645,9 +9637,8 @@ async function hideMasterPromptSubmenu() {
     updateMasterPromptIndicator();
     updateMasterPromptDisplay();
     updatePresetDisplay();
-    // Show left carousel again and resume camera
-    const leftCamCarousel = document.getElementById('left-cam-carousel');
-    if (leftCamCarousel) leftCamCarousel.style.display = 'flex';
+    // Show carousels again and resume camera
+    if (window._showCamCarousels) window._showCamCarousels();
     await resumeCamera();
     return;
   }
@@ -14420,6 +14411,24 @@ console.log('AI Camera Styles app initialized!');
 
   let leftVisible = true;
   let rightVisible = true;
+
+  // Expose a single restore function so reinitializeCamera and startup
+  // always use the same class-based system and keep the closure in sync.
+  window._showCamCarousels = function () {
+    leftVisible = true;
+    rightVisible = true;
+    const leftCarousel = document.getElementById('left-cam-carousel');
+    const rightCarousel = document.querySelector('.mode-carousel');
+    if (leftCarousel) {
+      leftCarousel.classList.remove('hidden');
+      leftCarousel.style.display = ''; // clear any competing inline override
+    }
+    if (rightCarousel) {
+      rightCarousel.style.transform = 'translateX(0)';
+      rightCarousel.style.pointerEvents = 'auto';
+      rightCarousel.style.display = '';
+    }
+  };
 
   function isOnMainCameraScreen() {
     if (document.getElementById('gallery-modal')?.style.display === 'flex') return false;
