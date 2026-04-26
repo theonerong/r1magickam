@@ -8562,38 +8562,6 @@
     "additionalInstructions": "FINAL RESULT:\nThe image should look like a real photograph capturing the exact moment the subject steps through a physical door from another realm into the viewer’s reality, with their face visible and both worlds clearly connected by the doorway."
   },
   {
-    "name": "DUAL IMAGE AMBIGRAM GRID",
-    "category": [
-      "OPTIONS",
-      "OPTICAL",
-      "DUAL",
-      "GRID",
-      "HYBRID"
-    ],
-    "message": "Take a picture and transform the subject into a dual-image ambigram grid optical illusion.\n\nThe final image must contain two separate subject states embedded into one tiled matrix so that different viewing distances imply different images.\n\nMASTER PROMPT RULE:\n• If a master prompt specifies alternate identity or hidden second state — PRIORITIZE and USE that information\n\nGENERAL REQUIREMENTS:\n• Final image must look like a hybrid tiled construction\n• Two hidden subject versions must coexist\n• Entire image must be built from repeating tile units\n",
-    "randomizeOptions": true,
-    "optionGroups": [
-    {
-      "title": "SECOND STATE",
-      "options": [
-        { "id": "001", "text": "Monster Variant — hidden monstrous alternate" },
-        { "id": "002", "text": "Older Variant — hidden aged version" },
-        { "id": "003", "text": "Expression Variant — hidden emotional change" },
-        { "id": "004", "text": "Abstract Variant — hidden surreal reinterpretation" }
-      ]
-    },
-    {
-      "title": "GRID SIZE",
-      "options": [
-        { "id": "001", "text": "Fine Tiles — subtle hybrid mosaic" },
-        { "id": "002", "text": "Medium Tiles — visible dual matrix" },
-        { "id": "003", "text": "Chunky Tiles — aggressive optical switching" }
-      ]
-    }
-    ],
-    "additionalInstructions": "• Generate IMAGE A and IMAGE B of the subject\n• Reconstruct both images simultaneously using repeating square tile units\n• Tile luminance/detail must favor IMAGE A at close inspection and IMAGE B at distant inspection\n• Entire image must look like a hybrid mosaic grid\n• Two subject states must visibly coexist inside one matrix"
-  },
-  {
     "name": "DOUBLE EXPOSURE",
     "category": [
       "PHOTOGRAPHY",
@@ -16231,37 +16199,6 @@
     "additionalInstructions": ""
   },
   {
-    "name": "LINE PORTRAIT DECODER",
-    "category": [
-      "OPTIONS",
-      "OPTICAL",
-      "HIDDEN",
-      "DECODER",
-      "LINES"
-    ],
-    "message": "Take a picture and transform the subject into a hidden line portrait decoder illusion.\n\nThe final image must simulate a printed encoded portrait concealed inside dense linear noise, designed to be revealed by a striped decoder overlay.\n\nMASTER PROMPT RULE:\n• If a master prompt specifies concealment or visibility — PRIORITIZE and USE that information\n\nGENERAL REQUIREMENTS:\n• Final image should appear mostly abstract at first glance\n• Subject portrait must be hidden structurally inside line modulation\n• Entire image must be black and white only\n",
-    "randomizeOptions": true,
-    "optionGroups": [
-      {
-        "title": "LINE ORIENTATION",
-        "options": [
-          { "id": "001", "text": "Vertical — hidden portrait inside vertical code lines" },
-          { "id": "002", "text": "Horizontal — hidden portrait inside horizontal code lines" },
-          { "id": "003", "text": "Radial — hidden portrait inside radiating decoder lines" }
-        ]
-      },
-      {
-        "title": "VISIBILITY LEVEL",
-        "options": [
-          { "id": "001", "text": "Deep Hidden — portrait barely visible" },
-          { "id": "002", "text": "Medium Hidden — portrait subtly detectable" },
-          { "id": "003", "text": "Decoder Ready — portrait partially readable through code" }
-        ]
-      }
-    ],
-    "additionalInstructions": "• Build the entire image from dense repeating black and white line code\n• Encode the subject only by changing line thickness, spacing, interruptions, and local modulation\n• No normal grayscale photo regions may remain\n• Portrait must feel concealed inside the code field\n• Must resemble a hidden decoder print"
-  },
-  {
     "name": "LINOCUT PRINT",
     "category": [
       "PRINTMAKING",
@@ -17006,6 +16943,18 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "FINAL RESULT:\nThe final image should resemble a lavishly illustrated European sci-fi graphic novel panel."
+  },
+  {
+    "name": "MAGIC EYE",
+    "category": [
+      "ILLUSION",
+      "STEREOGRAM",
+      "3D"
+    ],
+    "message": "Take a picture and transform it into a single-image autostereogram (Magic Eye–style illusion). Encode the subject’s shape and depth into a repeating patterned texture so the image appears abstract at first glance but reveals the subject when viewed with relaxed or unfocused eyes.\n\nUse a dense, repeating pattern with subtle depth cues that form the subject’s silhouette and major features in three dimensions. Do not include outlines, labels, or hints. The subject should not be immediately obvious without proper viewing.\n\nEnsure the pattern is clean, evenly tiled, and centered. The final image should resemble a classic Magic Eye print that is visually stable and readable on a small screen.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": ""
   },
   {
     "name": "MAGIC REALISM",
