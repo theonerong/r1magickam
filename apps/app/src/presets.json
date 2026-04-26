@@ -2173,27 +2173,10 @@
       "DEPTH",
       "PATTERN"
     ],
-    "message": "Take a picture and generate a true Single Image Stereogram (SIS). The goal is total concealment: a uniform field of repeating patterns where the subject is 100% invisible to the naked eye and only emerges via depth perception.\n\nMASTER PROMPT RULE:\n• PRIORITIZE SEAMLESS UNIFORMITY. The pattern must not change, shade, or outline around the hidden subject.",
-    "randomizeOptions": true,
-    "optionGroups": [
-    {
-      "title": "TEXTURE DENSITY",
-      "options": [
-        { "id": "001", "text": "High-Frequency Noise — fine-grain random dots" },
-        { "id": "002", "text": "Seamless Fractal — intricate repeating geometric fractals" },
-        { "id": "003", "text": "Abstract Micro-Motif — dense, repeating organic symbols" }
-      ]
-    },
-    {
-      "title": "DEPTH LOGIC",
-      "options": [
-        { "id": "001", "text": "Deep Recess — subject carved deep into the background" },
-        { "id": "002", "text": "Extruded Relief — subject pops forward from the field" },
-        { "id": "003", "text": "Multi-Plane — foreground and background depth layers" }
-      ]
-    }
-    ],
-    "additionalInstructions": "• MANDATORY: No outlines, no shading, and no lighting changes around the subject's location.\n• The entire canvas must maintain a consistent color palette and texture frequency from edge to edge.\n• Use a 'Wallpaper' style tiling logic: the horizontal repeating units must be mathematically identical.\n• Conceal the subject entirely within the pattern displacement; if the subject is recognizable without staring through the image, the output is incorrect.\n• Final result must look like a flat, decorative repeating pattern to the casual observer."
+    "message": "Take a picture and generate a technical, true random dot autostereogram (RDS). The output must be a seamless, static field of uniform noise (like high-frequency binary salt-and-pepper grain or fine static). The subject must be 100% encoded in the pattern displacement, leaving *no* visual traces to the naked eye.\n\n### MANDATORY INSTRUCTIONS:\n• CONCEALMENT FIRST: The hidden subject must not show any edges, shadows, highlights, outlines, silhouettes, or shading difference within the flat pattern field.\n• TEXTURE UNIFORMITY: Every pixel of the image must maintain identical texture frequency and color value probability. No part of the canvas can be identified as 'foreground' or 'subject' under normal observation.\n• HORIZONTAL TILING: The image must utilize a mathematically repeating 'wallpaper' design logic. Tiny horizontal shifts are the ONLY valid method of defining depth. If the object can be recognized without 'staring through' the image, the generation has failed.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "• Style: Technical optical illusion print.\n• Composition: A borderless, flat field of dense, fine-grain random dots (black/white or grayscale).\n• Requirement: The image must appear completely flat and meaningless to the casual viewer."
   },
   {
     "name": "AVATAR",
