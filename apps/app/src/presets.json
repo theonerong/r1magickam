@@ -2173,27 +2173,27 @@
       "DEPTH",
       "PATTERN"
     ],
-    "message": "Take a picture and transform the subject into an autostereogram depth field optical illusion.\n\nThe final image must simulate a Magic-Eye style hidden-depth stereogram built entirely from repeating horizontal micro-patterns.\n\nMASTER PROMPT RULE:\n• If a master prompt specifies depth emergence or hidden visibility — PRIORITIZE and USE that information\n\nGENERAL REQUIREMENTS:\n• Entire image must appear as a repeating patterned stereogram\n• Subject depth must be hidden inside horizontal pattern offsets\n• No normal photographic regions may remain\n",
+    "message": "Take a picture and generate a true Single Image Stereogram (SIS). The goal is total concealment: a uniform field of repeating patterns where the subject is 100% invisible to the naked eye and only emerges via depth perception.\n\nMASTER PROMPT RULE:\n• PRIORITIZE SEAMLESS UNIFORMITY. The pattern must not change, shade, or outline around the hidden subject.",
     "randomizeOptions": true,
     "optionGroups": [
-      {
-        "title": "PATTERN FAMILY",
-        "options": [
-          { "id": "001", "text": "Geometric Noise — repeating abstract symbols" },
-          { "id": "002", "text": "Dot Texture — repeating stereogram dots" },
-          { "id": "003", "text": "Micro Tiles — repeating tiny patterned blocks" }
-        ] 
-      },
-      {
-        "title": "DEPTH EMERGENCE",
-        "options": [
-          { "id": "001", "text": "Face Forward — face hidden in strongest depth" },
-          { "id": "002", "text": "Subject Full — full subject hidden in depth field" },
-          { "id": "003", "text": "Layered Relief — multiple depth zones" }
-        ]
-      }
+    {
+      "title": "TEXTURE DENSITY",
+      "options": [
+        { "id": "001", "text": "High-Frequency Noise — fine-grain random dots" },
+        { "id": "002", "text": "Seamless Fractal — intricate repeating geometric fractals" },
+        { "id": "003", "text": "Abstract Micro-Motif — dense, repeating organic symbols" }
+      ]
+    },
+    {
+      "title": "DEPTH LOGIC",
+      "options": [
+        { "id": "001", "text": "Deep Recess — subject carved deep into the background" },
+        { "id": "002", "text": "Extruded Relief — subject pops forward from the field" },
+        { "id": "003", "text": "Multi-Plane — foreground and background depth layers" }
+      ]
+    }
     ],
-    "additionalInstructions": "• Build the entire image from repeating horizontal stereogram pattern bands\n• Encode hidden subject depth by tiny horizontal pattern shifts only\n• No visible normal portrait should remain\n• Subject must be concealed inside repeating stereogram texture\n• Must resemble a true autostereogram print"
+    "additionalInstructions": "• MANDATORY: No outlines, no shading, and no lighting changes around the subject's location.\n• The entire canvas must maintain a consistent color palette and texture frequency from edge to edge.\n• Use a 'Wallpaper' style tiling logic: the horizontal repeating units must be mathematically identical.\n• Conceal the subject entirely within the pattern displacement; if the subject is recognizable without staring through the image, the output is incorrect.\n• Final result must look like a flat, decorative repeating pattern to the casual observer."
   },
   {
     "name": "AVATAR",
