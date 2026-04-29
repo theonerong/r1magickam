@@ -419,6 +419,86 @@ export class PresetImporter {
         }, 3000);
       };
 
+      // ===== SAMPLE IMAGE LONG-PRESS PREVIEW =====
+
+      // Create a full-screen overlay for showing sample images on long press
+
+      const previewOverlay = document.createElement('div');
+      previewOverlay.id = 'preset-image-preview-overlay';
+      previewOverlay.style.cssText = 'display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.88); z-index:99999; align-items:center; justify-content:center; flex-direction:column; pointer-events:all;';
+
+      const previewImg = document.createElement('img');
+      previewImg.id = 'preset-preview-img';
+      previewImg.style.cssText = 'max-width:85%; max-height:65%; object-fit:contain; border-radius:10px; border:2px solid #555;';
+
+      const previewLabel = document.createElement('div');
+      previewLabel.id = 'preset-preview-label';
+      previewLabel.style.cssText = 'color:#fff; font-size:15px; margin-top:14px; font-weight:bold; letter-spacing:1px;';
+
+      const previewCloseBtn = document.createElement('div');
+      previewCloseBtn.textContent = '×';
+      previewCloseBtn.style.cssText = 'position:absolute; top:14px; right:18px; color:#fff; font-size:28px; cursor:pointer; pointer-events:all; line-height:1;';
+      previewCloseBtn.addEventListener('touchstart', (e) => {
+        e.stopPropagation();
+        e.preventDefault();
+      });
+      previewCloseBtn.addEventListener('touchend', (e) => {
+        e.stopPropagation();
+        e.preventDefault();
+        hidePreview();
+      });
+      previewCloseBtn.addEventListener('mousedown', (e) => {
+        e.stopPropagation();
+        e.preventDefault();
+        hidePreview();
+      });
+      
+      const previewNoImg = document.createElement('div');
+      previewNoImg.id = 'preset-preview-no-img';
+      previewNoImg.style.cssText = 'color:#aaa; font-size:13px; display:none; margin-top:20px;';
+      previewNoImg.textContent = 'No sample image available';
+
+      previewOverlay.appendChild(previewCloseBtn);
+      previewOverlay.appendChild(previewImg);
+      previewOverlay.appendChild(previewLabel);
+      previewOverlay.appendChild(previewNoImg);
+      document.body.appendChild(previewOverlay);
+
+      const showPreview = (preset) => {
+        previewLabel.textContent = preset.name;
+        previewImg.style.display = 'none';
+        previewNoImg.style.display = 'none';
+
+        // Build the image URL from the preset name (spaces become underscores)
+        const autoUrl = './public/' + preset.name.replace(/\s+/g, '_') + '.png';
+        const imageUrl = preset.imageUrl || autoUrl;
+
+        previewImg.onload = () => {
+          previewImg.style.display = 'block';
+          previewNoImg.style.display = 'none';
+        };
+        previewImg.onerror = () => {
+          previewImg.style.display = 'none';
+          previewNoImg.style.display = 'block';
+        };
+        previewImg.src = imageUrl;
+        previewOverlay.style.display = 'flex';
+      };
+
+      const hidePreview = () => {
+        previewOverlay.style.display = 'none';
+        previewImg.src = '';
+      };
+
+      // Clean up the overlay when the modal closes
+      const _originalCloseModal = () => {
+        if (document.body.contains(previewOverlay)) {
+          document.body.removeChild(previewOverlay);
+        }
+      };
+
+      // ===== END SAMPLE IMAGE LONG-PRESS PREVIEW =====
+
       const presetsSection = document.createElement('div');
       presetsSection.className = 'menu-section';
       presetsSection.id = 'import-presets-section';
@@ -533,7 +613,51 @@ export class PresetImporter {
           item.appendChild(checkbox);
           item.appendChild(nameSpan);
 
+          // Long-press to show sample image preview
+          let _longPressTimer = null;
+          const LONG_PRESS_MS = 600;
+
+          item.addEventListener('touchstart', (e) => {
+            _longPressTimer = setTimeout(() => {
+              showPreview(preset);
+            }, LONG_PRESS_MS);
+          }, { passive: true });
+
+          item.addEventListener('touchend', () => {
+            clearTimeout(_longPressTimer);
+            _longPressTimer = null;
+          });
+
+          item.addEventListener('touchmove', () => {
+            clearTimeout(_longPressTimer);
+            _longPressTimer = null;
+          });
+
+          item.addEventListener('touchcancel', () => {
+            clearTimeout(_longPressTimer);
+            _longPressTimer = null;
+            hidePreview();
+          });
+
+          // Mouse support (for testing on desktop)
+          item.addEventListener('mousedown', () => {
+            _longPressTimer = setTimeout(() => {
+              showPreview(preset);
+            }, LONG_PRESS_MS);
+          });
+
+          item.addEventListener('mouseup', () => {
+            clearTimeout(_longPressTimer);
+            _longPressTimer = null;
+          });
+
+          item.addEventListener('mouseleave', () => {
+            clearTimeout(_longPressTimer);
+            _longPressTimer = null;
+          });
+
           // Spend credit immediately on check; refund immediately on uncheck (if not yet imported)
+
           const handleLockToggle = (newChecked) => {
             if (newChecked && isLocked && !sessionUnlocked.has(preset.name)) {
               // Trying to check a locked preset — spend a credit now
