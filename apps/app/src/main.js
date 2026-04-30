@@ -611,7 +611,7 @@ function showPresetImagePreview(preset) {
   _presetPreviewImg.style.display = 'none';
   _presetPreviewNoImg.style.display = 'none';
 
-  const safeName = preset.name.replace(/[\/\\:*?"<>|#\s]/g, '_');
+  const safeName = preset.name.replace(/[\/\\:*?"<>|\s]/g, '_');
   const autoUrl = './public/' + encodeURIComponent(safeName) + '.png';
   const imageUrl = preset.imageUrl || autoUrl;
 
