@@ -470,7 +470,8 @@ export class PresetImporter {
         previewNoImg.style.display = 'none';
 
         // Build the image URL from the preset name (spaces become underscores)
-        const autoUrl = './public/' + preset.name.replace(/\s+/g, '_') + '.png';
+        const safeName = preset.name.replace(/[\/\\:*?"<>|#\s]/g, '_');
+        const autoUrl = './public/' + encodeURIComponent(safeName) + '.png';
         const imageUrl = preset.imageUrl || autoUrl;
 
         previewImg.onload = () => {

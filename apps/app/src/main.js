@@ -556,6 +556,119 @@ let currentVisiblePresetsIndex = 0;
 let visiblePresetsFilterText = '';
 let visiblePresetsScrollEnabled = true;
 
+// ===== PRESET SAMPLE IMAGE LONG-PRESS PREVIEW (SHARED UTILITY) =====
+
+let _presetPreviewOverlay = null;
+let _presetPreviewImg = null;
+let _presetPreviewLabel = null;
+let _presetPreviewNoImg = null;
+let _styleListLongPressTimer = null;
+
+function _ensurePresetPreviewOverlay() {
+  if (_presetPreviewOverlay) return;
+
+  _presetPreviewOverlay = document.createElement('div');
+  _presetPreviewOverlay.style.cssText = 'display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.88); z-index:99999; align-items:center; justify-content:center; flex-direction:column; pointer-events:all;';
+
+  const closeBtn = document.createElement('div');
+  closeBtn.textContent = '×';
+  closeBtn.style.cssText = 'position:absolute; top:14px; right:18px; color:#fff; font-size:28px; cursor:pointer; pointer-events:all; line-height:1;';
+  closeBtn.addEventListener('touchstart', (e) => {
+    e.stopPropagation();
+    e.preventDefault();
+  });
+  closeBtn.addEventListener('touchend', (e) => {
+    e.stopPropagation();
+    e.preventDefault();
+    hidePresetImagePreview();
+  });
+  closeBtn.addEventListener('mousedown', (e) => {
+    e.stopPropagation();
+    e.preventDefault();
+    hidePresetImagePreview();
+  });
+
+  _presetPreviewImg = document.createElement('img');
+  _presetPreviewImg.style.cssText = 'max-width:85%; max-height:65%; object-fit:contain; border-radius:10px; border:2px solid #555;';
+
+  _presetPreviewLabel = document.createElement('div');
+  _presetPreviewLabel.style.cssText = 'color:#fff; font-size:15px; margin-top:14px; font-weight:bold; letter-spacing:1px;';
+
+  _presetPreviewNoImg = document.createElement('div');
+  _presetPreviewNoImg.style.cssText = 'color:#aaa; font-size:13px; display:none; margin-top:20px;';
+  _presetPreviewNoImg.textContent = 'No sample image available';
+
+  _presetPreviewOverlay.appendChild(closeBtn);
+  _presetPreviewOverlay.appendChild(_presetPreviewImg);
+  _presetPreviewOverlay.appendChild(_presetPreviewLabel);
+  _presetPreviewOverlay.appendChild(_presetPreviewNoImg);
+  document.body.appendChild(_presetPreviewOverlay);
+}
+
+function showPresetImagePreview(preset) {
+  _ensurePresetPreviewOverlay();
+  _presetPreviewLabel.textContent = preset.name;
+  _presetPreviewImg.style.display = 'none';
+  _presetPreviewNoImg.style.display = 'none';
+
+  const safeName = preset.name.replace(/[\/\\:*?"<>|#\s]/g, '_');
+  const autoUrl = './public/' + encodeURIComponent(safeName) + '.png';
+  const imageUrl = preset.imageUrl || autoUrl;
+
+  _presetPreviewImg.onload = () => {
+    _presetPreviewImg.style.display = 'block';
+    _presetPreviewNoImg.style.display = 'none';
+  };
+  _presetPreviewImg.onerror = () => {
+    _presetPreviewImg.style.display = 'none';
+    _presetPreviewNoImg.style.display = 'block';
+  };
+  _presetPreviewImg.src = imageUrl;
+  _presetPreviewOverlay.style.display = 'flex';
+}
+
+function hidePresetImagePreview() {
+  if (!_presetPreviewOverlay) return;
+  _presetPreviewOverlay.style.display = 'none';
+  _presetPreviewImg.src = '';
+}
+
+function attachPresetLongPress(item, preset) {
+  const LONG_PRESS_MS = 600;
+  let _timer = null;
+
+  item.addEventListener('touchstart', () => {
+    _timer = setTimeout(() => showPresetImagePreview(preset), LONG_PRESS_MS);
+  }, { passive: true });
+
+  item.addEventListener('touchend', () => { clearTimeout(_timer); _timer = null; });
+  item.addEventListener('touchmove', () => { clearTimeout(_timer); _timer = null; });
+  item.addEventListener('touchcancel', () => { clearTimeout(_timer); _timer = null; });
+
+  item.addEventListener('mousedown', () => {
+    _timer = setTimeout(() => showPresetImagePreview(preset), LONG_PRESS_MS);
+  });
+  item.addEventListener('mouseup', () => { clearTimeout(_timer); _timer = null; });
+  item.addEventListener('mouseleave', () => { clearTimeout(_timer); _timer = null; });
+}
+
+function _handleStyleListLongPressStart(e) {
+  const item = e.target.closest('.style-item');
+  if (!item) return;
+  const index = parseInt(item.dataset.index);
+  if (isNaN(index)) return;
+  const preset = CAMERA_PRESETS[index];
+  if (!preset) return;
+  _styleListLongPressTimer = setTimeout(() => showPresetImagePreview(preset), 600);
+}
+
+function _handleStyleListLongPressEnd() {
+  clearTimeout(_styleListLongPressTimer);
+  _styleListLongPressTimer = null;
+}
+
+// ===== END PRESET SAMPLE IMAGE LONG-PRESS PREVIEW =====
+
 // Style reveal functionality
 function showStyleReveal(styleName) {
   if (styleRevealTimeout) {
@@ -1788,6 +1901,7 @@ function populatePresetList() {
       }
     };
     
+    attachPresetLongPress(item, preset);
     list.appendChild(item);
   });
 // Update preset count
@@ -5276,6 +5390,7 @@ const allPresets = CAMERA_PRESETS.filter(p => {
       toggleVisiblePreset(preset.name, checkbox.checked);
     };
     
+    attachPresetLongPress(item, preset);
     fragment.appendChild(item);
   });
   
@@ -6555,6 +6670,7 @@ const TOUR_STEPS = [
   { section: 'Settings', title: '⚙️ Button Settings', body: 'Includes the settings for the main camera screen carousel and the Gallery Image Viewer screen carousel buttons. You may select different colors for buttons and text in the main camera and gallery image viewer screens. You may also select opacity (default solid) and set how many taps to hide/reveal the buttons.' },
   { section: 'Settings', title: '📖 Tutorial', body: 'Last section in the settings. This area includes this audio tour. It also includes an indexed tutorial with a search engine. Type to search or click on the search field and press the side button to speak the query.' },
   { section: 'Tips and Advanced', title: '🏷️ Category Searching', body: 'Every preset has categories. When a preset is highlighted in the Visible Presets menu, its categories appear at the bottom. Tap a category to filter all presets in that group.' },
+  { section: 'Tips and Advanced', title: '🖼️ Preview Preset', body: 'When you long press on a preset, you are provided a sample image preview of what the style will look like.' },
   { section: 'Tips and Advanced', title: '🧠 Master Prompt Power Tip', body: 'Search for master or master prompt in the Visible Presets menu to find presets designed to work with Master Prompt. These respond to names, occasions, and custom context you provide. All presets may be affected by the Master Prompt.' },
   { section: 'Tips and Advanced', title: '📶 Offline Queue', body: 'If you take photos and the program goes offline - no worries - photos queue automatically and may be synced to the rabbit hole once your connection returns. The queue count shows on the screen.' },
   { section: 'Tips and Advanced', title: '🔁 Reset Database', body: 'The nuclear option in Settings. Wipes all custom presets and settings. Only imported presets from the library remain. Use only if something is seriously broken.' },
@@ -10256,6 +10372,20 @@ function _doPopulateStylesList(list, preserveScroll) {
     
     // Single event listener for the entire list using event delegation
     newList.addEventListener('click', handleStyleListClick);
+
+    // Long-press image preview delegation for the main styles list
+    newList.removeEventListener('touchstart', _handleStyleListLongPressStart);
+    newList.removeEventListener('touchend', _handleStyleListLongPressEnd);
+    newList.removeEventListener('touchmove', _handleStyleListLongPressEnd);
+    newList.removeEventListener('mousedown', _handleStyleListLongPressStart);
+    newList.removeEventListener('mouseup', _handleStyleListLongPressEnd);
+    newList.removeEventListener('mouseleave', _handleStyleListLongPressEnd);
+    newList.addEventListener('touchstart', _handleStyleListLongPressStart, { passive: true });
+    newList.addEventListener('touchend', _handleStyleListLongPressEnd);
+    newList.addEventListener('touchmove', _handleStyleListLongPressEnd);
+    newList.addEventListener('mousedown', _handleStyleListLongPressStart);
+    newList.addEventListener('mouseup', _handleStyleListLongPressEnd);
+    newList.addEventListener('mouseleave', _handleStyleListLongPressEnd);
 
     // Update styles count — reuse already-computed filtered lists
     const stylesCountElement = document.getElementById('styles-count');
