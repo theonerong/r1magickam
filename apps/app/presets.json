@@ -48,7 +48,7 @@
     "additionalInstructions": "FINAL RESULT:\nThe final image must look like a real promotional still or episode frame from Doctor Who, with the subject fully embodied as the Doctor, equipped with iconic gadgets, placed in a season-accurate setting, and seamlessly integrated into the Doctor Who universe."
   },
   {
-    "name": "3D BLIND BOX",
+    "name": "3D BLIND BOX / POP MART",
     "category": [
       "3D",
       "CHARACTER TRANSFORMATION",
@@ -11646,6 +11646,20 @@
     "additionalInstructions": "RESTRICTIONS:\n• No cartoon characters\n• No animated or illustrated styles\n• No modern engines, motors, or pedals\n• No exaggerated slapstick motion\n\nFINAL RESULT:\nThe image should look like a real-world photograph where the subject is casually driving a Flintstones-style, foot-powered vehicle down a street. The vehicle is always present, always foot-powered, and treated as completely normal by the environment — creating a dry, believable, and visually funny moment."
   },
   {
+    "name": "FLOATING HOLOGRAPHIC GLASS PANE",
+    "category": [
+      "DEPTH",
+      "HOLOGRAM",
+      "GLASS",
+      "FLOATING",
+      "OPTICAL"
+    ],
+    "message": "Take a picture and transform the subject into a luminous holographic image suspended on a transparent floating glass pane positioned in front of a dark receding background.\n\nThe final image must make the subject appear to exist on a separate hovering translucent plane detached from the world behind it.\n\nMASTER PROMPT RULE:\n• If a master prompt specifies the main subject — PRIORITIZE that subject as the holographic foreground plane\n\nGENERAL REQUIREMENTS:\n• A visible floating transparent pane is mandatory\n• Strong foreground pane/background separation required\n",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "HOLOGRAPHIC PANE ENGINE (ABSOLUTE):\n\n• Render the subject on or inside a large transparent glass/acrylic pane suspended in front of a dark distant background\n• The pane must be visibly detached from the rear environment by empty spatial gap\n\nGLASS PANE VISIBILITY:\n\n• Pane edges must be visible through reflections and faint glass borders\n• Subtle transparency mandatory\n• Pane should catch white specular reflections\n\nSUBJECT HOLOGRAM:\n\n• Subject appears luminous, crisp, and embedded on the pane surface\n• Subject should be brightest object in image\n• Subject must feel suspended in front of background space\n\nBACKGROUND RECESSION:\n\n• Background should be dark, low-detail, distant, and heavily recessed\n• Rear environment should feel several feet behind pane\n\nPANE SHADOW / LIGHT GAP:\n\n• Add faint shadow or light diffusion behind the glass to show pane separation from rear wall\n• There must be obvious air distance between pane and background\n\nEDGE LIGHTING:\n\n• Glass borders may glow subtly with reflected light\n• Subject edges can carry faint holographic luminosity\n\nSPATIAL EFFECT:\n\n• Viewer must feel they are looking at a foreground floating transparent screen with the subject trapped on it\n\nANTI-CHEAT:\n\n• Do not simply make a sci-fi portrait\n• Must visibly include the suspended pane plane\n• Background cannot remain attached to subject plane\n\nQUALITY:\n\n• Strong pane detachment\n• Crisp luminous foreground\n• Dark rear recession\n• Excellent optical hover depth"
+  },
+  {
     "name": "FLOWERY",
     "category": [
       "TRANSFORMATION",
@@ -22729,35 +22743,32 @@
     "additionalInstructions": ""
   },
   {
+    "name": "PAPER TUNNEL DIORAMA",
+    "category": [
+      "DEPTH",
+      "DIORAMA",
+      "LAYERED",
+      "PAPER",
+      "OPTICAL"
+    ],
+    "message": "Take a picture and transform the scene into an extreme paper tunnel diorama illusion made from multiple suspended cut-paper depth layers.\n\nThe final image must look like the subject has been reconstructed from stacked paper sheets placed at different distances from the viewer, creating a deep tunnel of physical dimensional separation.\n\nMASTER PROMPT RULE:\n• If a master prompt specifies the main subject — PRIORITIZE that subject as the nearest dominant front layer\n\nGENERAL REQUIREMENTS:\n• Image must visibly contain many front-to-back suspended layers\n• Strong physical depth cavity required\n",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "PAPER TUNNEL ENGINE (ABSOLUTE):\n\n• Decompose the original image into multiple separate cut-paper planes arranged in depth from foreground to far background\n• Each plane must be visibly separated by empty air gaps\n• Viewer must clearly perceive stacked layers receding backward like a shadowbox tunnel\n\nLAYER STRUCTURE:\n\n• Front subject silhouette layers = nearest and largest\n• Mid object/environment layers = staggered behind\n• Rear atmospheric layers = deepest background sheets\n\n• There should be at least 5 to 9 visible paper planes\n\nSUBJECT PRIORITY:\n\n• Main subject must occupy the foremost paper layers\n• Subject face/body should protrude nearest to viewer\n• Subject should be built from several stacked contour slices for extra dimensionality\n\nPAPER MATERIAL:\n\n• All layers should look like thick matte cut cardstock or art paper\n• Visible cut edges mandatory\n• Slight paper thickness visible on edges\n\nAIR GAP SEPARATION:\n\n• Each paper layer must cast a faint shadow onto the layer behind it\n• Air gaps between layers are critical to physical depth illusion\n\nDEPTH LIGHTING:\n\n• Side lighting should create visible shadow recession between every layer\n• Foremost layers brightest\n• Rear layers progressively darker\n\nBACKGROUND:\n\n• Deep dark rear cavity or dark final backing board\n\nANTI-CHEAT:\n\n• Do not flatten layers together\n• Do not create a simple collage\n• Must feel like real suspended tunnel depth\n\nQUALITY:\n\n• Massive stacked cavity depth\n• Clear floating paper layers\n• Strong shadowbox illusion"
+  },
+  {
     "name": "PARALLAX PAPER CUT DEPTH",
     "category": [
-      "OPTIONS",
       "OPTICAL",
       "PAPER",
       "DEPTH",
-      "LAYERED"
+      "LAYERED",
+      "SCULPTURE"
     ],
-    "message": "Take a picture and transform the subject into a dimensional parallax papercut illusion built from stacked cut-paper layers.\n\nThe final image must look like a handcrafted multi-layer tunnel portrait with physical depth.\n\nMASTER PROMPT RULE:\n• If a master prompt specifies color palette or theme — PRIORITIZE and USE that information\n\nGENERAL REQUIREMENTS:\n• Maintain recognizable subject\n• Entire image reconstructed from stacked paper slices\n• Strong foreground/background separation\n",
-    "randomizeOptions": true,
-    "optionGroups": [
-    {
-      "title": "LAYER COUNT",
-      "options": [
-        { "id": "001", "text": "Low — 4 to 6 paper layers" },
-        { "id": "002", "text": "Medium — 7 to 10 paper layers" },
-        { "id": "003", "text": "High — 11+ paper layers" }
-      ]
-    },
-    {
-      "title": "CUT STYLE",
-      "options": [
-        { "id": "001", "text": "Smooth Curves — flowing silhouette cuts" },
-        { "id": "002", "text": "Sharp Geometry — angular cut planes" },
-        { "id": "003", "text": "Mixed Organic — varied handcrafted contours" }
-      ]
-    }
-    ],
-    "additionalInstructions": "• Build the portrait from suspended paper cut layers receding backward\n• Every layer must cast realistic shadow onto the next\n• Subject should emerge as a dimensional tunnel sculpture\n• No flat photographic regions may remain\n• Strong handcrafted depth illusion required"
+    "message": "Take a picture and transform the subject into an extreme parallax papercut contour sculpture built from stacked silhouette paper laminations.\n\nThe final image must look like the subject has been reconstructed from many nested cut-paper contour shells suspended one behind another, creating a handcrafted dimensional portrait extrusion.\n\nThis is not a full scene tunnel.\nThis is a subject-centric layered contour sculpture.\n\nMASTER PROMPT RULE:\n• If a master prompt specifies style or palette — PRIORITIZE and USE that information on the paper materials only\n\nGENERAL REQUIREMENTS:\n• Main subject must remain recognizable\n• Subject must become the dominant layered papercut object\n• Background must become secondary and simplified\n",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "PARALLAX CONTOUR LAMINATION ENGINE (ABSOLUTE):\n\n• Rebuild the subject using many successive cut-paper silhouette laminations stacked in z-depth\n• Each lamination should represent a slightly different contour slice of the subject's face/body/profile\n• The viewer must perceive the subject as being constructed from repeated nested paper shells\n\nSUBJECT-FIRST CONSTRUCTION (CRITICAL):\n\n• The subject itself is the layered sculpture — not merely placed inside layered scenery\n• Facial outline, hair shape, shoulders, torso lines, and major body contours must repeat through many staggered contour slices\n• Internal facial regions may also be represented by smaller inset contour laminations\n\nNESTED SILHOUETTE LOGIC:\n\n• Each paper layer should echo or trace portions of the subject silhouette\n• Layers should become progressively recessed behind the foremost subject cut\n• This creates a rippling contour-shell buildup around the subject form\n\n• Think of concentric handcrafted portrait cutouts stacked backward in space\n\nPAPER MATERIAL:\n\n• All contour laminations should look like thick matte art paper or cardstock\n• Visible paper thickness mandatory\n• Clean handcrafted cut edges mandatory\n\nAIR GAP DEPTH:\n\n• Every lamination must be visibly separated by a narrow air gap\n• Each layer must cast a shadow onto the layer behind it\n• Layer separation should be obvious enough to read as physical stacking\n\nFOREGROUND EXTRUSION:\n\n• The front-most facial and body contours must protrude nearest the viewer\n• Subject should feel like it bulges outward from the nested shell structure\n\nBACKGROUND TREATMENT:\n\n• Background should be reduced to simple minimal paper backing fields\n• Do not preserve complex environmental scenery\n• Background exists only as rear support layers behind the subject sculpture\n\nDEPTH LIGHTING:\n\n• Side or top-side lighting should emphasize paper thickness and inter-layer shadows\n• Foremost contour edges brightest\n• Rear contour layers progressively darker\n\nANTI-CHEAT:\n\n• Do not build a full diorama scene\n• Do not make subject just one cutout layer\n• Do not flatten contour shells together\n• Must visibly read as repeated subject silhouette laminations\n\nFAIL CONDITIONS:\n\n• Looks like ordinary layered scenery → FAIL\n• Subject not built from repeated contour shells → FAIL\n• Paper thickness not visible → FAIL\n• Shadows between laminations absent → FAIL\n\nQUALITY:\n\n• Strong handcrafted portrait extrusion\n• Visible concentric subject contour stacking\n• Clear lamination air gaps\n• Powerful subject-centered parallax depth"
   },
   {
     "name": "PARALLEL UNIVERSE HISTORY",
