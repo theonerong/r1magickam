@@ -12,7 +12,7 @@
     "additionalInstructions": ""
   },
   {
-    "name": "#NOFILTER",
+    "name": "#NO FILTER",
     "category": [
       "OPTIONS",
       "HUMOR",
@@ -961,18 +961,6 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "ABSOLUTE PROHIBITIONS:\n• NO more than three frames\n• NO modern digital film simulations\n• NO clean or perfect edges\n• NO single-photo presentation\n\nFINAL VALIDATION RULE:\nIf it looks like one photo with a film texture on top, IT IS WRONG.\n\nThe final image must look like a real, physical strip of exposed and developed photographic film containing up to three frames.\n\nFILM MATERIAL REQUIREMENTS:"
-  },
-  {
-    "name": "ANAMORPHIC ART",
-    "category": [
-      "ART",
-      "ILLUSION",
-      "3D"
-    ],
-    "message": "Take a picture and create an anamorphic image that appears distorted unless viewed from a specific angle. Correct perspective reveals the subject.",
-    "options": [],
-    "randomizeOptions": false,
-    "additionalInstructions": ""
   },
   {
     "name": "ANCHORMAN",
