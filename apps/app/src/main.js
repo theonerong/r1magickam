@@ -14265,14 +14265,42 @@ document.getElementById('factory-reset-button').addEventListener('click', async 
         saveVisiblePresets();
     }
     
-    renderMenuStyles();
-    
+    // Show the success overlay FIRST before any menu transitions happen
     const successMessage = hasImportedPresets
-      ? 'All custom presets deleted, modifications cleared, and queue reset. Reset to imported presets!'
-      : 'All custom presets deleted, modifications cleared, and queue reset!';
-    alert(successMessage);
+      ? '✅ Reset complete!\n\n• Custom presets deleted\n• All edits undone\n• Photo queue cleared\n• Showing all imported presets'
+      : '✅ Reset complete!\n\n• Custom presets deleted\n• All edits undone\n• Photo queue cleared\n• All presets restored';
+
+    const resetOverlay = document.createElement('div');
+    resetOverlay.style.cssText = 'position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.92); z-index:2147483647; display:flex; align-items:center; justify-content:center; pointer-events:all;';
+
+    const resetBox = document.createElement('div');
+    resetBox.style.cssText = 'background:#1a1a1a; border:1px solid #4CAF50; border-radius:12px; padding:28px 24px; max-width:85%; text-align:center;';
+
+    const resetMsg = document.createElement('div');
+    resetMsg.style.cssText = 'color:#fff; font-size:14px; white-space:pre-line; line-height:1.7; margin-bottom:20px;';
+    resetMsg.textContent = successMessage;
+
+    const resetBtn = document.createElement('button');
+    resetBtn.textContent = 'OK';
+    resetBtn.style.cssText = 'background:#4CAF50; color:#fff; border:none; border-radius:8px; padding:10px 32px; font-size:15px; cursor:pointer;';
+    resetBtn.addEventListener('touchend', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      if (document.body.contains(resetOverlay)) document.body.removeChild(resetOverlay);
+      renderMenuStyles();
+    });
+    resetBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (document.body.contains(resetOverlay)) document.body.removeChild(resetOverlay);
+      renderMenuStyles();
+    });
+
+    resetBox.appendChild(resetMsg);
+    resetBox.appendChild(resetBtn);
+    resetOverlay.appendChild(resetBox);
+    document.body.appendChild(resetOverlay);
   }
-});
+}); 
 
 // Carousel infinite scroll logic
 document.addEventListener('DOMContentLoaded', function() {
