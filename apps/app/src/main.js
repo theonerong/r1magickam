@@ -572,7 +572,7 @@ function _ensurePresetPreviewOverlay() {
 
   const closeBtn = document.createElement('div');
   closeBtn.textContent = '×';
-  closeBtn.style.cssText = 'position:absolute; top:14px; right:18px; color:#fff; font-size:28px; cursor:pointer; pointer-events:all; line-height:1;';
+  closeBtn.style.cssText = 'position:absolute; top:10px; right:18px; color:#fff; font-size:28px; cursor:pointer; pointer-events:all; line-height:1;';
   closeBtn.addEventListener('touchstart', (e) => {
     e.stopPropagation();
     e.preventDefault();
@@ -588,18 +588,21 @@ function _ensurePresetPreviewOverlay() {
     hidePresetImagePreview();
   });
 
+  const _presetPreviewImgWrapper = document.createElement('div');
+  _presetPreviewImgWrapper.style.cssText = 'width:92vw; height:72vh; display:flex; align-items:center; justify-content:center;';
   _presetPreviewImg = document.createElement('img');
-  _presetPreviewImg.style.cssText = 'max-width:85%; max-height:65%; object-fit:contain; border-radius:10px; border:2px solid #555;';
+  _presetPreviewImg.style.cssText = 'width:100%; height:100%; object-fit:contain; border-radius:10px; border:2px solid #555;';
 
   _presetPreviewLabel = document.createElement('div');
-  _presetPreviewLabel.style.cssText = 'color:#fff; font-size:15px; margin-top:14px; font-weight:bold; letter-spacing:1px;';
+  _presetPreviewLabel.style.cssText = 'color:#fff; font-size:11px; margin-top:6px; font-weight:bold; letter-spacing:1px;';
 
   _presetPreviewNoImg = document.createElement('div');
   _presetPreviewNoImg.style.cssText = 'color:#aaa; font-size:13px; display:none; margin-top:20px;';
   _presetPreviewNoImg.textContent = 'No sample image available';
 
   _presetPreviewOverlay.appendChild(closeBtn);
-  _presetPreviewOverlay.appendChild(_presetPreviewImg);
+  _presetPreviewImgWrapper.appendChild(_presetPreviewImg);
+  _presetPreviewOverlay.appendChild(_presetPreviewImgWrapper);
   _presetPreviewOverlay.appendChild(_presetPreviewLabel);
   _presetPreviewOverlay.appendChild(_presetPreviewNoImg);
   document.body.appendChild(_presetPreviewOverlay);
@@ -612,7 +615,7 @@ function showPresetImagePreview(preset) {
   _presetPreviewNoImg.style.display = 'none';
 
   const safeName = preset.name.replace(/[\/\\:*?"<>|\s]/g, '_');
-  const autoUrl = './public/' + encodeURIComponent(safeName) + '.png';
+  const autoUrl = './public/' + safeName + '.png';
   const imageUrl = preset.imageUrl || autoUrl;
 
   _presetPreviewImg.onload = () => {
@@ -14017,35 +14020,28 @@ async function resizeAndCompressImage(blob, maxWidth = 640, maxHeight = 480, qua
   return new Promise((resolve, reject) => {
     const img = new Image();
     const url = URL.createObjectURL(blob);
-    
-    img.onload = () => {
-      URL.revokeObjectURL(url);
-      
-      // Calculate new dimensions maintaining aspect ratio
-      let width = img.width;
-      let height = img.height;
-      
+
+    const doResize = (sourceImg) => {
+      let width = sourceImg.width;
+      let height = sourceImg.height;
+
+      // Only resize if image exceeds either max dimension
       if (width > maxWidth || height > maxHeight) {
-        const aspectRatio = width / height;
-        
-        if (width > height) {
-          width = maxWidth;
-          height = width / aspectRatio;
-        } else {
-          height = maxHeight;
-          width = height * aspectRatio;
-        }
+        // Calculate scale needed to fit within both maxWidth and maxHeight
+        const scaleW = maxWidth / width;
+        const scaleH = maxHeight / height;
+        const scale = Math.min(scaleW, scaleH); // use the more restrictive scale
+        width = Math.round(width * scale);
+        height = Math.round(height * scale);
       }
-      
-      // Create canvas and draw resized image
+
       const canvas = document.createElement('canvas');
       canvas.width = width;
       canvas.height = height;
-      
+
       const ctx = canvas.getContext('2d');
-      ctx.drawImage(img, 0, 0, width, height);
-      
-      // Convert to blob
+      ctx.drawImage(sourceImg, 0, 0, width, height);
+
       canvas.toBlob(
         (resizedBlob) => {
           if (resizedBlob) {
@@ -14058,36 +14054,22 @@ async function resizeAndCompressImage(blob, maxWidth = 640, maxHeight = 480, qua
         quality
       );
     };
-    
+
+    img.onload = () => {
+      URL.revokeObjectURL(url);
+      doResize(img);
+    };
+
     img.onerror = () => {
       URL.revokeObjectURL(url);
-      // If blob has no type or wrong type, retry by forcing it as image/png
+      // Retry by forcing blob type to image/png (some proxies strip content-type)
       if (blob.type !== 'image/png' && blob.type !== 'image/jpeg') {
         const retypedBlob = new Blob([blob], { type: 'image/png' });
         const retryUrl = URL.createObjectURL(retypedBlob);
         const retryImg = new Image();
         retryImg.onload = () => {
           URL.revokeObjectURL(retryUrl);
-          const canvas = document.createElement('canvas');
-          let w = retryImg.width;
-          let h = retryImg.height;
-          if (w > maxWidth || h > maxHeight) {
-            const aspectRatio = w / h;
-            if (w > h) { w = maxWidth; h = w / aspectRatio; }
-            else { h = maxHeight; w = h * aspectRatio; }
-          }
-          canvas.width = w;
-          canvas.height = h;
-          const ctx = canvas.getContext('2d');
-          ctx.drawImage(retryImg, 0, 0, w, h);
-          canvas.toBlob(
-            (resizedBlob) => {
-              if (resizedBlob) resolve(resizedBlob);
-              else reject(new Error('Failed to compress image'));
-            },
-            'image/jpeg',
-            quality
-          );
+          doResize(retryImg);
         };
         retryImg.onerror = () => {
           URL.revokeObjectURL(retryUrl);
@@ -14098,7 +14080,7 @@ async function resizeAndCompressImage(blob, maxWidth = 640, maxHeight = 480, qua
         reject(new Error('Failed to load image for resizing'));
       }
     };
-    
+
     img.src = url;
   });
 }
@@ -14110,131 +14092,105 @@ async function importFromQRCode() {
     showGalleryStatusMessage('No QR code detected', 'error', 3000);
     return;
   }
-  
+
   try {
     updateQRScannerStatus('Downloading image...', '');
-    
+
     const imageUrl = lastDetectedQR.trim();
-    
-    // Try multiple proxies in order
+
+    // Try direct fetch first (fastest, works when server allows it),
+    // then fall back to image-specific and generic CORS proxies
     const proxies = [
-      'https://api.codetabs.com/v1/proxy?quest=',
-      'https://corsproxy.io/?',
-      'https://api.allorigins.win/raw?url=',
-      '' // Try direct last
+      '',                                          // Direct fetch first
+      'https://wsrv.nl/?url=',                     // Image-specific proxy (best)
+      'https://corsproxy.io/?',                    // Generic CORS proxy
+      'https://api.allorigins.win/raw?url=',       // Generic CORS proxy
+      'https://api.codetabs.com/v1/proxy?quest='   // Generic CORS proxy
     ];
-    
+
     let response = null;
-    let lastError = null;
-    
+
     for (let i = 0; i < proxies.length; i++) {
       try {
-        const fetchUrl = proxies[i] ? proxies[i] + encodeURIComponent(imageUrl) : imageUrl;
-        
+        const fetchUrl = proxies[i]
+          ? proxies[i] + encodeURIComponent(imageUrl)
+          : imageUrl;
+
         updateQRScannerStatus(`Trying method ${i + 1}/${proxies.length}...`, '');
-        
+
         const controller = new AbortController();
-        const timeoutId = setTimeout(() => controller.abort(), 8000);
-        
-        response = await fetch(fetchUrl, {
-          signal: controller.signal
-        });
-        
+        const timeoutId = setTimeout(() => controller.abort(), 20000);
+
+        const res = await fetch(fetchUrl, { signal: controller.signal });
         clearTimeout(timeoutId);
-        
-        if (response.ok) {
+
+        if (res.ok) {
+          response = res;
           updateQRScannerStatus('Download successful!', 'success');
-          break; // Success!
+          break;
         }
       } catch (error) {
-        lastError = error;
         continue; // Try next proxy
       }
     }
-    
+
     if (!response || !response.ok) {
-      throw new Error('All download methods failed');
+      throw new Error('All download methods failed. Check the URL and try again.');
     }
-    
+
     updateQRScannerStatus('Reading image data...', '');
-    
     let blob = await response.blob();
-    
+
     const originalSize = Math.round(blob.size / 1024);
     updateQRScannerStatus('Original size: ' + originalSize + 'KB', '');
-    
-    // Check if it's an image
-    // Allow image/* types AND octet-stream (some proxies return PNG as octet-stream)
+
+    // Accept image types and octet-stream (some proxies strip content-type)
     const isImageType = blob.type.startsWith('image/');
     const isOctetStream = blob.type === 'application/octet-stream' || blob.type === '';
     if (blob.type && !isImageType && !isOctetStream) {
-      throw new Error('Not an image: ' + blob.type);
+      throw new Error('Not an image file: ' + blob.type);
     }
-    
-    // Resize/compress large images to match camera capabilities
-    // Use UXGA (1600x1200) as max to balance quality and storage
+
     updateQRScannerStatus('Optimizing image...', '');
-    
-    // Use user's selected import resolution
     const importRes = IMPORT_RESOLUTION_OPTIONS[currentImportResolutionIndex];
     blob = await resizeAndCompressImage(blob, importRes.width, importRes.height, 0.85);
-    
+
     const newSize = Math.round(blob.size / 1024);
     updateQRScannerStatus('Compressed: ' + originalSize + 'KB → ' + newSize + 'KB', '');
-    
+
     updateQRScannerStatus('Converting to base64...', '');
-    
-    // Convert to base64 with timeout protection
     const base64Data = await new Promise((resolve, reject) => {
       const timeout = setTimeout(() => {
-        reject(new Error('Base64 conversion timeout'));
-      }, 10000);
-      
+        reject(new Error('Base64 conversion timeout — image may be too large'));
+      }, 15000);
+
       const reader = new FileReader();
-      
-      reader.onloadend = () => {
-        clearTimeout(timeout);
-        resolve(reader.result);
-      };
-      
-      reader.onerror = () => {
-        clearTimeout(timeout);
-        reject(new Error('FileReader error'));
-      };
-      
+      reader.onloadend = () => { clearTimeout(timeout); resolve(reader.result); };
+      reader.onerror = () => { clearTimeout(timeout); reject(new Error('FileReader error')); };
       reader.readAsDataURL(blob);
     });
-    
+
     updateQRScannerStatus('Saving to gallery...', '');
-    
-    // Save to gallery
+
     const imageData = {
       id: Date.now().toString() + '-' + Math.random().toString(36).substr(2, 9),
       imageBase64: base64Data,
       timestamp: Date.now()
     };
-    
-    // Add to memory array
-    galleryImages.unshift(imageData);
-    
-    // Save to IndexedDB
+
+    // Save to IndexedDB FIRST — only add to memory if save succeeds
     await saveImageToDB(imageData);
-    
+    galleryImages.unshift(imageData);
+
     updateQRScannerStatus('✅ Import successful!', 'success');
-      
     lastDetectedQR = null;
-    
-    // Close scanner modal after successful import
+
     closeQRScannerModal();
-    
-    // Refresh gallery to show new image and show success message
     await showGallery();
     showGalleryStatusMessage('Image imported successfully!', 'success', 3000);
-    
+
   } catch (error) {
     lastDetectedQR = null;
-    
-    // Close modal and show error in gallery
     closeQRScannerModal();
     showGalleryStatusMessage('Import failed: ' + error.message, 'error', 4000);
   }

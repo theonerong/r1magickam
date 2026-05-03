@@ -427,17 +427,19 @@ export class PresetImporter {
       previewOverlay.id = 'preset-image-preview-overlay';
       previewOverlay.style.cssText = 'display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.88); z-index:99999; align-items:center; justify-content:center; flex-direction:column; pointer-events:all;';
 
+      const previewImgWrapper = document.createElement('div');
+      previewImgWrapper.style.cssText = 'width:92vw; height:72vh; display:flex; align-items:center; justify-content:center;';
       const previewImg = document.createElement('img');
       previewImg.id = 'preset-preview-img';
-      previewImg.style.cssText = 'max-width:85%; max-height:65%; object-fit:contain; border-radius:10px; border:2px solid #555;';
+      previewImg.style.cssText = 'width:100%; height:100%; object-fit:contain; border-radius:10px; border:2px solid #555;';
 
       const previewLabel = document.createElement('div');
       previewLabel.id = 'preset-preview-label';
-      previewLabel.style.cssText = 'color:#fff; font-size:15px; margin-top:14px; font-weight:bold; letter-spacing:1px;';
+      previewLabel.style.cssText = 'color:#fff; font-size:11px; margin-top:6px; font-weight:bold; letter-spacing:1px;';
 
       const previewCloseBtn = document.createElement('div');
       previewCloseBtn.textContent = '×';
-      previewCloseBtn.style.cssText = 'position:absolute; top:14px; right:18px; color:#fff; font-size:28px; cursor:pointer; pointer-events:all; line-height:1;';
+      previewCloseBtn.style.cssText = 'position:absolute; top:10px; right:18px; color:#fff; font-size:28px; cursor:pointer; pointer-events:all; line-height:1;';
       previewCloseBtn.addEventListener('touchstart', (e) => {
         e.stopPropagation();
         e.preventDefault();
@@ -459,7 +461,8 @@ export class PresetImporter {
       previewNoImg.textContent = 'No sample image available';
 
       previewOverlay.appendChild(previewCloseBtn);
-      previewOverlay.appendChild(previewImg);
+      previewImgWrapper.appendChild(previewImg);
+      previewOverlay.appendChild(previewImgWrapper);
       previewOverlay.appendChild(previewLabel);
       previewOverlay.appendChild(previewNoImg);
       document.body.appendChild(previewOverlay);
@@ -471,7 +474,7 @@ export class PresetImporter {
 
         // Build the image URL from the preset name (spaces become underscores)
         const safeName = preset.name.replace(/[\/\\:*?"<>|\s]/g, '_');
-        const autoUrl = './public/' + encodeURIComponent(safeName) + '.png';
+        const autoUrl = './public/' + safeName + '.png';
         const imageUrl = preset.imageUrl || autoUrl;
 
         previewImg.onload = () => {
