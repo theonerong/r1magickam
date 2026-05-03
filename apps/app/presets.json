@@ -4813,7 +4813,7 @@
       "MYTHOLOGY",
       "PORTRAIT"
     ],
-    "message": "Take a picture and transform the subject into an iconic Chinese Zodiac scene based on the selections below. Apply the selected STYLE, ANIMAL, and SETTING options. • If external master prompt specifies a style, USE THAT SELECTED OPTION.\n• STYLE (NON-NEGOTIABLE):\n• The subject's real face must remain clearly recognizable in all style options\n• Art style must reflect traditional Chinese imperial painting and mythology aesthetics\n• Rich jewel tones — deep reds, imperial golds, jade greens, and celestial blues throughout\n• All animals must appear majestic, divine, and larger than life\n• Ornate decorative borders, patterns, and details consistent with traditional Chinese art\n• The overall image should feel like an ancient imperial Chinese illustration or a modern cinematic reimagining of one",
+    "message": "STYLE (NON-NEGOTIABLE):\n• The subject's real face must remain clearly recognizable in all style options\n• Art style must reflect traditional Chinese imperial painting and mythology aesthetics\n• Rich jewel tones — deep reds, imperial golds, jade greens, and celestial blues throughout\n• All animals must appear majestic, divine, and larger than life\n• Ornate decorative borders, patterns, and details consistent with traditional Chinese art\n• The overall image should feel like an ancient imperial Chinese illustration or a modern cinematic reimagining of one",
     "randomizeOptions": true,
     "optionGroups": [
       {
