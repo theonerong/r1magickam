@@ -12,7 +12,8 @@
     "additionalInstructions": ""
   },
   {
-    "name": "NOFILTER",
+    "name": "#NOFILTER",
+    "imageUrl": "./public/NOFILTER.png",
     "category": [
       "OPTIONS",
       "HUMOR",
