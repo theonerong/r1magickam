@@ -9737,6 +9737,13 @@ async function hideMasterPromptSubmenu() {
     // Show gallery first, then reopen the image viewer
     await showGallery(true);
     openImageViewer(savedViewerImageIndex);
+    // Restore whichever preset was selected before master prompt was opened
+    if (window._savedViewerPresetBeforeMaster) {
+      window.viewerLoadedPreset = window._savedViewerPresetBeforeMaster;
+      const presetHeader = document.getElementById('viewer-preset-header');
+      if (presetHeader) presetHeader.textContent = window._savedViewerPresetBeforeMaster.name;
+    }
+    window._savedViewerPresetBeforeMaster = null;
     return;
   }
 
@@ -13344,8 +13351,9 @@ const result = await presetImporter.import();
   const mpViewerBtn = document.getElementById('mp-viewer-button');
   if (mpViewerBtn) {
     mpViewerBtn.addEventListener('click', () => {
-      // Save current viewer image index
+      // Save current viewer image index AND current preset
       savedViewerImageIndex = currentViewerImageIndex;
+      window._savedViewerPresetBeforeMaster = window.viewerLoadedPreset || null;
       
       // Close image viewer and gallery
       document.getElementById('image-viewer').style.display = 'none';
