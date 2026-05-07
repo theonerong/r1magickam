@@ -20286,12 +20286,99 @@
     "category": [
       "SCI-FI",
       "PARALLEL",
-      "ALTERNATE"
+      "ALTERNATE",
+      "DIMENSIONAL",
+      "CINEMATIC"
     ],
-    "message": "Take a picture and create a parallel version of the same subject in a different reality. Parallel version is subtly different in style, clothing, or environment.",
-    "options": [],
-    "randomizeOptions": false,
-    "additionalInstructions": ""
+    "message": "Take a picture and transform the subject into a catastrophic multiverse collision event where multiple alternate-universe versions of the same person are simultaneously bleeding into reality.\n\nThe final image must feel like dimensional barriers have broken down and several radically different timelines are overlapping at once.\n\nMASTER PROMPT RULE:\n• If a master prompt specifies genre, profession, era, personality, power, alignment, or world theme — PRIORITIZE and USE that information as alternate-reality divergence points\n\nGENERAL REQUIREMENTS:\n• Subject identity must remain recognizable across all realities\n• Multiple alternate versions must visibly coexist in the SAME image\n• The image must feel unstable, dimensional, and impossible\n• Massive reality divergence required\n",
+    "randomizeOptions": true,
+    "optionGroups": [
+    {
+      "title": "REALITY DIVERGENCE",
+      "options": [
+        {
+          "id": "001",
+          "text": "Subtle Variants — alternate clothing, status, and environment"
+        },
+        {
+          "id": "002",
+          "text": "Timeline Fracture — radically different life outcomes and identities"
+        },
+        {
+          "id": "003",
+          "text": "Extreme Universes — entirely different species, technologies, societies, or realities"
+        }
+      ]
+    },
+    {
+      "title": "MULTIVERSE STRUCTURE",
+      "options": [
+        {
+          "id": "001",
+          "text": "Fractured Glass — shattered dimensional panels showing alternate selves"
+        },
+        {
+          "id": "002",
+          "text": "Phase Overlap — multiple realities ghosted and intersecting simultaneously"
+        },
+        {
+          "id": "003",
+          "text": "Portal Convergence — alternate selves emerging through dimensional portals"
+        },
+        {
+          "id": "004",
+          "text": "Reality Spiral — timelines twisting together around the subject"
+        }
+      ]
+    },
+    {
+      "title": "ALT-REALITY THEMES",
+      "options": [
+        {
+          "id": "001",
+          "text": "Cyberpunk Variant — dystopian neon future self"
+        },
+        {
+          "id": "002",
+          "text": "Royal Variant — alternate ruler or aristocratic self"
+        },
+        {
+          "id": "003",
+          "text": "Post-Apocalypse Variant — survivalist wasteland self"
+        },
+        {
+          "id": "004",
+          "text": "Cosmic Variant — transcendent spacefaring entity"
+        },
+        {
+          "id": "005",
+          "text": "Ancient Variant — mythological or historical parallel self"
+        },
+        {
+          "id": "006",
+          "text": "Horror Variant — corrupted or uncanny reality self"
+        }
+      ]
+    },
+    {
+      "title": "DIMENSIONAL INSTABILITY",
+      "options": [
+        {
+          "id": "001",
+          "text": "Light Distortion — subtle dimensional tearing"
+        },
+        {
+          "id": "002",
+          "text": "Heavy Collapse — severe reality fragmentation"
+        },
+        {
+          "id": "003",
+          "text": "Catastrophic Failure — universes violently merging together"
+        }
+      ]
+    }
+    ],
+    "additionalInstructions": "MULTIVERSE ENGINE (ABSOLUTE):\n\n• Generate multiple distinctly different alternate-reality versions of the SAME subject\n• Each variant must clearly represent a different timeline, universe, or existence path\n• Variants must NOT look like costume swaps only\n• Every alternate self requires different world logic, atmosphere, and visual identity\n\nREALITY COLLISION:\n\n• All universes must visibly intersect inside the same frame\n• Reality seams, dimensional cracks, portal tears, fractured geometry, and overlapping timelines should be visible\n• Different parts of the image may obey different physical laws or aesthetics\n\nSUBJECT COHERENCE:\n\n• Despite divergence, every version must still clearly feel like the same underlying person\n• Preserve core facial identity across all realities\n\nVISUAL STRUCTURE:\n\n• Foreground realities should overlap and bleed into one another\n• Some alternate selves may partially phase through others\n• Different lighting systems and environmental aesthetics may collide simultaneously\n\nDIMENSIONAL EFFECTS:\n\n• Glitching geometry\n• Fractured spacetime\n• Floating debris from collapsed realities\n• Portal energy tears\n• Temporal echoes\n• Parallel versions staring at one another\n• Recursive mirror realities\n\nANTI-CHEAT:\n\n• Do not simply recolor the subject\n• Do not create minor outfit changes only\n• Do not generate a single subject copy-pasted multiple times\n• Each universe must feel genuinely distinct\n\nFAIL CONDITIONS:\n\n• Alternate selves too similar → FAIL\n• Only one visible reality → FAIL\n• Weak dimensional interaction → FAIL\n• Simple collage instead of merged universes → FAIL\n\nQUALITY:\n\n• Massive cinematic dimensional chaos\n• Strong alternate-reality storytelling\n• Visually explosive multiverse collision\n• Clear identity continuity across realities\n• Epic science-fiction scale"
   },
   {
     "name": "MUPPET",
