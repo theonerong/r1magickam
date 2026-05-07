@@ -18524,10 +18524,31 @@
       "RETRO",
       "POP CULTURE"
     ],
-    "message": "Take a picture and transform the subject into an animated character placed directly inside a scene from the world of Mike Judge cartoons.\n\nRender the subject in a Mike Judge–style character design: slightly awkward proportions, stiff posture, minimal facial expression, uneven line work, flat cel-shaded colors, and intentionally plain or unflattering details. Preserve the subject’s recognizability while adapting them fully into the cartoon style.\n\nPlace the subject INTO a recognizable Mike Judge cartoon scene, selected based on context or randomly. The scene should clearly reflect one of the following shows and environments, and may include recognizable characters from that show:\n\n• King of the Hill — suburban Arlen, Texas (backyard fence chats, alleyways, living rooms, Strickland Propane). Characters may include Hank Hill, Peggy, Bobby, Dale, Bill, or Boomhauer.\n• Beavis and Butt-Head — grimy neighborhood streets, living room couch, fast-food joints, school hallways. Characters may include Beavis, Butt-Head, or classmates reacting to the subject.\n• Daria — school hallways, classrooms, coffee shops, or suburban interiors. Characters may include Daria, Jane, Quinn, or classmates observing the subject.\n• Office Space–style environment — dull corporate office, cubicle farms, break rooms, printer destruction areas. Characters may include bored coworkers or management-style figures inspired by the film’s tone.\n\nExisting characters should appear as supporting or background characters interacting with or reacting to the subject. The subject should feel like a guest character awkwardly dropped into the episode, not replacing anyone.\n\nAdapt the subject’s clothing into simplified everyday outfits typical of Mike Judge cartoons — plain t-shirts, polos, jeans, boring office attire, or aggressively normal suburban clothing.\n\nUse muted, slightly washed-out color palettes, flat lighting, and simple painted backgrounds. Avoid exaggerated animation, flashy effects, or glossy textures.\n\nEnsure the full scene is visible and readable on a small screen, with the subject clearly identifiable among the characters. The final image should feel like a freeze-frame from an actual Mike Judge episode — dry, awkward, observational, and quietly brutal.",
-    "options": [],
-    "randomizeOptions": false,
-    "additionalInstructions": ""
+    "message": "Take a picture and transform the subject into a classic Mike Judge-style animated character rendered in authentic 1990s–2000s adult animated television style. Use simplified facial construction, minimal expressions, stiff poses, uneven line work, flat cel-shaded colors, muted suburban palettes, and grounded everyday environments.\n\nThe subject should be fully redrawn into the cartoon world naturally while remaining recognizable. Adapt clothing, posture, and expressions to match the understated observational animation style associated with Mike Judge productions.\n\nUse era-accurate television animation aesthetics including painted backgrounds, flat lighting, simplified anatomy, low-key suburban environments, and restrained character acting. The final image should feel like a freeze-frame from an authentic animated sitcom episode with dry observational humor and grounded realism.",
+    "options": [
+    {
+      "id": "001",
+      "text": "King of the Hill (suburban Texas neighborhoods, backyard fence conversations, propane store settings)"
+    },
+    {
+      "id": "002",
+      "text": "Beavis and Butt-Head (school hallways, messy living rooms, fast-food restaurants, suburban streets)"
+    },
+    {
+      "id": "003",
+      "text": "Daria (school interiors, classrooms, coffee shops, suburban homes)"
+    },
+    {
+      "id": "004",
+      "text": "Office Space-inspired environment (cubicles, office break rooms, bland corporate workplaces)"
+    },
+    {
+      "id": "005",
+      "text": "Silicon Valley-inspired tech office (startup workspaces, programmer desks, server rooms)"
+    }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "STYLE RULES:\n\n• Preserve subject recognizability while simplifying into Mike Judge-style animation design\n• Use flat cel shading and restrained muted color palettes\n• Maintain stiff everyday poses and understated facial expressions\n• Keep anatomy intentionally simple and grounded\n• Backgrounds should feel hand-painted and era-authentic\n• Avoid glossy rendering, exaggerated cartoon physics, or modern animation polish\n\nCHARACTER INTEGRATION:\n\n• Subject must feel naturally integrated into the selected animated world\n• Existing franchise characters may appear as supporting background characters\n• The image should resemble a real frame from a television episode\n\nANTI-CHEAT:\n\n• Do not create photorealistic rendering\n• Do not use modern high-detail animation styles\n• Do not exaggerate facial distortions\n• Do not create parody caricatures\n\nQUALITY:\n\n• Authentic adult-animation television aesthetic\n• Clean flat-color rendering\n• Grounded suburban atmosphere\n• Recognizable subject adaptation"
   },
   {
     "name": "MILITARY UNIFORM",
