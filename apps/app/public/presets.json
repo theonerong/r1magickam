@@ -23240,7 +23240,7 @@
       "PAINTING",
       "HYPERREALISM"
     ],
-    "message": "Take a picture and transform the image into a Photorealist painting. Preserve subject identity. Use extremely precise, photograph-like detail rendered in paint, inspired by Chuck Close and Richard Estes. Emphasize meticulous reproduction of photographic qualities including reflections, depth of field, and surface textures with oil or acrylic on canvas.",
+    "message": "Take a picture and transform the image into a Photorealist painting. Preserve subject identity. Use extremely precise, photograph-like detail rendered in paint. Emphasize meticulous reproduction of photographic qualities including reflections, depth of field, and surface textures with oil or acrylic on canvas.",
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
