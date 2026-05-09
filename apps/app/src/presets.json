@@ -24017,35 +24017,35 @@
       "PERSPECTIVE",
       "VISUAL GAG"
     ],
-    "message": "Take a picture and transform it so the camera perspective is from a non-human point of view, as if the viewer IS the creature looking at the subject.\nPOV RULES:\n• The tip of the nose, beak, or proboscis MUST be visible in-frame\n• This confirms the viewer inhabits the POV\n• Perspective distortion must match the creature\n\nSUBJECT RULES:\n• Subject remains recognizable\n• Subject appears much larger due to POV scale\n• Subject is interacting naturally with the POV creature or noticing it\n\nTONE:\n• Lighthearted, funny, and charming\n• Not creepy or horror\n• Feels like an accidental snapshot\n\nENVIRONMENT:\n• Environment scaled and framed correctly for POV height\n• Objects appear oversized or looming appropriately\n\nCAMERA:\n• Strong perspective distortion when appropriate\n• Natural framing, not staged or centered",
+    "message": "Take a picture and transform it so the camera perspective is from a non-human point of view, as if the viewer IS the creature looking at the subject.\nPOV RULES:\n• The tip of the nose, beak, or proboscis MUST be visible in-frame\n• Only the OUTER silhouette or tip may be visible — never the inside of nostrils or nasal openings unless anatomically natural for that species\n• The visible nose or beak must appear exactly as it would from the creature’s own natural first-person vision\n• This confirms the viewer inhabits the POV\n• Perspective distortion must match the creature\n\nSUBJECT RULES:\n• Subject remains recognizable\n• Subject appears much larger due to POV scale\n• Subject is interacting naturally with the POV creature or noticing it\n\nTONE:\n• Lighthearted, funny, and charming\n• Not creepy or horror\n• Feels like an accidental snapshot\n\nENVIRONMENT:\n• Environment scaled and framed correctly for POV height\n• Objects appear oversized or looming appropriately\n\nCAMERA:\n• Strong perspective distortion when appropriate\n• Natural framing, not staged or centered",
     "options": [
-      {
-        "id": "001",
-        "text": "Dog POV (low angle, wide lens, nose visible at bottom of frame)"
-      },
-      {
-        "id": "002",
-        "text": "Cat POV (slightly elevated angle, whiskers or nose visible)"
-      },
-      {
-        "id": "003",
-        "text": "Baby POV (lying down or seated low, soft hands or nose visible)"
-      },
-      {
-        "id": "004",
-        "text": "Fly POV (extreme wide-angle distortion, compound-eye feel, proboscis visible)"
-      },
-      {
-        "id": "005",
-        "text": "Rat POV (ground-level, nose and whiskers visible, enclosed space feel)"
-      },
-      {
-        "id": "006",
-        "text": "Bird POV (slightly overhead or perched angle, beak tip visible)"
-      }
-    ],
-    "randomizeOptions": true,
-    "additionalInstructions": "RESTRICTIONS:\n• No cartoon or animated styles\n• No text overlays or captions\n• No third-person camera views\n\nFINAL RESULT:\nThe image should convincingly place the viewer inside the creature's point of view, with the subject reacting naturally — as if they are being looked at by the animal, insect, or baby."
+    {
+      "id": "001",
+      "text": "Dog POV (low angle, wide lens, nose visible at bottom of frame)"
+    },
+    {
+      "id": "002",
+      "text": "Cat POV (slightly elevated angle, whiskers or nose visible)"
+    },
+    {
+      "id": "003",
+      "text": "Baby POV (lying down or seated low, soft hands or nose visible)"
+    },
+    {
+      "id": "004",
+      "text": "Fly POV (extreme wide-angle distortion, compound-eye feel, proboscis visible)"
+    },
+    {
+      "id": "005",
+      "text": "Rat POV (ground-level, nose and whiskers visible, enclosed space feel)"
+    },
+    {
+      "id": "006",
+      "text": "Bird POV (slightly overhead or perched angle, beak tip visible)"
+    }
+  ],
+  "randomizeOptions": true,
+  "additionalInstructions": "RESTRICTIONS:\n• No cartoon or animated styles\n• No text overlays or captions\n• No third-person camera views\n• The POV anatomy must obey realistic first-person visibility\n• Do not show the inside of the creature’s nostrils unless physically plausible from its own eye placement\n• Nose visibility should resemble what the actual animal would naturally see at the edge of its vision\n\nFINAL RESULT:\nThe image should convincingly place the viewer inside the creature's point of view, with the subject reacting naturally — as if they are being looked at by the animal, insect, or baby."
   },
   {
     "name": "POWERPUFF GIRLS",
