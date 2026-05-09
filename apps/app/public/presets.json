@@ -25270,59 +25270,59 @@
       "HISTORICAL",
       "EPIC"
     ],
-    "message": "Take a picture and place the subject into a Ridley Scott cinematic scene.\n\nUse his distinctive visual style: dramatic atmospheric lighting, dust particles in sunbeams, smoke and layered environmental depth, grand architectural vistas, textured realism, and rich cinematic composition.\n\nThe subject should appear naturally integrated into an iconic environment from the selected film option. The generated scene MUST match the selected movie and should not default to battles or warfare unless the chosen film setting specifically includes it.\n\nInclude recognizable supporting characters, costumes, props, and environments appropriate to the selected film.\n\nUse characteristic cinematography: sweeping cinematic framing, dramatic silhouettes, environmental haze, practical lighting, rich earthy or stylized color palettes depending on the film, and strong cinematic realism.\n\nCapture the atmosphere, production design, and visual identity of the selected film while making the subject feel like part of the world. The final image should look like a frame from the selected movie with the subject and additional characters integrated seamlessly into the scene.",
+    "message": "Take a picture and place the subject into a cinematic Ridley Scott-style movie scene.\n\nUse dramatic atmospheric lighting, environmental haze, textured realism, practical light sources, layered depth, rich cinematic color grading, large-scale environments, and immersive production design.\n\nThe selected movie option MUST completely determine the environment, mood, props, supporting characters, architecture, vehicles, costumes, and scene composition.\n\nDo NOT default to battles, warfare, or action unless the selected option specifically requires it.\n\nThe subject must appear naturally integrated into a believable scene from the selected film world.\n\nUse strong visual storytelling with concrete environmental staging instead of generic cinematic abstraction.\n\nEvery image should resemble a real film still captured during a specific scene from the selected movie.",
     "options": [
-      {
-        "id": "001",
-        "text": "Gladiator (Roman Colosseum, Germania forest battle, wheat field dream, Marcus Aurelius camp)"
-      },
-      {
-        "id": "002",
-        "text": "Kingdom of Heaven (Jerusalem siege, Crusader castle, desert battle, Saladin's army)"
-      },
-      {
-        "id": "003",
-        "text": "The Last Duel (medieval France, jousting tournament, castle courtyard, 14th century armor)"
-      },
-      {
-        "id": "004",
-        "text": "Robin Hood (Sherwood Forest, Nottingham Castle, beach invasion, medieval England)"
-      },
-      {
-        "id": "005",
-        "text": "Exodus: Gods and Kings (ancient Egypt, Moses parting Red Sea, pharaoh's palace, Hebrew slaves)"
-      },
-      {
-        "id": "006",
-        "text": "1492: Conquest of Paradise (Spanish ships, New World landing, Caribbean shore, Columbus voyage)"
-      },
-      {
-        "id": "007",
-        "text": "Blade Runner (2019 Los Angeles, neon rain, Tyrell pyramid, dystopian megacity)"
-      },
-      {
-        "id": "008",
-        "text": "Alien (Nostromo spacecraft, alien planet, space station corridor, sci-fi horror atmosphere)"
-      },
-      {
-        "id": "009",
-        "text": "Prometheus (Engineer temple, alien planet, archaeological dig, spaceship Prometheus)"
-      },
-      {
-        "id": "010",
-        "text": "Black Hawk Down (Mogadishu streets, military helicopters, Somalia urban warfare, dusty chaos)"
-      },
-      {
-        "id": "011",
-        "text": "Napoleon (Austerlitz battlefield, Egyptian pyramids, Waterloo, French Revolution)"
-      },
-      {
-        "id": "012",
-        "text": "Thelma & Louise (Arizona desert highway, Grand Canyon, convertible on road, Southwestern landscape)"
-      }
+    {
+      "id": "001",
+      "text": "Gladiator — subject standing inside the Roman Colosseum surrounded by cheering crowds, gladiators, Roman banners, armor, torches, and dusty golden sunlight"
+    },
+    {
+      "id": "002",
+      "text": "Kingdom of Heaven — subject inside a massive Jerusalem stone courtyard with Crusader knights, desert sunlight, castle walls, banners, and crowded medieval architecture"
+    },
+    {
+      "id": "003",
+      "text": "The Last Duel — subject in a medieval French castle courtyard with knights, horses, stone walls, noble clothing, torches, and overcast European atmosphere"
+    },
+    {
+      "id": "004",
+      "text": "Robin Hood — subject walking through Sherwood Forest beside archers, campfires, moss-covered trees, medieval tents, and English woodland fog"
+    },
+    {
+      "id": "005",
+      "text": "Exodus: Gods and Kings — subject inside an enormous ancient Egyptian palace with towering columns, gold decorations, desert sunlight, priests, and monumental statues"
+    },
+    {
+      "id": "006",
+      "text": "1492: Conquest of Paradise — subject standing on a wooden Spanish ship deck overlooking tropical shores, sails, ropes, ocean mist, and early exploration scenery"
+    },
+    {
+      "id": "007",
+      "text": "Blade Runner — subject walking through a neon-lit rainy megacity street with holographic billboards, umbrellas, wet pavement reflections, flying vehicles, and futuristic crowds"
+    },
+    {
+      "id": "008",
+      "text": "Alien — subject inside a dim industrial spacecraft corridor with retro-futuristic machinery, blinking control panels, metallic walls, steam vents, and tense sci-fi atmosphere"
+    },
+    {
+      "id": "009",
+      "text": "Prometheus — subject exploring a massive alien temple chamber with giant stone structures, holographic star maps, mysterious technology, and cold atmospheric lighting"
+    },
+    {
+      "id": "010",
+      "text": "Black Hawk Down — subject moving through crowded Mogadishu streets with military vehicles, helicopters overhead, dusty urban buildings, smoke haze, and grounded realism"
+    },
+    {
+      "id": "011",
+      "text": "Napoleon — subject standing in an elaborate Napoleonic-era palace or military command tent with candles, maps, officers, period uniforms, and dramatic historical atmosphere"
+    },
+    {
+      "id": "012",
+      "text": "Thelma & Louise — subject riding in a convertible along an Arizona desert highway with warm sunset lighting, roadside diners, canyon landscapes, and carefree road-trip energy"
+    }
     ],
     "randomizeOptions": true,
-    "additionalInstructions": "FILM ACCURACY:\n\n• The scene must specifically reflect the selected movie option\n• Peaceful or conversational films should remain peaceful and conversational\n• Action-heavy films may include action elements appropriate to the selected setting\n• Supporting characters from the selected movie may appear naturally in the scene\n\nANTI-CHEAT:\n\n• Do not reuse the same battle composition for every option\n• Do not ignore the selected movie environment\n• Do not place the subject into unrelated generic warfare scenes\n\nQUALITY:\n\n• Authentic cinematic atmosphere\n• Accurate film-inspired environment\n• Seamless subject integration\n• Strong Ridley Scott visual style"
+    "additionalInstructions": "SCENE CONSTRUCTION (MANDATORY):\n\n• Build ONE specific cinematic scene matching the selected option\n• The environment must dominate the composition\n• Use concrete visual objects instead of vague cinematic wording\n• Include recognizable props, architecture, vehicles, clothing, and atmosphere appropriate to the selected film\n\nCHARACTER INTEGRATION:\n\n• Subject must feel physically present inside the scene\n• Supporting characters from the selected movie may appear naturally nearby\n• Subject should wear clothing appropriate to the environment\n\nVISUAL STYLE:\n\n• Strong environmental depth\n• Atmospheric haze and volumetric lighting\n• Large-scale cinematic composition\n• Rich textured realism\n• Practical light sources\n• Film-still realism\n\nANTI-CHEAT:\n\n• Do not reuse generic battle compositions\n• Do not force warfare into peaceful options\n• Do not ignore the selected environment\n• Do not generate vague generic movie scenes\n\nQUALITY:\n\n• Highly recognizable movie-inspired environments\n• Strong visual storytelling\n• Authentic cinematic production design\n• Seamless integration of subject into scene"
   },
   {
     "name": "RIPLEY'S BELIEVE-IT-OR-NOT",
@@ -25559,59 +25559,59 @@
       "DRAMA",
       "INSPIRATIONAL"
     ],
-    "message": "Take a picture and place the subject into a Ron Howard film scene.\n\nFILM/\nUse Howard's distinctive visual style: warm naturalistic lighting, golden hour cinematography, earnest emotional moments, sweeping crane shots suggesting epic scale, and polished mainstream Hollywood aesthetics. Show the subject in an uplifting dramatic moment - overcoming adversity, making a crucial decision, experiencing triumph, or in a heartfelt human connection. Include Ron Howard signature elements: based-on-true-story authenticity, period-accurate details, blue-collar American heroes, family dynamics, or historical events. Use his characteristic cinematography - warm amber tones, soft diffused lighting for emotional scenes, dramatic backlighting, clean compositions that feel accessible yet cinematic. Capture his style of inspirational storytelling - moments that feel genuine, hopeful, and emotionally resonant without cynicism. Include visual motifs of determination, teamwork, or human perseverance. Make it look like a frame from the selected film with that polished Ron Howard blend of emotional authenticity and crowd-pleasing cinema with the subject and additional characters from that film integrated seamlessly into the world.",
+    "message": "Take a picture and place the subject into a cinematic Ron Howard-style movie scene.\n\nUse warm naturalistic lighting, golden-hour cinematography, emotional realism, polished Hollywood production design, soft atmospheric depth, practical light sources, and grounded human storytelling.\n\nThe selected movie option MUST completely determine the environment, mood, props, supporting characters, wardrobe, architecture, vehicles, and scene composition.\n\nThe subject must appear naturally integrated into a believable scene from the selected film world.\n\nFocus on concrete cinematic environments and emotionally readable situations instead of vague inspirational language.\n\nEvery image should resemble a real film still captured during a specific moment from the selected movie.",
     "options": [
-      {
-        "id": "001",
-        "text": "Apollo 13 (1960s space race, NASA control room, astronaut determination)"
-      },
-      {
-        "id": "002",
-        "text": "A Beautiful Mind (academic settings, mathematical breakthroughs, mental struggle)"
-      },
-      {
-        "id": "003",
-        "text": "Cinderella Man (Depression-era boxing, family struggle, comeback story)"
-      },
-      {
-        "id": "004",
-        "text": "Rush (1970s Formula 1 racing, rivalry, speed and danger)"
-      },
-      {
-        "id": "005",
-        "text": "Frost/Nixon (1970s political interview, tense confrontation)"
-      },
-      {
-        "id": "006",
-        "text": "The Da Vinci Code (historical mystery, religious intrigue)"
-      },
-      {
-        "id": "007",
-        "text": "Cocoon (elderly characters, sci-fi wonder, humanity)"
-      },
-      {
-        "id": "008",
-        "text": "Backdraft (firefighter heroism, brotherhood, danger)"
-      },
-      {
-        "id": "009",
-        "text": "Far and Away (Irish immigration, American frontier)"
-      },
-      {
-        "id": "010",
-        "text": "Ransom (parental desperation, high-stakes negotiation)"
-      },
-      {
-        "id": "011",
-        "text": "The Paper (newsroom chaos, journalistic integrity)"
-      },
-      {
-        "id": "012",
-        "text": "Willow (fantasy adventure, heroic journey)"
-      }
+    {
+      "id": "001",
+      "text": "Apollo 13 — subject inside a busy NASA mission control room filled with computer consoles, flight monitors, engineers wearing headsets, coffee cups, and tense 1960s space-program atmosphere"
+    },
+    {
+      "id": "002",
+      "text": "A Beautiful Mind — subject standing inside a Princeton-style university classroom or office surrounded by chalkboards filled with equations, bookshelves, academic papers, and warm intellectual atmosphere"
+    },
+    {
+      "id": "003",
+      "text": "Cinderella Man — subject inside a crowded 1930s boxing gym or modest Depression-era apartment with worn furniture, boxing gloves, old newspapers, and period clothing"
+    },
+    {
+      "id": "004",
+      "text": "Rush — subject beside a 1970s Formula 1 race car inside a crowded pit lane with mechanics, rain-soaked pavement, racing uniforms, sponsor banners, and dramatic track lighting"
+    },
+    {
+      "id": "005",
+      "text": "Frost/Nixon — subject seated inside a vintage television interview set with studio cameras, stage lights, wood-paneled backgrounds, microphones, and tense conversational atmosphere"
+    },
+    {
+      "id": "006",
+      "text": "The Da Vinci Code — subject exploring an enormous European cathedral or museum interior with candles, ancient artwork, stone architecture, mysterious symbols, and dramatic warm lighting"
+    },
+    {
+      "id": "007",
+      "text": "Cocoon — subject relaxing near a glowing swimming pool at night with elderly characters, soft blue lighting, palm trees, and gentle sci-fi wonder atmosphere"
+    },
+    {
+      "id": "008",
+      "text": "Backdraft — subject inside a smoky Chicago fire station or emergency scene with firefighters, reflective gear, fire trucks, water spray, and orange emergency lighting"
+    },
+    {
+      "id": "009",
+      "text": "Far and Away — subject standing in a dusty American frontier town with horses, wooden buildings, wagons, prairie landscapes, and late-1800s immigrant atmosphere"
+    },
+    {
+      "id": "010",
+      "text": "Ransom — subject inside a luxurious but tense New York apartment or office with telephones, city skyline windows, detectives, security personnel, and high-stakes atmosphere"
+    },
+    {
+      "id": "011",
+      "text": "The Paper — subject inside a chaotic 1990s newspaper newsroom with cluttered desks, ringing phones, reporters, fluorescent lighting, newspapers, and deadline pressure"
+    },
+    {
+      "id": "012",
+      "text": "Willow — subject traveling through a fantasy village or forest landscape with medieval costumes, wagons, swords, campfires, magical atmosphere, and adventurous scenery"
+    }
     ],
     "randomizeOptions": true,
-    "additionalInstructions": ""
+    "additionalInstructions": "SCENE CONSTRUCTION (MANDATORY):\n\n• Build ONE specific cinematic scene matching the selected option\n• The environment must dominate the composition\n• Use concrete physical objects and recognizable locations\n• Include believable props, costumes, architecture, vehicles, and supporting characters appropriate to the selected film\n\nCHARACTER INTEGRATION:\n\n• Subject must feel physically present inside the scene\n• Supporting characters from the selected movie may appear naturally nearby\n• Subject clothing and posture should match the environment\n\nVISUAL STYLE:\n\n• Warm cinematic lighting\n• Naturalistic emotional realism\n• Practical light sources\n• Atmospheric environmental depth\n• Polished mainstream Hollywood cinematography\n• Film-still realism\n\nANTI-CHEAT:\n\n• Do not generate vague generic drama scenes\n• Do not ignore the selected movie environment\n• Do not reuse the same composition for different options\n• Do not create abstract emotional symbolism without environmental storytelling\n\nQUALITY:\n\n• Highly recognizable movie-inspired environments\n• Strong cinematic storytelling\n• Authentic production design\n• Seamless subject integration\n• Emotionally readable scenes"
   },
   {
     "name": "RORSCHACH TEST",
