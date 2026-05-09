@@ -7605,6 +7605,53 @@
     "additionalInstructions": ""
   },
   {
+    "name": "DAILY PROPHET",
+    "category": [
+      "FANTASY",
+      "NEWSPAPER",
+      "MAGICAL",
+      "CINEMATIC",
+      "WIZARDING"
+    ],
+    "message": "Take a picture and transform the subject into the featured front-page story of the Daily Prophet magical newspaper from the Harry Potter films.\n\nThe final image must look exactly like a photographed copy of the famous wizard newspaper, complete with moving-photo styling, magical newspaper layout, aged parchment coloration, dense columns, dramatic wizard headlines, and cinematic wizarding-world presentation.\n\nThe subject must be fully integrated into the newspaper as the main featured story and dressed appropriately in wizard robes, cloaks, scarves, hats, uniforms, or other magical attire matching the wizarding world aesthetic.\n\nMASTER PROMPT RULE:\n• If a master prompt specifies mood, fame, scandal, heroism, danger, mystery, or magical profession — PRIORITIZE and USE that information for the newspaper story and headline.\n\nGENERAL REQUIREMENTS:\n• Preserve subject recognizability\n• Entire image must appear as a physical wizard newspaper page\n• Strong cinematic magical-newspaper authenticity required",
+    "options": [
+    {
+      "id": "001",
+      "text": "Breaking News — dramatic front-page magical event"
+    },
+    {
+      "id": "002",
+      "text": "Wanted Poster — suspicious wizard investigation"
+    },
+    {
+      "id": "003",
+      "text": "Celebrity Wizard — famous magical personality feature"
+    },
+    {
+      "id": "004",
+      "text": "Quidditch Edition — magical sports headline"
+    },
+    {
+      "id": "005",
+      "text": "Ministry Scandal — political wizard controversy"
+    },
+    {
+      "id": "006",
+      "text": "Dark Arts Panic — ominous magical warning article"
+    },
+    {
+      "id": "007",
+      "text": "School Gossip — Hogwarts-style student drama"
+    },
+    {
+      "id": "008",
+      "text": "Magical Discovery — mysterious artifact or spell feature"
+    }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "DAILY PROPHET NEWSPAPER ENGINE (ABSOLUTE):\n\n• Entire composition must resemble the authentic wizard newspaper aesthetic from the films\n• Newspaper must use aged parchment tones, sepia ink, faded grayscale photos, and old-print textures\n• Layout must contain dense newspaper columns, magical headlines, article blocks, decorative dividers, and wizard publication formatting\n\nSUBJECT INTEGRATION:\n\n• Subject must appear as the featured moving-photo image on the front page\n• Subject must wear wizard robes or magical-world clothing appropriate to the scene\n• Clothing should resemble cinematic wizard fashion with layered fabrics, scarves, cloaks, dark wool textures, school robes, or magical formalwear\n\nMOVING PHOTO EFFECT:\n\n• Main newspaper image should resemble an enchanted wizard photograph\n• Slight implied movement or magical photo energy allowed\n• Image should feel alive while remaining a still frame\n\nHEADLINES & FLAVOR TEXT:\n\n• Generate large dramatic wizard-newspaper headlines inspired by magical journalism\n• Add secondary article blurbs, magical gossip, wizarding references, and humorous flavor text\n• Headlines should feel sensational, mysterious, whimsical, or alarmist\n• Use serif newspaper typography matching the cinematic wizard newspaper aesthetic\n\nEXAMPLE HEADLINE STYLES:\n\n• \"MYSTERIOUS WIZARD SPOTTED IN DIAGON ALLEY\"\n• \"MINISTRY INVESTIGATES STRANGE MAGICAL INCIDENT\"\n• \"LOCAL WITCH STUNS CROWD WITH IMPOSSIBLE SPELLWORK\"\n• \"HOGWARTS STUDENT CAUSES QUIDDITCH CHAOS\"\n\nVISUAL STYLE:\n\n• Authentic magical newspaper color palette\n• Sepia parchment paper\n• Warm grayscale photography\n• Dark serif typography\n• Vintage print imperfections\n• Ink bleed and old paper wear\n• Slightly crooked or hand-assembled newspaper layout\n\nBACKGROUND & MATERIAL:\n\n• Entire image must physically resemble folded or printed newspaper stock\n• Visible paper texture required\n• Optional wrinkles, folds, worn edges, and aging marks encouraged\n\nANTI-CHEAT:\n\n• Do not create a modern newspaper\n• Do not use glossy magazine aesthetics\n• Do not leave modern clothing unchanged\n• Do not create flat digital UI layouts\n• Do not use modern fonts or bright modern colors\n\nFAIL CONDITIONS:\n\n• Subject not integrated into newspaper → FAIL\n• Newspaper lacks magical cinematic aesthetic → FAIL\n• Modern newspaper appearance → FAIL\n• Subject not dressed in wizard attire → FAIL\n\nQUALITY:\n\n• Strong cinematic wizard newspaper authenticity\n• Convincing magical-world prop design\n• Rich parchment texture\n• Dramatic wizard journalism atmosphere\n• Highly readable front-page layout"
+  },
+  {
     "name": "DALÍ",
     "category": [
       "ART",
