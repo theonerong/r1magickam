@@ -25270,59 +25270,59 @@
       "HISTORICAL",
       "EPIC"
     ],
-    "message": "Take a picture and place the subject into a Ridley Scott historical epic.\n\nFILM/\nUse his distinctive visual style: massive scale battle scenes, golden hour lighting with dust particles in sunbeams, smoke and atmosphere, grand architectural vistas, and gritty realistic period detail. Show the subject as a warrior, leader, or historical figure in an epic moment - addressing troops, mid-battle, or standing before monumental architecture from the selected film. Include Scott's signature elements: sandstorms, dramatic skies, thousands of extras suggested in composition, authentic period armor and weapons, historically accurate settings. Use his characteristic cinematography - sweeping crane shots compressed into dramatic angles, sun backlight creating silhouettes and lens flares, rich earthy color palettes. Capture that Ridley Scott sense of epic scale and historical authenticity. Make it look like a frame from the selected film with the subject and additional characters from that film integrated seamlessly into the world.",
+    "message": "Take a picture and place the subject into a cinematic Ridley Scott film scene.\n\nFILM SELECTION RULE (ABSOLUTE):\n• The generated scene MUST specifically match the selected film option\n• Do NOT default to war scenes, battles, armies, or combat unless the selected option explicitly contains warfare\n• The environment, mood, action, costumes, cinematography, props, and supporting characters must all reflect the selected film’s actual iconic scenes and atmosphere\n• Include recognizable characters from the selected film naturally interacting with or appearing alongside the subject\n\nUse Ridley Scott’s distinctive cinematic style: atmospheric lighting, realistic environmental detail, dramatic composition, textured realism, smoke, haze, dust particles, strong practical lighting, and cinematic scale.\n\nThe subject must appear naturally integrated into a real scene from the selected film — not merely inspired by it.\n\nThe final image should look like an authentic frame captured directly from the selected movie with the subject seamlessly inserted into that world.",
     "options": [
-      {
-        "id": "001",
-        "text": "Gladiator (Roman Colosseum, Germania forest battle, wheat field dream, Marcus Aurelius camp)"
-      },
-      {
-        "id": "002",
-        "text": "Kingdom of Heaven (Jerusalem siege, Crusader castle, desert battle, Saladin's army)"
-      },
-      {
-        "id": "003",
-        "text": "The Last Duel (medieval France, jousting tournament, castle courtyard, 14th century armor)"
-      },
-      {
-        "id": "004",
-        "text": "Robin Hood (Sherwood Forest, Nottingham Castle, beach invasion, medieval England)"
-      },
-      {
-        "id": "005",
-        "text": "Exodus: Gods and Kings (ancient Egypt, Moses parting Red Sea, pharaoh's palace, Hebrew slaves)"
-      },
-      {
-        "id": "006",
-        "text": "1492: Conquest of Paradise (Spanish ships, New World landing, Caribbean shore, Columbus voyage)"
-      },
-      {
-        "id": "007",
-        "text": "Blade Runner (2019 Los Angeles, neon rain, Tyrell pyramid, dystopian megacity)"
-      },
-      {
-        "id": "008",
-        "text": "Alien (Nostromo spacecraft, alien planet, space station corridor, xenomorph horror)"
-      },
-      {
-        "id": "009",
-        "text": "Prometheus (Engineer temple, alien planet, archaeological dig, spaceship Prometheus)"
-      },
-      {
-        "id": "010",
-        "text": "Black Hawk Down (Mogadishu streets, military helicopters, Somalia urban warfare, dusty chaos)"
-      },
-      {
-        "id": "011",
-        "text": "Napoleon (Austerlitz battlefield, Egyptian pyramids, Waterloo, French Revolution)"
-      },
-      {
-        "id": "012",
-        "text": "Thelma & Louise (Arizona desert highway, Grand Canyon, convertible on road, Southwestern landscape)"
-      }
+    {
+      "id": "001",
+      "text": "Gladiator (Roman Colosseum, Germania forest battle, wheat field dream, Marcus Aurelius camp)"
+    },
+    {
+      "id": "002",
+      "text": "Kingdom of Heaven (Jerusalem siege, Crusader castle, desert battle, Saladin's army)"
+    },
+    {
+      "id": "003",
+      "text": "The Last Duel (medieval France, jousting tournament, castle courtyard, 14th century armor)"
+    },
+    {
+      "id": "004",
+      "text": "Robin Hood (Sherwood Forest, Nottingham Castle, beach invasion, medieval England)"
+    },
+    {
+      "id": "005",
+      "text": "Exodus: Gods and Kings (ancient Egypt, Moses parting Red Sea, pharaoh's palace, Hebrew slaves)"
+    },
+    {
+      "id": "006",
+      "text": "1492: Conquest of Paradise (Spanish ships, New World landing, Caribbean shore, Columbus voyage)"
+    },
+    {
+      "id": "007",
+      "text": "Blade Runner (2019 Los Angeles, neon rain, Tyrell pyramid, dystopian megacity)"
+    },
+    {
+      "id": "008",
+      "text": "Alien (Nostromo spacecraft, alien planet, space station corridor, xenomorph horror)"
+    },
+    {
+      "id": "009",
+      "text": "Prometheus (Engineer temple, alien planet, archaeological dig, spaceship Prometheus)"
+    },
+    {
+      "id": "010",
+      "text": "Black Hawk Down (Mogadishu streets, military helicopters, Somalia urban warfare, dusty chaos)"
+    },
+    {
+      "id": "011",
+      "text": "Napoleon (Austerlitz battlefield, Egyptian pyramids, Waterloo, French Revolution)"
+    },
+    {
+      "id": "012",
+      "text": "Thelma & Louise (Arizona desert highway, Grand Canyon, convertible on road, Southwestern landscape)"
+    }
     ],
     "randomizeOptions": true,
-    "additionalInstructions": ""
+    "additionalInstructions": "SCENE ACCURACY (CRITICAL):\n\n• Each option must generate scenes appropriate ONLY to that film\n• Non-war films must NOT contain battles, armies, combat formations, explosions, or military staging unless naturally part of the selected scene\n\nEXAMPLES:\n\n• Thelma & Louise = road-trip Americana, convertible driving, desert stops, motel scenes, canyon overlooks, friendship energy\n• Blade Runner = neon cyberpunk cityscapes, rainy streets, holograms, dystopian noir atmosphere\n• Alien = claustrophobic industrial sci-fi corridors, dim spacecraft interiors, tension and isolation\n• Prometheus = ancient alien structures, scientific exploration, mysterious Engineer technology\n• Gladiator = Roman arenas, imperial architecture, wheat fields, battle sequences, emperor interactions\n\nCHARACTER INTEGRATION:\n\n• Include supporting characters from the selected movie in the scene\n• Characters must match the selected film only\n• Supporting characters should interact naturally with the subject\n• Subject should feel like a real character existing inside the movie world\n\nRIDLEY SCOTT CINEMATIC STYLE:\n\n• Strong atmospheric haze and environmental realism\n• Dramatic natural lighting and silhouettes\n• Rich textured production design\n• Cinematic framing and large-scale visual composition\n• Realistic costumes and practical environments\n\nANTI-CHEAT:\n\n• Do not reuse generic battle scenes for every option\n• Do not ignore the selected film setting\n• Do not create random historical warfare when inappropriate\n• Do not place the subject alone without recognizable film-world context\n\nQUALITY:\n\n• Authentic scene recreation\n• Strong cinematic realism\n• Recognizable Ridley Scott atmosphere\n• Accurate film-specific environments\n• Seamless integration with existing film characters"
   },
   {
     "name": "RIPLEY'S BELIEVE-IT-OR-NOT",
