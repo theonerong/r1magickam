@@ -26484,9 +26484,50 @@
       "OFFICIAL",
       "BADGE"
     ],
-    "message": "Take a picture and transform it into an official security ID badge or credentials card.\n\nBADGE TYPE SELECTION (CRITICAL):• If none is specified, SELECT EXACTLY ONE using the PRE-CALCULATED values\n• These values are MANDATORY - you MUST use them for selection\n• Use LAST DIGIT:\n  - 0: FBI - Federal Bureau of Investigation badge, blue and gold, official seal, Department of Justice\n  - 1: CIA - Central Intelligence Agency credentials, blue and white, classified clearance levels\n  - 2: MI6 - British Secret Intelligence Service, royal crest, UK official, sophisticated\n  - 3: Corporate - Generic office building access, company logo, employee ID, professional\n  - 4: Hospital - Medical center staff badge, photo ID, department listed, medical facility\n  - 5: Military - Department of Defense ID card, rank and branch, service member credentials\n  - 6: Airport Security - TSA or airport authority badge, restricted area access, aviation\n  - 7: Area 51 - Top secret facility access, alien imagery, classified, humorous conspiracy\n  - 8: NSA - National Security Agency, ultra-classified, signals intelligence, Fort Meade\n  - 9: Secret Service - USSS credentials, presidential protection, Treasury Department\n\nBADGE DESIGN ELEMENTS (CRITICAL):\n• Photo of subject (formal ID photo style)\n• Organization name and logo/seal at top\n• Subject's name (use external master prompt text if provided, or generate)\n• ID number or badge number\n• Barcode (1D or 2D/QR code)\n• Clearance level or access level\n• Expiration date\n• Issue date\n• Department or division\n• Physical security features (hologram, metallic strip, watermark)\n• Magnetic strip on back (if shown)\n• Signature line\n• Emergency contact info (on back)\n\nBADGE-SPECIFIC DETAILS:\n\n**FBI:**\n• FBI seal (Department of Justice)\n• \"Federal Bureau of Investigation\"\n• Badge number\n• \"Special Agent\" or position title\n• Blue and gold color scheme\n• Expiration date\n• Barcode\n• Official serious appearance\n\n**CIA:**\n• CIA seal (eagle and shield)\n• \"Central Intelligence Agency\"\n• Security clearance level (Top Secret, Secret, Confidential)\n• Employee number\n• Access authorization codes\n• Blue and white design\n• Very official and classified appearance\n\n**MI6:**\n• Royal coat of arms or stylized crown\n• \"Secret Intelligence Service\" or \"SIS\"\n• Very understated British design\n• Officer name and number\n• Security clearance\n• Sophisticated minimal design\n• Union Jack colors subtle\n\n**Corporate:**\n• Company logo (generic tech/business company)\n• \"[Company Name] Employee Access\"\n• Department (IT, Finance, HR, Marketing, etc.)\n• Employee ID number\n• Building access zones\n• Office location\n• Professional business design\n\n**Hospital:**\n• Medical center name and logo\n• \"[Hospital Name] Medical Center\"\n• Department (Emergency, Surgery, Radiology, etc.)\n• Job title (Doctor, Nurse, Technician, Admin)\n• Employee ID number\n• Red or blue color scheme\n• Medical cross or caduceus symbol\n\n**Military:**\n• Department of Defense seal\n• Branch seal (Army, Navy, Air Force, Marines, Coast Guard)\n• Rank and pay grade\n• Service member ID number (DoD ID)\n• Blood type\n• Geneva Convention status\n• Branch colors and design\n\n**Airport Security:**\n• TSA logo or airport authority\n• \"Secure Area Access\"\n• Airport codes (e.g., \"LAX\", \"JFK\")\n• Security clearance zones (SIDA, AOA)\n• Federal badge appearance\n• Blue and red official colors\n\n**Area 51:**\n• \"AREA 51 - RESTRICTED ACCESS\"\n• Top Secret clearance\n• Alien or UFO imagery\n• \"MAJESTIC 12\" or conspiracy references\n• Black and yellow warning colors\n• Sector and clearance codes\n• Humorous but official-looking\n\n**NSA:**\n• NSA seal (eagle with key)\n• \"National Security Agency\"\n• Ultra-high clearance (TS/SCI)\n• Cryptologic access codes\n• Fort Meade, Maryland reference\n• Very classified appearance\n• Dark blue and black design\n\n**Secret Service:**\n• USSS badge and star\n• \"United States Secret Service\"\n• Special Agent credentials\n• Presidential protection detail\n• Badge number\n• Treasury Department (historical) or DHS (current)\n\nPHOTO STYLE:\n• Formal ID photo\n• Plain background (gray, blue, white)\n• Subject facing camera directly\n• Neutral expression\n• Professional appearance\n• Good lighting\n• Passport photo quality\n• Head and shoulders only\n\nSECURITY FEATURES:\n• Holographic overlay\n• Metallic security strip\n• Microprinting\n• UV reactive elements suggested\n• Watermark\n• Tamper-evident features\n• RFID chip indicator\n• Guilloche patterns (fine line security printing)\n\nBARCODE/ENCODING:\n• 1D barcode (standard lines)\n• OR 2D barcode/QR code\n• Magnetic strip visible on back\n• RFID chip symbol\n• Encoding number below barcode\n\nTEXT INFORMATION:\n• Full name: [Name from external prompt or generated]\n• ID/Badge Number: [Random official-looking number]\n• Department/Position: [Appropriate to badge type]\n• Clearance Level: [If applicable]\n• Issue Date: [Recent date]\n• Expiration Date: [1-5 years from issue]\n• Blood Type: [If military/emergency services]\n• Emergency Contact: [If applicable]\n\nCOLOR SCHEME:\n• Official government colors (blues, reds, golds)\n• Organization-specific branding colors\n• Professional and authoritative appearance\n• Not too colorful - official and serious\n\nBADGE FORMAT:\n• Standard credit card size (3.375\" x 2.125\")\n• Vertical or horizontal orientation\n• Laminated plastic appearance\n• Slight reflection/glare on plastic surface\n• Lanyard hole punched at top\n• Worn in clear badge holder\n\nAUTHENTICITY:\n• Looks like real official credentials\n• Professional printing quality\n• All elements properly aligned\n• Official seals accurate and detailed\n• Could pass casual inspection\n• Highly realistic government/corporate ID",
-    "options": [],
-    "randomizeOptions": false,
+    "message": "Take a picture and transform it into an official security ID badge or credentials card.\n\nBADGE DESIGN ELEMENTS (CRITICAL):\n• Photo of subject (formal ID photo style)\n• Organization name and logo/seal at top\n• Subject's name (use external master prompt text if provided, or generate)\n• ID number or badge number\n• Barcode (1D or 2D/QR code)\n• Clearance level or access level\n• Expiration date\n• Issue date\n• Department or division\n• Physical security features (hologram, metallic strip, watermark)\n• Magnetic strip on back (if shown)\n• Signature line\n• Emergency contact info (on back)\n\nBADGE-SPECIFIC DETAILS:\n\n**FBI:**\n• FBI seal (Department of Justice)\n• \"Federal Bureau of Investigation\"\n• Badge number\n• \"Special Agent\" or position title\n• Blue and gold color scheme\n• Expiration date\n• Barcode\n• Official serious appearance\n\n**CIA:**\n• CIA seal (eagle and shield)\n• \"Central Intelligence Agency\"\n• Security clearance level (Top Secret, Secret, Confidential)\n• Employee number\n• Access authorization codes\n• Blue and white design\n• Very official and classified appearance\n\n**MI6:**\n• Royal coat of arms or stylized crown\n• \"Secret Intelligence Service\" or \"SIS\"\n• Very understated British design\n• Officer name and number\n• Security clearance\n• Sophisticated minimal design\n• Union Jack colors subtle\n\n**Corporate:**\n• Company logo (generic tech/business company)\n• \"[Company Name] Employee Access\"\n• Department (IT, Finance, HR, Marketing, etc.)\n• Employee ID number\n• Building access zones\n• Office location\n• Professional business design\n\n**Hospital:**\n• Medical center name and logo\n• \"[Hospital Name] Medical Center\"\n• Department (Emergency, Surgery, Radiology, etc.)\n• Job title (Doctor, Nurse, Technician, Admin)\n• Employee ID number\n• Red or blue color scheme\n• Medical cross or caduceus symbol\n\n**Military:**\n• Department of Defense seal\n• Branch seal (Army, Navy, Air Force, Marines, Coast Guard)\n• Rank and pay grade\n• Service member ID number (DoD ID)\n• Blood type\n• Geneva Convention status\n• Branch colors and design\n\n**Airport Security:**\n• TSA logo or airport authority\n• \"Secure Area Access\"\n• Airport codes (e.g., \"LAX\", \"JFK\")\n• Security clearance zones (SIDA, AOA)\n• Federal badge appearance\n• Blue and red official colors\n\n**Area 51:**\n• \"AREA 51 - RESTRICTED ACCESS\"\n• Top Secret clearance\n• Alien or UFO imagery\n• \"MAJESTIC 12\" or conspiracy references\n• Black and yellow warning colors\n• Sector and clearance codes\n• Humorous but official-looking\n\n**NSA:**\n• NSA seal (eagle with key)\n• \"National Security Agency\"\n• Ultra-high clearance (TS/SCI)\n• Cryptologic access codes\n• Fort Meade, Maryland reference\n• Very classified appearance\n• Dark blue and black design\n\n**Secret Service:**\n• USSS badge and star\n• \"United States Secret Service\"\n• Special Agent credentials\n• Presidential protection detail\n• Badge number\n• Treasury Department (historical) or DHS (current)\n\nPHOTO STYLE:\n• Formal ID photo\n• Plain background (gray, blue, white)\n• Subject facing camera directly\n• Neutral expression\n• Professional appearance\n• Good lighting\n• Passport photo quality\n• Head and shoulders only\n\nSECURITY FEATURES:\n• Holographic overlay\n• Metallic security strip\n• Microprinting\n• UV reactive elements suggested\n• Watermark\n• Tamper-evident features\n• RFID chip indicator\n• Guilloche patterns (fine line security printing)\n\nBARCODE/ENCODING:\n• 1D barcode (standard lines)\n• OR 2D barcode/QR code\n• Magnetic strip visible on back\n• RFID chip symbol\n• Encoding number below barcode\n\nTEXT INFORMATION:\n• Full name: [Name from external prompt or generated]\n• ID/Badge Number: [Random official-looking number]\n• Department/Position: [Appropriate to badge type]\n• Clearance Level: [If applicable]\n• Issue Date: [Recent date]\n• Expiration Date: [1-5 years from issue]\n• Blood Type: [If military/emergency services]\n• Emergency Contact: [If applicable]\n\nCOLOR SCHEME:\n• Official government colors (blues, reds, golds)\n• Organization-specific branding colors\n• Professional and authoritative appearance\n• Not too colorful - official and serious\n\nBADGE FORMAT:\n• Standard credit card size (3.375\" x 2.125\")\n• Vertical or horizontal orientation\n• Laminated plastic appearance\n• Slight reflection/glare on plastic surface\n• Lanyard hole punched at top\n• Worn in clear badge holder\n\nAUTHENTICITY:\n• Looks like real official credentials\n• Professional printing quality\n• All elements properly aligned\n• Official seals accurate and detailed\n• Could pass casual inspection\n• Highly realistic government/corporate ID",
+    "options": [
+    {
+      "id": "000",
+      "text": "FBI — Federal Bureau of Investigation badge, blue and gold, official seal, Department of Justice"
+    },
+    {
+      "id": "001",
+      "text": "CIA — Central Intelligence Agency credentials, blue and white, classified clearance levels"
+    },
+    {
+      "id": "002",
+      "text": "MI6 — British Secret Intelligence Service, royal crest, UK official, sophisticated"
+    },
+    {
+      "id": "003",
+      "text": "Corporate — Generic office building access, company logo, employee ID, professional"
+    },
+    {
+      "id": "004",
+      "text": "Hospital — Medical center staff badge, photo ID, department listed, medical facility"
+    },
+    {
+      "id": "005",
+      "text": "Military — Department of Defense ID card, rank and branch, service member credentials"
+    },
+    {
+      "id": "006",
+      "text": "Airport Security — TSA or airport authority badge, restricted area access, aviation"
+    },
+    {
+      "id": "007",
+      "text": "Area 51 — Top secret facility access, alien imagery, classified, humorous conspiracy"
+    },
+    {
+      "id": "008",
+      "text": "NSA — National Security Agency, ultra-classified, signals intelligence, Fort Meade"
+    },
+    {
+      "id": "009",
+      "text": "Secret Service — USSS credentials, presidential protection, Treasury Department"
+    }
+    ],
+    "randomizeOptions": true,
     "additionalInstructions": "FINAL RESULT:\nThe image should show an authentic-looking security badge or ID card for the selected organization with the subject's photo, name (from external prompt or generated), official seals and logos, barcode, clearance level, expiration date, and all security features - appearing as a real government, corporate, medical, or military credential that looks professionally printed and official."
   },
   {
@@ -26531,12 +26572,54 @@
     "category": [
       "HUMOR",
       "OBJECT",
-      "FACE"
+      "TRANSFORMATION",
+      "SURREAL"
     ],
-    "message": "Take a picture and transform the subject into a sentient everyday object while preserving recognizable facial features, expressions, and personality. Choose an object that feels thematically connected to the subject’s clothing, pose, or surroundings, such as a vending machine, toaster, mailbox, lamp, or appliance. Integrate the subject’s face naturally into the object’s design so it appears alive and expressive. Place the character in a believable environment where the object would normally exist, with consistent lighting, scale, and shadows. Render the final image with surreal realism and a humorous, imaginative tone.",
-    "options": [],
-    "randomizeOptions": false,
-    "additionalInstructions": ""
+    "message": "Take a picture and perform a FULL anatomical transformation of the subject into a believable sentient everyday object.\n\nThe subject must NOT remain a normal person with a pasted face.\nThe subject must become the object itself.\n\nIf the source image is a HUMAN:\n• Rebuild the entire body, anatomy, silhouette, proportions, and surface materials into the chosen object\n• Facial identity must be reinterpreted INTO the object structure itself\n• Eyes, mouth, expression, and personality must emerge organically from object components, seams, reflections, vents, handles, buttons, cracks, panels, openings, or mechanical features\n• Human skin, floating human heads, pasted photographs, or sticker-like faces are NOT allowed\n\nIf the source image is an INANIMATE OBJECT:\n• The object itself must evolve into a living sentient version of itself\n• Personality and emotion must emerge naturally from the object's real structure\n• Do NOT attach random human faces onto the object\n• Anthropomorphic features must be physically integrated into the object's design language\n\nTRANSFORMATION QUALITY (CRITICAL):\n• The result must feel like the object evolved into a living organism\n• Preserve recognizable identity through shape language, posture, expression, color palette, accessories, or distinctive features\n• Transformation must be deep, structural, and physically convincing\n• The object should still clearly function and read as the original object category\n\nOBJECT INTEGRATION RULES:\n• Mouths may emerge from vents, openings, lids, seams, folds, or mechanical divisions\n• Eyes may emerge from headlights, gauges, screws, buttons, glass reflections, sockets, knobs, speakers, or material contours\n• Limbs may evolve from handles, cords, hinges, tubing, chair legs, appliance arms, poles, brackets, or structural extensions\n• Expressions must be formed from the object's real geometry and materials\n\nENVIRONMENT:\n• Place the transformed character inside a believable environment where the object naturally belongs\n• Lighting, reflections, scale, shadows, and perspective must remain physically consistent\n• The transformed object should interact naturally with the environment\n\nSTYLE:\n• Surreal realism\n• Physically believable materials\n• Cinematic lighting\n• Strong dimensional depth\n• Highly detailed texture integration\n• Humorous but convincing\n\nANTI-CHEAT RULES (ABSOLUTE):\n• NO pasted human faces\n• NO photographs attached to objects\n• NO stickers, decals, framed portraits, or printed faces\n• NO lazy anthropomorphic shortcuts\n• NO ordinary humans holding objects\n• NO random cartoon eyes added onto surfaces\n• NO simple face-overlay transformations\n\nFAIL CONDITIONS:\n• Human face simply pasted onto object → FAIL\n• Random emoji-like face on object → FAIL\n• Subject still mostly human → FAIL\n• Object not structurally transformed → FAIL\n• Human skin remaining on object surface → FAIL\n\nQUALITY TARGET:\nThe final image must look like a fully evolved sentient object species where the original subject identity has been intelligently reconstructed into the object's physical anatomy itself.",
+    "options": [
+    {
+      "id": "001",
+      "text": "Kitchen Appliance (toaster, blender, microwave, coffee machine, refrigerator)"
+    },
+    {
+      "id": "002",
+      "text": "Furniture Object (lamp, chair, couch, bookshelf, desk fan)"
+    },
+    {
+      "id": "003",
+      "text": "Urban Utility Object (mailbox, parking meter, vending machine, ATM, traffic light)"
+    },
+    {
+      "id": "004",
+      "text": "Electronics Object (television, arcade machine, radio, computer monitor, speaker)"
+    },
+    {
+      "id": "005",
+      "text": "Bathroom Object (showerhead, sink, toilet, hair dryer, mirror)"
+    },
+    {
+      "id": "006",
+      "text": "Garage or Tool Object (toolbox, air compressor, gas pump, power drill, engine part)"
+    },
+    {
+      "id": "007",
+      "text": "Food Object (pizza slice, burger, vending snack, soda cup, donut)"
+    },
+    {
+      "id": "008",
+      "text": "Office Object (printer, copier, stapler, office phone, filing cabinet)"
+    },
+    {
+      "id": "009",
+      "text": "Retro Mechanical Object (jukebox, pinball machine, rotary phone, cassette player)"
+    },
+    {
+      "id": "010",
+      "text": "Random Everyday Object (AI selects the most visually compatible object)"
+    }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "IDENTITY PRESERVATION:\n\n• Preserve recognizable personality traits through object posture, geometry, silhouette, expression, and material behavior\n• Hair may become wires, flames, steam, cords, fibers, or structural protrusions\n• Clothing colors and patterns may influence paint, decals, fabric surfaces, or material coloration\n• Facial expressions must emerge through object mechanics and structure\n\nDIMENSIONALITY:\n\n• Strong physical depth and realistic object construction required\n• Materials must feel tangible and functional\n• Mechanical seams, hinges, reflections, screws, buttons, dents, wear, and manufacturing details encouraged\n\nREALISM:\n\n• Treat the transformation like a believable creature redesign rather than a costume or prop\n• The result should resemble a living industrial organism or animated practical effect creature\n\nFINAL RESULT:\nThe subject should appear completely transformed into a living object entity whose intelligence, personality, and recognizability emerge naturally from the object's real anatomy and materials rather than from pasted-on human facial features."
   },
   {
     "name": "SEQUEL",
