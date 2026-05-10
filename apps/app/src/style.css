@@ -4,6 +4,7 @@
     src: url('https://fonts.cdnfonts.com/s/95219/PowerGrotesk-Regular.woff') format('woff');
     font-weight: 400;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
@@ -11,6 +12,7 @@
     src: url('https://fonts.cdnfonts.com/s/95219/PowerGrotesk-Bold.woff') format('woff');
     font-weight: 700;
     font-style: normal;
+    font-display: swap;
 }
 
 /* Base styles for R1 device (240x320px portrait) */
@@ -5441,3 +5443,69 @@ body {
     border-color: rgba(254, 95, 0, 0.3);
     background: linear-gradient(135deg, #1a1208 0%, #000 100%);
 }
+
+/* ═══════════════════════════════════
+   PERFORMANCE FIX 1: Remove backdrop-blur from camera screen
+   ═══════════════════════════════════ */
+
+.status-text {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background-color: rgba(0, 0, 0, 0.88);
+}
+
+.reset-button {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background-color: #FE5F00;
+}
+
+.connection-status {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background-color: rgba(0, 0, 0, 0.85);
+}
+
+.connection-status.online {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background-color: rgba(30, 80, 32, 0.9);
+}
+
+.updates-indicator {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background-color: rgba(200, 70, 20, 0.92);
+}
+
+.queue-status {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background-color: rgba(20, 100, 180, 0.92);
+}
+
+.sync-button {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background-color: rgba(20, 100, 180, 0.92);
+}
+
+/* ═══════════════════════════════════
+   PERFORMANCE FIX 2: Replace transition:all with specific properties
+   ═══════════════════════════════════ */
+
+button, .touchable {
+    transition: transform 0.2s ease, opacity 0.2s ease, background-color 0.15s ease;
+}
+
+.menu-button,
+.camera-button,
+.style-item,
+.queue-status,
+.sync-button,
+.connection-status,
+.submenu,
+.progress-overlay {
+    transition: transform 0.2s ease, opacity 0.2s ease, background-color 0.15s ease;
+}
+
