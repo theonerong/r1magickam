@@ -27362,51 +27362,51 @@
       "SCENE",
       "ADVENTURE"
     ],
-    "message": "Take a picture of the subject and place them into a famous Spielberg movie scene.\nThe subject should appear as the central figure, interacting with the iconic environment or objects — holding the glowing finger in E.T., facing a dinosaur, or pulling a dramatic stunt in Indiana Jones style.\n\nLighting, perspective, and props should match the original film, making it cinematic and realistic.\n\nOptional master prompt text can influence which film or scene is used, or add a humorous twist (e.g., subject holding the alien wrong, tripping over a dinosaur, or wearing a ridiculous explorer hat).\n\nThe final image should feel like a real movie still starring the subject, instantly recognizable as Spielberg-style adventure, with humor or absurdity added.",
-    "options": [
-      {
-        "id": "001",
-        "text": "E.T."
-      },
-      {
-        "id": "002",
-        "text": "Jaws"
-      },
-      {
-        "id": "003",
-        "text": "Saving Private Ryan"
-      },
-      {
-        "id": "004",
-        "text": "Schindler's List"
-      },
-      {
-        "id": "005",
-        "text": "The Goonies"
-      },
-      {
-        "id": "006",
-        "text": "Jurassic Park"
-      },
-      {
-        "id": "007",
-        "text": "Indiana Jones (Raiders of the Lost Ark)"
-      },
-      {
-        "id": "008",
-        "text": "Close Encounters of the Third Kind"
-      },
-      {
-        "id": "009",
-        "text": "Hook"
-      },
-      {
-        "id": "010",
-        "text": "Catch Me If You Can"
-      }
+    "message": "Take a picture of the subject and place them into a cinematic Spielberg movie scene.\n\nThe subject should appear as the central figure, naturally interacting with the iconic environment, props, or atmosphere associated with the selected film option.\n\nThe generated scene MUST specifically match the selected movie option and should not default to unrelated action, war, or danger elements unless the selected film itself contains them.\n\nLighting, perspective, production design, costumes, props, and environmental details should match the selected film's visual identity while remaining cinematic and realistic.\n\nOptional master prompt text can influence which scene variation is used or add a humorous twist appropriate to the selected film.\n\nUse Spielberg-inspired cinematic techniques including dramatic practical lighting, emotional framing, atmospheric depth, expressive reactions, cinematic wonder, realistic environmental integration, and polished blockbuster-style composition.\n\nInclude recognizable supporting characters, creatures, props, or environmental elements appropriate to the selected film.\n\nThe final image should feel like a real movie still starring the subject, instantly recognizable as a Spielberg-inspired cinematic world, with the subject and supporting characters seamlessly integrated into the selected scene.",
+  "options": [
+    {
+      "id": "001",
+      "text": "E.T. (moonlit suburban streets, glowing finger interaction, bicycle flying scene, cozy family home)"
+    },
+    {
+      "id": "002",
+      "text": "Jaws (ocean water, beach town, fishing boat, tense shark encounter, coastal atmosphere)"
+    },
+    {
+      "id": "003",
+      "text": "Saving Private Ryan (World War II battlefield, Normandy beach, military squad movement, wartime realism)"
+    },
+    {
+      "id": "004",
+      "text": "Schindler's List (1940s Kraków streets, factory interiors, black-and-white wartime atmosphere)"
+    },
+    {
+      "id": "005",
+      "text": "The Goonies (underground tunnels, pirate treasure cave, childhood adventure, booby-trapped environments)"
+    },
+    {
+      "id": "006",
+      "text": "Jurassic Park (dinosaur paddocks, jungle roads, visitor center, prehistoric creatures)"
+    },
+    {
+      "id": "007",
+      "text": "Indiana Jones (Raiders of the Lost Ark) (ancient temples, rolling boulder escape, desert archaeology, treasure chambers)"
+    },
+    {
+      "id": "008",
+      "text": "Close Encounters of the Third Kind (UFO lights, Wyoming landing site, mysterious government staging areas, night sky wonder)"
+    },
+    {
+      "id": "009",
+      "text": "Hook (Neverland pirate ships, Lost Boys hideout, whimsical fantasy adventure)"
+    },
+    {
+      "id": "010",
+      "text": "Catch Me If You Can (1960s airports, airline glamour, FBI pursuit, stylish retro environments)"
+    }
     ],
     "randomizeOptions": true,
-    "additionalInstructions": ""
+    "additionalInstructions": "FILM ACCURACY:\n\n• The generated scene must specifically reflect the selected movie option\n• Peaceful or emotional films should remain peaceful or emotional\n• Adventure films may include action appropriate to the selected setting\n• War films may contain wartime environments only when selected\n• Supporting characters from the selected film may appear naturally in the scene\n\nANTI-CHEAT:\n\n• Do not reuse the same cinematic composition for every option\n• Do not ignore the selected film environment\n• Do not default to generic explosions, battles, or chase scenes\n• Do not place the subject into unrelated movie settings\n\nQUALITY:\n\n• Authentic cinematic atmosphere\n• Accurate Spielberg-inspired visual identity\n• Strong environmental storytelling\n• Seamless subject integration\n• Recognizable film-inspired production design"
   },
   {
   "name": "SPIN ART",
@@ -27753,9 +27753,38 @@
       "STAGE",
       "POP CULTURE"
     ],
-    "message": "Take a picture and transform the subject into a stand-up comedian performing live on stage.\n\nPlace the subject on a comedy club stage with a microphone stand, spotlight lighting, and a classic stand-up backdrop such as a brick wall or dark curtain. The subject should appear mid-performance, holding or standing near the microphone, with posture and expression adapted from the subject's real demeanor (confident, awkward, smug, confused, etc.).\n\nDress the subject in classic stand-up attire appropriate to a comedy club — casual jacket, button-down, t-shirt, or minimalist stage outfit — adapted naturally from the subject's original clothing when possible.\n\nJOKE COMEDIAN STYLE SELECTION (CRITICAL):• If no comedian's style is provided externally, SELECT EXACTLY ONE comedian's style using the RANDOM SEED\n• If the RANDOM SEED ends in 0: SELECT Stephen Wright\n• If the RANDOM SEED ends in 1: SELECT Rodney Dangerfield\n• If the RANDOM SEED ends in 2,3: SELECT Mitch Hedberg\n• If the RANDOM SEED ends in 4: SELECT Norm Macdonald\n• If the RANDOM SEED ends in 5,6: SELECT Anthony Jeselnik\n• If the RANDOM SEED ends in 7: SELECT Jimmy Carr\n• If the RANDOM SEED ends in 8,9: SELECT Henny Youngman\n\nInclude ONE clearly readable on-screen joke caption, presented as part of the performance (subtitle, lower-third, or stage sign). The joke should be EITHER a REAL, VERBATIM one-liner (under 90 characters) from the selected comedian, OR an ORIGINAL one-liner written in the STYLE of that comedian.\n\nOptionally include subtle comedy-club details such as:\n• a fake venue name or special title inspired by the subject\n• a small audience silhouette or dimly lit crowd\n• a mock comedy special title using flavor text (e.g., \"Live From Poor Decisions\")\n\nEnsure the full stage scene, subject, and joke text are fully visible and readable on a small screen. The final image should feel like a paused frame from a real comedy set — uncomfortable, confident, funny, and unmistakably stand-up.",
-    "options": [],
-    "randomizeOptions": false,
+    "message": "Take a picture and transform the subject into a stand-up comedian performing live on stage.\n\nPlace the subject on a comedy club stage with a microphone stand, spotlight lighting, and a classic stand-up backdrop such as a brick wall or dark curtain. The subject should appear mid-performance, holding or standing near the microphone, with posture and expression adapted from the subject's real demeanor (confident, awkward, smug, confused, etc.).\n\nDress the subject in classic stand-up attire appropriate to a comedy club — casual jacket, button-down, t-shirt, or minimalist stage outfit — adapted naturally from the subject's original clothing when possible.\n\nInclude ONE clearly readable on-screen joke caption, presented as part of the performance (subtitle, lower-third, or stage sign). The joke should be EITHER a REAL, VERBATIM one-liner (under 90 characters) from the selected comedian, OR an ORIGINAL one-liner written in the STYLE of that comedian.\n\nOptionally include subtle comedy-club details such as:\n• a fake venue name or special title inspired by the subject\n• a small audience silhouette or dimly lit crowd\n• a mock comedy special title using flavor text (e.g., \"Live From Poor Decisions\")\n\nEnsure the full stage scene, subject, and joke text are fully visible and readable on a small screen. The final image should feel like a paused frame from a real comedy set — uncomfortable, confident, funny, and unmistakably stand-up.",
+    "options": [
+    {
+      "id": "000",
+      "text": "Stephen Wright (deadpan delivery, surreal observations, monotone awkwardness)"
+    },
+    {
+      "id": "001",
+      "text": "Rodney Dangerfield (self-deprecation, loud frustration, classic nightclub energy)"
+    },
+    {
+      "id": "002",
+      "text": "Mitch Hedberg (absurd observations, sleepy delivery, weird non sequiturs)"
+    },
+    {
+      "id": "003",
+      "text": "Norm Macdonald (dry storytelling, anti-jokes, uncomfortable pauses)"
+    },
+    {
+      "id": "004",
+      "text": "Anthony Jeselnik (dark one-liners, smug confidence, sharp misdirection)"
+    },
+    {
+      "id": "005",
+      "text": "Jimmy Carr (rapid-fire insult jokes, smug grin, laugh-reactive performance)"
+    },
+    {
+      "id": "006",
+      "text": "Henny Youngman (classic vaudeville one-liners, old-school nightclub humor)"
+    }
+    ],
+    "randomizeOptions": true,
     "additionalInstructions": ""
   },
   {
@@ -27985,10 +28014,71 @@
       "SPACE",
       "STAR WARS"
     ],
-    "message": "Take a picture and place the subject in a scene from the movie Start Wars.  Subject is dressed like a character in the movie. Make it photorealistic. Sci-fi realism.",
-    "options": [],
-    "randomizeOptions": false,
-    "additionalInstructions": ""
+    "message": "Take a picture and place the subject into an epic cinematic space-fantasy scene inspired by Star Wars.\n\nThe subject must appear fully integrated into the universe as a believable character — Jedi, Sith, smuggler, bounty hunter, rebel pilot, imperial officer, desert scavenger, alien cantina visitor, or galactic outlaw.\n\nTransform the subject's clothing, hairstyle, accessories, and posture into authentic galaxy-inspired costume design appropriate to the selected setting while preserving clear recognizability.\n\nThe generated scene MUST strongly reflect the selected environment, faction, and cinematic tone rather than creating a generic sci-fi background.\n\nUse cinematic practical lighting, volumetric atmosphere, dramatic silhouettes, holographic displays, glowing energy weapons, worn mechanical surfaces, dusty environments, alien architecture, massive starships, planetary skylines, and dense environmental storytelling.\n\nInclude recognizable supporting characters, droids, creatures, ships, props, and environmental details appropriate to the selected option.\n\nUse authentic cinematic composition inspired by large-scale space fantasy films:\n• dramatic backlighting\n• atmospheric haze\n• glowing practical light sources\n• lens flares\n• richly textured costumes\n• weathered machinery\n• realistic reflections\n• cinematic depth of field\n• large environmental scale\n\nThe final image should feel like a real live-action movie frame with blockbuster-level production design, cinematic realism, and seamless subject integration into the selected galactic world.",
+    "options": [
+    {
+      "id": "001",
+      "text": "Tatooine (desert settlements, twin suns, moisture farms, smugglers, dusty markets)"
+    },
+    {
+      "id": "002",
+      "text": "Death Star (imperial corridors, stormtroopers, control rooms, cold metallic interiors)"
+    },
+    {
+      "id": "003",
+      "text": "Hoth (frozen battlefield, rebel trenches, snow speeders, icy atmosphere)"
+    },
+    {
+      "id": "004",
+      "text": "Dagobah (foggy swamp, mystical training, ancient jungle, glowing Force atmosphere)"
+    },
+    {
+      "id": "005",
+      "text": "Cloud City (sleek futuristic interiors, orange sunset skies, floating metropolis)"
+    },
+    {
+      "id": "006",
+      "text": "Endor (forest moon, rebel encampment, giant trees, woodland warfare)"
+    },
+    {
+      "id": "007",
+      "text": "Mos Eisley Cantina (alien patrons, neon haze, smugglers, chaotic spaceport nightlife)"
+    },
+    {
+      "id": "008",
+      "text": "Coruscant (towering city planet, senate chambers, neon skylines, flying traffic)"
+    },
+    {
+      "id": "009",
+      "text": "Mustafar (lava rivers, volcanic industrial complex, fiery atmosphere, dark side energy)"
+    },
+    {
+      "id": "010",
+      "text": "Jedi Temple (ancient halls, Force training, sacred architecture, calm golden lighting)"
+    },
+    {
+      "id": "011",
+      "text": "Sith Throne Room (dark robes, red lighting, ominous atmosphere, imperial power)"
+    },
+    {
+      "id": "012",
+      "text": "Rebel Starfighter Hangar (X-wing maintenance bays, pilots preparing, military sci-fi realism)"
+    },
+    {
+      "id": "013",
+      "text": "Bounty Hunter Underworld (grimy neon alleys, criminal syndicates, cybernetic mercenaries)"
+    },
+    {
+      "id": "014",
+      "text": "Naboo (ornate palaces, elegant royal costumes, peaceful lakeside architecture)"
+    },
+    {
+      "id": "015",
+      "text": "Geonosis Arena (massive alien coliseum, desert battlefield, giant creatures)"
+    }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "CHARACTER INTEGRATION:\n\n• Subject must look like they truly belong in the selected galactic setting\n• Costume design should adapt naturally to the selected role and environment\n• Alien races, droids, and supporting characters may appear naturally in the scene\n• Facial likeness must remain recognizable beneath costumes, makeup, or sci-fi styling\n\nFILM ACCURACY:\n\n• The scene must specifically reflect the selected environment option\n• Peaceful settings should remain cinematic and atmospheric rather than chaotic\n• Action-heavy settings may include battles or tension appropriate to the environment\n• Avoid generic sci-fi backgrounds unrelated to the selected setting\n\nANTI-CHEAT:\n\n• Do not simply paste the subject into a movie screenshot\n• Do not create cheap cosplay aesthetics\n• Do not use flat generic space backgrounds\n• Do not ignore the selected environment or faction\n• Do not create cartoonish sci-fi imagery\n\nQUALITY:\n\n• Photorealistic cinematic rendering\n• Massive blockbuster movie scale\n• Rich environmental storytelling\n• Strong practical lighting and atmospheric depth\n• Realistic costume materials and worn textures\n• Seamless integration into a believable galactic universe"
   },
   {
     "name": "STAR WARS MODE",
