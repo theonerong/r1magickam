@@ -377,8 +377,8 @@ export class PresetImporter {
       const currentCredits = loadUnlockState().credits || 0;
       header.innerHTML = `
         <div style="display:flex; flex-direction:column; gap:1px; line-height:1.1;">
-          <h2 style="font-size: 14px; margin:0; padding:0;">Import (<span id="import-preset-count">${availablePresets.length}</span>)</h2>
-          <span id="import-credits-display" style="font-size:10px; color:#aaa; margin:0; padding:0;">Credits: ${currentCredits}</span>
+          <h2 style="font-size: 5vw; margin:0; padding:0;">IMPORT (<span id="import-preset-count">${availablePresets.length}</span>)</h2>
+          <span id="import-credits-display" style="font-size:5vw; color:#aaa; margin:0; padding:0;">Credits: ${currentCredits}</span>
         </div>
         <div class="menu-nav-buttons">
           <button id="import-mute-toggle" class="menu-jump-button" title="Mute/Unmute">${this.isMuted ? '🔇' : '🔊'}</button>          

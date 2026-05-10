@@ -817,7 +817,7 @@ button:disabled {
 }
 
 .styles-menu-header h2 {
-    font-size: 6vw;
+    font-size: 5vw;
     color: #FE5F00;
     margin: 0;
 }
@@ -4703,9 +4703,12 @@ button:disabled {
     box-shadow: 0 1px 8px rgba(254, 95, 0, 0.18);
 }
 
-/* Gallery thumbnail: warm lift effect on press */
+/* ── Gallery items: warmer press effect ── */
 .gallery-item:active {
-    box-shadow: 0 0 14px rgba(254, 95, 0, 0.55);
+    border-color: #FE5F00;
+    box-shadow:
+        0 0 0 2px rgba(254,95,0,0.4),
+        0 0 16px rgba(254,95,0,0.3);
     transform: scale(0.97);
     transition: transform 0.08s ease, box-shadow 0.08s ease;
 }
@@ -4780,7 +4783,8 @@ body {
 
 /* ── Header: stronger separator line with orange underglow ── */
 .styles-menu-header,
-.gallery-header {
+.gallery-header,
+.preset-selector-header {
     border-bottom: 1px solid rgba(254, 95, 0, 0.35);
     background: linear-gradient(180deg, #1f1f1f 0%, #191919 100%);
 }
@@ -4994,4 +4998,446 @@ body {
 
 .style-item.active {
     border: 3px solid #FFD700;
+}
+
+/* ═══════════════════════════════════
+   ✨ MAGIC KAMERA — FUN & BEAUTY PACK
+   ═══════════════════════════════════ */
+
+/* ── Start Screen: glowing orb behind the camera ── */
+.start-screen::before {
+    content: '';
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60vw;
+    height: 60vw;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(254,95,0,0.12) 0%, transparent 65%);
+    pointer-events: none;
+    animation: orbPulse 4s ease-in-out infinite;
+    z-index: 0;
+}
+
+@keyframes orbPulse {
+    0%, 100% { transform: translateX(-50%) scale(1);   opacity: 0.5; }
+    50%       { transform: translateX(-50%) scale(1.3); opacity: .8;   }
+}
+
+/* Make sure camera animation sits above the orb */
+.camera-animation, .magic-title, .start-text, .start-button, #app-version, #splash-tour-button {
+    position: relative;
+    z-index: 1;
+}
+
+/* ── Title: rainbow shimmer sweep ── */
+.magic-title {
+    background: linear-gradient(90deg, #FE5F00, #ff9500, #FFD700, #ff9500, #FE5F00);
+    background-size: 300% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: titleShimmer 3s linear infinite, titleGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes titleShimmer {
+    0%   { background-position: 0% center; }
+    100% { background-position: 300% center; }
+}
+
+/* ── Start buttons: pulsing ring on the "Start" button ── */
+.start-button {
+    position: relative;
+    overflow: visible;
+}
+
+.start-button::after {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border-radius: 3vw;
+    border: 2px solid rgba(254, 95, 0, 0.5);
+    animation: buttonRing 2s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes buttonRing {
+    0%, 100% { transform: scale(1);    opacity: 0.7; }
+    50%       { transform: scale(1.06); opacity: 0;   }
+}
+
+/* ── Status text: glowing orange border ── */
+.status-text {
+    border: 1px solid rgba(254, 95, 0, 0.4);
+    box-shadow:
+        0 0 10px rgba(254, 95, 0, 0.2),
+        0 4px 16px rgba(0,0,0,0.6);
+    letter-spacing: 0.03em;
+}
+
+/* ── Reset / New Photo button: glow on press ── */
+.reset-button:active {
+    box-shadow: 0 0 20px rgba(254, 95, 0, 0.8) !important;
+    transform: translateX(-50%) scale(0.97) !important;
+}
+
+/* ── Timer countdown: big glowing number ── */
+.timer-countdown {
+    text-shadow:
+        0 0 20px rgba(254, 95, 0, 0.9),
+        0 0 40px rgba(254, 95, 0, 0.5);
+}
+
+/* ── Camera switch button (📷 top right): glow on press ── */
+.camera-button:active {
+    box-shadow: 0 0 18px rgba(254, 95, 0, 0.7) !important;
+}
+
+/* ── Style reveal pop: orange border glow ── */
+.style-reveal {
+    border-color: rgba(254, 95, 0, 0.6);
+    box-shadow:
+        0 8px 32px rgba(0,0,0,0.7),
+        0 0 20px rgba(254, 95, 0, 0.3);
+}
+
+/* ── Menu section titles: orange underline accent ── */
+.menu-section-title {
+    border-bottom: 1px solid rgba(254, 95, 0, 0.3);
+    padding-bottom: 4px;
+    color: #FE5F00;
+}
+
+/* ── Mode buttons: permanent soft orange glow ── */
+.mode-button {
+    box-shadow:
+        0 2px 8px rgba(0,0,0,0.6),
+        0 0 8px rgba(254, 95, 0, 0.2),
+        inset 0 1px 0 rgba(255,255,255,0.06);
+}
+
+/* ═══════════════════════════════════
+   ✨ MENU · SETTINGS · GALLERY POLISH
+   ═══════════════════════════════════ */
+
+/* ── Menu & Settings panels: warmer dark background instead of flat black ── */
+.styles-menu-content,
+.submenu-content,
+.preset-selector-content {
+    background: linear-gradient(170deg, #181818 0%, #0f0f0f 100%);
+}
+
+/* ── Menu + submenu headers: stronger orange glow line underneath ── */
+.submenu-header {
+    background: linear-gradient(180deg, #1f1f1f 0%, #191919 100%);
+    border-bottom: 1px solid rgba(254, 95, 0, 0.5);
+    box-shadow: 0 2px 10px rgba(254, 95, 0, 0.12);
+}
+
+/* ── Menu section dividers: warm orange tint instead of cold grey ── */
+.menu-section {
+    border-bottom: 1px solid rgba(254, 95, 0, 0.12);
+}
+
+/* ── Menu section titles: left orange bar for visual anchoring ── */
+.menu-section-title {
+    padding-left: 8px;
+    border-left: 3px solid #FE5F00;
+}
+
+/* ── Menu items: subtle raised edge (top highlight, bottom shadow) ── */
+.menu-item {
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.05),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.3);
+}
+
+/* ── Style and preset list items: same raised edge ── */
+.style-item,
+.preset-item {
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.05),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.3);
+}
+
+/* ── Style/preset items: warmer border color ── */
+.style-item {
+    border-color: #333;
+}
+
+.preset-item {
+    border-color: #333;
+}
+
+/* ── Filter search boxes: deeper inset look ── */
+.style-filter,
+#import-preset-filter {
+    background-color: #1a1a1a;
+    border-color: #3a3a3a;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* ── Settings tab bar: active tab gets a warm gradient + text glow ── */
+.btn-settings-tab {
+    background: #0f0f0f;
+    border-bottom: 3px solid transparent;
+}
+
+.btn-settings-tab.active {
+    background: linear-gradient(180deg, #1f1f1f 0%, #141414 100%);
+    color: #FE5F00;
+    border-bottom-color: #FE5F00;
+    text-shadow: 0 0 8px rgba(254, 95, 0, 0.25);
+}
+
+/* ── Settings sliders: orange accent color on the thumb and track ── */
+.burst-setting-item input[type="range"] {
+    accent-color: #FE5F00;
+}
+
+/* ── Batch control buttons: fix the ugly white hover, add orange press ── */
+.batch-control-button:hover {
+    background: #252525;
+    border-color: rgba(254, 95, 0, 0.5);
+    color: #FE5F00;
+}
+
+.batch-control-button:active {
+    background: #FE5F00;
+    color: #000;
+    border-color: #FE5F00;
+}
+
+/* ── Gallery content: warmer dark background ── */
+.gallery-content {
+    background: linear-gradient(170deg, #181818 0%, #0f0f0f 100%);
+}
+
+/* ── Gallery items: subtle inner depth shadow ── */
+.gallery-item {
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.03);
+    border-color: #333;
+}
+
+/* ── Gallery folder cards: raised look with inner highlight ── */
+.gallery-folder {
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.08),
+        0 3px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* ── Gallery pagination bar: warm separator ── */
+.gallery-pagination {
+    border-top: 1px solid rgba(254, 95, 0, 0.2);
+    background: #0f0f0f;
+}
+
+/* ── Gallery controls (date filters area): warmer separator ── */
+.gallery-controls {
+    border-bottom: 1px solid rgba(254, 95, 0, 0.15);
+}
+
+/* ── Sticky footer bars (visible presets count, etc): orange top line ── */
+.visible-presets-footer,
+.menu-category-footer,
+.preset-selector-category-footer {
+    border-top: 1px solid rgba(254, 95, 0, 0.4);
+    background: #0d0d0d;
+}
+
+/* ═══════════════════════════════════
+   FIX 1: Settings buttons — two-line layout
+   (title top-left, hint bottom-right, no word wrap)
+   ═══════════════════════════════════ */
+
+.menu-section-button {
+    position: relative;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1vw;
+    padding-right: 10vw;
+}
+
+.menu-section-button .menu-section-title {
+    text-align: left;
+    width: 100%;
+    white-space: normal;
+    padding-left: 0;
+    border-left: none;
+    font-size: 4.5vw;
+    color: #fff;
+}
+
+.menu-section-button .menu-section-value {
+    text-align: right;
+    width: 100%;
+}
+
+.menu-section-button .menu-section-arrow {
+    position: absolute;
+    right: 2vw;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.menu-section-button.menu-selected .menu-section-title {
+    color: #FE5F00;
+}
+
+/* ═══════════════════════════════════
+   FIX 2: Tutorial buttons — match settings font size
+   ═══════════════════════════════════ */
+
+#start-guided-tour {
+    font-size: 5vw !important;
+}
+
+.glossary-item {
+    font-size: 5vw;
+}
+
+/* ── Hide the bottom two sparkles, keep only top two ── */
+.sparkle-3,
+.sparkle-4 {
+    display: none;
+}
+
+/* ── Date filter buttons: gradient fill for a more premium look ── */
+.date-filter-button {
+    background: linear-gradient(180deg, #2a2a2a 0%, #1a1a1a 100%);
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.06),
+        0 2px 6px rgba(0,0,0,0.4);
+}
+
+.date-filter-button.has-date {
+    background: linear-gradient(180deg, #2e1a00 0%, #1a0f00 100%);
+    box-shadow:
+        inset 0 1px 0 rgba(254,95,0,0.15),
+        0 0 8px rgba(254,95,0,0.2);
+}
+
+/* ── Close button: warmer border, matches the orange theme better ── */
+.close-button {
+    border-color: rgba(254, 95, 0, 0.4);
+    color: rgba(254, 95, 0, 0.8);
+}
+
+/* ── Image viewer buttons: glow feedback when pressed ── */
+.viewer-delete-button:active {
+    box-shadow: 0 0 16px rgba(255, 68, 68, 0.7);
+}
+
+.viewer-close-button:active {
+    box-shadow: 0 0 16px rgba(254, 95, 0, 0.7);
+}
+
+/* ── Style editor: orange left accent bar appears when you tap a field ── */
+.style-input:focus,
+.style-textarea:focus {
+    border-left-color: #FE5F00;
+    border-left-width: 3px;
+}
+
+/* ── Style editor header buttons: glow feedback ── */
+.save-button-header:active {
+    box-shadow: 0 0 14px rgba(76, 175, 80, 0.7);
+}
+
+.delete-button-header:active {
+    box-shadow: 0 0 14px rgba(211, 47, 47, 0.7);
+}
+
+/* ── Resolution items: active state gets a richer gradient ── */
+.resolution-item.active {
+    background: linear-gradient(135deg, #FE5F00 0%, #cc4c00 100%);
+    box-shadow:
+        0 2px 10px rgba(254, 95, 0, 0.4),
+        inset 0 1px 0 rgba(255,255,255,0.2);
+}
+
+/* ── Add Style button: satisfying press feel ── */
+.add-style-button:active {
+    background-color: #ff7a33;
+    box-shadow:
+        0 0 20px rgba(254, 95, 0, 0.6),
+        inset 0 2px 4px rgba(0,0,0,0.3);
+    transform: scale(0.98);
+}
+
+/* ── Image viewer: style name at top gets a subtle glow ── */
+.viewer-preset-header {
+    text-shadow: 0 0 10px rgba(254, 95, 0, 0.4);
+    letter-spacing: 0.08em;
+}
+
+/* ═══════════════════════════════════
+   ✨ SPLASH SCREEN BEAUTY UPGRADE
+   ═══════════════════════════════════ */
+
+/* ── Background: warm atmospheric depth instead of flat black ── */
+.start-screen {
+    background:
+        radial-gradient(ellipse at 50% 38%, #1c0e00 0%, #0d0600 45%, #000 100%);
+}
+
+/* ── Camera body: very subtle warm metallic tint ── */
+.camera-body {
+    background: linear-gradient(145deg, #2a2218 0%, #1a1510 50%, #111 100%);
+}
+
+/* ── Title: breathing room and decorative underline ── */
+.magic-title {
+    letter-spacing: 0.06em;
+    margin-bottom: 1vh;
+}
+
+.magic-title::after {
+    content: '';
+    display: block;
+    width: 50%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(254,95,0,0.7), transparent);
+    margin: 6px auto 0;
+}
+
+/* ── Subtitle text: smaller, refined, softer ── */
+.start-text {
+    font-size: 3.6vw;
+    color: #bbb;
+    letter-spacing: 0.04em;
+    line-height: 4vh;
+    margin-bottom: 5vh;
+}
+
+/* ── Start button: uppercase with tracking for a premium feel ── */
+#start-button {
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+/* ── Tour button: matching uppercase tracking ── */
+#splash-tour-button {
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+/* ── Sparkles: slightly larger with a warm glow ── */
+.sparkle-1, .sparkle-2 {
+    filter: drop-shadow(0 0 4px rgba(254, 95, 0, 0.5));
+}
+
+/* ── Lens inner ring: stronger orange glow for drama ── */
+.lens-inner {
+    box-shadow:
+        0 0 0 1px rgba(254, 95, 0, 0.3),
+        0 0 12px rgba(254, 95, 0, 0.2),
+        inset 0 0 8px rgba(0,0,0,0.9);
+}
+
+/* ── Camera viewfinder: warm tint instead of cold grey ── */
+.camera-viewfinder {
+    border-color: rgba(254, 95, 0, 0.3);
+    background: linear-gradient(135deg, #1a1208 0%, #000 100%);
 }
