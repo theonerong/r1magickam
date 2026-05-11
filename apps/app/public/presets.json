@@ -33772,7 +33772,7 @@
       "LANDSCAPE",
       "SCENE"
     ],
-    "message": "Take a picture and place the subject inside a famous real-world park or garden outside the United States.",
+    "message": "Take a picture and place the subject inside the EXACT famous real-world park or garden selected in the chosen option.\n\nThe generated image MUST specifically depict the selected park and MUST accurately match its real-world architecture, landscaping, monuments, pathways, vegetation, atmosphere, and regional visual identity.\n\nThe AI MUST NOT substitute a generic park, random garden, or unrelated landscape.\n\nThe selected option is mandatory and must fully determine the environment, location, visual landmarks, cultural atmosphere, and composition of the final image.\n\nInclude recognizable real-world features unique to the selected location whenever possible.\n\nThe subject should appear naturally integrated into the selected park as if photographed during real travel photography.\n\nThe final image should resemble an authentic high-quality travel photograph taken at the selected international destination.",
     "options": [
       {
         "id": "001",
@@ -34176,7 +34176,7 @@
       }
     ],
     "randomizeOptions": true,
-    "additionalInstructions": "FINAL RESULT:\nThe image must look like a real travel photograph taken in a famous international park or garden."
+    "additionalInstructions": "OPTION ENFORCEMENT:\n\n• The selected option MUST control the final environment\n• Do not generate random generic parks\n• Do not blend multiple parks together\n• Do not ignore the selected destination\n• Include recognizable location-specific landmarks and landscape design\n\nFINAL RESULT:\nThe image must clearly and unmistakably depict the specific selected world-famous park or garden as a real travel photograph."
   },
   {
     "name": "WRITING SYSTEM PORTRAIT",
