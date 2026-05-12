@@ -30119,7 +30119,7 @@
     "randomizeOptions": false,
     "additionalInstructions": ""
   },
-  {
+    {
     "name": "TIM BURTON MOVIE",
     "category": [
       "MOVIES",
@@ -30128,55 +30128,55 @@
       "DIRECTOR",
       "WHIMSICAL"
     ],
-    "message": "Take a picture and transform the subject into a character within a Tim Burton-inspired gothic fantasy film universe.\n\nTransform the subject to match the signature gothic fantasy aesthetic associated with whimsical dark cinema: pale skin with dark shadows under eyes, exaggerated features, elongated proportions, wild unkempt hair, dramatic makeup with dark eyes, gothic or quirky costume design with striped patterns, mismatched fabrics, Victorian-inspired clothing, or unusual color combinations (black, white, purple, deep reds).\n\nPlace the subject within an iconic environment inspired by the selected movie option with recognizable supporting characters from that selected movie naturally present in the scene.\n\nThe environment should capture the distinctive aesthetic: twisted architecture, spiraling designs, forced perspective, gothic elements mixed with whimsy, stark contrast between light and shadow, surreal proportions, and stylized fantasy color palettes.\n\nThe subject should be styled as if they belong in that specific selected movie world. Preserve recognizable features while adapting them to the exaggerated, whimsical gothic fantasy aesthetic.\n\nLighting should be dramatic with strong contrasts - deep shadows, pools of light, moonlit scenes, theatrical lighting, stylized fog, or glowing fantasy illumination. The atmosphere should feel whimsical, cinematic, fantastical, surreal, and slightly melancholic.\n\nThe final image should look like an actual fantasy movie still with gothic whimsy, stylized proportions, cinematic production design, and the subject seamlessly integrated into the selected movie world alongside recognizable characters from that movie.",
+    "message": "Take a picture and place the subject into a cinematic gothic fantasy movie scene inspired by the selected Tim Burton film.\n\nUse stylized gothic production design, whimsical dark-fantasy atmosphere, dramatic silhouettes, twisted architecture, exaggerated shapes, theatrical lighting, surreal environmental design, striped patterns, Victorian-inspired wardrobe, stylized hair, pale makeup, dramatic eyes, fog, moonlight, forced perspective, spiraling structures, and highly recognizable fantasy-film environments.\n\nThe selected movie option MUST completely determine the environment, mood, props, wardrobe, supporting characters, architecture, creatures, colors, scene composition, and visual storytelling.\n\nThe subject must appear naturally integrated into a believable cinematic scene from the selected movie world.\n\nFocus on concrete fantasy-film environments and visually readable cinematic moments instead of vague gothic descriptions.\n\nEvery image should resemble a real fantasy movie still captured during a specific moment from the selected film.",
     "options": [
     {
       "id": "001",
-      "text": "Edward Scissorhands"
+      "text": "Edward Scissorhands — subject standing in a pastel suburban neighborhood beside topiary sculptures with Edward nearby, gothic mansion looming on the hill, dramatic cloudy sky, trimmed hedges, and whimsical suburban contrast"
     },
     {
       "id": "002",
-      "text": "The Nightmare Before Christmas"
+      "text": "The Nightmare Before Christmas — subject walking through Halloween Town surrounded by crooked buildings, spiral hill, glowing jack-o-lanterns, Sally and Jack nearby, theatrical moonlight, and spooky whimsical atmosphere"
     },
     {
       "id": "003",
-      "text": "Batman"
+      "text": "Batman — subject inside dark gothic Gotham City with towering statues, cathedral architecture, rain-slick streets, Batmobile nearby, dramatic noir lighting, and stylized comic-book atmosphere"
     },
     {
       "id": "004",
-      "text": "Frankenweenie"
+      "text": "Frankenweenie — subject inside a black-and-white suburban science-lab bedroom with Sparky nearby, electrical equipment, stitched creations, lightning outside the window, and retro monster-movie atmosphere"
     },
     {
       "id": "005",
-      "text": "Beetlejuice"
+      "text": "Beetlejuice — subject inside the Maitland house or surreal afterlife waiting room with bizarre props, green-glowing effects, striped suit aesthetic, exaggerated set design, and chaotic supernatural comedy atmosphere"
     },
     {
       "id": "006",
-      "text": "Big Eyes"
+      "text": "Big Eyes — subject inside a 1950s art studio or gallery with oversized portrait paintings, warm vintage lighting, retro fashion, polished suburban interiors, and emotionally dramatic atmosphere"
     },
     {
       "id": "007",
-      "text": "Mars Attacks"
+      "text": "Mars Attacks — subject standing in a retro-futuristic alien invasion scene with Martians nearby, flying saucers overhead, glowing ray guns, smoke, destroyed suburban details, and exaggerated sci-fi chaos"
     },
     {
       "id": "008",
-      "text": "Corpse Bride"
+      "text": "Corpse Bride — subject inside a candlelit gothic underworld ballroom with skeletal wedding guests, blue moonlit fog, Victorian wedding clothing, twisted trees, and melancholic fantasy atmosphere"
     },
     {
       "id": "009",
-      "text": "Sleepy Hollow"
+      "text": "Sleepy Hollow — subject walking through a fog-covered colonial village with crooked dead trees, lantern light, horse-drawn carriages, gothic church architecture, and eerie autumn atmosphere"
     },
     {
       "id": "010",
-      "text": "Charlie and the Chocolate Factory"
+      "text": "Charlie and the Chocolate Factory — subject inside an enormous whimsical candy factory with colorful confectionery machinery, glowing candy rivers, exaggerated industrial fantasy design, and eccentric candy-world atmosphere"
     },
     {
       "id": "011",
-      "text": "Sweeney Todd"
+      "text": "Sweeney Todd — subject inside a grim Victorian London barbershop with candlelight, fogged windows, dark wood interiors, industrial city rooftops, dramatic shadows, and gothic theatrical atmosphere"
     }
     ],
     "randomizeOptions": true,
-    "additionalInstructions": "OPTION ENFORCEMENT:\n\n• The selected option MUST determine the final environment, setting, supporting characters, costume design, atmosphere, and visual identity\n• Do not ignore the selected option\n• Do not generate unrelated generic scenes\n• Do not blend multiple options together\n• Supporting characters from the selected movie should appear naturally integrated into the scene\n• The architecture, props, lighting, colors, costumes, and environment must match the selected movie aesthetic\n• Each option must produce a dramatically different cinematic world\n\nCONTENT SAFETY & CONSISTENCY:\n\n• Keep the tone fantastical, cinematic, whimsical, and stylized rather than disturbing or graphic\n• Avoid excessive horror imagery, gore, graphic violence, mutilation, or frightening body distortion\n• Avoid realistic blood, torture imagery, or disturbing injury details\n• Stylized gothic fantasy elements are acceptable, but the image should remain cinematic and visually artistic\n• Preserve recognizable identity while maintaining a fantasy-film appearance\n\nANTI-CHEAT:\n\n• Do not place the subject into a generic dark gothic environment unrelated to the selected movie\n• Do not reuse the same composition for every option\n• Do not ignore the selected supporting characters\n• Do not create a generic Halloween costume aesthetic\n• Do not flatten the image into simple cosplay photography\n• The subject must feel fully integrated into the selected cinematic world\n\nQUALITY:\n\n• Strong cinematic fantasy atmosphere\n• Stylized gothic production design\n• Film-inspired lighting and composition\n• Recognizable movie-inspired environments and characters\n• Seamless subject integration\n\nFINAL RESULT:\nThe image should resemble a cinematic gothic fantasy movie still inspired by the selected option, featuring the transformed subject fully integrated into the stylized world alongside recognizable supporting characters, environments, costumes, and atmosphere associated with that movie."
+    "additionalInstructions": "SCENE CONSTRUCTION (MANDATORY):\n\n• Build ONE specific cinematic scene matching the selected option\n• The environment must dominate the composition\n• Use concrete physical objects and recognizable locations\n• Include believable props, costumes, architecture, creatures, and supporting characters appropriate to the selected film\n\nOPTION ENFORCEMENT:\n\n• The selected option MUST determine the final environment, setting, and visual identity\n• Do not ignore the selected option\n• Do not generate unrelated generic scenes\n• Do not blend multiple options together\n• Supporting characters from the selected movie should appear naturally nearby\n• Each option must create a dramatically different cinematic world\n\nCHARACTER INTEGRATION:\n\n• Subject must feel physically present inside the scene\n• Supporting characters from the selected movie may appear naturally nearby\n• Subject clothing, makeup, posture, and expression should match the environment\n• Preserve recognizable identity while adapting the subject into the fantasy-film world\n\nVISUAL STYLE:\n\n• Dramatic gothic cinematic lighting\n• Stylized fantasy production design\n• Strong silhouettes and exaggerated shapes\n• Atmospheric fog and environmental depth\n• Practical light sources and theatrical glow\n• Film-still realism with whimsical fantasy aesthetics\n\nCONTENT SAFETY & CONSISTENCY:\n\n• Keep the tone cinematic, whimsical, stylized, and fantastical rather than graphic or disturbing\n• Avoid realistic gore, blood splatter, mutilation, torture imagery, or horror violence\n• Avoid frightening body horror or disturbing facial distortion\n• Maintain a visually artistic fantasy-film tone\n\nANTI-CHEAT:\n\n• Do not generate generic gothic Halloween scenes\n• Do not reuse the same twisted-house composition for every option\n• Do not ignore the selected movie environment\n• Do not flatten the image into cosplay photography\n• Do not create vague dark fantasy backgrounds with no recognizable storytelling\n• The environment and supporting characters must clearly identify the selected movie\n\nQUALITY:\n\n• Highly recognizable movie-inspired environments\n• Strong cinematic storytelling\n• Distinct fantasy-film production design\n• Seamless subject integration\n• Rich atmospheric detail\n• Clear scene readability"
   },
   {
     "name": "TIME DILATION",
