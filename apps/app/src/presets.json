@@ -14337,6 +14337,33 @@
     "additionalInstructions": ""
   },
   {
+    "name": "HYPERREAL MACRO POP",
+    "category": [
+      "OPTIONS", 
+      "3D", 
+      "POP-OUT", 
+      "MACRO", 
+      "DEPTH"
+    ],
+    "message": "Transform this image into an extreme macro photograph that creates overwhelming three-dimensional depth — the nearest element is so close it appears to touch the viewer's face while the background falls away into infinite blur.\n\nThe subject must be rendered at a scale where microscopic textures become landscapes. The depth of field must be razor thin — only a sliver of the image is in critical focus while everything before and behind melts into bokeh.\n\nThe result must feel like the subject is physically protruding from the screen surface.\n",
+    "options": [
+      { 
+        "id": "001", 
+        "text": "Insect face — compound eyes and mandibles at extreme close range, antennae tips sharp, body dissolving into blur" 
+      },
+      { 
+        "id": "002", 
+        "text": "Water droplet — perfect sphere containing a reflected world, surface tension visible, nearest edge sharp against blurred background" 
+      },
+      { 
+        "id": "003", 
+        "text": "Crystal structure — gemstone or mineral face with one facet in perfect focus, all others in progressive blur" 
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "DEPTH OF FIELD RULES:\n• Focus plane must be extremely shallow — 1 to 3mm equivalent depth\n• Everything in front of the focus plane: soft directional blur toward the viewer\n• Everything behind: classic circular bokeh balls from background light sources\n• The sharpest point must be the nearest element of the subject — not the center\n\nSCALE CUES:\n• Surface textures must reveal microscopic detail — pores, scales, facets, fiber strands\n• Include a recognizable tiny element at true size to confirm the scale\n• Lighting must be dramatic and raking — side lit to reveal maximum texture relief\n\nQUALITY TARGET:\n• Shot equivalent to a 100mm macro lens at f/2.8 or wider\n• Color must be rich and saturated — macro photography rewards vivid color\n• The nearest sharp edge should feel like it could cut the viewer"
+  },
+  {
     "name": "I'M HUNGRY",
     "category": [
       "FOOD",
@@ -16324,6 +16351,33 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "LEVITATION WITH SHADOW",
+    "category": [
+      "OPTIONS", 
+      "3D", 
+      "POP-OUT", 
+      "LEVITATION", 
+      "SURREAL"
+    ],
+    "message": "Transform this image so the subject floats in mid-air with physically accurate shadow, lighting, and environmental interaction — making the levitation appear completely real and documentary rather than fantastical.\n\nThe illusion of depth comes from the shadow: the higher the object floats, the larger and softer the shadow below it. This shadow-to-object relationship is the primary 3D cue and must be perfect.\n",
+    "options": [
+      { 
+        "id": "001",
+        "text": "Levitating person — subject floats horizontally in a natural outdoor setting, clothing and hair responding to air, sharp shadow on ground below" 
+      },
+      { 
+        "id": "002", 
+        "text": "Floating objects — multiple everyday objects hover at different heights, each casting a shadow that reveals its altitude" 
+      },
+      { 
+        "id": "003", 
+        "text": "Ascending figure — subject rises vertically with arms at sides, feet at ground level in the shadow, head high above casting tiny shadow"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "SHADOW PHYSICS (THE ENTIRE ILLUSION):\n• Shadow size must be proportional to height — twice the height means a significantly larger shadow\n• Shadow softness must increase with height — contact shadows are sharp, high shadows are soft and diffuse\n• Shadow must be correctly shaped — not a blob, but a recognizable silhouette of the subject\n• Shadow must be the correct color — the darkened version of whatever surface it falls on\n\nLIGHTING ON THE SUBJECT:\n• The subject must be lit from the SAME direction as the shadow implies\n• If sun is left of frame, the shadow falls right and the subject is lit from the left\n• No fill from below — the underside of the subject should be in relative shadow\n• This shadowed underside is what confirms the height — lit from above, dark below\n\nENVIRONMENTAL INTERACTION:\n• Clothing or hair must respond to airflow appropriate to the height\n• Any loose fabric must hang correctly for the orientation of the body\n• The ground texture must receive the shadow realistically — grass bends under shadow, pavement shows full shadow color\n\nQUALITY TARGET:\n• The image should look like it was captured by a photojournalist — no surreal treatment of color or atmosphere\n• The shadow is the proof — make it perfect"
   },
   {
     "name": "LICENSE PLATE",
