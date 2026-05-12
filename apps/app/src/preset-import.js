@@ -1,7 +1,7 @@
 // preset-import.js - Handle external preset importing
 
 // Deep comparison for UPDATED detection — checks all meaningful preset fields
-function presetsAreDifferent(a, b) {
+export function presetsAreDifferent(a, b) {
   if (a.message !== b.message) return true;
   if (a.additionalInstructions !== b.additionalInstructions) return true;
   if (!!a.randomizeOptions !== !!b.randomizeOptions) return true;
@@ -932,44 +932,99 @@ footerSection.innerHTML = `
         }, 200);
       };
 
-      let importUpTapTimer = null;
+      let importUpTimer = null;
+      let importUpCount = 0;
       document.getElementById('import-jump-to-top').onclick = () => {
-        if (importUpTapTimer) {
-          // Double-tap: jump to very top
-          clearTimeout(importUpTapTimer);
-          importUpTapTimer = null;
-          scrollContainer.scrollTop = 0;
-          this.currentImportScrollIndex = 0;
-          updateImportSelection();
-        } else {
-          importUpTapTimer = setTimeout(() => {
-            importUpTapTimer = null;
+        importUpCount++;
+        if (importUpTimer) clearTimeout(importUpTimer);
+        importUpTimer = setTimeout(() => {
+          importUpTimer = null;
+          const count = importUpCount;
+          importUpCount = 0;
+          if (count === 1) {
             // Single-tap: page up
             scrollContainer.scrollTop = Math.max(0, scrollContainer.scrollTop - scrollContainer.clientHeight);
-          }, 300);
-        }
+          } else if (count === 2) {
+            // Double-tap: jump to previous letter within the same section (new/updated or owned/imported)
+            const items = Array.from(presetsList.querySelectorAll('.menu-item'));
+            if (items.length === 0) return;
+            const idx = Math.max(0, Math.min(this.currentImportScrollIndex, items.length - 1));
+            const currentItem = items[idx];
+            const currentName = (currentItem.dataset.presetName || '').trim();
+            const currentLetter = stripAccents(currentName).toUpperCase().charAt(0);
+            const currentIsNewOrUpdated = !!currentItem.querySelector('.preset-ticket');
+            for (let i = idx - 1; i >= 0; i--) {
+              const item = items[i];
+              if (!!item.querySelector('.preset-ticket') !== currentIsNewOrUpdated) break;
+              const nm = (item.dataset.presetName || '').trim();
+              const letter = stripAccents(nm).toUpperCase().charAt(0);
+              if (letter !== currentLetter) {
+                const targetLetter = letter;
+                let firstOfLetter = i;
+                while (firstOfLetter > 0) {
+                  const prevItem = items[firstOfLetter - 1];
+                  if (!!prevItem.querySelector('.preset-ticket') !== currentIsNewOrUpdated) break;
+                  const prevNm = (prevItem.dataset.presetName || '').trim();
+                  if (stripAccents(prevNm).toUpperCase().charAt(0) !== targetLetter) break;
+                  firstOfLetter--;
+                }
+                this.currentImportScrollIndex = firstOfLetter;
+                updateImportSelection();
+                return;
+              }
+            }
+          } else {
+            // Triple-tap: jump to very top
+            scrollContainer.scrollTop = 0;
+            this.currentImportScrollIndex = 0;
+            updateImportSelection();
+          }
+        }, 300);
       };
 
-      let importDownTapTimer = null;
+      let importDownTimer = null;
+      let importDownCount = 0;
       document.getElementById('import-jump-to-bottom').onclick = () => {
-        if (importDownTapTimer) {
-          // Double-tap: jump to very bottom
-          clearTimeout(importDownTapTimer);
-          importDownTapTimer = null;
-          scrollContainer.scrollTop = scrollContainer.scrollHeight;
-          const items = presetsList.querySelectorAll('.menu-item');
-          this.currentImportScrollIndex = items.length - 1;
-          updateImportSelection();
-        } else {
-          importDownTapTimer = setTimeout(() => {
-            importDownTapTimer = null;
+        importDownCount++;
+        if (importDownTimer) clearTimeout(importDownTimer);
+        importDownTimer = setTimeout(() => {
+          importDownTimer = null;
+          const count = importDownCount;
+          importDownCount = 0;
+          if (count === 1) {
             // Single-tap: page down
             scrollContainer.scrollTop = Math.min(
               scrollContainer.scrollHeight - scrollContainer.clientHeight,
               scrollContainer.scrollTop + scrollContainer.clientHeight
             );
-          }, 300);
-        }
+          } else if (count === 2) {
+            // Double-tap: jump to next letter within the same section (new/updated or owned/imported)
+            const items = Array.from(presetsList.querySelectorAll('.menu-item'));
+            if (items.length === 0) return;
+            const idx = Math.max(0, Math.min(this.currentImportScrollIndex, items.length - 1));
+            const currentItem = items[idx];
+            const currentName = (currentItem.dataset.presetName || '').trim();
+            const currentLetter = stripAccents(currentName).toUpperCase().charAt(0);
+            const currentIsNewOrUpdated = !!currentItem.querySelector('.preset-ticket');
+            for (let i = idx + 1; i < items.length; i++) {
+              const item = items[i];
+              if (!!item.querySelector('.preset-ticket') !== currentIsNewOrUpdated) break;
+              const nm = (item.dataset.presetName || '').trim();
+              const letter = stripAccents(nm).toUpperCase().charAt(0);
+              if (letter !== currentLetter) {
+                this.currentImportScrollIndex = i;
+                updateImportSelection();
+                return;
+              }
+            }
+          } else {
+            // Triple-tap: jump to very bottom
+            scrollContainer.scrollTop = scrollContainer.scrollHeight;
+            const items = presetsList.querySelectorAll('.menu-item');
+            this.currentImportScrollIndex = items.length - 1;
+            updateImportSelection();
+          }
+        }, 300);
       };
 
       this.scrollImportUp = () => {

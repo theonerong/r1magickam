@@ -1,5 +1,5 @@
 import { presetStorage } from './storage.js';
-import { presetImporter, earnCredit, unlockAllPresets, getCredits } from './preset-import.js';
+import { presetImporter, earnCredit, unlockAllPresets, getCredits, presetsAreDifferent } from './preset-import.js';
 
 // Accent-insensitive search helper — strips diacritics so "cafe" finds "café"
 // NFC → NFD decomposes accented chars; removing \u0300-\u036F strips the accent marks.
@@ -2113,6 +2113,8 @@ async function submitMagicTransform() {
         const credited = earnCredit(usedName);
         if (credited) {
           playTaDaSound();
+          const creditsEl = document.getElementById('import-credits-display');
+          if (creditsEl) creditsEl.textContent = `Credits: ${getCredits()}`;
           setTimeout(() => {
             const newTotal = getCredits();
             showGalleryCreditFlash(`🪙 Credit Earned!\n(${newTotal} total)`);
@@ -3252,8 +3254,10 @@ async function applyMultiplePresets() {
       }
       if (totalNewCredits > 0) {
         playTaDaSound();
-        const newTotal = getCredits();
+        const creditsEl = document.getElementById('import-credits-display');
+        if (creditsEl) creditsEl.textContent = `Credits: ${getCredits()}`;
         setTimeout(() => {
+          const newTotal = getCredits();
           showGalleryCreditFlash(`🪙 ${totalNewCredits > 1 ? totalNewCredits + ' Credits' : 'Credit'} Earned!\n(${newTotal} total)`);
         }, 300);
       }
@@ -3686,7 +3690,7 @@ async function checkForPresetsUpdates() {
     // Check for updated or new presets
     for (const jsonPreset of jsonPresets) {
       const existing = importedPresets.find(p => p.name === jsonPreset.name);
-      if (!existing || existing.message !== jsonPreset.message) {
+      if (!existing || presetsAreDifferent(existing, jsonPreset)) {
         hasUpdates = true;
         break;
       }
@@ -3720,7 +3724,7 @@ async function recheckForUpdates() {
     let stillHasUpdates = false;
     for (const jsonPreset of jsonPresets) {
       const existing = importedPresets.find(p => p.name === jsonPreset.name);
-      if (!existing || existing.message !== jsonPreset.message) {
+      if (!existing || presetsAreDifferent(existing, jsonPreset)) {
         stillHasUpdates = true;
         break;
       }
@@ -6678,7 +6682,7 @@ const TOUR_STEPS = [
   { section: 'Tips and Advanced', title: '📶 Offline Queue', body: 'If you take photos and the program goes offline - no worries - photos queue automatically and may be synced to the rabbit hole once your connection returns. The queue count shows on the screen.' },
   { section: 'Tips and Advanced', title: '🔁 Reset Database', body: 'The nuclear option in Settings. Wipes all custom presets and settings. Only imported presets from the library remain. Use only if something is seriously broken.' },
   { section: 'Tips and Advanced', title: '💀 Content Filter Error', body: 'If you go into your rabbit hole and you receive a content filter image error, this happens because AI is quirky. The beauty of Magic Kamera is you can reprompt. Keep trying until successful.' },
-  { section: 'Tips and Advanced', title: '↑↓ Jump Navigation', body: 'In the setting or areas in the program with presets, clicking the up/down arrows once will move to the next section/page.  If you double click on the up/down arrow, it will jump to the top/bottom of the list.' },
+  { section: 'Tips and Advanced', title: '↑↓ Jump Navigation', body: 'In areas with presets, clicking the up/down arrows once moves one page. Double-clicking jumps to the next or previous letter of the alphabet within that section (favorites and non-favorites are navigated separately). Triple-clicking jumps all the way to the top or bottom of the list.' },
   { section: 'Troubleshooting', title: '❌ Camera Access Denied', body: 'This error will appear at the bottom of your main camera screen if you do not have any active presets, either imported or made with the preset builder.' },
   { section: 'Done!', title: '🎉 Tour Complete!', body: 'That\'s Magic Kamera. Now go make magic! This tour or the text tutorial in this menu is here if you need a refresher. If you come across The One Ron G, The One Hashtag Cyber or The One Rabbit Jesus, tell them you enjoy this program.' },
 ];
@@ -11150,48 +11154,140 @@ window.addEventListener('load', () => {
 
   const jumpToTopBtn = document.getElementById('jump-to-top');
   if (jumpToTopBtn) {
-    let menuUpTapTimer = null;
+    let menuUpTimer = null;
+    let menuUpCount = 0;
     jumpToTopBtn.addEventListener('click', () => {
-      if (menuUpTapTimer) {
-        // Double-tap: jump to very top
-        clearTimeout(menuUpTapTimer);
-        menuUpTapTimer = null;
-        jumpToTopOfMenu();
-      } else {
-        menuUpTapTimer = setTimeout(() => {
-          menuUpTapTimer = null;
+      menuUpCount++;
+      if (menuUpTimer) clearTimeout(menuUpTimer);
+      menuUpTimer = setTimeout(() => {
+        menuUpTimer = null;
+        const count = menuUpCount;
+        menuUpCount = 0;
+        const scrollContainer = document.querySelector('.styles-menu-scroll-container');
+        if (count === 1) {
           // Single-tap: scroll up one page
-          const scrollContainer = document.querySelector('.styles-menu-scroll-container');
           if (scrollContainer) {
             scrollContainer.scrollTop = Math.max(0, scrollContainer.scrollTop - scrollContainer.clientHeight);
+            const listEl = document.getElementById('menu-styles-list');
+            if (listEl) {
+              const allItems = Array.from(listEl.querySelectorAll('.style-item'));
+              const cRect = scrollContainer.getBoundingClientRect();
+              let firstIdx = 0;
+              for (let ii = 0; ii < allItems.length; ii++) {
+                if (allItems[ii].getBoundingClientRect().top >= cRect.top - 5) { firstIdx = ii; break; }
+              }
+              currentMenuIndex = firstIdx;
+              updateMenuSelection();
+            }
           }
-        }, 300);
-      }
+        } else if (count === 2) {
+          // Double-tap: jump to previous letter within the same section (favorites or non-favorites)
+          if (!scrollContainer) return;
+          const list = document.getElementById('menu-styles-list');
+          if (!list) return;
+          const items = Array.from(list.querySelectorAll('.style-item'));
+          if (items.length === 0) return;
+          const containerTop = scrollContainer.getBoundingClientRect().top;
+          let currentIdx = 0;
+          items.forEach((item, i) => {
+            if (item.getBoundingClientRect().top < containerTop + 10) currentIdx = i;
+          });
+          const currentName = ((items[currentIdx].querySelector('.style-name') || {}).textContent || '').trim();
+          const currentLetter = stripAccents(currentName).toUpperCase().charAt(0);
+          const currentIsFav = isFavoriteStyle(currentName);
+          for (let i = currentIdx - 1; i >= 0; i--) {
+            const nm = ((items[i].querySelector('.style-name') || {}).textContent || '').trim();
+            if (isFavoriteStyle(nm) !== currentIsFav) break;
+            const letter = stripAccents(nm).toUpperCase().charAt(0);
+            if (letter !== currentLetter) {
+              const targetLetter = letter;
+              let firstOfLetter = i;
+              while (firstOfLetter > 0) {
+                const prevNm = ((items[firstOfLetter - 1].querySelector('.style-name') || {}).textContent || '').trim();
+                if (isFavoriteStyle(prevNm) !== currentIsFav) break;
+                if (stripAccents(prevNm).toUpperCase().charAt(0) !== targetLetter) break;
+                firstOfLetter--;
+              }
+              const targetTop = items[firstOfLetter].getBoundingClientRect().top - scrollContainer.getBoundingClientRect().top + scrollContainer.scrollTop;
+      scrollContainer.scrollTo({ top: targetTop, behavior: 'smooth' });
+      currentMenuIndex = firstOfLetter;
+      items.forEach(item => item.classList.remove('menu-selected'));
+      items[firstOfLetter].classList.add('menu-selected');
+      return;
+    }
+  }
+} else {
+  // Triple-tap: jump to very top
+  jumpToTopOfMenu();
+        }
+      }, 300);
     });
   }
 
   const jumpToBottomBtn = document.getElementById('jump-to-bottom');
   if (jumpToBottomBtn) {
-    let menuDownTapTimer = null;
+    let menuDownTimer = null;
+    let menuDownCount = 0;
     jumpToBottomBtn.addEventListener('click', () => {
-      if (menuDownTapTimer) {
-        // Double-tap: jump to very bottom
-        clearTimeout(menuDownTapTimer);
-        menuDownTapTimer = null;
-        jumpToBottomOfMenu();
-      } else {
-        menuDownTapTimer = setTimeout(() => {
-          menuDownTapTimer = null;
+      menuDownCount++;
+      if (menuDownTimer) clearTimeout(menuDownTimer);
+      menuDownTimer = setTimeout(() => {
+        menuDownTimer = null;
+        const count = menuDownCount;
+        menuDownCount = 0;
+        const scrollContainer = document.querySelector('.styles-menu-scroll-container');
+        if (count === 1) {
           // Single-tap: scroll down one page
-          const scrollContainer = document.querySelector('.styles-menu-scroll-container');
           if (scrollContainer) {
             scrollContainer.scrollTop = Math.min(
               scrollContainer.scrollHeight - scrollContainer.clientHeight,
               scrollContainer.scrollTop + scrollContainer.clientHeight
             );
+            const listEl = document.getElementById('menu-styles-list');
+            if (listEl) {
+              const allItems = Array.from(listEl.querySelectorAll('.style-item'));
+              const cRect = scrollContainer.getBoundingClientRect();
+              let firstIdx = 0;
+              for (let ii = 0; ii < allItems.length; ii++) {
+                if (allItems[ii].getBoundingClientRect().top >= cRect.top - 5) { firstIdx = ii; break; }
+              }
+              currentMenuIndex = firstIdx;
+              updateMenuSelection();
+            }
           }
-        }, 300);
-      }
+        } else if (count === 2) {
+          // Double-tap: jump to next letter within the same section (favorites or non-favorites)
+          if (!scrollContainer) return;
+          const list = document.getElementById('menu-styles-list');
+          if (!list) return;
+          const items = Array.from(list.querySelectorAll('.style-item'));
+          if (items.length === 0) return;
+          const containerTop = scrollContainer.getBoundingClientRect().top;
+          let currentIdx = 0;
+          items.forEach((item, i) => {
+            if (item.getBoundingClientRect().top < containerTop + 10) currentIdx = i;
+          });
+          const currentName = ((items[currentIdx].querySelector('.style-name') || {}).textContent || '').trim();
+          const currentLetter = stripAccents(currentName).toUpperCase().charAt(0);
+          const currentIsFav = isFavoriteStyle(currentName);
+          for (let i = currentIdx + 1; i < items.length; i++) {
+            const nm = ((items[i].querySelector('.style-name') || {}).textContent || '').trim();
+            if (isFavoriteStyle(nm) !== currentIsFav) break;
+            const letter = stripAccents(nm).toUpperCase().charAt(0);
+            if (letter !== currentLetter) {
+              const targetTop = items[i].getBoundingClientRect().top - scrollContainer.getBoundingClientRect().top + scrollContainer.scrollTop;
+              scrollContainer.scrollTo({ top: targetTop, behavior: 'smooth' });
+              currentMenuIndex = i;
+              items.forEach(item => item.classList.remove('menu-selected'));
+              items[i].classList.add('menu-selected');
+              return;
+            }
+          }
+        } else {
+          // Triple-tap: jump to very bottom
+          jumpToBottomOfMenu();
+        }
+      }, 300);
     });
   }
   
@@ -12136,62 +12232,143 @@ window.addEventListener('load', () => {
   
   const visiblePresetsJumpUp = document.getElementById('visible-presets-jump-up');
   if (visiblePresetsJumpUp) {
-    let vpUpTapTimer = null;
+    let vpUpTimer = null;
+    let vpUpCount = 0;
     visiblePresetsJumpUp.addEventListener('click', () => {
-      if (vpUpTapTimer) {
-        // Double-tap: jump to very top
-        clearTimeout(vpUpTapTimer);
-        vpUpTapTimer = null;
-        currentVisiblePresetsIndex = 0;
-        updateVisiblePresetsSelection();
-      } else {
-        vpUpTapTimer = setTimeout(() => {
-          vpUpTapTimer = null;
+      vpUpCount++;
+      if (vpUpTimer) clearTimeout(vpUpTimer);
+      vpUpTimer = setTimeout(() => {
+        vpUpTimer = null;
+        const count = vpUpCount;
+        vpUpCount = 0;
+        const submenu = document.getElementById('visible-presets-submenu');
+        const container = submenu ? submenu.querySelector('.submenu-list') : null;
+        if (count === 1) {
           // Single-tap: page up
-          const submenu = document.getElementById('visible-presets-submenu');
-          if (submenu) {
-            const container = submenu.querySelector('.submenu-list');
-            if (container) {
-              container.scrollTop = Math.max(0, container.scrollTop - container.clientHeight);
+          if (container) {
+            container.scrollTop = Math.max(0, container.scrollTop - container.clientHeight);
+            const listEl = document.getElementById('visible-presets-list');
+            if (listEl) {
+              const allItems = Array.from(listEl.querySelectorAll('.style-item'));
+              const cRect = container.getBoundingClientRect();
+              let firstIdx = 0;
+              for (let ii = 0; ii < allItems.length; ii++) {
+                if (allItems[ii].getBoundingClientRect().top >= cRect.top - 5) { firstIdx = ii; break; }
+              }
+              currentVisiblePresetsIndex = firstIdx;
+              updateVisiblePresetsSelection();
             }
           }
-        }, 300);
-      }
+        } else if (count === 2) {
+          // Double-tap: jump to previous letter (purely alphabetical, no sections)
+          const list = document.getElementById('visible-presets-list');
+          if (!list || !container) return;
+          const items = Array.from(list.querySelectorAll('.style-item'));
+          if (items.length === 0) return;
+          const containerTop = container.getBoundingClientRect().top;
+          let currentIdx = 0;
+          items.forEach((item, i) => {
+            if (item.getBoundingClientRect().top < containerTop + 10) currentIdx = i;
+          });
+          const currentName = ((items[currentIdx].querySelector('.style-name') || {}).textContent || '').trim();
+          const currentLetter = stripAccents(currentName).toUpperCase().charAt(0);
+          for (let i = currentIdx - 1; i >= 0; i--) {
+            const nm = ((items[i].querySelector('.style-name') || {}).textContent || '').trim();
+            const letter = stripAccents(nm).toUpperCase().charAt(0);
+            if (letter !== currentLetter) {
+              const targetLetter = letter;
+              let firstOfLetter = i;
+              while (firstOfLetter > 0) {
+                const prevNm = ((items[firstOfLetter - 1].querySelector('.style-name') || {}).textContent || '').trim();
+                if (stripAccents(prevNm).toUpperCase().charAt(0) !== targetLetter) break;
+                firstOfLetter--;
+              }
+              const targetTop = items[firstOfLetter].getBoundingClientRect().top - container.getBoundingClientRect().top + container.scrollTop;
+              container.scrollTo({ top: targetTop, behavior: 'smooth' });
+              currentVisiblePresetsIndex = firstOfLetter;
+              items.forEach(item => item.classList.remove('menu-selected'));
+              items[firstOfLetter].classList.add('menu-selected');
+              return;
+            }
+          }
+        } else {
+          // Triple-tap: jump to very top
+          currentVisiblePresetsIndex = 0;
+          updateVisiblePresetsSelection();
+        }
+      }, 300);
     });
   }
 
   const visiblePresetsJumpDown = document.getElementById('visible-presets-jump-down');
   if (visiblePresetsJumpDown) {
-    let vpDownTapTimer = null;
+    let vpDownTimer = null;
+    let vpDownCount = 0;
     visiblePresetsJumpDown.addEventListener('click', () => {
-      if (vpDownTapTimer) {
-        // Double-tap: jump to very bottom
-        clearTimeout(vpDownTapTimer);
-        vpDownTapTimer = null;
-        const list = document.getElementById('visible-presets-list');
-        if (list) {
-          const items = list.querySelectorAll('.style-item');
-          if (items.length > 0) {
-            currentVisiblePresetsIndex = items.length - 1;
-            updateVisiblePresetsSelection();
-          }
-        }
-      } else {
-        vpDownTapTimer = setTimeout(() => {
-          vpDownTapTimer = null;
+      vpDownCount++;
+      if (vpDownTimer) clearTimeout(vpDownTimer);
+      vpDownTimer = setTimeout(() => {
+        vpDownTimer = null;
+        const count = vpDownCount;
+        vpDownCount = 0;
+        const submenu = document.getElementById('visible-presets-submenu');
+        const container = submenu ? submenu.querySelector('.submenu-list') : null;
+        if (count === 1) {
           // Single-tap: page down
-          const submenu = document.getElementById('visible-presets-submenu');
-          if (submenu) {
-            const container = submenu.querySelector('.submenu-list');
-            if (container) {
-              container.scrollTop = Math.min(
-                container.scrollHeight - container.clientHeight,
-                container.scrollTop + container.clientHeight
-              );
+          if (container) {
+            container.scrollTop = Math.min(
+              container.scrollHeight - container.clientHeight,
+              container.scrollTop + container.clientHeight
+            );
+            const listEl = document.getElementById('visible-presets-list');
+            if (listEl) {
+              const allItems = Array.from(listEl.querySelectorAll('.style-item'));
+              const cRect = container.getBoundingClientRect();
+              let firstIdx = 0;
+              for (let ii = 0; ii < allItems.length; ii++) {
+                if (allItems[ii].getBoundingClientRect().top >= cRect.top - 5) { firstIdx = ii; break; }
+              }
+              currentVisiblePresetsIndex = firstIdx;
+              updateVisiblePresetsSelection();
             }
           }
-        }, 300);
-      }
+        } else if (count === 2) {
+          // Double-tap: jump to next letter (purely alphabetical, no sections)
+          const list = document.getElementById('visible-presets-list');
+          if (!list || !container) return;
+          const items = Array.from(list.querySelectorAll('.style-item'));
+          if (items.length === 0) return;
+          const containerTop = container.getBoundingClientRect().top;
+          let currentIdx = 0;
+          items.forEach((item, i) => {
+            if (item.getBoundingClientRect().top < containerTop + 10) currentIdx = i;
+          });
+          const currentName = ((items[currentIdx].querySelector('.style-name') || {}).textContent || '').trim();
+          const currentLetter = stripAccents(currentName).toUpperCase().charAt(0);
+          for (let i = currentIdx + 1; i < items.length; i++) {
+            const nm = ((items[i].querySelector('.style-name') || {}).textContent || '').trim();
+            const letter = stripAccents(nm).toUpperCase().charAt(0);
+            if (letter !== currentLetter) {
+              const targetTop = items[i].getBoundingClientRect().top - container.getBoundingClientRect().top + container.scrollTop;
+              container.scrollTo({ top: targetTop, behavior: 'smooth' });
+              currentVisiblePresetsIndex = i;
+              items.forEach(item => item.classList.remove('menu-selected'));
+              items[i].classList.add('menu-selected');
+              return;
+            }
+          }
+        } else {
+          // Triple-tap: jump to very bottom
+          const list = document.getElementById('visible-presets-list');
+          if (list) {
+            const items = list.querySelectorAll('.style-item');
+            if (items.length > 0) {
+              currentVisiblePresetsIndex = items.length - 1;
+              updateVisiblePresetsSelection();
+            }
+          }
+        }
+      }, 300);
     });
   }
 
@@ -13543,56 +13720,110 @@ const result = await presetImporter.import();
   
   const presetSelectorJumpUp = document.getElementById('preset-selector-jump-up');
   if (presetSelectorJumpUp) {
-    let psUpTapTimer = null;
+    let psUpTimer = null;
+    let psUpCount = 0;
     presetSelectorJumpUp.addEventListener('click', () => {
-      if (psUpTapTimer) {
-        // Double-tap: jump to very top
-        clearTimeout(psUpTapTimer);
-        psUpTapTimer = null;
-        currentPresetIndex_Gallery = 0;
-        updatePresetSelection();
-      } else {
-        psUpTapTimer = setTimeout(() => {
-          psUpTapTimer = null;
+      psUpCount++;
+      if (psUpTimer) clearTimeout(psUpTimer);
+      psUpTimer = setTimeout(() => {
+        psUpTimer = null;
+        const count = psUpCount;
+        psUpCount = 0;
+        const container = document.querySelector('.preset-list');
+        if (count === 1) {
           // Single-tap: page up
-          const container = document.querySelector('.preset-list');
           if (container) {
             container.scrollTop = Math.max(0, container.scrollTop - container.clientHeight);
           }
-        }, 300);
-      }
+        } else if (count === 2) {
+          // Double-tap: jump to previous letter within the same section (favorites or non-favorites)
+          const list = document.getElementById('preset-list');
+          if (!list) return;
+          const items = Array.from(list.querySelectorAll('.preset-item'));
+          if (items.length === 0) return;
+          const idx = Math.max(0, Math.min(currentPresetIndex_Gallery, items.length - 1));
+          const currentName = ((items[idx].querySelector('.preset-name') || {}).textContent || '').trim();
+          const currentLetter = stripAccents(currentName).toUpperCase().charAt(0);
+          const currentIsFav = isFavoriteStyle(currentName);
+          for (let i = idx - 1; i >= 0; i--) {
+            const nm = ((items[i].querySelector('.preset-name') || {}).textContent || '').trim();
+            if (isFavoriteStyle(nm) !== currentIsFav) break;
+            const letter = stripAccents(nm).toUpperCase().charAt(0);
+            if (letter !== currentLetter) {
+              const targetLetter = letter;
+              let firstOfLetter = i;
+              while (firstOfLetter > 0) {
+                const prevNm = ((items[firstOfLetter - 1].querySelector('.preset-name') || {}).textContent || '').trim();
+                if (isFavoriteStyle(prevNm) !== currentIsFav) break;
+                if (stripAccents(prevNm).toUpperCase().charAt(0) !== targetLetter) break;
+                firstOfLetter--;
+              }
+              currentPresetIndex_Gallery = firstOfLetter;
+              updatePresetSelection();
+              return;
+            }
+          }
+        } else {
+          // Triple-tap: jump to very top
+          currentPresetIndex_Gallery = 0;
+          updatePresetSelection();
+        }
+      }, 300);
     });
   }
 
   const presetSelectorJumpDown = document.getElementById('preset-selector-jump-down');
   if (presetSelectorJumpDown) {
-    let psDownTapTimer = null;
+    let psDownTimer = null;
+    let psDownCount = 0;
     presetSelectorJumpDown.addEventListener('click', () => {
-      if (psDownTapTimer) {
-        // Double-tap: jump to very bottom
-        clearTimeout(psDownTapTimer);
-        psDownTapTimer = null;
-        const list = document.getElementById('preset-list');
-        if (list) {
-          const items = list.querySelectorAll('.preset-item');
-          if (items.length > 0) {
-            currentPresetIndex_Gallery = items.length - 1;
-            updatePresetSelection();
-          }
-        }
-      } else {
-        psDownTapTimer = setTimeout(() => {
-          psDownTapTimer = null;
+      psDownCount++;
+      if (psDownTimer) clearTimeout(psDownTimer);
+      psDownTimer = setTimeout(() => {
+        psDownTimer = null;
+        const count = psDownCount;
+        psDownCount = 0;
+        const container = document.querySelector('.preset-list');
+        if (count === 1) {
           // Single-tap: page down
-          const container = document.querySelector('.preset-list');
           if (container) {
             container.scrollTop = Math.min(
               container.scrollHeight - container.clientHeight,
               container.scrollTop + container.clientHeight
             );
           }
-        }, 300);
-      }
+        } else if (count === 2) {
+          // Double-tap: jump to next letter within the same section (favorites or non-favorites)
+          const list = document.getElementById('preset-list');
+          if (!list) return;
+          const items = Array.from(list.querySelectorAll('.preset-item'));
+          if (items.length === 0) return;
+          const idx = Math.max(0, Math.min(currentPresetIndex_Gallery, items.length - 1));
+          const currentName = ((items[idx].querySelector('.preset-name') || {}).textContent || '').trim();
+          const currentLetter = stripAccents(currentName).toUpperCase().charAt(0);
+          const currentIsFav = isFavoriteStyle(currentName);
+          for (let i = idx + 1; i < items.length; i++) {
+            const nm = ((items[i].querySelector('.preset-name') || {}).textContent || '').trim();
+            if (isFavoriteStyle(nm) !== currentIsFav) break;
+            const letter = stripAccents(nm).toUpperCase().charAt(0);
+            if (letter !== currentLetter) {
+              currentPresetIndex_Gallery = i;
+              updatePresetSelection();
+              return;
+            }
+          }
+        } else {
+          // Triple-tap: jump to very bottom
+          const list = document.getElementById('preset-list');
+          if (list) {
+            const items = list.querySelectorAll('.preset-item');
+            if (items.length > 0) {
+              currentPresetIndex_Gallery = items.length - 1;
+              updatePresetSelection();
+            }
+          }
+        }
+      }, 300);
     });
   }
 
