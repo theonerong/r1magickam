@@ -468,58 +468,92 @@
       "1980S"
     ],
     "message": "Take a picture and transform the subject into a vintage 1970s/1980s-style action figure.\n\nThe subject should appear as a real molded plastic toy figure from the late 1970s or 1980s, packaged or photographed like an authentic collectible from the era.\n\nTransform the subject into a fully designed retro toy character while preserving recognizable facial features, hairstyle, expression, and overall identity.\n\nThe figure should feature era-authentic toy manufacturing details including molded plastic seams, limited articulation points, slightly stiff pose construction, painted facial details, glossy plastic surfaces, injection-molded accessories, and authentic retro toy proportions.\n\nThe selected option MUST completely determine the franchise aesthetic, sculpting style, toy engineering, accessories, packaging graphics, typography, color palette, world-building, materials, proportions, and environment.\n\nThe figure must immediately and unmistakably resemble a toy released as part of the selected franchise or toy line rather than a generic action figure.\n\nUse realistic toy photography or authentic toy packaging presentation.\n\nSTYLE:\n• Authentic 1970s/1980s toy manufacturing aesthetic\n• Molded plastic appearance\n• Visible articulation joints\n• Slightly exaggerated heroic toy proportions\n• Retro packaging graphics\n• Vintage print textures\n• Toy store photography lighting\n• Era-authentic materials and colors\n• Realistic collectible presentation\n• Slight manufacturing imperfections\n• Plastic shine and painted details\n• Blister pack or boxed presentation optional\n• Strong franchise-specific visual identity\n• Accurate toy-line sculpting language\n• Authentic retro accessory styling\n\nPACKAGING ELEMENTS:\n• Vintage toy logo typography matching the selected franchise aesthetic\n• Retro explosion graphics and bursts\n• Character name plate using flavor text\n• Accessory callouts\n• \"Collect Them All\" style graphics\n• Faux age stickers or price labels\n• Weathered cardboard print texture\n• Clear blister packaging reflections\n• Franchise-appropriate backing card artwork\n• Era-accurate package design language\n\nTOY DETAILS:\n• Plastic sculpted hair and clothing\n• Painted eyes and facial features\n• Molded boots, gloves, armor, belts, or uniforms\n• Toy-scale accessories\n• Action pose or heroic stance\n• Simplified toy anatomy\n• Era-authentic sculpt limitations\n• Visible toy joints at shoulders, hips, elbows, or knees\n• Accessories and costumes matching the selected franchise\n• Accurate toy-line proportions and sculpting style\n\nENVIRONMENT:\n• Vintage toy commercial look OR\n• Toy package photography OR\n• Bedroom floor / toy shelf display OR\n• 1980s catalog-style presentation\n\nThe final image should genuinely resemble a real collectible action figure manufactured and sold during the late 1970s or 1980s.",
-    "options": [
-    {
-      "id": "001",
-      "text": "G.I. Joe military character"
+    "optionGroups": [
+      {
+      "id": "FRANCHISE",
+      "label": "Toy Line / Franchise",
+      "options": [
+        {
+          "id": "001",
+          "text": "G.I. Joe military character"
+        },
+        {
+          "id": "002",
+          "text": "Masters of the Universe character"
+        },
+        {
+          "id": "003",
+          "text": "Star Wars character"
+        },
+        {
+          "id": "004",
+          "text": "Mego superhero character"
+        },
+        {
+          "id": "005",
+          "text": "Transformers character"
+        },
+        {
+          "id": "006",
+          "text": "Teenage Mutant Ninja Turtles character"
+        },
+        {
+          "id": "007",
+          "text": "Thundercats character"
+        },
+        {
+          "id": "008",
+          "text": "Wrestling superstar character"
+        },
+        {
+          "id": "009",
+          "text": "A-Team character"
+        },
+        {
+          "id": "010",
+          "text": "Post-apocalyptic Mad Max road warrior toy"
+        },
+        {
+          "id": "011",
+          "text": "1980s cyberpunk police or bounty hunter figure"
+        },
+        {
+          "id": "012",
+          "text": "Retro ninja or martial arts action figure"
+        }
+      ],
+      "randomizeOptions": true
     },
     {
-      "id": "002",
-      "text": "Masters of the Universe character"
-    },
-    {
-      "id": "003",
-      "text": "Star Wars character"
-    },
-    {
-      "id": "004",
-      "text": "Mego superhero character"
-    },
-    {
-      "id": "005",
-      "text": "Transformers character"
-    },
-    {
-      "id": "006",
-      "text": "Teenage Mutant Ninja Turtles character"
-    },
-    {
-      "id": "007",
-      "text": "Thundercats character"
-    },
-    {
-      "id": "008",
-      "text": "Wrestling superstar character"
-    },
-    {
-      "id": "009",
-      "text": "A-Team character"
-    },
-    {
-      "id": "010",
-      "text": "Post-apocalyptic Mad Max road warrior toy"
-    },
-    {
-      "id": "011",
-      "text": "1980s cyberpunk police or bounty hunter figure"
-    },
-    {
-      "id": "012",
-      "text": "Retro ninja or martial arts action figure"
+      "id": "PRESENTATION",
+      "label": "Presentation Style",
+      "options": [
+        {
+          "id": "101",
+          "text": "Factory-sealed original packaging with authentic blister card presentation"
+        },
+        {
+          "id": "102",
+          "text": "Loose action figure being actively played with by a human child"
+        },
+        {
+          "id": "103",
+          "text": "Loose action figure posed on a bedroom floor with scattered toys"
+        },
+        {
+          "id": "104",
+          "text": "Vintage toy shelf collector display"
+        },
+        {
+          "id": "105",
+          "text": "1980s toy catalog or commercial photography presentation"
+        }
+      ],
+      "randomizeOptions": true
     }
     ],
     "randomizeOptions": true,
-    "additionalInstructions": "OPTION ENFORCEMENT:\n\n• The selected option MUST determine the exact toy line aesthetic, sculpting style, proportions, packaging, accessories, colors, materials, typography, world-building, and visual identity\n• The final figure must immediately and unmistakably resemble an authentic figure from the selected franchise or toy line\n• Do not create generic action figures\n• Do not blend multiple toy lines together\n• The selected option MUST dominate the final result\n• The packaging, accessories, costume design, proportions, and sculpting language must all match the selected franchise aesthetic\n• Each option must produce dramatically different toy engineering and visual style\n\nANTI-CHEAT:\n\n• Do not simply place the subject's real face onto a toy body\n• The entire subject must be transformed into an actual molded toy sculpt\n• Do not create photoreal humans holding toys\n• Do not use modern collectible figure aesthetics\n• Avoid ultra-detailed modern toy rendering\n• Do not generate generic plastic dolls\n• Do not ignore the selected franchise visual language\n• Do not use the same packaging design across multiple options\n• The subject must look fully manufactured as part of the selected toy line\n\nFRANCHISE ACCURACY:\n\n• Star Wars option should resemble the Kenner toys\n• Masters of the Universe option should resemble oversized muscular fantasy toy sculpts\n• Transformers option should resemble mechanical robot toy engineering\n• TMNT option should resemble colorful mutant toy aesthetics\n• Mego option should resemble cloth-costume superhero toys\n• Thundercats option should resemble fantasy sci-fi heroic toy designs\n• G.I. Joe option should resemble military commando toy realism\n• Each franchise must have its own distinct packaging, proportions, sculpting, colors, and accessories\n\nQUALITY:\n\n• Authentic retro toy realism\n• Accurate 1970s/1980s manufacturing style\n• Convincing plastic materials\n• Strong nostalgic packaging design\n• Realistic vintage collectible appearance\n• Strong franchise recognition\n• Convincing retro toy photography\n\nFINAL RESULT:\nThe final image should convincingly resemble a real 1970s or 1980s action figure toy line featuring the transformed subject as an authentic retro collectible from the selected franchise complete with era-accurate sculpting, packaging, accessories, proportions, colors, toy engineering, and authentic vintage toy photography aesthetics."
+    "additionalInstructions": "OPTION ENFORCEMENT:\n\n• The selected option MUST determine the exact toy line aesthetic, sculpting style, proportions, packaging, accessories, colors, materials, typography, world-building, and visual identity\n• The final figure must immediately and unmistakably resemble an authentic figure from the selected franchise or toy line\n• Do not create generic action figures\n• Do not blend multiple toy lines together\n• The selected option MUST dominate the final result\n• The packaging, accessories, costume design, proportions, and sculpting language must all match the selected franchise aesthetic\n• Each option must produce dramatically different toy engineering and visual style\n• The selected presentation option MUST determine whether the figure is packaged, displayed, or actively being played with\n• Do not randomly switch presentation styles\n• Do not show packaged figures when the selected option specifies active play\n• Do not show children or human interaction unless the selected presentation option explicitly requires it\n\nANTI-CHEAT:\n\n• Do not simply place the subject's real face onto a toy body\n• The entire subject must be transformed into an actual molded toy sculpt\n• Do not create photoreal humans holding toys unless the selected presentation option specifically requires active play\n• Do not use modern collectible figure aesthetics\n• Avoid ultra-detailed modern toy rendering\n• Do not generate generic plastic dolls\n• Do not ignore the selected franchise visual language\n• Do not use the same packaging design across multiple options\n• The subject must look fully manufactured as part of the selected toy line\n\nFRANCHISE ACCURACY:\n\n• Star Wars option should resemble the Kenner toys\n• Masters of the Universe option should resemble oversized muscular fantasy toy sculpts\n• Transformers option should resemble mechanical robot toy engineering\n• TMNT option should resemble colorful mutant toy aesthetics\n• Mego option should resemble cloth-costume superhero toys\n• Thundercats option should resemble fantasy sci-fi heroic toy designs\n• G.I. Joe option should resemble military commando toy realism\n• Each franchise must have its own distinct packaging, proportions, sculpting, colors, and accessories\n\nQUALITY:\n\n• Authentic retro toy realism\n• Accurate 1970s/1980s manufacturing style\n• Convincing plastic materials\n• Strong nostalgic packaging design\n• Realistic vintage collectible appearance\n• Strong franchise recognition\n• Convincing retro toy photography\n\nFINAL RESULT:\nThe final image should convincingly resemble a real 1970s or 1980s action figure toy line featuring the transformed subject as an authentic retro collectible from the selected franchise complete with era-accurate sculpting, packaging, accessories, proportions, colors, toy engineering, and authentic vintage toy photography aesthetics."
   },
   {
     "name": "ADVENTURE TIME",
@@ -29814,31 +29848,31 @@
       "REALISM",
       "COMPARISON"
     ],
-    "message": "Take a picture and create a realistic before-and-after comparison image showing the subject at two different body weights.\n\nLAYOUT REQUIREMENT (CRITICAL):\n• The image MUST be split into two equal vertical panels\n• LEFT PANEL: BEFORE (heavier version of the subject)\n• RIGHT PANEL: AFTER (thinner version of the subject)\n• Same subject, same pose, same clothing style\n• Camera angle, lighting,\nTRANSFORM THE SUBJECT (THINNER VERSION):\n• Subject must remain clearly recognizable\n• Weight loss must be anatomically realistic\n• Reduced mass in face, neck, torso, arms, hips, and legs\n• Maintain healthy proportions — no extreme emaciation\n• Facial structure preserved\n• No exaggerated gauntness or distortion\n\nCLOTHING & FIT:\n• Clothing must realistically fit slimmer body\n• Fabric may drape more loosely\n• No floating clothing or clipping\n• Same outfit style on both sides\n\nSTYLE & TONE:\n• Photorealistic\n• Neutral, clinical comparison tone\n• No humor, no judgment\n• Looks like a professional transformation comparison\n\nCOMPOSITION & FRAMING:\n• Full-body view in both panels\n• Entire subject visible head to toe\n• FULL image visible with all four corners present\n• No cropping or zoom differences between panels",
+    "message": "Take a picture and create a realistic before-and-after comparison image showing the subject at two different body weights.\n\nLAYOUT REQUIREMENT (CRITICAL):\n• The image MUST be split into two equal vertical panels\n• LEFT PANEL: BEFORE (the subject EXACTLY as they currently appear in the original uploaded image)\n• RIGHT PANEL: AFTER (thinner version of the SAME subject)\n• The BEFORE panel must preserve the subject's real current body size, proportions, facial fullness, posture, and physical appearance from the original image\n• Do not alter, idealize, slim down, enlarge, or reinterpret the BEFORE panel\n• The BEFORE panel should function as the accurate visual baseline taken directly from the uploaded subject\n• Same subject, same pose, same clothing style\n• Camera angle, lighting, perspective, framing, lens compression, body position, facial expression, and posture must remain visually consistent between both panels\n\nTRANSFORM THE SUBJECT (THINNER VERSION):\n• Subject must remain clearly recognizable\n• Weight loss must be anatomically realistic\n• Reduced mass in face, neck, torso, arms, hips, and legs\n• Maintain healthy proportions — no extreme emaciation\n• Facial structure preserved\n• No exaggerated gauntness or distortion\n• The AFTER panel must appear as a believable reduced-weight version of the ORIGINAL uploaded subject rather than a different person\n\nCLOTHING & FIT:\n• Clothing must realistically fit slimmer body\n• Fabric may drape more loosely\n• No floating clothing or clipping\n• Same outfit style on both sides\n\nSTYLE & TONE:\n• Photorealistic\n• Neutral, clinical comparison tone\n• No humor, no judgment\n• Looks like a professional transformation comparison\n\nCOMPOSITION & FRAMING:\n• Full-body view in both panels\n• Entire subject visible head to toe\n• FULL image visible with all four corners present\n• No cropping or zoom differences between panels",
     "options": [
-      {
-        "id": "001",
-        "text": "−30 lbs"
-      },
-      {
-        "id": "002",
-        "text": "−50 lbs"
-      },
-      {
-        "id": "003",
-        "text": "−75 lbs"
-      },
-      {
-        "id": "004",
-        "text": "−100 lbs"
-      },
-      {
-        "id": "005",
-        "text": "−125 lbs"
-      }
+    {
+      "id": "001",
+      "text": "−30 lbs"
+    },
+    {
+      "id": "002",
+      "text": "−50 lbs"
+    },
+    {
+      "id": "003",
+      "text": "−75 lbs"
+    },
+    {
+      "id": "004",
+      "text": "−100 lbs"
+    },
+    {
+      "id": "005",
+      "text": "−125 lbs"
+    }
     ],
     "randomizeOptions": true,
-    "additionalInstructions": "FINAL RESULT:\nThe image should present a believable before-and-after comparison where the subject appears heavier on the left and realistically thinner on the right — anatomically accurate, seamlessly staged, and visually consistent."
+    "additionalInstructions": "IDENTITY & BASELINE ENFORCEMENT:\n\n• The uploaded subject's CURRENT appearance MUST be preserved accurately in the BEFORE panel\n• Do not generate a different heavier body type for the BEFORE image\n• Do not modify the uploaded subject's original weight in the BEFORE panel\n• The BEFORE image must closely resemble the real uploaded subject\n• The AFTER image must appear derived directly from the BEFORE image\n• The transformation should feel like the same person photographed before and after weight loss\n\nANTI-CHEAT:\n\n• Do not generate two unrelated people\n• Do not use generic fitness-transformation imagery\n• Do not alter ethnicity, facial identity, age, or body proportions unrelated to weight loss\n• Do not create unrealistic bodybuilder or glamour transformations\n• Do not change hairstyle, clothing style, makeup, camera lens, or lighting between panels\n• Do not create an artificially heavier BEFORE subject than the uploaded original\n\nFINAL RESULT:\nThe image should present a believable before-and-after comparison where the LEFT panel accurately preserves the uploaded subject's ORIGINAL current appearance and the RIGHT panel shows a realistically thinner version of that exact same subject — anatomically accurate, seamlessly staged, and visually consistent."
   },
   {
     "name": "THOMAS THE TANK",
