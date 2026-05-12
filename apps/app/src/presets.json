@@ -30128,55 +30128,55 @@
       "DIRECTOR",
       "WHIMSICAL"
     ],
-    "message": "Take a picture and transform the subject into a character within a Tim Burton film universe.\nTransform the subject to match Tim Burton's signature visual style: pale skin with dark shadows under eyes, exaggerated features, elongated proportions, wild unkempt hair (often black with dramatic styling), dramatic makeup with dark eyes, gothic or quirky costume design with striped patterns, mismatched fabrics, Victorian-inspired clothing, or unusual color combinations (black, white, purple, deep reds).\n\nPlace the subject within an iconic scene from the chosen film with other characters from that movie present. The environment should capture Burton's distinctive aesthetic: twisted architecture, spiraling designs, forced perspective, gothic elements mixed with whimsy, stark contrast between light and shadow, surreal proportions, and his signature color palette.\n\nThe subject should be styled as if they belong in that specific Burton film. Preserve recognizable features while adapting them to Burton's exaggerated, slightly macabre artistic vision.\n\nLighting should be dramatic with strong contrasts - deep shadows, pools of light, moonlit scenes, or that distinctive Burton glow. The atmosphere should feel both whimsical and slightly dark, fantastical yet melancholic.\n\nThe final image should look like an actual still from a Tim Burton film - gothic, whimsical, visually striking, with exaggerated proportions and that unmistakable Burton aesthetic. The subject should be seamlessly integrated into the film's world alongside other iconic characters from that movie.",
+    "message": "Take a picture and transform the subject into a character within a Tim Burton-inspired gothic fantasy film universe.\n\nTransform the subject to match the signature gothic fantasy aesthetic associated with whimsical dark cinema: pale skin with dark shadows under eyes, exaggerated features, elongated proportions, wild unkempt hair, dramatic makeup with dark eyes, gothic or quirky costume design with striped patterns, mismatched fabrics, Victorian-inspired clothing, or unusual color combinations (black, white, purple, deep reds).\n\nPlace the subject within an iconic environment inspired by the selected movie option with recognizable supporting characters from that selected movie naturally present in the scene.\n\nThe environment should capture the distinctive aesthetic: twisted architecture, spiraling designs, forced perspective, gothic elements mixed with whimsy, stark contrast between light and shadow, surreal proportions, and stylized fantasy color palettes.\n\nThe subject should be styled as if they belong in that specific selected movie world. Preserve recognizable features while adapting them to the exaggerated, whimsical gothic fantasy aesthetic.\n\nLighting should be dramatic with strong contrasts - deep shadows, pools of light, moonlit scenes, theatrical lighting, stylized fog, or glowing fantasy illumination. The atmosphere should feel whimsical, cinematic, fantastical, surreal, and slightly melancholic.\n\nThe final image should look like an actual fantasy movie still with gothic whimsy, stylized proportions, cinematic production design, and the subject seamlessly integrated into the selected movie world alongside recognizable characters from that movie.",
     "options": [
-      {
-        "id": "001",
-        "text": "Edward Scissorhands"
-      },
-      {
-        "id": "002",
-        "text": "The Nightmare Before Christmas"
-      },
-      {
-        "id": "003",
-        "text": "Batman"
-      },
-      {
-        "id": "004",
-        "text": "Frankenweenie"
-      },
-      {
-        "id": "005",
-        "text": "Beetlejuice"
-      },
-      {
-        "id": "006",
-        "text": "Big Eyes"
-      },
-      {
-        "id": "007",
-        "text": "Mars Attacks"
-      },
-      {
-        "id": "008",
-        "text": "Corpse Bride"
-      },
-      {
-        "id": "009",
-        "text": "Sleepy Hollow"
-      },
-      {
-        "id": "010",
-        "text": "Charlie and the Chocolate Factory"
-      },
-      {
-        "id": "011",
-        "text": "Sweeney Todd"
-      }
+    {
+      "id": "001",
+      "text": "Edward Scissorhands"
+    },
+    {
+      "id": "002",
+      "text": "The Nightmare Before Christmas"
+    },
+    {
+      "id": "003",
+      "text": "Batman"
+    },
+    {
+      "id": "004",
+      "text": "Frankenweenie"
+    },
+    {
+      "id": "005",
+      "text": "Beetlejuice"
+    },
+    {
+      "id": "006",
+      "text": "Big Eyes"
+    },
+    {
+      "id": "007",
+      "text": "Mars Attacks"
+    },
+    {
+      "id": "008",
+      "text": "Corpse Bride"
+    },
+    {
+      "id": "009",
+      "text": "Sleepy Hollow"
+    },
+    {
+      "id": "010",
+      "text": "Charlie and the Chocolate Factory"
+    },
+    {
+      "id": "011",
+      "text": "Sweeney Todd"
+    }
     ],
     "randomizeOptions": true,
-    "additionalInstructions": ""
+    "additionalInstructions": "OPTION ENFORCEMENT:\n\n• The selected option MUST determine the final environment, setting, supporting characters, costume design, atmosphere, and visual identity\n• Do not ignore the selected option\n• Do not generate unrelated generic scenes\n• Do not blend multiple options together\n• Supporting characters from the selected movie should appear naturally integrated into the scene\n• The architecture, props, lighting, colors, costumes, and environment must match the selected movie aesthetic\n• Each option must produce a dramatically different cinematic world\n\nCONTENT SAFETY & CONSISTENCY:\n\n• Keep the tone fantastical, cinematic, whimsical, and stylized rather than disturbing or graphic\n• Avoid excessive horror imagery, gore, graphic violence, mutilation, or frightening body distortion\n• Avoid realistic blood, torture imagery, or disturbing injury details\n• Stylized gothic fantasy elements are acceptable, but the image should remain cinematic and visually artistic\n• Preserve recognizable identity while maintaining a fantasy-film appearance\n\nANTI-CHEAT:\n\n• Do not place the subject into a generic dark gothic environment unrelated to the selected movie\n• Do not reuse the same composition for every option\n• Do not ignore the selected supporting characters\n• Do not create a generic Halloween costume aesthetic\n• Do not flatten the image into simple cosplay photography\n• The subject must feel fully integrated into the selected cinematic world\n\nQUALITY:\n\n• Strong cinematic fantasy atmosphere\n• Stylized gothic production design\n• Film-inspired lighting and composition\n• Recognizable movie-inspired environments and characters\n• Seamless subject integration\n\nFINAL RESULT:\nThe image should resemble a cinematic gothic fantasy movie still inspired by the selected option, featuring the transformed subject fully integrated into the stylized world alongside recognizable supporting characters, environments, costumes, and atmosphere associated with that movie."
   },
   {
     "name": "TIME DILATION",
