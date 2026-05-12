@@ -32588,111 +32588,111 @@
       "VIDEO GAME",
       "RETRO"
     ],
-    "message": "Take a picture and transform the subject into an iconic video game character while preserving recognizable features.\nTRANSFORM THE SUBJECT:\n• Subject's face MUST remain recognizable within the character design\n• Match exact art style of the game (pixelated, cel-shaded, realistic, cartoon)\n• Preserve subject's facial features adapted to game's art style\n• Body transformed to character proportions but face stays identifiable\n• Animation-ready pose characteristic of that character\n\nGAME WORLD INTEGRATION:\n• Setting authentic to that video game universe\n• Background, props, effects match the game exactly\n• UI elements if appropriate (health bar, score, HUD)\n• Correct camera perspective for that game type\n• Environmental interaction (standing on platform, in battle, exploring)\n\nART STYLE MATCHING:\n• 8-bit pixel art for retro games (Pac-Man, early Mario)\n• 16-bit sprite style for SNES era\n• Polygonal for N64/PS1 era\n• Cell-shaded for Wind Waker, Borderlands style\n• Realistic for modern AAA titles\n• Blocky for Minecraft\n• Match lighting and rendering of original game\n\nCHARACTER ELEMENTS:\n• Signature costume/outfit\n• Iconic weapons or items\n• Character-specific pose or action\n• Powers or abilities visualized\n• Color palette accurate\n\nSTYLE:\n• Subject looks NATIVELY integrated - not composited\n• Correct proportions for game type\n• Game's graphics quality (retro low-poly or modern high-fidelity)\n• In-game screenshot aesthetic\n• Character selection screen OR gameplay moment",
+    "message": "Take a picture and transform the subject into an iconic video game character while preserving recognizable features.\n\nTransform the subject into the selected video game world and visual style while preserving recognizable facial identity adapted naturally into the game aesthetic.\n\nThe selected option MUST completely determine the character design, world, environment, rendering style, camera perspective, props, costume, animation style, interface elements, supporting characters inspired by the selected game, visual effects, and gameplay atmosphere.\n\nThe subject must appear naturally integrated into a believable gameplay moment or cinematic scene from the selected game universe.\n\nFocus on concrete game-world environments, recognizable gameplay presentation, and accurate visual storytelling instead of generic gaming aesthetics.\n\nTRANSFORM THE SUBJECT:\n• Subject's face MUST remain recognizable within the character design\n• Match exact art style of the selected game\n• Preserve subject's facial features adapted naturally to the game's rendering style\n• Body transformed to character proportions while maintaining recognizable identity\n• Animation-ready pose characteristic of the selected game\n• Costume, posture, and expression must match the selected game universe\n\nGAME WORLD INTEGRATION:\n• Setting authentic to the selected game universe\n• Background, props, effects, architecture, terrain, and atmosphere must match the selected game\n• Supporting characters inspired by the selected game may appear naturally nearby\n• UI elements if appropriate (health bar, score, HUD)\n• Correct camera perspective for that game type\n• Environmental interaction appropriate to the selected game\n\nART STYLE MATCHING:\n• Match the exact rendering aesthetic of the selected game\n• Retro pixel-art games should resemble authentic pixel graphics\n• Polygonal games should resemble authentic low-poly or console-era rendering\n• Stylized games should preserve their signature art direction\n• Modern games should resemble cinematic in-engine rendering\n• Match lighting, textures, shading, materials, and effects of the selected game\n\nCHARACTER ELEMENTS:\n• Signature costume/outfit\n• Iconic weapons or items\n• Character-specific pose or action\n• Powers or abilities visualized\n• Accurate game-specific color palette\n• Franchise-appropriate props and accessories\n\nSTYLE:\n• Subject looks NATIVELY integrated — not composited\n• Correct proportions for selected game\n• Accurate graphics quality for the selected title\n• In-game screenshot aesthetic OR cinematic cutscene aesthetic\n• Strong franchise-specific visual identity\n• Authentic gameplay atmosphere",
     "options": [
-      {
-        "id": "001",
-        "text": "Mario - red cap with M, blue overalls, brown shoes, iconic mustache, Mushroom Kingdom background, jumping pose"
-      },
-      {
-        "id": "002",
-        "text": "Sonic the Hedgehog - blue spiky hair, red shoes, white gloves, speed blur, Green Hill Zone, rings"
-      },
-      {
-        "id": "003",
-        "text": "Lara Croft - dual pistols, tank top, shorts, holsters, tomb raiding, archaeological adventure"
-      },
-      {
-        "id": "004",
-        "text": "Master Chief - full Spartan armor helmet and suit, visor, Halo ring background, futuristic military"
-      },
-      {
-        "id": "005",
-        "text": "Pac-Man - round yellow shape with wedge mouth, dots, ghosts, maze, 8-bit aesthetic"
-      },
-      {
-        "id": "006",
-        "text": "Link (Zelda) - green tunic, pointed hat, Master Sword, Hylian Shield, Triforce, Hyrule landscape"
-      },
-      {
-        "id": "007",
-        "text": "Donkey Kong - brown gorilla, red tie, barrels, construction site, climbing girders"
-      },
-      {
-        "id": "008",
-        "text": "Street Fighter Character - fighting stance, special move energy, vs. screen, health bar, martial arts attire"
-      },
-      {
-        "id": "009",
-        "text": "Minecraft Steve - blocky cubic head and body, pixelated, holding pickaxe, cubic world"
-      },
-      {
-        "id": "010",
-        "text": "Pikachu (Pokémon) - yellow electric mouse, red cheeks, lightning bolt tail, Poké Ball"
-      },
-      {
-        "id": "011",
-        "text": "Mortal Kombat Fighter - martial arts costume, tournament stage, \"FIGHT!\" energy"
-      },
-      {
-        "id": "012",
-        "text": "Samus Aran - Power Suit armor, arm cannon, Metroid atmosphere, space bounty hunter"
-      },
-      {
-        "id": "013",
-        "text": "Mega Man - blue armor, arm cannon, robot aesthetic, Dr. Wily's fortress"
-      },
-      {
-        "id": "014",
-        "text": "Solid Snake - stealth suit, bandana, cardboard box, Metal Gear, tactical espionage"
-      },
-      {
-        "id": "015",
-        "text": "Crash Bandicoot - orange marsupial, spinning, Wumpa fruit, island adventure"
-      },
-      {
-        "id": "016",
-        "text": "Spyro the Dragon - purple dragon, fire breath, gems, fantasy realm"
-      },
-      {
-        "id": "017",
-        "text": "Kratos (God of War) - red war paint, Blades of Chaos, muscular, Greek mythology"
-      },
-      {
-        "id": "018",
-        "text": "Ryu (Street Fighter) - white gi, red headband, hadouken pose, martial artist"
-      },
-      {
-        "id": "019",
-        "text": "Chun-Li - blue qipao dress, spiked bracelets, ox horns hairstyle, powerful legs"
-      },
-      {
-        "id": "020",
-        "text": "Sackboy (LittleBigPlanet) - burlap sack texture, button eyes, zipper mouth, craft aesthetic"
-      },
-      {
-        "id": "021",
-        "text": "Kirby - pink round puffball, simple face, Dream Land, floating"
-      },
-      {
-        "id": "022",
-        "text": "Fox McCloud (Star Fox) - pilot suit, Arwing cockpit, space combat"
-      },
-      {
-        "id": "023",
-        "text": "Cloud Strife (FF7) - spiky blonde hair, Buster Sword, SOLDIER uniform"
-      },
-      {
-        "id": "024",
-        "text": "Ratchet & Clank - lombax with wrench, robot companion, sci-fi weapons"
-      },
-      {
-        "id": "025",
-        "text": "Nathan Drake (Uncharted) - treasure hunter, holster, climbing gear, adventurer"
-      }
+    {
+      "id": "001",
+      "text": "Mario — red cap with M, blue overalls, brown shoes, Mushroom Kingdom environment, colorful platforming world, coins, pipes, brick blocks, side-scrolling gameplay atmosphere"
+    },
+    {
+      "id": "002",
+      "text": "Sonic the Hedgehog — blue spiky character design, red shoes, Green Hill Zone environment, loop-de-loops, rings, checkerboard terrain, speed effects, bright arcade-style visuals"
+    },
+    {
+      "id": "003",
+      "text": "Lara Croft — archaeological ruins, jungle temples, climbing gear, dual pistols, cinematic adventure atmosphere, ancient artifacts, dramatic exploration environment"
+    },
+    {
+      "id": "004",
+      "text": "Master Chief — futuristic Spartan armor, Halo ring structures, military sci-fi battlefield, holographic HUD, alien environments, cinematic shooter atmosphere"
+    },
+    {
+      "id": "005",
+      "text": "Pac-Man — retro maze environment, glowing pellets, ghost characters nearby, arcade cabinet aesthetic, neon pixel graphics, classic 1980s gameplay presentation"
+    },
+    {
+      "id": "006",
+      "text": "Link (Zelda) — green tunic, fantasy kingdom, Master Sword, Hylian Shield, medieval villages, magical forests, temples, epic fantasy-adventure atmosphere"
+    },
+    {
+      "id": "007",
+      "text": "Donkey Kong — construction girders, barrels, arcade platforming environment, retro industrial setting, colorful arcade graphics, climbing gameplay atmosphere"
+    },
+    {
+      "id": "008",
+      "text": "Street Fighter character — tournament arena, dramatic fighting pose, versus screen energy, arcade fighting-game interface, martial arts atmosphere, stylized combat effects"
+    },
+    {
+      "id": "009",
+      "text": "Minecraft Steve — fully cubic block-built character design, voxel world, pixelated textures, crafting environment, block terrain, survival-game atmosphere"
+    },
+    {
+      "id": "010",
+      "text": "Pikachu-inspired Pokémon world — colorful anime-style environment, Poké Ball elements, stylized battle arena, lightning effects, playful adventure atmosphere"
+    },
+    {
+      "id": "011",
+      "text": "Mortal Kombat fighter — tournament stage, dramatic martial arts stance, fantasy-combat atmosphere, arcade fighting presentation, stylized arena environment"
+    },
+    {
+      "id": "012",
+      "text": "Samus Aran — Power Suit armor, sci-fi alien corridors, futuristic bounty hunter atmosphere, glowing technology, cinematic space-action environment"
+    },
+    {
+      "id": "013",
+      "text": "Mega Man — bright retro robot aesthetic, side-scrolling action-stage environment, robotic enemies, energy effects, colorful platform-game atmosphere"
+    },
+    {
+      "id": "014",
+      "text": "Solid Snake — stealth-action atmosphere, military-industrial environment, tactical espionage presentation, shadows, surveillance equipment, cinematic stealth gameplay"
+    },
+    {
+      "id": "015",
+      "text": "Crash Bandicoot — colorful tropical island environment, cartoon platforming world, crates, jungle pathways, exaggerated animation style, energetic gameplay atmosphere"
+    },
+    {
+      "id": "016",
+      "text": "Spyro the Dragon — fantasy world, glowing gems, magical ruins, colorful dragon-flight atmosphere, whimsical adventure environment"
+    },
+    {
+      "id": "017",
+      "text": "God of War-inspired warrior — mythological fantasy environment, ancient ruins, dramatic cinematic lighting, epic action atmosphere, legendary warrior aesthetic"
+    },
+    {
+      "id": "018",
+      "text": "Ryu-inspired martial artist — traditional fighting arena, arcade fighting-game presentation, martial arts atmosphere, stylized combat energy effects"
+    },
+    {
+      "id": "019",
+      "text": "Chun-Li-inspired fighter — colorful arcade fighting-stage environment, martial arts action atmosphere, stylized combat visuals, tournament presentation"
+    },
+    {
+      "id": "020",
+      "text": "Sackboy-inspired craft world — handmade fabric textures, stitched materials, craft-table environment, whimsical platforming atmosphere, miniature handcrafted world"
+    },
+    {
+      "id": "021",
+      "text": "Kirby-inspired fantasy world — colorful floating environment, whimsical dreamlike landscape, soft cartoon atmosphere, playful platform-game visuals"
+    },
+    {
+      "id": "022",
+      "text": "Fox McCloud-inspired pilot — space-combat cockpit, sci-fi squadron atmosphere, futuristic flight controls, arcade space-battle presentation"
+    },
+    {
+      "id": "023",
+      "text": "Cloud Strife-inspired fantasy warrior — oversized sword, futuristic fantasy cityscape, dramatic RPG atmosphere, cinematic role-playing game presentation"
+    },
+    {
+      "id": "024",
+      "text": "Ratchet & Clank-inspired sci-fi adventurer — futuristic gadgets, colorful alien worlds, stylized animated sci-fi atmosphere, inventive weaponry and technology"
+    },
+    {
+      "id": "025",
+      "text": "Nathan Drake-inspired treasure hunter — cinematic ruins, climbing sequences, jungle temples, adventurous exploration atmosphere, action-adventure realism"
+    }
     ],
     "randomizeOptions": true,
-    "additionalInstructions": "FINAL RESULT:\nThe image should show the subject transformed into the iconic video game character with their facial features recognizable but adapted to the game's art style, appearing as if they are genuinely that character rendered in that game's engine and world."
+    "additionalInstructions": "OPTION ENFORCEMENT:\n\n• The selected option MUST determine the final environment, setting, rendering style, gameplay atmosphere, and visual identity\n• Do not ignore the selected option\n• Do not generate unrelated generic gaming scenes\n• Do not blend multiple options together\n• Supporting characters inspired by the selected game may appear naturally nearby\n• The environment, interface elements, props, costumes, effects, and camera perspective must match the selected game aesthetic\n• Each option must create a dramatically different game world and rendering style\n\nSCENE CONSTRUCTION:\n\n• Build ONE specific gameplay moment or cinematic scene matching the selected option\n• The environment must dominate the composition\n• Use concrete game-world objects, architecture, effects, vehicles, enemies, items, or terrain\n• Include recognizable gameplay presentation appropriate to the selected game\n\nCHARACTER INTEGRATION:\n\n• Subject must feel physically present inside the selected game world\n• Preserve recognizable facial identity adapted naturally into the selected game art style\n• Subject posture, costume, expression, and proportions should match the selected game universe\n\nVISUAL STYLE:\n\n• Accurate game-specific rendering style\n• Strong franchise recognition\n• Cinematic or gameplay realism appropriate to the selected game\n• Authentic interface, lighting, textures, and atmosphere\n• Distinct visual identity for every option\n\nCONTENT SAFETY & CONSISTENCY:\n\n• Keep the tone cinematic, adventurous, stylized, and game-like rather than graphic or disturbing\n• Avoid graphic gore, realistic injury detail, torture imagery, or disturbing violence\n• Stylized combat or fantasy action is acceptable when appropriate to the selected game\n• Maintain recognizable identity while preserving a polished video-game aesthetic\n\nANTI-CHEAT:\n\n• Do not create generic gamer cosplay photography\n• Do not simply place the subject into a random game background\n• Do not reuse the same composition for different options\n• Do not ignore the selected game's visual language\n• Do not flatten the image into generic fantasy or sci-fi art\n• The subject must feel fully transformed into the selected game world and rendering style\n\nQUALITY:\n\n• Highly recognizable game-inspired environments\n• Strong gameplay storytelling\n• Accurate franchise-specific visual design\n• Seamless subject integration\n• Rich environmental detail\n• Clear scene readability\n\nFINAL RESULT:\nThe image should convincingly resemble a real gameplay screenshot or cinematic scene from the selected video game world featuring the transformed subject naturally integrated into the franchise-specific environment, rendering style, atmosphere, characters, props, and gameplay presentation."
   },
   {
     "name": "VIDEO GAME COVER ART",
