@@ -23516,14 +23516,9 @@
     ],
     "message": "Take a picture and transform the subject into a retro pinball machine backglass portrait.\n\nThe final image must look like highly illustrated vintage pinball cabinet artwork featuring the subject prominently.\n\nMASTER PROMPT RULE:\n• If a master prompt specifies theme or humor — PRIORITIZE and USE that information\n",
     "randomizeOptions": true,
-    "optionGroups": [
-    {
-      "title": "ART STYLE",
-      "options": [
+    "options": [
         { "id": "001", "text": "1950s Classic — bright painted pinball art" },
         { "id": "002", "text": "1970s Wild — louder arcade graphics" }
-      ]
-    }
     ],
     "additionalInstructions": "• Subject must appear as central illustrated figure on pinball backglass\n• Add bumpers, score lights, chrome rails, ball paths, and arcade graphics\n• Rich saturated retro arcade colors required"
   },
