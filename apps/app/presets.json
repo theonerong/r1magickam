@@ -30119,7 +30119,7 @@
     "randomizeOptions": false,
     "additionalInstructions": ""
   },
-  {
+    {
     "name": "TIM BURTON MOVIE",
     "category": [
       "MOVIES",
@@ -30128,55 +30128,55 @@
       "DIRECTOR",
       "WHIMSICAL"
     ],
-    "message": "Take a picture and transform the subject into a character within a Tim Burton-inspired gothic fantasy film universe.\n\nTransform the subject to match the signature gothic fantasy aesthetic associated with whimsical dark cinema: pale skin with dark shadows under eyes, exaggerated features, elongated proportions, wild unkempt hair, dramatic makeup with dark eyes, gothic or quirky costume design with striped patterns, mismatched fabrics, Victorian-inspired clothing, or unusual color combinations (black, white, purple, deep reds).\n\nPlace the subject within an iconic environment inspired by the selected movie option with recognizable supporting characters from that selected movie naturally present in the scene.\n\nThe environment should capture the distinctive aesthetic: twisted architecture, spiraling designs, forced perspective, gothic elements mixed with whimsy, stark contrast between light and shadow, surreal proportions, and stylized fantasy color palettes.\n\nThe subject should be styled as if they belong in that specific selected movie world. Preserve recognizable features while adapting them to the exaggerated, whimsical gothic fantasy aesthetic.\n\nLighting should be dramatic with strong contrasts - deep shadows, pools of light, moonlit scenes, theatrical lighting, stylized fog, or glowing fantasy illumination. The atmosphere should feel whimsical, cinematic, fantastical, surreal, and slightly melancholic.\n\nThe final image should look like an actual fantasy movie still with gothic whimsy, stylized proportions, cinematic production design, and the subject seamlessly integrated into the selected movie world alongside recognizable characters from that movie.",
+    "message": "Take a picture and place the subject into a cinematic gothic fantasy movie scene inspired by the selected Tim Burton film.\n\nUse stylized gothic production design, whimsical dark-fantasy atmosphere, dramatic silhouettes, twisted architecture, exaggerated shapes, theatrical lighting, surreal environmental design, striped patterns, Victorian-inspired wardrobe, stylized hair, pale makeup, dramatic eyes, fog, moonlight, forced perspective, spiraling structures, and highly recognizable fantasy-film environments.\n\nThe selected movie option MUST completely determine the environment, mood, props, wardrobe, supporting characters, architecture, creatures, colors, scene composition, and visual storytelling.\n\nThe subject must appear naturally integrated into a believable cinematic scene from the selected movie world.\n\nFocus on concrete fantasy-film environments and visually readable cinematic moments instead of vague gothic descriptions.\n\nEvery image should resemble a real fantasy movie still captured during a specific moment from the selected film.",
     "options": [
     {
       "id": "001",
-      "text": "Edward Scissorhands"
+      "text": "Edward Scissorhands — subject standing in a pastel suburban neighborhood beside topiary sculptures with Edward nearby, gothic mansion looming on the hill, dramatic cloudy sky, trimmed hedges, and whimsical suburban contrast"
     },
     {
       "id": "002",
-      "text": "The Nightmare Before Christmas"
+      "text": "The Nightmare Before Christmas — subject walking through Halloween Town surrounded by crooked buildings, spiral hill, glowing jack-o-lanterns, Sally and Jack nearby, theatrical moonlight, and spooky whimsical atmosphere"
     },
     {
       "id": "003",
-      "text": "Batman"
+      "text": "Batman — subject inside dark gothic Gotham City with towering statues, cathedral architecture, rain-slick streets, Batmobile nearby, dramatic noir lighting, and stylized comic-book atmosphere"
     },
     {
       "id": "004",
-      "text": "Frankenweenie"
+      "text": "Frankenweenie — subject inside a black-and-white suburban science-lab bedroom with Sparky nearby, electrical equipment, stitched creations, lightning outside the window, and retro monster-movie atmosphere"
     },
     {
       "id": "005",
-      "text": "Beetlejuice"
+      "text": "Beetlejuice — subject inside the Maitland house or surreal afterlife waiting room with bizarre props, green-glowing effects, striped suit aesthetic, exaggerated set design, and chaotic supernatural comedy atmosphere"
     },
     {
       "id": "006",
-      "text": "Big Eyes"
+      "text": "Big Eyes — subject inside a 1950s art studio or gallery with oversized portrait paintings, warm vintage lighting, retro fashion, polished suburban interiors, and emotionally dramatic atmosphere"
     },
     {
       "id": "007",
-      "text": "Mars Attacks"
+      "text": "Mars Attacks — subject standing in a retro-futuristic alien invasion scene with Martians nearby, flying saucers overhead, glowing ray guns, smoke, destroyed suburban details, and exaggerated sci-fi chaos"
     },
     {
       "id": "008",
-      "text": "Corpse Bride"
+      "text": "Corpse Bride — subject inside a candlelit gothic underworld ballroom with skeletal wedding guests, blue moonlit fog, Victorian wedding clothing, twisted trees, and melancholic fantasy atmosphere"
     },
     {
       "id": "009",
-      "text": "Sleepy Hollow"
+      "text": "Sleepy Hollow — subject walking through a fog-covered colonial village with crooked dead trees, lantern light, horse-drawn carriages, gothic church architecture, and eerie autumn atmosphere"
     },
     {
       "id": "010",
-      "text": "Charlie and the Chocolate Factory"
+      "text": "Charlie and the Chocolate Factory — subject inside an enormous whimsical candy factory with colorful confectionery machinery, glowing candy rivers, exaggerated industrial fantasy design, and eccentric candy-world atmosphere"
     },
     {
       "id": "011",
-      "text": "Sweeney Todd"
+      "text": "Sweeney Todd — subject inside a grim Victorian London barbershop with candlelight, fogged windows, dark wood interiors, industrial city rooftops, dramatic shadows, and gothic theatrical atmosphere"
     }
     ],
     "randomizeOptions": true,
-    "additionalInstructions": "OPTION ENFORCEMENT:\n\n• The selected option MUST determine the final environment, setting, supporting characters, costume design, atmosphere, and visual identity\n• Do not ignore the selected option\n• Do not generate unrelated generic scenes\n• Do not blend multiple options together\n• Supporting characters from the selected movie should appear naturally integrated into the scene\n• The architecture, props, lighting, colors, costumes, and environment must match the selected movie aesthetic\n• Each option must produce a dramatically different cinematic world\n\nCONTENT SAFETY & CONSISTENCY:\n\n• Keep the tone fantastical, cinematic, whimsical, and stylized rather than disturbing or graphic\n• Avoid excessive horror imagery, gore, graphic violence, mutilation, or frightening body distortion\n• Avoid realistic blood, torture imagery, or disturbing injury details\n• Stylized gothic fantasy elements are acceptable, but the image should remain cinematic and visually artistic\n• Preserve recognizable identity while maintaining a fantasy-film appearance\n\nANTI-CHEAT:\n\n• Do not place the subject into a generic dark gothic environment unrelated to the selected movie\n• Do not reuse the same composition for every option\n• Do not ignore the selected supporting characters\n• Do not create a generic Halloween costume aesthetic\n• Do not flatten the image into simple cosplay photography\n• The subject must feel fully integrated into the selected cinematic world\n\nQUALITY:\n\n• Strong cinematic fantasy atmosphere\n• Stylized gothic production design\n• Film-inspired lighting and composition\n• Recognizable movie-inspired environments and characters\n• Seamless subject integration\n\nFINAL RESULT:\nThe image should resemble a cinematic gothic fantasy movie still inspired by the selected option, featuring the transformed subject fully integrated into the stylized world alongside recognizable supporting characters, environments, costumes, and atmosphere associated with that movie."
+    "additionalInstructions": "SCENE CONSTRUCTION (MANDATORY):\n\n• Build ONE specific cinematic scene matching the selected option\n• The environment must dominate the composition\n• Use concrete physical objects and recognizable locations\n• Include believable props, costumes, architecture, creatures, and supporting characters appropriate to the selected film\n\nOPTION ENFORCEMENT:\n\n• The selected option MUST determine the final environment, setting, and visual identity\n• Do not ignore the selected option\n• Do not generate unrelated generic scenes\n• Do not blend multiple options together\n• Supporting characters from the selected movie should appear naturally nearby\n• Each option must create a dramatically different cinematic world\n\nCHARACTER INTEGRATION:\n\n• Subject must feel physically present inside the scene\n• Supporting characters from the selected movie may appear naturally nearby\n• Subject clothing, makeup, posture, and expression should match the environment\n• Preserve recognizable identity while adapting the subject into the fantasy-film world\n\nVISUAL STYLE:\n\n• Dramatic gothic cinematic lighting\n• Stylized fantasy production design\n• Strong silhouettes and exaggerated shapes\n• Atmospheric fog and environmental depth\n• Practical light sources and theatrical glow\n• Film-still realism with whimsical fantasy aesthetics\n\nCONTENT SAFETY & CONSISTENCY:\n\n• Keep the tone cinematic, whimsical, stylized, and fantastical rather than graphic or disturbing\n• Avoid realistic gore, blood splatter, mutilation, torture imagery, or horror violence\n• Avoid frightening body horror or disturbing facial distortion\n• Maintain a visually artistic fantasy-film tone\n\nANTI-CHEAT:\n\n• Do not generate generic gothic Halloween scenes\n• Do not reuse the same twisted-house composition for every option\n• Do not ignore the selected movie environment\n• Do not flatten the image into cosplay photography\n• Do not create vague dark fantasy backgrounds with no recognizable storytelling\n• The environment and supporting characters must clearly identify the selected movie\n\nQUALITY:\n\n• Highly recognizable movie-inspired environments\n• Strong cinematic storytelling\n• Distinct fantasy-film production design\n• Seamless subject integration\n• Rich atmospheric detail\n• Clear scene readability"
   },
   {
     "name": "TIME DILATION",
@@ -33584,56 +33584,56 @@
       "SYMMETRICAL",
       "DIRECTOR"
     ],
-    "message": "Take a picture and transform it into a Wes Anderson film scene with perfect symmetry, pastel colors, and whimsical composition.\nCORE WES ANDERSON STYLE (CRITICAL):\n• Perfect symmetry - subject centered in frame\n• One-point perspective composition\n• Flat frontal camera angle\n• Pastel color palette\n• Meticulous production design\n• Whimsical storybook aesthetic\n• Deadpan expression and pose\n• Every detail intentional and designed\n\nCOMPOSITION:\n• Centered symmetry - subject in exact middle\n• Horizontal or vertical axis of symmetry\n• Flat frontal angle (not dramatic perspectives)\n• Grid-like organization\n• Balanced left and right sides\n• Architectural framing\n• Subject looking directly at camera\n\nCOLOR PALETTE:\n• Pastel colors (soft pinks, blues, yellows, greens)\n• Muted earth tones\n• Vintage color grading\n• Film-specific palette:\n  - Grand Budapest: Pink, purple, red\n  - Tenenbaums: Brown, tan, burgundy\n  - Moonrise Kingdom: Yellow, green, khaki\n  - Darjeeling: Orange, brown, red\n  - Life Aquatic: Blue, red, tan\n• Carefully coordinated color schemes\n• Nostalgic film stock look\n\nPRODUCTION DESIGN:\n• Meticulously designed sets\n• Vintage props and furniture\n• Pattern and texture (wallpaper, fabrics)\n• Handmade aesthetic\n• Miniature model quality\n• Everything color-coordinated\n• Retro technology and objects\n\nCOSTUME:\n• Carefully coordinated outfits\n• Vintage or period-appropriate clothing\n• Color-matched to set design\n• Film-specific iconic costumes:\n  - Grand Budapest: Purple concierge uniform\n  - Tenenbaums: Adidas tracksuit, headband\n  - Moonrise Kingdom: Scout uniform\n  - Life Aquatic: Red beanie, Speedo\n  - Rushmore: Prep school blazer\n\nTYPOGRAPHY & GRAPHICS:\n• Futura font (Anderson's signature typeface)\n• Title cards with film/chapter information\n• Hand-drawn maps or diagrams\n• Vintage labels and signage\n• Needlepoint or embroidered text\n• Clean sans-serif titles\n\nLIGHTING:\n• Soft even lighting\n• Natural daylight quality\n• No dramatic shadows\n• Slightly overexposed/bright\n• Storybook lighting\n• Warm nostalgic glow\n\nCHARACTER POSE:\n• Deadpan expression\n• Looking directly at camera\n• Formal posed portrait\n• Symmetrical body position\n• Slight melancholy or whimsy\n• Understated emotion\n\nSETTING DETAILS:\n• Miniature or diorama quality\n• Vintage architecture\n• Specific time period (1950s-1970s usually)\n• European or exotic locations\n• Handcrafted aesthetic\n• Every object carefully placed\n\nWES ANDERSON QUIRKS:\n• Slow motion walks\n• Perfectly packed luggage\n• Maps and diagrams\n• Letters and correspondence\n• Vintage technology (rotary phones, typewriters)\n• Model trains or vehicles\n• Detailed miniatures\n\nTONE:\n• Whimsical melancholy\n• Nostalgic and bittersweet\n• Quirky family dynamics\n• Coming-of-age themes\n• Deadpan humor\n• Storybook fairy tale quality\n\nCINEMATOGRAPHY:\n• Aspect ratio: often 1.85:1 or Academy ratio\n• Static camera (minimal movement)\n• Tableau-style framing\n• Planimetric composition (flat depth)\n• Film grain texture\n• Vintage film stock aesthetic",
+    "message": "Take a picture and place the subject into a cinematic Wes Anderson-style movie scene.\n\nUse perfect symmetry, centered composition, one-point perspective, flat frontal camera angles, pastel color palettes, meticulous production design, vintage props, whimsical storybook atmosphere, carefully coordinated costumes, and highly controlled visual organization.\n\nThe selected movie option MUST completely determine the environment, mood, architecture, props, wardrobe, typography, supporting characters, color palette, vehicles, and scene composition.\n\nThe subject must appear naturally integrated into a believable cinematic scene from the selected movie world.\n\nFocus on concrete handcrafted cinematic environments and visually readable story moments instead of vague whimsical descriptions.\n\nEvery image should resemble a real Wes Anderson film still captured during a specific moment from the selected film.",
     "options": [
-      {
-        "id": "001",
-        "text": "The Grand Budapest Hotel (2014) - pink hotel, concierge, European elegance, 1930s"
-      },
-      {
-        "id": "002",
-        "text": "The Royal Tenenbaums (2001) - New York townhouse, family portrait, striped wallpaper, tracksuits"
-      },
-      {
-        "id": "003",
-        "text": "Moonrise Kingdom (2012) - 1960s New England island, scout camp, young love, nautical"
-      },
-      {
-        "id": "004",
-        "text": "The Darjeeling Limited (2007) - Indian train, brothers, luggage, spiritual journey"
-      },
-      {
-        "id": "005",
-        "text": "Fantastic Mr. Fox (2009) - stop-motion, autumn colors, countryside, animal characters"
-      },
-      {
-        "id": "006",
-        "text": "The Life Aquatic (2004) - red beanie, boat, underwater, oceanographic expedition"
-      },
-      {
-        "id": "007",
-        "text": "Rushmore (1998) - prep school, theater, Max Fischer, bees, Vietnam"
-      },
-      {
-        "id": "008",
-        "text": "The French Dispatch (2021) - magazine office, 1960s France, anthology stories, journalism"
-      },
-      {
-        "id": "009",
-        "text": "Isle of Dogs (2018) - stop-motion, Japan, dogs, trash island, dystopian"
-      },
-      {
-        "id": "010",
-        "text": "Bottle Rocket (1996) - yellow jumpsuit, heist, Southwest, criminal friends"
-      },
-      {
-        "id": "011",
-        "text": "Asteroid City (2023) - desert, 1950s, mid-century modern, alien encounter"
-      }
+    {
+      "id": "001",
+      "text": "The Grand Budapest Hotel — subject standing inside an elegant pink European hotel lobby with concierge desks, bellhops, vintage luggage carts, symmetrical staircases, chandeliers, pastries, and refined 1930s atmosphere"
+    },
+    {
+      "id": "002",
+      "text": "The Royal Tenenbaums — subject inside a richly decorated New York townhouse with striped wallpaper, old bookshelves, framed portraits, tennis outfits, wooden furniture, family members nearby, and melancholic vintage atmosphere"
+    },
+    {
+      "id": "003",
+      "text": "Moonrise Kingdom — subject standing at a 1960s scout campsite or coastal island setting with khaki scout uniforms, tents, binoculars, maps, portable radios, and nostalgic young-adventure atmosphere"
+    },
+    {
+      "id": "004",
+      "text": "The Darjeeling Limited — subject seated inside a colorful Indian passenger train surrounded by patterned luggage, ornate train interiors, warm sunlight, brothers nearby, and spiritual-travel atmosphere"
+    },
+    {
+      "id": "005",
+      "text": "Fantastic Mr. Fox — subject inside a handcrafted autumn countryside environment with rustic tunnels, corduroy textures, vintage farm props, warm orange foliage, and whimsical stop-motion-inspired atmosphere"
+    },
+    {
+      "id": "006",
+      "text": "The Life Aquatic — subject aboard a retro oceanographic research vessel with blue uniforms, red beanies, submarine equipment, underwater maps, ocean-view windows, and nautical expedition atmosphere"
+    },
+    {
+      "id": "007",
+      "text": "Rushmore — subject standing inside an elite prep school auditorium or classroom with blazers, school banners, vintage theater props, extracurricular displays, and eccentric academic atmosphere"
+    },
+    {
+      "id": "008",
+      "text": "The French Dispatch — subject inside a stylized 1960s French magazine newsroom with typewriters, cigarettes, reporters, layout boards, bicycles, handwritten notes, and artistic journalism atmosphere"
+    },
+    {
+      "id": "009",
+      "text": "Isle of Dogs — subject inside a stylized Japanese dystopian environment with industrial trash landscapes, mechanical equipment, weathered signage, dogs nearby, symmetrical urban composition, and handcrafted stop-motion atmosphere"
+    },
+    {
+      "id": "010",
+      "text": "Bottle Rocket — subject inside a quirky Southwestern roadside motel or diner with yellow jumpsuits, retro cars, motel signage, amateur-heist atmosphere, and warm Texas color palette"
+    },
+    {
+      "id": "011",
+      "text": "Asteroid City — subject standing inside a symmetrical 1950s desert roadside attraction with mid-century modern buildings, pastel signage, observatory equipment, vintage automobiles, and retro sci-fi desert atmosphere"
+    }
     ],
     "randomizeOptions": true,
-    "additionalInstructions": "FINAL RESULT:\nThe image should be perfectly symmetrical with the subject centered, in a meticulously designed Wes Anderson film environment with pastel colors, vintage props, deadpan expression, flat frontal camera angle, and that distinctive whimsical storybook aesthetic specific to the selected film."
-  },
+    "additionalInstructions": "SCENE CONSTRUCTION (MANDATORY):\n\n• Build ONE specific cinematic scene matching the selected option\n• The environment must dominate the composition\n• Use concrete physical objects and recognizable locations\n• Include believable props, costumes, architecture, signage, vehicles, and supporting characters appropriate to the selected film\n\nOPTION ENFORCEMENT:\n\n• The selected option MUST determine the final environment, setting, and visual identity\n• Do not ignore the selected option\n• Do not generate unrelated generic scenes\n• Do not blend multiple options together\n• Supporting characters from the selected movie should appear naturally nearby\n• Each option must create a dramatically different cinematic world\n\nCHARACTER INTEGRATION:\n\n• Subject must feel physically present inside the scene\n• Supporting characters from the selected movie may appear naturally nearby\n• Subject clothing, posture, hairstyle, and expression should match the environment\n• Preserve recognizable identity while adapting the subject into the cinematic world\n\nVISUAL STYLE:\n\n• Perfect symmetry and centered framing\n• Flat frontal camera angles\n• One-point perspective composition\n• Pastel and coordinated color palettes\n• Meticulous handcrafted production design\n• Soft cinematic lighting\n• Vintage film-stock atmosphere\n• Film-still realism with whimsical storybook aesthetics\n\nCONTENT SAFETY & CONSISTENCY:\n\n• Keep the tone cinematic, whimsical, nostalgic, artistic, and emotionally grounded\n• Avoid graphic violence, disturbing imagery, horror elements, or excessive chaos\n• Maintain a visually artistic handcrafted-film tone\n\nANTI-CHEAT:\n\n• Do not generate generic pastel hipster scenes\n• Do not reuse the same symmetrical hallway composition for every option\n• Do not ignore the selected movie environment\n• Do not flatten the image into cosplay photography\n• Do not create vague whimsical backgrounds with no recognizable storytelling\n• The environment and supporting characters must clearly identify the selected movie\n\nQUALITY:\n\n• Highly recognizable movie-inspired environments\n• Strong cinematic storytelling\n• Distinct handcrafted production design\n• Seamless subject integration\n• Rich environmental detail\n• Clear scene readability\n• Authentic Wes Anderson visual symmetry\n\nFINAL RESULT:\nThe image should resemble a perfectly symmetrical Wes Anderson film still featuring the subject fully integrated into the selected movie world with handcrafted production design, centered composition, coordinated pastel colors, recognizable environments, supporting characters, vintage props, and whimsical cinematic storytelling."
+    },
   {
     "name": "WESTERN",
     "category": [
