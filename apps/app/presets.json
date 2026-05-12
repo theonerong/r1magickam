@@ -30132,51 +30132,51 @@
     "options": [
     {
       "id": "001",
-      "text": "Edward Scissorhands — subject standing in a pastel suburban neighborhood beside topiary sculptures with Edward nearby, gothic mansion looming on the hill, dramatic cloudy sky, trimmed hedges, and whimsical suburban contrast"
+      "text": "Edward Scissorhands — subject standing in a pastel suburban neighborhood beside elaborate hedge sculptures with an eccentric scissor-handed inventor character nearby, towering gothic mansion on the hill, dramatic cloudy sky, whimsical suburban contrast, stylized fantasy suburbia"
     },
     {
       "id": "002",
-      "text": "The Nightmare Before Christmas — subject walking through Halloween Town surrounded by crooked buildings, spiral hill, glowing jack-o-lanterns, Sally and Jack nearby, theatrical moonlight, and spooky whimsical atmosphere"
+      "text": "The Nightmare Before Christmas — subject walking through a whimsical Halloween-style fantasy town surrounded by crooked buildings, spiral hill landscape, glowing pumpkins, rag-doll character and tall skeleton gentleman nearby, theatrical moonlight, playful spooky atmosphere"
     },
     {
       "id": "003",
-      "text": "Batman — subject inside dark gothic Gotham City with towering statues, cathedral architecture, rain-slick streets, Batmobile nearby, dramatic noir lighting, and stylized comic-book atmosphere"
+      "text": "Batman — subject inside a stylized gothic comic-book city with towering statues, cathedral-inspired architecture, rain-slick streets, retro-futuristic black vehicle nearby, dramatic noir lighting, exaggerated comic-book atmosphere"
     },
     {
       "id": "004",
-      "text": "Frankenweenie — subject inside a black-and-white suburban science-lab bedroom with Sparky nearby, electrical equipment, stitched creations, lightning outside the window, and retro monster-movie atmosphere"
+      "text": "Frankenweenie — subject inside a stylized black-and-white suburban science-lab bedroom with stitched cartoon-style dog nearby, electrical equipment, retro science gadgets, lightning outside the window, classic monster-movie atmosphere"
     },
     {
       "id": "005",
-      "text": "Beetlejuice — subject inside the Maitland house or surreal afterlife waiting room with bizarre props, green-glowing effects, striped suit aesthetic, exaggerated set design, and chaotic supernatural comedy atmosphere"
+      "text": "Beetlejuice — subject inside a surreal haunted-house-inspired waiting room filled with bizarre props, glowing green lighting effects, striped-suit aesthetic, exaggerated set design, chaotic supernatural comedy atmosphere"
     },
     {
       "id": "006",
-      "text": "Big Eyes — subject inside a 1950s art studio or gallery with oversized portrait paintings, warm vintage lighting, retro fashion, polished suburban interiors, and emotionally dramatic atmosphere"
+      "text": "Big Eyes — subject inside a 1950s-inspired art studio or gallery with oversized portrait paintings, warm vintage lighting, retro fashion, polished suburban interiors, emotionally dramatic atmosphere"
     },
     {
       "id": "007",
-      "text": "Mars Attacks — subject standing in a retro-futuristic alien invasion scene with Martians nearby, flying saucers overhead, glowing ray guns, smoke, destroyed suburban details, and exaggerated sci-fi chaos"
+      "text": "Mars Attacks — subject standing in a retro-futuristic alien-invasion scene with stylized Martian-inspired characters nearby, flying saucers overhead, glowing sci-fi devices, smoke, exaggerated retro science-fiction chaos"
     },
     {
       "id": "008",
-      "text": "Corpse Bride — subject inside a candlelit gothic underworld ballroom with skeletal wedding guests, blue moonlit fog, Victorian wedding clothing, twisted trees, and melancholic fantasy atmosphere"
+      "text": "Corpse Bride — subject inside a candlelit fantasy underworld ballroom with whimsical skeletal wedding guests, blue moonlit fog, Victorian wedding clothing, twisted trees, melancholic fantasy atmosphere"
     },
     {
       "id": "009",
-      "text": "Sleepy Hollow — subject walking through a fog-covered colonial village with crooked dead trees, lantern light, horse-drawn carriages, gothic church architecture, and eerie autumn atmosphere"
+      "text": "Sleepy Hollow — subject walking through a fog-covered colonial fantasy village with crooked dead trees, lantern light, horse-drawn carriages, gothic church architecture, eerie autumn atmosphere"
     },
     {
       "id": "010",
-      "text": "Charlie and the Chocolate Factory — subject inside an enormous whimsical candy factory with colorful confectionery machinery, glowing candy rivers, exaggerated industrial fantasy design, and eccentric candy-world atmosphere"
+      "text": "Charlie and the Chocolate Factory — subject inside an enormous whimsical candy factory with colorful confectionery machinery, glowing candy rivers, exaggerated industrial fantasy design, eccentric candy-maker nearby, playful fantasy atmosphere"
     },
     {
       "id": "011",
-      "text": "Sweeney Todd — subject inside a grim Victorian London barbershop with candlelight, fogged windows, dark wood interiors, industrial city rooftops, dramatic shadows, and gothic theatrical atmosphere"
+      "text": "Sweeney Todd — subject inside a dramatic Victorian London barbershop-inspired environment with candlelight, fogged windows, dark wood interiors, industrial rooftops, theatrical shadows, gothic stage-play atmosphere"
     }
     ],
     "randomizeOptions": true,
-    "additionalInstructions": "SCENE CONSTRUCTION (MANDATORY):\n\n• Build ONE specific cinematic scene matching the selected option\n• The environment must dominate the composition\n• Use concrete physical objects and recognizable locations\n• Include believable props, costumes, architecture, creatures, and supporting characters appropriate to the selected film\n\nOPTION ENFORCEMENT:\n\n• The selected option MUST determine the final environment, setting, and visual identity\n• Do not ignore the selected option\n• Do not generate unrelated generic scenes\n• Do not blend multiple options together\n• Supporting characters from the selected movie should appear naturally nearby\n• Each option must create a dramatically different cinematic world\n\nCHARACTER INTEGRATION:\n\n• Subject must feel physically present inside the scene\n• Supporting characters from the selected movie may appear naturally nearby\n• Subject clothing, makeup, posture, and expression should match the environment\n• Preserve recognizable identity while adapting the subject into the fantasy-film world\n\nVISUAL STYLE:\n\n• Dramatic gothic cinematic lighting\n• Stylized fantasy production design\n• Strong silhouettes and exaggerated shapes\n• Atmospheric fog and environmental depth\n• Practical light sources and theatrical glow\n• Film-still realism with whimsical fantasy aesthetics\n\nCONTENT SAFETY & CONSISTENCY:\n\n• Keep the tone cinematic, whimsical, stylized, and fantastical rather than graphic or disturbing\n• Avoid realistic gore, blood splatter, mutilation, torture imagery, or horror violence\n• Avoid frightening body horror or disturbing facial distortion\n• Maintain a visually artistic fantasy-film tone\n\nANTI-CHEAT:\n\n• Do not generate generic gothic Halloween scenes\n• Do not reuse the same twisted-house composition for every option\n• Do not ignore the selected movie environment\n• Do not flatten the image into cosplay photography\n• Do not create vague dark fantasy backgrounds with no recognizable storytelling\n• The environment and supporting characters must clearly identify the selected movie\n\nQUALITY:\n\n• Highly recognizable movie-inspired environments\n• Strong cinematic storytelling\n• Distinct fantasy-film production design\n• Seamless subject integration\n• Rich atmospheric detail\n• Clear scene readability"
+    "additionalInstructions": "SCENE CONSTRUCTION (MANDATORY):\n\n• Build ONE specific cinematic scene matching the selected option\n• The environment must dominate the composition\n• Use concrete physical objects and recognizable fantasy-film locations\n• Include believable props, costumes, architecture, whimsical creatures, and supporting characters appropriate to the selected film-inspired world\n\nOPTION ENFORCEMENT:\n\n• The selected option MUST determine the final environment, setting, and visual identity\n• Do not ignore the selected option\n• Do not generate unrelated generic scenes\n• Do not blend multiple options together\n• Supporting characters from the selected movie should appear naturally nearby\n• Each option must create a dramatically different cinematic world\n\nCHARACTER INTEGRATION:\n\n• Subject must feel physically present inside the scene\n• Supporting characters from the selected movie may appear naturally nearby\n• Subject clothing, makeup, posture, and expression should match the environment\n• Preserve recognizable identity while adapting the subject into the fantasy-film world\n\nVISUAL STYLE:\n\n• Dramatic gothic cinematic lighting\n• Stylized fantasy production design\n• Strong silhouettes and exaggerated shapes\n• Atmospheric fog and environmental depth\n• Practical light sources and theatrical glow\n• Film-still realism with whimsical fantasy aesthetics\n\nCONTENT SAFETY & CONSISTENCY:\n\n• Keep the tone cinematic, whimsical, theatrical, stylized, and fantasy-oriented rather than frightening or disturbing\n• Avoid graphic horror imagery, gore, blood splatter, torture imagery, mutilation, or disturbing injury details\n• Avoid frightening body horror, corpse realism, decayed flesh detail, or disturbing facial distortion\n• Keep characters stylized, whimsical, theatrical, and fantasy-oriented\n• Preserve recognizable identity while maintaining a cinematic fantasy-film appearance\n• Favor playful gothic fantasy over horror aesthetics\n\nANTI-CHEAT:\n\n• Do not generate generic gothic Halloween scenes\n• Do not reuse the same twisted-house composition for every option\n• Do not ignore the selected movie environment\n• Do not flatten the image into cosplay photography\n• Do not create vague dark fantasy backgrounds with no recognizable storytelling\n• The environment and supporting characters must clearly identify the selected movie-inspired world\n\nQUALITY:\n\n• Highly recognizable movie-inspired environments\n• Strong cinematic storytelling\n• Distinct fantasy-film production design\n• Seamless subject integration\n• Rich atmospheric detail\n• Clear scene readability\n• Stylized whimsical fantasy realism"
   },
   {
     "name": "TIME DILATION",
