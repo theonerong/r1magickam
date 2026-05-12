@@ -4225,6 +4225,19 @@
     "additionalInstructions": ""
   },
   {
+    "name": "CAMERALESS FILM",
+    "category": [
+      "ART",
+      "FILM",
+      "EXPERIMENTAL",
+      "ABSTRACT"
+    ],
+    "message": "Take a picture and transform the image into Cameraless Film art. Preserve subject identity. Simulate the direct-on-film techniques of Stan Brakhage and Len Lye — painting, scratching, and stamping directly on film stock. Render with vibrant hand-painted colors, scratched lines, and the kinetic, frame-by-frame energy of handmade cinema.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": ""
+  },
+  {
     "name": "CANDY",
     "category": [
       "FOOD",
@@ -16441,6 +16454,18 @@
     "additionalInstructions": ""
   },
   {
+    "name": "LIGHT FIELD PHOTOGRAPHY",
+    "category": [
+      "PHOTOGRAPHY",
+      "DIGITAL",
+      "EXPERIMENTAL"
+    ],
+    "message": "Take a picture and transform the image into Light Field Photography. Preserve subject identity. Simulate the plenoptic camera aesthetic with selective focus planes, depth-aware bokeh, and the ability to shift perspective slightly. Emphasize the three-dimensional quality and computational depth-of-field effects unique to light field capture.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": ""
+  },
+  {
     "name": "LIGHT PAINTING",
     "category": [
       "ART",
@@ -23479,6 +23504,28 @@
   "options": [],
   "randomizeOptions": false,
   "additionalInstructions": "The only test that matters: if you removed every thread from the board, the dark surface left behind should be completely blank with no image on it whatsoever — just dark wood and nail heads. The image exists ONLY in the thread. If any part of the subject would still be visible after all thread was removed — because it was drawn, painted, or shaded onto the board — that part is wrong and must not exist. Do not draw anything. Do not paint anything. Do not shade anything. Place thread between nails. That is the only permitted action. The subject must be fully recognizable from thread density alone."
+  },
+  {
+    "name": "PINBALL MACHINE PORTRAIT",
+    "category": [
+      "OPTIONS",
+      "ARCADE",
+      "RETRO",
+      "GRAPHIC",
+      "GAME"
+    ],
+    "message": "Take a picture and transform the subject into a retro pinball machine backglass portrait.\n\nThe final image must look like highly illustrated vintage pinball cabinet artwork featuring the subject prominently.\n\nMASTER PROMPT RULE:\n• If a master prompt specifies theme or humor — PRIORITIZE and USE that information\n",
+    "randomizeOptions": true,
+    "optionGroups": [
+    {
+      "title": "ART STYLE",
+      "options": [
+        { "id": "001", "text": "1950s Classic — bright painted pinball art" },
+        { "id": "002", "text": "1970s Wild — louder arcade graphics" }
+      ]
+    }
+    ],
+    "additionalInstructions": "• Subject must appear as central illustrated figure on pinball backglass\n• Add bumpers, score lights, chrome rails, ball paths, and arcade graphics\n• Rich saturated retro arcade colors required"
   },
   {
     "name": "PINHOLE PHOTOGRAPHY",
