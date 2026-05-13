@@ -13432,7 +13432,7 @@ const result = await presetImporter.import();
           if (importedNames.has(jsonPreset.name)) {
             // Check if content is different (updated)
             const existing = importedPresets.find(p => p.name === jsonPreset.name);
-            if (existing && existing.message !== jsonPreset.message) {
+            if (existing && presetsAreDifferent(existing, jsonPreset)) {
               updatedCount++;
             }
           } else {
