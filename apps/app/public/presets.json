@@ -8576,6 +8576,17 @@
     "additionalInstructions": ""
   },
   {
+    "name": "DO NOTHING",
+    "category": [
+      "PHOTO",
+      "REALISM"
+    ],
+    "message": "Take a photo and make no changes. Generate a clean standalone image focused entirely on the primary subject and environment.\n\nDo not include mascots, assistant characters, logos, signatures, branding elements, watermarks, stickers, UI overlays, interface graphics, or extra cartoon figures.\n\nThe composition should contain only the intended subject matter and natural environmental details.\n\nUse realistic photography composition with unobstructed framing and clean edges.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "EXCLUSION ENFORCEMENT:\n\n• No mascot characters\n• No rabbit character\n• No logos or branding\n• No watermarks or signatures\n• No UI overlays\n• No extra foreground characters\n• Only the requested subject and environment should appear"
+  },
+  {
     "name": "DOOM MODE",
     "category": [
       "RETRO",
@@ -17343,6 +17354,19 @@
     ],
     "randomizeOptions": true,
     "additionalInstructions": "FINAL RESULT:\nThe result should be a FULL VIEW of the magazine cover from the selected publication with the subject as the cover star, complete with all cover elements (logo, headlines, coverlines, barcode, date), professional photography appropriate to that magazine's style, and authentic graphic design matching that publication's specific aesthetic and format - showing the entire magazine cover clearly visible and not cropped."
+  },
+  {
+    "name": "MAGIC CAMERA PHOTO",
+    "category": [
+      "HUMOR",
+      "ABSURD",
+      "ANIMALS",
+      "CHAOS"
+    ],
+    "message": "Take a picture and transform the scene into a completely overwhelming rabbit-filled environment.\n\nThe original subject must remain visible and recognizable, but the entire image should be aggressively overrun by rabbits in every possible location.\n\nRabbits should appear covering furniture, climbing on objects, standing in crowds, peeking from windows, hiding in pockets, in body parts, sitting on shoulders, dangling from ceilings, occupying the background, and filling empty space across the entire composition.\n\nInclude rabbits of many sizes, poses, and expressions:\n• realistic rabbits\n• cartoonishly serious rabbits\n• tiny rabbits\n• giant rabbits\n• rabbits wearing accessories\n• rabbits staring directly at the camera\n• rabbits appearing where they logically should not fit\n\nThe rabbit density should escalate into complete visual absurdity while still keeping the main subject identifiable.\n\nSTYLE:\n• Photorealistic lighting\n• Comedic environmental overcrowding\n• Layered rabbit depth throughout foreground, midground, and background\n• Chaotic but readable composition\n• Rabbits integrated naturally into scene perspective and lighting\n• Escalating visual nonsense\n• Deadpan comedic tone\n\nENVIRONMENT TRANSFORMATION:\n• Every empty area should contain rabbits\n• Background objects may become rabbit-themed\n• Rabbit-related clutter may appear naturally throughout the scene\n• The environment should feel like an unstoppable rabbit infestation\n\nThe final image should look like a perfectly serious photograph ruined by an impossible number of rabbits.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "RABBIT ENFORCEMENT:\n\n• Add rabbits everywhere possible\n• Rabbits should dominate the composition\n• Do not leave large empty areas without rabbits\n• The image should become increasingly absurd upon closer inspection\n• The subject must still remain recognizable\n\nANTI-CHEAT:\n\n• Do not add only one or two rabbits\n• Do not isolate rabbits to the background only\n• Do not use simple clip-art rabbits\n• Rabbits must interact naturally with the environment\n• Rabbit placement should feel relentless and excessive\n\nFINAL RESULT:\nThe image should resemble a normal photograph catastrophically overwhelmed by an absurdly excessive number of rabbits in every visible part of the scene."
   },
   {
     "name": "MOEBIUS STYLE",
