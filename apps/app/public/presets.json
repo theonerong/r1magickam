@@ -1049,6 +1049,33 @@
     "additionalInstructions": ""
   },
   {
+    "name": "ANAGLYPH DEPTH BLAST",
+    "category": [
+      "OPTIONS", 
+      "3D", 
+      "POP-OUT", 
+      "ANAGLYPH", 
+      "COLOR"
+    ],
+    "message": "Take a picture and transform this image into a dramatic anaglyph-style 3D composition — red-cyan color separation that creates explosive stereoscopic depth even when viewed without glasses, as the color fringing itself suggests dimensional separation.\n\nThe subject must be composed so that elements at different depths have increasing color separation — nearest elements have maximum red-cyan offset while far background elements converge to normal color.\n\nThis creates a 3D pop effect visible to the naked eye through color tension alone.\n",
+    "options": [
+      { 
+        "id": "001",
+        "text": "Maximum pop portrait — face and hands thrust toward camera with aggressive color separation, background nearly normal"
+      },
+      { 
+        "id": "002",
+        "text": "Action explosion — subject in peak dynamic motion with trails of red and cyan offset suggesting violent forward movement"
+      },
+      { 
+        "id": "003",
+        "text": "Object array — multiple objects at varying distances, each with precisely calibrated color offset revealing their depth position"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "COLOR SEPARATION RULES:\n• Red channel offset: shift left for near elements, no shift for far elements\n• Cyan channel offset: shift right for near elements, no shift for far elements\n• Maximum offset at nearest point: 3 to 5 percent of image width\n• Offset must reduce linearly with depth — the depth map IS the offset map\n\nDEPTH STAGING:\n• Compose specifically for three depth planes: extreme foreground, midground, background\n• Each plane must have clearly different offset levels\n• Include one element that appears to cross in front of the image frame\n\nCOLOR TREATMENT:\n• The underlying image must have strong, readable color even with the offset applied\n• Avoid very saturated red or cyan in the scene itself — these will fight with the offset channels\n• High contrast lighting helps the depth separation read clearly\n\nQUALITY TARGET:\n• A viewer without glasses should still feel the depth tension from the color fringing\n• With red-cyan glasses the effect must be dramatic and comfortable to view\n• The nearest element should appear to float 20 to 30 centimeters in front of the screen plane"
+  },
+  {
     "name": "ANALOG FILM STRIP",
     "category": [
       "FILM",
@@ -16751,6 +16778,33 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "FINAL RESULT:\nA hyper-realistic liquid metal scene where everything appears made of reflective chrome, with fluid motion frozen mid-transformation. The subject remains recognizable but fully integrated into a seamless metallic environment."
+  },
+  {
+    "name": "LIQUID METAL SPLASH",
+    "category": [
+      "OPTIONS", 
+      "3D", 
+      "POP-OUT", 
+      "LIQUID", 
+      "MOTION"
+    ],
+    "message": "Take a picture and transform the subject into a perfectly frozen high-speed liquid metal or chrome liquid splash — droplets and streams erupting toward the camera in a moment of peak dynamic action.\n\nThe liquid must appear to be at the exact microsecond of maximum explosion — streams, droplets, and sheets of reflective liquid suspended in perfect stillness while radiating directly toward the viewer.\n\nThis creates violent foreground-to-camera depth.\n",
+    "options": [
+      {
+        "id": "001",
+        "text": "Mercury crown — a classic milk crown form but rendered in liquid mercury — perfectly reflective, frozen at peak height" 
+      },
+      { 
+        "id": "002", 
+        "text": "Chrome explosion — a sphere of chrome liquid exploding outward with streams and droplets aimed directly at the lens" 
+      },
+      { 
+        "id": "003", 
+        "text": "Liquid gold — molten gold poured from above, frozen mid-splash, streams reflecting studio lights in long highlights" 
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "PHYSICS OF THE FREEZE:\n• Capture the single microsecond of peak form — before droplets separate and after maximum height\n• Streams must taper correctly — thicker at base, thinning to sharp points\n• Droplets must be perfect oblate spheroids — flattened slightly by air resistance\n• Surface tension must be visible at the base of the splash where liquid meets surface\n\nREFLECTION REQUIREMENTS:\n• Every droplet and stream must show correct environment reflections\n• The reflections must be consistent — same environment reflected in every surface\n• Primary light sources appear as sharp elongated highlights on curved surfaces\n• The surrounding scene (dark studio or gradient background) reflected across the entire form\n\nDEPTH RULES:\n• Nearest droplets: large, sharp focus, reflections visible\n• Mid-ground streams: slightly smaller, slightly softer\n• Base of splash: deep focus, shows the impact surface\n• Depth must read instantly as violent 3D eruption toward camera\n\nQUALITY TARGET:\n• High-speed photography aesthetic at 1/1,000,000 second shutter equivalent\n• Black or gradient dark background to maximize reflection visibility\n• The nearest droplet should feel like it is about to hit the viewer in the face"
   },
   {
     "name": "LITE-BRITE",
