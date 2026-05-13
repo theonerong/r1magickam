@@ -23762,71 +23762,71 @@
       "LANDSCAPE",
       "PORTRAIT"
     ],
-    "message": "Take a picture and place the subject directly ON THE SURFACE of the selected celestial body, wearing appropriate space gear and surrounded by an extremely photorealistic scientifically inspired environment.\n\nIMPORTANT:\n• Except for the EARTH ORBIT option, the subject must ALWAYS be physically standing, walking, kneeling, sitting, or otherwise directly interacting with the planetary or celestial surface itself\n• Do NOT depict the subject floating, hovering, flying, suspended in the air, or orbiting for any option other than EARTH ORBIT\n• Surface contact must be obvious and visually grounded\n• Terrain interaction such as footprints, dust displacement, reflections, shadows, or environmental contact is strongly encouraged\n\nIF MERCURY (0): The subject physically standing on Mercury's scorched cratered surface — jagged rocky terrain, black sky, blinding sunlight casting razor-sharp shadows, heat-blasted regolith, realistic crater geology, extreme high-contrast NASA-style photography.\n\nIF VENUS (1): The subject physically standing on Venus's volcanic hellscape — cracked basalt terrain, glowing volcanic rock, dense yellow sulfuric atmosphere, lightning flashes through thick clouds, brutal orange heat-glow, atmospheric distortion from heat.\n\nIF EARTH ORBIT (2): The subject floating in EVA gear above Earth — blue oceans, continents, cloud systems, realistic orbital photography, sunlight reflecting from visor and suit.\n\nIF MOON (3): The subject physically standing on the lunar surface — gray regolith, detailed crater fields, fine dust texture, sharp shadows, Earth visible above the horizon, Apollo-style lunar photography realism.\n\nIF MARS (4): The subject physically standing on Mars — realistic red dust, rocky terrain, scattered stones, distant cliffs and mountains, thin pink-orange atmosphere, realistic Martian geology inspired by NASA rover photography.\n\nIF JUPITER (5): The subject physically standing on a scientifically inspired solidified ultra-dense layer deep within Jupiter — dark metallic storm-worn terrain, colossal cyclones overhead, orange-white cloud bands dominating the sky, lightning storms illuminating the atmosphere, impossible but visually grounded planetary-surface interpretation.\n\nIF SATURN (6): The subject physically standing on a scientifically inspired frozen rocky layer deep within Saturn — icy metallic terrain, pale golden atmosphere above, Saturn's rings visible across the sky, dim filtered sunlight, atmospheric haze and massive storm formations overhead.\n\nIF URANUS (7): The subject physically standing on a scientifically inspired frozen pressure-compressed surface beneath Uranus's atmosphere — pale cyan lighting, icy rock formations, distant atmospheric haze, alien blue-green illumination, frozen windswept terrain.\n\nIF NEPTUNE (8): The subject physically standing on a scientifically inspired deep-pressure frozen surface beneath Neptune's storm systems — dark icy terrain, violent blue atmospheric glow, hurricane-like cloud formations above, extreme cold implied through frost and environmental texture.\n\nIF PLUTO (9): The subject physically standing on Pluto — nitrogen ice plains, jagged frozen mountains, deep black sky, dim sunlight, realistic frozen surface textures inspired by New Horizons imagery.\n\nIF EUROPA (10): The subject physically standing on Europa's cracked ice plains — long frozen fractures, textured blue-white ice, frozen ridges, geysers erupting nearby, Jupiter massive in the sky, realistic ice reflections and frost.\n\nIF IO (11): The subject physically standing on Io's volcanic surface — sulfur-covered rock, lava rivers, active volcanic eruptions, glowing magma cracks, ash clouds illuminated by volcanic glow, realistic planetary volcanism.\n\nIF TITAN (12): The subject physically standing on Titan beside methane lakes — wet icy shoreline, rounded hydrocarbon-smoothed stones, thick orange haze, dim sunlight, Saturn and faint rings visible through the atmosphere.\n\nIF TRITON (13): The subject physically standing on Triton's frozen nitrogen terrain — icy plains, cryovolcanic fissures, frost-covered ridges, blue twilight atmosphere, Neptune looming in the sky.\n\nIF SUN (14): The subject impossibly standing directly on the surface of the Sun itself — molten plasma terrain beneath their feet, gigantic solar flares erupting around them, violent plasma storms, white-hot glowing surface texture. The subject's suit and body must visibly disintegrate from catastrophic heat exposure — melting, burning, vaporizing, cracking apart into glowing ash and plasma while still remaining partially recognizable.",
-    "options": [
+    "message": "Take a picture and transform the subject into an ultra-photorealistic planetary exploration scene based entirely on the selected option.\n\nThe subject must wear realistic environment-appropriate space gear and physically interact with the terrain of the selected world.\n\nExcept for the EARTH ORBIT option, the subject must ALWAYS appear directly ON the surface of the selected celestial body itself.\n\nThe image should resemble authentic NASA-style planetary photography with scientifically inspired terrain, lighting, atmosphere, and environmental conditions.",
+  "options": [
     {
       "id": "001",
-      "text": "MERCURY — standing on scorched crater terrain beneath enormous blazing sunlight"
+      "text": "MERCURY — The subject physically standing on Mercury's scorched cratered surface with jagged rocky terrain, black sky, blinding sunlight, razor-sharp shadows, heat-blasted regolith, and realistic crater geology. Ultra-photorealistic NASA-style planetary photography."
     },
     {
       "id": "002",
-      "text": "VENUS — standing on volcanic sulfuric hellscape with dense yellow atmosphere"
+      "text": "VENUS — The subject physically standing on Venus's volcanic hellscape with cracked basalt terrain, glowing volcanic rock, thick yellow sulfuric atmosphere, lightning within dense clouds, brutal orange heat-glow, and atmospheric distortion from extreme heat. Ultra-photorealistic planetary realism."
     },
     {
       "id": "003",
-      "text": "EARTH ORBIT — EVA spacewalk above Earth with realistic orbital photography"
+      "text": "EARTH ORBIT — The subject floating in EVA gear above Earth with realistic orbital photography, visible continents, swirling cloud systems, blue oceans, reflected sunlight on the visor, and cinematic space realism."
     },
     {
       "id": "004",
-      "text": "MOON — standing on realistic lunar regolith with Earth rising overhead"
+      "text": "MOON — The subject physically standing on the Moon's gray regolith surface with detailed crater fields, fine lunar dust, sharp shadows, Earth rising above the horizon, bootprints in the terrain, and Apollo-style photorealism."
     },
     {
       "id": "005",
-      "text": "MARS — standing on dusty rocky Martian terrain with NASA realism"
+      "text": "MARS — The subject physically standing on Mars with realistic red dust, rocky terrain, scattered stones, distant cliffs and mountains, thin pink-orange atmosphere, dust haze, and NASA rover-style planetary realism."
     },
     {
       "id": "006",
-      "text": "JUPITER — standing on impossible ultra-dense storm-battered Jovian surface"
+      "text": "JUPITER — The subject physically standing on a scientifically inspired ultra-dense solidified Jovian surface with dark storm-worn terrain, colossal cyclones overhead, orange-white atmospheric cloud bands, lightning storms, crushing atmospheric scale, and cinematic planetary realism."
     },
     {
       "id": "007",
-      "text": "SATURN — standing on frozen rocky layer beneath rings and storm haze"
+      "text": "SATURN — The subject physically standing on a scientifically inspired frozen rocky Saturnian surface beneath enormous visible rings, pale golden atmospheric haze, icy metallic terrain, dim filtered sunlight, and massive storm formations overhead. Ultra-photorealistic space imagery."
     },
     {
       "id": "008",
-      "text": "URANUS — standing on frozen cyan-lit alien ice terrain"
+      "text": "URANUS — The subject physically standing on a scientifically inspired frozen pressure-compressed Uranian surface with cyan atmospheric lighting, icy rock formations, alien blue-green illumination, frozen windswept terrain, and extreme cold realism."
     },
     {
       "id": "009",
-      "text": "NEPTUNE — standing on dark frozen storm-ravaged icy surface"
+      "text": "NEPTUNE — The subject physically standing on a scientifically inspired deep-pressure frozen Neptunian surface with violent blue atmospheric glow, dark icy terrain, massive storm systems overhead, hurricane-scale cloud formations, and realistic frozen environmental textures."
     },
     {
       "id": "010",
-      "text": "PLUTO — standing on nitrogen ice plains and jagged frozen mountains"
+      "text": "PLUTO — The subject physically standing on Pluto's frozen nitrogen plains with jagged ice mountains, realistic frozen surface textures, dim blue-white sunlight, deep black sky, and isolated New Horizons-inspired planetary realism."
     },
     {
       "id": "011",
-      "text": "EUROPA — standing on cracked frozen ice plains beneath Jupiter"
+      "text": "EUROPA — The subject physically standing on Europa's cracked frozen ice plains with long fractures, textured blue-white ice, frozen ridges, erupting geysers nearby, frost reflections, and Jupiter dominating the sky. Ultra-photorealistic icy moon realism."
     },
     {
       "id": "012",
-      "text": "IO — standing on volcanic sulfur terrain with lava eruptions"
+      "text": "IO — The subject physically standing on Io's volcanic sulfur-covered terrain with active eruptions, lava rivers, glowing magma fissures, ash clouds, volcanic glow, and realistic planetary volcanism beneath Jupiter overhead."
     },
     {
       "id": "013",
-      "text": "TITAN — standing beside methane lakes in orange atmospheric haze"
+      "text": "TITAN — The subject physically standing beside Titan's methane lakes with wet icy shorelines, rounded hydrocarbon-smoothed stones, dense orange atmospheric haze, dim twilight lighting, and Saturn faintly visible through the atmosphere."
     },
     {
       "id": "014",
-      "text": "TRITON — standing on cryovolcanic nitrogen ice terrain beneath Neptune"
+      "text": "TRITON — The subject physically standing on Triton's frozen nitrogen terrain with icy plains, cryovolcanic fissures, frost-covered ridges, eerie blue twilight lighting, and Neptune looming overhead in the sky."
     },
     {
       "id": "015",
-      "text": "SUN — standing on solar plasma surface while disintegrating from extreme heat"
+      "text": "SUN — The subject impossibly standing directly on the surface of the Sun with molten plasma terrain beneath their feet, gigantic solar flares erupting around them, violent plasma storms, and catastrophic thermal destruction causing the suit and body to melt, vaporize, burn, crack apart, and disintegrate into glowing ash while remaining partially recognizable."
     }
     ],
     "randomizeOptions": true,
-    "additionalInstructions": "PHOTOREALISM ENFORCEMENT:\n\n• The image must appear fully photorealistic\n• The environment must resemble real NASA, ESA, JAXA, or astrophotography imagery\n• Terrain textures must look physically believable and highly detailed\n• Surface geology, rocks, ice, dust, clouds, lava, atmosphere, and lighting must appear realistic and grounded\n• Avoid fantasy illustration aesthetics, cartoon styling, painterly rendering, or stylized sci-fi art\n\nSURFACE CONTACT ENFORCEMENT:\n\n• Except for EARTH ORBIT, the subject must always appear physically on the surface\n• The subject's feet or body must visibly interact with the terrain\n• Include footprints, dust, reflections, terrain compression, snow displacement, lava glow interaction, or environmental grounding effects where appropriate\n• Do NOT depict floating or hovering for non-Earth options\n\nPLANETARY ENVIRONMENT ENFORCEMENT:\n\n• Every celestial body must have unique terrain, atmosphere, scale, lighting, and environmental hazards\n• The selected world must be instantly recognizable from the sky, geology, atmospheric conditions, and astronomical features\n• Massive environmental scale and cinematic realism are required\n\nSPACE SUIT REQUIREMENTS:\n\n• The subject must wear realistic environment-appropriate survival gear\n• Suit materials and wear should reflect planetary conditions\n• The subject must remain recognizable through visor visibility, posture, or partial facial detail where appropriate\n\nSUN OPTION ENFORCEMENT:\n\n• ONLY apply disintegration effects for the SUN option\n• Include catastrophic thermal destruction, melting surfaces, plasma erosion, glowing cracks, burning suit fabric, vaporization, and ash particles\n• The subject must remain partially recognizable despite destruction\n• Solar flares and plasma storms must dominate the scene\n• Lighting must be brutally intense with white-hot yellows, oranges, reds, and plasma glow\n\nVISUAL STYLE:\n\n• Ultra-photorealistic planetary photography\n• NASA-inspired realism\n• Scientific visual authenticity\n• Cinematic astrophotography composition\n• Massive environmental scale\n• Realistic atmospheric lighting and shadows\n• Extreme environmental detail\n\nFINAL RESULT:\nThe final image must convincingly depict the subject physically standing on the selected celestial body's surface with ultra-photorealistic planetary realism, believable terrain interaction, scientifically inspired environmental detail, and cinematic astronomical scale."
+    "additionalInstructions": "OPTION ENFORCEMENT:\n\n• The selected option MUST determine the final environment, setting, and visual identity\n• Do not ignore the selected option\n• Do not generate unrelated generic scenes\n• Do not blend multiple options together\n\nSURFACE ENFORCEMENT:\n\n• Except for the EARTH ORBIT option, the subject must always appear physically ON the terrain of the selected world\n• The subject must visibly interact with the terrain using footprints, dust displacement, reflections, snow compression, lava glow interaction, or other environmental grounding effects\n• Do NOT place the subject on unrelated terrain while viewing the planet from a distance\n• Do NOT depict floating, hovering, or orbiting for non-Earth options\n\nPHOTOREALISM ENFORCEMENT:\n\n• The image must appear fully photorealistic\n• The environment must resemble authentic NASA, ESA, JAXA, or astrophotography imagery\n• Terrain textures, atmosphere, geology, ice, lava, rocks, clouds, shadows, and lighting must appear physically believable and highly detailed\n• Avoid fantasy illustration aesthetics, painterly rendering, stylized sci-fi art, cartoons, or unrealistic abstraction\n\nSPACE SUIT REQUIREMENTS:\n\n• The subject must wear realistic environment-appropriate survival gear\n• Suit materials and weathering should reflect the conditions of the selected world\n• The subject must remain recognizable through visor visibility, posture, or exposed facial detail where appropriate\n\nSUN OPTION ENFORCEMENT:\n\n• ONLY apply catastrophic disintegration effects for the SUN option\n• Include melting surfaces, plasma erosion, vaporization, burning fabric, glowing cracks, ash particles, and thermal destruction\n• Solar flares and plasma storms must dominate the scene\n• The subject must remain partially recognizable despite disintegration\n\nVISUAL STYLE:\n\n• Ultra-photorealistic planetary photography\n• NASA-inspired realism\n• Scientific visual authenticity\n• Cinematic astrophotography composition\n• Massive environmental scale\n• Realistic lighting and atmospheric conditions\n• Extreme environmental detail\n\nFINAL RESULT:\nThe final image must convincingly depict the subject physically interacting with the terrain of the selected celestial body using ultra-photorealistic planetary realism, scientifically inspired environmental detail, believable terrain interaction, and cinematic astronomical scale."
   },
   {
     "name": "PLAYBILL",
