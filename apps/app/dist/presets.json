@@ -29940,6 +29940,30 @@
     "additionalInstructions": ""
   },
   {
+    "name": "TESSELLATION WORLD",
+    "category": [
+      "OPTIONS", 
+      "OPTICAL", 
+      "ILLUSION", 
+      "TESSELATION", 
+      "ESCHER", 
+      "PATTERN"
+    ],
+    "message": "Take a picture and transform the image into an Escher-style tessellation where the subject tiles seamlessly across the entire image — each copy of the subject interlocks perfectly with its neighbors, leaving no gaps and no overlaps.\n\nThe subject must be recognizable as it tiles. As you look across the image the subject transforms — what appears as one figure in one orientation becomes a different figure or the negative space of the adjacent one.\n",
+    "options": [
+      { 
+        "id": "001",
+        "text": "Day and night — light-colored subjects tile against dark-colored subjects of a different form" 
+      },
+      { 
+        "id": "002",
+        "text": "Single-form tile — one form of the subject tiles with itself, rotated and reflected" 
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "GEOMETRY RULES:\n• Every tile must be identical in shape — only color and orientation may vary\n• The boundary of each tile must serve as the meaningful silhouette of the subject\n• No white space, no gaps — the entire image surface must be covered\n• Minimum 12 complete tiles visible in the image\n\nCOLOR SYSTEM:\n• Maximum 3 colors total\n• Adjacent tiles must always be different colors\n• Color alternation must follow a consistent pattern\n• Colors should be flat with minimal shading to keep tile boundaries legible\n\nQUALITY TARGET:\n• The eye should be able to lock onto one tile type and then suddenly see the other\n• Both tile forms must be equally recognizable\n• The transition between forms should feel magical, not forced\n• Lithograph or woodcut aesthetic — flat color, strong outline"
+  },
+  {
     "name": "TEXT LOGO",
     "category": [
       "DESIGN",
