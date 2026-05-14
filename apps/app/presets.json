@@ -36,6 +36,20 @@
     "additionalInstructions": "IDENTITY PRESERVATION:\n• Subject must remain clearly recognizable\n• Do not replace the person\n• Do not alter ethnicity, age category, or core facial structure\n\nHUMOR GOAL:\n• Satirize exaggerated social media beautification\n• Contrast honesty vs digital manipulation\n• Emphasize irony of the \"#NOFILTER\" label\n\nFINAL RESULT:\nThe final image must clearly show a realistic \"Before\" beside a heavily beautified \"#NOFILTER\" version, either obviously filtered (with UI visible) or deceptively filtered (no visible UI), determined strictly by the modulo selection.\n\nBEFORE PANEL REQUIREMENTS:"
   },
   {
+    "name": "18TH CENTURY DRAWING",
+    "category": [
+      "HISTORICAL",
+      "DRAWING",
+      "CLASSICAL",
+      "SKETCH",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into an authentic 18th-century drawing or engraving created using historically inspired artistic techniques, classical draftsmanship, antique paper texture, and old-master illustration realism.\n\nThe subject should remain recognizable while appearing rendered by an 18th-century artist using ink engraving, charcoal sketching, or scientific field illustration techniques.\n\nInclude realistic cross-hatching, aged parchment, period-accurate line work, ink texture, hand-drawn shading, and antique illustration detail.\n\nThe final image should feel historically authentic, artistic, elegant, and physically hand-rendered.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Use authentic historical drawing aesthetics\n• Avoid modern digital illustration appearance\n\nVISUAL STYLE:\n\n• Classical draftsmanship\n• Antique engraving realism\n• Aged paper texture\n• Hand-drawn line detail"
+  },
+  {
     "name": "21st DOCTOR",
     "category": [
       "SCI-FI",
@@ -1101,6 +1115,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "FINAL RESULT:\nThe image should clearly depict the subject as a classic 1970s-style news anchor with a signature moustache, bold suit, and confident on-air presence. The result should feel like a humorous but believable vintage broadcast scene while keeping the subject recognizable."
+  },
+  {
+    "name": "ANCIENT MAYAN ART",
+    "category": [
+      "HISTORICAL",
+      "MYTHOLOGY",
+      "ANCIENT",
+      "STONE",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into ancient Mayan-inspired artwork featuring authentic Mesoamerican visual motifs, ceremonial symbolism, sacred geometry, glyph carvings, stone textures, ritual ornamentation, and temple-inspired artistic realism.\n\nThe subject should appear naturally integrated into an ancient Mayan world as if depicted in sacred ceremonial art, carved temple reliefs, painted murals, or mythological iconography.\n\nInclude realistic weathered stone, jade ornamentation, volcanic textures, ancient pigments, ritual decoration, and symbolic detail inspired by authentic pre-Columbian artistic aesthetics.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable facial structure and subject identity\n• Integrate authentic Mesoamerican-inspired visual design\n• Avoid generic fantasy tribal aesthetics\n• Emphasize ceremonial realism and ancient craftsmanship\n\nVISUAL STYLE:\n\n• Ancient carved stone realism\n• Sacred glyph symbolism\n• Ritualistic atmosphere\n• Weathered mineral textures\n• Archaeological authenticity"
   },
   {
     "name": "ANCIENT SCROLL PROPHECY",
@@ -2227,6 +2255,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "ATLANTIS WORLD",
+    "category": [
+      "FANTASY",
+      "UNDERWATER",
+      "SCI-FI",
+      "ANCIENT",
+      "CINEMATIC"
+    ],
+    "message": "Take a picture and transform the scene into the lost underwater world of Atlantis with colossal submerged architecture, glowing aquatic technology, coral-covered ruins, deep-ocean atmosphere, and cinematic underwater realism.\n\nThe subject should appear naturally integrated into the advanced mythical underwater civilization surrounded by ancient temples, bioluminescent structures, oceanic ruins, and massive underwater environmental scale.\n\nThe final image should feel majestic, mysterious, ancient, futuristic, and deeply immersive.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• The underwater environment must feel massive and cinematic\n• Include realistic underwater lighting and atmospheric depth\n• Blend ancient architecture with advanced aquatic civilization aesthetics\n\nVISUAL STYLE:\n\n• Ultra-cinematic underwater realism\n• Volumetric ocean lighting\n• Coral-covered ruins\n• Mythic environmental scale"
   },
   {
     "name": "ATOMPUNK",
@@ -8428,6 +8470,20 @@
     "additionalInstructions": ""
   },
   {
+    "name": "DETAILED SURREAL GRAPHICS",
+    "category": [
+      "SURREAL",
+      "GRAPHIC",
+      "DETAILED",
+      "VISUAL",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into highly detailed surreal graphic artwork filled with impossible imagery, symbolic layering, intricate visual structures, bizarre dream logic, and mind-bending artistic composition.\n\nThe image should contain dense visual detail, layered symbolism, recursive imagery, impossible transitions, and surreal environmental storytelling while keeping the subject recognizable.\n\nThe final image should feel visually overwhelming, imaginative, intricate, and artistically surreal.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Emphasize dense surreal detail and symbolic layering\n• Preserve recognizable subject identity\n• Avoid random incoherent abstraction\n\nVISUAL STYLE:\n\n• Hyper-detailed surreal graphics\n• Impossible visual logic\n• Dense symbolic composition\n• Complex layered imagery"
+  },
+  {
     "name": "DÍA DE LOS MUERTOS — CATRINA / CATRÍN",
     "imageUrl": "./public/CATRINA.png",
     "category": [
@@ -8965,6 +9021,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "DREAMY VISION",
+    "category": [
+      "DREAMY",
+      "ETHEREAL",
+      "SOFT",
+      "ATMOSPHERIC",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into a dreamy ethereal vision filled with soft atmospheric lighting, glowing haze, emotional softness, delicate focus, floating particles, cinematic beauty, and peaceful dreamlike realism.\n\nThe subject should remain recognizable while appearing immersed within a soft luminous dream atmosphere.\n\nThe image should feel emotional, serene, cinematic, and visually delicate.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Emphasize soft glow, atmospheric haze, and dreamy lighting\n• Preserve recognizable subject identity\n• Avoid excessive sharpness or harsh contrast\n\nVISUAL STYLE:\n\n• Ethereal cinematic softness\n• Atmospheric glow\n• Dreamlike realism\n• Gentle emotional lighting"
   },
   {
     "name": "DRIVERS LICENSE",
@@ -11525,6 +11595,20 @@
     "additionalInstructions": ""
   },
   {
+    "name": "FILM PHOTO COLLAGE",
+    "category": [
+      "ART",
+      "COLLAGE",
+      "FILM",
+      "RETRO",
+      "PHOTOGRAPHY"
+    ],
+    "message": "Take a picture and transform it into a cinematic analog film-photo collage made from overlapping printed photographs, contact sheets, film strips, taped snapshots, torn paper edges, handwritten notes, and layered photographic memories.\n\nThe subject must remain recognizable across the collage while appearing in multiple photographic moments, poses, angles, or emotional expressions.\n\nThe composition should resemble a real physical arrangement of developed film photographs spread across a table or assembled into an artistic scrapbook.\n\nInclude realistic film grain, light leaks, dust, scratches, fingerprints, tape, faded colors, exposure markings, paper texture, and analog photography imperfections.\n\nThe final image should feel nostalgic, cinematic, tactile, and authentically photographic.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• The collage must feel physically assembled from real printed photographs\n• Include overlapping photo layers and varied image sizes\n• Preserve realistic analog photography texture and imperfections\n• Avoid digital collage aesthetics or clean graphic-design layouts\n\nSUBJECT ENFORCEMENT:\n\n• The subject must remain recognizable throughout the collage\n• Multiple versions or angles of the subject may appear naturally throughout the composition\n\nVISUAL STYLE:\n\n• Analog film realism\n• Vintage cinematic photography\n• Physical paper texture\n• Authentic darkroom aesthetic\n• Layered nostalgic storytelling"
+  },
+  {
     "name": "FILTH MODE",
     "category": [
       "HUMOR",
@@ -13479,6 +13563,20 @@
   ],
   "randomizeOptions": true,
   "additionalInstructions": "FINAL RESULT:\nA single, highly detailed medical-style anatomical illustration of the subject, where internal biological systems are revealed in layered form within the same image. The selected option determines which system is emphasized, but all elements must remain anatomically aligned, visually integrated, and clearly readable without breaking the single-image rule."
+  },
+  {
+    "name": "GROTESQUE STYLE",
+    "category": [
+      "HORROR",
+      "GROTESQUE",
+      "DARK",
+      "SURREAL",
+      "DISTURBING"
+    ],
+    "message": "Take a picture and transform it into a grotesque dark-art image with disturbing surreal anatomy, twisted forms, eerie textures, unsettling atmosphere, and cinematic horror realism.\n\nThe subject should remain partially recognizable while becoming integrated into the grotesque visual transformation.\n\nThe image should feel disturbing, uncanny, surreal, and visually intense.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Emphasize disturbing surreal realism\n• Preserve partial recognizable subject identity\n• Avoid cartoon horror aesthetics\n\nVISUAL STYLE:\n\n• Dark atmospheric realism\n• Disturbing anatomical surrealism\n• Cinematic horror lighting\n• Twisted visual textures"
   },
   {
     "name": "GUM BICHROMATE",
@@ -20769,6 +20867,20 @@
     "additionalInstructions": ""
   },
   {
+    "name": "MYSTIC STYLE ART",
+    "category": [
+      "MYSTIC",
+      "SPIRITUAL",
+      "SYMBOLIC",
+      "MAGICAL",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into mystical symbolic artwork filled with sacred energy, spiritual symbolism, glowing geometry, cosmic atmosphere, ritualistic detail, and transcendent visual power.\n\nThe subject should remain recognizable while appearing connected to cosmic forces, spiritual enlightenment, mystical visions, or sacred ceremonial energy.\n\nThe final image should feel powerful, spiritual, mysterious, and visually transcendent.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Include mystical symbolism and sacred geometric energy\n• Preserve recognizable subject identity\n• Avoid generic fantasy spell effects\n\nVISUAL STYLE:\n\n• Mystical cinematic realism\n• Sacred symbolic imagery\n• Spiritual atmosphere\n• Cosmic visual energy"
+  },
+  {
     "name": "MYTHOLOGY",
     "category": [
       "FANTASY",
@@ -21228,6 +21340,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "NEO NOIR",
+    "category": [
+      "NOIR",
+      "CINEMATIC",
+      "URBAN",
+      "DARK",
+      "CRIME"
+    ],
+    "message": "Take a picture and transform it into a cinematic neo-noir scene filled with dramatic shadows, rain-soaked streets, neon reflections, moody atmosphere, urban tension, and high-contrast realism.\n\nThe subject should remain recognizable while appearing naturally integrated into the dark cinematic world of modern noir storytelling.\n\nInclude wet pavement reflections, cigarette smoke, neon signage, harsh shadows, cinematic framing, atmospheric fog, or urban nighttime tension.\n\nThe final image should feel stylish, cinematic, mysterious, and emotionally intense.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Emphasize dramatic noir lighting and urban atmosphere\n• Preserve recognizable subject identity\n• Avoid generic cyberpunk overload\n\nVISUAL STYLE:\n\n• High-contrast cinematic noir\n• Wet reflective surfaces\n• Atmospheric urban lighting\n• Dark moody realism"
   },
   {
     "name": "NERDS!",
@@ -29592,6 +29718,20 @@
     "additionalInstructions": "FINAL RESULT:\nThe image should capture the subject in the exact moment of gaining superpowers through the selected origin method, with dramatic visual effects, appropriate environment, civilian clothing, and that epic cinematic superhero movie moment where an ordinary person becomes extraordinary."
   },
   {
+    "name": "SUPERNATURAL CHARACTER",
+    "category": [
+      "FANTASY",
+      "CHARACTER",
+      "MAGIC",
+      "SUPERNATURAL",
+      "CINEMATIC"
+    ],
+    "message": "Take a picture and transform the subject into a powerful supernatural character with cinematic fantasy realism, magical energy, supernatural traits, mythic atmosphere, and visually striking transformation.\n\nThe subject should remain recognizable while appearing empowered by supernatural forces, mystical energy, divine power, cursed magic, celestial light, or dark fantasy abilities.\n\nThe final image should feel cinematic, legendary, and visually epic.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Supernatural elements should feel integrated and believable\n• Avoid cartoon fantasy aesthetics\n\nVISUAL STYLE:\n\n• Cinematic fantasy realism\n• Powerful atmospheric lighting\n• Magical energy effects\n• Epic supernatural presence"
+  },
+  {
     "name": "SUPPORTS/SURFACES",
     "category": [
       "ART",
@@ -29653,6 +29793,34 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "SURREALISTIC DREAMSCAPE",
+    "category": [
+      "SURREAL",
+      "DREAM",
+      "FANTASY",
+      "ATMOSPHERIC",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into an impossible surreal dreamscape filled with symbolic environments, distorted physics, floating structures, impossible architecture, subconscious imagery, and dreamlike visual logic.\n\nThe subject should remain recognizable while naturally integrated into the surreal dream environment.\n\nThe final image should feel emotionally symbolic, psychologically strange, visually poetic, and impossible yet believable within dream logic.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Emphasize impossible dream physics and surreal symbolism\n• Preserve recognizable subject identity\n• Avoid random abstract chaos without visual coherence\n\nVISUAL STYLE:\n\n• Dreamlike atmospheric realism\n• Impossible landscapes\n• Symbolic surreal imagery\n• Ethereal cinematic lighting"
+  },
+  {
+    "name": "SURREALIST SCULPTURE",
+    "category": [
+      "SURREAL",
+      "SCULPTURE",
+      "ART",
+      "DREAMLIKE",
+      "ABSTRACT"
+    ],
+    "message": "Take a picture and transform the subject into a surrealist sculptural masterpiece with impossible forms, dreamlike distortions, symbolic abstraction, and museum-quality artistic realism.\n\nThe sculpture should appear physically tangible yet psychologically impossible, featuring distorted geometry, floating forms, impossible anatomy, melting structures, fragmented shapes, or symbolic surrealist transformations.\n\nThe subject must remain recognizable while becoming integrated into the surreal sculptural form itself.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• The sculpture must feel physically real and materially believable\n• Preserve recognizable subject identity within the surreal form\n• Emphasize impossible artistic logic and dreamlike symbolism\n\nVISUAL STYLE:\n\n• Gallery-quality sculpture realism\n• Dramatic museum lighting\n• Surrealist artistic influence\n• Impossible physical forms\n• Symbolic abstraction"
   },
   {
     "name": "SURROUNDED",
@@ -33969,6 +34137,20 @@
     "additionalInstructions": "ABSOLUTE PROHIBITIONS:\n• No surreal or exaggerated weather\n• No partial transformations (everything must obey the new weather)\n• No time-of-day change unless required by realism\n\nFINAL RESULT:\nThe image must look like the exact same photograph taken at the same moment and location — but under completely opposite, fully believable weather conditions.\n\nPHOTOREALISM REQUIREMENT:"
   },
   {
+    "name": "WITCHCRAFT SYMBOL",
+    "category": [
+      "OCCULT",
+      "MYSTIC",
+      "SYMBOLIC",
+      "DARK",
+      "MAGIC"
+    ],
+    "message": "Take a picture and transform it into an occult witchcraft-inspired symbolic artwork filled with ritual geometry, arcane sigils, magical circles, ancient symbols, candles, smoke, mystical markings, alchemical diagrams, and supernatural atmosphere.\n\nThe subject should appear naturally integrated into the occult visual world as part of an ancient magical ritual, forbidden grimoire illustration, or supernatural ceremonial scene.\n\nThe final image should feel mysterious, ancient, supernatural, and visually powerful.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Include arcane symbols, ritual markings, and mystical geometry\n• Preserve recognizable subject identity within the occult scene\n• Avoid cartoon fantasy magic aesthetics\n\nVISUAL STYLE:\n\n• Dark mystical atmosphere\n• Ritualistic symbolism\n• Cinematic supernatural lighting\n• Ancient magical realism"
+  },
+  {
     "name": "WHO'S A GOOD HUMAN?",
     "category": [
       "HUMOR",
@@ -34894,6 +35076,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "ZOMBIE APOCALYPSE",
+    "category": [
+      "HORROR",
+      "POST-APOCALYPTIC",
+      "SURVIVAL",
+      "CHAOS",
+      "CINEMATIC"
+    ],
+    "message": "Take a picture and transform the scene into a terrifying zombie apocalypse survival scenario.\n\nThe subject must remain recognizable while appearing trapped within a catastrophic undead outbreak surrounded by ruined environments, destruction, smoke, abandoned vehicles, panic, survival tension, and horrifying cinematic realism.\n\nInclude environmental storytelling such as collapsing infrastructure, scattered debris, damaged buildings, emergency lighting, survival equipment, infected crowds, or desperate urban chaos.\n\nThe image should feel tense, cinematic, dangerous, and immersive.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Emphasize survival realism and environmental catastrophe\n• Avoid cartoon zombie aesthetics\n\nVISUAL STYLE:\n\n• Cinematic horror realism\n• Apocalyptic destruction\n• High environmental tension\n• Survival atmosphere"
   },
   {
     "name": "ZOOM CALL DISASTER",
