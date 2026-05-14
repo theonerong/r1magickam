@@ -1051,29 +1051,29 @@
   {
     "name": "ANAGLYPH DEPTH BLAST",
     "category": [
-      "OPTIONS", 
-      "3D", 
-      "POP-OUT", 
-      "ANAGLYPH", 
+      "OPTIONS",
+      "3D",
+      "POP-OUT",
+      "ANAGLYPH",
       "COLOR"
     ],
-    "message": "Take a picture and transform this image into a dramatic anaglyph-style 3D composition — red-cyan color separation that creates explosive stereoscopic depth even when viewed without glasses, as the color fringing itself suggests dimensional separation.\n\nThe subject must be composed so that elements at different depths have increasing color separation — nearest elements have maximum red-cyan offset while far background elements converge to normal color.\n\nThis creates a 3D pop effect visible to the naked eye through color tension alone.\n",
+    "message": "Take a picture and transform the image into an ultra-aggressive anaglyph-style 3D depth composition with extreme red-cyan stereoscopic separation and explosive foreground pop-out.\n\nThe subject must remain razor-sharp, highly recognizable, visually dominant, and appear to burst physically out toward the viewer.\n\nThe composition must create dramatic foreground-to-background depth separation even WITHOUT 3D glasses.\n\nThe nearest elements should appear violently projected out of the screen using strong perspective exaggeration, layered depth staging, camera-facing objects, and aggressive red-cyan channel separation.\n\nThe subject and nearest foreground elements must be ultra-high-resolution and extremely sharp while the background becomes softer, blurrier, lower-detail, and visually compressed in order to maximize dimensional separation and 3D intensity.\n\nThe image should feel like a theatrical stereoscopic depth blast frozen in a single cinematic frame.",
     "options": [
-      { 
-        "id": "001",
-        "text": "Maximum pop portrait — face and hands thrust toward camera with aggressive color separation, background nearly normal"
-      },
-      { 
-        "id": "002",
-        "text": "Action explosion — subject in peak dynamic motion with trails of red and cyan offset suggesting violent forward movement"
-      },
-      { 
-        "id": "003",
-        "text": "Object array — multiple objects at varying distances, each with precisely calibrated color offset revealing their depth position"
-      }
+    {
+      "id": "001",
+      "text": "MAXIMUM POP PORTRAIT — The subject's face, hands, hair, clothing edges, or accessories aggressively thrust toward the camera with extreme foreground perspective, powerful red-cyan depth separation, and explosive screen-breaking dimensionality."
+    },
+    {
+      "id": "002",
+      "text": "ACTION EXPLOSION — The subject captured in peak dynamic motion with violent forward momentum, aggressive perspective distortion, red-cyan motion trails, layered foreground debris, and intense stereoscopic depth blasting toward the viewer."
+    },
+    {
+      "id": "003",
+      "text": "OBJECT ARRAY — Multiple objects and subject elements staged across dramatically separated depth planes with calibrated red-cyan offsets creating intense layered stereoscopic depth and exaggerated dimensional spacing."
+    }
     ],
     "randomizeOptions": true,
-    "additionalInstructions": "COLOR SEPARATION RULES:\n• Red channel offset: shift left for near elements, no shift for far elements\n• Cyan channel offset: shift right for near elements, no shift for far elements\n• Maximum offset at nearest point: 3 to 5 percent of image width\n• Offset must reduce linearly with depth — the depth map IS the offset map\n\nDEPTH STAGING:\n• Compose specifically for three depth planes: extreme foreground, midground, background\n• Each plane must have clearly different offset levels\n• Include one element that appears to cross in front of the image frame\n\nCOLOR TREATMENT:\n• The underlying image must have strong, readable color even with the offset applied\n• Avoid very saturated red or cyan in the scene itself — these will fight with the offset channels\n• High contrast lighting helps the depth separation read clearly\n\nQUALITY TARGET:\n• A viewer without glasses should still feel the depth tension from the color fringing\n• With red-cyan glasses the effect must be dramatic and comfortable to view\n• The nearest element should appear to float 20 to 30 centimeters in front of the screen plane"
+    "additionalInstructions": "OPTION ENFORCEMENT:\n\n• The selected option MUST determine the final composition, depth staging, and visual identity\n• Do not ignore the selected option\n• Do not blend multiple options together\n• Do not generate generic weak anaglyph effects\n\nSUBJECT PRESERVATION ENFORCEMENT:\n\n• The subject must remain recognizable, visually dominant, and sharply defined\n• Preserve facial features, body shape, expression, hairstyle, pose, clothing silhouette, and identity\n• The subject must remain the primary focal point of the composition\n• Do NOT bury the subject beneath visual effects or excessive color distortion\n\nEXTREME DEPTH BLAST ENFORCEMENT:\n\n• The composition must aggressively exaggerate foreground-to-background depth\n• Nearest elements should appear extremely close to the camera lens\n• Use forced perspective and wide-angle lens distortion to amplify pop-out intensity\n• Include overlapping foreground elements crossing in front of the frame plane\n• At least one major element should appear to extend beyond the screen boundary toward the viewer\n• The image should feel like it is physically exploding out of the display\n\nFOCUS SEPARATION ENFORCEMENT:\n\n• Foreground subject elements must be ultra-high-resolution, razor sharp, and highly detailed\n• Midground elements should retain moderate sharpness\n• Background elements must become softer, blurrier, lower-detail, and visually compressed\n• The background must never compete with the foreground subject for attention\n• Depth-of-field separation should dramatically amplify perceived stereoscopic depth\n\nCOLOR SEPARATION RULES:\n\n• Red channel offset shifts left for near elements\n• Cyan channel offset shifts right for near elements\n• Minimal or zero offset for distant background elements\n• Offset intensity must scale with depth\n• Nearest foreground objects should contain the strongest separation\n• Different depth planes must contain visibly different offset magnitudes\n• Color fringing must visibly communicate depth even without glasses\n\nANAGLYPH QUALITY TARGET:\n\n• The effect must remain dramatic even when viewed without 3D glasses\n• With red-cyan glasses the stereoscopic effect should feel extreme yet comfortable\n• Depth layering should feel physically measurable and cinematic\n• The nearest foreground element should appear dramatically projected out toward the viewer\n\nVISUAL STYLE:\n\n• Ultra-photorealistic rendering\n• Cinematic stereoscopic photography aesthetic\n• Extreme dimensional separation\n• High contrast lighting\n• Aggressive perspective exaggeration\n• Premium 3D movie-poster energy\n• Sharp foreground detail with atmospheric background falloff\n\nANTI-CHEAT:\n\n• Do NOT apply weak uniform color fringing across the entire image\n• Do NOT flatten the image into a standard portrait with mild RGB offset\n• Do NOT keep all depth planes equally sharp\n• Do NOT reduce the effect to a simple filter overlay\n• Do NOT make the background equally detailed as the foreground\n• Do NOT create subtle low-impact stereoscopic separation\n\nFINAL RESULT:\nThe final image must resemble an ultra-photorealistic cinematic stereoscopic depth blast with explosive foreground pop-out, aggressive red-cyan dimensional separation, razor-sharp recognizable subject detail, dramatic layered perspective, and overwhelming screen-breaking 3D intensity."
   },
   {
     "name": "ANALOG FILM STRIP",
@@ -16782,29 +16782,29 @@
   {
     "name": "LIQUID METAL SPLASH",
     "category": [
-      "OPTIONS", 
-      "3D", 
-      "POP-OUT", 
-      "LIQUID", 
+      "OPTIONS",
+      "3D",
+      "POP-OUT",
+      "LIQUID",
       "MOTION"
     ],
-    "message": "Take a picture and transform the subject into a perfectly frozen high-speed liquid metal or chrome liquid splash — droplets and streams erupting toward the camera in a moment of peak dynamic action.\n\nThe liquid must appear to be at the exact microsecond of maximum explosion — streams, droplets, and sheets of reflective liquid suspended in perfect stillness while radiating directly toward the viewer.\n\nThis creates violent foreground-to-camera depth.\n",
-    "options": [
-      {
-        "id": "001",
-        "text": "Mercury crown — a classic milk crown form but rendered in liquid mercury — perfectly reflective, frozen at peak height" 
-      },
-      { 
-        "id": "002", 
-        "text": "Chrome explosion — a sphere of chrome liquid exploding outward with streams and droplets aimed directly at the lens" 
-      },
-      { 
-        "id": "003", 
-        "text": "Liquid gold — molten gold poured from above, frozen mid-splash, streams reflecting studio lights in long highlights" 
-      }
+    "message": "Take a picture and transform the subject into an ultra-photorealistic frozen liquid-metal explosion while STRICTLY preserving the subject's recognizable facial features, body shape, pose, clothing silhouette, hairstyle, and identity.\n\nThe subject must remain clearly visible and identifiable inside the liquid formation.\n\nThe liquid splash should appear as if the subject themselves is erupting outward toward the camera in an explosive high-speed moment frozen in time.\n\nThe image must create extreme foreground depth and aggressive 3D pop-out impact.\n\nThe subject should appear razor-sharp and ultra-high-resolution while the background becomes softer, blurrier, lower-detail, and less visually dominant in order to amplify depth separation and make the subject visually blast toward the viewer.\n\nThe liquid must appear frozen at the exact microsecond of maximum outward explosion — streams, droplets, sheets, ribbons, and fragments violently extending toward the camera lens.",
+  "options": [
+    {
+      "id": "001",
+      "text": "MERCURY CROWN — The subject emerging through a massive ultra-reflective liquid mercury crown splash with chrome-silver droplets, radial spikes, metallic ripples, and explosive forward depth aimed directly at the viewer."
+    },
+    {
+      "id": "002",
+      "text": "CHROME EXPLOSION — The subject at the center of a violent chrome-liquid detonation with reflective metallic streams, suspended droplets, explosive splash geometry, and aggressive camera-facing motion."
+    },
+    {
+      "id": "003",
+      "text": "LIQUID GOLD — The subject engulfed in molten gold splash formations with glowing metallic ribbons, reflective gold droplets, thick liquid arcs, and cinematic luxury-metal reflections exploding outward toward the viewer."
+    }
     ],
     "randomizeOptions": true,
-    "additionalInstructions": "PHYSICS OF THE FREEZE:\n• Capture the single microsecond of peak form — before droplets separate and after maximum height\n• Streams must taper correctly — thicker at base, thinning to sharp points\n• Droplets must be perfect oblate spheroids — flattened slightly by air resistance\n• Surface tension must be visible at the base of the splash where liquid meets surface\n\nREFLECTION REQUIREMENTS:\n• Every droplet and stream must show correct environment reflections\n• The reflections must be consistent — same environment reflected in every surface\n• Primary light sources appear as sharp elongated highlights on curved surfaces\n• The surrounding scene (dark studio or gradient background) reflected across the entire form\n\nDEPTH RULES:\n• Nearest droplets: large, sharp focus, reflections visible\n• Mid-ground streams: slightly smaller, slightly softer\n• Base of splash: deep focus, shows the impact surface\n• Depth must read instantly as violent 3D eruption toward camera\n\nQUALITY TARGET:\n• High-speed photography aesthetic at 1/1,000,000 second shutter equivalent\n• Black or gradient dark background to maximize reflection visibility\n• The nearest droplet should feel like it is about to hit the viewer in the face"
+    "additionalInstructions": "OPTION ENFORCEMENT:\n\n• The selected option MUST determine the final liquid material, splash appearance, reflections, and visual identity\n• Do not ignore the selected option\n• Do not blend multiple liquid styles together\n• Do not generate generic water splashes\n\nSUBJECT PRESERVATION ENFORCEMENT:\n\n• The subject must remain recognizable and visually dominant\n• Preserve the subject's facial features, hairstyle, expression, body shape, pose, clothing silhouette, and identity\n• Do NOT completely bury the subject inside abstract liquid\n• The splash must enhance the subject instead of replacing them\n• The viewer must instantly recognize the subject at first glance\n• Important facial areas should remain visible through or between splash structures\n• The liquid should appear to erupt FROM the subject rather than hiding the subject entirely\n\nDEPTH BLAST ENFORCEMENT:\n\n• The composition must create aggressive foreground-to-camera depth\n• Large foreground droplets and liquid streams should extend dramatically toward the viewer\n• The nearest droplets should appear extremely close to the camera lens\n• The subject should visually pop forward from the background with extreme dimensional separation\n• Use forced perspective and lens exaggeration to amplify 3D impact\n• The image should feel like liquid is blasting out of the screen toward the viewer\n\nFOCUS SEPARATION ENFORCEMENT:\n\n• The subject must be ultra-high-resolution, razor sharp, crisp, and highly detailed\n• The background must be softer, blurrier, coarser, lower-detail, and visually simplified\n• Use cinematic depth-of-field separation to create strong foreground pop-out\n• Background blur should increase the perceived dimensionality of the splash and subject\n• The background must never compete visually with the subject or liquid explosion\n\nPHYSICS OF THE FREEZE:\n\n• Capture the single microsecond of peak explosion before droplets separate\n• Streams must taper naturally — thicker at the base and thinning toward sharp points\n• Droplets should vary in size and depth for realistic high-speed splash physics\n• Surface tension and liquid cohesion must appear physically believable\n• Splash motion should feel violently outward and camera-directed\n\nREFLECTION REQUIREMENTS:\n\n• Every droplet and liquid surface must contain realistic reflections\n• Reflections must remain consistent across all liquid forms\n• Light sources should appear as elongated highlights on curved metallic surfaces\n• Metallic reflections should emphasize the shape and dimensionality of the splash\n\nVISUAL STYLE:\n\n• Ultra-photorealistic high-speed photography aesthetic\n• 1/1,000,000 second shutter-speed appearance\n• Cinematic studio lighting\n• Massive foreground depth\n• Extreme 3D pop-out composition\n• Hyper-detailed metallic textures\n• Dramatic perspective exaggeration\n• Premium cinematic realism\n\nANTI-CHEAT:\n\n• Do NOT generate only a random splash without the subject\n• Do NOT completely obscure the subject behind liquid\n• Do NOT generate generic chrome blobs\n• Do NOT flatten the composition into a normal portrait\n• Do NOT make the background equally sharp as the subject\n• Do NOT reduce the splash to minor droplets only\n\nFINAL RESULT:\nThe final image must resemble an ultra-photorealistic high-speed photograph of the recognizable subject explosively erupting through reflective liquid metal directly toward the viewer with extreme cinematic depth, aggressive 3D pop-out perspective, razor-sharp subject clarity, and violently dynamic frozen splash motion."
   },
   {
     "name": "LITE-BRITE",
