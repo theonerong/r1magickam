@@ -374,6 +374,12 @@ let isGalleryLayerActive = false;
 let galleryLayerPresets = []; // saved layer selections for the gallery viewer
 let galleryLayerManualSelections = {}; // saved manual option selections
 
+// Gallery MULTI-preset variables (persists while viewer is open, like LAYER)
+
+let isGalleryMultiActive = false;
+let galleryMultiPresets = []; // saved multi selections for the gallery viewer
+let galleryMultiManualSelections = {}; // saved manual option selections for multi
+
 // Shared flag so selectPreset() knows we are picking layers
 
 let isLayerPresetMode = false;
@@ -926,12 +932,12 @@ function filterGalleryByDate(images) {
     let matchesEnd = true;
     
     if (galleryStartDate) {
-      const startTime = new Date(galleryStartDate).getTime();
+      const startTime = new Date(galleryStartDate + 'T00:00:00').getTime();
       matchesStart = itemTime >= startTime;
     }
     
     if (galleryEndDate) {
-      const endTime = new Date(galleryEndDate).getTime();
+      const endTime = new Date(galleryEndDate + 'T00:00:00').getTime();
       matchesEnd = itemTime <= endTime;
     }
     
@@ -985,6 +991,11 @@ async function showGallery(renderOnly = false) {
   if (sortOrderSelect) {
     sortOrderSelect.value = gallerySortOrder;
   }
+  // Sync the custom sort button label
+  const sortLabelSync = document.getElementById('gallery-sort-label');
+  if (sortLabelSync) {
+    sortLabelSync.textContent = '🔀 SORT';
+  }
   
   // Show or hide the folder breadcrumb bar
   let breadcrumb = document.getElementById('gallery-folder-breadcrumb');
@@ -1017,8 +1028,8 @@ async function showGallery(renderOnly = false) {
     const d = new Date(img.timestamp);
     d.setHours(0,0,0,0);
     const t = d.getTime();
-    if (galleryStartDate && t < new Date(galleryStartDate).getTime()) return false;
-    if (galleryEndDate && t > new Date(galleryEndDate).getTime()) return false;
+    if (galleryStartDate && t < new Date(galleryStartDate + 'T00:00:00').getTime()) return false;
+    if (galleryEndDate && t > new Date(galleryEndDate + 'T00:00:00').getTime()) return false;
     return true;
   });
   const sortedImages = gallerySortOrder === 'oldest'
@@ -1051,7 +1062,7 @@ async function showGallery(renderOnly = false) {
     const startIndex = (currentGalleryPage - 1) * ITEMS_PER_PAGE;
     const endIndex = Math.min(startIndex + ITEMS_PER_PAGE, allItems.length);
     const pageItems = allItems.slice(startIndex, endIndex);
-
+    let lastDateLabel = null;
     pageItems.forEach(entry => {
       if (entry.type === 'folder') {
         const folder = entry.folder;
@@ -1121,6 +1132,19 @@ async function showGallery(renderOnly = false) {
       } else {
         // Image entry
         const item = entry.item;
+
+        // --- Date Divider ---
+        const _itemDate = new Date(item.timestamp);
+        const _dateLabel = _itemDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+        if (_dateLabel !== lastDateLabel) {
+          lastDateLabel = _dateLabel;
+          const _divider = document.createElement('div');
+          _divider.className = 'gallery-date-divider';
+          _divider.innerHTML = `<span class="gallery-date-divider-text">${_dateLabel}</span>`;
+          fragment.appendChild(_divider);
+        }
+        // --- End Date Divider ---
+
         const imgContainer = document.createElement('div');
         imgContainer.className = 'gallery-item';
         imgContainer.dataset.imageId = item.id;
@@ -1290,6 +1314,9 @@ function openImageViewer(index) {
   isGalleryLayerActive         = false;
   galleryLayerPresets          = [];
   galleryLayerManualSelections = {};
+  isGalleryMultiActive         = false;
+  galleryMultiPresets          = [];
+  galleryMultiManualSelections = {};
   const presetHeader = document.getElementById('viewer-preset-header');
   if (presetHeader) presetHeader.textContent = 'NO PRESET LOADED';
 
@@ -1334,6 +1361,10 @@ function closeImageViewer() {
   currentViewerImageIndex = -1;
   viewerZoom = 1;
   window.viewerLoadedPreset = null;
+  isGalleryMultiActive         = false;
+  galleryMultiPresets          = [];
+  galleryMultiManualSelections = {};
+
   // When user exits the viewer, delete the combined temp image and clear combined mode
   if (window.isCombinedMode && window.pendingCombinedImageId) {
     const tempId = window.pendingCombinedImageId;
@@ -1384,6 +1415,9 @@ function showPresetSelector() {
   isMultiPresetMode = false;
   isBatchPresetSelectionActive = false;
   selectedPresets = [];
+
+  // Also clear saved gallery multi state — user is switching to single preset
+  clearGalleryMultiState();
   
   // Hide multi-preset controls if they exist
   const multiControls = document.getElementById('multi-preset-controls');
@@ -2028,6 +2062,60 @@ async function submitMagicTransform() {
     return;
   }
   // END GALLERY LAYER MODE 
+
+  // GALLERY MULTI MODE
+  // Re-applies the previously saved multi presets without re-opening the selector.
+
+  if (isGalleryMultiActive && galleryMultiPresets.length > 0) {
+    const item = galleryImages[currentViewerImageIndex];
+    const resizedImageBase64 = await resizeImageForSubmission(item.imageBase64);
+
+    // Gather manual selections if needed (first time or if not yet saved)
+    if (manualOptionsMode && !noMagicMode && Object.keys(galleryMultiManualSelections).length === 0) {
+      for (const preset of galleryMultiPresets) {
+        const options = parsePresetOptions(preset);
+        if (options.length > 0) {
+          const selectedValue = await showManualOptionsModal(preset, options);
+          if (selectedValue !== null) {
+            galleryMultiManualSelections[preset.name] = selectedValue;
+          }
+        }
+      }
+    }
+
+    const overlay = document.createElement('div');
+    overlay.className = 'batch-progress-overlay';
+    overlay.innerHTML = `
+      <div class="batch-progress-text">Applying preset <span id="batch-current">0</span> / ${galleryMultiPresets.length}</div>
+      <div class="batch-progress-bar">
+        <div class="batch-progress-fill" id="batch-progress-fill" style="width: 0%"></div>
+      </div>
+    `;
+    document.body.appendChild(overlay);
+
+    let processed = 0;
+    for (const preset of galleryMultiPresets) {
+      try {
+        const manualSelection = galleryMultiManualSelections[preset.name] || null;
+        const finalPrompt = getFinalPrompt(preset, manualSelection);
+        if (typeof PluginMessageHandler !== 'undefined') {
+          const multiPayload = { pluginId: 'com.r1.pixelart', imageBase64: resizedImageBase64 };
+          if (finalPrompt && finalPrompt.trim()) multiPayload.message = finalPrompt;
+          PluginMessageHandler.postMessage(JSON.stringify(multiPayload));
+        }
+        processed++;
+        document.getElementById('batch-current').textContent = processed;
+        document.getElementById('batch-progress-fill').style.width = `${(processed / galleryMultiPresets.length) * 100}%`;
+        await new Promise(resolve => setTimeout(resolve, 3000));
+      } catch (error) {
+        console.error(`Failed to apply preset ${preset.name}:`, error);
+      }
+    }
+    document.body.removeChild(overlay);
+    alert(`${processed} preset${processed > 1 ? 's' : ''} applied successfully!`);
+    return;
+  }
+  // END GALLERY MULTI MODE
 
   const promptInput = document.getElementById('viewer-prompt');
   let prompt = promptInput.value.trim();
@@ -2948,7 +3036,8 @@ async function batchDeleteImages() {
 
 function openMultiPresetSelector(imageId) {
   multiPresetImageId = imageId;
-  selectedPresets = [];
+  // Pre-populate with previously saved gallery multi selections (like LAYER does)
+  selectedPresets = isGalleryMultiActive ? [...galleryMultiPresets] : [];
   isMultiPresetMode = true;
   
   const modal = document.getElementById('preset-selector');
@@ -3179,13 +3268,19 @@ async function applyMultiplePresets() {
 
   // Clear layer mode — user has chosen new multi presets
   clearGalleryLayerState();
+
+  // Save multi state persistently so MAGIC button can reuse it
+  galleryMultiPresets          = [...presetsToApply];
+  isGalleryMultiActive         = true;
+  galleryMultiManualSelections = {};
+  window.viewerLoadedPreset    = null;
+
   const multiHeader = document.getElementById('viewer-preset-header');
   if (multiHeader) multiHeader.textContent = `🎞️ MULTI (${presetsToApply.length})`;
 
   cancelMultiPresetMode();
 
   // If Manual Options mode is on, collect selections for each preset one at a time BEFORE feeding
-  const galleryMultiManualSelections = {};
   if (manualOptionsMode && !noMagicMode) {
     for (const preset of presetsToApply) {
       const options = parsePresetOptions(preset);
@@ -3256,9 +3351,22 @@ async function applyMultiplePresets() {
         playTaDaSound();
         const creditsEl = document.getElementById('import-credits-display');
         if (creditsEl) creditsEl.textContent = `Credits: ${getCredits()}`;
+        // Lock in the MULTI label now so the restore always goes back to it
+        const _multiRestoreLabel = `🎞️ MULTI (${presetsToApply.length})`;
         setTimeout(() => {
           const newTotal = getCredits();
-          showGalleryCreditFlash(`🪙 ${totalNewCredits > 1 ? totalNewCredits + ' Credits' : 'Credit'} Earned!\n(${newTotal} total)`);
+          const _flashHeader = document.getElementById('viewer-preset-header');
+          if (_flashHeader) {
+            const _origStyle = _flashHeader.style.cssText;
+            _flashHeader.style.whiteSpace = 'pre-line';
+            _flashHeader.style.lineHeight = '1.3';
+            _flashHeader.style.fontSize = '2.8vw';
+            _flashHeader.textContent = `🪙 ${totalNewCredits > 1 ? totalNewCredits + ' Credits' : 'Credit'} Earned!\n(${newTotal} total)`;
+            setTimeout(() => {
+              _flashHeader.textContent = _multiRestoreLabel;
+              _flashHeader.style.cssText = _origStyle;
+            }, 3500);
+          }
         }, 300);
       }
     }
@@ -4317,6 +4425,9 @@ function hideVisiblePresetsSubmenu() {
 // Called when user taps the viewer prompt text area
 function handleViewerPromptTap() {
   const hasLoadedPreset = !!window.viewerLoadedPreset;
+
+// Clear saved gallery multi state — user is editing a prompt instead
+  clearGalleryMultiState();
   
   if (!hasLoadedPreset) {
     // No preset loaded: open Preset Builder to create a new one
@@ -6026,6 +6137,13 @@ function clearGalleryLayerState() {
   galleryLayerManualSelections = {};
 }
 
+function clearGalleryMultiState() {
+  if (!isGalleryMultiActive) return; // nothing to clear
+  isGalleryMultiActive         = false;
+  galleryMultiPresets          = [];
+  galleryMultiManualSelections = {};
+}
+
 // GALLERY LAYER 
 
 // Opens the preset selector in Layer mode from the gallery image viewer.
@@ -6034,6 +6152,9 @@ function openGalleryLayerPresetSelector(imageId) {
   galleryLayerImageId  = imageId;
   isLayerPresetMode    = true;
   layerSelectedPresets = [];
+  
+  // Clear gallery multi state — user is switching to layer mode
+  clearGalleryMultiState();
 
   const modal  = document.getElementById('preset-selector');
   const header = modal.querySelector('.preset-selector-header h3');
@@ -6135,6 +6256,29 @@ async function applyGalleryLayerPresets() {
 
     const presetHeader = document.getElementById('viewer-preset-header');
     if (presetHeader) presetHeader.textContent = '📑 LAYER';
+
+    // GALLERY LAYER CREDIT GAME — earn credits for each unique imported preset used
+    try {
+      const _layerImported = presetImporter.getImportedPresets();
+      if (_layerImported.length > 0) {
+        const _layerImportedNames = new Set(_layerImported.map(p => p.name));
+        let _layerNewCredits = 0;
+        for (const preset of presetsToApply) {
+          if (preset.name && _layerImportedNames.has(preset.name)) {
+            if (earnCredit(preset.name)) _layerNewCredits++;
+          }
+        }
+        if (_layerNewCredits > 0) {
+          playTaDaSound();
+          const _layerCreditsEl = document.getElementById('import-credits-display');
+          if (_layerCreditsEl) _layerCreditsEl.textContent = `Credits: ${getCredits()}`;
+          setTimeout(() => {
+            const _layerTotal = getCredits();
+            showGalleryCreditFlash(`🪙 ${_layerNewCredits > 1 ? _layerNewCredits + ' Credits' : 'Credit'} Earned!\n(${_layerTotal} total)`);
+          }, 300);
+        }
+      }
+    } catch (e) { /* non-critical */ }
 
     alert(`Layer preset applied! ${presetsToApply.length} preset${presetsToApply.length > 1 ? 's' : ''} merged into one transform.`);
   } else {
@@ -6648,7 +6792,7 @@ const TOUR_STEPS = [
   { section: 'Gallery', title: '☑️ Batch Operations', body: 'Tap the Select button to enter batch mode. Select multiple images, then apply one preset to all of them or delete them in bulk. If only two are selected, you may also combine them. Always tap DONE when finished.' },
   { section: 'Gallery', title: '📁+ New Folder', body: 'Create a new folder to organize your saved images. Name the folder and save. Long press edits name. Images may be moved by selecting image(s) then long pressing the last image.' },
   { section: 'Gallery', title: '🖼️🖼️ Combine Images', body: 'Tap the Select button to enter batch mode. Select two images, then click Combine to create one image. You can apply presets to create combined subjects into one final image using existing presets.' }, 
-  { section: 'Gallery', title: '📅 Sort and Filter', body: 'Sort by newest or oldest. Filter by date range. When filtering, always select the day after your end date. For example, to see December 25 photos, filter from December 25 to December 26.' },
+  { section: 'Gallery', title: '🔀 Sort and Filter', body: 'Use the SORT button — to the right of Start and End — to sort images by Newest First or Oldest First. Filter by date range using the Start and End buttons.' },
   { section: 'Gallery', title: '🖼️ Image Viewer', body: 'Tap a thumbnail image in the gallery to view it full-screen. The viewer is redesigned to give your photo maximum screen space. Pinch to zoom in and out.' },
   { section: 'Gallery', title: '🎨 Applying Presets to Single Image', body: 'After clicking on a single image, Tap LOAD or MULTI to transform a saved image. Click twice on a preset to apply to the image. You can stack multiple transformations. You may also layer up to five presets.' },
   { section: 'Gallery', title: '🏷️ Preset Header', body: 'At the very top of the image viewer a header shows the name of the currently loaded preset. Tap the header to hear the preset name and description.' },
@@ -8195,6 +8339,9 @@ addToGallery(dataUrl);
         if (isCameraMultiPresetActive && cameraSelectedPresets.length > 0) {
           // Multi-preset: check every selected preset
           presetsUsed = cameraSelectedPresets.filter(p => p.name && importedNames.has(p.name));
+        } else if (isCameraLayerActive && cameraLayerPresets.length > 0) {
+          // Layer-preset: check every layer preset
+          presetsUsed = cameraLayerPresets.filter(p => p.name && importedNames.has(p.name));
         } else {
           // Single preset (including random and voice modes)
           const activePreset = CAMERA_PRESETS[currentPresetIndex];
@@ -9748,6 +9895,40 @@ async function hideMasterPromptSubmenu() {
       if (presetHeader) presetHeader.textContent = window._savedViewerPresetBeforeMaster.name;
     }
     window._savedViewerPresetBeforeMaster = null;
+
+    // Restore layer state if it was active before master was opened
+    if (window._savedGalleryLayerActiveBeforeMaster) {
+      isGalleryLayerActive = true;
+      galleryLayerPresets = window._savedGalleryLayerPresetsBeforeMaster || [];
+      galleryLayerManualSelections = window._savedGalleryLayerSelectionsBeforeMaster || {};
+    }
+    // Restore multi state if it was active before master was opened
+    if (window._savedGalleryMultiActiveBeforeMaster) {
+      isGalleryMultiActive = true;
+      galleryMultiPresets = window._savedGalleryMultiPresetsBeforeMaster || [];
+      galleryMultiManualSelections = window._savedGalleryMultiSelectionsBeforeMaster || {};
+    }
+    // Restore the header text for layer ("📑 LAYER"), multi ("🎞️ MULTI (N)"), or custom prompt
+    if (window._savedViewerHeaderBeforeMaster && window._savedViewerHeaderBeforeMaster !== 'NO PRESET LOADED') {
+      const restoredHeader = document.getElementById('viewer-preset-header');
+      if (restoredHeader && !window._savedViewerPresetBeforeMaster) {
+        restoredHeader.textContent = window._savedViewerHeaderBeforeMaster;
+      }
+    }
+    // Restore the prompt textarea value
+    if (window._savedViewerPromptBeforeMaster) {
+      const restoredPrompt = document.getElementById('viewer-prompt');
+      if (restoredPrompt) restoredPrompt.value = window._savedViewerPromptBeforeMaster;
+    }
+    // Clean up all saved state
+    window._savedGalleryLayerActiveBeforeMaster = null;
+    window._savedGalleryLayerPresetsBeforeMaster = null;
+    window._savedGalleryLayerSelectionsBeforeMaster = null;
+    window._savedGalleryMultiActiveBeforeMaster = null;
+    window._savedGalleryMultiPresetsBeforeMaster = null;
+    window._savedGalleryMultiSelectionsBeforeMaster = null;
+    window._savedViewerHeaderBeforeMaster = null;
+    window._savedViewerPromptBeforeMaster = null;
     return;
   }
 
@@ -11424,17 +11605,18 @@ window.addEventListener('load', () => {
         if (speakBtn) speakBtn.addEventListener('click', handleSpeak);
       }
 
-      // Multi preset mode active in gallery viewer
-      if (!window.viewerLoadedPreset && !isGalleryLayerActive) {
+      // Multi preset mode active in gallery viewer — show the list of selected presets
+      if (isGalleryMultiActive && galleryMultiPresets.length > 0) {
         const multiHeader = document.getElementById('viewer-preset-header');
-        if (multiHeader && multiHeader.textContent.startsWith('🎞️ MULTI')) {
-          showPresetInfoModal(
-            multiHeader.textContent,
-            'Multiple presets are queued to apply to this image sequentially.\n\nTap ✨ MAGIC to apply them.',
-            null
-          );
-          return;
-        }
+        const presetNames = galleryMultiPresets
+          .map((p, i) => `${i + 1}. ${p.name}`)
+          .join('\n');
+        showPresetInfoModal(
+          multiHeader ? multiHeader.textContent : `🎞️ MULTI (${galleryMultiPresets.length})`,
+          `${galleryMultiPresets.length} preset${galleryMultiPresets.length > 1 ? 's' : ''} queued to apply sequentially:\n\n${presetNames}\n\nTap ✨ MAGIC to apply again.`,
+          null
+        );
+        return;
       }
       
       // Layer mode active — show info but nothing to speak
@@ -13531,7 +13713,19 @@ const result = await presetImporter.import();
       // Save current viewer image index AND current preset
       savedViewerImageIndex = currentViewerImageIndex;
       window._savedViewerPresetBeforeMaster = window.viewerLoadedPreset || null;
-      
+
+      // Save layer/multi/prompt state so it can also be restored on return
+      window._savedGalleryLayerActiveBeforeMaster = isGalleryLayerActive;
+      window._savedGalleryLayerPresetsBeforeMaster = [...galleryLayerPresets];
+      window._savedGalleryLayerSelectionsBeforeMaster = Object.assign({}, galleryLayerManualSelections);
+      window._savedGalleryMultiActiveBeforeMaster = isGalleryMultiActive;
+      window._savedGalleryMultiPresetsBeforeMaster = [...galleryMultiPresets];
+      window._savedGalleryMultiSelectionsBeforeMaster = Object.assign({}, galleryMultiManualSelections);
+      const _phEl = document.getElementById('viewer-preset-header');
+      window._savedViewerHeaderBeforeMaster = _phEl ? _phEl.textContent : 'NO PRESET LOADED';
+      const _vpEl = document.getElementById('viewer-prompt');
+      window._savedViewerPromptBeforeMaster = _vpEl ? _vpEl.value : '';
+
       // Close image viewer and gallery
       document.getElementById('image-viewer').style.display = 'none';
       document.getElementById('gallery-modal').style.display = 'none';
@@ -13588,25 +13782,171 @@ const result = await presetImporter.import();
     closeQrModalBtn.addEventListener('click', closeQrModal);
   }
 
+  // Custom date picker modal logic — uses scrollable button lists (no native OS picker)
+  const _MONTHS_SHORT = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+
+  function _setDatePickerValue(field, value) {
+    const hidden = document.getElementById(`gallery-date-${field}`);
+    if (hidden) hidden.value = value;
+    const list = document.getElementById(`gallery-date-${field}-list`);
+    if (list) {
+      list.querySelectorAll('.gallery-date-option-btn').forEach(btn => {
+        btn.classList.toggle('date-selected', btn.dataset.value === value);
+      });
+      const sel = list.querySelector('.date-selected');
+      if (sel) sel.scrollIntoView({ block: 'nearest' });
+    }
+    if (field === 'month' || field === 'year') _populateDatePickerDays();
+  }
+
+  function _buildDateList(containerId, items, currentValue, field) {
+    const list = document.getElementById(containerId);
+    if (!list) return;
+    list.innerHTML = '';
+    items.forEach(({ label, value }) => {
+      const btn = document.createElement('button');
+      btn.className = 'gallery-date-option-btn' + (value === currentValue ? ' date-selected' : '');
+      btn.dataset.value = value;
+      btn.textContent = label;
+      btn.addEventListener('click', () => _setDatePickerValue(field, value));
+      list.appendChild(btn);
+    });
+  }
+
+  function _populateDatePickerDays() {
+    const monthVal   = (document.getElementById('gallery-date-month') || {}).value || '';
+    const yearVal    = (document.getElementById('gallery-date-year')  || {}).value || '';
+    const dayVal     = (document.getElementById('gallery-date-day')   || {}).value || '';
+    const month      = parseInt(monthVal, 10);
+    const year       = parseInt(yearVal,  10) || new Date().getFullYear();
+    const total      = month ? new Date(year, month, 0).getDate() : 31;
+    const items      = [];
+    for (let d = 1; d <= total; d++) {
+      const val = String(d).padStart(2, '0');
+      items.push({ label: String(d), value: val });
+    }
+    _buildDateList('gallery-date-day-list', items, dayVal, 'day');
+  }
+
+  function openDatePickerModal(type) {
+    const modal = document.getElementById('gallery-date-modal');
+    const title = document.getElementById('gallery-date-modal-title');
+    if (!modal) return;
+    modal._dateType = type;
+    if (title) title.textContent = type === 'start' ? 'START DATE' : 'END DATE';
+
+    const existing  = type === 'start' ? galleryStartDate : galleryEndDate;
+    const parts     = existing ? existing.split('-') : ['', '', ''];
+    const curYear   = parts[0] || '';
+    const curMonth  = parts[1] || '';
+    const curDay    = parts[2] || '';
+
+    // Pre-load hidden inputs so _populateDatePickerDays reads them correctly
+    const hidM = document.getElementById('gallery-date-month');
+    const hidD = document.getElementById('gallery-date-day');
+    const hidY = document.getElementById('gallery-date-year');
+    if (hidM) hidM.value = curMonth;
+    if (hidD) hidD.value = curDay;
+    if (hidY) hidY.value = curYear;
+
+    // Build month buttons
+    const monthItems = _MONTHS_SHORT.map((name, i) => ({
+      label: name,
+      value: String(i + 1).padStart(2, '0')
+    }));
+    _buildDateList('gallery-date-month-list', monthItems, curMonth, 'month');
+
+    // Build year buttons (newest first)
+    const nowYear = new Date().getFullYear();
+    const yearItems = [];
+    for (let y = nowYear; y >= 2020; y--) {
+      yearItems.push({ label: String(y), value: String(y) });
+    }
+    _buildDateList('gallery-date-year-list', yearItems, curYear, 'year');
+
+    // Build day buttons (respects current month/year)
+    _populateDatePickerDays();
+
+    modal.style.display = 'flex';
+  }
+
+  // OK button — confirm the selected date
+  const _dateOkBtn = document.getElementById('gallery-date-ok');
+  if (_dateOkBtn) {
+    _dateOkBtn.addEventListener('click', () => {
+      const modal    = document.getElementById('gallery-date-modal');
+      const monthVal = (document.getElementById('gallery-date-month') || {}).value || '';
+      const dayVal   = (document.getElementById('gallery-date-day')   || {}).value || '';
+      const yearVal  = (document.getElementById('gallery-date-year')  || {}).value || '';
+      const type     = modal._dateType;
+      if (monthVal && dayVal && yearVal) {
+        const dateValue = `${yearVal}-${monthVal}-${dayVal}`;
+        if (type === 'start') {
+          galleryStartDate = dateValue;
+          updateDateButtonText('start', galleryStartDate);
+        } else {
+          galleryEndDate = dateValue;
+          updateDateButtonText('end', galleryEndDate);
+        }
+        onGalleryFilterChange();
+      }
+      modal.style.display = 'none';
+    });
+  }
+
+  // Clear button — wipe the date filter
+  const _dateClearBtn = document.getElementById('gallery-date-clear');
+  if (_dateClearBtn) {
+    _dateClearBtn.addEventListener('click', () => {
+      const modal = document.getElementById('gallery-date-modal');
+      const type  = modal._dateType;
+      if (type === 'start') {
+        galleryStartDate = null;
+        updateDateButtonText('start', null);
+      } else {
+        galleryEndDate = null;
+        updateDateButtonText('end', null);
+      }
+      onGalleryFilterChange();
+      modal.style.display = 'none';
+    });
+  }
+
+  // Cancel button — close without changes
+  const _dateCancelBtn = document.getElementById('gallery-date-cancel');
+  if (_dateCancelBtn) {
+    _dateCancelBtn.addEventListener('click', () => {
+      document.getElementById('gallery-date-modal').style.display = 'none';
+    });
+  }
+
+  // Tap the dark overlay to cancel
+  const _dateOverlay = document.querySelector('#gallery-date-modal .gallery-custom-modal-overlay');
+  if (_dateOverlay) {
+    _dateOverlay.addEventListener('click', () => {
+      document.getElementById('gallery-date-modal').style.display = 'none';
+    });
+  }
+
   const startDateBtn = document.getElementById('gallery-start-date-btn');
   const startDateInput = document.getElementById('gallery-start-date');
-  if (startDateBtn && startDateInput) {
-    startDateBtn.addEventListener('click', () => {
-      startDateInput.showPicker();
-    });
+  if (startDateBtn) {
+    startDateBtn.addEventListener('click', () => openDatePickerModal('start'));
+  }
+  if (startDateInput) {
     startDateInput.addEventListener('change', (e) => {
       galleryStartDate = e.target.value || null;
       updateDateButtonText('start', galleryStartDate);
       onGalleryFilterChange();
     });
   }
-  
+
   const endDateBtn = document.getElementById('gallery-end-date-btn');
   const endDateInput = document.getElementById('gallery-end-date');
-  if (endDateBtn && endDateInput) {
-    endDateBtn.addEventListener('click', () => {
-      endDateInput.showPicker();
-    });
+  if (endDateBtn) {
+    endDateBtn.addEventListener('click', () => openDatePickerModal('end'));
+  }
+  if (endDateInput) {
     endDateInput.addEventListener('change', (e) => {
       galleryEndDate = e.target.value || null;
       updateDateButtonText('end', galleryEndDate);
@@ -13626,6 +13966,52 @@ const result = await presetImporter.import();
       }
       onGalleryFilterChange();
     });
+  }
+
+  // Custom sort modal wiring
+  const _gallerySortBtn   = document.getElementById('gallery-sort-btn');
+  const _gallerySortModal = document.getElementById('gallery-sort-modal');
+
+  if (_gallerySortBtn && _gallerySortModal) {
+    _gallerySortBtn.addEventListener('click', () => {
+      // Highlight whichever option is currently active
+      document.querySelectorAll('#gallery-sort-modal .gallery-custom-modal-option').forEach(opt => {
+        opt.classList.toggle('active-sort', opt.dataset.value === gallerySortOrder);
+      });
+      _gallerySortModal.style.display = 'flex';
+    });
+
+    // Each option button picks a sort order and closes
+    document.querySelectorAll('#gallery-sort-modal .gallery-custom-modal-option').forEach(opt => {
+      opt.addEventListener('click', () => {
+        const newSort = opt.dataset.value;
+        if (sortOrderSelect) {
+          sortOrderSelect.value = newSort;
+          sortOrderSelect.dispatchEvent(new Event('change'));
+        }
+        const _sortLabel = document.getElementById('gallery-sort-label');
+        if (_sortLabel) {
+          _sortLabel.textContent = '🔀 SORT';
+        }
+        _gallerySortModal.style.display = 'none';
+      });
+    });
+
+    // Cancel button
+    const _sortCancelBtn = document.getElementById('gallery-sort-cancel');
+    if (_sortCancelBtn) {
+      _sortCancelBtn.addEventListener('click', () => {
+        _gallerySortModal.style.display = 'none';
+      });
+    }
+
+    // Tap the dark overlay to cancel
+    const _sortOverlay = _gallerySortModal.querySelector('.gallery-custom-modal-overlay');
+    if (_sortOverlay) {
+      _sortOverlay.addEventListener('click', () => {
+        _gallerySortModal.style.display = 'none';
+      });
+    }
   }
   
   const prevPageBtn = document.getElementById('prev-page');

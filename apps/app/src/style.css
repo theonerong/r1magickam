@@ -1926,12 +1926,12 @@ button:disabled {
     grid-template-columns: repeat(3, 1fr);
     gap: 2vw;
     align-content: start;
-    grid-auto-rows: 30vw;
+    grid-auto-rows: auto;
 }
 
 .gallery-item {
     width: 100%;
-    height: 100%;
+    height: 30vw;
     overflow: hidden;
     border-radius: 2vw;
     cursor: pointer;
@@ -1965,11 +1965,38 @@ button:disabled {
     font-size: 4vw;
 }
 
+/* ===== GALLERY DATE DIVIDERS ===== */
+.gallery-date-divider {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    padding: 0.3vw 0;
+    margin: 0;
+}
+
+.gallery-date-divider::before,
+.gallery-date-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: #333;
+}
+
+.gallery-date-divider-text {
+    font-size: 2.8vw;
+    color: #888;
+    padding: 0 2.5vw;
+    white-space: nowrap;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
 /* Gallery Controls */
 .gallery-controls {
     display: flex;
-    flex-direction: column;
-    gap: 2vw;
+    flex-direction: row;
+    gap: 0;
     padding: 2vw 3vw;
     background-color: #000;
     border-bottom: 1px solid #333;
@@ -2039,6 +2066,273 @@ button:disabled {
 .gallery-filter-select:focus {
     border-color: #FE5F00;
     box-shadow: 0 0 0 1px #FE5F00;
+}
+
+/* ===== GALLERY SORT BUTTON (replaces native select) ===== */
+.gallery-sort-button {
+    flex: 1;
+    padding: 2.5vw;
+    background-color: #222;
+    color: #fff;
+    border: 2px solid #FE5F00;
+    border-radius: 1vw;
+    font-size: 3.5vw;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    outline: none;
+    transition: all 0.2s ease;
+    font-family: inherit;
+    min-height: 11vh;
+    gap: 1vw;
+}
+
+.gallery-sort-button:active {
+    background-color: #2a2a2a;
+    transform: scale(0.98);
+}
+
+.gallery-sort-chevron {
+    color: #FE5F00;
+    font-size: 4vw;
+    flex-shrink: 0;
+}
+
+/* ===== GALLERY CUSTOM MODALS (Sort Order + Date Picker) ===== */
+.gallery-custom-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10001;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.2s ease;
+}
+
+.gallery-custom-modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.82);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
+
+.gallery-custom-modal-content {
+    position: relative;
+    background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+    border-radius: 3vw;
+    width: 85%;
+    max-width: 340px;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.75);
+    border: 1px solid rgba(254, 95, 0, 0.35);
+    animation: slideUp 0.25s ease;
+    overflow: hidden;
+}
+
+.gallery-custom-modal-header {
+    background: #000;
+    border-bottom: 1px solid #FE5F00;
+    padding: 3vw 4vw;
+    text-align: center;
+}
+
+.gallery-custom-modal-header h3 {
+    color: #FE5F00;
+    font-size: 4.5vw;
+    margin: 0;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+}
+
+.gallery-custom-modal-list {
+    padding: 3vw;
+    display: flex;
+    flex-direction: column;
+    gap: 2vw;
+}
+
+.gallery-custom-modal-option {
+    width: 100%;
+    background: #2a2a2a;
+    border: 1px solid #333;
+    border-radius: 2vw;
+    color: #fff;
+    font-size: 4vw;
+    font-weight: 600;
+    padding: 3.5vw 4vw;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+    transition: all 0.2s ease;
+    font-family: inherit;
+}
+
+.gallery-custom-modal-option:active {
+    background: #3a3a3a;
+    transform: scale(0.98);
+}
+
+.gallery-custom-modal-option.active-sort {
+    background: #FE5F00;
+    color: #000;
+    border-color: #FE5F00;
+}
+
+.gallery-custom-modal-check {
+    font-size: 4.5vw;
+    font-weight: 900;
+}
+
+.gallery-custom-modal-cancel {
+    width: 100%;
+    padding: 3.5vw;
+    background: transparent;
+    border: none;
+    border-top: 1px solid #333;
+    color: #888;
+    font-size: 4vw;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.15s ease;
+    font-family: inherit;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.gallery-custom-modal-cancel:active {
+    color: #fff;
+    background: rgba(255,255,255,0.05);
+}
+
+/* Date Picker Modal body */
+.gallery-date-picker-body {
+    padding: 3vw 4vw 3vw;
+}
+
+.gallery-date-columns {
+    display: flex;
+    gap: 2vw;
+}
+
+.gallery-date-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5vw;
+}
+
+.gallery-date-select-label {
+    color: #FE5F00;
+    font-size: 3vw;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+}
+
+.gallery-date-col-list {
+    height: 30vw;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+    scrollbar-width: none;
+    border: 1px solid #333;
+    border-radius: 1.5vw;
+    padding: 1vw;
+    background: #111;
+}
+
+.gallery-date-col-list::-webkit-scrollbar {
+    display: none;
+}
+
+.gallery-date-option-btn {
+    background: transparent;
+    color: #bbb;
+    border: none;
+    border-radius: 1vw;
+    padding: 2vw 1vw;
+    font-size: 3.5vw;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+    font-family: inherit;
+    flex-shrink: 0;
+    width: 100%;
+    transition: all 0.1s ease;
+}
+
+.gallery-date-option-btn.date-selected {
+    background: #FE5F00;
+    color: #000;
+    border-radius: 1vw;
+}
+
+.gallery-date-option-btn:active {
+    opacity: 0.7;
+}
+
+.gallery-date-modal-actions {
+    display: flex;
+    border-top: 1px solid #333;
+}
+
+.gallery-date-modal-btn {
+    flex: 1;
+    padding: 3.5vw;
+    border: none;
+    font-size: 3.5vw;
+    font-weight: 700;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: all 0.15s ease;
+    font-family: inherit;
+}
+
+.gallery-date-modal-clear {
+    background: transparent;
+    color: #888;
+    border-right: 1px solid #333;
+}
+
+.gallery-date-modal-clear:active {
+    color: #fff;
+    background: rgba(255,255,255,0.05);
+}
+
+.gallery-date-modal-cancel {
+    background: transparent;
+    color: #aaa;
+    border-right: 1px solid #333;
+}
+
+.gallery-date-modal-cancel:active {
+    color: #fff;
+    background: rgba(255,255,255,0.05);
+}
+
+.gallery-date-modal-ok {
+    background: #FE5F00;
+    color: #000;
+}
+
+.gallery-date-modal-ok:active {
+    background: #e05400;
+    transform: scale(0.98);
 }
 
 /* Gallery Pagination */
