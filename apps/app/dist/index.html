@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>Magic Kamera</title>
-  <script type="module" crossorigin src="./assets/main-C-gPsxLV.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/main-CCgW-mBx.css">
+  <script type="module" crossorigin src="./assets/main-BWZj6AC4.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/main-D96it6qr.css">
 </head>
 <body>
     <div id="app">
@@ -924,7 +924,7 @@
 
                             <strong>Batch Operations-Combine:</strong> Select two images to combine them to feed to r1 thereby creating AI generated images from two of your gallery saved images. Click the Select button. Select the two images and click Combine. It will open up the Combined Image Viewer to prompt them and edit them. If you do not edit the combined picture and then save, it will be deleted after you exit the Combined Image Viewer. Saving an edited combined picture saves it to your gallery as a new image.<br><br>
 
-                            <strong>Sort &amp; Filter:</strong> Organize by newest/oldest, filter by date range. When picking a date range, always select the day after your end date. For example for December 25 images, choose December 25 to December 26.<br><br>
+                            <strong>🔀 Sort &amp; Filter (SORT button):</strong> Tap the SORT button (to the right of the Start and End buttons) to choose whether images are sorted by Newest First or Oldest First. Filter by date range using the Start and End buttons. <br><br>
 
                             <strong>📁+ New Folder:</strong> Create a new folder to organize your saved images. Name the folder and save. Once the folder is created, long press on the folder to edit the name. Images may be moved by clicking select, selecting all the images you want to move, then long pressing the last image. A modal will appear allowing you to choose the folder where to move the image (or select gallery to move the image back to the gallery).<br><br>
 
@@ -1203,8 +1203,12 @@ All of the presets are optimized to avoid "camera ran dry" or "content filter" i
                             <button id="gallery-end-date-btn" class="date-filter-button">
                                 <span class="date-button-text">End</span>
                             </button>
+                            <button id="gallery-sort-btn" class="gallery-sort-button">
+                                <span id="gallery-sort-label">🔀 SORT</span>
+                                <span class="gallery-sort-chevron">▾</span>
+                            </button>
                         </div>
-                        <select id="gallery-sort-order" class="gallery-filter-select">
+                        <select id="gallery-sort-order" style="display:none;" aria-hidden="true">
                             <option value="newest">Newest First</option>
                             <option value="oldest">Oldest First</option>
                         </select>
@@ -1505,6 +1509,61 @@ All of the presets are optimized to avoid "camera ran dry" or "content filter" i
                 <div id="qr-code-container" class="qr-code-container"></div>
                 <p id="qr-url-text" class="qr-url-text"></p>
                 <p class="qr-expiry-text">Link expires in 24 hours</p>
+            </div>
+        </div>
+        <!-- Custom Gallery Sort Modal -->
+        <div id="gallery-sort-modal" class="gallery-custom-modal" style="display:none;">
+            <div class="gallery-custom-modal-overlay"></div>
+            <div class="gallery-custom-modal-content">
+                <div class="gallery-custom-modal-header">
+                    <h3>SORT ORDER</h3>
+                </div>
+                <div class="gallery-custom-modal-list">
+                    <button class="gallery-custom-modal-option" id="sort-option-newest" data-value="newest">
+                        <span>📅 Newest First</span>
+                        <span class="gallery-custom-modal-check" id="sort-check-newest">✓</span>
+                    </button>
+                    <button class="gallery-custom-modal-option" id="sort-option-oldest" data-value="oldest">
+                        <span>🕰️ Oldest First</span>
+                        <span class="gallery-custom-modal-check" id="sort-check-oldest">✓</span>
+                    </button>
+                </div>
+                <button class="gallery-custom-modal-cancel" id="gallery-sort-cancel">Cancel</button>
+            </div>
+        </div>
+
+        <!-- Custom Gallery Date Picker Modal -->
+        <div id="gallery-date-modal" class="gallery-custom-modal" style="display:none;">
+            <div class="gallery-custom-modal-overlay"></div>
+            <div class="gallery-custom-modal-content">
+                <div class="gallery-custom-modal-header">
+                    <h3 id="gallery-date-modal-title">SELECT DATE</h3>
+                    <p style="font-size:3vw;color:#aaa;margin:0 0 1vw 0;text-align:center;">Tap a Month, Day, and Year below</p>
+                </div>
+                <div class="gallery-date-picker-body">
+                    <div class="gallery-date-columns">
+                        <div class="gallery-date-col">
+                            <div class="gallery-date-select-label">Month</div>
+                            <div id="gallery-date-month-list" class="gallery-date-col-list"></div>
+                            <input type="hidden" id="gallery-date-month" value="">
+                        </div>
+                        <div class="gallery-date-col">
+                            <div class="gallery-date-select-label">Day</div>
+                            <div id="gallery-date-day-list" class="gallery-date-col-list"></div>
+                            <input type="hidden" id="gallery-date-day" value="">
+                        </div>
+                        <div class="gallery-date-col">
+                            <div class="gallery-date-select-label">Year</div>
+                            <div id="gallery-date-year-list" class="gallery-date-col-list"></div>
+                            <input type="hidden" id="gallery-date-year" value="">
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-date-modal-actions">
+                    <button class="gallery-date-modal-btn gallery-date-modal-clear" id="gallery-date-clear">Clear</button>
+                    <button class="gallery-date-modal-btn gallery-date-modal-cancel" id="gallery-date-cancel">Cancel</button>
+                    <button class="gallery-date-modal-btn gallery-date-modal-ok" id="gallery-date-ok">OK</button>
+                </div>
             </div>
         </div>
         <!-- Custom Alert/Confirm Modal -->
