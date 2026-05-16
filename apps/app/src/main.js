@@ -2050,6 +2050,21 @@ async function submitMagicTransform() {
   if (isGalleryLayerActive && galleryLayerPresets.length > 0) {
     const item = galleryImages[currentViewerImageIndex];
     const resizedImageBase64 = await resizeImageForSubmission(item.imageBase64);
+
+    // Always re-ask options for each options preset when manual options mode is on
+    if (manualOptionsMode && !noMagicMode) {
+      galleryLayerManualSelections = {};
+      for (const preset of galleryLayerPresets) {
+        const options = parsePresetOptions(preset);
+        if (options.length > 0) {
+          const selectedValue = await showManualOptionsModal(preset, options);
+          if (selectedValue !== null) {
+            galleryLayerManualSelections[preset.name] = selectedValue;
+          }
+        }
+      }
+    }
+
     const magicPrompt = buildCombinedLayerPrompt(galleryLayerPresets, galleryLayerManualSelections);
     if (typeof PluginMessageHandler !== 'undefined') {
       const layerMagicPayload = { pluginId: 'com.r1.pixelart', imageBase64: resizedImageBase64 };
@@ -2070,8 +2085,9 @@ async function submitMagicTransform() {
     const item = galleryImages[currentViewerImageIndex];
     const resizedImageBase64 = await resizeImageForSubmission(item.imageBase64);
 
-    // Gather manual selections if needed (first time or if not yet saved)
-    if (manualOptionsMode && !noMagicMode && Object.keys(galleryMultiManualSelections).length === 0) {
+    // Always re-ask options for each options preset when manual options mode is on
+    if (manualOptionsMode && !noMagicMode) {
+      galleryMultiManualSelections = {};
       for (const preset of galleryMultiPresets) {
         const options = parsePresetOptions(preset);
         if (options.length > 0) {
