@@ -5231,6 +5231,20 @@
     "additionalInstructions": ""
   },
   {
+    "name": "CINESTILL 800T",
+    "category": [
+      "FILM",
+      "CINEMATIC",
+      "NIGHT",
+      "PHOTOGRAPHY",
+      "NEON"
+    ],
+    "message": "Take a picture and transform it into an ultra-photorealistic Cinestill 800T cinematic film photograph with tungsten-balanced color rendering, glowing neon highlights, dramatic nighttime atmosphere, soft halation around lights, and authentic motion-picture film aesthetics.\n\nThe image should resemble a real photograph shot on Cinestill 800T film stock under artificial lighting and nighttime urban conditions.\n\nPreserve the recognizable subject while transforming the scene into a cinematic neon-lit film photograph with realistic analog texture and atmospheric night-photography realism.\n\nThe final image should feel cinematic, moody, urban, atmospheric, nostalgic, and emotionally immersive.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "CINESTILL ENFORCEMENT:\n\n• Simulate authentic Cinestill 800T film behavior\n• Add realistic halation glow around bright lights\n• Emphasize cinematic nighttime lighting\n• Preserve analog film realism\n• Avoid clean digital sharpness\n\nLIGHTING ENFORCEMENT:\n\n• Neon signs, streetlights, headlights, practical lights, reflections, and illuminated windows should glow softly\n• Use cinematic tungsten-balanced lighting behavior\n• Include realistic bloom around bright highlights\n• Shadows should remain moody and atmospheric\n\nFILM TEXTURE ENFORCEMENT:\n\n• Add authentic film grain\n• Include subtle analog imperfections and color response\n• Preserve realistic nighttime exposure behavior\n• Slight softness and bloom encouraged\n\nCOLOR ENFORCEMENT:\n\n• Blues, teals, reds, oranges, and magentas should feel cinematic and atmospheric\n• Artificial lighting should dominate the mood\n• Contrast should feel rich but filmic\n• Nighttime reflections and wet surfaces encouraged\n\nVISUAL STYLE:\n\n• Ultra-photorealistic cinematic film photography\n• Motion-picture film aesthetic\n• Moody urban realism\n• Atmospheric neon lighting\n• Realistic analog texture\n• Cinematic night-photography composition\n\nANTI-CHEAT:\n\n• Do NOT create flat daylight photography\n• Do NOT remove halation glow around lights\n• Do NOT create sterile digital sharpness\n• Do NOT eliminate atmospheric nighttime mood\n\nFINAL RESULT:\nThe final image must resemble an authentic ultra-photorealistic Cinestill 800T nighttime film photograph with cinematic neon lighting, glowing halation effects, atmospheric urban realism, analog film texture, and dramatic tungsten-balanced color grading."
+  },
+  {
     "name": "CIRCUIT BOARD TRACE ART",
     "category": [
       "ART",
@@ -17161,6 +17175,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "LOMOGRAPHY",
+    "category": [
+      "FILM",
+      "RETRO",
+      "PHOTOGRAPHY",
+      "VINTAGE",
+      "COLOR"
+    ],
+    "message": "Take a picture and transform it into an ultra-photorealistic lomography-style toy-camera photograph with vivid saturated colors, exaggerated analog imperfections, strong vignette edges, unpredictable exposure behavior, and nostalgic low-fidelity film-camera aesthetics.\n\nThe image should resemble a real photograph captured using a cheap vintage plastic toy camera with colorful film stock.\n\nPreserve the recognizable subject while transforming the image into a vibrant analog snapshot full of personality, color shifting, lens flaws, film artifacts, and playful photographic imperfections.\n\nThe final image should feel spontaneous, artistic, nostalgic, imperfect, and visually energetic.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "LOMOGRAPHY ENFORCEMENT:\n\n• Emphasize vivid saturated colors\n• Add strong edge vignetting\n• Include analog toy-camera imperfections\n• Preserve realistic film-photography appearance\n• Avoid digital-clean perfection\n\nFILM CAMERA ENFORCEMENT:\n\n• Simulate inexpensive plastic-lens camera behavior\n• Include soft focus falloff near edges\n• Add slight chromatic imperfections and unpredictable exposure\n• Allow slight blur, bloom, or lens softness\n• Add subtle light leaks, film grain, dust, scratches, or film wear where appropriate\n\nCOLOR ENFORCEMENT:\n\n• Use bold vibrant color saturation\n• Reds, blues, yellows, greens, and neon tones should feel exaggerated and rich\n• Contrast should feel punchy but analog\n• Shadows may shift slightly in color\n\nVISUAL STYLE:\n\n• Ultra-photorealistic analog photography\n• Vintage toy-camera realism\n• Strong nostalgic atmosphere\n• Rich film textures\n• Artistic snapshot aesthetic\n• Realistic film grain and analog flaws\n\nANTI-CHEAT:\n\n• Do NOT create a clean modern digital image\n• Do NOT remove analog imperfections\n• Do NOT flatten the colors into neutral tones\n• Do NOT create sterile studio perfection\n\nFINAL RESULT:\nThe final image must resemble an authentic ultra-photorealistic lomography toy-camera photograph with vivid saturated colors, analog film flaws, strong vignette edges, nostalgic imperfections, and energetic retro photographic character."
   },
   {
     "name": "LONG EXPOSURE",
@@ -33489,6 +33517,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "VSCO FILM",
+    "category": [
+      "FILM",
+      "SOCIAL MEDIA",
+      "AESTHETIC",
+      "PHOTOGRAPHY",
+      "LIFESTYLE"
+    ],
+    "message": "Take a picture and transform it into an ultra-photorealistic VSCO-style film photograph with soft muted shadows, faded tones, subtle analog texture, washed-out cinematic color grading, and trendy social-media film aesthetics.\n\nThe image should resemble a carefully edited lifestyle photograph inspired by popular VSCO film presets and analog Instagram photography.\n\nPreserve the recognizable subject while creating a relaxed, artistic, understated, atmospheric film-photo appearance.\n\nThe final image should feel calm, nostalgic, stylish, soft, modern, and emotionally cinematic.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "VSCO ENFORCEMENT:\n\n• Use soft washed-out film color grading\n• Shadows should appear muted and slightly faded\n• Highlights should feel soft and atmospheric\n• Preserve realistic photographic behavior\n• Avoid harsh digital contrast\n\nFILM LOOK ENFORCEMENT:\n\n• Add subtle analog film grain\n• Include gentle color fading and tonal softness\n• Slightly reduce contrast for realistic film response\n• Add understated photographic imperfections\n• Maintain clean modern lifestyle-photography composition\n\nCOLOR ENFORCEMENT:\n\n• Use muted earthy tones and soft highlights\n• Blacks should feel lifted rather than deep pure black\n• Avoid oversaturated neon colors\n• Use subtle faded cinematic warmth or coolness\n\nVISUAL STYLE:\n\n• Ultra-photorealistic film photography\n• Modern Instagram film aesthetic\n• Soft cinematic atmosphere\n• Lifestyle editorial realism\n• Calm nostalgic tone\n• Realistic analog film texture\n\nANTI-CHEAT:\n\n• Do NOT create oversaturated colors\n• Do NOT use harsh HDR-style contrast\n• Do NOT make the image look digitally overprocessed\n• Do NOT remove the soft faded film appearance\n\nFINAL RESULT:\nThe final image must resemble an authentic ultra-photorealistic VSCO-style analog film photograph with muted shadows, washed-out cinematic tones, subtle film grain, soft atmospheric lighting, and stylish social-media-inspired realism."
   },
   {
     "name": "VULCAN TRANSFORMATION",
