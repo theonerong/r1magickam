@@ -32,11 +32,23 @@ function loadUnlockState() {
       const state = JSON.parse(raw);
       if (!state.credits) state.credits = 0;
       if (!state.creditEarnedPresets) state.creditEarnedPresets = [];
-      // MIGRATION: ensure all starter presets are unlocked for existing users
+      if (!state.ownedPresets) state.ownedPresets = [];
+      // MIGRATION: ensure all starter presets are unlocked and permanently owned
       let migrated = false;
       STARTER_PRESETS.forEach(name => {
         if (!state.unlockedPresets.includes(name)) {
           state.unlockedPresets.push(name);
+          migrated = true;
+        }
+        if (!state.ownedPresets.includes(name)) {
+          state.ownedPresets.push(name);
+          migrated = true;
+        }
+      });
+      // MIGRATION: any preset already in unlockedPresets was previously paid for — make it permanently owned
+      state.unlockedPresets.forEach(name => {
+        if (!state.ownedPresets.includes(name)) {
+          state.ownedPresets.push(name);
           migrated = true;
         }
       });
@@ -46,7 +58,7 @@ function loadUnlockState() {
       return state;
     }
   } catch (e) {}
-  return { credits: 0, creditEarnedPresets: [], unlockedPresets: [...STARTER_PRESETS] };
+  return { credits: 0, creditEarnedPresets: [], unlockedPresets: [...STARTER_PRESETS], ownedPresets: [...STARTER_PRESETS] };
 }
 
 function saveUnlockState(state) {
@@ -347,6 +359,7 @@ export class PresetImporter {
       // Load the unlock game state for this session
       const unlockState = loadUnlockState();
       const unlockedNames = new Set(unlockState.unlockedPresets);
+      const permanentlyOwned = new Set(unlockState.ownedPresets || [...STARTER_PRESETS]);
       // Tracks presets unlocked this session but not yet imported — refunded on cancel/close
       const sessionUnlocked = new Set();
 
@@ -530,6 +543,7 @@ export class PresetImporter {
             if (!availableSet.has(name)) return;
             if (importedMap.has(name)) return; // already imported = not locked
             if (unlockedNames.has(name)) return; // unlocked = not locked
+            if (permanentlyOwned.has(name)) return; // permanently owned = never locked
             count++;
           });
           return count;
@@ -541,7 +555,7 @@ export class PresetImporter {
 
         filteredPresets.forEach((preset, index) => {
           const isAlreadyImported = importedMap.has(preset.name);
-          const isLocked = !isAlreadyImported && !unlockedNames.has(preset.name);
+          const isLocked = !isAlreadyImported && !unlockedNames.has(preset.name) && !permanentlyOwned.has(preset.name);
           const existingPreset = importedMap.get(preset.name);
 
           const msg = preset.message || '';
@@ -835,7 +849,7 @@ footerSection.innerHTML = `
         const lockedPresets = [];
         filteredForCheck.forEach(preset => {
           const isAlreadyImported = this.importedPresets.some(p => p.name === preset.name);
-          const isLocked = !isAlreadyImported && !unlockedNames.has(preset.name);
+          const isLocked = !isAlreadyImported && !unlockedNames.has(preset.name) && !permanentlyOwned.has(preset.name);
           if (isLocked) lockedPresets.push(preset);
         });
         const currentCredits = loadUnlockState().credits || 0;
@@ -861,7 +875,7 @@ footerSection.innerHTML = `
           const filteredPresets = this.getFilteredPresets(availablePresets);
           filteredPresets.forEach(preset => {
             const isAlreadyImported = this.importedPresets.some(p => p.name === preset.name);
-            const isNowLocked = !isAlreadyImported && !unlockedNames.has(preset.name);
+            const isNowLocked = !isAlreadyImported && !unlockedNames.has(preset.name) && !permanentlyOwned.has(preset.name);
             if (!isNowLocked) {
               this.checkboxStates.set(preset.name, true);
             }
@@ -922,9 +936,18 @@ footerSection.innerHTML = `
 
         // Credits were already spent when the user clicked each preset.
         // Mark imported presets as owned so closeModal does not refund them.
+        // Also permanently record ownership — these presets are free to re-import forever.
+        const _ownState = loadUnlockState();
+        if (!_ownState.ownedPresets) _ownState.ownedPresets = [...STARTER_PRESETS];
+        let _ownershipChanged = false;
         checkedPresets.forEach(preset => {
           sessionUnlocked.delete(preset.name);
+          if (!_ownState.ownedPresets.includes(preset.name)) {
+            _ownState.ownedPresets.push(preset.name);
+            _ownershipChanged = true;
+          }
         });
+        if (_ownershipChanged) saveUnlockState(_ownState);
 
         setTimeout(() => {
           closeModal();

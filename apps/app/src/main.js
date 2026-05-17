@@ -13215,13 +13215,16 @@ const result = await presetImporter.import();
             stylesCountElement.textContent = visibleCount;
           }
 
-          // Re-check accurately how many updates remain after import
-          await recheckForUpdates();
+          // Refresh the camera footer and center indicator immediately
+                       updatePresetDisplay();
+
+                      // Re-check accurately how many updates remain after import
+                     await recheckForUpdates();
           
-          alert(result.message);
-        } else if (result.message !== 'cancelled' && result.message !== 'No presets selected') {
-          alert('Import failed: ' + result.message);
-        }
+                     alert(result.message);
+                  } else if (result.message !== 'cancelled' && result.message !== 'No presets selected') {
+                     alert('Import failed: ' + result.message);
+                  }
       } catch (error) {
         alert('Import error: ' + error.message);
       }
@@ -13688,6 +13691,9 @@ const result = await presetImporter.import();
             populateStylesList();
             updateVisiblePresetsDisplay();
             
+            // Refresh the camera footer and center indicator immediately
+            updatePresetDisplay();
+
             // Re-check accurately how many updates remain after import
             await recheckForUpdates();
             
