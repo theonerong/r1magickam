@@ -24831,6 +24831,399 @@
     "additionalInstructions": "FINAL RESULT:\nA fully reconstructed image made entirely from refracted spectral light, with all shapes defined by prism dispersion rather than solid surfaces."
   },
   {
+    "name": "PRO CAMERA SETTINGS",
+    "category": [
+      "OPTIONS",
+      "PHOTOGRAPHY",
+      "CAMERA",
+      "CINEMATIC",
+      "REALISM",
+      "TECHNICAL"
+    ],
+    "message": "Take a picture and transform it into an ultra-photorealistic professionally captured camera photograph using the selected real-world camera settings.\n\nEvery selected option MUST directly affect the final photographic appearance exactly as an actual digital or film camera would.\n\nThe image should realistically simulate authentic camera behavior including lens characteristics, depth of field, grain structure, exposure, focus behavior, dynamic range, motion rendering, white balance, photographic texture, lens compression, and realistic optical imperfections.\n\nOnly apply effects that realistically influence a single captured still photograph.\n\nThe final image must resemble a real photograph captured using the chosen technical settings rather than a generic AI illustration.",
+    "optionGroups": [
+    {
+      "title": "FILM / SENSOR FORMAT",
+      "options": [
+        {
+          "id": "001",
+          "text": "35MM (135) FILM — classic full-frame photography with balanced grain, cinematic realism, traditional film texture, and natural perspective."
+        },
+        {
+          "id": "002",
+          "text": "120 MEDIUM FORMAT — larger-format photography with ultra-detailed image quality, shallow depth of field, creamy background separation, refined grain, and premium portrait realism."
+        },
+        {
+          "id": "003",
+          "text": "LARGE FORMAT (4x5 / 8x10) — massive-detail photography with extraordinary sharpness, enormous dynamic range, fine-art realism, and ultra-premium texture detail."
+        },
+        {
+          "id": "004",
+          "text": "110 FILM — nostalgic compact-camera rendering with softer detail, low-fidelity grain, vintage consumer-camera realism, and retro snapshot charm."
+        },
+        {
+          "id": "005",
+          "text": "DIGITAL FULL FRAME — clean modern digital realism with balanced sharpness, accurate dynamic range, and contemporary professional camera rendering."
+        },
+        {
+          "id": "006",
+          "text": "APS-C SENSOR — slightly tighter crop factor, realistic modern digital texture, and balanced enthusiast-camera realism."
+        }
+      ]
+    },
+    {
+      "title": "LENS FOCAL LENGTH",
+      "options": [
+        {
+          "id": "101",
+          "text": "24MM WIDE ANGLE — dramatic environmental perspective with expanded spatial depth and slight edge distortion."
+        },
+        {
+          "id": "102",
+          "text": "35MM — cinematic documentary perspective with natural environmental storytelling."
+        },
+        {
+          "id": "103",
+          "text": "50MM — balanced human-eye perspective with realistic proportions and classic photographic appearance."
+        },
+        {
+          "id": "104",
+          "text": "85MM PORTRAIT LENS — flattering facial compression with soft cinematic background separation."
+        },
+        {
+          "id": "105",
+          "text": "200MM TELEPHOTO — compressed perspective with distant-background flattening and isolated subject focus."
+        }
+      ]
+    },
+    {
+      "title": "SHOT TYPE / CAMERA ANGLE",
+      "options": [
+        {
+          "id": "201",
+          "text": "EXTREME CLOSE-UP (ECU) — tightly focused on fine details such as eyes, hands, skin texture, or objects with intense emotional emphasis."
+        },
+        {
+          "id": "202",
+          "text": "CLOSE-UP (CU) — framed tightly around the face and shoulders to emphasize emotion and expression."
+        },
+        {
+          "id": "203",
+          "text": "MEDIUM SHOT (MS) — framed approximately waist-up with balanced environmental context."
+        },
+        {
+          "id": "204",
+          "text": "WIDE SHOT (WS) — full-body framing with strong environmental storytelling."
+        },
+        {
+          "id": "205",
+          "text": "EYE-LEVEL SHOT — neutral realistic camera positioning at natural human height."
+        },
+        {
+          "id": "206",
+          "text": "LOW-ANGLE SHOT — upward-looking camera angle creating dominance and dramatic scale."
+        },
+        {
+          "id": "207",
+          "text": "HIGH-ANGLE SHOT — downward-looking camera angle emphasizing vulnerability or isolation."
+        }
+      ]
+    },
+    {
+      "title": "ISO / SENSOR SENSITIVITY",
+      "options": [
+        {
+          "id": "301",
+          "text": "ISO 100 — ultra-clean image quality with minimal grain and maximum detail."
+        },
+        {
+          "id": "302",
+          "text": "ISO 400 — balanced sensitivity with slight natural grain."
+        },
+        {
+          "id": "303",
+          "text": "ISO 1600 — visible cinematic grain with darker low-light realism."
+        },
+        {
+          "id": "304",
+          "text": "ISO 6400 — heavy sensor noise, gritty texture, and documentary-style low-light realism."
+        }
+      ]
+    },
+    {
+      "title": "APERTURE (F-STOP)",
+      "options": [
+        {
+          "id": "401",
+          "text": "f/1.4 — extremely shallow depth of field with dramatic cinematic background blur."
+        },
+        {
+          "id": "402",
+          "text": "f/2.8 — soft cinematic depth separation with controlled bokeh."
+        },
+        {
+          "id": "403",
+          "text": "f/5.6 — balanced sharpness with moderate depth of field."
+        },
+        {
+          "id": "404",
+          "text": "f/11 — deep focus with sharp foreground and background detail."
+        }
+      ]
+    },
+    {
+      "title": "SHUTTER SPEED",
+      "options": [
+        {
+          "id": "501",
+          "text": "1/4000 SECOND — completely frozen motion with razor-sharp detail."
+        },
+        {
+          "id": "502",
+          "text": "1/500 SECOND — crisp realistic movement with natural action detail."
+        },
+        {
+          "id": "503",
+          "text": "1/60 SECOND — subtle natural handheld realism with slight motion softness."
+        },
+        {
+          "id": "504",
+          "text": "LONG EXPOSURE — realistic motion blur, environmental streaking, light trails, and exposure smearing."
+        },
+        {
+          "id": "505",
+          "text": "NONE / AUTO SHUTTER — natural balanced exposure behavior without stylized motion emphasis."
+        }
+      ]
+    },
+    {
+      "title": "FOCUS MODE",
+      "options": [
+        {
+          "id": "601",
+          "text": "AF-S (SINGLE FOCUS) — locked precision focus for still subjects."
+        },
+        {
+          "id": "602",
+          "text": "AF-C (CONTINUOUS FOCUS) — dynamic focus tracking realism for active subjects."
+        },
+        {
+          "id": "603",
+          "text": "MANUAL FOCUS — intentionally controlled focus placement with possible slight focus imperfections."
+        },
+        {
+          "id": "604",
+          "text": "NONE / AUTO FOCUS — natural modern camera autofocus behavior."
+        }
+      ]
+    },
+    {
+      "title": "FOCUS AREA",
+      "options": [
+        {
+          "id": "701",
+          "text": "EYE FOCUS — critical sharpness locked onto the subject's eyes."
+        },
+        {
+          "id": "702",
+          "text": "CENTER FOCUS — sharpness centered within the frame."
+        },
+        {
+          "id": "703",
+          "text": "BACKGROUND FOCUS — environmental sharpness with softer subject rendering."
+        },
+        {
+          "id": "704",
+          "text": "NONE / NATURAL DEPTH — realistic automatic focus distribution."
+        }
+      ]
+    },
+    {
+      "title": "IMAGE STABILIZATION",
+      "options": [
+        {
+          "id": "801",
+          "text": "IMAGE STABILIZATION ON — stabilized handheld sharpness with reduced camera shake."
+        },
+        {
+          "id": "802",
+          "text": "IMAGE STABILIZATION OFF — slight natural handheld imperfections and subtle motion realism."
+        },
+        {
+          "id": "803",
+          "text": "TRIPOD-STABILIZED — ultra-stable professional still-photography sharpness."
+        },
+        {
+          "id": "804",
+          "text": "NONE / NATURAL CAMERA HANDLING — realistic balanced stabilization behavior."
+        }
+      ]
+    },
+    {
+      "title": "WHITE BALANCE",
+      "options": [
+        {
+          "id": "901",
+          "text": "DAYLIGHT WB — neutral daylight-balanced color reproduction."
+        },
+        {
+          "id": "902",
+          "text": "CLOUDY WB — warmer tones with soft golden balance."
+        },
+        {
+          "id": "903",
+          "text": "TUNGSTEN WB — cooler blue-balanced indoor lighting tones."
+        },
+        {
+          "id": "904",
+          "text": "FLUORESCENT WB — slightly green-balanced commercial indoor lighting realism."
+        },
+        {
+          "id": "905",
+          "text": "AUTO WHITE BALANCE — realistic automatic color balancing."
+        }
+      ]
+    },
+    {
+      "title": "PICTURE PROFILE",
+      "options": [
+        {
+          "id": "1001",
+          "text": "PORTRAIT PROFILE — softer skin tones and flattering contrast."
+        },
+        {
+          "id": "1002",
+          "text": "LANDSCAPE PROFILE — enhanced environmental detail and stronger color saturation."
+        },
+        {
+          "id": "1003",
+          "text": "FLAT LOG PROFILE — reduced contrast and saturation for cinematic grading flexibility."
+        },
+        {
+          "id": "1004",
+          "text": "BLACK & WHITE PROFILE — monochrome photographic rendering with realistic tonal separation."
+        },
+        {
+          "id": "1005",
+          "text": "STANDARD PROFILE — balanced realistic camera color science."
+        }
+      ]
+    },
+    {
+      "title": "METERING MODE",
+      "options": [
+        {
+          "id": "1101",
+          "text": "MATRIX / EVALUATIVE METERING — balanced scene-wide exposure calculation."
+        },
+        {
+          "id": "1102",
+          "text": "CENTER-WEIGHTED METERING — exposure priority toward the center of the frame."
+        },
+        {
+          "id": "1103",
+          "text": "SPOT METERING — precise exposure targeting a specific subject area."
+        },
+        {
+          "id": "1104",
+          "text": "NONE / AUTO METERING — natural automatic exposure balancing."
+        }
+      ]
+    },
+    {
+      "title": "EXPOSURE COMPENSATION",
+      "options": [
+        {
+          "id": "1201",
+          "text": "-2 EV — dramatic cinematic underexposure with deep shadow emphasis."
+        },
+        {
+          "id": "1202",
+          "text": "0 EV — balanced neutral exposure."
+        },
+        {
+          "id": "1203",
+          "text": "+2 EV — bright airy overexposure with glowing highlights."
+        },
+        {
+          "id": "1204",
+          "text": "NONE / CAMERA DEFAULT — natural automatic exposure balance."
+        }
+      ]
+    },
+    {
+      "title": "NOISE REDUCTION",
+      "options": [
+        {
+          "id": "1301",
+          "text": "NOISE REDUCTION ON — smoother low-light rendering with reduced digital artifacts."
+        },
+        {
+          "id": "1302",
+          "text": "NOISE REDUCTION OFF — authentic grain, sensor noise, and raw texture."
+        },
+        {
+          "id": "1303",
+          "text": "NONE / STANDARD CAMERA PROCESSING — realistic balanced in-camera processing."
+        }
+      ]
+    },
+    {
+      "title": "DYNAMIC RANGE",
+      "options": [
+        {
+          "id": "1401",
+          "text": "HIGH DYNAMIC RANGE — preserved highlight and shadow detail with premium tonal realism."
+        },
+        {
+          "id": "1402",
+          "text": "STANDARD DYNAMIC RANGE — natural realistic contrast behavior."
+        },
+        {
+          "id": "1403",
+          "text": "LOW DYNAMIC RANGE — crushed shadows and clipped highlights for vintage realism."
+        }
+      ]
+    },
+    {
+      "title": "LENS FILTER",
+      "options": [
+        {
+          "id": "1501",
+          "text": "POLARIZING FILTER — reduced reflections, deeper skies, and enhanced surface contrast."
+        },
+        {
+          "id": "1502",
+          "text": "DIFFUSION FILTER — softened highlights and cinematic bloom around light sources."
+        },
+        {
+          "id": "1503",
+          "text": "UV FILTER — clean neutral optical realism."
+        },
+        {
+          "id": "1504",
+          "text": "NO FILTER — direct untreated lens rendering."
+        }
+      ]
+    },
+    {
+      "title": "RESOLUTION",
+      "options": [
+        {
+          "id": "1601",
+          "text": "4K — high-detail realism with balanced sharpness."
+        },
+        {
+          "id": "1602",
+          "text": "8K — ultra-high-resolution detail with premium texture realism."
+        }
+      ]
+    }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "OPTION ENFORCEMENT:\n\n• Every selected option MUST visibly affect the final image exactly as a real camera would\n• Do not ignore technical settings\n• Do not generate unrelated generic photography\n• Combine settings realistically and avoid contradictory optical behavior\n• If an option is set to NONE or AUTO, simulate realistic default professional-camera behavior\n\nSTATIC IMAGE ENFORCEMENT:\n\n• Only apply effects realistically visible within a single still photograph\n• Do NOT simulate video-only behaviors\n• Do NOT apply burst-sequence layouts or multi-frame composites\n• Long exposure effects must remain believable for one captured frame\n\nPHOTOGRAPHIC REALISM ENFORCEMENT:\n\n• The image must resemble a real photograph captured by a physical camera\n• Simulate authentic lens behavior, optical blur, focus falloff, chromatic aberration, grain structure, sensor response, and exposure rolloff\n• Preserve believable photographic imperfections and limitations\n\nDEPTH OF FIELD ENFORCEMENT:\n\n• Aperture and focal length must realistically affect background blur and perspective compression\n• Focus placement must appear optically believable\n• Blur transitions must resemble real lens rendering\n\nEXPOSURE ENFORCEMENT:\n\n• ISO, shutter speed, metering, and exposure compensation must visibly alter brightness, grain, motion rendering, and dynamic range\n• Long exposures should create realistic motion streaking where appropriate\n• High ISO should create believable sensor noise or film grain\n\nCOLOR SCIENCE ENFORCEMENT:\n\n• White balance and picture profile choices must visibly affect tone, warmth, saturation, contrast, and color rendering\n• Avoid fantasy coloration unless justified by the selected settings\n\nVISUAL STYLE:\n\n• Ultra-photorealistic professional photography\n• Authentic optical rendering\n• Realistic lens behavior\n• Cinematic camera realism\n• Accurate photographic texture\n• Believable exposure physics\n\nANTI-CHEAT:\n\n• Do NOT generate generic AI artwork\n• Do NOT ignore selected camera settings\n• Do NOT create impossible optical behavior\n• Do NOT flatten depth of field\n• Do NOT over-stylize beyond realistic photography\n\nFINAL RESULT:\nThe final image must resemble an authentic professionally captured photograph created using the exact selected camera settings, lens behavior, exposure conditions, optical rendering, and realistic photographic physics of a real-world camera system."
+  },
+  {
     "name": "PROCEDURAL TEXTURE",
     "category": [
       "DIGITAL",
