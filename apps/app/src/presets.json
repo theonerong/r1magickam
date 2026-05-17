@@ -11913,6 +11913,20 @@
     "additionalInstructions": "FINAL RESULT:\nEither a professionally designed fictitious national flag featuring the subject's portrait with a creative country name derived from the image, OR an authentic recreation of a real flag where the subject's face has been seamlessly integrated into the existing human portrait or figure, maintaining all official design elements and vexillological standards. The flag appears official, dignified, and suitable for actual governmental use, with the subject's likeness clearly recognizable while adapted to the bold, simplified aesthetic required for effective flag design."
   },
   {
+    "name": "FLAT DESIGN",
+    "category": [
+      "MINIMAL",
+      "DESIGN",
+      "UI",
+      "MODERN",
+      "GRAPHIC"
+    ],
+    "message": "Take a picture and transform it into a modern flat-design illustration with simplified forms, minimal shadows, clean color blocking, icon-like clarity, and Material Design-inspired visual simplicity.\n\nThe subject must remain recognizable while being transformed into a highly simplified clean graphic composition with modern interface-design aesthetics.\n\nThe final image should feel minimal, modern, readable, stylish, and elegantly simplified.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "FLAT DESIGN ENFORCEMENT:\n\n• Use simplified geometric forms and clean silhouettes\n• Keep shadows minimal and soft\n• Avoid heavy texture or realism\n• Emphasize icon-like clarity and readability\n\nMATERIAL DESIGN ENFORCEMENT:\n\n• Simulate modern UI illustration aesthetics\n• Use organized layered shapes and balanced spacing\n• Preserve subject recognition using simplified graphic forms\n• Maintain strong visual hierarchy and simplicity\n\nVISUAL STYLE:\n\n• Minimal flat-design illustration\n• Material Design-inspired simplicity\n• Clean modern color blocking\n• Soft minimal depth\n• Crisp graphical composition\n\nANTI-CHEAT:\n\n• Do NOT use painterly realism\n• Do NOT add excessive texture or noise\n• Do NOT create detailed photorealism\n• Do NOT clutter the composition\n\nFINAL RESULT:\nThe final image must resemble a polished modern flat-design illustration with simplified forms, clean icon-like structure, minimal shadowing, and professional Material Design-inspired aesthetics."
+  },
+  {
     "name": "FLINTSTONED",
     "category": [
       "CINEMATIC",
@@ -32958,6 +32972,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "VECTOR ART",
+    "category": [
+      "VECTOR",
+      "GRAPHIC",
+      "ILLUSTRATION",
+      "DESIGN",
+      "CLEAN"
+    ],
+    "message": "Take a picture and transform it into ultra-clean professional vector artwork with precise geometric shapes, smooth curves, flat color regions, and polished Adobe Illustrator-style graphic design aesthetics.\n\nThe subject must remain clearly recognizable while being simplified into elegant scalable vector-style forms with crisp edges, controlled color blocking, and perfectly clean graphical construction.\n\nThe final image should feel modern, precise, graphic, polished, minimal, and professionally illustrated.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "VECTOR ENFORCEMENT:\n\n• Use perfectly clean vector-style shapes\n• Create sharp edges and smooth bezier-style curves\n• Avoid painterly texture or photographic noise\n• Emphasize geometric simplification and graphic clarity\n\nSTYLE ENFORCEMENT:\n\n• Simulate professional Adobe Illustrator precision\n• Use clean layered color regions\n• Preserve recognizable subject identity through simplified vector forms\n• Maintain strong silhouette readability\n\nVISUAL STYLE:\n\n• Professional vector illustration\n• Flat clean graphic design\n• Crisp scalable-art appearance\n• Smooth color blocking\n• Precision linework and shape control\n\nANTI-CHEAT:\n\n• Do NOT use painterly brush strokes\n• Do NOT add realistic film grain or texture\n• Do NOT create messy sketch aesthetics\n• Do NOT distort the clean vector appearance\n\nFINAL RESULT:\nThe final image must resemble a professionally designed ultra-clean vector illustration with precise geometric construction, smooth flat colors, crisp edges, and polished Adobe Illustrator-style graphic realism."
   },
   {
     "name": "VEGAS NEON SIGN",
