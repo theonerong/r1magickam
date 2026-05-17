@@ -17850,16 +17850,26 @@
   {
     "name": "MANGA STYLE",
     "category": [
+      "OPTIONS",
       "MANGA",
       "ANIME",
       "ILLUSTRATION",
       "JAPANESE",
       "COMIC"
     ],
-    "message": "Take a picture and transform it into an ultra-detailed Japanese manga illustration with expressive eyes, dramatic emotion, cinematic panel composition, speed lines, stylized ink work, and dynamic black-and-white manga aesthetics.\n\nThe subject must remain recognizable while appearing naturally redrawn as a manga character within a professionally illustrated manga scene.\n\nThe final image should feel emotional, energetic, cinematic, stylized, and authentic to professional Japanese manga artwork.",
-    "options": [],
-    "randomizeOptions": false,
-    "additionalInstructions": "MANGA ENFORCEMENT:\n\n• Transform the visible scene into authentic manga illustration style\n• Preserve recognizable subject identity\n• Use expressive manga facial features and emotional exaggeration\n• Include dramatic manga-style eyes, stylized hair rendering, and cinematic composition\n• Add speed lines, manga shading, ink strokes, screentones, motion emphasis, or stylized panel energy where appropriate\n\nINK AND SHADING ENFORCEMENT:\n\n• Use bold black ink linework and clean manga contouring\n• Include screentone textures, hatch shading, crosshatching, and manga contrast techniques\n• Use dramatic black-and-white tonal balance\n• Preserve readability and strong silhouette separation\n\nCOMPOSITION ENFORCEMENT:\n\n• The image should feel like a dramatic manga panel or manga cover illustration\n• Use cinematic perspective and exaggerated depth\n• Add dynamic framing, impact angles, emotional focus, or action energy where appropriate\n\nVISUAL STYLE:\n\n• Authentic Japanese manga illustration aesthetic\n• High-detail ink rendering\n• Dynamic linework and screentones\n• Emotional cinematic composition\n• Stylized manga contrast and shading\n• Professional serialized manga appearance\n\nANTI-CHEAT:\n\n• Do NOT generate generic western cartoons\n• Do NOT create painterly anime art\n• Do NOT flatten the linework\n• Do NOT remove manga-style shading and tonal detail\n• Do NOT make the scene photorealistic\n\nFINAL RESULT:\nThe final image must resemble a professionally illustrated Japanese manga panel featuring the recognizable subject with expressive manga aesthetics, dramatic ink work, cinematic composition, screentone rendering, and emotionally dynamic visual storytelling."
+    "message": "Take a picture and transform it into an ultra-detailed Japanese manga illustration with expressive eyes, dramatic emotion, cinematic panel composition, speed lines, stylized ink work, and dynamic manga aesthetics.\n\nThe selected option MUST determine whether the final manga artwork appears as classic black-and-white manga printing or modern full-color manga illustration.\n\nThe subject must remain recognizable while appearing naturally redrawn as a manga character within a professionally illustrated manga scene.\n\nThe final image should feel emotional, energetic, cinematic, stylized, and authentic to professional Japanese manga artwork.",
+    "options": [
+      {
+        "id": "001",
+        "text": "BLACK & WHITE MANGA — classic Japanese manga rendering with bold black ink linework, screentones, crosshatching, dramatic monochrome contrast, manga shading, speed lines, and authentic serialized manga aesthetics."
+      },
+      {
+        "id": "002",
+        "text": "COLOR MANGA — modern full-color manga illustration with vibrant anime-inspired coloring, dynamic lighting, dramatic cel shading, expressive manga linework, cinematic color composition, and high-energy illustrated detail."
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "OPTION ENFORCEMENT:\n\n• The selected option MUST determine the final manga color treatment and illustration identity\n• Do not blend black-and-white and color manga styles together\n• Do not ignore the selected option\n• Do not generate generic western comic art\n\nMANGA ENFORCEMENT:\n\n• Transform the visible scene into authentic manga illustration style\n• Preserve recognizable subject identity\n• Use expressive manga facial features and emotional exaggeration\n• Include dramatic manga-style eyes, stylized hair rendering, and cinematic composition\n• Add speed lines, manga shading, ink strokes, screentones, motion emphasis, or stylized panel energy where appropriate\n\nINK AND SHADING ENFORCEMENT:\n\n• Use clean professional manga contouring and stylized linework\n• Include screentone textures, hatch shading, crosshatching, and manga contrast techniques where appropriate\n• Preserve readability and strong silhouette separation\n• Ensure the artwork resembles professionally published manga illustration\n\nCOMPOSITION ENFORCEMENT:\n\n• The image should feel like a dramatic manga panel, manga splash page, or manga cover illustration\n• Use cinematic perspective and exaggerated depth\n• Add dynamic framing, impact angles, emotional focus, or action energy where appropriate\n\nVISUAL STYLE:\n\n• Authentic Japanese manga illustration aesthetic\n• High-detail linework and shading\n• Dynamic composition and emotional storytelling\n• Professional serialized manga appearance\n• Cinematic manga energy and stylization\n\nANTI-CHEAT:\n\n• Do NOT generate generic western cartoons\n• Do NOT create painterly fantasy artwork\n• Do NOT flatten the linework\n• Do NOT remove manga-style shading and tonal detail\n• Do NOT make the scene photorealistic\n\nFINAL RESULT:\nThe final image must resemble a professionally illustrated Japanese manga scene featuring the recognizable subject with expressive manga aesthetics, dramatic composition, stylized linework, cinematic storytelling, and authentic manga illustration realism according to the selected color treatment."
   },
   {
     "name": "MANNEQUIN",
