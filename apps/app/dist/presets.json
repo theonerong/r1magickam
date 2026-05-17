@@ -14712,6 +14712,74 @@
     "additionalInstructions": "FINAL RESULT:\nThe image must look like a real, modern tourist photo of the subject visiting an iconic real-world movie or TV filming location — subject clearly recognizable in the foreground, casually framed with phone-camera realism, natural lighting and physical grounding, modern-day setting with the location as it appears today — conveying an authentic \"I was there and took this myself\" travel moment as a fan visiting a famous filming location on vacation."
   },
   {
+    "name": "ICONIC HAIR",
+    "category": [
+      "OPTIONS",
+      "HAIRSTYLE",
+      "CELEBRITY",
+      "TRANSFORMATION",
+      "RETRO",
+      "PORTRAIT"
+    ],
+    "message": "Take a picture and transform the subject into an ultra-photorealistic recreation of the selected iconic celebrity hairstyle and signature visual aesthetic.\n\nThe selected option MUST determine the hairstyle, grooming, clothing inspiration, fashion styling, attitude, era, and visual personality of the transformation.\n\nThe subject must remain clearly recognizable while adopting the instantly recognizable signature appearance associated with the selected cultural icon.\n\nPreserve the subject's original facial structure, identity, expression, and recognizability while transforming the hair, styling, wardrobe, posture, and atmosphere into the selected legendary look.\n\nThe final image should feel cinematic, authentic, nostalgic, recognizable, and visually faithful to the iconic era and celebrity inspiration.",
+    "options": [
+    {
+      "id": "001",
+      "text": "ELVIS PRESLEY — transform the subject with a towering greased-back 1950s rockabilly pompadour, rebellious swagger, leather or retro performance styling, sharp sideburns, vintage Americana atmosphere, and classic rock-and-roll charisma."
+    },
+    {
+      "id": "002",
+      "text": "AUDREY HEPBURN — transform the subject with Audrey Hepburn's iconic ultra-short pixie cut from Roman Holiday, elegant gamine styling, timeless 1950s sophistication, graceful posture, minimalist fashion, and classic European cinema glamour."
+    },
+    {
+      "id": "003",
+      "text": "JIMI HENDRIX — transform the subject with a powerful natural afro inspired by late 1960s counterculture and psychedelic rock style, expressive fashion, artistic energy, vintage concert atmosphere, and bold cultural pride aesthetics."
+    },
+    {
+      "id": "004",
+      "text": "MR. T — transform the subject with the legendary Mandinka-inspired mohawk, shaved sides, heavy gold chains, muscular tough-guy styling, sleeveless clothing, rugged attitude, and over-the-top 1980s action-hero charisma."
+    },
+    {
+      "id": "005",
+      "text": "AMY WINEHOUSE — transform the subject with Amy Winehouse's towering retro beehive hairstyle, dramatic eyeliner, vintage soul aesthetic, tattoo-inspired styling, glamorous retro fashion, and smoky music-club atmosphere."
+    },
+    {
+      "id": "006",
+      "text": "DOLLY PARTON — transform the subject with enormous teased platinum-blonde country-music hair, glamorous Southern styling, rhinestones, bright makeup, sparkling fashion, cheerful charisma, and exaggerated voluminous beauty-pageant aesthetics."
+    },
+    {
+      "id": "007",
+      "text": "BRIAN MAY — transform the subject with Brian May's legendary long curly perm hairstyle, classic rock-guitarist fashion, vintage arena-rock atmosphere, layered curls, and timeless 1970s rock-band energy."
+    },
+    {
+      "id": "008",
+      "text": "DIANA ROSS — transform the subject with Diana Ross-inspired glamorous giant disco-era hair, luxurious volume, elegant diva styling, dramatic fashion, soulful stage presence, and glamorous 1970s performance aesthetics."
+    },
+    {
+      "id": "009",
+      "text": "CONAN O'BRIEN — transform the subject with Conan O'Brien's exaggerated swept-up pompadour-comb-over hairstyle, comedic talk-show energy, tailored late-night host styling, expressive posture, and humorous television personality aesthetics."
+    },
+    {
+      "id": "010",
+      "text": "DONALD TRUMP — transform the subject with the recognizable orange-blond swept hairstyle associated with Donald Trump, business-suit styling, confident posture, political-stage atmosphere, and exaggerated presidential visual energy while preserving the subject's facial identity."
+    },
+    {
+      "id": "011",
+      "text": "SHIRLEY TEMPLE — transform the subject with Shirley Temple's iconic blonde ringlet curls framing the face, cheerful child-star charm, vintage Hollywood styling, bright innocent expression, and the classic polka-dot Shirley Temple dress."
+    },
+    {
+      "id": "012",
+      "text": "DON KING — transform the subject with Don King's instantly recognizable electrified teased-up hair, dramatic grin, flashy promoter-style fashion, energetic posture, exaggerated hair volume, and bold entertainment-world charisma."
+    },
+    {
+      "id": "013",
+      "text": "CARMEN MIRANDA — transform the subject with Carmen Miranda-inspired tropical fruit headdress styling, vibrant samba fashion, extravagant Broadway glamour, colorful Latin performance aesthetics, dramatic accessories, and theatrical Hollywood musical energy."
+    }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "OPTION ENFORCEMENT:\n\n• The selected option MUST determine the hairstyle, wardrobe, fashion era, personality, and overall visual identity\n• Do not blend multiple celebrity looks together\n• Do not ignore the selected option\n• The hairstyle must instantly resemble the selected icon\n\nSUBJECT PRESERVATION ENFORCEMENT:\n\n• Preserve the subject's recognizable facial structure and identity\n• Maintain recognizable eyes, nose, mouth, facial proportions, and expression\n• The subject should still clearly resemble themselves despite the transformation\n• The hairstyle and styling should transform the subject without replacing their identity\n\nHAIRSTYLE ENFORCEMENT:\n\n• The hairstyle must dominate the visual transformation\n• Hair texture, volume, silhouette, color, styling products, curls, teasing, shaping, or grooming must accurately resemble the selected icon\n• Hairstyles should appear professionally styled and era-authentic\n• Avoid generic salon hairstyles\n\nWARDROBE AND ERA ENFORCEMENT:\n\n• Match the fashion styling, clothing inspiration, accessories, and atmosphere to the selected celebrity era\n• Include recognizable aesthetic cues associated with the selected icon\n• The wardrobe should support the hairstyle transformation and overall visual identity\n\nVISUAL STYLE:\n\n• Ultra-photorealistic cinematic portrait realism\n• Highly detailed hair rendering\n• Realistic texture, lighting, and fabric detail\n• Era-authentic styling and atmosphere\n• Celebrity-inspired glamour and transformation realism\n\nCOMPOSITION:\n\n• Keep the subject as the central focus\n• Emphasize the iconic hairstyle silhouette\n• Use cinematic portrait framing and strong subject readability\n• Ensure the hair remains visually dominant and recognizable\n\nANTI-CHEAT:\n\n• Do NOT completely replace the subject with the celebrity\n• Do NOT lose the subject's recognizable identity\n• Do NOT generate generic hairstyles unrelated to the selected icon\n• Do NOT minimize the hairstyle transformation\n• Do NOT blend multiple celebrity looks together\n\nFINAL RESULT:\nThe final image must resemble an ultra-photorealistic cinematic transformation where the recognizable subject adopts the iconic hairstyle, styling, wardrobe, and visual personality associated with the selected legendary celebrity look while still clearly remaining themselves."
+  },
+  {
     "name": "ICONIC LOGO FACE TRANSFORMATION",
     "category": [
       "HUMOR",
