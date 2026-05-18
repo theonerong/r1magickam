@@ -26732,6 +26732,45 @@
     "additionalInstructions": ""
   },
   {
+    "name": "ROBERT CRUMB UNDERGROUND COMIX",
+    "category": [
+      "COMIX",
+      "UNDERGROUND",
+      "RETRO",
+      "SATIRE",
+      "INK"
+    ],
+    "message": "Take a picture and transform it into an ultra-detailed underground comix illustration inspired by the raw crosshatched pen-and-ink aesthetic associated with 1960s and 1970s counterculture comic art.\n\nThe recognizable subject must remain central while appearing naturally transformed into a bizarre, exaggerated, satirical underground-comix world filled with warped anatomy, obsessive line detail, expressive body language, social awkwardness, surreal urban energy, and neurotic comedic atmosphere.\n\nThe final image should resemble a hand-drawn black-and-white underground comic panel, magazine illustration, or counterculture comic-book cover printed on aged cheap paper with dense traditional ink rendering and vintage underground publishing realism.",
+    "options": [
+    {
+      "id": "001",
+      "text": "CITY WEIRDO — the subject wandering through an overcrowded urban environment filled with eccentric pedestrians, strange signage, awkward social interactions, bizarre storefronts, obsessive visual detail, and chaotic underground-city energy."
+    },
+    {
+      "id": "002",
+      "text": "PARANOID INNER MONOLOGUE — the subject trapped inside an anxious surreal thought spiral with exaggerated expressions, nervous body language, obsessive environmental detail, symbolic distractions, and neurotic underground-comix storytelling."
+    },
+    {
+      "id": "003",
+      "text": "COUNTERCULTURE STREET SCENE — the subject integrated into a gritty 1960s/1970s-inspired underground social scene with strange characters, beatnik energy, bohemian fashion, old records, posters, cigarettes, cafes, and anti-establishment atmosphere."
+    },
+    {
+      "id": "004",
+      "text": "ABSURD EVERYDAY LIFE — the subject struggling through exaggerated mundane situations transformed into bizarre satirical comedy with distorted proportions, uncomfortable realism, expressive gestures, and obsessive environmental clutter."
+    },
+    {
+      "id": "005",
+      "text": "SURREAL CHARACTER EXAGGERATION — the subject transformed into an exaggerated caricature with oversized features, intense facial expressions, cartoonishly expressive posture, strange proportions, and dense underground-comix ink detail."
+    },
+    {
+      "id": "006",
+      "text": "VINTAGE COMIC COVER — the subject appearing as the star of a fictional underground comic-book cover complete with dramatic hand-lettered titles, retro printing imperfections, exaggerated comic posing, and satirical visual storytelling."
+    }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "CORE UNDERGROUND COMIX ENFORCEMENT:\n\n• The image must resemble authentic underground comix artwork created using traditional pen-and-ink illustration techniques\n• Emphasize raw hand-drawn energy, obsessive linework, satirical exaggeration, and uncomfortable social realism\n• Preserve the recognizable subject while stylizing them into exaggerated underground-comix form\n• The scene should feel strange, neurotic, human, gritty, humorous, and psychologically expressive\n\nINK RENDERING ENFORCEMENT:\n\n• Use dense black-and-white crosshatching, stippling, contour lines, scratchy pen textures, and obsessive hand-drawn detail\n• Simulate traditional ink-on-paper rendering rather than clean digital illustration\n• Preserve visible imperfections, uneven line weight, hand-drawn wobble, and tactile printed-comic realism\n• Avoid smooth vector aesthetics or polished digital gradients\n\nSUBJECT ENFORCEMENT:\n\n• Preserve recognizable facial structure, hairstyle, body shape, posture, and expression\n• Exaggerate features naturally in underground-comix style while retaining identity\n• Use expressive nervous gestures, awkward posture, exaggerated eyes, oversized smiles, strange body language, or exaggerated emotional reactions\n• The subject should feel integrated into the strange satirical world rather than pasted into a comic panel\n\nENVIRONMENT ENFORCEMENT:\n\n• Fill environments with obsessive visual detail such as crowded interiors, strange signs, old advertisements, cluttered sidewalks, bizarre bystanders, crooked furniture, tangled objects, records, newspapers, smoke, cables, posters, or chaotic city textures\n• The world should feel dense, alive, eccentric, and socially uncomfortable\n• Avoid empty minimalist environments\n\nPRINTING ENFORCEMENT:\n\n• Simulate vintage underground-comic printing imperfections\n• Include aged paper texture, ink spread, off-register printing, halftone texture, cheap newsprint feel, or faded comic-book aging where appropriate\n• Preserve tactile analog comic realism\n\nCOMPOSITION ENFORCEMENT:\n\n• The image should resemble a real comic panel, underground magazine illustration, or vintage comic-book cover\n• Use exaggerated perspective, crowded framing, expressive visual storytelling, and dynamic character staging\n• Allow visual clutter and layered detail while preserving readability\n\nVISUAL STYLE:\n\n• Dense pen-and-ink realism\n• Underground comix aesthetic\n• Black-and-white crosshatched rendering\n• Counterculture comic atmosphere\n• Neurotic satirical storytelling\n• Vintage comic-print realism\n• Raw expressive caricature energy\n• Hand-drawn analog comic texture\n\nANTI-CHEAT:\n\n• Do NOT generate clean modern comic-book superhero art\n• Do NOT create glossy digital illustration aesthetics\n• Do NOT simplify the linework excessively\n• Do NOT remove crosshatching and obsessive detail\n• Do NOT create polished corporate comic visuals\n• Do NOT flatten the eccentric underground-comix atmosphere\n• Do NOT make the composition too clean or minimal\n\nFINAL RESULT:\nThe final image must resemble an authentic ultra-detailed underground comix illustration featuring the recognizable subject rendered with dense black-and-white crosshatched ink work, exaggerated satirical caricature styling, chaotic counterculture atmosphere, obsessive hand-drawn detail, vintage comic-print realism, and raw underground-comic energy."
+  },
+  {
     "name": "ROBLOX",
     "category": [
       "GAMING",
