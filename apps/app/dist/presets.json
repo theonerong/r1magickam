@@ -6894,6 +6894,166 @@
     "additionalInstructions": "FINAL RESULT:\nThe final image must display the Full comic book cover, subject recognizable, correct skin/material applied, face visible — showing the complete cover with all four corners visible, including all publishing details, dramatic action scene, bold comic art style, and professional cover design."
   },
   {
+    "name": "COMIC BOOK PAGES",
+    "category": [
+      "OPTIONS",
+      "COMIC",
+      "SUPERHERO",
+      "MULTI-PANEL",
+      "ACTION",
+      "CINEMATIC"
+    ],
+    "message": "Take a picture and transform the recognizable subject into the selected iconic superhero within a professionally illustrated multi-panel comic-book page.\n\nThe selected superhero MUST preserve their original powers, costume identity, world, villains, lore, atmosphere, and classic comic-book visual style while replacing the original superhero's civilian face with the recognizable subject's face.\n\nThe subject becomes the superhero's alter-ego identity.\n\nThe comic page MUST include both masked and unmasked appearances whenever appropriate, exactly like a real comic-book issue.\n\nThe selected story option MUST determine the events happening across the page.\n\nThe selected artist option MUST strongly influence the linework, anatomy, composition, inking, panel layout, shading, motion energy, and comic-book rendering style.\n\nThe final image should resemble a professionally printed vintage or modern comic-book page complete with comic panels, speech balloons, action poses, dramatic perspective, sound effects, cinematic storytelling, and authentic comic-book realism.",
+    "optionGroups": [
+    {
+      "title": "SUPERHERO",
+      "options": [
+        {
+          "id": "001",
+          "text": "SPIDER-MAN — web-swinging superhero action with New York skylines, acrobatic poses, spider suit, wall-crawling, web effects, and classic Spider-Man comic storytelling."
+        },
+        {
+          "id": "002",
+          "text": "SUPERMAN — flying caped superhero with Kryptonian powers, heroic skies, super strength, heat vision, dramatic cape movement, and classic Superman comic-book grandeur."
+        },
+        {
+          "id": "003",
+          "text": "BATMAN — dark Gotham vigilante with cape, cowl, noir shadows, detective atmosphere, rooftop action, gadgets, and cinematic Batman comic-book realism."
+        },
+        {
+          "id": "004",
+          "text": "THE FLASH — speed-force superhero with lightning trails, motion streaks, kinetic action, speed effects, and fast-paced Flash comic-book energy."
+        },
+        {
+          "id": "005",
+          "text": "CAPTAIN AMERICA — patriotic superhero with shield combat, heroic military energy, leadership poses, and classic Captain America comic-book action."
+        },
+        {
+          "id": "006",
+          "text": "THE HULK — giant gamma-powered transformation with muscular destruction, smashed environments, explosive power, and Hulk comic-book intensity."
+        },
+        {
+          "id": "007",
+          "text": "IRON MAN — armored high-tech superhero with glowing arc-reactor lighting, advanced mechanical suit detail, flight effects, and Iron Man comic-book technology."
+        },
+        {
+          "id": "008",
+          "text": "WONDER WOMAN — Amazon warrior heroine with divine armor, lasso, shield, mythological action, and Wonder Woman comic-book heroism."
+        },
+        {
+          "id": "009",
+          "text": "GREEN LANTERN (HAL JORDAN) — emerald-energy space hero with glowing ring constructs, cosmic environments, green energy effects, and Green Lantern comic-book atmosphere."
+        },
+        {
+          "id": "010",
+          "text": "FANTASTIC FOUR — retro-futuristic superhero team aesthetic with cosmic powers, scientific adventure atmosphere, classic Fantastic Four comic-book style, and heroic teamwork."
+        },
+        {
+          "id": "011",
+          "text": "SUPERGIRL — flying Kryptonian heroine with cape, cosmic strength, bright heroic visuals, and Supergirl comic-book energy."
+        }
+      ]
+    },
+    {
+      "title": "NUMBER OF PANELS",
+      "options": [
+        {
+          "id": "101",
+          "text": "1 PANEL — full-page splash panel with maximum cinematic comic-book impact."
+        },
+        {
+          "id": "102",
+          "text": "2 PANELS — dramatic dual-panel storytelling layout."
+        },
+        {
+          "id": "103",
+          "text": "3 PANELS — classic three-panel comic pacing."
+        },
+        {
+          "id": "104",
+          "text": "4 PANELS — balanced comic-page storytelling layout."
+        },
+        {
+          "id": "105",
+          "text": "5 PANELS — dense cinematic comic storytelling."
+        },
+        {
+          "id": "106",
+          "text": "6 PANELS — traditional comic-grid page structure."
+        },
+        {
+          "id": "107",
+          "text": "7 PANELS — highly dynamic modern comic-page storytelling layout."
+        }
+      ]
+    },
+    {
+      "title": "STORY FOR THE PAGE",
+      "options": [
+        {
+          "id": "201",
+          "text": "ORIGIN STORY — discovering powers, transformation into the hero identity, emotional awakening, costume reveal, and cinematic comic-book beginnings."
+        },
+        {
+          "id": "202",
+          "text": "ACTION FIGHT AGAINST TRADITIONAL VILLAIN — large-scale comic-book battle against one of the hero's classic villains with explosions, destruction, combat, dramatic action poses, and cinematic superhero conflict."
+        },
+        {
+          "id": "203",
+          "text": "SAVING PEOPLE / BUILDINGS — heroic rescue scenes involving collapsing buildings, civilians in danger, emergency action, dramatic saves, and inspiring superhero moments."
+        }
+      ]
+    },
+    {
+      "title": "ARTIST STYLE",
+      "options": [
+        {
+          "id": "301",
+          "text": "STAN LEE — classic Marvel comic-book storytelling energy, expressive narration style, dramatic superhero pacing, and vintage comic excitement."
+        },
+        {
+          "id": "302",
+          "text": "JOHN BUSCEMA — powerful anatomy, dynamic superhero poses, cinematic action composition, and classic Marvel comic realism."
+        },
+        {
+          "id": "303",
+          "text": "JIM STERANKO — psychedelic layouts, experimental panel composition, surreal action framing, bold graphic storytelling, and stylized comic-book design."
+        },
+        {
+          "id": "304",
+          "text": "JIM LEE — ultra-detailed modern superhero anatomy, dramatic rendering, sharp comic inks, cinematic action, and high-detail comic realism."
+        },
+        {
+          "id": "305",
+          "text": "JOHN ROMITA SR. — classic expressive superhero faces, emotional storytelling, elegant comic composition, and vintage Spider-Man-era comic aesthetics."
+        },
+        {
+          "id": "306",
+          "text": "GIL KANE — dramatic perspective exaggeration, kinetic superhero motion, bold anatomy, and energetic comic-book composition."
+        },
+        {
+          "id": "307",
+          "text": "STEVE DITKO — surreal comic atmosphere, strange visual storytelling, angular compositions, eerie comic energy, and classic silver-age superhero aesthetics."
+        },
+        {
+          "id": "308",
+          "text": "NEAL ADAMS — cinematic realism, dramatic lighting, grounded anatomy, dark shadows, and realistic comic-book storytelling."
+        },
+        {
+          "id": "309",
+          "text": "GEORGE PEREZ — dense comic detail, large ensemble compositions, intricate costume rendering, and epic superhero storytelling."
+        },
+        {
+          "id": "310",
+          "text": "JACK KIRBY — explosive cosmic action, massive machinery, dynamic Kirby energy effects, exaggerated comic power, and legendary comic-book spectacle."
+        }
+      ]
+    }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "OPTION ENFORCEMENT:\n\n• The selected superhero MUST directly determine costume, powers, villains, environments, comic atmosphere, and visual identity\n• The selected panel count MUST determine the actual visible number of comic panels\n• The selected story option MUST control the events shown across the comic page\n• The selected artist MUST strongly influence anatomy, composition, linework, rendering style, inking, and comic storytelling aesthetics\n\nSUBJECT ENFORCEMENT:\n\n• Preserve recognizable facial structure, hairstyle, body shape, posture, and identity\n• Replace the superhero's civilian identity with the recognizable subject\n• Include both masked and unmasked appearances whenever appropriate\n• The superhero should still clearly resemble the selected hero while using the subject's face\n\nCOMIC PAGE ENFORCEMENT:\n\n• The image MUST resemble a real professionally printed comic-book page\n• Include comic panels, gutters, speech balloons, captions, sound effects, action poses, dramatic framing, comic motion effects, and narrative pacing\n• Use authentic comic-book page structure and storytelling flow\n\nVISUAL STYLE:\n\n• Professional comic-book illustration realism\n• Dynamic superhero action storytelling\n• Bold comic inks and dramatic shading\n• Cinematic panel composition\n• Printed comic-book authenticity\n• High-detail comic rendering\n\nANTI-CHEAT:\n\n• Do NOT generate generic superheroes unrelated to the selected hero\n• Do NOT ignore the selected artist style\n• Do NOT remove comic panels\n• Do NOT create random poster art instead of a real comic page\n• Do NOT hide the subject completely behind masks\n• Do NOT flatten the page into one static image\n\nFINAL RESULT:\nThe final image must resemble a professionally illustrated authentic comic-book page where the recognizable subject becomes the selected iconic superhero within a cinematic multi-panel story rendered in the visual style of the selected legendary comic artist."
+  },
+  {
     "name": "COMIC SUPERHERO",
     "category": [
       "COMICS",
@@ -8697,7 +8857,6 @@
     "message": "Take a picture and transform the entire image into a modernized dog chain art style rendered in full photorealistic 3D. Every element of the scene is reconstructed using interlocking chain links — varying in size, thickness, and orientation to sculpt form, depth, and shadow. The chains are rendered in colored glass-like surface with rich vibrant colors. The color tones shift across the image using the original scene's color palette as a base, tinted and diffused through the glass material. The result should feel like a museum-quality sculptural chain installation photographed under professional studio lighting.",
   "randomizeOptions": false,
   "options": [],
-  "optionGroups": [],
   "additionalInstructions": ""
   },
   {
