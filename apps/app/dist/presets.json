@@ -2035,6 +2035,20 @@
     "additionalInstructions": ""
   },
   {
+    "name": "ARTGERM STYLE",
+    "category": [
+      "COMIC",
+      "DIGITAL ART",
+      "PORTRAIT",
+      "ILLUSTRATION",
+      "FANTASY"
+    ],
+    "message": "Take a picture and transform it into a highly polished comic-style digital illustration with luminous portrait rendering, elegant anatomy, clean linework, dramatic lighting, and premium cinematic character realism.\n\nThe subject must remain recognizable while appearing naturally illustrated as a high-end comic or cover-art character.\n\nThe final image should feel polished, cinematic, heroic, stylish, visually refined, and professionally illustrated.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Use clean professional comic-style rendering with polished digital painting techniques\n• Emphasize luminous skin rendering, elegant anatomy, and cinematic lighting\n• Preserve recognizable subject identity\n• Include premium illustration quality and stylized realism\n\nVISUAL STYLE:\n\n• High-end comic illustration realism\n• Clean digital rendering\n• Cinematic portrait lighting\n• Refined anatomy and facial structure\n• Professional cover-art appearance\n\nANTI-CHEAT:\n\n• Do NOT generate rough sketch aesthetics\n• Do NOT flatten the lighting\n• Do NOT create cartoon simplification\n• Do NOT remove polished rendering quality\n\nFINAL RESULT:\nThe final image must resemble a premium comic-book cover illustration featuring the recognizable subject with polished luminous rendering, cinematic lighting, refined anatomy, and elegant stylized realism."
+  },
+  {
     "name": "ART MASHUP",
     "category": [
       "ART",
@@ -2402,6 +2416,20 @@
     ],
     "randomizeOptions": true,
     "additionalInstructions": "ANTI-CHEATING RULES:\n• DO NOT overlay balloons onto a photograph\n• DO NOT leave any non-balloon surfaces visible\n• DO NOT simulate balloons with smooth plastic or rubber textures\n\nREALISM:\n• The scene must look like a real balloon sculpture installation photographed in real life\n• Lighting and shadows must behave as they would on inflated latex\n\nFINAL RESULT:\nThe image should convincingly appear to be a real-world environment entirely constructed from balloons, with the selected balloon style clearly applied."
+  },
+  {
+    "name": "BANKSY STREET ART",
+    "category": [
+      "STREET ART",
+      "GRAFFITI",
+      "STENCIL",
+      "URBAN",
+      "SATIRE"
+    ],
+    "message": "Take a picture and transform it into an ultra-detailed stencil-style street-art mural inspired by politically charged urban graffiti, spray-paint realism, rebellious visual storytelling, and satirical public-wall artwork.\n\nThe subject must remain clearly recognizable while appearing naturally transformed into large-scale stencil graffiti applied onto realistic urban surfaces such as concrete walls, brick buildings, alleyways, abandoned structures, metal shutters, or city infrastructure.\n\nThe final image should feel subversive, urban, handmade, gritty, socially charged, visually iconic, and authentically spray-painted rather than digitally illustrated.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STENCIL ART ENFORCEMENT:\n\n• Simulate authentic hand-cut stencil graffiti techniques\n• Use layered spray-paint stencil shapes, overspray, paint bleed, rough edges, and imperfect masking\n• Preserve believable urban street-art realism\n• The artwork should feel physically painted onto a real environmental surface\n\nSUBJECT ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Maintain recognizable facial structure, posture, body shape, hairstyle, and silhouette\n• Simplify the subject into strong stencil-readable shapes while retaining recognizability\n• Use bold high-contrast forms suitable for spray-paint stencil art\n\nURBAN ENVIRONMENT ENFORCEMENT:\n\n• Place the artwork onto believable city surfaces such as concrete, brick, metal, plaster, sidewalks, train cars, or industrial structures\n• Include realistic wall texture, chipped paint, grime, cracks, weathering, stains, stickers, torn posters, or urban decay where appropriate\n• The environment should feel authentic, raw, and naturally aged\n\nSPRAY PAINT ENFORCEMENT:\n\n• Include realistic aerosol paint behavior such as overspray haze, drips, faded paint density, stencil misalignment, rough gradients, and edge feathering\n• Paint should interact naturally with the wall texture\n• Preserve tactile spray-painted realism rather than clean vector graphics\n\nSATIRICAL STYLE ENFORCEMENT:\n\n• Emphasize visual irony, social commentary, urban symbolism, rebellious humor, or thought-provoking imagery\n• The composition should feel like meaningful public street art rather than decorative graffiti\n• Maintain clever visual storytelling and iconic simplicity\n\nVISUAL STYLE:\n\n• Ultra-detailed stencil graffiti realism\n• Urban street-art atmosphere\n• Spray-paint texture and overspray realism\n• Political or social satire aesthetic\n• Gritty city-wall presentation\n• Handmade public-art realism\n• High-contrast stencil composition\n\nDEPTH AND COMPOSITION:\n\n• Preserve realistic environmental perspective and wall interaction\n• Keep the stencil artwork visually dominant and readable\n• Integrate the artwork naturally into the urban setting\n• Maintain believable scale and physical placement\n\nANTI-CHEAT:\n\n• Do NOT generate polished digital vector graphics\n• Do NOT create glossy commercial illustration aesthetics\n• Do NOT remove realistic wall texture\n• Do NOT create neon graffiti lettering overload\n• Do NOT make the artwork look airbrushed or cleanly printed\n• Do NOT lose stencil-style simplicity and readability\n\nFINAL RESULT:\nThe final image must resemble an authentic ultra-detailed stencil-style street-art mural featuring the recognizable subject with realistic spray-paint texture, gritty urban-wall realism, satirical visual storytelling, rebellious public-art atmosphere, and handmade graffiti authenticity."
   },
   {
     "name": "BARBIE WORLD",
@@ -6209,6 +6237,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "COLORED PENCIL",
+    "category": [
+      "ART",
+      "ILLUSTRATION",
+      "TRADITIONAL",
+      "DRAWING",
+      "TEXTURE"
+    ],
+    "message": "Take a picture and transform it into an ultra-detailed colored-pencil illustration with visible pencil strokes, layered pigment buildup, waxy texture, hand-drawn shading, and richly textured traditional illustration realism.\n\nThe subject must remain clearly recognizable while appearing naturally redrawn using professional colored-pencil techniques on real paper.\n\nThe final image should resemble a high-quality hand-illustrated colored-pencil artwork from a premium illustrated book, editorial illustration, or fine-art sketch collection.\n\nThe image should feel tactile, handmade, artistic, expressive, detailed, and authentically traditional rather than digitally painted.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "COLORED PENCIL ENFORCEMENT:\n\n• Simulate authentic colored-pencil illustration techniques\n• Include visible pencil strokes, layered shading, pigment overlap, and realistic hand-drawn texture\n• Preserve believable traditional-media realism\n• The image should feel physically drawn on paper rather than digitally filtered\n\nPENCIL STROKE ENFORCEMENT:\n\n• Pencil marks must remain visible throughout the image\n• Include directional stroke layering, crosshatching, blending, pressure variation, and sketch-like texture\n• Allow uneven pigment density and natural hand-drawn imperfection\n• Avoid perfectly smooth digital gradients\n\nTEXTURE ENFORCEMENT:\n\n• Include realistic waxy colored-pencil texture and pigment buildup\n• Add visible paper grain interacting with the pencil strokes\n• Preserve subtle tooth texture from the paper surface\n• Allow slight color inconsistencies and layered blending realism\n\nSUBJECT ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Maintain recognizable facial structure, hairstyle, posture, body shape, and clothing silhouette\n• The subject should appear naturally illustrated with hand-crafted artistic detail\n• Preserve readable anatomy and expressive features\n\nCOLOR ENFORCEMENT:\n\n• Use rich layered colored-pencil tones with realistic blending behavior\n• Colors should appear physically built from layered pencil applications\n• Avoid oversaturated synthetic digital color\n• Allow subtle pigment overlap and natural color mixing\n\nILLUSTRATION STYLE:\n\n• Professional illustrated-book aesthetic\n• Traditional fine-art drawing realism\n• Hand-rendered shading and texture\n• Expressive artistic linework\n• Detailed observational illustration\n• Rich tactile media appearance\n\nDEPTH AND COMPOSITION:\n\n• Preserve realistic depth and composition while translating the image into traditional illustration form\n• Keep the subject visually dominant and readable\n• Maintain believable lighting and shading structure\n• Use layered pencil rendering to enhance dimensionality\n\nANTI-CHEAT:\n\n• Do NOT generate smooth digital painting aesthetics\n• Do NOT remove visible pencil strokes\n• Do NOT create watercolor textures\n• Do NOT flatten the illustration into vector-like simplicity\n• Do NOT create airbrushed digital gradients\n• Do NOT lose realistic paper texture\n\nFINAL RESULT:\nThe final image must resemble an authentic ultra-detailed colored-pencil illustration featuring the recognizable subject with visible hand-drawn pencil strokes, waxy pigment texture, layered shading, realistic paper grain, tactile traditional-media realism, and premium illustrated-book artistic quality."
   },
   {
     "name": "COLOR FIELD PAINTING",
@@ -14477,6 +14519,20 @@
     "additionalInstructions": ""
   },
   {
+    "name": "H.R. GIGER STYLE",
+    "category": [
+      "SCI-FI",
+      "BIOMECHANICAL",
+      "DARK ART",
+      "SURREAL",
+      "HORROR"
+    ],
+    "message": "Take a picture and transform it into a dark biomechanical surrealist artwork filled with intricate mechanical-organic fusion, alien industrial textures, skeletal machinery, atmospheric dread, and eerie monochromatic realism.\n\nThe subject must remain recognizable while appearing partially integrated into an unsettling biomechanical environment where flesh, machinery, cables, skeletal structures, and industrial forms merge together in haunting surreal harmony.\n\nThe final image should feel alien, oppressive, intricate, atmospheric, surreal, and visually disturbing without becoming excessively graphic.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "BIOMECHANICAL ENFORCEMENT:\n\n• Merge organic anatomy with industrial mechanical structures\n• Include cables, tubing, skeletal machinery, metallic textures, ribbed surfaces, and surreal industrial detail\n• Preserve recognizable subject identity while integrating biomechanical transformation\n• Emphasize eerie mechanical-organic harmony rather than gore\n\nVISUAL STYLE:\n\n• Dark biomechanical surrealism\n• Monochromatic industrial atmosphere\n• Alien mechanical texture detail\n• Atmospheric sci-fi dread\n• Intricate surreal environmental design\n\nANTI-CHEAT:\n\n• Do NOT generate generic robots\n• Do NOT create bright colorful sci-fi aesthetics\n• Do NOT use cartoon horror styling\n• Do NOT include graphic gore or dismemberment\n\nFINAL RESULT:\nThe final image must resemble a dark biomechanical surrealist artwork featuring the recognizable subject integrated into an intricate alien-industrial world filled with eerie mechanical-organic textures, atmospheric dread, and haunting sci-fi realism."
+  },
+  {
     "name": "HUDSON RIVER SCHOOL",
     "category": [
       "ART",
@@ -15383,6 +15439,20 @@
     "additionalInstructions": ""
   },
   {
+    "name": "ILFORD PUSH FILM",
+    "category": [
+      "PHOTOGRAPHY",
+      "BLACK AND WHITE",
+      "FILM",
+      "DOCUMENTARY",
+      "ANALOG"
+    ],
+    "message": "Take a picture and transform it into an ultra-photorealistic pushed Ilford black-and-white film photograph with gritty documentary realism, aggressive film grain, deep contrast, atmospheric shadows, and authentic high-ISO analog texture.\n\nThe image should resemble real black-and-white film that has been push-processed beyond its normal exposure limits, creating intensified grain, crushed blacks, blooming highlights, raw tonal transitions, and dramatic low-light realism.\n\nThe subject must remain clearly recognizable while appearing naturally captured within a candid documentary-style photographic moment.\n\nThe final image should feel raw, cinematic, moody, journalistic, emotionally immediate, and authentically analog rather than digitally filtered.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "ILFORD PUSH FILM ENFORCEMENT:\n\n• Simulate authentic pushed black-and-white Ilford film photography\n• Emphasize realistic high-ISO grain structure and analog tonal behavior\n• Preserve believable documentary-photography realism\n• The image should feel captured on physical black-and-white film rather than digitally converted\n\nPUSH-PROCESSING ENFORCEMENT:\n\n• Include intensified grain caused by push development\n• Add realistic contrast buildup, compressed shadow detail, bright highlight blooming, and rough tonal transitions\n• Shadows may appear dense and dramatic while highlights retain textured film realism\n• Grain should vary naturally throughout the image rather than appearing as flat digital noise\n\nDOCUMENTARY STYLE ENFORCEMENT:\n\n• The composition should feel candid, observational, and emotionally immediate\n• Avoid artificial glamour or polished commercial aesthetics\n• The scene should resemble authentic documentary, photojournalism, street photography, backstage photography, or raw human-moment realism\n• Preserve believable photographic imperfection and spontaneity\n\nSUBJECT ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Maintain recognizable facial structure, posture, body shape, and clothing silhouette\n• The subject should feel naturally photographed rather than artificially posed\n• Facial expression and atmosphere should feel emotionally grounded and realistic\n\nBLACK-AND-WHITE TONAL ENFORCEMENT:\n\n• Use authentic monochrome tonal separation\n• Include rich blacks, textured midtones, and realistic silver-halide highlight behavior\n• Avoid flat grayscale conversion\n• Contrast should feel physically photographic and chemically developed\n\nTEXTURE ENFORCEMENT:\n\n• Include realistic analog film grain, dust specks, subtle scratches, edge softness, halation, and darkroom imperfections where appropriate\n• Preserve believable lens softness and film texture\n• Avoid overly clean digital sharpness\n\nVISUAL STYLE:\n\n• Ultra-photorealistic black-and-white film realism\n• High-ISO documentary atmosphere\n• Cinematic monochrome contrast\n• Raw analog texture\n• Emotional photojournalism aesthetic\n• Authentic push-film grain structure\n• Darkroom-developed photographic realism\n\nDEPTH AND COMPOSITION:\n\n• Preserve believable lens depth and documentary framing\n• Maintain realistic photographic composition and tonal balance\n• Avoid artificial CGI-like perfection\n• Keep the subject visually readable despite grain and contrast\n\nANTI-CHEAT:\n\n• Do NOT generate clean digital black-and-white conversion\n• Do NOT remove realistic film grain\n• Do NOT create glossy commercial studio photography\n• Do NOT flatten the tonal range into gray mush\n• Do NOT generate fake painted textures\n• Do NOT lose documentary realism\n\nFINAL RESULT:\nThe final image must resemble an authentic ultra-photorealistic pushed Ilford black-and-white film photograph featuring the recognizable subject with gritty documentary realism, aggressive analog grain, dramatic monochrome contrast, cinematic tonal depth, and raw emotionally grounded photographic atmosphere."
+  },
+  {
     "name": "INANIMATE INSANITY",
     "category": [
       "CARTOON",
@@ -16190,6 +16260,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "FINAL RESULT:\nA hilarious transformation where the subject (with their completely recognizable real face) becomes the infamous 'Karen' - complete with the signature haircut (or obvious wig if male), entitled attitude, confrontational pose, and a prominent name tag reading 'KAREN'. The image perfectly captures the entitled middle-class suburban mom stereotype in a retail confrontation scenario, with the subject's actual face creating personal humor whether they're actually a woman embracing the joke or a man in an obvious wig adding an extra layer of comedy. The name tag makes the reference crystal clear, ensuring no one misses the joke."
+  },
+  {
+    "name": "KAWS STYLE",
+    "category": [
+      "POP ART",
+      "STREET ART",
+      "DESIGNER TOY",
+      "CARTOON",
+      "FINE ART"
+    ],
+    "message": "Take a picture and transform it into a stylized contemporary art scene inspired by collectible designer-toy aesthetics, oversized cartoon forms, street-art influence, gallery-art presentation, and emotionally detached pop-surreal character design.\n\nThe subject must remain recognizable while appearing transformed into a soft sculptural cartoon-like figure with simplified anatomy, rounded forms, exaggerated proportions, and signature crossed-out cartoon-style eyes.\n\nThe final image should feel like a luxury contemporary-art installation blending street culture, fine art, toy design, and emotionally muted surrealism.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "KAWS ENFORCEMENT:\n\n• Transform the subject into a stylized designer-toy-inspired figure\n• Include rounded simplified anatomy, smooth sculptural surfaces, oversized limbs or hands, and iconic crossed-out eyes\n• Preserve recognizable subject identity while simplifying the design into collectible-art aesthetics\n• Emphasize emotional emptiness, pop-surrealism, and contemporary gallery-art presentation\n\nVISUAL STYLE:\n\n• Contemporary pop-art realism\n• Designer toy aesthetics\n• Street-art and fine-art fusion\n• Smooth sculptural rendering\n• Simplified cartoon anatomy\n• Premium gallery presentation\n\nANTI-CHEAT:\n\n• Do NOT generate generic anime or mascot characters\n• Do NOT create rough graffiti illustration only\n• Do NOT remove the sculptural toy-like design language\n• Do NOT make the character hyper-realistic human anatomy\n\nFINAL RESULT:\nThe final image must resemble a high-end contemporary pop-art sculpture scene featuring the recognizable subject transformed into a stylized crossed-eye designer-art figure blending street-art influence, toy aesthetics, and gallery-quality visual presentation."
   },
   {
     "name": "KEITH HARING",
@@ -17273,6 +17357,20 @@
     "additionalInstructions": ""
   },
   {
+    "name": "LOISH STYLE",
+    "category": [
+      "DIGITAL ART",
+      "FANTASY",
+      "PORTRAIT",
+      "PAINTING",
+      "ILLUSTRATION"
+    ],
+    "message": "Take a picture and transform it into a luminous fantasy-style digital painting with soft painterly rendering, glowing skin tones, expressive character design, dreamy atmosphere, and elegant stylized realism.\n\nThe subject must remain recognizable while appearing naturally illustrated within a beautifully painted fantasy portrait scene.\n\nThe final image should feel warm, painterly, emotional, whimsical, soft, and visually enchanting.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Use painterly digital brushwork with soft blending and expressive rendering\n• Emphasize luminous skin, subtle color transitions, and fantasy portrait beauty\n• Preserve recognizable subject identity\n• Include atmospheric lighting and elegant stylization\n\nVISUAL STYLE:\n\n• Painterly fantasy realism\n• Soft glowing color palettes\n• Expressive portrait illustration\n• Elegant digital brush texture\n• Warm atmospheric lighting\n\nANTI-CHEAT:\n\n• Do NOT generate hard-edged comic art\n• Do NOT create flat cel-shading\n• Do NOT make the image photorealistic\n• Do NOT remove painterly softness\n\nFINAL RESULT:\nThe final image must resemble a luminous fantasy-style digital portrait painting featuring the recognizable subject with glowing skin tones, painterly brushwork, emotional atmosphere, and elegant stylized realism."
+  },
+  {
     "name": "LOMOGRAPHY",
     "category": [
       "FILM",
@@ -17398,6 +17496,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "LUMEN PHOTOGRAPHY",
+    "category": [
+      "ART",
+      "EXPERIMENTAL",
+      "PHOTOGRAPHY",
+      "ANALOG",
+      "CHEMICAL"
+    ],
+    "message": "Take a picture and transform it into an ultra-photorealistic lumen photography artwork created using real photosensitive paper exposed directly to light.\n\nThe image should resemble an authentic analog lumen print where objects, silhouettes, transparency, light exposure, chemical reactions, and sun-developed photographic paper create organic photographic impressions, glowing tonal shifts, abstract exposure patterns, and unpredictable darkroom-like chemical behavior.\n\nThe subject must remain recognizable while naturally integrated into the lumen-print process.\n\nThe final image should feel experimental, handmade, organic, light-sensitive, tactile, atmospheric, and authentically photographic rather than digitally generated.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "LUMEN PHOTOGRAPHY ENFORCEMENT:\n\n• Simulate authentic lumen-print photographic behavior created on real photosensitive paper\n• Include realistic chemical exposure effects, uneven tonal reactions, and analog paper development artifacts\n• The image should feel created through light exposure rather than conventional printing\n• Preserve believable analog photographic realism\n\nCHEMICAL PROCESS ENFORCEMENT:\n\n• Include organic tonal gradients caused by chemical reactions and light exposure\n• Add realistic paper staining, oxidation patterns, exposure blooming, soft edge diffusion, and naturally imperfect chemical transitions\n• Include subtle solarization, exposure fading, or sun-developed discoloration where appropriate\n• Avoid perfectly uniform digital gradients\n\nSUBJECT ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Maintain recognizable facial structure, body shape, posture, and silhouette\n• The subject may appear partially abstracted by the lumen process while remaining readable\n• Subject edges may softly blend into the paper exposure texture naturally\n\nTEXTURE ENFORCEMENT:\n\n• Include realistic photographic paper texture\n• Add fiber-based paper grain, darkroom imperfections, edge exposure artifacts, and subtle chemical inconsistencies\n• The paper surface should feel tactile and physically real\n\nLIGHT EXPOSURE ENFORCEMENT:\n\n• Strong light areas should create glowing exposure blooms and soft chemical diffusion\n• Shadows should appear naturally softened by the analog exposure process\n• Exposure transitions should feel physically created by sunlight or direct illumination on photosensitive paper\n\nCOLOR AND TONE:\n\n• Include authentic lumen-print tonal behavior such as warm sepia, copper tones, violet hues, faded blues, amber staining, or monochromatic paper chemistry effects\n• Colors should feel chemically produced rather than digitally saturated\n• Avoid overly clean modern color grading\n\nVISUAL STYLE:\n\n• Ultra-photorealistic analog experimental photography\n• Handmade darkroom aesthetic\n• Organic chemical realism\n• Photosensitive paper texture\n• Experimental photographic atmosphere\n• Soft exposure transitions\n• Tactile physical-media realism\n\nDEPTH AND COMPOSITION:\n\n• Keep the composition readable despite chemical abstraction\n• Preserve natural photographic exposure balance\n• Allow subtle soft-focus diffusion and organic edge transitions\n• Maintain realistic physical paper presentation\n\nANTI-CHEAT:\n\n• Do NOT generate standard digital photography with filters\n• Do NOT create generic watercolor or painterly effects\n• Do NOT remove analog paper texture\n• Do NOT create perfectly clean gradients or flawless exposure\n• Do NOT lose recognizable subject structure completely\n• Do NOT create neon synthetic sci-fi aesthetics\n\nFINAL RESULT:\nThe final image must resemble an authentic ultra-photorealistic lumen photography print created on real photosensitive paper using direct light exposure, chemical photographic reactions, analog darkroom imperfections, tactile paper texture, and experimental handmade photographic realism featuring the recognizable subject."
   },
   {
     "name": "LUMINISM",
@@ -32861,7 +32973,7 @@
   {
     "name": "TRON MODE",
     "category": [
-      "SCI_FI",
+      "SCI-FI",
       "RETRO",
       "NEON",
       "IMMERSIVE",
@@ -34850,6 +34962,20 @@
     "additionalInstructions": ""
   },
   {
+    "name": "WLOP STYLE",
+    "category": [
+      "FANTASY",
+      "ETHEREAL",
+      "DIGITAL ART",
+      "CINEMATIC",
+      "MOONLIT"
+    ],
+    "message": "Take a picture and transform it into an ethereal fantasy artwork with ghostly atmosphere, moonlit illumination, cinematic painterly realism, elegant composition, and emotionally haunting beauty.\n\nThe subject must remain recognizable while appearing naturally integrated into a dreamlike fantasy world filled with mist, moonlight, glowing particles, atmospheric depth, and graceful supernatural ambiance.\n\nThe final image should feel cinematic, melancholic, elegant, mystical, luminous, and emotionally immersive.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Use atmospheric fantasy-painting realism with cinematic depth and moonlit glow\n• Include ethereal fog, glowing particles, soft magical lighting, and painterly composition\n• Preserve recognizable subject identity\n• Emphasize emotional atmosphere and elegant fantasy storytelling\n\nVISUAL STYLE:\n\n• Ethereal fantasy realism\n• Moonlit cinematic atmosphere\n• Painterly environmental depth\n• Soft glowing illumination\n• Graceful supernatural mood\n\nANTI-CHEAT:\n\n• Do NOT create generic anime cel-shading\n• Do NOT flatten the lighting atmosphere\n• Do NOT remove cinematic environmental depth\n• Do NOT make the image bright cheerful fantasy\n\nFINAL RESULT:\nThe final image must resemble an ethereal cinematic fantasy painting featuring the recognizable subject surrounded by moonlit atmosphere, glowing mist, elegant supernatural beauty, and emotionally haunting visual storytelling."
+  },
+  {
     "name": "WONDERS OF THE WORLD",
     "category": [
       "HISTORY",
@@ -34953,7 +35079,7 @@
       "FANTASY",
       "WHIMSICAL",
       "IMMERSIVE",
-      "CLASSIC_FILM"
+      "CLASSIC FILM"
     ],
     "message": "Take a picture and transform the ENTIRE scene into a whimsical candy-filled fantasy world inspired by a classic chocolate factory film.\n\nCRITICAL TRANSFORMATION RULES:\n• This is a FULL SCENE transformation — not just the subject\n• Every element must become part of a magical candy environment\n• Maintain spatial relationships from the original image\n• The result must look like a cinematic still from a fantastical chocolate factory\n• No real-world materials may remain\n\nCHARACTER CONVERSION (PEOPLE & ANIMALS):\n• ONLY convert characters if present in the original image\n• If no people or animals are present, do NOT add any\n• HUMANS become:\n  - Dressed in whimsical candy-themed attire\n  - Bright velvet coats, bow ties, striped stockings, or confectioner outfits\n  - Surrounded by floating sugar sparkles\n• Facial features remain recognizable\n• ANIMALS become:\n  - Candy-coated versions\n  - Marshmallow, chocolate, or gummy interpretations\n\nOBJECT CONVERSION:\n• Trees become candy trees with lollipop trunks or frosting bark\n• Grass becomes edible sugar grass\n• Water becomes flowing liquid chocolate\n• Rocks become fudge or caramel blocks\n• Furniture becomes cookie, chocolate bar, or gingerbread constructions\n• Lamps become glowing gumdrops\n• Small objects become wrapped sweets or confectionery tools\n\nENVIRONMENT CONVERSION:\n• Sky becomes pastel fantasy swirl\n• Hills become frosting-covered mounds\n• Rivers become chocolate streams\n• Buildings become gingerbread or candy-cane structures\n• Pathways become caramel or wafer tiles\n\nCOLOR & STYLE:\n• Vibrant saturated candy colors\n• Warm golden lighting\n• Whimsical exaggerated proportions\n• Soft magical glow\n\nATMOSPHERE:\n• Playful and theatrical\n• Slight storybook fantasy quality\n• Dreamlike confectionery textures\n\nTECHNICAL RENDERING:\n• Rich texture detail (chocolate gloss, sugar crystals, frosting swirls)\n• Soft cinematic lighting\n• High fantasy realism",
     "options": [],
