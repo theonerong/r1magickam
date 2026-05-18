@@ -7665,6 +7665,36 @@
     "randomizeOptions": false,
     "additionalInstructions": ""
   },
+   {
+    "name": "CRACKED MAGAZINE",
+    "category": [
+      "COMIC",
+      "SATIRE",
+      "RETRO",
+      "MAGAZINE"
+    ],
+    "message": "Take a picture and transform the subject into a chaotic retro Cracked magazine cover from the 1970s–1990s.\n\nThe image should unmistakably resemble a vintage issue of Cracked magazine filled with aggressive visual satire, chaotic editorial humor, ridiculous parody energy, fake headlines, absurd visual jokes, and overcrowded comedic nonsense.\n\nThe original subject must remain visible and recognizable but should appear transformed into an exaggerated comedic version of themselves inside the universe of a classic Cracked magazine cover.\n\nIMPORTANT:\n• The final image must clearly and repeatedly reference Cracked magazine throughout the composition\n• The CRACKED magazine logo/title should appear prominently at the top like a real vintage Cracked magazine issue\n• The overall layout, humor density, and visual clutter should strongly resemble classic Cracked magazine covers and interior art\n• Include Sylvester P. Smythe prominently in the scene as the speaking mascot of the magazine\n• Sylvester P. Smythe should appear expressive, mischievous, talkative, and integrated naturally into the comedic chaos\n• Sylvester P. Smythe may point at the subject, react to the chaos, interact with props, deliver visual jokes, or appear in speech bubbles and fake advertisements\n\nSTYLE:\n• Retro Cracked magazine aesthetic\n• Loud chaotic composition\n• Vintage American satire-magazine energy\n• Mixed photorealism and illustrated satire\n• Slightly grimy vintage print texture\n• Overcrowded visual humor\n• Bright but slightly aged colors\n• Heavy black outlines on comedic details\n• Intentionally ridiculous visual gags\n• Madcap editorial chaos\n• Cheap vintage print imperfections\n\nSUBJECT TREATMENT:\n• Exaggerated facial expression\n• Slight caricature distortion allowed\n• Over-the-top reactions encouraged\n• Silly wardrobe additions permitted\n• Embarrassing props encouraged\n• Subject should appear trapped inside absurd Cracked magazine comedic chaos\n\nCRACKED MAGAZINE COVER ELEMENTS:\n• Add many fake comedic headlines and subheadings in authentic retro Cracked magazine style\n• Include ridiculous callouts and visual joke captions\n• Add fake advertisements and parody blurbs\n• Include outrageous exaggerated promises and tabloid-style text\n• Add intentionally dumb visual puns\n• Include random nonsense details that reward closer inspection\n• Add fake issue labels, price circles, retro editorial clutter, and parody sidebars\n• Add speech bubbles, editorial jokes, and visual commentary from Sylvester P. Smythe\n• Include exaggerated satire and juvenile visual humor throughout the composition\n\nBACKGROUND CHAOS:\n• Fill empty areas with visual jokes and nonsense\n• Add absurd background characters and reactions\n• Include weird props, fake products, bizarre animals, comedic disasters, and parody advertisements\n• The environment should feel overloaded with Cracked magazine satire and visual comedy\n\nThe final image should look like an authentic vintage Cracked magazine cover exploding with chaotic satire, immature comedic energy, editorial clutter, and exaggerated parody madness.",
+    "options": [
+    {
+      "id": "001",
+      "text": "Classic retro Cracked magazine cover"
+    },
+    {
+      "id": "002",
+      "text": "Extra chaotic overloaded Cracked comedy issue"
+    },
+    {
+      "id": "003",
+      "text": "Cheap tabloid-style Cracked parody edition"
+    },
+    {
+      "id": "004",
+      "text": "Apocalyptic Cracked satire issue with visual overload"
+    }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "OPTION ENFORCEMENT:\n\n• The selected option MUST strongly affect the final presentation style\n• Do not blend all styles together equally\n\nCRACKED MAGAZINE ENFORCEMENT:\n\n• The image must clearly and unmistakably resemble a vintage Cracked magazine cover\n• The word CRACKED should appear prominently like a real magazine masthead\n• Include numerous fake headlines and comedic editorial clutter in classic Cracked magazine style\n• Use exaggerated visual satire throughout the composition\n• Fill the image with layered visual jokes and absurd details\n• Include intentionally immature humor and ridiculous situations\n• Include Sylvester P. Smythe prominently and repeatedly throughout the composition\n• Sylvester P. Smythe should visibly interact with the subject and surrounding comedic chaos\n• Include speech bubbles, joke captions, parody advertisements, or commentary featuring Sylvester P. Smythe\n• Maintain retro Cracked magazine energy across the entire image\n\nANTI-CHEAT:\n\n• Do not create a clean minimalist magazine cover\n• Do not use modern influencer aesthetics\n• Do not leave large empty areas\n• Do not make the humor subtle\n• Do not make the layout look premium or elegant\n• Avoid realistic modern magazine design trends\n• Do not omit Sylvester P. Smythe\n• Do not make the image resemble a generic comic magazine\n• Do not modernize the Cracked magazine aesthetic\n\nFINAL RESULT:\nThe final image should resemble a loud, ridiculous, overcrowded vintage Cracked magazine cover full of visual nonsense, fake headlines, exaggerated satire, editorial chaos, and prominent appearance by Sylvester P. Smythe."
+  },
   {
     "name": "CRAYON DRAWING",
     "category": [
