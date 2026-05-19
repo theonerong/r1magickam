@@ -7722,6 +7722,36 @@
     "additionalInstructions": "IDENTITY PRESERVATION:\n• Subject’s likeness formed through wax shapes and drips\n• Facial features readable through wax placement\n• Some abstraction allowed, but identity must remain clear\n\nANTI-CHEATING RULES:\n• NO brush strokes\n• NO airbrush gradients\n• NO smooth digital blending\n• NO watercolor or oil paint appearance\n\nPROCESS CUES (VISIBLE):\n• Crayons may be visible at the top or edges\n• Wax appears to have flowed downward due to heat\n• Gravity-consistent drip direction\n\nCOMPOSITION:\n• Vertical orientation preferred\n• Background may show paper, canvas, or board\n• Wax thickness varies across the image\n\nFINAL RESULT:\nThe image must look like a real crayon melt artwork created by heating crayons and letting wax drip and pool to form the subject’s portrait — messy, tactile, and unmistakably wax-based."
   },
   {
+  "name": "CRAZY MAGAZINE",
+  "category": [
+    "COMIC",
+    "SATIRE",
+    "RETRO",
+    "MAGAZINE"
+  ],
+  "message": "Take a picture and transform the subject into a completely chaotic vintage Crazy Magazine cover from the 1970s–1980s.\n\nThe image should unmistakably resemble an authentic issue of Marvel's Crazy Magazine — the bizarre, lower-budget, more unhinged, grosser, sillier, and more experimental cousin of Mad-style humor magazines.\n\nThe final image should feel faster-paced, more juvenile, more chaotic, more random, more grotesque, and more visually insane than a normal satire magazine.\n\nThe original subject must remain recognizable but should appear trapped inside an absurdly stupid and aggressively chaotic Crazy Magazine universe filled with gross-out humor, surreal visual nonsense, ridiculous props, bizarre photography gags, comic-strip insanity, fake advertisements, fumetti-style jokes, and immature visual overload.\n\nIMPORTANT:\n• The final image must clearly and repeatedly reference Crazy Magazine throughout the composition\n• The CRAZY magazine logo/title should appear prominently at the top like a real vintage issue\n• The image should strongly resemble the weird low-budget energy of vintage Crazy Magazine covers and interior pages\n• Include Obnoxio the Clown prominently in the composition as the recurring mascot character\n• Obnoxio the Clown should appear loud, annoying, hyperactive, chaotic, gross, mischievous, and aggressively stupid\n• Obnoxio may interact with the subject, photobomb scenes, interrupt jokes, appear inside fake advertisements, pop out of comic panels, invade photographs, or yell through speech bubbles\n\nSTYLE:\n• Vintage Crazy Magazine aesthetic\n• Looser and more insane than Mad-style satire\n• Chaotic comic-book parody energy\n• Heavy use of mixed-media humor\n• Combination of real photography and comic-strip elements\n• Fumetti-style visual storytelling\n• Cheap print textures and off-register colors\n• Loud juvenile humor\n• Weird surreal randomness\n• Sloppy intentionally low-budget editorial layouts\n• Bright garish colors\n• Crude visual jokes\n• Gross-out comedy\n• Aggressively immature comedic tone\n• Random visual non-sequiturs\n• Strange editorial experimentation\n\nSUBJECT TREATMENT:\n• Exaggerated goofy expression\n• Over-the-top reactions encouraged\n• Slight caricature distortion allowed\n• Embarrassing wardrobe additions encouraged\n• Gross props and disgusting visual jokes permitted\n• Subject should appear overwhelmed by bizarre comedy chaos\n• Subject may interact with comic-strip elements and fake magazine graphics\n\nCRAZY MAGAZINE COVER ELEMENTS:\n• Add many fake comedic headlines and ridiculous blurbs in authentic Crazy Magazine style\n• Include goofy parody advertisements and stupid visual puns\n• Add intentionally dumb jokes and juvenile humor\n• Include gross-out comedy elements\n• Add fake celebrity gossip, fake movie parodies, and ridiculous nonsense claims\n• Include comic-strip panels mixed directly into the photography\n• Add fumetti-style speech bubbles and visual storytelling\n• Add random editorial clutter, fake coupons, parody sidebars, and chaotic typography\n• Include intentionally awkward and bizarre photo manipulations\n• Add weird visual interruptions and surreal non-sequiturs\n• Include commentary and visual gags from Obnoxio the Clown throughout the image\n\nBACKGROUND CHAOS:\n• Fill empty areas with absurd visual nonsense\n• Add weird side characters, monsters, bizarre animals, fake products, slime, explosions, gross food, and surreal props\n• Include intentionally stupid background jokes and cheap visual gags\n• The environment should feel overloaded with immature chaos and random insanity\n• The image should reward close inspection with increasingly bizarre details\n\nThe final image should look like an authentic vintage issue of Crazy Magazine exploding with grotesque humor, surreal nonsense, comic-strip chaos, cheap visual experimentation, editorial insanity, and nonstop appearances by Obnoxio the Clown.",
+  "options": [
+    {
+      "id": "001",
+      "text": "Classic vintage Crazy Magazine cover"
+    },
+    {
+      "id": "002",
+      "text": "Ultra-chaotic gross-out Crazy Magazine issue"
+    },
+    {
+      "id": "003",
+      "text": "Cheap fumetti-style Crazy Magazine parody edition"
+    },
+    {
+      "id": "004",
+      "text": "Surreal experimental Crazy Magazine nightmare issue"
+    }
+  ],
+  "randomizeOptions": true,
+  "additionalInstructions": "OPTION ENFORCEMENT:\n\n• The selected option MUST strongly affect the final presentation style\n• Do not blend all styles together equally\n\nCRAZY MAGAZINE ENFORCEMENT:\n\n• The image must clearly and unmistakably resemble a vintage Crazy Magazine cover\n• The word CRAZY should appear prominently like a real magazine masthead\n• Maintain authentic 1970s–1980s Crazy Magazine energy throughout the composition\n• The humor should feel faster-paced, dumber, grosser, and more chaotic than normal satire magazines\n• Include many fake headlines, visual jokes, parody blurbs, and editorial clutter\n• Use aggressive juvenile humor and visual overload\n• Include mixed-media layouts combining photography and comic-strip elements\n• Include fumetti-style humor and comic-panel interruptions\n• Include Obnoxio the Clown prominently and repeatedly throughout the composition\n• Obnoxio the Clown should interact with the subject and interrupt scenes with chaotic comedic energy\n• Include speech bubbles, joke captions, fake advertisements, or visual commentary featuring Obnoxio the Clown\n• Maintain bizarre low-budget editorial energy across the entire image\n\nANTI-CHEAT:\n\n• Do not create a clean modern magazine cover\n• Do not make the humor subtle or sophisticated\n• Do not leave large empty areas\n• Do not make the layout elegant or premium-looking\n• Avoid modern influencer aesthetics\n• Do not omit Obnoxio the Clown\n• Do not make the image resemble a generic comic-book cover\n• Do not modernize the Crazy Magazine aesthetic\n• Avoid polished modern graphic-design trends\n• Do not reduce the gross-out humor or surreal absurdity\n\nFINAL RESULT:\nThe final image should resemble a loud, disgusting, bizarre, low-budget, overcrowded vintage issue of Crazy Magazine filled with surreal visual nonsense, gross-out humor, fumetti-style comedy, fake headlines, comic-strip chaos, editorial insanity, and constant interruptions from Obnoxio the Clown."
+  },
+  {
     "name": "CREEPYPASTA",
     "category": [
       "OPTIONS",
@@ -33293,6 +33323,48 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "TV GUIDE",
+    "category": [
+      "RETRO",
+      "MAGAZINE",
+      "TELEVISION",
+      "POP CULTURE"
+    ],
+    "message": "Take a picture and transform the subject into the featured cover star of a classic vintage TV Guide magazine from the 1960s–1990s.\n\nThe final image should unmistakably resemble an authentic pocket-sized digest-format issue of TV Guide — the iconic collectible American television-listings magazine famous for featuring major television stars, weekly programming highlights, network promotions, celebrity features, and locally customized TV listings.\n\nThe original subject must remain recognizable and should appear professionally photographed as the featured television personality or celebrity on the cover of a real vintage TV Guide issue.\n\nMASTER PROMPT OVERRIDE LOGIC (CRITICAL):\n• If an external master prompt specifies a television genre, celebrity role, TV era, fictional program, network, broadcast event, holiday special, news event, sitcom, drama, game show, sci-fi setting, soap opera, or entertainment theme, USE that instead\n• External master prompt instructions MUST override generic TV Guide assumptions when applicable\n• The TV Guide cover, headlines, feature stories, and weekly programming should adapt dynamically to the externally provided subject matter\n• Maintain authentic TV Guide formatting and magazine presentation regardless of the overridden theme\n\nIMPORTANT:\n• The final image must clearly and repeatedly resemble a real vintage TV Guide magazine cover\n• The TV GUIDE masthead/logo should appear prominently at the top in authentic classic style\n• The magazine should retain the recognizable compact digest-format proportions of classic TV Guide issues\n• The layout should strongly resemble authentic collectible TV Guide covers from the 1960s–1990s\n• Include realistic entertainment-industry cover styling and television-themed editorial presentation\n\nSTYLE:\n• Authentic vintage TV Guide aesthetic\n• Clean but busy editorial layout\n• Professional celebrity-cover photography\n• Retro magazine print texture\n• Slightly aged paper coloration\n• Classic American television nostalgia\n• Highly readable cover typography\n• Period-authentic magazine composition\n• Realistic digest-format proportions\n• Collectible magazine appearance\n• Warm nostalgic lighting and colors\n\nSUBJECT TREATMENT:\n• Subject should appear like a major television celebrity or featured personality\n• Glamorous television-publicity-photo energy encouraged\n• Wardrobe and styling may adapt to the implied television genre or programming theme\n• Subject may appear smiling, dramatic, comedic, heroic, glamorous, mysterious, or sitcom-friendly depending on the implied television context\n• Subject should remain the dominant focal point of the magazine cover\n\nTV GUIDE COVER ELEMENTS:\n• Add realistic TV Guide-style headlines and feature blurbs based on the image content\n• Add television-related promotional text and weekly feature highlights\n• Include fake network programming teasers and television-event promotions\n• Add realistic issue dates, pricing, edition labels, and regional/local listing references\n• Include believable television-program titles inspired by the image subject matter\n• Add fake interviews, season premieres, behind-the-scenes specials, celebrity exclusives, and TV-movie promotions\n• Add realistic sidebar blurbs and programming highlights\n• Include localized weekly-listings references and television-schedule callouts\n• The flavor text and headlines should dynamically adapt to the subject and visual scene\n\nBACKGROUND AND ENVIRONMENT:\n• The background should support the implied television genre or celebrity persona\n• Add subtle entertainment-industry atmosphere and period-authentic styling\n• Maintain readability and strong magazine-cover composition\n• The image should feel like an authentic collectible issue found on a vintage newsstand\n\nThe final image should look exactly like a genuine classic TV Guide magazine cover featuring the subject as a major television star, complete with authentic editorial layout, collectible digest-format styling, realistic television headlines, and locally customized weekly programming references.",
+    "options": [
+    {
+      "id": "001",
+      "text": "Classic family-friendly vintage TV Guide issue"
+    },
+    {
+      "id": "002",
+      "text": "Primetime network television special edition"
+    },
+    {
+      "id": "003",
+      "text": "1980s dramatic television-star collector issue"
+    },
+    {
+      "id": "004",
+      "text": "Sweeps-week blockbuster TV Guide spectacular"
+    },
+    {
+      "id": "005",
+      "text": "Classic 1970s TV Guide issue"
+    },
+    {
+      "id": "006",
+      "text": "Warm nostalgic 1980s TV Guide celebrity cover"
+    },
+    {
+      "id": "007",
+      "text": "Dramatic primetime TV Guide special edition"
+    }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "OPTION ENFORCEMENT:\n\n• The selected option MUST visibly affect the final presentation style\n• Do not blend all options equally\n\nTV GUIDE ENFORCEMENT:\n\n• The image must unmistakably resemble an authentic vintage TV Guide magazine cover\n• The TV GUIDE masthead/logo must appear prominently and clearly\n• Preserve the recognizable digest-sized collectible TV Guide layout and proportions\n• Use realistic television-magazine editorial formatting and typography\n• Add authentic-looking television headlines, programming blurbs, and entertainment features\n• Include believable locally customized weekly-listings references\n• Headlines and flavor text should adapt dynamically to the actual image content and implied television genre\n• The subject must appear like a real television celebrity or featured TV personality\n• Maintain period-authentic television-magazine aesthetics\n\nHEADLINE ENFORCEMENT:\n\n• Add multiple believable TV Guide-style headlines\n• Include realistic television-program titles and feature-story blurbs\n• Add entertainment-industry promotional wording and broadcast-event hype\n• Include fake network references, weekly schedules, premieres, finales, specials, or celebrity interviews\n• Headlines should feel authentic to classic TV Guide editorial tone\n\nANTI-CHEAT:\n\n• Do not create a generic magazine cover\n• Do not modernize the layout or typography\n• Do not use modern streaming-service UI aesthetics\n• Avoid influencer-magazine styling\n• Do not leave large empty spaces\n• Do not omit television-themed editorial clutter\n• Do not make the cover resemble a comic book or tabloid\n• Avoid overly polished modern graphic-design trends\n\nFINAL RESULT:\nThe final image should look exactly like a genuine collectible vintage TV Guide issue featuring the subject as a television star, complete with authentic digest-format styling, realistic TV headlines, localized programming references, nostalgic editorial formatting, and believable weekly television-guide presentation."
   },
   {
     "name": "TV SITCOM",
