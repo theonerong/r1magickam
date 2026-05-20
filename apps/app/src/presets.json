@@ -976,6 +976,61 @@
     "additionalInstructions": "FINAL RESULT:\nA museum-quality historical portrait where the subject's recognizable face has been seamlessly integrated into the likeness of a specific historical figure who was genuinely accomplished but overshadowed by a more famous contemporary. The portrait is rendered in the authentic artistic style of the figure's era (oil painting, engraving, or period photograph), hangs in an ornate frame with professional museum lighting, and features a brass caption plaque clearly displaying the historical figure's actual name, dates, and a dignified subtitle acknowledging their \"second place\" status in history. The tone is respectful and the presentation honors real historical achievement while gently noting the irony of being very good but not quite great enough to be remembered as prominently as their more famous rival."
   },
   {
+    "name": "ALICE IN WONDERLAND MODE",
+    "category": [
+      "FANTASY",
+      "SURREAL",
+      "STORYBOOK",
+      "CHARACTER TRANSFORMATION",
+      "WHIMSICAL"
+    ],
+    "message": "Take a picture and transform the image into a surreal Wonderland fantasy universe inspired by whimsical Victorian storybook fantasy.\n\nThe final image should transform both the subject and environment into a bizarre magical Wonderland realm where ordinary objects, architecture, clothing, creatures, food, and scenery are replaced with surreal fantasy elements associated with Wonderland.\n\nPreserve recognizable subject identity while fully integrating the subject into the Wonderland world.\n\nMASTER PROMPT OVERRIDE LOGIC (CRITICAL):\n• If an external master prompt specifies a different fantasy tone, surreal intensity, Victorian styling, color palette, theatrical mood, magical environment, or whimsical interpretation, USE that instead\n• External prompts may override costume style, scenery, props, lighting, fantasy architecture, surrealism level, or theatrical tone\n• Preserve the recognizable Wonderland fantasy identity even when adapting to overridden themes\n\nWONDERLAND ENVIRONMENT TRANSFORMATION:\n• Replace ordinary objects with Wonderland-inspired fantasy equivalents\n• Include oversized teacups, playing cards, giant mushrooms, surreal clocks, checkerboard landscapes, twisted forests, impossible architecture, floating teapots, fantasy gardens, crooked pathways, bizarre furniture, and magical Victorian props\n• The world should feel whimsical, surreal, magical, illogical, dreamlike, and theatrical\n• Scale relationships may become bizarre or exaggerated while remaining visually coherent\n\nIMPORTANT:\n• Preserve recognizable facial identity and personality traits from the original subject\n• Fully integrate the subject into Wonderland fantasy aesthetics\n• Maintain strong storybook fantasy atmosphere\n• Use whimsical surreal fantasy composition and magical environmental storytelling\n• Preserve cinematic fantasy readability and whimsical fantasy logic\n\nSTYLE:\n• Surreal Victorian fantasy aesthetic\n• Storybook fantasy illustration style\n• Whimsical magical environments\n• Twisted fantasy architecture\n• Dreamlike surrealism\n• Fantasy tea-party aesthetics\n• Checkerboard and playing-card motifs\n• Magical forests and giant mushrooms\n• Curved whimsical scenery\n• Rich fantasy color palettes\n• Surreal fantasy lighting\n• Theatrical fantasy staging\n\nANIMAL TRANSFORMATION LOGIC:\n• If animals appear in the image, transform them into Wonderland-inspired fantasy creatures such as a Cheshire-style cat, magical caterpillar, gryphon-like creature, or fantasy turtle hybrid depending on the animal's size, shape, and personality\n• Preserve recognizable traits from the original animal while adapting them into Wonderland fantasy form\n\nBACKGROUND AND ENVIRONMENT:\n• Include surreal Wonderland forests, tea parties, fantasy gardens, checkerboard pathways, giant flowers, magical mushrooms, impossible Victorian interiors, fantasy castles, bizarre courtrooms, whimsical woods, or dreamlike fantasy scenery\n• Use magical fantasy lighting and whimsical surreal atmosphere\n• Maintain strong focus on the transformed subject\n\nThe final image should look like a fully realized cinematic Wonderland fantasy transformation with the subject naturally integrated into an absurd magical storybook world.",
+    "options": [
+    {
+      "id": "001",
+      "text": "Transform the subject into Alice wearing whimsical Victorian fantasy clothing while exploring a surreal Wonderland landscape filled with giant mushrooms, magical flowers, fantasy pathways, and dreamlike fantasy scenery"
+    },
+    {
+      "id": "002",
+      "text": "Transform the subject into the March Hare wearing eccentric Wonderland clothing while participating in a chaotic magical tea party filled with surreal props, teacups, clocks, and whimsical fantasy energy"
+    },
+    {
+      "id": "003",
+      "text": "Transform the subject into the White Rabbit wearing Victorian fantasy attire with magical pocket watches, surreal Wonderland scenery, fantasy tunnels, clocks, and hurried whimsical storytelling atmosphere"
+    },
+    {
+      "id": "004",
+      "text": "Transform the subject into the Mad Hatter wearing elaborate eccentric fantasy clothing with oversized hats, bizarre tea-party props, surreal Wonderland table settings, and chaotic whimsical energy"
+    },
+    {
+      "id": "005",
+      "text": "Transform the subject into the Queen of Hearts wearing dramatic royal fantasy attire with playing-card motifs, surreal fantasy castle scenery, theatrical court styling, and whimsical Wonderland royalty aesthetics"
+    },
+    {
+      "id": "006",
+      "text": "Transform the subject into the King of Hearts wearing whimsical royal Wonderland clothing with theatrical fantasy-court styling and surreal magical castle scenery"
+    },
+    {
+      "id": "007",
+      "text": "Transform the subject into the Knave of Hearts wearing fantasy-card-soldier attire with whimsical Wonderland court aesthetics and surreal magical fantasy scenery"
+    },
+    {
+      "id": "008",
+      "text": "Transform the subject into the Duchess wearing eccentric Victorian fantasy fashion with bizarre Wonderland household scenery, surreal props, and whimsical fantasy chaos"
+    },
+    {
+      "id": "009",
+      "text": "Transform the subject into the Dormouse in a surreal magical tea-party setting with whimsical fantasy furniture, teacups, bizarre Wonderland props, and dreamy fantasy atmosphere"
+    },
+    {
+      "id": "010",
+      "text": "Transform the subject into both Tweedledum and Tweedledee simultaneously within the same image using two separate fantasy characters that both preserve the recognizable face and identity of the original subject"
+    }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "• Preserve recognizable facial identity while fully adapting the subject into Wonderland fantasy aesthetics\n• Replace ordinary objects and scenery with Wonderland-inspired surreal fantasy equivalents\n• Use whimsical Victorian fantasy styling and magical surrealism\n• Maintain storybook fantasy atmosphere and dreamlike visual logic\n• Avoid modern realism, modern architecture, modern props, or contemporary clothing\n• Ensure fantasy environments feel bizarre, magical, theatrical, whimsical, and visually rich\n• Preserve strong fantasy storytelling composition and whimsical environmental transformation"
+  },
+  {
     "name": "ALIEN",
     "category": [
       "SCI-FI",
@@ -3054,6 +3109,33 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "BIZARRO WORLD",
+    "category": [
+      "SCI-FI",
+      "SUPERVILLAIN",
+      "PARALLEL UNIVERSE",
+      "DYSTOPIAN",
+      "CHARACTER TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform the image into a cinematic photorealistic Bizarro World parallel-universe environment inspired by an imperfect opposite-reality civilization.\n\nThe final image should depict the world as a bizarre anti-reality where logic, physics, architecture, morality, proportions, and environmental behavior feel unnaturally reversed, distorted, unfinished, and wrong.\n\nThe subject and all people or animals in the image should appear as photorealistic Bizarro-style mirror versions of themselves while preserving recognizable identity.\n\nMASTER PROMPT OVERRIDE LOGIC (CRITICAL):\n• If an external master prompt specifies a different dystopian tone, sci-fi atmosphere, alien-world aesthetic, lighting style, destruction level, surrealism intensity, or environmental behavior, USE that instead\n• External prompts may override architecture, skies, environmental distortion, color palette, cinematic tone, or world logic\n• Preserve the recognizable Bizarro World identity even when adapting to overridden themes\n\nBIZARRO WORLD TRANSFORMATION LOGIC:\n• Transform all environments into an absurd opposite-reality civilization\n• Buildings should appear cubic, block-like, fractured, asymmetrical, inverted, cracked, or physically wrong\n• Streets, objects, signs, vehicles, and environments should feel logically reversed or unnaturally assembled\n• The world should feel uncanny, unfinished, distorted, and anti-natural while remaining photorealistic\n• Environmental logic should feel subtly broken rather than cartoonish\n\nCHARACTER TRANSFORMATION REQUIREMENTS:\n• Transform the subject into a photorealistic Bizarro counterpart while preserving recognizable identity\n• Facial features should resemble a distorted mirror-image version of the original subject\n• Skin should appear pale, chalky, grayish, stone-like, cracked, rough, or unnaturally unfinished\n• Facial symmetry should appear subtly broken or imperfect\n• Bone structure may appear angular, fractured, rocky, or distorted\n• Clothing should appear reversed, distorted, damaged, crudely assembled, or anti-functional\n• Expressions should feel strange, awkward, emotionally inverted, or unsettling\n• Preserve recognizable identity despite the transformation\n\nANIMAL TRANSFORMATION:\n• Animals should appear as bizarre opposite-world versions of themselves\n• Fur, anatomy, proportions, eyes, or textures may appear cracked, pale, rough, reversed, or unnaturally assembled\n• Preserve recognizable species identity while adapting them into Bizarro-world creatures\n\nIMPORTANT:\n• The final image must remain photorealistic rather than cartoonish\n• Preserve recognizable subject identity despite the Bizarro transformation\n• The world should feel surreal, uncanny, anti-logical, and physically wrong\n• Maintain believable cinematic realism even within the bizarre environment\n• Use cinematic dystopian lighting and atmosphere\n\nSTYLE:\n• Photorealistic dystopian sci-fi aesthetic\n• Opposite-world environmental logic\n• Chalky cracked skin textures\n• Cubic distorted architecture\n• Fractured environmental design\n• Parallel-universe realism\n• Unnatural physical logic\n• Harsh cinematic atmosphere\n• Surreal but believable lighting\n• Rough unfinished textures\n• Distorted mirror-world aesthetics\n• Dark science-fiction realism\n\nBACKGROUND AND ENVIRONMENT:\n• Include cubic cities, cracked structures, distorted roads, opposite-world signage, bizarre skies, anti-natural landscapes, fractured environments, reversed city planning, floating structures, impossible architecture, or unsettling dystopian scenery\n• Use cinematic sci-fi lighting and atmospheric depth\n• Preserve focus on the transformed subject\n• Environments should feel physically wrong but photorealistically believable\n\nThe final image should look like a cinematic photorealistic journey into an uncanny Bizarro World parallel universe where both the subject and reality itself appear imperfectly reconstructed.",
+    "options": [
+    {
+      "id": "001",
+      "text": "Transform the subject into a photorealistic Bizarro-style mirror counterpart standing within a fractured opposite-world city featuring cubic architecture, cracked surfaces, unnatural skies, and distorted environmental logic"
+    },
+    {
+      "id": "002",
+      "text": "Transform the subject into a rough unfinished Bizarro counterpart with cracked chalky skin, distorted facial structure, reversed clothing details, and unsettling anti-natural expressions within a bizarre dystopian parallel-universe environment"
+    },
+    {
+      "id": "003",
+      "text": "Transform the entire scene into a massive cinematic Bizarro World reality where every person, animal, object, and structure appears like an imperfect opposite-world reconstruction governed by reversed logic and distorted physical laws"
+    }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "• Preserve recognizable facial identity while adapting subjects into photorealistic Bizarro-style counterparts\n• Maintain uncanny opposite-world environmental logic and dystopian realism\n• Avoid cartoon styling or exaggerated comic-book simplification\n• Use cracked, unfinished, pale, rough, fractured, or distorted visual textures\n• Ensure architecture and environments feel physically wrong, inverted, or unnaturally assembled\n• Preserve cinematic realism and believable atmospheric lighting\n• Transform all people and animals into unsettling opposite-world versions of themselves\n• Maintain strong dystopian sci-fi storytelling composition"
   },
   {
     "name": "BLADE RUNNER",
@@ -21341,6 +21423,49 @@
     }
     ],
     "additionalInstructions": "MULTIVERSE ENGINE (ABSOLUTE):\n\n• Generate multiple distinctly different alternate-reality versions of the SAME subject\n• Each variant must clearly represent a different timeline, universe, or existence path\n• Variants must NOT look like costume swaps only\n• Every alternate self requires different world logic, atmosphere, and visual identity\n\nREALITY COLLISION:\n\n• All universes must visibly intersect inside the same frame\n• Reality seams, dimensional cracks, portal tears, fractured geometry, and overlapping timelines should be visible\n• Different parts of the image may obey different physical laws or aesthetics\n\nSUBJECT COHERENCE:\n\n• Despite divergence, every version must still clearly feel like the same underlying person\n• Preserve core facial identity across all realities\n\nVISUAL STRUCTURE:\n\n• Foreground realities should overlap and bleed into one another\n• Some alternate selves may partially phase through others\n• Different lighting systems and environmental aesthetics may collide simultaneously\n\nDIMENSIONAL EFFECTS:\n\n• Glitching geometry\n• Fractured spacetime\n• Floating debris from collapsed realities\n• Portal energy tears\n• Temporal echoes\n• Parallel versions staring at one another\n• Recursive mirror realities\n\nANTI-CHEAT:\n\n• Do not simply recolor the subject\n• Do not create minor outfit changes only\n• Do not generate a single subject copy-pasted multiple times\n• Each universe must feel genuinely distinct\n\nFAIL CONDITIONS:\n\n• Alternate selves too similar → FAIL\n• Only one visible reality → FAIL\n• Weak dimensional interaction → FAIL\n• Simple collage instead of merged universes → FAIL\n\nQUALITY:\n\n• Massive cinematic dimensional chaos\n• Strong alternate-reality storytelling\n• Visually explosive multiverse collision\n• Clear identity continuity across realities\n• Epic science-fiction scale"
+  },
+  {
+    "name": "MUNCHKINS",
+    "category": [
+      "FANTASY",
+      "WIZARD OF OZ",
+      "CLASSIC CINEMA",
+      "CHARACTER TRANSFORMATION",
+      "MUSICAL"
+    ],
+    "message": "Take a picture and transform the subject into an authentic cinematic Munchkin-style character inspired by the whimsical fantasy world of a classic magical Oz-style musical universe.\n\nThe final image should fully transform the subject into a small whimsical fantasy townsfolk character while preserving recognizable facial identity, expressions, proportions, and personality traits from the original subject.\n\nThe transformation should resemble a lavish Technicolor fantasy musical film with theatrical costume design, miniature village architecture, colorful flower landscapes, curved fantasy roads, oversized props, and cheerful fantasy staging.\n\nMASTER PROMPT OVERRIDE LOGIC (CRITICAL):\n• If an external master prompt specifies a different fantasy style, musical tone, environment, costume palette, magical setting, cinematic mood, or theatrical atmosphere, USE that instead\n• External prompts may override props, scenery, lighting, fantasy architecture, costume materials, or choreography style\n• Preserve the recognizable whimsical Munchkin fantasy identity even when adapting to overridden themes\n\nIMPORTANT:\n• The final image must strongly resemble a classic whimsical fantasy musical setting\n• Preserve recognizable subject identity while fully transforming the subject into a fantasy Munchkin-style character\n• Costumes should appear handcrafted, theatrical, colorful, decorative, and storybook-inspired\n• The environment should feel magical, cheerful, theatrical, and fantastical\n• Preserve cinematic fantasy-musical staging and composition\n• Maintain whimsical scale relationships with fantasy buildings, flowers, roads, and village scenery\n\nCRITICAL CHARACTER TRANSFORMATION REQUIREMENTS:\n• The subject must be FULLY transformed into a fantasy Munchkin-style character\n• The face must be fully integrated into the fantasy aesthetic rather than pasted onto a costume\n• Preserve recognizable facial features and expressions while adapting them into fantasy-musical styling\n• Avoid modern clothing, modern hairstyles, modern makeup, or realistic contemporary fashion\n• The entire figure must appear naturally integrated into the fantasy world\n• Use theatrical fantasy wardrobe design inspired by vintage musical productions\n\nSTYLE:\n• Technicolor fantasy-musical aesthetic\n• Whimsical fantasy village environments\n• Storybook fantasy architecture\n• Bright theatrical costume design\n• Magical cheerful atmosphere\n• Vintage cinematic fantasy lighting\n• Curved fantasy roads and oversized flowers\n• Decorative fantasy props\n• Rich fantasy color palettes\n• Fantasy-musical staging\n• Handcrafted whimsical design language\n• Cheerful fantasy cinematography\n\nBACKGROUND AND ENVIRONMENT:\n• Include whimsical fantasy villages, flower-covered landscapes, curved fantasy roads, fantasy gardens, mushroom-like buildings, colorful fantasy architecture, magical town squares, fantasy forests, or theatrical village scenery\n• Use cinematic fantasy lighting and magical atmosphere\n• Preserve strong focus on the transformed subject\n• Backgrounds should feel like a lavish fantasy-musical film set\n\nThe final image should look like a fully realized cinematic fantasy-musical transformation of the original subject into a whimsical Munchkin-style resident of a magical Oz-inspired fantasy world.",
+    "options": [
+    {
+      "id": "001",
+      "text": "Transform the subject into the Munchkin Mayor wearing elaborate ceremonial fantasy clothing with oversized decorative collars, theatrical robes, colorful patterns, fantasy-medallion details, and whimsical village-leader styling while standing in the magical town square delivering a grand welcome"
+    },
+    {
+      "id": "002",
+      "text": "Transform the subject into a cheerful Lollipop Guild member wearing whimsical fantasy clothing with oversized lollipops, decorative suspenders, colorful striped costume details, theatrical fantasy hats, and playful musical choreography in a magical fantasy village setting"
+    },
+    {
+      "id": "003",
+      "text": "Transform the subject into a graceful member of the Lullaby League wearing elegant pastel fantasy dresses with ribbons, flowers, puff sleeves, fantasy ballet styling, and delicate theatrical choreography while performing in a magical flower-filled fantasy landscape"
+    },
+    {
+      "id": "004",
+      "text": "Transform the subject into a whimsical Munchkin Soldier wearing decorative fantasy military-style uniforms with tall ornate helmets, colorful fantasy trim, theatrical marching details, ceremonial fantasy armor, and magical village-guard styling"
+    },
+    {
+      "id": "005",
+      "text": "Transform the subject into a fantasy trumpeter or musical announcer wearing theatrical fantasy-musician attire while playing ornate magical horns and instruments in a whimsical fantasy village celebration scene"
+    },
+    {
+      "id": "006",
+      "text": "Transform the subject into one of the Sleepy Heads wearing whimsical fantasy sleepwear with oversized nightcaps, fantasy beds, sleepy theatrical expressions, magical village bedroom scenery, and cheerful fantasy-musical staging"
+    },
+    {
+      "id": "007",
+      "text": "Transform the subject into whimsical fantasy townspeople or magical farmers wearing colorful handcrafted fantasy clothing while working, celebrating, or socializing within a cheerful magical fantasy village landscape"
+    }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "• Preserve recognizable facial identity while fully adapting the subject into whimsical fantasy-musical styling\n• Maintain authentic fantasy-musical environments and theatrical wardrobe design\n• Avoid modern realism, modern clothing, modern props, or contemporary architecture\n• Use colorful fantasy scenery, oversized flowers, magical roads, fantasy village structures, and theatrical fantasy atmosphere\n• Ensure costumes feel handcrafted, theatrical, decorative, and whimsical\n• Maintain cheerful fantasy-musical energy throughout the composition\n• Preserve strong cinematic readability and fantasy storytelling"
   },
   {
     "name": "MUPPET",
