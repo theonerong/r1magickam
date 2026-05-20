@@ -16217,6 +16217,33 @@
     "additionalInstructions": "FINAL RESULT:\nThe image should look like ink has spread and bled across a surface to form the scene, with soft edges and fluid transitions while keeping the subject recognizable."
   },
   {
+    "name": "INSANE",
+    "category": [
+      "PSYCHOLOGICAL HORROR",
+      "ASYLUM",
+      "THRILLER",
+      "CHARACTER TRANSFORMATION",
+      "CINEMATIC"
+    ],
+    "message": "Take a picture and transform the subject into a cinematic psychological-horror scene inspired by disturbing insane asylum and psychological thriller aesthetics.\n\nThe final image should depict the subject reimagined as a deeply unsettling, psychologically unstable, institutionalized, or mentally disturbed cinematic character while preserving recognizable identity, facial structure, proportions, posture, and defining characteristics of the original subject.\n\nThe transformation should feel believable, emotionally intense, cinematic, gritty, atmospheric, and psychologically disturbing rather than cartoonish or comedic.\n\nMASTER PROMPT OVERRIDE LOGIC (CRITICAL):\n• If an external master prompt specifies a different horror style, asylum era, cinematic atmosphere, realism level, environment, thriller aesthetic, lighting scheme, or psychological tone, USE that instead\n• External prompts may override environment, grime level, camera angle, facial intensity, costume style, institutional realism, or cinematic mood\n• Preserve the recognizable psychological-horror identity even when adapting to overridden themes\n\nSUBJECT TRANSFORMATION LOGIC:\n• Transform the subject into a psychologically unstable or institutionalized cinematic character\n• Preserve recognizable facial structure, proportions, posture, body language, hairstyle silhouette, and identity cues from the original subject\n• Maintain believable anatomy and realistic cinematic proportions\n• Expressions should appear emotionally unstable, psychologically intense, unnerving, unpredictable, violent, emotionally broken, or mentally fractured\n• Preserve recognizable identity while intensifying psychological horror atmosphere\n• Avoid parody, cartoon exaggeration, goofy horror aesthetics, or comedic insanity\n\nIMPORTANT:\n• The final image must resemble a cinematic psychological-thriller or horror-film scene\n• Preserve recognizable identity despite the transformation\n• Use believable photorealistic cinematic realism rather than exaggerated horror-comedy styling\n• Emphasize emotional instability, institutional horror, claustrophobia, tension, fear, and psychological unease\n• Maintain gritty realism and disturbing atmosphere\n\nSTYLE:\n• Cinematic psychological horror aesthetic\n• Photorealistic thriller realism\n• Disturbing institutional atmosphere\n• Dark gritty asylum environments\n• Dramatic cinematic lighting\n• Emotional instability and tension\n• Claustrophobic horror realism\n• High-detail facial intensity\n• Harsh shadows and atmospheric depth\n• Cold institutional environments\n• Uneasy unsettling composition\n• High-budget horror-film realism\n• Psychological breakdown aesthetics\n• Disturbing medical-institution atmosphere\n\nBACKGROUND AND ENVIRONMENT:\n• Include padded asylum rooms, psychiatric wards, institutional corridors, isolation cells, flickering fluorescent lighting, rusted hospital equipment, dark hallways, restraint systems, security observation windows, cold concrete rooms, grimy tiled floors, abandoned psychiatric-facility environments, medical restraints, or horror-thriller institutional settings when appropriate\n• Use cinematic lighting, environmental shadows, atmospheric fog, dramatic contrast, and thriller-style composition\n• Maintain focus on the transformed subject while supporting the disturbing psychological atmosphere\n\nThe final image should look like a realistic cinematic psychological-thriller or horror-film scene featuring the subject transformed into a deeply unsettling insane asylum or psychological-breakdown scenario while remaining recognizable and believable.",
+    "options": [
+    {
+      "id": "001",
+      "text": "Transform the subject into a disturbed asylum patient wearing a white straitjacket inside a heavily padded isolation room with padded walls, dim fluorescent lighting, unsettling posture, unstable eyes, institutional grime, and cinematic psychological-thriller realism"
+    },
+    {
+      "id": "002",
+      "text": "Transform the subject into a terrifying psychologically unstable individual with wild disheveled hair, furious staring eyes, massive unnerving smile, foaming mouth, twitching facial tension, chaotic body language, dark cinematic lighting, and gritty photorealistic psychological-horror realism"
+    },
+    {
+      "id": "003",
+      "text": "Transform the subject into a dangerous high-security psychiatric prisoner strapped upright to a wheeled gurney wearing a white straitjacket, leather restraints, and a metallic bite-restraint face mask inspired by classic cinematic psychological-thriller villains within a dark institutional asylum environment"
+    }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "• Preserve recognizable facial identity while transforming the subject into a psychologically disturbing cinematic character\n• Maintain believable anatomy, proportions, and photorealistic realism\n• Use gritty institutional horror aesthetics rather than cartoon horror styling\n• Emphasize tension, instability, emotional intensity, and psychological unease\n• Avoid parody, comedy-horror, goofy expressions, or exaggerated caricatures\n• Preserve cinematic thriller atmosphere and realistic lighting\n• Use disturbing asylum environments, institutional settings, and claustrophobic horror composition\n• Maintain strong facial intensity and emotional realism\n• Ensure the final image resembles a high-budget cinematic psychological thriller or horror film scene"
+  },
+  {
     "name": "JAVERT PHOTOBOMB",
     "category": [
       "HUMOR",
