@@ -3805,32 +3805,33 @@ async function checkForPresetsUpdates() {
   try {
     const jsonPresets = await presetImporter.loadPresetsFromFile();
     const importedPresets = presetImporter.getImportedPresets();
-    
+
     if (importedPresets.length === 0) return;
-    
-    let hasUpdates = false;
+
+    let newCount = 0;
+    let updatedCount = 0;
     const importedNames = new Set(importedPresets.map(p => p.name));
-    
-    // Check for updated or new presets
+
     for (const jsonPreset of jsonPresets) {
       const existing = importedPresets.find(p => p.name === jsonPreset.name);
-      if (!existing || presetsAreDifferent(existing, jsonPreset)) {
-        hasUpdates = true;
-        break;
+      if (!existing) {
+        newCount++;
+      } else if (presetsAreDifferent(existing, jsonPreset)) {
+        updatedCount++;
       }
     }
-    
-    if (hasUpdates) {
-      // Add NEW badge to button in settings
-      const statusElement = document.getElementById('updates-status');
-      if (statusElement) {
-        statusElement.textContent = '🔴 Updates available';
-        statusElement.style.color = '#FF5722';
-        statusElement.style.fontWeight = 'bold';
-      }
-      
-      // Store that updates are available
+
+    if (newCount > 0 || updatedCount > 0) {
       window.hasPresetsUpdates = true;
+      const hintEl = document.getElementById('import-presets-hint');
+      if (hintEl) {
+        const parts = [];
+        if (newCount > 0) parts.push(`${newCount} new`);
+        if (updatedCount > 0) parts.push(`${updatedCount} updated`);
+        hintEl.textContent = `🔴 ${parts.join(' and ')} preset${(newCount + updatedCount) !== 1 ? 's' : ''} available`;
+        hintEl.style.color = '#FF5722';
+        hintEl.style.fontWeight = 'bold';
+      }
     }
   } catch (error) {
     console.log('Could not check for updates:', error);
@@ -3845,27 +3846,35 @@ async function recheckForUpdates() {
     const jsonPresets = await presetImporter.loadPresetsFromFile();
     const importedPresets = presetImporter.getImportedPresets();
 
-    let stillHasUpdates = false;
+    let newCount = 0;
+    let updatedCount = 0;
+    const importedNames = new Set(importedPresets.map(p => p.name));
+
     for (const jsonPreset of jsonPresets) {
       const existing = importedPresets.find(p => p.name === jsonPreset.name);
-      if (!existing || presetsAreDifferent(existing, jsonPreset)) {
-        stillHasUpdates = true;
-        break;
+      if (!existing) {
+        newCount++;
+      } else if (presetsAreDifferent(existing, jsonPreset)) {
+        updatedCount++;
       }
     }
 
+    const stillHasUpdates = newCount > 0 || updatedCount > 0;
     window.hasPresetsUpdates = stillHasUpdates;
 
-    const statusElement = document.getElementById('updates-status');
-    if (statusElement) {
+    const hintEl = document.getElementById('import-presets-hint');
+    if (hintEl) {
       if (stillHasUpdates) {
-        statusElement.textContent = '🔴 Updates available';
-        statusElement.style.color = '#FF5722';
-        statusElement.style.fontWeight = 'bold';
+        const parts = [];
+        if (newCount > 0) parts.push(`${newCount} new`);
+        if (updatedCount > 0) parts.push(`${updatedCount} updated`);
+        hintEl.textContent = `🔴 ${parts.join(' and ')} preset${(newCount + updatedCount) !== 1 ? 's' : ''} available`;
+        hintEl.style.color = '#FF5722';
+        hintEl.style.fontWeight = 'bold';
       } else {
-        statusElement.textContent = 'Check for Updates';
-        statusElement.style.color = '';
-        statusElement.style.fontWeight = '';
+        hintEl.textContent = 'Load from our Library';
+        hintEl.style.color = '';
+        hintEl.style.fontWeight = '';
       }
     }
   } catch (error) {
@@ -6833,7 +6842,7 @@ const TOUR_STEPS = [
   { section: 'Settings', title: '📥 Import Presets (Starting Style)', body: 'You begin with two unlocked presets-Caricature and Impressionism.  Import them from the Import Presets section to capture photos and begin the fun journey of unlocking your imported artistic library.' },
   { section: 'Settings', title: '📥 Import Presets (Import Art)', body: 'Browse our external library in Settings. Check individual unlocked styles or use the All checkmark to select all  presets to import (assuming you have the credits).' },
   { section: 'Settings', title: '📥 Import Presets (Unlocking Presets)', body: 'Imported styles first appear locked. To unlock one, you need a credit. Take a photo or reprompt in the gallery once with any preset you already own to get one credit. You only get one credit per unique preset!' },
-  { section: 'Settings', title: '🔄 Check for Updates', body: 'Checks for new or modified presets in the library. Any updates are flagged so you can re-import changed/updated presets that you own. If you do not import updated presets, the preset will not be updated. New presets appear locked.' },
+  { section: 'Settings', title: '📥 Import Presets (New/Updated Presets)', body: 'Button indicates if there are any new/updated presets. Any updates are flagged so you can re-import changed/updated presets that you own. If you do not import updated presets, the preset will not be updated. New presets appear locked.' },
   { section: 'Settings', title: '⚙️ Button Settings', body: 'Includes the settings for the main camera screen carousel and the Gallery Image Viewer screen carousel buttons. You may select different colors for buttons and text in the main camera and gallery image viewer screens. You may also select opacity (default solid) and set how many taps to hide/reveal the buttons.' },
   { section: 'Settings', title: '📖 Tutorial', body: 'Last section in the settings. This area includes this audio tour. It also includes an indexed tutorial with a search engine. Type to search or click on the search field and press the side button to speak the query.' },
   { section: 'Tips and Advanced', title: '🏷️ Category Searching', body: 'Every preset has categories. When a preset is highlighted in the Visible Presets menu, its categories appear at the bottom. Tap a category to filter all presets in that group.' },
@@ -13604,105 +13613,6 @@ const result = await presetImporter.import();
   if (galleryImportBtn) {
     galleryImportBtn.addEventListener('click', () => {
       openQRScannerModal();
-    });
-  }
-
-  // Check for updates button handler
-  const checkUpdatesBtn = document.getElementById('check-updates-button');
-  if (checkUpdatesBtn) {
-    checkUpdatesBtn.addEventListener('click', async () => {
-      try {
-        showLoadingOverlay('Checking for updates...');
-        // Load presets from JSON (uses cached copy if already loaded this session)
-        const jsonPresets = await presetImporter.loadPresetsFromFile();
-        hideLoadingOverlay();
-        const importedPresets = presetImporter.getImportedPresets();
-        
-        if (importedPresets.length === 0) {
-          alert('No presets imported yet. Use "Import Presets" first.');
-          return;
-        }
-        
-        // Check for updates and new presets
-        let updatedCount = 0;
-        let newCount = 0;
-        
-        const importedNames = new Set(importedPresets.map(p => p.name));
-        
-        jsonPresets.forEach(jsonPreset => {
-          if (importedNames.has(jsonPreset.name)) {
-            // Check if content is different (updated)
-            const existing = importedPresets.find(p => p.name === jsonPreset.name);
-            if (existing && presetsAreDifferent(existing, jsonPreset)) {
-              updatedCount++;
-            }
-          } else {
-            // New preset
-            newCount++;
-          }
-        });
-        
-        if (updatedCount === 0 && newCount === 0) {
-          alert('✅ All presets are up to date!');
-          return;
-        }
-        
-        // Show update prompt
-        const updateMsg = [];
-        if (updatedCount > 0) updateMsg.push(`${updatedCount} updated preset(s)`);
-        if (newCount > 0) updateMsg.push(`${newCount} new preset(s)`);
-        
-        const shouldUpdate = await confirm(
-          `Found ${updateMsg.join(' and ')} available.\n\n` +
-          `Would you like to import updates now?`
-        );
-        
-        if (shouldUpdate) {
-          showLoadingOverlay('Loading presets...');
-          // Wait one frame so the browser actually paints the spinner before the heavy work starts
-          await new Promise(resolve => setTimeout(resolve, 30));
-          // Trigger import with all presets selected
-const result = await presetImporter.import();
-          
-          if (result.success) {
-            // Save preset names that existed BEFORE import (to detect truly new presets)
-            const presetsBeforeImport = new Set(CAMERA_PRESETS.map(p => p.name));
-            
-            // Reload presets
-            CAMERA_PRESETS = await mergePresetsWithStorage();
-            _stylesDataVersion++;
-            
-            // Clean up visible presets after reloading and add only NEW presets
-            const validPresetNames = new Set(CAMERA_PRESETS.map(p => p.name));
-            
-            // Keep existing visible presets that are still valid
-            visiblePresets = visiblePresets.filter(name => validPresetNames.has(name));
-            
-            // Add ONLY truly NEW presets (ones that didn't exist before import) as visible by default
-            CAMERA_PRESETS.forEach(preset => {
-              if (!presetsBeforeImport.has(preset.name) && !_visiblePresetsSet.has(preset.name)) {
-                visiblePresets.push(preset.name);
-              }
-            });
-            
-            saveVisiblePresets();
-            
-            // Update menu
-            populateStylesList();
-            updateVisiblePresetsDisplay();
-            
-            // Refresh the camera footer and center indicator immediately
-            updatePresetDisplay();
-
-            // Re-check accurately how many updates remain after import
-            await recheckForUpdates();
-            
-            alert(result.message);
-          }
-        }
-      } catch (error) {
-        alert('Error checking for updates: ' + error.message);
-      }
     });
   }
   
