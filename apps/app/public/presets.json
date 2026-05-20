@@ -26748,6 +26748,41 @@
     "additionalInstructions": ""
   },
   {
+    "name": "REPORTAGE ILLUSTRATION",
+    "category": [
+      "ILLUSTRATION",
+      "SKETCHBOOK",
+      "DOCUMENTARY ART",
+      "JOURNALING",
+      "ARTISTIC TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform the image into a high-quality reportage illustration rendered in an expressive observational sketch style that feels spontaneously drawn on location in real time.\n\nThe final image should resemble an authentic hand-drawn visual journal entry created quickly and instinctively by an artist documenting a live moment, environment, event, or experience.\n\nThe artwork should feel raw, immediate, energetic, observational, imperfect, expressive, and deeply human — as though captured directly from life with a pen that rarely leaves the page.\n\nMASTER PROMPT OVERRIDE LOGIC (CRITICAL):\n• If an external master prompt specifies a different environment, historical era, architectural setting, weather condition, emotional atmosphere, travel location, documentary subject matter, sketchbook format, or ink style, USE that instead\n• External master prompts may override color palette, paper texture, line density, compositional focus, urban/rural setting, drawing complexity, or documentary mood\n• Preserve the recognizable reportage-illustration identity even when adapting to overridden themes\n\nREPORTAGE ILLUSTRATION TRANSFORMATION LOGIC:\n• Transform the entire image into an expressive observational sketchbook-style illustration\n• Preserve recognizable identity, proportions, environment, architecture, objects, gestures, and storytelling elements from the original image\n• The image should appear rapidly observed and captured from life rather than carefully polished\n• The composition should feel naturally imperfect and authentically hand-drawn\n• The illustration should emphasize gesture, movement, atmosphere, rhythm, and visual storytelling over photorealistic precision\n\nIMPORTANT:\n• The final image must strongly resemble a hand-drawn reportage illustration created on location from direct observation\n• Preserve recognizable subject identity while simplifying forms into expressive sketch language\n• The drawing should feel spontaneous, energetic, fluid, and visually exploratory\n• The artwork should appear constructed using continuous flowing pen movement and layered observational linework\n• Preserve strong environmental storytelling and documentary atmosphere\n• Maintain raw authenticity and sketchbook immediacy\n\nCRITICAL DRAWING STYLE REQUIREMENTS:\n• The image should appear as though drawn using one continuous flowing pen line whenever possible\n• Use expressive squiggle-style observational linework with layered sketch construction\n• Preserve large areas of intentional white space\n• Avoid over-rendering, excessive shading, or polished illustration aesthetics\n• The linework should feel alive, exploratory, imperfect, and responsive\n• The illustration should resemble a rapidly captured visual memory or documentary field sketch\n• Maintain visible construction lines, overlapping contours, loose perspective corrections, and spontaneous pen motion\n• The drawing should feel naturally handmade rather than digitally perfect\n• Preserve structural readability while simplifying forms into energetic sketch language\n\nSTYLE:\n• High-quality observational reportage illustration\n• Continuous-line sketch aesthetic\n• Loose documentary drawing style\n• Expressive squiggle linework\n• Visual-journal sketchbook aesthetic\n• Raw authentic pen illustration\n• Simplified structural sketching\n• Fluid gestural line movement\n• Sparse but expressive detail placement\n• Intentional white space\n• Hand-drawn architectural and environmental sketching\n• Organic ink-flow appearance\n• Layered exploratory line construction\n• Documentary visual storytelling\n• Rapid observational sketch aesthetics\n• Loose perspective interpretation\n• Minimal but strategic shading\n• Sketchbook realism rather than polished realism\n\nLINEWORK AND RENDERING:\n• Use flowing interconnected linework throughout the composition\n• Allow contours to overlap, drift, and visually search for form\n• Emphasize gesture, rhythm, and structure over clean perfection\n• Preserve visible pen movement and observational energy\n• Use sparse hatching, loose crosshatching, or scribbled shading only where necessary\n• Maintain generous untouched paper space throughout the image\n• Avoid clean vector-art styling, sterile outlines, or corporate illustration aesthetics\n• Avoid hyper-detailed photorealistic rendering\n• Avoid smooth digital painting aesthetics\n• Avoid comic-book inking styles\n\nSUBJECT PRESERVATION:\n• Preserve recognizable identity traits from the original subject\n• Preserve recognizable posture, proportions, silhouette, gestures, and personality\n• Preserve environmental storytelling and location context\n• Maintain recognizable architectural forms, objects, and scene structure through sketch simplification\n• Ensure the final drawing still clearly represents the original image despite the loose sketch interpretation\n\nBACKGROUND AND ENVIRONMENT:\n• Transform backgrounds into loose observational sketch environments using expressive structural linework\n• Include simplified architectural forms, environmental contours, street details, landscape structures, furniture, crowds, interiors, or scenery appropriate to the original image\n• Preserve documentary atmosphere and sense of place\n• Maintain sketchbook-style environmental readability without excessive detail density\n• Allow white space and unfinished areas to remain visible throughout the composition\n\nThe final image should look like a beautifully observed, highly expressive reportage illustration created rapidly on location by an artist documenting a real moment through continuous flowing pen sketchwork, raw observational energy, squiggle-style line movement, and intentional white-space composition.",
+    "options": [
+    {
+      "id": "001",
+      "text": "Loose black-ink observational sketchbook drawing with continuous flowing pen lines, expressive squiggle-style contour work, minimal shading, and large areas of untouched white paper emphasizing raw documentary immediacy"
+    },
+    {
+      "id": "002",
+      "text": "Highly detailed urban-reportage illustration with layered continuous-line architectural sketching, overlapping pen construction lines, spontaneous perspective corrections, environmental storytelling, and energetic visual-journal aesthetics"
+    },
+    {
+      "id": "003",
+      "text": "Expressive travel-journal style reportage illustration combining rapid gestural linework, fluid observational drawing, sparse watercolor-style tonal accents, documentary atmosphere, and loose handcrafted sketchbook realism"
+    },
+    {
+      "id": "004",
+      "text": "Crowded documentary-event sketch rendered with chaotic continuous-line pen movement, overlapping figures, energetic scribbled contours, spontaneous structural sketching, and raw visual storytelling captured in real time"
+    },
+    {
+      "id": "005",
+      "text": "Minimalist reportage illustration using sparse continuous-line drawing, simplified structural forms, heavy white-space composition, delicate squiggle-style contours, and subtle expressive ink texture"
+    }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "• Preserve the authentic feel of rapid on-location observational sketching\n• Maintain expressive continuous-line pen movement throughout the composition\n• Use loose exploratory linework rather than polished illustration rendering\n• Preserve visible construction lines, layered contours, and spontaneous pen corrections\n• Maintain generous white space and unfinished sketchbook areas\n• Avoid hyper-polished digital illustration aesthetics\n• Avoid smooth vector-art rendering or sterile outlines\n• Preserve raw documentary authenticity and visual immediacy\n• Emphasize gesture, rhythm, structure, and atmosphere over precise realism\n• Maintain strong sketchbook storytelling and observational energy\n• The drawing should feel handmade, instinctive, imperfect, and naturally human"
+  },
+  {
     "name": "RETRO FUTURISM",
     "category": [
       "ART",
