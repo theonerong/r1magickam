@@ -24575,6 +24575,141 @@
     "additionalInstructions": ""
   },
   {
+    "name": "PHOTO OP",
+    "category": [
+      "ANIMALS",
+      "COMEDY",
+      "PORTRAIT",
+      "PHOTOGRAPHY",
+      "CHARACTER TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform the image into a humorous professional photo-op featuring the subject posing alongside an animal behaving as though it were a willing participant in a staged portrait session.\n\nThe animal should appear upright, expressive, cooperative, playful, and human-like in behavior while retaining its complete natural anatomy and recognizable species characteristics.\n\nThe final image should resemble a professionally staged publicity photo, family portrait, tourist attraction photograph, red-carpet event, souvenir photo, studio portrait, vacation snapshot, formal event photograph, or comedic celebrity photo-op.\n\nMASTER PROMPT OVERRIDE LOGIC (CRITICAL):\n• If an external master prompt specifies a different location, era, clothing style, event type, photographic genre, emotional tone, or environment, USE that instead\n• Preserve the recognizable photo-op identity even when adapting to overridden themes\n\nPHOTO-OP TRANSFORMATION LOGIC:\n\n• Place the selected animal physically beside, behind, next to, or interacting with the subject\n• Animals should appear comfortable, friendly, cooperative, and fully engaged in the photograph\n• Animals may pose like people while retaining complete species accuracy\n• Preserve realistic animal anatomy, fur, scales, feathers, skin textures, proportions, and species characteristics\n• The animal should appear aware that its photograph is being taken\n• The animal may smile, pose, wave, gesture, hug, shake hands, point, hold props, photobomb, make funny faces, or engage in humorous human-like behavior\n• Preserve recognizable identity of the subject\n• Preserve realistic scale relationships between the subject and animal\n• Large animals should remain appropriately large\n• Small animals should remain appropriately small\n• The scene should feel playful rather than dangerous\n\nIMPORTANT:\n\n• Animals must appear friendly and cooperative\n• Do NOT generate attacks, hunting behavior, aggression, predation, injuries, fear, panic, or dangerous encounters\n• Do NOT generate the animal threatening the subject\n• The image should feel fun, whimsical, lighthearted, and believable\n• Preserve realistic animal appearance while allowing human-like behavior\n\nSTYLE:\n• Professional photography\n• Humorous portraiture\n• Character-driven interaction\n• Family-photo energy\n• Celebrity photo-op atmosphere\n• Natural expressions\n• Realistic animal anatomy\n• High-quality photography\n• Cinematic lighting\n• Playful storytelling\n• Photorealistic detail\n• Magazine-quality composition\n\nANIMAL BEHAVIOR:\n\n• Looking at the camera\n• Smiling at the camera\n• Posing for a portrait\n• Offering a handshake\n• Giving a thumbs-up equivalent gesture\n• Putting an arm, paw, wing, flipper, trunk, or tail around the subject\n• Photobombing the image\n• Holding props\n• Taking a selfie\n• Wearing sunglasses\n• Wearing formal attire when appropriate\n• Acting like a tourist\n• Acting like a celebrity\n• Celebrating an event\n• Making humorous facial expressions\n• Performing everyday human activities\n\nBACKGROUND AND ENVIRONMENT:\n\n• Use locations appropriate to the selected animal\n• Studios, cities, jungles, beaches, safaris, parks, red carpets, tourist attractions, living rooms, schools, weddings, sporting events, offices, restaurants, or vacation destinations may be used\n• Maintain focus on the interaction between the animal and the subject\n• Use realistic environmental storytelling\n\nThe final image should resemble a highly detailed photorealistic comedy photo featuring the subject and a cooperative animal behaving like old friends posing together for a memorable photograph.",
+    "options": [
+    {
+      "id": "001",
+      "text": "Great White Shark posing upright beside the subject like a celebrity at a red-carpet event"
+    },
+    {
+      "id": "002",
+      "text": "Grizzly Bear putting an arm around the subject for a friendly vacation photo"
+    },
+    {
+      "id": "003",
+      "text": "Bengal Tiger posing proudly beside the subject like a professional athlete"
+    },
+    {
+      "id": "004",
+      "text": "Giant Green Anaconda coiled beside the subject while smiling for the camera"
+    },
+    {
+      "id": "005",
+      "text": "Hippopotamus dressed like a tourist posing for a souvenir photograph"
+    },
+    {
+      "id": "006",
+      "text": "Giraffe leaning down beside the subject for an awkward family portrait"
+    },
+    {
+      "id": "007",
+      "text": "African Elephant posing like a celebrity while wrapping its trunk around the subject"
+    },
+    {
+      "id": "008",
+      "text": "Gorilla wearing sunglasses and taking a selfie with the subject"
+    },
+    {
+      "id": "009",
+      "text": "Lion posing like a king beside the subject in a formal portrait"
+    },
+    {
+      "id": "010",
+      "text": "Polar Bear acting like a tourist and smiling beside the subject"
+    },
+    {
+      "id": "011",
+      "text": "Wolf posing for a school yearbook photograph with the subject"
+    },
+    {
+      "id": "012",
+      "text": "Red Kangaroo standing beside the subject giving a boxing-champion pose"
+    },
+    {
+      "id": "013",
+      "text": "Giant Panda sharing a picnic-style photo-op with the subject"
+    },
+    {
+      "id": "014",
+      "text": "Koala posing for a vacation snapshot with the subject"
+    },
+    {
+      "id": "015",
+      "text": "Zebra posing like a fashion model beside the subject"
+    },
+    {
+      "id": "016",
+      "text": "Cheetah posing like an Olympic sprinter next to the subject"
+    },
+    {
+      "id": "017",
+      "text": "Rhinoceros posing proudly for a formal portrait beside the subject"
+    },
+    {
+      "id": "018",
+      "text": "Orangutan dressed like a tourist taking a photo with the subject"
+    },
+    {
+      "id": "019",
+      "text": "Chimpanzee photobombing the subject's portrait"
+    },
+    {
+      "id": "020",
+      "text": "Camel posing for a desert vacation photograph beside the subject"
+    },
+    {
+      "id": "021",
+      "text": "Sloth slowly posing for a family portrait with the subject"
+    },
+    {
+      "id": "022",
+      "text": "Otter acting like a cheerful best friend beside the subject"
+    },
+    {
+      "id": "023",
+      "text": "Penguin dressed like a gentleman posing for a formal photograph"
+    },
+    {
+      "id": "024",
+      "text": "Flamingo striking a dramatic fashion pose beside the subject"
+    },
+    {
+      "id": "025",
+      "text": "Peacock showing off while posing next to the subject"
+    },
+    {
+      "id": "026",
+      "text": "Alligator posing politely beside the subject like a celebrity guest"
+    },
+    {
+      "id": "027",
+      "text": "Horse posing for a championship portrait beside the subject"
+    },
+    {
+      "id": "028",
+      "text": "Moose awkwardly squeezing into a family photo with the subject"
+    },
+    {
+      "id": "029",
+      "text": "Octopus using multiple arms to pose for a humorous group photograph with the subject"
+    },
+    {
+      "id": "030",
+      "text": "Snow Leopard posing elegantly beside the subject like a movie star"
+    }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "• Animal must behave as a willing participant in a staged photograph\n• Animal must remain recognizable and anatomically accurate\n• Preserve realistic scale relationships\n• Emphasize humor, charm, and personality\n• Avoid attacks, aggression, predatory behavior, injuries, fear, panic, or danger\n• Animal should appear friendly and cooperative\n• Use professional photography composition\n• Maintain focus on interaction between animal and subject\n• The image should resemble a memorable once-in-a-lifetime photo opportunity"
+  },
+  {
     "name": "PHOTOREALISM",
     "category": [
       "ART",
