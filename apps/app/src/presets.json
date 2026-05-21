@@ -50,6 +50,149 @@
     "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Use authentic historical drawing aesthetics\n• Avoid modern digital illustration appearance\n\nVISUAL STYLE:\n\n• Classical draftsmanship\n• Antique engraving realism\n• Aged paper texture\n• Hand-drawn line detail"
   },
   {
+    "name": "20th CENTURY LOST PRODUCTS",
+    "category": [
+      "VINTAGE ADVERTISING",
+      "PACKAGING",
+      "HISTORICAL",
+      "PRODUCT ART",
+      "ILLUSTRATION TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform the image into the packaging, label, box, wrapper, bottle, game cover, tin, advertisement, retail display, or commercial presentation of a historically accurate late-19th-century or early-20th-century product.\n\nThe subject should replace the original mascot, spokesperson, character, portrait, model, celebrity figure, illustrated person, product representative, or featured character that originally appeared on the packaging.\n\nThe final image should look like an authentic surviving example of the original product rather than a modern parody, recreation, photograph, AI artwork, or contemporary redesign.\n\nMASTER PROMPT OVERRIDE LOGIC (CRITICAL):\n• If an external master prompt specifies a different historical era, print process, artistic movement, packaging style, advertising approach, retailer format, manufacturing period, or commercial-art style, USE that instead\n• Preserve the historical product-packaging identity even when adapting to overridden themes\n\nHISTORICAL PACKAGING TRANSFORMATION LOGIC:\n\n• Rebuild the entire product presentation using authentic period packaging design\n• Match the original package structure, proportions, materials, typography, illustration style, printing limitations, color palette, advertising language, branding approach, and package composition\n• Preserve all recognizable visual traits of the original product\n• Replace ONLY the original mascot, featured character, portrait, spokesperson, illustrated figure, or package representative with the subject\n• The replacement character must be illustrated using the artistic style originally used on the package\n• Reconstruct the original product's actual package artwork, typography, borders, logos, decorative elements, advertisements, slogans, framing devices, seals, banners, medallions, ornamental flourishes, and composition before replacing the featured character with the subject\n• The image should appear as if it were printed and sold during the original product's historical era\n• Do NOT create generic vintage packaging\n• Do NOT create fantasy packaging unrelated to the selected product\n• Do NOT modernize typography, branding, layout, illustration methods, or printing styles\n\nSUBJECT REPLACEMENT LOGIC:\n\n• Preserve recognizable facial features, expression, age, body language, personality cues, and defining characteristics of the subject\n• Translate the subject into the exact illustration style originally used by the selected product\n• If the original product used engraved portraits, create an engraved version of the subject\n• If the original product used painted illustrations, create a painted version of the subject\n• If the original product used lithography, create a lithographic version of the subject\n• If the original product used cartoon mascots, create a historically accurate period mascot version of the subject\n• If the selected product originally featured a mascot, spokesperson, chef, child character, doctor, fairy, clown, salesman, worker, shopper, messenger, game character, gentleman, lady, housewife, or other illustrated representative, transform the subject into that role while preserving recognizable identity\n• The subject must wear the historically accurate clothing, accessories, hairstyle, occupation, pose, and visual presentation associated with the original package character\n• If the selected product originally featured a portrait, transform the subject into an authentic period portrait rendered using the original illustration technique\n• Preserve the original package composition and replace only the featured character\n• The subject must appear as though they were the original mascot, spokesperson, portrait figure, or package character created by the original illustrator\n• The subject should appear naturally integrated into the package artwork rather than added afterward\n• Do NOT paste photographs onto packaging\n• Do NOT create modern clothing, hairstyles, cosmetics, photography, or graphic-design elements\n\nPRINTING AND MATERIAL AUTHENTICITY:\n\n• Simulate authentic historical printing methods\n• Use authentic chromolithography, engraving, wood engraving, woodblock printing, line engraving, halftone printing, early color printing, or commercial print methods when appropriate\n• Use authentic ink behavior, registration imperfections, color limitations, and printing artifacts\n• Simulate period-correct cardboard, paper labels, wrappers, cartons, tins, bottle labels, game boxes, display cards, and advertising materials\n• Preserve realistic aging, yellowing, wear, stains, oxidation, edge wear, creases, folds, printing imperfections, and historical material textures when appropriate\n• Use authentic paper-stock coloration and surface characteristics matching the era\n\nTYPOGRAPHY:\n\n• Use historically accurate typography matching the original product and publication period\n• Use authentic Victorian, Edwardian, Art Nouveau, chromolithographic, engraved, commercial-display, advertising, or packaging fonts where appropriate\n• Preserve authentic hierarchy, decorative lettering, product names, borders, and advertising copy placement\n• Typography should appear period-correct rather than digitally typeset\n\nSTYLE:\n• Authentic historical packaging\n• Museum-quality historical reconstruction\n• Period advertising illustration\n• Victorian commercial art\n• Edwardian commercial art\n• Antique packaging design\n• Chromolithography\n• Wood engraving\n• Lithographic printing\n• Historical typography\n• Product-label illustration\n• Retail advertising realism\n• Antique paper textures\n• Authentic commercial printing methods\n• Period-correct product presentation\n\nIMPORTANT:\n\n• The final image must appear to be a genuine surviving historical package, advertisement, label, wrapper, game box, or retail artifact\n• Historical accuracy takes priority over modern aesthetics\n• The subject must remain recognizable while fully replacing the original featured character\n• Preserve the original product's visual identity, packaging structure, and commercial-art style\n• Avoid modern photography aesthetics\n• Avoid contemporary packaging conventions\n• Avoid modern branding\n• Avoid modern printing techniques\n• Avoid parody styling\n• Avoid cartoon simplification unless historically accurate to the original product\n• The image should look as though it came directly from a museum collection, private archive, antique store, historical catalog, or preserved retail display\n\nThe final image should resemble a museum-quality historical reconstruction of an authentic late-19th-century or early-20th-century consumer product package featuring the subject in place of the original mascot, spokesperson, portrait figure, or package representative while preserving complete historical accuracy, authentic illustration techniques, original package composition, and period-correct commercial-art presentation.",
+    "options": [
+  {
+    "id": "001",
+    "text": "Force Wheat Flakes package featuring the subject replacing Sunny Jim, rendered as a historically accurate 1902 illustrated cereal mascot wearing a top hat and period clothing on authentic Force Wheat Flakes packaging"
+  },
+  {
+    "id": "002",
+    "text": "Uneeda Biscuit package featuring the subject replacing the Uneeda Boy in the iconic yellow slicker and rain hat, illustrated using authentic early-1900s commercial packaging art"
+  },
+  {
+    "id": "003",
+    "text": "Dr. Kilmer's Swamp-Root medicine wrapper featuring the subject replacing the featured portrait or classical figure, rendered as an ornate Victorian patent-medicine illustration"
+  },
+  {
+    "id": "004",
+    "text": "Pears Soap advertisement or wrapper featuring the subject replacing the central artistic figure or cherub, rendered in authentic late-Victorian fine-art advertising style"
+  },
+  {
+    "id": "005",
+    "text": "H-O Oatmeal box featuring the subject replacing the featured chef character, recreated using historically accurate turn-of-the-century cereal-box illustration techniques"
+  },
+  {
+    "id": "006",
+    "text": "Cream of Wheat package featuring the subject replacing the featured chef illustration, rendered in authentic 1890s commercial packaging artwork"
+  },
+  {
+    "id": "007",
+    "text": "Dr. Bell's Pine-Tar Honey package featuring the subject replacing the featured doctor illustration, recreated using detailed engraved patent-medicine artwork"
+  },
+  {
+    "id": "008",
+    "text": "Ayer's Sarsaparilla package featuring the subject replacing the radiant healthy portrait figure, rendered as an authentic late-19th-century tonic advertisement"
+  },
+  {
+    "id": "009",
+    "text": "Lydia Pinkham's Vegetable Compound package featuring the subject replacing Lydia Pinkham's portrait while preserving complete historical packaging authenticity"
+  },
+  {
+    "id": "010",
+    "text": "Moxie Nerve Food package featuring the subject replacing the Moxie Boy, rendered in authentic turn-of-the-century advertising illustration style"
+  },
+  {
+    "id": "011",
+    "text": "Egg-O-See cereal package featuring the subject replacing the Egg-O-See Girl, illustrated using authentic 1906 cereal-box artwork"
+  },
+  {
+    "id": "012",
+    "text": "Zu Zu Ginger Snaps package featuring the subject replacing the Zu Zu Clown character, recreated using historically accurate Nabisco packaging illustration"
+  },
+  {
+    "id": "013",
+    "text": "Fairy Soap wrapper featuring the subject replacing the Fairy Soap Girl, rendered in authentic Victorian commercial illustration style"
+  },
+  {
+    "id": "014",
+    "text": "Pettijohn's Breakfast Food box featuring the subject replacing the Pettijohn Bears, rendered as anthropomorphic illustrated bear characters in authentic children's advertising style"
+  },
+  {
+    "id": "015",
+    "text": "Malt-Too Flakes cereal package featuring the subject replacing the Malt-Too Boy, recreated using authentic 1903 breakfast-food packaging artwork"
+  },
+  {
+    "id": "016",
+    "text": "Aunt Jemima Pancake Flour package featuring the subject replacing the featured package character while preserving complete historical packaging design and illustration methods"
+  },
+  {
+    "id": "017",
+    "text": "Mapl-Flake cereal package featuring the subject replacing the Art Nouveau breakfast hostess figure surrounded by autumn leaves"
+  },
+  {
+    "id": "018",
+    "text": "The Game of District Messenger Boy box cover featuring the subject replacing the messenger boy sprinting through bustling Victorian city streets"
+  },
+  {
+    "id": "019",
+    "text": "The Game of the Office Boy box cover featuring the subject replacing the ambitious office boy presenting a recommendation letter in a Victorian office"
+  },
+  {
+    "id": "020",
+    "text": "The Yellow Kid Card Game box featuring the subject replacing the Yellow Kid, rendered in authentic 1890s comic-strip and lithographic style"
+  },
+  {
+    "id": "021",
+    "text": "The Game of Playing Department Store box featuring the subject replacing the central shopper or clerk figure inside a luxurious Victorian department store"
+  },
+  {
+    "id": "022",
+    "text": "Black Jack Stove Polish packaging featuring the subject replacing the Black Jack jack-in-the-box mascot in authentic product-label illustration style"
+  },
+  {
+    "id": "023",
+    "text": "Enameline Stove Polish packaging featuring the subject replacing the featured worker or housewife presenting a gleaming iron stove"
+  },
+  {
+    "id": "024",
+    "text": "Bixby's Aa Shoe Polish package featuring the subject replacing the energetic shoe-shine boy, rendered in authentic Edwardian advertising style"
+  },
+  {
+    "id": "025",
+    "text": "Whittemore's Elite Shoe Paste tin featuring the subject replacing the Elite Gentleman examining his polished boots"
+  },
+  {
+    "id": "026",
+    "text": "Dr. Lyon's Perfect Tooth Powder tin featuring the subject replacing Dr. Lyon's engraved portrait while preserving authentic medical-advertising design"
+  },
+  {
+    "id": "027",
+    "text": "Zonweiss Tooth Paste package featuring the subject replacing the radiant Victorian woman used to advertise the whitening product"
+  },
+  {
+    "id": "028",
+    "text": "Sozodont Tooth Paste and Powder package featuring the subject replacing the featured high-society woman or classical beauty illustration"
+  },
+  {
+    "id": "029",
+    "text": "Zeno Chewing Gum display tin featuring the subject replacing the Zeno Girl, illustrated in authentic chromolithographic advertising style"
+  },
+  {
+    "id": "030",
+    "text": "Adams' Pepsin Tutti-Frutti Gum package featuring the subject replacing the featured Victorian child or society figure used in the original advertising"
+  },
+  {
+    "id": "031",
+    "text": "Beeman's Pepsin Chewing Gum package featuring the subject replacing Dr. Beeman's portrait in authentic patent-medicine advertising style"
+  },
+  {
+    "id": "032",
+    "text": "Random historically accurate reconstruction of one discontinued late-19th-century or early-20th-century consumer product, cereal, medicine, game, soap, chewing gum, household product, or packaged good from the era with the subject replacing the original mascot, spokesperson, portrait figure, or featured character"
+  }
+  ],
+  "randomizeOptions": true,
+  "additionalInstructions": "• Subject replaces only the original mascot, portrait, spokesperson, or featured character\n• Preserve complete historical accuracy\n• Recreate original packaging structure and layout\n• Use authentic period typography\n• Use authentic printing techniques\n• Match original illustration methods\n• Simulate real paper, cardboard, tins, labels, wrappers, and box materials\n• Avoid modern photography pasted onto packaging\n• Avoid modern fonts\n• Avoid modern graphic design conventions\n• Preserve original color palettes\n• Preserve original advertising composition\n• Make the final image resemble a genuine surviving artifact from the period"
+  },
+  {
     "name": "21st DOCTOR",
     "category": [
       "SCI-FI",
