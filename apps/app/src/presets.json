@@ -8928,6 +8928,49 @@
     "additionalInstructions": "FINAL RESULT:\nA stunning transformation into the unmistakable style of Leiji Matsumoto's character design as animated by Toei Animation for Daft Punk's Interstella 5555. The subject becomes an elegant, blue-skinned alien character with impossibly long limbs, large expressive eyes, and flowing hair, set against a dreamy retro-futuristic backdrop. The image captures the romantic, melancholic, and utterly unique aesthetic of early 2000s Japanese animation meeting 1970s space opera glamour, with the analog warmth and artistic detail that defined the Digital Love segment."
   },
   {
+    "name": "DIME NOVEL",
+    "category": [
+      "VINTAGE ILLUSTRATION",
+      "19TH CENTURY",
+      "PULP FICTION",
+      "HISTORICAL ART",
+      "BOOK COVER TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform the image into the cover of an authentic 19th-century American Dime Novel.\n\nThe final image should resemble a historically accurate late-1800s dime novel printed on cheap wood-pulp paper and sold at a newsstand for ten cents. The image must appear as a hand-drawn illustrated book cover rather than a photograph.\n\nThe subject should become the central hero, heroine, detective, outlaw, inventor, pirate, soldier, adventurer, or romantic lead of the dime novel story while preserving recognizable facial structure, identity, proportions, posture, and defining characteristics of the original subject.\n\nThe final image should look like a complete physical dime novel cover including title typography, publisher information, author credit, cover illustration, decorative framing, issue design elements, and period-correct printing aesthetics.\n\nMASTER PROMPT OVERRIDE LOGIC (CRITICAL):\n• If an external master prompt specifies a different historical setting, adventure theme, literary genre, historical event, atmosphere, character role, or period aesthetic, USE that instead\n• External prompts may override environment, historical location, color palette, dramatic scene selection, typography style, or narrative tone\n• Preserve the recognizable dime novel identity even when adapting to overridden themes\n\nDIME NOVEL TRANSFORMATION LOGIC:\n• Transform the entire image into a printed dime novel cover illustration\n• Preserve recognizable identity while converting the subject into the featured hero or heroine of the story\n• The image must be illustrated rather than photographic\n• Artwork should resemble hand-drawn wood engraving, woodblock illustration, or mass-produced pulp cover art\n• Use strong ink outlines, cross-hatching, dramatic shadowing, and simplified illustrated realism\n• Preserve period-appropriate costumes, props, architecture, weapons, transportation, and environments\n• Avoid modern objects, technology, clothing, hairstyles, vehicles, weapons, or architecture\n\nBOOK COVER REQUIREMENTS:\n• The image must appear as a complete dime novel cover rather than a standalone illustration\n• Include a large dramatic story title prominently displayed on the cover\n• Include the subject as the featured hero or heroine of the story\n• Include a randomly generated author credit using ONE of the following:\n  - Beadle & Adams\n  - Street & Smith\n  - Ned Buntline\n  - Louisa May Alcott\n• Include period-correct publisher styling\n• Include decorative Victorian-era typography\n• Include visible ten-cent pricing somewhere on the cover\n• Include issue-number styling, series styling, or publication markings when appropriate\n• Preserve the appearance of aged cheap wood-pulp paper\n• Simulate ink bleed, printing imperfections, worn paper edges, and vintage publication aging\n\nIMPORTANT:\n• The final image must strongly resemble a genuine 19th-century dime novel cover\n• The cover should depict the most exciting climactic moment of the story\n• Preserve recognizable subject identity while adapting them into the story role\n• The artwork must appear illustrated and printed rather than photographed\n• Use historically accurate visual storytelling\n• Avoid modern cinematic realism\n• Emphasize adventure, action, danger, heroism, mystery, romance, or dramatic conflict\n\nSTYLE:\n• Authentic 19th-century dime novel cover illustration\n• Hand-drawn wood engraving aesthetic\n• Bold Victorian typography\n• Heavy black ink outlines\n• Cross-hatching and engraved shading\n• Cheap wood-pulp paper texture\n• Bright saturated printed colors\n• Simplified illustrated realism\n• Mass-produced pulp-publication appearance\n• Dramatic action-oriented storytelling\n• Newsstand cover design\n• Historical illustration techniques\n• Decorative Victorian publishing aesthetics\n• Vintage printing imperfections\n• Period-authentic visual storytelling\n\nCOVER ART REQUIREMENTS:\n• Depict the most dramatic scene from the story\n• Use bold action poses and heightened visual drama\n• Create a strong central focal point around the subject\n• Use exaggerated cover-art composition typical of dime novels\n• Include danger, suspense, heroism, mystery, romance, conflict, or adventure depending on the selected option\n• Use strong visual contrast and clear storytelling\n• The cover should immediately communicate the story genre to the reader\n\nHISTORICAL ACCURACY:\n• All clothing, equipment, architecture, weapons, transportation, environments, and visual details must be historically accurate to the selected genre and period\n• Avoid modern visual elements\n• Preserve accurate historical settings whenever applicable\n• The cover should resemble an actual surviving dime novel from the late nineteenth century\n\nBACKGROUND AND ENVIRONMENT:\n• Transform the background into a period-correct illustrated setting appropriate to the selected story genre\n• Use historically accurate environments and dramatic storytelling compositions\n• Maintain strong cover readability and visual hierarchy\n\nThe final image should look like a genuine collectible late-1800s dime novel featuring the subject as the central hero of a thrilling illustrated adventure story printed on inexpensive wood-pulp paper and sold for ten cents at a Victorian-era newsstand.",
+    "options": [
+    {
+      "id": "001",
+      "text": "Transform the subject into the legendary hero of a Wild West dime novel cover featuring historically accurate frontier towns, cowboys, outlaws, horses, Native American conflicts when appropriate, dramatic action, revolvers, and a thrilling climactic moment inspired by classic Western dime novels"
+    },
+    {
+      "id": "002",
+      "text": "Transform the subject into a brilliant Victorian detective solving a dangerous mystery on the cover of a detective dime novel featuring criminals, clues, gaslit city streets, revolvers, suspense, and dramatic investigative action inspired by classic detective weeklies"
+    },
+    {
+      "id": "003",
+      "text": "Transform the subject into a young rags-to-riches hero overcoming adversity in a bustling nineteenth-century American city, depicted at the dramatic turning point of their success story on the cover of a Horatio Alger-style dime novel"
+    },
+    {
+      "id": "004",
+      "text": "Transform the subject into a brilliant inventor, explorer, or scientific adventurer on the cover of an early science-fiction dime novel featuring futuristic inventions, airships, mechanical marvels, lost worlds, scientific discoveries, and Victorian-era speculative technology"
+    },
+    {
+      "id": "005",
+      "text": "Transform the subject into a notorious pirate captain commanding a sailing vessel during a dramatic sea battle, treasure raid, mutiny, or boarding action on the cover of a classic pirate-adventure dime novel"
+    },
+    {
+      "id": "006",
+      "text": "Transform the subject into the heroic central figure of a historically accurate Revolutionary War dime novel cover depicting a dramatic battle against British forces, authentic uniforms, period weaponry, and a pivotal moment of American heroism"
+    },
+    {
+      "id": "007",
+      "text": "Transform the subject into one half of a dramatic nineteenth-century romance cover illustration featuring a passionate romantic story, period-correct clothing, emotional storytelling, Victorian settings, and classic dime-novel romance imagery"
+    }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "• The final image must appear as a physical dime novel cover rather than a poster or standalone illustration\n• Preserve recognizable subject identity while adapting them into the story role\n• Always include a large dramatic title prominently on the cover\n• Always include a randomly selected author credit from the approved author list\n• Always include visible ten-cent pricing somewhere on the cover\n• Use bold Victorian-era decorative typography\n• Use strong black outlines, wood-engraving style shading, and cross-hatching\n• Simulate cheap wood-pulp paper and vintage printing imperfections\n• Depict the most exciting climactic moment of the story\n• Maintain historical accuracy for clothing, architecture, weapons, vehicles, and environments\n• Avoid photographic realism; the image must appear hand-illustrated and mass-printed\n• Use bright saturated pulp-cover colors with strong visual contrast\n• Preserve the appearance of a collectible late-1800s newsstand publication\n• Avoid modern objects, technology, clothing, hairstyles, weapons, vehicles, or architecture\n• The final result should convincingly resemble an authentic nineteenth-century dime novel sold for ten cents"
+  },
+  {
     "name": "DISCOUNT FLYER",
     "category": [
       "HUMOR",
