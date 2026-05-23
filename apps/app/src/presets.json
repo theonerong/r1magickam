@@ -33993,6 +33993,52 @@
     "additionalInstructions": ""
   },
   {
+    "name": "UNCANNY VALLEY",
+    "category": [
+      "HORROR",
+      "PSYCHOLOGICAL",
+      "AI AVATAR",
+      "CHARACTER TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform the subject into a deeply unsettling uncanny-valley version of themselves.\n\nThe final image should depict the subject as something that appears almost human at first glance, but upon closer inspection feels subtly wrong, artificial, eerie, and psychologically disturbing.\n\nThe transformation should evoke the classic uncanny-valley effect where the subject looks nearly real, yet contains enough imperfections, artificiality, or abnormalities to create discomfort and unease.\n\nMASTER PROMPT OVERRIDE LOGIC (CRITICAL):\n• If an external master prompt specifies a different horror style, sci-fi setting, AI aesthetic, doll style, android design, CGI quality level, emotional tone, lighting style, realism level, or cinematic atmosphere, USE that instead\n• External prompts may override environment, color palette, technology level, horror intensity, realism, or visual presentation\n• Preserve the recognizable uncanny-valley identity even when adapting to overridden themes\n\nUNCANNY VALLEY TRANSFORMATION LOGIC:\n\n• Transform the subject into an almost-human but subtly disturbing version of themselves\n• Preserve recognizable facial structure, identity, proportions, hairstyle, posture, and defining characteristics\n• The subject must remain recognizable as the original person while appearing unnaturally artificial\n• The final result should create uncertainty about whether the subject is human or not\n\nPOSSIBLE UNCANNY FORMS:\n• Hyper-realistic humanoid robot\n• Advanced android\n• AI-generated avatar\n• Synthetic human replica\n• Photorealistic CGI character\n• Digital human simulation\n• Living mannequin\n• Porcelain doll\n• Wax figure\n• Artificial clone\n• Humanoid automaton\n• Synthetic celebrity-style digital recreation\n• Experimental humanoid prototype\n• Human-like animatronic\n• Living doll\n• Artificial intelligence embodiment\n\nFACIAL REQUIREMENTS:\n• Preserve recognizable identity and facial structure\n• Eyes may appear slightly too large, too reflective, overly symmetrical, glass-like, digital, artificial, or unnaturally perfect\n• Eye contact should feel intense, unnatural, or psychologically uncomfortable\n• Smiles may appear slightly too wide, too rigid, frozen, exaggerated, or emotionally incorrect\n• Facial expressions should feel subtly off or emotionally mismatched\n• Skin may appear overly smooth, synthetic, wax-like, porcelain-like, plastic-like, silicone-like, digitally rendered, or unnaturally flawless\n• Facial movements should imply artificiality rather than natural human emotion\n• Teeth may appear unnaturally perfect, perfectly aligned, excessively white, doll-like, synthetic, or subtly incorrect\n• Preserve recognizable identity while introducing unsettling artificial characteristics\n\nROBOTIC AND SYNTHETIC DETAILS:\n• Visible synthetic materials beneath realistic surfaces\n• Subtle seams, panel lines, joints, or assembly marks\n• Mechanical eye components\n• Artificial musculature\n• Internal robotics visible beneath translucent skin\n• Digital display elements\n• Optical sensors\n• Micro-servos and synthetic structures\n• Artificial skin materials\n• Advanced humanoid engineering\n• Seamless but imperfect human replication\n\nCGI AND DIGITAL HUMAN DETAILS:\n• Hyper-realistic rendering with subtle imperfections\n• Slightly incorrect skin response\n• Near-perfect symmetry\n• Digital-human appearance\n• Unreal facial realism\n• Artificial emotional expression\n• Slight rendering anomalies\n• Almost-photorealistic but not completely believable\n\nDOLL AND MANNEQUIN DETAILS:\n• Porcelain skin\n• Glass eyes\n• Frozen expressions\n• Slightly oversized eyes\n• Smooth synthetic textures\n• Artificial perfection\n• Decorative facial features\n• Human-like but lifeless appearance\n\nIMPORTANT:\n• The final image must remain photorealistic\n• The subject must remain recognizable\n• The image should feel unsettling rather than monstrous\n• Avoid turning the subject into a zombie, monster, demon, skeleton, or corpse\n• Avoid excessive gore, blood, wounds, or body horror\n• The fear should come from artificial humanity rather than violence\n• The uncanny effect should be psychological rather than graphic\n\nSTYLE:\n• Cinematic uncanny-valley realism\n• Hyper-realistic synthetic humans\n• Advanced humanoid robotics\n• AI-generated human aesthetics\n• Psychological horror atmosphere\n• Subtle creepiness\n• Artificial perfection\n• Disturbing realism\n• Human simulation aesthetics\n• Digital-human visual language\n• Eerie emotional ambiguity\n• Near-human appearance\n• Synthetic humanity\n• High-detail facial realism\n• Cinematic lighting\n• Atmospheric tension\n\nBACKGROUND AND ENVIRONMENT:\n• Place the subject in environments appropriate to the uncanny form\n• AI laboratories\n• Robotics facilities\n• Futuristic homes\n• Empty offices\n• Digital simulation environments\n• Doll workshops\n• Artificial intelligence research centers\n• Sterile corporate spaces\n• Abandoned showrooms\n• Mannequin displays\n• Modern city environments\n• Photorealistic settings that enhance unease\n• Maintain focus on the transformed subject\n\nThe final image should look like a cinematic, photorealistic encounter with an almost-human artificial being that perfectly captures the unsettling psychological discomfort of the uncanny valley while preserving the recognizable identity of the original subject.",
+    "options": [
+    {
+      "id": "001",
+      "text": "Transform the subject into a hyper-realistic humanoid robot with synthetic skin, subtle mechanical seams, illuminated optical sensors, artificial facial expressions, and unsettling near-human realism"
+    },
+    {
+      "id": "002",
+      "text": "Transform the subject into an advanced AI-generated avatar with flawless digital-human features, unnaturally perfect symmetry, slightly incorrect emotional expression, and eerie CGI realism"
+    },
+    {
+      "id": "003",
+      "text": "Transform the subject into a photorealistic synthetic android whose appearance is nearly indistinguishable from a real human except for subtle robotic details, artificial eyes, and unsettling facial behavior"
+    },
+    {
+      "id": "004",
+      "text": "Transform the subject into a living porcelain doll with glass eyes, smooth artificial skin, a frozen smile, delicate facial features, and an unsettling almost-human appearance"
+    },
+    {
+      "id": "005",
+      "text": "Transform the subject into a hyper-realistic wax figure that appears alive, featuring unnaturally perfect skin, lifelike details, subtle facial inaccuracies, and eerie museum-display realism"
+    },
+    {
+      "id": "006",
+      "text": "Transform the subject into an advanced humanoid AI prototype with translucent synthetic skin revealing internal mechanical structures, digital optics, and unsettling artificial humanity"
+    },
+    {
+      "id": "007",
+      "text": "Transform the subject into a photorealistic animatronic human replica with realistic facial features, subtle joint lines, mechanical precision, and an unnervingly forced smile"
+    },
+    {
+      "id": "008",
+      "text": "Transform the subject into a cinematic digital-human simulation that appears almost perfect but contains subtle rendering flaws, artificial eye reflections, and psychologically unsettling realism"
+    }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "• Preserve recognizable identity while introducing unsettling artificial-human characteristics\n• The subject should appear almost human but never completely human\n• Emphasize uncanny psychological discomfort rather than gore or violence\n• Maintain photorealistic realism throughout the image\n• Use subtle imperfections that create cognitive dissonance\n• Eyes should feel unnaturally aware, reflective, or artificial\n• Smiles may be slightly exaggerated, frozen, or emotionally incorrect\n• Preserve realistic anatomy while introducing synthetic qualities\n• Avoid monsters, zombies, demons, ghosts, skeletons, or traditional horror creatures\n• Avoid excessive body horror, blood, injuries, or gore\n• Focus on the fear of artificial humanity and imperfect human replication\n• Use cinematic lighting and atmosphere to enhance unease\n• Create the feeling that the subject is almost human but not quite"
+  },
+  {
     "name": "UNCLE SAM",
     "category": [
       "HISTORY",
