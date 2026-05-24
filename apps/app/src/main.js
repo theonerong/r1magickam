@@ -1,5 +1,5 @@
 import { presetStorage } from './storage.js';
-import { presetImporter, earnCredit, unlockAllPresets, getCredits, presetsAreDifferent } from './preset-import.js';
+import { presetImporter, earnCredit, unlockAllPresets, getCredits, presetsAreDifferent, getCustomPresetSources, saveCustomPresetSources, getDefaultPresetEnabled, saveDefaultPresetEnabled } from './preset-import.js';
 
 // Accent-insensitive search helper — strips diacritics so "cafe" finds "café"
 // NFC → NFD decomposes accented chars; removing \u0300-\u036F strips the accent marks.
@@ -309,6 +309,8 @@ let isImportResolutionSubmenuOpen = false;
 let currentImportResolutionIndex_Menu = 0;
 let isTutorialSubmenuOpen = false;
 let isPresetBuilderSubmenuOpen = false;
+let isPresetFileSettingsOpen = false;
+let _editingSourceIndex = -1;
 let editingPresetBuilderIndex = -1;
 let singleOptionCounter = 0;
 let optionGroupCounter = 0;
@@ -6843,6 +6845,7 @@ const TOUR_STEPS = [
   { section: 'Settings', title: '📥 Import Presets (Import Art)', body: 'Browse our external library in Settings. Check individual unlocked styles or use the All checkmark to select all  presets to import (assuming you have the credits).' },
   { section: 'Settings', title: '📥 Import Presets (Unlocking Presets)', body: 'Imported styles first appear locked. To unlock one, you need a credit. Take a photo or reprompt in the gallery once with any preset you already own to get one credit. You only get one credit per unique preset!' },
   { section: 'Settings', title: '📥 Import Presets (New/Updated Presets)', body: 'Button indicates if there are any new/updated presets. Any updates are flagged so you can re-import changed/updated presets that you own. If you do not import updated presets, the preset will not be updated. New presets appear locked.' },
+  { section: 'Settings', title: '📂 Preset File Settings', body: ' Add custom preset sources from any GitHub repository using that repository\'s raw JSON file URL (other repositories may be used). The built-in preset library is always the default. No credits required for Custom sources. Place preview images in a public folder next to the presets JSON file in the custom repository.' },
   { section: 'Settings', title: '⚙️ Button Settings', body: 'Includes the settings for the main camera screen carousel and the Gallery Image Viewer screen carousel buttons. You may select different colors for buttons and text in the main camera and gallery image viewer screens. You may also select opacity (default solid) and set how many taps to hide/reveal the buttons.' },
   { section: 'Settings', title: '📖 Tutorial', body: 'Last section in the settings. This area includes this audio tour. It also includes an indexed tutorial with a search engine. Type to search or click on the search field and press the side button to speak the query.' },
   { section: 'Tips and Advanced', title: '🏷️ Category Searching', body: 'Every preset has categories. When a preset is highlighted in the Visible Presets menu, its categories appear at the bottom. Tap a category to filter all presets in that group.' },
@@ -9677,6 +9680,179 @@ function hideSettingsSubmenu() {
     document.getElementById('settings-submenu').style.display = 'none';
     showUnifiedMenu();
   }, 30);
+}
+
+// Show Preset File Settings submenu
+function clearPresetSourceEditMode() {
+  _editingSourceIndex = -1;
+  const nameInput = document.getElementById('new-preset-source-name');
+  const urlInput = document.getElementById('new-preset-source-url');
+  const addBtn = document.getElementById('add-preset-source-btn');
+  const formLabel = document.getElementById('add-source-form-label');
+  if (nameInput) nameInput.value = '';
+  if (urlInput) urlInput.value = '';
+  if (addBtn) { addBtn.textContent = '+ Add Source'; addBtn.style.background = '#FE5F00'; }
+  if (formLabel) formLabel.textContent = 'Add Custom Source';
+}
+
+function renderCustomPresetSourcesList() {
+  const listEl = document.getElementById('custom-preset-sources-list');
+  const noMsg = document.getElementById('no-custom-sources-msg');
+  if (!listEl) return;
+
+  const sources = getCustomPresetSources();
+  const hasEnabledCustom = sources.some(s => s.enabled);
+  const defaultOn = getDefaultPresetEnabled();
+
+  // Remove previously rendered rows
+  Array.from(listEl.querySelectorAll('.custom-source-row, .default-source-row')).forEach(el => el.remove());
+
+  // --- Default source row (always first) ---
+  const defaultRow = document.createElement('div');
+  defaultRow.className = 'default-source-row';
+  defaultRow.style.cssText = 'display:flex; align-items:center; background:#222; border:1px solid #444; border-radius:4px; padding:8px 10px; margin-bottom:4px;';
+
+  if (hasEnabledCustom) {
+    // Show clickable ON/OFF text — user can turn default off when a custom source is active
+    defaultRow.innerHTML = `
+      <div style="flex:1; min-width:0;">
+        <div style="font-size:12px; font-weight:bold; color:#fff;">📁 presets.json</div>
+        <div style="font-size:10px; color:#888;">Built-in library</div>
+      </div>
+      <span id="toggle-default-source-btn" class="preset-source-text-action"
+        style="color:${defaultOn ? '#4CAF50' : '#666'};">${defaultOn ? 'ON' : 'OFF'}</span>
+    `;
+  } else {
+    // No active custom sources — default locked ON, just show the text
+    defaultRow.innerHTML = `
+      <div style="flex:1; min-width:0;">
+        <div style="font-size:12px; font-weight:bold; color:#fff;">📁 presets.json</div>
+        <div style="font-size:10px; color:#888;">Built-in library — always active</div>
+      </div>
+      <span class="preset-source-text-action" style="color:#4CAF50;">ON</span>
+    `;
+  }
+  listEl.insertBefore(defaultRow, listEl.firstChild);
+
+  const toggleDefaultBtn = document.getElementById('toggle-default-source-btn');
+  if (toggleDefaultBtn) {
+    toggleDefaultBtn.addEventListener('click', () => {
+      saveDefaultPresetEnabled(!getDefaultPresetEnabled());
+      renderCustomPresetSourcesList();
+      updatePresetFileSettingsHint();
+    });
+  }
+
+  // --- Custom source rows ---
+  if (sources.length === 0) {
+    if (noMsg) noMsg.style.display = 'block';
+  } else {
+    if (noMsg) noMsg.style.display = 'none';
+    sources.forEach((source, index) => {
+      const row = document.createElement('div');
+      row.className = 'custom-source-row';
+      row.style.cssText = 'display:flex; align-items:center; background:#222; border:1px solid #444; border-radius:4px; padding:8px 10px; margin-top:6px;';
+      row.innerHTML = `
+        <div style="flex:1; min-width:0; overflow:hidden;">
+          <div style="font-size:12px; font-weight:bold; color:#fff; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">${source.name || 'Custom Source'}</div>
+          <div style="font-size:10px; color:#888; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">${source.url}</div>
+        </div>
+        <span data-idx="${index}" class="toggle-source-btn preset-source-text-action"
+          style="color:${source.enabled ? '#4CAF50' : '#666'};">${source.enabled ? 'ON' : 'OFF'}</span>
+        <span data-idx="${index}" class="edit-source-btn preset-source-text-action"
+          style="color:#888; margin-left:8px;">EDIT</span>
+        <span data-idx="${index}" class="delete-source-btn preset-source-text-action"
+          style="color:#cc3333; margin-left:20px;">DELETE</span>
+      `;
+      listEl.appendChild(row);
+    });
+
+    listEl.querySelectorAll('.toggle-source-btn').forEach(el => {
+      el.addEventListener('click', () => {
+        const idx = parseInt(el.dataset.idx);
+        const srcs = getCustomPresetSources();
+        srcs[idx].enabled = !srcs[idx].enabled;
+        saveCustomPresetSources(srcs);
+        if (!srcs.some(s => s.enabled) && !getDefaultPresetEnabled()) {
+          saveDefaultPresetEnabled(true);
+        }
+        renderCustomPresetSourcesList();
+        updatePresetFileSettingsHint();
+      });
+    });
+
+    listEl.querySelectorAll('.edit-source-btn').forEach(el => {
+      el.addEventListener('click', () => {
+        const idx = parseInt(el.dataset.idx);
+        const srcs = getCustomPresetSources();
+        const source = srcs[idx];
+        const nameInput = document.getElementById('new-preset-source-name');
+        const urlInput = document.getElementById('new-preset-source-url');
+        const addBtn = document.getElementById('add-preset-source-btn');
+        const formLabel = document.getElementById('add-source-form-label');
+        if (nameInput) nameInput.value = source.name || '';
+        if (urlInput) urlInput.value = source.url || '';
+        if (addBtn) { addBtn.textContent = 'Save Changes'; addBtn.style.background = '#1a5fa8'; }
+        if (formLabel) formLabel.textContent = 'Edit Source';
+        _editingSourceIndex = idx;
+        const submenuList = document.querySelector('#preset-file-settings-submenu .submenu-list');
+        if (submenuList) setTimeout(() => { submenuList.scrollTop = submenuList.scrollHeight; }, 50);
+      });
+    });
+
+    listEl.querySelectorAll('.delete-source-btn').forEach(btn => {
+      btn.addEventListener('click', async () => {
+        const idx = parseInt(btn.dataset.idx);
+        const srcs = getCustomPresetSources();
+        const name = srcs[idx].name || 'this source';
+        const confirmed = await customConfirm(`Remove "${name}"?`, { yesText: 'Remove', danger: true });
+        if (confirmed) {
+          srcs.splice(idx, 1);
+          saveCustomPresetSources(srcs);
+          if (!srcs.some(s => s.enabled) && !getDefaultPresetEnabled()) {
+            saveDefaultPresetEnabled(true);
+          }
+          if (_editingSourceIndex === idx) clearPresetSourceEditMode();
+          renderCustomPresetSourcesList();
+          updatePresetFileSettingsHint();
+        }
+      });
+    });
+  }
+}
+
+function updatePresetFileSettingsHint() {
+  const hintEl = document.getElementById('preset-file-settings-hint');
+  if (!hintEl) return;
+  const sources = getCustomPresetSources();
+  const enabledCustomCount = sources.filter(s => s.enabled).length;
+  const defaultOn = getDefaultPresetEnabled();
+  if (enabledCustomCount === 0) {
+    hintEl.textContent = 'Default Source';
+  } else if (defaultOn) {
+    hintEl.textContent = `Default + ${enabledCustomCount} custom`;
+  } else {
+    hintEl.textContent = `${enabledCustomCount} custom (default off)`;
+  }
+}
+
+function showPresetFileSettingsSubmenu() {
+  document.getElementById('settings-submenu').style.display = 'none';
+  const submenu = document.getElementById('preset-file-settings-submenu');
+  submenu.style.display = 'flex';
+  isPresetFileSettingsOpen = true;
+  isSettingsSubmenuOpen = false;
+  clearPresetSourceEditMode();
+  renderCustomPresetSourcesList();
+  updatePresetFileSettingsHint();
+}
+
+function hidePresetFileSettingsSubmenu() {
+  document.getElementById('preset-file-settings-submenu').style.display = 'none';
+  isPresetFileSettingsOpen = false;
+  showSettingsSubmenu();
+  // Refresh the Import Presets hint to reflect any source changes
+  recheckForUpdates();
 }
 
 // Show Timer Settings submenu
@@ -13237,6 +13413,91 @@ const result = await presetImporter.import();
       } catch (error) {
         alert('Import error: ' + error.message);
       }
+    });
+  }
+
+  // Preset File Settings button
+  const presetFileSettingsBtn = document.getElementById('preset-file-settings-button');
+  if (presetFileSettingsBtn) {
+    presetFileSettingsBtn.addEventListener('click', showPresetFileSettingsSubmenu);
+  }
+
+  const presetFileSettingsBackBtn = document.getElementById('preset-file-settings-back');
+  if (presetFileSettingsBackBtn) {
+    presetFileSettingsBackBtn.addEventListener('click', hidePresetFileSettingsSubmenu);
+  }
+
+  const addPresetSourceBtn = document.getElementById('add-preset-source-btn');
+  if (addPresetSourceBtn) {
+    addPresetSourceBtn.addEventListener('click', async () => {
+      const nameInput = document.getElementById('new-preset-source-name');
+      const urlInput = document.getElementById('new-preset-source-url');
+      const name = (nameInput.value || '').trim();
+      const url = (urlInput.value || '').trim();
+
+      if (!url) {
+        await customAlert('Please enter a URL.');
+        return;
+      }
+      if (!url.startsWith('http://') && !url.startsWith('https://')) {
+        await customAlert('URL must start with http:// or https://');
+        return;
+      }
+
+      const srcs = getCustomPresetSources();
+
+      if (_editingSourceIndex >= 0) {
+        // ---- SAVE EDIT MODE ----
+        srcs[_editingSourceIndex].name = name || 'Custom Source';
+        srcs[_editingSourceIndex].url = url;
+        saveCustomPresetSources(srcs);
+        clearPresetSourceEditMode();
+        renderCustomPresetSourcesList();
+        updatePresetFileSettingsHint();
+        await customAlert('Source updated. Open Import Presets to load from it.');
+      } else {
+        // ---- ADD NEW MODE ----
+        if (srcs.some(s => s.url === url)) {
+          await customAlert('This URL has already been added.');
+          return;
+        }
+        srcs.push({ name: name || 'Custom Source', url, enabled: true });
+        saveCustomPresetSources(srcs);
+        nameInput.value = '';
+        urlInput.value = '';
+        renderCustomPresetSourcesList();
+        updatePresetFileSettingsHint();
+        await customAlert('Source saved. Open Import Presets to load from it. If the source fails to load, you will see a message there.');
+      }
+    });
+  }
+
+  // Convert GitHub to Raw button
+  const convertGithubUrlBtn = document.getElementById('convert-github-url-btn');
+  if (convertGithubUrlBtn) {
+    convertGithubUrlBtn.addEventListener('click', async () => {
+      const urlInput = document.getElementById('new-preset-source-url');
+      const url = (urlInput.value || '').trim();
+
+      if (!url) {
+        await customAlert('Enter a URL in the field above first.');
+        return;
+      }
+      if (url.includes('raw.githubusercontent.com')) {
+        await customAlert('This URL is already in raw GitHub format. No conversion needed.');
+        return;
+      }
+      if (!url.includes('github.com')) {
+        await customAlert('This is not a GitHub URL. No conversion needed.');
+        return;
+      }
+      // Convert github.com web UI URL to raw.githubusercontent.com content URL
+      const rawUrl = url
+        .replace(/^https?:\/\/(www\.)?github\.com\//, 'https://raw.githubusercontent.com/')
+        .replace('/tree/', '/')
+        .replace('/blob/', '/');
+      urlInput.value = rawUrl;
+      await customAlert(`Converted to raw format:\n${rawUrl}`);
     });
   }
 

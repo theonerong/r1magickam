@@ -5803,3 +5803,67 @@ button, .touchable {
     transition: transform 0.2s ease, opacity 0.2s ease, background-color 0.15s ease;
 }
 
+/* ═══════════════════════════════════
+   PRESET FILE SETTINGS — source row buttons
+   ═══════════════════════════════════ */
+
+/* ON / OFF / EDIT — plain clickable text, no button styling */
+.preset-source-text-action {
+    font-size: 3.2vw;
+    font-weight: bold;
+    cursor: pointer;
+    white-space: nowrap;
+    flex-shrink: 0;
+    user-select: none;
+    -webkit-user-select: none;
+    line-height: 1;
+}
+
+/* Footer row: holds + Add Source and Convert GitHub to Raw side by side */
+.preset-source-footer-row {
+    display: flex;
+    gap: 8px;
+    margin-top: 8px;
+    align-items: stretch;
+}
+
+/* + Add Source / Save Changes button */
+.preset-source-add-btn {
+    flex: 1;
+    height: 8vw;
+    min-height: 32px;
+    border-radius: 1vw;
+    border: none;
+    font-size: 4vw;
+    font-weight: bold;
+    cursor: pointer;
+    background: #FE5F00;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Convert GitHub to Raw button */
+.preset-source-convert-btn {
+    height: 8vw;
+    min-height: 32px;
+    padding: 0 2.5vw;
+    border-radius: 1vw;
+    border: 2px solid #666;
+    font-size: 2.8vw;
+    font-weight: bold;
+    cursor: pointer;
+    background: transparent;
+    color: #aaa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.preset-source-convert-btn:hover {
+    border-color: #FE5F00;
+    color: #FE5F00;
+}

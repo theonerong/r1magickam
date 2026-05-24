@@ -20,6 +20,48 @@ const IMPORT_DB_NAME = 'ImportedPresetsDB';
 const IMPORT_DB_VERSION = 2;
 const IMPORT_STORE_NAME = 'imported_presets';
 
+// ===== CUSTOM PRESET SOURCES =====
+const CUSTOM_PRESET_SOURCES_KEY = 'mk_custom_preset_sources';
+const DEFAULT_PRESET_ENABLED_KEY = 'mk_default_preset_enabled';
+
+// Tracks any sources that failed during the most recent loadPresetsFromFile() call
+let _lastLoadFailures = [];
+export function getLastLoadFailures() { return [..._lastLoadFailures]; }
+
+export function getCustomPresetSources() {
+  try {
+    const raw = localStorage.getItem(CUSTOM_PRESET_SOURCES_KEY);
+    return raw ? JSON.parse(raw) : [];
+  } catch (e) {
+    return [];
+  }
+}
+
+export function saveCustomPresetSources(sources) {
+  try {
+    localStorage.setItem(CUSTOM_PRESET_SOURCES_KEY, JSON.stringify(sources));
+    // Clear the session cache so the next import/check picks up the new sources
+    window._cachedFactoryPresets = null;
+  } catch (e) {}
+}
+
+export function getDefaultPresetEnabled() {
+  try {
+    const val = localStorage.getItem(DEFAULT_PRESET_ENABLED_KEY);
+    return val === null ? true : val === 'true'; // defaults to true
+  } catch (e) {
+    return true;
+  }
+}
+
+export function saveDefaultPresetEnabled(enabled) {
+  try {
+    localStorage.setItem(DEFAULT_PRESET_ENABLED_KEY, enabled ? 'true' : 'false');
+    window._cachedFactoryPresets = null;
+  } catch (e) {}
+}
+// ===== END CUSTOM PRESET SOURCES =====
+
 // ===== PRESET UNLOCK GAME =====
 
 const UNLOCK_GAME_KEY = 'r1_preset_unlock_game';
@@ -250,25 +292,100 @@ export class PresetImporter {
       return window._cachedFactoryPresets;
     }
     try {
-      const response = await fetch('./presets.json');
-      if (!response.ok) {
-        throw new Error('Failed to load presets.json');
+      const allPresets = [];
+      const seenNames = new Set();
+
+      // --- Load default source (only if user has it enabled) ---
+      if (getDefaultPresetEnabled()) {
+        const response = await fetch('./presets.json');
+        if (!response.ok) {
+          throw new Error('Failed to load presets.json');
+        }
+        const defaultPresets = await response.json();
+        defaultPresets
+          .filter(p => p.name && Array.isArray(p.category))
+          .forEach(p => {
+            if (!seenNames.has(p.name)) {
+              seenNames.add(p.name);
+              allPresets.push(p);
+            }
+          });
       }
-      
-      const presets = await response.json();
-      
-      const validPresets = presets.filter(p => 
-        p.name && Array.isArray(p.category)
-      );
+
+      // --- Load custom sources (user-added) ---
+      _lastLoadFailures = [];
+      const customSources = getCustomPresetSources();
+      for (const source of customSources) {
+        if (!source.enabled) continue;
+        try {
+          const resp = await fetch(source.url);
+          if (!resp.ok) {
+            console.warn(`Custom preset source "${source.name}" returned ${resp.status}`);
+            _lastLoadFailures.push({ name: source.name, reason: `Server returned error ${resp.status}. Check the URL is correct.` });
+            continue;
+          }
+          let customPresets;
+          try {
+            customPresets = await resp.json();
+          } catch (jsonErr) {
+            console.warn(`Custom preset source "${source.name}" is not valid JSON`);
+            _lastLoadFailures.push({ name: source.name, reason: 'File is not valid JSON. Make sure you are using the Raw file URL from GitHub.' });
+            continue;
+          }
+          if (!Array.isArray(customPresets)) {
+            console.warn(`Custom preset source "${source.name}" did not return an array`);
+            _lastLoadFailures.push({ name: source.name, reason: 'File is not a preset array. It must contain a JSON array of preset objects.' });
+            continue;
+          }
+          const validPresets = customPresets.filter(p => p.name && Array.isArray(p.category));
+          if (validPresets.length === 0) {
+            console.warn(`Custom preset source "${source.name}" had no valid presets`);
+            _lastLoadFailures.push({ name: source.name, reason: 'No valid presets found. Each preset must have a name and a category field.' });
+            continue;
+          }
+          // Derive the public folder sitting next to this source's JSON file
+          const sourcePublicBase = source.url.substring(0, source.url.lastIndexOf('/') + 1) + 'public/';
+
+          validPresets.forEach(p => {
+            if (!seenNames.has(p.name)) {
+              seenNames.add(p.name);
+              allPresets.push(p.imageUrl ? p : { ...p, _sourcePublicBase: sourcePublicBase });
+            }
+          });
+        } catch (e) {
+          console.warn(`Failed to load custom preset source "${source.name}":`, e);
+          _lastLoadFailures.push({ name: source.name, reason: 'Could not be reached. Check your connection and verify the URL is public.' });
+        }
+      }
+
+      // Safety net: if nothing loaded at all, fall back to default regardless
+      if (allPresets.length === 0) {
+        try {
+          const response = await fetch('./presets.json');
+          if (response.ok) {
+            const defaultPresets = await response.json();
+            defaultPresets
+              .filter(p => p.name && Array.isArray(p.category))
+              .forEach(p => {
+                if (!seenNames.has(p.name)) {
+                  seenNames.add(p.name);
+                  allPresets.push(p);
+                }
+              });
+          }
+        } catch (e) {
+          console.warn('Safety-net load of presets.json also failed:', e);
+        }
+      }
 
       // Alphabetize presets by name
-      const sorted = validPresets.sort((a, b) => a.name.localeCompare(b.name));
+      const sorted = allPresets.sort((a, b) => a.name.localeCompare(b.name));
 
       // Store in memory so every other call this session skips the download
       window._cachedFactoryPresets = sorted;
       return sorted;
     } catch (error) {
-      console.error('Error loading presets.json:', error);
+      console.error('Error loading presets:', error);
       throw new Error('Could not load presets.json file');
     }
   }
@@ -419,6 +536,16 @@ export class PresetImporter {
         <div id="import-lock-message" style="display:none; background:#8B0000; color:#fff; font-size:11px; padding:5px 10px; margin-top:3px; border-radius:3px; text-align:center;"></div>
       `;
 
+      // Warning banner for any sources that failed to load — shown at top of scroll area
+      const loadFailures = getLastLoadFailures();
+      if (loadFailures.length > 0) {
+        const warningBanner = document.createElement('div');
+        warningBanner.style.cssText = 'background:#5a2d00; border:1px solid #FE5F00; border-radius:4px; padding:8px 12px; margin:6px 0 4px 0; font-size:11px; color:#fff; line-height:1.6;';
+        const failLines = loadFailures.map(f => `• <strong>${f.name}</strong>: ${f.reason}`).join('<br>');
+        warningBanner.innerHTML = `⚠️ <strong>Could not load:</strong><br>${failLines}`;
+        scrollContainer.appendChild(warningBanner);
+      }
+
       // Helper to show a message inside the import modal (avoids z-index conflicts)
       let lockMessageTimer = null;
       const showImportMessage = (text) => {
@@ -486,8 +613,11 @@ export class PresetImporter {
         previewNoImg.style.display = 'none';
 
         // Build the image URL from the preset name (spaces become underscores)
+        // If the preset came from a custom source, use that source's public folder;
+        // otherwise fall back to the program's own ./public/ folder.
         const safeName = preset.name.replace(/[\/\\:*?"<>|\s]/g, '_');
-        const autoUrl = './public/' + safeName + '.png';
+        const publicBase = preset._sourcePublicBase || './public/';
+        const autoUrl = publicBase + safeName + '.png';
         const imageUrl = preset.imageUrl || autoUrl;
 
         previewImg.onload = () => {
@@ -535,6 +665,11 @@ export class PresetImporter {
         const importedMap = new Map(this.importedPresets.map(p => [p.name, p]));
         const availableSet = new Set(availablePresets.map(p => p.name));
 
+        // Presets from custom sources are always free — never locked
+        const customSourcePresetNames = new Set(
+          availablePresets.filter(p => p._sourcePublicBase).map(p => p.name)
+        );
+
         // Fast credit count: count checked locked presets using Maps
         const getLockedCheckedCount = () => {
           let count = 0;
@@ -544,6 +679,7 @@ export class PresetImporter {
             if (importedMap.has(name)) return; // already imported = not locked
             if (unlockedNames.has(name)) return; // unlocked = not locked
             if (permanentlyOwned.has(name)) return; // permanently owned = never locked
+            if (customSourcePresetNames.has(name)) return; // custom source = always free
             count++;
           });
           return count;
@@ -555,7 +691,7 @@ export class PresetImporter {
 
         filteredPresets.forEach((preset, index) => {
           const isAlreadyImported = importedMap.has(preset.name);
-          const isLocked = !isAlreadyImported && !unlockedNames.has(preset.name) && !permanentlyOwned.has(preset.name);
+          const isLocked = !isAlreadyImported && !unlockedNames.has(preset.name) && !permanentlyOwned.has(preset.name) && !preset._sourcePublicBase;
           const existingPreset = importedMap.get(preset.name);
 
           const msg = preset.message || '';
@@ -849,7 +985,7 @@ footerSection.innerHTML = `
         const lockedPresets = [];
         filteredForCheck.forEach(preset => {
           const isAlreadyImported = this.importedPresets.some(p => p.name === preset.name);
-          const isLocked = !isAlreadyImported && !unlockedNames.has(preset.name) && !permanentlyOwned.has(preset.name);
+          const isLocked = !isAlreadyImported && !unlockedNames.has(preset.name) && !permanentlyOwned.has(preset.name) && !preset._sourcePublicBase;
           if (isLocked) lockedPresets.push(preset);
         });
         const currentCredits = loadUnlockState().credits || 0;
@@ -875,7 +1011,7 @@ footerSection.innerHTML = `
           const filteredPresets = this.getFilteredPresets(availablePresets);
           filteredPresets.forEach(preset => {
             const isAlreadyImported = this.importedPresets.some(p => p.name === preset.name);
-            const isNowLocked = !isAlreadyImported && !unlockedNames.has(preset.name) && !permanentlyOwned.has(preset.name);
+            const isNowLocked = !isAlreadyImported && !unlockedNames.has(preset.name) && !permanentlyOwned.has(preset.name) && !preset._sourcePublicBase;
             if (!isNowLocked) {
               this.checkboxStates.set(preset.name, true);
             }
@@ -1070,10 +1206,14 @@ footerSection.innerHTML = `
 
   async import() {
     try {
+      // Always force a fresh fetch so the latest active sources are fully reflected
+      window._cachedFactoryPresets = null;
       const availablePresets = await this.loadPresetsFromFile();
-      
+
+      // Load failures are shown as a banner inside the import modal below
+
       if (availablePresets.length === 0) {
-        return { success: false, message: 'No presets found in presets.json' };
+        return { success: false, message: 'No presets found in any active source.' };
       }
 
       const selectedPresets = await this.showPresetSelectionUI(availablePresets);
