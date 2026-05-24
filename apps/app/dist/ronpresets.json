@@ -1,0 +1,13 @@
+[
+    {
+    "name": "DO NOTHING",
+    "category": [
+      "PHOTO",
+      "REALISM"
+    ],
+    "message": "Take a photo and make no changes. Generate a clean standalone image focused entirely on the primary subject and environment.\n\nThe composition should contain only the intended subject matter and natural environmental details.\n\nUse realistic photography composition with unobstructed framing and clean edges.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "EXCLUSION ENFORCEMENT:\n\n• Only the requested subject and environment should appear"
+  }
+]
