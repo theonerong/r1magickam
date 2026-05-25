@@ -4112,6 +4112,67 @@
     "additionalInstructions": ""
   },
   {
+    "name": "BUST",
+    "category": [
+      "SCULPTURE",
+      "FINE ART",
+      "PORTRAITURE",
+      "MUSEUM",
+      "ARTISTIC TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform the subject into a museum-quality sculpted bust.\n\nThe final image should depict a highly detailed sculptural bust representing the subject's head, neck, shoulders, and upper chest while preserving recognizable facial identity, proportions, expression, age, hairstyle silhouette, and defining characteristics.\n\nThe bust should appear as a professionally sculpted work of art suitable for display in a museum, gallery, historical collection, estate, public monument, sculpture garden, university, government building, luxury residence, or fine-art exhibition.\n\nMASTER PROMPT OVERRIDE LOGIC (CRITICAL):\n• If an external master prompt specifies a different artistic period, sculptural movement, realism level, historical era, display environment, material, finish, weathering level, artistic philosophy, or cultural influence, USE that instead\n• External prompts may override sculptural style, pedestal design, lighting, aging, coloration, decorative elements, display setting, or realism level\n• Preserve the recognizable bust-sculpture identity even when adapting to overridden themes\n\nBUST TRANSFORMATION LOGIC:\n\n• Transform the subject into a sculpted bust consisting of the head, neck, shoulders, and upper chest\n• Preserve recognizable facial identity and major features\n• Preserve facial structure, proportions, expression, hairstyle silhouette, and personality\n• The sculpture should appear physically carved, cast, molded, or sculpted depending upon the selected material\n• Surface details should accurately reflect the chosen sculptural medium\n• The bust should feel like an authentic physical artwork rather than a photograph of a person\n• Preserve realistic sculptural anatomy and proportions\n\nSCULPTURAL REQUIREMENTS:\n\n• The final image must depict an actual sculpture rather than a living person\n• Visible sculptural materials should replace skin, hair, clothing, and biological surfaces\n• Hair should be sculpted into the material using realistic carving techniques\n• Clothing should appear sculpted into the bust when appropriate\n• Facial details should be translated into sculptural form while remaining recognizable\n• Surface texture, tool marks, polish level, and finish should match the selected material and style\n• Maintain museum-quality craftsmanship and presentation\n\nIMPORTANT:\n\n• Preserve recognizable identity of the original subject\n• The bust should appear professionally sculpted by a master sculptor\n• Emphasize realism, craftsmanship, and artistic quality\n• The sculpture must appear physically believable and materially accurate\n• Use realistic sculptural lighting and presentation\n\nSTYLE OPTIONS:\n\n• Classical sculpture\n• Neoclassical sculpture\n• Contemporary sculpture\n• Abstract sculpture\n\nMATERIAL OPTIONS:\n\n• White Carrara marble\n• Cast stone\n• Granite\n• Sandstone\n• Limestone\n\nBACKGROUND AND DISPLAY:\n\n• Display the bust on an appropriate pedestal, plinth, museum base, architectural niche, gallery stand, garden pedestal, monument base, or exhibition platform\n• Use realistic museum, gallery, outdoor sculpture garden, estate, university, or historical-building presentation\n• Maintain focus on the sculpted bust\n• Use professional sculptural lighting\n\nThe final image should look like a professionally created fine-art bust sculpture of the original subject, preserving recognizable identity while accurately reflecting the selected sculptural style and material.",
+    "randomizeOptions": true,
+    "optionGroups": [
+      {
+        "title": "STYLE", 
+        "options": [
+        {
+          "id": "001",
+          "text": "Classical Greek-Roman bust featuring idealized realism, balanced proportions, elegant facial symmetry, refined anatomical accuracy, museum-quality craftsmanship, and timeless sculptural beauty"
+        },
+        {
+          "id": "002",
+          "text": "Neoclassical bust featuring highly refined realism, polished surfaces, aristocratic presentation, heroic dignity, graceful facial features, and formal European fine-art sculpture aesthetics"
+        },
+        {
+          "id": "003",
+          "text": "Contemporary bust featuring modern artistic interpretation, expressive textures, innovative sculptural surfaces, subtle stylization, and gallery-quality modern sculpture aesthetics"
+        },
+        {
+          "id": "004",
+          "text": "Abstract bust featuring stylized forms, simplified geometry, artistic distortion, experimental sculptural design, expressive interpretation, and contemporary fine-art abstraction"
+        }
+      ]
+    },
+    {
+      "title": "MATERIAL",
+      "options": [
+        {
+          "id": "001",
+          "text": "Carved from premium white Carrara marble with subtle crystalline sparkle, polished surfaces, fine sculptural detailing, realistic stone translucency, and museum-quality finish"
+        },
+        {
+          "id": "002",
+          "text": "Crafted from cast stone with realistic weather-resistant texture, architectural detailing, outdoor-sculpture durability, and authentic historic monument appearance"
+        },
+        {
+          "id": "003",
+          "text": "Sculpted from granite with deep stone texture, monumental weight, natural mineral variation, rugged realism, and impressive architectural presence"
+        },
+        {
+          "id": "004",
+          "text": "Carved from sandstone featuring layered sediment textures, historic sculptural character, natural weathering, and warm stone coloration"
+        },
+        {
+          "id": "005",
+          "text": "Carved from limestone featuring soft natural texture, classical architectural qualities, realistic carving details, and historically authentic sculptural appearance"
+        }
+      ]
+    }
+    ],
+    "additionalInstructions": "• The final image must depict an actual physical sculpture rather than a living person\n• Preserve recognizable identity and facial characteristics of the original subject\n• Accurately reproduce the selected STYLE option\n• Accurately reproduce the selected MATERIAL option\n• Sculpt hair, facial features, clothing, and anatomy directly into the chosen material\n• Use realistic sculptural craftsmanship and physical material behavior\n• Ensure the bust appears professionally carved, cast, or sculpted\n• Maintain museum-quality presentation and lighting\n• Avoid cartoon, toy, CGI, or digital-avatar aesthetics\n• Preserve realistic sculptural proportions\n• Use authentic stone carving, finishing, and sculpting techniques appropriate to the selected material\n• The sculpture should appear physically present in the scene with realistic weight, texture, and dimensionality\n• Emphasize fine-art realism, craftsmanship, and historical authenticity"
+  },
+  {
     "name": "BUSTED",
     "category": [
       "OPTIONS",
