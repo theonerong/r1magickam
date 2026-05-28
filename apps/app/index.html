@@ -440,28 +440,62 @@
             <h3>PRESET FILE SETTINGS</h3>
             <button id="preset-file-settings-back" class="close-button">×</button>
         </div>
+        <!-- Sticky tab bar -->
+        <div class="pfs-tab-bar">
+            <div class="pfs-tab active" id="pfs-tab-sources">Preset Sources</div>
+            <div class="pfs-tab" id="pfs-tab-previews">Preview Images</div>
+        </div>
         <div class="submenu-list">
-            <!-- All sources (default + custom) — rendered by JS -->
-            <div class="burst-setting-item">
-                <label style="font-weight:bold; font-size:12px;">Preset Sources</label>
-                <div id="custom-preset-sources-list" style="margin-top:6px;">
-                    <div id="no-custom-sources-msg" style="color:#666; font-size:11px; padding:8px 0;">No custom sources added yet.</div>
+
+            <!-- ── TAB 1: PRESET SOURCES ── -->
+            <div id="pfs-panel-sources" class="pfs-tab-panel active">
+                <!-- All sources (default + custom) — rendered by JS -->
+                <div class="burst-setting-item">
+                    <label style="font-weight:bold; font-size:12px;">Preset Sources</label>
+                    <div id="custom-preset-sources-list" style="margin-top:6px;">
+                        <div id="no-custom-sources-msg" style="color:#666; font-size:11px; padding:8px 0;">No custom sources added yet.</div>
+                    </div>
+                </div>
+
+                <!-- Add / Edit source form -->
+                <div class="burst-setting-item" style="margin-top:14px; border-top:1px solid #333; padding-top:14px;">
+                    <label id="add-source-form-label" style="font-weight:bold; font-size:12px;">Add Custom Source</label>
+                    <p class="setting-hint" style="margin-top:4px;">Type the raw URL to any JSON preset file. Any Github URL entered MUST start with the raw format (raw.githubusercontent.com/...). In GitHub, open the file and click the <strong>Raw</strong> button, then copy the URL from your browser.</p>
+                    <input type="text" id="new-preset-source-name" placeholder="Name (e.g. My Presets)"
+                        style="width:100%; box-sizing:border-box; padding:8px; margin-top:8px; background:#222; color:#fff; border:1px solid #444; border-radius:4px; font-size:12px;">
+                    <input type="text" id="new-preset-source-url" placeholder="https://raw.githubusercontent.com/..."
+                        style="width:100%; box-sizing:border-box; padding:8px; margin-top:6px; background:#222; color:#fff; border:1px solid #444; border-radius:4px; font-size:12px;">
+                    <div class="preset-source-footer-row">
+                        <button id="add-preset-source-btn" class="preset-source-add-btn">+ Add Source</button>
+                        <button id="convert-github-url-btn" class="preset-source-convert-btn">Convert GitHub to Raw</button>
+                    </div>
+                    <div id="preset-source-qr-hint" style="display:none; margin-top:8px; padding:8px 10px; background:rgba(76,175,80,0.12); border:1px solid #4CAF50; border-radius:4px; font-size:11px; color:#4CAF50;"></div>
+                </div>
+
+                <!-- Import via QR Code -->
+                <div class="burst-setting-item" style="margin-top:14px; border-top:1px solid #333; padding-top:14px;">
+                    <label style="font-weight:bold; font-size:12px;">Import Source via QR Code</label>
+                    <p class="setting-hint" style="margin-top:4px;">Upload your JSON file to catbox.moe, generate a QR code at qr-code-generator.com, then scan it here. The URL will be filled in automatically — just confirm the name and tap + Add Source.</p>
+                    <button id="import-preset-source-qr-btn" style="width:100%; margin-top:10px; padding:10px; background:#1a1a1a; border:1px solid #FE5F00; border-radius:4px; color:#FE5F00; font-size:13px; font-weight:bold; cursor:pointer; letter-spacing:0.5px;">📷 Scan QR Code to Import Source</button>
                 </div>
             </div>
 
-            <!-- Add / Edit source form -->
-            <div class="burst-setting-item" style="margin-top:14px; border-top:1px solid #333; padding-top:14px;">
-                <label id="add-source-form-label" style="font-weight:bold; font-size:12px;">Add Custom Source</label>
-                <p class="setting-hint" style="margin-top:4px;">Type the raw URL to any JSON preset file. Any Github URL entered MUST start with the raw format (raw.githubusercontent.com/...). In GitHub, open the file and click the <strong>Raw</strong> button, then copy the URL from your browser.</p>
-                <input type="text" id="new-preset-source-name" placeholder="Name (e.g. My Presets)"
-                    style="width:100%; box-sizing:border-box; padding:8px; margin-top:8px; background:#222; color:#fff; border:1px solid #444; border-radius:4px; font-size:12px;">
-                <input type="text" id="new-preset-source-url" placeholder="https://raw.githubusercontent.com/..."
-                    style="width:100%; box-sizing:border-box; padding:8px; margin-top:6px; background:#222; color:#fff; border:1px solid #444; border-radius:4px; font-size:12px;">
-                <div class="preset-source-footer-row">
-                    <button id="add-preset-source-btn" class="preset-source-add-btn">+ Add Source</button>
-                    <button id="convert-github-url-btn" class="preset-source-convert-btn">Convert GitHub to Raw</button>
+            <!-- ── TAB 2: PREVIEW IMAGES ── -->
+            <div id="pfs-panel-previews" class="pfs-tab-panel">
+                <div class="burst-setting-item">
+                    <label style="font-weight:bold; font-size:12px;">Import Preview Images via QR Code</label>
+                    <p class="setting-hint" style="margin-top:4px;">Upload your preview image to <strong>catbox.moe</strong> and get the direct link. Generate a QR code from that link at <strong>qr-code-generator.com</strong>, then scan it here. Imported images will appear below and can be assigned to any preset as its preview.</p>
+                    <button id="import-preview-image-qr-btn" style="width:100%; margin-top:10px; padding:10px; background:#1a1a1a; border:1px solid #FE5F00; border-radius:4px; color:#FE5F00; font-size:13px; font-weight:bold; cursor:pointer; letter-spacing:0.5px;">📷 Scan QR Code to Import Preview Images</button>
+                    <div id="preview-image-import-hint" style="display:none; margin-top:8px; padding:8px 10px; background:rgba(76,175,80,0.12); border:1px solid #4CAF50; border-radius:4px; font-size:11px; color:#4CAF50;"></div>
+                </div>
+                <div class="burst-setting-item" style="margin-top:14px; border-top:1px solid #333; padding-top:14px;">
+                    <label style="font-weight:bold; font-size:12px;">Imported Preview Images</label>
+                    <div id="preview-image-gallery" style="margin-top:8px;">
+                        <div id="no-preview-images-msg" style="color:#666; font-size:11px; padding:8px 0;">No preview images imported yet.</div>
+                    </div>
                 </div>
             </div>
+
         </div>
     </div>
 </div>
@@ -1065,17 +1099,61 @@
                             <strong>Manually Select Options Mode:</strong> Enable/Disable. When enabled, if you choose a preset with options, a modal will appear asking you to pick from one of the options in the preset. Only this option is fed as the final prompt for generating the magical image. This setting does not work with No Magic Mode, Motion Sensor, Burst or Timer. It will work with Randomizer. The manually select options mode may be toggled from the gallery by pressing the OPTIONS button in the gallery<br>
                             <strong>Import Resolution:</strong> Select import resolution for external images imported through the gallery.<br>
                             <strong>Reset Database:</strong> Nuclear Option. Only imported presets remain. All custom work deleted.<br>
-                            <strong>📥 Import Presets:</strong> When you first start, import a preset from our external library of presets. The presets are locked except for Caricature and Impressionism. Import them to capture photos and begin the fun journey of unlocking your imported artistic library. To unlock more presets, take a photo with any preset you already own or reprompt a photo in the gallery. One snap with a unique imported preset, or a click on the magic button in the gallery, provides a credit to buy more presets-unlocking a new surprise to your collection! Import only the unlocked presets you want using your earned credits by checking them individually or ✓ All (or ✗ None). Once you select the ones you want to import, click the Import button. NOTE: Previously imported presets remain checked. To delete previously imported presets from the Magic Kamera, delete them from the Main Menu. You can import them again if you like. Any new presets added to our external library of presets, will be locked (check regularly for new ones as we are constantly updating this list). Updated Presets you own will appear on the top of the Import Presets list. You need to select (if they are not already selected) the updated preset and click the Import button to update your owned preset. <strong>🔊 Hear Preset Info:</strong> When browsing presets in the Import Presets menu, tap any preset ONCE to hear its description read aloud. Use the 🔊 mute button in the header to toggle audio on or off.
-<br>
-                            <strong>📂 Preset File Settings (*Advanced Feature*):</strong> Located directly below Import Presets in the Settings menu. This feature lets you load presets from any repository (the URL for Github repositories must be in raw format) in addition to, or instead of, the built-in preset library.<br>
-                            <em>Adding a Custom Source:</em> Open Preset File Settings. In the Add Custom Source area at the bottom, enter a friendly name for the source and type the raw URL to the preset JSON file hosted on GitHub. To get the raw URL: open the repository in GitHub, navigate to the JSON file, and tap the <strong>Raw</strong> button. (You may also press the Convert Github to Raw button in the program.) Type the full URL into the URL field. Tap <strong>+ Add Source</strong>.<br>
-                            <em>Repository and Folder Structure:</em> The custom preset JSON file must be a valid JSON array formatted identically to the built-in presets. To include sample preview images for your custom presets, create a folder named <strong>public</strong> inside your GitHub repository at the same level as your JSON file. Name each preview image to match the preset name exactly, replacing spaces and special characters with underscores, and save as PNG. For example, a preset named "My Cool Style" would have a preview image named <strong>My_Cool_Style.png</strong> inside the public folder. The program automatically finds preview images there with no extra configuration needed. For fast preview image loading times resize the image to 160x160<br>
+                            <strong>📥 Import Presets:</strong> When you first start, import a preset from our external library of presets. The presets are locked except for Caricature and Impressionism. Import them to capture photos and begin the fun journey of unlocking your imported artistic library. To unlock more presets, take a photo with any preset you already own or reprompt a photo in the gallery. One snap with a unique imported preset, or a click on the magic button in the gallery, provides a credit to buy more presets-unlocking a new surprise to your collection! Import only the unlocked presets you want using your earned credits by checking them individually or ✓ All (or ✗ None). Once you select the ones you want to import, click the Import button. NOTE: Previously imported presets remain checked. To delete previously imported presets from the Magic Kamera, delete them from the Main Menu. You can import them again if you like. Any new presets added to our external library of presets, will be locked (check regularly for new ones as we are constantly updating this list). Updated Presets you own will appear on the top of the Import Presets list. You need to select (if they are not already selected) the updated preset and click the Import button to update your owned preset. <strong>🔊 Hear Preset Info:</strong> When browsing presets in the Import Presets menu, tap any preset ONCE to hear its description read aloud. Use the 🔊 mute button in the header to toggle audio on or off.<br>
+                            <strong>📂 Preset File Settings (*Advanced Feature*):</strong> Located directly below Import Presets in the Settings menu. Preset Sources Tab: This section lets you load presets within a json file from any repository (the URL for Github repositories must be in raw format) in addition to, or instead of, the built-in preset library. It also lets you upload preset json files via a qr code (see Adding a Custom Source Code via QR Code below).  Preview Images Tab: You may import images to use as preview images using a qr code (see Adding a Custom Preview Image via QR Code below).  This is useful if you are not linking a json file in a repository.<br>
+                            <em>Adding a Custom Source through a Repository:</em> Open Preset File Settings. Click on the Preset Sources Tab (default). In the Add Custom Source area at the bottom, enter a friendly name for the source and type the raw URL to the preset JSON file hosted on GitHub. To get the raw URL: open the repository in GitHub, navigate to the JSON file, and tap the <strong>Raw</strong> button. (You may also press the Convert Github to Raw button in the program.) Type the full URL into the URL field. Tap <strong>+ Add Source</strong>.<br>
+                            <em>Adding a Custom Source via QR Code:</em>
+                        </p>
+                        <!-- Uploading Json Preset Files -->
+                        <p class="tutorial-text">
+                            You can import custom preset json files from the web directly into your program using QR codes. Here's how:<br><br>
+                            <strong>Step-by-Step Process:</strong><br>
+                            1. Upload your preset json file you want imported to <strong>catbox.moe</strong> (free, no account needed)<br>
+                            2. Copy the <strong>direct link</strong> (must end in .json)<br>
+                            3. Go to <strong>qr-code-generator.com</strong> and paste the direct link<br>
+                            4. Generate and download/display the QR code<br>
+                            5. Go to menu (☰)/settings (⚙️)/📂 Preset File Settings in the Magic Kamera plugin<br>
+                            6. Click on the Preset Sources Tab (default)<br>
+                            7. Scroll down to the Import Source via QR Code section<br>
+                            8. Press the Scan QR Code button<br>
+                            9. Point your R1 camera at the QR code<br>
+                            10. Wait a few...the modal will close and the source information will populate the Add Custom Source text fields above<br>
+                            11. Give your preset json source file a name<br>
+                            12. Click the Add Source button. Easy peasy!<br><br>
+                            <strong>Notes:</strong><br>
+                            • It is always better to use a repository because you do not need to go through this process every time you add a new preset to the json file<br>
+                            • Preview Images need to be imported via a QR Code or else no preview for preset json files uploaded via QR Code<br>
+                        </p>
+                        <p class="tutorial-text">
+                            <em>Adding a Custom Preview Image via QR Code:</em>
+                        </p>
+                        <!-- Uploading Preview Images -->
+                        <p class="tutorial-text">
+                            You can import preview images from the web directly into your preview images gallery using QR codes. Here's how:<br><br>
+                            <strong>Step-by-Step Process:</strong><br>
+                            1. Upload your image (import size 160x160 recommended) you want imported to <strong>catbox.moe</strong> (free, no account needed)<br>
+                            2. Copy the <strong>direct link</strong> (must end in .png, .jpg, .jpeg, .gif, or .webp)<br>
+                            3. Go to <strong>qr-code-generator.com</strong> and paste the direct link<br>
+                            4. Generate and download/display the QR code<br>
+                            5. Go to menu (☰)/settings (⚙️)/📂 Preset File Settings in the Magic Kamera plugin<br>
+                            6. Click on the Preview Images Tab<br>
+                            7. Press the Scan QR Code button<br>
+                            8. Point your R1 camera at the QR code<br>
+                            9. Wait a few...the modal will close and the image will be saved to your Imported Preview Images gallery!<br><br>
+                            <strong>⚠️ IMPORTANT - Verify Your Link:</strong><br>
+                            Before generating the QR code, paste the link into a browser:<br>
+                            ✅ <strong>GOOD:</strong> Shows ONLY the image (no webpage around it) - will work!<br>
+                            ❌ <strong>BAD:</strong> Shows a webpage with the image embedded - won't work!<br><br>
+                        </p>
+                        <p class="tutorial-text">
+                            <em>Repository and Folder Structure:</em> The custom preset JSON file must be a valid JSON array formatted identically to the built-in presets. We recommend using the Magic Kamera front end Preset builder at <strong>https://jorge-e-t.github.io/MKPresetBuilder/</strong>     To include sample preview images for your custom presets, create a folder named <strong>public</strong> inside your GitHub repository at the same level as your JSON file. Name each preview image to match the preset name exactly, replacing spaces and special characters with underscores, and save as PNG. For example, a preset named "My Cool Style" would have a preview image named <strong>My_Cool_Style.png</strong> inside the public folder. The program automatically finds preview images there with no extra configuration needed. For fast preview image loading times resize the image to 160x160<br>
                             <em>Managing Sources:</em> Each source in the list has an ON/OFF toggle and an EDIT button. The default built-in library shows an ON/OFF toggle only when at least one custom source is active — this lets you load exclusively from your own sources if you prefer. Turning off all custom sources locks the default back on automatically so you are never left with nothing. Use the EDIT button to update a source name or URL without deleting and re-adding it. The ✕ button removes a source entirely.<br>
+                            <em>Managing Preview Images:</em> If you are using a repository, place preview images in a public folder within the same directory as the custom preset json file. However, Magic Kamera lets you personalize any presets with your own preview images. When you hard press a preset in any preset list (other than the import presets section preset list), it opens a preview image.  Click on the orange + button on the top left hand corner. Select the preview image from this gallery. If you want to revert to default (original image from default Magic Kamera presets, original image from custom preset json file in a repository, or no image from a custom preset json file uploaded via QR Code) click on the top left ↩ button instead of selecting a preview image<br>
                             <em>Credits:</em> The credit and unlock system applies only to the built-in preset library. All presets from custom sources are always free to import with no credits required.<br>
                             <em>Updates:</em> When you return to the Settings menu after making any changes in Preset File Settings, the Import Presets button automatically rechecks all active sources and refreshes its new and updated preset count.<br><br>
                             <strong>⚙️ Button Settings:</strong> The main camera screen and gallery image viewer screen carousel buttons are default solid and black. In this section, you may select different colors for buttons and text in the main camera screen and in the gallery image viewer screen. You may also select opacity (default solid) and set how many taps to hide/reveal the buttons in each section under their appropriate tab.<br>
-                            <strong>Tutorial:</strong> What you are currently reading. This tutorial includes the audio tour on the top of the quick navigation. Use the top search field to search for key words or topics. Click within the search field to either speak your search (using the rabbit r1's side button) or type your search. Once you finish speaking or typing your search, click on the x next to the filter text box to remove the keyboard. If you double click on the x, it resets the filter text box. 
-                       </p>
+                            <strong>Tutorial:</strong> What you are currently reading. This tutorial includes the audio tour on the top of the quick navigation. Use the top search field to search for key words or topics. Click within the search field to either speak your search (using the rabbit r1's side button) or type your search. Once you finish speaking or typing your search, click on the x next to the filter text box to remove the keyboard. If you double click on the x, it resets the filter text box.
+                        </p>
                     </div>
 
                     <!-- Tips & Tricks -->
