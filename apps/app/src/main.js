@@ -540,6 +540,10 @@ let isSyncing = false;
 // Scroll debouncing variables
 let scrollTimeout = null;
 let lastScrollTime = 0;
+
+// Manual options modal state flag
+let manualOptionsModalVisible = false;
+
 const SCROLL_DEBOUNCE_MS = 500;
 const QUEUE_STORAGE_KEY = 'r1_camera_queue';
 
@@ -6725,13 +6729,15 @@ async function showManualOptionsModal(preset, sections) {
     });
     
     modal.style.display = 'flex';
-    
+    manualOptionsModalVisible = true;
+
     const closeBtn = document.getElementById('close-manual-options');
     const cancelBtn = document.getElementById('cancel-manual-options');
     const confirmBtn = document.getElementById('confirm-manual-options');
     
     const cleanup = () => {
-      modal.style.display = 'none';
+        modal.style.display = 'none';
+        manualOptionsModalVisible = false;
       if (closeBtn) closeBtn.onclick = null;
       if (cancelBtn) cancelBtn.onclick = null;
       if (confirmBtn) confirmBtn.onclick = null;
@@ -9062,6 +9068,22 @@ window.addEventListener('sideClick', () => {
   const galleryModalOpen = document.getElementById('gallery-modal')?.style.display === 'flex';
   if (galleryModalOpen) return;
 
+  // When the manual options modal is open, side button clicks the confirm/send button
+  // NOTE: this must be checked BEFORE imageViewerOpen — the image viewer stays flex behind the modal
+  if (manualOptionsModalVisible) {
+    const confirmBtn = document.getElementById('confirm-manual-options');
+    if (confirmBtn) confirmBtn.click();
+    return;
+  }
+
+  // When the image viewer is open, side button triggers the magic button instead of taking a photo
+  const imageViewerOpen = document.getElementById('image-viewer')?.style.display === 'flex';
+  if (imageViewerOpen) {
+    const magicBtn = document.getElementById('magic-button');
+    if (magicBtn) magicBtn.click();
+    return;
+  }
+
   // Settings submenu - select current item
   if (isSettingsSubmenuOpen) {
     const submenu = document.getElementById('settings-submenu');
@@ -9245,6 +9267,13 @@ window.addEventListener('sideClick', () => {
 // Scroll wheel handler for preset cycling and menu navigation
 window.addEventListener('scrollUp', () => {
   console.log('Scroll wheel: up');
+
+  // Manual options modal
+    if (document.getElementById('manual-options-modal')?.style.display === 'flex') {
+        const scrollContainer = document.querySelector('#manual-options-modal .styles-menu-scroll-container');
+        if (scrollContainer) scrollContainer.scrollTop = Math.max(0, scrollContainer.scrollTop - 80);
+        return;
+    }
   
   // Style Editor
   if (document.getElementById('style-editor').style.display === 'flex') {
@@ -9403,6 +9432,13 @@ window.addEventListener('scrollUp', () => {
 
 window.addEventListener('scrollDown', () => {
   console.log('Scroll wheel: down');
+
+// Manual options modal
+    if (document.getElementById('manual-options-modal')?.style.display === 'flex') {
+        const scrollContainer = document.querySelector('#manual-options-modal .styles-menu-scroll-container');
+        if (scrollContainer) scrollContainer.scrollTop = Math.min(scrollContainer.scrollHeight - scrollContainer.clientHeight, scrollContainer.scrollTop + 80);
+        return;
+    }
 
   // Style Editor
   if (document.getElementById('style-editor').style.display === 'flex') {
