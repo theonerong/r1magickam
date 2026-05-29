@@ -12959,6 +12959,20 @@
     "additionalInstructions": "FINAL RESULT:\nA wall-painted fresco with visible plaster texture and aged characteristics.\n\nCORE REQUIREMENTS:\n• WALL texture visible\n• AGING effects\n• MATTE finish"
   },
   {
+    "name": "FRESNEL LENS DISTORTION",
+    "category": [
+      "OPTICAL",
+      "DISTORTION",
+      "SCI-FI",
+      "ABSTRACT",
+      "STYLIZED TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform the image into a surreal optical scene viewed through a massive Fresnel lens system.\n\nThe final image should appear heavily distorted by giant industrial lighthouse optics featuring concentric lens rings, segmented refraction, warped magnification, layered glass distortions, and compressed optical geometry. The scene should feel physically viewed through enormous engineered lens structures rather than digitally filtered.\n\nSTYLE RULES:\n• Transform the entire image using authentic Fresnel-lens optical distortion\n• Use concentric circular lens geometry throughout the scene\n• Create segmented magnification and layered optical refraction\n• Preserve recognizable identity while heavily warping optical space\n• Emphasize industrial lighthouse-lens aesthetics\n• Make the image feel physically refracted through massive engineered optics\n\nOPTICAL EFFECTS:\n• Concentric optical rings\n• Segmented lens refraction\n• Curved magnification zones\n• Layered glass distortion\n• Bent perspective and warped geometry\n• Split focal regions\n• Circular compression artifacts\n• Refracted highlights and glow\n• Distorted depth relationships\n• Lens-edge optical stretching\n• Thick industrial-glass atmosphere\n\nVISUAL STYLE:\n• Precision optical engineering aesthetics\n• Heavy glass refraction\n• Mechanical lens realism\n• Layered optical distortion\n• Dense curved geometry\n• Surreal but physically believable optics\n\nANTI-REALISM RULES:\n• Avoid normal undistorted perspective\n• Avoid flat digital filter appearance\n• Avoid ordinary camera blur\n• Avoid painterly rendering\n• Avoid generic fisheye effects\n• Avoid standard chromatic aberration-only distortion\n\nFINAL VALIDATION:\n• The final image must clearly resemble a scene viewed through giant Fresnel-lens optics\n• The image must emphasize concentric lens geometry, segmented refraction, warped magnification, and industrial optical distortion",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "• Preserve recognizable identity while heavily distorting optical space\n• Use authentic concentric Fresnel-lens ring structures\n• Emphasize layered glass refraction and segmented magnification\n• Bend perspective and compress geometry through optical distortion\n• Create the feeling of viewing reality through giant lighthouse-engineered optics\n• Maintain physically believable optical behavior rather than random distortion\n• Add refracted glow, warped focus zones, and industrial-glass realism\n• Avoid generic fisheye or simple blur effects"
+  },
+  {
     "name": "FRIDGE ART",
     "category": [
       "ART",
@@ -13728,6 +13742,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "GLASS-BLOWN SCULPTURE",
+    "category": [
+      "GLASS ART",
+      "SCULPTURE",
+      "FINE ART",
+      "TRANSLUCENT",
+      "STYLIZED TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform the subject into a hand-blown glass sculpture crafted from molten translucent glass.\n\nThe final image should resemble a professionally furnace-crafted glass artwork featuring stretched molten geometry, flowing translucent surfaces, trapped air bubbles, glowing internal refraction, and elegant hand-shaped glass forms. Preserve recognizable identity while fully converting the subject into sculptural glass.\n\nSTYLE RULES:\n• Transform the subject entirely into blown-glass sculpture\n• Preserve recognizable identity through silhouette and facial structure\n• Use translucent colored glass materials\n• Use stretched molten-glass geometry and furnace-crafted forms\n• Emphasize realistic glass refraction, reflection, and internal depth\n• Make the sculpture feel physically hand-blown and artisan-crafted\n\nGLASS FEATURES:\n• Translucent colored glass\n• Internal light refraction\n• Trapped air bubbles\n• Flowing molten contours\n• Stretched and softened glass geometry\n• Glossy reflective surfaces\n• Thick curved glass edges\n• Internal glow and optical depth\n• Furnace-crafted shaping marks\n• Elegant fluid sculptural forms\n\nVISUAL STYLE:\n• Fine-art glass sculpture aesthetics\n• Museum-quality craftsmanship\n• Realistic optical glass behavior\n• Elegant translucent coloration\n• Soft glowing illumination\n• Artisan hand-crafted realism\n\nANTI-REALISM RULES:\n• No human skin texture\n• No opaque surfaces\n• No matte materials\n• No realistic flesh\n• No plastic appearance\n• No CGI toy aesthetics\n• No rigid solid anatomy\n\nFINAL VALIDATION:\n• The final image must clearly resemble a hand-blown glass sculpture\n• The image must emphasize translucent glass, trapped bubbles, molten shaping, optical refraction, and furnace-crafted realism",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "• Preserve recognizable identity while fully converting the subject into glass sculpture\n• Use realistic blown-glass optical behavior and translucency\n• Add trapped air bubbles, stretched molten contours, and curved reflective surfaces\n• Emphasize furnace-crafted artisan realism and flowing glass geometry\n• Use glowing internal refraction and elegant translucent coloration\n• Ensure the sculpture feels physically hand-blown rather than digitally rendered\n• Avoid plastic, resin, wax, or toy-like materials\n• Make all visible surfaces clearly read as sculpted glass"
   },
   {
     "name": "GLASS DISTORTION",
@@ -34783,6 +34811,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "VELVET BLACKLIGHT POSTER",
+    "category": [
+      "BLACKLIGHT",
+      "PSYCHEDELIC",
+      "RETRO",
+      "POSTER ART",
+      "STYLIZED TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform the image into a 1970s velvet blacklight poster featuring fluorescent UV-reactive colors, psychedelic airbrush gradients, glowing cosmic imagery, and rich velvet texture.\n\nThe final image should resemble a vintage blacklight poster illuminated under ultraviolet lighting with glowing neon pigments, surreal cosmic atmosphere, saturated fluorescent gradients, and soft velvet-surface depth.\n\nSTYLE RULES:\n• Transform the image into authentic 1970s blacklight-poster artwork\n• Use fluorescent UV-reactive color palettes\n• Use psychedelic cosmic airbrush aesthetics\n• Use rich velvet-texture surfaces\n• Preserve recognizable identity while fully converting the image into blacklight-poster art\n• Emphasize glowing neon contrast and surreal retro atmosphere\n\nVISUAL ELEMENTS:\n• Fluorescent paint glow\n• UV-reactive neon colors\n• Velvet poster texture\n• Cosmic airbrush gradients\n• Psychedelic color transitions\n• Glowing stars and nebula forms\n• Surreal fantasy lighting\n• Saturated magenta, cyan, purple, electric blue, lime, and orange\n• Soft glowing edges\n• Retro poster composition\n\nVISUAL STYLE:\n• Vintage 1970s blacklight aesthetics\n• Airbrushed psychedelic fantasy art\n• Fluorescent poster glow\n• Rich velvet depth\n• Cosmic dreamlike atmosphere\n• High-saturation retro coloration\n\nANTI-REALISM RULES:\n• Avoid realistic photographic lighting\n• Avoid muted natural colors\n• Avoid modern cinematic grading\n• Avoid subtle realism\n• Avoid flat matte surfaces\n• Avoid ordinary poster printing aesthetics\n\nFINAL VALIDATION:\n• The final image must clearly resemble a vintage velvet blacklight poster\n• The image must emphasize fluorescent UV glow, psychedelic gradients, cosmic airbrush imagery, and rich velvet texture",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "• Preserve recognizable identity while converting the image into psychedelic blacklight artwork\n• Use fluorescent UV-reactive neon colors and cosmic airbrush gradients\n• Add rich velvet texture and glowing poster illumination\n• Emphasize saturated psychedelic contrast and retro fantasy aesthetics\n• Use surreal cosmic imagery, glowing stars, and dreamlike atmosphere\n• Maintain authentic 1970s blacklight-poster visual language\n• Avoid realism and modern cinematic styling\n• Make the image feel like a physically printed velvet blacklight poster under UV lighting"
   },
   {
     "name": "VENDING MACHINE ITEM R1",
