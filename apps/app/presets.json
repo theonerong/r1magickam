@@ -26163,19 +26163,6 @@
     "additionalInstructions": "FINAL RESULT:\nThe image should show the subject on a complete poster in the selected style with accurate era-specific design, typography, and humorous genre-aware flavor text, appearing as a believable real-world poster while embracing over-the-top parody."
   },
   {
-    "name": "POST-IMPRESSIONISM STYLE",
-    "category": [
-      "ART",
-      "PAINTING",
-      "STYLE TRANSFORMATION",
-      "CLASSICAL"
-    ],
-    "message": "Take a picture and transform the image into a Post-Impressionist-style painting.\n\nCORE CONCEPT (CRITICAL):\n• The scene is reinterpreted through a Post-Impressionist artistic lens\n• Subject(s) must remain recognizable but stylized\n• Emphasis on emotion, structure, and artistic expression over realism\n\nSTYLE CHARACTERISTICS:\n• Bold, expressive brushstrokes\n• Enhanced or non-naturalistic color palettes\n• Strong outlines or defined forms\n• Flattened perspective or simplified depth\n\nARTISTIC INTERPRETATION:\n• Shapes may be exaggerated or slightly distorted for effect\n• Lighting and color used to convey mood rather than accuracy\n• Composition may feel more structured or symbolic\n\nTEXTURE & MEDIUM:\n• Visible paint texture and directional brushwork\n• Oil-on-canvas appearance with rich pigment\n\nENVIRONMENT:\n• Preserve core scene elements but reinterpret with artistic freedom\n• Backgrounds may be simplified or stylized\n\nSTYLE:\n• Vibrant, expressive, and painterly\n• Balanced between structure and abstraction\n• Inspired by classic Post-Impressionist techniques",
-    "options": [],
-    "randomizeOptions": false,
-    "additionalInstructions": "FINAL RESULT:\nThe image should resemble a classic Post-Impressionist painting with bold color, expressive brushwork, and stylized yet recognizable subject matter."
-  },
-  {
     "name": "POTATO",
     "category": [
       "HUMOR",
@@ -28258,6 +28245,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "IDENTITY PRESERVATION (CRITICAL):\n• The subject must remain subtly recognizable through abstract suggestion rather than literal shape\n• Facial characteristics such as eye spacing, head proportions, posture, or distinctive features should emerge naturally within the ink patterns\n• The result must look like a psychological inkblot that coincidentally resembles the subject, not an inkblot cut into the subject’s shape\n• Avoid obvious face cutouts, traced contours, or literal body forms\n\nINK AND COLOR:\n• Primarily black ink on an off-white or aged paper background\n• Optional restrained accent colors (dark red, muted blue, sepia) only if consistent with real Rorschach plates\n• Ink density should vary with darker central masses and lighter peripheral diffusion\n\nCOMPOSITION AND PRESENTATION:\n• Centered composition with ample negative space\n• Flat, scanned-paper or photographed-test-card appearance\n• Subtle paper texture, creases, or aging allowed\n• No background scenery or environment\n\nPSYCHOLOGICAL TONE:\n• Ambiguous, unsettling, and open to interpretation\n• Image should invite multiple interpretations rather than a single obvious reading\n• Serious, clinical tone rather than playful or decorative\n\nFINAL RESULT:\nThe final image should look like an authentic Rorschach test plate created by ink folded on paper, where the subject’s identity emerges abstractly through symmetry and ink behavior rather than literal depiction."
+  },
+  {
+    "name": "ROTOSCOPE",
+    "category": [
+      "ANIMATION",
+      "ROTOSCOPING",
+      "ILLUSTRATION",
+      "FILMMAKING",
+      "STYLIZED TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform the subject into a rotoscoped image.\n\nThe final image should appear as though it was created by an artist tracing over live-action footage frame-by-frame. Preserve the recognizable identity, facial features, expression, pose, clothing, and overall appearance of the subject while converting the image into a handcrafted rotoscope animation frame.\n\nThe artwork should capture the distinctive look of traditional and digital rotoscoping, where realistic movement and anatomy are preserved but rendered through drawn, painted, inked, or digitally illustrated linework.\n\nSTYLE RULES:\n• Preserve recognizable identity\n• Preserve realistic anatomy and proportions\n• Preserve facial structure and expression\n• Preserve realistic pose and body language\n• Transform photographic details into artist-rendered forms\n• Emphasize hand-created animation aesthetics\n• Create the appearance of traced live-action footage\n• Maintain fluid realism while introducing artistic interpretation\n\nROTOSCOPE CHARACTERISTICS:\n• Visible artist-created outlines\n• Hand-drawn contour lines\n• Simplified but recognizable forms\n• Clean traced silhouettes\n• Illustrated facial details\n• Animation-style rendering\n• Frame-by-frame artwork appearance\n• Realistic movement references\n• Human performance preserved through drawing\n• Stylized rendering built upon realistic source material\n\nVISUAL CHARACTERISTICS:\n• Strong contour definition\n• Simplified shading\n• Graphic shapes\n• Illustrated surfaces\n• Hand-rendered appearance\n• Painterly or inked finishing\n• Animation production aesthetics\n• Clear separation between subject and environment\n• Real-world proportions translated into artwork\n\nANIMATION AESTHETICS:\n• Traditional rotoscope animation\n• Hand-painted animation frames\n• Ink-and-paint appearance\n• Independent animated film aesthetics\n• Digital rotoscope artwork\n• Motion-picture animation style\n• Frame capture appearance\n• Cinematic illustration techniques\n\nBACKGROUND RULES:\n• Backgrounds may also be rotoscoped\n• Preserve scene readability\n• Simplify photographic complexity into illustrated forms\n• Maintain cinematic composition\n• Create a cohesive animated environment\n\nARTISTIC APPROACH:\n• Build the artwork upon realistic observation\n• Preserve authentic human appearance\n• Translate reality into animation\n• Maintain natural proportions and expressions\n• Emphasize the handcrafted nature of the image\n\nANTI-CHEAT:\n• Do NOT create a normal photograph\n• Do NOT create photorealistic digital painting\n• Do NOT create comic-book artwork\n• Do NOT create anime by default\n• Do NOT create cel-shaded 3D renders\n• Do NOT create vector clip-art\n• Do NOT create cartoon exaggeration\n• Do NOT distort anatomy unnaturally\n• Do NOT remove the connection to realistic live-action source imagery\n\nFINAL VALIDATION:\n• The image must clearly resemble a rotoscoped animation frame\n• The subject must remain recognizable\n• Realistic anatomy and proportions must be preserved\n• The artwork must appear hand-created over live-action reference\n• The final image should resemble professional rotoscope animation rather than a photograph\n• The viewer should immediately recognize the image as rotoscoped artwork derived from live-action footage",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "• Preserve recognizable identity, facial features, and expression\n• Convert photographic details into hand-rendered artwork\n• Use clean outlines, traced contours, and illustrated surfaces\n• Preserve realistic anatomy, proportions, and body language\n• Emphasize the appearance of frame-by-frame animation artwork\n• Maintain the connection to realistic live-action source imagery\n• Use handcrafted animation aesthetics rather than comic-book or cartoon styles\n• Simplify photographic detail while preserving realism\n• Create a convincing rotoscope-animation appearance\n• The final result should look like a frame from a professionally rotoscoped animated film"
   },
   {
     "name": "ROTTEN TOMATOES",
