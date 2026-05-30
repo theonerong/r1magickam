@@ -1178,9 +1178,9 @@
                         <p class="tutorial-text">
                             <strong>Tutorial Searching:</strong> The tutorial has a search engine. Type your search using individual words or sentences. The back and forward arrows cycle through the text to find typed words.<br>
 
-                            <strong>Navigating:</strong> Up and down arrows in the sections with preset lists move up/down per page when clicked once.  Double-clicking jumps to the next or previous letter of the alphabet within that section (favorites and non-favorites are navigated separately).  Triple-clicking jumps all the way to the top or bottom of the list. In the settings menu, single click the up/down arrows moves to next setting up/down and double click jumps all the way up/down the list.<br>
+                            <strong>Navigating:</strong> Up and down arrows in the sections with preset lists move up/down per page when clicked once.  Double-clicking jumps to the next or previous letter of the alphabet within that section (favorites and non-favorites are navigated separately).  Triple-clicking jumps all the way to the top or bottom of the list. In the select options modal (When options are enabled), single clicking the up/down arrows move to the next option and double clicking jumps to the next options group. In the settings menu, single click the up/down arrows moves to next setting up/down and double click jumps all the way up/down the list.<br>
 
-                            <strong>Hiding/Reveal Buttons:</strong> There are left and right carousels in the main camera screen and the image viewer in the gallery.  Single click the screen to hide/reveal the carousels. You may adjust these settings (as well as the opacity of the carousel buttons) within settings (in the Main Camera Screen and Gallery Image Viewer Screen subsections).<br>
+                            <strong>Hiding/Reveal Buttons:</strong> There are left and right carousels in the main camera screen and the image viewer in the gallery. Single click the screen to hide/reveal the carousels. You may adjust these settings (as well as the opacity of the carousel buttons) within settings (in the Main Camera Screen and Gallery Image Viewer Screen subsections).<br>
 
                             <strong>Category Searching:</strong> All presets are categorized. You can see these categories at the bottom of the Visible Preset list menu when a particular preset is highlighted. Therefore, if you see a preset that you like, you can do a search for similar presets that share that category (*best to do this in the Visible Preset Menu). You can also click on the desired category on the bottom to filter all presets in that category as well.<br>
 
@@ -1698,7 +1698,11 @@ All of the presets are optimized to avoid "camera ran dry" or "content filter" i
         <div class="styles-menu-content">
             <div class="styles-menu-header">
                 <h2>Select Option(s)</h2>
-                <button id="close-manual-options" class="close-button">×</button>
+                <div class="menu-nav-buttons">
+                    <button id="manual-options-nav-up" class="menu-jump-button" title="Previous option">↑</button>
+                    <button id="manual-options-nav-down" class="menu-jump-button" title="Next option">↓</button>
+                    <button id="close-manual-options" class="close-button">×</button>
+                </div>
             </div>
             <div class="styles-menu-scroll-container">
                 <div style="padding: 10px; color: #aaa; font-size: 11px; border-bottom: 1px solid #333; margin-bottom: 10px;">
