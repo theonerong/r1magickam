@@ -2533,6 +2533,20 @@
     "additionalInstructions": ""
   },
   {
+    "name": "AVANT-GARDE",
+    "category": [
+      "AVANT-GARDE",
+      "EXPERIMENTAL",
+      "CONTEMPORARY ART",
+      "CONCEPTUAL",
+      "ARTISTIC TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform the subject into an Avant-Garde artwork.\n\nThe final image should radically challenge traditional artistic expectations through experimentation, innovation, conceptual thinking, and unconventional visual language. The artwork should prioritize ideas, exploration, and artistic disruption over realism, beauty, or convention.\n\nPreserve enough of the subject to maintain conceptual continuity while aggressively reinterpreting visual structure, meaning, and presentation.\n\nSTYLE RULES:\n• Challenge traditional aesthetics\n• Emphasize innovation and experimentation\n• Prioritize ideas over realism\n• Use unconventional visual solutions\n• Break artistic expectations\n• Encourage intellectual engagement\n• Reinterpret familiar forms in unfamiliar ways\n\nVISUAL CHARACTERISTICS:\n• Radical abstraction\n• Unexpected compositions\n• Experimental materials and forms\n• Conceptual visual language\n• Deconstruction and reconstruction\n• Challenging symbolism\n• Visual disruption\n• Innovative presentation\n• Boundary-pushing aesthetics\n\nARTISTIC APPROACH:\n• Question assumptions\n• Disrupt visual conventions\n• Prioritize artistic exploration\n• Explore new formal possibilities\n• Challenge the viewer's expectations\n\nFINAL VALIDATION:\n• The artwork must clearly feel experimental and innovative\n• Traditional realism must not dominate the image\n• The image should prioritize conceptual and artistic exploration\n• The final result must feel bold, original, and boundary-pushing",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "• Preserve conceptual ties to the original subject\n• Emphasize experimentation and innovation\n• Challenge conventional visual expectations\n• Use unconventional composition and form\n• Prioritize artistic ideas over realism\n• Encourage intellectual interpretation\n• Avoid traditional academic representation\n• Produce an authentic Avant-Garde artwork"
+  },
+  {
     "name": "AVATAR",
     "category": [
       "MOVIES",
@@ -3562,6 +3576,136 @@
     ],
     "randomizeOptions": true,
     "additionalInstructions": ""
+  },
+  {
+    "name": "BOOK ART",
+    "category": [
+      "BOOK ART",
+      "ILLUSTRATION",
+      "ENGRAVING",
+      "HISTORICAL",
+      "ARTISTIC TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform the subject into an eighteenth-century illustrated book plate.\n\nThe final image should resemble a professionally printed historical book illustration created during the Age of Enlightenment. Preserve recognizable identity while translating the image into the refined visual language of engraved illustrations, decorative typography, ornamental page design, and classical book arts.\n\nThe artwork should appear as though it was printed inside a luxurious eighteenth-century volume using authentic historical printing and illustration techniques.\n\nSTYLE RULES:\n• Preserve recognizable identity\n• Transform the image into a historical book illustration\n• Emphasize engraving and printmaking aesthetics\n• Use period-appropriate decorative design\n• Create authentic historical presentation\n• Integrate illustration with book-art traditions\n\nVISUAL CHARACTERISTICS:\n• Fine engraved linework\n• Etched hatching and crosshatching\n• Decorative borders and ornaments\n• Frontispiece aesthetics\n• Historical typography\n• Enlightenment-era design language\n• Copperplate engraving textures\n• Printed illustration appearance\n• Fine-art publishing craftsmanship\n\nARTISTIC APPROACH:\n• Emphasize illustration over realism\n• Create the appearance of a printed plate\n• Preserve clarity and craftsmanship\n• Integrate historical publishing traditions\n\nFINAL VALIDATION:\n• The image must resemble an eighteenth-century book illustration\n• Engraving and printmaking aesthetics must dominate\n• The final artwork must feel authentically historical\n• The image should resemble a plate from a rare illustrated volume",
+    "randomizeOptions": true,
+    "optionGroups": [
+      {
+        "title": "ILLUSTRATION COLOR",
+        "options": [
+          {
+            "id": "001",
+            "text": "Black ink engraving printed on aged ivory paper"
+          },
+          {
+            "id": "002",
+            "text": "Warm sepia engraving on antique parchment paper"
+          },
+          {
+            "id": "003",
+            "text": "Burnt umber engraved illustration with historical printing tones"
+          },
+          {
+            "id": "004",
+            "text": "Monochrome charcoal-black copperplate engraving"
+          },
+          {
+            "id": "005",
+            "text": "Faded gray antique intaglio illustration"
+          },
+          {
+            "id": "006",
+            "text": "Deep walnut-brown eighteenth-century print coloration"
+          },
+          {
+            "id": "007",
+            "text": "Hand-tinted pastel engraving with subtle historical coloring"
+          },
+          {
+            "id": "008",
+            "text": "Hand-colored watercolor book plate typical of luxury editions"
+          },
+          {
+            "id": "009",
+            "text": "Muted blue-gray scientific illustration coloring"
+          },
+          {
+            "id": "010",
+            "text": "Soft red-brown copperplate engraving tones"
+          },
+          {
+            "id": "011",
+            "text": "Sage-green hand-colored botanical illustration palette"
+          },
+          {
+            "id": "012",
+            "text": "Antique gold and sepia decorative print coloration"
+          }
+        ]
+      },
+      {
+        "title": "PRINTING METHOD",
+        "options": [
+          {
+            "id": "001",
+            "text": "Copperplate engraving with highly detailed linework and elegant shading"
+          },
+          {
+            "id": "002",
+            "text": "Etching with expressive engraved marks and refined detail"
+          },
+          {
+            "id": "003",
+            "text": "Intaglio printmaking with sophisticated tonal engraving"
+          },
+          {
+            "id": "004",
+            "text": "Wood engraving inspired by Thomas Bewick's finely detailed style"
+          },
+          {
+            "id": "005",
+            "text": "Luxury frontispiece illustration featuring ornate decorative engraving"
+          }
+        ]
+      },
+      {
+        "title": "BOOK TYPE",
+        "options": [
+          {
+            "id": "001",
+            "text": "Natural history volume featuring scientific observation and classification"
+          },
+          {
+            "id": "002",
+            "text": "Botanical reference book with scholarly illustration aesthetics"
+          },
+          {
+            "id": "003",
+            "text": "Travel and exploration journal documenting remarkable discoveries"
+          },
+          {
+            "id": "004",
+            "text": "Mythological and classical literature featuring heroic illustration"
+          },
+          {
+            "id": "005",
+            "text": "Encyclopedia plate emphasizing education and enlightenment"
+          },
+          {
+            "id": "006",
+            "text": "Satirical eighteenth-century publication with narrative illustration"
+          },
+          {
+            "id": "007",
+            "text": "Scientific treatise featuring analytical and educational imagery"
+          },
+          {
+            "id": "008",
+            "text": "Luxury collector's volume featuring elaborate decorative artwork"
+          }
+        ]
+      }
+    ],
+    "additionalInstructions": "• Preserve recognizable identity while translating the image into historical book illustration form\n• Use authentic eighteenth-century engraving and printmaking aesthetics\n• Apply the selected illustration color faithfully\n• Apply the selected printing method faithfully\n• Apply the selected book type faithfully\n• Emphasize engraved linework, hatching, and historical craftsmanship\n• Create the appearance of a printed plate from a rare antique volume\n• Avoid modern illustration techniques and contemporary graphic design\n• Produce an authentic Enlightenment-era book-art illustration"
   },
   {
     "name": "BOOK COVER",
@@ -5942,6 +6086,20 @@
     "randomizeOptions": true,
     "additionalInstructions": "FINAL RESULT:\nThe image should show the subject fully integrated into a classic TV commercial scene as the main actor, with era-appropriate styling, authentic set design, product placement, and the famous tagline clearly visible - looking like a paused moment from an iconic television advertisement with full frame visible and easily readable on small screens."
   },
+   {
+    "name": "CLASSICISM",
+    "category": [
+      "CLASSICISM",
+      "NEOCLASSICAL",
+      "FINE ART",
+      "TRADITIONAL ART",
+      "ARTISTIC TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform the subject into a Classical artwork inspired by the ideals of ancient Greece and Rome.\n\nPreserve recognizable identity while elevating the subject according to the principles of harmony, order, balance, proportion, clarity, and idealized beauty. The final image should resemble a refined work created according to the highest standards of classical artistic tradition.\n\nThe artwork should emphasize dignity, rationality, elegance, and idealized form rather than raw emotion or spontaneity.\n\nSTYLE RULES:\n• Preserve recognizable identity\n• Emphasize harmony and balance\n• Use idealized proportions\n• Create visual clarity and order\n• Draw inspiration from Greek and Roman traditions\n• Favor elegance and refinement\n• Maintain disciplined composition\n\nVISUAL CHARACTERISTICS:\n• Balanced compositions\n• Idealized anatomy\n• Refined forms\n• Symmetrical organization\n• Noble subject presentation\n• Architectural harmony\n• Classical drapery and design\n• Controlled emotion\n• Rational beauty\n\nARTISTIC APPROACH:\n• Pursue perfection of form\n• Emphasize timeless ideals\n• Use orderly visual structure\n• Elevate the subject through artistic refinement\n• Celebrate beauty, proportion, and clarity\n\nFINAL VALIDATION:\n• The artwork must clearly reflect classical ideals\n• Harmony, balance, and proportion should dominate the image\n• The subject should appear elevated and refined\n• The final image must resemble a masterwork of Classical art",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "• Preserve recognizable identity while applying classical ideals\n• Emphasize harmony, balance, and order\n• Use idealized proportions and refined forms\n• Create a dignified and noble presentation\n• Draw inspiration from Greek and Roman artistic traditions\n• Avoid visual chaos and excessive emotionalism\n• Maintain clarity and compositional discipline\n• Produce an authentic Classical artwork"
+  },
   {
     "name": "CLAYMATION",
     "category": [
@@ -7593,6 +7751,20 @@
     ],
     "randomizeOptions": true,
     "additionalInstructions": "FINAL RESULT:\nThe image should show the subject as an actual competitor in the selected televised competition with authentic venue design, broadcast graphics, appropriate attire, and that signature competitive moment - looking like a screenshot from an actual broadcast."
+  },
+  {
+    "name": "CONCEPTUAL ART",
+    "category": [
+      "CONCEPTUAL ART",
+      "CONTEMPORARY ART",
+      "IDEA-BASED",
+      "EXPERIMENTAL",
+      "ARTISTIC TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform the subject into a Conceptual Art artwork.\n\nThe final image should prioritize the underlying idea, concept, philosophy, question, critique, or intellectual framework over traditional aesthetics or technical realism. The artwork should encourage interpretation, analysis, and active thought rather than passive viewing.\n\nPreserve enough recognizable elements of the original subject to communicate the concept while transforming the image into a work whose meaning and intellectual content are more important than visual beauty.\n\nConceptual Art often uses language, diagrams, instructions, maps, documentation, symbols, found objects, systems, data, categorization, labels, measurements, archives, and visual logic to communicate ideas.\n\nSTYLE RULES:\n• Prioritize concept over appearance\n• Preserve conceptual links to the original subject\n• Encourage intellectual engagement\n• Emphasize ideas rather than aesthetics\n• Use visual systems and symbolic logic\n• Challenge traditional definitions of art\n• Explore meaning, context, and interpretation\n\nVISUAL CHARACTERISTICS:\n• Text and language elements\n• Diagrams and annotations\n• Labels and classifications\n• Mapping systems\n• Instructions and procedural elements\n• Documentation aesthetics\n• Archives and collections\n• Found-object logic\n• Visual research presentation\n• Data visualization concepts\n• Philosophical symbolism\n• Analytical structures\n\nARTISTIC APPROACH:\n• Present ideas visually\n• Encourage critical thinking\n• Explore definitions and assumptions\n• Prioritize intellectual meaning\n• Question conventional artistic expectations\n• Blur boundaries between art, information, and communication\n\nANTI-REALISM RULES:\n• Avoid purely decorative imagery\n• Avoid prioritizing beauty over meaning\n• Avoid traditional representational goals\n• Avoid purely aesthetic decision-making\n\nFINAL VALIDATION:\n• The artwork must clearly emphasize ideas over appearance\n• The image should provoke thought and interpretation\n• Conceptual meaning should dominate the artwork\n• The final result must resemble authentic Conceptual Art rather than conventional illustration",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "• Preserve conceptual ties to the original subject\n• Emphasize intellectual content over visual realism\n• Use text, diagrams, labels, maps, systems, or documentation where appropriate\n• Encourage analysis and interpretation\n• Explore philosophical, social, or artistic questions\n• Challenge conventional assumptions about art\n• Avoid purely decorative aesthetics\n• Produce an authentic Conceptual Art piece"
   },
   {
     "name": "CONNECT THE DOTS",
@@ -12260,6 +12432,20 @@
     "additionalInstructions": ""
   },
   {
+    "name": "FIGURATIVISM",
+    "category": [
+      "FINE ART",
+      "FIGURATIVE",
+      "PAINTING",
+      "TRADITIONAL ART",
+      "ARTISTIC TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform the subject into a work of Figurativist art.\n\nPreserve the recognizable identity, proportions, structure, and essential characteristics of the subject while reinterpreting them through artistic observation rather than direct replication. The final image should clearly reference reality while introducing subtle artistic deviations, stylization, simplification, and interpretation.\n\nFigurativism occupies the space between realism and abstraction. The subject should remain identifiable, but forms, colors, textures, proportions, and details may be artistically modified to emphasize expression, composition, beauty, symbolism, or artistic vision.\n\nSTYLE RULES:\n• Preserve recognizable identity and likeness\n• Avoid exact photographic duplication\n• Use artistic interpretation rather than direct copying\n• Balance realism and stylization\n• Emphasize visual design and composition\n• Allow subtle departures from reality\n• Maintain believable forms and structure\n• Preserve recognizable subject matter\n\nVISUAL CHARACTERISTICS:\n• Simplified but recognizable forms\n• Controlled stylization\n• Artistic color interpretation\n• Refined composition\n• Painterly surfaces\n• Emphasis on shape and form\n• Selective detail rendering\n• Balanced realism and artistic invention\n• Individual artistic expression\n\nANTI-REALISM RULES:\n• Avoid photorealism\n• Avoid mechanical copying\n• Avoid hyperrealistic rendering\n• Avoid camera-like replication\n\nFINAL VALIDATION:\n• The subject must remain recognizable\n• The artwork must clearly reference reality\n• The image must feel artistically interpreted rather than copied\n• The final image must balance realism with creative stylization",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "• Preserve recognizable identity while introducing artistic interpretation\n• Emphasize likeness rather than exact replication\n• Use painterly design, form, color, and composition\n• Maintain believable anatomy and structure\n• Allow artistic deviations from reality\n• Avoid strict realism and photographic duplication\n• Create a refined fine-art appearance\n• Produce a convincing figurative artwork"
+  },
+  {
     "name": "FILM NEGATIVE",
     "category": [
       "RETRO",
@@ -13588,6 +13774,20 @@
     }
   ],
   "additionalInstructions": "Apply only the selected transformation options but apply each one with total commitment and maximum era accuracy. Get the logos right, the proportions right, the color palettes right. Every selected category must be transformed completely — no modern anachronisms survive within a selected category. The more specific and obscure the Gen-X reference the better. The final image must be impossible to date to anything other than 1975 to 1989. The overall image should feel like a photograph actually taken during that period — grain, color temperature, and all."
+  },
+  {
+    "name": "GENERAL FOLK ART",
+    "category": [
+      "FOLK ART",
+      "TRADITIONAL",
+      "CULTURAL",
+      "DECORATIVE",
+      "ARTISTIC TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform the subject into a work of traditional Folk Art.\n\nThe final image should resemble a handmade artwork created within a cultural tradition and passed down through generations. Emphasize craftsmanship, decorative design, storytelling, symbolism, community identity, and vernacular artistic traditions.\n\nPreserve recognizable identity while reinterpreting the subject through the simplified, handcrafted visual language of Folk Art.\n\nSTYLE RULES:\n• Use handmade artistic aesthetics\n• Emphasize cultural storytelling\n• Use decorative patterns and ornamentation\n• Favor simplicity over realism\n• Use symbolic representation\n• Celebrate tradition and craftsmanship\n• Maintain warmth and authenticity\n\nVISUAL CHARACTERISTICS:\n• Flattened perspective\n• Simplified forms\n• Decorative motifs\n• Bold shapes\n• Traditional patterns\n• Handcrafted appearance\n• Community-centered imagery\n• Stylized figures\n• Naive artistic charm\n• Rich cultural symbolism\n\nCOLOR CHARACTERISTICS:\n• Strong decorative colors\n• Harmonious palettes\n• Hand-painted appearance\n• Traditional craft aesthetics\n• Folk-inspired ornamentation\n\nANTI-REALISM RULES:\n• Avoid photorealism\n• Avoid academic realism\n• Avoid modern commercial illustration\n• Avoid digital-art aesthetics\n\nFINAL VALIDATION:\n• The artwork must clearly resemble traditional Folk Art\n• The image must feel handmade and culturally rooted\n• Decorative design and craftsmanship should be emphasized\n• The subject must remain recognizable while fully translated into Folk Art language",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "• Preserve recognizable identity through folk-art stylization\n• Use decorative motifs, patterns, and symbolism\n• Emphasize handcrafted artistic qualities\n• Maintain cultural warmth and authenticity\n• Simplify forms and perspective\n• Avoid realism and photographic rendering\n• Create the appearance of a handmade traditional artwork\n• Prioritize craftsmanship and storytelling"
   },
   {
     "name": "GENETIC BLUEPRINT",
@@ -17270,6 +17470,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "ABSOLUTE REQUIREMENT:"
+  },
+  {
+    "name": "LAWNMOWER MAN",
+    "category": [
+      "RETRO CGI",
+      "VIRTUAL REALITY",
+      "CYBERSPACE",
+      "1990s",
+      "STYLIZED TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform the subject into a character inhabiting a surreal 1990s virtual-reality cyberspace inspired by early computer-generated imagery.\n\nPreserve the recognizable face, identity, facial structure, expression, and major features of the subject while converting the entire scene into exaggerated early-1990s CGI. The final image should resemble a frame from an ambitious but technologically limited virtual-reality movie created during the infancy of computer graphics.\n\nSTYLE RULES:\n• Transform the subject into a retro CGI cyberspace entity\n• Preserve recognizable facial identity\n• Use the subject's face as the primary recognizable element\n• Rebuild the body using primitive computer-generated geometry\n• Create a surreal virtual-reality environment surrounding the subject\n• Emphasize the limitations and aesthetics of early CGI technology\n• The final image should feel computational, synthetic, and digitally constructed\n\nRETRO CGI CHARACTER DESIGN:\n• Low-polygon geometry\n• Primitive 3D modeling\n• Visible polygonal surfaces\n• Faceted shading\n• Simplified geometric anatomy\n• Abstract cybernetic body structures\n• Geometric armor and energy suits\n• Wireframe elements\n• Floating geometric appendages\n• Polygonal wings, halos, or cybernetic extensions\n• Bright synthetic materials\n• Early CGI rendering artifacts\n\nFACIAL RULES:\n• Preserve recognizable identity\n• Preserve facial proportions and expression\n• Face may be integrated into the geometric CGI form\n• Facial surfaces may appear digitized, polygonized, or computationally reconstructed\n• Avoid photorealistic rendering\n• The face should appear embedded within the virtual-reality aesthetic\n\nCYBERSPACE ENVIRONMENT:\n• Infinite virtual-reality landscapes\n• Abstract digital architecture\n• Floating geometric structures\n• Endless polygonal horizons\n• Neon energy tunnels\n• Data streams\n• Digital clouds\n• Wireframe terrain\n• Floating platforms\n• Abstract cybernetic temples\n• Energy grids\n• Geometric dimensions\n• Surreal VR dreamscapes\n• Impossible digital environments\n\nVISUAL EFFECTS:\n• Early CGI glow effects\n• Neon lighting\n• Primitive lens flares\n• Energy beams\n• Floating geometric particles\n• Digital light trails\n• Chromatic neon gradients\n• Synthetic atmospheric effects\n• Retro cyberspace illumination\n• Computational visual noise\n\nCOLOR PALETTE:\n• Electric blue\n• Neon purple\n• Magenta\n• Cyan\n• Emerald green\n• Chrome silver\n• Bright gold\n• Synthetic rainbow gradients\n• Vibrant digital colors\n\nRENDERING STYLE:\n• Early 1990s CGI\n• Primitive rendering technology\n• Faceted geometry\n• Limited polygon counts\n• Artificial lighting\n• Digital airbrush effects\n• Retro computer graphics\n• Ambitious but technologically constrained visuals\n• Experimental virtual-reality aesthetics\n\nANTI-REALISM RULES:\n• No modern CGI realism\n• No ray tracing\n• No physically based rendering\n• No modern game-engine visuals\n• No photorealistic materials\n• No realistic skin rendering\n• No cinematic realism\n• No contemporary VFX quality\n\nANTI-CHEAT:\n• Do NOT create modern CGI\n• Do NOT create realistic virtual reality headsets\n• Do NOT create realistic video-game graphics\n• Do NOT create contemporary sci-fi visuals\n• Do NOT create photorealistic cyberpunk imagery\n• Do NOT create realistic humans standing in a digital environment\n• The subject must appear transformed into retro CGI itself\n\nFINAL VALIDATION:\n• The final image must unmistakably resemble early-1990s virtual-reality CGI\n• The subject must appear constructed from primitive computer graphics\n• The environment must resemble surreal retro cyberspace\n• The image must emphasize low-polygon geometry, neon energy, abstract digital landscapes, and experimental virtual-reality aesthetics\n• The result should feel like an ambitious 1990s vision of cyberspace created before modern CGI standards existed",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "• Preserve recognizable facial identity while transforming the subject into retro CGI\n• Emphasize primitive polygonal modeling and faceted geometry\n• Use surreal virtual-reality dreamscapes and abstract digital environments\n• Incorporate floating geometric forms, wireframes, energy grids, and impossible cyberspace architecture\n• Use bright neon colors and synthetic digital lighting\n• Make the image feel computational, experimental, and technologically limited\n• Emphasize the wild, unrefined aesthetic of early computer graphics\n• Avoid modern CGI techniques and realism\n• Create the impression of a 1990s vision of cyberspace where imagination exceeded available technology\n• The final image should look like a frame from a classic early virtual-reality CGI film"
   },
   {
     "name": "LCARS",
@@ -22406,6 +22620,162 @@
     "additionalInstructions": "FINAL RESULT:\nA monumental, maximalist painting featuring thick, tactile textures and raw narrative symbols.\n\nCORE REQUIREMENTS:\n• HEAVY IMPOSTO (visibly thick paint and grit)\n• GESTURAL AGGRESSION (violent, rapid strokes)\n• MAXIMALIST composition with primitive or urban motifs\n• VIVID but often muddy or clashing color palettes"
   },
   {
+    "name": "NEO-IMPRESSIONISM",
+    "category": [
+      "NEO-IMPRESSIONISM",
+      "POINTILLISM",
+      "DIVISIONISM",
+      "FINE ART",
+      "ARTISTIC TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform the subject into a Neo-Impressionist masterpiece.\n\nPreserve recognizable identity while reconstructing the image using the scientific color theories and structured techniques of Neo-Impressionism. The final image should appear meticulously planned, luminous, optically vibrant, and composed from carefully organized applications of separated color.\n\nThe artwork should emphasize optical color mixing, structured compositions, and controlled execution rather than spontaneous brushwork.\n\nCORE PRINCIPLES:\n• Preserve recognizable identity\n• Use scientific color relationships\n• Build forms through separated color application\n• Create optical mixing effects\n• Maintain structured compositions\n• Avoid loose improvisation\n• Emphasize luminosity and visual vibration\n\nVISUAL CHARACTERISTICS:\n• Pure color relationships\n• Carefully organized surfaces\n• Optical color blending\n• Deliberate composition\n• Motionless, sculptural forms\n• Consistent execution\n• Enhanced luminosity\n• Structured painting methodology",
+    "randomizeOptions": true,
+    "optionGroups": [
+      {
+        "title": "TECHNIQUE",
+        "options": [
+          {
+            "id": "001",
+            "text": "Pointillism using meticulously placed microscopic dots of pure contrasting color throughout the entire image"
+          },
+          {
+            "id": "002",
+            "text": "Divisionism using separated strokes and patches of unmixed color based on scientific color theory"
+          },
+          {
+            "id": "003",
+            "text": "Dense Pointillist construction emphasizing optical blending and maximum visual shimmer"
+          },
+          {
+            "id": "004",
+            "text": "Hybrid Neo-Impressionist technique combining Pointillist dots and Divisionist color separation"
+          }
+        ]
+      },
+      {
+        "title": "COLOR THEORY",
+        "options": [
+          {
+            "id": "001",
+            "text": "Complementary-color interactions designed to maximize luminosity and optical vibration"
+          },
+          {
+            "id": "002",
+            "text": "Primary-color emphasis using scientifically arranged pure pigments"
+          },
+          {
+            "id": "003",
+            "text": "High-luminosity palette emphasizing light, atmosphere, and color brilliance"
+          },
+          {
+            "id": "004",
+            "text": "Balanced color harmonies based on nineteenth-century optical theories"
+          }
+        ]
+      },
+      {
+        "title": "COMPOSITION",
+        "options": [
+          {
+            "id": "001",
+            "text": "Highly structured composition featuring calm, sculptural, motionless forms"
+          },
+          {
+            "id": "002",
+            "text": "Carefully balanced arrangement emphasizing harmony and geometric order"
+          },
+          {
+            "id": "003",
+            "text": "Formal composition with deliberate placement of every visual element"
+          },
+          {
+            "id": "004",
+            "text": "Monumental Neo-Impressionist composition emphasizing clarity and organization"
+          }
+        ]
+      }
+    ],
+    "additionalInstructions": "• Preserve recognizable identity while translating the image into Neo-Impressionist technique\n• Use optical color mixing rather than conventional blending\n• Emphasize luminosity and scientific color theory\n• Construct forms from separated color applications\n• Maintain structured, carefully planned compositions\n• Avoid loose Impressionist brushwork\n• Ensure consistent execution across the entire image\n• Create visual shimmer through juxtaposed color relationships\n• Produce an authentic Neo-Impressionist appearance"
+  },
+  {
+    "name": "NEO-SURREALISM",
+    "category": [
+      "SURREALISM",
+      "CONTEMPORARY ART",
+      "DREAMLIKE",
+      "FINE ART",
+      "ARTISTIC TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform the subject into a Neo-Surrealist artwork.\n\nPreserve recognizable identity while reimagining the subject within a contemporary dreamscape where ordinary reality is disrupted by impossible juxtapositions, uncanny transformations, subconscious symbolism, and visually striking surreal phenomena. The final image should blend modern visual sophistication with irrational dream logic.\n\nNeo-Surrealism combines the unexpected, the symbolic, the dreamlike, and the psychologically provocative while often employing highly refined contemporary execution.\n\nCORE PRINCIPLES:\n• Preserve recognizable identity\n• Introduce dreamlike transformations\n• Create unexpected visual relationships\n• Blend reality and imagination\n• Employ symbolic imagery\n• Challenge ordinary perception\n• Create an uncanny atmosphere\n• Maintain artistic coherence despite impossible scenarios",
+    "randomizeOptions": true,
+    "optionGroups": [
+      {
+        "title": "SURREAL MECHANISM",
+        "options": [
+          {
+            "id": "001",
+            "text": "Ordinary objects transformed into impossible hybrid forms that merge unrelated materials, functions, and identities"
+          },
+          {
+            "id": "002",
+            "text": "Reality-bending scale distortions featuring gigantic small objects and miniature monumental forms"
+          },
+          {
+            "id": "003",
+            "text": "Dreamlike metamorphosis where anatomy, architecture, nature, and objects seamlessly merge together"
+          },
+          {
+            "id": "004",
+            "text": "Uncanny visual paradoxes where impossible events appear completely natural and believable"
+          }
+        ]
+      },
+      {
+        "title": "VISUAL APPROACH",
+        "options": [
+          {
+            "id": "001",
+            "text": "Hyper-realistic execution of impossible dream imagery"
+          },
+          {
+            "id": "002",
+            "text": "Cinematic contemporary surrealism with dramatic atmosphere and visual storytelling"
+          },
+          {
+            "id": "003",
+            "text": "Pop-surrealist aesthetics featuring vivid colors and striking contemporary imagery"
+          },
+          {
+            "id": "004",
+            "text": "Elegant fine-art surrealism emphasizing symbolism and subconscious themes"
+          }
+        ]
+      },
+      {
+        "title": "THEMATIC EMPHASIS",
+        "options": [
+          {
+            "id": "001",
+            "text": "Subconscious symbolism exploring memory, identity, and perception"
+          },
+          {
+            "id": "002",
+            "text": "Environmental and ecological dream imagery blending humanity with nature"
+          },
+          {
+            "id": "003",
+            "text": "Technological surrealism examining digital existence and contemporary life"
+          },
+          {
+            "id": "004",
+            "text": "Mythological and fantastical symbolism reimagined through modern visual language"
+          }
+        ]
+      }
+    ],
+    "additionalInstructions": "• Preserve recognizable identity while introducing surreal transformations\n• Create visually coherent dream logic\n• Blend reality and impossibility seamlessly\n• Emphasize contemporary execution and craftsmanship\n• Use symbolic imagery and unexpected juxtapositions\n• Maintain an uncanny but believable atmosphere\n• Avoid random chaos without artistic purpose\n• Produce an authentic Neo-Surrealist artwork"
+  },
+  {
     "name": "NEOCLASSICAL",
     "category": [
       "ART",
@@ -23625,6 +23995,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "PAINTERLY",
+    "category": [
+      "PAINTING",
+      "FINE ART",
+      "TRADITIONAL ART",
+      "EXPRESSIVE",
+      "ARTISTIC TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform the subject into a richly Painterly artwork.\n\nThe final image should celebrate the physical act of painting itself. Visible brushwork, expressive mark-making, thick paint application, and tactile surface textures should remain prominent throughout the composition. The viewer should be able to clearly see the artist's hand and process.\n\nRather than pursuing photographic perfection, the artwork should emphasize color, light, texture, and gesture.\n\nSTYLE RULES:\n• Preserve recognizable identity\n• Use visible brushstrokes\n• Emphasize paint texture and materiality\n• Reveal the artistic process\n• Build form through color and paint application\n• Favor expression over precision\n• Celebrate the medium itself\n\nVISUAL CHARACTERISTICS:\n• Visible brushwork\n• Expressive paint handling\n• Thick impasto textures\n• Layered paint surfaces\n• Dynamic mark-making\n• Textural depth\n• Loose and energetic application\n• Rich color relationships\n• Painterly interpretation of detail\n\nARTISTIC APPROACH:\n• Suggest details rather than fully rendering them\n• Build form through light, color, and texture\n• Use energetic surface treatment\n• Allow evidence of artistic decisions to remain visible\n\nFINAL VALIDATION:\n• Brushstrokes must remain clearly visible\n• Paint texture must be prominent\n• The image must celebrate the physical medium of paint\n• The final image must feel handcrafted rather than mechanically rendered",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "• Preserve recognizable identity while emphasizing painterly execution\n• Use visible brushstrokes and textured paint application\n• Build forms through color and light rather than precise outlines\n• Allow expressive mark-making throughout the image\n• Emphasize tactile surface qualities and impasto textures\n• Avoid photographic realism and invisible brushwork\n• Make the artistic process clearly visible\n• Produce an authentic painterly artwork"
   },
   {
     "name": "PAISLEY",
@@ -24920,6 +25304,20 @@
     "additionalInstructions": ""
   },
   {
+    "name": "PHOTOSHOPPED",
+    "category": [
+      "HUMOR",
+      "DIGITAL ART",
+      "PARODY",
+      "PHOTO MANIPULATION",
+      "STYLIZED TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform the subject into a hilariously bad Photoshop composition.\n\nThe final image should look unmistakably and intentionally photoshopped by an inexperienced editor using outdated editing tools and poor compositing techniques. The goal is not realism but the appearance of an obviously fake image where the editing mistakes are immediately visible.\n\nPreserve recognizable identity while placing the subject into an absurdly and deliberately poorly edited scene.\n\nSTYLE RULES:\n• The image must appear obviously manipulated\n• The editing mistakes must be intentional and highly visible\n• Preserve recognizable identity\n• Emphasize classic bad Photoshop failures\n• Create humorous visual absurdity\n• The final image should resemble an internet-famous Photoshop fail\n\nCLASSIC BAD PHOTOSHOP EFFECTS:\n• Poor cutout selections\n• Jagged cutout edges\n• Visible lasso-tool artifacts\n• Missing portions of hair\n• Uneven masking\n• Halo outlines around the subject\n• Obvious white outlines\n• Obvious black outlines\n• Incorrect feathering\n• Rough edge extraction\n• Clipping errors\n• Background fragments attached to the subject\n\nLIGHTING FAILURES:\n• Completely mismatched lighting\n• Wrong light direction\n• Wrong shadow direction\n• Missing shadows\n• Excessive shadows\n• Inconsistent highlights\n• Unrealistic illumination\n• Subject brightness does not match environment\n\nPERSPECTIVE FAILURES:\n• Incorrect scale\n• Subject too large\n• Subject too small\n• Floating above the ground\n• Incorrect horizon alignment\n• Perspective mismatch\n• Distorted proportions\n• Impossible positioning\n\nCOMPOSITING FAILURES:\n• Visible pasted appearance\n• Obvious image layering\n• Poor blending\n• Hard cut edges\n• Uneven transparency\n• Ghosting artifacts\n• Compression artifacts\n• JPEG damage\n• Mismatched image quality\n• Different resolutions combined together\n\nCOLOR FAILURES:\n• Color mismatch between subject and background\n• Incorrect white balance\n• Oversaturation\n• Random color shifts\n• Inconsistent contrast\n• Poor color correction\n• Unrealistic skin coloration\n\nBACKGROUND RULES:\n• Use absurd or inappropriate environments\n• Create obvious compositing mistakes\n• Make the subject look badly inserted into the scene\n• Preserve the humorous Photoshop-fail aesthetic\n\nOPTIONAL HUMOR ELEMENTS:\n• Subject standing in impossible locations\n• Subject interacting incorrectly with the environment\n• Floating objects\n• Cropped body parts\n• Duplicate body parts\n• Missing body parts due to bad masking\n• Obvious stock-photo backgrounds\n• Unrealistic travel-photo composites\n• Ridiculous action scenes\n\nANTI-CHEAT:\n• Do NOT create a convincing composite\n• Do NOT create professional retouching\n• Do NOT create realistic visual effects\n• Do NOT create seamless editing\n• Do NOT create modern high-end Photoshop work\n• Do NOT hide the editing mistakes\n• The mistakes must remain visible\n\nFINAL VALIDATION:\n• The image must immediately look badly photoshopped\n• Editing mistakes must be obvious without zooming in\n• The subject must remain recognizable\n• The final image should resemble a classic internet Photoshop fail\n• The humor should come from the poor editing quality itself\n• The viewer should instantly recognize that the image was intentionally and badly manipulated",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "• Preserve recognizable identity while creating an intentionally terrible Photoshop composite\n• Emphasize visible masking mistakes, cutout errors, and compositing failures\n• Use mismatched lighting, perspective, scale, and color grading\n• Add obvious halo artifacts and rough selections around the subject\n• Create a pasted-into-the-scene appearance\n• Include compression artifacts, resolution mismatches, and poor blending\n• Make the editing errors large enough to be immediately noticeable\n• Avoid professional-quality compositing or seamless integration\n• The image should resemble a famous Photoshop disaster rather than a convincing edit\n• The final result should be humorous, absurd, and unmistakably badly photoshopped"
+  },
+  {
     "name": "PI",
     "category": [
       "MATH",
@@ -25646,6 +26044,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "NOT ALLOWED:\n• Disrespectful to actual religious practices\n• Gratuitous gore\n• Pornographic elements\n• Making light of spiritual warfare\n\nFINAL RESULT:\nThe image should show the subject clearly recognizable but in a state of demonic possession - with eyes changed (rolled back/black/glowing), pale skin with dark veins, body contorted or levitating, in a dark bedroom or church setting with religious symbols, flickering lights, and objects floating - capturing that terrifying horror movie moment of spiritual warfare with photorealistic quality and dramatic lighting that shows the struggle between host and demon."
+  },
+  {
+    "name": "POST-IMPRESSIONISM",
+    "category": [
+      "POST-IMPRESSIONISM",
+      "FINE ART",
+      "PAINTING",
+      "MODERN ART",
+      "ARTISTIC TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform the subject into a Post-Impressionist masterpiece.\n\nPreserve recognizable identity while reinterpreting reality through expressive color, structural simplification, symbolic meaning, and personal artistic vision. The final image should move beyond the fleeting observation of Impressionism and instead emphasize emotional impact, decorative design, and underlying structure.\n\nPost-Impressionism values subjective interpretation over objective observation.\n\nSTYLE RULES:\n• Preserve recognizable identity\n• Use expressive color choices\n• Introduce artistic interpretation\n• Simplify and strengthen forms\n• Emphasize emotional impact\n• Allow symbolic meaning and mood\n• Use visible brushwork and strong design\n\nVISUAL CHARACTERISTICS:\n• Vivid color palettes\n• Non-naturalistic colors\n• Strong compositional structure\n• Simplified geometric forms\n• Decorative surface design\n• Expressive brushwork\n• Emotional atmosphere\n• Subjective visual interpretation\n• Distorted forms for expressive effect\n\nARTISTIC APPROACH:\n• Paint what is felt as well as what is seen\n• Prioritize mood and meaning\n• Use color symbolically and emotionally\n• Strengthen structural organization\n• Balance representation and artistic invention\n\nFINAL VALIDATION:\n• The image must clearly move beyond Impressionist observation\n• Color should be expressive rather than purely naturalistic\n• Forms should display structural simplification and artistic interpretation\n• The final image must feel emotionally and visually expressive",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "• Preserve recognizable identity while emphasizing subjective artistic vision\n• Use vivid and expressive color relationships\n• Simplify and strengthen visual forms\n• Allow symbolic and emotional interpretation\n• Use visible brushwork and decorative design\n• Avoid strict realism and purely observational rendering\n• Emphasize artistic expression and mood\n• Produce an authentic Post-Impressionist artwork"
   },
   {
     "name": "POSTCARD",
@@ -30565,6 +30977,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "ABSOLUTE PROHIBITIONS:\n• No missing outlines, bleed, or cut guides\n• No low-contrast or muddy colors\n• No single-sticker outputs\n\nFINAL RESULT:\nThe final image must look like a professionally prepared sticker sheet ready for commercial printing, with clear bleed, cut guides, bold outlines, and multiple expressive sticker versions of the subject."
+  },
+  {
+    "name": "STILL LIFE (INANIMATE OBJECTS)",
+    "category": [
+      "STILL LIFE",
+      "FINE ART",
+      "CLASSICAL",
+      "PAINTING",
+      "ARTISTIC TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform the subject into a traditional Still Life artwork.\n\nThis preset is intended primarily for inanimate objects. The final image should resemble a carefully composed fine-art still life emphasizing arrangement, composition, lighting, texture, color relationships, and visual harmony.\n\nThe artwork should celebrate ordinary objects through artistic observation, craftsmanship, and controlled composition. The scene should feel intentionally arranged by a master artist for study and contemplation.\n\nSTYLE RULES:\n• Preserve recognizable appearance of the objects\n• Emphasize composition and arrangement\n• Focus on texture, light, and form\n• Create a deliberate artistic setup\n• Use controlled lighting and balance\n• Celebrate everyday objects through artistic treatment\n\nVISUAL CHARACTERISTICS:\n• Carefully arranged objects\n• Controlled composition\n• Rich surface textures\n• Strong directional lighting\n• Detailed observation\n• Balanced visual hierarchy\n• Fine-art presentation\n• Classical studio atmosphere\n• Refined color relationships\n\nOPTIONAL THEMES:\n• Fruit and flowers\n• Books and manuscripts\n• Glassware and vessels\n• Instruments and tools\n• Decorative objects\n• Vanitas symbolism\n• Nature morte traditions\n\nFINAL VALIDATION:\n• The image must clearly resemble a traditional fine-art still life\n• Composition and lighting must be intentional\n• Objects should remain recognizable\n• The artwork should emphasize beauty, observation, and arrangement",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "• Intended primarily for inanimate subjects and objects\n• Arrange elements into a refined still-life composition\n• Emphasize light, texture, form, and color relationships\n• Use master-painter composition techniques\n• Create a contemplative fine-art atmosphere\n• Avoid casual snapshots and documentary photography\n• Preserve recognizable object identities\n• Produce an authentic museum-quality still life"
   },
   {
     "name": "STIPPLE ENGRAVING",
