@@ -6727,6 +6727,80 @@ async function showManualOptionsModal(preset, sections) {
       const firstRadio = list.querySelector(`input[name="manual-option-section-${sectionIndex}"]`);
       if (firstRadio) firstRadio.checked = true;
     });
+
+    // ── Arrow navigation setup ──
+    // Build a flat array of all radios in DOM order
+    const allRadios = Array.from(list.querySelectorAll('input[type="radio"]'));
+
+    // Map each flat radio index → its section index (for group jumping)
+    const radioSectionMap = [];
+    sections.forEach((section, sectionIndex) => {
+      section.options.forEach(() => radioSectionMap.push(sectionIndex));
+    });
+
+    // First flat index of each section (for double-click group jump)
+    const sectionStartIndices = [];
+    let _runningIdx = 0;
+    sections.forEach((section) => {
+      sectionStartIndices.push(_runningIdx);
+      _runningIdx += section.options.length;
+    });
+
+    let _navIdx = 0; // tracks the currently arrow-navigated option
+
+    const navToIndex = (idx) => {
+      if (idx < 0) idx = 0;
+      if (idx >= allRadios.length) idx = allRadios.length - 1;
+      _navIdx = idx;
+      allRadios[idx].checked = true;
+      allRadios[idx].closest('.style-item')?.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+    };
+
+    // Keep _navIdx in sync when user taps an option directly
+    allRadios.forEach((radio, idx) => {
+      radio.addEventListener('change', () => { _navIdx = idx; });
+    });
+
+    // Double-click detection timers
+    let _upClickTimer = null;
+    let _downClickTimer = null;
+    const DBLCLICK_MS = 280;
+
+    const navUpBtn  = document.getElementById('manual-options-nav-up');
+    const navDownBtn = document.getElementById('manual-options-nav-down');
+
+    const handleNavUp = () => {
+      if (_upClickTimer) {
+        // Double click — jump to first option of previous section
+        clearTimeout(_upClickTimer);
+        _upClickTimer = null;
+        const prevSection = radioSectionMap[_navIdx] - 1;
+        navToIndex(prevSection >= 0 ? sectionStartIndices[prevSection] : 0);
+      } else {
+        _upClickTimer = setTimeout(() => {
+          _upClickTimer = null;
+          navToIndex(_navIdx - 1); // single click — previous option
+        }, DBLCLICK_MS);
+      }
+    };
+
+    const handleNavDown = () => {
+      if (_downClickTimer) {
+        // Double click — jump to first option of next section
+        clearTimeout(_downClickTimer);
+        _downClickTimer = null;
+        const nextSection = radioSectionMap[_navIdx] + 1;
+        navToIndex(nextSection < sections.length ? sectionStartIndices[nextSection] : allRadios.length - 1);
+      } else {
+        _downClickTimer = setTimeout(() => {
+          _downClickTimer = null;
+          navToIndex(_navIdx + 1); // single click — next option
+        }, DBLCLICK_MS);
+      }
+    };
+
+    if (navUpBtn)   navUpBtn.onclick   = handleNavUp;
+    if (navDownBtn) navDownBtn.onclick = handleNavDown;
     
     modal.style.display = 'flex';
     manualOptionsModalVisible = true;
@@ -6741,6 +6815,10 @@ async function showManualOptionsModal(preset, sections) {
       if (closeBtn) closeBtn.onclick = null;
       if (cancelBtn) cancelBtn.onclick = null;
       if (confirmBtn) confirmBtn.onclick = null;
+      if (navUpBtn) navUpBtn.onclick = null;
+      if (navDownBtn) navDownBtn.onclick = null;
+      if (_upClickTimer)   { clearTimeout(_upClickTimer);   _upClickTimer   = null; }
+      if (_downClickTimer) { clearTimeout(_downClickTimer); _downClickTimer = null; }
     };
     
     const handleClose = () => {
@@ -7158,7 +7236,9 @@ const TOUR_STEPS = [
   { section: 'Tips and Advanced', title: '📶 Offline Queue', body: 'If you take photos and the program goes offline - no worries - photos queue automatically and may be synced to the rabbit hole once your connection returns. The queue count shows on the screen.' },
   { section: 'Tips and Advanced', title: '🔁 Reset Database', body: 'The nuclear option in Settings. Wipes all custom presets and settings. Only imported presets from the library remain. Use only if something is seriously broken.' },
   { section: 'Tips and Advanced', title: '💀 Content Filter Error', body: 'If you go into your rabbit hole and you receive a content filter image error, this happens because AI is quirky. The beauty of Magic Kamera is you can reprompt. Keep trying until successful.' },
-  { section: 'Tips and Advanced', title: '↑↓ Jump Navigation', body: 'In areas with presets, clicking the up/down arrows once moves one page. Double-clicking jumps to the next or previous letter of the alphabet within that section (favorites and non-favorites are navigated separately). Triple-clicking jumps all the way to the top or bottom of the list.' },
+  { section: 'Tips and Advanced', title: '↑↓ Jump Navigation (Presets)', body: 'Areas with presets, clicking the up/down arrows once moves one page. Double-clicking jumps to next or previous letter of alphabet within that section (favorites and non-favorites are navigated separately). Triple-clicking jumps all the way to top or bottom of list.' },
+  { section: 'Tips and Advanced', title: '↑↓ Jump Navigation (Options)', body: 'In the select options modal (When options are enabled), single clicking the up/down arrows move to the next option and double clicking jumps to the next options group.' },
+  { section: 'Tips and Advanced', title: '↑↓ Jump Navigation (Settings)', body: 'In the settings submenu, clicking the up/down arrows once moves one setting. Double-clicking jumps all the way to the top or bottom of the list.' },
   { section: 'Troubleshooting', title: '❌ Camera Access Denied', body: 'This error will appear at the bottom of your main camera screen if you do not have any active presets, either imported or made with the preset builder.' },
   { section: 'Done!', title: '🎉 Tour Complete!', body: 'That\'s Magic Kamera. Now go make magic! This tour or the text tutorial in this menu is here if you need a refresher. If you come across The One Ron G, The One Hashtag Cyber or The One Rabbit Jesus, tell them you enjoy this program.' },
 ];
