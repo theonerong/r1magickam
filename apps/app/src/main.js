@@ -1321,7 +1321,8 @@ async function addToGallery(imageBase64) {
   const galleryItem = {
     id: Date.now().toString() + '-' + Math.random().toString(36).substr(2, 9),
     imageBase64: imageBase64,
-    timestamp: Date.now()
+    timestamp: Date.now(),
+    resolution: (canvas && canvas.width && canvas.height) ? canvas.width + 'x' + canvas.height : null
   };
   
   // Add to memory array
@@ -1332,6 +1333,54 @@ async function addToGallery(imageBase64) {
   
   console.log(`Image added. Total: ${galleryImages.length}`);
 }
+
+// ===== IMAGE METADATA OVERLAY =====
+
+function showImageMetadata(item, clientX, clientY) {
+  hideImageMetadata(); // remove any stale tooltip first
+
+  const tooltip = document.createElement('div');
+  tooltip.id = 'img-meta-tooltip';
+  tooltip.className = 'img-meta-tooltip';
+
+  const date = new Date(item.timestamp);
+  const dateStr = date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+  const timeStr = date.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
+  const res = item.resolution || 'Unknown';
+
+  tooltip.innerHTML =
+    '<div>\uD83D\uDCC5 ' + dateStr + '</div>' +
+    '<div>\uD83D\uDD50 ' + timeStr + '</div>' +
+    '<div>\uD83D\uDCD0 ' + res + '</div>';
+
+  document.body.appendChild(tooltip);
+
+  // Position after render so offsetWidth/Height are available
+  requestAnimationFrame(function() {
+    var tw = tooltip.offsetWidth;
+    var th = tooltip.offsetHeight;
+    var vw = window.innerWidth;
+    var vh = window.innerHeight;
+
+    var left = clientX + 14;
+    var top  = clientY - th - 14;
+
+    if (left + tw > vw - 8) left = clientX - tw - 14;
+    if (left < 8)            left = 8;
+    if (top < 8)             top  = clientY + 14;
+    if (top + th > vh - 8)  top  = vh - th - 8;
+
+    tooltip.style.left = left + 'px';
+    tooltip.style.top  = top  + 'px';
+  });
+}
+
+function hideImageMetadata() {
+  var existing = document.getElementById('img-meta-tooltip');
+  if (existing) existing.remove();
+}
+
+// ===== END IMAGE METADATA OVERLAY =====
 
 function filterGalleryByDate(images) {
   if (!galleryStartDate && !galleryEndDate) {
@@ -1586,12 +1635,15 @@ async function showGallery(renderOnly = false) {
         img.loading = 'lazy';
         imgContainer.appendChild(img);
 
-        // Long press on image in batch mode = show move-to-folder modal
+        // Long press handling — batch mode: move-to-folder; normal mode: metadata overlay
         let imgPressTimer = null;
+        let _longPressFired = false;
         if (isBatchMode) {
           imgContainer.addEventListener('touchstart', () => {
+            _longPressFired = false;
             imgPressTimer = setTimeout(() => {
               imgPressTimer = null;
+              _longPressFired = true;
               if (!selectedBatchImages.has(item.id)) {
                 toggleBatchImageSelection(item.id);
               }
@@ -1604,9 +1656,34 @@ async function showGallery(renderOnly = false) {
           imgContainer.addEventListener('touchmove', () => {
             if (imgPressTimer) { clearTimeout(imgPressTimer); imgPressTimer = null; }
           });
+        } else {
+          // Normal (non-batch) mode: long-press shows metadata
+          imgContainer.addEventListener('touchstart', (e) => {
+            _longPressFired = false;
+            const t = e.touches[0];
+            imgPressTimer = setTimeout(() => {
+              imgPressTimer = null;
+              _longPressFired = true;
+              showImageMetadata(item, t.clientX, t.clientY);
+            }, 600);
+          }, { passive: true });
+          imgContainer.addEventListener('touchend', () => {
+            if (imgPressTimer) { clearTimeout(imgPressTimer); imgPressTimer = null; }
+            if (_longPressFired) {
+              // Keep tooltip visible for 2 seconds after the user lifts their finger
+              setTimeout(() => { hideImageMetadata(); _longPressFired = false; }, 2000);
+            }
+          });
+          imgContainer.addEventListener('touchmove', () => {
+            if (imgPressTimer) { clearTimeout(imgPressTimer); imgPressTimer = null; }
+            hideImageMetadata();
+            _longPressFired = false;
+          });
         }
 
         imgContainer.onclick = () => {
+          // Suppress click if a long-press just fired (tooltip is showing)
+          if (_longPressFired) { return; }
           if (isBatchMode) {
             toggleBatchImageSelection(item.id);
           } else if (_previewEditMode) {
@@ -7555,12 +7632,13 @@ const TOUR_STEPS = [
   { section: 'Gallery', title: '🎠 Right Carousel', body: 'The right side carousel has three buttons — ✏️ EDIT which opens the image editor, 📤 EXPORT which uploads to gofile.io, and 📑 LAYER which combines presets to single image. Single click (default) screen to hide the buttons. This may be adjusted in settings' },
   { section: 'Gallery', title: '⬇️ Bottom Bar Buttons', body: 'Four buttons on the bottom of image viewer. PROMPT opens editor. LOAD opens preset selector. MULTI opens multi-preset selector. MAGIC transforms image using the loaded preset, or randomly if nothing is loaded.' },
   { section: 'Gallery', title: '📤 Export to gofile.io', body: 'Tapping EXPORT in the right carousel. You get a QR code with a link that expires after 24 hours. Most useful in No Magic Mode.' },
-  { section: 'Image Editor', title: '✏️ Opening the Editor', body: 'While viewing any photo, the image viewer carousel contains the EDIT button. Tap it. The editor opens with crop, rotate, sharpen, auto-correct, and brightness and contrast controls.' },
+  { section: 'Image Editor', title: '✏️ Opening the Editor', body: 'While viewing any photo, the image viewer contains the EDIT button. Tap it. The editor opens the image with a right-side carousel containing the crop, rotate, sharpen, auto-correct, color filters (vivid, warm, cool, Black and White (B&W) and Fade), and brightness and contrast control sliders.' },
   { section: 'Image Editor', title: '✂️ Crop Tool', body: 'Tap Crop to activate. Two orange corner markers appear. Drag them to frame your desired area. Tap Crop again to apply.' },
   { section: 'Image Editor', title: '🔄 Rotate Tool', body: 'Rotates your image 90 degrees clockwise each tap. Tap multiple times to reach 180, 270, or back to 0 degrees.' },
   { section: 'Image Editor', title: '🔍 Sharpen and Auto Correct', body: 'Sharpen makes edges crisper. Auto Correct automatically balances brightness, contrast, and color. Great as a first step before manual tweaks.' },
+  { section: 'Image Editor', title: '🎨 Color Filters', body: 'Five one-tap filters sit below Auto Correct in the carousel. Vivid boosts saturation and contrast for punchy colors. Warm lifts reds and yellows for a golden feel. Cool shifts the image toward blue tones for a clean, airy look. B and W converts to professional black and white. Fade compresses contrast for a soft, matte, faded-film aesthetic.' },
   { section: 'Image Editor', title: '☀️ Brightness and Contrast Sliders', body: 'At the top of the editor, drag the sliders to adjust brightness and contrast anywhere from negative 100 to positive 100 in real time.' },
-  { section: 'Image Editor', title: '↶ Undo and Save', body: 'Undo steps back through your edit history one step at a time. Saving an edited image creates a new image in your gallery. Close exits without saving.' },
+  { section: 'Image Editor', title: '↶ Undo and Save', body: 'Undo steps back through your edit history one step at a time. Saving an edited image creates a new image in your gallery. Close (x) exits without saving.' },
   { section: 'Settings', title: '▣ Resolution', body: 'Choose from VGA 640 by 480 up to HD 3264 by 2448. Lower resolutions are recommended if you want images to appear in the magic gallery and you want to save space in your r1 device. Camera program slows if a high resolution is chosen.' },
   { section: 'Settings', title: '📐 Aspect Ratio', body: 'Choose 1 to 1 square or 16 to 9 letterbox. Leave both unchecked for neither. Default is neither. We highly recommend choosing an aspect ratio to display the full image, preventing accidental cropping.' },
   { section: 'Settings', title: '📝 Master Prompt', body: 'Appends custom text to every AI transformation. Enable it first, then type your additions. Adding a name and occasion lets presets like Happy Holidays and Love Actually personalize automatically. Can also be toggled from the MASTER button inside the image viewer or on the main camera screen.' },
@@ -14069,6 +14147,100 @@ function closeImageEditor() {
   document.getElementById('crop-button').classList.remove('active');
 }
 
+// ===== CSS FILTER FUNCTIONS (pure canvas — no API call needed) =====
+
+// Helper: commit the current canvas state as a new editorCurrentImage and re-render.
+// Called at the end of every filter function, identical to the pattern in autoCorrect/sharpenImage.
+function refreshEditorImage() {
+  var newImg = new Image();
+  newImg.onload = function() {
+    editorCurrentImage = newImg;
+    renderEditorImage();
+  };
+  newImg.src = editorCanvas.toDataURL('image/jpeg', 0.95);
+}
+
+// Vivid — boost saturation and add a touch of contrast
+function applyFilterVivid() {
+  saveToHistory();
+  var imageData = editorCtx.getImageData(0, 0, editorCanvas.width, editorCanvas.height);
+  var data = imageData.data;
+  for (var i = 0; i < data.length; i += 4) {
+    var r = data[i], g = data[i+1], b = data[i+2];
+    var gray = 0.2989*r + 0.5870*g + 0.1140*b;
+    var sat = 1.6;
+    r = gray + sat*(r-gray);
+    g = gray + sat*(g-gray);
+    b = gray + sat*(b-gray);
+    var con = 1.1;
+    r = ((r/255-0.5)*con+0.5)*255;
+    g = ((g/255-0.5)*con+0.5)*255;
+    b = ((b/255-0.5)*con+0.5)*255;
+    data[i]   = Math.max(0, Math.min(255, r));
+    data[i+1] = Math.max(0, Math.min(255, g));
+    data[i+2] = Math.max(0, Math.min(255, b));
+  }
+  editorCtx.putImageData(imageData, 0, 0);
+  refreshEditorImage();
+}
+
+// Warm — lift reds and yellows, pull back blues
+function applyFilterWarm() {
+  saveToHistory();
+  var imageData = editorCtx.getImageData(0, 0, editorCanvas.width, editorCanvas.height);
+  var data = imageData.data;
+  for (var i = 0; i < data.length; i += 4) {
+    data[i]   = Math.min(255, data[i]   + 30);
+    data[i+1] = Math.min(255, data[i+1] + 10);
+    data[i+2] = Math.max(0,   data[i+2] - 30);
+  }
+  editorCtx.putImageData(imageData, 0, 0);
+  refreshEditorImage();
+}
+
+// Cool — lift blues, pull back reds for a cold, clean look
+function applyFilterCool() {
+  saveToHistory();
+  var imageData = editorCtx.getImageData(0, 0, editorCanvas.width, editorCanvas.height);
+  var data = imageData.data;
+  for (var i = 0; i < data.length; i += 4) {
+    data[i]   = Math.max(0,   data[i]   - 20);
+    data[i+1] = Math.min(255, data[i+1] + 10);
+    data[i+2] = Math.min(255, data[i+2] + 30);
+  }
+  editorCtx.putImageData(imageData, 0, 0);
+  refreshEditorImage();
+}
+
+// B&W — convert to luminosity-weighted grayscale
+function applyFilterBW() {
+  saveToHistory();
+  var imageData = editorCtx.getImageData(0, 0, editorCanvas.width, editorCanvas.height);
+  var data = imageData.data;
+  for (var i = 0; i < data.length; i += 4) {
+    var gray = Math.round(0.2989*data[i] + 0.5870*data[i+1] + 0.1140*data[i+2]);
+    data[i] = data[i+1] = data[i+2] = gray;
+  }
+  editorCtx.putImageData(imageData, 0, 0);
+  refreshEditorImage();
+}
+
+// Fade — compress contrast toward middle gray for a matte, faded-film look
+function applyFilterFade() {
+  saveToHistory();
+  var imageData = editorCtx.getImageData(0, 0, editorCanvas.width, editorCanvas.height);
+  var data = imageData.data;
+  for (var i = 0; i < data.length; i += 4) {
+    data[i]   = Math.max(0, Math.min(255, data[i]   * 0.70 + 50));
+    data[i+1] = Math.max(0, Math.min(255, data[i+1] * 0.70 + 50));
+    data[i+2] = Math.max(0, Math.min(255, data[i+2] * 0.70 + 50));
+  }
+  editorCtx.putImageData(imageData, 0, 0);
+  refreshEditorImage();
+}
+
+// ===== END CSS FILTER FUNCTIONS =====
+
 // Event listeners for image editor
 document.getElementById('edit-viewer-image')?.addEventListener('click', openImageEditor);
 document.getElementById('close-image-editor')?.addEventListener('click', closeImageEditor);
@@ -14077,6 +14249,11 @@ document.getElementById('sharpen-button')?.addEventListener('click', sharpenImag
 document.getElementById('autocorrect-button')?.addEventListener('click', autoCorrect);
 document.getElementById('undo-edit-button')?.addEventListener('click', undoEdit);
 document.getElementById('save-edit-button')?.addEventListener('click', saveEditedImage);
+document.getElementById('filter-vivid-button')?.addEventListener('click', applyFilterVivid);
+document.getElementById('filter-warm-button')?.addEventListener('click', applyFilterWarm);
+document.getElementById('filter-cool-button')?.addEventListener('click', applyFilterCool);
+document.getElementById('filter-bw-button')?.addEventListener('click', applyFilterBW);
+document.getElementById('filter-fade-button')?.addEventListener('click', applyFilterFade);
 
 // Crop button toggles crop mode, then applies crop on second click
 let cropClickCount = 0;
