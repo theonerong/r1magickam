@@ -1101,6 +1101,16 @@
                             
                             <strong>✨ Auto Correct:</strong> Automatically adjusts brightness, contrast, and color balance for optimal image quality. Great for quickly improving photos.<br>
                             
+                            <strong>🌈 Vivid:</strong> Boosts color saturation and slightly increases contrast, making colors richer and more vibrant.<br>
+                            
+                            <strong>🔆 Warm:</strong> Adds warmth by lifting reds and yellows while toning down blues, giving your photo a golden, sun-kissed feel.<br>
+                            
+                            <strong>❄️ Cool:</strong> Cools the image by lifting blues and reducing reds, creating a clean, cold, airy look.<br>
+                            
+                            <strong>⬛ B&W:</strong> Converts your photo to black and white using a professional luminosity-weighted grayscale for natural-looking results.<br>
+                            
+                            <strong>🌫️ Fade:</strong> Compresses contrast toward middle gray for a soft, matte, faded-film aesthetic.<br>
+                            
                             <strong>Brightness & Contrast Sliders:</strong> Located at the top of the editor, these sliders allow you to manually adjust:<br>
                             • <strong>Brightness:</strong> Range from -100 (darker) to +100 (brighter)<br>
                             • <strong>Contrast:</strong> Range from -100 (less contrast) to +100 (more contrast)<br>
@@ -1116,7 +1126,7 @@
                             • All edits are applied in the order you make them<br>
                             • Use Undo if you make a mistake or want to try a different adjustment<br>
                             • The Auto Correct feature works great as a starting point before manual adjustments<br>
-                            • You can combine multiple edits (crop, rotate, sharpen, and adjust brightness/contrast) on the same image<br>
+                            • You can combine multiple edits (crop, rotate, sharpen, color filters, and adjust brightness/contrast) on the same image<br>
                             • Remember to tap Save when you're happy with your edits!
                         </p>
                     </div>
@@ -1471,12 +1481,19 @@ All of the presets are optimized to avoid "camera ran dry" or "content filter" i
                         </div>
                     </div>
                     
-                    <!-- Edit Buttons Column (right side) -->
-                    <div class="editor-button-column">
-                        <button id="crop-button" class="editor-action-button">✂️<br>Crop</button>
-                        <button id="rotate-button" class="editor-action-button">🔄<br>Rotate</button>
-                        <button id="sharpen-button" class="editor-action-button">🔍<br>Sharpen</button>
-                        <button id="autocorrect-button" class="editor-action-button">✨<br>Auto</button>
+                    <!-- Edit Buttons Carousel (right side) — always visible, touch-scrollable -->
+                    <div class="editor-btn-carousel">
+                        <div class="editor-btn-carousel-track">
+                            <button id="crop-button" class="editor-carousel-btn">✂️<br><span class="editor-carousel-label">Crop</span></button>
+                            <button id="rotate-button" class="editor-carousel-btn">🔄<br><span class="editor-carousel-label">Rotate</span></button>
+                            <button id="sharpen-button" class="editor-carousel-btn">🔍<br><span class="editor-carousel-label">Sharpen</span></button>
+                            <button id="autocorrect-button" class="editor-carousel-btn">✨<br><span class="editor-carousel-label">Auto</span></button>
+                            <button id="filter-vivid-button" class="editor-carousel-btn">🌈<br><span class="editor-carousel-label">Vivid</span></button>
+                            <button id="filter-warm-button" class="editor-carousel-btn">🔆<br><span class="editor-carousel-label">Warm</span></button>
+                            <button id="filter-cool-button" class="editor-carousel-btn">❄️<br><span class="editor-carousel-label">Cool</span></button>
+                            <button id="filter-bw-button" class="editor-carousel-btn">⬛<br><span class="editor-carousel-label">B&W</span></button>
+                            <button id="filter-fade-button" class="editor-carousel-btn">🌫️<br><span class="editor-carousel-label">Fade</span></button>
+                        </div>
                     </div>
                 </div>
             </div>
