@@ -3648,6 +3648,11 @@ button:disabled {
     outline-offset: -3px;
 }
 
+.gallery-item.nav-highlight {
+    outline: 3px solid #FE5F00;
+    outline-offset: -3px;
+}
+
 /* Progress Overlay */
 .batch-progress-overlay {
     position: fixed;

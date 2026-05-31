@@ -310,6 +310,9 @@ let currentImportResolutionIndex_Menu = 0;
 let isTutorialSubmenuOpen = false;
 let isPresetBuilderSubmenuOpen = false;
 let isPresetFileSettingsOpen = false;
+let isRestoreSubmenuOpen = false;
+let restoreActiveTab = 'presets';
+let currentRestoreIndex = 0;
 let _editingSourceIndex = -1;
 let editingPresetBuilderIndex = -1;
 let singleOptionCounter = 0;
@@ -322,10 +325,11 @@ let currentTutorialGlossaryIndex = 0;
 
 // Gallery variables - IndexedDB
 const DB_NAME = 'R1CameraGallery';
-const DB_VERSION = 2;
+const DB_VERSION = 3;
 const STORE_NAME = 'images';
 let db = null;
 let galleryImages = [];
+let _galleryHighlightIndex = 0;
 let previewGalleryImages = [];
 const GALLERY_SORT_ORDER_KEY = 'r1_gallery_sort_order';
 let currentViewerImageIndex = -1;
@@ -990,6 +994,12 @@ function initDB() {
         const pvStore = db.createObjectStore('preview_images', { keyPath: 'id' });
         pvStore.createIndex('timestamp', 'timestamp', { unique: false });
       }
+
+      // Create deleted images store for trash/restore functionality
+      if (!db.objectStoreNames.contains('deleted_images')) {
+        const delStore = db.createObjectStore('deleted_images', { keyPath: 'id' });
+        delStore.createIndex('deletedAt', 'deletedAt', { unique: false });
+      }
     };
   });
 }
@@ -1167,6 +1177,118 @@ async function deleteImageFromDB(imageId) {
     console.error('Error deleting image:', err);
   }
 }
+
+// ===== TRASH / SOFT DELETE SYSTEM =====
+
+const DELETED_PRESETS_TRASH_KEY = 'r1_deleted_presets_trash';
+
+async function softDeleteImage(imageId) {
+  try {
+    if (!db) await initDB();
+    let imageItem = galleryImages.find(function(img) { return img.id === imageId; });
+    if (!imageItem) {
+      imageItem = await new Promise(function(resolve) {
+        var tx = db.transaction([STORE_NAME], 'readonly');
+        var store = tx.objectStore(STORE_NAME);
+        var req = store.get(imageId);
+        req.onsuccess = function() { resolve(req.result || null); };
+        req.onerror = function() { resolve(null); };
+      });
+    }
+    if (imageItem) {
+      var deletedItem = Object.assign({}, imageItem, { deletedAt: Date.now() });
+      await new Promise(function(resolve, reject) {
+        var tx = db.transaction(['deleted_images'], 'readwrite');
+        var store = tx.objectStore('deleted_images');
+        var req = store.put(deletedItem);
+        req.onsuccess = function() { resolve(); };
+        req.onerror = function() { reject(req.error); };
+      });
+    }
+    await deleteImageFromDB(imageId);
+  } catch (err) {
+    console.error('softDeleteImage error:', err);
+    await deleteImageFromDB(imageId);
+  }
+}
+
+async function getDeletedImages() {
+  try {
+    if (!db) await initDB();
+    return new Promise(function(resolve) {
+      var tx = db.transaction(['deleted_images'], 'readonly');
+      var store = tx.objectStore('deleted_images');
+      var req = store.getAll();
+      req.onsuccess = function() { resolve(req.result || []); };
+      req.onerror = function() { resolve([]); };
+    });
+  } catch (err) {
+    console.error('getDeletedImages error:', err);
+    return [];
+  }
+}
+
+async function restoreImageFromTrash(imageId) {
+  try {
+    if (!db) await initDB();
+    var item = await new Promise(function(resolve) {
+      var tx = db.transaction(['deleted_images'], 'readonly');
+      var store = tx.objectStore('deleted_images');
+      var req = store.get(imageId);
+      req.onsuccess = function() { resolve(req.result || null); };
+      req.onerror = function() { resolve(null); };
+    });
+    if (!item) return;
+    var restoredItem = Object.assign({}, item);
+    delete restoredItem.deletedAt;
+    await saveImageToDB(restoredItem);
+    await permanentlyDeleteImageFromTrash(imageId);
+    galleryImages.unshift(restoredItem);
+  } catch (err) {
+    console.error('restoreImageFromTrash error:', err);
+  }
+}
+
+async function permanentlyDeleteImageFromTrash(imageId) {
+  try {
+    if (!db) await initDB();
+    return new Promise(function(resolve, reject) {
+      var tx = db.transaction(['deleted_images'], 'readwrite');
+      var store = tx.objectStore('deleted_images');
+      var req = store.delete(imageId);
+      req.onsuccess = function() { resolve(); };
+      req.onerror = function() { reject(req.error); };
+    });
+  } catch (err) {
+    console.error('permanentlyDeleteImageFromTrash error:', err);
+  }
+}
+
+function getDeletedPresets() {
+  try {
+    var raw = localStorage.getItem(DELETED_PRESETS_TRASH_KEY);
+    return raw ? JSON.parse(raw) : [];
+  } catch (e) { return []; }
+}
+
+function saveToPresetTrash(preset) {
+  try {
+    var deleted = getDeletedPresets();
+    var idx = deleted.findIndex(function(p) { return p.name === preset.name; });
+    var entry = Object.assign({}, preset, { deletedAt: Date.now() });
+    if (idx >= 0) { deleted[idx] = entry; } else { deleted.push(entry); }
+    localStorage.setItem(DELETED_PRESETS_TRASH_KEY, JSON.stringify(deleted));
+  } catch (e) { console.error('saveToPresetTrash error:', e); }
+}
+
+function removeFromPresetTrash(presetName) {
+  try {
+    var updated = getDeletedPresets().filter(function(p) { return p.name !== presetName; });
+    localStorage.setItem(DELETED_PRESETS_TRASH_KEY, JSON.stringify(updated));
+  } catch (e) { console.error('removeFromPresetTrash error:', e); }
+}
+
+// ===== END TRASH SYSTEM =====
 
 // Get image count from IndexedDB
 async function getImageCount() {
@@ -1501,6 +1623,8 @@ async function showGallery(renderOnly = false) {
 
     grid.innerHTML = '';
     grid.appendChild(fragment);
+    _galleryHighlightIndex = 0;
+    _applyGalleryHighlight(false);
 
     if (totalPages > 1) {
       pagination.style.display = 'flex';
@@ -1686,11 +1810,11 @@ async function deleteViewerImage() {
     return;
   }
   
-  if (await confirm('Delete this image from gallery?')) {
+  if (await confirm('Move this image to trash? It can be restored from Settings \u2192 Restore Deleted Items.')) {
     const imageToDelete = galleryImages[currentViewerImageIndex];
     
     // Remove from IndexedDB
-    await deleteImageFromDB(imageToDelete.id);
+    await softDeleteImage(imageToDelete.id);
     
     // Remove from memory array
     galleryImages.splice(currentViewerImageIndex, 1);
@@ -2058,24 +2182,31 @@ function scrollPresetBuilderDown() {
   }
 }
 
+function _applyGalleryHighlight(scrollIntoView) {
+  const items = Array.from(document.querySelectorAll('#gallery-grid .gallery-item'));
+  items.forEach((item, i) => item.classList.toggle('nav-highlight', i === _galleryHighlightIndex));
+  if (scrollIntoView) {
+    const target = items[_galleryHighlightIndex];
+    if (target) target.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+  }
+}
+
 function scrollGalleryUp() {
   const modal = document.getElementById('gallery-modal');
   if (!modal || modal.style.display !== 'flex') return;
-  
-  const container = modal.querySelector('.gallery-scroll-container');
-  if (container) {
-    container.scrollTop = Math.max(0, container.scrollTop - 80);
-  }
+  const items = document.querySelectorAll('#gallery-grid .gallery-item');
+  if (!items.length) return;
+  _galleryHighlightIndex = Math.max(0, _galleryHighlightIndex - 1);
+  _applyGalleryHighlight(true);
 }
 
 function scrollGalleryDown() {
   const modal = document.getElementById('gallery-modal');
   if (!modal || modal.style.display !== 'flex') return;
-  
-  const container = modal.querySelector('.gallery-scroll-container');
-  if (container) {
-    container.scrollTop = Math.min(container.scrollHeight - container.clientHeight, container.scrollTop + 80);
-  }
+  const items = document.querySelectorAll('#gallery-grid .gallery-item');
+  if (!items.length) return;
+  _galleryHighlightIndex = Math.min(items.length - 1, _galleryHighlightIndex + 1);
+  _applyGalleryHighlight(true);
 }
 
 function scrollViewerUp() {
@@ -3286,7 +3417,7 @@ async function batchDeleteImages() {
   if (selectedBatchImages.size === 0) return;
   
   const count = selectedBatchImages.size;
-  const confirmed = await confirm(`Are you sure you want to delete ${count} selected image${count > 1 ? 's' : ''}? This cannot be undone.`);
+  const confirmed = await confirm(`Move ${count} selected image${count > 1 ? 's' : ''} to trash? They can be restored from Settings \u2192 Restore Deleted Items.`);
   
   if (!confirmed) return;
   
@@ -3314,7 +3445,7 @@ async function batchDeleteImages() {
   
   for (const imageId of imagesToDelete) {
     try {
-      await deleteImageFromDB(imageId);
+      await softDeleteImage(imageId);
       deleted++;
       document.getElementById('batch-current').textContent = deleted;
       document.getElementById('batch-progress-fill').style.width = `${(deleted / count) * 100}%`;
@@ -4802,6 +4933,224 @@ function handleViewerPromptTap() {
   }
 }
 
+// ===== RESTORE DELETED ITEMS SUBMENU =====
+
+function showRestoreSubmenu() {
+  document.getElementById('settings-submenu').style.display = 'none';
+  isSettingsSubmenuOpen = false;
+  document.getElementById('restore-deleted-submenu').style.display = 'flex';
+  isRestoreSubmenuOpen = true;
+  restoreActiveTab = 'presets';
+  currentRestoreIndex = 0;
+  switchRestoreTab('presets');
+}
+
+function hideRestoreSubmenu() {
+  document.getElementById('restore-deleted-submenu').style.display = 'none';
+  isRestoreSubmenuOpen = false;
+  showSettingsSubmenu();
+}
+
+function switchRestoreTab(tab) {
+  restoreActiveTab = tab;
+  currentRestoreIndex = 0;
+  document.getElementById('restore-tab-presets').classList.toggle('active', tab === 'presets');
+  document.getElementById('restore-tab-images').classList.toggle('active', tab === 'images');
+  document.getElementById('restore-panel-presets').style.display = tab === 'presets' ? 'block' : 'none';
+  document.getElementById('restore-panel-images').style.display  = tab === 'images'  ? 'block' : 'none';
+  if (tab === 'presets') {
+    populateDeletedPresetsList();
+    setTimeout(updateRestoreSelection, 50);
+  } else {
+    populateDeletedImagesList().then(function() {
+      setTimeout(updateRestoreSelection, 50);
+    });
+  }
+}
+
+function populateDeletedPresetsList() {
+  var list = document.getElementById('restore-presets-list');
+  if (!list) return;
+  var deleted = getDeletedPresets();
+  list.innerHTML = '';
+  if (deleted.length === 0) {
+    list.innerHTML = '<div style="padding:4vw;color:#666;font-size:3.5vw;text-align:center;">No deleted presets</div>';
+    return;
+  }
+  deleted.sort(function(a, b) { return b.deletedAt - a.deletedAt; });
+  deleted.forEach(function(preset) {
+    var item = document.createElement('label');
+    item.className = 'restore-preset-item';
+    item.style.cssText = 'display:flex;align-items:center;padding:3vw 2vw;border-bottom:1px solid #222;gap:3vw;cursor:pointer;transition:background 0.1s;';
+    var cb = document.createElement('input');
+    cb.type = 'checkbox';
+    cb.dataset.name = preset.name;
+    cb.style.cssText = 'width:5vw;height:5vw;min-width:22px;min-height:22px;accent-color:#FE5F00;flex-shrink:0;cursor:pointer;';
+    var nameSpan = document.createElement('span');
+    nameSpan.textContent = preset.name;
+    nameSpan.style.cssText = 'font-size:4vw;color:#fff;flex:1;word-break:break-word;';
+    item.appendChild(cb);
+    item.appendChild(nameSpan);
+    list.appendChild(item);
+  });
+}
+
+async function populateDeletedImagesList() {
+  var grid = document.getElementById('restore-images-grid');
+  if (!grid) return;
+  grid.innerHTML = '<div style="grid-column:1/-1;padding:4vw;color:#888;font-size:3.5vw;text-align:center;">Loading...</div>';
+  var deleted = await getDeletedImages();
+  grid.innerHTML = '';
+  if (deleted.length === 0) {
+    grid.innerHTML = '<div style="grid-column:1/-1;padding:4vw;color:#666;font-size:3.5vw;text-align:center;">No deleted images</div>';
+    return;
+  }
+  deleted.sort(function(a, b) { return b.deletedAt - a.deletedAt; });
+  deleted.forEach(function(img) {
+    var cell = document.createElement('div');
+    cell.className = 'restore-image-item';
+    cell.style.cssText = 'position:relative;padding-bottom:100%;background:#222;border-radius:2vw;overflow:hidden;';
+    var imgEl = document.createElement('img');
+    imgEl.src = img.imageBase64;
+    imgEl.loading = 'lazy';
+    imgEl.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;pointer-events:none;';
+    var cb = document.createElement('input');
+    cb.type = 'checkbox';
+    cb.dataset.id = img.id;
+    cb.style.cssText = 'position:absolute;top:5px;left:5px;width:5vw;height:5vw;min-width:20px;min-height:20px;accent-color:#FE5F00;z-index:2;cursor:pointer;';
+    cell.appendChild(imgEl);
+    cell.appendChild(cb);
+    grid.appendChild(cell);
+  });
+}
+
+function getRestoreItems() {
+  if (restoreActiveTab === 'presets') {
+    return Array.from(document.querySelectorAll('#restore-presets-list .restore-preset-item'));
+  } else {
+    return Array.from(document.querySelectorAll('#restore-images-grid .restore-image-item'));
+  }
+}
+
+function updateRestoreSelection() {
+  var items = getRestoreItems();
+  // Remove highlight from all items
+  items.forEach(function(item) {
+    item.style.outline = '';
+    item.style.outlineOffset = '';
+    item.style.background = '';
+  });
+  if (items.length === 0) return;
+  currentRestoreIndex = Math.max(0, Math.min(currentRestoreIndex, items.length - 1));
+  var current = items[currentRestoreIndex];
+  if (current) {
+    current.style.outline = '3px solid #FE5F00';
+    current.style.outlineOffset = '-2px';
+    if (restoreActiveTab === 'presets') {
+      current.style.background = 'rgba(254,95,0,0.12)';
+    }
+    current.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+}
+
+function scrollRestoreUp() {
+  if (!isRestoreSubmenuOpen) return;
+  var items = getRestoreItems();
+  if (items.length === 0) return;
+  currentRestoreIndex = Math.max(0, currentRestoreIndex - 1);
+  updateRestoreSelection();
+}
+
+function scrollRestoreDown() {
+  if (!isRestoreSubmenuOpen) return;
+  var items = getRestoreItems();
+  if (items.length === 0) return;
+  currentRestoreIndex = Math.min(items.length - 1, currentRestoreIndex + 1);
+  updateRestoreSelection();
+}
+
+function restoreSelectAll() {
+  var items = getRestoreItems();
+  if (items.length === 0) return;
+  var allChecked = items.every(function(item) {
+    var cb = item.querySelector('input[type="checkbox"]');
+    return cb && cb.checked;
+  });
+  items.forEach(function(item) {
+    var cb = item.querySelector('input[type="checkbox"]');
+    if (cb) cb.checked = !allChecked;
+  });
+}
+
+async function restoreSelected() {
+  if (restoreActiveTab === 'presets') {
+    var list = document.getElementById('restore-presets-list');
+    var checked = Array.from(list.querySelectorAll('input[type="checkbox"]:checked'));
+    if (checked.length === 0) { await customAlert('No presets selected.'); return; }
+    if (!await customConfirm('Restore ' + checked.length + ' preset(s) back to your preset list?')) return;
+    var allDeleted = getDeletedPresets();
+    for (var i = 0; i < checked.length; i++) {
+      var name = checked[i].dataset.name;
+      var preset = allDeleted.find(function(p) { return p.name === name; });
+      if (!preset) continue;
+      var cleanPreset = Object.assign({}, preset);
+      delete cleanPreset.deletedAt;
+      await presetStorage.saveNewPreset(cleanPreset);
+      if (!CAMERA_PRESETS.some(function(p) { return p.name === name; })) {
+        CAMERA_PRESETS.push(cleanPreset);
+      }
+      if (!visiblePresets.includes(name)) {
+        visiblePresets.push(name);
+        _visiblePresetsSet.add(name);
+      }
+      removeFromPresetTrash(name);
+    }
+    saveVisiblePresets();
+    saveStyles();
+    _stylesDataVersion++;
+    populateDeletedPresetsList();
+    setTimeout(updateRestoreSelection, 50);
+    await customAlert('Preset(s) restored successfully!');
+  } else {
+    var grid = document.getElementById('restore-images-grid');
+    var checked = Array.from(grid.querySelectorAll('input[type="checkbox"]:checked'));
+    if (checked.length === 0) { await customAlert('No images selected.'); return; }
+    if (!await customConfirm('Restore ' + checked.length + ' image(s) back to the gallery?')) return;
+    for (var j = 0; j < checked.length; j++) {
+      await restoreImageFromTrash(checked[j].dataset.id);
+    }
+    await populateDeletedImagesList();
+    setTimeout(updateRestoreSelection, 50);
+    await customAlert('Image(s) restored successfully!');
+  }
+}
+
+async function permanentlyDeleteSelected() {
+  if (restoreActiveTab === 'presets') {
+    var list = document.getElementById('restore-presets-list');
+    var checked = Array.from(list.querySelectorAll('input[type="checkbox"]:checked'));
+    if (checked.length === 0) { await customAlert('No presets selected.'); return; }
+    if (!await customConfirm('Permanently delete ' + checked.length + ' preset(s)? This cannot be undone.', { danger: true, yesText: 'Delete', noText: 'Cancel' })) return;
+    checked.forEach(function(cb) { removeFromPresetTrash(cb.dataset.name); });
+    populateDeletedPresetsList();
+    setTimeout(updateRestoreSelection, 50);
+    await customAlert('Preset(s) permanently deleted.');
+  } else {
+    var grid = document.getElementById('restore-images-grid');
+    var checked = Array.from(grid.querySelectorAll('input[type="checkbox"]:checked'));
+    if (checked.length === 0) { await customAlert('No images selected.'); return; }
+    if (!await customConfirm('Permanently delete ' + checked.length + ' image(s)? This cannot be undone.', { danger: true, yesText: 'Delete', noText: 'Cancel' })) return;
+    for (var k = 0; k < checked.length; k++) {
+      await permanentlyDeleteImageFromTrash(checked[k].dataset.id);
+    }
+    await populateDeletedImagesList();
+    setTimeout(updateRestoreSelection, 50);
+    await customAlert('Image(s) permanently deleted.');
+  }
+}
+
+// ===== END RESTORE DELETED ITEMS SUBMENU =====
+
 // Show Preset Builder submenu
 function showPresetBuilderSubmenu() {
   document.getElementById('settings-submenu').style.display = 'none';
@@ -5695,6 +6044,9 @@ async function deleteCustomPreset() {
     return;
   }
   
+  // Save to trash before removing so it can be restored later
+  saveToPresetTrash(CAMERA_PRESETS[editingPresetBuilderIndex]);
+
   // Remove from CAMERA_PRESETS
   CAMERA_PRESETS.splice(editingPresetBuilderIndex, 1);
   
@@ -7216,6 +7568,7 @@ const TOUR_STEPS = [
   { section: 'Settings', title: '🔨 Preset Builder', body: 'Build your own custom AI presets. Choose a template, add chips for quality and style, enable random options with single or multi-selection groups, add critical rules, then save. Also accessible directly from the main menu plus (+) button.' },
   { section: 'Settings', title: '🚫 No Magic Mode', body: 'Disables AI processing and works as a regular camera. Photos save only to the plugin gallery, not to the rabbit hole or magic gallery.' },
   { section: 'Settings', title: '🎛️ Manually Select Options Mode', body: 'When enabled and you choose a preset with options, a popup asks you to pick which option to use rather than a randomized option. Can also be toggled from the OPTIONS button inside the image viewer or on the main camera screen.' },
+  { section: 'Settings', title: '🗑️ Restore Deleted Items', body: 'Use this setting to restore custom or modified presets that were previously deleted from the main menu and images that were deleted from the gallery.  This will not restore presets that were deleted using the Reset Database.' },
   { section: 'Settings', title: '📥 Import Presets (Starting Style)', body: 'You begin with two unlocked presets-Caricature and Impressionism.  Import them from the Import Presets section to capture photos and begin the fun journey of unlocking your imported artistic library.' },
   { section: 'Settings', title: '📥 Import Presets (Import Art)', body: 'Browse our external library in Settings. Check individual unlocked styles or use the All checkmark to select all  presets to import (assuming you have the credits).' },
   { section: 'Settings', title: '📥 Import Presets (New/Updated Presets)', body: 'Button indicates if there are any new/updated presets. Any updates are flagged so you can re-import changed/updated presets that you own. If you do not import updated presets, the preset will not be updated. New presets appear locked.' },
@@ -9144,9 +9497,28 @@ window.addEventListener('sideClick', () => {
     return;
   }
 
-  // Block side button when the gallery thumbnail screen is open
+  // Gallery — side button opens or checks the highlighted item
   const galleryModalOpen = document.getElementById('gallery-modal')?.style.display === 'flex';
-  if (galleryModalOpen) return;
+  if (galleryModalOpen) {
+    const items = Array.from(document.querySelectorAll('#gallery-grid .gallery-item'));
+    const highlighted = items[_galleryHighlightIndex];
+    if (highlighted) {
+      const imageId = highlighted.dataset.imageId;
+      const folderId = highlighted.dataset.folderId;
+      if (isBatchMode) {
+        // In select mode: toggle the checkbox on the highlighted item
+        if (imageId) toggleBatchImageSelection(imageId);
+      } else if (folderId) {
+        // Open the highlighted folder
+        openFolderView(folderId);
+      } else if (imageId) {
+        // Open the highlighted image in the viewer
+        const originalIndex = galleryImages.findIndex(i => i.id === imageId);
+        if (originalIndex >= 0) openImageViewer(originalIndex);
+      }
+    }
+    return;
+  }
 
   // When the manual options modal is open, side button clicks the confirm/send button
   // NOTE: this must be checked BEFORE imageViewerOpen — the image viewer stays flex behind the modal
@@ -9161,6 +9533,19 @@ window.addEventListener('sideClick', () => {
   if (imageViewerOpen) {
     const magicBtn = document.getElementById('magic-button');
     if (magicBtn) magicBtn.click();
+    return;
+  }
+
+  // Restore Deleted Items submenu - side button toggles checkbox on highlighted item
+  if (isRestoreSubmenuOpen) {
+    var restoreItems = getRestoreItems();
+    if (restoreItems.length > 0 && currentRestoreIndex < restoreItems.length) {
+      var currentRestoreItem = restoreItems[currentRestoreIndex];
+      if (currentRestoreItem) {
+        var restoreCb = currentRestoreItem.querySelector('input[type="checkbox"]');
+        if (restoreCb) restoreCb.click();
+      }
+    }
     return;
   }
 
@@ -9433,6 +9818,12 @@ window.addEventListener('scrollUp', () => {
     return;
   }
   
+  // Restore Deleted Items submenu
+  if (isRestoreSubmenuOpen) {
+    scrollRestoreUp();
+    return;
+  }
+
   // Settings submenu - CHECK AFTER all other submenus
   if (isSettingsSubmenuOpen) {
     scrollSettingsUp();
@@ -9598,6 +9989,12 @@ window.addEventListener('scrollDown', () => {
     return;
   }
   
+  // Restore Deleted Items submenu
+  if (isRestoreSubmenuOpen) {
+    scrollRestoreDown();
+    return;
+  }
+
   // Settings submenu - CHECK AFTER all other submenus
   if (isSettingsSubmenuOpen) {
     scrollSettingsDown();
@@ -11646,7 +12043,8 @@ async function deleteStyle() {
         // Mark factory preset as deleted
         await presetStorage.saveDeletion(presetName);
       } else {
-        // Remove user-created preset
+        // User-created preset: save to trash so it can be restored, then remove
+        saveToPresetTrash(CAMERA_PRESETS[editingStyleIndex]);
         await presetStorage.removeModification(presetName);
       }
       
@@ -13846,6 +14244,35 @@ document.addEventListener('touchend', () => {
   const tutorialBtn = document.getElementById('tutorial-button');
   if (tutorialBtn) {
     tutorialBtn.addEventListener('click', showTutorialSubmenu);
+  }
+
+  var restoreDeletedBtn = document.getElementById('restore-deleted-button');
+  if (restoreDeletedBtn) {
+    restoreDeletedBtn.addEventListener('click', showRestoreSubmenu);
+  }
+  var restoreDeletedBack = document.getElementById('restore-deleted-back');
+  if (restoreDeletedBack) {
+    restoreDeletedBack.addEventListener('click', hideRestoreSubmenu);
+  }
+  var restoreTabPresetsEl = document.getElementById('restore-tab-presets');
+  if (restoreTabPresetsEl) {
+    restoreTabPresetsEl.addEventListener('click', function() { switchRestoreTab('presets'); });
+  }
+  var restoreTabImagesEl = document.getElementById('restore-tab-images');
+  if (restoreTabImagesEl) {
+    restoreTabImagesEl.addEventListener('click', function() { switchRestoreTab('images'); });
+  }
+  var restoreSelectAllEl = document.getElementById('restore-select-all-btn');
+  if (restoreSelectAllEl) {
+    restoreSelectAllEl.addEventListener('click', restoreSelectAll);
+  }
+  var restoreRestoreEl = document.getElementById('restore-restore-btn');
+  if (restoreRestoreEl) {
+    restoreRestoreEl.addEventListener('click', restoreSelected);
+  }
+  var restoreDeleteEl = document.getElementById('restore-delete-btn');
+  if (restoreDeleteEl) {
+    restoreDeleteEl.addEventListener('click', permanentlyDeleteSelected);
   }
   
   const tutorialBackBtn = document.getElementById('tutorial-back');
