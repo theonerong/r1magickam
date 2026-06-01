@@ -4507,6 +4507,20 @@
     "additionalInstructions": ""
   },
   {
+    "name": "CABBAGE PATCH KID",
+    "category": [
+      "TOY",
+      "DOLL",
+      "1980S",
+      "NOSTALGIA",
+      "CHARACTER TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform the subject into an authentic Cabbage Patch Kids-style doll.\n\nPreserve recognizable identity while converting the subject into a soft-bodied collectible doll with the iconic visual characteristics associated with classic Cabbage Patch Kids dolls.\n\nThe final image should look like a professionally photographed vintage doll advertisement, catalog image, toy package illustration, or collectible doll display.\n\nTRANSFORMATION RULES:\n• Subject becomes a doll\n• Preserve recognizable facial identity\n• Transform facial features into doll proportions\n• Round cheeks\n• Soft sculpted face\n• Large childlike eyes\n• Button nose\n• Soft smile\n• Yarn-like or doll-styled hair\n• Plush toy appearance\n\nDOLL CONSTRUCTION:\n• Soft fabric body\n• Stuffed doll proportions\n• Rounded limbs\n• Cloth construction\n• Handcrafted appearance\n• Vintage toy styling\n• Child-friendly design\n• Collectible doll presentation\n\nCLOTHING:\n• Classic doll outfits\n• Colorful fabrics\n• Patchwork details\n• Vintage children's clothing\n• Handmade appearance\n• Whimsical styling\n\nPRESENTATION:\n• Toy-catalog photography\n• Doll display environment\n• Vintage toy-store atmosphere\n• Collectible showcase\n• Children's-room setting\n• Soft lighting\n\nCOLOR PALETTE:\n• Warm cheerful colors\n• Pastel tones\n• Toy-industry aesthetics\n• Friendly presentation\n\nATMOSPHERE:\n• Nostalgic\n• Heartwarming\n• Cute\n• Family-friendly\n• Collectible toy charm\n\nANTI-CHEAT:\n• Do NOT create realistic humans\n• Do NOT create horror dolls\n• Do NOT create porcelain dolls\n• Do NOT create action figures\n• Do NOT create mannequins\n• Do NOT create modern designer toys\n\nFINAL VALIDATION:\n• Subject remains recognizable\n• Subject clearly appears as a Cabbage Patch-style doll\n• Soft plush construction is obvious\n• Doll proportions dominate the design\n• Image resembles a vintage toy advertisement or collectible display",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "The final image must unmistakably resemble a classic Cabbage Patch Kids-style doll. Preserve recognizable identity while transforming the subject into a soft-bodied collectible doll featuring rounded cheeks, doll-like facial construction, plush toy proportions, vintage toy aesthetics, handmade charm, and nostalgic presentation."
+  },
+  {
     "name": "CABINET",
     "category": [
       "OPTIONS",
@@ -13667,6 +13681,20 @@
     "additionalInstructions": ""
   },
   {
+    "name": "GARBAGE PAIL KID",
+    "category": [
+      "TRADING CARD",
+      "1980S",
+      "PARODY",
+      "HUMOR",
+      "COLLECTIBLE"
+    ],
+    "message": "Take a picture and transform the subject into an authentic Garbage Pail Kids-style trading card.\n\nPreserve recognizable identity while converting the subject into an outrageous, disgusting, hilarious parody character rendered exactly like a classic Garbage Pail Kids trading card.\n\nGenerate a unique parody character name and flavor text inspired by the subject's appearance, expression, pose, clothing, attitude, or visual personality.\n\nThe final image should resemble a genuine vintage Garbage Pail Kids trading card from the 1980s.\n\nCARD RULES:\n• Entire image becomes a trading card\n• Include authentic card layout\n• Include parody character name\n• Include humorous flavor text\n• Preserve recognizable identity\n• Transform subject into a grotesque parody version of themselves\n\nCHARACTER CREATION:\n• Generate a memorable parody name\n• Generate character-specific joke concept\n• Generate visual gag based on the subject\n• Exaggerate personality traits\n• Exaggerate physical features\n• Create outrageous cartoon humor\n\nVISUAL STYLE:\n• Garbage Pail Kids illustration style\n• Hand-painted trading-card artwork\n• Detailed cartoon rendering\n• Gross-out humor\n• Madcap parody design\n• Vintage trading-card aesthetics\n• Bright colors\n• Exaggerated expressions\n\nPOSSIBLE GAGS:\n• Exploding heads\n• Melting faces\n• Food disasters\n• Monster transformations\n• Mutations\n• Slime\n• Junk-food disasters\n• Ridiculous accidents\n• Absurd body transformations\n• Cartoon gross-out comedy\n\nCARD DESIGN:\n• Vintage trading-card border\n• Character name banner\n• Trading-card composition\n• Collectible-card presentation\n• Authentic 1980s parody-card aesthetics\n\nFLAVOR TEXT:\n• Generate humorous parody title\n• Generate card nickname\n• Generate joke based on subject appearance\n• Make the gag central to the card concept\n\nATMOSPHERE:\n• Gross-out humor\n• Satirical\n• Absurd\n• Chaotic\n• Vintage parody-card energy\n\nANTI-CHEAT:\n• Do NOT create realistic horror\n• Do NOT create gore\n• Do NOT create photorealism\n• Do NOT create modern trading cards\n• Do NOT create superhero cards\n• Do NOT create sports cards\n\nFINAL VALIDATION:\n• Subject remains recognizable\n• Subject appears as a Garbage Pail Kids-style character\n• Trading-card layout is obvious\n• Character name is present\n• Flavor text is present\n• Gross-out parody humor dominates the design\n• Image resembles an authentic vintage Garbage Pail Kids card",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "Generate a unique Garbage Pail Kids-style parody character based directly on the subject. Create a humorous parody name, visual gag, and flavor text inspired by the subject's appearance, pose, expression, clothing, or personality. Preserve recognizable identity while transforming the subject into a fully illustrated Garbage Pail Kids trading-card character. The final image must strongly resemble an authentic 1980s Garbage Pail Kids card complete with card framing, parody naming, exaggerated cartoon artwork, and classic gross-out humor."
+  },
+  {
     "name": "GARDEN GNOME",
     "category": [
       "HUMOR",
@@ -19036,6 +19064,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "FINAL RESULT:\nThe final image should resemble a lavishly illustrated European sci-fi graphic novel panel."
+  },
+  {
+    "name": "MAGIC LANTERN SLIDE",
+    "category": [
+      "VICTORIAN",
+      "PROJECTION ART",
+      "HISTORICAL",
+      "ILLUSTRATION",
+      "STYLIZED TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform the image into a Victorian-era Magic Lantern Slide.\n\nThe final image should appear as a hand-painted glass projection slide from the nineteenth century. Preserve recognizable identity while converting the scene into an illuminated educational or entertainment projection image designed for display through a magic lantern.\n\nThe artwork should resemble a carefully painted glass transparency viewed under projection light, featuring rich luminous colors, delicate painted details, antique illustration techniques, and the distinctive appearance of projected lantern-slide imagery.\n\nSTYLE RULES:\n• Preserve recognizable identity\n• Transform the image into a hand-painted glass lantern slide\n• Emphasize Victorian educational and entertainment illustration aesthetics\n• Create the appearance of projected illumination\n• Simulate transparent painted glass construction\n• Maintain historical authenticity\n\nVISUAL CHARACTERISTICS:\n• Hand-painted glass artwork\n• Illuminated projection colors\n• Translucent pigments\n• Antique illustration techniques\n• Delicate brushwork\n• Victorian visual storytelling\n• Projected-light glow\n• Glass transparency effects\n• Educational lecture-slide aesthetics\n• Museum-quality historical presentation\n\nANTI-CHEAT:\n• Do NOT create modern digital projections\n• Do NOT create contemporary slide presentations\n• Do NOT create modern photography\n• Do NOT create cinema screens\n\nFINAL VALIDATION:\n• The image must clearly resemble a Victorian Magic Lantern Slide\n• The artwork must appear hand-painted on glass\n• Projected illumination and historical authenticity must be obvious",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "• Preserve recognizable identity\n• Use authentic Victorian illustration aesthetics\n• Simulate hand-painted translucent pigments on glass\n• Create projected-light luminosity and glow\n• Emphasize historical educational and entertainment imagery\n• Make the artwork appear physically painted onto a glass projection slide\n• Avoid modern projection technologies"
   },
   {
     "name": "MAGIC REALISM",
@@ -26581,6 +26623,20 @@
     "additionalInstructions": "FINAL RESULT:\nA complete thermal imaging transformation of the scene as viewed through a Predator's bio-mask helmet display. Every element is rendered as heat signatures with the iconic yellow-to-purple color gradient, featuring bright yellow/white human silhouettes with visible internal heat patterns, cooler blue/purple environmental elements, distinctive scan lines and electronic interference, alien HUD elements with targeting reticles and Yautja script, and the characteristic rounded vignette of viewing through helmet optics. The image must be instantly recognizable as Predator vision while maintaining the composition and recognizability of the original scene's subjects and spatial relationships. The effect should be cinematic, faithful to the films, and evoke the alien hunter's technological advantage - seeing the world through heat and allowing nothing to hide."
   },
   {
+    "name": "PREVIS",
+    "category": [
+      "CGI",
+      "FILMMAKING",
+      "PREVISUALIZATION",
+      "VFX",
+      "STYLIZED TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform the image into a Hollywood previsualization render.\n\nThe final image should resemble an unfinished production-planning render created by a visual-effects studio during film development. Preserve recognizable identity while converting the subject and environment into rough CGI used to block out scenes, camera movements, action sequences, and visual effects before final production.\n\nThe image should look incomplete, technical, and functional rather than polished. It should appear to be a working production asset rather than finished artwork.\n\nSTYLE RULES:\n• Preserve recognizable identity\n• Convert all elements into rough CGI geometry\n• Emphasize production-planning aesthetics\n• Simulate unfinished visual-effects development\n• Maintain readability and scene composition\n• Create a believable previsualization render\n\nVISUAL CHARACTERISTICS:\n• Gray geometry\n• Primitive 3D models\n• Temporary materials\n• Simplified environments\n• Basic lighting\n• Unfinished CGI assets\n• Production-blocking renders\n• Placeholder effects\n• Rough animation-industry workflow aesthetics\n• Technical visualization appearance\n\nPRODUCTION FEATURES:\n• Temporary geometry\n• Proxy assets\n• Basic shaders\n• Incomplete textures\n• Development-stage rendering\n• Camera-planning visualization\n• Storyboarding-through-CGI aesthetics\n\nANTI-CHEAT:\n• Do NOT create finished CGI\n• Do NOT create modern photoreal rendering\n• Do NOT create final visual effects\n• Do NOT create completed game graphics\n\nFINAL VALIDATION:\n• The image must clearly resemble unfinished Hollywood previs\n• Gray geometry and rough CGI must dominate the image\n• The result must look like a production-planning render rather than finished artwork",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "• Preserve recognizable identity while converting everything into unfinished CGI\n• Use gray proxy geometry and temporary materials\n• Simulate authentic visual-effects previsualization workflows\n• Emphasize rough development-stage rendering\n• Use simplified assets, placeholder effects, and production-planning aesthetics\n• Make the image appear unfinished, technical, and functional\n• Avoid polished or photorealistic CGI"
+  },
+  {
     "name": "PRISM DISPERSION",
     "category": [
       "ART",
@@ -32787,6 +32843,20 @@
     ],
     "randomizeOptions": true,
     "additionalInstructions": "FINAL RESULT:\nThe image should present a believable before-and-after comparison where the left panel shows the subject realistically 100–200 pounds heavier, and the right panel shows the subject as they currently appear — anatomically accurate, seamlessly staged, and visually consistent."
+  },
+  {
+    "name": "THE CRITIC",
+    "category": [
+      "CARTOON",
+      "1990S",
+      "TELEVISION",
+      "SATIRE",
+      "ANIMATION"
+    ],
+    "message": "Take a picture and transform the subject into the visual style of The Critic. Preserve recognizable identity while reimagining the subject as a character inhabiting the exaggerated world of 1990s New York media, entertainment, celebrity culture, and movie-review satire.\n\nThe final image should resemble a production cel or promotional artwork from the animated television series. The subject should appear as a caricatured television-cartoon character rendered using the show's distinctive visual language.\n\nSTYLE RULES:\n• Preserve recognizable identity\n• Transform subject into a character from The Critic universe\n• Use caricature-driven design\n• Emphasize facial expressions and personality\n• Create television-animation aesthetics\n• Use 1990s network-cartoon visual language\n• Maintain satirical tone\n\nCHARACTER DESIGN:\n• Jay Sherman-style caricature construction\n• Rounded facial forms\n• Exaggerated facial proportions\n• Distinctive cartoon silhouettes\n• Large expressive eyes\n• Comedic expressions\n• Simplified television-animation anatomy\n• Bold outlines\n• Flat colors\n• Limited-animation styling\n\nENVIRONMENTS:\n• New York City media culture\n• Movie theaters\n• Film premieres\n• Television studios\n• Entertainment industry settings\n• Newsrooms\n• Award shows\n• Urban streets\n• Celebrity culture environments\n• Satirical media backdrops\n\nFILM SATIRE ELEMENTS:\n• Fake movie posters\n• Ridiculous blockbuster advertisements\n• Movie-review visuals\n• Film-industry jokes\n• Celebrity caricatures\n• Entertainment satire\n• Absurd Hollywood references\n• Media-industry parody\n\nSUPPORTING CHARACTERS:\n• Jay Sherman may appear\n• Television personalities may appear\n• Film-industry caricatures may appear\n• Media figures may appear\n• Characters should remain secondary to the subject\n\nCOLOR PALETTE:\n• Traditional cel-animation colors\n• Warm television-cartoon tones\n• Flat color fills\n• Strong readability\n• Broadcast-animation aesthetics\n\nATMOSPHERE:\n• Satirical\n• Comedic\n• Clever\n• Media-focused\n• Entertainment-industry parody\n• Lighthearted criticism\n\nANTI-CHEAT:\n• Do NOT create anime\n• Do NOT create realism\n• Do NOT create CGI animation\n• Do NOT create modern streaming-cartoon aesthetics\n• Do NOT create comic-book superhero art\n• Do NOT create photorealism\n\nFINAL VALIDATION:\n• Subject remains recognizable\n• Subject appears in The Critic visual style\n• Satirical entertainment atmosphere is obvious\n• New York media culture is visible\n• The image resembles a frame from the television series",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "Transform the subject into an authentic character from The Critic universe. Preserve recognizable identity while applying Jay Sherman-era caricature design, 1990s television-animation aesthetics, entertainment-industry satire, movie-review culture, and New York media-world environments. The final image should resemble an authentic production cel, promotional illustration, or scene from the animated series."
   },
   {
     "name": "THE FLY",
