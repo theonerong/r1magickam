@@ -12595,6 +12595,61 @@
     "additionalInstructions": ""
   },
   {
+    "name": "FINAL FANTASY",
+    "category": [
+      "VIDEO GAME",
+      "JRPG",
+      "FANTASY",
+      "ANIME",
+      "IMMERSIVE"
+    ],
+    "message": "Take a picture and transform the entire image into the visual style of a Final Fantasy video game. Preserve the recognizable identity of the subject while reimagining them as a character inhabiting an epic Japanese role-playing game universe filled with fantasy, adventure, magic, technology, memorable character design, dramatic storytelling, and cinematic worldbuilding.\n\nThis is a FULL SCENE TRANSFORMATION.\n\nThe entire image must be converted into a Final Fantasy game world. Subjects, clothing, objects, architecture, landscapes, lighting, atmosphere, and environmental details must all be transformed according to the selected game option.\n\nOPTION LOGIC:\n• Apply the selected option exactly\n• Preserve recognizable identity in all options\n• Maintain authentic Final Fantasy aesthetics\n• Preserve cinematic storytelling and worldbuilding\n• The selected option determines artistic style, rendering methods, character design language, environmental design, technology level, and visual fidelity\n\nCHARACTER TRANSFORMATION:\n• Preserve recognizable facial identity\n• Preserve recognizable hairstyle silhouette\n• Preserve recognizable expression and personality\n• Transform subjects into JRPG protagonists, allies, villains, summons, soldiers, royalty, adventurers, mages, engineers, or fantasy heroes appropriate to the selected game\n• Create iconic Final Fantasy-style costume design\n• Use dramatic silhouettes\n• Use elaborate fantasy fashion\n• Use distinctive character archetypes\n• Preserve emotional storytelling\n\nWORLD TRANSFORMATION:\n• Convert the entire environment into the selected game's universe\n• Transform architecture, landscapes, skies, technology, vehicles, weapons, and environmental details\n• Introduce fantasy, science-fiction, magical, or steampunk elements appropriate to the selected option\n• Maintain immersive worldbuilding\n\nVISUAL RULES:\n• Epic JRPG presentation\n• Cinematic composition\n• Dramatic lighting\n• Rich environmental storytelling\n• Memorable character design\n• Fantasy realism\n• High production values\n• Emotional atmosphere\n• Iconic Final Fantasy visual language\n\nANTI-CHEAT:\n• Do NOT create generic anime\n• Do NOT create unrelated fantasy franchises\n• Do NOT create western fantasy aesthetics\n• Do NOT create generic RPG imagery\n• Do NOT ignore the selected option\n• Do NOT create modern real-world environments\n\nFINAL VALIDATION:\n• The selected Final Fantasy option must be immediately recognizable\n• The subject must remain recognizable\n• The environment must fully transform into the selected game's world\n• The final image must resemble official artwork, cinematics, gameplay, promotional art, or cutscenes from the selected game",
+    "options": [
+    {
+      "id": "001",
+      "text": "Final Fantasy VI. Transform the image into the visual style of a 16-bit SNES-era JRPG featuring detailed pixel art, steampunk fantasy, industrial cities, magitek machinery, airships, opera-house grandeur, dramatic sprite animation, painterly pixel backgrounds, fantasy kingdoms, magical technology, and rich late-1990s Japanese RPG aesthetics. The final image should resemble high-end promotional artwork or gameplay inspired by the game's world of magic and industry."
+    },
+    {
+      "id": "002",
+      "text": "Final Fantasy VII (Original 1997). Transform the image into the visual style of the original PlayStation release featuring low-polygon character models, pre-rendered painted backgrounds, industrial cyberpunk cities, dystopian megacorporate architecture, giant reactors, cinematic JRPG storytelling, anime-inspired character design, and iconic late-1990s PlayStation rendering techniques."
+    },
+    {
+      "id": "003",
+      "text": "Final Fantasy VIII. Transform the image into the visual style of realistic late-1990s JRPG cinematics featuring military academies, futuristic fantasy technology, elegant character design, realistic proportions, cinematic romance, detailed world architecture, advanced Guardian Force aesthetics, and the visual language of PlayStation-era CGI and painted environments."
+    },
+    {
+      "id": "004",
+      "text": "Final Fantasy IX. Transform the image into the visual style of a whimsical storybook fantasy world featuring medieval kingdoms, fairy-tale architecture, exaggerated fantasy character designs, colorful magical environments, European fantasy inspiration, theatrical storytelling, vibrant colors, and charming handcrafted fantasy aesthetics."
+    },
+    {
+      "id": "005",
+      "text": "Final Fantasy X. Transform the image into the visual style of a tropical fantasy world featuring lush island environments, spiritual architecture, ceremonial costume design, vivid colors, emotional cinematic storytelling, realistic character proportions, Japanese-inspired fantasy culture, and early PlayStation 2-era CGI presentation."
+    },
+    {
+      "id": "006",
+      "text": "Final Fantasy XII. Transform the image into the visual style of a massive fantasy empire featuring ornate architecture, desert kingdoms, floating airships, political intrigue, realistic fantasy worldbuilding, detailed costume design, expansive landscapes, and highly detailed Ivalice-inspired environments."
+    },
+    {
+      "id": "007",
+      "text": "Final Fantasy XIII. Transform the image into the visual style of a futuristic fantasy universe featuring crystalline structures, advanced technology, luminous environments, sleek character designs, floating cities, highly polished CGI aesthetics, dramatic visual effects, and elegant science-fantasy worldbuilding."
+    },
+    {
+      "id": "008",
+      "text": "Final Fantasy XIV. Transform the image into the visual style of a modern MMORPG fantasy world featuring massive cities, heroic adventurers, elaborate armor sets, magical landscapes, high-fantasy environments, legendary creatures, rich worldbuilding, cinematic lighting, and large-scale fantasy storytelling."
+    },
+    {
+      "id": "009",
+      "text": "Final Fantasy XV. Transform the image into the visual style of a modern fantasy road-trip adventure featuring realistic character rendering, luxury fantasy fashion, modernized kingdoms, advanced magical technology, realistic lighting, cinematic photography, open-world exploration, and high-end contemporary game graphics."
+    },
+    {
+      "id": "010",
+      "text": "Final Fantasy XVI. Transform the image into the visual style of a mature dark-fantasy epic featuring medieval kingdoms, colossal summoned entities, realistic armor, political conflict, cinematic realism, dramatic weather, battlefield environments, realistic character rendering, and modern AAA fantasy production values."
+    }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "• Preserve recognizable identity while transforming subjects into inhabitants of the selected Final Fantasy universe\n• Apply the selected option exactly\n• Transform the entire image, not just the subject\n• Convert clothing, props, architecture, vehicles, landscapes, and environmental details into forms appropriate for the selected game\n• Emphasize epic JRPG storytelling and cinematic presentation\n• Use authentic visual language associated with the selected title\n• Preserve emotional expression and character personality\n• Create memorable fantasy character designs and environments\n• Integrate magical, technological, political, mythological, or adventure elements appropriate to the selected game\n• Avoid generic anime aesthetics\n• Avoid mixing styles between different Final Fantasy entries\n• Ensure the selected game's artistic identity dominates the image\n• The final result should resemble official artwork, promotional art, gameplay, cinematics, concept art, or cutscene imagery from the selected Final Fantasy title"
+  },
+  {
     "name": "FIND ME",
     "category": [
       "ILLUSION",
@@ -17189,6 +17244,20 @@
     ],
     "randomizeOptions": true,
     "additionalInstructions": "FINAL RESULT:\nThe image should show the subject integrated into an iconic John Landis film scene, capturing his signature blend of comedy with other genres, wide-shot spectacle, ensemble energy, and practical effects-driven chaos."
+  },
+  {
+    "name": "JOHNNY BRAVO",
+    "category": [
+      "CARTOON",
+      "1990S",
+      "ANIMATION",
+      "RETRO",
+      "STYLIZED TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform the subject into the visual style of Johnny Bravo - a bold, angular 1990s television cartoon inspired by retro Americana, mid-century modern illustration, classic animation design, and exaggerated caricature.\n\nPreserve recognizable identity while reimagining the subject as a character inhabiting a colorful cartoon world filled with graphic shapes, stylized architecture, retro fashion, exaggerated poses, and playful visual humor.\n\nThe final image should resemble a professionally produced cel from a 1990s animated television series featuring strong character silhouettes, limited-animation aesthetics, expressive posing, and flat graphic design.\n\nSTYLE RULES:\n• Preserve recognizable identity\n• Transform the subject into a stylized cartoon character\n• Emphasize graphic simplicity and readability\n• Use strong geometric shapes\n• Prioritize bold silhouettes\n• Maintain expressive cartoon acting\n• Use limited-animation aesthetics\n• Create a television-animation appearance\n\nCHARACTER DESIGN:\n• Strong caricature-based design\n• Simplified facial construction\n• Angular facial shapes\n• Large expressive poses\n• Bold graphic silhouette\n• Exaggerated proportions\n• Thick cartoon outlines\n• Minimal facial detail\n• Expressive body language\n• Dynamic cartoon acting\n• Mid-century-inspired shape language\n\nHAIR TREATMENT:\n• Hair should become a bold graphic shape\n• Hair should emphasize sweeping curves and stylized geometry\n• Hair should resemble classic caricature illustration\n• Hair should avoid realistic strand detail\n• Hair should become a strong silhouette element\n• Hair should feel iconic and instantly recognizable\n\nFACIAL DESIGN:\n• Simplified cartoon facial features\n• Minimal linework\n• Strong readability\n• Graphic nose construction\n• Stylized mouth shapes\n• Expressive eyes\n• Cartoon exaggeration while preserving identity\n\nBACKGROUND STYLE:\n• Flat graphic backgrounds\n• Mid-century modern design\n• Abstract architecture\n• Stylized suburban environments\n• Bold geometric shapes\n• Asymmetrical composition\n• Strong color blocking\n• Simplified environmental forms\n• Commercial-art aesthetics\n• Retro television-cartoon environments\n\nMID-CENTURY AMERICANA:\n• 1950s suburban influence\n• Retro roadside culture\n• Stylized Americana\n• Googie-inspired architecture\n• Vintage advertising aesthetics\n• Classic automobile culture\n• Retro commercial illustration influence\n• Clean graphic design language\n\nANIMATION STYLE:\n• Limited-animation aesthetics\n• Television-cartoon presentation\n• Hanna-Barbera influence\n• UPA-inspired design philosophy\n• Graphic posing\n• Strong keyframe acting\n• Exaggerated cartoon timing\n• Visual gag energy\n\nCOLOR PALETTE:\n• Flat saturated colors\n• Retro color harmonies\n• Warm vintage tones\n• Bright cartoon contrast\n• Clean graphic color separation\n• Mid-century commercial-art palette\n• Strong visual readability\n\nVISUAL LANGUAGE:\n• Bold outlines\n• Simplified geometry\n• Flat rendering\n• Minimal shading\n• Strong graphic composition\n• Poster-like readability\n• Stylized abstraction\n• Cartoon caricature\n\nENVIRONMENTAL DETAILS:\n• Retro signage\n• Stylized suburban streets\n• Cartoon houses\n• Mid-century architecture\n• Palm trees\n• Retro diners\n• Graphic landscape design\n• Abstract environmental shapes\n\nATMOSPHERE:\n• Playful humor\n• Cartoon confidence\n• Retro charm\n• Visual comedy\n• Lighthearted energy\n• Television-animation nostalgia\n\nANTI-CHEAT:\n• Do NOT create anime\n• Do NOT create realistic illustration\n• Do NOT create photorealism\n• Do NOT create CGI characters\n• Do NOT create modern streaming-animation aesthetics\n• Do NOT create comic-book superhero art\n• Do NOT create detailed realistic backgrounds\n• Do NOT create painterly rendering\n• Do NOT create realistic hair strands\n• Do NOT create realistic anatomy\n\nFINAL VALIDATION:\n• Subject must remain recognizable\n• Character must appear as a stylized television-cartoon character\n• Strong silhouette readability must be obvious\n• Mid-century influence must be visible\n• Backgrounds must appear graphic and simplified\n• Flat colors and bold outlines must dominate\n• The final image must resemble a frame from a 1990s retro-inspired cartoon series",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "• Preserve recognizable identity while transforming the subject into a stylized retro cartoon characterin the style of Johnny Bravo\n• Use bold angular caricature design throughout the image\n• Emphasize strong silhouettes and graphic shape language\n• Convert hair into large stylized geometric forms rather than realistic strands\n• Use flat colors, bold outlines, and minimal shading\n• Create asymmetrical mid-century modern environments\n• Incorporate retro Americana, suburban culture, and vintage commercial-art influences\n• Apply limited-animation aesthetics and television-cartoon presentation\n• Emphasize expressive posing and exaggerated cartoon acting\n• Use simplified facial construction while preserving recognizable identity\n• Avoid realism, painterly rendering, CGI aesthetics, and modern animation styles\n• The final image should resemble an authentic production cel from a classic 1990s cartoon inspired by mid-century design, Hanna-Barbera traditions, UPA graphic styling, and retro American pop culture"
   },
   {
     "name": "JOSÉ GUADALUPE POSADA — CALAVERA ENGRAVING",
