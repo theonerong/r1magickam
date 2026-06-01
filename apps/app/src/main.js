@@ -2615,7 +2615,7 @@ async function submitMagicTransform() {
     let processed = 0;
     for (const preset of galleryMultiPresets) {
       try {
-        const manualSelection = galleryMultiManualSelections[preset.name] || null;
+        const manualSelection = galleryMultiManualSelections[preset.name] ?? null;
         const finalPrompt = getFinalPrompt(preset, manualSelection);
         if (typeof PluginMessageHandler !== 'undefined') {
           const multiPayload = { pluginId: 'com.r1.pixelart', imageBase64: resizedImageBase64 };
@@ -3095,7 +3095,7 @@ async function finalizeCameraLiveCombine(photo1Base64, photo2Base64, presetOverr
       const presetsToApply = [...cameraSelectedPresets];
       for (let i = 0; i < presetsToApply.length; i++) {
         const p = presetsToApply[i];
-        const manualSelection = cameraMultiManualSelections[p.name] || null;
+        const manualSelection = cameraMultiManualSelections[p.name] ?? null;
 
         // Apply combine preamble for multi-preset (not voice mode)
         window.isCombinedMode = true;
@@ -3829,7 +3829,7 @@ async function applyMultiplePresets() {
 
   for (const preset of presetsToApply) {
     try {
-      const manualSelection = galleryMultiManualSelections[preset.name] || null;
+      const manualSelection = galleryMultiManualSelections[preset.name] ?? null;
       const finalPrompt = getFinalPrompt(preset, manualSelection);
       
       if (typeof PluginMessageHandler !== 'undefined') {
@@ -6652,7 +6652,7 @@ function buildCombinedLayerPrompt(layerPresets, manualSelections = {}) {
 
   // 3. Primary preset options — manual selection if available, otherwise random
   if (primaryPreset.randomizeOptions) {
-    const primaryManual = manualSelections[primaryPreset.name] || null;
+    const primaryManual = manualSelections[primaryPreset.name] ?? null;
     if (primaryManual !== null) {
       finalPrompt += '\n\n' + buildSelectedOptionsText(primaryPreset, primaryManual);
     } else {
@@ -6670,7 +6670,7 @@ function buildCombinedLayerPrompt(layerPresets, manualSelections = {}) {
       finalPrompt += `\nLayer ${index + 1}:\n${layerText}\n`;
       // Add layer options — manual selection if available, otherwise random
       if (preset.randomizeOptions) {
-        const layerManual = manualSelections[preset.name] || null;
+        const layerManual = manualSelections[preset.name] ?? null;
         if (layerManual !== null) {
           finalPrompt += buildSelectedOptionsText(preset, layerManual) + '\n';
         } else {
@@ -9221,7 +9221,7 @@ addToGallery(dataUrl);
     const presetsToApply = [...cameraSelectedPresets];
     for (let i = 0; i < presetsToApply.length; i++) {
       const preset = presetsToApply[i];
-      const manualSelection = cameraMultiManualSelections[preset.name] || null;
+      const manualSelection = cameraMultiManualSelections[preset.name] ?? null;
       const queueItem = {
         id: Date.now().toString() + '-mp' + i,
         imageBase64: dataUrl,
@@ -9395,7 +9395,7 @@ async function syncQueuedPhotos() {
       
       if (typeof PluginMessageHandler !== 'undefined' && !noMagicMode) {
         if (item.isCombined) window.isCombinedMode = true;
-        const syncedPrompt = getFinalPrompt(item.preset, item.manualSelection || null);
+        const syncedPrompt = getFinalPrompt(item.preset, item.manualSelection ?? null);
         if (item.isCombined) window.isCombinedMode = false;
         const syncPayload = {
           pluginId: 'com.r1.pixelart',
