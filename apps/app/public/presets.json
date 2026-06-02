@@ -32867,121 +32867,6 @@
     "additionalInstructions": "IDENTITY PRESERVATION (CRITICAL):\n• The subject's facial features must remain recognizable\n• Distinctive features preserved through text density and contour following\n• The text is the MEDIUM, not a mask - the person is still clearly visible\n• Do not idealize or alter the subject's features\n• The three-quarter angle should reflect the subject's actual face angle and proportions\n\nFINAL RESULT:\nA stunning 8K typographic art portrait in a three-quarter view where the subject's likeness is constructed entirely from flowing white calligraphic text on a single deep high-contrast background color. The portrait shows the subject at approximately 45 degrees - not a side profile, not fully frontal - creating natural dimension and depth. Every facial feature and contour is formed by text lines following the natural curves of the face, with text density creating the illusion of light and shadow. If a master prompt provided specific text, that text and only that text fills the entire portrait. If no text was provided, original flavor text inspired by the image fills the portrait. The outer portrait edge is razor sharp, the background completely flat, and absolutely no watermarks, signatures, or branding of any kind appear anywhere in the image. The result is a clean, professional typographic portrait that is simultaneously a work of art and an unmistakable likeness of the subject."
   },
   {
-    "name": "TEXT TRANSLATOR",
-    "category": [
-      "TRANSLATION",
-      "TEXT",
-      "SIGNAGE",
-      "LOCALIZATION",
-      "LANGUAGE"
-    ],
-    "message": "Take a picture and translate all existing readable text into the selected language.\n\nAnalyze the entire image and identify every instance of readable text including signs, storefronts, advertisements, menus, labels, packaging, posters, billboards, newspapers, magazines, books, documents, screens, user interfaces, subtitles, captions, vehicle markings, street signs, graffiti, banners, clothing text, logos containing readable words, and any other visible written language.\n\nReplace the original text with an authentic translation in the selected target language while preserving the original meaning, intent, tone, context, formatting, hierarchy, placement, and visual appearance.\n\nOnly translate text that already exists in the image.\n\nIf there is no text in a particular area, do not add text.\n\nIf the image contains no readable text anywhere, make no text-related changes.\n\nTRANSLATION RULES:\n• Translate all visible readable text\n• Preserve original meaning exactly\n• Preserve intent and context\n• Preserve names when normally untranslated\n• Preserve brands when normally untranslated\n• Preserve trademarks when normally untranslated\n• Preserve numbers\n• Preserve dates\n• Preserve prices\n• Preserve measurements\n• Preserve formatting\n• Preserve layout\n• Preserve hierarchy\n• Preserve document structure\n• Preserve user-interface structure\n\nAUTHENTICITY RULES:\n• Native-speaker quality translation\n• Correct grammar\n• Correct spelling\n• Correct punctuation\n• Correct vocabulary\n• Natural wording\n• Regionally appropriate language\n• Authentic real-world language usage\n• Professional localization quality\n• No machine-translation artifacts\n• No placeholder text\n• No invented words\n\nVISUAL RULES:\n• Replace original text with translated text\n• Maintain original typography style\n• Maintain original placement\n• Maintain original sign appearance\n• Maintain original design aesthetics\n• Maintain readability\n• Maintain realistic text rendering\n\nANTI-CHEAT:\n• Do NOT add text where none exists\n• Do NOT create fictional translations\n• Do NOT leave readable text untranslated\n• Do NOT summarize content\n• Do NOT paraphrase content\n• Do NOT alter meaning\n• Do NOT invent words\n• Do NOT create filler text\n• Do NOT create gibberish text\n• Do NOT mix languages unless present in the original image\n\nFINAL VALIDATION:\n• Every readable text element is translated\n• Meaning remains unchanged\n• Translation is fluent and authentic\n• No made-up words appear\n• No gibberish text appears\n• No additional text has been added\n• Areas without text remain unchanged\n• Typography remains realistic\n• Translation appears professionally localized",
-    "options": [
-    {
-      "id": "001",
-      "text": "English"
-    },
-    {
-      "id": "002",
-      "text": "Mandarin Chinese"
-    },
-    {
-      "id": "003",
-      "text": "Hindi"
-    },
-    {
-      "id": "004",
-      "text": "Spanish"
-    },
-    {
-      "id": "005",
-      "text": "Standard Arabic"
-    },
-    {
-      "id": "006",
-      "text": "French"
-    },
-    {
-      "id": "007",
-      "text": "Bengali"
-    },
-    {
-      "id": "008",
-      "text": "Portuguese"
-    },
-    {
-      "id": "009",
-      "text": "Indonesian"
-    },
-    {
-      "id": "010",
-      "text": "Urdu"
-    },
-    {
-      "id": "011",
-      "text": "German"
-    },
-    {
-      "id": "012",
-      "text": "Japanese"
-    },
-    {
-      "id": "013",
-      "text": "Nigerian Pidgin"
-    },
-    {
-      "id": "014",
-      "text": "Marathi"
-    },
-    {
-      "id": "015",
-      "text": "Telugu"
-    },
-    {
-      "id": "016",
-      "text": "Turkish"
-    },
-    {
-      "id": "017",
-      "text": "Tamil"
-    },
-    {
-      "id": "018",
-      "text": "Cantonese"
-    },
-    {
-      "id": "019",
-      "text": "Vietnamese"
-    },
-    {
-      "id": "020",
-      "text": "Wu Chinese"
-    },
-    {
-      "id": "021",
-      "text": "Italian"
-    },
-    {
-      "id": "022",
-      "text": "Romanian"
-    },
-    {
-      "id": "023",
-      "text": "Dutch"
-    },
-    {
-      "id": "024",
-      "text": "Russian"
-    },
-    {
-      "id": "025",
-      "text": "Polish"
-    }
-    ],
-    "randomizeOptions": true,
-    "additionalInstructions": "Translate every existing readable text element in the image into the selected language. Preserve meaning, formatting, layout, hierarchy, typography, placement, and visual design. Only translate text that already exists. Never add text where none exists. If no readable text is present, make no text-related changes. All translations must be authentic, grammatically correct, naturally written by native-speaker standards, and free of made-up words, placeholder text, mistranslations, translation artifacts, or gibberish."
-  },
-  {
     "name": "THE BIGGEST LOSER",
     "category": [
       "TRANSFORMATION",
@@ -34968,6 +34853,421 @@
     "randomizeOptions": true,
     "additionalInstructions": "FINAL RESULT:\nThe image should function as a precise visual translation guide, accurately labeling visible objects and replacing all readable text in the selected language, while preserving the realism and full-frame integrity of the original photo.\n\nFOOTER REQUIREMENT:"
   },
+    {
+      "name": "TRANSLATED (TEXT ONLY)",
+      "category": [
+        "TRANSLATION",
+        "TEXT",
+        "SIGNAGE",
+        "LOCALIZATION",
+        "LANGUAGE"
+      ],
+      "message": "Take a picture and translate all existing readable text into the selected language.\n\nAnalyze the entire image and identify every instance of readable text including signs, storefronts, advertisements, menus, labels, packaging, posters, billboards, newspapers, magazines, books, documents, screens, user interfaces, subtitles, captions, vehicle markings, street signs, graffiti, banners, clothing text, logos containing readable words, and any other visible written language.\n\nReplace the original text with an authentic translation in the selected target language while preserving the original meaning, intent, tone, context, formatting, hierarchy, placement, and visual appearance.\n\nOnly translate text that already exists in the image.\n\nIf there is no text in a particular area, do not add text.\n\nIf the image contains no readable text anywhere, make no text-related changes.\n\nTRANSLATION RULES:\n• Translate all visible readable text\n• Preserve original meaning exactly\n• Preserve intent and context\n• Preserve names when normally untranslated\n• Preserve brands when normally untranslated\n• Preserve trademarks when normally untranslated\n• Preserve numbers\n• Preserve dates\n• Preserve prices\n• Preserve measurements\n• Preserve formatting\n• Preserve layout\n• Preserve hierarchy\n• Preserve document structure\n• Preserve user-interface structure\n\nAUTHENTICITY RULES:\n• Native-speaker quality translation\n• Correct grammar\n• Correct spelling\n• Correct punctuation\n• Correct vocabulary\n• Natural wording\n• Regionally appropriate language\n• Authentic real-world language usage\n• Professional localization quality\n• No machine-translation artifacts\n• No placeholder text\n• No invented words\n\nVISUAL RULES:\n• Replace original text with translated text\n• Maintain original typography style\n• Maintain original placement\n• Maintain original sign appearance\n• Maintain original design aesthetics\n• Maintain readability\n• Maintain realistic text rendering\n\nANTI-CHEAT:\n• Do NOT add text where none exists\n• Do NOT create fictional translations\n• Do NOT leave readable text untranslated\n• Do NOT summarize content\n• Do NOT paraphrase content\n• Do NOT alter meaning\n• Do NOT invent words\n• Do NOT create filler text\n• Do NOT create gibberish text\n• Do NOT mix languages unless present in the original image\n\nFINAL VALIDATION:\n• Every readable text element is translated\n• Meaning remains unchanged\n• Translation is fluent and authentic\n• No made-up words appear\n• No gibberish text appears\n• No additional text has been added\n• Areas without text remain unchanged\n• Typography remains realistic\n• Translation appears professionally localized",
+    "options": [
+      {
+        "id": "001",
+        "text": "English"
+      },
+      {
+        "id": "002",
+        "text": "Spanish"
+      },
+      {
+        "id": "003",
+        "text": "French"
+      },
+      {
+        "id": "004",
+        "text": "German"
+      },
+      {
+        "id": "005",
+        "text": "Italian"
+      },
+      {
+        "id": "006",
+        "text": "Portuguese"
+      },
+      {
+        "id": "007",
+        "text": "Dutch"
+      },
+      {
+        "id": "008",
+        "text": "Swedish"
+      },
+      {
+        "id": "009",
+        "text": "Norwegian"
+      },
+      {
+        "id": "010",
+        "text": "Danish"
+      },
+      {
+        "id": "011",
+        "text": "Finnish"
+      },
+      {
+        "id": "012",
+        "text": "Icelandic"
+      },
+      {
+        "id": "013",
+        "text": "Irish"
+      },
+      {
+        "id": "014",
+        "text": "Welsh"
+      },
+      {
+        "id": "015",
+        "text": "Scots Gaelic"
+      },
+      {
+        "id": "016",
+        "text": "Polish"
+      },
+      {
+        "id": "017",
+        "text": "Czech"
+      },
+      {
+        "id": "018",
+        "text": "Slovak"
+      },
+      {
+        "id": "019",
+        "text": "Hungarian"
+      },
+      {
+        "id": "020",
+        "text": "Romanian"
+      },
+      {
+        "id": "021",
+        "text": "Bulgarian"
+      },
+      {
+        "id": "022",
+        "text": "Greek"
+      },
+      {
+        "id": "023",
+        "text": "Russian"
+      },
+      {
+        "id": "024",
+        "text": "Ukrainian"
+      },
+      {
+        "id": "025",
+        "text": "Belarusian"
+      },
+      {
+        "id": "026",
+        "text": "Serbian"
+      },
+      {
+        "id": "027",
+        "text": "Croatian"
+      },
+      {
+        "id": "028",
+        "text": "Bosnian"
+      },
+      {
+        "id": "029",
+        "text": "Slovenian"
+      },
+      {
+        "id": "030",
+        "text": "Macedonian"
+      },
+      {
+        "id": "031",
+        "text": "Albanian"
+      },
+      {
+        "id": "032",
+        "text": "Turkish"
+      },
+      {
+        "id": "033",
+        "text": "Arabic (Modern Standard)"
+      },
+      {
+        "id": "034",
+        "text": "Hebrew"
+      },
+      {
+        "id": "035",
+        "text": "Persian (Farsi)"
+      },
+      {
+        "id": "036",
+        "text": "Urdu"
+      },
+      {
+        "id": "037",
+        "text": "Hindi"
+      },
+      {
+        "id": "038",
+        "text": "Bengali"
+      },
+      {
+        "id": "039",
+        "text": "Punjabi"
+      },
+      {
+        "id": "040",
+        "text": "Gujarati"
+      },
+      {
+        "id": "041",
+        "text": "Marathi"
+      },
+      {
+        "id": "042",
+        "text": "Tamil"
+      },
+      {
+        "id": "043",
+        "text": "Telugu"
+      },
+      {
+        "id": "044",
+        "text": "Kannada"
+      },
+      {
+        "id": "045",
+        "text": "Malayalam"
+      },
+      {
+        "id": "046",
+        "text": "Sinhala"
+      },
+      {
+        "id": "047",
+        "text": "Nepali"
+      },
+      {
+        "id": "048",
+        "text": "Thai"
+      },
+      {
+        "id": "049",
+        "text": "Lao"
+      },
+      {
+        "id": "050",
+        "text": "Khmer"
+      },
+      {
+        "id": "051",
+        "text": "Vietnamese"
+      },
+      {
+        "id": "052",
+        "text": "Indonesian"
+      },
+      {
+        "id": "053",
+        "text": "Malay"
+      },
+      {
+        "id": "054",
+        "text": "Tagalog"
+      },
+      {
+        "id": "055",
+        "text": "Cebuano"
+      },
+      {
+        "id": "056",
+        "text": "Javanese"
+      },
+      {
+        "id": "057",
+        "text": "Sundanese"
+      },
+      {
+        "id": "058",
+        "text": "Chinese (Simplified)"
+      },
+      {
+        "id": "059",
+        "text": "Chinese (Traditional)"
+      },
+      {
+        "id": "060",
+        "text": "Cantonese"
+      },
+      {
+        "id": "061",
+        "text": "Japanese"
+      },
+      {
+        "id": "062",
+        "text": "Korean"
+      },
+      {
+        "id": "063",
+        "text": "Mongolian"
+      },
+      {
+        "id": "064",
+        "text": "Tibetan"
+      },
+      {
+        "id": "065",
+        "text": "Burmese"
+      },
+      {
+        "id": "066",
+        "text": "Swahili"
+      },
+      {
+        "id": "067",
+        "text": "Zulu"
+      },
+      {
+        "id": "068",
+        "text": "Xhosa"
+      },
+      {
+        "id": "069",
+        "text": "Afrikaans"
+      },
+      {
+        "id": "070",
+        "text": "Hausa"
+      },
+      {
+        "id": "071",
+        "text": "Yoruba"
+      },
+      {
+        "id": "072",
+        "text": "Igbo"
+      },
+      {
+        "id": "073",
+        "text": "Amharic"
+      },
+      {
+        "id": "074",
+        "text": "Somali"
+      },
+      {
+        "id": "075",
+        "text": "Malagasy"
+      },
+      {
+        "id": "076",
+        "text": "Latin"
+      },
+      {
+        "id": "077",
+        "text": "Esperanto"
+      },
+      {
+        "id": "078",
+        "text": "Basque"
+      },
+      {
+        "id": "079",
+        "text": "Catalan"
+      },
+      {
+        "id": "080",
+        "text": "Galician"
+      },
+      {
+        "id": "081",
+        "text": "Occitan"
+      },
+      {
+        "id": "082",
+        "text": "Breton"
+      },
+      {
+        "id": "083",
+        "text": "Frisian"
+      },
+      {
+        "id": "084",
+        "text": "Luxembourgish"
+      },
+      {
+        "id": "085",
+        "text": "Estonian"
+      },
+      {
+        "id": "086",
+        "text": "Latvian"
+      },
+      {
+        "id": "087",
+        "text": "Lithuanian"
+      },
+      {
+        "id": "088",
+        "text": "Armenian"
+      },
+      {
+        "id": "089",
+        "text": "Georgian"
+      },
+      {
+        "id": "090",
+        "text": "Azerbaijani"
+      },
+      {
+        "id": "091",
+        "text": "Kazakh"
+      },
+      {
+        "id": "092",
+        "text": "Uzbek"
+      },
+      {
+        "id": "093",
+        "text": "Turkmen"
+      },
+      {
+        "id": "094",
+        "text": "Kyrgyz"
+      },
+      {
+        "id": "095",
+        "text": "Tajik"
+      },
+      {
+        "id": "096",
+        "text": "Pashto"
+      },
+      {
+        "id": "097",
+        "text": "Kurdish"
+      },
+      {
+        "id": "098",
+        "text": "Uyghur"
+      },
+      {
+        "id": "099",
+        "text": "Maori"
+      },
+      {
+        "id": "100",
+        "text": "Hawaiian"
+      }
+    ],
+      "randomizeOptions": true,
+      "additionalInstructions": "Translate every existing readable text element in the image into the selected language. Preserve meaning, formatting, layout, hierarchy, typography, placement, and visual design. Only translate text that already exists. Never add text where none exists. If no readable text is present, make no text-related changes. All translations must be authentic, grammatically correct, naturally written by native-speaker standards, and free of made-up words, placeholder text, mistranslations, translation artifacts, or gibberish."
+    },
   {
     "name": "TRANSLATED into CONLANGS",
     "category": [
