@@ -330,6 +330,7 @@ const STORE_NAME = 'images';
 let db = null;
 let galleryImages = [];
 let _galleryHighlightIndex = 0;
+let _galleryTopNavIndex = -1;
 let previewGalleryImages = [];
 const GALLERY_SORT_ORDER_KEY = 'r1_gallery_sort_order';
 let currentViewerImageIndex = -1;
@@ -1701,6 +1702,8 @@ async function showGallery(renderOnly = false) {
     grid.innerHTML = '';
     grid.appendChild(fragment);
     _galleryHighlightIndex = 0;
+    _galleryTopNavIndex = -1;
+    _clearGalleryTopNavHighlight();
     _applyGalleryHighlight(false);
 
     if (totalPages > 1) {
@@ -1718,8 +1721,11 @@ async function showGallery(renderOnly = false) {
 
 async function hideGallery() {
   document.getElementById('gallery-modal').style.display = 'none';
+  window._carouselGuardUntil = Infinity;
   currentGalleryPage = 1;
   await reinitializeCamera(); // Re-initialize fully so camera switch works after gallery
+  window._carouselGuardUntil = 0;
+  if (window._showCamCarousels) window._showCamCarousels();
   
   // Restore status element display (in case it was hidden by upload function)
   if (statusElement) {
@@ -2268,18 +2274,84 @@ function _applyGalleryHighlight(scrollIntoView) {
   }
 }
 
+function _getGalleryTopNavItems() {
+  const result = [];
+  const closeBtn = document.getElementById('close-gallery');
+  const startBtn = document.getElementById('gallery-start-date-btn');
+  const endBtn = document.getElementById('gallery-end-date-btn');
+  const sortBtn = document.getElementById('gallery-sort-btn');
+  const breadcrumb = document.getElementById('gallery-folder-breadcrumb');
+  const backBtn = (breadcrumb && breadcrumb.style.display !== 'none')
+    ? breadcrumb.querySelector('.gallery-folder-breadcrumb-back')
+    : null;
+  if (closeBtn) result.push(closeBtn);
+  if (startBtn) result.push(startBtn);
+  if (endBtn) result.push(endBtn);
+  if (sortBtn) result.push(sortBtn);
+  if (backBtn) result.push(backBtn);
+  return result;
+}
+
+function _applyGalleryTopNavHighlight(index) {
+  const topItems = _getGalleryTopNavItems();
+  topItems.forEach((btn, i) => btn.classList.toggle('nav-highlight-top', i === index));
+}
+
+function _clearGalleryTopNavHighlight() {
+  _applyGalleryTopNavHighlight(-1);
+}
+
 function scrollGalleryUp() {
   const modal = document.getElementById('gallery-modal');
   if (!modal || modal.style.display !== 'flex') return;
+
+  if (_galleryTopNavIndex >= 0) {
+    // Already in top nav — move to the previous (higher) button, stop at 0
+    if (_galleryTopNavIndex > 0) _galleryTopNavIndex--;
+    _applyGalleryTopNavHighlight(_galleryTopNavIndex);
+    return;
+  }
+
   const items = document.querySelectorAll('#gallery-grid .gallery-item');
   if (!items.length) return;
-  _galleryHighlightIndex = Math.max(0, _galleryHighlightIndex - 1);
-  _applyGalleryHighlight(true);
+
+  if (_galleryHighlightIndex === 0) {
+    // At the first image — enter top nav at the bottommost button
+    const topItems = _getGalleryTopNavItems();
+    if (topItems.length > 0) {
+      items.forEach(el => el.classList.remove('nav-highlight'));
+      _galleryTopNavIndex = topItems.length - 1;
+      _applyGalleryTopNavHighlight(_galleryTopNavIndex);
+    }
+  } else {
+    _galleryHighlightIndex--;
+    _applyGalleryHighlight(true);
+  }
 }
 
 function scrollGalleryDown() {
   const modal = document.getElementById('gallery-modal');
   if (!modal || modal.style.display !== 'flex') return;
+
+  if (_galleryTopNavIndex >= 0) {
+    // In top nav — move to the next (lower) button
+    const topItems = _getGalleryTopNavItems();
+    if (_galleryTopNavIndex < topItems.length - 1) {
+      _galleryTopNavIndex++;
+      _applyGalleryTopNavHighlight(_galleryTopNavIndex);
+    } else {
+      // Exit top nav, return to image grid at item 0
+      _clearGalleryTopNavHighlight();
+      _galleryTopNavIndex = -1;
+      const items = document.querySelectorAll('#gallery-grid .gallery-item');
+      if (items.length) {
+        _galleryHighlightIndex = 0;
+        _applyGalleryHighlight(true);
+      }
+    }
+    return;
+  }
+
   const items = document.querySelectorAll('#gallery-grid .gallery-item');
   if (!items.length) return;
   _galleryHighlightIndex = Math.min(items.length - 1, _galleryHighlightIndex + 1);
@@ -9578,6 +9650,12 @@ window.addEventListener('sideClick', () => {
   // Gallery — side button opens or checks the highlighted item
   const galleryModalOpen = document.getElementById('gallery-modal')?.style.display === 'flex';
   if (galleryModalOpen) {
+    if (_galleryTopNavIndex >= 0) {
+      const topItems = _getGalleryTopNavItems();
+      const btn = topItems[_galleryTopNavIndex];
+      if (btn) btn.click();
+      return;
+    }
     const items = Array.from(document.querySelectorAll('#gallery-grid .gallery-item'));
     const highlighted = items[_galleryHighlightIndex];
     if (highlighted) {
@@ -10492,7 +10570,10 @@ async function hideUnifiedMenu() {
   }
   
   document.getElementById('unified-menu').style.display = 'none';
+  window._carouselGuardUntil = Infinity;
   await resumeCamera();
+  window._carouselGuardUntil = 0;
+  if (window._showCamCarousels) window._showCamCarousels();
   
   // Re-show the style reveal footer
   if (noMagicMode) {
@@ -14114,7 +14195,8 @@ async function saveEditedImage() {
   const newImageData = {
     id: Date.now().toString() + '-' + Math.random().toString(36).substr(2, 9),
     imageBase64: editedBase64,
-    timestamp: Date.now()
+    timestamp: Date.now(),
+    resolution: finalCanvas.width + 'x' + finalCanvas.height
   };
   
   // Add to gallery
@@ -16702,6 +16784,7 @@ console.log('AI Camera Styles app initialized!');
 
   document.addEventListener('touchend', (e) => {
     if (!isOnMainCameraScreen()) return;
+    if (window._carouselGuardUntil && Date.now() < window._carouselGuardUntil) return;
     if (e.changedTouches.length !== 1) return;
 
     const s = window._camBtnSettings;
