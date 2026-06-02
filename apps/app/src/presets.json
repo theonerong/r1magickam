@@ -753,6 +753,20 @@
     "additionalInstructions": ""
   },
   {
+    "name": "AEON FLUX",
+    "category": [
+      "ANIMATION",
+      "SCI-FI",
+      "MTV",
+      "CYBERPUNK",
+      "SURREAL"
+    ],
+    "message": "Take a picture and transform the subject into the visual style of Aeon Flux.\n\nPreserve recognizable identity while translating the image into the distinctive visual language of the original animated series. The final image should resemble a production-quality animation frame featuring futuristic architecture, experimental visual storytelling, advanced technology, dramatic composition, and graphic design.\n\nSTYLE RULES:\n• Preserve recognizable identity\n• Aeon Flux visual language\n• Elegant angular styling\n• Strong silhouette readability\n• Dynamic visual energy\n• Experimental storytelling composition\n• Distinctive animation aesthetics\n\nVISUAL DESIGN:\n• Graphic animation artwork\n• Angular visual structures\n• Futuristic design language\n• Stylized line economy\n• Clean graphic rendering\n• Sophisticated visual abstraction\n• Strong negative-space usage\n• Distinct animation-frame appearance\n\nENVIRONMENTS:\n• Futuristic cityscapes\n• Monumental architecture\n• Experimental structures\n• Advanced urban environments\n• Futuristic research facilities\n• Massive engineered spaces\n• Strange but functional architecture\n• Visionary science-fiction worldbuilding\n\nTECHNOLOGY:\n• Advanced devices\n• Futuristic interfaces\n• Sophisticated machinery\n• Experimental technology\n• High-concept science-fiction equipment\n• Distinctive technological design\n\nCOMPOSITION:\n• Extreme camera perspectives\n• Dynamic framing\n• Unconventional viewpoints\n• Strong visual storytelling\n• Cinematic staging\n• Graphic composition\n• Animation storyboard sensibility\n\nCOLOR PALETTE:\n• Muted futurism\n• Metallic grays\n• Cool blues\n• Deep shadows\n• Selective accent colors\n• Atmospheric lighting\n\nATMOSPHERE:\n• Futuristic intrigue\n• Experimental science fiction\n• Advanced civilizations\n• Technological mystery\n• Visual sophistication\n• Intellectual futurism\n\nANTI-CHEAT:\n• Do NOT create anime\n• Do NOT create superhero aesthetics\n• Do NOT create generic cyberpunk\n• Do NOT create photorealism\n• Do NOT create CGI rendering\n• Do NOT imitate modern animation styles\n\nFINAL VALIDATION:\n• Subject remains recognizable\n• Aeon Flux visual language dominates\n• Futuristic architecture is prominent\n• Advanced technology is visible\n• Experimental composition is obvious\n• Animation-frame presentation is convincing",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "Transform the subject into the visual style of Aeon Flux using futuristic architecture, advanced technology, angular visual language, experimental composition, cinematic framing, sophisticated science-fiction worldbuilding, and authentic animation-frame aesthetics."
+  },
+  {
     "name": "AESOPS FABLE",
     "category": [
       "STORYBOOK",
@@ -22838,6 +22852,21 @@
     "additionalInstructions": ""
   },
   {
+    "name": "NATIONAL GEOGRAPHIC DISCOVERY",
+    "category": [
+      "MAGAZINE",
+      "DOCUMENTARY",
+      "EDITORIAL",
+      "PHOTOGRAPHY",
+      "COVER",
+      "PARODY"
+    ],
+    "message": "Take a picture and transform the image into an authentic National Geographic-style magazine cover.\n\nThe subject becomes the central figure in a humorous documentary feature exploring a fictional community, society, organization, town, movement, club, tradition, or historical society. Generate original names, traditions, sayings, celebrations, historical practices, archaeological discoveries, artifacts, and documentary feature text associated with the fictional subject.\n\nThe humor should come from the article topic, traditions, discoveries, and feature-story text while the visual presentation remains completely serious and documentary-like.\n\nAll generated content must be presented as a documentary article, archaeological report, historical investigation, exploration feature, or educational magazine story. Treat absurd or humorous subjects with complete journalistic seriousness.\n\nSTYLE RULES:\n• Preserve recognizable identity\n• Documentary photography aesthetics\n• Authentic editorial photography\n• National Geographic-style cover presentation\n• Professional magazine-cover design\n• Serious nonfiction visual tone\n• Authentic documentary appearance\n\nMAGAZINE ELEMENTS:\n• Iconic yellow border\n• Feature-story headlines\n• Cover-story callouts\n• Documentary typography\n• Editorial layouts\n• Professional publication design\n• Magazine issue presentation\n• Authentic magazine hierarchy\n\nFEATURE STORY:\n• Generate original fictional community name\n• Generate original fictional organization or society name\n• Generate original traditions\n• Generate original sayings and proverbs\n• Generate original celebrations and festivals\n• Generate original historical practices\n• Generate original archaeological discoveries\n• Generate original artifacts\n• Generate original documentary flavor text\n• Generate original article blurbs\n• Present the subject as the key figure connected to the story\n\nHUMOR RULES:\n• Create a lighthearted parody of a serious documentary cover\n• Generate humorous article headlines\n• Generate absurd but believable traditions\n• Generate funny sayings and community practices\n• Generate unusual celebrations\n• Generate quirky discoveries and artifacts\n• Maintain a straight-faced documentary presentation\n• Treat ridiculous subjects with complete journalistic seriousness\n• Humor should feel clever, observational, and documentary-inspired\n\nDOCUMENTARY PRESENTATION:\n• Serious historical tone\n• Serious archaeological tone\n• Exploration and discovery focus\n• Educational presentation\n• Human-interest storytelling\n• Documentary realism\n• Journalistic credibility\n• Documentary-style editorial writing\n\nPHOTOGRAPHY STYLE:\n• Professional documentary photography\n• National Geographic-style composition\n• Editorial realism\n• Human-interest portraiture\n• Exploration photography\n• Feature-story imagery\n• Authentic magazine-cover photography\n\nEDITORIAL DESIGN:\n• Magazine-cover typography\n• Documentary headlines\n• Feature-story blurbs\n• Professional layouts\n• Cover-story callouts\n• Authentic editorial hierarchy\n• Publication-quality design\n\nATMOSPHERE:\n• Exploration\n• Discovery\n• Curiosity\n• Historical mystery\n• Documentary storytelling\n• Educational journalism\n• Clever humor\n• Straight-faced satire\n\nANTI-CHEAT:\n• Do NOT create tabloid covers\n• Do NOT create celebrity-magazine styling\n• Do NOT create cartoon artwork\n• Do NOT create fantasy-poster layouts\n• Do NOT create meme layouts\n• Do NOT create slapstick comedy\n• Do NOT break the documentary presentation\n• Do NOT make the cover look obviously fake\n\nFINAL VALIDATION:\n• Yellow border present\n• Magazine cover layout obvious\n• Subject remains recognizable\n• Humorous article content present\n• Traditions and sayings present\n• Documentary article text present\n• Editorial photography dominates\n• Serious documentary presentation is obvious\n• Humor comes from the article subject matter rather than visual gags\n• Cover resembles an authentic National Geographic-style feature story",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "Create a complete National Geographic-style magazine cover featuring professional documentary photography, editorial headlines, cover-story layouts, feature blurbs, and authentic publication design. Generate an original fictional community, organization, society, club, movement, town, or historical society with humorous traditions, sayings, celebrations, discoveries, artifacts, and documentary flavor text. Present everything with complete documentary seriousness so the cover appears authentic at first glance, while the humor emerges from the article topics, traditions, discoveries, and editorial writing."
+  },
+  {
     "name": "NATURAL DISASTER",
     "category": [
       "DISASTER",
@@ -32933,6 +32962,20 @@
     ],
     "randomizeOptions": true,
     "additionalInstructions": "FINAL RESULT:\nThe image should depict a convincing human–fly hybrid where the subject’s recognizable human head is attached to a realistic fly body — disturbing, believable, and cinematic — with the entire form fully visible and framed like a serious science fiction transformation scene.\n\nFLY BODY REQUIREMENTS:"
+  },
+  {
+    "name": "THE MAXX",
+    "category": [
+      "COMIC",
+      "MTV",
+      "SURREAL",
+      "1990S",
+      "GRAPHIC NOVEL"
+    ],
+    "message": "Take a picture and transform the subject into the visual style of The Maxx.\n\nPreserve recognizable identity while translating the image into the distinctive visual language of the original comic and animated adaptation. The final image should resemble a professionally illustrated graphic-novel panel featuring expressive linework, painterly textures, surreal environments, imaginative symbolism.\n\nSTYLE RULES:\n• Preserve recognizable identity\n• The Maxx visual language\n• Expressive linework\n• Scratchy ink rendering\n• Graphic-novel aesthetics\n• Surreal visual storytelling\n• Distinctive comic-book craftsmanship\n\nVISUAL DESIGN:\n• Hand-drawn illustration\n• Dynamic line quality\n• Heavy texture work\n• Painterly rendering\n• Organic visual flow\n• Expressive mark making\n• Rich illustrative detail\n• Graphic storytelling emphasis\n\nENVIRONMENTS:\n• Urban landscapes\n• Surreal cityscapes\n• Dreamlike wilderness settings\n• Symbolic environments\n• Imaginative alternate spaces\n• Abstract natural forms\n• Fantasy-inspired scenery\n• Atmospheric graphic-novel backgrounds\n\nILLUSTRATION TECHNIQUES:\n• Scratchy ink work\n• Mixed-media appearance\n• Painterly textures\n• Layered visual detail\n• Expressive brushwork\n• Graphic contrast\n• Hand-crafted comic-book finish\n\nVISUAL SYMBOLISM:\n• Symbolic imagery\n• Imaginative environmental motifs\n• Dreamlike visual elements\n• Surreal storytelling devices\n• Metaphorical environments\n• Atmospheric visual themes\n\nCOLOR PALETTE:\n• Expressionistic colors\n• Emotional lighting\n• Deep shadows\n• Saturated highlights\n• Painterly color relationships\n• Graphic contrast\n\nATMOSPHERE:\n• Mystery\n• Imagination\n• Surreal exploration\n• Dreamlike storytelling\n• Visual symbolism\n• Graphic-novel immersion\n\nANTI-CHEAT:\n• Do NOT create superheroes\n• Do NOT create anime\n• Do NOT create photorealism\n• Do NOT create generic comic art\n• Do NOT create modern digital-painting styles\n• Do NOT create manga aesthetics\n\nFINAL VALIDATION:\n• Subject remains recognizable\n• The Maxx visual language dominates\n• Scratchy ink rendering is obvious\n• Surreal environments are prominent\n• Graphic-novel presentation is convincing",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "Transform the subject into the visual style of The Maxx using scratchy ink rendering, painterly textures, expressive linework, symbolic environments, surreal visual storytelling, graphic-novel craftsmanship, and authentic hand-drawn comic-book aesthetics."
   },
   {
     "name": "THEME PARK MAP",
