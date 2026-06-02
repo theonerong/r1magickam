@@ -331,6 +331,7 @@ let db = null;
 let galleryImages = [];
 let _galleryHighlightIndex = 0;
 let _galleryTopNavIndex = -1;
+let _galleryBottomNavIndex = -1;
 let previewGalleryImages = [];
 const GALLERY_SORT_ORDER_KEY = 'r1_gallery_sort_order';
 let currentViewerImageIndex = -1;
@@ -1703,7 +1704,9 @@ async function showGallery(renderOnly = false) {
     grid.appendChild(fragment);
     _galleryHighlightIndex = 0;
     _galleryTopNavIndex = -1;
+    _galleryBottomNavIndex = -1;
     _clearGalleryTopNavHighlight();
+    _clearGalleryBottomNavHighlight();
     _applyGalleryHighlight(false);
 
     if (totalPages > 1) {
@@ -2301,14 +2304,55 @@ function _clearGalleryTopNavHighlight() {
   _applyGalleryTopNavHighlight(-1);
 }
 
+function _getGalleryBottomNavItems() {
+  const result = [];
+  const prevBtn = document.getElementById('prev-page');
+  const nextBtn = document.getElementById('next-page');
+  const pagination = document.getElementById('gallery-pagination');
+  if (!pagination || pagination.style.display === 'none') return result;
+  if (prevBtn && !prevBtn.disabled) result.push(prevBtn);
+  if (nextBtn && !nextBtn.disabled) result.push(nextBtn);
+  return result;
+}
+
+function _applyGalleryBottomNavHighlight(index) {
+  const bottomItems = _getGalleryBottomNavItems();
+  bottomItems.forEach((btn, i) => btn.classList.toggle('nav-highlight-top', i === index));
+}
+
+function _clearGalleryBottomNavHighlight() {
+  _applyGalleryBottomNavHighlight(-1);
+}
+
 function scrollGalleryUp() {
   const modal = document.getElementById('gallery-modal');
   if (!modal || modal.style.display !== 'flex') return;
+
+  // If we are in the bottom pagination nav, move left or exit back to image grid
+  if (_galleryBottomNavIndex >= 0) {
+    if (_galleryBottomNavIndex > 0) {
+      _galleryBottomNavIndex--;
+      _applyGalleryBottomNavHighlight(_galleryBottomNavIndex);
+    } else {
+      // Exit bottom nav, return to last image in grid
+      _clearGalleryBottomNavHighlight();
+      _galleryBottomNavIndex = -1;
+      const items = document.querySelectorAll('#gallery-grid .gallery-item');
+      if (items.length) {
+        _galleryHighlightIndex = items.length - 1;
+        _applyGalleryHighlight(true);
+      }
+    }
+    return;
+  }
 
   if (_galleryTopNavIndex >= 0) {
     // Already in top nav — move to the previous (higher) button, stop at 0
     if (_galleryTopNavIndex > 0) _galleryTopNavIndex--;
     _applyGalleryTopNavHighlight(_galleryTopNavIndex);
+    // Scroll the controls bar into view so the buttons are visible
+    const controls = document.querySelector('.gallery-controls');
+    if (controls) controls.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     return;
   }
 
@@ -2322,6 +2366,9 @@ function scrollGalleryUp() {
       items.forEach(el => el.classList.remove('nav-highlight'));
       _galleryTopNavIndex = topItems.length - 1;
       _applyGalleryTopNavHighlight(_galleryTopNavIndex);
+      // Scroll the controls bar into view so the buttons are visible
+      const controls = document.querySelector('.gallery-controls');
+      if (controls) controls.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }
   } else {
     _galleryHighlightIndex--;
@@ -2332,6 +2379,19 @@ function scrollGalleryUp() {
 function scrollGalleryDown() {
   const modal = document.getElementById('gallery-modal');
   if (!modal || modal.style.display !== 'flex') return;
+
+  // If we are in the bottom pagination nav, move right or stay at end
+  if (_galleryBottomNavIndex >= 0) {
+    const bottomItems = _getGalleryBottomNavItems();
+    if (_galleryBottomNavIndex < bottomItems.length - 1) {
+      _galleryBottomNavIndex++;
+      _applyGalleryBottomNavHighlight(_galleryBottomNavIndex);
+    }
+    // Scroll pagination into view
+    const pagination = document.getElementById('gallery-pagination');
+    if (pagination) pagination.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    return;
+  }
 
   if (_galleryTopNavIndex >= 0) {
     // In top nav — move to the next (lower) button
@@ -2354,6 +2414,21 @@ function scrollGalleryDown() {
 
   const items = document.querySelectorAll('#gallery-grid .gallery-item');
   if (!items.length) return;
+
+  if (_galleryHighlightIndex >= items.length - 1) {
+    // At the last image — try to enter bottom pagination nav
+    const bottomItems = _getGalleryBottomNavItems();
+    if (bottomItems.length > 0) {
+      items.forEach(el => el.classList.remove('nav-highlight'));
+      _galleryBottomNavIndex = 0;
+      _applyGalleryBottomNavHighlight(_galleryBottomNavIndex);
+      // Scroll pagination into view
+      const pagination = document.getElementById('gallery-pagination');
+      if (pagination) pagination.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+    return;
+  }
+
   _galleryHighlightIndex = Math.min(items.length - 1, _galleryHighlightIndex + 1);
   _applyGalleryHighlight(true);
 }
@@ -9650,6 +9725,13 @@ window.addEventListener('sideClick', () => {
   // Gallery — side button opens or checks the highlighted item
   const galleryModalOpen = document.getElementById('gallery-modal')?.style.display === 'flex';
   if (galleryModalOpen) {
+    // Bottom pagination nav (Prev/Next page buttons)
+    if (_galleryBottomNavIndex >= 0) {
+      const bottomItems = _getGalleryBottomNavItems();
+      const btn = bottomItems[_galleryBottomNavIndex];
+      if (btn) btn.click();
+      return;
+    }
     if (_galleryTopNavIndex >= 0) {
       const topItems = _getGalleryTopNavItems();
       const btn = topItems[_galleryTopNavIndex];
