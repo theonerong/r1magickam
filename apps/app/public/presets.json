@@ -22852,21 +22852,6 @@
     "additionalInstructions": ""
   },
   {
-    "name": "NATIONAL GEOGRAPHIC DISCOVERY",
-    "category": [
-      "MAGAZINE",
-      "DOCUMENTARY",
-      "EDITORIAL",
-      "PHOTOGRAPHY",
-      "COVER",
-      "PARODY"
-    ],
-    "message": "Take a picture and transform the image into an authentic National Geographic-style magazine cover.\n\nThe subject becomes the central figure in a humorous documentary feature exploring a fictional community, society, organization, town, movement, club, tradition, or historical society. Generate original names, traditions, sayings, celebrations, historical practices, archaeological discoveries, artifacts, and documentary feature text associated with the fictional subject.\n\nThe humor should come from the article topic, traditions, discoveries, and feature-story text while the visual presentation remains completely serious and documentary-like.\n\nAll generated content must be presented as a documentary article, archaeological report, historical investigation, exploration feature, or educational magazine story. Treat absurd or humorous subjects with complete journalistic seriousness.\n\nSTYLE RULES:\n• Preserve recognizable identity\n• Documentary photography aesthetics\n• Authentic editorial photography\n• National Geographic-style cover presentation\n• Professional magazine-cover design\n• Serious nonfiction visual tone\n• Authentic documentary appearance\n\nMAGAZINE ELEMENTS:\n• Iconic yellow border\n• Feature-story headlines\n• Cover-story callouts\n• Documentary typography\n• Editorial layouts\n• Professional publication design\n• Magazine issue presentation\n• Authentic magazine hierarchy\n\nFEATURE STORY:\n• Generate original fictional community name\n• Generate original fictional organization or society name\n• Generate original traditions\n• Generate original sayings and proverbs\n• Generate original celebrations and festivals\n• Generate original historical practices\n• Generate original archaeological discoveries\n• Generate original artifacts\n• Generate original documentary flavor text\n• Generate original article blurbs\n• Present the subject as the key figure connected to the story\n\nHUMOR RULES:\n• Create a lighthearted parody of a serious documentary cover\n• Generate humorous article headlines\n• Generate absurd but believable traditions\n• Generate funny sayings and community practices\n• Generate unusual celebrations\n• Generate quirky discoveries and artifacts\n• Maintain a straight-faced documentary presentation\n• Treat ridiculous subjects with complete journalistic seriousness\n• Humor should feel clever, observational, and documentary-inspired\n\nDOCUMENTARY PRESENTATION:\n• Serious historical tone\n• Serious archaeological tone\n• Exploration and discovery focus\n• Educational presentation\n• Human-interest storytelling\n• Documentary realism\n• Journalistic credibility\n• Documentary-style editorial writing\n\nPHOTOGRAPHY STYLE:\n• Professional documentary photography\n• National Geographic-style composition\n• Editorial realism\n• Human-interest portraiture\n• Exploration photography\n• Feature-story imagery\n• Authentic magazine-cover photography\n\nEDITORIAL DESIGN:\n• Magazine-cover typography\n• Documentary headlines\n• Feature-story blurbs\n• Professional layouts\n• Cover-story callouts\n• Authentic editorial hierarchy\n• Publication-quality design\n\nATMOSPHERE:\n• Exploration\n• Discovery\n• Curiosity\n• Historical mystery\n• Documentary storytelling\n• Educational journalism\n• Clever humor\n• Straight-faced satire\n\nANTI-CHEAT:\n• Do NOT create tabloid covers\n• Do NOT create celebrity-magazine styling\n• Do NOT create cartoon artwork\n• Do NOT create fantasy-poster layouts\n• Do NOT create meme layouts\n• Do NOT create slapstick comedy\n• Do NOT break the documentary presentation\n• Do NOT make the cover look obviously fake\n\nFINAL VALIDATION:\n• Yellow border present\n• Magazine cover layout obvious\n• Subject remains recognizable\n• Humorous article content present\n• Traditions and sayings present\n• Documentary article text present\n• Editorial photography dominates\n• Serious documentary presentation is obvious\n• Humor comes from the article subject matter rather than visual gags\n• Cover resembles an authentic National Geographic-style feature story",
-    "options": [],
-    "randomizeOptions": false,
-    "additionalInstructions": "Create a complete National Geographic-style magazine cover featuring professional documentary photography, editorial headlines, cover-story layouts, feature blurbs, and authentic publication design. Generate an original fictional community, organization, society, club, movement, town, or historical society with humorous traditions, sayings, celebrations, discoveries, artifacts, and documentary flavor text. Present everything with complete documentary seriousness so the cover appears authentic at first glance, while the humor emerges from the article topics, traditions, discoveries, and editorial writing."
-  },
-  {
     "name": "NATURAL DISASTER",
     "category": [
       "DISASTER",
@@ -32880,6 +32865,121 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "IDENTITY PRESERVATION (CRITICAL):\n• The subject's facial features must remain recognizable\n• Distinctive features preserved through text density and contour following\n• The text is the MEDIUM, not a mask - the person is still clearly visible\n• Do not idealize or alter the subject's features\n• The three-quarter angle should reflect the subject's actual face angle and proportions\n\nFINAL RESULT:\nA stunning 8K typographic art portrait in a three-quarter view where the subject's likeness is constructed entirely from flowing white calligraphic text on a single deep high-contrast background color. The portrait shows the subject at approximately 45 degrees - not a side profile, not fully frontal - creating natural dimension and depth. Every facial feature and contour is formed by text lines following the natural curves of the face, with text density creating the illusion of light and shadow. If a master prompt provided specific text, that text and only that text fills the entire portrait. If no text was provided, original flavor text inspired by the image fills the portrait. The outer portrait edge is razor sharp, the background completely flat, and absolutely no watermarks, signatures, or branding of any kind appear anywhere in the image. The result is a clean, professional typographic portrait that is simultaneously a work of art and an unmistakable likeness of the subject."
+  },
+  {
+    "name": "TEXT TRANSLATOR",
+    "category": [
+      "TRANSLATION",
+      "TEXT",
+      "SIGNAGE",
+      "LOCALIZATION",
+      "LANGUAGE"
+    ],
+    "message": "Take a picture and translate all existing readable text into the selected language.\n\nAnalyze the entire image and identify every instance of readable text including signs, storefronts, advertisements, menus, labels, packaging, posters, billboards, newspapers, magazines, books, documents, screens, user interfaces, subtitles, captions, vehicle markings, street signs, graffiti, banners, clothing text, logos containing readable words, and any other visible written language.\n\nReplace the original text with an authentic translation in the selected target language while preserving the original meaning, intent, tone, context, formatting, hierarchy, placement, and visual appearance.\n\nOnly translate text that already exists in the image.\n\nIf there is no text in a particular area, do not add text.\n\nIf the image contains no readable text anywhere, make no text-related changes.\n\nTRANSLATION RULES:\n• Translate all visible readable text\n• Preserve original meaning exactly\n• Preserve intent and context\n• Preserve names when normally untranslated\n• Preserve brands when normally untranslated\n• Preserve trademarks when normally untranslated\n• Preserve numbers\n• Preserve dates\n• Preserve prices\n• Preserve measurements\n• Preserve formatting\n• Preserve layout\n• Preserve hierarchy\n• Preserve document structure\n• Preserve user-interface structure\n\nAUTHENTICITY RULES:\n• Native-speaker quality translation\n• Correct grammar\n• Correct spelling\n• Correct punctuation\n• Correct vocabulary\n• Natural wording\n• Regionally appropriate language\n• Authentic real-world language usage\n• Professional localization quality\n• No machine-translation artifacts\n• No placeholder text\n• No invented words\n\nVISUAL RULES:\n• Replace original text with translated text\n• Maintain original typography style\n• Maintain original placement\n• Maintain original sign appearance\n• Maintain original design aesthetics\n• Maintain readability\n• Maintain realistic text rendering\n\nANTI-CHEAT:\n• Do NOT add text where none exists\n• Do NOT create fictional translations\n• Do NOT leave readable text untranslated\n• Do NOT summarize content\n• Do NOT paraphrase content\n• Do NOT alter meaning\n• Do NOT invent words\n• Do NOT create filler text\n• Do NOT create gibberish text\n• Do NOT mix languages unless present in the original image\n\nFINAL VALIDATION:\n• Every readable text element is translated\n• Meaning remains unchanged\n• Translation is fluent and authentic\n• No made-up words appear\n• No gibberish text appears\n• No additional text has been added\n• Areas without text remain unchanged\n• Typography remains realistic\n• Translation appears professionally localized",
+    "options": [
+    {
+      "id": "001",
+      "text": "English"
+    },
+    {
+      "id": "002",
+      "text": "Mandarin Chinese"
+    },
+    {
+      "id": "003",
+      "text": "Hindi"
+    },
+    {
+      "id": "004",
+      "text": "Spanish"
+    },
+    {
+      "id": "005",
+      "text": "Standard Arabic"
+    },
+    {
+      "id": "006",
+      "text": "French"
+    },
+    {
+      "id": "007",
+      "text": "Bengali"
+    },
+    {
+      "id": "008",
+      "text": "Portuguese"
+    },
+    {
+      "id": "009",
+      "text": "Indonesian"
+    },
+    {
+      "id": "010",
+      "text": "Urdu"
+    },
+    {
+      "id": "011",
+      "text": "German"
+    },
+    {
+      "id": "012",
+      "text": "Japanese"
+    },
+    {
+      "id": "013",
+      "text": "Nigerian Pidgin"
+    },
+    {
+      "id": "014",
+      "text": "Marathi"
+    },
+    {
+      "id": "015",
+      "text": "Telugu"
+    },
+    {
+      "id": "016",
+      "text": "Turkish"
+    },
+    {
+      "id": "017",
+      "text": "Tamil"
+    },
+    {
+      "id": "018",
+      "text": "Cantonese"
+    },
+    {
+      "id": "019",
+      "text": "Vietnamese"
+    },
+    {
+      "id": "020",
+      "text": "Wu Chinese"
+    },
+    {
+      "id": "021",
+      "text": "Italian"
+    },
+    {
+      "id": "022",
+      "text": "Romanian"
+    },
+    {
+      "id": "023",
+      "text": "Dutch"
+    },
+    {
+      "id": "024",
+      "text": "Russian"
+    },
+    {
+      "id": "025",
+      "text": "Polish"
+    }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "Translate every existing readable text element in the image into the selected language. Preserve meaning, formatting, layout, hierarchy, typography, placement, and visual design. Only translate text that already exists. Never add text where none exists. If no readable text is present, make no text-related changes. All translations must be authentic, grammatically correct, naturally written by native-speaker standards, and free of made-up words, placeholder text, mistranslations, translation artifacts, or gibberish."
   },
   {
     "name": "THE BIGGEST LOSER",
