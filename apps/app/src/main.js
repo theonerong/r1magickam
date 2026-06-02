@@ -4311,23 +4311,24 @@ function selectCurrentMenuItem() {
 
 // Load saved styles
 async function loadStyles() {
-    // Initialize IndexedDB storage
-    await presetStorage.init();
-    await presetImporter.init();
+    // Initialize IndexedDB storage — run both at the same time instead of one after the other
+    await Promise.all([presetStorage.init(), presetImporter.init()]);
     
-    // Check if this is truly a first-time user
-    const importedPresets = await presetImporter.loadImportedPresets();
+    // Load imported presets and modifications at the same time instead of one after the other
+    const [importedPresets, modifications] = await Promise.all([
+        presetImporter.loadImportedPresets(),
+        presetStorage.getAllModifications()
+    ]);
     const hasImports = importedPresets.length > 0;
-    
-    // Check if there are any user modifications
-    const modifications = await presetStorage.getAllModifications();
     const hasModifications = modifications.length > 0;
     
     // Always fetch the real preset count so the tutorial display is always correct
+    // Save the result so we can reuse it later without downloading the file again
+    let _cachedFactoryPresets = null;
     try {
         showLoadingOverlay('Loading presets...');
-        const allFactoryPresets = await presetImporter.loadPresetsFromFile();
-        totalFactoryPresetCount = allFactoryPresets.length;
+        _cachedFactoryPresets = await presetImporter.loadPresetsFromFile();
+        totalFactoryPresetCount = _cachedFactoryPresets.length;
         const tutorialCountEl = document.getElementById('tutorial-preset-count');
         if (tutorialCountEl) tutorialCountEl.textContent = totalFactoryPresetCount;
     } catch (e) {
@@ -4443,17 +4444,18 @@ async function loadStyles() {
     // Update the display to show correct count on startup
     updateVisiblePresetsDisplay();
 
-    // Check for updates after loading
+    // Check for updates — pass the already-downloaded presets so the file isn't downloaded again
+    const _presetsForUpdateCheck = _cachedFactoryPresets;
     setTimeout(() => {
-        checkForPresetsUpdates();
-    }, 1000);
+        checkForPresetsUpdates(_presetsForUpdateCheck);
+    }, 2000);
 }
 
 // Check for updates on startup
 
-async function checkForPresetsUpdates() {
+async function checkForPresetsUpdates(preloadedPresets) {
   try {
-    const jsonPresets = await presetImporter.loadPresetsFromFile();
+    const jsonPresets = preloadedPresets || await presetImporter.loadPresetsFromFile();
     const importedPresets = presetImporter.getImportedPresets();
 
     if (importedPresets.length === 0) return;
@@ -12597,10 +12599,8 @@ window.addEventListener('load', () => {
       }, 50);
     }
     
-    // Initialize camera after brief delay for effect
-    setTimeout(() => {
-      initCamera();
-    }, 300);
+    // Initialize camera immediately while the visual effects play
+    initCamera();
   });
 }
 
