@@ -15952,7 +15952,8 @@ async function importPreviewImageFromQR(url) {
     if (blob.type && !isImageType && !isOctetStream) throw new Error('Not an image file: ' + blob.type);
 
     // Resize to a reasonable preview size
-    blob = await resizeAndCompressImage(blob, 800, 800, 0.85);
+    const previewResizeResult = await resizeAndCompressImage(blob, 800, 800, 0.85);
+    blob = previewResizeResult.blob;
 
     const base64Data = await new Promise((resolve, reject) => {
       const reader = new FileReader();
@@ -16323,7 +16324,7 @@ async function resizeAndCompressImage(blob, maxWidth = 640, maxHeight = 480, qua
       canvas.toBlob(
         (resizedBlob) => {
           if (resizedBlob) {
-            resolve(resizedBlob);
+            resolve({ blob: resizedBlob, width, height });
           } else {
             reject(new Error('Failed to compress image'));
           }
@@ -16431,7 +16432,10 @@ async function importFromQRCode() {
 
     updateQRScannerStatus('Optimizing image...', '');
     const importRes = IMPORT_RESOLUTION_OPTIONS[currentImportResolutionIndex];
-    blob = await resizeAndCompressImage(blob, importRes.width, importRes.height, 0.85);
+    const importResizeResult = await resizeAndCompressImage(blob, importRes.width, importRes.height, 0.85);
+    blob = importResizeResult.blob;
+    const importedWidth = importResizeResult.width;
+    const importedHeight = importResizeResult.height;
 
     const newSize = Math.round(blob.size / 1024);
     updateQRScannerStatus('Compressed: ' + originalSize + 'KB → ' + newSize + 'KB', '');
@@ -16453,7 +16457,8 @@ async function importFromQRCode() {
     const imageData = {
       id: Date.now().toString() + '-' + Math.random().toString(36).substr(2, 9),
       imageBase64: base64Data,
-      timestamp: Date.now()
+      timestamp: Date.now(),
+      resolution: (importedWidth && importedHeight) ? importedWidth + 'x' + importedHeight : null
     };
 
     // Save to IndexedDB FIRST — only add to memory if save succeeds
