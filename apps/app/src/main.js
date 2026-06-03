@@ -3994,7 +3994,7 @@ async function applyMultiplePresets() {
       document.getElementById('batch-current').textContent = processed;
       document.getElementById('batch-progress-fill').style.width = `${(processed / presetsToApply.length) * 100}%`;
       
-      await new Promise(resolve => setTimeout(resolve, 3000));
+      await new Promise(resolve => setTimeout(resolve, 6000));
     } catch (error) {
       console.error(`Failed to apply preset ${preset.name}:`, error);
     }
@@ -4444,11 +4444,8 @@ async function loadStyles() {
     // Update the display to show correct count on startup
     updateVisiblePresetsDisplay();
 
-    // Check for updates — pass the already-downloaded presets so the file isn't downloaded again
-    const _presetsForUpdateCheck = _cachedFactoryPresets;
-    setTimeout(() => {
-        checkForPresetsUpdates(_presetsForUpdateCheck);
-    }, 2000);
+    // Check for updates immediately — store as a promise the camera can wait for
+    window._presetsUpdateCheckPromise = checkForPresetsUpdates(_cachedFactoryPresets);
 }
 
 // Check for updates on startup
@@ -9001,7 +8998,11 @@ async function initCamera() {
       }, 3000);
     }
     
-    // Show updates indicator for 3 seconds if updates are available
+    // Wait for the update check to finish (if still running), then show indicator
+    if (window._presetsUpdateCheckPromise) {
+      await window._presetsUpdateCheckPromise;
+      window._presetsUpdateCheckPromise = null;
+    }
     if (window.hasPresetsUpdates) {
       const updatesIndicator = document.getElementById('updates-indicator');
       if (updatesIndicator) {
