@@ -4203,6 +4203,20 @@
     "additionalInstructions": "FINAL RESULT:\nA stark, raw composition with strong contrast and minimal refinement."
   },
   {
+    "name": "BUBBLEWRAP",
+    "category": [
+      "TEXTURE",
+      "NOVELTY",
+      "HUMOR",
+      "TRANSFORMATION",
+      "FUN"
+    ],
+    "message": "Take a picture and transform ONLY the subject as though the subject is constructed entirely from bubble wrap.\n\nCRITICAL TRANSFORMATION RULES:\n• Transform ONLY the primary subject\n• Do NOT transform the background\n• Do NOT transform the environment\n• Do NOT transform surrounding objects unless they are part of the subject\n• Preserve the original scene, location, lighting, and surroundings\n• The transformation must be isolated to the subject alone\n\nPreserve recognizable identity while recreating every visible feature of the subject using bubble-wrap materials.\n\nThe subject's skin, hair, clothing, accessories, and visible details should all be formed from translucent bubble-wrap construction.\n\nThe transformation should appear physically believable as though the subject were manufactured entirely from bubble-wrap material while existing naturally within the unchanged original environment.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "• Preserve recognizable identity\n• Transform ONLY the subject\n• Leave background unchanged\n• Leave environment unchanged\n• Leave surrounding objects unchanged\n• Leave scenery unchanged\n• Leave architecture unchanged\n• Leave landscape unchanged\n• Leave room unchanged\n• Entire subject constructed from bubble wrap\n• Bubble-wrap skin\n• Bubble-wrap hair\n• Bubble-wrap clothing\n• Bubble-wrap accessories\n• Thousands of visible air bubbles\n• Transparent plastic materials\n• Realistic reflections\n• Realistic translucency\n• Plastic highlights\n• Physical-material realism\n• Detailed bubble texture\n• Subject remains recognizable\n• No ordinary skin visible on subject\n• No ordinary clothing visible on subject\n• Entire subject made of bubble wrap\n• Bubble wrap should follow anatomy and facial features\n• Bubble wrap should preserve facial recognition\n• Subject should appear naturally integrated into the original scene\n• Background must remain normal\n• Environment must remain normal\n• Only the subject receives the transformation"
+  },
+  {
     "name": "BULLET TIME",
     "category": [
       "SCI-FI",
@@ -8620,6 +8634,20 @@
     "additionalInstructions": ""
   },
   {
+    "name": "CUPHEAD",
+    "category": [
+      "GAMING",
+      "1930S",
+      "RUBBERHOSE",
+      "ANIMATION",
+      "RETRO"
+    ],
+    "message": "Take a picture and transform the entire scene into the visual style of Cuphead.\n\nPreserve recognizable identity while transforming the subject into a Cuphead-style cartoon character.\n\nThe subject, environment, objects, and background should all be recreated using the visual techniques found throughout Cuphead.\n\nThe image should resemble a hand-inked and hand-painted animation cel inspired by 1930s theatrical cartoons.\n\nBackgrounds should appear painted with watercolor techniques while characters should appear traditionally animated using rubber-hose animation principles.\n\nThe final image should resemble an authentic screenshot from Cuphead.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "• Preserve recognizable identity\n• Transform subject into Cuphead-style character\n• Rubber-hose limbs\n• Pie-cut cartoon eyes\n• Hand-inked outlines\n• Traditional cel-animation appearance\n• Watercolor-painted backgrounds\n• Vintage animation color palette\n• Fleischer-inspired cartoon aesthetics\n• 1930s theatrical-cartoon styling\n• Slight film grain\n• Slight film wear\n• Vintage animation imperfections\n• Exaggerated cartoon expressions\n• Hand-painted production appearance\n• No photorealism\n• No modern CGI\n• No anime influence\n• Entire image rendered in Cuphead visual style\n• Final image should resemble an authentic Cuphead gameplay screenshot"
+  },
+  {
     "name": "CURRENCY ENGRAVING",
     "category": [
       "ART",
@@ -11801,6 +11829,20 @@
     ],
     "randomizeOptions": true,
     "additionalInstructions": "FINAL RESULT:\nThe image should capture the subject in a thrilling moment on a carnival or amusement park ride, with dynamic motion, authentic carnival atmosphere, and the genuine excitement (or terror) of the ride experience frozen in a perfect action shot."
+  },
+  {
+    "name": "FAIRLY ODDPARENTS",
+    "category": [
+      "ANIMATION",
+      "TELEVISION",
+      "COMEDY",
+      "MAGICAL",
+      "CARTOON"
+    ],
+    "message": "Take a picture and transform the entire scene into the visual style of The Fairly OddParents.\n\nPreserve recognizable identity while transforming the subject into a character who naturally belongs within the Fairly OddParents universe.\n\nThe subject should be redrawn using the franchise's distinctive animation style, featuring simplified geometric shapes, oversized heads, expressive eyes, rounded forms, bold outlines, and highly stylized cartoon anatomy.\n\nThe entire environment should be transformed into the colorful suburban world associated with Dimmsdale.\n\nObjects, buildings, furniture, vehicles, and scenery should appear redesigned according to the visual language of the series.\n\nThe final image should resemble an authentic production frame from The Fairly OddParents.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "• Preserve recognizable identity\n• Transform subject into Fairly OddParents character design\n• Large expressive eyes\n• Simplified geometric anatomy\n• Rounded cartoon forms\n• Bold black outlines\n• Bright flat colors\n• Cel-animation appearance\n• Dimmsdale-inspired environments\n• Cartoon suburban architecture\n• Cartoon props and objects\n• Highly expressive facial expressions\n• Playful magical atmosphere\n• Television-animation aesthetics\n• Stylized cartoon perspective\n• No photorealism\n• No realistic textures\n• No CGI realism\n• Entire image rendered in Fairly OddParents visual style\n• Final image should resemble an authentic frame from the animated series"
   },
   {
     "name": "FAMOUS STATUES",
@@ -21706,6 +21748,20 @@
     "additionalInstructions": ""
   },
   {
+    "name": "MOUSE P.I. FOR HIRE",
+    "category": [
+      "GAMING",
+      "NOIR",
+      "FPS",
+      "DETECTIVE",
+      "CARTOON"
+    ],
+    "message": "Take a picture and transform the entire image into a first-person-shooter scene from Mouse P.I. For Hire.\n\nThe viewer should appear to be actively playing the game from a first-person perspective.\n\nPreserve recognizable identity while transforming any visible people or animals into characters that naturally belong within the Mouse P.I. For Hire universe.\n\nThe entire environment should be recreated using the game's distinctive blend of cartoon animation, noir detective storytelling, anthropomorphic characters, and vintage animation influences.\n\nThe final image should resemble a genuine in-game screenshot captured during active gameplay.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "• First-person gameplay perspective\n• Authentic Mouse P.I. For Hire visual style\n• Noir detective atmosphere\n• Anthropomorphic cartoon-world aesthetics\n• Vintage-cartoon influence\n• Hand-drawn cartoon appearance\n• Stylized game environments\n• Preserve recognizable identity\n• Transform subjects into characters that belong within the game's world\n• Detective-agency atmosphere when appropriate\n• Cartoon-city environments when appropriate\n• Film-noir lighting when appropriate\n• Gameplay HUD elements when appropriate\n• Dynamic first-person action framing\n• In-game screenshot composition\n• Cartoon game-asset rendering\n• No photorealism\n• No pasted-in subjects\n• Entire image rendered as Mouse P.I. For Hire game world\n• Final image should resemble an authentic Mouse P.I. For Hire gameplay screenshot"
+  },
+  {
     "name": "MOVIE MONSTER",
     "category": [
       "HORROR",
@@ -26671,6 +26727,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "POPE",
+    "category": [
+      "RELIGIOUS",
+      "PORTRAIT",
+      "CEREMONIAL",
+      "HISTORICAL",
+      "FORMAL"
+    ],
+    "message": "Take a picture and transform the subject into the Pope while preserving the subject's recognizable identity and facial features.\n\nThe subject should appear as the reigning Pope in an official Vatican portrait, ceremonial appearance, public address, blessing, or formal religious event.\n\nPreserve recognizable identity while transforming the subject into a convincing papal figure.\n\nThe subject should wear authentic papal vestments, ceremonial garments, religious regalia, and appropriate ecclesiastical attire.\n\nThe final image should resemble an official Vatican photograph, formal portrait, ceremonial appearance, or historic papal image.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "• Preserve recognizable identity\n• Subject becomes the Pope\n• Authentic papal attire\n• White cassock\n• Papal vestments\n• Religious regalia\n• Formal ceremonial presentation\n• Vatican aesthetics when appropriate\n• Historic Catholic architecture when appropriate\n• Professional portrait photography\n• Dignified expression\n• Respectful presentation\n• Realistic materials and fabrics\n• Official-photograph aesthetics\n• High-detail portraiture\n• Avoid parody\n• Avoid caricature\n• Avoid disrespectful presentation\n• Final image should resemble an official papal photograph"
   },
   {
     "name": "POP-UP BOOK",
