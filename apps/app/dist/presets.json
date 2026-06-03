@@ -1239,6 +1239,20 @@
     "additionalInstructions": ""
   },
   {
+    "name": "ALLA PRIMA OIL PAINTING",
+    "category": [
+      "ART",
+      "PAINTING",
+      "FINE ART",
+      "CLASSICAL",
+      "TRADITIONAL"
+    ],
+    "message": "Take a picture and transform the entire image into an authentic alla prima oil painting.\n\nPreserve recognizable identity while reinterpreting all subjects, objects, environments, and details using the traditional wet-on-wet painting technique.\n\nThe final image should appear to have been completed in a single painting session with wet paint applied directly onto previously applied wet paint.\n\nThe image must look like a genuine hand-painted oil painting rather than a photograph with paint filters applied.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "• Preserve recognizable identity\n• Transform the entire image into an oil painting\n• Use authentic alla prima techniques\n• Use wet-on-wet painting methods\n• Complete appearance of a single-session painting\n• Use energetic brushwork\n• Use expressive painterly strokes\n• Use direct painting techniques\n• Mix colors directly on the canvas\n• Preserve visible brush marks\n• Preserve painterly texture\n• Use thick and thin paint variation\n• Use confident brush application\n• Use broken color techniques\n• Use visible paint edges\n• Use natural oil-paint blending\n• Use traditional artist materials\n• Use realistic canvas texture\n• Use authentic fine-art presentation\n• Use painterly interpretation rather than photographic rendering\n• Avoid airbrushed appearance\n• Avoid digital-art aesthetics\n• Avoid CGI rendering\n• Avoid vector-art appearance\n• Avoid excessive smoothing\n• Avoid photographic sharpness\n• Avoid artificial filters\n• Emphasize hand-painted craftsmanship\n• Emphasize wet paint interaction\n• Emphasize direct observation painting\n• Emphasize expressive mark-making\n• Emphasize authentic oil-paint surface qualities\n• Final image should resemble a professionally executed alla prima oil painting created by a skilled traditional painter in a single sitting"
+  },
+  {
     "name": "ALTER EGO",
     "category": [
       "PERSONALITY",
@@ -3582,6 +3596,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "BOB ROSS",
+    "category": [
+      "TELEVISION",
+      "ART",
+      "PAINTING",
+      "CLASSIC",
+      "ALLA PRIMA"
+    ],
+    "message": "Take a picture and transform the image into a scene from The Joy of Painting.\n\nBob Ross is actively painting on a canvas mounted on an easel.\n\nThe subject must appear entirely inside the painting on the canvas and not anywhere else in the scene.\n\nPreserve recognizable identity while transforming the subject into a fully painted element within Bob Ross's artwork.\n\nBob Ross should be standing beside the easel, palette and brush in hand, looking back toward the viewer with his signature warm smile as if sharing happy thoughts while painting.\n\nThe subject must never appear pasted, composited, edited, or photoshopped into the canvas. The subject must appear to have been painted directly onto the canvas using authentic wet-on-wet oil-painting techniques.\n\nThe final image should resemble a production still from The Joy of Painting.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "• Bob Ross must be visible\n• Bob Ross must be standing beside the easel\n• Bob Ross should be holding painting tools\n• Bob Ross should appear friendly, calm, and welcoming\n• Subject appears only inside the painted canvas\n• Preserve recognizable identity\n• Subject must be rendered entirely as oil paint\n• Subject must appear naturally integrated into the painted composition\n• Use authentic alla prima wet-on-wet techniques\n• Use visible brush strokes\n• Use layered wet paint\n• Use painterly color mixing\n• Use thick oil-paint textures\n• Use expressive brushwork\n• Use palette-knife effects when appropriate\n• Include classic Bob Ross landscapes when appropriate\n• Include mountains when appropriate\n• Include forests when appropriate\n• Include lakes when appropriate\n• Include clouds when appropriate\n• Include happy little trees when appropriate\n• Emphasize traditional oil-painting materials\n• Emphasize canvas texture\n• Emphasize hand-painted artistry\n• Avoid photorealism\n• Avoid digital-art aesthetics\n• Avoid CGI\n• Avoid modern illustration styles\n• Final image should resemble a genuine episode of The Joy of Painting\n• The painting on the canvas must appear freshly painted using wet-on-wet oil techniques"
   },
   {
     "name": "BODY PAINT",
