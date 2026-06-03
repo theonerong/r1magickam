@@ -2227,6 +2227,20 @@
     "additionalInstructions": ""
   },
   {
+    "name": "ARCHIE COMICS",
+    "category": [
+      "COMIC BOOK",
+      "TEEN",
+      "CLASSIC",
+      "HUMOR",
+      "RETRO"
+    ],
+    "message": "Take a picture and transform the subject into a character appearing within an Archie Comics story.\n\nPreserve recognizable identity while redrawing the subject in the visual style of Archie Comics.\n\nThe subject should naturally interact with Archie, Betty, Veronica, Jughead, Reggie, and other residents of Riverdale.\n\nThe scene should be presented as a colorful comic-book page, cover, splash page, or comic-strip panel.\n\nThe final image should resemble an authentic Archie Comics publication.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "• Preserve recognizable identity\n• Subject redrawn in Archie Comics style\n• Subject interacts naturally with Archie characters\n• Riverdale setting when appropriate\n• Bright comic-book colors\n• Clean comic-book linework\n• Teen-comedy atmosphere\n• Comic-book panel layout\n• Speech balloons when appropriate\n• Classic Archie Comics aesthetics\n• Wholesome humor\n• Comic-book storytelling\n• Vintage comic-book production appearance\n• No photorealism\n• Final image should resemble an authentic Archie Comics page or cover"
+  },
+  {
     "name": "ARCHITECTURAL REDESIGN",
     "category": [
       "ARCHITECTURE",
@@ -4923,6 +4937,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "• Preserve recognizable identity of the subject\n• Transform the subject into a miniature version of themselves\n• Place a broken half-eggshell on top of the subject's head\n• Ensure the eggshell is clearly visible and immediately recognizable\n• Create strong underdog visual storytelling\n• Make surrounding objects and environments appear significantly larger than the subject\n• Emphasize innocence, charm, determination, and vulnerability\n• Preserve facial identity while enhancing expressive emotional reactions\n• Use whimsical, storybook-like visual presentation\n• Create humorous situations where the subject appears small compared to the world around them\n• Maintain a family-friendly tone\n• Avoid dark or depressing interpretations\n• Ensure the subject remains human and recognizable\n• The final image should resemble an iconic underdog character experiencing a world that feels much larger than they are while proudly wearing the signature eggshell on their head"
+  },
+  {
+    "name": "CALVIN & HOBBES",
+    "category": [
+      "COMIC STRIP",
+      "NEWSPAPER",
+      "CLASSIC",
+      "HUMOR",
+      "CARTOON"
+    ],
+    "message": "Take a picture and transform the subject into a character appearing within a Calvin & Hobbes comic strip.\n\nPreserve recognizable identity while redrawing the subject in the visual style of the comic.\n\nThe subject should naturally interact with Calvin, Hobbes, and the world of the comic strip.\n\nThe scene should be presented as one or more authentic newspaper-comic panels featuring expressive cartoon artwork, playful storytelling, and comic-strip humor.\n\nThe final image should resemble a published Calvin & Hobbes comic strip.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "• Preserve recognizable identity\n• Subject redrawn in comic-strip style\n• Subject interacts naturally with Calvin\n• Subject interacts naturally with Hobbes\n• Newspaper-comic presentation\n• Hand-drawn ink lines\n• Watercolor-inspired coloring when appropriate\n• Expressive cartoon acting\n• Imaginative childhood adventures\n• Whimsical humor\n• Comic-strip panel layout\n• Speech balloons when appropriate\n• Classic newspaper-comic aesthetics\n• No photorealism\n• Final image should resemble an authentic Calvin & Hobbes comic strip"
   },
   {
     "name": "CAMDEN TOWN GROUP",
@@ -10078,6 +10106,53 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "FINAL RESULT:\nThe image should show the subject - CLEARLY RECOGNIZABLE as themselves - transformed into a fabulous drag queen with dramatic makeup applied to their actual face, a show-stopping wig, glamorous drag attire, and confident fierce energy - celebrating drag artistry with respect, humor, and unforgettable fabulousness while preserving the subject's unique facial features and identity."
+  },
+  {
+    "name": "DRAGON'S LAIR",
+    "category": [
+      "GAMING",
+      "ARCADE",
+      "FANTASY",
+      "ANIMATION",
+      "RETRO"
+    ],
+    "message": "Take a picture and transform the subject into the hero of a Dragon's Lair-style animated fantasy arcade game.\n\nPreserve recognizable identity while transforming the subject into the game's adventurer.\n\nThe subject must replace the hero while retaining the subject's face rendered in the same animation style as the game.\n\nThe entire image must appear to be an actual gameplay screen captured directly from a classic laserdisc arcade cabinet.\n\nThe environment should feature castles, dragons, dungeons, monsters, magical traps, fantasy architecture, and cinematic fantasy animation.\n\nThe image should resemble an authentic gameplay moment rather than promotional artwork.",
+    "options": [
+    {
+    "id": "001",
+    "text": "VICTORY - Slay the dragon.\n\nOPTION 001 REQUIREMENTS:\n• Subject defeats dragon\n• Heroic fantasy action\n• Epic victory moment"
+    },
+    {
+    "id": "002",
+    "text": "VICTORY - Rescue the princess.\n\nOPTION 002 REQUIREMENTS:\n• Subject successfully rescues princess\n• Triumphant ending scene"
+    },
+    {
+    "id": "003",
+    "text": "VICTORY - Escape a deadly dungeon trap.\n\nOPTION 003 REQUIREMENTS:\n• Subject escapes elaborate trap\n• Last-second survival"
+    },
+    {
+    "id": "004",
+    "text": "VICTORY - Claim legendary treasure.\n\nOPTION 004 REQUIREMENTS:\n• Subject obtains treasure\n• Celebration scene"
+    },
+    {
+    "id": "005",
+    "text": "DEFEAT - Burned by dragon fire.\n\nOPTION 005 REQUIREMENTS:\n• Dragon defeats subject\n• Classic arcade failure"
+    },
+    {
+    "id": "006",
+    "text": "DEFEAT - Fall into a trap.\n\nOPTION 006 REQUIREMENTS:\n• Subject falls victim to dungeon trap\n• Dramatic animated failure"
+    },
+    {
+    "id": "007",
+    "text": "DEFEAT - Eaten by a monster.\n\nOPTION 007 REQUIREMENTS:\n• Monster defeats subject\n• Comical fantasy-game defeat"
+    },
+    {
+    "id": "008",
+    "text": "DEFEAT - Classic arcade-game death scene.\n\nOPTION 008 REQUIREMENTS:\n• Over-the-top arcade-game death scene\n• Humorous fantasy failure"
+    }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "IDENTITY PRESERVATION:\n• Preserve recognizable identity\n• Subject replaces the hero\n• Subject remains clearly recognizable\n\nGAMEPLAY REQUIREMENTS:\n• Must look like an actual arcade gameplay screen\n• Authentic laserdisc-game presentation\n• Hand-drawn fantasy animation\n• Medieval fantasy environments\n• Animated castles\n• Dragons\n• Dungeons\n• Monsters\n• Fantasy traps\n• Arcade-game composition\n\nCHARACTER REQUIREMENTS:\n• Subject rendered in authentic game animation style\n• Subject appears as a hand-drawn animated character\n• No photorealism\n• No pasted-in appearance\n• No CGI rendering\n\nFINAL RESULT:\nThe final image must resemble an authentic Dragon's Lair gameplay screen featuring the subject as the game's animated hero."
   },
   {
     "name": "DREAM BBQ",
@@ -30856,6 +30931,53 @@
     ],
     "randomizeOptions": true,
     "additionalInstructions": "RESTRICTIONS:\n• No cartoon or stylized rendering\n• No aliens or fantasy spacecraft\n• No text overlays or captions\n• No unrealistic space colors (nebulas, etc. unless distant)\n• No atmospheric effects in vacuum of space\n• No Star Wars/Trek style sci-fi elements\n• No visible breathing clouds (vacuum)\n\nFINAL RESULT:\nThe image should present the subject as a real astronaut in space performing authentic space operations. The suit, Earth, and environment should reflect actual space photography aesthetics. The result should feel like an official NASA or space agency photograph — awe-inspiring, real, and technically accurate."
+  },
+  {
+    "name": "SPACE ACE",
+    "category": [
+      "GAMING",
+      "ARCADE",
+      "ANIMATION",
+      "SCI-FI",
+      "RETRO"
+    ],
+    "message": "Take a picture and transform the subject into the hero of a Space Ace-style animated arcade game.\n\nPreserve recognizable identity while transforming the subject into the game's protagonist.\n\nThe subject must replace the hero while retaining the subject's face rendered in the same animated style as the game.\n\nThe entire image must appear to be an actual gameplay screen captured directly from a classic laserdisc arcade cabinet.\n\nAll characters, environments, effects, vehicles, technology, enemies, and backgrounds should be rendered in the game's hand-drawn animated style.\n\nThe image should resemble an authentic gameplay moment rather than promotional artwork.",
+    "options": [
+    {
+    "id": "001",
+    "text": "VICTORY - Defeat the villain and save the day.\n\nOPTION 001 REQUIREMENTS:\n• Subject defeats the villain\n• Heroic action pose\n• Victory moment"
+    },
+    {
+    "id": "002",
+    "text": "VICTORY - Escape a deadly space trap.\n\nOPTION 002 REQUIREMENTS:\n• Subject narrowly escapes danger\n• Successful arcade challenge\n• Heroic survival"
+    },
+    {
+    "id": "003",
+    "text": "VICTORY - Rescue the captured heroine.\n\nOPTION 003 REQUIREMENTS:\n• Subject rescues captive character\n• Heroic success scene"
+    },
+    {
+    "id": "004",
+    "text": "VICTORY - Destroy enemy spacecraft.\n\nOPTION 004 REQUIREMENTS:\n• Subject destroys enemy technology\n• Large-scale animated action"
+    },
+    {
+    "id": "005",
+    "text": "DEFEAT - Captured by villains.\n\nOPTION 005 REQUIREMENTS:\n• Villains successfully capture subject\n• Classic arcade failure scene"
+    },
+    {
+    "id": "006",
+    "text": "DEFEAT - Fall into a deadly trap.\n\nOPTION 006 REQUIREMENTS:\n• Subject triggers deadly trap\n• Dramatic animated failure"
+    },
+    {
+    "id": "007",
+    "text": "DEFEAT - Crashing spacecraft disaster.\n\nOPTION 007 REQUIREMENTS:\n• Subject loses control of spacecraft\n• Spectacular animated disaster"
+    },
+    {
+    "id": "008",
+    "text": "DEFEAT - Humorous arcade-game failure.\n\nOPTION 008 REQUIREMENTS:\n• Comical arcade-game death scene\n• Over-the-top animated failure"
+    }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "IDENTITY PRESERVATION:\n• Preserve recognizable identity\n• Subject replaces the hero\n• Subject remains clearly recognizable\n\nGAMEPLAY REQUIREMENTS:\n• Must look like an actual arcade gameplay screen\n• Laserdisc-video-game aesthetics\n• Hand-drawn animated backgrounds\n• Cinematic action framing\n• Animated science-fiction environments\n• Futuristic technology\n• Alien worlds\n• Space-opera atmosphere\n• Arcade-game composition\n\nCHARACTER REQUIREMENTS:\n• Subject rendered in authentic game animation style\n• Subject appears as a hand-drawn animated character\n• No photorealism\n• No pasted-in appearance\n• No modern CGI\n\nFINAL RESULT:\nThe final image must resemble an authentic gameplay screen from Space Ace featuring the subject as the game's animated protagonist."
   },
   {
     "name": "SPANISH BAROQUE",
