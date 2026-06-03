@@ -13054,6 +13054,37 @@
     "additionalInstructions": "FLAT DESIGN ENFORCEMENT:\n\n• Use simplified geometric forms and clean silhouettes\n• Keep shadows minimal and soft\n• Avoid heavy texture or realism\n• Emphasize icon-like clarity and readability\n\nMATERIAL DESIGN ENFORCEMENT:\n\n• Simulate modern UI illustration aesthetics\n• Use organized layered shapes and balanced spacing\n• Preserve subject recognition using simplified graphic forms\n• Maintain strong visual hierarchy and simplicity\n\nVISUAL STYLE:\n\n• Minimal flat-design illustration\n• Material Design-inspired simplicity\n• Clean modern color blocking\n• Soft minimal depth\n• Crisp graphical composition\n\nANTI-CHEAT:\n\n• Do NOT use painterly realism\n• Do NOT add excessive texture or noise\n• Do NOT create detailed photorealism\n• Do NOT clutter the composition\n\nFINAL RESULT:\nThe final image must resemble a polished modern flat-design illustration with simplified forms, clean icon-like structure, minimal shadowing, and professional Material Design-inspired aesthetics."
   },
   {
+    "name": "FLEISCHER STUDIOS",
+    "category": [
+      "ANIMATION",
+      "1930S",
+      "CLASSIC CARTOONS",
+      "OPTIONS",
+      "GOLDEN AGE"
+    ],
+    "message": "Take a picture and transform the subject into the world of a classic Fleischer Studios animated cartoon. Preserve recognizable identity while reimagining the subject inside the surreal, rubber-hose, jazz-age universe of one of Fleischer Studios' iconic productions.\n\nThe selected option determines the specific cartoon series, characters, environments, visual language, animation style, and production aesthetics.\n\nThe final image should resemble an authentic theatrical animation cel, publicity still, lobby card, comic illustration, or frame from a genuine Fleischer Studios production.",
+    "options": [
+    {
+      "id": "001",
+      "text": "Popeye the Sailor. Transform the scene into the world of classic Fleischer Popeye cartoons. Include Popeye, Olive Oyl, Wimpy, Bluto, nautical environments, harbors, docks, seaside towns, spinach-powered action, rubber-hose animation, surreal sight gags, exaggerated cartoon violence, and richly painted theatrical backgrounds."
+    },
+    {
+      "id": "002",
+      "text": "Betty Boop. Transform the scene into the world of Betty Boop. Include Betty Boop, Bimbo, Koko the Clown, jazz clubs, Art Deco environments, musical performances, surreal dream imagery, anthropomorphic objects, rubber-hose animation, and 1930s urban fantasy."
+    },
+    {
+      "id": "003",
+      "text": "Superman. Transform the scene into the Fleischer Superman theatrical shorts. Include towering Art Deco architecture, dramatic lighting, streamlined industrial design, retro-futurism, heroic action, painted cityscapes, cinematic compositions, and rotoscope-inspired animation."
+    },
+    {
+      "id": "004",
+      "text": "Koko the Clown. Transform the scene into the surreal Inkwell universe. Include Koko, living ink drawings, animated art supplies, impossible cartoon transformations, playful animation effects, and the illusion that drawings have come to life from an animator's desk."
+    }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "• Preserve recognizable identity\n• Apply the selected option exactly\n• Recreate authentic Fleischer Studios animation aesthetics\n• Use rubber-hose animation when appropriate\n• Include period-correct painted backgrounds\n• Emphasize 1930s theatrical-cartoon craftsmanship\n• Preserve Fleischer surrealism and visual inventiveness\n• Avoid modern animation styles\n• The final image should resemble an authentic Fleischer Studios production"
+  },
+  {
     "name": "FLINTSTONED",
     "category": [
       "CINEMATIC",
@@ -18485,6 +18516,20 @@
     "additionalInstructions": ""
   },
   {
+    "name": "LITTLE ORPHAN ANNIE",
+    "category": [
+      "COMIC STRIP",
+      "NEWSPAPER",
+      "VINTAGE",
+      "ADVENTURE",
+      "1930S"
+    ],
+    "message": "Take a picture and transform the subject into the world of Little Orphan Annie.\n\nPreserve recognizable identity while reimagining the subject as a resident of Harold Gray's iconic newspaper-strip universe.\n\nThe final image should resemble a classic newspaper adventure strip, promotional illustration, serialized comic panel, or vintage publication artwork.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "• Transform the subject into a Harold Gray-style comic character\n• Use the famous pupil-less eyes characteristic of the strip\n• Strong black ink linework\n• Newspaper-comic presentation\n• Depression-era Americana\n• Urban neighborhoods\n• Small-town America\n• Adventure-story atmosphere\n• Include Annie, Sandy, Daddy Warbucks, Punjab, and other characters when appropriate\n• Use vintage comic-strip layouts when appropriate\n• Maintain classic American newspaper-art aesthetics\n• Avoid modern cartoon styles\n• The final image should instantly resemble Little Orphan Annie"
+  },
+  {
     "name": "LIVE FROM NEW YORK...",
     "category": [
       "COMEDY",
@@ -21203,6 +21248,20 @@
     ],
     "randomizeOptions": true,
     "additionalInstructions": "RESTRICTIONS:\n• No text overlays or captions\n• No additional scale changes elsewhere in the image\n• No surreal or abstract styles\n\nFINAL RESULT:\nThe image should look like a normal photograph at first glance, except for one unmistakably wrong-scale object that creates a clean, humorous visual gag."
+  },
+  {
+    "name": "MISTER ROGERS' NEIGHBORHOOD",
+    "category": [
+      "TELEVISION",
+      "PUPPETS",
+      "CHILDREN",
+      "CLASSIC",
+      "MAKE-BELIEVE"
+    ],
+    "message": "Take a picture and transform the subject into a resident of the Neighborhood of Make-Believe.\n\nPreserve recognizable identity while transforming the subject into a tiny puppet-sized resident living inside the miniature kingdom.\n\nThe scene should be viewed entirely from the perspective of the tiny residents.\n\nMister Rogers must appear as an enormous friendly giant towering above the miniature world. He should appear exactly as the residents of Make-Believe would perceive him when he visits their tiny kingdom.\n\nThe final image should resemble an authentic production still, publicity photograph, television frame, or behind-the-scenes promotional image from Mister Rogers' Neighborhood.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "• Transform the subject into a tiny resident of the Neighborhood of Make-Believe\n• Preserve recognizable identity\n• Subject should be approximately the size of King Friday, X the Owl, Henrietta Pussycat, Lady Elaine Fairchilde, Daniel Striped Tiger, or other residents\n• Mister Rogers must appear gigantic relative to the miniature kingdom\n• Use the perspective of the tiny puppet residents\n• Recreate authentic Neighborhood of Make-Believe sets\n• Include castle interiors, miniature streets, puppet environments, and handcrafted television-set construction\n• Include King Friday XIII, Queen Sara Saturday, Prince Tuesday, Henrietta Pussycat, X the Owl, Lady Elaine Fairchilde, Daniel Striped Tiger, Cornflake S. Pecially, and other residents when appropriate\n• Emphasize handcrafted puppetry and miniature-set design\n• Preserve the gentle educational atmosphere\n• Use authentic public-television production aesthetics\n• Avoid modern CGI or modern children's-animation styles\n• The final image should instantly resemble the Neighborhood of Make-Believe as seen by its tiny residents"
   },
   {
     "name": "MOIRÉ ILLUSION",
