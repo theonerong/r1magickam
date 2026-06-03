@@ -13332,6 +13332,20 @@
     "additionalInstructions": "FINAL RESULT:\nA single seamless image where the entire scene is built from recursive, self-similar patterns. The subject remains recognizable at first, but upon closer inspection, everything is composed of repeating structures that echo the whole image at smaller scales. There must be NO panels, NO separate zoom views, and NO cutaways—only one continuous fractal reality with infinite visual depth."
   },
   {
+    "name": "FRAGGLE ROCK",
+    "category": [
+      "TELEVISION",
+      "PUPPETS",
+      "JIM HENSON",
+      "FANTASY",
+      "MUSICAL"
+    ],
+    "message": "Take a picture and transform the subject into the world of Fraggle Rock.\n\nPreserve recognizable identity while transforming the subject into an authentic Fraggle character living within the underground fantasy ecosystem.\n\nThe final image should resemble an authentic episode frame, promotional photograph, publicity still, or production image from the original television series.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "• Transform the subject into a Fraggle-style puppet character\n• Authentic Jim Henson puppet construction\n• Soft fabric textures\n• Expressive puppet eyes\n• Colorful Fraggle hair\n• Cheerful puppet proportions\n• Underground cave environments\n• Crystal formations\n• Rope bridges\n• Musical atmosphere\n• Include Gobo, Red, Mokey, Wembley, and Boober when appropriate\n• Include Doozers and Doozer architecture\n• Include Gorgs when appropriate\n• Emphasize friendship, adventure, music, and exploration\n• Recreate authentic practical puppet filmmaking techniques\n• The final image should instantly resemble Fraggle Rock"
+  },
+  {
     "name": "FREAKSHOW POSTER",
     "category": [
       "HUMOR",
@@ -30143,6 +30157,41 @@
     "additionalInstructions": ""
   },
   {
+    "name": "SID & MARTY KROFFT",
+    "category": [
+      "TELEVISION",
+      "1970S",
+      "FANTASY",
+      "PUPPETS",
+      "OPTIONS"
+    ],
+    "message": "Take a picture and transform the subject into the bizarre fantasy television universe of Sid & Marty Krofft. Preserve recognizable identity while placing the subject inside one of the iconic Krofft productions. The selected option determines the specific series, characters, environments, costumes, creatures, practical effects, and visual language.\n\nThe final image should resemble an authentic promotional photograph, production still, publicity image, television frame, or magazine advertisement from the original series.",
+    "options": [
+    {
+      "id": "001",
+      "text": "H.R. Pufnstuf. Place the subject in Living Island alongside H.R. Pufnstuf, Witchiepoo, Cling and Clang, Freddy the Flute, talking trees, oversized props, psychedelic colors, whimsical fantasy creatures, and colorful 1970s children's television aesthetics."
+    },
+    {
+      "id": "002",
+      "text": "Land of the Lost. Place the subject inside the prehistoric alternate dimension alongside Sleestaks, dinosaurs, mysterious pylons, crystal technology, alien ruins, jungle environments, and practical creature effects."
+    },
+    {
+      "id": "003",
+      "text": "Sigmund and the Sea Monsters. Place the subject alongside Sigmund and his sea-monster family. Include seaside caves, coastal environments, practical monster costumes, family-friendly comedy, and 1970s television fantasy."
+    },
+    {
+      "id": "004",
+      "text": "Lidsville. Place the subject inside the magical hat-filled world of Lidsville. Include oversized hats, Hoo Doo, hat-themed architecture, surreal environments, practical costumes, and psychedelic fantasy visuals."
+    },
+    {
+      "id": "005",
+      "text": "Electra Woman & Dyna Girl. Place the subject inside a colorful superhero adventure featuring Electra Woman, Dyna Girl, retro crime-fighting technology, comic-book villains, secret headquarters, and campy 1970s superhero television aesthetics."
+    }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "• Preserve recognizable identity\n• Recreate authentic Sid & Marty Krofft production design\n• Use practical creature costumes, puppets, oversized props, and colorful fantasy environments\n• Emphasize 1970s television production values\n• Maintain whimsical surrealism\n• Include authentic characters and environments from the selected option\n• The final image should resemble a genuine frame from the selected series"
+  },
+  {
     "name": "SIDEWALK CHALK ART (HUMOROUS)",
     "category": [
       "HUMOR",
@@ -33199,6 +33248,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "FINAL RESULT:\nThe image should read instantly as a humorous, symbolic 'Three Wise' interpretation using the subject themselves, clearly showing all three concepts without ambiguity."
+  },
+  {
+    "name": "THUNDERBIRDS",
+    "category": [
+      "TELEVISION",
+      "SCIENCE FICTION",
+      "PUPPETS",
+      "1960S",
+      "SUPERMARIONATION"
+    ],
+    "message": "Take a picture and transform the subject into the world of Thunderbirds.\n\nPreserve recognizable identity while converting the subject into a Supermarionation puppet character inhabiting the futuristic rescue universe of International Rescue.\n\nThe final image should resemble an authentic episode frame, publicity photograph, promotional still, or production image from the original television series.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "• Transform the subject into an authentic Supermarionation puppet\n• Visible puppet construction\n• Painted eyes\n• Sculpted facial features\n• Puppet proportions\n• String-controlled movement aesthetics\n• Miniature set construction\n• Practical effects\n• Gerry Anderson visual language\n• Include Thunderbird vehicles when appropriate\n• Include Tracy family members when appropriate\n• Include futuristic rescue operations\n• Use miniature cities, vehicles, spacecraft, and environments\n• Emphasize practical model photography\n• Recreate authentic 1960s television production values\n• The final image should instantly resemble Thunderbirds"
   },
   {
     "name": "TIBETAN THANGKA",
@@ -37626,8 +37689,29 @@
       "CHARACTER INSERTION"
     ],
     "message": "Take a picture and transform the scene so that the subject appears physically inside the actual movie universe of Who Framed Roger Rabbit.\n\nPreserve the recognizable identity of the subject while inserting them directly into the world of the film. The subject must remain a fully live-action human character and must NOT become a cartoon. Instead, the subject should appear as if they were filmed on set alongside the movie's animated characters.\n\nThe final image should resemble an authentic production still, publicity photograph, deleted scene, alternate take, promotional image, or actual frame captured from the film.\n\nMOVIE UNIVERSE RULES:\n• The image must take place inside the actual world of Who Framed Roger Rabbit\n• Recreate the film's visual style, cinematography, production design, lighting, atmosphere, and tone\n• The subject becomes a live-action human character inhabiting the movie\n• The subject must remain fully human\n• The subject must remain recognizable\n• The image should feel like a genuine scene from the film\n• Blend live-action actors and hand-drawn cartoon characters seamlessly\n• Preserve the movie's mixture of noir detective storytelling, Hollywood glamour, slapstick cartoon chaos, and practical effects filmmaking\n\nCHARACTER INSERTION:\n• Roger Rabbit may appear\n• Jessica Rabbit may appear\n• Eddie Valiant may appear\n• Benny the Cab may appear\n• Baby Herman may appear\n• Judge Doom may appear\n• Toon Patrol members may appear\n• Additional Toontown residents may appear\n• Cartoon characters should appear exactly as they do in the film\n• Characters should interact naturally with the subject\n• Human and cartoon characters must coexist seamlessly\n• Animated characters should occupy the same physical space as the subject\n\nSUBJECT RULES:\n• Preserve recognizable identity\n• Subject remains entirely human\n• Subject retains realistic anatomy\n• Subject retains realistic clothing unless the scene naturally requires period styling\n• Subject may interact directly with film characters\n• Subject may participate in detective scenes, comedy scenes, nightclub scenes, Toontown scenes, chase scenes, or Hollywood scenes\n• Subject should feel like a legitimate supporting character from the film\n\nVISUAL STYLE:\n• Live-action filmmaking\n• Practical Hollywood effects\n• Traditional hand-drawn cel animation\n• Film-quality compositing\n• Shared lighting between cartoons and humans\n• Shared shadows and environmental interaction\n• Authentic 1988 cinematic presentation\n• Physical set photography\n• Traditional animation integrated into reality\n\nENVIRONMENTS:\n• Toontown\n• Maroon Cartoon Studios\n• Ink and Paint Club\n• Eddie Valiant's office\n• Hollywood streets\n• Downtown Los Angeles\n• Cartoon factories\n• Warehouse districts\n• Film sets\n• Railroad yards\n• Period-correct city environments\n• Locations inspired directly by the movie\n\nBACKGROUND STYLE:\n• Detailed Hollywood production design\n• 1940s architecture\n• Noir influences\n• Practical movie sets\n• Vintage automobiles\n• Neon signage\n• Studio backlots\n• Cartoon-world environments\n• Rich environmental storytelling\n• Authentic film-world locations\n\nANIMATION STYLE:\n• Golden-age theatrical animation\n• Hand-drawn cel animation\n• Squash-and-stretch motion\n• Wild takes\n• Cartoon physics\n• Rubber-hose influences\n• Exaggerated expressions\n• Classic studio-animation aesthetics\n• Traditional cartoon craftsmanship\n\nLIGHTING:\n• Film-noir lighting\n• Hollywood studio lighting\n• Practical lighting sources\n• Cinematic contrast\n• Warm theatrical highlights\n• Shared illumination between cartoons and humans\n• Atmospheric depth\n\nCOLOR PALETTE:\n• Rich Technicolor-inspired colors\n• Vibrant cartoon hues\n• Warm Hollywood tones\n• Vintage cinematic grading\n• Saturated animated elements\n• Realistic live-action color balance\n\nATMOSPHERE:\n• Detective mystery\n• Cartoon chaos\n• Hollywood glamour\n• Animation magic\n• Noir storytelling\n• Visual comedy\n• Cinematic adventure\n• Classic movie energy\n\nSCENE POSSIBILITIES:\n• Investigating a mystery with Eddie Valiant\n• Visiting Toontown\n• Riding with Benny the Cab\n• Encountering Roger Rabbit during a comedic disaster\n• Visiting the Ink and Paint Club\n• Escaping cartoon chaos\n• Participating in a Hollywood adventure\n• Appearing in a lost scene from the movie\n\nANTI-CHEAT:\n• Do NOT turn the subject into a cartoon\n• Do NOT create generic cartoon worlds\n• Do NOT create modern CGI animation\n• Do NOT create anime\n• Do NOT create comic-book artwork\n• Do NOT create modern animated-film aesthetics\n• Do NOT create generic human-cartoon interactions unrelated to the film\n• Do NOT create photorealistic animals instead of cartoon characters\n• Do NOT remove the movie's noir atmosphere\n• Do NOT create a Roger Rabbit-inspired image that is not clearly set within the actual movie universe\n\nFINAL VALIDATION:\n• Subject must remain fully human\n• Subject must remain recognizable\n• Subject must appear physically present inside the movie universe\n• The image must instantly be recognizable as Who Framed Roger Rabbit\n• Film characters must appear authentic to the movie\n• Human-cartoon interaction must be obvious\n• The image must resemble a genuine movie frame, publicity still, deleted scene, or production photograph from the film\n• Hollywood noir atmosphere and cartoon chaos must coexist\n• The final result must clearly appear to be a scene from Who Framed Roger Rabbit featuring the subject as a live-action participant",
-    "options": [],
-    "randomizeOptions": false,
+    "options": [
+    {
+      "id": "001",
+      "text": "Toontown. Place the subject inside the colorful cartoon metropolis from the movie. Roger Rabbit, Baby Herman, Benny the Cab, cartoon citizens, impossible architecture, cartoon physics, bright colors, slapstick chaos, hand-painted backgrounds, and classic Golden Age animation dominate the scene."
+    },
+    {
+      "id": "002",
+      "text": "Ink and Paint Club. Place the subject inside the famous nightclub. Jessica Rabbit performing on stage, tuxedo waiters, noir atmosphere, glamorous Hollywood lighting, smoky nightclub interiors, elegant 1940s styling, and celebrity cartoon patrons."
+    },
+    {
+      "id": "003",
+      "text": "Eddie Valiant Detective Story. Place the subject in a noir detective scene alongside Eddie Valiant. Rain-soaked streets, shadowy alleys, mystery investigations, vintage automobiles, dramatic lighting, and classic private-eye atmosphere."
+    },
+    {
+      "id": "004",
+      "text": "Judge Doom Showdown. Place the subject inside a tense climax scene involving Judge Doom, the Toon Patrol, Acme-style chaos, industrial warehouses, Dip barrels, danger, suspense, and cartoon mayhem."
+    },
+    {
+      "id": "005",
+      "text": "Hollywood Studio Backlot. Place the subject inside the movie-production world of 1940s Hollywood. Maroon Studios, film cameras, sound stages, animators, actors, cartoon stars, movie-making magic, and behind-the-scenes production environments."
+    }
+  ],
+    "randomizeOptions": true,
     "additionalInstructions": "• Preserve recognizable identity of the subject\n• Keep the subject fully human and live-action\n• Never transform the subject into a cartoon character\n• Insert the subject directly into the actual movie universe of Who Framed Roger Rabbit\n• Recreate the film's cinematography, lighting, production design, atmosphere, and visual effects\n• Use authentic hand-drawn cel-animation characters matching their movie appearances\n• Allow Roger Rabbit, Jessica Rabbit, Eddie Valiant, Benny the Cab, Baby Herman, Judge Doom, Toon Patrol members, and other movie characters to appear naturally when appropriate\n• Blend live-action photography and traditional animation seamlessly\n• Maintain realistic physical interaction between humans and cartoons\n• Preserve the movie's combination of detective-noir storytelling, Hollywood glamour, slapstick comedy, and animation magic\n• Use authentic 1940s Hollywood environments, automobiles, fashion, signage, and architecture\n• Create the appearance of an actual lost scene, deleted scene, alternate take, publicity photograph, or production still from the movie\n• Avoid generic cartoon worlds, generic animation styles, CGI aesthetics, anime influences, or modern animation trends\n• The final image should be indistinguishable from an authentic frame of Who Framed Roger Rabbit featuring the subject as a human character inside the film"
   },
   {
