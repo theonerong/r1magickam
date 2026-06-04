@@ -955,7 +955,7 @@ footerSection.innerHTML = `
         if (importFilterDebounce) clearTimeout(importFilterDebounce);
         importFilterDebounce = setTimeout(() => {
           renderPresetsList();
-        }, 150);
+        }, 300);
       });
 
       document.getElementById('import-mute-toggle').onclick = () => {

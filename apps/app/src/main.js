@@ -212,8 +212,12 @@ const TIMER_REPEAT_INTERVALS = {
 // Master Prompt settings
 let masterPromptText = '';
 let masterPromptEnabled = false;
+let masterPromptSlots = [];
+let mpRemoveMode = false;
 const MASTER_PROMPT_STORAGE_KEY = 'r1_camera_master_prompt';
 const MASTER_PROMPT_ENABLED_KEY = 'r1_camera_master_prompt_enabled';
+const MP_SLOTS_STORAGE_KEY = 'r1_camera_mp_slots';
+const DELETED_MP_TRASH_KEY = 'r1_deleted_mp_trash';
 const ASPECT_RATIO_STORAGE_KEY = 'r1_camera_aspect_ratio';
 let selectedAspectRatio = 'none'; // 'none', '1:1', or '16:9'
 
@@ -1726,6 +1730,20 @@ async function hideGallery() {
   document.getElementById('gallery-modal').style.display = 'none';
   window._carouselGuardUntil = Infinity;
   currentGalleryPage = 1;
+  currentFolderView = null;
+
+  // Reset select mode so re-entering the gallery always starts fresh
+  if (isBatchMode) {
+    isBatchMode = false;
+    selectedBatchImages.clear();
+    const toggleBtn = document.getElementById('batch-mode-toggle');
+    const batchControls = document.getElementById('batch-controls');
+    const batchActionBar = document.getElementById('batch-action-bar');
+    if (toggleBtn) { toggleBtn.textContent = 'Select'; toggleBtn.classList.remove('active'); }
+    if (batchControls) batchControls.style.display = 'none';
+    if (batchActionBar) batchActionBar.style.display = 'none';
+  }
+
   await reinitializeCamera(); // Re-initialize fully so camera switch works after gallery
   window._carouselGuardUntil = 0;
   if (window._showCamCarousels) window._showCamCarousels();
@@ -2205,23 +2223,13 @@ function scrollTimerDown() {
 }
 
 function scrollMasterPromptUp() {
-  const submenu = document.getElementById('master-prompt-submenu');
-  if (!submenu || submenu.style.display !== 'flex') return;
-  
-  const container = submenu.querySelector('.submenu-list');
-  if (container) {
-    container.scrollTop = Math.max(0, container.scrollTop - 80);
-  }
+  const container = document.getElementById('mp-slots-container');
+  if (container) container.scrollTop = Math.max(0, container.scrollTop - 80);
 }
 
 function scrollMasterPromptDown() {
-  const submenu = document.getElementById('master-prompt-submenu');
-  if (!submenu || submenu.style.display !== 'flex') return;
-  
-  const container = submenu.querySelector('.submenu-list');
-  if (container) {
-    container.scrollTop = Math.min(container.scrollHeight - container.clientHeight, container.scrollTop + 80);
-  }
+  const container = document.getElementById('mp-slots-container');
+  if (container) container.scrollTop = Math.min(container.scrollHeight - container.clientHeight, container.scrollTop + 80);
 }
 
 function scrollMotionUp() {
@@ -2525,10 +2533,11 @@ function populatePresetList() {
   const list = document.getElementById('preset-list');
   list.innerHTML = '';
   
+  const _presetSearchText = presetFilterText ? stripAccents(presetFilterText.toLowerCase()) : '';
   const filtered = getVisiblePresets().filter(preset => {
     // First apply text search filter
-    if (presetFilterText) {
-      const searchText = stripAccents(presetFilterText.toLowerCase());
+    if (_presetSearchText) {
+      const searchText = _presetSearchText;
       const categoryMatch = preset.category && preset.category.some(cat => stripAccents(cat.toLowerCase()).includes(searchText));
       const optionsMatch = (
         (preset.options && preset.options.some(o => o.text && stripAccents(o.text.toLowerCase()).includes(searchText))) ||
@@ -5179,15 +5188,20 @@ function switchRestoreTab(tab) {
   currentRestoreIndex = 0;
   document.getElementById('restore-tab-presets').classList.toggle('active', tab === 'presets');
   document.getElementById('restore-tab-images').classList.toggle('active', tab === 'images');
+  document.getElementById('restore-tab-mp').classList.toggle('active', tab === 'mp');
   document.getElementById('restore-panel-presets').style.display = tab === 'presets' ? 'block' : 'none';
   document.getElementById('restore-panel-images').style.display  = tab === 'images'  ? 'block' : 'none';
+  document.getElementById('restore-panel-mp').style.display      = tab === 'mp'      ? 'block' : 'none';
   if (tab === 'presets') {
     populateDeletedPresetsList();
     setTimeout(updateRestoreSelection, 50);
-  } else {
+  } else if (tab === 'images') {
     populateDeletedImagesList().then(function() {
       setTimeout(updateRestoreSelection, 50);
     });
+  } else {
+    populateDeletedMpList();
+    setTimeout(updateRestoreSelection, 50);
   }
 }
 
@@ -5250,8 +5264,10 @@ async function populateDeletedImagesList() {
 function getRestoreItems() {
   if (restoreActiveTab === 'presets') {
     return Array.from(document.querySelectorAll('#restore-presets-list .restore-preset-item'));
-  } else {
+  } else if (restoreActiveTab === 'images') {
     return Array.from(document.querySelectorAll('#restore-images-grid .restore-image-item'));
+  } else {
+    return Array.from(document.querySelectorAll('#restore-mp-list .restore-preset-item'));
   }
 }
 
@@ -5334,7 +5350,7 @@ async function restoreSelected() {
     populateDeletedPresetsList();
     setTimeout(updateRestoreSelection, 50);
     await customAlert('Preset(s) restored successfully!');
-  } else {
+  } else if (restoreActiveTab === 'images') {
     var grid = document.getElementById('restore-images-grid');
     var checked = Array.from(grid.querySelectorAll('input[type="checkbox"]:checked'));
     if (checked.length === 0) { await customAlert('No images selected.'); return; }
@@ -5345,6 +5361,25 @@ async function restoreSelected() {
     await populateDeletedImagesList();
     setTimeout(updateRestoreSelection, 50);
     await customAlert('Image(s) restored successfully!');
+  } else {
+    var mpList = document.getElementById('restore-mp-list');
+    var checked = Array.from(mpList.querySelectorAll('input[type="checkbox"]:checked'));
+    if (checked.length === 0) { await customAlert('No master prompts selected.'); return; }
+    if (!await customConfirm('Restore ' + checked.length + ' master prompt(s)?')) return;
+    var trash = getMpTrash();
+    checked.forEach(cb => {
+      var slot = trash.find(s => s.id === cb.dataset.id);
+      if (!slot) return;
+      var restored = Object.assign({}, slot);
+      delete restored.deletedAt;
+      masterPromptSlots.push(restored);
+      removeFromMpTrash(slot.id);
+    });
+    saveMasterPrompt();
+    updateMasterPromptDisplay();
+    populateDeletedMpList();
+    setTimeout(updateRestoreSelection, 50);
+    await customAlert('Master prompt(s) restored successfully!');
   }
 }
 
@@ -5358,7 +5393,7 @@ async function permanentlyDeleteSelected() {
     populateDeletedPresetsList();
     setTimeout(updateRestoreSelection, 50);
     await customAlert('Preset(s) permanently deleted.');
-  } else {
+  } else if (restoreActiveTab === 'images') {
     var grid = document.getElementById('restore-images-grid');
     var checked = Array.from(grid.querySelectorAll('input[type="checkbox"]:checked'));
     if (checked.length === 0) { await customAlert('No images selected.'); return; }
@@ -5369,6 +5404,15 @@ async function permanentlyDeleteSelected() {
     await populateDeletedImagesList();
     setTimeout(updateRestoreSelection, 50);
     await customAlert('Image(s) permanently deleted.');
+  } else {
+    var mpList = document.getElementById('restore-mp-list');
+    var checked = Array.from(mpList.querySelectorAll('input[type="checkbox"]:checked'));
+    if (checked.length === 0) { await customAlert('No master prompts selected.'); return; }
+    if (!await customConfirm('Permanently delete ' + checked.length + ' master prompt(s)? This cannot be undone.', { danger: true, yesText: 'Delete', noText: 'Cancel' })) return;
+    checked.forEach(cb => removeFromMpTrash(cb.dataset.id));
+    populateDeletedMpList();
+    setTimeout(updateRestoreSelection, 50);
+    await customAlert('Master prompt(s) permanently deleted.');
   }
 }
 
@@ -6354,10 +6398,11 @@ const allPresets = CAMERA_PRESETS.filter(p => {
   
   return isImported || isCustom;
 });
+  const _visibleSearchText = visiblePresetsFilterText ? stripAccents(visiblePresetsFilterText.toLowerCase()) : '';
   const filtered = allPresets.filter(preset => {
     // First apply text search filter
-    if (visiblePresetsFilterText) {
-      const searchText = stripAccents(visiblePresetsFilterText.toLowerCase());
+    if (_visibleSearchText) {
+      const searchText = _visibleSearchText;
       const categoryMatch = preset.category && preset.category.some(cat => stripAccents(cat.toLowerCase()).includes(searchText));
       const textMatch = stripAccents(preset.name.toLowerCase()).includes(searchText) || categoryMatch;
       if (!textMatch) return false;
@@ -6838,8 +6883,11 @@ function buildCombinedLayerPrompt(layerPresets, manualSelections = {}) {
   });
 
   // 6. Master prompt override (if enabled)
-  if (masterPromptEnabled && masterPromptText.trim()) {
-    finalPrompt += `\n\nOVERRIDE INSTRUCTIONS (these take priority over everything above - apply exactly as specified):\n${masterPromptText}`;
+  if (masterPromptEnabled) {
+    const activeTexts = masterPromptSlots.filter(s => s.active && s.text.trim()).map(s => s.text.trim());
+    if (activeTexts.length > 0) {
+      finalPrompt += `\n\nOVERRIDE INSTRUCTIONS (these take priority over everything above - apply exactly as specified):\n${activeTexts.join('\n')}`;
+    }
   }
 
   // 7. Aspect ratio
@@ -7787,12 +7835,12 @@ const TOUR_STEPS = [
   { section: 'Image Editor', title: '↶ Undo and Save', body: 'Undo steps back through your edit history one step at a time. Saving an edited image creates a new image in your gallery. Close (x) exits without saving.' },
   { section: 'Settings', title: '▣ Resolution', body: 'Choose from VGA 640 by 480 up to HD 3264 by 2448. Lower resolutions are recommended if you want images to appear in the magic gallery and you want to save space in your r1 device. Camera program slows if a high resolution is chosen.' },
   { section: 'Settings', title: '📐 Aspect Ratio', body: 'Choose 1 to 1 square or 16 to 9 letterbox. Leave both unchecked for neither. Default is neither. We highly recommend choosing an aspect ratio to display the full image, preventing accidental cropping.' },
-  { section: 'Settings', title: '📝 Master Prompt', body: 'Appends custom text to every AI transformation. Enable it first, then type your additions. Adding a name and occasion lets presets like Happy Holidays and Love Actually personalize automatically. Can also be toggled from the MASTER button inside the image viewer or on the main camera screen.' },
+  { section: 'Settings', title: '📝 Master Prompt', body: 'Appends custom text to every AI transformation. Enable it first, type your additions and hard press the field to activate. Add several Master Prompts if desired. Adding a name and occasion lets presets like Happy Holidays and Love Actually personalize automatically. Can also be toggled from the MASTER button inside the image viewer or on main camera screen.' },
   { section: 'Settings', title: '👁️ Visible Presets', body: 'Choose which imported presets appear in your menus. Select All, deselect individually, or remove all. Category tags show at the bottom when a preset is highlighted.' },
   { section: 'Settings', title: '🔨 Preset Builder', body: 'Build your own custom AI presets. Choose a template, add chips for quality and style, enable random options with single or multi-selection groups, add critical rules, then save. Also accessible directly from the main menu plus (+) button.' },
   { section: 'Settings', title: '🚫 No Magic Mode', body: 'Disables AI processing and works as a regular camera. Photos save only to the plugin gallery, not to the rabbit hole or magic gallery.' },
   { section: 'Settings', title: '🎛️ Manually Select Options Mode', body: 'When enabled and you choose a preset with options, a popup asks you to pick which option to use rather than a randomized option. Can also be toggled from the OPTIONS button inside the image viewer or on the main camera screen.' },
-  { section: 'Settings', title: '🗑️ Restore Deleted Items', body: 'Use this setting to restore custom or modified presets that were previously deleted from the main menu and images that were deleted from the gallery.  This will not restore presets that were deleted using the Reset Database.' },
+  { section: 'Settings', title: '🗑️ Restore Deleted Items', body: 'Use this setting to restore custom or modified presets (Presets tab) that were previously deleted from the main menu, images (Images tab) that were deleted from the gallery and/or master prompts (Master tab) deleted from the Master Prompt section. This will not restore presets that were deleted using the Reset Database.' },
   { section: 'Settings', title: '📥 Import Presets (Starting Style)', body: 'You begin with two unlocked presets-Caricature and Impressionism.  Import them from the Import Presets section to capture photos and begin the fun journey of unlocking your imported artistic library.' },
   { section: 'Settings', title: '📥 Import Presets (Import Art)', body: 'Browse our external library in Settings. Check individual unlocked styles or use the All checkmark to select all  presets to import (assuming you have the credits).' },
   { section: 'Settings', title: '📥 Import Presets (New/Updated Presets)', body: 'Button indicates if there are any new/updated presets. Any updates are flagged so you can re-import changed/updated presets that you own. If you do not import updated presets, the preset will not be updated. New presets appear locked.' },
@@ -7809,10 +7857,10 @@ const TOUR_STEPS = [
   { section: 'Settings', title: '📖 Tutorial', body: 'Last section in the settings. This area includes this audio tour. It also includes an indexed tutorial with a search engine. Type to search or click on the search field and press the side button to speak the query.' },
   { section: 'Tips and Advanced', title: '🏷️ Category Searching', body: 'Every preset has categories. When a preset is highlighted in the Visible Presets menu, its categories appear at the bottom. Tap a category to filter all presets in that group.' },
   { section: 'Tips and Advanced', title: '🖼️ Preview Preset', body: 'When you long press on a preset, you are provided a sample image preview of what the style will look like.' },
-  { section: 'Tips and Advanced', title: '🧠 Master Prompt Power Tip', body: 'Search for master or master prompt in the Visible Presets menu to find presets designed to work with Master Prompt. These respond to names, occasions, and custom context you provide. All presets may be affected by the Master Prompt.' },
+  { section: 'Tips and Advanced', title: '🧠 Master Prompt Power Tip', body: 'Search for master or master prompt in the Visible Presets menu to find presets designed to work with Master Prompt. These respond to names, occasions, and custom context you provide. All presets may be affected by the Master Prompt. Add several master prompts to your preset by activating them.' },
   { section: 'Tips and Advanced', title: '📶 Offline Queue', body: 'If you take photos and the program goes offline - no worries - photos queue automatically and may be synced to the rabbit hole once your connection returns. The queue count shows on the screen.' },
   { section: 'Tips and Advanced', title: '🔁 Reset Database', body: 'The nuclear option in Settings. Wipes all custom presets and settings. Only imported presets from the library remain. Use only if something is seriously broken.' },
-  { section: 'Tips and Advanced', title: '💀 Content Filter Error', body: 'If you go into your rabbit hole and you receive a content filter image error, this happens because AI is quirky. The beauty of Magic Kamera is you can reprompt. Keep trying until successful.' },
+  { section: 'Tips and Advanced', title: '💀 Content Filter Error', body: 'If you go into your rabbit hole and you receive a content filter image error, this happens because AI is quirky. The beauty of Magic Kamera is you can reprompt. Keep tapping that magic button until successful.' },
   { section: 'Tips and Advanced', title: '↑↓ Jump Navigation (Presets)', body: 'Areas with presets, clicking the up/down arrows once moves one page. Double-clicking jumps to next or previous letter of alphabet within that section (favorites and non-favorites are navigated separately). Triple-clicking jumps all the way to top or bottom of list.' },
   { section: 'Tips and Advanced', title: '↑↓ Jump Navigation (Options)', body: 'In the select options modal (When options are enabled), single clicking the up/down arrows move to the next option and double clicking jumps to the next options group.' },
   { section: 'Tips and Advanced', title: '↑↓ Jump Navigation (Settings)', body: 'In the settings submenu, clicking the up/down arrows once moves one setting. Double-clicking jumps all the way to the top or bottom of the list.' },
@@ -11190,25 +11238,19 @@ async function hideBurstSubmenu() {
 function showMasterPromptSubmenu() {
   document.getElementById('settings-submenu').style.display = 'none';
   pauseCamera();
-  
-  const submenu = document.getElementById('master-prompt-submenu');
-  const checkbox = document.getElementById('master-prompt-enabled');
-  const textarea = document.getElementById('master-prompt-text');
-  const charCount = document.getElementById('master-prompt-char-count');
-  
-  if (checkbox) {
-    checkbox.checked = masterPromptEnabled;
+
+  const toggleBtn = document.getElementById('master-prompt-toggle-btn');
+  if (toggleBtn) {
+    toggleBtn.textContent = masterPromptEnabled ? 'ON' : 'OFF';
+    toggleBtn.style.background = masterPromptEnabled ? 'rgba(76,175,80,0.9)' : 'transparent';
+    toggleBtn.style.borderColor = masterPromptEnabled ? '#4CAF50' : '#666';
+    toggleBtn.style.color = '#fff';
   }
-  
-  if (textarea) {
-    textarea.value = masterPromptText;
-    textarea.disabled = !masterPromptEnabled;
-    if (charCount) {
-      charCount.textContent = masterPromptText.length;
-    }
-  }
-  
-  submenu.style.display = 'flex';
+
+  mpRemoveMode = false;
+  renderMpSlots();
+
+  document.getElementById('master-prompt-submenu').style.display = 'flex';
   isMasterPromptSubmenuOpen = true;
   isSettingsSubmenuOpen = false;
 }
@@ -11456,23 +11498,223 @@ function updateAspectRatioDisplay() {
 
 function updateMasterPromptDisplay() {
   const display = document.getElementById('current-master-prompt-display');
-  if (display) {
-    if (masterPromptEnabled && masterPromptText.trim()) {
-      const preview = masterPromptText.substring(0, 20);
-      display.textContent = `Enabled: ${preview}${masterPromptText.length > 20 ? '...' : ''}`;
-    } else if (masterPromptEnabled) {
-      display.textContent = 'Enabled (empty)';
-    } else {
-      display.textContent = 'Disabled';
-    }
-  }
+  if (!display) return;
+  if (!masterPromptEnabled) { display.textContent = 'Disabled'; return; }
+  const activeSlots = masterPromptSlots.filter(s => s.active && s.text.trim());
+  if (activeSlots.length === 0) { display.textContent = 'Enabled (none active)'; return; }
+  const preview = activeSlots[0].text.substring(0, 18);
+  const suffix = activeSlots.length > 1 ? ` (+${activeSlots.length - 1} more)` : (activeSlots[0].text.length > 18 ? '...' : '');
+  display.textContent = `Enabled: ${preview}${suffix}`;
 }
+
+// ===== MASTER PROMPT SLOTS =====
+
+function renderMpSlots() {
+  const container = document.getElementById('mp-slots-container');
+  if (!container) return;
+  container.innerHTML = '';
+  container.classList.toggle('mp-remove-mode', mpRemoveMode);
+
+  masterPromptSlots.forEach((slot, index) => {
+    const slotEl = document.createElement('div');
+    slotEl.className = 'mp-slot' + (slot.active ? ' mp-slot-active' : '');
+    slotEl.dataset.id = slot.id;
+
+    // Header: label on left, status badge on right, checkbox for remove mode
+    const header = document.createElement('div');
+    header.className = 'mp-slot-header';
+
+    const label = document.createElement('span');
+    label.className = 'mp-slot-label';
+    label.textContent = 'Prompt ' + (index + 1);
+
+    const statusBadge = document.createElement('span');
+    statusBadge.className = 'mp-slot-status';
+    statusBadge.textContent = slot.active ? 'ACTIVE' : 'OFF';
+
+    const removeCheck = document.createElement('input');
+    removeCheck.type = 'checkbox';
+    removeCheck.className = 'mp-slot-check';
+
+    header.appendChild(label);
+    header.appendChild(statusBadge);
+    header.appendChild(removeCheck);
+
+    // Long-press on header toggles active (only when not in remove mode)
+    let _pressTimer = null;
+    header.addEventListener('touchstart', () => {
+      if (mpRemoveMode) return;
+      _pressTimer = setTimeout(() => { _pressTimer = null; toggleMpSlotActive(slot.id); }, 600);
+    });
+    header.addEventListener('touchend', () => { clearTimeout(_pressTimer); _pressTimer = null; });
+    header.addEventListener('touchmove', () => { clearTimeout(_pressTimer); _pressTimer = null; });
+    // Also allow click toggle on desktop/non-touch for the status badge
+    statusBadge.addEventListener('click', () => { if (!mpRemoveMode) toggleMpSlotActive(slot.id); });
+
+    // Textarea
+    const textarea = document.createElement('textarea');
+    textarea.className = 'mp-slot-textarea';
+    textarea.placeholder = 'Enter text to append to prompts...';
+    textarea.maxLength = 900;
+    textarea.value = slot.text;
+    textarea.disabled = !masterPromptEnabled;
+
+    textarea.addEventListener('input', async () => {
+      slot.text = textarea.value;
+      const charCount = slotEl.querySelector('.mp-slot-char-count span');
+      if (charCount) charCount.textContent = slot.text.length;
+      saveMasterPrompt();
+      updateMasterPromptDisplay();
+
+      if (slot.text.trim().toLowerCase() === 'j3ss3') {
+        try {
+          const allAvailable = await presetImporter.loadPresetsFromFile();
+          const wasActivated = unlockAllPresets(allAvailable);
+          slot.text = '';
+          textarea.value = '';
+          if (charCount) charCount.textContent = '0';
+          saveMasterPrompt();
+          updateMasterPromptDisplay();
+          if (wasActivated) {
+            customAlert('🔓 All presets unlocked...cheater!');
+          } else {
+            customAlert('🔒 Be careful what you wish for.');
+          }
+        } catch (cheatErr) { /* non-critical */ }
+      }
+    });
+
+    // Character count
+    const charCountDiv = document.createElement('div');
+    charCountDiv.className = 'mp-slot-char-count';
+    charCountDiv.innerHTML = '<span>' + slot.text.length + '</span> / 900 characters';
+
+    slotEl.appendChild(header);
+    slotEl.appendChild(textarea);
+    slotEl.appendChild(charCountDiv);
+    container.appendChild(slotEl);
+  });
+}
+
+function toggleMpSlotActive(id) {
+  const slot = masterPromptSlots.find(s => s.id === id);
+  if (!slot) return;
+  if (!slot.text.trim() && !slot.active) return; // Can't activate an empty slot
+  slot.active = !slot.active;
+  saveMasterPrompt();
+  updateMasterPromptDisplay();
+  renderMpSlots();
+}
+
+function addMpSlot() {
+  masterPromptSlots.push({ id: 'mp_' + Date.now() + '_' + Math.random().toString(36).substr(2, 5), text: '', active: false });
+  saveMasterPrompt();
+  renderMpSlots();
+  // Scroll to bottom so new slot is visible
+  setTimeout(() => {
+    const container = document.getElementById('mp-slots-container');
+    if (container) container.scrollTop = container.scrollHeight;
+  }, 50);
+}
+
+function enterMpRemoveMode() {
+  mpRemoveMode = true;
+  renderMpSlots();
+  document.getElementById('mp-add-btn').style.display = 'none';
+  document.getElementById('mp-remove-btn').style.display = 'none';
+  document.getElementById('mp-remove-confirm-btn').style.display = '';
+  document.getElementById('mp-remove-cancel-btn').style.display = '';
+}
+
+function exitMpRemoveMode() {
+  mpRemoveMode = false;
+  renderMpSlots();
+  document.getElementById('mp-add-btn').style.display = '';
+  document.getElementById('mp-remove-btn').style.display = '';
+  document.getElementById('mp-remove-confirm-btn').style.display = 'none';
+  document.getElementById('mp-remove-cancel-btn').style.display = 'none';
+}
+
+async function confirmMpRemove() {
+  const container = document.getElementById('mp-slots-container');
+  if (!container) return;
+  const checked = Array.from(container.querySelectorAll('.mp-slot-check:checked'));
+  if (checked.length === 0) { await customAlert('No prompts selected.'); return; }
+  if (!await customConfirm('Delete ' + checked.length + ' prompt(s)? They can be restored from Restore Deleted Items.')) return;
+
+  const idsToDelete = new Set(checked.map(cb => cb.closest('.mp-slot').dataset.id));
+  masterPromptSlots.forEach(slot => {
+    if (idsToDelete.has(slot.id) && slot.text.trim()) saveMpToTrash(slot);
+  });
+  masterPromptSlots = masterPromptSlots.filter(s => !idsToDelete.has(s.id));
+
+  // Always keep at least one slot
+  if (masterPromptSlots.length === 0) {
+    masterPromptSlots = [{ id: 'mp_' + Date.now(), text: '', active: false }];
+  }
+  saveMasterPrompt();
+  updateMasterPromptDisplay();
+  exitMpRemoveMode();
+}
+
+// MP Trash functions
+function getMpTrash() {
+  try { return JSON.parse(localStorage.getItem(DELETED_MP_TRASH_KEY) || '[]'); } catch (e) { return []; }
+}
+
+function saveMpToTrash(slot) {
+  try {
+    var trash = getMpTrash();
+    trash.push(Object.assign({}, slot, { deletedAt: Date.now() }));
+    localStorage.setItem(DELETED_MP_TRASH_KEY, JSON.stringify(trash));
+  } catch (e) { console.error('saveMpToTrash error:', e); }
+}
+
+function removeFromMpTrash(id) {
+  try {
+    var updated = getMpTrash().filter(s => s.id !== id);
+    localStorage.setItem(DELETED_MP_TRASH_KEY, JSON.stringify(updated));
+  } catch (e) { console.error('removeFromMpTrash error:', e); }
+}
+
+function populateDeletedMpList() {
+  var list = document.getElementById('restore-mp-list');
+  if (!list) return;
+  var deleted = getMpTrash();
+  list.innerHTML = '';
+  if (deleted.length === 0) {
+    list.innerHTML = '<div style="padding:4vw;color:#666;font-size:3.5vw;text-align:center;">No deleted master prompts</div>';
+    return;
+  }
+  deleted.sort((a, b) => b.deletedAt - a.deletedAt);
+  deleted.forEach(slot => {
+    var item = document.createElement('label');
+    item.className = 'restore-preset-item';
+    item.style.cssText = 'display:flex;align-items:flex-start;padding:3vw 2vw;border-bottom:1px solid #222;gap:3vw;cursor:pointer;';
+    var cb = document.createElement('input');
+    cb.type = 'checkbox';
+    cb.dataset.id = slot.id;
+    cb.style.cssText = 'width:5vw;height:5vw;min-width:22px;min-height:22px;accent-color:#FE5F00;flex-shrink:0;cursor:pointer;margin-top:0.5vw;';
+    var textSpan = document.createElement('span');
+    textSpan.style.cssText = 'font-size:3.8vw;color:#ccc;flex:1;word-break:break-word;line-height:1.4;';
+    textSpan.textContent = slot.text.trim() ? (slot.text.length > 80 ? slot.text.substring(0, 80) + '…' : slot.text) : '(empty prompt)';
+    item.appendChild(cb);
+    item.appendChild(textSpan);
+    list.appendChild(item);
+  });
+}
+
+// ===== END MASTER PROMPT SLOTS =====
 
 function saveMasterPrompt() {
   try {
-    localStorage.setItem(MASTER_PROMPT_STORAGE_KEY, masterPromptText);
     localStorage.setItem(MASTER_PROMPT_ENABLED_KEY, masterPromptEnabled.toString());
+    localStorage.setItem(MP_SLOTS_STORAGE_KEY, JSON.stringify(masterPromptSlots));
     localStorage.setItem(ASPECT_RATIO_STORAGE_KEY, selectedAspectRatio);
+    // Keep legacy key in sync for any backward compat
+    const activeTexts = masterPromptSlots.filter(s => s.active && s.text.trim()).map(s => s.text.trim());
+    masterPromptText = activeTexts.join('\n');
+    localStorage.setItem(MASTER_PROMPT_STORAGE_KEY, masterPromptText);
   } catch (err) {
     console.error('Failed to save master prompt:', err);
   }
@@ -11480,37 +11722,39 @@ function saveMasterPrompt() {
 
 function loadMasterPrompt() {
   try {
-    const savedText = localStorage.getItem(MASTER_PROMPT_STORAGE_KEY);
     const savedEnabled = localStorage.getItem(MASTER_PROMPT_ENABLED_KEY);
-    
-    if (savedText !== null) {
-      masterPromptText = savedText;
+    if (savedEnabled !== null) masterPromptEnabled = savedEnabled === 'true';
+
+    // Load slots — migrate from old single-text if first time
+    const savedSlots = localStorage.getItem(MP_SLOTS_STORAGE_KEY);
+    if (savedSlots) {
+      masterPromptSlots = JSON.parse(savedSlots);
+      // Ensure at least one slot always exists
+      if (masterPromptSlots.length === 0) {
+        masterPromptSlots = [{ id: 'mp_' + Date.now(), text: '', active: false }];
+      }
+    } else {
+      // Migrate from the old single text field
+      const oldText = localStorage.getItem(MASTER_PROMPT_STORAGE_KEY) || '';
+      masterPromptSlots = [{ id: 'mp_' + Date.now(), text: oldText, active: !!(oldText.trim()) }];
+      saveMasterPrompt();
     }
-    
-    if (savedEnabled !== null) {
-      masterPromptEnabled = savedEnabled === 'true';
-    }
-    
-    // Initialize master prompt indicator
+
+    // Sync legacy masterPromptText
+    masterPromptText = masterPromptSlots.filter(s => s.active && s.text.trim()).map(s => s.text.trim()).join('\n');
+
     updateMasterPromptIndicator();
-    
+
     // Load aspect ratio
     const savedAspectRatio = localStorage.getItem(ASPECT_RATIO_STORAGE_KEY);
     if (savedAspectRatio) {
       selectedAspectRatio = savedAspectRatio;
-      
-      // Update checkboxes
       const checkbox1_1 = document.getElementById('aspect-ratio-1-1');
       const checkbox16_9 = document.getElementById('aspect-ratio-16-9');
-      
       if (checkbox1_1) checkbox1_1.checked = (selectedAspectRatio === '1:1');
       if (checkbox16_9) checkbox16_9.checked = (selectedAspectRatio === '16:9');
-      
-      // Update display
       const displayElement = document.getElementById('current-aspect-ratio-display');
-      if (displayElement) {
-        displayElement.textContent = selectedAspectRatio === 'none' ? 'None' : selectedAspectRatio;
-      }
+      if (displayElement) displayElement.textContent = selectedAspectRatio === 'none' ? 'None' : selectedAspectRatio;
     }
   } catch (err) {
     console.error('Failed to load master prompt:', err);
@@ -11678,9 +11922,12 @@ function getFinalPrompt(preset, manualSelection = null) {
     }
   }
   
-  // Add master prompt at the end as concrete override instructions
-  if (masterPromptEnabled && masterPromptText.trim()) {
-    finalPrompt += `\n\nOVERRIDE INSTRUCTIONS (these take priority over everything above - apply exactly as specified):\n${masterPromptText}`;
+  // Add active master prompt slots at the end as concrete override instructions
+  if (masterPromptEnabled) {
+    const activeTexts = masterPromptSlots.filter(s => s.active && s.text.trim()).map(s => s.text.trim());
+    if (activeTexts.length > 0) {
+      finalPrompt += `\n\nOVERRIDE INSTRUCTIONS (these take priority over everything above - apply exactly as specified):\n${activeTexts.join('\n')}`;
+    }
   }
   
   // Add additional instructions (CRITICAL/MANDATORY sections)
@@ -11835,10 +12082,11 @@ function _doPopulateStylesList(list, preserveScroll) {
 
     const { favorites, regular } = getStylesLists();
     
+    const _stylesSearchText = styleFilterText ? stripAccents(styleFilterText.toLowerCase()) : '';
     const filteredFavorites = favorites.filter(preset => {
       // First apply text search filter
-      if (styleFilterText) {
-        const searchText = stripAccents(styleFilterText.toLowerCase());
+      if (_stylesSearchText) {
+        const searchText = _stylesSearchText;
         const categoryMatch = preset.category && preset.category.some(cat => stripAccents(cat.toLowerCase()).includes(searchText));
         const optionsMatch = (
           (preset.options && preset.options.some(o => o.text && stripAccents(o.text.toLowerCase()).includes(searchText))) ||
@@ -11856,8 +12104,8 @@ function _doPopulateStylesList(list, preserveScroll) {
     });
 
     const filtered = regular.filter(preset => {
-      if (styleFilterText) {
-        const searchText = stripAccents(styleFilterText.toLowerCase());
+      if (_stylesSearchText) {
+        const searchText = _stylesSearchText;
         const categoryMatch = preset.category && preset.category.some(cat => stripAccents(cat.toLowerCase()).includes(searchText));
         const optionsMatch = (
           (preset.options && preset.options.some(o => o.text && stripAccents(o.text.toLowerCase()).includes(searchText))) ||
@@ -13708,7 +13956,7 @@ window.addEventListener('load', () => {
       if (visiblePresetsFilterDebounce) clearTimeout(visiblePresetsFilterDebounce);
       visiblePresetsFilterDebounce = setTimeout(() => {
         populateVisiblePresetsList();
-      }, 150);
+      }, 300);
     });
     
     // Hide category footer when field is focused (keyboard appears)
@@ -14604,6 +14852,10 @@ document.addEventListener('touchend', () => {
   if (restoreTabImagesEl) {
     restoreTabImagesEl.addEventListener('click', function() { switchRestoreTab('images'); });
   }
+  var restoreTabMpEl = document.getElementById('restore-tab-mp');
+  if (restoreTabMpEl) {
+    restoreTabMpEl.addEventListener('click', function() { switchRestoreTab('mp'); });
+  }
   var restoreSelectAllEl = document.getElementById('restore-select-all-btn');
   if (restoreSelectAllEl) {
     restoreSelectAllEl.addEventListener('click', restoreSelectAll);
@@ -14852,14 +15104,14 @@ const result = await presetImporter.import();
     tourNextBtn.addEventListener('touchend', (e) => { e.preventDefault(); tourNext(); });
   }  
 
-  const masterPromptCheckbox = document.getElementById('master-prompt-enabled');
-  if (masterPromptCheckbox) {
-    masterPromptCheckbox.addEventListener('change', (e) => {
-      masterPromptEnabled = e.target.checked;
-      const textarea = document.getElementById('master-prompt-text');
-      if (textarea) {
-        textarea.disabled = !masterPromptEnabled;
-      }
+  const masterPromptToggleBtn = document.getElementById('master-prompt-toggle-btn');
+  if (masterPromptToggleBtn) {
+    masterPromptToggleBtn.addEventListener('click', () => {
+      masterPromptEnabled = !masterPromptEnabled;
+      masterPromptToggleBtn.textContent = masterPromptEnabled ? 'ON' : 'OFF';
+      masterPromptToggleBtn.style.background = masterPromptEnabled ? 'rgba(76,175,80,0.9)' : 'transparent';
+      masterPromptToggleBtn.style.borderColor = masterPromptEnabled ? '#4CAF50' : '#666';
+      renderMpSlots();
       saveMasterPrompt();
       
       // Update main screen indicator
@@ -14878,35 +15130,18 @@ const result = await presetImporter.import();
     });
   }
   
-  const masterPromptTextarea = document.getElementById('master-prompt-text');
-  if (masterPromptTextarea) {
-    masterPromptTextarea.addEventListener('input', async (e) => {
-      masterPromptText = e.target.value;
-      const charCount = document.getElementById('master-prompt-char-count');
-      if (charCount) {
-        charCount.textContent = masterPromptText.length;
-      }
-      saveMasterPrompt();
-      updateMasterPromptDisplay();
+  // Wire up MP slot toolbar buttons
+  const mpAddBtn = document.getElementById('mp-add-btn');
+  if (mpAddBtn) mpAddBtn.addEventListener('click', addMpSlot);
 
-      if (masterPromptText.trim().toLowerCase() === 'j3ss3') {
-          try {
-          const allAvailable = await presetImporter.loadPresetsFromFile();
-          const wasActivated = unlockAllPresets(allAvailable);
-          masterPromptTextarea.value = '';
-          masterPromptText = '';
-          saveMasterPrompt();
-          updateMasterPromptDisplay();
-          if (charCount) charCount.textContent = '0';
-          if (wasActivated) {
-            customAlert('🔓 All presets unlocked...cheater!');
-          } else {
-            customAlert('🔒 Be careful what you wish for.');
-          }
-        } catch (cheatErr) { /* non-critical */ }
-      }
-    });
-  }
+  const mpRemoveBtn = document.getElementById('mp-remove-btn');
+  if (mpRemoveBtn) mpRemoveBtn.addEventListener('click', enterMpRemoveMode);
+
+  const mpRemoveConfirmBtn = document.getElementById('mp-remove-confirm-btn');
+  if (mpRemoveConfirmBtn) mpRemoveConfirmBtn.addEventListener('click', confirmMpRemove);
+
+  const mpRemoveCancelBtn = document.getElementById('mp-remove-cancel-btn');
+  if (mpRemoveCancelBtn) mpRemoveCancelBtn.addEventListener('click', exitMpRemoveMode);
 
  // Filter blur buttons — first click dismisses keyboard, second click clears text
   function makeFilterBlurBtn(btnId, filterId, onClear) {
@@ -14958,7 +15193,7 @@ const result = await presetImporter.import();
       if (filterDebounceTimeout) clearTimeout(filterDebounceTimeout);
       filterDebounceTimeout = setTimeout(() => {
         populateStylesList();
-      }, 150); // Wait 150ms after user stops typing
+      }, 300); // Wait 300ms after user stops typing
     });
     
     // Hide category footer when field is focused (keyboard appears)
@@ -15544,7 +15779,7 @@ const result = await presetImporter.import();
       if (presetFilterDebounce) clearTimeout(presetFilterDebounce);
       presetFilterDebounce = setTimeout(() => {
         populatePresetList();
-      }, 150);
+      }, 300);
     });
     
     // Hide footer and controls when user starts typing (keyboard appears)

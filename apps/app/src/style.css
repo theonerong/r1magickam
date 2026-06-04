@@ -6004,6 +6004,95 @@ button, .touchable {
     display: block;
 }
 
+/* ===== MASTER PROMPT SLOTS ===== */
+.mp-slot {
+    background: #111;
+    border: 2px solid #333;
+    border-radius: 2vw;
+    padding: 2vw;
+    transition: border-color 0.2s, background 0.2s;
+}
+
+.mp-slot.mp-slot-active {
+    border-color: #4CAF50;
+    background: rgba(76, 175, 80, 0.08);
+}
+
+.mp-slot-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2vw;
+    min-height: 8vw;
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.mp-slot-status {
+    font-size: 3.5vw;
+    font-weight: 700;
+    padding: 1vw 2.5vw;
+    border-radius: 1.5vw;
+    background: #222;
+    color: #666;
+    transition: background 0.2s, color 0.2s;
+}
+
+.mp-slot-active .mp-slot-status {
+    background: #4CAF50;
+    color: #fff;
+}
+
+.mp-slot-label {
+    font-size: 3.5vw;
+    color: #888;
+    font-weight: 600;
+}
+
+.mp-slot-textarea {
+    width: 100%;
+    background: #000;
+    color: #fff;
+    border: 1px solid #444;
+    border-radius: 1.5vw;
+    padding: 2vw;
+    font-size: 3.8vw;
+    min-height: 20vw;
+    resize: vertical;
+    box-sizing: border-box;
+    font-family: inherit;
+    line-height: 1.4;
+}
+
+.mp-slot-textarea:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.mp-slot-char-count {
+    font-size: 3vw;
+    color: #555;
+    text-align: right;
+    margin-top: 1vw;
+}
+
+.mp-slot-check {
+    display: none;
+    width: 5vw;
+    height: 5vw;
+    min-width: 22px;
+    min-height: 22px;
+    accent-color: #FE5F00;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.mp-remove-mode .mp-slot-check {
+    display: block;
+}
+/* ===== END MASTER PROMPT SLOTS ===== */
+
 /* Preview image grid inside the Preview Images tab */
 .pv-img-grid {
     display: grid;
