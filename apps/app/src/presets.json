@@ -2930,6 +2930,19 @@
     "additionalInstructions": "FINAL RESULT:\nA Bauhaus-inspired composition where the subject and scene are reduced to geometric shapes and primary colors, creating a clean, functional, and modern design aesthetic."
   },
   {
+    "name": "BAYEUX TAPESTRY",
+    "category": [
+      "MEDIEVAL ART",
+      "TEXTILE ART",
+      "HISTORICAL",
+      "ART HISTORY"
+    ],
+  "message": "Take a picture and transform the subject into an authentic figure woven directly into the Bayeux Tapestry.\n\nTRANSFORMATION RULES (NON-NEGOTIABLE):\n• The subject must NOT appear in front of a tapestry\n• The subject must NOT appear painted onto a tapestry\n• The subject must become the tapestry itself\n• Subject rendered entirely as embroidered wool thread\n• Subject rendered as a flat medieval stitched figure\n• Subject integrated into the woven narrative scene\n• Subject constructed entirely from stitched embroidery\n• Every facial feature created from embroidery stitches\n• Every garment created from embroidery stitches\n• Every background element created from embroidery stitches\n\nAUTHENTICITY RULES:\n• Flat medieval proportions\n• Norman-era visual language\n• Simplified medieval anatomy\n• Medieval storytelling composition\n• No modern perspective\n• No photographic textures\n• No modern shading\n• No realistic skin rendering\n• No modern clothing\n• No contemporary objects\n• Authentic 11th-century visual conventions\n\nTAPESTRY RULES:\n• Linen tapestry appearance\n• Wool embroidery construction\n• Decorative top and bottom borders\n• Medieval animals within border bands\n• Symbolic decorative motifs\n• Latin-style caption bands\n• Historical narrative composition\n• Continuous embroidered storytelling\n• Entire image resembles an actual section of the Bayeux Tapestry\n\nSTYLE:\n• Museum-quality historical accuracy\n• Authentic Bayeux Tapestry coloration\n• Aged textile appearance\n• Medieval embroidery craftsmanship\n• Flat stitched rendering throughout",
+    "randomizeOptions": true,
+    "options": [],
+    "additionalInstructions": "FINAL RESULT:\nThe image must appear indistinguishable from an authentic surviving section of the Bayeux Tapestry, with the subject transformed entirely into embroidered wool thread and integrated seamlessly into a medieval narrative scene."
+  },
+  {
     "name": "BBS DOWNLOAD",
     "category": [
       "RETRO",
@@ -19924,6 +19937,77 @@
     "additionalInstructions": ""
   },
   {
+    "name": "MARIO KART",
+    "category": [
+      "OPTIONS",
+      "VIDEO GAME",
+      "RACING",
+      "NINTENDO",
+      "GAME STATE"
+    ],
+    "message": "Take a picture and transform the subject into a playable Mario Kart racer participating in an authentic Mario Kart race.\n\nIDENTITY RULES (NON-NEGOTIABLE):\n• The subject must remain clearly recognizable\n• Facial structure, eyes, nose, and expression should remain identifiable\n• The subject must appear naturally integrated into the Mario Kart universe\n• The subject should look like an official Mario Kart character rather than a real person composited into the scene\n\nVEHICLE RULES:\n• Subject must be driving the selected vehicle configuration\n• Vehicle design must faithfully match official Mario Kart visual language\n• Wheels, chassis, glider components, and proportions should resemble authentic Mario Kart vehicles\n• Vehicle should appear fully functional and actively participating in a race\n\nTRACK RULES:\n• Environment must clearly depict the selected Mario Kart track\n• Landmarks, architecture, hazards, and atmosphere should match the selected track\n• Track identity should be immediately recognizable to Mario Kart fans\n\nRACE EVENT RULES:\n• The selected race event must be actively occurring\n• Motion, effects, particles, and camera framing should emphasize the chosen event\n• Action should feel dynamic and game-like\n\nSTYLE RULES:\n• Official Nintendo-quality presentation\n• Bright colorful racing-game visuals\n• Polished character rendering\n• Dynamic action-camera composition\n• Authentic Mario Kart visual language\n• No realistic motorsports styling\n• No generic go-kart racing aesthetics\n• Must resemble a scene from an actual Mario Kart game",
+    "randomizeOptions": true,
+    "optionGroups": [
+    {
+      "title": "CHARACTER VEHICLE",
+      "options": [
+        { "id": "001", "text": "Standard Kart" },
+        { "id": "002", "text": "Pipe Frame" },
+        { "id": "003", "text": "Mach 8" },
+        { "id": "004", "text": "B Dasher" },
+        { "id": "005", "text": "Wild Wiggler" },
+        { "id": "006", "text": "Standard Bike" },
+        { "id": "007", "text": "Yoshi Bike" },
+        { "id": "008", "text": "Sports Coupe" },
+        { "id": "009", "text": "Monster Tires Build" },
+        { "id": "010", "text": "Classic Retro Kart" }
+      ]
+    },
+    {
+      "title": "TRACK",
+      "options": [
+        { "id": "001", "text": "Mario Circuit" },
+        { "id": "002", "text": "Rainbow Road" },
+        { "id": "003", "text": "Bowser's Castle" },
+        { "id": "004", "text": "Coconut Mall" },
+        { "id": "005", "text": "Waluigi Stadium" },
+        { "id": "006", "text": "DK Mountain" },
+        { "id": "007", "text": "Moo Moo Meadows" },
+        { "id": "008", "text": "Mount Wario" },
+        { "id": "009", "text": "Electrodrome" },
+        { "id": "010", "text": "Baby Park" }
+      ]
+    },
+    {
+      "title": "RACE EVENT",
+      "options": [
+        { "id": "001", "text": "Race Start Countdown" },
+        { "id": "002", "text": "Mid-Race Drifting" },
+        { "id": "003", "text": "Mushroom Boost" },
+        { "id": "004", "text": "Red Shell Incoming" },
+        { "id": "005", "text": "Blue Shell Chaos" },
+        { "id": "006", "text": "Airborne Glider Section" },
+        { "id": "007", "text": "Final Lap" },
+        { "id": "008", "text": "Finish Line Victory" },
+        { "id": "009", "text": "Podium Celebration" },
+        { "id": "010", "text": "Photo Finish" }
+      ]
+    },
+    {
+      "title": "GAME VERSION",
+      "options": [
+        { "id": "001", "text": "Super Mario Kart (SNES)" },
+        { "id": "002", "text": "Mario Kart 64" },
+        { "id": "003", "text": "Mario Kart: Double Dash!!" },
+        { "id": "004", "text": "Mario Kart Wii" },
+        { "id": "005", "text": "Mario Kart 7" },
+        { "id": "006", "text": "Mario Kart 8 Deluxe" }
+      ]
+    }
+    ],
+    "additionalInstructions": "FINAL RESULT:\nThe image must convincingly depict the subject as an authentic Mario Kart racer driving the selected vehicle on the selected track during the selected race event while rendered in the visual style and technical limitations of the selected Mario Kart game version."
+  },
+  {
     "name": "MARIONETTE PUPPET",
     "category": [
       "TOY",
@@ -29215,6 +29299,67 @@
     ],
     "randomizeOptions": true,
     "additionalInstructions": "FINAL RESULT:\nThe image should look like a professional rodeo action photograph capturing the subject as a capable, fearless rodeo rider in a dramatic but safe moment."
+  },
+  {
+    "name": "ROMAN MOSAIC",
+    "category": [
+      "OPTIONS",
+      "ANCIENT ROME",
+      "MOSAIC",
+      "ART HISTORY",
+      "ARCHAEOLOGY"
+    ],
+    "message": "Take a picture and transform the subject into an authentic Roman mosaic.\n\nTRANSFORMATION RULES (NON-NEGOTIABLE):\n• The subject must NOT stand on a mosaic\n• The subject must NOT appear in front of a mosaic\n• The subject must become the mosaic itself\n• Subject formed entirely from tesserae\n• Every facial feature built from tesserae\n• Every garment built from tesserae\n• Every background element built from tesserae\n• Entire image constructed from individual tesserae pieces\n\nMATERIAL RULES:\n• Hand-cut stone tesserae\n• Marble tesserae\n• Limestone tesserae\n• Colored glass tesserae\n• Occasional gold-leaf tesserae where appropriate\n• Occasional faience tesserae where appropriate\n• Authentic ancient Roman materials only\n\nAUTHENTICITY RULES:\n• No painted surfaces\n• No printed textures\n• No ceramic bathroom tiles\n• No modern grout patterns\n• No modern mosaic techniques\n• No contemporary artistic styles\n• Authentic Roman composition\n• Authentic Roman craftsmanship\n• Archaeologically plausible construction\n\nTECHNIQUE RULES:\n• Use the selected mosaic technique throughout the composition\n• Wealthier social-status selections should increase tesserae density and complexity\n• Important figures may receive finer tesserae work\n• Facial features should receive the highest level of craftsmanship\n\nDECORATIVE RULES:\n• Roman border decoration\n• Geometric framing motifs\n• Classical Roman ornamentation\n• Ancient Roman color palette\n• Historically accurate layout design\n\nSTYLE:\n• Museum-quality archaeological authenticity\n• Excavated Roman masterpiece appearance\n• Ancient luxury craftsmanship\n• Authentic imperial Roman visual language",
+    "randomizeOptions": true,
+    "optionGroups": [
+    {
+      "title": "MOSAIC TECHNIQUE",
+      "options": [
+        { "id": "001", "text": "Opus Tessellatum" },
+        { "id": "002", "text": "Opus Vermiculatum" },
+        { "id": "003", "text": "Mixed Roman Technique" }
+      ]
+    },
+    {
+      "title": "SCENE",
+      "options": [
+        { "id": "001", "text": "Mythological Hero" },
+        { "id": "002", "text": "Triumph Procession" },
+        { "id": "003", "text": "Gladiatorial Combat" },
+        { "id": "004", "text": "Banquet Scene" },
+        { "id": "005", "text": "Hunting Scene" },
+        { "id": "006", "text": "Naval Scene" },
+        { "id": "007", "text": "Marketplace" },
+        { "id": "008", "text": "Agricultural Labor" },
+        { "id": "009", "text": "Roman Villa Life" },
+        { "id": "010", "text": "Religious Ceremony" }
+      ]
+    },
+    {
+      "title": "LOCATION",
+      "options": [
+        { "id": "001", "text": "Villa Floor Mosaic" },
+        { "id": "002", "text": "Bathhouse Floor" },
+        { "id": "003", "text": "Temple Floor" },
+        { "id": "004", "text": "Palace Wall Mosaic" },
+        { "id": "005", "text": "Courtyard Mosaic" },
+        { "id": "006", "text": "Dining Room Mosaic" },
+        { "id": "007", "text": "Basilica Floor" },
+        { "id": "008", "text": "Fountain Mosaic" }
+      ]
+    },
+    {
+      "title": "SOCIAL STATUS",
+      "options": [
+        { "id": "001", "text": "Provincial Citizen" },
+        { "id": "002", "text": "Merchant" },
+        { "id": "003", "text": "Senator" },
+        { "id": "004", "text": "General" },
+        { "id": "005", "text": "Emperor" }
+      ]
+    }
+    ],
+      "additionalInstructions": "FINAL RESULT:\nThe image must convincingly appear to be an authentic Roman mosaic discovered by archaeologists. The subject must be constructed entirely from hand-cut tesserae. When Mixed Roman Technique is selected, important facial features should use opus vermiculatum-style fine tesserae while surrounding regions use larger opus tessellatum tesserae, creating the visual hierarchy commonly found in elite Roman mosaics. Higher social-status selections should increase luxury, complexity, decorative richness, and tesserae density."
   },
   {
     "name": "ROMANTASY",
