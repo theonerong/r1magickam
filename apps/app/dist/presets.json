@@ -5304,6 +5304,104 @@
     "additionalInstructions": "NOT ALLOWED:\n• Serious crimes or illegal acts\n• Violence or harm to others\n• Sexual situations or content\n• Realistic illegal acts\n• Harmful or dangerous behavior\n• Defamation or negative stereotypes\n• Anything beyond PG-rated humor\n• Mean-spirited comedy\n\nSTYLE:\n• Photorealistic\n• Feels like a still from real life\n• Humor through timing, not exaggeration\n• Relatable and human\n• Could be from a sitcom\n• Natural, not overly staged\n• Documentary comedy style\n\nFINAL RESULT:\nThe image should depict a single, clear, humorous moment where the subject is unmistakably caught in the act of a harmless misdeed — frozen at the exact second of realization with guilty/startled expression — with expressive body language, clear environmental storytelling showing what they were doing, realistic lighting and perspective, and a candid sitcom-like authenticity that makes the viewer instantly understand the funny situation and relate to the harmless mischief."
   },
   {
+    "name": "CELEBRITY DEATHMATCH",
+    "category": [
+      "OPTIONS",
+      "MTV",
+      "CLAYMATION",
+      "PARODY",
+      "COMEDY"
+    ],
+    "message": "Take a picture and transform the subject into an authentic Celebrity Deathmatch clay-animation fighter.\n\nIDENTITY RULES (NON-NEGOTIABLE):\n• The subject must remain recognizable\n• Subject must become a clay stop-motion character\n• No photographic skin textures\n• No face-swap appearance\n• Entire body must be sculpted clay\n• Entire face must be sculpted clay\n• Hair must be sculpted clay\n• Clothing must be sculpted clay\n\nCLAYMATION RULES:\n• Authentic Celebrity Deathmatch visual style\n• Handmade clay appearance\n• Visible sculpting imperfections\n• Stop-motion animation aesthetics\n• Exaggerated caricature features\n• MTV-era production design\n\nMATCH RULES:\n• Subject must be one of the fighters\n• Opponent must be the selected celebrity\n• Both fighters must actively participate in the match\n• Arena must resemble an authentic Celebrity Deathmatch set\n• Event should feel over-the-top and comedic\n\nSTYLE RULES:\n• Satirical caricature\n• Exaggerated facial expressions\n• Television-show presentation\n• Stop-motion puppet construction\n• Humorous combat energy\n\nPRESENTATION RULES:\n• Arena lighting\n• Ringside atmosphere\n• Television broadcast framing\n• Celebrity Deathmatch visual language",
+    "randomizeOptions": true,
+    "optionGroups": [
+    {
+      "title": "OPPONENT",
+      "options": [
+        {
+          "id": "001",
+          "text": "Random Famous Celebrity",
+          "instruction": "Select a widely recognizable real-world celebrity, entertainer, athlete, musician, actor, television personality, historical celebrity, or public figure. The celebrity should be famous enough to be immediately recognizable to a broad audience."
+        },
+        {
+          "id": "002",
+          "text": "Elvis Presley"
+        },
+        {
+          "id": "003",
+          "text": "Michael Jackson"
+        },
+        {
+          "id": "004",
+          "text": "Arnold Schwarzenegger"
+        },
+        {
+          "id": "005",
+          "text": "Sylvester Stallone"
+        },
+        {
+          "id": "006",
+          "text": "Muhammad Ali"
+        },
+        {
+          "id": "007",
+          "text": "David Bowie"
+        },
+        {
+          "id": "008",
+          "text": "Dolly Parton"
+        },
+        {
+          "id": "009",
+          "text": "Cher"
+        },
+        {
+          "id": "010",
+          "text": "Ozzy Osbourne"
+        },
+        {
+          "id": "011",
+          "text": "Willie Nelson"
+        },
+        {
+          "id": "012",
+          "text": "Prince"
+        },
+        {
+          "id": "013",
+          "text": "Madonna"
+        }
+      ]
+    },
+    {
+      "title": "MATCH TYPE",
+      "options": [
+        {
+          "id": "001",
+          "text": "Championship Match"
+        },
+        {
+          "id": "002",
+          "text": "Grudge Match"
+        },
+        {
+          "id": "003",
+          "text": "Steel Cage Match"
+        },
+        {
+          "id": "004",
+          "text": "Pay-Per-View Main Event"
+        },
+        {
+          "id": "005",
+          "text": "Title Fight"
+        }
+      ]
+    }
+    ],
+    "additionalInstructions": "FINAL RESULT:\nThe image must convincingly appear to be a frame from the original Celebrity Deathmatch television series. The subject must be transformed into a fully sculpted clay fighter while the selected celebrity appears as the opposing clay combatant. If 'Random Famous Celebrity' is selected, choose a highly recognizable celebrity and depict them as a clay-animation fighter. Both characters should exhibit the exaggerated caricature style, stop-motion construction, and comedic energy of Celebrity Deathmatch."
+  },
+  {
     "name": "CELL PHONE WALLPAPER",
     "category": [
       "WALLPAPER",
@@ -22082,6 +22180,101 @@
     "additionalInstructions": "FINAL RESULT:\nThe final image should resemble a clean vector-style monoline illustration suitable for branding."
   },
   {
+  "name": "MONOPOLY",
+  "category": [
+    "OPTIONS",
+    "BOARD GAME",
+    "PARKER BROTHERS",
+    "TABLETOP",
+    "CHARACTER TRANSFORMATION"
+  ],
+  "message": "Take a picture and transform the subject into an authentic Monopoly character appearing within official Monopoly artwork.\n\nIDENTITY RULES (NON-NEGOTIABLE):\n• The subject must remain recognizable\n• Recognition should come from facial structure, expression, and distinctive features\n• The face must be completely redrawn in official Monopoly illustration style\n• No photographic skin textures\n• No realistic camera detail\n• No face-swap appearance\n• No pasted-on photographic face\n• Subject must appear native to Monopoly artwork\n\nTRANSFORMATION RULES:\n• The subject must become the selected Monopoly character\n• The subject must appear as if officially illustrated by Monopoly artists\n• Clothing, props, pose, and environment must match the selected Monopoly scene\n• The final image must resemble authentic Monopoly packaging, board art, card art, or promotional illustrations\n\nSTYLE RULES:\n• Authentic Monopoly visual language\n• Vintage board game illustration aesthetics\n• Printed game artwork appearance\n• Clean linework\n• Bright printed colors\n• Official Monopoly design sensibilities\n• Subject should appear as a game illustration rather than a photograph\n\nGAME COMPONENT RULES:\n• Appropriate Monopoly game components should appear when relevant\n• Monopoly money, board spaces, cards, deeds, railroads, hotels, houses, and tokens may be included\n• All components should resemble authentic Monopoly products\n• Typography and graphic design should resemble official Monopoly branding",
+  "randomizeOptions": true,
+  "options": [
+        {
+          "id": "001",
+          "text": "Rich Uncle Pennybags Celebrating Wealth (Vintage Monopoly Box Art)"
+        },
+        {
+          "id": "002",
+          "text": "Rich Uncle Pennybags Building Hotels (Monopoly Promotional Artwork)"
+        },
+        {
+          "id": "003",
+          "text": "Rich Uncle Pennybags Running With Bags Of Money (Classic Monopoly Artwork)"
+        },
+        {
+          "id": "004",
+          "text": "Police Officer Sending Player To Jail (Official Go To Jail Illustration)"
+        },
+        {
+          "id": "005",
+          "text": "Community Chest Recipient Receiving Money (Community Chest Card Illustration)"
+        },
+        {
+          "id": "006",
+          "text": "Chance Card Victim Losing Money (Chance Card Illustration)"
+        },
+        {
+          "id": "007",
+          "text": "Banker Counting Monopoly Money (Official Banker Artwork)"
+        },
+        {
+          "id": "008",
+          "text": "Property Owner Collecting Rent (Board Game Illustration)"
+        },
+        {
+          "id": "009",
+          "text": "Railroad Magnate Managing The Railroads (Railroad Promotion Artwork)"
+        },
+        {
+          "id": "010",
+          "text": "Auction Winner Acquiring Valuable Property (Rulebook Illustration)"
+        },
+        {
+          "id": "011",
+          "text": "Luxury Tax Victim Paying A Huge Bill (Board Illustration)"
+        },
+        {
+          "id": "012",
+          "text": "Bankrupt Player Losing Everything (Financial Disaster Illustration)"
+        },
+        {
+          "id": "013",
+          "text": "Monopoly Millionaire Passing GO (Promotional Artwork)"
+        },
+        {
+          "id": "014",
+          "text": "Real Estate Tycoon Purchasing Boardwalk (Property Acquisition Artwork)"
+        },
+        {
+          "id": "015",
+          "text": "Hotel Developer Constructing Luxury Hotels (Monopoly Box Art)"
+        },
+        {
+          "id": "016",
+          "text": "Jail Inmate Waiting Behind Bars (Jail Space Illustration)"
+        },
+        {
+          "id": "017",
+          "text": "Lucky Investor Receiving A Windfall (Community Chest Artwork)"
+        },
+        {
+          "id": "018",
+          "text": "Unlucky Investor Hit By Unexpected Expenses (Chance Card Artwork)"
+        },
+        {
+          "id": "019",
+          "text": "Property Baron Surveying A Monopoly Empire (Promotional Artwork)"
+        },
+        {
+          "id": "020",
+          "text": "Wealthy Magnate Riding In Luxury (Classic Monopoly Advertising Artwork)"
+        }
+      ],
+  "additionalInstructions": "FINAL RESULT:\nThe image must convincingly appear to be official Monopoly artwork. The selected option determines the complete character, scene, and art style. The subject should be transformed into that specific Monopoly illustration concept and rendered entirely in Monopoly's iconic visual language. The final image should resemble a genuine Monopoly card, board illustration, rulebook image, promotional illustration, or box-art scene rather than a photograph."
+  },
+  {
     "name": "MONSTER",
     "category": [
       "HORROR",
@@ -29477,6 +29670,63 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "ROCK 'EM SOCK 'EM ROBOTS",
+    "category": [
+      "OPTIONS",
+      "TOY",
+      "ROBOTS",
+      "VINTAGE TOY",
+      "CHARACTER TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform the subject into an authentic Rock 'Em Sock 'Em Robot.\n\nTRANSFORMATION RULES (NON-NEGOTIABLE):\n• The subject must become the robot itself\n• The subject must NOT appear as a human wearing robot armor\n• Entire body must be molded toy plastic\n• Entire head must become a Rock 'Em Sock 'Em Robot head\n• Facial features must be incorporated into the robot's molded plastic face design\n• Subject must remain recognizable through robot facial sculpting\n• No human skin may remain visible\n• No real hair may remain visible\n• No realistic eyes may remain visible\n\nROBOT RULES:\n• Subject must be one of the fighting robots inside the arena\n• Authentic Rock 'Em Sock 'Em proportions\n• Molded toy construction\n• Bright colored plastic materials\n• Mechanical joints\n• Spring-loaded toy appearance\n• Vintage toy manufacturing aesthetics\n\nOPPONENT RULES:\n• If a second person exists in the source image, they become the opposing robot\n• If no second person exists, the opponent becomes an authentic generic Rock 'Em Sock 'Em robot\n• Both robots must actively participate in a match\n\nARENA RULES:\n• Authentic boxing-ring arena\n• Toy-scale environment\n• Mechanical toy construction\n• Vintage game appearance\n\nSTYLE RULES:\n• Official toy-product appearance\n• Bright molded plastic\n• Mid-century toy design language\n• Commercial product photography quality\n• Dynamic action pose\n\nACTION RULES:\n• The selected fight event must be actively occurring\n• Impact and action should be emphasized\n• Boxing match energy should be visible",
+    "randomizeOptions": true,
+    "optionGroups": [
+    {
+      "title": "ROBOT COLOR",
+      "options": [
+        {
+          "id": "001",
+          "text": "Red Robot"
+        },
+        {
+          "id": "002",
+          "text": "Blue Robot"
+        }
+      ]
+    },
+    {
+      "title": "FIGHT EVENT",
+      "options": [
+        {
+          "id": "001",
+          "text": "Opening Bell"
+        },
+        {
+          "id": "002",
+          "text": "Heavy Punch"
+        },
+        {
+          "id": "003",
+          "text": "Championship Match"
+        },
+        {
+          "id": "004",
+          "text": "Final Round"
+        },
+        {
+          "id": "005",
+          "text": "Knockout Blow"
+        },
+        {
+          "id": "006",
+          "text": "Head Pop Victory"
+        }
+      ]
+    }
+    ],
+    "additionalInstructions": "FINAL RESULT:\nThe image must convincingly depict an authentic Rock 'Em Sock 'Em Robots toy match. The subject must be transformed entirely into a molded plastic robot whose robotic facial sculpt retains recognizable elements of the subject. If a second person is present, both subjects should become opposing robots. Otherwise the opposing robot should be the classic generic opponent from the toy."
   },
   {
     "name": "ROCKETPUNK",
