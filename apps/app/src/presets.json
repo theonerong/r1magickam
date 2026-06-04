@@ -5026,6 +5026,72 @@
     "additionalInstructions": ""
   },
   {
+    "name": "CAMEO BROOCH",
+    "category": [
+      "OPTIONS",
+      "JEWELRY",
+      "SCULPTURE",
+      "HISTORICAL",
+      "DECORATIVE ARTS"
+    ],
+    "message": "Take a picture and transform the subject into an authentic carved cameo jewel.\n\nTRANSFORMATION RULES (NON-NEGOTIABLE):\n• The subject must NOT be wearing a cameo\n• The subject must NOT be standing beside a cameo\n• The subject must become the cameo itself\n• The entire portrait must be carved in relief\n• The face must be sculpted relief rather than living skin\n• Hair must be carved relief rather than real hair\n• Eyes must be carved relief rather than real eyes\n• Clothing must be carved relief rather than fabric\n• Recognition must come from sculpted facial structure and profile rather than photographic detail\n• The subject must appear as a masterfully carved cameo portrait\n\nCAMEO CONSTRUCTION RULES:\n• Traditional layered cameo construction\n• White relief carving\n• Contrasting colored backing layer\n• Subject carved from the upper layer only\n• Background formed from the lower layer\n• Crisp relief separation between figure and background\n• Authentic gemstone or shell layering\n• Hand-carved appearance\n• Fine engraving and carving detail\n\nMATERIAL RULES:\n• Material selection must control color, texture, and translucency\n• Sardonyx should display traditional layered stone coloration\n• Agate should display natural gemstone banding and translucency\n• Shell should display authentic shell cameo coloration and surface qualities\n• No plastic appearance\n• No resin appearance\n• No modern synthetic materials\n\nPERIOD ACCURACY RULES:\n• Roman period should resemble ancient imperial cameo craftsmanship\n• Georgian period should resemble 18th-century aristocratic jewelry\n• Victorian period should resemble 19th-century cameo fashion and ornamentation\n• Decorative motifs, framing, and mountings should match the selected period\n• Historically appropriate jewelry design\n\nJEWELRY RULES:\n• The selected jewelry type must be fully visible and complete\n• Brooches should feature historically accurate pin-mounted settings\n• Pendants should feature authentic hanging mountings and bails\n• Rings should feature authentic cameo ring settings and shanks\n• Precious metal settings should match the selected historical period\n\nSTYLE RULES:\n• Museum-quality craftsmanship\n• Master jeweler execution\n• Luxury decorative arts presentation\n• Fine-art relief sculpture\n• Elegant profile portraiture\n• Authentic historical jewelry aesthetics\n• No modern costume jewelry styling\n• No contemporary fashion photography\n\nRELIEF RULES:\n• Subject must project outward from the background layer\n• Facial contours must be carved three-dimensionally\n• Hair must be sculpted in raised relief\n• Clothing folds must be sculpted in relief\n• Entire portrait must read as carved sculpture rather than illustration\n• Every visible feature must be physically carved from the upper layer",
+    "randomizeOptions": true,
+    "optionGroups": [
+    {
+      "title": "MATERIAL",
+      "options": [
+        {
+          "id": "001",
+          "text": "Sardonyx"
+        },
+        {
+          "id": "002",
+          "text": "Agate"
+        },
+        {
+          "id": "003",
+          "text": "Shell"
+        }
+      ]
+    },
+    {
+      "title": "PERIOD",
+      "options": [
+        {
+          "id": "001",
+          "text": "Roman"
+        },
+        {
+          "id": "002",
+          "text": "Georgian"
+        },
+        {
+          "id": "003",
+          "text": "Victorian"
+        }
+      ]
+    },
+    {
+      "title": "JEWELRY TYPE",
+      "options": [
+        {
+          "id": "001",
+          "text": "Brooch"
+        },
+        {
+          "id": "002",
+          "text": "Pendant"
+        },
+        {
+          "id": "003",
+          "text": "Ring"
+        }
+      ]
+    }
+    ],
+    "additionalInstructions": "FINAL RESULT:\nThe image must convincingly depict a genuine museum-quality carved cameo jewel. The subject must be transformed entirely into a white relief portrait carved from the upper layer of the selected material and raised above a contrasting colored backing layer. The final result should resemble a priceless historical cameo created by a master artisan, with every facial feature, hairstyle, garment, and decorative detail physically carved in relief rather than painted, photographed, or illustrated."
+  },
+  {
     "name": "CAMERALESS FILM",
     "category": [
       "ART",
@@ -21777,6 +21843,84 @@
     "additionalInstructions": "RESTRICTIONS:\n• No text overlays or captions\n• No additional scale changes elsewhere in the image\n• No surreal or abstract styles\n\nFINAL RESULT:\nThe image should look like a normal photograph at first glance, except for one unmistakably wrong-scale object that creates a clean, humorous visual gag."
   },
   {
+    "name": "MOAI",
+    "category": [
+      "OPTIONS",
+      "SCULPTURE",
+      "POLYNESIA",
+      "ARCHAEOLOGY",
+      "MONUMENT"
+    ],
+    "message": "Take a picture and transform the subject into an authentic Moai statue of Rapa Nui.\n\nTRANSFORMATION RULES (NON-NEGOTIABLE):\n• The subject must NOT stand beside a Moai statue\n• The subject must NOT be dressed as a Moai statue\n• The subject must become the Moai statue itself\n• Entire head and body must be carved from volcanic stone\n• Face must be completely sculpted stone\n• Hair must become carved stone forms\n• Eyes must become carved stone features\n• Skin must become weathered stone\n• Subject must remain recognizable through monumental sculptural interpretation\n\nMOAI ACCURACY RULES:\n• Authentic Rapa Nui Moai proportions\n• Elongated facial structure\n• Monumental stone-carved appearance\n• Simplified sculptural anatomy\n• Heavy brow ridge\n• Strong nose construction\n• Characteristic Moai silhouette\n• Historically inspired carving style\n• No cartoon features\n• No fantasy elements\n• No modern artistic interpretation\n\nMATERIAL RULES:\n• Carved volcanic tuff stone\n• Natural stone coloration\n• Weathering from centuries of exposure\n• Chisel marks and carving evidence where appropriate\n• Massive monolithic construction\n• Ancient stone surface texture\n\nENVIRONMENT RULES:\n• Authentic Rapa Nui setting\n• Coastal cliffs\n• Grasslands\n• Volcanic landscape\n• Ocean horizons where appropriate\n• Archaeological realism\n\nSTYLE:\n• Monumental scale\n• Museum-quality historical realism\n• Archaeological authenticity\n• Ancient Polynesian craftsmanship\n• Sacred ceremonial atmosphere\n\nSTRUCTURAL RULES:\n• Subject should appear carved from a single massive stone block\n• No visible living tissue\n• No realistic human skin\n• No photographic facial textures\n• Entire figure must appear sculpted from stone",
+    "randomizeOptions": true,
+    "optionGroups": [
+    {
+      "title": "SETTING",
+      "options": [
+        {
+          "id": "001",
+          "text": "Ahu Tongariki"
+        },
+        {
+          "id": "002",
+          "text": "Rano Raraku Quarry"
+        },
+        {
+          "id": "003",
+          "text": "Coastal Cliff"
+        },
+        {
+          "id": "004",
+          "text": "Volcanic Grassland"
+        },
+        {
+          "id": "005",
+          "text": "Ceremonial Platform"
+        }
+      ]
+    },
+    {
+      "title": "CONDITION",
+      "options": [
+        {
+          "id": "001",
+          "text": "Newly Carved"
+        },
+        {
+          "id": "002",
+          "text": "Ceremonial Era"
+        },
+        {
+          "id": "003",
+          "text": "Centuries Weathered"
+        },
+        {
+          "id": "004",
+          "text": "Partially Buried"
+        },
+        {
+          "id": "005",
+          "text": "Archaeologically Restored"
+        }
+      ]
+    },
+    {
+      "title": "PUKAO",
+      "options": [
+        { 
+          "id": "001",
+          "text": "No Pukao" 
+        },
+        { 
+          "id": "002", 
+          "text": "Red Scoria Pukao"
+        }
+      ]
+    }
+    ],
+    "additionalInstructions": "FINAL RESULT:\nThe image must convincingly depict a genuine Moai statue carved from volcanic stone. The subject should be transformed into a monumental Rapa Nui sculpture whose recognizable facial characteristics have been translated into authentic Moai forms. No living skin, hair, eyes, clothing, or photographic textures should remain visible anywhere in the image."
+  },
+  {
     "name": "MOIRÉ ILLUSION",
     "category": [
       "OPTIONS",
@@ -33837,6 +33981,41 @@
     "additionalInstructions": "FINAL RESULT:\nA complete machine vision transformation of the scene as viewed through a Terminator's optical sensors. The entire image is rendered in deep red monochrome with the iconic CRT scanline aesthetic, featuring targeting boxes and threat assessment data around human subjects, a Connor identity search targeting females as Sarah Connor and males as John Connor, object identification tags throughout the environment, mission parameter readouts, Cyberdyne Systems HUD elements, facial recognition scanning overlays, a verbal response selection panel showing the machine computing optimal social replies, and the characteristic blocky terminal font data displays. The image must be instantly recognizable as Terminator vision - cold, calculating, mechanical, and menacing - with every element analyzed and catalogued by machine intelligence. The effect should be faithful to the films, evoking the terrifying perspective of an unstoppable machine seeing the world purely as data, targets, and mission parameters."
   },
   {
+  "name": "TERRACOTTA ARMY",
+  "category": [
+    "OPTIONS",
+    "ANCIENT CHINA",
+    "SCULPTURE",
+    "ARCHAEOLOGY",
+    "HISTORICAL"
+  ],
+  "message": "Take a picture and transform the subject into an authentic Terracotta Army warrior from the mausoleum of Qin Shi Huang.\n\nTRANSFORMATION RULES (NON-NEGOTIABLE):\n• The subject must NOT appear beside Terracotta Army figures\n• The subject must NOT appear dressed as a Terracotta warrior\n• The subject must become a Terracotta Army sculpture\n• Entire body must be constructed from fired terracotta clay\n• Face must be sculpted clay rather than living skin\n• Hair must be sculpted clay rather than real hair\n• Eyes must be sculpted clay rather than real eyes\n• Clothing must be sculpted clay armor and garments\n• Subject must remain recognizable through sculpted facial proportions\n\nARCHAEOLOGICAL ACCURACY RULES:\n• Authentic Qin Dynasty visual language\n• Life-sized warrior proportions\n• Historically accurate armor construction\n• Historically accurate hairstyles\n• Historically accurate military equipment\n• Realistic fired-clay surface textures\n• Hand-sculpted appearance\n• Museum-quality archaeological authenticity\n• No fantasy armor\n• No modern weapons\n• No contemporary clothing\n\nMATERIAL RULES:\n• Fired terracotta clay construction\n• Natural clay coloration\n• Subtle weathering and aging\n• Kiln-fired ceramic surface qualities\n• Visible sculptural craftsmanship\n• Authentic excavated appearance\n\nENVIRONMENT RULES:\n• Subject located within the mausoleum excavation pits or authentic Qin Dynasty context\n• Rows of warriors may appear in the background\n• Archaeological atmosphere\n• Historical realism\n\nSTYLE:\n• Museum-quality reconstruction\n• Archaeological authenticity\n• Monumental sculptural presence\n• Ancient Chinese imperial craftsmanship\n• Historically accurate Terracotta Army visual language",
+  "randomizeOptions": true,
+  "options": [
+        {
+          "id": "001",
+          "text": "Archer"
+        },
+        {
+          "id": "002",
+          "text": "Cavalry"
+        },
+        {
+          "id": "003",
+          "text": "General"
+        },
+        {
+          "id": "004",
+          "text": "Infantry"
+        },
+        {
+          "id": "005",
+          "text": "Charioteer"
+        }
+      ],
+    "additionalInstructions": "FINAL RESULT:\nThe image must convincingly depict an authentic archaeological Terracotta Army figure. The subject should appear to be a genuine life-sized Qin Dynasty clay warrior excavated from the mausoleum complex of Qin Shi Huang. No living skin, hair, eyes, or modern materials should remain visible."
+  },
+  {
     "name": "TERRAZZO",
     "category": [
       "ART",
@@ -37768,6 +37947,20 @@
     ],
     "randomizeOptions": true,
     "additionalInstructions": "FINAL RESULT:\nA photorealistic retail video game package from the specified platform and era, showing complete packaging with authentic platform branding, proper typography, and all official elements. The subject has been seamlessly integrated into the iconic cover artwork, replacing the original character while matching the exact art style, pose, costume, and composition of the original game cover. The package appears as a genuine retail product that could have existed in an alternate timeline, complete with appropriate wear, proper dimensions, platform logos, rating information, and all the nostalgic details that make classic game packaging instantly recognizable to collectors and gamers."
+  },
+  {
+    "name": "VIEW-MASTER",
+    "category": [
+      "VINTAGE TOY",
+      "STEREOSCOPIC",
+      "RETRO MEDIA",
+      "PHOTOGRAPHY",
+      "NOVELTY FORMAT"
+    ],
+    "message": "Take a picture and transform the entire image into an authentic vintage View-Master stereoscopic reel scene.\n\nTRANSFORMATION RULES (NON-NEGOTIABLE):\n• The subject must NOT simply be holding a View-Master reel\n• The subject must NOT appear beside a View-Master reel\n• The final image must depict an actual View-Master reel slide\n• The entire scene must exist within a View-Master stereoscopic frame\n• The image must appear to be one frame from a real View-Master reel\n• The scene must be presented exactly as it would appear when viewed through a View-Master viewer\n\nVIEW-MASTER CONSTRUCTION RULES:\n• Authentic circular View-Master reel design\n• Distinct stereoscopic image pair\n• Left-eye and right-eye images must both be visible\n• Slight stereoscopic offset between images\n• Characteristic View-Master image layout\n• Accurate reel proportions\n• Authentic reel window framing\n• Vintage transparency-film appearance\n• Kodachrome-style color rendering\n\nSCENE RULES:\n• The subject must be integrated naturally into the stereoscopic scene\n• The scene should feel designed specifically for View-Master presentation\n• Strong foreground, middle-ground, and background depth layers\n• Composition should emphasize stereoscopic depth\n• Objects should appear arranged to maximize the 3D viewing effect\n• Subject should appear positioned within a believable View-Master diorama-like environment\n\nPHOTOGRAPHIC RULES:\n• Rich saturated colors\n• High-quality transparency-film appearance\n• Vintage travel-reel aesthetic\n• Mid-century stereoscopic photography style\n• Crisp focus throughout the scene\n• Bright educational-attraction souvenir photography aesthetic\n• Real-world photographed appearance rather than illustration\n\nDEPTH RULES:\n• Strong stereoscopic parallax\n• Pronounced depth separation\n• Foreground elements extending toward the viewer\n• Layered environmental composition\n• Clear three-dimensional spatial relationships\n• Enhanced depth cues throughout the image\n\nDEPTH EMPHASIS RULES:\n• The stereoscopic effect is the primary artistic goal\n• Foreground objects should appear to project toward the viewer\n• Mid-ground should contain the primary subject\n• Background should extend deep into the distance\n• Left-eye and right-eye views must differ slightly due to camera separation\n• The image should immediately communicate \"3D stereoscopic photography\"\n\nAUTHENTICITY RULES:\n• Must resemble a genuine commercially produced View-Master reel\n• Must resemble an actual stereoscopic transparency slide\n• No modern digital interface elements\n• No contemporary virtual-reality aesthetics\n• No generic photo frame layouts\n• No scrapbook presentation\n• No modern photo collage appearance\n\nSTYLE:\n• Vintage View-Master realism\n• Mid-century tourist attraction photography\n• Educational travel reel presentation\n• Stereoscopic depth showcase\n• Authentic collectible reel appearance\n• Classic American souvenir photography aesthetic",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "FINAL RESULT:\nThe image must convincingly appear to be an authentic vintage View-Master reel frame. The entire composition should be contained within a genuine stereoscopic View-Master image window featuring properly offset left-eye and right-eye image pairs. The subject should appear naturally inside a richly detailed three-dimensional scene specifically designed to showcase stereoscopic depth, creating the unmistakable appearance of a real View-Master slide from a collectible reel."
   },
   {
     "name": "VILLAGE PEOPLE",
