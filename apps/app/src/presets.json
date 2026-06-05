@@ -2715,6 +2715,45 @@
     "additionalInstructions": ""
   },
   {
+    "name": "BAKSHI ANIMATION",
+    "category": [
+      "ANIMATION",
+      "CARTOON",
+      "STYLE TRANSFORMATION",
+      "FEATURE FILM",
+      "CLASSIC ANIMATION"
+    ],
+    "message": "Take a picture and transform the subject into an authentic Ralph Bakshi animated character rendered entirely in the visual style of a Ralph Bakshi production.\n\nTRANSFORMATION RULES (NON-NEGOTIABLE):\n• The subject must be completely redrawn in authentic Bakshi animation style\n• The subject must NOT appear as a real person\n• The subject must NOT appear as a photograph with cartoon effects\n• The subject must NOT appear composited into an animated scene\n• The subject must become a native Bakshi-style animated character\n• The selected franchise determines the animated universe\n• Recognizable characters associated with the selected franchise may appear naturally within the scene\n• The subject must not replace existing characters\n• The subject should appear as an original Bakshi character created from the subject\n• Preserve recognizable facial identity\n• Preserve recognizable facial structure\n• Preserve recognizable facial proportions\n• Preserve recognizable hairstyle characteristics\n• Preserve recognizable expression tendencies\n• Preserve distinctive facial traits\n• The subject must remain recognizable while fully transformed\n• No realistic skin\n• No realistic eyes\n• No realistic hair textures\n• No photographic rendering\n\nSTYLE RULES:\n• Authentic Ralph Bakshi animation aesthetics\n• Hand-drawn feature animation\n• Mature animation design language\n• Expressive character animation\n• Dynamic line work\n• Stylized painted backgrounds\n• Vintage animated-film aesthetics\n• Authentic Bakshi production artwork\n• 1970s and 1980s animated feature-film visual language\n• Traditional cel animation appearance\n\nSCENE RULES:\n• The subject must naturally exist within the selected animated universe\n• Supporting characters may appear naturally within the scene\n• The image should resemble a frame from a Bakshi production\n• The image should appear to be authentic animation artwork",
+    "randomizeOptions": true,
+    "options": [
+    {
+      "id": "001",
+      "text": "Wizards"
+    },
+    {
+      "id": "002",
+      "text": "Fire And Ice"
+    },
+    {
+      "id": "003",
+      "text": "The Lord Of The Rings"
+    },
+    {
+      "id": "004",
+      "text": "American Pop"
+    },
+    {
+      "id": "005",
+      "text": "Heavy Traffic"
+    },
+    {
+      "id": "006",
+      "text": "Coonskin"
+    }
+    ],
+    "additionalInstructions": "IDENTITY PRESERVATION (CRITICAL):\n\n• The transformed animated character must clearly resemble the subject\n• Preserve unique facial identity\n• Preserve distinctive facial traits\n• Preserve facial proportions\n• Preserve recognizable hairstyle characteristics\n• Recognition must come from the transformed character itself\n\nANTI-CHEAT:\n\n• Do not create a generic fantasy character\n• Do not create a face swap\n• Do not paste the subject into animation artwork\n• Do not use cartoon filters\n• Do not replace the subject's identity with existing franchise characters\n\nFINAL RESULT:\nThe subject must become an authentic Ralph Bakshi animated character rendered entirely in the selected Bakshi universe while remaining immediately recognizable as the original subject."
+  },
+  {
     "name": "BALD",
     "category": [
       "HUMOR",
@@ -3392,6 +3431,41 @@
     }
     ],
     "additionalInstructions": "IDENTITY PRESERVATION (CRITICAL):\n\n• The transformed Big Boy must clearly resemble the subject at first glance\n• The transformed character must not resemble a generic Big Boy mascot\n• Preserve the subject's unique facial identity\n• Preserve the subject's unique facial structure\n• Preserve the subject's distinctive facial traits\n• Preserve the subject's actual eye shape\n• Preserve the subject's actual nose shape\n• Preserve the subject's actual smile characteristics\n• Preserve the subject's actual jawline\n• Preserve the subject's actual facial proportions\n• Preserve the subject's hair identity while adapting it into the Big Boy hairstyle\n• Recognition must come from the transformed character itself\n• The final character must simultaneously read as both the subject and Big Boy\n• The character should appear specifically designed from the subject rather than selected from existing Big Boy artwork\n• The subject should appear to be the original model used to create the Big Boy character\n\nANTI-CHEAT:\n\n• Do not generate a generic Big Boy character\n• Do not use the standard Big Boy face\n• Do not use the standard Big Boy eyes\n• Do not use the standard Big Boy nose\n• Do not use the standard Big Boy smile\n• Do not use the standard Big Boy hair color\n• Do not replace the subject's facial identity with standard mascot features\n• Do not replace the subject's hair characteristics with a generic pompadour\n• Do not ignore distinctive facial features\n• Do not create a face swap\n• Do not paste the subject's face onto Big Boy\n• Do not create a realistic human wearing a Big Boy costume\n• Do not create a generic advertising mascot unrelated to the subject\n• Do not create a character that resembles standard Big Boy more than it resembles the subject\n• The transformed character must be clearly identifiable as the subject\n• The transformed character must look like a Big Boy version of the subject rather than the standard Big Boy mascot\n\nFINAL RESULT:\nThe subject must become an authentic Big Boy character rendered entirely in the selected Big Boy medium. For illustrated versions, the subject should appear as a genuine Big Boy cartoon character created by a mid-century commercial artist using the subject as the original character model. For the Restaurant Statue version, the subject must become the giant molded roadside mascot statue itself while retaining recognizable facial identity. The subject's recognizable facial identity, facial proportions, facial structure, expression, hair color, hairline, and hair characteristics must remain clearly visible through the Big Boy design language. The final image should immediately evoke authentic Big Boy branding, advertising, restaurant iconography, and classic American pop culture while maintaining unmistakable recognition of the subject through transformation rather than photographic realism."
+  },
+  {
+    "name": "BIG DADDY ROTH",
+    "category": [
+      "HOT ROD",
+      "KUSTOM KULTURE",
+      "CAR CULTURE",
+      "ART STYLE",
+      "CHARACTER TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform the subject into authentic Big Daddy Roth artwork.\n\nTRANSFORMATION RULES (NON-NEGOTIABLE):\n• Transform the subject into the visual style of Ed 'Big Daddy' Roth artwork\n• The subject must NOT appear as a real person\n• The subject must NOT appear as a photograph with effects applied\n• The subject must be completely reinterpreted through Big Daddy Roth design language\n• The subject's face is the reference model for the transformed character\n• The resulting character should look as though Big Daddy Roth personally designed it around the subject\n• Preserve recognizable facial identity\n• Preserve recognizable facial structure\n• Preserve recognizable facial proportions\n• Preserve recognizable eye placement\n• Preserve recognizable nose shape\n• Preserve recognizable expression tendencies\n• Preserve distinctive facial traits\n• The subject must remain recognizable despite extreme stylization\n• The transformed character may be exaggerated, grotesque, humorous, manic, wild, weird, or outrageous in authentic Roth fashion\n• Exaggeration must originate from the subject's actual features\n• The subject's identity must drive the final design\n• No face swaps\n• No pasted-on facial features\n• No realistic rendering\n\nSTYLE RULES:\n• Authentic Big Daddy Roth illustration aesthetics\n• Authentic Kustom Kulture artwork\n• Hot rod show poster aesthetics\n• Monster hot rod character design\n• Wild cartoon exaggeration\n• Airbrush illustration influence\n• Rat Fink-era visual language\n• Hot rod magazine artwork\n• Automotive counterculture aesthetics\n• Vintage custom-car culture design\n• Hand-drawn illustration craftsmanship\n\nCHARACTER RULES:\n• Bulging eyes where appropriate\n• Exaggerated expressions where appropriate\n• Over-the-top personality\n• Hyperactive visual energy\n• Cartoon grotesque aesthetics\n• Weirdness and humor should be embraced\n• The subject should feel native to Big Daddy Roth's artistic universe\n\nSCENE RULES:\n• Hot rods may appear\n• Dragsters may appear\n• Custom cars may appear\n• Kustom Kulture elements may appear\n• Automotive iconography may appear\n• Garage culture aesthetics may appear\n• Hot rod show environments may appear\n\nVERSION-SPECIFIC RULES:\n• The selected version determines presentation style, setting, and exaggeration level\n• The subject's facial identity must remain recognizable through the transformation",
+    "randomizeOptions": true,
+    "options": [
+    {
+      "id": "001",
+      "text": "Rat Fink Style"
+    },
+    {
+      "id": "002",
+      "text": "Monster Hot Rod Driver"
+    },
+    {
+      "id": "003",
+      "text": "Kustom Kulture Show Poster"
+    },
+    {
+      "id": "004",
+      "text": "Drag Strip Freakout"
+    },
+    {
+      "id": "005",
+      "text": "Wild Garage Monster"
+    }
+    ],
+    "additionalInstructions": "IDENTITY PRESERVATION (CRITICAL):\n\n• The transformed character must clearly resemble the subject\n• Preserve unique facial structure\n• Preserve distinctive facial traits\n• Preserve facial proportions beneath the exaggeration\n• Recognition must come from the transformed artwork itself\n• The final character must simultaneously read as both the subject and authentic Big Daddy Roth artwork\n\nANTI-CHEAT:\n\n• Do not create a generic Rat Fink clone\n• Do not create a face swap\n• Do not paste the subject into existing artwork\n• Do not ignore the subject's identity\n• Do not generate realistic people\n\nFINAL RESULT:\nThe subject must become a genuine Big Daddy Roth-style creation, rendered entirely in authentic Kustom Kulture visual language, with exaggerated cartoon energy, hot rod culture aesthetics, and unmistakable recognition of the subject through artistic transformation."
   },
   {
     "name": "BIGFOOT",
@@ -9874,6 +9948,45 @@
     "additionalInstructions": ""
   },
   {
+    "name": "DEPATIE-FRELENG",
+    "category": [
+      "ANIMATION",
+      "CARTOON",
+      "STYLE TRANSFORMATION",
+      "CLASSIC ANIMATION",
+      "TELEVISION"
+    ],
+    "message": "Take a picture and transform the subject into an authentic DePatie-Freleng cartoon character rendered entirely in the visual style of DePatie-Freleng Enterprises.\n\nTRANSFORMATION RULES (NON-NEGOTIABLE):\n• The subject must be completely redrawn in authentic DePatie-Freleng animation style\n• The subject must NOT appear as a real person\n• The subject must NOT appear as a photograph with cartoon effects\n• The subject must NOT appear composited into a cartoon background\n• The subject must become a native DePatie-Freleng cartoon character\n• The selected franchise determines the cartoon universe\n• Recognizable DePatie-Freleng characters associated with the selected franchise may appear naturally within the scene\n• The subject must not replace existing characters\n• The subject should appear as an original DePatie-Freleng character created from the subject\n• Preserve recognizable facial identity\n• Preserve recognizable facial structure\n• Preserve recognizable facial proportions\n• Preserve recognizable hairstyle characteristics\n• Preserve recognizable facial traits\n• Preserve recognizable expression tendencies\n• The subject must remain recognizable while fully transformed\n• No realistic skin\n• No realistic eyes\n• No realistic hair textures\n• No photographic rendering\n\nSTYLE RULES:\n• Authentic DePatie-Freleng character design\n• Mid-century modern cartoon aesthetics\n• Stylized graphic design language\n• UPA-influenced visual design\n• Flat-color cartoon construction\n• Bold graphic shapes\n• Elegant cartoon simplification\n• Television animation aesthetics\n• Hand-painted cel animation appearance\n• Authentic DePatie-Freleng production artwork\n\nSCENE RULES:\n• The subject must naturally exist inside the selected franchise universe\n• Supporting characters may appear naturally within the scene\n• The scene should resemble a genuine animation cel\n• The image should appear to be an authentic frame from a DePatie-Freleng production",
+    "randomizeOptions": true,
+    "options": [
+    {
+      "id": "001",
+      "text": "Pink Panther"
+    },
+    {
+      "id": "002",
+      "text": "The Ant And The Aardvark"
+    },
+    {
+      "id": "003",
+      "text": "The Inspector"
+    },
+    {
+      "id": "004",
+      "text": "Tijuana Toads"
+    },
+    {
+      "id": "005",
+      "text": "Roland And Rattfink"
+    },
+    {
+      "id": "006",
+      "text": "The Dogfather"
+    }
+    ],
+    "additionalInstructions": "IDENTITY PRESERVATION (CRITICAL):\n\n• The transformed cartoon character must clearly resemble the subject\n• Preserve unique facial identity\n• Preserve distinctive facial traits\n• Preserve facial proportions\n• Preserve recognizable hairstyle characteristics\n• Recognition must come from the transformed cartoon character itself\n\nANTI-CHEAT:\n\n• Do not create a generic cartoon character\n• Do not create a face swap\n• Do not paste the subject into cartoon artwork\n• Do not use cartoon filters\n• Do not replace the subject's identity with existing franchise characters\n\nFINAL RESULT:\nThe subject must become an authentic DePatie-Freleng cartoon character rendered entirely in the selected franchise universe while remaining immediately recognizable as the original subject."
+  },
+  {
     "name": "DETAILED SURREAL GRAPHICS",
     "category": [
       "SURREAL",
@@ -10130,6 +10243,45 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "DOLL HOUSE",
+    "category": [
+      "MINIATURE",
+      "DOLLHOUSE",
+      "DIORAMA",
+      "SCALE",
+      "SCENE TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform the scene into an elaborate doll house cross-section with the subject living inside it.\n\nTRANSFORMATION RULES (NON-NEGOTIABLE):\n• The subject must remain fully human\n• The subject must NOT become a doll\n• The subject must NOT become a figurine\n• The subject must NOT become a toy\n• The subject must remain a living human being\n• The subject must be scaled to fit naturally inside the doll house interior\n• The subject must appear to inhabit the doll house as a resident\n• The doll house must be shown as a cutaway cross-section\n• The doll house must be opened so the viewer can see inside\n• Interior rooms must be visible\n• The subject must interact naturally with the interior environment\n• The doll house should feel like a complete miniature home\n• The subject should appear proportionally correct relative to the interior rooms\n• Furniture should be scaled appropriately to the subject\n• Architectural details should reflect authentic doll house craftsmanship\n• The doll house should dominate the composition\n• The viewer should clearly understand that the subject lives inside the doll house\n\nENVIRONMENT RULES:\n• Cross-section doll house construction\n• Visible interior rooms\n• Miniature architecture\n• Miniature furnishings\n• Miniature household details\n• Doll house craftsmanship\n• Diorama presentation\n• Collectible miniature aesthetics\n• Intricate interior design\n• Tiny architectural details\n• Visible room divisions\n• Realistic miniature scale relationships\n\nSUBJECT RULES:\n• Preserve recognizable identity\n• Preserve recognizable facial structure\n• Preserve recognizable facial proportions\n• Preserve recognizable hairstyle characteristics\n• Preserve recognizable clothing\n• Preserve recognizable expression\n• Preserve recognizable body proportions\n• The subject must remain clearly recognizable\n• The subject must remain fully human\n\nSTYLE RULES:\n• High-end doll house craftsmanship\n• Museum-quality miniature design\n• Architectural miniature aesthetics\n• Diorama presentation\n• Collectible display quality\n• Tiny-world visual storytelling\n• Cutaway architecture presentation\n• Intricate handcrafted details\n\nVERSION-SPECIFIC RULES:\n• The selected version determines architectural style and room design\n• The subject must remain human in every version\n• The doll house must always be shown in cross-section",
+    "randomizeOptions": true,
+    "options": [
+    {
+      "id": "001",
+      "text": "Victorian Doll House"
+    },
+    {
+      "id": "002",
+      "text": "Modern Luxury Doll House"
+    },
+    {
+      "id": "003",
+      "text": "Storybook Cottage Doll House"
+    },
+    {
+      "id": "004",
+      "text": "Grand Mansion Doll House"
+    },
+    {
+      "id": "005",
+      "text": "Craftsman Doll House"
+    },
+    {
+      "id": "006",
+      "text": "Collector Showcase Doll House"
+    }
+    ],
+    "additionalInstructions": "IDENTITY PRESERVATION (CRITICAL):\n\n• The subject must remain clearly recognizable\n• The subject must remain fully human\n• Preserve facial identity\n• Preserve facial structure\n• Preserve facial proportions\n• Preserve hairstyle characteristics\n• Preserve clothing identity\n• Recognition must come from the miniature resident living inside the doll house\n\nANTI-CHEAT:\n\n• Do not transform the subject into a doll\n• Do not transform the subject into a figurine\n• Do not transform the subject into a toy\n• Do not create a toy version of the subject\n• Do not ignore miniature scale relationships\n• Do not show only a room interior\n• Do not omit the doll house cross-section\n• Do not hide the architectural structure\n\nFINAL RESULT:\nThe image must depict a beautiful doll house cross-section with visible rooms and intricate miniature architecture. The subject must remain a fully human resident scaled naturally to the interior, living inside the doll house as though it were their real home. The final image should immediately evoke miniature craftsmanship, doll house collecting, architectural dioramas, and tiny-world storytelling while maintaining unmistakable recognition of the subject."
   },
   {
     "name": "DOMINO'S NOID",
@@ -13354,6 +13506,45 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "FILMATION",
+    "category": [
+      "ANIMATION",
+      "CARTOON",
+      "STYLE TRANSFORMATION",
+      "TELEVISION",
+      "CLASSIC ANIMATION"
+    ],
+    "message": "Take a picture and transform the subject into an authentic Filmation cartoon character rendered entirely in the visual style of Filmation Studios.\n\nTRANSFORMATION RULES (NON-NEGOTIABLE):\n• The subject must be completely redrawn in authentic Filmation animation style\n• The subject must NOT appear as a real person\n• The subject must NOT appear as a photograph with cartoon effects\n• The subject must NOT appear composited into a cartoon background\n• The subject must become a native Filmation cartoon character\n• The selected franchise determines the cartoon universe\n• Recognizable Filmation characters associated with the selected franchise may appear naturally within the scene\n• The subject must not replace existing franchise characters\n• The subject should appear as an original Filmation character designed specifically from the subject\n• Preserve recognizable facial identity\n• Preserve recognizable facial proportions\n• Preserve recognizable facial structure\n• Preserve recognizable hair characteristics\n• Preserve recognizable expression characteristics\n• Preserve distinctive facial traits\n• The subject must remain recognizable while fully transformed\n• No realistic skin\n• No realistic eyes\n• No realistic hair textures\n• No photographic rendering\n\nSTYLE RULES:\n• Authentic Filmation character design\n• Authentic Filmation color palettes\n• Authentic Filmation background art\n• Saturday morning cartoon aesthetics\n• Limited-animation techniques\n• Filmation production design language\n• Vintage television animation aesthetics\n• Hand-painted cel animation appearance\n• Classic television cartoon presentation\n\nSCENE RULES:\n• The subject must naturally exist within the selected Filmation universe\n• Supporting characters may appear naturally within the scene\n• The scene should resemble an authentic Filmation production cel\n• The scene should appear as an actual frame from a Filmation cartoon",
+    "randomizeOptions": true,
+    "options": [
+    {
+      "id": "001",
+      "text": "He-Man And The Masters Of The Universe"
+    },
+    {
+      "id": "002",
+      "text": "She-Ra Princess Of Power"
+    },
+    {
+      "id": "003",
+      "text": "Bravestarr"
+    },
+    {
+      "id": "004",
+      "text": "Ghostbusters"
+    },
+    {
+      "id": "005",
+      "text": "Fat Albert"
+    },
+    {
+      "id": "006",
+      "text": "The Archie Show"
+    }
+    ],
+    "additionalInstructions": "IDENTITY PRESERVATION (CRITICAL):\n\n• The transformed character must clearly resemble the subject\n• Preserve unique facial identity\n• Preserve distinctive facial traits\n• Preserve facial proportions\n• Preserve recognizable hairstyle characteristics\n• Recognition must come from the transformed cartoon character itself\n\nANTI-CHEAT:\n\n• Do not create a generic Filmation character\n• Do not create a face swap\n• Do not paste the subject into animation artwork\n• Do not use cartoon filters\n• Do not replace the subject's identity with existing franchise characters\n\nFINAL RESULT:\nThe subject must become an authentic Filmation cartoon character rendered entirely in the selected Filmation franchise while remaining immediately recognizable as the original subject."
   },
   {
     "name": "FINAL FANTASY",
@@ -19907,6 +20098,30 @@
     "message": "Take a picture and composite it inside a photorealistic recreation of a custom AI camera application interface. The photo fills the entire screen as the full background. All UI elements are overlaid directly on top of the photo.\n\nPHOTO PLACEMENT — CRITICAL:\n• The captured photo fills the ENTIRE screen from edge to edge and top to bottom\n• The photo is the background of the entire composition\n• Every UI element floats directly on top of the photo\n• The photo is never cropped, letterboxed, pillarboxed, or surrounded by any empty space or colored bars\n• There are NO side columns and NO empty areas beside the photo\n• The full photo is always fully visible beneath all UI elements\n\nTOP STATUS BAR:\n• A thin semi-transparent dark bar spanning the full width at the very top overlaid on the photo\n• LEFT: a left-pointing arrow followed by the word 'back' in white text\n• CENTER: a digital clock time display in white bold text\n• RIGHT: a white battery icon\n• Dark semi-transparent background so the photo shows faintly through it\n\nBUTTON APPEARANCE — ALL BUTTONS FOLLOW THIS STYLE EXACTLY:\n• Square shape with softly rounded corners\n• BLACK background fill\n• Orange border: a solid orange line around the entire button in color #FE5F00\n• White emoji icon centered in the upper portion of the button\n• White bold uppercase label text beneath the icon in small font\n• Subtle dark drop shadow beneath each button\n• The button feels physical and bold floating over the photo\n• EXCEPTION: the OPTIONS button has a bright green background and green border instead of black and orange\n\nLEFT SIDE BUTTONS — exactly FOUR buttons stacked vertically along the LEFT EDGE:\n• Button 1 top-left: black background, orange border, icon ☰, label MENU\n• Button 2 middle-left: black background, orange border, icon 📝, label MASTER\n• Button 3 below MASTER: BRIGHT GREEN background, GREEN border, icon 🎛️, label OPTIONS\n• Button 4 bottom-left: black background, orange border, icon 🖼️, label GALLERY\n• These four buttons are the COMPLETE left column — exactly four, no more, no fewer, no duplicates\n\nRIGHT SIDE BUTTONS — exactly FIVE buttons stacked vertically along the RIGHT EDGE:\n• Button 1 top-right: black background, orange border, icon 📸, NO label text\n• Button 2 upper-right: black background, orange border, icon 🎲, label RANDOM\n• Button 3 middle-right: black background, orange border, icon 👁️, label MOTION\n• Button 4 lower-right: black background, orange border, icon 📸⚡, label BURST\n• Button 5 bottom-right: black background, orange border, icon ⏱️, label TIMER\n• These five buttons are the COMPLETE right column — exactly five, no more, no fewer, no duplicates\n\nBOTTOM FOOTER BAR:\n• A full-width bar overlaid at the very bottom of the screen directly on top of the photo\n• Semi-transparent black background with a softly rounded orange border outline glowing in color #FE5F00\n• A small red filled circle icon on the left side inside the bar\n• Orange bold text reading: MANUALLY SELECT | Style: MAGIC KAMERA UI\n• The orange text and border emit a soft warm glow against the dark background\n• The bar has a frosted glass blur effect behind it\n\nOVERALL AESTHETIC:\n• The result looks exactly like a screenshot of a real functioning touchscreen camera application\n• The photo fills the entire screen and all UI controls float on top of it\n• Black buttons with orange borders on both sides frame the photo without covering its center\n• The dark semi-transparent bars at top and bottom complete the interface\n• Clean, bold, and readable UI with strong contrast against the photo beneath",
     "randomizeOptions": false,
     "additionalInstructions": "• The captured photo MUST fill the entire screen — no letterboxing, no pillarboxing, no empty columns or bars beside the photo under any circumstances\n• ALL UI elements float directly on top of the full-screen photo\n• ALL buttons are BLACK with an orange #FE5F00 border — they are not amber, not orange-filled, not yellow\n• LEFT SIDE has exactly FOUR buttons top to bottom: ☰ MENU, 📝 MASTER, 🎛️ OPTIONS, 🖼️ GALLERY — no more, no fewer, no duplicates\n• RIGHT SIDE has exactly FIVE buttons top to bottom: 📸 no label, 🎲 RANDOM, 👁️ MOTION, 📸⚡ BURST, ⏱️ TIMER — no more, no fewer, no duplicates\n• Each button position has exactly ONE button with exactly ONE icon and ONE label — never create two versions of the same button\n• The OPTIONS 🎛️ button is the only button with a green background and green border\n• Bottom footer bar has a glowing orange border, semi-transparent black background, and orange text\n• The result must look like a real camera app screenshot with the photo fully visible behind all controls"
+  },
+  {
+    "name": "MAN ON THE MOON",
+    "category": [
+      "CINEMA",
+      "SILENT FILM",
+      "GEORGES MELIES",
+      "CLASSIC FILM",
+      "CHARACTER TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform the subject into the performer portraying the Moon from Georges Méliès' 1902 silent-film masterpiece 'A Trip to the Moon.'\n\nTRANSFORMATION RULES (NON-NEGOTIABLE):\n• The subject must become the Moon character itself\n• The subject must NOT appear pasted onto the Moon\n• The subject must NOT appear composited into a movie still\n• The subject must NOT appear as a photograph projected onto the Moon\n• The subject's face must be completely reinterpreted as the Moon performer\n• The resulting Moon must look as though Méliès originally designed and cast the role around the subject\n• The subject's facial identity must drive the final Moon design\n• Preserve recognizable facial structure\n• Preserve recognizable facial proportions\n• Preserve recognizable eye shape\n• Preserve recognizable nose shape\n• Preserve recognizable smile characteristics\n• Preserve recognizable cheek structure\n• Preserve recognizable expression tendencies\n• Preserve distinctive facial traits\n• The subject must remain recognizable while fully transformed into the Moon character\n• The Moon must be sculpted, theatrical, and performance-based rather than realistic astronomy\n• No realistic lunar photography\n• No NASA imagery\n• No modern CGI moon rendering\n• No photorealistic textures\n• No face swap appearance\n• No pasted-on facial features\n\nSTYLE RULES:\n• Authentic Georges Méliès visual language\n• Authentic 1902 silent film aesthetics\n• Authentic theatrical stagecraft\n• Hand-built practical effects\n• Painted theatrical backdrops\n• Early cinema illusion techniques\n• Vintage film production design\n• Black-and-white photography\n• Silent-era visual storytelling\n• Primitive special-effects craftsmanship\n• Turn-of-the-century fantasy cinema aesthetics\n\nCHARACTER RULES:\n• The subject becomes the Moon performer\n• Facial identity must be integrated into the Moon itself\n• The Moon must have sculptural facial volume\n• The Moon should resemble a theatrical face embedded within a celestial body\n• Expression should be dramatic and stage-oriented\n• The final design should evoke early cinema fantasy\n\nFILM RULES:\n• Monochrome black-and-white imagery\n• Silent film presentation\n• Vintage film grain\n• Period-appropriate contrast\n• Early motion picture aesthetics\n• Slight theatrical artificiality\n• Handcrafted visual effects\n• Stage illusion techniques\n\nVERSION-SPECIFIC RULES:\n• The selected version determines the specific Méliès scene recreation\n• The subject must fully become the Moon within the selected scene\n• The subject's facial identity must be rebuilt within Méliès visual language\n• The face must never appear pasted onto the Moon",
+    "randomizeOptions": true,
+    "options": [
+    {
+      "id": "001",
+      "text": "The Moon"
+    },
+    {
+      "id": "002",
+      "text": "Rocket In The Eye",
+      "instruction": "Transform the subject into the iconic Moon from A Trip to the Moon with the famous rocket lodged in the Moon's eye. The subject's recognizable facial identity must remain visible through the Moon's theatrical performance design while faithfully recreating the legendary scene."
+    }
+    ],
+    "additionalInstructions": "IDENTITY PRESERVATION (CRITICAL):\n\n• The transformed Moon must clearly resemble the subject\n• Preserve distinctive facial structure\n• Preserve recognizable facial proportions\n• Preserve eye shape\n• Preserve nose shape\n• Preserve expression characteristics\n• Recognition must come from the transformed Moon itself\n• The final image must simultaneously read as both the subject and the Moon performer from A Trip to the Moon\n\nANTI-CHEAT:\n\n• Do not paste the subject's face onto a moon texture\n• Do not create a face swap\n• Do not create a realistic moon\n• Do not use modern film techniques\n• Do not use modern CGI\n• Do not use color photography\n• Do not ignore the subject's facial identity\n\nFINAL RESULT:\nThe subject must become the theatrical Moon performer from Georges Méliès' A Trip to the Moon, rendered entirely in authentic silent-film visual language, preserving recognizable identity while recreating one of cinema's most iconic fantasy images."
   },
   {
     "name": "MAXIMALISM",
