@@ -3313,6 +3313,37 @@
     "additionalInstructions": ""
   },
   {
+    "name": "BIG BOY",
+    "category": [
+      "OPTIONS",
+      "RESTAURANT",
+      "MASCOT",
+      "ADVERTISING",
+      "CHARACTER REPLACEMENT"
+    ],
+    "message": "Take a picture and transform the subject into the iconic Big Boy restaurant mascot.\n\nCHARACTER REPLACEMENT RULES (NON-NEGOTIABLE):\n• Recreate the selected Big Boy artwork\n• Preserve original pose\n• Preserve original clothing\n• Preserve checkered overalls\n• Preserve hamburger prop\n• Preserve mascot proportions\n• Preserve artwork composition\n• Replace ONLY Big Boy's face and head with the subject\n• Subject must remain recognizable\n• Subject must appear naturally integrated into the mascot design\n• No face-swap appearance\n\nSTYLE RULES:\n• Official Big Boy mascot aesthetics\n• Restaurant advertising artwork\n• Vintage commercial illustration\n• Mid-century Americana\n• Printed advertising realism",
+    "randomizeOptions": true,
+    "options": [
+        {
+          "id": "001",
+          "text": "Classic Big Boy"
+        },
+        {
+          "id": "002",
+          "text": "1950s Big Boy"
+        },
+        {
+          "id": "003",
+          "text": "1970s Big Boy"
+        },
+        {
+          "id": "004",
+          "text": "Comic Big Boy"
+        }
+      ],
+    "additionalInstructions": "FINAL RESULT:\nThe image must appear to be authentic Big Boy advertising artwork with the subject replacing Big Boy's face while preserving the iconic mascot design and composition."
+  },
+  {
     "name": "BIGFOOT",
     "category": [
       "CRYPTID",
@@ -27858,6 +27889,37 @@
     "additionalInstructions": "• Preserve recognizable identity while converting everything into unfinished CGI\n• Use gray proxy geometry and temporary materials\n• Simulate authentic visual-effects previsualization workflows\n• Emphasize rough development-stage rendering\n• Use simplified assets, placeholder effects, and production-planning aesthetics\n• Make the image appear unfinished, technical, and functional\n• Avoid polished or photorealistic CGI"
   },
   {
+    "name": "PRINGLES",
+    "category": [
+      "OPTIONS",
+      "SNACK FOOD",
+      "MASCOT",
+      "PACKAGING",
+      "CHARACTER REPLACEMENT"
+    ],
+    "message": "Take a picture and transform the subject into the iconic Pringles mascot featured on authentic Pringles packaging.\n\nCHARACTER REPLACEMENT RULES (NON-NEGOTIABLE):\n• Recreate the selected Pringles artwork\n• Preserve the original logo design\n• Preserve the mustache style\n• Preserve mascot proportions\n• Preserve packaging layout\n• Preserve typography placement\n• Replace ONLY the mascot's face and head with the subject\n• Subject must remain recognizable\n• Subject must appear naturally integrated into the Pringles design\n• No pasted-on face appearance\n\nPACKAGING RULES:\n• Authentic Pringles packaging aesthetics\n• Realistic snack can design\n• Commercial package presentation\n• Grocery shelf realism\n\nSTYLE RULES:\n• Official Pringles branding aesthetics\n• Commercial package illustration\n• Advertising-quality rendering",
+    "randomizeOptions": true,
+    "options": [
+        {
+          "id": "001",
+          "text": "Original Logo"
+        },
+        {
+          "id": "002",
+          "text": "Vintage Can"
+        },
+        {
+          "id": "003",
+          "text": "Modern Can"
+        },
+        {
+          "id": "004",
+          "text": "Promotional Artwork"
+        }
+    ],
+    "additionalInstructions": "FINAL RESULT:\nThe image must convincingly appear to be authentic Pringles branding with the subject replacing Julius Pringles while preserving the official logo design and packaging composition."
+  },
+  {
     "name": "PRISM DISPERSION",
     "category": [
       "ART",
@@ -37017,6 +37079,41 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "FINAL RESULT:\nA fully cohesive neon digital computer world where every object, character, and environmental element has been transformed into a glowing grid-based sci-fi environment. If people are present, they are converted into digital programs with identity discs. If vehicles are present, they become light cycles. No real-world materials remain."
+  },
+  {
+    "name": "TV DINNER BOX",
+    "category": [
+      "OPTIONS",
+      "VINTAGE PACKAGING",
+      "FOOD",
+      "ADVERTISING",
+      "CHARACTER REPLACEMENT"
+    ],
+    "message": "Take a picture and transform the subject into the spokesperson featured on an authentic vintage frozen TV dinner package.\n\nCHARACTER REPLACEMENT RULES (NON-NEGOTIABLE):\n• Recreate the selected TV dinner package design\n• Preserve the original packaging layout\n• Preserve typography placement\n• Preserve food photography placement\n• Preserve logo placement\n• Preserve package composition\n• Preserve the spokesperson's clothing\n• Preserve the spokesperson's pose\n• Preserve the spokesperson's facial angle\n• Replace ONLY the spokesperson's face and head with the subject\n• Subject must remain recognizable\n• Subject must appear naturally illustrated or photographed as part of the package\n• No pasted-on face appearance\n• No generic food packaging\n\nPACKAGING RULES:\n• Authentic mid-century frozen dinner packaging\n• Commercial product photography\n• Vintage grocery-store design language\n• Authentic food advertising aesthetics\n• Appropriate food tray imagery\n\nSTYLE RULES:\n• Vintage package realism\n• Commercial food advertising\n• Printed cardboard package appearance\n• Authentic supermarket product presentation",
+    "randomizeOptions": true,
+    "options": [
+        {
+          "id": "001",
+          "text": "Salisbury Steak"
+        },
+        {
+          "id": "002",
+          "text": "Turkey Dinner"
+        },
+        {
+          "id": "003",
+          "text": "Fried Chicken"
+        },
+        {
+          "id": "004",
+          "text": "Meatloaf"
+        },
+        {
+          "id": "005",
+          "text": "Mac and Cheese"
+      }
+    ],
+    "additionalInstructions": "FINAL RESULT:\nThe image must convincingly appear to be an authentic frozen TV dinner package. The subject should replace the spokesperson while preserving the original package composition, advertising style, and product branding aesthetics."
   },
   {
     "name": "TV DRAMA",
