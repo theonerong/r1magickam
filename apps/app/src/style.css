@@ -6131,3 +6131,110 @@ button, .touchable {
     line-height: 1;
     z-index: 2;
 }
+
+/* ═══════════════════════════════════════════════
+   ✨ SPLASH SCREEN ANIMATION SUITE — v2
+   All animations use transform/opacity only —
+   GPU-composited, zero layout or paint cost.
+   ═══════════════════════════════════════════════ */
+
+/* ── 1. Screen entrance — fade in from black on load ── */
+@keyframes screenFadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+#start-screen {
+    animation: screenFadeIn 0.9s ease-out both;
+}
+
+/* ── 2. Radar pulse rings ── */
+.radar-ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 24vw;
+    height: 24vw;
+    border-radius: 50%;
+    border: 1.5px solid rgba(254, 95, 0, 0.75);
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    animation: radarPulse 3.6s ease-out infinite;
+}
+
+.radar-ring-1 { animation-delay: 0s; }
+.radar-ring-2 { animation-delay: 1.2s; }
+.radar-ring-3 { animation-delay: 2.4s; }
+
+@keyframes radarPulse {
+    0%   { transform: translate(-50%, -50%) scale(0.5);  opacity: 0.85; }
+    100% { transform: translate(-50%, -50%) scale(2.2);  opacity: 0; }
+}
+
+/* ── 3. Floating background particles ── */
+.stars-bg {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    border-radius: 50%;
+    background: rgba(254, 95, 0, 0.75);
+    animation: starRise linear infinite;
+    bottom: -4px;
+}
+
+.star-1 { left: 8%;  animation-duration: 7s;   animation-delay: 0s;   }
+.star-2 { left: 22%; animation-duration: 9s;   animation-delay: 1.8s; width: 3px; height: 3px; }
+.star-3 { left: 40%; animation-duration: 6.5s; animation-delay: 0.7s; }
+.star-4 { left: 60%; animation-duration: 8.5s; animation-delay: 3.1s; }
+.star-5 { left: 76%; animation-duration: 7.5s; animation-delay: 1.4s; width: 3px; height: 3px; }
+.star-6 { left: 91%; animation-duration: 8s;   animation-delay: 4.5s; }
+
+@keyframes starRise {
+    0%   { transform: translateY(0);       opacity: 0;   }
+    8%   { opacity: 0.8; }
+    88%  { opacity: 0.7; }
+    100% { transform: translateY(-105vh);  opacity: 0;   }
+}
+
+/* ── 4. Shutter button press — syncs loosely with flash blink ── */
+.camera-button-top {
+    transform-origin: center bottom;
+    animation: shutterPress 5s ease-in-out 1.2s infinite;
+}
+
+@keyframes shutterPress {
+    0%, 78%, 100% { transform: translateX(-50%) scaleY(1);    }
+    85%           { transform: translateX(-50%) scaleY(0.72); }
+    92%           { transform: translateX(-50%) scaleY(1.05); }
+}
+
+/* ── 5. Rotating crosshair inside the lens ── */
+/* Rotates with the lens via the parent's lensRotate animation */
+.camera-lens::before,
+.camera-lens::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 55%;
+    height: 1px;
+    background: rgba(254, 95, 0, 0.18);
+}
+
+.camera-lens::before {
+    transform: translate(-50%, -50%);
+}
+
+.camera-lens::after {
+    transform: translate(-50%, -50%) rotate(90deg);
+}
+/* ═══════════════════════════════════════════════ */
