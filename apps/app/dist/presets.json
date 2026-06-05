@@ -3319,29 +3319,30 @@
       "RESTAURANT",
       "MASCOT",
       "ADVERTISING",
-      "CHARACTER REPLACEMENT"
+      "CHARACTER TRANSFORMATION"
     ],
-    "message": "Take a picture and transform the subject into the iconic Big Boy restaurant mascot.\n\nCHARACTER REPLACEMENT RULES (NON-NEGOTIABLE):\n• Recreate the selected Big Boy artwork\n• Preserve original pose\n• Preserve original clothing\n• Preserve checkered overalls\n• Preserve hamburger prop\n• Preserve mascot proportions\n• Preserve artwork composition\n• Replace ONLY Big Boy's face and head with the subject\n• Subject must remain recognizable\n• Subject must appear naturally integrated into the mascot design\n• No face-swap appearance\n\nSTYLE RULES:\n• Official Big Boy mascot aesthetics\n• Restaurant advertising artwork\n• Vintage commercial illustration\n• Mid-century Americana\n• Printed advertising realism",
+    "message": "Take a picture and transform the subject into an authentic Big Boy character.\n\nTRANSFORMATION RULES (NON-NEGOTIABLE):\n• The subject must become Big Boy\n• The subject must NOT appear as a real person wearing a Big Boy costume\n• The subject must NOT appear as a photograph with a pasted-on face\n• The subject must be completely reinterpreted in authentic Big Boy visual language\n• Facial structure must be translated into Big Boy character design\n• Recognition should come from facial proportions, smile shape, eye spacing, nose shape, cheek structure, and expression\n• The subject must remain recognizable while fully transformed into a Big Boy character\n• No realistic skin textures\n• No photographic facial rendering\n• No face-swap appearance\n• No pasted-on features\n• No realistic human eyes\n• No realistic hair textures\n\nCHARACTER DESIGN RULES:\n• Authentic Big Boy proportions\n• Rounded cartoon anatomy\n• Large expressive eyes\n• Rounded cheeks\n• Friendly exaggerated smile\n• Classic Big Boy hairstyle appropriate to the selected version\n• Thick outlines when appropriate\n• Mid-century commercial illustration aesthetics\n• Golden Age animation influence\n• Subject should appear as if originally designed by Big Boy artists\n\nCOSTUME RULES:\n• Preserve iconic Big Boy clothing appropriate to the selected version\n• Preserve checkered overalls when appropriate\n• Preserve hamburger prop when appropriate\n• Preserve authentic Big Boy iconography\n\nSTYLE RULES:\n• Authentic Big Boy advertising artwork\n• Mid-century American commercial illustration\n• Restaurant-brand mascot design\n• 1950s cartoon advertising sensibilities\n• Classic American roadside restaurant aesthetics\n\nVERSION-SPECIFIC RULES:\n• The selected version determines the rendering style, materials, proportions, and presentation\n• Subject must fully conform to the selected Big Boy medium rather than merely appearing inside it",
     "randomizeOptions": true,
     "options": [
         {
           "id": "001",
-          "text": "Classic Big Boy"
+          "text": "1950s Advertising Illustration"
         },
         {
           "id": "002",
-          "text": "1950s Big Boy"
+          "text": "1960s Menu Artwork"
         },
         {
           "id": "003",
-          "text": "1970s Big Boy"
+          "text": "Restaurant Statue",
+          "instruction": "Transform the subject into the giant roadside Big Boy statue. Subject must become a glossy molded fiberglass or plastic mascot statue. Entire body and head should appear manufactured and sculpted. No realistic skin, hair, or photographic features."
         },
         {
           "id": "004",
-          "text": "Comic Big Boy"
+          "text": "Comic Book Big Boy"
         }
-      ],
-    "additionalInstructions": "FINAL RESULT:\nThe image must appear to be authentic Big Boy advertising artwork with the subject replacing Big Boy's face while preserving the iconic mascot design and composition."
+    ],
+    "additionalInstructions": "FINAL RESULT:\nThe subject must become an authentic Big Boy character rendered entirely in the selected Big Boy medium. For illustrated versions, the subject should appear as a genuine Big Boy cartoon character created by a mid-century commercial artist. For the Restaurant Statue version, the subject must become the giant molded roadside mascot statue itself. The final image should immediately evoke authentic Big Boy branding, advertising, restaurant iconography, and classic American pop culture while maintaining recognizable aspects of the subject's identity through the Big Boy design language rather than photographic realism."
   },
   {
     "name": "BIGFOOT",
@@ -23422,6 +23423,33 @@
     "additionalInstructions": ""
   },
   {
+    "name": "MR. CLEAN",
+    "category": [
+      "OPTIONS",
+      "HOUSEHOLD PRODUCT",
+      "MASCOT",
+      "ADVERTISING",
+      "CHARACTER TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform the subject into an authentic Mr. Clean character.\n\nTRANSFORMATION RULES (NON-NEGOTIABLE):\n• The subject must become Mr. Clean\n• The subject must NOT appear as a real person cosplaying as Mr. Clean\n• The subject must NOT appear as a photograph with a pasted-on face\n• The subject must be completely reinterpreted in authentic Mr. Clean visual language\n• Facial structure must be translated into Mr. Clean character design\n• Recognition should come from facial proportions, jawline, smile, eye spacing, expression, and distinctive facial characteristics\n• The subject must remain recognizable while fully transformed into Mr. Clean\n• No realistic skin textures\n• No photographic facial rendering\n• No face-swap appearance\n• No pasted-on features\n• No realistic human hair\n• Subject must be completely bald in authentic Mr. Clean fashion\n\nCHARACTER DESIGN RULES:\n• Authentic Mr. Clean proportions\n• Powerful heroic physique\n• Broad shoulders\n• Muscular arms\n• Clean advertising mascot anatomy\n• Friendly confident smile\n• Authentic Mr. Clean visual language\n• Subject should appear as if originally designed by Mr. Clean advertising artists\n\nCOSTUME RULES:\n• White t-shirt\n• Authentic Mr. Clean wardrobe\n• Clean polished presentation\n• Official mascot styling\n\nSTYLE RULES:\n• Authentic Mr. Clean advertising aesthetics\n• Commercial package illustration\n• Consumer-product mascot design\n• Professional advertising artwork\n• Subject must appear as official Mr. Clean branding\n\nIDENTITY RULES:\n• Subject should remain recognizable through transformed mascot design\n• Recognition must come through the mascot interpretation rather than photographic realism",
+  "randomizeOptions": true,
+  "options": [
+        {
+          "id": "001",
+          "text": "Product Label"
+        },
+        {
+          "id": "002",
+          "text": "Advertisement"
+        },
+        {
+          "id": "003",
+          "text": "Vintage Packaging"
+        }
+    ],
+    "additionalInstructions": "FINAL RESULT:\nThe subject must become Mr. Clean rather than merely replacing his face. The final image should appear to be authentic Mr. Clean branding, packaging, or advertising artwork featuring a fully transformed Mr. Clean version of the subject rendered entirely in official mascot style."
+  },
+  {
     "name": "MR. POTATO HEAD",
     "category": [
       "TOY",
@@ -27887,37 +27915,6 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "• Preserve recognizable identity while converting everything into unfinished CGI\n• Use gray proxy geometry and temporary materials\n• Simulate authentic visual-effects previsualization workflows\n• Emphasize rough development-stage rendering\n• Use simplified assets, placeholder effects, and production-planning aesthetics\n• Make the image appear unfinished, technical, and functional\n• Avoid polished or photorealistic CGI"
-  },
-  {
-    "name": "PRINGLES",
-    "category": [
-      "OPTIONS",
-      "SNACK FOOD",
-      "MASCOT",
-      "PACKAGING",
-      "CHARACTER REPLACEMENT"
-    ],
-    "message": "Take a picture and transform the subject into the iconic Pringles mascot featured on authentic Pringles packaging.\n\nCHARACTER REPLACEMENT RULES (NON-NEGOTIABLE):\n• Recreate the selected Pringles artwork\n• Preserve the original logo design\n• Preserve the mustache style\n• Preserve mascot proportions\n• Preserve packaging layout\n• Preserve typography placement\n• Replace ONLY the mascot's face and head with the subject\n• Subject must remain recognizable\n• Subject must appear naturally integrated into the Pringles design\n• No pasted-on face appearance\n\nPACKAGING RULES:\n• Authentic Pringles packaging aesthetics\n• Realistic snack can design\n• Commercial package presentation\n• Grocery shelf realism\n\nSTYLE RULES:\n• Official Pringles branding aesthetics\n• Commercial package illustration\n• Advertising-quality rendering",
-    "randomizeOptions": true,
-    "options": [
-        {
-          "id": "001",
-          "text": "Original Logo"
-        },
-        {
-          "id": "002",
-          "text": "Vintage Can"
-        },
-        {
-          "id": "003",
-          "text": "Modern Can"
-        },
-        {
-          "id": "004",
-          "text": "Promotional Artwork"
-        }
-    ],
-    "additionalInstructions": "FINAL RESULT:\nThe image must convincingly appear to be authentic Pringles branding with the subject replacing Julius Pringles while preserving the official logo design and packaging composition."
   },
   {
     "name": "PRISM DISPERSION",
