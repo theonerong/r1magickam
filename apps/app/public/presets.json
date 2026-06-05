@@ -2715,45 +2715,6 @@
     "additionalInstructions": ""
   },
   {
-    "name": "BAKSHI ANIMATION",
-    "category": [
-      "ANIMATION",
-      "CARTOON",
-      "STYLE TRANSFORMATION",
-      "FEATURE FILM",
-      "CLASSIC ANIMATION"
-    ],
-    "message": "Take a picture and transform the subject into an authentic Ralph Bakshi animated character rendered entirely in the visual style of a Ralph Bakshi production.\n\nTRANSFORMATION RULES (NON-NEGOTIABLE):\n• The subject must be completely redrawn in authentic Bakshi animation style\n• The subject must NOT appear as a real person\n• The subject must NOT appear as a photograph with cartoon effects\n• The subject must NOT appear composited into an animated scene\n• The subject must become a native Bakshi-style animated character\n• The selected franchise determines the animated universe\n• Recognizable characters associated with the selected franchise may appear naturally within the scene\n• The subject must not replace existing characters\n• The subject should appear as an original Bakshi character created from the subject\n• Preserve recognizable facial identity\n• Preserve recognizable facial structure\n• Preserve recognizable facial proportions\n• Preserve recognizable hairstyle characteristics\n• Preserve recognizable expression tendencies\n• Preserve distinctive facial traits\n• The subject must remain recognizable while fully transformed\n• No realistic skin\n• No realistic eyes\n• No realistic hair textures\n• No photographic rendering\n\nSTYLE RULES:\n• Authentic Ralph Bakshi animation aesthetics\n• Hand-drawn feature animation\n• Mature animation design language\n• Expressive character animation\n• Dynamic line work\n• Stylized painted backgrounds\n• Vintage animated-film aesthetics\n• Authentic Bakshi production artwork\n• 1970s and 1980s animated feature-film visual language\n• Traditional cel animation appearance\n\nSCENE RULES:\n• The subject must naturally exist within the selected animated universe\n• Supporting characters may appear naturally within the scene\n• The image should resemble a frame from a Bakshi production\n• The image should appear to be authentic animation artwork",
-    "randomizeOptions": true,
-    "options": [
-    {
-      "id": "001",
-      "text": "Wizards"
-    },
-    {
-      "id": "002",
-      "text": "Fire And Ice"
-    },
-    {
-      "id": "003",
-      "text": "The Lord Of The Rings"
-    },
-    {
-      "id": "004",
-      "text": "American Pop"
-    },
-    {
-      "id": "005",
-      "text": "Heavy Traffic"
-    },
-    {
-      "id": "006",
-      "text": "Coonskin"
-    }
-    ],
-    "additionalInstructions": "IDENTITY PRESERVATION (CRITICAL):\n\n• The transformed animated character must clearly resemble the subject\n• Preserve unique facial identity\n• Preserve distinctive facial traits\n• Preserve facial proportions\n• Preserve recognizable hairstyle characteristics\n• Recognition must come from the transformed character itself\n\nANTI-CHEAT:\n\n• Do not create a generic fantasy character\n• Do not create a face swap\n• Do not paste the subject into animation artwork\n• Do not use cartoon filters\n• Do not replace the subject's identity with existing franchise characters\n\nFINAL RESULT:\nThe subject must become an authentic Ralph Bakshi animated character rendered entirely in the selected Bakshi universe while remaining immediately recognizable as the original subject."
-  },
-  {
     "name": "BALD",
     "category": [
       "HUMOR",
