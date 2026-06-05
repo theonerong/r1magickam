@@ -4,13 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>Magic Kamera</title>
-  <script type="module" crossorigin src="./assets/main-DtxJ40ei.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/main-B5ENkgSl.css">
+  <script type="module" crossorigin src="./assets/main-mHtmxeFk.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/main-D_Uyvz4r.css">
 </head>
 <body>
     <div id="app">
-        <div class="start-screen" id="start-screen">
+    <div class="start-screen" id="start-screen">
+
+    <!-- Floating background particles -->
+    <div class="stars-bg" aria-hidden="true">
+        <div class="star star-1"></div>
+        <div class="star star-2"></div>
+        <div class="star star-3"></div>
+        <div class="star star-4"></div>
+        <div class="star star-5"></div>
+        <div class="star star-6"></div>
+    </div>
+
     <div class="camera-animation">
+
+        <!-- Radar pulse rings -->
+        <div class="sparkles">
+            <div class="sparkle sparkle-1">✨</div>
+            <div class="sparkle sparkle-2">✨</div>
+            <div class="sparkle sparkle-3">✨</div>
+            <div class="sparkle sparkle-4">✨</div>
+            <div class="radar-ring radar-ring-1" aria-hidden="true"></div>
+            <div class="radar-ring radar-ring-2" aria-hidden="true"></div>
+            <div class="radar-ring radar-ring-3" aria-hidden="true"></div>
+        </div>
+
         <div class="camera-body">
             <div class="camera-lens">
                 <div class="lens-inner"></div>
@@ -20,12 +43,6 @@
             <div class="camera-button-top"></div>
             <div class="camera-viewfinder"></div>
         </div>
-        <div class="sparkles">
-            <div class="sparkle sparkle-1">✨</div>
-            <div class="sparkle sparkle-2">✨</div>
-            <div class="sparkle sparkle-3">✨</div>
-            <div class="sparkle sparkle-4">✨</div>
-        </div>
     </div>
     <h1 class="magic-title">✨ Magic Kamera ✨</h1>
     <p class="start-text">Tutorial located in menu (☰) under settings (⚙️)</p>
@@ -33,7 +50,7 @@
         <button id="start-button" class="start-button" style="min-width:0;flex:1;max-width:42vw;padding:5vw 3vw;font-size:5vw;">Start</button>
         <button id="splash-tour-button" class="start-button" style="min-width:0;flex:1;max-width:42vw;padding:5vw 3vw;font-size:5vw;background:linear-gradient(135deg,#333 0%,#111 100%);border-color:#FE5F00;box-shadow:0 6px 25px rgba(254,95,0,0.3);">▶ Tour</button>
     </div>
-    <p id="app-version" style="font-size:10px;color:#888;margin-top:8px;"></p>    
+    <p id="app-version" style="font-size:10px;color:#888;margin-top:8px;"></p>
     </div>
         <div class="camera-container" id="camera-container" style="display: none;">
             <video id="video" autoplay playsinline muted></video>
