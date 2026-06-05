@@ -2979,6 +2979,41 @@
     "additionalInstructions": "FINAL RESULT:\nThe subject should appear mid-transport: partially dematerialized or rematerialized, fully recognizable, and integrated seamlessly into a Star Trek transporter scene."
   },
   {
+    "name": "BEANIE BABY",
+    "category": [
+      "TOY",
+      "PLUSH",
+      "COLLECTIBLE",
+      "CHARACTER TRANSFORMATION",
+      "NOVELTY"
+    ],
+    "message": "Take a picture and transform the subject into an authentic Beanie Baby collectible plush toy.\n\nTRANSFORMATION RULES (NON-NEGOTIABLE):\n• The subject must become a Beanie Baby\n• The subject must NOT appear as a real person holding a Beanie Baby\n• The subject must NOT appear as a person wearing a costume\n• The subject must NOT appear as a photograph with a pasted-on face\n• The subject must become a genuine plush toy character\n• The resulting Beanie Baby should look as if TY originally designed it around the subject\n• The subject's facial identity must be translated into plush toy design language\n• Recognition must come from facial proportions, eye placement, nose shape, cheek structure, expression, hairline, hair characteristics, and overall facial identity\n• The subject must remain recognizable while fully transformed into a Beanie Baby\n• Preserve recognizable facial proportions\n• Preserve recognizable facial structure\n• Preserve distinctive facial traits\n• Preserve recognizable eye shape through embroidered or plush interpretation\n• Preserve recognizable nose shape through plush interpretation\n• Preserve recognizable smile characteristics through plush interpretation\n• Preserve recognizable hair color exactly\n• Preserve recognizable hairline exactly\n• Preserve recognizable hair characteristics exactly\n• Preserve distinctive facial identity\n• No realistic skin\n• No realistic eyes\n• No realistic hair textures\n• No photographic rendering\n• No face swap appearance\n• No pasted-on features\n\nCHARACTER DESIGN RULES:\n• Authentic TY Beanie Baby construction\n• Soft plush materials\n• Bean-filled toy anatomy\n• Oversized toy eyes appropriate to Beanie Baby design language\n• Soft stitched features\n• Manufactured collectible appearance\n• The toy should appear professionally designed and manufactured\n• Subject's identity must drive the toy design\n• The final toy should look like a custom Beanie Baby of the subject rather than a generic plush animal\n\nMATERIAL RULES:\n• Plush fabric construction\n• Soft toy seams\n• Stuffed toy proportions\n• Visible stitching where appropriate\n• Authentic collectible plush materials\n• Subject must appear manufactured as a toy\n\nSTYLE RULES:\n• Authentic TY Beanie Baby aesthetics\n• Professional product photography when appropriate\n• Collectible toy presentation\n• Retail toy design language\n\nVERSION-SPECIFIC RULES:\n• Subject must fully become the selected Beanie Baby version\n• Facial identity must be recreated natively within plush toy materials\n• Subject's facial features must be manufactured as part of the toy itself\n• Never paste the original face onto the toy",
+    "randomizeOptions": true,
+    "options": [
+    {
+      "id": "001",
+      "text": "Classic TY Product Photo"
+    },
+    {
+      "id": "002",
+      "text": "Collector Display Shelf"
+    },
+    {
+      "id": "003",
+      "text": "Tag Attached"
+    },
+    {
+      "id": "004",
+      "text": "Rare Collector Edition"
+    },
+    {
+      "id": "005",
+      "text": "Toy Store Display"
+    }
+    ],
+    "additionalInstructions": "The transformed Beanie Baby must clearly resemble the subject while appearing to be an authentic TY plush toy designed specifically around the subject's identity."
+  },
+  {
     "name": "BENDY AND THE INK MACHINE",
     "category": [
       "CARTOON",
@@ -9205,6 +9240,41 @@
     "additionalInstructions": ""
   },
   {
+    "name": "DASHBOARD HULA DANCER",
+    "category": [
+      "NOVELTY",
+      "COLLECTIBLE",
+      "RETRO",
+      "CHARACTER TRANSFORMATION",
+      "KITSCH"
+    ],
+    "message": "Take a picture and transform the subject into an authentic dashboard hula dancer figurine.\n\nTRANSFORMATION RULES (NON-NEGOTIABLE):\n• The subject must become a dashboard hula dancer figurine\n• The subject must NOT appear as a real person dressed as a hula dancer\n• The subject must NOT appear standing beside a figurine\n• The subject must become the figurine itself\n• The resulting dashboard ornament should look as if it was originally sculpted from the subject\n• Recognition should come from facial structure, facial proportions, eye shape, nose shape, smile characteristics, cheek structure, jawline, hairline, hair characteristics, and overall identity\n• Preserve recognizable facial proportions\n• Preserve recognizable facial structure\n• Preserve distinctive facial traits\n• Preserve recognizable smile characteristics\n• Preserve recognizable eye shape\n• Preserve recognizable nose shape\n• Preserve recognizable hair color\n• Preserve recognizable hairline\n• Preserve recognizable hairstyle characteristics adapted into figurine form\n• The subject must remain recognizable while fully transformed\n• No realistic skin\n• No realistic eyes\n• No photographic rendering\n• No realistic hair textures\n• No pasted-on features\n• No face swap appearance\n\nCHARACTER DESIGN RULES:\n• Authentic dashboard hula dancer proportions\n• Vintage souvenir figurine construction\n• Sculpted decorative anatomy\n• Stylized novelty character design\n• Subject identity must drive final figurine design\n• The figurine should appear professionally manufactured\n• The figurine should look like a custom dashboard ornament based on the subject\n\nMATERIAL RULES:\n• Painted resin construction\n• Molded plastic or ceramic construction where appropriate\n• Manufactured souvenir appearance\n• Visible sculptural craftsmanship\n• Authentic novelty dashboard ornament materials\n\nSTYLE RULES:\n• Classic Hawaiian souvenir aesthetics\n• Mid-century dashboard accessory design\n• Tourist collectible styling\n• Vintage roadside attraction gift-shop aesthetics\n\nMOVEMENT RULES:\n• The figurine may be mounted on a spring mechanism when appropriate\n• The spring-mounted head or torso should appear as part of the manufactured design\n• The subject must remain a figurine rather than a living person\n\nVERSION-SPECIFIC RULES:\n• Subject must fully become the selected figurine version\n• Facial identity must be sculpted directly into the ornament\n• The subject's face must never appear composited from the original photograph",
+    "randomizeOptions": true,
+    "options": [
+    {
+      "id": "001",
+      "text": "Classic Dashboard Hula Dancer"
+    },
+    {
+      "id": "002",
+      "text": "Spring-Mounted Bobble Version"
+    },
+    {
+      "id": "003",
+      "text": "Vintage 1950s Souvenir"
+    },
+    {
+      "id": "004",
+      "text": "Hand-Painted Collector Edition"
+    },
+    {
+      "id": "005",
+      "text": "Gift Shop Display"
+    }
+    ],
+    "additionalInstructions": "IDENTITY PRESERVATION (CRITICAL):\n\n• The transformed figurine must clearly resemble the subject\n• Preserve the subject's unique facial identity\n• Preserve distinctive facial structure\n• Preserve facial proportions\n• Preserve recognizable smile characteristics\n• Preserve recognizable hairstyle characteristics\n• Recognition must come from the sculpted ornament itself\n• The final ornament must simultaneously read as both the subject and a genuine dashboard hula dancer figurine\n\nANTI-CHEAT:\n\n• Do not generate a real person in costume\n• Do not create a face swap\n• Do not paste the subject's face onto a figurine\n• Do not generate a generic hula dancer unrelated to the subject\n• Do not ignore the subject's facial identity\n• The final ornament must look custom-manufactured from the subject's identity"
+  },
+  {
     "name": "DATABENDING",
     "category": [
       "DIGITAL",
@@ -10046,6 +10116,41 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "DOMINO'S NOID",
+    "category": [
+      "ADVERTISING",
+      "MASCOT",
+      "CHARACTER TRANSFORMATION",
+      "COMMERCIAL ART",
+      "RETRO"
+    ],
+    "message": "Take a picture and transform the subject into an authentic Domino's Noid character.\n\nTRANSFORMATION RULES (NON-NEGOTIABLE):\n• The subject must become the Noid\n• The subject must NOT appear as a real person wearing a Noid costume\n• The subject must NOT appear as a photograph with a pasted-on face\n• The subject must be completely reinterpreted in authentic Noid visual language\n• The subject's face is the reference model for the transformed Noid character\n• The resulting character should look as if Domino's originally designed the Noid around the subject\n• Recognition should come from facial structure, eye shape, smile characteristics, nose shape, jawline, cheek structure, expression, hairline, and facial identity\n• Preserve recognizable facial identity\n• Preserve recognizable facial proportions\n• Preserve recognizable eye shape\n• Preserve recognizable nose shape\n• Preserve recognizable smile characteristics\n• Preserve recognizable cheek structure\n• Preserve recognizable jawline\n• Preserve actual hair color where visible and compatible with Noid design\n• Preserve actual hairline characteristics where appropriate\n• No realistic skin\n• No realistic eyes\n• No realistic hair textures\n• No photographic rendering\n• No pasted-on features\n• No face swapping\n\nCHARACTER DESIGN RULES:\n• Authentic Noid anatomy\n• Authentic Noid proportions\n• Rubbery cartoon body design\n• Large expressive cartoon features\n• Dynamic mascot character design\n• Subject's identity drives final character design\n• Final character should look like a custom Noid interpretation of the subject\n\nCOSTUME RULES:\n• Preserve iconic Noid suit design\n• Preserve rabbit-like mascot characteristics\n• Preserve classic Noid visual identity\n\nSTYLE RULES:\n• Authentic Domino's advertising artwork\n• 1980s commercial illustration aesthetics\n• Advertising mascot design language\n• Cartoon commercial art\n\nVERSION-SPECIFIC RULES:\n• Subject must fully become the selected Noid version\n• Facial identity must be recreated within authentic Noid visual language\n• Face must never appear composited from the original photograph",
+    "randomizeOptions": true,
+    "options": [
+    {
+      "id": "001",
+      "text": "1980s Commercial Artwork"
+    },
+    {
+      "id": "002",
+      "text": "Animated Noid"
+    },
+    {
+      "id": "003",
+      "text": "Comic Book Noid"
+    },
+    {
+      "id": "004",
+      "text": "Product Packaging Art"
+    },
+    {
+      "id": "005",
+      "text": "Parade Balloon"
+    }
+    ],
+    "additionalInstructions": "The transformed Noid must immediately resemble the subject while simultaneously appearing to be an authentic Domino's Noid character. The final result should look as though the subject served as the original model used by Domino's designers when creating the Noid."
   },
   {
     "name": "DO NOTHING",
@@ -13332,6 +13437,41 @@
     ],
     "randomizeOptions": true,
     "additionalInstructions": "FINAL RESULT:\nA unified fingerprint-based composition where ridge pattern type and density directly control the structure, detail level, and visual flow of the entire image."
+  },
+  {
+    "name": "FINGER PUPPET",
+    "category": [
+      "PUPPET",
+      "TOY",
+      "CHARACTER TRANSFORMATION",
+      "CHILDREN",
+      "NOVELTY"
+    ],
+    "message": "Take a picture and transform the subject into an authentic finger puppet.\n\nTRANSFORMATION RULES (NON-NEGOTIABLE):\n• The subject must become a finger puppet\n• The subject must NOT appear as a real person holding a puppet\n• The subject must NOT appear wearing a puppet costume\n• The subject must NOT appear as a photograph with a pasted-on puppet head\n• The subject must become the puppet itself\n• The resulting puppet should look as if it was originally designed around the subject\n• Recognition should come from facial structure, facial proportions, eye shape, nose shape, smile characteristics, cheek structure, jawline, hairline, hair characteristics, and overall facial identity\n• Preserve recognizable facial proportions\n• Preserve recognizable facial structure\n• Preserve distinctive facial traits\n• Preserve recognizable eye shape\n• Preserve recognizable nose shape\n• Preserve recognizable smile characteristics\n• Preserve recognizable hair color\n• Preserve recognizable hairline\n• Preserve recognizable hairstyle characteristics adapted into puppet form\n• The subject must remain recognizable while fully transformed\n• No realistic skin\n• No realistic eyes\n• No realistic hair textures\n• No photographic rendering\n• No pasted-on features\n• No face swap appearance\n\nCHARACTER DESIGN RULES:\n• Authentic finger puppet construction\n• Soft puppet anatomy\n• Childrens toy proportions\n• Simplified puppet design language\n• Expressive puppet features\n• Subject identity must drive final puppet design\n• The puppet should appear professionally manufactured\n• The puppet should look specifically designed from the subject\n\nMATERIAL RULES:\n• Felt construction where appropriate\n• Cloth construction where appropriate\n• Fabric puppet materials\n• Stitched features\n• Handmade or manufactured puppet craftsmanship\n• Hollow finger-sized puppet body\n\nSTYLE RULES:\n• Traditional finger puppet aesthetics\n• Children's toy design language\n• Puppet theater styling\n• Educational toy presentation\n\nPUPPET RULES:\n• The puppet must be capable of fitting onto a finger\n• The body must clearly function as a finger puppet\n• The subject's facial identity must be integrated into puppet construction\n• The subject must become the puppet rather than merely appearing on the puppet\n\nVERSION-SPECIFIC RULES:\n• Subject must fully become the selected puppet version\n• Facial identity must be recreated natively within puppet materials\n• Subject's face must never appear composited from the original photograph",
+    "randomizeOptions": true,
+    "options": [
+    {
+      "id": "001",
+      "text": "Classic Felt Finger Puppet"
+    },
+    {
+      "id": "002",
+      "text": "Handmade Craft Puppet"
+    },
+    {
+      "id": "003",
+      "text": "Professional Puppet Theater Version"
+    },
+    {
+      "id": "004",
+      "text": "Children's Educational Toy"
+    },
+    {
+      "id": "005",
+      "text": "Vintage Storybook Puppet"
+    }
+    ],
+    "additionalInstructions": "IDENTITY PRESERVATION (CRITICAL):\n\n• The transformed puppet must clearly resemble the subject\n• Preserve the subject's unique facial identity\n• Preserve distinctive facial structure\n• Preserve recognizable facial proportions\n• Preserve recognizable smile characteristics\n• Preserve recognizable hairstyle characteristics\n• Recognition must come from the puppet itself\n• The final puppet must simultaneously read as both the subject and a genuine finger puppet\n\nANTI-CHEAT:\n\n• Do not create a real person holding a puppet\n• Do not create a face swap\n• Do not paste the subject's face onto a puppet\n• Do not create a generic puppet unrelated to the subject\n• Do not ignore distinctive facial traits\n• The final puppet must be unmistakably recognizable as the subject\n\nFINAL RESULT:\nThe subject must become an authentic finger puppet rendered entirely within the selected puppet medium. The puppet should appear professionally designed and manufactured using the subject as the original model. Recognition must come from transformed puppet design rather than photographic realism. The final image should immediately evoke traditional finger puppets, children's toys, puppet theater, storytelling, and handcrafted charm while maintaining unmistakable recognition of the subject."
   },
   {
     "name": "FIREWORKS",
@@ -26657,6 +26797,41 @@
     "additionalInstructions": "ABSOLUTE PROHIBITIONS:\n• No body horror\n• No hybrid human limbs\n• No disturbing anatomy\n• No aggressive or threatening behavior\n\nFINAL RESULT:\nThe final image must feel like a clever visual role-reversal or identity translation: the subject convincingly reimagined as a dog or cat, and — when a pet is present — the pet charmingly dressed like the subject, creating a humorous, wholesome, and instantly understandable transformation."
   },
   {
+    "name": "PEZ DISPENSER",
+    "category": [
+      "TOY",
+      "COLLECTIBLE",
+      "NOVELTY",
+      "CHARACTER TRANSFORMATION",
+      "CANDY"
+    ],
+    "message": "Take a picture and transform the subject into an authentic PEZ dispenser character.\n\nTRANSFORMATION RULES (NON-NEGOTIABLE):\n• The subject must become a PEZ dispenser\n• The subject must NOT appear as a real person holding a PEZ dispenser\n• The subject must NOT appear as a person wearing a PEZ costume\n• The subject must NOT appear as a photograph with a pasted-on face\n• The subject's head must become the molded dispenser character head\n• The subject's facial identity must be translated into molded plastic toy design language\n• Recognition should come from facial structure, eye shape, smile characteristics, nose shape, cheek structure, jawline, expression, hairline, hair characteristics, and overall identity\n• The subject must remain recognizable while fully transformed\n• Preserve recognizable facial proportions\n• Preserve distinctive facial traits\n• Preserve actual hair color\n• Preserve actual hairline\n• Preserve actual hair characteristics\n• No realistic skin\n• No realistic eyes\n• No photographic features\n• No pasted-on face\n• No face swap appearance\n\nCHARACTER DESIGN RULES:\n• Authentic PEZ dispenser construction\n• Injection molded plastic appearance\n• Functional dispenser body\n• Subject's face sculpted into dispenser character form\n• Subject identity drives final molded design\n• The final product should appear professionally manufactured\n\nMATERIAL RULES:\n• Molded plastic\n• Factory-produced appearance\n• Toy manufacturing details\n• Hard plastic construction\n• Authentic PEZ proportions\n\nSTYLE RULES:\n• Official licensed PEZ design aesthetics\n• Product photography appearance\n• Collectible candy dispenser presentation\n\nVERSION-SPECIFIC RULES:\n• Facial identity must be recreated through molded plastic sculpture\n• Subject must become the dispenser itself\n• Face must never appear pasted onto the dispenser",
+    "randomizeOptions": true,
+    "options": [
+    {
+      "id": "001",
+      "text": "Classic PEZ"
+    },
+    {
+      "id": "002",
+      "text": "Vintage PEZ"
+    },
+    {
+      "id": "003",
+      "text": "Crystal PEZ"
+    },
+    {
+      "id": "004",
+      "text": "Collector Edition"
+    },
+    {
+      "id": "005",
+      "text": "Factory Prototype"
+    }
+    ],
+    "additionalInstructions": "The final dispenser must simultaneously read as both an authentic PEZ dispenser and the subject. Recognition must come from sculptural reinterpretation rather than face swapping."
+  },
+  {
     "name": "PHENAKISTOSCOPE",
     "category": [
       "ART",
@@ -27875,6 +28050,41 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "PRECIOUS MOMENTS",
+    "category": [
+      "COLLECTIBLE",
+      "FIGURINE",
+      "SCULPTURE",
+      "CHARACTER TRANSFORMATION",
+      "PORCELAIN"
+    ],
+    "message": "Take a picture and transform the subject into an authentic Precious Moments figurine.\n\nTRANSFORMATION RULES (NON-NEGOTIABLE):\n• The subject must become a Precious Moments figurine\n• The subject must NOT appear as a real person holding a figurine\n• The subject must NOT appear as a photograph beside a figurine\n• The subject must become the figurine itself\n• The resulting figurine should look as if Enesco originally designed it around the subject\n• Recognition should come from facial proportions, eye placement, nose shape, smile characteristics, cheek structure, jawline, hairline, hair characteristics, and overall identity\n• Preserve recognizable facial structure\n• Preserve recognizable facial proportions\n• Preserve recognizable smile characteristics\n• Preserve recognizable eye shape adapted into Precious Moments style\n• Preserve recognizable hair color\n• Preserve recognizable hairline\n• Preserve recognizable hairstyle characteristics\n• Preserve distinctive facial traits\n• The subject must remain recognizable while fully transformed\n• No realistic skin\n• No realistic eyes\n• No photographic rendering\n• No realistic hair textures\n• No pasted-on features\n• No face swapping\n\nCHARACTER DESIGN RULES:\n• Authentic Precious Moments proportions\n• Large teardrop-shaped eyes\n• Porcelain figurine anatomy\n• Soft sculpted forms\n• Delicate collectible appearance\n• Subject identity must drive final figurine design\n• Character should look professionally sculpted and manufactured\n\nMATERIAL RULES:\n• Glazed porcelain construction\n• Ceramic figurine materials\n• Hand-painted collectible appearance\n• Authentic collectible sculpture aesthetics\n• Manufactured figurine presentation\n\nSTYLE RULES:\n• Authentic Precious Moments figurine design language\n• Collectible gift-shop aesthetics\n• Porcelain sculpture presentation\n• Soft sentimental collectible styling\n\nVERSION-SPECIFIC RULES:\n• Facial identity must be sculpted directly into the figurine\n• Subject must become the figurine itself\n• Face must never appear composited from the original photograph",
+    "randomizeOptions": true,
+    "options": [
+    {
+      "id": "001",
+      "text": "Classic Porcelain Figurine"
+    },
+    {
+      "id": "002",
+      "text": "Limited Edition Collectible"
+    },
+    {
+      "id": "003",
+      "text": "Holiday Figurine"
+    },
+    {
+      "id": "004",
+      "text": "Gift Shop Display"
+    },
+    {
+      "id": "005",
+      "text": "Museum Collector Display"
+    }
+    ],
+    "additionalInstructions": "IDENTITY PRESERVATION (CRITICAL):\n\n• The transformed figurine must clearly resemble the subject\n• Preserve unique facial identity\n• Preserve distinctive facial structure\n• Preserve facial proportions\n• Preserve smile characteristics\n• Preserve recognizable hairstyle characteristics\n• Recognition must come from the sculpted figurine itself\n• The figurine should appear custom-designed from the subject rather than selected from an existing product line\n\nANTI-CHEAT:\n\n• Do not generate a generic Precious Moments figurine\n• Do not paste the subject's face onto a figurine\n• Do not create a realistic human holding a figurine\n• Do not create a face swap\n• Do not ignore the subject's facial identity\n• The final sculpture must be unmistakably recognizable as the subject"
   },
   {
     "name": "PRECISIONISM",
@@ -38550,6 +38760,46 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "FINAL RESULT:\nThe final image must look like a real Wallace & Gromit stop-motion frame — hand-crafted clay, charmingly imperfect, and unmistakably British."
+  },
+  {
+    "name": "WALTER LANTZ CARTOON",
+    "category": [
+      "OPTIONS",
+      "ANIMATION",
+      "CLASSIC CARTOON",
+      "GOLDEN AGE",
+      "STYLE TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform the subject into an authentic Walter Lantz cartoon character rendered entirely in the visual style of a classic Walter Lantz theatrical cartoon.\n\nTRANSFORMATION RULES (NON-NEGOTIABLE):\n• The subject must be completely transformed into authentic Walter Lantz cartoon artwork\n• The subject must NOT appear as a real person\n• The subject must NOT appear as a photograph with a cartoon filter applied\n• The subject must NOT appear as a face swap\n• The subject must NOT appear as a photograph composited into a cartoon background\n• The subject must be fully redrawn in authentic Walter Lantz visual language\n• The subject must become a native inhabitant of the selected Walter Lantz cartoon world\n• The selected option determines which Walter Lantz cartoon universe the subject is inserted into\n• Recognizable Walter Lantz characters associated with the selected cartoon may appear naturally within the scene\n• The subject must interact naturally with the cartoon world and supporting characters\n• The subject must not replace existing Walter Lantz characters\n• The subject must not become Woody Woodpecker, Chilly Willy, Andy Panda, Wally Walrus, Buzz Buzzard, Inspector Willoughby, or any other established Walter Lantz character\n• The subject should appear as an original Walter Lantz character created specifically for the selected cartoon short\n• The subject's face is the reference model for the transformed cartoon character\n• The resulting cartoon character should look as if Walter Lantz artists originally designed the character around the subject\n• Recognition should come from facial structure, eye shape, eye spacing, nose shape, cheek structure, jawline, expression, hairline, hair characteristics, and overall facial identity\n• The subject must remain immediately recognizable while fully transformed into a Walter Lantz cartoon character\n• Preserve the subject's recognizable face shape\n• Preserve the subject's recognizable jawline\n• Preserve the subject's recognizable cheek structure\n• Preserve the subject's recognizable nose shape\n• Preserve the subject's recognizable eye shape\n• Preserve the subject's recognizable eyebrow shape\n• Preserve the subject's recognizable smile characteristics\n• Preserve the subject's recognizable facial proportions\n• Preserve the subject's recognizable facial identity\n• Preserve distinctive facial features that make the subject recognizable\n• Preserve the subject's actual hair color\n• Preserve the subject's actual hairline\n• Preserve the subject's actual hair characteristics adapted into cartoon design language\n• Preserve recognizable hairstyle characteristics whenever compatible with the selected cartoon design\n• The transformed character should appear to be a custom Walter Lantz interpretation of the subject\n• The subject's identity must drive the final cartoon design\n• Someone familiar with the subject should immediately recognize the transformed character as that person\n• No realistic skin textures\n• No photographic facial rendering\n• No pasted-on features\n• No realistic human eyes\n• No realistic hair textures\n\nCHARACTER DESIGN RULES:\n• Authentic Walter Lantz cartoon anatomy\n• Authentic Golden Age animation character construction\n• Authentic theatrical cartoon proportions\n• Hand-drawn animation aesthetics\n• Vintage animation design language\n• Period-correct cartoon stylization\n• Subject should appear as if originally designed by Walter Lantz artists\n• The subject's facial identity must drive the final character design\n• Do not use generic cartoon facial features\n• Instead redesign the subject's own face in authentic Walter Lantz visual language\n• Preserve the subject's actual eye shape\n• Preserve the subject's actual cheek structure\n• Preserve the subject's actual smile characteristics\n• Preserve the subject's actual facial proportions\n• The final character should look like the subject transformed into a Walter Lantz cartoon rather than a generic animation character\n\nSTYLE RULES:\n• Authentic Walter Lantz Studios artwork\n• Authentic Golden Age theatrical animation aesthetics\n• Vintage hand-painted background art\n• Animation cel production appearance\n• Classic cartoon color palettes\n• Ink-and-paint department aesthetics\n• Mid-century theatrical cartoon visual language\n• Authentic animation studio artwork\n\nSCENE RULES:\n• The selected option determines the specific cartoon universe\n• The subject must be naturally integrated into the selected cartoon's world\n• Supporting characters associated with the selected cartoon may appear naturally within the scene\n• Existing characters should remain recognizable and authentic\n• The subject should appear as though they belong in the cartoon\n• The scene should resemble a frame from an authentic Walter Lantz production\n• The scene should look professionally produced by Walter Lantz Studios\n\nVERSION-SPECIFIC RULES:\n• The selected version determines the setting, supporting characters, cartoon universe, and presentation\n• Subject must fully conform to the selected cartoon world\n• Facial identity must be recreated natively within Walter Lantz animation design language\n• The subject's face must never appear composited from the original photograph\n• The subject's facial features must be redrawn according to authentic Walter Lantz character design principles",
+    "randomizeOptions": true,
+    "options": [
+    {
+      "id": "001",
+      "text": "Woody Woodpecker Cartoon",
+      "instruction": "Transform the subject into authentic Walter Lantz animation style and place them inside a classic Woody Woodpecker theatrical short. Woody Woodpecker may appear naturally within the scene. The subject should appear as an original Walter Lantz character interacting with Woody's world."
+    },
+    {
+      "id": "002",
+      "text": "Chilly Willy Cartoon",
+      "instruction": "Transform the subject into authentic Walter Lantz animation style and place them inside a classic Chilly Willy cartoon. Chilly Willy and associated characters may appear naturally within the scene. The subject should appear as an original Walter Lantz character inhabiting Chilly Willy's world."
+    },
+    {
+      "id": "003",
+      "text": "Andy Panda Cartoon",
+      "instruction": "Transform the subject into authentic Walter Lantz animation style and place them inside a classic Andy Panda cartoon. Andy Panda and associated characters may appear naturally within the scene. The subject should appear as an original Walter Lantz character existing within Andy Panda's universe."
+    },
+    {
+      "id": "004",
+      "text": "Inspector Willoughby Cartoon",
+      "instruction": "Transform the subject into authentic Walter Lantz animation style and place them inside a classic Inspector Willoughby cartoon. Inspector Willoughby may appear naturally within the scene. The subject should appear as an original Walter Lantz character participating in the cartoon."
+    },
+    {
+      "id": "005",
+      "text": "Walter Lantz Ensemble Cast",
+      "instruction": "Transform the subject into authentic Walter Lantz animation style and place them in a large ensemble scene featuring multiple recognizable Walter Lantz characters. The subject should appear as a native Walter Lantz cartoon character interacting naturally with the cast."
+    }
+    ],
+    "additionalInstructions": "IDENTITY PRESERVATION (CRITICAL):\n\n• The transformed cartoon character must clearly resemble the subject at first glance\n• The transformed character must not resemble a generic Walter Lantz character\n• Preserve the subject's unique facial identity\n• Preserve the subject's unique facial structure\n• Preserve the subject's distinctive facial traits\n• Preserve the subject's actual eye shape\n• Preserve the subject's actual nose shape\n• Preserve the subject's actual smile characteristics\n• Preserve the subject's actual jawline\n• Preserve the subject's actual facial proportions\n• Preserve the subject's hair identity while adapting it into Walter Lantz animation design language\n• Recognition must come from the transformed character itself\n• The final character must simultaneously read as both the subject and an authentic Walter Lantz cartoon creation\n• The character should appear specifically designed from the subject rather than selected from existing animation artwork\n\nANTI-CHEAT:\n\n• Do not generate a generic cartoon character\n• Do not create a face swap\n• Do not paste the subject's face into a cartoon scene\n• Do not create a cartoon-filtered photograph\n• Do not place a realistic person inside a cartoon world\n• Do not replace the subject's facial identity with generic animation features\n• Do not ignore distinctive facial features\n• Do not create a character that resembles an existing Walter Lantz character more than it resembles the subject\n• The transformed character must be clearly identifiable as the subject\n• The transformed character must look like a Walter Lantz version of the subject rather than a generic cartoon character\n\nFINAL RESULT:\nThe subject must become an authentic Walter Lantz cartoon character rendered entirely in the selected Walter Lantz cartoon universe. The subject should appear as a genuine character created by Walter Lantz artists using the subject as the original model. The selected cartoon's recognizable supporting characters may appear naturally within the scene. The subject's recognizable facial identity, facial proportions, facial structure, expression, hair color, hairline, and hair characteristics must remain clearly visible through authentic Walter Lantz animation design language. The final image should immediately evoke classic Walter Lantz cartoons, Golden Age animation, theatrical cartoon shorts, hand-painted backgrounds, vintage animation cels, and authentic studio artwork while maintaining unmistakable recognition of the subject through transformation rather than photographic realism."
   },
   {
     "name": "WANTED POSTER",
