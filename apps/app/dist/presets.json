@@ -349,6 +349,19 @@
     "additionalInstructions": "IDENTITY PRESERVATION (CRITICAL FOR HUMANS OR ANIMALS):\n• If the subject is a human or animal, the print must remain identifiable\n• The head must be at least partially completed\n• The eyes must be clearly formed and recognizable\n• Avoid prints that consist only of isolated body parts or unrecognizable fragments\n\nMATERIAL AND REALISM:\n• Subject must clearly appear made from plastic filament\n• Visible horizontal layer lines across the entire surface\n• Realistic extrusion paths and filament behavior\n• Single solid filament color or limited two-color print\n\nENVIRONMENT AND STYLE:\n• Neutral workshop or maker-space setting\n• Realistic shadows and reflections\n• Shallow depth of field\n• Natural, practical lighting\n• Avoid smooth, sculpted, or digital-rendered surfaces\n\nFINAL RESULT:\nThe image must look like a real photograph of a physical 3D printer mid-print, showing the extruder, build plate, and a recognizable subject either failing or nearly finished, determined strictly by the random seed."
   },
   {
+    "name": "8-BIT HANDHELD CAMERA",
+    "category": [
+      "RETRO GAMING",
+      "VISUAL STYLE",
+      "LOW-FI PHOTOGRAPHY",
+      "PIXEL ART",
+      "DIGITAL CAPTURE"
+    ],
+    "message": "Take a picture and transform the ENTIRE IMAGE into a late-1990s 8-bit handheld gaming camera photograph.\n\nTRANSFORMATION RULES (NON-NEGOTIABLE):\n• The entire image must be down-sampled into extreme, blocky 8-bit pixel art\n• The entire image must be strictly limited to a 4-color monochrome palette (Light Green, Medium Green, Dark Olive Green, and Black)\n• Recognition of the subject must be completely preserved through the pixel matrix\n• Preserve actual facial proportions and distinctive traits, represented via pixels\n• No smooth gradients allowed anywhere in the image\n• No realistic lighting or high-resolution details\n• Gradients and shading MUST be simulated using dense, mathematical 2D dithering (checkerboard pixel patterns)\n\nENVIRONMENT & STYLE RULES:\n• The entire canvas is treated as a low-resolution LCD dot-matrix screen\n• The subject must be framed within a chunky, stylized 8-bit digital border or UI overlay (e.g., a pixelated frame with battery indicators or retro camera UI elements)\n• Contrast must be highly compressed, making the subject and background look flat and strictly digital\n• The aesthetic should mimic the exact technical limitations of early digital toy cameras capturing live subjects\n\nVERSION-SPECIFIC RULES:\n• The style must convert the photograph into an authentic, heavily dithered 4-color green matrix\n• The image must read as a direct screen-capture from a 1998 monochrome handheld console",
+    "randomizeOptions": false,
+    "additionalInstructions": "The entire image must look like it was taken by a primitive 8-bit handheld console accessory. Total commitment to the 4-color green palette and strict checkerboard dithering is required."
+  },
+  {
     "name": "80s AND 90s ACTION FILMS",
     "category": [
       "OPTIONS",
@@ -3026,6 +3039,19 @@
     }
     ],
     "additionalInstructions": "The transformed Beanie Baby must clearly resemble the subject while appearing to be an authentic TY plush toy designed specifically around the subject's identity."
+  },
+  {
+    "name": "BEN-DAY DOT COMIC",
+    "category": [
+      "ART",
+      "VISUAL STYLE",
+      "VINTAGE PRINT",
+      "POP ART",
+      "ILLUSTRATION"
+    ],
+    "message": "Take a picture and transform the ENTIRE IMAGE into a vintage 1960s pulp comic book panel utilizing a mechanical Ben-Day dot printing process.\n\nTRANSFORMATION RULES (NON-NEGOTIABLE):\n• The entire image must be converted into a bold, stylized comic book illustration with heavy, black ink brush outlines\n• Recognition of the subject must be completely preserved, but translated into classic graphic pop-art design language\n• Preserve actual facial proportions, distinctive traits, and expressions\n• No smooth gradients, continuous tones, or photorealistic elements\n• All mid-tones, skin shading, and background gradients must be rendered strictly using uniform patterns of small, colored printing dots (Ben-Day dots) that do not blend\n• Limited palette of flat, saturated CMYK primary ink colors\n\nENVIRONMENT & STYLE RULES:\n• The entire canvas must possess the texture of cheap, aged off-white comic book newsprint with visible ink absorption and slight bleed-through\n• The background environment must be simplified into a dramatic, graphic comic setting (e.g., stylized action lines, retro room silhouettes, or pop-art bursts)\n• Colors should look slightly misregistered or misaligned from the black ink outlines in certain areas, mimicking cheap historical printing presses\n\nVERSION-SPECIFIC RULES:\n• The visual style relies exclusively on vintage pulp print manufacturing limits\n• The final product must look like an individual panel clipped from a physical 1960s comic book",
+    "randomizeOptions": false,
+    "additionalInstructions": "The entire image must function as a mid-century comic book pane. The defining features are the heavy black ink contours, a strict primary color palette, and a completely uniform layout of Ben-Day dots for all shading on a newsprint texture."
   },
   {
     "name": "BENDY AND THE INK MACHINE",
@@ -9006,6 +9032,19 @@
   "additionalInstructions": "FINAL RULE THAT OVERRIDES EVERYTHING: If any part of this image was created by shading, filling, smudging, hatching, drawing, painting, or any technique other than drawing a straight line from one numbered coordinate point to another numbered coordinate point — that part is wrong and must not exist. The only mark-making permitted in this entire image is a straight line from point A on one axis to point B on another axis. The subject shape is an optical illusion created by line placement alone. There is no other way to create any part of this image. Every square centimeter of this image that is not graph paper background is covered only by straight lines connecting axis coordinates. Count the lines — you should be able to see and count every single one."
   },
   {
+    "name": "CROSS-POLARIZED STRESS MAP",
+    "category": [
+      "SCIENCE",
+      "VISUAL STYLE",
+      "INDUSTRIAL",
+      "COLOR THEORY",
+      "ABSTRACT"
+    ],
+    "message": "Take a picture and transform the ENTIRE IMAGE into a cross-polarized light stress analysis photograph.\n\nTRANSFORMATION RULES (NON-NEGOTIABLE):\n• The entire scene (subject and environment) must look like it is constructed out of solid, clear injection-molded birefringent plastic\n• Recognition of the subject must be completely preserved, but defined entirely by internal rainbow interference patterns and stress lines\n• Preserve actual facial proportions and distinctive traits mapped through color gradients\n• No natural skin tones, hair colors, or textile textures allowed whatsoever\n• The image must contain zero realistic lighting; illumination is driven entirely by internal light polarization physics\n\nENVIRONMENT & STYLE RULES:\n• The entire composition must feature vibrant, glowing, psychedelic rainbow contours (fringes of magenta, cyan, yellow, and green) looping tightly around areas of structural tension\n• The areas of highest stress (such as the eyes, jawline, and geometric transitions in the background) must display the densest concentration of sharp, hyper-saturated color bands\n• Neutral, non-stressed areas of the plastic must appear as a smoky, translucent dark gray or deep violet-black\n• The background must be treated with the same mechanical laws, showing stress patterns radiating from environmental edges against a pitch-black studio void\n\nVERSION-SPECIFIC RULES:\n• The visual style must completely replace physical surfaces with translucent molded plastic properties\n• The final image must read as a high-contrast scientific or engineering test photograph",
+    "randomizeOptions": false,
+    "additionalInstructions": "The entire image must look like clear plastic under cross-polarized lens filters. Total commitment to the glowing, nested rainbow interference bands against a dark background is required."
+  },
+  {
     "name": "CROSS-SECTION",
     "category": [
       "SURREAL",
@@ -10291,6 +10330,19 @@
     "additionalInstructions": "FINAL RESULT:\nA stunning transformation into the unmistakable style of Leiji Matsumoto's character design as animated by Toei Animation for Daft Punk's Interstella 5555. The subject becomes an elegant, blue-skinned alien character with impossibly long limbs, large expressive eyes, and flowing hair, set against a dreamy retro-futuristic backdrop. The image captures the romantic, melancholic, and utterly unique aesthetic of early 2000s Japanese animation meeting 1970s space opera glamour, with the analog warmth and artistic detail that defined the Digital Love segment."
   },
   {
+    "name": "DIGITIZED ARCADE SPRITE",
+    "category": [
+      "RETRO AESTHETIC",
+      "VISUAL STYLE",
+      "CRT",
+      "COLOR INDEXING",
+      "DIGITAL CAPTURE"
+    ],
+    "message": "Take a picture and transform the ENTIRE IMAGE into the digitized live-action video capture style of an early-1990s arcade system hardware display.\n\nTRANSFORMATION RULES (NON-NEGOTIABLE):\n• The entire image (subject and environment) must be down-sampled and color-indexed to replicate early digital video processing\n• The subject must look like a real person captured via a 90s digital camera sensor, then compressed into a limited color palette\n• Recognition of the subject must be completely preserved, but rendered through pixel banding and dithering\n• Preserve actual facial proportions and distinctive traits\n• Preserve actual hair color and style, adapted to the indexed color system\n• Skin tones must appear slightly flattened and high-contrast, characteristic of early digital video digitization\n• No smooth, high-resolution modern gradients\n• No modern cinematic lighting or post-processing\n\nENVIRONMENT & STYLE RULES:\n• The entire original environment must be processed using the exact same low-resolution, color-indexed, and dithered rendering method as the subject\n• Absolutely NO gameplay elements, health bars, score counters, text overlays, or artificial fighting game stages may be added\n• The entire composition must feature visible horizontal CRT scanlines, minor phosphor bleed, and an overall low-resolution video capture aesthetic\n• The lighting across the scene should mimic harsh, multi-directional studio flash illumination typical of a green-screen production capture\n• The final output must possess a distinct 16-bit or 32-bit color palette restriction with noticeable pixel dither patterns across all shadows and mid-tones\n\nVERSION-SPECIFIC RULES:\n• The style must convert the photograph into an authentic, low-res digitized multimedia asset\n• The processing must blanket the entire image evenly to sell the 1990s hardware monitor aesthetic without simulating an active game scenario",
+    "randomizeOptions": false,
+    "additionalInstructions": "The entire image must look like a high-end digital digitization from 1993. The aesthetic relies entirely on harsh sprite-style lighting, heavy color indexing, and a global CRT scanline filter over the original scene without adding game mechanics."
+  },
+  {
     "name": "DIME NOVEL",
     "category": [
       "VINTAGE ILLUSTRATION",
@@ -11205,6 +11257,19 @@
     "additionalInstructions": "FINAL RESULT:\nThe final image must look like a powerful, authentic breakdancing moment — the subject fully immersed in skilled movement, captured at the height of energy and expression, with a strong sense of rhythm and physical mastery."
   },
   {
+  "name": "ELECTRON MICROSCOPE SCAN",
+  "category": [
+    "MICROSCOPY",
+    "SCIENCE",
+    "TEXTURE",
+    "MONOCHROME",
+    "MACRO"
+  ],
+  "message": "Take a picture and transform the ENTIRE IMAGE into a scanning electron microscope (SEM) micrograph scan.\n\nTRANSFORMATION RULES (NON-NEGOTIABLE):\n• The entire scene must be processed to look like an ultra-magnified microscopic surface captured via an electron beam sensor\n• Recognition of the subject must be perfectly maintained, but their features must look like they are covered in a micro-thin, conformally sputtered metal coating (like gold or carbon)\n• Preserve actual facial proportions and traits, translated into hyper-detailed crystalline or organic surface topography\n• The entire color palette must be strictly monochromatic, shifting through cold, clinical grays, deep charcoal voids, and bright silver highlights\n• No natural colors, optical lens flares, or atmospheric depth-of-field blurring; lighting is purely driven by electron backscatter topography\n\nENVIRONMENT & STYLE RULES:\n• The entire image must possess an intense, hyper-tactile surface texture showing extreme microscopic detail (e.g., dust platelets, porous micro-cavities, and crystalline grain boundaries)\n• Illumination must feature the signature SEM 'edge effect'—where sharp, raised ridges and microscopic contours glow with intense white brightness due to higher secondary electron emission\n• Shadows must be deep, matte, and absolutely void of ambient light bounce, creating an eerie, vacuum-sealed depth\n• Include a subtle scientific data overlay strip along the absolute bottom edge containing technical parameters (e.g., 'E-beam: 15.0kV', 'Magnification: 2.50kx', a micron scale bar, and vacuum pressure metrics)\n\nVERSION-SPECIFIC RULES:\n• The visual style must completely replace optical photography rules with electron-scattering physics simulation\n• The final output must read as an authentic scientific capture from an nanotechnology laboratory archive",
+  "randomizeOptions": false,
+  "additionalInstructions": "The entire image must read as a genuine electron microscope scan. The aesthetic relies entirely on hyper-detailed micro-textures, glowing contour edges, and the stark monochrome data strip at the bottom."
+  },
+  {
     "name": "ELEMENTAL SELF",
     "category": [
       "FANTASY",
@@ -12003,6 +12068,19 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "FINAL RESULT:\nAn emotionally charged painting with distorted forms and energetic brushwork.\n\nCORE REQUIREMENTS:\n• CHAOTIC composition\n• STRONG emotion\n• VISIBLE brush energy"
+  },
+  {
+    "name": "EXPRESSIONIST SILENT FILM",
+    "category": [
+      "VINTAGE CINEMA",
+      "VISUAL STYLE",
+      "MONOCHROME",
+      "RETRO",
+      "DRAMATIC"
+    ],
+    "message": "Take a picture and transform the ENTIRE IMAGE into a paused frame from a 1920s German Expressionist silent movie.\n\nTRANSFORMATION RULES (NON-NEGOTIABLE):\n• The entire image must be processed to look like antique, orthochromatic black-and-white silver halide film stock\n• Recognition of the subject must be perfectly maintained, but styled with the theatrical, high-contrast makeup and harsh lighting of early cinema actors\n• Preserve actual facial proportions and distinctive traits\n• Skin tones must appear stark, pale, and highly reflective under theatrical spotlights, with deeply shadowed eyes and sharp jawline contours\n• No modern digital sharpness, compression, or neutral mid-tones\n\nENVIRONMENT & STYLE RULES:\n• The entire scene must be blanketed in heavy silver halide film grain, physical celluloid scratches, vertical hair lines, and dust artifacts\n• The image must be framed inside a classic, soft-edged circular or oval 'iris vignette' border, mimicking early camera lenses\n• The environment must be styled with sharp, surrealist geometric shadows, distorted architecture, and steep angles painted directly into the shadows\n• Lighting must be aggressively theatrical and high-contrast (Chiaroscuro), casting massive, elongated silhouettes across the background wall\n\nVERSION-SPECIFIC RULES:\n• The visual style must completely reshape the environment to look like a physical movie studio set from 1922\n• The final output must read as an archival photograph of a classic silent film print",
+    "randomizeOptions": false,
+    "additionalInstructions": "The entire image must simulate a frame from a 1920s silent film. The aesthetic requires severe Chiaroscuro lighting, heavily scratched orthochromatic film texture, and an organic iris vignette framing the scene."
   },
   {
     "name": "EXPRESSIONS",
@@ -19572,6 +19650,19 @@
     }
   ],
   "additionalInstructions": "FLUID RULES:\n\n• Liquid must flow naturally based on gravity or motion\n• Edges must stretch, drip, or break apart into fluid forms\n\nANTI-CHEAT RULES:\n• DO NOT overlay stock splash graphics\n• Liquid must originate from subject pixels\n• No random blobs disconnected from the subject\n\nFAIL CONDITIONS:\n• Liquid appears pasted on → FAIL\n• No connection between subject and fluid → FAIL\n• Motion ignores gravity or flow direction → FAIL\n\nQUALITY:\n• Smooth fluid motion\n• High detail splashes and edges\n• Realistic blending between solid and liquid"
+  },
+  {
+  "name": "LIQUID LIGHT SHOW",
+  "category": [
+    "PSYCHEDELIC",
+    "ANALOG PROJECTION",
+    "FLUID DYNAMICS",
+    "ART",
+    "COLOR THEORY"
+  ],
+  "message": "Take a picture and transform the ENTIRE IMAGE into a mid-century psychedelic liquid light show projection.\n\nTRANSFORMATION RULES (NON-NEGOTIABLE):\n• The entire image must dissolve into organic, swirling bands of colored mineral oils and water-soluble dyes\n• The subject and background must look like they were captured by squeezing immiscible colored liquids between glass clock crystals under an overhead projector\n• Recognition of the subject must be entirely maintained, mapped strictly into the fluid boundaries and flowing color contours\n• Preserve actual facial proportions and traits, translated into undulating organic liquid streams\n• No sharp digital lines, solid vector shapes, or modern computer-generated fractals\n• No natural skin tones or textures; everything is made of illuminated liquid dyes\n\nENVIRONMENT & STYLE RULES:\n• The entire canvas must look like a vivid, intensely backlit analog light projection casting onto a rough, textured concert hall wall or fabric backdrop\n• Colors must be hyper-saturated and dynamic (e.g., acid yellows, electric magentas, deep cobalts) with visible chemical blending, organic marbling, and tiny suspended air bubbles trapped in the fluid layer\n• Heavy, high-contrast black bleeding where the oily layers compress and block the projector lamp light\n• The environment and subject must completely merge into a single flowing, amoebic canvas of light and liquid\n\nVERSION-SPECIFIC RULES:\n• The visual style must perfectly simulate a physical, analog 1960s psychedelic multimedia performance art projection\n• The final image must look like a high-speed photograph of a constantly morphing liquid layer",
+  "randomizeOptions": false,
+  "additionalInstructions": "The entire image must function as a physical liquid oil projection. The defining features are the fluid, sinuous boundaries, hyper-saturated oil-slick colors, and trapped micro-bubbles across the canvas."
   },
   {
     "name": "LIQUID MARBLING",
@@ -35056,6 +35147,19 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "FINAL RESULT:\nThe image should convincingly depict the subject giving a TED Talk, with flavor text displayed on a slide behind them. Flavor text is either from the external master prompt or dynamically generated from the image content itself if no prompt is provided, while keeping the subject’s identity fully recognizable and the scene immersive, professional, and humorous.\n\nSCENE REQUIREMENTS:"
+  },
+  {
+    "name": "TELEGRAPHIC WIREPHOTO",
+    "category": [
+      "TELECOMMUNICATIONS",
+      "RETRO PRINT",
+      "MONOCHROME",
+      "GLITCH",
+      "ARCHIVAL"
+    ],
+    "message": "Take a picture and transform the ENTIRE IMAGE into a 1930s telegraphic wirephoto transmitted over analog telephone lines.\n\nTRANSFORMATION RULES (NON-NEGOTIABLE):\n• The entire image must look like a historical news photograph transmitted line-by-line via an early drum scanner receiver (Belinograph method)\n• Recognition of the subject must be perfectly preserved, but heavily artifacted by electrical static and mechanical synchronization errors\n• Preserve actual facial proportions and distinctive traits, mapped across parallel scan rows\n• The palette must be highly restricted monochrome, utilizing muddy ink-black tones and yellowed, aged newsprint whites\n• No modern digital pixelation, blocky compression artifacts, or clean video scanlines\n\nENVIRONMENT & STYLE RULES:\n• The entire canvas must be constructed of dense, microscopic, horizontal analog transmission lines\n• The image must feature severe mechanical and electrical transmission flaws: erratic horizontal line shifts (sync slippage), ink bleeding, heavy analog static noise, and faint vertical roller-drum scratch marks\n• Contrast must look harshly squashed, creating plugged, heavy ink blotches in deep shadows and blown-out highlights lacking details\n• The background must look like a raw, unedited news report or historical documentation scene captured on location and immediately wired to a press room\n\nVERSION-SPECIFIC RULES:\n• The visual style must perfectly replicate a primitive form of long-distance image data transmission\n• The final image must look like a high-contrast ink reproduction clipped out of an archival early 20th-century newspaper sheet",
+    "randomizeOptions": false,
+    "additionalInstructions": "The entire image must simulate an analog telegraphic wirephoto print. The defining characteristics are the fine horizontal transmission lines, high-contrast ink bleeding on newsprint, and distinct mechanical synchronization errors."
   },
   {
     "name": "TELETUBBIES",
