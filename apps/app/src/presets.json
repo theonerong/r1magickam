@@ -5339,6 +5339,45 @@
     "additionalInstructions": ""
   },
   {
+    "name": "CARNIVAL CHALKWARE",
+    "category": [
+      "CARNIVAL",
+      "COLLECTIBLE",
+      "SCULPTURE",
+      "AMERICANA",
+      "CHARACTER TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform the subject into an authentic Carnival Chalkware prize.\n\nTRANSFORMATION RULES (NON-NEGOTIABLE):\n• The subject must become an authentic Carnival Chalkware sculpture\n• The subject must NOT appear as a real person holding a chalkware prize\n• The subject must NOT appear standing next to a chalkware figure\n• The subject must NOT appear as a photograph pasted onto a chalkware statue\n• The subject must become the actual chalkware figure itself\n• The resulting sculpture should look as though it was originally cast and painted from the subject\n• The resulting figure should appear to be a genuine carnival prize won at a midway game\n• Recognition should come from facial proportions, eye shape, nose shape, smile characteristics, cheek structure, jawline, expression, hairline, hair characteristics, and overall facial identity\n• Preserve recognizable facial identity\n• Preserve recognizable facial structure\n• Preserve recognizable facial proportions\n• Preserve distinctive facial traits\n• Preserve recognizable smile characteristics\n• Preserve recognizable eye shape\n• Preserve recognizable nose shape\n• Preserve recognizable hairstyle characteristics where appropriate\n• Preserve recognizable hair color where appropriate\n• The subject must remain immediately recognizable while fully transformed\n• No realistic skin textures\n• No realistic eyes\n• No photographic rendering\n• No pasted-on facial features\n• No face-swap appearance\n\nCHALKWARE RULES:\n• Authentic carnival chalkware construction\n• Cast plaster appearance\n• Molded sculptural forms\n• Hand-painted carnival prize aesthetics\n• Vintage amusement-park craftsmanship\n• Simplified sculptural anatomy\n• Folk-art manufacturing quality\n• Subject identity must drive the sculptural design\n• The final figure should appear mass-produced from a carnival mold\n• The sculpture must look like an authentic midway prize\n• Slight imperfections consistent with vintage chalkware manufacturing are encouraged\n• The subject must become the chalkware statue itself rather than being depicted on it\n\nMATERIAL RULES:\n• Painted plaster appearance\n• Chalkware surface texture\n• Hand-painted decorative finish\n• Vintage carnival-prize materials\n• Collectible folk-art aesthetics\n• Cast sculpture construction\n• Slight paint wear where appropriate\n• Midway-prize manufacturing quality\n• Antique collectible appearance when appropriate\n\nSTYLE RULES:\n• Authentic carnival chalkware aesthetics\n• Midway prize craftsmanship\n• Boardwalk amusement culture\n• Vintage Americana\n• Folk-art sculpture traditions\n• State fair prize aesthetics\n• Classic carnival souvenir presentation\n• Hand-painted collectible quality\n• Gift-booth prize display aesthetics\n\nDISPLAY RULES:\n• The figure may appear displayed on a shelf, prize counter, carnival booth, midway display, collector showcase, or similar environment\n• The chalkware figure should appear as a physical collectible object\n• The sculpture should be the primary focus of the image\n• The subject's identity must be fully integrated into the sculpture itself\n\nVERSION-SPECIFIC RULES:\n• The selected version determines the style of carnival chalkware figure\n• Subject must fully become the selected chalkware sculpture\n• Facial identity must be sculpted directly into the chalkware figure\n• The subject's face must never appear composited from the original photograph",
+    "randomizeOptions": true,
+    "options": [
+    {
+      "id": "001",
+      "text": "Classic Carnival Prize"
+    },
+    {
+      "id": "002",
+      "text": "Boardwalk Chalkware Figure"
+    },
+    {
+      "id": "003",
+      "text": "State Fair Prize Sculpture"
+    },
+    {
+      "id": "004",
+      "text": "Vintage Midway Chalkware"
+    },
+    {
+      "id": "005",
+      "text": "Collector Showcase Chalkware"
+    },
+    {
+      "id": "006",
+      "text": "Antique Carnival Chalkware"
+    }
+    ],
+    "additionalInstructions": "IDENTITY PRESERVATION (CRITICAL):\n\n• The transformed chalkware figure must clearly resemble the subject at first glance\n• Preserve the subject's unique facial identity\n• Preserve the subject's unique facial structure\n• Preserve distinctive facial traits\n• Preserve recognizable smile characteristics\n• Preserve recognizable facial proportions\n• Preserve recognizable eye shape\n• Preserve recognizable nose shape\n• Preserve recognizable hairstyle characteristics where appropriate\n• Recognition must come from the sculpted figure itself\n• The final collectible must simultaneously read as both the subject and an authentic carnival chalkware prize\n• The sculpture should appear specifically cast and painted from the subject rather than selected from an existing chalkware mold\n\nANTI-CHEAT:\n\n• Do not place a photograph of the subject onto a chalkware figure\n• Do not create a face swap\n• Do not paste the subject's face onto a carnival prize\n• Do not create a real person holding a chalkware figure\n• Do not create a real person standing beside a chalkware figure\n• Do not ignore distinctive facial features\n• Do not replace the subject's identity with generic carnival-prize features\n• Do not create realistic skin\n• Do not create realistic eyes\n• Do not create photographic facial rendering\n• Do not create a generic chalkware figure unrelated to the subject\n• The transformed collectible must be clearly identifiable as the subject\n• The subject must physically become the chalkware sculpture itself\n• Do not create modern resin statues\n• Do not create porcelain figurines\n• Do not create realistic museum sculptures\n\nFINAL RESULT:\nThe subject must become an authentic Carnival Chalkware prize rendered entirely as a cast and hand-painted collectible sculpture. The final figure should immediately evoke vintage carnival midways, state fairs, boardwalk game booths, amusement-park prizes, folk-art collectibles, and classic Americana while maintaining unmistakable recognition of the subject through sculptural transformation rather than photographic realism. The sculpture should look like a genuine chalkware prize won at a carnival and proudly displayed by a collector."
+  },
+  {
     "name": "CARRY ME",
     "category": [
       "HUMOR",
@@ -7289,6 +7328,45 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "COLLECTOR SPOON",
+    "category": [
+      "SOUVENIR",
+      "COLLECTIBLE",
+      "NOVELTY",
+      "TOURIST",
+      "SCULPTURAL TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform the subject into an authentic collectible souvenir spoon.\n\nTRANSFORMATION RULES (NON-NEGOTIABLE):\n• The subject must become an authentic collectible souvenir spoon\n• The subject must NOT appear as a real person holding a spoon\n• The subject must NOT appear standing beside a spoon\n• The subject must NOT appear printed on a spoon\n• The subject must NOT appear engraved onto a spoon as a photograph\n• The subject must become the actual sculptural ornamentation of the souvenir spoon itself\n• The resulting spoon should look as though it was originally manufactured around the subject\n• The resulting spoon should appear to be a genuine collectible souvenir spoon sold in gift shops\n• Recognition should come from facial proportions, eye shape, nose shape, smile characteristics, cheek structure, jawline, expression, hairline, hair characteristics, and overall facial identity\n• Preserve recognizable facial identity\n• Preserve recognizable facial structure\n• Preserve recognizable facial proportions\n• Preserve distinctive facial traits\n• Preserve recognizable smile characteristics\n• Preserve recognizable eye shape\n• Preserve recognizable nose shape\n• Preserve recognizable hairstyle characteristics where appropriate\n• Preserve recognizable hair color where appropriate\n• The subject must remain immediately recognizable while fully transformed\n• No realistic skin textures\n• No realistic eyes\n• No photographic rendering\n• No pasted-on facial features\n• No face-swap appearance\n\nSPOON RULES:\n• The subject must become a sculpted three-dimensional ornament integrated into the spoon\n• The subject should form part of the spoon handle, finial, decorative topper, or ornamental sculptural element\n• The spoon must remain functional and recognizable as a souvenir spoon\n• The spoon must appear professionally manufactured\n• The spoon should appear collectible and display-worthy\n• Subject identity must drive the sculptural design\n• The final spoon should appear custom-manufactured from the subject\n• The spoon should look like a premium souvenir collectible\n• The subject must be physically incorporated into the spoon design rather than merely depicted on it\n\nMATERIAL RULES:\n• Polished silver appearance when appropriate\n• Antique silver appearance when appropriate\n• Pewter appearance when appropriate\n• Gold-plated appearance when appropriate\n• Cast-metal construction\n• Decorative souvenir craftsmanship\n• Manufactured collectible quality\n• Gift-shop collectible aesthetics\n• Three-dimensional sculptural detail\n\nDESIGN RULES:\n• Authentic souvenir spoon design language\n• Ornate decorative craftsmanship\n• Tourist collectible aesthetics\n• Detailed sculptural ornamentation\n• Decorative handle construction\n• Collector-grade manufacturing quality\n• Display-worthy presentation\n• The subject's identity must be translated into ornamental spoon sculpture\n\nSTYLE RULES:\n• Authentic collectible souvenir spoon aesthetics\n• Tourist souvenir craftsmanship\n• Gift-shop collectible presentation\n• Decorative metalworking artistry\n• Premium collectible quality\n• Manufactured keepsake appearance\n• Traditional souvenir spoon design language\n\nVERSION-SPECIFIC RULES:\n• The selected version determines the style of souvenir spoon and ornamentation\n• Subject must fully become part of the spoon itself\n• Facial identity must be sculpted directly into the spoon ornamentation\n• The subject's face must never appear composited from the original photograph",
+    "randomizeOptions": true,
+    "options": [
+    {
+      "id": "001",
+      "text": "Classic Silver Souvenir Spoon"
+    },
+    {
+      "id": "002",
+      "text": "Antique Victorian Souvenir Spoon"
+    },
+    {
+      "id": "003",
+      "text": "Gold-Plated Collector Spoon"
+    },
+    {
+      "id": "004",
+      "text": "Tourist Gift Shop Souvenir Spoon"
+    },
+    {
+      "id": "005",
+      "text": "State Fair Commemorative Spoon"
+    },
+    {
+      "id": "006",
+      "text": "Museum Gift Shop Collector Spoon"
+    }
+    ],
+    "additionalInstructions": "IDENTITY PRESERVATION (CRITICAL):\n\n• The transformed souvenir spoon must clearly resemble the subject at first glance\n• Preserve the subject's unique facial identity\n• Preserve the subject's unique facial structure\n• Preserve distinctive facial traits\n• Preserve recognizable smile characteristics\n• Preserve recognizable facial proportions\n• Preserve recognizable eye shape\n• Preserve recognizable nose shape\n• Recognition must come from the sculpted ornamentation itself\n• The final collectible must simultaneously read as both the subject and an authentic souvenir spoon\n• The spoon should appear specifically designed and manufactured from the subject rather than selected from an existing souvenir collection\n\nANTI-CHEAT:\n\n• Do not place a photograph of the subject onto a spoon\n• Do not engrave a photographic portrait onto the spoon\n• Do not create a face swap\n• Do not paste the subject's face onto a decorative spoon\n• Do not create a real person holding a spoon\n• Do not create a real person standing beside a spoon\n• Do not ignore distinctive facial features\n• Do not replace the subject's identity with generic ornamentation\n• Do not create realistic skin\n• Do not create realistic eyes\n• Do not create photographic facial rendering\n• Do not create a generic souvenir spoon unrelated to the subject\n• The transformed collectible must be clearly identifiable as the subject\n• The subject must physically become part of the spoon's sculptural construction\n\nFINAL RESULT:\nThe subject must become an authentic collectible souvenir spoon rendered entirely as a professionally manufactured tourist keepsake. The spoon should feature ornate sculptural ornamentation derived directly from the subject's recognizable identity while remaining a genuine souvenir spoon. The final image should immediately evoke gift-shop collectibles, tourist souvenirs, commemorative keepsakes, and decorative metal craftsmanship while maintaining unmistakable recognition of the subject through sculptural transformation rather than photographic realism."
   },
   {
     "name": "COLOR BY NUMBERS",
@@ -37695,6 +37773,45 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "IMPORTANT: Female prehistoric humans should look distinctly MORE DELICATE and FEMININE than males of the same species while still maintaining the species' characteristic features. The sexual dimorphism should be clearly visible.\n\nTRANSFORMATION FEATURES (Applied TO subject, not replacing):\n• ADD brow ridges to subject's existing forehead (heavy for males, lighter for females)\n• MODIFY subject's jaw to be more robust (or delicate for females)\n• ADJUST subject's nose to species characteristics\n• ADD appropriate body hair to subject\n• ENHANCE subject's build to be muscular/robust (or slender for females)\n• Subject's eyes, eye color, facial proportions PRESERVED\n• Subject's hair color maintained (just styled primitively)\n• Subject's skin tone preserved (just weathered)\n• Subject clearly recognizable as themselves transformed\n\nPRIMITIVE CLOTHING:\n• Animal hide wraps and pelts\n• Fur clothing (bear, mammoth, deer)\n• Leather straps and ties\n• Bone ornaments and necklaces\n• Shell or tooth jewelry\n• Crude belt or waistband\n• Minimal clothing appropriate to Stone Age\n• Gender-appropriate primitive attire:\n  - Males: Animal hide loincloth, fur shoulder wrap\n  - Females: Animal hide dress or wrap, more decorative jewelry\n\nPREHISTORIC SETTING:\n• Cave entrance or rock shelter\n• Rocky outcrop or cliff\n• Savanna landscape\n• Forest clearing\n• Stone tool workshop area\n• Campfire scene\n• Near water source\n• Open grassland\n\nPERIOD ELEMENTS:\n• Stone tools (hand axes, scrapers, points)\n• Wooden spears or clubs\n• Animal bones scattered\n• Primitive shelter structure\n• Cave paintings on walls in background\n• Fire pit with stones\n• Animal skins drying\n• Primitive food preparation area\n\nBODY CHARACTERISTICS:\n• Species-appropriate hair coverage (on subject's body)\n• Weathered, sun-exposed skin (subject's skin tone)\n• Calloused hands and feet\n• Muscular from physical lifestyle (males more so)\n• Posture appropriate to species\n• Bare feet or primitive footwear\n• Natural, unkempt hair (subject's hair color)\n\nLIGHTING:\n• Natural outdoor lighting\n• Firelight glow\n• Dawn or dusk golden hour\n• Cave shadows and torch light\n• Harsh prehistoric sun\n• Dramatic natural lighting\n\nPHOTOGRAPHY STYLE:\n• Photorealistic reconstruction\n• Museum diorama quality\n• Documentary/National Geographic aesthetic\n• Scientific accuracy\n• Paleoanthropological precision\n• Could be from natural history exhibit\n\nSCIENTIFIC LABEL:\n• Text label at bottom of image\n• Species name in italicized Latin (e.g., *Homo neanderthalensis*)\n• Museum placard or documentary style\n• Scientific nomenclature format\n• Could include time period (e.g., \"300,000-30,000 years ago\")\n• Location if relevant (e.g., \"Europe and Western Asia\")\n\nANTHROPOLOGICAL ACCURACY:\n• Based on fossil evidence\n• Scientifically accurate features\n• Correct anatomical proportions for species\n• Realistic prehistoric human appearance\n• Paleoanthropology research-based\n• Could be museum reconstruction\n\nFINAL RESULT:\nThe image should show the subject - CLEARLY RECOGNIZABLE with their own face, eyes, and features - transformed into a scientifically accurate early human ancestor with species-specific anatomical features added to their existing face and body, with CLEAR GENDER DIFFERENCES (males more robust, females more delicate), dressed in primitive Stone Age clothing, in a prehistoric setting with period-appropriate elements and natural lighting, complete with a scientific label - appearing as a photorealistic paleoanthropological reconstruction where you can definitively say 'that's [subject's name] as a Neanderthal.'"
+  },
+  {
+    "name": "TROLL DOLL",
+    "category": [
+      "TOY",
+      "COLLECTIBLE",
+      "CHARACTER TRANSFORMATION",
+      "RETRO",
+      "NOVELTY"
+    ],
+    "message": "Take a picture and transform the subject into an authentic Troll Doll.\n\nTRANSFORMATION RULES (NON-NEGOTIABLE):\n• The subject must become an authentic Troll Doll\n• The subject must NOT appear as a real person holding a Troll Doll\n• The subject must NOT appear as a real person dressed as a Troll Doll\n• The subject must NOT appear as a photograph with a Troll Doll face pasted on top\n• The subject must become the actual Troll Doll itself\n• The resulting Troll Doll should look as though it was originally manufactured from the subject\n• The resulting Troll Doll should appear to be an official collectible toy\n• Facial structure must be translated into authentic Troll Doll design language\n• Recognition should come from facial proportions, smile shape, eye shape, eye spacing, nose shape, cheek structure, jawline, expression, hairline, hair characteristics, and overall facial identity\n• Preserve recognizable facial identity\n• Preserve recognizable facial structure\n• Preserve recognizable facial proportions\n• Preserve distinctive facial traits\n• Preserve recognizable smile characteristics\n• Preserve recognizable eye shape\n• Preserve recognizable nose shape\n• Preserve recognizable hairstyle characteristics where appropriate\n• Preserve recognizable hair color exactly\n• The subject must remain immediately recognizable while fully transformed\n• No realistic skin textures\n• No realistic eyes\n• No photographic rendering\n• No pasted-on facial features\n• No face-swap appearance\n\nTROLL DOLL RULES:\n• Authentic Troll Doll proportions\n• Oversized Troll Doll head\n• Compact Troll Doll body\n• Authentic toy-like anatomy\n• Molded plastic construction\n• Vinyl toy aesthetics\n• Hand-painted collectible toy appearance\n• Subject identity must drive the final doll design\n• The final doll should appear custom-manufactured from the subject\n• The doll must appear mass-produced rather than handcrafted\n• The doll should look like a genuine collectible toy\n\nHAIR RULES:\n• Preserve the subject's actual hair color\n• Preserve recognizable hair characteristics whenever possible\n• Troll hair must erupt vertically from the top of the head\n• Hair must be dramatically exaggerated in classic Troll Doll fashion\n• Hair should be tall, fluffy, colorful, and iconic\n• The hair must remain rooted in the subject's recognizable hair identity\n• Do not replace the subject's hair color with a generic Troll Doll color\n• Hair should be one of the dominant visual elements of the toy\n\nMATERIAL RULES:\n• Molded vinyl head\n• Molded toy body\n• Collectible toy materials\n• Glossy painted eyes\n• Factory-manufactured appearance\n• Commercial toy production aesthetics\n• Authentic collectible finish\n\nSTYLE RULES:\n• Authentic Troll Doll design language\n• Vintage novelty toy aesthetics\n• Collectible toy craftsmanship\n• Retro toy-store presentation\n• Nostalgic toy photography\n• Commercial toy packaging quality\n\nVERSION-SPECIFIC RULES:\n• The selected version determines the presentation and manufacturing style\n• Subject must fully become the selected Troll Doll version\n• Facial identity must be sculpted directly into the doll\n• The subject's face must never appear composited from the original photograph",
+    "randomizeOptions": true,
+    "options": [
+    {
+      "id": "001",
+      "text": "Classic 1960s Troll Doll"
+    },
+    {
+      "id": "002",
+      "text": "Vintage Toy Store Display"
+    },
+    {
+      "id": "003",
+      "text": "Collector Edition Troll Doll"
+    },
+    {
+      "id": "004",
+      "text": "Toy Packaging"
+    },
+    {
+      "id": "005",
+      "text": "Treasure Troll"
+    },
+    {
+      "id": "006",
+      "text": "Giant Troll Hair Edition"
+    }
+    ],
+    "additionalInstructions": "IDENTITY PRESERVATION (CRITICAL):\n\n• The transformed Troll Doll must clearly resemble the subject at first glance\n• Preserve the subject's unique facial identity\n• Preserve the subject's unique facial structure\n• Preserve distinctive facial traits\n• Preserve recognizable smile characteristics\n• Preserve recognizable facial proportions\n• Preserve recognizable eye shape\n• Preserve recognizable nose shape\n• Preserve recognizable hair identity while adapting it into Troll Doll hair\n• Recognition must come from the transformed doll itself\n• The final collectible must simultaneously read as both the subject and an authentic Troll Doll\n• The doll should appear specifically manufactured from the subject rather than selected from an existing Troll Doll line\n\nANTI-CHEAT:\n\n• Do not generate a generic Troll Doll\n• Do not use a standard Troll Doll face\n• Do not create a face swap\n• Do not paste the subject's face onto a Troll Doll\n• Do not create a real person dressed as a Troll Doll\n• Do not create a real person holding a Troll Doll\n• Do not ignore distinctive facial features\n• Do not replace the subject's facial identity with generic toy features\n• Do not replace the subject's hair color with a generic Troll Doll hair color\n• Do not create realistic skin\n• Do not create realistic eyes\n• Do not create photographic facial rendering\n• The transformed doll must be clearly identifiable as the subject\n\nFINAL RESULT:\nThe subject must become an authentic Troll Doll rendered entirely as a manufactured collectible toy. The doll's oversized head, compact body, molded vinyl construction, iconic vertical hair, painted features, and collectible toy aesthetics should immediately evoke classic Troll Dolls while preserving unmistakable recognition of the subject through sculptural toy transformation rather than photographic realism. The final image should look like a genuine Troll Doll that was specifically designed, sculpted, and manufactured from the subject."
   },
   {
     "name": "TROMPE-L'OEIL",
