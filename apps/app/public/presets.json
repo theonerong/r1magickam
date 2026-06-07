@@ -22617,6 +22617,111 @@
     "additionalInstructions": ""
   },
   {
+    "name": "MIRROR IMAGE",
+    "category": [
+      "DOPPELGANGER",
+      "MIRROR",
+      "SURREAL",
+      "FANTASY",
+      "DUPLICATION"
+    ],
+    "message": "Take a picture and create a mirror-image duplicate of the subject within the scene.\n\nTRANSFORMATION RULES (NON-NEGOTIABLE):\n• The original subject must remain present in the image\n• A second version of the subject must appear somewhere within the image\n• The second version must be a true mirror-image counterpart of the subject\n• The second version must clearly be derived from the subject\n• The second version must preserve the subject's recognizable identity\n• The second version must preserve facial structure\n• The second version must preserve facial proportions\n• The second version must preserve eye shape\n• The second version must preserve nose shape\n• The second version must preserve smile characteristics\n• The second version must preserve hairstyle characteristics\n• The second version must preserve body proportions\n• The second version must preserve clothing identity whenever appropriate\n• The mirror image must look like an alternate manifestation of the subject rather than a different person\n• The mirror image must appear naturally integrated into the selected scenario\n• The mirror image must not appear pasted into the scene\n• The mirror image must not appear composited from another photograph\n• The mirror image must not appear distorted unless required by the selected scenario\n• The original subject and mirror image must clearly coexist within the same final image\n\nMIRROR IMAGE RULES:\n• The mirror image must be immediately recognizable as the subject\n• Recognition should come from facial proportions, eye shape, nose shape, smile characteristics, facial structure, expression, hairstyle, body proportions, and overall identity\n• The mirror image should feel mysterious, magical, surreal, supernatural, or physically impossible depending on the selected scenario\n• The mirror image may interact with the environment when appropriate\n• The mirror image may interact with the subject when appropriate\n• The mirror image must remain visually believable within the selected scenario\n• The mirror image should feel intentionally placed rather than randomly duplicated\n\nSTYLE RULES:\n• High-quality visual integration\n• Convincing duplication of identity\n• Natural scene composition\n• Strong visual storytelling\n• Professional photographic quality\n• Cohesive rendering throughout the image\n\nVERSION-SPECIFIC RULES:\n• The selected placement option determines where and how the mirror image appears\n• The selected color option determines the appearance of the mirror image\n• The mirror image must fully conform to both selected option groups\n• The mirror image must remain recognizable as the subject regardless of color treatment\n• The mirror image must never appear as an unrelated person",
+    "randomizeOptions": true,
+    "optionGroups": [
+    {
+      "title": "PLACEMENT",
+      "options": [
+        {
+          "id": "001",
+          "text": "Mirror Reflection",
+          "instruction": "The mirror image appears inside a mirror while the original subject stands outside the mirror. The mirror image may have a different pose, expression, or behavior than the original subject."
+        },
+        {
+          "id": "002",
+          "text": "Standing Beside Subject",
+          "instruction": "The mirror image stands physically beside the subject as a separate individual. Both versions coexist in the same environment."
+        },
+        {
+          "id": "003",
+          "text": "Interacting With Subject",
+          "instruction": "The mirror image physically interacts with the subject. They may shake hands, converse, exchange objects, point at each other, sit together, or otherwise acknowledge one another."
+        },
+        {
+          "id": "004",
+          "text": "Reflection In Water",
+          "instruction": "The mirror image appears reflected in water. The reflection may exhibit independent behavior while remaining visually tied to the subject."
+        },
+        {
+          "id": "005",
+          "text": "Reflection On Polished Surface",
+          "instruction": "The mirror image appears reflected in a polished surface such as glass, chrome, marble, polished stone, or metal."
+        },
+        {
+          "id": "006",
+          "text": "Shadow Doppelganger",
+          "instruction": "The mirror image appears as a living shadow counterpart connected to the subject."
+        },
+        {
+          "id": "007",
+          "text": "Behind The Subject",
+          "instruction": "The mirror image stands directly behind the subject as a mysterious duplicate."
+        },
+        {
+          "id": "008",
+          "text": "Through A Portal",
+          "instruction": "The mirror image appears visible through a magical doorway, portal, window, gateway, or dimensional opening."
+        },
+        {
+          "id": "009",
+          "text": "Photograph Comes Alive",
+          "instruction": "The mirror image appears as a living version of the subject emerging from a photograph, portrait, poster, or framed image."
+        },
+        {
+          "id": "010",
+          "text": "Opposite Side Of The Scene",
+          "instruction": "The mirror image appears elsewhere within the environment, mirroring the subject from across the scene."
+        }
+      ]
+    },
+    {
+      "title": "COLOR",
+      "options": [
+        {
+          "id": "101",
+          "text": "Full Color Mirror Image",
+          "instruction": "The mirror image appears in full natural color."
+        },
+        {
+          "id": "102",
+          "text": "Black And White Mirror Image",
+          "instruction": "The mirror image appears entirely in black and white while the original subject remains in full color."
+        },
+        {
+          "id": "103",
+          "text": "Sepia Mirror Image",
+          "instruction": "The mirror image appears entirely in sepia tones while the original subject remains in full color."
+        },
+        {
+          "id": "104",
+          "text": "Silver Mirror Image",
+          "instruction": "The mirror image appears metallic silver, resembling a living mirror reflection."
+        },
+        {
+          "id": "105",
+          "text": "Blue Ghost Mirror Image",
+          "instruction": "The mirror image appears rendered in luminous blue monochrome tones."
+        },
+        {
+          "id": "106",
+          "text": "Negative Image Mirror Image",
+          "instruction": "The mirror image appears as a photographic negative version of the subject."
+        }
+      ]
+    }
+    ],
+    "additionalInstructions": "IDENTITY PRESERVATION (CRITICAL):\n\n• The mirror image must clearly resemble the subject\n• Preserve the subject's unique facial identity\n• Preserve facial structure\n• Preserve facial proportions\n• Preserve distinctive facial traits\n• Preserve hairstyle characteristics\n• Preserve recognizable expressions where appropriate\n• Someone familiar with the subject should immediately recognize both figures as the same person\n• The mirror image must not resemble a sibling, relative, or lookalike\n• The mirror image must clearly be the subject\n\nANTI-CHEAT:\n\n• Do not generate a second unrelated person\n• Do not generate a generic twin\n• Do not generate a generic clone\n• Do not replace the subject with the mirror image\n• Do not remove the original subject\n• Do not create an obvious copy-and-paste duplicate\n• Do not create mismatched facial features\n• Do not alter identity between the original subject and the mirror image\n• Do not create a mirror image that resembles someone else\n• Do not ignore the selected placement option\n• Do not ignore the selected color option\n\nFINAL RESULT:\nThe final image must contain both the original subject and a clearly recognizable mirror-image counterpart of the same subject. The mirror image must fully conform to the selected placement option and selected color option while maintaining unmistakable identity recognition. The result should feel magical, surreal, mysterious, or impossible while remaining visually convincing and professionally integrated into the scene."
+  },
+  {
     "name": "MIRROR WORLD",
     "category": [
       "ILLUSION",
