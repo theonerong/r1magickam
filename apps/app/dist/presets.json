@@ -3646,6 +3646,20 @@
     "additionalInstructions": ""
   },
   {
+    "name": "BLOW MOLD",
+    "category": [
+      "HOLIDAY",
+      "COLLECTIBLE",
+      "PLASTIC",
+      "YARD DECORATION",
+      "CHARACTER TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform the subject into an authentic vintage blow mold decoration.\n\nTRANSFORMATION RULES (NON-NEGOTIABLE):\n• The subject must become an authentic blow mold decoration\n• The subject must NOT appear standing beside a blow mold\n• The subject must NOT appear holding a blow mold\n• The subject must become the actual blow mold itself\n• The resulting decoration should look as though it was originally manufactured from the subject\n• Recognition should come from facial proportions, eye shape, nose shape, smile characteristics, cheek structure, jawline, expression, hairline characteristics, and overall identity\n• Preserve recognizable facial identity\n• Preserve recognizable facial structure\n• Preserve recognizable facial proportions\n• Preserve distinctive facial traits\n• Preserve recognizable smile characteristics\n• The subject must remain immediately recognizable while fully transformed\n• No realistic skin textures\n• No realistic eyes\n• No photographic rendering\n• No pasted-on facial features\n\nBLOW MOLD RULES:\n• Authentic molded-plastic construction\n• Hollow illuminated decoration\n• Vintage seasonal decoration aesthetics\n• Manufactured retail quality\n• Internal light source glow\n• Molded facial features\n• Simplified commercial sculptural forms\n• Subject identity must drive the molded design\n• The subject must physically become the blow mold itself\n• The decoration should appear factory manufactured\n\nMATERIAL RULES:\n• Molded polyethylene appearance\n• Internal illumination glow\n• Vintage seasonal decoration finish\n• Commercial holiday product aesthetics\n• Plastic manufacturing characteristics\n\nSTYLE RULES:\n• Authentic vintage blow mold aesthetics\n• Seasonal lawn-decoration presentation\n• Mid-century holiday decoration influence\n• Collector-quality nostalgia\n• Commercial holiday retail quality\n\nANTI-CHEAT:\n• Do not place a person beside a blow mold\n• Do not create a person wearing a blow mold costume\n• Do not paste the subject's face onto a decoration\n• Do not create a face swap\n• The subject must physically become the blow mold itself\n\nFINAL RESULT:\nThe subject must become an authentic illuminated blow mold decoration rendered entirely as a molded-plastic seasonal collectible while maintaining unmistakable recognition of the subject through sculptural transformation rather than photographic realism.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "IDENTITY PRESERVATION (CRITICAL):\n\n• The transformed blow mold must clearly resemble the subject at first glance\n• Preserve distinctive facial structure\n• Preserve facial proportions\n• Preserve recognizable expression characteristics\n• Recognition must come from the molded decoration itself\n• The final collectible must simultaneously read as both the subject and an authentic vintage blow mold\n• The decoration should appear specifically manufactured from the subject rather than selected from an existing product line"
+  },
+  {
     "name": "BLUEPRINT",
     "category": [
       "TECHNICAL",
@@ -3944,6 +3958,20 @@
     ],
     "randomizeOptions": true,
     "additionalInstructions": ""
+  },
+  {
+    "name": "BONSAI FIGURE",
+    "category": [
+      "BONSAI",
+      "SCULPTURE",
+      "MINIATURE",
+      "NATURE",
+      "CHARACTER TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform the subject into an authentic bonsai figure.\n\nTRANSFORMATION RULES (NON-NEGOTIABLE):\n• The subject must become an authentic bonsai sculpture\n• The subject must NOT appear standing next to a bonsai tree\n• The subject must NOT appear holding a bonsai tree\n• The subject must NOT appear as a miniature person beside a bonsai\n• The subject must become the actual bonsai creation itself\n• The resulting bonsai should look as though it was cultivated from the subject\n• Recognition should come from facial proportions, eye shape, nose shape, smile characteristics, cheek structure, jawline, expression, posture, and overall identity\n• Preserve recognizable facial identity\n• Preserve recognizable facial structure\n• Preserve recognizable facial proportions\n• Preserve distinctive facial traits\n• Preserve recognizable smile characteristics\n• Preserve recognizable body proportions where appropriate\n• The subject must remain immediately recognizable while fully transformed\n• No realistic skin textures\n• No realistic eyes\n• No photographic rendering\n• No pasted-on facial features\n\nBONSAI RULES:\n• Authentic bonsai craftsmanship\n• Living tree construction\n• Twisted trunks and branches should form the subject's identity\n• Facial identity should emerge naturally from the bonsai structure\n• The subject must physically become the bonsai itself\n• Branches, roots, bark, foliage, and trunk should participate in forming recognizable identity\n• The bonsai should appear expertly cultivated over decades\n• The bonsai should appear display-worthy and museum-quality\n• The tree should be planted in an authentic bonsai container\n• The bonsai must remain believable as a real bonsai specimen\n\nMATERIAL RULES:\n• Authentic bark textures\n• Bonsai foliage\n• Living wood construction\n• Natural root structures\n• Authentic bonsai pot\n• Professional bonsai presentation\n• Botanical realism\n\nSTYLE RULES:\n• Authentic bonsai artistry\n• Japanese bonsai aesthetics\n• Living sculpture craftsmanship\n• Botanical art presentation\n• Collector-quality bonsai display\n• Museum-quality bonsai cultivation\n\nANTI-CHEAT:\n• Do not place a person beside a bonsai tree\n• Do not create a bonsai growing next to the subject\n• Do not paste the subject's face into a tree\n• Do not create a face swap\n• Do not ignore distinctive facial features\n• Do not create a generic bonsai unrelated to the subject\n• The subject must physically become the bonsai itself\n• The bonsai must remain a genuine tree rather than a statue\n\nFINAL RESULT:\nThe subject must become an authentic bonsai creation rendered entirely as a living miniature tree sculpture. The final image should immediately evoke bonsai artistry, patient cultivation, natural beauty, and botanical craftsmanship while maintaining unmistakable recognition of the subject through organic transformation rather than photographic realism.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "IDENTITY PRESERVATION (CRITICAL):\n\n• The transformed bonsai must clearly resemble the subject at first glance\n• Preserve the subject's unique facial identity\n• Preserve distinctive facial structure\n• Preserve facial proportions\n• Preserve recognizable expression characteristics\n• Recognition must come from the bonsai itself\n• The final bonsai must simultaneously read as both the subject and an authentic bonsai tree\n• The bonsai should appear specifically cultivated from the subject rather than selected from an existing specimen"
   },
   {
     "name": "BOOK ART",
@@ -11344,6 +11372,20 @@
     "additionalInstructions": "FINAL RESULT:\nThe image should show the subject transformed into a fantasy elf with prominent pointed ears, slender graceful build, ethereal beauty, elegant clothing or armor, type-specific coloring and features - the subject's face clearly recognizable with elvish refinement added, holding bow or magical staff, in an appropriate fantasy setting with magical lighting and that timeless, otherworldly elven grace."
   },
   {
+    "name": "ELF ON THE SHELF",
+    "category": [
+      "CHRISTMAS",
+      "HOLIDAY",
+      "TOY",
+      "COLLECTIBLE",
+      "CHARACTER TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform the subject into an authentic Elf on the Shelf doll.\n\nTRANSFORMATION RULES (NON-NEGOTIABLE):\n• The subject must become an authentic Elf on the Shelf doll\n• The subject must NOT appear as a real person dressed as an elf\n• The subject must NOT appear holding an Elf on the Shelf doll\n• The subject must NOT appear standing beside an Elf on the Shelf doll\n• The subject must become the actual Elf on the Shelf doll itself\n• The resulting doll should look as though it was originally manufactured from the subject\n• Recognition should come from facial proportions, eye shape, nose shape, smile characteristics, cheek structure, jawline, expression, hairline characteristics, and overall identity\n• Preserve recognizable facial identity\n• Preserve recognizable facial structure\n• Preserve recognizable facial proportions\n• Preserve distinctive facial traits\n• Preserve recognizable smile characteristics\n• The subject must remain immediately recognizable while fully transformed\n• No realistic skin textures\n• No realistic eyes\n• No photographic rendering\n• No pasted-on facial features\n\nELF RULES:\n• Authentic Elf on the Shelf construction\n• Molded toy head\n• Soft toy body\n• Classic red elf costume\n• White collar\n• Holiday toy aesthetics\n• Manufactured collectible quality\n• The subject must physically become the elf doll itself\n• Subject identity must drive the final doll design\n• The doll should appear officially manufactured\n• The doll should appear posed in a mischievous holiday situation\n\nSTYLE RULES:\n• Authentic Elf on the Shelf aesthetics\n• Christmas holiday presentation\n• Toy-photography quality\n• Whimsical holiday storytelling\n• Family-friendly presentation\n\nANTI-CHEAT:\n• Do not create a person wearing an elf costume\n• Do not place a person beside an elf doll\n• Do not paste the subject's face onto an elf doll\n• Do not create a face swap\n• The subject must physically become the doll itself\n\nFINAL RESULT:\nThe subject must become an authentic Elf on the Shelf doll rendered entirely as a manufactured holiday collectible while maintaining unmistakable recognition of the subject through toy transformation rather than photographic realism.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "• Recognition must come from the transformed doll itself\n• The final collectible must simultaneously read as both the subject and an authentic Elf on the Shelf doll\n• The doll should appear specifically manufactured from the subject rather than selected from an existing product line"
+  },
+  {
     "name": "EMBROIDERY",
     "category": [
       "ART",
@@ -16210,6 +16252,45 @@
     "additionalInstructions": "FINAL RESULT:\nAn authentic GoldSrc-era Half-Life gameplay screenshot where the entire original image has been converted into the visual language of the original 1998 game. Preserve composition while transforming all architecture, objects, environments, lighting, and characters into assets and aesthetics consistent with Black Mesa, Xen, military operations, and scientific experimentation. People become Gordon Freeman, scientists, security guards, HECU marines, or other authentic character types. Animals become actual Half-Life creatures. Objects become weapons, equipment, pickups, machinery, or scientific apparatus from the game world. Environments become believable Black Mesa sectors, industrial facilities, military areas, or Xen locations. The final image must convincingly appear as a genuine screenshot from the original Half-Life running on the GoldSrc engine, complete with period-accurate graphics, HUD, textures, lighting, geometry, and atmosphere."
   },
   {
+    "name": "HALLOWEEN YARD DECORATION",
+    "category": [
+      "HALLOWEEN",
+      "SEASONAL",
+      "DECORATION",
+      "YARD DISPLAY",
+      "CHARACTER TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform the subject into an authentic Halloween yard decoration.\n\nTRANSFORMATION RULES (NON-NEGOTIABLE):\n• The subject must become the Halloween decoration itself\n• The subject must NOT appear standing beside a decoration\n• The subject must NOT appear wearing a costume\n• The resulting decoration should look as though it was manufactured from the subject\n• Preserve recognizable facial identity\n• Preserve recognizable facial structure\n• Preserve recognizable facial proportions\n• Preserve distinctive facial traits\n• Recognition should come from sculptural transformation rather than realism\n• The decoration must appear physically installed in a Halloween yard display\n• No realistic skin textures\n• No realistic eyes\n• No photographic rendering\n• No pasted-on facial features\n\nDECORATION RULES:\n• Authentic commercial Halloween decoration aesthetics\n• Retail-quality seasonal decoration\n• Subject identity must drive the final decoration design\n• The decoration should appear professionally manufactured\n• The subject must physically become the decoration itself\n\nSTYLE RULES:\n• Halloween seasonal aesthetics\n• Yard-haunt presentation\n• Holiday retail display quality\n• Decorative craftsmanship\n\nVERSION-SPECIFIC RULES:\n• The selected version determines the decoration type\n• The subject must fully become the selected decoration",
+    "randomizeOptions": true,
+    "options": [
+    {
+      "id": "001",
+      "text": "Inflatable Yard Decoration"
+    },
+    {
+      "id": "002",
+      "text": "Animated Yard Prop"
+    },
+    {
+      "id": "003",
+      "text": "Skeleton Decoration"
+    },
+    {
+      "id": "004",
+      "text": "Foam Tombstone Decoration"
+    },
+    {
+      "id": "005",
+      "text": "Giant Lawn Ghost"
+    },
+    {
+      "id": "006",
+      "text": "Front-Yard Monster Display"
+    }
+    ],
+    "additionalInstructions": "IDENTITY PRESERVATION (CRITICAL):\n\n• The transformed decoration must clearly resemble the subject\n• Preserve distinctive facial structure\n• Preserve facial proportions\n• Recognition must come from the decoration itself\n\nANTI-CHEAT:\n\n• Do not create a real person in costume\n• Do not place the subject beside the decoration\n• Do not paste the subject's face onto a prop\n• The subject must physically become the Halloween decoration itself\n\nFINAL RESULT:\nThe subject must become an authentic commercial Halloween yard decoration installed within a seasonal yard display while maintaining unmistakable recognition of the subject through decorative transformation rather than photographic realism."
+  },
+  {
     "name": "HAND-TINTED PHOTOGRAPH",
     "category": [
       "PHOTOGRAPHY",
@@ -19743,6 +19824,20 @@
     "randomizeOptions": false,
     "additionalInstructions": ""
   },
+  { 
+    "name": "LITTLE GOLDEN BOOK",
+    "category": [
+      "CHILDREN'S BOOK",
+      "ILLUSTRATION",
+      "VINTAGE",
+      "BOOK COVER",
+      "STORYBOOK"
+    ],
+    "message": "Take a picture and transform it into an authentic Little Golden Book.\n\nTRANSFORMATION RULES (NON-NEGOTIABLE):\n• Transform the image into the cover and presentation of a classic Little Golden Book\n• The subject must become the main character of the storybook\n• The final image must appear to be a genuine vintage Little Golden Book cover\n• The image must NOT appear as a photograph placed onto a book\n• The image must NOT appear as a modern digital book mockup\n• The entire image must be illustrated in authentic Little Golden Book visual language\n• Preserve recognizable facial identity\n• Preserve recognizable facial structure\n• Preserve recognizable facial proportions\n• Preserve distinctive facial traits\n• Preserve recognizable expression characteristics\n• Preserve recognizable hairstyle characteristics\n• The subject must remain recognizable while fully transformed into storybook illustration form\n• No realistic skin textures\n• No photographic rendering\n• No pasted-on facial features\n\nBOOK RULES:\n• Authentic Little Golden Book cover design\n• Classic gold foil spine\n• Vintage children's book proportions\n• Warm, inviting storybook illustration aesthetics\n• Professional children's publishing quality\n• The subject should appear as the star of the book's story\n• The cover should feel like a beloved classic children's book\n• The artwork should look hand-painted or traditionally illustrated\n• The title of the book must be generated from the flavor text provided by the user\n• The flavor text should be interpreted as the official title of the Little Golden Book\n• The title should appear naturally integrated into the cover design\n\nILLUSTRATION RULES:\n• Authentic mid-century children's book illustration\n• Warm storybook color palettes\n• Charming family-friendly artwork\n• Traditional publishing illustration techniques\n• Vintage nursery-book aesthetics\n• Wholesome storytelling presentation\n• Golden Age children's literature influence\n\nSTYLE RULES:\n• Authentic Little Golden Book visual language\n• Vintage children's publishing aesthetics\n• Mid-century illustration craftsmanship\n• Nostalgic storybook presentation\n• Collector-quality book-cover design\n\nANTI-CHEAT:\n• Do not place a photograph onto a book cover\n• Do not create a modern digital poster\n• Do not create a face swap\n• Do not ignore distinctive facial features\n• Do not create generic storybook characters unrelated to the subject\n• The image must resemble an authentic Little Golden Book rather than a parody\n\nFINAL RESULT:\nThe final image must appear to be an authentic vintage Little Golden Book starring the subject as the main character. The cover should feature genuine storybook illustration aesthetics, a classic golden spine, a title derived from the supplied flavor text, and charming children's-book artwork while maintaining unmistakable recognition of the subject through illustration rather than photographic realism.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "IDENTITY PRESERVATION (CRITICAL):\n\n• The illustrated character must clearly resemble the subject\n• Preserve the subject's unique facial identity\n• Preserve distinctive facial structure\n• Preserve facial proportions\n• Preserve recognizable expression characteristics\n• Recognition must come from the illustration itself\n• The final book cover must simultaneously read as both the subject and an authentic Little Golden Book\n• The subject should appear to be the original inspiration for the illustrated character\n\nFLAVOR TEXT USAGE:\n\n• Use the user's flavor text as the official title of the Little Golden Book\n• The title should be prominently displayed on the cover\n• The title should be rendered as a professionally designed children's book title\n• The flavor text should never be ignored"
+  },
   {
     "name": "LITTLE ORPHAN ANNIE",
     "category": [
@@ -22644,7 +22739,7 @@
         {
           "id": "003",
           "text": "Interacting With Subject",
-          "instruction": "The mirror image physically interacts with the subject. They may shake hands, converse, exchange objects, point at each other, sit together, or otherwise acknowledge one another."
+          "instruction": "The mirror image physically interacts with the subject. They may shake hands, converse, hug, exchange objects, point at each other, sit together, or otherwise acknowledge one another."
         },
         {
           "id": "004",
@@ -29499,6 +29594,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "PUMPKIN CARVING",
+    "category": [
+      "HALLOWEEN",
+      "SCULPTURE",
+      "SEASONAL",
+      "CARVING",
+      "CHARACTER TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform the subject into an authentic carved pumpkin.\n\nTRANSFORMATION RULES (NON-NEGOTIABLE):\n• The subject must become an authentic carved pumpkin\n• The subject must NOT appear as a real person holding a pumpkin\n• The subject must NOT appear standing next to a pumpkin\n• The subject must NOT appear painted onto a pumpkin\n• The subject must NOT appear printed onto a pumpkin\n• The subject must become the actual carved pumpkin itself\n• The resulting pumpkin should look as though it was carved directly from the subject\n• Recognition should come from facial proportions, eye shape, nose shape, smile characteristics, cheek structure, jawline, expression, hairline characteristics, and overall facial identity\n• Preserve recognizable facial identity\n• Preserve recognizable facial structure\n• Preserve recognizable facial proportions\n• Preserve distinctive facial traits\n• Preserve recognizable smile characteristics\n• Preserve recognizable eye shape\n• Preserve recognizable nose shape\n• The subject must remain immediately recognizable while fully transformed\n• No realistic skin textures\n• No realistic eyes\n• No photographic rendering\n• No pasted-on facial features\n• No face-swap appearance\n\nPUMPKIN RULES:\n• Authentic carved pumpkin construction\n• Genuine pumpkin anatomy\n• Carved facial features must be integrated into the pumpkin itself\n• Facial identity must be expressed through carved pumpkin design language\n• The pumpkin should appear hand-carved by a skilled artist\n• The carving should preserve the subject's identity\n• Pumpkin stem must remain present when appropriate\n• Natural pumpkin surface texture must remain visible\n• The pumpkin should appear physically carved rather than painted\n• The subject must physically become the pumpkin\n\nMATERIAL RULES:\n• Authentic pumpkin surface texture\n• Carved pumpkin flesh\n• Natural pumpkin coloration\n• Realistic carving depth\n• Sculpted pumpkin contours\n• Seasonal harvest aesthetics\n• Halloween craftsmanship\n\nSTYLE RULES:\n• Authentic jack-o'-lantern aesthetics\n• Professional pumpkin-carving craftsmanship\n• Halloween seasonal presentation\n• Harvest festival aesthetics\n• Sculptural pumpkin artistry\n• Decorative autumn display quality\n\nANTI-CHEAT:\n• Do not place the subject beside a pumpkin\n• Do not paste the subject's face onto a pumpkin\n• Do not create a face swap\n• Do not paint a portrait onto a pumpkin\n• Do not create a real person wearing a pumpkin costume\n• Do not ignore distinctive facial features\n• Do not create a generic jack-o'-lantern unrelated to the subject\n• The subject must physically become the carved pumpkin itself\n\nFINAL RESULT:\nThe subject must become an authentic carved pumpkin rendered entirely as a professionally carved jack-o'-lantern. The final sculpture should immediately evoke Halloween, autumn harvest traditions, pumpkin-carving artistry, and seasonal decoration while maintaining unmistakable recognition of the subject through sculptural transformation rather than photographic realism.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "IDENTITY PRESERVATION (CRITICAL):\n\n• The transformed pumpkin must clearly resemble the subject at first glance\n• Preserve the subject's unique facial identity\n• Preserve distinctive facial structure\n• Preserve facial proportions\n• Preserve recognizable smile characteristics\n• Recognition must come from the carved pumpkin itself\n• The final sculpture must simultaneously read as both the subject and an authentic carved pumpkin\n• The pumpkin should appear specifically carved from the subject rather than selected from an existing design"
   },
   {
     "name": "PUNCHLINE",
@@ -40336,6 +40445,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "ABSOLUTE PROHIBITIONS:\n• No surreal or exaggerated weather\n• No partial transformations (everything must obey the new weather)\n• No time-of-day change unless required by realism\n\nFINAL RESULT:\nThe image must look like the exact same photograph taken at the same moment and location — but under completely opposite, fully believable weather conditions.\n\nPHOTOREALISM REQUIREMENT:"
+  },
+  {
+    "name": "WHIRLIGIG",
+    "category": [
+      "FOLK ART",
+      "KINETIC SCULPTURE",
+      "AMERICANA",
+      "OUTDOOR ART",
+      "CHARACTER TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform the subject into an authentic folk-art whirligig.\n\nTRANSFORMATION RULES (NON-NEGOTIABLE):\n• The subject must become an authentic whirligig\n• The subject must NOT appear standing next to a whirligig\n• The subject must NOT appear operating a whirligig\n• The subject must NOT appear painted onto a whirligig\n• The subject must become the actual whirligig itself\n• The resulting whirligig should look as though it was handcrafted from the subject\n• Recognition should come from facial proportions, eye shape, nose shape, smile characteristics, cheek structure, jawline, expression, posture, and overall identity\n• Preserve recognizable facial identity\n• Preserve recognizable facial structure\n• Preserve recognizable facial proportions\n• Preserve distinctive facial traits\n• Preserve recognizable smile characteristics\n• The subject must remain immediately recognizable while fully transformed\n• No realistic skin textures\n• No realistic eyes\n• No photographic rendering\n• No pasted-on facial features\n\nWHIRLIGIG RULES:\n• Authentic folk-art whirligig construction\n• Handcrafted wooden construction\n• Mechanical wind-powered design\n• Moving parts should be integrated into the figure\n• Arms, legs, tools, accessories, or props may function as moving whirligig elements\n• The subject must physically become the whirligig itself\n• The figure should appear handmade by a folk artist\n• The figure should be mounted on a traditional whirligig support structure\n• The design should appear functional and capable of movement when powered by wind\n• The subject's identity must drive the final whirligig design\n\nMATERIAL RULES:\n• Hand-painted wood\n• Folk-art craftsmanship\n• Wooden mechanical components\n• Outdoor weathered finishes when appropriate\n• Rustic construction\n• Traditional Americana aesthetics\n• Functional kinetic sculpture construction\n\nSTYLE RULES:\n• Authentic American folk-art aesthetics\n• Handmade craftsmanship\n• Kinetic sculpture design\n• Rustic outdoor art presentation\n• Traditional whirligig artistry\n• Collector-quality folk-art construction\n\nANTI-CHEAT:\n• Do not place the subject beside a whirligig\n• Do not create a real person operating a whirligig\n• Do not paste the subject's face onto a wooden figure\n• Do not create a face swap\n• Do not ignore distinctive facial features\n• Do not create a generic whirligig unrelated to the subject\n• The subject must physically become the whirligig itself\n\nFINAL RESULT:\nThe subject must become an authentic handcrafted whirligig rendered entirely as a functional folk-art kinetic sculpture. The final image should immediately evoke Americana, folk-art traditions, handcrafted wooden craftsmanship, and wind-powered mechanical sculpture while maintaining unmistakable recognition of the subject through sculptural transformation rather than photographic realism.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "IDENTITY PRESERVATION (CRITICAL):\n\n• The transformed whirligig must clearly resemble the subject at first glance\n• Preserve the subject's unique facial identity\n• Preserve distinctive facial structure\n• Preserve facial proportions\n• Preserve recognizable expression characteristics\n• Recognition must come from the whirligig itself\n• The final sculpture must simultaneously read as both the subject and an authentic folk-art whirligig\n• The whirligig should appear specifically handcrafted from the subject rather than selected from an existing design"
   },
   {
     "name": "WHO FRAMED ROGER RABBIT",
