@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>Magic Kamera</title>
-  <script type="module" crossorigin src="./assets/main-mHtmxeFk.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/main-D_Uyvz4r.css">
+  <script type="module" crossorigin src="./assets/main-BTU5EiMW.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/main-DXTptwRy.css">
 </head>
 <body>
     <div id="app">
@@ -1032,7 +1032,7 @@
                             <strong>⏱️ Timer Mode:</strong> Set a countdown (3-10s) and optional repeat intervals<br>
                             <strong>📸⚡ Burst Mode:</strong> Capture 3-10 photos rapidly (slow/medium/fast)<br>
                             <strong>👁️ Motion Detection:</strong> Automatically captures when movement is detected. Interval settings for repeat capture. Repeat capture is default. You must uncheck repeat capture to do single capture. Select start delay from 3 seconds to 30 minutes. This mode triggers when you press the eye icon and activates/starts when you press the side button. Motion detection deactivates/stops when you press the eye icon again. The eye pulses if motion detection is triggered.<br>
-                            <strong>🎞️ Multi Preset:</strong> Select up to 20 presets to apply to a single photo in sequence. Tap the 🎞️ MULTI button in the carousel to open the preset selector. Choose your presets and tap Apply Selected. The footer and screen will show MULTI PRESETS while active. When you take a photo, all selected presets are queued and sent one by one with a 3 second interval between each. Works with Timer Mode — multi preset stays active until the timer is turned off. Cannot be used with Burst, Motion Detection, Random Mode, or No Magic Mode. If Manually Select Options is enabled, you will be prompted to choose options for each selected preset before the photo is taken. Multi preset is a one-shot mode — it resets automatically after all presets are sent, unless Timer Mode is active.<br>
+                            <strong>🎞️ Multi Preset:</strong> Select up to 20 presets to apply to a single photo in sequence. Tap the 🎞️ MULTI button in the carousel to open the preset selector. Choose your presets and tap Apply Selected. The footer and screen will show MULTI PRESETS while active. When you take a photo, all selected presets are queued and sent one by one with a 3 second interval between each. Works with Timer Mode — multi preset stays active until the timer is turned off. Cannot be used with Burst, Motion Detection, Random Mode, or No Magic Mode. If Manually Select Options is enabled, you will be prompted to choose options for each selected preset before the photo is taken (If you click CANCEL, it will randomize your option). Multi preset is a one-shot mode — it resets automatically after all presets are sent, unless Timer Mode is active.<br>
                             <strong>🖼️🖼️ Combine images:</strong> Works with either a selected preset or by speaking your preset. Take a picture of two images to combine them to feed to r1 thereby creating AI generated images from two images. Only works with random mode or multi-select presets mode in main camera screen.<br>
                             <strong>📑 Layer presets:</strong> Select up to 5 presets to combine and apply to a photo. Tap the 📑 LAYER button in the carousel to open the preset selector. Choose your presets starting with the primary (or dominant) layer. Then select up to 4 more presets to add as layers to that primary preset. Once you finish selecting, tap Apply Selected. Cannot be used with Random Mode or No Magic Mode. If Manually Select Options is enabled, you will be prompted once to choose options for each selected preset before the photo is taken. Once Layer is enabled, it will continue applying same chosen layers with selected options until it is disabled.<br>
                             <strong>📝 MASTER and 🎛️ OPTIONS Buttons (Left Carousel):</strong> Below the Menu (☰) button on the left side within a carousel(which also includes the MENU (☰) and GALLERY (🖼️) Buttons). The MASTER button (📝) accesses Master Prompt settings. Glows green when enabled. The OPTIONS (🎛️) button toggles Manually Select Options mode on or off. Glows green when enabled. All the camera buttons (except for the switch camera (📷) button) are in carousels and are visible by default. However, you can hide them (except for the switch camera (📷) button) by single clicking on the main camera screen to hide/reveal buttons. This may be adjusted in the Button Settings subsection within settings.<br><br>
@@ -1068,7 +1068,7 @@
                             <strong>Bottom Bar — Four Buttons:</strong><br>
                             • <strong>PROMPT:</strong> Opens an editor based on whether a preset is loaded. If no preset is loaded, opens the Preset Builder so you can create a new preset.<br>
                             • <strong>LOAD:</strong> Opens the preset selector so you can choose a preset to apply to this image.<br>
-                            • <strong>MULTI:</strong> Opens the multi-preset selector to apply several presets in sequence to this image.<br>
+                            • <strong>MULTI:</strong> Opens the multi-preset selector to apply several presets in sequence to this image. If Manually Select Options is enabled, you will be prompted to choose options for each selected preset before the photo is taken (If you click CANCEL, it will randomize your option).<br>
                             • <strong>✨ MAGIC:</strong> Sends the image for AI transformation using the loaded preset. If no preset is loaded and nothing has been entered, it picks a random preset automatically.                           
                         </p>
                     </div>
@@ -1247,7 +1247,7 @@
                         <p class="tutorial-text">
                             <strong>Tutorial Searching:</strong> The tutorial has a search engine. Type your search using individual words or sentences. The back and forward arrows cycle through the text to find typed words.<br>
 
-                            <strong>Navigating:</strong> Up and down arrows in the sections with preset lists move up/down per page when clicked once.  Double-clicking jumps to the next or previous letter of the alphabet within that section (favorites and non-favorites are navigated separately).  Triple-clicking jumps all the way to the top or bottom of the list. In the select options modal (When options are enabled), single clicking the up/down arrows move to the next option and double clicking jumps to the next options group. In the settings menu, single click the up/down arrows moves to next setting up/down and double click jumps all the way up/down the list.<br>
+                            <strong>Navigating:</strong> Up and down arrows in the sections with preset lists move up/down per page when clicked once.  Double-clicking (or hard pressing) jumps to the next or previous letter of the alphabet within that section (favorites and non-favorites are navigated separately).  Triple-clicking jumps all the way to the top or bottom of the list. In the select options modal (When options are enabled), single clicking the up/down arrows move to the next option and double clicking jumps to the next options group. In the settings menu, single click the up/down arrows moves to next setting up/down and double click jumps all the way up/down the list.<br>
 
                             <strong>Hiding/Reveal Buttons:</strong> There are left and right carousels in the main camera screen and the image viewer in the gallery. Single click the screen to hide/reveal the carousels. You may adjust these settings (as well as the opacity of the carousel buttons) within settings (in the Main Camera Screen and Gallery Image Viewer Screen subsections).<br>
 
@@ -1796,6 +1796,11 @@ All of the presets are optimized to avoid "camera ran dry" or "content filter" i
             </div>
         </div>
     </div>
+<!-- Alpha letter jump overlay: shows current letter when jumping alphabetically -->
+    <div id="alpha-letter-overlay">
+        <span class="alpha-overlay-letter">A</span>
+    </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
     <script src="https://unpkg.com/jsqr@1.4.0/dist/jsQR.js"></script>
 </body>
