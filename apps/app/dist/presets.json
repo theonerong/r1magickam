@@ -20507,7 +20507,7 @@
       "ANIMALS",
       "CHAOS"
     ],
-    "message": "Take a picture and transform the scene into a completely overwhelming rabbit-filled environment.\n\nThe original subject must remain visible and recognizable, but the entire image should be aggressively overrun by rabbits in every possible location. Rabbits should appear covering furniture, climbing on objects, standing in crowds, peeking from windows, hiding in pockets, sitting on shoulders, dangling from ceilings, occupying the background, and filling empty space across the entire composition.\n\nInclude rabbits of many sizes, poses, and expressions (realistic, serious, tiny, giant, or wearing accessories). The rabbit density should escalate into complete visual absurdity while keeping the main theme intact.",
+    "message": "Take a picture and transform the scene into a completely overwhelming rabbit-filled environment.\n\nThe original subject must remain visible, but the entire image should be aggressively overrun by rabbits in every possible location. Rabbits should appear covering furniture, climbing on objects, standing in crowds, peeking from windows, hiding in pockets, sitting on shoulders, dangling from ceilings, occupying the background, and filling empty space across the entire composition.\n\nInclude rabbits of many sizes, poses, and expressions (realistic, serious, tiny, giant, or wearing accessories). The rabbit density should escalate into complete visual absurdity while keeping the main theme intact.",
     "options": [
     {
       "id": "001",
