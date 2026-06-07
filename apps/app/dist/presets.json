@@ -32324,6 +32324,56 @@
     "additionalInstructions": ""
   },
   {
+    "name": "SE7EN",
+    "category": [
+      "CHARACTER TRANSFORMATION",
+      "CINEMATIC",
+      "EMOTIONAL",
+      "SYMBOLIC",
+      "SEVEN DEADLY SINS"
+    ],
+    "message": "Take a picture and transform the subject into a powerful visual embodiment of one of the Seven Deadly Sins.\n\nTRANSFORMATION RULES (NON-NEGOTIABLE):\n• The selected sin must determine the entire image\n• The selected sin must transform both the subject and environment\n• The subject must become a living embodiment of the selected sin\n• The final image must communicate the selected sin immediately at first glance\n• The transformation must be symbolic, dramatic, and visually unmistakable\n• The subject must remain recognizable throughout the transformation\n• Recognition should come from facial structure, facial proportions, eye shape, nose shape, smile characteristics, cheek structure, jawline, expression, hairline, hair characteristics, and overall identity\n• Preserve recognizable facial identity\n• Preserve recognizable facial structure\n• Preserve recognizable facial proportions\n• Preserve distinctive facial traits\n• Preserve recognizable hairstyle characteristics\n• Preserve recognizable hair color when appropriate\n• Preserve recognizable expressions where compatible with the selected sin\n• The subject must remain clearly identifiable while becoming the embodiment of the selected sin\n• No face-swap appearance\n• No pasted-on facial features\n• No composited photographic elements\n\nCHARACTER RULES:\n• The subject must become the central representation of the selected sin\n• The subject's pose, expression, body language, wardrobe, and environment must reinforce the selected sin\n• The selected sin must influence every aspect of the final image\n• The subject should appear consumed by the selected sin\n• The final image should feel like a dramatic allegorical illustration\n• The subject should appear as though they are the human manifestation of the selected sin\n\nENVIRONMENT RULES:\n• The environment must reinforce the selected sin\n• Background elements should contribute to the visual storytelling\n• Objects, props, architecture, lighting, and atmosphere should reflect the selected sin\n• The environment should feel transformed by the influence of the selected sin\n• The image should function as a complete symbolic narrative rather than a simple portrait\n\nSTYLE RULES:\n• High-end cinematic artwork\n• Symbolic storytelling\n• Dramatic visual narrative\n• Rich environmental detail\n• Strong mood and atmosphere\n• Allegorical visual design\n• Fine-art influence\n• Professional concept-art quality\n• Cohesive visual storytelling\n\nVERSION-SPECIFIC RULES:\n• The selected sin determines the subject's behavior, expression, environment, symbolism, mood, props, wardrobe, atmosphere, and overall visual narrative\n• The subject must fully embody the selected sin rather than merely posing as it\n• The environment must visually reinforce the selected sin\n• The selected sin must drive every artistic decision\n• The final image should appear as though it was created specifically to represent the selected sin",
+    "randomizeOptions": true,
+    "options": [
+    {
+      "id": "001",
+      "text": "Pride",
+      "instruction": "The subject becomes the embodiment of Pride. The subject should appear superior, self-important, admired, elevated, celebrated, and consumed by self-glorification. Include symbols of achievement, status, admiration, vanity, trophies, crowns, monuments, grand architecture, self-celebration, and excessive self-regard. The environment should reinforce superiority, prestige, and self-worship."
+    },
+    {
+      "id": "002",
+      "text": "Greed",
+      "instruction": "The subject becomes the embodiment of Greed. The subject should appear obsessed with accumulation, ownership, wealth, possession, and material gain. Include treasure, money, valuables, luxury goods, overflowing riches, hoarding behavior, vaults, precious objects, and endless acquisition. The environment should reinforce excessive desire for wealth and ownership."
+    },
+    {
+      "id": "003",
+      "text": "Lust",
+      "instruction": "The subject becomes the embodiment of Lust. Focus on obsession, temptation, infatuation, longing, romantic fixation, irresistible attraction, and overwhelming desire. The environment should reinforce temptation, fantasy, longing, seduction, emotional fixation, and desire while remaining artistic and non-explicit."
+    },
+    {
+      "id": "004",
+      "text": "Envy",
+      "instruction": "The subject becomes the embodiment of Envy. The subject should appear consumed by jealousy, resentment, comparison, bitterness, covetousness, and longing for what belongs to others. Include visual themes of comparison, unattainable success, status, possessions, beauty, or admiration directed toward others. The environment should reinforce envy and dissatisfaction."
+    },
+    {
+      "id": "005",
+      "text": "Gluttony",
+      "instruction": "The subject becomes the embodiment of Gluttony. The subject should appear surrounded by overwhelming abundance, excessive consumption, indulgence, feasting, wastefulness, and endless appetite. Include overflowing tables, excessive food, drink, luxury consumption, abundance, and excess. The environment should reinforce overindulgence and consumption."
+    },
+    {
+      "id": "006",
+      "text": "Wrath",
+      "instruction": "The subject becomes the embodiment of Wrath. The subject should appear consumed by rage, fury, hatred, vengeance, destruction, aggression, and uncontrolled anger. Include destruction, shattered objects, violent storms, fire, chaos, conflict, explosive energy, and dramatic tension. The environment should reinforce destructive anger and vengeance."
+    },
+    {
+      "id": "007",
+      "text": "Sloth",
+      "instruction": "The subject becomes the embodiment of Sloth. The subject should appear consumed by apathy, laziness, avoidance, procrastination, neglect, inactivity, and indifference. Include unfinished tasks, abandoned responsibilities, disorganization, idleness, sleep, comfort, and neglect. The environment should reinforce stagnation and inactivity."
+    }
+    ],
+    "additionalInstructions": "IDENTITY PRESERVATION (CRITICAL):\n\n• The transformed subject must clearly resemble the original subject\n• Preserve the subject's unique facial identity\n• Preserve the subject's unique facial structure\n• Preserve the subject's distinctive facial traits\n• Preserve recognizable facial proportions\n• Preserve recognizable eye shape\n• Preserve recognizable nose shape\n• Preserve recognizable smile characteristics when appropriate\n• Preserve recognizable hairstyle characteristics\n• Recognition must come from the transformed subject itself\n• Someone familiar with the subject should immediately recognize them\n• The selected sin must enhance the subject rather than replace their identity\n\nSIN ENFORCEMENT:\n\n• The selected sin must dominate the image\n• Every visual element should reinforce the selected sin\n• The selected sin must be obvious without explanation\n• The environment must support the selected sin\n• The subject's expression must support the selected sin\n• The subject's body language must support the selected sin\n• The subject's wardrobe must support the selected sin\n• The atmosphere must support the selected sin\n• The symbolism must support the selected sin\n\nANTI-CHEAT:\n\n• Do not create a generic portrait\n• Do not create a neutral environment\n• Do not ignore the selected sin\n• Do not create a simple costume\n• Do not rely solely on props\n• Do not make the sin subtle or ambiguous\n• Do not replace the subject with another character\n• Do not create a face swap\n• Do not create a symbolic image that lacks subject recognition\n• The subject must remain recognizable while fully embodying the selected sin\n\nFINAL RESULT:\nThe subject must become a dramatic, cinematic, visually unmistakable embodiment of the selected Deadly Sin. The environment, symbolism, atmosphere, props, expression, body language, and overall narrative must all reinforce the selected sin while preserving clear recognition of the subject. The final image should resemble a powerful allegorical artwork depicting the subject as the living personification of Pride, Greed, Lust, Envy, Gluttony, Wrath, or Sloth."
+  },
+  {
     "name": "SFUMATO",
     "category": [
       "ART",
