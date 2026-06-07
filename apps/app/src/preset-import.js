@@ -876,7 +876,7 @@ export class PresetImporter {
           if (this.currentImportScrollIndex === 0) {
             scrollContainer.scrollTop = 0;
           } else {
-            currentItem.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            currentItem.scrollIntoView({ behavior: window._alphaLongPressActive ? 'instant' : 'smooth', block: 'nearest' });
           }
         }
       };
@@ -1091,6 +1091,59 @@ footerSection.innerHTML = `
         }, 200);
       };
 
+      // ── Reusable alpha jump functions (used by both double-tap and hard-press) ──
+      const _importJumpUp = () => {
+        const items = Array.from(presetsList.querySelectorAll('.menu-item'));
+        if (!items.length) return;
+        const idx = Math.max(0, Math.min(this.currentImportScrollIndex, items.length - 1));
+        const currentItem = items[idx];
+        const currentName = (currentItem.dataset.presetName || '').trim();
+        const currentLetter = stripAccents(currentName).toUpperCase().charAt(0);
+        const currentIsNewOrUpdated = !!currentItem.querySelector('.preset-ticket');
+        for (let i = idx - 1; i >= 0; i--) {
+          const item = items[i];
+          if (!!item.querySelector('.preset-ticket') !== currentIsNewOrUpdated) break;
+          const nm = (item.dataset.presetName || '').trim();
+          const letter = stripAccents(nm).toUpperCase().charAt(0);
+          if (letter !== currentLetter) {
+            let firstOfLetter = i;
+            while (firstOfLetter > 0) {
+              const prevItem = items[firstOfLetter - 1];
+              if (!!prevItem.querySelector('.preset-ticket') !== currentIsNewOrUpdated) break;
+              const prevNm = (prevItem.dataset.presetName || '').trim();
+              if (stripAccents(prevNm).toUpperCase().charAt(0) !== letter) break;
+              firstOfLetter--;
+            }
+            this.currentImportScrollIndex = firstOfLetter;
+            updateImportSelection();
+            if (window._showAlphaOverlay) window._showAlphaOverlay(letter);
+            return;
+          }
+        }
+      };
+
+      const _importJumpDown = () => {
+        const items = Array.from(presetsList.querySelectorAll('.menu-item'));
+        if (!items.length) return;
+        const idx = Math.max(0, Math.min(this.currentImportScrollIndex, items.length - 1));
+        const currentItem = items[idx];
+        const currentName = (currentItem.dataset.presetName || '').trim();
+        const currentLetter = stripAccents(currentName).toUpperCase().charAt(0);
+        const currentIsNewOrUpdated = !!currentItem.querySelector('.preset-ticket');
+        for (let i = idx + 1; i < items.length; i++) {
+          const item = items[i];
+          if (!!item.querySelector('.preset-ticket') !== currentIsNewOrUpdated) break;
+          const nm = (item.dataset.presetName || '').trim();
+          const letter = stripAccents(nm).toUpperCase().charAt(0);
+          if (letter !== currentLetter) {
+            this.currentImportScrollIndex = i;
+            updateImportSelection();
+            if (window._showAlphaOverlay) window._showAlphaOverlay(letter);
+            return;
+          }
+        }
+      };
+
       let importUpTimer = null;
       let importUpCount = 0;
       document.getElementById('import-jump-to-top').onclick = () => {
@@ -1101,39 +1154,10 @@ footerSection.innerHTML = `
           const count = importUpCount;
           importUpCount = 0;
           if (count === 1) {
-            // Single-tap: page up
             scrollContainer.scrollTop = Math.max(0, scrollContainer.scrollTop - scrollContainer.clientHeight);
           } else if (count === 2) {
-            // Double-tap: jump to previous letter within the same section (new/updated or owned/imported)
-            const items = Array.from(presetsList.querySelectorAll('.menu-item'));
-            if (items.length === 0) return;
-            const idx = Math.max(0, Math.min(this.currentImportScrollIndex, items.length - 1));
-            const currentItem = items[idx];
-            const currentName = (currentItem.dataset.presetName || '').trim();
-            const currentLetter = stripAccents(currentName).toUpperCase().charAt(0);
-            const currentIsNewOrUpdated = !!currentItem.querySelector('.preset-ticket');
-            for (let i = idx - 1; i >= 0; i--) {
-              const item = items[i];
-              if (!!item.querySelector('.preset-ticket') !== currentIsNewOrUpdated) break;
-              const nm = (item.dataset.presetName || '').trim();
-              const letter = stripAccents(nm).toUpperCase().charAt(0);
-              if (letter !== currentLetter) {
-                const targetLetter = letter;
-                let firstOfLetter = i;
-                while (firstOfLetter > 0) {
-                  const prevItem = items[firstOfLetter - 1];
-                  if (!!prevItem.querySelector('.preset-ticket') !== currentIsNewOrUpdated) break;
-                  const prevNm = (prevItem.dataset.presetName || '').trim();
-                  if (stripAccents(prevNm).toUpperCase().charAt(0) !== targetLetter) break;
-                  firstOfLetter--;
-                }
-                this.currentImportScrollIndex = firstOfLetter;
-                updateImportSelection();
-                return;
-              }
-            }
+            _importJumpUp();
           } else {
-            // Triple-tap: jump to very top
             scrollContainer.scrollTop = 0;
             this.currentImportScrollIndex = 0;
             updateImportSelection();
@@ -1151,33 +1175,13 @@ footerSection.innerHTML = `
           const count = importDownCount;
           importDownCount = 0;
           if (count === 1) {
-            // Single-tap: page down
             scrollContainer.scrollTop = Math.min(
               scrollContainer.scrollHeight - scrollContainer.clientHeight,
               scrollContainer.scrollTop + scrollContainer.clientHeight
             );
           } else if (count === 2) {
-            // Double-tap: jump to next letter within the same section (new/updated or owned/imported)
-            const items = Array.from(presetsList.querySelectorAll('.menu-item'));
-            if (items.length === 0) return;
-            const idx = Math.max(0, Math.min(this.currentImportScrollIndex, items.length - 1));
-            const currentItem = items[idx];
-            const currentName = (currentItem.dataset.presetName || '').trim();
-            const currentLetter = stripAccents(currentName).toUpperCase().charAt(0);
-            const currentIsNewOrUpdated = !!currentItem.querySelector('.preset-ticket');
-            for (let i = idx + 1; i < items.length; i++) {
-              const item = items[i];
-              if (!!item.querySelector('.preset-ticket') !== currentIsNewOrUpdated) break;
-              const nm = (item.dataset.presetName || '').trim();
-              const letter = stripAccents(nm).toUpperCase().charAt(0);
-              if (letter !== currentLetter) {
-                this.currentImportScrollIndex = i;
-                updateImportSelection();
-                return;
-              }
-            }
+            _importJumpDown();
           } else {
-            // Triple-tap: jump to very bottom
             scrollContainer.scrollTop = scrollContainer.scrollHeight;
             const items = presetsList.querySelectorAll('.menu-item');
             this.currentImportScrollIndex = items.length - 1;
@@ -1185,6 +1189,18 @@ footerSection.innerHTML = `
           }
         }, 300);
       };
+
+      // Wire up hard-press (long press) jump for import buttons
+      if (window._addAlphaLongPress) {
+        window._addAlphaLongPress(
+          document.getElementById('import-jump-to-top'),
+          _importJumpUp
+        );
+        window._addAlphaLongPress(
+          document.getElementById('import-jump-to-bottom'),
+          _importJumpDown
+        );
+      }
 
       this.scrollImportUp = () => {
         const items = presetsList.querySelectorAll('.menu-item');

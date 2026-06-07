@@ -2049,7 +2049,7 @@ function updatePresetSelection() {
     currentItem.classList.add('preset-selected');
     
     // Scroll item into view
-    currentItem.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    currentItem.scrollIntoView({ behavior: window._alphaLongPressActive ? 'instant' : 'smooth', block: 'nearest' });
     
     // Show category hint with individually clickable categories
     const presetName = currentItem.querySelector('.preset-name').textContent;
@@ -7857,17 +7857,17 @@ const TOUR_STEPS = [
   { section: 'Image Editor', title: '✂️ Crop Tool', body: 'Tap Crop to activate. Two orange corner markers appear. Drag them to frame your desired area. Tap Crop again to apply.' },
   { section: 'Image Editor', title: '🔄 Rotate Tool', body: 'Rotates your image 90 degrees clockwise each tap. Tap multiple times to reach 180, 270, or back to 0 degrees.' },
   { section: 'Image Editor', title: '🔍 Sharpen and Auto Correct', body: 'Sharpen makes edges crisper. Auto Correct automatically balances brightness, contrast, and color. Great as a first step before manual tweaks.' },
-  { section: 'Image Editor', title: '🎨 Color Filters', body: 'Five one-tap filters sit below Auto Correct in the carousel. Vivid boosts saturation and contrast for punchy colors. Warm lifts reds and yellows for a golden feel. Cool shifts the image toward blue tones for a clean, airy look. B and W converts to professional black and white. Fade compresses contrast for a soft, matte, faded-film aesthetic.' },
+  { section: 'Image Editor', title: '🎨 Color Filters', body: 'Five filters below Auto Correct in the carousel. Vivid boosts saturation and contrast. Warm lifts reds and yellows. Cool shifts the image toward blue tones. B&W converts to professional black and white. Fade compresses contrast.' },
   { section: 'Image Editor', title: '☀️ Brightness and Contrast Sliders', body: 'At the top of the editor, drag the sliders to adjust brightness and contrast anywhere from negative 100 to positive 100 in real time.' },
   { section: 'Image Editor', title: '↶ Undo and Save', body: 'Undo steps back through your edit history one step at a time. Saving an edited image creates a new image in your gallery. Close (x) exits without saving.' },
   { section: 'Settings', title: '▣ Resolution', body: 'Choose from VGA 640 by 480 up to HD 3264 by 2448. Lower resolutions are recommended if you want images to appear in the magic gallery and you want to save space in your r1 device. Camera program slows if a high resolution is chosen.' },
   { section: 'Settings', title: '📐 Aspect Ratio', body: 'Choose 1 to 1 square or 16 to 9 letterbox. Leave both unchecked for neither. Default is neither. We highly recommend choosing an aspect ratio to display the full image, preventing accidental cropping.' },
-  { section: 'Settings', title: '📝 Master Prompt', body: 'Appends custom text to every AI transformation. Enable it first, type your additions and hard press the field to activate. Add several Master Prompts if desired. Adding a name and occasion lets presets like Happy Holidays and Love Actually personalize automatically. Can also be toggled from the MASTER button inside the image viewer or on main camera screen.' },
+  { section: 'Settings', title: '📝 Master Prompt', body: 'Adds instructions to presets. Enable first, type additions and press field to activate. Add more than one if desired. Add name and occasion to personalize presets. Can also be toggled from MASTER button inside image viewer or main camera screen.' },
   { section: 'Settings', title: '👁️ Visible Presets', body: 'Choose which imported presets appear in your menus. Select All, deselect individually, or remove all. Category tags show at the bottom when a preset is highlighted.' },
   { section: 'Settings', title: '🔨 Preset Builder', body: 'Build your own custom AI presets. Choose a template, add chips for quality and style, enable random options with single or multi-selection groups, add critical rules, then save. Also accessible directly from the main menu plus (+) button.' },
   { section: 'Settings', title: '🚫 No Magic Mode', body: 'Disables AI processing and works as a regular camera. Photos save only to the plugin gallery, not to the rabbit hole or magic gallery.' },
   { section: 'Settings', title: '🎛️ Manually Select Options Mode', body: 'When enabled and you choose a preset with options, a popup asks you to pick which option to use rather than a randomized option. Can also be toggled from the OPTIONS button inside the image viewer or on the main camera screen.' },
-  { section: 'Settings', title: '🗑️ Restore Deleted Items', body: 'Use this setting to restore custom or modified presets (Presets tab) that were previously deleted from the main menu, images (Images tab) that were deleted from the gallery and/or master prompts (Master tab) deleted from the Master Prompt section. This will not restore presets that were deleted using the Reset Database.' },
+  { section: 'Settings', title: '🗑️ Restore Deleted Items', body: 'Restore custom or modified presets (Presets tab), images (Images tab)  and/or master prompts (Master tab) deleted from their sections. Will not restore presets that were deleted using the Reset Database.' },
   { section: 'Settings', title: '📥 Import Presets (Starting Style)', body: 'You begin with two unlocked presets-Caricature and Impressionism.  Import them from the Import Presets section to capture photos and begin the fun journey of unlocking your imported artistic library.' },
   { section: 'Settings', title: '📥 Import Presets (Import Art)', body: 'Browse our external library in Settings. Check individual unlocked styles or use the All checkmark to select all  presets to import (assuming you have the credits).' },
   { section: 'Settings', title: '📥 Import Presets (New/Updated Presets)', body: 'Button indicates if there are any new/updated presets. Any updates are flagged so you can re-import changed/updated presets that you own. If you do not import updated presets, the preset will not be updated. New presets appear locked.' },
@@ -7888,7 +7888,7 @@ const TOUR_STEPS = [
   { section: 'Tips and Advanced', title: '📶 Offline Queue', body: 'If you take photos and the program goes offline - no worries - photos queue automatically and may be synced to the rabbit hole once your connection returns. The queue count shows on the screen.' },
   { section: 'Tips and Advanced', title: '🔁 Reset Database', body: 'The nuclear option in Settings. Wipes all custom presets and settings. Only imported presets from the library remain. Use only if something is seriously broken.' },
   { section: 'Tips and Advanced', title: '💀 Content Filter Error', body: 'If you go into your rabbit hole and you receive a content filter image error, this happens because AI is quirky. The beauty of Magic Kamera is you can reprompt. Keep tapping that magic button until successful.' },
-  { section: 'Tips and Advanced', title: '↑↓ Jump Navigation (Presets)', body: 'Areas with presets, clicking the up/down arrows once moves one page. Double-clicking jumps to next or previous letter of alphabet within that section (favorites and non-favorites are navigated separately). Triple-clicking jumps all the way to top or bottom of list.' },
+  { section: 'Tips and Advanced', title: '↑↓ Jump Navigation (Presets)', body: 'Areas with presets, click the up/down arrows once moves one page. Double-click (or hard press) jumps to next or previous letter of alphabet within that section (favorites and non-favorites are navigated separately). Triple-click jumps all the way to top or bottom of list.' },
   { section: 'Tips and Advanced', title: '↑↓ Jump Navigation (Options)', body: 'In the select options modal (When options are enabled), single clicking the up/down arrows move to the next option and double clicking jumps to the next options group.' },
   { section: 'Tips and Advanced', title: '↑↓ Jump Navigation (Settings)', body: 'In the settings submenu, clicking the up/down arrows once moves one setting. Double-clicking jumps all the way to the top or bottom of the list.' },
   { section: 'Troubleshooting', title: '❌ Camera Access Denied', body: 'This error will appear at the bottom of your main camera screen if you do not have any active presets, either imported or made with the preset builder.' },
@@ -12946,6 +12946,199 @@ window.addEventListener('load', () => {
     closeMenuBtn.addEventListener('click', hideUnifiedMenu);
   }
 
+  // ═══════════════════════════════════════════════════════
+  // ALPHA LETTER JUMP — Shared utilities
+  // Used by both double-click (existing) and hard-press (new)
+  // ═══════════════════════════════════════════════════════
+
+  let _alphaOverlayTimer = null;
+  function _showAlphaOverlay(letter) {
+    const overlay = document.getElementById('alpha-letter-overlay');
+    if (!overlay) return;
+    const span = overlay.querySelector('.alpha-overlay-letter');
+    if (span) {
+      span.textContent = letter;
+      // Restart the pop-in animation so it fires for every new letter
+      span.style.animation = 'none';
+      void span.offsetWidth; // force reflow
+      span.style.animation = '';
+    }
+    if (_alphaOverlayTimer) clearTimeout(_alphaOverlayTimer);
+    overlay.style.opacity = '1';
+    _alphaOverlayTimer = setTimeout(() => { overlay.style.opacity = '0'; }, 1000);
+  }
+  // Expose globally so preset-import.js can call it
+  window._showAlphaOverlay = _showAlphaOverlay;
+
+  function _jumpMenuAlpha(direction) {
+    const sc   = document.querySelector('.styles-menu-scroll-container');
+    const list = document.getElementById('menu-styles-list');
+    if (!sc || !list) return;
+    const items = Array.from(list.querySelectorAll('.style-item'));
+    if (!items.length) return;
+    const cTop = sc.getBoundingClientRect().top;
+    let idx = 0;
+    items.forEach((el, i) => { if (el.getBoundingClientRect().top < cTop + 10) idx = i; });
+    const curName   = ((items[idx].querySelector('.style-name') || {}).textContent || '').trim();
+    const curLetter = stripAccents(curName).toUpperCase().charAt(0);
+    const curIsFav  = isFavoriteStyle(curName);
+    if (direction === 'down') {
+      for (let i = idx + 1; i < items.length; i++) {
+        const nm  = ((items[i].querySelector('.style-name') || {}).textContent || '').trim();
+        if (isFavoriteStyle(nm) !== curIsFav) break;
+        const ltr = stripAccents(nm).toUpperCase().charAt(0);
+        if (ltr !== curLetter) {
+          sc.scrollTo({ top: items[i].getBoundingClientRect().top - sc.getBoundingClientRect().top + sc.scrollTop, behavior: window._alphaLongPressActive ? 'instant' : 'smooth' });
+          currentMenuIndex = i;
+          items.forEach(el => el.classList.remove('menu-selected'));
+          items[i].classList.add('menu-selected');
+          _showAlphaOverlay(ltr);
+          return;
+        }
+      }
+    } else {
+      for (let i = idx - 1; i >= 0; i--) {
+        const nm  = ((items[i].querySelector('.style-name') || {}).textContent || '').trim();
+        if (isFavoriteStyle(nm) !== curIsFav) break;
+        const ltr = stripAccents(nm).toUpperCase().charAt(0);
+        if (ltr !== curLetter) {
+          let first = i;
+          while (first > 0) {
+            const p = ((items[first - 1].querySelector('.style-name') || {}).textContent || '').trim();
+            if (isFavoriteStyle(p) !== curIsFav) break;
+            if (stripAccents(p).toUpperCase().charAt(0) !== ltr) break;
+            first--;
+          }
+          sc.scrollTo({ top: items[first].getBoundingClientRect().top - sc.getBoundingClientRect().top + sc.scrollTop, behavior: window._alphaLongPressActive ? 'instant' : 'smooth' });
+          currentMenuIndex = first;
+          items.forEach(el => el.classList.remove('menu-selected'));
+          items[first].classList.add('menu-selected');
+          _showAlphaOverlay(ltr);
+          return;
+        }
+      }
+    }
+  }
+
+  function _jumpVisiblePresetsAlpha(direction) {
+    const submenu = document.getElementById('visible-presets-submenu');
+    const sc   = submenu ? submenu.querySelector('.submenu-list') : null;
+    const list = document.getElementById('visible-presets-list');
+    if (!sc || !list) return;
+    const items = Array.from(list.querySelectorAll('.style-item'));
+    if (!items.length) return;
+    const cTop = sc.getBoundingClientRect().top;
+    let idx = 0;
+    items.forEach((el, i) => { if (el.getBoundingClientRect().top < cTop + 10) idx = i; });
+    const curName   = ((items[idx].querySelector('.style-name') || {}).textContent || '').trim();
+    const curLetter = stripAccents(curName).toUpperCase().charAt(0);
+    if (direction === 'down') {
+      for (let i = idx + 1; i < items.length; i++) {
+        const nm  = ((items[i].querySelector('.style-name') || {}).textContent || '').trim();
+        const ltr = stripAccents(nm).toUpperCase().charAt(0);
+        if (ltr !== curLetter) {
+          sc.scrollTo({ top: items[i].getBoundingClientRect().top - sc.getBoundingClientRect().top + sc.scrollTop, behavior: window._alphaLongPressActive ? 'instant' : 'smooth' });
+          currentVisiblePresetsIndex = i;
+          items.forEach(el => el.classList.remove('menu-selected'));
+          items[i].classList.add('menu-selected');
+          _showAlphaOverlay(ltr);
+          return;
+        }
+      }
+    } else {
+      for (let i = idx - 1; i >= 0; i--) {
+        const nm  = ((items[i].querySelector('.style-name') || {}).textContent || '').trim();
+        const ltr = stripAccents(nm).toUpperCase().charAt(0);
+        if (ltr !== curLetter) {
+          let first = i;
+          while (first > 0) {
+            const p = ((items[first - 1].querySelector('.style-name') || {}).textContent || '').trim();
+            if (stripAccents(p).toUpperCase().charAt(0) !== ltr) break;
+            first--;
+          }
+          sc.scrollTo({ top: items[first].getBoundingClientRect().top - sc.getBoundingClientRect().top + sc.scrollTop, behavior: window._alphaLongPressActive ? 'instant' : 'smooth' });
+          currentVisiblePresetsIndex = first;
+          items.forEach(el => el.classList.remove('menu-selected'));
+          items[first].classList.add('menu-selected');
+          _showAlphaOverlay(ltr);
+          return;
+        }
+      }
+    }
+  }
+
+  function _jumpPresetSelectorAlpha(direction) {
+    const list = document.getElementById('preset-list');
+    if (!list) return;
+    const items = Array.from(list.querySelectorAll('.preset-item'));
+    if (!items.length) return;
+    const idx     = Math.max(0, Math.min(currentPresetIndex_Gallery, items.length - 1));
+    const curName = ((items[idx].querySelector('.preset-name') || {}).textContent || '').trim();
+    const curLtr  = stripAccents(curName).toUpperCase().charAt(0);
+    const curIsFav = isFavoriteStyle(curName);
+    if (direction === 'down') {
+      for (let i = idx + 1; i < items.length; i++) {
+        const nm  = ((items[i].querySelector('.preset-name') || {}).textContent || '').trim();
+        if (isFavoriteStyle(nm) !== curIsFav) break;
+        const ltr = stripAccents(nm).toUpperCase().charAt(0);
+        if (ltr !== curLtr) {
+          currentPresetIndex_Gallery = i;
+          updatePresetSelection();
+          _showAlphaOverlay(ltr);
+          return;
+        }
+      }
+    } else {
+      for (let i = idx - 1; i >= 0; i--) {
+        const nm  = ((items[i].querySelector('.preset-name') || {}).textContent || '').trim();
+        if (isFavoriteStyle(nm) !== curIsFav) break;
+        const ltr = stripAccents(nm).toUpperCase().charAt(0);
+        if (ltr !== curLtr) {
+          let first = i;
+          while (first > 0) {
+            const p = ((items[first - 1].querySelector('.preset-name') || {}).textContent || '').trim();
+            if (isFavoriteStyle(p) !== curIsFav) break;
+            if (stripAccents(p).toUpperCase().charAt(0) !== ltr) break;
+            first--;
+          }
+          currentPresetIndex_Gallery = first;
+          updatePresetSelection();
+          _showAlphaOverlay(ltr);
+          return;
+        }
+      }
+    }
+  }
+
+  function _addAlphaLongPress(btn, jumpFn) {
+    let _lpTimer    = null;
+    let _lpInterval = null;
+    let _lpSuppress = false;
+    btn.addEventListener('click', (e) => {
+      if (_lpSuppress) { _lpSuppress = false; e.stopImmediatePropagation(); }
+    }, true);
+    btn.addEventListener('touchstart', () => {
+      if (_lpTimer)    clearTimeout(_lpTimer);
+      if (_lpInterval) clearInterval(_lpInterval);
+      _lpTimer = setTimeout(() => {
+        _lpSuppress = true;
+        window._alphaLongPressActive = true;
+        jumpFn();
+        _lpInterval = setInterval(jumpFn, 200);
+      }, 500);
+    }, { passive: true });
+    function _lpStop() {
+      if (_lpTimer)    { clearTimeout(_lpTimer);    _lpTimer    = null; }
+      if (_lpInterval) { clearInterval(_lpInterval); _lpInterval = null; }
+      window._alphaLongPressActive = false;
+    }
+    btn.addEventListener('touchend',    _lpStop);
+    btn.addEventListener('touchcancel', _lpStop);
+  }
+  // Expose globally so preset-import.js can wire up its buttons
+  window._addAlphaLongPress = _addAlphaLongPress;
+  // ═══════════════════════════════════════════════════════
+
   const jumpToTopBtn = document.getElementById('jump-to-top');
   if (jumpToTopBtn) {
     let menuUpTimer = null;
@@ -12975,47 +13168,15 @@ window.addEventListener('load', () => {
             }
           }
         } else if (count === 2) {
-          // Double-tap: jump to previous letter within the same section (favorites or non-favorites)
-          if (!scrollContainer) return;
-          const list = document.getElementById('menu-styles-list');
-          if (!list) return;
-          const items = Array.from(list.querySelectorAll('.style-item'));
-          if (items.length === 0) return;
-          const containerTop = scrollContainer.getBoundingClientRect().top;
-          let currentIdx = 0;
-          items.forEach((item, i) => {
-            if (item.getBoundingClientRect().top < containerTop + 10) currentIdx = i;
-          });
-          const currentName = ((items[currentIdx].querySelector('.style-name') || {}).textContent || '').trim();
-          const currentLetter = stripAccents(currentName).toUpperCase().charAt(0);
-          const currentIsFav = isFavoriteStyle(currentName);
-          for (let i = currentIdx - 1; i >= 0; i--) {
-            const nm = ((items[i].querySelector('.style-name') || {}).textContent || '').trim();
-            if (isFavoriteStyle(nm) !== currentIsFav) break;
-            const letter = stripAccents(nm).toUpperCase().charAt(0);
-            if (letter !== currentLetter) {
-              const targetLetter = letter;
-              let firstOfLetter = i;
-              while (firstOfLetter > 0) {
-                const prevNm = ((items[firstOfLetter - 1].querySelector('.style-name') || {}).textContent || '').trim();
-                if (isFavoriteStyle(prevNm) !== currentIsFav) break;
-                if (stripAccents(prevNm).toUpperCase().charAt(0) !== targetLetter) break;
-                firstOfLetter--;
-              }
-              const targetTop = items[firstOfLetter].getBoundingClientRect().top - scrollContainer.getBoundingClientRect().top + scrollContainer.scrollTop;
-      scrollContainer.scrollTo({ top: targetTop, behavior: 'smooth' });
-      currentMenuIndex = firstOfLetter;
-      items.forEach(item => item.classList.remove('menu-selected'));
-      items[firstOfLetter].classList.add('menu-selected');
-      return;
-    }
-  }
-} else {
-  // Triple-tap: jump to very top
-  jumpToTopOfMenu();
+          // Double-tap: jump to previous letter (shared with long-press)
+          _jumpMenuAlpha('up');
+        } else {
+          // Triple-tap: jump to very top
+          jumpToTopOfMenu();
         }
       }, 300);
     });
+    _addAlphaLongPress(jumpToTopBtn, () => _jumpMenuAlpha('up'));
   }
 
   const jumpToBottomBtn = document.getElementById('jump-to-bottom');
@@ -13050,39 +13211,15 @@ window.addEventListener('load', () => {
             }
           }
         } else if (count === 2) {
-          // Double-tap: jump to next letter within the same section (favorites or non-favorites)
-          if (!scrollContainer) return;
-          const list = document.getElementById('menu-styles-list');
-          if (!list) return;
-          const items = Array.from(list.querySelectorAll('.style-item'));
-          if (items.length === 0) return;
-          const containerTop = scrollContainer.getBoundingClientRect().top;
-          let currentIdx = 0;
-          items.forEach((item, i) => {
-            if (item.getBoundingClientRect().top < containerTop + 10) currentIdx = i;
-          });
-          const currentName = ((items[currentIdx].querySelector('.style-name') || {}).textContent || '').trim();
-          const currentLetter = stripAccents(currentName).toUpperCase().charAt(0);
-          const currentIsFav = isFavoriteStyle(currentName);
-          for (let i = currentIdx + 1; i < items.length; i++) {
-            const nm = ((items[i].querySelector('.style-name') || {}).textContent || '').trim();
-            if (isFavoriteStyle(nm) !== currentIsFav) break;
-            const letter = stripAccents(nm).toUpperCase().charAt(0);
-            if (letter !== currentLetter) {
-              const targetTop = items[i].getBoundingClientRect().top - scrollContainer.getBoundingClientRect().top + scrollContainer.scrollTop;
-              scrollContainer.scrollTo({ top: targetTop, behavior: 'smooth' });
-              currentMenuIndex = i;
-              items.forEach(item => item.classList.remove('menu-selected'));
-              items[i].classList.add('menu-selected');
-              return;
-            }
-          }
+          // Double-tap: jump to next letter (shared with long-press)
+          _jumpMenuAlpha('down');
         } else {
           // Triple-tap: jump to very bottom
           jumpToBottomOfMenu();
         }
       }, 300);
     });
+    _addAlphaLongPress(jumpToBottomBtn, () => _jumpMenuAlpha('down'));
   }
   
   const settingsMenuBtn = document.getElementById('settings-menu-button');
@@ -14055,37 +14192,8 @@ window.addEventListener('load', () => {
             }
           }
         } else if (count === 2) {
-          // Double-tap: jump to previous letter (purely alphabetical, no sections)
-          const list = document.getElementById('visible-presets-list');
-          if (!list || !container) return;
-          const items = Array.from(list.querySelectorAll('.style-item'));
-          if (items.length === 0) return;
-          const containerTop = container.getBoundingClientRect().top;
-          let currentIdx = 0;
-          items.forEach((item, i) => {
-            if (item.getBoundingClientRect().top < containerTop + 10) currentIdx = i;
-          });
-          const currentName = ((items[currentIdx].querySelector('.style-name') || {}).textContent || '').trim();
-          const currentLetter = stripAccents(currentName).toUpperCase().charAt(0);
-          for (let i = currentIdx - 1; i >= 0; i--) {
-            const nm = ((items[i].querySelector('.style-name') || {}).textContent || '').trim();
-            const letter = stripAccents(nm).toUpperCase().charAt(0);
-            if (letter !== currentLetter) {
-              const targetLetter = letter;
-              let firstOfLetter = i;
-              while (firstOfLetter > 0) {
-                const prevNm = ((items[firstOfLetter - 1].querySelector('.style-name') || {}).textContent || '').trim();
-                if (stripAccents(prevNm).toUpperCase().charAt(0) !== targetLetter) break;
-                firstOfLetter--;
-              }
-              const targetTop = items[firstOfLetter].getBoundingClientRect().top - container.getBoundingClientRect().top + container.scrollTop;
-              container.scrollTo({ top: targetTop, behavior: 'smooth' });
-              currentVisiblePresetsIndex = firstOfLetter;
-              items.forEach(item => item.classList.remove('menu-selected'));
-              items[firstOfLetter].classList.add('menu-selected');
-              return;
-            }
-          }
+          // Double-tap: jump to previous letter (shared with long-press)
+          _jumpVisiblePresetsAlpha('up');
         } else {
           // Triple-tap: jump to very top
           currentVisiblePresetsIndex = 0;
@@ -14093,6 +14201,7 @@ window.addEventListener('load', () => {
         }
       }, 300);
     });
+    _addAlphaLongPress(visiblePresetsJumpUp, () => _jumpVisiblePresetsAlpha('up'));
   }
 
   const visiblePresetsJumpDown = document.getElementById('visible-presets-jump-down');
@@ -14128,30 +14237,8 @@ window.addEventListener('load', () => {
             }
           }
         } else if (count === 2) {
-          // Double-tap: jump to next letter (purely alphabetical, no sections)
-          const list = document.getElementById('visible-presets-list');
-          if (!list || !container) return;
-          const items = Array.from(list.querySelectorAll('.style-item'));
-          if (items.length === 0) return;
-          const containerTop = container.getBoundingClientRect().top;
-          let currentIdx = 0;
-          items.forEach((item, i) => {
-            if (item.getBoundingClientRect().top < containerTop + 10) currentIdx = i;
-          });
-          const currentName = ((items[currentIdx].querySelector('.style-name') || {}).textContent || '').trim();
-          const currentLetter = stripAccents(currentName).toUpperCase().charAt(0);
-          for (let i = currentIdx + 1; i < items.length; i++) {
-            const nm = ((items[i].querySelector('.style-name') || {}).textContent || '').trim();
-            const letter = stripAccents(nm).toUpperCase().charAt(0);
-            if (letter !== currentLetter) {
-              const targetTop = items[i].getBoundingClientRect().top - container.getBoundingClientRect().top + container.scrollTop;
-              container.scrollTo({ top: targetTop, behavior: 'smooth' });
-              currentVisiblePresetsIndex = i;
-              items.forEach(item => item.classList.remove('menu-selected'));
-              items[i].classList.add('menu-selected');
-              return;
-            }
-          }
+          // Double-tap: jump to next letter (shared with long-press)
+          _jumpVisiblePresetsAlpha('down');
         } else {
           // Triple-tap: jump to very bottom
           const list = document.getElementById('visible-presets-list');
@@ -14165,6 +14252,7 @@ window.addEventListener('load', () => {
         }
       }, 300);
     });
+    _addAlphaLongPress(visiblePresetsJumpDown, () => _jumpVisiblePresetsAlpha('down'));
   }
 
 // ========== IMAGE EDITOR FUNCTIONALITY ==========
@@ -15858,33 +15946,8 @@ const result = await presetImporter.import();
             container.scrollTop = Math.max(0, container.scrollTop - container.clientHeight);
           }
         } else if (count === 2) {
-          // Double-tap: jump to previous letter within the same section (favorites or non-favorites)
-          const list = document.getElementById('preset-list');
-          if (!list) return;
-          const items = Array.from(list.querySelectorAll('.preset-item'));
-          if (items.length === 0) return;
-          const idx = Math.max(0, Math.min(currentPresetIndex_Gallery, items.length - 1));
-          const currentName = ((items[idx].querySelector('.preset-name') || {}).textContent || '').trim();
-          const currentLetter = stripAccents(currentName).toUpperCase().charAt(0);
-          const currentIsFav = isFavoriteStyle(currentName);
-          for (let i = idx - 1; i >= 0; i--) {
-            const nm = ((items[i].querySelector('.preset-name') || {}).textContent || '').trim();
-            if (isFavoriteStyle(nm) !== currentIsFav) break;
-            const letter = stripAccents(nm).toUpperCase().charAt(0);
-            if (letter !== currentLetter) {
-              const targetLetter = letter;
-              let firstOfLetter = i;
-              while (firstOfLetter > 0) {
-                const prevNm = ((items[firstOfLetter - 1].querySelector('.preset-name') || {}).textContent || '').trim();
-                if (isFavoriteStyle(prevNm) !== currentIsFav) break;
-                if (stripAccents(prevNm).toUpperCase().charAt(0) !== targetLetter) break;
-                firstOfLetter--;
-              }
-              currentPresetIndex_Gallery = firstOfLetter;
-              updatePresetSelection();
-              return;
-            }
-          }
+          // Double-tap: jump to previous letter (shared with long-press)
+          _jumpPresetSelectorAlpha('up');
         } else {
           // Triple-tap: jump to very top
           currentPresetIndex_Gallery = 0;
@@ -15892,6 +15955,7 @@ const result = await presetImporter.import();
         }
       }, 300);
     });
+    _addAlphaLongPress(presetSelectorJumpUp, () => _jumpPresetSelectorAlpha('up'));
   }
 
   const presetSelectorJumpDown = document.getElementById('preset-selector-jump-down');
@@ -15915,25 +15979,8 @@ const result = await presetImporter.import();
             );
           }
         } else if (count === 2) {
-          // Double-tap: jump to next letter within the same section (favorites or non-favorites)
-          const list = document.getElementById('preset-list');
-          if (!list) return;
-          const items = Array.from(list.querySelectorAll('.preset-item'));
-          if (items.length === 0) return;
-          const idx = Math.max(0, Math.min(currentPresetIndex_Gallery, items.length - 1));
-          const currentName = ((items[idx].querySelector('.preset-name') || {}).textContent || '').trim();
-          const currentLetter = stripAccents(currentName).toUpperCase().charAt(0);
-          const currentIsFav = isFavoriteStyle(currentName);
-          for (let i = idx + 1; i < items.length; i++) {
-            const nm = ((items[i].querySelector('.preset-name') || {}).textContent || '').trim();
-            if (isFavoriteStyle(nm) !== currentIsFav) break;
-            const letter = stripAccents(nm).toUpperCase().charAt(0);
-            if (letter !== currentLetter) {
-              currentPresetIndex_Gallery = i;
-              updatePresetSelection();
-              return;
-            }
-          }
+          // Double-tap: jump to next letter (shared with long-press)
+          _jumpPresetSelectorAlpha('down');
         } else {
           // Triple-tap: jump to very bottom
           const list = document.getElementById('preset-list');
@@ -15947,6 +15994,7 @@ const result = await presetImporter.import();
         }
       }, 300);
     });
+    _addAlphaLongPress(presetSelectorJumpDown, () => _jumpPresetSelectorAlpha('down'));
   }
 
   const magicBtn = document.getElementById('magic-button');
