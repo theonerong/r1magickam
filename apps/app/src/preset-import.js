@@ -780,18 +780,18 @@ export class PresetImporter {
           item.addEventListener('touchend', () => {
             clearTimeout(_longPressTimer);
             _longPressTimer = null;
-          });
+          }, { passive: true });
 
           item.addEventListener('touchmove', () => {
             clearTimeout(_longPressTimer);
             _longPressTimer = null;
-          });
+          }, { passive: true });
 
           item.addEventListener('touchcancel', () => {
             clearTimeout(_longPressTimer);
             _longPressTimer = null;
             hidePreview();
-          });
+          }, { passive: true });
 
           // Mouse support (for testing on desktop)
           item.addEventListener('mousedown', () => {
@@ -1155,6 +1155,15 @@ footerSection.innerHTML = `
           importUpCount = 0;
           if (count === 1) {
             scrollContainer.scrollTop = Math.max(0, scrollContainer.scrollTop - scrollContainer.clientHeight);
+            const items = presetsList.querySelectorAll('.menu-item');
+            const containerTop = scrollContainer.getBoundingClientRect().top;
+            for (let i = 0; i < items.length; i++) {
+              if (items[i].getBoundingClientRect().top >= containerTop) {
+                this.currentImportScrollIndex = i;
+                break;
+              }
+            }
+            updateImportSelection();
           } else if (count === 2) {
             _importJumpUp();
           } else {
@@ -1179,6 +1188,15 @@ footerSection.innerHTML = `
               scrollContainer.scrollHeight - scrollContainer.clientHeight,
               scrollContainer.scrollTop + scrollContainer.clientHeight
             );
+            const items = presetsList.querySelectorAll('.menu-item');
+            const containerTop = scrollContainer.getBoundingClientRect().top;
+            for (let i = 0; i < items.length; i++) {
+              if (items[i].getBoundingClientRect().top >= containerTop) {
+                this.currentImportScrollIndex = i;
+                break;
+              }
+            }
+            updateImportSelection();
           } else if (count === 2) {
             _importJumpDown();
           } else {
@@ -1217,6 +1235,8 @@ footerSection.innerHTML = `
       };
 
       scrollContainer.style.overflowY = 'auto';
+      scrollContainer.style.overscrollBehavior = 'contain';
+      scrollContainer.style.willChange = 'scroll-position';
     });
   }
 

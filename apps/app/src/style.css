@@ -830,6 +830,7 @@ button:disabled {
     overflow-x: hidden;
     padding: 2vw;
     -webkit-overflow-scrolling: touch;
+    touch-action: pan-y;
 }
 
 .close-button {
@@ -5322,6 +5323,7 @@ body {
     color: #fff;
     border-left: 3px solid transparent;
     transition: none;
+    touch-action: manipulation;
 }
 
 /* ── style-item and preset-item base: reserve the left-bar slot ── */

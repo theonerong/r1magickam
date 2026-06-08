@@ -687,9 +687,9 @@ function attachPresetLongPress(item, preset) {
     _timer = setTimeout(() => showPresetImagePreview(preset), LONG_PRESS_MS);
   }, { passive: true });
 
-  item.addEventListener('touchend', () => { clearTimeout(_timer); _timer = null; });
-  item.addEventListener('touchmove', () => { clearTimeout(_timer); _timer = null; });
-  item.addEventListener('touchcancel', () => { clearTimeout(_timer); _timer = null; });
+  item.addEventListener('touchend',   () => { clearTimeout(_timer); _timer = null; }, { passive: true });
+  item.addEventListener('touchmove',  () => { clearTimeout(_timer); _timer = null; }, { passive: true });
+  item.addEventListener('touchcancel',() => { clearTimeout(_timer); _timer = null; }, { passive: true });
 
   item.addEventListener('mousedown', () => {
     _timer = setTimeout(() => showPresetImagePreview(preset), LONG_PRESS_MS);
@@ -7327,6 +7327,9 @@ async function showManualOptionsModal(preset, sections) {
     
     presetNameEl.textContent = preset.name;
     list.innerHTML = '';
+    // Always start at the top for each new preset's options
+    const _optScrollContainer = document.querySelector('#manual-options-modal .styles-menu-scroll-container');
+    if (_optScrollContainer) _optScrollContainer.scrollTop = 0;
     
     sections.forEach((section, sectionIndex) => {
       // Section header
@@ -10763,7 +10766,13 @@ function showSettingsSubmenu() {
   updateBurstDisplay();
   updateTimerDisplay();
   updateMasterPromptDisplay();
-  
+
+  // Reset search and category filter so they don't persist on return
+  styleFilterText = '';
+  mainMenuFilterByCategory = '';
+  const styleFilterEl = document.getElementById('style-filter');
+  if (styleFilterEl) styleFilterEl.value = '';
+
   menu.style.display = 'none';
   pauseCamera();
   submenu.style.display = 'flex';
@@ -12190,8 +12199,8 @@ function _doPopulateStylesList(list, preserveScroll) {
     newList.removeEventListener('mouseup', _handleStyleListLongPressEnd);
     newList.removeEventListener('mouseleave', _handleStyleListLongPressEnd);
     newList.addEventListener('touchstart', _handleStyleListLongPressStart, { passive: true });
-    newList.addEventListener('touchend', _handleStyleListLongPressEnd);
-    newList.addEventListener('touchmove', _handleStyleListLongPressEnd);
+    newList.addEventListener('touchend',  _handleStyleListLongPressEnd, { passive: true });
+          newList.addEventListener('touchmove', _handleStyleListLongPressEnd, { passive: true });
     newList.addEventListener('mousedown', _handleStyleListLongPressStart);
     newList.addEventListener('mouseup', _handleStyleListLongPressEnd);
     newList.addEventListener('mouseleave', _handleStyleListLongPressEnd);
@@ -12982,37 +12991,42 @@ window.addEventListener('load', () => {
     const curName   = ((items[idx].querySelector('.style-name') || {}).textContent || '').trim();
     const curLetter = stripAccents(curName).toUpperCase().charAt(0);
     const curIsFav  = isFavoriteStyle(curName);
+
+    const doScroll = (targetIdx) => {
+      sc.scrollTo({ top: items[targetIdx].getBoundingClientRect().top - sc.getBoundingClientRect().top + sc.scrollTop, behavior: window._alphaLongPressActive ? 'instant' : 'smooth' });
+      currentMenuIndex = targetIdx;
+      items.forEach(el => el.classList.remove('menu-selected'));
+      items[targetIdx].classList.add('menu-selected');
+    };
+
     if (direction === 'down') {
       for (let i = idx + 1; i < items.length; i++) {
-        const nm  = ((items[i].querySelector('.style-name') || {}).textContent || '').trim();
-        if (isFavoriteStyle(nm) !== curIsFav) break;
-        const ltr = stripAccents(nm).toUpperCase().charAt(0);
-        if (ltr !== curLetter) {
-          sc.scrollTo({ top: items[i].getBoundingClientRect().top - sc.getBoundingClientRect().top + sc.scrollTop, behavior: window._alphaLongPressActive ? 'instant' : 'smooth' });
-          currentMenuIndex = i;
-          items.forEach(el => el.classList.remove('menu-selected'));
-          items[i].classList.add('menu-selected');
+        const nm      = ((items[i].querySelector('.style-name') || {}).textContent || '').trim();
+        const isFav   = isFavoriteStyle(nm);
+        const ltr     = stripAccents(nm).toUpperCase().charAt(0);
+        // Jump on either a new letter OR crossing the favorites/non-favorites boundary
+        if (ltr !== curLetter || isFav !== curIsFav) {
+          doScroll(i);
           _showAlphaOverlay(ltr);
           return;
         }
       }
     } else {
       for (let i = idx - 1; i >= 0; i--) {
-        const nm  = ((items[i].querySelector('.style-name') || {}).textContent || '').trim();
-        if (isFavoriteStyle(nm) !== curIsFav) break;
-        const ltr = stripAccents(nm).toUpperCase().charAt(0);
-        if (ltr !== curLetter) {
+        const nm      = ((items[i].querySelector('.style-name') || {}).textContent || '').trim();
+        const isFav   = isFavoriteStyle(nm);
+        const ltr     = stripAccents(nm).toUpperCase().charAt(0);
+        // Jump on either a new letter OR crossing the favorites/non-favorites boundary
+        if (ltr !== curLetter || isFav !== curIsFav) {
+          // Find the first item of this letter group within its own section
           let first = i;
           while (first > 0) {
-            const p = ((items[first - 1].querySelector('.style-name') || {}).textContent || '').trim();
-            if (isFavoriteStyle(p) !== curIsFav) break;
+            const p    = ((items[first - 1].querySelector('.style-name') || {}).textContent || '').trim();
+            if (isFavoriteStyle(p) !== isFav) break;
             if (stripAccents(p).toUpperCase().charAt(0) !== ltr) break;
             first--;
           }
-          sc.scrollTo({ top: items[first].getBoundingClientRect().top - sc.getBoundingClientRect().top + sc.scrollTop, behavior: window._alphaLongPressActive ? 'instant' : 'smooth' });
-          currentMenuIndex = first;
-          items.forEach(el => el.classList.remove('menu-selected'));
-          items[first].classList.add('menu-selected');
+          doScroll(first);
           _showAlphaOverlay(ltr);
           return;
         }
@@ -13076,12 +13090,14 @@ window.addEventListener('load', () => {
     const curName = ((items[idx].querySelector('.preset-name') || {}).textContent || '').trim();
     const curLtr  = stripAccents(curName).toUpperCase().charAt(0);
     const curIsFav = isFavoriteStyle(curName);
+
     if (direction === 'down') {
       for (let i = idx + 1; i < items.length; i++) {
-        const nm  = ((items[i].querySelector('.preset-name') || {}).textContent || '').trim();
-        if (isFavoriteStyle(nm) !== curIsFav) break;
-        const ltr = stripAccents(nm).toUpperCase().charAt(0);
-        if (ltr !== curLtr) {
+        const nm    = ((items[i].querySelector('.preset-name') || {}).textContent || '').trim();
+        const isFav = isFavoriteStyle(nm);
+        const ltr   = stripAccents(nm).toUpperCase().charAt(0);
+        // Jump on either a new letter OR crossing the favorites/non-favorites boundary
+        if (ltr !== curLtr || isFav !== curIsFav) {
           currentPresetIndex_Gallery = i;
           updatePresetSelection();
           _showAlphaOverlay(ltr);
@@ -13090,14 +13106,16 @@ window.addEventListener('load', () => {
       }
     } else {
       for (let i = idx - 1; i >= 0; i--) {
-        const nm  = ((items[i].querySelector('.preset-name') || {}).textContent || '').trim();
-        if (isFavoriteStyle(nm) !== curIsFav) break;
-        const ltr = stripAccents(nm).toUpperCase().charAt(0);
-        if (ltr !== curLtr) {
+        const nm    = ((items[i].querySelector('.preset-name') || {}).textContent || '').trim();
+        const isFav = isFavoriteStyle(nm);
+        const ltr   = stripAccents(nm).toUpperCase().charAt(0);
+        // Jump on either a new letter OR crossing the favorites/non-favorites boundary
+        if (ltr !== curLtr || isFav !== curIsFav) {
+          // Find the first item of this letter group within its own section
           let first = i;
           while (first > 0) {
             const p = ((items[first - 1].querySelector('.preset-name') || {}).textContent || '').trim();
-            if (isFavoriteStyle(p) !== curIsFav) break;
+            if (isFavoriteStyle(p) !== isFav) break;
             if (stripAccents(p).toUpperCase().charAt(0) !== ltr) break;
             first--;
           }
@@ -13152,21 +13170,23 @@ window.addEventListener('load', () => {
         menuUpCount = 0;
         const scrollContainer = document.querySelector('.styles-menu-scroll-container');
         if (count === 1) {
-          // Single-tap: scroll up one page
-          if (scrollContainer) {
-            scrollContainer.scrollTop = Math.max(0, scrollContainer.scrollTop - scrollContainer.clientHeight);
-            const listEl = document.getElementById('menu-styles-list');
-            if (listEl) {
-              const allItems = Array.from(listEl.querySelectorAll('.style-item'));
-              const cRect = scrollContainer.getBoundingClientRect();
-              let firstIdx = 0;
-              for (let ii = 0; ii < allItems.length; ii++) {
-                if (allItems[ii].getBoundingClientRect().top >= cRect.top - 5) { firstIdx = ii; break; }
+            // Single-tap: scroll up one page
+            if (scrollContainer) {
+              scrollContainer.scrollTop = Math.max(0, scrollContainer.scrollTop - scrollContainer.clientHeight);
+              const listEl = document.getElementById('menu-styles-list');
+              if (listEl) {
+                requestAnimationFrame(() => {
+                  const allItems = Array.from(listEl.querySelectorAll('.style-item'));
+                  const cRect = scrollContainer.getBoundingClientRect();
+                  let firstIdx = 0;
+                  for (let ii = 0; ii < allItems.length; ii++) {
+                    if (allItems[ii].getBoundingClientRect().top >= cRect.top - 5) { firstIdx = ii; break; }
+                  }
+                  currentMenuIndex = firstIdx;
+                  updateMenuSelection();
+                });
               }
-              currentMenuIndex = firstIdx;
-              updateMenuSelection();
             }
-          }
         } else if (count === 2) {
           // Double-tap: jump to previous letter (shared with long-press)
           _jumpMenuAlpha('up');
@@ -13192,24 +13212,26 @@ window.addEventListener('load', () => {
         menuDownCount = 0;
         const scrollContainer = document.querySelector('.styles-menu-scroll-container');
         if (count === 1) {
-          // Single-tap: scroll down one page
-          if (scrollContainer) {
-            scrollContainer.scrollTop = Math.min(
-              scrollContainer.scrollHeight - scrollContainer.clientHeight,
-              scrollContainer.scrollTop + scrollContainer.clientHeight
-            );
-            const listEl = document.getElementById('menu-styles-list');
-            if (listEl) {
-              const allItems = Array.from(listEl.querySelectorAll('.style-item'));
-              const cRect = scrollContainer.getBoundingClientRect();
-              let firstIdx = 0;
-              for (let ii = 0; ii < allItems.length; ii++) {
-                if (allItems[ii].getBoundingClientRect().top >= cRect.top - 5) { firstIdx = ii; break; }
+            // Single-tap: scroll down one page
+            if (scrollContainer) {
+              scrollContainer.scrollTop = Math.min(
+                scrollContainer.scrollHeight - scrollContainer.clientHeight,
+                scrollContainer.scrollTop + scrollContainer.clientHeight
+              );
+              const listEl = document.getElementById('menu-styles-list');
+              if (listEl) {
+                requestAnimationFrame(() => {
+                  const allItems = Array.from(listEl.querySelectorAll('.style-item'));
+                  const cRect = scrollContainer.getBoundingClientRect();
+                  let firstIdx = 0;
+                  for (let ii = 0; ii < allItems.length; ii++) {
+                    if (allItems[ii].getBoundingClientRect().top >= cRect.top - 5) { firstIdx = ii; break; }
+                  }
+                  currentMenuIndex = firstIdx;
+                  updateMenuSelection();
+                });
               }
-              currentMenuIndex = firstIdx;
-              updateMenuSelection();
             }
-          }
         } else if (count === 2) {
           // Double-tap: jump to next letter (shared with long-press)
           _jumpMenuAlpha('down');
@@ -13423,22 +13445,7 @@ window.addEventListener('load', () => {
         // Single-tap: wait to see if double-tap follows
         settingsUpTapTimer = setTimeout(() => {
           settingsUpTapTimer = null;
-          // Page up: move up by several items
-          const submenu = document.getElementById('settings-submenu');
-          if (submenu) {
-            const container = submenu.querySelector('.submenu-list');
-            if (container) {
-              const pageHeight = container.clientHeight;
-              container.scrollTop = Math.max(0, container.scrollTop - pageHeight);
-            }
-          }
-          const submenu2 = document.getElementById('settings-submenu');
-          if (submenu2) {
-            const items = submenu2.querySelectorAll('.menu-section-button');
-            const pageItems = Math.max(1, Math.floor(items.length / 3));
-            currentSettingsIndex = Math.max(0, currentSettingsIndex - pageItems);
-            updateSettingsSelection();
-          }
+          scrollSettingsUp();
         }, 300);
       }
     });
@@ -13462,19 +13469,7 @@ window.addEventListener('load', () => {
         // Single-tap: wait to see if double-tap follows
         settingsDownTapTimer = setTimeout(() => {
           settingsDownTapTimer = null;
-          // Page down
-          const submenu = document.getElementById('settings-submenu');
-          if (submenu) {
-            const container = submenu.querySelector('.submenu-list');
-            if (container) {
-              const pageHeight = container.clientHeight;
-              container.scrollTop = Math.min(container.scrollHeight - container.clientHeight, container.scrollTop + pageHeight);
-            }
-            const items = submenu.querySelectorAll('.menu-section-button');
-            const pageItems = Math.max(1, Math.floor(items.length / 3));
-            currentSettingsIndex = Math.min(items.length - 1, currentSettingsIndex + pageItems);
-            updateSettingsSelection();
-          }
+          scrollSettingsDown();
         }, 300);
       }
     });
@@ -14176,21 +14171,23 @@ window.addEventListener('load', () => {
         const submenu = document.getElementById('visible-presets-submenu');
         const container = submenu ? submenu.querySelector('.submenu-list') : null;
         if (count === 1) {
-          // Single-tap: page up
-          if (container) {
-            container.scrollTop = Math.max(0, container.scrollTop - container.clientHeight);
-            const listEl = document.getElementById('visible-presets-list');
-            if (listEl) {
-              const allItems = Array.from(listEl.querySelectorAll('.style-item'));
-              const cRect = container.getBoundingClientRect();
-              let firstIdx = 0;
-              for (let ii = 0; ii < allItems.length; ii++) {
-                if (allItems[ii].getBoundingClientRect().top >= cRect.top - 5) { firstIdx = ii; break; }
+            // Single-tap: page up
+            if (container) {
+              container.scrollTop = Math.max(0, container.scrollTop - container.clientHeight);
+              const listEl = document.getElementById('visible-presets-list');
+              if (listEl) {
+                requestAnimationFrame(() => {
+                  const allItems = Array.from(listEl.querySelectorAll('.style-item'));
+                  const cRect = container.getBoundingClientRect();
+                  let firstIdx = 0;
+                  for (let ii = 0; ii < allItems.length; ii++) {
+                    if (allItems[ii].getBoundingClientRect().top >= cRect.top - 5) { firstIdx = ii; break; }
+                  }
+                  currentVisiblePresetsIndex = firstIdx;
+                  updateVisiblePresetsSelection();
+                });
               }
-              currentVisiblePresetsIndex = firstIdx;
-              updateVisiblePresetsSelection();
             }
-          }
         } else if (count === 2) {
           // Double-tap: jump to previous letter (shared with long-press)
           _jumpVisiblePresetsAlpha('up');
@@ -14218,24 +14215,26 @@ window.addEventListener('load', () => {
         const submenu = document.getElementById('visible-presets-submenu');
         const container = submenu ? submenu.querySelector('.submenu-list') : null;
         if (count === 1) {
-          // Single-tap: page down
-          if (container) {
-            container.scrollTop = Math.min(
-              container.scrollHeight - container.clientHeight,
-              container.scrollTop + container.clientHeight
-            );
-            const listEl = document.getElementById('visible-presets-list');
-            if (listEl) {
-              const allItems = Array.from(listEl.querySelectorAll('.style-item'));
-              const cRect = container.getBoundingClientRect();
-              let firstIdx = 0;
-              for (let ii = 0; ii < allItems.length; ii++) {
-                if (allItems[ii].getBoundingClientRect().top >= cRect.top - 5) { firstIdx = ii; break; }
+            // Single-tap: page down
+            if (container) {
+              container.scrollTop = Math.min(
+                container.scrollHeight - container.clientHeight,
+                container.scrollTop + container.clientHeight
+              );
+              const listEl = document.getElementById('visible-presets-list');
+              if (listEl) {
+                requestAnimationFrame(() => {
+                  const allItems = Array.from(listEl.querySelectorAll('.style-item'));
+                  const cRect = container.getBoundingClientRect();
+                  let firstIdx = 0;
+                  for (let ii = 0; ii < allItems.length; ii++) {
+                    if (allItems[ii].getBoundingClientRect().top >= cRect.top - 5) { firstIdx = ii; break; }
+                  }
+                  currentVisiblePresetsIndex = firstIdx;
+                  updateVisiblePresetsSelection();
+                });
               }
-              currentVisiblePresetsIndex = firstIdx;
-              updateVisiblePresetsSelection();
             }
-          }
         } else if (count === 2) {
           // Double-tap: jump to next letter (shared with long-press)
           _jumpVisiblePresetsAlpha('down');
@@ -15285,6 +15284,7 @@ const result = await presetImporter.import();
 
   makeFilterBlurBtn('style-filter-blur-btn', 'style-filter', () => {
     styleFilterText = '';
+    mainMenuFilterByCategory = '';
     populateStylesList();
   });
 
@@ -15941,9 +15941,21 @@ const result = await presetImporter.import();
         psUpCount = 0;
         const container = document.querySelector('.preset-list');
         if (count === 1) {
-          // Single-tap: page up
+          // Single-tap: page up + sync highlight to first visible item
           if (container) {
             container.scrollTop = Math.max(0, container.scrollTop - container.clientHeight);
+          }
+          const list = document.getElementById('preset-list');
+          if (list && container) {
+            const items = list.querySelectorAll('.preset-item');
+            const containerTop = container.getBoundingClientRect().top;
+            for (let i = 0; i < items.length; i++) {
+              if (items[i].getBoundingClientRect().top >= containerTop) {
+                currentPresetIndex_Gallery = i;
+                break;
+              }
+            }
+            updatePresetSelection();
           }
         } else if (count === 2) {
           // Double-tap: jump to previous letter (shared with long-press)
@@ -15971,12 +15983,24 @@ const result = await presetImporter.import();
         psDownCount = 0;
         const container = document.querySelector('.preset-list');
         if (count === 1) {
-          // Single-tap: page down
+          // Single-tap: page down + sync highlight to first visible item
           if (container) {
             container.scrollTop = Math.min(
               container.scrollHeight - container.clientHeight,
               container.scrollTop + container.clientHeight
             );
+          }
+          const list = document.getElementById('preset-list');
+          if (list && container) {
+            const items = list.querySelectorAll('.preset-item');
+            const containerTop = container.getBoundingClientRect().top;
+            for (let i = 0; i < items.length; i++) {
+              if (items[i].getBoundingClientRect().top >= containerTop) {
+                currentPresetIndex_Gallery = i;
+                break;
+              }
+            }
+            updatePresetSelection();
           }
         } else if (count === 2) {
           // Double-tap: jump to next letter (shared with long-press)
