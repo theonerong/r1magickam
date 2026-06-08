@@ -22728,48 +22728,39 @@
         },
         {
           "id": "002",
-          "text": "Standing Beside Subject",
-          "instruction": "The mirror image stands physically beside the subject as a separate individual. Both versions coexist in the same environment."
+          "text": "Standing Beside Subject. The mirror image stands physically beside the subject as a separate individual. Both versions coexist in the same environment."
         },
         {
           "id": "003",
-          "text": "Interacting With Subject",
-          "instruction": "The mirror image physically interacts with the subject. They may shake hands, converse, hug, exchange objects, point at each other, sit together, or otherwise acknowledge one another."
+          "text": "Interacting With Subject. The mirror image physically interacts with the subject. They may shake hands, converse, hug, exchange objects, point at each other, sit together, or otherwise acknowledge one another."
         },
         {
           "id": "004",
-          "text": "Reflection In Water",
-          "instruction": "The mirror image appears reflected in water. The reflection may exhibit independent behavior while remaining visually tied to the subject."
+          "text": "Reflection In Water. The mirror image appears reflected in water. The reflection may exhibit independent behavior while remaining visually tied to the subject."
         },
         {
           "id": "005",
-          "text": "Reflection On Polished Surface",
-          "instruction": "The mirror image appears reflected in a polished surface such as glass, chrome, marble, polished stone, or metal."
+          "text": "Reflection On Polished Surface. The mirror image appears reflected in a polished surface such as glass, chrome, marble, polished stone, or metal."
         },
         {
           "id": "006",
-          "text": "Shadow Doppelganger",
-          "instruction": "The mirror image appears as a living shadow counterpart connected to the subject."
+          "text": "Shadow Doppelganger. The mirror image appears as a living shadow counterpart connected to the subject."
         },
         {
           "id": "007",
-          "text": "Behind The Subject",
-          "instruction": "The mirror image stands directly behind the subject as a mysterious duplicate."
+          "text": "Behind The Subject. The mirror image stands directly behind the subject as a mysterious duplicate."
         },
         {
           "id": "008",
-          "text": "Through A Portal",
-          "instruction": "The mirror image appears visible through a magical doorway, portal, window, gateway, or dimensional opening."
+          "text": "Through A Portal. The mirror image appears visible through a magical doorway, portal, window, gateway, or dimensional opening."
         },
         {
           "id": "009",
-          "text": "Photograph Comes Alive",
-          "instruction": "The mirror image appears as a living version of the subject emerging from a photograph, portrait, poster, or framed image."
+          "text": "Photograph Comes Alive. The mirror image appears as a living version of the subject emerging from a photograph, portrait, poster, or framed image."
         },
         {
           "id": "010",
-          "text": "Opposite Side Of The Scene",
-          "instruction": "The mirror image appears elsewhere within the environment, mirroring the subject from across the scene."
+          "text": "Opposite Side Of The Scene. The mirror image appears elsewhere within the environment, mirroring the subject from across the scene."
         }
       ]
     },
@@ -22778,33 +22769,27 @@
       "options": [
         {
           "id": "101",
-          "text": "Full Color Mirror Image",
-          "instruction": "The mirror image appears in full natural color."
+          "text": "Full Color Mirror Image. The mirror image appears in full natural color."
         },
         {
           "id": "102",
-          "text": "Black And White Mirror Image",
-          "instruction": "The mirror image appears entirely in black and white while the original subject remains in full color."
+          "text": "Black And White Mirror Image. The mirror image appears entirely in black and white while the original subject remains in full color."
         },
         {
           "id": "103",
-          "text": "Sepia Mirror Image",
-          "instruction": "The mirror image appears entirely in sepia tones while the original subject remains in full color."
+          "text": "Sepia Mirror Image. The mirror image appears entirely in sepia tones while the original subject remains in full color."
         },
         {
           "id": "104",
-          "text": "Silver Mirror Image",
-          "instruction": "The mirror image appears metallic silver, resembling a living mirror reflection."
+          "text": "Silver Mirror Image. The mirror image appears metallic silver, resembling a living mirror reflection."
         },
         {
           "id": "105",
-          "text": "Blue Ghost Mirror Image",
-          "instruction": "The mirror image appears rendered in luminous blue monochrome tones."
+          "text": "Blue Ghost Mirror Image. The mirror image appears rendered in luminous blue monochrome tones."
         },
         {
           "id": "106",
-          "text": "Negative Image Mirror Image",
-          "instruction": "The mirror image appears as a photographic negative version of the subject."
+          "text": "Negative Image Mirror Image. The mirror image appears as a photographic negative version of the subject."
         }
       ]
     }
@@ -23144,13 +23129,11 @@
         },
         {
           "id": "005",
-          "text": "Go To Jail Policeman Pointing Toward Jail",
-          "instruction": "Recreate the iconic Monopoly Go To Jail artwork. Preserve the policeman's pointing pose, uniform, profile view, and composition. Replace only the policeman's face and head with the subject while retaining the official Monopoly illustration style."
+          "text": "Go To Jail Policeman Pointing Toward Jail. Recreate the iconic Monopoly Go To Jail artwork. Preserve the policeman's pointing pose, uniform, profile view, and composition. Replace only the policeman's face and head with the subject while retaining the official Monopoly illustration style."
         },
         {
           "id": "006",
-          "text": "Community Chest Policeman Escorting Prisoner",
-          "instruction": "Recreate the classic Community Chest illustration featuring the policeman escorting a prisoner. Preserve the original composition, pose, uniform, and action. Replace only the policeman's face and head with the subject."
+          "text": "Community Chest Policeman Escorting Prisoner. Recreate the classic Community Chest illustration featuring the policeman escorting a prisoner. Preserve the original composition, pose, uniform, and action. Replace only the policeman's face and head with the subject."
         },
         {
           "id": "007",
