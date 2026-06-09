@@ -15469,6 +15469,20 @@
     "additionalInstructions": "FINAL RESULT:\nA futuristic genetic analysis screen where the subject is displayed as a studied organism, complete with DNA visuals, labeled traits, and scientific annotations derived from the image. The result should feel like a high-tech lab interface examining the subject in detail."
   },
   {
+    "name": "GEODE PERSON",
+    "category": [
+      "GEOLOGY",
+      "MINERAL",
+      "CRYSTAL",
+      "NATURAL ART",
+      "CHARACTER TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform the subject into a cracked-open crystal geode specimen.\n\nTRANSFORMATION RULES (NON-NEGOTIABLE):\n• The subject must become an authentic geological geode that has been split open to reveal its interior\n• The subject must NOT appear as a real person holding or discovering a geode\n• The subject must NOT appear standing next to giant crystals\n• The subject must NOT have a human face surrounded by a crystal collar\n• The face, features, and overall form of the subject must be entirely sculpted by the internal hollow crystal cavern of the geode\n• The portrait must emerge from the heights, depths, clusters, and color variations of the jagged crystal points pointing inward\n• Recognition should come from facial structure, eye cavities, nose contours, jawlines, and hair formations sculpted completely out of amethyst, quartz, citrine, or agate crystal formations\n• No realistic skin textures\n• No realistic eyes\n• No photographic rendering\n• No pasted-on facial features\n\nGEODE RULES:\n• Authentic geological geode anatomy: a rough, drab, bumpy, weathered chalcedony or limestone outer rind wrapping around the exterior\n• A thin, banded layer of agate outlining the interior cavity\n• A completely hollow interior filled with thousands of tightly packed, glittering, jagged crystal terminating points that collectively form the features of the subject\n• The crystal points must refract light brilliantly, featuring natural facets, internal fractures, and prismatic color shifts\n• Color palettes based on real minerals: deep purple amethyst, golden citrine, smoky quartz, clear rock crystal, or vibrant blue celestite\n\nMATERIAL RULES:\n• Brilliantly glittering microcrystalline and macrocrystalline quartz structures\n• Semi-translucent to transparent gemstone materials that catch and split light\n• Rough, dusty, porous, and volcanic-textured rock for the outer shell\n• Sharp, geometric crystal facets contrasting with organic, rocky curves\n• Realistic mineral inclusions and natural imperfections\n\nSTYLE RULES:\n• Authentic mineralogical specimen aesthetics\n• High-end crystal collector gallery standards\n• Earth science and geological wonders\n• Intricate, organic subterranean sculpture\n\nDISPLAY RULES:\n• The cracked-open geode specimen must be displayed on a professional custom iron curatorial mount, a museum shelf, a mineral showcase, or nested on a dark reflective surface under spot lighting\n• The crystal-lined cavity forming the subject must be facing forward as the absolute focal point\n\nVERSION-SPECIFIC RULES:\n• The identity must be entirely embedded inside the hollow cavern of crystals, never on the exterior shell",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "IDENTITY PRESERVATION (CRITICAL):\n• The dense clusters of jagged crystal points must precisely vary in height, density, and color to map out the recognizable face of the subject\n• Darker amethyst points or shadowed crystal gaps can define features like the eyes, eyebrows, and jawlines, while lighter or larger crystal clusters map out cheekbones and the nose\n• The silhouette of the hair should merge beautifully into the outer agate banding or dense clusters of crystal terminating points\n\nANTI-CHEAT:\n• Do not paste a human photograph inside a rock\n• Do not do a face swap with a stone texture\n• Do not leave organic skin, real hair, or human eyes visible\n• The subject cannot be a person covered in loose glitter or rhinestones; they must be a genuine hollow geological geode formation\n\nFINAL RESULT:\nThe subject must become a stunning, split-open museum-grade geode. The entire facial structure and identity must be composed of thousands of glittering crystal points inside a hollow, rock-shelled cavern. The image should immediately evoke natural history treasure vaults, high-end mineral collecting, and deep geological time while maintaining perfect recognition of the subject through crystal formations."
+  },
+  {
     "name": "GEOMETRIC MONOCHROME RICE EXPRESSION",
     "category": [
       "ART",
@@ -19342,7 +19356,21 @@
     "message": "Take a picture and COMPLETELY TRANSFORM the subject so that the subject exists ONLY as latte foam art on the surface of an espresso drink.\nThe subject MUST EXIST ONLY AS FOAM PATTERNS ON LIQUID.\n\nThe subject may NOT exist as:\n• A photograph\n• A reflection\n• A printed image\n• A floating face\n• A submerged object\n• A picture inside the cup\n\nDO NOT paste or place the subject into the drink.\nDO NOT insert a photo into liquid.\nDO NOT treat the coffee surface as a screen.\n\nThe subject MUST BE CREATED ONLY BY:\n• Milk foam density\n• Microfoam contrast\n• Espresso crema flow\n• Natural pour patterns\n• Etched foam lines\n\nConstruction rules:\n• Dark areas = espresso crema\n• Light areas = milk microfoam\n• Detail = foam thickness variation and etching\n\nNO hard outlines.\nNO graphic edges.\nNO photographic texture.\n\nThe foam must behave realistically:\n• Soft bleed\n• Imperfect edges\n• Liquid diffusion\n• Slight asymmetry\n\nThe cup, rim, and environment should look real and photographic.\n\nFINAL VALIDATION TEST:\nIf the latte surface were stirred, the subject would be destroyed.\nIf the image looks like a photo placed into coffee, IT IS WRONG.\n\nThe final image must look like a real café latte photographed from above, with the subject miraculously formed ONLY from foam and crema.",
     "options": [],
     "randomizeOptions": false,
-    "additionalInstructions": "ABSOLUTE REQUIREMENT:"
+    "additionalInstructions": "ABSOLUTE REQUIREMENT:\n\n• The subject must be 100% transformed into the organic milk foam and crema structures on the liquid's surface.\n• The entire face, hair, and features must emerge purely from barista pour and etching techniques, utilizing the contrast between white microfoam and dark brown espresso crema.\n\nIDENTITY PRESERVATION (CRITICAL):\n\n• Distinctive facial traits, eye shapes, nose contours, smile characteristics, and hairstyle layout must remain immediately recognizable strictly through the configuration of the foam.\n• Recognition must come solely from the stylized, low-fidelity fluid patterns, ensuring someone familiar with the subject can identify them despite the soft, textured nature of the beverage medium.\n\nANTI-CHEAT:\n\n• Do not perform a face-swap or overlay a realistic human face onto the coffee.\n• Do not leave realistic skin textures, eyes, or photographic hair strands visible.\n• Do not create a cartoon sticker effect or a sharp digital graphic printed on the foam.\n• The liquid surface must remain perfectly flat and integrated inside the cup, obeying the physical laws of a real poured espresso beverage.\n\nFINAL ENFORCEMENT:\n\nThe entire subject must function purely as a delicate, impermanent piece of latte art served inside a high-quality ceramic coffee cup. The photo should look like an authentic overhead shot taken inside a real coffee shop, where the subject's likeness is beautifully captured using only coffee and frothed milk."
+  },
+  {
+    "name": "LAVA LAMPOON",
+    "category": [
+      "RETRO",
+      "LIGHTING",
+      "PSYCHEDELIC",
+      "LIQUID",
+      "CHARACTER TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform the subject into a dynamic liquid lava lamp entity contained within a fully visible lamp.\n\nTRANSFORMATION RULES (NON-NEGOTIABLE):\n• The subject must become the molten wax liquid and floating lava bubbles inside a classic lava lamp\n• The entire lava lamp apparatus (glass vessel, metal base, and metal cap) must be completely visible\n• The subject must NOT appear as a real person holding or standing next to a lamp\n• The subject must NOT appear as a photo transparency projected onto a lamp\n• The subject's face, features, and form must be formed entirely by the suspension, separation, and coagulation of the colorful heated floating wax bubbles\n• Recognition should come from the clever composition of separate fluid globs, floating wax spheres, and organic liquid strings forming the facial structure, eye placement, nose contour, and mouth expression\n• Preserve recognizable facial proportions and silhouette through fluid dynamics\n• No realistic skin textures\n• No realistic eyes\n• No photographic rendering\n• No pasted-on facial features\n\nLAVA LAMP RULES:\n• Authentic mid-century retro lava lamp construction with a polished chrome, brass, or painted conical metal base and cap\n• The illuminated glass bottle contains clear or tinted translucent liquid oil acting as the suspension fluid\n• The subject is made completely out of the opaque, glowing, heated wax that splits into organic, floating, spherical and oblong bubbles\n• The wax bubbles must show internal illumination, fluid backlighting, soft subsurface scattering, and smooth liquid surfaces\n• Classic psychedelic color pairings (e.g., neon green wax in blue liquid, hot pink wax in purple liquid, orange wax in yellow liquid)\n\nMATERIAL RULES:\n• Liquid paraffin wax and chlorinated biphenyl liquid aesthetics\n• Smooth, glossy, reflective glass surface with minor internal reflections from the room\n• Brushed or polished metallic surfaces on the base and cap reflecting ambient light\n• Radiant, glowing illumination coming from the bulb inside the base, lighting the wax from below\n\nSTYLE RULES:\n• Authentic 1960s/1970s retro psychedelic aesthetic\n• Groovy pop-art culture\n• Kinetic light sculpture presentation\n• Vibrant, hypnotic mid-century mood lighting\n\nDISPLAY RULES:\n• The lava lamp must appear sitting on a vintage wooden tabletop, a retro nightstand, a record player console, or a shelf inside a dimly lit room\n• The entire lamp must be the central focus, glowing brightly against a moody, low-light backdrop\n• The subject's features must float dynamically within the middle section of the glass vessel",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "IDENTITY PRESERVATION (CRITICAL):\n• The floating wax globs must organize themselves to clearly resemble the subject's face and features\n• Utilize smaller, distinct floating wax bubbles to define features like eyes, nose bridges, and smiles, while larger bodies of wax define the jawline and hair boundaries\n• Recognition must come purely from the fluid wax arrangement\n\nANTI-CHEAT:\n• Do not put a flat photo of a person inside a glass jar\n• Do not make a face swap or paste a realistic face onto a bubble\n• The lamp base and cap must be explicitly visible; do not show just close-up liquid bubbles\n• Do not use realistic human eyes, hair, or skin; everything inside must be molten, colored wax\n\nFINAL RESULT:\nThe subject must be completely transformed into the floating, undulating wax bubbles inside a fully rendered, glowing retro lava lamp. The final image should immediately evoke 1970s nostalgia, psychedelic pop-culture, and vintage ambient light decor, with the subject completely recognizable through the organic artistry of shifting liquid wax blobs."
   },
   {
     "name": "LAWNMOWER MAN",
@@ -23535,6 +23563,72 @@
     "additionalInstructions": "FINAL RESULT:\nThe final image must look like genuine moss graffiti on an urban wall — living green moss grown in the shape of the subject against weathered concrete or brick. The moss must appear three-dimensional and alive, with realistic botanical detail. The subject must be clearly recognizable in the moss growth pattern."
   },
   {
+    "name": "MOTHER GOOSE PAGE",
+    "category": [
+      "LITERATURE",
+      "VINTAGE BOOK",
+      "ILLUSTRATION",
+      "FAIRY TALE",
+      "CHARACTER TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform the subject into a beautifully integrated character within an authentic, antique Mother Goose nursery rhyme book page, complete with the selected rhyme printed directly onto the page.\n\nTRANSFORMATION RULES (NON-NEGOTIABLE):\n• The final image must look exactly like a single, flat, open page from a vintage, weathered Mother Goose storybook\n• The subject must be fully transformed into a storybook character illustrated in a classic, antique fairy-tale art style\n• The subject must NOT appear as a real person holding a book or cosplaying\n• The text of the selected nursery rhyme MUST be legibly printed on the page, beautifully interacting with the illustration\n• The illustration must seamlessly weave the subject's character into the thematic elements of the selected rhyme\n• Recognition should come from facial structure, expressions, eye shapes, and iconic hair features interpreted entirely through vintage ink, watercolor, or woodblock printing\n• No modern photography, no realistic skin, no realistic eyes, and no modern digital art rendering\n\nSTORYBOOK PAGE RULES:\n• Authentic antique book paper appearance: aged parchment, off-white or cream tones, subtle foxing, yellowed edges, and fiber textures\n• Classic fairy-tale illustration style reminiscent of Arthur Rackham, Walter Crane, or Kate Greenaway\n• Elegant, vintage typography or hand-lettered text for the nursery rhyme title and verses\n• Ornate storybook borders, decorative drop caps (initial caps), and filigree elements surrounding the page layout\n• The artwork should use soft watercolor washes, cross-hatched ink lines, or lithographic texturing consistent with 19th-century printing technology\n\nMATERIAL & STYLE RULES:\n• Weathered paper stock with fine grain and matte finish\n• Ink bleed, slight printing misalignments, and historical aging markers\n• Muted, nostalgic storybook color palettes with soft pastels, sepia undertones, and rich earth tones\n\nDISPLAY RULES:\n• The entire image must be framed as a flat-lay view of the book page itself, or an open book lying flat on a dark wooden table\n• The typography and the illustration of the transformed subject must share equal prominence on the page\n\nVERSION-SPECIFIC RULES:\n• The chosen nursery rhyme option dictates the exact text printed on the page and heavily influences the costume, setting, and props of the transformed subject illustration\n• The subject must fully become the main protagonist or an essential character inside that specific nursery rhyme's world",
+    "randomizeOptions": true,
+    "options": [
+    { "id": "001", "text": "Humpty Dumpty" },
+    { "id": "002", "text": "Jack and Jill" },
+    { "id": "003", "text": "Little Miss Muffet" },
+    { "id": "004", "text": "The Cat and the Fiddle (Hey Diddle Diddle)" },
+    { "id": "005", "text": "Hickory Dickory Dock" },
+    { "id": "006", "text": "Little Bo-Peep" },
+    { "id": "007", "text": "Ba Ba Black Sheep" },
+    { "id": "008", "text": "Twinkle Twinkle Little Star" },
+    { "id": "009", "text": "Jack Be Nimble" },
+    { "id": "010", "text": "Mary Had a Little Lamb" },
+    { "id": "011", "text": "Little Boy Blue" },
+    { "id": "012", "text": "Old Mother Hubbard" },
+    { "id": "013", "text": "Sing a Song of Sixpence" },
+    { "id": "014", "text": "The Itsy Bitsy Spider" },
+    { "id": "015", "text": "Three Blind Mice" },
+    { "id": "016", "text": "Pat-a-Cake" },
+    { "id": "017", "text": "Peter Peter Pumpkin Eater" },
+    { "id": "018", "text": "Georgie Porgie" },
+    { "id": "019", "text": "Rub-a-Dub-Dub" },
+    { "id": "020", "text": "Simple Simon" },
+    { "id": "021", "text": "Jack Sprat" },
+    { "id": "022", "text": "Little Jack Horner" },
+    { "id": "023", "text": "Old King Cole" },
+    { "id": "024", "text": "There Was an Old Woman Who Lived in a Shoe" },
+    { "id": "025", "text": "Goosey Goosey Gander" },
+    { "id": "026", "text": "This Little Piggy" },
+    { "id": "027", "text": "Hot Cross Buns" },
+    { "id": "028", "text": "Little Tommy Tucker" },
+    { "id": "029", "text": "Doctor Foster" },
+    { "id": "030", "text": "One, Two, Buckle My Shoe" },
+    { "id": "031", "text": "To Market, To Market" },
+    { "id": "032", "text": "Lavenders Blue" },
+    { "id": "033", "text": "Lucy Locket" },
+    { "id": "034", "text": "Polly Put the Kettle On" },
+    { "id": "035", "text": "Rain, Rain, Go Away" },
+    { "id": "036", "text": "The Muffin Man" },
+    { "id": "037", "text": "The Queen of Hearts" },
+    { "id": "038", "text": "Tom, Tom, the Piper's Son" },
+    { "id": "039", "text": "Wee Willie Winkie" },
+    { "id": "040", "text": "Ladybug, Ladybug" },
+    { "id": "041", "text": "Peter Piper" },
+    { "id": "042", "text": "Star Light, Star Bright" },
+    { "id": "043", "text": "Monday's Child" },
+    { "id": "044", "text": "Ring a Ring o' Roses" },
+    { "id": "045", "text": "Ride a Cock-Horse to Banbury Cross" },
+    { "id": "046", "text": "London Bridge Is Falling Down" },
+    { "id": "047", "text": "See Saw Margery Daw" },
+    { "id": "048", "text": "Boys and Girls Come Out to Play" },
+    { "id": "049", "text": "There Was a Crooked Man" },
+    { "id": "050", "text": "Curly Locks" },
+    { "id": "051", "text": "Random Mother Goose Rhyme" }
+    ],
+    "additionalInstructions": "IDENTITY PRESERVATION (CRITICAL):\n• The illustrated fairy-tale character must look unmistakably like the subject using classic linework and shading\n• Translate the subject's hair, smile, and facial structure into the chosen period clothing (e.g., bonnets, waistcoats, ruffs, or caps)\n• The facial identity must feel drawn into the page organically by an old-world master illustrator, never pasted on top\n\nTEXT ENFORCEMENT:\n• You must render the complete, accurate text of the chosen nursery rhyme alongside the illustration on the vintage book page\n• Example for Option 001: 'Humpty Dumpty sat on a wall, Humpty Dumpty had a great fall...'\n• For Option 051 (Random), select any traditional, well-known Mother Goose rhyme not explicitly listed from 1-50 and print its full verse\n\nANTI-CHEAT:\n• Do not put a real photo onto an illustrated background\n• Do not do a modern face-swap\n• Do not generate just a character without the full book page, layout, margins, and legible rhyme text\n• Avoid modern fonts; use antique serif typesetting or elegant fairy-tale script calligraphy\n\nFINAL RESULT:\nThe final image must look exactly like an authentic leaf out of an ancient Mother Goose book. The page must elegantly showcase both the full written text of the chosen nursery rhyme and a gorgeous, old-world storybook illustration starring the fully transformed subject as a classic nursery rhyme character."
+  },
+  {
     "name": "MOTION BLUR",
     "category": [
       "PHOTOGRAPHY",
@@ -27692,6 +27786,20 @@
     ],
     "randomizeOptions": true,
     "additionalInstructions": "FINAL RESULT:\nThe image should look like a real photograph capturing a moment where the subject appears unhinged or overreactive due to a tiny pest, with the humor coming entirely from realistic human behavior and context."
+  },
+  {
+    "name": "PETRIFIED WOOD PORTRAIT",
+    "category": [
+      "GEOLOGY",
+      "NATURAL ART",
+      "FOSSIL",
+      "WOODWORK",
+      "PORTRAIT"
+    ],
+    "message": "Take a picture and transform the subject into an authentic petrified wood portrait.\n\nTRANSFORMATION RULES (NON-NEGOTIABLE):\n• The subject must become an authentic piece of petrified wood fossil\n• The subject must NOT appear as a real person holding petrified wood\n• The subject must NOT appear standing next to a fossilized log\n• The subject must NOT appear as a photograph pasted onto a piece of wood\n• The subject must become the actual petrified wood specimen itself\n• The resulting portrait should look as though it naturally grew, mineralized, and fossilized over millions of years into the shape of the subject\n• Recognition should come from facial proportions, eye shape, nose shape, smile characteristics, cheek structure, jawline, expression, hairline, and hair characteristics interpreted entirely through wood grain and crystal growth\n• Preserve recognizable facial identity\n• Preserve recognizable facial structure\n• Preserve recognizable facial proportions\n• Preserve distinctive facial traits\n• No realistic skin textures\n• No realistic eyes\n• No photographic rendering\n• No pasted-on facial features\n• No face-swap appearance\n\nPETRIFIED WOOD RULES:\n• Authentic permineralized and chalcedony-replaced wood aesthetics\n• Visible tree ring patterns, bark textures, and cellular wood structures integrated into the facial features\n• Deeply mineralized appearance with areas of quartz, jasper, agate, and opal chalcedony replacement\n• Natural cracks, druzy quartz pockets, and fractures typical of ancient fossilized wood\n• Subject identity must drive the organic grain and flow of the petrified stone\n• Striking natural color variations consisting of iron reds, ochre yellows, deep browns, charcoals, and translucent white quartz bands\n\nMATERIAL RULES:\n• Agatized and mineralized stone appearance with a polished, satin, or rough raw bark texture depending on the area\n• Organic wood fiber patterns transformed entirely into crystalline chalcedony and jasper\n• Microcrystalline quartz surfaces that catch the light naturally\n• Heavy, dense geological weight and appearance\n\nSTYLE RULES:\n• Authentic lapidary art and paleontological specimen aesthetics\n• Natural history collector quality\n• Organic surrealism grounded in geological science\n• Raw earth elements and ancient prehistoric artifacts\n\nDISPLAY RULES:\n• The petrified wood portrait may appear displayed on a museum specimen stand, a collector's velvet-lined tray, a lapidary workshop bench, or resting out in a natural desert landscape like a petrified forest\n• The specimen should be the primary focus of the image\n• The subject's identity must be fully integrated into the stone matrix itself",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "IDENTITY PRESERVATION (CRITICAL):\n• The transformed petrified wood specimen must clearly resemble the subject through its natural contours and grain patterns\n• Preserve the subject's unique facial structure, profile, and features using the contrasting bands of the agatized wood layers\n• Hair features should be represented by flowing wood grain or rough, petrified outer tree bark\n• Recognition must come entirely from the mineralized fossil itself\n\nANTI-CHEAT:\n• Do not place a photograph of the subject onto a piece of wood\n• Do not create a face swap\n• Do not carve a realistic face out of regular brown lumber\n• Do not leave realistic skin, hair, or eyes visible\n• The subject must completely become a mineralized, agatized prehistoric wood specimen\n\nFINAL RESULT:\nThe subject must become an authentic petrified wood specimen, fully transformed into a mineralized fossil of agate, jasper, and quartz. The final portrait should immediately evoke ancient geological epochs, natural history museum masterworks, and high-end lapidary collectibles while maintaining unmistakable recognition of the subject entirely through petrified structures and prehistoric wood rings."
   },
   {
     "name": "PETS LIKE HUMAN",
