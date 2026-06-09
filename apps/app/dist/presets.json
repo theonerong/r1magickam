@@ -1340,8 +1340,13 @@
   },
   {
     "name": "AMBER INCLUSION",
-    "category": ["PALEONTOLOGY", "GEMSTONE", "PREHISTORIC", "NATURE"],
-    "message": "Transform the subject into a biological inclusion trapped inside a piece of ancient, translucent amber.\n\nRULES:\n• The subject must appear suspended inside a golden-orange gemstone.\n• Include tiny air bubbles, bits of moss, and prehistoric detritus surrounding the subject.\n• The subject should have a slightly 'shriveled' or dehydrated organic look consistent with million-year-old preservation.\n• Use caustic light refractions typical of polished resin.\n• The subject must be 100% inside the amber, not a reflection.",
+    "category": [
+      "PALEONTOLOGY",
+      "GEMSTONE",
+      "PREHISTORIC",
+      "NATURE"
+    ],
+    "message": "Take a picture and transform the subject into a biological inclusion trapped inside a piece of ancient, translucent amber.\n\nRULES:\n• The subject must appear suspended inside a golden-orange gemstone.\n• Include tiny air bubbles, bits of moss, and prehistoric detritus surrounding the subject.\n• The subject should have a slightly 'shriveled' or dehydrated organic look consistent with million-year-old preservation.\n• Use caustic light refractions typical of polished resin.\n• The subject must be 100% inside the amber, not a reflection.",
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "Identity must be preserved through the biological form seen through the golden tint of the resin. No modern clothing; the subject should appear as a prehistoric specimen."
@@ -1462,7 +1467,7 @@
     "CHARACTER TRANSFORMATION"
   ],
   "message": "Take a picture and transform the subject into an authentic ancient administrative clay tablet.\n\nTABLET RULES (NON-NEGOTIABLE):\n• The subject must be embedded flat into a thick, pillow-shaped slab of raw, unfired earthenware clay\n• The portrait, features, and entire identity must be composed strictly of thousands of tiny, wedge-shaped stylus indentations and sharp geometric angles (cuneiform script)\n• The indentations must show realistic clay 'push' ridges, internal tool marks, and sharp, dry clay edges\n• No smooth digital textures, no photographic skin, and no blending; everything must be deep indentations in the clay matrix\n• Display the tablet on a museum display stand or resting on fine archival sand",
-  "randomizeOptions": false,
+  "randomizeOptions": true,
   "options": [
     {
       "id": "001",
@@ -1648,7 +1653,7 @@
     "CHARACTER TRANSFORMATION"
   ],
   "message": "Take a picture and transform the subject into a flat, hand-inked sketch on an ancient Egyptian limestone shard.\n\nARCHAEOLOGICAL RULES (NON-NEGOTIABLE):\n• The image must display a flat view of an irregular, broken flake of cream-colored limestone (an ostracon) resting on excavation sand\n• The portrait must be a two-dimensional drawing rendered flat against the rock texture using ancient mineral pigments\n• No 3D digital rendering, no modern photography, and no soft airbrushed gradients allowed\n• The limestone surface must show realistic geological chipping, dust deposits, calcite veins, and rough fractured edges",
-  "randomizeOptions": false,
+  "randomizeOptions": true,
   "options": [
     {
       "id": "001",
@@ -10588,7 +10593,7 @@
     "CHARACTER TRANSFORMATION"
   ],
   "message": "Take a picture and transform the subject into a flat graphic design on the back of a vintage denim jacket.\n\nTEXTILE RULES (NON-NEGOTIABLE):\n• The entire image must show the close-up texture of heavy, indigo-dyed cotton denim fabric weave\n• The subject must be formed flat within the fabric via industrial sandblasting, bleach stenciling, or rough white thread embroidery\n• No smooth digital colors or photographic skin; all shading must be built through individual white cotton warp and blue weft threads\n• The background must feature the heavy structural seams, copper rivets, and double-yellow contrast stitching of the jacket back panels",
-  "randomizeOptions": false,
+  "randomizeOptions": true,
   "options": [
     {
       "id": "001",
@@ -20063,7 +20068,7 @@
     "CHARACTER TRANSFORMATION"
   ],
   "message": "Take a picture and transform the subject entirely into a vintage 1930s lithographed tin clicker toy.\n\nMETAL RULES (NON-NEGOTIABLE):\n• The subject must become a small, flat, stamped sheet-metal novelty frog or cricket clicker toy shaped to match their facial profile\n• The surface must look like cheap, glossy enamel paint printed directly onto tin plating, showing tiny metallic reflections\n• No real skin, no organic hair, and no soft human tissues; the subject's features must be stamped directly into the sheet metal\n• Display the toy resting on an old wooden floorboard next to a rusted metal spring tab visible under the toy's rear edge",
-  "randomizeOptions": false,
+  "randomizeOptions": true,
   "options": [
     {
       "id": "001",
@@ -30782,7 +30787,7 @@
     "CHARACTER TRANSFORMATION"
   ],
   "message": "Take a picture and transform the subject into a flat, interlocking Renaissance Intarsia wood inlay panel.\n\nINTARSIA RULES (NON-NEGOTIABLE):\n• The entire image must be a perfectly flat, seamless wooden surface composed of interlocking jigsaw-cut veneer shapes\n• No 3D sculptural carving, no painted lines, no photographic overlays, and no soft brushstrokes\n• Fine, hairline seams must be visible where different pieces of wood grain fit tightly together\n• The surface must show authentic grain patterns (burl, tiger stripe, bird's eye) under an aged, hand-rubbed satin lacquer finish",
-  "randomizeOptions": false,
+  "randomizeOptions": true,
   "options": [
     {
       "id": "001",
@@ -30805,7 +30810,7 @@
     "CHARACTER TRANSFORMATION"
   ],
   "message": "Take a picture and transform the subject into an authentic 16th-century Italian Majolica ceramic tile portrait.\n\nCERAMIC RULES (NON-NEGOTIABLE):\n• The image must look exactly like a flat, square, heavy earthenware clay tile covered in a milky tin-glaze coating\n• The portrait must be hand-painted directly onto the raw glaze before firing, using a traditional Renaissance color palette (cobalt blue, copper green, antimony yellow, and iron orange)\n• No modern digital gradients or camera realism; lines must show natural brushstroke pooling and minor glaze running from the kiln\n• The surface must feature a network of fine glass crazing (micro-cracks), minor pinholes in the glaze, and weathered chipped edges",
-  "randomizeOptions": false,
+  "randomizeOptions": true,
   "options": [
     {
       "id": "001",
@@ -30876,7 +30881,7 @@
     "CHARACTER TRANSFORMATION"
   ],
   "message": "Take a picture and transform the subject into a vintage, hollow rubber squeeze toy.\n\nVINYL CONSTRUCTIONS RULES (NON-NEGOTIABLE):\n• The subject must be molded into a single-piece, flexible, soft vinyl or rubber squeak-toy figurine\n• The material must look soft, smooth, and slightly squishy, featuring a characteristic satin-matte finish\n• A distinct metal or plastic circular air squeaker valve must be clearly embedded into the base or mid-torso of the figurine\n• Display the toy standing on a vintage wooden nursery floor or a retro collectibles shelf",
-  "randomizeOptions": false,
+  "randomizeOptions": true,
   "options": [
     {
       "id": "001",
@@ -31629,7 +31634,7 @@
     "CHARACTER TRANSFORMATION"
   ],
   "message": "Take a picture and transform the subject into a hand-carved rubber utility eraser stamp.\n\nSTATIONERY RULES (NON-NEGOTIABLE):\n• The image must showcase a macro flat-lay perspective\n• The subject must be carved flat into the surface of a classic, pink rubber eraser block\n• The art style must look like a raw, simplified linocut print, using blocky negative spaces and thick ink outlines\n• No high-fidelity 3D modeling or photographic human skin; everything must be pink rubber or flat ink stamps",
-  "randomizeOptions": false,
+  "randomizeOptions": true,
   "options": [
     {
       "id": "001",
@@ -31770,7 +31775,7 @@
     "LINE ART"
   ],
   "message": "Take a picture and transform the subject into a raw, hand-carved ancient sandstone petroglyph drawing.\n\nPETROGLYPH RULES (NON-NEGOTIABLE):\n• The entire image must show the subject carved flat into a thick, rough, weathered sandstone rock face\n• The portrait, features, and entire identity must be composed strictly of rough, uneven tool marks, parallel rock pecking, and jagged, chiseled line tracks deep into the stone\n• No smooth digital lines, no photographic skin, and no blending; color transitions must be built entirely through granular density variations\n• The background must be covered in columns of intricate, complex petroglyph glyphs, geometric spirals, and wildlife symbols carved using the same primitive tools.",
-  "randomizeOptions": false,
+  "randomizeOptions": true,
   "options": [
     {
       "id": "001",
@@ -31778,7 +31783,7 @@
     },
     {
       "id": "002",
-      "text": "Wind-Eroded and Desert-Weathered Discovery.\n• TRANSFORMATION LOGIC:\n• The petroglyph version of the subject shows severe age and geological distress: natural natural rock fracture lines run diagonally across the subject's face.\n• The chiseled marks forming the eyes and smile are humorously softened, rounded, filled with ancient sand, and show natural mineral deposits and water stains.",
+      "text": "Wind-Eroded and Desert-Weathered Discovery.\n• TRANSFORMATION LOGIC:\n• The petroglyph version of the subject shows severe age and geological distress: natural natural rock fracture lines run diagonally across the subject's face.\n• The chiseled marks forming the eyes and smile are humorously softened, rounded, filled with ancient sand, and show natural mineral deposits and water stains."
     }
   ],
   "additionalInstructions": "IDENTITY PRESERVATION (CRITICAL):\n• Despite the primitive, coarse medium, the arrangement of the chiseled lines and pecking marks must precisely map out the subject's signature facial proportions and distinct expression. It must look like an authentic archaeological treasure discover."
@@ -32304,7 +32309,7 @@
     "CHARACTER TRANSFORMATION"
   ],
   "message": "Take a picture and transform the subject into a prize symbol on a vintage instant-win scratch-off lottery ticket.\n\nTICKET CONSTRUCTION RULES (NON-NEGOTIABLE):\n• The image must display a flat-lay view of a thick, glossy cardstock lottery ticket resting on a convenience store counter\n• The art style of the subject must be a high-contrast, cheap neon-ink comic style common in industrial security printing\n• No realistic human skin or photographic rendering; features must use flat CMYK screen tones and bold ink outlines\n• The ticket surface must feature security patterns, small dollar amounts, grid lines, and messy piles of scraped silver latex rubber curls",
-  "randomizeOptions": false,
+  "randomizeOptions": true,
   "options": [
     {
       "id": "001",
@@ -39683,7 +39688,7 @@
     "CHARACTER TRANSFORMATION"
   ],
   "message": "Take a picture and transform the subject into an authentic, complex Venetian Murano glass sculpture.\n\nGLASS RULES (NON-NEGOTIABLE):\n• The entire image must be a physical, three-dimensional sculpture crafted entirely from hand-blown, sculpted, and stretched translucent glass parts\n• No smooth digital textures or camera realism; the material must display internal air bubbles, flow lines, pontil marks, and brilliant light refractions typical of Murano artistry\n• Features are defined by fused glass rods, internal colored filigree canes, and delicate molten attachments\n• Display the sculpture on a dark, reflective pedestal under precision gallery spotlighting",
-  "randomizeOptions": false,
+  "randomizeOptions": true,
   "options": [
     {
       "id": "001",
