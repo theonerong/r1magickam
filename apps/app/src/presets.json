@@ -1339,6 +1339,14 @@
     "additionalInstructions": ""
   },
   {
+    "name": "AMBER INCLUSION",
+    "category": ["PALEONTOLOGY", "GEMSTONE", "PREHISTORIC", "NATURE"],
+    "message": "Transform the subject into a biological inclusion trapped inside a piece of ancient, translucent amber.\n\nRULES:\n• The subject must appear suspended inside a golden-orange gemstone.\n• Include tiny air bubbles, bits of moss, and prehistoric detritus surrounding the subject.\n• The subject should have a slightly 'shriveled' or dehydrated organic look consistent with million-year-old preservation.\n• Use caustic light refractions typical of polished resin.\n• The subject must be 100% inside the amber, not a reflection.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "Identity must be preserved through the biological form seen through the golden tint of the resin. No modern clothing; the subject should appear as a prehistoric specimen."
+  },
+  {
     "name": "AMERICAN GIRL/BOY DOLL",
     "category": [
       "DOLL",
@@ -1443,6 +1451,29 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "FINAL RESULT:\nThe image should clearly depict the subject as a classic 1970s-style news anchor with a signature moustache, bold suit, and confident on-air presence. The result should feel like a humorous but believable vintage broadcast scene while keeping the subject recognizable."
+  },
+  {
+  "name": "ANCIENT CUNEIFORM TABLET",
+  "category": [
+    "ARCHAEOLOGY",
+    "HISTORICAL",
+    "TECHNICAL",
+    "LINE ART",
+    "CHARACTER TRANSFORMATION"
+  ],
+  "message": "Take a picture and transform the subject into an authentic ancient administrative clay tablet.\n\nTABLET RULES (NON-NEGOTIABLE):\n• The subject must be embedded flat into a thick, pillow-shaped slab of raw, unfired earthenware clay\n• The portrait, features, and entire identity must be composed strictly of thousands of tiny, wedge-shaped stylus indentations and sharp geometric angles (cuneiform script)\n• The indentations must show realistic clay 'push' ridges, internal tool marks, and sharp, dry clay edges\n• No smooth digital textures, no photographic skin, and no blending; everything must be deep indentations in the clay matrix\n• Display the tablet on a museum display stand or resting on fine archival sand",
+  "randomizeOptions": false,
+  "options": [
+    {
+      "id": "001",
+      "text": "Pristine Administrative Record Tablet.\n• TRANSFORMATION LOGIC:\n• The subject's exact facial structure, smile, jawline, and eye shapes are mapped out using precise, closely grouped columns of wedge-shaped cuneiform indentations.\n• Hair volume is defined entirely by dense, stylized, overlapping clusters of larger wedge-marks that mirror the flow of the original hairstyle.\n• Surrounding the portrait are columns of legible, complex bureaucratic cuneiform script detailing a humorous ancient inventory list or decree."
+    },
+    {
+      "id": "002",
+      "text": "Distressed and Weathered Discovery.\n• TRANSFORMATION LOGIC:\n• The raw clay tablet version of the subject shows severe archaeological wear, erosion, and fine spiderweb cracking across the face.\n• The cuneiform indentations forming the eyes and smile are partially softened, filled with ancient dust, and show signs of salt encrustation and water damage.\n• The entire tablet looks worn, chipped at the corners, and partially faded into the background clay matrix."
+    }
+  ],
+  "additionalInstructions": "IDENTITY PRESERVATION (CRITICAL):\n• The intricate granular arrangement of the cuneiform wedge-marks must accurately map out the subject's signature facial proportions, smile characteristics, and expression. The final image must look like an authentic, stunning archaeological artifact discovery."
   },
   {
     "name": "ANCIENT MAYAN ART",
@@ -1606,6 +1637,29 @@
     ],
     "randomizeOptions": true,
     "additionalInstructions": "FINAL RESULT:\nThe image should look like a historical recreation or period photograph showing the subject authentically dressed and positioned within their chosen ancient civilization."
+  },
+  {
+  "name": "ANCIENT TOMB OSTRACON SKETCH",
+  "category": [
+    "ARCHAEOLOGY",
+    "HISTORICAL",
+    "ART STYLE",
+    "LINE ART",
+    "CHARACTER TRANSFORMATION"
+  ],
+  "message": "Take a picture and transform the subject into a flat, hand-inked sketch on an ancient Egyptian limestone shard.\n\nARCHAEOLOGICAL RULES (NON-NEGOTIABLE):\n• The image must display a flat view of an irregular, broken flake of cream-colored limestone (an ostracon) resting on excavation sand\n• The portrait must be a two-dimensional drawing rendered flat against the rock texture using ancient mineral pigments\n• No 3D digital rendering, no modern photography, and no soft airbrushed gradients allowed\n• The limestone surface must show realistic geological chipping, dust deposits, calcite veins, and rough fractured edges",
+  "randomizeOptions": false,
+  "options": [
+    {
+      "id": "001",
+      "text": "Pharaonic Scribe Ink Draft.\n• TRANSFORMATION LOGIC:\n• The subject's face, smile, and distinctive glasses are masterfully drawn using bold, flat black and red ink calligraphic brush lines.\n• The features are adapted into the traditional, stylized profiling of ancient Egyptian court artisans, keeping the subject's exact proportions.\n• Broken columns of genuine hieroglyphic symbols and red rubric notes are inked directly onto the stone margins surrounding the head."
+    },
+    {
+      "id": "002",
+      "text": "Eroded and Scorched Tomb Artifact.\n• TRANSFORMATION LOGIC:\n• A weathered variation where the stone sketch shows intense archaeological wear from being buried for millennia.\n• The black ink forming the subject's eye shapes and signature smile is partially faded, smudged with ancient soot, and marred by salt encrustations.\n• Faint heat-scorched marks and dark mineral staining run horizontally across the subject's hair layout."
+    }
+  ],
+  "additionalInstructions": "IDENTITY PRESERVATION (CRITICAL):\n• The flat, historical ink brush tracking must flawlessly maintain the unmistakable proportions and expressions of the subject. The final result must pass as a genuine macro photograph of a museum archival discovery."
   },
   {
     "name": "ANDREW SCOTT STYLE",
@@ -10523,6 +10577,29 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "FINAL RESULT:\nThe final image should look like a fully composed Disney hand-drawn illustration with the subject and additional characters integrated seamlessly into the world - featuring elegant Disney animation style with large expressive eyes, smooth flowing lines, beautifully painted backgrounds, romantic lighting, and that signature Disney charm and appeal appropriate to the selected era or style."
+  },
+  {
+  "name": "DISTRESSED DENIM ARTWORK",
+  "category": [
+    "ART STYLE",
+    "TEXTILE",
+    "STREETWEAR",
+    "RETRO",
+    "CHARACTER TRANSFORMATION"
+  ],
+  "message": "Take a picture and transform the subject into a flat graphic design on the back of a vintage denim jacket.\n\nTEXTILE RULES (NON-NEGOTIABLE):\n• The entire image must show the close-up texture of heavy, indigo-dyed cotton denim fabric weave\n• The subject must be formed flat within the fabric via industrial sandblasting, bleach stenciling, or rough white thread embroidery\n• No smooth digital colors or photographic skin; all shading must be built through individual white cotton warp and blue weft threads\n• The background must feature the heavy structural seams, copper rivets, and double-yellow contrast stitching of the jacket back panels",
+  "randomizeOptions": false,
+  "options": [
+    {
+      "id": "001",
+      "text": "Acid-Wash Bleach Stencil Portrait.\n• TRANSFORMATION LOGIC:\n• The subject's face, smile, and expression are etched into the jacket using a high-contrast acid bleach stenciling technique.\n• The features emerge out of the dark indigo fabric as bright, frayed, off-white bleached cotton thread zones.\n• The hairstyle silhouette is cleanly defined by coarse, faded transitions that accurately capture the volume and texture of the original hair."
+    },
+    {
+      "id": "002",
+      "text": "Heavy Shredded and Frayed Patchwork.\n• TRANSFORMATION LOGIC:\n• A rugged, thrash-art approach where the subject's face is formed by distressing and ripping the denim layers away.\n• The jawline, eyes, and smile are outlined by frayed, loose horizontal white threads bursting out from intentional fabric slashes.\n• The portrait looks heavily laundered, with natural indigo dye bleeding and indigo fiber fuzz clouding the features."
+    }
+  ],
+  "additionalInstructions": "IDENTITY PRESERVATION (CRITICAL):\n• The coarse, stenciled dye gradients and frayed fiber outlines must perfectly align to preserve the subject's exact facial proportions and identity. The final output must look like a genuine photograph of a custom piece of vintage streetwear apparel."
   },
   {
     "name": "DISTRESSING NEGATIVES",
@@ -19975,6 +20052,29 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+  "name": "LITHOGRAPH TIN TOY",
+  "category": [
+    "FUNNY",
+    "ABSURD",
+    "RETRO",
+    "TOY",
+    "CHARACTER TRANSFORMATION"
+  ],
+  "message": "Take a picture and transform the subject entirely into a vintage 1930s lithographed tin clicker toy.\n\nMETAL RULES (NON-NEGOTIABLE):\n• The subject must become a small, flat, stamped sheet-metal novelty frog or cricket clicker toy shaped to match their facial profile\n• The surface must look like cheap, glossy enamel paint printed directly onto tin plating, showing tiny metallic reflections\n• No real skin, no organic hair, and no soft human tissues; the subject's features must be stamped directly into the sheet metal\n• Display the toy resting on an old wooden floorboard next to a rusted metal spring tab visible under the toy's rear edge",
+  "randomizeOptions": false,
+  "options": [
+    {
+      "id": "001",
+      "text": "Pristine Factory-Stamped Novelty Toy.\n• TRANSFORMATION LOGIC:\n• The subject's face and smile are stamped directly into the tinplate, creating a subtle 3D metal dome contour.\n• The eyes, glasses, and hair layout are printed onto the metal using bold, high-gloss retro lithograph inks with a vintage comic look.\n• The toy's overall body shape is a funny, primitive oval with small metal tabs folded over at the sides to lock the toy together."
+    },
+    {
+      "id": "002",
+      "text": "Rusted and Well-Played Vintage Antique.\n• TRANSFORMATION LOGIC:\n• A funny, distressed version where the tin toy shows severe age from decades of use.\n• The printed lithograph paint forming the subject's hair and facial features is heavily scuffed and scratched away along the edges, revealing dark oxidized iron and silver metal underneath.\n• Tiny spots of deep brown rust are visible in the crevices of the stamped smile and nose ridge."
+    }
+  ],
+  "additionalInstructions": "IDENTITY PRESERVATION (CRITICAL):\n• The cheap, stamped contours and retro litho paint layout must cleanly lock down the subject's unmistakable facial dimensions, eyes, and expression. It must read entirely as a genuine photograph of a rare mid-century pocket toy."
   },
   { 
     "name": "LITTLE GOLDEN BOOK",
@@ -30673,6 +30773,52 @@
     "additionalInstructions": ""
   },
   {
+  "name": "RENAISSANCE INTARSIA INLAY",
+  "category": [
+    "ART STYLE",
+    "WOODWORK",
+    "HISTORICAL",
+    "CRAFTSMANSHIP",
+    "CHARACTER TRANSFORMATION"
+  ],
+  "message": "Take a picture and transform the subject into a flat, interlocking Renaissance Intarsia wood inlay panel.\n\nINTARSIA RULES (NON-NEGOTIABLE):\n• The entire image must be a perfectly flat, seamless wooden surface composed of interlocking jigsaw-cut veneer shapes\n• No 3D sculptural carving, no painted lines, no photographic overlays, and no soft brushstrokes\n• Fine, hairline seams must be visible where different pieces of wood grain fit tightly together\n• The surface must show authentic grain patterns (burl, tiger stripe, bird's eye) under an aged, hand-rubbed satin lacquer finish",
+  "randomizeOptions": false,
+  "options": [
+    {
+      "id": "001",
+      "text": "Classical Academic Library Panel.\n• TRANSFORMATION LOGIC:\n• The subject's skin, cheeks, and nose must be mapped out using light, polished maple or satinwood veneer grain.\n• Shading, jawlines, and eye sockets must be formed by natural dark walnut or charred ebony wood shapes.\n• The subject's hair must be composed of highly figured, swirling burled oak or mahogany patches that mirror the flow of the original hairstyle."
+    },
+    {
+      "id": "002",
+      "text": "Weathered Distressed Cathedral Cabinetry.\n• TRANSFORMATION LOGIC:\n• The interlocking wood panels forming the subject must look centuries old, featuring fine hairline wood-bore holes, faint stress cracks, and sun-faded stains.\n• The natural coloration of the wood grain piecework must show deep amber oxidation and silver-gray weathered aging patterns across the face."
+    }
+  ],
+  "additionalInstructions": "IDENTITY PRESERVATION (CRITICAL):\n• The geometric puzzle lines of the veneer cuts must map out the subject's exact facial proportions, smile layout, and expression. The final result must look like a flat architectural masterwork inside an ancient Italian study."
+  },
+  {
+  "name": "RENAISSANCE MAJOLICA TILE",
+  "category": [
+    "ART STYLE",
+    "CERAMICS",
+    "HISTORICAL",
+    "ITALIAN ART",
+    "CHARACTER TRANSFORMATION"
+  ],
+  "message": "Take a picture and transform the subject into an authentic 16th-century Italian Majolica ceramic tile portrait.\n\nCERAMIC RULES (NON-NEGOTIABLE):\n• The image must look exactly like a flat, square, heavy earthenware clay tile covered in a milky tin-glaze coating\n• The portrait must be hand-painted directly onto the raw glaze before firing, using a traditional Renaissance color palette (cobalt blue, copper green, antimony yellow, and iron orange)\n• No modern digital gradients or camera realism; lines must show natural brushstroke pooling and minor glaze running from the kiln\n• The surface must feature a network of fine glass crazing (micro-cracks), minor pinholes in the glaze, and weathered chipped edges",
+  "randomizeOptions": false,
+  "options": [
+    {
+      "id": "001",
+      "text": "Pristine Museum-Grade Wall Panel.\n• TRANSFORMATION LOGIC:\n• The subject's facial layout, smile, and jawline are masterfully rendered with fine cobalt blue calligraphic brushstrokes outlining the features.\n• Soft washes of yellow and green ochre tones provide classical hand-painted shading across the cheeks and nose.\n• The hair features are painted as ornate, stylized flowing Renaissance curls that beautifully mirror the subject's original hairstyle silhouette."
+    },
+    {
+      "id": "002",
+      "text": "Cracked and Kiln-Scorched Antique Artifact.\n• TRANSFORMATION LOGIC:\n• The tile portrait shows severe age and kiln distress: a large, prominent fracture line runs diagonally across the subject's face.\n• The antimony yellow and cobalt blue pigments forming the eyes and smile show subtle scorch marks and heavy mineral bubbling from uneven kiln temperatures.\n• The edges of the clay tile are visibly broken and eroded, revealing the raw terracotta body beneath the white glazed surface."
+    }
+  ],
+  "additionalInstructions": "IDENTITY PRESERVATION (CRITICAL):\n• The hand-painted pottery strokes must precisely maintain the subject's signature facial structure, proportions, and expression. The final output must pass as an authentic piece of antiquarian decorative arts."
+  },
+  {
     "name": "REPORTAGE ILLUSTRATION",
     "category": [
       "ILLUSTRATION",
@@ -30719,6 +30865,29 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "FINAL RESULT:\nA nostalgic futuristic scene inspired by mid-20th century visions of the future."
+  },
+  {
+  "name": "RETRO SQUEEZE TOY",
+  "category": [
+    "FUNNY",
+    "ABSURD",
+    "RETRO",
+    "TOY",
+    "CHARACTER TRANSFORMATION"
+  ],
+  "message": "Take a picture and transform the subject into a vintage, hollow rubber squeeze toy.\n\nVINYL CONSTRUCTIONS RULES (NON-NEGOTIABLE):\n• The subject must be molded into a single-piece, flexible, soft vinyl or rubber squeak-toy figurine\n• The material must look soft, smooth, and slightly squishy, featuring a characteristic satin-matte finish\n• A distinct metal or plastic circular air squeaker valve must be clearly embedded into the base or mid-torso of the figurine\n• Display the toy standing on a vintage wooden nursery floor or a retro collectibles shelf",
+  "randomizeOptions": false,
+  "options": [
+    {
+      "id": "001",
+      "text": "Pristine Painted Collectible Toy.\n• TRANSFORMATION LOGIC:\n• The subject's facial traits, eyes, jawline, and smile must be molded directly into the rubber structure with slightly soft, simplified contours.\n• The hair, eyes, and clothing details must look hand-sprayed or stamped on using thick, slightly matte factory enamel paint that stays strictly within the molded boundaries.\n• The figurine's proportions should be humorously chibi or bobblehead-styled while retaining accurate facial likeness."
+    },
+    {
+      "id": "002",
+      "text": "Well-Loved and Deflated Vintage Toy.\n• TRANSFORMATION LOGIC:\n• The toy version of the subject must appear humorously creased, dented, and partially collapsed from years of being squeezed.\n• The painted features (eyes, smile, hair color) must show vintage scuffs, fine paint flakes, and minor rub-wear revealing the base cream-colored rubber underneath.\n• The figurine sits slightly lopsided due to the compressed, deflated soft vinyl material."
+    }
+  ],
+  "additionalInstructions": "IDENTITY PRESERVATION (CRITICAL):\n• The stylized molded rubber contours and factory paint stamps must completely lock down the subject's unique eye shape, expression, and structural facial identity. It must read entirely as a genuine piece of physical mid-century childhood merchandise."
   },
   {
     "name": "REVERSE GLASS PAINTING",
@@ -31451,6 +31620,29 @@
     "additionalInstructions": ""
   },
   {
+  "name": "RUBBER ERASER PRINT",
+  "category": [
+    "FUNNY",
+    "ABSURD",
+    "LINE ART",
+    "STATIONERY",
+    "CHARACTER TRANSFORMATION"
+  ],
+  "message": "Take a picture and transform the subject into a hand-carved rubber utility eraser stamp.\n\nSTATIONERY RULES (NON-NEGOTIABLE):\n• The image must showcase a macro flat-lay perspective\n• The subject must be carved flat into the surface of a classic, pink rubber eraser block\n• The art style must look like a raw, simplified linocut print, using blocky negative spaces and thick ink outlines\n• No high-fidelity 3D modeling or photographic human skin; everything must be pink rubber or flat ink stamps",
+  "randomizeOptions": false,
+  "options": [
+    {
+      "id": "001",
+      "text": "Freshly Carved Rubber Block.\n• TRANSFORMATION LOGIC:\n• The focus is on the physical pink eraser itself, showing sharp gouge marks where an X-Acto knife cut away the rubber.\n• The subject's smile, eyes, glasses, and hair silhouette are left raised and flat, coated in a fresh layer of wet, dark blue ink.\n• Small rubber shavings and debris from the carving process litter the wooden desk surface directly around the block."
+    },
+    {
+      "id": "002",
+      "text": "Stamped Paper Scrap Impression.\n• TRANSFORMATION LOGIC:\n• The focus shifts to a flat piece of scrap notebook paper where the eraser has been stamped down repeatedly.\n• The subject's face is a flat, dark blue ink impression on the paper lines, showing authentic stamp flaws like hollow ink voids and messy, over-inked edges.\n• The lines of the face, jaw, and haircut are highly stylized, mimicking the charmingly blocky limitations of a handmade stamp."
+    }
+  ],
+  "additionalInstructions": "IDENTITY PRESERVATION (CRITICAL):\n• The blocky, carved lines and ink textures must cleanly preserve the subject's distinct facial dimensions, glasses, and core expression. The image must look like a genuine photograph of an artisan craft project."
+  },
+  {
     "name": "RUBBER HOSE",
     "category": [
       "ANIMATION",
@@ -31567,6 +31759,29 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "NOT ALLOWED:\n• Subject photo placed in sand\n• Subject standing next to sand castle\n• Drawing in sand\n• Photo with sand sprinkled on it\n• Any photographic human features\n• Sand overlay on photo\n\nSURROUNDING BEACH:\n• Footprints in sand nearby\n• Tide line visible\n• Ocean horizon\n• Beach stretching into distance\n• Natural beach environment\n• Sculpture is centerpiece\n\nVIEWING ANGLE:\n• Full view of sculpture\n• Ocean visible behind or beside\n• Subject sculpture prominently displayed\n• Beach context clear\n• Could be frontal or three-quarter view\n\nFINAL RESULT:\nThe image should show the subject completely transformed into an intricately detailed sand sculpture carved from beach sand, located on an actual beach with the ocean visible in the background, displaying professional sand sculpting techniques with textured granular sand surfaces, carved details defining the subject's likeness, and the natural beach environment - NOT a photograph in sand, but the actual subject recreated as an elaborate competition-quality sand castle sculpture on the shoreline."
+  },
+  {
+  "name": "SANDSTONE PETROGLYPH",
+  "category": [
+    "ARCHAEOLOGY",
+    "HISTORICAL",
+    "NATURAL ART",
+    "TECHNICAL",
+    "LINE ART"
+  ],
+  "message": "Take a picture and transform the subject into a raw, hand-carved ancient sandstone petroglyph drawing.\n\nPETROGLYPH RULES (NON-NEGOTIABLE):\n• The entire image must show the subject carved flat into a thick, rough, weathered sandstone rock face\n• The portrait, features, and entire identity must be composed strictly of rough, uneven tool marks, parallel rock pecking, and jagged, chiseled line tracks deep into the stone\n• No smooth digital lines, no photographic skin, and no blending; color transitions must be built entirely through granular density variations\n• The background must be covered in columns of intricate, complex petroglyph glyphs, geometric spirals, and wildlife symbols carved using the same primitive tools.",
+  "randomizeOptions": false,
+  "options": [
+    {
+      "id": "001",
+      "text": "Masterpiece Panel of Ritual Drawing.\n• TRANSFORMATION LOGIC:\n• The subject's exact facial structure, smile, and jawline are mapped using bold, sharp, chiseled line tracks and granular pecking marks, keeping the features highly defined.\n• Hair volume is defined entirely by dense, stylized, geometric parallel waves of carved lines that match the silhouette of the original hair.\n• The entire panel must look perfectly crisp and newly laid out by a master artisan under clear, uniform light."
+    },
+    {
+      "id": "002",
+      "text": "Wind-Eroded and Desert-Weathered Discovery.\n• TRANSFORMATION LOGIC:\n• The petroglyph version of the subject shows severe age and geological distress: natural natural rock fracture lines run diagonally across the subject's face.\n• The chiseled marks forming the eyes and smile are humorously softened, rounded, filled with ancient sand, and show natural mineral deposits and water stains.",
+    }
+  ],
+  "additionalInstructions": "IDENTITY PRESERVATION (CRITICAL):\n• Despite the primitive, coarse medium, the arrangement of the chiseled lines and pecking marks must precisely map out the subject's signature facial proportions and distinct expression. It must look like an authentic archaeological treasure discover."
   },
   {
     "name": "SATURDAY EVENING POST",
@@ -32078,6 +32293,29 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "FINAL RESULT:\nA detailed scratchboard-style illustration where the entire image appears engraved into a black surface, revealing white beneath. The result should feel hand-crafted, highly textured, and defined entirely through etched lines, cross-hatching, and contrast, with no soft gradients or painterly effects."
+  },
+  {
+  "name": "SCRATCH-OFF LOTTERY MASCOT",
+  "category": [
+    "RETRO",
+    "FUNNY",
+    "ABSURD",
+    "PRINTMAKING",
+    "CHARACTER TRANSFORMATION"
+  ],
+  "message": "Take a picture and transform the subject into a prize symbol on a vintage instant-win scratch-off lottery ticket.\n\nTICKET CONSTRUCTION RULES (NON-NEGOTIABLE):\n• The image must display a flat-lay view of a thick, glossy cardstock lottery ticket resting on a convenience store counter\n• The art style of the subject must be a high-contrast, cheap neon-ink comic style common in industrial security printing\n• No realistic human skin or photographic rendering; features must use flat CMYK screen tones and bold ink outlines\n• The ticket surface must feature security patterns, small dollar amounts, grid lines, and messy piles of scraped silver latex rubber curls",
+  "randomizeOptions": false,
+  "options": [
+    {
+      "id": "001",
+      "text": "Half-Scratched Lucky Jackpot Icon.\n• TRANSFORMATION LOGIC:\n• The subject is the hidden prize icon, caught mid-scratch: a metal coin or fingernail is visibly scraping the panel.\n• The top half of the subject's face and hair is fully revealed in a bold, vibrant neon comic style on the paper stock.\n• The bottom half of their face (the smile, jawline, and chin) is still hidden underneath a rough, jaggedly torn layer of opaque, metallic silver scratch-off coating."
+    },
+    {
+      "id": "002",
+      "text": "Completely Unscratched Lucky Mascot Banner.\n• TRANSFORMATION LOGIC:\n• The subject serves as the printed 'Lucky Mascot' featured permanently on the main promotional banner at the top of the card.\n• Their facial structure, glasses, and smile are rendered entirely out of cheap, industrial halftone dots with slight registration errors.\n• The background features cheesy, explosive starburst vectors and bold, blocky text reading 'INSTANT CA$H!' or 'LUCKY SEVENS!' directly surrounding the head."
+    }
+  ],
+  "additionalInstructions": "IDENTITY PRESERVATION (CRITICAL):\n• The limited, low-cost commercial printing ink patterns must flawlessly preserve the subject's signature facial proportions and distinct expression. It must look like an authentic macro photograph of an unredeemed novelty lottery card."
   },
   {
     "name": "SCREAM",
@@ -39434,6 +39672,29 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+  "name": "VENETIAN MURANO GLASS",
+  "category": [
+    "ART STYLE",
+    "GLASS",
+    "DECORATIVE",
+    "CRAFTSMANSHIP",
+    "CHARACTER TRANSFORMATION"
+  ],
+  "message": "Take a picture and transform the subject into an authentic, complex Venetian Murano glass sculpture.\n\nGLASS RULES (NON-NEGOTIABLE):\n• The entire image must be a physical, three-dimensional sculpture crafted entirely from hand-blown, sculpted, and stretched translucent glass parts\n• No smooth digital textures or camera realism; the material must display internal air bubbles, flow lines, pontil marks, and brilliant light refractions typical of Murano artistry\n• Features are defined by fused glass rods, internal colored filigree canes, and delicate molten attachments\n• Display the sculpture on a dark, reflective pedestal under precision gallery spotlighting",
+  "randomizeOptions": false,
+  "options": [
+    {
+      "id": "001",
+      "text": "Ornate Millefiori Filigree Portrait.\n• TRANSFORMATION LOGIC:\n• The subject's face is a smooth, sculpted orb of clear glass with internal cobalt blue and white spiral canes mapping out features.\n• Shading is achieved using hundreds of tiny 'Millefiori' (flower pattern) glass slices fused into the matrix.\n• The hair features are elaborate, flowing, delicate tentacles of spun amber glass that beautifully mirror the original hairstyle silhouette."
+    },
+    {
+      "id": "002",
+      "text": "Dynamic Fused and Blown Glass Assemblage.\n• TRANSFORMATION LOGIC:\n• A bold approach where the subject's likeness is constructed from a humorous assemblage of interlocking blown glass shapes: bulbous blue spheres for eyes, and a curved orange glass rod for the smile.\n• Hair is interpreted as chaotic clusters of small, colorful blown glass drops and abstract attachments fused onto the central sculpture."
+    }
+  ],
+  "additionalInstructions": "IDENTITY PRESERVATION (CRITICAL):\n• The intricate, delicate, and often distorted structures of the Venetian glass must flawlessly maintain the subject's signature facial proportions, smile characteristics, and expression. The final output must pass as an authentic piece of antiquarian decorative arts."
   },
   {
     "name": "VENTRILOQUIST DUMMY",
