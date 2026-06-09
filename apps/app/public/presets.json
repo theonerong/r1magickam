@@ -5452,17 +5452,17 @@
     "additionalInstructions": ""
   },
   {
-  "name": "CARVED CAROUSEL ANIMAL",
-  "category": [
-    "CAROUSEL",
-    "WOOD CARVING",
-    "FOLK ART",
-    "SCULPTURE",
-    "AMUSEMENT"
-  ],
-  "message": "Take a picture and transform the scene into an authentic carousel display based on the selected option.\n\nANIMAL CARVING RULES:\n• The carousel animal itself must look entirely hand-carved out of wood, featuring visible grain, carving seams, and tool marks under a high-gloss painted finish\n• The animal must be adorned with traditional carousel ornamentation (saddles, harnesses, gold leaf) and mounted on a classic metallic pole within a warm, atmospheric merry-go-round environment\n\nSTYLE & PRESENTATION:\n• Traditional amusement-park nostalgia and folk-art sculptural design\n• High-end collector-quality craftsmanship and museum restoration standards\n• The assembly must be the sharp, primary three-dimensional focal point of the image",
-  "randomizeOptions": false,
-  "options": [
+    "name": "CARVED CAROUSEL ANIMAL",
+    "category": [
+      "CAROUSEL",
+      "WOOD CARVING",
+      "FOLK ART",
+      "SCULPTURE",
+      "AMUSEMENT"
+    ],
+    "message": "Take a picture and transform the scene into an authentic carousel display based on the selected option.\n\nANIMAL CARVING RULES:\n• The carousel animal itself must look entirely hand-carved out of wood, featuring visible grain, carving seams, and tool marks under a high-gloss painted finish\n• The animal must be adorned with traditional carousel ornamentation (saddles, harnesses, gold leaf) and mounted on a classic metallic pole within a warm, atmospheric merry-go-round environment\n\nSTYLE & PRESENTATION:\n• Traditional amusement-park nostalgia and folk-art sculptural design\n• High-end collector-quality craftsmanship and museum restoration standards\n• The assembly must be the sharp, primary three-dimensional focal point of the image",
+    "randomizeOptions": true,
+    "options": [
     {
       "id": "001",
       "text": "Subject Transformed into the Carousel Animal Itself.\n• IDENTITY & CONFIGURATION:\n• The entire subject must BECOME the carved wooden carousel animal itself.\n• No human rider or extra figures are allowed on or near the animal.\n• The animal's face must be beautifully sculpted by a master artisan to directly incorporate the subject's unique facial structure, smile, nose, jawline, and eye shape.\n• The subject's hair characteristics must be masterfully translated into a carved wooden mane, flowing fur treatment, or decorative plumage.\n• ANTI-CHEAT: Absolutely no realistic skin, real hair, or human eyes may be visible anywhere in the image."
@@ -5471,8 +5471,8 @@
       "id": "002",
       "text": "Real Subject Riding the Transformed Carousel Animal.\n• IDENTITY & CONFIGURATION:\n• SINGLE SUBJECT HANDLING: If there is one subject, the final image must depict the real, photographic subject riding on top of a carved carousel animal whose face, features, and mane have been intricately sculpted to look exactly like that same subject.\n• TWO SUBJECT HANDLING: If there are two subjects in the original image, this option must split them playfully: one subject is completely transformed into the hand-carved wooden carousel animal (its identity intricately sculpted into the wood anatomy), while the second subject remains a real, photographic human riding on top of it.\n• THE RIDER: Any rider element must maintain 100% photographic realism, with natural skin textures, real hair, and a human expression.\n• THE ANIMAL: The underlying animal must always remain a completely hand-carved, painted wooden sculpture showcasing the designated subject's facial proportions."
     }
-  ],
-  "additionalInstructions": "IDENTITY PRESERVATION (CRITICAL):\n• For any carved wood element representing a subject, the face must be flawlessly sculpted by master carousel artisans to resemble that subject's unique eye shapes, jawlines, smiles, and hairstyles transformed into stylized carousel anatomy.\n• For any human rider element, the photographic realism and exact physical identity of the designated subject must be preserved flawlessly.\n• The final image must precisely execute the structural layout specified in the selected option."
+    ],
+    "additionalInstructions": "IDENTITY PRESERVATION (CRITICAL):\n• For any carved wood element representing a subject, the face must be flawlessly sculpted by master carousel artisans to resemble that subject's unique eye shapes, jawlines, smiles, and hairstyles transformed into stylized carousel anatomy.\n• For any human rider element, the photographic realism and exact physical identity of the designated subject must be preserved flawlessly.\n• The final image must precisely execute the structural layout specified in the selected option."
   },
   {
     "name": "CASSETTE FUTURISM",
