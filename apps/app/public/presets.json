@@ -1339,17 +1339,27 @@
     "additionalInstructions": ""
   },
   {
-    "name": "AMBER INCLUSION",
-    "category": [
-      "PALEONTOLOGY",
-      "GEMSTONE",
-      "PREHISTORIC",
-      "NATURE"
-    ],
-    "message": "Take a picture and transform the subject into a biological inclusion trapped inside a piece of ancient, translucent amber.\n\nRULES:\n• The subject must appear suspended inside a golden-orange gemstone.\n• Include tiny air bubbles, bits of moss, and prehistoric detritus surrounding the subject.\n• The subject should have a slightly 'shriveled' or dehydrated organic look consistent with million-year-old preservation.\n• Use caustic light refractions typical of polished resin.\n• The subject must be 100% inside the amber, not a reflection.",
-    "options": [],
-    "randomizeOptions": false,
-    "additionalInstructions": "Identity must be preserved through the biological form seen through the golden tint of the resin. No modern clothing; the subject should appear as a prehistoric specimen."
+  "name": "AMBER INCLUSION",
+  "category": [
+    "PALEONTOLOGY",
+    "GEMSTONE",
+    "PREHISTORIC",
+    "NATURE",
+    "CHARACTER TRANSFORMATION"
+  ],
+  "message": "Take a picture and transform the subject into a true three-dimensional biological specimen perfectly fossilized inside a piece of ancient Baltic amber.\n\n3D SPECIMEN RULES (NON-NEGOTIABLE):\n• CRITICAL depth logic: The subject must NOT look like a flat 2D image printed on or trapped in glass. They must be a physical, volumetric 3D organic form completely encased *deep inside* the center of the translucent gemstone matrix\n• The subject's body must show physical thickness and true internal depth layers, with the golden-orange amber liquid completely surrounding every side of the form\n• The biological specimen must display a slightly shriveled, dehydrated, and perfectly preserved exoskeleton or organic structure consistent with million-year-old resin encapsulation\n• Include microscopic air bubbles, tiny fractures, and prehistoric forest detritus floating at *different depth levels* in front of and behind the subject\n• The outer surface of the amber stone must feature polished, curved facets that cast intense caustic light refractions across the internal 3D body layout",
+  "randomizeOptions": true,
+  "options": [
+    {
+      "id": "001",
+      "text": "Polished Gemstone Gallery Specimen.\n• TRANSFORMATION LOGIC:\n• The subject's three-dimensional face, distinctive glasses, and smile are suspended flawlessly inside a crystal-clear, deep golden-orange amber nodule.\n• The features are perfectly visible through the polished front facet, showing realistic volumetric thickness as the light passes through the gemstone.\n• Hair volume is rendered as a physical, preserved mass showing fine, mineralized organic textures completely trapped within the hardened resin flow-lines."
+    },
+    {
+      "id": "002",
+      "text": "Rough Flawed Archival Specimen.\n• TRANSFORMATION LOGIC:\n• A highly detailed variation where the amber gemstone housing the 3D subject features rich internal stress cracks and cloudy flow layers.\n• The subject's physical facial structure and expression are partially distorted by the natural wave-lines of the ancient resin, creating realistic optical refractions.\n• Microscopic silver air bubbles are visibly clinging directly to the subject's nose ridge, glasses frames, and jawline boundary inside the stone."
+    }
+  ],
+  "additionalInstructions": "IDENTITY PRESERVATION (CRITICAL):\n• The volumetric, three-dimensional preservation must flawlessly maintain the subject's exact facial proportions and distinct expression through the golden tint of the resin. No modern clothing; the final image must look like a macro photograph of an invaluable prehistoric specimen discovery."
   },
   {
     "name": "AMERICAN GIRL/BOY DOLL",
@@ -33226,6 +33236,29 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "SISTINE CHAPEL FRESCO",
+    "category": [
+      "ART STYLE",
+      "RENAISSANCE",
+      "HISTORICAL",
+      "PAINTING",
+      "CHARACTER TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform the subject into a dynamic figure integrated into Michelangelo's classical 'Creation of Adam' ceiling fresco.\n\nFRESCO RULES (NON-NEGOTIABLE):\n• This is a strictly classical fine-art historical masterpiece reconstruction modeled after the Vatican ceiling murals\n• The entire image must look like a flat, aged 16th-century wet plaster fresco wall painting featuring extensive plaster cracks, mineral pigment fading, and a chalky lime-wash texture\n• No modern photography, no modern accessories or eyewear, no 3D digital airbrushing, and no realistic camera blurs are allowed\n• CONTENT SAFETY & DRAPERY RULE: The subject must be depicted in a classical, heroic Renaissance posture, elegantly draped in flowing, safe, non-revealing historical fabrics and deep fabric shadows to comply with art history museum standards",
+    "randomizeOptions": true,
+    "options": [
+    {
+      "id": "001",
+      "text": "The Figure of Adam Reaching out.\n• TRANSFORMATION LOGIC:\n• The subject is completely transformed into the reclining heroic figure on the left side of the composition, extending their arm dynamically across the space.\n• The subject's exact facial structure, jawline, bare eyes, and expression are seamlessly painted into the plaster using fine Renaissance brushwork and earth-toned ochre pigments.\n• Their hand is stretched outward, fingers straining to almost touch the extended fingertip of the divine figure emerging from the opposite side."
+    },
+    {
+      "id": "002",
+      "text": "The Divine Cloud Composition.\n• TRANSFORMATION LOGIC:\n• The subject is integrated as the central, commanding figure on the right side of the fresco, floating dynamically amidst a swirling cloud of deep red drapery and angelic figures.\n• Bold, muscular Renaissance line tracking defines the subject's extended arm, torso layout, bare eyes, and unique facial profile.\n• The background features the cracked, weathered stone and plaster framework of the chapel ceiling vaulting."
+    }
+  ],
+  "additionalInstructions": "IDENTITY PRESERVATION (CRITICAL):\n• Michelangelo's distinctive, muscular, and expressive fresco sketching style must perfectly lock down the subject's signature facial layout, bare eyes, and expression without modern eyewear. The final output must read entirely as an authentic archival photograph of a historical high-Renaissance ceiling artwork."
   },
   {
     "name": "SKETCH ART",
