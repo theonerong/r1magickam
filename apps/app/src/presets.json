@@ -9782,19 +9782,6 @@
     "additionalInstructions": ""
   },
   {
-  "name": "DAVID",
-  "category": [
-    "RENAISSANCE SCULPTURE",
-    "MUSEUM ART",
-    "ITALIAN MASTERWORK",
-    "CHARACTER TRANSFORMATION"
-  ],
-    "message": "Take a picture and transform the subject into the complete, full-body masterpiece sculpture of Michelangelo's David inside the Galleria dell'Accademia in Florence.\n\nSCULPTURE PRODUCTION RULES (NON-NEGOTIABLE):\n• The subject must be completely transformed into the monumental, full-body statue, carved entirely from a single block of flawless white Carrara marble\n• The statue must be depicted in the iconic, heroic contrapposto stance with the slingshot draped over the shoulder, standing on its official octagonal museum pedestal\n• No human eyes, real skin, or organic tissues are allowed; the entire form must be high-gloss polished marble showing subtle grey stone veining and fine historic chisel textures\n• ENVIRONMENT: Position the full monument inside a high-end museum gallery space with directional spotlighting casting artful shadows across the chiseled anatomical contours",
-  "randomizeOptions": false,
-  "options": [],
-  "additionalInstructions": "IDENTITY PRESERVATION (CRITICAL):\n• Michelangelo's distinctive, heroic sculpting style must flawlessly lock down the subject's signature facial anatomy, smile characteristics, jawline, and expression directly into the marble face.\n• The face must be an intricate, hyper-sharp component of the overall statue's anatomy—not a face-swap—ensuring the subject's unique identity is masterfully carved directly into the stone curls and features of the complete David monument."
-  },
-  {
     "name": "DE STIJL",
     "category": [
       "ART",
