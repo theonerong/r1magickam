@@ -15292,16 +15292,16 @@
     "additionalInstructions": "RESTRICTIONS:\n• No cartoon or Disney-style rendering\n• No fully demonic or evil appearance\n• No text overlays or captions\n• No modern buildings unless appropriate to location\n• No unrealistic colors (keep stone natural)\n• No wings so large they dominate scene\n• Gargoyle should look architecturally integrated\n\nFINAL RESULT:\nThe image should convincingly show the subject transformed into an ancient stone gargoyle on the selected cathedral, a permanent guardian watching over the city below. The stone texture, weathering, pose, and cathedral setting should create a photorealistic scene that looks like the gargoyle has been there for centuries."
   },
   {
-    "name": "GAUGING",
-    "category": [
-      "BODY MODIFICATION",
-      "ETHNOGRAPHIC ART",
-      "CHARACTER TRANSFORMATION"
-    ],
-    "message": "Take a picture and transform the subject by incorporating traditional, heavy body modification ornaments into their facial structure.\n\nMODIFICATION RULES (NON-NEGOTIABLE):\n• EAR GAUGES: Both earlobes must be significantly stretched around large, circular ear plug gauges (flesh tunnels) made of polished organic material like dark ebony wood, water buffalo horn, or smooth jade\n• LIP PLATE: The lower lip must be prominently stretched outward to accommodate a large, circular, flat terracotta or wooden lip plate (labret), resting seamlessly beneath the jawline\n• The skin surrounding the plugs and lip plate must look realistically stretched, taut, and perfectly healed around the contours of the ornaments\n• Keep the subject's clothing and the immediate background clean, minimalist, and neutral to keep the primary visual focus entirely on the facial modifications",
-    "randomizeOptions": false,
-    "options": [],
-    "additionalInstructions": "IDENTITY PRESERVATION (CRITICAL):\n• The dramatic ear and lip stretching modifications must be seamlessly integrated into the subject's existing facial geometry without altering their underlying identity.\n• The subject's authentic eye shape, smile characteristics, jawline structure, and core expression must remain completely recognizable and perfectly aligned with the newly added organic ornaments."
+  "name": "GAUGING",
+  "category": [
+    "BODY MODIFICATION",
+    "ETHNOGRAPHIC ART",
+    "CHARACTER TRANSFORMATION"
+  ],
+  "message": "Take a picture and transform the subject by incorporating traditional, ultra-large body modification ornaments directly into their facial structure.\n\nMODIFICATION RULES (NON-NEGOTIABLE):\n• EAR GAUGES: Both earlobes must be severely stretched into massive, thick, circular loops holding dark, polished ebony wood flesh tunnels. The thinned, stretched flesh of the earlobe must form a clean, tight pink ribbon of skin wrapped perfectly around the dark wooden rings.\n• LOWER LIP LABRET PLATE: A massive, flat, circular wooden disc must be embedded directly *inside* the lower lip tissue. The lower lip must be heavily stretched downward into an elongated, open ring of flesh that completely cradles the outer edge of the large disc.\n• MOUTH AND TEETH GEOMETRY: The large wooden disc must be pushed downward enough so that the subject's normal upper teeth, gums, and natural open mouth structure are clearly visible *above* the top rim of the lip plate. The subject must appear to be actively smiling over the top of the embedded ornament.\n• DISC ARTWORK: The flat, light-brown surface of the central wooden lip disc must feature a prominent, intricately detailed, laser-etched geometric mandala pattern spanning its entire face.\n• SURROUNDING ANATOMY: The skin of the lower chin and jawline must appear physically elongated and pulled downward by the structural weight of the lip plate modification. All modified tissue must look completely healed, smooth, and structurally sound.",
+  "randomizeOptions": false,
+  "options": [],
+  "additionalInstructions": "IDENTITY PRESERVATION (CRITICAL):\n• The extreme ear and lip stretching modifications must be seamlessly integrated into the subject's existing facial geometry without erasing their underlying identity.\n• The subject's authentic eye shape, upper facial expression, nose structure, and the specific alignment of their smiling upper teeth must remain entirely recognizable above the newly added organic ornaments."
   },
   {
     "name": "GENDER INVERSION",
