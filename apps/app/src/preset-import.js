@@ -655,6 +655,53 @@ export class PresetImporter {
       presetsList.className = 'menu-list';
       presetsList.id = 'import-presets-list';
 
+      // Single delegated long-press listener for the whole list (replaces per-item listeners)
+      const _presetsLookup = new Map(availablePresets.map(p => [p.name, p]));
+      let _delegatedLongPressTimer = null;
+      const LONG_PRESS_MS = 600;
+
+      presetsList.addEventListener('touchstart', (e) => {
+        const item = e.target.closest('.menu-item');
+        if (!item) return;
+        const preset = _presetsLookup.get(item.dataset.presetName);
+        if (!preset) return;
+        _delegatedLongPressTimer = setTimeout(() => { showPreview(preset); }, LONG_PRESS_MS);
+      }, { passive: true });
+
+      presetsList.addEventListener('touchend', () => {
+        clearTimeout(_delegatedLongPressTimer);
+        _delegatedLongPressTimer = null;
+      }, { passive: true });
+
+      presetsList.addEventListener('touchmove', () => {
+        clearTimeout(_delegatedLongPressTimer);
+        _delegatedLongPressTimer = null;
+      }, { passive: true });
+
+      presetsList.addEventListener('touchcancel', () => {
+        clearTimeout(_delegatedLongPressTimer);
+        _delegatedLongPressTimer = null;
+        hidePreview();
+      }, { passive: true });
+
+      presetsList.addEventListener('mousedown', (e) => {
+        const item = e.target.closest('.menu-item');
+        if (!item) return;
+        const preset = _presetsLookup.get(item.dataset.presetName);
+        if (!preset) return;
+        _delegatedLongPressTimer = setTimeout(() => { showPreview(preset); }, LONG_PRESS_MS);
+      });
+
+      presetsList.addEventListener('mouseup', () => {
+        clearTimeout(_delegatedLongPressTimer);
+        _delegatedLongPressTimer = null;
+      });
+
+      presetsList.addEventListener('mouseleave', () => {
+        clearTimeout(_delegatedLongPressTimer);
+        _delegatedLongPressTimer = null;
+      });
+
       const renderPresetsList = () => {
         const filteredPresets = this.getFilteredPresets(availablePresets);
         const countElement = document.getElementById('import-preset-count');
@@ -766,49 +813,6 @@ export class PresetImporter {
 
           item.appendChild(checkbox);
           item.appendChild(nameSpan);
-
-          // Long-press to show sample image preview
-          let _longPressTimer = null;
-          const LONG_PRESS_MS = 600;
-
-          item.addEventListener('touchstart', (e) => {
-            _longPressTimer = setTimeout(() => {
-              showPreview(preset);
-            }, LONG_PRESS_MS);
-          }, { passive: true });
-
-          item.addEventListener('touchend', () => {
-            clearTimeout(_longPressTimer);
-            _longPressTimer = null;
-          }, { passive: true });
-
-          item.addEventListener('touchmove', () => {
-            clearTimeout(_longPressTimer);
-            _longPressTimer = null;
-          }, { passive: true });
-
-          item.addEventListener('touchcancel', () => {
-            clearTimeout(_longPressTimer);
-            _longPressTimer = null;
-            hidePreview();
-          }, { passive: true });
-
-          // Mouse support (for testing on desktop)
-          item.addEventListener('mousedown', () => {
-            _longPressTimer = setTimeout(() => {
-              showPreview(preset);
-            }, LONG_PRESS_MS);
-          });
-
-          item.addEventListener('mouseup', () => {
-            clearTimeout(_longPressTimer);
-            _longPressTimer = null;
-          });
-
-          item.addEventListener('mouseleave', () => {
-            clearTimeout(_longPressTimer);
-            _longPressTimer = null;
-          });
 
           // Spend credit immediately on check; refund immediately on uncheck (if not yet imported)
 
@@ -1236,7 +1240,6 @@ footerSection.innerHTML = `
 
       scrollContainer.style.overflowY = 'auto';
       scrollContainer.style.overscrollBehavior = 'contain';
-      scrollContainer.style.willChange = 'scroll-position';
     });
   }
 

@@ -7327,10 +7327,7 @@ async function showManualOptionsModal(preset, sections) {
     
     presetNameEl.textContent = preset.name;
     list.innerHTML = '';
-    // Always start at the top for each new preset's options
-    const _optScrollContainer = document.querySelector('#manual-options-modal .styles-menu-scroll-container');
-    if (_optScrollContainer) _optScrollContainer.scrollTop = 0;
-    
+       
     sections.forEach((section, sectionIndex) => {
       // Section header
       const header = document.createElement('div');
@@ -7457,6 +7454,10 @@ async function showManualOptionsModal(preset, sections) {
     
     modal.style.display = 'flex';
     manualOptionsModalVisible = true;
+    requestAnimationFrame(() => {
+        const _optScrollContainer = document.querySelector('#manual-options-modal .styles-menu-scroll-container');
+        if (_optScrollContainer) _optScrollContainer.scrollTop = 0;
+    });
 
     const closeBtn = document.getElementById('close-manual-options');
     const cancelBtn = document.getElementById('cancel-manual-options');

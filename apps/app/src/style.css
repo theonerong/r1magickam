@@ -1,7 +1,7 @@
 /* Power Grotesk Font */
 @font-face {
     font-family: 'Power Grotesk';
-    src: url('https://fonts.cdnfonts.com/s/95219/PowerGrotesk-Regular.woff') format('woff');
+    src: url('./PowerGrotesk-Regular.woff') format('woff');
     font-weight: 400;
     font-style: normal;
     font-display: swap;
@@ -9,7 +9,7 @@
 
 @font-face {
     font-family: 'Power Grotesk';
-    src: url('https://fonts.cdnfonts.com/s/95219/PowerGrotesk-Bold.woff') format('woff');
+    src: url('./PowerGrotesk-Bold.woff') format('woff');
     font-weight: 700;
     font-style: normal;
     font-display: swap;
@@ -2873,6 +2873,8 @@ button:disabled {
     flex: 1;
     overflow-y: auto;
     padding: 2vw;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-y;
 }
 
 .preset-item {
