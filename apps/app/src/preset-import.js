@@ -497,6 +497,8 @@ export class PresetImporter {
       modal.style.display = 'flex';
       modal.style.zIndex = '10000';
       modal.id = 'import-preset-modal';
+      modal.style.backdropFilter = 'none';
+      modal.style.webkitBackdropFilter = 'none';
 
       const content = document.createElement('div');
       content.className = 'styles-menu-content';
@@ -527,7 +529,7 @@ export class PresetImporter {
       // Filter input (sticky at top, immediately below header)
       const filterSection = document.createElement('div');
       filterSection.className = 'menu-section';
-      filterSection.style.cssText = 'position: sticky; top: 0; background: #1a1a1a; z-index: 10; padding: 5px 0; margin: 0; border-bottom: 1px solid #333;';
+      filterSection.style.cssText = 'background: #1a1a1a; padding: 5px 0; margin: 0; border-bottom: 1px solid #333; flex-shrink: 0;';
       filterSection.innerHTML = `
         <div class="filter-row" style="margin: 0; padding-right: calc(8vw + 2vw);">
           <input type="text" id="import-preset-filter" class="style-filter" placeholder="Filter..." style="margin: 0; height: 24px; font-size: 12px;">
@@ -745,17 +747,17 @@ export class PresetImporter {
           const periodIndex = msg.indexOf('.');
           const firstLine = periodIndex !== -1 ? msg.substring(0, periodIndex + 1).trim() : msg.substring(0, 160).trim();
 
-          const item = document.createElement('button');
+          const item = document.createElement('div');
           item.className = 'menu-item';
           item.dataset.presetIndex = index;
           item.dataset.presetName = preset.name;
-          item.style.cssText = 'display: flex; align-items: flex-start; padding: 6px 15px; width: 100%; justify-content: flex-start; margin-bottom: 2px;';
+          item.style.cssText = 'display: flex; align-items: flex-start; padding: 6px 15px; width: 100%; justify-content: flex-start; margin-bottom: 2px; touch-action: pan-y;';
 
           const checkbox = document.createElement('input');
           checkbox.type = 'checkbox';
           checkbox.id = `import-preset-${index}`;
           checkbox.checked = this.checkboxStates.get(preset.name) || false;
-          checkbox.style.cssText = 'width:18px;height:18px;min-width:18px;min-height:18px;margin-right:10px;cursor:pointer;accent-color:#4CAF50;flex-shrink:0;';
+          checkbox.style.cssText = 'width:18px;height:18px;min-width:18px;min-height:18px;margin-right:10px;cursor:pointer;accent-color:#4CAF50;flex-shrink:0;touch-action:pan-y;';
 
           const nameSpan = document.createElement('span');
           nameSpan.className = 'menu-item-name';
@@ -917,10 +919,10 @@ footerSection.innerHTML = `
   </button>
 `;
 
-      scrollContainer.appendChild(filterSection);
       scrollContainer.appendChild(presetsSection);
 
       content.appendChild(header);
+      content.appendChild(filterSection);
       content.appendChild(scrollContainer);
       modal.appendChild(content);
       modal.appendChild(footerSection);

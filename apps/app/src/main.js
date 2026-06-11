@@ -13143,7 +13143,7 @@ window.addEventListener('load', () => {
         _lpSuppress = true;
         window._alphaLongPressActive = true;
         jumpFn();
-        _lpInterval = setInterval(jumpFn, 200);
+        _lpInterval = setInterval(jumpFn, 500);
       }, 500);
     }, { passive: true });
     function _lpStop() {
