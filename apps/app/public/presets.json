@@ -16682,220 +16682,219 @@
     "additionalInstructions": "HARD-EDGE RECONSTRUCTION ENGINE (ABSOLUTE):\n\n• Segment the entire image into large simplified geometric and organic regions\n• Each region must represent a major plane of the subject or environment\n• Reduce small details into broader unified shape masses\n\nFLAT COLOR LOCK:\n\n• Every segmented region must be filled with ONE uniform unmodulated color only\n• No gradients\n• No airbrushing\n• No shading blends\n• No visible brush texture\n• No painterly strokes\n\n• Each color area should read like a clean painted vinyl or vector field\n\nBOUNDARY RULES (CRITICAL):\n\n• Every neighboring color region must meet at a crisp hard edge\n• Borders must be razor sharp and mathematically clean\n• No soft transitions or feathering anywhere\n\nSUBJECT PRESERVATION:\n\n• Facial placement, silhouette, body structure, and key identity landmarks must survive through shape simplification\n• Recognition must come from the arrangement of simplified planes — not from detailed realism\n\nREGION SCALE CONTROL:\n\n• Prefer fewer larger dominant shape masses over many tiny fractured pieces\n• The image should feel calm, bold, and architectonic\n• Avoid mosaic fragmentation\n\nCOLOR FIELD CHARACTER:\n\n• Use bold saturated or strongly contrasting flat colors\n• Colors should be visually decisive and clean\n• Adjacent fields should create strong chromatic separation\n\nSURFACE CHARACTER:\n\n• Entire painting surface must appear smooth, impersonal, and machine-clean\n• No evidence of hand brushwork\n\nANTI-CHEAT:\n\n• Do not create cubist shards\n• Do not create stained glass mosaic\n• Do not create posterized photo with gradients\n• Do not create expressionist abstraction\n\nFAIL CONDITIONS:\n\n• Visible gradients → FAIL\n• Soft edges → FAIL\n• Too many tiny fractured pieces → FAIL\n• Subject becomes unrecognizable random abstraction → FAIL\n\nQUALITY:\n\n• Large bold hard-edge zones\n• Flat color-field simplicity\n• Razor-sharp transitions\n• Strong graphic subject recognition\n• True geometric abstraction"
   },
   {
-    "name": "HARRY POTTER SPELL DUEL",
+    "name": "HARRY POTTER SPELL",
     "category": [
-      "FAN ART",
+      "MAGIC",
       "FANTASY",
-      "INTERACTIVE",
-      "POV",
-      "CHARACTER TRANSFORMATION",
-      "ILLUSION"
+      "TRANSFORMATION",
+      "HARRY POTTER",
+      "SPELLCASTING"
     ],
-    "message": "Take a picture and transform the entire scene into an interactive, first-person (POV) Dueling Club experience from Harry Potter's perspective. The viewpoint must capture Harry’s right hand and holly wand extended forward from the left, aiming at the subject (the grey-haired man with gauges from image_13.png). Superimpose a complex, luminous, transparent arcane user interface (UI) grid over the center of the image, presenting a menu of spells with ancient runes and icons. The final image must represent the complex interaction of numerous simultaneous magical effects, following the structure and logic established in image_21.png.",
+    "message": "Take a picture and transform the image so that it depicts the exact moment Harry Potter is casting the selected spell.\n\nVIEWPOINT RULES (NON-NEGOTIABLE):\n• The final image must be viewed from Harry Potter's perspective.\n• Harry Potter's wand must be visible in the foreground.\n• Harry's hand and sleeve should be visible holding the wand.\n• Magical energy must visibly emerge from the wand tip.\n• The selected spell must visibly affect the appropriate target.\n• The spell effect must be immediately recognizable.\n• The scene must capture the exact moment the spell takes effect.\n• The selected spell determines the transformation.\n• Apply the spell according to its canonical magical effect.\n• Some spells affect the subject.\n• Some spells affect objects.\n• Some spells affect the environment.\n• Some spells affect the entire scene.\n• Preserve recognizable identity whenever the spell affects the subject.\n\nMAGICAL EFFECT RULES:\n• Spell effects should appear cinematic and magical.\n• Magical light should interact naturally with the environment.\n• Spell effects should appear physically integrated into the scene.\n• The image should resemble a frame from a major Harry Potter film.\n• The selected spell must be the obvious focus of the image.\n\nFINAL RESULT:\nThe final image should appear as though Harry Potter has just cast the selected spell and the viewer is witnessing the magical result from Harry's own perspective.",
     "randomizeOptions": true,
     "options": [
     {
-      "id": "A001",
-      "text": "Accio (Summoning Spell).\n• APPLICATION LOGIC:\n• Apply effect to multiple small objects on a cluttered desk (e.g., inkwells, quill, papers) on the left.\n• These objects must be depicted in active motion, physically flying forward and clustering towards Harry’s hand and wand tip."
+      "id": "001",
+      "text": "ACCIO — The selected object is being violently summoned through the air toward Harry's wand."
     },
     {
-      "id": "A002",
-      "text": "Petrificus Totalus (Petrifying Curse).\n• APPLICATION LOGIC:\n• Apply effect to the subject on the right (man from image_13.png).\n• His limbs must be snapped together in a rigid, forced parallel posture, expression locked in wide-eyed paralysis, while maintaining his overall seated form. A faint blue magical binding light traces his stiff posture."
+      "id": "002",
+      "text": "PETRIFICUS TOTALUS — The subject is completely rigid, frozen in an unnatural full-body paralysis."
     },
     {
-      "id": "A003",
-      "text": "Confundo (Confusion Charm).\n• APPLICATION LOGIC:\n• Apply effect to the entire upper-right background structure (Hogwarts architecture and bookshelves).\n• The space must be visibly swirled, geometrically distorted, and warped into a recursive, non-Euclidean vortex of conflicting angles and blurry perspectives, making the classroom design confusing and unstable."
+      "id": "003",
+      "text": "CONFUNDO — The subject appears visibly confused, disoriented, distracted, and mentally overwhelmed."
     },
     {
-      "id": "A004",
-      "text": "Wingardium Leviosa (Levitation Charm).\n• APPLICATION LOGIC:\n• Apply effect to a specific heavy object, such as the subject's desk or the wooden bucket. The object must be floating several feet above its normal position, supported by a distinct aura of soft white lifting light. The subject reacts to this with confusion, his smile wide."
+      "id": "004",
+      "text": "WINGARDIUM LEVIOSA — The subject or primary object is levitating gracefully in midair."
     },
     {
-      "id": "A005",
-      "text": "Expecto Patronum (Patronus Charm).\n• APPLICATION LOGIC:\n• Apply effect from the tip of Harry’s wand on the left. A vibrant, luminous, silver-white spectral animal (e.g., a Stag Patronus) must burst forth into the center of the scene, chasing away several ethereal Dementors lurking in the shadows. The light illuminates the scene intensely."
+      "id": "005",
+      "text": "EXPECTO PATRONUM — A brilliant Patronus bursts from Harry's wand and dominates the scene with protective magical energy."
     },
     {
-      "id": "A006",
-      "text": "Riddikulus (Boggart Charm).\n• APPLICATION LOGIC:\n• Apply effect to the object or creature causing fear. If applying to the subject, his wide-mouth smile must remain, but his appearance is comically altered (e.g., forced into ridiculous clothing, or a funny animal head) to negate fear."
+      "id": "006",
+      "text": "RIDDIKULUS — The subject has been transformed into an absurdly ridiculous and humorous version of itself."
     },
     {
-      "id": "A007",
-      "text": "Obscuro (Blindfolding Spell).\n• APPLICATION LOGIC:\n• Apply effect to the subject on the right (man from image_13.png). A tight, magical, grey blindfold (like image_21.png) must materialize instantly across his eyes and seal shut, obscuring his vision, while his wide-mouth smile and ear gauges remain visible and unchanged. The UI icon for Obscuro (Glowing Red) is highlighted."
+      "id": "007",
+      "text": "OBSCURO — A magical blindfold completely covers the subject's eyes."
     },
     {
-      "id": "A008",
-      "text": "Expelliarmus (Disarming Charm).\n• APPLICATION LOGIC:\n• Apply effect to the opponent's weapon or object. A strong blast of fiery red energy must hit the subject's hands, causing an object (e.g., a heavy book or a metal tool) to physically rip away from their grasp and fly towards Harry's hand, similar to image_21.png."
+      "id": "008",
+      "text": "EXPELLIARMUS — The object being held by the subject is flying out of their grasp toward Harry."
     },
     {
-      "id": "A009",
-      "text": "Incendio (Fire-Lighting Spell).\n• APPLICATION LOGIC:\n• Apply effect to a specific object. The target (e.g., the stack of papers on the desk on the left) must burst into bright, realistic magical flames, casting dynamic light and smoke, while the rest of the scene remains untouched."
+      "id": "009",
+      "text": "INCENDIO — The selected target has burst into magical flames."
     },
     {
-      "id": "A010",
-      "text": "Alohomora (Unlocking Charm).\n• APPLICATION LOGIC:\n• Apply effect to the antique locked wooden desk (center-left in image_21.png). A glowing blue lightning arc (as seen in image_21.png) must simultaneously unlatch multiple drawers, causing papers to burst out onto the floor."
+      "id": "010",
+      "text": "ALOHOMORA — Locked doors, chests, gates, or barriers are magically unlocking."
     },
     {
-      "id": "A011",
-      "text": "Lumos (Wand-Lighting Charm).\n• APPLICATION LOGIC:\n• Apply effect directly to the tip of Harry’s wand on the left. A brilliant, intense orb of focused white light must ignite on the wand tip (like image_21.png), casting dramatic, directional illumination across the leftmost side of the scene and subject."
+      "id": "011",
+      "text": "LUMOS — The wand tip emits an intense magical light that illuminates the entire scene."
     },
     {
-      "id": "A012",
-      "text": "Appare Vestigium (Tracking Spell).\n• APPLICATION LOGIC:\n• Apply effect to the ground and surrounding surfaces. Glowing, golden, ethereal footprints and trace remnants of magical energy must instantly appear and outline the recent movements and spells cast within the classroom."
+      "id": "012",
+      "text": "APPARE VESTIGIUM — Magical traces, footprints, runes, trails, and magical residue become visible throughout the image."
     },
     {
-      "id": "A013",
-      "text": "Confringo (Blasting Curse).\n• APPLICATION LOGIC:\n• Apply effect to a weak structure, such as a wooden shelf on the far right. The target must visibly explode into a shower of splinters and debris, creating a massive opening in the wall through which the sky is visible."
+      "id": "013",
+      "text": "CONFRINGO — The target explodes outward from a magical blast."
     },
     {
-      "id": "A014",
-      "text": "Nebulus (Fogging Spell).\n• APPLICATION LOGIC:\n• Apply effect to the entire room. Thick, dense, grey magical fog must instantly conjure and swirl from Harry’s wand tip, filling the scene and partially obscuring the subject and the UI grid, making visibility low."
+      "id": "014",
+      "text": "NEBULUS — Dense magical fog pours from the wand and fills the scene."
     },
     {
-      "id": "A015",
-      "text": "Slugulus Eructo (Slug-Vomiting Charm).\n• APPLICATION LOGIC:\n• Apply effect to the subject on the right (man from image_13.png). His wide-mouth smile must remain, but he is depicted in mid-convulsion, actively vomiting a continuous torrent of large, glistening green and brown slugs into the carved wooden bucket at his feet (like image_21.png)."
+      "id": "015",
+      "text": "SLUGULUS ERUCTO — The subject is actively vomiting slugs."
     },
     {
-      "id": "A016",
-      "text": "Ventus (Windy Spell).\n• APPLICATION LOGIC:\n• Apply effect as a strong jet of wind. A distinct, spiraling blue-white jet of wind must shoot from Harry's wand tip, blowing away heavy objects like desks and books, scattering them across the room."
+      "id": "016",
+      "text": "VENTUS — A powerful spiraling wind blast erupts from Harry's wand."
     },
     {
-      "id": "A017",
-      "text": "Cave Inimicum (Protective boundary).\n• APPLICATION LOGIC:\n• Apply effect as a bubble around Harry. A subtle, transparent, boundary must form around the POV viewpoint, subtly distorting the light outside it and creating a visual separation between Harry's location and the target."
+      "id": "017",
+      "text": "CAVE INIMICUM — A shimmering magical barrier surrounds and conceals the protected area."
     },
     {
-      "id": "A018",
-      "text": "Celescere (Greenhouse Charm).\n• APPLICATION LOGIC:\n• Apply effect to plants. All plants, such as the large clusters of pink and purple orchids on the right bookshelves in image_21.png, must instantly burst into vibrant, hyper-stimulate growth, doubling in size and overflowing their containers, completely overtaking the area."
+      "id": "018",
+      "text": "CELESCERE — Plants throughout the image rapidly grow into lush oversized vegetation."
     },
     {
-      "id": "A019",
-      "text": "Orchideous (Flower Conjuring Spell).\n• APPLICATION LOGIC:\n• Apply effect from Harry’s wand tip. A massive, overflowing cascade of vibrant pink and purple flowers and orchids must instantly burst from the bookshelf on the far right, covering it like image_21.png."
+      "id": "019",
+      "text": "ORCHIDEOUS — A magnificent bouquet of pink flowers erupts from the wand."
     },
     {
-      "id": "A020",
-      "text": "Melofors (Pumpkin Jinx).\n• APPLICATION LOGIC:\n• Apply effect to the subject's head. A large, carved, glowing Halloween pumpkin must encase the subject's entire head, leaving his gauges and red t-shirt visible below the pumpkin rim."
+      "id": "020",
+      "text": "MELOFORS — The subject's head is encased inside a realistic pumpkin."
     },
     {
-      "id": "A021",
-      "text": "Entomorphis (Insect Transformation).\n• APPLICATION LOGIC:\n• Apply effect to the subject. The subject's appearance must temporarily change, sprouting insect-like antenna and multi-jointed limbs, while maintaining his overall form, smile, and gauges, crawling low to the ground."
+      "id": "021",
+      "text": "ENTOMORPHIS — The subject develops insect-like features and behavior."
     },
     {
-      "id": "A022",
-      "text": "Colovaria (Color-Changing Charm).\n• APPLICATION LOGIC:\n• Apply effect to the subject’s clothing. The red t-shirt must be instantly transformed into a complex, multi-colored patchwork of sharp geometric squares (like image_21.png), replacing the simple red garment."
+      "id": "022",
+      "text": "COLOVARIA — The primary subject and surroundings undergo a dramatic magical color transformation."
     },
     {
-      "id": "A023",
-      "text": "Aparecium (Revealing Charm).\n• APPLICATION LOGIC:\n• Apply effect to the desks and walls. Previously invisible symbols, runes, and secret messages must instantly glow and appear on all stone and wood surfaces, revealed by the charm."
+      "id": "023",
+      "text": "APARECIUM — Hidden writing, secret messages, magical symbols, and invisible markings become visible."
     },
     {
-      "id": "A024",
-      "text": "Ferula (Healing Charm).\n• APPLICATION LOGIC:\n• Apply effect to a small injury on the subject (e.g., a hand scratch from Expelliarmus). White, glowing, woven bandages must instantly materialize and wrap cleanly around the target's minor wound."
+      "id": "024",
+      "text": "FERULA — Magical bandages and healing wraps appear around injuries."
     },
     {
-      "id": "A025",
-      "text": "Evanesco (Vanishing Spell).\n• APPLICATION LOGIC:\n• Apply effect to a section of the Hogwarts architecture (e.g., a stone wall section on the far right). The solid stone must visibly dissolve into a hazy, shimmering cloud, fading from existence into the cloud-filled Hogwarts sky, like image_21.png."
+      "id": "025",
+      "text": "EVANESCO — The selected object is visibly disappearing into nothingness."
     },
     {
-      "id": "A026",
-      "text": "Locomotor Wibbly (Jelly-Legs Jinx).\n• APPLICATION LOGIC:\n• Apply effect to the subject’s legs. Both of the seated subject’s legs must turn into visibly soft, gelatinous, and jiggly jelly, completely incapable of support, causing him to slump in his chair with a wide, uncontrolled grin."
+      "id": "026",
+      "text": "LOCOMOTOR WIBBLY — The subject's legs have become unstable jelly-like limbs."
     },
     {
-      "id": "A027",
-      "text": "Flagrate (Fiery Writing Charm).\n• APPLICATION LOGIC:\n• Apply effect to the air. A series of fiery, glowing orange-red lines must trail and solidify in midair, spelling out the selected spell incantation, tracing an arc from Harry’s wand."
+      "id": "027",
+      "text": "FLAGRATE — Fiery glowing symbols and drawings are being written through the air."
     },
     {
-      "id": "A028",
-      "text": "Rictusempra (Tickling Charm).\n• APPLICATION LOGIC:\n• Apply effect to the subject. The subject (man from image_13.png) must be rendered in a state of uncontrollable, hysterical laughter. His wide-mouth smile must remain, but his eyes are tearing up and facial muscles are convulsing in fitful laughter."
+      "id": "028",
+      "text": "RICTUSEMPRA — The subject is laughing uncontrollably from magical tickling."
     },
     {
-      "id": "A029",
-      "text": "Glacius (Freezing Spell).\n• APPLICATION LOGIC:\n• Apply effect to water or flames. A strong blast of icy cold blue-white air must instantly cover the target object (e.g., the water inside the bucket, or the Incendio flames) in thick, fractured, realistic ice and frost."
+      "id": "029",
+      "text": "GLACIUS — The target is frozen in ice, frost, and crystalline winter magic."
     },
     {
-      "id": "A030",
-      "text": "Relashio (Releasing Jinx).\n• APPLICATION LOGIC:\n• Apply effect to a strong grip. The subject’s tight grip on any object (e.g., the wooden bucket, or a book) must be instantly broken. The object is forcibly released and pushed away, supported by a distinct aura of silver repelling energy."
+      "id": "030",
+      "text": "RELASHIO — The subject is forcibly releasing whatever they were holding."
     },
     {
-      "id": "A031",
-      "text": "Anteoculatia (Antler Growth Jinx).\n• APPLICATION LOGIC:\n• Apply effect to the subject's head. A massive, complex pair of deer antlers must sprout instantly and comically from the top of the subject's head, towering above his smile and ear gauges."
+      "id": "031",
+      "text": "ANTEOCULATIA — Large antlers have magically grown from the subject's head."
     },
     {
-      "id": "A032",
-      "text": "Scourgify (Scouring Charm).\n• APPLICATION LOGIC:\n• Apply effect to dirt and clutter. The messy desk on the left, once hit with a blast of soapy white foam, must instantly become pristine, clean, and organized, completely spotless."
+      "id": "032",
+      "text": "SCOURGIFY — The scene is being aggressively cleaned by visible magical cleaning effects."
     },
     {
-      "id": "A033",
-      "text": "Fracto Strata (Beginner breaking spell).\n• APPLICATION LOGIC:\n• Apply effect to weak objects. The wooden bucket at the subject’s feet must disintegrate into a chaotic shower of small wooden splinters and metal hoop pieces, scattering across the stone floor."
+      "id": "033",
+      "text": "FRACTO STRATA — Weak objects are shattering into countless fragments."
     },
     {
-      "id": "A034",
-      "text": "Ebublio (Bubble Entrapment Jinx).\n• APPLICATION LOGIC:\n• Apply effect around the subject. A massive, strong, shimmering transparent bubble must form instantly around the seated man, enclosing him completely. He reacts by pressing his smiling face against the inner wall, trapped."
+      "id": "034",
+      "text": "EBUBLIO — The subject is trapped inside a giant magical bubble."
     },
     {
-      "id": "A035",
-      "text": "Tarantallegra (Dancing Legs Charm).\n• APPLICATION LOGIC:\n• Apply effect to the subject’s legs. Both of the subject’s legs must begin to physically and comically spasm and twitch, dancing a rapid, involuntary jig under the table, while he remains seated, smiling uncontrollably."
+      "id": "035",
+      "text": "TARANTALLEGRA — The subject is involuntarily dancing due to uncontrollable leg spasms."
     },
     {
-      "id": "A036",
-      "text": "Stupefy (Stunning Spell).\n• APPLICATION LOGIC:\n• Apply effect to the subject. Hit by a strong blast of red energy, the subject (man from image_13.png) must slump forward in unconsciousness. His head rests on the table, gauges visible, completely stunned."
+      "id": "036",
+      "text": "STUPEFY — The subject has been magically stunned and rendered unconscious."
     },
     {
-      "id": "A037",
-      "text": "Locomotor Mortis (Leg-Locker Curse).\n• APPLICATION LOGIC:\n• Apply effect to the subject's legs. Both of the subject’s legs are comically snapped together and bound by a distinct, invisible force, rendering him completely unable to separate them while seated."
+      "id": "037",
+      "text": "LOCOMOTOR MORTIS — The subject's legs are magically locked together."
     },
     {
-      "id": "A038",
-      "text": "Spongify (Softening Charm).\n• APPLICATION LOGIC:\n• Apply effect to objects. The subject’s wooden desk, after hit with a blast of green light, must visibly and physically turn soft, rubbery, and bouncy, its form warping comically when he presses on it with a wide grin."
+      "id": "038",
+      "text": "SPONGIFY — The target has become soft, rubbery, and bouncy."
     },
     {
-      "id": "A039",
-      "text": "Serpensortia (Snake Conjuring Spell).\n• APPLICATION LOGIC:\n• Apply effect to the ground. A strong blast from Harry’s wand tip causes a live, writhing, coiling snake (e.g., a small green boa) to magically appear and drop from the air onto the stone floor near the subject."
+      "id": "039",
+      "text": "SERPENSORTIA — A large live snake emerges from the tip of Harry's wand."
     },
     {
-      "id": "A040",
-      "text": "Bombardo (Exploding Charm).\n• APPLICATION LOGIC:\n• Apply effect to weak structures. A strong blast causes the stone wall on the far right to rupture and explode in a loud, contained small explosion, creating a breach for a view of the sky."
+      "id": "040",
+      "text": "BOMBARDO — A powerful magical explosion erupts from the target."
     },
     {
-      "id": "A041",
-      "text": "Periculum (Red Spark signal).\n• APPLICATION LOGIC:\n• Apply effect from Harry's wand tip. A strong, long-range stream of intense red sparks and flares must shoot from Harry’s wand tip, arcing across the classroom and towards the ceiling."
+      "id": "041",
+      "text": "PERICULUM — Brilliant red magical sparks shoot into the air."
     },
     {
-      "id": "A042",
-      "text": "Ascendio (Air propulsion spell).\n• APPLICATION LOGIC:\n• Apply effect directly to Harry or an object. The perspective must comically and instantly tilt upwards as Harry is propelled vertically into the air towards the classroom rafters, leaving the smiling subject below."
+      "id": "042",
+      "text": "ASCENDIO — The subject is launched dramatically upward into the air."
     },
     {
-      "id": "A043",
-      "text": "Geminio (Multiplying Spell).\n• APPLICATION LOGIC:\n• Apply effect to small objects. A single object hit with the spell (e.g., a quill or inkwell) must comically and frustratingly start to multiply exponentially, filling the immediate area on the desk with hundreds of duplicates."
+      "id": "043",
+      "text": "GEMINIO — The selected object is multiplying into numerous identical copies."
     },
     {
-      "id": "A044",
-      "text": "Levicorpus (Upside-Down suspension).\n• APPLICATION LOGIC:\n• Apply effect to the subject. Hit by a strong blast of energy, the subject (man from image_13.png) must be comically lifted high into the air and suspended upside down by one ankle, smiling widely as he dangles in the center of the room."
+      "id": "044",
+      "text": "LEVICORPUS — The subject is suspended upside-down by one ankle."
     },
     {
-      "id": "A045",
-      "text": "Furnunculus (Boil Curse).\n• APPLICATION LOGIC:\n• Apply effect to the subject. The seated subject's entire face, neck, and arms must instantly be covered in thousands of large, red, angry-looking boils, which realistically interact with the light, while he maintains his expression and smile (like image_21.png)."
+      "id": "045",
+      "text": "FURNUNCULUS — The subject is covered in magical boils."
     },
     {
-      "id": "A046",
-      "text": "Diffindo (Severing Charm).\n• APPLICATION LOGIC:\n• Apply effect to fabrics. A targeted blast of focused blue light must cleanly rip and sever the subject's multi-colored patchwork shirt down the center, creating a massive, clean split in the fabric, while he smiles widely."
+      "id": "046",
+      "text": "DIFFINDO — The target is being sliced apart by magical cutting force."
     },
     {
-      "id": "A047",
-      "text": "Incarcerous (Rope Conjuring Spell).\n• APPLICATION LOGIC:\n• Apply effect to the subject. A strong blast of woven rope energy must instantly conjur thick, heavy ropes that wrap tightly around the subject's body, binding him completely to his chair, while his head, gauges, and smile remain free."
+      "id": "047",
+      "text": "INCARCEROUS — Thick magical ropes bind and entangle the subject."
     },
     {
-      "id": "A048",
-      "text": "Reducto (Shattering Curse).\n• APPLICATION LOGIC:\n• Apply effect to an object. A strong blast causes the large, empty wooden bucket on the right to instantly shatter into a rain of small, pulverized wooden particles and debris, covering the stone floor."
+      "id": "048",
+      "text": "REDUCTO — The target is shattered into fragments by magical force."
     },
     {
-      "id": "A049",
-      "text": "Immobulus (Immobilization Spell).\n• APPLICATION LOGIC:\n• Apply effect to a moving target or object. All moving magical effects (like flying papers or sloshing water) must instantly and comically freeze in their tracks, held in suspended animation by a distinct aura of blue light, while the subject remains paralyzed."
+      "id": "049",
+      "text": "IMMOBULUS — The subject is completely immobilized in place."
     },
     {
-      "id": "A050",
-      "text": "Aguamenti (Water Summoning Spell).\n• APPLICATION LOGIC:\n• Apply effect from Harry's wand tip. A strong, continuous stream of high-pressure, clear water must simultaneously summon and project from Harry’s wand tip, splashing intensely against the subject’s face and the environment on the left."
+      "id": "050",
+      "text": "AGUAMENTI — A powerful stream of water erupts from Harry's wand."
     }
     ],
-    "additionalInstructions": "IDENTITY PRESERVATION (CRITICAL):\n• THE VIEWPOINT: The POV from image_21.png must be replicated exactly: Harry's right hand and wand tip on the left, glasses periphery, aiming at the subject.\n• THE SUBJECT: The seated man with grey hair and large ear gauges from image_13.png must be the central target. His genuine smile and distinct expression from image_13.png must be maintained across all transformations (Slugs, Boils, Jelly Legs), ensuring his core identity is preserved as he reacts to the magical chaos. He is seated in a heavy wooden Hogwarts desk.\n• THE UI GRID: Replicate the complex UI grid and icons from image_21.png exactly. Use ancient runes and stylized icons. The selected spell option in the grid (e.g., Obscuro) must be highlighted with a distinctive red glow to indicate active selection. The grid must contain all 50 spells in order.\n• SIMULTANEOUS EFFECTS (CRITICAL): The final image must represent the complex interaction of the chosen spell, but *must also retain* the distinct vertical slices of conflicting magical effects established in image_21.png, treating the final scene as a consolidated multi-spell matrix in flux. The Lumos wand-light on the far left and the Obscuro blindfold on the subject must remain constant, consolidated with the new, specific transformations chosen."
+    "additionalInstructions": "IDENTITY PRESERVATION (CRITICAL):\n\n• When the spell affects a person, preserve recognizable facial identity.\n• Preserve recognizable facial structure.\n• Preserve recognizable facial proportions.\n• Preserve recognizable expressions whenever possible.\n• Magical transformations must not erase identity.\n\nOPTION ENFORCEMENT:\n\n• ONLY apply the selected spell.\n• Do not combine spell effects.\n• Do not add effects from unselected spells.\n• The selected spell must be immediately obvious.\n\nANTI-CHEAT:\n\n• Do not show Harry Potter standing in the scene.\n• The image must remain from Harry's perspective.\n• Harry's wand must be visible.\n• Spell effects must originate from the wand.\n• Do not create generic magical effects unrelated to the selected spell.\n\nFINAL RESULT:\nThe image should resemble a cinematic Harry Potter movie scene captured from Harry's own viewpoint at the exact moment the selected spell successfully takes effect."
   },
   {
     "name": "HAUNTED EPITAPH",
