@@ -1,0 +1,1510 @@
+[
+  {
+    "name": "BRUTALIST ARCHITECTURE SKETCH",
+    "category": [
+      "ART",
+      "ARCHITECTURE",
+      "DRAWING",
+      "MODERNISM"
+    ],
+    "message": "Take a picture and transform the image into a brutalist architecture sketch. Render the subject as if they are part of a massive concrete structure with raw, unfinished surfaces, geometric repetition, and monumental scale. Use heavy pencil strokes, stark shadows, and angular compositions reminiscent of architectural renderings from the 1960s-70s brutalist movement.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\u2022 Preserve recognizable subject identity\n\u2022 Emphasize raw concrete textures and geometric forms\n\u2022 Use dramatic perspective and monumental scale\n\u2022 Include architectural elements like cantilevers, exposed structural elements, and repetitive window patterns\n\u2022 Maintain a hand-drawn architectural rendering aesthetic\n\u2022 Use graphite, charcoal, or ink wash techniques"
+  },
+  {
+    "name": "VENETIAN FRESCO",
+    "category": [
+      "ART",
+      "PAINTING",
+      "HISTORICAL",
+      "ITALIAN",
+      "CLASSICAL"
+    ],
+    "message": "Take a picture and transform the image into an authentic Venetian fresco painting from the 16th century. Render the subject in the style of Tiepolo or Veronese with luminous colors, dramatic ceiling perspective (di sotto in s\u00f9), flowing drapery, and architectural trompe l'oeil elements. The composition should feature cloud-filled skies, classical columns, and allegorical figures surrounding the subject.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\u2022 Preserve recognizable subject identity\n\u2022 Use authentic fresco painting techniques with visible plaster texture\n\u2022 Include dramatic foreshortening and ceiling perspective\n\u2022 Incorporate classical architectural framing elements\n\u2022 Use the warm, luminous color palette typical of Venetian school\n\u2022 Add allegorical or mythological supporting figures\n\u2022 Simulate aged fresco surface with subtle cracking and patina"
+  },
+  {
+    "name": "POINTILLIST LANDSCAPE",
+    "category": [
+      "ART",
+      "PAINTING",
+      "NEO-IMPRESSIONISM",
+      "TECHNIQUE"
+    ],
+    "message": "Take a picture and transform the image into a pointillist landscape painting in the style of Georges Seurat or Paul Signac. The entire image should be composed of thousands of tiny, distinct dots of pure color that optically blend when viewed from a distance. Place the subject within a sun-dappled outdoor scene with vibrant complementary color harmonies.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\u2022 Preserve recognizable subject identity\n\u2022 Every element must be rendered in distinct color dots \u2014 no blended brushstrokes\n\u2022 Use scientific color theory with complementary color pairs\n\u2022 Include warm sunlight effects with colored shadows\n\u2022 Maintain the serene, contemplative mood of Neo-Impressionist works\n\u2022 Visible canvas texture beneath the dots\n\u2022 Frame subject in a natural outdoor setting with water, trees, or parkland"
+  },
+  {
+    "name": "ART NOUVEAU POSTER",
+    "category": [
+      "ART",
+      "DESIGN",
+      "POSTER",
+      "DECORATIVE",
+      "VINTAGE"
+    ],
+    "message": "Take a picture and transform the image into an Art Nouveau poster in the style of Alphonse Mucha. Feature the subject surrounded by ornate floral borders, flowing organic lines, and decorative mosaic backgrounds. Use flat color areas, elegant typography spaces, and the characteristic sinuous curves of the Art Nouveau movement. The composition should have a vertical poster format with elaborate botanical framing.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\u2022 Preserve recognizable subject identity\n\u2022 Use flat, lithographic color areas with bold outlines\n\u2022 Include elaborate floral and botanical border decorations\n\u2022 Incorporate flowing hair and fabric rendered as decorative patterns\n\u2022 Use muted earth tones with gold accents\n\u2022 Add circular or arched halo-like background elements\n\u2022 Include space for decorative Art Nouveau typography\n\u2022 Simulate vintage lithograph printing texture"
+  },
+  {
+    "name": "BAUHAUS GEOMETRIC PORTRAIT",
+    "category": [
+      "ART",
+      "DESIGN",
+      "MODERNISM",
+      "GEOMETRIC",
+      "ABSTRACT"
+    ],
+    "message": "Take a picture and transform the image into a Bauhaus-style geometric portrait. Deconstruct the subject into primary geometric shapes \u2014 circles, triangles, and rectangles \u2014 using only primary colors (red, yellow, blue) plus black and white. The composition should follow Bauhaus design principles of form follows function, with clean lines, mathematical precision, and balanced asymmetry.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\u2022 Preserve recognizable subject identity through geometric abstraction\n\u2022 Use only primary colors plus black and white\n\u2022 Compose entirely from basic geometric shapes\n\u2022 Apply grid-based composition with mathematical precision\n\u2022 Reference the style of Kandinsky, Klee, or Schlemmer\n\u2022 Include clean sans-serif typography elements if appropriate\n\u2022 Maintain flat, unshaded color areas\n\u2022 Balance asymmetrical composition with visual weight"
+  },
+  {
+    "name": "SGRAFFITO WALL ART",
+    "category": [
+      "ART",
+      "ARCHITECTURAL",
+      "TEXTURE",
+      "HISTORICAL",
+      "TECHNIQUE"
+    ],
+    "message": "Take a picture and transform the image into a sgraffito wall artwork. Render the subject as if scratched and carved through layers of colored plaster on a building facade, revealing contrasting colors beneath. The technique should show the characteristic scratched-through texture with bold, simplified forms typical of Renaissance and Baroque architectural decoration.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\u2022 Preserve recognizable subject identity\n\u2022 Show multiple plaster layers with scratched-through technique\n\u2022 Use bold, simplified forms with strong outlines\n\u2022 Include architectural context (building facade, wall surface)\n\u2022 Simulate authentic plaster texture and weathering\n\u2022 Use limited color palette (typically earth tones with white)\n\u2022 Add decorative border patterns typical of sgraffito tradition"
+  },
+  {
+    "name": "PERSIAN MINIATURE PAINTING",
+    "category": [
+      "ART",
+      "PAINTING",
+      "HISTORICAL",
+      "MIDDLE EASTERN",
+      "ILLUSTRATION"
+    ],
+    "message": "Take a picture and transform the image into an authentic Persian miniature painting. Render the subject in the highly detailed, flat perspective style of medieval Persian manuscript illumination. Include intricate floral borders, gold leaf accents, vibrant jewel-tone colors, and the characteristic bird's-eye architectural perspective. The composition should feature garden settings, ornate textiles, and calligraphic elements.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\u2022 Preserve recognizable subject identity\n\u2022 Use flat perspective with no vanishing point\n\u2022 Include extremely fine detail and miniature brushwork\n\u2022 Apply vibrant jewel-tone colors (lapis blue, vermillion, gold)\n\u2022 Add intricate floral and geometric border illumination\n\u2022 Include Persian garden elements (cypress trees, flowing water, flowers)\n\u2022 Use gold leaf accents for highlights and decorative elements\n\u2022 Simulate aged manuscript paper texture"
+  },
+  {
+    "name": "ENCAUSTIC WAX PAINTING",
+    "category": [
+      "ART",
+      "PAINTING",
+      "TECHNIQUE",
+      "TEXTURE",
+      "MIXED MEDIA"
+    ],
+    "message": "Take a picture and transform the image into an encaustic wax painting. Render the subject using the ancient technique of heated beeswax mixed with pigments, showing the characteristic translucent layers, rich texture, and luminous depth of encaustic art. The surface should display visible wax buildup, scraping marks, and the unique semi-transparent quality of layered pigmented wax.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\u2022 Preserve recognizable subject identity\n\u2022 Show translucent, layered wax texture throughout\n\u2022 Include visible tool marks from heated metal implements\n\u2022 Display the characteristic luminous, glowing quality of wax medium\n\u2022 Add areas of thick impasto wax buildup\n\u2022 Show scraped and fused layers revealing colors beneath\n\u2022 Include subtle embedded materials (paper, fabric fragments) if appropriate\n\u2022 Maintain warm, honey-toned undertones from beeswax base"
+  },
+  {
+    "name": "SOVIET CONSTRUCTIVIST POSTER",
+    "category": [
+      "ART",
+      "DESIGN",
+      "POLITICAL",
+      "PROPAGANDA",
+      "HISTORICAL"
+    ],
+    "message": "Take a picture and transform the image into a Soviet Constructivist propaganda poster from the 1920s. Render the subject in bold geometric forms with dramatic diagonal compositions, photomontage elements, and the characteristic red-black-white color palette. Include industrial imagery, dynamic angular typography, and the revolutionary energy of Russian avant-garde design.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\u2022 Preserve recognizable subject identity\n\u2022 Use bold red, black, and white color palette\n\u2022 Apply dramatic diagonal composition with strong geometric forms\n\u2022 Include photomontage-style layering techniques\n\u2022 Add constructivist typography (angular, bold, dynamic placement)\n\u2022 Reference industrial and revolutionary imagery\n\u2022 Use high contrast with minimal tonal gradation\n\u2022 Simulate letterpress/lithograph printing texture"
+  },
+  {
+    "name": "TROMPE L'OEIL STILL LIFE",
+    "category": [
+      "ART",
+      "PAINTING",
+      "ILLUSION",
+      "REALISM",
+      "CLASSICAL"
+    ],
+    "message": "Take a picture and transform the image into a trompe l'oeil painting \u2014 an ultra-realistic optical illusion artwork that tricks the eye into believing the painted objects are real three-dimensional items. Present the subject as if they are a painted element on a wooden board, pinned letter, or cabinet door, with hyper-realistic shadows, textures, and depth that create the illusion of physical presence.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\u2022 Preserve recognizable subject identity\n\u2022 Create convincing optical illusion of three-dimensionality\n\u2022 Include realistic cast shadows and surface textures\n\u2022 Add elements like pins, tape, nails, or clips that appear to hold items to a surface\n\u2022 Show wood grain, cork board, or stone wall as background surface\n\u2022 Paint edges that appear to curl or lift from the surface\n\u2022 Use photorealistic rendering with museum-quality detail\n\u2022 Include small imperfections (dust, wear) that enhance the illusion"
+  },
+  {
+    "name": "CLOISONN\u00c9 ENAMEL",
+    "category": [
+      "ART",
+      "DECORATIVE",
+      "METALWORK",
+      "CRAFT",
+      "ASIAN"
+    ],
+    "message": "Take a picture and transform the image into a cloisonn\u00e9 enamel artwork. Render the subject as if created using the ancient metalworking technique where thin metal wires form compartments (cloisons) filled with vitreous enamel in brilliant colors. The image should show the characteristic gold or copper wire outlines separating jewel-bright color fields with a smooth, glossy enamel surface.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\u2022 Preserve recognizable subject identity\n\u2022 Show visible gold/copper wire outlines separating all color areas\n\u2022 Use brilliant, saturated enamel colors (cobalt blue, emerald green, ruby red)\n\u2022 Maintain smooth, glossy enamel surface texture\n\u2022 Include decorative floral and scrollwork patterns in background\n\u2022 Simulate the slight convex surface of filled enamel cells\n\u2022 Add metallic gold accents and borders\n\u2022 Reference Chinese or Japanese cloisonn\u00e9 traditions"
+  },
+  {
+    "name": "GYOTAKU FISH PRINT",
+    "category": [
+      "ART",
+      "JAPANESE",
+      "PRINTMAKING",
+      "NATURE",
+      "TECHNIQUE"
+    ],
+    "message": "Take a picture and transform the image into a gyotaku-style print \u2014 the traditional Japanese art of printing from fish and natural objects. Render the subject as if they were inked and pressed onto rice paper, creating a direct impression with visible texture, scale patterns, and the characteristic monochromatic or limited-color aesthetic of this unique printmaking tradition.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\u2022 Preserve recognizable subject identity\n\u2022 Use direct-impression printing aesthetic\n\u2022 Show ink transfer texture with areas of heavy and light coverage\n\u2022 Include rice paper or washi paper background texture\n\u2022 Use primarily black sumi ink with optional subtle color accents\n\u2022 Display natural texture patterns (scales, feathers, skin texture)\n\u2022 Add Japanese calligraphy or seal stamps as compositional elements\n\u2022 Maintain the organic, slightly imperfect quality of hand-printing"
+  },
+  {
+    "name": "KINETIC OP ART",
+    "category": [
+      "ART",
+      "OPTICAL ILLUSION",
+      "ABSTRACT",
+      "MODERN",
+      "GEOMETRIC"
+    ],
+    "message": "Take a picture and transform the image into a kinetic Op Art piece in the style of Bridget Riley or Victor Vasarely. Render the subject using precise geometric patterns \u2014 stripes, concentric circles, warped grids, and moir\u00e9 effects \u2014 that create the optical illusion of movement, vibration, and three-dimensional depth on a flat surface. The image should appear to pulse and shift when viewed.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\u2022 Preserve recognizable subject identity within the optical pattern\n\u2022 Use precise, mathematically regular geometric patterns\n\u2022 Create convincing illusion of movement or vibration\n\u2022 Apply high contrast black and white or limited color palette\n\u2022 Include warped grids that suggest three-dimensional form\n\u2022 Use moir\u00e9 interference patterns where appropriate\n\u2022 Maintain crisp, clean edges throughout\n\u2022 The subject should emerge from or be integrated into the optical pattern"
+  },
+  {
+    "name": "LIMINAL SPACE PHOTOGRAPH",
+    "category": [
+      "ART",
+      "PHOTOGRAPHY",
+      "SURREAL",
+      "ATMOSPHERIC",
+      "MODERN"
+    ],
+    "message": "Take a picture and transform the image into a liminal space photograph \u2014 an unsettling image of a transitional or threshold space that feels eerily empty, familiar yet wrong. Place the subject in a backroom, empty mall, abandoned pool, endless hallway, or vacant parking structure with fluorescent lighting, worn carpet, and an atmosphere of uncanny familiarity and subtle dread.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\u2022 Preserve recognizable subject identity\n\u2022 Create atmosphere of uncanny emptiness and subtle wrongness\n\u2022 Use harsh fluorescent or sodium vapor lighting\n\u2022 Include worn, dated interior elements (old carpet, drop ceilings, yellowed walls)\n\u2022 Emphasize repetitive architectural elements (corridors, doorways, stairs)\n\u2022 Apply slight color cast (yellow-green fluorescent or warm tungsten)\n\u2022 Create sense of isolation and spatial disorientation\n\u2022 Reference the aesthetic of The Backrooms or poolrooms"
+  },
+  {
+    "name": "SCRIMSHAW IVORY ENGRAVING",
+    "category": [
+      "ART",
+      "CRAFT",
+      "MARITIME",
+      "ENGRAVING",
+      "HISTORICAL"
+    ],
+    "message": "Take a picture and transform the image into a scrimshaw engraving \u2014 the traditional maritime art of engraving detailed images onto whale bone or ivory. Render the subject as a finely scratched illustration on a smooth, curved ivory-colored surface, with the characteristic fine-line detail, cross-hatching, and ink-rubbed appearance of authentic sailor-made scrimshaw from the 19th century whaling era.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\u2022 Preserve recognizable subject identity\n\u2022 Show fine scratched lines on smooth ivory/bone surface\n\u2022 Use only black ink rubbed into engraved lines on cream/white surface\n\u2022 Include extremely fine detail and cross-hatching\n\u2022 Show the curved surface of bone or tooth\n\u2022 Add maritime themed border elements (rope, anchors, ships)\n\u2022 Simulate the handmade quality of sailor folk art\n\u2022 Include slight yellowing and aging of the ivory surface\n\u2022 Reference authentic 19th century scrimshaw techniques\n\u2022 Maintain the intimate, detailed quality of miniature engraving"
+  },
+  {
+    "name": "PLEIN AIR GOUACHE STUDY",
+    "category": [
+      "ART",
+      "PAINTING",
+      "LANDSCAPE",
+      "TECHNIQUE",
+      "OUTDOOR"
+    ],
+    "message": "Take a picture and transform the image into a plein air gouache study \u2014 a quick, confident outdoor painting created on location with opaque watercolor. Show the subject rendered with bold, decisive brushstrokes, limited palette mixing, and the fresh spontaneity of direct observation. The painting should have the characteristic matte, chalky surface of gouache with visible paper edges and paint swatches.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\u2022 Preserve recognizable subject identity\n\u2022 Use bold, confident brushstrokes without overworking\n\u2022 Show matte, opaque gouache surface texture\n\u2022 Include visible toned paper or sketchbook edges\n\u2022 Apply limited color palette (5-7 colors maximum)\n\u2022 Maintain fresh, spontaneous quality of outdoor painting\n\u2022 Show color mixing notes or paint swatches at edges\n\u2022 Include natural outdoor lighting with clear light/shadow patterns"
+  },
+  {
+    "name": "POWDER COAT METAL SCULPTURE",
+    "category": [
+      "ART",
+      "SCULPTURE",
+      "MODERN",
+      "INDUSTRIAL",
+      "3D"
+    ],
+    "message": "Take a picture and transform the image into a powder-coated metal sculpture. Render the subject as a welded steel or aluminum sculpture with smooth, factory-perfect colored coating in a single bold color. The sculpture should appear as a simplified, geometric interpretation of the subject with visible weld seams, sheet metal bends, and the ultra-smooth matte or gloss finish of industrial powder coating.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\u2022 Preserve recognizable subject identity in sculptural form\n\u2022 Show smooth, flawless powder coat finish in a bold single color\n\u2022 Include visible construction details (weld seams, bolt holes, metal bends)\n\u2022 Simplify forms into geometric planes and angular surfaces\n\u2022 Display the sculpture in a gallery or outdoor public art setting\n\u2022 Show realistic metal weight and structural engineering\n\u2022 Use dramatic lighting to emphasize three-dimensional form\n\u2022 Reference the work of Alexander Calder or Richard Serra"
+  },
+  {
+    "name": "CYANOTYPE BOTANICAL",
+    "category": [
+      "ART",
+      "PHOTOGRAPHY",
+      "PRINTMAKING",
+      "BOTANICAL",
+      "VINTAGE"
+    ],
+    "message": "Take a picture and transform the image into a cyanotype botanical print. Render the subject using the historic photographic printing process that produces distinctive Prussian blue images. The subject should appear as a white silhouette against deep blue background, or integrated with botanical specimens (leaves, ferns, flowers) in the style of Anna Atkins' pioneering photograms.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\u2022 Preserve recognizable subject identity\n\u2022 Use only Prussian blue and white color palette\n\u2022 Show the characteristic sun-print photogram aesthetic\n\u2022 Include botanical specimens (pressed flowers, ferns, leaves)\n\u2022 Display paper texture and slight chemical irregularities at edges\n\u2022 Show tonal range from deep blue to pale cyan to white\n\u2022 Include slight bleeding and soft edges from contact printing\n\u2022 Simulate the handmade quality of historical cyanotype process"
+  },
+  {
+    "name": "MARQUETRY WOOD INLAY",
+    "category": [
+      "ART",
+      "CRAFT",
+      "WOODWORK",
+      "DECORATIVE",
+      "TECHNIQUE"
+    ],
+    "message": "Take a picture and transform the image into a marquetry wood inlay artwork. Render the subject as if composed entirely of precisely cut pieces of different colored wood veneers fitted together like a jigsaw puzzle. Each area of the image should show distinct wood grain patterns and natural wood colors ranging from pale maple to dark walnut, creating a detailed pictorial image through wood alone.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\u2022 Preserve recognizable subject identity\n\u2022 Show distinct wood grain patterns in every piece\n\u2022 Use natural wood color range (maple, cherry, walnut, ebony, rosewood)\n\u2022 Display precise, tight-fitting joints between pieces\n\u2022 Include visible wood grain direction changes between adjacent pieces\n\u2022 Maintain photographic detail through careful veneer selection\n\u2022 Show the flat, polished surface of finished marquetry\n\u2022 Reference the tradition of Italian intarsia or French marqueterie"
+  },
+  {
+    "name": "PALIMPSEST MANUSCRIPT",
+    "category": [
+      "ART",
+      "HISTORICAL",
+      "TEXT",
+      "LAYERED",
+      "MANUSCRIPT"
+    ],
+    "message": "Take a picture and transform the image into a palimpsest \u2014 a manuscript page where the original text has been scraped away and overwritten, but ghostly traces of the original remain visible beneath. Layer the subject's image with multiple overlapping texts, diagrams, and illustrations from different historical periods, creating a rich archaeological document of layered knowledge.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\u2022 Preserve recognizable subject identity as one of the visible layers\n\u2022 Show multiple overlapping layers of text and imagery\n\u2022 Include ghostly, partially erased underlayers\n\u2022 Use aged vellum or parchment texture\n\u2022 Add Latin, Greek, or medieval script elements\n\u2022 Show ink in various states of fading (iron gall ink aging)\n\u2022 Include marginal annotations and corrections\n\u2022 Display realistic manuscript damage (wormholes, stains, foxing)"
+  },
+  {
+    "name": "RUBBER DUCK VERSION",
+    "category": [
+      "HUMOR",
+      "TRANSFORMATION",
+      "TOY",
+      "ABSURD",
+      "FUN"
+    ],
+    "message": "Take a picture and transform the subject into a rubber duck version of themselves. The subject should become a yellow rubber bath duck that clearly retains their recognizable features \u2014 hairstyle, glasses, facial expression, clothing details \u2014 but rendered as a squeezable, hollow rubber bath toy with the classic rubber duck shape, glossy yellow surface, and orange beak.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "HUMOR GOAL:\n\u2022 The rubber duck must be clearly recognizable as the subject\n\u2022 Maintain key identifying features (hair, glasses, expression, accessories)\n\u2022 Use classic rubber duck proportions (round body, flat bottom, upturned tail)\n\u2022 Show glossy, smooth rubber texture with slight shine\n\u2022 Include the characteristic orange beak\n\u2022 Place in a bathroom/bathtub setting for context\n\u2022 The result should be immediately funny and endearing\n\u2022 Preserve personality through duck-ified features"
+  },
+  {
+    "name": "MEDIEVAL PEASANT REACTION MEME",
+    "category": [
+      "HUMOR",
+      "MEME",
+      "HISTORICAL",
+      "INTERNET CULTURE",
+      "SATIRE"
+    ],
+    "message": "Take a picture and transform the subject into a medieval manuscript illumination depicting them as a peasant having an exaggerated emotional reaction to a mundane modern situation. Render in authentic medieval art style with flat perspective, gold leaf backgrounds, and Latin-style text banners, but depicting absurdly modern scenarios (checking phone, stuck in traffic, Monday morning).",
+    "options": [
+      {
+        "id": "001",
+        "text": "MONDAY MORNING DREAD (peasant version of subject dreading the work week, depicted with medieval farming tools)"
+      },
+      {
+        "id": "002",
+        "text": "WIFI NOT WORKING (peasant version of subject in existential crisis over lost connection, depicted with broken messenger pigeon)"
+      },
+      {
+        "id": "003",
+        "text": "FOOD DELIVERY ARRIVED (peasant version of subject in ecstatic joy, depicted receiving a feast from a herald)"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "HUMOR GOAL:\n\u2022 Subject must remain recognizable in medieval peasant form\n\u2022 Use authentic medieval manuscript illumination style\n\u2022 Flat perspective, gold backgrounds, decorative borders\n\u2022 Include Latin-style banners with humorous pseudo-medieval text\n\u2022 Exaggerate facial expressions in the style of medieval marginalia\n\u2022 Juxtapose modern emotional situations with medieval imagery\n\u2022 Include anachronistic details that enhance the humor\n\u2022 Reference the style of actual medieval reaction memes"
+  },
+  {
+    "name": "CORPORATE BUZZWORD PORTRAIT",
+    "category": [
+      "HUMOR",
+      "SATIRE",
+      "CORPORATE",
+      "BUSINESS",
+      "PARODY"
+    ],
+    "message": "Take a picture and transform the subject into an over-the-top corporate headshot surrounded by floating buzzwords, synergy graphics, and motivational poster elements. The subject should appear in an exaggerated power pose with lens flare, a too-perfect smile, and be surrounded by floating text like 'SYNERGY', 'DISRUPT', 'PIVOT', 'CIRCLE BACK', and meaningless corporate infographics.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "HUMOR GOAL:\n\u2022 Preserve recognizable subject identity\n\u2022 Create an absurdly over-produced corporate headshot\n\u2022 Include floating buzzwords and corporate jargon\n\u2022 Add unnecessary lens flares and gradient backgrounds\n\u2022 Include meaningless pie charts and upward-trending graphs\n\u2022 Show exaggerated confidence and corporate energy\n\u2022 Reference LinkedIn culture and corporate stock photography\n\u2022 Include elements like a power handshake, trophy, or rocket ship\n\u2022 The overall effect should satirize corporate culture"
+  },
+  {
+    "name": "INFOMERCIAL DISASTER",
+    "category": [
+      "HUMOR",
+      "TELEVISION",
+      "PARODY",
+      "ABSURD",
+      "RETRO"
+    ],
+    "message": "Take a picture and transform the subject into a black-and-white infomercial 'problem' scene where they are dramatically failing at a simple everyday task. Show the subject in an exaggerated state of distress while attempting something mundane (pouring water, opening a jar, sitting in a chair) with the characteristic grainy, poorly-lit infomercial aesthetic and a 'THERE HAS TO BE A BETTER WAY!' energy.",
+    "options": [
+      {
+        "id": "001",
+        "text": "STRUGGLING WITH SIMPLE TASK (subject dramatically failing at an everyday activity in black and white)"
+      },
+      {
+        "id": "002",
+        "text": "AMAZED BY SOLUTION (subject in color, ecstatically using an obviously unnecessary gadget with rainbow lighting)"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "HUMOR GOAL:\n\u2022 Preserve recognizable subject identity\n\u2022 Exaggerate the incompetence and frustration\n\u2022 Use grainy, low-quality infomercial camera aesthetic for problem scene\n\u2022 Show dramatic lighting shift to color for solution scene\n\u2022 Include spilled items, broken objects, or tangled materials\n\u2022 Reference classic 'As Seen on TV' commercial tropes\n\u2022 The failure should be absurdly disproportionate to the task\n\u2022 Include a visible 'frustrated gesture' (head in hands, arms raised)"
+  },
+  {
+    "name": "DRAMATICALLY TINY HAT",
+    "category": [
+      "HUMOR",
+      "FASHION",
+      "ABSURD",
+      "PORTRAIT",
+      "FUN"
+    ],
+    "message": "Take a picture and transform the subject into an extremely formal, serious portrait \u2014 oil painting style, dramatic lighting, regal pose \u2014 but wearing a comically tiny hat. The hat should be absurdly small (like 2-3 inches) perched on top of their head, held on by a thin elastic band under the chin. Everything else about the portrait should be deadly serious and dignified.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "HUMOR GOAL:\n\u2022 Preserve recognizable subject identity\n\u2022 Create maximum contrast between serious portrait and tiny hat\n\u2022 The portrait style should be museum-quality formal (think royal portraits)\n\u2022 Dramatic chiaroscuro lighting, rich fabrics, dignified pose\n\u2022 The hat must be comically, absurdly small \u2014 barely larger than a bottle cap\n\u2022 Include a visible thin elastic chin strap\n\u2022 Subject's expression should be completely serious and dignified\n\u2022 The tiny hat is the ONLY absurd element \u2014 everything else is perfectly formal"
+  },
+  {
+    "name": "STOCK PHOTO GONE WRONG",
+    "category": [
+      "HUMOR",
+      "PHOTOGRAPHY",
+      "SATIRE",
+      "ABSURD",
+      "PARODY"
+    ],
+    "message": "Take a picture and transform the subject into a bizarre stock photograph \u2014 the kind of inexplicably weird stock photos that make people question reality. The subject should be doing something completely nonsensical with an inappropriately enthusiastic expression: laughing at a salad, aggressively pointing at a laptop, or celebrating with random office supplies. Include a visible watermark grid overlay.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "HUMOR GOAL:\n\u2022 Preserve recognizable subject identity\n\u2022 Use classic stock photo lighting (bright, flat, shadowless)\n\u2022 White or solid color background\n\u2022 Subject should have an inexplicably intense emotion for a mundane situation\n\u2022 Include random, contextually inappropriate props\n\u2022 Add a semi-transparent diagonal watermark grid\n\u2022 Reference the absurdity of actual weird stock photos\n\u2022 The expression and activity should make no logical sense together\n\u2022 Clean, professional photography quality despite absurd content"
+  },
+  {
+    "name": "PASSIVE AGGRESSIVE NOTE",
+    "category": [
+      "HUMOR",
+      "TEXT",
+      "OFFICE",
+      "SATIRE",
+      "TYPOGRAPHY"
+    ],
+    "message": "Take a picture and transform the subject into a passive-aggressive office note or apartment building notice. The subject's face should appear as a clip-art style illustration on a printed notice that is aggressively polite while clearly furious. Include multiple fonts, unnecessary underlining, highlighted text, and the unmistakable energy of someone who is NOT mad, they're just DISAPPOINTED.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "HUMOR GOAL:\n\u2022 Preserve recognizable subject identity as clip-art on the notice\n\u2022 Use multiple conflicting fonts (Comic Sans, Times New Roman, Arial)\n\u2022 Include excessive punctuation and capitalization\n\u2022 Add highlighted sections and underlined words\n\u2022 Tape the notice to a refrigerator, break room wall, or elevator\n\u2022 Include a smiley face that feels threatening\n\u2022 Reference classic passive-aggressive communication tropes\n\u2022 The tone should be 'friendly' but clearly seething\n\u2022 Include a sign-off like 'Thanks! :)' or 'Your FRIENDLY neighbor'"
+  },
+  {
+    "name": "CONSPIRACY THEORY BOARD",
+    "category": [
+      "HUMOR",
+      "MYSTERY",
+      "PARODY",
+      "DETECTIVE",
+      "ABSURD"
+    ],
+    "message": "Take a picture and transform the subject into the central figure on a conspiracy theory evidence board. The subject's photo should be pinned to a cork board surrounded by red string connections, newspaper clippings, blurry surveillance photos, circled words, question marks, and arrows pointing to absurdly mundane 'evidence' (grocery receipts, weather reports, cat photos).",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "HUMOR GOAL:\n\u2022 Preserve recognizable subject identity in the central pinned photo\n\u2022 Create a detailed cork board with pushpins and red string\n\u2022 Include multiple photos of the subject from different 'surveillance' angles\n\u2022 Add newspaper clippings with circled words\n\u2022 Connect everything with red string in an incomprehensible pattern\n\u2022 Include absurdly mundane 'evidence' items\n\u2022 Add handwritten notes with multiple question marks\n\u2022 Include a coffee-stained notebook page with 'theories'\n\u2022 The conspiracy should be about something completely trivial"
+  },
+  {
+    "name": "DRAMATICALLY OVER-PACKED LUNCH",
+    "category": [
+      "HUMOR",
+      "FOOD",
+      "PARODY",
+      "ABSURD",
+      "WHOLESOME"
+    ],
+    "message": "Take a picture and transform the subject into a parent who has dramatically over-packed a lunch box. Show the subject proudly presenting an absurdly elaborate bento box or lunch container that has been packed with restaurant-quality food, ice sculptures, carved vegetable art, and a full three-course meal \u2014 all crammed into a child's cartoon lunch box. Include a handwritten note that says 'Have a good day! \u2764\ufe0f'",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "HUMOR GOAL:\n\u2022 Preserve recognizable subject identity\n\u2022 Show extreme contrast between simple lunch box and elaborate contents\n\u2022 Include restaurant-quality food presentation in a child's container\n\u2022 Add absurd elements (lobster, souffl\u00e9, wine pairing card)\n\u2022 Subject should look extremely proud and satisfied\n\u2022 Include a child's cartoon-themed lunch box as the container\n\u2022 Add a handwritten love note\n\u2022 The humor comes from the extreme overachievement\n\u2022 Reference competitive lunch-packing culture"
+  },
+  {
+    "name": "MOTIVATIONAL POSTER PARODY",
+    "category": [
+      "HUMOR",
+      "POSTER",
+      "SATIRE",
+      "OFFICE",
+      "PARODY"
+    ],
+    "message": "Take a picture and transform the subject into a demotivational or absurdist motivational poster. Place the subject in a dramatic landscape or situation with a black border frame, and add a single-word title in large white text (like 'PERSISTENCE' or 'EXCELLENCE') followed by a subtitle that completely undermines or contradicts the inspirational tone with deadpan humor.",
+    "options": [
+      {
+        "id": "001",
+        "text": "DEMOTIVATIONAL (inspiring image with deflating, cynical subtitle)"
+      },
+      {
+        "id": "002",
+        "text": "ABSURDIST MOTIVATIONAL (bizarre image with earnestly inspirational but nonsensical subtitle)"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "HUMOR GOAL:\n\u2022 Preserve recognizable subject identity\n\u2022 Use the classic motivational poster format (black border, centered image, white text)\n\u2022 Create dramatic, epic-looking photograph of the subject\n\u2022 The title should be a single inspirational word\n\u2022 The subtitle should completely subvert expectations\n\u2022 High production value image with low-effort wisdom\n\u2022 Reference the Despair.com demotivational poster tradition\n\u2022 The contrast between image grandeur and text deflation creates the humor"
+  },
+  {
+    "name": "INCREASINGLY VERBOSE",
+    "category": [
+      "HUMOR",
+      "MEME",
+      "TEXT",
+      "TRANSFORMATION",
+      "INTERNET CULTURE"
+    ],
+    "message": "Take a picture and create a four-panel 'increasingly verbose' meme transformation. Show the subject in four stages: Panel 1 is a normal photo with a simple caption. Each subsequent panel shows the subject becoming more distorted, deep-fried, and abstract while the caption becomes increasingly over-explained and academic until the final panel is nearly incomprehensible both visually and textually.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "HUMOR GOAL:\n\u2022 Preserve recognizable subject identity (at least in first panels)\n\u2022 Panel 1: Normal photo, simple statement\n\u2022 Panel 2: Slightly saturated, slightly more verbose text\n\u2022 Panel 3: Deep-fried aesthetic, academic language\n\u2022 Panel 4: Extremely distorted, incomprehensible philosophical text\n\u2022 Progressive visual degradation (saturation, noise, lens flare, distortion)\n\u2022 Progressive textual complexity (simple \u2192 academic \u2192 incomprehensible)\n\u2022 Reference the 'increasingly verbose' meme format\n\u2022 Each panel should be clearly more extreme than the last"
+  },
+  {
+    "name": "GENDER REVEAL GONE EXTREME",
+    "category": [
+      "HUMOR",
+      "PARODY",
+      "ABSURD",
+      "CELEBRATION",
+      "SATIRE"
+    ],
+    "message": "Take a picture and transform the subject into someone hosting an absurdly over-the-top gender reveal party that has escalated far beyond reason. The subject should be standing proudly in front of an explosion of either pink or blue that has clearly gotten out of hand \u2014 think colored smoke covering an entire city skyline, a repainted mountain, or a dyed ocean. Their expression should be one of oblivious pride.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "HUMOR GOAL:\n\u2022 Preserve recognizable subject identity\n\u2022 Show an absurdly disproportionate gender reveal event\n\u2022 The pink or blue should have affected an impossibly large area\n\u2022 Subject should appear completely proud and unaware of the chaos\n\u2022 Include panicked bystanders or emergency vehicles in background\n\u2022 Reference real gender reveal disasters but exaggerated to absurdity\n\u2022 Include a small 'It's a Boy/Girl!' banner amid the destruction\n\u2022 The scale of the reveal should be comically apocalyptic"
+  },
+  {
+    "name": "FIVE STAR REVIEW OF MUNDANE THING",
+    "category": [
+      "HUMOR",
+      "REVIEW",
+      "SATIRE",
+      "TEXT",
+      "PARODY"
+    ],
+    "message": "Take a picture and transform the subject into a person leaving an extremely enthusiastic, emotional five-star review of something completely mundane. Show the subject in an ecstatic testimonial-style photo (thumbs up, tears of joy) alongside a formatted review card praising something ordinary (a specific rock, a parking spot, tap water, a regular Tuesday) as if it changed their life forever.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "HUMOR GOAL:\n\u2022 Preserve recognizable subject identity\n\u2022 Create a formatted review layout (stars, reviewer photo, text)\n\u2022 Subject should appear genuinely moved and grateful\n\u2022 The reviewed item must be completely mundane and ordinary\n\u2022 The review text should be emotionally overwrought and detailed\n\u2022 Include specific details that make the mundane item sound revolutionary\n\u2022 Reference Amazon/Yelp/Google review formatting\n\u2022 Include a 'Verified Purchase' or 'Local Guide' badge\n\u2022 The sincerity of the emotion vs. banality of the subject creates humor"
+  },
+  {
+    "name": "NATURE DOCUMENTARY NARRATOR",
+    "category": [
+      "HUMOR",
+      "DOCUMENTARY",
+      "NATURE",
+      "PARODY",
+      "NARRATION"
+    ],
+    "message": "Take a picture and transform the subject into the focus of a nature documentary. Show the subject in their natural habitat (office, kitchen, couch) being observed from a distance through foliage, with documentary-style lower-third text identifying them by a Latin-sounding species name and describing their mundane behavior in dramatic wildlife documentary language.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "HUMOR GOAL:\n\u2022 Preserve recognizable subject identity\n\u2022 Frame the shot as if filmed from a hidden camera through plants/bushes\n\u2022 Include documentary-style lower-third text overlay\n\u2022 Create a fake Latin species name for the subject\n\u2022 Describe mundane behavior (making coffee, checking phone) in dramatic nature documentary language\n\u2022 Use cinematic wildlife photography composition\n\u2022 Include subtle camera crew reflections or equipment edges\n\u2022 Reference David Attenborough-style nature documentary aesthetics\n\u2022 The subject should be unaware they're being 'observed'"
+  },
+  {
+    "name": "EXTREMELY SPECIFIC STARTER PACK",
+    "category": [
+      "HUMOR",
+      "MEME",
+      "COLLAGE",
+      "INTERNET CULTURE",
+      "SATIRE"
+    ],
+    "message": "Take a picture and transform the subject into an 'extremely specific starter pack' meme. Create a grid layout with the subject's photo in the center surrounded by 6-8 hyper-specific items, behaviors, and accessories that create an oddly accurate personality profile. The items should be specific enough to feel like a personal attack but relatable enough to be funny.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "HUMOR GOAL:\n\u2022 Preserve recognizable subject identity in center photo\n\u2022 Use classic starter pack grid layout (white background, arranged items)\n\u2022 Include 6-8 specific items/images around the subject\n\u2022 Items should be oddly specific yet relatable\n\u2022 Include a mix of objects, behaviors, and phrases\n\u2022 Add a title like 'The [specific type] Starter Pack'\n\u2022 Items should tell a story when viewed together\n\u2022 Reference the starter pack meme format accurately\n\u2022 The specificity should feel like it's calling someone out personally"
+  },
+  {
+    "name": "LOADING SCREEN TIP",
+    "category": [
+      "HUMOR",
+      "GAMING",
+      "UI",
+      "PARODY",
+      "ABSURD"
+    ],
+    "message": "Take a picture and transform the subject into a video game loading screen featuring them as the main character. Include a progress bar at the bottom, a rotating 3D model of the subject in a T-pose or idle animation, and a 'helpful' loading screen tip that is either completely obvious, utterly useless, or existentially concerning. Use dark background with dramatic character lighting.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "HUMOR GOAL:\n\u2022 Preserve recognizable subject identity as the game character\n\u2022 Use authentic video game loading screen UI design\n\u2022 Include a progress bar (stuck at 67% or similar)\n\u2022 Show the subject in a game-character pose with dramatic lighting\n\u2022 Add a 'TIP:' or 'DID YOU KNOW?' text with absurd advice\n\u2022 The tip should be either painfully obvious or deeply unsettling\n\u2022 Include game UI elements (level indicator, health bar preview)\n\u2022 Reference AAA game loading screen aesthetics\n\u2022 Dark background with spotlight on character model"
+  },
+  {
+    "name": "DRAMATICALLY READING TERMS AND CONDITIONS",
+    "category": [
+      "HUMOR",
+      "LEGAL",
+      "DRAMATIC",
+      "PARODY",
+      "ABSURD"
+    ],
+    "message": "Take a picture and transform the subject into a dramatic Shakespearean actor passionately performing a reading of Terms and Conditions or a software EULA on a theatrical stage. Show them in full theatrical costume under a spotlight, gesturing dramatically while holding a scroll that clearly contains legal boilerplate text, with an audience either weeping or sleeping.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "HUMOR GOAL:\n\u2022 Preserve recognizable subject identity\n\u2022 Full theatrical stage setting with curtains and spotlight\n\u2022 Subject in dramatic Shakespearean costume (doublet, cape, tights)\n\u2022 Passionate, emotional theatrical gesture mid-performance\n\u2022 Visible legal text on the scroll/document they're reading\n\u2022 Audience showing extreme reactions (sobbing, sleeping, standing ovation)\n\u2022 Include theatrical program or marquee showing 'TERMS & CONDITIONS: A DRAMATIC READING'\n\u2022 The contrast between dramatic performance and boring content creates humor"
+  },
+  {
+    "name": "IKEA INSTRUCTION MANUAL PERSON",
+    "category": [
+      "HUMOR",
+      "INSTRUCTION",
+      "MINIMALIST",
+      "PARODY",
+      "ABSURD"
+    ],
+    "message": "Take a picture and transform the subject into an IKEA-style instruction manual illustration. Render the subject as the simple, faceless line-drawing person from IKEA assembly instructions, but show them attempting to assemble themselves or performing daily tasks with the characteristic confused expression, floating arrows, and step-by-step numbering of an IKEA manual.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "HUMOR GOAL:\n\u2022 Preserve recognizable subject identity despite simplified line-art style\n\u2022 Use exact IKEA instruction manual aesthetic (simple black lines on white)\n\u2022 Include numbered steps, directional arrows, and tool icons\n\u2022 Show the subject-figure looking confused at their own assembly\n\u2022 Include the classic IKEA 'frustrated person' posture\n\u2022 Add a parts list with body parts labeled (2x arms, 1x head, etc.)\n\u2022 Include leftover 'parts' that don't seem to fit anywhere\n\u2022 Reference the universal experience of IKEA furniture assembly confusion\n\u2022 Include a small Allen wrench icon"
+  },
+  {
+    "name": "RENAISSANCE PAINTING BUT CATS",
+    "category": [
+      "HUMOR",
+      "ART",
+      "CATS",
+      "CLASSICAL",
+      "PARODY"
+    ],
+    "message": "Take a picture and transform the subject into a grand Renaissance oil painting, but every other figure in the scene is inexplicably a cat. The subject should be rendered in full Renaissance master style (think Raphael or Caravaggio) in a dramatic historical scene, but all supporting characters, angels, cherubs, and background figures are realistic cats in period-appropriate clothing and poses.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "HUMOR GOAL:\n\u2022 Preserve recognizable subject identity in Renaissance painting style\n\u2022 Subject is the ONLY human \u2014 all other figures are cats\n\u2022 Cats should be realistically rendered but in period clothing and poses\n\u2022 Use authentic Renaissance painting techniques (chiaroscuro, sfumato)\n\u2022 Include dramatic scene composition (religious, mythological, or historical)\n\u2022 Cats should be taking their roles completely seriously\n\u2022 Include cat-angels, cat-servants, cat-nobles in the background\n\u2022 The subject should appear to not notice anything unusual\n\u2022 Museum-quality oil painting aesthetic throughout"
+  },
+  {
+    "name": "UNREASONABLY LONG RECEIPT",
+    "category": [
+      "HUMOR",
+      "RETAIL",
+      "PARODY",
+      "ABSURD",
+      "SATIRE"
+    ],
+    "message": "Take a picture and transform the subject into a person holding an absurdly, impossibly long CVS/pharmacy-style receipt that extends far beyond the frame. The receipt should be trailing behind them, pooling on the floor, extending out the door, or being used as a scarf. The subject should appear either proud of or defeated by the length of their receipt for purchasing a single item.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "HUMOR GOAL:\n\u2022 Preserve recognizable subject identity\n\u2022 The receipt must be comically, impossibly long (extending many feet)\n\u2022 Show the receipt trailing, pooling, or being worn\n\u2022 Include visible receipt text (coupons, surveys, savings summaries)\n\u2022 The purchased item should be something tiny (pack of gum, single battery)\n\u2022 Subject's expression should convey either pride or existential defeat\n\u2022 Include pharmacy/drugstore setting\n\u2022 Reference the cultural meme of absurdly long receipts\n\u2022 The receipt should interact with the environment (dragging on floor, blowing in wind)"
+  },
+  {
+    "name": "HOLOGRAPHIC DISPLAY GLITCH",
+    "category": [
+      "DIGITAL",
+      "FUTURISTIC",
+      "GLITCH",
+      "TECHNOLOGY",
+      "SCI-FI"
+    ],
+    "message": "Take a picture and transform the subject into a malfunctioning holographic display projection. Render the subject as a translucent, blue-tinted 3D hologram that is experiencing glitches \u2014 scanlines, fragmentation, color separation, and sections of the image breaking apart into floating data particles. The hologram should appear to be projected from a device below, with visible projection cone and ambient light scatter.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\u2022 Preserve recognizable subject identity\n\u2022 Use translucent blue/cyan holographic color palette\n\u2022 Show visible scanlines and horizontal interference\n\u2022 Include fragmentation where parts of the image break into particles\n\u2022 Display chromatic aberration and color channel separation\n\u2022 Show a projection source/device at the base\n\u2022 Add floating data fragments and hexagonal grid patterns\n\u2022 Include flickering and transparency variations\n\u2022 Reference sci-fi hologram aesthetics (Star Wars, Blade Runner 2049)"
+  },
+  {
+    "name": "QUANTUM COMPUTING VISUALIZATION",
+    "category": [
+      "DIGITAL",
+      "SCIENCE",
+      "ABSTRACT",
+      "TECHNOLOGY",
+      "FUTURISTIC"
+    ],
+    "message": "Take a picture and transform the subject into a quantum computing visualization. Render the subject as if they exist in a state of quantum superposition \u2014 simultaneously in multiple positions, phases, and states. Show probability clouds, wave function overlays, entanglement connections, and qubit state representations. The subject should appear to be both particle and wave, with interference patterns creating their form.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\u2022 Preserve recognizable subject identity across multiple superposed states\n\u2022 Show the subject in multiple simultaneous positions (ghosted overlays)\n\u2022 Include wave function probability clouds around the figure\n\u2022 Add quantum circuit diagram elements and Bloch sphere representations\n\u2022 Use cool blue and purple color palette with bright quantum state indicators\n\u2022 Show entanglement lines connecting to off-screen elements\n\u2022 Include interference pattern textures\n\u2022 Display mathematical notation and quantum state vectors\n\u2022 Dark background with luminous quantum effects"
+  },
+  {
+    "name": "NEURAL NETWORK DREAM",
+    "category": [
+      "DIGITAL",
+      "AI",
+      "SURREAL",
+      "TECHNOLOGY",
+      "PSYCHEDELIC"
+    ],
+    "message": "Take a picture and transform the subject into a neural network dream visualization \u2014 what an AI 'sees' when processing the image through deep dream-like layers. Show the subject with fractal patterns emerging from surfaces, eyes and faces appearing in textures, dog-like features morphing from clouds, and the characteristic over-processed, hallucinatory quality of deep neural network visualization with swirling patterns and impossible geometries.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\u2022 Preserve recognizable subject identity beneath the dream layers\n\u2022 Show fractal, recursive patterns emerging from all surfaces\n\u2022 Include pareidolia effects (faces, eyes, animals in textures)\n\u2022 Use vibrant, oversaturated colors with iridescent qualities\n\u2022 Add swirling, organic patterns that suggest neural network layers\n\u2022 Show progressive abstraction from center (clear) to edges (dreamlike)\n\u2022 Include impossible geometries and recursive self-similarity\n\u2022 Reference Google DeepDream aesthetic but more refined\n\u2022 Maintain an overall psychedelic, hallucinatory quality"
+  },
+  {
+    "name": "VAPORWAVE AESTHETIC",
+    "category": [
+      "DIGITAL",
+      "AESTHETIC",
+      "RETRO",
+      "INTERNET",
+      "NOSTALGIC"
+    ],
+    "message": "Take a picture and transform the subject into a full vaporwave aesthetic composition. Render the subject with pink and cyan color grading, surrounded by Greek marble busts, Windows 95 UI elements, Japanese text, palm trees, sunset gradients, geometric grids extending to infinity, and VHS tracking artifacts. The overall mood should be nostalgic, melancholic, and dreamily artificial.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\u2022 Preserve recognizable subject identity\n\u2022 Apply pink/cyan/purple color palette throughout\n\u2022 Include Greek/Roman marble statue elements\n\u2022 Add retro computing UI elements (Windows 95, old Mac)\n\u2022 Include Japanese katakana text overlays\n\u2022 Show infinite perspective grid (Tron-style)\n\u2022 Add palm trees, sunsets, and tropical elements\n\u2022 Include VHS artifacts (tracking lines, color bleeding)\n\u2022 Use chrome text effects and gradient backgrounds\n\u2022 Reference Macintosh Plus / Floral Shoppe aesthetic"
+  },
+  {
+    "name": "CORRUPTED FILE RECOVERY",
+    "category": [
+      "DIGITAL",
+      "GLITCH",
+      "ERROR",
+      "TECHNOLOGY",
+      "ABSTRACT"
+    ],
+    "message": "Take a picture and transform the subject into a partially corrupted digital file that is being recovered. Show the image as if it were a JPEG with severe data corruption \u2014 some sections render perfectly while others display as scrambled pixel blocks, color channel shifts, repeated scanlines, and raw data artifacts. Include a file recovery progress bar and error messages overlaid on the image.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\u2022 Preserve recognizable subject identity in the uncorrupted sections\n\u2022 Show distinct zones of corruption and clarity\n\u2022 Include JPEG artifact blocks (8x8 pixel macroblocks)\n\u2022 Display color channel misalignment in corrupted areas\n\u2022 Add repeated/smeared scanlines\n\u2022 Show raw hex data or binary overlaid on corrupted sections\n\u2022 Include error dialog boxes ('File may be corrupted')\n\u2022 Add a progress bar showing partial recovery\n\u2022 Some sections should be completely scrambled while others are pristine\n\u2022 Reference actual JPEG corruption patterns"
+  },
+  {
+    "name": "CYBERPUNK AUGMENTED REALITY HUD",
+    "category": [
+      "DIGITAL",
+      "CYBERPUNK",
+      "UI",
+      "FUTURISTIC",
+      "TECHNOLOGY"
+    ],
+    "message": "Take a picture and transform the subject as seen through a cyberpunk augmented reality heads-up display. Overlay the subject with AR interface elements \u2014 facial recognition brackets, biometric data readouts, threat assessment levels, social credit scores, targeted advertising pop-ups, and real-time translation subtitles. The underlying image should have a rain-soaked neon-lit cyberpunk city atmosphere.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\u2022 Preserve recognizable subject identity beneath AR overlays\n\u2022 Include facial recognition targeting brackets around the face\n\u2022 Display fake biometric data (heart rate, body temp, identity match %)\n\u2022 Add floating AR advertisement pop-ups\n\u2022 Show social media notifications and message alerts\n\u2022 Include threat level assessment and behavioral prediction\n\u2022 Use neon colors (cyan, magenta, yellow) for UI elements\n\u2022 Add rain effects and neon reflections to the base image\n\u2022 Include Japanese/Chinese text in some UI elements\n\u2022 Reference Blade Runner, Ghost in the Shell AR aesthetics"
+  },
+  {
+    "name": "SATELLITE THERMAL IMAGING",
+    "category": [
+      "DIGITAL",
+      "SCIENTIFIC",
+      "AERIAL",
+      "TECHNOLOGY",
+      "SURVEILLANCE"
+    ],
+    "message": "Take a picture and transform the subject as if captured by a military satellite using thermal/infrared imaging from orbit. Show the subject as a heat signature against a cool background, with false-color thermal mapping (hot = white/red, cool = blue/black), coordinate grid overlay, timestamp, altitude data, and classification markings. Include the characteristic grainy, high-altitude surveillance aesthetic.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\u2022 Preserve recognizable subject identity as a thermal signature\n\u2022 Use false-color thermal palette (white-hot or iron-bow color mapping)\n\u2022 Include coordinate grid overlay with GPS coordinates\n\u2022 Add timestamp, altitude, and sensor data readouts\n\u2022 Show classification markings ('CLASSIFIED' or 'RESTRICTED')\n\u2022 Include crosshair or targeting reticle\n\u2022 Display surrounding environment as cooler thermal tones\n\u2022 Add satellite telemetry data in corners\n\u2022 Use grainy, slightly degraded image quality\n\u2022 Reference actual military thermal imaging aesthetics"
+  },
+  {
+    "name": "BLOCKCHAIN VISUALIZATION",
+    "category": [
+      "DIGITAL",
+      "TECHNOLOGY",
+      "DATA",
+      "ABSTRACT",
+      "FUTURISTIC"
+    ],
+    "message": "Take a picture and transform the subject into a blockchain/distributed ledger visualization. Render the subject as if they are composed of interconnected data blocks \u2014 each body part or feature is a node in a chain, connected by cryptographic hash links. Show transaction data flowing through the figure, with each block containing timestamps, hash values, and verification checksums.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\u2022 Preserve recognizable subject identity through the data structure\n\u2022 Compose the figure from interconnected rectangular blocks/nodes\n\u2022 Show chain links between blocks with hash values\n\u2022 Include flowing data streams and transaction records\n\u2022 Use dark background with glowing green/blue data elements\n\u2022 Add cryptographic notation and hexadecimal strings\n\u2022 Show verification checkmarks on confirmed blocks\n\u2022 Include network topology connections extending outward\n\u2022 Reference actual blockchain visualization tools\n\u2022 Maintain a clean, technical aesthetic"
+  },
+  {
+    "name": "DIGITAL TWIN SIMULATION",
+    "category": [
+      "DIGITAL",
+      "3D",
+      "SIMULATION",
+      "TECHNOLOGY",
+      "FUTURISTIC"
+    ],
+    "message": "Take a picture and transform the subject into their 'digital twin' \u2014 a real-time simulation model used in engineering and IoT. Show the subject rendered as a wireframe/polygon mesh with sensor data points, real-time telemetry overlays, stress analysis heat maps, and predictive modeling indicators. Half the figure should be photorealistic while the other half reveals the underlying simulation mesh.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\u2022 Preserve recognizable subject identity\n\u2022 Split the image: one half photorealistic, other half wireframe/mesh\n\u2022 Show sensor data points with connecting lines to readout panels\n\u2022 Include stress analysis color mapping (blue=low, red=high)\n\u2022 Add real-time data streams and telemetry values\n\u2022 Display predictive modeling trajectories\n\u2022 Use clean, technical visualization aesthetic\n\u2022 Include IoT sensor icons and data flow indicators\n\u2022 Show polygon mesh with varying levels of detail\n\u2022 Reference industrial digital twin platforms (Siemens, GE)"
+  },
+  {
+    "name": "PROCEDURAL GENERATION SEED",
+    "category": [
+      "DIGITAL",
+      "GAMING",
+      "ALGORITHM",
+      "ABSTRACT",
+      "TECHNOLOGY"
+    ],
+    "message": "Take a picture and transform the subject into a procedural generation visualization \u2014 showing how an algorithm builds the image from a seed value. Display the subject in various stages of procedural completion: some areas fully rendered, others showing the underlying noise functions (Perlin noise, Voronoi cells, fractal patterns), and others as raw mathematical coordinates waiting to be generated.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\u2022 Preserve recognizable subject identity in completed areas\n\u2022 Show progressive generation from seed to final image\n\u2022 Include visible Perlin noise patterns in unfinished areas\n\u2022 Display Voronoi cell structures and fractal subdivisions\n\u2022 Add coordinate systems and mathematical notation\n\u2022 Show the generation 'frontier' where rendering is in progress\n\u2022 Include a seed value display and generation parameters\n\u2022 Use a mix of completed photorealism and raw algorithmic patterns\n\u2022 Reference procedural generation in games (No Man's Sky, Minecraft)\n\u2022 Show the mathematical beauty of the generation process"
+  },
+  {
+    "name": "PACKET LOSS PORTRAIT",
+    "category": [
+      "DIGITAL",
+      "GLITCH",
+      "NETWORK",
+      "TECHNOLOGY",
+      "ERROR"
+    ],
+    "message": "Take a picture and transform the subject as if they were being transmitted over a network with severe packet loss. Show the image with missing rectangular sections (lost packets), out-of-order reconstructed areas, buffering artifacts, and temporal smearing where the decoder attempts to interpolate missing data. Include network diagnostic overlays showing packet loss percentage and latency.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\u2022 Preserve recognizable subject identity despite data loss\n\u2022 Show rectangular sections completely missing (black or green)\n\u2022 Include areas where previous frames bleed into current frame\n\u2022 Display blocky compression artifacts in degraded areas\n\u2022 Add network diagnostic overlay (packet loss %, ping, jitter)\n\u2022 Show temporal ghosting where motion prediction fails\n\u2022 Include buffering spinner icon\n\u2022 Some areas should be crystal clear while others are destroyed\n\u2022 Reference actual video call degradation patterns (Zoom, Teams)\n\u2022 Add connection quality indicator (red = poor)"
+  },
+  {
+    "name": "LIDAR POINT CLOUD",
+    "category": [
+      "DIGITAL",
+      "3D SCANNING",
+      "TECHNOLOGY",
+      "SCIENTIFIC",
+      "DATA"
+    ],
+    "message": "Take a picture and transform the subject into a LiDAR point cloud scan visualization. Render the subject as millions of colored dots in 3D space, with varying density \u2014 dense clusters forming recognizable features and sparse areas revealing the underlying void. Use the characteristic rainbow elevation coloring of LiDAR data, with measurement annotations and scan metadata.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\u2022 Preserve recognizable subject identity through point density\n\u2022 Render entirely as discrete colored points in 3D space\n\u2022 Use elevation-based rainbow coloring (blue=low, red=high)\n\u2022 Show varying point density (dense on surfaces, sparse at edges)\n\u2022 Include measurement annotations and distance markers\n\u2022 Display scan metadata (point count, resolution, scanner model)\n\u2022 Show the 3D perspective with visible depth\n\u2022 Include scan artifacts (noise points, shadow gaps)\n\u2022 Add coordinate axes and scale reference\n\u2022 Reference actual LiDAR visualization software aesthetics"
+  },
+  {
+    "name": "MACHINE LEARNING TRAINING DATA",
+    "category": [
+      "DIGITAL",
+      "AI",
+      "ANNOTATION",
+      "TECHNOLOGY",
+      "DATA"
+    ],
+    "message": "Take a picture and transform the subject into annotated machine learning training data. Show the image with bounding boxes, segmentation masks, keypoint annotations, and classification labels overlaid as if being prepared for an AI training dataset. Include confidence scores, class labels, instance IDs, and the characteristic colored overlays of computer vision annotation tools.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\u2022 Preserve recognizable subject identity beneath annotations\n\u2022 Add colored bounding boxes with class labels and confidence scores\n\u2022 Include semantic segmentation color overlays (semi-transparent)\n\u2022 Show keypoint/skeleton annotations on body parts\n\u2022 Display instance segmentation with unique colors per object\n\u2022 Add annotation tool UI elements (toolbar, layer panel)\n\u2022 Include dataset metadata (image ID, annotator, timestamp)\n\u2022 Show multiple annotation types simultaneously\n\u2022 Reference tools like LabelImg, CVAT, or Supervisely\n\u2022 Include a mix of correct and 'needs review' annotations"
+  },
+  {
+    "name": "RETRO TERMINAL GREEN SCREEN",
+    "category": [
+      "DIGITAL",
+      "RETRO",
+      "COMPUTER",
+      "HACKER",
+      "TECHNOLOGY"
+    ],
+    "message": "Take a picture and transform the subject into a green phosphor terminal display rendering. Show the subject as if displayed on an old CRT monitor using only green monochrome characters \u2014 ASCII art forming the image with varying character density for shading. Include a blinking cursor, command prompt, scrolling code, and the characteristic green-on-black phosphor glow with slight screen curvature.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\u2022 Preserve recognizable subject identity through ASCII character art\n\u2022 Use only green phosphor color (#00FF00 variations) on black\n\u2022 Render the subject using ASCII/Unicode characters for shading\n\u2022 Include CRT screen curvature and scanline effects\n\u2022 Add phosphor glow and bloom around bright characters\n\u2022 Show a command prompt and blinking cursor\n\u2022 Include scrolling code or system messages in margins\n\u2022 Display screen reflection and slight flicker\n\u2022 Reference 1980s terminal aesthetics (VT100, IBM 3270)\n\u2022 Add slight screen burn-in effects"
+  },
+  {
+    "name": "PHOTOGRAMMETRY RECONSTRUCTION",
+    "category": [
+      "DIGITAL",
+      "3D",
+      "SCANNING",
+      "TECHNOLOGY",
+      "RECONSTRUCTION"
+    ],
+    "message": "Take a picture and transform the subject into a photogrammetry 3D reconstruction in progress. Show the subject as a partially completed 3D model with some areas fully textured, others showing raw polygon mesh, and others displaying only the sparse point cloud from feature matching. Include camera position indicators showing the multiple angles used for reconstruction.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\u2022 Preserve recognizable subject identity in textured areas\n\u2022 Show three distinct zones: fully textured, raw mesh, and point cloud\n\u2022 Include camera frustum indicators showing capture positions\n\u2022 Display feature matching lines between corresponding points\n\u2022 Show the triangulated mesh with varying polygon density\n\u2022 Include reconstruction progress percentage\n\u2022 Add software UI elements (viewport controls, quality metrics)\n\u2022 Show texture projection seams and alignment markers\n\u2022 Reference photogrammetry software (Meshroom, RealityCapture)\n\u2022 Display the 3D model from a slightly rotated perspective"
+  },
+  {
+    "name": "DATA MOSHING VIDEO FRAME",
+    "category": [
+      "DIGITAL",
+      "GLITCH",
+      "VIDEO",
+      "ART",
+      "EXPERIMENTAL"
+    ],
+    "message": "Take a picture and transform the subject using datamoshing effects \u2014 the intentional corruption of video compression that causes motion data from one frame to be applied to the pixel data of another. Show the subject with areas that are melting, smearing, and flowing as if their pixels are being displaced by the motion vectors of a completely different video. Some areas remain sharp while others flow like liquid.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\u2022 Preserve recognizable subject identity in stable areas\n\u2022 Show dramatic pixel displacement and flow effects\n\u2022 Include areas where the image appears to melt or smear directionally\n\u2022 Display I-frame (clear) and P-frame (corrupted) zone boundaries\n\u2022 Add color bleeding and block-based motion artifacts\n\u2022 Show some areas frozen while others flow with alien motion\n\u2022 Include compression block boundaries visible in affected areas\n\u2022 Reference actual datamoshing techniques (P-frame removal)\n\u2022 Create a sense of fluid, organic motion in the corruption\n\u2022 Maintain some areas of perfect clarity for contrast"
+  },
+  {
+    "name": "SONAR PULSE MAPPING",
+    "category": [
+      "DIGITAL",
+      "SCIENTIFIC",
+      "UNDERWATER",
+      "TECHNOLOGY",
+      "VISUALIZATION"
+    ],
+    "message": "Take a picture and transform the subject as if detected by underwater sonar pulse mapping. Render the subject as a sonar return signal \u2014 bright echo on a dark circular sweep display, with the characteristic green phosphor glow, radial sweep line, and distance rings of submarine sonar. Show the subject's form emerging from acoustic reflections with depth contours and bearing indicators.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\u2022 Preserve recognizable subject identity as a sonar return\n\u2022 Use circular PPI (Plan Position Indicator) sonar display format\n\u2022 Apply green phosphor glow on black background\n\u2022 Show radial sweep line with fading trail\n\u2022 Include range rings and bearing markers\n\u2022 Display the subject as bright echo returns forming their shape\n\u2022 Add noise and clutter returns in surrounding water\n\u2022 Include sonar metadata (range, bearing, depth, frequency)\n\u2022 Show signal decay and ghosting from previous sweeps\n\u2022 Reference actual submarine sonar display aesthetics"
+  },
+  {
+    "name": "REAL-TIME STRATEGY GAME VIEW",
+    "category": [
+      "DIGITAL",
+      "GAMING",
+      "ISOMETRIC",
+      "UI",
+      "STRATEGY"
+    ],
+    "message": "Take a picture and transform the subject into a real-time strategy game view. Render the subject and their environment as an isometric RTS game scene with a fog of war partially revealing the map, unit health bars, selection circles, minimap in the corner, resource counters, and the characteristic top-down isometric perspective of classic strategy games.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\u2022 Preserve recognizable subject identity as the selected unit\n\u2022 Use isometric perspective (classic RTS camera angle)\n\u2022 Include green selection circle under the subject\n\u2022 Add health bar and unit stats floating above\n\u2022 Show fog of war at map edges (darkened, unexplored areas)\n\u2022 Include minimap in corner with unit positions\n\u2022 Display resource counters (gold, wood, food, population)\n\u2022 Add command panel with unit abilities\n\u2022 Show terrain grid and pathfinding indicators\n\u2022 Reference classic RTS games (Age of Empires, StarCraft, Command & Conquer)"
+  },
+  {
+    "name": "WIFI SIGNAL VISUALIZATION",
+    "category": [
+      "DIGITAL",
+      "TECHNOLOGY",
+      "INVISIBLE",
+      "SCIENTIFIC",
+      "VISUALIZATION"
+    ],
+    "message": "Take a picture and transform the subject to show the invisible WiFi signals surrounding them made visible. Render electromagnetic waves as colorful, flowing energy fields emanating from routers and devices, passing through and around the subject. Show signal strength variations, interference patterns, dead zones, and the complex invisible landscape of wireless data that permeates modern spaces.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\u2022 Preserve recognizable subject identity\n\u2022 Show WiFi signals as visible colored wave patterns\n\u2022 Use color to indicate signal strength (green=strong, red=weak)\n\u2022 Display waves emanating from router/device sources\n\u2022 Show interference patterns where signals overlap\n\u2022 Include dead zones and signal shadows behind obstacles\n\u2022 Add frequency labels (2.4GHz, 5GHz) on different colored waves\n\u2022 Show data packets as small luminous particles riding the waves\n\u2022 Include signal strength meter overlay\n\u2022 Create a beautiful, flowing visualization of invisible infrastructure"
+  },
+  {
+    "name": "DEEPFAKE DETECTION ANALYSIS",
+    "category": [
+      "DIGITAL",
+      "AI",
+      "FORENSIC",
+      "TECHNOLOGY",
+      "ANALYSIS"
+    ],
+    "message": "Take a picture and transform the subject as if being analyzed by deepfake detection software. Show the image with forensic analysis overlays \u2014 attention heat maps highlighting suspicious areas, frequency domain analysis panels, facial landmark tracking, compression artifact analysis, and confidence scores. The overall aesthetic should be that of a forensic AI tool determining if an image is authentic.",
+    "options": [
+      {
+        "id": "001",
+        "text": "VERDICT: AUTHENTIC (analysis shows green indicators, high confidence of real image)"
+      },
+      {
+        "id": "002",
+        "text": "VERDICT: SUSPICIOUS (analysis shows red/yellow warnings, anomalies detected in multiple regions)"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\u2022 Preserve recognizable subject identity beneath analysis overlays\n\u2022 Include attention heat map overlay (red = suspicious areas)\n\u2022 Show facial landmark tracking points and mesh\n\u2022 Display frequency domain analysis panel (FFT visualization)\n\u2022 Add compression artifact analysis zones\n\u2022 Include confidence score and verdict banner\n\u2022 Show GAN fingerprint detection indicators\n\u2022 Add temporal consistency check results\n\u2022 Use forensic software UI aesthetic (dark theme, data panels)\n\u2022 Reference actual deepfake detection tools and research papers"
+  },
+  {
+    "name": "NOIR DETECTIVE FILM",
+    "category": [
+      "MOVIE",
+      "FILM NOIR",
+      "DETECTIVE",
+      "CLASSIC",
+      "CINEMATIC"
+    ],
+    "message": "Take a picture and transform the subject into a scene from a classic 1940s film noir detective movie. Render the subject as a hard-boiled detective or femme fatale in high-contrast black and white with dramatic venetian blind shadows, cigarette smoke curling through a single shaft of light, rain-slicked streets visible through a window, and the moody, cynical atmosphere of classic noir cinema.",
+    "options": [
+      {
+        "id": "001",
+        "text": "HARD-BOILED DETECTIVE (subject as the world-weary private eye in trench coat and fedora)"
+      },
+      {
+        "id": "002",
+        "text": "FEMME FATALE (subject as the mysterious, dangerous figure in dramatic lighting)"
+      },
+      {
+        "id": "003",
+        "text": "THE INFORMANT (subject in a shadowy booth, face half-lit, sliding an envelope across the table)"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\u2022 Preserve recognizable subject identity\n\u2022 Use high-contrast black and white cinematography\n\u2022 Include dramatic shadow patterns (venetian blinds, staircase rails)\n\u2022 Add atmospheric elements (cigarette smoke, rain, fog)\n\u2022 Use low-key lighting with single strong light source\n\u2022 Include noir setting elements (office, bar, rain-slicked alley)\n\u2022 Apply film grain and vintage camera characteristics\n\u2022 Reference classic noir films (Double Indemnity, The Maltese Falcon, The Third Man)\n\u2022 Create mood of cynicism, danger, and moral ambiguity\n\u2022 Use Dutch angles or dramatic camera perspectives"
+  },
+  {
+    "name": "SPACE OPERA EPIC",
+    "category": [
+      "MOVIE",
+      "SCI-FI",
+      "EPIC",
+      "SPACE",
+      "CINEMATIC"
+    ],
+    "message": "Take a picture and transform the subject into a scene from an epic space opera film. Place the subject on the bridge of a massive starship, overlooking a space battle through panoramic viewports, or standing dramatically on an alien world with multiple moons in the sky. Use sweeping cinematic composition, lens flares, and the grand scale of blockbuster space opera filmmaking.",
+    "options": [
+      {
+        "id": "001",
+        "text": "STARSHIP BRIDGE (subject commanding a massive vessel during a space battle)"
+      },
+      {
+        "id": "002",
+        "text": "ALIEN WORLD (subject standing on a dramatic alien landscape with exotic sky)"
+      },
+      {
+        "id": "003",
+        "text": "SPACE STATION (subject in a vast orbital station with Earth visible through windows)"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\u2022 Preserve recognizable subject identity\n\u2022 Use epic, sweeping cinematic composition\n\u2022 Include massive scale elements (starships, planets, space stations)\n\u2022 Apply dramatic lighting with lens flares and volumetric light\n\u2022 Show detailed sci-fi production design (consoles, holograms, viewscreens)\n\u2022 Use anamorphic lens characteristics (horizontal flares, oval bokeh)\n\u2022 Include a sense of vast scale and grandeur\n\u2022 Reference space opera aesthetics (Star Wars, Dune, Interstellar)\n\u2022 Add atmospheric depth and cinematic color grading\n\u2022 Create a sense of epic narrative moment"
+  },
+  {
+    "name": "ZOMBIE APOCALYPSE SURVIVOR",
+    "category": [
+      "MOVIE",
+      "HORROR",
+      "APOCALYPSE",
+      "SURVIVAL",
+      "CINEMATIC"
+    ],
+    "message": "Take a picture and transform the subject into a battle-hardened survivor in a zombie apocalypse film. Show the subject armed with improvised weapons, wearing weathered and blood-splattered clothing, in a barricaded location or abandoned urban environment. Include distant zombie silhouettes, boarded-up windows, and the gritty, desaturated color grading of modern zombie cinema.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\u2022 Preserve recognizable subject identity\n\u2022 Show weathered, battle-worn appearance (dirt, minor wounds, exhaustion)\n\u2022 Include improvised weapons and survival gear\n\u2022 Use desaturated, gritty color grading (greens and grays)\n\u2022 Show post-apocalyptic environment (abandoned buildings, overgrown streets)\n\u2022 Include distant threat elements (zombie silhouettes, shadows)\n\u2022 Add barricade/fortification elements\n\u2022 Apply handheld camera aesthetic with slight motion\n\u2022 Reference zombie films (28 Days Later, The Walking Dead, World War Z)\n\u2022 Create atmosphere of tension and survival determination"
+  },
+  {
+    "name": "KAIJU MOVIE SCENE",
+    "category": [
+      "MOVIE",
+      "MONSTER",
+      "JAPANESE",
+      "EPIC",
+      "CINEMATIC"
+    ],
+    "message": "Take a picture and transform the subject into a giant kaiju monster towering over a city skyline. Scale the subject up to enormous proportions, showing them rising above skyscrapers with military helicopters circling, panicked crowds fleeing below, and dramatic storm clouds gathering. Use the cinematic language of Japanese monster movies with dramatic low-angle shots and destruction.",
+    "options": [
+      {
+        "id": "001",
+        "text": "CLASSIC TOKUSATSU (subject as kaiju in the style of classic Japanese monster films with miniature city sets)"
+      },
+      {
+        "id": "002",
+        "text": "MODERN BLOCKBUSTER (subject as kaiju in photorealistic modern CGI blockbuster style with realistic destruction)"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\u2022 Preserve recognizable subject identity at kaiju scale\n\u2022 Show massive scale contrast (subject vs. buildings, vehicles, people)\n\u2022 Include city destruction elements (crumbling buildings, fires, debris)\n\u2022 Add military response (helicopters, jets, tanks)\n\u2022 Use dramatic low-angle camera perspective\n\u2022 Include atmospheric effects (storm clouds, dust, smoke)\n\u2022 Show panicked civilians for scale reference\n\u2022 Reference kaiju films (Godzilla, Pacific Rim, Cloverfield)\n\u2022 Use dramatic backlighting and silhouette moments\n\u2022 Create sense of awe and unstoppable power"
+  },
+  {
+    "name": "WUXIA MARTIAL ARTS EPIC",
+    "category": [
+      "MOVIE",
+      "MARTIAL ARTS",
+      "CHINESE",
+      "EPIC",
+      "CINEMATIC"
+    ],
+    "message": "Take a picture and transform the subject into a scene from a wuxia martial arts epic film. Show the subject in flowing silk robes performing an impossible gravity-defying martial arts move \u2014 leaping across bamboo treetops, running across water, or fighting mid-air with a sword. Use the characteristic wire-fu aesthetics, slow-motion fabric movement, and painterly Chinese landscape backgrounds.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\u2022 Preserve recognizable subject identity\n\u2022 Show gravity-defying martial arts action (wire-fu aesthetic)\n\u2022 Include flowing silk robes and fabric in dramatic motion\n\u2022 Use painterly Chinese landscape backgrounds (mountains, bamboo, waterfalls)\n\u2022 Apply slow-motion photography aesthetic for fabric and hair\n\u2022 Include traditional weapons (sword, staff, fan)\n\u2022 Use dramatic color grading (rich greens, golds, reds)\n\u2022 Reference wuxia films (Crouching Tiger Hidden Dragon, Hero, House of Flying Daggers)\n\u2022 Show impossible physics (running on water, leaping between trees)\n\u2022 Create sense of grace, power, and poetic movement"
+  },
+  {
+    "name": "HEIST MOVIE PLANNING SCENE",
+    "category": [
+      "MOVIE",
+      "CRIME",
+      "THRILLER",
+      "PLANNING",
+      "CINEMATIC"
+    ],
+    "message": "Take a picture and transform the subject into the mastermind of an elaborate heist, shown during the planning scene. Place the subject in a dimly lit warehouse or apartment surrounded by blueprints, surveillance photos, a scale model of the target building, and a wall covered in timelines and crew photos. They should be mid-explanation, pointing at the plan with intense focus.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\u2022 Preserve recognizable subject identity as the heist mastermind\n\u2022 Show detailed planning materials (blueprints, photos, maps)\n\u2022 Include a scale model or holographic display of the target\n\u2022 Use moody, low-key lighting (single hanging bulb or desk lamp)\n\u2022 Show crew photos and assignment boards on walls\n\u2022 Include timeline/schedule with marked entry points\n\u2022 Apply cinematic color grading (cool blues, warm practicals)\n\u2022 Reference heist films (Ocean's Eleven, Heat, The Italian Job)\n\u2022 Show the subject mid-gesture, explaining the plan\n\u2022 Create atmosphere of calculated precision and controlled tension"
+  },
+  {
+    "name": "SPAGHETTI WESTERN STANDOFF",
+    "category": [
+      "MOVIE",
+      "WESTERN",
+      "CLASSIC",
+      "DRAMATIC",
+      "CINEMATIC"
+    ],
+    "message": "Take a picture and transform the subject into a spaghetti western standoff scene. Show an extreme close-up of the subject's eyes squinting in the harsh desert sun, intercut with a wide shot of them standing in a dusty main street at high noon. Include the characteristic visual language of Sergio Leone \u2014 extreme close-ups, wide desert vistas, sweat beading on skin, and a hand hovering over a holstered revolver.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\u2022 Preserve recognizable subject identity\n\u2022 Use extreme close-up framing (eyes only, filling the frame)\n\u2022 Include harsh, bleached desert sunlight\n\u2022 Show dusty western town setting with empty main street\n\u2022 Add sweat, dust, and sun-weathered skin texture\n\u2022 Include poncho, hat, or period-appropriate western costume\n\u2022 Use wide anamorphic aspect ratio (2.35:1)\n\u2022 Reference Leone films (The Good The Bad and The Ugly, Once Upon a Time in the West)\n\u2022 Create tension through stillness and anticipation\n\u2022 Apply warm, desaturated color grading with blown-out highlights"
+  },
+  {
+    "name": "SUBMARINE THRILLER",
+    "category": [
+      "MOVIE",
+      "THRILLER",
+      "MILITARY",
+      "CLAUSTROPHOBIC",
+      "CINEMATIC"
+    ],
+    "message": "Take a picture and transform the subject into a scene from a tense submarine thriller. Place the subject in the cramped control room of a submarine, bathed in red emergency lighting, surrounded by pressure gauges, periscope handles, and sonar screens. Show them giving a critical order as depth charges explode nearby, with water beginning to leak through stressed hull rivets.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\u2022 Preserve recognizable subject identity as the submarine commander\n\u2022 Use claustrophobic, tight framing in cramped spaces\n\u2022 Apply red emergency lighting or green sonar glow\n\u2022 Include authentic submarine interior details (gauges, pipes, valves)\n\u2022 Show water droplets and condensation on metal surfaces\n\u2022 Add sonar ping visualization on screens\n\u2022 Include crew members in background at stations\n\u2022 Reference submarine films (Das Boot, The Hunt for Red October, Crimson Tide)\n\u2022 Create atmosphere of extreme tension and claustrophobia\n\u2022 Show physical stress (sweating, gripping surfaces) from depth pressure"
+  },
+  {
+    "name": "BOLLYWOOD MUSICAL NUMBER",
+    "category": [
+      "MOVIE",
+      "MUSICAL",
+      "INDIAN",
+      "DANCE",
+      "CINEMATIC"
+    ],
+    "message": "Take a picture and transform the subject into the star of a lavish Bollywood musical number. Show the subject in elaborate, colorful traditional Indian costume performing a dramatic dance move, surrounded by dozens of synchronized backup dancers on an impossibly grand set with fountains, flower petals, and dramatic fabric draping. Use the saturated colors and joyful excess of Bollywood cinema.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\u2022 Preserve recognizable subject identity as the Bollywood star\n\u2022 Use extremely vibrant, saturated color palette\n\u2022 Include elaborate costume with embroidery, jewelry, and flowing fabric\n\u2022 Show synchronized backup dancers in coordinated outfits\n\u2022 Include grand set pieces (palaces, fountains, flower gardens)\n\u2022 Add dramatic fabric movement and flower petal showers\n\u2022 Use dynamic camera angle suggesting movement\n\u2022 Reference Bollywood musical aesthetics (color, scale, joy)\n\u2022 Include dramatic lighting with colored gels\n\u2022 Create sense of joyful, larger-than-life spectacle"
+  },
+  {
+    "name": "FRENCH NEW WAVE CINEMA",
+    "category": [
+      "MOVIE",
+      "ART HOUSE",
+      "FRENCH",
+      "CLASSIC",
+      "CINEMATIC"
+    ],
+    "message": "Take a picture and transform the subject into a scene from a French New Wave (Nouvelle Vague) film from the early 1960s. Show the subject in a casual Parisian setting \u2014 a caf\u00e9, along the Seine, or in a small apartment \u2014 with natural lighting, jump-cut composition, and the effortlessly cool, intellectual aesthetic of Godard or Truffaut. Black and white with high contrast and documentary-style framing.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\u2022 Preserve recognizable subject identity\n\u2022 Use black and white with high contrast and natural lighting\n\u2022 Include Parisian setting elements (caf\u00e9, bookshop, boulevard)\n\u2022 Apply handheld camera aesthetic with slight imperfection\n\u2022 Show subject in casual, intellectual pose (reading, smoking, conversing)\n\u2022 Use jump-cut inspired composition (unconventional framing)\n\u2022 Include period-appropriate 1960s French fashion\n\u2022 Reference Godard (Breathless), Truffaut (400 Blows), Varda\n\u2022 Create atmosphere of intellectual cool and casual rebellion\n\u2022 Add film grain and vintage camera characteristics"
+  },
+  {
+    "name": "DISASTER MOVIE HERO SHOT",
+    "category": [
+      "MOVIE",
+      "ACTION",
+      "DISASTER",
+      "EPIC",
+      "CINEMATIC"
+    ],
+    "message": "Take a picture and transform the subject into the hero of a disaster movie, captured in the iconic 'hero shot' moment. Show the subject walking determinedly toward camera in slow motion while something massive explodes or collapses behind them. They don't look back. Include debris flying past, dramatic backlighting from the explosion, and wind blowing their hair/clothes forward.",
+    "options": [
+      {
+        "id": "001",
+        "text": "EXPLOSION WALK (subject walking away from massive explosion without looking back)"
+      },
+      {
+        "id": "002",
+        "text": "NATURAL DISASTER (subject facing an incoming tsunami, tornado, or earthquake with determination)"
+      },
+      {
+        "id": "003",
+        "text": "BUILDING COLLAPSE (subject emerging from dust cloud of collapsing structure)"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\u2022 Preserve recognizable subject identity\n\u2022 Use slow-motion photography aesthetic\n\u2022 Show massive destruction in background (explosion, collapse, wave)\n\u2022 Subject walks toward camera with determination \u2014 never looks back\n\u2022 Include debris, dust, and particles flying past\n\u2022 Apply dramatic backlighting from the destruction\n\u2022 Show wind effects on hair and clothing\n\u2022 Use low angle, hero-shot camera perspective\n\u2022 Reference disaster films (Independence Day, 2012, San Andreas)\n\u2022 Create maximum contrast between calm subject and chaos behind"
+  },
+  {
+    "name": "GOTHIC HORROR CASTLE",
+    "category": [
+      "MOVIE",
+      "HORROR",
+      "GOTHIC",
+      "CLASSIC",
+      "CINEMATIC"
+    ],
+    "message": "Take a picture and transform the subject into a scene from a classic Gothic horror film set in a crumbling castle. Show the subject ascending a grand staircase by candlelight, with cobwebs, suits of armor, lightning flashing through tall windows, and ominous shadows suggesting unseen presences. Use the rich, atmospheric visual style of Hammer Horror or classic Universal monster films.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\u2022 Preserve recognizable subject identity\n\u2022 Use rich, saturated color palette (deep reds, purples, blues)\n\u2022 Include Gothic architecture (pointed arches, stone walls, grand staircase)\n\u2022 Show candlelight as primary illumination with dramatic shadows\n\u2022 Add atmospheric elements (cobwebs, dust motes, fog)\n\u2022 Include lightning flashes through tall windows\n\u2022 Show ominous shadows or suggestions of supernatural presence\n\u2022 Reference Gothic horror films (Hammer Horror, Crimson Peak, Bram Stoker's Dracula)\n\u2022 Include period costume (Victorian/Edwardian)\n\u2022 Create atmosphere of dread, beauty, and supernatural menace"
+  },
+  {
+    "name": "COURTROOM DRAMA CLIMAX",
+    "category": [
+      "MOVIE",
+      "DRAMA",
+      "LEGAL",
+      "INTENSE",
+      "CINEMATIC"
+    ],
+    "message": "Take a picture and transform the subject into the pivotal moment of a courtroom drama \u2014 the dramatic revelation scene. Show the subject standing in a wood-paneled courtroom, pointing accusingly or presenting shocking evidence, with the jury gasping, the judge banging a gavel, and spectators in uproar. Use dramatic courtroom lighting and the intense close-up framing of legal thriller cinema.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\u2022 Preserve recognizable subject identity as the attorney/witness\n\u2022 Show classic wood-paneled courtroom setting\n\u2022 Include dramatic gesture (pointing, presenting evidence, slamming table)\n\u2022 Add reaction shots from jury, judge, and gallery\n\u2022 Use dramatic lighting emphasizing the subject\n\u2022 Include legal props (evidence folders, gavel, witness stand)\n\u2022 Apply intense close-up framing\n\u2022 Reference courtroom dramas (A Few Good Men, 12 Angry Men, The Verdict)\n\u2022 Create atmosphere of truth being revealed and justice at stake\n\u2022 Show the emotional weight of the moment on all faces"
+  },
+  {
+    "name": "CYBERPUNK RAIN SCENE",
+    "category": [
+      "MOVIE",
+      "SCI-FI",
+      "CYBERPUNK",
+      "NOIR",
+      "CINEMATIC"
+    ],
+    "message": "Take a picture and transform the subject into a scene from a cyberpunk noir film. Show the subject standing in a rain-soaked neon-lit alley, surrounded by holographic advertisements, steam rising from street grates, and the towering megastructures of a dystopian future city. Neon reflections in puddles, flying vehicles overhead, and the lonely atmosphere of a high-tech low-life world.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\u2022 Preserve recognizable subject identity\n\u2022 Use heavy rain with neon reflections in every wet surface\n\u2022 Include holographic advertisements and neon signage (mixed languages)\n\u2022 Show towering megastructures and layered city architecture\n\u2022 Add steam, fog, and atmospheric depth\n\u2022 Include flying vehicles or drones in the sky\n\u2022 Use cyan, magenta, and amber neon color palette\n\u2022 Reference cyberpunk films (Blade Runner, Ghost in the Shell, Altered Carbon)\n\u2022 Create atmosphere of isolation in a crowded, technological world\n\u2022 Show the contrast between high technology and urban decay"
+  },
+  {
+    "name": "STOP MOTION ANIMATION FRAME",
+    "category": [
+      "MOVIE",
+      "ANIMATION",
+      "STOP MOTION",
+      "CRAFT",
+      "CINEMATIC"
+    ],
+    "message": "Take a picture and transform the subject into a frame from a stop-motion animated film. Render the subject as a handcrafted puppet/figure made of clay, fabric, and wire armature, positioned on a detailed miniature set. Show the characteristic slightly jerky pose of stop-motion, visible fingerprints in clay, fabric texture in clothing, and the warm, handmade quality of films like Coraline or Fantastic Mr. Fox.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\u2022 Preserve recognizable subject identity as a stop-motion puppet\n\u2022 Show handcrafted material textures (clay, fabric, felt, wire)\n\u2022 Include visible fingerprints and tool marks in clay surfaces\n\u2022 Display miniature set with handmade props and scenery\n\u2022 Use warm, controlled studio lighting\n\u2022 Show slight imperfections that reveal the handmade process\n\u2022 Include depth of field suggesting miniature scale\n\u2022 Reference stop-motion films (Coraline, Fantastic Mr. Fox, Kubo)\n\u2022 Add subtle motion blur suggesting mid-movement capture\n\u2022 Show the puppet on a miniature set with visible craftsmanship"
+  },
+  {
+    "name": "1970S CAR CHASE",
+    "category": [
+      "MOVIE",
+      "ACTION",
+      "RETRO",
+      "CARS",
+      "CINEMATIC"
+    ],
+    "message": "Take a picture and transform the subject into the driver in a 1970s car chase movie scene. Show the subject behind the wheel of a muscle car (Mustang, Charger, or Camaro) mid-chase through San Francisco-style hilly streets, with the car catching air over a hill crest. Use the gritty, documentary-style cinematography and muted color palette of 1970s action cinema.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\u2022 Preserve recognizable subject identity as the driver\n\u2022 Show classic American muscle car interior/exterior\n\u2022 Include hilly urban streets with dramatic elevation changes\n\u2022 Use 1970s film stock aesthetic (grain, muted colors, warm tones)\n\u2022 Show dynamic motion (car tilting, wheels lifting, sparks)\n\u2022 Include period-accurate details (clothing, vehicles, street scenes)\n\u2022 Apply handheld camera shake suggesting real stunt driving\n\u2022 Reference car chase films (Bullitt, The French Connection, Vanishing Point)\n\u2022 Show determination and focus on the driver's face\n\u2022 Include pursuing vehicles in mirrors or background"
+  },
+  {
+    "name": "SAMURAI PERIOD DRAMA",
+    "category": [
+      "MOVIE",
+      "JAPANESE",
+      "HISTORICAL",
+      "DRAMA",
+      "CINEMATIC"
+    ],
+    "message": "Take a picture and transform the subject into a scene from a samurai period drama (jidaigeki). Show the subject as a ronin samurai in a moment of quiet tension before battle \u2014 hand on katana, standing in falling cherry blossoms or autumn leaves, with a feudal Japanese castle or village in the background. Use the composed, painterly cinematography of Kurosawa with dramatic use of weather and landscape.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\u2022 Preserve recognizable subject identity as the samurai\n\u2022 Include authentic samurai costume (hakama, kimono, katana)\n\u2022 Show moment of stillness and tension before action\n\u2022 Use natural elements dramatically (wind, rain, cherry blossoms, snow)\n\u2022 Include feudal Japanese setting (castle, temple, bamboo grove)\n\u2022 Apply composed, painterly cinematography\n\u2022 Reference Kurosawa films (Seven Samurai, Yojimbo, Ran)\n\u2022 Use dramatic weather as emotional punctuation\n\u2022 Create sense of honor, solitude, and impending violence\n\u2022 Include wide landscape shots with small human figure"
+  },
+  {
+    "name": "MUSICAL MOVIE RAIN DANCE",
+    "category": [
+      "MOVIE",
+      "MUSICAL",
+      "DANCE",
+      "CLASSIC",
+      "CINEMATIC"
+    ],
+    "message": "Take a picture and transform the subject into the star of a classic Hollywood musical performing a joyful dance number in the rain. Show the subject mid-dance on a wet city street at night, swinging from a lamppost, splashing in puddles, with an umbrella as a prop. Use the warm, golden lighting and Technicolor vibrancy of classic MGM musicals, with rain backlit to sparkle like diamonds.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\u2022 Preserve recognizable subject identity as the musical star\n\u2022 Show joyful, exuberant dance movement\n\u2022 Include rain backlit by street lamps (sparkling, golden)\n\u2022 Use wet street reflections of neon signs and lights\n\u2022 Include classic props (umbrella, lamppost, puddles)\n\u2022 Apply Technicolor-style saturated, warm color palette\n\u2022 Show genuine joy and abandon in the performance\n\u2022 Reference classic musicals (Singin' in the Rain, An American in Paris)\n\u2022 Use wide shot to show full body dance movement\n\u2022 Create atmosphere of pure cinematic joy and romance"
+  },
+  {
+    "name": "ARCTIC EXPEDITION FILM",
+    "category": [
+      "MOVIE",
+      "ADVENTURE",
+      "SURVIVAL",
+      "COLD",
+      "CINEMATIC"
+    ],
+    "message": "Take a picture and transform the subject into an explorer in an arctic expedition film. Show the subject in heavy cold-weather gear, face partially covered with frost and ice crystals, trudging through a white-out blizzard or standing at the edge of a vast ice shelf. The environment should feel hostile and magnificent \u2014 endless white, howling wind visualized through horizontal snow, and the blue-white color palette of extreme cold.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\u2022 Preserve recognizable subject identity despite cold weather gear\n\u2022 Show extreme cold effects (frost on eyelashes, frozen breath, ice on fabric)\n\u2022 Use blue-white-gray color palette of arctic environments\n\u2022 Include vast, empty ice landscapes suggesting isolation\n\u2022 Show wind effects (horizontal snow, fabric movement)\n\u2022 Add expedition equipment (ropes, ice axes, goggles)\n\u2022 Apply harsh, flat lighting of overcast polar skies\n\u2022 Reference arctic films (The Terror, Shackleton, Arctic)\n\u2022 Create atmosphere of human endurance against nature\n\u2022 Show the magnificent beauty and deadly hostility of the environment"
+  },
+  {
+    "name": "FOUND FOOTAGE HORROR",
+    "category": [
+      "MOVIE",
+      "HORROR",
+      "FOUND FOOTAGE",
+      "HANDHELD",
+      "CINEMATIC"
+    ],
+    "message": "Take a picture and transform the subject into a frame from a found footage horror film. Show the subject captured by a shaky handheld camera or night vision, with something terrifying barely visible in the darkness behind them. Include camera UI elements (REC indicator, battery level, timestamp), motion blur, night vision green tint, and the raw, unpolished terror of amateur footage capturing something impossible.",
+    "options": [
+      {
+        "id": "001",
+        "text": "NIGHT VISION (green-tinted infrared camera footage with glowing eyes in darkness)"
+      },
+      {
+        "id": "002",
+        "text": "HANDHELD PANIC (motion-blurred, tilted frame as subject runs from something unseen)"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\u2022 Preserve recognizable subject identity\n\u2022 Include camera UI overlay (REC, timestamp, battery indicator)\n\u2022 Show motion blur and camera shake\n\u2022 Use night vision green or harsh flashlight-only illumination\n\u2022 Include something barely visible/suggested in the darkness\n\u2022 Apply low resolution and compression artifacts\n\u2022 Show genuine fear on the subject's face\n\u2022 Reference found footage films (Blair Witch, Paranormal Activity, REC)\n\u2022 Create atmosphere of authentic, uncontrolled terror\n\u2022 The horror should be mostly suggested, not fully shown"
+  },
+  {
+    "name": "90S SATURDAY MORNING CARTOON",
+    "category": [
+      "CARTOON",
+      "90S",
+      "NOSTALGIA",
+      "ANIMATION",
+      "RETRO"
+    ],
+    "message": "Take a picture and transform the subject into a character from a 1990s Saturday morning cartoon. Render with bold black outlines, flat cel-shaded colors, slightly off-model proportions, and the characteristic limited animation aesthetic of 90s TV cartoons. Include a bright, simple background and the energetic, exaggerated expressions of the era's animation style.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\u2022 Preserve recognizable subject identity in cartoon form\n\u2022 Use bold black outlines with consistent line weight\n\u2022 Apply flat cel-shaded colors without gradients\n\u2022 Include slightly exaggerated proportions (large head, expressive eyes)\n\u2022 Show bright, simplified background\n\u2022 Use the limited color palette of 90s TV animation\n\u2022 Include action lines or motion effects\n\u2022 Reference 90s cartoon aesthetics (Dexter's Lab, Powerpuff Girls era)\n\u2022 Add slight cel animation imperfections (paint bubbles, line wobble)\n\u2022 Create energetic, dynamic pose"
+  },
+  {
+    "name": "FRENCH BANDE DESSIN\u00c9E",
+    "category": [
+      "CARTOON",
+      "FRENCH",
+      "COMIC",
+      "EUROPEAN",
+      "ILLUSTRATION"
+    ],
+    "message": "Take a picture and transform the subject into a character from a French-Belgian bande dessin\u00e9e (BD) comic. Render in the clear line (ligne claire) style with uniform line weight, flat colors, detailed backgrounds, and the sophisticated European comic aesthetic. The subject should appear in a detailed, realistic setting with the characteristic blend of cartoon characters and realistic environments.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\u2022 Preserve recognizable subject identity in BD style\n\u2022 Use uniform line weight throughout (ligne claire technique)\n\u2022 Apply flat colors without heavy shading\n\u2022 Include highly detailed, realistic background environments\n\u2022 Show the contrast between slightly caricatured figures and realistic settings\n\u2022 Use the sophisticated color palette of European comics\n\u2022 Reference BD masters (Herg\u00e9, Moebius, Bilal)\n\u2022 Include panel border or page layout elements\n\u2022 Maintain the intellectual, adult-oriented tone of European comics\n\u2022 Show detailed architectural and environmental elements"
+  },
+  {
+    "name": "CHIBI ANIME",
+    "category": [
+      "CARTOON",
+      "ANIME",
+      "JAPANESE",
+      "CUTE",
+      "CHIBI"
+    ],
+    "message": "Take a picture and transform the subject into a chibi anime character. Render with the super-deformed proportions of chibi style \u2014 enormous head (2-3 head-to-body ratio), tiny body, huge sparkling eyes, simplified hands, and exaggerated kawaii expressions. Include sparkle effects, blush marks, and the characteristic cute aesthetic of Japanese chibi illustration.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\u2022 Preserve recognizable subject identity in chibi form\n\u2022 Use 2:1 or 3:1 head-to-body ratio (super-deformed)\n\u2022 Include enormous, sparkling eyes with detailed highlights\n\u2022 Simplify hands to mittens or small nubs\n\u2022 Add kawaii elements (blush marks, sparkles, sweat drops)\n\u2022 Use clean, smooth digital anime coloring\n\u2022 Show exaggerated emotional expression\n\u2022 Include cute accessories or props\n\u2022 Reference chibi/SD anime art style conventions\n\u2022 Maintain the adorable, collectible figure aesthetic"
+  },
+  {
+    "name": "LOONEY TUNES SLAPSTICK",
+    "category": [
+      "CARTOON",
+      "CLASSIC",
+      "COMEDY",
+      "SLAPSTICK",
+      "AMERICAN"
+    ],
+    "message": "Take a picture and transform the subject into a Looney Tunes-style cartoon character in the middle of a classic slapstick gag. Show the subject in the golden-age Warner Bros. animation style with rubber-hose limbs, exaggerated squash-and-stretch, and a classic cartoon catastrophe in progress \u2014 anvil falling, dynamite about to explode, or running off a cliff and not yet looking down.",
+    "options": [
+      {
+        "id": "001",
+        "text": "ABOUT TO REALIZE (subject has run off a cliff and hasn't looked down yet \u2014 holding a small sign that says 'YIKES')"
+      },
+      {
+        "id": "002",
+        "text": "EXPLOSION AFTERMATH (subject blackened and smoking after a cartoon explosion, eyes blinking)"
+      },
+      {
+        "id": "003",
+        "text": "ANVIL INCOMING (subject looking up at a falling anvil with a tiny umbrella)"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\u2022 Preserve recognizable subject identity in Looney Tunes style\n\u2022 Use classic golden-age animation proportions and style\n\u2022 Include exaggerated squash-and-stretch physics\n\u2022 Show classic cartoon gag setup or aftermath\n\u2022 Use bold, saturated colors with painted backgrounds\n\u2022 Include cartoon sound effect text (BOOM, SPLAT, YIKES)\n\u2022 Add motion lines, impact stars, and cartoon physics\n\u2022 Reference Warner Bros. golden age (Chuck Jones, Tex Avery)\n\u2022 Show impossible cartoon physics (accordion body, eye pop)\n\u2022 Create a single frozen moment of peak comedy"
+  },
+  {
+    "name": "SOVIET ANIMATION STYLE",
+    "category": [
+      "CARTOON",
+      "RUSSIAN",
+      "VINTAGE",
+      "ANIMATION",
+      "ARTISTIC"
+    ],
+    "message": "Take a picture and transform the subject into a character from a Soviet-era animated film (Soyuzmultfilm). Render in the distinctive style of Russian animation \u2014 softer, more painterly than Western cartoons, with watercolor-like backgrounds, gentle character designs, and the poetic, slightly melancholic aesthetic of classic Soviet animation like Hedgehog in the Fog or The Snow Queen.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\u2022 Preserve recognizable subject identity in Soviet animation style\n\u2022 Use soft, painterly rendering (watercolor/gouache aesthetic)\n\u2022 Include atmospheric, dreamy backgrounds\n\u2022 Apply gentle, rounded character design\n\u2022 Use muted, harmonious color palette\n\u2022 Show the poetic, contemplative mood of Soviet animation\n\u2022 Include natural elements (forests, snow, fog, stars)\n\u2022 Reference Soyuzmultfilm classics (Hedgehog in the Fog, Nu Pogodi)\n\u2022 Maintain the artistic, hand-painted quality\n\u2022 Create atmosphere of gentle wonder and slight melancholy"
+  },
+  {
+    "name": "UNDERGROUND COMIX",
+    "category": [
+      "CARTOON",
+      "UNDERGROUND",
+      "COUNTERCULTURE",
+      "ADULT",
+      "INK"
+    ],
+    "message": "Take a picture and transform the subject into a character from 1960s-70s underground comix. Render in the raw, unfiltered style of R. Crumb or Gilbert Shelton \u2014 heavy cross-hatching, grotesque exaggeration, countercultural imagery, and the deliberately crude, energetic ink work of the underground comics movement. Include psychedelic elements and anti-establishment visual language.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\u2022 Preserve recognizable subject identity in underground comix style\n\u2022 Use heavy black ink with extensive cross-hatching\n\u2022 Apply grotesque exaggeration of features\n\u2022 Include psychedelic and countercultural visual elements\n\u2022 Show raw, energetic line work (deliberately unpolished)\n\u2022 Use the characteristic body distortion of underground comix\n\u2022 Reference R. Crumb, Gilbert Shelton, S. Clay Wilson\n\u2022 Include hand-lettered text or speech bubbles\n\u2022 Maintain the rebellious, anti-establishment energy\n\u2022 Show on newsprint-textured paper with limited color"
+  },
+  {
+    "name": "HANNA-BARBERA LIMITED ANIMATION",
+    "category": [
+      "CARTOON",
+      "CLASSIC",
+      "TV",
+      "60S",
+      "AMERICAN"
+    ],
+    "message": "Take a picture and transform the subject into a Hanna-Barbera style cartoon character from the 1960s-70s. Render with the characteristic limited animation aesthetic \u2014 simple shapes, minimal detail, flat colors, and the distinctive design shortcuts (floating collar to separate head from body, simple dot eyes, limited poses). Include a repeating background and the warm, nostalgic feel of classic TV animation.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\u2022 Preserve recognizable subject identity in Hanna-Barbera style\n\u2022 Use simple geometric shapes for character construction\n\u2022 Include the signature 'collar line' separating head from body\n\u2022 Apply flat, limited color palette (no gradients)\n\u2022 Show simple dot or oval eyes with minimal detail\n\u2022 Use repeating/looping background elements\n\u2022 Include mid-century modern design elements in backgrounds\n\u2022 Reference classic HB shows (Flintstones, Jetsons, Scooby-Doo)\n\u2022 Maintain the warm, friendly character design approach\n\u2022 Show the characteristic limited-animation pose (3/4 view, walking cycle)"
+  },
+  {
+    "name": "MANGA SH\u014cNEN ACTION",
+    "category": [
+      "CARTOON",
+      "MANGA",
+      "JAPANESE",
+      "ACTION",
+      "BLACK AND WHITE"
+    ],
+    "message": "Take a picture and transform the subject into a sh\u014dnen manga action panel. Render in black and white with screentone shading, dynamic speed lines, dramatic angles, and the intense action aesthetic of Japanese boys' manga. Show the subject mid-attack or powering up with energy effects, torn clothing, and the characteristic emotional intensity of sh\u014dnen battle manga.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\u2022 Preserve recognizable subject identity in manga style\n\u2022 Use black and white with screentone shading (no color)\n\u2022 Include dynamic speed lines and motion effects\n\u2022 Show dramatic, low-angle perspective\n\u2022 Add energy/power effects (aura, lightning, wind)\n\u2022 Include intense facial expression with detailed eyes\n\u2022 Use panel border breaking for dramatic effect\n\u2022 Reference sh\u014dnen manga (Dragon Ball, Naruto, One Piece style)\n\u2022 Show dynamic action pose with exaggerated anatomy\n\u2022 Include Japanese sound effects (onomatopoeia) in stylized text"
+  },
+  {
+    "name": "FLEISCHER STUDIOS RUBBER HOSE",
+    "category": [
+      "CARTOON",
+      "VINTAGE",
+      "1930S",
+      "SURREAL",
+      "ANIMATION"
+    ],
+    "message": "Take a picture and transform the subject into a 1930s Fleischer Studios rubber hose animation character. Render with the surreal, slightly unsettling style of early Fleischer cartoons \u2014 pie-cut eyes, rubber hose limbs, three-fingered hands, and the dreamlike rotoscoped backgrounds. Include the characteristic bouncing, musical rhythm and surreal transformations of early sound-era cartoons.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\u2022 Preserve recognizable subject identity in 1930s cartoon style\n\u2022 Use pie-cut eyes (black circles with pie-slice removed)\n\u2022 Include rubber hose limbs (no joints, flexible tube arms/legs)\n\u2022 Show three-fingered white gloves\n\u2022 Apply black and white with gray tones\n\u2022 Include surreal, dreamlike background elements\n\u2022 Add musical notes and rhythm-suggesting motion\n\u2022 Reference Fleischer cartoons (Betty Boop, early Popeye, Out of the Inkwell)\n\u2022 Show the characteristic bouncy, musical movement\n\u2022 Include slightly unsettling surreal transformations of objects"
+  },
+  {
+    "name": "GRAPHIC NOVEL NOIR",
+    "category": [
+      "CARTOON",
+      "COMIC",
+      "NOIR",
+      "ADULT",
+      "DRAMATIC"
+    ],
+    "message": "Take a picture and transform the subject into a panel from a noir graphic novel in the style of Frank Miller's Sin City. Render in extreme high-contrast black and white with minimal gray \u2014 stark shadows, silhouettes, and occasional splashes of a single color (red or yellow) for dramatic emphasis. Show the subject in a rain-soaked urban setting with the hard-boiled, violent aesthetic of noir comics.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\u2022 Preserve recognizable subject identity in graphic noir style\n\u2022 Use extreme black and white contrast (minimal gray tones)\n\u2022 Include one selective color for dramatic emphasis (red blood, yellow light)\n\u2022 Show heavy shadows consuming most of the frame\n\u2022 Use stark silhouettes and negative space\n\u2022 Include rain rendered as white streaks on black\n\u2022 Apply hard-boiled noir atmosphere and urban setting\n\u2022 Reference Frank Miller (Sin City, 300) and noir comics\n\u2022 Show dramatic, cinematic panel composition\n\u2022 Create atmosphere of danger, moral ambiguity, and urban decay"
+  },
+  {
+    "name": "STUDIO GHIBLI PASTORAL",
+    "category": [
+      "CARTOON",
+      "ANIME",
+      "JAPANESE",
+      "PASTORAL",
+      "BEAUTIFUL"
+    ],
+    "message": "Take a picture and transform the subject into a scene from a Studio Ghibli pastoral film. Render the subject in a lush, hand-painted natural environment with the characteristic Ghibli attention to clouds, grass movement, and light. Show towering cumulus clouds, wildflower meadows, and the gentle, contemplative atmosphere of films like My Neighbor Totoro or Kiki's Delivery Service. Every blade of grass should feel alive.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\u2022 Preserve recognizable subject identity in Ghibli anime style\n\u2022 Use hand-painted watercolor background aesthetic\n\u2022 Include magnificent cloud formations (towering cumulus)\n\u2022 Show lush, detailed natural environments (every plant rendered with care)\n\u2022 Apply soft, warm natural lighting\n\u2022 Include wind movement in grass, hair, and clothing\n\u2022 Use the gentle, contemplative Ghibli color palette\n\u2022 Reference Miyazaki films (Totoro, Kiki, Spirited Away)\n\u2022 Create atmosphere of wonder, peace, and connection to nature\n\u2022 Show the characteristic Ghibli 'quiet moment' of contemplation"
+  },
+  {
+    "name": "NEWSPAPER COMIC STRIP",
+    "category": [
+      "CARTOON",
+      "COMIC STRIP",
+      "NEWSPAPER",
+      "DAILY",
+      "HUMOR"
+    ],
+    "message": "Take a picture and transform the subject into a classic newspaper comic strip character in a three or four-panel daily strip format. Render with clean, economical line work, simple backgrounds, and the characteristic format constraints of syndicated newspaper comics. Include panel borders, a strip title/header, and the setup-punchline structure of daily comic strips.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\u2022 Preserve recognizable subject identity in comic strip style\n\u2022 Use clean, economical line work (minimal but expressive)\n\u2022 Show 3-4 panel horizontal strip format\n\u2022 Include simple, suggested backgrounds\n\u2022 Add speech bubbles with hand-lettered style text\n\u2022 Use limited color (Sunday strip) or black and white (daily)\n\u2022 Include strip title/header with character name\n\u2022 Reference classic strips (Peanuts, Calvin & Hobbes, Garfield format)\n\u2022 Show clear setup-punchline narrative structure\n\u2022 Maintain the constraints of newspaper reproduction (clean lines, readable at small size)"
+  },
+  {
+    "name": "ADULT SWIM AESTHETIC",
+    "category": [
+      "CARTOON",
+      "ADULT",
+      "SURREAL",
+      "TV",
+      "MODERN"
+    ],
+    "message": "Take a picture and transform the subject into a character from an Adult Swim-style animated show. Render with the intentionally crude, lo-fi animation aesthetic \u2014 slightly off-putting character designs, flat digital colors, minimal animation frames, and the surreal, uncomfortable humor of late-night adult animation. The style should feel deliberately cheap yet artistically intentional.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\u2022 Preserve recognizable subject identity in Adult Swim style\n\u2022 Use intentionally crude, simplified character design\n\u2022 Apply flat digital colors with minimal shading\n\u2022 Include slightly unsettling or off-putting proportions\n\u2022 Show minimal background detail (solid colors or simple shapes)\n\u2022 Use the deliberately lo-fi aesthetic of budget adult animation\n\u2022 Reference Adult Swim shows (Aqua Teen, Tim & Eric, 12 oz Mouse)\n\u2022 Include surreal or non-sequitur visual elements\n\u2022 Maintain the uncomfortable, anti-comedy visual tone\n\u2022 Show the intentional contrast between crude art and complex humor"
+  },
+  {
+    "name": "MEXICAN LUCHA LIBRE COMIC",
+    "category": [
+      "CARTOON",
+      "MEXICAN",
+      "WRESTLING",
+      "ACTION",
+      "COMIC"
+    ],
+    "message": "Take a picture and transform the subject into a character from a Mexican lucha libre comic book (historieta). Render the subject as a masked luchador hero in the colorful, dynamic style of Mexican wrestling comics \u2014 bold colors, dramatic poses, ornate mask designs, and the unique blend of superhero action and wrestling culture that defines the genre.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\u2022 Preserve recognizable subject identity beneath a luchador mask\n\u2022 Use bold, saturated colors (red, gold, blue, green)\n\u2022 Include ornate, detailed mask design with the subject's features suggested\n\u2022 Show dynamic wrestling/superhero action pose\n\u2022 Apply the dramatic, muscular figure style of Mexican comics\n\u2022 Include wrestling ring or urban action setting\n\u2022 Reference Mexican historieta style (El Santo, Blue Demon comics)\n\u2022 Add Spanish-language sound effects and speech bubbles\n\u2022 Use dramatic lighting and bold shadows\n\u2022 Create sense of heroic action and cultural pride"
+  },
+  {
+    "name": "WEBCOMIC SLICE OF LIFE",
+    "category": [
+      "CARTOON",
+      "WEBCOMIC",
+      "MODERN",
+      "DIGITAL",
+      "RELATABLE"
+    ],
+    "message": "Take a picture and transform the subject into a character in a modern slice-of-life webcomic panel. Render in the clean, simple digital art style of popular webcomics \u2014 soft colors, rounded features, expressive but simplified faces, and a relatable everyday scenario. The subject should be shown in a mundane situation (working at a desk, making coffee, lying on a couch) with a humorous or poignant observation.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\u2022 Preserve recognizable subject identity in webcomic style\n\u2022 Use clean digital line work with soft, pastel colors\n\u2022 Include rounded, friendly character proportions\n\u2022 Show a relatable everyday scenario\n\u2022 Apply simple but effective facial expressions\n\u2022 Use minimal background detail (suggested furniture, solid colors)\n\u2022 Reference popular webcomic styles (Sarah's Scribbles, Liz Climo)\n\u2022 Include a single panel or short sequence format\n\u2022 Maintain the intimate, personal tone of indie webcomics\n\u2022 Create a moment of quiet humor or emotional truth"
+  },
+  {
+    "name": "PROPAGANDA CARTOON",
+    "category": [
+      "CARTOON",
+      "POLITICAL",
+      "EDITORIAL",
+      "SATIRE",
+      "ILLUSTRATION"
+    ],
+    "message": "Take a picture and transform the subject into a political propaganda cartoon in the style of early 20th century editorial illustration. Render with the exaggerated, symbolic visual language of political cartoons \u2014 oversized heads on small bodies, labels on everything, heavy-handed symbolism, and the bold ink-and-wash technique of newspaper editorial cartoonists like Thomas Nast or David Low.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\u2022 Preserve recognizable subject identity with caricature exaggeration\n\u2022 Use bold ink lines with wash shading\n\u2022 Include heavy-handed labels on objects and figures\n\u2022 Show symbolic/allegorical elements (scales of justice, ship of state)\n\u2022 Apply oversized head on smaller body (editorial cartoon proportions)\n\u2022 Include text banners and caption\n\u2022 Reference classic editorial cartoon style (Thomas Nast, Punch magazine)\n\u2022 Use cross-hatching and ink wash for shading\n\u2022 Include symbolic props that represent abstract concepts\n\u2022 Maintain the didactic, message-driven composition of political cartoons"
+  },
+  {
+    "name": "PIXEL ART RPG SPRITE",
+    "category": [
+      "CARTOON",
+      "PIXEL ART",
+      "GAMING",
+      "RETRO",
+      "16-BIT"
+    ],
+    "message": "Take a picture and transform the subject into a 16-bit RPG character sprite and portrait set. Show the subject rendered as a pixel art character in the style of classic SNES-era JRPGs \u2014 a small overworld sprite (32x32 pixels), a battle sprite, and a detailed dialogue portrait. Include the characteristic limited palette, dithering techniques, and charming pixel-level detail of 16-bit era game art.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\u2022 Preserve recognizable subject identity across all sprite sizes\n\u2022 Use authentic 16-bit pixel art techniques (limited palette, dithering)\n\u2022 Show multiple views: overworld sprite, battle sprite, portrait\n\u2022 Include RPG UI elements (text box, stats, menu frame)\n\u2022 Apply SNES-era color limitations and palette choices\n\u2022 Show character in RPG-appropriate costume/class\n\u2022 Reference classic JRPGs (Final Fantasy VI, Chrono Trigger, EarthBound)\n\u2022 Use pixel-perfect rendering at appropriate resolutions\n\u2022 Include idle animation frames if showing sprite sheet\n\u2022 Maintain the charming, detailed quality of peak pixel art"
+  },
+  {
+    "name": "CHILDREN'S BOOK WATERCOLOR",
+    "category": [
+      "CARTOON",
+      "ILLUSTRATION",
+      "CHILDREN",
+      "WATERCOLOR",
+      "STORYBOOK"
+    ],
+    "message": "Take a picture and transform the subject into a character from a classic children's picture book illustration. Render in soft watercolor with gentle ink outlines, warm colors, and the inviting, slightly whimsical style of beloved children's book illustrators. The subject should appear in a cozy, magical setting \u2014 a forest path, a cluttered kitchen, or a starlit bedroom \u2014 with the warmth and safety of bedtime story illustrations.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\u2022 Preserve recognizable subject identity in storybook style\n\u2022 Use soft watercolor washes with gentle ink outlines\n\u2022 Apply warm, inviting color palette\n\u2022 Include whimsical, slightly exaggerated proportions\n\u2022 Show a cozy, detailed setting full of small discoveries\n\u2022 Use soft, diffused lighting suggesting warmth and safety\n\u2022 Reference classic illustrators (Beatrix Potter, Maurice Sendak, Quentin Blake)\n\u2022 Include small hidden details that reward close looking\n\u2022 Maintain the gentle, nurturing tone of children's literature\n\u2022 Create a sense of wonder, coziness, and gentle adventure"
+  },
+  {
+    "name": "ROTOSCOPED MUSIC VIDEO",
+    "category": [
+      "CARTOON",
+      "ANIMATION",
+      "MUSIC",
+      "PSYCHEDELIC",
+      "TECHNIQUE"
+    ],
+    "message": "Take a picture and transform the subject into a frame from a rotoscoped music video or animated film. Show the subject with the characteristic look of rotoscope animation \u2014 traced from live action but rendered with flat colors, shifting outlines, and the slightly uncanny movement quality where realistic motion meets stylized rendering. Include psychedelic color shifts and the dreamy quality of films like Waking Life or A Scanner Darkly.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\u2022 Preserve recognizable subject identity through rotoscope rendering\n\u2022 Show the characteristic 'traced from life' quality of rotoscope\n\u2022 Use flat color areas with shifting, unstable outlines\n\u2022 Apply psychedelic color palette that shifts across the image\n\u2022 Include the slightly uncanny quality of rotoscoped faces\n\u2022 Show outline wobble suggesting frame-by-frame tracing\n\u2022 Reference rotoscope works (Waking Life, A Scanner Darkly, Take On Me)\n\u2022 Use bold color choices that differ from reality\n\u2022 Create the dreamy, between-worlds quality of rotoscope animation\n\u2022 Include areas where the style shifts between more/less realistic"
+  },
+  {
+    "name": "VINTAGE EDUCATIONAL FILMSTRIP",
+    "category": [
+      "CARTOON",
+      "EDUCATIONAL",
+      "RETRO",
+      "1950S",
+      "ILLUSTRATION"
+    ],
+    "message": "Take a picture and transform the subject into a frame from a vintage 1950s-60s educational filmstrip or classroom poster. Render in the characteristic mid-century educational illustration style \u2014 simplified, friendly figures with period-appropriate clothing, flat gouache colors, and the optimistic, slightly patronizing tone of Cold War-era educational materials. Include filmstrip sprocket holes on the sides.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\u2022 Preserve recognizable subject identity in 1950s illustration style\n\u2022 Use flat gouache/tempera painting aesthetic\n\u2022 Include filmstrip sprocket holes on left and right edges\n\u2022 Apply mid-century color palette (muted pastels, warm tones)\n\u2022 Show period-appropriate clothing and setting (1950s-60s)\n\u2022 Use the simplified, friendly figure style of educational materials\n\u2022 Include instructional text or numbered steps\n\u2022 Reference vintage educational filmstrips and classroom posters\n\u2022 Maintain the optimistic, wholesome tone of the era\n\u2022 Add slight film aging (scratches, color fade, dust specks)"
+  }
+]

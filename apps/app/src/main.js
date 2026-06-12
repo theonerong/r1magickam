@@ -7403,7 +7403,10 @@ async function showManualOptionsModal(preset, sections) {
       if (idx >= allRadios.length) idx = allRadios.length - 1;
       _navIdx = idx;
       allRadios[idx].checked = true;
-      allRadios[idx].closest('.style-item')?.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+      allRadios[idx].closest('.style-item')?.scrollIntoView({
+        block: 'nearest',
+        behavior: window._alphaLongPressActive ? 'instant' : 'smooth'
+      });
     };
 
     // Keep _navIdx in sync when user taps an option directly
@@ -7416,8 +7419,21 @@ async function showManualOptionsModal(preset, sections) {
     let _downClickTimer = null;
     const DBLCLICK_MS = 280;
 
-    const navUpBtn  = document.getElementById('manual-options-nav-up');
-    const navDownBtn = document.getElementById('manual-options-nav-down');
+    // Use let so we can reassign after cloning
+    let navUpBtn  = document.getElementById('manual-options-nav-up');
+    let navDownBtn = document.getElementById('manual-options-nav-down');
+
+    // Clone buttons to strip any accumulated long-press listeners from prior invocations
+    if (navUpBtn) {
+      const f = navUpBtn.cloneNode(true);
+      navUpBtn.parentNode.replaceChild(f, navUpBtn);
+      navUpBtn = f;
+    }
+    if (navDownBtn) {
+      const f = navDownBtn.cloneNode(true);
+      navDownBtn.parentNode.replaceChild(f, navDownBtn);
+      navDownBtn = f;
+    }
 
     const handleNavUp = () => {
       if (_upClickTimer) {
@@ -7451,6 +7467,12 @@ async function showManualOptionsModal(preset, sections) {
 
     if (navUpBtn)   navUpBtn.onclick   = handleNavUp;
     if (navDownBtn) navDownBtn.onclick = handleNavDown;
+
+    // Long press: continuously step through options one at a time, crossing section boundaries naturally
+    if (window._addAlphaLongPress) {
+      window._addAlphaLongPress(navUpBtn,   () => navToIndex(_navIdx - 1));
+      window._addAlphaLongPress(navDownBtn, () => navToIndex(_navIdx + 1));
+    }
     
     modal.style.display = 'flex';
     manualOptionsModalVisible = true;
