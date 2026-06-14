@@ -11707,21 +11707,6 @@
     "randomizeOptions": false,
     "additionalInstructions": "STYLE ENFORCEMENT:\n\u2022 Preserve recognizable subject identity\n\u2022 Show translucent, layered wax texture throughout\n\u2022 Include visible tool marks from heated metal implements\n\u2022 Display the characteristic luminous, glowing quality of wax medium\n\u2022 Add areas of thick impasto wax buildup\n\u2022 Show scraped and fused layers revealing colors beneath\n\u2022 Include subtle embedded materials (paper, fabric fragments) if appropriate\n\u2022 Maintain warm, honey-toned undertones from beeswax base.\n\nFINAL RESULT:\nA richly layered wax painting with depth and translucency.\n\nCORE REQUIREMENTS:\n• WAX texture\n• LAYERING visible\n• SOFT diffusion"
   },
-    {
-    "name": "ENCAUSTIC WAX PAINTING",
-    "category": [
-      "ART",
-      "PAINTING",
-      "TECHNIQUE",
-      "TEXTURE",
-      "MIXED MEDIA"
-    ],
-    "message": "Take a picture and transform the image into an encaustic wax painting. Render the subject using the ancient technique of heated beeswax mixed with pigments, showing the characteristic translucent layers, rich texture, and luminous depth of encaustic art. The surface should display visible wax buildup, scraping marks, and the unique semi-transparent quality of layered pigmented wax.",
-    "options": [],
-    "randomizeOptions": false,
-    "additionalInstructions": "STYLE ENFORCEMENT:\n\u2022 Preserve recognizable subject identity\n\u2022 Show translucent, layered wax texture throughout\n\u2022 Include visible tool marks from heated metal implements\n\u2022 Display the characteristic luminous, glowing quality of wax medium\n\u2022 Add areas of thick impasto wax buildup\n\u2022 Show scraped and fused layers revealing colors beneath\n\u2022 Include subtle embedded materials (paper, fabric fragments) if appropriate\n\u2022 Maintain warm, honey-toned undertones from beeswax base"
-  },
-
   {
     "name": "ENCYCLOPEDIA (HUMOR)",
     "category": [
