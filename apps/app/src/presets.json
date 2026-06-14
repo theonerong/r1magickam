@@ -466,6 +466,20 @@
     "additionalInstructions": ""
   },
   {
+    "name": "90S SATURDAY MORNING CARTOON",
+    "category": [
+      "CARTOON",
+      "90S",
+      "NOSTALGIA",
+      "ANIMATION",
+      "RETRO"
+    ],
+    "message": "Take a picture and transform the subject into a character from a 1990s Saturday morning cartoon. Render with bold black outlines, flat cel-shaded colors, slightly off-model proportions, and the characteristic limited animation aesthetic of 90s TV cartoons. Include a bright, simple background and the energetic, exaggerated expressions of the era's animation style.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\u2022 Preserve recognizable subject identity in cartoon form\n\u2022 Use bold black outlines with consistent line weight\n\u2022 Apply flat cel-shaded colors without gradients\n\u2022 Include slightly exaggerated proportions (large head, expressive eyes)\n\u2022 Show bright, simplified background\n\u2022 Use the limited color palette of 90s TV animation\n\u2022 Include action lines or motion effects\n\u2022 Reference 90s cartoon aesthetics (Dexter's Lab, Powerpuff Girls era)\n\u2022 Add slight cel animation imperfections (paint bubbles, line wobble)\n\u2022 Create energetic, dynamic pose"
+  },
+  {
     "name": "AI-BUY",
     "category": [
       "UTILITY",
@@ -799,6 +813,20 @@
     ],
     "randomizeOptions": true,
     "additionalInstructions": "IDENTITY PRESERVATION:\n• Preserve recognizable identity\n• Subject becomes part of the Addams Family world\n• Subject remains clearly recognizable\n\nSTYLE REQUIREMENTS:\n• Authentic Addams Family atmosphere\n• Gothic elegance\n• Macabre humor\n• Victorian influences\n• Dark formal clothing\n• Antique furnishings\n• Candlelit interiors\n• Ornate architecture\n• Deadpan expressions\n• Playful gothic tone\n\nOPTION 001 REQUIREMENTS:\n• Formal family portrait\n• Traditional posed photograph\n\nOPTION 002 REQUIREMENTS:\n• Family social gathering\n• Warm family interaction\n\nOPTION 003 REQUIREMENTS:\n• Festive gothic celebration\n• Elegant macabre decorations\n\nOPTION 004 REQUIREMENTS:\n• Formal mansion dinner scene\n• Grand dining-room presentation\n\nOPTION 005 REQUIREMENTS:\n• Cemetery outing\n• Cheerful gothic recreation\n\nOPTION 006 REQUIREMENTS:\n• Family holiday-card composition\n• Formal seasonal portrait\n\nOPTION 007 REQUIREMENTS:\n• Historic painted-family-portrait appearance\n• Museum-quality portraiture\n\nOPTION 008 REQUIREMENTS:\n• Extended-family gathering\n• Multi-generational celebration\n\nFINAL RESULT:\nThe final image must resemble an authentic Addams Family scene featuring the subject naturally integrated into the family."
+  },
+  {
+    "name": "ADULT SWIM",
+    "category": [
+      "CARTOON",
+      "ADULT",
+      "SURREAL",
+      "TV",
+      "MODERN"
+    ],
+    "message": "Take a picture and transform the subject into a character from an Adult Swim-style animated show. Render with the intentionally crude, lo-fi animation aesthetic \u2014 slightly off-putting character designs, flat digital colors, minimal animation frames, and the surreal, uncomfortable humor of late-night adult animation. The style should feel deliberately cheap yet artistically intentional.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\u2022 Preserve recognizable subject identity in Adult Swim style\n\u2022 Use intentionally crude, simplified character design\n\u2022 Apply flat digital colors with minimal shading\n\u2022 Include slightly unsettling or off-putting proportions\n\u2022 Show minimal background detail (solid colors or simple shapes)\n\u2022 Use the deliberately lo-fi aesthetic of budget adult animation\n\u2022 Reference Adult Swim shows (Aqua Teen, Tim & Eric, 12 oz Mouse)\n\u2022 Include surreal or non-sequitur visual elements\n\u2022 Maintain the uncomfortable, anti-comedy visual tone\n\u2022 Show the intentional contrast between crude art and complex humor"
   },
   {
     "name": "ADVENTURE TIME",
@@ -4010,6 +4038,20 @@
     "additionalInstructions": ""
   },
   {
+    "name": "BOLLYWOOD MUSICAL NUMBER",
+    "category": [
+      "MOVIE",
+      "MUSICAL",
+      "INDIAN",
+      "DANCE",
+      "CINEMATIC"
+    ],
+    "message": "Take a picture and transform the subject into the star of a lavish Bollywood musical number. Show the subject in elaborate, colorful traditional Indian costume performing a dramatic dance move, surrounded by dozens of synchronized backup dancers on an impossibly grand set with fountains, flower petals, and dramatic fabric draping. Use the saturated colors and joyful excess of Bollywood cinema.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\u2022 Preserve recognizable subject identity as the Bollywood star\n\u2022 Use extremely vibrant, saturated color palette\n\u2022 Include elaborate costume with embroidery, jewelry, and flowing fabric\n\u2022 Show synchronized backup dancers in coordinated outfits\n\u2022 Include grand set pieces (palaces, fountains, flower gardens)\n\u2022 Add dramatic fabric movement and flower petal showers\n\u2022 Use dynamic camera angle suggesting movement\n\u2022 Reference Bollywood musical aesthetics (color, scale, joy)\n\u2022 Include dramatic lighting with colored gels\n\u2022 Create sense of joyful, larger-than-life spectacle"
+  },
+  {
     "name": "BOND",
     "category": [
       "OPTIONS",
@@ -6148,6 +6190,20 @@
     "additionalInstructions": "FINAL RESULT:\nA striking, high-contrast composition where the subject is dramatically illuminated against deep shadow, emphasizing form, depth, and intensity.\n\nCORE REQUIREMENTS:\n• EXTREME light/dark contrast\n• SINGLE dominant light source\n• SHADOW-dominated composition"
   },
   {
+    "name": "CHIBI ANIME",
+    "category": [
+      "CARTOON",
+      "ANIME",
+      "JAPANESE",
+      "CUTE",
+      "CHIBI"
+    ],
+    "message": "Take a picture and transform the subject into a chibi anime character. Render with the super-deformed proportions of chibi style \u2014 enormous head (2-3 head-to-body ratio), tiny body, huge sparkling eyes, simplified hands, and exaggerated kawaii expressions. Include sparkle effects, blush marks, and the characteristic cute aesthetic of Japanese chibi illustration.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\u2022 Preserve recognizable subject identity in chibi form\n\u2022 Use 2:1 or 3:1 head-to-body ratio (super-deformed)\n\u2022 Include enormous, sparkling eyes with detailed highlights\n\u2022 Simplify hands to mittens or small nubs\n\u2022 Add kawaii elements (blush marks, sparkles, sweat drops)\n\u2022 Use clean, smooth digital anime coloring\n\u2022 Show exaggerated emotional expression\n\u2022 Include cute accessories or props\n\u2022 Reference chibi/SD anime art style conventions\n\u2022 Maintain the adorable, collectible figure aesthetic"
+  },
+  {
     "name": "CHILDHOOD VERSION",
     "category": [
       "OPTIONS",
@@ -6216,6 +6272,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "CHILDREN'S BOOK ILLUSTRATION",
+    "category": [
+      "CARTOON",
+      "ILLUSTRATION",
+      "CHILDREN",
+      "WATERCOLOR",
+      "STORYBOOK"
+    ],
+    "message": "Take a picture and transform the subject into a character from a classic children's picture book illustration. Render in soft watercolor with gentle ink outlines, warm colors, and the inviting, slightly whimsical style of beloved children's book illustrators. The subject should appear in a cozy, magical setting \u2014 a forest path, a cluttered kitchen, or a starlit bedroom \u2014 with the warmth and safety of bedtime story illustrations.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\u2022 Preserve recognizable subject identity in storybook style\n\u2022 Use soft watercolor washes with gentle ink outlines\n\u2022 Apply warm, inviting color palette\n\u2022 Include whimsical, slightly exaggerated proportions\n\u2022 Show a cozy, detailed setting full of small discoveries\n\u2022 Use soft, diffused lighting suggesting warmth and safety\n\u2022 Reference classic illustrators (Beatrix Potter, Maurice Sendak, Quentin Blake)\n\u2022 Include small hidden details that reward close looking\n\u2022 Maintain the gentle, nurturing tone of children's literature\n\u2022 Create a sense of wonder, coziness, and gentle adventure"
   },
   {
     "name": "CHINESE BRUSH PAINTING",
@@ -9254,6 +9324,20 @@
     "additionalInstructions": "FINAL RESULT:\nThe image should resemble a cross-stitch pattern with visible X-shaped stitches forming the subject."
   },
   {
+    "name": "COUCHING_TIGER,_HIDDEN_DRAGON",
+    "category": [
+      "MOVIE",
+      "MARTIAL ARTS",
+      "CHINESE",
+      "EPIC",
+      "CINEMATIC"
+    ],
+    "message": "Take a picture and transform the subject into a scene from a wuxia martial arts epic film. Show the subject in flowing silk robes performing an impossible gravity-defying martial arts move \u2014 leaping across bamboo treetops, running across water, or fighting mid-air with a sword. Use the characteristic wire-fu aesthetics, slow-motion fabric movement, and painterly Chinese landscape backgrounds.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\u2022 Preserve recognizable subject identity\n\u2022 Show gravity-defying martial arts action (wire-fu aesthetic)\n\u2022 Include flowing silk robes and fabric in dramatic motion\n\u2022 Use painterly Chinese landscape backgrounds (mountains, bamboo, waterfalls)\n\u2022 Apply slow-motion photography aesthetic for fabric and hair\n\u2022 Include traditional weapons (sword, staff, fan)\n\u2022 Use dramatic color grading (rich greens, golds, reds)\n\u2022 Reference wuxia films (Crouching Tiger Hidden Dragon, Hero, House of Flying Daggers)\n\u2022 Show impossible physics (running on water, leaping between trees)\n\u2022 Create sense of grace, power, and poetic movement"
+  },
+  {
     "name": "CRYSTALLIZED",
     "category": [
       "OPTIONS",
@@ -11618,11 +11702,26 @@
       "PAINTERLY",
       "CLASSICAL"
     ],
-    "message": "Take a picture and transform the image into an encaustic wax painting.\n• Use thick wax-like layering\n• Semi-translucent depth effects\n\nSCENE COMPOSITION:\n• Layered visual depth\n• Soft blending through wax\n\nCAMERA & EFFECTS:\n• Light diffusion through layers\n• Slight surface irregularities\n\nSTYLE:\n• Wax texture\n• Soft blending\n• Organic layering",
+    "message": "Take a picture and transform the image into an encaustic wax painting. Render the subject using the ancient technique of heated beeswax mixed with pigments, showing the characteristic translucent layers, rich texture, and luminous depth of encaustic art. The surface should display visible wax buildup, scraping marks, and the unique semi-transparent quality of layered pigmented wax.",
     "options": [],
     "randomizeOptions": false,
-    "additionalInstructions": "FINAL RESULT:\nA richly layered wax painting with depth and translucency.\n\nCORE REQUIREMENTS:\n• WAX texture\n• LAYERING visible\n• SOFT diffusion"
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\u2022 Preserve recognizable subject identity\n\u2022 Show translucent, layered wax texture throughout\n\u2022 Include visible tool marks from heated metal implements\n\u2022 Display the characteristic luminous, glowing quality of wax medium\n\u2022 Add areas of thick impasto wax buildup\n\u2022 Show scraped and fused layers revealing colors beneath\n\u2022 Include subtle embedded materials (paper, fabric fragments) if appropriate\n\u2022 Maintain warm, honey-toned undertones from beeswax base.\n\nFINAL RESULT:\nA richly layered wax painting with depth and translucency.\n\nCORE REQUIREMENTS:\n• WAX texture\n• LAYERING visible\n• SOFT diffusion"
   },
+    {
+    "name": "ENCAUSTIC WAX PAINTING",
+    "category": [
+      "ART",
+      "PAINTING",
+      "TECHNIQUE",
+      "TEXTURE",
+      "MIXED MEDIA"
+    ],
+    "message": "Take a picture and transform the image into an encaustic wax painting. Render the subject using the ancient technique of heated beeswax mixed with pigments, showing the characteristic translucent layers, rich texture, and luminous depth of encaustic art. The surface should display visible wax buildup, scraping marks, and the unique semi-transparent quality of layered pigmented wax.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\u2022 Preserve recognizable subject identity\n\u2022 Show translucent, layered wax texture throughout\n\u2022 Include visible tool marks from heated metal implements\n\u2022 Display the characteristic luminous, glowing quality of wax medium\n\u2022 Add areas of thick impasto wax buildup\n\u2022 Show scraped and fused layers revealing colors beneath\n\u2022 Include subtle embedded materials (paper, fabric fragments) if appropriate\n\u2022 Maintain warm, honey-toned undertones from beeswax base"
+  },
+
   {
     "name": "ENCYCLOPEDIA (HUMOR)",
     "category": [
@@ -14834,6 +14933,20 @@
     "additionalInstructions": ""
   },
   {
+    "name": "FRENCH BANDE DESSINEE",
+    "category": [
+      "CARTOON",
+      "FRENCH",
+      "COMIC",
+      "EUROPEAN",
+      "ILLUSTRATION"
+    ],
+    "message": "Take a picture and transform the subject into a character from a French-Belgian bande dessin\u00e9e (BD) comic. Render in the clear line (ligne claire) style with uniform line weight, flat colors, detailed backgrounds, and the sophisticated European comic aesthetic. The subject should appear in a detailed, realistic setting with the characteristic blend of cartoon characters and realistic environments.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\u2022 Preserve recognizable subject identity in BD style\n\u2022 Use uniform line weight throughout (ligne claire technique)\n\u2022 Apply flat colors without heavy shading\n\u2022 Include highly detailed, realistic background environments\n\u2022 Show the contrast between slightly caricatured figures and realistic settings\n\u2022 Use the sophisticated color palette of European comics\n\u2022 Reference BD masters (Herg\u00e9, Moebius, Bilal)\n\u2022 Include panel border or page layout elements\n\u2022 Maintain the intellectual, adult-oriented tone of European comics\n\u2022 Show detailed architectural and environmental elements"
+  },
+  {
     "name": "FRENCH CHEF DISASTER",
     "category": [
       "HUMOR",
@@ -16418,10 +16531,10 @@
       "JAPANESE",
       "PRINTMAKING"
     ],
-    "message": "Take a picture and transform the image into Gyotaku (fish rubbing) art. Preserve subject identity. Use the traditional Japanese technique of printing directly from fish and marine life. Render with the characteristic direct-impression quality, showing detailed scale patterns, fin textures, and the organic beauty of nature printing in sumi ink on rice paper.",
+    "message": "Take a picture and transform the image into gyotaku-style print — the traditional Japanese art of printing from fish and natural objects. Render the subject as if they were inked and pressed onto rice paper, creating a direct impression with visible texture, scale patterns, and the characteristic monochromatic or limited-color aesthetic of this unique printmaking tradition.",
     "options": [],
     "randomizeOptions": false,
-    "additionalInstructions": ""
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\u2022 Preserve recognizable subject identity\n\u2022 Use direct-impression printing aesthetic\n\u2022 Show ink transfer texture with areas of heavy and light coverage\n\u2022 Include rice paper or washi paper background texture\n\u2022 Use primarily black sumi ink with optional subtle color accents\n\u2022 Display natural texture patterns (scales, feathers, skin texture)\n\u2022 Add Japanese calligraphy or seal stamps as compositional elements\n\u2022 Maintain the organic, slightly imperfect quality of hand-printing"
   },
   {
     "name": "H. P. LOVECRAFT",
@@ -33763,6 +33876,20 @@
     "additionalInstructions": ""
   },
   {
+    "name": "SONAR PULSE MAPPING",
+    "category": [
+      "DIGITAL",
+      "SCIENTIFIC",
+      "UNDERWATER",
+      "TECHNOLOGY",
+      "VISUALIZATION"
+    ],
+    "message": "Take a picture and transform the subject as if detected by underwater sonar pulse mapping. Render the subject as a sonar return signal \u2014 bright echo on a dark circular sweep display, with the characteristic green phosphor glow, radial sweep line, and distance rings of submarine sonar. Show the subject's form emerging from acoustic reflections with depth contours and bearing indicators.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\u2022 Preserve recognizable subject identity as a sonar return\n\u2022 Use circular PPI (Plan Position Indicator) sonar display format\n\u2022 Apply green phosphor glow on black background\n\u2022 Show radial sweep line with fading trail\n\u2022 Include range rings and bearing markers\n\u2022 Display the subject as bright echo returns forming their shape\n\u2022 Add noise and clutter returns in surrounding water\n\u2022 Include sonar metadata (range, bearing, depth, frequency)\n\u2022 Show signal decay and ghosting from previous sweeps\n\u2022 Reference actual submarine sonar display aesthetics"
+  },
+  {
     "name": "SONIC THE HEDGEHOG MODE",
     "category": [
       "GAMING",
@@ -33825,6 +33952,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "SOVIET ANIMATION STYLE",
+    "category": [
+      "CARTOON",
+      "RUSSIAN",
+      "VINTAGE",
+      "ANIMATION",
+      "ARTISTIC"
+    ],
+    "message": "Take a picture and transform the subject into a character from a Soviet-era animated film (Soyuzmultfilm). Render in the distinctive style of Russian animation \u2014 softer, more painterly than Western cartoons, with watercolor-like backgrounds, gentle character designs, and the poetic, slightly melancholic aesthetic of classic Soviet animation like Hedgehog in the Fog or The Snow Queen.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\u2022 Preserve recognizable subject identity in Soviet animation style\n\u2022 Use soft, painterly rendering (watercolor/gouache aesthetic)\n\u2022 Include atmospheric, dreamy backgrounds\n\u2022 Apply gentle, rounded character design\n\u2022 Use muted, harmonious color palette\n\u2022 Show the poetic, contemplative mood of Soviet animation\n\u2022 Include natural elements (forests, snow, fog, stars)\n\u2022 Reference Soyuzmultfilm classics (Hedgehog in the Fog, Nu Pogodi)\n\u2022 Maintain the artistic, hand-painted quality\n\u2022 Create atmosphere of gentle wonder and slight melancholy"
   },
   {
     "name": "SOVIETWAVE",
