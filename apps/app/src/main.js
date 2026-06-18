@@ -1,5 +1,5 @@
 import { presetStorage } from './storage.js';
-import { presetImporter, earnCredit, unlockAllPresets, getCredits, presetsAreDifferent, getCustomPresetSources, saveCustomPresetSources, getDefaultPresetEnabled, saveDefaultPresetEnabled } from './preset-import.js';
+import { presetImporter, earnCredit, unlockAllPresets, getCredits, resetCredits, presetsAreDifferent, getCustomPresetSources, saveCustomPresetSources, getDefaultPresetEnabled, saveDefaultPresetEnabled } from './preset-import.js';
 
 // Accent-insensitive search helper — strips diacritics so "cafe" finds "café"
 // NFC → NFD decomposes accented chars; removing \u0300-\u036F strips the accent marks.
@@ -302,6 +302,7 @@ let currentTimerIndex = 0;
 let currentMasterPromptIndex = 0;
 let currentMotionIndex = 0;
 let isSettingsSubmenuOpen = false;
+let isResetDatabaseSubmenuOpen = false;
 let isResolutionSubmenuOpen = false;
 let isBurstSubmenuOpen = false;
 let isTimerSubmenuOpen = false;
@@ -1731,6 +1732,14 @@ async function hideGallery() {
   window._carouselGuardUntil = Infinity;
   currentGalleryPage = 1;
   currentFolderView = null;
+  // Always clear the NEW PHOTO overlay when returning to camera
+  if (capturedImage) capturedImage.style.display = 'none';
+  if (resetButton)   resetButton.style.display   = 'none';
+
+  const cameraButtonEl = document.getElementById('camera-button');
+  if (cameraButtonEl && availableCameras.length > 1) {
+    cameraButtonEl.style.display = 'flex';
+  }
 
   // Reset select mode so re-entering the gallery always starts fresh
   if (isBatchMode) {
@@ -7912,12 +7921,13 @@ const TOUR_STEPS = [
   { section: 'Tips and Advanced', title: '🖼️ Preview Preset', body: 'When you long press on a preset, you are provided a sample image preview of what the style will look like.' },
   { section: 'Tips and Advanced', title: '🧠 Master Prompt Power Tip', body: 'Search for master or master prompt in the Visible Presets menu to find presets designed to work with Master Prompt. These respond to names, occasions, and custom context you provide. All presets may be affected by the Master Prompt. Add several master prompts to your preset by activating them.' },
   { section: 'Tips and Advanced', title: '📶 Offline Queue', body: 'If you take photos and the program goes offline - no worries - photos queue automatically and may be synced to the rabbit hole once your connection returns. The queue count shows on the screen.' },
-  { section: 'Tips and Advanced', title: '🔁 Reset Database', body: 'The nuclear option in Settings. Wipes all custom presets and settings. Only imported presets from the library remain. Use only if something is seriously broken.' },
+  { section: 'Tips and Advanced', title: '🔁 Reset Database', body: 'The nuclear option in Settings. Revert individual settings, presets, credits, images or entire program to default. All custom work deleted. Use only if something is seriously broken. Once you reset any portion of the database, RESTART PROGRAM FOR SETTINGS TO RESET CLEANLY.' },
   { section: 'Tips and Advanced', title: '💀 Content Filter Error', body: 'If you go into your rabbit hole and you receive a content filter image error, this happens because AI is quirky. The beauty of Magic Kamera is you can reprompt. Keep tapping that magic button until successful.' },
   { section: 'Tips and Advanced', title: '↑↓ Jump Navigation (Presets)', body: 'Areas with presets, click the up/down arrows once moves one page. Double-click (or hard press) jumps to next or previous letter of alphabet within that section (favorites and non-favorites are navigated separately). Triple-click jumps all the way to top or bottom of list.' },
   { section: 'Tips and Advanced', title: '↑↓ Jump Navigation (Options)', body: 'In the select options modal (When options are enabled), single clicking the up/down arrows move to the next option and double clicking jumps to the next options group.' },
   { section: 'Tips and Advanced', title: '↑↓ Jump Navigation (Settings)', body: 'In the settings submenu, clicking the up/down arrows once moves one setting. Double-clicking jumps all the way to the top or bottom of the list.' },
-  { section: 'Troubleshooting', title: '❌ Camera Access Denied', body: 'This error will appear at the bottom of your main camera screen if you do not have any active presets, either imported or made with the preset builder.' },
+  { section: 'Troubleshooting', title: '❌ Camera access denied', body: 'This error will appear at the bottom of your main camera screen if you do not have any active presets, either imported or made with the preset builder.' },
+  { section: 'Troubleshooting', title: '❌ Image stuck in queue status', body: 'This error will occur if you attempt to take a picture without a preset in your menu preset list. To clear, go to Reset Database in the settings submenu. Click the Photo Queue button and then click apply.' },
   { section: 'Done!', title: '🎉 Tour Complete!', body: 'That\'s Magic Kamera. Now go make magic! This tour or the text tutorial in this menu is here if you need a refresher. If you come across The One Ron G, The One Hashtag Cyber or The One Rabbit Jesus, tell them you enjoy this program.' },
 ];
 
@@ -10167,6 +10177,7 @@ window.addEventListener('scrollUp', () => {
   }
 
   // Settings submenu - CHECK AFTER all other submenus
+  if (isResetDatabaseSubmenuOpen) return;
   if (isSettingsSubmenuOpen) {
     scrollSettingsUp();
     return;
@@ -10338,6 +10349,7 @@ window.addEventListener('scrollDown', () => {
   }
 
   // Settings submenu - CHECK AFTER all other submenus
+  if (isResetDatabaseSubmenuOpen) return;
   if (isSettingsSubmenuOpen) {
     scrollSettingsDown();
     return;
@@ -10417,6 +10429,12 @@ window.addEventListener('scrollDown', () => {
 // Function to update preset display
 function updatePresetDisplay() {
     currentPresetIndex = Math.max(0, Math.min(currentPresetIndex, CAMERA_PRESETS.length - 1));
+
+    if (CAMERA_PRESETS.length === 0) {
+        statusElement.textContent = 'Camera access denied';
+        return;
+    }
+
     const currentPreset = CAMERA_PRESETS[currentPresetIndex];
 
     if (videoTrack) {
@@ -10745,6 +10763,9 @@ async function hideUnifiedMenu() {
   isMenuOpen = false;
   menuScrollEnabled = false;
   currentMenuIndex = 0;
+  // Always clear the NEW PHOTO overlay when returning to camera
+  if (capturedImage) capturedImage.style.display = 'none';
+  if (resetButton)   resetButton.style.display   = 'none';
   styleFilterText = '';
   mainMenuFilterByCategory = ''; // Clear category filter
   document.getElementById('style-filter').value = '';
@@ -10779,6 +10800,387 @@ async function hideUnifiedMenu() {
     updatePresetDisplay();
   }
 }
+
+// ===== RESET DATABASE SUBMENU =====
+
+const _ALL_RESET_CBS = [
+  'reset-cb-custom','reset-cb-edits','reset-cb-queue','reset-cb-visibility',
+  'reset-cb-favorites','reset-cb-buttons','reset-cb-credits','reset-cb-imported','reset-cb-settings',
+  'reset-cb-nomagic','reset-cb-manualopts','reset-cb-masterprompt','reset-cb-gallery'
+];
+
+function showResetDatabaseSubmenu() {
+  document.getElementById('settings-submenu').style.display = 'none';
+  document.getElementById('reset-database-submenu').style.display = 'flex';
+  isSettingsSubmenuOpen = false;
+  isResetDatabaseSubmenuOpen = true;
+  document.getElementById('reset-db-confirm-overlay').style.display = 'none';
+  document.getElementById('reset-db-success-overlay').style.display = 'none';
+}
+
+function hideResetDatabaseSubmenu() {
+  document.getElementById('reset-database-submenu').style.display = 'none';
+  isResetDatabaseSubmenuOpen = false;
+  showSettingsSubmenu();
+}
+
+function _resetDbGetChecks() {
+  const out = {};
+  _ALL_RESET_CBS.forEach(id => {
+    out[id.replace('reset-cb-','')] = !!(document.getElementById(id) || {}).checked;
+  });
+  return out;
+}
+
+function _resetDbSyncDefaultCheckbox() {
+  const allChecked = _ALL_RESET_CBS.every(id => {
+    const el = document.getElementById(id);
+    return el && el.checked;
+  });
+  const def = document.getElementById('reset-cb-default');
+  if (def) def.checked = allChecked;
+}
+
+function _resetDbShowConfirm() {
+  const checks = _resetDbGetChecks();
+  const noneChecked = !Object.values(checks).some(Boolean);
+  if (noneChecked) return;
+  const map = {
+    custom:       '• Custom presets deleted',
+    edits:        '• All edits and modifications undone',
+    queue:        '• Photo queue cleared',
+    visibility:   '• All imported presets set to visible',
+    favorites:    '• Favorites cleared',
+    buttons:      '• Button settings reset to default',
+    credits:      '• Credits reset to 0',
+    imported:     '• Imported presets removed (back to 0)',
+    settings:     '• All settings reset to default',
+    nomagic:      '• No Magic Mode turned off',
+    manualopts:   '• Manually Selected Options turned off',
+    masterprompt: '• Master Prompt cleared and disabled',
+    gallery:      '• ⚠️ALL IMAGES PERMANENTLY DELETED'
+  };
+  const lines = ['The following will be permanently reset:\n'];
+  Object.entries(map).forEach(([k, v]) => { if (checks[k]) lines.push(v); });
+  lines.push('\nThis cannot be undone.');
+  document.getElementById('reset-db-confirm-text').textContent = lines.join('\n');
+  document.getElementById('reset-db-confirm-overlay').style.display = 'flex';
+}
+
+async function _deleteAllGalleryImages() {
+  if (!db) await initDB();
+  return new Promise((resolve, reject) => {
+    const tx = db.transaction(['images'], 'readwrite');
+    tx.oncomplete = resolve;
+    tx.onerror = () => reject(tx.error);
+    tx.objectStore('images').clear();
+  });
+}
+
+function _resetDbUpdateUI(checks) {
+  // No Magic Mode UI
+  if (checks.nomagic || checks.settings) {
+    const el = document.getElementById('no-magic-status');
+    if (el) { el.textContent = 'Disabled'; el.style.color = ''; el.style.fontWeight = ''; }
+    updateNoMagicFooter();
+  }
+  // Manual Options UI
+  if (checks.manualopts || checks.settings) {
+    const el = document.getElementById('manual-options-status');
+    if (el) { el.textContent = 'Disabled'; el.style.color = ''; el.style.fontWeight = ''; }
+    const optBtn = document.getElementById('options-viewer-button');
+    if (optBtn) optBtn.classList.remove('enabled');
+    updatePresetDisplay();
+  }
+  // Master Prompt UI
+  if (checks.masterprompt) {
+    updateMasterPromptIndicator();
+    updateMasterPromptDisplay();
+    const toggleBtn = document.getElementById('master-prompt-toggle-btn');
+    if (toggleBtn) {
+      toggleBtn.textContent = 'OFF';
+      toggleBtn.style.background = 'transparent';
+      toggleBtn.style.borderColor = '#666';
+    }
+  }
+  // Resolution, Burst, Timer display in settings
+  if (checks.settings) {
+    updateResolutionDisplay();
+    updateBurstDisplay();
+    updateTimerDisplay();
+    updateMasterPromptDisplay();
+  }
+  // Visible presets display
+  if (checks.visibility) {
+    updateVisiblePresetsDisplay && updateVisiblePresetsDisplay();
+  }
+}
+
+async function _resetDbExecute() {
+  const checks = _resetDbGetChecks();
+  const successLines = [`✅ Reset complete!
+YOU MUST RESTART PROGRAM!`];
+  const errors = [];
+  let presetsNeedReload = false;
+
+  // 1. Custom Presets + Edits (storage.js DB)
+  try {
+    if (checks.custom && checks.edits) {
+      await presetStorage.clearAll();
+    } else if (checks.custom) {
+      await presetStorage.clearCustomPresetsOnly();
+    } else if (checks.edits) {
+      await presetStorage.clearModificationsOnly();
+    }
+    if (checks.custom)  { successLines.push('• Custom presets deleted');         presetsNeedReload = true; }
+    if (checks.edits)   { successLines.push('• All edits/modifications undone'); presetsNeedReload = true; }
+  } catch (e) { errors.push('Preset DB: ' + e.message); }
+
+  // 2. Photo Queue
+  try {
+    if (checks.queue) {
+      photoQueue = [];
+      saveQueue();
+      updateQueueDisplay();
+      successLines.push('• Photo queue cleared');
+    }
+  } catch (e) { errors.push('Queue: ' + e.message); }
+
+  // 3. Imported Presets
+  // ── CRITICAL: Do NOT call mergePresetsWithStorage() here.
+  // ── That function falls back to ALL factory presets when imports are empty.
+  // ── Instead set CAMERA_PRESETS = [] directly so 0 presets are shown.
+  try {
+    if (checks.imported) {
+      await presetImporter.clearImportedPresets();
+      hasImportedPresets = false;
+      factoryPresets  = [];
+      DEFAULT_PRESETS = [];
+      CAMERA_PRESETS  = [];
+      visiblePresets  = [];
+      _visiblePresetsSet = new Set([]);
+      localStorage.setItem(VISIBLE_PRESETS_KEY, JSON.stringify([]));
+      _stylesDataVersion++;
+      _listDOMVersion    = -1;
+      currentPresetIndex = 0;
+      // Reset the import button hint to default
+      const hintEl = document.getElementById('import-presets-hint');
+      if (hintEl) {
+        hintEl.textContent  = 'Load from our Library';
+        hintEl.style.color  = '';
+        hintEl.style.fontWeight = '';
+      }
+      successLines.push('• Imported presets removed — 0 presets');
+      presetsNeedReload = true;
+    }
+  } catch (e) { errors.push('Imported presets: ' + e.message); }
+
+  // 4. Reload CAMERA_PRESETS — ONLY when custom/edits changed but imports were NOT reset.
+  // ── If imports were reset, CAMERA_PRESETS is already [] from step 3.
+  try {
+    if (presetsNeedReload && !checks.imported) {
+      CAMERA_PRESETS = await mergePresetsWithStorage();
+      _stylesDataVersion++;
+      _listDOMVersion    = -1;
+      currentPresetIndex = 0;
+    }
+  } catch (e) { errors.push('Preset reload: ' + e.message); }
+
+  // 5. Visibility — rebuild _visiblePresetsSet from current CAMERA_PRESETS.
+  // ── Always run when presets changed (not just when visibility checkbox ticked).
+  try {
+    if (checks.visibility && !checks.imported) {
+      // Only set all-visible if imports were not reset (imported reset already sets to [])
+      visiblePresets = CAMERA_PRESETS.length > 0 ? CAMERA_PRESETS.map(p => p.name) : [];
+      _visiblePresetsSet = new Set(visiblePresets);
+      localStorage.setItem(VISIBLE_PRESETS_KEY, JSON.stringify(visiblePresets));
+      _stylesDataVersion++;
+      successLines.push('• All presets set to visible');
+    }
+    // Always update the button toast whenever presets changed
+    if (presetsNeedReload || checks.visibility) {
+      updateVisiblePresetsDisplay();
+    }
+  } catch (e) { errors.push('Visibility: ' + e.message); }
+
+  // 6. Favorites
+  try {
+    if (checks.favorites) {
+      favoriteStyles = [];
+      localStorage.setItem(FAVORITE_STYLES_KEY, JSON.stringify([]));
+      presetsNeedReload = true;
+      successLines.push('• Favorites cleared');
+    }
+  } catch (e) { errors.push('Favorites: ' + e.message); }
+
+  // 7. All Settings
+  try {
+    if (checks.settings) {
+      currentResolutionIndex = 0;
+      localStorage.setItem(RESOLUTION_STORAGE_KEY, '0');
+      updateResolutionDisplay();
+
+      selectedAspectRatio = 'none';
+      localStorage.setItem(ASPECT_RATIO_STORAGE_KEY, 'none');
+      const arDisplay = document.getElementById('current-aspect-ratio-display');
+      if (arDisplay) arDisplay.textContent = 'None';
+      const arCb11  = document.getElementById('aspect-ratio-1-1');
+      const arCb169 = document.getElementById('aspect-ratio-16-9');
+      if (arCb11)  arCb11.checked  = false;
+      if (arCb169) arCb169.checked = false;
+
+      burstCount = 5;
+      burstDelay = BURST_SPEEDS[2]?.delay ?? 1000;
+      localStorage.setItem(BURST_SETTINGS_KEY, JSON.stringify({ count: 5, speed: 2 }));
+      updateBurstDisplay();
+
+      timerDelay          = 10;
+      timerRepeatEnabled  = false;
+      timerRepeatInterval = 1;
+      localStorage.setItem(TIMER_SETTINGS_KEY, JSON.stringify({ delay: 10, repeat: false, repeatInterval: 1 }));
+      updateTimerDisplay();
+
+      motionThreshold         = 30;
+      motionPixelThreshold    = 0.1;
+      motionContinuousEnabled = true;
+      motionCooldown          = 2;
+      motionStartDelay        = 3;
+      localStorage.setItem(MOTION_SETTINGS_KEY, JSON.stringify({
+        motionThreshold: 30, motionPixelThreshold: 0.1,
+        motionContinuousEnabled: true, motionCooldown: 2, motionStartDelay: 3
+      }));
+      loadMotionSettings();
+
+      noMagicMode = false;
+      localStorage.setItem(NO_MAGIC_MODE_KEY, JSON.stringify(false));
+      const nmSt = document.getElementById('no-magic-status');
+      if (nmSt) { nmSt.textContent = 'Disabled'; nmSt.style.color = ''; nmSt.style.fontWeight = ''; }
+      updateNoMagicFooter();
+
+      manualOptionsMode = false;
+      localStorage.setItem(MANUAL_OPTIONS_KEY, JSON.stringify(false));
+      const moSt = document.getElementById('manual-options-status');
+      if (moSt) { moSt.textContent = 'Disabled'; moSt.style.color = ''; moSt.style.fontWeight = ''; }
+      const optBtn = document.getElementById('options-viewer-button');
+      if (optBtn) optBtn.classList.remove('enabled');
+
+      currentImportResolutionIndex = 0;
+      localStorage.setItem(IMPORT_RESOLUTION_STORAGE_KEY, '0');
+      updateImportResolutionDisplay();
+
+      localStorage.removeItem('r1_cam_btn_settings');
+      window._camBtnSettings = { bgColor: '#000000', opacity: 100, fontColor: '#ffffff', tapMode: 'single', borderColor: '#FE5F00', borderOpacity: 100 };
+      if (typeof window._applyCamBtnStyles === 'function') window._applyCamBtnStyles();
+
+      localStorage.removeItem('mk_custom_preset_sources');
+
+      successLines.push('• All settings reset to default');
+    }
+  } catch (e) { errors.push('Settings: ' + e.message); }
+
+  // 8. No Magic Mode standalone
+  try {
+    if (checks.nomagic && !checks.settings) {
+      noMagicMode = false;
+      localStorage.setItem(NO_MAGIC_MODE_KEY, JSON.stringify(false));
+      const nmSt = document.getElementById('no-magic-status');
+      if (nmSt) { nmSt.textContent = 'Disabled'; nmSt.style.color = ''; nmSt.style.fontWeight = ''; }
+      updateNoMagicFooter();
+      successLines.push('• No Magic Mode turned off');
+    }
+  } catch (e) { errors.push('No Magic Mode: ' + e.message); }
+
+  // 9. Manual Options standalone
+  try {
+    if (checks.manualopts && !checks.settings) {
+      manualOptionsMode = false;
+      localStorage.setItem(MANUAL_OPTIONS_KEY, JSON.stringify(false));
+      const moSt = document.getElementById('manual-options-status');
+      if (moSt) { moSt.textContent = 'Disabled'; moSt.style.color = ''; moSt.style.fontWeight = ''; }
+      const optBtn = document.getElementById('options-viewer-button');
+      if (optBtn) optBtn.classList.remove('enabled');
+      successLines.push('• Manually Selected Options turned off');
+    }
+  } catch (e) { errors.push('Manual options: ' + e.message); }
+
+  // 10. Button Settings standalone
+  try {
+    if (checks.buttons && !checks.settings) {
+      localStorage.removeItem('r1_cam_btn_settings');
+      window._camBtnSettings = { bgColor: '#000000', opacity: 100, fontColor: '#ffffff', tapMode: 'single', borderColor: '#FE5F00', borderOpacity: 100 };
+      if (typeof window._applyCamBtnStyles === 'function') window._applyCamBtnStyles();
+      successLines.push('• Button settings reset');
+    }
+  } catch (e) { errors.push('Button settings: ' + e.message); }
+
+  // 11. Master Prompt
+  try {
+    if (checks.masterprompt) {
+      masterPromptEnabled = false;
+      masterPromptSlots   = [{ id: 'mp_' + Date.now(), text: '', active: false }];
+      masterPromptText    = '';
+      localStorage.setItem(MASTER_PROMPT_ENABLED_KEY, 'false');
+      localStorage.setItem(MP_SLOTS_STORAGE_KEY, JSON.stringify(masterPromptSlots));
+      localStorage.removeItem(MASTER_PROMPT_STORAGE_KEY);
+      localStorage.removeItem(DELETED_MP_TRASH_KEY);
+      const mpToggle = document.getElementById('master-prompt-toggle-btn');
+      if (mpToggle) {
+        mpToggle.textContent       = 'OFF';
+        mpToggle.style.background  = 'transparent';
+        mpToggle.style.borderColor = '#666';
+      }
+      updateMasterPromptDisplay();
+      updateMasterPromptIndicator();
+      successLines.push('• Master Prompt cleared and disabled');
+    }
+  } catch (e) { errors.push('Master Prompt: ' + e.message); }
+
+  // 12. Delete All Gallery Images
+  try {
+    if (checks.gallery) {
+      await _deleteAllGalleryImages();
+      galleryImages = [];
+      successLines.push('• All gallery images deleted');
+    }
+  } catch (e) { errors.push('Gallery: ' + e.message); }
+
+  // 13. Credits
+  try {
+    if (checks.credits) {
+      resetCredits();
+      const creditsEl = document.getElementById('import-credits-display');
+      if (creditsEl) creditsEl.textContent = 'Credits: 0';
+      successLines.push('• Credits reset to 0');
+    }
+  } catch (e) { errors.push('Credits: ' + e.message); }
+
+  // ── Re-render all preset lists immediately ──────────────────────────────
+  try {
+    if (presetsNeedReload) {
+      populateStylesList(false);
+      if (typeof populatePresetList         === 'function') populatePresetList();
+      if (typeof populateVisiblePresetsList === 'function') populateVisiblePresetsList();
+      updateVisiblePresetsDisplay();
+      // Update preset selector count if modal is open
+      const presetCountEl = document.getElementById('preset-count');
+      if (presetCountEl) presetCountEl.textContent = CAMERA_PRESETS.length;
+    }
+  } catch (e) { console.warn('resetDb re-render:', e); }
+
+  // Uncheck all boxes
+  _ALL_RESET_CBS.concat(['reset-cb-default']).forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.checked = false;
+  });
+
+  document.getElementById('reset-db-confirm-overlay').style.display = 'none';
+
+  if (errors.length > 0) successLines.push('\n⚠️ Some items had errors:\n' + errors.map(e => '• ' + e).join('\n'));
+  document.getElementById('reset-db-success-text').textContent = successLines.join('\n');
+  document.getElementById('reset-db-success-overlay').style.display = 'flex';
+}
+
+// ===== END RESET DATABASE SUBMENU =====
 
 // Show Settings submenu
 function showSettingsSubmenu() {
@@ -14993,6 +15395,53 @@ document.addEventListener('touchend', () => {
   if (restoreTabMpEl) {
     restoreTabMpEl.addEventListener('click', function() { switchRestoreTab('mp'); });
   }
+  // Reset Database submenu
+  const resetDbBackBtn = document.getElementById('reset-database-back');
+  if (resetDbBackBtn) resetDbBackBtn.addEventListener('click', hideResetDatabaseSubmenu);
+
+  const resetDbClearBtn = document.getElementById('reset-db-clear-btn');
+  if (resetDbClearBtn) resetDbClearBtn.addEventListener('click', () => {
+    ['reset-cb-custom','reset-cb-edits','reset-cb-queue','reset-cb-visibility',
+     'reset-cb-favorites','reset-cb-buttons','reset-cb-imported','reset-cb-settings',
+     'reset-cb-default'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.checked = false;
+    });
+  });
+
+  const resetDbApplyBtn = document.getElementById('reset-db-apply-btn');
+  if (resetDbApplyBtn) resetDbApplyBtn.addEventListener('click', _resetDbShowConfirm);
+
+  const resetDbConfirmYes = document.getElementById('reset-db-confirm-yes');
+  if (resetDbConfirmYes) resetDbConfirmYes.addEventListener('click', _resetDbExecute);
+
+  const resetDbConfirmNo = document.getElementById('reset-db-confirm-no');
+  if (resetDbConfirmNo) resetDbConfirmNo.addEventListener('click', () => {
+    document.getElementById('reset-db-confirm-overlay').style.display = 'none';
+  });
+
+  const resetDbSuccessOk = document.getElementById('reset-db-success-ok');
+  if (resetDbSuccessOk) resetDbSuccessOk.addEventListener('click', () => {
+    document.getElementById('reset-db-success-overlay').style.display = 'none';
+    hideResetDatabaseSubmenu();
+    renderMenuStyles();
+  });
+
+  // "Back to Default" auto-checks all; all checked auto-checks default
+  const resetCbDefault = document.getElementById('reset-cb-default');
+  if (resetCbDefault) {
+    resetCbDefault.addEventListener('change', () => {
+      _ALL_RESET_CBS.forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.checked = resetCbDefault.checked;
+      });
+    });
+  }
+
+  _ALL_RESET_CBS.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.addEventListener('change', _resetDbSyncDefaultCheckbox);
+  });
   var restoreSelectAllEl = document.getElementById('restore-select-all-btn');
   if (restoreSelectAllEl) {
     restoreSelectAllEl.addEventListener('click', restoreSelectAll);
@@ -16837,67 +17286,8 @@ async function importFromQRCode() {
   }
 }
 
-// Database reset handler - clears ALL modifications and custom presets
-document.getElementById('factory-reset-button').addEventListener('click', async () => {
-  const message = hasImportedPresets 
-    ? 'This will delete ALL custom presets and undo ALL modifications, returning to your clean imported preset list. This cannot be undone. Continue?'
-    : 'This will delete ALL custom presets and restore all presets to their original state. This cannot be undone. Continue?';
-  
-  if (await confirm(message)) {
-    // Clear ALL records from preset storage (modifications, deletions, AND custom presets)
-    await presetStorage.clearAll();
-    
-    // Clear any corrupt or stale photo queue from localStorage
-    photoQueue = [];
-    saveQueue();
-    updateQueueDisplay();
-    
-    // Reload presets from imported list or factory presets
-    CAMERA_PRESETS = await mergePresetsWithStorage();
-    _stylesDataVersion++;
-    
-    // Reset visible presets to show everything (fresh start)
-    if (CAMERA_PRESETS.length > 0) {
-        visiblePresets = CAMERA_PRESETS.map(p => p.name);
-        saveVisiblePresets();
-    }
-    
-    // Show the success overlay FIRST before any menu transitions happen
-    const successMessage = hasImportedPresets
-      ? '✅ Reset complete!\n\n• Custom presets deleted\n• All edits undone\n• Photo queue cleared\n• Showing all imported presets'
-      : '✅ Reset complete!\n\n• Custom presets deleted\n• All edits undone\n• Photo queue cleared\n• All presets restored';
-
-    const resetOverlay = document.createElement('div');
-    resetOverlay.style.cssText = 'position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.92); z-index:2147483647; display:flex; align-items:center; justify-content:center; pointer-events:all;';
-
-    const resetBox = document.createElement('div');
-    resetBox.style.cssText = 'background:#1a1a1a; border:1px solid #4CAF50; border-radius:12px; padding:28px 24px; max-width:85%; text-align:center;';
-
-    const resetMsg = document.createElement('div');
-    resetMsg.style.cssText = 'color:#fff; font-size:14px; white-space:pre-line; line-height:1.7; margin-bottom:20px;';
-    resetMsg.textContent = successMessage;
-
-    const resetBtn = document.createElement('button');
-    resetBtn.textContent = 'OK';
-    resetBtn.style.cssText = 'background:#4CAF50; color:#fff; border:none; border-radius:8px; padding:10px 32px; font-size:15px; cursor:pointer;';
-    resetBtn.addEventListener('touchend', (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      if (document.body.contains(resetOverlay)) document.body.removeChild(resetOverlay);
-      renderMenuStyles();
-    });
-    resetBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      if (document.body.contains(resetOverlay)) document.body.removeChild(resetOverlay);
-      renderMenuStyles();
-    });
-
-    resetBox.appendChild(resetMsg);
-    resetBox.appendChild(resetBtn);
-    resetOverlay.appendChild(resetBox);
-    document.body.appendChild(resetOverlay);
-  }
-}); 
+// Reset Database button now opens the new selective reset submenu
+document.getElementById('factory-reset-button').addEventListener('click', showResetDatabaseSubmenu); 
 
 // Carousel infinite scroll logic
 document.addEventListener('DOMContentLoaded', function() {

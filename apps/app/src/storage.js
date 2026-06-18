@@ -134,6 +134,39 @@ class PresetStorage {
     await store.delete(`modified_${presetName}`);
     await store.delete(`deleted_${presetName}`);
   }
+
+  async clearCustomPresetsOnly() {
+    return new Promise((resolve, reject) => {
+      const transaction = this.db.transaction([STORE_NAME], 'readwrite');
+      transaction.oncomplete = resolve;
+      transaction.onerror = () => reject(transaction.error);
+      const store = transaction.objectStore(STORE_NAME);
+      const req = store.getAll();
+      req.onsuccess = () => {
+        // All deletes added synchronously inside onsuccess — keeps transaction alive
+        req.result
+          .filter(r => r.type === 'new')
+          .forEach(r => store.delete(r.id));
+      };
+      req.onerror = () => reject(req.error);
+    });
+  }
+
+  async clearModificationsOnly() {
+    return new Promise((resolve, reject) => {
+      const transaction = this.db.transaction([STORE_NAME], 'readwrite');
+      transaction.oncomplete = resolve;
+      transaction.onerror = () => reject(transaction.error);
+      const store = transaction.objectStore(STORE_NAME);
+      const req = store.getAll();
+      req.onsuccess = () => {
+        req.result
+          .filter(r => r.type === 'modification' || r.type === 'deletion')
+          .forEach(r => store.delete(r.id));
+      };
+      req.onerror = () => reject(req.error);
+    });
+  }
 }
 
 export const presetStorage = new PresetStorage();

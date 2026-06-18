@@ -171,6 +171,13 @@ export function getCredits() {
   return loadUnlockState().credits || 0;
 }
 
+export function resetCredits() {
+  const state = loadUnlockState();
+  state.credits = 0;
+  state.creditEarnedPresets = [];
+  saveUnlockState(state);
+}
+
 // ===== END PRESET UNLOCK GAME =====
 
 export class PresetImporter {
@@ -751,7 +758,7 @@ export class PresetImporter {
           item.className = 'menu-item';
           item.dataset.presetIndex = index;
           item.dataset.presetName = preset.name;
-          item.style.cssText = 'display: flex; align-items: flex-start; padding: 6px 15px; width: 100%; justify-content: flex-start; margin-bottom: 2px; touch-action: pan-y; contain: layout style;';
+          item.style.cssText = 'display: flex; align-items: flex-start; padding: 6px 15px; width: 100%; justify-content: flex-start; margin-bottom: 2px; touch-action: pan-y;';
 
           const checkbox = document.createElement('input');
           checkbox.type = 'checkbox';
