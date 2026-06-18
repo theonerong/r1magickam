@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>Magic Kamera</title>
-  <script type="module" crossorigin src="./assets/main-DczR2NOT.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/main-OS9h3K4Z.css">
+  <script type="module" crossorigin src="./assets/main-IbAVW-ww.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/main-Dyu7WLLD.css">
 </head>
 <body>
     <div id="app">
@@ -293,10 +293,10 @@
                         </button>
                     </div>
 
-                    <!-- Factory Reset Presets -->
+                    <!-- Reset Database -->
                     <div class="menu-section">
                         <button id="factory-reset-button" class="menu-section-button">
-                            <span class="menu-section-title">Reset Database</span>
+                            <span class="menu-section-title">⚠️ Reset Database</span>
                             <span class="menu-section-arrow">›</span>
                         </button>
                     </div>
@@ -347,6 +347,140 @@
             </div>
         </div>
         
+        <!-- Reset Database Submenu -->
+        <div id="reset-database-submenu" class="submenu" style="display: none;">
+            <div class="submenu-content" style="position:relative;">
+                <div class="submenu-header">
+                    <h3>RESET DATABASE</h3>
+                    <button id="reset-database-back" class="close-button">×</button>
+                </div>
+                <!-- Scrollable checklist -->
+                <div style="flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;touch-action:pan-y;padding:2vw 3vw;">
+                    <label class="reset-db-item">
+                        <input type="checkbox" id="reset-cb-custom" class="reset-db-check">
+                        <div class="reset-db-label">
+                            <span class="reset-db-title">Custom Presets</span>
+                            <span class="reset-db-desc">Deletes all presets you have created</span>
+                        </div>
+                    </label>
+                    <label class="reset-db-item">
+                        <input type="checkbox" id="reset-cb-edits" class="reset-db-check">
+                        <div class="reset-db-label">
+                            <span class="reset-db-title">Edits &amp; Custom Modifications</span>
+                            <span class="reset-db-desc">Restores all edited presets to their original state</span>
+                        </div>
+                    </label>
+                    <label class="reset-db-item">
+                        <input type="checkbox" id="reset-cb-queue" class="reset-db-check">
+                        <div class="reset-db-label">
+                            <span class="reset-db-title">Photo Queue</span>
+                            <span class="reset-db-desc">Clears all photos waiting to sync</span>
+                        </div>
+                    </label>
+                    <label class="reset-db-item">
+                        <input type="checkbox" id="reset-cb-visibility" class="reset-db-check">
+                        <div class="reset-db-label">
+                            <span class="reset-db-title">Visibility Settings</span>
+                            <span class="reset-db-desc">Shows all imported presets (resets hidden/visible state)</span>
+                        </div>
+                    </label>
+                    <label class="reset-db-item">
+                        <input type="checkbox" id="reset-cb-favorites" class="reset-db-check">
+                        <div class="reset-db-label">
+                            <span class="reset-db-title">Favorites</span>
+                            <span class="reset-db-desc">Clears all starred/favorite presets</span>
+                        </div>
+                    </label>
+                    <label class="reset-db-item">
+                        <input type="checkbox" id="reset-cb-nomagic" class="reset-db-check">
+                        <div class="reset-db-label">
+                            <span class="reset-db-title">No Magic Mode</span>
+                            <span class="reset-db-desc">Resets No Magic Mode back to off (default)</span>
+                        </div>
+                    </label>
+                    <label class="reset-db-item">
+                        <input type="checkbox" id="reset-cb-manualopts" class="reset-db-check">
+                        <div class="reset-db-label">
+                            <span class="reset-db-title">Manually Selected Options</span>
+                            <span class="reset-db-desc">Resets Manually Selected Options back to off (default)</span>
+                        </div>
+                    </label>
+                    <label class="reset-db-item">
+                        <input type="checkbox" id="reset-cb-masterprompt" class="reset-db-check">
+                        <div class="reset-db-label">
+                            <span class="reset-db-title">Master Prompt</span>
+                            <span class="reset-db-desc">Clears all master prompt slots and disables master prompt</span>
+                        </div>
+                    </label>
+                    <label class="reset-db-item">
+                        <input type="checkbox" id="reset-cb-buttons" class="reset-db-check">
+                        <div class="reset-db-label">
+                            <span class="reset-db-title">Button Settings</span>
+                            <span class="reset-db-desc">Resets camera and gallery button colors and tap settings</span>
+                        </div>
+                    </label>
+                    <label class="reset-db-item">
+                        <input type="checkbox" id="reset-cb-credits" class="reset-db-check">
+                        <div class="reset-db-label">
+                            <span class="reset-db-title">Credits</span>
+                            <span class="reset-db-desc">Resets your credit count to 0 (default)</span>
+                        </div>
+                    </label>
+                    <label class="reset-db-item">
+                        <input type="checkbox" id="reset-cb-imported" class="reset-db-check">
+                        <div class="reset-db-label">
+                            <span class="reset-db-title">Reset Imported Presets to 0</span>
+                            <span class="reset-db-desc">Removes all presets imported from the library</span>
+                        </div>
+                    </label>
+                    <label class="reset-db-item">
+                        <input type="checkbox" id="reset-cb-settings" class="reset-db-check">
+                        <div class="reset-db-label">
+                            <span class="reset-db-title">All Settings</span>
+                            <span class="reset-db-desc">Resets resolution, aspect ratio, burst, timer, motion detection, manual options, import resolution, preset file settings &amp; button settings to default</span>
+                        </div>
+                    </label>
+                    <label class="reset-db-item">
+                        <input type="checkbox" id="reset-cb-gallery" class="reset-db-check">
+                        <div class="reset-db-label">
+                            <span class="reset-db-title">Delete All Gallery Images</span>
+                            <span class="reset-db-desc">Permanently removes all photos from the gallery. Cannot be undone.</span>
+                        </div>
+                    </label>
+                    <div style="border-top:1px solid #FE5F00;margin:3vw 0 1vw;"></div>
+                    <label class="reset-db-item" style="border-color:#FE5F00;border-width:1px;">
+                        <input type="checkbox" id="reset-cb-default" class="reset-db-check">
+                        <div class="reset-db-label">
+                            <span class="reset-db-title" style="color:#FE5F00;">↩ Back to Default</span>
+                            <span class="reset-db-desc">Resets the entire program to factory state</span>
+                        </div>
+                    </label>
+                </div>
+                <!-- Sticky bottom buttons -->
+                <div style="display:flex;gap:3vw;padding:2vw 3vw;background:#000;border-top:1px solid #333;flex-shrink:0;">
+                    <button id="reset-db-clear-btn" class="close-button" style="flex:1;width:auto;min-width:0;font-size:3.8vw;font-weight:700;">Clear All</button>
+                    <button id="reset-db-apply-btn" class="close-button" style="flex:1;width:auto;min-width:0;font-size:3.8vw;font-weight:700;border-color:#d32f2f;color:#d32f2f;">Apply</button>
+                </div>
+                <!-- Inline confirmation overlay — shown on Apply -->
+                <div id="reset-db-confirm-overlay" style="display:none;position:absolute;inset:0;background:rgba(0,0,0,0.95);z-index:9999;flex-direction:column;align-items:center;justify-content:center;padding:5vw;">
+                    <div style="background:#1a1a1a;border:2px solid #d32f2f;border-radius:3vw;padding:5vw;width:100%;box-sizing:border-box;">
+                        <div id="reset-db-confirm-text" style="color:#ccc;font-size:3.6vw;line-height:1.2;margin-bottom:2vw;white-space:pre-line;"></div>
+                        <div style="display:flex;gap:3vw;">
+                            <button id="reset-db-confirm-yes" class="close-button" style="flex:1;width:auto;min-width:0;font-size:3.8vw;font-weight:700;border-color:#d32f2f;color:#d32f2f;">Confirm</button>
+                            <button id="reset-db-confirm-no" class="close-button" style="flex:1;width:auto;min-width:0;font-size:3.8vw;font-weight:700;">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Inline success overlay — shown after reset completes -->
+                <div id="reset-db-success-overlay" style="display:none;position:absolute;inset:0;background:rgba(0,0,0,0.95);z-index:9999;flex-direction:column;align-items:center;justify-content:center;padding:5vw;">
+                    <div style="background:#1a1a1a;border:2px solid #4CAF50;border-radius:3vw;padding:5vw;width:100%;box-sizing:border-box;text-align:center;">
+                        <div id="reset-db-success-text" style="color:#fff;font-size:3.8vw;line-height:1.7;margin-bottom:5vw;white-space:pre-line;"></div>
+                        <button id="reset-db-success-ok" class="close-button" style="width:auto;padding:0 8vw;font-size:3.8vw;font-weight:700;border-color:#4CAF50;color:#4CAF50;">OK</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- Restore Deleted Items Submenu -->
         <div id="restore-deleted-submenu" class="submenu" style="display: none;">
             <div class="submenu-content">
@@ -1166,7 +1300,7 @@
                             <strong>No Magic Mode:</strong> Use as a regular camera without AI processing. Photos will only save in the gallery. Photos will not save to rabbit hole or magic gallery. This setting does not affect prompting in gallery. You can send No Magic Mode photos saved in your gallery to the rabbit hole by prompting it with a preset. You may also upload them to gofile.io using the export button in the right carousel of the single image viewer in the gallery.<br>
                             <strong>Manually Select Options Mode:</strong> Enable/Disable. When enabled, if you choose a preset with options, a modal will appear asking you to pick from one of the options in the preset. Only this option is fed as the final prompt for generating the magical image. This setting does not work with No Magic Mode, Motion Sensor, Burst or Timer. It will work with Randomizer. The manually select options mode may be toggled from the gallery by pressing the OPTIONS button in the gallery<br>
                             <strong>Import Resolution:</strong> Select import resolution for external images imported through the gallery.<br>
-                            <strong>Reset Database:</strong> Nuclear Option. Only imported presets remain. All custom work deleted.<br>
+                            <strong>Reset Database:</strong> Nuclear Option. Where you can revert individual settings, presets, images or entire program to default. All custom work deleted. YOU MUST RESTART THE PROGRAM FOR THE DATABASE TO RESET PROPERLY.<br>
                             <strong>Restore Deleted Items:</strong> Restore deleted custom or modified presets and deleted images from the gallery.  Will not restore presets that were deleted by resetting the database.<br>
                             <strong>📥 Import Presets:</strong> When you first start, import a preset from our external library of presets. The presets are locked except for Caricature and Impressionism. Import them to capture photos and begin the fun journey of unlocking your imported artistic library. To unlock more presets, take a photo with any preset you already own or reprompt a photo in the gallery. One snap with a unique imported preset, or a click on the magic button in the gallery, provides a credit to buy more presets-unlocking a new surprise to your collection! Import only the unlocked presets you want using your earned credits by checking them individually or ✓ All (or ✗ None). Once you select the ones you want to import, click the Import button. NOTE: Previously imported presets remain checked. To delete previously imported presets from the Magic Kamera, delete them from the Main Menu. You can import them again if you like. Any new presets added to our external library of presets, will be locked (check regularly for new ones as we are constantly updating this list). Updated Presets you own will appear on the top of the Import Presets list. You need to select (if they are not already selected) the updated preset and click the Import button to update your owned preset. <strong>🔊 Hear Preset Info:</strong> When browsing presets in the Import Presets menu, tap any preset ONCE to hear its description read aloud. Use the 🔊 mute button in the header to toggle audio on or off.<br>
                             <strong>📂 Preset File Settings (*Advanced Feature*):</strong> Located directly below Import Presets in the Settings menu. Preset Sources Tab: This section lets you load presets within a json file from any repository (the URL for Github repositories must be in raw format) in addition to, or instead of, the built-in preset library. It also lets you upload preset json files via a qr code (see Adding a Custom Source Code via QR Code below).  Preview Images Tab: You may import images to use as preview images using a qr code (see Adding a Custom Preview Image via QR Code below).  This is useful if you are not linking a json file in a repository.<br>
@@ -1262,6 +1396,9 @@
                         <h4 class="tutorial-heading">🔍 Troubleshooting</h4>
                         <p class="tutorial-text">
                             <strong>Camera not working:</strong> You need to make certain that you import at least one preset or create your own preset in the preset builder for the camera to work.  Otherwise, you will get a Camera access denied error at the footer of the main camera screen. 
+                        </p>
+                         <p class="tutorial-text">
+                            <strong>Program not resetting database:</strong> After you reset any portion of the database, you MUST restart the program for the settings to be reset. Otherwise, you will get incorrect settings or visual inconsistencies. 
                         </p>
                         <p class="tutorial-text">
                             <strong>AI transformation not working:</strong> If you took a picture and the rabbit did not respond indicating picture is being transformed/prepared, first check your settings to see if NO MAGIC mode is enabled. Disable if you want the Magic to happen. If this is not the solution, check your network connections. <br>
