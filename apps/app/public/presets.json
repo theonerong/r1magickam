@@ -5600,6 +5600,19 @@
     "additionalInstructions": ""
   },  
   {
+    "name": "CASSETTE TAPE UNSPOOLED",
+    "category": [
+      "ART",
+      "VINTAGE",
+      "MUSIC",
+      "CREATIVE"
+    ],
+    "message": "Take a picture and transform the subject into a portrait made only from unspooled cassette tape. The subject's features should be created from the brown magnetic tape pulled from audio cassettes \u2014 arranged, looped, and layered to form a portrait using the tape's natural curves and the contrast between the shiny and matte sides of the tape against a flat background.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "The cassette tape should be recognizable as actual audio tape \u2014 brown, thin, and slightly reflective. Include one or more cassette shells as part of the composition. The tape should form the portrait through careful arrangement of loops, straight sections, and tangles."
+  },
+  {
     "name": "CAUGHT IN THE ACT",
     "category": [
       "OPTIONS",
@@ -6524,6 +6537,19 @@
     "options": [],    
     "randomizeOptions": false,
     "additionalInstructions": "• Use holographic translucency throughout the image\n• Emphasize spectral rainbow glow and layered transparency\n• Maintain clean futuristic sci-fi aesthetics\n• Preserve recognizable silhouette and facial structure\n• Add chromatic separation and shimmering energy effects\n• Use floating holographic atmosphere and refracted light patterns"
+  },
+  {
+    "name": "CHROMATIC TYPEWRITER ART",
+    "category": [
+      "ART",
+      "TYPOGRAPHY",
+      "VINTAGE",
+      "CREATIVE"
+    ],
+    "message": "Take a picture and transform the subject into typewriter art \u2014 a portrait created entirely from typed characters on paper using a manual typewriter. The subject should be rendered through careful overtyping of different characters to create varying densities and tones, using the fixed-width characters of a typewriter to build up a recognizable image character by character.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "Use realistic typewriter characters: @, #, $, %, X, O, and periods for different tonal values. The paper should show realistic typewriter impressions \u2014 slightly uneven ink density, occasional misalignment, and the characteristic monospaced grid of typewritten text."
   },
   {
     "name": "CHROMOLITHOGRAPH",
@@ -9028,6 +9054,19 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "CORAL REEF FORMATION",
+    "category": [
+      "ART",
+      "NATURE",
+      "UNDERWATER",
+      "ORGANIC"
+    ],
+    "message": "Take a picture and transform the subject into a living coral reef formation. The subject's features should be built from various coral species \u2014 brain coral for textured areas, staghorn coral for angular features, soft coral fans for flowing elements, and colorful anemones for accents. Small tropical fish should swim around the formation.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "Use vibrant healthy coral colors \u2014 electric blues, hot pinks, deep purples, and bright oranges. The underwater lighting should be natural with caustic light patterns. Include realistic marine life details."
   },
   {
     "name": "COTTAGECORE",
@@ -14722,6 +14761,19 @@
     "additionalInstructions": ""
   },
   {
+    "name": "FORDITE PAINT LAYERS",
+    "category": [
+      "ART",
+      "INDUSTRIAL",
+      "COLORFUL",
+      "GEOLOGICAL"
+    ],
+    "message": "Take a picture and transform the subject into a fordite (Detroit agate) cross-section. The subject should appear as if carved from fordite \u2014 the colorful layered enamel paint built up over decades on automotive factory equipment, then cut and polished to reveal hundreds of thin colorful paint layers creating psychedelic striated patterns in every color imaginable.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "The paint layers should be thin, numerous, and in varied automotive colors \u2014 metallics, pearls, solid colors from different production runs. When cut at angles, the layers should create flowing contour patterns. The surface should be polished to a high gloss like a gemstone cabochon."
+  },
+  {
     "name": "FOREVER STAMP",
     "category": [
       "POSTAL",
@@ -19697,6 +19749,19 @@
     "additionalInstructions": ""
   },
   {
+    "name": "KOMOREBI LIGHT FILTER",
+    "category": [
+      "ART",
+      "JAPANESE",
+      "NATURE",
+      "ATMOSPHERIC"
+    ],
+    "message": "Take a picture and transform the subject with komorebi \u2014 the Japanese concept of sunlight filtering through leaves. The subject should be dappled with the complex shadow patterns of a forest canopy, with golden-green light streaming through gaps in the foliage above, creating a mosaic of warm light spots and cool leaf shadows across the subject and surroundings.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "The light should be warm and golden with green-tinted shadows from chlorophyll filtering. Bokeh circles of light should appear in out-of-focus areas. The overall mood should be peaceful and contemplative \u2014 a quiet forest moment."
+  },
+  {
     "name": "KUBRICK FILM",
     "category": [
       "MOVIES",
@@ -21185,6 +21250,19 @@
     "message": "Take a picture and composite it inside a photorealistic recreation of a custom AI camera application interface. The photo fills the entire screen as the full background. All UI elements are overlaid directly on top of the photo.\n\nPHOTO PLACEMENT — CRITICAL:\n• The captured photo fills the ENTIRE screen from edge to edge and top to bottom\n• The photo is the background of the entire composition\n• Every UI element floats directly on top of the photo\n• The photo is never cropped, letterboxed, pillarboxed, or surrounded by any empty space or colored bars\n• There are NO side columns and NO empty areas beside the photo\n• The full photo is always fully visible beneath all UI elements\n\nTOP STATUS BAR:\n• A thin semi-transparent dark bar spanning the full width at the very top overlaid on the photo\n• LEFT: a left-pointing arrow followed by the word 'back' in white text\n• CENTER: a digital clock time display in white bold text\n• RIGHT: a white battery icon\n• Dark semi-transparent background so the photo shows faintly through it\n\nBUTTON APPEARANCE — ALL BUTTONS FOLLOW THIS STYLE EXACTLY:\n• Square shape with softly rounded corners\n• BLACK background fill\n• Orange border: a solid orange line around the entire button in color #FE5F00\n• White emoji icon centered in the upper portion of the button\n• White bold uppercase label text beneath the icon in small font\n• Subtle dark drop shadow beneath each button\n• The button feels physical and bold floating over the photo\n• EXCEPTION: the OPTIONS button has a bright green background and green border instead of black and orange\n\nLEFT SIDE BUTTONS — exactly FOUR buttons stacked vertically along the LEFT EDGE:\n• Button 1 top-left: black background, orange border, icon ☰, label MENU\n• Button 2 middle-left: black background, orange border, icon 📝, label MASTER\n• Button 3 below MASTER: BRIGHT GREEN background, GREEN border, icon 🎛️, label OPTIONS\n• Button 4 bottom-left: black background, orange border, icon 🖼️, label GALLERY\n• These four buttons are the COMPLETE left column — exactly four, no more, no fewer, no duplicates\n\nRIGHT SIDE BUTTONS — exactly FIVE buttons stacked vertically along the RIGHT EDGE:\n• Button 1 top-right: black background, orange border, icon 📸, NO label text\n• Button 2 upper-right: black background, orange border, icon 🎲, label RANDOM\n• Button 3 middle-right: black background, orange border, icon 👁️, label MOTION\n• Button 4 lower-right: black background, orange border, icon 📸⚡, label BURST\n• Button 5 bottom-right: black background, orange border, icon ⏱️, label TIMER\n• These five buttons are the COMPLETE right column — exactly five, no more, no fewer, no duplicates\n\nBOTTOM FOOTER BAR:\n• A full-width bar overlaid at the very bottom of the screen directly on top of the photo\n• Semi-transparent black background with a softly rounded orange border outline glowing in color #FE5F00\n• A small red filled circle icon on the left side inside the bar\n• Orange bold text reading: MANUALLY SELECT | Style: MAGIC KAMERA UI\n• The orange text and border emit a soft warm glow against the dark background\n• The bar has a frosted glass blur effect behind it\n\nOVERALL AESTHETIC:\n• The result looks exactly like a screenshot of a real functioning touchscreen camera application\n• The photo fills the entire screen and all UI controls float on top of it\n• Black buttons with orange borders on both sides frame the photo without covering its center\n• The dark semi-transparent bars at top and bottom complete the interface\n• Clean, bold, and readable UI with strong contrast against the photo beneath",
     "randomizeOptions": false,
     "additionalInstructions": "• The captured photo MUST fill the entire screen — no letterboxing, no pillarboxing, no empty columns or bars beside the photo under any circumstances\n• ALL UI elements float directly on top of the full-screen photo\n• ALL buttons are BLACK with an orange #FE5F00 border — they are not amber, not orange-filled, not yellow\n• LEFT SIDE has exactly FOUR buttons top to bottom: ☰ MENU, 📝 MASTER, 🎛️ OPTIONS, 🖼️ GALLERY — no more, no fewer, no duplicates\n• RIGHT SIDE has exactly FIVE buttons top to bottom: 📸 no label, 🎲 RANDOM, 👁️ MOTION, 📸⚡ BURST, ⏱️ TIMER — no more, no fewer, no duplicates\n• Each button position has exactly ONE button with exactly ONE icon and ONE label — never create two versions of the same button\n• The OPTIONS 🎛️ button is the only button with a green background and green border\n• Bottom footer bar has a glowing orange border, semi-transparent black background, and orange text\n• The result must look like a real camera app screenshot with the photo fully visible behind all controls"
+  },
+  {
+    "name": "MAGNETIC FIELD VISUALIZATION",
+    "category": [
+      "ART",
+      "SCIENCE",
+      "PHYSICS",
+      "ABSTRACT"
+    ],
+    "message": "Take a picture and transform the subject into a magnetic field line visualization. The subject should appear as if surrounded by and composed of iron filing patterns aligned to magnetic field lines \u2014 flowing curves that reveal the invisible magnetic topology around and through the subject, with dense clustering at poles and graceful arcing field lines connecting them.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "The field lines should follow physically accurate magnetic field topology. Use dark iron filing texture on a light background, or luminous field lines on dark background. The subject's features should emerge from the density and direction of field lines."
   },
   {
     "name": "MAN ON THE MOON",
@@ -23340,6 +23418,36 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "FINAL RESULT:\nThe image should show the subject completely transformed into a blocky Minecraft character with pixelated textures, standing in a fully Minecraft world made entirely of cubic blocks with 16x16 pixel textures - looking exactly like an in-game Minecraft screenshot with perfect voxel geometry and no smooth surfaces."
+  },
+  {
+    "name": "MINGEI FOLK CRAFT",
+    "category": [
+      "ART",
+      "JAPANESE",
+      "FOLK ART",
+      "TRADITIONAL"
+    ],
+    "message": "Take a picture and transform the subject into a Japanese mingei (folk craft) object. The subject should be reimagined as a handcrafted everyday object in the mingei tradition \u2014 perhaps a kokeshi doll, daruma, maneki-neko, or folk pottery piece \u2014 with the characteristic simplicity, warmth, and honest craftsmanship of anonymous artisan work, showing the beauty of functional handmade objects.",
+    "options": [
+      {
+        "id": "001",
+        "text": "Kokeshi doll \u2014 simple turned wood with painted features"
+      },
+      {
+        "id": "002",
+        "text": "Daruma \u2014 round papier-m\u00e2ch\u00e9 wishing doll"
+      },
+      {
+        "id": "003",
+        "text": "Mingei pottery \u2014 simple glazed stoneware vessel"
+      },
+      {
+        "id": "004",
+        "text": "Kite (tako) \u2014 painted washi paper and bamboo"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "The craft object should show evidence of handmaking \u2014 slight asymmetries, brush stroke variations, and the warmth of human touch. Use the restrained color palette and simple forms valued in the mingei movement. The subject's likeness should be adapted to the chosen craft form."
   },
   {
     "name": "MINIATURE SET",
@@ -26015,10 +26123,10 @@
       "ANCIENT",
       "PREHISTORIC"
     ],
-    "message": "Take a picture and completely transform it into an authentic prehistoric cave painting - the subject and scene must be rendered as actual primitive art painted/drawn on a cave wall by ancient humans.\n\nCORE CONCEPT (CRITICAL):\n• This is NOT a photo with cave painting effects applied\n• The subject IS a cave painting - completely transformed into primitive art\n• Hand-painted by prehistoric humans on rough stone surface\n• Simplified abstracted forms in ochre, charcoal, and natural pigments\n• Looks like Lascaux, Altamira, or Chauvet cave paintings\n\nCAVE PAINTING STYLE:\n• Subject rendered in simplified primitive style\n• Abstracted shapes - not realistic proportions\n• Profile view for humans and animals (side-facing)\n• Stick figures or simplified body forms for humans\n• Stylized animals with characteristic cave art appearance\n• Minimal detail - essential forms only\n• Flat 2D representation with no perspective\n• Handprint stencils possible\n\nPIGMENTS & COLORS:\n• Red ochre (iron oxide)\n• Yellow ochre\n• Black (charcoal or manganese)\n• White (kaolin clay or calcite)\n• Brown (umber)\n• Natural earth tones only\n• Limited palette - 3-5 colors maximum\n• Pigments appear hand-applied\n\nCAVE WALL SURFACE:\n• Rough limestone or sandstone texture\n• Bumpy uneven surface\n• Cracks and crevices in rock\n• Natural stone color (tan, gray, beige) showing through\n• Age: 10,000-40,000 years of weathering\n• Mineral deposits and calcification\n• Slight moisture or dampness suggested\n• Torch soot marks possible\n\nPAINTING TECHNIQUE:\n• Hand-painted with fingers or primitive brushes\n• Blown pigment (spray painting with mouth)\n• Charcoal drawing\n• Finger painting appearance\n• Uneven paint application\n• Drips or runs from wet pigment\n• Handprints (negative or positive)\n• Crude but expressive brushwork\n\nSUBJECT REPRESENTATION:\n• Humans as stick figures or simplified forms\n• Animals in profile (bison, horses, deer, mammoths)\n• Hunting scenes (humans with spears pursuing game)\n• Ritual or shamanic imagery\n• Geometric symbols (dots, lines, hand stencils)\n• Abstract patterns\n• No written language - pure pictorial\n\nCOMPOSITION:\n• Scene painted across cave wall surface\n• Multiple figures possible\n• Overlapping images from different time periods\n• No formal composition - organic placement\n• Follows contours of rock surface\n• May use natural rock features (bulges become animal bodies)\n\nPREHISTORIC SUBJECTS:\n• Paleolithic megafauna (woolly mammoth, cave bear, bison)\n• Hunters with spears or atlatls\n• Hand stencils (blown pigment around hand)\n• Shamanic figures or spirits\n• Abstract symbols and dots\n• Daily life activities (hunting, gathering)\n\nAGING & WEATHERING:\n• Ancient appearance - millennia old\n• Faded pigments\n• Partial erosion of paint\n• Mineral buildup over some areas\n• Scratches and damage\n• Authentic archaeological appearance\n\nLIGHTING:\n• Dim cave interior lighting\n• Torch light or firelight (warm flickering)\n• Shadows in crevices\n• Natural cave darkness\n• Pigments visible but muted in low light\n\nAUTHENTICITY:\n• Looks like actual prehistoric cave art\n• Could be from Lascaux, Altamira, Chauvet caves\n• Archaeological accuracy\n• No modern elements\n• Primitive human artistic expression\n• 15,000-35,000 years old appearance\n\nSTYLE REFERENCES:\n• Lascaux caves (France) - detailed animal paintings\n• Altamira caves (Spain) - polychrome bison\n• Chauvet Cave (France) - charcoal drawings\n• Hands of Patagonia - hand stencils",
+    "message": "Take a picture and completely transform it into an authentic prehistoric cave painting - the subject and scene must be rendered as actual primitive art painted/drawn on a cave wall by ancient humans.\n\nCORE CONCEPT (CRITICAL):\n• This is NOT a photo with cave painting effects applied\n• The subject IS a cave painting - completely transformed into primitive art\n• Hand-painted by prehistoric humans on rough stone surface\n• Simplified abstracted forms in ochre, charcoal, and natural pigments\n• Looks like Lascaux, Altamira, or Chauvet cave paintings\n\nCAVE PAINTING STYLE:\n• Subject rendered in simplified primitive style\n• Abstracted shapes - not realistic proportions\n• Profile view for humans and animals (side-facing)\n• Stick figures or simplified body forms for humans\n• Stylized animals with characteristic cave art appearance\n• Minimal detail - essential forms only\n• Flat 2D representation with no perspective\n• Handprint stencils possible\n\nPIGMENTS & COLORS:\n• Red ochre (iron oxide)\n• Yellow ochre\n• Black (charcoal or manganese)\n• White (kaolin clay or calcite)\n• Brown (umber)\n• Natural earth tones only\n• Limited palette - 3-5 colors maximum. Use natural earth pigments \u2014 ochre, charcoal black, iron oxide red, and manganese brown \u2014 applied to a rough limestone cave wall surface. The subject should be rendered with the characteristic simplified outlines and flat color fills of Paleolithic art.\n• Pigments appear hand-applied\n\nCAVE WALL SURFACE:\n• Rough limestone or sandstone texture\n• Bumpy uneven surface\n• Cracks and crevices in rock\n• Natural stone color (tan, gray, beige) showing through\n• Age: 10,000-40,000 years of weathering\n• Mineral deposits and calcification\n• Slight moisture or dampness suggested\n• Torch soot marks possible\n\nPAINTING TECHNIQUE:\n• Hand-painted with fingers or primitive brushes\n• Blown pigment (spray painting with mouth)\n• Charcoal drawing\n• Finger painting appearance\n• Uneven paint application\n• Drips or runs from wet pigment\n• Handprints (negative or positive)\n• Crude but expressive brushwork\n\nSUBJECT REPRESENTATION:\n• Humans as stick figures or simplified forms\n• Animals in profile (bison, horses, deer, mammoths)\n• Hunting scenes (humans with spears pursuing game)\n• Ritual or shamanic imagery\n• Geometric symbols (dots, lines, hand stencils)\n• Abstract patterns\n• No written language - pure pictorial\n\nCOMPOSITION:\n• Scene painted across cave wall surface\n• Multiple figures possible\n• Overlapping images from different time periods\n• No formal composition - organic placement\n• Follows contours of rock surface\n• May use natural rock features (bulges become animal bodies)\n\nPREHISTORIC SUBJECTS:\n• Paleolithic megafauna (woolly mammoth, cave bear, bison)\n• Hunters with spears or atlatls\n• Hand stencils (blown pigment around hand)\n• Shamanic figures or spirits\n• Abstract symbols and dots\n• Daily life activities (hunting, gathering)\n\nAGING & WEATHERING:\n• Ancient appearance - millennia old\n• Faded pigments\n• Partial erosion of paint\n• Mineral buildup over some areas\n• Scratches and damage\n• Authentic archaeological appearance\n\nLIGHTING:\n• Dim cave interior lighting\n• Torch light or firelight (warm flickering)\n• Shadows in crevices\n• Natural cave darkness\n• Pigments visible but muted in low light\n\nAUTHENTICITY:\n• Looks like actual prehistoric cave art\n• Could be from Lascaux, Altamira, Chauvet caves\n• Archaeological accuracy\n• No modern elements\n• Primitive human artistic expression\n• 15,000-35,000 years old appearance\n\nSTYLE REFERENCES:\n• Lascaux caves (France) - detailed animal paintings\n• Altamira caves (Spain) - polychrome bison\n• Chauvet Cave (France) - charcoal drawings\n• Hands of Patagonia - hand stencils",
     "options": [],
     "randomizeOptions": false,
-    "additionalInstructions": "FINAL RESULT:\nThe image should show the subject completely transformed into authentic prehistoric cave art - painted in ochre, charcoal, and natural pigments on rough limestone cave wall surface with simplified primitive style, ancient weathering, and the appearance of being hand-painted by Paleolithic humans 20,000+ years ago."
+    "additionalInstructions": "FINAL RESULT:\nThe image should show the subject completely transformed into authentic prehistoric cave art - painted in natural earth pigments \u2014 ochre, charcoal black, iron oxide red, and manganese brown \u2014 applied to a rough limestone cave wall surface. The subject should be rendered with the characteristic simplified outlines and flat color fills of Paleolithic art, ancient weathering, and the appearance of being hand-painted by Paleolithic humans 20,000+ years ago."
   },
   {
     "name": "NEON SIGN",
@@ -27232,6 +27340,19 @@
     "additionalInstructions": ""
   },
   {
+    "name": "OXIDATION PATINA LAYERS",
+    "category": [
+      "ART",
+      "CHEMICAL",
+      "TEXTURE",
+      "TIME"
+    ],
+    "message": "Take a picture and transform the subject into a study of oxidation and patina layers on metal. The subject's features should be revealed through varying stages of oxidation \u2014 from bright polished copper through brown cuprite to green verdigris patina, with the different oxidation states creating a color map that defines the subject's features across the metal surface.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "Show realistic chemical patina progression: bright copper \u2192 brown oxide \u2192 blue-green carbonate. Include areas where patina has been worn away revealing fresh metal beneath. The texture should be authentic to real weathered copper/bronze surfaces."
+  },
+  {
     "name": "PAINTERLY",
     "category": [
       "PAINTING",
@@ -28380,6 +28501,19 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "STYLE REQUIREMENTS (CRITICAL):\n• Bold, vibrant colors with cel-shaded appearance\n• Clean vector-style line art\n• Angular geometric character designs\n• Exaggerated proportions and shapes\n• High-contrast shading with defined edges\n• Energetic, dynamic poses\n• Triangular and rectangular shapes dominate character design\n• Simplified but expressive facial features\n\nSUBJECT TRANSFORMATION:\n• Transform subject into Phineas and Ferb animation style\n• Preserve recognizable features with geometric simplification\n• Large expressive eyes with simple pupils\n• Triangular or angular head shapes\n• Simplified hair as geometric blocks or shapes\n• Stylized clothing with bold colors and minimal folds\n• Dynamic, action-ready pose\n\nCHARACTERS FROM THE SHOW (MANDATORY):\n• Include 2-4 recognizable characters from Phineas and Ferb naturally integrated into the scene\n• Characters maintain their show-accurate designs: distinctive head shapes, signature clothing, recognizable silhouettes\n• Characters should be actively engaged in the scene or project\n• Examples: inventors, friends, siblings, neighbors, pets, authority figures from the show\n• Characters sized and positioned appropriately\n\nSETTING:\n• Place scene in a Phineas and Ferb location: backyard with the tree, basement workshop, neighborhood street, school, or fantastical invention environment\n• Include inventive/creative elements typical of the show: elaborate contraptions, oversized projects, impossible physics, summer adventure vibes\n• Background elements: suburban houses, trees, blue skies, or sci-fi/fantasy elements if invention-related\n\nCOMPOSITION:\n• Energetic, inventive, optimistic atmosphere\n• Summer day lighting\n• Dynamic angles and perspective\n• Clear action or activity in progress\n• Sense of adventure and creativity\n• Clean, organized visual hierarchy\n\nTONE:\n• Fun, ambitious, can-do spirit\n• Sense of impossible projects made possible\n• Friendship and teamwork\n• Boundless creativity\n\nFINAL RESULT:\nThe final image must look like an authentic frame from Phineas and Ferb, with the subject transformed into a character seamlessly integrated into the show's world, surrounded by recognizable characters from the series engaged in a summer adventure or inventive project."
+  },
+  {
+    "name": "PHOSPHORESCENT AFTERGLOW",
+    "category": [
+      "ART",
+      "LIGHT",
+      "DARK",
+      "ETHEREAL"
+    ],
+    "message": "Take a picture and transform the subject into a phosphorescent afterglow image \u2014 as if the subject was briefly illuminated and is now glowing in complete darkness from absorbed light energy slowly releasing. The subject should emit a soft green-blue phosphorescent glow that is brightest where light exposure was strongest, fading to darkness at the edges.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "The glow should be soft and diffuse, not sharp-edged. Use the characteristic blue-green color of zinc sulfide phosphorescence. The background should be absolute black. The subject should appear ghostly and ethereal, slowly fading."
   },
   {
     "name": "PHOTOBOMB",
@@ -41546,6 +41680,19 @@
   ],
     "randomizeOptions": true,
     "additionalInstructions": "• Preserve recognizable identity of the subject\n• Keep the subject fully human and live-action\n• Never transform the subject into a cartoon character\n• Insert the subject directly into the actual movie universe of Who Framed Roger Rabbit\n• Recreate the film's cinematography, lighting, production design, atmosphere, and visual effects\n• Use authentic hand-drawn cel-animation characters matching their movie appearances\n• Allow Roger Rabbit, Jessica Rabbit, Eddie Valiant, Benny the Cab, Baby Herman, Judge Doom, Toon Patrol members, and other movie characters to appear naturally when appropriate\n• Blend live-action photography and traditional animation seamlessly\n• Maintain realistic physical interaction between humans and cartoons\n• Preserve the movie's combination of detective-noir storytelling, Hollywood glamour, slapstick comedy, and animation magic\n• Use authentic 1940s Hollywood environments, automobiles, fashion, signage, and architecture\n• Create the appearance of an actual lost scene, deleted scene, alternate take, publicity photograph, or production still from the movie\n• Avoid generic cartoon worlds, generic animation styles, CGI aesthetics, anime influences, or modern animation trends\n• The final image should be indistinguishable from an authentic frame of Who Framed Roger Rabbit featuring the subject as a human character inside the film"
+  },
+{
+    "name": "WIMMELBILDERBUCH SCENE",
+    "category": [
+      "ART",
+      "ILLUSTRATION",
+      "DETAILED",
+      "WHIMSICAL"
+    ],
+    "message": "Take a picture and transform the subject into a Wimmelbilderbuch (hidden picture book) illustration.\n\nThe subject should be placed within an incredibly detailed, busy scene filled with hundreds of tiny characters, activities, visual jokes, environmental stories, and simultaneous events occurring throughout the image.\n\nThe final image should resemble a classic European Wimmelbilderbuch, a Where's Waldo/Wally-style hidden-picture illustration, or an Ali Mitgutsch-style crowded scene.\n\nSUBJECT PLACEMENT RULES (NON-NEGOTIABLE):\n• The subject must appear somewhere within the crowded scene.\n• The subject must NOT automatically be placed in the center of the image.\n• The subject must be positioned in a random natural location within the composition.\n• The subject may appear near an edge, corner, background area, middle distance, rooftop, sidewalk, park, building, crowd, vehicle, playground, marketplace, beach, festival, street, or any other logical location.\n• The subject's location should feel accidental and naturally discovered.\n• The viewer should need to search for the subject.\n• The composition must not visually announce where the subject is located.\n\nSUBJECT SIZE RULES (NON-NEGOTIABLE):\n• The subject must be rendered at the same approximate scale as surrounding people.\n• The subject must NOT be larger than nearby characters.\n• The subject must NOT be treated as the main focal point.\n• The subject must NOT dominate the composition.\n• The subject must occupy only a small portion of the overall image.\n• The subject should blend naturally into the crowd.\n• The subject must appear as one participant among hundreds of others.\n• The subject's size must be consistent with the perspective of the location where they are placed.\n\nSCENE DENSITY RULES:\n• Every area of the image should contain activity.\n• Hundreds of characters should be visible.\n• Multiple simultaneous stories should occur throughout the image.\n• Numerous visual jokes should be present.\n• Small discoveries should reward close inspection.\n• The image should encourage prolonged exploration.\n• Empty space should be minimized.\n• The image should feel alive and overflowing with activity.\n\nILLUSTRATION STYLE RULES:\n• Hand-drawn storybook illustration.\n• Detailed line work.\n• Bright cheerful colors.\n• Family-friendly presentation.\n• Classic European picture-book aesthetics.\n• Dense environmental storytelling.\n• Charming whimsical tone.\n• Rich visual complexity.\n\nIDENTITY PRESERVATION RULES:\n• The subject must remain identifiable upon close inspection.\n• Preserve recognizable facial features where possible.\n• Preserve recognizable hairstyle silhouette where possible.\n• Preserve recognizable clothing characteristics where possible.\n• Recognition should reward careful searching.\n\nANTI-CHEAT:\n• Do not place the subject in the center by default.\n• Do not enlarge the subject.\n• Do not create a hero composition.\n• Do not spotlight the subject.\n• Do not place visual arrows, indicators, circles, highlights, or clues around the subject.\n• Do not reduce crowd density around the subject.\n• Do not create an obvious gap around the subject.\n• Do not make the subject more colorful than surrounding characters.\n• Do not isolate the subject from surrounding activity.\n\nFINAL RESULT:\nThe final image should resemble a genuine Wimmelbilderbuch hidden-picture scene filled with hundreds of equally important characters and simultaneous activities. The subject should be hidden naturally somewhere within the visual chaos, rendered at the same scale as surrounding characters, requiring deliberate searching to locate while remaining recognizable once discovered.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "WIMMELBILDERBUCH ENFORCEMENT (CRITICAL):\n\n• The subject must NOT occupy the center of the composition unless random placement naturally results in that location.\n• The subject must NOT be treated as the primary focal point.\n• The subject must be positioned randomly within the populated scene.\n• The subject must appear at the same visual scale as nearby people.\n• The subject must blend naturally into the crowd.\n\nCROWD ENFORCEMENT:\n\n• Hundreds of characters should populate the scene.\n• The area surrounding the subject must be just as crowded as the rest of the image.\n• Characters should overlap naturally.\n• Multiple visual stories should occur simultaneously.\n• The image should reward repeated viewing.\n\nANTI-HERO COMPOSITION ENFORCEMENT:\n\n• Do not center the subject.\n• Do not enlarge the subject.\n• Do not spotlight the subject.\n• Do not create visual emphasis around the subject.\n• Do not simplify the area surrounding the subject.\n• Do not call attention to the subject.\n• The subject should initially disappear into the visual complexity.\n\nFINAL ENFORCEMENT:\n\n• The viewer should need to actively search for the subject.\n• The subject should only become obvious after careful inspection.\n• The image should feel like a true hidden-picture book illustration.\n• The scene should be overwhelmingly detailed, busy, crowded, and visually rich."
   },
   {
   "name": "WITCHCRAFT SYMBOL",
