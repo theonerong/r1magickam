@@ -6265,3 +6265,46 @@ button, .touchable {
   line-height: 1;
   user-select: none;
 }
+
+/* ===== RESET DATABASE SECTION ===== */
+.reset-db-item {
+    display: flex;
+    align-items: flex-start;
+    padding: 3.5vw 1vw;
+    border-bottom: 1px solid #222;
+    cursor: pointer;
+    gap: 3vw;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.reset-db-check {
+    width: 5vw;
+    height: 5vw;
+    min-width: 22px;
+    min-height: 22px;
+    accent-color: #FE5F00;
+    cursor: pointer;
+    flex-shrink: 0;
+    margin-top: 0.8vw;
+}
+
+.reset-db-label {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2vw;
+    flex: 1;
+}
+
+.reset-db-title {
+    font-size: 4vw;
+    font-weight: 600;
+    color: #fff;
+    line-height: 1.3;
+}
+
+.reset-db-desc {
+    font-size: 3.2vw;
+    color: #888;
+    line-height: 1.4;
+}
+/* ===== END RESET DATABASE SECTION ===== */

@@ -1115,14 +1115,15 @@ footerSection.innerHTML = `
         const currentIsNewOrUpdated = !!currentItem.querySelector('.preset-ticket');
         for (let i = idx - 1; i >= 0; i--) {
           const item = items[i];
-          if (!!item.querySelector('.preset-ticket') !== currentIsNewOrUpdated) break;
+          const isNewOrUpdated = !!item.querySelector('.preset-ticket');
           const nm = (item.dataset.presetName || '').trim();
           const letter = stripAccents(nm).toUpperCase().charAt(0);
-          if (letter !== currentLetter) {
+          // Jump on either a new letter OR crossing the new/updated vs installed boundary
+          if (letter !== currentLetter || isNewOrUpdated !== currentIsNewOrUpdated) {
             let firstOfLetter = i;
             while (firstOfLetter > 0) {
               const prevItem = items[firstOfLetter - 1];
-              if (!!prevItem.querySelector('.preset-ticket') !== currentIsNewOrUpdated) break;
+              if (!!prevItem.querySelector('.preset-ticket') !== isNewOrUpdated) break;
               const prevNm = (prevItem.dataset.presetName || '').trim();
               if (stripAccents(prevNm).toUpperCase().charAt(0) !== letter) break;
               firstOfLetter--;
@@ -1145,10 +1146,11 @@ footerSection.innerHTML = `
         const currentIsNewOrUpdated = !!currentItem.querySelector('.preset-ticket');
         for (let i = idx + 1; i < items.length; i++) {
           const item = items[i];
-          if (!!item.querySelector('.preset-ticket') !== currentIsNewOrUpdated) break;
+          const isNewOrUpdated = !!item.querySelector('.preset-ticket');
           const nm = (item.dataset.presetName || '').trim();
           const letter = stripAccents(nm).toUpperCase().charAt(0);
-          if (letter !== currentLetter) {
+          // Jump on either a new letter OR crossing the new/updated vs installed boundary
+          if (letter !== currentLetter || isNewOrUpdated !== currentIsNewOrUpdated) {
             this.currentImportScrollIndex = i;
             updateImportSelection();
             if (window._showAlphaOverlay) window._showAlphaOverlay(letter);
