@@ -10805,7 +10805,7 @@ async function hideUnifiedMenu() {
 
 const _ALL_RESET_CBS = [
   'reset-cb-custom','reset-cb-edits','reset-cb-queue','reset-cb-visibility',
-  'reset-cb-favorites','reset-cb-buttons','reset-cb-credits','reset-cb-imported','reset-cb-settings',
+  'reset-cb-favorites','reset-cb-buttons','reset-cb-credits','reset-cb-pfs','reset-cb-imported','reset-cb-settings',
   'reset-cb-nomagic','reset-cb-manualopts','reset-cb-masterprompt','reset-cb-gallery'
 ];
 
@@ -10853,6 +10853,7 @@ function _resetDbShowConfirm() {
     favorites:    '• Favorites cleared',
     buttons:      '• Button settings reset to default',
     credits:      '• Credits reset to 0',
+    pfs:          '• Preset file settings reset to default',
     imported:     '• Imported presets removed (back to 0)',
     settings:     '• All settings reset to default',
     nomagic:      '• No Magic Mode turned off',
@@ -10862,6 +10863,8 @@ function _resetDbShowConfirm() {
   };
   const lines = ['The following will be permanently reset:\n'];
   Object.entries(map).forEach(([k, v]) => { if (checks[k]) lines.push(v); });
+  if (checks.settings && !checks.favorites) lines.push('• Favorites cleared');
+  if (checks.settings && !checks.pfs) lines.push('• Preset file settings reset to default');
   lines.push('\nThis cannot be undone.');
   document.getElementById('reset-db-confirm-text').textContent = lines.join('\n');
   document.getElementById('reset-db-confirm-overlay').style.display = 'flex';
@@ -11005,9 +11008,11 @@ YOU MUST RESTART PROGRAM!`];
 
   // 6. Favorites
   try {
-    if (checks.favorites) {
+    if (checks.favorites || checks.settings) {
       favoriteStyles = [];
+      _favoriteStylesSet = new Set();
       localStorage.setItem(FAVORITE_STYLES_KEY, JSON.stringify([]));
+      _stylesDataVersion++;
       presetsNeedReload = true;
       successLines.push('• Favorites cleared');
     }
@@ -11071,8 +11076,6 @@ YOU MUST RESTART PROGRAM!`];
       localStorage.removeItem('r1_cam_btn_settings');
       window._camBtnSettings = { bgColor: '#000000', opacity: 100, fontColor: '#ffffff', tapMode: 'single', borderColor: '#FE5F00', borderOpacity: 100 };
       if (typeof window._applyCamBtnStyles === 'function') window._applyCamBtnStyles();
-
-      localStorage.removeItem('mk_custom_preset_sources');
 
       successLines.push('• All settings reset to default');
     }
@@ -11153,6 +11156,16 @@ YOU MUST RESTART PROGRAM!`];
       successLines.push('• Credits reset to 0');
     }
   } catch (e) { errors.push('Credits: ' + e.message); }
+
+  // 14. Preset File Settings
+  try {
+    if (checks.pfs || checks.settings) {
+      saveCustomPresetSources([]);
+      saveDefaultPresetEnabled(true);
+      updatePresetFileSettingsHint();
+      successLines.push('• Preset file settings reset to default');
+    }
+  } catch (e) { errors.push('Preset File Settings: ' + e.message); }
 
   // ── Re-render all preset lists immediately ──────────────────────────────
   try {
@@ -15401,9 +15414,7 @@ document.addEventListener('touchend', () => {
 
   const resetDbClearBtn = document.getElementById('reset-db-clear-btn');
   if (resetDbClearBtn) resetDbClearBtn.addEventListener('click', () => {
-    ['reset-cb-custom','reset-cb-edits','reset-cb-queue','reset-cb-visibility',
-     'reset-cb-favorites','reset-cb-buttons','reset-cb-imported','reset-cb-settings',
-     'reset-cb-default'].forEach(id => {
+    _ALL_RESET_CBS.concat(['reset-cb-default']).forEach(id => {
       const el = document.getElementById(id);
       if (el) el.checked = false;
     });
