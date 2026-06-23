@@ -5563,6 +5563,19 @@
     "additionalInstructions": ""
   },
   {
+    "name": "CARTOGRAPHIC SEA MONSTER",
+    "category": [
+      "ART",
+      "VINTAGE",
+      "CARTOGRAPHY",
+      "FANTASY"
+    ],
+    "message": "Take a picture and transform the subject into a sea monster illustration from a medieval or Renaissance-era map. The subject should be reimagined as a fantastical marine creature drawn in the style of 16th-century cartographic illustrations \u2014 with decorative scales, impossible anatomy, spouting water, and the characteristic engraving style of old map marginalia, placed on an aged parchment sea chart.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "Use the illustration style of Olaus Magnus or Abraham Ortelius maps. Include compass roses, rhumb lines, sailing ships for scale, and Latin labels. The parchment should be aged with water stains and foxing. The creature should be both terrifying and decorative."
+  },
+  {
     "name": "CARVED CAROUSEL ANIMAL",
     "category": [
       "CAROUSEL",
@@ -9703,6 +9716,19 @@
     "additionalInstructions": ""
   },
   {
+    "name": "DAMASCENE METALWORK",
+    "category": [
+      "ART",
+      "METALWORK",
+      "TRADITIONAL",
+      "ORNATE"
+    ],
+    "message": "Take a picture and transform the subject into a damascene metalwork piece. The subject should appear as if inlaid in the traditional damascening technique \u2014 gold and silver wire hammered into grooves cut in dark oxidized steel, creating intricate scrollwork, arabesques, and figurative designs that form the subject's likeness on a dark metal surface.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "The gold and silver inlay should have realistic metallic luster against the dark blued steel background. Include traditional damascene motifs like vine scrolls and geometric borders framing the subject."
+  },
+  {
     "name": "DANCE STYLE",
     "category": [
       "DANCE",
@@ -9941,6 +9967,19 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "DEEP DREAM PAREIDOLIA",
+    "category": [
+      "ART",
+      "AI",
+      "SURREAL",
+      "PSYCHEDELIC"
+    ],
+    "message": "Take a picture and transform the subject using extreme pareidolia enhancement \u2014 as if the image has been processed to reveal hidden faces, animals, and patterns that the brain perceives in random textures. Every surface should contain emergent imagery: eyes in tree bark, faces in clouds, animals in rock formations, all while maintaining the subject as the primary recognizable form.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "The pareidolia should be layered \u2014 obvious faces and creatures at first glance, with more subtle ones revealing themselves on closer inspection. The effect should be unsettling but fascinating, like the visual equivalent of hearing words in white noise. Maintain the subject's primary identity clearly."
   },
   {
     "name": "DEEP THOUGHTS BY JACK HANDEY",
@@ -10409,6 +10448,19 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "DENDRITIC CRYSTAL GROWTH",
+    "category": [
+      "ART",
+      "SCIENCE",
+      "CRYSTALLINE",
+      "PATTERN"
+    ],
+    "message": "Take a picture and transform the subject into a dendritic crystal growth pattern \u2014 the branching tree-like structures formed during rapid crystallization. The subject's features should emerge from metallic dendrites (like those seen in manganese oxide on limestone, or copper electrodeposition) spreading in fractal branching patterns across a surface.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "The dendritic patterns should show realistic fractal branching with proper scaling \u2014 main trunks splitting into secondary branches, then tertiary, etc. Use metallic colors (copper, silver, or dark manganese oxide) on a light stone or paper background."
   },
   {
     "name": "DEPARTMENT 56 CHRISTMAS VILLAGE",
@@ -15153,7 +15205,7 @@
       "COLD",
       "FRACTAL"
     ],
-    "message": "Take a picture and completely reconstruct the image as if it is formed entirely from frost and ice crystal growth patterns. The scene must be built from crystalline frost structures, not overlaid effects.\n\nCRITICAL OUTPUT RULES:\n• No original surfaces may remain\n• All forms must be constructed from frost-like crystalline patterns\n• Frost must define edges, shapes, and textures\n\nCORE CONCEPT:\n• Ice crystals grow outward to form the image\n• Fractal branching patterns define structure\n\nSTRUCTURE RULES:\n• Fine branching frost patterns\n• Sharp crystalline edges\n• Layered frost density for depth\n\nSUBJECT HANDLING:\n• Subject must be recognizable through frost structure alone\n\nSTYLE:\n• Cool tones (white, blue, pale cyan)\n• Subtle translucency and sparkle\n\nENFORCEMENT:\n• If frost appears as a surface overlay, the result is incorrect.",
+    "message": "Take a picture and completely reconstruct the image as if it is formed entirely from frost and ice crystal growth patterns.\n• The subject's features should emerge from the natural branching patterns of ice crystals forming on cold glass \u2014 fernlike dendrites, feathery plumes, and geometric ice flowers that together create the subject's likeness when viewed from the right angle.\n• The scene must be built from crystalline frost structures, not overlaid effects.\n\nCRITICAL OUTPUT RULES:\n• No original surfaces may remain\n• All forms must be constructed from frost-like crystalline patterns\n• Frost must define edges, shapes, and textures\n\nCORE CONCEPT:\n• Ice crystals grow outward to form the image\n• Fractal branching patterns define structure\n\nSTRUCTURE RULES:\n• Fine branching frost patterns\n• Sharp crystalline edges\n• Layered frost density for depth\n\nSUBJECT HANDLING:\n• Subject must be recognizable through frost structure alone\n\nSTYLE:\n• Cool tones (white, blue, pale cyan)\n• Subtle translucency and sparkle\n\nENFORCEMENT:\n• If frost appears as a surface overlay, the result is incorrect.",
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "FINAL RESULT:\nA fully reconstructed image made entirely of frost and crystalline ice formations, with no underlying original image visible."
@@ -18712,6 +18764,19 @@
     "additionalInstructions": "NOT ALLOWED:\n• Surgery imagery\n• X-ray clichés\n• Horror aesthetics\n• Exploded or separated body parts\n• Any implication of pain or injury\n\nFINAL RESULT:\nThe image should depict the subject fully intact while their internal anatomy is clearly visible and anatomically accurate, appearing as a seamless scientific reveal rather than damage — a calm, educational visualization where exterior and interior coexist naturally in a single complete figure."
   },
   {
+    "name": "INTAGLIO MEZZOTINT",
+    "category": [
+      "ART",
+      "PRINTMAKING",
+      "CLASSIC",
+      "BLACK AND WHITE"
+    ],
+    "message": "Take a picture and transform the subject into a mezzotint print. The subject should be rendered in the rich, velvety blacks and smooth tonal gradations unique to the mezzotint printmaking process \u2014 where the entire plate is roughened to hold ink (creating deep black) and then selectively burnished smooth to create lighter tones, producing unparalleled depth and luminosity.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "The tonal range should be extraordinary \u2014 from the deepest velvety blacks to brilliant white highlights with infinite smooth gradation between. No visible line work or cross-hatching \u2014 only the characteristic soft tonal transitions of mezzotint. The print should appear on cream-colored paper."
+  },
+  {
     "name": "INTAGLIO PRINT",
     "category": [
       "ART",
@@ -18736,6 +18801,19 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "FINAL RESULT:\nThe image should feel like a curated installation artwork displayed in a gallery or immersive space, with the subject integrated into a conceptual and visually striking composition."
+  },
+  {
+    "name": "INTERFERENCE PATTERN HOLOGRAM",
+    "category": [
+      "ART",
+      "OPTICAL",
+      "FUTURISTIC",
+      "IRIDESCENT"
+    ],
+    "message": "Take a picture and transform the subject into a holographic interference pattern \u2014 the actual recorded pattern on holographic film before reconstruction. The subject should appear as dense, fine-grained interference fringes \u2014 concentric and hyperbolic patterns of microscopic dark and light bands that encode the subject's three-dimensional information on a flat surface.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "The interference fringes should be extremely fine and dense. When viewed at the right angle, the subject should be barely recognizable within the abstract pattern. Include the characteristic rainbow diffraction colors at the edges where white light hits the fringe pattern."
   },
   {
     "name": "INTERVENTION",
@@ -19657,6 +19735,19 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "FINAL RESULT:\nThe image should feel like a dynamic kinetic artwork, where movement—real or implied—is central, and the subject is seamlessly integrated into a motion-driven artistic structure."
+  },
+  {
+    "name": "KINETIC SAND SCULPTURE",
+    "category": [
+      "ART",
+      "SCULPTURAL",
+      "SATISFYING",
+      "TEXTURE"
+    ],
+    "message": "Take a picture and transform the subject into a kinetic sand sculpture in the process of being cut or crumbling. The subject should appear molded from colored kinetic sand \u2014 showing the characteristic satisfying texture of this material as it's being sliced with a knife or slowly crumbling under gravity, with the dense, slightly moist sand texture and clean cut surfaces visible.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "The kinetic sand should show its unique properties: clean knife cuts with slight crumbling at edges, the dense packed texture, and the satisfying way it holds shape then slowly yields to gravity. Use a single saturated color or layered colors. The cutting/crumbling should reveal the subject's features."
   },
   {
     "name": "KINETIC TYPOGRAPHY",
@@ -21863,10 +21954,10 @@
       "WOODWORK",
       "DECORATIVE"
     ],
-    "message": "Take a picture and transform the image into Marquetry woodwork. Preserve subject identity. Render with the decorative technique of applying thin veneers of different colored woods to create pictorial or geometric designs on furniture surfaces. Emphasize the natural grain patterns, warm wood tones, and precise craftsmanship of wood veneer art.",
+    "message": "Take a picture and transform the image into Marquetry wood inlay artwork. The subject should appear as if created from precisely cut pieces of different wood veneers \u2014 each piece showing its natural grain, color, and figure \u2014 fitted together like a jigsaw puzzle to create a detailed portrait using only the natural colors of various wood species. Preserve subject identity. Render with the decorative technique of applying thin veneers of different colored woods to create pictorial or geometric designs on furniture surfaces. Emphasize the natural grain patterns, warm wood tones, and precise craftsmanship of wood veneer art.",
     "options": [],
     "randomizeOptions": false,
-    "additionalInstructions": ""
+    "additionalInstructions": "The final image should look like a real Marquetry wood inlay artwork. Use realistic wood species with distinct colors: ebony (black), holly (white), walnut (brown), purpleheart (purple), padauk (red-orange), yellowheart (yellow). The grain direction should vary between pieces for visual interest. Show the precision of the joints."
   },
   {
     "name": "MARRIAGE PROPOSAL",
@@ -28799,6 +28890,19 @@
     "additionalInstructions": ""
   },
   {
+    "name": "PIETRA DURA INLAY",
+    "category": [
+      "ART",
+      "STONE",
+      "ITALIAN",
+      "ORNATE"
+    ],
+    "message": "Take a picture and transform the subject into a pietra dura (hard stone inlay) artwork in the Florentine tradition. The subject should appear as if created from precisely cut and fitted semi-precious stones \u2014 lapis lazuli, malachite, jasper, agate, mother of pearl, and marble \u2014 inlaid into a black Belgian marble background to create a detailed pictorial composition.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "Each stone piece should show its natural patterns, veining, and color variations. The joints between stones should be nearly invisible, showing master craftsmanship. The polished surface should have a uniform high gloss."
+  },
+  {
     "name": "PILLOW PERSON",
     "category": [
       "HUMOR",
@@ -29356,6 +29460,19 @@
     "additionalInstructions": "FINAL RESULT:\nA fully transformed Pokémon-style world where the entire image becomes part of a vibrant, living environment filled with creatures and adventure. All objects are converted into Pokémon-style elements, and any people are transformed into trainers or inhabitants. Pokémon are naturally integrated into the scene based on the environment and subjects. The result should feel like a modern cinematic Pokémon world, with rich detail, natural composition, and immersive charm."
   },
   {
+    "name": "POLARIZATION MICROSCOPY",
+    "category": [
+      "ART",
+      "SCIENCE",
+      "COLORFUL",
+      "CRYSTALLINE"
+    ],
+    "message": "Take a picture and transform the subject into a cross-polarized light microscopy image. The subject should appear as if viewed through a polarizing microscope \u2014 revealing hidden crystalline structures in spectacular interference colors (Michel-L\u00e9vy chart colors): vivid blues, magentas, yellows, and greens against a dark extinction background.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "The colors should follow realistic birefringence patterns with smooth color gradients within crystal domains. Include the characteristic dark extinction crosses and isochromes. The overall effect should be scientifically authentic but visually stunning."
+  },
+  {
     "name": "POLAROID",
     "category": [
       "PHOTOGRAPHY",
@@ -29746,6 +29863,40 @@
   ],
   "randomizeOptions": true,
   "additionalInstructions": "RESTRICTIONS:\n• No cartoon or animated styles\n• No text overlays or captions\n• No third-person camera views\n• The POV anatomy must obey realistic first-person visibility\n• Do not show the inside of the creature’s nostrils unless physically plausible from its own eye placement\n• Nose visibility should resemble what the actual animal would naturally see at the edge of its vision\n\nFINAL RESULT:\nThe image should convincingly place the viewer inside the creature's point of view, with the subject reacting naturally — as if they are being looked at by the animal, insect, or baby."
+  },
+  {
+    "name": "POWDER COATING TEXTURE",
+    "category": [
+      "ART",
+      "INDUSTRIAL",
+      "TEXTURE",
+      "MATERIAL"
+    ],
+    "message": "Take a picture and transform the subject into a powder-coated metal object. The subject should appear as a metal form coated in thick, even powder coating \u2014 showing the characteristic slightly orange-peel texture, uniform matte or satin finish, and the way powder coating softens sharp edges and fills corners. The color should be vivid and perfectly uniform.",
+    "options": [
+      {
+        "id": "001",
+        "text": "Matte black \u2014 stealth tactical finish"
+      },
+      {
+        "id": "002",
+        "text": "Candy red \u2014 deep glossy automotive red"
+      },
+      {
+        "id": "003",
+        "text": "Textured bronze \u2014 hammered antique finish"
+      },
+      {
+        "id": "004",
+        "text": "Neon yellow \u2014 high-visibility safety finish"
+      },
+      {
+        "id": "005",
+        "text": "Prismatic chrome \u2014 color-shifting metallic"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "The powder coating should show realistic thickness \u2014 slightly rounding edges and filling small details. Show the characteristic electrostatic application uniformity and the baked-on durability of the finish."
   },
   {
     "name": "POWERPUFF GIRLS",
@@ -30538,6 +30689,19 @@
     "additionalInstructions": "IDENTITY PRESERVATION:\n• Subject recognizable through burn contours\n• Facial structure preserved through tonal contrast\n• Expression readable through carved/burned detail\n\nANTI-CHEATING RULES:\n• NO drawn outlines\n• NO painted shading\n• NO photographic textures\n• NO laser-etched perfection\n\nSURFACE & PRESENTATION:\n• Flat wooden panel or plaque\n• Minor scorch marks outside main image allowed\n• Slight warping or discoloration near burns\n\nFINAL RESULT:\nThe image must look like a real hand-burned pyrography artwork etched into wood, with natural grain interaction, heat variation, and tactile realism."
   },
   {
+    "name": "PYSANKY EGG DESIGN",
+    "category": [
+      "ART",
+      "UKRAINIAN",
+      "TRADITIONAL",
+      "DECORATIVE"
+    ],
+    "message": "Take a picture and transform the subject into a Ukrainian pysanky (decorated egg) design. The subject's features should be incorporated into the intricate geometric and symbolic patterns of traditional pysanky \u2014 using the wax-resist dyeing technique's characteristic fine lines dividing the egg surface into sections filled with symbolic motifs in rich colors on a dark background.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "Use traditional pysanky color symbolism: red (joy), black (eternity), yellow (light), green (spring). Include authentic motifs: wheat sheaves, deer, stars, and endless lines. The egg shape should be clearly visible with the design wrapping around the three-dimensional form."
+  },
+  {
     "name": "QR CODE ME",
     "category": [
       "DESIGN",
@@ -30668,6 +30832,19 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "RAKU POTTERY GLAZE",
+    "category": [
+      "ART",
+      "CERAMIC",
+      "JAPANESE",
+      "TEXTURE"
+    ],
+    "message": "Take a picture and transform the subject into a raku-fired pottery surface. The subject's features should be rendered through the characteristic crackle glaze, metallic lusters, and carbon-blackened unglazed areas of raku ceramics. The surface should show the dramatic thermal shock patterns \u2014 copper and gold metallic sheens, deep crackle networks, and areas of matte black carbon trapping.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "The raku surface should show authentic firing characteristics: unpredictable metallic color variations, heavy crazing patterns, and the contrast between glossy glazed and matte unglazed areas. The three-dimensional ceramic form should be evident."
   },
   {
     "name": "RANDOM PROFESSIONAL",
@@ -31596,13 +31773,33 @@
     "name": "RISOGRAPH",
     "category": [
       "ART",
+      "PRINTMAKING",
       "PRINT",
-      "VINTAGE"
+      "VINTAGE",
+      "GRAPHIC DESIGN",
+      "COLORFUL"
     ],
-    "message": "Take a picture and transform the image into risograph print style. Layered ink colors, misregistration. Paper grain texture.",
-    "options": [],
-    "randomizeOptions": false,
-    "additionalInstructions": ""
+    "message": "Take a picture and transform the subject into a risograph-style print with visible color separation layers. The subject should appear as if printed on a risograph duplicator \u2014 with characteristic slightly misregistered color layers, soy-based ink texture, paper grain showing through, and the limited spot-color palette typical of riso printing.",
+    "options": [
+      {
+        "id": "001",
+        "text": "Fluorescent pink and blue \u2014 vibrant two-color"
+      },
+      {
+        "id": "002",
+        "text": "Yellow, red, and blue \u2014 three-color process"
+      },
+      {
+        "id": "003",
+        "text": "Gold and black \u2014 elegant two-tone"
+      },
+      {
+        "id": "004",
+        "text": "Green, purple, and orange \u2014 unusual tricolor"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "Show characteristic riso artifacts: slight color misregistration, ink density variation, roller marks, and the way colors mix where layers overlap (not like CMYK \u2014 riso inks are opaque and create unique overprint colors). Paper should be visible as uncoated stock."
   },
   {
     "name": "ROAD SIGN",
@@ -32293,6 +32490,19 @@
     "additionalInstructions": "IDENTITY PRESERVATION:\n• Subject's face and key features readable through sand layer arrangement\n• Some simplification is natural to the medium, but likeness must remain clear\n• The viewing angle and sand layer contours work together to reveal the portrait\n• From the front, the subject is unmistakably recognizable\n\nPHOTOGRAPHY AND PRESENTATION:\n• Professional product photography of the actual sand art bottle\n• Soft, even lighting revealing sand texture and glass clarity\n• Slight shadows between layers add depth\n• Glass reflections and light refractions visible and realistic\n• Background: neutral (white, gray, or wood surface) to showcase the bottle\n• Depth of field keeps bottle in focus with slight background blur\n• Lighting highlights the translucency of sand and transparency of glass\n• The photo could be used in a craft fair catalog or art gallery\n• Must pass as a photograph of a real handcrafted object\n• Sand texture must be granular and authentic when examined\n• Glass must have realistic optical properties\n• No cartoon shading, no flat colors, no illustration style\n• Shadows, highlights, and reflections must be physically accurate\n• The bottle must look tangible—viewer should feel they could pick it up\n\nANTI-CHEATING RULES:\n• NO painted textures or illustrated sand\n• NO photographic clarity of the subject's face (sand is abstract medium)\n• NO smooth gradients—sand has grain and distinct layer boundaries\n• NO floating or impossible sand geometry—gravity applies\n• NO digital overlays or mixed media—pure sand in glass only\n• NO cartoon bottle—must be photorealistic glasswork\n\nFINAL RESULT:\nA stunning photograph of an actual handcrafted sand art bottle, where the subject's portrait has been painstakingly created through the precise layering of colored sand inside a real clear glass bottle. The image is photorealistic—appearing as a tangible craft object with authentic sand texture, genuine glass optical properties, and the natural physics of layered sand. The subject's likeness is clearly recognizable through the artistic arrangement of sand layers, demonstrating both the craftsperson's skill and the unique beauty of sand art as a medium. The bottle looks real enough to purchase at an art fair.\n\nREALISM REQUIREMENTS:"
   },
   {
+    "name": "SAND MANDALA",
+    "category": [
+      "ART",
+      "SPIRITUAL",
+      "TRADITIONAL",
+      "COLORFUL"
+    ],
+    "message": "Take a picture and transform the subject into a Tibetan Buddhist sand mandala. The subject's features should be recreated using intricate patterns of colored sand in the traditional mandala style \u2014 concentric geometric patterns, symbolic imagery, and vibrant powdered pigments in red, gold, blue, green, and white arranged with extraordinary precision on a flat surface.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "The sand grains should be visible at close inspection. The mandala should incorporate traditional Buddhist symbolic elements while preserving the subject's likeness through the overall pattern arrangement."
+  },
+  {
     "name": "SAND SCULPTURE",
     "category": [
       "TRANSFORMATION",
@@ -32594,6 +32804,19 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "SCHLIEREN PHOTOGRAPHY",
+    "category": [
+      "ART",
+      "SCIENCE",
+      "PHOTOGRAPHY",
+      "INVISIBLE"
+    ],
+    "message": "Take a picture and transform the subject into a schlieren photograph \u2014 the optical technique that makes invisible air density variations visible. The subject should appear surrounded by and interacting with visible airflow patterns, heat convection currents, and density gradients rendered in the characteristic rainbow or grayscale schlieren color mapping.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "Show realistic fluid dynamics: rising thermal plumes, turbulent mixing, and laminar-to-turbulent transitions. The knife-edge cutoff effect should create the characteristic one-sided shadow appearance."
   },
   {
     "name": "SCHOOL BOY / SCHOOL GIRL",
@@ -33531,6 +33754,36 @@
     "additionalInstructions": "FINAL RESULT:\nThe image should show the subject in a dramatic frozen moment of shattering - face clearly recognizable but breaking into fragments like glass, porcelain, stone, or other material - with spider-web cracks spreading across the surface, pieces flying outward in multiple directions, some shards still attached while others are airborne, debris and dust surrounding the destruction - captured in that split-second of violent transformation where the subject is exploding into countless pieces while maintaining their identity in the fragments, with dramatic lighting catching reflections and refractions on the shards."
   },
   {
+    "name": "SHIBORI DYE PATTERN",
+    "category": [
+      "ART",
+      "TEXTILE",
+      "JAPANESE",
+      "PATTERN"
+    ],
+    "message": "Take a picture and transform the subject into a shibori-dyed fabric artwork. The subject should appear as if their likeness was created through traditional Japanese resist-dyeing techniques on indigo-dyed cloth \u2014 using bound, stitched, folded, and clamped resist patterns that create the subject's features through areas of dyed and undyed fabric.",
+    "options": [
+      {
+        "id": "001",
+        "text": "Kanoko shibori \u2014 bound dot resist patterns"
+      },
+      {
+        "id": "002",
+        "text": "Arashi shibori \u2014 diagonal pole-wrapped patterns"
+      },
+      {
+        "id": "003",
+        "text": "Itajime shibori \u2014 geometric folded and clamped"
+      },
+      {
+        "id": "004",
+        "text": "Kumo shibori \u2014 spiderweb-like pleated patterns"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "The fabric should show realistic textile texture with visible weave. The indigo should have natural variation from deep navy to pale blue. Show the characteristic organic imperfections of hand-dyed shibori."
+  },
+  {
     "name": "SHIP FIGUREHEAD",
     "category": [
       "WOOD CARVING",
@@ -33543,6 +33796,19 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "IDENTITY PRESERVATION (CRITICAL):\n\n• The figurehead must clearly resemble the subject\n• Preserve the subject's unique facial identity\n• Preserve distinctive facial structure\n• Preserve recognizable facial proportions\n• Preserve recognizable eye shape through carving\n• Preserve recognizable nose shape through carving\n• Preserve recognizable smile characteristics through carving\n• Preserve recognizable hairstyle characteristics through carving\n• Recognition must come from the figurehead itself\n• The final sculpture must simultaneously read as both the subject and an authentic ship figurehead\n\nFIGUREHEAD ENFORCEMENT:\n\n• The subject must be the figurehead itself\n• The figurehead must project outward from the bow of the ship\n• The sculpture must appear monumental and dramatic\n• The figurehead must appear handcrafted by master maritime artisans\n• The figurehead must feel physically integrated into the vessel\n• The figurehead must be the visual focal point of the image\n\nWOOD ENFORCEMENT:\n\n• The face must be carved directly into the wood\n• Hair must be carved into the same wooden structure\n• Clothing and decorative elements must be carved into the sculpture\n• Painted details must remain subordinate to the carving\n• The sculpture must feel substantial and physically carved\n• No realistic human materials may remain visible\n\nMARITIME ENFORCEMENT:\n\n• A sailing vessel must be present\n• The figurehead must be attached to the ship rather than standing independently\n• The nautical setting should reinforce authenticity\n• The vessel should appear historically appropriate\n• Oceanic atmosphere should enhance the maritime storytelling\n\nDISPLAY ENFORCEMENT:\n\n• The figurehead should appear physically present and three-dimensional\n• The sculpture should cast realistic shadows appropriate for carved wood\n• The figurehead should feel weathered by sea travel where appropriate\n• The maritime environment should reinforce the illusion of a genuine historic vessel\n\nFINAL ENFORCEMENT:\n\n• The image must immediately read as a ship figurehead\n• The image must not resemble a person in costume\n• The image must not resemble a statue standing on a deck\n• The image must not resemble a mannequin\n• The subject must remain recognizable while fully transformed into an authentic carved maritime figurehead."
+  },
+  {
+    "name": "SHIPIBO-CONIBO PATTERN",
+    "category": [
+      "ART",
+      "INDIGENOUS",
+      "PATTERN",
+      "SOUTH AMERICAN"
+    ],
+    "message": "Take a picture and transform the subject using Shipibo-Conibo geometric patterns from the Peruvian Amazon. The subject should be overlaid with or constructed from the characteristic intricate geometric line patterns (ken\u00e9) of Shipibo textile and ceramic art \u2014 precise angular mazes, nested rectangles, and flowing geometric forms in black lines on cream/white, said to represent cosmic energy maps.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "The patterns should be authentic to Shipibo-Conibo artistic traditions \u2014 precise, geometric, and flowing simultaneously. Use the traditional color palette of black/dark brown lines on natural cream background with occasional red-brown accents. The patterns should follow the subject's contours."
   },
   {
     "name": "SHOPPING LIST",
@@ -33860,7 +34126,7 @@
     "message": "Take a picture and transform the image into a composition made entirely from smoke and vapor.\n\nCRITICAL OUTPUT RULES:\n• No solid edges\n• Semi-transparent forms\n• Shapes defined by density of smoke\n\nCORE CONCEPT:\n• Form emerges from vapor\n\nFINAL RESULT:\nAn image formed entirely from swirling smoke with soft, ethereal structure.",
     "options": [],
     "randomizeOptions": false,
-    "additionalInstructions": "FINAL RESULT:\nA glowing composition where the subject is formed entirely from light streaks."
+    "additionalInstructions": "FINAL RESULT:\nA glowing composition where the subject is formed entirely from light streaks of smoke."
   },
   {
     "name": "SMURFED!",
@@ -34035,6 +34301,19 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "FINAL RESULT:\nA fully transformed Sonic the Hedgehog world where the entire image becomes part of a fast-paced, vibrant environment inspired by iconic Sonic landscapes. All objects are converted into Sonic-style elements, and any people or animals are transformed into expressive, dynamic characters. If no characters are present, none are added. The result should feel like a scene from a modern Sonic game, with speed-driven design, bright colors, and cohesive animated detail."
+  },
+  {
+    "name": "SONO-LUMINESCENCE",
+    "category": [
+      "ART",
+      "SCIENCE",
+      "LIGHT",
+      "ABSTRACT"
+    ],
+    "message": "Take a picture and transform the subject into a sonoluminescence visualization \u2014 the phenomenon where sound waves create tiny bubbles that emit light when they collapse. The subject should appear as if formed from thousands of tiny collapsing bubbles each emitting a brief flash of blue-white light in dark liquid, the collective flashes forming the subject's features in a dark aqueous environment.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "Each light point should be tiny and intense \u2014 blue-white like the actual phenomenon. The surrounding liquid should be dark with subtle caustic patterns. The overall effect should be like a pointillist portrait made of microscopic light flashes in water."
   },
   {
     "name": "SOUL-VANA",
@@ -34217,6 +34496,19 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "SPELEOTHEM FORMATION",
+    "category": [
+      "ART",
+      "NATURE",
+      "GEOLOGICAL",
+      "UNDERGROUND"
+    ],
+    "message": "Take a picture and transform the subject into a cave speleothem formation. The subject should appear as if naturally formed completely from mineral deposits in a cave \u2014 stalactites, stalagmites, flowstone, cave bacon, soda straws, and helictites that have grown over millennia to coincidentally form the subject's likeness in calcite and other cave minerals.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "The mineral formations should be geologically plausible with realistic growth patterns, banding from seasonal deposition, and the characteristic translucent quality of clean calcite. Include cave lighting (warm spotlights) and the dark cave environment."
   },
   {
     "name": "SPIELBERG FILM",
@@ -36397,6 +36689,19 @@
     "additionalInstructions": ""
   },
   {
+    "name": "TAPA CLOTH DESIGN",
+    "category": [
+      "ART",
+      "PACIFIC ISLAND",
+      "TEXTILE",
+      "TRADITIONAL"
+    ],
+    "message": "Take a picture and transform the subject into a Pacific Island tapa cloth (bark cloth) design. The subject should be rendered using the geometric patterns and natural dyes of traditional tapa \u2014 bold black and brown geometric motifs (triangles, rectangles, circles, and lines) stamped and painted on the fibrous tan surface of beaten bark cloth.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "The bark cloth texture should be visible \u2014 slightly rough and fibrous. Use only traditional tapa colors: natural tan base with black, brown, and rust-red pigments. The geometric patterns should be bold and graphic while suggesting the subject's features."
+  },
+  {
     "name": "TAPESTRY",
     "category": [
       "ART",
@@ -36620,10 +36925,27 @@
       "DECORATIVE",
       "ARCHITECTURAL"
     ],
-    "message": "Take a picture and transform the image into Terrazzo art. Preserve subject identity. Render with the composite material aesthetic of marble, quartz, granite, and glass chips set in polished cement or resin. Emphasize the speckled, confetti-like pattern of colorful stone fragments in a smooth, polished surface with a contemporary design sensibility.",
-    "options": [],
-    "randomizeOptions": false,
-    "additionalInstructions": ""
+    "message": "Take a picture and transform the image into Terrazzo art. Preserve subject identity. Render with the composite material aesthetic of marble, quartz, granite, and glass chips set in polished cement or resin. The aggregate chips should vary in size and color to create tonal variations that form the subject's likeness when viewed from above. Emphasize the speckled, confetti-like pattern of colorful stone fragments in a smooth, polished surface with a contemporary design sensibility.",
+    "options": [
+      {
+        "id": "001",
+        "text": "Classic Venetian \u2014 white marble chips in gray cement"
+      },
+      {
+        "id": "002",
+        "text": "Modern bold \u2014 large colorful chips in white epoxy"
+      },
+      {
+        "id": "003",
+        "text": "Palladian \u2014 large irregular marble slabs with small fill"
+      },
+      {
+        "id": "004",
+        "text": "Rustic \u2014 earth-toned stone chips in warm cement"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "The final image should appear polished to a high sheen with the characteristic smooth finish of terrazzo. Individual aggregate pieces should be clearly visible with their natural stone patterns and colors."
   },
   {
     "name": "TESSELLATION WORLD",
@@ -40270,6 +40592,19 @@
     "additionalInstructions": ""
   },
   {
+    "name": "VENETIAN GLASS MURRINE",
+    "category": [
+      "ART",
+      "GLASS",
+      "ITALIAN",
+      "COLORFUL"
+    ],
+    "message": "Take a picture and transform the subject into a Venetian millefiori/murrine glass artwork. The subject should appear as if composed entirely of cross-sections of colorful glass canes (murrine) \u2014 tiny circular and star-shaped glass slices in vibrant colors fused together to form a mosaic that creates the subject's likeness when viewed from a distance.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "Each murrine slice should be individually visible with its own internal pattern (flowers, stars, concentric circles). The glass should appear translucent with realistic light passing through the colored sections."
+  },
+  {
   "name": "VENETIAN MURANO GLASS",
   "category": [
     "ART STYLE",
@@ -40804,6 +41139,19 @@
     "additionalInstructions": ""
   },
   {
+    "name": "VINTAGE SEED PACKET",
+    "category": [
+      "ART",
+      "VINTAGE",
+      "BOTANICAL",
+      "ADVERTISING"
+    ],
+    "message": "Take a picture and transform the subject into a vintage seed packet illustration from the early 1900s. The subject should be reimagined as a flowering plant variety depicted on a colorful lithographed seed packet \u2014 with the characteristic idealized botanical illustration, bold typography, company branding, planting instructions, and the vibrant chromolithograph printing style of antique seed catalogs.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "Include period-appropriate typography, a seed company name and logo, price (in cents), planting zone information, and the characteristic border designs of early 20th-century seed packets. The illustration should be idealized and more beautiful than reality, as was the convention."
+  },
+  {
     "name": "VIRTUOSO",
     "category": [
       "HUMOR",
@@ -40840,6 +41188,19 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "VOLCANIC OBSIDIAN FRACTURE",
+    "category": [
+      "ART",
+      "NATURE",
+      "GEOLOGICAL",
+      "DARK"
+    ],
+    "message": "Take a picture and transform the subject into a volcanic obsidian fracture surface. The subject's features should be revealed in the conchoidal fracture patterns of broken obsidian glass \u2014 smooth curved surfaces with razor-sharp edges, showing the characteristic glassy luster and deep black color with occasional rainbow sheen (fire obsidian) or snowflake cristobalite inclusions.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "The obsidian should have realistic volcanic glass properties \u2014 extreme glossiness, conchoidal fracture curves, and the way light interacts with the glass-like surface. The subject should emerge from the fracture geometry."
   },
   {
     "name": "VORONOI STRUCTURE",
@@ -40903,7 +41264,7 @@
       "AESTHETIC",
       "MINIMALIST"
     ],
-    "message": "Take a picture and transform the image into a visual embodiment of the Japanese wabi-sabi aesthetic — the philosophy of finding beauty in imperfection, impermanence, and incompleteness. Preserve subject identity. Apply a muted, earthy color palette: weathered browns, soft moss greens, faded indigos, warm stone grays, and aged cream whites. All surfaces should show signs of natural aging, wear, and patina — cracked textures, worn edges, faded areas, and gentle decay. The composition should embrace asymmetry, roughness, and simplicity. Remove anything that feels polished, perfect, or artificial. Lighting should be soft, natural, and contemplative — like late afternoon light filtering through a paper screen. The mood should evoke quiet acceptance of transience and the profound beauty of things that are modest, humble, and authentically weathered by time. Matte, textured finish with a handmade, organic quality.",
+    "message": "Take a picture and transform the image into a visual embodiment of the Japanese wabi-sabi aesthetic — the philosophy of finding beauty in imperfection, impermanence, and incompleteness. Preserve subject identity. Apply a muted, earthy color palette: weathered browns, soft moss greens, faded indigos, warm stone grays, and aged cream whites. All surfaces should show signs of natural aging, wear, and patina — cracked textures, worn edges, faded areas, peeling paint revealing layers beneath, rust patina, worn wood grain, crumbling plaster, and gentle decay. The composition should embrace asymmetry, roughness, and simplicity. Remove anything that feels polished, perfect, or artificial. Lighting should be soft, natural, and contemplative — like late afternoon light filtering through a paper screen. The mood should evoke quiet acceptance of transience and the profound beauty of things that are modest, humble, and authentically weathered by time. Matte, textured finish with a handmade, organic quality.",
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
@@ -41693,6 +42054,19 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "WIMMELBILDERBUCH ENFORCEMENT (CRITICAL):\n\n• The subject must NOT occupy the center of the composition unless random placement naturally results in that location.\n• The subject must NOT be treated as the primary focal point.\n• The subject must be positioned randomly within the populated scene.\n• The subject must appear at the same visual scale as nearby people.\n• The subject must blend naturally into the crowd.\n\nCROWD ENFORCEMENT:\n\n• Hundreds of characters should populate the scene.\n• The area surrounding the subject must be just as crowded as the rest of the image.\n• Characters should overlap naturally.\n• Multiple visual stories should occur simultaneously.\n• The image should reward repeated viewing.\n\nANTI-HERO COMPOSITION ENFORCEMENT:\n\n• Do not center the subject.\n• Do not enlarge the subject.\n• Do not spotlight the subject.\n• Do not create visual emphasis around the subject.\n• Do not simplify the area surrounding the subject.\n• Do not call attention to the subject.\n• The subject should initially disappear into the visual complexity.\n\nFINAL ENFORCEMENT:\n\n• The viewer should need to actively search for the subject.\n• The subject should only become obvious after careful inspection.\n• The image should feel like a true hidden-picture book illustration.\n• The scene should be overwhelmingly detailed, busy, crowded, and visually rich."
+  },
+  {
+    "name": "WIRE EDM SPARK EROSION",
+    "category": [
+      "ART",
+      "INDUSTRIAL",
+      "METALWORK",
+      "TECHNICAL"
+    ],
+    "message": "Take a picture and transform the subject into a wire EDM (Electrical Discharge Machining) cut metal piece.\n\nThe subject's profile should appear as if precision-cut from a thick block of steel, titanium, aluminum, brass, or tool steel using industrial wire EDM machining.\n\nTRANSFORMATION RULES (NON-NEGOTIABLE):\n• The subject must become the physical shape of a precision-machined metal component.\n• The subject's recognizable silhouette must be converted into the machined outline of the finished part.\n• The final object must appear to be a completed manufactured metal component.\n• The subject should not appear as a person.\n• The subject should not appear as a sculpture.\n• The subject should not appear as a photograph printed on metal.\n• The subject should appear to have been physically cut from a solid block of metal.\n\nWIRE EDM MACHINING RULES:\n• Show authentic wire EDM surface finish.\n• Show realistic spark erosion texture.\n• Show fine discharge crater patterns.\n• Show characteristic EDM matte finish.\n• Show subtle cut-wall taper where appropriate.\n• Show realistic machined edges.\n• Show precision industrial tolerances.\n• Show freshly machined metallic surfaces.\n• Show authentic manufacturing realism.\n• Show industrial-grade workmanship.\n\nPART PRESENTATION RULES (CRITICAL):\n• The final image must focus exclusively on the finished metal part.\n• The EDM machine itself must NOT be visible.\n• The wire EDM machine must NOT appear in the background.\n• No machine tools may appear.\n• No cutting wire may appear.\n• No workholding fixtures may appear.\n• No machine table may appear.\n• No industrial shop environment may appear.\n• No machining operation may appear.\n• No manufacturing equipment may appear.\n• The image should resemble a product photograph of the completed component.\n• The finished part must be the sole subject of the image.\n\nCOMPOSITION RULES:\n• The machined component should dominate the frame.\n• The part should occupy most of the image.\n• Use clean product-photography composition.\n• Use neutral presentation.\n• Use professional industrial catalog photography.\n• Background should be simple and unobtrusive.\n• Emphasis should remain entirely on the finished part.\n\nMATERIAL RULES:\n• Realistic metal reflections.\n• Realistic metallic luster.\n• Machined surface appearance.\n• Precision-manufactured finish.\n• Industrial material realism.\n• Crisp edge definition.\n• Authentic engineering component appearance.\n\nIDENTITY PRESERVATION RULES:\n• Preserve the recognizable outline of the subject.\n• Preserve major silhouette characteristics.\n• Preserve recognizable profile geometry.\n• Recognition should come from the machined shape itself.\n• The subject's identity should emerge from the component's outline.\n\nSTYLE RULES:\n• Industrial product photography.\n• Precision engineering aesthetics.\n• Manufacturing catalog quality.\n• Technical realism.\n• Professional machining showcase.\n• Hyperrealistic rendering.\n• Engineering-focused presentation.\n\nANTI-CHEAT:\n• Do not show a wire EDM machine.\n• Do not show a manufacturing shop.\n• Do not show sparks.\n• Do not show active cutting.\n• Do not show machine operators.\n• Do not show tooling.\n• Do not show fixturing.\n• Do not show the workpiece still mounted in the machine.\n• Do not place the component inside a machine.\n• Do not depict the machining process.\n• Only show the completed finished metal part.\n\nFINAL RESULT:\nThe final image should resemble a professional industrial product photograph of a completed wire EDM-machined metal component whose shape is derived from the subject. The part should exhibit authentic EDM spark erosion texture, realistic machined surfaces, precision engineering quality, and manufacturing realism while appearing completely separated from any machine, tooling, workshop, or machining process.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "PART-ONLY ENFORCEMENT (CRITICAL):\n\n• Show ONLY the finished machined component.\n• The EDM machine must never appear.\n• The machining process must never appear.\n• The image should resemble a catalog photograph of a finished part.\n• The component must dominate the composition.\n\nWIRE EDM ENFORCEMENT:\n\n• Preserve authentic EDM surface finish.\n• Preserve spark erosion crater texture.\n• Preserve realistic cut-wall geometry.\n• Preserve industrial manufacturing realism.\n• Preserve precision-machined appearance.\n\nANTI-MACHINE ENFORCEMENT:\n\n• No wire EDM equipment.\n• No cutting wire.\n• No machine bed.\n• No fixturing.\n• No industrial workshop.\n• No machining operation.\n• No sparks.\n• No manufacturing environment.\n\nFINAL ENFORCEMENT:\n\n• The viewer should immediately perceive a completed precision-machined metal part.\n• The image should resemble industrial product photography.\n• The finished component must be the only subject shown.\n• The machine that created it must be completely absent from the final image."
   },
   {
   "name": "WITCHCRAFT SYMBOL",
