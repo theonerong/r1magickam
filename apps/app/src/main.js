@@ -2734,6 +2734,51 @@ async function submitMagicTransform() {
     }
 
     const magicPrompt = buildCombinedLayerPrompt(galleryLayerPresets, galleryLayerManualSelections);
+
+    // GALLERY CREDIT GAME — earn 1 credit per unique imported preset used in this layer
+    try {
+      const imported = presetImporter.getImportedPresets();
+      if (imported.length > 0) {
+        const importedNames = new Set(imported.map(p => p.name));
+        const presetsUsed = galleryLayerPresets.filter(p => p.name && importedNames.has(p.name));
+        let totalNewCredits = 0;
+        for (const p of presetsUsed) {
+          if (earnCredit(p.name)) totalNewCredits++;
+        }
+        if (totalNewCredits > 0) {
+          playTaDaSound();
+          const creditsEl = document.getElementById('import-credits-display');
+          if (creditsEl) creditsEl.textContent = `Credits: ${getCredits()}`;
+          setTimeout(() => {
+            const newTotal = getCredits();
+            showGalleryCreditFlash(`🪙 ${totalNewCredits > 1 ? totalNewCredits + ' Credits' : 'Credit'} Earned!\n(${newTotal} total)`);
+          }, 300);
+        }
+      }
+    } catch (e) { /* non-critical */ }
+
+    // OFFLINE: queue it instead of sending — same queue the camera screen's Sync button uses
+    if (!isOnline) {
+      const queueItem = {
+        id: Date.now().toString() + '-gal-layer',
+        imageBase64: resizedImageBase64,
+        preset: {
+          name: 'Layer: ' + galleryLayerPresets.map(p => p.name).join(' + '),
+          message: magicPrompt,
+          options: [],
+          randomizeOptions: false,
+          additionalInstructions: ''
+        },
+        isCombined: false,
+        timestamp: Date.now()
+      };
+      photoQueue.push(queueItem);
+      saveQueue();
+      updateQueueDisplay();
+      alert('You\'re offline — this will send automatically once you\'re back online (or tap Sync on the camera screen).');
+      return;
+    }
+
     if (typeof PluginMessageHandler !== 'undefined') {
       const layerMagicPayload = { pluginId: 'com.r1.pixelart', imageBase64: resizedImageBase64 };
       if (magicPrompt && magicPrompt.trim()) layerMagicPayload.message = magicPrompt;
@@ -2765,6 +2810,49 @@ async function submitMagicTransform() {
           }
         }
       }
+    }
+
+    // GALLERY CREDIT GAME — earn 1 credit per unique imported preset used in this multi-selection
+    try {
+      const imported = presetImporter.getImportedPresets();
+      if (imported.length > 0) {
+        const importedNames = new Set(imported.map(p => p.name));
+        const presetsUsed = galleryMultiPresets.filter(p => p.name && importedNames.has(p.name));
+        let totalNewCredits = 0;
+        for (const p of presetsUsed) {
+          if (earnCredit(p.name)) totalNewCredits++;
+        }
+        if (totalNewCredits > 0) {
+          playTaDaSound();
+          const creditsEl = document.getElementById('import-credits-display');
+          if (creditsEl) creditsEl.textContent = `Credits: ${getCredits()}`;
+          setTimeout(() => {
+            const newTotal = getCredits();
+            showGalleryCreditFlash(`🪙 ${totalNewCredits > 1 ? totalNewCredits + ' Credits' : 'Credit'} Earned!\n(${newTotal} total)`);
+          }, 300);
+        }
+      }
+    } catch (e) { /* non-critical */ }
+
+    // OFFLINE: queue every preset instead of sending — same queue the camera screen's Sync button uses
+    if (!isOnline) {
+      const presetsToApply = [...galleryMultiPresets];
+      for (let i = 0; i < presetsToApply.length; i++) {
+        const preset = presetsToApply[i];
+        const manualSelection = galleryMultiManualSelections[preset.name] ?? null;
+        const queueItem = {
+          id: Date.now().toString() + '-gal-mp' + i,
+          imageBase64: resizedImageBase64,
+          preset: preset,
+          manualSelection: manualSelection,
+          timestamp: Date.now()
+        };
+        photoQueue.push(queueItem);
+      }
+      saveQueue();
+      updateQueueDisplay();
+      alert(`You're offline — ${presetsToApply.length} preset${presetsToApply.length > 1 ? 's' : ''} queued. They'll send automatically once you're back online (or tap Sync on the camera screen).`);
+      return;
     }
 
     const overlay = document.createElement('div');
@@ -2857,14 +2945,51 @@ async function submitMagicTransform() {
   
   const item = galleryImages[currentViewerImageIndex];
   const resizedImageBase64 = await resizeImageForSubmission(item.imageBase64);
-  
+  const finalPreset = matchedPreset || {name: presetName, message: prompt, options: [], randomizeOptions: false, additionalInstructions: ''};
+
+  // GALLERY CREDIT GAME — earn 1 credit if this is the first time using this imported preset
+  // (moved here so it fires the same way whether you're online or offline)
+  try {
+    const imported = presetImporter.getImportedPresets();
+    const usedName = matchedPreset ? matchedPreset.name : presetName;
+    const isImported = imported.some(p => p.name === usedName);
+    if (isImported && usedName) {
+      const credited = earnCredit(usedName);
+      if (credited) {
+        playTaDaSound();
+        const creditsEl = document.getElementById('import-credits-display');
+        if (creditsEl) creditsEl.textContent = `Credits: ${getCredits()}`;
+        setTimeout(() => {
+          const newTotal = getCredits();
+          showGalleryCreditFlash(`🪙 Credit Earned!\n(${newTotal} total)`);
+        }, 300);
+      }
+    }
+  } catch (e) { /* non-critical */ }
+
+  // OFFLINE: queue it instead of sending — same queue the camera screen's Sync button uses
+  if (!isOnline) {
+    const queueItem = {
+      id: Date.now().toString() + '-gal-single',
+      imageBase64: resizedImageBase64,
+      preset: finalPreset,
+      manualSelection: manualSelection,
+      timestamp: Date.now()
+    };
+    photoQueue.push(queueItem);
+    saveQueue();
+    updateQueueDisplay();
+    alert('You\'re offline — this will send automatically once you\'re back online (or tap Sync on the camera screen).');
+    return;
+  }
+
   if (typeof PluginMessageHandler !== 'undefined') {
     // If gallery Layer mode is active, build the combined layer prompt instead
     let magicPrompt;
     if (isGalleryLayerActive && galleryLayerPresets.length > 0) {
       magicPrompt = buildCombinedLayerPrompt(galleryLayerPresets, galleryLayerManualSelections);
     } else {
-      magicPrompt = getFinalPrompt(matchedPreset || {name: presetName, message: prompt, options: [], randomizeOptions: false, additionalInstructions: ''}, manualSelection);
+      magicPrompt = getFinalPrompt(finalPreset, manualSelection);
     }
     const magicPayload = {
       pluginId: 'com.r1.pixelart',
@@ -2874,26 +2999,6 @@ async function submitMagicTransform() {
       magicPayload.message = magicPrompt;
     }
     PluginMessageHandler.postMessage(JSON.stringify(magicPayload));
-
-    // GALLERY CREDIT GAME — earn 1 credit if this is the first time using this imported preset
-
-    try {
-      const imported = presetImporter.getImportedPresets();
-      const usedName = matchedPreset ? matchedPreset.name : presetName;
-      const isImported = imported.some(p => p.name === usedName);
-      if (isImported && usedName) {
-        const credited = earnCredit(usedName);
-        if (credited) {
-          playTaDaSound();
-          const creditsEl = document.getElementById('import-credits-display');
-          if (creditsEl) creditsEl.textContent = `Credits: ${getCredits()}`;
-          setTimeout(() => {
-            const newTotal = getCredits();
-            showGalleryCreditFlash(`🪙 Credit Earned!\n(${newTotal} total)`);
-          }, 300);
-        }
-      }
-    } catch (e) { /* non-critical */ }
 
     // Combined image stays active until user closes the viewer
 
