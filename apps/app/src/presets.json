@@ -567,6 +567,33 @@
     "additionalInstructions": ""
   },
   {
+    "name": "ABORIGINAL BARK PAINTING",
+    "category": [
+      "AUSTRALIAN",
+      "INDIGENOUS",
+      "TRADITIONAL",
+      "PAINTING",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into an Australian Aboriginal bark painting. Aboriginal bark painting is a traditional art form from Arnhem Land in northern Australia, painted on flattened eucalyptus bark using natural ochre pigments. The style features cross-hatching (rarrk), X-ray style depicting internal anatomy, and symbolic representations of Dreamtime stories.",
+    "options": [
+      {
+        "id": "001",
+        "text": "X-ray style showing internal skeletal and organ structures of the subject in traditional ochre colors"
+      },
+      {
+        "id": "002",
+        "text": "Cross-hatching (rarrk) style with fine parallel lines creating tonal variation in ochre pigments"
+      },
+      {
+        "id": "003",
+        "text": "Figurative Dreamtime narrative style with symbolic representations and journey lines"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Natural ochre pigments (red, yellow, white, black)\n• Eucalyptus bark surface texture\n• Traditional cross-hatching patterns\n• Symbolic Aboriginal motifs\n• Flat composition without Western perspective"
+  },
+  {
     "name": "ABSTRACT EXPRESSIONISM",
     "category": [
       "ART",
@@ -813,6 +840,33 @@
     ],
     "randomizeOptions": true,
     "additionalInstructions": "IDENTITY PRESERVATION:\n• Preserve recognizable identity\n• Subject becomes part of the Addams Family world\n• Subject remains clearly recognizable\n\nSTYLE REQUIREMENTS:\n• Authentic Addams Family atmosphere\n• Gothic elegance\n• Macabre humor\n• Victorian influences\n• Dark formal clothing\n• Antique furnishings\n• Candlelit interiors\n• Ornate architecture\n• Deadpan expressions\n• Playful gothic tone\n\nOPTION 001 REQUIREMENTS:\n• Formal family portrait\n• Traditional posed photograph\n\nOPTION 002 REQUIREMENTS:\n• Family social gathering\n• Warm family interaction\n\nOPTION 003 REQUIREMENTS:\n• Festive gothic celebration\n• Elegant macabre decorations\n\nOPTION 004 REQUIREMENTS:\n• Formal mansion dinner scene\n• Grand dining-room presentation\n\nOPTION 005 REQUIREMENTS:\n• Cemetery outing\n• Cheerful gothic recreation\n\nOPTION 006 REQUIREMENTS:\n• Family holiday-card composition\n• Formal seasonal portrait\n\nOPTION 007 REQUIREMENTS:\n• Historic painted-family-portrait appearance\n• Museum-quality portraiture\n\nOPTION 008 REQUIREMENTS:\n• Extended-family gathering\n• Multi-generational celebration\n\nFINAL RESULT:\nThe final image must resemble an authentic Addams Family scene featuring the subject naturally integrated into the family."
+  },
+  {
+    "name": "ADIRE TEXTILE",
+    "category": [
+      "AFRICAN",
+      "TEXTILE",
+      "TRADITIONAL",
+      "NIGERIAN",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into a Yoruba Adire textile design. Adire is a traditional Nigerian resist-dye technique where Yoruba women create intricate patterns on cloth using indigo dye and various resist methods including starch paste (adire eleko) and tied/stitched fabric (adire oniko). The image should feature deep indigo blue and white patterns with geometric and symbolic Yoruba motifs.",
+    "options": [
+      {
+        "id": "001",
+        "text": "Adire Eleko style with hand-painted cassava starch resist patterns creating intricate white designs on deep indigo cloth"
+      },
+      {
+        "id": "002",
+        "text": "Adire Oniko style with tied and stitched resist patterns creating organic circular and linear designs in indigo"
+      },
+      {
+        "id": "003",
+        "text": "Adire Alabere style with machine-stitched resist patterns creating fine detailed geometric designs"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Deep indigo blue and white color palette\n• Traditional Yoruba symbolic motifs\n• Hand-crafted resist-dye texture\n• Cloth/textile surface appearance"
   },
   {
     "name": "ADULT SWIM",
@@ -1153,6 +1207,20 @@
     "additionalInstructions": ""
   },
   {
+    "name": "ALBUMEN PRINT",
+    "category": [
+      "PHOTOGRAPHY",
+      "HISTORICAL",
+      "VICTORIAN",
+      "PROCESS",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into a Victorian-era albumen print photograph. Albumen printing (1850s-1890s) was the dominant photographic printing process of the 19th century, using egg white to bind photographic chemicals to paper. The image should feature the characteristic warm sepia-brown tones, glossy surface, fine detail, and the yellowing and fading patterns of aged albumen prints.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Warm sepia-brown tonal range\n• Glossy albumen surface\n• Fine photographic detail\n• Characteristic yellowing and fading\n• Victorian-era portrait aesthetic"
+  },
+  {
     "name": "ALEXANDER THE PRETTY GOOD",
     "category": [
       "OPTIONS",
@@ -1367,6 +1435,20 @@
     "additionalInstructions": ""
   },
   {
+    "name": "AMATE BARK PAINTING",
+    "category": [
+      "MEXICAN",
+      "FOLK ART",
+      "PAINTING",
+      "INDIGENOUS",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into a Mexican Amate bark painting. Amate painting is a traditional Nahua folk art from Guerrero, Mexico, where brightly colored scenes of village life, birds, flowers, and animals are painted on handmade amate (fig bark) paper. The image should feature vibrant acrylic colors on the characteristic rough brown bark paper surface.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Rough brown bark paper surface\n• Vibrant acrylic paint colors\n• Folk art style with bold outlines\n• Floral and nature motifs\n• Nahua artistic tradition"
+  },
+  {
   "name": "AMBER INCLUSION",
   "category": [
     "PALEONTOLOGY",
@@ -1415,6 +1497,33 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "AMERICAN SCENE PAINTING",
+    "category": [
+      "AMERICAN",
+      "REALIST",
+      "1930S",
+      "PAINTING",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into an American Scene painting. American Scene painting (1920s-1950s) depicted everyday American life, landscapes, and small-town scenes in a realistic, accessible style. The movement includes both Regionalists (Grant Wood, Thomas Hart Benton) and Social Realists, featuring clear compositions, strong forms, and distinctly American subject matter.",
+    "options": [
+      {
+        "id": "001",
+        "text": "Regionalist style with rolling Midwestern landscapes, farming scenes, and idealized rural America"
+      },
+      {
+        "id": "002",
+        "text": "Social Realist style depicting urban working-class life, labor, and social commentary"
+      },
+      {
+        "id": "003",
+        "text": "Small-town America style with Main Street scenes, local characters, and community life"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Clear realistic composition\n• Strong sculptural forms\n• Distinctly American subject matter\n• Accessible narrative style\n• 1930s-40s American aesthetic"
   },
   {
     "name": "AMBROTYPE",
@@ -1480,6 +1589,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "ABSOLUTE PROHIBITIONS:\n• NO more than three frames\n• NO modern digital film simulations\n• NO clean or perfect edges\n• NO single-photo presentation\n\nFINAL VALIDATION RULE:\nIf it looks like one photo with a film texture on top, IT IS WRONG.\n\nThe final image must look like a real, physical strip of exposed and developed photographic film containing up to three frames.\n\nFILM MATERIAL REQUIREMENTS:"
+  },
+  {
+    "name": "ANALYTICAL CUBISM",
+    "category": [
+      "FRENCH",
+      "CUBISM",
+      "ABSTRACT",
+      "MODERNIST",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into an Analytical Cubist painting. Analytical Cubism (1909-1912), developed by Picasso and Braque, deconstructs subjects into fragmented geometric facets viewed simultaneously from multiple angles. The image should feature the characteristic monochromatic palette (browns, grays, ochres), shattered planes, and the intellectual dissection of form.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Fragmented geometric facets\n• Multiple simultaneous viewpoints\n• Monochromatic palette (browns, grays, ochres)\n• Shattered intersecting planes\n• Intellectual deconstruction of form"
   },
   {
     "name": "ANCHORMAN",
@@ -2361,6 +2484,19 @@
     "additionalInstructions": "ABSOLUTE PROHIBITIONS:\n• NO color\n• NO painterly effects\n• NO modern HDR\n• NO soft-focus aesthetics\n\nFINAL RESULT:\nThe image must look like a meticulously exposed and printed Ansel Adams photograph — timeless, monumental, and technically precise."
   },
   {
+    "name": "ANTHOTYPE",
+    "category": [
+      "PHOTOGRAPHY",
+      "BOTANICAL",
+      "ALTERNATIVE PROCESS",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into an anthotype print. Anthotype is a photographic process using photosensitive plant pigments (from flowers, berries, or leaves) as the emulsion, creating images through extended sun exposure that fades the plant dye. The image should feature the characteristic soft, ethereal quality with colors derived from natural plant pigments (purples, greens, pinks, yellows).",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Natural plant pigment colors\n• Soft ethereal faded quality\n• Sun-bleached exposure effect\n• Botanical color palette\n• Delicate organic appearance"
+  },
+  {
     "name": "ANTIDESIGN",
     "category": [
       "GRAPHIC",
@@ -2384,6 +2520,19 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "AQUATINT",
+    "category": [
+      "PRINTMAKING",
+      "HISTORICAL",
+      "ART",
+      "TONAL"
+    ],
+    "message": "Take a picture and transform it into an aquatint print. Aquatint is an intaglio printmaking process that creates tonal effects by etching areas of a metal plate with acid through a porous ground of resin particles. The result should resemble a watercolor wash rendered in print form, with granular tonal areas and crisp etched lines.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Granular tonal areas characteristic of aquatint\n• Watercolor-like wash effects in print form\n• Visible plate tone and acid-bitten texture\n• Limited color palette typical of printmaking"
   },
   {
     "name": "ARCHEOLOGICAL PHOTO",
@@ -2958,6 +3107,20 @@
     "additionalInstructions": ""
   },
   {
+    "name": "BARGELLO NEEDLEWORK",
+    "category": [
+      "ITALIAN",
+      "TEXTILE",
+      "EMBROIDERY",
+      "GEOMETRIC",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into a Bargello (Florentine stitch) needlework design. Bargello is a type of needlepoint embroidery featuring dramatic zigzag, flame, or wave patterns created by straight vertical stitches of varying lengths in graduated color sequences. The style creates striking optical effects through rhythmic color progressions.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Zigzag flame or wave patterns\n• Straight vertical stitches\n• Graduated color sequences\n• Striking optical rhythm effects\n• Canvas needlework texture"
+  },
+  {
     "name": "BARN BILLBOARD",
     "category": [
       "HUMOR",
@@ -3138,6 +3301,40 @@
     "additionalInstructions": "The transformed Beanie Baby must clearly resemble the subject while appearing to be an authentic TY plush toy designed specifically around the subject's identity."
   },
   {
+    "name": "BEHIND BARS",
+    "category": [
+      "OPTIONS",
+      "DRAMA",
+      "REALISM",
+      "ENVIRONMENT"
+    ],
+    "message": "Take a picture and place the subject behind prison bars in a realistic jail or prison setting wearing appropriate prison attire.\nPLACE THE SUBJECT:\n• Subject positioned behind bars or secured barrier\n• Wearing appropriate prison garb matching the setting\n• Natural posture — standing, sitting, or leaning\n• Expression neutral, contemplative, or resigned\n• No exaggerated fear or aggression\n• Subject's facial features preserved and recognizable\n\nAUTHENTICITY RULES:\n• Realistic materials (metal bars, concrete walls)\n• Institutional lighting (cool, flat, or fluorescent)\n• Accurate spatial depth and shadows\n• Prison clothing fits naturally on subject's body",
+    "options": [
+      {
+        "id": "001",
+        "text": "Classic jail cell with iron bars - orange jumpsuit"
+      },
+      {
+        "id": "002",
+        "text": "Modern prison cell - beige or gray prison uniform"
+      },
+      {
+        "id": "003",
+        "text": "Police holding cell - casual clothes or orange jumpsuit"
+      },
+      {
+        "id": "004",
+        "text": "Old stone prison - striped black and white prisoner outfit"
+      },
+      {
+        "id": "005",
+        "text": "Minimalist detention room - plain prison scrubs"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "EXCLUSIONS:\n• No violence or restraints\n• No caricature or parody tone\n\nCOMPOSITION & FRAME:\n• Bars clearly visible in foreground\n• Subject fully visible behind barrier\n• FULL image visible with all four corners present\n• No dramatic cropping or cinematic angles\n\nSTYLE:\n• Photorealistic\n• Serious, grounded tone\n• Looks like a still from a documentary or crime drama\n\nFINAL RESULT:\nThe image should depict the subject realistically placed behind prison bars wearing appropriate prison attire in a believable correctional environment, maintaining realism and respectful tone."
+  },
+  {
     "name": "BEN-DAY DOT COMIC",
     "category": [
       "ART",
@@ -3177,38 +3374,18 @@
     "additionalInstructions": ""
   },
   {
-    "name": "BEHIND BARS",
+    "name": "BENGAL SCHOOL",
     "category": [
-      "OPTIONS",
-      "DRAMA",
-      "REALISM",
-      "ENVIRONMENT"
+      "INDIAN",
+      "MODERNIST",
+      "NATIONALIST",
+      "PAINTING",
+      "ART"
     ],
-    "message": "Take a picture and place the subject behind prison bars in a realistic jail or prison setting wearing appropriate prison attire.\nPLACE THE SUBJECT:\n• Subject positioned behind bars or secured barrier\n• Wearing appropriate prison garb matching the setting\n• Natural posture — standing, sitting, or leaning\n• Expression neutral, contemplative, or resigned\n• No exaggerated fear or aggression\n• Subject's facial features preserved and recognizable\n\nAUTHENTICITY RULES:\n• Realistic materials (metal bars, concrete walls)\n• Institutional lighting (cool, flat, or fluorescent)\n• Accurate spatial depth and shadows\n• Prison clothing fits naturally on subject's body",
-    "options": [
-      {
-        "id": "001",
-        "text": "Classic jail cell with iron bars - orange jumpsuit"
-      },
-      {
-        "id": "002",
-        "text": "Modern prison cell - beige or gray prison uniform"
-      },
-      {
-        "id": "003",
-        "text": "Police holding cell - casual clothes or orange jumpsuit"
-      },
-      {
-        "id": "004",
-        "text": "Old stone prison - striped black and white prisoner outfit"
-      },
-      {
-        "id": "005",
-        "text": "Minimalist detention room - plain prison scrubs"
-      }
-    ],
-    "randomizeOptions": true,
-    "additionalInstructions": "EXCLUSIONS:\n• No violence or restraints\n• No caricature or parody tone\n\nCOMPOSITION & FRAME:\n• Bars clearly visible in foreground\n• Subject fully visible behind barrier\n• FULL image visible with all four corners present\n• No dramatic cropping or cinematic angles\n\nSTYLE:\n• Photorealistic\n• Serious, grounded tone\n• Looks like a still from a documentary or crime drama\n\nFINAL RESULT:\nThe image should depict the subject realistically placed behind prison bars wearing appropriate prison attire in a believable correctional environment, maintaining realism and respectful tone."
+    "message": "Take a picture and transform it into a Bengal School painting. The Bengal School of Art (early 20th century) was an Indian modernist movement led by Abanindranath Tagore that rejected Western academic realism in favor of a pan-Asian aesthetic. The style features soft wash techniques, misty atmospheric effects, spiritual subjects, and the influence of Japanese wash painting combined with Indian miniature traditions.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Soft watercolor wash technique\n• Misty atmospheric effects\n• Pan-Asian aesthetic sensibility\n• Spiritual and mythological subjects\n• Indian modernist nationalist aesthetic"
   },
   {
     "name": "BEVERAGE MASCOT",
@@ -3299,6 +3476,20 @@
     "message": "Take a picture and transform the subject into a BFDI-inspired object-show cartoon character.\n\nConvert the subject into a clean minimalist object-show character using flat vector-style artwork, thick black outlines, expressive cartoon facial features, and noodle-like limbs. The final image should resemble modern digital object-show animation with crisp outlines, simplified geometry, playful exaggerated expressions, and colorful cartoon energy.\n\nTRANSFORMATION RULES:\n• Transform the subject into a living object-show character or symbolic animated object\n• Preserve recognizable identity through silhouette, colors, accessories, hairstyle cues, clothing themes, facial proportions, and defining traits\n• Translate the subject fully into object-show anatomy and cartoon logic\n• The final image must appear digitally illustrated rather than photographed\n• The character should feel expressive, comedic, energetic, and animation-ready\n\nOBJECT-SHOW ANATOMY:\n• Simplify anatomy into floating object-show proportions\n• No realistic muscles, joints, skin texture, pores, or anatomy\n• Arms and legs must be simple black noodle-like lines\n• Limbs should be thin, flexible, and jointless\n• Hands and feet should be simple rounded black nubs or small oval shapes\n• Facial features should appear directly on the character surface\n• The body may resemble a stylized object, mascot, symbolic item, or abstract simplified form inspired by the original subject\n\nFACIAL FEATURES:\n• Eyes must be simple black ovals, circles, dots, or minimalist cartoon shapes\n• Mouths must be highly expressive using simple cartoon line shapes\n• Expressions should feel exaggerated, energetic, playful, comedic, dramatic, shocked, excited, angry, confused, or silly\n• Facial features should remain extremely simple and graphic\n• No realistic eyes\n• No realistic pupils\n• No realistic eyelashes\n• No realistic lips\n• No realistic teeth\n• No realistic facial rendering\n• No skin texture or human shading\n\nCOLOR AND RENDERING:\n• Use flat solid colors\n• Use minimal shading only\n• Optional soft simple gradients allowed\n• No realistic lighting\n• No painterly rendering\n• No textured brushwork\n• No photorealism\n• Maintain clean sticker-like readability\n• Maintain smooth vector-art appearance\n\nLINEWORK:\n• Use thick clean black outlines\n• Use crisp smooth vector curves\n• Maintain uniform digital line quality\n• Avoid sketchy or rough linework\n• Avoid hand-painted aesthetics\n\nBACKGROUND:\n• Use simple colorful cartoon environments\n• Use grassy fields, blue skies, abstract shapes, stage platforms, rolling hills, or minimalist animated scenery\n• Keep backgrounds simple and supportive of the object-show style\n• Maintain focus on the character\n\nSTYLE ENFORCEMENT:\n• Emphasize minimalist internet-cartoon aesthetics\n• Emphasize clean Flash-style or Adobe Animate-style vector artwork\n• Emphasize playful exaggerated cartoon animation energy\n• Maintain simplified proportions and highly readable graphic design\n• The final image must unmistakably resemble object-show animation artwork\n\nANTI-REALISM RULES:\n• No realistic anatomy\n• No realistic skin\n• No realistic hair strands\n• No realistic eyes\n• No realistic lighting\n• No realistic textures\n• No cinematic rendering\n• No painterly effects\n• No detailed environmental realism\n• No photographic surfaces\n• No 3D-render realism\n• No CGI realism\n• No semi-realistic rendering\n\nFINAL VALIDATION:\n• The final image must clearly resemble a professionally illustrated object-show cartoon\n• The artwork must appear clean, flat, colorful, and digitally vectorized\n• The image must emphasize thick outlines, expressive simple faces, noodle limbs, and playful cartoon logic\n• The transformation fails if the subject appears realistically human or photographic",
     "randomizeOptions": false,
     "additionalInstructions": "• Preserve recognizable identity through simplified cartoon symbolism\n• Convert the subject fully into object-show cartoon logic\n• Use clean vector-art aesthetics\n• Use flat colors with minimal shading\n• Use thick crisp black outlines\n• Use expressive minimalist facial features\n• Use noodle-like black limbs\n• Keep anatomy simple and exaggerated\n• Maintain playful animated energy\n• Avoid realism completely\n• Avoid realistic human anatomy\n• Avoid painterly rendering\n• Avoid textured surfaces\n• Avoid photorealism\n• Avoid realistic lighting\n• Avoid realistic skin, hair, or eyes\n• Avoid cinematic or semi-realistic rendering\n• The final image must resemble professional object-show animation artwork"
+  },
+  {
+    "name": "BHIL PAINTING",
+    "category": [
+      "INDIAN",
+      "TRIBAL",
+      "FOLK ART",
+      "DOT PATTERN",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into a Bhil tribal painting. Bhil painting is a traditional art form of the Bhil tribe from Madhya Pradesh, India, characterized by bold colorful figures and forms filled with intricate dot patterns. The distinctive style uses thousands of tiny colored dots to fill shapes, creating a vibrant, textured appearance against bright backgrounds.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Bold colorful figures\n• Intricate dot pattern fill\n• Thousands of tiny colored dots\n• Vibrant bright colors\n• Tribal folk art aesthetic"
   },
   {
     "name": "BIBLE VERSE",
@@ -3636,6 +3827,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "IMPORTANT:\nThe transformation should feel like a playful caricature of a fictional rural comedy character, not a judgment of real people.\n\nThe subject’s identity must remain recognizable beneath the exaggerated styling."
+  },
+  {
+    "name": "BINGATA",
+    "category": [
+      "OKINAWAN",
+      "TEXTILE",
+      "STENCIL",
+      "TRADITIONAL",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into an Okinawan Bingata textile design. Bingata is a traditional Okinawan (Ryukyuan) resist-dyed textile art using stencils and pigments to create vibrant, colorful patterns of tropical flowers, birds, fish, and water motifs. The style features bold colors, dynamic compositions, and the distinctive tropical aesthetic of the Ryukyu Kingdom.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Vibrant tropical colors\n• Stencil-dyed patterns\n• Tropical flowers, birds, and water motifs\n• Bold dynamic composition\n• Ryukyuan textile aesthetic"
   },
   {
     "name": "BIOLUMINESCENT",
@@ -4024,6 +4229,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "Transform the subject into an authentic Boglin puppet complete with rubber monster texture, animatronic eyes, creature-box packaging, practical-effects aesthetics, toy-store presentation, and classic collectible-monster charm."
+  },
+  {
+    "name": "BOGOLANFINI MUDCLOTH",
+    "category": [
+      "AFRICAN",
+      "TEXTILE",
+      "TRADITIONAL",
+      "MALIAN",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into a Malian Bogolanfini (mudcloth) design. Bogolanfini is a traditional Malian textile art where handwoven cotton cloth is painted with fermented mud to create bold geometric patterns in earth tones. Each symbol carries cultural meaning passed down through generations of Bambara women artists.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Earth-toned color palette (browns, blacks, creams)\n• Bold geometric symbolic patterns\n• Handwoven cotton cloth texture\n• Fermented mud paint appearance\n• Traditional Bambara symbolic motifs"
   },
   {
     "name": "BOKEH PHOTOGRAPHY",
@@ -5487,6 +5706,20 @@
     "additionalInstructions": "IMPORTANT:\n• Humor comes from specificity\n• Do not distort the subject unnaturally\n• Keep identity recognizable\n• Avoid meme-style graphics\n\nFINAL RESULT:\nThe image should convincingly look like an authentic CAPTCHA verification challenge featuring the subject divided into clickable squares with a hyper-specific observational instruction."
   },
   {
+    "name": "CARBON PRINT",
+    "category": [
+      "PHOTOGRAPHY",
+      "HISTORICAL",
+      "PROCESS",
+      "ARCHIVAL",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into a carbon print photograph. Carbon printing is a photographic process using pigmented gelatin tissue to create permanent, richly toned prints with extraordinary depth and three-dimensional relief quality. The image should feature the characteristic deep rich tones, subtle surface relief, and the permanent pigment quality that makes carbon prints among the most beautiful photographic objects.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Deep rich pigment tones\n• Subtle three-dimensional surface relief\n• Extraordinary tonal depth\n• Permanent pigment quality\n• Fine art photographic print aesthetic"
+  },
+  {
     "name": "CARDBOARDALITY",
     "category": [
       "SURREAL",
@@ -5719,6 +5952,20 @@
     ],
     "randomizeOptions": true,
     "additionalInstructions": "NOT ALLOWED:\n• Serious crimes or illegal acts\n• Violence or harm to others\n• Sexual situations or content\n• Realistic illegal acts\n• Harmful or dangerous behavior\n• Defamation or negative stereotypes\n• Anything beyond PG-rated humor\n• Mean-spirited comedy\n\nSTYLE:\n• Photorealistic\n• Feels like a still from real life\n• Humor through timing, not exaggeration\n• Relatable and human\n• Could be from a sitcom\n• Natural, not overly staged\n• Documentary comedy style\n\nFINAL RESULT:\nThe image should depict a single, clear, humorous moment where the subject is unmistakably caught in the act of a harmless misdeed — frozen at the exact second of realization with guilty/startled expression — with expressive body language, clear environmental storytelling showing what they were doing, realistic lighting and perspective, and a candid sitcom-like authenticity that makes the viewer instantly understand the funny situation and relate to the harmless mischief."
+  },
+  {
+    "name": "CELADON GLAZE",
+    "category": [
+      "CERAMIC",
+      "KOREAN",
+      "CHINESE",
+      "TRADITIONAL",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into a Korean celadon ceramic artwork. Celadon is a translucent, pale jade-green glaze achieved through reduction firing of iron oxide in stoneware or porcelain. The image should appear as if carved or inlaid into a celadon-glazed ceramic surface with the characteristic luminous blue-green color, crackle patterns, and sanggam inlay technique of Goryeo dynasty Korean celadon.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Translucent jade-green celadon glaze color\n• Characteristic crackle pattern in glaze\n• Carved or inlaid (sanggam) design technique\n• Smooth ceramic surface texture\n• Goryeo dynasty aesthetic"
   },
   {
     "name": "CELEBRITY DEATHMATCH",
@@ -6016,6 +6263,19 @@
     "additionalInstructions": "IDENTITY PRESERVATION:\n• Subject recognizable through tonal dust placement\n• Facial features formed through density variation\n• Expression preserved without hard outlines\n\nANTI-CHEATING RULES:\n• NO sharp drawn lines\n• NO painted strokes\n• NO airbrush or digital gradients\n• NO photographic skin texture\n\nPROCESS CUES:\n• Finger smears or cloth wiping marks allowed\n• Chalk residue beyond image boundaries\n\nFINAL RESULT:\nThe image must look like a real chalk dust portrait created by rubbing and blending powdered chalk onto a surface, soft, imperfect, and unmistakably powder-based."
   },
   {
+    "name": "CHAMPLEVÉ ENAMEL",
+    "category": [
+      "METALWORK",
+      "MEDIEVAL",
+      "DECORATIVE",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into a champlevé enamel artwork. Champlevé is a medieval metalworking technique where troughs are carved or cast into a thick metal plate, filled with vitreous enamel, fired, and polished flush with the metal surface. The image should feature the characteristic appearance of colored enamel fields separated by raised metal ridges, typical of Romanesque and Gothic decorative arts.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Carved metal troughs filled with enamel\n• Raised copper or bronze metal ridges\n• Polished flush surface\n• Medieval decorative aesthetic\n• Limoges enamel color palette"
+  },
+  {
     "name": "CHAPULÍN COLORADO",
     "category": [
       "TV",
@@ -6203,6 +6463,34 @@
     "additionalInstructions": "FINAL RESULT:\nA cohesive image where all elements are constructed from integrated chemical structures forming the scene itself."
   },
   {
+    "name": "CHEMIGRAM",
+    "category": [
+      "PHOTOGRAPHY",
+      "ABSTRACT",
+      "EXPERIMENTAL",
+      "PROCESS",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into a chemigram. A chemigram is a cameraless photographic technique combining painting and photography by applying resists (varnish, oil, wax) to photographic paper and then processing it in developer and fixer, creating abstract patterns through chemical reactions. The image should feature organic abstract patterns with rich metallic colors from silver gelatin chemistry.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Organic abstract chemical patterns\n• Rich metallic silver and gold tones\n• Resist-based texture variations\n• Chemical reaction artifacts\n• Cameraless photographic aesthetic"
+  },
+  {
+    "name": "CHERIYAL SCROLL PAINTING",
+    "category": [
+      "INDIAN",
+      "NARRATIVE",
+      "SCROLL",
+      "FOLK ART",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into a Cheriyal scroll painting. Cheriyal painting is a traditional narrative scroll art from Telangana, India, featuring bold red backgrounds with stylized figures telling stories from Hindu epics and folklore. The scrolls are painted in horizontal panels with vivid colors, strong outlines, and characteristic simplified facial features.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Bold red background\n• Horizontal narrative panel format\n• Vivid colors with strong outlines\n• Stylized simplified figures\n• Indian folk narrative aesthetic"
+  },
+  {
     "name": "CHIAROSCURO",
     "category": [
       "ART", 
@@ -6312,6 +6600,19 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "STYLE ENFORCEMENT:\n\u2022 Preserve recognizable subject identity in storybook style\n\u2022 Use soft watercolor washes with gentle ink outlines\n\u2022 Apply warm, inviting color palette\n\u2022 Include whimsical, slightly exaggerated proportions\n\u2022 Show a cozy, detailed setting full of small discoveries\n\u2022 Use soft, diffused lighting suggesting warmth and safety\n\u2022 Reference classic illustrators (Beatrix Potter, Maurice Sendak, Quentin Blake)\n\u2022 Include small hidden details that reward close looking\n\u2022 Maintain the gentle, nurturing tone of children's literature\n\u2022 Create a sense of wonder, coziness, and gentle adventure"
+  },
+  {
+    "name": "CHINE-COLLÉ",
+    "category": [
+      "PRINTMAKING",
+      "COLLAGE",
+      "FINE ART",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into a chine-collé print. Chine-collé is a printmaking technique where thin sheets of colored or decorative paper are adhered to a heavier printing paper during the printing process, combining printed imagery with delicate collaged paper elements. The image should feature layered translucent papers with printed imagery creating depth and color variation.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Layered thin papers of different colors and textures\n• Printed imagery over collaged paper\n• Delicate translucent paper edges visible\n• Fine art printmaking quality\n• Subtle color variations from paper layers"
   },
   {
     "name": "CHINESE BRUSH PAINTING",
@@ -7622,6 +7923,19 @@
     "additionalInstructions": ""
   },
   {
+    "name": "COLLAGRAPH PRINT",
+    "category": [
+      "PRINTMAKING",
+      "MIXED MEDIA",
+      "TEXTURE",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into a collagraph print. A collagraph is a printmaking technique where a collage of textured materials (cardboard, fabric, leaves, string, sand) is glued to a plate, sealed, inked, and printed. The image should feature rich textural variety, embossed paper quality, and the unique combination of relief and intaglio printing effects.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Rich variety of textures from collaged materials\n• Embossed paper impression\n• Combined relief and intaglio ink effects\n• Handmade plate irregularities\n• Dampened printmaking paper texture"
+  },
+  {
     "name": "COLLECTIBLE TOY",
     "category": [
       "TOY",
@@ -8548,6 +8862,37 @@
     "additionalInstructions": "IMPORTANT:\n• If a specific movie is named, match its tone, lighting, genre, and visual medium accurately\n• If only a year is provided, ensure the selected movie is real and scheduled for that year\n• Avoid satire unless explicitly requested in master prompt\n• Maintain realism and cinematic credibility\n\nFINAL RESULT:\nThe final image should look indistinguishable from an official teaser poster for a real upcoming theatrical release starring the subject, with film selection determined strictly by master prompt overrides or modulo logic."
   },
   {
+    "name": "COMMEDIA DELL'ARTE",
+    "category": [
+      "ITALIAN",
+      "THEATRICAL",
+      "HISTORICAL",
+      "COSTUME",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into a Commedia dell'Arte character illustration. Commedia dell'Arte was Italian improvisational theater (16th-18th century) with stock masked characters like Harlequin, Colombina, Pulcinella, and Pantalone. The image should transform the subject into one of these iconic characters with their distinctive masks, costumes, and theatrical poses.",
+    "options": [
+      {
+        "id": "001",
+        "text": "Harlequin (Arlecchino) with diamond-patterned costume, black half-mask, and acrobatic pose"
+      },
+      {
+        "id": "002",
+        "text": "Colombina with elegant servant's dress, small mask, and coquettish pose"
+      },
+      {
+        "id": "003",
+        "text": "Pulcinella with white costume, long-nosed mask, and hunched posture"
+      },
+      {
+        "id": "004",
+        "text": "Pantalone with red tights, long black cloak, hooked-nose mask, and miserly gesture"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Characteristic commedia mask and costume\n• Theatrical exaggerated pose\n• Historical Italian theatrical illustration style\n• Stage or street performance setting\n• 16th-18th century costume accuracy"
+  },
+  {
     "name": "COMPANY BADGE",
     "category": [
       "OFFICE",
@@ -8560,6 +8905,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "COMPANY PAINTING",
+    "category": [
+      "INDIAN",
+      "COLONIAL",
+      "BOTANICAL",
+      "HISTORICAL",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into a Company painting (Company School). Company painting was a hybrid Indo-European art style that developed in India during British East India Company rule (18th-19th century), combining Indian miniature painting techniques with Western naturalism. The style features detailed botanical illustrations, natural history subjects, and portraits with Indian pigments and Western perspective.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Hybrid Indo-European painting style\n• Detailed naturalistic rendering\n• Indian mineral pigments\n• Western perspective and shading\n• Botanical illustration precision"
   },
   {
     "name": "COMPETITION BROADCAST",
@@ -8709,6 +9068,34 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "• Preserve conceptual ties to the original subject\n• Emphasize intellectual content over visual realism\n• Use text, diagrams, labels, maps, systems, or documentation where appropriate\n• Encourage analysis and interpretation\n• Explore philosophical, social, or artistic questions\n• Challenge conventional assumptions about art\n• Avoid purely decorative aesthetics\n• Produce an authentic Conceptual Art piece"
+  },
+  {
+    "name": "CONCRETE POETRY",
+    "category": [
+      "LITERARY",
+      "VISUAL",
+      "TYPOGRAPHY",
+      "EXPERIMENTAL",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into a Concrete Poetry (visual poetry) artwork. Concrete poetry is a literary-visual art form where the typographic arrangement of words on the page creates a visual image that reinforces the poem's meaning. The image should transform the subject into a shape made entirely of carefully arranged text, where the words form the visual outline and texture of the subject.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Text arranged to form visual shapes\n• Typography as primary visual element\n• Meaningful word choices relating to subject\n• Clean typographic composition\n• Shape poetry format"
+  },
+  {
+    "name": "CONGOLESE POPULAR PAINTING",
+    "category": [
+      "AFRICAN",
+      "CONGOLESE",
+      "URBAN",
+      "NARRATIVE",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into a Congolese Popular Painting (Peinture Populaire). This urban art tradition from the Democratic Republic of Congo features narrative paintings depicting daily life, historical events, and social commentary in a bold, colorful figurative style. Artists like Chéri Samba and Moké created vibrant scenes with text integration and social messaging.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Bold colorful figurative style\n• Narrative social commentary\n• Text integration within image\n• Urban daily life scenes\n• Congolese popular art aesthetic"
   },
   {
     "name": "CONNECT THE DOTS",
@@ -9080,6 +9467,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "Use vibrant healthy coral colors \u2014 electric blues, hot pinks, deep purples, and bright oranges. The underwater lighting should be natural with caustic light patterns. Include realistic marine life details."
+  },
+  {
+    "name": "COSMATI MOSAIC",
+    "category": [
+      "ITALIAN",
+      "MEDIEVAL",
+      "MOSAIC",
+      "GEOMETRIC",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into a Cosmati mosaic design. Cosmatesque work is a medieval Italian decorative technique using small triangles, squares, and circles of colored marble, porphyry, and gold glass tesserae arranged in intricate geometric patterns. The image should feature the characteristic complex geometric patterns in rich colored marbles (green serpentine, red porphyry, white marble) and gold glass.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Complex geometric patterns\n• Colored marble pieces (green, red, white)\n• Gold glass tesserae accents\n• Medieval Italian decorative aesthetic\n• Circular and interlocking geometric forms"
   },
   {
     "name": "COTTAGECORE",
@@ -9478,6 +9879,34 @@
     "additionalInstructions": ""
   },
   {
+    "name": "CUBO-FUTURISM",
+    "category": [
+      "RUSSIAN",
+      "AVANT-GARDE",
+      "MODERNIST",
+      "PAINTING",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into a Russian Cubo-Futurist painting. Cubo-Futurism (1912-1915) was a Russian avant-garde movement combining French Cubist fragmentation with Italian Futurist dynamism and speed. The style features angular geometric forms, dynamic diagonal compositions, metallic colors, and the energy of modern industrial life.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Angular geometric fragmentation\n• Dynamic diagonal compositions\n• Metallic and industrial colors\n• Sense of speed and energy\n• Russian avant-garde aesthetic"
+  },
+  {
+    "name": "CUERDA SECA",
+    "category": [
+      "ISLAMIC",
+      "CERAMIC",
+      "TILE",
+      "SPANISH",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into a Cuerda Seca (dry cord) tile design. Cuerda Seca is a ceramic decoration technique from Islamic Spain where a greasy manganese outline prevents different colored glazes from running together during firing, creating crisp multi-colored designs. The style features bold geometric and arabesque patterns with distinct color separations.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Dark manganese outline separations\n• Multiple distinct glaze colors\n• Geometric and arabesque patterns\n• Islamic Spanish decorative motifs\n• Crisp color boundaries"
+  },
+  {
     "name": "CUPHEAD",
     "category": [
       "GAMING",
@@ -9789,6 +10218,20 @@
     ],
     "randomizeOptions": true,
     "additionalInstructions": "FINAL RESULT:\nThe image should show the subject performing the selected dance style with complete gender role reversal - males in traditionally feminine dance costumes and roles, females in traditionally masculine roles or leading in partner dances - presented as a professional theatrical performance with proper technique, authentic costumes, and artistic staging.\n\nCOSTUME REQUIREMENTS:"
+  },
+  {
+    "name": "DANCHEONG",
+    "category": [
+      "KOREAN",
+      "ARCHITECTURAL",
+      "DECORATIVE",
+      "TRADITIONAL",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into a Korean Dancheong decorative painting. Dancheong is the traditional Korean art of ornamental painting applied to wooden buildings, palaces, and temples, dating back to the Goguryeo period (37 BCE-668 CE). The image should feature intricate geometric patterns, lotus flowers, vines, and vibrant traditional colors arranged in symmetrical decorative borders.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Traditional five-color palette (obangsaek)\n• Intricate geometric and floral patterns\n• Symmetrical decorative borders\n• Lotus flower and vine motifs\n• Wooden architectural surface texture"
   },
   {
     "name": "DANCING WITH THE STARS",
@@ -10860,6 +11303,20 @@
   "additionalInstructions": ""
   },
   {
+    "name": "DOGS PLAYING POKER",
+    "category": [
+      "FINE ART",
+      "CLASSIC PAINTING",
+      "HUMOR",
+      "PARODY",
+      "CHARACTER INSERTION"
+    ],
+    "message": "Take a picture and transform the subject by placing them into the famous 'Dogs Playing Poker' scene as one of the poker players.\n\nTRANSFORMATION RULES (NON-NEGOTIABLE):\n• Replace exactly one of the dogs seated at the poker table with the subject.\n• The remaining dogs must remain dogs.\n• The subject must occupy one of the original seats naturally.\n• The subject must appear to belong in the painting.\n\nSTYLE RULES:\n• Completely repaint the entire image in the style of a classic late-19th-century oil painting.\n• Match the brushwork, lighting, color palette, perspective, and atmosphere of Cassius Marcellus Coolidge's iconic 'Dogs Playing Poker' paintings.\n• The subject must be painted in exactly the same artistic style as the surrounding characters.\n• The subject must not appear photographic.\n\nCHARACTER RULES:\n• Preserve the recognizable facial identity of the subject.\n• Dress the subject in period-appropriate clothing matching the other poker players.\n• The subject should be seated naturally at the poker table.\n• The subject may hold playing cards, poker chips, a cigar, or a drink consistent with the original composition.\n• The subject should display an appropriate poker expression.\n\nCOMPOSITION RULES:\n• Preserve the crowded poker-table composition.\n• Preserve the smoky atmosphere.\n• Preserve the warm interior lighting.\n• Preserve the classic tavern setting.\n• Preserve the humorous storytelling quality.\n\nIDENTITY PRESERVATION:\n• Preserve recognizable facial identity.\n• Preserve recognizable expression.\n• Preserve recognizable hairstyle where appropriate.\n• Recognition should come through painterly interpretation.\n\nANTI-CHEAT:\n• Do not replace multiple dogs.\n• Do not place the subject standing outside the painting.\n• Do not leave photographic textures.\n• Do not paste the subject into the artwork.\n• Repaint the entire composition as a unified oil painting.\n• The subject must visually belong in the original artwork.\n\nFINAL RESULT:\nThe final image should convincingly resemble one of Cassius Marcellus Coolidge's 'Dogs Playing Poker' paintings, with the subject seamlessly replacing one of the canine poker players while matching the painting's style, lighting, brushwork, humor, and composition.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "PAINTING ENFORCEMENT (CRITICAL):\n\n• The entire image must be repainted.\n• No photographic elements may remain.\n• The subject must perfectly match the artistic style.\n\nCOMPOSITION ENFORCEMENT:\n\n• Replace only one dog.\n• Preserve the remaining dogs.\n• Preserve the poker game.\n• Preserve the original atmosphere.\n\nFINAL ENFORCEMENT:\n\n• The finished image should be indistinguishable from a classic 'Dogs Playing Poker' painting except that one dog has been naturally replaced by the subject."
+  },
+  {
     "name": "DOLLAR BOB",
     "category": [
       "DOCUMENT",
@@ -11466,6 +11923,19 @@
     "additionalInstructions": "IDENTITY PRESERVATION:\n• Subject must be clearly recognizable at the primary level and at least 2-3 recursive levels\n\nFINAL RESULT:\nThe image should create a satisfying sense of infinite recursion — the viewer should feel drawn into the image trying to see how deep the recursion goes."
   },
   {
+    "name": "DRYPOINT ETCHING",
+    "category": [
+      "PRINTMAKING",
+      "DRAWING",
+      "ART",
+      "SKETCH"
+    ],
+    "message": "Take a picture and transform it into a drypoint etching. Drypoint is an intaglio printmaking technique where the artist scratches directly into a metal plate with a sharp needle, creating a characteristic soft, velvety burr along the incised lines. The image should have rich, feathery lines with soft edges and limited edition print quality.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Characteristic burr creating soft, fuzzy line edges\n• Rich ink accumulation along scratched lines\n• Plate tone visible in background\n• Hand-pulled print appearance on dampened paper"
+  },
+  {
     "name": "DUKE NUKEM 3D NPC",
     "category": [
       "VIDEO GAME",
@@ -11606,6 +12076,37 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "• Preserve recognizable identity while fully transforming the subject into a hand-drawn cartoon character\n• Use exaggerated expressions, dynamic posing, squash-and-stretch, and visual comedy\n• Create richly painted backgrounds featuring surreal alien worlds, toxic landscapes, and industrial science-fiction environments\n• Emphasize 1990s grunge aesthetics, bizarre worldbuilding, and atmospheric depth\n• Use vibrant saturated colors with toxic greens, acid yellows, radioactive oranges, purple shadows, and deep-space blues\n• Make backgrounds significantly more detailed than the characters\n• Blend cartoon absurdity with dark science-fiction imagination\n• Maintain a cinematic game-art presentation\n• Avoid generic cartoon backgrounds and simplistic environments\n• The final image should resemble professional promotional artwork from a surreal 1990s hand-drawn cartoon video game universe"
+  },
+  {
+    "name": "EBRU MARBLING",
+    "category": [
+      "TURKISH",
+      "PAPER ART",
+      "TRADITIONAL",
+      "DECORATIVE",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into a Turkish Ebru (paper marbling) artwork. Ebru is a traditional Turkish art of creating colorful patterns on water using pigments and ox gall, then transferring them to paper. The image should feature the characteristic flowing, organic patterns of marbled paper with swirling colors, combed designs, and the fluid dynamics of pigment on water.",
+    "options": [
+      {
+        "id": "001",
+        "text": "Battal Ebru (stone pattern) with random scattered droplets creating organic spotted patterns"
+      },
+      {
+        "id": "002",
+        "text": "Gel-Git (come-and-go) with combed parallel wave patterns"
+      },
+      {
+        "id": "003",
+        "text": "Hatip Ebru with stylized floral forms created by manipulating droplets with a stylus"
+      },
+      {
+        "id": "004",
+        "text": "Nightingale's Nest (Bülbül Yuvası) with concentric circular spiral patterns"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Flowing organic marbled patterns\n• Swirling pigment-on-water effects\n• Traditional Turkish color palette\n• Paper surface texture\n• Fluid dynamic patterns"
   },
   {
     "name": "ECCE MONO",
@@ -11760,6 +12261,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "• Recognition must come from the transformed doll itself\n• The final collectible must simultaneously read as both the subject and an authentic Elf on the Shelf doll\n• The doll should appear specifically manufactured from the subject rather than selected from an existing product line"
+  },
+  {
+    "name": "EL GRECO",
+    "category": [
+      "FINE ART",
+      "OLD MASTER",
+      "MANNERISM",
+      "PAINTING",
+      "CHARACTER TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform the subject into an authentic El Greco-style painting.\n\nTRANSFORMATION RULES (NON-NEGOTIABLE):\n• Transform the entire image into a convincing late-16th/early-17th century Mannerist oil painting in the unmistakable style of El Greco.\n• Preserve the recognizable identity of the subject while completely repainting every visible element.\n• Nothing in the final image should resemble a modern photograph.\n• Every visible object, person, and background element must appear hand-painted.\n\nMANNERIST PROPORTION RULES (CRITICAL):\n• Subtly and gracefully elongate the subject's anatomy in the characteristic manner of El Greco.\n• The elongation must remain within the realm of plausible human anatomy.\n• Do NOT create grotesquely stretched or cartoonishly exaggerated figures.\n• Increase the apparent height of the figure only moderately.\n• Elongate the neck slightly.\n• Elongate the face slightly.\n• Lengthen the arms and hands gracefully.\n• Lengthen the fingers elegantly.\n• Lengthen the legs modestly.\n• Preserve believable anatomical structure.\n• The subject should appear naturally tall, slender, elegant, and ethereal rather than distorted.\n• The elongation should evoke spiritual transcendence instead of physical deformation.\n\nMANNERIST EXPRESSION RULES:\n• Emphasize the subject's spiritual presence over physical realism.\n• Create calm but emotionally intense expressions.\n• Use elegant flowing body posture.\n• Introduce subtle twisting of the torso and limbs characteristic of Mannerism.\n• The figure should appear fluid and almost weightless.\n• The pose should convey divine elevation rather than ordinary portraiture.\n\nFACIAL RULES:\n• Preserve the recognizable identity of the subject.\n• Maintain recognizable eyes, nose, mouth, and facial proportions.\n• The face may be gently lengthened vertically.\n• Preserve elegant facial structure.\n• Avoid unnatural facial distortion.\n• Create an introspective, contemplative, almost mystical expression.\n\nPAINTING STYLE RULES:\n• Loose yet masterful oil brushwork.\n• Thin translucent glazes.\n• Visible painterly texture.\n• Long expressive brush strokes.\n• Rich impasto in highlights.\n• Layered Renaissance oil painting techniques.\n• Museum-quality craftsmanship.\n\nCOLOR RULES:\n• Highly saturated yet symbolic colors.\n• Deep crimson reds.\n• Brilliant vermilion accents.\n• Acid yellow highlights.\n• Rich emerald greens.\n• Deep olive greens.\n• Cold blue-grays.\n• Luminous ivory skin.\n• Brilliant cobalt blues.\n• Fiery oranges where compositionally appropriate.\n• Colors should appear intentionally symbolic rather than naturalistic.\n\nLIGHTING RULES:\n• Illuminate the subject using mysterious supernatural white light.\n• The light source should appear unseen.\n• Strong dramatic chiaroscuro.\n• Brilliant highlights.\n• Deep dramatic shadows.\n• Ethereal glow surrounding important areas.\n• High contrast throughout the composition.\n• The lighting should appear spiritual rather than photographic.\n\nBACKGROUND RULES:\n• Replace the background with an atmospheric late Renaissance environment.\n• Dramatic storm-filled skies.\n• Expressive swirling clouds.\n• Ethereal heavenly atmosphere.\n• Spanish Renaissance architecture where appropriate.\n• Painterly landscapes rendered with expressive brushwork.\n• Background should reinforce the spiritual tone.\n\nTEXTURE RULES:\n• Visible woven canvas texture.\n• Authentic aged oil paint surface.\n• Fine craquelure where appropriate.\n• Rich layered brushwork.\n• Visible glazing.\n• Entire image must appear physically painted.\n\nIDENTITY PRESERVATION RULES:\n• Preserve recognizable facial identity.\n• Preserve recognizable hairstyle silhouette while repainting it.\n• Preserve recognizable posture.\n• Preserve recognizable personality.\n• Recognition should arise from the painted interpretation rather than photographic accuracy.\n\nSTYLE ENFORCEMENT:\n• Elegant vertical composition.\n• Graceful elongated anatomy.\n• Moderate anatomical distortion only.\n• Spiritual intensity.\n• Emotional depth.\n• Flowing movement.\n• Dynamic Mannerist composition.\n• Museum-quality Old Master execution.\n\nANTI-CHEAT:\n• Do not apply a painting filter.\n• Do not leave photographic skin.\n• Do not leave photographic hair.\n• Do not leave photographic eyes.\n• Do not overlay brush strokes onto a photograph.\n• Completely repaint every visible element.\n• Do not create extreme body stretching.\n• Do not create caricature proportions.\n• Do not create rubber-like limbs.\n• The anatomy must remain believable while clearly exhibiting El Greco's characteristic elegance.\n\nFINAL RESULT:\nThe final image should convincingly resemble an authentic El Greco masterpiece featuring graceful Mannerist elongation, expressive oil brushwork, symbolic color harmonies, supernatural illumination, emotional spirituality, elegant flowing anatomy, and complete painterly reconstruction. The subject should remain immediately recognizable while appearing elevated into El Greco's mystical and transcendent artistic vision.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "EL GRECO ENFORCEMENT (CRITICAL):\n\n• Use graceful, moderate anatomical elongation.\n• Never exaggerate the anatomy beyond believable human proportions.\n• The subject should appear naturally tall and elegant.\n• The anatomy should evoke spiritual transcendence rather than physical distortion.\n• Preserve recognizable identity throughout the transformation.\n\nMANNERIST ENFORCEMENT:\n\n• Introduce subtle twisting body posture.\n• Emphasize flowing movement.\n• Prioritize emotional and spiritual expression over physical realism.\n• Maintain elegance in every pose.\n\nPAINTING ENFORCEMENT:\n\n• Every visible element must be completely hand-painted.\n• Remove every photographic texture.\n• Use authentic Renaissance oil painting techniques.\n• Preserve expressive visible brushwork throughout.\n\nLIGHTING ENFORCEMENT:\n\n• Use supernatural white illumination.\n• Maintain dramatic chiaroscuro.\n• Create luminous highlights and deep shadows.\n• Reinforce the mystical atmosphere.\n\nFINAL ENFORCEMENT:\n\n• The finished image should be indistinguishable from a museum-quality El Greco painting.\n• The elongated anatomy should appear elegant, refined, and believable.\n• The symbolic colors, dramatic lighting, expressive brushwork, spiritual atmosphere, and graceful Mannerist proportions should immediately evoke the unmistakable style of El Greco."
   },
   {
     "name": "EMBROIDERY",
@@ -14149,6 +14664,20 @@
     "additionalInstructions": "• Preserve recognizable identity while introducing artistic interpretation\n• Emphasize likeness rather than exact replication\n• Use painterly design, form, color, and composition\n• Maintain believable anatomy and structure\n• Allow artistic deviations from reality\n• Avoid strict realism and photographic duplication\n• Create a refined fine-art appearance\n• Produce a convincing figurative artwork"
   },
   {
+    "name": "FILIGREE METALWORK",
+    "category": [
+      "METALWORK",
+      "DECORATIVE",
+      "JEWELRY",
+      "TRADITIONAL",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into a filigree metalwork design. Filigree is an ancient jewelry and metalworking technique using fine threads and tiny beads of gold or silver wire twisted and soldered together to create intricate lace-like openwork patterns. The image should feature delicate twisted wire patterns, granulation details, and the characteristic airy openwork quality of fine metalwork.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Fine twisted wire threads\n• Intricate lace-like openwork patterns\n• Gold or silver metallic appearance\n• Granulation bead details\n• Delicate handcrafted quality"
+  },
+  {
     "name": "FILM NEGATIVE",
     "category": [
       "RETRO",
@@ -14730,6 +15259,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "FLUXUS EVENT SCORE",
+    "category": [
+      "INTERNATIONAL",
+      "CONCEPTUAL",
+      "EXPERIMENTAL",
+      "GRAPHIC",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into a Fluxus event score or instruction piece. Fluxus (1960s-70s) was an international avant-garde network creating simple, playful instruction-based artworks. The image should transform the subject into a minimalist typographic instruction card or diagram in the style of Yoko Ono's instruction paintings or George Brecht's event scores.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Minimalist typographic layout\n• Simple instruction-based format\n• Clean white space\n• Playful conceptual approach\n• Typewriter or hand-stamped text aesthetic"
   },
   {
     "name": "FOAM SCULPTURE",
@@ -15970,6 +16513,20 @@
     "additionalInstructions": "FINAL RESULT:\nThe image should look like a scene from Gilligan’s Island, with the subject convincingly stranded on a tropical island and surrounded by improbably clever, handmade inventions that replace all modern technology."
   },
   {
+    "name": "GLASGOW SCHOOL",
+    "category": [
+      "SCOTTISH",
+      "ART NOUVEAU",
+      "DESIGN",
+      "MODERNIST",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into a Glasgow School style artwork. The Glasgow School (1890s-1910s), led by Charles Rennie Mackintosh and the 'Glasgow Four,' developed a distinctive Art Nouveau variant featuring elongated vertical forms, geometric rose motifs, muted color palettes (purple, pink, silver, white), and the integration of architecture, furniture, and graphic design.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Elongated vertical forms\n• Geometric stylized rose motifs\n• Muted palette (purple, pink, silver, white)\n• Linear geometric Art Nouveau\n• Integration of decorative and structural elements"
+  },
+  {
     "name": "GLASS",
     "category": [
       "MATERIAL",
@@ -16085,6 +16642,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "GONGBI PAINTING",
+    "category": [
+      "CHINESE",
+      "PAINTING",
+      "TRADITIONAL",
+      "FINE DETAIL",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into a Chinese Gongbi (meticulous) painting. Gongbi is a traditional Chinese painting technique characterized by extremely fine, detailed brushwork using ink and mineral pigments on silk or sized paper. Unlike the spontaneous xieyi (freehand) style, Gongbi requires careful planning, precise outlines, and multiple layers of translucent color washes to build up rich, luminous imagery.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Extremely fine detailed brushwork\n• Precise ink outlines\n• Multiple translucent color wash layers\n• Silk or sized paper texture\n• Traditional Chinese mineral pigments"
   },
   {
     "name": "GOO GOO GAA GAA",
@@ -16653,6 +17224,19 @@
     "additionalInstructions": ""
   },
   {
+    "name": "HAIDA FORMLINE",
+    "category": [
+      "INDIGENOUS",
+      "PACIFIC NORTHWEST",
+      "TRADITIONAL",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into a Haida formline art design. Formline art is the traditional art style of the Haida, Tlingit, and other Pacific Northwest Coast Indigenous peoples, characterized by flowing ovoid and U-form shapes, bold black primary formlines, red secondary elements, and blue-green tertiary fills depicting stylized animals and supernatural beings.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Flowing ovoid and U-form shapes\n• Bold black primary formlines\n• Red secondary design elements\n• Blue-green tertiary fills\n• Traditional Northwest Coast stylization"
+  },
+  {
     "name": "HAIKU",
     "category": [
       "POETRY",
@@ -16897,6 +17481,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "HARD-EDGE RECONSTRUCTION ENGINE (ABSOLUTE):\n\n• Segment the entire image into large simplified geometric and organic regions\n• Each region must represent a major plane of the subject or environment\n• Reduce small details into broader unified shape masses\n\nFLAT COLOR LOCK:\n\n• Every segmented region must be filled with ONE uniform unmodulated color only\n• No gradients\n• No airbrushing\n• No shading blends\n• No visible brush texture\n• No painterly strokes\n\n• Each color area should read like a clean painted vinyl or vector field\n\nBOUNDARY RULES (CRITICAL):\n\n• Every neighboring color region must meet at a crisp hard edge\n• Borders must be razor sharp and mathematically clean\n• No soft transitions or feathering anywhere\n\nSUBJECT PRESERVATION:\n\n• Facial placement, silhouette, body structure, and key identity landmarks must survive through shape simplification\n• Recognition must come from the arrangement of simplified planes — not from detailed realism\n\nREGION SCALE CONTROL:\n\n• Prefer fewer larger dominant shape masses over many tiny fractured pieces\n• The image should feel calm, bold, and architectonic\n• Avoid mosaic fragmentation\n\nCOLOR FIELD CHARACTER:\n\n• Use bold saturated or strongly contrasting flat colors\n• Colors should be visually decisive and clean\n• Adjacent fields should create strong chromatic separation\n\nSURFACE CHARACTER:\n\n• Entire painting surface must appear smooth, impersonal, and machine-clean\n• No evidence of hand brushwork\n\nANTI-CHEAT:\n\n• Do not create cubist shards\n• Do not create stained glass mosaic\n• Do not create posterized photo with gradients\n• Do not create expressionist abstraction\n\nFAIL CONDITIONS:\n\n• Visible gradients → FAIL\n• Soft edges → FAIL\n• Too many tiny fractured pieces → FAIL\n• Subject becomes unrecognizable random abstraction → FAIL\n\nQUALITY:\n\n• Large bold hard-edge zones\n• Flat color-field simplicity\n• Razor-sharp transitions\n• Strong graphic subject recognition\n• True geometric abstraction"
+  },
+  {
+    "name": "HARDANGER EMBROIDERY",
+    "category": [
+      "NORWEGIAN",
+      "TEXTILE",
+      "EMBROIDERY",
+      "GEOMETRIC",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into a Norwegian Hardanger embroidery design. Hardanger is a traditional Norwegian whitework embroidery technique featuring geometric satin stitch blocks (kloster blocks) surrounding areas of cut and drawn threadwork, creating a lace-like openwork effect. The image should feature the characteristic white-on-white geometric patterns with cut-thread openwork areas.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• White-on-white embroidery\n• Geometric satin stitch blocks\n• Cut and drawn threadwork openings\n• Lace-like openwork effect\n• Even-weave fabric texture"
   },
   {
     "name": "HARRY POTTER SPELL",
@@ -17236,6 +17834,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "Transform the entire image into an authentic late-1970s Heavy Metal magazine cover. Preserve recognizable identity while making the subject the featured cover character of a painted science-fantasy illustration. The image must include a realistic magazine-cover layout, authentic Heavy Metal masthead styling, issue information, promotional cover text, science-fiction article teasers, and period-accurate publishing design. Use painted illustration techniques, airbrushed colors, Moebius-inspired visual sophistication, strange alien worlds, fantasy-science-fiction themes, cosmic environments, and epic album-cover composition. The final result should look like a genuine collectible issue of Heavy Metal magazine from the late 1970s rather than a standalone illustration."
+  },
+  {
+    "name": "HELIOGRAVURE",
+    "category": [
+      "PRINTMAKING",
+      "PHOTOGRAPHY",
+      "HISTORICAL",
+      "FINE ART",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into a heliogravure (photogravure) print. Heliogravure is a high-quality photomechanical intaglio printing process producing rich, continuous-tone prints with velvety blacks and subtle tonal gradations. Used by photographers like Alfred Stieglitz and Edward Steichen, the process creates prints with the depth and richness of fine art etchings.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Rich continuous tonal gradations\n• Velvety deep blacks\n• Subtle highlight detail\n• Copper plate printing texture\n• Fine art photographic print quality"
   },
   {
     "name": "HENRY DANGER",
@@ -17753,6 +18365,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "HUICHOL YARN PAINTING",
+    "category": [
+      "MEXICAN",
+      "INDIGENOUS",
+      "YARN",
+      "SPIRITUAL",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into a Huichol (Wixárika) yarn painting. Huichol yarn paintings are created by pressing brightly colored yarn into beeswax on wooden boards to create intricate spiritual imagery depicting peyote visions, deer, corn, eagles, and sacred symbols. The style features dense, vibrant yarn-filled surfaces with psychedelic colors and shamanic symbolism.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Dense pressed yarn texture\n• Vibrant psychedelic colors\n• Shamanic spiritual symbols\n• Intricate detailed yarn work\n• Wixárika sacred imagery"
   },
   {
     "name": "HYPERREALISM",
@@ -18623,6 +19249,33 @@
     "additionalInstructions": "FINAL RESULT:\nThe final image must look like a real photograph of a person whose face has been pushed into full Mel Brooks comedy territory — with wildly bulging, uneven eyes and a blissfully confused expression — instantly recognizable as an Igor-style gag without turning into a monster or cartoon."
   },
   {
+    "name": "IKAT WEAVING",
+    "category": [
+      "TEXTILE",
+      "WEAVING",
+      "TRADITIONAL",
+      "GLOBAL",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into an Ikat woven textile design. Ikat is a complex handweaving technique practiced across Southeast Asia, Central Asia, and Latin America where threads are selectively bound and dyed before weaving, creating characteristic blurred-edge patterns. The image should feature the distinctive feathered edges of ikat patterns with rich, saturated dye colors.",
+    "options": [
+      {
+        "id": "001",
+        "text": "Indonesian double ikat (geringsing) with intricate ceremonial patterns"
+      },
+      {
+        "id": "002",
+        "text": "Uzbek silk ikat (atlas) with bold abstract cloud-like patterns in vibrant colors"
+      },
+      {
+        "id": "003",
+        "text": "Japanese kasuri ikat with indigo geometric patterns on cotton"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Characteristic blurred/feathered pattern edges\n• Rich saturated dye colors\n• Woven textile texture\n• Pre-dyed thread pattern appearance"
+  },
+  {
     "name": "IKEA INSTRUCTION MANUAL",
     "category": [
       "HUMOR",
@@ -18828,6 +19481,34 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "INTIMISM",
+    "category": [
+      "FRENCH",
+      "POST-IMPRESSIONIST",
+      "DOMESTIC",
+      "PAINTING",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into an Intimist painting. Intimism was a Post-Impressionist style associated with Pierre Bonnard and Édouard Vuillard, depicting quiet domestic interiors with rich decorative patterns, warm ambient light, and the intimate poetry of everyday private life. The style features complex patterned surfaces and figures absorbed in daily activities.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Quiet domestic interior setting\n• Rich decorative patterns\n• Warm ambient light\n• Complex patterned surfaces\n• Intimate everyday poetry"
+  },
+  {
+    "name": "INUIT PRINTMAKING",
+    "category": [
+      "INDIGENOUS",
+      "CANADIAN",
+      "PRINTMAKING",
+      "ARCTIC",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into an Inuit print in the style of Cape Dorset printmaking. Inuit printmaking from the Canadian Arctic features bold simplified forms, limited color palettes, and subjects drawn from Arctic life, mythology, and nature. The style uses stonecut, stencil, and lithographic techniques with characteristic flat areas of color and strong graphic compositions.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Bold simplified graphic forms\n• Limited color palette\n• Flat areas of solid color\n• Strong graphic composition\n• Stonecut or stencil print texture"
   },
   {
     "name": "INVADER ZIM",
@@ -19171,6 +19852,20 @@
     "message": "Take a picture and transform the subject into an authentic vintage Jack-in-the-box puppet bursting out of a tin box on a metal coil spring.\n\nTRANSFORMATION RULES (NON-NEGOTIABLE):\n• The subject must become the puppet character inside the box\n• The subject must NOT appear as a real person hiding inside a large box\n• The subject must NOT appear as a person wearing a puppet costume\n• The subject must NOT appear as a photograph with a pasted-on face\n• The subject's head must become the molded composite, plastic, or cloth puppet head\n• The subject's body must terminate into a heavy-duty metal accordion spring inside the tin box\n• The subject's facial identity must be translated into classic toy puppet design language\n• Recognition should come from facial structure, eye shape, smile characteristics, nose shape, cheek structure, jawline, expression, hairline, hair characteristics, and overall identity\n• The subject must remain recognizable while fully transformed\n• Preserve recognizable facial proportions\n• Preserve distinctive facial traits\n• Preserve actual hair color (rendered as molded toy hair or yarn/fabric)\n• Preserve actual hairline\n• Preserve actual hair characteristics\n• No realistic skin; must be painted toy material\n• No realistic eyes; must be painted or button puppet eyes\n• No photographic features\n• No pasted-on face\n• No face swap appearance\n\nCHARACTER DESIGN RULES:\n• Authentic mechanical Jack-in-the-box toy design with an open lid and a hand crank on the side of the box\n• Subject's head and torso pop out of the box, supported by a prominent coiled spring\n• Subject identity drives final puppet form\n• The final product should appear as a classic, professionally manufactured toy\n\nMATERIAL RULES:\n• Painted composition, celluloid, or hard plastic head\n• Fabric ruff/collar covering the attachment to a thick steel spring coil\n• Lithographed tin or decorated wooden box base\n\nSTYLE RULES:\n• Traditional nostalgic toy aesthetics\n• Commercial product photography or catalog appearance\n\nVERSION-SPECIFIC RULES:\n• Facial identity must be recreated through toy puppet sculpture\n• Subject must become the puppet itself springing out of the box\n• Face must never appear pasted onto the toy",
     "randomizeOptions": false,
     "additionalInstructions": "The final toy must simultaneously read as both an authentic Jack-in-the-box puppet and the subject. Recognition must come from puppet reinterpretation rather than face swapping."
+  },
+  {
+    "name": "JAPONISME",
+    "category": [
+      "EUROPEAN",
+      "JAPANESE-INSPIRED",
+      "19TH CENTURY",
+      "PAINTING",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into a Japonisme artwork. Japonisme was the 19th-century European artistic movement inspired by Japanese art following the opening of Japan in 1853. The style features asymmetric compositions, flat areas of color, bold cropping, elevated viewpoints, and decorative patterns influenced by ukiyo-e prints, as seen in works by Monet, Van Gogh, and Whistler.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Asymmetric Japanese-inspired composition\n• Flat areas of color\n• Bold cropping and elevated viewpoints\n• Decorative patterns\n• Western painting with Japanese aesthetic influence"
   },
   {
     "name": "JAVERT PHOTOBOMB",
@@ -19558,6 +20253,20 @@
     "additionalInstructions": "• Preserve recognizable identity\n• Subject wears black leather jacket\n• Subject wears swimwear beneath jacket\n• Subject is water skiing\n• Subject is airborne\n• Subject jumps over caged shark\n• Shark remains inside protective cage\n• Dynamic action pose\n• Television-publicity-photo aesthetics\n• Bright outdoor lighting\n• Classic sitcom energy\n• Humorous but triumphant atmosphere\n• Splash effects\n• Motion and excitement\n• Avoid injury\n• Avoid danger\n• Avoid blood\n• Avoid gore\n• Final image should instantly evoke the famous jump-the-shark moment"
   },
   {
+    "name": "JUGENDSTIL",
+    "category": [
+      "GERMAN",
+      "ART NOUVEAU",
+      "DECORATIVE",
+      "GRAPHIC",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into a German Jugendstil artwork. Jugendstil (Youth Style) is the German and Scandinavian variant of Art Nouveau, named after the Munich magazine 'Jugend' (1896). The style features organic whiplash curves, stylized natural forms, flat decorative patterns, and bold graphic outlines with influences from Japanese woodblock prints.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Organic whiplash curves\n• Stylized natural forms\n• Flat decorative patterns\n• Bold graphic outlines\n• Japanese-influenced composition"
+  },
+  {
     "name": "KAHLO",
     "category": [
       "ART",
@@ -19596,6 +20305,48 @@
   "options": [],
   "randomizeOptions": false,
   "additionalInstructions": "The symmetry must be mathematically perfect — no segment should differ from its mirror counterpart by even a single pixel of misalignment. The original photo content must be genuinely incorporated as the pattern source, not replaced with generic geometric shapes. The result should feel like the photo was dissolved into light and reassembled as a piece of stained glass or a crystal formation. Colors must be rich and jewel-toned. The black vignette border is mandatory."
+  },
+  {
+    "name": "KALIGHAT PAINTING",
+    "category": [
+      "INDIAN",
+      "PAINTING",
+      "FOLK ART",
+      "BENGALI",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into a Kalighat painting. Kalighat painting originated in 19th-century Calcutta near the Kalighat temple, featuring bold sweeping brushstrokes, minimal backgrounds, strong outlines, and flat areas of color. Originally depicting Hindu deities, the style evolved into social and political commentary with characteristic simplified forms and dynamic compositions.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Bold sweeping brushstrokes\n• Minimal or plain backgrounds\n• Strong dark outlines\n• Flat areas of vibrant color\n• Simplified dynamic forms"
+  },
+  {
+    "name": "KANGRA MINIATURE",
+    "category": [
+      "INDIAN",
+      "MINIATURE",
+      "PAINTING",
+      "PAHARI",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into a Kangra miniature painting. Kangra painting is a Pahari (hill) school of Indian miniature painting from Himachal Pradesh (18th-19th century), known for its lyrical depictions of love, nature, and devotion. The style features delicate brushwork, soft pastel colors, lush green landscapes, and graceful figures with distinctive facial profiles.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Delicate fine brushwork\n• Soft pastel color palette\n• Lush green landscape settings\n• Graceful figures with distinctive profiles\n• Lyrical romantic mood"
+  },
+  {
+    "name": "KANTHA EMBROIDERY",
+    "category": [
+      "BENGALI",
+      "TEXTILE",
+      "EMBROIDERY",
+      "TRADITIONAL",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into a Bengali Kantha embroidery design. Kantha is a traditional embroidery art from Bengal (Bangladesh and West Bengal, India) where layers of old sari cloth are stitched together with simple running stitches to create quilted textiles with narrative scenes, animals, flowers, and geometric patterns in colorful thread.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Simple running stitch texture\n• Layered recycled cloth surface\n• Narrative folk art scenes\n• Colorful thread on white cloth\n• Bengali folk art aesthetic"
   },
   {
     "name": "KAREN",
@@ -19839,6 +20590,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "KOGIN EMBROIDERY",
+    "category": [
+      "JAPANESE",
+      "TEXTILE",
+      "EMBROIDERY",
+      "GEOMETRIC",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into a Japanese Kogin embroidery design. Kogin-zashi is a traditional Japanese counted-thread embroidery from the Tsugaru region of northern Japan, originally used to reinforce and insulate hemp clothing. The technique creates dense geometric diamond patterns using white cotton thread on indigo-dyed fabric.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Dense geometric diamond patterns\n• White thread on indigo fabric\n• Counted-thread technique precision\n• Traditional Tsugaru motifs\n• Textile surface texture"
   },
   {
     "name": "KOMOREBI LIGHT FILTER",
@@ -20138,6 +20903,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "LETTRISM",
+    "category": [
+      "FRENCH",
+      "AVANT-GARDE",
+      "TYPOGRAPHY",
+      "EXPERIMENTAL",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into a Lettrist artwork. Lettrism (Lettrisme), founded by Isidore Isou in Paris in 1945, is an avant-garde movement that reduces art to its basic elements - letters, signs, and symbols. The image should feature the subject constructed from or overlaid with typographic characters, alphabetic fragments, and symbolic notation.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Letters, signs, and symbols as primary elements\n• Typographic character construction\n• Alphabetic fragments and notation\n• Avant-garde experimental composition\n• Text-as-image aesthetic"
   },
   {
     "name": "LEVITATION WITH SHADOW",
@@ -20606,6 +21385,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "LITERATI PAINTING",
+    "category": [
+      "CHINESE",
+      "PAINTING",
+      "SCHOLARLY",
+      "INK",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into a Chinese Literati (wenrenhua) painting. Literati painting is the scholarly tradition of Chinese ink painting practiced by educated elites who valued personal expression over technical virtuosity. The style features spontaneous brushwork, sparse compositions, poetic inscriptions, and subjects like bamboo, orchids, plum blossoms, and chrysanthemums (the Four Gentlemen).",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Spontaneous expressive brushwork\n• Sparse elegant composition\n• Black ink with minimal color\n• Calligraphic inscription and seal stamps\n• Scholar's aesthetic sensibility"
   },
   {
   "name": "LITHOGRAPH TIN TOY",
@@ -21124,6 +21917,20 @@
     "additionalInstructions": "FINAL RESULT:\nThe subject transformed into a complete M&M candy character - entire body is the candy shell in the selected color (red, yellow, blue, green, orange, or brown) with white stick arms/legs, white gloves/boots, and white \"m\" logo - the M&M's face shows the subject's characteristics (glasses, eyebrows, expression, facial hair, age, etc.) all rendered in the candy color, creating a perfect blend of the subject's identity within a realistic CGI M&M mascot like from the commercials."
   },
   {
+    "name": "MACCHIAIOLI",
+    "category": [
+      "ITALIAN",
+      "IMPRESSIONIST",
+      "19TH CENTURY",
+      "PAINTING",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into a Macchiaioli painting. The Macchiaioli were a group of Italian painters active in Tuscany in the 1850s-70s who painted with bold patches (macchie) of color and strong chiaroscuro, predating French Impressionism. The style features bold tonal contrasts, patches of flat color, outdoor light, and scenes of Italian daily life and landscape.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Bold patches (macchie) of color\n• Strong chiaroscuro contrasts\n• Flat color areas with tonal definition\n• Outdoor natural light\n• Italian landscape and daily life"
+  },
+  {
     "name": "MACGUYVER",
     "category": [
       "HUMOR",
@@ -21355,6 +22162,34 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "The field lines should follow physically accurate magnetic field topology. Use dark iron filing texture on a light background, or luminous field lines on dark background. The subject's features should emerge from the density and direction of field lines."
+  },
+  {
+    "name": "MAIL ART",
+    "category": [
+      "INTERNATIONAL",
+      "COLLAGE",
+      "POSTAL",
+      "EXPERIMENTAL",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into a Mail Art (Correspondence Art) piece. Mail Art is a worldwide artistic movement using the postal system as a medium, featuring decorated envelopes, artist stamps (artistamps), rubber stamp art, collaged postcards, and mixed-media postal objects. The image should feature postal elements, stamps, cancellation marks, and collaged artistic decoration.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Postal elements (stamps, cancellation marks, addresses)\n• Collaged mixed-media decoration\n• Rubber stamp art elements\n• Envelope or postcard format\n• Hand-decorated postal aesthetic"
+  },
+  {
+    "name": "MAJOLICA CERAMIC",
+    "category": [
+      "CERAMIC",
+      "ITALIAN",
+      "RENAISSANCE",
+      "DECORATIVE",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into an Italian Majolica ceramic painting. Majolica is a Renaissance-era decorative ceramic technique where colorful metallic oxide glazes are painted over an opaque tin-based white glaze on earthenware. The image should feature the vibrant painterly decoration, rich cobalt blues, manganese purples, copper greens, and antimony yellows characteristic of Italian Renaissance maiolica pottery.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Opaque white tin-glaze background\n• Vibrant metallic oxide colors\n• Painterly brushwork on ceramic surface\n• Renaissance-era decorative motifs\n• Earthenware ceramic texture"
   },
   {
     "name": "MAN ON THE MOON",
@@ -23857,15 +24692,17 @@
   {
     "name": "MOLAS",
     "category": [
-      "ART",
+      "PANAMANIAN",
       "CULTURAL",
       "TEXTILE",
-      "PANAMANIAN"
+      "INDIGENOUS",
+      "APPLIQUÉ",
+      "ART"
     ],
-    "message": "Take a picture and transform the image into Mola art. Preserve subject identity. Use the traditional reverse-appliqué textile art of the Kuna people of Panama and Colombia. Render with multiple layers of bright, contrasting colors revealed through cut-away fabric layers. Emphasize bold geometric and organic forms with vibrant color combinations.",
+    "message": "Take a picture and transform it into a Kuna Mola textile design. Molas are traditional reverse-appliqué textile panels made by the Guna (Kuna) people of Panama and Colombia, featuring multiple layers of brightly colored fabric cut away to reveal intricate geometric and figurative designs with characteristic narrow channels of color between layers.",
     "options": [],
     "randomizeOptions": false,
-    "additionalInstructions": ""
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Multiple layers of colored fabric\n• Reverse-appliqué technique\n• Narrow channels revealing underlying colors\n• Bold geometric and figurative designs\n• Vibrant tropical color palette"
   },
   {
     "name": "MONA LISA",
@@ -24108,6 +24945,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "MORDANÇAGE",
+    "category": [
+      "PHOTOGRAPHY",
+      "EXPERIMENTAL",
+      "SURREAL",
+      "PROCESS",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into a mordançage photograph. Mordançage (also called etch-bleach) is an experimental darkroom technique where a silver gelatin print is partially bleached and the softened emulsion is physically manipulated - lifted, folded, or peeled away - creating surreal, ghostly images with veils of displaced gelatin and reversed tones.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Displaced gelatin veils and folds\n• Ghostly reversed tones\n• Surreal ethereal quality\n• Physical emulsion manipulation\n• Experimental darkroom aesthetic"
   },
   {
     "name": "MORNING TALK SHOW",
@@ -25995,6 +26846,20 @@
     "additionalInstructions": ""
   },
   {
+    "name": "NDEBELE HOUSE PAINTING",
+    "category": [
+      "AFRICAN",
+      "SOUTH AFRICAN",
+      "MURAL",
+      "GEOMETRIC",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into a South African Ndebele house painting. Ndebele house painting is a vibrant geometric mural art tradition of the Ndebele people of South Africa, featuring bold black outlines filled with bright primary and secondary colors in symmetrical geometric patterns painted on exterior walls as expressions of cultural identity.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Bold black outlines\n• Bright primary and secondary colors\n• Symmetrical geometric patterns\n• Wall/architectural surface texture\n• Traditional Ndebele motifs (chevrons, triangles, rectangles)"
+  },
+  {
     "name": "NEEDLEPOINT",
     "category": [
       "ART",
@@ -26309,6 +27174,20 @@
     "additionalInstructions": ""
   },
   {
+    "name": "NEUE WILDE",
+    "category": [
+      "GERMAN",
+      "NEO-EXPRESSIONIST",
+      "1980S",
+      "PAINTING",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into a Neue Wilde (New Wild Ones) painting. Neue Wilde was a German Neo-Expressionist movement of the early 1980s featuring aggressive, spontaneous painting with raw emotional energy, bold colors, crude figuration, and deliberate rejection of conceptual art's intellectualism in favor of visceral painterly expression.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Aggressive spontaneous brushwork\n• Raw emotional energy\n• Bold vivid colors\n• Crude expressive figuration\n• Visceral painterly surface"
+  },
+  {
     "name": "NEURAL STYLE TRANSFER",
     "category": [
       "DIGITAL",
@@ -26360,6 +27239,20 @@
     "randomizeOptions": false,
     "options": [],
     "additionalInstructions": "The final image must appear to be an authentic newspaper photograph reproduced through traditional halftone printing techniques on vintage newsprint."
+  },
+  {
+    "name": "NIELLO",
+    "category": [
+      "METALWORK",
+      "ENGRAVING",
+      "DECORATIVE",
+      "HISTORICAL",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into a niello metalwork design. Niello is an ancient decorative technique where a black metallic alloy (mixture of copper, silver, and lead sulfides) is inlaid into engraved lines on silver or gold to create high-contrast detailed imagery. The image should feature fine engraved lines filled with black niello against polished silver, creating detailed graphic imagery.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Black niello inlay in engraved lines\n• Polished silver or gold background\n• Fine detailed engraving\n• High contrast black-on-silver imagery\n• Historical metalwork craftsmanship"
   },
   {
     "name": "NIFTY FIFTY",
@@ -27038,6 +27931,20 @@
     "additionalInstructions": "FINAL RESULT:\nThe image should show the subject standing on the top (gold medal) position of the Olympic podium wearing sport-specific athletic attire for the selected sport, with a gold medal around their neck, holding a bouquet, displaying emotion and pride, with silver and bronze medalists on lower positions beside them, in an Olympic venue with flags, Olympic rings, crowds, and all the ceremonial elements of an Olympic medal ceremony - capturing the pinnacle moment of athletic achievement."
   },
   {
+    "name": "OMEGA WORKSHOPS",
+    "category": [
+      "BRITISH",
+      "POST-IMPRESSIONIST",
+      "DECORATIVE",
+      "MODERNIST",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into an Omega Workshops design. The Omega Workshops (1913-1919), founded by Roger Fry in London, applied Post-Impressionist and Fauvist painting principles to decorative arts. The style features bold abstract patterns, vibrant colors, loose painterly brushwork applied to furniture, textiles, and ceramics with deliberate artistic spontaneity.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Bold abstract patterns\n• Vibrant Post-Impressionist colors\n• Loose painterly brushwork\n• Decorative arts application\n• Artistic spontaneity and freedom"
+  },
+  {
     "name": "ONE SECOND BEFORE DISASTER",
     "category": [
       "HUMOR",
@@ -27378,6 +28285,20 @@
     "additionalInstructions": ""
   },
   {
+    "name": "OPUS SECTILE",
+    "category": [
+      "ROMAN",
+      "MOSAIC",
+      "STONE",
+      "HISTORICAL",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into a Roman Opus Sectile artwork. Opus Sectile is an ancient Roman technique of creating images by cutting and fitting together precisely shaped pieces of colored marble, stone, or glass into a design, unlike mosaic which uses small uniform tesserae. The image should feature large precisely cut stone pieces fitted together to form the composition with visible natural stone veining and color.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Precisely cut large stone pieces\n• Natural marble and stone colors and veining\n• Fitted jigsaw-like composition\n• Polished stone surface\n• Roman decorative aesthetic"
+  },
+  {
     "name": "ORC",
     "category": [
       "FANTASY",
@@ -27416,6 +28337,20 @@
     "additionalInstructions": ""
   },
   {
+    "name": "ORIENTALIST PAINTING",
+    "category": [
+      "EUROPEAN",
+      "19TH CENTURY",
+      "EXOTIC",
+      "PAINTING",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into a 19th-century Orientalist painting. Orientalism was a Western art movement depicting romanticized scenes of North Africa and the Middle East with rich colors, dramatic light, and exotic settings. The style features detailed architectural interiors, bazaar scenes, desert landscapes, and figures in traditional dress rendered with academic painting technique.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Romanticized exotic setting\n• Rich warm color palette\n• Dramatic light effects\n• Detailed architectural elements\n• Academic oil painting technique"
+  },
+  {
     "name": "OSHIKURU: DEMON SAMURAI",
     "category": [
       "ANIME",
@@ -27429,6 +28364,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "FINAL RESULT:\nA dynamic anime-style transformation where the subject's real, recognizable face (at their actual age) is placed on a teenage samurai warrior body wearing elaborate demon armor, with the iconic Oshikuru theme song lyrics prominently displayed in the image using anime opening credits styling. The subject's facial features, age, and identity are completely preserved and clearly visible, creating either a seamless transformation (if subject is young) or a hilarious juxtaposition (if subject is older). The image captures both the earnest action-anime aesthetic and the comedic sitcom origin, with the subject's actual face being the star of the composition and the song lyrics adding authentic 'Saturday morning cartoon' charm - making it immediately clear who has become the legendary demon samurai Oshikuru, complete with his unforgettable theme song."
+  },
+  {
+    "name": "OTOMI EMBROIDERY",
+    "category": [
+      "MEXICAN",
+      "TEXTILE",
+      "FOLK ART",
+      "EMBROIDERY",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into a Mexican Otomi embroidery design. Otomi embroidery (Tenango) is a traditional textile art from the Otomi people of Tenango de Doria, Hidalgo, Mexico, featuring whimsical multicolored animals, birds, flowers, and human figures embroidered in satin stitch on white cotton cloth, creating vibrant narrative scenes.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Multicolored satin stitch embroidery\n• Whimsical animals, birds, and flowers\n• White cotton cloth background\n• Narrative folk art composition\n• Vibrant color palette"
   },
   {
     "name": "OUTFIT TRY-ON",
@@ -27493,6 +28442,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "PALEKH LACQUER MINIATURE",
+    "category": [
+      "RUSSIAN",
+      "MINIATURE",
+      "LACQUER",
+      "FOLK ART",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into a Russian Palekh lacquer miniature painting. Palekh is a traditional Russian art of painting intricate miniature scenes on papier-mâché lacquer boxes, featuring luminous tempera colors and gold leaf on jet-black backgrounds. The style depicts fairy tales, folklore, and historical scenes with elongated figures and rich decorative detail.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Jet-black lacquer background\n• Luminous tempera colors\n• Gold leaf detailing and highlights\n• Intricate miniature scale\n• Elongated elegant figures"
   },
   {
     "name": "PALETTE KNIFE",
@@ -28485,6 +29448,20 @@
     "additionalInstructions": ""
   },
   {
+    "name": "PERSIAN MINIATURE",
+    "category": [
+      "PERSIAN",
+      "MINIATURE",
+      "PAINTING",
+      "HISTORICAL",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into a Persian miniature painting. Persian miniature painting is a richly detailed art form from Iran dating to the 13th century, characterized by intricate detail, vibrant colors, gold leaf illumination, flat perspective, and elaborate decorative borders. Subjects are depicted with idealized features within lush garden settings or architectural frames.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Intricate fine detail and miniature scale\n• Vibrant gouache and gold leaf colors\n• Flat perspective with multiple viewpoints\n• Elaborate decorative borders and margins\n• Lush garden or architectural settings"
+  },
+  {
     "name": "PEST PANIC",
     "category": [
       "HUMOR",
@@ -28665,6 +29642,33 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "PHOTOMECHANICAL REPRODUCTION",
+    "category": [
+      "PRINTING",
+      "HISTORICAL",
+      "MECHANICAL",
+      "GRAPHIC",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into a photomechanical reproduction from the early 20th century. Photomechanical processes (photogravure, collotype, photolithography) were early methods of reproducing photographs in print. The image should feature the characteristic dot patterns, tonal limitations, ink spread, and paper texture of early mass-printed photographic reproductions.",
+    "options": [
+      {
+        "id": "001",
+        "text": "Photogravure with rich continuous tones, velvety blacks, and copper plate printing quality"
+      },
+      {
+        "id": "002",
+        "text": "Collotype with fine grain continuous tone and no visible dot pattern on smooth paper"
+      },
+      {
+        "id": "003",
+        "text": "Halftone newspaper reproduction with visible dot screen pattern and ink spread"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Period-appropriate printing technique\n• Characteristic tonal qualities\n• Paper and ink texture\n• Early 20th-century printing limitations\n• Mechanical reproduction aesthetic"
   },
   {
     "name": "PHOTO PUZZLE",
@@ -28851,6 +29855,20 @@
     "additionalInstructions": ""
   },
   {
+    "name": "PHOTOREALIST WATERCOLOR",
+    "category": [
+      "WATERCOLOR",
+      "PHOTOREALISM",
+      "CONTEMPORARY",
+      "PAINTING",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into a photorealist watercolor painting. Photorealist watercolor combines the transparent luminosity of watercolor medium with extreme photographic detail and precision. The image should feature the characteristic wet-on-wet blooms, hard and soft edges, transparent color glazing, and white paper highlights of watercolor while maintaining photographic accuracy.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Transparent watercolor luminosity\n• Photographic level of detail\n• Wet-on-wet blooms and bleeds\n• White paper as highlights\n• Visible brushwork within precision"
+  },
+  {
     "name": "PHOTOSHOPPED",
     "category": [
       "HUMOR",
@@ -28865,6 +29883,20 @@
     "additionalInstructions": "• Preserve recognizable identity while creating an intentionally terrible Photoshop composite\n• Emphasize visible masking mistakes, cutout errors, and compositing failures\n• Use mismatched lighting, perspective, scale, and color grading\n• Add obvious halo artifacts and rough selections around the subject\n• Create a pasted-into-the-scene appearance\n• Include compression artifacts, resolution mismatches, and poor blending\n• Make the editing errors large enough to be immediately noticeable\n• Avoid professional-quality compositing or seamless integration\n• The image should resemble a famous Photoshop disaster rather than a convincing edit\n• The final result should be humorous, absurd, and unmistakably badly photoshopped"
   },
   {
+    "name": "PHULKARI EMBROIDERY",
+    "category": [
+      "PUNJABI",
+      "TEXTILE",
+      "EMBROIDERY",
+      "TRADITIONAL",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into a Punjabi Phulkari embroidery design. Phulkari (flower work) is a traditional embroidery technique from Punjab featuring geometric patterns created with long darn stitches in vibrant untwisted silk floss (pat) on coarse cotton cloth. The characteristic style covers the entire fabric surface with dense, colorful geometric floral patterns.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Long darn stitch technique\n• Vibrant silk floss colors\n• Dense geometric floral patterns\n• Coarse cotton cloth background\n• Punjabi folk textile aesthetic"
+  },
+  {
     "name": "PI",
     "category": [
       "MATH",
@@ -28876,6 +29908,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "PI SEQUENCE ENFORCEMENT:\n\n• Start with 3.14 and continue sequentially without interruption\n• The sequence must NEVER restart anywhere in the image\n• Do not randomize or scramble digits\n• Do not repeat short pi fragments across different areas\n• The pi digits must visibly flow continuously across the entire transformed subject\n• Different body areas must continue the numerical sequence seamlessly\n\nANTI-CHEAT:\n\n• Do not overlay pi digits on top of a normal image\n• Do not hide a regular face beneath transparent text\n• Do not use random number strings\n• Do not restart or loop the pi sequence\n• Do not use solid fills, paint strokes, gradients, or photographic textures\n• Do not include any non-digit visual elements\n• The digits themselves must physically construct the entire visible subject\n• The subject must appear literally made from nothing except sequential pi digits\n\nFINAL RESULT:\nThe final image should show a recognizable subject physically constructed entirely and exclusively from one continuous uninterrupted sequence of pi digits beginning with 3.14 and continuing naturally across the complete image without breaks, repetition, overlays, hidden photographs, or randomization. ONLY DIGITS SHOULD EXIST IN THE FINAL IMAGE."
+  },
+  {
+    "name": "PICHWAI PAINTING",
+    "category": [
+      "INDIAN",
+      "PAINTING",
+      "RELIGIOUS",
+      "TRADITIONAL",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into a Pichwai painting. Pichwai is a traditional Indian painting style from Nathdwara, Rajasthan, created as devotional cloth hangings for temples. The style features intricate detail, rich dark backgrounds, lotus motifs, cows, and elaborate floral patterns painted on cloth with natural pigments and gold detailing.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Rich dark background (typically black or deep blue)\n• Intricate lotus and floral motifs\n• Natural pigment colors with gold detailing\n• Cloth painting texture\n• Devotional art aesthetic"
   },
   {
     "name": "PICTIONARY",
@@ -28900,6 +29946,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "FINAL RESULT:\nThe final image should resemble a universally recognizable pictogram symbol."
+  },
+  {
+    "name": "PICTORIALIST PHOTOGRAPHY",
+    "category": [
+      "PHOTOGRAPHY",
+      "ARTISTIC",
+      "HISTORICAL",
+      "SOFT FOCUS",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into a Pictorialist photograph. Pictorialism (1880s-1920s) was a photographic movement that emphasized photography as fine art through soft focus, atmospheric effects, and artistic manipulation. The style features diffused light, soft edges, painterly tonality, and subjects treated with the same artistic sensibility as painting.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Soft focus and diffused light\n• Atmospheric painterly effects\n• Artistic tonal manipulation\n• Fine art photographic print quality\n• Romantic artistic sensibility"
   },
   {
     "name": "PICTURE PERFECT",
@@ -29279,6 +30339,20 @@
     "additionalInstructions": "The final image must simultaneously read as an authentic glowing plasma globe and the subject. Recognition must come from routing electrical filament structures rather than face swapping."
   },
   {
+    "name": "PLATINUM PALLADIUM PRINT",
+    "category": [
+      "PHOTOGRAPHY",
+      "FINE ART",
+      "PROCESS",
+      "TONAL",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into a platinum/palladium print photograph. Platinum printing is a fine art photographic process producing images with an extraordinarily long tonal range, matte surface, and permanent neutral gray to warm brown tones. The image should feature the characteristic velvety matte surface, subtle tonal gradations, and the archival permanence aesthetic of this noble metal process.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Extraordinarily long tonal range\n• Velvety matte surface\n• Neutral gray to warm brown tones\n• Subtle tonal gradations\n• Fine art photographic print quality"
+  },
+  {
     "name": "PLAYBILL",
     "category": [
       "DOCUMENT",
@@ -29395,6 +30469,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "The final image should look like a low poly playstation 2 graphics style rather than pixel art, voxel art, Minecraft, an illustration, or a filtered photograph."
+  },
+  {
+    "name": "PLEIN AIR PAINTING",
+    "category": [
+      "PAINTING",
+      "LANDSCAPE",
+      "OUTDOOR",
+      "IMPRESSIONIST",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into a plein air painting. Plein air (open air) painting is the practice of painting outdoors to capture natural light, atmosphere, and color directly from observation. The image should feature the characteristic spontaneous brushwork, vibrant natural light effects, visible paint texture, and the fresh immediacy of painting completed in a single outdoor session.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Spontaneous outdoor brushwork\n• Vibrant natural light effects\n• Visible paint texture and impasto\n• Fresh immediate quality\n• Atmospheric color and shadow"
   },
   {
     "name": "PLOTTER ART",
@@ -29569,6 +30657,20 @@
     "additionalInstructions": ""
   },
   {
+    "name": "POLISH POSTER SCHOOL",
+    "category": [
+      "POLISH",
+      "GRAPHIC DESIGN",
+      "POSTER",
+      "ARTISTIC",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into a Polish Poster School design. The Polish School of Posters (1950s-80s) was a distinctive graphic art movement where artists created highly artistic, metaphorical, and surreal poster designs that prioritized artistic expression over commercial messaging. The style features painterly techniques, symbolic imagery, and bold conceptual approaches.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Painterly artistic technique\n• Symbolic and metaphorical imagery\n• Bold conceptual approach\n• Surreal or expressionist elements\n• Hand-lettered typography"
+  },
+  {
     "name": "POLITICAL BANNER",
     "category": [
       "HUMOR",
@@ -29606,6 +30708,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "ANCIENT FRESCO INTEGRATION (ABSOLUTE):\n\n• The subject must appear embedded INTO the fresco wall itself\n• Subject skin, clothing, hair, and environment must all share the same aged painted plaster texture\n• Do NOT create the appearance of a modern image hanging on a wall\n• Do NOT create framed artwork inside the scene\n• Entire image must become one continuous ancient painted surface\n\nAGE & WEATHERING (CRITICAL):\n\n• The fresco must look approximately 2,000 years old\n• Apply realistic age deterioration across BOTH the wall and the subject equally\n• Subject must inherit the same cracking, fading, pigment loss, plaster erosion, and weathering as the surrounding fresco\n\nREQUIRED AGING EFFECTS:\n\n• Cracked plaster lines\n• Faded mineral pigments\n• Chipped paint loss\n• Surface abrasion\n• Smoke staining and dirt accumulation\n• Water damage and discoloration\n• Uneven ancient wall texture\n• Missing pigment fragments\n• Ancient lime plaster grain\n\nCOLOR & MATERIAL:\n\n• Use authentic Pompeian reds, ochres, blacks, faded blues, and warm earth pigments\n• Colors should appear naturally aged while still retaining partially vivid excavated coloration\n• Surface must resemble mineral pigment painted onto wet plaster\n\nSTYLE:\n\n• Ancient Roman fresco painting aesthetic\n• Naturalistic but imperfect ancient brushwork\n• Fresco wall texture visible through all painted areas\n• Slightly flattened classical proportions acceptable\n• Architectural trompe-l'oeil and decorative Roman wall framing encouraged\n• Mythological atmosphere and classical Roman decorative motifs allowed\n\nANTI-CHEAT:\n\n• Do NOT preserve modern photographic sharpness\n• Do NOT place the subject inside a framed mural\n• Do NOT leave smooth modern skin texture\n• Do NOT create glossy paint or modern digital art appearance\n\nFAIL CONDITIONS:\n\n• Subject looks pasted onto wall → FAIL\n• Subject appears modern while wall appears ancient → FAIL\n• Fresco texture not visible across subject → FAIL\n• Image resembles framed painting → FAIL\n\nQUALITY:\n\n• Unified ancient wall painting\n• Fully integrated fresco surface\n• Strong archaeological authenticity\n• Subject visibly aged with the mural\n• Realistic 2,000-year-old deterioration"
+  },
+  {
+    "name": "PONT-AVEN SCHOOL",
+    "category": [
+      "FRENCH",
+      "POST-IMPRESSIONIST",
+      "SYNTHETIST",
+      "PAINTING",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into a Pont-Aven School painting. The Pont-Aven School was a group of artists working in Pont-Aven, Brittany in the 1880s-90s, led by Paul Gauguin. The style (also called Synthetism) features simplified forms, flat areas of bold color, strong outlines, and the synthesis of observed reality with memory, emotion, and imagination.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Simplified synthesized forms\n• Flat areas of bold color\n• Strong dark outlines\n• Emotional and imaginative interpretation\n• Breton folk art influence"
   },
   {
     "name": "POOR RICHARD'S ALMANACK",
@@ -29658,6 +30774,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "• Preserve recognizable identity\n• Subject becomes the Pope\n• Authentic papal attire\n• White cassock\n• Papal vestments\n• Religious regalia\n• Formal ceremonial presentation\n• Vatican aesthetics when appropriate\n• Historic Catholic architecture when appropriate\n• Professional portrait photography\n• Dignified expression\n• Respectful presentation\n• Realistic materials and fabrics\n• Official-photograph aesthetics\n• High-detail portraiture\n• Avoid parody\n• Avoid caricature\n• Avoid disrespectful presentation\n• Final image should resemble an official papal photograph"
+  },
+  {
+    "name": "POPEYE",
+    "category": [
+      "CARTOON",
+      "CHARACTER TRANSFORMATION",
+      "COMIC STRIP",
+      "HUMOR",
+      "SAILOR"
+    ],
+    "message": "Take a picture and transform the subject into a living embodiment of Popeye the Sailor Man.\n\nTRANSFORMATION RULES (NON-NEGOTIABLE):\n• Transform the subject into a fully realized Popeye-inspired sailor while preserving the subject's recognizable identity.\n• The subject must become a believable living version of the classic cartoon character rather than simply wearing a costume.\n• Every transformed feature must appear naturally part of the subject's anatomy.\n\nPOPEYE ANATOMY RULES (CRITICAL):\n• Give the subject Popeye's massively oversized forearms.\n• The forearms must be dramatically larger than the upper arms.\n• The forearms must appear muscular rather than swollen.\n• The upper arms should remain comparatively slender.\n• The hands should be proportionally large and powerful.\n• The neck should be thick and sturdy.\n• The chest should appear broad and powerful.\n\nFACE RULES:\n• Preserve the recognizable facial identity of the subject.\n• Give the subject Popeye's characteristic squint.\n• One eye may appear slightly more closed than the other.\n• Give the face a rugged cartoon-inspired sailor appearance.\n• The jaw should appear stronger and more square.\n• Preserve recognizable facial features.\n\nCOSTUME RULES:\n• Dress the subject in Popeye's classic sailor uniform.\n• White sailor cap.\n• Dark navy sailor shirt with sailor collar.\n• Rolled short sleeves.\n• Blue trousers.\n• Black shoes.\n• Red neckerchief.\n\nPIPE RULES (MANDATORY):\n• Place Popeye's iconic corn cob pipe naturally in the subject's mouth.\n• The pipe must appear to be actively clenched between the lips.\n• Small wisps of smoke may emerge.\n• The pipe must never appear pasted onto the face.\n\nPOSE RULES:\n• Confident heroic stance.\n• Arms flexed or confidently displayed.\n• Cheerful determined expression.\n• Cartoon-inspired body language.\n\nSTYLE RULES:\n• Hyper-realistic living cartoon interpretation.\n• Professional cinematic lighting.\n• Bright colorful presentation.\n• Highly detailed textures.\n• Whimsical but believable realism.\n\nIDENTITY PRESERVATION:\n• Preserve recognizable facial identity.\n• Preserve recognizable expression.\n• Preserve recognizable hairstyle where appropriate.\n• The viewer should immediately recognize both the subject and Popeye.\n\nANTI-CHEAT:\n• Do not simply place the subject in a sailor costume.\n• Do not paste oversized arms onto the subject.\n• The anatomy must be naturally transformed.\n• The pipe must not appear floating.\n• The transformation must resemble a living Popeye.\n\nFINAL RESULT:\nThe final image should depict the subject as a believable living embodiment of Popeye the Sailor Man, featuring the iconic oversized forearms, sailor outfit, corn cob pipe, confident demeanor, and unmistakable Popeye-inspired appearance while preserving the recognizable identity of the original subject.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "POPEYE ENFORCEMENT (CRITICAL):\n\n• Oversized forearms are mandatory.\n• The sailor uniform is mandatory.\n• The corn cob pipe is mandatory.\n• Preserve recognizable identity.\n\nTRANSFORMATION ENFORCEMENT:\n\n• The anatomy must be transformed.\n• Do not create a costume cosplay.\n• Do not paste cartoon elements onto a photograph.\n• The subject must become a living Popeye.\n\nFINAL ENFORCEMENT:\n\n• The finished image should resemble a realistic live-action Popeye while remaining immediately recognizable as the subject."
   },
   {
     "name": "POP-UP BOOK",
@@ -30508,6 +31638,20 @@
     "additionalInstructions": ""
   },
   {
+    "name": "PROGRESSIVE ARTISTS GROUP",
+    "category": [
+      "INDIAN",
+      "MODERNIST",
+      "POST-INDEPENDENCE",
+      "PAINTING",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into a Progressive Artists' Group painting. The Progressive Artists' Group (founded Bombay, 1947) was India's most influential post-independence modern art collective, including M.F. Husain, F.N. Souza, and S.H. Raza. The style synthesizes Indian themes with European modernist techniques - bold colors, expressive brushwork, and the fusion of traditional Indian imagery with abstract and expressionist forms.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Bold expressive colors\n• Synthesis of Indian and European modernism\n• Expressive dynamic brushwork\n• Traditional Indian imagery in modern form\n• Post-independence Indian identity"
+  },
+  {
     "name": "PROJECTION MAPPING",
     "category": [
       "ART",
@@ -30647,6 +31791,20 @@
     "additionalInstructions": ""
   },
   {
+    "name": "PSYCHEDELIC CONCERT POSTER",
+    "category": [
+      "AMERICAN",
+      "GRAPHIC DESIGN",
+      "1960S",
+      "POSTER",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into a 1960s San Francisco psychedelic concert poster. This style, pioneered by artists like Wes Wilson, Victor Moscoso, and Rick Griffin for Fillmore and Avalon Ballroom shows, features flowing Art Nouveau-inspired lettering, vibrating complementary colors, organic forms, and optical illusions designed to evoke altered states of consciousness.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Flowing Art Nouveau-inspired lettering\n• Vibrating complementary color combinations\n• Organic flowing forms\n• Optical vibration effects\n• Dense decorative composition filling all space"
+  },
+  {
     "name": "PUNCHLINE",
     "category": [
       "HUMOR",
@@ -30671,6 +31829,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "• Transform the entire image into an authentic NES-era boxing-game screenshot\n• Preserve recognizable identity while converting the subject into the featured challenger\n• Generate a unique arcade-style boxing nickname based on the subject\n• Generate humorous retro boxing-game flavor text\n• Maintain authentic 8-bit pixel-art construction throughout the image\n• Use visible but not excessive pixelation matching original NES screenshots\n• Preserve the classic behind-the-boxer gameplay perspective\n• Keep Little Mac as the authentic player character in the foreground\n• Include only Little Mac, the referee when appropriate, and the subject as the opponent\n• Use authentic opponent sprite scale faithful to original gameplay screens\n• Apply vibrant NES color palettes and visible pixel structure\n• Create a packed boxing arena environment with championship atmosphere\n• Include authentic retro HUD elements, score displays, energy meters, and opponent information\n• Ensure the final image resembles a genuine gameplay screenshot rather than promotional artwork\n• Maintain arcade-style exaggeration, expressive animation, and colorful character design\n• Prioritize actual gameplay proportions over modern reinterpretations\n• The final image should instantly read as a classic Punch-Out-style boxing match featuring the subject as the challenger"
+  },
+  {
+    "name": "PURISM",
+    "category": [
+      "FRENCH",
+      "MODERNIST",
+      "GEOMETRIC",
+      "PAINTING",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into a Purist painting. Purism was a post-Cubist movement founded by Le Corbusier and Amédée Ozenfant in 1918, advocating for clarity, order, and precision in art. The style features clean geometric forms of everyday objects (bottles, glasses, guitars) rendered with smooth surfaces, muted colors, and machine-age precision.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Clean geometric forms\n• Smooth precise surfaces\n• Muted harmonious color palette\n• Machine-age clarity and order\n• Overlapping transparent planes"
   },
   {
     "name": "PUT ME IN COACH",
@@ -30738,6 +31910,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "QUADRATURA",
+    "category": [
+      "ITALIAN",
+      "BAROQUE",
+      "CEILING",
+      "ILLUSIONISTIC",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into a Quadratura ceiling painting. Quadratura is a Baroque illusionistic painting technique creating the appearance of three-dimensional architecture on flat ceilings and walls through extreme foreshortening and perspective. The image should feature dramatic di sotto in sù (from below upward) perspective with painted architectural elements opening to sky.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Extreme di sotto in sù foreshortening\n• Illusionistic painted architecture\n• Opening to painted sky\n• Baroque dramatic perspective\n• Ceiling fresco appearance"
   },
   {
     "name": "QUASI-MUTATION",
@@ -30856,6 +32042,34 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "RAJPUT PAINTING",
+    "category": [
+      "INDIAN",
+      "PAINTING",
+      "HISTORICAL",
+      "TRADITIONAL",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into a Rajput painting. Rajput painting (also called Rajasthani painting) developed in the royal courts of Rajputana in India from the 16th to 19th centuries. The style features bold colors, strong outlines, flat areas of color, expressive faces, and themes from Hindu epics and romantic poetry, with distinctive regional schools including Mewar, Bundi, and Kishangarh.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Bold flat areas of vibrant color\n• Strong dark outlines\n• Expressive stylized faces\n• Indian miniature painting scale\n• Decorative borders and text panels"
+  },
+  {
+    "name": "RAKU CERAMIC",
+    "category": [
+      "CERAMIC",
+      "JAPANESE",
+      "TRADITIONAL",
+      "ZEN",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into a Raku ceramic artwork. Raku is a Japanese ceramic technique rooted in Zen philosophy, first produced in 16th-century Kyoto for tea ceremony vessels. The image should feature the characteristic crackle glaze, metallic lusters, carbon-blackened unglazed areas, and the wabi-sabi aesthetic of beautiful imperfection created by rapid firing and reduction cooling.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Crackle glaze with carbon penetration\n• Metallic copper and gold luster effects\n• Carbon-blackened unglazed areas\n• Wabi-sabi aesthetic of imperfection\n• Handmade ceramic surface texture"
   },
   {
     "name": "RAKU POTTERY GLAZE",
@@ -31600,6 +32814,20 @@
     "additionalInstructions": "• The drawing must appear VERY QUICKLY SKETCHED rather than carefully illustrated\n• Keep the sketch rough, messy, crude, and unfinished\n• Preserve strong scribble energy throughout the composition\n• Use minimal detail density everywhere\n• Preserve large untouched white paper regions\n• Avoid polished rendering or refined anatomy\n• Avoid complete contour closure and finished line-art aesthetics\n• Use only tiny minimal color accents focused primarily on the main subject\n• Keep nearly the entire image monochrome black-and-white\n• Preserve visible observational imperfection and rushed pen movement\n• The final image should resemble a rapidly captured documentary scribble sketch rather than a polished illustration"
   },
   {
+    "name": "REPOUSSÉ AND CHASING",
+    "category": [
+      "METALWORK",
+      "SCULPTURE",
+      "TRADITIONAL",
+      "RELIEF",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into a repoussé and chasing metalwork relief. Repoussé is an ancient metalworking technique where sheet metal is shaped from the reverse side by hammering, then refined from the front (chasing) to create detailed relief sculptures. The image should feature the characteristic hammered metal relief with dimensional depth, tool marks, and the warm patina of worked metal.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Hammered metal relief depth\n• Visible tool marks and hand-worked quality\n• Copper, bronze, or silver metal appearance\n• Dimensional sculptural form\n• Aged patina on metal surface"
+  },
+  {
     "name": "RETRO FUTURISM",
     "category": [
       "ART",
@@ -31646,7 +32874,7 @@
     "message": "Take a picture and transform the image into a Reverse Glass Painting. Preserve subject identity. Use the traditional technique of painting on the back of glass, creating a luminous, jewel-like quality. Render with bold outlines, flat vivid colors, and folk art motifs. Emphasize the glossy, translucent surface quality and rich color saturation.",
     "options": [],
     "randomizeOptions": false,
-    "additionalInstructions": ""
+    "additionalInstructions": "The final image should feature the characteristic luminous quality of paint viewed through glass, bold colors, and the slightly naive folk art aesthetic.\n• STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Luminous paint-through-glass quality\n• Bold flat colors\n• Reverse painting technique (fine details over broad areas)\n• Folk art aesthetic\n• Glass surface reflection and depth"
   },
   {
     "name": "RIBBON DISINTEGRATION",
@@ -31779,6 +33007,20 @@
     ],
     "randomizeOptions": true,
     "additionalInstructions": "SCENE CONSTRUCTION (MANDATORY):\n\n• Build ONE specific cinematic scene matching the selected option\n• The environment must dominate the composition\n• Use concrete visual objects instead of vague cinematic wording\n• Include recognizable props, architecture, vehicles, clothing, and atmosphere appropriate to the selected film\n\nCHARACTER INTEGRATION:\n\n• Subject must feel physically present inside the scene\n• Supporting characters from the selected movie may appear naturally nearby\n• Subject should wear clothing appropriate to the environment\n\nVISUAL STYLE:\n\n• Strong environmental depth\n• Atmospheric haze and volumetric lighting\n• Large-scale cinematic composition\n• Rich textured realism\n• Practical light sources\n• Film-still realism\n\nANTI-CHEAT:\n\n• Do not reuse generic battle compositions\n• Do not force warfare into peaceful options\n• Do not ignore the selected environment\n• Do not generate vague generic movie scenes\n\nQUALITY:\n\n• Highly recognizable movie-inspired environments\n• Strong visual storytelling\n• Authentic cinematic production design\n• Seamless integration of subject into scene"
+  },
+  {
+    "name": "RINPA SCHOOL",
+    "category": [
+      "JAPANESE",
+      "PAINTING",
+      "DECORATIVE",
+      "HISTORICAL",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into a Rinpa school painting. Rinpa is a 17th-century Japanese decorative art movement founded in Kyoto, characterized by bold compositions on gold leaf backgrounds, vibrant colors, and the tarashikomi technique of pooling wet pigments. The image should feature flat decorative surfaces, stylized natural motifs, and opulent gold backgrounds.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Gold leaf background\n• Bold, flat decorative composition\n• Tarashikomi wet-on-wet pigment pooling technique\n• Vibrant mineral pigment colors\n• Stylized natural elements (waves, flowers, clouds)"
   },
   {
     "name": "RIPLEY'S BELIEVE-IT-OR-NOT",
@@ -32486,6 +33728,34 @@
     "additionalInstructions": ""
   },
   {
+    "name": "SABATTIER EFFECT",
+    "category": [
+      "PHOTOGRAPHY",
+      "DARKROOM",
+      "EXPERIMENTAL",
+      "SURREAL",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into a photograph exhibiting the Sabattier Effect (pseudo-solarization). The Sabattier Effect occurs when photographic paper or film is briefly re-exposed to light during development, creating partial tone reversal with characteristic dark outlines (Mackie lines) between light and dark areas, producing a surreal, otherworldly appearance.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Partial tone reversal\n• Characteristic Mackie lines (dark edge outlines)\n• Surreal otherworldly appearance\n• Silver gelatin print quality\n• Darkroom experimental aesthetic"
+  },
+  {
+    "name": "SALT PRINT",
+    "category": [
+      "PHOTOGRAPHY",
+      "HISTORICAL",
+      "EARLIEST",
+      "PROCESS",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into a salt print photograph. The salted paper print (1840s-1860s) was one of the earliest photographic printing processes, producing images with a characteristic soft, matte appearance, warm reddish-brown tones, and fibers of the paper visible through the image. The image should feature the gentle, diffused quality of this pioneering photographic technique.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Soft matte appearance\n• Warm reddish-brown tones\n• Paper fibers visible through image\n• Gentle diffused quality\n• 1840s-1860s photographic aesthetic"
+  },
+  {
     "name": "SAMURAI JACK",
     "category": [
       "CARTOON",
@@ -32561,6 +33831,20 @@
     }
   ],
   "additionalInstructions": "IDENTITY PRESERVATION (CRITICAL):\n• Despite the primitive, coarse medium, the arrangement of the chiseled lines and pecking marks must precisely map out the subject's signature facial proportions and distinct expression. It must look like an authentic archaeological treasure discover."
+  },
+  {
+    "name": "SASHIKO STITCHING",
+    "category": [
+      "JAPANESE",
+      "TEXTILE",
+      "EMBROIDERY",
+      "TRADITIONAL",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into a Japanese Sashiko stitching design. Sashiko is a traditional Japanese decorative reinforcement stitching using white running stitches on indigo-dyed fabric to create geometric patterns. Originally functional (strengthening worn fabric), it evolved into a decorative art featuring patterns like asanoha (hemp leaf), seigaiha (waves), and shippo (seven treasures).",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• White running stitches on indigo fabric\n• Traditional geometric patterns\n• Hand-stitched quality with slight irregularities\n• Layered fabric texture\n• Functional-decorative aesthetic"
   },
   {
     "name": "SATURDAY EVENING POST",
@@ -33355,6 +34639,20 @@
     "additionalInstructions": "FINAL RESULT:\nThe final image must look like the complete 'Last Supper' mural, with the subject seamlessly replacing one apostle. The scene must be instantly recognizable as the full painting, not a cropped reinterpretation."
   },
   {
+    "name": "SECTION D'OR",
+    "category": [
+      "FRENCH",
+      "CUBISM",
+      "MATHEMATICAL",
+      "MODERNIST",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into a Section d'Or (Golden Section) painting. Section d'Or was a Parisian collective of Cubist artists (1911-1914) including Duchamp, Léger, and Metzinger who emphasized mathematical proportions, the golden ratio, and dynamic movement in their geometric abstractions, using brighter colors than Analytical Cubism.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Golden ratio proportional composition\n• Geometric abstraction with movement\n• Brighter color palette than Analytical Cubism\n• Mathematical precision in form\n• Dynamic angular composition"
+  },
+  {
     "name": "SECURITY BADGE",
     "category": [
       "ID",
@@ -33682,6 +34980,20 @@
     "additionalInstructions": "FINAL RESULT:\nA layered surface where the image is scratched into the top layer revealing contrasting colors below."
   },
   {
+    "name": "SHADOW THEATER",
+    "category": [
+      "THEATRICAL",
+      "SILHOUETTE",
+      "TRADITIONAL",
+      "PERFORMANCE",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into a shadow theater (shadow play) artwork. Shadow theater is an ancient performance art form found across Asia, the Middle East, and Europe where flat articulated figures are held between a light source and a translucent screen. The image should feature the subject as a detailed silhouette figure backlit against a glowing screen with the warm amber light of traditional oil lamps.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Detailed silhouette figure\n• Backlit translucent screen\n• Warm amber light glow\n• Articulated jointed figure\n• Traditional shadow play aesthetic"
+  },
+  {
     "name": "SHAKESPEAREAN",
     "category": [
       "THEATER",
@@ -33822,6 +35134,19 @@
     "additionalInstructions": "The fabric should show realistic textile texture with visible weave. The indigo should have natural variation from deep navy to pale blue. Show the characteristic organic imperfections of hand-dyed shibori."
   },
   {
+    "name": "SHIN HANGA",
+    "category": [
+      "JAPANESE",
+      "PRINTMAKING",
+      "EARLY 20TH CENTURY",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into a Shin Hanga (new print) woodblock print. Shin Hanga was an early 20th-century Japanese art movement that revitalized traditional ukiyo-e woodblock printing with Western elements like light effects and individualism. The style features soft atmospheric effects, subtle color gradations, and romantic depictions of landscapes, women, and actors.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Soft atmospheric light effects\n• Subtle color gradations (bokashi)\n• Romantic, idealized aesthetic\n• Fine woodblock printing quality\n• Blend of Japanese and Western sensibilities"
+  },
+  {
     "name": "SHIP FIGUREHEAD",
     "category": [
       "WOOD CARVING",
@@ -33945,6 +35270,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "FINAL RESULT:\nThe final image must look like a real photograph of a city sidewalk where a skilled street artist has created a large-scale 3D chalk illusion, with the subject physically present on the real pavement and playfully interacting with the artwork."
+  },
+  {
+    "name": "SIGNWRITING",
+    "category": [
+      "COMMERCIAL",
+      "LETTERING",
+      "TRADITIONAL",
+      "CRAFT",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into a traditional hand-painted signwriting artwork. Signwriting is the craft of hand-painting commercial signs, shop fronts, and vehicles using specialized brushes and techniques. The image should feature the subject rendered in the style of a traditional painted sign with gold leaf lettering, drop shadows, decorative scrollwork, and the skilled brushwork of a master sign painter.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Hand-painted lettering quality\n• Gold leaf and drop shadow effects\n• Decorative scrollwork and borders\n• Skilled brush technique visible\n• Traditional commercial sign aesthetic"
   },
   {
     "name": "SILHOUETTE",
@@ -34072,6 +35411,20 @@
     "additionalInstructions": ""
   },
   {
+    "name": "SINGERIE",
+    "category": [
+      "FRENCH",
+      "DECORATIVE",
+      "ROCOCO",
+      "HUMOR",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into a Singerie artwork. Singerie is a decorative art genre popular in Rococo France depicting monkeys (singes) engaged in human activities - painting, playing music, dining, or dressing in fashionable clothing. The image should transform the subject into an elegantly dressed monkey performing human activities in a lavish Rococo interior setting.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Monkey performing human activities\n• Elegant Rococo costume and setting\n• Decorative pastel color palette\n• Playful satirical tone\n• French 18th-century decorative style"
+  },
+  {
     "name": "SISTINE CHAPEL FRESCO",
     "category": [
       "ART STYLE",
@@ -34093,6 +35446,20 @@
     }
   ],
   "additionalInstructions": "IDENTITY PRESERVATION (CRITICAL):\n• Michelangelo's distinctive, muscular, and expressive fresco sketching style must perfectly lock down the subject's signature facial layout, bare eyes, and expression without modern eyewear. The final output must read entirely as an authentic archival photograph of a historical high-Renaissance ceiling artwork."
+  },
+  {
+    "name": "SITUATIONIST DÉTOURNEMENT",
+    "category": [
+      "FRENCH",
+      "POLITICAL",
+      "COLLAGE",
+      "AVANT-GARDE",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into a Situationist détournement artwork. Détournement is a technique developed by the Situationist International (1957-1972) of subversively repurposing existing cultural materials - comics, advertisements, films - by altering their meaning through juxtaposition, altered speech bubbles, and critical recontextualization.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Subversive repurposing of existing imagery\n• Altered speech bubbles and text\n• Critical juxtaposition\n• Comic strip or advertisement base\n• Political subversion aesthetic"
   },
   {
     "name": "SKETCH ART",
@@ -34352,6 +35719,19 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "Each light point should be tiny and intense \u2014 blue-white like the actual phenomenon. The surrounding liquid should be dark with subtle caustic patterns. The overall effect should be like a pointillist portrait made of microscopic light flashes in water."
+  },
+  {
+    "name": "SOSAKU HANGA",
+    "category": [
+      "JAPANESE",
+      "PRINTMAKING",
+      "MODERN",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into a Sosaku Hanga (creative print). Sosaku Hanga is a 20th-century Japanese printmaking movement where the artist personally designs, carves, and prints the work (as opposed to the collaborative ukiyo-e system). The style emphasizes individual artistic expression, bold graphic compositions, and experimental techniques while maintaining Japanese aesthetic sensibility.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Bold graphic composition\n• Individual artistic expression\n• Woodblock or linocut printing texture\n• Modern Japanese aesthetic\n• Experimental color and form"
   },
   {
     "name": "SOUL-VANA",
@@ -35576,6 +36956,20 @@
     "additionalInstructions": "FINAL RESULT:\nA complete storyboard page that looks like a film pre-production sketch, with multiple panels telling a cohesive story derived from the original image. The subject appears consistently across scenes, and the storyboard includes a title and short captions that reflect a believable movie concept."
   },
   {
+    "name": "STRAIGHT PHOTOGRAPHY",
+    "category": [
+      "PHOTOGRAPHY",
+      "MODERNIST",
+      "SHARP FOCUS",
+      "AMERICAN",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into a Straight Photography image. Straight Photography (1910s-1930s), championed by the f/64 Group (Edward Weston, Imogen Cunningham), rejected Pictorialist manipulation in favor of sharp focus, full tonal range, precise composition, and the inherent beauty of photographic seeing. The style features extreme clarity, geometric forms, and the pure photographic medium.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Extreme sharp focus throughout\n• Full tonal range from black to white\n• Precise geometric composition\n• No manipulation or soft effects\n• Pure photographic clarity"
+  },
+  {
     "name": "STRANGER THINGS",
     "category": [
       "TV",
@@ -35873,6 +37267,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "SUMINAGASHI",
+    "category": [
+      "JAPANESE",
+      "PAPER ART",
+      "TRADITIONAL",
+      "INK",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into a Japanese Suminagashi (floating ink) artwork. Suminagashi is the ancient Japanese art of marbling paper by floating sumi ink and pine resin on water, creating delicate concentric ring patterns. The image should feature the characteristic subtle, meditative patterns of floating ink rings in black and indigo on white washi paper.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Delicate concentric ink ring patterns\n• Subtle black and indigo tones\n• White washi paper surface\n• Meditative floating quality\n• Organic water-movement patterns"
   },
   {
     "name": "SUPERFLAT",
@@ -36664,6 +38072,20 @@
     "additionalInstructions": ""
   },
   {
+    "name": "SYNCHROMISM",
+    "category": [
+      "AMERICAN",
+      "ABSTRACT",
+      "COLOR",
+      "MODERNIST",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into a Synchromist painting. Synchromism (1912-1920s) was an American abstract art movement founded by Morgan Russell and Stanton Macdonald-Wright, based on the idea that color and music are analogous phenomena. The style features rhythmic arrangements of pure spectral colors in overlapping curved forms creating visual harmonies.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Rhythmic arrangements of pure spectral colors\n• Overlapping curved forms\n• Musical color harmonies\n• Luminous prismatic palette\n• Abstract color-based composition"
+  },
+  {
     "name": "SYNESTHESIA",
     "category": [
       "ART",
@@ -36674,6 +38096,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "SYNTHETIC CUBISM",
+    "category": [
+      "FRENCH",
+      "CUBISM",
+      "COLLAGE",
+      "MODERNIST",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into a Synthetic Cubist artwork. Synthetic Cubism (1912-1914) reversed the analytical process by building up images from flat decorative shapes, incorporating collage elements like newspaper, wallpaper, and sheet music. The image should feature bold flat colored shapes, collaged textures, stenciled letters, and playful compositions.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Bold flat colored shapes\n• Collaged paper and texture elements\n• Stenciled letters and numbers\n• Newspaper and wallpaper fragments\n• Playful decorative composition"
   },
   {
     "name": "SYNTHETISM",
@@ -36725,6 +38161,34 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "TANJORE PAINTING",
+    "category": [
+      "INDIAN",
+      "PAINTING",
+      "RELIGIOUS",
+      "DECORATIVE",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into a Tanjore painting. Tanjore (Thanjavur) painting is a classical South Indian art form from Tamil Nadu dating to the 16th century, characterized by rich gold leaf overlay, semi-precious stone embellishments, vibrant colors, and three-dimensional surface decoration depicting Hindu deities and saints on wooden panels.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Rich gold leaf overlay and embossing\n• Semi-precious stone and glass bead embellishments\n• Vibrant colors on wooden panel\n• Three-dimensional raised surface decoration\n• Ornate arch frame and decorative border"
+  },
+  {
+    "name": "TANTRIC ART",
+    "category": [
+      "INDIAN",
+      "SPIRITUAL",
+      "GEOMETRIC",
+      "MYSTICAL",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into a Tantric art painting. Tantric art from the Indian subcontinent uses geometric diagrams (yantras), symbolic imagery, and vibrant colors as tools for meditation and spiritual practice. The style features sacred geometry, mandala-like compositions, bold primary colors, and the visual representation of cosmic energy and divine forces.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Sacred geometric forms (yantras)\n• Bold primary colors\n• Mandala-like composition\n• Symbolic spiritual imagery\n• Cosmic energy visualization"
   },
   {
     "name": "TAPA CLOTH DESIGN",
@@ -36870,6 +38334,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "FINAL RESULT:\nSubjects appear as people wearing Teletubby costumes with their real faces visible through the costume openings. All Teletubbies are present in a bright Teletubbyland environment, including the baby sun and Tubby Custard elements."
+  },
+  {
+    "name": "TEMARI BALL",
+    "category": [
+      "JAPANESE",
+      "TEXTILE",
+      "GEOMETRIC",
+      "CRAFT",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into a Japanese Temari ball design. Temari are traditional Japanese embroidered thread balls featuring intricate geometric patterns created by wrapping and stitching colored threads in precise mathematical divisions. The image should feature the characteristic spherical format with complex interlocking geometric thread patterns in vibrant colors.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Spherical format\n• Intricate geometric thread patterns\n• Precise mathematical divisions\n• Vibrant colored thread\n• Wrapped and stitched texture"
   },
   {
     "name": "TEMPERA ON WOOD PANEL",
@@ -37806,6 +39284,20 @@
     "additionalInstructions": ""
   },
   {
+    "name": "TLINGIT FORMLINE",
+    "category": [
+      "INDIGENOUS",
+      "ALASKA",
+      "PACIFIC NORTHWEST",
+      "TRADITIONAL",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into a Tlingit formline art design. Tlingit art from Southeast Alaska uses the Northwest Coast formline system of ovoids, U-forms, and S-curves to depict clan crests and supernatural beings. The style features bold red and black on natural wood or blue-green backgrounds, with characteristic split representation showing both sides of an animal simultaneously.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Formline ovoids, U-forms, and S-curves\n• Red and black primary colors\n• Split representation technique\n• Clan crest stylization\n• Northwest Coast Indigenous aesthetic"
+  },
+  {
   "name": "TOEJAM & EARL",
   "category": [
     "1990S",
@@ -38699,6 +40191,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "TRANSAVANGUARDIA",
+    "category": [
+      "ITALIAN",
+      "NEO-EXPRESSIONIST",
+      "1980S",
+      "PAINTING",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into an Italian Transavanguardia painting. Transavanguardia (1979-1980s) was an Italian Neo-Expressionist movement championed by critic Achille Bonito Oliva, featuring a return to figurative painting with mythological references, Mediterranean colors, and a nomadic wandering between historical styles and personal mythology.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Figurative painting with mythological references\n• Mediterranean warm color palette\n• Historical style references\n• Personal mythological imagery\n• Expressive Italian painterly tradition"
   },
   {
       "name": "TRANSFORMERS",
@@ -39823,6 +41329,20 @@
     "additionalInstructions": "FINAL RESULT:\nA fully cohesive neon digital computer world where every object, character, and environmental element has been transformed into a glowing grid-based sci-fi environment. If people are present, they are converted into digital programs with identity discs. If vehicles are present, they become light cycles. No real-world materials remain."
   },
   {
+    "name": "TUBISM",
+    "category": [
+      "FRENCH",
+      "CUBISM",
+      "MODERNIST",
+      "PAINTING",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into a Tubist painting in the style of Fernand Léger. Tubism (a variant of Cubism associated with Léger) renders subjects as bold cylindrical and tubular forms with machine-like precision, bright primary colors, and thick black outlines. The style celebrates the mechanical age with robust, volumetric geometric figures.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Cylindrical and tubular forms\n• Bold primary colors\n• Thick black outlines\n• Machine-like volumetric precision\n• Robust mechanical aesthetic"
+  },
+  {
     "name": "TV DINNER BOX",
     "category": [
       "OPTIONS",
@@ -40576,6 +42096,20 @@
     "additionalInstructions": "VECTOR ENFORCEMENT:\n\n• Use perfectly clean vector-style shapes\n• Create sharp edges and smooth bezier-style curves\n• Avoid painterly texture or photographic noise\n• Emphasize geometric simplification and graphic clarity\n\nSTYLE ENFORCEMENT:\n\n• Simulate professional Adobe Illustrator precision\n• Use clean layered color regions\n• Preserve recognizable subject identity through simplified vector forms\n• Maintain strong silhouette readability\n\nVISUAL STYLE:\n\n• Professional vector illustration\n• Flat clean graphic design\n• Crisp scalable-art appearance\n• Smooth color blocking\n• Precision linework and shape control\n\nANTI-CHEAT:\n\n• Do NOT use painterly brush strokes\n• Do NOT add realistic film grain or texture\n• Do NOT create messy sketch aesthetics\n• Do NOT distort the clean vector appearance\n\nFINAL RESULT:\nThe final image must resemble a professionally designed ultra-clean vector illustration with precise geometric construction, smooth flat colors, crisp edges, and polished Adobe Illustrator-style graphic realism."
   },
   {
+    "name": "VEDUTA PAINTING",
+    "category": [
+      "ITALIAN",
+      "LANDSCAPE",
+      "ARCHITECTURAL",
+      "18TH CENTURY",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into a Veduta (view painting). Veduta is an 18th-century Italian genre of highly detailed, large-scale topographic paintings of cityscapes, particularly Venice, Rome, and other grand European cities. Associated with Canaletto and Bellotto, the style features precise architectural detail, atmospheric perspective, and documentary accuracy.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Precise architectural detail\n• Atmospheric perspective\n• Documentary topographic accuracy\n• Grand cityscape composition\n• 18th-century Italian painting technique"
+  },
+  {
     "name": "VEGAS NEON SIGN",
     "category": [
       "NEON",
@@ -40690,6 +42224,58 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "VERDURE TAPESTRY",
+    "category": [
+      "TEXTILE",
+      "MEDIEVAL",
+      "EUROPEAN",
+      "WEAVING",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into a medieval Verdure tapestry. Verdure tapestries are a genre of European woven wall hangings dominated by lush green foliage, trees, and plants, often with animals, birds, and small figures set within dense botanical landscapes. The image should feature the characteristic woven textile texture with rich greens and the millefleurs (thousand flowers) background tradition.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Woven tapestry textile texture\n• Lush green foliage dominance\n• Millefleurs (thousand flowers) background\n• Medieval European aesthetic\n• Decorative border framing"
+  },
+  {
+    "name": "VERISM",
+    "category": [
+      "GERMAN",
+      "REALIST",
+      "1920S",
+      "SATIRICAL",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into a Verist painting from the harsh realist wing of the New Objectivity movement. Verism, practiced by Otto Dix and George Grosz in 1920s Weimar Germany, featured grotesque satirical social commentary, unflinching depictions of war veterans, prostitutes, and corrupt bourgeoisie with sharp-focus detail and biting social criticism.",
+    "options": [
+      {
+        "id": "001",
+        "text": "Otto Dix style with unflinching war veteran portraits and harsh social realism"
+      },
+      {
+        "id": "002",
+        "text": "George Grosz style with grotesque satirical caricatures of Weimar society"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Sharp-focus precise detail\n• Grotesque satirical social commentary\n• Harsh unflinching realism\n• 1920s Weimar Republic aesthetic\n• Biting social criticism"
+  },
+
+  {
+    "name": "VERISMO OPERA POSTER",
+    "category": [
+      "ITALIAN",
+      "THEATRICAL",
+      "POSTER",
+      "ART NOUVEAU",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into an Italian Verismo opera poster from the early 1900s. Verismo opera posters featured dramatic, emotionally charged lithographic illustrations advertising operas by Puccini, Mascagni, and Leoncavallo. The style features theatrical dramatic poses, rich chromolithographic colors, Art Nouveau decorative elements, and bold theatrical typography.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Dramatic theatrical pose\n• Rich chromolithographic colors\n• Art Nouveau decorative elements\n• Bold theatrical typography\n• Early 1900s Italian poster aesthetic"
   },
   {
     "name": "VHS 80s",
@@ -41073,6 +42659,20 @@
     "additionalInstructions": "FINAL RESULT:\nA photorealistic retail video game package from the specified platform and era, showing complete packaging with authentic platform branding, proper typography, and all official elements. The subject has been seamlessly integrated into the iconic cover artwork, replacing the original character while matching the exact art style, pose, costume, and composition of the original game cover. The package appears as a genuine retail product that could have existed in an alternate timeline, complete with appropriate wear, proper dimensions, platform logos, rating information, and all the nostalgic details that make classic game packaging instantly recognizable to collectors and gamers."
   },
   {
+    "name": "VIENNA SECESSION",
+    "category": [
+      "AUSTRIAN",
+      "ART NOUVEAU",
+      "DECORATIVE",
+      "MODERNIST",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into a Vienna Secession style artwork. The Vienna Secession (founded 1897) was an Austrian art movement led by Gustav Klimt, featuring geometric ornamentation, gold leaf, mosaic-like patterns, flat decorative surfaces, and the integration of fine art with decorative design. The style bridges Art Nouveau and early Modernism.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Geometric ornamentation and patterns\n• Gold leaf and metallic elements\n• Mosaic-like decorative surfaces\n• Flat patterned backgrounds\n• Integration of figure and ornament"
+  },
+  {
     "name": "VIEW-MASTER",
     "category": [
       "VINTAGE TOY",
@@ -41200,6 +42800,19 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "VISCOSITY PRINTING",
+    "category": [
+      "PRINTMAKING",
+      "EXPERIMENTAL",
+      "COLOR",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into a viscosity print. Viscosity printing is an experimental intaglio technique developed by Stanley William Hayter where inks of different viscosities are applied to a single plate, causing them to repel each other and create complex multi-color prints in a single pass. The image should feature rich overlapping colors with organic separation patterns.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Multiple ink colors separating organically\n• Rich intaglio plate texture\n• Complex color interactions from viscosity differences\n• Single-pass multi-color printing appearance\n• Experimental fine art printmaking quality"
   },
   {
     "name": "VISUAL POETRY",
@@ -41725,7 +43338,21 @@
     "randomizeOptions": true,
     "additionalInstructions": "FINAL RESULT:\nThe image must clearly depict the subject ignoring an explicit warning sign, capturing the exact moment before consequences occur."
   },
-   {
+  {
+    "name": "WASHI CHIGIRI-E",
+    "category": [
+      "JAPANESE",
+      "PAPER ART",
+      "COLLAGE",
+      "TRADITIONAL",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into a Japanese Chigiri-e (torn paper art). Chigiri-e is a traditional Japanese art form where images are created by tearing pieces of handmade washi paper and layering them to form pictures. The image should feature the characteristic soft torn edges of translucent washi paper layers building up color and form.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Torn washi paper edges (no cutting)\n• Layered translucent paper\n• Soft organic forms\n• Natural fiber paper texture\n• Japanese aesthetic sensibility"
+  },
+  {
     "name": "WATCH FACE",
     "category": [
       "NOVELTY",
@@ -41788,6 +43415,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "WEDGWOOD JASPERWARE",
+    "category": [
+      "BRITISH",
+      "CERAMIC",
+      "NEOCLASSICAL",
+      "RELIEF",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into a Wedgwood Jasperware design. Jasperware is Wedgwood's iconic unglazed stoneware featuring white bas-relief classical figures and motifs applied to a colored (typically pale blue, sage green, or black) matte background. The style depicts neoclassical scenes from Greek and Roman mythology with elegant white relief figures.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• White bas-relief on colored background\n• Pale blue, sage green, or black matte surface\n• Neoclassical figures and motifs\n• Unglazed stoneware texture\n• Elegant Wedgwood aesthetic"
   },
   {
     "name": "WEEBLE WOBBLE",
@@ -41943,6 +43584,20 @@
     "additionalInstructions": "FINAL RESULT:\nThe image should show the subject completely transformed into an authentic Old West cowboy in full period costume (hat, vest, gun belt, boots) placed in a photorealistic Western setting (town street, saloon, desert, etc.) with complete environmental immersion in the 1870s-1890s American frontier - weathered, dusty, and looking like a genuine scene from a classic Western film."
   },
   {
+    "name": "WET PLATE COLLODION",
+    "category": [
+      "PHOTOGRAPHY",
+      "HISTORICAL",
+      "PROCESS",
+      "PORTRAIT",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into a wet plate collodion photograph. The wet plate collodion process (1851-1880s) produces unique photographic images on glass or metal plates with characteristic shallow depth of field, long exposure motion blur, luminous skin tones, and distinctive chemical artifacts including drips, uneven coating, and dark vignetting at edges.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Shallow depth of field\n• Luminous ethereal skin tones\n• Chemical drips and uneven coating at edges\n• Dark vignetting\n• Glass or metal plate surface quality"
+  },
+  {
     "name": "WHAT / HOW (FROM TEXT)",
     "category": [
       "EDUCATIONAL",
@@ -42080,7 +43735,21 @@
     "randomizeOptions": true,
     "additionalInstructions": "• Preserve recognizable identity of the subject\n• Keep the subject fully human and live-action\n• Never transform the subject into a cartoon character\n• Insert the subject directly into the actual movie universe of Who Framed Roger Rabbit\n• Recreate the film's cinematography, lighting, production design, atmosphere, and visual effects\n• Use authentic hand-drawn cel-animation characters matching their movie appearances\n• Allow Roger Rabbit, Jessica Rabbit, Eddie Valiant, Benny the Cab, Baby Herman, Judge Doom, Toon Patrol members, and other movie characters to appear naturally when appropriate\n• Blend live-action photography and traditional animation seamlessly\n• Maintain realistic physical interaction between humans and cartoons\n• Preserve the movie's combination of detective-noir storytelling, Hollywood glamour, slapstick comedy, and animation magic\n• Use authentic 1940s Hollywood environments, automobiles, fashion, signage, and architecture\n• Create the appearance of an actual lost scene, deleted scene, alternate take, publicity photograph, or production still from the movie\n• Avoid generic cartoon worlds, generic animation styles, CGI aesthetics, anime influences, or modern animation trends\n• The final image should be indistinguishable from an authentic frame of Who Framed Roger Rabbit featuring the subject as a human character inside the film"
   },
-{
+  {
+    "name": "WIENER WERKSTÄTTE",
+    "category": [
+      "AUSTRIAN",
+      "DESIGN",
+      "DECORATIVE",
+      "MODERNIST",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into a Wiener Werkstätte (Vienna Workshop) design. The Wiener Werkstätte (1903-1932) was an Austrian design collective that created total works of art integrating architecture, furniture, fashion, and graphics. The style features bold geometric patterns, black-and-white contrasts, checkerboard motifs, and the integration of fine art with everyday objects.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Bold geometric patterns\n• Black-and-white contrasts\n• Checkerboard and grid motifs\n• Decorative total design approach\n• Early modernist geometric aesthetic"
+  },
+  {
     "name": "WIMMELBILDERBUCH SCENE",
     "category": [
       "ART",
@@ -42860,6 +44529,20 @@
     "additionalInstructions": "FINAL RESULT:\nThe image should clearly depict the subject as the selected WWE wrestler. The face must remain the subject's, while adopting the wrestler’s attire, facial hair (if applicable), and signature expression or mannerism in a dramatic wrestling setting."
   },
   {
+    "name": "WYCINANKI",
+    "category": [
+      "POLISH",
+      "FOLK ART",
+      "PAPER CUT",
+      "TRADITIONAL",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into a Polish Wycinanki paper cutting design. Wycinanki is a traditional Polish folk art of intricate paper cutting, featuring symmetrical designs of roosters, flowers, trees, and geometric patterns cut from brightly colored layered paper. The image should feature the characteristic bold symmetrical compositions with vibrant layered colored paper and precise cut details.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Symmetrical paper-cut design\n• Brightly colored layered paper\n• Precise cut details and patterns\n• Traditional Polish folk motifs\n• Flat layered paper appearance"
+  },
+  {
     "name": "X-MEN MUTANT",
     "category": [
       "SUPERHERO",
@@ -43000,6 +44683,34 @@
     ],
     "randomizeOptions": true,
     "additionalInstructions": "The final image must look like a genuine YouTube video or trending page. Match YouTube's exact white background, red accent color, thumbnail grid layout, and typography. All view counts, like counts, video titles, and surrounding trending videos must be real data from the target date, never fabricated. Thumbnails must follow real YouTube viral thumbnail conventions with bold text, bright colors, and expressive faces."
+  },
+  {
+    "name": "ZARDOZI EMBROIDERY",
+    "category": [
+      "INDIAN",
+      "TEXTILE",
+      "METALLIC",
+      "LUXURY",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into a Zardozi embroidery design. Zardozi is a luxurious Indian metallic embroidery technique using gold and silver threads, sequins, beads, and precious stones on heavy fabrics like velvet and silk. The style creates opulent raised three-dimensional designs of flowers, paisleys, and royal motifs for ceremonial garments and furnishings.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Gold and silver metallic threads\n• Raised three-dimensional embroidery\n• Sequins, beads, and stone embellishments\n• Rich velvet or silk background\n• Mughal-era luxury aesthetic"
+  },
+  {
+    "name": "ZELLIGE MOSAIC",
+    "category": [
+      "MOROCCAN",
+      "ISLAMIC",
+      "GEOMETRIC",
+      "TILE",
+      "ART"
+    ],
+    "message": "Take a picture and transform it into a Moroccan Zellige mosaic tile design. Zellige is a traditional Moroccan art of hand-cut geometric mosaic tilework, where individually chiseled glazed terracotta pieces are assembled into complex mathematical star and polygon patterns. The image should feature intricate interlocking geometric patterns in traditional Moroccan colors.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Hand-cut geometric tile pieces\n• Complex interlocking star and polygon patterns\n• Traditional Moroccan color palette (blue, green, white, yellow)\n• Glazed terracotta tile texture\n• Mathematical precision in pattern geometry"
   },
   {
     "name": "ZENTANGLE",
