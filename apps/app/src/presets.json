@@ -30631,6 +30631,41 @@
     "additionalInstructions": ""
   },
   {
+  "name": "POEM",
+  "category": [
+    "CREATIVE",
+    "LAYOUT",
+    "TYPOGRAPHY",
+    "ART",
+    "LITERATURE"
+  ],
+  "message": "Take a picture of the subject and use a selected poetic style to create a unique poem about the subject. Derive flavor text from observations of the subject's features and inferred personality, and, if the subject's name is specified in the master prompt, use it to personalize the poem. This generates a side-by-side composition: place the subject's portrait on the left frame and the newly generated poem on the right frame.\n\nEnsure the subject remains clearly recognizable, with their face integrated into the portrait while the entire scene maintains an elegant layout. The composition should look like a professional, artistic side-by-side presentation, with all elements rendered in a high-quality creative style.",
+  "options": [
+    {
+      "id": "001",
+      "text": "SONNET - A 14-line poem with a strict meter and rhyme scheme, famous for exploring themes like love.\n\nOPTION REQUIREMENTS:\n• Poem has 14 lines\n• Strict meter (e.g., iambic pentameter)\n• Defined rhyme scheme\n• Theme of love or beauty (related to subject)\n• Text layout on the right."
+    },
+    {
+      "id": "002",
+      "text": "BALLAD - A rhythmic, narrative poem that tells a story, often containing 4-line stanzas (quatrains) with an ABAB or ABCB rhyme scheme.\n\nOPTION REQUIREMENTS:\n• Narrative structure (tells a story about subject)\n• Rhythmic, simple meter\n• 4-line quatrains\n• Common rhyme patterns (ABAB/ABCB)\n• Continuous text on the right."
+    },
+    {
+      "id": "003",
+      "text": "ODE - A ceremonial, usually praising poem dedicated to a specific person, event, or inanimate object.\n\nOPTION REQUIREMENTS:\n• Addressed directly to the subject\n• Ceremonial or formal tone\n• Praising the subject\n• Elevated language\n• Text layout on the right."
+    },
+    {
+      "id": "004",
+      "text": "FREE VERSE - Poetry that intentionally lacks a consistent rhyme scheme, metrical pattern, or musical form, allowing the writer to follow natural speech patterns.\n\nOPTION REQUIREMENTS:\n• No consistent rhyme or meter\n• Uses natural speech patterns\n• Organic structure (no strict stanzas)\n• Text layout on the right."
+    },
+    {
+      "id": "005",
+      "text": "BLANK VERSE - Unrhymed poetry written in a strict, consistent meter—usually iambic pentameter.\n\nOPTION REQUIREMENTS:\n• Strict, consistent meter (iambic pentameter)\n• No rhyme\n• Flowing lines (no end-stopping required)\n• Continuous text on the right."
+    }
+  ],
+  "randomizeOptions": true,
+  "additionalInstructions": "POEM GENERATION:\n• Must be generated based on the subject's likeness\n• Must follow the specific rules of the selected poetic style (lines, meter, rhyme)\n• Text must be written about the subject in the third-person or second-person (as if addressed, e.g., in an Ode)\n• Elevated vocabulary or specific artistic styling matching the chosen style\n• Should make specific references to physical features, perceived personality, or context inferred from the photo\n\nLAYOUT REQUIREMENTS:\n• Side-by-side presentation\n• Subject portrait must be clearly positioned in the left frame (approx. 40-50% width)\n• Poem text must be in the right frame (approx. 50-60% width)\n• Elegant typographical rendering on the right\n• Could include minimal illustrative elements (like decorative line breaks or a faint background pattern) on the right\n\nSUBJECT PORTRAIT:\n• Must be a clear, recognizable portrait\n• Rendered with high-quality creative styling (e.g., illustrative, painted, or enhanced photographic)\n• Face remains prominent and faithful to the input image\n\nFINAL RESULT:\nThe final image is a high-quality side-by-side presentation, featuring a clear, recognizable portrait of the subject in the left frame, and a newly generated poem written about the subject in the selected poetic style (following strict rules for lines, meter, and rhyme) rendered in elegant typography in the right frame."
+  },
+  {
     "name": "POKÉDEX",
     "category": [
       "EDUCATIONAL",
@@ -36039,6 +36074,19 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "The mineral formations should be geologically plausible with realistic growth patterns, banding from seasonal deposition, and the characteristic translucent quality of clean calcite. Include cave lighting (warm spotlights) and the dark cave environment."
+  },
+  {
+    "name": "SPIDER-MAN SWING",
+    "category": [
+      "ACTION",
+      "CINEMATIC",
+      "SUPERHERO",
+      "CHARACTER TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform the primary subject into a person being dynamically carried through the air by Spider-Man during a high-speed urban swing.\n\nTRANSFORMATION RULES (NON-NEGOTIABLE):\n• Map the primary subject's face, hair, and unique facial features seamlessly onto the person being carried.\n• Preserve the subject's distinct facial expression of excitement, panic, or shock as they fly through the air.\n• The subject must be integrated naturally into the cinematic scene as a live-action character.\n\nCOMPOSITION & POSE RULES (CRITICAL):\n• The transformed subject is positioned on the left side of the frame, suspended mid-air, with their left arm raised high and outward in an expressive, free-falling gesture.\n•  Spider-Man is positioned directly to the right of the subject, securely holding them around the waist and torso during a high-speed swing.\n• Spider-Man's right arm must be extended straight up toward the upper right corner, gripping a taut white web line that angles sharply off-screen.\n• Spider-Man must wear his classic, iconic red and blue textured fabric suit with distinct black webbing patterns and large white eyes outlined in thick black borders.\n\nENVIRONMENT & BACKGROUND RULES:\n• The backdrop must be a gritty, towering New York City urban environment.\n• Use a deep perspective of dense skyscrapers shot at a dynamic tilt (Dutch angle) to emphasize extreme height, vertigo, and downward momentum.\n• The buildings must feature dark brick or stone architecture with columns of illuminated rectangular windows glowing with warm light from within.\n• In the upper right quadrant of the background, a rustic, weathered cylindrical wooden water tower must be clearly visible on a distant rooftop.\n• The sky must be a moody, overcast, desaturated gray, casting soft ambient light over the entire scene.\n\nLIGHTING & CINEMATOGRAPHY:\n• Professional action-movie cinematography.\n• Low-contrast, cinematic lighting with soft diffused highlights on the characters and warm ambient light bleeding from the skyscraper windows.\n• Subtle depth of field and minor motion blur on the background to capture the intense speed of the swing.\n\nIDENTITY PRESERVATION:\n• Maintain recognizable facial structure, hair color, hair style, and identifying marks of the original input subject.\n• Ensure the head matches the perspective and lighting angle of the generated body.\n\nANTI-CHEAT:\n• Do not switch the positions of Spider-Man and the subject.\n• Do not use modern alternative, armor, or metallic Spider-Man suits; it must be the classic fabric red-and-blue suit.\n• Do not clean up the gritty texture of the city background; keep it atmospheric, dark, and industrial.\n\nFINAL RESULT:\nThe final output must be an action-packed cinematic shot showing the original subject transformed into a rescued passenger, flying through a dark, window-lit skyscraper canyon alongside a classic red-and-blue Spider-Man mid-swing, complete with a rooftop water tower in the upper right background.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "SCENE ENFORCEMENT (CRITICAL):\n\n• The entire layout must feature the subject on the left holding their arm out in mid-air, and Spider-Man anchoring the right side of the frame with his web line.\n• Apply a strong camera tilt to the skyscraper background to enforce a sense of high-speed motion.\n\nSUIT ENFORCEMENT:\n\n• Force Spider-Man into the traditional red/blue webbed fabric costume.\n\nBACKGROUND ENFORCEMENT:\n\n• Generate a dense, high-angle skyscraper backdrop with an overcast sky and a classic rooftop water tower strictly positioned in the upper right background."
   },
   {
     "name": "SPIELBERG FILM",
