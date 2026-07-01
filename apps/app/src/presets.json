@@ -36076,17 +36076,17 @@
     "additionalInstructions": "The mineral formations should be geologically plausible with realistic growth patterns, banding from seasonal deposition, and the characteristic translucent quality of clean calcite. Include cave lighting (warm spotlights) and the dark cave environment."
   },
   {
-    "name": "SPIDER-MAN SWING",
-    "category": [
-      "ACTION",
-      "CINEMATIC",
-      "SUPERHERO",
-      "CHARACTER TRANSFORMATION"
-    ],
-    "message": "Take a picture and transform the primary subject into a person being dynamically carried through the air by Spider-Man during a high-speed urban swing.\n\nTRANSFORMATION RULES (NON-NEGOTIABLE):\n• Map the primary subject's face, hair, and unique facial features seamlessly onto the person being carried.\n• Preserve the subject's distinct facial expression of excitement, panic, or shock as they fly through the air.\n• The subject must be integrated naturally into the cinematic scene as a live-action character.\n\nCOMPOSITION & POSE RULES (CRITICAL):\n• The transformed subject is positioned on the left side of the frame, suspended mid-air, with their left arm raised high and outward in an expressive, free-falling gesture.\n•  Spider-Man is positioned directly to the right of the subject, securely holding them around the waist and torso during a high-speed swing.\n• Spider-Man's right arm must be extended straight up toward the upper right corner, gripping a taut white web line that angles sharply off-screen.\n• Spider-Man must wear his classic, iconic red and blue textured fabric suit with distinct black webbing patterns and large white eyes outlined in thick black borders.\n\nENVIRONMENT & BACKGROUND RULES:\n• The backdrop must be a gritty, towering New York City urban environment.\n• Use a deep perspective of dense skyscrapers shot at a dynamic tilt (Dutch angle) to emphasize extreme height, vertigo, and downward momentum.\n• The buildings must feature dark brick or stone architecture with columns of illuminated rectangular windows glowing with warm light from within.\n• In the upper right quadrant of the background, a rustic, weathered cylindrical wooden water tower must be clearly visible on a distant rooftop.\n• The sky must be a moody, overcast, desaturated gray, casting soft ambient light over the entire scene.\n\nLIGHTING & CINEMATOGRAPHY:\n• Professional action-movie cinematography.\n• Low-contrast, cinematic lighting with soft diffused highlights on the characters and warm ambient light bleeding from the skyscraper windows.\n• Subtle depth of field and minor motion blur on the background to capture the intense speed of the swing.\n\nIDENTITY PRESERVATION:\n• Maintain recognizable facial structure, hair color, hair style, and identifying marks of the original input subject.\n• Ensure the head matches the perspective and lighting angle of the generated body.\n\nANTI-CHEAT:\n• Do not switch the positions of Spider-Man and the subject.\n• Do not use modern alternative, armor, or metallic Spider-Man suits; it must be the classic fabric red-and-blue suit.\n• Do not clean up the gritty texture of the city background; keep it atmospheric, dark, and industrial.\n\nFINAL RESULT:\nThe final output must be an action-packed cinematic shot showing the original subject transformed into a rescued passenger, flying through a dark, window-lit skyscraper canyon alongside a classic red-and-blue Spider-Man mid-swing, complete with a rooftop water tower in the upper right background.",
-    "options": [],
-    "randomizeOptions": false,
-    "additionalInstructions": "SCENE ENFORCEMENT (CRITICAL):\n\n• The entire layout must feature the subject on the left holding their arm out in mid-air, and Spider-Man anchoring the right side of the frame with his web line.\n• Apply a strong camera tilt to the skyscraper background to enforce a sense of high-speed motion.\n\nSUIT ENFORCEMENT:\n\n• Force Spider-Man into the traditional red/blue webbed fabric costume.\n\nBACKGROUND ENFORCEMENT:\n\n• Generate a dense, high-angle skyscraper backdrop with an overcast sky and a classic rooftop water tower strictly positioned in the upper right background."
+  "name": "SPIDER-MAN SWING",
+  "category": [
+    "ACTION",
+    "CINEMATIC",
+    "SUPERHERO",
+    "CHARACTER TRANSFORMATION"
+  ],
+  "message": "Take a picture and transform the primary subject into a person being dynamically carried through the air by Spider-Man during an exhilarating high-speed urban swing.",
+  "options": [],
+  "randomizeOptions": false,
+  "additionalInstructions": "SCENE ENFORCEMENT (CRITICAL):\n\n• The entire layout must feature the subject on the left holding their arm out in an expression of joy and thrill, and Spider-Man anchoring the right side of the frame with his web line.\n• Apply a strong camera tilt to the skyscraper background to enforce a sense of high-speed motion.\n\nSUIT ENFORCEMENT:\n\n• Force Spider-Man into the traditional red/blue webbed fabric costume.\n\nBACKGROUND ENFORCEMENT:\n\n• Generate a dense, high-angle skyscraper backdrop with an overcast sky and a classic rooftop water tower strictly positioned in the upper right background."
   },
   {
     "name": "SPIELBERG FILM",
