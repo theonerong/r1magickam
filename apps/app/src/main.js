@@ -3137,6 +3137,31 @@ async function processBatchImages(preset, imagesToProcess) {
     }
   }
 
+  // OFFLINE: queue every image instead of sending — same queue the camera screen's Sync button uses
+  if (!isOnline) {
+    for (let i = 0; i < selectedIds.length; i++) {
+      const imageId = selectedIds[i];
+      const image = galleryImages.find(img => img.id === imageId);
+      if (!image) continue;
+      const resizedImageBase64 = await resizeImageForSubmission(image.imageBase64);
+      const queueItem = {
+        id: Date.now().toString() + '-gal-batch' + i,
+        imageBase64: resizedImageBase64,
+        preset: preset,
+        manualSelection: batchManualSelection,
+        timestamp: Date.now()
+      };
+      photoQueue.push(queueItem);
+    }
+    saveQueue();
+    updateQueueDisplay();
+    isBatchMode = false;
+    selectedBatchImages.clear();
+    toggleBatchMode();
+    alert(`You're offline — ${total} image${total > 1 ? 's' : ''} queued. They'll send automatically once you're back online (or tap Sync on the camera screen).`);
+    return;
+  }
+
   const overlay = document.createElement('div');
   overlay.className = 'batch-progress-overlay';
   overlay.innerHTML = `
@@ -4102,6 +4127,27 @@ async function applyMultiplePresets() {
         }
       }
     }
+  }
+
+  // OFFLINE: queue every preset instead of sending — same queue the camera screen's Sync button uses
+  if (!isOnline) {
+    const resizedImageBase64 = await resizeImageForSubmission(image.imageBase64);
+    for (let i = 0; i < presetsToApply.length; i++) {
+      const preset = presetsToApply[i];
+      const manualSelection = galleryMultiManualSelections[preset.name] ?? null;
+      const queueItem = {
+        id: Date.now().toString() + '-gal-mp' + i,
+        imageBase64: resizedImageBase64,
+        preset: preset,
+        manualSelection: manualSelection,
+        timestamp: Date.now()
+      };
+      photoQueue.push(queueItem);
+    }
+    saveQueue();
+    updateQueueDisplay();
+    alert(`You're offline — ${presetsToApply.length} preset${presetsToApply.length > 1 ? 's' : ''} queued. They'll send automatically once you're back online (or tap Sync on the camera screen).`);
+    return;
   }
 
   // Now feed each preset one by one with the saved selections
@@ -7329,6 +7375,30 @@ async function applyGalleryLayerPresets() {
 
   const resizedImageBase64 = await resizeImageForSubmission(image.imageBase64);
 
+  // OFFLINE: queue it instead of sending — same queue the camera screen's Sync button uses
+  if (!isOnline) {
+    const queueItem = {
+      id: Date.now().toString() + '-gal-layer',
+      imageBase64: resizedImageBase64,
+      preset: {
+        name: 'Layer: ' + presetsToApply.map(p => p.name).join(' + '),
+        message: combinedPrompt,
+        options: [],
+        randomizeOptions: false,
+        additionalInstructions: ''
+      },
+      isCombined: false,
+      timestamp: Date.now()
+    };
+    photoQueue.push(queueItem);
+    saveQueue();
+    updateQueueDisplay();
+    const presetHeader = document.getElementById('viewer-preset-header');
+    if (presetHeader) presetHeader.textContent = '📑 LAYER';
+    alert('You\'re offline — this will send automatically once you\'re back online (or tap Sync on the camera screen).');
+    return;
+  }
+
   if (typeof PluginMessageHandler !== 'undefined') {
     const layerPayload = {
       pluginId: 'com.r1.pixelart',
@@ -8359,11 +8429,10 @@ function setupConnectionMonitoring() {
     updateConnectionStatus();
     console.log('Connection restored');
     
-    if (photoQueue.length > 0 && !isSyncing) {
-      setTimeout(() => {
-        statusElement.textContent = `Connection restored! Syncing ${photoQueue.length} photos...`;
-        syncQueuedPhotos();
-      }, 1000);
+    if (photoQueue.length > 0) {
+      if (statusElement) {
+        statusElement.textContent = `Back online! ${photoQueue.length} item${photoQueue.length > 1 ? 's' : ''} queued — tap Sync to send.`;
+      }
     }
   });
   
