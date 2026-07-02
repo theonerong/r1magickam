@@ -36030,33 +36030,6 @@
     "additionalInstructions": ""
   },
   {
-    "name": "SNOWFLAKE",
-    "category": [
-      "OPTIONS",
-      "SUBJECT TRANSFORMATION",
-      "CRYSTAL STRUCTURE",
-      "WINTER",
-      "MICRO FORM"
-    ],
-    "message": "Take a picture and transform ONLY the subject into a snowflake.\n\nThe subject must be reinterpreted as a single complex snowflake made of ice crystals.\n\nEverything except the subject must remain unchanged.",
-    "randomizeOptions": true,
-    "options": [
-    {
-      "id": "001",
-      "text": "Natural Hexagonal Ice Crystal — realistic atmospheric snowflake with organic branching arms"
-    },
-    {
-      "id": "002",
-      "text": "Geometric Crystal Snowflake — highly symmetrical, sharp, mathematically precise ice structure"
-    },
-    {
-      "id": "003",
-      "text": "Frosted Micro Crystal — dense intricate snowflake with fine needle-like ice formations"
-    }
-    ],
-    "additionalInstructions": "• ONLY the subject is transformed into a snowflake.\n• Preserve subject identity.\n• The snowflake must feel physically real, as if photographed under a microscope.\n• Ice should show translucency, refraction, and subtle internal light scattering.\n• Maintain scale consistency as a macro/close-up crystalline object.\n• Background and environment must remain completely unchanged.\n• No cartooning or abstraction unless specified by option."
-  },
-  {
     "name": "SOAKED",
     "category": [
       "HUMOR",
