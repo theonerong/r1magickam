@@ -3161,6 +3161,33 @@
     "additionalInstructions": ""
   },
   {
+  "name": "BAS-RELIEF",
+  "category": [
+    "OPTIONS",
+    "SCULPTURE",
+    "RELIEF ART",
+    "STONE CARVING",
+    "3D SURFACE TRANSFORMATION"
+  ],
+  "message": "Take a picture and transform ONLY the subject into a carved bas relief sculpture.\n\nThe subject must appear as if it has been carved into a single continuous stone or plaster surface with shallow depth, preserving identity through raised and recessed forms rather than full 3D volume.\n\nEverything except the subject must remain unchanged.\n\nMASTER PROMPT RULE:\n• Preserve identity by translating features into carved depth, contour carving, and sculpted surface gradients.\n",
+  "randomizeOptions": true,
+  "options": [
+    {
+      "id": "001",
+      "text": "Classical Marble Relief — ancient Greek/Roman carved stone with soft weathered edges and museum patina"
+    },
+    {
+      "id": "002",
+      "text": "Architectural Wall Relief — decorative carved plaster integrated into a building surface with structured framing"
+    },
+    {
+      "id": "003",
+      "text": "Bronze Cast Relief — metal bas relief with patinated bronze surface and highlighted raised contours"
+    }
+  ],
+  "additionalInstructions": "• ONLY the subject is transformed into bas relief sculpture.\n• Preserve identity through shallow carved depth rather than full volumetric form.\n• Subject must appear physically carved into a single continuous material surface.\n• Use realistic stone, plaster, or bronze material behavior depending on option.\n• Lighting should emphasize raised and recessed carving depth.\n• Maintain original composition and perspective.\n• Background and environment remain completely unchanged.\n• No photorealism—everything must feel sculpted or cast."
+  },
+  {
     "name": "BAS-RELIEF COIN PORTRAIT",
     "category": [
       "OPTIONS",
@@ -9868,6 +9895,33 @@
     "additionalInstructions": "NOT ALLOWED:\n• Subject wearing crystal jewelry (must BE crystals)\n• Crystals placed on subject (must be subject)\n• Photograph with crystal overlay\n• Subject holding crystals\n\nFINAL RESULT:\nThe image should show the subject completely transformed into a three-dimensional sculpture made entirely of crystals and gemstones - with geometric faceted surfaces, transparent and translucent qualities, brilliant light refraction creating rainbow effects, multiple crystal formations and clusters creating the subject's form - the subject's face and body clearly recognizable through the crystalline structure with varied crystal sizes from tiny druzy to large statement crystals, dramatic lighting creating maximum sparkle and brilliance, and that magical precious gemstone quality where the subject has become a living crystal formation."
   },
   {
+  "name": "CT SCAN",
+  "category": [
+    "OPTIONS",
+    "MEDICAL IMAGING",
+    "SUBJECT TRANSFORMATION",
+    "COMPUTED TOMOGRAPHY",
+    "DIAGNOSTIC VOLUME"
+  ],
+  "message": "Take a picture and transform ONLY the subject into a CT scan (computed tomography) medical imaging representation.\n\nThe subject must appear as a layered volumetric scan composed of cross-sectional slices, revealing internal structure with realistic radiodensity variation as seen in clinical CT imaging.\n\nEverything except the subject must remain unchanged.\n\nMASTER PROMPT RULE:\n• Preserve identity by translating shape into stacked cross-sectional anatomy, density gradients, and volumetric reconstruction cues.\n",
+  "randomizeOptions": true,
+  "options": [
+    {
+      "id": "001",
+      "text": "Clinical Diagnostic CT — standard hospital scan with clean grayscale slices and realistic anatomical density mapping"
+    },
+    {
+      "id": "002",
+      "text": "High-Resolution Spiral CT — detailed multi-slice reconstruction with enhanced internal structure visibility"
+    },
+    {
+      "id": "003",
+      "text": "Low-Dose Scan Mode — slightly noisier CT imaging with grain, streak artifacts, and softer reconstruction"
+    }
+  ],
+  "additionalInstructions": "• ONLY the subject is transformed into CT scan form.\n• Preserve identity through volumetric slicing and cross-sectional reconstruction.\n• Subject must appear composed of stacked scan layers with visible internal density variation.\n• Use realistic CT grayscale palette with subtle blue/green monitor tint.\n• Include scan artifacts such as slight banding, noise, and reconstruction smoothing.\n• Background and environment remain completely unchanged.\n• No stylization beyond realistic medical CT imaging."
+  },
+  {
     "name": "CUBAN ART STYLE",
     "category": [
       "ART",
@@ -12392,6 +12446,33 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "FINAL RESULT:\nA single dynamic image showing structured energy fields flowing through the entire scene."
+  },
+  {
+  "name": "ENGINE TURNED (GUILLOCHÉ)",
+  "category": [
+    "OPTIONS",
+    "SURFACE PATTERN",
+    "PRECISION ENGRAVING",
+    "METALWORK",
+    "DECORATIVE TEXTURE"
+  ],
+  "message": "Take a picture and transform ONLY the subject into an engine-turned (guilloché) precision engraved surface.\n\nThe subject must be rendered as a finely machined metallic form covered in intricate repeating guilloché linework patterns, as if produced by a mechanical rose engine lathe.\n\nEverything except the subject must remain unchanged.\n\nMASTER PROMPT RULE:\n• Preserve identity by translating volume into engraved surface geometry, reflective curvature, and precise ornamental machining patterns.\n",
+  "randomizeOptions": true,
+  "options": [
+    {
+      "id": "001",
+      "text": "Classic Watch Dial Guilloché — tight circular engraving patterns with elegant radial symmetry and polished metal finish"
+    },
+    {
+      "id": "002",
+      "text": "Luxury Mechanical Plate — dense overlapping guilloché waves with high-end jewelry-grade metallic reflectivity"
+    },
+    {
+      "id": "003",
+      "text": "Art Deco Precision Engine Turn — bold geometric engraving patterns with strong directional machining lines and contrast"
+    }
+  ],
+  "additionalInstructions": "• ONLY the subject is transformed into guilloché engraving.\n• Preserve identity through engraved surface topology and reflective metallic form.\n• Subject must appear machined, not painted or printed.\n• Patterns should follow curvature of the form to emphasize volume and depth.\n• Use realistic metal materials such as gold, silver, platinum, or brushed steel.\n• Include subtle machining imperfections and micro-surface reflections.\n• Background and environment remain completely unchanged.\n• No stylization beyond precision-engineered metal engraving."
   },
   {
     "name": "ENVIRONMENTAL FUSION",
@@ -15276,6 +15357,33 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "HOLOGRAPHIC PANE ENGINE (ABSOLUTE):\n\n• Render the subject on or inside a large transparent glass/acrylic pane suspended in front of a dark distant background\n• The pane must be visibly detached from the rear environment by empty spatial gap\n\nGLASS PANE VISIBILITY:\n\n• Pane edges must be visible through reflections and faint glass borders\n• Subtle transparency mandatory\n• Pane should catch white specular reflections\n\nSUBJECT HOLOGRAM:\n\n• Subject appears luminous, crisp, and embedded on the pane surface\n• Subject should be brightest object in image\n• Subject must feel suspended in front of background space\n\nBACKGROUND RECESSION:\n\n• Background should be dark, low-detail, distant, and heavily recessed\n• Rear environment should feel several feet behind pane\n\nPANE SHADOW / LIGHT GAP:\n\n• Add faint shadow or light diffusion behind the glass to show pane separation from rear wall\n• There must be obvious air distance between pane and background\n\nEDGE LIGHTING:\n\n• Glass borders may glow subtly with reflected light\n• Subject edges can carry faint holographic luminosity\n\nSPATIAL EFFECT:\n\n• Viewer must feel they are looking at a foreground floating transparent screen with the subject trapped on it\n\nANTI-CHEAT:\n\n• Do not simply make a sci-fi portrait\n• Must visibly include the suspended pane plane\n• Background cannot remain attached to subject plane\n\nQUALITY:\n\n• Strong pane detachment\n• Crisp luminous foreground\n• Dark rear recession\n• Excellent optical hover depth"
+  },
+  {
+    "name": "FLUOROSCOPY",
+    "category": [
+      "OPTIONS",
+      "MEDICAL IMAGING",
+      "SUBJECT TRANSFORMATION",
+      "X-RAY",
+      "DIAGNOSTIC VISUALIZATION"
+    ],
+    "message": "Take a picture and transform ONLY the subject into a live fluoroscopy-style medical imaging representation.\n\nThe subject must appear as a real-time X-ray fluoroscopic view, showing semi-transparent anatomical structure with glowing contrast density mapping, as if observed under continuous medical imaging equipment.\n\nEverything except the subject must remain unchanged.\n\nMASTER PROMPT RULE:\n• Preserve identity by translating form into visible structural outlines, density variation, and internal motion cues.\n",
+    "randomizeOptions": true,
+    "options": [
+    {
+      "id": "001",
+      "text": "Clinical Hospital Fluoroscopy — clean diagnostic imaging with realistic grayscale X-ray contrast and subtle scan noise"
+    },
+    {
+      "id": "002",
+      "text": "High-Contrast Surgical View — enhanced brightness, sharp bone/structure separation, operating room imaging feel"
+    },
+    {
+      "id": "003",
+      "text": "Dynamic Motion Scan — slightly blurred real-time fluoroscopic capture showing motion trails and temporal imaging artifacts"
+    }
+    ],
+    "additionalInstructions": "• ONLY the subject is transformed into fluoroscopy imaging.\n• Preserve identity through structural silhouette, density mapping, and anatomical interpretation.\n• Subject must appear semi-transparent with layered internal structure visualization.\n• Use realistic X-ray grayscale palette with subtle green/blue monitor tint if applicable.\n• Add authentic medical imaging noise, scan lines, and detector artifacts.\n• Background and environment remain completely unchanged.\n• No stylization beyond medical imaging realism."
   },
   {
     "name": "FLOWERY",
@@ -20876,6 +20984,33 @@
     "additionalInstructions": "IDENTITY PRESERVATION (CRITICAL):\n• The floating wax globs must organize themselves to clearly resemble the subject's face and features\n• Utilize smaller, distinct floating wax bubbles to define features like eyes, nose bridges, and smiles, while larger bodies of wax define the jawline and hair boundaries\n• Recognition must come purely from the fluid wax arrangement\n\nANTI-CHEAT:\n• Do not put a flat photo of a person inside a glass jar\n• Do not make a face swap or paste a realistic face onto a bubble\n• The lamp base and cap must be explicitly visible; do not show just close-up liquid bubbles\n• Do not use realistic human eyes, hair, or skin; everything inside must be molten, colored wax\n\nFINAL RESULT:\nThe subject must be completely transformed into the floating, undulating wax bubbles inside a fully rendered, glowing retro lava lamp. The final image should immediately evoke 1970s nostalgia, psychedelic pop-culture, and vintage ambient light decor, with the subject completely recognizable through the organic artistry of shifting liquid wax blobs."
   },
   {
+    "name": "LAVA ROCK",
+    "category": [
+      "OPTIONS",
+      "SUBJECT TRANSFORMATION",
+      "VOLCANIC",
+      "GEOLOGY",
+      "NATURAL MATERIAL"
+    ],
+    "message": "Take a picture and transform ONLY the subject into a solidified volcanic lava rock formation.\n\nThe subject must be reinterpreted as a naturally formed igneous rock, as if it cooled rapidly from molten lava into dense, porous basaltic stone while preserving recognizable identity through silhouette and structure.\n\nEverything except the subject must remain unchanged.\n\nMASTER PROMPT RULE:\n• Preserve identity by translating forms into geological massing, cracks, and volcanic texture patterns.\n",
+    "randomizeOptions": true,
+    "options": [
+    {
+      "id": "001",
+      "text": "Basalt Lava Rock — dense, dark, highly textured volcanic stone with sharp cooled edges"
+    },
+    {
+      "id": "002",
+      "text": "Pahoehoe Flow Stone — smooth, rope-like cooled lava surface with flowing organic forms"
+    },
+    {
+      "id": "003",
+      "text": "Scoria Fragment — porous, lightweight volcanic rock with visible gas bubble cavities"
+    }
+    ],
+    "additionalInstructions": "• ONLY the subject is transformed into lava rock material.\n• Preserve silhouette and identity through geological structure and surface formation.\n• Surface must show realistic volcanic cooling patterns, cracks, and vesicles.\n• Material must appear physically heavy, dense, and naturally formed.\n• Lighting should emphasize rough texture and stone relief.\n• Background and environment remain completely unchanged.\n• No stylization beyond natural geological appearance."
+  },
+  {
     "name": "LAWNMOWER MAN",
     "category": [
       "RETRO CGI",
@@ -21497,6 +21632,33 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Spontaneous expressive brushwork\n• Sparse elegant composition\n• Black ink with minimal color\n• Calligraphic inscription and seal stamps\n• Scholar's aesthetic sensibility"
+  },
+  {
+  "name": "LITHOGRAPH",
+  "category": [
+    "OPTIONS",
+    "PRINTMAKING",
+    "ART TRANSFORMATION",
+    "VINTAGE PRINT",
+    "GRAPHIC ARTS"
+  ],
+  "message": "Take a picture and transform the entire image into a traditional lithograph print.\n\nUnlike other presets, BOTH the subject and the environment must be transformed into a unified lithographic artwork, as if drawn and printed on stone using historical lithography techniques.\n\nThe final result should look like a museum-quality printed plate with ink texture, hand-drawn tonal shading, and visible print press characteristics.\n\nMASTER PROMPT RULE:\n• Preserve composition and identity while converting everything into a cohesive printed lithograph illustration.\n",
+  "randomizeOptions": true,
+  "options": [
+    {
+      "id": "001",
+      "text": "19th Century Scientific Lithograph — detailed monochrome illustration with fine ink shading and anatomical precision style"
+    },
+    {
+      "id": "002",
+      "text": "Vintage Art Poster Lithograph — stylized commercial print with bold ink contrasts and slightly worn paper texture"
+    },
+    {
+      "id": "003",
+      "text": "Fine Art Gallery Lithograph — highly detailed hand-drawn engraving style with soft tonal gradients and archival paper finish"
+    }
+  ],
+  "additionalInstructions": "• BOTH subject and environment are transformed into a single unified lithographic print.\n• Use traditional stone lithography aesthetics with ink layering and cross-hatching.\n• Preserve composition while converting all elements into printed illustration form.\n• Include visible ink grain, plate texture, and slight printing imperfections.\n• Maintain strong contrast and controlled shading typical of lithographic art.\n• The final image must feel like a scanned museum print from an archival collection.\n• No photorealism should remain in any part of the image."
   },
   {
   "name": "LITHOGRAPH TIN TOY",
@@ -22209,6 +22371,33 @@
     ],
     "randomizeOptions": true,
     "additionalInstructions": "FINAL RESULT:\nThe result should be a FULL VIEW of the magazine cover from the selected publication with the subject as the cover star, complete with all cover elements (logo, headlines, coverlines, barcode, date), professional photography appropriate to that magazine's style, and authentic graphic design matching that publication's specific aesthetic and format - showing the entire magazine cover clearly visible and not cropped."
+  },
+  {
+    "name": "MAGAZINE PICTURES COLLAGE",
+    "category": [
+      "OPTIONS",
+      "COLLAGE",
+      "PAPER ART",
+      "MIXED MEDIA",
+      "HANDCRAFTED"
+    ],
+    "message": "Take a picture and transform the subject into a handmade collage constructed entirely from cut-out magazine photographs.\n\nEvery visible part of the final image of the subject, clothing, hair, skin, and every tiny detail—must be recreated exclusively from individually cut magazine pictures.\n\nThe original image must not remain visible anywhere.\n\nThe finished artwork should resemble an extremely labor-intensive museum-quality collage assembled by hand from dozens of real magazine clippings.\n\nMASTER PROMPT RULE:\n• If a master prompt specifies a particular subject, setting, mood, or artistic direction—PRIORITIZE and USE that information while constructing the collage.\n",
+    "randomizeOptions": true,
+    "options": [
+      {
+        "id": "001",
+        "text": "Modern Glossy Magazines — contemporary fashion, travel, food, architecture, automotive and lifestyle publications."
+      },
+      {
+        "id": "002",
+        "text": "Vintage Magazine Collection — colorful magazine pages from the 1940s–1980s with aged printing and retro advertising."
+      },
+      {
+        "id": "003",
+        "text": "Thematic Editorial Assembly — intelligently choose magazine fragments whose photographic content matches each object being recreated."
+      }
+    ],
+    "additionalInstructions": "• This is a genuine handmade paper collage—not a digital filter.\n• Every visible surface must be constructed entirely from real magazine photographs.\n• Preserve the subject's identity, pose, expression, silhouette and composition.\n• Every individual clipping must retain recognizable photographic imagery rather than becoming flat colored paper.\n• Use dozens of uniquely shaped cut pieces depending on image complexity.\n• Vary clipping sizes.\n• All cut edges should have realistic scissor or craft-knife imperfections.\n• Magazine pieces should naturally overlap with visible paper thickness.\n• Include occasional curled edges and slightly lifted corners for realism.\n• Preserve accurate lighting and perspective.\n• Printed halftone dots, ink texture and magazine gloss should remain visible upon close inspection.\n• Hair must be recreated entirely from magazine image fragments.\n• Eyes must also be assembled from separate magazine clippings while preserving expression.\n• Clothing should be reconstructed from appropriate photographic fragments while maintaining realistic folds and textures.\n• Avoid duplicated or repeated magazine fragments.\n• The finished artwork should reward close inspection by revealing countless recognizable miniature photographs."
   },
   {
     "name": "MAGIC CAMERA PHOTO",
@@ -24788,6 +24977,33 @@
     "additionalInstructions": "CORE RULE (ABSOLUTE):\n• The subject MUST be constructed entirely from the same continuous line system as the background\n• The image must NOT contain a drawn subject with lines placed on top\n• There must be no separation between subject and background systems\n\nFREQUENCY HIERARCHY (CRITICAL):\n• Background = very fine, tightly spaced lines\n• Subject = coarser, thicker, more widely spaced lines\n• This contrast MUST be clearly visible\n\n• The subject must emerge ONLY through this frequency shift\n• Do NOT use shading, fill, or tone to define the subject\n\nCONTINUITY ENFORCEMENT:\n• Lines must flow continuously through both background and subject regions\n• No breaks, gaps, or black bands around the subject\n• No halos, glows, or isolation zones\n\n• If a black aura or outline appears → REMOVE IT\n\nBACKGROUND DEPTH FIELD:\n• Background must create a receding depth effect (black hole or distance field)\n• Achieve this through gradual line compression and directional convergence\n• The depth must be created ONLY with line spacing and curvature\n\nSUBJECT FORMATION:\n• The subject must distort the background line field\n• Use displacement, thickness change, and spacing variation\n• The subject should feel like a structural disturbance in the field\n\n• The subject must NOT look drawn or illustrated\n\nINTERFERENCE LAYER (MOIRÉ GENERATION):\n• Apply a second line system across the entire image\n• This layer must be slightly coarser than the background but finer than the subject\n• Offset the two layers slightly to create visible moiré interaction\n\n• Keep interference stable — avoid chaotic vibration\n\nANTI-AURA / ANTI-OUTLINE (STRICT):\n• Do NOT create any black band, glow, or empty space around the subject\n• Do NOT outline the subject in any way\n• Do NOT isolate the subject from the background\n\n• Subject edges must be defined ONLY by frequency transition\n\nANTI-FAIL CONDITIONS:\n• Subject drawn separately from lines → FAIL\n• Any outline, halo, or aura → FAIL\n• Background and subject using same frequency → FAIL\n• Broken line continuity → FAIL\n\nQUALITY TARGET:\n• Subject clearly visible through line frequency contrast\n• Continuous line system across entire image\n• Strong depth in background\n• Clean, stable moiré shimmer\n• No artificial separation artifacts."
   },
   {
+  "name": "MOKUME GANE",
+  "category": [
+    "OPTIONS",
+    "METALWORK",
+    "LAYERED MATERIAL",
+    "JAPANESE TECHNIQUE",
+    "SUBJECT TRANSFORMATION"
+  ],
+  "message": "Take a picture and transform ONLY the subject into a mokume gane layered metal sculpture.\n\nThe subject must be reimagined as a forged laminated metal object composed of multiple fused metal layers with flowing wood-grain-like patterns, as seen in traditional Japanese mokume gane craftsmanship.\n\nEverything except the subject must remain unchanged.\n\nMASTER PROMPT RULE:\n• Preserve identity by translating form into layered metallic strata, flowing grain patterns, and forged structural continuity.\n",
+  "randomizeOptions": true,
+  "options": [
+    {
+      "id": "001",
+      "text": "Traditional Mokume Gane — warm mixed metals like copper, brass, and silver with organic flowing grain patterns"
+    },
+    {
+      "id": "002",
+      "text": "High-Contrast Damascus Style — bold layered metal bands with sharp visual separation and dramatic forging patterns"
+    },
+    {
+      "id": "003",
+      "text": "Luxury Jewelry Finish — polished mokume gane with gold, platinum, and rose gold layers in refined sculptural form"
+    }
+  ],
+  "additionalInstructions": "• ONLY the subject is transformed into mokume gane material.\n• Preserve identity through layered metal flow and grain direction.\n• Subject must appear forged, laminated, and physically solid metal.\n• Grain patterns must follow volume and curvature of the form.\n• Use realistic reflections and subtle patina variations between layers.\n• Include fine imperfections typical of hand-forged metalwork.\n• Background and environment remain completely unchanged.\n• No stylization beyond realistic mokume gane metallurgy."
+  },
+  {
     "name": "MOLAS",
     "category": [
       "PANAMANIAN",
@@ -26254,6 +26470,33 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+  "name": "MRI SCAN",
+  "category": [
+    "OPTIONS",
+    "MEDICAL IMAGING",
+    "SUBJECT TRANSFORMATION",
+    "MAGNETIC RESONANCE",
+    "VOLUMETRIC SCAN"
+  ],
+  "message": "Take a picture and transform ONLY the subject into an MRI (magnetic resonance imaging) scan representation.\n\nThe subject must appear as a high-detail volumetric MRI reconstruction with visible layered tissue contrast, magnetic field-based density variation, and soft anatomical segmentation as seen in clinical imaging systems.\n\nEverything except the subject must remain unchanged.\n\nMASTER PROMPT RULE:\n• Preserve identity by translating form into volumetric tissue layers, internal segmentation, and magnetic resonance contrast mapping.\n",
+  "randomizeOptions": true,
+  "options": [
+    {
+      "id": "001",
+      "text": "Clinical MRI T1 Mode — clean anatomical structure with balanced grayscale tissue contrast and sharp segmentation"
+    },
+    {
+      "id": "002",
+      "text": "Clinical MRI T2 Mode — enhanced fluid visibility with brighter internal contrast and soft tissue emphasis"
+    },
+    {
+      "id": "003",
+      "text": "Functional MRI Style — subtle glow variations indicating activity-based contrast with slightly abstract visualization"
+    }
+  ],
+  "additionalInstructions": "• ONLY the subject is transformed into MRI scan form.\n• Preserve identity through layered tissue segmentation and volumetric reconstruction.\n• Subject must appear as a soft yet highly detailed medical scan volume.\n• Use realistic MRI grayscale with optional subtle colored gradient overlays typical of medical imaging.\n• Include mild scan noise, magnetic field artifacts, and reconstruction smoothing.\n• Background and environment remain completely unchanged.\n• No stylization beyond realistic MRI imaging."
   },
   {
     "name": "MUG SHOT",
@@ -29519,6 +29762,33 @@
     "additionalInstructions": ""
   },
   {
+    "name": "PENCIL ERASER TOPPER",
+    "category": [
+      "OPTIONS",
+      "OBJECT TRANSFORMATION",
+      "STATIONERY",
+      "MINIATURE SCULPTURE",
+      "SURFACE DESIGN"
+    ],
+    "message": "Take a picture and transform ONLY the subject into a fully realized pencil eraser topper sculpture mounted on the end of a standard pencil.\n\nThe subject must become a miniature rubber eraser figurine sitting physically on top of a pencil eraser base, as if manufactured as a novelty stationery item.\n\nThe background, environment, and everything except the subject must remain unchanged.\n\nMASTER PROMPT RULE:\n• If a master prompt specifies identity, pose, or character traits — preserve them exactly within the eraser topper form.\n",
+    "randomizeOptions": true,
+    "options": [
+    {
+      "id": "001",
+      "text": "School Desk Novelty — simple rubber eraser topper with clean molded details and classroom aesthetic"
+    },
+    {
+      "id": "002",
+      "text": "Collector Edition — highly detailed sculpted eraser figurine with premium molded texture and subtle wear"
+    },
+    {
+      "id": "003",
+      "text": "Cartoon Rubber Toy — stylized eraser topper with exaggerated soft rubber proportions and playful design"
+    }
+    ],
+    "additionalInstructions": "• ONLY the subject is transformed into the eraser topper.\n• Everything else in the image remains unchanged.\n• The subject must appear physically attached to the pencil eraser.\n• Maintain original pose, proportions, and identity within miniature scale.\n• Material must look like molded rubber or soft vinyl eraser material.\n• Visible compression, slight imperfections, and manufacturing seams are allowed.\n• Lighting must match original scene.\n• The pencil must appear standard graphite school pencil unless otherwise specified."
+  },
+  {
     "name": "PENNIES",
     "category": [
       "TRANSFORMATION",
@@ -29544,6 +29814,33 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "PEPPER'S GHOST",
+    "category": [
+      "OPTIONS",
+      "ILLUSION",
+      "THEATRICAL EFFECT",
+      "STAGE MAGIC",
+      "OPTICAL PHENOMENON"
+    ],
+    "message": "Take a picture and transform the scene into a Pepper's Ghost illusion.\n\nThe subject appears as a semi-transparent spectral projection created using angled glass reflection techniques, as if performed on a dark theatrical stage with controlled lighting.\n\nUnlike other presets, BOTH the subject and the environment are affected to simulate a full stage illusion setup.\n\nThe subject remains recognizable but becomes ghostlike, floating, and partially reflective as if projected through glass.\n\nMASTER PROMPT RULE:\n• Preserve identity, pose, and composition while converting the entire scene into a theatrical illusion environment.\n",
+    "randomizeOptions": true,
+    "options": [
+    {
+      "id": "001",
+      "text": "Classic Theater Stage — dark stage, visible glass pane reflection, Victorian illusion performance style"
+    },
+    {
+      "id": "002",
+      "text": "Modern Holographic Show — sleek black stage with controlled lighting and digital projection feel"
+    },
+    {
+      "id": "003",
+      "text": "Haunted Exhibition Illusion — eerie museum-style display with dim lighting and spectral reflections"
+    }
+    ],
+    "additionalInstructions": "• Both subject and environment are transformed into an optical illusion setup.\n• The subject becomes semi-transparent and reflective like a Pepper's Ghost projection.\n• Strong emphasis on angled glass reflection geometry and stage depth.\n• Lighting must support illusion visibility (dark environment with controlled highlights).\n• Maintain recognizability of subject through silhouette and motion cues.\n• Include subtle double-image ghosting and reflection layering.\n• Scene should feel like a real live performance illusion, not digital transparency."
   },
   {
     "name": "PERSIAN MINIATURE",
@@ -29603,6 +29900,33 @@
     ],
     "randomizeOptions": true,
     "additionalInstructions": "FINAL RESULT:\nThe image should look like a real photograph capturing a moment where the subject appears unhinged or overreactive due to a tiny pest, with the humor coming entirely from realistic human behavior and context."
+  },
+  {
+  "name": "PET SCAN",
+  "category": [
+    "OPTIONS",
+    "MEDICAL IMAGING",
+    "SUBJECT TRANSFORMATION",
+    "NUCLEAR IMAGING",
+    "DIAGNOSTIC VISUALIZATION"
+  ],
+  "message": "Take a picture and transform ONLY the subject into a PET scan imaging representation.\n\nThe subject must appear as a functional positron emission tomography visualization, showing glowing metabolic activity patterns across the form, as if captured in a clinical nuclear imaging system.\n\nEverything except the subject must remain unchanged.\n\nMASTER PROMPT RULE:\n• Preserve identity by mapping recognizable form into heat-map like metabolic activity distribution and volumetric scan structure.\n",
+  "randomizeOptions": true,
+  "options": [
+    {
+      "id": "001",
+      "text": "Clinical PET Scan — realistic hospital imaging with smooth gradients, accurate tracer distribution, and soft glow density mapping"
+    },
+    {
+      "id": "002",
+      "text": "High-Activity Oncology Scan — intensified metabolic hotspots with vivid contrast and diagnostic emphasis"
+    },
+    {
+      "id": "003",
+      "text": "Low-Noise Research Scan — cleaner imaging with minimal artifacts and precise anatomical glow separation"
+    }
+  ],
+  "additionalInstructions": "• ONLY the subject is transformed into PET scan imaging.\n• Preserve identity through volumetric structure and metabolic activity mapping.\n• Subject must appear as a 3D medical scan with glowing tracer distribution.\n• Use realistic PET palette (greens, yellows, reds, blues depending on activity intensity).\n• Include subtle scan grain, detector noise, and medical imaging artifacts.\n• Background and environment remain completely unchanged.\n• No stylization beyond realistic nuclear imaging visualization."
   },
   {
     "name": "PETRIFIED WOOD PORTRAIT",
@@ -35704,6 +36028,33 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "SNOWFLAKE",
+    "category": [
+      "OPTIONS",
+      "SUBJECT TRANSFORMATION",
+      "CRYSTAL STRUCTURE",
+      "WINTER",
+      "MICRO FORM"
+    ],
+    "message": "Take a picture and transform ONLY the subject into a detailed natural snowflake crystalline structure.\n\nThe subject must be reinterpreted as a single complex snowflake made of ice crystals, maintaining recognizable identity through symmetry, branching structure, and unique crystalline geometry.\n\nEverything except the subject must remain unchanged.\n\nMASTER PROMPT RULE:\n• Preserve identity and pose by translating them into snowflake symmetry and branching logic.\n",
+    "randomizeOptions": true,
+    "options": [
+    {
+      "id": "001",
+      "text": "Natural Hexagonal Ice Crystal — realistic atmospheric snowflake with organic branching arms"
+    },
+    {
+      "id": "002",
+      "text": "Geometric Crystal Snowflake — highly symmetrical, sharp, mathematically precise ice structure"
+    },
+    {
+      "id": "003",
+      "text": "Frosted Micro Crystal — dense intricate snowflake with fine needle-like ice formations"
+    }
+    ],
+    "additionalInstructions": "• ONLY the subject is transformed into a snowflake structure.\n• Preserve identity through symmetry, structure, and unique branching pattern.\n• The snowflake must feel physically real, as if photographed under a microscope.\n• Ice should show translucency, refraction, and subtle internal light scattering.\n• Maintain scale consistency as a macro/close-up crystalline object.\n• Background and environment must remain completely unchanged.\n• No cartooning or abstraction unless specified by option."
   },
   {
     "name": "SOAKED",
