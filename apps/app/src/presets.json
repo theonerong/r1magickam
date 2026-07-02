@@ -22381,23 +22381,23 @@
       "MIXED MEDIA",
       "HANDCRAFTED"
     ],
-    "message": "Take a picture and transform the subject into a handmade collage constructed entirely from cut-out magazine photographs.\n\nEvery visible part of the final image of the subject, clothing, hair, skin, and every tiny detail—must be recreated exclusively from individually cut magazine pictures.\n\nThe original image must not remain visible anywhere.\n\nThe finished artwork should resemble an extremely labor-intensive museum-quality collage assembled by hand from dozens of real magazine clippings.\n\nMASTER PROMPT RULE:\n• If a master prompt specifies a particular subject, setting, mood, or artistic direction—PRIORITIZE and USE that information while constructing the collage.\n",
+    "message": "Take a picture and transform ONLY the subject into a stylized magazine-strip collage.\n\nThe subject must be built using a SMALL NUMBER OF LARGE, CLEAN MAGAZINE STRIPS (not thousands of fragments), arranged deliberately like a designed production surface.\n\nFacial structure, clothing, and form should be defined by broad editorial strips placed strategically to construct identity, similar to staged visual fabrication rather than chaotic collage.\n\nEverything except the subject must remain unchanged.",
     "randomizeOptions": true,
     "options": [
-      {
-        "id": "001",
-        "text": "Modern Glossy Magazines — contemporary fashion, travel, food, architecture, automotive and lifestyle publications."
-      },
-      {
-        "id": "002",
-        "text": "Vintage Magazine Collection — colorful magazine pages from the 1940s–1980s with aged printing and retro advertising."
-      },
-      {
-        "id": "003",
-        "text": "Thematic Editorial Assembly — intelligently choose magazine fragments whose photographic content matches each object being recreated."
-      }
+    {
+      "id": "001",
+      "text": "Clean Editorial Strips — wide fashion magazine strips forming structured facial planes and smooth compositional surfaces"
+    },
+    {
+      "id": "002",
+      "text": "Cinematic Production Collage — controlled staged look with intentional strip placement resembling constructed reality design"
+    },
+    {
+      "id": "003",
+      "text": "Minimal Magazine Build — very few large magazine slices forming simplified but recognizable subject geometry"
+    }
     ],
-    "additionalInstructions": "• This is a genuine handmade paper collage—not a digital filter.\n• Every visible surface must be constructed entirely from real magazine photographs.\n• Preserve the subject's identity, pose, expression, silhouette and composition.\n• Every individual clipping must retain recognizable photographic imagery rather than becoming flat colored paper.\n• Use dozens of uniquely shaped cut pieces depending on image complexity.\n• Vary clipping sizes.\n• All cut edges should have realistic scissor or craft-knife imperfections.\n• Magazine pieces should naturally overlap with visible paper thickness.\n• Include occasional curled edges and slightly lifted corners for realism.\n• Preserve accurate lighting and perspective.\n• Printed halftone dots, ink texture and magazine gloss should remain visible upon close inspection.\n• Hair must be recreated entirely from magazine image fragments.\n• Eyes must also be assembled from separate magazine clippings while preserving expression.\n• Clothing should be reconstructed from appropriate photographic fragments while maintaining realistic folds and textures.\n• Avoid duplicated or repeated magazine fragments.\n• The finished artwork should reward close inspection by revealing countless recognizable miniature photographs."
+    "additionalInstructions": "• Use only a LIMITED NUMBER of large magazine strips (do not fragment into thousands of pieces).\n• Each strip should be clearly readable as a magazine photo segment.\n• Strips should define facial structure, not texture noise.\n• Avoid mosaic, shredding, or dense collage behavior.\n• Preserve identity through placement and composition of strips.\n• Background remains completely unchanged.\n• Maintain realism of staged visual construction rather than chaotic collage.\n• The final result should resemble controlled editorial fabrication, not handmade scrap collage."
   },
   {
     "name": "MAGIC CAMERA PHOTO",
@@ -36038,7 +36038,7 @@
       "WINTER",
       "MICRO FORM"
     ],
-    "message": "Take a picture and transform ONLY the subject into a detailed natural snowflake crystalline structure.\n\nThe subject must be reinterpreted as a single complex snowflake made of ice crystals, maintaining recognizable identity through symmetry, branching structure, and unique crystalline geometry.\n\nEverything except the subject must remain unchanged.\n\nMASTER PROMPT RULE:\n• Preserve identity and pose by translating them into snowflake symmetry and branching logic.\n",
+    "message": "Take a picture and transform ONLY the subject into a snowflake.\n\nThe subject must be reinterpreted as a single complex snowflake made of ice crystals.\n\nEverything except the subject must remain unchanged.",
     "randomizeOptions": true,
     "options": [
     {
@@ -36054,7 +36054,7 @@
       "text": "Frosted Micro Crystal — dense intricate snowflake with fine needle-like ice formations"
     }
     ],
-    "additionalInstructions": "• ONLY the subject is transformed into a snowflake structure.\n• Preserve identity through symmetry, structure, and unique branching pattern.\n• The snowflake must feel physically real, as if photographed under a microscope.\n• Ice should show translucency, refraction, and subtle internal light scattering.\n• Maintain scale consistency as a macro/close-up crystalline object.\n• Background and environment must remain completely unchanged.\n• No cartooning or abstraction unless specified by option."
+    "additionalInstructions": "• ONLY the subject is transformed into a snowflake.\n• Preserve subject identity.\n• The snowflake must feel physically real, as if photographed under a microscope.\n• Ice should show translucency, refraction, and subtle internal light scattering.\n• Maintain scale consistency as a macro/close-up crystalline object.\n• Background and environment must remain completely unchanged.\n• No cartooning or abstraction unless specified by option."
   },
   {
     "name": "SOAKED",
