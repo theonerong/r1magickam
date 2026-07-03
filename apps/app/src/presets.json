@@ -17064,6 +17064,33 @@
     "additionalInstructions": "RESTRICTIONS:\n• NO aging the subject's face\n• NO wrinkles or age effects\n• Subject must look their normal age in costume\n• This is COSTUME ONLY transformation\n• No mockery - affectionate costume only\n• Subject must remain recognizable at normal age\n• Photorealistic costume, not makeup transformation\n• No text overlays or captions\n• Keep it warm and loving, not creepy\n\nFINAL RESULT:\nThe image should show the subject (at their natural age, regardless of actual age or gender) dressed in a sweet stereotypical grandmother COSTUME with wig, curlers, comfortable clothing, and props. The subject's face remains COMPLETELY UNCHANGED - they look like themselves wearing a grandma costume for fun. The result should feel affectionate and humorous — like someone dressed up as everyone's favorite grandma for a costume party."
   },
   {
+    "name": "GRAND MANNER (GREAT STYLE)",
+    "category": [
+      "OPTIONS",
+      "FINE ART",
+      "PAINTING",
+      "COLONIAL",
+      "HISTORICAL"
+    ],
+    "message": "Take a picture and transform the entire image into a Grand Manner (Great Style) painting.\n\nThe final image must emulate the refined, idealized artistic tradition practiced by Colonial-era painters who adopted the European Grand Manner. Every subject should appear elevated in status, dignity, and importance through graceful poses, harmonious composition, classical influences, elegant costumes, dramatic lighting, and masterful oil painting techniques.\n\nThe transformation must reinterpret BOTH the subject and the environment into a unified Colonial Grand Manner painting with authentic period materials, brushwork, color palette, and artistic conventions.\n\nMASTER PROMPT RULE:\n• If a master prompt specifies a particular subject, character, scene, location, emotion, story, or artistic direction—PRIORITIZE and INCORPORATE those elements while faithfully rendering them in the Colonial Grand Manner style.\n",
+    "randomizeOptions": true,
+    "options": [
+      {
+        "id": "001",
+        "text": "Formal Colonial Portrait — dignified pose, luxurious period clothing, restrained elegance, refined composition, and polished academic oil painting."
+      },
+      {
+        "id": "002",
+        "text": "Heroic Grand Manner — monumental composition inspired by classical antiquity with noble gestures, dramatic lighting, and idealized proportions."
+      },
+      {
+        "id": "003",
+        "text": "Colonial Aristocratic Scene — refined domestic or estate setting with rich furnishings, elegant architecture, sophisticated color harmony, and elevated social prestige."
+      }
+    ],
+    "additionalInstructions": "• Transform BOTH the subject and the environment into a unified Grand Manner (Great Style) Colonial oil painting.\n• The final artwork must resemble an authentic late-18th-century or early-19th-century museum-quality oil painting.\n• Preserve the identity, composition, expression, and narrative while elevating the subject to an idealized heroic or aristocratic presentation.\n• Use authentic Colonial-era artistic conventions including balanced composition, classical influences, restrained elegance, graceful poses, and carefully controlled anatomy.\n• Employ rich oil brushwork with subtle glazing, soft blended transitions, and visible painterly texture.\n• Use historically appropriate pigments including warm earth tones, ochres, umbers, siennas, deep crimson, muted blues, olive greens, ivory, and rich blacks.\n• Incorporate dramatic but controlled chiaroscuro lighting with soft atmospheric depth.\n• Clothing, architecture, furniture, and decorative objects should be faithfully reinterpreted as Colonial-period equivalents while respecting any master prompt.\n• Replace modern objects with visually appropriate Colonial-era interpretations whenever possible without altering the intended subject matter.\n• Surfaces should exhibit realistic oil paint texture, canvas weave, delicate craquelure if appropriate, and subtle varnish sheen.\n• Avoid modern photographic characteristics, digital effects, contemporary fashion, synthetic colors, or unrealistic sharpness.\n• The completed image should be indistinguishable from an original museum masterpiece painted in the Colonial Grand Manner tradition."
+  },
+  {
     "name": "GRAND THEFT AUTO MODE",
     "category": [
       "GAMING",
