@@ -17064,7 +17064,7 @@
     "additionalInstructions": "RESTRICTIONS:\n• NO aging the subject's face\n• NO wrinkles or age effects\n• Subject must look their normal age in costume\n• This is COSTUME ONLY transformation\n• No mockery - affectionate costume only\n• Subject must remain recognizable at normal age\n• Photorealistic costume, not makeup transformation\n• No text overlays or captions\n• Keep it warm and loving, not creepy\n\nFINAL RESULT:\nThe image should show the subject (at their natural age, regardless of actual age or gender) dressed in a sweet stereotypical grandmother COSTUME with wig, curlers, comfortable clothing, and props. The subject's face remains COMPLETELY UNCHANGED - they look like themselves wearing a grandma costume for fun. The result should feel affectionate and humorous — like someone dressed up as everyone's favorite grandma for a costume party."
   },
   {
-    "name": "GRAND MANNER (GREAT STYLE)",
+  "name": "GRAND MANNER (GREAT STYLE)",
     "category": [
       "OPTIONS",
       "FINE ART",
@@ -22408,7 +22408,7 @@
       "MIXED MEDIA",
       "HANDCRAFTED"
     ],
-    "message": "Take a picture and transform ONLY the subject into a stylized magazine-strip collage.\n\nThe subject must be built using a SMALL NUMBER OF LARGE, CLEAN MAGAZINE STRIPS (not thousands of fragments), arranged deliberately like a designed production surface.\n\nFacial structure, clothing, and form should be defined by broad editorial strips placed strategically to construct identity, similar to staged visual fabrication rather than chaotic collage.\n\nEverything except the subject must remain unchanged.",
+    "message": "Take a picture and transform ONLY the subject into a stylized magazine-strip collage.\n\nThe subject must be built using a SMALL NUMBER OF LARGE, HORIZONTAL, CLEAN MAGAZINE STRIPS (not thousands of fragments), arranged deliberately like a designed production surface.\n\nFacial structure, clothing, and form should be defined by broad editorial strips placed strategically to construct identity, similar to staged visual fabrication rather than chaotic collage.\n\nEverything except the subject must remain unchanged.",
     "randomizeOptions": true,
     "options": [
     {
@@ -22424,7 +22424,7 @@
       "text": "Minimal Magazine Build — very few large magazine slices forming simplified but recognizable subject geometry"
     }
     ],
-    "additionalInstructions": "• Use only a LIMITED NUMBER of large magazine strips (do not fragment into thousands of pieces).\n• Each strip should be clearly readable as a magazine photo segment.\n• Strips should define facial structure, not texture noise.\n• Avoid mosaic, shredding, or dense collage behavior.\n• Preserve identity through placement and composition of strips.\n• Background remains completely unchanged.\n• Maintain realism of staged visual construction rather than chaotic collage.\n• The final result should resemble controlled editorial fabrication, not handmade scrap collage."
+    "additionalInstructions": "• Use only a LIMITED NUMBER of large horizontal magazine strips (do not fragment into thousands of pieces).\n• Each strip should be clearly readable as a magazine photo segment.\n• Strips should define facial structure, not texture noise.\n• Avoid mosaic, shredding, or dense collage behavior.\n• Preserve identity through placement and composition of horizontal strips.\n• Background remains completely unchanged.\n• Maintain realism of staged visual construction rather than chaotic collage.\n• The final result should resemble controlled editorial fabrication, not handmade scrap collage."
   },
   {
     "name": "MAGIC CAMERA PHOTO",
