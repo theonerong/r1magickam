@@ -23905,6 +23905,41 @@
     "additionalInstructions": ""
   },
   {
+    "name": "'MERICA",
+    "category": [
+      "OPTIONS",
+      "PATRIOTIC",
+      "AMERICAN PRIDE",
+      "TRANSFORMATION",
+      "FAN CULTURE"
+    ],
+    "message": "Take a picture and transform the subject into the ultimate over-the-top patriotic American superfan.\n\nThe subject should embody an exaggerated, celebratory expression of American pride with iconic national symbols, bold red-white-and-blue styling, and a high-energy festival-like atmosphere of freedom and celebration.\n\nMASTER PROMPT RULE:\n• If a master prompt specifies a particular subject, pose, setting, mood, action, or artistic direction—PRIORITIZE and USE that information while applying this transformation.\n• If conflicting instructions exist, the master prompt always overrides the selected option.",
+    "randomizeOptions": true,
+    "options": [
+    {
+      "id": "001",
+      "text": "All-American Spectacle — Bald eagle soaring directly overhead with wings spread wide, massive American flag waving behind the subject, fireworks exploding in the night sky, patriotic crowd atmosphere, stars-and-stripes everywhere."
+    },
+    {
+      "id": "002",
+      "text": "Backyard 4th of July Celebration — Summer cookout scene with barbecue grill, picnic tables, and festive decorations. Subject wearing a cowboy hat, patriotic outfit, holding a hot dog in one hand and a small American flag in the other, with fireworks in the distance."
+    },
+    {
+      "id": "003",
+      "text": "Small Town Independence Parade — Main street Americana setting with parade floats, waving flags, vintage pickup trucks, confetti in the air. Subject in cowboy hat and red-white-and-blue attire, proudly holding an American flag and hot dog."
+    },
+    {
+      "id": "004",
+      "text": "Land of the Free Epic Vista — Grand cinematic patriotic landscape with dramatic sky, bald eagle circling overhead, Mount Rushmore-style monument backdrop, fireworks bursting across the horizon, subject centered holding a waving American flag and hot dog."
+    },
+    {
+      "id": "005",
+      "text": "Ultimate Tailgate Patriot — Stadium-style patriotic tailgate scene with giant flags, bunting, and crowd energy. Subject wearing cowboy hat, stars-and-stripes outfit, face paint, holding an oversized American flag and a hot dog with fireworks lighting the sky."
+    }
+    ],
+    "additionalInstructions": "• Transform the subject into the ultimate patriotic American superfan—not just someone wearing themed clothing.\n• Include a bald eagle prominently flying overhead or nearby in every scene.\n• Include fireworks in the background in all options, reinforcing a celebratory atmosphere.\n• Subject must wear exaggerated red, white, and blue patriotic clothing, including stars, stripes, and flag-inspired patterns.\n• A cowboy hat must be included as a signature accessory.\n• The subject must be holding a large American flag (on a pole if possible).\n• The subject must also be holding a hot dog in a clearly visible, humorous, celebratory way.\n• Include additional patriotic props such as bunting, flags, sparklers, banners, or confetti.\n• The scene should feel like a high-energy national celebration of freedom and pride.\n• Preserve the subject’s identity, facial features, expression, and pose.\n• Avoid subtle or minimal patriotic cues—this must be bold, saturated, and unmistakably American.\n• Master prompt instructions always override the selected option whenever conflicts occur."
+  },
+  {
     "name": "MERMAID",
     "category": [
       "FANTASY",
