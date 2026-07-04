@@ -22408,12 +22408,12 @@
       "MIXED MEDIA",
       "HANDCRAFTED"
     ],
-    "message": "Take a picture and transform ONLY the subject into a stylized magazine-strip collage.\n\nThe subject must be built using a SMALL NUMBER OF LARGE, HORIZONTAL, CLEAN MAGAZINE STRIPS (not thousands of fragments), arranged deliberately like a designed production surface.\n\nFacial structure, clothing, and form should be defined by broad editorial strips placed strategically to construct identity, similar to staged visual fabrication rather than chaotic collage.\n\nEverything except the subject must remain unchanged.",
+    "message": "Take a picture and transform ONLY the subject into a stylized magazine-strip collage.\n\nThe subject must be built using a SMALL NUMBER OF LARGE, HORIZONTAL, MAGAZINE STRIPS (not thousands of fragments), arranged deliberately like a designed production surface.\n\nFacial structure, clothing, and form should be defined by broad editorial strips placed strategically to construct identity, similar to staged visual fabrication rather than chaotic collage.\n\nEverything except the subject must remain unchanged.",
     "randomizeOptions": true,
     "options": [
     {
       "id": "001",
-      "text": "Clean Editorial Strips — wide fashion magazine strips forming structured facial planes and smooth compositional surfaces"
+      "text": "Editorial Strips — wide fashion magazine strips forming structured facial planes and smooth compositional surfaces"
     },
     {
       "id": "002",
@@ -37779,6 +37779,533 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Delicate concentric ink ring patterns\n• Subtle black and indigo tones\n• White washi paper surface\n• Meditative floating quality\n• Organic water-movement patterns"
+  },
+  {
+    "name": "SUPERFAN (COLLEGE)",
+    "category": [
+      "OPTIONS",
+      "SPORTS",
+      "COLLEGE",
+      "FANDOM",
+      "TEAM SPIRIT"
+    ],
+    "message": "Take a picture and transform the subject into the ultimate college sports superfan.\n\nDress the subject from head to toe in authentic apparel representing the selected college team. The subject should proudly display official team colors, authentic team logos, recognizable fan merchandise, and school traditions while enthusiastically supporting their team.\n\nPlace the subject inside the team's official home stadium on game day standing beside the team's official mascot, surrounded by cheering fans, school spirit, marching band elements, banners, flags, stadium signage, and an exciting collegiate atmosphere.\n\nMASTER PROMPT RULE:\n• If a master prompt specifies a particular college, team, stadium, mascot, rivalry, conference, tradition, or sport—PRIORITIZE and USE that information instead of the selected option.\n",
+    "randomizeOptions": true,
+    "options": [
+    {
+      "id": "001",
+      "text": "Air Force Falcons — Ultimate Air Force Falcons superfan wearing authentic Air Force Falcons apparel featuring the official team colors and official team logos, holding a foam #1 finger, standing beside The Bird mascot inside Falcon Stadium surrounded by authentic Air Force game-day traditions."
+    },
+    {
+      "id": "002",
+      "text": "Akron Zips — Ultimate Akron Zips superfan wearing authentic Akron Zips apparel featuring the official team colors and official team logos, holding a foam #1 finger, standing beside Zippy inside InfoCision Stadium surrounded by authentic Akron game-day traditions."
+    },
+    {
+      "id": "003",
+      "text": "Alabama Crimson Tide — Ultimate Alabama Crimson Tide superfan wearing authentic Alabama apparel featuring the official Crimson Tide logos and colors, holding a foam #1 finger, standing beside Big Al inside Bryant–Denny Stadium surrounded by authentic Alabama traditions including championship pageantry and the Million Dollar Band."
+    },
+    {
+      "id": "004",
+      "text": "Appalachian State Mountaineers — Ultimate Appalachian State Mountaineers superfan wearing authentic team apparel with official logos and colors, holding a foam #1 finger, standing beside Yosef inside Kidd Brewer Stadium surrounded by authentic Mountaineer game-day traditions."
+    },
+    {
+      "id": "005",
+      "text": "Arizona State Sun Devils — Ultimate Arizona State Sun Devils superfan wearing authentic Sun Devils apparel with official logos and colors, holding a foam #1 finger, standing beside Sparky inside Mountain America Stadium surrounded by authentic ASU traditions."
+    },
+    {
+      "id": "006",
+      "text": "Arizona Wildcats — Ultimate Arizona Wildcats superfan wearing authentic Wildcats apparel featuring official logos and colors, holding a foam #1 finger, standing beside Wilbur and Wilma Wildcat inside Arizona Stadium surrounded by authentic Arizona traditions."
+    },
+    {
+      "id": "007",
+      "text": "Arkansas Razorbacks — Ultimate Arkansas Razorbacks superfan wearing authentic Razorbacks apparel featuring official logos and colors, holding a foam #1 finger, standing beside Tusk inside Donald W. Reynolds Razorback Stadium surrounded by authentic Arkansas traditions including Calling the Hogs."
+    },
+    {
+      "id": "008",
+      "text": "Arkansas State Red Wolves — Ultimate Arkansas State Red Wolves superfan wearing authentic Red Wolves apparel featuring official logos and colors, holding a foam #1 finger, standing beside Howl inside Centennial Bank Stadium surrounded by authentic Arkansas State traditions."
+    },
+    {
+      "id": "009",
+      "text": "Army Black Knights — Ultimate Army Black Knights superfan wearing authentic Army apparel featuring official logos and colors, holding a foam #1 finger, standing beside the Army Mule inside Michie Stadium surrounded by authentic Army traditions."
+    },
+    {
+      "id": "010",
+      "text": "Auburn Tigers — Ultimate Auburn Tigers superfan wearing authentic Auburn apparel featuring official logos and colors, holding a foam #1 finger, standing beside Aubie inside Jordan-Hare Stadium surrounded by authentic Auburn traditions including the eagle flight."
+    },
+    {
+      "id": "011",
+      "text": "Ball State Cardinals — Ultimate Ball State Cardinals superfan wearing authentic Cardinals apparel featuring official logos and colors, holding a foam #1 finger, standing beside Charlie Cardinal inside Scheumann Stadium surrounded by authentic Ball State traditions."
+    },
+    {
+      "id": "012",
+      "text": "Baylor Bears — Ultimate Baylor Bears superfan wearing authentic Bears apparel featuring official logos and colors, holding a foam #1 finger, standing beside Bruiser and Marigold inside McLane Stadium surrounded by authentic Baylor traditions."
+    },
+    {
+      "id": "013",
+      "text": "Boise State Broncos — Ultimate Boise State Broncos superfan wearing authentic Broncos apparel featuring official logos and colors, holding a foam #1 finger, standing beside Buster Bronco inside Albertsons Stadium on the iconic blue turf."
+    },
+    {
+      "id": "014",
+      "text": "Boston College Eagles — Ultimate Boston College Eagles superfan wearing authentic Eagles apparel featuring official logos and colors, holding a foam #1 finger, standing beside Baldwin the Eagle inside Alumni Stadium surrounded by authentic BC traditions."
+    },
+    {
+      "id": "015",
+      "text": "Bowling Green Falcons — Ultimate Bowling Green Falcons superfan wearing authentic Falcons apparel featuring official logos and colors, holding a foam #1 finger, standing beside Freddie and Frieda Falcon inside Doyt Perry Stadium surrounded by authentic Bowling Green traditions."
+    },
+    {
+      "id": "016",
+      "text": "Buffalo Bulls — Ultimate Buffalo Bulls superfan wearing authentic Bulls apparel featuring official logos and colors, holding a foam #1 finger, standing beside Victor E. Bull inside UB Stadium surrounded by authentic Buffalo traditions."
+    },
+    {
+      "id": "017",
+      "text": "BYU Cougars — Ultimate BYU Cougars superfan wearing authentic Cougars apparel featuring official logos and colors, holding a foam #1 finger, standing beside Cosmo inside LaVell Edwards Stadium surrounded by authentic BYU traditions."
+    },
+    {
+      "id": "018",
+      "text": "California Golden Bears — Ultimate California Golden Bears superfan wearing authentic Golden Bears apparel featuring official logos and colors, holding a foam #1 finger, standing beside Oski inside California Memorial Stadium surrounded by authentic Cal traditions."
+    },
+    {
+      "id": "019",
+      "text": "Central Michigan Chippewas — Ultimate Central Michigan Chippewas superfan wearing authentic Chippewas apparel featuring official logos and colors, holding a foam #1 finger, standing beside Victory inside Kelly/Shorts Stadium surrounded by authentic CMU traditions."
+    },
+    {
+      "id": "020",
+      "text": "Charlotte 49ers — Ultimate Charlotte 49ers superfan wearing authentic 49ers apparel featuring official logos and colors, holding a foam #1 finger, standing beside Norm the Niner inside Jerry Richardson Stadium surrounded by authentic Charlotte traditions."
+    },
+    {
+      "id": "021",
+      "text": "Cincinnati Bearcats — Ultimate Cincinnati Bearcats superfan wearing authentic Bearcats apparel featuring official logos and colors, holding a foam #1 finger, standing beside Lucille inside Nippert Stadium surrounded by authentic Cincinnati traditions."
+    },
+    {
+      "id": "022",
+      "text": "Clemson Tigers — Ultimate Clemson Tigers superfan wearing authentic Tigers apparel featuring official logos and colors, holding a foam #1 finger, standing beside The Tiger inside Memorial Stadium surrounded by authentic Clemson traditions including Howard's Rock."
+    },
+    {
+      "id": "023",
+      "text": "Coastal Carolina Chanticleers — Ultimate Coastal Carolina Chanticleers superfan wearing authentic Chanticleers apparel featuring official logos and colors, holding a foam #1 finger, standing beside Chauncey inside Brooks Stadium surrounded by authentic Coastal Carolina traditions."
+    },
+    {
+      "id": "024",
+      "text": "Colorado Buffaloes — Ultimate Colorado Buffaloes superfan wearing authentic Buffaloes apparel featuring official logos and colors, holding a foam #1 finger, standing beside Ralphie inside Folsom Field surrounded by authentic Colorado traditions."
+    },
+    {
+      "id": "025",
+      "text": "Colorado State Rams — Ultimate Colorado State Rams superfan wearing authentic Rams apparel featuring official logos and colors, holding a foam #1 finger, standing beside CAM the Ram inside Canvas Stadium surrounded by authentic Colorado State traditions."
+    },
+    {
+      "id": "026",
+      "text": "Connecticut Huskies — Ultimate Connecticut Huskies superfan wearing authentic Huskies apparel featuring the official team colors and official team logos, holding a foam #1 finger, standing beside Jonathan the Husky inside Pratt & Whitney Stadium at Rentschler Field surrounded by authentic UConn game-day traditions."
+    },
+    {
+      "id": "027",
+      "text": "Duke Blue Devils — Ultimate Duke Blue Devils superfan wearing authentic Blue Devils apparel featuring the official team colors and official team logos, holding a foam #1 finger, standing beside The Blue Devil inside Wallace Wade Stadium surrounded by authentic Duke game-day traditions."
+    },
+    {
+      "id": "028",
+      "text": "East Carolina Pirates — Ultimate East Carolina Pirates superfan wearing authentic Pirates apparel featuring the official team colors and official team logos, holding a foam #1 finger, standing beside PeeDee the Pirate inside Dowdy–Ficklen Stadium surrounded by authentic East Carolina game-day traditions."
+    },
+    {
+      "id": "029",
+      "text": "Eastern Michigan Eagles — Ultimate Eastern Michigan Eagles superfan wearing authentic Eagles apparel featuring the official team colors and official team logos, holding a foam #1 finger, standing beside Swoop inside Rynearson Stadium surrounded by authentic Eastern Michigan game-day traditions."
+    },
+    {
+      "id": "030",
+      "text": "Florida Atlantic Owls — Ultimate Florida Atlantic Owls superfan wearing authentic Owls apparel featuring the official team colors and official team logos, holding a foam #1 finger, standing beside Owlsley inside FAU Stadium surrounded by authentic Florida Atlantic game-day traditions."
+    },
+    {
+      "id": "031",
+      "text": "Florida Gators — Ultimate Florida Gators superfan wearing authentic Florida Gators apparel featuring the official team colors and official team logos, holding a foam #1 finger, standing beside Albert and Alberta Gator inside Ben Hill Griffin Stadium ('The Swamp') surrounded by authentic Florida traditions."
+    },
+    {
+      "id": "032",
+      "text": "Florida State Seminoles — Ultimate Florida State Seminoles superfan wearing authentic Seminoles apparel featuring the official team colors and official team logos, holding a foam #1 finger, standing beside Chief Osceola and Renegade inside Doak Campbell Stadium surrounded by authentic Florida State traditions."
+    },
+    {
+      "id": "033",
+      "text": "Fresno State Bulldogs — Ultimate Fresno State Bulldogs superfan wearing authentic Bulldogs apparel featuring the official team colors and official team logos, holding a foam #1 finger, standing beside Timeout inside Valley Children's Stadium surrounded by authentic Fresno State game-day traditions."
+    },
+    {
+      "id": "034",
+      "text": "Georgia Bulldogs — Ultimate Georgia Bulldogs superfan wearing authentic Bulldogs apparel featuring the official team colors and official team logos, holding a foam #1 finger, standing beside Uga inside Sanford Stadium surrounded by authentic Georgia traditions."
+    },
+    {
+      "id": "035",
+      "text": "Georgia Southern Eagles — Ultimate Georgia Southern Eagles superfan wearing authentic Eagles apparel featuring the official team colors and official team logos, holding a foam #1 finger, standing beside GUS inside Allen E. Paulson Stadium surrounded by authentic Georgia Southern game-day traditions."
+    },
+    {
+      "id": "036",
+      "text": "Georgia State Panthers — Ultimate Georgia State Panthers superfan wearing authentic Panthers apparel featuring the official team colors and official team logos, holding a foam #1 finger, standing beside Pounce inside Center Parc Stadium surrounded by authentic Georgia State game-day traditions."
+    },
+    {
+      "id": "037",
+      "text": "Georgia Tech Yellow Jackets — Ultimate Georgia Tech Yellow Jackets superfan wearing authentic Yellow Jackets apparel featuring the official team colors and official team logos, holding a foam #1 finger, standing beside Buzz and the Ramblin' Wreck inside Bobby Dodd Stadium surrounded by authentic Georgia Tech traditions."
+    },
+    {
+      "id": "038",
+      "text": "Hawai'i Rainbow Warriors — Ultimate Hawai'i Rainbow Warriors superfan wearing authentic Rainbow Warriors apparel featuring the official team colors and official team logos, holding a foam #1 finger, standing beside Vili the Warrior inside Clarence T. C. Ching Athletics Complex surrounded by authentic Hawai'i traditions including leis and island game-day culture."
+    },
+    {
+      "id": "039",
+      "text": "Houston Cougars — Ultimate Houston Cougars superfan wearing authentic Cougars apparel featuring the official team colors and official team logos, holding a foam #1 finger, standing beside Shasta inside TDECU Stadium surrounded by authentic Houston game-day traditions."
+    },
+    {
+      "id": "040",
+      "text": "Idaho Vandals — Ultimate Idaho Vandals superfan wearing authentic Vandals apparel featuring the official team colors and official team logos, holding a foam #1 finger, standing beside Joe Vandal inside the Kibbie Dome surrounded by authentic Idaho game-day traditions."
+    },
+    {
+      "id": "041",
+      "text": "Illinois Fighting Illini — Ultimate Illinois Fighting Illini superfan wearing authentic Fighting Illini apparel featuring the official team colors and official team logos, holding a foam #1 finger, standing beside the Block I mascot inside Memorial Stadium surrounded by authentic Illinois traditions."
+    },
+    {
+      "id": "042",
+      "text": "Indiana Hoosiers — Ultimate Indiana Hoosiers superfan wearing authentic Hoosiers apparel featuring the official team colors and official team logos, holding a foam #1 finger, standing beside Hoosier the Bison inside Memorial Stadium surrounded by authentic Indiana game-day traditions."
+    },
+    {
+      "id": "043",
+      "text": "Iowa Hawkeyes — Ultimate Iowa Hawkeyes superfan wearing authentic Hawkeyes apparel featuring the official team colors and official team logos, holding a foam #1 finger, standing beside Herky the Hawk inside Kinnick Stadium surrounded by authentic Iowa traditions including the Hawkeye Wave."
+    },
+    {
+      "id": "044",
+      "text": "Iowa State Cyclones — Ultimate Iowa State Cyclones superfan wearing authentic Cyclones apparel featuring the official team colors and official team logos, holding a foam #1 finger, standing beside Cy inside Jack Trice Stadium surrounded by authentic Iowa State game-day traditions."
+    },
+    {
+      "id": "045",
+      "text": "Jacksonville State Gamecocks — Ultimate Jacksonville State Gamecocks superfan wearing authentic Gamecocks apparel featuring the official team colors and official team logos, holding a foam #1 finger, standing beside Cocky inside AmFirst Stadium surrounded by authentic Jacksonville State game-day traditions."
+    },
+    {
+      "id": "046",
+      "text": "James Madison Dukes — Ultimate James Madison Dukes superfan wearing authentic Dukes apparel featuring the official team colors and official team logos, holding a foam #1 finger, standing beside Duke Dog inside Bridgeforth Stadium surrounded by authentic James Madison traditions."
+    },
+    {
+      "id": "047",
+      "text": "Kansas Jayhawks — Ultimate Kansas Jayhawks superfan wearing authentic Jayhawks apparel featuring the official team colors and official team logos, holding a foam #1 finger, standing beside Big Jay and Baby Jay inside David Booth Kansas Memorial Stadium surrounded by authentic Kansas game-day traditions."
+    },
+    {
+      "id": "048",
+      "text": "Kansas State Wildcats — Ultimate Kansas State Wildcats superfan wearing authentic Wildcats apparel featuring the official team colors and official team logos, holding a foam #1 finger, standing beside Willie the Wildcat inside Bill Snyder Family Stadium surrounded by authentic Kansas State traditions."
+    },
+    {
+      "id": "049",
+      "text": "Kent State Golden Flashes — Ultimate Kent State Golden Flashes superfan wearing authentic Golden Flashes apparel featuring the official team colors and official team logos, holding a foam #1 finger, standing beside Flash inside Dix Stadium surrounded by authentic Kent State game-day traditions."
+    },
+    {
+      "id": "050",
+      "text": "Liberty Flames — Ultimate Liberty Flames superfan wearing authentic Flames apparel featuring the official team colors and official team logos, holding a foam #1 finger, standing beside Sparky inside Williams Stadium surrounded by authentic Liberty game-day traditions."
+    },
+    {
+      "id": "051",
+      "text": "Louisiana Ragin' Cajuns — Ultimate Louisiana Ragin' Cajuns superfan wearing authentic Ragin' Cajuns apparel featuring the official team colors and official team logos, holding a foam #1 finger, standing beside Cayenne inside Cajun Field surrounded by authentic Louisiana traditions."
+    },
+    {
+      "id": "052",
+      "text": "Louisiana Tech Bulldogs — Ultimate Louisiana Tech Bulldogs superfan wearing authentic Bulldogs apparel featuring the official team colors and official team logos, holding a foam #1 finger, standing beside Champ inside Joe Aillet Stadium surrounded by authentic Louisiana Tech game-day traditions."
+    },
+    {
+      "id": "053",
+      "text": "Louisville Cardinals — Ultimate Louisville Cardinals superfan wearing authentic Cardinals apparel featuring the official team colors and official team logos, holding a foam #1 finger, standing beside Louie inside L&N Federal Credit Union Stadium surrounded by authentic Louisville traditions."
+    },
+    {
+      "id": "054",
+      "text": "LSU Tigers — Ultimate LSU Tigers superfan wearing authentic LSU Tigers apparel featuring the official team colors and official team logos, holding a foam #1 finger, standing beside Mike the Tiger inside Tiger Stadium ('Death Valley') surrounded by authentic LSU traditions."
+    },
+    {
+      "id": "055",
+      "text": "Marshall Thundering Herd — Ultimate Marshall Thundering Herd superfan wearing authentic Thundering Herd apparel featuring the official team colors and official team logos, holding a foam #1 finger, standing beside Marco inside Joan C. Edwards Stadium surrounded by authentic Marshall game-day traditions."
+    },
+    {
+      "id": "056",
+      "text": "Maryland Terrapins — Ultimate Maryland Terrapins superfan wearing authentic Terrapins apparel featuring the official team colors and official team logos, holding a foam #1 finger, standing beside Testudo inside SECU Stadium surrounded by authentic Maryland traditions."
+    },
+    {
+      "id": "057",
+      "text": "Massachusetts Minutemen — Ultimate Massachusetts Minutemen superfan wearing authentic Minutemen apparel featuring the official team colors and official team logos, holding a foam #1 finger, standing beside Sam the Minuteman inside Warren McGuirk Alumni Stadium surrounded by authentic UMass game-day traditions."
+    },
+    {
+      "id": "058",
+      "text": "Memphis Tigers — Ultimate Memphis Tigers superfan wearing authentic Tigers apparel featuring the official team colors and official team logos, holding a foam #1 finger, standing beside Pouncer inside Simmons Bank Liberty Stadium surrounded by authentic Memphis traditions."
+    },
+    {
+      "id": "059",
+      "text": "Miami (FL) Hurricanes — Ultimate Miami Hurricanes superfan wearing authentic Hurricanes apparel featuring the official team colors and official team logos, holding a foam #1 finger, standing beside Sebastian the Ibis inside Hard Rock Stadium surrounded by authentic Miami traditions including the iconic Turnover Chain."
+    },
+    {
+      "id": "060",
+      "text": "Miami (OH) RedHawks — Ultimate Miami RedHawks superfan wearing authentic RedHawks apparel featuring the official team colors and official team logos, holding a foam #1 finger, standing beside Swoop inside Yager Stadium surrounded by authentic Miami (OH) traditions."
+    },
+    {
+      "id": "061",
+      "text": "Michigan Wolverines — Ultimate Michigan Wolverines superfan wearing authentic Wolverines apparel featuring the official team colors and official team logos, holding a foam #1 finger, standing beside the Wolverines mascot inside Michigan Stadium ('The Big House') surrounded by authentic Michigan traditions."
+    },
+    {
+      "id": "062",
+      "text": "Michigan State Spartans — Ultimate Michigan State Spartans superfan wearing authentic Spartans apparel featuring the official team colors and official team logos, holding a foam #1 finger, standing beside Sparty inside Spartan Stadium surrounded by authentic Michigan State traditions."
+    },
+    {
+      "id": "063",
+      "text": "Middle Tennessee Blue Raiders — Ultimate Middle Tennessee Blue Raiders superfan wearing authentic Blue Raiders apparel featuring the official team colors and official team logos, holding a foam #1 finger, standing beside Lightning inside Floyd Stadium surrounded by authentic Middle Tennessee game-day traditions."
+    },
+    {
+      "id": "064",
+      "text": "Minnesota Golden Gophers — Ultimate Minnesota Golden Gophers superfan wearing authentic Golden Gophers apparel featuring the official team colors and official team logos, holding a foam #1 finger, standing beside Goldy Gopher inside Huntington Bank Stadium surrounded by authentic Minnesota traditions."
+    },
+    {
+      "id": "065",
+      "text": "Mississippi State Bulldogs — Ultimate Mississippi State Bulldogs superfan wearing authentic Bulldogs apparel featuring the official team colors and official team logos, holding a foam #1 finger, standing beside Bully inside Davis Wade Stadium surrounded by authentic Mississippi State traditions including cowbells."
+    },
+    {
+      "id": "066",
+      "text": "Missouri Tigers — Ultimate Missouri Tigers superfan wearing authentic Tigers apparel featuring the official team colors and official team logos, holding a foam #1 finger, standing beside Truman the Tiger inside Faurot Field surrounded by authentic Missouri game-day traditions."
+    },
+    {
+      "id": "067",
+      "text": "Navy Midshipmen — Ultimate Navy Midshipmen superfan wearing authentic Midshipmen apparel featuring the official team colors and official team logos, holding a foam #1 finger, standing beside Bill the Goat inside Navy-Marine Corps Memorial Stadium surrounded by authentic Navy traditions."
+    },
+    {
+      "id": "068",
+      "text": "Nebraska Cornhuskers — Ultimate Nebraska Cornhuskers superfan wearing authentic Cornhuskers apparel featuring the official team colors and official team logos, holding a foam #1 finger, standing beside Herbie Husker and Lil' Red inside Memorial Stadium surrounded by authentic Nebraska traditions."
+    },
+    {
+      "id": "069",
+      "text": "Nevada Wolf Pack — Ultimate Nevada Wolf Pack superfan wearing authentic Wolf Pack apparel featuring the official team colors and official team logos, holding a foam #1 finger, standing beside Alphie inside Mackay Stadium surrounded by authentic Nevada game-day traditions."
+    },
+    {
+      "id": "070",
+      "text": "New Mexico Lobos — Ultimate New Mexico Lobos superfan wearing authentic Lobos apparel featuring the official team colors and official team logos, holding a foam #1 finger, standing beside Lobo Louie and Lobo Lucy inside University Stadium surrounded by authentic New Mexico traditions."
+    },
+    {
+      "id": "071",
+      "text": "New Mexico State Aggies — Ultimate New Mexico State Aggies superfan wearing authentic Aggies apparel featuring the official team colors and official team logos, holding a foam #1 finger, standing beside Pistol Pete inside Aggie Memorial Stadium surrounded by authentic New Mexico State traditions."
+    },
+    {
+      "id": "072",
+      "text": "North Carolina Tar Heels — Ultimate North Carolina Tar Heels superfan wearing authentic Tar Heels apparel featuring the official team colors and official team logos, holding a foam #1 finger, standing beside Rameses inside Kenan Memorial Stadium surrounded by authentic North Carolina traditions."
+    },
+    {
+      "id": "073",
+      "text": "North Carolina State Wolfpack — Ultimate NC State Wolfpack superfan wearing authentic Wolfpack apparel featuring the official team colors and official team logos, holding a foam #1 finger, standing beside Mr. and Mrs. Wuf inside Carter-Finley Stadium surrounded by authentic NC State traditions."
+    },
+    {
+      "id": "074",
+      "text": "North Texas Mean Green — Ultimate North Texas Mean Green superfan wearing authentic Mean Green apparel featuring the official team colors and official team logos, holding a foam #1 finger, standing beside Scrappy inside DATCU Stadium surrounded by authentic North Texas game-day traditions."
+    },
+    {
+      "id": "075",
+      "text": "Northern Illinois Huskies — Ultimate Northern Illinois Huskies superfan wearing authentic Huskies apparel featuring the official team colors and official team logos, holding a foam #1 finger, standing beside Mission inside Huskie Stadium surrounded by authentic Northern Illinois traditions."
+    },
+    {
+      "id": "076",
+      "text": "Northwestern Wildcats — Ultimate Northwestern Wildcats superfan wearing authentic Wildcats apparel featuring the official team colors and official team logos, holding a foam #1 finger, standing beside Willie the Wildcat inside Northwestern Medicine Field at Martin Stadium surrounded by authentic Northwestern game-day traditions."
+    },
+    {
+      "id": "077",
+      "text": "Notre Dame Fighting Irish — Ultimate Notre Dame Fighting Irish superfan wearing authentic Fighting Irish apparel featuring the official team colors and official team logos, holding a foam #1 finger, standing beside the Leprechaun inside Notre Dame Stadium surrounded by authentic Notre Dame traditions including Touchdown Jesus and the Golden Dome."
+    },
+    {
+      "id": "078",
+      "text": "Ohio Bobcats — Ultimate Ohio Bobcats superfan wearing authentic Bobcats apparel featuring the official team colors and official team logos, holding a foam #1 finger, standing beside Rufus the Bobcat inside Peden Stadium surrounded by authentic Ohio University game-day traditions."
+    },
+    {
+      "id": "079",
+      "text": "Ohio State Buckeyes — Ultimate Ohio State Buckeyes superfan wearing authentic Buckeyes apparel featuring the official team colors and official team logos, holding a foam #1 finger, standing beside Brutus Buckeye inside Ohio Stadium ('The Horseshoe') surrounded by authentic Ohio State traditions including The Best Damn Band in the Land and Script Ohio."
+    },
+    {
+      "id": "080",
+      "text": "Oklahoma Sooners — Ultimate Oklahoma Sooners superfan wearing authentic Sooners apparel featuring the official team colors and official team logos, holding a foam #1 finger, standing beside the Sooner Schooner inside Gaylord Family Oklahoma Memorial Stadium surrounded by authentic Oklahoma traditions."
+    },
+    {
+      "id": "081",
+      "text": "Oklahoma State Cowboys — Ultimate Oklahoma State Cowboys superfan wearing authentic Cowboys apparel featuring the official team colors and official team logos, holding a foam #1 finger, standing beside Pistol Pete inside Boone Pickens Stadium surrounded by authentic Oklahoma State game-day traditions."
+    },
+    {
+      "id": "082",
+      "text": "Ole Miss Rebels — Ultimate Ole Miss Rebels superfan wearing authentic Rebels apparel featuring the official team colors and official team logos, holding a foam #1 finger, standing beside Tony the Landshark inside Vaught-Hemingway Stadium surrounded by authentic Ole Miss traditions including The Grove."
+    },
+    {
+      "id": "083",
+      "text": "Old Dominion Monarchs — Ultimate Old Dominion Monarchs superfan wearing authentic Monarchs apparel featuring the official team colors and official team logos, holding a foam #1 finger, standing beside Big Blue inside Kornblau Field at S.B. Ballard Stadium surrounded by authentic Old Dominion traditions."
+    },
+    {
+      "id": "084",
+      "text": "Oregon Ducks — Ultimate Oregon Ducks superfan wearing authentic Ducks apparel featuring the official team colors and official team logos, holding a foam #1 finger, standing beside The Oregon Duck inside Autzen Stadium surrounded by authentic Oregon traditions."
+    },
+    {
+      "id": "085",
+      "text": "Oregon State Beavers — Ultimate Oregon State Beavers superfan wearing authentic Beavers apparel featuring the official team colors and official team logos, holding a foam #1 finger, standing beside Benny Beaver inside Reser Stadium surrounded by authentic Oregon State game-day traditions."
+    },
+    {
+      "id": "086",
+      "text": "Penn State Nittany Lions — Ultimate Penn State Nittany Lions superfan wearing authentic Nittany Lions apparel featuring the official team colors and official team logos, holding a foam #1 finger, standing beside the Nittany Lion inside Beaver Stadium surrounded by authentic Penn State traditions including the White Out."
+    },
+    {
+      "id": "087",
+      "text": "Pittsburgh Panthers — Ultimate Pittsburgh Panthers superfan wearing authentic Panthers apparel featuring the official team colors and official team logos, holding a foam #1 finger, standing beside Roc inside Acrisure Stadium surrounded by authentic Pitt game-day traditions."
+    },
+    {
+      "id": "088",
+      "text": "Purdue Boilermakers — Ultimate Purdue Boilermakers superfan wearing authentic Boilermakers apparel featuring the official team colors and official team logos, holding a foam #1 finger, standing beside Purdue Pete inside Ross-Ade Stadium surrounded by authentic Purdue traditions including the Boilermaker Special."
+    },
+    {
+      "id": "089",
+      "text": "Rice Owls — Ultimate Rice Owls superfan wearing authentic Owls apparel featuring the official team colors and official team logos, holding a foam #1 finger, standing beside Sammy the Owl inside Rice Stadium surrounded by authentic Rice game-day traditions."
+    },
+    {
+      "id": "090",
+      "text": "Rutgers Scarlet Knights — Ultimate Rutgers Scarlet Knights superfan wearing authentic Scarlet Knights apparel featuring the official team colors and official team logos, holding a foam #1 finger, standing beside Sir Henry inside SHI Stadium surrounded by authentic Rutgers traditions."
+    },
+    {
+      "id": "091",
+      "text": "San Diego State Aztecs — Ultimate San Diego State Aztecs superfan wearing authentic Aztecs apparel featuring the official team colors and official team logos, holding a foam #1 finger, standing beside the Aztec Warrior inside Snapdragon Stadium surrounded by authentic San Diego State game-day traditions."
+    },
+    {
+      "id": "092",
+      "text": "San Jose State Spartans — Ultimate San Jose State Spartans superfan wearing authentic Spartans apparel featuring the official team colors and official team logos, holding a foam #1 finger, standing beside Sammy Spartan inside CEFCU Stadium surrounded by authentic San Jose State traditions."
+    },
+    {
+      "id": "093",
+      "text": "SMU Mustangs — Ultimate SMU Mustangs superfan wearing authentic Mustangs apparel featuring the official team colors and official team logos, holding a foam #1 finger, standing beside Peruna inside Gerald J. Ford Stadium surrounded by authentic SMU traditions."
+    },
+    {
+      "id": "094",
+      "text": "South Alabama Jaguars — Ultimate South Alabama Jaguars superfan wearing authentic Jaguars apparel featuring the official team colors and official team logos, holding a foam #1 finger, standing beside SouthPaw inside Hancock Whitney Stadium surrounded by authentic South Alabama game-day traditions."
+    },
+    {
+      "id": "095",
+      "text": "South Carolina Gamecocks — Ultimate South Carolina Gamecocks superfan wearing authentic Gamecocks apparel featuring the official team colors and official team logos, holding a foam #1 finger, standing beside Cocky inside Williams-Brice Stadium surrounded by authentic South Carolina traditions."
+    },
+    {
+      "id": "096",
+      "text": "South Florida Bulls — Ultimate South Florida Bulls superfan wearing authentic Bulls apparel featuring the official team colors and official team logos, holding a foam #1 finger, standing beside Rocky D. Bull inside Raymond James Stadium surrounded by authentic South Florida traditions."
+    },
+    {
+      "id": "097",
+      "text": "Southern Miss Golden Eagles — Ultimate Southern Miss Golden Eagles superfan wearing authentic Golden Eagles apparel featuring the official team colors and official team logos, holding a foam #1 finger, standing beside Seymour d'Campus inside M. M. Roberts Stadium ('The Rock') surrounded by authentic Southern Miss game-day traditions."
+    },
+    {
+      "id": "098",
+      "text": "Stanford Cardinal — Ultimate Stanford Cardinal superfan wearing authentic Cardinal apparel featuring the official team colors and official team logos, holding a foam #1 finger, standing beside the Stanford Tree inside Stanford Stadium surrounded by authentic Stanford traditions."
+    },
+    {
+      "id": "099",
+      "text": "Syracuse Orange — Ultimate Syracuse Orange superfan wearing authentic Orange apparel featuring the official team colors and official team logos, holding a foam #1 finger, standing beside Otto the Orange inside the JMA Wireless Dome surrounded by authentic Syracuse game-day traditions."
+    },
+    {
+      "id": "100",
+      "text": "TCU Horned Frogs — Ultimate TCU Horned Frogs superfan wearing authentic Horned Frogs apparel featuring the official team colors and official team logos, holding a foam #1 finger, standing beside SuperFrog inside Amon G. Carter Stadium surrounded by authentic TCU traditions."
+    },
+    {
+      "id": "101",
+      "text": "Temple Owls — Ultimate Temple Owls superfan wearing authentic Owls apparel featuring the official team colors and official team logos, holding a foam #1 finger, standing beside Stella the Owl inside Lincoln Financial Field surrounded by authentic Temple game-day traditions."
+    },
+    {
+      "id": "102",
+      "text": "Tennessee Volunteers — Ultimate Tennessee Volunteers superfan wearing authentic Volunteers apparel featuring the official team colors and official team logos, holding a foam #1 finger, standing beside Smokey inside Neyland Stadium surrounded by authentic Tennessee traditions including the Pride of the Southland Band and the Vol Navy."
+    },
+    {
+      "id": "103",
+      "text": "Texas Longhorns — Ultimate Texas Longhorns superfan wearing authentic Longhorns apparel featuring the official team colors and official team logos, holding a foam #1 finger, standing beside Bevo inside Darrell K Royal–Texas Memorial Stadium surrounded by authentic Texas traditions."
+    },
+    {
+      "id": "104",
+      "text": "Texas A&M Aggies — Ultimate Texas A&M Aggies superfan wearing authentic Aggies apparel featuring the official team colors and official team logos, holding a foam #1 finger, standing beside Reveille inside Kyle Field surrounded by authentic Texas A&M traditions including the 12th Man."
+    },
+    {
+      "id": "105",
+      "text": "Texas State Bobcats — Ultimate Texas State Bobcats superfan wearing authentic Bobcats apparel featuring the official team colors and official team logos, holding a foam #1 finger, standing beside Boko the Bobcat inside Bobcat Stadium surrounded by authentic Texas State game-day traditions."
+    },
+    {
+      "id": "106",
+      "text": "Texas Tech Red Raiders — Ultimate Texas Tech Red Raiders superfan wearing authentic Red Raiders apparel featuring the official team colors and official team logos, holding a foam #1 finger, standing beside Raider Red and the Masked Rider inside Jones AT&T Stadium surrounded by authentic Texas Tech traditions."
+    },
+    {
+      "id": "107",
+      "text": "Toledo Rockets — Ultimate Toledo Rockets superfan wearing authentic Rockets apparel featuring the official team colors and official team logos, holding a foam #1 finger, standing beside Rocky the Rocket inside the Glass Bowl surrounded by authentic Toledo game-day traditions."
+    },
+    {
+      "id": "108",
+      "text": "Troy Trojans — Ultimate Troy Trojans superfan wearing authentic Trojans apparel featuring the official team colors and official team logos, holding a foam #1 finger, standing beside T-Roy inside Veterans Memorial Stadium surrounded by authentic Troy traditions."
+    },
+    {
+      "id": "109",
+      "text": "Tulane Green Wave — Ultimate Tulane Green Wave superfan wearing authentic Green Wave apparel featuring the official team colors and official team logos, holding a foam #1 finger, standing beside Riptide the Pelican inside Yulman Stadium surrounded by authentic Tulane game-day traditions."
+    },
+    {
+      "id": "110",
+      "text": "Tulsa Golden Hurricane — Ultimate Tulsa Golden Hurricane superfan wearing authentic Golden Hurricane apparel featuring the official team colors and official team logos, holding a foam #1 finger, standing beside Captain Cane inside Skelly Field at H. A. Chapman Stadium surrounded by authentic Tulsa traditions."
+    },
+    {
+      "id": "111",
+      "text": "UAB Blazers — Ultimate UAB Blazers superfan wearing authentic Blazers apparel featuring the official team colors and official team logos, holding a foam #1 finger, standing beside Blaze inside Protective Stadium surrounded by authentic UAB game-day traditions."
+    },
+    {
+      "id": "112",
+      "text": "UCF Knights — Ultimate UCF Knights superfan wearing authentic Knights apparel featuring the official team colors and official team logos, holding a foam #1 finger, standing beside Knightro inside FBC Mortgage Stadium ('The Bounce House') surrounded by authentic UCF traditions."
+    },
+    {
+      "id": "113",
+      "text": "UCLA Bruins — Ultimate UCLA Bruins superfan wearing authentic Bruins apparel featuring the official team colors and official team logos, holding a foam #1 finger, standing beside Joe and Josephine Bruin inside the Rose Bowl surrounded by authentic UCLA traditions."
+    },
+    {
+      "id": "114",
+      "text": "ULM Warhawks — Ultimate ULM Warhawks superfan wearing authentic Warhawks apparel featuring the official team colors and official team logos, holding a foam #1 finger, standing beside Ace inside Malone Stadium surrounded by authentic ULM game-day traditions."
+    },
+    {
+      "id": "115",
+      "text": "UNLV Rebels — Ultimate UNLV Rebels superfan wearing authentic Rebels apparel featuring the official team colors and official team logos, holding a foam #1 finger, standing beside Hey Reb! inside Allegiant Stadium surrounded by authentic UNLV traditions."
+    },
+    {
+      "id": "116",
+      "text": "USC Trojans — Ultimate USC Trojans superfan wearing authentic Trojans apparel featuring the official team colors and official team logos, holding a foam #1 finger, standing beside Traveler and Tommy Trojan inside the Los Angeles Memorial Coliseum surrounded by authentic USC traditions."
+    },
+    {
+      "id": "117",
+      "text": "Utah Utes — Ultimate Utah Utes superfan wearing authentic Utes apparel featuring the official team colors and official team logos, holding a foam #1 finger, standing beside Swoop inside Rice-Eccles Stadium surrounded by authentic Utah game-day traditions."
+    },
+    {
+      "id": "118",
+      "text": "Utah State Aggies — Ultimate Utah State Aggies superfan wearing authentic Aggies apparel featuring the official team colors and official team logos, holding a foam #1 finger, standing beside Big Blue inside Maverik Stadium surrounded by authentic Utah State traditions."
+    },
+    {
+      "id": "119",
+      "text": "UTEP Miners — Ultimate UTEP Miners superfan wearing authentic Miners apparel featuring the official team colors and official team logos, holding a foam #1 finger, standing beside Paydirt Pete inside the Sun Bowl surrounded by authentic UTEP game-day traditions."
+    },
+    {
+      "id": "120",
+      "text": "UTSA Roadrunners — Ultimate UTSA Roadrunners superfan wearing authentic Roadrunners apparel featuring the official team colors and official team logos, holding a foam #1 finger, standing beside Rowdy inside the Alamodome surrounded by authentic UTSA traditions."
+    },
+    {
+      "id": "121",
+      "text": "Vanderbilt Commodores — Ultimate Vanderbilt Commodores superfan wearing authentic Commodores apparel featuring the official team colors and official team logos, holding a foam #1 finger, standing beside Mr. C inside FirstBank Stadium surrounded by authentic Vanderbilt game-day traditions."
+    },
+    {
+      "id": "122",
+      "text": "Virginia Cavaliers — Ultimate Virginia Cavaliers superfan wearing authentic Cavaliers apparel featuring the official team colors and official team logos, holding a foam #1 finger, standing beside CavMan inside Scott Stadium surrounded by authentic Virginia traditions."
+    },
+    {
+      "id": "123",
+      "text": "Virginia Tech Hokies — Ultimate Virginia Tech Hokies superfan wearing authentic Hokies apparel featuring the official team colors and official team logos, holding a foam #1 finger, standing beside the HokieBird inside Lane Stadium surrounded by authentic Virginia Tech traditions including Enter Sandman."
+    },
+    {
+      "id": "124",
+      "text": "Wake Forest Demon Deacons — Ultimate Wake Forest Demon Deacons superfan wearing authentic Demon Deacons apparel featuring the official team colors and official team logos, holding a foam #1 finger, standing beside the Demon Deacon inside Allegacy Federal Credit Union Stadium surrounded by authentic Wake Forest game-day traditions."
+    },
+    {
+      "id": "125",
+      "text": "Washington Huskies — Ultimate Washington Huskies superfan wearing authentic Huskies apparel featuring the official team colors and official team logos, holding a foam #1 finger, standing beside Harry the Husky inside Husky Stadium surrounded by authentic Washington traditions."
+    },
+    {
+      "id": "126",
+      "text": "Washington State Cougars — Ultimate Washington State Cougars superfan wearing authentic Cougars apparel featuring the official team colors and official team logos, holding a foam #1 finger, standing beside Butch T. Cougar inside Gesa Field at Martin Stadium surrounded by authentic Washington State traditions."
+    },
+    {
+      "id": "127",
+      "text": "West Virginia Mountaineers — Ultimate West Virginia Mountaineers superfan wearing authentic Mountaineers apparel featuring the official team colors and official team logos, holding a foam #1 finger, standing beside the Mountaineer mascot inside Milan Puskar Stadium surrounded by authentic West Virginia traditions."
+    },
+    {
+      "id": "128",
+      "text": "Western Kentucky Hilltoppers — Ultimate Western Kentucky Hilltoppers superfan wearing authentic Hilltoppers apparel featuring the official team colors and official team logos, holding a foam #1 finger, standing beside Big Red inside Houchens Industries–L. T. Smith Stadium surrounded by authentic Western Kentucky game-day traditions."
+    }
+    ],
+    "additionalInstructions": "• Transform ONLY the subject into the selected school's ultimate superfan while preserving the subject's identity, facial features, expression, pose, age, and body proportions.\n• Dress the subject completely in authentic apparel representing the selected school, including recognizable jerseys, shirts, jackets, hoodies, hats, face paint, gloves, beads, scarves, and other genuine fan merchandise appropriate for that university.\n• Prominently display the official team colors and official athletic logos on clothing, hats, flags, banners, foam #1 finger, and other fan accessories.\n• Place the subject inside the school's official home football stadium during an exciting game-day atmosphere.\n• Include the school's official mascot standing beside the subject and interacting naturally.\n• Surround the subject with authentic stadium architecture, scoreboard, marching band, cheerleaders, fans, signs, rally towels, pom-poms, flags, confetti, and recognizable school traditions.\n• Incorporate famous school-specific traditions, accessories, landmarks, or game-day rituals whenever they are strongly associated with the selected university (for example, but not limited to, Howard's Rock, the Turnover Chain, the Hawkeye Wave, Script Ohio, the White Out, The Grove, the Sooner Schooner, Ralphie, Bevo, Reveille, Smokey, the Ramblin' Wreck, the Vol Navy, Chief Osceola and Renegade, Enter Sandman, the Kibbie Dome, the Blue Turf, etc.).\n• Ensure all logos, uniforms, mascots, stadiums, colors, signage, traditions, and fan apparel are accurate and recognizable for the selected school.\n• Preserve any sport specified by the master prompt. If none is specified, assume football.\n• If the master prompt specifies a particular college, team, mascot, stadium, rivalry, conference, tradition, or sport, PRIORITIZE that information over the selected option.\n• The finished image should look like a professional sports photography or promotional photograph captured during an authentic college game day."
   },
   {
     "name": "SUPERFLAT",
