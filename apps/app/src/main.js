@@ -547,6 +547,7 @@ let editingStyleIndex = -1;
 let isOnline = navigator.onLine;
 let photoQueue = [];
 let isSyncing = false;
+let _connectionMonitoringActive = false;
 
 // Scroll debouncing variables
 let scrollTimeout = null;
@@ -8424,28 +8425,34 @@ function updateQueueDisplay() {
 
 // Setup connection monitoring
 function setupConnectionMonitoring() {
-  window.addEventListener('online', () => {
-    isOnline = true;
-    updateConnectionStatus();
-    console.log('Connection restored');
-    
-    if (photoQueue.length > 0) {
-      if (statusElement) {
-        statusElement.textContent = `Back online! ${photoQueue.length} item${photoQueue.length > 1 ? 's' : ''} queued — tap Sync to send.`;
+  // Guard: only register the window listeners once, no matter how many times
+  // initCamera is called (e.g. after a failed camera start the user retries).
+  if (!_connectionMonitoringActive) {
+    _connectionMonitoringActive = true;
+
+    window.addEventListener('online', () => {
+      isOnline = true;
+      updateConnectionStatus();
+      console.log('Connection restored');
+
+      if (photoQueue.length > 0) {
+        if (statusElement) {
+          statusElement.textContent = `Back online! ${photoQueue.length} item${photoQueue.length > 1 ? 's' : ''} queued — tap Sync to send.`;
+        }
       }
-    }
-  });
-  
-  window.addEventListener('offline', () => {
-    isOnline = false;
-    updateConnectionStatus();
-    console.log('Connection lost');
-    
-    if (isSyncing) {
-      statusElement.textContent = 'Connection lost during sync';
-    }
-  });
-  
+    });
+
+    window.addEventListener('offline', () => {
+      isOnline = false;
+      updateConnectionStatus();
+      console.log('Connection lost');
+
+      if (isSyncing) {
+        if (statusElement) statusElement.textContent = 'Connection lost during sync';
+      }
+    });
+  }
+
   updateConnectionStatus();
 }
 
@@ -9219,6 +9226,17 @@ async function initCamera() {
       }
     }
     
+    // Load the queue FIRST — before camera access — so saved items survive
+    // even if the camera hangs or fails on this attempt.
+    loadQueue();
+
+    // Reset any stale sync state left over from a previous suspended session.
+    isSyncing = false;
+    if (syncButton) {
+      syncButton.disabled = false;
+      syncButton.classList.remove('syncing');
+    }
+
     await enumerateCameras();
     
     if (availableCameras.length > 1) {
@@ -9233,7 +9251,15 @@ async function initCamera() {
     }
     
     const constraints = getCameraConstraints();
-    stream = await navigator.mediaDevices.getUserMedia(constraints);
+
+    // Timeout prevents an infinite freeze when the camera hardware is in a
+    // dirty state from a previous crash or force-close.
+    stream = await Promise.race([
+      navigator.mediaDevices.getUserMedia(constraints),
+      new Promise((_, reject) =>
+        setTimeout(() => reject(new Error('Camera access timed out — tap Start to try again.')), 15000)
+      )
+    ]);
     
     video.srcObject = stream;
     videoTrack = stream.getVideoTracks()[0];
@@ -9244,11 +9270,17 @@ async function initCamera() {
     
     console.log('Camera initialized:', getCurrentCameraLabel());
 
-    loadQueue();
     setupConnectionMonitoring();
     
     await new Promise((resolve) => {
+      // Timeout prevents a second freeze point if onloadedmetadata never fires.
+      const videoLoadTimeout = setTimeout(() => {
+        console.warn('Video metadata timed out — proceeding anyway');
+        resolve();
+      }, 10000);
+
       video.onloadedmetadata = async () => {
+        clearTimeout(videoLoadTimeout);
         try {
           await video.play();
           applyVideoTransform();
@@ -9264,6 +9296,10 @@ async function initCamera() {
     document.getElementById('start-screen').remove(); // Deletes from memory
     document.getElementById('camera-container').style.display = 'flex';
     statusElement.style.display = 'block';
+
+    // Re-run after the container is visible so the sync button is guaranteed
+    // to appear if there are queued items waiting.
+    updateQueueDisplay();
     
     const cameraButton = document.getElementById('camera-button');
     if (availableCameras.length > 1) {
@@ -9814,8 +9850,10 @@ async function syncQueuedPhotos() {
   }
   
   isSyncing = true;
-  syncButton.disabled = true;
-  syncButton.classList.add('syncing');
+  if (syncButton) {
+    syncButton.disabled = true;
+    syncButton.classList.add('syncing');
+  }
   
   console.log(`Syncing ${photoQueue.length} queued photos...`);
   
@@ -9864,8 +9902,10 @@ async function syncQueuedPhotos() {
   }
   
   isSyncing = false;
-  syncButton.disabled = false;
-  syncButton.classList.remove('syncing');
+  if (syncButton) {
+    syncButton.disabled = false;
+    syncButton.classList.remove('syncing');
+  }
   
   if (photoQueue.length === 0) {
     const message = noMagicMode 
