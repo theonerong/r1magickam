@@ -38308,6 +38308,562 @@
     "additionalInstructions": "• Transform ONLY the subject into the selected school's ultimate superfan while preserving the subject's identity, facial features, expression, pose, age, and body proportions.\n• Dress the subject completely in authentic apparel representing the selected school, including recognizable jerseys, shirts, jackets, hoodies, hats, face paint, gloves, beads, scarves, and other genuine fan merchandise appropriate for that university.\n• Prominently display the official team colors and official athletic logos on clothing, hats, flags, banners, foam #1 finger, and other fan accessories.\n• Place the subject inside the school's official home football stadium during an exciting game-day atmosphere.\n• Include the school's official mascot standing beside the subject and interacting naturally.\n• Surround the subject with authentic stadium architecture, scoreboard, marching band, cheerleaders, fans, signs, rally towels, pom-poms, flags, confetti, and recognizable school traditions.\n• Incorporate famous school-specific traditions, accessories, landmarks, or game-day rituals whenever they are strongly associated with the selected university (for example, but not limited to, Howard's Rock, the Turnover Chain, the Hawkeye Wave, Script Ohio, the White Out, The Grove, the Sooner Schooner, Ralphie, Bevo, Reveille, Smokey, the Ramblin' Wreck, the Vol Navy, Chief Osceola and Renegade, Enter Sandman, the Kibbie Dome, the Blue Turf, etc.).\n• Ensure all logos, uniforms, mascots, stadiums, colors, signage, traditions, and fan apparel are accurate and recognizable for the selected school.\n• Preserve any sport specified by the master prompt. If none is specified, assume football.\n• If the master prompt specifies a particular college, team, mascot, stadium, rivalry, conference, tradition, or sport, PRIORITIZE that information over the selected option.\n• The finished image should look like a professional sports photography or promotional photograph captured during an authentic college game day."
   },
   {
+    "name": "SUPERFAN (MLB)",
+    "category": [
+      "OPTIONS",
+      "SPORTS",
+      "MLB",
+      "FAN CULTURE",
+      "TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform the subject into the ultimate Major League Baseball superfan for the selected team.\n\nThe subject should appear completely immersed in an authentic MLB game-day atmosphere, proudly representing every recognizable element of that team's identity, traditions, ballpark experience, mascots, fan culture, and official branding.\n\nMASTER PROMPT RULE:\n• If a master prompt specifies a particular subject, pose, setting, mood, action, artistic direction, or MLB team—PRIORITIZE and USE that information while applying this transformation.\n• If both a master prompt and a selected option specify a team, the master prompt always overrides the selected option.",
+    "randomizeOptions": true,
+    "options": [
+    {
+      "id": "001",
+      "text": "Arizona Diamondbacks — Chase Field, Baxter the Bobcat mascot, Sonoran desert atmosphere, snake imagery, Sedona red fan culture, packed Arizona crowd."
+    },
+    {
+      "id": "002",
+      "text": "Atlanta Braves — Truist Park, Blooper mascot, Chop House atmosphere, tomahawk traditions, red-and-navy sea of fans, Southern baseball culture."
+    },
+    {
+      "id": "003",
+      "text": "Baltimore Orioles — Oriole Park at Camden Yards, The Oriole Bird mascot, orange-and-black fan culture, warehouse backdrop, Maryland baseball tradition."
+    },
+    {
+      "id": "004",
+      "text": "Boston Red Sox — Fenway Park, Green Monster backdrop, Wally the Green Monster mascot, Pesky Pole atmosphere, red-and-navy fan tradition."
+    },
+    {
+      "id": "005",
+      "text": "Chicago Cubs — Wrigley Field, Clark the Cub mascot, ivy-covered outfield walls, Wrigleyville atmosphere, blue pinstripes, historic North Side baseball tradition."
+    },
+    {
+      "id": "006",
+      "text": "Chicago White Sox — Guaranteed Rate Field, Southpaw mascot, black-and-silver fan culture, South Side pride, explosive scoreboard atmosphere."
+    },
+    {
+      "id": "007",
+      "text": "Cincinnati Reds — Great American Ball Park, Mr. Redlegs mascot, oldest professional baseball tradition, red fan culture, Ohio River backdrop."
+    },
+    {
+      "id": "008",
+      "text": "Cleveland Guardians — Progressive Field, Slider mascot, Guardians of Traffic imagery, navy-and-red atmosphere, Cleveland baseball pride."
+    },
+    {
+      "id": "009",
+      "text": "Colorado Rockies — Coors Field, Dinger mascot, Rocky Mountains backdrop, purple fan culture, mile-high baseball atmosphere."
+    },
+    {
+      "id": "010",
+      "text": "Detroit Tigers — Comerica Park, Paws mascot, tiger imagery, Motor City baseball tradition, orange-and-navy sea of fans."
+    },
+    {
+      "id": "011",
+      "text": "Houston Astros — Daikin Park, Orbit mascot, Space City atmosphere, NASA-inspired visuals, orange-and-navy fan culture, championship energy."
+    },
+    {
+      "id": "012",
+      "text": "Kansas City Royals — Kauffman Stadium, Sluggerrr mascot, iconic fountains, royal blue atmosphere, crown imagery, Midwest baseball tradition."
+    },
+    {
+      "id": "013",
+      "text": "Las Vegas Athletics — Las Vegas atmosphere, green-and-gold fan culture, elephant imagery, bright entertainment district energy, modern baseball celebration."
+    },
+    {
+      "id": "014",
+      "text": "Los Angeles Angels — Angel Stadium, Rally Monkey mascot, halo imagery, red fan culture, Southern California sunshine."
+    },
+    {
+      "id": "015",
+      "text": "Los Angeles Dodgers — Dodger Stadium, blue-and-white sea of fans, iconic palm trees, Vin Scully legacy atmosphere, Hollywood baseball tradition."
+    },
+    {
+      "id": "016",
+      "text": "Miami Marlins — loanDepot park, Billy the Marlin mascot, tropical South Florida atmosphere, vibrant teal-and-black colors, Latin baseball culture."
+    },
+    {
+      "id": "017",
+      "text": "Milwaukee Brewers — American Family Field, Bernie Brewer mascot, giant beer barrel slide, sausage race tradition, navy-and-gold fan culture."
+    },
+    {
+      "id": "018",
+      "text": "Minnesota Twins — Target Field, T.C. Bear mascot, Twin Cities atmosphere, Minnie and Paul imagery, red-white-and-navy celebration."
+    },
+    {
+      "id": "019",
+      "text": "New York Mets — Citi Field, Mr. Met mascot, Home Run Apple celebration, orange-and-blue fan culture, Queens baseball atmosphere."
+    },
+    {
+      "id": "020",
+      "text": "New York Yankees — Yankee Stadium, pinstripe tradition, championship banners, Monument Park atmosphere, navy-and-white sea of fans, iconic baseball heritage."
+    },
+    {
+      "id": "021",
+      "text": "Philadelphia Phillies — Citizens Bank Park, Phillie Phanatic mascot, Liberty Bell home run celebration, red fan culture, passionate Philadelphia crowd."
+    },
+    {
+      "id": "022",
+      "text": "Pittsburgh Pirates — PNC Park, Pirate Parrot mascot, Roberto Clemente Bridge backdrop, black-and-gold fan culture, pirate imagery."
+    },
+    {
+      "id": "023",
+      "text": "San Diego Padres — Petco Park, Swinging Friar mascot, brown-and-gold fan culture, Southern California waterfront atmosphere, San Diego sunshine."
+    },
+    {
+      "id": "024",
+      "text": "San Francisco Giants — Oracle Park, Lou Seal mascot, McCovey Cove splash hits, orange-and-black fan culture, Bay Bridge backdrop."
+    },
+    {
+      "id": "025",
+      "text": "Seattle Mariners — T-Mobile Park, Mariner Moose mascot, nautical Pacific Northwest atmosphere, teal-and-navy fan culture, waterfront baseball energy."
+    },
+    {
+      "id": "026",
+      "text": "St. Louis Cardinals — Busch Stadium, Fredbird mascot, sea of red, Gateway Arch backdrop, Cardinal Nation tradition, classic baseball atmosphere."
+    },
+    {
+      "id": "027",
+      "text": "Tampa Bay Rays — George M. Steinbrenner Field atmosphere, Raymond mascot, ray imagery, tropical Florida baseball vibe, navy-and-light-blue fan culture."
+    },
+    {
+      "id": "028",
+      "text": "Texas Rangers — Globe Life Field, Captain mascot, Lone Star pride, western atmosphere, red-white-and-blue Texas baseball tradition."
+    },
+    {
+      "id": "029",
+      "text": "Toronto Blue Jays — Rogers Centre, Ace mascot, CN Tower skyline, blue-and-white fan culture, Canadian baseball pride."
+    },
+    {
+      "id": "030",
+      "text": "Washington Nationals — Nationals Park, Screech mascot, presidential city backdrop, racing presidents tradition, patriotic red-white-and-blue atmosphere."
+    }
+    ],
+    "additionalInstructions": "• Transform the subject into the team's ultimate lifelong superfan—not simply someone wearing a baseball jersey.\n• Dress the subject head-to-toe in official licensed team apparel including jersey, cap, batting practice jersey, hoodie, jacket, pants, shorts, socks, shoes, sunglasses, gloves, and authentic MLB merchandise appropriate for game day.\n• Include numerous official team logos naturally integrated throughout clothing and accessories.\n• Preserve the subject's exact identity, facial structure, hair color, hairstyle, expression, age, ethnicity, body proportions, and pose.\n• Place the subject inside the team's authentic home ballpark during a sold-out MLB game with recognizable stadium architecture.\n• Include the team's official mascot prominently interacting with the scene whenever appropriate.\n• Feature famous traditions, chants, iconic stadium landmarks, seventh-inning stretch atmosphere, signature celebrations, retired numbers, championship banners, famous fan rituals, and recognizable team customs unique to the selected franchise.\n• Include authentic field dimensions, outfield landmarks, scoreboards, jumbotrons, dugouts, foul poles, stadium signage, and recognizable ballpark branding.\n• Surround the subject with thousands of passionate fans wearing official team colors.\n• Add foam #1 fingers, rally towels, baseball caps, pennants, flags, banners, handmade signs, face paint, baseball gloves, souvenir bats, baseballs, team jewelry, oversized chains, and recognizable fan accessories.\n• Apply realistic team-colored face paint appropriate to the selected team's fan culture.\n• Fill the stadium with dramatic lighting, fireworks, confetti, celebratory smoke, streamers, flyovers, scoreboard animations, and exciting game-day atmosphere.\n• The transformation should immediately communicate the selected MLB team even if all text and logos were removed.\n• Avoid generic baseball imagery—prioritize iconic ballparks, mascots, traditions, landmarks, fan rituals, colors, and symbols unique to the selected franchise.\n• Master prompt instructions always override the selected option whenever conflicts occur."
+  },
+  {
+    "name": "SUPERFAN (NBA)",
+    "category": [
+      "OPTIONS",
+      "SPORTS",
+      "NBA",
+      "FAN CULTURE",
+      "TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform the subject into the ultimate NBA superfan for the selected team.\n\nThe subject should appear completely immersed in an authentic NBA game-day atmosphere, proudly representing every recognizable element of that team's identity, traditions, arena experience, mascots, fan culture, and official branding.\n\nMASTER PROMPT RULE:\n• If a master prompt specifies a particular subject, pose, setting, mood, action, artistic direction, or NBA team—PRIORITIZE and USE that information while applying this transformation.\n• If both a master prompt and a selected option specify a team, the master prompt always overrides the selected option.",
+    "randomizeOptions": true,
+    "options": [
+    {
+      "id": "001",
+      "text": "Atlanta Hawks — State Farm Arena, Harry the Hawk mascot, red-and-black fan culture, soaring hawk imagery, Atlanta hip-hop energy, packed playoff crowd."
+    },
+    {
+      "id": "002",
+      "text": "Boston Celtics — TD Garden, Lucky the Leprechaun mascot, shamrocks everywhere, green-and-white sea of fans, Irish pride, legendary championship tradition."
+    },
+    {
+      "id": "003",
+      "text": "Brooklyn Nets — Barclays Center, Brooklyn street culture, black-and-white aesthetic, modern urban atmosphere, NYC basketball energy."
+    },
+    {
+      "id": "004",
+      "text": "Charlotte Hornets — Spectrum Center, Hugo the Hornet mascot, teal-and-purple fan culture, buzzing arena atmosphere, hornet imagery."
+    },
+    {
+      "id": "005",
+      "text": "Chicago Bulls — United Center, Benny the Bull mascot, iconic red-and-black atmosphere, championship banners, legendary Chicago basketball tradition."
+    },
+    {
+      "id": "006",
+      "text": "Cleveland Cavaliers — Rocket Arena, Moondog mascot, wine-and-gold fan culture, sword-and-shield imagery, Cavaliers championship atmosphere."
+    },
+    {
+      "id": "007",
+      "text": "Dallas Mavericks — American Airlines Center, Champ mascot, blue-and-silver fan culture, Texas basketball pride, energetic Mavericks atmosphere."
+    },
+    {
+      "id": "008",
+      "text": "Denver Nuggets — Ball Arena, Rocky the Mountain Lion mascot, Mile High atmosphere, mountain scenery, gold-and-navy fan culture."
+    },
+    {
+      "id": "009",
+      "text": "Detroit Pistons — Little Caesars Arena, Hooper mascot, Motor City automotive heritage, red-blue fan culture, Detroit basketball tradition."
+    },
+    {
+      "id": "010",
+      "text": "Golden State Warriors — Chase Center, Thunder mascot, Dub Nation atmosphere, blue-and-gold celebration, Bay Area energy, championship tradition."
+    },
+    {
+      "id": "011",
+      "text": "Houston Rockets — Toyota Center, Clutch the Bear mascot, rocket launch effects, space exploration theme, red fan culture, Houston energy."
+    },
+    {
+      "id": "012",
+      "text": "Indiana Pacers — Gainbridge Fieldhouse, Boomer mascot, racing heritage, checkered flags, blue-and-gold basketball tradition."
+    },
+    {
+      "id": "013",
+      "text": "LA Clippers — Intuit Dome atmosphere, Chuck the Condor mascot, Los Angeles basketball energy, navy-red fan culture, high-tech arena experience."
+    },
+    {
+      "id": "014",
+      "text": "Los Angeles Lakers — Crypto.com Arena, championship banners, gold-and-purple sea of fans, Hollywood glamour, celebrity courtside atmosphere, Showtime tradition."
+    },
+    {
+      "id": "015",
+      "text": "Memphis Grizzlies — FedExForum, Grizz mascot, Beale Street energy, bear imagery, navy-and-gold fan culture, Memphis grit."
+    },
+    {
+      "id": "016",
+      "text": "Miami Heat — Kaseya Center, Burnie mascot, White Hot fan culture, South Beach atmosphere, flaming basketball effects, tropical Miami energy."
+    },
+    {
+      "id": "017",
+      "text": "Milwaukee Bucks — Fiserv Forum, Bango mascot, deer antler imagery, Fear the Deer atmosphere, green-and-cream celebration."
+    },
+    {
+      "id": "018",
+      "text": "Minnesota Timberwolves — Target Center, Crunch mascot, northern forest atmosphere, wolf imagery, icy blue fan culture."
+    },
+    {
+      "id": "019",
+      "text": "New Orleans Pelicans — Smoothie King Center, Pierre the Pelican mascot, Mardi Gras colors, jazz culture, New Orleans celebration."
+    },
+    {
+      "id": "020",
+      "text": "New York Knicks — Madison Square Garden, Knicks City atmosphere, orange-and-blue sea of fans, iconic New York basketball culture, bright city lights."
+    },
+    {
+      "id": "021",
+      "text": "Oklahoma City Thunder — Paycom Center, Rumble the Bison mascot, thunderstorm effects, blue-and-orange fan culture, booming playoff atmosphere."
+    },
+    {
+      "id": "022",
+      "text": "Orlando Magic — Kia Center, STUFF the Magic Dragon mascot, magical blue lighting, stars and sparkles, Central Florida basketball atmosphere."
+    },
+    {
+      "id": "023",
+      "text": "Philadelphia 76ers — Wells Fargo Center, Franklin the Dog mascot, Liberty Bell imagery, patriotic red-white-and-blue atmosphere, Philadelphia basketball tradition."
+    },
+    {
+      "id": "024",
+      "text": "Phoenix Suns — PHX Arena atmosphere, The Gorilla mascot, blazing desert sun imagery, purple-and-orange fan culture, Arizona heat."
+    },
+    {
+      "id": "025",
+      "text": "Portland Trail Blazers — Moda Center, Blaze the Trail Cat mascot, Pacific Northwest atmosphere, red-and-black fan culture, Rip City pride."
+    },
+    {
+      "id": "026",
+      "text": "Sacramento Kings — Golden 1 Center, Slamson the Lion mascot, purple laser beam celebration, royal crown imagery, Kings fan culture."
+    },
+    {
+      "id": "027",
+      "text": "San Antonio Spurs — Frost Bank Center, The Coyote mascot, silver-and-black fan culture, Texas pride, championship tradition, western flair."
+    },
+    {
+      "id": "028",
+      "text": "Toronto Raptors — Scotiabank Arena, The Raptor mascot, Jurassic Park fan zone, red-and-black atmosphere, Canadian basketball pride."
+    },
+    {
+      "id": "029",
+      "text": "Utah Jazz — Delta Center, Jazz Bear mascot, mountain scenery, purple-and-yellow celebration, musical heritage, Salt Lake City atmosphere."
+    },
+    {
+      "id": "030",
+      "text": "Washington Wizards — Capital One Arena, G-Wiz mascot, magical effects, patriotic Washington landmarks, red-white-and-blue fan culture."
+    }
+    ],
+    "additionalInstructions": "• Transform the subject into the team's ultimate lifelong superfan—not simply someone wearing a basketball jersey.\n• Dress the subject head-to-toe in official licensed team apparel including jersey, shorts, warm-up jacket, hoodie, cap, beanie, sneakers, socks, accessories, and authentic NBA merchandise appropriate for game day.\n• Include numerous official team logos naturally integrated throughout clothing and accessories.\n• Preserve the subject's exact identity, facial structure, hair color, hairstyle, expression, age, ethnicity, body proportions, and pose.\n• Place the subject inside the team's authentic home arena during a sold-out NBA game with recognizable arena architecture.\n• Include the team's official mascot prominently interacting with the scene whenever appropriate.\n• Feature famous traditions, chants, pre-game introductions, playoff rituals, arena entertainment, championship banners, retired jerseys, fan sections, and iconic celebrations unique to the selected franchise.\n• Include authentic hardwood court markings, center-court logo, scoreboards, LED ribbon boards, courtside seating, jumbotron displays, and recognizable arena branding.\n• Surround the subject with thousands of passionate fans wearing official team colors.\n• Add foam #1 fingers, rally towels, thundersticks, flags, banners, handmade signs, scarves, face paint, championship gear, basketball props, oversized chains, hats, and recognizable fan accessories.\n• Apply realistic team-colored face paint appropriate to the selected team's fan culture.\n• Fill the arena with dramatic lighting, confetti, spotlights, smoke effects, pyrotechnics, halftime entertainment, playoff energy, and championship celebration atmosphere.\n• The transformation should immediately communicate the selected NBA team even if all text and logos were removed.\n• Avoid generic basketball imagery—prioritize iconic mascots, arenas, traditions, fan rituals, colors, championship history, and visual identity unique to the selected franchise.\n• Master prompt instructions always override the selected option whenever conflicts occur."
+  },
+  {
+    "name": "SUPERFAN (NFL)",
+    "category": [
+      "OPTIONS",
+      "SPORTS",
+      "NFL",
+      "FAN CULTURE",
+      "TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform the subject into the ultimate NFL superfan for the selected team.\n\nThe subject should appear completely immersed in an authentic home-game atmosphere, proudly representing every recognizable element of that team's identity, traditions, fan culture, stadium experience, and official branding.\n\nMASTER PROMPT RULE:\n• If a master prompt specifies a particular subject, pose, setting, mood, action, artistic direction, or NFL team—PRIORITIZE and USE that information while applying this transformation.\n• If both a master prompt and a selected option specify a team, the master prompt always overrides the selected option.",
+  "randomizeOptions": true,
+  "options": [
+    {
+      "id": "001",
+      "text": "Arizona Cardinals — Sea of Red, State Farm Stadium atmosphere, Big Red mascot, cardinal-themed fan gear, waving red rally towels and flags."
+    },
+    {
+      "id": "002",
+      "text": "Atlanta Falcons — Dirty Bird culture, Mercedes-Benz Stadium, Freddie Falcon mascot, black-and-red face paint, falcon wings and fan banners."
+    },
+    {
+      "id": "003",
+      "text": "Baltimore Ravens — Purple reign atmosphere, M&T Bank Stadium, Poe mascot, raven-themed accessories, purple smoke, medieval-inspired fan culture."
+    },
+    {
+      "id": "004",
+      "text": "Buffalo Bills — Bills Mafia, table-smashing tailgate atmosphere, Highmark Stadium, Billy Buffalo mascot, red-and-blue face paint, snow, passionate tailgating."
+    },
+    {
+      "id": "005",
+      "text": "Carolina Panthers — Keep Pounding culture, Bank of America Stadium, Sir Purr mascot, black-and-blue face paint, pounding drum traditions."
+    },
+    {
+      "id": "006",
+      "text": "Chicago Bears — Monsters of the Midway atmosphere, Soldier Field, Staley Da Bear mascot, navy-and-orange fan gear, classic Chicago football culture."
+    },
+    {
+      "id": "007",
+      "text": "Cincinnati Bengals — Jungle atmosphere, Paycor Stadium, Who Dey chants, striped orange-and-black face paint, tiger-themed fan culture."
+    },
+    {
+      "id": "008",
+      "text": "Cleveland Browns — Dawg Pound atmosphere, Brownie the Elf and Chomps mascot, barking fans, orange helmets everywhere, rugged Cleveland football tradition."
+    },
+    {
+      "id": "009",
+      "text": "Dallas Cowboys — America's Team atmosphere, AT&T Stadium, Dallas Cowboys Cheerleaders, Rowdy mascot, blue-and-silver celebration, massive star branding."
+    },
+    {
+      "id": "010",
+      "text": "Denver Broncos — Mile High atmosphere, Empower Field, Miles mascot, orange crush fan culture, mountain backdrop, thunderous crowd."
+    },
+    {
+      "id": "011",
+      "text": "Detroit Lions — Honolulu Blue pride, Ford Field, Roary mascot, roaring crowd, blue face paint, lion-themed accessories."
+    },
+    {
+      "id": "012",
+      "text": "Green Bay Packers — Cheesehead hats, Lambeau Leap atmosphere, frozen Lambeau Field, Packers traditions, snow, green-and-gold fan culture."
+    },
+    {
+      "id": "013",
+      "text": "Houston Texans — Bull-themed fan culture, NRG Stadium, Toro mascot, red-white-and-blue crowd, Texas pride, football tailgate atmosphere."
+    },
+    {
+      "id": "014",
+      "text": "Indianapolis Colts — Lucas Oil Stadium, Blue mascot, horseshoe traditions, blue smoke, Indianapolis racing-inspired energy."
+    },
+    {
+      "id": "015",
+      "text": "Jacksonville Jaguars — DUUUVAL chants, EverBank Stadium, Jaxson de Ville mascot, teal-and-black fan culture, Florida game-day energy."
+    },
+    {
+      "id": "016",
+      "text": "Kansas City Chiefs — Red Kingdom, Arrowhead Stadium, Tomahawk Chop atmosphere, KC Wolf mascot, red face paint, deafening crowd."
+    },
+    {
+      "id": "017",
+      "text": "Las Vegas Raiders — Black Hole fans, Allegiant Stadium, Raider Rusher mascot, silver-and-black face paint, spikes, pirate-inspired fan culture."
+    },
+    {
+      "id": "018",
+      "text": "Los Angeles Chargers — Powder blue pride, SoFi Stadium, Boltman-inspired fan culture, electric lightning graphics, vibrant LA atmosphere."
+    },
+    {
+      "id": "019",
+      "text": "Los Angeles Rams — Horns Up culture, SoFi Stadium, Rampage mascot, blue-and-gold fan traditions, Hollywood-style game-day energy."
+    },
+    {
+      "id": "020",
+      "text": "Miami Dolphins — Aqua-and-orange apparel, Hard Rock Stadium, T.D. mascot, South Florida sunshine, tropical tailgate atmosphere."
+    },
+    {
+      "id": "021",
+      "text": "Minnesota Vikings — Gjallarhorn ceremony, U.S. Bank Stadium, Viktor the Viking mascot, SKOL chant, Viking helmets, purple battle atmosphere."
+    },
+    {
+      "id": "022",
+      "text": "New England Patriots — Flying Elvis branding, Gillette Stadium, Pat Patriot mascot, Revolutionary War fan culture, red-white-and-blue celebration."
+    },
+    {
+      "id": "023",
+      "text": "New Orleans Saints — Who Dat Nation, Caesars Superdome, Gumbo mascot, fleur-de-lis everywhere, black-and-gold celebration, jazz-inspired energy."
+    },
+    {
+      "id": "024",
+      "text": "New York Giants — Giants Stadium tradition, MetLife Stadium, blue-and-red fan culture, giant foam fingers, New York football atmosphere."
+    },
+    {
+      "id": "025",
+      "text": "New York Jets — J-E-T-S chants, MetLife Stadium, green smoke, Jets Flight Crew atmosphere, Gotham Green fan culture."
+    },
+    {
+      "id": "026",
+      "text": "Philadelphia Eagles — Fly Eagles Fly, Lincoln Financial Field, Swoop mascot, midnight green face paint, passionate Philly crowd."
+    },
+    {
+      "id": "027",
+      "text": "Pittsburgh Steelers — Terrible Towels everywhere, Acrisure Stadium, Steely McBeam mascot, black-and-gold pride, Steel City atmosphere."
+    },
+    {
+      "id": "028",
+      "text": "San Francisco 49ers — Gold Rush atmosphere, Levi's Stadium, Sourdough Sam mascot, red-and-gold celebration, California football tradition."
+    },
+    {
+      "id": "029",
+      "text": "Seattle Seahawks — 12 Flag tradition, Lumen Field, Blitz mascot, Action Green apparel, deafening crowd, Pacific Northwest atmosphere."
+    },
+    {
+      "id": "030",
+      "text": "Tampa Bay Buccaneers — Pirate ship at Raymond James Stadium, Captain Fear mascot, red-and-pewter fan gear, cannons firing, pirate celebration."
+    },
+    {
+      "id": "031",
+      "text": "Tennessee Titans — Two-Tone Blue atmosphere, Nissan Stadium, T-Rac mascot, Nashville football culture, sword-themed fan traditions."
+    },
+    {
+      "id": "032",
+      "text": "Washington Commanders — Burgundy-and-gold fan culture, Northwest Stadium atmosphere, Major Tuddy mascot, military-inspired traditions, packed home crowd."
+    }
+  ],
+  "additionalInstructions": "• Transform the subject into the team's ultimate lifelong superfan—not simply someone wearing a jersey.\n• Dress the subject head-to-toe in official team apparel, including jersey, hat, jacket, pants or shorts, gloves, socks, shoes, scarves, and other authentic licensed merchandise appropriate for the weather.\n• Include numerous official team logos naturally integrated throughout clothing and accessories.\n• Preserve the subject's exact identity, facial structure, hair color, hairstyle, expression, body proportions, age, ethnicity, and pose.\n• Place the subject inside the authentic home stadium during a packed game with recognizable architecture and atmosphere.\n• Include the team's official mascot prominently interacting with the scene whenever appropriate.\n• Incorporate famous fan traditions unique to the selected franchise.\n• Include authentic stadium signage, scoreboards, championship banners, field markings, and recognizable team branding.\n• Surround the subject with thousands of enthusiastic fans wearing official team colors.\n• Add foam #1 fingers, rally towels, flags, banners, signs, scarves, beads, face paint, temporary tattoos, team jewelry, pom-poms, oversized hats, sunglasses, and other recognizable fan accessories.\n• Apply realistic team-colored face paint appropriate to the team's fan culture.\n• Fill the scene with celebration, excitement, energy, confetti, smoke effects, stadium lighting, and game-day spectacle.\n• The transformation should immediately communicate the selected NFL team even if all text and logos were removed.\n• Avoid generic football imagery—prioritize iconic traditions, mascots, stadium features, colors, and fan culture unique to the selected franchise.\n• Master prompt instructions always override the selected option whenever conflicts occur."
+  },
+  {
+    "name": "SUPERFAN (NHL)",
+    "category": [
+      "OPTIONS",
+      "SPORTS",
+      "NHL",
+      "FAN CULTURE",
+      "TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform the subject into the ultimate NHL superfan for the selected team.\n\nThe subject should appear completely immersed in an authentic home-game atmosphere, proudly representing every recognizable element of that team's identity, traditions, fan culture, arena experience, mascots, and official branding.\n\nMASTER PROMPT RULE:\n• If a master prompt specifies a particular subject, pose, setting, mood, action, artistic direction, or NHL team—PRIORITIZE and USE that information while applying this transformation.\n• If both a master prompt and a selected option specify a team, the master prompt always overrides the selected option.",
+    "randomizeOptions": true,
+    "options": [
+    {
+      "id": "001",
+      "text": "Anaheim Ducks — Honda Center atmosphere, Wild Wing mascot, orange-and-black fan gear, Mighty Ducks nostalgia, flying duck imagery, energetic Southern California hockey crowd."
+    },
+    {
+      "id": "002",
+      "text": "Boston Bruins — TD Garden, Blades the Bruin mascot, Original Six pride, black-and-gold sea of fans, bear imagery, rugged Boston hockey tradition."
+    },
+    {
+      "id": "003",
+      "text": "Buffalo Sabres — KeyBank Center, Sabretooth mascot, blue-and-gold fan culture, snowy Buffalo atmosphere, charging buffalo imagery, passionate hockey fans."
+    },
+    {
+      "id": "004",
+      "text": "Calgary Flames — Scotiabank Saddledome, Harvey the Hound mascot, C of Red fan tradition, flaming effects, cowboy spirit, red towels everywhere."
+    },
+    {
+      "id": "005",
+      "text": "Carolina Hurricanes — Lenovo Center, Stormy mascot, Storm Surge celebration, red warning flags, hurricane warning sirens, thunderous Carolina crowd."
+    },
+    {
+      "id": "006",
+      "text": "Chicago Blackhawks — United Center, Tommy Hawk mascot, Original Six tradition, Native-inspired team imagery, roaring Chicago crowd, iconic red jerseys."
+    },
+    {
+      "id": "007",
+      "text": "Colorado Avalanche — Ball Arena, Bernie mascot, Rocky Mountain backdrop, avalanche snow effects, burgundy-and-blue celebration, altitude atmosphere."
+    },
+    {
+      "id": "008",
+      "text": "Columbus Blue Jackets — Nationwide Arena, Stinger mascot, Civil War cannon traditions, Union Blue atmosphere, patriotic fan culture."
+    },
+    {
+      "id": "009",
+      "text": "Dallas Stars — American Airlines Center, Victor E. Green mascot, Victory Green fan culture, giant glowing green star, Texas hockey atmosphere."
+    },
+    {
+      "id": "010",
+      "text": "Detroit Red Wings — Little Caesars Arena, Al the Octopus tradition, Original Six history, Winged Wheel pride, octopus imagery, legendary Hockeytown atmosphere."
+    },
+    {
+      "id": "011",
+      "text": "Edmonton Oilers — Rogers Place, Hunter mascot, Oil Country, orange-and-blue playoff towels, Connor McDavid era excitement, passionate Alberta fans."
+    },
+    {
+      "id": "012",
+      "text": "Florida Panthers — Amerant Bank Arena, Stanley C. Panther mascot, rats-on-the-ice tradition, tropical South Florida hockey atmosphere, red-and-gold celebration."
+    },
+    {
+      "id": "013",
+      "text": "Los Angeles Kings — Crypto.com Arena, Bailey mascot, black-and-silver royalty theme, Hollywood lighting, regal crown imagery, dramatic game atmosphere."
+    },
+    {
+      "id": "014",
+      "text": "Minnesota Wild — Xcel Energy Center, Nordy mascot, State of Hockey tradition, forest wilderness imagery, evergreen atmosphere, passionate Minnesota fans."
+    },
+    {
+      "id": "015",
+      "text": "Montreal Canadiens — Bell Centre, Youppi! mascot, Original Six heritage, Bleu-Blanc-Rouge, French Canadian hockey tradition, historic championship atmosphere."
+    },
+    {
+      "id": "016",
+      "text": "Nashville Predators — Bridgestone Arena, Gnash mascot, Smashville atmosphere, giant saber-toothed cat imagery, gold towels, loud country music celebration."
+    },
+    {
+      "id": "017",
+      "text": "New Jersey Devils — Prudential Center, NJ Devil mascot, red-and-black fan culture, devil horns, inferno effects, intense Newark atmosphere."
+    },
+    {
+      "id": "018",
+      "text": "New York Islanders — UBS Arena, Sparky the Dragon mascot, Long Island hockey tradition, blue-and-orange sea of fans, lighthouse imagery."
+    },
+    {
+      "id": "019",
+      "text": "New York Rangers — Madison Square Garden, Original Six prestige, Statue of Liberty inspiration, blue jerseys everywhere, Broadway hockey atmosphere."
+    },
+    {
+      "id": "020",
+      "text": "Ottawa Senators — Canadian Tire Centre, Spartacat mascot, Roman legion imagery, red-and-black banners, Ottawa hockey pride."
+    },
+    {
+      "id": "021",
+      "text": "Philadelphia Flyers — Wells Fargo Center, Gritty mascot, orange-and-black fan culture, Broad Street Bullies tradition, gritty Philadelphia hockey atmosphere."
+    },
+    {
+      "id": "022",
+      "text": "Pittsburgh Penguins — PPG Paints Arena, Iceburgh mascot, black-and-gold championship tradition, penguin imagery, Terrible Towel-inspired Pittsburgh sports energy."
+    },
+    {
+      "id": "023",
+      "text": "San Jose Sharks — SAP Center, S.J. Sharkie mascot, Shark Tank atmosphere, teal lighting, shark teeth imagery, dramatic entrance tunnel."
+    },
+    {
+      "id": "024",
+      "text": "Seattle Kraken — Climate Pledge Arena, Buoy mascot, deep-sea mythology, tentacles, nautical atmosphere, emerald-and-deep-sea blue fan culture."
+    },
+    {
+      "id": "025",
+      "text": "St. Louis Blues — Enterprise Center, Louie mascot, blue-and-gold music heritage, blues instruments, Gateway Arch imagery, passionate Missouri hockey fans."
+    },
+    {
+      "id": "026",
+      "text": "Tampa Bay Lightning — Amalie Arena, ThunderBug mascot, lightning bolts everywhere, electric blue effects, tropical Florida hockey atmosphere."
+    },
+    {
+      "id": "027",
+      "text": "Toronto Maple Leafs — Scotiabank Arena, Carlton the Bear mascot, Original Six tradition, maple leaf imagery, blue-and-white sea of fans, Hockey Night in Canada atmosphere."
+    },
+    {
+      "id": "028",
+      "text": "Utah Mammoth — Delta Center, mammoth-themed fan culture, prehistoric ice-age imagery, snowy mountains, purple-and-black atmosphere, giant mammoth symbolism."
+    },
+    {
+      "id": "029",
+      "text": "Vancouver Canucks — Rogers Arena, Fin mascot, Pacific Northwest atmosphere, Orca imagery, blue-and-green fan culture, coastal Canadian hockey tradition."
+    },
+    {
+      "id": "030",
+      "text": "Vegas Golden Knights — T-Mobile Arena, Chance mascot, medieval knight spectacle, castle entrance, gold armor, Las Vegas entertainment atmosphere."
+    },
+    {
+      "id": "031",
+      "text": "Washington Capitals — Capital One Arena, Slapshot mascot, red-white-and-blue patriotism, eagle imagery, Ovi-era excitement, Washington monuments."
+    },
+    {
+      "id": "032",
+      "text": "Winnipeg Jets — Canada Life Centre, Mick E. Moose mascot, True North chants, fighter jet imagery, snowy Manitoba atmosphere, blue-and-white fan culture."
+    }
+    ],
+    "additionalInstructions": "• Transform the subject into the team's ultimate lifelong superfan—not simply someone wearing a hockey jersey.\n• Dress the subject head-to-toe in official licensed team apparel including jersey, alternate jersey, jacket, hoodie, hat, beanie, scarf, gloves, pants, socks, shoes, and authentic NHL merchandise appropriate for the season.\n• Include numerous official team logos naturally integrated throughout clothing and accessories.\n• Preserve the subject's exact identity, facial structure, hair color, hairstyle, expression, age, ethnicity, body proportions, and pose.\n• Place the subject inside the team's authentic home arena during a sold-out NHL game with recognizable architecture and arena features.\n• Include the team's official mascot prominently interacting with the scene whenever appropriate.\n• Feature famous traditions, chants, playoff rituals, goal celebrations, towels, arena effects, historic symbols, and iconic fan customs unique to the selected franchise.\n• Include authentic arena scoreboards, championship banners, retired numbers, center-ice logo, rink boards, goal lights, and recognizable team branding.\n• Surround the subject with thousands of passionate fans wearing official team colors.\n• Add foam fingers, rally towels, playoff towels, flags, banners, signs, scarves, face paint, team jewelry, hockey helmets, knit caps, novelty accessories, and recognizable fan merchandise.\n• Apply realistic team-colored face paint appropriate to the selected team's fan culture.\n• Fill the arena with dramatic lighting, goal horns, confetti, smoke, spotlights, ice reflections, celebration effects, and high-energy NHL playoff atmosphere.\n• The transformation should immediately communicate the selected NHL team even if all text and logos were removed.\n• Avoid generic hockey imagery—prioritize iconic arena features, mascots, traditions, colors, fan culture, and symbols unique to the selected franchise.\n• Master prompt instructions always override the selected option whenever conflicts occur."
+  },
+  {
     "name": "SUPERFLAT",
     "category": [
       "ART",
