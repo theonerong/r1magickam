@@ -2758,35 +2758,31 @@ async function submitMagicTransform() {
       }
     } catch (e) { /* non-critical */ }
 
-    // OFFLINE: queue it instead of sending — same queue the camera screen's Sync button uses
-    if (!isOnline) {
-      const queueItem = {
-        id: Date.now().toString() + '-gal-layer',
-        imageBase64: resizedImageBase64,
-        preset: {
-          name: 'Layer: ' + galleryLayerPresets.map(p => p.name).join(' + '),
-          message: magicPrompt,
-          options: [],
-          randomizeOptions: false,
-          additionalInstructions: ''
-        },
-        isCombined: false,
-        timestamp: Date.now()
-      };
-      photoQueue.push(queueItem);
-      saveQueue();
-      updateQueueDisplay();
-      alert('You\'re offline — this will send automatically once you\'re back online (or tap Sync on the camera screen).');
-      return;
-    }
+    // ALWAYS queue it first — whether online or offline — so it survives
+    // an app restart or a lost connection partway through sending.
+    // Same queue the camera screen's Sync button uses.
+    const queueItem = {
+      id: Date.now().toString() + '-gal-layer',
+      imageBase64: resizedImageBase64,
+      preset: {
+        name: 'Layer: ' + galleryLayerPresets.map(p => p.name).join(' + '),
+        message: magicPrompt,
+        options: [],
+        randomizeOptions: false,
+        additionalInstructions: ''
+      },
+      isCombined: false,
+      timestamp: Date.now()
+    };
+    photoQueue.push(queueItem);
+    saveQueue();
+    updateQueueDisplay();
 
-    if (typeof PluginMessageHandler !== 'undefined') {
-      const layerMagicPayload = { pluginId: 'com.r1.pixelart', imageBase64: resizedImageBase64 };
-      if (magicPrompt && magicPrompt.trim()) layerMagicPayload.message = magicPrompt;
-      PluginMessageHandler.postMessage(JSON.stringify(layerMagicPayload));
+    if (isOnline) {
+      if (!isSyncing) syncQueuedPhotos();
       alert('Magic transform submitted! You can submit again with a different prompt.');
     } else {
-      alert('Layer prompt built:\n\n' + magicPrompt.substring(0, 200) + '...');
+      alert('You\'re offline — this will send automatically once you\'re back online (or tap Sync on the camera screen).');
     }
     return;
   }
@@ -2835,57 +2831,31 @@ async function submitMagicTransform() {
       }
     } catch (e) { /* non-critical */ }
 
-    // OFFLINE: queue every preset instead of sending — same queue the camera screen's Sync button uses
-    if (!isOnline) {
-      const presetsToApply = [...galleryMultiPresets];
-      for (let i = 0; i < presetsToApply.length; i++) {
-        const preset = presetsToApply[i];
-        const manualSelection = galleryMultiManualSelections[preset.name] ?? null;
-        const queueItem = {
-          id: Date.now().toString() + '-gal-mp' + i,
-          imageBase64: resizedImageBase64,
-          preset: preset,
-          manualSelection: manualSelection,
-          timestamp: Date.now()
-        };
-        photoQueue.push(queueItem);
-      }
-      saveQueue();
-      updateQueueDisplay();
+    // ALWAYS queue every preset first — whether online or offline — so
+    // nothing gets lost if the connection drops partway through.
+    // Same queue the camera screen's Sync button uses.
+    const presetsToApply = [...galleryMultiPresets];
+    for (let i = 0; i < presetsToApply.length; i++) {
+      const preset = presetsToApply[i];
+      const manualSelection = galleryMultiManualSelections[preset.name] ?? null;
+      const queueItem = {
+        id: Date.now().toString() + '-gal-mp' + i,
+        imageBase64: resizedImageBase64,
+        preset: preset,
+        manualSelection: manualSelection,
+        timestamp: Date.now()
+      };
+      photoQueue.push(queueItem);
+    }
+    saveQueue();
+    updateQueueDisplay();
+
+    if (isOnline) {
+      if (!isSyncing) syncQueuedPhotos();
+      alert(`${presetsToApply.length} preset${presetsToApply.length > 1 ? 's' : ''} submitted!`);
+    } else {
       alert(`You're offline — ${presetsToApply.length} preset${presetsToApply.length > 1 ? 's' : ''} queued. They'll send automatically once you're back online (or tap Sync on the camera screen).`);
-      return;
     }
-
-    const overlay = document.createElement('div');
-    overlay.className = 'batch-progress-overlay';
-    overlay.innerHTML = `
-      <div class="batch-progress-text">Applying preset <span id="batch-current">0</span> / ${galleryMultiPresets.length}</div>
-      <div class="batch-progress-bar">
-        <div class="batch-progress-fill" id="batch-progress-fill" style="width: 0%"></div>
-      </div>
-    `;
-    document.body.appendChild(overlay);
-
-    let processed = 0;
-    for (const preset of galleryMultiPresets) {
-      try {
-        const manualSelection = galleryMultiManualSelections[preset.name] ?? null;
-        const finalPrompt = getFinalPrompt(preset, manualSelection);
-        if (typeof PluginMessageHandler !== 'undefined') {
-          const multiPayload = { pluginId: 'com.r1.pixelart', imageBase64: resizedImageBase64 };
-          if (finalPrompt && finalPrompt.trim()) multiPayload.message = finalPrompt;
-          PluginMessageHandler.postMessage(JSON.stringify(multiPayload));
-        }
-        processed++;
-        document.getElementById('batch-current').textContent = processed;
-        document.getElementById('batch-progress-fill').style.width = `${(processed / galleryMultiPresets.length) * 100}%`;
-        await new Promise(resolve => setTimeout(resolve, 3000));
-      } catch (error) {
-        console.error(`Failed to apply preset ${preset.name}:`, error);
-      }
-    }
-    document.body.removeChild(overlay);
-    alert(`${processed} preset${processed > 1 ? 's' : ''} applied successfully!`);
     return;
   }
   // END GALLERY MULTI MODE
@@ -2968,45 +2938,25 @@ async function submitMagicTransform() {
     }
   } catch (e) { /* non-critical */ }
 
-  // OFFLINE: queue it instead of sending — same queue the camera screen's Sync button uses
-  if (!isOnline) {
-    const queueItem = {
-      id: Date.now().toString() + '-gal-single',
-      imageBase64: resizedImageBase64,
-      preset: finalPreset,
-      manualSelection: manualSelection,
-      timestamp: Date.now()
-    };
-    photoQueue.push(queueItem);
-    saveQueue();
-    updateQueueDisplay();
-    alert('You\'re offline — this will send automatically once you\'re back online (or tap Sync on the camera screen).');
-    return;
-  }
+  // ALWAYS queue it first — whether online or offline — so it survives an
+  // app restart or a lost connection partway through sending.
+  // Same queue the camera screen's Sync button uses.
+  const queueItem = {
+    id: Date.now().toString() + '-gal-single',
+    imageBase64: resizedImageBase64,
+    preset: finalPreset,
+    manualSelection: manualSelection,
+    timestamp: Date.now()
+  };
+  photoQueue.push(queueItem);
+  saveQueue();
+  updateQueueDisplay();
 
-  if (typeof PluginMessageHandler !== 'undefined') {
-    // If gallery Layer mode is active, build the combined layer prompt instead
-    let magicPrompt;
-    if (isGalleryLayerActive && galleryLayerPresets.length > 0) {
-      magicPrompt = buildCombinedLayerPrompt(galleryLayerPresets, galleryLayerManualSelections);
-    } else {
-      magicPrompt = getFinalPrompt(finalPreset, manualSelection);
-    }
-    const magicPayload = {
-      pluginId: 'com.r1.pixelart',
-      imageBase64: resizedImageBase64
-    };
-    if (magicPrompt && magicPrompt.trim()) {
-      magicPayload.message = magicPrompt;
-    }
-    PluginMessageHandler.postMessage(JSON.stringify(magicPayload));
-
-    // Combined image stays active until user closes the viewer
-
+  if (isOnline) {
+    if (!isSyncing) syncQueuedPhotos();
     alert('Magic transform submitted! You can submit again with a different prompt.');
   } else {
-    // Combined image stays active until user closes the viewer
-    alert('Magic transform sent: ' + prompt.substring(0, 50) + '...');
+    alert('You\'re offline — this will send automatically once you\'re back online (or tap Sync on the camera screen).');
   }
 }
 
@@ -3138,79 +3088,35 @@ async function processBatchImages(preset, imagesToProcess) {
     }
   }
 
-  // OFFLINE: queue every image instead of sending — same queue the camera screen's Sync button uses
-  if (!isOnline) {
-    for (let i = 0; i < selectedIds.length; i++) {
-      const imageId = selectedIds[i];
-      const image = galleryImages.find(img => img.id === imageId);
-      if (!image) continue;
-      const resizedImageBase64 = await resizeImageForSubmission(image.imageBase64);
-      const queueItem = {
-        id: Date.now().toString() + '-gal-batch' + i,
-        imageBase64: resizedImageBase64,
-        preset: preset,
-        manualSelection: batchManualSelection,
-        timestamp: Date.now()
-      };
-      photoQueue.push(queueItem);
-    }
-    saveQueue();
-    updateQueueDisplay();
-    isBatchMode = false;
-    selectedBatchImages.clear();
-    toggleBatchMode();
-    alert(`You're offline — ${total} image${total > 1 ? 's' : ''} queued. They'll send automatically once you're back online (or tap Sync on the camera screen).`);
-    return;
-  }
-
-  const overlay = document.createElement('div');
-  overlay.className = 'batch-progress-overlay';
-  overlay.innerHTML = `
-    <div class="batch-progress-text">Processing <span id="batch-current">0</span> / ${total}</div>
-    <div class="batch-progress-bar">
-      <div class="batch-progress-fill" id="batch-progress-fill" style="width: 0%"></div>
-    </div>
-  `;
-  document.body.appendChild(overlay);
-  
-  let processed = 0;
-  
-  for (const imageId of selectedIds) {
+  // ALWAYS queue every image first — whether online or offline — so
+  // nothing gets lost if the connection drops partway through the batch.
+  // Same queue the camera screen's Sync button uses.
+  for (let i = 0; i < selectedIds.length; i++) {
+    const imageId = selectedIds[i];
     const image = galleryImages.find(img => img.id === imageId);
     if (!image) continue;
-    
-    try {
-      const finalPrompt = getFinalPrompt(preset, batchManualSelection);
-      const resizedImageBase64 = await resizeImageForSubmission(image.imageBase64);
-      
-      if (typeof PluginMessageHandler !== 'undefined') {
-        const batchPayload = {
-          pluginId: 'com.r1.pixelart',
-          imageBase64: resizedImageBase64
-        };
-        if (finalPrompt && finalPrompt.trim()) {
-          batchPayload.message = finalPrompt;
-        }
-        PluginMessageHandler.postMessage(JSON.stringify(batchPayload));
-      }
-      
-      processed++;
-      document.getElementById('batch-current').textContent = processed;
-      document.getElementById('batch-progress-fill').style.width = `${(processed / total) * 100}%`;
-      
-      await new Promise(resolve => setTimeout(resolve, 3000));
-    } catch (error) {
-      console.error(`Failed to process image ${imageId}:`, error);
-    }
+    const resizedImageBase64 = await resizeImageForSubmission(image.imageBase64);
+    const queueItem = {
+      id: Date.now().toString() + '-gal-batch' + i,
+      imageBase64: resizedImageBase64,
+      preset: preset,
+      manualSelection: batchManualSelection,
+      timestamp: Date.now()
+    };
+    photoQueue.push(queueItem);
   }
-  
-  document.body.removeChild(overlay);
-  
+  saveQueue();
+  updateQueueDisplay();
   isBatchMode = false;
   selectedBatchImages.clear();
   toggleBatchMode();
-  
-  alert(`Batch processing complete! ${processed} of ${total} images submitted.`);
+
+  if (isOnline) {
+    if (!isSyncing) syncQueuedPhotos();
+    alert(`${total} image${total > 1 ? 's' : ''} submitted!`);
+  } else {
+    alert(`You're offline — ${total} image${total > 1 ? 's' : ''} queued. They'll send automatically once you're back online (or tap Sync on the camera screen).`);
+  }
 }
 
 async function reencodeImageVariant(base64, index) {
@@ -4130,74 +4036,34 @@ async function applyMultiplePresets() {
     }
   }
 
-  // OFFLINE: queue every preset instead of sending — same queue the camera screen's Sync button uses
-  if (!isOnline) {
-    const resizedImageBase64 = await resizeImageForSubmission(image.imageBase64);
-    for (let i = 0; i < presetsToApply.length; i++) {
-      const preset = presetsToApply[i];
-      const manualSelection = galleryMultiManualSelections[preset.name] ?? null;
-      const queueItem = {
-        id: Date.now().toString() + '-gal-mp' + i,
-        imageBase64: resizedImageBase64,
-        preset: preset,
-        manualSelection: manualSelection,
-        timestamp: Date.now()
-      };
-      photoQueue.push(queueItem);
-    }
-    saveQueue();
-    updateQueueDisplay();
-    alert(`You're offline — ${presetsToApply.length} preset${presetsToApply.length > 1 ? 's' : ''} queued. They'll send automatically once you're back online (or tap Sync on the camera screen).`);
-    return;
-  }
-
-  // Now feed each preset one by one with the saved selections
-  const overlay = document.createElement('div');
-  overlay.className = 'batch-progress-overlay';
-  overlay.innerHTML = `
-    <div class="batch-progress-text">Applying preset <span id="batch-current">0</span> / ${presetsToApply.length}</div>
-    <div class="batch-progress-bar">
-      <div class="batch-progress-fill" id="batch-progress-fill" style="width: 0%"></div>
-    </div>
-  `;
-  document.body.appendChild(overlay);
-  
-  let processed = 0;
-  
+  // ALWAYS queue every preset first — whether online or offline — so
+  // nothing gets lost if the connection drops partway through.
+  // Same queue the camera screen's Sync button uses.
   const resizedImageBase64 = await resizeImageForSubmission(image.imageBase64);
-
-  let presetIndex = 0;
-  for (const preset of presetsToApply) {
-    try {
-      const manualSelection = galleryMultiManualSelections[preset.name] ?? null;
-      const finalPrompt = getFinalPrompt(preset, manualSelection);
-
-      // Use a unique image encoding per submission to avoid duplicate-fingerprint filtering
-      const variantImage = await reencodeImageVariant(resizedImageBase64, presetIndex);
-      presetIndex++;
-
-      if (typeof PluginMessageHandler !== 'undefined') {
-        const multiPayload = {
-          pluginId: 'com.r1.pixelart',
-          imageBase64: variantImage
-        };
-        if (finalPrompt && finalPrompt.trim()) {
-          multiPayload.message = finalPrompt;
-        }
-        PluginMessageHandler.postMessage(JSON.stringify(multiPayload));
-      }
-      
-      processed++;
-      document.getElementById('batch-current').textContent = processed;
-      document.getElementById('batch-progress-fill').style.width = `${(processed / presetsToApply.length) * 100}%`;
-      
-      await new Promise(resolve => setTimeout(resolve, 6000));
-    } catch (error) {
-      console.error(`Failed to apply preset ${preset.name}:`, error);
-    }
+  for (let i = 0; i < presetsToApply.length; i++) {
+    const preset = presetsToApply[i];
+    const manualSelection = galleryMultiManualSelections[preset.name] ?? null;
+    // Slightly different image encoding per preset so the backend doesn't
+    // treat repeated submissions of the same photo as duplicates.
+    const variantImage = await reencodeImageVariant(resizedImageBase64, i);
+    const queueItem = {
+      id: Date.now().toString() + '-gal-mp' + i,
+      imageBase64: variantImage,
+      preset: preset,
+      manualSelection: manualSelection,
+      timestamp: Date.now()
+    };
+    photoQueue.push(queueItem);
   }
-  
-  document.body.removeChild(overlay);
+  saveQueue();
+  updateQueueDisplay();
+
+  if (isOnline) {
+    if (!isSyncing) syncQueuedPhotos();
+    alert(`${presetsToApply.length} preset${presetsToApply.length > 1 ? 's' : ''} submitted!`);
+  } else {
+    alert(`You're offline — ${presetsToApply.length} preset${presetsToApply.length > 1 ? 's' : ''} queued. They'll send automatically once you're back online (or tap Sync on the camera screen).`);
+  }
 
   // GALLERY MULTI-PRESET CREDIT GAME — earn credits for each unique imported preset used
   try {
@@ -4235,7 +4101,6 @@ async function applyMultiplePresets() {
     }
   } catch (e) { /* non-critical */ }
 
-  alert(`${processed} preset${processed > 1 ? 's' : ''} applied successfully!`);
 }
 
 function setupViewerPinchZoom() {
@@ -7376,43 +7241,30 @@ async function applyGalleryLayerPresets() {
 
   const resizedImageBase64 = await resizeImageForSubmission(image.imageBase64);
 
-  // OFFLINE: queue it instead of sending — same queue the camera screen's Sync button uses
-  if (!isOnline) {
-    const queueItem = {
-      id: Date.now().toString() + '-gal-layer',
-      imageBase64: resizedImageBase64,
-      preset: {
-        name: 'Layer: ' + presetsToApply.map(p => p.name).join(' + '),
-        message: combinedPrompt,
-        options: [],
-        randomizeOptions: false,
-        additionalInstructions: ''
-      },
-      isCombined: false,
-      timestamp: Date.now()
-    };
-    photoQueue.push(queueItem);
-    saveQueue();
-    updateQueueDisplay();
-    const presetHeader = document.getElementById('viewer-preset-header');
-    if (presetHeader) presetHeader.textContent = '📑 LAYER';
-    alert('You\'re offline — this will send automatically once you\'re back online (or tap Sync on the camera screen).');
-    return;
-  }
+  // ALWAYS queue it first — whether online or offline — so it survives an
+  // app restart or a lost connection partway through sending.
+  // Same queue the camera screen's Sync button uses.
+  const queueItem = {
+    id: Date.now().toString() + '-gal-layer',
+    imageBase64: resizedImageBase64,
+    preset: {
+      name: 'Layer: ' + presetsToApply.map(p => p.name).join(' + '),
+      message: combinedPrompt,
+      options: [],
+      randomizeOptions: false,
+      additionalInstructions: ''
+    },
+    isCombined: false,
+    timestamp: Date.now()
+  };
+  photoQueue.push(queueItem);
+  saveQueue();
+  updateQueueDisplay();
+  const presetHeader = document.getElementById('viewer-preset-header');
+  if (presetHeader) presetHeader.textContent = '📑 LAYER';
 
-  if (typeof PluginMessageHandler !== 'undefined') {
-    const layerPayload = {
-      pluginId: 'com.r1.pixelart',
-      imageBase64: resizedImageBase64
-    };
-    if (combinedPrompt && combinedPrompt.trim()) {
-      layerPayload.message = combinedPrompt;
-    }
-    PluginMessageHandler.postMessage(JSON.stringify(layerPayload));
-    // Update the viewer header to show LAYER is active
-
-    const presetHeader = document.getElementById('viewer-preset-header');
-    if (presetHeader) presetHeader.textContent = '📑 LAYER';
+  if (isOnline) {
+    if (!isSyncing) syncQueuedPhotos();
 
     // GALLERY LAYER CREDIT GAME — earn credits for each unique imported preset used
     try {
@@ -7439,7 +7291,7 @@ async function applyGalleryLayerPresets() {
 
     alert(`Layer preset applied! ${presetsToApply.length} preset${presetsToApply.length > 1 ? 's' : ''} merged into one transform.`);
   } else {
-    alert('Layer prompt built:\n\n' + combinedPrompt.substring(0, 200) + '...');
+    alert('You\'re offline — this will send automatically once you\'re back online (or tap Sync on the camera screen).');
   }
 }
 
@@ -8389,6 +8241,11 @@ function saveQueue() {
     localStorage.setItem(QUEUE_STORAGE_KEY, JSON.stringify(photoQueue));
   } catch (err) {
     console.error('Error saving queue:', err);
+    // If this fails (e.g. device storage is full), the item(s) currently in
+    // photoQueue only exist in memory — closing or restarting the app before
+    // a successful save would lose them for good. Warn the user right away
+    // instead of failing silently.
+    alert('Could not save the offline queue (storage may be full). Please tap Sync now, or avoid closing the app until it says everything is synced.');
   }
 }
 
