@@ -394,6 +394,15 @@ let isGalleryMultiActive = false;
 let galleryMultiPresets = []; // saved multi selections for the gallery viewer
 let galleryMultiManualSelections = {}; // saved manual option selections for multi
 
+// Remembers the last manually-selected options for a SINGLE preset (no multi/layer
+// combo active) so the user can be asked "Use same options selected?" next time,
+// instead of always being sent straight back through the options modal.
+// Tracked separately for the gallery viewer and the camera screen.
+let gallerySingleLastPresetName = null;
+let gallerySingleLastSelection = null;
+let cameraSingleLastPresetName = null;
+let cameraSingleLastSelection = null;
+
 // Shared flag so selectPreset() knows we are picking layers
 
 let isLayerPresetMode = false;
@@ -2720,15 +2729,27 @@ async function submitMagicTransform() {
     const item = galleryImages[currentViewerImageIndex];
     const resizedImageBase64 = await resizeImageForSubmission(item.imageBase64);
 
-    // Always re-ask options for each options preset when manual options mode is on
+    // If manual options mode is on, offer to reuse last time's picks before
+    // walking through the options modal again for each preset.
     if (manualOptionsMode && !noMagicMode) {
-      galleryLayerManualSelections = {};
-      for (const preset of galleryLayerPresets) {
-        const options = parsePresetOptions(preset);
-        if (options.length > 0) {
-          const selectedValue = await showManualOptionsModal(preset, options);
-          if (selectedValue !== null) {
-            galleryLayerManualSelections[preset.name] = selectedValue;
+      const previousLayerSelections = { ...galleryLayerManualSelections };
+      const hasPreviousLayerSelections = Object.keys(previousLayerSelections).length > 0;
+      let reuseLayerSelections = false;
+      if (hasPreviousLayerSelections) {
+        reuseLayerSelections = await customConfirm('Use same options selected?');
+      }
+
+      if (reuseLayerSelections) {
+        galleryLayerManualSelections = previousLayerSelections;
+      } else {
+        galleryLayerManualSelections = {};
+        for (const preset of galleryLayerPresets) {
+          const options = parsePresetOptions(preset);
+          if (options.length > 0) {
+            const selectedValue = await showManualOptionsModal(preset, options);
+            if (selectedValue !== null) {
+              galleryLayerManualSelections[preset.name] = selectedValue;
+            }
           }
         }
       }
@@ -2795,15 +2816,27 @@ async function submitMagicTransform() {
     const item = galleryImages[currentViewerImageIndex];
     const resizedImageBase64 = await resizeImageForSubmission(item.imageBase64);
 
-    // Always re-ask options for each options preset when manual options mode is on
+    // If manual options mode is on, offer to reuse last time's picks before
+    // walking through the options modal again for each preset.
     if (manualOptionsMode && !noMagicMode) {
-      galleryMultiManualSelections = {};
-      for (const preset of galleryMultiPresets) {
-        const options = parsePresetOptions(preset);
-        if (options.length > 0) {
-          const selectedValue = await showManualOptionsModal(preset, options);
-          if (selectedValue !== null) {
-            galleryMultiManualSelections[preset.name] = selectedValue;
+      const previousMultiSelections = { ...galleryMultiManualSelections };
+      const hasPreviousMultiSelections = Object.keys(previousMultiSelections).length > 0;
+      let reuseMultiSelections = false;
+      if (hasPreviousMultiSelections) {
+        reuseMultiSelections = await customConfirm('Use same options selected?');
+      }
+
+      if (reuseMultiSelections) {
+        galleryMultiManualSelections = previousMultiSelections;
+      } else {
+        galleryMultiManualSelections = {};
+        for (const preset of galleryMultiPresets) {
+          const options = parsePresetOptions(preset);
+          if (options.length > 0) {
+            const selectedValue = await showManualOptionsModal(preset, options);
+            if (selectedValue !== null) {
+              galleryMultiManualSelections[preset.name] = selectedValue;
+            }
           }
         }
       }
@@ -2896,13 +2929,25 @@ async function submitMagicTransform() {
     const options = parsePresetOptions(matchedPreset);
     
     if (options.length > 0) {
-      const selectedValue = await showManualOptionsModal(matchedPreset, options);
-      
-      if (selectedValue === null) {
-        return; // User cancelled
+      let reuseSingleSelection = false;
+      if (gallerySingleLastPresetName === matchedPreset.name && gallerySingleLastSelection !== null) {
+        reuseSingleSelection = await customConfirm('Use same options selected?');
       }
-      
+
+      let selectedValue;
+      if (reuseSingleSelection) {
+        selectedValue = gallerySingleLastSelection;
+      } else {
+        selectedValue = await showManualOptionsModal(matchedPreset, options);
+
+        if (selectedValue === null) {
+          return; // User cancelled
+        }
+      }
+
       manualSelection = selectedValue;
+      gallerySingleLastPresetName = matchedPreset.name;
+      gallerySingleLastSelection = selectedValue;
     }
   }
   
@@ -8778,10 +8823,6 @@ function toggleTimerMode() {
       timerCountdown = null;
       document.getElementById('timer-countdown').style.display = 'none';
     }
-    // Clear camera multi-preset if timer is being turned off
-        if (isCameraMultiPresetActive) {
-          clearCameraMultiPresets();
-        }
     updatePresetDisplay();
     // Show current preset when timer mode is turned off
     if (CAMERA_PRESETS && CAMERA_PRESETS[currentPresetIndex]) {
@@ -9396,6 +9437,97 @@ async function resumeCamera() {
   }
 }
 
+// Resolves which manual option value to use for a single (non-multi, non-layer)
+// camera preset. If the same preset was used with manual options last time,
+// asks "Use same options selected?" first instead of always reopening the modal.
+async function resolveCameraSingleManualSelection(preset, options) {
+  let reuse = false;
+  if (cameraSingleLastPresetName === preset.name && cameraSingleLastSelection !== null) {
+    reuse = await customConfirm('Use same options selected?');
+  }
+
+  if (reuse) {
+    return cameraSingleLastSelection;
+  }
+
+  const selectedValue = await showManualOptionsModal(preset, options);
+  if (selectedValue !== null) {
+    cameraSingleLastPresetName = preset.name;
+    cameraSingleLastSelection = selectedValue;
+  }
+  return selectedValue;
+}
+
+// Resolves the manual option selections to use for the active camera Multi-preset
+// combo. Offers to reuse the previous selections before re-asking for each preset.
+// Skipped entirely for Timer/Motion/Burst modes, same as the single-preset path.
+async function resolveCameraMultiManualSelections() {
+  const isIncompatibleMode = isTimerMode || isMotionDetectionMode || isBurstMode;
+  if (!(manualOptionsMode && !noMagicMode) || isIncompatibleMode) {
+    return cameraMultiManualSelections;
+  }
+
+  const presetsWithOptions = cameraSelectedPresets.filter(p => parsePresetOptions(p).length > 0);
+  if (presetsWithOptions.length === 0) {
+    return cameraMultiManualSelections;
+  }
+
+  const hasPrevious = presetsWithOptions.some(p => cameraMultiManualSelections[p.name] !== undefined);
+  if (hasPrevious) {
+    const reuse = await customConfirm('Use same options selected?');
+    if (reuse) {
+      return cameraMultiManualSelections;
+    }
+  }
+
+  const freshSelections = {};
+  for (const preset of cameraSelectedPresets) {
+    const options = parsePresetOptions(preset);
+    if (options.length > 0) {
+      const selectedValue = await showManualOptionsModal(preset, options);
+      if (selectedValue !== null) {
+        freshSelections[preset.name] = selectedValue;
+      }
+    }
+  }
+  cameraMultiManualSelections = freshSelections;
+  return cameraMultiManualSelections;
+}
+
+// Same idea as resolveCameraMultiManualSelections, but for the camera Layer combo.
+async function resolveCameraLayerManualSelections() {
+  const isIncompatibleMode = isTimerMode || isMotionDetectionMode || isBurstMode;
+  if (!(manualOptionsMode && !noMagicMode) || isIncompatibleMode) {
+    return cameraLayerManualSelections;
+  }
+
+  const presetsWithOptions = cameraLayerPresets.filter(p => parsePresetOptions(p).length > 0);
+  if (presetsWithOptions.length === 0) {
+    return cameraLayerManualSelections;
+  }
+
+  const hasPrevious = presetsWithOptions.some(p => cameraLayerManualSelections[p.name] !== undefined);
+  if (hasPrevious) {
+    const reuse = await customConfirm('Use same options selected?');
+    if (reuse) {
+      return cameraLayerManualSelections;
+    }
+  }
+
+  const freshSelections = {};
+  for (const preset of cameraLayerPresets) {
+    const options = parsePresetOptions(preset);
+    if (options.length > 0) {
+      const selectedValue = await showManualOptionsModal(preset, options);
+      if (selectedValue !== null) {
+        freshSelections[preset.name] = selectedValue;
+      }
+    }
+  }
+  cameraLayerManualSelections = freshSelections;
+  return cameraLayerManualSelections;
+}
+
 // Capture photo and send to WebSocket
 function capturePhoto() {
   if (!stream) return;
@@ -9545,36 +9677,35 @@ addToGallery(dataUrl);
   // CAMERA MULTI-PRESET PATH
 
   if (isCameraMultiPresetActive && cameraSelectedPresets.length > 0) {
-    // Queue one item per selected preset, all sharing the same image
-    const presetsToApply = [...cameraSelectedPresets];
-    for (let i = 0; i < presetsToApply.length; i++) {
-      const preset = presetsToApply[i];
-      const manualSelection = cameraMultiManualSelections[preset.name] ?? null;
-      const queueItem = {
-        id: Date.now().toString() + '-mp' + i,
-        imageBase64: dataUrl,
-        preset: preset,
-        manualSelection: manualSelection,
-        timestamp: Date.now()
-      };
-      photoQueue.push(queueItem);
-    }
-    saveQueue();
-    updateQueueDisplay();
-
-    if (isOnline && !noMagicMode) {
-      statusElement.textContent = `Multi: sending ${presetsToApply.length} presets...`;
-      if (!isSyncing) {
-        syncQueuedPhotos();
+    resolveCameraMultiManualSelections().then((selectionsToUse) => {
+      // Queue one item per selected preset, all sharing the same image
+      const presetsToApply = [...cameraSelectedPresets];
+      for (let i = 0; i < presetsToApply.length; i++) {
+        const preset = presetsToApply[i];
+        const manualSelection = selectionsToUse[preset.name] ?? null;
+        const queueItem = {
+          id: Date.now().toString() + '-mp' + i,
+          imageBase64: dataUrl,
+          preset: preset,
+          manualSelection: manualSelection,
+          timestamp: Date.now()
+        };
+        photoQueue.push(queueItem);
       }
-    } else {
-      statusElement.textContent = `${presetsToApply.length} presets queued`;
-    }
+      saveQueue();
+      updateQueueDisplay();
 
-    // If timer is NOT active, clear multi-preset state after firing
-    if (!isTimerMode) {
-      clearCameraMultiPresets();
-    }
+      if (isOnline && !noMagicMode) {
+        statusElement.textContent = `Multi: sending ${presetsToApply.length} presets...`;
+        if (!isSyncing) {
+          syncQueuedPhotos();
+        }
+      } else {
+        statusElement.textContent = `${presetsToApply.length} presets queued`;
+      }
+
+      // Multi-preset mode persists — user must tap the lit button to clear it
+    });
     return;
   }
   // END CAMERA MULTI-PRESET PATH
@@ -9583,29 +9714,31 @@ addToGallery(dataUrl);
   // Merges all selected layer presets into ONE combined prompt and sends once.
 
   if (isCameraLayerActive && cameraLayerPresets.length > 0 && !isRandomMode) {
-    const combinedPrompt = buildCombinedLayerPrompt(cameraLayerPresets, cameraLayerManualSelections);
-    const queueItem = {
-      id: Date.now().toString() + '-layer',
-      imageBase64: dataUrl,
-      preset: {
-        name: 'Layer: ' + cameraLayerPresets.map(p => p.name).join(' + '),
-        message: combinedPrompt,
-        options: [],
-        randomizeOptions: false,
-        additionalInstructions: ''
-      },
-      timestamp: Date.now()
-    };
-    photoQueue.push(queueItem);
-    saveQueue();
-    updateQueueDisplay();
+    resolveCameraLayerManualSelections().then((selectionsToUse) => {
+      const combinedPrompt = buildCombinedLayerPrompt(cameraLayerPresets, selectionsToUse);
+      const queueItem = {
+        id: Date.now().toString() + '-layer',
+        imageBase64: dataUrl,
+        preset: {
+          name: 'Layer: ' + cameraLayerPresets.map(p => p.name).join(' + '),
+          message: combinedPrompt,
+          options: [],
+          randomizeOptions: false,
+          additionalInstructions: ''
+        },
+        timestamp: Date.now()
+      };
+      photoQueue.push(queueItem);
+      saveQueue();
+      updateQueueDisplay();
 
-    if (isOnline && !noMagicMode) {
-      statusElement.textContent = `📑 Layer prompt sent (${cameraLayerPresets.length} presets merged)`;
-      if (!isSyncing) syncQueuedPhotos();
-    } else {
-      statusElement.textContent = `📑 Layer prompt queued (${cameraLayerPresets.length} presets merged)`;
-    }
+      if (isOnline && !noMagicMode) {
+        statusElement.textContent = `📑 Layer prompt sent (${cameraLayerPresets.length} presets merged)`;
+        if (!isSyncing) syncQueuedPhotos();
+      } else {
+        statusElement.textContent = `📑 Layer prompt queued (${cameraLayerPresets.length} presets merged)`;
+      }
+    });
 
     // Layer mode persists — user must tap the lit button to clear it
     return;
@@ -9639,8 +9772,8 @@ addToGallery(dataUrl);
     const options = parsePresetOptions(currentPreset);
     
     if (options.length > 0) {
-      // Show modal and wait for selection
-      showManualOptionsModal(currentPreset, options).then((selectedValue) => {
+      // Show modal (or reuse last selection) and wait for the result
+              resolveCameraSingleManualSelection(currentPreset, options).then((selectedValue) => {
         if (selectedValue !== null) {
           // User selected an option - update the queue item
           const queueIndex = photoQueue.findIndex(item => item.id === queueItem.id);
@@ -13420,7 +13553,16 @@ window.addEventListener('load', () => {
   
   const cameraMultiPresetBtn = document.getElementById('camera-multi-preset-toggle');
     if (cameraMultiPresetBtn) {
-      cameraMultiPresetBtn.addEventListener('click', openCameraMultiPresetSelector);
+      cameraMultiPresetBtn.addEventListener('click', () => {
+        // If already active, clicking again clears it
+        if (isCameraMultiPresetActive) {
+          clearCameraMultiPresets();
+          if (statusElement) statusElement.textContent = 'Multi-preset cleared';
+          setTimeout(() => updatePresetDisplay(), 1500);
+        } else {
+          openCameraMultiPresetSelector();
+        }
+      });
     }
 
   const cameraLayerBtn = document.getElementById('camera-layer-toggle');
