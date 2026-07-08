@@ -9828,7 +9828,43 @@ addToGallery(dataUrl);
   }
 }
 
-async function syncQueuedPhotos() {
+// FAILSAFE: actively verifies the internet connection is really alive.
+// The browser's own online/offline flag (navigator.onLine) can claim
+// "online" when the connection is actually dead — this makes a tiny real
+// network request to be sure, so photos are never sent into the void.
+async function verifyRealConnectivity() {
+  if (!isOnline) return false;
+  if (typeof fetch !== 'function' || typeof AbortController !== 'function') {
+    return true; // can't actively verify in this environment — fall back to the browser flag
+  }
+  try {
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), 5000);
+    await fetch('https://www.google.com/generate_204', {
+      mode: 'no-cors',
+      cache: 'no-store',
+      signal: controller.signal
+    });
+    clearTimeout(timer);
+    return true;
+  } catch (e) {
+    return false;
+  }
+}
+
+// While photos are stuck in the queue because the connectivity check failed,
+// quietly retry every 30 seconds so they go out on their own once the
+// internet comes back — even if the browser never notices the change.
+let _connectivityRetryTimer = null;
+function _scheduleConnectivityRetry() {
+  if (_connectivityRetryTimer) clearTimeout(_connectivityRetryTimer);
+  _connectivityRetryTimer = setTimeout(() => {
+    _connectivityRetryTimer = null;
+    if (photoQueue.length > 0) syncQueuedPhotos(true);
+  }, 30000);
+}
+
+async function syncQueuedPhotos(fromAutoRetry) {
   if (photoQueue.length === 0 || isSyncing) {
     return;
   }
@@ -9848,8 +9884,18 @@ async function syncQueuedPhotos() {
   
   const originalCount = photoQueue.length;
   let successCount = 0;
+  let connectionLost = false;
   
   while (photoQueue.length > 0 && isOnline) {
+    // FAILSAFE: confirm the connection is genuinely alive before sending
+    // this photo. If not, stop here — nothing gets removed from the queue.
+    const reallyOnline = await verifyRealConnectivity();
+    if (!reallyOnline) {
+      console.log('Connectivity check failed — keeping photos queued');
+      connectionLost = true;
+      break;
+    }
+
     const item = photoQueue[0];
     // Update the gallery header (if it's showing) with this preset's name —
     // visual only, mirrors the camera screen's own countdown rhythm.
@@ -9899,7 +9945,14 @@ async function syncQueuedPhotos() {
     syncButton.classList.remove('syncing');
   }
   
-  if (photoQueue.length === 0) {
+  if (connectionLost) {
+    statusElement.textContent = `⚠️ No connection — ${photoQueue.length} photo${photoQueue.length > 1 ? 's' : ''} kept in queue`;
+    updateQueueDisplay();
+    _scheduleConnectivityRetry();
+    if (fromAutoRetry !== true) {
+      alert(`No internet connection detected. ${photoQueue.length} item${photoQueue.length > 1 ? 's' : ''} stayed safely in the queue and will send automatically once the connection returns — or tap Sync to retry.`);
+    }
+  } else if (photoQueue.length === 0) {
     const message = noMagicMode 
       ? `All ${successCount} photos saved!`
       : `All ${successCount} photos synced successfully!`;

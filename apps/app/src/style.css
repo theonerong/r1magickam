@@ -3518,7 +3518,8 @@ button:disabled {
 .gallery-folder {
     position: relative;
     width: 100%;
-    aspect-ratio: 1 / 1;
+    height: 15vw;
+    min-height: 44px;
     background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
     border: 2px solid #FE5F00;
     border-radius: 6px;
@@ -3532,8 +3533,15 @@ button:disabled {
     padding: 4px;
 }
 
+/* The first photo after the folders always starts on a fresh row, so the
+   shorter folder rows can actually shrink — a row shared with a photo
+   would otherwise stretch back to full photo height. */
+.gallery-folder + .gallery-item:not(.gallery-folder) {
+    grid-column-start: 1;
+}
+
 .gallery-folder-icon {
-    font-size: 8vw;
+    font-size: 4vw;
     line-height: 1;
     flex-shrink: 0;
 }
@@ -3545,7 +3553,7 @@ button:disabled {
     text-align: center;
     word-break: break-word;
     overflow: hidden;
-    max-height: 4.5em;
+    max-height: 2.4em;
     line-height: 1.2;
     padding: 0 2px;
     width: 100%;
@@ -3673,12 +3681,15 @@ button:disabled {
 }
 
 /* Checkbox */
+/* Batch-select checkbox — half size on both photos and folders.
+   Tapping anywhere on the tile still toggles selection; the box is
+   just the indicator. */
 .gallery-item-checkbox {
     position: absolute;
-    top: 6px;
-    left: 6px;
-    width: 24px;
-    height: 24px;
+    top: 4px;
+    left: 4px;
+    width: 12px;
+    height: 12px;
     cursor: pointer;
     z-index: 10;
     accent-color: #4CAF50;
@@ -6349,3 +6360,71 @@ button, .touchable {
     line-height: 1.4;
 }
 /* ===== END RESET DATABASE SECTION ===== */
+
+/* ── FX 1: menus pop in ── */
+@keyframes fxMenuPop {
+  from { opacity: 0; transform: scale(0.96); }
+  to   { opacity: 1; transform: scale(1); }
+}
+.styles-menu-content { animation: fxMenuPop 0.22s ease-out; }
+
+/* ── FX 2: gallery rises in ── */
+@keyframes fxGalleryOpen {
+  from { opacity: 0; transform: translateY(2vw); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.gallery-content { animation: fxGalleryOpen 0.22s ease-out; }
+
+/* ── FX 3: image viewer zooms open ── */
+@keyframes fxViewerZoom {
+  from { opacity: 0; transform: scale(0.94); }
+  to   { opacity: 1; transform: scale(1); }
+}
+.image-viewer-content { animation: fxViewerZoom 0.24s ease-out; }
+
+/* ── FX 4: gallery thumbnails cascade in ── */
+@keyframes fxThumbIn {
+  from { opacity: 0; transform: translateY(3vw); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.gallery-item { animation: fxThumbIn 0.26s ease-out both; }
+.gallery-item:nth-child(2)  { animation-delay: 0.03s; }
+.gallery-item:nth-child(3)  { animation-delay: 0.06s; }
+.gallery-item:nth-child(4)  { animation-delay: 0.09s; }
+.gallery-item:nth-child(5)  { animation-delay: 0.12s; }
+.gallery-item:nth-child(6)  { animation-delay: 0.15s; }
+.gallery-item:nth-child(7)  { animation-delay: 0.18s; }
+.gallery-item:nth-child(8)  { animation-delay: 0.21s; }
+.gallery-item:nth-child(9)  { animation-delay: 0.24s; }
+.gallery-item:nth-child(10) { animation-delay: 0.27s; }
+.gallery-item:nth-child(11) { animation-delay: 0.30s; }
+.gallery-item:nth-child(12) { animation-delay: 0.33s; }
+
+/* ── FX 5: sync button drops in ── */
+@keyframes fxSyncDrop {
+  0%   { opacity: 0; transform: translateX(-50%) translateY(-8vw) scale(0.9); }
+  70%  { opacity: 1; transform: translateX(-50%) translateY(1vw) scale(1.02); }
+  100% { opacity: 1; transform: translateX(-50%) translateY(0) scale(1); }
+}
+.sync-button { animation: fxSyncDrop 0.38s ease-out; }
+
+/* ── FX 6: active mode pulse ring ── */
+@keyframes fxModePulse {
+  from { opacity: 0.25; transform: scale(1); }
+  to   { opacity: 0.9;  transform: scale(1.06); }
+}
+.mode-button[data-mode="random"].random-active::after,
+.mode-button[data-mode="motion"].active::after,
+.mode-button[data-mode="burst"].burst-active::after,
+.mode-button[data-mode="timer"].timer-active::after,
+.mode-button[data-mode="camera-multi"].camera-multi-active::after,
+.mode-button[data-mode="camera-combine"].combine-active::after,
+.mode-button[data-mode="camera-layer"].layer-active::after {
+  content: '';
+  position: absolute;
+  top: -3px; right: -3px; bottom: -3px; left: -3px;
+  border: 2px solid rgba(254, 95, 0, 0.9);
+  border-radius: inherit;
+  pointer-events: none;
+  animation: fxModePulse 1.2s ease-in-out infinite alternate;
+}
