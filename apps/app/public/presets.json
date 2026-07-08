@@ -10185,31 +10185,31 @@
       "NOSTALGIC",
       "FAMILY HUMOR"
     ],
-    "message": "Take a picture and transform the subject into the ultimate stereotypical dad character while preserving their identity.\n\nCreate a humorous, exaggerated dad persona filled with classic dad fashion, accessories, habits, and personality cues.\n\nThe original photograph must not remain visible anywhere except as the transformed subject identity.\n\nMASTER PROMPT RULE:\n• If a master prompt specifies a particular subject, pose, setting, mood, action, or artistic direction—PRIORITIZE and USE that information while constructing the dad mode transformation.",
+    "message": "Take a picture and transform the subject into the ultimate stereotypical dad character while preserving their identity.\n\nCreate a humorous, exaggerated dad persona filled with classic dad fashion, accessories, habits, and personality cues.\n\nThe subject MUST be wearing a T-shirt that clearly reads:\n\"World's Greatest Dad...Semifinalist\"\nThe text should be large, centered, completely readable, and naturally printed on the shirt.\n\nThe original photograph must not remain visible anywhere except as the transformed subject identity.\n\nMASTER PROMPT RULE:\n• If a master prompt specifies a particular subject, pose, setting, mood, action, or artistic direction—PRIORITIZE and USE that information while constructing the dad mode transformation.",
     "randomizeOptions": true,
     "options": [
     {
       "id": "001",
-      "text": "Classic Suburban Dad — Add cargo shorts, white sneakers, tucked-in polo shirt, baseball cap, sunglasses, grill tools, and classic weekend dad energy."
+      "text": "Classic Suburban Dad — Add cargo shorts, white sneakers, baseball cap, sunglasses, grill tools, and classic weekend dad energy while wearing the required 'World's Greatest Dad...Semifinalist' T-shirt."
     },
     {
       "id": "002",
-      "text": "Ultimate Grill Master Dad — Transform the subject into a backyard barbecue legend with apron, spatula, grilling tools, meat thermometer, cooler, and proud chef expression."
+      "text": "Ultimate Grill Master Dad — Transform the subject into a backyard barbecue legend with apron, spatula, grilling tools, meat thermometer, cooler, and proud chef expression while wearing the required 'World's Greatest Dad...Semifinalist' T-shirt."
     },
     {
       "id": "003",
-      "text": "Technology Dad — Create a modern dad obsessed with gadgets, remote controls, smart devices, tool belts, headphones, and helpful-but-confused dad energy."
+      "text": "Technology Dad — Create a modern dad obsessed with gadgets, remote controls, smart devices, tool belts, headphones, and helpful-but-confused dad energy while wearing the required 'World's Greatest Dad...Semifinalist' T-shirt."
     },
     {
       "id": "004",
-      "text": "Vacation Dad — Add minivan road trip gear, map, cooler, camera, comfortable clothes, sandals with socks, and family vacation preparation details."
+      "text": "Vacation Dad — Add minivan road trip gear, map, cooler, camera, comfortable clothes, sandals with socks, and family vacation preparation details while wearing the required 'World's Greatest Dad...Semifinalist' T-shirt."
     },
     {
       "id": "005",
-      "text": "Extreme Dad Mode — Exaggerate every dad stereotype with maximum dad accessories, dad jokes visual cues, utility gear, lawn equipment, barbecue equipment, and overprepared energy."
+      "text": "Extreme Dad Mode — Exaggerate every dad stereotype with maximum dad accessories, dad jokes visual cues, utility gear, lawn equipment, barbecue equipment, and overprepared energy while wearing the required 'World's Greatest Dad...Semifinalist' T-shirt."
     }
     ],
-    "additionalInstructions": "• Preserve the subject's exact identity, facial structure, hairstyle, hair color, expression, age, ethnicity, body proportions, and recognizable features.\n• Transform the wardrobe, accessories, environment, and personality into a recognizable dad character.\n• The subject should look like themselves but with unmistakable dad energy.\n• Add realistic dad details such as practical clothing, comfortable footwear, tools, gadgets, snacks, grilling equipment, lawn equipment, family items, and everyday dad accessories.\n• Maintain realistic textures, lighting, shadows, and photographic quality.\n• Avoid making the subject look like a different person or changing their core identity.\n• Preserve the original pose unless the master prompt requests a change.\n• Increase the humor through subtle exaggerated dad details rather than random unrelated objects.\n• The final image should feel like a professional comedic character transformation.\n• Master prompt instructions always override the selected option whenever conflicts occur."
+    "additionalInstructions": "• Preserve the subject's exact identity, facial structure, hairstyle, hair color, expression, age, ethnicity, body proportions, and recognizable features.\n• The subject MUST wear a T-shirt that clearly reads exactly: \"World's Greatest Dad...Semifinalist\".\n• The shirt text must be large, centered, perfectly legible, correctly spelled, and unobstructed.\n• Do not crop, distort, wrinkle, or partially hide the shirt text.\n• Transform the wardrobe, accessories, environment, and personality into a recognizable dad character.\n• The subject should look like themselves but with unmistakable dad energy.\n• Add realistic dad details such as practical clothing, comfortable footwear, tools, gadgets, snacks, grilling equipment, lawn equipment, family items, and everyday dad accessories.\n• Maintain realistic textures, lighting, shadows, and photographic quality.\n• Avoid making the subject look like a different person or changing their core identity.\n• Preserve the original pose unless the master prompt requests a change.\n• Increase the humor through subtle exaggerated dad details rather than random unrelated objects.\n• The final image should feel like a professional comedic character transformation.\n• Master prompt instructions always override the selected option whenever conflicts occur."
   },
   {
     "name": "DAGUERREOTYPE",
