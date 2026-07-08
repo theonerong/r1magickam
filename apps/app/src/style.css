@@ -760,6 +760,10 @@ button:disabled {
     font-size: 4vw;
     box-shadow: 0 4px 15px rgba(33, 150, 243, 0.3);
     transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5vw;
 }
 
 .sync-button:active {
@@ -773,12 +777,30 @@ button:disabled {
 }
 
 .sync-button.syncing {
-    animation: spin 1s linear infinite;
+    opacity: 1;
 }
 
-@keyframes spin {
-    0% { transform: translateX(-50%) rotate(0deg); }
-    100% { transform: translateX(-50%) rotate(360deg); }
+.sync-spin-icon {
+    display: none;
+    width: 5vw;
+    height: 5vw;
+    border: 0.8vw solid rgba(255, 255, 255, 0.65);
+    border-top-color: #FE5F00;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.sync-button.syncing .sync-spin-icon {
+    display: inline-block;
+    animation: syncIconSpin 0.8s linear infinite;
+}
+
+.sync-button.syncing .sync-emoji-icon {
+    display: none;
+}
+
+@keyframes syncIconSpin {
+    to { transform: rotate(360deg); }
 }
 
 /* Styles Menu */
@@ -2481,6 +2503,25 @@ button:disabled {
     white-space: nowrap;
     padding: 0 1vw;
     box-sizing: border-box;
+}
+
+/* Small spinner shown next to "Submitting..." in the viewer header while the
+   gallery is actively sending presets. Same style family as the camera
+   screen's sync button spinner, recolored to fit the orange header text. */
+.header-spin-icon {
+    display: inline-block;
+    width: 3vw;
+    height: 3vw;
+    border: 0.45vw solid rgba(254, 95, 0, 0.3);
+    border-top-color: #FE5F00;
+    border-radius: 50%;
+    margin-right: 1.2vw;
+    vertical-align: -0.35vw;
+    animation: headerSpinIconSpin 0.8s linear infinite;
+}
+
+@keyframes headerSpinIconSpin {
+    to { transform: rotate(360deg); }
 }
 
 /* Delete button — top left */

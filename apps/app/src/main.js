@@ -2768,7 +2768,6 @@ async function submitMagicTransform() {
           if (earnCredit(p.name)) totalNewCredits++;
         }
         if (totalNewCredits > 0) {
-          playTaDaSound();
           const creditsEl = document.getElementById('import-credits-display');
           if (creditsEl) creditsEl.textContent = `Credits: ${getCredits()}`;
           setTimeout(() => {
@@ -2800,9 +2799,12 @@ async function submitMagicTransform() {
     updateQueueDisplay();
 
     if (isOnline) {
+      showGallerySubmittingIndicator('Submitting layers...');
       if (!isSyncing) syncQueuedPhotos();
+      waitForSyncToFinish().then(hideGallerySubmittingIndicator);
       alert('Magic transform submitted! You can submit again with a different prompt.');
     } else {
+      showGalleryPresetFlash('Layer queued');
       alert('You\'re offline — this will send automatically once you\'re back online (or tap Sync on the camera screen).');
     }
     return;
@@ -2853,7 +2855,6 @@ async function submitMagicTransform() {
           if (earnCredit(p.name)) totalNewCredits++;
         }
         if (totalNewCredits > 0) {
-          playTaDaSound();
           const creditsEl = document.getElementById('import-credits-display');
           if (creditsEl) creditsEl.textContent = `Credits: ${getCredits()}`;
           setTimeout(() => {
@@ -2884,9 +2885,12 @@ async function submitMagicTransform() {
     updateQueueDisplay();
 
     if (isOnline) {
+      showGallerySubmittingIndicator(`Submitting ${presetsToApply.length} preset${presetsToApply.length > 1 ? 's' : ''}...`, true);
       if (!isSyncing) syncQueuedPhotos();
+      waitForSyncToFinish().then(hideGallerySubmittingIndicator);
       alert(`${presetsToApply.length} preset${presetsToApply.length > 1 ? 's' : ''} submitted!`);
     } else {
+      showGalleryPresetFlash(`${presetsToApply.length} preset${presetsToApply.length > 1 ? 's' : ''} queued`);
       alert(`You're offline — ${presetsToApply.length} preset${presetsToApply.length > 1 ? 's' : ''} queued. They'll send automatically once you're back online (or tap Sync on the camera screen).`);
     }
     return;
@@ -2972,7 +2976,6 @@ async function submitMagicTransform() {
     if (isImported && usedName) {
       const credited = earnCredit(usedName);
       if (credited) {
-        playTaDaSound();
         const creditsEl = document.getElementById('import-credits-display');
         if (creditsEl) creditsEl.textContent = `Credits: ${getCredits()}`;
         setTimeout(() => {
@@ -2998,9 +3001,12 @@ async function submitMagicTransform() {
   updateQueueDisplay();
 
   if (isOnline) {
+    showGallerySubmittingIndicator(`Submitting ${finalPreset.name}...`, true);
     if (!isSyncing) syncQueuedPhotos();
+    waitForSyncToFinish().then(hideGallerySubmittingIndicator);
     alert('Magic transform submitted! You can submit again with a different prompt.');
   } else {
+    showGalleryPresetFlash(`${finalPreset.name} queued`);
     alert('You\'re offline — this will send automatically once you\'re back online (or tap Sync on the camera screen).');
   }
 }
@@ -4104,9 +4110,12 @@ async function applyMultiplePresets() {
   updateQueueDisplay();
 
   if (isOnline) {
+    showGallerySubmittingIndicator(`Submitting ${presetsToApply.length} preset${presetsToApply.length > 1 ? 's' : ''}...`, true);
     if (!isSyncing) syncQueuedPhotos();
+    waitForSyncToFinish().then(hideGallerySubmittingIndicator);
     alert(`${presetsToApply.length} preset${presetsToApply.length > 1 ? 's' : ''} submitted!`);
   } else {
+    showGalleryPresetFlash(`${presetsToApply.length} preset${presetsToApply.length > 1 ? 's' : ''} queued`);
     alert(`You're offline — ${presetsToApply.length} preset${presetsToApply.length > 1 ? 's' : ''} queued. They'll send automatically once you're back online (or tap Sync on the camera screen).`);
   }
 
@@ -4122,25 +4131,11 @@ async function applyMultiplePresets() {
         }
       }
       if (totalNewCredits > 0) {
-        playTaDaSound();
         const creditsEl = document.getElementById('import-credits-display');
         if (creditsEl) creditsEl.textContent = `Credits: ${getCredits()}`;
-        // Lock in the MULTI label now so the restore always goes back to it
-        const _multiRestoreLabel = `🎞️ MULTI (${presetsToApply.length})`;
         setTimeout(() => {
           const newTotal = getCredits();
-          const _flashHeader = document.getElementById('viewer-preset-header');
-          if (_flashHeader) {
-            const _origStyle = _flashHeader.style.cssText;
-            _flashHeader.style.whiteSpace = 'pre-line';
-            _flashHeader.style.lineHeight = '1.3';
-            _flashHeader.style.fontSize = '2.8vw';
-            _flashHeader.textContent = `🪙 ${totalNewCredits > 1 ? totalNewCredits + ' Credits' : 'Credit'} Earned!\n(${newTotal} total)`;
-            setTimeout(() => {
-              _flashHeader.textContent = _multiRestoreLabel;
-              _flashHeader.style.cssText = _origStyle;
-            }, 3500);
-          }
+          showGalleryCreditFlash(`🪙 ${totalNewCredits > 1 ? totalNewCredits + ' Credits' : 'Credit'} Earned!\n(${newTotal} total)`);
         }, 300);
       }
     }
@@ -4434,6 +4429,8 @@ async function loadStyles() {
     let _cachedFactoryPresets = null;
     try {
         showLoadingOverlay('Loading presets...');
+        // Wait one frame so the browser actually paints the spinner before the heavy work starts
+        await new Promise(resolve => setTimeout(resolve, 30));
         _cachedFactoryPresets = await presetImporter.loadPresetsFromFile();
         totalFactoryPresetCount = _cachedFactoryPresets.length;
         const tutorialCountEl = document.getElementById('tutorial-preset-count');
@@ -7309,7 +7306,9 @@ async function applyGalleryLayerPresets() {
   if (presetHeader) presetHeader.textContent = '📑 LAYER';
 
   if (isOnline) {
+    showGallerySubmittingIndicator('Submitting layers...');
     if (!isSyncing) syncQueuedPhotos();
+    waitForSyncToFinish().then(hideGallerySubmittingIndicator);
 
     // GALLERY LAYER CREDIT GAME — earn credits for each unique imported preset used
     try {
@@ -7323,7 +7322,6 @@ async function applyGalleryLayerPresets() {
           }
         }
         if (_layerNewCredits > 0) {
-          playTaDaSound();
           const _layerCreditsEl = document.getElementById('import-credits-display');
           if (_layerCreditsEl) _layerCreditsEl.textContent = `Credits: ${getCredits()}`;
           setTimeout(() => {
@@ -7336,6 +7334,7 @@ async function applyGalleryLayerPresets() {
 
     alert(`Layer preset applied! ${presetsToApply.length} preset${presetsToApply.length > 1 ? 's' : ''} merged into one transform.`);
   } else {
+    showGalleryPresetFlash(`${presetsToApply.length} preset${presetsToApply.length > 1 ? 's' : ''} queued`);
     alert('You\'re offline — this will send automatically once you\'re back online (or tap Sync on the camera screen).');
   }
 }
@@ -8321,7 +8320,7 @@ function updateQueueDisplay() {
   if (syncButton) {
     const count = photoQueue.length;
     syncButton.querySelector('#sync-count').textContent = count;
-    syncButton.style.display = count > 0 && isOnline ? 'block' : 'none';
+    syncButton.style.display = count > 0 && isOnline ? 'flex' : 'none';
   }
 }
 
@@ -9852,6 +9851,9 @@ async function syncQueuedPhotos() {
   
   while (photoQueue.length > 0 && isOnline) {
     const item = photoQueue[0];
+    // Update the gallery header (if it's showing) with this preset's name —
+    // visual only, mirrors the camera screen's own countdown rhythm.
+    updateGallerySubmittingIndicator(item.preset && item.preset.name);
     
     try {
       statusElement.textContent = `Syncing ${successCount + 1}/${originalCount}...`;
@@ -17208,19 +17210,132 @@ function playTaDaSound() {
   } catch (e) { /* non-critical */ }
 }
 
-function showGalleryCreditFlash(message) {
+// Shared helper behind showGalleryCreditFlash / showGalleryPresetFlash.
+// Remembers the TRUE original header text the first time a flash starts, and
+// only restores to that (not to whatever the other flash left behind) once
+// the most recent flash's timer finishes. Keeps overlapping flashes from
+// permanently overwriting the header if they happen close together.
+let _viewerHeaderTrueText = null;
+let _viewerHeaderRestoreTimer = null;
+let _viewerHeaderBusy = false;
+let _viewerHeaderPendingFlash = null;
+let _gallerySubmitShowNames = false;
+
+function _flashViewerHeader(message, duration, multiline, withSound) {
+  if (_viewerHeaderBusy) {
+    // The submitting spinner is up — save this flash (and its chime) and show
+    // it right after the spinner finishes, instead of dropping it. This is how
+    // the credits popup AND its sound land together AFTER "Submitting..."
+    // rather than getting lost behind it.
+    _viewerHeaderPendingFlash = { message, duration, multiline, withSound };
+    return;
+  }
   const header = document.getElementById('viewer-preset-header');
   if (!header) return;
-  const original = header.textContent;
-  const originalStyle = header.style.cssText;
-  header.style.whiteSpace = 'pre-line';
-  header.style.lineHeight = '1.3';
-  header.style.fontSize = '2.8vw';
+  if (_viewerHeaderRestoreTimer) {
+    clearTimeout(_viewerHeaderRestoreTimer);
+  } else {
+    _viewerHeaderTrueText = header.textContent;
+  }
+  if (multiline) {
+    header.style.whiteSpace = 'pre-line';
+    header.style.lineHeight = '1.3';
+    header.style.fontSize = '2.8vw';
+  }
+  // Play the chime at the exact moment the message becomes visible
+  if (withSound) playTaDaSound();
   header.textContent = message;
-  setTimeout(() => {
-    header.textContent = original;
-    header.style.cssText = originalStyle;
-  }, 3500);
+  _viewerHeaderRestoreTimer = setTimeout(() => {
+    header.textContent = _viewerHeaderTrueText;
+    header.style.whiteSpace = '';
+    header.style.lineHeight = '';
+    header.style.fontSize = '';
+    _viewerHeaderTrueText = null;
+    _viewerHeaderRestoreTimer = null;
+  }, duration);
+}
+
+function showGalleryCreditFlash(message) {
+  _flashViewerHeader(message, 3500, true, true);
+}
+
+// Brief static message for when a preset gets queued while offline — nothing
+// is actively being sent yet, so no spinner here.
+function showGalleryPresetFlash(message) {
+  _flashViewerHeader(message, 3000, false);
+}
+
+// Writes the spinner icon plus a text message into the viewer header.
+function _setSubmittingHeaderText(message) {
+  const header = document.getElementById('viewer-preset-header');
+  if (!header) return;
+  header.innerHTML = '<span class="header-spin-icon"></span>';
+  header.appendChild(document.createTextNode(message));
+}
+
+// Shows a spinning indicator in the viewer's top preset header while presets
+// are actively being sent to the AI. Stays up until hideGallerySubmittingIndicator()
+// is called — it does not time out on its own, since a submission can take a
+// few seconds depending on how many presets are queued.
+// If showNames is true, the sync engine will replace the message with the
+// name of each preset as it gets sent (see updateGallerySubmittingIndicator).
+function showGallerySubmittingIndicator(message, showNames = false) {
+  const header = document.getElementById('viewer-preset-header');
+  if (!header) return;
+  if (_viewerHeaderRestoreTimer) {
+    clearTimeout(_viewerHeaderRestoreTimer);
+    _viewerHeaderRestoreTimer = null;
+  }
+  if (!_viewerHeaderBusy) {
+    _viewerHeaderTrueText = header.textContent;
+  }
+  _viewerHeaderBusy = true;
+  _gallerySubmitShowNames = showNames;
+  _setSubmittingHeaderText(message);
+}
+
+// Called by the sync engine each time it starts sending a queued item, so the
+// gallery header can count down by showing WHICH preset is going out right now.
+// Does nothing unless the gallery submitting indicator is up in names mode.
+function updateGallerySubmittingIndicator(presetName) {
+  if (!_viewerHeaderBusy || !_gallerySubmitShowNames) return;
+  let name = presetName || 'preset';
+  // Truncate long preset names so the message always fits the header
+  if (name.length > 16) name = name.slice(0, 16);
+  _setSubmittingHeaderText('Submitting ' + name + '...');
+}
+
+function hideGallerySubmittingIndicator() {
+  if (!_viewerHeaderBusy) return;
+  _viewerHeaderBusy = false;
+  _gallerySubmitShowNames = false;
+  const header = document.getElementById('viewer-preset-header');
+  if (header) {
+    header.textContent = _viewerHeaderTrueText;
+  }
+  _viewerHeaderTrueText = null;
+  // If a credit popup (or any other flash) tried to appear while we were
+  // busy submitting, show it now that the header is free again.
+  if (_viewerHeaderPendingFlash) {
+    const pending = _viewerHeaderPendingFlash;
+    _viewerHeaderPendingFlash = null;
+    _flashViewerHeader(pending.message, pending.duration, pending.multiline, pending.withSound);
+  }
+}
+
+// Resolves once the shared sync engine finishes (or immediately if it's not
+// running) — lets the gallery know when to hide the submitting indicator,
+// without changing anything about how syncing itself works.
+function waitForSyncToFinish() {
+  return new Promise((resolve) => {
+    if (!isSyncing) { resolve(); return; }
+    const check = setInterval(() => {
+      if (!isSyncing) {
+        clearInterval(check);
+        resolve();
+      }
+    }, 200);
+  });
 }
 
 // Show gallery status message
@@ -17530,10 +17645,8 @@ document.addEventListener('DOMContentLoaded', function() {
       } else if (mode === 'burst') {
         button.addEventListener('click', toggleBurstMode);
       } else if (mode === 'timer') {
-        button.addEventListener('click', toggleTimerMode);
-      } else if (mode === 'camera-multi') {
-        button.addEventListener('click', openCameraMultiPresetSelector);
-      } else if (mode === 'camera-combine') {
+                   button.addEventListener('click', toggleTimerMode);
+              } else if (mode === 'camera-combine') {
         button.addEventListener('click', toggleCameraLiveCombineMode);
       }
     });
