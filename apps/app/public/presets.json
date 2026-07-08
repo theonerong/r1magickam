@@ -27273,6 +27273,41 @@
     "additionalInstructions": ""
   },
   {
+    "name": "NAIL ART",
+    "category": [
+      "OPTIONS",
+      "BEAUTY",
+      "MINIATURE ART",
+      "CHARACTER TRANSFORMATION",
+      "HAND-PAINTED"
+    ],
+    "message": "Take a picture and transform the subject into a beautifully hand-painted miniature portrait on fingernails.\n\nThe final image must depict a realistic human hand displaying professional nail art where the subject has been recreated as authentic hand-painted nail art.\n\nTHIS IS NOT A PHOTOGRAPH PRINTED ON NAILS.\nTHIS IS NOT A STICKER.\nTHIS IS NOT A DECAL.\nTHIS IS NOT A PHOTOSHOPPED IMAGE PLACED ON NAILS.\n\nThe artwork must look like an expert nail artist meticulously painted the subject directly onto the fingernails using nail polish and tiny detail brushes.\n\nThe subject's identity should remain clearly recognizable while being faithfully translated into professional miniature nail art.\n\nMASTER PROMPT RULE:\n• If a master prompt specifies a particular subject, pose, setting, mood, action, artistic style, or composition—PRIORITIZE and USE those instructions while recreating the artwork as hand-painted nail art.",
+    "randomizeOptions": true,
+    "options": [
+    {
+      "id": "001",
+      "text": "Portrait Nails — Paint a detailed miniature portrait of the subject across one or more fingernails using realistic nail polish techniques."
+    },
+    {
+      "id": "002",
+      "text": "Full Scene Nail Art — Recreate the entire scene as elaborate hand-painted nail art spanning all fingernails with each nail contributing part of the overall composition."
+    },
+    {
+      "id": "003",
+      "text": "Luxury Salon Nail Design — Create elegant, high-end salon-quality nail art with intricate painted details, subtle metallic accents, and flawless polish."
+    },
+    {
+      "id": "004",
+      "text": "Cute Chibi Nail Art — Transform the subject into adorable hand-painted chibi-style nail art while preserving recognizable facial features and hairstyle."
+    },
+    {
+      "id": "005",
+      "text": "Hyper-Realistic Miniature Painting — Produce astonishingly detailed micro-paintings on the fingernails that resemble competition-winning professional nail art."
+    }
+    ],
+    "additionalInstructions": "• The subject must appear ONLY as hand-painted nail art.\n• Never paste, project, print, decal, or Photoshop the original photograph onto the nails.\n• Completely reinterpret the subject as painted artwork created with nail polish.\n• Brush strokes, polish layering, tiny highlights, and painted details should be visible upon close inspection.\n• Preserve the subject's identity, facial structure, hairstyle, hair color, expression, age, ethnicity, and distinguishing features while translating them into painted miniature artwork.\n• The artwork should look physically painted onto the curved surface of real fingernails.\n• Respect the natural curvature, reflections, and gloss of polished nails.\n• Paint should wrap naturally around the nail surface.\n• The finished artwork should resemble the work of a world-class professional nail artist.\n• Do not allow any photographic textures or pixels from the original image to remain.\n• The subject must not appear as a tiny photograph attached to the nails.\n• The artwork must clearly be created using nail polish rather than ink, printing, or digital editing.\n• The nails may include complementary decorative elements such as glitter, metallic accents, rhinestones, gradients, floral details, or fine line work, provided they enhance the painted portrait.\n• Use intelligent color selection to preserve the subject's recognizable appearance.\n• Maintain realistic salon lighting, polished nail reflections, and natural skin tones on the hand.\n• The final image should immediately read as premium hand-painted nail art rather than image manipulation.\n• Master prompt instructions always override the selected option whenever conflicts occur.\n\nFINAL VALIDATION — Before producing the final image, verify ALL of the following:\n\n✓ The subject appears only as hand-painted nail art.\n✓ No photographic image has been pasted onto the nails.\n✓ No decals, stickers, or printed images are present.\n✓ The artwork follows the natural curvature of the fingernails.\n✓ Visible brushwork and painted details are present.\n✓ The subject remains recognizable.\n✓ The artwork resembles professional salon-quality nail painting.\n✓ If ANY answer is NO, regenerate the image as authentic hand-painted nail art."
+  },
+  {
     "name": "NAKED EYE 3D",
     "category": [
       "OPTICAL",
