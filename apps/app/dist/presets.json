@@ -19781,6 +19781,29 @@
     "additionalInstructions": "FINAL RESULT:\nThe image should feel like a curated installation artwork displayed in a gallery or immersive space, with the subject integrated into a conceptual and visually striking composition."
   },
   {
+    "name": "INTEGRATED SCARIFICATION",
+    "category": [
+      "BODY MODIFICATION",
+      "ETHNOGRAPHIC ART",
+      "TEXTURE",
+      "LINE ART",
+      "CHARACTER TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform the subject by applying complex, symmetrical keloid scarification patterns to their face.\n\nSCARIFICATION RULES (NON-NEGOTIABLE):\n• Apply intricate, deeply etched patterns of raised, textured keloid scars. The scars must have physical thickness, catching and throwing light naturally\n• The designs must be highly symmetrical (e.g., matching spirals on the cheeks or forehead lines) and *integrated* into the facial musculature\n• No smooth digital line overlays; all elements must show realistic, imperfect, and heavily healed skin texture\n• The scars must interact seamlessly with the subject's existing expression, following the movement of the smile and laugh lines",
+    "randomizeOptions": false,
+    "options": [
+    {
+      "id": "001",
+      "text": "Geometric Symmetrical Patterns.\n• TRANSFORMATION LOGIC:\n• Symmetrical grids, interlocking triangles, and stylized geometric waveforms are keloided onto the forehead, jawline, and the bridge of the nose.\n• The designs are crisp and architectural, framing the eyes and following the contours of the facial structure with rigorous symmetry.\n• The skin surrounding the scars looks tight and deeply healed."
+    },
+    {
+      "id": "002",
+      "text": "Organic Spirals and Flow-Lines.\n• TRANSFORMATION LOGIC:\n• Complex, swirling organic patterns, reminiscent of stylized flora or river currents, flow across the subject's cheeks, from the ears to the chin.\n• These scars have a softer, more calligraphic feel, interacting dynamically with the subject's natural smile and expression lines. They appear to ripple with the movement of the face."
+    }
+    ],
+    "additionalInstructions": "IDENTITY PRESERVATION (CRITICAL):\n• The intricate scar patterns must flawless track the subject's authentic facial layout, gaze, and distinct expression, ensuring the underlying identity is completely recognized beneath the heavy texture."
+  },
+  {
     "name": "INTERFERENCE PATTERN HOLOGRAM",
     "category": [
       "ART",
