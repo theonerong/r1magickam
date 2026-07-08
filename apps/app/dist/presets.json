@@ -14772,6 +14772,20 @@
     "additionalInstructions": ""
   },
   {
+    "name": "FIBER-OPTIC DATA MATRIX",
+    "category": [
+      "SCI-FI",
+      "ILLUMINATION",
+      "PHYSICS",
+      "PATTERN",
+      "CHARACTER TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform the entire scene into a high-density grid of physical fiber-optic cables.\n\nOPTIC RULES (NON-NEGOTIABLE):\n• The image must display a flat, macro view of a data panel composed entirely of thousands of circular glass cable endpoints packed tightly together\n• The subject's face, smile, and eyes must be generated purely by the bright, luminous colored light emitting from the center of each individual glass strand\n• The background areas must be composed of completely dark, unlit cable tips showing black plastic sheathing textures\n• No smooth digital blurs; the image must clearly show the physical gaps between the individual circular glass fibers, catching intense pinpoint glare on the polished glass faces",
+    "randomizeOptions": false,
+    "options": [],
+    "additionalInstructions": "IDENTITY PRESERVATION (CRITICAL):\n• The color intensities emitting from the cable grid must line up flawlessly to recreate the subject's signature open smile, jawline boundary, and gaze. It must read as an authentic photograph of a physical, illuminating high-tech installation."
+  },
+  {
     "name": "FIELD GUIDE",
     "category": [
       "NATURE",
@@ -45851,6 +45865,57 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "WOOLY WILLY",
+    "category": [
+      "OPTIONS",
+      "CLASSIC TOYS",
+      "CHARACTER TRANSFORMATION",
+      "RETRO",
+      "NOVELTY"
+    ],
+    "message": "Take a picture and transform the subject into an authentic vintage Wooly Willy magnetic toy while preserving their recognizable identity.\n\nThe subject must become the classic toy itself—not a real person.\n\nTransform the subject's facial features into the simplified smiling bald cartoon style of the original Wooly Willy game while preserving recognizable facial proportions, eye spacing, nose shape, smile, face shape, and overall identity.\n\nThe finished image should depict the complete toy, including the printed cardboard game board, the clear molded plastic bubble covering the face, loose black magnetic iron filings inside the bubble, and the magnetic styling effect.\n\nThe toy should appear as a professionally manufactured vintage game photographed from directly above.\n\nMASTER PROMPT RULE:\n• If a master prompt specifies a particular subject, pose, expression, artistic direction, or composition—PRIORITIZE and USE that information while transforming the subject into the Wooly Willy toy.",
+    "randomizeOptions": true,
+    "options": [
+    {
+      "id": "001",
+      "text": "Hair Only — Use the magnetic iron filings to create only a hairstyle. No beard, mustache, eyebrows, or other facial hair."
+    },
+    {
+      "id": "002",
+      "text": "Beard Only (Bald) — Leave the scalp completely bald while using the iron filings to create only a beard."
+    },
+    {
+      "id": "003",
+      "text": "Hair, Beard and Mustache — Create a full hairstyle together with a beard and mustache using the magnetic filings."
+    },
+    {
+      "id": "004",
+      "text": "Bald with Beard and Mustache — Keep the scalp completely bald while creating a beard and mustache from the filings."
+    },
+    {
+      "id": "005",
+      "text": "Hair and Beard Only — Create a hairstyle and beard while leaving the upper lip clean."
+    },
+    {
+      "id": "006",
+      "text": "Bald with Mustache Only — Keep the head bald and create only a mustache."
+    },
+    {
+      "id": "007",
+      "text": "Hair and Mustache Only — Create a hairstyle and mustache without a beard."
+    },
+    {
+      "id": "008",
+      "text": "Bald with Bushy Eyebrows Only — Keep the head completely bald while using the filings only for oversized bushy eyebrows."
+    },
+    {
+      "id": "009",
+      "text": "Completely Bald — Leave all magnetic filings resting naturally along the bottom edge of the toy with none attached to the face."
+    }
+    ],
+    "additionalInstructions": "• Transform the subject into the actual Wooly Willy magnetic toy—not a real person.\n• The face must become an authentic simplified cartoon illustration printed on the toy while remaining immediately recognizable as the subject.\n• Preserve recognizable facial proportions, eye spacing, nose shape, smile, cheeks, jawline, and expression.\n• Do NOT paste the subject's real face onto the toy.\n• Do NOT create a realistic human inside the toy.\n• The toy should appear factory manufactured with authentic vintage printing.\n• Include the printed cardboard backing.\n• Include the clear molded plastic dome covering the face.\n• The iron filings must appear loose inside the dome rather than painted on.\n• The filings should naturally clump together exactly as magnetic filings behave.\n• Hair and facial hair should consist entirely of magnetic iron filings.\n• Iron filings should have realistic metallic texture and natural clumping.\n• Some stray filings should be visible around the face for realism.\n• The styling should appear as though it was created with the included magnetic wand.\n• The toy should be photographed from directly overhead with minimal perspective distortion.\n• Use authentic vintage colors, printing style, and proportions.\n• The final image should immediately resemble a genuine Wooly Willy toy customized to resemble the subject.\n• Master prompt instructions always override the selected option whenever conflicts occur.\n\nFINAL VALIDATION — Before producing the final image, verify ALL of the following:\n\n✓ The subject has become the actual Wooly Willy toy.\n✓ The face is a printed cartoon illustration rather than a real photograph.\n✓ The identity of the subject remains recognizable.\n✓ Hair and facial hair are made only from loose magnetic iron filings.\n✓ The iron filings appear underneath a clear plastic dome.\n✓ The cardboard game board is visible.\n✓ The styling matches the selected option.\n✓ If 'Completely Bald' is selected, all filings remain collected naturally at the bottom of the toy.\n✓ The image resembles a real vintage Wooly Willy game.\n✓ If ANY answer is NO, regenerate the image until every requirement is satisfied."
   },
   {
     "name": "WORLD PARK ICON",
