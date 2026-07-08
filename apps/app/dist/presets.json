@@ -4678,6 +4678,41 @@
       "additionalInstructions": "FINAL RESULT: All subjects should appear with inflated, rounded forms—full faces, thick limbs, and expanded bodies while remaining recognizable. Use bold, rich colors and smooth shading. The composition should feel balanced and slightly whimsical, with a polished painted-art look. It must look like a painting and not a cartoon or computer generated image. Avoid sharp angles—favor soft curves and simplified detail throughout."
   },
   {
+    "name": "BOTTLE CAPS",
+    "category": [
+      "OPTIONS",
+      "MOSAIC",
+      "RECYCLED ART",
+      "HANDCRAFTED",
+      "MATERIAL TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform the image into a handcrafted artwork constructed entirely from real bottle caps.\n\nEvery visible part of the final image—including the subject, skin, hair, clothing, eyes, objects, background, sky, shadows, lighting, and every tiny detail—must be recreated exclusively from authentic bottle caps.\n\nThe original photograph must not remain visible anywhere.\n\nThe finished artwork should resemble a massive museum-quality bottle cap mosaic assembled by hand from thousands of individual bottle caps.\n\nMASTER PROMPT RULE:\n• If a master prompt specifies a particular subject, pose, setting, mood, action, or artistic direction—PRIORITIZE and USE that information while constructing the bottle cap artwork.",
+    "randomizeOptions": true,
+    "options": [
+    {
+      "id": "001",
+      "text": "Classic Soda Bottle Caps — Construct the artwork using colorful vintage and modern soda bottle caps with authentic logos, embossed lettering, scratches, dents, rust, and worn paint."
+    },
+    {
+      "id": "002",
+      "text": "Beer Bottle Cap Collection — Build the entire image from realistic beer bottle caps featuring hundreds of different breweries, colors, metallic finishes, printed logos, and aged patina."
+    },
+    {
+      "id": "003",
+      "text": "Mixed Bottle Cap Mosaic — Combine soda, beer, sparkling water, root beer, energy drink, and specialty beverage bottle caps of every imaginable color and design."
+    },
+    {
+      "id": "004",
+      "text": "Vintage Rusted Bottle Caps — Use decades-old weathered bottle caps with faded paint, oxidation, chipped enamel, rust, dents, and authentic aging to create a rustic artistic masterpiece."
+    },
+    {
+      "id": "005",
+      "text": "Perfect Color Matching — Intelligently select bottle cap colors and printed graphics so each region of the artwork naturally matches the subject's skin tones, clothing, lighting, and background while preserving recognizable bottle cap details."
+    }
+    ],
+    "additionalInstructions": "• This is a genuine handcrafted bottle cap mosaic—not a digital filter.\n• Every visible surface must be built entirely from real bottle caps.\n• The original photograph must not remain visible anywhere.\n• Preserve the subject's exact identity, facial structure, hairstyle, hair color, expression, age, ethnicity, body proportions, pose, and overall composition.\n• Use thousands of uniquely colored bottle caps depending on image complexity.\n• Bottle caps should vary naturally in manufacturer, color, design, age, scratches, dents, fading, rust, embossing, and printed graphics.\n• Every bottle cap should remain clearly recognizable as an actual bottle cap upon close inspection.\n• Never flatten bottle caps into simple colored circles.\n• Preserve realistic metallic reflections, curved edges, crimped rims, embossed logos, and printed lettering.\n• Slight rotations should make every bottle cap unique.\n• Avoid duplicated or repeated bottle caps.\n• Arrange bottle caps with subtle spacing just as a real mosaic artist would assemble them.\n• Bottle caps should cast realistic shadows and exhibit authentic depth and thickness.\n• Use intelligent color placement to preserve accurate facial features, eyes, skin tones, hair, clothing textures, lighting, and perspective.\n• Recreate the eyes using many carefully selected bottle caps while maintaining the subject's expression.\n• Hair must also be reconstructed entirely from bottle caps using appropriate color variation.\n• The background must be completely rebuilt using bottle caps.\n• The finished artwork should reward close inspection by revealing thousands of recognizable bottle caps from many different beverages.\n• Master prompt instructions always override the selected option whenever conflicts occur."
+  },
+  {
     "name": "BOUDOIR PHOTOSHOOT",
     "category": [
       "HUMOR",
@@ -10142,6 +10177,41 @@
     "additionalInstructions": ""
   },
   {
+    "name": "DAD MODE",
+    "category": [
+      "OPTIONS",
+      "CHARACTER TRANSFORMATION",
+      "COMEDY",
+      "NOSTALGIC",
+      "FAMILY HUMOR"
+    ],
+    "message": "Take a picture and transform the subject into the ultimate stereotypical dad character while preserving their identity.\n\nCreate a humorous, exaggerated dad persona filled with classic dad fashion, accessories, habits, and personality cues.\n\nThe original photograph must not remain visible anywhere except as the transformed subject identity.\n\nMASTER PROMPT RULE:\n• If a master prompt specifies a particular subject, pose, setting, mood, action, or artistic direction—PRIORITIZE and USE that information while constructing the dad mode transformation.",
+    "randomizeOptions": true,
+    "options": [
+    {
+      "id": "001",
+      "text": "Classic Suburban Dad — Add cargo shorts, white sneakers, tucked-in polo shirt, baseball cap, sunglasses, grill tools, and classic weekend dad energy."
+    },
+    {
+      "id": "002",
+      "text": "Ultimate Grill Master Dad — Transform the subject into a backyard barbecue legend with apron, spatula, grilling tools, meat thermometer, cooler, and proud chef expression."
+    },
+    {
+      "id": "003",
+      "text": "Technology Dad — Create a modern dad obsessed with gadgets, remote controls, smart devices, tool belts, headphones, and helpful-but-confused dad energy."
+    },
+    {
+      "id": "004",
+      "text": "Vacation Dad — Add minivan road trip gear, map, cooler, camera, comfortable clothes, sandals with socks, and family vacation preparation details."
+    },
+    {
+      "id": "005",
+      "text": "Extreme Dad Mode — Exaggerate every dad stereotype with maximum dad accessories, dad jokes visual cues, utility gear, lawn equipment, barbecue equipment, and overprepared energy."
+    }
+    ],
+    "additionalInstructions": "• Preserve the subject's exact identity, facial structure, hairstyle, hair color, expression, age, ethnicity, body proportions, and recognizable features.\n• Transform the wardrobe, accessories, environment, and personality into a recognizable dad character.\n• The subject should look like themselves but with unmistakable dad energy.\n• Add realistic dad details such as practical clothing, comfortable footwear, tools, gadgets, snacks, grilling equipment, lawn equipment, family items, and everyday dad accessories.\n• Maintain realistic textures, lighting, shadows, and photographic quality.\n• Avoid making the subject look like a different person or changing their core identity.\n• Preserve the original pose unless the master prompt requests a change.\n• Increase the humor through subtle exaggerated dad details rather than random unrelated objects.\n• The final image should feel like a professional comedic character transformation.\n• Master prompt instructions always override the selected option whenever conflicts occur."
+  },
+  {
     "name": "DAGUERREOTYPE",
     "category": [
       "PHOTOGRAPHY",
@@ -13640,6 +13710,41 @@
     ],
     "randomizeOptions": true,
     "additionalInstructions": "FINAL RESULT:\nThe image should show the subject - clearly recognizable - frozen in the most dramatic, intense moment of the selected extreme sport, with authentic gear, proper environment, dynamic motion, and professional action sports photography quality capturing a peak moment of athletic achievement and adrenaline."
+  },
+  {
+  "name": "EXTREME TOURIST",
+  "category": [
+    "OPTIONS",
+    "CHARACTER TRANSFORMATION",
+    "COMEDY",
+    "VACATION",
+    "ADVENTURE"
+  ],
+  "message": "Take a picture and transform the subject into the ultimate over-the-top extreme tourist version of themselves.\n\nThe image should depict the subject as a hilariously exaggerated world traveler overloaded with classic tourist gear, souvenirs, travel accessories, and adventurous vacation energy.\n\nThe original photograph must not remain visible anywhere except as the transformed subject identity.\n\nMASTER PROMPT RULE:\n• If a master prompt specifies a particular subject, pose, setting, mood, action, or artistic direction—PRIORITIZE and USE that information while constructing the extreme tourist transformation.",
+  "randomizeOptions": true,
+  "options": [
+    {
+      "id": "001",
+      "text": "Classic Vacation Tourist — Add oversized sunglasses, loud Hawaiian shirt, camera hanging from neck, map in hand, fanny pack, souvenir hat, and excited vacation expression."
+    },
+    {
+      "id": "002",
+      "text": "World Explorer Tourist — Transform the subject into an adventurous globe-trotting traveler with hiking gear, passport, travel badges, binoculars, backpack, and international souvenirs."
+    },
+    {
+      "id": "003",
+      "text": "Ridiculous Tourist Maximum Mode — Push the transformation to comedic extremes with dozens of cameras, multiple maps, exaggerated clothing, souvenir overload, and absurd vacation accessories."
+    },
+    {
+      "id": "004",
+      "text": "Luxury Tourist — Create a wealthy vacation traveler look with designer luggage, resort clothing, luxury sunglasses, premium travel accessories, and glamorous destination energy."
+    },
+    {
+      "id": "005",
+      "text": "Ancient Landmark Tourist — Place the subject in a legendary travel destination surrounded by iconic monuments, tour equipment, souvenir items, and classic sightseeing details."
+    }
+  ],
+  "additionalInstructions": "• Preserve the subject's exact identity, facial structure, hairstyle, hair color, expression, age, ethnicity, body proportions, and recognizable features.\n• Transform the clothing, accessories, environment, and styling into an extreme tourist theme.\n• The subject should look like the most enthusiastic tourist imaginable.\n• Add realistic tourist details such as cameras, maps, guidebooks, souvenirs, travel tags, hats, sunglasses, backpacks, and destination memorabilia.\n• Accessories should feel physically present and naturally integrated.\n• Maintain realistic lighting, shadows, perspective, and photographic quality.\n• Do not make the subject look like a different person.\n• Preserve the original pose unless the master prompt requests a change.\n• Make the transformation humorous, exaggerated, and visually obvious.\n• Master prompt instructions always override the selected option whenever conflicts occur."
   },
   {
     "name": "EYE OF THE BEHOLDER",
@@ -23152,6 +23257,41 @@
     ],
     "randomizeOptions": true,
     "additionalInstructions": "FINAL RESULT:\nThe image should look like a real candid photograph capturing an unforgettable marriage proposal moment, with the emotional outcome strictly determined by the random seed modulo logic."
+  },
+  {
+  "name": "MARSHMALLOWS",
+  "category": [
+    "OPTIONS",
+    "FOOD ART",
+    "SOFT MATERIAL TRANSFORMATION",
+    "WHIMSICAL",
+    "HANDCRAFTED"
+  ],
+    "message": "Take a picture and transform only the subject into a handcrafted artwork constructed entirely from real marshmallows.\n\nEvery visible part of the subject, skin, hair, clothing, eyes—must be recreated exclusively from authentic marshmallows.\n\nThe original subject must not remain visible anywhere.\n\nThe finished artwork should resemble a massive edible marshmallow sculpture assembled by hand from thousands of individual marshmallows.\n\nMASTER PROMPT RULE:\n• If a master prompt specifies a particular subject, pose, setting, mood, action, or artistic direction—PRIORITIZE and USE that information while constructing the marshmallow artwork.",
+    "randomizeOptions": true,
+    "options": [
+    {
+      "id": "001",
+      "text": "Classic White Marshmallows — Construct the artwork using traditional soft white cylindrical marshmallows with realistic powdery surfaces, rounded edges, subtle compression marks, and fluffy texture."
+    },
+    {
+      "id": "002",
+      "text": "Rainbow Marshmallow Assortment — Build the entire image from colorful marshmallows including pink, blue, yellow, green, purple, and pastel varieties while maintaining realistic marshmallow texture."
+    },
+    {
+      "id": "003",
+      "text": "Mini Marshmallow Mosaic — Create the artwork from thousands of tiny miniature marshmallows carefully arranged like a detailed edible mosaic with precise color placement."
+    },
+    {
+      "id": "004",
+      "text": "Toasted Campfire Marshmallows — Use golden-brown roasted marshmallows with realistic toasted patches, caramelized edges, melted areas, and smoky campfire character."
+    },
+    {
+      "id": "005",
+      "text": "Gourmet Artisan Marshmallows — Construct the image from premium handcrafted marshmallows with unique flavors, textures, coatings, swirls, dustings, and elegant bakery-style details."
+    }
+    ],
+    "additionalInstructions": "• This is a genuine handcrafted marshmallow sculpture—not a digital filter.\n• Every visible surface of the subject only must be built entirely from real marshmallows.\n• The original subject must not remain visible anywhere.\n• Preserve the subject's exact identity, facial structure, hairstyle, hair color, expression, age, ethnicity, body proportions, pose, and overall composition.\n• Use thousands of individual marshmallows depending on image complexity.\n• Marshmallows should vary naturally in size, shape, softness, compression, texture, and placement.\n• Never flatten marshmallows into simple colored shapes.\n• Preserve realistic fluffy surfaces, rounded corners, powder coating, tiny imperfections, and soft shadows.\n• Arrange marshmallows with handcrafted spacing like a real edible sculpture.\n• Marshmallows should overlap naturally and create realistic depth.\n• Use intelligent color placement to preserve facial features, eyes, skin tones, hair, clothing textures, lighting, and perspective.\n• Recreate the eyes using carefully arranged marshmallows while maintaining the subject's expression.\n• Hair must also be reconstructed entirely from marshmallows using appropriate colors and layered texture.\n• The background must remain the same.\n• The finished artwork should reward close inspection by revealing thousands of individually recognizable marshmallows.\n• Master prompt instructions always override the selected option whenever conflicts occur."
   },
   {
     "name": "MARTIAN",
