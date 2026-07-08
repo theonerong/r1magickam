@@ -45875,47 +45875,47 @@
       "RETRO",
       "NOVELTY"
     ],
-    "message": "Take a picture and transform the subject into an authentic vintage Wooly Willy magnetic toy while preserving their recognizable identity.\n\nThe subject must become the classic toy itself—not a real person.\n\nTransform the subject's facial features into the simplified smiling bald cartoon style of the original Wooly Willy game while preserving recognizable facial proportions, eye spacing, nose shape, smile, face shape, and overall identity.\n\nThe finished image should depict the complete toy, including the printed cardboard game board, the clear molded plastic bubble covering the face, loose black magnetic iron filings inside the bubble, and the magnetic styling effect.\n\nThe toy should appear as a professionally manufactured vintage game photographed from directly above.\n\nMASTER PROMPT RULE:\n• If a master prompt specifies a particular subject, pose, expression, artistic direction, or composition—PRIORITIZE and USE that information while transforming the subject into the Wooly Willy toy.",
-    "randomizeOptions": true,
-    "options": [
+    "message": "Take a picture and transform the subject into an authentic vintage Wooly Willy magnetic toy while preserving the subject's identity.\n\nThe subject must become the actual Wooly Willy game—not a real person holding the game.\n\nThe printed face on the game board MUST be a cartoon caricature that is unmistakably based on the subject.\n\nDO NOT use the generic Wooly Willy face.\n\nInstead, redesign the printed cartoon face exactly as the original Wooly Willy artist would have illustrated THIS specific subject.\n\nThe cartoon face must immediately be recognizable as the subject through its facial proportions, eye shape, eye spacing, eyebrows, nose shape, smile, lips, chin, jawline, cheeks, ears, forehead, head shape, age, ethnicity, and facial expression.\n\nImagine the original Wooly Willy artist was commissioned to create a brand-new official Wooly Willy game featuring this exact person.\n\nThe result should look like an authentic factory-produced Wooly Willy game that was specifically manufactured for this subject.\n\nThe finished image should include the printed cardboard game board, the clear molded plastic bubble, loose magnetic iron filings, and the completed magnetic styling.\n\nMASTER PROMPT RULE:\n• If a master prompt specifies a particular subject, pose, expression, clothing, mood, artistic direction, or composition—PRIORITIZE and USE that information while transforming the subject into the Wooly Willy toy.",
+  "randomizeOptions": true,
+  "options": [
     {
       "id": "001",
-      "text": "Hair Only — Use the magnetic iron filings to create only a hairstyle. No beard, mustache, eyebrows, or other facial hair."
+      "text": "Hair Only — Style only the hair using magnetic iron filings. Leave the face clean with no beard, mustache, or eyebrows."
     },
     {
       "id": "002",
-      "text": "Beard Only (Bald) — Leave the scalp completely bald while using the iron filings to create only a beard."
+      "text": "Beard Only (Bald) — Leave the scalp completely bald while styling only a beard with the magnetic filings."
     },
     {
       "id": "003",
-      "text": "Hair, Beard and Mustache — Create a full hairstyle together with a beard and mustache using the magnetic filings."
+      "text": "Hair, Beard and Mustache — Style the subject with hair, beard, and mustache using only magnetic iron filings."
     },
     {
       "id": "004",
-      "text": "Bald with Beard and Mustache — Keep the scalp completely bald while creating a beard and mustache from the filings."
+      "text": "Bald with Beard and Mustache — Keep the scalp bald while styling a beard and mustache using the magnetic filings."
     },
     {
       "id": "005",
-      "text": "Hair and Beard Only — Create a hairstyle and beard while leaving the upper lip clean."
+      "text": "Hair and Beard Only — Style only the hair and beard while leaving the upper lip clean."
     },
     {
       "id": "006",
-      "text": "Bald with Mustache Only — Keep the head bald and create only a mustache."
+      "text": "Bald with Mustache Only — Keep the scalp bald while styling only a mustache."
     },
     {
       "id": "007",
-      "text": "Hair and Mustache Only — Create a hairstyle and mustache without a beard."
+      "text": "Hair and Mustache Only — Style only the hair and mustache without a beard."
     },
     {
       "id": "008",
-      "text": "Bald with Bushy Eyebrows Only — Keep the head completely bald while using the filings only for oversized bushy eyebrows."
+      "text": "Bald with Bushy Eyebrows Only — Keep the scalp bald while creating only oversized bushy eyebrows using the magnetic filings."
     },
     {
       "id": "009",
-      "text": "Completely Bald — Leave all magnetic filings resting naturally along the bottom edge of the toy with none attached to the face."
+      "text": "Completely Bald — Leave all magnetic filings naturally collected along the bottom of the game board exactly like an unused Wooly Willy toy."
     }
     ],
-    "additionalInstructions": "• Transform the subject into the actual Wooly Willy magnetic toy—not a real person.\n• The face must become an authentic simplified cartoon illustration printed on the toy while remaining immediately recognizable as the subject.\n• Preserve recognizable facial proportions, eye spacing, nose shape, smile, cheeks, jawline, and expression.\n• Do NOT paste the subject's real face onto the toy.\n• Do NOT create a realistic human inside the toy.\n• The toy should appear factory manufactured with authentic vintage printing.\n• Include the printed cardboard backing.\n• Include the clear molded plastic dome covering the face.\n• The iron filings must appear loose inside the dome rather than painted on.\n• The filings should naturally clump together exactly as magnetic filings behave.\n• Hair and facial hair should consist entirely of magnetic iron filings.\n• Iron filings should have realistic metallic texture and natural clumping.\n• Some stray filings should be visible around the face for realism.\n• The styling should appear as though it was created with the included magnetic wand.\n• The toy should be photographed from directly overhead with minimal perspective distortion.\n• Use authentic vintage colors, printing style, and proportions.\n• The final image should immediately resemble a genuine Wooly Willy toy customized to resemble the subject.\n• Master prompt instructions always override the selected option whenever conflicts occur.\n\nFINAL VALIDATION — Before producing the final image, verify ALL of the following:\n\n✓ The subject has become the actual Wooly Willy toy.\n✓ The face is a printed cartoon illustration rather than a real photograph.\n✓ The identity of the subject remains recognizable.\n✓ Hair and facial hair are made only from loose magnetic iron filings.\n✓ The iron filings appear underneath a clear plastic dome.\n✓ The cardboard game board is visible.\n✓ The styling matches the selected option.\n✓ If 'Completely Bald' is selected, all filings remain collected naturally at the bottom of the toy.\n✓ The image resembles a real vintage Wooly Willy game.\n✓ If ANY answer is NO, regenerate the image until every requirement is satisfied."
+    "additionalInstructions": "• Transform the subject into the actual Wooly Willy toy—not a person holding it.\n• The printed cartoon face MUST be a custom Wooly Willy illustration specifically designed from the subject.\n• NEVER use the generic Wooly Willy face.\n• NEVER substitute another cartoon face.\n• The printed cartoon should immediately be recognizable as the subject.\n• Preserve the subject's exact facial proportions.\n• Preserve the subject's eye shape and spacing.\n• Preserve the subject's eyebrow shape.\n• Preserve the subject's nose shape.\n• Preserve the subject's smile.\n• Preserve the subject's lip shape.\n• Preserve the subject's cheeks.\n• Preserve the subject's jawline.\n• Preserve the subject's chin.\n• Preserve the subject's forehead.\n• Preserve the subject's ears.\n• Preserve the subject's head shape.\n• Preserve the subject's age.\n• Preserve the subject's ethnicity.\n• Preserve the subject's facial expression.\n• Simplify these features into authentic vintage Wooly Willy cartoon artwork without losing recognizability.\n• The result should look exactly like an official Wooly Willy game manufactured for this person.\n• Do NOT paste the original face onto the game.\n• Do NOT use photographic textures.\n• Do NOT make the face realistic.\n• Re-illustrate the face entirely in the authentic Wooly Willy drawing style.\n• The cardboard printing should have authentic vintage colors and printing quality.\n• Include the clear molded plastic dome over the face.\n• Hair and facial hair must consist ONLY of loose magnetic iron filings.\n• Iron filings should naturally clump exactly as they behave inside a real Wooly Willy toy.\n• Include a few stray filings for realism.\n• Include the magnetic stylus resting naturally beside the game board.\n• The game should be photographed directly from above.\n• Maintain realistic reflections on the plastic bubble.\n• The completed image should be visually indistinguishable from a genuine vintage Wooly Willy toy except that the printed face has been custom illustrated to resemble the subject.\n• Master prompt instructions always override the selected option whenever conflicts occur.\n\nFINAL VALIDATION — Before producing the final image, verify ALL of the following:\n\n✓ The face is NOT the generic Wooly Willy face.\n✓ The cartoon face clearly resembles the subject.\n✓ The face was completely re-illustrated rather than copied from the original toy.\n✓ The facial proportions match the subject.\n✓ The eyes match the subject.\n✓ The nose matches the subject.\n✓ The smile matches the subject.\n✓ The jawline matches the subject.\n✓ The overall head shape matches the subject.\n✓ The artwork looks like an authentic Wooly Willy illustration.\n✓ Hair and facial hair consist only of magnetic iron filings.\n✓ The clear plastic bubble is present.\n✓ The cardboard game board is present.\n✓ The magnetic stylus is visible.\n✓ The selected styling option has been followed exactly.\n✓ If 'Completely Bald' is selected, all filings remain naturally collected at the bottom of the game board.\n✓ If ANY answer is NO, regenerate the image until every requirement is satisfied."
   },
   {
     "name": "WORLD PARK ICON",
