@@ -17336,10 +17336,15 @@ function showGallerySubmittingIndicator(message, showNames = false) {
   const header = document.getElementById('viewer-preset-header');
   if (!header) return;
   if (_viewerHeaderRestoreTimer) {
+    // A brief popup (e.g. the credits message) is on screen right now.
+    // The REAL title is the one that popup saved — keep that, and never
+    // treat the popup text itself as the title to restore later.
     clearTimeout(_viewerHeaderRestoreTimer);
     _viewerHeaderRestoreTimer = null;
-  }
-  if (!_viewerHeaderBusy) {
+    header.style.whiteSpace = '';
+    header.style.lineHeight = '';
+    header.style.fontSize = '';
+  } else if (!_viewerHeaderBusy) {
     _viewerHeaderTrueText = header.textContent;
   }
   _viewerHeaderBusy = true;
@@ -17752,6 +17757,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
   viewerEl.addEventListener('touchend', (e) => {
     if (e.changedTouches.length !== 1) return;
+
+    // Only react to taps on the photo itself or the viewer backdrop — taps
+    // on the title (which opens the preset info panel) or inside any panel
+    // opened over the viewer must never flip the side buttons underneath.
+    if (e.target !== viewerEl &&
+        !e.target.closest('.image-viewer-container')) return;
 
     const s = window._viewerBtnSettings || { tapMode: 'single' };
 

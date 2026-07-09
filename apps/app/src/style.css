@@ -6401,12 +6401,12 @@ button, .touchable {
 .gallery-item:nth-child(12) { animation-delay: 0.33s; }
 
 /* ── FX 5: sync button drops in ── */
-@keyframes fxSyncDrop {
-  0%   { opacity: 0; transform: translateX(-50%) translateY(-8vw) scale(0.9); }
-  70%  { opacity: 1; transform: translateX(-50%) translateY(1vw) scale(1.02); }
-  100% { opacity: 1; transform: translateX(-50%) translateY(0) scale(1); }
-}
-.sync-button { animation: fxSyncDrop 0.38s ease-out; }
+/* @keyframes fxSyncDrop { */
+/*  0%   { opacity: 0; transform: translateX(-50%) translateY(-8vw) scale(0.9); } */
+/*  70%  { opacity: 1; transform: translateX(-50%) translateY(1vw) scale(1.02); } */
+/*  100% { opacity: 1; transform: translateX(-50%) translateY(0) scale(1); } */
+/* } */
+/* .sync-button { animation: fxSyncDrop 0.38s ease-out; } */
 
 /* ── FX 6: active mode pulse ring ── */
 @keyframes fxModePulse {
