@@ -2104,6 +2104,10 @@ function updatePresetSelection() {
           }
           currentPresetIndex_Gallery = 0;
           populatePresetList();
+          // Rebuild the highlight + category footer right away so the
+          // clicked category shows its underline immediately (the menu and
+          // settings lists already do this as part of their own repopulate).
+          updatePresetSelection();
         };
         
         categoryHint.appendChild(categorySpan);
@@ -16041,11 +16045,13 @@ const result = await presetImporter.import();
 
   makeFilterBlurBtn('visible-presets-filter-blur-btn', 'visible-presets-filter', () => {
     visiblePresetsFilterText = '';
+    visiblePresetsFilterByCategory = '';
     populateVisiblePresetsList();
   });
 
   makeFilterBlurBtn('preset-filter-blur-btn', 'preset-filter', () => {
     presetFilterText = '';
+    galleryPresetFilterByCategory = '';
     populatePresetList();
   });
 
@@ -17992,6 +17998,9 @@ console.log('AI Camera Styles app initialized!');
     if (document.getElementById('visible-presets-submenu')?.style.display === 'flex') return false;
     if (document.getElementById('import-resolution-submenu')?.style.display === 'flex') return false;
     if (document.getElementById('tutorial-submenu')?.style.display === 'flex') return false;
+    if (document.getElementById('preset-selector')?.style.display === 'flex') return false;
+    if (document.getElementById('manual-options-modal')?.style.display === 'flex') return false;
+    if (document.getElementById('custom-alert-modal')?.style.display === 'flex') return false;
     return true;
   }
 
