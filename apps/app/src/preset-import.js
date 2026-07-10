@@ -533,6 +533,22 @@ export class PresetImporter {
       scrollContainer.style.paddingTop = '0'; // Remove top padding to close gap
       scrollContainer.style.paddingBottom = '22px';
 
+      // Flag the list as "moving" while it scrolls (finger drags, momentum,
+      // and jump-navigation alike). CSS uses this to rest the UPDATED-badge
+      // pulse during motion — dozens of badges animating mid-drag was a big
+      // part of the choppy scrolling on large libraries. The flag clears a
+      // moment after the last scroll tick, so badges resume at rest.
+      let _importScrollIdleTimer = null;
+      scrollContainer.addEventListener('scroll', () => {
+        if (!scrollContainer.classList.contains('import-scrolling')) {
+          scrollContainer.classList.add('import-scrolling');
+        }
+        clearTimeout(_importScrollIdleTimer);
+        _importScrollIdleTimer = setTimeout(() => {
+          scrollContainer.classList.remove('import-scrolling');
+        }, 200);
+      }, { passive: true });
+
       // Filter input (sticky at top, immediately below header)
       const filterSection = document.createElement('div');
       filterSection.className = 'menu-section';

@@ -6429,16 +6429,11 @@ button, .touchable {
   animation: fxModePulse 1.2s ease-in-out infinite alternate;
 }
 
-/* ── Import Presets list: only draw the rows that are on screen ──
-   With large libraries (~800 rows) the browser otherwise lays out and
-   paints every single row the moment you touch the list and keeps
-   repainting them all while you drag — that's the stuck-then-choppy feel.
-   Off-screen rows keep a 44px placeholder so the scrollbar stays honest;
-   browsers that support it remember each row's true height after the
-   first time it's drawn. Zero visual change: visible rows render
-   exactly as before. */
-#import-presets-list .menu-item {
-    content-visibility: auto;
-    contain-intrinsic-size: 44px;
-    contain-intrinsic-size: auto 44px;
+/* While the Import Presets list is moving, rest the UPDATED-badge pulse.
+   Dozens of forever-pulsing badges repainting during a touch drag was a
+   large part of the choppy scrolling on big libraries; they resume the
+   instant the list stops, so the list looks identical whenever you're
+   actually reading it. */
+#import-scroll-container.import-scrolling .preset-ticket-updated {
+    animation-play-state: paused;
 }
