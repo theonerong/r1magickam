@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>Magic Kamera</title>
-  <script type="module" crossorigin src="./assets/main-DLcwQsWD.js"></script>
+  <script type="module" crossorigin src="./assets/main-BtptlE4-.js"></script>
   <link rel="stylesheet" crossorigin href="./assets/main-CEtcFTQp.css">
 </head>
 <body>
@@ -206,15 +206,6 @@
                         </button>
                  </div>
 
-                    <!-- White Balance Settings - COMMENTED OUT -->
-                    <!-- <div class="menu-section">
-                        <button id="white-balance-settings-button" class="menu-section-button">
-                            <span class="menu-section-title">White Balance</span>
-                            <span id="current-white-balance-display" class="menu-section-value">Auto</span>
-                            <span class="menu-section-arrow">›</span>
-                        </button>
-                    </div> -->
-                    
                     <!-- Burst Settings -->
                     <div class="menu-section">
                         <button id="burst-settings-button" class="menu-section-button">
@@ -308,7 +299,7 @@
                             <span class="menu-section-arrow">›</span>
                         </button>
                     </div>
- 
+
                     <!-- Import Presets -->
                     <div class="menu-section">
                         <button id="import-presets-button" class="menu-section-button">
@@ -361,6 +352,13 @@
                         <div class="reset-db-label">
                             <span class="reset-db-title">Custom Presets</span>
                             <span class="reset-db-desc">Deletes all presets you have created</span>
+                        </div>
+                    </label>
+                    <label class="reset-db-item">
+                        <input type="checkbox" id="reset-cb-queue" class="reset-db-check">
+                        <div class="reset-db-label">
+                            <span class="reset-db-title">Clear Photo Sync Queue</span>
+                            <span class="reset-db-desc">Removes all photos waiting to be synced and hides the Sync button</span>
                         </div>
                     </label>
                     <label class="reset-db-item">
@@ -427,20 +425,6 @@
                         </div>
                     </label>
                     <label class="reset-db-item">
-                        <input type="checkbox" id="reset-cb-credits" class="reset-db-check">
-                        <div class="reset-db-label">
-                            <span class="reset-db-title">Credits</span>
-                            <span class="reset-db-desc">Resets your credit count to 0 (default)</span>
-                        </div>
-                    </label>
-                    <label class="reset-db-item">
-                        <input type="checkbox" id="reset-cb-imported" class="reset-db-check">
-                        <div class="reset-db-label">
-                            <span class="reset-db-title">Reset Imported Presets to 0</span>
-                            <span class="reset-db-desc">Removes all presets imported from the library</span>
-                        </div>
-                    </label>
-                    <label class="reset-db-item">
                         <input type="checkbox" id="reset-cb-settings" class="reset-db-check">
                         <div class="reset-db-label">
                             <span class="reset-db-title">All Settings</span>
@@ -451,7 +435,7 @@
                         <input type="checkbox" id="reset-cb-gallery" class="reset-db-check">
                         <div class="reset-db-label">
                             <span class="reset-db-title">Delete All Gallery Images</span>
-                            <span class="reset-db-desc">Permanently removes all photos from the gallery. Cannot be undone.</span>
+                            <span class="reset-db-desc">Permanently removes all photos and folders from the gallery. Cannot be undone.</span>
                         </div>
                     </label>
                     <div style="border-top:1px solid #FE5F00;margin:3vw 0 1vw;"></div>
@@ -581,19 +565,6 @@
             </div>
         </div>
 
-        <!-- White Balance Submenu - COMMENTED OUT -->
-        <!-- <div id="white-balance-submenu" class="submenu" style="display: none;">
-            <div class="submenu-content">
-                <div class="submenu-header">
-                    <button id="white-balance-back" class="back-button">‹ Back</button>
-                    <h3>White Balance</h3>
-                </div>
-                <div id="white-balance-list" class="submenu-list">
-                    White balance options will be dynamically added here
-                </div>
-            </div>
-        </div> -->
-
         <!-- Timer Settings Submenu -->
 <div id="timer-settings-submenu" class="submenu" style="display: none;">
     <div class="submenu-content">
@@ -618,7 +589,6 @@
                 </label>
                 <p class="setting-hint">When enabled, timer automatically repeats after each photo. Click timer button to stop.</p>
             </div>
-            <!-- ADD THIS NEW SECTION -->
             <div class="burst-setting-item">
     <label for="timer-repeat-interval-input">Repeat Interval</label>
     <div style="display: flex; gap: 2vw; align-items: center;">
@@ -649,9 +619,8 @@
         </div>
         <div class="submenu-list">
 
-            <!-- ── TAB 1: PRESET SOURCES ── -->
+            <!-- TAB 1: PRESET SOURCES -->
             <div id="pfs-panel-sources" class="pfs-tab-panel active">
-                <!-- All sources (default + custom) — rendered by JS -->
                 <div class="burst-setting-item">
                     <label style="font-weight:bold; font-size:12px;">Preset Sources</label>
                     <div id="custom-preset-sources-list" style="margin-top:6px;">
@@ -659,7 +628,6 @@
                     </div>
                 </div>
 
-                <!-- Add / Edit source form -->
                 <div class="burst-setting-item" style="margin-top:14px; border-top:1px solid #333; padding-top:14px;">
                     <label id="add-source-form-label" style="font-weight:bold; font-size:12px;">Add Custom Source</label>
                     <p class="setting-hint" style="margin-top:4px;">Type the raw URL to any JSON preset file. Any Github URL entered MUST start with the raw format (raw.githubusercontent.com/...). In GitHub, open the file and click the <strong>Raw</strong> button, then copy the URL from your browser.</p>
@@ -674,7 +642,6 @@
                     <div id="preset-source-qr-hint" style="display:none; margin-top:8px; padding:8px 10px; background:rgba(76,175,80,0.12); border:1px solid #4CAF50; border-radius:4px; font-size:11px; color:#4CAF50;"></div>
                 </div>
 
-                <!-- Import via QR Code -->
                 <div class="burst-setting-item" style="margin-top:14px; border-top:1px solid #333; padding-top:14px;">
                     <label style="font-weight:bold; font-size:12px;">Import Source via QR Code</label>
                     <p class="setting-hint" style="margin-top:4px;">Upload your JSON file to catbox.moe, generate a QR code at qr-code-generator.com, then scan it here. The URL will be filled in automatically — just confirm the name and tap + Add Source.</p>
@@ -682,7 +649,7 @@
                 </div>
             </div>
 
-            <!-- ── TAB 2: PREVIEW IMAGES ── -->
+            <!-- TAB 2: PREVIEW IMAGES -->
             <div id="pfs-panel-previews" class="pfs-tab-panel">
                 <div class="burst-setting-item">
                     <label style="font-weight:bold; font-size:12px;">Import Preview Images via QR Code</label>
@@ -829,20 +796,17 @@
                     </div>
                     
                     <div class="preset-builder-form">
-                        <!-- Preset Name -->
                         <div class="preset-builder-field">
                             <label for="preset-builder-name" class="preset-builder-label">Preset Name</label>
                             <input type="text" id="preset-builder-name" class="preset-builder-input" placeholder="My Custom Preset">
                         </div>
 
-                        <!-- Category -->
                         <div class="preset-builder-field" style="position: relative;">
                             <label for="preset-builder-category" class="preset-builder-label">Category</label>
                             <input type="text" id="preset-builder-category" class="preset-builder-input" placeholder="CUSTOM, ART, HUMOR (comma-separated)">
                             <div id="category-autocomplete" class="category-autocomplete" style="display: none;"></div>
                         </div>
 
-                        <!-- Template Selection -->
                         <div class="preset-builder-field">
                             <label for="preset-builder-template" class="preset-builder-label">Prompt Template</label>
                             <select id="preset-builder-template" class="preset-builder-select">
@@ -1021,7 +985,6 @@
                         </div>
                     </div>
 
-                    <!-- Selection Type -->
                     <div class="preset-builder-field" id="selection-type-container" style="display: none;">
                         <label class="preset-builder-label">Selection Type</label>
                         <select id="preset-builder-selection-type" class="preset-builder-select">
@@ -1030,7 +993,6 @@
                         </select>
                     </div>
 
-                    <!-- Single Selection Options -->
                     <div class="preset-builder-field" id="single-options-container" style="display: none;">
                         <label class="preset-builder-label">Options List</label>
                         <div id="single-options-list" style="margin-top: 8px;"></div>
@@ -1039,7 +1001,6 @@
                         </button>
                     </div>
 
-                    <!-- Multi-Selection Option Groups -->
                     <div class="preset-builder-field" id="multi-options-container" style="display: none;">
                         <label class="preset-builder-label">Option Groups</label>
                         <div id="multi-options-groups" style="margin-top: 8px;"></div>
@@ -1048,13 +1009,11 @@
                         </button>
                     </div>
 
-                    <!-- Additional Instructions -->
                     <div class="preset-builder-field" style="margin-top: 12px;">
                         <label class="preset-builder-label">Additional Instructions (CRITICAL/MANDATORY rules)</label>
                         <textarea id="preset-builder-additional" class="preset-builder-input" style="min-height: 120px; font-family: monospace; font-size: 12px;" placeholder="CRITICAL RULES:&#10;• Rule 1&#10;• Rule 2&#10;&#10;MANDATORY:&#10;• Requirement 1"></textarea>
                     </div>
 
-                        <!-- Prompt Tips -->
                         <div class="preset-builder-tips">
                             <p class="preset-builder-tip-title">💡 Prompt Tips:</p>
                             <ul class="preset-builder-tip-list">
@@ -1081,7 +1040,6 @@
                     <button id="import-resolution-back" class="close-button">×</button>
                 </div>
                 <div class="submenu-list">
-                    <!-- Import Resolution List -->
                     <h4 style="padding: 2vw; color: #FE5F00; font-size: 4vw;">Import Resolution</h4>
                     <div id="import-resolution-list">
                         <!-- Import resolution options will be dynamically added here -->
@@ -1120,7 +1078,6 @@
                 </div>
                 <!-- Tutorial Content -->
                 <div id="tutorial-content-area" class="tutorial-content-area" style="display: none;">
-                <!-- Tutorial Search Bar (sticky) -->
                 <div id="tutorial-search-bar" style="position:sticky;top:0;background:#1a1a1a;z-index:10;padding:3px 6px 3px 6px;border-bottom:1px solid #333;">
                   <div class="filter-row" style="margin:0;gap:2vw;">
                     <input type="text" id="tutorial-search-input" class="style-filter" placeholder="Search tutorial..." style="margin:0;height:24px;font-size:12px;flex:0 1 60%;min-width:0;">
@@ -1132,286 +1089,92 @@
                 </div>
                 <div class="submenu-list tutorial-content">
                     
-                    <!-- Getting Started -->
                     <div id="section-getting-started" class="tutorial-section">
                         <h4 class="tutorial-heading">🚀 Getting Started</h4>
                         <p class="tutorial-text">
-                            Magic Kamera MDRE is a powerful plugin for the Rabbit r1 that transforms your photos with many AI-powered presets. Point, shoot, and watch your images come to life with artistic styles, effects, and transformations. Customize captured photos to create your own presets or re-prompt captured photos. You can do things you cannot do with regular Magic Camera (eg. zoom in/out, import photos, combine photos, layer presets, re-prompt photos, timer and burst).  Magic Kamera can also work as a security device with motion detection. A collaboration between M Domko, Ron G, SimonB, Orville, WWTV, Foxplaid and RabbitJesus(JET).
+                            Magic Kamera MDRE is a powerful plugin for the Rabbit r1 that transforms your photos with many AI-powered presets. Point, shoot, and watch your images come to life with artistic styles, effects, and transformations.
                         </p>
                     </div>
 
-                    <!-- Basic Controls -->
-                   <div id="section-basic-controls" class="tutorial-section">
+                    <div id="section-basic-controls" class="tutorial-section">
                         <h4 class="tutorial-heading">📸 Basic Controls</h4>
                         <p class="tutorial-text">
-                            <strong>Press Side Button:</strong> Take a photo. Click side button to take a picture with a selected preset or long press the side button to speak your preset.<br>
+                            <strong>Press Side Button:</strong> Take a photo.<br>
                             <strong>Scroll Wheel Up/Down:</strong> Change visible AI presets<br>
-                            <strong>Camera Button (📷):</strong> Switch between front (selfie)/back camera<br>
-                            <strong>Menu Button (☰):</strong> Access settings and presets. The main menu has a settings button (⚙️) to access settings and a <strong>+</strong> button in the header to build new presets with the Preset Builder.<br>
-                            <strong>Gallery Button (🖼️):</strong> View/Modify/Delete saved photos and re-prompt.<br>
-                            <strong>New Photo Button:</strong> Appears with a preview of the captured image. Return to live camera after capture by pressing the NEW PHOTO button. Can also be done with side button. Click side button to take a picture with a selected preset or long press the side button to speak your preset.
+                            <strong>Camera Button (📷):</strong> Switch between front/back camera<br>
+                            <strong>Menu Button (☰):</strong> Access settings and presets<br>
+                            <strong>Gallery Button (🖼️):</strong> View/Modify/Delete saved photos<br>
+                            <strong>New Photo Button:</strong> Return to live camera after capture
                         </p>
                     </div>
 
-                    <!-- AI Presets -->
-                   <div id="section-ai-presets" class="tutorial-section">
+                    <div id="section-ai-presets" class="tutorial-section">
                         <h4 class="tutorial-heading">✨ AI Presets</h4>
                         <p class="tutorial-text">
-                            Browse <span id="tutorial-preset-count">800</span> unique and fun AI presets! We are constantly updating and adding presets. Scroll through styles like Impressionism, Cyberpunk, Anime Art, Watercolor, Caricature, and much more. The current preset name appears at the bottom of the main screen. Each preset transforms your photo with a specific artistic style or effect. Some presets are created to truly randomize(using the RonDom Method©) options within the preset and you can also enable MANUALLY SELECT OPTIONS to select which of the options you want to create in the final image.<br>
-                        <strong>🔊 Hear Preset Info:</strong> When browsing presets in the IMPORT PRESETS menu, tap any preset ONCE to hear its description read aloud. Use the 🔊 mute button in the header to toggle audio on or off.
-</p>
-                    </div>
-
-                    <!-- Special Modes -->
-                    <div id="section-special-modes" class="tutorial-section">
-                        <h4 class="tutorial-heading">🎯 Special Modes (Right Carousel)</h4>
-                        <h5 style="color: #ffffff; font-style: italic; margin-bottom: 10px; font-size: 6vw; font-weight: 700;">
-    *Single click (Default) on the main camera screen to hide/reveal buttons*
-</h5>
-                        <p class="tutorial-text">
-                            <strong>🎲 Random Mode:</strong> Surprises you with a random preset for each photo, selecting from favorites only if any favorites are selected. If no favorites are selected, it selects from all visible presets.<br>
-                            <strong>⏱️ Timer Mode:</strong> Set a countdown (3-10s) and optional repeat intervals<br>
-                            <strong>📸⚡ Burst Mode:</strong> Capture 3-10 photos rapidly (slow/medium/fast)<br>
-                            <strong>👁️ Motion Detection:</strong> Automatically captures when movement is detected. Interval settings for repeat capture. Repeat capture is default. You must uncheck repeat capture to do single capture. Select start delay from 3 seconds to 30 minutes. This mode triggers when you press the eye icon and activates/starts when you press the side button. Motion detection deactivates/stops when you press the eye icon again. The eye pulses if motion detection is triggered.<br>
-                            <strong>🎞️ Multi Preset:</strong> Select up to 20 presets to apply to a single photo in sequence. Tap the 🎞️ MULTI button in the carousel to open the preset selector. Choose your presets and tap Apply Selected. The footer and screen will show MULTI PRESETS while active. When you take a photo, all selected presets are queued and sent one by one with a 3 second interval between each. Works with Timer Mode — multi preset stays active until the timer is turned off. Cannot be used with Burst, Motion Detection, Random Mode, or No Magic Mode. If Manually Select Options is enabled, you will be prompted to choose options for each selected preset before the photo is taken (If you click CANCEL, it will randomize your option). Multi preset is a one-shot mode — it resets automatically after all presets are sent, unless Timer Mode is active.<br>
-                            <strong>🖼️🖼️ Combine images:</strong> Works with either a selected preset or by speaking your preset. Take a picture of two images to combine them to feed to r1 thereby creating AI generated images from two images. Only works with random mode or multi-select presets mode in main camera screen.<br>
-                            <strong>📑 Layer presets:</strong> Select up to 5 presets to combine and apply to a photo. Tap the 📑 LAYER button in the carousel to open the preset selector. Choose your presets starting with the primary (or dominant) layer. Then select up to 4 more presets to add as layers to that primary preset. Once you finish selecting, tap Apply Selected. Cannot be used with Random Mode or No Magic Mode. If Manually Select Options is enabled, you will be prompted once to choose options for each selected preset before the photo is taken. Once Layer is enabled, it will continue applying same chosen layers with selected options until it is disabled.<br>
-                            <strong>📝 MASTER and 🎛️ OPTIONS Buttons (Left Carousel):</strong> Below the Menu (☰) button on the left side within a carousel(which also includes the MENU (☰) and GALLERY (🖼️) Buttons). The MASTER button (📝) accesses Master Prompt settings. Glows green when enabled. The OPTIONS (🎛️) button toggles Manually Select Options mode on or off. Glows green when enabled. All the camera buttons (except for the switch camera (📷) button) are in carousels and are visible by default. However, you can hide them (except for the switch camera (📷) button) by single clicking on the main camera screen to hide/reveal buttons. This may be adjusted in the Button Settings subsection within settings.<br><br>
+                            Browse unique AI presets! Scroll through styles like Impressionism, Cyberpunk, Anime Art, Watercolor, and more.
                         </p>
                     </div>
 
-                    <!-- Gallery Features -->
+                    <div id="section-special-modes" class="tutorial-section">
+                        <h4 class="tutorial-heading">🎯 Special Modes</h4>
+                        <p class="tutorial-text">
+                            <strong>🎲 Random Mode:</strong> Random preset for each photo<br>
+                            <strong>⏱️ Timer Mode:</strong> Countdown capture<br>
+                            <strong>📸⚡ Burst Mode:</strong> Rapid multi-capture<br>
+                            <strong>👁️ Motion Detection:</strong> Auto-capture on movement<br>
+                            <strong>🎞️ Multi Preset:</strong> Apply multiple presets to one photo<br>
+                            <strong>🖼️🖼️ Combine:</strong> Combine two images<br>
+                            <strong>📑 Layer:</strong> Layer multiple presets
+                        </p>
+                    </div>
+
                     <div id="section-gallery-features" class="tutorial-section">
                         <h4 class="tutorial-heading">🖼️ Gallery Features</h4>
                         <p class="tutorial-text">
-                            <strong>Import Photos:</strong> Click the Import button in the gallery list view (full instructions under Uploading Images below).<br><br>
-
-                            <strong>Batch Operations:</strong> Select multiple images to apply one preset or delete in bulk. Click the Select button to enable. You may also combine images if you choose two images. Make sure to click DONE when finished.<br><br>
-
-                            <strong>Batch Operations-Combine:</strong> Select two images to combine them to feed to r1 thereby creating AI generated images from two of your gallery saved images. Click the Select button. Select the two images and click Combine. It will open up the Combined Image Viewer to prompt them and edit them. If you do not edit the combined picture and then save, it will be deleted after you exit the Combined Image Viewer. Saving an edited combined picture saves it to your gallery as a new image.<br><br>
-
-                            <strong>🔀 Sort &amp; Filter (SORT button):</strong> Tap the SORT button (to the right of the Start and End buttons) to choose whether images are sorted by Newest First or Oldest First. Filter by date range using the Start and End buttons. <br><br>
-
-                            <strong>📁+ New Folder:</strong> Create a new folder to organize your saved images. Name the folder and save. Once the folder is created, long press on the folder to edit the name. Images may be moved by clicking select, selecting all the images you want to move, then long pressing the last image. A modal will appear allowing you to choose the folder where to move the image (or select gallery to move the image back to the gallery).<br><br>
-
-                            <strong>View Photos:</strong> Tap any image to view it full-screen. The viewer is redesigned to give your photo maximum screen space.<br><br>
-
-                            <strong>Preset Header:</strong> At the very top of the image viewer, a header shows the name of the currently loaded preset. If no preset is loaded it reads NO PRESET LOADED. If a preset is loaded, tap the header to read and hear the preset name and the first sentence of its description. <br><br>
-
-                            <strong>Delete (🗑️) and Close (×):</strong> Delete button, located at the top-left, deletes the selected image, Close (x) button, located at the top-right, closes the single image viewer. <br><br>
-
-                            <strong>Master and Options Buttons:</strong> Located below the delete button on the left side within a carousel. The MASTER button accesses Master Prompt settings. Glows green when enabled. The OPTIONS button toggles Manually Select Options mode on or off. Glows green when enabled. These buttons are visible by default. However, you can hide them by single clicking the screen. Single click again to reveal them. This is the default setting and may be adjusted in the Button Settings submenu within the settings<br><br>
-
-                            <strong>Edit and Export Images:</strong> The image viewer screen right carousel contains three buttons — ✏️ EDIT (opens the image editor), 📤 EXPORT (uploads to gofile.io), and 📑 LAYER (combine and apply multiple presets to a single image). Select primary preset and then add up to 4 more layers (5 in all). Single click (default) on the image viewer screen to hide the carousels.<br><br>
-
-                            <strong>Upload to gofile.io:</strong> Use the Export button in the carousel inside the image viewer. Link expires after 24 hours. Mainly useful in No Magic Mode (because in No Magic Mode, images are not sent to the rabbit hole).<br><br>
-
-                            <strong>Bottom Bar — Four Buttons:</strong><br>
-                            • <strong>PROMPT:</strong> Opens an editor based on whether a preset is loaded. If no preset is loaded, opens the Preset Builder so you can create a new preset.<br>
-                            • <strong>LOAD:</strong> Opens the preset selector so you can choose a preset to apply to this image.<br>
-                            • <strong>MULTI:</strong> Opens the multi-preset selector to apply several presets in sequence to this image. If Manually Select Options is enabled, you will be prompted to choose options for each selected preset before the photo is taken (If you click CANCEL, it will randomize your option).<br>
-                            • <strong>✨ MAGIC:</strong> Sends the image for AI transformation using the loaded preset. If no preset is loaded and nothing has been entered, it picks a random preset automatically.                           
+                            Import photos, batch operations, sort & filter, create folders, view full-screen, edit and export images.
                         </p>
                     </div>
 
-                    <!-- Uploading Images -->
                     <div id="section-uploading-images" class="tutorial-section">
                         <h4 class="tutorial-heading">📥 Uploading Images</h4>
                         <p class="tutorial-text">
-                            You can import images from the web directly into your gallery using QR codes (special thanks to WWTV). Here's how:<br><br>
-                            <strong>Step-by-Step Process:</strong><br>
-                            1. Upload your image you want imported to <strong>catbox.moe</strong> (free, no account needed)<br>
-                            2. Copy the <strong>direct link</strong> (must end in .png, .jpg, .jpeg, .gif, or .webp)<br>
-                            3. Go to <strong>qr-code-generator.com</strong> and paste the direct link<br>
-                            4. Generate and download/display the QR code<br>
-                            5. Go to menu (☰)/settings (⚙️) in the Magic Kamera plugin<br>
-                            6. Select the resolution of the image under Import Settings<br>
-                            7. Exit settings and menu<br>  
-                            8. Go to gallery (🖼️)<br>
-                            9. Press the Import button<br>
-                            10. Press the Scan QR Code button<br>
-                            11. Point your R1 camera at the QR code<br>
-                            12. Wait a few...the modal will close and the image will be optimized and saved to your gallery!<br><br>
-                            
-                            <strong>⚠️ IMPORTANT - Verify Your Link:</strong><br>
-                            Before generating the QR code, paste the link into a browser:<br>
-                            ✅ <strong>GOOD:</strong> Shows ONLY the image (no webpage around it) - will work!<br>
-                            ❌ <strong>BAD:</strong> Shows a webpage with the image embedded - won't work!<br><br>
-                            <strong>Notes:</strong><br>
-                            • Imported images are automatically default resized to 640x480 for optimal storage (changed in the settings/Import Settings)<br>
-                            • Images are saved to your gallery just like captured photos<br>
-                            • You can apply AI presets to imported images just like captured photos
+                            Import images via QR codes from catbox.moe.
                         </p>
                     </div>
-             
-                    <!-- Edit Image Features -->
+
                     <div id="section-edit-image" class="tutorial-section">
                         <h4 class="tutorial-heading">✏️ Edit Image Features</h4>
                         <p class="tutorial-text">
-                            <strong>How to Access:</strong> While viewing any photo in full-screen, tap the ✏️ EDIT button. Single click (default) on the screen to hide.<br><br>
-                            
-                            <strong>Available Tools:</strong><br>
-                            The image editor provides several professional editing tools located on the right side of the screen:<br><br>
-                            
-                            <strong>✂️ Crop:</strong> Tap to activate crop mode. Two orange corner markers appear on your image. Tap and drag the top-left and bottom-right corners to select your desired crop area. Tap Crop again to apply the crop.<br>
-                            
-                            <strong>🔄 Rotate:</strong> Rotates your image 90 degrees clockwise. Tap multiple times to rotate to your desired orientation (90°, 180°, 270°, or back to 0°).<br>
-                            
-                            <strong>🔍 Sharpen:</strong> Enhances image sharpness and detail. Tap to apply sharpening effect to make edges and details more crisp and defined.<br>
-                            
-                            <strong>✨ Auto Correct:</strong> Automatically adjusts brightness, contrast, and color balance for optimal image quality. Great for quickly improving photos.<br>
-                            
-                            <strong>🌈 Vivid:</strong> Boosts color saturation and slightly increases contrast, making colors richer and more vibrant.<br>
-                            
-                            <strong>🔆 Warm:</strong> Adds warmth by lifting reds and yellows while toning down blues, giving your photo a golden, sun-kissed feel.<br>
-                            
-                            <strong>❄️ Cool:</strong> Cools the image by lifting blues and reducing reds, creating a clean, cold, airy look.<br>
-                            
-                            <strong>⬛ B&W:</strong> Converts your photo to black and white using a professional luminosity-weighted grayscale for natural-looking results.<br>
-                            
-                            <strong>🌫️ Fade:</strong> Compresses contrast toward middle gray for a soft, matte, faded-film aesthetic.<br>
-                            
-                            <strong>Brightness & Contrast Sliders:</strong> Located at the top of the editor, these sliders allow you to manually adjust:<br>
-                            • <strong>Brightness:</strong> Range from -100 (darker) to +100 (brighter)<br>
-                            • <strong>Contrast:</strong> Range from -100 (less contrast) to +100 (more contrast)<br>
-                            Drag the sliders left or right to adjust values in real-time.<br><br>
-                            
-                            <strong>Saving & Undoing:</strong><br>
-                            Located in the top-right corner next to the Edit Image title:<br>
-                            <strong>↶ Undo:</strong> Reverts your last edit. You can undo multiple times to step back through your editing history.<br>
-                            <strong>💾 Save:</strong> Saves all changes to your image. Saving the edited image creates a new image in your gallery.<br>
-                            <strong>×</strong> <strong>Close:</strong> Exits the editor without saving changes (unless you've already tapped Save).<br><br>
-                            
-                            <strong>Editing Tips:</strong><br>
-                            • All edits are applied in the order you make them<br>
-                            • Use Undo if you make a mistake or want to try a different adjustment<br>
-                            • The Auto Correct feature works great as a starting point before manual adjustments<br>
-                            • You can combine multiple edits (crop, rotate, sharpen, color filters, and adjust brightness/contrast) on the same image<br>
-                            • Remember to tap Save when you're happy with your edits!
+                            Crop, Rotate, Sharpen, Auto Correct, Vivid, Warm, Cool, B&W, Fade, Brightness & Contrast sliders.
                         </p>
                     </div>
 
-                    <!-- Settings -->
                     <div id="section-settings" class="tutorial-section">
                         <h4 class="tutorial-heading">⚙️ Settings</h4>
                         <p class="tutorial-text">
-                            <strong>Resolution:</strong> VGA (640x480) to HD (3264x2448). If you want images to appear in magic gallery, choose lower settings. Higher settings will slow the camera.<br>
-                            <strong>Aspect Ratio:</strong> Choose 1:1 square or 16:9 letterbox, or if unchecked neither. Default is neither. Choose an aspect ratio to display the full image, preventing accidental cropping. We strongly recommend selecting an aspect ratio.<br>
-                            <strong>Burst:</strong> Number of photos and capture speed<br>
-                            <!-- <strong>White Balance:</strong> Adjust color temperature of image so white objects appear white and colors realistic<br> -->
-                            <strong>Timer:</strong> Countdown time and repeat interval<br>
-                            <strong>Master Prompt:</strong> Append text to every AI transformation to customize. This can be accessed from the main camera screen and the gallery by pressing the MASTER button in the gallery or the 📝 MASTER button in the left side carousel in main camera screen. You may add text fields with different master prompts to combine. Hard press to activate the desired text field(s). If you delete a text field, you may recover within the Restore Deleted Items section in Settings (under the MASTER tab).<br>
-                            <strong>Motion Detection:</strong> Sensitivity, start delay, continuous capture<br>
-                            <strong>Visible Presets:</strong> Select the imported presets you want to see in preset menus. Default all. Can select all, remove individually or remove all (the Ron setting). Each preset has categories indicated at the bottom of the visible preset menu.<br>
-                            <strong>Preset Builder:</strong> Made to follow a sequence. Click return to go to next selection. Select prompt templates and chips to help you create new and exciting presets. Categories must be separated by commas. You can also create multiple option presets with single or multi-selection! This is a very useful tool that includes prompting tips. You can access the Preset Builder from Settings, or directly from the main menu by tapping the <strong>+</strong> button in the menu header.<br>
-                            <strong>No Magic Mode:</strong> Use as a regular camera without AI processing. Photos will only save in the gallery. Photos will not save to rabbit hole or magic gallery. This setting does not affect prompting in gallery. You can send No Magic Mode photos saved in your gallery to the rabbit hole by prompting it with a preset. You may also upload them to gofile.io using the export button in the right carousel of the single image viewer in the gallery.<br>
-                            <strong>Manually Select Options Mode:</strong> Enable/Disable. When enabled, if you choose a preset with options, a modal will appear asking you to pick from one of the options in the preset. Only this option is fed as the final prompt for generating the magical image. This setting does not work with No Magic Mode, Motion Sensor, Burst or Timer. It will work with Randomizer. The manually select options mode may be toggled from the gallery by pressing the OPTIONS button in the gallery<br>
-                            <strong>Import Resolution:</strong> Select import resolution for external images imported through the gallery.<br>
-                            <strong>Reset Database:</strong> Nuclear Option. Where you can revert individual settings, presets, images or entire program to default. All custom work deleted. YOU MUST RESTART THE PROGRAM FOR THE DATABASE TO RESET PROPERLY.<br>
-                            <strong>Restore Deleted Items:</strong> Restore deleted custom or modified presets and deleted images from the gallery.  Will not restore presets that were deleted by resetting the database.<br>
-                            <strong>📥 Import Presets:</strong> When you first start, import a preset from our external library of presets. The presets are locked except for Caricature and Impressionism. Import them to capture photos and begin the fun journey of unlocking your imported artistic library. To unlock more presets, take a photo with any preset you already own or reprompt a photo in the gallery. One snap with a unique imported preset, or a click on the magic button in the gallery, provides a credit to buy more presets-unlocking a new surprise to your collection! Import only the unlocked presets you want using your earned credits by checking them individually or ✓ All (or ✗ None). Once you select the ones you want to import, click the Import button. NOTE: Previously imported presets remain checked. To delete previously imported presets from the Magic Kamera, delete them from the Main Menu. You can import them again if you like. Any new presets added to our external library of presets, will be locked (check regularly for new ones as we are constantly updating this list). Updated Presets you own will appear on the top of the Import Presets list. You need to select (if they are not already selected) the updated preset and click the Import button to update your owned preset. <strong>🔊 Hear Preset Info:</strong> When browsing presets in the Import Presets menu, tap any preset ONCE to hear its description read aloud. Use the 🔊 mute button in the header to toggle audio on or off.<br>
-                            <strong>📂 Preset File Settings (*Advanced Feature*):</strong> Located directly below Import Presets in the Settings menu. Preset Sources Tab: This section lets you load presets within a json file from any repository (the URL for Github repositories must be in raw format) in addition to, or instead of, the built-in preset library. It also lets you upload preset json files via a qr code (see Adding a Custom Source Code via QR Code below).  Preview Images Tab: You may import images to use as preview images using a qr code (see Adding a Custom Preview Image via QR Code below).  This is useful if you are not linking a json file in a repository.<br>
-                            <em>Adding a Custom Source through a Repository:</em> Open Preset File Settings. Click on the Preset Sources Tab (default). In the Add Custom Source area at the bottom, enter a friendly name for the source and type the raw URL to the preset JSON file hosted on GitHub. To get the raw URL: open the repository in GitHub, navigate to the JSON file, and tap the <strong>Raw</strong> button. (You may also press the Convert Github to Raw button in the program.) Type the full URL into the URL field. Tap <strong>+ Add Source</strong>.<br>
-                            <em>Adding a Custom Source via QR Code:</em>
-                        </p>
-                        <!-- Uploading Json Preset Files -->
-                        <p class="tutorial-text">
-                            You can import custom preset json files from the web directly into your program using QR codes. Here's how:<br><br>
-                            <strong>Step-by-Step Process:</strong><br>
-                            1. Upload your preset json file you want imported to <strong>catbox.moe</strong> (free, no account needed)<br>
-                            2. Copy the <strong>direct link</strong> (must end in .json)<br>
-                            3. Go to <strong>qr-code-generator.com</strong> and paste the direct link<br>
-                            4. Generate and download/display the QR code<br>
-                            5. Go to menu (☰)/settings (⚙️)/📂 Preset File Settings in the Magic Kamera plugin<br>
-                            6. Click on the Preset Sources Tab (default)<br>
-                            7. Scroll down to the Import Source via QR Code section<br>
-                            8. Press the Scan QR Code button<br>
-                            9. Point your R1 camera at the QR code<br>
-                            10. Wait a few...the modal will close and the source information will populate the Add Custom Source text fields above<br>
-                            11. Give your preset json source file a name<br>
-                            12. Click the Add Source button. Easy peasy!<br><br>
-                            <strong>Notes:</strong><br>
-                            • It is always better to use a repository because you do not need to go through this process every time you add a new preset to the json file<br>
-                            • Preview Images need to be imported via a QR Code or else no preview for preset json files uploaded via QR Code<br>
-                        </p>
-                        <p class="tutorial-text">
-                            <em>Adding a Custom Preview Image via QR Code:</em>
-                        </p>
-                        <!-- Uploading Preview Images -->
-                        <p class="tutorial-text">
-                            You can import preview images from the web directly into your preview images gallery using QR codes. Here's how:<br><br>
-                            <strong>Step-by-Step Process:</strong><br>
-                            1. Upload your image (import size 160x160 recommended) you want imported to <strong>catbox.moe</strong> (free, no account needed)<br>
-                            2. Copy the <strong>direct link</strong> (must end in .png, .jpg, .jpeg, .gif, or .webp)<br>
-                            3. Go to <strong>qr-code-generator.com</strong> and paste the direct link<br>
-                            4. Generate and download/display the QR code<br>
-                            5. Go to menu (☰)/settings (⚙️)/📂 Preset File Settings in the Magic Kamera plugin<br>
-                            6. Click on the Preview Images Tab<br>
-                            7. Press the Scan QR Code button<br>
-                            8. Point your R1 camera at the QR code<br>
-                            9. Wait a few...the modal will close and the image will be saved to your Imported Preview Images gallery!<br><br>
-                            <strong>⚠️ IMPORTANT - Verify Your Link:</strong><br>
-                            Before generating the QR code, paste the link into a browser:<br>
-                            ✅ <strong>GOOD:</strong> Shows ONLY the image (no webpage around it) - will work!<br>
-                            ❌ <strong>BAD:</strong> Shows a webpage with the image embedded - won't work!<br><br>
-                        </p>
-                        <p class="tutorial-text">
-                            <em>Repository and Folder Structure:</em> The custom preset JSON file must be a valid JSON array formatted identically to the built-in presets. We recommend using the Magic Kamera front end Preset builder at <strong>https://jorge-e-t.github.io/MKPresetBuilder/</strong>     To include sample preview images for your custom presets, create a folder named <strong>public</strong> inside your GitHub repository at the same level as your JSON file. Name each preview image to match the preset name exactly, replacing spaces and special characters with underscores, and save as PNG. For example, a preset named "My Cool Style" would have a preview image named <strong>My_Cool_Style.png</strong> inside the public folder. The program automatically finds preview images there with no extra configuration needed. For fast preview image loading times resize the image to 160x160<br>
-                            <em>Managing Sources:</em> Each source in the list has an ON/OFF toggle and an EDIT button. The default built-in library shows an ON/OFF toggle only when at least one custom source is active — this lets you load exclusively from your own sources if you prefer. Turning off all custom sources locks the default back on automatically so you are never left with nothing. Use the EDIT button to update a source name or URL without deleting and re-adding it. The ✕ button removes a source entirely.<br>
-                            <em>Managing Preview Images:</em> If you are using a repository, place preview images in a public folder within the same directory as the custom preset json file. However, Magic Kamera lets you personalize any presets with your own preview images. When you hard press a preset in any preset list (other than the import presets section preset list), it opens a preview image.  Click on the orange + button on the top left hand corner. Select the preview image from this gallery. If you want to revert to default (original image from default Magic Kamera presets, original image from custom preset json file in a repository, or no image from a custom preset json file uploaded via QR Code) click on the top left ↩ button instead of selecting a preview image<br>
-                            <em>Credits:</em> The credit and unlock system applies only to the built-in preset library. All presets from custom sources are always free to import with no credits required.<br>
-                            <em>Updates:</em> When you return to the Settings menu after making any changes in Preset File Settings, the Import Presets button automatically rechecks all active sources and refreshes its new and updated preset count.<br><br>
-                            <strong>⚙️ Button Settings:</strong> The main camera screen and gallery image viewer screen carousel buttons are default solid and black. In this section, you may select different colors for buttons and text in the main camera screen and in the gallery image viewer screen. You may also select opacity (default solid) and set how many taps to hide/reveal the buttons in each section under their appropriate tab.<br>
-                            <strong>Tutorial:</strong> What you are currently reading. This tutorial includes the audio tour on the top of the quick navigation. Use the top search field to search for key words or topics. Click within the search field to either speak your search (using the rabbit r1's side button) or type your search. Once you finish speaking or typing your search, click on the x next to the filter text box to remove the keyboard. If you double click on the x, it resets the filter text box.
+                            Resolution, Aspect Ratio, Burst, Timer, Master Prompt, Motion Detection, Visible Presets, Preset Builder, No Magic Mode, and more.
                         </p>
                     </div>
 
-                    <!-- Tips & Tricks -->
                     <div id="section-tips-tricks" class="tutorial-section">
                         <h4 class="tutorial-heading">💡 Tips & Tricks</h4>
                         <p class="tutorial-text">
-                            • <strong>Add to Favorites:</strong> In the menu, tap the star (☆) next to presets you love.<br>
-                            • <strong>Sample Image Preview:</strong> When you long press on a preset, you are provided a sample image preview of what the style will look like.<br>
-                            • <strong>Filter Presets:</strong> Use the search box to quickly find styles. Because of the size of the r1 screen, if you click on the search bar, a keyboard appears. You can either speak your search (using the rabbit r1's side button) or type your search. Once you finish speaking or typing your search, click on the x next to the filter text box to remove the keyboard. If you double click on the x, it resets the filter text box and categories.<br>
-                            • <strong>Pinch to Zoom:</strong> Zoom in/out on the camera feed. Gallery also supports pinch to zoom in the individual image viewer.<br>
-                            • <strong>Aspect Ratio change:</strong> Get the best results with either 1:1 or 16:9. The default is None, but we strongly recommend setting it to either 1:1 or 16:9 to avoid image cropping.<br>
-                            • <strong>PROMPT Button:</strong> In the gallery image viewer, tap PROMPT to create or edit the preset associated with your image. No preset loaded opens the builder. A loaded preset opens the editor automatically.<br>
-                            • <strong>Multiple Presets:</strong> Apply several styles to one photo sequentially<br>
-                            • <strong>Layer Presets:</strong> Combine several styles to one photo via layers<br>
-                            • <strong>Offline Queue:</strong> Photos queue automatically when offline and sync later
+                            Add to Favorites, Sample Image Preview, Filter Presets, Pinch to Zoom, Aspect Ratio change, Multiple Presets, Layer Presets, Offline Queue.
                         </p>
                     </div>
 
-                    <!-- Advanced Features -->
                     <div id="section-advanced-features" class="tutorial-section">
-                        <h4 class="tutorial-heading">🔧 Advanced Features & Miscellaneous</h4>
+                        <h4 class="tutorial-heading">🔧 Advanced Features</h4>
                         <p class="tutorial-text">
-                            <strong>Tutorial Searching:</strong> The tutorial has a search engine. Type your search using individual words or sentences. The back and forward arrows cycle through the text to find typed words.<br>
-
-                            <strong>Navigating:</strong> Up and down arrows in the sections with preset lists move up/down per page when clicked once.  Double-clicking (or hard pressing) jumps to the next or previous letter of the alphabet within that section (favorites and non-favorites are navigated separately).  Triple-clicking jumps all the way to the top or bottom of the list. In the select options modal (When options are enabled), single clicking the up/down arrows move to the next option and double clicking jumps to the next options group. In the settings menu, single click the up/down arrows moves to next setting up/down and double click jumps all the way up/down the list.<br>
-
-                            <strong>Hiding/Reveal Buttons:</strong> There are left and right carousels in the main camera screen and the image viewer in the gallery. Single click the screen to hide/reveal the carousels. You may adjust these settings (as well as the opacity of the carousel buttons) within settings (in the Main Camera Screen and Gallery Image Viewer Screen subsections).<br>
-
-                            <strong>Category Searching:</strong> All presets are categorized. You can see these categories at the bottom of the Visible Preset list menu when a particular preset is highlighted. Therefore, if you see a preset that you like, you can do a search for similar presets that share that category (*best to do this in the Visible Preset Menu). You can also click on the desired category on the bottom to filter all presets in that category as well.<br>
-
-                            <strong>Master Prompt:</strong> Append text to every AI transformation to customize. Many presets benefit from this feature. For example, if you activate Master Prompt (this must be done first) and add two lines: The first line- name: Ron G and the second line- it is Easter. Then you select preset HAPPY HOLIDAYS...this will transform the subject of the picture into a picture of the subject wearing an Easter bunny costume (preferably pink) and the resulting picture will be captioned with the name Ron G. Since all presets are categorized you can do a search for "master" or "master prompt" and presets that benefit from master prompting appear (*best to do this in the Visible Preset Menu). Regardless of designation, all images may be affected by the master prompt. You can add several master prompts to your image. Activate the ones you want to use.
+                            Tutorial Searching, Navigating, Hiding/Reveal Buttons, Category Searching, Master Prompt.
                         </p>
                     </div>
 
-                    <!-- Troubleshooting -->
                     <div id="section-troubleshooting" class="tutorial-section">
                         <h4 class="tutorial-heading">🔍 Troubleshooting</h4>
                         <p class="tutorial-text">
-                            <strong>Camera not working:</strong> You need to make certain that you import at least one preset or create your own preset in the preset builder for the camera to work.  Otherwise, you will get a Camera access denied error at the footer of the main camera screen. 
+                            Camera not working: Import at least one preset. Program not resetting: Restart after reset. AI not working: Check No Magic mode and network.
                         </p>
-                         <p class="tutorial-text">
-                            <strong>Program not resetting database:</strong> After you reset any portion of the database, you MUST restart the program for the settings to be reset. Otherwise, you will get incorrect settings or visual inconsistencies. 
-                        </p>
-                        <p class="tutorial-text">
-                            <strong>AI transformation not working:</strong> If you took a picture and the rabbit did not respond indicating picture is being transformed/prepared, first check your settings to see if NO MAGIC mode is enabled. Disable if you want the Magic to happen. If this is not the solution, check your network connections. <br>
-All of the presets are optimized to avoid "camera ran dry" or "content filter" issues.  However, if you get a camera ran dry or content filter message-sometimes it helps re-prompting it over and over until you break through the content filter barrier. You may also edit the prompt (avoid using offensive language, and trademark/copyrighted words) to make it content filter friendly. 
-                        </p>
-                        
                     </div>
 
                 </div>
@@ -1458,13 +1221,11 @@ All of the presets are optimized to avoid "camera ran dry" or "content filter" i
                     <input type="text" id="style-category" class="style-input" placeholder="Categories (comma-separated)">
                     <textarea id="style-message" class="style-textarea" placeholder="AI prompt for this style"></textarea>
 
-                    <!-- Randomize Options Toggle -->
                     <label class="style-option-label">
                         <input type="checkbox" id="style-randomize" class="style-option-checkbox">
                         Enable Random Options
                     </label>
 
-                    <!-- Selection Type -->
                     <div id="style-selection-type-container" style="display: none;">
                         <div class="style-option-label">Selection Type</div>
                         <select id="style-selection-type" class="style-input" style="height: 8vw; min-height: 32px;">
@@ -1473,21 +1234,18 @@ All of the presets are optimized to avoid "camera ran dry" or "content filter" i
                         </select>
                     </div>
 
-                    <!-- Single Selection Options -->
                     <div id="style-single-options-container" style="display: none;">
                         <div class="style-option-label">Options List</div>
                         <div id="style-single-options-list"></div>
                         <button type="button" id="style-add-single-option" class="style-option-add-btn">+ Add Option</button>
                     </div>
 
-                    <!-- Multi-Selection Option Groups -->
                     <div id="style-multi-options-container" style="display: none;">
                         <div class="style-option-label">Option Groups</div>
                         <div id="style-multi-options-groups"></div>
                         <button type="button" id="style-add-option-group" class="style-option-add-btn">+ Add Group</button>
                     </div>
 
-                    <!-- Additional Instructions -->
                     <div class="style-option-label">Additional Instructions</div>
                     <textarea id="style-additional" class="style-textarea" style="min-height: 20vw; flex: none;" placeholder="CRITICAL RULES:&#10;• Rule 1&#10;• Rule 2"></textarea>
                 </div>
@@ -1568,21 +1326,16 @@ All of the presets are optimized to avoid "camera ran dry" or "content filter" i
         <!-- Image Viewer Modal -->
         <div id="image-viewer" class="image-viewer" style="display: none;">
     <div class="image-viewer-content">
-        <!-- Top corners: Delete (left) and Close (right) -->
         <button id="delete-viewer-image" class="viewer-delete-button">🗑️</button>
         <button id="close-viewer" class="viewer-close-button">×</button>
-        <!-- Combined image indicator — shows above preset header when in combine mode -->
         <div id="viewer-combined-indicator" class="viewer-combined-indicator">🖼️🖼️ COMBINED IMAGE</div>
-        <!-- Preset name header between delete and close — tappable -->
         <div id="viewer-preset-header" class="viewer-preset-header">NO PRESET LOADED</div>
-        <!-- Left carousel: MASTER and OPTIONS — default visible, single click to hide -->
         <div id="viewer-left-carousel" class="viewer-left-carousel">
             <div class="viewer-left-carousel-track">
                 <button id="mp-viewer-button" class="viewer-left-carousel-btn">📝<br><span style="font-size:2.5vw;line-height:1;color:#fff;margin-top:1.5vw;display:block;">MASTER</span></button>
 <button id="options-viewer-button" class="viewer-left-carousel-btn">🎛️<br><span style="font-size:2.5vw;line-height:1;color:#fff;margin-top:1.5vw;display:block;">OPTIONS</span></button>
             </div>
         </div>
-        <!-- Right-side carousel: Edit and Export -->
         <div id="viewer-carousel" class="viewer-carousel">
             <div class="viewer-carousel-track">
                 <button id="edit-viewer-image" class="viewer-carousel-button">✏️<br><span class="viewer-carousel-label">EDIT</span></button>
@@ -1590,13 +1343,10 @@ All of the presets are optimized to avoid "camera ran dry" or "content filter" i
                 <button id="layer-preset-viewer-button" class="viewer-carousel-button">📑<br><span class="viewer-carousel-label">LAYER</span></button>
             </div>
         </div>
-        <!-- Image fills remaining space -->
         <div class="image-viewer-container">
             <img id="viewer-image" class="viewer-image" alt="Viewing image">
         </div>
-        <!-- Hidden textarea kept for compatibility with existing JS logic -->
         <textarea id="viewer-prompt" class="viewer-prompt-hidden" readonly></textarea>
-        <!-- Bottom row: PROMPT | LOAD | MULTI | ✨ MAGIC -->
         <div class="viewer-bottom-bar">
             <button id="viewer-editor-button" class="viewer-bottom-btn">PROMPT</button>
             <button id="load-preset-button" class="viewer-bottom-btn">LOAD</button>
@@ -1618,7 +1368,6 @@ All of the presets are optimized to avoid "camera ran dry" or "content filter" i
                     </div>
                 </div>
                 
-                <!-- Brightness and Contrast Sliders (on top of image) -->
                 <div class="editor-top-controls">
                     <div class="editor-slider-group">
                         <label>Brightness</label>
@@ -1632,9 +1381,7 @@ All of the presets are optimized to avoid "camera ran dry" or "content filter" i
                     </div>
                 </div>
                 
-                <!-- Main Editor Area: Image Left, Buttons Right -->
                 <div class="editor-main-area">
-                    <!-- Image Canvas Area -->
                     <div class="editor-image-container">
                         <canvas id="editor-canvas" class="editor-canvas"></canvas>
                         <div id="crop-overlay" class="crop-overlay" style="display: none;">
@@ -1644,7 +1391,6 @@ All of the presets are optimized to avoid "camera ran dry" or "content filter" i
                         </div>
                     </div>
                     
-                    <!-- Edit Buttons Carousel (right side) — always visible, touch-scrollable -->
                     <div class="editor-btn-carousel">
                         <div class="editor-btn-carousel-track">
                             <button id="crop-button" class="editor-carousel-btn">✂️<br><span class="editor-carousel-label">Crop</span></button>
@@ -1684,7 +1430,7 @@ All of the presets are optimized to avoid "camera ran dry" or "content filter" i
             </div>
         </div>
 
-        <!-- Button Settings Submenu (Main Camera + Gallery tabs) -->
+        <!-- Button Settings Submenu -->
 <div id="button-settings-submenu" class="submenu" style="display: none;">
     <div class="submenu-content">
         <div class="submenu-header">
@@ -1940,7 +1686,7 @@ All of the presets are optimized to avoid "camera ran dry" or "content filter" i
             </div>
         </div>
     </div>
-<!-- Alpha letter jump overlay: shows current letter when jumping alphabetically -->
+<!-- Alpha letter jump overlay -->
     <div id="alpha-letter-overlay">
         <span class="alpha-overlay-letter">A</span>
     </div>
