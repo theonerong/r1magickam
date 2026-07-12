@@ -1862,6 +1862,19 @@ function openImageViewer(index) {
   const presetHeader = document.getElementById('viewer-preset-header');
   if (presetHeader) presetHeader.textContent = 'NO PRESET LOADED';
 
+  // Also cancel any pending "restore text" from a submission or flash that
+  // was still in flight on the PREVIOUS image — otherwise it fires later
+  // (after this image is already open) and overwrites this header with
+  // that old image's stale preset name.
+  if (_viewerHeaderRestoreTimer) {
+    clearTimeout(_viewerHeaderRestoreTimer);
+    _viewerHeaderRestoreTimer = null;
+  }
+  _viewerHeaderTrueText     = null;
+  _viewerHeaderBusy         = false;
+  _viewerHeaderPendingFlash = null;
+  _gallerySubmitShowNames   = false;
+
   // Show combined indicator if in combined mode
   const combinedIndicator = document.getElementById('viewer-combined-indicator');
   if (combinedIndicator) {
@@ -3773,7 +3786,22 @@ async function batchDeleteImages() {
   if (selectedBatchImages.size === 0) return;
   
   const count = selectedBatchImages.size;
-  const confirmed = await confirm(`Move ${count} selected image${count > 1 ? 's' : ''} to trash? They can be restored from Settings \u2192 Restore Deleted Items.`);
+  // Count folders and images separately so the message describes the right things.
+  // Deleting a folder is NOT a trash move — the folder goes away and its images
+  // return to the main gallery — so the wording must not promise trash restore.
+  const selIds = Array.from(selectedBatchImages);
+  const folderSelCount = selIds.filter(id => id.startsWith('folder-')).length;
+  const imageSelCount = selIds.length - folderSelCount;
+
+  let confirmMsg;
+  if (folderSelCount > 0 && imageSelCount > 0) {
+    confirmMsg = `Delete ${folderSelCount} folder${folderSelCount > 1 ? 's' : ''} and move ${imageSelCount} image${imageSelCount > 1 ? 's' : ''} to trash? Images inside deleted folders move back to the main gallery. Trashed images can be restored from Settings \u2192 Restore Deleted Items.`;
+  } else if (folderSelCount > 0) {
+    confirmMsg = `Delete ${folderSelCount} folder${folderSelCount > 1 ? 's' : ''}? The images inside will move back to the main gallery.`;
+  } else {
+    confirmMsg = `Move ${imageSelCount} selected image${imageSelCount > 1 ? 's' : ''} to trash? They can be restored from Settings \u2192 Restore Deleted Items.`;
+  }
+  const confirmed = await confirm(confirmMsg);
   
   if (!confirmed) return;
   
@@ -3786,31 +3814,33 @@ async function batchDeleteImages() {
     await deleteFolderAndContents(folderId);
   }
   
-  // Show progress
-  const overlay = document.createElement('div');
-  overlay.className = 'batch-progress-overlay';
-  overlay.innerHTML = `
-    <div class="batch-progress-text">Deleting <span id="batch-current">0</span> / ${count}</div>
-    <div class="batch-progress-bar">
-      <div class="batch-progress-fill" id="batch-progress-fill" style="width: 0%"></div>
-    </div>
-  `;
-  document.body.appendChild(overlay);
-  
+  // Show progress (only when there are images to move — folder removal is instant)
   let deleted = 0;
-  
-  for (const imageId of imagesToDelete) {
-    try {
-      await softDeleteImage(imageId);
-      deleted++;
-      document.getElementById('batch-current').textContent = deleted;
-      document.getElementById('batch-progress-fill').style.width = `${(deleted / count) * 100}%`;
-    } catch (error) {
-      console.error(`Failed to delete image ${imageId}:`, error);
+
+  if (imagesToDelete.length > 0) {
+    const overlay = document.createElement('div');
+    overlay.className = 'batch-progress-overlay';
+    overlay.innerHTML = `
+      <div class="batch-progress-text">Deleting <span id="batch-current">0</span> / ${imagesToDelete.length}</div>
+      <div class="batch-progress-bar">
+        <div class="batch-progress-fill" id="batch-progress-fill" style="width: 0%"></div>
+      </div>
+    `;
+    document.body.appendChild(overlay);
+
+    for (const imageId of imagesToDelete) {
+      try {
+        await softDeleteImage(imageId);
+        deleted++;
+        document.getElementById('batch-current').textContent = deleted;
+        document.getElementById('batch-progress-fill').style.width = `${(deleted / imagesToDelete.length) * 100}%`;
+      } catch (error) {
+        console.error(`Failed to delete image ${imageId}:`, error);
+      }
     }
+
+    document.body.removeChild(overlay);
   }
-  
-  document.body.removeChild(overlay);
 
   // Exit batch mode cleanly — set flag first then update UI without toggling
   isBatchMode = false;
@@ -3828,8 +3858,10 @@ async function batchDeleteImages() {
 
   showGallery(true);
 
-  const totalDeleted = deleted + foldersToDelete.length;
-  alert(`${totalDeleted} item${totalDeleted !== 1 ? 's' : ''} deleted successfully.`);
+  const resultParts = [];
+  if (deleted > 0) resultParts.push(`${deleted} image${deleted !== 1 ? 's' : ''} moved to trash`);
+  if (foldersToDelete.length > 0) resultParts.push(`${foldersToDelete.length} folder${foldersToDelete.length !== 1 ? 's' : ''} deleted`);
+  alert(resultParts.length > 0 ? resultParts.join(' and ') + '.' : 'Nothing was deleted.');
 }
 
 function openMultiPresetSelector(imageId) {
@@ -9094,6 +9126,12 @@ const quality = currentResolutionIndex >= 2 ? 0.7 : 0.8;
   // Add to gallery
   addToGallery(dataUrl);
   
+  // NO PRESETS LOADED: nothing to send — the photo was already saved to the
+  // gallery above, so skip the queue entirely (prevents jamming the sync).
+  if (!currentPreset) {
+    return;
+  }
+  
   const queueItem = {
     id: Date.now().toString() + '-' + photoNumber,
     imageBase64: dataUrl,
@@ -9535,7 +9573,7 @@ async function resolveCameraLayerManualSelections() {
 function capturePhoto() {
   if (!stream) return;
   
-  if (isRandomMode) {
+  if (isRandomMode && CAMERA_PRESETS.length > 0) {
     currentPresetIndex = getRandomPresetIndex();
     showStyleReveal(CAMERA_PRESETS[currentPresetIndex].name);
   }
@@ -9754,6 +9792,23 @@ addToGallery(dataUrl);
   const currentPreset = window.voicePreset || CAMERA_PRESETS[currentPresetIndex];
   window.voicePreset = null;
   
+  // NO PRESETS LOADED: there is nothing to send to the AI, and queueing a
+  // photo without a preset used to jam the sync queue permanently. The photo
+  // was already saved to the gallery above, so just say so and stop here —
+  // the same way No Magic Mode saves without sending.
+  if (!currentPreset) {
+    statusElement.textContent = 'Photo saved! (no presets loaded)';
+    if (typeof PluginMessageHandler !== 'undefined') {
+      PluginMessageHandler.postMessage(JSON.stringify({
+        action: 'photo_captured',
+        queued: false,
+        queueLength: photoQueue.length,
+        timestamp: Date.now()
+      }));
+    }
+    return;
+  }
+  
   const queueItem = {
     id: Date.now().toString(),
     imageBase64: dataUrl,
@@ -9901,6 +9956,19 @@ async function syncQueuedPhotos(fromAutoRetry) {
     }
 
     const item = photoQueue[0];
+
+    // SELF-HEAL: an older bug could queue a photo with NO preset attached
+    // (taken when no presets were loaded). There is nothing to send for such
+    // an item — the photo is already in the gallery — so remove it and move
+    // on, instead of letting it error out and block everything behind it
+    // forever. This automatically unjams queues stuck from before this fix.
+    if (!item || !item.preset) {
+      photoQueue.shift();
+      saveQueue();
+      updateQueueDisplay();
+      continue;
+    }
+
     // Update the gallery header (if it's showing) with this preset's name —
     // visual only, mirrors the camera screen's own countdown rhythm.
     updateGallerySubmittingIndicator(item.preset && item.preset.name);
@@ -11122,7 +11190,7 @@ function _resetDbShowConfirm() {
     nomagic:      '• No Magic Mode turned off',
     manualopts:   '• Manually Selected Options turned off',
     masterprompt: '• Master Prompt cleared and disabled',
-    gallery:      '• ⚠️ALL IMAGES PERMANENTLY DELETED'
+    gallery:      '• ⚠️ALL IMAGES AND FOLDERS PERMANENTLY DELETED'
   };
   const lines = ['The following will be permanently reset:\n'];
   Object.entries(map).forEach(([k, v]) => { if (checks[k]) lines.push(v); });
@@ -11406,7 +11474,13 @@ YOU MUST RESTART PROGRAM!`];
     if (checks.gallery) {
       await _deleteAllGalleryImages();
       galleryImages = [];
-      successLines.push('• All gallery images deleted');
+      // Also remove all user-created folders — they live in a separate
+      // storage spot (localStorage), so clearing the image database alone
+      // used to leave empty folder shells behind in the gallery.
+      galleryFolders = [];
+      saveFolders();
+      currentFolderView = null;
+      successLines.push('• All gallery images and folders deleted');
     }
   } catch (e) { errors.push('Gallery: ' + e.message); }
 
