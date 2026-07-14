@@ -8080,7 +8080,6 @@ function endGuidedTour() {
     localStorage.setItem(TOUR_PROGRESS_KEY, tourCurrentStep.toString());
   }
   document.getElementById('guided-tour-overlay').style.display = 'none';
-  document.getElementById('tour-spotlight').style.display = 'none';
   showTutorialSubmenu();
 }
 
