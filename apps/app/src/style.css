@@ -4827,7 +4827,6 @@ button:disabled {
   background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
   color: white;
   box-shadow: 0 2px 4px rgba(76, 175, 80, 0.3);
-  animation: ticketPulse 2s ease-in-out infinite;
 }
 
 /* Pulse animation for UPDATED tickets only */
@@ -6436,4 +6435,25 @@ button, .touchable {
    actually reading it. */
 #import-scroll-container.import-scrolling .preset-ticket-updated {
     animation-play-state: paused;
+}
+
+/* ═══════════════════════════════════
+   PERFORMANCE FIX: Import Presets menu
+   ═══════════════════════════════════ */
+
+/* The menu overlay is already 95% opaque black, and the content panel
+   inside it is solid — yet the device still computes a live 15px blur of
+   whatever sits behind the menu on every frame. That blur is invisible in
+   practice but very expensive, and scrolling a long list INSIDE a
+   backdrop-filtered surface is a worst-case rendering pattern. Removing
+   it looks the same and frees the graphics pipeline. */
+.styles-menu {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+}
+
+/* Import Presets: rows filtered out by the search are hidden, not removed.
+   Showing/hiding existing rows is what makes the search feel instant. */
+#import-presets-list .menu-item.import-row-hidden {
+    display: none !important;
 }

@@ -65,7 +65,7 @@ export function saveDefaultPresetEnabled(enabled) {
 // ===== PRESET UNLOCK GAME =====
 
 const UNLOCK_GAME_KEY = 'r1_preset_unlock_game';
-const STARTER_PRESETS = ['CARICATURE', 'IMPRESSIONISM'];
+const STARTER_PRESETS = ['CARICATURE', 'CLAYMATION', 'IMPRESSIONISM', 'LEGO'];
 
 function loadUnlockState() {
   try {
@@ -452,7 +452,8 @@ export class PresetImporter {
       const cats = Array.isArray(preset.category) ? stripAccents(preset.category.join(' ').toLowerCase()) : '';
       const opts = Array.isArray(preset.options) ? stripAccents(preset.options.map(o => o.text || '').join(' ').toLowerCase()) : '';
       const groupOpts = Array.isArray(preset.optionGroups) ? stripAccents(preset.optionGroups.map(g => (g.title || '') + ' ' + (g.options ? g.options.map(o => o.text || '').join(' ') : '')).join(' ').toLowerCase()) : '';
-      return name + ' ' + message + ' ' + cats + ' ' + opts + ' ' + groupOpts;
+      const addl = stripAccents((preset.additionalInstructions || '').toLowerCase());
+      return name + ' ' + message + ' ' + cats + ' ' + opts + ' ' + groupOpts + ' ' + addl;
     });
   }
 
@@ -533,21 +534,10 @@ export class PresetImporter {
       scrollContainer.style.paddingTop = '0'; // Remove top padding to close gap
       scrollContainer.style.paddingBottom = '22px';
 
-      // Flag the list as "moving" while it scrolls (finger drags, momentum,
-      // and jump-navigation alike). CSS uses this to rest the UPDATED-badge
-      // pulse during motion — dozens of badges animating mid-drag was a big
-      // part of the choppy scrolling on large libraries. The flag clears a
-      // moment after the last scroll tick, so badges resume at rest.
-      let _importScrollIdleTimer = null;
-      scrollContainer.addEventListener('scroll', () => {
-        if (!scrollContainer.classList.contains('import-scrolling')) {
-          scrollContainer.classList.add('import-scrolling');
-        }
-        clearTimeout(_importScrollIdleTimer);
-        _importScrollIdleTimer = setTimeout(() => {
-          scrollContainer.classList.remove('import-scrolling');
-        }, 200);
-      }, { passive: true });
+      // The scroll-time class toggle that used to pause badge pulsing has
+      // been removed along with the pulse animation itself: recalculating
+      // styles across every row the instant a scroll began was itself a
+      // cause of the "stuck" feeling on the first touch-scroll.
 
       // Filter input (sticky at top, immediately below header)
       const filterSection = document.createElement('div');
@@ -685,12 +675,46 @@ export class PresetImporter {
       let _delegatedLongPressTimer = null;
       const LONG_PRESS_MS = 600;
 
+      // Cache each preset's NEW/UPDATED status for the life of this dialog.
+      // Computing it fresh meant thousands of deep text comparisons on every
+      // re-render (typing, clearing the search, select all) — the source of
+      // the freeze when clearing a search on large libraries. The status
+      // cannot change while the dialog is open, so compute it only once.
+      const _ticketStatusCache = new Map();
+      // Names of presets whose first-line reveal is currently open. Lives at
+      // dialog scope so open rows stay open across filter re-renders.
+      const _openPresetNames = new Set();
+      // Set right after a long-press action fires so the click that follows
+      // the finger lift doesn't also toggle the row or its checkbox.
+      let _suppressNextItemClick = false;
+      // Finished row elements, built once per dialog and reused by every
+      // later render. Re-arranging existing rows is what makes typing and
+      // clearing the search fast — instead of re-creating thousands of
+      // nodes, styles and handlers, renders just re-append what exists.
+      const _rowElementCache = new Map();
+      // True once the full list has been built and appended (this happens a
+      // single time, when the dialog opens, behind the loading spinner).
+      // From then on filtering never touches the DOM tree — it only shows
+      // and hides existing rows, exactly like the main menu and gallery
+      // preset searches do, which is why those feel instant.
+      let _allRowsBuilt = false;
+
       presetsList.addEventListener('touchstart', (e) => {
         const item = e.target.closest('.menu-item');
         if (!item) return;
         const preset = _presetsLookup.get(item.dataset.presetName);
         if (!preset) return;
-        _delegatedLongPressTimer = setTimeout(() => { showPreview(preset); }, LONG_PRESS_MS);
+        _delegatedLongPressTimer = setTimeout(() => {
+          if (_openPresetNames.has(preset.name)) {
+            // OPEN row: hard-press reads the preset aloud
+            _suppressNextItemClick = true;
+            setTimeout(() => { _suppressNextItemClick = false; }, 400);
+            this.speakMessage(preset.message);
+          } else {
+            // CLOSED row: hard-press shows the preview image (as before)
+            showPreview(preset);
+          }
+        }, LONG_PRESS_MS);
       }, { passive: true });
 
       presetsList.addEventListener('touchend', () => {
@@ -714,7 +738,15 @@ export class PresetImporter {
         if (!item) return;
         const preset = _presetsLookup.get(item.dataset.presetName);
         if (!preset) return;
-        _delegatedLongPressTimer = setTimeout(() => { showPreview(preset); }, LONG_PRESS_MS);
+        _delegatedLongPressTimer = setTimeout(() => {
+          if (_openPresetNames.has(preset.name)) {
+            _suppressNextItemClick = true;
+            setTimeout(() => { _suppressNextItemClick = false; }, 400);
+            this.speakMessage(preset.message);
+          } else {
+            showPreview(preset);
+          }
+        }, LONG_PRESS_MS);
       });
 
       presetsList.addEventListener('mouseup', () => {
@@ -731,6 +763,22 @@ export class PresetImporter {
         const filteredPresets = this.getFilteredPresets(availablePresets);
         const countElement = document.getElementById('import-preset-count');
         if (countElement) countElement.textContent = filteredPresets.length;
+
+        // FAST PATH — every row already exists in the list (built once when
+        // the dialog opened). Filtering works like the main menu and gallery
+        // preset searches: nothing is created, destroyed or moved; matching
+        // rows are shown and the rest are hidden with a CSS class.
+        if (_allRowsBuilt) {
+          const _visibleNames = new Set(filteredPresets.map(p => p.name));
+          _rowElementCache.forEach((row, name) => {
+            row.classList.toggle('import-row-hidden', !_visibleNames.has(name));
+            if (row._importCheckbox) {
+              row._importCheckbox.checked = this.checkboxStates.get(name) || false;
+            }
+          });
+          updateImportSelection();
+          return;
+        }
 
         // --- Pre-build O(1) lookup maps once per render ---
 
@@ -762,6 +810,17 @@ export class PresetImporter {
         const fragment = document.createDocumentFragment();
 
         filteredPresets.forEach((preset, index) => {
+          // Reuse the finished row if this preset was built before — just
+          // refresh the bits that can change between renders.
+          const _cachedRow = _rowElementCache.get(preset.name);
+          if (_cachedRow) {
+            _cachedRow.dataset.presetIndex = index;
+            if (_cachedRow._importCheckbox) {
+              _cachedRow._importCheckbox.checked = this.checkboxStates.get(preset.name) || false;
+            }
+            fragment.appendChild(_cachedRow);
+            return;
+          }
           const isAlreadyImported = importedMap.has(preset.name);
           const isLocked = !isAlreadyImported && !unlockedNames.has(preset.name) && !permanentlyOwned.has(preset.name) && !preset._sourcePublicBase;
           const existingPreset = importedMap.get(preset.name);
@@ -790,22 +849,47 @@ export class PresetImporter {
           nameRow.textContent = preset.name;
           nameRow.style.cssText = 'font-weight: bold; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; width: 100%; display: flex; align-items: center;';
 
-          const previewRow = document.createElement('span');
-          previewRow.textContent = firstLine;
-          previewRow.style.cssText = 'font-weight: normal; color: #fff; font-size: 10px; width: 100%; white-space: normal; word-break: break-word;';
-          previewRow.className = 'import-preview-row';
-
           nameSpan.appendChild(nameRow);
-          nameSpan.appendChild(previewRow);
 
-          // NEW / UPDATED tickets
+          // Tap-to-reveal first line (accordion, like the gallery preset
+          // lists). The reveal element is created lazily on first open, so
+          // closed rows carry no preview text at all — that is the whole
+          // scrolling win: ~1700 blocks of wrapped text no longer exist.
+          let previewRow = null;
+          const openReveal = () => {
+            if (!previewRow) {
+              previewRow = document.createElement('span');
+              previewRow.textContent = firstLine;
+              previewRow.style.cssText = 'font-weight: normal; color: #fff; font-size: 10px; width: 100%; white-space: normal; word-break: break-word;';
+              previewRow.className = 'import-preview-row';
+              nameSpan.appendChild(previewRow);
+            }
+            previewRow.style.display = '';
+            _openPresetNames.add(preset.name);
+          };
+          const closeReveal = () => {
+            if (previewRow) previewRow.style.display = 'none';
+            _openPresetNames.delete(preset.name);
+          };
+          if (_openPresetNames.has(preset.name)) openReveal();
 
-          if (!existingPreset) {
+          // NEW / UPDATED tickets — status computed once per preset per
+          // dialog session, then reused from the cache on every re-render
+
+          let _ticketStatus = _ticketStatusCache.get(preset.name);
+          if (_ticketStatus === undefined) {
+            if (!existingPreset) _ticketStatus = 'new';
+            else if (presetsAreDifferent(existingPreset, preset)) _ticketStatus = 'updated';
+            else _ticketStatus = '';
+            _ticketStatusCache.set(preset.name, _ticketStatus);
+          }
+
+          if (_ticketStatus === 'new') {
             const ticket = document.createElement('span');
             ticket.className = 'preset-ticket preset-ticket-new';
             ticket.textContent = 'NEW';
             nameRow.appendChild(ticket);
-          } else if (presetsAreDifferent(existingPreset, preset)) {
+          } else if (_ticketStatus === 'updated') {
             const ticket = document.createElement('span');
             ticket.className = 'preset-ticket preset-ticket-updated';
             ticket.textContent = 'UPDATED';
@@ -867,6 +951,11 @@ export class PresetImporter {
 
           checkbox.onclick = (e) => {
             e.stopPropagation();
+            if (_suppressNextItemClick) {
+              _suppressNextItemClick = false;
+              checkbox.checked = this.checkboxStates.get(preset.name) || false;
+              return;
+            }
             const newChecked = checkbox.checked;
             if (!handleLockToggle(newChecked)) {
               checkbox.checked = false;
@@ -878,13 +967,19 @@ export class PresetImporter {
 
           item.onclick = (e) => {
             if (e.target === checkbox) return;
-            const newChecked = !checkbox.checked;
-            if (!handleLockToggle(newChecked)) return;
-            checkbox.checked = newChecked;
-            this.checkboxStates.set(preset.name, newChecked);
-            if (newChecked) this.speakMessage(preset.message);
+            if (_suppressNextItemClick) { _suppressNextItemClick = false; return; }
+            // Tapping the row toggles the first-line reveal open/closed.
+            // Checking a preset for import now happens on the checkbox only,
+            // where the credit logic already lives.
+            if (_openPresetNames.has(preset.name)) {
+              closeReveal();
+            } else {
+              openReveal();
+            }
           };
 
+          item._importCheckbox = checkbox;
+          _rowElementCache.set(preset.name, item);
           fragment.appendChild(item);
         });
 
@@ -892,11 +987,15 @@ export class PresetImporter {
         presetsList.innerHTML = '';
         presetsList.appendChild(fragment);
 
+        // The one-time full build is done; every render from here on uses
+        // the show/hide fast path above.
+        _allRowsBuilt = true;
+
         updateImportSelection();
       };
 
       const updateImportSelection = () => {
-        const items = presetsList.querySelectorAll('.menu-item');
+        const items = presetsList.querySelectorAll('.menu-item:not(.import-row-hidden)');
         items.forEach(item => item.classList.remove('menu-selected'));
 
         if (this.currentImportScrollIndex >= 0 && this.currentImportScrollIndex < items.length) {
@@ -949,6 +1048,14 @@ footerSection.innerHTML = `
       content.appendChild(scrollContainer);
       modal.appendChild(content);
       modal.appendChild(footerSection);
+      // Rest the live camera feed while this dialog is open — decoding and
+      // compositing video frames behind an opaque menu wastes the device's
+      // limited graphics power and makes list scrolling choppier. It resumes
+      // automatically in closeModal on every way out of this dialog.
+      const _cameraVideoEl = document.getElementById('video');
+      const _cameraWasPlaying = !!(_cameraVideoEl && !_cameraVideoEl.paused);
+      if (_cameraWasPlaying) { try { _cameraVideoEl.pause(); } catch (e) {} }
+
       document.body.appendChild(modal);
 
       renderPresetsList();
@@ -1077,6 +1184,10 @@ footerSection.innerHTML = `
         sessionUnlocked.clear();
         this.isImportModalOpen = false;
         this.stopSpeaking();
+        // Wake the camera feed back up (paused while this dialog was open)
+        if (_cameraWasPlaying && _cameraVideoEl) {
+          try { _cameraVideoEl.play().catch(() => {}); } catch (e) {}
+        }
         document.body.removeChild(modal);
       };
 
@@ -1122,7 +1233,7 @@ footerSection.innerHTML = `
 
       // ── Reusable alpha jump functions (used by both double-tap and hard-press) ──
       const _importJumpUp = () => {
-        const items = Array.from(presetsList.querySelectorAll('.menu-item'));
+        const items = Array.from(presetsList.querySelectorAll('.menu-item:not(.import-row-hidden)'));
         if (!items.length) return;
         const idx = Math.max(0, Math.min(this.currentImportScrollIndex, items.length - 1));
         const currentItem = items[idx];
@@ -1153,7 +1264,7 @@ footerSection.innerHTML = `
       };
 
       const _importJumpDown = () => {
-        const items = Array.from(presetsList.querySelectorAll('.menu-item'));
+        const items = Array.from(presetsList.querySelectorAll('.menu-item:not(.import-row-hidden)'));
         if (!items.length) return;
         const idx = Math.max(0, Math.min(this.currentImportScrollIndex, items.length - 1));
         const currentItem = items[idx];
@@ -1186,7 +1297,7 @@ footerSection.innerHTML = `
           importUpCount = 0;
           if (count === 1) {
             scrollContainer.scrollTop = Math.max(0, scrollContainer.scrollTop - scrollContainer.clientHeight);
-            const items = presetsList.querySelectorAll('.menu-item');
+            const items = presetsList.querySelectorAll('.menu-item:not(.import-row-hidden)');
             const containerTop = scrollContainer.getBoundingClientRect().top;
             for (let i = 0; i < items.length; i++) {
               if (items[i].getBoundingClientRect().top >= containerTop) {
@@ -1219,7 +1330,7 @@ footerSection.innerHTML = `
               scrollContainer.scrollHeight - scrollContainer.clientHeight,
               scrollContainer.scrollTop + scrollContainer.clientHeight
             );
-            const items = presetsList.querySelectorAll('.menu-item');
+            const items = presetsList.querySelectorAll('.menu-item:not(.import-row-hidden)');
             const containerTop = scrollContainer.getBoundingClientRect().top;
             for (let i = 0; i < items.length; i++) {
               if (items[i].getBoundingClientRect().top >= containerTop) {
@@ -1232,7 +1343,7 @@ footerSection.innerHTML = `
             _importJumpDown();
           } else {
             scrollContainer.scrollTop = scrollContainer.scrollHeight;
-            const items = presetsList.querySelectorAll('.menu-item');
+            const items = presetsList.querySelectorAll('.menu-item:not(.import-row-hidden)');
             this.currentImportScrollIndex = items.length - 1;
             updateImportSelection();
           }
@@ -1252,14 +1363,14 @@ footerSection.innerHTML = `
       }
 
       this.scrollImportUp = () => {
-        const items = presetsList.querySelectorAll('.menu-item');
+        const items = presetsList.querySelectorAll('.menu-item:not(.import-row-hidden)');
         if (items.length === 0) return;
         this.currentImportScrollIndex = Math.max(0, this.currentImportScrollIndex - 1);
         updateImportSelection();
       };
 
       this.scrollImportDown = () => {
-        const items = presetsList.querySelectorAll('.menu-item');
+        const items = presetsList.querySelectorAll('.menu-item:not(.import-row-hidden)');
         if (items.length === 0) return;
         this.currentImportScrollIndex = Math.min(items.length - 1, this.currentImportScrollIndex + 1);
         updateImportSelection();

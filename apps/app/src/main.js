@@ -2581,6 +2581,7 @@ function populatePresetList() {
       );
       const textMatch = stripAccents(preset.name.toLowerCase()).includes(searchText) ||
              stripAccents((preset.message || '').toLowerCase()).includes(searchText) ||
+             stripAccents((preset.additionalInstructions || '').toLowerCase()).includes(searchText) ||
              categoryMatch || optionsMatch;
       if (!textMatch) return false;
     }
@@ -4274,6 +4275,98 @@ function getDistance(touch1, touch2) {
   const dx = touch1.clientX - touch2.clientX;
   const dy = touch1.clientY - touch2.clientY;
   return Math.sqrt(dx * dx + dy * dy);
+}
+
+// ===== VIEWER SWIPE NAVIGATION =====
+// Swipe UP on the photo = next image, swipe DOWN = previous image.
+// Cycling stays inside the group being viewed: photos inside a folder cycle
+// only within that folder; photos at the root cycle only through root photos.
+// The list follows the same order (and any active date filter) as the gallery
+// grid, and wraps around at the ends. Reuses openImageViewer, so everything
+// that normally happens when opening an image happens here too.
+
+function viewerSwipeNavigate(direction) {
+  // direction: +1 = next, -1 = previous
+  if (currentViewerImageIndex < 0 || currentViewerImageIndex >= galleryImages.length) return;
+  if (window.isCombinedMode) return; // temp combined preview isn't part of a browsable group
+  const currentItem = galleryImages[currentViewerImageIndex];
+
+  // Same images the gallery grid shows for this view (root vs folder),
+  // honoring the active date filter...
+  const viewImages = getImagesInCurrentView().filter(img => {
+    if (!galleryStartDate && !galleryEndDate) return true;
+    const d = new Date(img.timestamp);
+    d.setHours(0, 0, 0, 0);
+    const t = d.getTime();
+    if (galleryStartDate && t < new Date(galleryStartDate + 'T00:00:00').getTime()) return false;
+    if (galleryEndDate && t > new Date(galleryEndDate + 'T00:00:00').getTime()) return false;
+    return true;
+  });
+  // ...in the same order the grid displays them
+  const ordered = gallerySortOrder === 'oldest'
+    ? [...viewImages].sort((a, b) => a.timestamp - b.timestamp)
+    : [...viewImages].sort((a, b) => b.timestamp - a.timestamp);
+
+  if (ordered.length < 2) return; // nothing else to cycle to
+
+  const pos = ordered.findIndex(img => img.id === currentItem.id);
+  if (pos === -1) return; // open image isn't part of this view's list
+
+  const nextPos = (pos + direction + ordered.length) % ordered.length; // wraps at the ends
+  const targetIndex = galleryImages.findIndex(img => img.id === ordered[nextPos].id);
+  if (targetIndex === -1) return;
+
+  openImageViewer(targetIndex);
+}
+
+function setupViewerSwipeNavigation() {
+  const container = document.querySelector('.image-viewer-container');
+  if (!container) return;
+
+  let swipeStartX = 0;
+  let swipeStartY = 0;
+  let swipeValid = false;
+
+  container.addEventListener('touchstart', (e) => {
+    // Only a single finger on an UNZOOMED photo can begin a swipe.
+    // Two fingers = pinch zoom, one finger while zoomed in = pan — both are
+    // handled by setupViewerPinchZoom and are left completely alone here.
+    if (e.touches.length === 1 && viewerZoom === 1) {
+      swipeStartX = e.touches[0].clientX;
+      swipeStartY = e.touches[0].clientY;
+      swipeValid = true;
+    } else {
+      swipeValid = false;
+    }
+  }, { passive: true });
+
+  container.addEventListener('touchmove', (e) => {
+    if (e.touches.length > 1) swipeValid = false; // a pinch began mid-gesture
+  }, { passive: true });
+
+  container.addEventListener('touchend', (e) => {
+    if (e.touches.length > 0) return;      // wait until the last finger lifts
+    if (!swipeValid) return;
+    swipeValid = false;
+    if (viewerZoom !== 1) return;
+
+    const t = e.changedTouches && e.changedTouches[0];
+    if (!t) return;
+    const dx = t.clientX - swipeStartX;
+    const dy = t.clientY - swipeStartY;
+
+    // A deliberate, mostly-vertical swipe: at least 50px of travel and
+    // clearly more vertical than horizontal. Plain taps stay well below
+    // this, so tap behaviors (like toggling the side buttons) are unaffected.
+    if (Math.abs(dy) >= 50 && Math.abs(dy) > Math.abs(dx) * 1.5) {
+      // Keep this swipe from ALSO counting as a tap on the viewer backdrop
+      // (which would flip the side-button carousels in single-tap mode).
+      e.stopPropagation();
+      viewerSwipeNavigate(dy < 0 ? 1 : -1); // up = next, down = previous
+    }
+  }, { passive: true });
+
+  container.addEventListener('touchcancel', () => { swipeValid = false; }, { passive: true });
 }
 
 function updateMenuSelection() {
@@ -6535,7 +6628,14 @@ const allPresets = CAMERA_PRESETS.filter(p => {
     if (_visibleSearchText) {
       const searchText = _visibleSearchText;
       const categoryMatch = preset.category && preset.category.some(cat => stripAccents(cat.toLowerCase()).includes(searchText));
-      const textMatch = stripAccents(preset.name.toLowerCase()).includes(searchText) || categoryMatch;
+      const optionsMatch = (
+        (preset.options && preset.options.some(o => o.text && stripAccents(o.text.toLowerCase()).includes(searchText))) ||
+        (preset.optionGroups && preset.optionGroups.some(g => g.title && stripAccents(g.title.toLowerCase()).includes(searchText) || g.options && g.options.some(o => o.text && stripAccents(o.text.toLowerCase()).includes(searchText))))
+      );
+      const textMatch = stripAccents(preset.name.toLowerCase()).includes(searchText) ||
+             stripAccents((preset.message || '').toLowerCase()).includes(searchText) ||
+             stripAccents((preset.additionalInstructions || '').toLowerCase()).includes(searchText) ||
+             categoryMatch || optionsMatch;
       if (!textMatch) return false;
     }
     
@@ -7970,7 +8070,7 @@ const TOUR_STEPS = [
   { section: 'AI Presets', title: '✨ What Are AI Presets?', get body() { return `Presets are AI transformation instructions. Each one tells the AI how to reimagine your photo — as a comic book cover, oil painting, 3D print, ${totalFactoryPresetCount || 800} styles in all.`; } },
   { section: 'AI Presets', title: '⭐ Favorites', body: 'In the main menu, the visible selected preset is highlighted. Tap the star next to any preset to mark it as a favorite. Favorites are used by Random Mode to choose the presets that will be randomized. If no favorites are chosen, random mode chooses between all visible presets.' },
   { section: 'AI Presets', title: '🔍 Filter Presets', body: 'Use the search box in the main menu to quickly find presets by name or category. Tap a category tag at the bottom to filter by style. Tapping on the x next to the search box removes the keyboard. Double click to clear the text in the search bar.' },
-  { section: 'AI Presets', title: '🔊 Hear Preset Info', body: 'When browsing presets in the Import screen, tap any preset name to hear its description read aloud. Use the mute button in the header to toggle audio on or off.' },
+  { section: 'AI Presets', title: '🔊 Hear Preset Info', body: 'When browsing presets in the Import screen, tap any preset to show the description. With the description visible, hard press the preset to have the description read aloud. Use the mute button in the header to toggle audio on or off.' },
   { section: 'Special Modes', title: '🎯 Special Modes — How to Access', body: 'Both carousels are default visible on the main camera screen. The Special Modes carousel is on the right.  Single click (default) on the main camera screen to hide/reveal the carousel buttons. This may be adjusted in settings.' },
   { section: 'Special Modes', title: '🎲 Random Mode', body: 'Picks a random preset for every photo you take. If you have favorites selected it draws only from those, otherwise from all visible presets.' },
   { section: 'Special Modes', title: '⏱️ Timer Mode', body: 'Set a countdown of 3, 5, or 10 seconds before each shot. Enable repeat mode so it automatically keeps taking photos at a set interval.' },
@@ -7988,7 +8088,7 @@ const TOUR_STEPS = [
   { section: 'Gallery', title: '📁+ New Folder', body: 'Create a new folder to organize your saved images. Name the folder and save. Long press edits name. Images may be moved by selecting image(s) then long pressing the last image.' },
   { section: 'Gallery', title: '🖼️🖼️ Combine Images', body: 'Tap the Select button to enter batch mode. Select two images, then click Combine to create one image. You can apply presets to create combined subjects into one final image using existing presets.' }, 
   { section: 'Gallery', title: '🔀 Sort and Filter', body: 'Use the SORT button — to the right of Start and End — to sort images by Newest First or Oldest First. Filter by date range using the Start and End buttons.' },
-  { section: 'Gallery', title: '🖼️ Image Viewer', body: 'Tap a thumbnail image in the gallery to view it full-screen. The viewer is redesigned to give your photo maximum screen space. Pinch to zoom in and out.' },
+  { section: 'Gallery', title: '🖼️ Image Viewer', body: 'Tap a thumbnail image in the gallery to view it full-screen. The viewer is redesigned to give your photo maximum screen space. Pinch to zoom in and out. Touch swipe up or down to cycle through other images within the gallery root directory or user folder.' },
   { section: 'Gallery', title: '🎨 Applying Presets to Single Image', body: 'After clicking on a single image, Tap LOAD or MULTI to transform a saved image. Click twice on a preset to apply to the image. You can stack multiple transformations. You may also layer up to five presets.' },
   { section: 'Gallery', title: '🏷️ Preset Header', body: 'At the very top of the image viewer a header shows the name of the currently loaded preset. Tap the header to hear the preset name and description.' },
   { section: 'Gallery', title: '🗑️ Delete Button', body: 'The delete button is on the top-left corner of the single image viewer.' },
@@ -8011,7 +8111,7 @@ const TOUR_STEPS = [
   { section: 'Settings', title: '🚫 No Magic Mode', body: 'Disables AI processing and works as a regular camera. Photos save only to the plugin gallery, not to the rabbit hole or magic gallery.' },
   { section: 'Settings', title: '🎛️ Manually Select Options Mode', body: 'When enabled and you choose a preset with options, a popup asks you to pick which option to use rather than a randomized option. Can also be toggled from the OPTIONS button inside the image viewer or on the main camera screen.' },
   { section: 'Settings', title: '🗑️ Restore Deleted Items', body: 'Restore custom or modified presets (Presets tab), images (Images tab)  and/or master prompts (Master tab) deleted from their sections. Will not restore presets that were deleted using the Reset Database.' },
-  { section: 'Settings', title: '📥 Import Presets (Starting Style)', body: 'You begin with two unlocked presets-Caricature and Impressionism.  Import them from the Import Presets section to capture photos and begin the fun journey of unlocking your imported artistic library.' },
+  { section: 'Settings', title: '📥 Import Presets (Starting Style)', body: 'You begin with four unlocked presets-Caricature, Claymation, Impressionism and LEGO. Import them from the Import Presets section to capture photos and begin the fun journey of unlocking your imported artistic library.' },
   { section: 'Settings', title: '📥 Import Presets (Import Art)', body: 'Browse our external library in Settings. Check individual unlocked styles or use the All checkmark to select all  presets to import (assuming you have the credits).' },
   { section: 'Settings', title: '📥 Import Presets (New/Updated Presets)', body: 'Button indicates if there are any new/updated presets. Any updates are flagged so you can re-import changed/updated presets that you own. If you do not import updated presets, the preset will not be updated. New presets appear locked.' },
   { section: 'Settings', title: '📥 Import Presets (Unlock)', body: 'Imported styles first appear locked. To unlock one, you need a credit. Take a photo with any preset you own, or reprompt a gallery image, to earn one credit. Each unique preset earns one credit — no repeats. Use credits to unlock new presets from the import list. Check regularly for newly added styles.' },
@@ -8022,7 +8122,7 @@ const TOUR_STEPS = [
   { section: 'Settings', title: '📂 Preset File Settings (Correct Format)', body: 'Custom JSON files must be a preset matching the built-in format. To include preview images in a repository, create folder named public at same level as JSON file. Name image to match preset name, replace spaces and special characters with underscores. Save as PNG.' },
   { section: 'Settings', title: '📂 Preset File Settings (External Builder)', body: 'The custom JSON file must be a valid preset array matching the built-in format. We recommend using the Magic Kamera front end Preset builder at - https://jorge-e-t.github.io/MKPresetBuilder/' },
   { section: 'Settings', title: '📂 Preset File Settings (Managing Sources)', body: 'Each source has an ON and OFF toggle and EDIT button. The built-in library toggle appears when one custom source is active. Turning off custom sources re-enables the default. Use EDIT to change name or URL without deleting. The X button removes source entirely.' },
-  { section: 'Settings', title: '📂 Preset File Settings (Managing Preview Images)', body: 'Hard press preset in a preset list outside of the Import section to preview. Tap orange plus button to pick replacement image from your preview gallery. To revert to the original or remove a custom image, tap the top left undo arrow button.' },
+  { section: 'Settings', title: '📂 Preset File Settings (Managing Preview Images)', body: 'Hard press preset in a preset list to preview. Tap orange plus button to pick replacement image from your preview gallery. To revert to the original or remove a custom image, tap the top left undo arrow button.' },
   { section: 'Settings', title: '⚙️ Button Settings', body: 'Includes the settings for the main camera screen carousel and the Gallery Image Viewer screen carousel buttons. You may select different colors for buttons and text in the main camera and gallery image viewer screens. You may also select opacity (default solid) and set how many taps to hide/reveal the buttons.' },
   { section: 'Settings', title: '📖 Tutorial', body: 'Last section in the settings. This area includes this audio tour. It also includes an indexed tutorial with a search engine. Type to search or click on the search field and press the side button to speak the query.' },
   { section: 'Tips and Advanced', title: '🏷️ Category Searching', body: 'Every preset has categories. When a preset is highlighted in the Visible Presets menu, its categories appear at the bottom. Tap a category to filter all presets in that group.' },
@@ -12904,6 +13004,7 @@ function _doPopulateStylesList(list, preserveScroll) {
         );
         const textMatch = stripAccents(preset.name.toLowerCase()).includes(searchText) ||
                          stripAccents((preset.message || '').toLowerCase()).includes(searchText) ||
+                         stripAccents((preset.additionalInstructions || '').toLowerCase()).includes(searchText) ||
                          categoryMatch || optionsMatch;
         if (!textMatch) return false;
       }
@@ -12923,6 +13024,7 @@ function _doPopulateStylesList(list, preserveScroll) {
         );
         const textMatch = stripAccents(preset.name.toLowerCase()).includes(searchText) ||
                          stripAccents((preset.message || '').toLowerCase()).includes(searchText) ||
+                         stripAccents((preset.additionalInstructions || '').toLowerCase()).includes(searchText) ||
                          categoryMatch || optionsMatch;
         if (!textMatch) return false;
       }
@@ -16920,6 +17022,7 @@ const result = await presetImporter.import();
     console.error('Failed to initialize database:', err);
   });
   setupViewerPinchZoom();
+  setupViewerSwipeNavigation();
 
 });
 
