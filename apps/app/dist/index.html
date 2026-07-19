@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>Magic Kamera</title>
-  <script type="module" crossorigin src="./assets/main-BJwAtWuD.js"></script>
+  <script type="module" crossorigin src="./assets/main-DuFdKsSN.js"></script>
   <link rel="stylesheet" crossorigin href="./assets/main-c93uO9fa.css">
 </head>
 <body>
@@ -1400,6 +1400,9 @@
                          <p class="tutorial-text">
                             <strong>Program not resetting database:</strong> After you reset any portion of the database, you MUST restart the program for the settings to be reset. Otherwise, you will get incorrect settings or visual inconsistencies. 
                         </p>
+                         <p class="tutorial-text">
+                            <strong>Image import failed:</strong> When importing images using the QR code, you may get an import failed error importing said image. This may be for several reasons. Sometimes the qr code link expired, the image is unsuitable, or the download services are unavailable. However, try refreshing the qr code link or resizing the image to different vertical/horizontal dimensions and try again. Remember: Before generating the QR code, paste the link into a browser. If the browser shows ONLY the image (no webpage around it) - it will work! If it either shows no image or a webpage with the image embedded - it won't work!
+                        </p>
                         <p class="tutorial-text">
                             <strong>AI transformation not working:</strong> If you took a picture and the rabbit did not respond indicating picture is being transformed/prepared, first check your settings to see if NO MAGIC mode is enabled. Disable if you want the Magic to happen. If this is not the solution, check your network connections. <br>
 All of the presets are optimized to avoid "camera ran dry" or "content filter" issues.  However, if you get a camera ran dry or content filter message-sometimes it helps re-prompting it over and over until you break through the content filter barrier. You may also edit the prompt (avoid using offensive language, and trademark/copyrighted words) to make it content filter friendly. 
@@ -1938,7 +1941,22 @@ All of the presets are optimized to avoid "camera ran dry" or "content filter" i
         <span class="alpha-overlay-letter">A</span>
     </div>
 
-    <script src="./qrcode.min.js"></script>
+<script src="./qrcode.min.js"></script>
     <script src="./jsQR.js"></script>
+    <script>
+      // FAILSAFE: if the local QR libraries didn't load, fetch each one from
+      // its original CDN. The app only needs these when a QR feature is
+      // actually used, so a slightly late fallback load is safe.
+      (function () {
+        function fallback(globalName, url) {
+          if (window[globalName] !== undefined) return;
+          var s = document.createElement('script');
+          s.src = url;
+          document.head.appendChild(s);
+        }
+        fallback('QRCode', 'https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js');
+        fallback('jsQR', 'https://unpkg.com/jsqr@1.4.0/dist/jsQR.js');
+      })();
+    </script>
 </body>
 </html>
