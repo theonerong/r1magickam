@@ -8083,7 +8083,7 @@ const TOUR_STEPS = [
   { section: 'Gallery', title: '🖼️ Gallery Activities', body: 'Within the gallery there are thumbnails of captured images. You can either select multiple images to apply a preset, or select a single image to either edit, export or apply one or several presets.' },
   { section: 'Uploading Images', title: '📥 Importing External Images', body: 'In the gallery, you may also bring any image from the web into the gallery using a QR code. Upload the image to catbox.moe, copy the direct link, and generate a QR code at qr-code-generator.com.' },
   { section: 'Uploading Images', title: '📷 Scanning the QR Code', body: 'In the gallery, press Import then Scan QR Code. Point your R1 camera at the QR code and wait. The image will be automatically saved to your gallery.' },
-  { section: 'Uploading Images', title: '⚠️ Verify Your Link First', body: 'Before making the QR code, paste the link into a browser. If it shows only the image with nothing around it, it will work. If it shows a webpage with the image embedded, it will not work.' },
+  { section: 'Uploading Images', title: '⚠️ Verify Your Link First ⚠️', body: 'Before making the QR code, paste the link into a browser. If it shows only the image with nothing around it, it will work. If it shows a blank page or a webpage with the image embedded, it will not work.' },
   { section: 'Gallery', title: '☑️ Batch Operations', body: 'Tap the Select button to enter batch mode. Select multiple images, then apply one preset to all of them or delete them in bulk. If only two are selected, you may also combine them. Always tap DONE when finished.' },
   { section: 'Gallery', title: '📁+ New Folder', body: 'Create a new folder to organize your saved images. Name the folder and save. Long press edits name. Images may be moved by selecting image(s) then long pressing the last image.' },
   { section: 'Gallery', title: '🖼️🖼️ Combine Images', body: 'Tap the Select button to enter batch mode. Select two images, then click Combine to create one image. You can apply presets to create combined subjects into one final image using existing presets.' }, 
@@ -8136,6 +8136,7 @@ const TOUR_STEPS = [
   { section: 'Tips and Advanced', title: '↑↓ Jump Navigation (Settings)', body: 'In the settings submenu, clicking the up/down arrows once moves one setting. Double-clicking jumps all the way to the top or bottom of the list.' },
   { section: 'Troubleshooting', title: '❌ Camera access denied', body: 'This error will appear at the bottom of your main camera screen if you do not have any active presets, either imported or made with the preset builder.' },
   { section: 'Troubleshooting', title: '❌ Image stuck in queue status', body: 'This error will occur if you attempt to take a picture without a preset in your menu preset list. To clear, go to Reset Database in the settings submenu. Click the Photo Queue button and then click apply.' },
+  { section: 'Troubleshooting', title: '❌ Image import failed', body: 'This error may appear when importing images using the QR code. Causes: the qr code link expired, the download services are unavailable, or the image is unsuitable as sized. Refresh the link or resize the image to different dimensions and retry.' },
   { section: 'Done!', title: '🎉 Tour Complete!', body: 'That\'s Magic Kamera. Now go make magic! This tour or the text tutorial in this menu is here if you need a refresher. If you come across The One Ron G, The One Hashtag Cyber or The One Rabbit Jesus, tell them you enjoy this program.' },
 ];
 
@@ -17037,6 +17038,12 @@ window.startGuidedTour = startGuidedTour;
 
 // Upload image to gofile.io
 async function uploadViewerImage() {
+  // FAILSAFE: if the QRCode library never loaded, say so instead of
+  // uploading an image we cannot turn into a code.
+  if (typeof QRCode !== 'function') {
+    showGalleryStatusMessage('QR library failed to load — cannot create export code', 'error', 4000);
+    return;
+  }
   if (currentViewerImageIndex < 0) return;
   
   const statusElement = document.getElementById('status');
@@ -17200,7 +17207,7 @@ async function importPreviewImageFromQR(url) {
       'https://api.codetabs.com/v1/proxy?quest='
     ];
 
-    let response = null;
+    let blob = null;
     for (let i = 0; i < proxies.length; i++) {
       try {
         const fetchUrl = proxies[i] ? proxies[i] + encodeURIComponent(imageUrl) : imageUrl;
@@ -17208,16 +17215,16 @@ async function importPreviewImageFromQR(url) {
         const timeoutId = setTimeout(() => controller.abort(), 20000);
         const res = await fetch(fetchUrl, { signal: controller.signal });
         clearTimeout(timeoutId);
-        if (res.ok) { response = res; break; }
+        if (res.ok) {
+          // Only accept real image bytes — a proxy's OK-shaped error page
+          // must not end the climb (see blobLooksLikeImage).
+          const candidate = await res.blob();
+          if (await blobLooksLikeImage(candidate)) { blob = candidate; break; }
+        }
       } catch (e) { continue; }
     }
 
-    if (!response || !response.ok) throw new Error('All download methods failed. Check the URL and try again.');
-
-    let blob = await response.blob();
-    const isImageType = blob.type.startsWith('image/');
-    const isOctetStream = blob.type === 'application/octet-stream' || blob.type === '';
-    if (blob.type && !isImageType && !isOctetStream) throw new Error('Not an image file: ' + blob.type);
+    if (!blob) throw new Error('All download methods failed — the link may be expired, or the download services are unavailable. Check the URL and try again.');
 
     // Resize to a reasonable preview size
     const previewResizeResult = await resizeAndCompressImage(blob, 800, 800, 0.85);
@@ -17620,6 +17627,12 @@ function stopQRDetection() {
 
 // Detect QR code in video stream
 function detectQRCode() {
+  // FAILSAFE: if the jsQR library never loaded, say so on the scanner screen
+  // instead of silently scanning forever and never detecting anything.
+  if (typeof jsQR !== 'function') {
+    updateQRScannerStatus('QR library failed to load — cannot scan', 'error');
+    return;
+  }
   const scannerVideo = document.getElementById('qr-scanner-video');
   if (!scannerVideo || scannerVideo.readyState !== scannerVideo.HAVE_ENOUGH_DATA) return;
   
@@ -17750,6 +17763,24 @@ async function resizeAndCompressImage(blob, maxWidth = 640, maxHeight = 480, qua
   });
 }
 
+// Returns true only if the blob's first bytes carry a real image signature
+// (PNG, JPEG, GIF, WEBP, or BMP). Free download proxies often answer
+// "200 OK" with an HTML or JSON error page — those must count as failures,
+// not as downloads. Bytes cannot lie about what they are.
+async function blobLooksLikeImage(blob) {
+  if (!blob || blob.size < 12) return false;
+  try {
+    const b = new Uint8Array(await blob.slice(0, 12).arrayBuffer());
+    if (b[0] === 0x89 && b[1] === 0x50 && b[2] === 0x4E && b[3] === 0x47) return true; // PNG
+    if (b[0] === 0xFF && b[1] === 0xD8 && b[2] === 0xFF) return true;                  // JPEG
+    if (b[0] === 0x47 && b[1] === 0x49 && b[2] === 0x46) return true;                  // GIF
+    if (b[0] === 0x52 && b[1] === 0x49 && b[2] === 0x46 && b[3] === 0x46 &&
+        b[8] === 0x57 && b[9] === 0x45 && b[10] === 0x42 && b[11] === 0x50) return true; // WEBP
+    if (b[0] === 0x42 && b[1] === 0x4D) return true;                                   // BMP
+    return false;
+  } catch (e) { return false; }
+}
+
 // Import image from QR code
 async function importFromQRCode() {
   if (!lastDetectedQR) {
@@ -17773,7 +17804,8 @@ async function importFromQRCode() {
       'https://api.codetabs.com/v1/proxy?quest='   // Generic CORS proxy
     ];
 
-    let response = null;
+    let blob = null;
+    const verdicts = [];
 
     for (let i = 0; i < proxies.length; i++) {
       try {
@@ -17790,31 +17822,41 @@ async function importFromQRCode() {
         clearTimeout(timeoutId);
 
         if (res.ok) {
-          response = res;
-          updateQRScannerStatus('Download successful!', 'success');
-          break;
+          // "200 OK" is not proof of success: free proxies often answer OK
+          // with an HTML or JSON error page. Only accept real image bytes —
+          // otherwise keep climbing the ladder to the next method.
+          const candidate = await res.blob();
+          if (await blobLooksLikeImage(candidate)) {
+            blob = candidate;
+            updateQRScannerStatus('Download successful!', 'success');
+            break;
+          }
+          // Record what this method actually returned, for the failure toast
+          let kind = 'notimg';
+          try {
+            const b0 = new Uint8Array(await candidate.slice(0, 1).arrayBuffer())[0];
+            if (candidate.size === 0) kind = 'empty';
+            else if (b0 === 0x3C) kind = 'html';
+            else if (b0 === 0x7B || b0 === 0x5B) kind = 'json';
+          } catch (e) {}
+          verdicts.push((i + 1) + ':' + kind + Math.round(candidate.size / 1024) + 'KB');
+        } else {
+          verdicts.push((i + 1) + ':http' + res.status);
         }
       } catch (error) {
+        verdicts.push((i + 1) + ':' + (error && error.name === 'AbortError' ? 'timeout' : 'net'));
         continue; // Try next proxy
       }
     }
 
-    if (!response || !response.ok) {
-      throw new Error('All download methods failed. Check the URL and try again.');
+    if (!blob) {
+      throw new Error('All download methods failed — the link may be expired, or the download services are unavailable. [' + verdicts.join(' ') + ']');
     }
 
     updateQRScannerStatus('Reading image data...', '');
-    let blob = await response.blob();
 
     const originalSize = Math.round(blob.size / 1024);
     updateQRScannerStatus('Original size: ' + originalSize + 'KB', '');
-
-    // Accept image types and octet-stream (some proxies strip content-type)
-    const isImageType = blob.type.startsWith('image/');
-    const isOctetStream = blob.type === 'application/octet-stream' || blob.type === '';
-    if (blob.type && !isImageType && !isOctetStream) {
-      throw new Error('Not an image file: ' + blob.type);
-    }
 
     updateQRScannerStatus('Optimizing image...', '');
     const importRes = IMPORT_RESOLUTION_OPTIONS[currentImportResolutionIndex];
