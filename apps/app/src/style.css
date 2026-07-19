@@ -6457,3 +6457,11 @@ button, .touchable {
 #import-presets-list .menu-item.import-row-hidden {
     display: none !important;
 }
+
+/* Audio tour: the sound button pulses while speech is OFF, cueing the user
+   to press it. It stops pulsing and turns solid orange while speech is ON
+   (state handled in updateTourSoundButton). */
+@keyframes tourSoundPulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(254, 95, 0, 0.6); }
+    50%      { box-shadow: 0 0 0 6px rgba(254, 95, 0, 0); }
+}

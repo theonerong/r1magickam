@@ -8060,7 +8060,7 @@ let tourCurrentStep = 0;
 let tourActive = false;
 
 const TOUR_STEPS = [
-  { section: 'Welcome', title: '👋 Welcome to the Audio Tour!', body: 'This tour walks you through every feature of Magic Kamera. Use Next and Back or scroll wheel to navigate. Pressing the side button advances the tour. Tap Skip Tour to exit. Program saves your position.' },
+  { section: 'Welcome', title: '👋 Welcome to the Audio Tour!', body: 'This tour walks you through every feature of Magic Kamera. Use Next and Back to navigate. The scroll wheel or touch screen scrolls the text. Pressing the side button or sound button reads the text of the current step. Tap Skip Tour to exit. Program saves your position.' },
   { section: 'Basic Controls', title: '📸 Side Button — Take a Photo', body: 'Press the side button on your R1 to capture a photo. It is sent for AI transformation using the visible selected preset. You may also speak your preset with a long press.' },
   { section: 'Basic Controls', title: '🔄 Scroll Wheel — Change Presets', get body() { return `Rotate the scroll wheel up or down to cycle through all ${totalFactoryPresetCount || 800} unlocked visible AI presets. The current preset name is shown at the bottom of the screen.`; } },
   { section: 'Basic Controls', title: '📷 Camera Switch Button', body: 'Tap the camera icon to toggle between front selfie and back camera at any time before taking a photo.' },
@@ -8140,7 +8140,29 @@ const TOUR_STEPS = [
   { section: 'Done!', title: '🎉 Tour Complete!', body: 'That\'s Magic Kamera. Now go make magic! This tour or the text tutorial in this menu is here if you need a refresher. If you come across The One Ron G, The One Hashtag Cyber or The One Rabbit Jesus, tell them you enjoy this program.' },
 ];
 
+let tourSpeaking = false;
+
+// Repaints the sound button to match tourSpeaking: solid orange while ON,
+// dark + pulsing while OFF (a hint to press it). Visual only.
+function updateTourSoundButton() {
+  const btn = document.getElementById('tour-btn-sound');
+  if (!btn) return;
+  if (tourSpeaking) {
+    btn.style.background = '#FE5F00';
+    btn.style.color = '#000';
+    btn.style.border = '1px solid #FE5F00';
+    btn.style.animation = 'none';
+  } else {
+    btn.style.background = '#222';
+    btn.style.color = '#fff';
+    btn.style.border = '1px solid #444';
+    btn.style.animation = 'tourSoundPulse 1.4s ease-in-out infinite';
+  }
+}
+
 function tourSpeak(text) {
+  tourSpeaking = true;
+  updateTourSoundButton();
   if (typeof PluginMessageHandler !== 'undefined') {
     PluginMessageHandler.postMessage(JSON.stringify({
       message: text,
@@ -8151,13 +8173,29 @@ function tourSpeak(text) {
     const utterance = new SpeechSynthesisUtterance(text);
     utterance.rate = 0.9;
     utterance.pitch = 1.0;
+    // When speech finishes or stops on its own, flip the button back to OFF.
+    utterance.onend = () => { tourSpeaking = false; updateTourSoundButton(); };
+    utterance.oncancel = () => { tourSpeaking = false; updateTourSoundButton(); };
     window.speechSynthesis.speak(utterance);
   }
 }
 
 function tourStopSpeaking() {
+  tourSpeaking = false;
+  updateTourSoundButton();
   if (window.speechSynthesis) {
     window.speechSynthesis.cancel();
+  }
+}
+
+// One press = toggle speech for the current step (used by both the on-screen
+// sound button and the R1 side button).
+function tourToggleSpeak() {
+  if (tourSpeaking) {
+    tourStopSpeaking();
+  } else {
+    const step = TOUR_STEPS[tourCurrentStep];
+    if (step) tourSpeak(step.title.replace(/[\p{Emoji}]/gu, '') + '. ' + step.body);
   }
 }
 
@@ -8218,9 +8256,10 @@ function renderTourStep(speak) {
   const soundBtn = document.getElementById('tour-btn-sound');
   if (soundBtn) {
     soundBtn.onclick = () => {
-      tourSpeak(step.title.replace(/[\p{Emoji}]/gu, '') + '. ' + step.body);
+      tourToggleSpeak();
     };
   }
+  updateTourSoundButton();
 
   const nextBtn = document.getElementById('tour-btn-next');
   if (nextBtn) nextBtn.textContent = tourCurrentStep === total - 1 ? 'Finish ✓' : 'Next ›';
@@ -10261,9 +10300,10 @@ function captureRawPhotoDataUrl() {
 window.addEventListener('sideClick', () => {
   console.log('Side button pressed');
 
-  // Block side button during guided tour — advance to next step instead
+  // Side button during guided tour — toggle speech for the current step.
+  // (Navigation is on-screen Back/Next; the scroll wheel scrolls the text.)
   if (tourActive) {
-    tourNext();
+    tourToggleSpeak();
     return;
   }
 
@@ -10541,9 +10581,10 @@ window.addEventListener('scrollUp', () => {
     return;
   }
 
-  // Guided tour
+  // Guided tour — let the wheel scroll the text box, don't change steps
   if (tourActive) {
-    tourBack();
+    const _tb = document.getElementById('tour-card-body');
+    if (_tb) _tb.scrollTop = Math.max(0, _tb.scrollTop - 80);
     return;
   }
 
@@ -10713,9 +10754,10 @@ window.addEventListener('scrollDown', () => {
     return;
   }
 
-  // Guided tour
+  // Guided tour — let the wheel scroll the text box, don't change steps
   if (tourActive) {
-    tourNext();
+    const _tb = document.getElementById('tour-card-body');
+    if (_tb) _tb.scrollTop = Math.min(_tb.scrollHeight - _tb.clientHeight, _tb.scrollTop + 80);
     return;
   }
 
