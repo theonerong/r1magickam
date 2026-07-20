@@ -556,6 +556,47 @@ let editingStyleIndex = -1;
 let isOnline = navigator.onLine;
 let photoQueue = [];
 let isSyncing = false;
+
+// ── DEFERRED CREDIT CELEBRATION ──
+// Credits are earned (banked to storage) the instant a preset is used, online
+// or offline. But the *celebration* (chime + popup) is deferred: it fires only
+// once the photos that earned it have actually SENT — i.e. when the sync queue
+// fully drains. This tally accumulates newly-earned credits until then, and
+// survives app restarts so a credit earned while offline still gets celebrated
+// on the next successful sync. Choice: all pending credits show as ONE toast.
+const PENDING_CREDIT_KEY = 'r1_pending_credit_celebration';
+function addPendingCreditCelebration(count) {
+  if (!count || count < 1) return;
+  let cur = 0;
+  try { cur = parseInt(localStorage.getItem(PENDING_CREDIT_KEY) || '0', 10) || 0; } catch (e) {}
+  try { localStorage.setItem(PENDING_CREDIT_KEY, String(cur + count)); } catch (e) {}
+}
+// Shows the combined celebration for everything that just sent, then clears the
+// tally. Uses the camera-screen toast if the gallery viewer isn't open, or the
+// gallery flash if it is — so the message matches whatever screen you're on.
+function flushPendingCreditCelebration() {
+  let pending = 0;
+  try { pending = parseInt(localStorage.getItem(PENDING_CREDIT_KEY) || '0', 10) || 0; } catch (e) {}
+  if (pending < 1) return;
+  try { localStorage.removeItem(PENDING_CREDIT_KEY); } catch (e) {}
+  const total = getCredits();
+  const msg = `🪙 ${pending > 1 ? pending + ' Credits' : 'Credit'} Earned!\n(${total} total)`;
+  const creditsEl = document.getElementById('import-credits-display');
+  if (creditsEl) creditsEl.textContent = `Credits: ${total}`;
+  playTaDaSound();
+  const viewer = document.getElementById('image-viewer');
+  const viewerOpen = viewer && viewer.style.display !== 'none' && viewer.style.display !== '';
+  if (viewerOpen && typeof showGalleryCreditFlash === 'function') {
+    showGalleryCreditFlash(msg);
+  } else if (typeof showStyleReveal === 'function') {
+    showStyleReveal(msg);
+    if (statusElement) {
+      const prev = statusElement.textContent;
+      statusElement.textContent = `🪙 ${pending > 1 ? pending + ' credits' : 'credit'} earned! You have ${total} credit${total !== 1 ? 's' : ''}`;
+      setTimeout(() => { if (statusElement) statusElement.textContent = prev || ''; }, 4000);
+    }
+  }
+}
 let _connectionMonitoringActive = false;
 
 // Scroll debouncing variables
@@ -2788,10 +2829,8 @@ async function submitMagicTransform() {
         if (totalNewCredits > 0) {
           const creditsEl = document.getElementById('import-credits-display');
           if (creditsEl) creditsEl.textContent = `Credits: ${getCredits()}`;
-          setTimeout(() => {
-            const newTotal = getCredits();
-            showGalleryCreditFlash(`🪙 ${totalNewCredits > 1 ? totalNewCredits + ' Credits' : 'Credit'} Earned!\n(${newTotal} total)`);
-          }, 300);
+          // Defer the celebration until these photos actually send.
+          addPendingCreditCelebration(totalNewCredits);
         }
       }
     } catch (e) { /* non-critical */ }
@@ -2875,10 +2914,8 @@ async function submitMagicTransform() {
         if (totalNewCredits > 0) {
           const creditsEl = document.getElementById('import-credits-display');
           if (creditsEl) creditsEl.textContent = `Credits: ${getCredits()}`;
-          setTimeout(() => {
-            const newTotal = getCredits();
-            showGalleryCreditFlash(`🪙 ${totalNewCredits > 1 ? totalNewCredits + ' Credits' : 'Credit'} Earned!\n(${newTotal} total)`);
-          }, 300);
+          // Defer the celebration until these photos actually send.
+          addPendingCreditCelebration(totalNewCredits);
         }
       }
     } catch (e) { /* non-critical */ }
@@ -2996,10 +3033,8 @@ async function submitMagicTransform() {
       if (credited) {
         const creditsEl = document.getElementById('import-credits-display');
         if (creditsEl) creditsEl.textContent = `Credits: ${getCredits()}`;
-        setTimeout(() => {
-          const newTotal = getCredits();
-          showGalleryCreditFlash(`🪙 Credit Earned!\n(${newTotal} total)`);
-        }, 300);
+        // Defer the celebration until this photo actually sends.
+        addPendingCreditCelebration(1);
       }
     }
   } catch (e) { /* non-critical */ }
@@ -4170,10 +4205,8 @@ async function applyMultiplePresets() {
       if (totalNewCredits > 0) {
         const creditsEl = document.getElementById('import-credits-display');
         if (creditsEl) creditsEl.textContent = `Credits: ${getCredits()}`;
-        setTimeout(() => {
-          const newTotal = getCredits();
-          showGalleryCreditFlash(`🪙 ${totalNewCredits > 1 ? totalNewCredits + ' Credits' : 'Credit'} Earned!\n(${newTotal} total)`);
-        }, 300);
+        // Defer the celebration until these photos actually send.
+        addPendingCreditCelebration(totalNewCredits);
       }
     }
   } catch (e) { /* non-critical */ }
@@ -7460,10 +7493,8 @@ async function applyGalleryLayerPresets() {
         if (_layerNewCredits > 0) {
           const _layerCreditsEl = document.getElementById('import-credits-display');
           if (_layerCreditsEl) _layerCreditsEl.textContent = `Credits: ${getCredits()}`;
-          setTimeout(() => {
-            const _layerTotal = getCredits();
-            showGalleryCreditFlash(`🪙 ${_layerNewCredits > 1 ? _layerNewCredits + ' Credits' : 'Credit'} Earned!\n(${_layerTotal} total)`);
-          }, 300);
+          // Defer the celebration until these photos actually send.
+          addPendingCreditCelebration(_layerNewCredits);
         }
       }
     } catch (e) { /* non-critical */ }
@@ -8058,6 +8089,8 @@ function updateTutorialGlossarySelection() {
 
 let tourCurrentStep = 0;
 let tourActive = false;
+let tourLaunchedFromSplash = false; // true when the tour was opened from the splash screen
+let _splashLaunchPending = false;   // one-shot: set by the splash button just before it launches the tour
 
 const TOUR_STEPS = [
   { section: 'Welcome', title: '👋 Welcome to the Audio Tour!', body: 'This tour walks you through every feature of Magic Kamera. Use Next and Back to navigate. The scroll wheel or touch screen scrolls the text. Pressing the side button or sound button reads the text of the current step. Tap Skip Tour to exit. Program saves your position.' },
@@ -8200,11 +8233,23 @@ function tourToggleSpeak() {
 }
 
 function startGuidedTour() {
+  // If this call was NOT flagged as coming from the splash button, it came
+  // from the tutorial (including the button's inline onclick), so exit should
+  // return to the tutorial. The splash handler sets _splashLaunchPending true
+  // right before calling; consume it here so the flag is correct either way.
+  tourLaunchedFromSplash = _splashLaunchPending;
+  _splashLaunchPending = false;
   const saved = localStorage.getItem(TOUR_PROGRESS_KEY);
   tourCurrentStep = saved ? parseInt(saved, 10) : 0;
   if (isNaN(tourCurrentStep) || tourCurrentStep >= TOUR_STEPS.length) tourCurrentStep = 0;
   tourActive = true;
-  hideTutorialSubmenu();
+  // Hide the tutorial submenu element directly. We must NOT call
+  // hideTutorialSubmenu() here — it cascades into showSettingsSubmenu(),
+  // which would stage the settings screen behind the tour overlay and make
+  // exit land on settings instead of where the user actually came from.
+  const _tsub = document.getElementById('tutorial-submenu');
+  if (_tsub) _tsub.style.display = 'none';
+  isTutorialSubmenuOpen = false;
   document.getElementById('guided-tour-overlay').style.display = 'block';
   setTimeout(() => { renderTourStep(false); }, 300);
 }
@@ -8219,7 +8264,19 @@ function endGuidedTour() {
     localStorage.setItem(TOUR_PROGRESS_KEY, tourCurrentStep.toString());
   }
   document.getElementById('guided-tour-overlay').style.display = 'none';
-  showTutorialSubmenu();
+  if (tourLaunchedFromSplash) {
+    tourLaunchedFromSplash = false;
+    // Came from the splash screen — return there untouched, so the user can
+    // press Start normally (which runs the real camera init and removes the
+    // splash cleanly). Do NOT open the tutorial menu in this case.
+    const _ss = document.getElementById('start-screen');
+    // Use 'flex' (not 'block') — the splash centers its camera animation with
+    // display:flex; align-items:center. An inline 'block' would override that
+    // and shove the animation to the left edge.
+    if (_ss) _ss.style.display = 'flex';
+  } else {
+    showTutorialSubmenu();
+  }
 }
 
 function tourNext() {
@@ -9839,16 +9896,8 @@ addToGallery(dataUrl);
         }
 
         if (totalNewCredits > 0) {
-          playTaDaSound();
-          const newTotal = getCredits();
-          setTimeout(() => {
-            showStyleReveal(`🪙 ${totalNewCredits > 1 ? totalNewCredits + ' Credits' : 'Credit'} Earned!\n(${newTotal} total)`);
-            if (statusElement) {
-              const prev = statusElement.textContent;
-              statusElement.textContent = `🪙 Credit${totalNewCredits > 1 ? 's' : ''} earned! You have ${newTotal} credit${newTotal !== 1 ? 's' : ''}`;
-              setTimeout(() => { statusElement.textContent = prev || ''; }, 4000);
-            }
-          }, 1800);
+          // Defer the celebration until this photo actually sends.
+          addPendingCreditCelebration(totalNewCredits);
         }
       }
     } catch (e) { /* non-critical, ignore errors */ }
@@ -10168,6 +10217,9 @@ async function syncQueuedPhotos(fromAutoRetry) {
       ? `All ${successCount} photos saved!`
       : `All ${successCount} photos synced successfully!`;
     statusElement.textContent = message;
+    // Everything queued has now actually sent — celebrate any credits those
+    // photos earned (combined into one toast), whether earned now or offline.
+    flushPendingCreditCelebration();
     setTimeout(() => {
       updatePresetDisplay();
     }, 2000);
@@ -13766,14 +13818,12 @@ window.addEventListener('load', () => {
   const splashTourBtn = document.getElementById('splash-tour-button');
   if (splashTourBtn) {
     splashTourBtn.addEventListener('click', () => {
-      document.getElementById('start-screen').style.display = 'none';
-      initCamera();
+      _splashLaunchPending = true;
       startGuidedTour();
     });
     splashTourBtn.addEventListener('touchend', (e) => {
       e.preventDefault();
-      document.getElementById('start-screen').style.display = 'none';
-      initCamera();
+      _splashLaunchPending = true;
       startGuidedTour();
     });
   }
@@ -17540,7 +17590,10 @@ function _flashViewerHeader(message, duration, multiline, withSound) {
 }
 
 function showGalleryCreditFlash(message) {
-  _flashViewerHeader(message, 3500, true, true);
+  // Sound is played by flushPendingCreditCelebration (the single chime source
+  // for both camera and gallery). Pass withSound=false here so the gallery
+  // doesn't chime a second time — that was the duplicate/echo.
+  _flashViewerHeader(message, 3500, true, false);
 }
 
 // Brief static message for when a preset gets queued while offline — nothing

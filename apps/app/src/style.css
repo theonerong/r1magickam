@@ -6407,10 +6407,10 @@ button, .touchable {
 /* } */
 /* .sync-button { animation: fxSyncDrop 0.38s ease-out; } */
 
-/* ── FX 6: active mode pulse ring ── */
+/* ── FX 6: active mode pulse ring (opacity-only, zero-scale) ── */
 @keyframes fxModePulse {
-  from { opacity: 0.25; transform: scale(1); }
-  to   { opacity: 0.9;  transform: scale(1.06); }
+  from { opacity: 0.3; }
+  to   { opacity: 1; }
 }
 .mode-button[data-mode="random"].random-active::after,
 .mode-button[data-mode="motion"].active::after,
