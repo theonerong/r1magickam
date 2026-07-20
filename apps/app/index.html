@@ -1095,7 +1095,7 @@
                 <!-- Glossary Menu -->
                 <div id="tutorial-glossary" class="tutorial-glossary">
                     <h4 class="glossary-title">Quick Navigation</h4>
-                    <button id="start-guided-tour" onclick="startGuidedTour()" style="display:block;width:100%;margin-bottom:2vw;padding:2vw;background:#FE5F00;color:#000;border:none;border-radius:2vw;font-size:4vw;font-weight:700;cursor:pointer;">▶ Start Audio Guided Tour</button>
+                    <button id="start-guided-tour" style="display:block;width:100%;margin-bottom:2vw;padding:2vw;background:#FE5F00;color:#000;border:none;border-radius:2vw;font-size:4vw;font-weight:700;cursor:pointer;">▶ Start Audio Guided Tour</button>
                     <div class="glossary-items">
                         <button class="glossary-item" data-section="getting-started">🚀 Getting Started</button>
                         <button class="glossary-item" data-section="basic-controls">📸 Basic Controls</button>
@@ -1417,7 +1417,7 @@ All of the presets are optimized to avoid "camera ran dry" or "content filter" i
         <!-- Guided Tour Overlay -->
         <div id="guided-tour-overlay" style="display:none;position:fixed;inset:0;z-index:99999;pointer-events:none;">
             <div id="tour-backdrop" style="position:absolute;inset:0;background:rgba(0,0,0,0.85);pointer-events:none;"></div>
-            <div id="tour-card" style="position:absolute;background:#111;border:2px solid #FE5F00;border-radius:12px;padding:14px;width:94vw;height:98vh;box-sizing:border-box;display:flex;flex-direction:column;z-index:2;box-shadow:0 8px 32px rgba(0,0,0,0.7);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:auto;">
+            <div id="tour-card" style="position:absolute;background:#111;border:2px solid #FE5F00;border-radius:12px;padding:14px;width:94vw;height:96vh;box-sizing:border-box;display:flex;flex-direction:column;z-index:2;box-shadow:0 8px 32px rgba(0,0,0,0.7);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:auto;">
                 <div style="display:flex;align-items:center;gap:6px;margin-bottom:6px;overflow:hidden;flex-shrink:0;">
                     <span id="tour-step-badge" style="font-size:10px;font-weight:700;color:#FE5F00;background:rgba(254,95,0,0.15);padding:1px 6px;border-radius:20px;border:1px solid #FE5F00;white-space:nowrap;flex-shrink:0;"></span>
                     <span id="tour-section-label" style="font-size:10px;color:#888;text-transform:uppercase;letter-spacing:0.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;flex:1;"></span>
