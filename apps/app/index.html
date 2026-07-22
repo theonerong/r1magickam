@@ -426,6 +426,13 @@
                         </div>
                     </label>
                     <label class="reset-db-item">
+                        <input type="checkbox" id="reset-cb-drawsettings" class="reset-db-check">
+                        <div class="reset-db-label">
+                            <span class="reset-db-title">Draw Settings</span>
+                            <span class="reset-db-desc">Resets the editor draw tool settings (fill tolerance &amp; contiguous, pencil pressure, tip feel &amp; stabilization) to default</span>
+                        </div>
+                    </label>
+                    <label class="reset-db-item">
                         <input type="checkbox" id="reset-cb-buttons" class="reset-db-check">
                         <div class="reset-db-label">
                             <span class="reset-db-title">Button Settings</span>
@@ -436,7 +443,7 @@
                         <input type="checkbox" id="reset-cb-settings" class="reset-db-check">
                         <div class="reset-db-label">
                             <span class="reset-db-title">All Settings</span>
-                            <span class="reset-db-desc">Resets resolution, aspect ratio, burst, timer, motion detection, manual options, import resolution, preset file settings &amp; button settings to default</span>
+                            <span class="reset-db-desc">Resets resolution, aspect ratio, burst, timer, motion detection, manual options, import resolution, preset file settings, draw settings &amp; button settings to default</span>
                         </div>
                     </label>
                     <label class="reset-db-item">
@@ -1128,7 +1135,7 @@
                     <div id="section-getting-started" class="tutorial-section">
                         <h4 class="tutorial-heading">🚀 Getting Started</h4>
                         <p class="tutorial-text">
-                            Magic Kamera MDRE is a powerful plugin for the Rabbit r1 that transforms your photos with many AI-powered presets. Point, shoot, and watch your images come to life with artistic styles, effects, and transformations. Customize captured photos to create your own presets or re-prompt captured photos. You can do things you cannot do with regular Magic Camera (eg. zoom in/out, import photos, combine photos, layer presets, re-prompt photos, timer and burst).  Magic Kamera can also work as a security device with motion detection. A collaboration between M Domko, Ron G, SimonB, Orville, WWTV, Foxplaid and RabbitJesus(JET).
+                            Magic Kamera MDRE is a powerful plugin for the Rabbit r1 that transforms your photos with many AI-powered presets. Point, shoot, and watch your images come to life with artistic styles, effects, and transformations. Customize captured photos to create your own presets or re-prompt captured photos. You can do things you cannot do with regular Magic Camera (eg. zoom in/out, import photos, combine photos, layer presets, re-prompt photos, timer and burst).  Magic Kamera can also work as a security device with motion detection. A collaboration between M Domko, Ron G, SimonB, Orville, WWTV, PixelsandFrames and RabbitJesus(JET).
                         </p>
                     </div>
 
@@ -1244,6 +1251,40 @@
                             
                             <strong>Available Tools:</strong><br>
                             The image editor provides several professional editing tools located on the right side of the screen:<br><br>
+
+                            <strong>✏️ Draw:</strong> Located at the top of the right carousel, above Crop. Tap the Draw button to enter draw mode — the button lights up orange to show drawing is active. While draw mode is on, the Brightness and Contrast sliders at the top are replaced by three drawing buttons: Blank, Color, and Tip. Tap the Draw button again to exit draw mode; the button turns off and the Brightness and Contrast sliders return. You can freely switch in and out of draw mode, and you can still Undo and Save just like any other edit.<br><br>
+
+                            <strong>The three draw buttons (top of screen):</strong><br>
+                            • <strong>⬛ Blank Canvas:</strong> Replaces the current photo with a solid black canvas so you can draw from scratch. Your original photo is not deleted — it is only set aside; if you exit without saving, nothing is lost. If you do NOT tap Blank Canvas, you draw directly on top of your photo instead.<br>
+                            • <strong>🎨 Color:</strong> Opens the color picker for your pencil (with an × to close). The small swatch on the button shows your current pencil color — white by default.<br>
+                            • <strong>✏️ Tip:</strong> Opens a pencil tip size selector with five sizes — Fine, Small, Medium, Large, and Xtra Large. The button shows a small preview dot in your current color plus a number, both of which update to reflect the size and color you have chosen.<br><br>
+
+                            <strong>Drawing on the canvas:</strong><br>
+                            Drag your finger across the image or black canvas to draw a line in the selected color and tip size. Because the R1 screen is small, the drawing is tuned so that a small finger movement produces a larger stroke — this makes drawing feel natural and lets you cover more area with less physical movement. A quick tap leaves a single dot.<br><br>
+
+                            <strong>Fill (paint bucket):</strong><br>
+                            To fill an area, press and hold your finger still on the canvas for about half a second (a hard press). What gets filled depends on where you press:<br>
+                            • On a <strong>blank (or solid-colored) canvas</strong>, a hard press fills the entire canvas with the selected color.<br>
+                            • Inside a <strong>closed shape</strong> (for example, a circle you drew), a hard press fills only the inside of that shape with the selected color, stopping at the outline. For instance, hard-pressing inside a white circle while red is selected turns the inside of the circle red, leaving the outline intact.<br>
+                            The fill spreads only across touching areas of similar color, so it will not “leak” past a solid outline. If you drag your finger instead of holding still, you draw a line rather than filling. A single Undo reverses an entire fill.<br><br>
+
+                            <strong>⚙️ Draw Settings (gear button):</strong><br>
+                            Tap the gear button next to the Edit Image title to open Draw Settings. This modal opens on top of the editor, so when you close it you return exactly where you were — same image, same drawing, nothing lost. Every setting shows its default value in its label, and a <strong>Default</strong> button at the top of the modal resets all draw settings back to default at once. Your settings are remembered between sessions.<br><br>
+
+                            <strong>Fill tool settings:</strong><br>
+                            • <strong>Tolerance (default 13%):</strong> Controls how similar in color a neighboring pixel must be to get filled. A low tolerance fills only colors almost identical to the spot you press; a higher tolerance fills a broader range of similar colors. It is shown as a percentage.<br>
+                            • <strong>Contiguous (default On):</strong> When on, a fill spreads only through pixels that are connected to the spot you press (so it stops at edges — for example, staying inside a shape). When off, the fill replaces every matching color across the entire image at once, even areas that are not touching.<br><br>
+
+                            <strong>Pencil settings:</strong><br>
+                            • <strong>Pressure / Sensitivity (default Medium):</strong> This sets how much your finger movement is amplified into stroke movement, from Light to Heavy. Heavier makes a small finger movement cover more canvas.<br>
+                            • <strong>Tip Feel / Firmness (default Firm):</strong> Adjusts how much effort a stroke takes to reach full strength. A Soft feel responds to a light touch, while a Firm feel requires a firmer, more deliberate drag (kept below the amount that triggers a fill).<br>
+                            • <strong>Stabilization (default Off):</strong> Smooths out jittery hand movements so your lines come out cleaner. Higher settings produce smoother, steadier line art; Off draws exactly what your finger does.<br><br>
+
+                            <strong>Draw mode tips:</strong><br>
+                            • Set your Color and Tip before you start — the preview dot on the Tip button confirms both at a glance.<br>
+                            • Use Blank Canvas for drawings from scratch; skip it to draw directly onto a photo.<br>
+                            • Hold still for a fill; drag for a stroke — the two never happen at the same time.<br>
+                            • Undo works one step at a time for strokes and fills, and Save creates a new image in your gallery, exactly like the other editing tools.<br><br>
                             
                             <strong>✂️ Crop:</strong> Tap to activate crop mode. Two orange corner markers appear on your image. Tap and drag the top-left and bottom-right corners to select your desired crop area. Tap Crop again to apply the crop.<br>
                             
@@ -1607,6 +1648,7 @@ All of the presets are optimized to avoid "camera ran dry" or "content filter" i
                 <div class="image-editor-header">
                     <h3>Edit Image</h3>
                     <div class="editor-header-buttons">
+                        <button id="draw-settings-button" class="close-button" title="Draw settings">⚙</button>
                         <button id="undo-edit-button" class="editor-header-undo-button">↶ Undo</button>
                         <button id="save-edit-button" class="editor-header-save-button">💾 Save</button>
                         <button id="close-image-editor" class="close-button">×</button>
@@ -1614,7 +1656,7 @@ All of the presets are optimized to avoid "camera ran dry" or "content filter" i
                 </div>
                 
                 <!-- Brightness and Contrast Sliders (on top of image) -->
-                <div class="editor-top-controls">
+                <div class="editor-top-controls" id="editor-adjust-controls">
                     <div class="editor-slider-group">
                         <label>Brightness</label>
                         <input type="range" id="brightness-slider" min="-100" max="100" value="0" step="1">
@@ -1625,6 +1667,80 @@ All of the presets are optimized to avoid "camera ran dry" or "content filter" i
                         <input type="range" id="contrast-slider" min="-100" max="100" value="0" step="1">
                         <span id="contrast-value">0</span>
                     </div>
+                </div>
+
+                <!-- Draw controls (replace brightness/contrast while Draw is active) -->
+                <div class="editor-top-controls" id="editor-draw-controls" style="display: none;">
+                    <button type="button" id="draw-blank-canvas-btn" class="editor-draw-ctrl-btn"><span class="draw-ctrl-icon">⬛</span><span class="editor-draw-ctrl-label">Blank</span></button>
+                    <input type="hidden" id="draw-color-picker" value="#ffffff">
+                    <button type="button" id="draw-color-btn" class="editor-draw-ctrl-btn hsv-swatch-btn" data-for="draw-color-picker"><span class="draw-ctrl-swatch" id="draw-color-swatch" style="background:#ffffff;"></span><span class="editor-draw-ctrl-label">Color</span></button>
+                    <button type="button" id="draw-tip-btn" class="editor-draw-ctrl-btn"><span class="draw-tip-preview" id="draw-tip-preview" style="background:#ffffff;"></span><span class="editor-draw-ctrl-label">Tip</span><span class="draw-tip-size-readout" id="draw-tip-size-readout">6</span></button>
+                </div>
+
+                <!-- Draw Settings modal -->
+                <div id="draw-settings-modal" class="draw-settings-modal" style="display: none;">
+                    <div class="draw-settings-panel">
+                        <div class="draw-settings-header">
+                            <h3>Draw Settings</h3>
+                            <button id="draw-settings-default" class="draw-settings-default-btn" title="Reset all draw settings to default">Default</button>
+                            <button id="draw-settings-close" class="close-button" title="Close">×</button>
+                        </div>
+                        <div class="draw-settings-body">
+
+                            <div class="draw-settings-group-title">Fill Tool</div>
+
+                            <div class="draw-settings-row">
+                                <label for="draw-set-tolerance">Tolerance (default 13%) <span class="draw-settings-hint">how similar colors must be to fill</span></label>
+                                <div class="draw-settings-control">
+                                    <input type="range" id="draw-set-tolerance" min="0" max="100" step="1" value="13">
+                                    <span id="draw-set-tolerance-val" class="draw-settings-val">13%</span>
+                                </div>
+                            </div>
+
+                            <div class="draw-settings-row">
+                                <label for="draw-set-contiguous">Contiguous (default On) <span class="draw-settings-hint">fill only touching pixels</span></label>
+                                <div class="draw-settings-control">
+                                    <input type="checkbox" id="draw-set-contiguous" checked>
+                                </div>
+                            </div>
+
+                            <div class="draw-settings-group-title">Pencil</div>
+
+                            <div class="draw-settings-row">
+                                <label for="draw-set-pressure">Pressure / Sensitivity (default Medium) <span class="draw-settings-hint">light to heavy</span></label>
+                                <div class="draw-settings-control">
+                                    <input type="range" id="draw-set-pressure" min="1" max="5" step="1" value="3">
+                                    <span id="draw-set-pressure-val" class="draw-settings-val">Medium</span>
+                                </div>
+                            </div>
+
+                            <div class="draw-settings-row">
+                                <label for="draw-set-firmness">Tip Feel (Firmness) (default Firm) <span class="draw-settings-hint">soft to firm</span></label>
+                                <div class="draw-settings-control">
+                                    <input type="range" id="draw-set-firmness" min="1" max="5" step="1" value="5">
+                                    <span id="draw-set-firmness-val" class="draw-settings-val">Firm</span>
+                                </div>
+                            </div>
+
+                            <div class="draw-settings-row">
+                                <label for="draw-set-stabilization">Stabilization (default Off) <span class="draw-settings-hint">smooths jittery lines</span></label>
+                                <div class="draw-settings-control">
+                                    <input type="range" id="draw-set-stabilization" min="0" max="5" step="1" value="0">
+                                    <span id="draw-set-stabilization-val" class="draw-settings-val">Off</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pencil tip size selector (opens from Tip button) -->
+                <div id="draw-tip-menu" class="draw-tip-menu" style="display: none;">
+                    <button type="button" class="draw-tip-option" data-size="3"><span class="draw-tip-dot" style="width:3px;height:3px;"></span>Fine</button>
+                    <button type="button" class="draw-tip-option" data-size="6"><span class="draw-tip-dot" style="width:6px;height:6px;"></span>Small</button>
+                    <button type="button" class="draw-tip-option" data-size="12"><span class="draw-tip-dot" style="width:12px;height:12px;"></span>Medium</button>
+                    <button type="button" class="draw-tip-option" data-size="22"><span class="draw-tip-dot" style="width:22px;height:22px;"></span>Large</button>
+                    <button type="button" class="draw-tip-option" data-size="36"><span class="draw-tip-dot" style="width:36px;height:36px;"></span>Xtra Large</button>
                 </div>
                 
                 <!-- Main Editor Area: Image Left, Buttons Right -->
@@ -1642,6 +1758,7 @@ All of the presets are optimized to avoid "camera ran dry" or "content filter" i
                     <!-- Edit Buttons Carousel (right side) — always visible, touch-scrollable -->
                     <div class="editor-btn-carousel">
                         <div class="editor-btn-carousel-track">
+                            <button id="draw-button" class="editor-carousel-btn">✏️<br><span class="editor-carousel-label">Draw</span></button>
                             <button id="crop-button" class="editor-carousel-btn">✂️<br><span class="editor-carousel-label">Crop</span></button>
                             <button id="rotate-button" class="editor-carousel-btn">🔄<br><span class="editor-carousel-label">Rotate</span></button>
                             <button id="sharpen-button" class="editor-carousel-btn">🔍<br><span class="editor-carousel-label">Sharpen</span></button>
