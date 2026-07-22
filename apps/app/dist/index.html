@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>Magic Kamera</title>
-  <script type="module" crossorigin src="./assets/main-DVvVroho.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/main-B7H7qPnK.css">
+  <script type="module" crossorigin src="./assets/main-B9SIL_KT.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/main-By7uNoIQ.css">
 </head>
 <body>
     <div id="app">
@@ -1286,6 +1286,8 @@
                             • Use Blank Canvas for drawings from scratch; skip it to draw directly onto a photo.<br>
                             • Hold still for a fill; drag for a stroke — the two never happen at the same time.<br>
                             • Undo works one step at a time for strokes and fills, and Save creates a new image in your gallery, exactly like the other editing tools.<br><br>
+
+                            <strong>🔍 Zoom:</strong> Tap to activate Zoom/Pan mode. Activating Zoom/Pan deactivates the draw mode. Zoom in/out using the top slider. Zoom in/out levels range from 50%(half) to 1000%(10x) allowing detailed edits. Pan the canvas using the touchscreen.<br>
                             
                             <strong>✂️ Crop:</strong> Tap to activate crop mode. Two orange corner markers appear on your image. Tap and drag the top-left and bottom-right corners to select your desired crop area. Tap Crop again to apply the crop.<br>
                             
@@ -1678,6 +1680,15 @@ All of the presets are optimized to avoid "camera ran dry" or "content filter" i
                     <button type="button" id="draw-tip-btn" class="editor-draw-ctrl-btn"><span class="draw-tip-preview" id="draw-tip-preview" style="background:#ffffff;"></span><span class="editor-draw-ctrl-label">Tip</span><span class="draw-tip-size-readout" id="draw-tip-size-readout">6</span></button>
                 </div>
 
+                <!-- Zoom controls (replace whichever row is showing while Zoom is active) -->
+                <div class="editor-top-controls" id="editor-zoom-controls" style="display: none;">
+                    <div class="editor-slider-group">
+                        <label>Zoom — drag image to pan</label>
+                        <input type="range" id="editor-zoom-slider" min="50" max="1000" value="100" step="5">
+                        <span id="editor-zoom-value">100%</span>
+                    </div>
+                </div>
+
                 <!-- Draw Settings modal -->
                 <div id="draw-settings-modal" class="draw-settings-modal" style="display: none;">
                     <div class="draw-settings-panel">
@@ -1760,6 +1771,7 @@ All of the presets are optimized to avoid "camera ran dry" or "content filter" i
                     <div class="editor-btn-carousel">
                         <div class="editor-btn-carousel-track">
                             <button id="draw-button" class="editor-carousel-btn">✏️<br><span class="editor-carousel-label">Draw</span></button>
+                            <button id="zoom-button" class="editor-carousel-btn">🔍<br><span class="editor-carousel-label">Zoom</span></button>
                             <button id="crop-button" class="editor-carousel-btn">✂️<br><span class="editor-carousel-label">Crop</span></button>
                             <button id="rotate-button" class="editor-carousel-btn">🔄<br><span class="editor-carousel-label">Rotate</span></button>
                             <button id="sharpen-button" class="editor-carousel-btn">🔍<br><span class="editor-carousel-label">Sharpen</span></button>
