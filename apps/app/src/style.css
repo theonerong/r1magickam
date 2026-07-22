@@ -4525,6 +4525,21 @@ button:disabled {
     cursor: crosshair;
 }
 
+/* ===== ZOOM / PAN MODE =====
+   Zoom is a VIEW-ONLY transform on the canvas element. It never touches the
+   canvas pixels, so saving is unaffected and the saved image is never zoomed. */
+.editor-image-container.zoom-panning {
+    touch-action: none;
+    cursor: grab;
+}
+.editor-image-container.zoom-panning:active {
+    cursor: grabbing;
+}
+/* Smooth the visual scale change while dragging the zoom slider */
+.editor-canvas.zoom-active {
+    transition: transform 0.08s linear;
+}
+
 /* ===== DRAW SETTINGS MODAL ===== */
 .draw-settings-modal {
     position: fixed;
@@ -6236,7 +6251,7 @@ button, .touchable {
     transition: transform 0.2s ease, opacity 0.2s ease, background-color 0.15s ease;
 }
 
-/* ══════════���════════════════════════
+/* ═══════════════════════════════════
    PRESET FILE SETTINGS — source row buttons
    ═══════════════════════════════════ */
 
