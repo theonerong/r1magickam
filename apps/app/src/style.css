@@ -4370,6 +4370,290 @@ button:disabled {
     flex-shrink: 0;
 }
 
+/* ===== DRAW MODE CONTROLS (replace brightness/contrast row) ===== */
+/* The draw controls row occupies the SAME vertical space as the slider row:
+   same padding, same background, same border, so the swap is seamless. */
+#editor-draw-controls {
+    align-items: center;
+    gap: 2vw;
+}
+
+/* Buttons lay out icon + label HORIZONTALLY and are height-capped to one
+   slider group's content (label 2.5vw + gap 0.5vw + input 5vw = 8vw), so
+   this row is exactly as tall as the brightness/contrast row it replaces. */
+.editor-draw-ctrl-btn {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1.2vw;
+    height: 8vw;
+    min-height: 32px;
+    background: rgba(30, 30, 30, 0.92);
+    color: #FE5F00;
+    border: 2px solid #FE5F00;
+    border-radius: 1.5vw;
+    font-size: 3.6vw;
+    line-height: 1;
+    padding: 0 1vw;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.editor-draw-ctrl-btn:active {
+    background-color: #FE5F00;
+    color: #000;
+}
+
+.draw-ctrl-icon {
+    font-size: 4vw;
+    line-height: 1;
+}
+
+.editor-draw-ctrl-label {
+    font-size: 2.6vw;
+    line-height: 1;
+    color: #ffffff;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.9);
+    white-space: nowrap;
+}
+
+/* Color button: a swatch square shows the chosen pencil color */
+.draw-ctrl-swatch {
+    width: 4vw;
+    height: 4vw;
+    min-width: 14px;
+    min-height: 14px;
+    border-radius: 1vw;
+    border: 1px solid rgba(255,255,255,0.6);
+    flex-shrink: 0;
+}
+
+/* Tip button: a dot reflecting the CURRENT COLOR (scales a little with size),
+   plus a numeric size readout on the right. */
+.draw-tip-preview {
+    display: inline-block;
+    width: 4vw;
+    height: 4vw;
+    min-width: 12px;
+    min-height: 12px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.6);
+    flex-shrink: 0;
+}
+
+.draw-tip-size-readout {
+    font-size: 2.6vw;
+    line-height: 1;
+    color: #FE5F00;
+    font-weight: bold;
+    margin-left: 0.6vw;
+    min-width: 5vw;
+    text-align: center;
+}
+
+.editor-draw-ctrl-btn:active .editor-draw-ctrl-label,
+.editor-draw-ctrl-btn:active .draw-tip-size-readout {
+    color: #000;
+}
+
+/* The Color button also carries .hsv-swatch-btn (to reuse the shared color
+   picker), and that class hard-codes width:52px; height:38px — which is
+   taller than the other two draw buttons and pushed the image/canvas down.
+   Re-assert the shared draw-button sizing on THIS button only, so all three
+   are identical. The swatch buttons on the button-color settings screens are
+   untouched and keep their original fixed size. */
+#draw-color-btn.hsv-swatch-btn {
+    width: auto;
+    height: 8vw;
+    min-height: 32px;
+    box-shadow: none;
+    /* Keep the editor's orange border — .hsv-swatch-btn otherwise forces gray */
+    border: 2px solid #FE5F00;
+    border-radius: 1.5vw;
+}
+#draw-color-btn.hsv-swatch-btn:hover {
+    border-color: #FE5F00;
+}
+
+/* Pencil tip size menu — small popup anchored under the Tip button */
+.draw-tip-menu {
+    position: absolute;
+    z-index: 200;
+    background: rgba(20, 20, 20, 0.98);
+    border: 2px solid #FE5F00;
+    border-radius: 2vw;
+    padding: 1.5vw;
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.7);
+}
+
+.draw-tip-option {
+    display: flex;
+    align-items: center;
+    gap: 2vw;
+    background: rgba(40, 40, 40, 0.9);
+    color: #fff;
+    border: 1px solid #555;
+    border-radius: 1.5vw;
+    padding: 2vw 3vw;
+    font-size: 3vw;
+    cursor: pointer;
+    min-width: 34vw;
+}
+
+.draw-tip-option:active,
+.draw-tip-option.active {
+    background: #FE5F00;
+    color: #000;
+    border-color: #FE5F00;
+}
+
+.draw-tip-dot {
+    display: inline-block;
+    border-radius: 50%;
+    background: currentColor;
+    flex-shrink: 0;
+}
+
+/* While drawing, the canvas takes raw pointer input (no scroll/zoom stealing) */
+.editor-canvas.draw-active {
+    touch-action: none;
+    cursor: crosshair;
+}
+
+/* ===== DRAW SETTINGS MODAL ===== */
+.draw-settings-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 400;
+    background: rgba(0, 0, 0, 0.75);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.draw-settings-panel {
+    width: 92vw;
+    max-width: 92vw;
+    max-height: 90vh;
+    background: #111;
+    border: 2px solid #FE5F00;
+    border-radius: 3vw;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.7);
+}
+
+.draw-settings-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3vw;
+    border-bottom: 1px solid #333;
+    flex-shrink: 0;
+}
+
+.draw-settings-header h3 {
+    margin: 0;
+    color: #FE5F00;
+    font-size: 4.5vw;
+}
+
+/* Let the title take remaining space so Default + close sit at the right */
+.draw-settings-header h3 { flex: 1; }
+
+/* Default (reset) button — same height as the close button */
+.draw-settings-default-btn {
+    height: 8vw;
+    min-height: 32px;
+    padding: 0 3vw;
+    margin-right: 2vw;
+    background-color: transparent;
+    color: #FE5F00;
+    border: 2px solid #FE5F00;
+    border-radius: 1vw;
+    font-size: 3.2vw;
+    font-weight: 700;
+    cursor: pointer;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.draw-settings-default-btn:active {
+    background-color: #FE5F00;
+    color: #000;
+}
+
+.draw-settings-body {
+    padding: 3vw;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.draw-settings-group-title {
+    color: #FE5F00;
+    font-size: 3.4vw;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 2vw 0 1.5vw 0;
+    border-bottom: 1px solid #333;
+    padding-bottom: 1vw;
+}
+
+.draw-settings-row {
+    margin-bottom: 3.5vw;
+}
+
+.draw-settings-row > label {
+    display: block;
+    color: #fff;
+    font-size: 3.4vw;
+    font-weight: 600;
+    margin-bottom: 1.5vw;
+}
+
+.draw-settings-hint {
+    display: block;
+    color: #999;
+    font-size: 2.6vw;
+    font-weight: 400;
+    margin-top: 0.4vw;
+}
+
+.draw-settings-control {
+    display: flex;
+    align-items: center;
+    gap: 3vw;
+}
+
+.draw-settings-control input[type="range"] {
+    flex: 1;
+    accent-color: #FE5F00;
+    height: 6vw;
+}
+
+.draw-settings-control input[type="checkbox"] {
+    width: 6vw;
+    height: 6vw;
+    accent-color: #FE5F00;
+}
+
+.draw-settings-val {
+    min-width: 18vw;
+    text-align: right;
+    color: #FE5F00;
+    font-weight: 700;
+    font-size: 3.2vw;
+}
+/* ===== END DRAW MODE CONTROLS ===== */
+
 .editor-slider-group {
     flex: 1;
     display: flex;
@@ -5952,7 +6236,7 @@ button, .touchable {
     transition: transform 0.2s ease, opacity 0.2s ease, background-color 0.15s ease;
 }
 
-/* ═══════════════════════════════════
+/* ══════════���════════════════════════
    PRESET FILE SETTINGS — source row buttons
    ═══════════════════════════════════ */
 

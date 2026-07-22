@@ -8130,6 +8130,11 @@ const TOUR_STEPS = [
   { section: 'Gallery', title: '⬇️ Bottom Bar Buttons', body: 'Four buttons on the bottom of image viewer. PROMPT opens editor. LOAD opens preset selector. MULTI opens multi-preset selector. MAGIC transforms image using the loaded preset, or randomly if nothing is loaded.' },
   { section: 'Gallery', title: '📤 Export to gofile.io', body: 'Tapping EXPORT in the right carousel. You get a QR code with a link that expires after 24 hours. Most useful in No Magic Mode.' },
   { section: 'Image Editor', title: '✏️ Opening the Editor', body: 'While viewing any photo, the image viewer contains the EDIT button. Tap it. The editor opens the image with a right-side carousel containing the crop, rotate, sharpen, auto-correct, color filters (vivid, warm, cool, Black and White (B&W) and Fade), and brightness and contrast control sliders.' },
+  { section: 'Image Editor', title: '✏️ Draw Tool', body: 'Tap the Draw button, on top of Crop in the right carousel. It lights up orange when active. The brightness and contrast sliders are replaced by three draw buttons: Blank, Color, and Tip. Tap Draw again to turn it off and bring the sliders back. You can still undo and save as normal.' },
+  { section: 'Image Editor', title: '⬛ Blank Canvas Button', body: 'The Blank button replaces the photo with a solid black canvas to draw on from scratch. Your original photo is not deleted, it is only set aside. If you skip Blank, you draw directly on the photo instead.' },
+  { section: 'Image Editor', title: '🎨 Color and ✏️ Tip Buttons', body: 'The Color button opens the color picker for your pencil, and its little swatch shows the current color, white by default. The Tip button opens a size selector from Fine up to Extra Large, with a preview dot and a size number that match your choices.' },
+  { section: 'Image Editor', title: '✏️ Drawing and Fill', body: 'Drag your finger on the canvas to draw. Because the R1 screen is small, a small finger movement covers more canvas so drawing feels natural. To fill, hard press and hold for about half a second: on a blank canvas it fills the whole canvas with your color, and inside a closed shape it fills just that shape. Undo reverses a fill in one step.' },
+  { section: 'Image Editor', title: '⚙️ Draw Settings', body: 'The gear button next to the Edit Image title opens Draw Settings. Here you can adjust the Fill tolerance and contiguous settings and Pencil pressure, tip feel and stabilization settings.' },
   { section: 'Image Editor', title: '✂️ Crop Tool', body: 'Tap Crop to activate. Two orange corner markers appear. Drag them to frame your desired area. Tap Crop again to apply.' },
   { section: 'Image Editor', title: '🔄 Rotate Tool', body: 'Rotates your image 90 degrees clockwise each tap. Tap multiple times to reach 180, 270, or back to 0 degrees.' },
   { section: 'Image Editor', title: '🔍 Sharpen and Auto Correct', body: 'Sharpen makes edges crisper. Auto Correct automatically balances brightness, contrast, and color. Great as a first step before manual tweaks.' },
@@ -8170,7 +8175,7 @@ const TOUR_STEPS = [
   { section: 'Troubleshooting', title: '❌ Camera access denied', body: 'This error will appear at the bottom of your main camera screen if you do not have any active presets, either imported or made with the preset builder.' },
   { section: 'Troubleshooting', title: '❌ Image stuck in queue status', body: 'This error will occur if you attempt to take a picture without a preset in your menu preset list. To clear, go to Reset Database in the settings submenu. Click the Photo Queue button and then click apply.' },
   { section: 'Troubleshooting', title: '❌ Image import failed', body: 'This error may appear when importing images using the QR code. Causes: the qr code link expired, the download services are unavailable, or the image is unsuitable as sized. Refresh the link or resize the image to different dimensions and retry.' },
-  { section: 'Done!', title: '🎉 Tour Complete!', body: 'That\'s Magic Kamera. Now go make magic! This tour or the text tutorial in this menu is here if you need a refresher. If you come across The One Ron G, The One Hashtag Cyber or The One Rabbit Jesus, tell them you enjoy this program.' },
+  { section: 'Done!', title: '🎉 Tour Complete!', body: 'That\'s Magic Kamera. Now go make magic! This tour or the text tutorial in this menu is here if you need a refresher. If you come across The One Ron G, The One Hashtag Cyber, The One PixelsandFrames or The One Rabbit Jesus, tell them you enjoy this program.' },
 ];
 
 let tourSpeaking = false;
@@ -11331,7 +11336,7 @@ async function hideUnifiedMenu() {
 const _ALL_RESET_CBS = [
   'reset-cb-custom','reset-cb-edits','reset-cb-queue','reset-cb-visibility',
   'reset-cb-favorites','reset-cb-buttons','reset-cb-credits','reset-cb-pfs','reset-cb-imported','reset-cb-settings',
-  'reset-cb-nomagic','reset-cb-manualopts','reset-cb-masterprompt','reset-cb-gallery'
+  'reset-cb-nomagic','reset-cb-manualopts','reset-cb-masterprompt','reset-cb-drawsettings','reset-cb-gallery'
 ];
 
 function showResetDatabaseSubmenu() {
@@ -11384,12 +11389,14 @@ function _resetDbShowConfirm() {
     nomagic:      '• No Magic Mode turned off',
     manualopts:   '• Manually Selected Options turned off',
     masterprompt: '• Master Prompt cleared and disabled',
+    drawsettings: '• Draw settings reset to default',
     gallery:      '• ⚠️ALL IMAGES AND FOLDERS PERMANENTLY DELETED'
   };
   const lines = ['The following will be permanently reset:\n'];
   Object.entries(map).forEach(([k, v]) => { if (checks[k]) lines.push(v); });
   if (checks.settings && !checks.favorites) lines.push('• Favorites cleared');
   if (checks.settings && !checks.pfs) lines.push('• Preset file settings reset to default');
+  if (checks.settings && !checks.drawsettings) lines.push('• Draw settings reset to default');
   lines.push('\nThis cannot be undone.');
   document.getElementById('reset-db-confirm-text').textContent = lines.join('\n');
   document.getElementById('reset-db-confirm-overlay').style.display = 'flex';
@@ -11697,6 +11704,20 @@ YOU MUST RESTART PROGRAM!`];
       successLines.push('• Preset file settings reset to default');
     }
   } catch (e) { errors.push('Preset File Settings: ' + e.message); }
+
+  // 15. Draw Settings (fill tolerance/contiguous + pencil pressure/firmness/
+  //     stabilization). Fires on its own checkbox OR as part of All Settings.
+  //     Calls the shared resetDrawSettings() helper, which lives next to the
+  //     draw variables so they are in scope; it also refreshes the modal
+  //     controls live and saves, so no restart is needed.
+  try {
+    if (checks.drawsettings || checks.settings) {
+      if (typeof window.resetDrawSettings === 'function') {
+        window.resetDrawSettings();
+        successLines.push('• Draw settings reset to default');
+      }
+    }
+  } catch (e) { errors.push('Draw Settings: ' + e.message); }
 
   // ── Re-render all preset lists immediately ──────────────────────────────
   try {
@@ -15245,6 +15266,59 @@ let isCropMode = false;
 let cropPoint1 = null;
 let cropPoint2 = null;
 
+// ===== DRAW MODE STATE =====
+let isDrawMode = false;            // draw tool toggled on/off
+let isDrawing = false;             // a stroke is currently in progress
+let drawColor = '#ffffff';         // current pencil color (default white)
+let drawTipSize = 6;               // current pencil tip size (canvas px baseline)
+let drawLastX = 0, drawLastY = 0;  // last point in CANVAS coordinates
+// Flood fill (paint bucket): triggered by a hard-press on the canvas while
+// draw mode is active. Fills the contiguous region of similar-colored pixels
+// under the finger with the current pencil color, bounded by edges — e.g.
+// hard-pressing inside a closed white circle floods it, stopping at the
+// outline. Tolerance controls how similar a pixel must be to be included.
+let drawFillTolerance = 32;        // 0-255 per-channel similarity threshold
+let drawFillContiguous = true;     // fill only touching pixels (vs whole image)
+let _drawPressTimer = null;        // hard-press timer
+let _drawPressFired = false;       // true once a hard-press action ran
+const DRAW_PRESS_MS = 500;         // how long to hold for a fill
+let _drawPreDotSnapshot = null;    // canvas pixels before the starting dot
+let _drawDownCanvasX = 0, _drawDownCanvasY = 0; // press point in canvas px
+// R1 has a tiny screen, so a small finger move should cover more canvas.
+// These settings amplify and smooth finger movement, with defaults that
+// reproduce the original feel. Adjustable via the draw Settings modal.
+let drawPressure = 1.6;        // base multiplier (0.8 light .. 2.6 heavy)
+let drawFirmness = 1.0;        // 0.6 soft .. 1.0 firm (scales pressure)
+let drawStabilization = 0;     // 0 none .. 0.9 max smoothing
+function drawEffectiveSensitivity() {
+  return drawPressure * drawFirmness;
+}
+
+const DRAW_SETTINGS_KEY = 'r1_draw_settings_v1';
+function saveDrawSettings() {
+  try {
+    localStorage.setItem(DRAW_SETTINGS_KEY, JSON.stringify({
+      tol: drawFillTolerance,
+      contig: drawFillContiguous,
+      pressure: drawPressure,
+      firmness: drawFirmness,
+      stab: drawStabilization
+    }));
+  } catch (e) {}
+}
+function loadDrawSettings() {
+  try {
+    const raw = localStorage.getItem(DRAW_SETTINGS_KEY);
+    if (!raw) return;
+    const s = JSON.parse(raw);
+    if (typeof s.tol === 'number') drawFillTolerance = s.tol;
+    if (typeof s.contig === 'boolean') drawFillContiguous = s.contig;
+    if (typeof s.pressure === 'number') drawPressure = s.pressure;
+    if (typeof s.firmness === 'number') drawFirmness = s.firmness;
+    if (typeof s.stab === 'number') drawStabilization = s.stab;
+  } catch (e) {}
+}
+
 // Open image editor
 function openImageEditor() {
   const imageToEdit = galleryImages[currentViewerImageIndex];
@@ -15276,6 +15350,9 @@ function openImageEditor() {
     
     renderEditorImage();
     updateUndoButton();
+
+    // Always start with draw mode OFF for a freshly opened image
+    if (isDrawMode) exitDrawMode();
   };
   img.src = imageToEdit.imageBase64;
 }
@@ -15650,6 +15727,308 @@ function closeImageEditor() {
   isCropMode = false;
   document.getElementById('crop-overlay').style.display = 'none';
   document.getElementById('crop-button').classList.remove('active');
+
+  // Reset draw mode
+  if (isDrawMode) exitDrawMode();
+  const tipMenu = document.getElementById('draw-tip-menu');
+  if (tipMenu) tipMenu.style.display = 'none';
+}
+
+// ===== DRAW MODE =====
+
+// Enter draw mode: light up the button, swap slider row for draw controls.
+// Keep the Tip button's preview dot (color + relative size), the size
+// readout, and the Color swatch in sync with the current pencil settings.
+function updateDrawTipPreview() {
+  const dot = document.getElementById('draw-tip-preview');
+  if (dot) {
+    dot.style.background = drawColor;
+    const px = Math.max(12, Math.min(26, 10 + drawTipSize * 0.5));
+    dot.style.width = px + 'px';
+    dot.style.height = px + 'px';
+  }
+  const readout = document.getElementById('draw-tip-size-readout');
+  if (readout) readout.textContent = String(drawTipSize);
+  const swatch = document.getElementById('draw-color-swatch');
+  if (swatch) swatch.style.background = drawColor;
+}
+
+function enterDrawMode() {
+  isDrawMode = true;
+  document.getElementById('draw-button').classList.add('active');
+  document.getElementById('editor-adjust-controls').style.display = 'none';
+  document.getElementById('editor-draw-controls').style.display = 'flex';
+  if (editorCanvas) editorCanvas.classList.add('draw-active');
+  updateDrawTipPreview();
+  // If crop mode was active, cancel it — the two tools shouldn't overlap.
+  if (isCropMode) {
+    isCropMode = false;
+    document.getElementById('crop-overlay').style.display = 'none';
+    document.getElementById('crop-button').classList.remove('active');
+  }
+}
+
+// Exit draw mode: un-light the button, restore the slider row.
+function exitDrawMode() {
+  isDrawMode = false;
+  isDrawing = false;
+  document.getElementById('draw-button').classList.remove('active');
+  document.getElementById('editor-draw-controls').style.display = 'none';
+  document.getElementById('editor-adjust-controls').style.display = 'flex';
+  const tipMenu = document.getElementById('draw-tip-menu');
+  if (tipMenu) tipMenu.style.display = 'none';
+  if (editorCanvas) editorCanvas.classList.remove('draw-active');
+}
+
+function toggleDrawMode() {
+  if (isDrawMode) exitDrawMode(); else enterDrawMode();
+}
+
+// ===== DRAW SETTINGS MODAL =====
+// Opens as an overlay on top of the editor without disturbing editor state,
+// so closing it returns the user exactly where they were.
+function openDrawSettings() {
+  const modal = document.getElementById('draw-settings-modal');
+  if (!modal) return;
+  syncDrawSettingsControls();
+  modal.style.display = 'flex';
+}
+function closeDrawSettings() {
+  const modal = document.getElementById('draw-settings-modal');
+  if (modal) modal.style.display = 'none';
+}
+
+function syncDrawSettingsControls() {
+  const tolPct = Math.round((drawFillTolerance / 255) * 100);
+  const tolSlider = document.getElementById('draw-set-tolerance');
+  const tolVal = document.getElementById('draw-set-tolerance-val');
+  if (tolSlider) tolSlider.value = tolPct;
+  if (tolVal) tolVal.textContent = tolPct + '%';
+
+  const contig = document.getElementById('draw-set-contiguous');
+  if (contig) contig.checked = !!drawFillContiguous;
+
+  const pSlider = document.getElementById('draw-set-pressure');
+  const pVal = document.getElementById('draw-set-pressure-val');
+  const pLabels = ['Light', 'Med-Light', 'Medium', 'Med-Heavy', 'Heavy'];
+  const pStep = Math.round(((drawPressure - 0.8) / (2.6 - 0.8)) * 4) + 1;
+  if (pSlider) pSlider.value = Math.min(5, Math.max(1, pStep));
+  if (pVal) pVal.textContent = pLabels[Math.min(5, Math.max(1, pStep)) - 1];
+
+  const fSlider = document.getElementById('draw-set-firmness');
+  const fVal = document.getElementById('draw-set-firmness-val');
+  const fLabels = ['Soft', 'Med-Soft', 'Medium', 'Med-Firm', 'Firm'];
+  const fStep = Math.round(((drawFirmness - 0.6) / (1.0 - 0.6)) * 4) + 1;
+  if (fSlider) fSlider.value = Math.min(5, Math.max(1, fStep));
+  if (fVal) fVal.textContent = fLabels[Math.min(5, Math.max(1, fStep)) - 1];
+
+  const sSlider = document.getElementById('draw-set-stabilization');
+  const sVal = document.getElementById('draw-set-stabilization-val');
+  const sLabels = ['Off', 'Low', 'Medium', 'High', 'Very High', 'Max'];
+  const sStep = Math.round((drawStabilization / 0.9) * 5);
+  if (sSlider) sSlider.value = Math.min(5, Math.max(0, sStep));
+  if (sVal) sVal.textContent = sLabels[Math.min(5, Math.max(0, sStep))];
+}
+
+// Reset every draw setting to its default, refresh the controls, and save.
+function resetDrawSettings() {
+  drawFillTolerance = 32;     // 13%
+  drawFillContiguous = true;  // On
+  drawPressure = 1.6;         // Medium
+  drawFirmness = 1.0;         // Firm
+  drawStabilization = 0;      // Off
+  syncDrawSettingsControls();
+  saveDrawSettings();
+}
+// Expose the draw-settings reset so code OUTSIDE this load callback (the
+// Reset Database logic lives at the top level) can trigger it. The draw
+// variables and this function are scoped inside this callback, so this is
+// the bridge — the same pattern used for window._applyCamBtnStyles.
+window.resetDrawSettings = resetDrawSettings;
+
+// Replace the working image with a solid black canvas of the same size.
+// The original gallery image is untouched (it stays in the gallery); only
+// the editor's working copy is swapped, so nothing is deleted.
+function drawBlankCanvas() {
+  if (!editorCanvas || !editorCtx) return;
+  saveToHistory();
+  // Keep whatever dimensions the canvas currently has (image resolution).
+  const w = editorCanvas.width || 1080;
+  const h = editorCanvas.height || 1080;
+  editorCtx.fillStyle = '#000000';
+  editorCtx.fillRect(0, 0, w, h);
+  // Commit this black fill as the new working image so brightness/contrast,
+  // undo, and save all treat it exactly like any other edited image.
+  refreshEditorImage();
+}
+
+// Convert a pointer event to CANVAS pixel coordinates, applying the R1
+// sensitivity amplification around the stroke's starting point.
+function drawEventToCanvasXY(e) {
+  const rect = editorCanvas.getBoundingClientRect();
+  // Displayed size can differ from the canvas's internal pixel size because
+  // CSS scales it to fit — map screen → canvas pixels with this ratio.
+  const scaleX = editorCanvas.width / rect.width;
+  const scaleY = editorCanvas.height / rect.height;
+  const rawX = (e.clientX - rect.left) * scaleX;
+  const rawY = (e.clientY - rect.top) * scaleY;
+  return { x: rawX, y: rawY };
+}
+
+function drawPointerDown(e) {
+  if (!isDrawMode || !editorCtx) return;
+  e.preventDefault();
+  isDrawing = true;
+  // Snapshot BEFORE the stroke so undo removes the whole stroke at once.
+  saveToHistory();
+  // Also keep a pixel snapshot of the canvas BEFORE the starting dot, so a
+  // hard-press-to-fill can wipe the dot it just drew and fill cleanly.
+  try {
+    _drawPreDotSnapshot = editorCtx.getImageData(0, 0, editorCanvas.width, editorCanvas.height);
+  } catch (err) { _drawPreDotSnapshot = null; }
+  const p = drawEventToCanvasXY(e);
+  drawLastX = p.x;
+  drawLastY = p.y;
+  _drawDownCanvasX = p.x;
+  _drawDownCanvasY = p.y;
+  // Draw a dot so a single tap leaves a mark.
+  editorCtx.beginPath();
+  editorCtx.fillStyle = drawColor;
+  editorCtx.arc(p.x, p.y, Math.max(0.5, drawTipSize / 2), 0, 6.2832);
+  editorCtx.fill();
+}
+
+function drawPointerMove(e) {
+  if (!isDrawMode || !isDrawing || !editorCtx) return;
+  e.preventDefault();
+  const p = drawEventToCanvasXY(e);
+  // Amplify displacement from the last point, scaled by pressure/firmness.
+  const sens = drawEffectiveSensitivity();
+  let dx = (p.x - drawLastX) * sens;
+  let dy = (p.y - drawLastY) * sens;
+  // Stabilization damps each step to smooth out hand jitter.
+  if (drawStabilization > 0) {
+    const k = 1 - drawStabilization;
+    dx *= k;
+    dy *= k;
+  }
+  const nx = drawLastX + dx;
+  const ny = drawLastY + dy;
+  editorCtx.beginPath();
+  editorCtx.strokeStyle = drawColor;
+  editorCtx.lineWidth = drawTipSize;
+  editorCtx.lineCap = 'round';
+  editorCtx.lineJoin = 'round';
+  editorCtx.moveTo(drawLastX, drawLastY);
+  editorCtx.lineTo(nx, ny);
+  editorCtx.stroke();
+  drawLastX = nx;
+  drawLastY = ny;
+}
+
+function drawPointerUp() {
+  if (!isDrawing) return;
+  isDrawing = false;
+  // Commit the finished stroke as the new working image so subsequent
+  // filters/adjustments build on top of it and save captures it.
+  refreshEditorImage();
+}
+
+// Contiguous flood fill (paint bucket). Starts at (sx,sy) in canvas pixels,
+// replaces the touched region of similarly-colored pixels with drawColor.
+// Uses a tolerance (color similarity) and only spreads to touching pixels
+// (contiguous), so a closed shape is filled but color does not leak past
+// its outline.
+function drawFloodFill(sx, sy) {
+  if (!editorCanvas || !editorCtx) return;
+  const w = editorCanvas.width, h = editorCanvas.height;
+  sx = Math.floor(sx); sy = Math.floor(sy);
+  if (sx < 0 || sy < 0 || sx >= w || sy >= h) return;
+
+  const img = editorCtx.getImageData(0, 0, w, h);
+  const d = img.data;
+  const startIdx = (sy * w + sx) * 4;
+  const sr = d[startIdx], sg = d[startIdx + 1], sb = d[startIdx + 2], sa = d[startIdx + 3];
+
+  // Target fill color (drawColor is a hex string)
+  const fr = parseInt(drawColor.slice(1, 3), 16);
+  const fg = parseInt(drawColor.slice(3, 5), 16);
+  const fb = parseInt(drawColor.slice(5, 7), 16);
+
+  // If the start pixel already equals the fill color, nothing to do.
+  if (sr === fr && sg === fg && sb === fb && sa === 255) return;
+
+  const tol = drawFillTolerance;
+  const tolSq = tol * tol * 3; // compare squared distance across 3 channels
+
+  function matches(i) {
+    const dr = d[i] - sr, dg = d[i + 1] - sg, db = d[i + 2] - sb;
+    return (dr * dr + dg * dg + db * db) <= tolSq;
+  }
+
+  // GLOBAL (non-contiguous) mode: replace every matching pixel anywhere in
+  // the image, regardless of whether it touches the start point.
+  if (!drawFillContiguous) {
+    for (let i = 0; i < w * h; i++) {
+      const p = i * 4;
+      const dr = d[p] - sr, dg = d[p + 1] - sg, db = d[p + 2] - sb;
+      if ((dr * dr + dg * dg + db * db) <= tolSq) {
+        d[p] = fr; d[p + 1] = fg; d[p + 2] = fb; d[p + 3] = 255;
+      }
+    }
+    editorCtx.putImageData(img, 0, 0);
+    return;
+  }
+
+  // Scanline flood fill (fast, low memory) using an explicit stack.
+  const stack = [[sx, sy]];
+  const seen = new Uint8Array(w * h);
+  while (stack.length) {
+    let [x, y] = stack.pop();
+    let idx = (y * w + x);
+    // move to the left edge of this run
+    while (x >= 0 && !seen[idx] && matches(idx * 4)) { x--; idx--; }
+    x++; idx++;
+    let spanUp = false, spanDown = false;
+    while (x < w && !seen[idx] && matches(idx * 4)) {
+      // paint
+      const p = idx * 4;
+      d[p] = fr; d[p + 1] = fg; d[p + 2] = fb; d[p + 3] = 255;
+      seen[idx] = 1;
+      // check pixel above
+      if (y > 0) {
+        const upIdx = idx - w;
+        if (!seen[upIdx] && matches(upIdx * 4)) {
+          if (!spanUp) { stack.push([x, y - 1]); spanUp = true; }
+        } else spanUp = false;
+      }
+      // check pixel below
+      if (y < h - 1) {
+        const dnIdx = idx + w;
+        if (!seen[dnIdx] && matches(dnIdx * 4)) {
+          if (!spanDown) { stack.push([x, y + 1]); spanDown = true; }
+        } else spanDown = false;
+      }
+      x++; idx++;
+    }
+  }
+
+  editorCtx.putImageData(img, 0, 0);
+}
+
+// Run a fill at the press location. Removes the tiny starting dot first (by
+// restoring the pre-dot snapshot), then floods from the exact canvas-space
+// point recorded on pointerdown. History was already snapshotted on
+// pointerdown, so undo reverses the whole fill in one step.
+function drawDoFillAtEvent(e) {
+  if (!isDrawMode || !editorCtx) return;
+  isDrawing = false; // a fill is not a stroke
+  // Wipe the starting dot so it doesn't remain under/around the fill.
+  if (_drawPreDotSnapshot) {
+    try { editorCtx.putImageData(_drawPreDotSnapshot, 0, 0); } catch (err) {}
+  }
+  drawFloodFill(_drawDownCanvasX, _drawDownCanvasY);
+  refreshEditorImage();
 }
 
 // ===== CSS FILTER FUNCTIONS (pure canvas — no API call needed) =====
@@ -15760,6 +16139,164 @@ document.getElementById('filter-cool-button')?.addEventListener('click', applyFi
 document.getElementById('filter-bw-button')?.addEventListener('click', applyFilterBW);
 document.getElementById('filter-fade-button')?.addEventListener('click', applyFilterFade);
 
+// ===== DRAW MODE WIRING =====
+document.getElementById('draw-button')?.addEventListener('click', toggleDrawMode);
+document.getElementById('draw-blank-canvas-btn')?.addEventListener('click', drawBlankCanvas);
+
+// Load saved draw settings once at startup.
+loadDrawSettings();
+
+// Draw Settings modal: open button (editor header) + close button.
+document.getElementById('draw-settings-button')?.addEventListener('click', openDrawSettings);
+document.getElementById('draw-settings-close')?.addEventListener('click', closeDrawSettings);
+document.getElementById('draw-settings-default')?.addEventListener('click', resetDrawSettings);
+
+// Tolerance (percentage 0-100 -> 0-255)
+document.getElementById('draw-set-tolerance')?.addEventListener('input', (e) => {
+  const pct = parseInt(e.target.value) || 0;
+  drawFillTolerance = Math.round((pct / 100) * 255);
+  const v = document.getElementById('draw-set-tolerance-val');
+  if (v) v.textContent = pct + '%';
+  saveDrawSettings();
+});
+
+// Contiguous on/off
+document.getElementById('draw-set-contiguous')?.addEventListener('change', (e) => {
+  drawFillContiguous = !!e.target.checked;
+  saveDrawSettings();
+});
+
+// Pressure (1-5 -> 0.8..2.6)
+document.getElementById('draw-set-pressure')?.addEventListener('input', (e) => {
+  const step = parseInt(e.target.value) || 3;
+  drawPressure = 0.8 + ((step - 1) / 4) * (2.6 - 0.8);
+  const labels = ['Light', 'Med-Light', 'Medium', 'Med-Heavy', 'Heavy'];
+  const v = document.getElementById('draw-set-pressure-val');
+  if (v) v.textContent = labels[step - 1];
+  saveDrawSettings();
+});
+
+// Firmness / Tip Feel (1-5 -> 0.6..1.0)
+document.getElementById('draw-set-firmness')?.addEventListener('input', (e) => {
+  const step = parseInt(e.target.value) || 5;
+  drawFirmness = 0.6 + ((step - 1) / 4) * (1.0 - 0.6);
+  const labels = ['Soft', 'Med-Soft', 'Medium', 'Med-Firm', 'Firm'];
+  const v = document.getElementById('draw-set-firmness-val');
+  if (v) v.textContent = labels[step - 1];
+  saveDrawSettings();
+});
+
+// Stabilization / Streamline (0-5 -> 0..0.9)
+document.getElementById('draw-set-stabilization')?.addEventListener('input', (e) => {
+  const step = parseInt(e.target.value) || 0;
+  drawStabilization = (step / 5) * 0.9;
+  const labels = ['Off', 'Low', 'Medium', 'High', 'Very High', 'Max'];
+  const v = document.getElementById('draw-set-stabilization-val');
+  if (v) v.textContent = labels[step];
+  saveDrawSettings();
+});
+
+// Pencil color: the hidden #draw-color-picker feeds the shared HSV picker
+// (its swatch button carries data-for="draw-color-picker"). Mirror its value
+// into drawColor whenever it changes.
+document.getElementById('draw-color-picker')?.addEventListener('input', (e) => {
+  drawColor = e.target.value || '#ffffff';
+  updateDrawTipPreview();
+});
+
+// Pencil tip menu: open/close under the Tip button, pick a size.
+document.getElementById('draw-tip-btn')?.addEventListener('click', (e) => {
+  const menu = document.getElementById('draw-tip-menu');
+  if (!menu) return;
+  if (menu.style.display === 'none' || !menu.style.display) {
+    const rect = e.currentTarget.getBoundingClientRect();
+    menu.style.display = 'flex';
+    // Position just below the Tip button, kept on-screen.
+    let left = rect.left;
+    let top = rect.bottom + 4;
+    const mw = menu.offsetWidth || 160;
+    const mh = menu.offsetHeight || 200;
+    if (left + mw > window.innerWidth - 6) left = window.innerWidth - mw - 6;
+    if (top + mh > window.innerHeight - 6) top = rect.top - mh - 4;
+    if (left < 6) left = 6;
+    if (top < 6) top = 6;
+    menu.style.left = left + 'px';
+    menu.style.top = top + 'px';
+    // Highlight the active size
+    menu.querySelectorAll('.draw-tip-option').forEach(opt => {
+      opt.classList.toggle('active', parseInt(opt.dataset.size) === drawTipSize);
+    });
+  } else {
+    menu.style.display = 'none';
+  }
+});
+
+document.querySelectorAll('.draw-tip-option').forEach(opt => {
+  opt.addEventListener('click', () => {
+    drawTipSize = parseInt(opt.dataset.size) || 6;
+    updateDrawTipPreview();
+    const menu = document.getElementById('draw-tip-menu');
+    if (menu) menu.style.display = 'none';
+  });
+});
+
+// Close the tip menu if the user taps elsewhere while it's open.
+document.addEventListener('pointerdown', (e) => {
+  const menu = document.getElementById('draw-tip-menu');
+  if (!menu || menu.style.display === 'none') return;
+  if (!menu.contains(e.target) && e.target.id !== 'draw-tip-btn') {
+    menu.style.display = 'none';
+  }
+}, true);
+
+// Drawing pointer events on the editor canvas. Registered once; they no-op
+// unless draw mode is active, so they never interfere with crop/other tools.
+(function wireDrawCanvas() {
+  const canvas = document.getElementById('editor-canvas');
+  if (!canvas) return;
+  let _pressStartX = 0, _pressStartY = 0;
+  canvas.addEventListener('pointerdown', (e) => {
+    if (!isDrawMode) return;
+    canvas.setPointerCapture(e.pointerId);
+    _drawPressFired = false;
+    _pressStartX = e.clientX; _pressStartY = e.clientY;
+    // Start the hard-press timer: if the finger stays down (and mostly still)
+    // long enough, do a flood fill instead of a stroke.
+    clearTimeout(_drawPressTimer);
+    _drawPressTimer = setTimeout(() => {
+      _drawPressFired = true;
+      drawDoFillAtEvent(e);
+    }, DRAW_PRESS_MS);
+    drawPointerDown(e);
+  });
+  canvas.addEventListener('pointermove', (e) => {
+    if (!isDrawMode) return;
+    if (_drawPressFired) return; // a fill already happened for this press
+    const moved = Math.abs(e.clientX - _pressStartX) + Math.abs(e.clientY - _pressStartY);
+    // Only a clear, deliberate drag (> 16px total) counts as a stroke. Until
+    // then we hold off — small resting jitter neither cancels the fill nor
+    // leaves stray marks. Once it IS a stroke, cancel the pending fill.
+    if (moved > 16) {
+      if (_drawPressTimer) { clearTimeout(_drawPressTimer); _drawPressTimer = null; }
+      if (isDrawing) drawPointerMove(e);
+    }
+  });
+  canvas.addEventListener('pointerup', () => {
+    if (!isDrawMode) return;
+    clearTimeout(_drawPressTimer); _drawPressTimer = null;
+    if (_drawPressFired) { _drawPressFired = false; isDrawing = false; return; }
+    drawPointerUp();
+  });
+  canvas.addEventListener('pointercancel', () => {
+    clearTimeout(_drawPressTimer); _drawPressTimer = null;
+    if (isDrawMode) drawPointerUp();
+  });
+  canvas.addEventListener('pointerleave', () => {
+    clearTimeout(_drawPressTimer); _drawPressTimer = null;
+    if (isDrawMode && isDrawing) drawPointerUp();
+  });
+})();
+
 // Crop button toggles crop mode, then applies crop on second click
 let cropClickCount = 0;
 document.getElementById('crop-button')?.addEventListener('click', () => {
@@ -15788,11 +16325,18 @@ document.getElementById('contrast-slider')?.addEventListener('input', (e) => {
 // Drag crop corners
 let draggedCorner = null;
 
+let _cropGrabOffX = 0, _cropGrabOffY = 0;
 document.querySelectorAll('.crop-corner').forEach(corner => {
   corner.addEventListener('touchstart', (e) => {
     e.preventDefault();
     draggedCorner = corner;
-  });
+    // Record where within the handle the finger landed, so the corner tracks
+    // the finger smoothly from the first move instead of snapping/jumping.
+    const t = e.touches[0];
+    const r = corner.getBoundingClientRect();
+    _cropGrabOffX = t.clientX - r.left;
+    _cropGrabOffY = t.clientY - r.top;
+  }, { passive: false });
 });
 
 document.addEventListener('touchmove', (e) => {
@@ -15804,9 +16348,10 @@ document.addEventListener('touchmove', (e) => {
   const containerRect = container.getBoundingClientRect();
   const canvasRect = editorCanvas.getBoundingClientRect();
   
-  // Calculate position relative to container
-  let x = touch.clientX - containerRect.left;
-  let y = touch.clientY - containerRect.top;
+  // Position relative to container, minus where the finger grabbed the handle,
+  // so the handle follows the finger without jumping.
+  let x = touch.clientX - containerRect.left - _cropGrabOffX;
+  let y = touch.clientY - containerRect.top - _cropGrabOffY;
   
   // Get canvas boundaries relative to container
   const canvasLeft = canvasRect.left - containerRect.left;
@@ -18841,7 +19386,8 @@ console.log('AI Camera Styles app initialized!');
   });
   document.addEventListener('pointerdown', (e) => {
     if (popup.style.display === 'none') return;
-    if (!popup.contains(e.target) && !e.target.classList.contains('hsv-swatch-btn')) {
+    const onSwatch = e.target.closest && e.target.closest('.hsv-swatch-btn');
+    if (!popup.contains(e.target) && !onSwatch) {
       closePopup();
     }
   }, true);
@@ -18876,9 +19422,14 @@ console.log('AI Camera Styles app initialized!');
     redrawAndCommit();
   }
 
-  // Single delegated click listener for all swatch buttons
+  // Single delegated click listener for all swatch buttons.
+  // Use closest() so taps that land on a child element (e.g. the draw Color
+  // button's inner swatch or its label) still open the picker — previously
+  // those taps hit a child span, missed the class check, and did nothing,
+  // which is why that button sometimes needed a second click.
   document.addEventListener('click', (e) => {
-    if (e.target.classList.contains('hsv-swatch-btn')) openPicker(e.target);
+    const btn = e.target.closest && e.target.closest('.hsv-swatch-btn');
+    if (btn) openPicker(btn);
   });
 
   // --- Patch the .value setter on each hidden input so the swatch
@@ -18890,7 +19441,8 @@ console.log('AI Camera Styles app initialized!');
     'cam-btn-border-color-picker',
     'viewer-btn-color-picker',
     'viewer-btn-font-color-picker',
-    'viewer-btn-border-color-picker'
+    'viewer-btn-border-color-picker',
+    'draw-color-picker'
   ].forEach(function (id) {
     const el = document.getElementById(id);
     if (!el) return;
@@ -18900,6 +19452,10 @@ console.log('AI Camera Styles app initialized!');
       get: function () { return _v; },
       set: function (v) {
         _v = v;
+        // The draw Color button must stay black with an orange border — its
+        // chosen color shows only in the small inner swatch (handled by
+        // updateDrawTipPreview). So DON'T paint the button itself here.
+        if (id === 'draw-color-picker') return;
         const swatch = document.querySelector('.hsv-swatch-btn[data-for="' + id + '"]');
         if (swatch) swatch.style.background = v;
       }
