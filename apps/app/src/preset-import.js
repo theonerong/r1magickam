@@ -1141,38 +1141,38 @@ footerSection.innerHTML = `
           });
           updateCreditDisplay();
         }
-        const spinnerLabel = canSelectLocked ? 'Selecting all presets...' : 'Selecting all unlocked presets...';
-        presetsList.innerHTML = `<div style="display:flex;align-items:center;justify-content:center;padding:30px;gap:12px;"><div class="mk-loading-spinner-sm" style="width:28px;height:28px;min-width:28px;min-height:28px;aspect-ratio:1/1;flex-shrink:0;"></div><span style="color:#aaa;font-size:13px;">${spinnerLabel}</span></div>`;
-        setTimeout(() => {
-          const filteredPresets = this.getFilteredPresets(availablePresets);
-          filteredPresets.forEach(preset => {
-            const isAlreadyImported = this.importedPresets.some(p => p.name === preset.name);
-            const isNowLocked = !isAlreadyImported && !unlockedNames.has(preset.name) && !permanentlyOwned.has(preset.name) && !preset._sourcePublicBase;
-            if (!isNowLocked) {
-              this.checkboxStates.set(preset.name, true);
-            }
-          });
-          renderPresetsList();
-        }, 20);
+        // Flip the checkbox states and re-render directly. No spinner: the
+        // rows are already built, so this is instant (the show/hide fast path).
+        // The old spinner overwrote the list's innerHTML, which DETACHED the
+        // cached rows — then the fast path toggled classes on those detached
+        // rows without re-attaching them, leaving the spinner stuck forever.
+        const filteredPresets = this.getFilteredPresets(availablePresets);
+        filteredPresets.forEach(preset => {
+          const isAlreadyImported = this.importedPresets.some(p => p.name === preset.name);
+          const isNowLocked = !isAlreadyImported && !unlockedNames.has(preset.name) && !permanentlyOwned.has(preset.name) && !preset._sourcePublicBase;
+          if (!isNowLocked) {
+            this.checkboxStates.set(preset.name, true);
+          }
+        });
+        renderPresetsList();
       };
 
       document.getElementById('deselect-all-presets').onclick = () => {
         flashBtn('deselect-all-presets', '#aaa');
-        presetsList.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;padding:30px;gap:12px;"><div class="mk-loading-spinner-sm" style="width:28px;height:28px;min-width:28px;min-height:28px;aspect-ratio:1/1;flex-shrink:0;"></div><span style="color:#aaa;font-size:13px;">Deselecting all...</span></div>';
-        setTimeout(() => {
-          const filteredPresets = this.getFilteredPresets(availablePresets);
-          filteredPresets.forEach(preset => {
-            // Refund credit if this preset was session-unlocked but not yet imported
-            if (sessionUnlocked.has(preset.name)) {
-              refundCredit(preset.name);
-              sessionUnlocked.delete(preset.name);
-              unlockedNames.delete(preset.name);
-            }
-            this.checkboxStates.set(preset.name, false);
-          });
-          updateCreditDisplay();
-          renderPresetsList();
-        }, 20);
+        // Flip states and re-render directly (see select-all note above: the
+        // spinner used to detach the cached rows and freeze the list).
+        const filteredPresets = this.getFilteredPresets(availablePresets);
+        filteredPresets.forEach(preset => {
+          // Refund credit if this preset was session-unlocked but not yet imported
+          if (sessionUnlocked.has(preset.name)) {
+            refundCredit(preset.name);
+            sessionUnlocked.delete(preset.name);
+            unlockedNames.delete(preset.name);
+          }
+          this.checkboxStates.set(preset.name, false);
+        });
+        updateCreditDisplay();
+        renderPresetsList();
       };
 
       const closeModal = () => {
