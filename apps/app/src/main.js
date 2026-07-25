@@ -279,6 +279,10 @@ let savedViewerImageIndex = -1;
 
 // Track if we opened an editor from the gallery viewer prompt tap
 let returnToGalleryFromViewerEdit = false;
+// When a preset is saved from the gallery viewer's prompt/editor, this holds
+// the FINAL (possibly renamed) preset name so the viewer can reload the right
+// preset by name — independent of any editing-index that may already be reset.
+let _savedPresetNameForViewer = null;
 let returnToMainMenuFromBuilder = false;
 let isPresetInfoModalOpen = false;
 
@@ -592,8 +596,18 @@ function flushPendingCreditCelebration() {
     showStyleReveal(msg);
     if (statusElement) {
       const prev = statusElement.textContent;
-      statusElement.textContent = `🪙 ${pending > 1 ? pending + ' credits' : 'credit'} earned! You have ${total} credit${total !== 1 ? 's' : ''}`;
-      setTimeout(() => { if (statusElement) statusElement.textContent = prev || ''; }, 4000);
+      const creditStatusMsg = `🪙 ${pending > 1 ? pending + ' credits' : 'credit'} earned! You have ${total} credit${total !== 1 ? 's' : ''}`;
+      statusElement.textContent = creditStatusMsg;
+      setTimeout(() => {
+        // Only clear the credit line if it is STILL the thing on screen.
+        // Something newer may have replaced it in the meantime (e.g.
+        // updatePresetDisplay writing "MULTI PRESETS (3)" two seconds later),
+        // and blindly restoring the old snapshot would wipe that out — which
+        // is what left the camera status stuck on a stale message.
+        if (statusElement && statusElement.textContent === creditStatusMsg) {
+          statusElement.textContent = prev || '';
+        }
+      }, 4000);
     }
   }
 }
@@ -5708,7 +5722,14 @@ function hidePresetBuilderSubmenu() {
     openImageViewer(currentViewerImageIndex);
     // Determine which preset to load into the viewer
     let presetToShow = null;
-    if (presetToRestore) {
+    // If a preset was just saved here, load it BY ITS FINAL NAME first — this
+    // survives renames (the old name no longer exists) and index resets.
+    if (_savedPresetNameForViewer) {
+      presetToShow = CAMERA_PRESETS.find(p => p.name === _savedPresetNameForViewer) || null;
+    }
+    if (presetToShow) {
+      // already resolved by saved name
+    } else if (presetToRestore) {
       // Editing existing — find by name first, fall back to saved index
       let updatedPreset = CAMERA_PRESETS.find(p => p.name === presetToRestore.name);
       if (!updatedPreset && savedBuilderIndex >= 0 && CAMERA_PRESETS[savedBuilderIndex]) {
@@ -5745,6 +5766,7 @@ function hidePresetBuilderSubmenu() {
       const presetHeader = document.getElementById('viewer-preset-header');
       if (presetHeader) presetHeader.textContent = presetToShow.name;
     }
+    _savedPresetNameForViewer = null;
     updatePresetDisplay();
     return;
   }
@@ -6467,6 +6489,9 @@ async function saveCustomPreset() {
         visiblePresets[visIndex] = name.toUpperCase();
       }
     }
+    // Remember the final name so the gallery viewer reloads THIS preset,
+    // even though the editing index gets cleared before we return there.
+    _savedPresetNameForViewer = name.toUpperCase();
   } else {
     // Creating new preset - check if name already exists
     const existingIndex = CAMERA_PRESETS.findIndex(p => p.name.toUpperCase() === name.toUpperCase());
@@ -6516,6 +6541,8 @@ async function saveCustomPreset() {
     if (!_visiblePresetsSet.has(newPreset.name)) {
       visiblePresets.push(newPreset.name);
     }
+    // Remember the final name so the gallery viewer can load this new preset.
+    _savedPresetNameForViewer = newPreset.name;
   }
   
   // Save visible presets first
@@ -13378,7 +13405,14 @@ function hideStyleEditor() {
     openImageViewer(currentViewerImageIndex);
     // Determine which preset to load into the viewer
     let presetToShow = null;
-    if (presetToRestore) {
+    // Prefer the just-saved preset BY ITS FINAL NAME — survives renames and
+    // index resets (same fix as the Preset Builder path).
+    if (_savedPresetNameForViewer) {
+      presetToShow = CAMERA_PRESETS.find(p => p.name === _savedPresetNameForViewer) || null;
+    }
+    if (presetToShow) {
+      // already resolved by saved name
+    } else if (presetToRestore) {
       // Editing existing — find by name first, fall back to saved index
       let updatedPreset = CAMERA_PRESETS.find(p => p.name === presetToRestore.name);
       if (!updatedPreset && savedEditingStyleIndex >= 0 && CAMERA_PRESETS[savedEditingStyleIndex]) {
@@ -13414,6 +13448,7 @@ function hideStyleEditor() {
       const presetHeader = document.getElementById('viewer-preset-header');
       if (presetHeader) presetHeader.textContent = presetToShow.name;
     }
+    _savedPresetNameForViewer = null;
     updatePresetDisplay();
     return;
   }
@@ -13541,6 +13576,9 @@ async function saveStyle() {
   
   alert(editingStyleIndex >= 0 ? `Preset "${name}" updated!` : `Preset "${name}" saved!`);
   
+  // Remember the final (possibly renamed) name so the gallery viewer reloads
+  // THIS preset by name, independent of the editing index.
+  _savedPresetNameForViewer = name;
   const cameFromViewer = returnToGalleryFromViewerEdit;
   hideStyleEditor();
   if (!cameFromViewer) {
@@ -18251,6 +18289,17 @@ let _viewerHeaderBusy = false;
 let _viewerHeaderPendingFlash = null;
 let _gallerySubmitShowNames = false;
 
+// Works out what the gallery viewer header SHOULD say right now, from the
+// actual state — used whenever a temporary message finishes and we need to
+// put the real title back. Deriving beats restoring a saved snapshot,
+// because the snapshot can be stale (or empty) by the time it is used.
+function _deriveViewerHeaderText() {
+  if (isGalleryLayerActive && galleryLayerPresets.length > 0) return '📑 LAYER';
+  if (isGalleryMultiActive && galleryMultiPresets.length > 0) return `🎞️ MULTI (${galleryMultiPresets.length})`;
+  if (window.viewerLoadedPreset && window.viewerLoadedPreset.name) return window.viewerLoadedPreset.name;
+  return 'NO PRESET LOADED';
+}
+
 function _flashViewerHeader(message, duration, multiline, withSound) {
   if (_viewerHeaderBusy) {
     // The submitting spinner is up — save this flash (and its chime) and show
@@ -18276,7 +18325,13 @@ function _flashViewerHeader(message, duration, multiline, withSound) {
   if (withSound) playTaDaSound();
   header.textContent = message;
   _viewerHeaderRestoreTimer = setTimeout(() => {
-    header.textContent = _viewerHeaderTrueText;
+    // Only take the message down if it is STILL on screen — something newer
+    // may have legitimately replaced it. And put back the REAL title worked
+    // out from current state, falling back to the derived title if the saved
+    // one is missing (which used to leave the header blank).
+    if (header.textContent === message) {
+      header.textContent = _viewerHeaderTrueText || _deriveViewerHeaderText();
+    }
     header.style.whiteSpace = '';
     header.style.lineHeight = '';
     header.style.fontSize = '';
@@ -18349,7 +18404,8 @@ function hideGallerySubmittingIndicator() {
   _gallerySubmitShowNames = false;
   const header = document.getElementById('viewer-preset-header');
   if (header) {
-    header.textContent = _viewerHeaderTrueText;
+    // Fall back to the derived title so the header can never end up blank.
+    header.textContent = _viewerHeaderTrueText || _deriveViewerHeaderText();
   }
   _viewerHeaderTrueText = null;
   // If a credit popup (or any other flash) tried to appear while we were
