@@ -11516,6 +11516,8 @@ YOU MUST RESTART PROGRAM!`];
   try {
     if (checks.imported) {
       await presetImporter.clearImportedPresets();
+      // Also drop any saved local source copies so nothing lingers on device.
+      try { await presetImporter.clearAllSourceCache(); } catch (e) {}
       hasImportedPresets = false;
       factoryPresets  = [];
       DEFAULT_PRESETS = [];
@@ -11729,6 +11731,9 @@ YOU MUST RESTART PROGRAM!`];
       saveCustomPresetSources([]);
       saveDefaultPresetEnabled(true);
       updatePresetFileSettingsHint();
+      // The source list is now empty, so its saved local copies (preset JSON +
+      // preview images) must go too — otherwise they'd be orphaned on device.
+      try { await presetImporter.clearAllSourceCache(); } catch (e) {}
       successLines.push('• Preset file settings reset to default');
     }
   } catch (e) { errors.push('Preset File Settings: ' + e.message); }
@@ -11897,6 +11902,7 @@ function renderCustomPresetSourcesList() {
       saveDefaultPresetEnabled(!getDefaultPresetEnabled());
       renderCustomPresetSourcesList();
       updatePresetFileSettingsHint();
+      recheckForUpdates();
     });
   }
 
@@ -11935,6 +11941,7 @@ function renderCustomPresetSourcesList() {
         }
         renderCustomPresetSourcesList();
         updatePresetFileSettingsHint();
+        recheckForUpdates();
       });
     });
 
@@ -11962,10 +11969,13 @@ function renderCustomPresetSourcesList() {
         const idx = parseInt(btn.dataset.idx);
         const srcs = getCustomPresetSources();
         const name = srcs[idx].name || 'this source';
+        const removedUrl = srcs[idx] && srcs[idx].url;
         const confirmed = await customConfirm(`Remove "${name}"?`, { yesText: 'Remove', danger: true });
         if (confirmed) {
           srcs.splice(idx, 1);
           saveCustomPresetSources(srcs);
+          // Drop this source's saved local copy (presets + preview images) too.
+          if (removedUrl) { try { await presetImporter.deleteSourceCache(removedUrl); } catch (e) {} }
           if (!srcs.some(s => s.enabled) && !getDefaultPresetEnabled()) {
             saveDefaultPresetEnabled(true);
           }
@@ -16857,6 +16867,7 @@ const result = await presetImporter.import();
         clearPresetSourceEditMode();
         renderCustomPresetSourcesList();
         updatePresetFileSettingsHint();
+        recheckForUpdates();
         await customAlert('Source updated. Open Import Presets to load from it.');
       } else {
         // ---- ADD NEW MODE ----
@@ -16870,6 +16881,10 @@ const result = await presetImporter.import();
         urlInput.value = '';
         renderCustomPresetSourcesList();
         updatePresetFileSettingsHint();
+        // Refresh the Import Presets button's new/updated count now, so it
+        // reflects the just-added source without waiting for the user to leave
+        // this submenu.
+        recheckForUpdates();
         await customAlert('Source saved. Open Import Presets to load from it. If the source fails to load, you will see a message there.');
       }
     });

@@ -17,8 +17,14 @@ function stripAccents(str) {
 }
 
 const IMPORT_DB_NAME = 'ImportedPresetsDB';
-const IMPORT_DB_VERSION = 2;
+const IMPORT_DB_VERSION = 3;
 const IMPORT_STORE_NAME = 'imported_presets';
+// Local cache of custom preset SOURCES (the JSON fetched from each source URL)
+// plus the preview images referenced by those presets, saved as base64. This
+// lets sources keep working after their link dies, and keeps the presets
+// updatable while the link is alive (we still fetch first, cache on success,
+// and only fall back to this copy when the URL is unreachable).
+const SOURCE_CACHE_STORE_NAME = 'source_cache';
 
 // ===== CUSTOM PRESET SOURCES =====
 const CUSTOM_PRESET_SOURCES_KEY = 'mk_custom_preset_sources';
@@ -234,6 +240,10 @@ export class PresetImporter {
         if (!db.objectStoreNames.contains(IMPORT_STORE_NAME)) {
           db.createObjectStore(IMPORT_STORE_NAME, { keyPath: 'id', autoIncrement: true });
         }
+        // Source cache keyed by the source URL.
+        if (!db.objectStoreNames.contains(SOURCE_CACHE_STORE_NAME)) {
+          db.createObjectStore(SOURCE_CACHE_STORE_NAME, { keyPath: 'url' });
+        }
       };
     });
   }
@@ -293,6 +303,66 @@ export class PresetImporter {
     });
   }
 
+  // ---- Source cache (survives dead links) ----
+
+  // Save one source's fetched presets + downloaded preview images (base64),
+  // keyed by the source URL.
+  async saveSourceCache(url, presets, images) {
+    if (!this.db) { await this.init(); }
+    return new Promise((resolve) => {
+      try {
+        const tx = this.db.transaction([SOURCE_CACHE_STORE_NAME], 'readwrite');
+        const store = tx.objectStore(SOURCE_CACHE_STORE_NAME);
+        store.put({ url, presets, images: images || {}, timestamp: Date.now() });
+        tx.oncomplete = () => resolve(true);
+        tx.onerror = () => resolve(false);
+      } catch (e) { resolve(false); }
+    });
+  }
+
+  // Read one source's cached copy (or null if none saved yet).
+  async getSourceCache(url) {
+    if (!this.db) { await this.init(); }
+    return new Promise((resolve) => {
+      try {
+        const tx = this.db.transaction([SOURCE_CACHE_STORE_NAME], 'readonly');
+        const store = tx.objectStore(SOURCE_CACHE_STORE_NAME);
+        const req = store.get(url);
+        req.onsuccess = () => resolve(req.result || null);
+        req.onerror = () => resolve(null);
+      } catch (e) { resolve(null); }
+    });
+  }
+
+  // Remove a source's cached copy (used when the user deletes the source).
+  async deleteSourceCache(url) {
+    if (!this.db) { await this.init(); }
+    return new Promise((resolve) => {
+      try {
+        const tx = this.db.transaction([SOURCE_CACHE_STORE_NAME], 'readwrite');
+        const store = tx.objectStore(SOURCE_CACHE_STORE_NAME);
+        store.delete(url);
+        tx.oncomplete = () => resolve(true);
+        tx.onerror = () => resolve(false);
+      } catch (e) { resolve(false); }
+    });
+  }
+
+  // Wipe the ENTIRE source cache (every saved source copy + its images).
+  // Used by Reset Database so no orphaned cache survives a reset.
+  async clearAllSourceCache() {
+    if (!this.db) { await this.init(); }
+    return new Promise((resolve) => {
+      try {
+        const tx = this.db.transaction([SOURCE_CACHE_STORE_NAME], 'readwrite');
+        const store = tx.objectStore(SOURCE_CACHE_STORE_NAME);
+        store.clear();
+        tx.oncomplete = () => resolve(true);
+        tx.onerror = () => resolve(false);
+      } catch (e) { resolve(false); }
+    });
+  }
+
   async loadPresetsFromFile() {
     // If already loaded this session, return the cached copy instantly
     if (window._cachedFactoryPresets) {
@@ -324,11 +394,28 @@ export class PresetImporter {
       const customSources = getCustomPresetSources();
       for (const source of customSources) {
         if (!source.enabled) continue;
+        let reachedServer = false;
         try {
           const resp = await fetch(source.url);
+          reachedServer = true; // we got a response object, so the URL is reachable
           if (!resp.ok) {
+            // Reachable but the server returned an error (e.g. 403/404). Temp
+            // file hosts like catbox return this when a link expires or rate-
+            // limits, but our saved copy is still good — so fall back to it here
+            // too, and only show an error if there is no saved copy.
             console.warn(`Custom preset source "${source.name}" returned ${resp.status}`);
-            _lastLoadFailures.push({ name: source.name, reason: `Server returned error ${resp.status}. Check the URL is correct.` });
+            const cachedErr = await this.getSourceCache(source.url);
+            if (cachedErr && Array.isArray(cachedErr.presets) && cachedErr.presets.length > 0) {
+              const base = source.url.substring(0, source.url.lastIndexOf('/') + 1) + 'public/';
+              cachedErr.presets.forEach(p => {
+                if (!seenNames.has(p.name)) {
+                  seenNames.add(p.name);
+                  allPresets.push(p.imageUrl ? p : { ...p, _sourcePublicBase: base });
+                }
+              });
+            } else {
+              _lastLoadFailures.push({ name: source.name, reason: `Server returned error ${resp.status} and no saved copy is available. Connect once while the link is live.` });
+            }
             continue;
           }
           let customPresets;
@@ -353,6 +440,15 @@ export class PresetImporter {
           // Derive the public folder sitting next to this source's JSON file
           const sourcePublicBase = source.url.substring(0, source.url.lastIndexOf('/') + 1) + 'public/';
 
+          // Save ONLY the preset JSON to the local cache (small + fast) so the
+          // presets survive if the source link later dies. We do NOT download
+          // preview images: sources hosted on a plain file host (e.g. catbox)
+          // have no image folder, so those requests were pointless 404s and the
+          // cause of the slow loads. Preview images come from elsewhere anyway —
+          // a per-preset custom preview the user assigns, or the program's own
+          // ./public/ folder — neither of which depends on the source location.
+          await this.saveSourceCache(source.url, validPresets);
+
           validPresets.forEach(p => {
             if (!seenNames.has(p.name)) {
               seenNames.add(p.name);
@@ -361,7 +457,26 @@ export class PresetImporter {
           });
         } catch (e) {
           console.warn(`Failed to load custom preset source "${source.name}":`, e);
-          _lastLoadFailures.push({ name: source.name, reason: 'Could not be reached. Check your connection and verify the URL is public.' });
+          // Only fall back to the local cache when the URL was UNREACHABLE
+          // (network error / dead link). A reachable-but-broken file already
+          // 'continue'd above and never gets here.
+          if (!reachedServer) {
+            const cached = await this.getSourceCache(source.url);
+            if (cached && Array.isArray(cached.presets) && cached.presets.length > 0) {
+              const base = source.url.substring(0, source.url.lastIndexOf('/') + 1) + 'public/';
+              cached.presets.forEach(p => {
+                if (!seenNames.has(p.name)) {
+                  seenNames.add(p.name);
+                  allPresets.push(p.imageUrl ? p : { ...p, _sourcePublicBase: base });
+                }
+              });
+              // Loaded from the saved copy — not an error the user needs to see.
+            } else {
+              _lastLoadFailures.push({ name: source.name, reason: 'Could not be reached and no saved copy is available yet. Connect once while the link is live to save a local copy.' });
+            }
+          } else {
+            _lastLoadFailures.push({ name: source.name, reason: 'Could not be read. Check the URL is correct and public.' });
+          }
         }
       }
 
