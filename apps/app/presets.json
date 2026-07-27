@@ -8924,83 +8924,83 @@
       "RETRO",
       "TRANSFORMATION"
     ],
-    "message": "Take a picture and transform ONLY the subject, styling and rendering them as a famous collectible hero, figure, or historical character while strictly preserving the subject's identity.\n\nThe background, environment, lighting, perspective, shadows, and every non-subject element must remain exactly as they appear in the original photograph.\n\nTHIS IS NOT A CHEAP DIGITAL OVERLAY OR FLAT CUT-OUT.\n\nCompletely re-render the subject's clothing, gear, pose, and texture to match the exact artistic, photographic, or lithographic style of the chosen collectible character, sitting seamlessly inside the unedited real-world environment.",
+    "message": "Take a picture and transform ONLY THE SUBJECT into a high-resolution, photorealistic image of a physical, iconic collectible item. The human character, figure, or person originally featured on the collectible—including both the printed packaging artwork AND any 3D physical figure/toy itself—must have their facial likeness and identity replaced by the photographic subject.\n\nTHIS IS A FULL ENVIRONMENT AND ITEM RECONSTRUCTION.\n\nDo not just style the subject inside a room. Reconstruct the entire composition as the actual physical collectible—such as a vintage comic book cover, trading card, postage stamp, or carded action figure. The subject acts as the model for the character, seamlessly replacing their face across all artwork, illustrations, and physical molded toy heads on the collectible in the precise historical medium of that piece.",
     "randomizeOptions": true,
     "options": [
     {
       "id": "001",
-      "text": "Action Comics No. 1 (1938) — Transform ONLY the subject into golden-age Superman from the historic first issue, rendering their attire and anatomy in classic 1938 newsprint comic illustration style while standing in the unedited room."
+      "text": "Action Comics No. 1 (1938) — Render the entire image as the original vintage Action Comics No. 1 comic book cover, replacing Superman lifting the red car with the subject as the hero model in golden-age comic line art and newsprint textures."
     },
     {
       "id": "002",
-      "text": "Inverted Jenny Postage Stamp (1918) — Transform ONLY the subject so they are suspended upside down in the exact engraved steel-blue line-art style of the vintage airmail stamp, complete with fine intaglio line shading."
+      "text": "Inverted Jenny Postage Stamp (1918) — Render the entire image as the famous inverted US postage stamp, replacing the central airplane vignette with the subject suspended upside down in blue intaglio engraved steel line-art inside the red frame."
     },
     {
       "id": "003",
-      "text": "Amazing Fantasy No. 15 (1962) — Transform ONLY the subject into Spider-Man from his debut issue, wearing the iconic silver-age suit with classic hand-drawn ink webbing and bold comic shading."
+      "text": "Amazing Fantasy No. 15 (1962) — Render the entire image as the silver-age Spider-Man debut comic cover, replacing Spider-Man with the subject swinging from a web holding a villain in 1960s Marvel cover illustration style."
     },
     {
       "id": "004",
-      "text": "Detective Comics No. 27 (1939) — Transform ONLY the subject into the original golden-age Batman, styled in the dark caped suit with yellow chest emblem and dramatic 1930s pulp comic line art."
+      "text": "Detective Comics No. 27 (1939) — Render the entire image as the historic Batman debut comic book cover, replacing Batman with the subject in the caped suit swinging on a rope against the yellow sky."
     },
     {
       "id": "005",
-      "text": "Honus Wagner T206 Baseball Card (1909) — Transform ONLY the subject into a turn-of-the-century baseball player in a vintage wool jersey, rendered in classic 1909 lithographic portrait card style."
+      "text": "Honus Wagner T206 Baseball Card (1909) — Render the entire image as the ultra-rare T206 tobacco card, replacing Honus Wagner with a lithographic portrait of the subject in an early 1900s baseball uniform against the iconic solid yellow background."
     },
     {
       "id": "006",
-      "text": "Antique Coca-Cola Serving Tray (1910s) — Transform ONLY the subject into a 1910s painted advertising figure, styled in elegant turn-of-the-century attire with smooth oil-painted shading."
+      "text": "Antique Coca-Cola Serving Tray (1910s) — Render the entire image as a vintage lithographed tin serving tray, replacing the original model with a painted oil portrait of the subject in elegant 1910s attire holding a glass bottle."
     },
     {
       "id": "007",
-      "text": "Vintage Log Cabin Syrup Lithographed Tin — Transform ONLY the subject into an early 1900s embossed folk character, styled with classic tin-plate painted illustration textures."
+      "text": "Vintage Log Cabin Syrup Lithographed Tin — Render the entire image as an early 1900s embossed advertising tin, featuring the subject painted as the central featured character on the vintage metal container."
     },
     {
       "id": "008",
-      "text": "1952 Topps Mickey Mantle Rookie Card — Transform ONLY the subject into a 1950s star baseball player, wearing a crisp retro flannel baseball uniform in hand-tinted mid-century card art style."
+      "text": "1952 Topps Mickey Mantle Rookie Card — Render the entire image as the iconic 1952 Topps baseball card, replacing Mickey Mantle with the subject posing in a 1950s baseball jersey inside the classic card border layout."
     },
     {
       "id": "009",
-      "text": "1960s Kenner Action Figure Figure — Transform ONLY the subject into a molded plastic sci-fi action hero, complete with sculpted plastic uniform details and vintage toy paint applications."
+      "text": "1960s Kenner Action Figure Cardback — Render the entire image as an un-opened 1960s retro action figure package, replacing the character's face with the subject's face on BOTH the illustrated cardboard cardback AND the molded plastic head of the physical toy figure inside the blister bubble."
     },
     {
       "id": "010",
-      "text": "1999 Pokémon 1st Edition Charizard — Transform ONLY the subject into a powerful anime monster trainer, rendered in classic 90s hand-drawn Japanese animation line art and vibrant cell shading."
+      "text": "1999 Pokémon 1st Edition Shadowless Card — Render the entire image as a classic holographic trading card, replacing the central monster with an anime-styled illustration of the subject inside the shimmering foil artwork window."
     },
     {
       "id": "011",
-      "text": "Magic: The Gathering Black Lotus — Transform ONLY the subject into a high-fantasy spellcaster, rendered in rich 1990s fantasy oil-painting style with intricate magical robes."
+      "text": "Magic: The Gathering Card (1993) — Render the entire image as an original 1990s fantasy trading card, replacing the artwork character with the subject painted as a grand fantasy spellcaster inside the classic card frame."
     },
     {
       "id": "012",
-      "text": "1930s Crate Label Fruit Advertising — Transform ONLY the subject into a romanticized 1930s orchard harvest figure, rendered in vibrant stone-lithograph commercial art style."
+      "text": "1930s Crate Label Fruit Advertising — Render the entire image as a wooden citrus crate paper label, replacing the orchard figure with a stone-lithograph painted portrait of the subject surrounded by bold vintage typography."
     },
     {
       "id": "013",
-      "text": "Antique Campbell's Soup Mascot — Transform ONLY the subject into an early 20th-century painted advertising character, styled with classic embossed tin packaging artwork."
+      "text": "Antique Campbell's Soup Mascot Tin — Render the entire image as a turn-of-the-century promotional soup tin, featuring the subject as the painted mascot illustration on the embossed paper and tin packaging."
     },
     {
       "id": "014",
-      "text": "Gibson Girl Ink Illustration (1890s) — Transform ONLY the subject into an 1890s high-society figure, rendered in Charles Dana Gibson's fine cross-hatched black pen-and-ink style."
+      "text": "Gibson Girl Ink Illustration Print (1890s) — Render the entire image as a collectible 1890s Charles Dana Gibson art print, replacing the high-society lady with the subject drawn in fine cross-hatched black pen-and-ink."
     },
     {
       "id": "015",
-      "text": "WWII Fighter Ace Tobacco Card (1940) — Transform ONLY the subject into a 1940s flight-deck aviator, styled in a leather bomber jacket and shearling collar in painterly tobacco card art."
+      "text": "WWII Fighter Ace Tobacco Card (1940) — Render the entire image as a 1940s collector card, replacing the aviator with a painterly portrait of the subject wearing a shearling flight jacket and goggles."
     },
     {
       "id": "016",
-      "text": "Vintage Cracker Jack Prize Figure — Transform ONLY the subject into a tiny early 1900s prize character, rendered in simple hand-tinted newsprint line art."
+      "text": "Vintage Cracker Jack Prize Card — Render the entire image as an early 1900s paper prize insert card, replacing the character with the subject drawn in simple hand-tinted newsprint line art."
     },
     {
       "id": "017",
-      "text": "1986 Fleer Basketball Star — Transform ONLY the subject into an 80s star athlete, styled in a retro athletic jersey and shorts in crisp mid-80s sports photography style."
+      "text": "1986 Fleer Basketball Star Card — Render the entire image as the famous 1986 Fleer rookie basketball card, replacing the athlete with the subject performing a soaring jump shot inside the red, white, and blue border."
     },
     {
       "id": "018",
-      "text": "1977 Kenner Star Wars Ben (Obi-Wan) Kenobi (Telescoping Lightsaber) — Transform ONLY the subject into the vintage 1977 Ben Kenobi action figure, complete with the specific molded plastic texture, simple paint applications, and the vinyl brown cape. Critically, the right arm must feature the rare, thin, telescoping lightsaber filament extended directly from the forearm, exactly replicating the original toy's mechanism."
+      "text": "1977 Kenner Star Wars Carded Figure (Ben Kenobi) — Render the entire image as an original unopened 1977 Kenner 12-back carded action figure. The subject's facial likeness must replace Ben Kenobi's face on BOTH the painted cardback illustration AND the sculpted plastic head of the physical toy figure inside the clear blister pack. The toy figure wears the vinyl cape and features the rare, thin, yellow telescoping lightsaber filament extended directly from its right forearm."
     }
     ],
-    "additionalInstructions": "FINAL RESULT:\nThe image should convincingly transform ONLY the subject into the selected collectible character or figure—matching the exact historical art style, clothing, and medium of the chosen option—while preserving the original photographic background completely unchanged."
+    "additionalInstructions": "FINAL RESULT:\nThe image must depict the entire physical collectible item itself (complete with paper grain, ink textures, cardstock borders, molded plastic, or metallic tins). The original person or character featured on the collectible must have their face replaced by the subject across ALL depictions—including both printed 2D artwork and 3D molded action figure heads—ensuring their facial identity is seamlessly integrated into the exact historical medium."
   },
   {
     "name": "COLLECTIBLE TOY",
