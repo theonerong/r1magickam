@@ -732,6 +732,41 @@
     "additionalInstructions": ""
   },
   {
+    "name": "ACRYLIC POUR FLUID ART",
+    "category": [
+      "ART",
+      "ABSTRACT",
+      "FLUID",
+      "COLORFUL",
+      "TECHNIQUE"
+    ],
+    "message": "Take a picture and transform it into an acrylic pour painting where the subject emerges from flowing, organic patterns of fluid paint. Use the characteristic cell structures, lacing patterns, and color separations that occur when silicone-mixed acrylics are poured and tilted. The subject should be recognizable but integrated into the flowing paint patterns \u2014 as if the pour naturally formed their likeness. Colors should be vibrant and saturated with clear separation between hues. Show the glossy, self-leveling surface of poured acrylics with its characteristic depth and shine. Apply the following pour technique:",
+    "randomizeOptions": true,
+    "options": [
+      {
+        "id": "001",
+        "text": "Dirty pour \u2014 all colors layered in one cup then poured together, creating concentric rings and cells"
+      },
+      {
+        "id": "002",
+        "text": "Dutch pour \u2014 colors blown across the surface with a hair dryer, creating feathered wing-like patterns"
+      },
+      {
+        "id": "003",
+        "text": "Swipe technique \u2014 one color dragged across others with a damp paper towel, revealing cells beneath"
+      },
+      {
+        "id": "004",
+        "text": "Ring pour \u2014 colors poured in alternating rings from center, creating bullseye patterns that flow outward"
+      },
+      {
+        "id": "005",
+        "text": "Flip cup \u2014 inverted cup of layered colors released onto canvas, creating dramatic radial patterns"
+      }
+    ],
+    "additionalInstructions": "The subject must be recognizable within the pour patterns. Cells and lacing should appear natural, not digitally generated. The surface should appear glossy and level."
+  },
+  {
     "name": "ACTION FIGURE",
     "category": [
       "TOY",
@@ -1266,6 +1301,19 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "ALCOHOL INK COSMOS",
+    "category": [
+      "ART",
+      "ABSTRACT",
+      "FLUID",
+      "COLORFUL"
+    ],
+    "message": "Take a picture and transform it into an alcohol ink artwork with a cosmic, ethereal quality. The subject should emerge from swirling pools of highly saturated, transparent alcohol inks on a non-porous surface (like Yupo paper or ceramic tile). Colors should flow and merge organically, creating cell-like structures and dendritic patterns where different inks meet. The subject's form should be suggested through strategic color placement and the natural movement of the inks, with some areas of sharp detail where ink has dried quickly and others dissolving into abstract fluid patterns.",
+    "randomizeOptions": false,
+    "options": [],
+    "additionalInstructions": "Preserve subject identity through value contrast and strategic placement of detail. The overall effect should feel both controlled and spontaneous."
   },
   {
     "name": "ALEXANDER THE PRETTY GOOD",
@@ -2425,6 +2473,49 @@
     "additionalInstructions": ""
   },
   {
+    "name": "ANIMATION STYLE TRIBUTE",
+    "category": [
+      "ART",
+      "ANIMATION",
+      "STYLE",
+      "CARTOON",
+      "TRIBUTE"
+    ],
+    "message": "Take a picture and transform it into a specific animation art style \u2014 rendering the subject as if they were a character designed for that particular animation studio or show's visual language. The transformation should be complete: not just the drawing style but the color palette, line quality, proportions, and design philosophy of the chosen animation tradition. The subject should look like they naturally belong in that animated world while remaining recognizable.",
+    "randomizeOptions": true,
+    "options": [
+      {
+        "id": "001",
+        "text": "Studio Ghibli \u2014 soft watercolor backgrounds, detailed naturalistic style, Miyazaki character design, gentle"
+      },
+      {
+        "id": "002",
+        "text": "Cartoon Network 2000s \u2014 bold outlines, geometric shapes, limited palette, energetic and graphic"
+      },
+      {
+        "id": "003",
+        "text": "Disney Renaissance \u2014 expressive eyes, flowing lines, musical energy, Broadway-influenced drama"
+      },
+      {
+        "id": "004",
+        "text": "Vintage Fleischer \u2014 rubber hose limbs, surreal backgrounds, jazz-age energy, black and white with gray"
+      },
+      {
+        "id": "005",
+        "text": "Anime shonen \u2014 dynamic poses, speed lines, detailed eyes, spiky hair, battle-ready intensity"
+      },
+      {
+        "id": "006",
+        "text": "Stop-motion Laika \u2014 slightly imperfect, visible texture, handcrafted quality, dark whimsy"
+      },
+      {
+        "id": "007",
+        "text": "French animation (Sylvain Chomet) \u2014 exaggerated proportions, muted palette, melancholic beauty, detailed backgrounds"
+      }
+    ],
+    "additionalInstructions": "The animation style must be authentically reproduced \u2014 correct proportions, proper line quality, accurate color palette, and design philosophy. The subject must be recognizable despite the stylistic transformation. The character should look like they belong in that animated world."
+  },
+  {
     "name": "ANIME ART",
     "category": [
       "OPTIONS",
@@ -2553,6 +2644,44 @@
     "additionalInstructions": "IMPORTANT:\n• The image must clearly look like a digital illustration drawn by hand in a tablet art app\n• Do not apply filters to a photo\n• Do not retain photographic skin texture\n• Keep anatomy proportional and recognizable\n\nFINAL RESULT:\nThe final image should look like a polished hand-drawn anime-style digital illustration created in Procreate, featuring clean ink lines, flat cel coloring, and vibrant neon squiggle accents layered with a soft digital glow.\n\nLINE ART REQUIREMENTS:"
   },
   {
+    "name": "ANIME REACTION FACE",
+    "category": [
+      "HUMOR",
+      "ANIME",
+      "EXAGGERATION",
+      "EXPRESSION"
+    ],
+    "message": "Take a picture and transform the subject into an over-the-top anime reaction face \u2014 the kind of exaggerated expression used in comedy anime when a character is shocked, embarrassed, angry, or confused. Apply classic anime comedy conventions: enormous sweat drops, popping veins, blank white eyes of shock, the blue lines of depression, steam coming from ears, or the classic anime nosebleed. The art style should be authentic to anime comedy \u2014 clean lines, flat colors, speed lines radiating from the subject. The expression should be pushed to maximum exaggeration while the subject remains recognizable. Use the following reaction type:",
+    "randomizeOptions": true,
+    "options": [
+      {
+        "id": "001",
+        "text": "Shock/disbelief \u2014 blank white eyes, jaw dropped to floor, hair standing on end, blue shock lines"
+      },
+      {
+        "id": "002",
+        "text": "Rage \u2014 popping vein on forehead, sharp teeth, flames in background, red face"
+      },
+      {
+        "id": "003",
+        "text": "Embarrassment \u2014 entire face beet red, steam from ears, spiral eyes, shrinking into frame"
+      },
+      {
+        "id": "004",
+        "text": "Smug satisfaction \u2014 sparkle effects, closed eyes with confident smile, bishonen roses floating"
+      },
+      {
+        "id": "005",
+        "text": "Existential despair \u2014 blue depression lines, soul leaving body as white ghost, gray color palette"
+      },
+      {
+        "id": "006",
+        "text": "Chibi rage \u2014 entire body shrunk to chibi proportions, flailing tiny arms, oversized angry head"
+      }
+    ],
+    "additionalInstructions": "The anime style must be authentic \u2014 not just a filter but genuine anime art conventions. The subject must remain recognizable despite the extreme expression. Background effects should match the reaction type."
+  },
+  {
     "name": "ANODIZED ALUMINUM",
     "category": [
       "MANUFACTURING",
@@ -2655,6 +2784,41 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "• Preserve recognizable identity\n• Subject redrawn in Archie Comics style\n• Subject interacts naturally with Archie characters\n• Riverdale setting when appropriate\n• Bright comic-book colors\n• Clean comic-book linework\n• Teen-comedy atmosphere\n• Comic-book panel layout\n• Speech balloons when appropriate\n• Classic Archie Comics aesthetics\n• Wholesome humor\n• Comic-book storytelling\n• Vintage comic-book production appearance\n• No photorealism\n• Final image should resemble an authentic Archie Comics page or cover"
+  },
+  {
+    "name": "ARCHITECTURAL SKETCH",
+    "category": [
+      "OPTIONS",
+      "ARCHITECTURE",
+      "DRAWING",
+      "CONCEPT ART",
+      "FULL TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform the ENTIRE image into a professional architectural presentation rendering while preserving the subject's identity.\n\nTransform BOTH the subject AND the background.\n\nTHIS IS NOT A CARTOON.\nTHIS IS NOT A PAINTING.\nTHIS IS NOT A PENCIL SKETCH FILTER.\n\nCompletely reinterpret the entire image as though it were a concept presentation created by a professional architectural visualization artist for an architect, developer, or real estate client.\n\nThe finished artwork should resemble the clean, elegant hand-rendered architectural presentation drawings commonly used to preview homes, shopping centers, office buildings, resorts, parks, neighborhoods, and commercial developments before construction.\n\nThe scene should communicate design intent rather than photographic realism.\n\nMASTER PROMPT RULE:\n• If a master prompt specifies a particular subject, pose, setting, mood, action, artistic direction, architectural style, or composition—PRIORITIZE and USE that information while constructing the architectural presentation rendering.",
+  "randomizeOptions": true,
+  "options": [
+    {
+      "id": "001",
+      "text": "Marker Rendering — Create the image using classic architectural marker rendering with confident ink linework, alcohol marker shading, soft color washes, minimal detail, and clean presentation."
+    },
+    {
+      "id": "002",
+      "text": "Colored Pencil Rendering — Produce a professional architectural presentation drawing using delicate colored pencil shading, crisp drafting lines, subtle textures, and restrained color palettes."
+    },
+    {
+      "id": "003",
+      "text": "Ink & Watercolor Presentation — Render the scene using architectural pen-and-ink linework combined with transparent watercolor washes, soft gradients, atmospheric shadows, and elegant presentation."
+    },
+    {
+      "id": "004",
+      "text": "Concept Design Sketch — Create a loose but highly professional architectural concept sketch using expressive perspective lines, selective shading, minimal detail, and rapid presentation-style rendering."
+    },
+    {
+      "id": "005",
+      "text": "Master Architectural Rendering — Intelligently combine professional architectural linework, marker rendering, watercolor washes, colored pencil textures, atmospheric perspective, and presentation techniques to produce a museum-quality architectural visualization suitable for client presentations."
+    }
+  ],
+  "additionalInstructions": "• Transform the ENTIRE image.\n• Completely discard the original photographic appearance.\n• Preserve the overall composition and camera viewpoint.\n• Preserve the subject's identity, facial structure, hairstyle, clothing silhouette, expression, pose, and recognizable features.\n• Reinterpret every object in the image as though illustrated by a professional architectural renderer.\n• Use clean perspective construction and confident architectural linework.\n• Employ selective detail rather than photorealistic rendering.\n• Use soft marker gradients, watercolor washes, colored pencil shading, or architectural rendering techniques depending on the selected option.\n• White paper should remain visible throughout the illustration.\n• Preserve generous negative space where appropriate.\n• Shadows should be soft, simple, and presentation-oriented rather than photographic.\n• Colors should be restrained, harmonious, and typical of architectural presentation boards.\n• Trees, landscaping, skies, people, vehicles, furniture, and surrounding objects should all be rendered in traditional architectural visualization style.\n• Line quality should be crisp and confident with slight hand-drawn imperfections.\n• Avoid excessive crosshatching, comic book styles, cartoons, anime, oil painting textures, or digital concept art aesthetics.\n• The rendering should feel like artwork prepared for an architectural client meeting rather than a finished illustration.\n• Maintain a clean, elegant, uncluttered presentation emphasizing design over realism.\n• Master prompt instructions always override the selected option whenever conflicts occur.\n\nFINAL VALIDATION:\n\n✓ The ENTIRE image has been transformed.\n✓ The artwork resembles a professional architectural presentation rendering.\n✓ The illustration appears hand-rendered rather than digitally filtered.\n✓ Clean architectural linework is present throughout.\n✓ The restrained marker, watercolor, or colored pencil rendering style is consistent.\n✓ White paper remains visible as part of the composition.\n✓ The subject remains immediately recognizable.\n✓ The image resembles presentation artwork created by a professional architectural visualization artist for a client proposal.\n✓ If ANY answer is NO, regenerate until every requirement is satisfied."
   },
   {
     "name": "ARCHITECTURAL REDESIGN",
@@ -2943,6 +3107,20 @@
     "additionalInstructions": "FINAL RESULT:\nA fully reconstructed image formed from floating ash or dust particles."
   },
   {
+    "name": "ASL",
+    "category": [
+      "LANGUAGE",
+      "COMMUNICATION",
+      "EDUCATION",
+      "FINGERSPELLING",
+      "TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform ONLY the subject into a professional educational fingerspelling illustration while preserving the subject's identity.\n\nTHIS IS NOT A PHOTO FILTER.\nTHIS IS NOT A CARTOON.\nTHIS IS NOT RANDOM HAND GESTURES.\nTHIS IS NOT CONVERSATIONAL SIGN LANGUAGE.\n\nThe goal is to accurately demonstrate the American Sign Language (ASL) manual alphabet through fingerspelling.\n\nIf a master prompt specifies any text, fingerspell that exact text.\n\nOtherwise, intelligently generate ONE short word or ONE proper name from the flavor text that best represents the subject or image, then fingerspell ONLY that word.\n\nDisplay one separate instance of the subject for EVERY letter, arranged from left-to-right in reading order.\n\nEach copy of the subject must perform exactly one ASL manual alphabet letter.\n\nThe finished image should resemble a professionally photographed educational ASL fingerspelling chart.",
+    "randomizeOptions": false,
+    "options": [],
+    "additionalInstructions": "• Transform ONLY the subject.\n• Preserve the original background unless overridden by the master prompt.\n• Preserve the subject's exact facial identity, hairstyle, age, ethnicity, clothing, body proportions, facial expression, and recognizable features.\n• NEVER attempt conversational ASL.\n• NEVER attempt complete ASL sentences.\n• ALWAYS use the ASL manual alphabet (fingerspelling) only.\n• If a master prompt exists, fingerspell that exact text.\n• Otherwise derive ONE concise representative word or proper name from the flavor text.\n• Never fingerspell more than 20 characters unless explicitly directed by the master prompt.\n• Create one separate copy of the subject for every individual letter.\n• Arrange all copies horizontally from left to right.\n• Keep consistent spacing between each copy.\n• Every copy must remain immediately recognizable as the same person.\n• Every handshape must exactly match the official ASL manual alphabet.\n• Finger positions must be anatomically correct.\n• Palm orientation must be correct for each letter.\n• Wrist orientation must be correct.\n• Thumb position must be correct.\n• Finger lengths and proportions must remain anatomically realistic.\n• Both hands should only be used when required by the official manual alphabet.\n• Keep every hand completely visible.\n• Never crop fingers.\n• Never hide fingers behind the body.\n• Never allow one copy to overlap another.\n• Maintain identical camera angle, lighting, scale, and body position for every copy unless the hand orientation requires a slight rotation.\n• The body should remain mostly unchanged between letters so the handshape becomes the primary visual difference.\n• Use a clean educational layout similar to professional ASL instructional posters.\n• Do not add printed letters, arrows, labels, captions, or instructional graphics.\n• Do not invent hand gestures.\n• Do not approximate letters.\n• Do not combine multiple letters into one pose.\n• Do not replace handshapes with symbolic gestures.\n• Master prompt instructions always override conflicting instructions.\n\nFINAL VALIDATION:\n\n✓ ONLY the subject has been transformed.\n✓ The background remains unchanged unless overridden.\n✓ Every copy of the subject is immediately recognizable.\n✓ Exactly one ASL manual alphabet letter is shown per subject instance.\n✓ Every required letter appears exactly once and in the proper left-to-right sequence.\n✓ Every handshape matches the official ASL manual alphabet.\n✓ Every finger remains completely visible.\n✓ No letters, captions, arrows, or instructional text appear.\n✓ The finished image resembles a professional ASL fingerspelling educational poster.\n✓ If ANY answer is NO, regenerate until every requirement is satisfied."
+  },
+  {
     "name": "ASSEMBLAGE ART",
     "category": [
       "ART",
@@ -3029,6 +3207,41 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "AUTUMN LEAVES MOSAIC",
+    "category": [
+      "OPTIONS",
+      "MOSAIC",
+      "NATURAL MATERIALS",
+      "AUTUMN",
+      "MATERIAL TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform ONLY the subject into a handcrafted mosaic constructed entirely from real autumn leaves while preserving the subject's identity.\n\nThe background, environment, lighting, perspective, shadows, and every non-subject element must remain exactly as they appear in the original photograph.\n\nTHIS IS NOT A PHOTO WITH LEAVES PLACED ON TOP.\nTHIS IS NOT AN AUTUMN FILTER.\nTHIS IS NOT THE ORIGINAL SUBJECT WITH LEAF TEXTURES.\n\nCompletely discard the original appearance of the subject and reconstruct the subject entirely from authentic individual autumn leaves.\n\nEvery visible part of the subject—including the face, hair, eyes, clothing, hands, shoes, and every fine detail—must be rebuilt exclusively from carefully arranged real leaves.\n\nEvery leaf must remain individually recognizable while collectively recreating the subject with remarkable accuracy.\n\nThe finished artwork should resemble an award-winning botanical mosaic assembled leaf-by-leaf while remaining immediately recognizable as the subject.\n\nMASTER PROMPT RULE:\n• If a master prompt specifies a particular subject, pose, setting, mood, action, artistic direction, or composition—PRIORITIZE and USE that information while constructing ONLY the subject from autumn leaves.",
+    "randomizeOptions": true,
+    "options": [
+    {
+      "id": "001",
+      "text": "Maple Leaves — Construct the mosaic entirely from real maple leaves displaying vibrant reds, oranges, yellows, and deep autumn browns."
+    },
+    {
+      "id": "002",
+      "text": "Oak Leaves — Rebuild the subject using real oak leaves featuring rich golden tones, russet browns, weathered textures, and naturally curled edges."
+    },
+    {
+      "id": "003",
+      "text": "Mixed Forest Leaves — Create the portrait using a carefully selected mixture of maple, oak, birch, beech, elm, and other autumn leaves to maximize color variation and detail."
+    },
+    {
+      "id": "004",
+      "text": "Pressed Botanical Mosaic — Construct the subject from professionally pressed autumn leaves with flattened surfaces, intricate vein detail, and precise artistic placement."
+    },
+    {
+      "id": "005",
+      "text": "Master Autumn Leaf Mosaic — Intelligently combine thousands of individually visible autumn leaves of different species, sizes, colors, vein patterns, curling, weathering, and natural imperfections to faithfully recreate every recognizable facial feature, hairstyle, clothing fold, and body contour of the subject."
+    }
+    ],
+    "additionalInstructions": "• Transform ONLY the subject.\n• Keep the background completely unchanged.\n• Preserve the original environment, lighting, perspective, colors, shadows, and every background object exactly as photographed.\n• Completely discard the original photographic subject before reconstruction.\n• NEVER place leaves over the original photograph.\n• NEVER blend photographic textures with leaf surfaces.\n• The original subject must not remain visible anywhere.\n• Every visible part of the subject must be reconstructed entirely from authentic individual autumn leaves.\n• Preserve the subject's exact identity, facial structure, hairstyle, expression, age, ethnicity, body proportions, pose, silhouette, and recognizable features.\n• Facial features must emerge solely through the careful placement of individual leaves.\n• Hair must be recreated entirely from carefully arranged leaves while preserving the subject's recognizable hairstyle, volume, and direction.\n• Clothing must also be reconstructed entirely from overlapping leaves while preserving folds, seams, wrinkles, and silhouette.\n• Every individual leaf must remain clearly visible and distinguishable.\n• Preserve authentic botanical characteristics including leaf veins, stems, curled edges, torn margins, natural discoloration, drying, weathering, insect nibbles, and seasonal imperfections.\n• Use realistic variations in leaf species, size, orientation, overlap, color, and texture.\n• Never create painted paper leaves, artificial leaves, plastic decorations, or fabric leaves.\n• The completed artwork should resemble a genuine handcrafted autumn leaf mosaic photographed after completion.\n• Master prompt instructions always override the selected option whenever conflicts occur.\n\nFINAL VALIDATION:\n\n✓ ONLY the subject has been transformed.\n✓ The background remains completely unchanged.\n✓ The original photographic subject has been completely removed.\n✓ Every visible part of the subject has been reconstructed entirely from authentic individual autumn leaves.\n✓ Every leaf remains individually visible and recognizable.\n✓ No photographic textures remain.\n✓ The subject remains immediately recognizable.\n✓ The artwork resembles a genuine handcrafted botanical leaf mosaic rather than leaves placed over a photograph.\n✓ If ANY answer is NO, regenerate until every requirement is satisfied."
   },
   {
     "name": "AVANT-GARDE",
@@ -4979,6 +5192,19 @@
   "options": [],
   "randomizeOptions": false,
   "additionalInstructions": "FINAL RESULT:\nThe image should clearly read as a humorous bedroom photoshoot parody with modest clothing, exaggerated posing, and intentionally awkward energy."
+  },
+  {
+    "name": "BRAILLE",
+    "category": [
+      "LANGUAGE",
+      "TACTILE",
+      "ABSTRACT",
+      "FULL TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform the ENTIRE image into artwork constructed entirely from authentic Braille dots while preserving the subject's identity.\n\nTransform BOTH the subject AND the background.\n\nTHIS IS NOT A BRAILLE TRANSLATION.\nTHIS IS NOT BRAILLE TEXT OVERLAID ON THE IMAGE.\nTHIS IS NOT A PHOTOGRAPH WITH BRAILLE ADDED.\n\nCompletely discard the original photograph and reconstruct the entire image exclusively from authentic Braille dots.\n\nEvery visible object—including the subject, facial features, hair, clothing, background, sky, buildings, trees, furniture, vehicles, shadows, reflections, textures, lighting transitions, and every tiny detail—must be recreated entirely from raised Braille dots.\n\nThe dots themselves become the ONLY visible visual elements that define every object in the scene.\n\nThe finished artwork should resemble an extraordinarily detailed tactile mosaic constructed entirely from authentic Braille dots while remaining immediately recognizable as the original image.\n\nMASTER PROMPT RULE:\n• If a master prompt specifies a particular subject, pose, setting, mood, action, artistic direction, or composition—PRIORITIZE and USE that information while reconstructing the ENTIRE image from Braille dots.",
+    "randomizeOptions": false,
+    "options": [],
+    "additionalInstructions": "• Transform the ENTIRE image.\n• Completely discard the original photograph before reconstruction.\n• NEVER overlay Braille onto the original image.\n• NEVER blend photographic textures with Braille dots.\n• The finished artwork must consist ONLY of authentic Braille dots.\n• No letters, numbers, punctuation, words, icons, emojis, lines, outlines, or graphical elements may appear.\n• Every visible object must emerge entirely from carefully arranged Braille dots.\n• Preserve the original composition, perspective, camera angle, depth, and layout.\n• Preserve the subject's exact facial identity, hairstyle, expression, age, ethnicity, clothing, body proportions, pose, silhouette, and recognizable features.\n• Facial features must emerge naturally through changes in Braille dot density, spacing, grouping, height, and arrangement.\n• Hair, clothing, textures, shadows, lighting, and environmental details must also be recreated exclusively from Braille dots.\n• Every Braille dot must be perfectly round, smoothly embossed, and physically raised with realistic highlights and shadows.\n• Braille dots should follow authentic Braille dimensions, spacing, and proportions even though they are being used as artistic building blocks rather than readable text.\n• Never create continuous lines, brush strokes, pixels, circles, stippling, or decorative bumps.\n• Use variations in dot density and spacing to create highlights, midtones, shadows, texture, and depth.\n• Maintain generous negative space where appropriate.\n• The artwork should resemble a professionally handcrafted embossed tactile mosaic rather than random raised dots.\n• The subject should remain immediately recognizable despite being constructed entirely from Braille dots.\n• Preserve realistic embossed lighting so each raised dot clearly catches light and casts subtle shadows.\n• Master prompt instructions always override any conflicting instructions.\n\nFINAL VALIDATION:\n\n✓ The ENTIRE image has been transformed.\n✓ The original photograph has been completely discarded.\n✓ ONLY authentic Braille dots appear anywhere in the artwork.\n✓ No photographic textures remain.\n✓ No letters, numbers, punctuation, words, or graphical elements are visible.\n✓ Every visible object is constructed entirely from Braille dots.\n✓ Every Braille dot appears physically embossed and properly rounded.\n✓ The subject remains immediately recognizable.\n✓ The image resembles a museum-quality tactile artwork created exclusively from Braille dots.\n✓ If ANY answer is NO, regenerate until every requirement is satisfied."
   },
   {
     "name": "BREAD SCULPTURE",
@@ -7165,6 +7391,45 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "CHEMICAL REACTION",
+    "category": [
+      "OPTIONS",
+      "SCIENCE",
+      "CHEMISTRY",
+      "FULL TRANSFORMATION",
+      "SPECIAL EFFECTS"
+    ],
+    "message": "Take a picture and transform ONLY the subject into the selected famous chemical reaction while preserving the subject's identity.\n\nTHIS IS NOT A PERSON STANDING INSIDE A CHEMICAL REACTION.\nTHIS IS NOT A PERSON SURROUNDED BY CHEMICALS.\nTHIS IS NOT A COSTUME.\n\nThe ENTIRE SUBJECT must physically become the selected chemical reaction.\n\nEvery visible part of the subject—including the face, skin, hair, clothing, arms, hands, legs, and body—must be reconstructed entirely from the physical products of the selected reaction.\n\nThe subject should remain immediately recognizable despite being completely composed of the chosen chemical reaction.\n\nThe original background, environment, lighting direction, room, landscape, and architecture must remain unchanged.",
+    "randomizeOptions": true,
+    "options": [
+    {
+      "id": "001",
+      "text": "Elephant Toothpaste — Reconstruct the entire subject entirely from enormous expanding colorful Elephant Toothpaste foam. Every part of the body is made from dense cascading foam while preserving the subject's recognizable facial identity."
+    },
+    {
+      "id": "002",
+      "text": "Traffic Light Reaction — Reconstruct the entire subject entirely from transparent swirling liquids of the Traffic Light Reaction. The body, clothing, hair and face become layered translucent chemistry displaying vivid green, yellow and deep red solutions while preserving facial identity."
+    },
+    {
+      "id": "003",
+      "text": "Dancing Gummy Bear — Reconstruct the entire subject entirely from the brilliant combustion of the Dancing Gummy Bear experiment. The body becomes incandescent glowing chemistry composed of violet flames, brilliant white heat, sparks, glowing gases and combustion products while preserving recognizable facial structure."
+    },
+    {
+      "id": "004",
+      "text": "Black Fire Snake — Reconstruct the entire subject entirely from twisting porous black carbon produced by the Black Fire Snake reaction. Every visible feature is sculpted from expanding carbon ash while preserving facial identity."
+    },
+    {
+      "id": "005",
+      "text": "Pharaoh's Serpent — Reconstruct the entire subject entirely from the branching expanding ash produced by Pharaoh's Serpent. The body consists solely of porous mineral ash structures while remaining recognizable."
+    },
+    {
+      "id": "006",
+      "text": "Dry Ice Volcano — Reconstruct the entire subject entirely from dense rolling dry ice fog, overflowing soap bubbles, and turbulent carbon dioxide vapor. The complete body is formed from mist-filled bubbles and flowing vapor while preserving facial identity."
+    }
+    ],
+    "additionalInstructions": "• Transform ONLY the subject.\n• Preserve the original background exactly.\n• The ENTIRE subject must physically become the selected chemical reaction.\n• Every visible body part must be reconstructed from the products of the selected reaction.\n• The face must remain recognizable despite being constructed entirely from the reaction.\n• Hair must also become part of the reaction.\n• Clothing must become part of the reaction.\n• Hands, fingers, eyes, nose, mouth, ears, and skin must all be reconstructed from the reaction.\n• Do NOT leave any normal human skin, clothing, or body visible.\n• Do NOT place a normal human inside the reaction.\n• Do NOT merely surround the subject with chemical effects.\n• Do NOT overlay chemical effects onto the subject.\n• The subject itself IS the chemical reaction.\n• Preserve body proportions, pose, perspective, composition, and camera angle.\n• Render scientifically recognizable physical characteristics for the selected demonstration while maintaining photorealism.\n• The chemistry should appear physically continuous across the entire body rather than isolated effects.\n• Master prompt instructions always override conflicting instructions.\n\nFINAL VALIDATION:\n\n✓ ONLY the subject has transformed.\n✓ The background remains unchanged.\n✓ No normal human body remains visible.\n✓ Every visible portion of the subject is composed entirely of the selected chemical reaction.\n✓ The subject remains immediately recognizable.\n✓ The transformation is complete rather than an overlay.\n✓ If ANY answer is NO, regenerate until every requirement is satisfied."
   },
   {
     "name": "CHEMICAL STRUCTURE",
@@ -9957,10 +10222,10 @@
       "DRAWING",
       "TECHNIQUE"
     ],
-    "message": "Take a picture and transform the image into a Cont\u00e9 crayon drawing. Preserve subject identity. Rich, velvety blacks and warm sanguine tones on textured paper. Bold tonal masses with the characteristic square-stick marks of Cont\u00e9 crayon. Seurat-like atmospheric quality.",
+    "message": "Take a picture and transform the image into a Cont\u00e9 crayon drawing. Preserve subject identity. Rich, velvety blacks and warm sanguine tones on textured paper. Bold tonal masses with the characteristic square-stick marks of Cont\u00e9 crayon. Seurat-like atmospheric quality. The paper tone serves as the middle value. Show the characteristic waxy, slightly grainy texture of cont\u00e9 on textured paper. Build form through careful hatching and blending, with some areas left as pure paper tone. The drawing should feel like an academic figure study or portrait exercise.",
     "options": [],
     "randomizeOptions": false,
-    "additionalInstructions": ""
+    "additionalInstructions": "Cont\u00e9 marks should show their characteristic square-stick edge quality. Subject identity must be clearly preserved."
   },
   {
     "name": "COOKIE",
@@ -10477,6 +10742,20 @@
     "message": "Take a picture and transform the ENTIRE IMAGE into a cross-polarized light stress analysis photograph.\n\nTRANSFORMATION RULES (NON-NEGOTIABLE):\n• The entire scene (subject and environment) must look like it is constructed out of solid, clear injection-molded birefringent plastic\n• Recognition of the subject must be completely preserved, but defined entirely by internal rainbow interference patterns and stress lines\n• Preserve actual facial proportions and distinctive traits mapped through color gradients\n• No natural skin tones, hair colors, or textile textures allowed whatsoever\n• The image must contain zero realistic lighting; illumination is driven entirely by internal light polarization physics\n\nENVIRONMENT & STYLE RULES:\n• The entire composition must feature vibrant, glowing, psychedelic rainbow contours (fringes of magenta, cyan, yellow, and green) looping tightly around areas of structural tension\n• The areas of highest stress (such as the eyes, jawline, and geometric transitions in the background) must display the densest concentration of sharp, hyper-saturated color bands\n• Neutral, non-stressed areas of the plastic must appear as a smoky, translucent dark gray or deep violet-black\n• The background must be treated with the same mechanical laws, showing stress patterns radiating from environmental edges against a pitch-black studio void\n\nVERSION-SPECIFIC RULES:\n• The visual style must completely replace physical surfaces with translucent molded plastic properties\n• The final image must read as a high-contrast scientific or engineering test photograph",
     "randomizeOptions": false,
     "additionalInstructions": "The entire image must look like clear plastic under cross-polarized lens filters. Total commitment to the glowing, nested rainbow interference bands against a dark background is required."
+  },
+  {
+    "name": "CROSS-PROCESSED SLIDE FILM",
+    "category": [
+      "PHOTOGRAPHY",
+      "FILM",
+      "EXPERIMENTAL",
+      "COLORFUL",
+      "ANALOG"
+    ],
+    "message": "Take a picture and transform it to look like cross-processed slide film (E-6 film processed in C-41 chemistry). This creates the distinctive cross-processing look: extreme color shifts (typically strong cyan/blue shadows and yellow/green highlights), increased contrast with crushed shadows, color casts that shift across the tonal range, and unpredictable saturation boosts. The effect should feel authentically chemical \u2014 not a simple color filter but the complex, non-linear color response of actual cross-processing where different layers of the film respond differently to the wrong chemistry. Include slight film base color and sprocket hole edges for authenticity.",
+    "randomizeOptions": false,
+    "options": [],
+    "additionalInstructions": "The color shifts must feel chemical and non-linear \u2014 different in shadows vs. highlights. The effect should be strong but not so extreme that the subject is unrecognizable. Include analog film artifacts for authenticity."
   },
   {
     "name": "CROSS-SECTION",
@@ -12864,6 +13143,20 @@
     "additionalInstructions": "IDENTITY PRESERVATION:\n• Subject must remain clearly recognizable\n• Tonal detail should be preserved — the duotone effect maps values, it doesn't flatten them\n\nFINAL RESULT:\nThe image should look like a professional graphic design duotone treatment suitable for a magazine cover or concert poster."
   },
   {
+    "name": "DUTCH ANGLE TENSION",
+    "category": [
+      "PHOTOGRAPHY",
+      "COMPOSITION",
+      "CINEMATIC",
+      "DRAMATIC",
+      "ANGLE"
+    ],
+    "message": "Take a picture and transform it using a dramatic Dutch angle (tilted camera) composition to create visual tension and unease. The horizon line should be tilted 15-30 degrees, making the world feel off-kilter and unstable. Combine with noir-influenced lighting: strong side light creating deep shadows, slightly desaturated color palette, and high contrast. The subject should be positioned using the resulting diagonal lines to create dynamic visual flow. The Dutch angle should feel intentional and cinematic (like Carol Reed's The Third Man or a Batman film) rather than accidental. Include environmental elements that emphasize the tilt \u2014 vertical lines that are now diagonal, creating maximum visual instability.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "The tilt must be deliberate and dramatic \u2014 not subtle. Lighting should enhance the sense of unease. The composition should use the diagonal lines created by the tilt to guide the eye. Subject should remain the clear focal point."
+  },
+  {
     "name": "DUTCH GOLDEN AGE",
     "category": [
       "ART",
@@ -13054,6 +13347,20 @@
     "additionalInstructions": ""
   },
   {
+    "name": "EGGSHELL MOSAIC",
+    "category": [
+      "ART",
+      "MOSAIC",
+      "CRAFT",
+      "DELICATE",
+      "TEXTURE"
+    ],
+    "message": "Take a picture and transform it into an eggshell mosaic \u2014 the delicate art of creating images from carefully placed fragments of dyed eggshell on a dark background. Each tiny piece of shell should be visible as a distinct curved fragment, with the dark gaps between pieces creating a natural network of fine lines (similar to crackle glaze). The eggshell pieces should be dyed in various colors to create the image, with the natural curve and texture of shell visible in each fragment. The overall effect should be intricate and precious \u2014 like a Byzantine mosaic rendered in the most fragile of materials.",
+    "randomizeOptions": false,
+    "options": [],
+    "additionalInstructions": "Individual eggshell fragments must be visible with dark gaps between them. The natural curve of shell pieces should be apparent. The fragility of the medium should be evident. Subject must be clearly recognizable through the mosaic pattern."
+  },
+  {
     "name": "EGLOMISE GLASS",
     "category": [
       "ART",
@@ -13104,6 +13411,40 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "CHROME ENFORCEMENT (FOR SUBJECT, CRITICAL):\n\n• Mirror reflectivity on the subject is mandatory.\n• The finish on the subject must immediately appear electroplated.\n• Preserve perfectly smooth chrome throughout the subject.\n• Eliminate all visible material beneath the plating on the subject.\n\nBACKGROUND ENFORCEMENT (CRITICAL):\n\n• Retain the background exactly as it is in the original image. The transformation applies *only* to the subject.\n\nFINAL ENFORCEMENT:\n\n• The subject should be indistinguishable from a professionally triple-plated automotive chrome component, all while integrated naturally into the original, unchanged background environment."
+  },
+  {
+    "name": "ELEMENTAL DISSOLUTION",
+    "category": [
+      "TRANSFORMATION",
+      "ELEMENTAL",
+      "DYNAMIC",
+      "FANTASY"
+    ],
+    "message": "Take a picture and transform the subject so they appear to be dissolving into or forming from a pure element. One portion of their body should be fully solid and recognizable, while the rest transitions into the raw element \u2014 scattering into particles, flowing away as liquid, rising as flame, or dispersing as wind. The transition zone between solid form and elemental state should be the most visually interesting area \u2014 showing the exact moment of transformation. The element should feel powerful and alive, not destructive. Transform using the following element:",
+    "randomizeOptions": true,
+    "options": [
+      {
+        "id": "001",
+        "text": "Fire \u2014 form dissolving into rising flames and embers, warm light illuminating remaining features"
+      },
+      {
+        "id": "002",
+        "text": "Water \u2014 body flowing into liquid streams and droplets, refracting light through transparent areas"
+      },
+      {
+        "id": "003",
+        "text": "Earth \u2014 form crumbling into soil, stone, and crystal, with plants growing from the cracks"
+      },
+      {
+        "id": "004",
+        "text": "Air \u2014 dissolving into wind currents, visible only as distortion and scattered leaves"
+      },
+      {
+        "id": "005",
+        "text": "Lightning \u2014 form breaking into branching electrical arcs, plasma glow, and electromagnetic energy"
+      }
+    ],
+    "additionalInstructions": "The solid portion must clearly preserve the subject's identity. The elemental portion must feel physically accurate to that element's real behavior. The transition zone should be seamless and beautiful."
   },
   {
     "name": "ELEMENTAL SELF",
@@ -13235,14 +13576,32 @@
     "name": "ENCAUSTIC",
     "category": [
       "ART",
+      "PAINTING",
       "TEXTURE",
-      "PAINTERLY",
-      "CLASSICAL"
+      "ANCIENT",
+      "TECHNIQUE"
     ],
-    "message": "Take a picture and transform the image into an encaustic wax painting. Render the subject using the ancient technique of heated beeswax mixed with pigments, showing the characteristic translucent layers, rich texture, and luminous depth of encaustic art. The surface should display visible wax buildup, scraping marks, and the unique semi-transparent quality of layered pigmented wax.",
-    "options": [],
-    "randomizeOptions": false,
-    "additionalInstructions": "STYLE ENFORCEMENT:\n\u2022 Preserve recognizable subject identity\n\u2022 Show translucent, layered wax texture throughout\n\u2022 Include visible tool marks from heated metal implements\n\u2022 Display the characteristic luminous, glowing quality of wax medium\n\u2022 Add areas of thick impasto wax buildup\n\u2022 Show scraped and fused layers revealing colors beneath\n\u2022 Include subtle embedded materials (paper, fabric fragments) if appropriate\n\u2022 Maintain warm, honey-toned undertones from beeswax base.\n\nFINAL RESULT:\nA richly layered wax painting with depth and translucency.\n\nCORE REQUIREMENTS:\n• WAX texture\n• LAYERING visible\n• SOFT diffusion"
+    "message": "Take a picture and transform it into an encaustic wax painting. The image should appear built up from multiple translucent layers of pigmented beeswax, each fused with heat. Show the characteristic luminous depth of encaustic \u2014 light penetrating through semi-transparent wax layers to create a rich, glowing quality impossible in other media. Include subtle evidence of the fusing process: slightly melted edges between layers, areas where the iron or heat gun has smoothed the surface, and places where texture has been built up or scraped back. Use the following surface treatment:",
+    "randomizeOptions": true,
+    "options": [
+      {
+        "id": "001",
+        "text": "Smooth and polished \u2014 multiple thin layers buffed to a satin sheen, emphasizing depth and translucency"
+      },
+      {
+        "id": "002",
+        "text": "Heavily textured \u2014 thick wax built up with embedded materials (paper, fabric, found objects) visible beneath layers"
+      },
+      {
+        "id": "003",
+        "text": "Incised and carved \u2014 lines scratched through cooled wax layers to reveal colors beneath"
+      },
+      {
+        "id": "004",
+        "text": "Mixed media collage \u2014 combining wax with oil stick, pigment powder, and gold leaf accents"
+      }
+    ],
+    "additionalInstructions": "The wax surface should appear physically present \u2014 slightly glossy in smooth areas, matte where textured. Preserve subject identity through careful layering of values."
   },
   {
     "name": "ENCYCLOPEDIA (HUMOR)",
@@ -15362,6 +15721,75 @@
     "additionalInstructions": "FINAL RESULT:\nThe image should be a black and white single-panel Far Side cartoon with the subject drawn in the distinctive style, placed in the selected absurdist scenario, with the scenario's caption at the bottom - capturing unique blend of dark humor, anthropomorphic animals, and deadpan absurdity."
   },
   {
+    "name": "FASHION EDITORIAL (DECADE)",
+    "category": [
+      "FASHION",
+      "PHOTOGRAPHY",
+      "EDITORIAL",
+      "HISTORICAL",
+      "STYLE"
+    ],
+    "message": "Take a picture and transform the subject into a high-fashion editorial photograph from a specific decade \u2014 capturing not just the clothing but the entire photographic style, makeup, hair, pose conventions, and cultural attitude of that era's fashion photography. The image should look like it was torn from the pages of Vogue, Harper's Bazaar, or a cutting-edge fashion magazine of the chosen decade. Every element should be period-authentic: the film stock/processing, the lighting style, the model's pose and expression, the set design, and the overall mood.",
+    "optionGroups": [
+      {
+        "id": "DECADE",
+        "label": "Fashion Decade",
+        "options": [
+          {
+            "id": "001",
+            "text": "1950s \u2014 Avedon elegance, New Look silhouettes, pearls, gloves, architectural poses, studio perfection"
+          },
+          {
+            "id": "002",
+            "text": "1960s \u2014 Mod revolution, Twiggy eyes, geometric cuts, pop art influence, youth quake energy"
+          },
+          {
+            "id": "003",
+            "text": "1970s \u2014 Helmut Newton drama, Studio 54 glamour, flowing fabrics, sexual liberation, warm film tones"
+          },
+          {
+            "id": "004",
+            "text": "1980s \u2014 power shoulders, excess, Patrick Demarchelier style, bold color, supermodel era begins"
+          },
+          {
+            "id": "005",
+            "text": "1990s \u2014 heroin chic minimalism, Kate Moss era, stripped back, raw, Corinne Day intimacy"
+          },
+          {
+            "id": "006",
+            "text": "2000s \u2014 digital perfection, Terry Richardson flash, Y2K futurism, glossy and provocative"
+          }
+        ],
+        "randomizeOptions": true
+      },
+      {
+        "id": "MOOD",
+        "label": "Editorial Mood",
+        "options": [
+          {
+            "id": "101",
+            "text": "High glamour \u2014 aspirational luxury, perfect lighting, untouchable beauty"
+          },
+          {
+            "id": "102",
+            "text": "Avant-garde \u2014 experimental, challenging, pushing boundaries of beauty and form"
+          },
+          {
+            "id": "103",
+            "text": "Intimate/candid \u2014 behind-the-scenes feel, natural moments, vulnerability"
+          },
+          {
+            "id": "104",
+            "text": "Narrative/cinematic \u2014 telling a story, character-driven, location-specific"
+          }
+        ],
+        "randomizeOptions": true
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "The photographic style must be authentic to the decade \u2014 correct film stock look, lighting conventions, and post-processing. Fashion, hair, and makeup must be period-accurate. The subject must be recognizable while transformed into a fashion model of the era."
+  },
+  {
     "name": "FASHION SKETCH",
     "category": [
       "ART",
@@ -15429,6 +15857,147 @@
     "additionalInstructions": "FINAL RESULT:\nThe image should show the subject transformed into the fast food mascot with their facial features still clearly recognizable - not a generic mascot costume, but specifically the subject dressed and styled as that character for a professional restaurant advertising campaign."
   },
   {
+    "name": "FAST FOOD",
+    "category": [
+      "OPTIONS",
+      "TRANSFORMATION",
+      "UNIFORMS"
+    ],
+    "message": "Take a picture and transform ONLY the subject into an employee working at the selected famous fast-food restaurant while preserving the subject's identity.\n\nThe background must be completely transformed into the authentic interior of the selected restaurant location.\n\nTHIS IS NOT COSPLAY.\nTHIS IS NOT HALLOWEEN.\nTHIS IS NOT A PERSON WEARING A FAST FOOD SHIRT.\n\nCompletely reinterpret the subject as though they are a genuine employee working during business hours at the selected restaurant.\n\nThe subject must be dressed in the iconic employee uniform appropriate for the selected restaurant.\n\nThe subject must be standing behind the front counter or register serving that restaurant's most famous signature menu item to a customer.\n\nThe restaurant interior, equipment, menu boards, counters, lighting, colors, packaging, branding style, food preparation area, drink machines, and décor must accurately reflect the selected restaurant's recognizable appearance.\n\nThe subject's facial identity, hairstyle, expression, body proportions, and pose should remain recognizable.\n\nMASTER PROMPT RULE:\n• If a master prompt specifies a particular pose, mood, action, subject, artistic direction, composition, or restaurant—PRIORITIZE and USE that information while constructing the selected fast food scene.",
+    "randomizeOptions": true,
+    "options": [
+    {
+      "id": "001",
+      "text": "McDonald's — Wear the authentic McDonald's crew uniform while working behind the front counter serving a Big Mac."
+    },
+    {
+      "id": "002",
+      "text": "Wendy's — Wear the authentic Wendy's crew uniform while working at the register serving a Dave's Single."
+    },
+    {
+      "id": "003",
+      "text": "Burger King — Wear the authentic Burger King uniform while serving a Whopper."
+    },
+    {
+      "id": "004",
+      "text": "Taco Bell — Wear the authentic Taco Bell uniform while serving a Crunchwrap Supreme."
+    },
+    {
+      "id": "005",
+      "text": "KFC — Wear the authentic KFC employee uniform while serving a bucket of Original Recipe chicken."
+    },
+    {
+      "id": "006",
+      "text": "Pizza Hut — Wear the authentic Pizza Hut employee uniform while serving a pepperoni pan pizza."
+    },
+    {
+      "id": "007",
+      "text": "Domino's — Wear the authentic Domino's employee uniform while serving a pepperoni pizza."
+    },
+    {
+      "id": "008",
+      "text": "Papa Johns — Wear the authentic Papa Johns employee uniform while serving a pepperoni pizza."
+    },
+    {
+      "id": "009",
+      "text": "Little Caesars — Wear the authentic Little Caesars employee uniform while serving a Hot-N-Ready pizza."
+    },
+    {
+      "id": "010",
+      "text": "Subway — Wear the authentic Subway sandwich artist uniform while preparing and serving a Footlong Italian B.M.T."
+    },
+    {
+      "id": "011",
+      "text": "Chick-fil-A — Wear the authentic Chick-fil-A employee uniform while serving the Original Chicken Sandwich."
+    },
+    {
+      "id": "012",
+      "text": "In-N-Out Burger — Wear the authentic In-N-Out employee uniform while serving a Double-Double."
+    },
+    {
+      "id": "013",
+      "text": "Whataburger — Wear the authentic Whataburger employee uniform while serving a Whataburger."
+    },
+    {
+      "id": "014",
+      "text": "Jack in the Box — Wear the authentic Jack in the Box employee uniform while serving a Jumbo Jack."
+    },
+    {
+      "id": "015",
+      "text": "Sonic Drive-In — Wear the authentic Sonic employee uniform while serving a Cherry Limeade."
+    },
+    {
+      "id": "016",
+      "text": "Arby's — Wear the authentic Arby's employee uniform while serving a Classic Roast Beef sandwich."
+    },
+    {
+      "id": "017",
+      "text": "Dairy Queen — Wear the authentic Dairy Queen employee uniform while serving a Blizzard."
+    },
+    {
+      "id": "018",
+      "text": "Five Guys — Wear the authentic Five Guys employee uniform while serving a Cheeseburger and fries."
+    },
+    {
+      "id": "019",
+      "text": "Popeyes — Wear the authentic Popeyes employee uniform while serving a Chicken Sandwich."
+    },
+    {
+      "id": "020",
+      "text": "Raising Cane's — Wear the authentic Raising Cane's employee uniform while serving a Box Combo."
+    },
+    {
+      "id": "021",
+      "text": "Culver's — Wear the authentic Culver's employee uniform while serving a ButterBurger."
+    },
+    {
+      "id": "022",
+      "text": "White Castle — Wear the authentic White Castle employee uniform while serving Original Sliders."
+    },
+    {
+      "id": "023",
+      "text": "Krystal — Wear the authentic Krystal employee uniform while serving Krystal Burgers."
+    },
+    {
+      "id": "024",
+      "text": "Del Taco — Wear the authentic Del Taco employee uniform while serving Del Tacos."
+    },
+    {
+      "id": "025",
+      "text": "Carl's Jr. / Hardee's — Wear the authentic employee uniform while serving a Famous Star burger."
+    },
+    {
+      "id": "026",
+      "text": "Jimmy John's — Wear the authentic Jimmy John's employee uniform while serving a Vito sandwich."
+    },
+    {
+      "id": "027",
+      "text": "Jersey Mike's — Wear the authentic Jersey Mike's employee uniform while serving The Original Italian."
+    },
+    {
+      "id": "028",
+      "text": "Chipotle — Wear the authentic Chipotle employee uniform while serving a Burrito Bowl."
+    },
+    {
+      "id": "029",
+      "text": "Panda Express — Wear the authentic Panda Express employee uniform while serving Orange Chicken."
+    },
+    {
+      "id": "030",
+      "text": "7-Eleven — Wear the authentic 7-Eleven employee uniform while working behind the checkout counter serving a Big Bite Hot Dog and a Slurpee."
+    },
+    {
+      "id": "031",
+      "text": "Buc-ee's — Wear the authentic Buc-ee's employee uniform while working behind the checkout and food service area serving fresh Beaver Nuggets and a famous Buc-ee's brisket sandwich."
+    },
+    {
+      "id": "032",
+      "text": "Nando's — Wear the authentic Nando's employee uniform while working at the counter serving PERi-PERi Flame-Grilled Chicken with signature sides inside a recognizable Nando's restaurant."
+    }
+    ],
+    "additionalInstructions": "• Transform ONLY the subject.\n• Completely replace the original background with the authentic interior of the selected restaurant.\n• Preserve the subject's exact identity, facial structure, hairstyle, age, ethnicity, body proportions, expression, and recognizable facial features.\n• The subject must become a genuine employee of the selected restaurant.\n• The uniform must accurately match the selected restaurant's recognizable employee attire.\n• The subject must be standing behind the register or front service counter actively serving the restaurant's signature menu item.\n• The restaurant interior should accurately reflect the selected location's recognizable architecture, colors, equipment, lighting, menu boards, counters, beverage stations, kitchen equipment, packaging, trays, and décor.\n• The food being served should accurately resemble the restaurant's famous signature item.\n• The subject should appear confident, friendly, and naturally interacting with customers.\n• Preserve realistic proportions, lighting, shadows, reflections, and photographic realism.\n• Never depict the subject wearing an inaccurate or generic fast food uniform.\n• Never combine branding from multiple restaurants.\n• Never alter the subject into a mascot or fictional character.\n• Master prompt instructions always override the selected option whenever conflicts occur.\n\nFINAL VALIDATION:\n\n✓ The subject has become an authentic employee of the selected restaurant.\n✓ The employee uniform accurately matches the selected restaurant.\n✓ The restaurant interior is immediately recognizable.\n✓ The subject is positioned behind the front counter or register.\n✓ The subject is serving the restaurant's signature menu item.\n✓ The subject's identity remains immediately recognizable.\n✓ The scene appears to be a genuine photograph inside the selected restaurant.\n✓ No branding from any other restaurant is visible.\n✓ If ANY answer is NO, regenerate until every requirement is satisfied."
+  },
+  {
     "name": "FATE BOOK",
     "category": [
       "FANTASY",
@@ -15479,6 +16048,41 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "FEATHER MOSAIC",
+    "category": [
+      "OPTIONS",
+      "MOSAIC",
+      "NATURAL MATERIALS",
+      "FEATHERS",
+      "MATERIAL TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform ONLY the subject into a handcrafted mosaic constructed entirely from real feathers while preserving the subject's identity.\n\nThe background, environment, lighting, perspective, shadows, and every non-subject element must remain exactly as they appear in the original photograph.\n\nTHIS IS NOT A PHOTO WITH FEATHERS GLUED ON TOP.\nTHIS IS NOT A FEATHER TEXTURE FILTER.\nTHIS IS NOT THE ORIGINAL SUBJECT COVERED IN FEATHERS.\n\nCompletely discard the original appearance of the subject and reconstruct the subject entirely from authentic individual feathers.\n\nEvery visible part of the subject—including the face, hair, eyes, clothing, hands, shoes, and every fine detail—must be rebuilt exclusively from carefully arranged real feathers.\n\nEvery feather must remain individually recognizable while collectively recreating the subject with remarkable accuracy.\n\nThe finished artwork should resemble an award-winning feather mosaic assembled feather-by-feather while remaining immediately recognizable as the subject.\n\nMASTER PROMPT RULE:\n• If a master prompt specifies a particular subject, pose, setting, mood, action, artistic direction, or composition—PRIORITIZE and USE that information while constructing ONLY the subject from feathers.",
+    "randomizeOptions": true,
+    "options": [
+    {
+      "id": "001",
+      "text": "Natural Bird Plumage — Construct the mosaic entirely from naturally colored feathers collected from a wide variety of bird species featuring realistic colors, markings, and textures."
+    },
+    {
+      "id": "002",
+      "text": "Peacock Feather Mosaic — Rebuild the subject using richly colored peacock feathers, accenting the artwork with iridescent eye patterns while preserving the subject's recognizable features."
+    },
+    {
+      "id": "003",
+      "text": "Soft Down Feather Portrait — Create the subject using thousands of soft down feathers and fine contour feathers to produce delicate gradients, subtle shading, and exceptionally smooth transitions."
+    },
+    {
+      "id": "004",
+      "text": "Exotic Aviary Mosaic — Construct the artwork from an extraordinary assortment of colorful feathers representing tropical parrots, macaws, pheasants, cockatoos, and numerous exotic bird species."
+    },
+    {
+      "id": "005",
+      "text": "Master Feather Mosaic — Intelligently combine thousands of individually visible feathers of different species, sizes, colors, patterns, textures, curvature, and iridescence to faithfully recreate every recognizable facial feature, hairstyle, clothing fold, and body contour of the subject."
+    }
+    ],
+    "additionalInstructions": "• Transform ONLY the subject.\n• Keep the background completely unchanged.\n• Preserve the original environment, lighting, perspective, colors, shadows, and every background object exactly as photographed.\n• Completely discard the original photographic subject before reconstruction.\n• NEVER glue feathers onto the original photograph.\n• NEVER blend photographic textures with feather surfaces.\n• The original subject must not remain visible anywhere.\n• Every visible part of the subject must be reconstructed entirely from authentic individual feathers.\n• Preserve the subject's exact identity, facial structure, hairstyle, expression, age, ethnicity, body proportions, pose, silhouette, and recognizable features.\n• Facial features must emerge solely through the careful placement, orientation, color, size, layering, and texture of individual feathers.\n• Hair must be recreated entirely from carefully arranged feathers while preserving the subject's recognizable hairstyle, flow, volume, and silhouette.\n• Clothing must also be reconstructed entirely from overlapping feathers while preserving folds, seams, wrinkles, texture, and overall shape.\n• Every individual feather must remain clearly visible and distinguishable.\n• Preserve authentic feather characteristics including central shafts, barbs, barbules, vane structure, natural curvature, soft edges, subtle wear, realistic layering, iridescence where appropriate, and species-specific coloration.\n• Use realistic variations in feather length, width, color, orientation, pattern, and texture.\n• Never create painted feathers, fabric feathers, plastic feathers, or stylized feather illustrations.\n• The finished artwork should appear physically possible and entirely handcrafted from real feathers.\n• Maintain realistic lighting, shadows, feather overlap, depth, softness, and fine detail.\n• The completed artwork should resemble a genuine handcrafted feather mosaic photographed after completion.\n• Master prompt instructions always override the selected option whenever conflicts occur.\n\nFINAL VALIDATION:\n\n✓ ONLY the subject has been transformed.\n✓ The background remains completely unchanged.\n✓ The original photographic subject has been completely removed.\n✓ Every visible part of the subject has been reconstructed entirely from authentic individual feathers.\n✓ Every feather remains individually visible and recognizable.\n✓ No photographic textures remain.\n✓ The subject remains immediately recognizable.\n✓ The artwork resembles a genuine handcrafted feather mosaic rather than feathers attached to a photograph.\n✓ If ANY answer is NO, regenerate until every requirement is satisfied."
   },
   {
     "name": "FEATHER STRUCTURE",
@@ -15718,6 +16322,49 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Fine twisted wire threads\n• Intricate lace-like openwork patterns\n• Gold or silver metallic appearance\n• Granulation bead details\n• Delicate handcrafted quality"
+  },
+  {
+    "name": "FILM GRAIN ERA",
+    "category": [
+      "PHOTOGRAPHY",
+      "FILM",
+      "VINTAGE",
+      "ANALOG",
+      "HISTORICAL"
+    ],
+    "message": "Take a picture and transform it to look like it was shot on a specific era of photographic film \u2014 capturing not just the color science but the entire photographic culture of that period: the cameras used, the printing methods, the aesthetic preferences, and the way photographs were displayed and shared. The image should feel like an authentic artifact from the chosen era, including appropriate aging, handling marks, and presentation format.",
+    "randomizeOptions": true,
+    "options": [
+      {
+        "id": "001",
+        "text": "1850s daguerreotype \u2014 mirror-like silver plate, brass mat, leather case, formal pose, extreme detail"
+      },
+      {
+        "id": "002",
+        "text": "1890s cabinet card \u2014 albumen print, warm sepia, studio backdrop, thick card mount with photographer's imprint"
+      },
+      {
+        "id": "003",
+        "text": "1920s pictorialist \u2014 soft focus, bromoil print, artistic composition, painterly quality"
+      },
+      {
+        "id": "004",
+        "text": "1950s Kodachrome \u2014 saturated colors, warm bias, sharp, slide film mounted in cardboard frame"
+      },
+      {
+        "id": "005",
+        "text": "1970s Polaroid SX-70 \u2014 square format, slightly soft, unique color cast, white border frame"
+      },
+      {
+        "id": "006",
+        "text": "1990s disposable camera \u2014 flash-lit, slightly off-color, 4x6 print with date stamp, casual snapshot"
+      },
+      {
+        "id": "007",
+        "text": "2000s early digital \u2014 slightly over-sharpened, limited dynamic range, visible noise in shadows, LCD preview"
+      }
+    ],
+    "additionalInstructions": "The film characteristics must be era-accurate \u2014 correct grain structure, color science, dynamic range, and format. The presentation (print type, mounting, condition) must match the period. Subject must be recognizable across all era treatments."
   },
   {
     "name": "FILM NEGATIVE",
@@ -16449,6 +17096,110 @@
     "additionalInstructions": "RESTRICTIONS:\n• No cartoon or heavily stylized animation\n• No text overlays or captions\n• No additional characters or faces blended onto the subject\n\nFINAL RESULT:\nThe image should depict the subject as one of the four Wizard of Oz characters, with full makeup, hair, costume, and accessories applied directly to their face and body, walking on the yellow brick road with the other three characters, all looking at the camera, creating a playful, cinematic, and visually coherent tribute to the original film, while keeping the subject’s face fully recognizable."
   },
   {
+    "name": "FOOD PHOTOGRAPHY STYLE",
+    "category": [
+      "PHOTOGRAPHY",
+      "FOOD",
+      "STYLING",
+      "COMMERCIAL",
+      "LIGHTING"
+    ],
+    "message": "Take a picture and transform it into a professional food photography shot \u2014 but with the subject reimagined AS a food item being photographed for a cookbook, menu, or food magazine. The subject should be 'plated' and styled with the obsessive attention to detail of professional food photography: perfect garnish placement, strategic sauce drizzles, steam or condensation added for freshness, and the specific lighting and composition conventions of food photography. The styling should make the subject appear genuinely appetizing through the visual language of food advertising.",
+    "options": [
+      {
+        "id": "001",
+        "text": "Overhead flat lay \u2014 shot directly from above, styled on a textured surface with scattered ingredients and props"
+      },
+      {
+        "id": "002",
+        "text": "Hero shot 45-degree \u2014 classic food angle, shallow depth of field, backlit steam, dramatic"
+      },
+      {
+        "id": "003",
+        "text": "Action pour/drizzle \u2014 frozen motion of sauce or liquid being poured, dynamic and appetizing"
+      },
+      {
+        "id": "004",
+        "text": "Rustic lifestyle \u2014 natural light, wooden surfaces, linen napkins, imperfect beauty, homestyle"
+      },
+      {
+        "id": "005",
+        "text": "Dark and moody \u2014 black background, dramatic side light, rich colors emerging from shadow, editorial"
+      },
+      {
+        "id": "006",
+        "text": "Bright and clean \u2014 white background, even lighting, minimal props, commercial product-shot style"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "The food photography conventions must be authentic \u2014 correct lighting angles, proper styling techniques, realistic food photography composition. The subject should be treated with the same reverence as a hero dish. The overall image should look like it belongs in a high-end food publication."
+  },
+  {
+    "name": "FOOD PLATING PORTRAIT",
+    "category": [
+      "FOOD",
+      "ART",
+      "CULINARY ART",
+      "CREATIVE",
+      "PORTRAIT"
+    ],
+    "message": "Take a picture and transform the subject into a work of culinary art \u2014 their portrait recreated as an elaborate food plating on a restaurant plate. The subject's likeness should be recognizable but constructed entirely from food elements, plated with the precision and artistry of a Michelin-starred chef. Every element should be an identifiable food item, arranged with tweezers-level precision on a pristine white plate or appropriate serving surface. The food should look genuinely delicious and professionally prepared, not just arranged into a face shape.",
+    "optionGroups": [
+      {
+        "id": "CUISINE",
+        "label": "Culinary Style",
+        "options": [
+          {
+            "id": "001",
+            "text": "French haute cuisine \u2014 classical sauces, precise cuts, edible flowers, gold leaf accents"
+          },
+          {
+            "id": "002",
+            "text": "Japanese kaiseki \u2014 seasonal ingredients, negative space, natural beauty, ceramic vessel"
+          },
+          {
+            "id": "003",
+            "text": "Molecular gastronomy \u2014 spherification, foams, gels, unexpected textures, scientific precision"
+          },
+          {
+            "id": "004",
+            "text": "Nordic/New Nordic \u2014 foraged ingredients, moss, bark, stones as serving elements, wild and refined"
+          },
+          {
+            "id": "005",
+            "text": "Pastry/dessert art \u2014 sugar work, chocolate painting, fruit coulis, architectural dessert construction"
+          }
+        ],
+        "randomizeOptions": true
+      },
+      {
+        "id": "PRESENTATION",
+        "label": "Plating Style",
+        "options": [
+          {
+            "id": "101",
+            "text": "Minimalist \u2014 few elements, maximum negative space, each component perfect and intentional"
+          },
+          {
+            "id": "102",
+            "text": "Abundant \u2014 overflowing with ingredients, rustic-luxe, generous and celebratory"
+          },
+          {
+            "id": "103",
+            "text": "Architectural \u2014 vertical construction, structural elements, height and drama"
+          },
+          {
+            "id": "104",
+            "text": "Painterly \u2014 sauces used as paint, plate as canvas, abstract expressionist food art"
+          }
+        ],
+        "randomizeOptions": true
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "The food must look genuinely appetizing and professionally prepared. Each ingredient should be identifiable. The subject's likeness must be recognizable in the food arrangement. The plating style must be authentic to the chosen cuisine."
+  },
+  {
     "name": "FORCED PERSPECTIVE",
     "category": [
       "ILLUSION",
@@ -16739,6 +17490,20 @@
     "additionalInstructions": "FINAL RESULT:\nA wall-painted fresco with visible plaster texture and aged characteristics.\n\nCORE REQUIREMENTS:\n• WALL texture visible\n• AGING effects\n• MATTE finish"
   },
   {
+    "name": "FRESCO SECCO MURAL",
+    "category": [
+      "ART",
+      "MURAL",
+      "ANCIENT",
+      "PAINTING",
+      "ARCHITECTURAL"
+    ],
+    "message": "Take a picture and transform it into a fresco secco mural painting on a plastered wall. The image should appear painted directly onto dry lime plaster, showing the characteristic chalky, matte surface with visible plaster texture beneath the pigments. Include signs of age: hairline cracks following the plaster's natural stress patterns, areas where pigment has flaked away revealing the white plaster beneath, water staining at edges, and the slightly faded quality of mineral pigments exposed to centuries of light. The composition should feel monumental, as if painted on a chapel or palazzo wall.",
+    "randomizeOptions": false,
+    "options": [],
+    "additionalInstructions": "The aging effects should enhance rather than obscure the subject. The plaster wall texture must be consistently visible. Colors should feel mineral-based and slightly chalky."
+  },
+  {
     "name": "FRESNEL LENS DISTORTION",
     "category": [
       "OPTICAL",
@@ -16870,7 +17635,7 @@
     "message": "Take a picture and completely reconstruct the image as if it is formed entirely from frost and ice crystal growth patterns.\n• The subject's features should emerge from the natural branching patterns of ice crystals forming on cold glass \u2014 fernlike dendrites, feathery plumes, and geometric ice flowers that together create the subject's likeness when viewed from the right angle.\n• The scene must be built from crystalline frost structures, not overlaid effects.\n\nCRITICAL OUTPUT RULES:\n• No original surfaces may remain\n• All forms must be constructed from frost-like crystalline patterns\n• Frost must define edges, shapes, and textures\n\nCORE CONCEPT:\n• Ice crystals grow outward to form the image\n• Fractal branching patterns define structure\n\nSTRUCTURE RULES:\n• Fine branching frost patterns\n• Sharp crystalline edges\n• Layered frost density for depth\n\nSUBJECT HANDLING:\n• Subject must be recognizable through frost structure alone\n\nSTYLE:\n• Cool tones (white, blue, pale cyan)\n• Subtle translucency and sparkle\n\nENFORCEMENT:\n• If frost appears as a surface overlay, the result is incorrect.",
     "options": [],
     "randomizeOptions": false,
-    "additionalInstructions": "FINAL RESULT:\nA fully reconstructed image made entirely of frost and crystalline ice formations, with no underlying original image visible."
+    "additionalInstructions": "FINAL RESULT:\nA fully reconstructed image made entirely of frost and crystalline ice formations, with no underlying original image visible. The frost crystal patterns must follow real ice crystallization geometry \u2014 hexagonal branching, dendritic growth patterns. The glass substrate must be visible. The subject should emerge from the natural frost patterns without looking forced. The delicacy of real frost must be preserved."
   },
   {
     "name": "FROSTING CAKE ART",
@@ -17339,6 +18104,19 @@
     }
     ],
     "additionalInstructions": "• Transform ONLY the subject.\n• Keep the background completely unchanged.\n• The subject must display physical traits of real gelatin: a glistening wet surface sheen, wobbling internal air bubbles, soft rounded molded contours, and extreme translucency that distorts the light.\n• Hair must be translated into wavy, molded ridges of clear gelatin or clever lines of suspended parsley flakes.\n• Clothing must be entirely replaced by a tiered, fluted mold design or distinct colored bands of layered gelatin.\n• Identity must remain recognizable through the facial shape, nose ridge, and expression molded into the gelatin surface, aided by the internal suspended ingredients defining facial geometry.\n• Avoid a clean modern look; mimic the garish, saturated, bright-flash aesthetic of a 1950s recipe advertisement.\n\nFINAL VALIDATION — Before producing the final image, verify ALL of the following:\n\n✓ ONLY the subject has been transformed.\n✓ The background remains completely unchanged.\n✓ The subject is a full-body gelatin mold centerpiece.\n✓ Distinct, recognizable food items (olives, celery, shrimp, etc.) are realistically suspended inside the jelly structure.\n✓ The surface has a glistening, wet, authentic gelatin texture.\n✓ Identity is humorously maintained.\n✓ If ANY answer is NO, regenerate."
+  },
+  {
+    "name": "GELLI PLATE MONOPRINT",
+    "category": [
+      "ART",
+      "PRINTMAKING",
+      "MIXED MEDIA",
+      "TEXTURE"
+    ],
+    "message": "Take a picture and transform it into a gelli plate monoprint. The image should show the characteristic qualities of this technique: slightly imperfect ink transfer with areas of ghost printing, texture from found objects pressed into the plate (leaves, lace, bubble wrap), layered transparent colors, and the distinctive soft-yet-textured quality of gelatin printing. Some areas should show crisp stencil edges while others reveal organic texture patterns. The subject should be recognizable but filtered through multiple print layers.",
+    "randomizeOptions": false,
+    "options": [],
+    "additionalInstructions": "Show evidence of multiple printing passes with different colors and textures. The result should feel handmade and slightly unpredictable."
   },
   {
     "name": "GENDER INVERSION",
@@ -18153,10 +18931,10 @@
       "PAINTING",
       "ILLUSTRATION"
     ],
-    "message": "Take a picture and transform the image into a gouache illustration. Matte textures, bold shapes, opaque color layers, and crisp edges while preserving subject identity.",
+    "message": "Take a picture and transform the image into a gouache illustration. Matte textures, bold shapes, opaque color layers, and crisp edges while preserving subject identity. The image should have the characteristic matte, velvety finish of gouache \u2014 no glossy highlights or transparent washes. Colors should be mixed precisely and applied in confident, flat areas with clean edges between shapes. Simplify the subject into bold graphic shapes while maintaining recognizability. The palette should feel considered and harmonious, with each color deliberately chosen and mixed on the palette before application.",
     "options": [],
     "randomizeOptions": false,
-    "additionalInstructions": ""
+    "additionalInstructions": "No visible brushstrokes within color areas \u2014 each shape should be a single flat tone. The matte surface quality of gouache must be evident throughout."
   },
   {
     "name": "GRAFFITI",
@@ -18274,6 +19052,41 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "FINAL RESULT:\nA fully transformed Grand Theft Auto-style world where the entire image becomes a realistic, cinematic urban environment. All objects are converted into detailed, real-world equivalents, and any people or animals are transformed into believable open-world characters. If no characters are present, none are added. The result should feel like a scene from a modern GTA game, with grounded realism, environmental detail, and cinematic presentation."
+  },
+  {
+    "name": "GRAVEL PORTRAIT",
+    "category": [
+      "OPTIONS",
+      "MOSAIC",
+      "NATURAL MATERIALS",
+      "STONE",
+      "MATERIAL TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform ONLY the subject into a handcrafted portrait constructed entirely from real gravel stones while preserving the subject's identity.\n\nThe background, environment, lighting, perspective, shadows, and every non-subject element must remain exactly as they appear in the original photograph.\n\nTHIS IS NOT A PHOTO WITH GRAVEL PLACED ON TOP.\nTHIS IS NOT A STONE FILTER.\nTHIS IS NOT THE ORIGINAL SUBJECT WITH A ROCK TEXTURE.\n\nCompletely discard the original appearance of the subject and reconstruct the subject entirely from authentic gravel.\n\nEvery visible part of the subject—including the face, hair, eyes, clothing, hands, shoes, and every tiny detail—must be rebuilt exclusively from carefully arranged individual gravel stones.\n\nEvery stone must remain clearly distinguishable as a separate piece of gravel.\n\nThe subject should resemble a museum-quality gravel mosaic portrait assembled stone-by-stone while remaining immediately recognizable.\n\nMASTER PROMPT RULE:\n• If a master prompt specifies a particular subject, pose, setting, mood, action, artistic direction, or composition—PRIORITIZE and USE that information while constructing ONLY the subject from gravel.",
+    "randomizeOptions": true,
+    "options": [
+    {
+      "id": "001",
+      "text": "River Gravel Portrait — Construct the portrait entirely from smooth naturally rounded river gravel of varying sizes, colors, and subtle textures."
+    },
+    {
+      "id": "002",
+      "text": "Construction Gravel — Rebuild the subject using angular crushed gravel featuring rough fractured edges, realistic stone variation, and natural aggregate textures."
+    },
+    {
+      "id": "003",
+      "text": "Decorative Landscape Gravel — Create the portrait from carefully selected decorative gravel featuring harmonious earth tones, subtle color gradients, and premium landscaping stones."
+    },
+    {
+      "id": "004",
+      "text": "Mixed Gravel Mosaic — Combine smooth river stones, crushed gravel, decorative gravel, pea gravel, and naturally weathered stones into one highly detailed mosaic portrait."
+    },
+    {
+      "id": "005",
+      "text": "Master Gravel Portrait — Intelligently use thousands of individually visible gravel stones of different sizes, colors, shapes, textures, and stone types to faithfully recreate every recognizable facial feature, hairstyle, clothing fold, and body contour of the subject."
+    }
+    ],
+    "additionalInstructions": "• Transform ONLY the subject.\n• Keep the background completely unchanged.\n• Preserve the original environment, lighting, perspective, colors, shadows, and every background object exactly as photographed.\n• Completely discard the original photographic subject before reconstruction.\n• NEVER place gravel over the original subject.\n• NEVER blend photographic textures with gravel.\n• The original subject must not remain visible anywhere.\n• Every visible part of the subject must be reconstructed entirely from authentic individual gravel stones.\n• Preserve the subject's exact identity, facial structure, hairstyle, expression, age, ethnicity, body proportions, pose, silhouette, and recognizable features.\n• Facial features must emerge solely through the careful placement of individual gravel stones.\n• Hair must be recreated entirely from appropriately sized gravel pieces while preserving its recognizable shape and flow.\n• Clothing must also be reconstructed entirely from gravel while preserving folds, seams, wrinkles, and silhouette.\n• Every individual stone must remain clearly visible.\n• Use realistic variations in stone size, shape, thickness, color, weathering, and mineral composition.\n• Preserve authentic gravel characteristics including chipped edges, rounded stones, fractured surfaces, natural mineral coloration, dust, and weathered textures.\n• Never create polished marble, concrete, ceramic, gemstones, or sculpted rock.\n• Maintain realistic stone spacing with tiny visible gaps between adjacent pieces where appropriate.\n• The finished artwork should resemble a genuine handcrafted gravel mosaic portrait photographed after completion.\n• Master prompt instructions always override the selected option whenever conflicts occur.\n\nFINAL VALIDATION:\n\n✓ ONLY the subject has been transformed.\n✓ The background remains completely unchanged.\n✓ The original photographic subject has been completely removed.\n✓ Every visible part of the subject has been reconstructed entirely from authentic gravel stones.\n✓ Individual stones are clearly visible and distinguishable.\n✓ No photographic textures remain.\n✓ The subject remains immediately recognizable.\n✓ The artwork resembles a genuine handcrafted gravel portrait rather than a gravel texture overlay.\n✓ If ANY answer is NO, regenerate until every requirement is satisfied."
   },
   {
     "name": "GRAVITY FALLS",
@@ -27086,6 +27899,19 @@
     "additionalInstructions": ""
   },
   {
+    "name": "MORSE CODED",
+    "category": [
+      "LANGUAGE",
+      "CODE",
+      "ABSTRACT",
+      "FULL TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform the ENTIRE image into artwork constructed entirely from authentic International Morse Code symbols while preserving the subject's identity.\n\nTransform BOTH the subject AND the background.\n\nTHIS IS NOT TEXT.\nTHIS IS NOT A MORSE CODE TRANSLATION.\nTHIS IS NOT AN IMAGE WITH MORSE CODE WRITTEN ON TOP.\n\nCompletely discard the original photograph and reconstruct the entire image exclusively from individual Morse Code dots (•) and dashes (—).\n\nThe dots and dashes themselves become the ONLY visible visual elements that define every object in the scene.\n\nEvery visible feature—including the subject, facial features, hair, clothing, background, buildings, trees, sky, shadows, reflections, textures, and every tiny detail—must be recreated solely through the careful placement, density, orientation, spacing, and scale of authentic Morse Code dots and dashes.\n\nThe finished artwork should resemble an extraordinarily detailed typographic mosaic constructed entirely from Morse Code symbols while remaining immediately recognizable as the original image.\n\nMASTER PROMPT RULE:\n• If a master prompt specifies a particular subject, pose, setting, mood, action, artistic direction, or composition—PRIORITIZE and USE that information while reconstructing the ENTIRE image from Morse Code symbols.",
+    "randomizeOptions": false,
+    "options": [],
+    "additionalInstructions": "• Transform the ENTIRE image.\n• Completely discard the original photograph before reconstruction.\n• NEVER overlay Morse Code onto the original image.\n• NEVER blend photographic textures with Morse Code.\n• The finished artwork must consist ONLY of authentic Morse Code dots (•) and dashes (—).\n• No letters, numbers, punctuation, words, icons, emojis, or graphical elements may appear.\n• Every visible object must emerge entirely from carefully arranged dots and dashes.\n• Preserve the original composition, perspective, camera angle, depth, and layout.\n• Preserve the subject's exact facial identity, hairstyle, expression, age, ethnicity, clothing, body proportions, pose, silhouette, and recognizable features.\n• Facial features must emerge naturally through changes in symbol density, spacing, orientation, and scale.\n• Hair, clothing, textures, shadows, lighting, and environmental details must also be recreated exclusively from dots and dashes.\n• Dots must remain perfectly circular.\n• Dashes must remain straight horizontal rectangular marks with authentic Morse Code proportions.\n• Never substitute circles, squares, rectangles, pixels, brush strokes, blobs, or decorative marks.\n• Use varying symbol density to create highlights, midtones, and shadows.\n• Preserve smooth tonal transitions through changes in spacing rather than symbol shape.\n• Maintain generous negative space where appropriate.\n• The artwork should resemble a professionally designed typographic mosaic rather than random noise.\n• The subject should remain immediately recognizable despite being constructed entirely from Morse Code symbols.\n• Master prompt instructions always override any conflicting instructions.\n\nFINAL VALIDATION:\n\n✓ The ENTIRE image has been transformed.\n✓ The original photograph has been completely discarded.\n✓ ONLY Morse Code dots and dashes appear anywhere in the artwork.\n✓ No photographic textures remain.\n✓ No letters, numbers, punctuation, or symbols other than dots and dashes are visible.\n✓ Every visible object is constructed entirely from Morse Code dots and dashes.\n✓ The subject remains immediately recognizable.\n✓ The image resembles a museum-quality typographic artwork created exclusively from Morse Code symbols.\n✓ If ANY answer is NO, regenerate until every requirement is satisfied."
+  },
+  {
     "name": "MORTAL KOMBAT",
     "category": [
       "GAMING",
@@ -31802,6 +32628,41 @@
     "additionalInstructions": ""
   },
   {
+    "name": "PEBBLE MOSAIC",
+    "category": [
+      "OPTIONS",
+      "MOSAIC",
+      "NATURAL MATERIALS",
+      "STONE",
+      "MATERIAL TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform the image into a handcrafted mosaic constructed entirely from real natural pebbles while preserving the subject's identity.\n\nTHIS IS NOT A PHOTO WITH PEBBLES PLACED ON TOP.\nTHIS IS NOT A STONE TEXTURE FILTER.\nTHIS IS NOT THE ORIGINAL SUBJECT WITH A ROCK OVERLAY.\n\nCompletely discard the original appearance of the image and reconstruct the image entirely from authentic individual pebbles.\n\nEvery visible part of the subject—including the face, hair, eyes, clothing, hands, shoes, and every fine detail—must be rebuilt exclusively from carefully arranged pebbles.\n\nEvery pebble must remain individually recognizable with natural spacing, unique shape, and authentic stone characteristics.\n\nThe finished artwork should resemble a museum-quality pebble mosaic assembled pebble-by-pebble while remaining immediately recognizable as the subject.\n\nMASTER PROMPT RULE:\n• If a master prompt specifies a particular subject, pose, setting, mood, action, artistic direction, or composition—PRIORITIZE and USE that information while constructing the subject from pebbles.",
+    "randomizeOptions": true,
+    "options": [
+    {
+      "id": "001",
+      "text": "River Pebbles — Construct the mosaic entirely from naturally rounded river pebbles featuring smooth surfaces, soft earth tones, and gentle weathering."
+    },
+    {
+      "id": "002",
+      "text": "Beach Pebbles — Rebuild the subject using beautifully weathered coastal pebbles displaying subtle color variation, smooth edges, and polished surfaces."
+    },
+    {
+      "id": "003",
+      "text": "Mountain Pebbles — Create the mosaic using naturally weathered mountain pebbles featuring rugged mineral colors, irregular forms, and varied stone textures."
+    },
+    {
+      "id": "004",
+      "text": "Decorative Pebble Mosaic — Construct the portrait using premium decorative landscaping pebbles selected for harmonious color gradients and artistic composition."
+    },
+    {
+      "id": "005",
+      "text": "Master Pebble Mosaic — Intelligently combine thousands of individually visible pebbles of varying sizes, colors, mineral compositions, and shapes to faithfully recreate every recognizable facial feature, hairstyle, clothing fold, and body contour of the subject."
+    }
+    ],
+    "additionalInstructions": "• Completely discard the original photographic subject before reconstruction.\n• NEVER place pebbles over the original photograph.\n• NEVER blend photographic textures with pebble surfaces.\n• The original subject must not remain visible anywhere.\n• Every visible part of the subject must be reconstructed entirely from authentic individual pebbles.\n• Preserve the subject's exact identity, facial structure, hairstyle, expression, age, ethnicity, body proportions, pose, silhouette, and recognizable features.\n• Facial features must emerge solely through the careful placement of individual pebbles.\n• Hair must be recreated entirely from carefully selected pebbles while preserving the subject's recognizable hairstyle and natural flow.\n• Clothing must also be reconstructed entirely from pebbles while preserving folds, wrinkles, seams, and silhouette.\n• Every individual pebble must remain clearly visible and distinguishable.\n• Pebbles should naturally vary in size, thickness, color, mineral composition, weathering, and shape.\n• Preserve authentic pebble characteristics including rounded edges, smooth weathered surfaces, subtle imperfections, natural mineral inclusions, and realistic stone coloration.\n• Never create carved stone, sculpted rock, polished marble, concrete, gemstones, or ceramic materials.\n• Maintain tiny realistic gaps between adjacent pebbles where appropriate.\n• The completed artwork should resemble a genuine handcrafted pebble mosaic photographed after completion.\n• Master prompt instructions always override the selected option whenever conflicts occur.\n\nFINAL VALIDATION:\n\n✓ The original photographic subject has been completely removed.\n✓ Every visible part of the subject has been reconstructed entirely from authentic individual pebbles.\n✓ Every pebble remains individually visible.\n✓ No photographic textures remain.\n✓ The subject remains immediately recognizable.\n✓ The artwork resembles a genuine handcrafted pebble mosaic rather than a pebble texture overlay.\n✓ If ANY answer is NO, regenerate until every requirement is satisfied."
+  },
+  {
     "name": "PEE-WEE'S PLAYHOUSE",
     "category": [
       "TELEVISION",
@@ -31883,6 +32744,76 @@
     }
     ],
     "additionalInstructions": "• ONLY the subject is transformed into the eraser topper.\n• Everything else in the image remains unchanged.\n• The subject must appear physically attached to the pencil eraser.\n• Maintain original pose, proportions, and identity within miniature scale.\n• Material must look like molded rubber or soft vinyl eraser material.\n• Visible compression, slight imperfections, and manufacturing seams are allowed.\n• Lighting must match original scene.\n• The pencil must appear standard graphite school pencil unless otherwise specified."
+  },
+  {
+    "name": "PENCIL SHAVINGS MOSAIC",
+    "category": [
+      "OPTIONS",
+      "MOSAIC",
+      "ART SUPPLIES",
+      "DRAWING",
+      "FULL TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform the ENTIRE image into a handcrafted mosaic constructed entirely from real colored pencil shavings while preserving the subject's identity.\n\nTransform BOTH the subject AND the background.\n\nTHIS IS NOT A PHOTO WITH PENCIL SHAVINGS PLACED ON TOP.\nTHIS IS NOT A COLORED PENCIL FILTER.\nTHIS IS NOT THE ORIGINAL IMAGE COVERED WITH PENCIL SHAVINGS.\n\nCompletely discard the original photograph and reconstruct the entire scene exclusively from authentic individual colored pencil shavings.\n\nEvery visible object—including the subject, background, sky, buildings, trees, furniture, vehicles, animals, shadows, reflections, textures, lighting transitions, and every tiny detail—must be recreated entirely from carefully arranged real pencil shavings.\n\nEvery pencil shaving must remain individually recognizable, including its curled spiral shape, exposed wooden edge, and colored pencil core.\n\nThe finished artwork should resemble an award-winning handcrafted mosaic assembled shaving-by-shaving while preserving the complete composition of the original photograph.\n\nMASTER PROMPT RULE:\n• If a master prompt specifies a particular subject, pose, setting, mood, action, artistic direction, or composition—PRIORITIZE and USE that information while reconstructing the ENTIRE image from authentic pencil shavings.",
+    "randomizeOptions": true,
+    "options": [
+    {
+      "id": "001",
+      "text": "Colored Pencil Mosaic — Construct the artwork entirely from vibrant colored pencil shavings using their natural spiral curls to recreate the complete scene."
+    },
+    {
+      "id": "002",
+      "text": "Natural Wood Emphasis — Build the mosaic from pencil shavings that prominently display both the exposed natural wood and colored cores for rich visual texture throughout the entire image."
+    },
+    {
+      "id": "003",
+      "text": "Artist's Studio Mosaic — Use pencil shavings from a wide assortment of professional artist pencils featuring hundreds of realistic colors, subtle gradients, and varied shaving sizes."
+    },
+    {
+      "id": "004",
+      "text": "Precision Spiral Composition — Carefully orient every curled pencil shaving so the spiral shapes enhance facial features, architecture, trees, clouds, textures, clothing folds, and every object throughout the scene."
+    },
+    {
+      "id": "005",
+      "text": "Master Pencil Shavings Mosaic — Intelligently combine thousands of individually visible colored pencil shavings of different colors, curl sizes, wood tones, graphite cores, thicknesses, and spiral orientations to faithfully recreate every recognizable feature of the subject and every object within the background."
+    }
+    ],
+    "additionalInstructions": "• Transform the ENTIRE image.\n• Completely discard the original photograph before reconstruction.\n• NEVER place pencil shavings over the original image.\n• NEVER blend photographic textures with pencil shavings.\n• Every visible object in the scene must be reconstructed entirely from authentic individual pencil shavings.\n• Preserve the exact composition, perspective, lighting direction, camera angle, depth, and overall layout of the original image.\n• Preserve the subject's exact identity, facial structure, hairstyle, expression, age, ethnicity, clothing, body proportions, pose, silhouette, and recognizable features.\n• Facial features must emerge solely through the careful placement, orientation, color, curl direction, and layering of individual pencil shavings.\n• Hair must be recreated entirely from carefully arranged pencil shavings while preserving the subject's recognizable hairstyle, flow, and volume.\n• Clothing must also be reconstructed entirely from pencil shavings while preserving folds, seams, wrinkles, and texture.\n• The background—including architecture, trees, skies, clouds, water, furniture, vehicles, landscapes, shadows, reflections, and every environmental detail—must also be rebuilt exclusively from authentic pencil shavings.\n• Every individual pencil shaving must remain clearly visible and distinguishable.\n• Every shaving must clearly display its natural curled spiral form, exposed wooden edge, sharpened colored core, thin translucent wood, and authentic shaving geometry.\n• Preserve authentic characteristics including natural wood grain, colored pigment cores, slight splitting, irregular curls, varying thickness, sharpening imperfections, and realistic layering.\n• Use realistic variations in shaving length, curl radius, width, color, orientation, overlap, and wood tone.\n• Never create flat colored paper pieces, paint chips, wood chips, confetti, or abstract shapes.\n• The finished artwork should appear physically possible and entirely handcrafted from real pencil shavings.\n• Maintain realistic lighting, shadows, depth, overlap, and delicate paper-thin wood textures.\n• The completed artwork should resemble a genuine handcrafted pencil shavings mosaic photographed after completion.\n• Master prompt instructions always override the selected option whenever conflicts occur.\n\nFINAL VALIDATION:\n\n✓ The ENTIRE image has been transformed.\n✓ The original photograph has been completely discarded.\n✓ Every visible object has been reconstructed entirely from authentic individual pencil shavings.\n✓ Every pencil shaving remains individually visible and recognizable.\n✓ The curled spiral shape, exposed wood, and colored core are clearly visible.\n✓ No photographic textures remain anywhere in the image.\n✓ The subject remains immediately recognizable.\n✓ The background has also been completely reconstructed from pencil shavings.\n✓ The artwork resembles a genuine handcrafted pencil shavings mosaic rather than pencil shavings placed over a photograph.\n✓ If ANY answer is NO, regenerate until every requirement is satisfied."
+  },
+  {
+    "name": "PENCIL SHAVINGS SCULPTURE",
+    "category": [
+      "OPTIONS",
+      "MOSAIC",
+      "ART SUPPLIES",
+      "DRAWING",
+      "MATERIAL TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform ONLY the subject into a handcrafted mosaic constructed entirely from real colored pencil shavings while preserving the subject's identity.\n\nThe background, environment, lighting, perspective, shadows, and every non-subject element must remain exactly as they appear in the original photograph.\n\nTHIS IS NOT A PHOTO WITH PENCIL SHAVINGS PLACED ON TOP.\nTHIS IS NOT A COLORED PENCIL FILTER.\nTHIS IS NOT THE ORIGINAL SUBJECT COVERED WITH PENCIL SHAVINGS.\n\nCompletely discard the original appearance of the subject and reconstruct the subject entirely from authentic individual pencil shavings.\n\nEvery visible part of the subject—including the face, hair, eyes, clothing, hands, shoes, and every fine detail—must be rebuilt exclusively from carefully arranged real colored pencil shavings.\n\nEvery pencil shaving must remain individually recognizable, including its curled spiral shape, exposed wooden edge, and colored graphite core.\n\nThe finished artwork should resemble an award-winning handcrafted mosaic assembled shaving-by-shaving while remaining immediately recognizable as the subject.\n\nMASTER PROMPT RULE:\n• If a master prompt specifies a particular subject, pose, setting, mood, action, artistic direction, or composition—PRIORITIZE and USE that information while constructing ONLY the subject from pencil shavings.",
+    "randomizeOptions": true,
+    "options": [
+    {
+      "id": "001",
+      "text": "Colored Pencil Mosaic — Construct the artwork entirely from vibrant colored pencil shavings using their natural spiral curls to recreate the subject."
+    },
+    {
+      "id": "002",
+      "text": "Natural Wood Emphasis — Build the mosaic from pencil shavings that prominently display both the exposed natural wood and colored cores for rich visual texture."
+    },
+    {
+      "id": "003",
+      "text": "Artist's Studio Mosaic — Use pencil shavings from a wide assortment of professional artist pencils featuring hundreds of realistic colors, subtle gradients, and varied shaving sizes."
+    },
+    {
+      "id": "004",
+      "text": "Precision Spiral Composition — Carefully orient every curled pencil shaving so the spiral shapes themselves enhance facial features, hair flow, clothing folds, and contours."
+    },
+    {
+      "id": "005",
+      "text": "Master Pencil Shavings Mosaic — Intelligently combine thousands of individually visible colored pencil shavings of different colors, curl sizes, wood tones, graphite cores, thicknesses, and spiral orientations to faithfully recreate every recognizable facial feature, hairstyle, clothing fold, and body contour of the subject."
+    }
+    ],
+    "additionalInstructions": "• Transform ONLY the subject.\n• Keep the background completely unchanged.\n• Preserve the original environment, lighting, perspective, colors, shadows, and every background object exactly as photographed.\n• Completely discard the original photographic subject before reconstruction.\n• NEVER place pencil shavings over the original photograph.\n• NEVER blend photographic textures with pencil shavings.\n• The original subject must not remain visible anywhere.\n• Every visible part of the subject must be reconstructed entirely from authentic individual pencil shavings.\n• Preserve the subject's exact identity, facial structure, hairstyle, expression, age, ethnicity, body proportions, pose, silhouette, and recognizable features.\n• Facial features must emerge solely through the careful placement, orientation, color, curl direction, and layering of individual pencil shavings.\n• Hair must be recreated entirely from carefully arranged pencil shavings while preserving the subject's recognizable hairstyle, flow, volume, and silhouette.\n• Clothing must also be reconstructed entirely from overlapping pencil shavings while preserving folds, seams, wrinkles, texture, and overall shape.\n• Every individual pencil shaving must remain clearly visible and distinguishable.\n• Every shaving must clearly display its natural curled spiral form, exposed wooden edge, sharpened colored core, thin translucent wood, and authentic shaving geometry.\n• Preserve authentic characteristics including natural wood grain, colored pigment cores, slight splitting, irregular curls, varying thickness, sharpening imperfections, and realistic layering.\n• Use realistic variations in shaving length, curl radius, width, color, orientation, overlap, and wood tone.\n• Never create flat colored paper pieces, paint chips, wood chips, confetti, or abstract shapes.\n• The finished artwork should appear physically possible and entirely handcrafted from real pencil shavings.\n• Maintain realistic lighting, shadows, depth, overlap, and delicate paper-thin wood textures.\n• The completed artwork should resemble a genuine handcrafted pencil shavings mosaic photographed after completion.\n• Master prompt instructions always override the selected option whenever conflicts occur.\n\nFINAL VALIDATION:\n\n✓ ONLY the subject has been transformed.\n✓ The background remains completely unchanged.\n✓ The original photographic subject has been completely removed.\n✓ Every visible part of the subject has been reconstructed entirely from authentic individual pencil shavings.\n✓ Every pencil shaving remains individually visible and recognizable.\n✓ The curled spiral shape, exposed wood, and colored core are clearly visible.\n✓ No photographic textures remain.\n✓ The subject remains immediately recognizable.\n✓ The artwork resembles a genuine handcrafted pencil shavings mosaic rather than pencil shavings placed over a photograph.\n✓ If ANY answer is NO, regenerate until every requirement is satisfied."
   },
   {
     "name": "PENNIES",
@@ -33292,6 +34223,20 @@
     "additionalInstructions": ""
   },
   {
+    "name": "POLAROID TRANSFER",
+    "category": [
+      "PHOTOGRAPHY",
+      "EXPERIMENTAL",
+      "VINTAGE",
+      "TEXTURE",
+      "ALTERNATIVE PROCESS"
+    ],
+    "message": "Take a picture and transform it into a Polaroid transfer print \u2014 the experimental technique of peeling apart a Polaroid and pressing the negative onto watercolor paper before development is complete. The image should show the characteristic transfer qualities: soft, slightly blurred edges where the emulsion didn't transfer cleanly, the beautiful imperfections of incomplete chemical development, areas where the image is strong and areas where it fades to nothing, and the texture of the watercolor paper visible through the thin emulsion layer. Colors should be slightly shifted and desaturated compared to a normal Polaroid, with the warm, organic quality unique to this process. The irregular edges of the transferred emulsion should be visible against the white paper.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "The transfer imperfections must look authentic \u2014 incomplete edges, variable density, paper texture showing through. The color shift should be subtle but present. The watercolor paper texture must be visible. Subject must be recognizable despite the soft, imperfect quality."
+  },
+  {
     "name": "POLICE LINEUP",
     "category": [
       "HUMOR",
@@ -33518,6 +34463,41 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "POPEYE ENFORCEMENT (CRITICAL):\n\n• Oversized forearms are mandatory.\n• The sailor uniform is mandatory.\n• The corn cob pipe is mandatory.\n• Preserve recognizable identity.\n\nTRANSFORMATION ENFORCEMENT:\n\n• The anatomy must be transformed.\n• Do not create a costume cosplay.\n• Do not paste cartoon elements onto a photograph.\n• The subject must become a living Popeye.\n\nFINAL ENFORCEMENT:\n\n• The finished image should resemble a realistic live-action Popeye while remaining immediately recognizable as the subject."
+  },
+  {
+    "name": "POPSICLE STICK SCULPTURE",
+    "category": [
+      "OPTIONS",
+      "SCULPTURE",
+      "WOOD",
+      "CRAFTS",
+      "MATERIAL TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform ONLY the subject into a handcrafted sculpture constructed entirely from real wooden popsicle sticks while preserving the subject's identity.\n\nThe background, environment, lighting, perspective, shadows, and every non-subject element must remain exactly as they appear in the original photograph.\n\nTHIS IS NOT A PHOTO WITH POPSICLE STICKS GLUED ON TOP.\nTHIS IS NOT A WOOD TEXTURE FILTER.\nTHIS IS NOT THE ORIGINAL SUBJECT COVERED IN WOODEN STICKS.\n\nCompletely discard the original appearance of the subject and reconstruct the subject entirely from authentic individual wooden popsicle sticks.\n\nEvery visible part of the subject—including the face, hair, eyes, clothing, hands, shoes, and every fine detail—must be rebuilt exclusively from carefully arranged popsicle sticks.\n\nEvery popsicle stick must remain individually recognizable with its rounded ends, flat wooden surfaces, natural wood grain, and realistic thickness clearly visible.\n\nThe finished artwork should resemble a world-class handcrafted popsicle stick sculpture assembled stick-by-stick while remaining immediately recognizable as the subject.\n\nMASTER PROMPT RULE:\n• If a master prompt specifies a particular subject, pose, setting, mood, action, artistic direction, or composition—PRIORITIZE and USE that information while constructing ONLY the subject from popsicle sticks.",
+    "randomizeOptions": true,
+    "options": [
+    {
+      "id": "001",
+      "text": "Natural Craft Sticks — Construct the sculpture entirely from unfinished wooden craft sticks featuring natural birch wood grain, subtle color variation, and clean handcrafted construction."
+    },
+    {
+      "id": "002",
+      "text": "Colored Craft Sticks — Rebuild the subject using brightly dyed craft sticks of many colors while preserving realistic wooden grain and authentic stick construction."
+    },
+    {
+      "id": "003",
+      "text": "Miniature Craft Sculpture — Use standard miniature craft sticks arranged with extraordinary precision to recreate every recognizable feature of the subject."
+    },
+    {
+      "id": "004",
+      "text": "Architectural Construction — Build the sculpture using overlapping, stacked, woven, laminated, and interlocking popsicle sticks to create impressive structural depth and intricate craftsmanship."
+    },
+    {
+      "id": "005",
+      "text": "Master Popsicle Stick Sculpture — Intelligently combine thousands of individually visible popsicle sticks of different lengths, widths, wood tones, colors, orientations, layering techniques, and construction methods to faithfully recreate every recognizable facial feature, hairstyle, clothing fold, and body contour of the subject."
+    }
+    ],
+    "additionalInstructions": "• Transform ONLY the subject.\n• Keep the background completely unchanged.\n• Preserve the original environment, lighting, perspective, colors, shadows, and every background object exactly as photographed.\n• Completely discard the original photographic subject before reconstruction.\n• NEVER glue popsicle sticks onto the original subject.\n• NEVER place popsicle sticks over the original photograph.\n• NEVER blend photographic textures with wooden surfaces.\n• The original subject must not remain visible anywhere.\n• Every visible part of the subject must be reconstructed entirely from authentic individual wooden popsicle sticks.\n• Preserve the subject's exact identity, facial structure, hairstyle, expression, age, ethnicity, body proportions, pose, silhouette, and recognizable features.\n• Facial features must emerge solely through the careful placement, layering, spacing, orientation, color, and geometry of individual popsicle sticks.\n• Hair must be recreated entirely from carefully arranged popsicle sticks while preserving the subject's recognizable hairstyle, flow, volume, and silhouette.\n• Clothing must also be reconstructed entirely from popsicle sticks while preserving folds, seams, wrinkles, texture, and overall shape.\n• Every individual popsicle stick must remain clearly visible and distinguishable.\n• Every stick must clearly display its authentic rounded ends, flat wooden surfaces, realistic thickness, chamfered edges, subtle wood grain, tiny manufacturing imperfections, and natural wood coloration.\n• Preserve authentic craft-stick characteristics including laminated birch texture, slight grain variation, tiny edge splinters, wood fibers, realistic glue joints where necessary, and physically believable construction.\n• Use realistic variations in stick length, width, thickness, color, orientation, overlap, layering, and construction pattern.\n• Never create wooden boards, logs, branches, plywood, bark, tongue depressors, or generic lumber.\n• The sculpture should appear physically possible and entirely handcrafted from real popsicle sticks.\n• Maintain realistic lighting, shadows, depth, wood grain, structural layering, and handcrafted craftsmanship.\n• The completed artwork should resemble a genuine popsicle stick sculpture photographed after completion.\n• Master prompt instructions always override the selected option whenever conflicts occur.\n\nFINAL VALIDATION:\n\n✓ ONLY the subject has been transformed.\n✓ The background remains completely unchanged.\n✓ The original photographic subject has been completely removed.\n✓ Every visible part of the subject has been reconstructed entirely from authentic individual popsicle sticks.\n✓ Every popsicle stick remains individually visible and recognizable.\n✓ Rounded ends, flat wooden surfaces, and wood grain are clearly visible.\n✓ No photographic textures remain.\n✓ The subject remains immediately recognizable.\n✓ The artwork resembles a genuine handcrafted popsicle stick sculpture rather than popsicle sticks glued onto a photograph.\n✓ If ANY answer is NO, regenerate until every requirement is satisfied."
   },
   {
     "name": "POP-UP BOOK",
@@ -33928,6 +34908,34 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "FINAL RESULT:\nA fully reconstructed image made entirely from refracted spectral light, with all shapes defined by prism dispersion rather than solid surfaces."
+  },
+  {
+    "name": "PRISMACOLOR MARKER RENDERING",
+    "category": [
+      "ART",
+      "ILLUSTRATION",
+      "DESIGN",
+      "MARKER",
+      "COMMERCIAL ART"
+    ],
+    "message": "Take a picture and transform it into a professional Prismacolor marker rendering in the style of industrial design or architectural illustration. Show the characteristic qualities of alcohol-based markers: smooth gradients achieved through rapid overlapping strokes, visible stroke edges where markers didn't fully blend, the slight bleeding at edges on marker paper, and the luminous quality of dye-based color. Use a limited but sophisticated color palette with careful attention to material rendering \u2014 showing how markers can simulate chrome, glass, fabric, and skin through specific stroke techniques.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "Marker strokes should be visible and confident, not airbrushed smooth. Include fine-liner pen outlines and white gel pen highlights typical of professional marker renderings."
+  },
+  {
+    "name": "PRISMATIC LIGHT BEING",
+    "category": [
+      "TRANSFORMATION",
+      "LIGHT",
+      "ETHEREAL",
+      "COLORFUL",
+      "ENERGY"
+    ],
+    "message": "Take a picture and transform the subject into a being made entirely of refracted light \u2014 as if a prism has split white light into its component wavelengths and those wavelengths have taken human form. The subject should appear to be composed of pure spectral color: red at the extremities fading through orange, yellow, green, blue, and violet toward the center. Their form should have the quality of light itself \u2014 slightly transparent, casting rainbow caustics on surrounding surfaces, and appearing to glow from within. Edges should show chromatic aberration and light diffraction patterns. The background should be dark to make the light-form maximally visible.",
+    "randomizeOptions": false,
+    "options": [],
+    "additionalInstructions": "The spectral colors must follow the correct order of the visible spectrum. The light quality must feel genuine \u2014 not just colored but actually luminous. The subject's form and identity must be clearly readable through the light effects."
   },
   {
     "name": "PRO CAMERA SETTINGS",
@@ -36003,6 +37011,20 @@
     "additionalInstructions": "SCENE CONSTRUCTION (MANDATORY):\n\n• Build ONE specific cinematic scene matching the selected option\n• The environment must dominate the composition\n• Use concrete visual objects instead of vague cinematic wording\n• Include recognizable props, architecture, vehicles, clothing, and atmosphere appropriate to the selected film\n\nCHARACTER INTEGRATION:\n\n• Subject must feel physically present inside the scene\n• Supporting characters from the selected movie may appear naturally nearby\n• Subject should wear clothing appropriate to the environment\n\nVISUAL STYLE:\n\n• Strong environmental depth\n• Atmospheric haze and volumetric lighting\n• Large-scale cinematic composition\n• Rich textured realism\n• Practical light sources\n• Film-still realism\n\nANTI-CHEAT:\n\n• Do not reuse generic battle compositions\n• Do not force warfare into peaceful options\n• Do not ignore the selected environment\n• Do not generate vague generic movie scenes\n\nQUALITY:\n\n• Highly recognizable movie-inspired environments\n• Strong visual storytelling\n• Authentic cinematic production design\n• Seamless integration of subject into scene"
   },
   {
+    "name": "RING FLASH FASHION",
+    "category": [
+      "PHOTOGRAPHY",
+      "FASHION",
+      "LIGHTING",
+      "EDITORIAL",
+      "BOLD"
+    ],
+    "message": "Take a picture and transform it using ring flash lighting \u2014 the distinctive on-axis flash that creates the signature fashion photography look. The lighting should show the telltale ring flash characteristics: nearly shadowless frontal illumination, the distinctive circular catchlight in the eyes (a ring rather than a point), a thin hard shadow outline visible just behind the subject on the background, and the slight falloff of light at the edges of frame. Colors should be punchy and saturated (ring flash tends to boost saturation). The overall aesthetic should be high-fashion editorial \u2014 bold, graphic, and slightly confrontational. The background should be simple to emphasize the distinctive lighting quality.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "The ring-shaped catchlight in the eyes is essential and must be visible. The shadow halo behind the subject must be present. The flat, frontal quality of ring flash must be authentic. The mood should be fashion-editorial."
+  },
+  {
     "name": "RINPA SCHOOL",
     "category": [
       "JAPANESE",
@@ -36657,6 +37679,41 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "RUBBER BANDS PORTRAIT",
+    "category": [
+      "OPTIONS",
+      "MOSAIC",
+      "OFFICE SUPPLIES",
+      "SCULPTURE",
+      "MATERIAL TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform ONLY the subject into a handcrafted portrait constructed entirely from real rubber bands while preserving the subject's identity.\n\nThe background, environment, lighting, perspective, shadows, and every non-subject element must remain exactly as they appear in the original photograph.\n\nTHIS IS NOT A PHOTO WITH RUBBER BANDS STRETCHED OVER THE SUBJECT.\nTHIS IS NOT A RUBBER BAND FILTER.\nTHIS IS NOT THE ORIGINAL SUBJECT WRAPPED IN RUBBER BANDS.\n\nCompletely discard the original appearance of the subject and reconstruct the subject entirely from authentic individual rubber bands.\n\nEvery visible part of the subject—including the face, hair, eyes, clothing, hands, shoes, and every fine detail—must be rebuilt exclusively from carefully arranged real rubber bands.\n\nEvery rubber band must remain individually recognizable with its continuous elastic loop clearly visible.\n\nThe finished artwork should resemble an award-winning rubber band portrait assembled band-by-band while remaining immediately recognizable as the subject.\n\nMASTER PROMPT RULE:\n• If a master prompt specifies a particular subject, pose, setting, mood, action, artistic direction, or composition—PRIORITIZE and USE that information while constructing ONLY the subject from rubber bands.",
+    "randomizeOptions": true,
+    "options": [
+    {
+      "id": "001",
+      "text": "Natural Office Rubber Bands — Construct the portrait entirely from ordinary tan office rubber bands stretched and layered to recreate every recognizable feature."
+    },
+    {
+      "id": "002",
+      "text": "Color-Coded Rubber Bands — Rebuild the subject using hundreds of brightly colored rubber bands of varying sizes to produce rich color gradients and exceptional detail."
+    },
+    {
+      "id": "003",
+      "text": "String Art Style — Stretch thousands of rubber bands across hidden anchor points so the portrait emerges through overlapping tension lines and layered elastic geometry."
+    },
+    {
+      "id": "004",
+      "text": "Mixed Elastic Composition — Construct the portrait using rubber bands of many diameters, widths, thicknesses, colors, and stretch levels to maximize realism and texture."
+    },
+    {
+      "id": "005",
+      "text": "Master Rubber Bands Portrait — Intelligently combine thousands of individually visible rubber bands of different sizes, colors, widths, thicknesses, elasticity, and orientations to faithfully recreate every recognizable facial feature, hairstyle, clothing fold, and body contour of the subject."
+    }
+    ],
+    "additionalInstructions": "• Transform ONLY the subject.\n• Keep the background completely unchanged.\n• Preserve the original environment, lighting, perspective, colors, shadows, and every background object exactly as photographed.\n• Completely discard the original photographic subject before reconstruction.\n• NEVER wrap rubber bands around the original subject.\n• NEVER place rubber bands over the original photograph.\n• NEVER blend photographic textures with rubber bands.\n• The original subject must not remain visible anywhere.\n• Every visible part of the subject must be reconstructed entirely from authentic individual rubber bands.\n• Preserve the subject's exact identity, facial structure, hairstyle, expression, age, ethnicity, body proportions, pose, silhouette, and recognizable features.\n• Facial features must emerge solely through the careful placement, layering, orientation, spacing, and color of individual rubber bands.\n• Hair must be recreated entirely from carefully arranged rubber bands while preserving the subject's recognizable hairstyle, flow, volume, and silhouette.\n• Clothing must also be reconstructed entirely from rubber bands while preserving folds, seams, wrinkles, texture, and overall shape.\n• Every individual rubber band must remain clearly visible and distinguishable.\n• Every rubber band must clearly appear as a complete closed elastic loop with realistic thickness, stretch, overlap, shadows, and perspective.\n• Preserve authentic rubber characteristics including matte latex surfaces, subtle manufacturing seams, natural elasticity, slight twisting, realistic tension, and gentle deformation.\n• Use realistic variations in rubber band diameter, width, thickness, color, stretch, overlap, orientation, and density.\n• Never create ropes, strings, wires, ribbons, hoses, or flat strips.\n• The finished artwork should appear physically possible and entirely handcrafted from real rubber bands.\n• Maintain realistic lighting, elastic tension, depth, overlap, shadows, and subtle surface texture.\n• The completed artwork should resemble a genuine handcrafted rubber band portrait photographed after completion.\n• Master prompt instructions always override the selected option whenever conflicts occur.\n\nFINAL VALIDATION:\n\n✓ ONLY the subject has been transformed.\n✓ The background remains completely unchanged.\n✓ The original photographic subject has been completely removed.\n✓ Every visible part of the subject has been reconstructed entirely from authentic individual rubber bands.\n✓ Every rubber band remains individually visible and recognizable as a complete elastic loop.\n✓ No photographic textures remain.\n✓ The subject remains immediately recognizable.\n✓ The artwork resembles a genuine handcrafted rubber band portrait rather than rubber bands placed over a photograph.\n✓ If ANY answer is NO, regenerate until every requirement is satisfied."
   },
   {
     "name": "RUBBER DUCKIE",
@@ -39346,6 +40403,76 @@
     }
   ],
   "additionalInstructions": "SPIN PHYSICS (CRITICAL):\n\n• Apply ROTATIONAL TRANSFORMATION to existing pixels\n• Image must appear physically rotated and stretched from a central axis\n• DO NOT draw, paint, or overlay motion lines\n• DO NOT simulate motion using added streak graphics\n\nANTI-CHEAT RULE (STRICT):\n• Every streak or smear must come from displaced original image content\n• If streaks appear as separate drawn lines → FAIL\n• If background looks \"decorated\" instead of rotated → FAIL\n\nTARGET RULES (STRICT):\n\nIF \"SUBJECT ONLY\":\n• ONLY the subject pixels are rotationally distorted\n• Background pixels remain completely unchanged\n\nIF \"BACKGROUND ONLY\":\n• Background pixels must be physically rotated and stretched\n• Subject must remain sharp, undistorted, and NOT duplicated\n• NO spin lines behind subject — only warped background content\n\nIF \"ENTIRE SCENE\":\n• All pixels follow the same rotational transformation\n\nEDGE CONTROL:\n• Maintain detail near the spin center\n• Increase distortion gradually toward edges\n• Avoid uniform blur — must show directional rotation\n\nFAIL CONDITIONS:\n• No clear spin center → FAIL\n• Use of overlay streaks or drawn lines → FAIL\n• Background not actually warped in \"Background Only\" → FAIL\n• Subject distorted in \"Background Only\" → FAIL\n• Generic blur instead of rotational motion → FAIL\n\nQUALITY:\n• True radial motion\n• High detail\n• No artificial overlays\n• No pixel tearing or artifacts\n• Physically believable spin effect"
+  },
+  {
+    "name": "SPIROGRAPH (IMAGE)",
+    "category": [
+      "OPTIONS",
+      "DRAWING",
+      "GEOMETRY",
+      "TOY",
+      "FULL TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform the ENTIRE image into authentic Spirograph artwork while preserving the subject's identity.\n\nTransform BOTH the subject AND the background.\n\nTHIS IS NOT A LINE FILTER.\nTHIS IS NOT A GEOMETRIC OVERLAY.\nTHIS IS NOT THE ORIGINAL PHOTO WITH SPIROGRAPH PATTERNS DRAWN ON TOP.\n\nCompletely discard the original photograph and reconstruct the entire scene exclusively from authentic Spirograph curves.\n\nEvery visible object—including the subject, background, sky, buildings, trees, furniture, vehicles, animals, shadows, reflections, textures, lighting transitions, and every tiny detail—must be recreated entirely from mathematically accurate Spirograph curves generated by rotating gears inside circular templates.\n\nEvery curve must remain individually recognizable as a true Spirograph curve rather than random spirals, scribbles, decorative swirls, or abstract loops.\n\nThe finished artwork should resemble an extraordinarily detailed Spirograph masterpiece created entirely using authentic Spirograph drawing tools while preserving the complete composition of the original photograph.\n\nMASTER PROMPT RULE:\n• If a master prompt specifies a particular subject, pose, setting, mood, action, artistic direction, or composition—PRIORITIZE and USE that information while reconstructing the ENTIRE image using authentic Spirograph curves.",
+    "randomizeOptions": true,
+    "options": [
+    {
+      "id": "001",
+      "text": "Classic Blue Pen — Reconstruct the entire image using classic blue-ink Spirograph curves generated from mathematically accurate hypotrochoids and epitrochoids."
+    },
+    {
+      "id": "002",
+      "text": "Rainbow Spirograph — Rebuild the complete scene using vividly colored Spirograph curves with hundreds of overlapping geometric designs creating smooth tonal transitions."
+    },
+    {
+      "id": "003",
+      "text": "Ultra Dense Geometry — Create the entire image using thousands of extremely dense overlapping Spirograph curves to achieve extraordinary photographic realism."
+    },
+    {
+      "id": "004",
+      "text": "Vintage Toy Drawing — Recreate the image as an authentic 1970s Spirograph masterpiece using classic pen colors, clean white drawing paper, and mathematically perfect gear-generated curves."
+    },
+    {
+      "id": "005",
+      "text": "Master Spirograph Artwork — Intelligently combine thousands of individually visible mathematically accurate Spirograph curves of varying radii, gear ratios, colors, densities, orientations, and pen widths to faithfully recreate every recognizable feature of the subject and every object in the background."
+    }
+    ],
+    "additionalInstructions": "• Transform the ENTIRE image.\n• Completely discard the original photograph before reconstruction.\n• NEVER draw Spirograph curves over the original image.\n• NEVER blend photographic textures with the line artwork.\n• Every visible object in the scene must be reconstructed entirely from authentic mathematically generated Spirograph curves.\n• Preserve the exact composition, perspective, lighting direction, camera angle, depth, and overall layout of the original image.\n• Preserve the subject's exact identity, facial structure, hairstyle, expression, age, ethnicity, clothing, body proportions, pose, silhouette, and recognizable features.\n• Facial features must emerge solely through the careful density, spacing, layering, curvature, and orientation of authentic Spirograph curves.\n• Hair must be recreated entirely from overlapping Spirograph patterns while preserving the subject's recognizable hairstyle, flow, and volume.\n• Clothing must also be reconstructed entirely from authentic Spirograph curves while preserving folds, seams, wrinkles, and texture.\n• The background—including architecture, trees, skies, clouds, water, furniture, vehicles, landscapes, shadows, reflections, and every environmental detail—must also be rebuilt exclusively from authentic Spirograph curves.\n• Every individual curve must remain clearly visible and mathematically correct.\n• Curves must be true Spirograph hypotrochoids and epitrochoids created by rotating gears inside circular templates.\n• Preserve authentic pen characteristics including slight ink variation, realistic line intersections, occasional darker overlap, smooth continuous curves, and perfectly flowing mathematical geometry.\n• Use realistic variations in gear sizes, radii, pen colors, line density, curve complexity, overlap, and orientation.\n• Never substitute generic spirals, random loops, decorative swirls, scribbles, or abstract curves.\n• The finished artwork should appear physically possible and entirely created using genuine Spirograph drawing tools.\n• Maintain realistic paper texture where visible, crisp line quality, exceptional geometric precision, and convincing handcrafted execution.\n• The completed artwork should resemble a genuine museum-quality Spirograph drawing photographed after completion.\n• Master prompt instructions always override the selected option whenever conflicts occur.\n\nFINAL VALIDATION:\n\n✓ The ENTIRE image has been transformed.\n✓ The original photograph has been completely discarded.\n✓ Every visible object has been reconstructed entirely from authentic mathematically accurate Spirograph curves.\n✓ Every curve remains individually visible and recognizable.\n✓ No photographic textures remain anywhere in the image.\n✓ The subject remains immediately recognizable.\n✓ The background has also been completely reconstructed using Spirograph geometry.\n✓ The artwork resembles a genuine handcrafted Spirograph masterpiece rather than decorative spiral overlays.\n✓ If ANY answer is NO, regenerate until every requirement is satisfied."
+  },
+  {
+    "name": "SPIROGRAPH (SUBJECT)",
+    "category": [
+      "OPTIONS",
+      "DRAWING",
+      "GEOMETRY",
+      "TOY",
+      "MATERIAL TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform ONLY the subject into artwork constructed entirely from authentic Spirograph-style curves while preserving the subject's identity.\n\nThe background, environment, lighting, perspective, shadows, and every non-subject element must remain exactly as they appear in the original photograph.\n\nTHIS IS NOT A LINE FILTER.\nTHIS IS NOT A GEOMETRIC OVERLAY.\nTHIS IS NOT THE ORIGINAL SUBJECT WITH SPIROGRAPH PATTERNS DRAWN ON TOP.\n\nCompletely discard the original appearance of the subject and reconstruct the subject entirely from authentic Spirograph curves.\n\nEvery visible part of the subject—including the face, hair, eyes, clothing, hands, shoes, and every fine detail—must be recreated exclusively from mathematically accurate Spirograph curves generated by rotating gears inside circular or ring templates.\n\nEvery curve must remain individually recognizable as a true Spirograph curve rather than random spirals or decorative swirls.\n\nThe finished artwork should resemble an award-winning Spirograph drawing created entirely with authentic Spirograph geometry while remaining immediately recognizable as the subject.\n\nMASTER PROMPT RULE:\n• If a master prompt specifies a particular subject, pose, setting, mood, action, artistic direction, or composition—PRIORITIZE and USE that information while reconstructing ONLY the subject from authentic Spirograph curves.",
+    "randomizeOptions": true,
+    "options": [
+    {
+      "id": "001",
+      "text": "Classic Blue Pen — Construct the portrait entirely from classic blue-ink Spirograph curves using mathematically accurate hypotrochoid and epitrochoid patterns."
+    },
+    {
+      "id": "002",
+      "text": "Rainbow Spirograph — Rebuild the subject using vividly colored Spirograph curves with hundreds of overlapping geometric designs creating smooth tonal transitions."
+    },
+    {
+      "id": "003",
+      "text": "Ultra Dense Geometry — Create the portrait using thousands of extremely dense overlapping Spirograph curves to achieve extraordinary photographic realism."
+    },
+    {
+      "id": "004",
+      "text": "Vintage Toy Drawing — Construct the artwork to resemble an authentic 1970s Spirograph masterpiece using classic pen colors, clean paper, and mathematically perfect gear-generated curves."
+    },
+    {
+      "id": "005",
+      "text": "Master Spirograph Portrait — Intelligently combine thousands of individually visible mathematically accurate Spirograph curves of varying radii, gear ratios, colors, densities, orientations, and pen widths to faithfully recreate every recognizable facial feature, hairstyle, clothing fold, and body contour of the subject."
+    }
+    ],
+    "additionalInstructions": "• Transform ONLY the subject.\n• Keep the background completely unchanged.\n• Preserve the original environment, lighting, perspective, colors, shadows, and every background object exactly as photographed.\n• Completely discard the original photographic subject before reconstruction.\n• NEVER draw Spirograph curves over the original photograph.\n• NEVER blend photographic textures with the line artwork.\n• The original subject must not remain visible anywhere.\n• Every visible part of the subject must be reconstructed entirely from authentic mathematically generated Spirograph curves.\n• Preserve the subject's exact identity, facial structure, hairstyle, expression, age, ethnicity, body proportions, pose, silhouette, and recognizable features.\n• Facial features must emerge solely through the careful density, spacing, layering, curvature, and orientation of authentic Spirograph curves.\n• Hair must be recreated entirely from overlapping Spirograph patterns while preserving the subject's recognizable hairstyle, flow, volume, and silhouette.\n• Clothing must also be reconstructed entirely from Spirograph curves while preserving folds, seams, wrinkles, texture, and overall shape.\n• Every individual curve must remain clearly visible and mathematically correct.\n• Curves must be true Spirograph hypotrochoids and epitrochoids created by rotating gears inside circular templates.\n• Preserve authentic pen characteristics including slight ink variation, realistic line intersections, occasional darker overlap, smooth continuous curves, and perfectly flowing mathematical geometry.\n• Use realistic variations in gear sizes, radii, pen colors, line density, curve complexity, and overlap.\n• Never substitute generic spirals, random loops, decorative swirls, scribbles, or abstract curves.\n• The finished artwork should appear physically possible and entirely created using a genuine Spirograph drawing toy.\n• Maintain realistic lighting, paper texture where visible, crisp line quality, and exceptional geometric precision.\n• The completed artwork should resemble a genuine handcrafted Spirograph portrait photographed after completion.\n• Master prompt instructions always override the selected option whenever conflicts occur.\n\nFINAL VALIDATION:\n\n✓ ONLY the subject has been transformed.\n✓ The background remains completely unchanged.\n✓ The original photographic subject has been completely removed.\n✓ Every visible part of the subject has been reconstructed entirely from authentic mathematically accurate Spirograph curves.\n✓ Every curve remains individually visible and recognizable.\n✓ No photographic textures remain.\n✓ The subject remains immediately recognizable.\n✓ The artwork resembles a genuine handcrafted Spirograph drawing rather than decorative spiral overlays.\n✓ If ANY answer is NO, regenerate until every requirement is satisfied."
   },
   {
     "name": "SPONGEBOB SQUAREPANTS",
@@ -42202,6 +43329,141 @@
     "additionalInstructions": "FINAL RESULT:\nThe image should show the subject as the randomly selected superhero from various comic publishers, with their face transformed to the hero's characteristic skin color (green for Hulk, blue for Beast, steel for Colossus, etc.) while remaining recognizable, wearing that hero's authentic costume — WITH MASK/HELMET REMOVED, OPEN, OR PARTIALLY OFF IF IT COVERS THE FULL FACE so the subject's color-transformed face is clearly visible — using their signature powers, and performing an appropriate heroic act with cinematic composition and lighting."
   },
   {
+    "name": "SUPERHERO LAIR",
+    "category": [
+      "OPTIONS",
+      "SUPERHERO",
+      "COMICS",
+      "TRANSFORMATION",
+      "FAN ART"
+    ],
+    "message": "Take a picture and transform ONLY the subject into a superhero (or antihero) standing inside the selected iconic headquarters, lair, base, sanctuary, or operational headquarters while preserving the subject's identity.\n\nThe background must be completely transformed into the selected superhero's authentic headquarters.\n\nTHIS IS NOT COSPLAY.\nTHIS IS NOT A HALLOWEEN COSTUME.\nTHIS IS NOT A PERSON WEARING MERCHANDISE.\n\nThe subject must become a believable version of the selected superhero while retaining their recognizable facial identity.\n\nThe costume must faithfully capture the iconic design language, colors, materials, insignia, armor, accessories, and silhouette associated with the selected hero.\n\nWhenever appropriate, include one or more supporting heroes, allies, sidekicks, or teammates naturally occupying the background within their headquarters.\n\nThe headquarters should accurately recreate its iconic architecture, technology, lighting, atmosphere, vehicles, displays, equipment, trophies, artifacts, and recognizable visual elements.\n\nMASTER PROMPT RULE:\n• If a master prompt specifies a particular subject, pose, mood, action, artistic direction, composition, or superhero—PRIORITIZE and USE that information while constructing the selected headquarters.",
+    "randomizeOptions": true,
+    "options": [
+    {
+      "id": "001",
+      "text": "Batman — Transform the subject into Batman operating from his iconic underground headquarters filled with advanced technology, vehicles, trophies, and crime-fighting equipment."
+    },
+    {
+      "id": "002",
+      "text": "Superman — Transform the subject into Superman inside the Fortress of Solitude with Supergirl and Krypto visible in the background."
+    },
+    {
+      "id": "003",
+      "text": "Wonder Woman — Transform the subject into Wonder Woman inside the Hall of Justice with fellow Justice League members in the background."
+    },
+    {
+      "id": "004",
+      "text": "The Flash — Transform the subject into The Flash inside the Flash Museum with speed-themed displays and trophies."
+    },
+    {
+      "id": "005",
+      "text": "Green Lantern — Transform the subject into Green Lantern inside Oa's Central Power Battery chamber with fellow Green Lanterns."
+    },
+    {
+      "id": "006",
+      "text": "Aquaman — Transform the subject into Aquaman inside the royal palace of Atlantis with Atlantean guards."
+    },
+    {
+      "id": "007",
+      "text": "Martian Manhunter — Transform the subject into Martian Manhunter inside the Justice League Watchtower."
+    },
+    {
+      "id": "008",
+      "text": "Green Arrow — Transform the subject into Green Arrow inside the Arrowcave with Black Canary nearby."
+    },
+    {
+      "id": "009",
+      "text": "Teen Titans — Transform the subject into a Teen Titan inside Titans Tower with Beast Boy, Raven, Starfire, Cyborg, and Robin."
+    },
+    {
+      "id": "010",
+      "text": "Justice League — Transform the subject into a Justice League member inside the Watchtower command center."
+    },
+    {
+      "id": "011",
+      "text": "Iron Man — Transform the subject into Iron Man inside Tony Stark's Hall of Armor with multiple Iron Man suits."
+    },
+    {
+      "id": "012",
+      "text": "Captain America — Transform the subject into Captain America inside Avengers Headquarters with fellow Avengers."
+    },
+    {
+      "id": "013",
+      "text": "Thor — Transform the subject into Thor inside Asgard with Odin's throne room visible."
+    },
+    {
+      "id": "014",
+      "text": "Black Panther — Transform the subject into Black Panther inside the royal palace of Wakanda with advanced Wakandan technology."
+    },
+    {
+      "id": "015",
+      "text": "Doctor Strange — Transform the subject into Doctor Strange inside the Sanctum Sanctorum surrounded by magical relics."
+    },
+    {
+      "id": "016",
+      "text": "Spider-Man — Transform the subject into Spider-Man inside a high-tech Spider-Lab filled with web gadgets and suits."
+    },
+    {
+      "id": "017",
+      "text": "Ant-Man — Transform the subject into Ant-Man inside the Pym Technologies laboratory."
+    },
+    {
+      "id": "018",
+      "text": "The Wasp — Transform the subject into The Wasp inside Pym Technologies headquarters."
+    },
+    {
+      "id": "019",
+      "text": "Captain Marvel — Transform the subject into Captain Marvel inside a futuristic S.W.O.R.D. command center."
+    },
+    {
+      "id": "020",
+      "text": "Guardians of the Galaxy — Transform the subject into a Guardian aboard the Milano starship with the Guardians in the background."
+    },
+    {
+      "id": "021",
+      "text": "X-Men — Transform the subject into an X-Man inside Xavier's School for Gifted Youngsters with Cerebro visible."
+    },
+    {
+      "id": "022",
+      "text": "Deadpool — Transform the subject into Deadpool inside his chaotic apartment headquarters filled with weapons and humor."
+    },
+    {
+      "id": "023",
+      "text": "Daredevil — Transform the subject into Daredevil inside Nelson & Murdock before heading out on patrol."
+    },
+    {
+      "id": "024",
+      "text": "Moon Knight — Transform the subject into Moon Knight inside a mysterious Egyptian-inspired sanctuary."
+    },
+    {
+      "id": "025",
+      "text": "Fantastic Four — Transform the subject into a member of the Fantastic Four inside the Baxter Building."
+    },
+    {
+      "id": "026",
+      "text": "The Avengers — Transform the subject into an Avenger inside Avengers Mansion."
+    },
+    {
+      "id": "027",
+      "text": "Shazam — Transform the subject into Shazam inside the Rock of Eternity."
+    },
+    {
+      "id": "028",
+      "text": "Blue Beetle — Transform the subject into Blue Beetle inside a futuristic alien-tech headquarters powered by the Scarab."
+    },
+    {
+      "id": "029",
+      "text": "The Justice Society — Transform the subject into a Justice Society member inside the Justice Society headquarters."
+    },
+    {
+      "id": "030",
+      "text": "The Legion of Super-Heroes — Transform the subject into a Legionnaire inside Legion Headquarters in the 31st century."
+    }
+    ],
+    "additionalInstructions": "• Transform ONLY the subject into the selected superhero.\n• Completely replace the original background with the selected superhero headquarters.\n• Preserve the subject's facial identity, expression, age, ethnicity, hairstyle (when practical), body proportions, and recognizable facial features.\n• The costume must faithfully resemble the selected superhero's iconic appearance.\n• Supporting heroes, teammates, allies, sidekicks, AI assistants, or headquarters staff may naturally appear in the background.\n• Never replace the subject with the canonical superhero.\n• The subject always becomes the superhero.\n• Headquarters architecture, lighting, technology, props, trophies, artifacts, vehicles, computers, magical objects, statues, and décor should accurately match the selected location.\n• The scene should appear cinematic and photorealistic.\n• Preserve realistic lighting, reflections, shadows, and perspective.\n• The headquarters should immediately be recognizable to fans.\n• Avoid parody unless explicitly requested.\n• Master prompt instructions always override the selected option whenever conflicts occur.\n\nFINAL VALIDATION:\n\n✓ The subject has become the selected superhero.\n✓ The subject's identity remains recognizable.\n✓ The costume accurately represents the selected hero.\n✓ The headquarters is immediately recognizable.\n✓ Supporting heroes or allies appear only in the background.\n✓ The scene appears cinematic and believable.\n✓ No conflicting superhero universes are mixed.\n✓ If ANY answer is NO, regenerate until every requirement is satisfied."
+  },
+  {
     "name": "SUPERHERO ORIGIN",
     "category": [
       "SUPERHERO",
@@ -43180,6 +44442,18 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "Transform the subject into the visual style of The Maxx using scratchy ink rendering, painterly textures, expressive linework, symbolic environments, surreal visual storytelling, graphic-novel craftsmanship, and authentic hand-drawn comic-book aesthetics."
+  },
+  {
+    "name": "THE RING",
+    "category": [
+      "CINEMATIC",
+      "HORROR",
+      "TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform the ENTIRE photograph into a high-fidelity cinematic scene from the iconic horror movie, portraying the eerie spectral girl crawling out of an analog television screen into a dark room.\n\nTHIS IS NOT A FLAT CUT-AND-PASTE OR PHOTOSHOP OVERLAY.\n\nThe entire environment, background, television set, carpet, and clothing must be fully reconstructed as a seamless, high-budget cinematic film scene. The spectral girl's body, wet dark hair framing her head without covering her face, distressed white gown, and the glow of the static television screen behind her must match the exact visual style of the film scene.\n\nThe facial identity, structure, and distinct expression of the original photographic subject must be seamlessly integrated onto the creepy girl's face, ensuring authentic skin texturing, ghostly lighting integration, and photographic realism.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "• Reconstruct the entire scene: set the environment, lighting, room, analog TV screen, and full character body to match the precise aesthetic of the movie frame.\n• FACIAL INTEGRATION MANDATE: Swap ONLY the facial identity. Map the subject's face onto the spectral character with perfect physical integration, match lighting, depth, and skin texture—avoiding any digital cut-out or photoshopped appearance.\n• HAIR CONSTRAINTS: The iconic long, wet, stringy dark hair must frame the subject's head authentic to the character, but must be styled far enough back from the forehead and cheeks so that the subject's facial features remain fully exposed and clearly recognizable.\n• Ensure the character appears physically emerging out of the glowing CRT television screen onto the floor, casting realistic long shadows based on the ambient room lighting and screen glow.\n• Maintain high visual quality: match the original film's muted color palette, cool shadow tones, and analog camera grain.\n• Master prompt instructions always override any downstream engine assumptions.\n\nFINAL VALIDATION — Before producing the final image, verify ALL of the following:\n\n✓ The entire scene (TV, background room, clothing, atmosphere) matches the film sequence.\n✓ The subject's facial identity is seamlessly mapped onto the creepy girl's head.\n✓ The facial features are fully visible and NOT hidden or obscured by the dark wet hair.\n✓ The integration looks entirely physical and photographic, with zero visible Photoshop artifacts.\n✓ If ANY answer is NO, reject and regenerate immediately."
   },
   {
     "name": "THEME PARK MAP",
@@ -46915,6 +48189,20 @@
   "additionalInstructions": "IDENTITY PRESERVATION (CRITICAL):\n• The intricate, delicate, and often distorted structures of the Venetian glass must flawlessly maintain the subject's signature facial proportions, smile characteristics, and expression. The final output must pass as an authentic piece of antiquarian decorative arts."
   },
   {
+    "name": "VENETIAN OIL GLAZING",
+    "category": [
+      "ART",
+      "PAINTING",
+      "RENAISSANCE",
+      "TECHNIQUE",
+      "LUMINOUS"
+    ],
+    "message": "Take a picture and transform it into a painting using the Venetian oil glazing technique of Titian and Giorgione. Build the image from a warm imprimatura ground through multiple transparent oil glazes, each adding depth and color complexity. The result should have extraordinary luminous depth \u2014 light passing through colored glass-like layers of paint to reflect off the white ground beneath. Flesh tones should glow with inner warmth from vermilion and terre verte underlayers showing through. Shadows should be transparent and colorful, never muddy or opaque.",
+    "randomizeOptions": false,
+    "options": [],
+    "additionalInstructions": "The luminosity must come from transparent layering, not from adding white paint. Shadows should be deep but transparent. The warm ground should subtly influence all colors."
+  },
+  {
     "name": "VENTRILOQUIST DUMMY",
     "category": [
       "HUMOR",
@@ -47372,6 +48660,78 @@
     ],
     "randomizeOptions": true,
     "additionalInstructions": "FINAL RESULT:\nA photorealistic retail video game package from the specified platform and era, showing complete packaging with authentic platform branding, proper typography, and all official elements. The subject has been seamlessly integrated into the iconic cover artwork, replacing the original character while matching the exact art style, pose, costume, and composition of the original game cover. The package appears as a genuine retail product that could have existed in an alternate timeline, complete with appropriate wear, proper dimensions, platform logos, rating information, and all the nostalgic details that make classic game packaging instantly recognizable to collectors and gamers."
+  },
+  {
+    "name": "VIDEO GAME WORLD",
+    "category": [
+      "GAMING",
+      "DIGITAL",
+      "TRANSFORMATION",
+      "STYLE",
+      "INTERACTIVE"
+    ],
+    "message": "Take a picture and transform the subject into a character within a specific video game art style and world. The subject should appear as a playable character or NPC rendered in the exact visual style of the chosen game genre, complete with appropriate UI elements, HUD overlays, and environmental design. The transformation should be complete \u2014 not just the subject but the entire frame should look like a screenshot from the game, including health bars, inventory slots, dialogue boxes, or whatever interface elements are appropriate to the genre.",
+    "randomizeOptions": true,
+    "optionGroups": [
+      {
+        "id": "GENRE",
+        "label": "Game Genre/Style",
+        "options": [
+          {
+            "id": "001",
+            "text": "JRPG (Final Fantasy style) \u2014 anime-influenced character art, turn-based battle UI, spell effects"
+          },
+          {
+            "id": "002",
+            "text": "Survival horror \u2014 dark environments, limited visibility, health/ammo counters, tension"
+          },
+          {
+            "id": "003",
+            "text": "Open world RPG \u2014 vast landscape, quest markers, skill tree overlay, inventory management"
+          },
+          {
+            "id": "004",
+            "text": "Fighting game \u2014 character select screen or mid-fight, health bars, combo counter, special move effects"
+          },
+          {
+            "id": "005",
+            "text": "Visual novel \u2014 character portrait with dialogue box, choice options, background scene"
+          },
+          {
+            "id": "006",
+            "text": "Pixel art platformer \u2014 16-bit style sprites, side-scrolling level, collectibles, lives counter"
+          },
+          {
+            "id": "007",
+            "text": "Cel-shaded adventure \u2014 Borderlands/Wind Waker style outlines, vibrant colors, comic book feel"
+          }
+        ],
+        "randomizeOptions": true
+      },
+      {
+        "id": "MOMENT",
+        "label": "Game Moment",
+        "options": [
+          {
+            "id": "101",
+            "text": "Character select/creation screen \u2014 stats visible, customization options, ready to begin"
+          },
+          {
+            "id": "102",
+            "text": "Mid-gameplay action \u2014 in the middle of combat, exploration, or puzzle-solving"
+          },
+          {
+            "id": "103",
+            "text": "Cutscene/dialogue \u2014 cinematic moment, emotional story beat, dramatic camera angle"
+          },
+          {
+            "id": "104",
+            "text": "Game over/victory screen \u2014 end state, score tally, continue option"
+          }
+        ]
+      }
+    ],
+    "additionalInstructions": "The game UI must be authentic to the chosen genre \u2014 correct fonts, layout conventions, and interface elements. The art style must be consistent throughout the entire frame. The subject must be recognizable as a character within the game world."
   },
   {
     "name": "VIENNA SECESSION",
@@ -48396,6 +49756,19 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "FINAL RESULT:\nThe image should show the subject completely transformed into an authentic Old West cowboy in full period costume (hat, vest, gun belt, boots) placed in a photorealistic Western setting (town street, saloon, desert, etc.) with complete environmental immersion in the 1870s-1890s American frontier - weathered, dusty, and looking like a genuine scene from a classic Western film."
+  },
+  {
+    "name": "WET-ON-WET WATERCOLOR",
+    "category": [
+      "ART",
+      "WATERCOLOR",
+      "PAINTING",
+      "TECHNIQUE"
+    ],
+    "message": "Take a picture and transform the entire image into a wet-on-wet watercolor painting. The subject should appear as if painted on damp paper, with colors bleeding softly into one another at every edge. Use transparent washes that allow the white of the paper to glow through. Edges should be lost and found \u2014 some areas crisp where the paper dried, others dissolving into atmospheric pools of pigment. Preserve the subject's identity through careful value structure while embracing the beautiful unpredictability of watercolor blooms and backruns.",
+    "randomizeOptions": false,
+    "options": [],
+    "additionalInstructions": "Maintain subject recognition. Colors should feel luminous and transparent, never opaque or muddy. The paper texture should be visible throughout."
   },
   {
     "name": "WET PLATE COLLODION",
