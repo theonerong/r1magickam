@@ -12448,6 +12448,140 @@
     "additionalInstructions": "FINAL RESULT:\nThe image should feel like a ridiculous but persuasive promotional flyer."
   },
   {
+    "name": "DISEASED",
+    "category": [
+      "BODY",
+      "MEDICAL",
+      "TRANSFORMATION",
+      "REALISM"
+    ],
+    "message": "Take a picture and transform ONLY the subject, applying a realistic, dermatologically detailed visible medical skin condition or symptomatic disease manifestation directly onto their skin while strictly preserving their identity, facial structure, and the unedited background.\n\nTHIS IS A REALISTIC DERMATOLOGICAL CHARACTER/MAKEUP TRANSFORMATION.\n\nDo not change the environment, background, or lighting. The transformation must strictly modify the subject's skin texture, coloration, and surface features to accurately portray the selected condition using period-accurate or clinically realistic textures, without appearing like a digital overlay or unrealistic graphic filter.",
+    "randomizeOptions": true,
+    "options": [
+    {
+      "id": "001",
+      "text": "Shingles — Transform ONLY the subject's skin to show a distinct, painful-looking band of blistering red rash following a nerve path on one side of the face or torso."
+    },
+    {
+      "id": "002",
+      "text": "Mpox (Monkeypox) — Transform ONLY the subject's skin to show scattered, raised, fluid-filled lesions and umbilicated papules across the face and limbs."
+    },
+    {
+      "id": "003",
+      "text": "Hand, Foot, and Mouth Disease — Transform ONLY the subject's skin to show small, red spots and clear blisters localized around the lips, hands, and feet."
+    },
+    {
+      "id": "004",
+      "text": "Measles — Transform ONLY the subject's skin to feature a dense, blotchy red maculopapular rash starting from the hairline and spreading down the face and neck."
+    },
+    {
+      "id": "005",
+      "text": "Impetigo — Transform ONLY the subject's skin to display characteristic honey-colored, crusty fluid-filled sores around the nose and mouth area."
+    },
+    {
+      "id": "006",
+      "text": "Molluscum Contagiosum — Transform ONLY the subject's skin to feature small, firm, dome-shaped skin-colored bumps with visible central dimples."
+    },
+    {
+      "id": "007",
+      "text": "Fifth Disease — Transform ONLY the subject's skin to depict the bright red 'slapped cheek' erythema on the face along with a lacy rash on the arms."
+    },
+    {
+      "id": "008",
+      "text": "Ringworm (Tinea Corporis) — Transform ONLY the subject's skin to show distinct circular, elevated scaly red patches with clear centers across the arms or neck."
+    },
+    {
+      "id": "009",
+      "text": "Contact Dermatitis — Transform ONLY the subject's skin to show localized, inflamed red patches with tiny raised bumps where an irritant touched the skin."
+    },
+    {
+      "id": "010",
+      "text": "Severe Acne — Transform ONLY the subject's skin to display a combination of inflammatory papules, pustules, blackheads, and localized erythema across the face."
+    },
+    {
+      "id": "011",
+      "text": "Chickenpox (Varicella) — Transform ONLY the subject's skin to show a widespread crop of itchy spots progressing into tiny fluid-filled teardrop blisters and crusty scabs."
+    },
+    {
+      "id": "012",
+      "text": "Cold Sores (Oral Herpes) — Transform ONLY the subject's skin to feature a cluster of small, painful fluid-filled blisters and crusted lesions along the border of the lip."
+    },
+    {
+      "id": "013",
+      "text": "Chancre (Syphilis) — Transform ONLY the subject's skin to depict a single, firm, round, indurated ulcer with a clean base on or near the oral lip."
+    },
+    {
+      "id": "014",
+      "text": "Oral Warts (HPV) — Transform ONLY the subject's skin to show small, rough, flesh-colored cauliflower-textured verrucous bumps near the vermilion border or lips."
+    },
+    {
+      "id": "015",
+      "text": "Scabies — Transform ONLY the subject's skin to show fine, wavy, thread-like burrow lines alongside intensely red papules and excoriated tracks on the hands and wrists."
+    },
+    {
+      "id": "016",
+      "text": "Rubella (German Measles) — Transform ONLY the subject's skin to feature a fine, pale-pink maculopapular rash densely covering the face and spreading downward."
+    },
+    {
+      "id": "017",
+      "text": "Scarlet Fever — Transform ONLY the subject's skin to depict a diffuse, bright red, sandpaper-textured rash covering the neck and torso with perioral pallor."
+    },
+    {
+      "id": "018",
+      "text": "Eczema (Atopic Dermatitis) — Transform ONLY the subject's skin to display dry, thickened, erythematous patches with lichenification and fine cracking around flexural folds."
+    },
+    {
+      "id": "019",
+      "text": "Drug Eruption — Transform ONLY the subject's skin to show a sudden, symmetrical morbilliform red rash consisting of flat and slightly raised red spots across the torso."
+    },
+    {
+      "id": "020",
+      "text": "Roseola — Transform ONLY the subject's skin to feature small, flat, pinkish-red rose-colored macules covering the neck and chest area."
+    },
+    {
+      "id": "021",
+      "text": "Gianotti-Crosti Syndrome — Transform ONLY the subject's skin to show dense, symmetrical clusters of dark red, flat-topped papules concentrated on the cheeks and forearms."
+    },
+    {
+      "id": "022",
+      "text": "Eczema Herpeticum — Transform ONLY the subject's skin to show extensive clusters of punched-out, uniform, painful umbilicated blisters over pre-existing eczematous skin."
+    },
+    {
+      "id": "023",
+      "text": "Pityriasis Rosea — Transform ONLY the subject's skin to feature a distinct oval 'herald patch' accompanied by smaller, trailing scaly pink oval lesions following skin cleavage lines."
+    },
+    {
+      "id": "024",
+      "text": "Erythema Multiforme — Transform ONLY the subject's skin to display characteristic raised 'target' or 'bullseye' lesions with dark red centers and pale outer rings."
+    },
+    {
+      "id": "025",
+      "text": "Dermatitis Herpetiformis — Transform ONLY the subject's skin to show intensely itchy, symmetrical clusters of tiny red bumps and small tense vesicles on the elbows and forearms."
+    },
+    {
+      "id": "026",
+      "text": "Bullous Pemphigoid — Transform ONLY the subject's skin to depict large, tense, fluid-filled bullae forming over widespread erythematous, inflamed areas of skin."
+    },
+    {
+      "id": "027",
+      "text": "Bed Bug / Flea Bites — Transform ONLY the subject's skin to show linear tracks of inflamed red wheals ('breakfast, lunch, and dinner' patterns) on exposed skin."
+    },
+    {
+      "id": "028",
+      "text": "Papular Urticaria — Transform ONLY the subject's skin to display recurring crops of firm, raised, intensely itchy papules resembling small bite reactions across the limbs."
+    },
+    {
+      "id": "029",
+      "text": "Hansen's Disease (Leprosy) — Transform ONLY the subject's skin to depict pale or hypopigmented reddish-copper patches, subtle facial nodular thickening on the earlobes, and partial thinning of the eyebrows."
+    },
+    {
+      "id": "030",
+      "text": "Gonococcal Pharyngitis — Transform ONLY the subject's skin and visible throat/oral area to display severe perioral redness with visible focal erythema and small mucosal exudate spots."
+    }
+    ],
+    "additionalInstructions": "FINAL RESULT:\nThe image should convincingly transform ONLY the subject's skin to accurately portray the visible symptoms of the chosen medical condition. The skin texture, lesions, rashes, and color changes must look physically integrated into the subject's skin with high dermatological accuracy, while keeping the subject's underlying identity and the surrounding photographic background completely unchanged."
+  },
+  {
     "name": "DISNEY'S WORLD",
     "category": [
       "ANIMATION",
