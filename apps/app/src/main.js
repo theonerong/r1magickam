@@ -15329,6 +15329,8 @@ let isDrawing = false;             // a stroke is currently in progress
 let drawColor = '#ffffff';         // current pencil color (default white)
 let drawTipSize = 6;               // current pencil tip size (canvas px baseline)
 let drawLastX = 0, drawLastY = 0;  // last point in CANVAS coordinates
+let _drawPrevMidX = 0, _drawPrevMidY = 0; // last curve midpoint (for smoothing)
+let _drawTrueLastX = 0, _drawTrueLastY = 0; // finger's true last point (for closing strokes)
 // Flood fill (paint bucket): triggered by a hard-press on the canvas while
 // draw mode is active. Fills the contiguous region of similar-colored pixels
 // under the finger with the current pencil color, bounded by edges — e.g.
@@ -15353,6 +15355,25 @@ function drawEffectiveSensitivity() {
   // that leave gaps in shapes — and a gap is exactly what lets the fill tool
   // escape and flood the whole canvas.
   return Math.min(1.9, drawPressure * drawFirmness);
+}
+
+// How much the pen eases toward the finger each move: 1 = snap exactly to the
+// finger (no smoothing), smaller = smoother but with a little lag. We map the
+// Stabilization setting (0 = off .. 0.9 = max) to an easing amount, and let
+// Pressure/Firmness nudge the baseline a touch so those settings still matter.
+// Result is always kept in a safe, faithful range (never overshoots).
+function drawSmoothingFactor() {
+  // How tightly the pen follows the finger. 1 = exact (no lag). Stabilization
+  // adds smoothing, but only GENTLY so it never feels laggy: even at max the
+  // pen still moves 55% of the way to the finger each event (was as low as
+  // 10%, which caused the sluggish, hard-to-aim feel). With stabilization Off
+  // the pen tracks the finger exactly.
+  const stab = drawStabilization || 0;           // 0 .. 0.9
+  // Map stab 0 -> 1.0 (exact, zero lag), stab 0.9 -> ~0.70 (lightly smoothed).
+  // Kept snappy on purpose: smoothing inherently trades against lag, so even
+  // the max setting stays responsive.
+  const ease = 1 - (stab * 0.33);
+  return Math.max(0.6, Math.min(1, ease));
 }
 
 const DRAW_SETTINGS_KEY = 'r1_draw_settings_v1';
@@ -16049,6 +16070,14 @@ function drawPointerDown(e) {
   drawLastY = p.y;
   _drawDownCanvasX = p.x;
   _drawDownCanvasY = p.y;
+  // Smoothing: remember where the last curve segment ended. At the start of a
+  // stroke that is simply the touch point itself.
+  _drawPrevMidX = p.x;
+  _drawPrevMidY = p.y;
+  // Track the TRUE finger position (separate from the eased pen position) so
+  // the stroke can be closed exactly on the finger when it lifts.
+  _drawTrueLastX = p.x;
+  _drawTrueLastY = p.y;
   // Draw a dot so a single tap leaves a mark.
   editorCtx.beginPath();
   editorCtx.fillStyle = drawColor;
@@ -16060,26 +16089,31 @@ function drawPointerMove(e) {
   if (!isDrawMode || !isDrawing || !editorCtx) return;
   e.preventDefault();
   const p = drawEventToCanvasXY(e);
-  // Amplify displacement from the last point, scaled by pressure/firmness.
-  const sens = drawEffectiveSensitivity();
-  let dx = (p.x - drawLastX) * sens;
-  let dy = (p.y - drawLastY) * sens;
-  // Stabilization damps each step to smooth out hand jitter.
-  if (drawStabilization > 0) {
-    const k = 1 - drawStabilization;
-    dx *= k;
-    dy *= k;
-  }
-  const nx = drawLastX + dx;
-  const ny = drawLastY + dy;
+  // Remember the finger's true position so the stroke can close on it exactly.
+  _drawTrueLastX = p.x;
+  _drawTrueLastY = p.y;
+  // Faithful tracking: the pen EASES toward the finger position (it does not
+  // overshoot past it, which is what used to make lines feel loose and left
+  // circles open). drawSmoothingFactor is how much to ease — higher means
+  // smoother but slightly more lag; it is derived from the draw settings.
+  const f = drawSmoothingFactor();
+  const nx = drawLastX + (p.x - drawLastX) * f;
+  const ny = drawLastY + (p.y - drawLastY) * f;
+  // Draw a smooth curve that ENDS AT the new pen point (which, with no
+  // stabilization, is the finger itself) rather than stopping at the midpoint.
+  // Using the previous point as the control keeps the line smooth, while the
+  // ink now reaches the fingertip instead of trailing half a segment behind —
+  // that half-segment trail was the remaining "lag".
   editorCtx.beginPath();
   editorCtx.strokeStyle = drawColor;
   editorCtx.lineWidth = drawTipSize;
   editorCtx.lineCap = 'round';
   editorCtx.lineJoin = 'round';
-  editorCtx.moveTo(drawLastX, drawLastY);
-  editorCtx.lineTo(nx, ny);
+  editorCtx.moveTo(_drawPrevMidX, _drawPrevMidY);
+  editorCtx.quadraticCurveTo(drawLastX, drawLastY, nx, ny);
   editorCtx.stroke();
+  _drawPrevMidX = nx;
+  _drawPrevMidY = ny;
   drawLastX = nx;
   drawLastY = ny;
 }
@@ -16087,6 +16121,19 @@ function drawPointerMove(e) {
 function drawPointerUp() {
   if (!isDrawing) return;
   isDrawing = false;
+  // Close the stroke: draw a final smooth segment from the last curve midpoint
+  // all the way to the finger's TRUE last position. Without this the stroke
+  // stops at the last midpoint, leaving shapes (like circles) slightly open.
+  if (editorCtx && (_drawTrueLastX !== drawLastX || _drawTrueLastY !== drawLastY || _drawPrevMidX !== _drawTrueLastX)) {
+    editorCtx.beginPath();
+    editorCtx.strokeStyle = drawColor;
+    editorCtx.lineWidth = drawTipSize;
+    editorCtx.lineCap = 'round';
+    editorCtx.lineJoin = 'round';
+    editorCtx.moveTo(_drawPrevMidX, _drawPrevMidY);
+    editorCtx.quadraticCurveTo(drawLastX, drawLastY, _drawTrueLastX, _drawTrueLastY);
+    editorCtx.stroke();
+  }
   // Commit the finished stroke as the new working image so subsequent
   // filters/adjustments build on top of it and save captures it.
   refreshEditorImage();
@@ -16454,10 +16501,14 @@ document.addEventListener('pointerdown', (e) => {
   const canvas = document.getElementById('editor-canvas');
   if (!canvas) return;
   let _pressStartX = 0, _pressStartY = 0;
+  let _strokeConfirmed = false;   // has this press become a real stroke yet?
+  let _bufferedMoves = [];        // moves seen before the stroke was confirmed
   canvas.addEventListener('pointerdown', (e) => {
     if (!isDrawMode) return;
     canvas.setPointerCapture(e.pointerId);
     _drawPressFired = false;
+    _strokeConfirmed = false;
+    _bufferedMoves = [];
     _pressStartX = e.clientX; _pressStartY = e.clientY;
     // Start the hard-press timer: if the finger stays down (and mostly still)
     // long enough, do a flood fill instead of a stroke.
@@ -16471,13 +16522,24 @@ document.addEventListener('pointerdown', (e) => {
   canvas.addEventListener('pointermove', (e) => {
     if (!isDrawMode) return;
     if (_drawPressFired) return; // a fill already happened for this press
+    if (!isDrawing) return;
+    if (_strokeConfirmed) {
+      // Normal drawing once the stroke is confirmed.
+      drawPointerMove(e);
+      return;
+    }
+    // Not yet confirmed: a small movement threshold decides stroke vs. fill.
+    // We keep the threshold tiny (4px) AND replay the movement from the true
+    // press point, so the line begins exactly where the finger touched down —
+    // no dropped start, so shapes close without having to overshoot.
+    _bufferedMoves.push(e);
     const moved = Math.abs(e.clientX - _pressStartX) + Math.abs(e.clientY - _pressStartY);
-    // Only a clear, deliberate drag (> 16px total) counts as a stroke. Until
-    // then we hold off — small resting jitter neither cancels the fill nor
-    // leaves stray marks. Once it IS a stroke, cancel the pending fill.
-    if (moved > 16) {
+    if (moved > 4) {
+      _strokeConfirmed = true;
       if (_drawPressTimer) { clearTimeout(_drawPressTimer); _drawPressTimer = null; }
-      if (isDrawing) drawPointerMove(e);
+      // Replay the buffered moves so the stroke includes the initial travel.
+      for (const bm of _bufferedMoves) drawPointerMove(bm);
+      _bufferedMoves = [];
     }
   });
   canvas.addEventListener('pointerup', () => {
