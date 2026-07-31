@@ -1201,7 +1201,11 @@
 
                             <strong>Master and Options Buttons:</strong> Located below the delete button on the left side within a carousel. The MASTER button accesses Master Prompt settings. Glows green when enabled. The OPTIONS button toggles Manually Select Options mode on or off. Glows green when enabled. These buttons are visible by default. However, you can hide them by single clicking the screen. Single click again to reveal them. This is the default setting and may be adjusted in the Button Settings submenu within the settings<br><br>
 
-                            <strong>Edit and Export Images:</strong> The image viewer screen right carousel contains three buttons — ✏️ EDIT (opens the image editor), 📤 EXPORT (uploads to gofile.io), and 📑 LAYER (combine and apply multiple presets to a single image). Select primary preset and then add up to 4 more layers (5 in all). Single click (default) on the image viewer screen to hide the carousels.<br><br>
+                            <strong>Edit and Export Images:</strong> The image viewer screen right carousel contains four buttons — ✏️ EDIT (opens the image editor), 📤 EXPORT (uploads to gofile.io), 📑 LAYER (combine and apply multiple presets to a single image), and 🎲 GAME (play a preset as a game against the program). For LAYER, select primary preset and then add up to 4 more layers (5 in all). Single click (default) on the image viewer screen to hide the carousels.<br><br>
+
+                            <strong>🎲 GAME — Play Against the Program:</strong> The last button in the right carousel turns a game preset into a round of person versus machine. Tap 🎲 GAME to open Pick a Game, choose a game, then choose your options and tap Play. The program makes its own secret pick, your photo is transformed accordingly, and the finished image shows the result along with your picks and the answer.<br>
+
+                            Every game preset also works as an ordinary preset. Used normally from LOAD or MULTI it simply performs its transformation with no game text at all — the game only runs when you go in through the 🎲 GAME button.<br><br>
 
                             <strong>Upload to gofile.io:</strong> Use the Export button in the carousel inside the image viewer. Link expires after 24 hours. Mainly useful in No Magic Mode (because in No Magic Mode, images are not sent to the rabbit hole).<br><br>
 
@@ -1626,6 +1630,7 @@ All of the presets are optimized to avoid "camera ran dry" or "content filter" i
                 <button id="edit-viewer-image" class="viewer-carousel-button">✏️<br><span class="viewer-carousel-label">EDIT</span></button>
                 <button id="upload-viewer-image" class="viewer-carousel-button">📤<br><span class="viewer-carousel-label">EXPORT</span></button>
                 <button id="layer-preset-viewer-button" class="viewer-carousel-button">📑<br><span class="viewer-carousel-label">LAYER</span></button>
+                <button id="game-viewer-button" class="viewer-carousel-button">🎲<br><span class="viewer-carousel-label">GAME</span></button>
             </div>
         </div>
         <!-- Image fills remaining space -->
@@ -1644,6 +1649,26 @@ All of the presets are optimized to avoid "camera ran dry" or "content filter" i
             </div>
         </div>
         
+        <!-- Game Modal -->
+        <div id="game-modal" class="game-modal" style="display: none;">
+            <div class="game-modal-content">
+                <div class="game-modal-header">
+                    <span id="game-modal-title">🎲 Pick a Game</span>
+                    <button id="game-modal-close" class="game-modal-close">×</button>
+                </div>
+                <div id="game-modal-body" class="game-modal-body">
+                    <!-- Step 1: game picker (list of game presets) -->
+                    <div id="game-picker" class="game-picker"></div>
+                    <!-- Step 2: option groups for the chosen game -->
+                    <div id="game-options" class="game-options" style="display:none;"></div>
+                </div>
+                <div id="game-modal-footer" class="game-modal-footer" style="display:none;">
+                    <button id="game-back-btn" class="game-footer-btn">Back</button>
+                    <button id="game-submit-btn" class="game-footer-btn game-submit">Play</button>
+                </div>
+            </div>
+        </div>
+
         <!-- Image Editor Modal -->
         <div id="image-editor-modal" class="image-editor-modal" style="display: none;">
             <div class="image-editor-content">
@@ -2049,16 +2074,16 @@ All of the presets are optimized to avoid "camera ran dry" or "content filter" i
                 </div>
             </div>
             <div class="styles-menu-scroll-container">
-                <div style="padding: 10px; color: #aaa; font-size: 11px; border-bottom: 1px solid #333; margin-bottom: 10px;">
+                <div class="mo-preset-name">
                     <strong id="manual-options-preset-name"></strong>
                 </div>
                 <div class="menu-list" id="manual-options-list"></div>
             </div>
-            <div style="display: flex; gap: 5px; padding: 10px; background: #1a1a1a; border-top: 1px solid #333;">
-                <button id="confirm-manual-options" style="flex: 1; padding: 10px; background: #4CAF50; color: white; border: none; border-radius: 4px; font-size: 13px; font-weight: bold; cursor: pointer;">
+            <div class="mo-footer">
+                <button id="confirm-manual-options" class="mo-footer-btn mo-send">
                     Send
                 </button>
-                <button id="cancel-manual-options" style="flex: 1; padding: 10px; background: #666; color: white; border: none; border-radius: 4px; font-size: 13px; cursor: pointer;">
+                <button id="cancel-manual-options" class="mo-footer-btn">
                     Cancel
                 </button>
             </div>
