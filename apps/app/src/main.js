@@ -2756,8 +2756,8 @@ async function selectPreset(preset) {
 
   if (preset.randomizeOptions) {
     if (preset.optionGroups && preset.optionGroups.length > 0) {
-      preset.optionGroups.forEach(group => {
-        fullText += '\n\n' + group.title + ':\n';
+      preset.optionGroups.forEach((group, gi) => {
+        fullText += '\n\n' + _groupTitle(group, gi) + ':\n';
         group.options.forEach((opt, i) => {
           fullText += '  ' + i + ': ' + opt.text + '\n';
         });
@@ -2789,16 +2789,357 @@ async function selectPreset(preset) {
   hidePresetSelector();
 }
 
+// ================= GAME FRAMEWORK =================
+// Self-contained guessing games that reuse existing option presets. The game
+// finds its presets BY NAME in the loaded presets (they are normal free presets
+// the user imports). It secretly picks the answer, lets the user guess via the
+// option groups, checks the guess, and injects a WINNER/LOSER + reveal into the
+// prompt. Normal preset behaviour is untouched — this logic only runs in-game.
+
+// The games this framework offers, by preset name.
+const GAME_PRESET_NAMES = ['GUESS WHO', 'CLUE', 'ROCK PAPER SCISSORS LIZARD SPOCK', 'WORDLE'];
+
+let _gameActivePreset = null;      // the preset chosen for this game round
+let _gameSelections = {};          // groupIndex -> chosen option index
+
+// Look up a game preset by name in the loaded presets.
+function _findGamePreset(name) {
+  if (typeof CAMERA_PRESETS === 'undefined') return null;
+  return CAMERA_PRESETS.find(p => p.name === name) || null;
+}
+
+// Is a preset actually imported into the user's library?
+function _isGamePresetImported(name) {
+  try {
+    const imported = presetImporter.getImportedPresets();
+    return imported.some(p => p.name === name);
+  } catch (e) { return false; }
+}
+
+// Open the game modal (Step 1: pick a game).
+function openGameModal() {
+  const modal = document.getElementById('game-modal');
+  if (!modal) return;
+  _gameActivePreset = null;
+  _gameSelections = {};
+  document.getElementById('game-options').style.display = 'none';
+  document.getElementById('game-modal-footer').style.display = 'none';
+  document.getElementById('game-picker').style.display = 'block';
+  document.getElementById('game-modal-title').textContent = '🎲 Pick a Game';
+  _renderGamePicker();
+  modal.style.display = 'flex';
+}
+
+function closeGameModal() {
+  const modal = document.getElementById('game-modal');
+  if (modal) modal.style.display = 'none';
+  _gameActivePreset = null;
+  _gameSelections = {};
+}
+
+// Step 1 UI: list the games; lock any whose preset is not imported.
+function _renderGamePicker() {
+  const picker = document.getElementById('game-picker');
+  if (!picker) return;
+  picker.innerHTML = '';
+  GAME_PRESET_NAMES.forEach(name => {
+    const preset = _findGamePreset(name);
+    const imported = preset && _isGamePresetImported(name);
+    const btn = document.createElement('button');
+    btn.className = 'game-picker-item' + (imported ? '' : ' locked');
+    if (imported) {
+      btn.innerHTML = name + '<span class="game-sub">Tap to play</span>';
+      btn.addEventListener('click', () => _startGame(preset));
+    } else {
+      btn.innerHTML = name + '<span class="game-sub">\u26a0\ufe0f Not imported yet \u2014 import "' + name + '" from Import Presets to play</span>';
+      btn.addEventListener('click', () => {
+        alert('To play ' + name + ', first import the "' + name + '" preset from the Import Presets section.');
+      });
+    }
+    picker.appendChild(btn);
+  });
+}
+
+// Step 2: show the option groups for the chosen game.
+function _startGame(preset) {
+  if (!preset || !preset.optionGroups || preset.optionGroups.length === 0) {
+    alert('This game preset has no options to guess.');
+    return;
+  }
+  _gameActivePreset = preset;
+  _gameSelections = {};
+  document.getElementById('game-picker').style.display = 'none';
+  document.getElementById('game-options').style.display = 'block';
+  document.getElementById('game-modal-footer').style.display = 'flex';
+  document.getElementById('game-modal-title').textContent = '🎲 ' + preset.name;
+  _renderGameOptions(preset);
+  _updateGameSubmitEnabled();
+}
+
+// Returns a group's display name. Presets are not consistent: most use
+// "title", some use "label" (with "id" as a code), older ones only "id".
+// Every place that shows or prints a group name goes through here so a
+// label-format preset never renders blank or prints "undefined" into the prompt.
+function _groupTitle(group, index) {
+  if (!group) return 'OPTIONS';
+  const raw = group.title || group.label || group.name || group.groupTitle || group.id;
+  const txt = (raw === undefined || raw === null) ? '' : String(raw).trim();
+  if (txt !== '') return txt;
+  const n = (typeof index === 'number' && index >= 0) ? index + 1 : 1;
+  return 'OPTION GROUP ' + n;
+}
+
+function _renderGameOptions(preset) {
+  const container = document.getElementById('game-options');
+  container.innerHTML = '';
+  preset.optionGroups.forEach((group, gi) => {
+    const groupDiv = document.createElement('div');
+    groupDiv.className = 'game-group';
+    const label = document.createElement('div');
+    label.className = 'game-group-label';
+    label.textContent = _groupTitle(group, gi);
+    groupDiv.appendChild(label);
+    group.options.forEach((opt, oi) => {
+      const btn = document.createElement('button');
+      btn.className = 'game-opt-btn';
+      btn.textContent = opt.text;
+      btn.addEventListener('click', () => {
+        _gameSelections[gi] = oi;
+        groupDiv.querySelectorAll('.game-opt-btn').forEach(b => b.classList.remove('selected'));
+        btn.classList.add('selected');
+        _updateGameSubmitEnabled();
+      });
+      groupDiv.appendChild(btn);
+    });
+    container.appendChild(groupDiv);
+  });
+}
+
+// Enable submit only once every group has a selection.
+function _updateGameSubmitEnabled() {
+  const btn = document.getElementById('game-submit-btn');
+  if (!btn || !_gameActivePreset) return;
+  const allChosen = _gameActivePreset.optionGroups.every((g, gi) => _gameSelections[gi] !== undefined);
+  btn.disabled = !allChosen;
+}
+
+// The heart of the game: pick the secret, check the guess, build the result.
+function _buildGameResult(preset) {
+  const groups = preset.optionGroups;
+
+  // ===== BEATS-STYLE GAME (e.g. Rock Paper Scissors Lizard Spock) =====
+  // The preset carries gameType:"beats" and a `beats` map of what each option
+  // DEFEATS. Here the subject transforms into the PLAYER's pick (not the
+  // program's), and the outcome is WIN / LOSE / TIE based on the beats map.
+  if (preset.gameType === 'beats' && preset.beats && groups.length === 1) {
+    const g = groups[0];
+    const playerIdx = _gameSelections[0];
+    const programIdx = Math.floor(Math.random() * g.options.length);
+    const playerPick = (playerIdx !== undefined && g.options[playerIdx]) ? g.options[playerIdx].text : g.options[0].text;
+    const programPick = g.options[programIdx].text;
+
+    let verdict;
+    if (playerPick === programPick) {
+      verdict = 'TIE';
+    } else if (preset.beats[playerPick] && preset.beats[playerPick].indexOf(programPick) !== -1) {
+      verdict = 'WINNER';
+    } else {
+      verdict = 'LOSER';
+    }
+    const win = (verdict === 'WINNER');
+
+    const gameCaption =
+      '\n\n=== GAME RESULT (must be clearly shown in the final image) ===\n' +
+      'Prominently display the word "' + verdict + '" in the image.\n' +
+      'Show a small caption titled "YOU CHOSE": ' + playerPick + '\n' +
+      'Show a small caption titled "OPPONENT CHOSE": ' + programPick + '\n' +
+      'The subject is transformed into the player\'s choice (' + playerPick + ') as described above.';
+
+    // Transform the image into the PLAYER's pick (they become their choice).
+    const secretSelection = [playerIdx !== undefined ? playerIdx : 0];
+    return { win, verdict, characterName: null, gameCaption, secretSelection };
+  }
+
+  // ===== WORDLE-STYLE GAME =====
+  // The preset carries gameType:"wordle" and a gameRoster of real words, one
+  // roster entry per word, with each letter stored under its group title.
+  // The program picks a word, the player's three letters are scored Wordle-style
+  // (GREEN / YELLOW / GRAY) and the subject transforms into the SECRET word.
+  if (preset.gameType === 'wordle' && preset.gameRoster && preset.gameRoster.length > 0) {
+    // 1. Program secretly picks a REAL word from the roster.
+    const entry = preset.gameRoster[Math.floor(Math.random() * preset.gameRoster.length)];
+    const secretWord = String(entry.name || '').toUpperCase();
+
+    const secret = groups.map((g, gi) => {
+      const want = String(entry[_groupTitle(g, gi)] || '').toUpperCase();
+      const idx = g.options.findIndex(o => String(o.text).toUpperCase() === want);
+      return idx >= 0 ? idx : 0;
+    });
+    const secretLetters = groups.map((g, gi) => String(g.options[secret[gi]].text).toUpperCase());
+
+    // 2. The player's guess, letter by letter.
+    const guessLetters = groups.map((g, gi) => {
+      const pick = _gameSelections[gi];
+      return (pick !== undefined && g.options[pick]) ? String(g.options[pick].text).toUpperCase() : '?';
+    });
+
+    // 3. Wordle scoring. TWO passes: greens claim their letter first, then
+    //    yellows may only claim letters the greens did NOT already consume.
+    //    A single pass would mis-colour repeated letters (BEE vs EEL etc).
+    const marks = new Array(groups.length).fill('GRAY');
+    const pool = secretLetters.slice();
+    for (let i = 0; i < groups.length; i++) {
+      if (guessLetters[i] === secretLetters[i]) { marks[i] = 'GREEN'; pool[i] = null; }
+    }
+    for (let i = 0; i < groups.length; i++) {
+      if (marks[i] === 'GREEN') continue;
+      const j = pool.indexOf(guessLetters[i]);
+      if (j !== -1) { marks[i] = 'YELLOW'; pool[j] = null; }
+    }
+
+    const win = marks.every(m => m === 'GREEN');
+    const verdict = win ? 'WINNER' : 'LOSER';
+
+    const tileLines = guessLetters.map((L, i) => {
+      const colour = marks[i] === 'GREEN' ? 'GREEN' : (marks[i] === 'YELLOW' ? 'YELLOW' : 'DARK GRAY');
+      return '  Tile ' + (i + 1) + ': the letter "' + L + '" on a ' + colour + ' square';
+    }).join('\n');
+
+    const gameCaption =
+      '\n\n=== GAME RESULT (must be clearly shown in the final image) ===\n' +
+      'Draw a single horizontal WORDLE row of ' + groups.length + ' large square tiles across the image.\n' +
+      'Each tile holds one bold white capital letter, in this exact order:\n' + tileLines + '\n' +
+      'Tile colours mean: GREEN = right letter, right place. YELLOW = right letter, wrong place. DARK GRAY = letter not in the word.\n' +
+      'Prominently display the word "' + verdict + '" in the image.\n' +
+      'Show a small caption reading "THE WORD WAS: ' + secretWord + '".\n' +
+      'The subject is transformed into the SECRET word (' + secretWord + ') as described above, NOT into the guess.';
+
+    // Transform locks to the SECRET word, so the picture reveals the answer.
+    return { win, verdict, characterName: secretWord, gameCaption, secretSelection: secret };
+  }
+
+  // ===== MATCH-STYLE GAME (CLUE / GUESS WHO) =====
+  // 1. Program secretly selects the answer.
+  const secret = {};           // groupIndex -> option index
+  let characterName = null;
+  if (preset.gameRoster && preset.gameRoster.length > 0) {
+    // Roster style (GUESS WHO): pick an entry; its per-group traits are secret.
+    const entry = preset.gameRoster[Math.floor(Math.random() * preset.gameRoster.length)];
+    characterName = entry.name;
+    groups.forEach((g, gi) => {
+      const idx = g.options.findIndex(o => o.text === entry[_groupTitle(g, gi)]);
+      secret[gi] = idx >= 0 ? idx : 0;
+    });
+  } else {
+    // Per-group style (CLUE): independent random pick per group.
+    groups.forEach((g, gi) => {
+      secret[gi] = Math.floor(Math.random() * g.options.length);
+    });
+  }
+
+  // 2. Check the player's guess against the secret (all groups must match).
+  let win = true;
+  groups.forEach((g, gi) => {
+    if (_gameSelections[gi] !== secret[gi]) win = false;
+  });
+
+  // 3. Build the reveal text from the SECRET answer AND the player's guess.
+  const answerLines = groups.map((g, gi) => '  ' + _groupTitle(g, gi) + ': ' + g.options[secret[gi]].text).join('\n');
+  const guessLines = groups.map((g, gi) => {
+    const pickIdx = _gameSelections[gi];
+    const pickText = (pickIdx !== undefined && g.options[pickIdx]) ? g.options[pickIdx].text : '(no pick)';
+    return '  ' + _groupTitle(g, gi) + ': ' + pickText;
+  }).join('\n');
+  const nameLine = characterName ? ('\nThe character was: ' + characterName) : '';
+  const verdict = win ? 'WINNER' : 'LOSER';
+
+  // 4. Instructions appended to the prompt: show verdict, the player's guess,
+  //    and the correct answer — so a loss makes it clear what was missed.
+  const gameCaption =
+    '\n\n=== GAME RESULT (must be clearly shown in the final image) ===\n' +
+    'Prominently display the word "' + verdict + '" in the image.\n' +
+    'Show a small caption titled "YOUR GUESS" listing the player\'s picks:\n' + guessLines + '\n' +
+    'Show a small caption titled "CORRECT ANSWER" listing the real answer:' + nameLine + '\n' + answerLines + '\n' +
+    'Render the subject styled as the CORRECT ANSWER while keeping the subject\'s real, recognizable face.';
+
+  // 5. manualSelection locks the image to the SECRET answer (so it reveals it).
+  //    MUST be an ARRAY indexed by group (that is the format the prompt builder
+  //    expects for multi-group presets — an object would crash the send).
+  const secretSelection = groups.map((g, gi) => secret[gi]);
+
+  return { win, verdict, characterName, gameCaption, secretSelection };
+}
+
+// Submit: build the result, bake it into a preset copy, hand off to the normal
+// generation flow (which handles queueing, credits and sending).
+async function submitGameRound() {
+  if (!_gameActivePreset) return;
+  const preset = _gameActivePreset;
+  const result = _buildGameResult(preset);
+
+  // A shallow copy of the preset with the game verdict/reveal appended, and
+  // randomize turned OFF so our locked secret selection is what renders.
+  const gamePreset = Object.assign({}, preset, {
+    randomizeOptions: true,   // keep true so manualSelection is honoured downstream
+    additionalInstructions: (preset.additionalInstructions || '') + result.gameCaption
+  });
+
+  // Tag this copy so the override below can only ever apply to a real game round.
+  gamePreset.__isGameRound = true;
+
+  // Route through the existing generation pipeline, then ALWAYS put the viewer
+  // back how we found it — even if the submit bails out early or throws.
+  const _previousLoadedPreset = window.viewerLoadedPreset || null;
+  window.viewerLoadedPreset = gamePreset;
+  _gamePendingSelection = result.secretSelection;
+  closeGameModal();
+  try {
+    await submitMagicTransform();
+  } finally {
+    _gamePendingSelection = null;
+    window.viewerLoadedPreset = _previousLoadedPreset;
+  }
+}
+
+// Holds the secret selection so submitMagicTransform can pick it up.
+let _gamePendingSelection = null;
+
+// Wire the game UI once the DOM is ready.
+(function wireGameModal() {
+  const btn = document.getElementById('game-viewer-button');
+  if (btn) btn.addEventListener('click', openGameModal);
+  const closeBtn = document.getElementById('game-modal-close');
+  if (closeBtn) closeBtn.addEventListener('click', closeGameModal);
+  const backBtn = document.getElementById('game-back-btn');
+  if (backBtn) backBtn.addEventListener('click', () => {
+    // Back to the game picker.
+    _gameActivePreset = null;
+    _gameSelections = {};
+    document.getElementById('game-options').style.display = 'none';
+    document.getElementById('game-modal-footer').style.display = 'none';
+    document.getElementById('game-picker').style.display = 'block';
+    document.getElementById('game-modal-title').textContent = '🎲 Pick a Game';
+  });
+  const submitBtn = document.getElementById('game-submit-btn');
+  if (submitBtn) submitBtn.addEventListener('click', submitGameRound);
+})();
+
 async function submitMagicTransform() {
   if (currentViewerImageIndex < 0 || currentViewerImageIndex >= galleryImages.length) {
     alert('No image selected');
     return;
   }
 
+  // A game round carries its OWN preset and its OWN locked selection. It must
+  // bypass Layer mode, Multi mode and the manual-options modal — the game modal
+  // has already collected the player's picks, so anything else here is either a
+  // pointless second prompt or the wrong preset entirely.
+  const _isGameRound = !!(window.viewerLoadedPreset && window.viewerLoadedPreset.__isGameRound === true);
+
   // GALLERY LAYER MODE
   // This prevents the random preset picker and wrong manual options modal from firing.
 
-  if (isGalleryLayerActive && galleryLayerPresets.length > 0) {
+  if (!_isGameRound && isGalleryLayerActive && galleryLayerPresets.length > 0) {
     const item = galleryImages[currentViewerImageIndex];
     const resizedImageBase64 = await resizeImageForSubmission(item.imageBase64);
 
@@ -2885,7 +3226,7 @@ async function submitMagicTransform() {
   // GALLERY MULTI MODE
   // Re-applies the previously saved multi presets without re-opening the selector.
 
-  if (isGalleryMultiActive && galleryMultiPresets.length > 0) {
+  if (!_isGameRound && isGalleryMultiActive && galleryMultiPresets.length > 0) {
     const item = galleryImages[currentViewerImageIndex];
     const resizedImageBase64 = await resizeImageForSubmission(item.imageBase64);
 
@@ -2998,7 +3339,7 @@ async function submitMagicTransform() {
   
  // Handle manual options for gallery
   // Manual Options does NOT work with No Magic Mode
-  if (manualOptionsMode && !noMagicMode && matchedPreset) {
+  if (manualOptionsMode && !noMagicMode && matchedPreset && !_isGameRound) {
     const options = parsePresetOptions(matchedPreset);
     
     if (options.length > 0) {
@@ -3025,11 +3366,18 @@ async function submitMagicTransform() {
   }
   
   // If manual options mode is OFF, check if user made inline selections in the viewer
-  if (!manualOptionsMode && matchedPreset && matchedPreset.randomizeOptions) {
+  if (!manualOptionsMode && matchedPreset && matchedPreset.randomizeOptions && !_isGameRound) {
     const inlineSelection = collectViewerSelectedOptions(matchedPreset);
     if (inlineSelection !== null) {
       manualSelection = inlineSelection;
     }
+  }
+
+  // GAME OVERRIDE: if a game round is active, the program's SECRET selection is
+  // what renders (revealing the answer), regardless of the user's guess. This
+  // only affects the in-game flow; normal preset use is untouched.
+  if (_isGameRound && typeof _gamePendingSelection !== 'undefined' && _gamePendingSelection) {
+    manualSelection = _gamePendingSelection;
   }
   
   const item = galleryImages[currentViewerImageIndex];
@@ -5749,8 +6097,8 @@ function hidePresetBuilderSubmenu() {
       let fullText = presetToShow.message || '';
       if (presetToShow.randomizeOptions) {
         if (presetToShow.optionGroups && presetToShow.optionGroups.length > 0) {
-          presetToShow.optionGroups.forEach(group => {
-            fullText += '\n\n' + group.title + ':\n';
+          presetToShow.optionGroups.forEach((group, gi) => {
+            fullText += '\n\n' + _groupTitle(group, gi) + ':\n';
             group.options.forEach((opt, i) => { fullText += '  ' + i + ': ' + opt.text + '\n'; });
           });
         } else if (presetToShow.options && presetToShow.options.length > 0) {
@@ -5816,7 +6164,7 @@ function showViewerPresetOptions(preset) {
       
       const label = document.createElement('div');
       label.style.cssText = 'font-size: 11px; color: #aaa; margin-bottom: 6px;';
-      label.textContent = group.title + ':';
+      label.textContent = _groupTitle(group, groupIndex) + ':';
       groupDiv.appendChild(label);
       
       group.options.forEach((opt, optIndex) => {
@@ -7604,49 +7952,46 @@ async function showManualOptionsModal(preset, sections) {
     list.innerHTML = '';
        
     sections.forEach((section, sectionIndex) => {
-      // Section header
+      // Section header — styled like the game modal's group label.
       const header = document.createElement('div');
-      header.style.padding = '10px 12px 4px';
-      header.style.fontWeight = '700';
-      header.style.fontSize = '11px';
-      header.style.letterSpacing = '0.05em';
-      header.style.color = '#aaa';
-      header.style.textTransform = 'uppercase';
-      header.style.borderTop = sectionIndex > 0 ? '1px solid #333' : 'none';
-      header.style.marginTop = sectionIndex > 0 ? '8px' : '0';
+      header.className = 'mo-group-label';
       header.textContent = section.title;
       list.appendChild(header);
 
+      // Wrapper lets the option buttons flow into columns and wrap.
+      const groupWrap = document.createElement('div');
+      groupWrap.className = 'mo-group';
+
       section.options.forEach((option, optIndex) => {
         const globalIndex = `s${sectionIndex}_o${optIndex}`;
+        // NOTE: the 'style-item' class MUST stay — the up/down arrow
+        // navigation finds each option with closest('.style-item').
         const item = document.createElement('div');
-        item.className = 'style-item';
-        item.style.padding = '10px 12px';
-        item.style.cursor = 'pointer';
-        item.style.display = 'flex';
-        item.style.alignItems = 'center';
-        
+        item.className = 'style-item mo-opt';
+
         const radio = document.createElement('input');
         radio.type = 'radio';
         radio.name = `manual-option-section-${sectionIndex}`;
         radio.id = `manual-option-${globalIndex}`;
         radio.value = option.value;
-        radio.style.marginRight = '10px';
-        
+        radio.className = 'mo-radio';
+
+        // The label IS the visible button; CSS highlights it via
+        // .mo-radio:checked + .mo-opt-label, so no JS state to keep in sync.
         const label = document.createElement('label');
         label.htmlFor = `manual-option-${globalIndex}`;
+        label.className = 'mo-opt-label';
         label.textContent = option.label;
-        label.style.cursor = 'pointer';
-        label.style.flex = '1';
-        label.style.fontSize = '12px';
-        
+
         item.appendChild(radio);
         item.appendChild(label);
-        
+
         item.onclick = () => { radio.checked = true; };
-        
-        list.appendChild(item);
+
+        groupWrap.appendChild(item);
       });
+
+      list.appendChild(groupWrap);
 
       // Auto-select first option in each section
       const firstRadio = list.querySelector(`input[name="manual-option-section-${sectionIndex}"]`);
@@ -7784,8 +8129,12 @@ async function showManualOptionsModal(preset, sections) {
         selections.push(selected ? parseInt(selected.value) : 0);
       });
       cleanup();
-      // If only one section, return single value for backwards compat; else return array
-      resolve(sections.length === 1 ? selections[0] : selections);
+      // Shape must match what the preset actually uses, NOT how many sections
+      // were rendered. A preset built from optionGroups always reads its
+      // selection as an array — even when it has only ONE group (e.g. RPSLS).
+      // Returning a bare number there crashes the prompt builder.
+      const usesGroups = !!(preset && preset.optionGroups && preset.optionGroups.length > 0);
+      resolve((sections.length === 1 && !usesGroups) ? selections[0] : selections);
     };
     
     if (closeBtn) closeBtn.onclick = handleClose;
@@ -8153,7 +8502,8 @@ const TOUR_STEPS = [
   { section: 'Gallery', title: '🏷️ Preset Header', body: 'At the very top of the image viewer a header shows the name of the currently loaded preset. Tap the header to hear the preset name and description.' },
   { section: 'Gallery', title: '🗑️ Delete Button', body: 'The delete button is on the top-left corner of the single image viewer.' },
   { section: 'Gallery', title: '🎠 Left Carousel', body: 'MASTER and OPTIONS buttons are located below the delete button and are visible by default (Single click (default) screen to hide-this may be adjusted in settings). The MASTER button toggles Master Prompt and OPTIONS button toggles Manually Select Options mode.' },
-  { section: 'Gallery', title: '🎠 Right Carousel', body: 'The right side carousel has three buttons — ✏️ EDIT which opens the image editor, 📤 EXPORT which uploads to gofile.io, and 📑 LAYER which combines presets to single image. Single click (default) screen to hide the buttons. This may be adjusted in settings' },
+  { section: 'Gallery', title: '🎠 Right Carousel', body: 'The right side carousel has four buttons — ✏️ EDIT which opens the image editor, 📤 EXPORT which uploads to gofile.io, 📑 LAYER which combines presets to single image, and 🎲 GAME which lets you play a preset as a game against the program. Single click (default) screen to hide the buttons. This may be adjusted in settings' },
+  { section: 'Gallery', title: '🎲 Game Mode', body: 'The last button in the right carousel is GAME. Tap it to open Pick a Game, choose a game, pick your options, then tap Play. The program makes its own secret pick, your photo is transformed, and the finished image shows whether you are a winner or a loser along with your picks and the correct answer.' },
   { section: 'Gallery', title: '⬇️ Bottom Bar Buttons', body: 'Four buttons on the bottom of image viewer. PROMPT opens editor. LOAD opens preset selector. MULTI opens multi-preset selector. MAGIC transforms image using the loaded preset, or randomly if nothing is loaded.' },
   { section: 'Gallery', title: '📤 Export to gofile.io', body: 'Tapping EXPORT in the right carousel. You get a QR code with a link that expires after 24 hours. Most useful in No Magic Mode.' },
   { section: 'Image Editor', title: '✏️ Opening the Editor', body: 'While viewing any photo, the image viewer contains the EDIT button. Tap it. The editor opens the image with a right-side carousel containing the crop, rotate, sharpen, auto-correct, color filters (vivid, warm, cool, Black and White (B&W) and Fade), and brightness and contrast control sliders.' },
@@ -10199,7 +10549,20 @@ async function syncQueuedPhotos(fromAutoRetry) {
       
       if (typeof PluginMessageHandler !== 'undefined' && !noMagicMode) {
         if (item.isCombined) window.isCombinedMode = true;
-        const syncedPrompt = getFinalPrompt(item.preset, item.manualSelection ?? null);
+        // NEVER let a bad prompt build block the queue head. Degrade instead:
+        // manual selection -> random selection -> bare message. The photo goes out.
+        let syncedPrompt;
+        try {
+          syncedPrompt = getFinalPrompt(item.preset, item.manualSelection ?? null);
+        } catch (promptErr) {
+          console.error('Prompt build failed — retrying without the manual selection:', promptErr);
+          try {
+            syncedPrompt = getFinalPrompt(item.preset, null);
+          } catch (promptErr2) {
+            console.error('Prompt build failed again — sending message only:', promptErr2);
+            syncedPrompt = (item.preset && item.preset.message) || null;
+          }
+        }
         if (item.isCombined) window.isCombinedMode = false;
         const syncPayload = {
           pluginId: 'com.r1.pixelart',
@@ -12920,16 +13283,16 @@ function parsePresetOptions(preset) {
   
   // NEW FORMAT: Check if preset has optionGroups (multi-selection like FRIENDS)
   if (preset.optionGroups && preset.optionGroups.length > 0) {
-    preset.optionGroups.forEach(group => {
+    preset.optionGroups.forEach((group, groupIndex) => {
       const activeOptions = group.options
         .map((opt, index) => ({ opt, index }))
         .filter(({ opt }) => opt.enabled !== false);
       const pool = activeOptions.length > 0 ? activeOptions : group.options.map((opt, index) => ({ opt, index }));
       sections.push({
-        title: group.title,
+        title: _groupTitle(group, groupIndex),
         options: pool.map(({ opt, index }) => ({
           value: index,
-          label: `${index}: ${opt.text}`
+          label: `${opt.text}`
         }))
       });
     });
@@ -12946,7 +13309,7 @@ function parsePresetOptions(preset) {
       title: 'SELECT',
       options: pool.map(({ opt, index }) => ({
         value: index,
-        label: `${index}: ${opt.text}`
+        label: `${opt.text}`
       }))
     });
     return sections;
@@ -13014,21 +13377,33 @@ function getFinalPrompt(preset, manualSelection = null) {
 // Helper: Build text for manually selected options
 function buildSelectedOptionsText(preset, selection) {
   let text = 'SELECTED OPTIONS:\n';
-  
-  // Multi-selection (array of selections)
-  if (Array.isArray(selection)) {
-    preset.optionGroups.forEach((group, index) => {
-      const selectedOption = group.options[selection[index]];
-      text += `• ${group.title}: ${selectedOption.text}\n`;
+
+  // Decide by what the PRESET has, not by the shape of the selection — then
+  // coerce the selection to fit. A mismatched selection can never throw now.
+  const groups = (preset && preset.optionGroups && preset.optionGroups.length > 0) ? preset.optionGroups : null;
+  const flat   = (preset && preset.options && preset.options.length > 0) ? preset.options : null;
+
+  if (groups) {
+    const picks = Array.isArray(selection) ? selection : [selection];
+    groups.forEach((group, index) => {
+      const opts = (group && group.options) || [];
+      if (opts.length === 0) return;
+      let idx = parseInt(picks[index], 10);
+      if (isNaN(idx) || idx < 0 || idx >= opts.length) idx = 0;   // fall back to first
+      text += `• ${_groupTitle(group, index)}: ${opts[idx].text}\n`;
     });
+    return text;
   }
-  // Single selection (single number)
-  else {
-    const selectedOption = preset.options[selection];
-    text += `• ${selectedOption.text}`;
+
+  if (flat) {
+    let idx = Array.isArray(selection) ? parseInt(selection[0], 10) : parseInt(selection, 10);
+    if (isNaN(idx) || idx < 0 || idx >= flat.length) idx = 0;
+    text += `• ${flat[idx].text}`;
+    return text;
   }
-  
-  return text;
+
+  // Preset claims randomizeOptions but carries no options at all.
+  return '';
 }
 
 // Helper: Build text for random selections
@@ -13043,7 +13418,7 @@ function buildRandomOptionsText(preset) {
       const pool = activeOptions.length > 0 ? activeOptions : group.options;
       const selectedIndex = (seed + index * 13) % pool.length;
       const selectedOption = pool[selectedIndex];
-      text += `• ${group.title}: ${selectedOption.text}\n`;
+      text += `• ${_groupTitle(group, index)}: ${selectedOption.text}\n`;
     });
   }
   // Single selection preset
@@ -13441,8 +13816,8 @@ function hideStyleEditor() {
       let fullText = presetToShow.message || '';
       if (presetToShow.randomizeOptions) {
         if (presetToShow.optionGroups && presetToShow.optionGroups.length > 0) {
-          presetToShow.optionGroups.forEach(group => {
-            fullText += '\n\n' + group.title + ':\n';
+          presetToShow.optionGroups.forEach((group, gi) => {
+            fullText += '\n\n' + _groupTitle(group, gi) + ':\n';
             group.options.forEach((opt, i) => { fullText += '  ' + i + ': ' + opt.text + '\n'; });
           });
         } else if (presetToShow.options && presetToShow.options.length > 0) {

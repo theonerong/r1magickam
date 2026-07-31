@@ -6764,3 +6764,277 @@ button, .touchable {
     0%, 100% { box-shadow: 0 0 0 0 rgba(254, 95, 0, 0.6); }
     50%      { box-shadow: 0 0 0 6px rgba(254, 95, 0, 0); }
 }
+
+/* ===== GAME FRAMEWORK ===== */
+.game-modal {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.85);
+    z-index: 3000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.game-modal-content {
+    background: #1a1a1a;
+    border: 2px solid #FE5F00;
+    border-radius: 3vw;
+    width: 90vw;
+    max-width: 480px;
+    max-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+.game-modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3vw 4vw;
+    border-bottom: 1px solid #333;
+}
+#game-modal-title {
+    color: #FE5F00;
+    font-size: 4.5vw;
+    font-weight: bold;
+}
+.game-modal-close {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 6vw;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0 2vw;
+}
+.game-modal-body {
+    padding: 4vw;
+    overflow-y: auto;
+    flex: 1;
+}
+.game-picker-item {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 4vw;
+    margin-bottom: 3vw;
+    background: #2a2a2a;
+    color: #fff;
+    border: 2px solid #444;
+    border-radius: 2vw;
+    cursor: pointer;
+    font-size: 4vw;
+    font-weight: bold;
+}
+.game-picker-item.locked {
+    opacity: 0.6;
+    border-color: #663300;
+}
+.game-picker-item .game-sub {
+    display: block;
+    font-size: 3vw;
+    font-weight: normal;
+    color: #aaa;
+    margin-top: 1vw;
+}
+.game-group {
+    margin-bottom: 4vw;
+}
+.game-group-label {
+    color: #FE5F00;
+    font-size: 3.5vw;
+    font-weight: bold;
+    margin-bottom: 2vw;
+}
+.game-opt-btn {
+    display: inline-block;
+    padding: 2.5vw 3.5vw;
+    margin: 0 2vw 2vw 0;
+    background: #2a2a2a;
+    color: #fff;
+    border: 2px solid #444;
+    border-radius: 1.5vw;
+    cursor: pointer;
+    font-size: 3.3vw;
+}
+.game-opt-btn.selected {
+    background: #FE5F00;
+    border-color: #FE5F00;
+    color: #000;
+    font-weight: bold;
+}
+.game-modal-footer {
+    display: flex;
+    gap: 3vw;
+    padding: 3vw 4vw;
+    border-top: 1px solid #333;
+}
+.game-footer-btn {
+    flex: 1;
+    padding: 3.5vw;
+    border-radius: 2vw;
+    border: 2px solid #FE5F00;
+    background: #2a2a2a;
+    color: #FE5F00;
+    font-size: 3.8vw;
+    font-weight: bold;
+    cursor: pointer;
+}
+.game-footer-btn.game-submit {
+    background: #FE5F00;
+    color: #000;
+}
+.game-footer-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+/* ============================================================
+   R1 SPACE-SAVING PASS — appended last so it overrides the rules above.
+   ============================================================ */
+
+/* ---- 1. Lift BOTH viewer carousels by 3vw (1/4 of a 12vw button) ---- */
+.viewer-carousel,
+.viewer-left-carousel {
+    top: calc(22vh - 3vw);
+    bottom: 15vw;
+}
+
+/* ---- Shared metrics: every button in EITHER options modal ---- */
+:root {
+    --mk-btn-font:  3.4vw;
+    --mk-btn-pad-y: 1.4vw;
+    --mk-btn-pad-x: 3vw;
+    --mk-btn-min-h: 22px;
+    --mk-btn-min-w: 44px;
+    --mk-btn-line:  1.3;
+}
+
+/* ---- 2 + 3. GAME MODAL ---- */
+.game-modal-content { max-height: 92vh; }
+.game-modal-header { padding: 1.8vw 3vw 1.2vw; }
+#game-modal-title  { font-size: 4.2vw; }
+.game-modal-close  { font-size: 5vw; padding: 0 1.5vw; }
+.game-modal-body   { padding: 2.5vw 3vw 3vw; }
+.game-group        { margin-bottom: 2.5vw; }
+.game-group-label  { font-size: 3.2vw; margin-bottom: 1.5vw; }
+
+.game-opt-btn,
+.game-footer-btn {
+    box-sizing: border-box;
+    min-height: var(--mk-btn-min-h);
+    padding: var(--mk-btn-pad-y) var(--mk-btn-pad-x);
+    font-size: var(--mk-btn-font);
+    line-height: var(--mk-btn-line);
+}
+.game-opt-btn      { margin: 0 1.8vw 1.8vw 0; }
+.game-modal-footer { padding: 1.8vw 3vw; gap: 2.5vw; }
+
+/* ---- 4. PROGRAM OPTIONS MODAL ---- */
+#manual-options-modal .styles-menu-content {
+    width: 96%;
+    height: 96%;
+    background-color: #1a1a1a;
+    border: 2px solid #FE5F00;
+    border-radius: 3vw;
+}
+#manual-options-modal .styles-menu-header {
+    padding: 1.8vw 3vw 1.2vw;
+    min-height: 0;
+    background: transparent;
+    box-shadow: none;
+    border-bottom: 1px solid #333;
+}
+#manual-options-modal .styles-menu-header h2 { font-size: 4.2vw; }
+#manual-options-modal .close-button,
+#manual-options-modal .menu-jump-button {
+    width: 7vw;  height: 7vw;
+    min-width: 26px; min-height: 26px;
+    font-size: 4.2vw;
+}
+#manual-options-modal .menu-nav-buttons { gap: 1.5vw; }
+#manual-options-modal .styles-menu-scroll-container { padding: 2.5vw 3vw 3vw; }
+
+#manual-options-modal .mo-preset-name {
+    padding: 0 0 1.5vw;
+    margin-bottom: 1.5vw;
+    color: #aaa;
+    font-size: 3vw;
+    border-bottom: 1px solid #333;
+}
+#manual-options-modal .mo-group-label {
+    color: #FE5F00;
+    font-size: 3.2vw;
+    font-weight: bold;
+    margin-bottom: 1.5vw;
+}
+#manual-options-modal .mo-group { margin-bottom: 2.5vw; }
+
+#manual-options-modal .style-item.mo-opt {
+    display: inline-block;
+    vertical-align: top;
+    max-width: 100%;
+    background: none;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    margin: 0 1.8vw 1.8vw 0;
+    gap: 0;
+    transition: none;
+}
+#manual-options-modal .style-item.mo-opt:active {
+    background: none;
+    border: none;
+}
+#manual-options-modal .mo-radio { display: none; }
+#manual-options-modal .mo-opt-label {
+    box-sizing: border-box;
+    display: block;
+    /* The game modal's options are <button> elements, so they inherit the
+       global `button, .touchable { min-width:44px }` tap-target rule and the
+       browser's default centred button text. A <label> gets neither, which is
+       why single-letter options rendered tiny here. Match them explicitly. */
+    min-width: var(--mk-btn-min-w);
+    text-align: center;
+    min-height: var(--mk-btn-min-h);
+    padding: var(--mk-btn-pad-y) var(--mk-btn-pad-x);
+    font-size: var(--mk-btn-font);
+    line-height: var(--mk-btn-line);
+    background: #2a2a2a;
+    color: #fff;
+    border: 2px solid #444;
+    border-radius: 1.5vw;
+    cursor: pointer;
+}
+#manual-options-modal .mo-radio:checked + .mo-opt-label {
+    background: #FE5F00;
+    border-color: #FE5F00;
+    color: #000;
+    font-weight: bold;
+}
+
+#manual-options-modal .mo-footer {
+    display: flex;
+    gap: 2.5vw;
+    padding: 1.8vw 3vw;
+    background: #1a1a1a;
+    border-top: 1px solid #333;
+}
+#manual-options-modal .mo-footer-btn {
+    box-sizing: border-box;
+    flex: 1;
+    min-height: var(--mk-btn-min-h);
+    padding: var(--mk-btn-pad-y) var(--mk-btn-pad-x);
+    font-size: var(--mk-btn-font);
+    line-height: var(--mk-btn-line);
+    border-radius: 1.5vw;
+    border: 2px solid #FE5F00;
+    background: #2a2a2a;
+    color: #FE5F00;
+    font-weight: bold;
+    cursor: pointer;
+}
+#manual-options-modal .mo-footer-btn.mo-send {
+    background: #FE5F00;
+    color: #000;
+}
