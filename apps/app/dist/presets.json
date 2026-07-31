@@ -1029,6 +1029,19 @@
     "additionalInstructions": "FINAL RESULT:\nThe final image should depict a vibrant, culturally rooted, technologically advanced future vision."
   },
   {
+    "name": "AI-ASSISTED PAINTOVER",
+    "category": [
+      "DIGITAL",
+      "CONTEMPORARY",
+      "TECHNIQUE",
+      "HYBRID"
+    ],
+    "message": "Take a picture and transform it into an AI-assisted paintover — a digital painting that begins with photographic reference but is extensively painted over with visible digital brushwork, creating a hybrid between photography and digital painting. The result should show areas of photorealistic detail transitioning into loose, expressive digital paint strokes, with visible brush texture and artistic interpretation.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "VISUAL REQUIREMENTS:\n• Hybrid of photographic detail and expressive digital painting\n• Visible transitions between rendered areas and loose painterly passages\n• Digital brush textures clearly visible: round brushes, texture brushes, palette knife strokes\n• Some areas highly rendered, others left as gestural color blocks\n• Artistic color choices departing from photographic reality\n• Visible canvas or paper texture beneath digital paint\n• Subject recognizable but artistically interpreted\n• Reference: concept art paintover techniques, Craig Mullins, Jaime Jones style digital painting"
+  },
+  {
     "name": "AIRBRUSH",
     "category": [
       "ART",
