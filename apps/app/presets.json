@@ -1029,6 +1029,19 @@
     "additionalInstructions": "FINAL RESULT:\nThe final image should depict a vibrant, culturally rooted, technologically advanced future vision."
   },
   {
+    "name": "AI-ASSISTED PAINTOVER",
+    "category": [
+      "DIGITAL",
+      "CONTEMPORARY",
+      "TECHNIQUE",
+      "HYBRID"
+    ],
+    "message": "Take a picture and transform it into an AI-assisted paintover — a digital painting that begins with photographic reference but is extensively painted over with visible digital brushwork, creating a hybrid between photography and digital painting. The result should show areas of photorealistic detail transitioning into loose, expressive digital paint strokes, with visible brush texture and artistic interpretation.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "VISUAL REQUIREMENTS:\n• Hybrid of photographic detail and expressive digital painting\n• Visible transitions between rendered areas and loose painterly passages\n• Digital brush textures clearly visible: round brushes, texture brushes, palette knife strokes\n• Some areas highly rendered, others left as gestural color blocks\n• Artistic color choices departing from photographic reality\n• Visible canvas or paper texture beneath digital paint\n• Subject recognizable but artistically interpreted\n• Reference: concept art paintover techniques, Craig Mullins, Jaime Jones style digital painting"
+  },
+  {
     "name": "AIRBRUSH",
     "category": [
       "ART",
@@ -12448,6 +12461,140 @@
     "additionalInstructions": "FINAL RESULT:\nThe image should feel like a ridiculous but persuasive promotional flyer."
   },
   {
+    "name": "DISEASED",
+    "category": [
+      "BODY",
+      "MEDICAL",
+      "TRANSFORMATION",
+      "REALISM"
+    ],
+    "message": "Take a picture and transform ONLY the subject, applying a realistic, dermatologically detailed visible medical skin condition or symptomatic disease manifestation directly onto their skin while strictly preserving their identity, facial structure, and the unedited background.\n\nTHIS IS A REALISTIC DERMATOLOGICAL CHARACTER/MAKEUP TRANSFORMATION.\n\nDo not change the environment, background, or lighting. The transformation must strictly modify the subject's skin texture, coloration, and surface features to accurately portray the selected condition using period-accurate or clinically realistic textures, without appearing like a digital overlay or unrealistic graphic filter.",
+    "randomizeOptions": true,
+    "options": [
+    {
+      "id": "001",
+      "text": "Shingles — Transform ONLY the subject's skin to show a distinct, painful-looking band of blistering red rash following a nerve path on one side of the face or torso."
+    },
+    {
+      "id": "002",
+      "text": "Mpox (Monkeypox) — Transform ONLY the subject's skin to show scattered, raised, fluid-filled lesions and umbilicated papules across the face and limbs."
+    },
+    {
+      "id": "003",
+      "text": "Hand, Foot, and Mouth Disease — Transform ONLY the subject's skin to show small, red spots and clear blisters localized around the lips, hands, and feet."
+    },
+    {
+      "id": "004",
+      "text": "Measles — Transform ONLY the subject's skin to feature a dense, blotchy red maculopapular rash starting from the hairline and spreading down the face and neck."
+    },
+    {
+      "id": "005",
+      "text": "Impetigo — Transform ONLY the subject's skin to display characteristic honey-colored, crusty fluid-filled sores around the nose and mouth area."
+    },
+    {
+      "id": "006",
+      "text": "Molluscum Contagiosum — Transform ONLY the subject's skin to feature small, firm, dome-shaped skin-colored bumps with visible central dimples."
+    },
+    {
+      "id": "007",
+      "text": "Fifth Disease — Transform ONLY the subject's skin to depict the bright red 'slapped cheek' erythema on the face along with a lacy rash on the arms."
+    },
+    {
+      "id": "008",
+      "text": "Ringworm (Tinea Corporis) — Transform ONLY the subject's skin to show distinct circular, elevated scaly red patches with clear centers across the arms or neck."
+    },
+    {
+      "id": "009",
+      "text": "Contact Dermatitis — Transform ONLY the subject's skin to show localized, inflamed red patches with tiny raised bumps where an irritant touched the skin."
+    },
+    {
+      "id": "010",
+      "text": "Severe Acne — Transform ONLY the subject's skin to display a combination of inflammatory papules, pustules, blackheads, and localized erythema across the face."
+    },
+    {
+      "id": "011",
+      "text": "Chickenpox (Varicella) — Transform ONLY the subject's skin to show a widespread crop of itchy spots progressing into tiny fluid-filled teardrop blisters and crusty scabs."
+    },
+    {
+      "id": "012",
+      "text": "Cold Sores (Oral Herpes) — Transform ONLY the subject's skin to feature a cluster of small, painful fluid-filled blisters and crusted lesions along the border of the lip."
+    },
+    {
+      "id": "013",
+      "text": "Chancre (Syphilis) — Transform ONLY the subject's skin to depict a single, firm, round, indurated ulcer with a clean base on or near the oral lip."
+    },
+    {
+      "id": "014",
+      "text": "Oral Warts (HPV) — Transform ONLY the subject's skin to show small, rough, flesh-colored cauliflower-textured verrucous bumps near the vermilion border or lips."
+    },
+    {
+      "id": "015",
+      "text": "Scabies — Transform ONLY the subject's skin to show fine, wavy, thread-like burrow lines alongside intensely red papules and excoriated tracks on the hands and wrists."
+    },
+    {
+      "id": "016",
+      "text": "Rubella (German Measles) — Transform ONLY the subject's skin to feature a fine, pale-pink maculopapular rash densely covering the face and spreading downward."
+    },
+    {
+      "id": "017",
+      "text": "Scarlet Fever — Transform ONLY the subject's skin to depict a diffuse, bright red, sandpaper-textured rash covering the neck and torso with perioral pallor."
+    },
+    {
+      "id": "018",
+      "text": "Eczema (Atopic Dermatitis) — Transform ONLY the subject's skin to display dry, thickened, erythematous patches with lichenification and fine cracking around flexural folds."
+    },
+    {
+      "id": "019",
+      "text": "Drug Eruption — Transform ONLY the subject's skin to show a sudden, symmetrical morbilliform red rash consisting of flat and slightly raised red spots across the torso."
+    },
+    {
+      "id": "020",
+      "text": "Roseola — Transform ONLY the subject's skin to feature small, flat, pinkish-red rose-colored macules covering the neck and chest area."
+    },
+    {
+      "id": "021",
+      "text": "Gianotti-Crosti Syndrome — Transform ONLY the subject's skin to show dense, symmetrical clusters of dark red, flat-topped papules concentrated on the cheeks and forearms."
+    },
+    {
+      "id": "022",
+      "text": "Eczema Herpeticum — Transform ONLY the subject's skin to show extensive clusters of punched-out, uniform, painful umbilicated blisters over pre-existing eczematous skin."
+    },
+    {
+      "id": "023",
+      "text": "Pityriasis Rosea — Transform ONLY the subject's skin to feature a distinct oval 'herald patch' accompanied by smaller, trailing scaly pink oval lesions following skin cleavage lines."
+    },
+    {
+      "id": "024",
+      "text": "Erythema Multiforme — Transform ONLY the subject's skin to display characteristic raised 'target' or 'bullseye' lesions with dark red centers and pale outer rings."
+    },
+    {
+      "id": "025",
+      "text": "Dermatitis Herpetiformis — Transform ONLY the subject's skin to show intensely itchy, symmetrical clusters of tiny red bumps and small tense vesicles on the elbows and forearms."
+    },
+    {
+      "id": "026",
+      "text": "Bullous Pemphigoid — Transform ONLY the subject's skin to depict large, tense, fluid-filled bullae forming over widespread erythematous, inflamed areas of skin."
+    },
+    {
+      "id": "027",
+      "text": "Bed Bug / Flea Bites — Transform ONLY the subject's skin to show linear tracks of inflamed red wheals ('breakfast, lunch, and dinner' patterns) on exposed skin."
+    },
+    {
+      "id": "028",
+      "text": "Papular Urticaria — Transform ONLY the subject's skin to display recurring crops of firm, raised, intensely itchy papules resembling small bite reactions across the limbs."
+    },
+    {
+      "id": "029",
+      "text": "Hansen's Disease (Leprosy) — Transform ONLY the subject's skin to depict pale or hypopigmented reddish-copper patches, subtle facial nodular thickening on the earlobes, and partial thinning of the eyebrows."
+    },
+    {
+      "id": "030",
+      "text": "Gonococcal Pharyngitis — Transform ONLY the subject's skin and visible throat/oral area to display severe perioral redness with visible focal erythema and small mucosal exudate spots."
+    }
+    ],
+    "additionalInstructions": "FINAL RESULT:\nThe image should convincingly transform ONLY the subject's skin to accurately portray the visible symptoms of the chosen medical condition. The skin texture, lesions, rashes, and color changes must look physically integrated into the subject's skin with high dermatological accuracy, while keeping the subject's underlying identity and the surrounding photographic background completely unchanged."
+  },
+  {
     "name": "DISNEY'S WORLD",
     "category": [
       "ANIMATION",
@@ -19529,6 +19676,41 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Grotesque refers to the historical artistic style of surreal ornamental hybridization\n• Emphasize decorative surrealism, uncanny beauty, and symbolic transformation\n• Avoid graphic gore, mutilation, explicit violence, or body-horror shock imagery\n• Preserve recognizable subject identity while integrating artistic grotesque transformations\n• Avoid cartoon aesthetics or simplistic fantasy styling\n\nGROTESQUE HYBRIDIZATION ENFORCEMENT:\n\n• Merge human, animal, plant, architectural, and ornamental forms together in surreal ways\n• Include transformations such as:\n  • vines merging into limbs\n  • decorative foliage growing from anatomy\n  • faces blending into carved ornamentation\n  • bodies transforming into symmetrical decorative structures\n  • hybrid mythical forms\n  • surreal masks and mascheroni\n  • flowing arabesques integrated into anatomy\n  • ornamental metamorphosis\n  • decorative hybrid creatures\n  • unnatural but elegant anatomical distortions\n\n• Transformations must feel artistic, symbolic, and visually integrated\n• The grotesque effect should feel elaborate, decorative, uncanny, and surreal rather than violent\n\nORNAMENTAL ENFORCEMENT:\n\n• Fill the composition with intricate decorative complexity\n• Include symmetrical ornamental layouts, carved patterns, ancient mural motifs, surreal botanical structures, decorative borders, mythical embellishments, symbolic geometry, and elaborate visual layering\n• The environment should feel like an ancient grotesque fresco, surreal palace mural, or impossible ornamental dream-world\n\nUNCANNY ATMOSPHERE ENFORCEMENT:\n\n• Blend beauty with discomfort\n• Create an atmosphere that feels alluring, mysterious, strange, unnatural, and dreamlike\n• Distortion and exaggeration should feel artistic and symbolic rather than monstrous\n• The image should feel visually immersive and psychologically uncanny\n\nVISUAL STYLE:\n\n• Ultra-detailed grotesque fine-art realism\n• Ornamental surrealism\n• Decorative metamorphic imagery\n• Ancient fresco and mural inspiration\n• Rich texture layering\n• Cinematic atmospheric lighting\n• Elegant but unsettling visual tone\n• Highly intricate symbolic detail\n\nDEPTH AND COMPOSITION:\n\n• Keep the subject visually recognizable despite transformation\n• Use layered ornamental foreground and background elements for immersive depth\n• Balance decorative complexity with readable composition\n• Allow the eye to continuously discover strange hybrid details throughout the image\n\nANTI-CHEAT:\n\n• Do NOT generate generic horror monsters\n• Do NOT create gore-heavy body horror\n• Do NOT flatten the composition into normal portrait photography\n• Do NOT use simple fantasy-creature aesthetics\n• Do NOT obscure the subject completely beneath ornamentation\n• Do NOT make the transformations random or chaotic without decorative intent\n\nFINAL RESULT:\nThe final image must resemble an ultra-detailed grotesque art masterpiece where the recognizable subject becomes integrated into a surreal ornamental world of hybrid anatomy, decorative metamorphosis, symbolic distortion, botanical-human fusion, mythical embellishment, and uncanny artistic beauty."
+  },
+  {
+    "name": "GUESS WHO",
+    "category": ["OPTIONS", "GAME", "CHARACTER", "PORTRAIT"],
+    "message": "Take a picture and transform the subject into the described character while keeping the subject's real, recognizable face.\nIDENTITY RULES (NON-NEGOTIABLE):\n• MUST use the subject's real face\n• Facial structure, eyes, nose, and expression must remain clearly recognizable\n• Do NOT replace or blend the face with a generic illustration\n• Apply ONLY the selected traits below to style the character\n• The subject must appear as if they ARE this character\n\nSTYLE:\n• Clean, friendly, board-game character portrait\n• Bust/portrait framing on a simple background\n• Traits must be clearly visible and readable",
+    "randomizeOptions": true,
+    "optionGroups": [
+    { "title": "GENDER", "options": [{"id":"001","text":"Male"},{"id":"002","text":"Female"}] },
+    { "title": "HAIR COLOR", "options": [{"id":"001","text":"Black"},{"id":"002","text":"Brown"},{"id":"003","text":"Blonde"},{"id":"004","text":"Red"},{"id":"005","text":"Gray"}] },
+    { "title": "HAT", "options": [{"id":"001","text":"Hat"},{"id":"002","text":"No Hat"}] },
+    { "title": "GLASSES", "options": [{"id":"001","text":"Glasses"},{"id":"002","text":"No Glasses"}] },
+    { "title": "EYE COLOR", "options": [{"id":"001","text":"Blue"},{"id":"002","text":"Green"},{"id":"003","text":"Brown"}] },
+    { "title": "BEARD", "options": [{"id":"001","text":"Beard"},{"id":"002","text":"No Beard"}] },
+    { "title": "MOUSTACHE", "options": [{"id":"001","text":"Moustache"},{"id":"002","text":"No Moustache"}] },
+    { "title": "NOSE", "options": [{"id":"001","text":"Big Nose"},{"id":"002","text":"Small Nose"}] }
+    ],
+    "additionalInstructions": "FINAL RESULT — APPLIES TO BOTH NORMAL USE AND GAME MODE:\nPresent the result as a GUESS WHO? board-game character card, never as a plain portrait. The finished image must always contain:\n1. The subject rendered as the character, real face fully recognizable, with every selected trait clearly applied.\n2. A card frame around the portrait in the style of a guessing-game character tile, with the heading \"GUESS WHO?\" across the top.\n3. A nameplate along the bottom of the card. If a character name is supplied below, print that exact name. If no name is supplied, print a short invented first name that suits the character.\n4. A small trait list down one side of the card listing the selected traits: gender, hair colour, hat, glasses, eye colour, beard, moustache, nose.\n\nOVERRIDE: if a section headed \"=== GAME RESULT ===\" appears below, also show everything it specifies — the verdict, the player's guess and the correct answer — laid out on or beside the card.",
+  "gameRoster": [
+    { "name":"OLIVER", "GENDER":"Male","HAIR COLOR":"Brown","HAT":"No Hat","GLASSES":"Glasses","EYE COLOR":"Blue","BEARD":"No Beard","MOUSTACHE":"Moustache","NOSE":"Big Nose" },
+    { "name":"EMMA", "GENDER":"Female","HAIR COLOR":"Blonde","HAT":"No Hat","GLASSES":"No Glasses","EYE COLOR":"Green","BEARD":"No Beard","MOUSTACHE":"No Moustache","NOSE":"Small Nose" },
+    { "name":"MARCUS", "GENDER":"Male","HAIR COLOR":"Black","HAT":"Hat","GLASSES":"No Glasses","EYE COLOR":"Brown","BEARD":"Beard","MOUSTACHE":"Moustache","NOSE":"Big Nose" },
+    { "name":"SOFIA", "GENDER":"Female","HAIR COLOR":"Red","HAT":"Hat","GLASSES":"Glasses","EYE COLOR":"Brown","BEARD":"No Beard","MOUSTACHE":"No Moustache","NOSE":"Small Nose" },
+    { "name":"HENRY", "GENDER":"Male","HAIR COLOR":"Gray","HAT":"No Hat","GLASSES":"Glasses","EYE COLOR":"Green","BEARD":"Beard","MOUSTACHE":"No Moustache","NOSE":"Small Nose" },
+    { "name":"LUCY", "GENDER":"Female","HAIR COLOR":"Brown","HAT":"Hat","GLASSES":"No Glasses","EYE COLOR":"Blue","BEARD":"No Beard","MOUSTACHE":"No Moustache","NOSE":"Big Nose" },
+    { "name":"DIEGO", "GENDER":"Male","HAIR COLOR":"Black","HAT":"No Hat","GLASSES":"No Glasses","EYE COLOR":"Brown","BEARD":"No Beard","MOUSTACHE":"Moustache","NOSE":"Small Nose" },
+    { "name":"GRACE", "GENDER":"Female","HAIR COLOR":"Blonde","HAT":"No Hat","GLASSES":"Glasses","EYE COLOR":"Blue","BEARD":"No Beard","MOUSTACHE":"No Moustache","NOSE":"Big Nose" },
+    { "name":"SAMUEL", "GENDER":"Male","HAIR COLOR":"Red","HAT":"Hat","GLASSES":"Glasses","EYE COLOR":"Green","BEARD":"Beard","MOUSTACHE":"Moustache","NOSE":"Big Nose" },
+    { "name":"MAYA", "GENDER":"Female","HAIR COLOR":"Black","HAT":"No Hat","GLASSES":"No Glasses","EYE COLOR":"Brown","BEARD":"No Beard","MOUSTACHE":"No Moustache","NOSE":"Small Nose" },
+    { "name":"FELIX", "GENDER":"Male","HAIR COLOR":"Blonde","HAT":"Hat","GLASSES":"No Glasses","EYE COLOR":"Blue","BEARD":"No Beard","MOUSTACHE":"No Moustache","NOSE":"Small Nose" },
+    { "name":"NORA", "GENDER":"Female","HAIR COLOR":"Gray","HAT":"No Hat","GLASSES":"Glasses","EYE COLOR":"Green","BEARD":"No Beard","MOUSTACHE":"No Moustache","NOSE":"Big Nose" },
+    { "name":"VICTOR", "GENDER":"Male","HAIR COLOR":"Brown","HAT":"Hat","GLASSES":"Glasses","EYE COLOR":"Brown","BEARD":"Beard","MOUSTACHE":"No Moustache","NOSE":"Big Nose" },
+    { "name":"IRIS", "GENDER":"Female","HAIR COLOR":"Red","HAT":"No Hat","GLASSES":"No Glasses","EYE COLOR":"Blue","BEARD":"No Beard","MOUSTACHE":"No Moustache","NOSE":"Big Nose" },
+    { "name":"OSCAR", "GENDER":"Male","HAIR COLOR":"Gray","HAT":"Hat","GLASSES":"No Glasses","EYE COLOR":"Green","BEARD":"Beard","MOUSTACHE":"Moustache","NOSE":"Small Nose" },
+    { "name":"CLARA", "GENDER":"Female","HAIR COLOR":"Brown","HAT":"Hat","GLASSES":"Glasses","EYE COLOR":"Green","BEARD":"No Beard","MOUSTACHE":"No Moustache","NOSE":"Small Nose" }
+  ]
   },
   {
     "name": "GUM BICHROMATE",
@@ -37868,6 +38050,33 @@
     "additionalInstructions": "FINAL RESULT:\nThe image must convincingly depict an authentic Rock 'Em Sock 'Em Robots toy match. The subject must be transformed entirely into a molded plastic robot whose robotic facial sculpt retains recognizable elements of the subject. If a second person is present, both subjects should become opposing robots. Otherwise the opposing robot should be the classic generic opponent from the toy."
   },
   {
+    "name": "ROCK PAPER SCISSORS LIZARD SPOCK",
+    "category": ["OPTIONS", "GAME", "TRANSFORMATION"],
+    "message": "Take a picture and change ONLY the subject according to the ONE selected option below. Do not add opponents, extra hands or extra figures.\n\nHOW TO APPLY THE SELECTION — the option name is a LABEL, not a literal instruction:\n• Keep the subject's face and identity clearly recognizable in every case\n• Rock — the subject's whole body appears to be made of rough grey stone and rock\n• Paper — the subject's whole body appears to be made of paper (folded sheets, papercraft)\n• Scissors — PARTIAL CHANGE ONLY. The subject remains ordinary, unchanged EXCEPT that their HANDS are replaced at the wrists with large open metal scissor blades and shears. The face, head, hair, skin, clothing and body all stay completely normal and untouched. Do NOT turn the subject into scissors. Do NOT make the body, head or skin metallic. Do NOT build the person out of blades. ONLY the hands change.\n• Lizard — the subject becomes a lizard/reptilian version of themselves while clearly keeping their own facial features\n• Spock — the subject becomes a Star Trek Vulcan (pointed ears, arched eyebrows, Starfleet look) holding up the Vulcan salute hand sign\n\nSTYLE:\n• Clean, striking portrait of the subject\n• The chosen material or form must be obvious and well rendered",
+    "randomizeOptions": true,
+    "gameType": "beats",
+    "beats": {
+    "Rock": ["Scissors", "Lizard"],
+    "Paper": ["Rock", "Spock"],
+    "Scissors": ["Paper", "Lizard"],
+    "Lizard": ["Paper", "Spock"],
+    "Spock": ["Scissors", "Rock"]
+    },
+    "optionGroups": [
+    {
+      "title": "CHOOSE",
+      "options": [
+        { "id": "001", "text": "Rock" },
+        { "id": "002", "text": "Paper" },
+        { "id": "003", "text": "Scissors" },
+        { "id": "004", "text": "Lizard" },
+        { "id": "005", "text": "Spock" }
+      ]
+    }
+    ],
+    "additionalInstructions": "FINAL RESULT:\nFor normal use, show only the transformed subject with no game text. (In game mode, the app adds the win/lose/tie result and both choices automatically.)"
+  },
+  {
     "name": "ROCKETPUNK",
     "category": [
       "SCI-FI",
@@ -51134,6 +51343,94 @@
     }
     ],
     "additionalInstructions": "• Transform the subject into the actual Wooly Willy toy—not a person holding it.\n• The printed cartoon face MUST be a custom Wooly Willy illustration specifically designed from the subject.\n• NEVER use the generic Wooly Willy face.\n• NEVER substitute another cartoon face.\n• The printed cartoon should immediately be recognizable as the subject.\n• Preserve the subject's exact facial proportions.\n• Preserve the subject's eye shape and spacing.\n• Preserve the subject's eyebrow shape.\n• Preserve the subject's nose shape.\n• Preserve the subject's smile.\n• Preserve the subject's lip shape.\n• Preserve the subject's cheeks.\n• Preserve the subject's jawline.\n• Preserve the subject's chin.\n• Preserve the subject's forehead.\n• Preserve the subject's ears.\n• Preserve the subject's head shape.\n• Preserve the subject's age.\n• Preserve the subject's ethnicity.\n• Preserve the subject's facial expression.\n• Simplify these features into authentic vintage Wooly Willy cartoon artwork without losing recognizability.\n• The result should look exactly like an official Wooly Willy game manufactured for this person.\n• Do NOT paste the original face onto the game.\n• Do NOT use photographic textures.\n• Do NOT make the face realistic.\n• Re-illustrate the face entirely in the authentic Wooly Willy drawing style.\n• The cardboard printing should have authentic vintage colors and printing quality.\n• Include the clear molded plastic dome over the face.\n• Hair and facial hair must consist ONLY of loose magnetic iron filings.\n• Iron filings should naturally clump exactly as they behave inside a real Wooly Willy toy.\n• Include a few stray filings for realism.\n• Include the magnetic stylus resting naturally beside the game board.\n• The game should be photographed directly from above.\n• Maintain realistic reflections on the plastic bubble.\n• The completed image should be visually indistinguishable from a genuine vintage Wooly Willy toy except that the printed face has been custom illustrated to resemble the subject.\n• Master prompt instructions always override the selected option whenever conflicts occur.\n\nFINAL VALIDATION — Before producing the final image, verify ALL of the following:\n\n✓ The face is NOT the generic Wooly Willy face.\n✓ The cartoon face clearly resembles the subject.\n✓ The face was completely re-illustrated rather than copied from the original toy.\n✓ The facial proportions match the subject.\n✓ The eyes match the subject.\n✓ The nose matches the subject.\n✓ The smile matches the subject.\n✓ The jawline matches the subject.\n✓ The overall head shape matches the subject.\n✓ The artwork looks like an authentic Wooly Willy illustration.\n✓ Hair and facial hair consist only of magnetic iron filings.\n✓ The clear plastic bubble is present.\n✓ The cardboard game board is present.\n✓ The magnetic stylus is visible.\n✓ The selected styling option has been followed exactly.\n✓ If 'Completely Bald' is selected, all filings remain naturally collected at the bottom of the game board.\n✓ If ANY answer is NO, regenerate the image until every requirement is satisfied."
+  },
+  {
+    "name": "WORDLE",
+    "category": ["OPTIONS", "GAME", "TRANSFORMATION"],
+    "message": "Take a picture and transform ONLY the subject into the word spelled by the three selected letters. Do not add other people, opponents or extra figures — just the subject.\n\nHOW TO READ THE SELECTION:\n• Join LETTER 1 + LETTER 2 + LETTER 3 in order to form a single three-letter word\n• If the three letters do not form a real English word, use the closest real three-letter word\n\nTRANSFORMATION RULES (NON-NEGOTIABLE):\n• Keep the subject's face and identity clearly recognizable in every case\n• If the word is a NOUN (FOX, KEY, PIE, SUN), the subject is transformed INTO that thing\n• If the word is a VERB (RUN, HUG, CRY, DIG), the subject is shown DOING that action\n• The subject must still read as the word even before the tiles are added\n\nSTYLE:\n• Clean, striking portrait of the transformed subject\n• Bold and literal — the word should be instantly readable from the image",
+    "randomizeOptions": true,
+    "gameType": "wordle",
+    "optionGroups": [
+    {
+      "title": "LETTER 1",
+      "options": [
+        { "id": "101", "text": "A" }, { "id": "102", "text": "B" }, { "id": "103", "text": "C" }, { "id": "104", "text": "D" }, { "id": "105", "text": "E" }, { "id": "106", "text": "F" },
+        { "id": "107", "text": "G" }, { "id": "108", "text": "H" }, { "id": "109", "text": "I" }, { "id": "110", "text": "J" }, { "id": "111", "text": "K" }, { "id": "112", "text": "L" },
+        { "id": "113", "text": "M" }, { "id": "114", "text": "N" }, { "id": "115", "text": "O" }, { "id": "116", "text": "P" }, { "id": "117", "text": "R" }, { "id": "118", "text": "S" },
+        { "id": "119", "text": "T" }, { "id": "120", "text": "U" }, { "id": "121", "text": "V" }, { "id": "122", "text": "W" }, { "id": "123", "text": "Y" }, { "id": "124", "text": "Z" }
+      ]
+    },
+    {
+      "title": "LETTER 2",
+      "options": [
+        { "id": "201", "text": "A" }, { "id": "202", "text": "C" }, { "id": "203", "text": "E" }, { "id": "204", "text": "G" }, { "id": "205", "text": "I" }, { "id": "206", "text": "K" },
+        { "id": "207", "text": "L" }, { "id": "208", "text": "M" }, { "id": "209", "text": "N" }, { "id": "210", "text": "O" }, { "id": "211", "text": "P" }, { "id": "212", "text": "R" },
+        { "id": "213", "text": "U" }, { "id": "214", "text": "V" }, { "id": "215", "text": "W" }, { "id": "216", "text": "X" }
+      ]
+    },
+    {
+      "title": "LETTER 3",
+      "options": [
+        { "id": "301", "text": "A" }, { "id": "302", "text": "B" }, { "id": "303", "text": "D" }, { "id": "304", "text": "E" }, { "id": "305", "text": "F" }, { "id": "306", "text": "G" },
+        { "id": "307", "text": "I" }, { "id": "308", "text": "K" }, { "id": "309", "text": "L" }, { "id": "310", "text": "M" }, { "id": "311", "text": "N" }, { "id": "312", "text": "P" },
+        { "id": "313", "text": "R" }, { "id": "314", "text": "S" }, { "id": "315", "text": "T" }, { "id": "316", "text": "U" }, { "id": "317", "text": "W" }, { "id": "318", "text": "X" },
+        { "id": "319", "text": "Y" }
+      ]
+    }
+    ],
+    "gameRoster": [
+      {"name": "FOX", "LETTER 1": "F", "LETTER 2": "O", "LETTER 3": "X"}, {"name": "OWL", "LETTER 1": "O", "LETTER 2": "W", "LETTER 3": "L"}, {"name": "BAT", "LETTER 1": "B", "LETTER 2": "A", "LETTER 3": "T"},
+      {"name": "CAT", "LETTER 1": "C", "LETTER 2": "A", "LETTER 3": "T"}, {"name": "DOG", "LETTER 1": "D", "LETTER 2": "O", "LETTER 3": "G"}, {"name": "PIG", "LETTER 1": "P", "LETTER 2": "I", "LETTER 3": "G"},
+      {"name": "COW", "LETTER 1": "C", "LETTER 2": "O", "LETTER 3": "W"}, {"name": "BEE", "LETTER 1": "B", "LETTER 2": "E", "LETTER 3": "E"}, {"name": "ANT", "LETTER 1": "A", "LETTER 2": "N", "LETTER 3": "T"},
+      {"name": "RAT", "LETTER 1": "R", "LETTER 2": "A", "LETTER 3": "T"}, {"name": "HEN", "LETTER 1": "H", "LETTER 2": "E", "LETTER 3": "N"}, {"name": "APE", "LETTER 1": "A", "LETTER 2": "P", "LETTER 3": "E"},
+      {"name": "EEL", "LETTER 1": "E", "LETTER 2": "E", "LETTER 3": "L"}, {"name": "RAM", "LETTER 1": "R", "LETTER 2": "A", "LETTER 3": "M"}, {"name": "YAK", "LETTER 1": "Y", "LETTER 2": "A", "LETTER 3": "K"},
+      {"name": "ELK", "LETTER 1": "E", "LETTER 2": "L", "LETTER 3": "K"}, {"name": "EWE", "LETTER 1": "E", "LETTER 2": "W", "LETTER 3": "E"}, {"name": "CUB", "LETTER 1": "C", "LETTER 2": "U", "LETTER 3": "B"},
+      {"name": "PUP", "LETTER 1": "P", "LETTER 2": "U", "LETTER 3": "P"}, {"name": "DOE", "LETTER 1": "D", "LETTER 2": "O", "LETTER 3": "E"}, {"name": "COD", "LETTER 1": "C", "LETTER 2": "O", "LETTER 3": "D"},
+      {"name": "KOI", "LETTER 1": "K", "LETTER 2": "O", "LETTER 3": "I"}, {"name": "BUG", "LETTER 1": "B", "LETTER 2": "U", "LETTER 3": "G"}, {"name": "JAY", "LETTER 1": "J", "LETTER 2": "A", "LETTER 3": "Y"},
+      {"name": "HOG", "LETTER 1": "H", "LETTER 2": "O", "LETTER 3": "G"}, {"name": "GNU", "LETTER 1": "G", "LETTER 2": "N", "LETTER 3": "U"}, {"name": "PUG", "LETTER 1": "P", "LETTER 2": "U", "LETTER 3": "G"},
+      {"name": "BOA", "LETTER 1": "B", "LETTER 2": "O", "LETTER 3": "A"}, {"name": "EMU", "LETTER 1": "E", "LETTER 2": "M", "LETTER 3": "U"}, {"name": "SOW", "LETTER 1": "S", "LETTER 2": "O", "LETTER 3": "W"},
+      {"name": "JET", "LETTER 1": "J", "LETTER 2": "E", "LETTER 3": "T"}, {"name": "CAP", "LETTER 1": "C", "LETTER 2": "A", "LETTER 3": "P"}, {"name": "HAT", "LETTER 1": "H", "LETTER 2": "A", "LETTER 3": "T"},
+      {"name": "KEY", "LETTER 1": "K", "LETTER 2": "E", "LETTER 3": "Y"}, {"name": "MAP", "LETTER 1": "M", "LETTER 2": "A", "LETTER 3": "P"}, {"name": "WEB", "LETTER 1": "W", "LETTER 2": "E", "LETTER 3": "B"},
+      {"name": "EGG", "LETTER 1": "E", "LETTER 2": "G", "LETTER 3": "G"}, {"name": "LOG", "LETTER 1": "L", "LETTER 2": "O", "LETTER 3": "G"}, {"name": "BOW", "LETTER 1": "B", "LETTER 2": "O", "LETTER 3": "W"},
+      {"name": "GEM", "LETTER 1": "G", "LETTER 2": "E", "LETTER 3": "M"}, {"name": "JAM", "LETTER 1": "J", "LETTER 2": "A", "LETTER 3": "M"}, {"name": "PIE", "LETTER 1": "P", "LETTER 2": "I", "LETTER 3": "E"},
+      {"name": "CAR", "LETTER 1": "C", "LETTER 2": "A", "LETTER 3": "R"}, {"name": "BUS", "LETTER 1": "B", "LETTER 2": "U", "LETTER 3": "S"}, {"name": "PEN", "LETTER 1": "P", "LETTER 2": "E", "LETTER 3": "N"},
+      {"name": "CUP", "LETTER 1": "C", "LETTER 2": "U", "LETTER 3": "P"}, {"name": "MUG", "LETTER 1": "M", "LETTER 2": "U", "LETTER 3": "G"}, {"name": "POT", "LETTER 1": "P", "LETTER 2": "O", "LETTER 3": "T"},
+      {"name": "PAN", "LETTER 1": "P", "LETTER 2": "A", "LETTER 3": "N"}, {"name": "JAR", "LETTER 1": "J", "LETTER 2": "A", "LETTER 3": "R"}, {"name": "BAG", "LETTER 1": "B", "LETTER 2": "A", "LETTER 3": "G"},
+      {"name": "BOX", "LETTER 1": "B", "LETTER 2": "O", "LETTER 3": "X"}, {"name": "CAN", "LETTER 1": "C", "LETTER 2": "A", "LETTER 3": "N"}, {"name": "TIN", "LETTER 1": "T", "LETTER 2": "I", "LETTER 3": "N"},
+      {"name": "NET", "LETTER 1": "N", "LETTER 2": "E", "LETTER 3": "T"}, {"name": "FAN", "LETTER 1": "F", "LETTER 2": "A", "LETTER 3": "N"}, {"name": "OAR", "LETTER 1": "O", "LETTER 2": "A", "LETTER 3": "R"},
+      {"name": "ROD", "LETTER 1": "R", "LETTER 2": "O", "LETTER 3": "D"}, {"name": "SAW", "LETTER 1": "S", "LETTER 2": "A", "LETTER 3": "W"}, {"name": "AXE", "LETTER 1": "A", "LETTER 2": "X", "LETTER 3": "E"},
+      {"name": "NUT", "LETTER 1": "N", "LETTER 2": "U", "LETTER 3": "T"}, {"name": "PIN", "LETTER 1": "P", "LETTER 2": "I", "LETTER 3": "N"}, {"name": "BED", "LETTER 1": "B", "LETTER 2": "E", "LETTER 3": "D"},
+      {"name": "RUG", "LETTER 1": "R", "LETTER 2": "U", "LETTER 3": "G"}, {"name": "TIE", "LETTER 1": "T", "LETTER 2": "I", "LETTER 3": "E"}, {"name": "VAN", "LETTER 1": "V", "LETTER 2": "A", "LETTER 3": "N"},
+      {"name": "TOY", "LETTER 1": "T", "LETTER 2": "O", "LETTER 3": "Y"}, {"name": "WIG", "LETTER 1": "W", "LETTER 2": "I", "LETTER 3": "G"}, {"name": "BIB", "LETTER 1": "B", "LETTER 2": "I", "LETTER 3": "B"},
+      {"name": "JUG", "LETTER 1": "J", "LETTER 2": "U", "LETTER 3": "G"}, {"name": "KEG", "LETTER 1": "K", "LETTER 2": "E", "LETTER 3": "G"}, {"name": "MAT", "LETTER 1": "M", "LETTER 2": "A", "LETTER 3": "T"},
+      {"name": "ORB", "LETTER 1": "O", "LETTER 2": "R", "LETTER 3": "B"}, {"name": "URN", "LETTER 1": "U", "LETTER 2": "R", "LETTER 3": "N"}, {"name": "TUB", "LETTER 1": "T", "LETTER 2": "U", "LETTER 3": "B"},
+      {"name": "BIN", "LETTER 1": "B", "LETTER 2": "I", "LETTER 3": "N"}, {"name": "KIT", "LETTER 1": "K", "LETTER 2": "I", "LETTER 3": "T"}, {"name": "PAD", "LETTER 1": "P", "LETTER 2": "A", "LETTER 3": "D"},
+      {"name": "TAG", "LETTER 1": "T", "LETTER 2": "A", "LETTER 3": "G"}, {"name": "WOK", "LETTER 1": "W", "LETTER 2": "O", "LETTER 3": "K"}, {"name": "SUN", "LETTER 1": "S", "LETTER 2": "U", "LETTER 3": "N"},
+      {"name": "ICE", "LETTER 1": "I", "LETTER 2": "C", "LETTER 3": "E"}, {"name": "FOG", "LETTER 1": "F", "LETTER 2": "O", "LETTER 3": "G"}, {"name": "SKY", "LETTER 1": "S", "LETTER 2": "K", "LETTER 3": "Y"},
+      {"name": "SEA", "LETTER 1": "S", "LETTER 2": "E", "LETTER 3": "A"}, {"name": "MUD", "LETTER 1": "M", "LETTER 2": "U", "LETTER 3": "D"}, {"name": "OAK", "LETTER 1": "O", "LETTER 2": "A", "LETTER 3": "K"},
+      {"name": "IVY", "LETTER 1": "I", "LETTER 2": "V", "LETTER 3": "Y"}, {"name": "POD", "LETTER 1": "P", "LETTER 2": "O", "LETTER 3": "D"}, {"name": "BUD", "LETTER 1": "B", "LETTER 2": "U", "LETTER 3": "D"},
+      {"name": "DEW", "LETTER 1": "D", "LETTER 2": "E", "LETTER 3": "W"}, {"name": "RAY", "LETTER 1": "R", "LETTER 2": "A", "LETTER 3": "Y"}, {"name": "ORE", "LETTER 1": "O", "LETTER 2": "R", "LETTER 3": "E"},
+      {"name": "BAY", "LETTER 1": "B", "LETTER 2": "A", "LETTER 3": "Y"}, {"name": "DAM", "LETTER 1": "D", "LETTER 2": "A", "LETTER 3": "M"}, {"name": "PIT", "LETTER 1": "P", "LETTER 2": "I", "LETTER 3": "T"},
+      {"name": "HAM", "LETTER 1": "H", "LETTER 2": "A", "LETTER 3": "M"}, {"name": "BUN", "LETTER 1": "B", "LETTER 2": "U", "LETTER 3": "N"}, {"name": "FIG", "LETTER 1": "F", "LETTER 2": "I", "LETTER 3": "G"},
+      {"name": "YAM", "LETTER 1": "Y", "LETTER 2": "A", "LETTER 3": "M"}, {"name": "PEA", "LETTER 1": "P", "LETTER 2": "E", "LETTER 3": "A"}, {"name": "OAT", "LETTER 1": "O", "LETTER 2": "A", "LETTER 3": "T"},
+      {"name": "COB", "LETTER 1": "C", "LETTER 2": "O", "LETTER 3": "B"}, {"name": "TEA", "LETTER 1": "T", "LETTER 2": "E", "LETTER 3": "A"}, {"name": "RIB", "LETTER 1": "R", "LETTER 2": "I", "LETTER 3": "B"},
+      {"name": "POP", "LETTER 1": "P", "LETTER 2": "O", "LETTER 3": "P"}, {"name": "GUM", "LETTER 1": "G", "LETTER 2": "U", "LETTER 3": "M"}, {"name": "ELF", "LETTER 1": "E", "LETTER 2": "L", "LETTER 3": "F"},
+      {"name": "SPY", "LETTER 1": "S", "LETTER 2": "P", "LETTER 3": "Y"}, {"name": "NUN", "LETTER 1": "N", "LETTER 2": "U", "LETTER 3": "N"}, {"name": "COP", "LETTER 1": "C", "LETTER 2": "O", "LETTER 3": "P"},
+      {"name": "DAD", "LETTER 1": "D", "LETTER 2": "A", "LETTER 3": "D"}, {"name": "MOM", "LETTER 1": "M", "LETTER 2": "O", "LETTER 3": "M"}, {"name": "KID", "LETTER 1": "K", "LETTER 2": "I", "LETTER 3": "D"},
+      {"name": "VET", "LETTER 1": "V", "LETTER 2": "E", "LETTER 3": "T"}, {"name": "RUN", "LETTER 1": "R", "LETTER 2": "U", "LETTER 3": "N"}, {"name": "FLY", "LETTER 1": "F", "LETTER 2": "L", "LETTER 3": "Y"},
+      {"name": "EAT", "LETTER 1": "E", "LETTER 2": "A", "LETTER 3": "T"}, {"name": "SIT", "LETTER 1": "S", "LETTER 2": "I", "LETTER 3": "T"}, {"name": "HUG", "LETTER 1": "H", "LETTER 2": "U", "LETTER 3": "G"},
+      {"name": "ROW", "LETTER 1": "R", "LETTER 2": "O", "LETTER 3": "W"}, {"name": "DIG", "LETTER 1": "D", "LETTER 2": "I", "LETTER 3": "G"}, {"name": "NAP", "LETTER 1": "N", "LETTER 2": "A", "LETTER 3": "P"},
+      {"name": "SKI", "LETTER 1": "S", "LETTER 2": "K", "LETTER 3": "I"}, {"name": "CRY", "LETTER 1": "C", "LETTER 2": "R", "LETTER 3": "Y"}, {"name": "WIN", "LETTER 1": "W", "LETTER 2": "I", "LETTER 3": "N"},
+      {"name": "JOG", "LETTER 1": "J", "LETTER 2": "O", "LETTER 3": "G"}, {"name": "MIX", "LETTER 1": "M", "LETTER 2": "I", "LETTER 3": "X"}, {"name": "ZIP", "LETTER 1": "Z", "LETTER 2": "I", "LETTER 3": "P"},
+      {"name": "HOP", "LETTER 1": "H", "LETTER 2": "O", "LETTER 3": "P"}, {"name": "TAP", "LETTER 1": "T", "LETTER 2": "A", "LETTER 3": "P"}, {"name": "SEW", "LETTER 1": "S", "LETTER 2": "E", "LETTER 3": "W"},
+      {"name": "MOP", "LETTER 1": "M", "LETTER 2": "O", "LETTER 3": "P"}, {"name": "NOD", "LETTER 1": "N", "LETTER 2": "O", "LETTER 3": "D"}, {"name": "SIP", "LETTER 1": "S", "LETTER 2": "I", "LETTER 3": "P"},
+      {"name": "RUB", "LETTER 1": "R", "LETTER 2": "U", "LETTER 3": "B"}, {"name": "PAT", "LETTER 1": "P", "LETTER 2": "A", "LETTER 3": "T"}, {"name": "DIP", "LETTER 1": "D", "LETTER 2": "I", "LETTER 3": "P"},
+      {"name": "TUG", "LETTER 1": "T", "LETTER 2": "U", "LETTER 3": "G"}, {"name": "JAB", "LETTER 1": "J", "LETTER 2": "A", "LETTER 3": "B"}, {"name": "AIM", "LETTER 1": "A", "LETTER 2": "I", "LETTER 3": "M"},
+      {"name": "PAY", "LETTER 1": "P", "LETTER 2": "A", "LETTER 3": "Y"}, {"name": "TIP", "LETTER 1": "T", "LETTER 2": "I", "LETTER 3": "P"}, {"name": "WAX", "LETTER 1": "W", "LETTER 2": "A", "LETTER 3": "X"},
+      {"name": "RAP", "LETTER 1": "R", "LETTER 2": "A", "LETTER 3": "P"}, {"name": "BEG", "LETTER 1": "B", "LETTER 2": "E", "LETTER 3": "G"}, {"name": "HUM", "LETTER 1": "H", "LETTER 2": "U", "LETTER 3": "M"},
+      {"name": "FRY", "LETTER 1": "F", "LETTER 2": "R", "LETTER 3": "Y"}
+    ],
+    "additionalInstructions": "FINAL RESULT — APPLIES TO BOTH NORMAL USE AND GAME MODE:\nThe finished image must always contain BOTH of the following, and nothing else:\n1. The transformed subject — only the subject, no opponents and no extra figures.\n2. A WORDLE STRIP: one horizontal row of three large square tiles laid across the image, each tile holding one bold white capital letter, spelling the word left to right.\nPrint the finished word in plain capital letters directly beneath the tile row.\n\nDEFAULT TILE COLOURS (normal use): colour all three tiles GREEN, because the chosen letters ARE the word.\n\nOVERRIDE: if a section headed \"=== GAME RESULT ===\" appears below, that section wins. Use exactly the tile letters, tile colours and verdict it specifies, and show its captions as well."
   },
   {
     "name": "WORLD PARK ICON",
