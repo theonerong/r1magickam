@@ -119,7 +119,7 @@ html, body {
 /* Status text */
 .status-text {
     position: absolute;
-    bottom: 1vh;
+    bottom: 0;
     left: 0;
     right: 0;
     text-align: center;
@@ -6902,12 +6902,13 @@ button, .touchable {
 
 /* ---- Shared metrics: every button in EITHER options modal ---- */
 :root {
-    --mk-btn-font:  3.4vw;
-    --mk-btn-pad-y: 1.4vw;
+    --mk-btn-font:  4.5vw;
+    --mk-btn-pad-y: 2vw;
     --mk-btn-pad-x: 3vw;
     --mk-btn-min-h: 22px;
     --mk-btn-min-w: 44px;
     --mk-btn-line:  1.3;
+    --mk-label-font: 3.2vw;  /* group headings: LETTER 1, CHOOSE, GENDER... */
 }
 
 /* ---- 2 + 3. GAME MODAL ---- */
@@ -6917,7 +6918,7 @@ button, .touchable {
 .game-modal-close  { font-size: 5vw; padding: 0 1.5vw; }
 .game-modal-body   { padding: 2.5vw 3vw 3vw; }
 .game-group        { margin-bottom: 2.5vw; }
-.game-group-label  { font-size: 3.2vw; margin-bottom: 1.5vw; }
+.game-group-label  { font-size: var(--mk-label-font); margin-bottom: 1.5vw; }
 
 .game-opt-btn,
 .game-footer-btn {
@@ -6964,7 +6965,7 @@ button, .touchable {
 }
 #manual-options-modal .mo-group-label {
     color: #FE5F00;
-    font-size: 3.2vw;
+    font-size: var(--mk-label-font);
     font-weight: bold;
     margin-bottom: 1.5vw;
 }
@@ -6995,7 +6996,7 @@ button, .touchable {
        browser's default centred button text. A <label> gets neither, which is
        why single-letter options rendered tiny here. Match them explicitly. */
     min-width: var(--mk-btn-min-w);
-    text-align: center;
+    text-align: left;
     min-height: var(--mk-btn-min-h);
     padding: var(--mk-btn-pad-y) var(--mk-btn-pad-x);
     font-size: var(--mk-btn-font);

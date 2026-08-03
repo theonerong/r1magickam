@@ -3247,6 +3247,19 @@
     "additionalInstructions": ""
   },
   {
+    "name": "AUTOCHROME LUMIÈRE",
+    "category": [
+      "PHOTOGRAPHY",
+      "VINTAGE",
+      "COLOR",
+      "POINTILLIST"
+    ],
+    "message": "Take a picture and transform the image into an Autochrome Lumière photograph — the first commercially successful color photography process from 1907 using microscopic dyed potato starch grains as color filters. The image should show the characteristic Autochrome qualities: a soft, pointillist color rendering created by the visible starch grain mosaic, slightly muted and pastel colors with a distinctive warm cast, the dreamy soft-focus quality of early color photography, and the characteristic random mosaic pattern visible at close inspection. Colors should lean toward soft blues, warm ambers, and muted greens with the overall romantic, painterly quality that made Autochromes resemble Impressionist paintings.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n• Preserve subject identity with soft Autochrome rendering\n• Visible starch grain mosaic pattern (pointillist texture)\n• Slightly muted, pastel colors with warm cast\n• Dreamy soft-focus quality\n• Reference the Lumière brothers' Autochrome process from 1907\n• Colors lean toward soft blues, warm ambers, muted greens\n• Romantic, painterly quality resembling Impressionism\n• The grain mosaic should be visible at close inspection\n• Overall warm color temperature\n• The overall effect should be dreamy, romantic, and early-color-photography"
+  },
+  {
     "name": "AUTUMN LEAVES MOSAIC",
     "category": [
       "OPTIONS",
@@ -3655,6 +3668,23 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "FINAL RESULT:\nThe image should resemble a handcrafted batik textile, with the subject integrated into intricate patterns, visible dye textures, and traditional decorative motifs."
+  },
+  {
+    "name": "BATTLESHIP",
+    "category": ["OPTIONS", "GAME", "TRANSFORMATION"],
+    "message": "Take a picture and place ONLY the subject aboard the selected warship, in a world that is half real ocean and half giant board game. Keep the subject's real face clearly recognizable.\n\nTHE LOOK (NON-NEGOTIABLE):\n• The subject is aboard the ship — on deck, at the rail, in the conning tower or at the helm, clearly the crew member of that vessel\n• The ship is a real, weathered, full-scale warship sitting in real water\n• BUT the ocean around it is a giant board-game grid of flat blue-grey squares, and the pegs are enormous — as tall as the ship's superstructure, glossy plastic, unmistakably game pieces\n• This collision of real and toy is the whole point of the image\n\nSHIPS:\n• Carrier — vast flat flight deck, aircraft, island tower\n• Battleship — huge gun turrets, armoured superstructure\n• Destroyer — lean, fast, bristling with radar\n• Submarine — black hull surfaced, conning tower, subject in the hatch\n• Cruiser — mid-size, sleek, multiple gun mounts\n• PT Boat — small, low, wooden, spray flying\n\nSTYLE:\n• Cinematic naval photography lighting, dramatic sky",
+    "randomizeOptions": true,
+    "verdicts": { "win": "HIT!", "lose": "MISS!" },
+    "optionGroups": [
+    {
+      "title": "TARGET",
+      "options": [
+        { "id": "001", "text": "Carrier" }, { "id": "002", "text": "Battleship" }, { "id": "003", "text": "Destroyer" },
+        { "id": "004", "text": "Submarine" }, { "id": "005", "text": "Cruiser" }, { "id": "006", "text": "PT Boat" }
+      ]
+    }
+    ],
+    "additionalInstructions": "FINAL RESULT — THE PEGS ARE DECIDED BY THE OUTCOME:\n\nNORMAL USE (no game result below): the ship is intact and afloat, with two or three giant WHITE pegs standing up out of the water in the grid squares beside the hull — near misses. No fire, no damage, no text.\n\nGAME MODE: if a section headed \"=== GAME RESULT ===\" appears below, read its verdict and draw the pegs to match:\n• Verdict HIT! — one enormous glossy RED peg driven straight down through the ship's deck, with fire, black smoke and explosions blooming around its base. The subject is on the burning deck.\n• Verdict MISS! — the ship is untouched and clean, with giant WHITE pegs standing in the water alongside it. The subject looks out over the rail at them.\nAlso show the verdict word and the captions that section specifies."
   },
   {
     "name": "BAUHAUS",
@@ -8404,7 +8434,7 @@
     "message": "Take a picture and transform the image into a Cloisonnist painting in the style of Émile Bernard and Paul Gauguin. Preserve subject identity. The entire image must be composed of flat areas of bold, vivid, unmixed color separated by strong dark outlines, resembling a stained glass window or cloisonné enamelwork. No gradients or shading within color areas — each zone of color should be flat and uniform. Outlines should be thick, confident, and dark (black or very dark brown). The color palette should be rich and saturated: deep reds, vibrant blues, emerald greens, golden yellows, and warm oranges. Simplify forms into their essential shapes. The composition should feel decorative and rhythmic, with a strong sense of pattern. Painterly texture on canvas with visible but controlled brushwork within each color zone.",
     "options": [],
     "randomizeOptions": false,
-    "additionalInstructions": ""
+    "additionalInstructions": "STYLE ENFORCEMENT:\n• Preserve subject identity\n• All forms must be outlined with bold, dark contour lines\n• Colors must be flat and unblended within each outlined area\n• No gradients or smooth transitions between colors\n• Use saturated, vivid colors — avoid muddy or muted tones\n• Simplify forms into decorative, flattened shapes\n• Reference the Pont-Aven School aesthetic of 1888-1891\n• The effect should resemble stained glass or cloisonné enamel\n• Background should also be treated with the same outlined, flat-color approach."
   },
   {
     "name": "CLONE",
@@ -13094,10 +13124,10 @@
       "ARTISTIC",
       "LAYERED"
     ],
-    "message": "Take a picture and create a double-exposure composition.    Blend the subject with a secondary scene using transparent overlays. Clear silhouette, balanced negative space. Moody, artistic tone.",
+    "message": "Take a picture and create a double-exposure composition. Blend the subject with a secondary scene using transparent overlays. Clear silhouette, balanced negative space. Moody, artistic tone.",
     "options": [],
     "randomizeOptions": false,
-    "additionalInstructions": ""
+    "additionalInstructions": "The double exposure must follow real photographic physics \u2014 light areas of one image dominate dark areas of the other. The blend should feel natural, not digitally composited. Both elements (portrait and nature) should be clearly readable. The combination should create visual poetry."
   },
   {
     "name": "DOUBLE MOON",
@@ -20501,6 +20531,28 @@
     "additionalInstructions": ""
   },
   {
+    "name": "HIDE AND SEEK",
+    "category": ["OPTIONS", "GAME", "TRANSFORMATION"],
+    "message": "Take a picture and show ONLY the subject hiding in the selected place. Do not add other people or a seeker — just the subject, badly hidden.\n\nTHE JOKE (NON-NEGOTIABLE): the subject is hiding TERRIBLY. They believe they are completely concealed. They obviously are not. The subject's real face must stay clearly recognizable and visible in every option.\n\nHIDING PLACES:\n• Under a rug — lying flat beneath a rug on the floor with the whole head sticking out from under the edge\n• Behind a sheer curtain — standing behind a thin see-through curtain, the face plainly visible through the fabric, both shoes fully sticking out below the hem\n• Behind a skinny lamp post — standing bolt upright behind a narrow lamp post far too thin to hide anyone, body visible on both sides\n• Under a glass-top coffee table — curled up beneath a coffee table with a clear glass top, the whole body plainly visible through the glass\n• Holding a small houseplant — holding a tiny potted plant directly in front of the face, the leaves covering only half the face, the rest wide open\n• Behind a clear glass door — pressed against the back of a completely transparent glass door, fully visible through it\n• Head inside a laundry basket — head pushed into a plastic laundry basket with clothes draped over the top, the face clearly visible through the ventilation holes in the basket side\n\nSTYLE:\n• Bright, comic, deadpan — played completely straight, as if this were an excellent hiding place\n• The hiding place must be instantly readable",
+    "randomizeOptions": true,
+    "verdicts": { "win": "FOUND YOU!", "lose": "NOT FOUND!" },
+    "optionGroups": [
+    {
+      "title": "HIDING PLACE",
+      "options": [
+        { "id": "001", "text": "Under a rug, head sticking out" },
+        { "id": "002", "text": "Behind a sheer curtain, shoes showing" },
+        { "id": "003", "text": "Behind a skinny lamp post" },
+        { "id": "004", "text": "Under a glass-top coffee table" },
+        { "id": "005", "text": "Holding a small houseplant over half the face" },
+        { "id": "006", "text": "Behind a clear glass door" },
+        { "id": "007", "text": "Head inside a laundry basket" }
+      ]
+    }
+    ],
+    "additionalInstructions": "FINAL RESULT — APPLIES TO BOTH NORMAL USE AND GAME MODE:\nShow only the subject in the chosen hiding place, badly hidden, face clearly visible. No seeker, no other people, no game text.\n\nOVERRIDE: if a section headed \"=== GAME RESULT ===\" appears below, also show everything it specifies — the verdict, the player's guess and the correct hiding place — as captions over the image."
+  },
+  {
     "name": "HIEROGLYPHICS",
     "category": [
       "TEXT",
@@ -23353,6 +23405,19 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "FINAL RESULT:\nThe image should feel like a dynamic kinetic artwork, where movement—real or implied—is central, and the subject is seamlessly integrated into a motion-driven artistic structure."
+  },
+  {
+    "name": "KINETIC POINTILLISM",
+    "category": [
+      "ART",
+      "OPTICAL",
+      "KINETIC",
+      "EXPERIMENTAL"
+    ],
+    "message": "Take a picture and transform the image into a kinetic pointillist composition that combines Neo-Impressionist dot technique with Op Art movement effects. The entire image should be constructed from precisely placed colored dots that create optical vibration and the illusion of movement. Dots should vary in size and density to create form, but their arrangement should also produce moiré-like interference patterns that make the image appear to shimmer and pulse. Use complementary color pairs placed adjacent to each other to maximize optical mixing and visual energy. The overall effect should be a portrait or scene that appears to vibrate with kinetic energy.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n• Preserve subject identity through dot arrangement\n• Every element must be constructed from individual colored dots\n• Use complementary color pairs for maximum optical vibration\n• Vary dot size and density to create form and depth\n• Include moiré-like interference patterns for kinetic effect\n• The image should appear to shimmer and move when viewed\n• Reference both Seurat's pointillism and Bridget Riley's Op Art\n• No solid fills or continuous lines — dots only\n• The overall effect must be both recognizable and optically active"
   },
   {
     "name": "KINETIC SAND SCULPTURE",
@@ -30938,6 +31003,19 @@
     "additionalInstructions": ""
   },
   {
+    "name": "NEUE SLOWENISCHE KUNST",
+    "category": [
+      "ART",
+      "POLITICAL",
+      "AVANT-GARDE",
+      "EUROPEAN"
+    ],
+    "message": "Take a picture and transform the image into the aesthetic of Neue Slowenische Kunst (NSK) — the Slovenian art collective known for their provocative appropriation of totalitarian imagery. The image should combine elements of Soviet constructivism, fascist monumentalism, and corporate branding into an ambiguous, unsettling visual statement. Use bold graphic design with heavy black, red, and gold. Include monumental typography, crossed symbols, gear motifs, and heroic industrial imagery. The subject should appear within this framework as both elevated and subsumed by the totalitarian aesthetic — simultaneously heroic and oppressed.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n• Preserve subject identity\n• Bold graphic design combining totalitarian visual languages\n• Heavy use of black, red, and gold\n• Monumental typography and symbolic imagery\n• Reference the visual language of IRWIN and Laibach\n• The image should be deliberately ambiguous — neither celebrating nor condemning\n• Industrial and militaristic motifs: gears, crosses, eagles, stars\n• The subject should appear both heroic and trapped within the system\n• Clean, precise graphic execution\n• The overall effect should be provocative and intellectually challenging"
+  },
+  {
     "name": "NEUE WILDE",
     "category": [
       "GERMAN",
@@ -34336,7 +34414,7 @@
     "message": "Take a picture and transform the image into a Pittura Metafisica (Metaphysical Painting). Preserve subject identity. Use dreamlike architectural spaces, elongated shadows, classical statues, and enigmatic still-life objects inspired by Giorgio de Chirico. Emphasize eerie silence, deep perspective, warm Mediterranean light, and an unsettling sense of mystery.",
     "options": [],
     "randomizeOptions": false,
-    "additionalInstructions": ""
+    "additionalInstructions": "STYLE ENFORCEMENT:\n• Preserve subject identity\n• Dramatic exaggerated perspective with vanishing points\n• Long, angular shadows suggesting late afternoon sun\n• Empty, silent architectural spaces\n• Warm Mediterranean palette: ochre, terracotta, deep green, shadow\n• Enigmatic, dreamlike atmosphere of philosophical unease\n• Reference Giorgio de Chirico's works from 1911-1919\n• Include at least one inexplicable or displaced object\n• The scene must feel frozen in time — no movement, no wind\n• Mannequin-like stillness in any figures present"
   },  
   {
     "name": "PIXAR",
@@ -36389,6 +36467,20 @@
     "additionalInstructions": "• Transform the entire image into an authentic NES-era boxing-game screenshot\n• Preserve recognizable identity while converting the subject into the featured challenger\n• Generate a unique arcade-style boxing nickname based on the subject\n• Generate humorous retro boxing-game flavor text\n• Maintain authentic 8-bit pixel-art construction throughout the image\n• Use visible but not excessive pixelation matching original NES screenshots\n• Preserve the classic behind-the-boxer gameplay perspective\n• Keep Little Mac as the authentic player character in the foreground\n• Include only Little Mac, the referee when appropriate, and the subject as the opponent\n• Use authentic opponent sprite scale faithful to original gameplay screens\n• Apply vibrant NES color palettes and visible pixel structure\n• Create a packed boxing arena environment with championship atmosphere\n• Include authentic retro HUD elements, score displays, energy meters, and opponent information\n• Ensure the final image resembles a genuine gameplay screenshot rather than promotional artwork\n• Maintain arcade-style exaggeration, expressive animation, and colorful character design\n• Prioritize actual gameplay proportions over modern reinterpretations\n• The final image should instantly read as a classic Punch-Out-style boxing match featuring the subject as the challenger"
   },
   {
+    "name": "PUPPET THEATER",
+    "category": [
+      "THEATRICAL",
+      "PUPPET",
+      "STAGE",
+      "WHIMSICAL",
+      "NARRATIVE"
+    ],
+    "message": "Take a picture and transform the subject into a character in a traditional puppet theater performance \u2014 viewed from the audience's perspective looking at a small stage. The subject should appear as a hand-carved wooden puppet (marionette, rod puppet, or hand puppet) performing on a miniature stage with painted backdrop scenery, tiny footlights, and a red velvet curtain frame. The puppet should capture the subject's likeness in carved and painted wood \u2014 slightly stylized but clearly recognizable. Other puppet characters should be visible in the scene, and the puppet stage should show the charming handmade quality of traditional puppet theater: slightly wobbly scenery, visible strings or rods, and the intimate scale of a booth stage.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "The puppet must be clearly carved wood \u2014 visible wood grain, painted features, jointed limbs. The puppet theater must be traditional and charming. The stage should be viewed from audience perspective. Subject identity must be preserved in the carved puppet face."
+  },
+  {
     "name": "PURISM",
     "category": [
       "FRENCH",
@@ -37542,6 +37634,41 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Hammered metal relief depth\n• Visible tool marks and hand-worked quality\n• Copper, bronze, or silver metal appearance\n• Dimensional sculptural form\n• Aged patina on metal surface"
+  },
+  {
+    "name": "RETRO COMPUTER INTERFACE",
+    "category": [
+      "TECHNOLOGY",
+      "RETRO",
+      "DIGITAL",
+      "INTERFACE",
+      "NOSTALGIA"
+    ],
+    "message": "Take a picture and transform it into a retro computer interface displaying the subject \u2014 as if viewed on an old CRT monitor through vintage software. The image should be rendered within the constraints of early computer graphics: limited color palette, visible pixels, the characteristic glow and curvature of a CRT screen, and scan lines. The interface around the image should be authentic to a specific era of computing \u2014 complete with menu bars, dialog boxes, and the distinctive UI design of the period. Apply the following computing era:",
+    "options": [
+      {
+        "id": "001",
+        "text": "Apple Macintosh 1984 \u2014 1-bit black and white, MacPaint style, 512x342 resolution, Chicago font"
+      },
+      {
+        "id": "002",
+        "text": "Windows 3.1 (1992) \u2014 16-color VGA, Program Manager, hot dog stand color scheme option"
+      },
+      {
+        "id": "003",
+        "text": "Commodore 64 (1982) \u2014 PETSCII characters, 16 colors, blue border, 320x200 pixels"
+      },
+      {
+        "id": "004",
+        "text": "Windows 95 \u2014 256 colors, Paint application, Start menu visible, that teal desktop"
+      },
+      {
+        "id": "005",
+        "text": "MS-DOS terminal \u2014 green phosphor text on black, ASCII art rendering, command prompt"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "The computer interface must be authentic to the chosen era \u2014 correct UI conventions, color limitations, and resolution constraints. The CRT screen effects (curvature, glow, scan lines) must be present. The subject must be recognizable despite the technical limitations."
   },
   {
     "name": "RETRO FUTURISM",
@@ -40657,6 +40784,37 @@
     "additionalInstructions": "• Transform ONLY the subject.\n• Keep the background completely unchanged.\n• Preserve the original environment, lighting, perspective, colors, shadows, and every background object exactly as photographed.\n• Completely discard the original photographic subject before reconstruction.\n• NEVER place Slinkys over the original subject.\n• NEVER blend photographic textures with Slinky coils.\n• The original subject must not remain visible anywhere.\n• Every visible part of the subject must be reconstructed entirely from authentic Slinky springs.\n• Preserve the subject's exact identity, facial structure, hairstyle, hair color (through spring coloration when appropriate), expression, age, ethnicity, body proportions, pose, silhouette, and recognizable features.\n• Facial features must emerge solely through the arrangement, spacing, compression, and curvature of the coils.\n• Hair must be recreated entirely from layered Slinky coils.\n• Clothing must also be reconstructed entirely from coils using changes in coil spacing and direction.\n• Every individual Slinky must remain immediately recognizable as a genuine Slinky toy.\n• Preserve authentic Slinky characteristics including continuous helical coils, spring steel, realistic thickness, metallic reflections, natural compression, stretching, gravity, and elasticity.\n• Never flatten coils into simple wire loops.\n• Never convert the coils into generic spirals.\n• Use realistic overlapping, nesting, and interwoven Slinkys to create depth.\n• Maintain believable mechanical behavior of every spring.\n• Preserve realistic shadows cast by the coils.\n• The sculpture should appear physically possible and professionally handcrafted.\n• The finished artwork should resemble a real museum sculpture photographed after completion.\n• Master prompt instructions always override the selected option whenever conflicts occur.\n\nFINAL VALIDATION — Before producing the final image, verify ALL of the following:\n\n✓ ONLY the subject has been transformed.\n✓ The background remains completely unchanged.\n✓ The original photographic subject has been completely removed.\n✓ Every visible part of the subject has been reconstructed entirely from real Slinky springs.\n✓ Slinkys have NOT been placed over the original subject.\n✓ Every coil remains recognizable as an authentic Slinky.\n✓ Coils exhibit realistic compression, stretching, thickness, and metallic reflections.\n✓ Facial features have been sculpted entirely from Slinky coils.\n✓ The subject remains immediately recognizable.\n✓ The artwork resembles a genuine handcrafted Slinky sculpture.\n✓ If ANY answer is NO, regenerate the image until every requirement is satisfied."
   },
   {
+    "name": "SLOT MACHINE",
+    "category": ["OPTIONS", "GAME", "TRANSFORMATION"],
+    "message": "Take a picture and draw a single classic SLOT MACHINE seen head on, filling the frame. Its window has THREE REELS side by side. Every symbol on every reel is a portrait of the SUBJECT, transformed a different way. Keep the subject's real face clearly recognizable in every one.\n\nREEL WINDOW LAYOUT (NON-NEGOTIABLE):\n• Three reels: REEL 1 left, REEL 2 centre, REEL 3 right\n• Each reel window shows THREE stacked images of the subject — one above, one dead centre, one below\n• The CENTRE image of each reel is the symbol selected for that reel. It must be fully sharp, complete and centred on the payline\n• ABSOLUTE RULE: the three images in a single reel column must be THREE DIFFERENT SYMBOLS. Never draw the same symbol twice in one column. The image above the centre and the image below the centre must differ from the centre AND from each other. A column showing the same picture three times is WRONG.\n• The two neighbours are NOT free choices. Each reel is a fixed physical strip, so the neighbours are whatever sits either side of the centre symbol on that reel's strip. Use this table exactly:\n\nREEL 1 strip order: Cherries / Diamonds / Gold / Jewels / Lemon / Bell\n   if REEL 1 centre is Cherries → Bell above, Diamonds below\n   if REEL 1 centre is Diamonds → Cherries above, Gold below\n   if REEL 1 centre is Gold → Diamonds above, Jewels below\n   if REEL 1 centre is Jewels → Gold above, Lemon below\n   if REEL 1 centre is Lemon → Jewels above, Bell below\n   if REEL 1 centre is Bell → Lemon above, Cherries below\nREEL 2 strip order: Gold / Lemon / Cherries / Bell / Diamonds / Jewels\n   if REEL 2 centre is Gold → Jewels above, Lemon below\n   if REEL 2 centre is Lemon → Gold above, Cherries below\n   if REEL 2 centre is Cherries → Lemon above, Bell below\n   if REEL 2 centre is Bell → Cherries above, Diamonds below\n   if REEL 2 centre is Diamonds → Bell above, Jewels below\n   if REEL 2 centre is Jewels → Diamonds above, Gold below\nREEL 3 strip order: Jewels / Bell / Lemon / Diamonds / Cherries / Gold\n   if REEL 3 centre is Jewels → Gold above, Bell below\n   if REEL 3 centre is Bell → Jewels above, Lemon below\n   if REEL 3 centre is Lemon → Bell above, Diamonds below\n   if REEL 3 centre is Diamonds → Lemon above, Cherries below\n   if REEL 3 centre is Cherries → Diamonds above, Gold below\n   if REEL 3 centre is Gold → Cherries above, Jewels below\n\n• The above and below images are cropped off by the top and bottom edges of the window and slightly motion-blurred, as if the reel just stopped. Only the centre image is sharp and whole\n• Draw a bright horizontal PAYLINE across the three centre images\n\nTHE SIX SYMBOLS — each one is the subject:\n• Cherries — mouth overflowing with bright red cherries, cheeks packed full, mid-bite, stems and juice everywhere\n• Diamonds — wearing a towering crown of cut diamonds and grinning wide to show a full set of diamond grillz on the teeth\n• Gold — the entire subject cast in solid polished gold, skin and hair and clothing all gold, with engraved gold markings across the surface\n• Jewels — both eyes replaced by huge round faceted gemstones filling the eye sockets, cartoonishly oversized, catching the light\n• Lemon — wearing a padded full-body lemon costume, a giant round yellow lemon with the subject's head sticking out of the hole in the top\n• Bell — wild-eyed and manic with hair blown out in all directions, both hands clutching a large brass hand bell, ringing it\n\nSTYLE:\n• Chrome and neon casino cabinet, glowing bulbs around the window, a big red lever on the right\n• Rich, saturated, glossy",
+    "randomizeOptions": true,
+    "verdicts": { "win": "JACKPOT!", "lose": "BUST!" },
+    "optionGroups": [
+    {
+      "title": "REEL 1",
+      "options": [
+        { "id": "101", "text": "Cherries" }, { "id": "102", "text": "Diamonds" }, { "id": "103", "text": "Gold" },
+        { "id": "104", "text": "Jewels" }, { "id": "105", "text": "Lemon" }, { "id": "106", "text": "Bell" }
+      ]
+    },
+    {
+      "title": "REEL 2",
+      "options": [
+        { "id": "201", "text": "Cherries" }, { "id": "202", "text": "Diamonds" }, { "id": "203", "text": "Gold" },
+        { "id": "204", "text": "Jewels" }, { "id": "205", "text": "Lemon" }, { "id": "206", "text": "Bell" }
+      ]
+    },
+    {
+      "title": "REEL 3",
+      "options": [
+        { "id": "301", "text": "Cherries" }, { "id": "302", "text": "Diamonds" }, { "id": "303", "text": "Gold" },
+        { "id": "304", "text": "Jewels" }, { "id": "305", "text": "Lemon" }, { "id": "306", "text": "Bell" }
+      ]
+    }
+    ],
+    "additionalInstructions": "FINAL RESULT — APPLIES TO BOTH NORMAL USE AND GAME MODE:\nShow only the slot machine and its three reels. No other people, no extra figures, no text beyond what is described here.\nThe three-different-symbols-per-column rule and the strip table above apply in BOTH modes, always.\n\nNORMAL USE: the three centre images are exactly the three selected symbols. No verdict word.\n\nOVERRIDE: if a section headed \"=== GAME RESULT ===\" appears below, that section wins. Set the three centre images to the symbols it names as the correct answer, then look those centre symbols up in the strip table to draw the correct neighbours above and below. Print its verdict word large across the bottom of the machine — JACKPOT! in glowing gold with coins pouring from the tray, or BUST! in cold grey with the tray empty. Also show the captions it specifies."
+  },
+  {
     "name": "SMOKE ART PHOTOGRAPHY",
     "category": [
       "ART",
@@ -41065,6 +41223,19 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "SPATIALISM",
+    "category": [
+      "ART",
+      "SCULPTURE",
+      "ITALIAN",
+      "CONCEPTUAL"
+    ],
+    "message": "Take a picture and transform the image into a Spatialist artwork inspired by Lucio Fontana's concept of art that transcends the flat canvas. The image should appear as a monochrome painted canvas that has been physically slashed, punctured, or pierced — with the cuts and holes revealing darkness or depth behind the surface. The subject's form should be suggested by the pattern of cuts and punctures in the canvas surface. The monochrome surface should show subtle texture and the cuts should appear clean and deliberate, with their edges curling slightly to reveal the void behind. The overall effect should be elegant, minimal, and conceptually powerful.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n• Preserve subject identity through the pattern of cuts and punctures\n• Monochrome canvas surface — white, red, or gold\n• Cuts must appear clean, deliberate, and physical\n• Edges of cuts should curl slightly revealing depth behind\n• The void behind the canvas should be visible through the slashes\n• Reference Lucio Fontana's Concetto Spaziale works\n• Minimal, elegant composition\n• The canvas texture should be visible and tactile\n• No painted imagery — form is created only through physical intervention\n• The overall effect should transcend two-dimensional painting"
   },
   {
     "name": "SPEED PAINTING",
@@ -42488,7 +42659,7 @@
     "message": "Take a picture and transform the image into a Stuckist painting. Preserve subject identity. Use expressive, figurative painting with raw emotional intensity. Emphasize authentic personal expression through bold brushwork, vivid colors, and unpolished figurative representation that rejects conceptual art in favor of direct painterly communication.",
     "options": [],
     "randomizeOptions": false,
-    "additionalInstructions": ""
+    "additionalInstructions": "STYLE ENFORCEMENT:\n• Preserve subject identity with honest, direct rendering\n• Visible, energetic brushwork — not polished or refined\n• Bold color choices that may clash intentionally\n• Emotional authenticity over technical perfection\n• Figurative and recognizable — not abstract\n• Anti-conceptual, pro-painting aesthetic\n• Reference the Stuckism movement founded by Billy Childish and Charles Thomson\n• The painting should feel urgent, human, and defiantly handmade\n• Avoid slickness, digital perfection, or ironic detachment."
   },
   {
     "name": "STUDENT ID",
@@ -49739,6 +49910,19 @@
     "additionalInstructions": "The game UI must be authentic to the chosen genre \u2014 correct fonts, layout conventions, and interface elements. The art style must be consistent throughout the entire frame. The subject must be recognizable as a character within the game world."
   },
   {
+    "name": "VIENNA ACTIONISM",
+    "category": [
+      "ART",
+      "EXPERIMENTAL",
+      "AVANT-GARDE",
+      "PERFORMANCE"
+    ],
+    "message": "Take a picture and transform the image into a documentation photograph of a Vienna Actionist performance piece. The image should have the raw, confrontational aesthetic of 1960s Austrian radical art — grainy black and white or desaturated color photography capturing an intense, visceral moment. The subject should appear engaged in a ritualistic or transgressive artistic action. The photographic quality should suggest documentary urgency — slightly blurred motion, harsh flash lighting, high contrast, and the feeling of capturing something forbidden or extreme. The overall aesthetic should be raw, uncompromising, and deliberately provocative.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n• Preserve subject identity\n• Raw documentary photography aesthetic\n• High contrast black and white or heavily desaturated color\n• Harsh, unflattering flash lighting\n• Grainy film texture suggesting urgency\n• Reference the aesthetic of Hermann Nitsch, Günter Brus, and Otto Muehl documentation\n• The image should feel confrontational and intense\n• Avoid prettification or commercial polish\n• The subject should appear engaged in ritualistic artistic action\n• Keep content suggestive rather than explicit — imply intensity through composition and lighting"
+  },
+  {
     "name": "VIENNA SECESSION",
     "category": [
       "AUSTRIAN",
@@ -50585,6 +50769,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "FINAL RESULT:\nA watercolor image with organic bleeding edges and fluid color blending."
+  },
+  {
+    "name": "WATER DROPLET",
+    "category": [
+      "PHOTOGRAPHY",
+      "MACRO",
+      "WATER",
+      "REFRACTION",
+      "MINIATURE"
+    ],
+    "message": "Take a picture and transform it so the subject appears within a water droplet \u2014 their image refracted and inverted inside a perfectly spherical drop of water sitting on a leaf or petal. The macro photography should be extreme: the water droplet filling most of the frame, with the subject visible inside it (inverted, as light refracts through a sphere). The droplet should show realistic optical properties: the inverted refracted image, surface tension creating a perfect sphere, tiny reflections of the surrounding environment on the droplet's surface, and the shallow depth of field typical of macro photography (the droplet sharp, background dissolved into bokeh). The leaf or petal surface should show cellular detail at this magnification.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "The water droplet optics must be physically accurate \u2014 inverted image from refraction through a sphere. The macro photography depth of field must be extremely shallow. The surface the droplet sits on must show macro-level detail. The subject must be recognizable despite being inverted and miniaturized within the droplet."
   },
   {
     "name": "WATER SPLASH SCULPTURE",

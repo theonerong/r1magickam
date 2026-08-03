@@ -654,6 +654,15 @@ let _presetPreviewLabel = null;
 let _presetPreviewNoImg = null;
 let _styleListLongPressTimer = null;
 
+// ── Swipe-through state for the preview overlay ──
+// The list of presets the open preview can cycle through, in the order the
+// user sees them on screen, plus where in that list we currently are.
+let _previewSiblings = [];
+let _previewIndex = -1;
+// Called every time the preview changes preset, so the list underneath can
+// move its own highlight to match. Set per call site.
+let _previewOnNavigate = null;
+
 // ── Custom preview image edit state ──
 let _previewEditMode = false;
 let _previewEditPreset = null;
@@ -713,13 +722,89 @@ function _ensurePresetPreviewOverlay() {
   _presetPreviewOverlay.appendChild(_presetPreviewImgWrapper);
   _presetPreviewOverlay.appendChild(_presetPreviewLabel);
   _presetPreviewOverlay.appendChild(_presetPreviewNoImg);
+
+  // ── Swipe up/down to move through the list, same feel as the gallery
+  // image viewer. The × and + buttons stopPropagation on their own touch
+  // events, so a press on them never reaches this handler.
+  let _pvX = 0, _pvY = 0, _pvValid = false;
+  _presetPreviewOverlay.addEventListener('touchstart', (e) => {
+    if (e.touches.length === 1) {
+      _pvX = e.touches[0].clientX;
+      _pvY = e.touches[0].clientY;
+      _pvValid = true;
+    } else {
+      _pvValid = false;
+    }
+  }, { passive: true });
+  _presetPreviewOverlay.addEventListener('touchmove', (e) => {
+    if (e.touches.length > 1) _pvValid = false;
+  }, { passive: true });
+  _presetPreviewOverlay.addEventListener('touchend', (e) => {
+    if (e.touches.length > 0) return;   // wait for the last finger
+    if (!_pvValid) return;
+    _pvValid = false;
+    const t = e.changedTouches && e.changedTouches[0];
+    if (!t) return;
+    const dx = t.clientX - _pvX;
+    const dy = t.clientY - _pvY;
+    // Deliberate, mostly-vertical: >=50px and clearly more vertical than
+    // horizontal. Taps stay far below this, so nothing else is affected.
+    if (Math.abs(dy) >= 50 && Math.abs(dy) > Math.abs(dx) * 1.5) {
+      e.stopPropagation();
+      _previewStepSibling(dy < 0 ? 1 : -1);
+    }
+  }, { passive: true });
+  _presetPreviewOverlay.addEventListener('touchcancel', () => { _pvValid = false; }, { passive: true });
+
+  // NOTE: no 'wheel' listener here. The R1 hardware wheel does NOT emit native
+  // wheel events — it dispatches custom scrollUp / scrollDown events on window.
+  // Those are handled in the global scroll handlers further down this file.
+
   document.body.appendChild(_presetPreviewOverlay);
 }
 
-function showPresetImagePreview(preset) {
-  _ensurePresetPreviewOverlay();
-  _previewEditPreset = preset;
+// Paints one preset into the already-open overlay. Kept separate from
+// showPresetImagePreview so swiping can change the picture WITHOUT
+// resetting the sibling list we are swiping through.
+// True while the shared preview overlay is on screen.
+function _previewOverlayIsOpen() {
+  return !!(_presetPreviewOverlay && _presetPreviewOverlay.style.display === 'flex');
+}
+
+// Moves a list's own highlight to whatever the preview is showing.
+// idx is the position in the sibling list, which mirrors DOM order; the name
+// check guards against the two ever drifting apart (hidden rows, odd builds).
+function _syncListHighlight(items, preset, idx, apply) {
+  if (!items || items.length === 0 || !preset) return;
+  const nameOf = (el) => {
+    if (el.dataset && el.dataset.presetName) return el.dataset.presetName;
+    const n = el.querySelector('.preset-name, .style-name');
+    return n ? n.textContent : '';
+  };
+  let i = (idx >= 0 && idx < items.length) ? idx : -1;
+  if (i === -1 || nameOf(items[i]) !== preset.name) {
+    i = -1;
+    for (let k = 0; k < items.length; k++) {
+      if (nameOf(items[k]) === preset.name) { i = k; break; }
+    }
+  }
+  if (i >= 0) apply(i);
+}
+
+function _renderPresetPreview(preset) {
+  if (!preset) return;
+  _previewEditPreset = preset;   // keeps the + edit button pointed at what is shown
+  // Re-find our position: identity first, then by name as a fallback.
+  _previewIndex = _previewSiblings.indexOf(preset);
+  if (_previewIndex === -1) {
+    _previewIndex = _previewSiblings.findIndex(p => p && p.name === preset.name);
+  }
   _presetPreviewLabel.textContent = preset.name;
+  // Keep the list underneath in step, so closing the preview leaves the user
+  // on the preset they swiped to rather than the one they long-pressed.
+  if (typeof _previewOnNavigate === 'function') {
+    try { _previewOnNavigate(preset, _previewIndex); } catch (e) { console.error('preview sync failed:', e); }
+  }
   _presetPreviewImg.style.display = 'none';
   _presetPreviewNoImg.style.display = 'none';
 
@@ -736,6 +821,32 @@ function showPresetImagePreview(preset) {
   _presetPreviewImg.onload = () => { _presetPreviewImg.style.display = 'block'; _presetPreviewNoImg.style.display = 'none'; };
   _presetPreviewImg.onerror = () => { _presetPreviewImg.style.display = 'none'; _presetPreviewNoImg.style.display = 'block'; };
   _presetPreviewImg.src = imageUrl;
+}
+
+// Swipe UP = next preset, swipe DOWN = previous. Wraps at both ends.
+function _previewStepSibling(direction) {
+  if (!_previewSiblings || _previewSiblings.length < 2) return;
+  if (_previewIndex < 0) return;
+  const len = _previewSiblings.length;
+  const next = (_previewIndex + direction + len) % len;
+  _renderPresetPreview(_previewSiblings[next]);
+}
+
+// siblings: an array of presets, or a function returning one, in on-screen
+// order. Omit it entirely (e.g. when returning from the preview-image editor)
+// to keep whatever list was already loaded.
+function showPresetImagePreview(preset, siblings, onNavigate) {
+  _ensurePresetPreviewOverlay();
+  if (onNavigate !== undefined) _previewOnNavigate = onNavigate || null;
+  if (siblings !== undefined && siblings !== null) {
+    let list;
+    try { list = (typeof siblings === 'function') ? siblings() : siblings; }
+    catch (e) { list = null; }
+    _previewSiblings = Array.isArray(list) && list.length ? list.filter(Boolean) : [preset];
+  } else if (!_previewSiblings || _previewSiblings.length === 0) {
+    _previewSiblings = [preset];
+  }
+  _renderPresetPreview(preset);
   _presetPreviewOverlay.style.display = 'flex';
 }
 
@@ -745,12 +856,15 @@ function hidePresetImagePreview() {
   _presetPreviewImg.src = '';
 }
 
-function attachPresetLongPress(item, preset) {
+// getSiblings: optional function returning the full on-screen list this item
+// belongs to, so the preview can swipe through it. Left out -> no swiping.
+function attachPresetLongPress(item, preset, getSiblings, onNavigate) {
   const LONG_PRESS_MS = 600;
   let _timer = null;
+  const _fire = () => showPresetImagePreview(preset, getSiblings || [preset], onNavigate || null);
 
   item.addEventListener('touchstart', () => {
-    _timer = setTimeout(() => showPresetImagePreview(preset), LONG_PRESS_MS);
+    _timer = setTimeout(_fire, LONG_PRESS_MS);
   }, { passive: true });
 
   item.addEventListener('touchend',   () => { clearTimeout(_timer); _timer = null; }, { passive: true });
@@ -758,7 +872,7 @@ function attachPresetLongPress(item, preset) {
   item.addEventListener('touchcancel',() => { clearTimeout(_timer); _timer = null; }, { passive: true });
 
   item.addEventListener('mousedown', () => {
-    _timer = setTimeout(() => showPresetImagePreview(preset), LONG_PRESS_MS);
+    _timer = setTimeout(_fire, LONG_PRESS_MS);
   });
   item.addEventListener('mouseup', () => { clearTimeout(_timer); _timer = null; });
   item.addEventListener('mouseleave', () => { clearTimeout(_timer); _timer = null; });
@@ -771,7 +885,21 @@ function _handleStyleListLongPressStart(e) {
   if (isNaN(index)) return;
   const preset = CAMERA_PRESETS[index];
   if (!preset) return;
-  _styleListLongPressTimer = setTimeout(() => showPresetImagePreview(preset), 600);
+  // Siblings = every style currently rendered in this list, read straight from
+  // the DOM so the order always matches what is on screen (favourites first,
+  // search/category filter applied).
+  const getSiblings = () => {
+    const listEl = item.closest('.menu-list') || item.parentElement;
+    if (!listEl) return [preset];
+    const out = Array.from(listEl.querySelectorAll('.style-item[data-index]'))
+      .map(el => CAMERA_PRESETS[parseInt(el.dataset.index, 10)])
+      .filter(Boolean);
+    return out.length ? out : [preset];
+  };
+  const onNavigate = (p, i) => _syncListHighlight(
+    document.querySelectorAll('#menu-styles-list .style-item'), p, i,
+    (k) => { currentMenuIndex = k; updateMenuSelection(); });
+  _styleListLongPressTimer = setTimeout(() => showPresetImagePreview(preset, getSiblings, onNavigate), 600);
 }
 
 function _handleStyleListLongPressEnd() {
@@ -2689,7 +2817,9 @@ function populatePresetList() {
       }
     };
     
-    attachPresetLongPress(item, preset);
+    attachPresetLongPress(item, preset, () => sorted, (p, i) => _syncListHighlight(
+      document.querySelectorAll('#preset-list .preset-item'), p, i,
+      (k) => { currentPresetIndex_Gallery = k; updatePresetSelection(); }));
     list.appendChild(item);
   });
 // Update preset count
@@ -2797,7 +2927,7 @@ async function selectPreset(preset) {
 // prompt. Normal preset behaviour is untouched — this logic only runs in-game.
 
 // The games this framework offers, by preset name.
-const GAME_PRESET_NAMES = ['GUESS WHO', 'CLUE', 'ROCK PAPER SCISSORS LIZARD SPOCK', 'WORDLE'];
+const GAME_PRESET_NAMES = ['BATTLESHIP', 'CLUE', 'GUESS WHO', 'HIDE AND SEEK', 'ROCK PAPER SCISSORS LIZARD SPOCK', 'SLOT MACHINE', 'WORDLE'];
 
 let _gameActivePreset = null;      // the preset chosen for this game round
 let _gameSelections = {};          // groupIndex -> chosen option index
@@ -2874,6 +3004,19 @@ function _startGame(preset) {
   document.getElementById('game-modal-title').textContent = '🎲 ' + preset.name;
   _renderGameOptions(preset);
   _updateGameSubmitEnabled();
+
+  // Same scroll-restore problem as the regular options modal: .game-modal-body
+  // keeps its offset between openings, so the second game you play would start
+  // part-way down the list. Reset after the options are in the DOM.
+  const _gameBody = document.getElementById('game-modal-body');
+  const _resetGameScroll = () => { if (_gameBody) _gameBody.scrollTop = 0; };
+  if (_gameBody) void _gameBody.offsetHeight;
+  _resetGameScroll();
+  requestAnimationFrame(() => {
+    _resetGameScroll();
+    requestAnimationFrame(_resetGameScroll);
+  });
+  setTimeout(_resetGameScroll, 60);
 }
 
 // Returns a group's display name. Presets are not consistent: most use
@@ -3051,7 +3194,12 @@ function _buildGameResult(preset) {
     return '  ' + _groupTitle(g, gi) + ': ' + pickText;
   }).join('\n');
   const nameLine = characterName ? ('\nThe character was: ' + characterName) : '';
-  const verdict = win ? 'WINNER' : 'LOSER';
+  // A game may name its own verdicts in JSON, e.g.
+  //   "verdicts": { "win": "JACKPOT!", "lose": "BUST!" }
+  // Missing or partial -> falls back to WINNER / LOSER, so CLUE and
+  // GUESS WHO are completely unaffected.
+  const _v = preset.verdicts || {};
+  const verdict = win ? (_v.win || 'WINNER') : (_v.lose || 'LOSER');
 
   // 4. Instructions appended to the prompt: show verdict, the player's guess,
   //    and the correct answer — so a loss makes it clear what was missed.
@@ -7087,7 +7235,9 @@ const allPresets = CAMERA_PRESETS.filter(p => {
       toggleVisiblePreset(preset.name, checkbox.checked);
     };
     
-    attachPresetLongPress(item, preset);
+    attachPresetLongPress(item, preset, () => sorted, (p, i) => _syncListHighlight(
+      document.querySelectorAll('#visible-presets-list .style-item'), p, i,
+      (k) => { currentVisiblePresetsIndex = k; updateVisiblePresetsSelection(); }));
     fragment.appendChild(item);
   });
   
@@ -8096,16 +8246,35 @@ async function showManualOptionsModal(preset, sections) {
     
     modal.style.display = 'flex';
     manualOptionsModalVisible = true;
+
+    // ALWAYS open at the top. The browser remembers this container's scroll
+    // offset while the modal is display:none and restores it on reopen, so the
+    // user lands mid-list with the (correctly selected) first option off-screen
+    // above. A single reset inside one requestAnimationFrame runs before layout
+    // of the just-shown modal and loses that race on a slow device.
+    // Force layout first, then reset now, on the next two frames, and once more
+    // on a timer. Belt and braces, and all of them are cheap no-ops if already 0.
+    const _optScroll = document.querySelector('#manual-options-modal .styles-menu-scroll-container');
+    const _resetOptScroll = () => {
+      if (_optScroll) _optScroll.scrollTop = 0;
+      if (list) list.scrollTop = 0;
+    };
+    if (_optScroll) void _optScroll.offsetHeight;   // force layout so scrollTop sticks
+    _resetOptScroll();
     requestAnimationFrame(() => {
-        const _optScrollContainer = document.querySelector('#manual-options-modal .styles-menu-scroll-container');
-        if (_optScrollContainer) _optScrollContainer.scrollTop = 0;
+      _resetOptScroll();
+      requestAnimationFrame(_resetOptScroll);
     });
+    setTimeout(_resetOptScroll, 60);
 
     const closeBtn = document.getElementById('close-manual-options');
     const cancelBtn = document.getElementById('cancel-manual-options');
     const confirmBtn = document.getElementById('confirm-manual-options');
     
     const cleanup = () => {
+        // Scroll back to the top BEFORE hiding, so there is no remembered
+        // offset for the browser to restore the next time this modal opens.
+        _resetOptScroll();
         modal.style.display = 'none';
         manualOptionsModalVisible = false;
       if (closeBtn) closeBtn.onclick = null;
@@ -11004,6 +11173,12 @@ window.addEventListener('sideClick', () => {
 window.addEventListener('scrollUp', () => {
   console.log('Scroll wheel: up');
 
+  // Preset preview image — highest priority, it covers the whole screen.
+  // Wheel up = previous preset, matching every other list in the program.
+  if (_previewOverlayIsOpen()) { _previewStepSibling(-1); return; }
+  if (window.presetImporter && typeof presetImporter._previewImageOpen === 'function'
+      && presetImporter._previewImageOpen()) { presetImporter._stepPreviewImage(-1); return; }
+
   // Manual options modal
     if (document.getElementById('manual-options-modal')?.style.display === 'flex') {
         const scrollContainer = document.querySelector('#manual-options-modal .styles-menu-scroll-container');
@@ -11176,6 +11351,12 @@ window.addEventListener('scrollUp', () => {
 
 window.addEventListener('scrollDown', () => {
   console.log('Scroll wheel: down');
+
+  // Preset preview image — highest priority, it covers the whole screen.
+  // Wheel down = next preset, matching every other list in the program.
+  if (_previewOverlayIsOpen()) { _previewStepSibling(1); return; }
+  if (window.presetImporter && typeof presetImporter._previewImageOpen === 'function'
+      && presetImporter._previewImageOpen()) { presetImporter._stepPreviewImage(1); return; }
 
 // Manual options modal
     if (document.getElementById('manual-options-modal')?.style.display === 'flex') {
