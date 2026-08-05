@@ -2927,10 +2927,11 @@ async function selectPreset(preset) {
 // prompt. Normal preset behaviour is untouched — this logic only runs in-game.
 
 // The games this framework offers, by preset name.
-const GAME_PRESET_NAMES = ['BATTLESHIP', 'CLUE', 'GUESS WHO', 'HIDE AND SEEK', 'ROCK PAPER SCISSORS LIZARD SPOCK', 'SLOT MACHINE', 'WORDLE'];
+const GAME_PRESET_NAMES = ['BATTLESHIP', 'CLUE', 'GUESS WHO', 'HIDE AND SEEK', 'ROCK PAPER SCISSORS LIZARD SPOCK', 'SLOT MACHINE', 'WHACK-A-MOLE', 'WORDLE'];
 
 let _gameActivePreset = null;      // the preset chosen for this game round
 let _gameSelections = {};          // groupIndex -> chosen option index
+let _gamePickerIndex = 0;          // scroll-wheel highlight in the Pick a Game list
 
 // Look up a game preset by name in the loaded presets.
 function _findGamePreset(name) {
@@ -2946,6 +2947,36 @@ function _isGamePresetImported(name) {
   } catch (e) { return false; }
 }
 
+// ── Scroll-wheel / side-button support for the Pick a Game list ──
+function _isGameModalOpen() {
+  return document.getElementById('game-modal')?.style.display === 'flex';
+}
+// True while step 1 (the game list) is showing, false once options are up.
+function _isGamePickerVisible() {
+  return _isGameModalOpen() &&
+         document.getElementById('game-picker')?.style.display !== 'none';
+}
+function _getGamePickerItems() {
+  return Array.from(document.querySelectorAll('#game-picker .game-picker-item'));
+}
+function _updateGamePickerSelection() {
+  const items = _getGamePickerItems();
+  if (items.length === 0) return;
+  items.forEach(el => el.classList.remove('game-picker-selected'));
+  _gamePickerIndex = Math.max(0, Math.min(_gamePickerIndex, items.length - 1));
+  const cur = items[_gamePickerIndex];
+  if (cur) {
+    cur.classList.add('game-picker-selected');
+    cur.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+}
+function _moveGamePicker(direction) {
+  const items = _getGamePickerItems();
+  if (items.length === 0) return;
+  _gamePickerIndex = Math.max(0, Math.min(items.length - 1, _gamePickerIndex + direction));
+  _updateGamePickerSelection();
+}
+
 // Open the game modal (Step 1: pick a game).
 function openGameModal() {
   const modal = document.getElementById('game-modal');
@@ -2956,8 +2987,11 @@ function openGameModal() {
   document.getElementById('game-modal-footer').style.display = 'none';
   document.getElementById('game-picker').style.display = 'block';
   document.getElementById('game-modal-title').textContent = '🎲 Pick a Game';
+  // ALWAYS start on the first game, never where the user left off last time.
+  _gamePickerIndex = 0;
   _renderGamePicker();
   modal.style.display = 'flex';
+  _updateGamePickerSelection();
 }
 
 function closeGameModal() {
@@ -2972,17 +3006,20 @@ function _renderGamePicker() {
   const picker = document.getElementById('game-picker');
   if (!picker) return;
   picker.innerHTML = '';
-  GAME_PRESET_NAMES.forEach(name => {
+  GAME_PRESET_NAMES.forEach((name, gameIndex) => {
     const preset = _findGamePreset(name);
     const imported = preset && _isGamePresetImported(name);
     const btn = document.createElement('button');
     btn.className = 'game-picker-item' + (imported ? '' : ' locked');
     if (imported) {
       btn.innerHTML = name + '<span class="game-sub">Tap to play</span>';
-      btn.addEventListener('click', () => _startGame(preset));
+      // Touching a game also moves the highlight, so touch and wheel agree.
+      btn.addEventListener('click', () => { _gamePickerIndex = gameIndex; _startGame(preset); });
     } else {
       btn.innerHTML = name + '<span class="game-sub">\u26a0\ufe0f Not imported yet \u2014 import "' + name + '" from Import Presets to play</span>';
       btn.addEventListener('click', () => {
+        _gamePickerIndex = gameIndex;
+        _updateGamePickerSelection();
         alert('To play ' + name + ', first import the "' + name + '" preset from the Import Presets section.');
       });
     }
@@ -10924,6 +10961,22 @@ window.addEventListener('sideClick', () => {
     return;
   }
 
+  // Game modal — checked FIRST because it sits above the gallery and the image
+  // viewer, both of which stay display:flex behind it. Without this the side
+  // button would fall through and fire the magic button, submitting the photo
+  // with no game attached.
+  if (_isGameModalOpen()) {
+    if (_isGamePickerVisible()) {
+      const items = _getGamePickerItems();
+      const cur = items[_gamePickerIndex];
+      if (cur) cur.click();               // locked games show their own message
+    } else {
+      const playBtn = document.getElementById('game-submit-btn');
+      if (playBtn && !playBtn.disabled) playBtn.click();
+    }
+    return;
+  }
+
   // Gallery — side button opens or checks the highlighted item
   const galleryModalOpen = document.getElementById('gallery-modal')?.style.display === 'flex';
   if (galleryModalOpen) {
@@ -11179,6 +11232,17 @@ window.addEventListener('scrollUp', () => {
   if (window.presetImporter && typeof presetImporter._previewImageOpen === 'function'
       && presetImporter._previewImageOpen()) { presetImporter._stepPreviewImage(-1); return; }
 
+  // Game modal. Step 1 moves the highlight through the game list; step 2 just
+  // scrolls the options, like the regular options modal does.
+  if (_isGameModalOpen()) {
+    if (_isGamePickerVisible()) { _moveGamePicker(-1); }
+    else {
+      const _gb = document.getElementById('game-modal-body');
+      if (_gb) _gb.scrollTop = Math.max(0, _gb.scrollTop - 80);
+    }
+    return;
+  }
+
   // Manual options modal
     if (document.getElementById('manual-options-modal')?.style.display === 'flex') {
         const scrollContainer = document.querySelector('#manual-options-modal .styles-menu-scroll-container');
@@ -11357,6 +11421,17 @@ window.addEventListener('scrollDown', () => {
   if (_previewOverlayIsOpen()) { _previewStepSibling(1); return; }
   if (window.presetImporter && typeof presetImporter._previewImageOpen === 'function'
       && presetImporter._previewImageOpen()) { presetImporter._stepPreviewImage(1); return; }
+
+  // Game modal. Step 1 moves the highlight through the game list; step 2 just
+  // scrolls the options, like the regular options modal does.
+  if (_isGameModalOpen()) {
+    if (_isGamePickerVisible()) { _moveGamePicker(1); }
+    else {
+      const _gb = document.getElementById('game-modal-body');
+      if (_gb) _gb.scrollTop = Math.min(_gb.scrollHeight - _gb.clientHeight, _gb.scrollTop + 80);
+    }
+    return;
+  }
 
 // Manual options modal
     if (document.getElementById('manual-options-modal')?.style.display === 'flex') {

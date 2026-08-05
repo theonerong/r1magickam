@@ -7039,3 +7039,12 @@ button, .touchable {
     background: #FE5F00;
     color: #000;
 }
+
+/* Scroll-wheel highlight in the Pick a Game list — matches the house style
+   used by .style-item.menu-selected in the main menu. */
+.game-picker-item.game-picker-selected {
+    background: linear-gradient(90deg, rgba(254,95,0,0.18) 0%, #2a2a2a 100%);
+    border-color: #FE5F00;
+    border-left: 3px solid #FE5F00;
+    color: #fff;
+}
