@@ -662,6 +662,10 @@ let _previewIndex = -1;
 // Called every time the preview changes preset, so the list underneath can
 // move its own highlight to match. Set per call site.
 let _previewOnNavigate = null;
+// Optional. Set ONLY by the main-menu style list. While a preview is open the
+// side button is otherwise dead; where this is set it selects the shown preset,
+// closes the preview and drops the user on the camera screen.
+let _previewOnSideSelect = null;
 
 // ── Custom preview image edit state ──
 let _previewEditMode = false;
@@ -835,9 +839,10 @@ function _previewStepSibling(direction) {
 // siblings: an array of presets, or a function returning one, in on-screen
 // order. Omit it entirely (e.g. when returning from the preview-image editor)
 // to keep whatever list was already loaded.
-function showPresetImagePreview(preset, siblings, onNavigate) {
+function showPresetImagePreview(preset, siblings, onNavigate, onSideSelect) {
   _ensurePresetPreviewOverlay();
   if (onNavigate !== undefined) _previewOnNavigate = onNavigate || null;
+  if (onSideSelect !== undefined) _previewOnSideSelect = onSideSelect || null;
   if (siblings !== undefined && siblings !== null) {
     let list;
     try { list = (typeof siblings === 'function') ? siblings() : siblings; }
@@ -858,10 +863,12 @@ function hidePresetImagePreview() {
 
 // getSiblings: optional function returning the full on-screen list this item
 // belongs to, so the preview can swipe through it. Left out -> no swiping.
-function attachPresetLongPress(item, preset, getSiblings, onNavigate) {
+function attachPresetLongPress(item, preset, getSiblings, onNavigate, onSideSelect) {
   const LONG_PRESS_MS = 600;
   let _timer = null;
-  const _fire = () => showPresetImagePreview(preset, getSiblings || [preset], onNavigate || null);
+  // Always pass the 4th arg explicitly (null when this list does not want the
+  // side button), so a callback from an earlier preview can never leak in.
+  const _fire = () => showPresetImagePreview(preset, getSiblings || [preset], onNavigate || null, onSideSelect || null);
 
   item.addEventListener('touchstart', () => {
     _timer = setTimeout(_fire, LONG_PRESS_MS);
@@ -899,7 +906,19 @@ function _handleStyleListLongPressStart(e) {
   const onNavigate = (p, i) => _syncListHighlight(
     document.querySelectorAll('#menu-styles-list .style-item'), p, i,
     (k) => { currentMenuIndex = k; updateMenuSelection(); });
-  _styleListLongPressTimer = setTimeout(() => showPresetImagePreview(preset, getSiblings, onNavigate), 600);
+  // The ONLY place the side button stays live during a preview. It selects
+  // whatever preset is currently shown (so it follows swipes), then the
+  // handler closes the preview before this runs.
+  const onSideSelect = (shownPreset, closePreview) => {
+    const originalIndex = CAMERA_PRESETS.findIndex(x => x === shownPreset);
+    if (originalIndex === -1) return;
+    closePreview();                 // close first, then leave the menu
+    currentPresetIndex = originalIndex;
+    updatePresetDisplay();
+    hideUnifiedMenu();
+  };
+  _styleListLongPressTimer = setTimeout(
+    () => showPresetImagePreview(preset, getSiblings, onNavigate, onSideSelect), 600);
 }
 
 function _handleStyleListLongPressEnd() {
@@ -2819,7 +2838,17 @@ function populatePresetList() {
     
     attachPresetLongPress(item, preset, () => sorted, (p, i) => _syncListHighlight(
       document.querySelectorAll('#preset-list .preset-item'), p, i,
-      (k) => { currentPresetIndex_Gallery = k; updatePresetSelection(); }));
+      (k) => { currentPresetIndex_Gallery = k; updatePresetSelection(); }),
+      // Side button, LOAD mode only. LOAD simply assigns the preset and closes
+      // the selector, so acting on it is safe. MULTI / LAYER / BATCH instead
+      // toggle a selection and keep the selector open, so the side button must
+      // stay completely dead there — checked live, at press time.
+      (shownPreset, closePreview) => {
+        if (isMultiPresetMode || isLayerPresetMode ||
+            isBatchPresetSelectionActive || window.batchProcessingActive) return;
+        closePreview();
+        selectPreset(shownPreset);
+      });
     list.appendChild(item);
   });
 // Update preset count
@@ -5104,18 +5133,16 @@ function selectCurrentMenuItem() {
 
   const currentItem = items[currentMenuIndex];
   if (currentItem) {
-    const styleNameElement = currentItem.querySelector('.style-name');
-    if (styleNameElement) {
-      const sortedPresets = getSortedPresets();
-      const selectedPreset = sortedPresets[currentMenuIndex];
-      if (selectedPreset) {
-        const originalIndex = CAMERA_PRESETS.findIndex(p => p === selectedPreset);
-        if (originalIndex !== -1) {
-          currentPresetIndex = originalIndex;
-          updatePresetDisplay();
-          hideUnifiedMenu();
-        }
-      }
+    // Read the index off the DOM item itself, exactly as the click handler
+    // does. Indexing getSortedPresets() instead was wrong whenever a search or
+    // category filter was active: the DOM list is filtered but that array is
+    // not, so the same index pointed at two different presets and the side
+    // button selected something other than the highlighted style.
+    const originalIndex = parseInt(currentItem.dataset.index, 10);
+    if (!isNaN(originalIndex) && CAMERA_PRESETS[originalIndex]) {
+      currentPresetIndex = originalIndex;
+      updatePresetDisplay();
+      hideUnifiedMenu();
     }
   }
 }
@@ -8748,7 +8775,7 @@ const TOUR_STEPS = [
   { section: 'Settings', title: '⚙️ Button Settings', body: 'Includes the settings for the main camera screen carousel and the Gallery Image Viewer screen carousel buttons. You may select different colors for buttons and text in the main camera and gallery image viewer screens. You may also select opacity (default solid) and set how many taps to hide/reveal the buttons.' },
   { section: 'Settings', title: '📖 Tutorial', body: 'Last section in the settings. This area includes this audio tour. It also includes an indexed tutorial with a search engine. Type to search or click on the search field and press the side button to speak the query.' },
   { section: 'Tips and Advanced', title: '🏷️ Category Searching', body: 'Every preset has categories. When a preset is highlighted in the Visible Presets menu, its categories appear at the bottom. Tap a category to filter all presets in that group.' },
-  { section: 'Tips and Advanced', title: '🖼️ Preview Preset', body: 'When you long press on a preset, you are provided a sample image preview of what the style will look like. Once the preview image is visible, you can scroll presets using preview images by either touch scrolling up/down or using the scroll wheel.' },
+  { section: 'Tips and Advanced', title: '🖼️ Preview Preset', body: 'When you long press on a preset, you are provided a sample image preview of what the style will look like. Once the preview image is visible, you can scroll presets using preview images by either touch scrolling up/down or using the scroll wheel. Within two areas of the program, pressing the r1 device\u0027s side button selects the preview image being viewed: the Main Menu AI preset list and the gallery load preset list.' },
   { section: 'Tips and Advanced', title: '🧠 Master Prompt Power Tip', body: 'Search for master or master prompt in the Visible Presets menu to find presets designed to work with Master Prompt. These respond to names, occasions, and custom context you provide. All presets may be affected by the Master Prompt. Add several master prompts to your preset by activating them.' },
   { section: 'Tips and Advanced', title: '📶 Offline Queue', body: 'If you take photos and the program goes offline - no worries - photos queue automatically and may be synced to the rabbit hole once your connection returns. The queue count shows on the screen.' },
   { section: 'Tips and Advanced', title: '🔁 Reset Database', body: 'The nuclear option in Settings. Revert individual settings, presets, credits, images or entire program to default. All custom work deleted. Use only if something is seriously broken. Once you reset any portion of the database, RESTART PROGRAM FOR SETTINGS TO RESET CLEANLY.' },
@@ -10958,6 +10985,29 @@ window.addEventListener('sideClick', () => {
   // (Navigation is on-screen Back/Next; the scroll wheel scrolls the text.)
   if (tourActive) {
     tourToggleSpeak();
+    return;
+  }
+
+  // Preset preview image — TOPMOST overlay, so it is checked before anything
+  // else. The side button is DISABLED while a preview is open: without this it
+  // fell through and acted on the list hidden behind the modal (selecting a
+  // preset and exiting to the camera, toggling visibility, applying a preset).
+  // The single exception is the main-menu style list, which supplies
+  // _previewOnSideSelect below.
+  if (_previewOverlayIsOpen()) {
+    const act = _previewOnSideSelect;
+    const shownPreset = _previewEditPreset;     // follows whatever was swiped to
+    if (typeof act === 'function' && shownPreset) {
+      // The callback is handed a closer and decides for itself. One that
+      // declines (wrong mode) simply never calls it, so nothing happens at
+      // all and the preview is left exactly as it was.
+      act(shownPreset, hidePresetImagePreview);
+    }
+    return;   // everywhere else: do nothing at all
+  }
+  // Import list has its own separate preview overlay. Side button does nothing.
+  if (window.presetImporter && typeof presetImporter._previewImageOpen === 'function'
+      && presetImporter._previewImageOpen()) {
     return;
   }
 
