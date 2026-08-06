@@ -3057,6 +3057,19 @@
     "additionalInstructions": ""
   },
   {
+    "name": "ARTE NUCLEARE",
+    "category": [
+      "ART",
+      "PAINTING",
+      "ITALIAN",
+      "EXPERIMENTAL"
+    ],
+    "message": "Take a picture and transform the image into an Arte Nucleare painting in the style of Enrico Baj and Sergio Dangelo. The image should evoke the atomic age anxiety of 1950s Italy — depicting the subject as if caught in nuclear transformation. Forms should appear to dissolve, mutate, and radiate energy. Use explosive, radiating compositions with forms breaking apart into particles and energy waves. The palette should feature intense, radioactive-looking colors — toxic greens, hot oranges, electric blues — against dark, charred backgrounds. The overall effect should be simultaneously playful and terrifying, combining childlike spontaneity with atomic-age dread.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n• Preserve subject identity while showing nuclear transformation\n• Forms should appear to dissolve and radiate outward\n• Explosive, centrifugal compositions\n• Intense, radioactive color palette: toxic greens, hot oranges, electric blues\n• Dark, charred backgrounds suggesting aftermath\n• Reference Enrico Baj and the Nuclear Art Movement of 1951\n• Combine playful spontaneity with atomic-age anxiety\n• Include radiating lines, particle effects, and dissolution\n• The subject should appear caught mid-transformation\n• Visible, energetic brushwork with drips and splatters"
+  },
+  {
     "name": "ARTE POVERA",
     "category": [
       "ART",
@@ -3782,6 +3795,19 @@
     }
     ],
     "additionalInstructions": "The transformed Beanie Baby must clearly resemble the subject while appearing to be an authentic TY plush toy designed specifically around the subject's identity."
+  },
+  {
+    "name": "BEAUTY PHOTOGRAPHY CLOSE-UP",
+    "category": [
+      "PHOTOGRAPHY",
+      "FASHION",
+      "BEAUTY",
+      "PORTRAIT"
+    ],
+    "message": "Take a picture and transform it into a high-end beauty photography close-up — the ultra-detailed, perfectly-lit facial portrait used in cosmetics and skincare advertising. The subject's face should fill the frame with flawless, luminous skin, precise makeup application visible in extraordinary detail, and the kind of controlled studio lighting that makes every texture and color sing.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "VISUAL REQUIREMENTS:\n• Extreme close-up framing: face fills entire frame\n• Flawless, luminous skin with visible healthy texture (not plastic)\n• Precise, editorial makeup visible in fine detail\n• Multiple light sources creating dimension without harsh shadows\n• Catchlights in eyes creating life and sparkle\n• Every eyelash, pore, and lip texture rendered in sharp detail\n• Clean, simple background (white, gradient, or colored)\n• Color accuracy critical for skin tones and makeup colors\n• Reference photographers: Mario Testino, Patrick Demarchelier, Solve Sundsbo (beauty work)"
   },
   {
     "name": "BEHIND BARS",
@@ -5508,6 +5534,19 @@
     "additionalInstructions": "• Transform ONLY the subject.\n• Keep the background completely unchanged.\n• Preserve the original environment, lighting, perspective, colors, shadows, and every background object exactly as photographed.\n• Completely discard the original subject before reconstruction.\n• Do NOT place mirror pieces over the original person.\n• Do NOT blend photographic textures with mirror fragments.\n• Every visible part of the subject must be created entirely from real broken mirror pieces.\n• Preserve the subject's exact identity, facial structure, hairstyle, hair color, expression, age, ethnicity, body proportions, pose, silhouette, and recognizable features.\n• Facial features must emerge solely through intelligent arrangement of mirror fragments.\n• Every mirror piece must remain recognizable as an individual physical shard.\n• Preserve authentic mirror details including reflective glass surface, silver backing, thickness, sharp irregular edges, cracks, scratches, and reflections.\n• Never flatten mirror pieces into simple gray shapes.\n• Never create a digital chrome or reflection filter.\n• Use thousands of individual mirror fragments depending on image complexity.\n• Arrange fragments with realistic spacing, overlap, orientation, and physical depth.\n• Each mirror shard should reflect portions of the environment and light differently.\n• Use smaller fragments for eyes, facial details, and fine features.\n• Use larger fragments for broad areas such as clothing and body regions.\n• Hair must be reconstructed entirely from mirror fragments using appropriate shapes, reflections, and placement.\n• Clothing must also be rebuilt entirely from broken mirror pieces.\n• Preserve realistic shadows, highlights, and reflected light created by the uneven surfaces.\n• Avoid duplicated reflection patterns unless naturally caused by mirror placement.\n• The finished artwork should look like a real handcrafted broken mirror portrait photographed after completion.\n• Master prompt instructions always override the selected option whenever conflicts occur.\n\nFINAL VALIDATION — Before producing the final image, verify ALL of the following:\n\n✓ ONLY the subject has been transformed.\n✓ The background remains completely unchanged.\n✓ No original photographic pixels remain on the subject.\n✓ The subject is entirely reconstructed from real broken mirror fragments.\n✓ Mirror pieces are not simply placed over the original subject.\n✓ Individual shards, edges, reflections, and cracks remain visible.\n✓ Mirror material, reflections, and physical depth are realistic.\n✓ Facial features are created through mirror fragment arrangement, not retained photography.\n✓ The subject remains immediately recognizable.\n✓ The artwork resembles a genuine handcrafted broken mirror mosaic.\n✓ If ANY answer is NO, regenerate the image until every requirement is satisfied."
   },
   {
+    "name": "BROMOIL TRANSFER PRINT",
+    "category": [
+      "PHOTOGRAPHY",
+      "ALTERNATIVE PROCESS",
+      "HANDMADE",
+      "VINTAGE"
+    ],
+    "message": "Take a picture and transform the image into a bromoil transfer print — the historic photographic process where a gelatin silver print is bleached and then inked by hand with oil-based pigments using brushes. The image should show the characteristic soft, painterly quality of hand-applied ink with visible brush marks, slightly uneven tonal coverage, and the warm, rich tones of oil-based pigment on textured paper. Highlights should show the bare paper texture where ink has been rejected by hardened gelatin. The overall effect should be a unique hybrid of photography and painting — each print clearly handmade and unrepeatable.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n• Preserve subject identity with soft, painterly rendering\n• Visible brush marks from hand-applied ink\n• Slightly uneven tonal coverage — handmade quality\n• Warm, rich tones of oil-based pigment\n• Paper texture visible in highlights\n• Reference the bromoil process popular 1907-1940s\n• Soft focus quality inherent to the process\n• The image should clearly be handmade — no two prints identical\n• Warm brown or sepia tones from oil-based inks\n• The overall effect should bridge photography and painting"
+  },
+  {
     "name": "BRUTALISM",
     "category": [
       "ART", 
@@ -6290,6 +6329,19 @@
     "additionalInstructions": "• Preserve recognizable identity of the subject\n• Transform the subject into a miniature version of themselves\n• Place a broken half-eggshell on top of the subject's head\n• Ensure the eggshell is clearly visible and immediately recognizable\n• Create strong underdog visual storytelling\n• Make surrounding objects and environments appear significantly larger than the subject\n• Emphasize innocence, charm, determination, and vulnerability\n• Preserve facial identity while enhancing expressive emotional reactions\n• Use whimsical, storybook-like visual presentation\n• Create humorous situations where the subject appears small compared to the world around them\n• Maintain a family-friendly tone\n• Avoid dark or depressing interpretations\n• Ensure the subject remains human and recognizable\n• The final image should resemble an iconic underdog character experiencing a world that feels much larger than they are while proudly wearing the signature eggshell on their head"
   },
   {
+    "name": "CALLIGRAFFITI",
+    "category": [
+      "STREET ART",
+      "CALLIGRAPHY",
+      "GRAFFITI",
+      "FUSION"
+    ],
+    "message": "Take a picture and transform it into a calligraffiti artwork — the fusion of traditional calligraphy with street art graffiti. The subject should be expressed through flowing calligraphic letterforms executed at large scale with spray paint or ink on an urban wall — where the beauty of written script becomes abstract gestural art, and the subject's essence is encoded in the rhythm and flow of the calligraphic marks.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "VISUAL REQUIREMENTS:\n• Large-scale calligraphic letterforms executed with spray paint or ink\n• Flowing, gestural quality combining calligraphic discipline with graffiti freedom\n• Arabic, Asian, or Latin calligraphic traditions reinterpreted at street scale\n• Dynamic composition with sweeping curves and precise terminals\n• Limited palette: often black/gold, or single color on white/concrete\n• Urban wall surface with calligraphic marks as primary visual element\n• Subject's portrait suggested within or alongside the calligraphic forms\n• Reference artists: eL Seed, Retna, Niels Shoe Meulman, Said Dokins, Pokras Lampas"
+  },
+  {
     "name": "CALVIN & HOBBES",
     "category": [
       "COMIC STRIP",
@@ -6302,6 +6354,19 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "• Preserve recognizable identity\n• Subject redrawn in comic-strip style\n• Subject interacts naturally with Calvin\n• Subject interacts naturally with Hobbes\n• Newspaper-comic presentation\n• Hand-drawn ink lines\n• Watercolor-inspired coloring when appropriate\n• Expressive cartoon acting\n• Imaginative childhood adventures\n• Whimsical humor\n• Comic-strip panel layout\n• Speech balloons when appropriate\n• Classic newspaper-comic aesthetics\n• No photorealism\n• Final image should resemble an authentic Calvin & Hobbes comic strip"
+  },
+  {
+    "name": "CAMERA LUCIDA DRAWING",
+    "category": [
+      "ART",
+      "DRAWING",
+      "OPTICAL",
+      "PRECISE"
+    ],
+    "message": "Take a picture and transform the image into a camera lucida drawing — the precise, optically-aided drawing technique where an artist traces the subject's image superimposed on their drawing paper through a prism. The drawing should show the characteristic qualities of camera lucida work: extraordinary accuracy of proportion and perspective, fine pencil or ink lines with the slightly hesitant quality of tracing a projected image, and the selective detail typical of an artist choosing what to include and what to omit from the optical projection. The drawing should be on cream or white paper with graphite or fine ink lines. Include the slight inconsistencies where the artist's hand deviated from the optical guide.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n• Preserve subject identity with extraordinary proportional accuracy\n• Fine pencil or ink lines on cream/white paper\n• Slightly hesitant line quality from tracing projected image\n• Selective detail — some areas fully rendered, others sketched\n• Reference David Hockney's research on optical aids in art\n• Extraordinary accuracy of proportion and perspective\n• The drawing should feel traced but artistically selective\n• Some areas more detailed than others (artist's choice)\n• Graphite or fine ink medium\n• The overall effect should be precise, selective, and optically accurate"
   },
   {
     "name": "CAMDEN TOWN GROUP",
@@ -6521,6 +6586,19 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "ABSOLUTE PROHIBITIONS:\n• No partial cardboard transformation\n• No realistic skin texture or depth\n• No floating or leaning without support\n• No converting more than one subject\n\nTONE:\n• Playful\n• Deadpan\n• Slightly absurd\n• Grounded in reality\n\nFINAL RESULT:\nThe final image must look like a real photograph of a life-size cardboard standee placed in a real environment — unmistakably flat, printed, and supported — standing alongside real people who remain fully normal."
+  },
+  {
+    "name": "CARBON TRANSFER PRINT",
+    "category": [
+      "PHOTOGRAPHY",
+      "ALTERNATIVE PROCESS",
+      "ARCHIVAL",
+      "RICH"
+    ],
+    "message": "Take a picture and transform the image into a carbon transfer print — the permanent photographic process using pigmented gelatin transferred to a final support paper. The image should show the characteristic qualities of carbon printing: extraordinarily rich, deep shadows with a slight dimensional relief, smooth continuous tones, and the ability to use any pigment color (though traditionally carbon black or warm sepia). The gelatin relief should be subtly visible — shadows slightly raised above highlights. The paper support should be smooth, high-quality, and the image should have the permanent, archival quality of pure pigment in hardened gelatin. The overall effect should be rich, permanent, and technically masterful.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n• Preserve subject identity with rich tonal rendering\n• Extraordinarily deep, rich shadows\n• Subtle dimensional relief — shadows raised above highlights\n• Smooth continuous tones without grain\n• Reference the carbon transfer process and its practitioners\n• Any pigment color possible but traditionally black or sepia\n• Smooth, high-quality paper support\n• Permanent, archival quality\n• The overall effect should be rich, deep, and technically perfect\n• The deepest blacks achievable in any photographic process"
   },
   {
     "name": "CARICATURE",
@@ -8745,6 +8823,20 @@
     "additionalInstructions": ""
   },
   {
+    "name": "COFFEE RING STAIN ART",
+    "category": [
+      "ART",
+      "ORGANIC",
+      "MINIMAL",
+      "BROWN",
+      "FOUND ART"
+    ],
+    "message": "Take a picture and transform it into coffee ring stain art \u2014 the subject's portrait created entirely from overlapping coffee cup ring stains on white paper. Each ring should be a perfect circle of dried coffee (varying in darkness from light tan to deep espresso brown), and the portrait should emerge from the strategic placement and overlapping of hundreds of these rings. The paper should show realistic coffee staining \u2014 darker at the ring edges where liquid pooled during evaporation, lighter in centers, with occasional drip marks and splatter. The overall effect should be a recognizable portrait that appears to have been created by obsessively placing coffee cups on paper in precise patterns.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "Each coffee ring must look like a real dried coffee stain \u2014 darker at edges, lighter in center. The portrait must emerge from ring placement, not from painting. The white paper should be visible between rings. Subject must be clearly recognizable from the ring pattern."
+  },
+  {
     "name": "COINED",
     "category": [
       "MONEY",
@@ -8984,6 +9076,19 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "COLLAGE DÉCOLLAGE",
+    "category": [
+      "ART",
+      "MIXED MEDIA",
+      "COLLAGE",
+      "URBAN"
+    ],
+    "message": "Take a picture and transform it into a Décollage artwork — the opposite of collage. Rather than building up by adding materials, the image should appear created by tearing away layers of pasted posters, advertisements, and printed materials to reveal fragments beneath. The subject should emerge from torn, weathered layers of street posters, creating a portrait through strategic removal and the beauty of accumulated urban paper archaeology.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "VISUAL REQUIREMENTS:\n• Multiple layers of torn posters, advertisements, and printed materials\n• Subject's features emerging through strategic tears revealing layers beneath\n• Weathered, rain-damaged paper textures with peeling edges\n• Fragments of typography, photographs, and colored paper visible in layers\n• Urban wall texture visible as the base surface\n• Torn edges creating organic shapes that define the subject's features\n• Aged, sun-faded colors in the paper layers\n• Reference artists: Jacques Villeglé, Raymond Hains, Mimmo Rotella, Wolf Vostell"
   },
   {
     "name": "COLLAGRAPH PRINT",
@@ -10428,6 +10533,19 @@
   "additionalInstructions": "FINAL RESULT:\nA single image showing ONLY the final recipe result. The result must clearly reflect the cooking level as a stage of development (early → mid → complete → premium → chaotic). If the stage is not obvious, the result is incorrect."
   },
   {
+    "name": "COPTIC TEXTILE WEAVING",
+    "category": [
+      "ART",
+      "TEXTILE",
+      "ANCIENT",
+      "WOVEN"
+    ],
+    "message": "Take a picture and transform the image into a Coptic textile design — the richly decorated woven tapestries of late antique Egypt (3rd-7th century CE). The subject should be rendered in the characteristic style of Coptic tapestry weaving: bold, simplified figures with large eyes and frontal poses, surrounded by geometric borders and stylized floral motifs. The color palette should feature the natural dye colors available in late antiquity: deep indigo, madder red, saffron yellow, and undyed linen cream. The weave structure should be visible — the image clearly constructed from interlocking warp and weft threads. Include decorative roundels, vine scrolls, and geometric border patterns.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n• Preserve subject identity in Coptic textile style\n• Bold, simplified figures with large eyes and frontal poses\n• Visible weave structure — warp and weft threads\n• Natural dye palette: indigo, madder red, saffron, undyed linen\n• Geometric borders and stylized floral motifs\n• Reference Coptic textiles from the 3rd-7th century CE\n• Decorative roundels and vine scroll patterns\n• The figures should be stylized but recognizable\n• Linen ground with colored wool tapestry inserts\n• The overall effect should be ancient, decorative, and textile-based"
+  },
+  {
     "name": "COPY-CAT",
     "category": [
       "OPTIONS",
@@ -10920,10 +11038,19 @@
       "COLORFUL",
       "ANALOG"
     ],
-    "message": "Take a picture and transform it to look like cross-processed slide film (E-6 film processed in C-41 chemistry). This creates the distinctive cross-processing look: extreme color shifts (typically strong cyan/blue shadows and yellow/green highlights), increased contrast with crushed shadows, color casts that shift across the tonal range, and unpredictable saturation boosts. The effect should feel authentically chemical \u2014 not a simple color filter but the complex, non-linear color response of actual cross-processing where different layers of the film respond differently to the wrong chemistry. Include slight film base color and sprocket hole edges for authenticity.",
-    "randomizeOptions": false,
-    "options": [],
-    "additionalInstructions": "The color shifts must feel chemical and non-linear \u2014 different in shadows vs. highlights. The effect should be strong but not so extreme that the subject is unrecognizable. Include analog film artifacts for authenticity."
+    "message": "Take a picture and transform the image into a cross-processed photograph — the look achieved by developing slide film (E-6) in negative film chemistry (C-41) or vice versa. The image should feature dramatically shifted colors with extreme contrast, heavy color casts, and unpredictable tonal curves. Shadows should take on deep blue or green casts while highlights push toward yellow or magenta. Saturation should be extreme and unnatural, with colors that could never exist in reality. Include increased grain, slight color fringing, and the characteristic high-contrast, punchy look of cross-processed transparency film.",
+    "options": [
+      {
+        "id": "001",
+        "text": "E-6 in C-41 (slide film in negative chemistry) — extreme contrast, saturated colors, green/blue shadows, yellow/magenta highlights, punchy and vivid"
+      },
+      {
+        "id": "002",
+        "text": "C-41 in E-6 (negative film in slide chemistry) — low contrast, muted and pastel colors, heavy orange cast, flat tonal range, dreamy and washed out"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n• Preserve subject identity\n• Dramatically shifted, unnatural colors\n• Extreme contrast (for E-6 in C-41) or flat contrast (for C-41 in E-6)\n• Heavy color casts in shadows and highlights\n• Increased film grain\n• Reference the cross-processing aesthetic popular in 1990s fashion photography\n• Colors should be impossible in natural photography\n• The overall effect should be bold, experimental, and distinctly analog\n• Include slight color fringing and film artifacts\n• The look should be unmistakably cross-processed, not just color-graded"
   },
   {
     "name": "CROSS-SECTION",
@@ -12168,7 +12295,7 @@
     "message": "Take a picture and transform the image into Demoscene art. Preserve subject identity. Use the aesthetic of 1990s computer demo competitions with plasma effects, tunnel renders, copper bars, and scrolling text. Emphasize technical showmanship, Amiga/Atari-era color palettes, and real-time rendered visual effects.",
     "options": [],
     "randomizeOptions": false,
-    "additionalInstructions": ""
+    "additionalInstructions": "STYLE ENFORCEMENT:\n• Preserve subject identity within demoscene aesthetic\n• Classic effects: plasma, copper bars, rasters, starfields\n• Limited hardware color palettes with dithering\n• Scrolling text banner\n• Reference Amiga, C64, and Atari ST demo productions\n• Technical showmanship within constraints\n• Include at least one classic effect (plasma, tunnel, etc.)\n• Pixel-level precision and dithering patterns\n• The overall effect should feel like a real demo screenshot\n• Beauty emerging from severe technical limitations."
   },
   {
     "name": "DENDRITIC CRYSTAL GROWTH",
@@ -18768,6 +18895,36 @@
     "additionalInstructions": "IDENTITY PRESERVATION (CRITICAL):\n• The dense clusters of jagged crystal points must precisely vary in height, density, and color to map out the recognizable face of the subject\n• Darker amethyst points or shadowed crystal gaps can define features like the eyes, eyebrows, and jawlines, while lighter or larger crystal clusters map out cheekbones and the nose\n• The silhouette of the hair should merge beautifully into the outer agate banding or dense clusters of crystal terminating points\n\nANTI-CHEAT:\n• Do not paste a human photograph inside a rock\n• Do not do a face swap with a stone texture\n• Do not leave organic skin, real hair, or human eyes visible\n• The subject cannot be a person covered in loose glitter or rhinestones; they must be a genuine hollow geological geode formation\n\nFINAL RESULT:\nThe subject must become a stunning, split-open museum-grade geode. The entire facial structure and identity must be composed of thousands of glittering crystal points inside a hollow, rock-shelled cavern. The image should immediately evoke natural history treasure vaults, high-end mineral collecting, and deep geological time while maintaining perfect recognition of the subject through crystal formations."
   },
   {
+    "name": "GEOMETRIC ABSTRACTION",
+    "category": [
+      "ART",
+      "ABSTRACT",
+      "GEOMETRIC",
+      "MODERN"
+    ],
+    "message": "Take a picture and transform it into a Geometric Abstraction composition. The subject should be reduced to its essential geometric components — circles, triangles, rectangles, and lines — arranged in a precisely balanced composition. Every element should be mathematically considered, creating visual harmony through proportion, rhythm, and the careful distribution of geometric forms across the picture plane.",
+    "options": [
+      {
+        "id": "001",
+        "text": "Suprematist-influenced — floating geometric forms on white ground suggesting dynamic movement"
+      },
+      {
+        "id": "002",
+        "text": "Constructivist-influenced — interlocking geometric planes suggesting architectural structure"
+      },
+      {
+        "id": "003",
+        "text": "Concrete Art — pure geometric forms with no reference to external reality, mathematical precision"
+      },
+      {
+        "id": "004",
+        "text": "Neo-Geo — geometric forms with industrial materials aesthetic, metallic and synthetic colors"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "VISUAL REQUIREMENTS:\n• Pure geometric forms: circles, squares, triangles, lines, arcs\n• Precise mathematical relationships between elements\n• Clean, flat color application with no visible brushwork\n• Balanced composition through careful distribution of visual weight\n• Limited but impactful color palette\n• No organic or biomorphic forms\n• Subject's structural essence distilled into geometric relationships\n• Reference artists: Kazimir Malevich, Piet Mondrian, Josef Albers, Max Bill, Bridget Riley"
+  },
+  {
     "name": "GEOMETRIC MONOCHROME RICE EXPRESSION",
     "category": [
       "ART",
@@ -19060,6 +19217,19 @@
     "additionalInstructions": ""
   },
   {
+    "name": "GOLDEN AGE TECHNICOLOR",
+    "category": [
+      "CINEMATIC",
+      "VINTAGE",
+      "COLOR",
+      "CLASSIC"
+    ],
+    "message": "Take a picture and transform it into a Golden Age Technicolor film still from the 1950s. The subject should be rendered with the hyper-saturated, slightly artificial color palette of three-strip Technicolor — impossibly vivid reds, deep sapphire blues, and emerald greens that glow with an intensity beyond natural color, combined with the glamorous studio lighting of Hollywood's golden era.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "VISUAL REQUIREMENTS:\n• Hyper-saturated Technicolor palette: vivid reds, deep blues, emerald greens\n• Colors slightly beyond natural — the heightened reality of Technicolor\n• Glamorous three-point studio lighting with soft fill\n• Soft, flattering key light with minimal harsh shadows\n• Slightly warm overall tone with golden skin rendering."
+  },
+  {
     "name": "GOND ART",
     "category": [
       "ART",
@@ -19081,7 +19251,7 @@
       "FINE DETAIL",
       "ART"
     ],
-    "message": "Take a picture and transform it into a Chinese Gongbi (meticulous) painting. Gongbi is a traditional Chinese painting technique characterized by extremely fine, detailed brushwork using ink and mineral pigments on silk or sized paper. Unlike the spontaneous xieyi (freehand) style, Gongbi requires careful planning, precise outlines, and multiple layers of translucent color washes to build up rich, luminous imagery.",
+    "message": "Take a picture and transform it into a Chinese Gongbi (meticulous) painting — the highly detailed, realistic style of Chinese painting that uses precise brushwork and elaborate coloring on silk or sized paper. Gongbi is a traditional Chinese painting technique characterized by extremely fine, detailed brushwork using ink and mineral pigments on silk or sized paper. Unlike the spontaneous xieyi (freehand) style, Gongbi requires careful planning, precise outlines, and multiple layers of translucent color washes to build up rich, luminous imagery. The outline should be drawn first in fine ink lines, then filled with multiple layers of transparent mineral pigments: malachite green, azurite blue, cinnabar red, and gold. Include the characteristic gongbi qualities: precise detail, luminous layered color, and the smooth silk or paper ground.",
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Extremely fine detailed brushwork\n• Precise ink outlines\n• Multiple translucent color wash layers\n• Silk or sized paper texture\n• Traditional Chinese mineral pigments"
@@ -19650,10 +19820,10 @@
       "CLASSIC",
       "TECHNIQUE"
     ],
-    "message": "Take a picture and transform the image into a Grisaille painting — a monochromatic work executed entirely in shades of gray. Preserve subject identity with careful attention to form and volume. The entire image must use only neutral grays ranging from pure white to deep black, with no color whatsoever. Render the subject with the precision and dimensionality of a sculptural relief, using subtle gradations of tone to create a convincing illusion of three-dimensional form. Lighting should be dramatic and directional, with strong highlights and deep shadows that define every contour. The technique should reference Renaissance and Northern European grisaille traditions, where monochrome paintings were used to simulate stone sculpture or as underpaintings. Smooth oil painting texture with refined, controlled brushwork and seamless tonal transitions.",
+    "message": "Take a picture and transform the image into a Grisaille painting — a monochromatic work executed entirely in shades of gray used as the first stage of traditional oil painting before color glazes are applied. Preserve subject identity with careful attention to form and volume. The entire image must use only neutral grays ranging from pure white to deep black, with no color whatsoever. Render the subject with the precision and dimensionality of a sculptural relief, using subtle gradations of tone to create a convincing illusion of three-dimensional form. Lighting should be dramatic and directional, with strong highlights and deep shadows that define every contour. The technique should reference Renaissance and Northern European grisaille traditions, where monochrome paintings were used to simulate stone sculpture or as underpaintings. Smooth oil painting texture with refined, controlled brushwork and seamless tonal transitions.",
     "options": [],
     "randomizeOptions": false,
-    "additionalInstructions": ""
+    "additionalInstructions": "STYLE ENFORCEMENT:\n• Preserve subject identity in monochromatic gray\n• Full tonal range from white to black — no color\n• Smooth, blended oil painting technique\n• Perfect three-dimensional form through value alone\n• Reference the grisaille technique of Jan van Eyck and Caravaggio\n• Soft transitions between tones — no hard edges\n• The painting should appear as a complete work, not unfinished\n• Gray or gray-brown palette only (terre verte or raw umber acceptable)\n• Demonstrate mastery of value and form\n• The overall effect should be elegant, sculptural, and complete."
   },
   {
     "name": "GROSS ANATOMY",
@@ -19779,6 +19949,19 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "IDENTITY PRESERVATION:\n• Facial structure, proportions, and expression must remain clearly recognizable\n• No generic gummy humanoids\n• No simplification of facial features\n• The subject must still look unmistakably like themselves\n\nANTI-LAZINESS RULES:\n• NO real skin visible anywhere\n• NO realistic hair mixed with candy\n• NO smooth plastic or wax textures\n• NO partial transformations\n• Every visible surface must be candy-based\n\nLIGHTING & REALISM:\n• Studio-style lighting emphasizing translucency and gloss\n• Subsurface scattering visible through the gummy material\n• Sticky reflections and soft highlights\n• Slight imperfections like bubbles or sugar granules\n\nPOSE & PRESENTATION:\n• Subject posed like a product reveal or character portrait\n• Neutral or playful expression\n• Clean background or candy-factory-style environment\n\nFINAL RESULT:\nThe image should look like a hyper-realistic photograph of a life-sized gummy candy sculpture manufactured to resemble the subject exactly — fully edible, glossy, translucent, and unmistakably made of gummies."
+  },
+  {
+    "name": "GUTAI GROUP",
+    "category": [
+      "ART",
+      "EXPERIMENTAL",
+      "JAPANESE",
+      "PERFORMANCE"
+    ],
+    "message": "Take a picture and transform the image into a Gutai Group artwork — capturing the spirit of radical Japanese post-war experimental art. The image should show evidence of unconventional material processes: paint thrown at canvas, bodies pressed through paper, objects embedded in thick impasto, or surfaces created by walking, dragging, or mechanical action. The aesthetic should be raw, physical, and process-driven — the final image should clearly reveal HOW it was made. Use bold, saturated colors applied with violent energy. The subject should appear as if they are both the creator and the material of the artwork — their form emerging from or being consumed by the creative process itself.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n• Preserve subject identity while integrating them into the process\n• The creative process must be visible in the final result\n• Bold, saturated colors applied with physical energy\n• Reference Kazuo Shiraga, Shozo Shimamoto, and Atsuko Tanaka\n• Evidence of unconventional techniques: throwing, pressing, embedding\n• The subject should appear both as creator and material\n• Raw, physical, anti-refined aesthetic\n• Thick impasto, splattered paint, torn materials\n• The image should feel like documentation of a creative act\n• Energy and physicality over refinement and control"
   },
   {
     "name": "GYMNAST",
