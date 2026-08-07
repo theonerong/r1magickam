@@ -666,6 +666,9 @@ let _previewOnNavigate = null;
 // side button is otherwise dead; where this is set it selects the shown preset,
 // closes the preview and drops the user on the camera screen.
 let _previewOnSideSelect = null;
+// Bumped on every preview render so a slow image from a preset the user has
+// already swiped past cannot overwrite the one now on screen.
+let _previewImgRun = 0;
 
 // ── Custom preview image edit state ──
 let _previewEditMode = false;
@@ -812,19 +815,43 @@ function _renderPresetPreview(preset) {
   _presetPreviewImg.style.display = 'none';
   _presetPreviewNoImg.style.display = 'none';
 
-  // Custom preview from gallery takes priority over the default public folder image
+  // Where a preview picture can come from, best source first:
+  //   1. the image the user set themselves in this modal (or by QR) — always wins
+  //   2. an explicit imageUrl written into the preset JSON
+  //   3. the public/ folder of the EXTERNAL source this preset was imported
+  //      from (_sourcePublicBase, attached by preset-import.js)
+  //   4. this program's own public/ folder
+  // Each one is tried in turn, so a missing file simply falls through to the
+  // next rather than giving up on the first 404.
+  const safeName = preset.name.replace(/[\/\\:*?"<>|\s]/g, '_');
+  const candidates = [];
   const customImg = getCustomPreviewImage(preset.name);
-  let imageUrl;
-  if (customImg) {
-    imageUrl = customImg;
-  } else {
-    const safeName = preset.name.replace(/[\/\\:*?"<>|\s]/g, '_');
-    imageUrl = preset.imageUrl || ('./public/' + safeName + '.png');
-  }
+  if (customImg) candidates.push(customImg);
+  if (preset.imageUrl) candidates.push(preset.imageUrl);
+  if (preset._sourcePublicBase) candidates.push(preset._sourcePublicBase + safeName + '.png');
+  candidates.push('./public/' + safeName + '.png');
 
-  _presetPreviewImg.onload = () => { _presetPreviewImg.style.display = 'block'; _presetPreviewNoImg.style.display = 'none'; };
-  _presetPreviewImg.onerror = () => { _presetPreviewImg.style.display = 'none'; _presetPreviewNoImg.style.display = 'block'; };
-  _presetPreviewImg.src = imageUrl;
+  // Swiping can start a new preview before the old one finishes loading, so
+  // stamp this run and ignore callbacks from any superseded attempt.
+  _previewImgRun++;
+  const myRun = _previewImgRun;
+  let attempt = 0;
+  const tryNext = () => {
+    if (myRun !== _previewImgRun) return;          // a newer preview took over
+    if (attempt >= candidates.length) {            // nothing worked
+      _presetPreviewImg.style.display = 'none';
+      _presetPreviewNoImg.style.display = 'block';
+      return;
+    }
+    _presetPreviewImg.src = candidates[attempt++];
+  };
+  _presetPreviewImg.onload = () => {
+    if (myRun !== _previewImgRun) return;
+    _presetPreviewImg.style.display = 'block';
+    _presetPreviewNoImg.style.display = 'none';
+  };
+  _presetPreviewImg.onerror = tryNext;
+  tryNext();
 }
 
 // Swipe UP = next preset, swipe DOWN = previous. Wraps at both ends.

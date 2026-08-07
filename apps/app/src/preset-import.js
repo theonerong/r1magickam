@@ -743,6 +743,9 @@ export class PresetImporter {
       let _lastRenderedPresets = [];
       let _previewSiblings = [];
       let _previewIndex = -1;
+      // Bumped on every preview render so a slow image from a preset the user
+      // has already swiped past cannot overwrite the one now on screen.
+      let _previewImgRun = 0;
 
       // Swipe UP = next preset, DOWN = previous. Wraps at both ends.
       // The × close button stops its own touch events, so it is unaffected.
@@ -804,23 +807,43 @@ export class PresetImporter {
         previewImg.style.display = 'none';
         previewNoImg.style.display = 'none';
 
-        // Build the image URL from the preset name (spaces become underscores)
-        // If the preset came from a custom source, use that source's public folder;
-        // otherwise fall back to the program's own ./public/ folder.
+        // Same source order as the rest of the program, best first:
+        //   1. the image the user set themselves in the preview modal (or by
+        //      QR) — read straight from localStorage, same key main.js writes
+        //   2. an explicit imageUrl written into the preset JSON
+        //   3. the public/ folder of the EXTERNAL source it came from
+        //   4. this program's own public/ folder
+        // Each is tried in turn so a missing file falls through instead of
+        // giving up on the first 404.
         const safeName = preset.name.replace(/[\/\\:*?"<>|\s]/g, '_');
-        const publicBase = preset._sourcePublicBase || './public/';
-        const autoUrl = publicBase + safeName + '.png';
-        const imageUrl = preset.imageUrl || autoUrl;
+        const candidates = [];
+        let customImg = null;
+        try { customImg = localStorage.getItem('r1_custom_preview_' + preset.name); } catch (e) {}
+        if (customImg) candidates.push(customImg);
+        if (preset.imageUrl) candidates.push(preset.imageUrl);
+        if (preset._sourcePublicBase) candidates.push(preset._sourcePublicBase + safeName + '.png');
+        candidates.push('./public/' + safeName + '.png');
+
+        _previewImgRun++;
+        const myRun = _previewImgRun;
+        let attempt = 0;
+        const tryNext = () => {
+          if (myRun !== _previewImgRun) return;
+          if (attempt >= candidates.length) {
+            previewImg.style.display = 'none';
+            previewNoImg.style.display = 'block';
+            return;
+          }
+          previewImg.src = candidates[attempt++];
+        };
 
         previewImg.onload = () => {
+          if (myRun !== _previewImgRun) return;
           previewImg.style.display = 'block';
           previewNoImg.style.display = 'none';
         };
-        previewImg.onerror = () => {
-          previewImg.style.display = 'none';
-          previewNoImg.style.display = 'block';
-        };
-        previewImg.src = imageUrl;
+        previewImg.onerror = tryNext;
+        tryNext();
       };
 
       const stepPreview = (direction) => {
