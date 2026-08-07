@@ -1,8 +1,7 @@
 /* Power Grotesk Font */
 @font-face {
     font-family: 'Power Grotesk';
-    src: url('./PowerGrotesk-Regular.woff') format('woff'),
-         url('https://fonts.cdnfonts.com/s/95219/PowerGrotesk-Regular.woff') format('woff');
+    src: url('./PowerGrotesk-Regular.woff') format('woff');
     font-weight: 400;
     font-style: normal;
     font-display: swap;
@@ -10,8 +9,7 @@
 
 @font-face {
     font-family: 'Power Grotesk';
-    src: url('./PowerGrotesk-Bold.woff') format('woff'),
-         url('https://fonts.cdnfonts.com/s/95219/PowerGrotesk-Bold.woff') format('woff');
+    src: url('./PowerGrotesk-Bold.woff') format('woff');
     font-weight: 700;
     font-style: normal;
     font-display: swap;
@@ -6234,7 +6232,7 @@ body {
     background-color: rgba(20, 100, 180, 0.92);
 }
 
-/* ═══════════════════════════════════
+/* ══════════════��════════════════════
    PERFORMANCE FIX 2: Replace transition:all with specific properties
    ═══════════════════════════════════ */
 

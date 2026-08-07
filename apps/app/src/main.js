@@ -9118,9 +9118,27 @@ function toggleRandomMode() {
 function loadQueue() {
   try {
     const saved = localStorage.getItem(QUEUE_STORAGE_KEY);
-    if (saved) {
-      photoQueue = JSON.parse(saved);
+    if (!saved) return;
+    const parsed = JSON.parse(saved);
+
+    // v2 format: images are stored once and referenced by index. Rehydrate
+    // back into the plain shape the rest of the app expects, so nothing
+    // downstream needs to know this packing exists.
+    if (parsed && !Array.isArray(parsed) && parsed.v === 2 && Array.isArray(parsed.items)) {
+      const imgs = Array.isArray(parsed.images) ? parsed.images : [];
+      photoQueue = parsed.items.map(it => {
+        const copy = { ...it };
+        if (typeof copy._img === 'number') {
+          copy.imageBase64 = imgs[copy._img] || '';
+          delete copy._img;
+        }
+        return copy;
+      });
+      return;
     }
+
+    // v1 format: a plain array. Still read, so an existing queue survives.
+    photoQueue = Array.isArray(parsed) ? parsed : [];
   } catch (err) {
     console.error('Error loading queue:', err);
     photoQueue = [];
@@ -9130,7 +9148,26 @@ function loadQueue() {
 // Save queue to localStorage
 function saveQueue() {
   try {
-    localStorage.setItem(QUEUE_STORAGE_KEY, JSON.stringify(photoQueue));
+    // MULTI and LAYER queue the SAME photo once per preset. Writing N copies
+    // of the same multi-megabyte base64 string to localStorage — on every
+    // save, and the sync loop saves once per item — was the single biggest
+    // source of UI freezing, because localStorage.setItem is synchronous and
+    // blocks every tap while it runs. Store each distinct image ONCE and let
+    // the duplicates point at it. Same data, a fraction of the bytes.
+    const images = [];
+    const seen = new Map();
+    const items = photoQueue.map(it => {
+      const copy = { ...it };
+      const img = copy.imageBase64;
+      if (typeof img === 'string' && img) {
+        let idx = seen.get(img);
+        if (idx === undefined) { idx = images.length; images.push(img); seen.set(img, idx); }
+        delete copy.imageBase64;
+        copy._img = idx;
+      }
+      return copy;
+    });
+    localStorage.setItem(QUEUE_STORAGE_KEY, JSON.stringify({ v: 2, images, items }));
   } catch (err) {
     console.error('Error saving queue:', err);
     // If this fails (e.g. device storage is full), the item(s) currently in
