@@ -5547,6 +5547,20 @@
     "additionalInstructions": "STYLE ENFORCEMENT:\n• Preserve subject identity with soft, painterly rendering\n• Visible brush marks from hand-applied ink\n• Slightly uneven tonal coverage — handmade quality\n• Warm, rich tones of oil-based pigment\n• Paper texture visible in highlights\n• Reference the bromoil process popular 1907-1940s\n• Soft focus quality inherent to the process\n• The image should clearly be handmade — no two prints identical\n• Warm brown or sepia tones from oil-based inks\n• The overall effect should bridge photography and painting"
   },
   {
+    "name": "BRUCE GILDEN PHOTOJOURNALIST",
+    "category": [
+      "PHOTOGRAPHY",
+      "PHOTOJOURNALISM",
+      "STREET PHOTOGRAPHY",
+      "DOCUMENTARY",
+      "FLASH PHOTOGRAPHY"
+    ],
+    "message": "Take a picture and transform the entire image into a raw, confrontational documentary street photograph characterized by direct on-camera flash, close proximity, dramatic illumination, spontaneous human presence, strong facial detail, gritty urban atmosphere, and the immediacy of candid photojournalism.\n\nThe subject remains the central human subject and must remain immediately recognizable.\n\nCreate the visual feeling of an uncompromising street-photography encounter: direct flash freezes the subject against the surrounding environment, producing hard highlights, deep shadows, stark tonal separation, visible texture, and an unmistakably candid documentary quality.\n\nThe result must look like an authentic photograph captured in the moment—not a staged portrait, digital filter, or cinematic recreation.\n\nDo not add text, captions, magazine layouts, borders, watermarks, or graphic elements.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "• Transform the entire photograph into a cohesive documentary street photograph.\n• Preserve the subject's exact facial identity.\n• Preserve realistic anatomy and proportions.\n• Use direct, hard on-camera flash as a dominant lighting characteristic.\n• Maintain realistic flash falloff and exposure behavior.\n• Produce strong foreground-background separation created naturally by flash illumination.\n• Preserve environmental context and authentic street-level detail.\n• Emphasize gritty textures, imperfect surfaces, weathered architecture, pavement, signage, clothing texture, and natural environmental details without adding readable invented text.\n• The subject should appear encountered rather than formally posed.\n• Preserve natural imperfections and candid photographic qualities.\n• Avoid glamour lighting, beauty retouching, excessive cinematic color grading, artificial bokeh, or fantasy effects.\n• Favor stark black-and-white or restrained documentary color depending on what best suits the original scene.\n• Do not reproduce any specific existing photograph.\n• Do not add magazine typography.\n• Do not add captions.\n• Do not add watermarks.\n• Master prompt instructions always override conflicting instructions.\n\nFINAL VALIDATION:\n\n✓ The result looks like authentic street photojournalism.\n✓ The subject remains immediately recognizable.\n✓ Direct flash is visually apparent.\n✓ The photograph feels candid and immediate.\n✓ Environmental detail remains believable.\n✓ The image does not look like a conventional studio portrait.\n✓ No text, watermarks, captions, or graphic overlays are added.\n✓ If ANY answer is NO, regenerate until every requirement is satisfied."
+  },
+  {
     "name": "BRUTALISM",
     "category": [
       "ART", 
@@ -20295,6 +20309,32 @@
     "additionalInstructions": ""
   },
   {
+    "name": "HARD-EDGE ABSTRACTION",
+    "category": [
+      "ART",
+      "ABSTRACT",
+      "GEOMETRIC",
+      "MODERN"
+    ],
+    "message": "Take a picture and transform the image into a Hard-Edge abstract painting in the tradition of Ellsworth Kelly, Kenneth Noland, and Frank Stella. Reduce the subject to large, flat areas of pure, unmodulated color with absolutely crisp, razor-sharp edges between color fields. No gradients, no brushwork, no texture — only perfectly flat color meeting perfectly flat color along precise geometric boundaries. The composition should be bold and decisive, with a limited palette of 3-5 strong colors. Shapes should be large-scale, confident, and architecturally precise. The overall effect should be clean, powerful, and optically striking.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n• Transform the subject into pure geometric color fields\n• Absolutely no visible brushwork or texture\n• Razor-sharp edges between all color areas\n• Flat, unmodulated color — no gradients whatsoever\n• Limited palette: 3-5 bold, saturated colors\n• Large-scale, confident geometric shapes\n• Reference Ellsworth Kelly, Kenneth Noland, Frank Stella\n• The composition should feel decisive and architecturally precise\n• No organic forms or soft edges\n• The overall effect must be clean, bold, and optically powerful"
+  },
+  {
+    "name": "HARD-EDGE COLOR FIELD",
+    "category": [
+      "ART",
+      "ABSTRACT",
+      "PAINTING",
+      "GEOMETRIC"
+    ],
+    "message": "Take a picture and transform it into a Hard-Edge painting. The subject should be abstracted into bold, flat areas of pure unmodulated color separated by razor-sharp boundaries. No visible brushwork, no gradients, no texture — only clean geometric shapes of solid color creating visual tension through their precise relationships. The composition should derive its energy entirely from the interaction between color areas and their crisp boundaries.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "VISUAL REQUIREMENTS:\n• Absolutely flat, unmodulated color areas with no visible brushwork or texture\n• Razor-sharp edges between color areas — no soft transitions or blending\n• Bold, saturated colors in unexpected combinations creating optical vibration\n• Geometric shapes: circles, chevrons, stripes, or irregular but precise forms\n• Large scale feeling even in small format\n• Subject's presence suggested through color choices and compositional balance\n• Reference artists: Ellsworth Kelly, Kenneth Noland, Frank Stella (early work), Jack Bush, Al Held"
+  },
+  {
     "name": "HARD-EDGE PAINTING",
     "category": [
       "ART",
@@ -20320,6 +20360,19 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• White-on-white embroidery\n• Geometric satin stitch blocks\n• Cut and drawn threadwork openings\n• Lace-like openwork effect\n• Even-weave fabric texture"
+  },
+  {
+    "name": "HARRIS SHUTTER EFFECT",
+    "category": [
+      "PHOTOGRAPHY",
+      "EXPERIMENTAL",
+      "COLOR",
+      "MOTION"
+    ],
+    "message": "Take a picture and transform the image into a Harris Shutter photograph — the technique of making three sequential exposures through red, green, and blue filters on a single frame. Static elements should appear in normal, full color where all three exposures align perfectly. Any movement between exposures should separate into distinct red, green, and blue color channels — creating rainbow-colored motion trails and color fringing around anything that moved. The subject should show this characteristic RGB separation in areas of movement while remaining normally colored in static areas. The overall effect should be a striking visualization of motion through color separation.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n• Preserve subject identity\n• Static areas appear in normal full color\n• Moving areas separate into distinct R, G, B channels\n• Rainbow-colored motion trails from channel separation\n• Reference the Harris Shutter technique invented by Robert Harris\n• The separation should be clearly visible as distinct color layers\n• Areas of movement show red, green, and blue ghost images\n• The effect should clearly visualize motion through color\n• Maintain photographic realism in static areas\n• The overall effect should be striking and scientifically beautiful"
   },
   {
     "name": "HARRY POTTER SPELL",
@@ -20661,6 +20714,19 @@
     "additionalInstructions": "Transform the entire image into an authentic late-1970s Heavy Metal magazine cover. Preserve recognizable identity while making the subject the featured cover character of a painted science-fantasy illustration. The image must include a realistic magazine-cover layout, authentic Heavy Metal masthead styling, issue information, promotional cover text, science-fiction article teasers, and period-accurate publishing design. Use painted illustration techniques, airbrushed colors, Moebius-inspired visual sophistication, strange alien worlds, fantasy-science-fiction themes, cosmic environments, and epic album-cover composition. The final result should look like a genuine collectible issue of Heavy Metal magazine from the late 1970s rather than a standalone illustration."
   },
   {
+    "name": "HELIOCHROME SOLAR PRINT",
+    "category": [
+      "PHOTOGRAPHY",
+      "ALTERNATIVE PROCESS",
+      "SOLAR",
+      "EXPERIMENTAL"
+    ],
+    "message": "Take a picture and transform the image into a heliochrome solar print — an experimental photographic process using direct sunlight exposure on light-sensitive materials to create unique, unrepeatable prints with the characteristic qualities of extended solar exposure. The image should show warm, sun-bleached tones with areas of intense solarization where overexposure has reversed tones. Colors should be the warm amber, golden, and burnt sienna tones of sun-faded materials. Include the uneven exposure characteristic of printing in direct sunlight: darker edges where the sun's angle created longer exposure, and lighter centers. The overall effect should be warm, solar, and uniquely handmade.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n• Preserve subject identity despite solar exposure effects\n• Warm, sun-bleached tones: amber, golden, burnt sienna\n• Areas of solarization from overexposure\n• Uneven exposure: darker edges, lighter centers\n• Reference experimental solar printing and sun-bleaching techniques\n• The warmth of direct sunlight should be felt in the tones\n• Unique, unrepeatable print quality\n• Extended exposure effects visible\n• Handmade, organic quality throughout\n• The overall effect should be warm, solar, and experimental"
+  },
+  {
     "name": "HELIOGRAVURE",
     "category": [
       "PRINTMAKING",
@@ -20685,6 +20751,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "FINAL RESULT:\nThe image should look like the subject IS Henry Danger in costume, not a face overlay."
+  },
+  {
+    "name": "HERB RITTS EDITORIAL PHOTOGRAPH",
+    "category": [
+      "PHOTOGRAPHY",
+      "EDITORIAL",
+      "FASHION",
+      "BLACK AND WHITE",
+      "FINE ART"
+    ],
+    "message": "Take a picture and transform the entire image into a sophisticated high-fashion editorial photograph inspired by the visual characteristics of classic late-20th-century studio and location fashion photography: sculptural human forms, dramatic directional lighting, strong geometric composition, elegant simplicity, controlled shadows, polished skin rendering, and a refined monochromatic or restrained tonal palette.\n\nThe subject remains the central photographic subject and must remain immediately recognizable. The result must look like an intentional professional editorial photograph rather than a digital filter or a recreation of a specific existing photograph.\n\nEmphasize sculptural lighting, strong silhouettes, carefully controlled highlights and shadows, confident composition, minimalist environments, sophisticated fashion photography aesthetics, and timeless photographic elegance.\n\nDo not add text, logos, captions, magazine layouts, borders, or graphic design elements.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "• Transform the entire photograph into a cohesive editorial photograph.\n• Preserve the subject's exact facial identity and recognizable characteristics.\n• Preserve realistic human anatomy and natural proportions.\n• Use dramatic but controlled studio-quality lighting.\n• Emphasize sculptural highlights and deep, deliberate shadows.\n• Favor strong geometric composition and clean negative space.\n• Use elegant, restrained backgrounds that support the subject without distracting from them.\n• Black-and-white rendering may be used when it strengthens the editorial aesthetic, but do not force monochrome when a sophisticated color photograph produces a stronger result.\n• Avoid excessive retouching or plastic-looking skin.\n• The image must look like a professionally photographed editorial campaign.\n• Do not reproduce any specific existing photograph.\n• Do not add magazine typography or layouts.\n• Do not add watermarks.\n• Do not add borders or frames.\n• Master prompt instructions always override conflicting instructions.\n\nFINAL VALIDATION:\n\n✓ The result is a finished editorial photograph.\n✓ The subject remains immediately recognizable.\n✓ Lighting is sculptural and intentional.\n✓ Composition is elegant and controlled.\n✓ The photograph has a sophisticated fashion-editorial aesthetic.\n✓ No text, logos, captions, or graphic overlays appear.\n✓ The image does not look like a simple photographic filter.\n✓ If ANY answer is NO, regenerate until every requirement is satisfied."
   },
   {
     "name": "HERMANAS SCULL ART",
@@ -21257,10 +21337,10 @@
       "SPIRITUAL",
       "ART"
     ],
-    "message": "Take a picture and transform it into a Huichol (Wixárika) yarn painting. Huichol yarn paintings are created by pressing brightly colored yarn into beeswax on wooden boards to create intricate spiritual imagery depicting peyote visions, deer, corn, eagles, and sacred symbols. The style features dense, vibrant yarn-filled surfaces with psychedelic colors and shamanic symbolism.",
+    "message": "Take a picture and transform it into a Huichol (Wixárika) yarn painting. Huichol yarn paintings are created by pressing brightly colored yarn into beeswax on wooden boards to create intricate spiritual imagery depicting peyote visions, deer, corn, eagles, and sacred symbols. The entire image should be constructed from thin lines of brightly colored yarn pressed side by side, following the contours of the subject's form. Colors should be intensely vivid and psychedelic: hot pink, electric blue, bright orange, lime green, and deep purple. The style features dense, vibrant yarn-filled surfaces with psychedelic colors and shamanic symbolism.",
     "options": [],
     "randomizeOptions": false,
-    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Dense pressed yarn texture\n• Vibrant psychedelic colors\n• Shamanic spiritual symbols\n• Intricate detailed yarn work\n• Wixárika sacred imagery"
+    "additionalInstructions": "STYLE ENFORCEMENT:\n• Preserve subject identity through yarn line placement\n• Thin colored yarn lines following form contours\n• Intensely vivid, psychedelic color palette\n• Every surface covered — no empty space\n• Sacred Huichol symbols: deer, peyote, corn, eagles, sun\n• Reference Wixárika artists like José Benítez Sánchez\n• Yarn lines should be individually visible\n• Colors should be bold and non-naturalistic\n• The composition should feel visionary and sacred\n• The overall effect should be psychedelic, spiritual, and densely detailed."
   },
   {
     "name": "HYPERREALISM",
@@ -22875,6 +22955,19 @@
     "additionalInstructions": "FINAL RESULT:\nA single seamless image that appears completely normal at first glance but contains deeply embedded detail within its textures. As the viewer zooms in, increasingly complex and fine structures are revealed naturally within the same image. There must be NO visible atoms, NO scientific diagrams, NO overlays, and NO multi-image layouts—only one continuous image with hidden depth."
   },
   {
+    "name": "INFOGRAPHIC ILLUSTRATION",
+    "category": [
+      "ILLUSTRATION",
+      "DESIGN",
+      "EDUCATIONAL",
+      "DATA"
+    ],
+    "message": "Take a picture and transform it into an infographic illustration — a visually engaging data visualization that presents information about the subject through icons, charts, diagrams, and illustrated statistics. The subject should be at the center of a beautifully designed information graphic that reveals facts, measurements, and data through clear visual hierarchy and engaging illustration. Use flavor text inspired by the image content",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "VISUAL REQUIREMENTS:\n• Clear visual hierarchy guiding the eye through information\n• Mix of illustration, icons, charts, and typography\n• Subject as central visual element with data radiating outward\n• Consistent icon style and color coding throughout\n• Clean, modern design aesthetic with generous white space\n• Data visualized through creative chart types (not just bar graphs)\n• Limited color palette (3-4 colors) for clarity\n• Information organized in logical flow\n• Reference: infographic design by Nicholas Felton, Information is Beautiful, National Geographic infographics"
+  },
+  {
     "name": "INK BLEED",
     "category": [
       "ART",
@@ -22991,7 +23084,7 @@
     "message": "Take a picture and transform the image into Japanese sumi-e ink painting. Minimal brushstrokes, expressive ink flow, restrained composition, and elegant simplicity.",
     "options": [],
     "randomizeOptions": false,
-    "additionalInstructions": ""
+    "additionalInstructions": "STYLE ENFORCEMENT:\n• Each brushstroke confident, decisive, and irreversible\n• Full ink range: deep black to pale gray wash\n• Reference Sesshū Tōyō and Hasegawa Tōhaku\n• Washi paper texture visible\n• No blending or reworking — each stroke final\n• The overall effect should be meditative, minimal, and profound."
   },
   {
     "name": "JAY WARD CARTOONS",
@@ -23754,7 +23847,7 @@
       "TRADITIONAL",
       "CRAFT"
     ],
-    "message": "Take a picture and transform it into a kolrosing artwork \u2014 the traditional Scandinavian technique of scoring fine lines into wood and rubbing them with coffee grounds, charcoal, or bark dust to create delicate illustrations on birch or pine surfaces. The image should show the subject rendered in extremely fine scored lines on a pale wood surface, with the natural wood grain visible beneath and interacting with the design. The lines should have the characteristic quality of a knife-scored surface \u2014 thin, precise, and slightly irregular where the blade followed the grain. The overall effect should be subtle and elegant, like a whispered drawing on living wood.",
+    "message": "Take a picture and transform it into a kolrosing artwork \u2014 the traditional Scandinavian technique of scoring fine lines into wood and rubbing them with coffee grounds, charcoal, or bark dust to create delicate illustrations on birch or pine surfaces. The image should show the subject rendered in extremely fine scored lines on a pale wood surface, with the natural wood grain visible beneath and interacting with the design. The lines should have the characteristic quality of a knife-scored surface \u2014 thin, precise, and slightly irregular where the blade followed the grain. The lines should be thin, precise, and closely spaced to build up tonal values — darker areas created by denser line work filled with dark pigment. The natural wood grain should be visible throughout, interacting with the incised design. The overall effect should be delicate, precise, and warmly natural. The overall effect should be subtle and elegant, like a whispered drawing on living wood.",
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "The wood grain must be visible and interact naturally with the scored design. The lines should be fine and precise. The overall effect should be subtle \u2014 dark lines on pale wood. Subject identity must be preserved."
@@ -24527,6 +24620,19 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "LIPPMANN INTERFERENCE PHOTO",
+    "category": [
+      "PHOTOGRAPHY",
+      "SCIENTIFIC",
+      "COLOR",
+      "HOLOGRAPHIC"
+    ],
+    "message": "Take a picture and transform the image into a Lippmann interference photograph — Gabriel Lippmann's Nobel Prize-winning 1891 process that records color through light wave interference patterns in a thick emulsion, producing colors without any dyes or pigments. The image should show the characteristic qualities: extraordinarily pure, spectral colors that shift slightly with viewing angle (like a hologram), mirror-like reflective quality of the mercury-backed plate, extreme sharpness, and the unique luminous quality of structural color. The colors should appear to glow from within the emulsion rather than sitting on the surface. Include the slight iridescent color shift visible at the edges where viewing angle changes.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n• Preserve subject identity with pure spectral colors\n• Colors produced by interference, not dyes — extraordinarily pure\n• Slight color shift with viewing angle (iridescent quality)\n• Mirror-like reflective quality\n• Reference Gabriel Lippmann's 1891 Nobel Prize process\n• Colors appear to glow from within the emulsion\n• Extreme sharpness and detail\n• Luminous structural color quality\n• Slight iridescence at edges\n• The overall effect should be luminous, pure, and scientifically beautiful"
   },
   {
     "name": "LIQUID CHROME",
@@ -25909,18 +26015,6 @@
     "additionalInstructions": "MAZE ENFORCEMENT (CRITICAL):\n\n• Every maze must be genuinely solvable.\n• Every maze must contain a valid entrance.\n• Every maze must contain a valid exit.\n• Every maze must contain at least one complete solution path.\n• The solution path must connect entrance and exit.\n• The maze must function as a real puzzle.\n• The maze must contain multiple wrong paths and dead ends.\n• The maze must not be decorative line art.\n\nOPTION ENFORCEMENT:\n\n• Apply ONLY the selected option.\n• Do not blend the two presentation styles.\n• Monumental maze option must appear as a real physical structure.\n• Printed maze option must appear as a maze drawn on paper.\n• The selected option completely determines the final presentation format.\n\nTRANSFORMATION ENFORCEMENT:\n\n• The subject must become the maze.\n• The subject must not appear inside the maze.\n• The subject must not appear next to the maze.\n• The maze itself must form the subject.\n\nANTI-PHOTOSHOP ENFORCEMENT:\n\n• Do not draw maze lines over a photograph.\n• Reconstruct the subject entirely as maze architecture or maze pathways.\n• Every visible feature should be built from corridors, walls, pathways, and dead ends.\n\nFINAL ENFORCEMENT:\n\n• The viewer should immediately recognize both a multicursal maze and the subject.\n• The maze must be genuinely solvable.\n• The maze must contain a hidden but valid solution.\n• The final image should resemble either a real-world maze installation or a professionally designed printed maze puzzle depending on the selected option."
   },
   {
-    "name": "MOEBIUS STYLE",
-    "category": [
-      "ART",
-      "SCI-FI",
-      "ILLUSTRATION"
-    ],
-    "message": "Take a picture and transform the image into a detailed Franco-Belgian science fiction illustration style inspired by Jean Giraud (Moebius).\n\nSELECTION (CRITICAL):• If none is specified, apply an expansive surreal sci-fi landscape\n\nSTYLE REQUIREMENTS (MANDATORY):\n• Intricate line work\n• Surreal yet grounded realism\n• Dreamlike environments\n• Vibrant or psychedelic palette",
-    "options": [],
-    "randomizeOptions": false,
-    "additionalInstructions": "FINAL RESULT:\nThe final image should resemble a lavishly illustrated European sci-fi graphic novel panel."
-  },
-  {
     "name": "MAGIC LANTERN SLIDE",
     "category": [
       "VICTORIAN",
@@ -25929,10 +26023,10 @@
       "ILLUSTRATION",
       "STYLIZED TRANSFORMATION"
     ],
-    "message": "Take a picture and transform the image into a Victorian-era Magic Lantern Slide.\n\nThe final image should appear as a hand-painted glass projection slide from the nineteenth century. Preserve recognizable identity while converting the scene into an illuminated educational or entertainment projection image designed for display through a magic lantern.\n\nThe artwork should resemble a carefully painted glass transparency viewed under projection light, featuring rich luminous colors, delicate painted details, antique illustration techniques, and the distinctive appearance of projected lantern-slide imagery.\n\nSTYLE RULES:\n• Preserve recognizable identity\n• Transform the image into a hand-painted glass lantern slide\n• Emphasize Victorian educational and entertainment illustration aesthetics\n• Create the appearance of projected illumination\n• Simulate transparent painted glass construction\n• Maintain historical authenticity\n\nVISUAL CHARACTERISTICS:\n• Hand-painted glass artwork\n• Illuminated projection colors\n• Translucent pigments\n• Antique illustration techniques\n• Delicate brushwork\n• Victorian visual storytelling\n• Projected-light glow\n• Glass transparency effects\n• Educational lecture-slide aesthetics\n• Museum-quality historical presentation\n\nANTI-CHEAT:\n• Do NOT create modern digital projections\n• Do NOT create contemporary slide presentations\n• Do NOT create modern photography\n• Do NOT create cinema screens\n\nFINAL VALIDATION:\n• The image must clearly resemble a Victorian Magic Lantern Slide\n• The artwork must appear hand-painted on glass\n• Projected illumination and historical authenticity must be obvious",
+     "message": "Take a picture and transform the image into a hand-colored magic lantern slide — the Victorian-era glass transparency hand-painted with translucent aniline dyes for projection. The image should show a black and white photographic base on glass with carefully applied transparent colors that allow the photographic detail to show through. The coloring should be slightly imprecise — the characteristic quality of hand-applied dyes that don't perfectly align with photographic boundaries. Colors should be the vivid, slightly garish aniline dyes of the Victorian era: bright magentas, electric blues, and acid greens. Include the black paper mask framing the image and the glass plate edges.",
     "options": [],
     "randomizeOptions": false,
-    "additionalInstructions": "• Preserve recognizable identity\n• Use authentic Victorian illustration aesthetics\n• Simulate hand-painted translucent pigments on glass\n• Create projected-light luminosity and glow\n• Emphasize historical educational and entertainment imagery\n• Make the artwork appear physically painted onto a glass projection slide\n• Avoid modern projection technologies"
+    "additionalInstructions": "STYLE ENFORCEMENT:\n• Preserve subject identity on glass photographic base\n• Black and white photo with transparent hand-applied colors\n• Colors slightly imprecise — not perfectly aligned with photo\n• Vivid aniline dye colors: magenta, electric blue, acid green\n• Reference Victorian magic lantern slide collections\n• Photographic detail visible through transparent colors\n• Black paper mask framing the image\n• Glass plate edges visible\n• The coloring should feel handmade and slightly imperfect\n• The overall effect should be Victorian, luminous, and hand-crafted"
   },
   {
     "name": "MAGIC REALISM",
@@ -26015,7 +26109,20 @@
     "randomizeOptions": false,
     "additionalInstructions": "FINAL RESULT:\nThe portrait should look polished, natural, and realistic."
   },
-   {
+  {
+    "name": "MAKI-E LACQUERWORK",
+    "category": [
+      "ART",
+      "JAPANESE",
+      "DECORATIVE",
+      "LACQUER"
+    ],
+    "message": "Take a picture and transform the image into a Japanese maki-e lacquerwork design — the technique of sprinkling gold or silver powder onto wet lacquer to create luminous designs on a deep black or dark red lacquered surface. The subject should be rendered in gold and silver powder on a mirror-smooth, deep black urushi lacquer ground. The gold should vary from bright raised gold (takamaki-e) to flat sprinkled gold (hiramaki-e) to create depth and dimension. Include the characteristic deep, mirror-like quality of multiple lacquer layers and the warm glow of gold powder catching light. The overall effect should be luxurious, refined, and deeply Japanese.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n• Preserve subject identity in gold on black lacquer\n• Deep, mirror-smooth black lacquer ground\n• Gold and silver powder creating the design\n• Varying gold techniques: raised (takamaki-e) and flat (hiramaki-e)\n• Reference Edo period Japanese lacquerwork masters\n• Multiple lacquer layers creating depth and luminosity\n• Warm gold glow against deep black\n• Refined, elegant Japanese aesthetic\n• Include subtle variations in gold density and height\n• The overall effect should be luxurious, precious, and contemplative"
+  },
+  {
     "name": "MALL PHOTO STUDIO",
     "category": [
       "RETRO",
@@ -26215,10 +26322,10 @@
       "CLASSIC",
       "RENAISSANCE"
     ],
-    "message": "Take a picture and transform the image into a Mannerist painting. Preserve subject identity. Use elongated proportions, unusual spatial compositions, and sophisticated artificiality inspired by Parmigianino and Pontormo. Emphasize elegant distortion, complex poses, vivid and sometimes discordant colors, and a refined, intellectual approach to beauty.",
+    "message": "Take a picture and transform it into a Mannerist portrait painting from the late 16th century. The subject should be depicted with the characteristic elongated proportions, serpentine pose (figura serpentinata), acidic color palette, and sophisticated artificiality of Mannerism. The composition should feel deliberately complex, with the subject's body twisted into an elegant but anatomically exaggerated pose within a compressed, ambiguous space.",
     "options": [],
     "randomizeOptions": false,
-    "additionalInstructions": ""
+    "additionalInstructions": "VISUAL REQUIREMENTS:\n• Elongated proportions: extended neck, long fingers, attenuated limbs\n• Figura serpentinata: body twisted in elegant S-curve or spiral pose\n• Acidic, non-naturalistic color palette: cool lavenders, acid greens, icy pinks\n• Compressed, ambiguous spatial depth\n• Sophisticated, courtly elegance with deliberate artificiality\n• Smooth, porcelain-like skin rendering\n• Complex drapery with metallic sheen\n• Small head relative to elongated body\n• Reference artists: Parmigianino, Pontormo, Bronzino, El Greco, Rosso Fiorentino."
   },
   {
     "name": "MANSA MUSA",
@@ -28177,6 +28284,19 @@
     "additionalInstructions": ""
   },
   {
+    "name": "MINIMALIST FASHION PHOTOGRAPHY",
+    "category": [
+      "PHOTOGRAPHY",
+      "FASHION",
+      "MINIMALISM",
+      "CONTEMPORARY"
+    ],
+    "message": "Take a picture and transform it into minimalist fashion photography — the clean, reductive aesthetic where negative space, simple forms, and restrained color create maximum impact through minimum elements. The subject should be photographed against a vast empty background with a single, perfectly-chosen garment, precise geometric composition, and the quiet power of visual restraint.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "VISUAL REQUIREMENTS:\n• Vast negative space: subject occupies small portion of frame\n• Clean, uncluttered background: white, gray, or single muted color\n• Single garment or very simple outfit as focal point\n• Precise geometric composition with mathematical balance\n• Soft, even lighting with minimal shadow\n• Restrained color palette: monochrome or single accent color\n• Still, composed pose with no dramatic gesture\n• Quiet power through visual restraint and precision\n• Reference: Juergen Teller (minimal work), Willy Vanderperre, COS campaign photography"
+  },
+  {
     "name": "MINION MODE",
     "category": [
       "HUMOR",
@@ -28418,6 +28538,32 @@
     }
     ],
     "additionalInstructions": "FINAL RESULT:\nThe image must convincingly depict a genuine Moai statue carved from volcanic stone. The subject should be transformed into a monumental Rapa Nui sculpture whose recognizable facial characteristics have been translated into authentic Moai forms. No living skin, hair, eyes, clothing, or photographic textures should remain visible anywhere in the image."
+  },
+  {
+    "name": "MODERNISM",
+    "category": [
+      "ART",
+      "MODERNIST",
+      "FINE ART",
+      "PAINTING",
+      "TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform the entire image into a sophisticated Modernist work of art while preserving the subject's identity and the essential visual structure of the original image.\n\nTHIS IS A COMPLETE VISUAL TRANSFORMATION.\n\nReconstruct the subject, environment, forms, lighting, and composition through the principles of Modernist art: simplification, abstraction of natural forms, geometric structure, bold planes, expressive shapes, controlled distortion, selective reduction of detail, strong compositional balance, and deliberate relationships between form and color.\n\nThe result should look like a finished museum-quality Modernist artwork rather than a photographic filter.\n\nPreserve enough of the subject's facial structure, proportions, silhouette, and distinctive characteristics that the original subject remains immediately recognizable within the Modernist transformation.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "• Transform the ENTIRE image, including subject and background.\n• Preserve the subject's identity while translating the subject into Modernist visual language.\n• Simplify complex forms into deliberate geometric and organic shapes.\n• Use planes, blocks, lines, curves, simplified volumes, and controlled abstraction.\n• Flatten or selectively compress perspective when appropriate to Modernist composition.\n• Use intentional color relationships rather than random color distortion.\n• Strong colors may be used, but color must serve the composition.\n• Preserve recognizable facial structure instead of replacing the face with an unrelated abstract design.\n• Simplify textures and details into purposeful visual forms.\n• Maintain strong compositional balance and visual hierarchy.\n• The background must participate in the same Modernist visual language as the subject.\n• Do not leave the original photograph visible underneath the transformation.\n• Do not add text, captions, labels, frames, watermarks, or graphic-design elements.\n• Do not make the result look like a generic digital glitch or psychedelic filter.\n• The final image should resemble a deliberate, finished Modernist artwork.\n• Master prompt instructions always override conflicting instructions.\n\nFINAL VALIDATION:\n\n✓ The entire image has been transformed.\n✓ The subject remains recognizable.\n✓ Subject and background share one coherent Modernist visual language.\n✓ Forms are deliberately simplified or abstracted.\n✓ Color and geometry are intentional.\n✓ The result looks like finished fine art rather than a filter.\n✓ No unrelated text or graphic elements appear.\n✓ If ANY answer is NO, regenerate until every requirement is satisfied."
+  },
+  {
+    "name": "MOEBIUS STYLE",
+    "category": [
+      "ART",
+      "SCI-FI",
+      "ILLUSTRATION"
+    ],
+    "message": "Take a picture and transform the image into a detailed Franco-Belgian science fiction illustration style inspired by Jean Giraud (Moebius).\n\nSELECTION (CRITICAL):• If none is specified, apply an expansive surreal sci-fi landscape\n\nSTYLE REQUIREMENTS (MANDATORY):\n• Intricate line work\n• Surreal yet grounded realism\n• Dreamlike environments\n• Vibrant or psychedelic palette",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "FINAL RESULT:\nThe final image should resemble a lavishly illustrated European sci-fi graphic novel panel."
   },
   {
     "name": "MOIRÉ ILLUSION",
@@ -30051,6 +30197,19 @@
     "additionalInstructions": "The exposure combination must follow real photographic physics \u2014 light areas dominate, dark areas reveal underlying exposures. The two images should create meaningful visual poetry together. The effect should feel analog, not digitally composited."
   },
   {
+    "name": "MULTIPLE EXPOSURE PORTRAIT",
+    "category": [
+      "PHOTOGRAPHY",
+      "EXPERIMENTAL",
+      "PORTRAIT",
+      "LAYERED"
+    ],
+    "message": "Take a picture and transform the image into an intentional multiple exposure photograph where 3-5 exposures of the subject are layered on a single frame. Each exposure should show the subject in a slightly different position, angle, or expression — creating a ghostly, time-collapsed composite that suggests movement, multiplicity, or psychological complexity. The exposures should be semi-transparent, overlapping and interacting to create areas of increased density where they align and ethereal transparency where they don't. Use the aesthetic of analog film multiple exposure — slightly different exposures creating natural tonal variation.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n• Preserve subject identity across all exposures\n• 3-5 overlapping semi-transparent exposures\n• Each exposure shows slightly different position or expression\n• Areas of overlap should be denser/brighter\n• Areas of single exposure should be more transparent\n• Reference the multiple exposure work of Harry Callahan\n• Analog film aesthetic — not digital compositing\n• The overall effect should suggest time, movement, or psychological states\n• Black and white or muted color palette\n• The composite should feel intentional and artistic, not accidental"
+  },
+  {
     "name": "MULTIPLE MATERIALS",
     "category": [
       "SURREAL",
@@ -30693,6 +30852,19 @@
     "additionalInstructions": ""
   },
   {
+    "name": "NABIS DECORATIVE PAINTING",
+    "category": [
+      "ART",
+      "PAINTING",
+      "HISTORICAL",
+      "FRENCH"
+    ],
+    "message": "Take a picture and transform it into a Nabis painting — the Post-Impressionist movement that treated painting as flat decorative surface. The subject should be rendered in flat areas of muted, harmonious color with simplified forms, decorative patterning, and the intimate domestic subjects favored by the Nabis. The painting should remember that 'a painting, before being a war horse or a nude woman, is essentially a flat surface covered with colors assembled in a certain order.'",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "VISUAL REQUIREMENTS:\n• Flat areas of muted, harmonious color (no modeling or shading)\n• Simplified, decorative forms with sinuous outlines\n• Intimate domestic subject matter: interiors, gardens, family scenes\n• Decorative patterning: wallpaper, textiles, and surfaces treated equally\n• Muted, warm palette: ochres, olive greens, soft purples, warm browns\n• Japanese print influence: flat space, cropped compositions, high viewpoint\n• No atmospheric perspective — all planes equally flat\n• Subject integrated into the decorative surface pattern\n• Reference artists: Pierre Bonnard, Édouard Vuillard, Maurice Denis, Paul Sérusier"
+  },
+  {
     "name": "NAIL ART",
     "category": [
       "OPTIONS",
@@ -30852,10 +31024,10 @@
       "GEOMETRIC",
       "ART"
     ],
-    "message": "Take a picture and transform it into a South African Ndebele house painting. Ndebele house painting is a vibrant geometric mural art tradition of the Ndebele people of South Africa, featuring bold black outlines filled with bright primary and secondary colors in symmetrical geometric patterns painted on exterior walls as expressions of cultural identity.",
+    "message": "Take a picture and transform the image into an Ndebele house painting — the bold geometric mural tradition of the Ndebele people of South Africa. The subject should be rendered with the characteristic Ndebele aesthetic: bold black outlines creating geometric shapes filled with flat, vivid colors (bright blue, green, yellow, red, pink) in symmetrical patterns. The design should incorporate the distinctive Ndebele motifs: razor blade shapes, light bulbs, architectural elements, and stepped geometric patterns. The painting should appear on a white-washed wall surface with the slightly textured quality of paint on plaster. The overall effect should be bold, geometric, and celebratory.",
     "options": [],
     "randomizeOptions": false,
-    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Bold black outlines\n• Bright primary and secondary colors\n• Symmetrical geometric patterns\n• Wall/architectural surface texture\n• Traditional Ndebele motifs (chevrons, triangles, rectangles)"
+    "additionalInstructions": "STYLE ENFORCEMENT:\n• Preserve subject identity in Ndebele geometric style\n• Bold black outlines creating geometric compartments\n• Flat, vivid colors: bright blue, green, yellow, red, pink\n• Symmetrical geometric patterns\n• Distinctive Ndebele motifs: razor blades, light bulbs, steps\n• Reference Esther Mahlangu and traditional Ndebele murals\n• White-washed wall surface texture\n• Paint-on-plaster quality\n• Bold, graphic, and celebratory mood\n• The overall effect should be geometric, colorful, and proudly African"
   },
   {
     "name": "NEEDLEPOINT",
@@ -31107,6 +31279,19 @@
     "additionalInstructions": "FINAL RESULT:\nThe image should show the subject completely transformed into authentic prehistoric cave art - painted in natural earth pigments \u2014 ochre, charcoal black, iron oxide red, and manganese brown \u2014 applied to a rough limestone cave wall surface. The subject should be rendered with the characteristic simplified outlines and flat color fills of Paleolithic art, ancient weathering, and the appearance of being hand-painted by Paleolithic humans 20,000+ years ago."
   },
   {
+    "name": "NEON NOIR CINEMATOGRAPHY",
+    "category": [
+      "CINEMATIC",
+      "NOIR",
+      "NEON",
+      "CONTEMPORARY"
+    ],
+    "message": "Take a picture and transform it into a Neon Noir film still — the contemporary evolution of film noir that replaces black-and-white shadows with saturated neon color. The subject should be bathed in the glow of neon signs — hot pink, electric blue, toxic green — reflected in rain-wet surfaces, creating a hyper-stylized urban nightscape where color itself becomes the source of mood and menace.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "VISUAL REQUIREMENTS:\n• Saturated neon colors: hot pink, electric blue, toxic green, amber\n• Rain-wet surfaces reflecting and multiplying neon light sources\n• Deep shadows between pools of colored light\n• Urban night setting: alleys, storefronts, underpasses\n• Color contrast: warm neon against cool shadow\n• Subject's face lit by multiple colored sources creating split lighting\n• Atmospheric haze or rain catching colored light\n• Cinematic widescreen framing\n• Reference films: Drive, Only God Forgives, Blade Runner 2049, Collateral, Enter the Void"
+  },
+  {
     "name": "NEON SIGN",
     "category": [
       "NEON",
@@ -31183,7 +31368,7 @@
     "message": "Take a picture and transform the image into a Neue Sachlichkeit (New Objectivity) painting. Preserve subject identity. Use sharp, precise realism with a cool, detached observation style inspired by Otto Dix and George Grosz. Emphasize unflinching detail, social commentary, and a clinical clarity that reveals uncomfortable truths beneath surface appearances.",
     "options": [],
     "randomizeOptions": false,
-    "additionalInstructions": ""
+    "additionalInstructions": "VISUAL REQUIREMENTS:\n• Cold, precise realism with sharp focus on every detail\n• Smooth, almost photographic paint surface with no visible brushwork\n• Unflinching, unsentimental observation of the subject\n• Psychological tension beneath the calm surface\n• Cool, harsh lighting emphasizing every pore and wrinkle\n• Slightly distorted proportions creating subtle unease\n• Muted, cool palette with occasional harsh color accents\n• Reference artists: Otto Dix, George Grosz, Christian Schad, Max Beckmann"
   },
   {
     "name": "NEUE SLOWENISCHE KUNST",
@@ -31211,6 +31396,36 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Aggressive spontaneous brushwork\n• Raw emotional energy\n• Bold vivid colors\n• Crude expressive figuration\n• Visceral painterly surface"
+  },
+  {
+    "name": "NEURAL STYLE FUSION",
+    "category": [
+      "DIGITAL",
+      "AI",
+      "EXPERIMENTAL",
+      "HYBRID"
+    ],
+    "message": "Take a picture and transform it into a neural style fusion artwork — the distinctive visual aesthetic produced when neural network style transfer algorithms blend multiple artistic styles simultaneously. The subject should appear processed through overlapping style domains, with different regions of the image exhibiting different artistic influences that bleed into each other at their boundaries, creating impossible hybrid aesthetics.",
+    "options": [
+      {
+        "id": "001",
+        "text": "Impressionist-Cubist fusion — soft brushwork fragmenting into geometric facets"
+      },
+      {
+        "id": "002",
+        "text": "Ukiyo-e meets Art Nouveau — flat color areas with flowing organic line work"
+      },
+      {
+        "id": "003",
+        "text": "Expressionist-Pointillist fusion — emotional distortion built from systematic dots"
+      },
+      {
+        "id": "004",
+        "text": "Baroque-Glitch fusion — dramatic chiaroscuro corrupted by digital artifacts"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "VISUAL REQUIREMENTS:\n• Multiple artistic styles visibly blending and competing across the image\n• Transition zones where one style morphs into another\n• Characteristic neural network artifacts: swirling textures, repeated motifs, hallucinated patterns\n• Subject recognizable but transformed through multiple simultaneous style influences\n• Areas of high-frequency texture detail characteristic of neural processing\n• Color palette shifting between style domains\n• The impossible combination should feel coherent despite its hybrid nature\n• Reference: DeepDream, neural style transfer, multi-style transfer networks"
   },
   {
     "name": "NEURAL STYLE TRANSFER",
@@ -31834,6 +32049,19 @@
     "additionalInstructions": ""
   },
   {
+    "name": "OLEOGRAPH PAINTING PRINT",
+    "category": [
+      "ART",
+      "PRINTMAKING",
+      "VINTAGE",
+      "TEXTURED"
+    ],
+    "message": "Take a picture and transform the image into an oleograph — the 19th-century chromolithographic technique designed to perfectly imitate oil paintings by printing on textured canvas and applying varnish. The image should appear to be an oil painting but upon close inspection reveal the characteristic signs of oleographic reproduction: slightly simplified color separations from the lithographic process, the mechanical canvas texture embossed into the print surface, and the glossy varnish layer that mimics oil painting sheen. The subject matter and style should reference popular 19th-century salon paintings: sentimental, detailed, and richly colored. Include a decorative gilt frame appropriate to the period.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n• Preserve subject identity in salon painting style\n• Chromolithographic color separation visible on close inspection\n• Mechanical canvas texture embossed into surface\n• Glossy varnish layer mimicking oil painting\n• Reference 19th-century oleograph reproductions\n• Sentimental, detailed, richly colored salon style\n• Decorative gilt frame\n• The print should initially appear to be an oil painting\n• Slightly simplified tones from lithographic process\n• The overall effect should be a convincing oil painting imitation"
+  },
+  {
     "name": "OLYMPIAN",
     "category": [
       "SPORTS",
@@ -32349,16 +32577,29 @@
     "additionalInstructions": "FINAL RESULT:\nThe image should show the subject transformed into a fantasy orc warrior with green/gray skin, prominent tusks, muscular build, crude armor and brutal weapons, tribal markings, and aggressive pose - the subject's face clearly recognizable with orcish features added, in a dark fantasy battlefield or tribal setting with dramatic lighting and that savage warrior energy."
   },
   {
+    "name": "OROTONE GOLDTONE PHOTO",
+    "category": [
+      "PHOTOGRAPHY",
+      "VINTAGE",
+      "LUMINOUS",
+      "GOLD"
+    ],
+    "message": "Take a picture and transform the image into an orotone (goldtone or Curt-tone) photograph — the early 20th-century technique of printing a photograph on glass and backing it with gold pigment or banana oil mixed with gold bronzing powder. The image should show the characteristic luminous, glowing quality of a photograph viewed with gold shining through from behind: warm golden highlights that glow with internal light, rich amber mid-tones, and deep chocolate shadows. The glass surface should be smooth and slightly reflective. The gold backing should create a warm, luminous quality unlike any paper-based photograph — as if the image is lit from within by golden light.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n• Preserve subject identity with golden luminosity\n• Warm golden highlights glowing with internal light\n• Rich amber mid-tones and deep chocolate shadows\n• Glass surface — smooth and slightly reflective\n• Reference Edward S. Curtis's orotone Native American portraits\n• Gold backing creating warm internal luminosity\n• The image should appear lit from within by golden light\n• Unlike any paper photograph — uniquely luminous\n• Warm overall color temperature from gold backing\n• The overall effect should be luminous, golden, and precious"
+  },
+  {
     "name": "ORPHISM",
     "category": [
       "ART",
       "PAINTING",
       "ABSTRACT"
     ],
-    "message": "Take a picture and transform the image into an Orphism painting. Preserve subject identity. Use pure, vibrant colors arranged in circular and prismatic forms inspired by Robert Delaunay and Sonia Delaunay. Emphasize simultaneous contrast, rhythmic color harmonies, and luminous abstract compositions suggesting movement and music through color.",
+    "message": "Take a picture and transform the image into an Orphic Cubist painting in the style of Robert and Sonia Delaunay. Unlike analytical cubism's muted palette, this should explode with pure, prismatic color arranged in circular and arc-shaped forms. The subject should be fragmented into overlapping discs, arcs, and curved planes of brilliant color that suggest light passing through a prism. Colors should be arranged according to simultaneous contrast principles — complementary colors placed adjacent for maximum vibrancy. The composition should radiate outward in concentric circular rhythms, creating a sense of dynamic, musical movement through pure color relationships.",
     "options": [],
     "randomizeOptions": false,
-    "additionalInstructions": ""
+    "additionalInstructions": "STYLE ENFORCEMENT:\n• Preserve subject identity through fragmented color forms\n• Circular and arc-shaped compositional structure\n• Pure, prismatic colors at maximum saturation\n• Simultaneous contrast: complementary colors adjacent\n• Reference Robert Delaunay's Simultaneous Windows and Circular Forms\n• Musical, rhythmic quality through color arrangement\n• Overlapping transparent color planes\n• Radial, centrifugal composition\n• No earth tones or muted colors — pure spectrum only\n• The overall effect should be joyful, dynamic, and luminous"
   },
   {
     "name": "ORIGA-ME",
@@ -32571,6 +32812,19 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "PANORAMIC DAGUERREOTYPE",
+    "category": [
+      "PHOTOGRAPHY",
+      "VINTAGE",
+      "PANORAMIC",
+      "SILVER"
+    ],
+    "message": "Take a picture and transform the image into a panoramic daguerreotype — the earliest photographic process producing a unique, mirror-like image on a silver-coated copper plate. The image should show the characteristic qualities of daguerreotype: a mirror-like reflective silver surface that shifts between positive and negative depending on viewing angle, extraordinary sharpness and detail, the characteristic blue-gray or warm gold toning of the silver surface, and the slight vignetting at the edges. Present the image in a panoramic format within an ornate brass mat (preserver) and leather-covered case with velvet lining. Include the slight oxidation and tarnishing at the edges characteristic of aged daguerreotypes.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n• Preserve subject identity on mirror-like silver surface\n• Reflective quality — shifts between positive and negative\n• Extraordinary sharpness and detail\n• Blue-gray or warm gold toning of silver\n• Slight vignetting at edges\n• Reference Louis Daguerre's process from 1839\n• Ornate brass mat and leather case presentation\n• Slight oxidation and tarnishing at edges\n• Panoramic format (wider than standard daguerreotype)\n• The overall effect should be precious, mirror-like, and historically authentic"
   },
   {
     "name": "PAPARAZZI",
@@ -33936,9 +34190,9 @@
       "BOKEH"
     ],
     "message": "Take a picture and transform it using the distinctive optical characteristics of a Petzval lens \u2014 the 1840 lens design famous for its unique rendering. The center of the image should be tack-sharp with beautiful contrast, while the background bokeh swirls in a distinctive circular pattern around the subject (the famous 'Petzval swirl'). This swirling bokeh is caused by the lens's strong field curvature and should create a sense of motion and energy in the out-of-focus areas while the subject remains perfectly still and sharp at center. Colors should be slightly warm with the characteristic Petzval contrast \u2014 punchy midtones with smooth highlight rolloff. Vignetting should darken the corners naturally.",
+    "options": [],
     "randomizeOptions": false,
-    "additionalInstructions": "The swirling bokeh pattern must be clearly visible and circular around the subject. The center sharpness must contrast dramatically with the swirling edges. The effect should feel optical, not digital.",
-    "options": []
+    "additionalInstructions": "The swirling bokeh pattern must be clearly visible and circular around the subject. The center sharpness must contrast dramatically with the swirling edges. The effect should feel optical, not digital."
   },
   {
     "name": "PEZ DISPENSER",
@@ -34039,6 +34293,32 @@
     "additionalInstructions": ""
   },
   {
+    "name": "PHOTOCHROM LITHOGRAPH",
+    "category": [
+      "PHOTOGRAPHY",
+      "VINTAGE",
+      "COLOR",
+      "TRAVEL"
+    ],
+    "message": "Take a picture and transform the image into a photochrom print — the late 19th-century process of creating color lithographs from black and white photographic negatives, widely used for travel postcards and scenic views. The image should show the characteristic photochrom qualities: slightly artificial but beautiful color derived from hand-separation of a monochrome photo into 6-15 lithographic color stones, the subtle dot pattern of lithographic printing visible at close inspection, and the characteristic slightly oversaturated, idealized colors of hand-interpreted color separation. The overall effect should be a beautiful, slightly unreal color image that sits between photography and illustration.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n• Preserve subject identity in photochrom color\n• Colors derived from hand-separation of B&W photo\n• Slightly artificial but beautiful color interpretation\n• Subtle lithographic dot pattern visible at close inspection\n• Reference the Photoglob Zürich photochrom process (1880s-1900s)\n• 6-15 color separations creating complex color\n• Slightly oversaturated, idealized colors\n• The image sits between photography and illustration\n• Travel postcard aesthetic and format\n• The overall effect should be beautiful, slightly unreal, and Victorian"
+  },
+  {
+    "name": "PHOTOGRAPHIC TYPOLOGY",
+    "category": [
+      "PHOTOGRAPHY",
+      "CONCEPTUAL",
+      "SYSTEMATIC",
+      "GRID"
+    ],
+    "message": "Take a picture and transform the image into a photographic typology in the tradition of Bernd and Hilla Becher — a systematic grid of related images that reveals patterns through repetition and comparison. Present the subject as a grid of 9 (3x3) or 16 (4x4) variations, each photographed from the same angle, distance, and lighting conditions but showing subtle differences. Each cell in the grid should show the subject with one element varied while all others remain constant. The presentation should be clinical, objective, and systematic — like a scientific classification chart. All images should share identical framing, exposure, and tonal quality.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n• Preserve subject identity across all grid cells\n• Systematic grid presentation: 3x3 or 4x4\n• Identical framing, angle, and lighting in every cell\n• One element varies while others remain constant\n• Reference Bernd and Hilla Becher's industrial typologies\n• Clinical, objective, documentary approach\n• No artistic lighting or dramatic composition\n• Frontal, centered, even lighting in every frame\n• The grid should reveal patterns through repetition\n• The overall effect should be systematic, encyclopedic, and revealing"
+  },
+  {
     "name": "PHOTOMANIPULATION",
     "category": [
       "SURREAL",
@@ -34078,6 +34358,19 @@
     "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Period-appropriate printing technique\n• Characteristic tonal qualities\n• Paper and ink texture\n• Early 20th-century printing limitations\n• Mechanical reproduction aesthetic"
   },
   {
+    "name": "PHOTOMONTAGE DADA",
+    "category": [
+      "ART",
+      "MIXED MEDIA",
+      "COLLAGE",
+      "DADA"
+    ],
+    "message": "Take a picture and transform it into a Dada photomontage. The subject should be fragmented and recombined with cut-out photographs from newspapers, magazines, and printed materials in jarring, irrational juxtapositions. The composition should be deliberately chaotic, politically charged, and visually aggressive — combining disparate photographic fragments to create new meanings through absurd combinations.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "VISUAL REQUIREMENTS:\n• Cut-and-paste aesthetic with visible scissor edges and overlapping fragments\n• Jarring scale shifts between photographic elements\n• Mix of photographic fragments from different sources and contexts\n• Typography and text fragments integrated as visual elements\n• Deliberately irrational juxtapositions creating new meanings\n• Subject fragmented and recombined with unrelated imagery\n• Black and white photographs mixed with occasional color elements\n• Aggressive, confrontational composition rejecting aesthetic harmony\n• Reference artists: Hannah Höch, John Heartfield, Raoul Hausmann, Kurt Schwitters"
+  },
+  {
     "name": "PHOTO PUZZLE",
     "category": [
       "PUZZLE",
@@ -34100,6 +34393,32 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "The photogram technique must be authentic \u2014 objects as white silhouettes, background as exposed black, gray tones from semi-transparent objects. Edge sharpness should vary with object-to-paper distance. The composition should feel intentionally surrealist."
+  },
+  {
+    "name": "PHOTOGRAPHIC PALIMPSEST",
+    "category": [
+      "PHOTOGRAPHY",
+      "EXPERIMENTAL",
+      "LAYERED",
+      "TIME"
+    ],
+    "message": "Take a picture and transform the image into a photographic palimpsest — multiple temporal layers of the same space visible simultaneously, like a visual archaeology of time. The image should show the subject overlaid with ghostly traces of previous states, past inhabitants, or historical layers of the same location. Earlier layers should be more transparent and faded, while the present moment remains most solid. The effect should suggest that time is not linear but accumulated — every moment leaving a visible trace that never fully disappears. Use varying degrees of opacity and slight color shifts to differentiate temporal layers.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n• Preserve subject identity in the most solid/present layer\n• Multiple temporal layers visible simultaneously\n• Earlier layers more transparent, present layer most solid\n• Slight color shifts between temporal layers (warmer = older)\n• Reference the concept of palimpsest — erased but still visible\n• The effect should suggest accumulated time\n• Ghostly traces of past states visible beneath the present\n• The overall mood should be contemplative and haunting\n• Layers should interact and overlap meaningfully\n• The image should feel like visual archaeology"
+  },
+  {
+    "name": "PHOTOGRAPHIC SEQUENCE",
+    "category": [
+      "PHOTOGRAPHY",
+      "NARRATIVE",
+      "SEQUENTIAL",
+      "TIME"
+    ],
+    "message": "Take a picture and transform the image into a photographic sequence — a horizontal strip of 5-7 frames showing a continuous action or transformation unfolding over time, like a film strip or Muybridge motion study. Each frame should capture a distinct moment in a progression, with the subject moving through a complete action from first frame to last. The frames should be evenly spaced with thin black borders between them, presented as a single horizontal strip. The photographic style should be consistent across all frames — same lighting, same background, same technical quality — with only the subject's position or state changing.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n• Preserve subject identity across all frames\n• 5-7 frames in a horizontal strip\n• Each frame captures a distinct moment in a progression\n• Consistent lighting, background, and technical quality\n• Thin black borders between frames\n• Reference Eadweard Muybridge and Duane Michals\n• The sequence should tell a clear story or show a complete action\n• Each frame should be a strong image individually\n• The progression should be logical and readable left to right\n• The overall effect should reveal time and motion"
   },
   {
     "name": "PHOTOMONTAGE",
@@ -34250,6 +34569,45 @@
     "additionalInstructions": "• Animal must behave as a willing participant in a staged photograph\n• Animal must remain recognizable and anatomically accurate\n• Preserve realistic scale relationships\n• Emphasize humor, charm, and personality\n• Avoid attacks, aggression, predatory behavior, injuries, fear, panic, or danger\n• Animal should appear friendly and cooperative\n• Use professional photography composition\n• Maintain focus on interaction between animal and subject\n• The image should resemble a memorable once-in-a-lifetime photo opportunity"
   },
   {
+    "name": "PHOTOGRAMMETRY GLITCH ART",
+    "category": [
+      "DIGITAL",
+      "3D",
+      "GLITCH",
+      "EXPERIMENTAL"
+    ],
+    "message": "Take a picture and transform it into a photogrammetry glitch artwork — the visual artifacts that occur when 3D photogrammetry scanning fails or produces errors. The subject should appear as a partially-reconstructed 3D mesh with stretched textures, missing geometry, floating disconnected polygons, texture seam errors, and the beautiful failures of algorithmic 3D reconstruction.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "VISUAL REQUIREMENTS:\n• Partially reconstructed 3D mesh with visible triangulated geometry\n• Stretched and distorted texture mapping errors\n• Missing geometry creating holes that reveal void or wireframe beneath\n• Floating disconnected polygon fragments around the main form\n• Texture seam misalignment creating color discontinuities\n• Some areas perfectly reconstructed, others catastrophically failed\n• Visible point cloud remnants in areas of failed reconstruction\n• Subject recognizable despite the reconstruction artifacts\n• Reference: failed photogrammetry scans, Glitch Artists Collective, 3D scanning errors"
+  },
+  {
+    "name": "PHOTOGRAPHIC CHIARO OSCURO",
+    "category": [
+      "PHOTOGRAPHY",
+      "PORTRAIT",
+      "DRAMATIC",
+      "LIGHTING"
+    ],
+    "message": "Take a picture and transform the image into a dramatically lit chiaroscuro portrait photograph in the tradition of Yousuf Karsh and George Hurrell. The subject should be illuminated by a single, precisely controlled light source creating extreme contrast between brilliant highlights and deep, velvety shadows. At least 60% of the frame should be in deep shadow, with the light revealing only the most essential and expressive features of the subject. The lighting should be sculptural — carving the subject's form out of darkness with the precision of a Renaissance master. Skin should appear luminous where lit, with rich texture and dimensionality.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n• Preserve subject identity with dramatic lighting\n• Single light source creating extreme contrast\n• At least 60% of frame in deep shadow\n• Brilliant, sculptural highlights on key features\n• Reference Yousuf Karsh and George Hurrell's portrait lighting\n• Black and white or very desaturated color\n• Skin should appear luminous and textured where lit\n• The lighting should feel precise and intentional\n• Deep, velvety blacks with no muddy grays\n• The overall effect should be powerful, dramatic, and timeless"
+  },
+  {
+    "name": "PHOTOGRAPHIC VERISM",
+    "category": [
+      "ART",
+      "PAINTING",
+      "HYPERREAL",
+      "CONTEMPORARY"
+    ],
+    "message": "Take a picture and transform the image into a Verist hyperrealist painting that goes beyond photorealism to emphasize and amplify reality. Every detail should be rendered with obsessive precision — skin pores, individual hairs, fabric weave, dust particles, light reflections — but slightly exaggerated in clarity and presence beyond what a camera could capture. The lighting should be flat and clinical, like a passport photo or medical documentation. The subject should be rendered with unflinching, almost uncomfortable intimacy — every imperfection preserved and amplified. The overall effect should be more real than real — hyperreal to the point of uncanny.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n• Preserve subject identity with obsessive detail\n• Every surface texture must be rendered with extreme precision\n• Skin pores, wrinkles, blemishes, and hair must be individually visible\n• Flat, clinical lighting — no dramatic shadows\n• Reference Duane Hanson, Ron Mueck, and Chuck Close\n• Details should be slightly amplified beyond photographic reality\n• The effect should be uncanny — too real, uncomfortably intimate\n• No idealization or beautification\n• Paint surface should be invisible — no visible brushwork\n• The overall feeling should be clinical, intimate, and slightly unsettling"
+  },
+  {
     "name": "PHOTOREALISM",
     "category": [
       "ART",
@@ -34392,6 +34750,19 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "Each stone piece should show its natural patterns, veining, and color variations. The joints between stones should be nearly invisible, showing master craftsmanship. The polished surface should have a uniform high gloss."
+  },
+  {
+    "name": "PIETRA PAESINA STONE",
+    "category": [
+      "ART",
+      "NATURAL",
+      "GEOLOGICAL",
+      "LANDSCAPE"
+    ],
+    "message": "Take a picture and transform the image into a pietra paesina (landscape stone) — the natural geological phenomenon where mineral deposits in limestone create patterns that resemble landscapes, ruins, or cityscapes. The subject should appear as if naturally formed within a polished stone cross-section, with iron oxide and manganese deposits creating the image through geological processes over millions of years. The color palette should be limited to natural mineral tones: warm browns, ochres, grays, and cream of limestone with darker iron-stain patterns. The overall effect should be uncanny — a recognizable image that appears to have been created by nature rather than human hands.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n• Preserve subject identity as if formed naturally in stone\n• Natural mineral color palette: browns, ochres, grays, cream\n• Iron oxide and manganese creating the pattern\n• Polished limestone cross-section appearance\n• The image should appear geological, not painted\n• Reference actual pietra paesina specimens from Florence\n• Dendritic (branching) mineral patterns forming the image\n• The stone matrix should be visible throughout\n• The effect should be uncanny — nature mimicking art\n• The overall appearance should be a polished geological specimen"
   },
   {
     "name": "PILLOW PERSON",
@@ -34710,6 +35081,19 @@
     "additionalInstructions": ""
   },
   {
+    "name": "PIXEL SORTING PORTRAIT",
+    "category": [
+      "DIGITAL",
+      "GLITCH",
+      "ALGORITHMIC",
+      "PORTRAIT"
+    ],
+    "message": "Take a picture and transform it into a pixel-sorted portrait. The subject's pixels should be algorithmically sorted by brightness, hue, or saturation value along horizontal or vertical lines, creating cascading waterfalls of color that flow from recognizable features into abstract sorted gradients. Some areas should remain untouched and recognizable while others dissolve into sorted pixel streams.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "VISUAL REQUIREMENTS:\n• Pixels sorted along consistent direction (vertical or horizontal)\n• Sorted areas create smooth gradients from dark to light or by hue\n• Threshold-based sorting: some areas remain intact, others fully sorted\n• Subject's key features (eyes, mouth) partially preserved as anchor points\n• Cascading color streams flowing from recognizable features\n• Sharp boundaries between sorted and unsorted regions\n• Original color palette preserved but redistributed through sorting\n• Subject recognizable despite significant pixel displacement\n• Reference: Kim Asendorf pixel sorting algorithm, glitch art community"
+  },
+  {
     "name": "PIZZA BOX ART",
     "category": [
       "HUMOR",
@@ -34861,10 +35245,10 @@
       "TONAL",
       "ART"
     ],
-    "message": "Take a picture and transform it into a platinum/palladium print photograph. Platinum printing is a fine art photographic process producing images with an extraordinarily long tonal range, matte surface, and permanent neutral gray to warm brown tones. The image should feature the characteristic velvety matte surface, subtle tonal gradations, and the archival permanence aesthetic of this noble metal process.",
+    "message": "Take a picture and transform it into a platinum/palladium print photograph. Platinum printing is a fine art photographic process producing images with an extraordinarily long tonal range, matte surface, and permanent neutral gray to warm brown tones. The image should show the characteristic qualities of palladium printing: an extremely long tonal scale with detail visible in both deep shadows and bright highlights simultaneously, warm brown-black shadow tones, creamy paper-white highlights showing the texture of handmade cotton rag paper, and the slightly soft, luminous quality of contact printing. The overall effect should be the pinnacle of fine art photographic printing — rich, warm, and extraordinarily detailed.",
     "options": [],
     "randomizeOptions": false,
-    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Extraordinarily long tonal range\n• Velvety matte surface\n• Neutral gray to warm brown tones\n• Subtle tonal gradations\n• Fine art photographic print quality"
+    "additionalInstructions": "STYLE ENFORCEMENT:\n• Preserve subject identity with extraordinary tonal range\n• Warm brown-black tones — not neutral or cool\n• Extremely long tonal scale: detail in deepest shadows AND brightest highlights\n• Handmade cotton rag paper texture visible in highlights\n• Slightly soft, luminous quality of contact printing\n• No pure black — deepest shadows retain warm brown tone\n• Paper texture integral to the image\n• The overall effect should be warm, rich, and extraordinarily refined\n• This is the most archival and precious of all photographic processes."
   },
   {
     "name": "PLAYBILL",
@@ -35042,6 +35426,19 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "POCHOIR STENCIL PRINT",
+    "category": [
+      "ART",
+      "PRINTMAKING",
+      "DECORATIVE",
+      "ART DECO"
+    ],
+    "message": "Take a picture and transform the image into a pochoir stencil print — the luxurious hand-colored printing technique used for Art Deco fashion plates and fine art reproductions in 1920s-30s Paris. The image should show the characteristic qualities: perfectly flat, opaque gouache colors applied through hand-cut metal stencils with razor-sharp edges, rich saturated pigments, and the slight buildup of paint at stencil edges. Colors should be the sophisticated Art Deco palette: gold, black, coral, jade green, and silver. The overall effect should be luxurious, precise, and unmistakably Art Deco — the highest quality of hand-colored printing.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n• Preserve subject identity in pochoir stencil style\n• Perfectly flat, opaque gouache colors\n• Razor-sharp stencil edges\n• Rich, saturated pigments with slight edge buildup\n• Art Deco palette: gold, black, coral, jade, silver\n• Reference Gazette du Bon Ton and George Barbier fashion plates\n• Hand-cut metal stencil precision\n• Luxurious, sophisticated aesthetic\n• Multiple stencil layers creating complex color compositions\n• The overall effect should be luxurious, precise, and Art Deco"
   },
   {
     "name": "POINTILLISM",
@@ -35505,6 +35902,19 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "• Preserve recognizable identity while emphasizing subjective artistic vision\n• Use vivid and expressive color relationships\n• Simplify and strengthen visual forms\n• Allow symbolic and emotional interpretation\n• Use visible brushwork and decorative design\n• Avoid strict realism and purely observational rendering\n• Emphasize artistic expression and mood\n• Produce an authentic Post-Impressionist artwork"
+  },
+  {
+    "name": "POST-PAINTERLY ABSTRACTION",
+    "category": [
+      "ART",
+      "ABSTRACT",
+      "MODERN",
+      "AMERICAN"
+    ],
+    "message": "Take a picture and transform it into a Post-Painterly Abstraction work. In contrast to the thick, gestural paint of Abstract Expressionism, this style emphasizes openness, clarity, and the physical flatness of the picture plane. The subject should be expressed through clear, uncluttered areas of color with crisp or stained edges, emphasizing the literal surface of the canvas and rejecting any illusion of depth or emotional drama.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "VISUAL REQUIREMENTS:\n• Open, uncluttered composition with generous breathing space\n• Clear color areas — either hard-edged or stain-soaked into canvas\n• No thick impasto, no gestural brushwork, no emotional drama\n• Emphasis on the literal flatness of the picture surface\n• Colors chosen for their optical clarity rather than emotional weight\n• Large areas of raw or lightly stained canvas as active compositional element\n• Subject's presence distilled to essential color and form relationships\n• Reference artists: Morris Louis, Kenneth Noland, Jules Olitski, Larry Poons, Gene Davis"
   },
   {
     "name": "POSTCARD",
@@ -36338,6 +36748,19 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "PROCESS ART",
+    "category": [
+      "ART",
+      "CONCEPTUAL",
+      "EXPERIMENTAL",
+      "CONTEMPORARY"
+    ],
+    "message": "Take a picture and transform the image into a Process Art piece where the emphasis is entirely on the physical process of creation rather than a predetermined outcome. The image should show materials in states of transformation — melting, dripping, staining, rusting, growing, decaying, or accumulating. The subject's form should emerge from or be suggested by natural material processes: gravity pulling pigment downward, water spreading ink outward, rust forming patterns, wax pooling and hardening. The final image should look like the inevitable result of physical forces acting on materials over time, with the subject's identity preserved through the logic of the process.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n• Preserve subject identity through material processes\n• The process of creation must be the primary content\n• Show materials in transformation: melting, dripping, staining, rusting\n• Reference Robert Morris, Eva Hesse, and Richard Serra\n• Natural forces (gravity, time, chemistry) should shape the composition\n• No predetermined geometric design — let process determine form\n• Materials should appear authentic: real rust, real drips, real stains\n• The image should feel like documentation of a physical event\n• Time and entropy should be visible in the work\n• The overall aesthetic should be raw, material, and process-driven"
   },
   {
     "name": "PRODUCT LABEL",
@@ -37409,6 +37832,19 @@
     "additionalInstructions": "FINAL RESULT:\nThe image should show the subject as an actual contestant on the selected reality TV show with authentic set design, show graphics, appropriate wardrobe, and that signature reality TV dramatic moment - looking like a screenshot from an actual episode."
   },
   {
+    "name": "REAL-TIME SHADER ART",
+    "category": [
+      "DIGITAL",
+      "GENERATIVE",
+      "CODE",
+      "ABSTRACT"
+    ],
+    "message": "Take a picture and transform it into a real-time shader artwork — the visual aesthetic of GPU fragment shaders that generate imagery through mathematical functions. The subject should be rendered through raymarching signed distance functions, creating a world of smooth organic forms, infinite repetition, and impossible geometry that could only exist as mathematical equations rendered in real-time.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "VISUAL REQUIREMENTS:\n• Smooth, mathematically-perfect surfaces (signed distance function aesthetic)\n• Infinite repetition and symmetry from modulo operations\n• Soft shadows from raymarched ambient occlusion\n• Iridescent or gradient materials from mathematical color functions\n• Impossible geometry: Klein bottles, Möbius strips, fractal structures\n• Subject's form suggested through mathematical primitives (spheres, toruses, boxes)\n• Clean, synthetic aesthetic with no noise or imperfection\n• Reference: Shadertoy community, Inigo Quilez, demoscene productions"
+  },
+  {
     "name": "REBOOT",
     "category": [
       "1990S",
@@ -37819,6 +38255,19 @@
     "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Hammered metal relief depth\n• Visible tool marks and hand-worked quality\n• Copper, bronze, or silver metal appearance\n• Dimensional sculptural form\n• Aged patina on metal surface"
   },
   {
+    "name": "RESIN POUR ART",
+    "category": [
+      "ART",
+      "MIXED MEDIA",
+      "CONTEMPORARY",
+      "FLUID"
+    ],
+    "message": "Take a picture and transform it into a resin pour artwork. The subject should be expressed through layers of tinted epoxy resin poured in successive transparent layers, creating extraordinary depth and a glass-like surface. Each layer should contain different colors, embedded objects, or metallic pigments that, when viewed through the crystal-clear resin surface, create a luminous, three-dimensional portrait with incredible depth.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "VISUAL REQUIREMENTS:\n• Crystal-clear resin surface with mirror-like gloss finish\n• Multiple visible layers creating genuine optical depth\n• Tinted resin in jewel tones: deep blues, emeralds, ambers, violets\n• Metallic pigments (gold, copper, silver) creating veining and cellular patterns\n• Embedded elements visible at different depths: glitter, foil, dried flowers\n• Subject's features visible through the layered depth\n• Cell patterns and lacing effects from silicone or heat manipulation\n• Dramatic lighting showing the resin's transparency and depth\n• Reference: contemporary resin artists, geode-inspired resin art"
+  },
+  {
     "name": "RETRO COMPUTER INTERFACE",
     "category": [
       "TECHNOLOGY",
@@ -37901,6 +38350,19 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "The final image should feature the characteristic luminous quality of paint viewed through glass, bold colors, and the slightly naive folk art aesthetic.\n• STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Luminous paint-through-glass quality\n• Bold flat colors\n• Reverse painting technique (fine details over broad areas)\n• Folk art aesthetic\n• Glass surface reflection and depth"
+  },
+  {
+    "name": "REVERSE GRAFFITI (CLEAN TAG)",
+    "category": [
+      "STREET ART",
+      "URBAN",
+      "ENVIRONMENTAL",
+      "SUBVERSIVE"
+    ],
+    "message": "Take a picture and transform it into a reverse graffiti (clean tagging) artwork. The subject's portrait should be created by selectively cleaning a dirty surface — removing grime, soot, and pollution from a tunnel wall, underpass, or neglected surface to reveal the clean surface beneath. The portrait emerges as clean areas against the surrounding dirt, creating art through removal rather than addition.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "VISUAL REQUIREMENTS:\n• Portrait created by cleaning (removing dirt) rather than adding paint\n• Dirty, grimy surface as the 'canvas': tunnel walls, underpasses, neglected concrete\n• Clean areas forming the portrait against surrounding soot and grime\n• Visible cleaning technique: pressure washer lines, scrub brush marks\n• Limited tonal range: clean surface vs dirty surface (essentially two-tone)\n• Urban infrastructure setting: tunnels, highway underpasses, retaining walls\n• Subject recognizable through the contrast of clean vs dirty areas\n• Environmental commentary implicit in the medium\n• Reference artists: Paul 'Moose' Curtis, Alexandre Orion (Ossário project), Ben Long"
   },
   {
     "name": "RIBBON DISINTEGRATION",
@@ -38957,10 +39419,10 @@
       "SURREAL",
       "ART"
     ],
-    "message": "Take a picture and transform it into a photograph exhibiting the Sabattier Effect (pseudo-solarization). The Sabattier Effect occurs when photographic paper or film is briefly re-exposed to light during development, creating partial tone reversal with characteristic dark outlines (Mackie lines) between light and dark areas, producing a surreal, otherworldly appearance.",
+    "message": "Take a picture and transform it into a photograph exhibiting the Sabattier Effect (pseudo-solarization). The Sabattier Effect occurs when photographic paper or film is briefly re-exposed to light during development, creating partial tone reversal with characteristic dark outlines (Mackie lines) between light and dark areas, producing a surreal, otherworldly appearance. Mid-tones should be most affected by the reversal while deep shadows and bright highlights remain relatively normal.",
     "options": [],
     "randomizeOptions": false,
-    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Partial tone reversal\n• Characteristic Mackie lines (dark edge outlines)\n• Surreal otherworldly appearance\n• Silver gelatin print quality\n• Darkroom experimental aesthetic"
+    "additionalInstructions": "STYLE ENFORCEMENT:\n• Preserve subject identity despite tonal reversal\n• Partial tonal reversal — some areas positive, some negative\n• Distinctive bright Mackie lines at tonal boundaries\n• Mid-tones most affected; deep shadows and highlights less so\n• Reference Man Ray and Lee Miller's solarized portraits\n• Black and white or limited color palette\n• The effect should be surreal and otherworldly\n• Edge effects (Mackie lines) must be clearly visible\n• The overall mood should be mysterious and dreamlike\n• Maintain photographic quality — not digitally simulated."
   },
   {
     "name": "SALT CRYSTAL FORMATION",
@@ -39296,6 +39758,19 @@
     }
   ],
   "additionalInstructions": "CRITICAL FRAMING: This is a themed escape room and haunted attraction promotional photograph styled after the SAW horror film franchise. The subject is a costumed performer. Every device is a foam, rubber, and painted plastic theatrical prop built by a professional props department. The visual style must match official SAW franchise promotional materials and Universal Studios Halloween Horror Nights marketing photography — the kind of image used in studio and theme park advertising. No gore. No wounds. No blood effects. No injury of any kind. The subject looks startled and theatrical. The trap is a dramatic backdrop prop. Style the final image as a professional horror movie poster photograph with the SAW franchise's signature desaturated green-yellow color grade, industrial set design, Billy the Puppet visible in the background, and the countdown timer on the prop device."
+  },
+  {
+    "name": "SCAGLIOLA INLAY",
+    "category": [
+      "ART",
+      "DECORATIVE",
+      "ITALIAN",
+      "FAUX MARBLE"
+    ],
+    "message": "Take a picture and transform the image into a scagliola artwork — the Italian technique of creating elaborate pictorial inlays using colored plaster mixed with marble dust and natural pigments to imitate pietra dura (stone inlay) at a fraction of the cost. The subject should appear as a polished inlay of colored stones set into a dark marble-like ground, but upon close inspection reveal the slightly softer, warmer quality of tinted plaster rather than actual stone. Colors should be rich and varied — imitating lapis lazuli, malachite, porphyry, and various marbles. The surface should appear highly polished with a slight waxy sheen.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n• Preserve subject identity as a stone inlay design\n• Colored plaster imitating precious stones\n• Dark marble-like ground (nero marquina or similar)\n• Rich colors imitating: lapis, malachite, porphyry, jasper\n• Highly polished surface with slight waxy sheen\n• Reference Italian Baroque scagliola from Florence and Carpi\n• The technique should be visible — slightly softer than real stone\n• Intricate pictorial design with fine detail\n• Include decorative border patterns\n• The overall effect should be luxurious, detailed, and Italian Baroque"
   },
   {
     "name": "SCANDINAVIAN DESIGN",
@@ -40370,6 +40845,19 @@
     "additionalInstructions": ""
   },
   {
+    "name": "SHAPED CANVAS ABSTRACTION",
+    "category": [
+      "ART",
+      "ABSTRACT",
+      "SCULPTURE",
+      "PAINTING"
+    ],
+    "message": "Take a picture and transform it into a Shaped Canvas artwork. Rather than painting within a traditional rectangular frame, the canvas itself should be cut, shaped, and constructed into a non-rectangular form — a chevron, polygon, irregular curve, or three-dimensional projection — so that the painting's shape and its painted content are unified as a single aesthetic statement derived from the subject.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "VISUAL REQUIREMENTS:\n• Non-rectangular canvas shape: chevron, L-shape, polygon, curve, or irregular form\n• The shape of the canvas IS the composition — paint and form are unified\n• Bold, flat color areas that reinforce the canvas shape\n• No illusionistic depth — the painting acknowledges its objecthood\n• Clean, precise edges where canvas meets wall\n• The shaped form should derive from the subject's essential geometry\n• Wall visible around the shaped canvas as active negative space\n• Reference artists: Frank Stella (shaped canvases), Ellsworth Kelly, Charles Hinman, Richard Tuttle"
+  },
+  {
     "name": "SHARP CALM LATTE",
     "category": [
       "DESIGN",
@@ -41184,6 +41672,19 @@
     "additionalInstructions": ""
   },
   {
+    "name": "SOLVENT TRANSFER PRINT",
+    "category": [
+      "ART",
+      "MIXED MEDIA",
+      "EXPERIMENTAL",
+      "DISTRESSED"
+    ],
+    "message": "Take a picture and transform the image into a solvent transfer print — the technique of transferring printed images onto another surface using solvents (acetone, turpentine, or Chartpak blender). The image should show the characteristic qualities: partially transferred, ghostly imagery with areas of incomplete transfer creating a distressed, fragmentary appearance. Some areas should be crisp where the transfer worked well, while others fade or disappear where the solvent didn't fully dissolve the ink. The transferred image should sit on a textured surface (drawing paper, wood, fabric) with the substrate texture showing through the thin transferred ink layer. The overall effect should be ghostly, fragmentary, and hauntingly beautiful.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n• Preserve subject identity despite fragmentary transfer\n• Partially transferred, ghostly appearance\n• Areas of incomplete transfer creating gaps and fading\n• Substrate texture visible through thin ink layer\n• Reference Robert Rauschenberg's solvent transfer drawings\n• Mix of crisp and faded areas\n• The transfer should feel physical and handmade\n• Slightly reversed/mirrored quality of transfer process\n• The overall effect should be ghostly and fragmentary\n• Beauty in imperfection and incompleteness"
+  },
+  {
     "name": "SONAR PULSE MAPPING",
     "category": [
       "DIGITAL",
@@ -41929,6 +42430,19 @@
     "additionalInstructions": ""
   },
   {
+    "name": "STAIN PAINTING",
+    "category": [
+      "ART",
+      "ABSTRACT",
+      "COLOR FIELD",
+      "TECHNIQUE"
+    ],
+    "message": "Take a picture and transform it into a Stain Painting. The subject's essence should be expressed through thinned paint soaked directly into unprimed canvas, creating luminous veils of transparent color that become one with the fabric surface. The paint should appear to have flowed and pooled naturally, guided but not forced, creating organic shapes with soft feathered edges where pigment meets raw canvas.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "VISUAL REQUIREMENTS:\n• Thinned acrylic or oil paint soaked into raw unprimed canvas\n• Canvas weave texture visible through transparent color veils\n• Organic pooling shapes with feathered, bleeding edges\n• Luminous transparency — light passes through color rather than reflecting off surface\n• No impasto, no visible brushstrokes, no opaque passages\n• Colors flow and merge at boundaries creating soft halos\n• Raw canvas visible as active compositional element\n• Subject's presence suggested through color choices and flow patterns\n• Reference artists: Helen Frankenthaler, Morris Louis, Kenneth Noland (early work), Paul Jenkins"
+  },
+  {
     "name": "STANDING NEXT TO",
     "category": [
       "HUMOR",
@@ -42513,6 +43027,19 @@
     "additionalInstructions": "ABSOLUTE PROHIBITIONS:\n• No missing outlines, bleed, or cut guides\n• No low-contrast or muddy colors\n• No single-sticker outputs\n\nFINAL RESULT:\nThe final image must look like a professionally prepared sticker sheet ready for commercial printing, with clear bleed, cut guides, bold outlines, and multiple expressive sticker versions of the subject."
   },
   {
+    "name": "STICKER SLAP COLLAGE",
+    "category": [
+      "STREET ART",
+      "STICKER",
+      "COLLAGE",
+      "URBAN"
+    ],
+    "message": "Take a picture and transform it into a sticker art collage — the accumulated layers of hand-drawn, printed, and die-cut stickers that build up on urban surfaces over time. The subject's portrait should emerge from hundreds of overlapping stickers of various sizes, styles, and ages — some fresh, some peeling, some partially covered by newer additions — creating a collaborative, evolving portrait.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "VISUAL REQUIREMENTS:\n• Hundreds of overlapping stickers of various sizes and styles\n• Mix of hand-drawn, screen-printed, and die-cut vinyl stickers\n• Various states of weathering: fresh, peeling, faded, partially torn\n• Subject's portrait emerging from the aggregate of sticker placement\n• Urban surface beneath: metal utility box, lamp post, newspaper box\n• Different artistic styles in individual stickers creating visual variety\n• Layers of time visible: older stickers beneath newer ones\n• Reference: sticker art culture, slap tagging, Hello My Name Is stickers, vinyl art toys"
+  },
+  {
     "name": "STILL LIFE (INANIMATE OBJECTS)",
     "category": [
       "STILL LIFE",
@@ -42839,7 +43366,7 @@
       "PAINTING",
       "CONTEMPORARY"
     ],
-    "message": "Take a picture and transform the image into a Stuckist painting. Preserve subject identity. Use expressive, figurative painting with raw emotional intensity. Emphasize authentic personal expression through bold brushwork, vivid colors, and unpolished figurative representation that rejects conceptual art in favor of direct painterly communication.",
+    "message": "Take a picture and transform the image into a Stuckist painting. Preserve subject identity. Use expressive, figurative painting with raw emotional intensity. Emphasize authentic personal expression through bold brushwork, vivid colors, and unpolished figurative representation that rejects conceptual art in favor of direct painterly communication. The style should be deliberately unpretentious with visible, energetic brushwork that prioritizes emotional truth over technical perfection. Colors should be bold and sometimes clashing, applied with urgency and spontaneity. The subject should be rendered with honest, unflinching directness — neither idealized nor grotesquely distorted, but painted with raw human authenticity. The overall feeling should be passionate, genuine, and defiantly anti-slick.",
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "STYLE ENFORCEMENT:\n• Preserve subject identity with honest, direct rendering\n• Visible, energetic brushwork — not polished or refined\n• Bold color choices that may clash intentionally\n• Emotional authenticity over technical perfection\n• Figurative and recognizable — not abstract\n• Anti-conceptual, pro-painting aesthetic\n• Reference the Stuckism movement founded by Billy Childish and Charles Thomson\n• The painting should feel urgent, human, and defiantly handmade\n• Avoid slickness, digital perfection, or ironic detachment."
@@ -45033,10 +45560,10 @@
       "MODERNIST",
       "ART"
     ],
-    "message": "Take a picture and transform it into a Synchromist painting. Synchromism (1912-1920s) was an American abstract art movement founded by Morgan Russell and Stanton Macdonald-Wright, based on the idea that color and music are analogous phenomena. The style features rhythmic arrangements of pure spectral colors in overlapping curved forms creating visual harmonies.",
+    "message": "Take a picture and transform it into a Synchromist painting. Synchromism (1912-1920s) was an American abstract art movement founded by Morgan Russell and Stanton Macdonald-Wright, based on the idea that color and music are analogous phenomena. The style features rhythmic arrangements of pure spectral colors in overlapping curved forms creating visual harmonies. The composition should suggest three-dimensional volume entirely through the orchestration of warm and cool, saturated and muted color passages.",
     "options": [],
     "randomizeOptions": false,
-    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Rhythmic arrangements of pure spectral colors\n• Overlapping curved forms\n• Musical color harmonies\n• Luminous prismatic palette\n• Abstract color-based composition"
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Rhythmic arrangements of pure spectral colors\n• Overlapping curved forms\n• Musical color harmonies\n• Luminous prismatic palette\n• Abstract color-based composition\n• Warm colors advancing, cool colors receding to create spatial depth."
   },
   {
     "name": "SYNESTHESIA",
@@ -45113,7 +45640,7 @@
     "message": "Take a picture and transform the image into a Tachiste abstract painting in the tradition of the European Art Informel movement. Preserve the general composition and color mood of the original subject but dissolve all precise forms into spontaneous, gestural marks. The image should be built from splashes, drips, blobs, and stains of paint applied with raw, intuitive energy. No geometric shapes or deliberate patterns — every mark should feel impulsive and automatic. Use rich, layered color with visible paint texture: thick impasto passages alongside thin washes and accidental drips. The palette should be expressive and emotionally charged, drawn from the mood of the original image but intensified. The final result should resemble a canvas attacked with passionate urgency, where the subject's essence is felt rather than seen. Heavy oil paint texture with visible material presence.",
     "options": [],
     "randomizeOptions": false,
-    "additionalInstructions": ""
+    "additionalInstructions": "VISUAL REQUIREMENTS:\n• Spontaneous paint application: splashes, drips, blots, and thrown paint\n• Visible speed and energy in every mark\n• Rich impasto areas contrasting with thin stained passages\n• Dark, earthy palette punctuated by sudden bursts of intense color\n• No premeditated composition — the painting should feel entirely intuitive\n• Calligraphic quality to gestural marks suggesting Asian brush influence\n• Subject's emotional energy translated into paint viscosity and gesture\n• Reference artists: Georges Mathieu, Hans Hartung, Pierre Soulages, Wols, Jean-Paul Riopelle."
   },
   {
     "name": "TAKE ON ME",
@@ -47446,6 +47973,19 @@
     "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Figurative painting with mythological references\n• Mediterranean warm color palette\n• Historical style references\n• Personal mythological imagery\n• Expressive Italian painterly tradition"
   },
   {
+    "name": "TRANSFER LITHOGRAPHY",
+    "category": [
+      "ART",
+      "PRINTMAKING",
+      "DRAWING",
+      "TEXTURED"
+    ],
+    "message": "Take a picture and transform the image into a transfer lithograph — the technique of drawing on specially prepared transfer paper and then transferring the image to a lithographic stone for printing. The image should show the characteristic qualities: the slightly grainy, textured quality of lithographic crayon on paper, the rich velvety blacks achievable in lithography, and the subtle tonal range from deep black through soft grays to paper white. The texture of the transfer paper should be visible in the drawn marks, creating a distinctive stippled or woven pattern within the crayon strokes. Include the characteristic lithographic qualities: smooth tonal washes (tusche), precise crayon work, and the flat, matte surface of stone-printed ink on paper.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n• Preserve subject identity through lithographic drawing\n• Grainy texture of lithographic crayon on transfer paper\n• Rich, velvety blacks unique to lithography\n• Subtle tonal range from black through grays to white\n• Transfer paper texture visible within marks\n• Reference Honoré Daumier and Toulouse-Lautrec lithographs\n• Smooth tusche washes combined with crayon work\n• Flat, matte surface of stone-printed ink\n• The drawing should feel spontaneous yet controlled\n• The overall effect should be rich, textured, and printerly"
+  },
+  {
       "name": "TRANSFORMERS",
       "category": [
         "SCI-FI",
@@ -48790,6 +49330,19 @@
     "additionalInstructions": ""
   },
   {
+    "name": "UKIYO-E WOODBLOCK ILLUSTRATION",
+    "category": [
+      "ILLUSTRATION",
+      "JAPANESE",
+      "TRADITIONAL",
+      "WOODBLOCK"
+    ],
+    "message": "Take a picture and transform it into a traditional Japanese ukiyo-e woodblock print illustration. The subject should be depicted in the flat, graphic style of Edo-period woodblock printing — with bold black outlines, flat areas of color, decorative patterns, and the distinctive spatial conventions of Japanese printmaking including the absence of Western perspective and the use of atmospheric bands to suggest depth.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "VISUAL REQUIREMENTS:\n• Bold black outlines (sumi) defining all forms\n• Flat areas of color with no gradation (except bokashi gradient technique)\n• No Western linear perspective — flat spatial arrangement\n• Decorative textile patterns on clothing rendered in fine detail\n• Atmospheric bands or clouds suggesting spatial depth\n• Wood grain texture visible in printed areas\n• Subject in Japanese dress with elaborate hairstyle\n• Cartouche with Japanese text (title block)\n• Color palette: indigo, vermillion, yellow ochre, green, pink\n• Reference: Hokusai, Hiroshige, Utamaro, Sharaku — Edo period ukiyo-e masters"
+  },
+  {
   "name": "UNCANNY VALLEY",
   "category": [
     "HORROR",
@@ -48848,6 +49401,36 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "UNDERWATER PHOTOGRAPHY",
+    "category": [
+      "PHOTOGRAPHY",
+      "NATURE",
+      "UNDERWATER",
+      "MARINE"
+    ],
+    "message": "Take a picture and transform it into an underwater photograph. The subject should appear submerged in clear tropical water, surrounded by marine life — coral reefs, schools of fish, sea turtles, or jellyfish — with the characteristic blue-green color cast, caustic light patterns, and suspended particle atmosphere of underwater photography. Light rays should penetrate from the surface above.",
+    "options": [
+      {
+        "id": "001",
+        "text": "Coral reef — subject surrounded by vibrant coral formations and tropical fish"
+      },
+      {
+        "id": "002",
+        "text": "Open water — subject floating in deep blue with sunbeams from above and pelagic life"
+      },
+      {
+        "id": "003",
+        "text": "Kelp forest — subject among towering kelp fronds with dappled green light"
+      },
+      {
+        "id": "004",
+        "text": "Cenote — subject in crystal-clear freshwater with limestone formations and light shafts"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "VISUAL REQUIREMENTS:\n• Characteristic underwater color: blue-green cast increasing with depth\n• Caustic light patterns dancing on surfaces from surface waves\n• Light rays (god rays) penetrating from the water surface above\n• Suspended particles (marine snow) visible in water column\n• Hair and fabric floating weightlessly in water\n• Bubbles rising from subject\n• Marine life naturally integrated into the scene\n• Subject appearing naturally submerged, not composited\n• Reference: underwater photography by David Doubilet, Zena Holloway, fashion underwater shoots"
   },
   {
     "name": "UNIFORMED",
@@ -49384,6 +49967,19 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "VECTOR ENFORCEMENT:\n\n• Use perfectly clean vector-style shapes\n• Create sharp edges and smooth bezier-style curves\n• Avoid painterly texture or photographic noise\n• Emphasize geometric simplification and graphic clarity\n\nSTYLE ENFORCEMENT:\n\n• Simulate professional Adobe Illustrator precision\n• Use clean layered color regions\n• Preserve recognizable subject identity through simplified vector forms\n• Maintain strong silhouette readability\n\nVISUAL STYLE:\n\n• Professional vector illustration\n• Flat clean graphic design\n• Crisp scalable-art appearance\n• Smooth color blocking\n• Precision linework and shape control\n\nANTI-CHEAT:\n\n• Do NOT use painterly brush strokes\n• Do NOT add realistic film grain or texture\n• Do NOT create messy sketch aesthetics\n• Do NOT distort the clean vector appearance\n\nFINAL RESULT:\nThe final image must resemble a professionally designed ultra-clean vector illustration with precise geometric construction, smooth flat colors, crisp edges, and polished Adobe Illustrator-style graphic realism."
+  },
+  {
+    "name": "VECTOR FIELD VISUALIZATION",
+    "category": [
+      "DIGITAL",
+      "SCIENTIFIC",
+      "MATHEMATICAL",
+      "FLOW"
+    ],
+    "message": "Take a picture and transform the image into a vector field visualization — the subject's form defined by thousands of small directional arrows or flow lines that follow the contours and gradients of the original image. Each arrow should indicate direction and magnitude through its orientation and length. The flow should follow the natural contours of the subject — hair direction, fabric drape, facial structure — creating a dynamic map of directional energy. Use a dark background with bright, color-coded arrows (warm colors for strong flow, cool colors for gentle flow). The overall effect should resemble a computational fluid dynamics simulation or wind map shaped like the subject.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n• Preserve subject identity through flow field patterns\n• Thousands of small directional arrows or streamlines\n• Arrows follow natural contours of the subject\n• Color-coded by magnitude: warm = strong, cool = gentle\n• Dark background with bright flow indicators\n• Reference scientific visualization and CFD imagery\n• The flow should feel natural and physically plausible\n• Varying density: denser in detailed areas, sparser in flat areas\n• The overall effect should be both scientific and beautiful\n• The subject should be clearly recognizable through the flow pattern"
   },
   {
     "name": "VEDUTA PAINTING",
@@ -50389,6 +50985,19 @@
     "additionalInstructions": ""
   },
   {
+    "name": "VITREOGRAPHY GLASS PRINT",
+    "category": [
+      "ART",
+      "PRINTMAKING",
+      "GLASS",
+      "LUMINOUS"
+    ],
+    "message": "Take a picture and transform the image into a vitreograph — a print made from a glass plate matrix rather than traditional metal or stone. The image should show the characteristic luminous, ethereal quality unique to glass-plate printing: soft, glowing tones with a crystalline clarity, subtle embossing from the plate edges, and the unique textural qualities that glass creates when inked and pressed. Colors should appear luminous and slightly translucent, as if light passes through them. The paper should show the deep embossed impression of the glass plate edges. The overall effect should be luminous, precious, and unlike any other printmaking medium.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n• Preserve subject identity with luminous print quality\n• Crystalline clarity unique to glass-plate printing\n• Soft, glowing tones with translucent quality\n• Deep embossed plate mark from glass edges\n• Reference Harvey Littleton's vitreography innovations\n• Colors appear luminous as if light passes through\n• Unique textural qualities from glass matrix\n• Fine art paper with visible embossing\n• The overall effect should be luminous and ethereal\n• Unlike any other printmaking medium — uniquely glass-derived"
+  },
+  {
     "name": "VITRUVIAN MAN",
     "category": [
       "ART",
@@ -50414,6 +51023,19 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "The obsidian should have realistic volcanic glass properties \u2014 extreme glossiness, conchoidal fracture curves, and the way light interacts with the glass-like surface. The subject should emerge from the fracture geometry."
+  },
+  {
+    "name": "VOLUMETRIC LIGHT SIMULATION",
+    "category": [
+      "DIGITAL",
+      "3D",
+      "LIGHTING",
+      "CINEMATIC"
+    ],
+    "message": "Take a picture and transform it into a dramatic volumetric lighting study. The subject should be illuminated by visible light rays passing through atmospheric particles — god rays streaming through windows, laser beams cutting through fog, or spotlight cones visible in haze. The volumetric light itself should be the primary visual element, with the subject defined more by how light interacts with atmosphere around them than by direct illumination.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "VISUAL REQUIREMENTS:\n• Visible light rays/cones cutting through atmospheric haze or fog\n• Light scattering on dust particles, smoke, or mist clearly visible\n• Subject partially silhouetted or rim-lit by volumetric light sources\n• Multiple light sources creating intersecting volumetric cones\n• Color variation in light: warm practicals vs cool ambient\n• Deep shadows contrasting with bright volumetric shafts\n• Atmospheric depth — distant areas hazier than foreground\n• Subject's form revealed through the interaction of light and atmosphere\n• Reference: Roger Deakins cinematography, Blade Runner 2049 lighting, cathedral light shafts"
   },
   {
     "name": "VORONOI STRUCTURE",
@@ -50651,7 +51273,7 @@
     "message": "Take a picture and transform the image into Warli Art. Preserve subject identity. Use the traditional tribal art style of the Warli people of Maharashtra, India. Render figures and scenes using simple geometric shapes — circles, triangles, and lines — in white pigment on a terracotta or dark brown background. Emphasize rhythmic patterns and community scenes.",
     "options": [],
     "randomizeOptions": false,
-    "additionalInstructions": ""
+    "additionalInstructions": "STYLE ENFORCEMENT:\n• Preserve subject identity through basic geometric shapes\n• White figures on red-brown mud wall background\n• Only circles, triangles, and lines used\n• Stick-figure simplification of all forms\n• Reference traditional Warli painting conventions\n• Rice paste white on earth-colored ground\n• Minimal, ancient aesthetic\n• Rhythmic repetition of simple forms\n• The overall effect should be primal, minimal, and narrative."
   },
   {
     "name": "WARNER BROS CARTOON",
@@ -50909,10 +51531,10 @@
       "TRADITIONAL",
       "ART"
     ],
-    "message": "Take a picture and transform it into a Japanese Chigiri-e (torn paper art). Chigiri-e is a traditional Japanese art form where images are created by tearing pieces of handmade washi paper and layering them to form pictures. The image should feature the characteristic soft torn edges of translucent washi paper layers building up color and form.",
+    "message": "Take a picture and transform the image into a chigiri-e artwork — the Japanese art of creating pictures by tearing (not cutting) pieces of handmade washi paper and layering them to form an image. The image should feature the characteristic soft torn edges of translucent washi paper layers building up color and form. The subject should be constructed entirely from torn pieces of colored washi paper with their characteristic soft, feathered torn edges (as opposed to sharp cut edges). The translucent quality of washi should be visible where pieces overlap, creating subtle color mixing. Use the natural colors of dyed washi: soft pastels, earth tones, and the occasional metallic gold or silver leaf paper. The torn paper pieces should vary in size — smaller for detailed areas, larger for broad color fields.",
     "options": [],
     "randomizeOptions": false,
-    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Torn washi paper edges (no cutting)\n• Layered translucent paper\n• Soft organic forms\n• Natural fiber paper texture\n• Japanese aesthetic sensibility"
+    "additionalInstructions": "STYLE ENFORCEMENT:\n• Preserve subject identity through torn paper arrangement\n• All edges must be torn (feathered), never cut (sharp)\n• Translucent washi quality visible in overlapping areas\n• Natural washi colors: soft pastels, earth tones, metallics\n• Reference traditional Japanese chigiri-e technique\n• Varying piece sizes: small for detail, large for broad areas\n• The paper fiber texture should be visible\n• Subtle color mixing where translucent papers overlap\n• Handmade, organic quality throughout\n• The overall effect should be soft, delicate, and Japanese."
   },
   {
     "name": "WATCH FACE",
@@ -51306,6 +51928,19 @@
     "additionalInstructions": ""
   },
   {
+    "name": "WETZLAR LENS BOKEH",
+    "category": [
+      "PHOTOGRAPHY",
+      "PORTRAIT",
+      "OPTICAL",
+      "VINTAGE LENS"
+    ],
+    "message": "Take a picture and transform the image into a portrait shot with a vintage Leitz Wetzlar lens — specifically emulating the legendary Leica Summilux or Noctilux rendering wide open. The subject should be tack-sharp at the plane of focus (typically the eyes) while the background dissolves into the characteristic creamy, swirling bokeh of vintage Leica glass. Out-of-focus highlights should render as smooth, circular discs with subtle cat's-eye distortion toward the edges. The transition from sharp to unsharp should be gradual and three-dimensional. Colors should be warm and slightly desaturated with the subtle micro-contrast and 'glow' characteristic of vintage Leica lenses.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n• Preserve subject identity with critical sharpness at focus plane\n• Extremely shallow depth of field — f/1.0 to f/1.4 rendering\n• Creamy, swirling bokeh in out-of-focus areas\n• Smooth circular highlight discs with edge cat's-eye effect\n• Warm, slightly desaturated color rendering\n• Subtle glow and micro-contrast characteristic of vintage Leica glass\n• Reference the Noctilux 50mm f/1.0 and Summilux 50mm f/1.4 rendering\n• Three-dimensional separation between subject and background\n• The overall look should be unmistakably 'Leica' — clinical sharpness meets organic bokeh\n• Natural, available-light aesthetic"
+  },
+  {
     "name": "WHEATIES BOX",
     "category": [
       "ADVERTISING",
@@ -51327,7 +51962,7 @@
     "message": "Take a picture and transform the image into Wheat Paste street art. Preserve subject identity. Render as a large-scale wheat-pasted poster on an urban wall, with characteristic paper texture, slight peeling edges, and layered over previous posters. Emphasize bold graphic imagery, weathered urban surfaces, and the raw aesthetic of street poster art.",
     "options": [],
     "randomizeOptions": false,
-    "additionalInstructions": ""
+    "additionalInstructions": "VISUAL REQUIREMENTS:\n• Large-scale portrait printed or drawn on paper, pasted to wall\n• Paper texture visible: wrinkles, bubbles, tears from application\n• Edges peeling and weathered from exposure to elements\n• Wall features visible: bricks, cracks, pipes, electrical boxes\n• Layers of older paste-ups visible beneath torn edges\n• Wheat paste residue and drips visible around edges\n• Rain damage and sun fading on exposed areas\n• Subject's portrait clearly recognizable despite weathering\n• Reference artists: JR, Swoon, Faile, Vhils (paste-up work)"
   },
   {
     "name": "WHETHER THE WEATHER",
@@ -51679,6 +52314,19 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "ABSOLUTE REQUIREMENT: The subject must be 100% wood — no skin, fabric, metal, plastic, or photographic texture may remain."
+  },
+  {
+    "name": "WOODBURYTYPE",
+    "category": [
+      "PHOTOGRAPHY",
+      "VINTAGE",
+      "RELIEF",
+      "CONTINUOUS TONE"
+    ],
+    "message": "Take a picture and transform the image into a Woodburytype print — the 19th-century photomechanical process that produces continuous-tone prints through varying thickness of pigmented gelatin. The image should show the characteristic qualities: perfectly continuous tones with no visible grain or dot pattern (unlike halftone), rich chocolate-brown or purple-brown pigment, slightly raised relief in shadow areas where the gelatin is thickest, and the glossy, dimensional quality of pigmented gelatin on paper. Include the characteristic dark border where excess gelatin pools at the edges of the printing plate. The overall effect should be rich, dimensional, and technically perfect.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n• Preserve subject identity with perfect continuous tone\n• No visible grain, dots, or screen pattern — perfectly smooth tones\n• Rich chocolate-brown or purple-brown pigment\n• Slightly raised relief in shadow areas (thicker gelatin)\n• Reference the Woodburytype process patented in 1864\n• Glossy, dimensional quality of pigmented gelatin\n• Dark border from excess gelatin pooling\n• Perfectly smooth tonal transitions\n• The overall effect should be rich, dimensional, and technically flawless\n• This is the highest quality photomechanical reproduction ever invented"
   },
   {
     "name": "WOODCUT",
@@ -52400,6 +53048,19 @@
     "additionalInstructions": ""
   },
   {
+    "name": "YARN BOMBING TEXTILE",
+    "category": [
+      "STREET ART",
+      "URBAN",
+      "TEXTILE",
+      "CRAFT"
+    ],
+    "message": "Take a picture and transform it into a yarn bombing street art installation. The subject should appear wrapped, covered, or constructed from colorful knitted and crocheted yarn — as if someone has guerrilla-knitted a portrait onto urban infrastructure.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "VISUAL REQUIREMENTS:\n• Colorful knitted/crocheted yarn covering urban surfaces\n• Visible knit stitches and crochet patterns creating texture\n• Bright, cheerful color palette: rainbow spectrum of yarn colors\n• Subject's portrait or form created through yarn color placement\n• Handmade quality: slight irregularities, different yarn weights\n• Playful, community-spirited aesthetic\n• Reference artists: Magda Sayeg (Knitta Please), Olek, London Kaye, yarn bombing movement."
+  },
+  {
     "name": "YEARBOOK",
     "category": [
       "SCHOOL",
@@ -52539,10 +53200,10 @@
       "MINIMALIST",
       "EUROPEAN"
     ],
-    "message": "Take a picture and transform the image into a ZERO Group artwork, a minimalist light-based artwork focused on repetition, texture, and luminous surfaces. Emphasize monochrome tones, especially white and metallic finishes, with subtle patterns, rhythmic structures, and light interaction. Preserve subject identity.",
+    "message": "Take a picture and transform the image into a ZERO Group artwork, a minimalist light-based artwork focused on repetition, texture, and luminous surfaces. The subject should be translated into a monochromatic relief or light-based composition featuring repetitive elements — nails, pins, sliced canvas, or reflective discs — arranged in systematic patterns that create subtle movement and light effects through their physical texture and the play of shadow across uniform surfaces.",
     "options": [],
     "randomizeOptions": false,
-    "additionalInstructions": "FINAL RESULT: The image should feel clean, meditative, and reductive. Use repeated textures such as raised patterns or structured surfaces, with soft shadows and controlled lighting. Avoid complex colors—favor white, silver, and neutral tones. Maintain recognizable subject structure while simplifying detail into abstract, light-driven forms."
+    "additionalInstructions": "VISUAL REQUIREMENTS:\n• Monochromatic surface (white, silver, or gold) with subtle textural variation\n• Repetitive elements creating systematic patterns: nails, pins, perforations, slits\n• Light and shadow as primary compositional elements\n• Sense of vibration or movement through optical effects of repeated forms\n• Clean, impersonal execution — no emotional gesture\n• Subject's presence suggested through the pattern's density and rhythm\n• Meditative, contemplative quality through systematic repetition\n• Reference artists: Heinz Mack, Otto Piene, Günther Uecker, Lucio Fontana."
   },
   {
     "name": "ZINE COLLAGE",
