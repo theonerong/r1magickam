@@ -1,33 +1,7 @@
 [
+  
   {
-    "name": "AEROGEL",
-    "category": [
-      "TRANSFORMATION",
-      "MATERIAL",
-      "TRANSLUCENT",
-      "SCIENTIFIC",
-      "ART"
-    ],
-    "message": "Take a picture and remake the subject in aerogel — almost entirely air, so light scatters inside it and the whole form glows a smoky blue against dark and warm against light.",
-    "options": [
-      {
-        "id": "001",
-        "text": "Smoky blue Rayleigh scattering against a dark ground"
-      },
-      {
-        "id": "002",
-        "text": "Warm amber glow with the form lit from behind"
-      },
-      {
-        "id": "003",
-        "text": "Fractured block with sharp conchoidal edges and internal haze"
-      }
-    ],
-    "randomizeOptions": true,
-    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Blue when viewed against dark, warm when backlit\n• No sharp surface — light scatters through the whole volume\n• Extremely low apparent weight\n• Conchoidal fracture edges where broken"
-  },
-  {
-    "name": "AIRLINE SAFETY CARD",
+    "name": "AIRLINE SAFETY CARD v1",
     "category": [
       "HUMOR",
       "INSTRUCTIONAL",
@@ -52,6 +26,34 @@
     ],
     "randomizeOptions": true,
     "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Figures reduced to flat pictograms with no faces\n• Arrows and numbered steps throughout\n• Flat institutional colour on plastic card stock\n• Absolute calm despite the situation depicted"
+  },
+  {
+    "name": "AIRLINE SAFETY CARD",
+    "category": [
+      "HUMOR",
+      "INSTRUCTIONAL",
+      "PICTOGRAM",
+      "AVIATION",
+      "COMEDY",
+      "TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform the ENTIRE image into a professionally designed aircraft safety instruction card. The subject MUST appear as one of the illustrated safety-card figures and must remain immediately recognizable while being converted into the same flat instructional pictogram style as everyone else.\n\nTHIS IS A SAFETY CARD PARODY.\nThe humor comes from ONE specific person—the subject—completely ignoring the safety instructions while every other passenger follows them correctly.\n\nThe subject must be the ONLY person behaving incorrectly, recklessly, dramatically, or humorously. All other illustrated passengers must behave correctly and calmly according to the safety procedure being demonstrated.\n\nThe subject must remain recognizable through distinctive facial characteristics, hairstyle, body proportions, clothing characteristics, and recognizable silhouette translated into the simplified pictogram artwork.\n\nThe final image must look like an authentic airline safety card at first glance, but the subject's absurdly incorrect behavior creates the visual joke.",
+    "options": [
+      {
+        "id": "001",
+        "text": "SERENE EVACUATION — Show a sequence of aircraft evacuation pictogram panels with arrows directing passengers toward the exits. Every other passenger calmly follows the arrows in an orderly line. The subject is the ONLY exception: the subject is panicking dramatically, running in the wrong direction, waving their arms, and looking completely confused while everyone else remains perfectly calm and orderly."
+      },
+      {
+        "id": "002",
+        "text": "BRACE POSITION — Show the correct aircraft brace position using a row of calm instructional pictograms seated properly in their seats. The subject is the ONLY exception: instead of assuming the correct brace position, the subject has an absurdly exaggerated panicked expression, arms flailing, eyes wide, mouth open, and body positioned completely incorrectly while the surrounding passengers remain perfectly composed."
+      },
+      {
+        "id": "003",
+        "text": "EVACUATION SLIDE — Show passengers correctly exiting an aircraft through an emergency evacuation slide in perfect sequence. Every passenger descends normally and calmly. The subject is the ONLY exception: instead of properly descending the slide, the subject launches into an exaggerated cannonball pose, arms and legs spread dramatically, creating a ridiculous contrast with the orderly passengers."
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• The entire image must look like a professionally printed aircraft safety instruction card.\n• Use flat, simplified instructional pictograms throughout.\n• The subject MUST appear as a pictogram within the safety-card artwork, not as a normal photograph pasted onto the card.\n• Transform the subject into the same simplified graphic language used for all other people.\n• Preserve the subject's recognizable facial structure, hairstyle, body proportions, distinctive clothing characteristics, and silhouette despite the simplified pictogram style.\n• The subject must be immediately recognizable as the original subject.\n• ALL OTHER PEOPLE must behave correctly according to the safety procedure.\n• ONLY THE SUBJECT may panic, behave incorrectly, ignore instructions, or perform the comedic action.\n• Do not make the entire group chaotic.\n• Do not make other passengers panic.\n• Do not give every person exaggerated expressions.\n• The contrast between the calm passengers and the subject's ridiculous behavior is the central joke.\n• Use arrows, instructional symbols, diagrams, seat outlines, exit symbols, and other appropriate safety-card graphics.\n• Keep the visual language clean, simple, standardized, and instructional.\n• Use flat institutional colors and crisp printed graphics on realistic safety-card stock.\n• Facial expressions should normally be minimal or neutral for the other pictograms.\n• The subject's expression should be dramatically exaggerated within the limitations of the pictogram style.\n• The subject's incorrect behavior must be immediately obvious without requiring explanatory text.\n• Do not turn the image into a conventional cartoon.\n• Do not make the subject photorealistic while the other passengers are pictograms.\n• Do not add unrelated characters or visual jokes.\n• Do not add a second version of the subject unless the selected safety sequence genuinely requires multiple panels showing the subject's progression.\n• Preserve the instructional sequence and recognizable safety-card composition.\n• Master prompt instructions always override conflicting instructions.\n\nCOMEDIC CONTRAST REQUIREMENT:\n\n• NORMAL PASSENGERS = calm, correct, orderly, instructional behavior.\n• SUBJECT = ONLY person behaving completely incorrectly.\n• The subject's behavior should be exaggerated enough to immediately communicate the joke.\n• The humor must come from the subject's contrast with the otherwise serious safety instructions.\n\nFINAL VALIDATION:\n\n✓ The image looks like an authentic aircraft safety card.\n✓ The subject appears ON the safety card as an illustrated pictogram.\n✓ The subject remains recognizable despite the pictogram treatment.\n✓ All other passengers behave correctly.\n✓ ONLY the subject behaves incorrectly.\n✓ The subject's panic or absurd behavior is immediately visible.\n✓ The selected safety procedure remains understandable.\n✓ The humor comes from the contrast between the subject and the other passengers.\n✓ The subject is not a photograph pasted onto the safety card.\n✓ The final result is a cohesive printed safety-card illustration.\n✓ If ANY answer is NO, regenerate until every requirement is satisfied."
   },
   {
     "name": "AMANTECA FEATHERWORK",
@@ -513,33 +515,6 @@
     "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Terraces step inward in rectangular spirals\n• Iridescence from surface film, shifting with angle\n• Edges sharp and geometrically exact\n• Metallic lustre beneath the colour"
   },
   {
-    "name": "BOJAGI PATCHWORK",
-    "category": [
-      "KOREAN",
-      "TEXTILE",
-      "PATCHWORK",
-      "TRANSLUCENT",
-      "ART"
-    ],
-    "message": "Take a picture and piece it as bojagi — translucent ramie scraps joined with flat-felled seams so every seam glows as a line when the cloth is held to light.",
-    "options": [
-      {
-        "id": "001",
-        "text": "Backlit translucent patchwork with every seam reading as a bright line"
-      },
-      {
-        "id": "002",
-        "text": "Muted natural tones with irregular rectangular piecing"
-      },
-      {
-        "id": "003",
-        "text": "Bold colour blocks with wide seam allowances forming a grid"
-      }
-    ],
-    "randomizeOptions": true,
-    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Seams must be visible as lines of doubled fabric\n• Cloth translucent, lit from behind\n• Patch shapes rectangular but irregular in size\n• Hand stitching visible along every seam"
-  },
-  {
     "name": "BUS TRANSFER TICKET",
     "category": [
       "HUMOR",
@@ -565,33 +540,6 @@
     ],
     "randomizeOptions": true,
     "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Thin newsprint-grade paper strip\n• Punch holes through the printed time scale\n• Route and zone numbers printed in bold\n• Fold creases and pocket wear"
-  },
-  {
-    "name": "CAFFENOL",
-    "category": [
-      "PHOTOGRAPHY",
-      "DARKROOM",
-      "ALTERNATIVE",
-      "EXPERIMENTAL",
-      "ART"
-    ],
-    "message": "Take a picture and develop it in coffee, washing soda and vitamin C — a working developer that stains the film base brown and gives a soft grainy result.",
-    "options": [
-      {
-        "id": "001",
-        "text": "Warm brown-stained base with soft contrast and heavy grain"
-      },
-      {
-        "id": "002",
-        "text": "High contrast with blown highlights and blocked shadows"
-      },
-      {
-        "id": "003",
-        "text": "Uneven development with mottling across the frame"
-      }
-    ],
-    "randomizeOptions": true,
-    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Base stained warm brown throughout\n• Grain coarse and pronounced\n• Contrast uneven across the frame\n• Highlights soft with a long shoulder"
   },
   {
     "name": "CAROUSEL HORSE",
@@ -646,33 +594,6 @@
     ],
     "randomizeOptions": true,
     "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Swatch pile texture visible and directional\n• Ring binding through punched corners\n• Labels with codes and names\n• Showroom lighting, flat and even"
-  },
-  {
-    "name": "CAST CONCRETE FORMWORK",
-    "category": [
-      "TRANSFORMATION",
-      "CONCRETE",
-      "ARCHITECTURAL",
-      "BRUTALIST",
-      "ART"
-    ],
-    "message": "Take a picture and cast it in concrete against timber formwork, so the grain of the boards and every tie hole is permanently recorded in the surface.",
-    "options": [
-      {
-        "id": "001",
-        "text": "Board-marked surface with clear timber grain and horizontal joints"
-      },
-      {
-        "id": "002",
-        "text": "Smooth ply-formed surface with a grid of tie holes and slight bleeding"
-      },
-      {
-        "id": "003",
-        "text": "Weathered cast with staining, efflorescence and aggregate exposed"
-      }
-    ],
-    "randomizeOptions": true,
-    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Formwork texture must be legible in the surface\n• Tie holes and joint lines regularly spaced\n• Slight colour variation between pours\n• Aggregate visible where the surface is worn"
   },
   {
     "name": "CELTIC KNOTWORK",
@@ -754,33 +675,6 @@
     ],
     "randomizeOptions": true,
     "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Device must plausibly solve the stated problem\n• Demonstration performed with complete seriousness\n• Clean product photography or technical line art\n• Drawbacks visible but never acknowledged"
-  },
-  {
-    "name": "CHIP CARVING",
-    "category": [
-      "WOOD",
-      "CARVING",
-      "GEOMETRIC",
-      "FOLK",
-      "ART"
-    ],
-    "message": "Take a picture and carve it as chip carving — triangular chips removed with a single knife, the image built from thousands of faceted pits catching shadow.",
-    "options": [
-      {
-        "id": "001",
-        "text": "Dense rosette geometry with deep triangular chips"
-      },
-      {
-        "id": "002",
-        "text": "Free-form carving with chips of varied size following the form"
-      },
-      {
-        "id": "003",
-        "text": "Bordered panel with a chip-carved frame around a plainer centre"
-      }
-    ],
-    "randomizeOptions": true,
-    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Every cut is a clean triangular facet\n• Shadow inside each chip does the drawing\n• Wood grain influences the cut edges\n• Surface between chips left perfectly flat"
   },
   {
     "name": "CHLADNI PLATE",
@@ -998,87 +892,7 @@
     "randomizeOptions": true,
     "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Hard-edged circular occulting disc at the centre\n• Halo structure fine, radial and directional\n• Deep black outside the halo\n• Faint diffraction spikes at the occulter edge"
   },
-  {
-    "name": "CREASE PATTERN",
-    "category": [
-      "ORIGAMI",
-      "DIAGRAM",
-      "GEOMETRIC",
-      "TECHNICAL",
-      "ART"
-    ],
-    "message": "Take a picture and flatten it to an origami crease pattern — the unfolded square marked with every mountain and valley fold needed to make the form.",
-    "options": [
-      {
-        "id": "001",
-        "text": "Square with red mountain and blue valley folds meeting at vertices"
-      },
-      {
-        "id": "002",
-        "text": "Dense pattern with many small folds concentrated in one region"
-      },
-      {
-        "id": "003",
-        "text": "Pattern shown beside the folded result for comparison"
-      }
-    ],
-    "randomizeOptions": true,
-    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Mountain and valley folds distinguished by colour\n• Folds meeting at vertices in even numbers\n• Square boundary clearly marked\n• No shading — line diagram only"
-  },
-  {
-    "name": "CROSSWORD GRID",
-    "category": [
-      "PUZZLE",
-      "TYPOGRAPHY",
-      "GRAPHIC",
-      "PRINT",
-      "ART"
-    ],
-    "message": "Take a picture and set it into a crossword grid — black and white squares in rotational symmetry, numbered, with several answers filled in and one crossed out.",
-    "options": [
-      {
-        "id": "001",
-        "text": "Symmetrical grid partly completed in pen with one correction"
-      },
-      {
-        "id": "002",
-        "text": "Blank numbered grid with the clue columns beside it"
-      },
-      {
-        "id": "003",
-        "text": "Close on intersecting answers with the pencil resting on the page"
-      }
-    ],
-    "randomizeOptions": true,
-    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Grid pattern rotationally symmetrical\n• Clue numbers in the correct squares\n• Handwriting filling only some answers\n• Newsprint texture with ink show-through"
-  },
-  {
-    "name": "CYMATICS PATTERN",
-    "category": [
-      "TRANSFORMATION",
-      "SOUND",
-      "PATTERN",
-      "SCIENTIFIC",
-      "ART"
-    ],
-    "message": "Take a picture and let sound arrange it — fine powder on a vibrating plate migrating to the still lines, forming a standing wave pattern.",
-    "options": [
-      {
-        "id": "001",
-        "text": "Fine geometric nodal figure in white powder on a dark plate"
-      },
-      {
-        "id": "002",
-        "text": "Complex high-frequency pattern with many nested nodal lines"
-      },
-      {
-        "id": "003",
-        "text": "Simple low-frequency figure with wide clear zones"
-      }
-    ],
-    "randomizeOptions": true,
-    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Powder gathers only along nodal lines\n• Pattern symmetric about the plate axes\n• Plate surface visible where powder has cleared\n• Slight blur where powder is still moving"
-  },
+
   {
     "name": "DEFENSIVE DRIVING VIDEO",
     "category": [
