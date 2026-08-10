@@ -993,6 +993,33 @@
     "additionalInstructions": "Transform the subject into the visual style of Aeon Flux using futuristic architecture, advanced technology, angular visual language, experimental composition, cinematic framing, sophisticated science-fiction worldbuilding, and authentic animation-frame aesthetics."
   },
   {
+    "name": "AEROGEL",
+    "category": [
+      "TRANSFORMATION",
+      "MATERIAL",
+      "TRANSLUCENT",
+      "SCIENTIFIC",
+      "ART"
+    ],
+    "message": "Take a picture and remake the subject in aerogel — almost entirely air, so light scatters inside it and the whole form glows a smoky blue against dark and warm against light.",
+    "options": [
+      {
+        "id": "001",
+        "text": "Smoky blue Rayleigh scattering against a dark ground"
+      },
+      {
+        "id": "002",
+        "text": "Warm amber glow with the form lit from behind"
+      },
+      {
+        "id": "003",
+        "text": "Fractured block with sharp conchoidal edges and internal haze"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Blue when viewed against dark, warm when backlit\n• No sharp surface — light scatters through the whole volume\n• Extremely low apparent weight\n• Conchoidal fracture edges where broken"
+  },
+  {
     "name": "AESOPS FABLE",
     "category": [
       "STORYBOOK",
@@ -1066,6 +1093,34 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "FINAL RESULT:\nThe image should resemble a polished 1980s airbrushed illustration with smooth gradients, vibrant colors, and a nostalgic retro aesthetic."
+  },
+  {
+    "name": "AIRLINE SAFETY CARD",
+    "category": [
+      "HUMOR",
+      "INSTRUCTIONAL",
+      "PICTOGRAM",
+      "AVIATION",
+      "COMEDY",
+      "TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform the ENTIRE image into a professionally designed aircraft safety instruction card. The subject MUST appear as one of the illustrated safety-card figures and must remain immediately recognizable while being converted into the same flat instructional pictogram style as everyone else.\n\nTHIS IS A SAFETY CARD PARODY.\nThe humor comes from ONE specific person—the subject—completely ignoring the safety instructions while every other passenger follows them correctly.\n\nThe subject must be the ONLY person behaving incorrectly, recklessly, dramatically, or humorously. All other illustrated passengers must behave correctly and calmly according to the safety procedure being demonstrated.\n\nThe subject must remain recognizable through distinctive facial characteristics, hairstyle, body proportions, clothing characteristics, and recognizable silhouette translated into the simplified pictogram artwork.\n\nThe final image must look like an authentic airline safety card at first glance, but the subject's absurdly incorrect behavior creates the visual joke.",
+    "options": [
+      {
+        "id": "001",
+        "text": "SERENE EVACUATION — Show a sequence of aircraft evacuation pictogram panels with arrows directing passengers toward the exits. Every other passenger calmly follows the arrows in an orderly line. The subject is the ONLY exception: the subject is panicking dramatically, running in the wrong direction, waving their arms, and looking completely confused while everyone else remains perfectly calm and orderly."
+      },
+      {
+        "id": "002",
+        "text": "BRACE POSITION — Show the correct aircraft brace position using a row of calm instructional pictograms seated properly in their seats. The subject is the ONLY exception: instead of assuming the correct brace position, the subject has an absurdly exaggerated panicked expression, arms flailing, eyes wide, mouth open, and body positioned completely incorrectly while the surrounding passengers remain perfectly composed."
+      },
+      {
+        "id": "003",
+        "text": "EVACUATION SLIDE — Show passengers correctly exiting an aircraft through an emergency evacuation slide in perfect sequence. Every passenger descends normally and calmly. The subject is the ONLY exception: instead of properly descending the slide, the subject launches into an exaggerated cannonball pose, arms and legs spread dramatically, creating a ridiculous contrast with the orderly passengers."
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• The entire image must look like a professionally printed aircraft safety instruction card.\n• Use flat, simplified instructional pictograms throughout.\n• The subject MUST appear as a pictogram within the safety-card artwork, not as a normal photograph pasted onto the card.\n• Transform the subject into the same simplified graphic language used for all other people.\n• Preserve the subject's recognizable facial structure, hairstyle, body proportions, distinctive clothing characteristics, and silhouette despite the simplified pictogram style.\n• The subject must be immediately recognizable as the original subject.\n• ALL OTHER PEOPLE must behave correctly according to the safety procedure.\n• ONLY THE SUBJECT may panic, behave incorrectly, ignore instructions, or perform the comedic action.\n• Do not make the entire group chaotic.\n• Do not make other passengers panic.\n• Do not give every person exaggerated expressions.\n• The contrast between the calm passengers and the subject's ridiculous behavior is the central joke.\n• Use arrows, instructional symbols, diagrams, seat outlines, exit symbols, and other appropriate safety-card graphics.\n• Keep the visual language clean, simple, standardized, and instructional.\n• Use flat institutional colors and crisp printed graphics on realistic safety-card stock.\n• Facial expressions should normally be minimal or neutral for the other pictograms.\n• The subject's expression should be dramatically exaggerated within the limitations of the pictogram style.\n• The subject's incorrect behavior must be immediately obvious without requiring explanatory text.\n• Do not turn the image into a conventional cartoon.\n• Do not make the subject photorealistic while the other passengers are pictograms.\n• Do not add unrelated characters or visual jokes.\n• Do not add a second version of the subject unless the selected safety sequence genuinely requires multiple panels showing the subject's progression.\n• Preserve the instructional sequence and recognizable safety-card composition.\n• Master prompt instructions always override conflicting instructions.\n\nCOMEDIC CONTRAST REQUIREMENT:\n\n• NORMAL PASSENGERS = calm, correct, orderly, instructional behavior.\n• SUBJECT = ONLY person behaving completely incorrectly.\n• The subject's behavior should be exaggerated enough to immediately communicate the joke.\n• The humor must come from the subject's contrast with the otherwise serious safety instructions.\n\nFINAL VALIDATION:\n\n✓ The image looks like an authentic aircraft safety card.\n✓ The subject appears ON the safety card as an illustrated pictogram.\n✓ The subject remains recognizable despite the pictogram treatment.\n✓ All other passengers behave correctly.\n✓ ONLY the subject behaves incorrectly.\n✓ The subject's panic or absurd behavior is immediately visible.\n✓ The selected safety procedure remains understandable.\n✓ The humor comes from the contrast between the subject and the other passengers.\n✓ The subject is not a photograph pasted onto the safety card.\n✓ The final result is a cohesive printed safety-card illustration.\n✓ If ANY answer is NO, regenerate until every requirement is satisfied."
   },
   {
     "name": "AIRPORT SECURITY SCAN",
@@ -3273,6 +3328,33 @@
     "additionalInstructions": "STYLE ENFORCEMENT:\n• Preserve subject identity with soft Autochrome rendering\n• Visible starch grain mosaic pattern (pointillist texture)\n• Slightly muted, pastel colors with warm cast\n• Dreamy soft-focus quality\n• Reference the Lumière brothers' Autochrome process from 1907\n• Colors lean toward soft blues, warm ambers, muted greens\n• Romantic, painterly quality resembling Impressionism\n• The grain mosaic should be visible at close inspection\n• Overall warm color temperature\n• The overall effect should be dreamy, romantic, and early-color-photography"
   },
   {
+    "name": "AUTORADIOGRAPH",
+    "category": [
+      "SCIENTIFIC",
+      "IMAGING",
+      "MONOCHROME",
+      "EXPERIMENTAL",
+      "ART"
+    ],
+    "message": "Take a picture by laying the subject on film and letting its own emissions expose the emulsion over weeks — an image made without any light at all.",
+    "options": [
+      {
+        "id": "001",
+        "text": "Soft grey diffuse exposure with hot spots where activity concentrated"
+      },
+      {
+        "id": "002",
+        "text": "High contrast with sharp dark zones and clean unexposed areas"
+      },
+      {
+        "id": "003",
+        "text": "Faint ghostly exposure with heavy base fog and grain"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Image formed by contact, at exactly life size\n• Edges soft and diffuse, never optically sharp\n• Density maps activity, not brightness\n• Film base fog and coarse grain throughout"
+  },
+  {
     "name": "AUTUMN LEAVES MOSAIC",
     "category": [
       "OPTIONS",
@@ -3808,6 +3890,34 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "VISUAL REQUIREMENTS:\n• Extreme close-up framing: face fills entire frame\n• Flawless, luminous skin with visible healthy texture (not plastic)\n• Precise, editorial makeup visible in fine detail\n• Multiple light sources creating dimension without harsh shadows\n• Catchlights in eyes creating life and sparkle\n• Every eyelash, pore, and lip texture rendered in sharp detail\n• Clean, simple background (white, gradient, or colored)\n• Color accuracy critical for skin tones and makeup colors\n• Reference photographers: Mario Testino, Patrick Demarchelier, Solve Sundsbo (beauty work)"
+  },
+  {
+    "name": "BEEHIVE FRAME",
+    "category": [
+      "RURAL",
+      "PATTERN",
+      "NATURAL",
+      "CRAFT",
+      "ART",
+      "FULL TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform the ENTIRE SUBJECT into a physical honeycomb beehive frame constructed entirely from real beeswax comb.\n\nTHIS IS NOT A HONEYCOMB FILTER.\nTHIS IS NOT A HONEYCOMB OVERLAY.\nTHIS IS NOT A PERSON STANDING IN FRONT OF A BEEHIVE.\nTHIS IS NOT A NORMAL SUBJECT WITH HONEYCOMB TEXTURE APPLIED TO THE SURFACE.\n\nTHE SUBJECT ITSELF MUST BECOME THE BEEHIVE FRAME.\n\nCompletely reconstruct the subject from thousands of interconnected, three-dimensional hexagonal beeswax cells. The subject's recognizable face, body, clothing, hair, pose, proportions, and silhouette must all be physically formed from the honeycomb structure.\n\nThe subject's ACTUAL FACIAL GEOMETRY must serve as the underlying three-dimensional blueprint for the honeycomb reconstruction. The subject must remain immediately recognizable through the exact arrangement, density, depth, curvature, orientation, and shading of the wax cells.\n\nThe face must NOT become a generic human face made from honeycomb. The distinctive facial structure of the subject must remain visible through the physical geometry of the comb.\n\nNO original skin, hair, fabric, or other original surface material may remain visible.\n\nThe finished image should look like a real physical beehive frame whose entire honeycomb structure has naturally formed the recognizable shape of the subject.\n\nThe selected option controls the appearance and condition of the honeycomb frame while the subject remains completely reconstructed from the comb.",
+    "options": [
+    {
+      "id": "001",
+      "text": "Frame of capped comb with cells varying in colour and fill — Completely reconstruct the subject from densely packed hexagonal beeswax cells, with irregularly capped cells, varying honey-filled cells, empty cells, and naturally different wax tones. The subject's exact facial geometry, recognizable features, body, clothing, and silhouette must emerge entirely from the arrangement and three-dimensional structure of the comb."
+    },
+    {
+      "id": "002",
+      "text": "Close on the cell structure with wax capping partly opened — Completely reconstruct the subject from highly detailed hexagonal beeswax cells with many partially opened caps revealing honey-filled and empty cells. Cell depth, wax walls, shadows, openings, and honey must define the subject's exact facial geometry, recognizable features, body, clothing, and silhouette entirely through the honeycomb structure."
+    },
+    {
+      "id": "003",
+      "text": "Backlit comb glowing amber through the wax — Completely reconstruct the subject from translucent hexagonal beeswax cells illuminated from behind. Warm amber light must pass through varying wax thicknesses and honey-filled cells, creating the subject's exact facial geometry, facial features, body, clothing, and silhouette entirely through the honeycomb structure."
+    }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "SUBJECT RECONSTRUCTION REQUIREMENTS:\n\n• THE ENTIRE SUBJECT MUST BECOME THE HONEYCOMB FRAME.\n• Do not merely place honeycomb over the subject.\n• Do not apply a honeycomb texture to normal human skin or clothing.\n• Do not leave the original subject underneath the effect.\n• Do not place a normal person inside or in front of a honeycomb frame.\n• Every visible portion of the subject must be constructed from beeswax comb.\n\nFACIAL IDENTITY REQUIREMENTS:\n\n• PRESERVE THE SUBJECT'S EXACT FACIAL GEOMETRY.\n• Use the subject's actual face as the three-dimensional blueprint for the honeycomb reconstruction.\n• Preserve the subject's exact eye spacing.\n• Preserve the subject's eye shape and relative size.\n• Preserve eyebrow position and brow structure.\n• Preserve forehead shape and proportions.\n• Preserve nose length, width, bridge shape, tip shape, nostril placement, and overall nose geometry.\n• Preserve cheekbone position and structure.\n• Preserve cheek volume and facial contour.\n• Preserve mouth width, mouth shape, lip proportions, and lip placement.\n• Preserve jaw width and jawline shape.\n• Preserve chin shape and projection.\n• Preserve ear shape, position, and size when visible.\n• Preserve the subject's overall facial proportions.\n• Preserve distinctive facial asymmetries.\n• Preserve distinctive facial characteristics that make the subject recognizable.\n• The honeycomb cells must physically follow the subject's actual facial contours rather than forming generic facial proportions.\n• Use cell density, cell depth, cell orientation, wax thickness, openings, caps, honey contents, shadows, and highlights to reproduce the subject's facial structure.\n• Do NOT generate a generic human face and cover it with honeycomb.\n• Do NOT approximate the face using generic human proportions.\n• The subject must remain identifiable from the facial structure of the honeycomb alone.\n\nBODY RECONSTRUCTION REQUIREMENTS:\n\n• Hair must be formed entirely from honeycomb structure.\n• Clothing must be formed entirely from honeycomb structure.\n• Arms, hands, fingers, legs, feet, and torso must all be constructed from honeycomb.\n• Preserve the subject's original pose.\n• Preserve the subject's original body proportions.\n• Preserve the subject's recognizable silhouette.\n• Use variations in cell density and depth to reproduce clothing folds and body contours.\n• No original skin, hair, fabric, or other material may remain visible.\n\nHONEYCOMB MATERIAL REQUIREMENTS:\n\n• Hexagonal cells must physically follow the contours of the subject rather than simply appearing as a flat repeating texture.\n• Cells must have real three-dimensional walls, depth, openings, caps, and irregularities.\n• Cells must share physical walls and form one continuous connected comb structure.\n• Individual cells should naturally vary in size, depth, orientation, transparency, wax color, and state of completion.\n• Avoid perfectly uniform computer-generated hexagon patterns.\n• Wax should appear translucent, organic, slightly irregular, and physically believable.\n• Honey-filled cells should contain realistic amber honey where appropriate.\n• Capped cells should have naturally uneven wax caps.\n• Empty cells should reveal genuine cell depth.\n• The honeycomb must appear physically constructed rather than digitally tiled.\n\nFRAME REQUIREMENTS:\n\n• A genuine wooden beehive frame must surround and support the honeycomb structure.\n• The wooden frame should appear physically separate from the transformed subject while holding the continuous comb.\n• The subject itself must be part of the honeycomb contained within the wooden frame.\n• The final composition must look like a real physical beehive frame photographed in three dimensions.\n\nPHOTOGRAPHIC REQUIREMENTS:\n\n• Preserve realistic lighting, shadows, reflections, depth, and material behavior.\n• Use realistic macro-level detail where appropriate.\n• Preserve convincing three-dimensional depth throughout the comb.\n• Make the wax, honey, wooden frame, and shadows physically believable.\n• Master prompt instructions always override conflicting instructions.\n\nFINAL VALIDATION:\n\n✓ The entire subject has been transformed into honeycomb.\n✓ No normal skin remains visible.\n✓ No normal hair remains visible.\n✓ No normal clothing remains visible.\n✓ The subject is NOT merely covered with honeycomb.\n✓ The subject's actual facial geometry is preserved.\n✓ Eye spacing and eye shape remain faithful to the subject.\n✓ Nose structure remains faithful to the subject.\n✓ Mouth and lip structure remain faithful to the subject.\n✓ Cheekbones and jawline remain faithful to the subject.\n✓ Distinctive facial asymmetries are preserved.\n✓ The face does not resemble a generic person made from honeycomb.\n✓ The subject remains identifiable from facial structure alone.\n✓ The body, pose, proportions, clothing, and silhouette remain recognizable through the honeycomb structure.\n✓ Hexagonal cells are connected into one continuous physical structure.\n✓ The honeycomb is genuinely three-dimensional.\n✓ Wax, honey, caps, shadows, and cell depth appear physically realistic.\n✓ The wooden frame surrounds the completed comb.\n✓ The final result looks like a physical beehive frame rather than a photographic filter.\n✓ If ANY answer is NO, regenerate until every requirement is satisfied."
   },
   {
     "name": "BEHIND BARS",
@@ -4510,6 +4620,33 @@
     "additionalInstructions": ""
   },
   {
+    "name": "BISMUTH HOPPER",
+    "category": [
+      "TRANSFORMATION",
+      "CRYSTAL",
+      "METAL",
+      "IRIDESCENT",
+      "ART",
+      "FULL TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform the ENTIRE SUBJECT into a single physical bismuth hopper crystal.\n\nTHIS IS NOT A BISMUTH TEXTURE.\nTHIS IS NOT A BISMUTH OVERLAY.\nTHIS IS NOT A PERSON OR OBJECT COVERED IN BISMUTH.\nTHIS IS NOT THE SUBJECT STANDING NEXT TO A BISMUTH CRYSTAL.\n\nTHE SUBJECT ITSELF MUST BECOME THE BISMUTH HOPPER CRYSTAL.\n\nCompletely reconstruct every visible part of the subject as solid crystalline bismuth. The subject's face, facial structure, hair, body, clothing, limbs, pose, proportions, and silhouette must all be physically formed from bismuth crystal.\n\nThe subject must remain immediately recognizable through the three-dimensional crystalline geometry. The subject's actual facial structure must control the geometry of the crystal reconstruction rather than being replaced with a generic crystal shape.\n\nThe resulting object should look like an extraordinary naturally formed bismuth hopper crystal whose stepped rectangular terraces and hollow crystalline architecture have grown into the exact recognizable form of the subject.\n\nThe selected option controls the specific hopper-crystal morphology and iridescent oxide appearance.",
+    "options": [
+    {
+      "id": "001",
+      "text": "Deep stepped terraces with strong pink, gold and blue oxide iridescence — Completely reconstruct the subject as a massive three-dimensional bismuth hopper crystal with deep rectangular terraces spiraling inward through the subject's entire form. Use intense pink, gold, blue, violet, and cyan oxide-film coloration shifting naturally across different crystal surfaces."
+    },
+    {
+      "id": "002",
+      "text": "Fine shallow stepping with predominantly gold and green film — Completely reconstruct the subject as a highly detailed bismuth hopper crystal with numerous fine, shallow rectangular terraces following the subject's anatomy and silhouette. Use predominantly metallic gold and green iridescence with subtle transitions into blue and violet where the viewing angle changes."
+    },
+    {
+      "id": "003",
+      "text": "Large blocky crystal with sharp geometric hollows — Completely reconstruct the subject as a large blocky bismuth hopper crystal composed of bold rectangular terraces, sharp geometric recesses, stepped cavities, and pronounced hollow regions. Use strong metallic iridescence with dramatic transitions between gold, pink, blue, violet, and green."
+    }
+    ],
+    "additionalInstructions": "SUBJECT TRANSFORMATION REQUIREMENTS:\n\n• THE ENTIRE SUBJECT MUST BECOME BISMUTH.\n• Do not merely cover the subject with a bismuth texture.\n• Do not leave normal skin underneath the crystal.\n• Do not leave normal hair underneath the crystal.\n• Do not leave normal clothing underneath the crystal.\n• Do not place a bismuth crystal around or behind the subject.\n• Do not show the subject holding a bismuth crystal.\n• Every visible portion of the subject must be reconstructed as solid bismuth crystal.\n• The original subject must become the physical crystal itself.\n• Preserve the subject's original pose and recognizable silhouette.\n• Preserve the subject's body proportions through the crystalline reconstruction.\n• Arms, hands, fingers, legs, feet, torso, hair, and clothing must all become crystalline bismuth.\n\nFACIAL IDENTITY REQUIREMENTS:\n\n• Use the subject's actual facial geometry as the three-dimensional blueprint for the crystal.\n• Preserve exact eye spacing and eye placement.\n• Preserve eye shape and relative size through crystalline recesses and planes.\n• Preserve eyebrow position and brow structure.\n• Preserve forehead shape.\n• Preserve nose length, width, bridge, tip, and overall geometry.\n• Preserve cheekbone position and facial contour.\n• Preserve mouth width, lip shape, and mouth placement.\n• Preserve jaw width and jawline.\n• Preserve chin shape and projection.\n• Preserve ear position and shape when visible.\n• Preserve distinctive facial asymmetry.\n• Preserve the subject's distinctive facial proportions and recognizable characteristics.\n• Facial identity must be encoded into the actual three-dimensional geometry of the crystal.\n• Do NOT create a generic human face and cover it with bismuth.\n• Do NOT create a generic crystal sculpture that merely resembles a person.\n• The subject must remain identifiable from the crystalline geometry alone.\n\nBISMUTH CRYSTAL REQUIREMENTS:\n\n• Use authentic hopper-crystal morphology.\n• Terraces must be physically stepped and three-dimensional.\n• Rectangular crystal steps should grow inward toward recessed areas.\n• Use genuine hopper-like hollowing rather than random geometric holes.\n• Crystal surfaces should be sharply defined and geometrically precise.\n• Individual terraces should have realistic thickness and depth.\n• Preserve physically believable crystal edges, corners, planes, cavities, and recesses.\n• Avoid ordinary quartz-like crystal points.\n• Avoid smooth glass-like surfaces.\n• Avoid generic faceted gemstones.\n• The structure must unmistakably resemble bismuth hopper crystals.\n\nIRIDESCENCE REQUIREMENTS:\n\n• Iridescence must appear to originate from the thin oxide film naturally present on bismuth.\n• Color should shift across surfaces according to viewing angle and surface orientation.\n• Use physically believable transitions among metallic gold, pink, blue, violet, green, cyan, and related spectral hues.\n• Do not use random rainbow coloring unrelated to surface orientation.\n• Metallic bismuth must remain visible beneath the oxide coloration.\n• Preserve a reflective metallic lustre.\n• Different terraces should catch and reflect light differently.\n\nDEPTH AND MATERIAL REQUIREMENTS:\n\n• The subject must be a solid three-dimensional crystal sculpture rather than a flat image.\n• Use strong directional lighting to reveal the stepped crystalline geometry.\n• Show realistic reflections along sharp metallic edges.\n• Show realistic shadows inside recessed hopper terraces.\n• Use depth-dependent highlights and reflections.\n• Preserve physically believable metallic behavior.\n• The crystal should feel heavy, dense, rigid, and solid.\n• Do not make the material look like plastic, glass, painted ceramic, or CGI chrome.\n• The final result should resemble an extraordinarily detailed physical bismuth specimen photographed with professional macro or studio photography.\n\nFINAL VALIDATION:\n\n✓ The entire subject has been transformed into bismuth.\n✓ No normal skin remains visible.\n✓ No normal hair remains visible.\n✓ No normal clothing remains visible.\n✓ The subject is not merely covered with bismuth.\n✓ The subject itself IS the bismuth crystal.\n✓ The subject's original pose and silhouette remain recognizable.\n✓ The subject's actual facial geometry is preserved.\n✓ The face does not become a generic human face.\n✓ Distinctive facial characteristics and asymmetries remain recognizable.\n✓ The crystal has authentic hopper morphology.\n✓ Rectangular terraces visibly step inward.\n✓ Recesses and cavities have genuine three-dimensional depth.\n✓ The material unmistakably resembles metallic bismuth.\n✓ Iridescence appears to come from an oxide surface film.\n✓ Metallic lustre remains visible beneath the coloration.\n✓ The final image looks like a real physical bismuth crystal specimen rather than a filter or texture overlay.\n✓ If ANY answer is NO, regenerate until every requirement is satisfied."
+  },
+  {
     "name": "BIZARRO WORLD",
     "category": [
       "SCI-FI",
@@ -4822,6 +4959,33 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Earth-toned color palette (browns, blacks, creams)\n• Bold geometric symbolic patterns\n• Handwoven cotton cloth texture\n• Fermented mud paint appearance\n• Traditional Bambara symbolic motifs"
+  },
+  {
+    "name": "BOJAGI PATCHWORK",
+    "category": [
+      "KOREAN",
+      "TEXTILE",
+      "PATCHWORK",
+      "TRANSLUCENT",
+      "ART"
+    ],
+    "message": "Take a picture and piece it as bojagi — translucent ramie scraps joined with flat-felled seams so every seam glows as a line when the cloth is held to light.",
+    "options": [
+      {
+        "id": "001",
+        "text": "Backlit translucent patchwork with every seam reading as a bright line"
+      },
+      {
+        "id": "002",
+        "text": "Muted natural tones with irregular rectangular piecing"
+      },
+      {
+        "id": "003",
+        "text": "Bold colour blocks with wide seam allowances forming a grid"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Seams must be visible as lines of doubled fabric\n• Cloth translucent, lit from behind\n• Patch shapes rectangular but irregular in size\n• Hand stitching visible along every seam"
   },
   {
     "name": "BOKEH PHOTOGRAPHY",
@@ -7924,6 +8088,33 @@
     "additionalInstructions": "FINAL RESULT:\nThe final image should resemble a refined Chinoiserie decorative artwork with whimsical, romantic, Rococo-influenced elegance."
   },
   {
+    "name": "CHIP CARVING",
+    "category": [
+      "WOOD",
+      "CARVING",
+      "GEOMETRIC",
+      "FOLK",
+      "ART"
+    ],
+    "message": "Take a picture and carve it as chip carving — triangular chips removed with a single knife, the image built from thousands of faceted pits catching shadow.",
+    "options": [
+      {
+        "id": "001",
+        "text": "Dense rosette geometry with deep triangular chips"
+      },
+      {
+        "id": "002",
+        "text": "Free-form carving with chips of varied size following the form"
+      },
+      {
+        "id": "003",
+        "text": "Bordered panel with a chip-carved frame around a plainer centre"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Every cut is a clean triangular facet\n• Shadow inside each chip does the drawing\n• Wood grain influences the cut edges\n• Surface between chips left perfectly flat"
+  },
+  {
     "name": "CHOCOLATE SCULPTURE",
     "category": [
       "FOOD",
@@ -8849,6 +9040,60 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "Each coffee ring must look like a real dried coffee stain \u2014 darker at edges, lighter in center. The portrait must emerge from ring placement, not from painting. The white paper should be visible between rings. Subject must be clearly recognizable from the ring pattern."
+  },
+  {
+    "name": "CAFFENOL",
+    "category": [
+      "PHOTOGRAPHY",
+      "DARKROOM",
+      "ALTERNATIVE",
+      "EXPERIMENTAL",
+      "ART"
+    ],
+    "message": "Take a picture and develop it in coffee, washing soda and vitamin C — a working developer that stains the film base brown and gives a soft grainy result.",
+    "options": [
+      {
+        "id": "001",
+        "text": "Warm brown-stained base with soft contrast and heavy grain"
+      },
+      {
+        "id": "002",
+        "text": "High contrast with blown highlights and blocked shadows"
+      },
+      {
+        "id": "003",
+        "text": "Uneven development with mottling across the frame"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Base stained warm brown throughout\n• Grain coarse and pronounced\n• Contrast uneven across the frame\n• Highlights soft with a long shoulder"
+  },
+  {
+    "name": "CAST CONCRETE FORMWORK",
+    "category": [
+      "TRANSFORMATION",
+      "CONCRETE",
+      "ARCHITECTURAL",
+      "BRUTALIST",
+      "ART"
+    ],
+    "message": "Take a picture and cast it in concrete against timber formwork, so the grain of the boards and every tie hole is permanently recorded in the surface.",
+    "options": [
+      {
+        "id": "001",
+        "text": "Board-marked surface with clear timber grain and horizontal joints"
+      },
+      {
+        "id": "002",
+        "text": "Smooth ply-formed surface with a grid of tie holes and slight bleeding"
+      },
+      {
+        "id": "003",
+        "text": "Weathered cast with staining, efflorescence and aggregate exposed"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Formwork texture must be legible in the surface\n• Tie holes and joint lines regularly spaced\n• Slight colour variation between pours\n• Aggregate visible where the surface is worn"
   },
   {
     "name": "COINED",
@@ -11390,6 +11635,33 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "CYMATICS PATTERN",
+    "category": [
+      "TRANSFORMATION",
+      "SOUND",
+      "PATTERN",
+      "SCIENTIFIC",
+      "ART"
+    ],
+    "message": "Take a picture and let sound arrange it — fine powder on a vibrating plate migrating to the still lines, forming a standing wave pattern.",
+    "options": [
+      {
+        "id": "001",
+        "text": "Fine geometric nodal figure in white powder on a dark plate"
+      },
+      {
+        "id": "002",
+        "text": "Complex high-frequency pattern with many nested nodal lines"
+      },
+      {
+        "id": "003",
+        "text": "Simple low-frequency figure with wide clear zones"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Powder gathers only along nodal lines\n• Pattern symmetric about the plate axes\n• Plate surface visible where powder has cleared\n• Slight blur where powder is still moving"
   },
   {
     "name": "DADA",
@@ -32613,6 +32885,33 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "ORIGAMI CREASE PATTERN",
+    "category": [
+      "ORIGAMI",
+      "DIAGRAM",
+      "GEOMETRIC",
+      "TECHNICAL",
+      "ART"
+    ],
+    "message": "Take a picture and flatten it to an origami crease pattern — the unfolded square marked with every mountain and valley fold needed to make the form.",
+    "options": [
+      {
+        "id": "001",
+        "text": "Square with red mountain and blue valley folds meeting at vertices"
+      },
+      {
+        "id": "002",
+        "text": "Dense pattern with many small folds concentrated in one region"
+      },
+      {
+        "id": "003",
+        "text": "Pattern shown beside the folded result for comparison"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Mountain and valley folds distinguished by colour\n• Folds meeting at vertices in even numbers\n• Square boundary clearly marked\n• No shading — line diagram only"
   },
   {
     "name": "ORIENTALIST PAINTING",
