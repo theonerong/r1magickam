@@ -1104,6 +1104,7 @@
                     <h4 class="glossary-title">Quick Navigation</h4>
                     <button id="start-guided-tour" style="display:block;width:100%;margin-bottom:2vw;padding:2vw;background:#FE5F00;color:#000;border:none;border-radius:2vw;font-size:4vw;font-weight:700;cursor:pointer;">▶ Start Audio Guided Tour</button>
                     <div class="glossary-items">
+                        <button class="glossary-item" data-section="navigating">📖 Navigating the Tutorial</button>
                         <button class="glossary-item" data-section="getting-started">🚀 Getting Started</button>
                         <button class="glossary-item" data-section="basic-controls">📸 Basic Controls</button>
                         <button class="glossary-item" data-section="ai-presets">✨ AI Presets</button>
@@ -1132,6 +1133,23 @@
                 <div class="submenu-list tutorial-content">
                     
                     <!-- Getting Started -->
+                    <div id="section-navigating" class="tutorial-section">
+                        <h4 class="tutorial-heading">📖 Navigating the Tutorial</h4>
+                        <p class="tutorial-text">
+                            <strong>Opening a section:</strong> Tap any section heading to open it. Tap the same heading again to close it. Only the section you choose from the list above stays open, so you never have to scroll past chapters you did not ask for.<br><br>
+
+                            <strong>Closing without scrolling back:</strong> Some sections are long. Rather than scrolling all the way up to the heading, hard press anywhere on the text and the section closes for you.<br><br>
+
+                            <strong>▸ Show me buttons:</strong> Throughout the tutorial you will see small orange <em>Show me</em> buttons beside a feature's name. Tap one and the program leaves the tutorial, opens the screen that feature lives on, and makes the button pulse bright orange for a few seconds so you can see exactly which one it is.<br><br>
+
+                            <strong>Coming back:</strong> While a Show me is running the rest of the program is paused — tap anywhere at all and you are returned to the tutorial, on the exact line you were reading.<br><br>
+
+                            <strong>Buttons that need a photo:</strong> A few features live on the image viewer, which only exists once a photo is open. For those, the Show me takes you to the gallery and a small banner says <em>Tap a photo to open it</em>. Open any photo and the button starts pulsing. If your gallery is still empty, the tutorial tells you to take a photo first.<br><br>
+
+                            <strong>Searching:</strong> Use the search bar at the top to find any word in the tutorial. Sections containing a match open automatically, and the arrows step you through the results.
+                        </p>
+                    </div>
+
                     <div id="section-getting-started" class="tutorial-section">
                         <h4 class="tutorial-heading">🚀 Getting Started</h4>
                         <p class="tutorial-text">
@@ -1172,7 +1190,7 @@
                             <strong>⏱️ Timer Mode:</strong> Set a countdown (3-10s) and optional repeat intervals<br>
                             <strong>📸⚡ Burst Mode:</strong> Capture 3-10 photos rapidly (slow/medium/fast)<br>
                             <strong>👁️ Motion Detection:</strong> Automatically captures when movement is detected. Interval settings for repeat capture. Repeat capture is default. You must uncheck repeat capture to do single capture. Select start delay from 3 seconds to 30 minutes. This mode triggers when you press the eye icon and activates/starts when you press the side button. Motion detection deactivates/stops when you press the eye icon again. The eye pulses if motion detection is triggered.<br>
-                            <strong>🎞️ Multi Preset:</strong> Select up to 20 presets to apply to a single photo in sequence. Tap the 🎞️ MULTI button in the carousel to open the preset selector. Choose your presets and tap Apply Selected. The footer and screen will show MULTI PRESETS while active. When you take a photo, all selected presets are queued and sent one by one with a 3 second interval between each. Works with Timer Mode. Cannot be used with Burst, Motion Detection, Random Mode, or No Magic Mode. If Manually Select Options is enabled, you will be prompted to choose options for each selected preset before the photo is taken (If you click CANCEL, it will randomize your option); on later photos you'll be asked whether to reuse the same options. Multi preset stays active for as many photos as you like — tap the lit 🎞️ MULTI button to turn it off.<br>
+                            <strong>🎞️ Multi Preset:</strong> Select up to 20 presets to apply to a single photo in sequence. Tap the 🎞️ MULTI button in the carousel to open the preset selector. Choose your presets and tap Apply Selected. The footer and screen will show MULTI PRESETS while active. When you take a photo, all selected presets are queued and sent one by one with a 3 second interval between each. Works with Timer Mode. Cannot be used with Burst, Motion Detection, Random Mode, or No Magic Mode. If Manually Select Options is enabled, you will be prompted to choose options for each selected preset before the photo is taken (If you click CANCEL, it will randomize your option); on later photos you'll be asked whether to reuse the same options. Multi preset stays active for as many photos as you like — tap the lit 🎞️ MULTI button to turn it off. Triple clicking the x next to the text field clears the selected picks.<br>
                             <strong>🖼️🖼️ Combine images:</strong> Works with either a selected preset or by speaking your preset. Take a picture of two images to combine them to feed to r1 thereby creating AI generated images from two images. Only works with random mode or multi-select presets mode in main camera screen.<br>
                             <strong>📑 Layer presets:</strong> Select up to 5 presets to combine and apply to a photo. Tap the 📑 LAYER button in the carousel to open the preset selector. Choose your presets starting with the primary (or dominant) layer. Then select up to 4 more presets to add as layers to that primary preset. Once you finish selecting, tap Apply Selected. Cannot be used with Random Mode or No Magic Mode. If Manually Select Options is enabled, you will be prompted to choose options for each selected preset before the photo is taken; on later photos you'll be asked whether to reuse the same options. Once Layer is enabled, it keeps applying the same chosen layers until it is disabled.<br>
                             <strong>📝 MASTER and 🎛️ OPTIONS Buttons (Left Carousel):</strong> Below the Menu (☰) button on the left side within a carousel(which also includes the MENU (☰) and GALLERY (🖼️) Buttons). The MASTER button (📝) accesses Master Prompt settings. Glows green when enabled. The OPTIONS (🎛️) button toggles Manually Select Options mode on or off. Glows green when enabled. All the camera buttons (except for the switch camera (📷) button) are in carousels and are visible by default. However, you can hide them (except for the switch camera (📷) button) by single clicking on the main camera screen to hide/reveal buttons. This may be adjusted in the Button Settings subsection within settings.<br><br>
@@ -1203,16 +1221,40 @@
 
                             <strong>Edit and Export Images:</strong> The image viewer screen right carousel contains four buttons — ✏️ EDIT (opens the image editor), 📤 EXPORT (uploads to gofile.io), 📑 LAYER (combine and apply multiple presets to a single image), and 🎲 GAME (play a preset as a game against the program). For LAYER, select primary preset and then add up to 4 more layers (5 in all). Single click (default) on the image viewer screen to hide the carousels.<br><br>
 
-                            <strong>🎲 GAME — Play Against the Program:</strong> The last button in the right carousel turns a game preset into a round of person versus machine. Tap 🎲 GAME to open Pick a Game, choose a game, then choose your options and tap Play. The program makes its own secret pick, your photo is transformed accordingly, and the finished image shows the result along with your picks and the answer.<br>
+                            <strong>🎲 GAME — Play Against the Program:</strong> The last button in the right carousel turns a game preset into a round of person versus machine. Tap 🎲 GAME to open. Pick a Game, choose a game, then choose your options and tap Play. The program makes its own secret pick, your photo is transformed accordingly, and the finished image shows the result along with your picks and the answer.<br>
 
                             Every game preset also works as an ordinary preset. Used normally from LOAD or MULTI it simply performs its transformation with no game text at all — the game only runs when you go in through the 🎲 GAME button.<br><br>
+
+                            <strong>Build Your Own Game List:</strong> At the bottom of the Pick a Game screen are two buttons.<br>
+                            • <strong>ADD:</strong> Shows every preset in your library that carries the GAME category and is not already on the list. Tap the preset you want, then tap Apply.<br>
+                            • <strong>REMOVE:</strong> Shows only the games you added yourself. Tap one, then tap Apply, and it leaves the list. This removes the name from the game list only — <strong>the preset itself is never deleted</strong>, so you can still use it normally or add it back later.<br>
+
+                            <strong>🛠️ Turning Your Own Preset Into a Game:</strong> Two things are required in the preset.<br>
+                            <strong>1. Add GAME to the categories</strong> so the preset appears in the ADD list:<br>
+                            &nbsp;&nbsp;&nbsp;<code>"category": ["ART", "GAME"]</code><br>
+                            <strong>2. Choose a game engine.</strong> The program works out which engine to use from the keys you include — there is no separate setting to change. Pick one of the four:<br><br>
+
+                            • <strong>Matching game (like CLUE)</strong> — the program secretly picks one option from every group and you have to match them all. Requires only <code>optionGroups</code>. Do not include <code>gameType</code> or <code>gameRoster</code>.<br><br>
+
+                            • <strong>Named answer game (like GUESS WHO or BATTLESHIP)</strong> — the program secretly picks a named character or item from a list, and the final image names it. Requires <code>optionGroups</code> plus a <code>gameRoster</code>. Each roster entry needs a <code>name</code>, plus one key for every option group. <strong>The key must match the group title exactly, letter for letter</strong>, and the value must match one of that group's option texts exactly — otherwise the trait quietly falls back to the first option.<br>
+                            &nbsp;&nbsp;&nbsp;<code>"gameRoster": [ { "name": "OLIVER", "GENDER": "Male", "HAT": "No Hat" } ]</code><br><br>
+
+                            • <strong>Word game (like WORDLE)</strong> — the program picks a real word and colours your letters green, yellow or grey. Requires <code>"gameType": "wordle"</code>, one option group per letter, and a <code>gameRoster</code> where each entry's <code>name</code> is the whole word.<br><br>
+
+                            • <strong>Beats game (like ROCK PAPER SCISSORS LIZARD SPOCK)</strong> — you win by <em>beating</em> the program, not by matching it, and there are three outcomes: win, lose or tie. Requires <code>"gameType": "beats"</code>, a <code>beats</code> map listing what each option defeats, and <strong>exactly one option group</strong>. With two or more groups it silently reverts to a matching game.<br>
+                            &nbsp;&nbsp;&nbsp;<code>"beats": { "Rock": ["Scissors", "Lizard"], "Paper": ["Rock", "Spock"] }</code><br><br>
+
+                            <strong>Optional — your own win and lose words:</strong> Add a <code>verdicts</code> key to replace WINNER and LOSER with anything you like. Beats games always use WINNER, LOSER and TIE.<br>
+                            &nbsp;&nbsp;&nbsp;<code>"verdicts": { "win": "JACKPOT!", "lose": "BUST!" }</code><br><br>
+
+                            <strong>Write the result into the image:</strong> In game mode the program appends a section headed <code>=== GAME RESULT ===</code> to your prompt, containing the verdict, the player's guess and the correct answer. Add a line to your preset's <code>additionalInstructions</code> telling the AI to display that section, so the finished picture actually shows whether you won.<br><br>
 
                             <strong>Upload to gofile.io:</strong> Use the Export button in the carousel inside the image viewer. Link expires after 24 hours. Mainly useful in No Magic Mode (because in No Magic Mode, images are not sent to the rabbit hole).<br><br>
 
                             <strong>Bottom Bar — Four Buttons:</strong><br>
                             • <strong>PROMPT:</strong> Opens an editor based on whether a preset is loaded. If no preset is loaded, opens the Preset Builder so you can create a new preset.<br>
                             • <strong>LOAD:</strong> Opens the preset selector so you can choose a preset to apply to this image.<br>
-                            • <strong>MULTI:</strong> Opens the multi-preset selector to apply several presets in sequence to this image. If Manually Select Options is enabled, you will be prompted to choose options for each selected preset before the photo is taken (If you click CANCEL, it will randomize your option).<br>
+                            • <strong>MULTI:</strong> Opens the multi-preset selector to apply several presets in sequence to this image. If Manually Select Options is enabled, you will be prompted to choose options for each selected preset before the photo is taken (If you click CANCEL, it will randomize your option). Triple click the x next to the text field to clear selected picks.<br>
                             • <strong>✨ MAGIC:</strong> Sends the image for AI transformation using the loaded preset. If no preset is loaded and nothing has been entered, it picks a random preset automatically.                           
                         </p>
                     </div>
@@ -1231,7 +1273,7 @@
                             6. Select the resolution of the image under Import Settings<br>
                             7. Exit settings and menu<br>  
                             8. Go to gallery (🖼️)<br>
-                            9. Press the Import button<br>
+                            9. <strong>Press the Import button</strong><br>
                             10. Press the Scan QR Code button<br>
                             11. Point your R1 camera at the QR code<br>
                             12. Wait a few...the modal will close and the image will be optimized and saved to your gallery!<br><br>
@@ -1640,7 +1682,7 @@ All of the presets are optimized to avoid "camera ran dry" or "content filter" i
         <!-- Hidden textarea kept for compatibility with existing JS logic -->
         <textarea id="viewer-prompt" class="viewer-prompt-hidden" readonly></textarea>
         <!-- Bottom row: PROMPT | LOAD | MULTI | ✨ MAGIC -->
-        <div class="viewer-bottom-bar">
+        <div id="viewer-bottom-bar" class="viewer-bottom-bar">
             <button id="viewer-editor-button" class="viewer-bottom-btn">PROMPT</button>
             <button id="load-preset-button" class="viewer-bottom-btn">LOAD</button>
             <button id="multi-preset-button" class="viewer-bottom-btn">MULTI</button>
@@ -1659,8 +1701,18 @@ All of the presets are optimized to avoid "camera ran dry" or "content filter" i
                 <div id="game-modal-body" class="game-modal-body">
                     <!-- Step 1: game picker (list of game presets) -->
                     <div id="game-picker" class="game-picker"></div>
+                    <!-- Step 1b: add / remove a custom game -->
+                    <div id="game-manage" class="game-picker" style="display:none;"></div>
                     <!-- Step 2: option groups for the chosen game -->
                     <div id="game-options" class="game-options" style="display:none;"></div>
+                </div>
+                <div id="game-picker-footer" class="game-modal-footer" style="display:none;">
+                    <button id="game-add-btn" class="game-footer-btn">Add</button>
+                    <button id="game-remove-btn" class="game-footer-btn">Remove</button>
+                </div>
+                <div id="game-manage-footer" class="game-modal-footer" style="display:none;">
+                    <button id="game-manage-cancel" class="game-footer-btn">Cancel</button>
+                    <button id="game-manage-apply" class="game-footer-btn game-submit" disabled>Apply</button>
                 </div>
                 <div id="game-modal-footer" class="game-modal-footer" style="display:none;">
                     <button id="game-back-btn" class="game-footer-btn">Back</button>
@@ -1823,7 +1875,7 @@ All of the presets are optimized to avoid "camera ran dry" or "content filter" i
     </div>
 </div>
                 <div class="filter-row" style="padding-right: calc(8vw + 2vw);">
-                    <input type="text" id="preset-filter" class="style-filter" placeholder="Filter presets...double click on x to clear">
+                    <input type="text" id="preset-filter" class="style-filter" placeholder="Filter presets-2x clears text, 3x clears picks">
                     <button class="filter-blur-btn" id="preset-filter-blur-btn" title="Dismiss keyboard">×</button>
                 </div>
                 <div id="preset-list" class="preset-list">
