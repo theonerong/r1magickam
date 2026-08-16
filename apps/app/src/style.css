@@ -1,7 +1,8 @@
 /* Power Grotesk Font */
 @font-face {
     font-family: 'Power Grotesk';
-    src: url('./PowerGrotesk-Regular.woff') format('woff');
+    src: url('./PowerGrotesk-Regular.woff') format('woff'),
+         url('https://fonts.cdnfonts.com/s/95219/PowerGrotesk-Regular.woff') format('woff');
     font-weight: 400;
     font-style: normal;
     font-display: swap;
@@ -9,7 +10,8 @@
 
 @font-face {
     font-family: 'Power Grotesk';
-    src: url('./PowerGrotesk-Bold.woff') format('woff');
+    src: url('./PowerGrotesk-Bold.woff') format('woff'),
+         url('https://fonts.cdnfonts.com/s/95219/PowerGrotesk-Bold.woff') format('woff');
     font-weight: 700;
     font-style: normal;
     font-display: swap;
@@ -6232,7 +6234,7 @@ body {
     background-color: rgba(20, 100, 180, 0.92);
 }
 
-/* ══════════════��════════════════════
+/* ═══════════════════════════════════
    PERFORMANCE FIX 2: Replace transition:all with specific properties
    ═══════════════════════════════════ */
 
@@ -7047,4 +7049,184 @@ button, .touchable {
     border-color: #FE5F00;
     border-left: 3px solid #FE5F00;
     color: #fff;
+}
+
+/* Add / Remove game panes — message shown when there is nothing to list */
+.game-manage-empty {
+    padding: 4vw 3vw;
+    color: #aaa;
+    font-size: var(--mk-label-font, 3.2vw);
+    line-height: 1.5;
+    text-align: center;
+}
+
+/* ── TUTORIAL ACCORDION ── */
+.tutorial-acc-head {
+    position: relative;
+    cursor: pointer;
+    padding-right: 8vw;
+    margin: 0 0 1vw;
+    padding-top: 2.5vw;
+    padding-bottom: 2.5vw;
+    border-bottom: 1px solid #333;
+    -webkit-tap-highlight-color: transparent;
+}
+.tutorial-acc-head::after {
+    content: '\25BC';
+    position: absolute;
+    right: 1vw;
+    top: 50%;
+    transform: translateY(-50%) rotate(-90deg);
+    font-size: 3vw;
+    color: #FE5F00;
+    transition: transform 0.18s ease;
+}
+.tutorial-section.tutorial-acc-open .tutorial-acc-head::after {
+    transform: translateY(-50%) rotate(0deg);
+}
+.tutorial-section.tutorial-acc-open .tutorial-acc-head {
+    border-bottom-color: #FE5F00;
+}
+.tutorial-acc-body {
+    display: none;
+}
+.tutorial-section.tutorial-acc-open .tutorial-acc-body {
+    display: block;
+}
+
+/* ── TUTORIAL "SHOW ME" ── */
+/* ============================================================
+   SIZE CONTROLS — change these four numbers to taste.
+   ============================================================ */
+:root {
+    --showme-height:   9vw;    /* button height        */
+    --showme-padding:  4vw;    /* left/right padding   */
+    --showme-font:     3.8vw;  /* "Show me" text size  */
+    --showme-radius:   3.5vw;  /* corner rounding      */
+}
+.tutorial-showme-btn {
+    /* min-height:0 is required — the global button rule forces 44px */
+    display: inline-block;
+    min-width: 0;
+    min-height: 0;
+    height: var(--showme-height);
+    line-height: 1;
+    margin: 0 0 0 2vw;
+    padding: 0 var(--showme-padding);
+    background: #2a2a2a;
+    color: #FE5F00;
+    border: 1px solid #FE5F00;
+    border-radius: var(--showme-radius);
+    font-size: var(--showme-font);
+    font-weight: 700;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+.tutorial-showme-btn:active { background: #FE5F00; color: #000; }
+
+/* Strong, unmistakable pulse on the button being shown */
+@keyframes tutorialPulse {
+    0%   { box-shadow: 0 0 0 0 rgba(254,95,0,0.95), 0 0 2vw 1vw rgba(254,95,0,0.55);
+           filter: brightness(1.9); }
+    60%  { box-shadow: 0 0 0 6vw rgba(254,95,0,0), 0 0 3vw 1.5vw rgba(254,95,0,0.25);
+           filter: brightness(1.15); }
+    100% { box-shadow: 0 0 0 0 rgba(254,95,0,0), 0 0 2vw 1vw rgba(254,95,0,0.55);
+           filter: brightness(1.9); }
+}
+.tutorial-pulse {
+    /* NO position or z-index here. Setting position:relative overrode
+       .viewer-carousel { position:absolute; right:-2vw } and dropped the right
+       carousel into normal flow on the LEFT side of the screen. The outline
+       and glow show up fine without changing positioning at all. */
+    animation: tutorialPulse 0.85s ease-in-out infinite;
+    outline: 4px solid #FE5F00 !important;
+    outline-offset: 2px;
+    border-radius: 2vw;
+}
+
+/* Accordion headings */
+.tutorial-acc-head {
+    font-size: 15px !important;
+    padding-top: 1.8vw !important;
+    padding-bottom: 1.8vw !important;
+    margin: 0 0 0.6vw !important;
+}
+
+/* Notice shown when a Show me target needs a photo first */
+#tutorial-showme-notice {
+    position: fixed;
+    left: 3vw;
+    right: 3vw;
+    top: 12vw;
+    bottom: auto;
+    z-index: 100000;
+    display: none;
+    padding: 2.4vw 3vw;
+    background: #1a1a1a;
+    color: #fff;
+    border: 2px solid #FE5F00;
+    border-radius: 2vw;
+    font-size: 3.2vw;
+    line-height: 1.35;
+    text-align: center;
+    box-shadow: 0 0.5vw 2vw rgba(0,0,0,0.7);
+}
+
+#tutorial-showme-notice.notice-bottom {
+    top: auto;
+    bottom: 4vw;
+}
+
+/* ── TUTORIAL READABILITY ──────────────────────────────────────────
+   --tut-gap is the space BETWEEN paragraphs;
+   --tut-line is the space between lines inside one paragraph.
+   ------------------------------------------------------------------ */
+:root {
+    --tut-font:  15px;   /* body text size          */
+    --tut-line:  1.2;   /* line spacing            */
+    --tut-gap:   2.0vw;  /* gap between paragraphs  */
+}
+
+#tutorial-content-area .tutorial-text {
+    font-size: var(--tut-font);
+    line-height: var(--tut-line);
+
+    /* LEFT, not justified. On a 240px column justification has to stretch the
+       word gaps to reach both edges, and a single long word leaves a line with
+       huge holes in it. A clean ragged right edge reads better at this width. */
+    text-align: left;
+
+    /* No hyphens. */
+    hyphens: none;
+    -webkit-hyphens: none;
+
+    /* Do not break long words mid-word; wrap them whole instead. */
+    overflow-wrap: break-word;
+    word-break: normal;
+
+    margin: 0 0 var(--tut-gap);
+}
+
+/* Sub-headings.
+   MUST stay display:inline. Making these inline-block turned each one into an
+   unbreakable box, which let the line break immediately before it (leaving a
+   bullet stranded on the line above) and immediately after it (dropping a
+   comma onto its own line). Inline keeps them part of the normal text flow. */
+#tutorial-content-area .tutorial-text strong {
+    display: inline;
+    color: #FE5F00;
+    font-weight: 700;
+    font-size: calc(var(--tut-font) + 1px);
+}
+
+/* Keeps a bullet glued to the bold word that follows it. */
+#tutorial-content-area .tutorial-text {
+    /* nothing needed here — see the HTML note below */
+}
+
+#tutorial-content-area .tutorial-text em {
+    font-style: italic;
+    color: #ddd;
 }

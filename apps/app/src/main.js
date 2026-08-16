@@ -334,7 +334,7 @@ let currentTutorialGlossaryIndex = 0;
 
 // Gallery variables - IndexedDB
 const DB_NAME = 'R1CameraGallery';
-const DB_VERSION = 3;
+const DB_VERSION = 4;
 const STORE_NAME = 'images';
 let db = null;
 let galleryImages = [];
@@ -1246,6 +1246,14 @@ function initDB() {
         const delStore = db.createObjectStore('deleted_images', { keyPath: 'id' });
         delStore.createIndex('deletedAt', 'deletedAt', { unique: false });
       }
+
+      // Games the user has added to the Pick a Game list themselves.
+      // Key is the preset NAME; we deliberately store nothing but the name and
+      // when it was added, so the preset itself stays the single source of
+      // truth and removing a game can never delete preset data.
+      if (!db.objectStoreNames.contains('custom_games')) {
+        db.createObjectStore('custom_games', { keyPath: 'name' });
+      }
     };
   });
 }
@@ -1909,6 +1917,10 @@ async function showGallery(renderOnly = false) {
             const t = e.touches[0];
             imgPressTimer = setTimeout(() => {
               imgPressTimer = null;
+              // Not during a tutorial Show me. The guard swallows touchend, so
+              // the timer that normally clears this tooltip never runs and it
+              // would be stranded on screen with no way to dismiss it.
+              if (typeof _showMeActive !== 'undefined' && _showMeActive) return;
               _longPressFired = true;
               showImageMetadata(item, t.clientX, t.clientY);
             }, 600);
@@ -2983,7 +2995,89 @@ async function selectPreset(preset) {
 // prompt. Normal preset behaviour is untouched — this logic only runs in-game.
 
 // The games this framework offers, by preset name.
-const GAME_PRESET_NAMES = ['BATTLESHIP', 'CLUE', 'GUESS WHO', 'HIDE AND SEEK', 'ROCK PAPER SCISSORS LIZARD SPOCK', 'SLOT MACHINE', 'WHACK-A-MOLE', 'WORDLE'];
+// Built-in games. These always appear and can never be removed by the user.
+const DEFAULT_GAME_PRESET_NAMES = ['BATTLESHIP', 'CLUE', 'GUESS WHO', 'HIDE AND SEEK', 'ROCK PAPER SCISSORS LIZARD SPOCK', 'SLOT MACHINE', 'WHACK-A-MOLE', 'WORDLE'];
+
+// Games the user added themselves, loaded from IndexedDB at startup.
+let _customGameNames = [];
+
+// Kept for backwards compatibility with any code still reading this name.
+const GAME_PRESET_NAMES = DEFAULT_GAME_PRESET_NAMES;
+
+// Is this one of the built-ins? Built-ins cannot be removed.
+function _isDefaultGame(name) {
+  return DEFAULT_GAME_PRESET_NAMES.indexOf(name) !== -1;
+}
+
+// The full list shown in the picker: defaults + custom, alphabetical, no dupes.
+function _allGameNames() {
+  const seen = new Set();
+  const all = [];
+  DEFAULT_GAME_PRESET_NAMES.concat(_customGameNames).forEach(n => {
+    const key = String(n).toUpperCase();
+    if (!seen.has(key)) { seen.add(key); all.push(n); }
+  });
+  return all.sort((a, b) => a.localeCompare(b));
+}
+
+// Every preset the user could add as a game: category contains GAME, and it is
+// not already on the list. Built-ins are excluded because adding them would be
+// redundant. Alphabetical, so the add list matches the picker.
+function _addableGamePresets() {
+  if (typeof CAMERA_PRESETS === 'undefined') return [];
+  const already = new Set(_allGameNames().map(n => String(n).toUpperCase()));
+  return CAMERA_PRESETS
+    .filter(p => p && p.name && Array.isArray(p.category) &&
+                 p.category.some(c => String(c).toUpperCase() === 'GAME') &&
+                 !already.has(String(p.name).toUpperCase()))
+    .sort((a, b) => a.name.localeCompare(b.name));
+}
+
+// ── IndexedDB persistence for custom games ──
+async function loadCustomGames() {
+  try {
+    if (!db) await initDB();
+    if (!db.objectStoreNames.contains('custom_games')) { _customGameNames = []; return; }
+    _customGameNames = await new Promise((resolve) => {
+      const tx = db.transaction(['custom_games'], 'readonly');
+      const req = tx.objectStore('custom_games').getAll();
+      req.onsuccess = () => resolve((req.result || []).map(r => r.name).filter(Boolean));
+      req.onerror = () => resolve([]);
+    });
+  } catch (e) {
+    console.error('Could not load custom games:', e);
+    _customGameNames = [];
+  }
+}
+
+async function saveCustomGame(name) {
+  if (!name || _isDefaultGame(name)) return;
+  if (_customGameNames.some(n => String(n).toUpperCase() === String(name).toUpperCase())) return;
+  _customGameNames.push(name);
+  try {
+    if (!db) await initDB();
+    await new Promise((resolve, reject) => {
+      const tx = db.transaction(['custom_games'], 'readwrite');
+      tx.objectStore('custom_games').put({ name: name, addedAt: Date.now() });
+      tx.oncomplete = resolve;
+      tx.onerror = () => reject(tx.error);
+    });
+  } catch (e) { console.error('Could not save custom game:', e); }
+}
+
+async function deleteCustomGame(name) {
+  // Removes the NAME from the game list only. The preset itself is untouched.
+  _customGameNames = _customGameNames.filter(n => String(n).toUpperCase() !== String(name).toUpperCase());
+  try {
+    if (!db) await initDB();
+    await new Promise((resolve, reject) => {
+      const tx = db.transaction(['custom_games'], 'readwrite');
+      tx.objectStore('custom_games').delete(name);
+      tx.oncomplete = resolve;
+      tx.onerror = () => reject(tx.error);
+    });
+  } catch (e) { console.error('Could not remove custom game:', e); }
+}
 
 let _gameActivePreset = null;      // the preset chosen for this game round
 let _gameSelections = {};          // groupIndex -> chosen option index
@@ -3010,7 +3104,8 @@ function _isGameModalOpen() {
 // True while step 1 (the game list) is showing, false once options are up.
 function _isGamePickerVisible() {
   return _isGameModalOpen() &&
-         document.getElementById('game-picker')?.style.display !== 'none';
+         document.getElementById('game-picker')?.style.display !== 'none' &&
+         document.getElementById('game-manage')?.style.display !== 'block';
 }
 function _getGamePickerItems() {
   return Array.from(document.querySelectorAll('#game-picker .game-picker-item'));
@@ -3033,15 +3128,36 @@ function _moveGamePicker(direction) {
   _updateGamePickerSelection();
 }
 
+// The game modal has THREE panes and THREE footers. Setting them one at a
+// time from five different places is what made the buttons appear and vanish
+// unpredictably, so every screen change now goes through this one function,
+// which always sets all six explicitly.
+//   'picker'  = the game list          + Add / Remove
+//   'manage'  = the add/remove list    + Cancel / Apply
+//   'options' = the chosen game's opts + Back / Play
+function _showGamePane(which) {
+  const set = (id, visible, mode) => {
+    const el = document.getElementById(id);
+    if (el) el.style.display = visible ? (mode || 'block') : 'none';
+  };
+  set('game-picker',        which === 'picker');
+  set('game-manage',        which === 'manage');
+  set('game-options',       which === 'options');
+  set('game-picker-footer', which === 'picker',  'flex');
+  set('game-manage-footer', which === 'manage',  'flex');
+  set('game-modal-footer',  which === 'options', 'flex');
+}
+
 // Open the game modal (Step 1: pick a game).
 function openGameModal() {
   const modal = document.getElementById('game-modal');
   if (!modal) return;
   _gameActivePreset = null;
   _gameSelections = {};
-  document.getElementById('game-options').style.display = 'none';
-  document.getElementById('game-modal-footer').style.display = 'none';
-  document.getElementById('game-picker').style.display = 'block';
+  // Clear any half-finished add/remove from last time, then show the picker.
+  _gameManageMode = null;
+  _gameManagePick = null;
+  _showGamePane('picker');
   document.getElementById('game-modal-title').textContent = '🎲 Pick a Game';
   // ALWAYS start on the first game, never where the user left off last time.
   _gamePickerIndex = 0;
@@ -3055,6 +3171,8 @@ function closeGameModal() {
   if (modal) modal.style.display = 'none';
   _gameActivePreset = null;
   _gameSelections = {};
+  _gameManageMode = null;
+  _gameManagePick = null;
 }
 
 // Step 1 UI: list the games; lock any whose preset is not imported.
@@ -3062,9 +3180,13 @@ function _renderGamePicker() {
   const picker = document.getElementById('game-picker');
   if (!picker) return;
   picker.innerHTML = '';
-  GAME_PRESET_NAMES.forEach((name, gameIndex) => {
+  _allGameNames().forEach((name, gameIndex) => {
     const preset = _findGamePreset(name);
-    const imported = preset && _isGamePresetImported(name);
+    // Built-ins must be imported from Import Presets. Custom games were added
+    // from the user's own preset list, so simply existing is enough.
+    const imported = _isDefaultGame(name)
+      ? (preset && _isGamePresetImported(name))
+      : !!preset;
     const btn = document.createElement('button');
     btn.className = 'game-picker-item' + (imported ? '' : ' locked');
     if (imported) {
@@ -3083,6 +3205,102 @@ function _renderGamePicker() {
   });
 }
 
+// ── ADD / REMOVE games ──────────────────────────────────────────────
+// Both use a third pane inside the SAME modal rather than a separate overlay,
+// so the existing scroll-wheel and side-button handling keeps working and
+// there is no second layer to stack on a very small screen.
+let _gameManageMode = null;      // 'add' | 'remove' | null
+let _gameManagePick = null;      // name currently ticked in the manage list
+
+function _isGameManageVisible() {
+  return _isGameModalOpen() &&
+         document.getElementById('game-manage')?.style.display === 'block';
+}
+
+function _showGameManage(mode) {
+  _gameManageMode = mode;
+  _gameManagePick = null;
+  _showGamePane('manage');
+  document.getElementById('game-modal-title').textContent =
+    mode === 'add' ? '\u2795 Add a Game' : '\u2796 Remove a Game';
+  _renderGameManageList();
+  const body = document.getElementById('game-modal-body');
+  if (body) body.scrollTop = 0;
+}
+
+function _closeGameManage() {
+  _gameManageMode = null;
+  _gameManagePick = null;
+  _showGamePane('picker');
+  document.getElementById('game-modal-title').textContent = '\ud83c\udfb2 Pick a Game';
+  _gamePickerIndex = 0;
+  _renderGamePicker();
+  _updateGamePickerSelection();
+  const body = document.getElementById('game-modal-body');
+  if (body) body.scrollTop = 0;
+}
+
+function _renderGameManageList() {
+  const pane = document.getElementById('game-manage');
+  if (!pane) return;
+  pane.innerHTML = '';
+
+  const names = _gameManageMode === 'add'
+    ? _addableGamePresets().map(p => p.name)
+    : _customGameNames.slice().sort((a, b) => a.localeCompare(b));
+
+  if (names.length === 0) {
+    const empty = document.createElement('div');
+    empty.className = 'game-manage-empty';
+    empty.textContent = _gameManageMode === 'add'
+      ? 'No presets available to add. A preset must have GAME in its category list, and must not already be on the game list.'
+      : 'No added games to remove. The built-in games cannot be removed.';
+    pane.appendChild(empty);
+    _updateGameManageApply();
+    return;
+  }
+
+  names.forEach(name => {
+    const btn = document.createElement('button');
+    btn.className = 'game-picker-item';
+    btn.dataset.gameName = name;
+    const sub = _gameManageMode === 'add' ? 'Tap to select, then Apply' : 'Tap to select, then Apply to remove';
+    btn.innerHTML = name + '<span class="game-sub">' + sub + '</span>';
+    btn.addEventListener('click', () => {
+      _gameManagePick = (_gameManagePick === name) ? null : name;   // tap again to deselect
+      _renderGameManageHighlight();
+      _updateGameManageApply();
+    });
+    pane.appendChild(btn);
+  });
+  _renderGameManageHighlight();
+  _updateGameManageApply();
+}
+
+function _renderGameManageHighlight() {
+  document.querySelectorAll('#game-manage .game-picker-item').forEach(el => {
+    el.classList.toggle('game-picker-selected', el.dataset.gameName === _gameManagePick);
+  });
+}
+
+function _updateGameManageApply() {
+  const btn = document.getElementById('game-manage-apply');
+  if (btn) btn.disabled = !_gameManagePick;
+}
+
+async function _applyGameManage() {
+  if (!_gameManagePick) return;
+  const name = _gameManagePick;
+  if (_gameManageMode === 'add') {
+    await saveCustomGame(name);
+  } else {
+    // Removes the name from the list and from IndexedDB. The preset itself is
+    // never touched, so the game can be added again later.
+    await deleteCustomGame(name);
+  }
+  _closeGameManage();
+}
+
 // Step 2: show the option groups for the chosen game.
 function _startGame(preset) {
   if (!preset || !preset.optionGroups || preset.optionGroups.length === 0) {
@@ -3091,9 +3309,7 @@ function _startGame(preset) {
   }
   _gameActivePreset = preset;
   _gameSelections = {};
-  document.getElementById('game-picker').style.display = 'none';
-  document.getElementById('game-options').style.display = 'block';
-  document.getElementById('game-modal-footer').style.display = 'flex';
+  _showGamePane('options');
   document.getElementById('game-modal-title').textContent = '🎲 ' + preset.name;
   _renderGameOptions(preset);
   _updateGameSubmitEnabled();
@@ -3353,16 +3569,27 @@ let _gamePendingSelection = null;
   if (closeBtn) closeBtn.addEventListener('click', closeGameModal);
   const backBtn = document.getElementById('game-back-btn');
   if (backBtn) backBtn.addEventListener('click', () => {
-    // Back to the game picker.
+    // Back to the game picker. Goes through _showGamePane so the Add / Remove
+    // buttons come back and any add/remove footer is cleared.
     _gameActivePreset = null;
     _gameSelections = {};
-    document.getElementById('game-options').style.display = 'none';
-    document.getElementById('game-modal-footer').style.display = 'none';
-    document.getElementById('game-picker').style.display = 'block';
+    _gameManageMode = null;
+    _gameManagePick = null;
+    _showGamePane('picker');
     document.getElementById('game-modal-title').textContent = '🎲 Pick a Game';
+    _updateGamePickerSelection();
   });
   const submitBtn = document.getElementById('game-submit-btn');
   if (submitBtn) submitBtn.addEventListener('click', submitGameRound);
+
+  const addBtn = document.getElementById('game-add-btn');
+  const removeBtn = document.getElementById('game-remove-btn');
+  const manageApply = document.getElementById('game-manage-apply');
+  const manageCancel = document.getElementById('game-manage-cancel');
+  if (addBtn) addBtn.addEventListener('click', () => _showGameManage('add'));
+  if (removeBtn) removeBtn.addEventListener('click', () => _showGameManage('remove'));
+  if (manageApply) manageApply.addEventListener('click', _applyGameManage);
+  if (manageCancel) manageCancel.addEventListener('click', _closeGameManage);
 })();
 
 async function submitMagicTransform() {
@@ -5178,6 +5405,10 @@ function selectCurrentMenuItem() {
 async function loadStyles() {
     // Initialize IndexedDB storage — run both at the same time instead of one after the other
     await Promise.all([presetStorage.init(), presetImporter.init()]);
+
+    // Restore the games the user added to the Pick a Game list. Loaded here,
+    // alongside the presets, so the picker is correct the first time it opens.
+    await loadCustomGames();
     
     // Load imported presets and modifications at the same time instead of one after the other
     const [importedPresets, modifications] = await Promise.all([
@@ -7615,10 +7846,16 @@ function toggleNoMagicMode() {
   // Update the camera footer immediately
   updateNoMagicFooter();
   
-  if (noMagicMode) {
-    showStatus('No Magic Mode ON - Camera only', 2000);
-  } else {
-    showStatus('No Magic Mode OFF - AI prompts enabled', 2000);
+  // showStatus() was never defined anywhere — these calls were throwing and
+  // killing the rest of the function. Write to the camera footer instead,
+  // which is how the rest of the app shows a temporary message.
+  if (statusElement) {
+    const _msg = noMagicMode ? '⚡ No Magic Mode ON - Camera only'
+                             : 'No Magic Mode OFF - AI prompts enabled';
+    statusElement.textContent = _msg;
+    setTimeout(() => {
+      if (statusElement && statusElement.textContent === _msg) updatePresetDisplay();
+    }, 2000);
   }
 }
 
@@ -8466,6 +8703,408 @@ function hideTutorialSubmenu() {
   showSettingsSubmenu();
 }
 
+// ── TUTORIAL "SHOW ME" ──────────────────────────────────────────────
+// Takes the reader to the exact button being described and pulses it.
+// While a Show me is running the app is LOCKED: the only taps that do
+// anything are the return chip, and (where needed) picking a photo.
+// Any other tap simply returns the reader to the tutorial.
+//
+// Each row:
+//   label   – the bold label in the tutorial to attach the button to
+//   section – optional; only attach inside this tutorial section. This is how
+//             "Motion Detection" gets a camera button in Special Modes and a
+//             settings button in Settings.
+//   target  – id of the button to pulse, or an ARRAY of ids to pulse together
+//   go      – how to get there
+//   needsPhoto – true if the target only exists once a photo is open
+const TUTORIAL_SHOW_ME = [
+  // ---- MAIN CAMERA SCREEN ----
+  { label: 'Gallery Button',    section: 'basic-controls', target: 'gallery-button',       go: _goCamera },
+  { label: 'Random Mode',       section: 'special-modes',  target: 'random-toggle',        go: _goCamera },
+  { label: 'Timer Mode',        section: 'special-modes',  target: 'timer-toggle',         go: _goCamera },
+  { label: 'Burst Mode',        section: 'special-modes',  target: 'burst-toggle',         go: _goCamera },
+  { label: 'Motion Detection',  section: 'special-modes',  target: 'motion-toggle',        go: _goCamera },
+  { label: 'Multi Preset',      section: 'special-modes',  target: 'camera-multi-preset-toggle', go: _goCamera },
+  { label: 'Combine images',    section: 'special-modes',  target: 'camera-combine-toggle', go: _goCamera },
+  { label: 'Layer presets',     section: 'special-modes',  target: 'camera-layer-toggle',  go: _goCamera },
+  // The tutorial label is "📝 MASTER and 🎛️ OPTIONS Buttons (Left Carousel):".
+  // Leading emoji are stripped before matching, so the label starts at MASTER.
+  { label: 'MASTER and',        section: 'special-modes',
+    target: ['cam-master-prompt-btn', 'cam-options-btn'], go: _goCamera },
+
+  // ---- GALLERY ----
+  { label: 'Import Photos',     section: 'gallery-features', target: 'gallery-import-button', go: _goGallery },
+  { label: 'Press the Import button', section: 'uploading-images', target: 'gallery-import-button', go: _goGallery },
+  { label: 'Preset Header',     section: 'gallery-features', target: 'viewer-preset-header', go: _goGallery, needsPhoto: true },
+  { label: 'Upload to gofile.io', section: 'gallery-features', target: 'upload-viewer-image', go: _goGallery, needsPhoto: true },
+  { label: 'Bottom Bar',        section: 'gallery-features', target: 'viewer-bottom-bar',   go: _goGallery, needsPhoto: true },
+  { label: 'MAGIC',             section: 'gallery-features', target: 'magic-button',        go: _goGallery, needsPhoto: true },
+  { label: 'How to Access',     section: 'edit-image',       target: 'edit-viewer-image',   go: _goGallery, needsPhoto: true },
+  { label: 'Sort',              section: 'gallery-features', target: 'gallery-sort-btn',      go: _goGallery },
+  { label: 'Batch Operations-Combine', section: 'gallery-features', target: 'batch-combine',  go: _goGalleryBatch },
+  { label: 'Batch Operations',  section: 'gallery-features', target: 'batch-mode-toggle',     go: _goGallery },
+  { label: 'New Folder',        section: 'gallery-features', target: 'batch-new-folder',      go: _goGalleryBatch },
+  { label: 'Edit and Export Images', section: 'gallery-features',
+    target: ['viewer-carousel'], go: _goGallery, needsPhoto: true },
+  { label: 'GAME',              section: 'gallery-features', target: 'game-viewer-button',    go: _goGallery, needsPhoto: true },
+  { label: 'Master and Options Buttons', section: 'gallery-features',
+    target: ['mp-viewer-button', 'options-viewer-button'], go: _goGallery, needsPhoto: true },
+
+  // ---- SETTINGS ----
+  { label: 'Visible Presets',   section: 'settings', target: 'visible-presets-settings-button', go: _goSettings },
+  { label: 'Preset Builder',    section: 'settings', target: 'preset-builder-button',           go: _goSettings },
+  { label: 'Import Presets',    section: 'settings', target: 'import-presets-button',           go: _goSettings },
+  { label: 'Preset File Settings', section: 'settings', target: 'preset-file-settings-button',  go: _goSettings },
+  { label: 'Master Prompt',     section: 'settings', target: 'master-prompt-settings-button',   go: _goSettings },
+  { label: 'Motion Detection',  section: 'settings', target: 'motion-settings-button',          go: _goSettings },
+  { label: 'Resolution',        section: 'settings', target: 'resolution-settings-button',      go: _goSettings },
+  { label: 'Aspect Ratio',      section: 'settings', target: 'aspect-ratio-settings-button',    go: _goSettings },
+  { label: 'Burst',             section: 'settings', target: 'burst-settings-button',           go: _goSettings },
+  { label: 'Timer',             section: 'settings', target: 'timer-settings-button',           go: _goSettings },
+  { label: 'Reset Database',    section: 'settings', target: 'factory-reset-button',            go: _goSettings },
+  { label: 'Restore Deleted Items', section: 'settings', target: 'restore-deleted-button',      go: _goSettings },
+  { label: 'Import Resolution', section: 'settings', target: 'import-resolution-settings-button', go: _goSettings },
+  { label: 'Button Settings',   section: 'settings', target: 'button-settings-button',          go: _goSettings },
+  { label: 'No Magic Mode',     section: 'settings', target: 'no-magic-toggle-button',          go: _goSettings },
+  { label: 'Manually Select Options', section: 'settings', target: 'manual-options-toggle-button', go: _goSettings },
+];
+
+let _showMeReturnSection = null;
+let _showMeReturnScroll = 0;
+let _showMeActive = false;          // app is locked while true
+let _showMeAwaitPhoto = false;      // the one interaction we allow
+let _showMePhotoOpenedAt = 0;       // grace window after a photo is tapped
+let _showMeAnchorBtn = null;        // the Show me button that was pressed
+let _showMeAnchorTop = 0;           // where it sat inside the scroller
+let _showMeTurnedOnBatch = false;   // did WE switch Select mode on?
+let _showMeCameraWasOff = true;     // so we can put the camera back as we found it
+let _showMeRestoring = false;       // tells showTutorialSection not to scroll
+
+function _closeAllMenuLayers() {
+  ['tutorial-submenu', 'settings-submenu', 'unified-menu'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.style.display = 'none';
+  });
+  isTutorialOpen = false;
+  isTutorialSubmenuOpen = false;
+  isSettingsSubmenuOpen = false;
+  isMenuOpen = false;
+  menuScrollEnabled = false;
+}
+
+function _goCamera() {
+  _closeAllMenuLayers();
+  _showMeCameraWasOff = true;                       // remember to switch it back off
+  // The carousels are hidden by a CLASS on the left one and a TRANSFORM on the
+  // right one — clearing style.display did nothing. Undo both, and reset the
+  // module's own visibility flags through the guard below.
+  const _left = document.getElementById('left-cam-carousel');
+  if (_left) { _left.classList.remove('hidden'); _left.style.display = ''; }
+  const _right = document.querySelector('.mode-carousel');
+  if (_right) {
+    _right.style.transform = 'translateX(0)';
+    _right.style.pointerEvents = 'auto';
+    _right.style.display = '';
+  }
+  // The camera screen toggles its carousels on touchend. It already honours
+  // this guard window, so hold it open for the whole Show me — otherwise the
+  // tap used to return to the tutorial also hides the carousels, and they are
+  // still hidden the next time a Show me arrives here.
+  window._carouselGuardUntil = Date.now() + 600000;
+  if (typeof resumeCamera === 'function') { try { resumeCamera(); } catch (e) {} }
+}
+function _goSettings() {
+  hideTutorialSubmenu();          // this one genuinely wants Settings
+}
+function _goGallery() {
+  _closeAllMenuLayers();
+  if (typeof showGallery === 'function') showGallery();
+}
+// Combine and New Folder only exist once Select mode is on, so turn it on for
+// them — the reader should land on the button itself, not one step short.
+function _goGalleryBatch() {
+  _goGallery();
+  setTimeout(() => {
+    // isBatchMode is the app's own flag — far more reliable than guessing
+    // from whether the action bar happens to be laid out yet.
+    const t = document.getElementById('batch-mode-toggle');
+    if (t && typeof isBatchMode !== 'undefined' && !isBatchMode) {
+      t.click();
+      _showMeTurnedOnBatch = true;      // remember to undo this on the way back
+    }
+  }, 320);
+}
+
+// ── the lock ──
+// One capture-phase listener. Anything that is not the chip (or a photo when
+// we are waiting for one) is swallowed and sends the reader back.
+function _showMeGuard(e) {
+  if (!_showMeActive) return;
+  // Clicks WE fire (e.g. turning on Select mode so New Folder exists) are not
+  // trusted events. Without this they were treated as a stray tap and threw
+  // the reader straight back to the tutorial.
+  if (e.isTrusted === false) return;
+  if (_showMeAwaitPhoto) {
+    // While waiting for a photo, allow taps on the grid AND on the viewer that
+    // opens from it. Anything else still bounces back.
+    if (e.target.closest('#gallery-grid') || e.target.closest('#image-viewer')) {
+      _showMePhotoOpenedAt = Date.now();
+      return;
+    }
+  }
+  // Brief grace window right after a photo is opened, so the follow-up events
+  // the viewer fires while it animates in are not mistaken for a stray tap.
+  if (_showMePhotoOpenedAt && Date.now() - _showMePhotoOpenedAt < 900) return;
+  e.preventDefault();
+  e.stopPropagation();
+  _returnToTutorial();
+}
+
+function _showMeNotice(text, ms, awayFrom) {
+  let el = document.getElementById('tutorial-showme-notice');
+  if (!el) {
+    el = document.createElement('div');
+    el.id = 'tutorial-showme-notice';
+    document.body.appendChild(el);
+  }
+  el.textContent = text;
+  // Sit opposite whatever is being pointed at, so it never covers it.
+  let targetInTopHalf = false;
+  if (awayFrom) {
+    try { targetInTopHalf = awayFrom.getBoundingClientRect().top < window.innerHeight / 2; } catch (e) {}
+  }
+  el.classList.toggle('notice-bottom', targetInTopHalf);
+  el.style.display = 'block';
+  clearTimeout(_showMeNotice._t);
+  _showMeNotice._t = setTimeout(() => { el.style.display = 'none'; }, ms || 4200);
+}
+
+function _hideShowMeChip() {
+  const chip = document.getElementById('tutorial-return-chip');
+  if (chip) chip.style.display = 'none';
+}
+
+// Pulse one id or several. Waits for hidden targets (the viewer buttons only
+// exist once a photo is open) for up to 20 seconds.
+function _pulseTargets(ids, _tries) {
+  const list = Array.isArray(ids) ? ids : [ids];
+  const els = list.map(id => document.getElementById(id)).filter(el => el && el.offsetParent !== null);
+  if (els.length === 0) {
+    const n = (_tries || 0) + 1;
+    if (n < 40) setTimeout(() => _pulseTargets(ids, n), 500);
+    return;
+  }
+  els.forEach(el => {
+    el.classList.add('tutorial-pulse');
+    setTimeout(() => el.classList.remove('tutorial-pulse'), 6000);
+  });
+  try { els[0].scrollIntoView({ behavior: 'smooth', block: 'center' }); } catch (e) {}
+
+  // The target is now on screen, so the photo-picking phase is over. Clearing
+  // this is what makes the NEXT tap return to the tutorial — without it every
+  // tap inside the viewer was allowed through and just hid the carousel.
+  _showMeAwaitPhoto = false;
+  _showMePhotoOpenedAt = 0;
+  _showMeNotice('Tap to go back to tutorial', 3500, els[0]);
+}
+
+function _tutorialShowMe(entry, fromSectionId, sourceBtn) {
+  _showMeReturnSection = fromSectionId || null;
+  const _sc = document.querySelector('#tutorial-content-area .tutorial-content');
+  _showMeReturnScroll = _sc ? _sc.scrollTop : 0;
+  // Remember WHICH button was pressed and where on screen it sat. Restoring by
+  // pixel alone kept failing because reopening a section changes the content
+  // height, so the same number lands somewhere else. Re-anchoring to the button
+  // is immune to that.
+  _showMeAnchorBtn = sourceBtn || null;
+  _showMeAnchorTop = 0;
+  if (sourceBtn && _sc) {
+    try {
+      _showMeAnchorTop = sourceBtn.getBoundingClientRect().top - _sc.getBoundingClientRect().top;
+    } catch (e) {}
+  }
+
+  const noPhotos = (typeof galleryImages === 'undefined') || galleryImages.length === 0;
+  if (entry.needsPhoto && noPhotos) {
+    _showMeNotice('This button is on the image viewer screen. Take a photo first, then come back and tap Show me again.');
+    return;
+  }
+
+  try { entry.go(); } catch (e) { console.error('Show me failed:', e); return; }
+
+  _showMeActive = true;
+  _showMeAwaitPhoto = !!entry.needsPhoto;
+  // ONLY click. Listening to touchend as well meant a tap on a photo was
+  // consumed by touchend (clearing the await flag), and the click that
+  // followed a moment later was then treated as a stray tap and bounced the
+  // reader back before the viewer could open.
+  document.addEventListener('click', _showMeGuard, true);
+  // touchend as well: the camera carousel toggle listens on touchend, so a
+  // click-only guard let it through. Safe now that the photo-await flag is
+  // cleared by _pulseTargets rather than by the guard itself.
+  document.addEventListener('touchend', _showMeGuard, true);
+
+  if (entry.needsPhoto) _showMeNotice('Tap a photo to open it', 60000);
+
+  setTimeout(() => { _pulseTargets(entry.target); }, 300);
+}
+
+function _returnToTutorial() {
+  _showMeActive = false;
+  _showMeAwaitPhoto = false;
+  window._carouselGuardUntil = 0;      // camera tap-to-toggle works normally again
+
+  // If we switched Select mode on to reveal a batch button, switch it back off.
+  // Leaving it on put the gallery in checkbox mode, so tapping a photo ticked
+  // it instead of opening it.
+  if (_showMeTurnedOnBatch || (typeof isBatchMode !== 'undefined' && isBatchMode)) {
+    _showMeTurnedOnBatch = false;
+    // batch-cancel is the button that leaves Select mode.
+    const done = document.getElementById('batch-cancel') ||
+                 document.getElementById('batch-mode-toggle');
+    if (done) { try { done.click(); } catch (e) {} }
+  }
+  document.removeEventListener('click', _showMeGuard, true);
+  document.removeEventListener('touchend', _showMeGuard, true);
+
+  _hideShowMeChip();
+  const _n = document.getElementById('tutorial-showme-notice');
+  if (_n) _n.style.display = 'none';
+  // Clear the gallery long-press tooltip if one slipped through.
+  if (typeof hideImageMetadata === 'function') { try { hideImageMetadata(); } catch (e) {} }
+  document.querySelectorAll('.tutorial-pulse').forEach(el => el.classList.remove('tutorial-pulse'));
+
+  // Shut every screen a Show me could have opened, including the image viewer.
+  if (typeof closeImageViewer === 'function') { try { closeImageViewer(); } catch (e) {} }
+  ['gallery-modal', 'settings-submenu'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.style.display = 'none';
+  });
+  isSettingsSubmenuOpen = false;
+
+  // The tutorial had the camera off, so put it back off.
+  if (_showMeCameraWasOff && typeof pauseCamera === 'function') { try { pauseCamera(); } catch (e) {} }
+  _showMeCameraWasOff = true;
+
+  showTutorialSubmenu();
+  _showMeRestoring = true;
+  _showMePhotoOpenedAt = 0;
+  if (_showMeReturnSection) showTutorialSection(_showMeReturnSection);
+  _restoreTutorialScroll(_showMeReturnScroll);
+}
+
+// Setting scrollTop on an element that is still display:none does nothing, and
+// a smooth scroll already in flight will overwrite a single assignment. So keep
+// re-applying it every animation frame until it actually sticks.
+function _restoreTutorialScroll(target) {
+  let frames = 0;
+  const step = () => {
+    const sc = document.querySelector('#tutorial-content-area .tutorial-content');
+    // offsetParent is null while the panel is hidden — nothing would stick yet.
+    if (sc && sc.offsetParent !== null) {
+      if (_showMeAnchorBtn && _showMeAnchorBtn.offsetParent !== null) {
+        // Put the button that was pressed back exactly where it was on screen.
+        const delta = (_showMeAnchorBtn.getBoundingClientRect().top -
+                       sc.getBoundingClientRect().top) - _showMeAnchorTop;
+        if (Math.abs(delta) > 0.5) sc.scrollTop += delta;
+      } else {
+        sc.scrollTop = target;               // fallback if the button is gone
+      }
+    }
+    frames++;
+    if (frames < 45) {                       // ~750ms of insisting
+      requestAnimationFrame(step);
+    } else {
+      _showMeRestoring = false;
+      setTimeout(() => {
+        const sc2 = document.querySelector('#tutorial-content-area .tutorial-content');
+        if (!sc2) return;
+        if (_showMeAnchorBtn && _showMeAnchorBtn.offsetParent !== null) {
+          const d = (_showMeAnchorBtn.getBoundingClientRect().top -
+                     sc2.getBoundingClientRect().top) - _showMeAnchorTop;
+          if (Math.abs(d) > 1) sc2.scrollTop += d;
+        } else if (Math.abs(sc2.scrollTop - target) > 2) {
+          sc2.scrollTop = target;
+        }
+      }, 140);
+    }
+  };
+  requestAnimationFrame(step);
+}
+
+// Attaches a Show me next to every matching label, honouring the section rule.
+function _injectShowMeButtons() {
+  const area = document.getElementById('tutorial-content-area');
+  if (!area) return;
+  area.querySelectorAll('strong').forEach(st => {
+    if (st.dataset.showme === '1') return;
+    const sec = st.closest('.tutorial-section');
+    const secId = sec ? sec.id.replace('section-', '') : '';
+    const txt = st.textContent
+      .replace(/[:：]/g, ' ')
+      .replace(/^[^A-Za-z0-9]+/, '')
+      .trim()
+      .toLowerCase();
+    if (!txt) return;
+    // Longest label first, so "Batch Operations-Combine" wins over "Batch Operations".
+    const order = TUTORIAL_SHOW_ME
+      .map((e, i) => ({ e, i }))
+      .sort((x, y) => y.e.label.length - x.e.label.length);
+    const hit = order.find(({ e }) =>
+      (!e.section || e.section === secId) &&
+      txt.startsWith(e.label.replace(/^[^A-Za-z0-9]+/, '').toLowerCase()) &&
+      (Array.isArray(e.target) ? e.target : [e.target]).some(t => document.getElementById(t)));
+    if (!hit) return;
+    st.dataset.showme = '1';
+    const btn = document.createElement('button');
+    btn.className = 'tutorial-showme-btn';
+    btn.textContent = '\u25B8 Show me';
+    btn.dataset.showmeIndex = String(hit.i);
+    st.parentNode.insertBefore(btn, st.nextSibling);
+  });
+}
+
+// ── TUTORIAL ACCORDION ──────────────────────────────────────────────
+// Wraps every .tutorial-section at RUNTIME so the tutorial HTML itself never
+// has to be restructured. Each section's heading becomes a tappable bar and
+// everything below it collapses. Safe to call repeatedly — already-wrapped
+// sections are skipped.
+function _buildTutorialAccordion() {
+  const sections = document.querySelectorAll('#tutorial-content-area .tutorial-section');
+  sections.forEach(sec => {
+    if (sec.dataset.accordion === '1') return;      // already done
+    const heading = sec.querySelector('h4');
+    if (!heading) return;
+
+    heading.classList.add('tutorial-acc-head');
+    const body = document.createElement('div');
+    body.className = 'tutorial-acc-body';
+
+    // Move everything after the heading into the collapsible body.
+    let node = heading.nextSibling;
+    while (node) {
+      const next = node.nextSibling;
+      body.appendChild(node);
+      node = next;
+    }
+    sec.appendChild(body);
+    sec.dataset.accordion = '1';
+    sec.classList.remove('tutorial-acc-open');       // start collapsed
+  });
+  _injectShowMeButtons();
+}
+
+function _setTutorialSectionOpen(sec, open) {
+  if (!sec) return;
+  sec.classList.toggle('tutorial-acc-open', !!open);
+}
+
+// Open one section and close the rest.
+function _openOnlyTutorialSection(sec) {
+  document.querySelectorAll('#tutorial-content-area .tutorial-section')
+    .forEach(s => _setTutorialSectionOpen(s, s === sec));
+}
+
 function showTutorialSection(sectionId) {
   const glossary = document.getElementById('tutorial-glossary');
   const contentArea = document.getElementById('tutorial-content-area');
@@ -8482,11 +9121,20 @@ function showTutorialSection(sectionId) {
     }
     
     tutorialScrollEnabled = true; // Enable scrolling when viewing content
-    
-    // Scroll to the target section
-    setTimeout(() => {
-      targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }, 100);
+
+    // Build the accordion, then open ONLY the section that was asked for.
+    // Previously this just scrolled, so every other section stayed expanded
+    // below it and the reader could keep scrolling forever.
+    _buildTutorialAccordion();
+    _openOnlyTutorialSection(targetSection);
+
+    // Scroll to the target section — skipped when we are restoring the
+    // reader's exact position after a Show me, or this would fight it.
+    if (!_showMeRestoring) {
+      setTimeout(() => {
+        targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 100);
+    }
   }
 }
 
@@ -8518,6 +9166,10 @@ function tutorialSearchRun() {
     tutorialSearchOriginalHTML = null;
     return;
   }
+
+  // Make sure the accordion exists BEFORE the snapshot, so restoring the
+  // snapshot later brings the accordion markup back with it.
+  _buildTutorialAccordion();
 
   // Save clean HTML before highlighting
   tutorialSearchOriginalHTML = tutorialContent.innerHTML;
@@ -8577,6 +9229,11 @@ function tutorialSearchRun() {
       : 'No results found';
   }
 
+  // A collapsed section would hide its own matches, so open every section
+  // that contains one. Sections with no match stay shut.
+  document.querySelectorAll('#tutorial-content-area .tutorial-section')
+    .forEach(sec => _setTutorialSectionOpen(sec, !!sec.querySelector('.tutorial-search-match')));
+
   if (tutorialSearchResults.length > 0) {
     tutorialSearchIndex = 0;
     tutorialSearchScrollTo(0);
@@ -8585,6 +9242,9 @@ function tutorialSearchRun() {
 
 function tutorialSearchScrollTo(index) {
   const status = document.getElementById('tutorial-search-status');
+  // Make sure the result we are about to jump to is inside an OPEN section.
+  const owner = tutorialSearchResults[index] && tutorialSearchResults[index].closest('.tutorial-section');
+  if (owner) _setTutorialSectionOpen(owner, true);
   tutorialSearchResults.forEach((el, i) => {
     el.style.background = i === index ? '#fff200' : '#FE5F00';
     el.style.color = '#000';
@@ -8745,7 +9405,7 @@ const TOUR_STEPS = [
   { section: 'Special Modes', title: '⏱️ Timer Mode', body: 'Set a countdown of 3, 5, or 10 seconds before each shot. Enable repeat mode so it automatically keeps taking photos at a set interval.' },
   { section: 'Special Modes', title: '📸⚡ Burst Mode', body: 'Captures 3 to 10 photos rapidly in one press. Choose slow, medium, or fast burst speed in Settings. Great for action shots or getting multiple variations.' },
   { section: 'Special Modes', title: '👁️ Motion Detection', body: 'Automatically captures when movement is detected in frame. Set sensitivity, start delay, and cooldown interval. The eye icon pulses when motion detection is triggered.' },
-  { section: 'Special Modes', title: '🎞️ Multi Preset', body: 'Select up to 20 presets to apply to a single photo. Tap the film strip button in the carousel, choose presets, and tap Apply Selected. When you take a photo, each preset is sent in order with a 3 second gap between them.' },
+  { section: 'Special Modes', title: '🎞️ Multi Preset', body: 'Select up to 20 presets to apply to a single photo. Tap the film strip button in the carousel, choose presets, and tap Apply Selected. When you take a photo, each preset is sent in order with a 3 second gap between them. Triple click the x next to the text field to clear picks.' },
   { section: 'Special Modes', title: '🖼️🖼️ Combine images:', body: 'Located near the bottom of the right carousel. Click to take two images and apply a combined image preset instruction with your selected preset or speak the preset with long press of the side button.' },
   { section: 'Special Modes', title: '📑 Layer presets:', body: 'Located at the bottom of the right carousel. Click to combine and apply multiple presets to a single image. Select primary preset and then add up to 4 more layers (5 in all). Does not work with spoken presets.' },
   { section: 'Special Modes', title: '📝 Master and 🎛️ Options', body: 'Located below the Menu button on the left side within a carousel. The MASTER button accesses Master Prompt settings. The OPTIONS button toggles Manually Select Options mode. Both Glow green when enabled.' },
@@ -8764,6 +9424,8 @@ const TOUR_STEPS = [
   { section: 'Gallery', title: '🎠 Left Carousel', body: 'MASTER and OPTIONS buttons are located below the delete button and are visible by default (Single click (default) screen to hide-this may be adjusted in settings). The MASTER button toggles Master Prompt and OPTIONS button toggles Manually Select Options mode.' },
   { section: 'Gallery', title: '🎠 Right Carousel', body: 'The right side carousel has four buttons — ✏️ EDIT which opens the image editor, 📤 EXPORT which uploads to gofile.io, 📑 LAYER which combines presets to single image, and 🎲 GAME which lets you play a preset as a game against the program. Single click (default) screen to hide the buttons. This may be adjusted in settings' },
   { section: 'Gallery', title: '🎲 Game Mode', body: 'The last button in the right carousel is GAME. Tap it to open Pick a Game, choose a game, pick your options, then tap Play. The program makes its own secret pick, your photo is transformed, and the finished image shows whether you are a winner or a loser along with your picks and the correct answer.' },
+  { section: 'Gallery', title: '🎲 Adding Your Own Games', body: 'Game Mode has default game presets. Tap ADD to get a list of every preset in your library that is categorized as a game. Tap the one you want, then tap Apply to add to game preset list. Tap Remove to remove any game presets added to the game list.' },
+  { section: 'Gallery', title: '🎲 Making a Preset into a Game', body: 'To turn one of your own presets into a game, two things are needed. First, add the word GAME to the preset categories. That is what makes it appear in the ADD list. Second, the preset must tell the program which kind of game it is. There are four kinds. A matching game where you guess options. A named answer game where the program picks from a roster of characters. A word game like Wordle. And a beats game like rock paper scissors, where you win by beating the program rather than by matching it. The exact wording you need for each kind is written out in the tutorial under the Gallery section.' },
   { section: 'Gallery', title: '⬇️ Bottom Bar Buttons', body: 'Four buttons on the bottom of image viewer. PROMPT opens editor. LOAD opens preset selector. MULTI opens multi-preset selector. MAGIC transforms image using the loaded preset, or randomly if nothing is loaded.' },
   { section: 'Gallery', title: '📤 Export to gofile.io', body: 'Tapping EXPORT in the right carousel. You get a QR code with a link that expires after 24 hours. Most useful in No Magic Mode.' },
   { section: 'Image Editor', title: '✏️ Opening the Editor', body: 'While viewing any photo, the image viewer contains the EDIT button. Tap it. The editor opens the image with a right-side carousel containing the crop, rotate, sharpen, auto-correct, color filters (vivid, warm, cool, Black and White (B&W) and Fade), and brightness and contrast control sliders.' },
@@ -8801,6 +9463,7 @@ const TOUR_STEPS = [
   { section: 'Settings', title: '📂 Preset File Settings (Managing Preview Images)', body: 'Hard press preset in a preset list to preview. Tap orange plus button to pick replacement image from your preview gallery. To revert to the original or remove a custom image, tap the top left undo arrow button.' },
   { section: 'Settings', title: '⚙️ Button Settings', body: 'Includes the settings for the main camera screen carousel and the Gallery Image Viewer screen carousel buttons. You may select different colors for buttons and text in the main camera and gallery image viewer screens. You may also select opacity (default solid) and set how many taps to hide/reveal the buttons.' },
   { section: 'Settings', title: '📖 Tutorial', body: 'Last section in the settings. This area includes this audio tour. It also includes an indexed tutorial with a search engine. Type to search or click on the search field and press the side button to speak the query.' },
+  { section: 'Settings', title: '📖 Navigating the Tutorial', body: 'The tutorial is split into sections. Tap a heading to open a section, and tap it again to close. If you are deep inside a long section and want to close it, hard press anywhere on the text.  Throughout the tutorial you will see small Show me buttons. Tap one  to take you straight to the button being described, it pulses so you can see exactly where it is. Tap anywhere to return to the tutorial.' },
   { section: 'Tips and Advanced', title: '🏷️ Category Searching', body: 'Every preset has categories. When a preset is highlighted in the Visible Presets menu, its categories appear at the bottom. Tap a category to filter all presets in that group.' },
   { section: 'Tips and Advanced', title: '🖼️ Preview Preset', body: 'When you long press on a preset, you are provided a sample image preview of what the style will look like. Once the preview image is visible, you can scroll presets using preview images by either touch scrolling up/down or using the scroll wheel. Within two areas of the program, pressing the r1 device\'s side button selects the preview image being viewed: the Main Menu AI preset list and the gallery load preset list.' },
   { section: 'Tips and Advanced', title: '🧠 Master Prompt Power Tip', body: 'Search for master or master prompt in the Visible Presets menu to find presets designed to work with Master Prompt. These respond to names, occasions, and custom context you provide. All presets may be affected by the Master Prompt. Add several master prompts to your preset by activating them.' },
@@ -9054,7 +9717,7 @@ function startMotionDetection() {
           const btn = document.getElementById('motion-toggle');
           btn.classList.remove('active');
           btn.title = 'Motion Detection: OFF';
-          showStatus('Motion capture complete - Press eye button to reactivate', 3000);
+          if (statusElement) statusElement.textContent = 'Motion capture complete - Press eye button to reactivate';
           // Show current preset when motion detection auto-stops
           if (CAMERA_PRESETS && CAMERA_PRESETS[currentPresetIndex]) {
             showStyleReveal(CAMERA_PRESETS[currentPresetIndex].name);
@@ -11275,7 +11938,7 @@ window.addEventListener('sideClick', () => {
               // Start motion detection
               if (isMotionDetectionMode && video && video.readyState >= 2) {
                 startMotionDetection();
-                showStatus('Motion Detection active - Move in front of camera', 3000);
+                if (statusElement) statusElement.textContent = 'Motion Detection active - Move in front of camera';
               }
             }, 500);
           }
@@ -11283,7 +11946,7 @@ window.addEventListener('sideClick', () => {
       } else {
         // No delay - start immediately
         startMotionDetection();
-        showStatus('Motion Detection ON - Move in front of camera', 3000);
+        if (statusElement) statusElement.textContent = 'Motion Detection ON - Move in front of camera';
       }
       return;
     }
@@ -17526,7 +18189,10 @@ document.addEventListener('touchend', () => {
   if (resetDbSuccessOk) resetDbSuccessOk.addEventListener('click', () => {
     document.getElementById('reset-db-success-overlay').style.display = 'none';
     hideResetDatabaseSubmenu();
-    renderMenuStyles();
+    // renderMenuStyles() was never defined — this threw and left the styles
+    // list showing stale presets after a reset. populateStylesList() is the
+    // real function that rebuilds it.
+    populateStylesList();
   });
 
   // "Back to Default" auto-checks all; all checked auto-checks default
@@ -17727,6 +18393,65 @@ const result = await presetImporter.import();
   }
 
   // Glossary navigation
+  // Tapping a section heading opens or closes it. Delegated from the content
+  // area so it keeps working after the search rewrites the inner HTML.
+  const _tutArea = document.getElementById('tutorial-content-area');
+  if (_tutArea) {
+    _tutArea.addEventListener('click', (e) => {
+      // Show me button — checked first, it sits inside a section body.
+      const showMe = e.target.closest('.tutorial-showme-btn');
+      if (showMe) {
+        e.stopPropagation();
+        const entry = TUTORIAL_SHOW_ME[parseInt(showMe.dataset.showmeIndex, 10)];
+        const owner = showMe.closest('.tutorial-section');
+        if (entry) _tutorialShowMe(entry, owner ? owner.id.replace('section-', '') : null, showMe);
+        return;
+      }
+      const head = e.target.closest('.tutorial-acc-head');
+      if (!head) return;
+      const sec = head.closest('.tutorial-section');
+      if (sec) _setTutorialSectionOpen(sec, !sec.classList.contains('tutorial-acc-open'));
+    });
+
+    // Long press anywhere inside an open section collapses it, so the reader
+    // does not have to scroll back up to its heading.
+    let _lpTimer = null, _lpSec = null, _lpX = 0, _lpY = 0;
+    const _lpCancel = () => { clearTimeout(_lpTimer); _lpTimer = null; _lpSec = null; };
+    const _lpStart = (x, y, target) => {
+      const sec = target.closest && target.closest('.tutorial-section.tutorial-acc-open');
+      if (!sec) return;
+      if (target.closest('.tutorial-showme-btn, .tutorial-acc-head, button, a, input')) return;
+      _lpSec = sec; _lpX = x; _lpY = y;
+      _lpTimer = setTimeout(() => {
+        if (!_lpSec) return;
+        _setTutorialSectionOpen(_lpSec, false);
+        try { _lpSec.scrollIntoView({ behavior: 'smooth', block: 'start' }); } catch (e) {}
+        _lpCancel();
+      }, 600);
+    };
+    _tutArea.addEventListener('touchstart', (e) => {
+      if (e.touches.length !== 1) return _lpCancel();
+      _lpStart(e.touches[0].clientX, e.touches[0].clientY, e.target);
+    }, { passive: true });
+    _tutArea.addEventListener('touchmove', (e) => {
+      if (!_lpTimer) return;
+      const t = e.touches[0];
+      if (Math.abs(t.clientX - _lpX) > 10 || Math.abs(t.clientY - _lpY) > 10) _lpCancel();
+    }, { passive: true });
+    _tutArea.addEventListener('touchend', _lpCancel, { passive: true });
+    _tutArea.addEventListener('touchcancel', _lpCancel, { passive: true });
+    _tutArea.addEventListener('mousedown', (e) => _lpStart(e.clientX, e.clientY, e.target));
+    _tutArea.addEventListener('mouseup', _lpCancel);
+    _tutArea.addEventListener('mouseleave', _lpCancel);
+
+    // The return chip, and hiding it once the reader engages with the screen.
+    const _chip = document.getElementById('tutorial-return-chip');
+    if (_chip) _chip.addEventListener('click', _returnToTutorial);
+    document.addEventListener('click', (e) => {
+      if (e.target.closest('.tutorial-pulse')) _hideShowMeChip();
+    }, true);
+  }
+
   const glossaryItems = document.querySelectorAll('.glossary-item');
   glossaryItems.forEach(item => {
     item.addEventListener('click', () => {
@@ -17837,27 +18562,48 @@ const result = await presetImporter.import();
   if (mpRemoveCancelBtn) mpRemoveCancelBtn.addEventListener('click', exitMpRemoveMode);
 
  // Filter blur buttons — first click dismisses keyboard, second click clears text
-  function makeFilterBlurBtn(btnId, filterId, onClear) {
+  // 1 click  = dismiss keyboard
+  // 2 clicks = clear the text field (onClear also drops the category filter)
+  // 3 clicks = onExtraClear, if this field supplies one. Used by MULTI preset
+  //            mode to clear the presets the user has ticked.
+  // The counter keeps running after the 2nd click instead of resetting, so a
+  // 3rd click can be detected. Each click restarts the 1 second window, so the
+  // user gets a full second between taps rather than a second for all three.
+  function makeFilterBlurBtn(btnId, filterId, onClear, onExtraClear) {
     const btn = document.getElementById(btnId);
     if (!btn) return;
     let blurClickCount = 0;
     let blurClickTimer = null;
+    const resetSoon = () => {
+      clearTimeout(blurClickTimer);
+      blurClickTimer = setTimeout(() => { blurClickCount = 0; }, 1000);
+    };
     btn.addEventListener('click', () => {
       const f = document.getElementById(filterId);
       if (!f) return;
       blurClickCount++;
+
       if (blurClickCount === 1) {
         // First click: just dismiss keyboard
         f.blur();
-        blurClickTimer = setTimeout(() => { blurClickCount = 0; }, 1000);
-      } else {
-        // Second click within 1 second: clear the field
-        clearTimeout(blurClickTimer);
-        blurClickCount = 0;
+        resetSoon();
+        return;
+      }
+
+      if (blurClickCount === 2) {
+        // Second click: clear the field and the category filter
         f.value = '';
         f.dispatchEvent(new Event('input', { bubbles: true }));
         if (onClear) onClear();
+        // Keep counting — a 3rd click may follow.
+        resetSoon();
+        return;
       }
+
+      // Third click: the extra action for this field, if it has one.
+      clearTimeout(blurClickTimer);
+      blurClickCount = 0;
+      if (onExtraClear) onExtraClear();
     });
   }
 
@@ -17877,6 +18623,27 @@ const result = await presetImporter.import();
     presetFilterText = '';
     galleryPresetFilterByCategory = '';
     populatePresetList();
+    // populatePresetList() rebuilds the LIST but not the category footer, so
+    // the underline on the old category survives. updatePresetSelection() is
+    // what redraws that hint — the menu and visible-presets lists get this for
+    // free because their own repopulate calls their selection updater.
+    updatePresetSelection();
+  }, () => {
+    // 3 clicks: clear the MULTI preset selections. This selector is shared by
+    // gallery multi, camera multi, layer and single load — but only multi mode
+    // keeps a running tick list the user cannot otherwise undo in bulk.
+    // Layer has its own clear, and single load is replaced by the next pick.
+    if (!isMultiPresetMode) return;
+    if (selectedPresets.length === 0) return;   // nothing to clear
+    selectedPresets = [];
+    updateMultiPresetList();          // repaints the ticks and the count
+    const countSpan = document.getElementById('multi-preset-count');
+    if (countSpan) {
+      countSpan.textContent = '(cleared)';
+      setTimeout(() => {
+        if (countSpan.textContent === '(cleared)') countSpan.textContent = '(0 selected)';
+      }, 1200);
+    }
   });
 
  const styleFilter = document.getElementById('style-filter');
