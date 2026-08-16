@@ -1693,6 +1693,7 @@ async function showGallery(renderOnly = false) {
   }
   const modal = document.getElementById('gallery-modal');
   const grid = document.getElementById('gallery-grid');
+  _initGallerySwipe();          // safe to call repeatedly, wires once
   const pagination = document.getElementById('gallery-pagination');
   const pageInfo = document.getElementById('page-info');
   const prevBtn = document.getElementById('prev-page');
@@ -2029,6 +2030,44 @@ async function hideGallery() {
     // Update both footer AND popup immediately
     updatePresetDisplay();
   }
+}
+
+// Swipe left = next page, swipe right = previous. Wired once, on the grid.
+// Uses the same nextGalleryPage/prevGalleryPage the buttons use, so page
+// bounds, folders and date filters all behave identically.
+function _initGallerySwipe() {
+  const grid = document.getElementById('gallery-grid');
+  if (!grid || grid.dataset.swipeWired === '1') return;
+  grid.dataset.swipeWired = '1';
+
+  let sx = 0, sy = 0, valid = false;
+  grid.addEventListener('touchstart', (e) => {
+    if (e.touches.length !== 1) { valid = false; return; }
+    sx = e.touches[0].clientX;
+    sy = e.touches[0].clientY;
+    valid = true;
+  }, { passive: true });
+
+  grid.addEventListener('touchmove', (e) => {
+    if (e.touches.length > 1) valid = false;
+  }, { passive: true });
+
+  grid.addEventListener('touchend', (e) => {
+    if (!valid || e.touches.length > 0) return;
+    valid = false;
+    // Never page while the tutorial has the app locked, or in Select mode
+    // where a horizontal drag is more likely to be a mis-tap on a checkbox.
+    if (typeof _showMeActive !== 'undefined' && _showMeActive) return;
+    const t = e.changedTouches && e.changedTouches[0];
+    if (!t) return;
+    const dx = t.clientX - sx;
+    const dy = t.clientY - sy;
+    // Deliberate and clearly horizontal, so vertical scrolling is unaffected.
+    if (Math.abs(dx) < 55 || Math.abs(dx) < Math.abs(dy) * 1.6) return;
+    if (dx < 0) nextGalleryPage(); else prevGalleryPage();
+  }, { passive: true });
+
+  grid.addEventListener('touchcancel', () => { valid = false; }, { passive: true });
 }
 
 function nextGalleryPage() {
@@ -8777,6 +8816,7 @@ let _showMePhotoOpenedAt = 0;       // grace window after a photo is tapped
 let _showMeAnchorBtn = null;        // the Show me button that was pressed
 let _showMeAnchorTop = 0;           // where it sat inside the scroller
 let _showMeTurnedOnBatch = false;   // did WE switch Select mode on?
+let _showMeAwaitTimer = null;       // stops waiting for a photo after a moment
 let _showMeCameraWasOff = true;     // so we can put the camera back as we found it
 let _showMeRestoring = false;       // tells showTutorialSection not to scroll
 
@@ -8817,8 +8857,17 @@ function _goSettings() {
   hideTutorialSubmenu();          // this one genuinely wants Settings
 }
 function _goGallery() {
+  // Open the gallery FIRST. Closing the menus first briefly revealed the
+  // camera screen while showGallery awaited IndexedDB, which looked like a
+  // detour through the camera.
+  const modal = document.getElementById('gallery-modal');
+  if (modal) modal.style.display = 'flex';
   _closeAllMenuLayers();
-  if (typeof showGallery === 'function') showGallery();
+  if (typeof pauseCamera === 'function') { try { pauseCamera(); } catch (e) {} }
+  // renderOnly:true reuses the images already in memory instead of re-reading
+  // every one of them from IndexedDB — the reason this took seconds on a big
+  // gallery. The data was already loaded at startup.
+  if (typeof showGallery === 'function') showGallery(true);
 }
 // Combine and New Folder only exist once Select mode is on, so turn it on for
 // them — the reader should land on the button itself, not one step short.
@@ -8849,6 +8898,12 @@ function _showMeGuard(e) {
     // opens from it. Anything else still bounces back.
     if (e.target.closest('#gallery-grid') || e.target.closest('#image-viewer')) {
       _showMePhotoOpenedAt = Date.now();
+      // Stop waiting shortly after the photo is tapped. Previously this only
+      // cleared when the pulse target became visible — if that target was slow
+      // or never appeared, every later tap inside the viewer stayed "allowed"
+      // and the reader had to press X to get out.
+      clearTimeout(_showMeAwaitTimer);
+      _showMeAwaitTimer = setTimeout(() => { _showMeAwaitPhoto = false; }, 1400);
       return;
     }
   }
@@ -8905,6 +8960,7 @@ function _pulseTargets(ids, _tries) {
   // tap inside the viewer was allowed through and just hid the carousel.
   _showMeAwaitPhoto = false;
   _showMePhotoOpenedAt = 0;
+  clearTimeout(_showMeAwaitTimer);
   _showMeNotice('Tap to go back to tutorial', 3500, els[0]);
 }
 
@@ -8944,7 +9000,16 @@ function _tutorialShowMe(entry, fromSectionId, sourceBtn) {
   // cleared by _pulseTargets rather than by the guard itself.
   document.addEventListener('touchend', _showMeGuard, true);
 
-  if (entry.needsPhoto) _showMeNotice('Tap a photo to open it', 60000);
+  // Shown only once the gallery is actually on screen, so it never appears
+  // over the camera during the hand-off.
+  if (entry.needsPhoto) {
+    setTimeout(() => {
+      const g = document.getElementById('gallery-modal');
+      if (_showMeActive && g && g.style.display !== 'none') {
+        _showMeNotice('Tap a photo to open it', 60000);
+      }
+    }, 260);
+  }
 
   setTimeout(() => { _pulseTargets(entry.target); }, 300);
 }
@@ -8952,6 +9017,7 @@ function _tutorialShowMe(entry, fromSectionId, sourceBtn) {
 function _returnToTutorial() {
   _showMeActive = false;
   _showMeAwaitPhoto = false;
+  clearTimeout(_showMeAwaitTimer);
   window._carouselGuardUntil = 0;      // camera tap-to-toggle works normally again
 
   // If we switched Select mode on to reveal a batch button, switch it back off.
@@ -9410,6 +9476,7 @@ const TOUR_STEPS = [
   { section: 'Special Modes', title: '📑 Layer presets:', body: 'Located at the bottom of the right carousel. Click to combine and apply multiple presets to a single image. Select primary preset and then add up to 4 more layers (5 in all). Does not work with spoken presets.' },
   { section: 'Special Modes', title: '📝 Master and 🎛️ Options', body: 'Located below the Menu button on the left side within a carousel. The MASTER button accesses Master Prompt settings. The OPTIONS button toggles Manually Select Options mode. Both Glow green when enabled.' },
   { section: 'Gallery', title: '🖼️ Gallery Activities', body: 'Within the gallery there are thumbnails of captured images. You can either select multiple images to apply a preset, or select a single image to either edit, export or apply one or several presets.' },
+  { section: 'Gallery', title: '↔️ Turning Pages', body: 'When you have more images than fit on one screen, the gallery splits them into pages. You may navigate the pages by scrolling to the bottom of the page using the Prev and Next buttons. You may also swipe left or right to go to the next or previous page.' },
   { section: 'Uploading Images', title: '📥 Importing External Images', body: 'In the gallery, you may also bring any image from the web into the gallery using a QR code. Upload the image to catbox.moe, copy the direct link, and generate a QR code at qr-code-generator.com.' },
   { section: 'Uploading Images', title: '📷 Scanning the QR Code', body: 'In the gallery, press Import then Scan QR Code. Point your R1 camera at the QR code and wait. The image will be automatically saved to your gallery.' },
   { section: 'Uploading Images', title: '⚠️ Verify Your Link First ⚠️', body: 'Before making the QR code, paste the link into a browser. If it shows only the image with nothing around it, it will work. If it shows a blank page or a webpage with the image embedded, it will not work.' },

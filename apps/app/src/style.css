@@ -7156,27 +7156,35 @@ button, .touchable {
 
 /* Notice shown when a Show me target needs a photo first */
 #tutorial-showme-notice {
+    /* Centred box, not a full-width strip. Text wraps neatly inside it. */
     position: fixed;
-    left: 3vw;
-    right: 3vw;
-    top: 12vw;
+    left: 50%;
+    top: 50%;
+    right: auto;
     bottom: auto;
+    transform: translate(-50%, -50%);
     z-index: 100000;
     display: none;
-    padding: 2.4vw 3vw;
+    width: 58vw;
+    max-width: 78vw;
+    box-sizing: border-box;
+    padding: 4vw 3.5vw;
     background: #1a1a1a;
     color: #fff;
     border: 2px solid #FE5F00;
-    border-radius: 2vw;
-    font-size: 3.2vw;
-    line-height: 1.35;
+    border-radius: 3vw;
+    font-size: 3.6vw;
+    line-height: 1.4;
     text-align: center;
-    box-shadow: 0 0.5vw 2vw rgba(0,0,0,0.7);
+    white-space: normal;
+    box-shadow: 0 0.8vw 3vw rgba(0,0,0,0.8);
 }
 
+/* The notice is centred now, so there is nothing to flip. Kept as a no-op
+   so the JS class toggle has something harmless to target. */
 #tutorial-showme-notice.notice-bottom {
-    top: auto;
-    bottom: 4vw;
+    top: 50%;
+    bottom: auto;
 }
 
 /* ── TUTORIAL READABILITY ──────────────────────────────────────────
