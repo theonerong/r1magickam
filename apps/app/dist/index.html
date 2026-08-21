@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>Magic Kamera</title>
-  <script type="module" crossorigin src="./assets/main-DEmdO6fW.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/main-CFx0h4Rd.css">
+  <script type="module" crossorigin src="./assets/main-CGDvxJLS.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/main-DOYv1_yF.css">
 </head>
 <body>
     <div id="app">
@@ -2055,20 +2055,44 @@ All of the presets are optimized to avoid "camera ran dry" or "content filter" i
         <div id="gallery-sort-modal" class="gallery-custom-modal" style="display:none;">
             <div class="gallery-custom-modal-overlay"></div>
             <div class="gallery-custom-modal-content">
-                <div class="gallery-custom-modal-header">
+                                <div class="gallery-custom-modal-header">
                     <h3>SORT ORDER</h3>
+                    <button id="gallery-sort-close" class="close-button">×</button>
                 </div>
-                <div class="gallery-custom-modal-list">
-                    <button class="gallery-custom-modal-option" id="sort-option-newest" data-value="newest">
-                        <span>📅 Newest First</span>
-                        <span class="gallery-custom-modal-check" id="sort-check-newest">✓</span>
-                    </button>
-                    <button class="gallery-custom-modal-option" id="sort-option-oldest" data-value="oldest">
-                        <span>🕰️ Oldest First</span>
-                        <span class="gallery-custom-modal-check" id="sort-check-oldest">✓</span>
-                    </button>
+                <div class="btn-settings-tab-bar sort-modal-tab-bar">
+                    <button id="sort-tab-folders" class="btn-settings-tab sort-settings-tab active">📁 FOLDERS</button>
+                    <button id="sort-tab-images" class="btn-settings-tab sort-settings-tab">🖼️ IMAGES</button>
                 </div>
-                <button class="gallery-custom-modal-cancel" id="gallery-sort-cancel">Cancel</button>
+                <div class="gallery-custom-modal-list" id="gallery-sort-modal-list">
+                    <div id="sort-panel-folders" class="sort-settings-panel active">
+                        <button class="gallery-custom-modal-option folder-sort-option" id="folder-sort-option-oldest" data-value="oldest">
+                            <span>🕰️ Oldest First</span>
+                            <span class="gallery-custom-modal-check">✓</span>
+                        </button>
+                        <button class="gallery-custom-modal-option folder-sort-option" id="folder-sort-option-newest" data-value="newest">
+                            <span>📅 Newest First</span>
+                            <span class="gallery-custom-modal-check">✓</span>
+                        </button>
+                        <button class="gallery-custom-modal-option folder-sort-option" id="folder-sort-option-az" data-value="az">
+                            <span>🔤 A → Z</span>
+                            <span class="gallery-custom-modal-check">✓</span>
+                        </button>
+                        <button class="gallery-custom-modal-option folder-sort-option" id="folder-sort-option-za" data-value="za">
+                            <span>🔡 Z → A</span>
+                            <span class="gallery-custom-modal-check">✓</span>
+                        </button>
+                    </div>
+                    <div id="sort-panel-images" class="sort-settings-panel">
+                        <button class="gallery-custom-modal-option image-sort-option" id="sort-option-newest" data-value="newest">
+                            <span>📅 Newest First</span>
+                            <span class="gallery-custom-modal-check" id="sort-check-newest">✓</span>
+                        </button>
+                        <button class="gallery-custom-modal-option image-sort-option" id="sort-option-oldest" data-value="oldest">
+                            <span>🕰️ Oldest First</span>
+                            <span class="gallery-custom-modal-check" id="sort-check-oldest">✓</span>
+                        </button>
+                    </div>
+                     </div>
             </div>
         </div>
 
