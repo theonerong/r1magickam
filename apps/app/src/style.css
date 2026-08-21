@@ -1,8 +1,7 @@
 /* Power Grotesk Font */
 @font-face {
     font-family: 'Power Grotesk';
-    src: url('./PowerGrotesk-Regular.woff') format('woff'),
-         url('https://fonts.cdnfonts.com/s/95219/PowerGrotesk-Regular.woff') format('woff');
+    src: url('./PowerGrotesk-Regular.woff') format('woff');
     font-weight: 400;
     font-style: normal;
     font-display: swap;
@@ -10,8 +9,7 @@
 
 @font-face {
     font-family: 'Power Grotesk';
-    src: url('./PowerGrotesk-Bold.woff') format('woff'),
-         url('https://fonts.cdnfonts.com/s/95219/PowerGrotesk-Bold.woff') format('woff');
+    src: url('./PowerGrotesk-Bold.woff') format('woff');
     font-weight: 700;
     font-style: normal;
     font-display: swap;
@@ -6234,7 +6232,7 @@ body {
     background-color: rgba(20, 100, 180, 0.92);
 }
 
-/* ═══════════════════════════════════
+/* ══════════════��════════════════════
    PERFORMANCE FIX 2: Replace transition:all with specific properties
    ═══════════════════════════════════ */
 
@@ -7237,4 +7235,144 @@ button, .touchable {
 #tutorial-content-area .tutorial-text em {
     font-style: italic;
     color: #ddd;
+}
+
+/* ===== SORT MODAL: FULL-SCREEN PANEL, FOLDERS / IMAGES TABS ===== */
+/* All rules scoped to #gallery-sort-modal so the date picker modal,
+   which shares these classes, is left exactly as it was. */
+
+/* Sized like .submenu-content in Button Settings, so the modal is the
+   same size no matter which tab is showing */
+#gallery-sort-modal .gallery-custom-modal-content {
+    width: 98%;
+    height: 92%;
+    max-width: none;
+    border-radius: 2vw;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background: linear-gradient(170deg, #181818 0%, #0f0f0f 100%);
+}
+
+/* Header matched to .submenu-header in Button Settings */
+#gallery-sort-modal .gallery-custom-modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2vw;
+    padding: 1vw;
+    min-height: 32px;
+    text-align: left;
+    flex-shrink: 0;
+    background: linear-gradient(180deg, #1f1f1f 0%, #191919 100%);
+    border-bottom: 1px solid rgba(254, 95, 0, 0.5);
+    box-shadow: 0 2px 10px rgba(254, 95, 0, 0.12);
+}
+
+#gallery-sort-modal .gallery-custom-modal-header h3 {
+    font-size: 5vw;
+}
+
+/* Tabs: identical height to the Button Settings tabs */
+#gallery-sort-modal .sort-modal-tab-bar {
+    flex-shrink: 0;
+}
+
+#gallery-sort-modal .sort-settings-tab {
+    white-space: nowrap;
+}
+
+/* The list fills all remaining height, so switching tabs never resizes it */
+#gallery-sort-modal .gallery-custom-modal-list {
+    position: relative;
+    flex: 1;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+#gallery-sort-modal .sort-settings-panel {
+    display: none;
+    flex-direction: column;
+    gap: 2vw;
+}
+
+#gallery-sort-modal .sort-settings-panel.active {
+    display: flex;
+}
+
+#gallery-sort-modal .sort-settings-tab.wheel-focus {
+    color: #fff;
+    box-shadow: inset 0 0 0 2px #FE5F00;
+}
+
+#gallery-sort-modal .gallery-custom-modal-option.wheel-focus {
+    outline: 2px solid #FE5F00;
+    outline-offset: -2px;
+    box-shadow: 0 0 0 3px rgba(254, 95, 0, 0.28);
+}
+
+#gallery-sort-modal .close-button.wheel-focus {
+    border-color: #FE5F00;
+    color: #FE5F00;
+    box-shadow: 0 0 8px rgba(254, 95, 0, 0.5);
+}
+
+/* ===== SETTINGS LISTS: SCROLL WHEEL HIGHLIGHT ===== */
+/* Resolution, Aspect Ratio and Import Resolution rows */
+.resolution-item.menu-selected {
+    background: linear-gradient(90deg, rgba(254, 95, 0, 0.18) 0%, #2a2a2a 100%);
+    border-color: #FE5F00;
+    box-shadow: inset 3px 0 0 #FE5F00, 0 0 10px rgba(254, 95, 0, 0.3);
+    color: #fff;
+}
+
+/* Import Resolution marks its current choice with .selected instead of
+   .active, which had no styling at all, so show it the same way */
+.resolution-item.selected {
+    background-color: #FE5F00;
+    color: #000;
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* When the highlighted row is also the one currently in use, keep the
+   orange fill readable and just add the outline */
+.resolution-item.active.menu-selected,
+.resolution-item.selected.menu-selected {
+    background: #FE5F00;
+    color: #000;
+    box-shadow: inset 0 0 0 2px #fff, 0 0 10px rgba(254, 95, 0, 0.5);
+}
+
+/* ===== SETTINGS SCREENS: SCROLL WHEEL HIGHLIGHT ===== */
+
+/* Reset Database checklist rows */
+.reset-db-item.wheel-focus {
+    background: linear-gradient(90deg, rgba(254, 95, 0, 0.18) 0%, rgba(42, 42, 42, 0) 100%);
+    box-shadow: inset 3px 0 0 #FE5F00;
+}
+
+/* Reset Database bottom buttons */
+#reset-db-clear-btn.wheel-focus,
+#reset-db-apply-btn.wheel-focus {
+    box-shadow: inset 0 0 0 2px #FE5F00, 0 0 8px rgba(254, 95, 0, 0.5);
+}
+
+/* Restore Deleted Items tab bar */
+.pfs-tab.wheel-focus {
+    color: #fff;
+    box-shadow: inset 0 0 0 2px #FE5F00;
+}
+
+/* ===== IMPORT LIST: "reading this preset" indicator ===== */
+/* Stays lit while the R1 fetches and speaks, so the hard press never looks
+   like it did nothing during the wait. The colour comes from the keyframes,
+   not from this rule, because !important would override the animation. */
+.menu-item.import-row-speaking {
+    box-shadow: inset 3px 0 0 #FE5F00;
+    animation: importSpeakingPulse 1.1s ease-in-out infinite;
+}
+
+@keyframes importSpeakingPulse {
+    0%, 100% { background-color: rgba(254, 95, 0, 0.32); }
+    50%      { background-color: rgba(254, 95, 0, 0.10); }
 }

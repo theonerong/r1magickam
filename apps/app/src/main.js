@@ -1,5 +1,5 @@
 import { presetStorage } from './storage.js';
-import { presetImporter, earnCredit, unlockAllPresets, getCredits, resetCredits, presetsAreDifferent, getCustomPresetSources, saveCustomPresetSources, getDefaultPresetEnabled, saveDefaultPresetEnabled } from './preset-import.js';
+import { presetImporter, earnCredit, unlockAllPresets, getCredits, resetCredits, presetsAreDifferent, getCustomPresetSources, saveCustomPresetSources, getDefaultPresetEnabled, saveDefaultPresetEnabled, getLastLoadFailures } from './preset-import.js';
 
 // Accent-insensitive search helper — strips diacritics so "cafe" finds "café"
 // NFC → NFD decomposes accented chars; removing \u0300-\u036F strips the accent marks.
@@ -353,6 +353,8 @@ const ITEMS_PER_PAGE = 16;
 let galleryStartDate = null;
 let galleryEndDate = null;
 let gallerySortOrder = 'newest';
+const GALLERY_FOLDER_SORT_ORDER_KEY = 'r1_gallery_folder_sort_order';
+let galleryFolderSortOrder = 'oldest';
 
 // Batch processing variables
 let isBatchMode = false;
@@ -891,7 +893,7 @@ function hidePresetImagePreview() {
 // getSiblings: optional function returning the full on-screen list this item
 // belongs to, so the preview can swipe through it. Left out -> no swiping.
 function attachPresetLongPress(item, preset, getSiblings, onNavigate, onSideSelect) {
-  const LONG_PRESS_MS = 600;
+  const LONG_PRESS_MS = 500;
   let _timer = null;
   // Always pass the 4th arg explicitly (null when this list does not want the
   // side button), so a callback from an earlier preview can never leak in.
@@ -1226,24 +1228,24 @@ function initDB() {
     };
     
     request.onupgradeneeded = (event) => {
-      db = event.target.result;
+      const upgradeDb = event.target.result;
       
       // Create object store if it doesn't exist
-      if (!db.objectStoreNames.contains(STORE_NAME)) {
-        const objectStore = db.createObjectStore(STORE_NAME, { keyPath: 'id' });
+      if (!upgradeDb.objectStoreNames.contains(STORE_NAME)) {
+        const objectStore = upgradeDb.createObjectStore(STORE_NAME, { keyPath: 'id' });
         objectStore.createIndex('timestamp', 'timestamp', { unique: false });
         console.log('Object store created');
       }
 
       // Create preview images store if it doesn't exist
-      if (!db.objectStoreNames.contains('preview_images')) {
-        const pvStore = db.createObjectStore('preview_images', { keyPath: 'id' });
+      if (!upgradeDb.objectStoreNames.contains('preview_images')) {
+        const pvStore = upgradeDb.createObjectStore('preview_images', { keyPath: 'id' });
         pvStore.createIndex('timestamp', 'timestamp', { unique: false });
       }
 
       // Create deleted images store for trash/restore functionality
-      if (!db.objectStoreNames.contains('deleted_images')) {
-        const delStore = db.createObjectStore('deleted_images', { keyPath: 'id' });
+      if (!upgradeDb.objectStoreNames.contains('deleted_images')) {
+        const delStore = upgradeDb.createObjectStore('deleted_images', { keyPath: 'id' });
         delStore.createIndex('deletedAt', 'deletedAt', { unique: false });
       }
 
@@ -1251,8 +1253,8 @@ function initDB() {
       // Key is the preset NAME; we deliberately store nothing but the name and
       // when it was added, so the preset itself stays the single source of
       // truth and removing a game can never delete preset data.
-      if (!db.objectStoreNames.contains('custom_games')) {
-        db.createObjectStore('custom_games', { keyPath: 'name' });
+      if (!upgradeDb.objectStoreNames.contains('custom_games')) {
+        upgradeDb.createObjectStore('custom_games', { keyPath: 'name' });
       }
     };
   });
@@ -1763,7 +1765,7 @@ async function showGallery(renderOnly = false) {
   // Each entry is either { type:'folder', folder } or { type:'image', item }
   const allItems = [];
   if (showFolders) {
-    galleryFolders.forEach(folder => allItems.push({ type: 'folder', folder }));
+    getSortedFolders().forEach(folder => allItems.push({ type: 'folder', folder }));
   }
   sortedImages.forEach(item => allItems.push({ type: 'image', item }));
 
@@ -2444,6 +2446,39 @@ function scrollSettingsDown() {
   updateSettingsSelection();
 }
 
+// ===== SETTINGS: REMEMBER WHERE YOU WERE =====
+// The scroll wheel and the up/down jump buttons keep currentSettingsIndex in
+// step, but TAPPING a settings row never did. So after finger-scrolling down
+// and tapping a row, the index was still 0, and coming back repainted the
+// first row and yanked the list to the top. These two remember the real spot.
+let _settingsSavedScrollTop = 0;
+
+function _settingsListEl() {
+  return document.querySelector('#settings-submenu .submenu-list');
+}
+
+// Capture phase, so this runs BEFORE the row's own handler navigates away.
+document.addEventListener('click', function (e) {
+  const submenu = document.getElementById('settings-submenu');
+  if (!submenu || submenu.style.display !== 'flex') return;
+  if (!e.target || typeof e.target.closest !== 'function') return;
+  const row = e.target.closest('.menu-section-button');
+  if (!row || !submenu.contains(row)) return;
+
+  const rows = Array.from(submenu.querySelectorAll('.menu-section-button'));
+  const i = rows.indexOf(row);
+  if (i >= 0) currentSettingsIndex = i;
+  const list = _settingsListEl();
+  _settingsSavedScrollTop = list ? list.scrollTop : 0;
+}, true);
+
+// Put the list back exactly where it was, then repaint the highlight.
+function _settingsRestorePosition() {
+  const list = _settingsListEl();
+  if (list) list.scrollTop = _settingsSavedScrollTop;
+  updateSettingsSelection();
+}
+
 function updateSettingsSelection() {
   const submenu = document.getElementById('settings-submenu');
   if (!submenu) return;
@@ -2464,6 +2499,66 @@ function updateSettingsSelection() {
     // Scroll item into view
     currentItem.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   }
+}
+
+// ===== SETTINGS LISTS: SCROLL WHEEL + SIDE BUTTON =====
+// Resolution, Aspect Ratio and Import Resolution all show a plain vertical
+// list of .resolution-item rows, so they share one set of helpers.
+
+// Returns the item rows of whichever of the three lists is on screen, or null.
+function _openSettingsListItems() {
+  const ids = ['resolution-submenu', 'aspect-ratio-submenu', 'import-resolution-submenu'];
+  for (const id of ids) {
+    const el = document.getElementById(id);
+    if (el && el.style.display === 'flex') {
+      const items = Array.from(el.querySelectorAll('.resolution-item'));
+      return items.length ? items : null;
+    }
+  }
+  return null;
+}
+
+// Moves the highlight. The first wheel turn simply reveals the highlight on
+// the option that is already chosen, so you always start from where you are.
+function _settingsListMove(step) {
+  const items = _openSettingsListItems();
+  if (!items) return false;
+
+  let i = items.findIndex(el => el.classList.contains('menu-selected'));
+  if (i < 0) {
+    i = items.findIndex(el =>
+      el.classList.contains('active') ||
+      el.classList.contains('selected') ||
+      el.querySelector('input:checked'));
+    if (i < 0) i = 0;
+  } else {
+    i = (i + step + items.length) % items.length;
+  }
+
+  items.forEach(el => el.classList.remove('menu-selected'));
+  items[i].classList.add('menu-selected');
+  items[i].scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  return true;
+}
+
+// Side button picks the highlighted option.
+function _settingsListActivate() {
+  const items = _openSettingsListItems();
+  if (!items) return false;
+
+  const target = items.find(el => el.classList.contains('menu-selected'));
+  if (!target) return true;   // nothing highlighted yet, swallow the press
+
+  // Aspect Ratio rows wrap a checkbox, so tick it and let the existing
+  // change handler do the rest. The other two lists just get clicked.
+  const box = target.querySelector('input[type="checkbox"], input[type="radio"]');
+  if (box) {
+    box.checked = !box.checked;
+    box.dispatchEvent(new Event('change', { bubbles: true }));
+  } else {
+    target.click();
+  }
+  return true;
 }
 
 function scrollResolutionMenuUp() {
@@ -4407,6 +4502,146 @@ function loadFolders() {
   } catch (e) {
     galleryFolders = [];
   }
+  // Remember the folder sort order the user picked last time
+  try {
+    const savedFolderSort = localStorage.getItem(GALLERY_FOLDER_SORT_ORDER_KEY);
+    if (savedFolderSort) galleryFolderSortOrder = savedFolderSort;
+  } catch (e) {}
+}
+
+// Returns a sorted COPY of the folder list. The stored list is never reordered,
+// so folder creation order is preserved no matter what the user picks here.
+function getSortedFolders() {
+  const list = [...galleryFolders];
+  switch (galleryFolderSortOrder) {
+    case 'newest':
+      return list.sort((a, b) => (b.createdAt || 0) - (a.createdAt || 0));
+    case 'az':
+      return list.sort((a, b) => (a.name || '').localeCompare((b.name || ''), undefined, { sensitivity: 'base' }));
+    case 'za':
+      return list.sort((a, b) => (b.name || '').localeCompare((a.name || ''), undefined, { sensitivity: 'base' }));
+    case 'oldest':
+    default:
+      return list.sort((a, b) => (a.createdAt || 0) - (b.createdAt || 0));
+  }
+}
+
+// ===== SORT MODAL: SCROLL WHEEL + SIDE BUTTON =====
+
+let _sortModalFocusIndex = 0;
+
+// Shows one tab's panel and hides the other.
+function _switchSortModalTab(which) {
+  const foldersTab   = document.getElementById('sort-tab-folders');
+  const imagesTab    = document.getElementById('sort-tab-images');
+  const foldersPanel = document.getElementById('sort-panel-folders');
+  const imagesPanel  = document.getElementById('sort-panel-images');
+  const showFolders  = (which !== 'images');
+
+  if (foldersTab)   foldersTab.classList.toggle('active', showFolders);
+  if (imagesTab)    imagesTab.classList.toggle('active', !showFolders);
+  if (foldersPanel) foldersPanel.classList.toggle('active', showFolders);
+  if (imagesPanel)  imagesPanel.classList.toggle('active', !showFolders);
+
+  const list = document.getElementById('gallery-sort-modal-list');
+  if (list) list.scrollTop = 0;
+}
+
+// Every button the wheel can land on: the 2 tabs, then whichever tab's
+// options are currently showing, then the X exit button in the header.
+// Options on the hidden tab are skipped entirely.
+function _sortModalItems() {
+  const modal = document.getElementById('gallery-sort-modal');
+  if (!modal) return [];
+  const tabs     = Array.from(modal.querySelectorAll('.sort-settings-tab'));
+  const opts     = Array.from(modal.querySelectorAll('.sort-settings-panel.active .gallery-custom-modal-option'));
+  const closeBtn = document.getElementById('gallery-sort-close');
+  const items    = tabs.concat(opts);
+  if (closeBtn) items.push(closeBtn);
+  return items;
+}
+
+function _sortModalClearFocus() {
+  const modal = document.getElementById('gallery-sort-modal');
+  if (!modal) return;
+  modal.querySelectorAll('.wheel-focus').forEach(el => el.classList.remove('wheel-focus'));
+}
+
+function _sortModalPaintFocus() {
+  _sortModalClearFocus();
+  const items = _sortModalItems();
+  const target = items[_sortModalFocusIndex];
+  if (target) target.classList.add('wheel-focus');
+
+  const list = document.getElementById('gallery-sort-modal-list');
+  if (!target || !list) return;
+
+  // The X button and the tabs both sit above the list
+  if (!list.contains(target)) { list.scrollTop = 0; return; }
+
+  const top = target.offsetTop;
+  const bottom = top + target.offsetHeight;
+  if (top < list.scrollTop) {
+    list.scrollTop = top - 8;
+  } else if (bottom > list.scrollTop + list.clientHeight) {
+    list.scrollTop = bottom - list.clientHeight + 8;
+  }
+}
+
+function _sortModalMoveFocus(step) {
+  const items = _sortModalItems();
+  if (!items.length) return;
+  _sortModalFocusIndex = (_sortModalFocusIndex + step + items.length) % items.length;
+  _sortModalPaintFocus();
+}
+
+function _sortModalActivateFocus() {
+  const items = _sortModalItems();
+  const target = items[_sortModalFocusIndex];
+  if (target) target.click();
+}
+
+function _closeGallerySortModal() {
+  const modal = document.getElementById('gallery-sort-modal');
+  if (modal) modal.style.display = 'none';
+  _sortModalClearFocus();
+}
+
+// Puts the orange checkmark highlight on whatever is currently selected
+// in each section.
+function _syncSortModalChecks() {
+  document.querySelectorAll('#gallery-sort-modal .folder-sort-option').forEach(opt => {
+    opt.classList.toggle('active-sort', opt.dataset.value === galleryFolderSortOrder);
+  });
+  document.querySelectorAll('#gallery-sort-modal .image-sort-option').forEach(opt => {
+    opt.classList.toggle('active-sort', opt.dataset.value === gallerySortOrder);
+  });
+}
+
+// ===== MODAL INPUT GUARD =====
+// While any of these are open, the scroll wheel and side button belong to the
+// modal ONLY and must never reach the screen sitting behind it.
+// Listed top-most first, because some of these stack on top of others
+// (draw settings sits on the image editor, alerts sit on everything).
+const _INPUT_BLOCKING_MODALS = [
+  'custom-alert-modal',
+  'draw-settings-modal',
+  'gallery-sort-modal',
+  'gallery-date-modal',
+  'move-to-folder-modal',
+  'qr-modal',
+  'qr-scanner-modal',
+  'image-editor-modal',
+  'reset-db-confirm-overlay',
+  'reset-db-success-overlay'
+];
+
+function _blockingModalOpen() {
+  for (const id of _INPUT_BLOCKING_MODALS) {
+    const el = document.getElementById(id);
+    if (el && el.style.display === 'flex') return id;
+  }
+  return null;
 }
 
 function saveFolders() {
@@ -6313,7 +6548,8 @@ function hideRestoreSubmenu() {
 
 function switchRestoreTab(tab) {
   restoreActiveTab = tab;
-  currentRestoreIndex = 0;
+  // Keep the highlight on the tab that was just opened
+  currentRestoreIndex = (tab === 'images') ? 1 : (tab === 'mp') ? 2 : 0;
   document.getElementById('restore-tab-presets').classList.toggle('active', tab === 'presets');
   document.getElementById('restore-tab-images').classList.toggle('active', tab === 'images');
   document.getElementById('restore-tab-mp').classList.toggle('active', tab === 'mp');
@@ -6389,6 +6625,75 @@ async function populateDeletedImagesList() {
   });
 }
 
+// ===== SETTINGS SCREENS: SCROLL WHEEL + SIDE BUTTON =====
+
+// ---- Reset Database: the checklist rows plus the two bottom buttons ----
+function _resetDbNavItems() {
+  const sub = document.getElementById('reset-database-submenu');
+  if (!sub || sub.style.display !== 'flex') return null;
+  const items = Array.from(sub.querySelectorAll('.reset-db-item'));
+  const clearBtn = document.getElementById('reset-db-clear-btn');
+  const applyBtn = document.getElementById('reset-db-apply-btn');
+  if (clearBtn) items.push(clearBtn);
+  if (applyBtn) items.push(applyBtn);
+  return items.length ? items : null;
+}
+
+function _resetDbMove(step) {
+  const items = _resetDbNavItems();
+  if (!items) return false;
+  let i = items.findIndex(el => el.classList.contains('wheel-focus'));
+  if (i < 0) i = 0;
+  else i = (i + step + items.length) % items.length;
+  items.forEach(el => el.classList.remove('wheel-focus'));
+  items[i].classList.add('wheel-focus');
+  items[i].scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  return true;
+}
+
+function _resetDbActivate() {
+  const items = _resetDbNavItems();
+  if (!items) return false;
+  const target = items.find(el => el.classList.contains('wheel-focus'));
+  if (!target) return true;              // nothing highlighted yet, swallow it
+  const box = target.querySelector('input[type="checkbox"]');
+  if (box) box.click();                  // checklist row
+  else target.click();                   // Clear All / Apply
+  return true;
+}
+
+// ---- Preset File Settings + Button Settings: wheel scrolls, side does nothing ----
+function _plainScrollPanel() {
+  const pfs = document.getElementById('preset-file-settings-submenu');
+  if (pfs && pfs.style.display === 'flex') return pfs.querySelector('.submenu-list');
+  const bs = document.getElementById('button-settings-submenu');
+  if (bs && bs.style.display === 'flex') {
+    return bs.querySelector('.btn-settings-panel.active') || bs.querySelector('.btn-settings-panel');
+  }
+  return null;
+}
+
+function _plainScrollMove(step) {
+  const el = _plainScrollPanel();
+  if (!el) return false;
+  el.scrollTop = Math.max(0, el.scrollTop + step * 80);
+  return true;
+}
+
+// True while either of those two screens is open, so the side button is ignored.
+function _plainScrollSwallowsSide() {
+  return _plainScrollPanel() !== null;
+}
+
+// ---- Restore Deleted Items: the 3 tabs, then the rows of the open tab ----
+function _restoreTabEls() {
+  return [
+    document.getElementById('restore-tab-presets'),
+    document.getElementById('restore-tab-images'),
+    document.getElementById('restore-tab-mp')
+  ].filter(Boolean);
+}
+
 function getRestoreItems() {
   if (restoreActiveTab === 'presets') {
     return Array.from(document.querySelectorAll('#restore-presets-list .restore-preset-item'));
@@ -6399,21 +6704,36 @@ function getRestoreItems() {
   }
 }
 
+// currentRestoreIndex now walks the tabs AND the rows:
+//   0, 1, 2  = the Presets / Images / Master tabs
+//   3 and up = the rows inside whichever tab is open
 function updateRestoreSelection() {
+  var tabs = _restoreTabEls();
   var items = getRestoreItems();
-  // Remove highlight from all items
+  var total = tabs.length + items.length;
+
+  tabs.forEach(function(t) { t.classList.remove('wheel-focus'); });
   items.forEach(function(item) {
     item.style.outline = '';
     item.style.outlineOffset = '';
     item.style.background = '';
   });
-  if (items.length === 0) return;
-  currentRestoreIndex = Math.max(0, Math.min(currentRestoreIndex, items.length - 1));
-  var current = items[currentRestoreIndex];
+  if (total === 0) return;
+
+  currentRestoreIndex = Math.max(0, Math.min(currentRestoreIndex, total - 1));
+
+  if (currentRestoreIndex < tabs.length) {
+    var tab = tabs[currentRestoreIndex];
+    tab.classList.add('wheel-focus');
+    tab.scrollIntoView({ block: 'nearest' });
+    return;
+  }
+
+  var current = items[currentRestoreIndex - tabs.length];
   if (current) {
     current.style.outline = '3px solid #FE5F00';
     current.style.outlineOffset = '-2px';
-    if (restoreActiveTab === 'presets') {
+    if (restoreActiveTab !== 'images') {
       current.style.background = 'rgba(254,95,0,0.12)';
     }
     current.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
@@ -6422,18 +6742,40 @@ function updateRestoreSelection() {
 
 function scrollRestoreUp() {
   if (!isRestoreSubmenuOpen) return;
-  var items = getRestoreItems();
-  if (items.length === 0) return;
-  currentRestoreIndex = Math.max(0, currentRestoreIndex - 1);
+  var total = _restoreTabEls().length + getRestoreItems().length;
+  if (total === 0) return;
+  currentRestoreIndex = (currentRestoreIndex - 1 + total) % total;
   updateRestoreSelection();
 }
 
 function scrollRestoreDown() {
   if (!isRestoreSubmenuOpen) return;
-  var items = getRestoreItems();
-  if (items.length === 0) return;
-  currentRestoreIndex = Math.min(items.length - 1, currentRestoreIndex + 1);
+  var total = _restoreTabEls().length + getRestoreItems().length;
+  if (total === 0) return;
+  currentRestoreIndex = (currentRestoreIndex + 1) % total;
   updateRestoreSelection();
+}
+
+// Side button: on a tab it switches tab, on a row it ticks the checkbox.
+function _restoreActivate() {
+  var tabs = _restoreTabEls();
+  var items = getRestoreItems();
+  if (tabs.length + items.length === 0) return;
+
+  // On a tab: open that tab. switchRestoreTab parks the highlight on it.
+  if (currentRestoreIndex < tabs.length) {
+    var names = ['presets', 'images', 'mp'];
+    var wanted = names[currentRestoreIndex];
+    if (restoreActiveTab !== wanted) switchRestoreTab(wanted);
+    setTimeout(updateRestoreSelection, 60);
+    return;
+  }
+
+  var current = items[currentRestoreIndex - tabs.length];
+  if (current) {
+    var cb = current.querySelector('input[type="checkbox"]');
+    if (cb) cb.click();
+  }
 }
 
 function restoreSelectAll() {
@@ -11775,6 +12117,14 @@ function captureRawPhotoDataUrl() {
 window.addEventListener('sideClick', () => {
   console.log('Side button pressed');
 
+  // A modal is open. The side button belongs to the modal and must never
+  // reach the screen behind it. Modals with no side-button job do nothing.
+  const _openBlockingModal = _blockingModalOpen();
+  if (_openBlockingModal) {
+    if (_openBlockingModal === 'gallery-sort-modal') _sortModalActivateFocus();
+    return;
+  }
+
   // Side button during guided tour — toggle speech for the current step.
   // (Navigation is on-screen Back/Next; the scroll wheel scrolls the text.)
   if (tourActive) {
@@ -11873,15 +12223,34 @@ window.addEventListener('sideClick', () => {
     return;
   }
 
-  // Restore Deleted Items submenu - side button toggles checkbox on highlighted item
+  // Restore Deleted Items submenu - on a tab it switches tab, on a row it ticks it
   if (isRestoreSubmenuOpen) {
-    var restoreItems = getRestoreItems();
-    if (restoreItems.length > 0 && currentRestoreIndex < restoreItems.length) {
-      var currentRestoreItem = restoreItems[currentRestoreIndex];
-      if (currentRestoreItem) {
-        var restoreCb = currentRestoreItem.querySelector('input[type="checkbox"]');
-        if (restoreCb) restoreCb.click();
-      }
+    _restoreActivate();
+    return;
+  }
+
+  // Reset Database checklist
+  if (_resetDbActivate()) return;
+
+  // Preset File Settings / Button Settings - side button has no job here,
+  // so swallow it rather than let it act on the screen behind
+  if (_plainScrollSwallowsSide()) return;
+
+  // Resolution / Aspect Ratio / Import Resolution lists.
+  // Checked before the settings submenu because Import Resolution leaves
+  // isSettingsSubmenuOpen set to true while it is on screen.
+  if (_settingsListActivate()) return;
+
+  // Import Presets dialog - the side button ticks the highlighted preset.
+  // This MUST come before the settings check: the dialog is an overlay, so
+  // isSettingsSubmenuOpen is still true underneath it. Without this the side
+  // button re-clicks the Import Presets row behind the dialog, which opens a
+  // SECOND dialog whose duplicate element ids break the X and trap the user.
+  if (presetImporter.isImportModalOpen) {
+    const _row = document.querySelector('#import-preset-modal .menu-item.menu-selected');
+    if (_row) {
+      const _cb = _row.querySelector('input[type="checkbox"]');
+      if (_cb) _cb.click();
     }
     return;
   }
@@ -12070,6 +12439,14 @@ window.addEventListener('sideClick', () => {
 window.addEventListener('scrollUp', () => {
   console.log('Scroll wheel: up');
 
+  // A modal is open. The wheel belongs to the modal and must never
+  // reach the screen behind it.
+  const _openBlockingModalUp = _blockingModalOpen();
+  if (_openBlockingModalUp) {
+    if (_openBlockingModalUp === 'gallery-sort-modal') _sortModalMoveFocus(-1);
+    return;
+  }
+
   // Preset preview image — highest priority, it covers the whole screen.
   // Wheel up = previous preset, matching every other list in the program.
   if (_previewOverlayIsOpen()) { _previewStepSibling(-1); return; }
@@ -12167,17 +12544,20 @@ window.addEventListener('scrollUp', () => {
     return;
   }
   
-  // Resolution submenu
-  if (isResolutionSubmenuOpen) {
-    scrollResolutionMenuUp();
-    return;
-  }
+    // Resolution / Aspect Ratio / Import Resolution lists
+  if (_settingsListMove(-1)) return;
   
   // Restore Deleted Items submenu
   if (isRestoreSubmenuOpen) {
     scrollRestoreUp();
     return;
   }
+
+  // Reset Database checklist
+  if (_resetDbMove(-1)) return;
+
+  // Preset File Settings / Button Settings - wheel just scrolls the panel
+  if (_plainScrollMove(-1)) return;
 
   // Settings submenu - CHECK AFTER all other submenus
   if (isResetDatabaseSubmenuOpen) return;
@@ -12259,6 +12639,14 @@ window.addEventListener('scrollUp', () => {
 
 window.addEventListener('scrollDown', () => {
   console.log('Scroll wheel: down');
+
+  // A modal is open. The wheel belongs to the modal and must never
+  // reach the screen behind it.
+  const _openBlockingModalDown = _blockingModalOpen();
+  if (_openBlockingModalDown) {
+    if (_openBlockingModalDown === 'gallery-sort-modal') _sortModalMoveFocus(1);
+    return;
+  }
 
   // Preset preview image — highest priority, it covers the whole screen.
   // Wheel down = next preset, matching every other list in the program.
@@ -12357,17 +12745,20 @@ window.addEventListener('scrollDown', () => {
     return;
   }
   
-  // Resolution submenu
-  if (isResolutionSubmenuOpen) {
-    scrollResolutionMenuDown();
-    return;
-  }
+    // Resolution / Aspect Ratio / Import Resolution lists
+  if (_settingsListMove(1)) return;
   
   // Restore Deleted Items submenu
   if (isRestoreSubmenuOpen) {
     scrollRestoreDown();
     return;
   }
+
+  // Reset Database checklist
+  if (_resetDbMove(1)) return;
+
+  // Preset File Settings / Button Settings - wheel just scrolls the panel
+  if (_plainScrollMove(1)) return;
 
   // Settings submenu - CHECK AFTER all other submenus
   if (isResetDatabaseSubmenuOpen) return;
@@ -12981,6 +13372,10 @@ YOU MUST RESTART PROGRAM!`];
       await presetImporter.clearImportedPresets();
       // Also drop any saved local source copies so nothing lingers on device.
       try { await presetImporter.clearAllSourceCache(); } catch (e) {}
+      // The on-disk copies are gone, so drop the in-memory copy too. The next
+      // load then re-downloads and rebuilds both, instead of leaving the device
+      // with no saved fallback for the rest of this session.
+      window._cachedFactoryPresets = null;
       hasImportedPresets = false;
       factoryPresets  = [];
       DEFAULT_PRESETS = [];
@@ -13264,21 +13659,25 @@ function showSettingsSubmenu() {
   submenu.style.display = 'flex';
   isMenuOpen = false; // ADD THIS LINE
   isSettingsSubmenuOpen = true;
-  currentSettingsIndex = 0;
+  // currentSettingsIndex is deliberately NOT reset here. Coming back from a
+  // sub-setting should land on the row you left. It is reset to 0 only when
+  // settings is exited altogether, in hideSettingsSubmenu below.
   
-  // Highlight first item after render
+    // Put the highlight back where the user left it after render
   setTimeout(() => {
-     updateSettingsSelection();
+     _settingsRestorePosition();
   }, 50);
 }
 
 // Hide Settings submenu
 function hideSettingsSubmenu() {
   // Check if we should return to gallery
-  if (returnToGalleryFromMasterPrompt) {
+    if (returnToGalleryFromMasterPrompt) {
     returnToGalleryFromMasterPrompt = false;
     document.getElementById('settings-submenu').style.display = 'none';
     isSettingsSubmenuOpen = false;
+    currentSettingsIndex = 0;   // leaving settings for good, start at the top next time
+    _settingsSavedScrollTop = 0;
     document.getElementById('unified-menu').style.display = 'none';
     isMenuOpen = false;
     menuScrollEnabled = false;
@@ -13295,8 +13694,9 @@ function hideSettingsSubmenu() {
   // on top of settings, not on top of the camera behind it.
   showLoadingOverlay('Opening menu...');
 
-  isSettingsSubmenuOpen = false;
+    isSettingsSubmenuOpen = false;
   currentSettingsIndex = 0;
+  _settingsSavedScrollTop = 0;
 
   // Wait one paint frame so the browser renders the spinner over settings,
   // THEN hide settings and open the menu. The overlay stays up until
@@ -14004,7 +14404,8 @@ function showAspectRatioSubmenu() {
   document.getElementById('settings-submenu').style.display = 'none';
   pauseCamera();
   
-  const submenu = document.getElementById('aspect-ratio-submenu');
+    const submenu = document.getElementById('aspect-ratio-submenu');
+  submenu.querySelectorAll('.resolution-item').forEach(el => el.classList.remove('menu-selected'));
   submenu.style.display = 'flex';
   isAspectRatioSubmenuOpen = true;
   isSettingsSubmenuOpen = false;
@@ -18299,8 +18700,14 @@ document.addEventListener('touchend', () => {
   const importPresetsBtn = document.getElementById('import-presets-button');
   if (importPresetsBtn) {
     importPresetsBtn.addEventListener('click', async () => {
-      try {
-        showLoadingOverlay('Loading presets...');
+            try {
+        // Presets are already in memory from the splash screen, so opening this
+        // screen normally downloads nothing and only builds the list. The two
+        // messages tell you which is actually happening:
+        //   "Opening presets..." = using the copy loaded at startup, no download
+        //   "Loading presets..." = something forced a real re-download
+        const _willDownload = !window._cachedFactoryPresets || getLastLoadFailures().length > 0;
+        showLoadingOverlay(_willDownload ? 'Loading presets...' : 'Opening presets...');
         // Wait one frame so the browser actually paints the spinner before the heavy work starts
         await new Promise(resolve => setTimeout(resolve, 30));
 const result = await presetImporter.import();
@@ -19213,15 +19620,48 @@ const result = await presetImporter.import();
 
   if (_gallerySortBtn && _gallerySortModal) {
     _gallerySortBtn.addEventListener('click', () => {
-      // Highlight whichever option is currently active
-      document.querySelectorAll('#gallery-sort-modal .gallery-custom-modal-option').forEach(opt => {
-        opt.classList.toggle('active-sort', opt.dataset.value === gallerySortOrder);
-      });
+      _syncSortModalChecks();
+      _switchSortModalTab('folders');
       _gallerySortModal.style.display = 'flex';
+      _sortModalFocusIndex = 0;
+      _sortModalPaintFocus();
     });
 
-    // Each option button picks a sort order and closes
-    document.querySelectorAll('#gallery-sort-modal .gallery-custom-modal-option').forEach(opt => {
+    // Tab bar
+    const _sortTabFolders = document.getElementById('sort-tab-folders');
+    if (_sortTabFolders) {
+      _sortTabFolders.addEventListener('click', () => {
+        _switchSortModalTab('folders');
+        _sortModalFocusIndex = 0;
+        _sortModalPaintFocus();
+      });
+    }
+
+    const _sortTabImages = document.getElementById('sort-tab-images');
+    if (_sortTabImages) {
+      _sortTabImages.addEventListener('click', () => {
+        _switchSortModalTab('images');
+        _sortModalFocusIndex = 1;
+        _sortModalPaintFocus();
+      });
+    }
+
+    // FOLDERS section — oldest / newest / A-Z / Z-A
+    document.querySelectorAll('#gallery-sort-modal .folder-sort-option').forEach(opt => {
+      opt.addEventListener('click', () => {
+        galleryFolderSortOrder = opt.dataset.value;
+        try {
+          localStorage.setItem(GALLERY_FOLDER_SORT_ORDER_KEY, galleryFolderSortOrder);
+        } catch (err) {
+          console.error('Failed to save folder sort order:', err);
+        }
+        _closeGallerySortModal();
+        onGalleryFilterChange();
+      });
+    });
+
+    // IMAGES section — unchanged behaviour, newest / oldest only
+    document.querySelectorAll('#gallery-sort-modal .image-sort-option').forEach(opt => {
       opt.addEventListener('click', () => {
         const newSort = opt.dataset.value;
         if (sortOrderSelect) {
@@ -19232,15 +19672,15 @@ const result = await presetImporter.import();
         if (_sortLabel) {
           _sortLabel.textContent = '🔀 SORT';
         }
-        _gallerySortModal.style.display = 'none';
+        _closeGallerySortModal();
       });
     });
 
-    // Cancel button
-    const _sortCancelBtn = document.getElementById('gallery-sort-cancel');
-    if (_sortCancelBtn) {
-      _sortCancelBtn.addEventListener('click', () => {
-        _gallerySortModal.style.display = 'none';
+    // X exit button in the header
+    const _sortCloseBtn = document.getElementById('gallery-sort-close');
+    if (_sortCloseBtn) {
+      _sortCloseBtn.addEventListener('click', () => {
+        _closeGallerySortModal();
       });
     }
 
@@ -19248,9 +19688,15 @@ const result = await presetImporter.import();
     const _sortOverlay = _gallerySortModal.querySelector('.gallery-custom-modal-overlay');
     if (_sortOverlay) {
       _sortOverlay.addEventListener('click', () => {
-        _gallerySortModal.style.display = 'none';
+        _closeGallerySortModal();
       });
     }
+
+    // A real mouse/trackpad wheel moves the highlight too
+    _gallerySortModal.addEventListener('wheel', (e) => {
+      e.preventDefault();
+      _sortModalMoveFocus(e.deltaY > 0 ? 1 : -1);
+    }, { passive: false });
   }
   
   const prevPageBtn = document.getElementById('prev-page');

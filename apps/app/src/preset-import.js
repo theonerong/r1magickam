@@ -368,6 +368,7 @@ export class PresetImporter {
     if (window._cachedFactoryPresets) {
       return window._cachedFactoryPresets;
     }
+
     try {
       const allPresets = [];
       const seenNames = new Set();
@@ -886,7 +887,32 @@ export class PresetImporter {
       // Single delegated long-press listener for the whole list (replaces per-item listeners)
       const _presetsLookup = new Map(availablePresets.map(p => [p.name, p]));
       let _delegatedLongPressTimer = null;
-      const LONG_PRESS_MS = 600;
+      // Brief orange flash the moment the hard press registers. The R1's voice
+      // takes a beat to come back, so without this the press feels like it did
+      // nothing and you end up pressing again.
+      let _speakingRow = null;
+      let _speakingTimer = null;
+      const _clearSpeakingRow = () => {
+        clearTimeout(_speakingTimer);
+        _speakingTimer = null;
+        if (_speakingRow) _speakingRow.classList.remove('import-row-speaking');
+        _speakingRow = null;
+      };
+      const _flashSpeakingRow = (row) => {
+        _clearSpeakingRow();
+        if (!row) return;
+        _speakingRow = row;
+        row.classList.add('import-row-speaking');
+        // The R1 takes a second or two to answer, so this has to stay lit long
+        // enough to bridge the wait. It pulses so it reads as "working on it",
+        // not as a button that already finished.
+        _speakingTimer = setTimeout(_clearSpeakingRow, 6000);
+      };
+
+      // 500ms matches what phones use for a long press (iOS and Android both
+      // fire at ~500ms) while still being clearly longer than a tap, which
+      // toggles the row open/closed.
+      const LONG_PRESS_MS = 500;
 
       // Cache each preset's NEW/UPDATED status for the life of this dialog.
       // Computing it fresh meant thousands of deep text comparisons on every
@@ -900,6 +926,7 @@ export class PresetImporter {
       // Set right after a long-press action fires so the click that follows
       // the finger lift doesn't also toggle the row or its checkbox.
       let _suppressNextItemClick = false;
+      let _suppressExpiryTimer = null;
       // Finished row elements, built once per dialog and reused by every
       // later render. Re-arranging existing rows is what makes typing and
       // clearing the search fast — instead of re-creating thousands of
@@ -911,17 +938,41 @@ export class PresetImporter {
       // and hides existing rows, exactly like the main menu and gallery
       // preset searches do, which is why those feel instant.
       let _allRowsBuilt = false;
+      // Handle for the in-progress chunked build, so a new render can cancel it
+      let _buildTimer = null;
+
+      // Tracks whether the user is touching or scrolling the list right now, so
+      // the background row build can shrink its bursts and stay out of the way.
+      let _userIsScrolling = false;
+      let _fingerDown = false;
+      let _scrollIdleTimer = null;
+      let _revealTimer = null;
+      const _markScrolling = () => {
+        _userIsScrolling = true;
+        clearTimeout(_scrollIdleTimer);
+        _scrollIdleTimer = setTimeout(() => { _userIsScrolling = false; }, 150);
+      };
+      // A finger resting on the list counts too. A hard press holds still for
+      // 600ms, so without this the background build goes back to big bursts
+      // mid-press and the long-press never gets a chance to fire on time.
+      const _listIsBusy = () => _userIsScrolling || _fingerDown;
+      scrollContainer.addEventListener('scroll', _markScrolling, { passive: true });
+      scrollContainer.addEventListener('touchmove', _markScrolling, { passive: true });
+      scrollContainer.addEventListener('touchstart', () => { _fingerDown = true; _markScrolling(); }, { passive: true });
+      scrollContainer.addEventListener('touchend', () => { _fingerDown = false; _markScrolling(); }, { passive: true });
+      scrollContainer.addEventListener('touchcancel', () => { _fingerDown = false; }, { passive: true });
 
       presetsList.addEventListener('touchstart', (e) => {
         const item = e.target.closest('.menu-item');
         if (!item) return;
         const preset = _presetsLookup.get(item.dataset.presetName);
         if (!preset) return;
+        _clearSpeakingRow();   // a new press cancels the previous indicator
         _delegatedLongPressTimer = setTimeout(() => {
           if (_openPresetNames.has(preset.name)) {
             // OPEN row: hard-press reads the preset aloud
             _suppressNextItemClick = true;
-            setTimeout(() => { _suppressNextItemClick = false; }, 400);
+            _flashSpeakingRow(item);
             this.speakMessage(preset.message);
           } else {
             // CLOSED row: hard-press shows the preview image (as before)
@@ -933,6 +984,13 @@ export class PresetImporter {
       presetsList.addEventListener('touchend', () => {
         clearTimeout(_delegatedLongPressTimer);
         _delegatedLongPressTimer = null;
+        // Start the click guard's countdown when the finger LIFTS, not when the
+        // press fired. Otherwise holding past ~900ms lets the click through and
+        // the row toggles open/closed right after it speaks.
+        if (_suppressNextItemClick) {
+          clearTimeout(_suppressExpiryTimer);
+          _suppressExpiryTimer = setTimeout(() => { _suppressNextItemClick = false; }, 400);
+        }
       }, { passive: true });
 
       presetsList.addEventListener('touchmove', () => {
@@ -955,6 +1013,7 @@ export class PresetImporter {
           if (_openPresetNames.has(preset.name)) {
             _suppressNextItemClick = true;
             setTimeout(() => { _suppressNextItemClick = false; }, 400);
+            _flashSpeakingRow(item);
             this.speakMessage(preset.message);
           } else {
             showPreview(preset);
@@ -984,12 +1043,33 @@ export class PresetImporter {
         // rows are shown and the rest are hidden with a CSS class.
         if (_allRowsBuilt) {
           const _visibleNames = new Set(filteredPresets.map(p => p.name));
-          _rowElementCache.forEach((row, name) => {
-            row.classList.toggle('import-row-hidden', !_visibleNames.has(name));
-            if (row._importCheckbox) {
-              row._importCheckbox.checked = this.checkboxStates.get(name) || false;
+          const _rows = Array.from(_rowElementCache.entries());
+          if (_revealTimer) { clearTimeout(_revealTimer); _revealTimer = null; }
+
+          // Showing ~1900 hidden rows in one go makes the browser lay out the
+          // whole list at once, which is the freeze when clearing the search.
+          // Do it in chunks: the top of the list updates immediately and the
+          // rest catches up over the next few frames.
+          const _revealChunk = (i) => {
+            if (!document.body.contains(presetsList)) { _revealTimer = null; return; }
+            const STEP = (i > 0 && _listIsBusy()) ? 60 : 250;
+            const end = Math.min(i + STEP, _rows.length);
+            for (; i < end; i++) {
+              const name = _rows[i][0];
+              const row = _rows[i][1];
+              row.classList.toggle('import-row-hidden', !_visibleNames.has(name));
+              if (row._importCheckbox) {
+                row._importCheckbox.checked = this.checkboxStates.get(name) || false;
+              }
             }
-          });
+            if (i < _rows.length) {
+              _revealTimer = setTimeout(() => _revealChunk(i), 16);
+            } else {
+              _revealTimer = null;
+              if (scrollContainer.scrollTop === 0) updateImportSelection();
+            }
+          };
+          _revealChunk(0);
           updateImportSelection();
           return;
         }
@@ -1019,11 +1099,34 @@ export class PresetImporter {
           return count;
         };
 
-        // Build all items into a fragment — single DOM write at the end
+        // Build the rows a chunk at a time. The first chunk is enough to fill
+        // the screen, so the dialog appears immediately; the remaining rows are
+        // added in the background frames after that, keeping the UI responsive.
+        presetsList.innerHTML = '';
+        if (_buildTimer) { clearTimeout(_buildTimer); _buildTimer = null; }
 
-        const fragment = document.createDocumentFragment();
+        const _buildChunk = (start) => {
+          // The dialog was closed, or another render restarted the build
+          if (!document.body.contains(presetsList)) { _buildTimer = null; return; }
 
-        filteredPresets.forEach((preset, index) => {
+          // The first burst is always full size so the dialog never opens looking
+          // empty. After that: small bursts while the user is scrolling, so each
+          // one fits inside a single frame and the scroll stays smooth, and
+          // bigger bursts when the list is idle so it finishes quickly.
+          // A finger is on the list: stop appending until it lifts. Every append
+          // makes the browser re-lay-out all ~1900 rows to recompute the scroll
+          // height, and that is what makes the first drag feel stuck. Bounded by
+          // the gesture, and chunk 0 always runs so the list is never empty.
+          if (start > 0 && _fingerDown) {
+            _buildTimer = setTimeout(() => _buildChunk(start), 100);
+            return;
+          }
+
+          const CHUNK = (start > 0 && _listIsBusy()) ? 20 : 150;
+          const fragment = document.createDocumentFragment();
+
+          filteredPresets.slice(start, start + CHUNK).forEach((preset, _offset) => {
+          const index = start + _offset;
           // Reuse the finished row if this preset was built before — just
           // refresh the bits that can change between renders.
           const _cachedRow = _rowElementCache.get(preset.name);
@@ -1195,17 +1298,27 @@ export class PresetImporter {
           item._importCheckbox = checkbox;
           _rowElementCache.set(preset.name, item);
           fragment.appendChild(item);
-        });
+          });
 
-        // Single DOM write — replaces innerHTML = '' + 800x appendChild
-        presetsList.innerHTML = '';
-        presetsList.appendChild(fragment);
+          presetsList.appendChild(fragment);
+          if (start === 0) updateImportSelection();
 
-        // The one-time full build is done; every render from here on uses
-        // the show/hide fast path above.
-        _allRowsBuilt = true;
+          if (start + CHUNK < filteredPresets.length) {
+            // Leave a frame between bursts so touch input gets served first
+            _buildTimer = setTimeout(() => _buildChunk(start + CHUNK), 16);
+          } else {
+            _buildTimer = null;
+            // The full build is done; every render from here on uses the
+            // show/hide fast path above.
+            _allRowsBuilt = true;
+            // updateImportSelection() forces the scroll position (it snaps back
+            // to the top when the highlight is on row 0). Only safe to run while
+            // the user is still at the top, otherwise it yanks them back.
+            if (scrollContainer.scrollTop === 0) updateImportSelection();
+          }
+        };
 
-        updateImportSelection();
+        _buildChunk(0);
       };
 
       const updateImportSelection = () => {
@@ -1405,7 +1518,7 @@ footerSection.innerHTML = `
         document.body.removeChild(modal);
       };
 
-      document.getElementById('close-import-modal').onclick = () => {
+      modal.querySelector('#close-import-modal').onclick = () => {
         closeModal();
         resolve(null);
       };
@@ -1597,8 +1710,14 @@ footerSection.innerHTML = `
 
   async import() {
     try {
-      // Always force a fresh fetch so the latest active sources are fully reflected
-      window._cachedFactoryPresets = null;
+      // The session cache is already cleared automatically whenever the preset
+      // file settings change (see saveCustomPresetSources / saveDefaultPresetEnabled),
+      // so there is no need to re-download every time this screen opens.
+      // The one exception: if a source failed on the last load, retry it now in
+      // case it was only a temporary network problem.
+      if (getLastLoadFailures().length > 0) {
+        window._cachedFactoryPresets = null;
+      }
       const availablePresets = await this.loadPresetsFromFile();
 
       // Load failures are shown as a banner inside the import modal below
