@@ -368,7 +368,18 @@ export class PresetImporter {
     if (window._cachedFactoryPresets) {
       return window._cachedFactoryPresets;
     }
+    // A load is already running. Join it rather than starting a second one —
+    // the cache is only set at the very end, so two callers that start together
+    // would otherwise both download and parse the whole file.
+    if (window._factoryPresetsLoading) {
+      return window._factoryPresetsLoading;
+    }
+    window._factoryPresetsLoading = this._loadPresetsFromFileUncached()
+      .finally(() => { window._factoryPresetsLoading = null; });
+    return window._factoryPresetsLoading;
+  }
 
+  async _loadPresetsFromFileUncached() {
     try {
       const allPresets = [];
       const seenNames = new Set();

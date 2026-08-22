@@ -5684,20 +5684,22 @@ async function loadStyles() {
     
     // Always fetch the real preset count so the tutorial display is always correct
     // Save the result so we can reuse it later without downloading the file again
-    let _cachedFactoryPresets = null;
-    try {
-        showLoadingOverlay('Loading presets...');
-        // Wait one frame so the browser actually paints the spinner before the heavy work starts
-        await new Promise(resolve => setTimeout(resolve, 30));
-        _cachedFactoryPresets = await presetImporter.loadPresetsFromFile();
-        totalFactoryPresetCount = _cachedFactoryPresets.length;
+    // presets.json is only needed here for two things: the preset count shown in
+    // the tutorial, and the "new presets available" badge on the Settings screen.
+    // Neither is on screen while the camera starts, and the "has the user got any
+    // imports?" decision below reads IndexedDB, not this file. So load it in the
+    // background and let the user into the program straight away.
+    window._presetsUpdateCheckPromise = (async () => {
+      try {
+        const loaded = await presetImporter.loadPresetsFromFile();
+        totalFactoryPresetCount = loaded.length;
         const tutorialCountEl = document.getElementById('tutorial-preset-count');
         if (tutorialCountEl) tutorialCountEl.textContent = totalFactoryPresetCount;
-    } catch (e) {
+        await checkForPresetsUpdates(loaded);
+      } catch (e) {
         console.log('Could not fetch preset count:', e);
-    } finally {
-        hideLoadingOverlay();
-    }
+      }
+    })();
 
     // Only load presets if user has imports or modifications
     if (hasImports || hasModifications) {
@@ -5806,8 +5808,7 @@ async function loadStyles() {
     // Update the display to show correct count on startup
     updateVisiblePresetsDisplay();
 
-    // Check for updates immediately — store as a promise the camera can wait for
-    window._presetsUpdateCheckPromise = checkForPresetsUpdates(_cachedFactoryPresets);
+    // The update check now runs inside the background load started above.
 }
 
 // Check for updates on startup
@@ -5821,10 +5822,12 @@ async function checkForPresetsUpdates(preloadedPresets) {
 
     let newCount = 0;
     let updatedCount = 0;
-    const importedNames = new Set(importedPresets.map(p => p.name));
+    // One lookup table instead of scanning the whole imported list for every
+    // preset. With ~1900 presets that was ~3.6 million string comparisons.
+    const importedByName = new Map(importedPresets.map(p => [p.name, p]));
 
     for (const jsonPreset of jsonPresets) {
-      const existing = importedPresets.find(p => p.name === jsonPreset.name);
+      const existing = importedByName.get(jsonPreset.name);
       if (!existing) {
         newCount++;
       } else if (presetsAreDifferent(existing, jsonPreset)) {
@@ -5859,10 +5862,12 @@ async function recheckForUpdates() {
 
     let newCount = 0;
     let updatedCount = 0;
-    const importedNames = new Set(importedPresets.map(p => p.name));
+    // One lookup table instead of scanning the whole imported list for every
+    // preset. With ~1900 presets that was ~3.6 million string comparisons.
+    const importedByName = new Map(importedPresets.map(p => [p.name, p]));
 
     for (const jsonPreset of jsonPresets) {
-      const existing = importedPresets.find(p => p.name === jsonPreset.name);
+      const existing = importedByName.get(jsonPreset.name);
       if (!existing) {
         newCount++;
       } else if (presetsAreDifferent(existing, jsonPreset)) {
