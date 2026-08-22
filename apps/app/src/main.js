@@ -1228,24 +1228,24 @@ function initDB() {
     };
     
     request.onupgradeneeded = (event) => {
-      const upgradeDb = event.target.result;
+      db = event.target.result;
       
       // Create object store if it doesn't exist
-      if (!upgradeDb.objectStoreNames.contains(STORE_NAME)) {
-        const objectStore = upgradeDb.createObjectStore(STORE_NAME, { keyPath: 'id' });
+      if (!db.objectStoreNames.contains(STORE_NAME)) {
+        const objectStore = db.createObjectStore(STORE_NAME, { keyPath: 'id' });
         objectStore.createIndex('timestamp', 'timestamp', { unique: false });
         console.log('Object store created');
       }
 
       // Create preview images store if it doesn't exist
-      if (!upgradeDb.objectStoreNames.contains('preview_images')) {
-        const pvStore = upgradeDb.createObjectStore('preview_images', { keyPath: 'id' });
+      if (!db.objectStoreNames.contains('preview_images')) {
+        const pvStore = db.createObjectStore('preview_images', { keyPath: 'id' });
         pvStore.createIndex('timestamp', 'timestamp', { unique: false });
       }
 
       // Create deleted images store for trash/restore functionality
-      if (!upgradeDb.objectStoreNames.contains('deleted_images')) {
-        const delStore = upgradeDb.createObjectStore('deleted_images', { keyPath: 'id' });
+      if (!db.objectStoreNames.contains('deleted_images')) {
+        const delStore = db.createObjectStore('deleted_images', { keyPath: 'id' });
         delStore.createIndex('deletedAt', 'deletedAt', { unique: false });
       }
 
@@ -1253,8 +1253,8 @@ function initDB() {
       // Key is the preset NAME; we deliberately store nothing but the name and
       // when it was added, so the preset itself stays the single source of
       // truth and removing a game can never delete preset data.
-      if (!upgradeDb.objectStoreNames.contains('custom_games')) {
-        upgradeDb.createObjectStore('custom_games', { keyPath: 'name' });
+      if (!db.objectStoreNames.contains('custom_games')) {
+        db.createObjectStore('custom_games', { keyPath: 'name' });
       }
     };
   });
@@ -2631,16 +2631,6 @@ function scrollTimerDown() {
   if (container) {
     container.scrollTop = Math.min(container.scrollHeight - container.clientHeight, container.scrollTop + 80);
   }
-}
-
-function scrollMasterPromptUp() {
-  const container = document.getElementById('mp-slots-container');
-  if (container) container.scrollTop = Math.max(0, container.scrollTop - 80);
-}
-
-function scrollMasterPromptDown() {
-  const container = document.getElementById('mp-slots-container');
-  if (container) container.scrollTop = Math.min(container.scrollHeight - container.clientHeight, container.scrollTop + 80);
 }
 
 function scrollMotionUp() {
@@ -9852,7 +9842,8 @@ const TOUR_STEPS = [
   { section: 'Image Editor', title: '↶ Undo and Save', body: 'Undo steps back through your edit history one step at a time. Saving an edited image creates a new image in your gallery. Close (x) exits without saving.' },
   { section: 'Settings', title: '▣ Resolution', body: 'Choose from VGA 640 by 480 up to HD 3264 by 2448. Lower resolutions are recommended if you want images to appear in the magic gallery and you want to save space in your r1 device. Camera program slows if a high resolution is chosen.' },
   { section: 'Settings', title: '📐 Aspect Ratio', body: 'Choose 1 to 1 square or 16 to 9 letterbox. Leave both unchecked for neither. Default is neither. We highly recommend choosing an aspect ratio to display the full image, preventing accidental cropping.' },
-  { section: 'Settings', title: '📝 Master Prompt', body: 'Adds instructions to presets. Enable first, type additions and press field to activate. Add more than one if desired. Add name and occasion to personalize presets. Can also be toggled from MASTER button inside image viewer or main camera screen.' },
+    { section: 'Settings', title: '📝 Master Prompt', body: 'Adds your own instructions to every preset. Turn Master Prompt on first, then type into a prompt box. Tap the ACTIVE or OFF badge on the right of a prompt to switch that one on or off. Add more than one if desired, such as your name and the occasion, to personalize presets. May also be toggled from the MASTER button inside the image viewer or main camera screen.' },
+  { section: 'Settings', title: '🗂️ Naming and Organizing Master Prompts', body: 'Every prompt has a name, shown as Prompt 1, Prompt 2 and so on. Hard press the name to rename. Tapping name expands or collapses text. Hard press the text box itself to hear the prompt read. Roll the scroll wheel to highlight a prompt, then press the side button to activate or deactivate.' },
   { section: 'Settings', title: '👁️ Visible Presets', body: 'Choose which imported presets appear in your menus. Select All, deselect individually, or remove all. Category tags show at the bottom when a preset is highlighted.' },
   { section: 'Settings', title: '🔨 Preset Builder', body: 'Build your own custom AI presets. Choose a template, add chips for quality and style, enable random options with single or multi-selection groups, add critical rules, then save. Also accessible directly from the main menu plus (+) button.' },
   { section: 'Settings', title: '🚫 No Magic Mode', body: 'Disables AI processing and works as a regular camera. Photos save only to the plugin gallery, not to the rabbit hole or magic gallery.' },
@@ -12255,6 +12246,13 @@ window.addEventListener('sideClick', () => {
     return;
   }
 
+  // Master Prompt submenu - side button turns the highlighted prompt on/off.
+  // Without this the press fell all the way through and took a photo.
+  if (isMasterPromptSubmenuOpen) {
+    mpSideButtonActivate();
+    return;
+  }
+
   // Settings submenu - select current item
   if (isSettingsSubmenuOpen) {
     const submenu = document.getElementById('settings-submenu');
@@ -14175,6 +14173,7 @@ function showMasterPromptSubmenu() {
   }
 
   mpRemoveMode = false;
+  currentMpIndex = -1;   // first wheel turn lands on the first prompt
   renderMpSlots();
 
   document.getElementById('master-prompt-submenu').style.display = 'flex';
@@ -14428,14 +14427,142 @@ function updateMasterPromptDisplay() {
   const display = document.getElementById('current-master-prompt-display');
   if (!display) return;
   if (!masterPromptEnabled) { display.textContent = 'Disabled'; return; }
-  const activeSlots = masterPromptSlots.filter(s => s.active && s.text.trim());
-  if (activeSlots.length === 0) { display.textContent = 'Enabled (none active)'; return; }
-  const preview = activeSlots[0].text.substring(0, 18);
-  const suffix = activeSlots.length > 1 ? ` (+${activeSlots.length - 1} more)` : (activeSlots[0].text.length > 18 ? '...' : '');
-  display.textContent = `Enabled: ${preview}${suffix}`;
+  // Show the NAMES of the active prompts, not their text
+  const activeNames = masterPromptSlots
+    .map((s, i) => ({ slot: s, name: mpSlotName(s, i) }))
+    .filter(o => o.slot.active && o.slot.text.trim())
+    .map(o => o.name);
+  if (activeNames.length === 0) { display.textContent = 'Enabled (none active)'; return; }
+  const shown = activeNames.slice(0, 3).join(', ');
+  const extra = activeNames.length > 3 ? ` +${activeNames.length - 3}` : '';
+  display.textContent = `${shown}${extra} Active`;
 }
 
 // ===== MASTER PROMPT SLOTS =====
+
+// ===== MASTER PROMPT: NAMES, FOCUS, SPEAK, COLLAPSE =====
+
+// Which slot the scroll wheel is sitting on. -1 means nothing highlighted yet.
+let currentMpIndex = -1;
+
+// Slots saved before naming existed have no .name, so fall back to the old label.
+function mpSlotName(slot, index) {
+  const n = (slot && slot.name ? String(slot.name) : '').trim();
+  return n || ('Prompt ' + (index + 1));
+}
+
+function _mpSlotEls() {
+  const container = document.getElementById('mp-slots-container');
+  return container ? Array.from(container.querySelectorAll('.mp-slot')) : [];
+}
+
+function updateMpSelection() {
+  const slots = _mpSlotEls();
+  slots.forEach(el => el.classList.remove('mp-slot-focus'));
+  if (!slots.length || currentMpIndex < 0) return;
+  if (currentMpIndex > slots.length - 1) currentMpIndex = slots.length - 1;
+  const el = slots[currentMpIndex];
+  if (!el) return;
+  el.classList.add('mp-slot-focus');
+  el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+// First wheel turn just reveals the highlight on the first prompt, then it moves.
+function _mpMoveFocus(step) {
+  const slots = _mpSlotEls();
+  if (!slots.length) return;
+  if (currentMpIndex < 0) currentMpIndex = 0;
+  else currentMpIndex = (currentMpIndex + step + slots.length) % slots.length;
+  updateMpSelection();
+}
+
+function scrollMasterPromptUp()   { _mpMoveFocus(-1); }
+function scrollMasterPromptDown() { _mpMoveFocus(1); }
+
+// Side button: turn the highlighted prompt on/off.
+function mpSideButtonActivate() {
+  if (mpRemoveMode) return;
+  const slots = _mpSlotEls();
+  if (!slots.length) return;
+  if (currentMpIndex < 0) { currentMpIndex = 0; updateMpSelection(); return; }
+  const el = slots[currentMpIndex];
+  if (el) toggleMpSlotActive(el.dataset.id);
+}
+
+// Reads the prompt aloud. Mirrors how the import list speaks a preset.
+function speakMpSlot(text) {
+  const t = (text || '').trim();
+  if (!t) return;
+  if (window.speechSynthesis) window.speechSynthesis.cancel();
+  if (typeof PluginMessageHandler !== 'undefined') {
+    PluginMessageHandler.postMessage(JSON.stringify({ message: t, wantsR1Response: true }));
+  } else if (window.speechSynthesis) {
+    const u = new SpeechSynthesisUtterance(t);
+    u.rate = 0.9;
+    window.speechSynthesis.speak(u);
+  }
+}
+
+// Keeps the row lit while the R1 fetches and speaks, so the press never looks
+// like it did nothing during the wait.
+let _mpSpeakingEl = null;
+let _mpSpeakingTimer = null;
+function _mpMarkSpeaking(el) {
+  clearTimeout(_mpSpeakingTimer);
+  if (_mpSpeakingEl) _mpSpeakingEl.classList.remove('mp-slot-speaking');
+  _mpSpeakingEl = el || null;
+  if (!el) return;
+  el.classList.add('mp-slot-speaking');
+  _mpSpeakingTimer = setTimeout(() => {
+    if (_mpSpeakingEl) _mpSpeakingEl.classList.remove('mp-slot-speaking');
+    _mpSpeakingEl = null;
+  }, 6000);
+}
+
+function toggleMpCollapsed(id) {
+  const slot = masterPromptSlots.find(s => s.id === id);
+  if (!slot) return;
+  slot.collapsed = !slot.collapsed;
+  saveMasterPrompt();
+  const el = document.querySelector('.mp-slot[data-id="' + id + '"]');
+  if (el) el.classList.toggle('mp-slot-collapsed', !!slot.collapsed);
+}
+
+// Inline rename, same pattern as renaming a gallery folder.
+function startMpRename(slotId) {
+  const slotEl = document.querySelector('.mp-slot[data-id="' + slotId + '"]');
+  if (!slotEl) return;
+  const slot = masterPromptSlots.find(s => s.id === slotId);
+  if (!slot) return;
+  const labelEl = slotEl.querySelector('.mp-slot-label');
+  if (!labelEl) return;
+  const index = masterPromptSlots.indexOf(slot);
+
+  const input = document.createElement('input');
+  input.type = 'text';
+  input.className = 'mp-slot-rename-input';
+  input.value = (slot.name || '').trim();
+  input.placeholder = mpSlotName(slot, index);
+  input.maxLength = 24;
+  labelEl.replaceWith(input);
+  input.focus();
+  input.select();
+
+  let finished = false;
+  const save = () => {
+    if (finished) return;
+    finished = true;
+    slot.name = input.value.trim();
+    saveMasterPrompt();
+    updateMasterPromptDisplay();
+    renderMpSlots();
+  };
+  input.addEventListener('blur', save);
+  input.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter')  { e.preventDefault(); input.blur(); }
+    if (e.key === 'Escape') { finished = true; renderMpSlots(); }
+  });
+}
 
 function renderMpSlots() {
   const container = document.getElementById('mp-slots-container');
@@ -14454,7 +14581,7 @@ function renderMpSlots() {
 
     const label = document.createElement('span');
     label.className = 'mp-slot-label';
-    label.textContent = 'Prompt ' + (index + 1);
+         label.textContent = mpSlotName(slot, index);
 
     const statusBadge = document.createElement('span');
     statusBadge.className = 'mp-slot-status';
@@ -14468,15 +14595,46 @@ function renderMpSlots() {
     header.appendChild(statusBadge);
     header.appendChild(removeCheck);
 
-    // Long-press on header toggles active (only when not in remove mode)
-    let _pressTimer = null;
-    header.addEventListener('touchstart', () => {
+    // The name area (everything left of the ACTIVE/OFF badge):
+    //   tap        -> collapse / expand the text box
+    //   hard press -> rename the prompt
+    let _nameTimer = null;
+    let _nameLongFired = false;
+    let _nameStartX = 0, _nameStartY = 0;
+    const _nameStart = (e) => {
       if (mpRemoveMode) return;
-      _pressTimer = setTimeout(() => { _pressTimer = null; toggleMpSlotActive(slot.id); }, 600);
-    });
-    header.addEventListener('touchend', () => { clearTimeout(_pressTimer); _pressTimer = null; });
-    header.addEventListener('touchmove', () => { clearTimeout(_pressTimer); _pressTimer = null; });
-    // Also allow click toggle on desktop/non-touch for the status badge
+      _nameLongFired = false;
+      _nameStartX = e.clientX; _nameStartY = e.clientY;
+      clearTimeout(_nameTimer);
+      _nameTimer = setTimeout(() => {
+        _nameTimer = null;
+        _nameLongFired = true;
+        startMpRename(slot.id);
+      }, 500);
+    };
+    const _nameEnd = () => {
+      if (mpRemoveMode) return;
+      if (_nameTimer) {
+        clearTimeout(_nameTimer);
+        _nameTimer = null;
+        if (!_nameLongFired) toggleMpCollapsed(slot.id);
+      }
+    };
+    const _nameCancel = () => { clearTimeout(_nameTimer); _nameTimer = null; };
+    const _nameMove = (e) => {
+      if (!_nameTimer) return;
+      if (Math.abs(e.clientX - _nameStartX) > 10 || Math.abs(e.clientY - _nameStartY) > 10) _nameCancel();
+    };
+    // Pointer events fire ONCE for both touch and mouse. Listening to touch AND
+    // mouse made every tap run twice, because browsers synthesise mouse events
+    // after a touch, so the collapse toggled straight back and looked dead.
+    label.addEventListener('pointerdown',   _nameStart);
+    label.addEventListener('pointerup',     _nameEnd);
+    label.addEventListener('pointermove',   _nameMove);
+    label.addEventListener('pointercancel', _nameCancel);
+    label.addEventListener('pointerleave',  _nameCancel);
+
+    // Tapping the ACTIVE / OFF badge still turns the prompt on and off
     statusBadge.addEventListener('click', () => { if (!mpRemoveMode) toggleMpSlotActive(slot.id); });
 
     // Textarea
@@ -14486,6 +14644,26 @@ function renderMpSlots() {
     textarea.maxLength = 900;
     textarea.value = slot.text;
     textarea.disabled = !masterPromptEnabled;
+
+    // Hard press the text box to hear the prompt read out loud
+    let _speakTimer = null;
+    const _speakStart = () => {
+      clearTimeout(_speakTimer);
+      _speakTimer = setTimeout(() => {
+        _speakTimer = null;
+        if (mpRemoveMode || !slot.text.trim()) return;
+        textarea.blur();          // don't leave the keyboard up while it reads
+        _mpMarkSpeaking(slotEl);
+        speakMpSlot(slot.text);
+      }, 500);
+    };
+    const _speakCancel = () => { clearTimeout(_speakTimer); _speakTimer = null; };
+    textarea.addEventListener('pointerdown',   _speakStart);
+    textarea.addEventListener('pointerup',     _speakCancel);
+    textarea.addEventListener('pointermove',   _speakCancel);
+    textarea.addEventListener('pointercancel', _speakCancel);
+    textarea.addEventListener('pointerleave',  _speakCancel);
+    textarea.addEventListener('contextmenu', (e) => { e.preventDefault(); });
 
     textarea.addEventListener('input', async () => {
       slot.text = textarea.value;
@@ -14517,11 +14695,16 @@ function renderMpSlots() {
     charCountDiv.className = 'mp-slot-char-count';
     charCountDiv.innerHTML = '<span>' + slot.text.length + '</span> / 900 characters';
 
+    if (slot.collapsed) slotEl.classList.add('mp-slot-collapsed');
+
     slotEl.appendChild(header);
     slotEl.appendChild(textarea);
     slotEl.appendChild(charCountDiv);
     container.appendChild(slotEl);
   });
+
+  // Re-apply the scroll-wheel highlight, which the rebuild above wiped
+  updateMpSelection();
 }
 
 function toggleMpSlotActive(id) {
@@ -14537,6 +14720,7 @@ function toggleMpSlotActive(id) {
 function addMpSlot() {
   masterPromptSlots.push({ id: 'mp_' + Date.now() + '_' + Math.random().toString(36).substr(2, 5), text: '', active: false });
   saveMasterPrompt();
+  currentMpIndex = masterPromptSlots.length - 1;
   renderMpSlots();
   // Scroll to bottom so new slot is visible
   setTimeout(() => {

@@ -1,7 +1,8 @@
 /* Power Grotesk Font */
 @font-face {
     font-family: 'Power Grotesk';
-    src: url('./PowerGrotesk-Regular.woff') format('woff');
+    src: url('./PowerGrotesk-Regular.woff') format('woff'),
+         url('https://fonts.cdnfonts.com/s/95219/PowerGrotesk-Regular.woff') format('woff');
     font-weight: 400;
     font-style: normal;
     font-display: swap;
@@ -9,7 +10,8 @@
 
 @font-face {
     font-family: 'Power Grotesk';
-    src: url('./PowerGrotesk-Bold.woff') format('woff');
+    src: url('./PowerGrotesk-Bold.woff') format('woff'),
+         url('https://fonts.cdnfonts.com/s/95219/PowerGrotesk-Bold.woff') format('woff');
     font-weight: 700;
     font-style: normal;
     font-display: swap;
@@ -6232,7 +6234,7 @@ body {
     background-color: rgba(20, 100, 180, 0.92);
 }
 
-/* ══════════════��════════════════════
+/* ═══════════════════════════════════
    PERFORMANCE FIX 2: Replace transition:all with specific properties
    ═══════════════════════════════════ */
 
@@ -7375,4 +7377,86 @@ button, .touchable {
 @keyframes importSpeakingPulse {
     0%, 100% { background-color: rgba(254, 95, 0, 0.32); }
     50%      { background-color: rgba(254, 95, 0, 0.10); }
+}
+
+/* ===== MASTER PROMPT: NAMES, COLLAPSE, WHEEL FOCUS ===== */
+
+/* Name gets all the room left of the badge and clips with "..." */
+.mp-slot-label {
+    flex: 1;
+    min-width: 0;
+    margin-right: 2vw;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    /* Fill the header height so the whole area left of the badge is tappable */
+    align-self: stretch;
+    display: flex;
+    align-items: center;
+}
+
+.mp-slot-status {
+    flex-shrink: 0;
+}
+
+/* Caret shows whether the text box is open or collapsed */
+.mp-slot-label::before {
+    content: '\25BE\00A0';
+    color: #FE5F00;
+}
+.mp-slot-collapsed .mp-slot-label::before {
+    content: '\25B8\00A0';
+}
+
+/* Collapsed: only the name and the ACTIVE / OFF badge remain */
+.mp-slot.mp-slot-collapsed .mp-slot-textarea,
+.mp-slot.mp-slot-collapsed .mp-slot-char-count {
+    display: none;
+}
+.mp-slot.mp-slot-collapsed .mp-slot-header {
+    margin-bottom: 0;
+}
+
+/* Scroll-wheel highlight. Active prompts keep their green border and get an
+   orange ring outside it, so "active" and "highlighted" stay tellable apart. */
+.mp-slot.mp-slot-focus {
+    border-color: #FE5F00;
+    box-shadow: 0 0 0 2px rgba(254, 95, 0, 0.35);
+}
+.mp-slot.mp-slot-active.mp-slot-focus {
+    border-color: #4CAF50;
+    box-shadow: 0 0 0 2px #FE5F00;
+}
+
+/* Inline rename box */
+.mp-slot-rename-input {
+    flex: 1;
+    min-width: 0;
+    margin-right: 2vw;
+    background: #000;
+    color: #fff;
+    border: 1px solid #FE5F00;
+    border-radius: 1vw;
+    padding: 1vw 2vw;
+    font-size: 3.5vw;
+    font-weight: 600;
+    font-family: inherit;
+    box-sizing: border-box;
+}
+
+/* Lit while the R1 fetches and reads the prompt aloud. The colour lives in the
+   keyframes because !important would override the animation. */
+.mp-slot.mp-slot-speaking {
+    animation: mpSpeakingPulse 1.1s ease-in-out infinite;
+}
+@keyframes mpSpeakingPulse {
+    0%, 100% { background-color: rgba(254, 95, 0, 0.22); }
+    50%      { background-color: rgba(254, 95, 0, 0.06); }
+}
+
+/* Active prompt names on the settings button can get long */
+#current-master-prompt-display {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
