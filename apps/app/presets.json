@@ -1633,6 +1633,33 @@
     "additionalInstructions": "• Transform ONLY the subject.\n• Keep the background completely unchanged.\n• Preserve the original environment, lighting, perspective, colors, shadows, and every background object exactly as photographed.\n• Completely discard the original photographic subject before reconstruction.\n• NEVER wrap aluminum foil around the original subject.\n• NEVER blend photographic textures with aluminum foil.\n• The original subject must not remain visible anywhere.\n• Every visible part of the subject must be reconstructed entirely from authentic household aluminum foil.\n• Preserve the subject's exact identity, facial structure, hairstyle, expression, age, ethnicity, body proportions, pose, silhouette, and recognizable features.\n• Facial features must emerge solely through the shaping, folding, compressing, and sculpting of aluminum foil.\n• Hair must be recreated entirely from folded, twisted, layered, or crumpled foil.\n• Clothing must also be reconstructed entirely from aluminum foil while preserving recognizable folds and silhouette.\n• Preserve authentic aluminum foil characteristics including realistic wrinkles, creases, sharp folds, compressed areas, stretched sections, layered sheets, tiny tears, crinkles, dents, burnished surfaces, and metallic reflections.\n• Every visible surface must clearly appear to be ordinary household aluminum foil.\n• Never create chrome, polished steel, liquid metal, mercury, or generic silver surfaces.\n• Preserve realistic foil thickness and edge characteristics.\n• Show convincing hand-shaped construction with natural imperfections throughout the sculpture.\n• Maintain realistic specular reflections, light scattering, and subtle distortions unique to aluminum foil.\n• The sculpture should appear physically possible and entirely handcrafted.\n• The finished artwork should resemble a genuine aluminum foil sculpture photographed after completion.\n• Master prompt instructions always override the selected option whenever conflicts occur.\n\nFINAL VALIDATION — Before producing the final image, verify ALL of the following:\n\n✓ ONLY the subject has been transformed.\n✓ The background remains completely unchanged.\n✓ The original photographic subject has been completely removed.\n✓ Every visible part of the subject has been reconstructed entirely from real aluminum foil.\n✓ Aluminum foil has NOT been wrapped around the original subject.\n✓ Authentic foil wrinkles, folds, creases, crinkles, dents, edges, and metallic reflections are clearly visible.\n✓ Facial features have been sculpted entirely through aluminum foil construction.\n✓ No photographic textures remain.\n✓ The subject remains immediately recognizable.\n✓ The artwork resembles a genuine handcrafted aluminum foil sculpture rather than a metallic statue.\n✓ If ANY answer is NO, regenerate the image until every requirement is satisfied."
   },
   {
+    "name": "AMANTECA FEATHERWORK",
+    "category": [
+      "MESOAMERICAN",
+      "FEATHER",
+      "MOSAIC",
+      "INDIGENOUS",
+      "ART"
+    ],
+    "message": "Take a picture and build it from iridescent bird feathers glued one at a time onto bark paper, the Aztec featherworker's craft in which color shifts as you move.",
+    "options": [
+      {
+        "id": "001",
+        "text": "Dense overlapping feathers with turquoise and emerald iridescence shifting across the surface"
+      },
+      {
+        "id": "002",
+        "text": "Fine cut feather fragments laid like tiny tiles with hard color boundaries"
+      },
+      {
+        "id": "003",
+        "text": "Long quill feathers radiating outward from a densely worked centre"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Every color must be a real feather with visible barb structure\n• Iridescence shifts hue across the same feather\n• Feathers overlap like shingles, each slightly lifted\n• Bark paper substrate visible at the edges"
+  },
+  {
     "name": "AMATE BARK PAINTING",
     "category": [
       "MEXICAN",
@@ -1668,6 +1695,29 @@
     }
   ],
   "additionalInstructions": "IDENTITY PRESERVATION (CRITICAL):\n• The volumetric, three-dimensional preservation must flawlessly maintain the subject's exact facial proportions and distinct expression through the golden tint of the resin. No modern clothing; the final image must look like a macro photograph of an invaluable prehistoric specimen discovery."
+  },
+  {
+    "name": "AMBERGRIS",
+    "category": [
+      "TRANSFORMATION",
+      "ORGANIC",
+      "WEATHERED",
+      "MARINE",
+      "ART"
+    ],
+    "message": "Take a picture and transform the image as if made from ambergris found on a beach — waxy, marbled, sea-weathered and worth more than it looks.",
+    "options": [
+      {
+        "id": "001",
+        "text": "Grey waxy mass with dark marbled banding and a crusted surface"
+      },
+      {
+        "id": "002",
+        "text": "Sea-worn surface pitted and bleached pale by salt and sun"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Waxy dull surface with no gloss\n• Marbled internal layering visible where broken\n• Color range grey to black-brown\n• Sand and salt crust in the pits"
   },
   {
     "name": "AMERICAN GIRL/BOY DOLL",
@@ -2840,6 +2890,33 @@
     "additionalInstructions": ""
   },
   {
+    "name": "APERTURE GRILLE",
+    "category": [
+      "RETRO",
+      "DISPLAY",
+      "TECHNICAL",
+      "DETAIL",
+      "ART"
+    ],
+    "message": "Take a picture and show it through an aperture grille — vertical phosphor stripes with two fine damper wires crossing horizontally, seen very close.",
+    "options": [
+      {
+        "id": "001",
+        "text": "Extreme close on vertical RGB stripes with damper wire shadows"
+      },
+      {
+        "id": "002",
+        "text": "Moderate distance where the stripes just begin to merge"
+      },
+      {
+        "id": "003",
+        "text": "Screen curvature visible with the stripes bending at the edges"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Vertical stripe triads, never a dot mask\n• Two horizontal damper wire shadows\n• Slight bloom around bright areas\n• Black between the stripes"
+  },
+  {
     "name": "AQUATINT",
     "category": [
       "PRINTMAKING",
@@ -2974,6 +3051,33 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "ARTE MADI",
+    "category": [
+      "ABSTRACT",
+      "GEOMETRIC",
+      "SOUTH AMERICAN",
+      "MODERNISM",
+      "ART"
+    ],
+    "message": "Take a picture and construct it as a shaped-frame geometric abstraction — the support itself irregular, with elements breaking past its edge.",
+    "options": [
+      {
+        "id": "001",
+        "text": "Irregular shaped frame with flat geometric planes and a cut-out void"
+      },
+      {
+        "id": "002",
+        "text": "Articulated construction with one element projecting forward"
+      },
+      {
+        "id": "003",
+        "text": "Bright primaries on an asymmetric polygonal support"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Frame shape irregular and integral to the design\n• Elements crossing or breaking the boundary\n• Flat unmodulated primary color\n• Real depth from layered planes"
   },
   {
     "name": "ARTGERM STYLE",
@@ -3777,6 +3881,33 @@
     "additionalInstructions": "FINAL RESULT:\nA fully reconstructed scene where all forms are created from vertically extruded basalt columns, forming a geological structure that defines the subject through height variation."
   }, 
   {
+    "name": "BATHYMETRIC CHART",
+    "category": [
+      "CARTOGRAPHY",
+      "OCEAN",
+      "DATA",
+      "TECHNICAL",
+      "ART"
+    ],
+    "message": "Take a picture and map it as bathymetry — the shape of a sea floor built from depth soundings, rendered in graded blues with contour intervals.",
+    "options": [
+      {
+        "id": "001",
+        "text": "Graded blue depth bands with contour intervals"
+      },
+      {
+        "id": "002",
+        "text": "Shaded relief bathymetry with a submarine canyon cutting through"
+      },
+      {
+        "id": "003",
+        "text": "Contour-only version in fine line with depth figures"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Depth increases through a consistent blue gradient\n• Contour lines closed\n• Submarine landforms geologically plausible."
+  },
+  {
     "name": "BATIK",
     "category": [
       "ART",
@@ -3930,7 +4061,7 @@
     "options": [
     {
       "id": "001",
-      "text": "Frame of capped comb with cells varying in colour and fill — Completely reconstruct the subject from densely packed hexagonal beeswax cells, with irregularly capped cells, varying honey-filled cells, empty cells, and naturally different wax tones. The subject's exact facial geometry, recognizable features, body, clothing, and silhouette must emerge entirely from the arrangement and three-dimensional structure of the comb."
+      "text": "Frame of capped comb with cells varying in color and fill — Completely reconstruct the subject from densely packed hexagonal beeswax cells, with irregularly capped cells, varying honey-filled cells, empty cells, and naturally different wax tones. The subject's exact facial geometry, recognizable features, body, clothing, and silhouette must emerge entirely from the arrangement and three-dimensional structure of the comb."
     },
     {
       "id": "002",
@@ -4367,6 +4498,33 @@
     }
     ],
     "additionalInstructions": "• Transform ONLY the subject.\n• Keep the background completely unchanged.\n• Preserve the original environment, lighting, perspective, colors, shadows, and every background object exactly as photographed.\n• Completely discard the original photographic subject before reconstruction.\n• NEVER place bicycle parts over the original subject.\n• NEVER blend photographic textures with bicycle components.\n• The original subject must not remain visible anywhere.\n• Every visible part of the subject must be reconstructed entirely from authentic bicycle parts.\n• Preserve the subject's exact identity, facial structure, hairstyle, expression, age, ethnicity, body proportions, pose, silhouette, and recognizable features.\n• Facial features must emerge entirely through the intelligent arrangement of bicycle components.\n• Hair should be recreated using chains, brake cables, spokes, cable housing, or other authentic bicycle components.\n• Clothing must also be reconstructed entirely from bicycle parts while preserving recognizable folds and silhouette.\n• Every component must remain immediately recognizable as a genuine bicycle part.\n• Include authentic bicycle components such as chains, chainrings, cassette gears, sprockets, rims, spokes, hubs, cranksets, pedals, handlebars, stems, seat posts, saddles, brake levers, brake calipers, disc rotors, derailleurs, cables, bearings, quick releases, reflectors, and frame tubing.\n• Preserve realistic machining marks, polished aluminum, chrome plating, painted finishes, rubber grips, grease, rust, scratches, and authentic metallic reflections.\n• Never invent fantasy mechanical parts.\n• Never create a functioning robot, cyborg, or person wearing bicycle equipment.\n• This is a static handcrafted sculpture assembled entirely from real bicycle components.\n• Preserve realistic weight, welds, fasteners, balance, and physical construction.\n• The finished artwork should resemble a genuine museum-quality bicycle-part sculpture photographed after completion.\n• Master prompt instructions always override the selected option whenever conflicts occur.\n\nFINAL VALIDATION — Before producing the final image, verify ALL of the following:\n\n✓ ONLY the subject has been transformed.\n✓ The background remains completely unchanged.\n✓ The original photographic subject has been completely removed.\n✓ Every visible part of the subject has been reconstructed entirely from authentic bicycle parts.\n✓ Bicycle parts have NOT been placed over the original subject.\n✓ Every bicycle component remains individually recognizable.\n✓ Facial features have been sculpted entirely through bicycle component placement.\n✓ No photographic textures remain.\n✓ The subject remains immediately recognizable.\n✓ The artwork resembles a genuine handcrafted bicycle-part sculpture rather than a robot or cyborg.\n✓ If ANY answer is NO, regenerate the image until every requirement is satisfied."
+  },
+  {
+    "name": "BIDRIWARE",
+    "category": [
+      "INDIAN",
+      "METAL",
+      "INLAY",
+      "DECCAN",
+      "ART"
+    ],
+    "message": "Take a picture and inlay it as bidri — silver wire hammered into blackened zinc alloy, the metal darkened with a special soil so the silver blazes against it.",
+    "options": [
+      {
+        "id": "001",
+        "text": "Fine silver wire arabesques against a matte jet-black ground"
+      },
+      {
+        "id": "002",
+        "text": "Broad silver sheet inlay forming bold shapes"
+      },
+      {
+        "id": "003",
+        "text": "Combined wire and sheet with dense floral patterning"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Ground must be dead matte black, never grey\n• Silver bright and slightly proud of the surface\n• Inlay lines of consistent width\n• Small pitting in the black alloy"
   },
   {
     "name": "BIG BOY",
@@ -5006,7 +5164,7 @@
       },
       {
         "id": "003",
-        "text": "Bold colour blocks with wide seam allowances forming a grid"
+        "text": "Bold color blocks with wide seam allowances forming a grid"
       }
     ],
     "randomizeOptions": true,
@@ -7848,6 +8006,33 @@
     "additionalInstructions": "STYLE ENFORCEMENT:\n\u2022 Preserve recognizable subject identity in chibi form\n\u2022 Use 2:1 or 3:1 head-to-body ratio (super-deformed)\n\u2022 Include enormous, sparkling eyes with detailed highlights\n\u2022 Simplify hands to mittens or small nubs\n\u2022 Add kawaii elements (blush marks, sparkles, sweat drops)\n\u2022 Use clean, smooth digital anime coloring\n\u2022 Show exaggerated emotional expression\n\u2022 Include cute accessories or props\n\u2022 Reference chibi/SD anime art style conventions\n\u2022 Maintain the adorable, collectible figure aesthetic"
   },
   {
+    "name": "CHICANO POSTER",
+    "category": [
+      "POSTER",
+      "GRAPHIC",
+      "POLITICAL",
+      "SCREENPRINT",
+      "ART"
+    ],
+    "message": "Take a picture and screenprint it as a movement poster — flat bold color, heavy black key drawing and lettering that carries the message.",
+    "options": [
+      {
+        "id": "001",
+        "text": "Three color screenprint with a heavy black key and bold lettering"
+      },
+      {
+        "id": "002",
+        "text": "High contrast image with a single spot color and a slogan band"
+      },
+      {
+        "id": "003",
+        "text": "Layered print with visible registration edges and ink texture"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Flat spot colors with no gradients\n• Heavy black key drawing over the color\n• Lettering integrated as a design element\n• Screen texture and slight misregistration"
+  },
+  {
     "name": "CHILDHOOD VERSION",
     "category": [
       "OPTIONS",
@@ -8138,6 +8323,33 @@
     ],
     "randomizeOptions": true,
     "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Every cut is a clean triangular facet\n• Shadow inside each chip does the drawing\n• Wood grain influences the cut edges\n• Surface between chips left perfectly flat"
+  },
+  {
+    "name": "CHLADNI PLATE",
+    "category": [
+      "SCIENTIFIC",
+      "SOUND",
+      "PATTERN",
+      "GEOMETRIC",
+      "ART"
+    ],
+    "message": "Take a picture and transform the subject into a Chladni figure — sand on a bowed metal plate migrating away from the vibrating areas into stark nodal lines.",
+    "options": [
+      {
+        "id": "001",
+        "text": "Sharp symmetrical nodal figure in white sand on a dark plate"
+      },
+      {
+        "id": "002",
+        "text": "Complex high-mode pattern figure with many intersecting nodal curves"
+      },
+      {
+        "id": "003",
+        "text": "Simple low-mode cross with wide clear regions"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Sand collects only where the plate is still\n• Pattern symmetric about the plate axes\n• Plate surface clear where vibration is strongest\n• Grain scatter visible at the pattern edges"
   },
   {
     "name": "CHOCOLATE SCULPTURE",
@@ -9067,6 +9279,33 @@
     "additionalInstructions": "Each coffee ring must look like a real dried coffee stain \u2014 darker at edges, lighter in center. The portrait must emerge from ring placement, not from painting. The white paper should be visible between rings. Subject must be clearly recognizable from the ring pattern."
   },
   {
+    "name": "CONSENT BANNER",
+    "category": [
+      "HUMOR",
+      "DIGITAL",
+      "INTERFACE",
+      "MODERN",
+      "COMEDY"
+    ],
+    "message": "Take a picture and bury it behind a consent banner offering one enormous accept button and a manage preferences link the size of a footnote.",
+    "options": [
+      {
+        "id": "001",
+        "text": "Full-width banner with a huge accept button and tiny secondary link"
+      },
+      {
+        "id": "002",
+        "text": "Layered preference panel with dozens of toggles all pre-enabled"
+      },
+      {
+        "id": "003",
+        "text": "Second banner appearing immediately after the first is dismissed"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Banner overlaying and obscuring the content\n• Primary button visually dominant\n• Secondary options deliberately small\n• Modern web interface styling"
+  },
+  {
     "name": "CAFFENOL",
     "category": [
       "PHOTOGRAPHY",
@@ -9118,7 +9357,7 @@
       }
     ],
     "randomizeOptions": true,
-    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Formwork texture must be legible in the surface\n• Tie holes and joint lines regularly spaced\n• Slight colour variation between pours\n• Aggregate visible where the surface is worn"
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Formwork texture must be legible in the surface\n• Tie holes and joint lines regularly spaced\n• Slight color variation between pours\n• Aggregate visible where the surface is worn"
   },
   {
     "name": "COINED",
@@ -12700,6 +12939,33 @@
     "additionalInstructions": "IDENTITY PRESERVATION (CRITICAL):\n\n• The transformed cartoon character must clearly resemble the subject\n• Preserve unique facial identity\n• Preserve distinctive facial traits\n• Preserve facial proportions\n• Preserve recognizable hairstyle characteristics\n• Recognition must come from the transformed cartoon character itself\n\nANTI-CHEAT:\n\n• Do not create a generic cartoon character\n• Do not create a face swap\n• Do not paste the subject into cartoon artwork\n• Do not use cartoon filters\n• Do not replace the subject's identity with existing franchise characters\n\nFINAL RESULT:\nThe subject must become an authentic DePatie-Freleng cartoon character rendered entirely in the selected franchise universe while remaining immediately recognizable as the original subject."
   },
   {
+    "name": "DESERT VARNISH",
+    "category": [
+      "TRANSFORMATION",
+      "GEOLOGICAL",
+      "WEATHERED",
+      "PATINA",
+      "ART"
+    ],
+    "message": "Take a picture and coat it in desert varnish — a manganese film built over millennia on exposed rock, then scratched through to reveal the pale stone beneath.",
+    "options": [
+      {
+        "id": "001",
+        "text": "Near-black varnish scratched through to pale stone in a petroglyph line"
+      },
+      {
+        "id": "002",
+        "text": "Partially varnished with the film thickest on the most exposed faces"
+      },
+      {
+        "id": "003",
+        "text": "Freshly pecked marks bright against deeply varnished surroundings"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Varnish darkest where exposure was longest\n• Marks reveal pale unweathered stone beneath\n• Film thin, following the rock surface exactly\n• Slight sheen on the varnished areas"
+  },
+  {
     "name": "DETAILED SURREAL GRAPHICS",
     "category": [
       "SURREAL",
@@ -12726,6 +12992,33 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "• Preserve recognizable identity\n• Transform the entire image into Dexter's Laboratory aesthetics\n• Use angular geometric design throughout the scene\n• Integrate retro-futuristic laboratory technology\n• Include Dexter, Dee Dee, and Mandark when appropriate\n• Emphasize UPA influences and Tartakovsky visual language\n• Use flat colors, strong silhouettes, and graphic composition\n• Maintain mid-century science-fiction design principles"
+  },
+  {
+    "name": "DHOKRA LOST WAX",
+    "category": [
+      "INDIAN",
+      "TRIBAL",
+      "METAL",
+      "CASTING",
+      "ART"
+    ],
+    "message": "Take a picture and cast it in dhokra — wax threads wound over a earthen core, encased, burned out and filled with brass, leaving the thread pattern permanently in the metal.",
+    "options": [
+      {
+        "id": "001",
+        "text": "Fine wound wax-thread texture covering the whole surface"
+      },
+      {
+        "id": "002",
+        "text": "Bold elongated tribal proportions with sparse thread decoration"
+      },
+      {
+        "id": "003",
+        "text": "Freshly cast with sprue stubs and rough casting flash still attached"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Surface must show the wound thread pattern in the metal\n• Forms elongated and stylised, never naturalistic\n• Warm brass color with darkened recesses\n• Slight casting irregularity and porosity"
   },
   {
     "name": "DÍA DE LOS MUERTOS — CATRINA / CATRÍN",
@@ -13315,6 +13608,33 @@
     "additionalInstructions": "EXCLUSION ENFORCEMENT:\n\n• Only the requested subject and environment should appear"
   },
   {
+    "name": "DONG HO PRINT",
+    "category": [
+      "VIETNAMESE",
+      "WOODBLOCK",
+      "FOLK",
+      "FESTIVE",
+      "ART"
+    ],
+    "message": "Take a picture and print it as a Dong Ho folk woodblock — natural pigments on paper coated with crushed shell, one block per color, printed for the new year.",
+    "options": [
+      {
+        "id": "001",
+        "text": "Bold flat color blocks with a heavy black key line over shimmering shell ground"
+      },
+      {
+        "id": "002",
+        "text": "Limited palette of red, yellow and indigo from natural sources"
+      },
+      {
+        "id": "003",
+        "text": "Slight misregistration with color sitting beside its outline"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Paper ground shimmers with crushed shell\n• colors flat, opaque and few\n• Black key block printed last over the colors\n• Registration imperfect between blocks"
+  },
+  {
     "name": "DOODLE-INK FUSION",
     "category": [
       "INK ART",
@@ -13849,7 +14169,7 @@
   {
     "name": "DUCK SEASON OR WABBIT SEASON",
     "category": ["OPTIONS", "GAME", "CARTOON", "TRANSFORMATION", "HUMOR"],
-    "message": "Take a picture and draw a single wide side-scrolling scene in the style of a 1940s golden-age theatrical cartoon short. THREE characters stand in a woodland clearing, all facing across the frame the way an old animation cel is staged.\n\nTHE HUNTER IS THE SUBJECT (NON-NEGOTIABLE):\n• Keep the subject's real face clearly recognizable — it must obviously be them\n• Redraw that face in classic rubber-hose cartoon style: round and chubby with plump cheeks, a small chin and simple ink outlines. The likeness stays; the rendering becomes a drawing\n• EXPRESSION: enormous wide eyes and a broad determined grin, utterly convinced they are about to win\n• COSTUME: a red and black checked hunting jacket, brown trousers tucked into boots, and a soft hunting cap with the earflaps sticking out sideways\n• The hunter carries a comically oversized double-barrelled shotgun with a bell-shaped muzzle\n• The hunter is POINTING with one outstretched arm at whichever animal the sign names\n\nTHE OTHER TWO CHARACTERS:\n• A tall grey cartoon hare, lanky and relaxed, leaning on one elbow with heavy-lidded eyes and a knowing smirk, entirely unbothered\n• A short black cartoon duck, round-bodied with a bright orange bill, furious and mid-splutter with both wings flung up\n• Both are original cartoon designs, not any existing character\n\nTHE GAG — ONE of them holds a hand-painted wooden SIGN on a stake, and the sign always points the hunter at the OTHER one:\n• If DUCK SEASON is chosen: the HARE holds the sign, it reads DUCK SEASON — FIRE! in bold hand-painted capitals, and the hunter points at the DUCK. The duck is outraged.\n• If RABBIT SEASON is chosen: the DUCK holds the sign, it reads RABBIT SEASON — FIRE! in bold hand-painted capitals, and the hunter points at the HARE. The hare is unimpressed.\n• The sign text must be spelled exactly as written and be clearly readable\n\nSTYLE:\n• Flat painted woodland background with simple stylised trees and a bright blue sky\n• Bold black ink outlines, flat cel colour, visible paint texture\n• Wide horizontal composition, all three characters in profile or three-quarter view",
+    "message": "Take a picture and draw a single wide side-scrolling scene in the style of a 1940s golden-age theatrical cartoon short. THREE characters stand in a woodland clearing, all facing across the frame the way an old animation cel is staged.\n\nTHE HUNTER IS THE SUBJECT (NON-NEGOTIABLE):\n• Keep the subject's real face clearly recognizable — it must obviously be them\n• Redraw that face in classic rubber-hose cartoon style: round and chubby with plump cheeks, a small chin and simple ink outlines. The likeness stays; the rendering becomes a drawing\n• EXPRESSION: enormous wide eyes and a broad determined grin, utterly convinced they are about to win\n• COSTUME: a red and black checked hunting jacket, brown trousers tucked into boots, and a soft hunting cap with the earflaps sticking out sideways\n• The hunter carries a comically oversized double-barrelled shotgun with a bell-shaped muzzle\n• The hunter is POINTING with one outstretched arm at whichever animal the sign names\n\nTHE OTHER TWO CHARACTERS:\n• A tall grey cartoon hare, lanky and relaxed, leaning on one elbow with heavy-lidded eyes and a knowing smirk, entirely unbothered\n• A short black cartoon duck, round-bodied with a bright orange bill, furious and mid-splutter with both wings flung up\n• Both are original cartoon designs, not any existing character\n\nTHE GAG — ONE of them holds a hand-painted wooden SIGN on a stake, and the sign always points the hunter at the OTHER one:\n• If DUCK SEASON is chosen: the HARE holds the sign, it reads DUCK SEASON — FIRE! in bold hand-painted capitals, and the hunter points at the DUCK. The duck is outraged.\n• If RABBIT SEASON is chosen: the DUCK holds the sign, it reads RABBIT SEASON — FIRE! in bold hand-painted capitals, and the hunter points at the HARE. The hare is unimpressed.\n• The sign text must be spelled exactly as written and be clearly readable\n\nSTYLE:\n• Flat painted woodland background with simple stylised trees and a bright blue sky\n• Bold black ink outlines, flat cel color, visible paint texture\n• Wide horizontal composition, all three characters in profile or three-quarter view",
     "randomizeOptions": true,
     "verdicts": { "win": "WHAT'S UP DOC?", "lose": "YOU'RE DESPICABLE!" },
     "optionGroups": [
@@ -14225,6 +14545,33 @@
     "additionalInstructions": "FINAL RESULT:\nThe final image must look like a powerful, authentic breakdancing moment — the subject fully immersed in skilled movement, captured at the height of energy and expression, with a strong sense of rhythm and physical mastery."
   },
   {
+    "name": "ELECTROFORMED COPPER",
+    "category": [
+      "TRANSFORMATION",
+      "METAL",
+      "GROWN",
+      "CRAFT",
+      "ART"
+    ],
+    "message": "Take a picture and grow copper onto it in a plating bath, metal accreting molecule by molecule into a knobbly organic crust that follows every detail.",
+    "options": [
+      {
+        "id": "001",
+        "text": "Bright warm copper with a nodular botryoidal surface texture"
+      },
+      {
+        "id": "002",
+        "text": "Patinated growth with green verdigris in the deepest hollows"
+      },
+      {
+        "id": "003",
+        "text": "Thin even deposit preserving fine surface detail underneath"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Metal grown, not cast — surface nodular and organic\n• Thicker deposit on protruding areas\n• Fine original detail preserved beneath\n• Warm copper color with directional lustre"
+  },
+  {
   "name": "ELECTRON MICROSCOPE SCAN",
   "category": [
     "MICROSCOPY",
@@ -14469,6 +14816,33 @@
     "additionalInstructions": "EXCLUSIONS:\n• No parody\n• No invented facts\n• No speculation beyond established knowledge\n\nCOMPOSITION & FRAME:\n• The FULL encyclopedia page must be visible\n• All columns, images, captions, and text fully in frame\n• All four corners visible\n• No cropping, zooming, or partial views\n\nSTYLE:\n• Academic, neutral, professional\n• Museum or reference-book quality\n\nFINAL RESULT:\nThe image should appear as a complete, real encyclopedia page about a single object from the photo, presenting accurate factual information with a formal printed layout and a reference image derived from the original picture."
   },
   {
+    "name": "ENDOSCOPIC VIEW",
+    "category": [
+      "PHOTOGRAPHY",
+      "MEDICAL",
+      "OPTICAL",
+      "CLINICAL",
+      "ART"
+    ],
+    "message": "Take a picture through an endoscope — a circular field seen down a rigid tube, lit by its own ring light, everything wet and close and slightly fisheyed.",
+    "options": [
+      {
+        "id": "001",
+        "text": "Circular field with strong barrel distortion and a bright central hotspot"
+      },
+      {
+        "id": "002",
+        "text": "Wet reflective surfaces with specular highlights from the ring light"
+      },
+      {
+        "id": "003",
+        "text": "Frame with an instrument entering from one side and depth falling to black"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Circular image inside a black frame\n• Ring-light hotspot at the centre falling off fast\n• Strong barrel distortion\n• Surfaces wet with hard specular highlights"
+  },
+  {
     "name": "ENERGY FIELD",
     "category": [
       "SCI-FI",
@@ -14599,6 +14973,33 @@
     "additionalInstructions": ""
   },
   {
+    "name": "ESTOFADO POLYCHROME",
+    "category": [
+      "SPANISH",
+      "SCULPTURE",
+      "GILDING",
+      "BAROQUE",
+      "ART"
+    ],
+    "message": "Take a picture and finish it in estofado — gold leaf laid over gesso, painted over in color, then scratched back through so gold shows in the pattern beneath.",
+    "options": [
+      {
+        "id": "001",
+        "text": "Rich robe patterning scratched through deep red to reveal gold beneath"
+      },
+      {
+        "id": "002",
+        "text": "Blue and gold with fine sgraffito damask patterning"
+      },
+      {
+        "id": "003",
+        "text": "Worn devotional finish with paint losses exposing the bole and gold"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Gold revealed by scratching, never painted on top\n• Painted color thin enough to sit over the leaf\n• Pattern follows the fall of the drapery\n• Flesh areas smooth and matte against the gilt"
+  },
+  {
     "name": "ETCH A SKETCH",
     "category": [
       "TOY",
@@ -14609,6 +15010,33 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "ETEGAMI",
+    "category": [
+      "JAPANESE",
+      "PAINTING",
+      "POSTCARD",
+      "INFORMAL",
+      "ART"
+    ],
+    "message": "Take a picture and paint it as etegami — a hand-painted postcard done quickly with a wobbly brush line, a few words and a red seal, valued for being imperfect.",
+    "options": [
+      {
+        "id": "001",
+        "text": "Wobbly sumi outline with pale watercolor and a red seal"
+      },
+      {
+        "id": "002",
+        "text": "Bold single subject filling the card with a short handwritten line"
+      },
+      {
+        "id": "003",
+        "text": "Loose wet washes bleeding beyond the drawn line"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Line deliberately unsteady and slow\n• color thin, bleeding slightly past the outline\n• Red seal placed in a corner\n• Postcard proportions with a written margin"
   },
   {
     "name": "EUROTRIP",
@@ -17892,6 +18320,33 @@
     "additionalInstructions": "FORCED FOCAL DEPTH ENGINE (ABSOLUTE):\n\n• Rebuild the image around an aggressive near/far focus hierarchy\n• The main subject must be treated as the nearest camera plane\n• Everything behind the subject must be treated as distant receding space\n\nFOREGROUND SUBJECT PRIORITY (CRITICAL):\n\n• Subject must be rendered in maximum clarity and highest available resolution\n• Facial details, clothing details, skin texture, hair strands, and foreground edges must be crisp and highly readable\n• Subject must appear cleaner, sharper, and more detailed than every other part of the image\n\n• The subject should feel almost cut out from the environment through clarity alone\n\nFOREGROUND SCALE DOMINANCE (NEW — CRITICAL):\n\n• The subject must be given a subtle but noticeable foreground size advantage relative to the surrounding scene\n• Subject should occupy slightly more visual area than natural perspective would normally suggest\n• This enlargement must remain believable and not cartoonish\n• The goal is to make the subject feel optically closer to the viewer than the background geometry\n\n• Background objects should feel comparatively more distant and reduced\n\nEDGE GLOW SEPARATION:\n\n• Add a subtle thin luminous glow border around the full outer silhouette of the subject\n• Glow must be soft white or pale light gray only\n• Glow should lightly separate the subject from the softer background\n• Glow must remain thin and controlled — not neon\n\nMICRO PARALLAX SHADOW SHELF:\n\n• Add a faint soft shadow recession directly behind the subject silhouette\n• This shadow must sit slightly behind and around the subject, as if the subject is hovering a small distance in front of the background plane\n• Shadow must be subtle dark gray diffusion only\n• Shadow should never look like a drop shadow graphic — it must feel like optical depth separation\n\nBACKGROUND DEGRADATION (MANDATORY):\n\n• All background elements must lose fine detail\n• Background resolution must visibly degrade compared to subject\n• Background must become soft, defocused, lower clarity, and slightly smeared by distance blur\n\n• Distant walls, furniture, trees, sky, room details, and all rear objects should feel optically out of focus\n\nDEPTH OF FIELD EXAGGERATION:\n\n• Use strong shallow-depth-of-field behavior\n• Subject plane = hard focus lock\n• Rear planes = increasingly blurred with distance\n• Blur must intensify the farther the background recedes\n\nATMOSPHERIC DEPTH COMPRESSION:\n\n• Background contrast must be reduced compared to the subject\n• Background may become slightly hazy, muted, or low-energy in tonal intensity\n• Fine background textures should feel softened by atmospheric recession\n\n• Subject remains contrast-rich and visually dominant while background feels optically pushed away\n\nCONTRAST HIERARCHY:\n\n• Subject must carry the highest local contrast in the image\n• Background contrast should be flatter and softer\n• Subject edges should visually dominate the frame\n\nSPATIAL PUSH EFFECT:\n\n• The combination of scale dominance + sharpness + glow + hover shadow + atmospheric haze + background blur must make the subject feel physically detached and pushed toward the viewer\n• Viewer should perceive the subject as occupying a much closer optical plane than the environment\n\nANTI-CHEAT:\n\n• Do NOT simply blur the whole image except face\n• Do NOT use ordinary portrait shallow blur only\n• The foreground/background difference must be dramatic\n• Do NOT leave background equally sharp\n• Do NOT cartoonishly enlarge the subject\n\nFAIL CONDITIONS:\n\n• Subject not substantially sharper than background → FAIL\n• Background still high resolution → FAIL\n• No visible foreground detachment → FAIL\n• Glow border missing or too weak → FAIL\n• Hover shadow missing → FAIL\n• Subject scale not visually dominant → FAIL\n\nQUALITY:\n\n• Strong forced perspective separation\n• Razor-sharp foreground subject\n• Heavy distant optical blur\n• Atmospheric background recession\n• Clean luminous edge isolation\n• Hovering subject-plane illusion\n• Subtle foreground enlargement\n• Powerful monocular pop-out depth"
   },
   {
+    "name": "FOCUS STACK",
+    "category": [
+      "PHOTOGRAPHY",
+      "MACRO",
+      "TECHNICAL",
+      "PRECISE",
+      "ART"
+    ],
+    "message": "Take many pictures at stepped focus distances and merge them, so the entire subject is sharp from front to back in a way no single exposure could achieve.",
+    "options": [
+      {
+        "id": "001",
+        "text": "Extreme macro fully sharp from nearest to furthest point"
+      },
+      {
+        "id": "002",
+        "text": "Stack with faint halo artefacts at the depth transitions"
+      },
+      {
+        "id": "003",
+        "text": "Deep stack with an impossibly sharp foreground and background together"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Everything sharp — no plane of focus anywhere\n• Subtle halo artefacts where slices were blended\n• Bokeh absent entirely despite macro scale\n• Lighting flat and even to allow the merge"
+  },
+  {
     "name": "FOIL EMBOSS",
     "category": [
       "ART",
@@ -19468,6 +19923,33 @@
   "additionalInstructions": "• Transform ONLY the subject.\n• Keep the background completely unchanged.\n• The gingerbread material must look authentically baked, displaying a dry, slightly coarse texture, golden-brown edges from the oven, and clean cookie cuts.\n• Hair must be entirely sculpted from molded gingerbread dough or piped out in rows of thick, high-relief white or colored royal icing.\n• Clothing must be translated into raised dough panels or intricately decorated frosting lines—never looking like real fabric.\n• Identity must remain immediately recognizable through the distinctive outline of the face, hairstyle shape, and expression neatly piped on with fine artisan baker's precision.\n• Avoid a cheap plastic cartoon look; the cookie should look heavy, brittle, and edible.\n\nFINAL VALIDATION — Before producing the final image, verify ALL of the following:\n\n✓ ONLY the subject has been transformed.\n✓ The background remains completely unchanged.\n✓ The subject is a complete full-body gingerbread cookie sculpture.\n✓ The icing decorations look 3D and pipe-applied, not flatly drawn.\n✓ The cookie texture shows authentic baked porosity and clean dough edges.\n✓ Likeness is clearly recognizable through the baking transformation.\n✓ If ANY answer is NO, regenerate."
   },
   {
+    "name": "GIRIH TILING",
+    "category": [
+      "ISLAMIC",
+      "GEOMETRIC",
+      "TILING",
+      "MATHEMATICAL",
+      "ART"
+    ],
+    "message": "Take a picture and resolve it into girih — interlocking strapwork built from a hidden set of tiles, generating a pattern that never repeats in an obvious way.",
+    "options": [
+      {
+        "id": "001",
+        "text": "Fine strapwork lines in gold over a deep blue ground"
+      },
+      {
+        "id": "002",
+        "text": "Bold two-color strapwork with pentagonal and decagonal stars"
+      },
+      {
+        "id": "003",
+        "text": "Layered pattern with a large-scale figure overlaid on a fine ground"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Strapwork lines cross over and under consistently\n• Star polygons geometrically exact\n• Pattern continues logically past the frame edge\n• Line weight uniform throughout"
+  },
+  {
     "name": "GLASGOW SCHOOL",
     "category": [
       "SCOTTISH",
@@ -20261,7 +20743,7 @@
     { "title": "MOUSTACHE", "options": [{"id":"001","text":"Moustache"},{"id":"002","text":"No Moustache"}] },
     { "title": "NOSE", "options": [{"id":"001","text":"Big Nose"},{"id":"002","text":"Small Nose"}] }
     ],
-    "additionalInstructions": "FINAL RESULT — APPLIES TO BOTH NORMAL USE AND GAME MODE:\nPresent the result as a GUESS WHO? board-game character card, never as a plain portrait. The finished image must always contain:\n1. The subject rendered as the character, real face fully recognizable, with every selected trait clearly applied.\n2. A card frame around the portrait in the style of a guessing-game character tile, with the heading \"GUESS WHO?\" across the top.\n3. A nameplate along the bottom of the card. If a character name is supplied below, print that exact name. If no name is supplied, print a short invented first name that suits the character.\n4. A small trait list down one side of the card listing the selected traits: gender, hair colour, hat, glasses, eye colour, beard, moustache, nose.\n\nOVERRIDE: if a section headed \"=== GAME RESULT ===\" appears below, also show everything it specifies — the verdict, the player's guess and the correct answer — laid out on or beside the card.",
+    "additionalInstructions": "FINAL RESULT — APPLIES TO BOTH NORMAL USE AND GAME MODE:\nPresent the result as a GUESS WHO? board-game character card, never as a plain portrait. The finished image must always contain:\n1. The subject rendered as the character, real face fully recognizable, with every selected trait clearly applied.\n2. A card frame around the portrait in the style of a guessing-game character tile, with the heading \"GUESS WHO?\" across the top.\n3. A nameplate along the bottom of the card. If a character name is supplied below, print that exact name. If no name is supplied, print a short invented first name that suits the character.\n4. A small trait list down one side of the card listing the selected traits: gender, hair color, hat, glasses, eye color, beard, moustache, nose.\n\nOVERRIDE: if a section headed \"=== GAME RESULT ===\" appears below, also show everything it specifies — the verdict, the player's guess and the correct answer — laid out on or beside the card.",
   "gameRoster": [
     { "name":"OLIVER", "GENDER":"Male","HAIR COLOR":"Brown","HAT":"No Hat","GLASSES":"Glasses","EYE COLOR":"Blue","BEARD":"No Beard","MOUSTACHE":"Moustache","NOSE":"Big Nose" },
     { "name":"EMMA", "GENDER":"Female","HAIR COLOR":"Blonde","HAT":"No Hat","GLASSES":"No Glasses","EYE COLOR":"Green","BEARD":"No Beard","MOUSTACHE":"No Moustache","NOSE":"Small Nose" },
@@ -20569,6 +21051,33 @@
     "additionalInstructions": ""
   },
   {
+    "name": "HANJI LAYERED PAPER",
+    "category": [
+      "KOREAN",
+      "PAPER",
+      "LAYERED",
+      "CRAFT",
+      "ART"
+    ],
+    "message": "Take a picture and build it from hanji — mulberry paper torn and layered wet, each sheet adding translucency and fibre until the image emerges from depth.",
+    "options": [
+      {
+        "id": "001",
+        "text": "Many translucent layers with visible long mulberry fibres"
+      },
+      {
+        "id": "002",
+        "text": "Torn-edge collage with deckled edges catching light"
+      },
+      {
+        "id": "003",
+        "text": "Dyed layers building color depth through overlap"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Long visible fibres running through every sheet\n• Torn edges soft and feathered, never cut\n• Translucency building with each layer\n• color deepening only where layers overlap"
+  },
+  {
     "name": "HANNA-BARBERA",
     "category": [
       "ART",
@@ -20715,6 +21224,33 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• White-on-white embroidery\n• Geometric satin stitch blocks\n• Cut and drawn threadwork openings\n• Lace-like openwork effect\n• Even-weave fabric texture"
+  },
+  {
+    "name": "HARLEM RENAISSANCE",
+    "category": [
+      "PAINTING",
+      "MODERNISM",
+      "AMERICAN",
+      "HISTORICAL",
+      "ART"
+    ],
+    "message": "Take a picture and paint it in the visual language of the Harlem Renaissance — flattened silhouetted figures, rhythmic geometry and jazz-age structure.",
+    "options": [
+      {
+        "id": "001",
+        "text": "Flattened silhouette figures in graded bands with rhythmic repetition"
+      },
+      {
+        "id": "002",
+        "text": "Angular modernist composition with strong diagonal structure"
+      },
+      {
+        "id": "003",
+        "text": "Warm palette with figures modelled in flat interlocking planes"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Figures flattened into interlocking planes\n• Rhythmic repetition structuring the composition\n• Palette warm and restrained\n• Line and shape doing the work, not modelling"
   },
   {
     "name": "HARRIS SHUTTER EFFECT",
@@ -23046,6 +23582,33 @@
     "additionalInstructions": ""
   },
   {
+    "name": "ISHIHARA PLATE",
+    "category": [
+      "OPTICAL",
+      "COLOR",
+      "TEST",
+      "SCIENTIFIC",
+      "ART"
+    ],
+    "message": "Take a picture and build it as a color vision plate — a circular field of colored dots in which a figure is visible only through hue, never through brightness.",
+    "options": [
+      {
+        "id": "001",
+        "text": "Circular dot field with the figure emerging purely from hue difference"
+      },
+      {
+        "id": "002",
+        "text": "Plate where the figure and ground share identical lightness"
+      },
+      {
+        "id": "003",
+        "text": "Dots of varied size with the figure only just perceptible"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Figure must be defined by hue alone, never by value\n• Dots of varied size packed to a circular boundary\n• No outlines anywhere\n• Background dots neutral in the same lightness range"
+  },
+  {
     "name": "IS IT CAKE?",
     "category": [
       "HUMOR",
@@ -23068,6 +23631,33 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "ISLAMIC STAR POLYGON",
+    "category": [
+      "GEOMETRIC",
+      "ISLAMIC",
+      "PATTERN",
+      "MATHEMATICAL",
+      "ART"
+    ],
+    "message": "Take a picture and construct it from star polygons — points radiating on a strict polygonal grid, every line arriving exactly where it must.",
+    "options": [
+      {
+        "id": "001",
+        "text": "Twelve-pointed stars with interlocking rosettes filling the field"
+      },
+      {
+        "id": "002",
+        "text": "Eight and sixteen point stars in a two-scale composition"
+      },
+      {
+        "id": "003",
+        "text": "Line-only construction showing the underlying polygonal grid"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Star points geometrically exact and equal\n• Pattern extending logically past the frame\n• Line weight uniform throughout\n• Interlacing crossing over and under consistently"
   },
   {
     "name": "ISOMETRIC",
@@ -23870,6 +24460,33 @@
     "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Bold sweeping brushstrokes\n• Minimal or plain backgrounds\n• Strong dark outlines\n• Flat areas of vibrant color\n• Simplified dynamic forms"
   },
   {
+    "name": "KALLITYPE",
+    "category": [
+      "PHOTOGRAPHY",
+      "ALTERNATIVE",
+      "IRON",
+      "HISTORICAL",
+      "ART"
+    ],
+    "message": "Take a picture and print it as a kallitype — an iron-silver process brushed onto watercolour paper, giving warm brown tones and a long delicate scale.",
+    "options": [
+      {
+        "id": "001",
+        "text": "Warm sepia brown with visible brush-coated borders"
+      },
+      {
+        "id": "002",
+        "text": "Cooler toned version shifted toward neutral by gold toning"
+      },
+      {
+        "id": "003",
+        "text": "Split toned with warm highlights and cool shadows"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Hand-coated brush edges framing the image\n• Long smooth tonal scale, soft shoulder\n• Paper fibre visible in the highlights\n• Warm brown image colour, never neutral black"
+  },
+  {
     "name": "KANGRA MINIATURE",
     "category": [
       "INDIAN",
@@ -23923,6 +24540,33 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "• Preserve recognizable identity while adapting the subject into the Katamari Damacy universe\n• Transform the entire image into a whimsical world of rolling Katamari spheres\n• Apply simplified geometric cartoon design throughout the image\n• Emphasize playful object collection and joyful absurdity\n• Include the Prince, King of All Cosmos, cousins, and franchise characters when appropriate\n• Populate the scene with large numbers of everyday objects attached to Katamari spheres\n• Use bright Japanese pop-art color palettes and highly saturated colors\n• Incorporate whimsical scale changes and surreal visual relationships\n• Favor imagination, joy, and absurdity over realism\n• Avoid photorealism, horror, military themes, gritty realism, realistic physics, or modern CGI rendering\n• Ensure the final image feels colorful, whimsical, surreal, cheerful, and unmistakably Katamari Damacy"
+  },
+  {
+    "name": "KATAZOME STENCIL",
+    "category": [
+      "JAPANESE",
+      "TEXTILE",
+      "RESIST",
+      "STENCIL",
+      "ART"
+    ],
+    "message": "Take a picture and dye it as katazome — rice paste pushed through a mulberry paper stencil onto cloth, then dyed, the pasted areas staying undyed.",
+    "options": [
+      {
+        "id": "001",
+        "text": "Fine repeating stencil pattern with crisp white reserved shapes"
+      },
+      {
+        "id": "002",
+        "text": "Bold large motif with visible paste texture at the edges"
+      },
+      {
+        "id": "003",
+        "text": "Multi-dye version with several colours built by repeated pasting"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Reserved areas are undyed cloth, never white pigment\n• Paste edges slightly raised and softly irregular\n• Stencil bridges visible as connecting threads in the pattern\n• Cloth weave showing through the dye"
   },
   {
     "name": "KAWS STYLE",
@@ -23989,6 +24633,33 @@
     "message": "Take a picture and transform the subject into an authentic Kewpie doll.\n\nTRANSFORMATION RULES (NON-NEGOTIABLE):\n• The subject must become a Kewpie doll\n• The subject must NOT appear as a real person holding a doll\n• The subject must NOT appear as a person wearing a doll costume\n• The subject must NOT appear as a photograph with a pasted-on face\n• The subject's head and body must take on the signature chubby, wide-eyed Kewpie proportions\n• The subject's facial identity must be translated into molded Kewpie doll design language\n• Recognition should come from facial structure, eye shape, smile characteristics, nose shape, cheek structure, jawline, expression, hairline, hair characteristics, and overall identity\n• The subject must remain recognizable while fully transformed\n• Preserve recognizable facial proportions mapped onto the doll's head shape\n• Preserve distinctive facial traits\n• Preserve actual hair color (rendered as the molded topknot/side tufts or painted hair strands)\n• Preserve actual hairline (translated into the iconic pointed topknot hairline)\n• Preserve actual hair characteristics\n• No realistic skin; must be matte bisque porcelain, celluloid, or soft vinyl texture\n• No realistic eyes; must be the large, side-glancing, painted Kewpie-style eyes\n• No photographic features\n• No pasted-on face\n• No face swap appearance\n\nCHARACTER DESIGN RULES:\n• Authentic Rose O'Neill Kewpie doll body shape (chubby torso, tiny blue wings on the back of the neck, starfish-like hands)\n• Distinctive molded topknot hair structure infused with the subject's hairline and color\n• Subject's face sculpted into the cheerful, chubby-cheeked doll form\n• Subject identity drives final molded design\n• The final product should appear professionally manufactured\n\nMATERIAL RULES:\n• Bisque ceramic, antique celluloid, or vintage soft vinyl appearance\n• Delicate, airbrushed matte finish with rosy cheeks\n• Distinct molded joint lines at the shoulders\n\nSTYLE RULES:\n• Official classic Kewpie design aesthetics\n• Vintage toy archive or soft studio product photography appearance\n\nVERSION-SPECIFIC RULES:\n• Facial identity must be recreated through molded doll sculpture\n• Subject must become the doll itself\n• Face must never appear pasted onto the doll",
     "randomizeOptions": false,
     "additionalInstructions": "The final doll must simultaneously read as both an authentic Kewpie doll and the subject. Recognition must come from sculptural doll reinterpretation rather than face swapping."
+  },
+  {
+    "name": "KEVLAR WEAVE",
+    "category": [
+      "TRANSFORMATION",
+      "MATERIAL",
+      "TECHNICAL",
+      "MODERN",
+      "ART"
+    ],
+    "message": "Take a picture and weave it from aramid fibre — a golden basketweave cloth, set in resin, that reflects light in a distinctive dry sheen along the fibre direction.",
+    "options": [
+      {
+        "id": "001",
+        "text": "Golden plain weave with a dry directional sheen under clear resin"
+      },
+      {
+        "id": "002",
+        "text": "Twill weave with the diagonal running across the form"
+      },
+      {
+        "id": "003",
+        "text": "Hybrid weave with dark carbon tows crossing the aramid"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Weave pattern must remain crisp and regular\n• Sheen changes along the fibre direction\n• Resin surface glossy over a matte fibre\n• Fibre colour warm gold, never yellow paint"
   },
   {
     "name": "KEYCHAIN OR MAGNET",
@@ -24105,6 +24776,33 @@
     "additionalInstructions": "FINAL RESULT:\nA stunning Kintsugi-inspired transformation where the subject appears as repaired porcelain with golden crack lines, embodying the Japanese philosophy of finding beauty in imperfection."
   },
   {
+    "name": "KIRIGAMI",
+    "category": [
+      "JAPANESE",
+      "PAPER",
+      "CUT",
+      "DIMENSIONAL",
+      "ART"
+    ],
+    "message": "Take a picture and build it as kirigami — a single sheet cut and folded so the image rises off the page into standing planes when opened.",
+    "options": [
+      {
+        "id": "001",
+        "text": "Pop-up architecture rising at ninety degrees from the fold"
+      },
+      {
+        "id": "002",
+        "text": "Radial cut opening into a symmetrical standing form"
+      },
+      {
+        "id": "003",
+        "text": "Multi-layer pop-up with depth planes at several distances"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• One sheet only — cut and folded, never glued\n• Standing planes cast real shadows on the base\n• Every raised element traceable back to its cut\n• Fold line clearly visible through the middle"
+  },
+  {
     "name": "KIRLIAN PHOTOGRAPHY",
     "category": [
       "PHOTOGRAPHY",
@@ -24208,6 +24906,33 @@
     "additionalInstructions": "The wood grain must be visible and interact naturally with the scored design. The lines should be fine and precise. The overall effect should be subtle \u2014 dark lines on pale wood. Subject identity must be preserved."
   },
   {
+    "name": "KOMBUCHA LEATHER",
+    "category": [
+      "TRANSFORMATION",
+      "BIOMATERIAL",
+      "ORGANIC",
+      "SUSTAINABLE",
+      "ART"
+    ],
+    "message": "Take a picture and grow it from bacterial cellulose — a wet mat dried into a translucent amber skin that wrinkles, shrinks and behaves like leather that remembers being alive.",
+    "options": [
+      {
+        "id": "001",
+        "text": "Translucent amber skin with shrinkage wrinkles and irregular thickness"
+      },
+      {
+        "id": "002",
+        "text": "Darker layered growth with visible strata and cloudy patches"
+      },
+      {
+        "id": "003",
+        "text": "Very thin dried film, nearly transparent, cracking at the edges"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Material translucent with visible internal layering\n• Wrinkles and shrinkage distortion throughout\n• Colour ranges amber to deep brown\n• Edges curling and slightly brittle"
+  },
+  {
     "name": "KOMOREBI LIGHT FILTER",
     "category": [
       "ART",
@@ -24219,6 +24944,33 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "The light should be warm and golden with green-tinted shadows from chlorophyll filtering. Bokeh circles of light should appear in out-of-focus areas. The overall mood should be peaceful and contemplative \u2014 a quiet forest moment."
+  },
+  {
+    "name": "KUBA RAFFIA",
+    "category": [
+      "AFRICAN",
+      "TEXTILE",
+      "RAFFIA",
+      "GEOMETRIC",
+      "ART"
+    ],
+    "message": "Take a picture and weave it as Kuba cloth — raffia palm fibre woven then embroidered in cut-pile, giving a velvety surface of shifting geometric blocks.",
+    "options": [
+      {
+        "id": "001",
+        "text": "Cut-pile velvet surface with interlocking angular geometry"
+      },
+      {
+        "id": "002",
+        "text": "Flat woven ground with appliqué patches and stitched outlines"
+      },
+      {
+        "id": "003",
+        "text": "Densely patterned panel where the pattern deliberately breaks and restarts"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Cut-pile areas read as soft velvet against flat weave\n• Geometry interlocking and deliberately irregular\n• Natural raffia colour range: cream, rust, black\n• Hand-stitched edges and joins visible"
   },
   {
     "name": "KUBRICK FILM",
@@ -24285,6 +25037,87 @@
     ],
     "randomizeOptions": true,
     "additionalInstructions": ""
+  },
+  {
+    "name": "KUFIC CALLIGRAPHY",
+    "category": [
+      "ISLAMIC",
+      "CALLIGRAPHY",
+      "GEOMETRIC",
+      "HISTORICAL",
+      "ART"
+    ],
+    "message": "Take a picture and set it in square kufic — letterforms squared onto a strict grid until writing and pattern become indistinguishable.",
+    "options": [
+      {
+        "id": "001",
+        "text": "Square kufic grid in two colours filling a perfect square"
+      },
+      {
+        "id": "002",
+        "text": "Foliated kufic with leaf terminals sprouting from the vertical strokes"
+      },
+      {
+        "id": "003",
+        "text": "Brick-pattern kufic imitating architectural bond"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• All strokes on a strict square grid\n• Uniform stroke width and gap width\n• Reads simultaneously as text and as tiling\n• No curves anywhere"
+  },
+  {
+    "name": "KUMIKO LATTICE",
+    "category": [
+      "JAPANESE",
+      "WOOD",
+      "GEOMETRIC",
+      "JOINERY",
+      "ART"
+    ],
+    "message": "Take a picture and build it as kumiko — a lattice of tiny wooden strips fitted together without nails or glue, the image emerging from where the pattern thickens.",
+    "options": [
+      {
+        "id": "001",
+        "text": "Asanoha hemp-leaf pattern with the image formed by density variation"
+      },
+      {
+        "id": "002",
+        "text": "Mixed patterns in adjacent panels forming the composition"
+      },
+      {
+        "id": "003",
+        "text": "Backlit lattice with shoji paper behind, reading as pure silhouette"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Every joint is a cut fit, never a butt joint\n• Strip width absolutely consistent throughout\n• Pattern geometry mathematically exact\n• Wood grain running along each strip"
+  },
+  {
+    "name": "LABRADORITE SCHILLER",
+    "category": [
+      "TRANSFORMATION",
+      "MINERAL",
+      "IRIDESCENT",
+      "GEOLOGICAL",
+      "ART"
+    ],
+    "message": "Take a picture and cut it from labradorite, a dull grey stone until the angle is right and a sheet of blue and gold fire flashes across the whole face.",
+    "options": [
+      {
+        "id": "001",
+        "text": "Broad electric blue flash across a dark grey ground"
+      },
+      {
+        "id": "002",
+        "text": "Multicolour spectrolite with gold, green and violet zones"
+      },
+      {
+        "id": "003",
+        "text": "Partial flash with half the stone still dull grey"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Schiller appears only across specific planes\n• Stone dull and grey where the angle is wrong\n• Flash sheet-like, not sparkly\n• Fine internal lamellar twinning visible"
   },
   {
     "name": "LANDMARKS",
@@ -24658,6 +25491,33 @@
     ],
     "randomizeOptions": true,
     "additionalInstructions": "FINAL RESULT:\nA completely authentic-looking state license plate where the subject's face has been transformed into a simplified, official-style graphic illustration occupying the central emblem position. The design perfectly matches the chosen state's official license plate style, with appropriate colors, typography, layout, and graphic treatment. The vanity text personalizes the plate based on the image content, creating a believable custom plate that could genuinely exist as an official state-issued document."
+  },
+  {
+    "name": "LICHTENBERG FIGURE",
+    "category": [
+      "TRANSFORMATION",
+      "ELECTRICAL",
+      "FRACTAL",
+      "DRAMATIC",
+      "ART"
+    ],
+    "message": "Take a picture and burn it in with a Lichtenberg figure — branching fractal channels scorched by a discharge, splitting endlessly into finer forks.",
+    "options": [
+      {
+        "id": "001",
+        "text": "Deep burned channels in pale wood, branching into fine capillaries"
+      },
+      {
+        "id": "002",
+        "text": "Discharge frozen in clear acrylic as a three dimensional fern"
+      },
+      {
+        "id": "003",
+        "text": "Surface tracking across a plate with fine sooty branch tips"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Branching must be genuinely fractal, splitting repeatedly\n• Channels thickest at the origin, finest at the tips\n• Charring or clouding along every channel\n• Branch angles consistent throughout"
   },
   {
     "name": "LICHTENSTEIN",
@@ -25865,6 +26725,33 @@
     }
     ],
     "additionalInstructions": "• Transform ONLY the subject.\n• Leave the background completely unchanged.\n• Preserve the original environment, lighting, perspective, colors, shadows, and every background object exactly as photographed.\n• Completely discard the original subject before reconstruction.\n• Do NOT place M&Ms on top of the original person.\n• Do NOT blend photographic textures with candy.\n• The subject must be entirely rebuilt from individual M&M candies.\n• Preserve the subject's exact identity, facial structure, hairstyle, hair color, expression, age, ethnicity, body proportions, pose, silhouette, and recognizable features.\n• Facial features must emerge solely from intelligent candy placement.\n• Every candy must remain recognizable as a real M&M.\n• Preserve the candy shell, printed 'm' logo, glossy coating, rounded shape, and realistic reflections.\n• Never flatten M&Ms into colored dots or pixels.\n• Never turn the artwork into a smooth digital mosaic.\n• Use realistic spacing between candies.\n• Slightly rotate candies naturally so they appear individually placed by hand.\n• Avoid repeating identical candy arrangements.\n• Candy should cast realistic shadows and have visible three-dimensional depth.\n• Recreate eyes using carefully selected M&M colors and placement while maintaining the subject's expression.\n• Hair must also be recreated entirely from M&Ms using appropriate color variation.\n• Clothing must be recreated entirely from M&Ms.\n• The final artwork should resemble a real handcrafted candy installation.\n• Master prompt instructions always override the selected option whenever conflicts occur.\n\nFINAL VALIDATION — Before producing the final image, verify ALL of the following:\n\n✓ ONLY the subject has been transformed.\n✓ The background remains completely unchanged.\n✓ No original photographic pixels remain on the subject.\n✓ The subject is entirely reconstructed from real M&M candies.\n✓ No M&Ms are simply placed over the original subject.\n✓ Individual candies remain clearly visible.\n✓ Each candy retains realistic shape, gloss, and printed details.\n✓ The subject remains immediately recognizable.\n✓ The artwork resembles a genuine handcrafted M&M mosaic.\n✓ If ANY answer is NO, regenerate the image until every requirement is satisfied."
+  },
+  {
+    "name": "MA NEGATIVE SPACE",
+    "category": [
+      "JAPANESE",
+      "MINIMAL",
+      "COMPOSITION",
+      "AESTHETIC",
+      "ART"
+    ],
+    "message": "Take a picture in which the emptiness carries the composition — the subject small and offset, the void around it doing most of the work.",
+    "options": [
+      {
+        "id": "001",
+        "text": "Subject very small in one corner with vast empty ground"
+      },
+      {
+        "id": "002",
+        "text": "Two elements far apart with the distance as the true subject"
+      },
+      {
+        "id": "003",
+        "text": "Subject partly cropped at an edge with the rest of the frame open"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Empty area occupying most of the frame\n• Subject deliberately small and offset\n• Tonal range narrow and quiet\n• Nothing filling the space for its own sake"
   },
   {
     "name": "MACCHIAIOLI",
@@ -28664,6 +29551,33 @@
     "additionalInstructions": ""
   },
   {
+    "name": "MINITEL SCREEN",
+    "category": [
+      "RETRO",
+      "DIGITAL",
+      "FRENCH",
+      "TERMINAL",
+      "ART"
+    ],
+    "message": "Take a picture and display it on a Minitel terminal — coarse character graphics glowing on a small monochrome tube behind slightly curved glass.",
+    "options": [
+      {
+        "id": "001",
+        "text": "Coarse character-cell image glowing amber on a curved screen"
+      },
+      {
+        "id": "002",
+        "text": "Menu page with numbered options and a blinking cursor"
+      },
+      {
+        "id": "003",
+        "text": "Screen photographed at an angle showing the tube curvature"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Character-cell resolution, extremely coarse\n• Phosphor glow with slight bloom\n• Screen curvature and reflections\n• Blinking block cursor present."
+  },
+  {
     "name": "MIRROR IMAGE",
     "category": [
       "DOPPELGANGER",
@@ -29024,6 +29938,33 @@
     "additionalInstructions": ""
   },
   {
+    "name": "MONOBATH DEVELOP",
+    "category": [
+      "PHOTOGRAPHY",
+      "DARKROOM",
+      "FILM",
+      "EXPERIMENTAL",
+      "ART"
+    ],
+    "message": "Take a picture and develop it in a monobath, where developer and fixer work at once and you get whatever contrast the chemistry decides to give you.",
+    "options": [
+      {
+        "id": "001",
+        "text": "Compressed contrast with soft highlights and lifted blacks"
+      },
+      {
+        "id": "002",
+        "text": "Uneven development with streaking from the reel edges"
+      },
+      {
+        "id": "003",
+        "text": "Coarse grain with slightly milky, incompletely cleared base"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Contrast compressed and slightly unpredictable\n• Development streaks running from the sprocket edges\n• Grain enlarged and clumpy\n• Base tone slightly milky"
+  },
+  {
     "name": "MONOCHROME PHOTOGRAPHY (BLACK AND WHITE)",
     "category": [
       "PHOTOGRAPHY",
@@ -29243,15 +30184,28 @@
     "name": "MORDANÇAGE",
     "category": [
       "PHOTOGRAPHY",
+      "DARKROOM",
+      "DECAY",
       "EXPERIMENTAL",
-      "SURREAL",
-      "PROCESS",
       "ART"
     ],
-    "message": "Take a picture and transform it into a mordançage photograph. Mordançage (also called etch-bleach) is an experimental darkroom technique where a silver gelatin print is partially bleached and the softened emulsion is physically manipulated - lifted, folded, or peeled away - creating surreal, ghostly images with veils of displaced gelatin and reversed tones.",
-    "options": [],
-    "randomizeOptions": false,
-    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Displaced gelatin veils and folds\n• Ghostly reversed tones\n• Surreal ethereal quality\n• Physical emulsion manipulation\n• Experimental darkroom aesthetic"
+    "message": "Take a picture and bleach the print in mordançage so the dark emulsion lifts away from the paper in veils that can be draped and dried where they fall.",
+    "options": [
+      {
+        "id": "001",
+        "text": "Emulsion lifting in translucent veils over the shadows"
+      },
+      {
+        "id": "002",
+        "text": "Heavily degraded with the emulsion draped and folded back on itself"
+      },
+      {
+        "id": "003",
+        "text": "Partial lift with reversal in the darkest areas"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Emulsion physically lifted and displaced\n• Veils translucent, showing the paper beneath\n• Tonal reversal in the heaviest areas\n• Print surface uneven and rippled\n• Ghostly reversed tones\n• Surreal ethereal quality\n• Physical emulsion manipulation\n• Experimental darkroom aesthetic."
   },
   {
     "name": "MORNING TALK SHOW",
@@ -31220,6 +32174,33 @@
     "additionalInstructions": "VISUAL REQUIREMENTS:\n• Flat areas of muted, harmonious color (no modeling or shading)\n• Simplified, decorative forms with sinuous outlines\n• Intimate domestic subject matter: interiors, gardens, family scenes\n• Decorative patterning: wallpaper, textiles, and surfaces treated equally\n• Muted, warm palette: ochres, olive greens, soft purples, warm browns\n• Japanese print influence: flat space, cropped compositions, high viewpoint\n• No atmospheric perspective — all planes equally flat\n• Subject integrated into the decorative surface pattern\n• Reference artists: Pierre Bonnard, Édouard Vuillard, Maurice Denis, Paul Sérusier"
   },
   {
+    "name": "NACRE LAYER",
+    "category": [
+      "TRANSFORMATION",
+      "IRIDESCENT",
+      "ORGANIC",
+      "MARINE",
+      "ART"
+    ],
+    "message": "Take a picture and build it from nacre — thousands of microscopic aragonite platelets stacked in layers so thin they split light into shifting colour.",
+    "options": [
+      {
+        "id": "001",
+        "text": "Deep rainbow iridescence with visible growth banding"
+      },
+      {
+        "id": "002",
+        "text": "Silvery white nacre with soft pink and green overtones"
+      },
+      {
+        "id": "003",
+        "text": "Fractured edge showing the stacked platelet layers directly"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Colour from layer interference, shifting with angle\n• Growth lines visible as concentric banding\n• Surface undulating, never flat\n• Layered structure visible at broken edges"
+  },
+  {
     "name": "NAIL ART",
     "category": [
       "OPTIONS",
@@ -31439,6 +32420,33 @@
     }
   ],
   "additionalInstructions": "• Subject must be formed entirely by empty negative space\n• Background field must be continuous and uninterrupted outside subject cutout\n• No photographic shading allowed\n• Clean silhouette readability required"
+  },
+  {
+    "name": "NEGRITUDE MODERNISM",
+    "category": [
+      "PAINTING",
+      "MODERNISM",
+      "AFRICAN",
+      "POSTCOLONIAL",
+      "ART"
+    ],
+    "message": "Take a picture and paint it in a mid-century modernism that draws its geometry from African sculptural form rather than European abstraction.",
+    "options": [
+      {
+        "id": "001",
+        "text": "Angular carved planes with strong sculptural mass and earth palette"
+      },
+      {
+        "id": "002",
+        "text": "Elongated stylised figure against a flat patterned ground"
+      },
+      {
+        "id": "003",
+        "text": "Bold mask-derived geometry with incised linear detail"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Forms derived from carving, with visible plane changes\n• Elongation and stylisation of proportion\n• Earth palette with strong black structure\n• Flat patterned ground behind the figure"
   },
   {
     "name": "NEO-EXPRESSIONISM",
@@ -32099,6 +33107,33 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "NORMAL MAP",
+    "category": [
+      "DIGITAL",
+      "TECHNICAL",
+      "3D",
+      "SURFACE",
+      "ART"
+    ],
+    "message": "Take a picture and encode it as a tangent-space normal map — surface direction stored as colour, giving the characteristic lavender field with cyan and magenta slopes.",
+    "options": [
+      {
+        "id": "001",
+        "text": "Full normal map with dominant lavender and strong directional tints at the edges"
+      },
+      {
+        "id": "002",
+        "text": "High frequency detail map showing fine surface texture only"
+      },
+      {
+        "id": "003",
+        "text": "Split view with the normal map beside its rendered result"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Flat areas must be the neutral lavender base\n• Slopes tint toward cyan, magenta, green and red by direction\n• No lighting or shadow baked in\n• Sharp edges producing hard colour transitions"
   },
   {
     "name": "NOT IT!",
@@ -32994,7 +34029,7 @@
       }
     ],
     "randomizeOptions": true,
-    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Mountain and valley folds distinguished by colour\n• Folds meeting at vertices in even numbers\n• Square boundary clearly marked\n• No shading — line diagram only"
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Mountain and valley folds distinguished by color\n• Folds meeting at vertices in even numbers\n• Square boundary clearly marked\n• No shading — line diagram only"
   },
   {
     "name": "ORIENTALIST PAINTING",
@@ -33124,6 +34159,33 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "• Preserve recognizable identity while emphasizing painterly execution\n• Use visible brushstrokes and textured paint application\n• Build forms through color and light rather than precise outlines\n• Allow expressive mark-making throughout the image\n• Emphasize tactile surface qualities and impasto textures\n• Avoid photographic realism and invisible brushwork\n• Make the artistic process clearly visible\n• Produce an authentic painterly artwork"
+  },
+  {
+    "name": "PAINTING XRAY",
+    "category": [
+      "CONSERVATION",
+      "IMAGING",
+      "MONOCHROME",
+      "TECHNICAL",
+      "ART"
+    ],
+    "message": "Take a picture as the radiograph of a painting — lead white glowing bright, the canvas weave visible, and something underneath that nobody expected.",
+    "options": [
+      {
+        "id": "001",
+        "text": "Greyscale radiograph with bright lead white and visible canvas weave"
+      },
+      {
+        "id": "002",
+        "text": "Composite showing a hidden earlier composition beneath"
+      },
+      {
+        "id": "003",
+        "text": "Detail radiograph with tack holes and stretcher bars visible"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Brightness maps material density, not colour\n• Canvas weave visible as a regular grid\n• Stretcher bars and tacks showing as dark lines\n• No colour anywhere"
   },
   {
     "name": "PAISLEY",
@@ -34375,6 +35437,33 @@
     "additionalInstructions": ""
   },
   {
+    "name": "PENROSE TILING",
+    "category": [
+      "MATHEMATICAL",
+      "GEOMETRIC",
+      "PATTERN",
+      "APERIODIC",
+      "ART"
+    ],
+    "message": "Take a picture and tile it with two shapes that cover the plane completely and never repeat — order without periodicity.",
+    "options": [
+      {
+        "id": "001",
+        "text": "Kite and dart tiling with matching rules visible as arcs"
+      },
+      {
+        "id": "002",
+        "text": "Rhombus tiling in two colours showing fivefold symmetry"
+      },
+      {
+        "id": "003",
+        "text": "Inflated tiling with a large-scale structure emerging from small tiles"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Only two tile shapes used throughout\n• Pattern never repeats by translation\n• Fivefold symmetry apparent locally\n• Tiles fitting exactly with no gaps"
+  },
+  {
     "name": "PEPPA PIG",
     "category": [
       "CARTOON",
@@ -34686,6 +35775,33 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "STYLE ENFORCEMENT:\n• Preserve subject identity in photochrom color\n• Colors derived from hand-separation of B&W photo\n• Slightly artificial but beautiful color interpretation\n• Subtle lithographic dot pattern visible at close inspection\n• Reference the Photoglob Zürich photochrom process (1880s-1900s)\n• 6-15 color separations creating complex color\n• Slightly oversaturated, idealized colors\n• The image sits between photography and illustration\n• Travel postcard aesthetic and format\n• The overall effect should be beautiful, slightly unreal, and Victorian"
+  },
+  {
+    "name": "PHOTOELASTICITY",
+    "category": [
+      "SCIENTIFIC",
+      "OPTICAL",
+      "STRESS",
+      "ABSTRACT",
+      "ART"
+    ],
+    "message": "Take a picture through crossed polarising filters so internal stress appears as bands of spectral colour, revealing where the material is under strain.",
+    "options": [
+      {
+        "id": "001",
+        "text": "Dense rainbow fringes concentrated at the stress points"
+      },
+      {
+        "id": "002",
+        "text": "Sparse wide bands across a lightly loaded transparent form"
+      },
+      {
+        "id": "003",
+        "text": "Black extinction bands crossing coloured fringe fields"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Colour bands must follow stress, not surface form\n• Fringe density increases where load concentrates\n• Black isoclinic bands crossing the colour\n• Deep black surround outside the specimen"
   },
   {
     "name": "PHOTOGRAPHIC TYPOLOGY",
@@ -35044,6 +36160,33 @@
     "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Long darn stitch technique\n• Vibrant silk floss colors\n• Dense geometric floral patterns\n• Coarse cotton cloth background\n• Punjabi folk textile aesthetic"
   },
   {
+    "name": "PHYLLOTAXIS SPIRAL",
+    "category": [
+      "MATHEMATICAL",
+      "BOTANICAL",
+      "PATTERN",
+      "GEOMETRIC",
+      "ART"
+    ],
+    "message": "Take a picture and arrange it by phyllotaxis — elements placed at the golden angle so opposing spiral families emerge without ever being drawn.",
+    "options": [
+      {
+        "id": "001",
+        "text": "Dense seed head arrangement with clear opposing spiral families"
+      },
+      {
+        "id": "002",
+        "text": "Loose spiral with elements growing larger toward the edge"
+      },
+      {
+        "id": "003",
+        "text": "Highlighted version with one spiral family picked out in colour"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Each element rotated by the golden angle from the last\n• Spiral families emerge, never drawn explicitly\n• Element size grading smoothly outward\n• Packing tight with no overlaps"
+  },
+  {
     "name": "PI",
     "category": [
       "MATH",
@@ -35145,6 +36288,33 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "STYLE ENFORCEMENT:\n• Preserve subject identity as if formed naturally in stone\n• Natural mineral color palette: browns, ochres, grays, cream\n• Iron oxide and manganese creating the pattern\n• Polished limestone cross-section appearance\n• The image should appear geological, not painted\n• Reference actual pietra paesina specimens from Florence\n• Dendritic (branching) mineral patterns forming the image\n• The stone matrix should be visible throughout\n• The effect should be uncanny — nature mimicking art\n• The overall appearance should be a polished geological specimen"
+  },
+  {
+    "name": "PIETRE TESSERE GLASS",
+    "category": [
+      "MOSAIC",
+      "GLASS",
+      "BYZANTINE",
+      "GOLD",
+      "ART"
+    ],
+    "message": "Take a picture and set it in gold glass tesserae, each tilted slightly differently so the surface shimmers unevenly as the light moves across it.",
+    "options": [
+      {
+        "id": "001",
+        "text": "Gold ground with tesserae set at varied angles catching light unevenly"
+      },
+      {
+        "id": "002",
+        "text": "Figure in coloured glass against a shimmering gold field"
+      },
+      {
+        "id": "003",
+        "text": "Close detail showing gold leaf sandwiched within each glass cube"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Tesserae tilted individually, catching light at different angles\n• Gold leaf visible within the glass\n• Surface deliberately uneven\n• Deep saturated glass colour in the figure"
   },
   {
     "name": "PILLOW PERSON",
@@ -35784,6 +36954,33 @@
     ],
     "randomizeOptions": true,
     "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Subject must remain recognizable\n• Spontaneous outdoor brushwork and visible paint texture\n• Colors mixed on canvas with varied brush application from thin passages to heavy impasto\n• Specific outdoor lighting captured directly from observation\n• Spontaneity and freshness prioritized over over-polished studio rendering"
+  },
+  {
+    "name": "PLIQUE-A-JOUR ENAMEL",
+    "category": [
+      "ENAMEL",
+      "METAL",
+      "TRANSLUCENT",
+      "JEWELLERY",
+      "ART"
+    ],
+    "message": "Take a picture and set it in plique-à-jour — vitreous enamel suspended in metal cells with no backing at all, so the whole image is lit from behind like a miniature window.",
+    "options": [
+      {
+        "id": "001",
+        "text": "Fine gold cell walls with jewel-toned transparent enamel glowing through"
+      },
+      {
+        "id": "002",
+        "text": "Silver framework with pale opalescent enamel and a few opaque accents"
+      },
+      {
+        "id": "003",
+        "text": "Bold thick cells with deeply saturated enamel and visible bubbles"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Light must transmit through every enamel cell\n• Metal cell walls form a complete connected web\n• Enamel slightly concave where it shrank in firing\n• No backing — background visible through the piece"
   },
   {
     "name": "PLOTTER ART",
@@ -37510,6 +38707,20 @@
     "additionalInstructions": ""
   },
   {
+    "name": "PYRITE",
+    "category": [
+      "TRANSFORMATION",
+      "MINERAL",
+      "GEOMETRIC",
+      "METALLIC",
+      "ART"
+    ],
+    "message": "Take a picture and grow it as pyrite — brassy metallic cubes with striated faces, forming naturally at right angles as though machined. Interlocking cubes with fine parallel striations on each face.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Faces meet at true right angles\n• Striations run in one direction per face, alternating\n• Brassy metallic lustre with slight tarnish\n• Matrix rock visible where attached."
+  },
+  {
     "name": "PYROGRAPHY",
     "category": [
       "CRAFT",
@@ -37616,6 +38827,33 @@
     "additionalInstructions": "FINAL RESULT:\nThe image should look like a detailed quilling artwork made from rolled paper strips forming the scene. Individual paper coils and shapes must be clearly visible. The 3D relief quality should be apparent through shadows. Different quilling shapes should create varied textures. Subject identity must be preserved through careful arrangement of shapes."
   },
   {
+    "name": "QUILLWORK",
+    "category": [
+      "INDIGENOUS",
+      "QUILL",
+      "EMBROIDERY",
+      "NORTH AMERICAN",
+      "ART"
+    ],
+    "message": "Take a picture and work it in porcupine quills — softened, flattened, dyed and folded down onto hide in tight geometric bands.",
+    "options": [
+      {
+        "id": "001",
+        "text": "Tight parallel quill bands in dyed red, yellow and black on tanned hide"
+      },
+      {
+        "id": "002",
+        "text": "Quill-wrapped rawhide slats forming a rigid banded panel"
+      },
+      {
+        "id": "003",
+        "text": "Loose quill plaiting with visible sinew stitching between rows"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Quills flattened with visible natural taper\n• Rows tight with sinew stitches showing at the edges\n• Colour restricted to natural dye range\n• Hide substrate visible with its own texture"
+  },
+  {
     "name": "R-ROLL",
     "category": [
       "HUMOR",
@@ -37641,6 +38879,33 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "IDENTITY PRESERVATION (CRITICAL):\n\n• The hologram must clearly resemble the original subject.\n• Preserve distinctive facial characteristics.\n• Preserve recognizable facial structure.\n• Preserve facial proportions.\n• Preserve recognizable expression.\n• Preserve recognizable body proportions.\n• Preserve recognizable posture.\n• Recognition must come from the holographic projection itself.\n\nPROJECTION ENFORCEMENT:\n\n• The subject must appear entirely holographic.\n• Every visible portion of the subject must consist of projected light.\n• The hologram must display visible scanlines.\n• The hologram must display visible transmission artifacts.\n• The hologram must display visible flickering.\n• The hologram must visibly illuminate nearby surfaces.\n• The hologram must occupy three-dimensional space.\n\nDROID ENFORCEMENT:\n\n• The astromech droid must remain visible in the final image.\n• The droid must appear to be actively projecting the message.\n• The hologram must visibly originate from the droid.\n• The droid must be positioned near the projection.\n• The droid must receive blue illumination from the hologram.\n• The hologram must be larger than the droid.\n\nFINAL ENFORCEMENT:\n\n• The image must immediately read as a projected holographic message.\n• The image must evoke a classic cinematic sci-fi hologram transmission.\n• The subject must remain recognizable.\n• The projection must appear physically present while remaining entirely composed of projected energy.\n• The astromech droid must be an integral and obvious part of the composition."
+  },
+  {
+    "name": "RADEN SHELL INLAY",
+    "category": [
+      "JAPANESE",
+      "INLAY",
+      "SHELL",
+      "LACQUER",
+      "ART"
+    ],
+    "message": "Take a picture and inlay it in raden — paper-thin slivers of iridescent shell set into black lacquer, flashing blue and green as the light moves.",
+    "options": [
+      {
+        "id": "001",
+        "text": "Fine shell fragments scattered across deep black lacquer"
+      },
+      {
+        "id": "002",
+        "text": "Large cut shell plates forming bold shapes with sharp edges"
+      },
+      {
+        "id": "003",
+        "text": "Crushed shell dust creating a shimmering graded field"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Shell must show real iridescent colour shift\n• Lacquer ground deep, black and mirror smooth\n• Shell sits flush, polished level with the lacquer\n• Fine cut edges on every fragment"
   },
   {
   "name": "RADIAL ZOOM BURST",
@@ -39924,6 +41189,33 @@
   "additionalInstructions": "IDENTITY PRESERVATION (CRITICAL):\n• Despite the primitive, coarse medium, the arrangement of the chiseled lines and pecking marks must precisely map out the subject's signature facial proportions and distinct expression. It must look like an authentic archaeological treasure discover."
   },
   {
+    "name": "SANJHI PAPER CUT",
+    "category": [
+      "INDIAN",
+      "PAPER",
+      "STENCIL",
+      "DEVOTIONAL",
+      "ART"
+    ],
+    "message": "Take a picture and cut it as sanjhi — an intricate paper stencil cut freehand with fine scissors, every element connected so the sheet holds together as one piece.",
+    "options": [
+      {
+        "id": "001",
+        "text": "Extremely fine cut lace-like detail held by narrow bridges"
+      },
+      {
+        "id": "002",
+        "text": "Bold cut shapes with wide open areas and a decorative border"
+      },
+      {
+        "id": "003",
+        "text": "Stencil shown in use, colour dusted through onto the surface below"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Everything must remain connected — no floating pieces\n• Cut edges clean and slightly lifted\n• Bridges integrated into the design, not obvious\n• Shadow falling through the openings"
+  },
+  {
     "name": "SASHIKO STITCHING",
     "category": [
       "JAPANESE",
@@ -40216,6 +41508,33 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "SCHERENSCHNITTE",
+    "category": [
+      "GERMAN",
+      "PAPER",
+      "SILHOUETTE",
+      "FOLK",
+      "ART"
+    ],
+    "message": "Take a picture and cut it as scherenschnitte — symmetrical black paper cutting folded and cut so both halves mirror exactly, mounted on white.",
+    "options": [
+      {
+        "id": "001",
+        "text": "Bilaterally symmetrical cut with fine foliate detail"
+      },
+      {
+        "id": "002",
+        "text": "Asymmetric narrative scene with a decorative cut border"
+      },
+      {
+        "id": "003",
+        "text": "Layered cut with a second colour showing through the openings"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Perfect mirror symmetry where folded\n• Detail carried by the cut edge alone\n• Paper lift casting a faint shadow\n• Mounted on a contrasting flat ground"
   },
   {
     "name": "SCHLIEREN PHOTOGRAPHY",
@@ -40870,6 +42189,33 @@
     "additionalInstructions": ""
   },
   {
+    "name": "SEED MOSAIC",
+    "category": [
+      "FOLK",
+      "MOSAIC",
+      "NATURAL",
+      "CRAFT",
+      "ART"
+    ],
+    "message": "Take a picture and lay it in seeds and pulses glued to board — lentils, rice, melon seeds and beans sorted by colour into a coarse natural mosaic.",
+    "options": [
+      {
+        "id": "001",
+        "text": "Densely packed varied seeds with strong natural colour separation"
+      },
+      {
+        "id": "002",
+        "text": "Coarse large beans forming a bold simplified image"
+      },
+      {
+        "id": "003",
+        "text": "Mixed fine and coarse seeds with graded density"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Every element must read as a real seed with its own form\n• Colour limited to what seeds actually are\n• Seeds packed tight with glue visible in the gaps\n• Board edge and border strip present"
+  },
+  {
     "name": "SELECTIVE MOTION",
     "category": [
       "ART",
@@ -41213,6 +42559,33 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Detailed silhouette figure\n• Backlit translucent screen\n• Warm amber light glow\n• Articulated jointed figure\n• Traditional shadow play aesthetic"
+  },
+  {
+    "name": "SHADOWGRAPH",
+    "category": [
+      "SCIENTIFIC",
+      "OPTICAL",
+      "TECHNICAL",
+      "MONOCHROME",
+      "ART"
+    ],
+    "message": "Take a picture by shadowgraph, where a point light source casts density variations in air as bright and dark bands on the screen behind.",
+    "options": [
+      {
+        "id": "001",
+        "text": "Sharp density edges from a fast-moving disturbance"
+      },
+      {
+        "id": "002",
+        "text": "Soft rolling convection plumes rising in grey ripples"
+      },
+      {
+        "id": "003",
+        "text": "Circular field with strong edge vignette and fine turbulent structure"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Image formed by refraction, not reflection\n• Subject largely silhouetted\n• Density gradients as paired bright and dark bands\n• Circular optical field of view"
   },
   {
     "name": "SHAKESPEAREAN",
@@ -41835,6 +43208,33 @@
     }
     ],
     "additionalInstructions": "• Transform ONLY the subject.\n• Keep the background completely unchanged.\n• Preserve the original environment, lighting, perspective, colors, shadows, and every background object exactly as photographed.\n• Completely discard the original photographic subject before reconstruction.\n• NEVER place Slinkys over the original subject.\n• NEVER blend photographic textures with Slinky coils.\n• The original subject must not remain visible anywhere.\n• Every visible part of the subject must be reconstructed entirely from authentic Slinky springs.\n• Preserve the subject's exact identity, facial structure, hairstyle, hair color (through spring coloration when appropriate), expression, age, ethnicity, body proportions, pose, silhouette, and recognizable features.\n• Facial features must emerge solely through the arrangement, spacing, compression, and curvature of the coils.\n• Hair must be recreated entirely from layered Slinky coils.\n• Clothing must also be reconstructed entirely from coils using changes in coil spacing and direction.\n• Every individual Slinky must remain immediately recognizable as a genuine Slinky toy.\n• Preserve authentic Slinky characteristics including continuous helical coils, spring steel, realistic thickness, metallic reflections, natural compression, stretching, gravity, and elasticity.\n• Never flatten coils into simple wire loops.\n• Never convert the coils into generic spirals.\n• Use realistic overlapping, nesting, and interwoven Slinkys to create depth.\n• Maintain believable mechanical behavior of every spring.\n• Preserve realistic shadows cast by the coils.\n• The sculpture should appear physically possible and professionally handcrafted.\n• The finished artwork should resemble a real museum sculpture photographed after completion.\n• Master prompt instructions always override the selected option whenever conflicts occur.\n\nFINAL VALIDATION — Before producing the final image, verify ALL of the following:\n\n✓ ONLY the subject has been transformed.\n✓ The background remains completely unchanged.\n✓ The original photographic subject has been completely removed.\n✓ Every visible part of the subject has been reconstructed entirely from real Slinky springs.\n✓ Slinkys have NOT been placed over the original subject.\n✓ Every coil remains recognizable as an authentic Slinky.\n✓ Coils exhibit realistic compression, stretching, thickness, and metallic reflections.\n✓ Facial features have been sculpted entirely from Slinky coils.\n✓ The subject remains immediately recognizable.\n✓ The artwork resembles a genuine handcrafted Slinky sculpture.\n✓ If ANY answer is NO, regenerate the image until every requirement is satisfied."
+  },
+  {
+    "name": "SLIT SCAN",
+    "category": [
+      "PHOTOGRAPHY",
+      "TIME",
+      "EXPERIMENTAL",
+      "TECHNICAL",
+      "ART"
+    ],
+    "message": "Take a picture through a moving slit so the horizontal axis of the frame becomes time rather than space — a single image in which no two columns happened at the same moment.",
+    "options": [
+      {
+        "id": "001",
+        "text": "Smooth continuous smearing where the subject moved during the scan"
+      },
+      {
+        "id": "002",
+        "text": "Sharp vertical bands where movement stopped and started"
+      },
+      {
+        "id": "003",
+        "text": "Extreme stretching with one moment held across most of the frame"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Horizontal axis reads as elapsed time, not width\n• Static elements become perfectly straight streaks\n• Movement warps and stretches rather than blurring\n• No conventional perspective in the scanned axis"
   },
   {
     "name": "SLOT MACHINE",
@@ -43513,6 +44913,33 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "FINAL RESULT:\nThe image must look like a dramatic frame from an 80s supernatural TV series, with the subject seamlessly integrated into a Stranger Things–inspired world, as if they were always part of the story."
+  },
+  {
+    "name": "STRAW MARQUETRY",
+    "category": [
+      "FRENCH",
+      "STRAW",
+      "INLAY",
+      "DECORATIVE",
+      "ART"
+    ],
+    "message": "Take a picture and lay it in split straw — rye stalks flattened, dyed and glued edge to edge, giving a surface that shines like satin along the grain.",
+    "options": [
+      {
+        "id": "001",
+        "text": "Straw laid in radiating bands catching light differently in each direction"
+      },
+      {
+        "id": "002",
+        "text": "Geometric parquetry with straw at alternating angles"
+      },
+      {
+        "id": "003",
+        "text": "Pictorial panel with straw shaped to follow the forms"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Straw direction changes the sheen dramatically\n• Every strip is a discrete flattened stalk\n• Natural node marks visible along the straws\n• Tight butt joins with no gaps"
   },
   {
     "name": "STREAMING",
@@ -46172,6 +47599,33 @@
     "additionalInstructions": ""
   },
   {
+    "name": "TARKASHI WIRE INLAY",
+    "category": [
+      "INDIAN",
+      "WOOD",
+      "INLAY",
+      "BRASS",
+      "ART"
+    ],
+    "message": "Take a picture and inlay it as tarkashi — fine brass wire hammered into grooves cut in dark shisham wood, then filed flush and polished.",
+    "options": [
+      {
+        "id": "001",
+        "text": "Dense brass wire geometry against deep brown wood"
+      },
+      {
+        "id": "002",
+        "text": "Sparse linear inlay with large areas of plain grain"
+      },
+      {
+        "id": "003",
+        "text": "Combined wire and small brass dot inlay forming a field"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Brass sits perfectly flush with the wood surface\n• Wood grain visible and running consistently\n• Wire lines of even gauge throughout\n• Warm polish with wood pores still open"
+  },
+  {
     "name": "TAROT CARD",
     "category": [
       "MYSTICAL",
@@ -46327,6 +47781,35 @@
     "additionalInstructions": "ABSOLUTE REQUIREMENT:"
   },
   {
+    "name": "TEA LEAF READING",
+    "category": [
+      "DIVINATION",
+      "DOMESTIC",
+      "PATTERN",
+      "VINTAGE",
+      "ART",
+      "TRANSFORMATION",
+      "OPTIONS"
+    ],
+    "message": "Take a picture and COMPLETELY TRANSFORM THE SUBJECT INTO A TEA-LEAF READING.\n\nTHE SUBJECT ITSELF MUST BE RECONSTRUCTED ENTIRELY FROM TEA LEAVES.\n\nTHIS IS A FULL IMAGE TRANSFORMATION.\nTHIS IS NOT A TEA-CUP PROP ADDED TO THE ORIGINAL IMAGE.\nTHIS IS NOT A PHOTOGRAPH OF THE ORIGINAL SUBJECT BESIDE TEA LEAVES.\nTHIS IS NOT TEA LEAVES OVERLAID ON TOP OF THE ORIGINAL SUBJECT.\nTHIS IS NOT A TEA-LEAF PATTERN ADDED TO THE IMAGE.\n\nThe recognizable subject must disappear as an ordinary photographic subject and be completely rebuilt using hundreds or thousands of individual dark tea-leaf fragments, wet tea leaves, tea particles, stains, and residual tea sediment.\n\nThe TEA LEAVES THEMSELVES must form the subject's recognizable face, body, silhouette, clothing, pose, and important visual features.\n\nThe final image must make it immediately obvious that the subject has been physically reconstructed from loose tea leaves rather than merely photographed near tea leaves.\n\nPreserve the subject's recognizable identity through the arrangement, density, shape, contour, and tonal distribution of the tea leaves. Facial features must be formed by tea-leaf fragments themselves.\n\nThe selected option determines the physical presentation of the tea-leaf reconstruction while maintaining the mandatory full-subject transformation.",
+    "options": [
+    {
+      "id": "001",
+      "text": "OVERHEAD TEA CUP — Reconstruct the ENTIRE SUBJECT from dark tea-leaf fragments settled inside the white interior of a tea cup viewed directly from above. The tea leaves must form the subject's recognizable face, body, silhouette, clothing, and pose entirely within the cup. The original photographic subject must NOT remain visible. The cup is the physical surface on which the tea-leaf portrait exists."
+    },
+    {
+      "id": "002",
+      "text": "TILTED CUP — Reconstruct the ENTIRE SUBJECT from wet tea leaves clinging to the curved interior wall of a tilted white tea cup. The tea leaves must form the recognizable subject across the cup wall and pooled sediment at the bottom. The subject must be completely made from tea leaves. The original subject must NOT remain visible as a normal photograph."
+    },
+    {
+      "id": "003",
+      "text": "DRAINED CUP AND SAUCER — Reconstruct the ENTIRE SUBJECT using tea leaves and residual tea sediment distributed across the inside of a drained white tea cup and its saucer. The tea-leaf fragments must deliberately form the recognizable subject's face, body, silhouette, clothing, and pose. The original photographic subject must be completely replaced by the tea-leaf reconstruction."
+    }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "ABSOLUTE TRANSFORMATION REQUIREMENTS:\n\n• THE ENTIRE SUBJECT MUST BE TRANSFORMED.\n• The subject itself must be made entirely from tea leaves.\n• Every major visible portion of the subject must be represented by tea-leaf material.\n• Face = tea leaves.\n• Hair = tea leaves.\n• Body = tea leaves.\n• Clothing = tea leaves.\n• Silhouette = tea leaves.\n• Important recognizable details = tea leaves.\n• Do NOT leave the original photograph of the subject underneath the tea leaves.\n• Do NOT place tea leaves on top of an otherwise unchanged photograph.\n• Do NOT place the original subject beside a tea cup.\n• Do NOT show the original subject holding a tea cup.\n• Do NOT turn the preset into a photograph of tea leaves with the original subject still visible.\n• Do NOT merely add tea-leaf texture to the subject.\n• Do NOT create a normal portrait surrounded by tea leaves.\n• The original subject must be visually replaced by the tea-leaf construction.\n\nTEA-LEAF MATERIAL:\n\n• Use individual recognizable tea leaves and fragments rather than generic brown paint.\n• Leaves should have irregular natural shapes.\n• Use different leaf sizes and orientations.\n• Use overlapping fragments to construct larger forms.\n• Use concentrated leaf density for darker areas.\n• Use sparse leaf density for lighter areas.\n• Use gaps between leaves to create highlights and negative space.\n• Include realistic wetness where appropriate.\n• Include residual tea staining and sediment.\n• Include subtle liquid pooling where physically appropriate.\n• Tea leaves must remain visually identifiable as tea leaves when viewed closely.\n\nIDENTITY PRESERVATION:\n\n• Preserve the subject's recognizable facial identity through the arrangement of tea leaves.\n• Reconstruct the subject's eyes using carefully positioned tea-leaf fragments and negative space.\n• Reconstruct the nose using leaf contours and density.\n• Reconstruct the mouth using leaf fragments and controlled gaps.\n• Preserve distinctive facial proportions.\n• Preserve recognizable hairstyle through the silhouette and distribution of leaves.\n• Preserve the subject's recognizable body shape and pose.\n• Preserve important clothing shapes through tea-leaf arrangement.\n• The subject must remain recognizable despite being entirely constructed from tea leaves.\n\nCOMPOSITION REQUIREMENTS:\n\n• Follow the selected option's cup/saucer composition.\n• The cup or saucer is the physical medium containing the tea-leaf reconstruction.\n• The subject must remain the dominant recognizable form within that medium.\n• Do not allow the cup, saucer, tea, or surrounding objects to become the primary subject.\n• The tea-leaf reconstruction must be large enough and detailed enough to recognize the original subject.\n\nVISUAL STYLE:\n\n• Vintage tea-leaf divination aesthetic.\n• Natural white ceramic or enamel surfaces.\n• Dark brown, nearly black tea-leaf fragments.\n• Soft daylight.\n• Realistic wet tea texture.\n• Realistic shadows and contact shadows.\n• Subtle tea staining.\n• Fine natural detail.\n• Photorealistic physical materials.\n• No cartoon rendering.\n• No digital illustration appearance.\n• No artificial graphic overlay.\n\nMASTER PROMPT RULE:\n\n• Master prompt instructions always override conflicting instructions.\n• If the master prompt specifies a subject, pose, expression, clothing, setting, composition, or other visual characteristic, incorporate that information into the tea-leaf reconstruction.\n• Master prompt information must be represented THROUGH THE TEA LEAVES rather than by leaving the original subject unchanged.\n• If the master prompt specifies a particular subject or action, the tea leaves must be arranged to reproduce that subject or action.\n\nFINAL VALIDATION:\n\n✓ The original subject has been completely transformed.\n✓ The subject itself is made from tea leaves.\n✓ The original photographic subject is no longer visible as an ordinary photograph.\n✓ The face is constructed from tea leaves.\n✓ The body is constructed from tea leaves.\n✓ Clothing and important visual details are constructed from tea leaves.\n✓ The subject remains recognizable.\n✓ Individual tea leaves are visibly distinguishable.\n✓ The selected cup/saucer composition is present.\n✓ The result does NOT look like tea leaves were simply placed over the original image.\n✓ The result does NOT show the original subject beside tea leaves.\n✓ The result does NOT merely add a tea-leaf texture or pattern.\n✓ The result looks physically plausible as loose tea leaves arranged into the subject.\n✓ The image remains photorealistic.\n✓ If ANY answer is NO, regenerate until every requirement is satisfied."
+  },
+  {
     "name": "TED TALK",
     "category": [
       "SCENE",
@@ -46351,6 +47834,33 @@
     "message": "Take a picture and transform the ENTIRE IMAGE into a 1930s telegraphic wirephoto transmitted over analog telephone lines.\n\nTRANSFORMATION RULES (NON-NEGOTIABLE):\n• The entire image must look like a historical news photograph transmitted line-by-line via an early drum scanner receiver (Belinograph method)\n• Recognition of the subject must be perfectly preserved, but heavily artifacted by electrical static and mechanical synchronization errors\n• Preserve actual facial proportions and distinctive traits, mapped across parallel scan rows\n• The palette must be highly restricted monochrome, utilizing muddy ink-black tones and yellowed, aged newsprint whites\n• No modern digital pixelation, blocky compression artifacts, or clean video scanlines\n\nENVIRONMENT & STYLE RULES:\n• The entire canvas must be constructed of dense, microscopic, horizontal analog transmission lines\n• The image must feature severe mechanical and electrical transmission flaws: erratic horizontal line shifts (sync slippage), ink bleeding, heavy analog static noise, and faint vertical roller-drum scratch marks\n• Contrast must look harshly squashed, creating plugged, heavy ink blotches in deep shadows and blown-out highlights lacking details\n• The background must look like a raw, unedited news report or historical documentation scene captured on location and immediately wired to a press room\n\nVERSION-SPECIFIC RULES:\n• The visual style must perfectly replicate a primitive form of long-distance image data transmission\n• The final image must look like a high-contrast ink reproduction clipped out of an archival early 20th-century newspaper sheet",
     "randomizeOptions": false,
     "additionalInstructions": "The entire image must simulate an analog telegraphic wirephoto print. The defining characteristics are the fine horizontal transmission lines, high-contrast ink bleeding on newsprint, and distinct mechanical synchronization errors."
+  },
+  {
+    "name": "TELETEXT PAGE",
+    "category": [
+      "RETRO",
+      "BROADCAST",
+      "DIGITAL",
+      "GRAPHIC",
+      "ART"
+    ],
+    "message": "Take a picture and render it as a teletext page — blocky mosaic graphics in seven flat colours on black, built from character cells on a forty column grid.",
+    "options": [
+      {
+        "id": "001",
+        "text": "Blocky mosaic image in saturated primaries on pure black"
+      },
+      {
+        "id": "002",
+        "text": "Page with a header bar, page number and a flashing subtitle line"
+      },
+      {
+        "id": "003",
+        "text": "Double-height text headline above a coarse mosaic illustration"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Only seven colours plus black, all fully saturated\n• Image built from rectangular character cells\n• Forty column grid strictly observed\n• Header bar with page number and clock"
   },
   {
     "name": "TELETUBBIES",
@@ -46719,6 +48229,33 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "THERMAL PRINTER",
+    "category": [
+      "PRINT",
+      "RECEIPT",
+      "MONOCHROME",
+      "MODERN",
+      "ART"
+    ],
+    "message": "Take a picture and print it on thermal receipt paper — coarse dithered greys and an image already beginning to fade.",
+    "options": [
+      {
+        "id": "001",
+        "text": "Coarse dithered image"
+      },
+      {
+        "id": "002",
+        "text": "Partly faded print with heat damage across one band"
+      },
+      {
+        "id": "003",
+        "text": "Torn strip with a serrated edge and printed footer text"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Dithered dots only — no true greys\n• Slight fading toward one edge."
   },
   {
     "name": "THERMOGRAPHIC PRINT",
@@ -49490,6 +51027,33 @@
     "additionalInstructions": "FINAL RESULT:\nA fully cohesive neon digital computer world where every object, character, and environmental element has been transformed into a glowing grid-based sci-fi environment. If people are present, they are converted into digital programs with identity discs. If vehicles are present, they become light cycles. No real-world materials remain."
   },
   {
+    "name": "TRUCHET TILE",
+    "category": [
+      "MATHEMATICAL",
+      "PATTERN",
+      "GENERATIVE",
+      "GRAPHIC",
+      "ART"
+    ],
+    "message": "Take a picture and build it from Truchet tiles — one simple tile rotated at random across a grid, producing continuous flowing paths from nothing.",
+    "options": [
+      {
+        "id": "001",
+        "text": "Quarter-arc tiles forming continuous meandering loops"
+      },
+      {
+        "id": "002",
+        "text": "Diagonal tiles creating a maze-like field"
+      },
+      {
+        "id": "003",
+        "text": "Two-colour tiles producing large emergent shapes"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• A single tile design, only rotated\n• Paths continuing unbroken across tile edges\n• Grid regular and clearly underlying\n• Emergent structure larger than any tile"
+  },
+  {
     "name": "TUBE MAN",
     "category": [
       "OPTIONS",
@@ -49525,6 +51089,33 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Cylindrical and tubular forms\n• Bold primary colors\n• Thick black outlines\n• Machine-like volumetric precision\n• Robust mechanical aesthetic"
+  },
+  {
+    "name": "TUFA COLUMN",
+    "category": [
+      "TRANSFORMATION",
+      "GEOLOGICAL",
+      "MINERAL",
+      "LANDSCAPE",
+      "ART"
+    ],
+    "message": "Take a picture and build it from tufa — porous calcium carbonate precipitated where spring water met lake water, growing upward in knobbly hollow towers.",
+    "options": [
+      {
+        "id": "001",
+        "text": "Knobbly porous towers with botryoidal surface texture"
+      },
+      {
+        "id": "002",
+        "text": "Cut section revealing the hollow interior and layered growth"
+      },
+      {
+        "id": "003",
+        "text": "Weathered column with a pale bleached surface and dark cavities"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Surface porous and knobbly at every scale\n• Growth direction upward from the base\n• Pale cream to grey colour\n• Deep cavities and voids throughout"
   },
   {
     "name": "TV DINNER BOX",
@@ -50245,6 +51836,33 @@
     ],
     "randomizeOptions": true,
     "additionalInstructions": "FINAL RESULT:\nThe image must look like a real travel photograph taken at a famous U.S. National Park landmark."
+  },
+  {
+    "name": "UV EXAMINATION",
+    "category": [
+      "CONSERVATION",
+      "IMAGING",
+      "FLUORESCENT",
+      "TECHNICAL",
+      "ART"
+    ],
+    "message": "Take a picture under ultraviolet examination, where old varnish fluoresces green and every later retouch shows as a dark blot.",
+    "options": [
+      {
+        "id": "001",
+        "text": "Green fluorescing varnish with dark retouches clearly visible"
+      },
+      {
+        "id": "002",
+        "text": "Patchy fluorescence revealing an extensive restoration campaign"
+      },
+      {
+        "id": "003",
+        "text": "Split frame with normal light on one side and UV on the other"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Overall green-violet fluorescence cast\n• Retouches appear as dark non-fluorescing areas\n• Detail flattened by the monochromatic light\n• Deep violet background surround"
   },
   {
     "name": "VACATION",
@@ -52242,7 +53860,7 @@
   {
     "name": "WHACK-A-MOLE",
     "category": ["OPTIONS", "GAME", "TRANSFORMATION"],
-    "message": "Take a picture and draw an ARCADE WHACK-A-MOLE CABINET seen head on, filling the frame. Set into the front of the cabinet is a 3 x 3 grid of nine round holes. ONE mole is popping up out of the selected hole, and that mole IS the subject.\n\nWHAT THE MOLE LOOKS LIKE (NON-NEGOTIABLE):\n• It is the SUBJECT'S OWN HUMAN FACE, rendered like a glossy vinyl toy figure — smooth, slightly plasticky, stylised but unmistakably them. Their real features, hairline and skin tone are kept.\n• DO NOT turn them into an animal. DO NOT build an animal head and put their face on it. DO NOT extend the face forward into a muzzle. The front of the face stays HUMAN, flat and toy-like.\n• The effect should read as a toy of the subject WEARING A MOLE COSTUME — the mole parts are worn around and behind the head, never replacing the face.\n• FUR: soft brown mole fur forms a hood or ruff that frames the face from BEHIND — around the sides, over the top of the head and down the neck. It never grows on the cheeks, forehead or nose.\n• EARS: small rounded mole ears sit high at the sides, poking out from behind the head, clearly part of the costume.\n• NOSE: SUBTLE. Just a small soft pinkish animal nose on the tip of their own human nose. A light touch, barely more than a nose tip. NOT a snout, NOT a muzzle, NOT protruding.\n• EYES: enormously exaggerated, bulging right out of the head, huge round glossy whites with small pupils, comically startled and wide awake.\n• GRIN: an absurdly oversized grin stretching ear to ear, far wider than any real mouth, curving up past the cheeks, packed with a full row of big square white teeth. Gleeful, mischievous and completely unbothered.\n• PAWS: two small furry mole paws with pale claws grip the rim of the hole in front of the chest.\n• Only the head, shoulders and those two paws are above the rim — the rest is down inside the hole.\n• EXACTLY ONE mole in the whole image. The other eight holes are empty and dark.\n\nHOLE POSITIONS — the nine holes are a 3 x 3 grid, read like a page:\n   Top Left      Top Center      Top Right\n   Middle Left   Middle Center   Middle Right\n   Bottom Left   Bottom Center   Bottom Right\nPut the mole in the selected hole and NO other.\n\nTHE CABINET:\n• Chunky moulded plastic arcade cabinet in bright primary colours, scuffed and well used\n• A lit MARQUEE SCREEN across the top of the cabinet, above the holes\n• Chrome rails, glowing bulbs, a coin slot, and a big red soft-headed mallet on a blue handle\n\nSTYLE:\n• Bright, punchy, saturated arcade lighting\n• Cartoon energy, but photographically rendered",
+    "message": "Take a picture and draw an ARCADE WHACK-A-MOLE CABINET seen head on, filling the frame. Set into the front of the cabinet is a 3 x 3 grid of nine round holes. ONE mole is popping up out of the selected hole, and that mole IS the subject.\n\nWHAT THE MOLE LOOKS LIKE (NON-NEGOTIABLE):\n• It is the SUBJECT'S OWN HUMAN FACE, rendered like a glossy vinyl toy figure — smooth, slightly plasticky, stylised but unmistakably them. Their real features, hairline and skin tone are kept.\n• DO NOT turn them into an animal. DO NOT build an animal head and put their face on it. DO NOT extend the face forward into a muzzle. The front of the face stays HUMAN, flat and toy-like.\n• The effect should read as a toy of the subject WEARING A MOLE COSTUME — the mole parts are worn around and behind the head, never replacing the face.\n• FUR: soft brown mole fur forms a hood or ruff that frames the face from BEHIND — around the sides, over the top of the head and down the neck. It never grows on the cheeks, forehead or nose.\n• EARS: small rounded mole ears sit high at the sides, poking out from behind the head, clearly part of the costume.\n• NOSE: SUBTLE. Just a small soft pinkish animal nose on the tip of their own human nose. A light touch, barely more than a nose tip. NOT a snout, NOT a muzzle, NOT protruding.\n• EYES: enormously exaggerated, bulging right out of the head, huge round glossy whites with small pupils, comically startled and wide awake.\n• GRIN: an absurdly oversized grin stretching ear to ear, far wider than any real mouth, curving up past the cheeks, packed with a full row of big square white teeth. Gleeful, mischievous and completely unbothered.\n• PAWS: two small furry mole paws with pale claws grip the rim of the hole in front of the chest.\n• Only the head, shoulders and those two paws are above the rim — the rest is down inside the hole.\n• EXACTLY ONE mole in the whole image. The other eight holes are empty and dark.\n\nHOLE POSITIONS — the nine holes are a 3 x 3 grid, read like a page:\n   Top Left      Top Center      Top Right\n   Middle Left   Middle Center   Middle Right\n   Bottom Left   Bottom Center   Bottom Right\nPut the mole in the selected hole and NO other.\n\nTHE CABINET:\n• Chunky moulded plastic arcade cabinet in bright primary colors, scuffed and well used\n• A lit MARQUEE SCREEN across the top of the cabinet, above the holes\n• Chrome rails, glowing bulbs, a coin slot, and a big red soft-headed mallet on a blue handle\n\nSTYLE:\n• Bright, punchy, saturated arcade lighting\n• Cartoon energy, but photographically rendered",
     "randomizeOptions": true,
     "verdicts": { "win": "WHACK!", "lose": "MISSED!" },
     "optionGroups": [
@@ -52859,7 +54477,7 @@
       {"name": "RAP", "LETTER 1": "R", "LETTER 2": "A", "LETTER 3": "P"}, {"name": "BEG", "LETTER 1": "B", "LETTER 2": "E", "LETTER 3": "G"}, {"name": "HUM", "LETTER 1": "H", "LETTER 2": "U", "LETTER 3": "M"},
       {"name": "FRY", "LETTER 1": "F", "LETTER 2": "R", "LETTER 3": "Y"}
     ],
-    "additionalInstructions": "FINAL RESULT — APPLIES TO BOTH NORMAL USE AND GAME MODE:\nThe finished image must always contain BOTH of the following, and nothing else:\n1. The transformed subject — only the subject, no opponents and no extra figures.\n2. A WORDLE STRIP: one horizontal row of three large square tiles laid across the image, each tile holding one bold white capital letter, spelling the word left to right.\nPrint the finished word in plain capital letters directly beneath the tile row.\n\nDEFAULT TILE COLOURS (normal use): colour all three tiles GREEN, because the chosen letters ARE the word.\n\nOVERRIDE: if a section headed \"=== GAME RESULT ===\" appears below, that section wins. Use exactly the tile letters, tile colours and verdict it specifies, and show its captions as well."
+    "additionalInstructions": "FINAL RESULT — APPLIES TO BOTH NORMAL USE AND GAME MODE:\nThe finished image must always contain BOTH of the following, and nothing else:\n1. The transformed subject — only the subject, no opponents and no extra figures.\n2. A WORDLE STRIP: one horizontal row of three large square tiles laid across the image, each tile holding one bold white capital letter, spelling the word left to right.\nPrint the finished word in plain capital letters directly beneath the tile row.\n\nDEFAULT TILE COLORS (normal use): color all three tiles GREEN, because the chosen letters ARE the word.\n\nOVERRIDE: if a section headed \"=== GAME RESULT ===\" appears below, that section wins. Use exactly the tile letters, tile colors and verdict it specifies, and show its captions as well."
   },
   {
     "name": "WORLD PARK ICON",
@@ -53533,6 +55151,33 @@
     ],
     "randomizeOptions": true,
     "additionalInstructions": "The final image must look like a genuine YouTube video or trending page. Match YouTube's exact white background, red accent color, thumbnail grid layout, and typography. All view counts, like counts, video titles, and surrounding trending videos must be real data from the target date, never fabricated. Thumbnails must follow real YouTube viral thumbnail conventions with bold text, bright colors, and expressive faces."
+  },
+  {
+    "name": "YUZEN DYEING",
+    "category": [
+      "JAPANESE",
+      "TEXTILE",
+      "DYE",
+      "KIMONO",
+      "ART"
+    ],
+    "message": "Take a picture and paint it as yuzen — rice-paste resist drawn in fine lines, colour brushed inside each outlined area, the whole steamed and washed in a river.",
+    "options": [
+      {
+        "id": "001",
+        "text": "Fine white resist outlines with softly graded colour inside each shape"
+      },
+      {
+        "id": "002",
+        "text": "Gold leaf and embroidery accents added over the dyed ground"
+      },
+      {
+        "id": "003",
+        "text": "Flowing seasonal motifs arranged across the whole width of a kimono panel"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Every colour area outlined by a fine reserved white line\n• Colour graded within shapes, blended wet\n• Silk sheen throughout\n• Motifs arranged to flow across the garment shape"
   },
   {
     "name": "ZARDOZI EMBROIDERY",
