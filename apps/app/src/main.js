@@ -13144,8 +13144,22 @@ function showUnifiedMenu() {
   isMenuOpen = true;
   menuScrollEnabled = true;
 
-  // Peek at whether the list is already current so we know before doing any work
   const menuList = document.getElementById('menu-styles-list');
+
+  // If the menu is currently hidden, its rows have no layout boxes. Revealing a
+  // full list makes the browser lay out all ~1900 of them in one blocking go —
+  // that is the delay when coming back from Settings, which hides the menu
+  // directly without going through hideUnifiedMenu(). Dropping the rows here is
+  // free (nothing is on screen) and lets the list rebuild in chunks instead.
+  // Guarded on display so it never fires while the menu is already visible.
+  if (menuList && menuList.children.length > 0 && menu.style.display !== 'flex') {
+    if (_menuFillTimer) { clearTimeout(_menuFillTimer); _menuFillTimer = null; }
+    menuList.innerHTML = '';
+    _listDOMVersion = -1;
+    _listDOMIsFiltered = false;
+  }
+
+  // Peek at whether the list is already current so we know before doing any work
   const willFastPath = !styleFilterText && !mainMenuFilterByCategory &&
       !_listDOMIsFiltered &&
       _listDOMVersion === _stylesDataVersion &&
