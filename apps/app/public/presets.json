@@ -29614,23 +29614,23 @@
       "TERMINAL",
       "ART"
     ],
-    "message": "Take a picture and display it on a Minitel terminal — coarse character graphics glowing on a small monochrome tube behind slightly curved glass.",
+    "message": "Take a picture and transform the ENTIRE IMAGE into the visible SCREEN of a Minitel terminal. ONLY THE SCREEN CONTENT AND ITS SCREEN SURFACE may be visible in the final image.\n\nThe original subject and image must be completely reconstructed as coarse Minitel character-cell graphics displayed INSIDE the screen. The final image must look like a direct view of the Minitel display itself, not a photograph of a Minitel terminal.\n\nDO NOT SHOW THE Minitel COMPUTER, HOUSING, CASING, KEYBOARD, BUTTONS, STAND, BEZEL, FRAME, DESK, ROOM, OR ANY OTHER PART OF THE PHYSICAL TERMINAL.\n\nThe entire canvas is the Minitel screen. The screen fills the complete image edge-to-edge.",
     "options": [
-      {
-        "id": "001",
-        "text": "Coarse character-cell image glowing amber on a curved screen"
-      },
-      {
-        "id": "002",
-        "text": "Menu page with numbered options and a blinking cursor"
-      },
-      {
-        "id": "003",
-        "text": "Screen photographed at an angle showing the tube curvature"
-      }
+    {
+      "id": "001",
+      "text": "COARSE CHARACTER SCREEN — Transform the entire image into an extremely coarse Minitel character-cell representation with luminous monochrome phosphor graphics filling the entire screen."
+    },
+    {
+      "id": "002",
+      "text": "Minitel MENU SCREEN — Transform the entire image into a coarse Minitel-style character-cell screen resembling an old French videotex display, with the transformed subject rendered entirely through the low-resolution screen graphics."
+    },
+    {
+      "id": "003",
+      "text": "CURVED CRT SCREEN — Transform the entire image into the visible surface of a curved monochrome Minitel CRT display, with subtle glass reflections and phosphor glow while showing absolutely none of the surrounding terminal."
+    }
     ],
     "randomizeOptions": true,
-    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Character-cell resolution, extremely coarse\n• Phosphor glow with slight bloom\n• Screen curvature and reflections\n• Blinking block cursor present."
+    "additionalInstructions": "ABSOLUTE SCREEN-ONLY REQUIREMENT:\n\n• ONLY THE MINITEL SCREEN MAY BE VISIBLE.\n• The screen must fill 100% of the image.\n• Extend the screen all the way to every edge of the canvas.\n• The final image must NOT show the physical Minitel terminal.\n• Do NOT show the outer casing.\n• Do NOT show the bezel.\n• Do NOT show the frame.\n• Do NOT show the keyboard.\n• Do NOT show buttons.\n• Do NOT show a stand.\n• Do NOT show cables.\n• Do NOT show a desk or surrounding environment.\n• Do NOT show a photograph of a Minitel.\n• Do NOT place a Minitel screen inside another image.\n• The image itself IS the Minitel screen.\n\nIMAGE TRANSFORMATION:\n\n• Transform the ENTIRE original image into Minitel screen graphics.\n• The original subject must be represented entirely through the Minitel display's coarse character-cell graphics.\n• Do not merely place the original photograph onto a screen.\n• Do not preserve photographic detail outside the character-cell aesthetic.\n• Reconstruct all visible subject details using extremely low-resolution Minitel-style graphics.\n• The result must look as though the original image was rendered directly by a Minitel videotex system.\n\nMINITEL VISUAL CHARACTER:\n\n• Extremely low character-cell resolution.\n• Coarse block-based graphics.\n• Limited retro display appearance.\n• Monochrome phosphor-style presentation appropriate to the selected option.\n• Slight CRT curvature when appropriate.\n• Subtle phosphor bloom.\n• Subtle screen-glass reflection.\n• Mild CRT softness.\n• Visible pixel/character structure.\n• Authentic-looking early videotex limitations.\n• Keep the transformed subject recognizable despite the extremely coarse resolution.\n\nSCREEN SURFACE:\n\n• The screen may have subtle curved-glass characteristics.\n• Reflections must remain extremely subtle.\n• The screen surface must not obscure the transformed image.\n• No external objects may be reflected strongly enough to reveal a room or terminal.\n• The screen remains the entire composition.\n\nCURSOR:\n\n• A small block cursor may appear when appropriate to the selected option.\n• The cursor must remain part of the screen display.\n• Do not allow the cursor to become a dominant element.\n\nMASTER PROMPT RULE:\n• Master prompt instructions always override conflicting instructions EXCEPT the mandatory screen-only requirement.\n• If the master prompt specifies a subject, pose, setting, action, or composition, incorporate that information into the Minitel screen graphics.\n• Regardless of the master prompt, the final image must consist ONLY of the Minitel screen and its displayed graphics.\n\nFINAL VALIDATION:\n\n✓ The entire canvas is the Minitel screen.\n✓ The screen reaches all four edges of the image.\n✓ The original image has been completely transformed into Minitel graphics.\n✓ The subject is represented using coarse character-cell graphics.\n✓ No physical Minitel terminal is visible.\n✓ No casing is visible.\n✓ No bezel is visible.\n✓ No keyboard is visible.\n✓ No buttons are visible.\n✓ No desk or surrounding environment is visible.\n✓ No photograph of a terminal is visible.\n✓ The result looks like the image itself is being displayed by a Minitel screen.\n✓ If ANY answer is NO, regenerate until every requirement is satisfied."
   },
   {
     "name": "MIRROR IMAGE",
@@ -39036,34 +39036,16 @@
   {
     "name": "RADIOACTIVE",
     "category": [
-      "SCIENCE",
       "HUMOR",
-      "GLOW",
-      "SURREAL",
       "TRANSFORMATION",
-      "OPTIONS"
+      "GLOW",
+      "PHOTOREALISTIC",
+      "COMEDY"
     ],
-    "message": "Take a picture and transform the subject into a humorous, exaggerated, glow-in-the-dark parody of a person affected by fictionalized radioactivity while keeping the subject in a normally lit environment.\n\nThe subject itself must be transformed, not merely surrounded by radioactive effects.\n\nThe visual concept is deliberately cartoonish and exaggerated while remaining a coherent photorealistic image: the subject appears unnaturally luminous, fluorescent, and visibly radioactive while standing within an otherwise normally illuminated environment.",
-    "options": [
-    {
-      "id": "001",
-      "text": "TOXIC GREEN — Transform the subject with intense fluorescent green skin illumination, glowing green eyes, bright radioactive-looking highlights, and exaggerated green luminescence while retaining recognizable facial identity."
-    },
-    {
-      "id": "002",
-      "text": "BLUE RADIATION — Transform the subject with eerie electric-blue fluorescence, luminous skin, glowing eyes, and exaggerated blue radioactive energy while remaining in a normally lit environment."
-    },
-    {
-      "id": "003",
-      "text": "NUCLEAR GLOW — Transform the subject with an exaggerated yellow-green nuclear glow, bright luminous skin, glowing eyes, and subtle radioactive-looking energy emanating from the body."
-    },
-    {
-      "id": "004",
-      "text": "RADIOACTIVE MUTATION — Transform the subject into an exaggerated fictional radioactive character with glowing skin, luminous eyes, unusual fluorescent coloration, exaggerated veins and energy-like patterns, while preserving recognizable identity and avoiding horror or gore."
-    }
-    ],
-    "randomizeOptions": true,
-    "additionalInstructions": "TRANSFORMATION:\n\n• The subject itself must visibly glow.\n• Do not merely place a radioactive aura around the subject.\n• Do not simply add green lighting to an otherwise unchanged subject.\n• Skin, eyes, hair, clothing highlights, and other visible portions of the subject should respond to the radioactive transformation.\n• Preserve recognizable facial identity.\n• Maintain realistic facial geometry while introducing exaggerated radioactive coloration.\n• The environment remains normally lit unless the master prompt specifies otherwise.\n• The contrast between the ordinary environment and bizarre glowing subject should be obvious.\n\nSTYLE:\n\n• Humorous exaggerated radioactive parody.\n• Bright fluorescent colors.\n• Cartoonish concept rendered as a convincing photograph.\n• No gore.\n• No wounds.\n• No realistic radiation injury.\n• No horror-body-damage imagery.\n• No gruesome mutation.\n\nMASTER PROMPT RULE:\n• Master prompt instructions always override conflicting instructions.\n• Preserve requested setting, pose, clothing, composition, and action while applying the radioactive transformation.\n\nFINAL VALIDATION:\n✓ Subject itself visibly glows.\n✓ Environment remains normally lit.\n✓ Transformation is obvious.\n✓ Subject remains recognizable.\n✓ Result is humorous and exaggerated.\n✓ Result does not rely solely on an aura or lighting effect.\n✓ No gore or injury imagery.\n✓ If ANY answer is NO, regenerate until every requirement is satisfied."
+    "message": "Take a picture and transform ONLY the subject into a humorous glow-in-the-dark version of themselves, as though their body has become intensely luminous from fictional cartoon-like radioactivity.\n\nTHE ONLY EFFECT IS GLOW.\n\nThe subject remains the same recognizable person with the same face, identity, body, clothing, pose, and recognizable physical characteristics. The transformation is purely visual: the subject itself emits an exaggerated internal glow while remaining in the original environment.\n\nThe environment remains normally lit and unchanged. The subject should visibly glow against the ordinary environment, creating the humorous appearance of a person who has become glow-in-the-dark.\n\nThe effect should resemble a playful visual parody of radioactivity rather than a realistic radiation accident.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "ABSOLUTE GLOW-ONLY RULE:\n\n• The ONLY transformation effect is GLOW.\n• The subject must visibly emit light from their body.\n• The glow should appear to originate naturally from the subject itself.\n• Use luminous skin, hair, clothing edges, and body surfaces to create the glow.\n• The glow may be intense and exaggerated.\n• The subject may have a bright luminous appearance while remaining fully recognizable.\n• Maintain visible facial features and recognizable identity beneath the glow.\n• The glow should remain clearly visible even though the surrounding environment is normally lit.\n• The environment must NOT become radioactive-looking.\n• The background remains normally illuminated.\n• Preserve the original setting.\n• Preserve the original objects.\n• Preserve the original architecture.\n• Preserve the original lighting environment except for light naturally emitted by the glowing subject.\n\nSTRICTLY PROHIBITED:\n\n• NO sparks.\n• NO lightning.\n• NO electrical arcs.\n• NO radiation beams.\n• NO energy blasts.\n• NO smoke.\n• NO radioactive particles.\n• NO floating particles.\n• NO flames.\n• NO explosions.\n• NO radiation clouds.\n• NO radiation symbols.\n• NO warning signs.\n• NO radioactive barrels.\n• NO laboratory equipment unless already present in the original image.\n• NO hazmat suits.\n• NO Geiger counters.\n• NO glowing environmental objects.\n• NO radioactive contamination on the background.\n• NO green radiation mist.\n• NO environmental distortion.\n• NO sci-fi effects.\n• NO energy aura separate from the subject.\n• NO text or labels explaining the effect.\n\nSUBJECT PRESERVATION:\n\n• Preserve the subject's actual face and identity.\n• Preserve facial features.\n• Preserve hairstyle and hair color.\n• Preserve body proportions.\n• Preserve clothing.\n• Preserve pose.\n• Preserve accessories.\n• Preserve the subject's recognizable appearance.\n• Do not transform the subject into a monster.\n• Do not mutate the subject.\n• Do not add extra limbs or body parts.\n• Do not change the subject's anatomy.\n\nGLOW APPEARANCE:\n\n• The glow should be humorous and exaggerated.\n• The subject may have a luminous skin appearance similar to an extreme glow-in-the-dark object.\n• Brightness should visibly emanate from the subject.\n• Use soft luminous falloff immediately around the subject where physically appropriate.\n• The glow should remain attached to the subject rather than becoming a separate special effect.\n• The surrounding environment remains ordinary.\n• The contrast between the normally lit environment and the absurdly glowing subject creates the comedy.\n\nPHOTOREALISTIC REQUIREMENTS:\n\n• Photorealistic image.\n• Realistic skin texture beneath the luminous appearance.\n• Realistic clothing texture beneath the glow.\n• Realistic lighting interaction.\n• Realistic shadows and reflections where appropriate.\n• The subject must look physically present in the original environment.\n• Do not make the image look like a cartoon unless specifically requested by the master prompt.\n\nMASTER PROMPT RULE:\n• Master prompt instructions always override conflicting instructions EXCEPT the mandatory glow-only transformation.\n• If the master prompt specifies pose, clothing, expression, camera angle, or composition, incorporate it while maintaining the glow-only concept.\n\nFINAL VALIDATION:\n\n✓ The subject is the only transformed element.\n✓ The subject clearly glows.\n✓ The environment remains normally lit.\n✓ There are no sparks.\n✓ There are no radiation effects.\n✓ There are no signs or symbols.\n✓ There are no particles or smoke.\n✓ There are no energy effects.\n✓ The subject remains recognizable.\n✓ The subject's clothing and pose remain recognizable.\n✓ The effect is simply an exaggerated glow-in-the-dark appearance.\n✓ If ANY answer is NO, regenerate until every requirement is satisfied."
   },
   {
     "name": "RAGDOLL",
@@ -48989,74 +48971,154 @@
   {
     "name": "TIME MACHINE",
     "category": [
-      "HISTORY",
       "TIME TRAVEL",
-      "PERIOD",
+      "HISTORY",
+      "FUTURE",
       "TRANSFORMATION",
-      "PHOTOGRAPHY",
-      "OPTIONS"
+      "OPTIONS",
+      "PERIOD"
     ],
-    "message": "Take a picture and transport the SUBJECT and ENTIRE SCENE into the selected century.\n\nCOMPLETELY RECONSTRUCT THE IMAGE FOR THE SELECTED PERIOD.\n\nThe subject remains the same recognizable person or subject, but EVERYTHING ELSE visible in the image must be replaced by historically appropriate or plausibly futuristic equivalents for the selected century.\n\nBuildings, architecture, roads, vehicles, clothing, furniture, technology, signage, tools, street surfaces, lighting, infrastructure, objects, decorations, and environmental details must all belong to the selected period.\n\nThe image must look as though the photograph was genuinely captured in that century rather than as a modern photograph with historical objects pasted into it.",
+    "message": "Take a picture and transport the entire visible image into the selected century or historical era. The subject must remain the same recognizable person, while EVERYTHING ELSE visible in the scene is completely transformed into the historically appropriate or plausibly futuristic equivalent for the selected period.\n\nTHIS IS A COMPLETE SCENE TRANSFORMATION.\n\nDo NOT merely dress the subject in period clothing. The entire visible environment must belong to the selected time period.\n\nReplace every visible modern or incompatible element with an appropriate equivalent from the selected century or era, including buildings, architecture, streets, roads, vehicles, transportation, furniture, tools, technology, objects, infrastructure, clothing, signage, lighting, materials, and other environmental details.\n\nThe subject remains the same recognizable person and must be naturally integrated into the transformed historical or future environment.\n\nFor historical periods, use historically appropriate objects, architecture, materials, technology, transportation, clothing, and environmental details. Do not introduce objects that did not exist during the selected period.\n\nFor future periods, create realistic, plausible technological replacements based on credible extrapolation from existing technology rather than fantasy technology.",
     "options": [
     {
       "id": "001",
-      "text": "1900s — Early 20th-century world with period architecture, horse-drawn transportation, early automobiles, gas and electric street lighting, period clothing, storefronts, signage, and technology."
+      "text": "20TH CENTURY — EARLY 1900s: Transform the entire scene into the early 20th century, approximately 1900–1910. Replace all visible modern elements with historically appropriate architecture, transportation, clothing, streets, technology, furniture, lighting, and objects from the early 1900s."
     },
     {
       "id": "002",
-      "text": "1910s — World War I-era environment with historically appropriate automobiles, architecture, clothing, transportation, streets, machinery, signage, and technology."
+      "text": "19TH CENTURY — 1800s: Transform the entire scene into the 19th century with historically appropriate Victorian-era architecture, horse-drawn transportation, clothing, streets, technology, furniture, tools, lighting, and objects."
     },
     {
       "id": "003",
-      "text": "1920s — Roaring Twenties environment with Art Deco influence, period automobiles, architecture, clothing, signage, interiors, transportation, and technology."
+      "text": "18TH CENTURY — 1700s: Transform the entire scene into the 1700s with historically appropriate architecture, transportation, clothing, tools, furniture, lighting, technology, and everyday objects."
     },
     {
       "id": "004",
-      "text": "1930s — Depression-era environment with period automobiles, architecture, storefronts, clothing, infrastructure, transportation, and technology."
+      "text": "17TH CENTURY — 1600s: Transform the entire scene into the 1600s using historically appropriate architecture, transportation, clothing, tools, furniture, lighting, technology, and objects."
     },
     {
       "id": "005",
-      "text": "1940s — World War II-era environment with period vehicles, architecture, clothing, industrial technology, signage, streets, and infrastructure."
+      "text": "16TH CENTURY — 1500s: Transform the entire scene into the 1500s using historically appropriate Renaissance-era architecture, transportation, clothing, tools, furniture, lighting, technology, and objects."
     },
     {
       "id": "006",
-      "text": "1950s — Mid-century environment with classic automobiles, suburban architecture, diners, period clothing, appliances, signage, transportation, and technology."
+      "text": "15TH CENTURY — 1400s: Transform the entire scene into the 1400s using historically appropriate late-medieval and early-Renaissance architecture, transportation, clothing, tools, furniture, lighting, and objects."
     },
     {
       "id": "007",
-      "text": "1960s — Space Age environment with period automobiles, architecture, fashion, technology, signage, furniture, transportation, and cultural design."
+      "text": "14TH CENTURY — 1300s: Transform the entire scene into the 1300s using historically appropriate medieval architecture, transportation, clothing, tools, furniture, lighting, and objects."
     },
     {
       "id": "008",
-      "text": "1970s — Earth-tone and disco-era environment with period cars, architecture, clothing, technology, signage, interiors, and transportation."
+      "text": "13TH CENTURY — 1200s: Transform the entire scene into the 1200s using historically appropriate medieval architecture, transportation, clothing, tools, furniture, transportation, lighting, and objects."
     },
     {
       "id": "009",
-      "text": "1980s — Neon-era environment with period automobiles, architecture, fashion, electronics, arcades, signage, transportation, and technology."
+      "text": "12TH CENTURY — 1100s: Transform the entire scene into the 1100s using historically appropriate medieval architecture, transportation, clothing, tools, furniture, lighting, and objects."
     },
     {
       "id": "010",
-      "text": "1990s — Late 20th-century environment with period automobiles, architecture, clothing, consumer electronics, signage, transportation, and technology."
+      "text": "11TH CENTURY — 1000s: Transform the entire scene into the 1000s using historically appropriate medieval architecture, transportation, clothing, tools, furniture, lighting, and objects."
     },
     {
       "id": "011",
-      "text": "2000s — Early digital-era environment with period automobiles, architecture, clothing, mobile phones, computers, signage, technology, and infrastructure."
+      "text": "10TH CENTURY — 900s: Transform the entire scene into the 900s using historically appropriate early-medieval architecture, transportation, clothing, tools, furniture, lighting, and objects."
     },
     {
       "id": "012",
-      "text": "2100s — Plausible early-22nd-century future based on realistic technological extrapolation: autonomous transportation, advanced but believable architecture, adaptive infrastructure, sophisticated displays, renewable energy systems, advanced materials, and emerging technologies that could reasonably exist."
+      "text": "9TH CENTURY — 800s: Transform the entire scene into the 800s using historically appropriate early-medieval architecture, transportation, clothing, tools, furniture, lighting, and objects."
     },
     {
       "id": "013",
-      "text": "2200s — Plausible 23rd-century future using scientifically and technologically reasonable extrapolations of transportation, architecture, computing, energy, materials, communication, and urban infrastructure."
+      "text": "8TH CENTURY — 700s: Transform the entire scene into the 700s using historically appropriate early-medieval architecture, transportation, clothing, tools, furniture, lighting, and objects."
     },
     {
       "id": "014",
-      "text": "2300s — Plausible 24th-century future with radically advanced but internally coherent transportation, architecture, computing, energy, materials, communication, and environmental systems."
+      "text": "7TH CENTURY — 600s: Transform the entire scene into the 600s using historically appropriate early-medieval architecture, transportation, clothing, tools, furniture, lighting, and objects."
+    },
+    {
+      "id": "015",
+      "text": "6TH CENTURY — 500s: Transform the entire scene into the 500s using historically appropriate Late Antiquity and early-medieval architecture, transportation, clothing, tools, furniture, lighting, and objects."
+    },
+    {
+      "id": "016",
+      "text": "5TH CENTURY — 400s: Transform the entire scene into the 400s using historically appropriate Late Roman and Late Antiquity architecture, transportation, clothing, tools, furniture, lighting, and objects."
+    },
+    {
+      "id": "017",
+      "text": "4TH CENTURY — 300s: Transform the entire scene into the 300s using historically appropriate Late Roman-era architecture, transportation, clothing, tools, furniture, lighting, and objects."
+    },
+    {
+      "id": "018",
+      "text": "3RD CENTURY — 200s: Transform the entire scene into the 200s using historically appropriate Roman-era architecture, transportation, clothing, tools, furniture, lighting, and objects."
+    },
+    {
+      "id": "019",
+      "text": "2ND CENTURY — 100s: Transform the entire scene into the 100s using historically appropriate Roman-era architecture, transportation, clothing, tools, furniture, lighting, and objects."
+    },
+    {
+      "id": "020",
+      "text": "1ST CENTURY — 1–100 AD: Transform the entire scene into the 1st century AD using historically appropriate Roman-era or other regionally appropriate ancient architecture, transportation, clothing, tools, furniture, lighting, and objects."
+    },
+    {
+      "id": "021",
+      "text": "1ST CENTURY BC — 100–1 BC: Transform the entire scene into the late 1st century BC using historically appropriate ancient architecture, transportation, clothing, tools, furniture, lighting, and objects."
+    },
+    {
+      "id": "022",
+      "text": "2ND CENTURY BC — 200–101 BC: Transform the entire scene into the 2nd century BC using historically appropriate ancient architecture, transportation, clothing, tools, furniture, lighting, and objects."
+    },
+    {
+      "id": "023",
+      "text": "3RD CENTURY BC — 300–201 BC: Transform the entire scene into the 3rd century BC using historically appropriate ancient architecture, transportation, clothing, tools, furniture, lighting, and objects."
+    },
+    {
+      "id": "024",
+      "text": "4TH CENTURY BC — 400–301 BC: Transform the entire scene into the 4th century BC using historically appropriate ancient architecture, transportation, clothing, tools, furniture, lighting, and objects."
+    },
+    {
+      "id": "025",
+      "text": "5TH CENTURY BC — 500–401 BC: Transform the entire scene into the 5th century BC using historically appropriate ancient architecture, transportation, clothing, tools, furniture, lighting, and objects."
+    },
+    {
+      "id": "026",
+      "text": "6TH CENTURY BC — 600–501 BC: Transform the entire scene into the 6th century BC using historically appropriate ancient architecture, transportation, clothing, tools, furniture, lighting, and objects."
+    },
+    {
+      "id": "027",
+      "text": "7TH CENTURY BC — 700–601 BC: Transform the entire scene into the 7th century BC using historically appropriate ancient architecture, transportation, clothing, tools, furniture, lighting, and objects."
+    },
+    {
+      "id": "028",
+      "text": "8TH CENTURY BC — 800–701 BC: Transform the entire scene into the 8th century BC using historically appropriate ancient architecture, transportation, clothing, tools, furniture, lighting, and objects."
+    },
+    {
+      "id": "029",
+      "text": "9TH CENTURY BC — 900–801 BC: Transform the entire scene into the 9th century BC using historically appropriate ancient architecture, transportation, clothing, tools, furniture, lighting, and objects."
+    },
+    {
+      "id": "030",
+      "text": "10TH CENTURY BC — 1000–901 BC: Transform the entire scene into the 10th century BC using historically appropriate Bronze Age or regionally appropriate ancient architecture, transportation, clothing, tools, furniture, lighting, and objects."
+    },
+    {
+      "id": "031",
+      "text": "PREHISTORIC — BEFORE WRITTEN HISTORY: Transform the entire scene into a prehistoric environment appropriate to early human civilization, replacing every visible modern element with plausible prehistoric equivalents, including natural surroundings, shelters, clothing, tools, transportation, materials, and objects."
+    },
+    {
+      "id": "032",
+      "text": "22ND CENTURY — 2100s: Transform the entire scene into a plausible early-22nd-century future. Replace every visible object, vehicle, building, technology, infrastructure, clothing item, and environmental element with realistic technological successors based on credible advances in robotics, transportation, materials, energy, computing, communications, architecture, and manufacturing."
+    },
+    {
+      "id": "033",
+      "text": "23RD CENTURY — 2200s: Transform the entire scene into a plausible 23rd-century future. Replace everything visible with realistic, technologically advanced successors that could reasonably emerge from continued scientific and engineering development. Avoid fantasy technology."
+    },
+    {
+      "id": "034",
+      "text": "24TH CENTURY — 2300s: Transform the entire scene into a plausible 24th-century future with highly advanced but scientifically grounded replacements for visible vehicles, buildings, infrastructure, technology, clothing, objects, and environmental systems. Avoid magical or impossible technology."
     }
     ],
     "randomizeOptions": true,
-    "additionalInstructions": "HISTORICAL ACCURACY:\n\n• The selected century controls ALL visible environmental elements.\n• Replace modern objects with period-appropriate equivalents.\n• Do not leave modern cars, buildings, streetlights, signs, furniture, electronics, roads, or infrastructure in the historical versions.\n• Clothing must belong to the selected period unless the master prompt specifically requires otherwise.\n• Architecture must be appropriate to the selected period and location.\n• Vehicles must be appropriate to the selected period.\n• Technology must be appropriate to the selected period.\n• Avoid anachronisms.\n• Do not simply apply an antique color grade.\n• The actual physical objects and structures must change.\n\nFUTURE REQUIREMENTS:\n\n• Future centuries must be based on plausible technological extrapolation rather than arbitrary science fiction.\n• Re-imagine every visible object with a credible future replacement.\n• Preserve recognizable physical relationships between objects.\n• Avoid fantasy technology unless the master prompt requests it.\n• Future vehicles, buildings, interfaces, infrastructure, materials, and transportation should have believable engineering logic.\n\nSUBJECT REQUIREMENT:\n\n• Preserve the subject's recognizable identity.\n• The subject is physically transported into the selected period.\n• The subject must naturally exist within the transformed environment.\n• Do not simply paste the subject onto a historical background.\n• Lighting, shadows, perspective, atmosphere, and reflections must cause the subject and environment to appear physically present together.\n\nMASTER PROMPT RULE:\n• Master prompt instructions always override conflicting instructions.\n• The master prompt may specify a particular location, object, action, clothing item, or composition, which must be incorporated while maintaining the selected century.\n\nFINAL VALIDATION:\n✓ Entire environment reconstructed.\n✓ Every visible object is appropriate to the selected century.\n✓ Subject remains recognizable.\n✓ No obvious modern anachronisms remain in historical versions.\n✓ Future versions use plausible replacements.\n✓ Subject physically belongs in the new environment.\n✓ Result looks like a genuine photograph from that period or future period.\n✓ If ANY answer is NO, regenerate until every requirement is satisfied."
+    "additionalInstructions": "COMPLETE TIME TRANSFORMATION:\n\n• Transform the ENTIRE VISIBLE SCENE into the selected century or era.\n• Do not transform only the subject.\n• Do not simply change the subject's clothing.\n• Every visible incompatible object must be replaced with a period-appropriate equivalent.\n• Replace buildings and architecture.\n• Replace streets and roads.\n• Replace vehicles and transportation.\n• Replace furniture.\n• Replace tools and equipment.\n• Replace technology.\n• Replace lighting systems.\n• Replace infrastructure.\n• Replace clothing when necessary.\n• Replace signs and other visible modern elements with period-appropriate equivalents.\n• Replace materials and construction methods when appropriate.\n• Preserve the original composition and general placement of the subject whenever possible.\n\nSUBJECT PRESERVATION:\n\n• Preserve the subject's recognizable facial identity.\n• Preserve the subject's distinctive facial features.\n• Keep the subject recognizable as the same person.\n• Naturally integrate the subject into the selected period.\n• The subject may receive historically appropriate clothing when required by the selected period, but the person's identity must remain unchanged.\n\nHISTORICAL ACCURACY:\n\n• Use objects and technology appropriate to the selected century.\n• Do not mix centuries.\n• Do not introduce modern objects into historical options.\n• Avoid anachronisms.\n• Use historically plausible architecture, transportation, materials, clothing, tools, and technology.\n• For prehistoric scenes, use plausible prehistoric environments and technology appropriate to the chosen interpretation.\n\nFUTURE ACCURACY:\n\n• Future options must be plausible extrapolations rather than fantasy.\n• Replace existing objects with credible technological successors.\n• Do not automatically introduce flying cars, teleportation, aliens, magical holograms, or impossible technology.\n• Future architecture, transportation, computing, energy, materials, and communications should appear technologically advanced but physically plausible.\n\nMASTER PROMPT RULE:\n• Master prompt instructions always override conflicting instructions except the mandatory complete-time-transformation requirement.\n• If the master prompt specifies a subject pose, action, composition, or setting, preserve that information while converting the surrounding scene into the selected period.\n\nFINAL VALIDATION:\n\n✓ The selected century or era is immediately apparent.\n✓ The entire visible scene has been transformed.\n✓ Modern elements have not been left behind in historical options.\n✓ Objects and structures are appropriate to the selected period.\n✓ No obvious anachronisms remain.\n✓ Future options use plausible technological replacements.\n✓ The subject remains recognizable.\n✓ The subject is naturally integrated into the transformed scene.\n✓ If ANY answer is NO, regenerate until every requirement is satisfied."
   },
   {
     "name": "TIME TRAVELER",
