@@ -639,6 +639,7 @@ let _stylesDataVersion = 0;         // Incremented whenever presets/visibility/f
 let _stylesListCacheVersion = -1;   // Version when cache was last built
 let _listDOMVersion = -1;           // _stylesDataVersion when the menu DOM was last fully built
 let _listDOMIsFiltered = false;     // true when the current menu DOM was built with a filter active
+let _menuFillTimer = null;          // handle for the background fill of the remaining rows
 const FAVORITE_STYLES_KEY = 'r1_camera_favorites';
 const VISIBLE_PRESETS_KEY = 'r1_camera_visible_presets';
 let visiblePresets = []; // Array of preset names that should be shown
@@ -13192,6 +13193,17 @@ async function hideUnifiedMenu() {
   }
   
   document.getElementById('unified-menu').style.display = 'none';
+
+  // Empty the styles list now that it is hidden. Leaving ~1900 rows in the DOM
+  // means the browser has to lay every one of them out again the moment the
+  // menu is shown, which is the delay on every open. Clearing costs nothing
+  // here and the next open rebuilds the first screenful in a few milliseconds.
+  if (_menuFillTimer) { clearTimeout(_menuFillTimer); _menuFillTimer = null; }
+  const _menuStylesList = document.getElementById('menu-styles-list');
+  if (_menuStylesList) _menuStylesList.innerHTML = '';
+  _listDOMVersion = -1;
+  _listDOMIsFiltered = false;
+
   window._carouselGuardUntil = Infinity;
   await resumeCamera();
   window._carouselGuardUntil = 0;
@@ -15275,12 +15287,38 @@ function _doPopulateStylesList(list, preserveScroll) {
         parts.push('<div class="menu-empty">No styles found</div>');
     }
 
-    newList.innerHTML = parts.join('');
+    // Write the first screenful now and stream the rest in afterwards. Laying
+    // out ~1900 rows in one go is what made opening the menu feel slow; the
+    // first chunk is all the user can see, so show that and fill in behind it.
+    if (_menuFillTimer) { clearTimeout(_menuFillTimer); _menuFillTimer = null; }
 
-    // Track whether this DOM represents a filtered or full list
+    const FIRST_CHUNK = 60;
+    const FILL_CHUNK  = 150;
+    newList.innerHTML = parts.slice(0, FIRST_CHUNK).join('');
+
+    // Track whether this DOM represents a filtered or full list. Only mark the
+    // DOM as current once every row is actually in it, so the fast path above
+    // can never fire against a half-filled list.
     _listDOMIsFiltered = !!(styleFilterText || mainMenuFilterByCategory);
-    if (!_listDOMIsFiltered) {
-        _listDOMVersion = _stylesDataVersion;
+    _listDOMVersion = -1;
+
+    const _finishFill = () => {
+        if (!_listDOMIsFiltered) _listDOMVersion = _stylesDataVersion;
+        _menuFillTimer = null;
+    };
+
+    if (parts.length <= FIRST_CHUNK) {
+        _finishFill();
+    } else {
+        const _fill = (from) => {
+            // A newer render replaced this list, or the menu closed
+            if (newList !== document.getElementById('menu-styles-list')) { _menuFillTimer = null; return; }
+            newList.insertAdjacentHTML('beforeend', parts.slice(from, from + FILL_CHUNK).join(''));
+            const next = from + FILL_CHUNK;
+            if (next < parts.length) _menuFillTimer = setTimeout(() => _fill(next), 16);
+            else _finishFill();
+        };
+        _menuFillTimer = setTimeout(() => _fill(FIRST_CHUNK), 16);
     }
     
     // Single event listener for the entire list using event delegation
