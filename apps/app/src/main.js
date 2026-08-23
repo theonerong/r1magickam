@@ -19567,13 +19567,17 @@ const result = await presetImporter.import();
       
       // Set flag to return to gallery
       returnToGalleryFromMasterPrompt = true;
-      
-      // Open settings submenu first
-      document.getElementById('unified-menu').style.display = 'flex';
-      isMenuOpen = true;
-      document.getElementById('settings-submenu').style.display = 'flex';
-      isSettingsSubmenuOpen = true;
-      
+
+      // Do NOT reveal the main menu here. Master Prompt is its own top-level
+      // panel, not a child of it, so showing #unified-menu only forced the
+      // browser to lay out the whole AI Styles list (~1900 rows) before the
+      // Master Prompt panel covered it up — that was the 1-2 second delay.
+      // The camera button already opens Master Prompt this way with the menu
+      // hidden. hideMasterPromptSubmenu() clears all of this on the way out.
+      document.getElementById('unified-menu').style.display = 'none';
+      isMenuOpen = false;
+      menuScrollEnabled = false;
+
       // Use the proper function to show master prompt (loads values correctly)
       showMasterPromptSubmenu();
     });
