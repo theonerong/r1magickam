@@ -13154,6 +13154,21 @@
     "additionalInstructions": "FINAL RESULT:\nA stunning transformation into the unmistakable style of Leiji Matsumoto's character design as animated by Toei Animation for Daft Punk's Interstella 5555. The subject becomes an elegant, blue-skinned alien character with impossibly long limbs, large expressive eyes, and flowing hair, set against a dreamy retro-futuristic backdrop. The image captures the romantic, melancholic, and utterly unique aesthetic of early 2000s Japanese animation meeting 1970s space opera glamour, with the analog warmth and artistic detail that defined the Digital Love segment."
   },
   {
+    "name": "DIGITAL WORLD",
+    "category": [
+      "DIGITAL",
+      "FUTURISTIC",
+      "TECHNOLOGY",
+      "CYBER",
+      "SCIENCE FICTION",
+      "TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform the ENTIRE IMAGE into a futuristic digital world in which the physical environment appears to have been constructed by computers, networks, data systems, digital displays, and interconnected technology.\n\nThe subject remains unchanged in identity and recognizable appearance, but must be physically integrated into the transformed digital world.\n\nTHIS IS A COMPLETE ENVIRONMENTAL TRANSFORMATION.\n\nThe result must NOT look like a digital filter has been placed over the original photograph. The subject must physically exist within the futuristic environment with matching lighting, reflections, shadows, perspective, atmospheric effects, and depth.\n\nEverything surrounding the subject should appear to be constructed from futuristic digital technology: enormous luminous screens, data interfaces, network structures, computational architecture, digital surfaces, glowing information systems, holographic-like displays, illuminated pathways, flowing data, and computer-generated infrastructure.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "DIGITAL WORLD TRANSFORMATION:\n\n• Transform the entire environment.\n• Replace ordinary architecture and environmental surfaces with futuristic digital structures.\n• Buildings may incorporate enormous seamless digital displays.\n• Roads and floors may contain illuminated computational patterns and flowing data.\n• Walls may function as giant digital interfaces.\n• Windows may become transparent information displays.\n• Environmental structures may incorporate networks of light and data.\n• Use interconnected lines, nodes, grids, interfaces, data streams, and computational patterns.\n• Incorporate the visual language of computers, networks, servers, digital communications, and the internet.\n• Use futuristic digital typography and interface elements sparingly and naturally.\n• Digital imagery should appear physically embedded into the environment rather than pasted over it.\n\nSUBJECT PRESERVATION:\n\n• Preserve the subject's exact recognizable identity.\n• Preserve facial structure.\n• Preserve facial features.\n• Preserve hairstyle.\n• Preserve body proportions.\n• Preserve clothing unless the master prompt specifies a transformation.\n• Do not turn the subject into a digital avatar.\n• Do not turn the subject into a hologram.\n• Do not pixelate the subject unless specifically requested.\n• Do not cover the subject with digital graphics.\n• The subject remains a real physical person existing inside the digital world.\n\nPHYSICAL INTEGRATION:\n\n• Match environmental lighting to the subject.\n• Cast realistic colored light from digital displays onto the subject.\n• Include accurate reflections where surfaces are reflective.\n• Include realistic shadows.\n• Maintain coherent perspective.\n• Maintain realistic atmospheric depth.\n• The subject must physically interact with the environment.\n• Avoid the appearance of a cut-and-paste composite.\n• Avoid obvious Photoshop-style edges around the subject.\n• The digital environment must surround and naturally illuminate the subject.\n\nVISUAL LANGUAGE:\n\n• Futuristic.\n• Highly technological.\n• Neon-infused but sophisticated.\n• Dense computational architecture.\n• Giant digital displays.\n• Network visualization.\n• Flowing data.\n• Computer-generated geometry.\n• Advanced interfaces.\n• Digital infrastructure.\n• Luminous information systems.\n• Deep spatial layering.\n• High visual detail.\n\nIMPORTANT NEGATIVE REQUIREMENTS:\n\n• Do NOT simply add neon lighting to the original photograph.\n• Do NOT apply a cyberpunk color filter.\n• Do NOT place random neon signs behind the subject while leaving the original environment intact.\n• Do NOT turn the subject into a hologram.\n• Do NOT turn the subject into a computer-generated character.\n• Do NOT make the subject look photoshopped into the environment.\n• Do NOT obscure the subject's identity with digital effects.\n• The WORLD changes; the subject's recognizable identity remains intact.\n\nMASTER PROMPT RULE:\n• Master prompt instructions always override conflicting instructions.\n• If the master prompt specifies a location, action, clothing, object, architecture, mood, camera angle, or composition, incorporate that information into the futuristic digital world.\n\nFINAL VALIDATION:\n✓ Entire environment has been transformed.\n✓ World appears constructed from futuristic digital technology.\n✓ Subject remains recognizable and physically present.\n✓ Subject does not look photoshopped into the scene.\n✓ Lighting and reflections integrate subject and environment.\n✓ Original environment is no longer simply visible underneath a digital filter.\n✓ Digital/network/computational imagery is present throughout the world.\n✓ Result looks like a coherent physical futuristic world rather than an overlay.\n✓ If ANY answer is NO, regenerate until every requirement is satisfied."
+  },
+  {
     "name": "DIGITIZED ARCADE SPRITE",
     "category": [
       "RETRO AESTHETIC",
@@ -17315,6 +17330,46 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "FEAR AND LOATHING",
+    "category": [
+      "PSYCHEDELIC",
+      "SURREAL",
+      "HALLUCINOGENIC",
+      "VISIONARY",
+      "TRANSFORMATION",
+      "OPTIONS"
+    ],
+    "message": "Take a picture and transform the ENTIRE IMAGE into an intensely surreal, distorted, hallucinatory visual experience inspired by the altered perception associated with psychedelic hallucinogens.\n\nThe selected option determines the hallucinogenic visual language used for the transformation.\n\nTHIS IS A COMPLETE VISUAL TRANSFORMATION.\nTHIS IS NOT A COLOR FILTER.\nTHIS IS NOT A SIMPLE PSYCHEDELIC OVERLAY.\n\nThe subject must remain recognizable while the entire visual environment, perspective, geometry, color, texture, scale, lighting, and spatial relationships are transformed into an extraordinary hallucination-like world.\n\nThe result should feel as though ordinary reality has become unstable, dreamlike, fluid, intensely patterned, visually distorted, and impossible while retaining enough of the original subject's identity to recognize who or what was photographed.",
+    "options": [
+    {
+      "id": "001",
+      "text": "LSD — Lysergic acid diethylamide visual experience: extreme geometric repetition, flowing surfaces, recursive patterns, impossible perspective, saturated color transitions, breathing architecture, trails, visual echoes, warped proportions, and objects appearing to melt or flow into one another."
+    },
+    {
+      "id": "002",
+      "text": "PSILOCYBIN — Psilocybin visual experience: organic fractal patterns, mushroom-like geometric structures, rapidly branching forms, breathing textures, flowing natural surfaces, intricate repeating patterns, intensified color, surreal facial distortions, and dreamlike organic transformations."
+    },
+    {
+      "id": "003",
+      "text": "MESCALINE — Mescaline visual experience: intensely detailed geometric ornamentation, elaborate symmetrical patterns, vivid crystalline structures, repeating motifs, heightened color separation, intricate textile-like geometry, and surreal architectural forms."
+    },
+    {
+      "id": "004",
+      "text": "DMT — N,N-Dimethyltryptamine visual experience: impossible multidimensional geometry, rapidly transforming structures, luminous fractal environments, nested realities, intricate repeating forms, extreme spatial distortion, and otherworldly visual complexity."
+    },
+    {
+      "id": "005",
+      "text": "SALVINORIN A — Salvinorin A visual experience: extreme spatial displacement, impossible perspective, duplicated environments, folded geometry, sliding planes, objects appearing simultaneously displaced and connected, and surreal transformations of ordinary surroundings."
+    },
+    {
+      "id": "006",
+      "text": "IBOGAINE — Ibogaine visual experience: dreamlike symbolic imagery, layered geometric structures, fragmented perception, unusual scale relationships, ghosted visual repetition, intricate patterns, and surreal transitions between recognizable reality and abstract imagery."
+    }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "FULL TRANSFORMATION:\n\n• Transform the entire image, not merely the colors.\n• Transform the subject AND environment while preserving recognizable subject identity.\n• Preserve the subject's essential facial identity and distinctive characteristics.\n• Preserve the fundamental subject pose unless the selected visual experience specifically distorts it.\n• Distort perspective, geometry, scale, texture, depth, and environmental structure.\n• Use multiple layers of visual transformation simultaneously.\n• Objects may appear to melt, stretch, duplicate, fold, breathe, ripple, fragment, or recursively repeat.\n• Use impossible spatial relationships.\n• Use visual trails and echoes where appropriate.\n• Use intense but coherent color relationships.\n• Avoid making the result look like a simple Instagram-style psychedelic filter.\n• Do not add drug paraphernalia unless explicitly requested by the master prompt.\n• The visual effect should communicate an altered perceptual state through the IMAGE ITSELF.\n\nMASTER PROMPT RULE:\n• Master prompt instructions always override conflicting instructions.\n• If the master prompt specifies a subject, location, action, pose, object, mood, or composition, preserve that information while transforming it through the selected hallucinogenic visual language.\n\nFINAL VALIDATION:\n✓ Entire image transformed.\n✓ Subject remains recognizable.\n✓ Hallucinatory visual language is unmistakable.\n✓ Perspective and spatial relationships have been substantially transformed.\n✓ Result is surreal rather than merely color-filtered.\n✓ Selected hallucinogen's visual language is clearly represented.\n✓ If ANY answer is NO, regenerate until every requirement is satisfied."
   },
   {
     "name": "FEATHER MOSAIC",
@@ -31754,6 +31809,38 @@
     "additionalInstructions": "• Transform the entire image into painted mural artwork.\n• Nothing from the original photograph should remain except as interpreted paint.\n• Preserve the subject's exact identity, facial structure, expression, hairstyle, age, ethnicity, pose, and recognizable features.\n• Include authentic wall texture including brick, stucco, concrete, plaster, or other architectural materials appropriate to the selected option.\n• Paint must realistically follow cracks, mortar joints, rough surfaces, and imperfections.\n• Include authentic brush strokes, spray paint, roller marks, overspray, fading, weathering, drips, and paint layering where appropriate.\n• Maintain realistic perspective so the mural appears physically attached to the wall.\n• Avoid making the mural appear digitally composited.\n• The final image should resemble a genuine mural photographed on location.\n• Master prompt instructions always override the selected option whenever conflicts occur.\n\nFINAL VALIDATION:\n\n✓ The image is a genuine painted mural.\n✓ No photographic textures remain.\n✓ The subject remains recognizable.\n✓ Paint follows the physical wall texture.\n✓ The mural appears permanently painted onto the structure.\n✓ The artwork resembles a real public mural."
   },
   {
+    "name": "MUSCLE MAG",
+    "category": [
+      "FITNESS",
+      "BODYBUILDING",
+      "MAGAZINE",
+      "PORTRAIT",
+      "TRANSFORMATION",
+      "OPTIONS"
+    ],
+    "message": "Take a picture and transform the subject into the star of an authentic bodybuilding and fitness magazine cover.\n\nThe subject must be transformed into an elite physique athlete while remaining immediately recognizable as the original subject.\n\nThe degree of muscular transformation is determined by the selected option.\n\nThe finished image must look like a professionally photographed magazine cover featuring the transformed subject as its featured athlete.",
+    "options": [
+    {
+      "id": "001",
+      "text": "FITNESS MODEL — Athletic, lean, highly defined physique with visible muscular development, balanced proportions, low body fat, and polished professional fitness-model appearance."
+    },
+    {
+      "id": "002",
+      "text": "CLASSIC PHYSIQUE — Dramatically muscular classic-bodybuilding physique with broad shoulders, defined chest, arms, back, legs, narrow waist, pronounced symmetry, and highly developed but aesthetically balanced proportions."
+    },
+    {
+      "id": "003",
+      "text": "PRO BODYBUILDER — Extreme professional bodybuilding physique with enormous muscular development across the chest, shoulders, arms, back, legs, and torso, while maintaining believable human anatomy."
+    },
+    {
+      "id": "004",
+      "text": "OPEN CLASS MASS MONSTER — Maximum bodybuilding transformation: exceptionally massive muscular development throughout the entire body, extreme shoulder width, huge arms, enormous chest and back, massive legs, and extraordinarily developed musculature while remaining photorealistic."
+    }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "SUBJECT IDENTITY:\n\n• Preserve the subject's recognizable face and identity.\n• Preserve facial geometry, eyes, nose, mouth, jawline, hairstyle, and distinctive characteristics.\n• Do not replace the subject with a generic bodybuilder.\n• The subject's face must remain clearly recognizable.\n\nPHYSIQUE TRANSFORMATION:\n\n• Transform the ENTIRE BODY according to the selected muscularity level.\n• The muscular transformation must be obvious.\n• Increase muscle mass throughout the entire body rather than only enlarging the arms.\n• Shoulders, chest, back, arms, forearms, abdominals, glutes, thighs, calves, and supporting musculature must develop consistently.\n• Maintain coherent human anatomy.\n• Muscle development must correspond to the selected option.\n• Do not create inflatable-looking muscles.\n• Do not create disconnected muscle groups.\n• Do not leave the original body proportions unchanged.\n\nMAGAZINE PRESENTATION:\n\n• Create an authentic professional bodybuilding magazine cover composition.\n• Subject is the dominant cover athlete.\n• Professional studio or competition-style lighting.\n• Dramatic but realistic physique lighting.\n• Magazine-quality photography.\n• Include appropriate magazine-style graphic design and cover typography only when compatible with the master prompt.\n• Do not let graphics obscure the subject.\n• The subject must remain the visual focus.\n\nMASTER PROMPT RULE:\n• Master prompt instructions always override conflicting instructions.\n• If the master prompt specifies pose, clothing, setting, lighting, or composition, incorporate it while maintaining the selected physique transformation.\n\nFINAL VALIDATION:\n✓ Subject remains recognizable.\n✓ Selected level of muscularity is unmistakable.\n✓ Entire body is transformed consistently.\n✓ Anatomy remains believable.\n✓ Result resembles professional fitness/bodybuilding photography.\n✓ Subject appears as the featured magazine athlete.\n✓ If ANY answer is NO, regenerate until every requirement is satisfied."
+  },
+  {
     "name": "MUSEUM EXHIBIT",
     "category": [
       "MUSEUM",
@@ -38947,6 +39034,38 @@
   "additionalInstructions": "PHYSICAL RULES:\n\n• Apply radial motion blur from a single vanishing point\n• ALL streaks must radiate outward in straight lines from the center\n\nANTI-CHEAT RULES:\n• DO NOT overlay speed lines or graphics\n• Motion must come from stretching original pixels\n• NO directional blur that is not radial\n\nFAIL CONDITIONS:\n• No clear center point → FAIL\n• Looks like generic blur → FAIL\n• Multiple conflicting directions → FAIL\n\nQUALITY:\n• Clean radial streaks\n• Strong sense of motion\n• High detail retention near center"
   },
   {
+    "name": "RADIOACTIVE",
+    "category": [
+      "SCIENCE",
+      "HUMOR",
+      "GLOW",
+      "SURREAL",
+      "TRANSFORMATION",
+      "OPTIONS"
+    ],
+    "message": "Take a picture and transform the subject into a humorous, exaggerated, glow-in-the-dark parody of a person affected by fictionalized radioactivity while keeping the subject in a normally lit environment.\n\nThe subject itself must be transformed, not merely surrounded by radioactive effects.\n\nThe visual concept is deliberately cartoonish and exaggerated while remaining a coherent photorealistic image: the subject appears unnaturally luminous, fluorescent, and visibly radioactive while standing within an otherwise normally illuminated environment.",
+    "options": [
+    {
+      "id": "001",
+      "text": "TOXIC GREEN — Transform the subject with intense fluorescent green skin illumination, glowing green eyes, bright radioactive-looking highlights, and exaggerated green luminescence while retaining recognizable facial identity."
+    },
+    {
+      "id": "002",
+      "text": "BLUE RADIATION — Transform the subject with eerie electric-blue fluorescence, luminous skin, glowing eyes, and exaggerated blue radioactive energy while remaining in a normally lit environment."
+    },
+    {
+      "id": "003",
+      "text": "NUCLEAR GLOW — Transform the subject with an exaggerated yellow-green nuclear glow, bright luminous skin, glowing eyes, and subtle radioactive-looking energy emanating from the body."
+    },
+    {
+      "id": "004",
+      "text": "RADIOACTIVE MUTATION — Transform the subject into an exaggerated fictional radioactive character with glowing skin, luminous eyes, unusual fluorescent coloration, exaggerated veins and energy-like patterns, while preserving recognizable identity and avoiding horror or gore."
+    }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "TRANSFORMATION:\n\n• The subject itself must visibly glow.\n• Do not merely place a radioactive aura around the subject.\n• Do not simply add green lighting to an otherwise unchanged subject.\n• Skin, eyes, hair, clothing highlights, and other visible portions of the subject should respond to the radioactive transformation.\n• Preserve recognizable facial identity.\n• Maintain realistic facial geometry while introducing exaggerated radioactive coloration.\n• The environment remains normally lit unless the master prompt specifies otherwise.\n• The contrast between the ordinary environment and bizarre glowing subject should be obvious.\n\nSTYLE:\n\n• Humorous exaggerated radioactive parody.\n• Bright fluorescent colors.\n• Cartoonish concept rendered as a convincing photograph.\n• No gore.\n• No wounds.\n• No realistic radiation injury.\n• No horror-body-damage imagery.\n• No gruesome mutation.\n\nMASTER PROMPT RULE:\n• Master prompt instructions always override conflicting instructions.\n• Preserve requested setting, pose, clothing, composition, and action while applying the radioactive transformation.\n\nFINAL VALIDATION:\n✓ Subject itself visibly glows.\n✓ Environment remains normally lit.\n✓ Transformation is obvious.\n✓ Subject remains recognizable.\n✓ Result is humorous and exaggerated.\n✓ Result does not rely solely on an aura or lighting effect.\n✓ No gore or injury imagery.\n✓ If ANY answer is NO, regenerate until every requirement is satisfied."
+  },
+  {
     "name": "RAGDOLL",
     "category": [
       "TOY",
@@ -45131,6 +45250,151 @@
     "additionalInstructions": ""
   },
   {
+    "name": "STRIKE A POSE",
+    "category": [
+      "HUMOR",
+      "FITNESS",
+      "BODYBUILDING",
+      "WRESTLING",
+      "POSE",
+      "TRANSFORMATION",
+      "OPTIONS"
+    ],
+    "message": "Take a picture and transform ONLY the subject's pose into the selected famous muscle or wrestling pose while preserving the subject's exact identity, appearance, clothing, body, and the original background.\n\nTHIS IS A POSE TRANSFORMATION ONLY.\n\nThe subject must remain the SAME PERSON with the SAME FACE, SAME BODY, SAME HAIR, SAME CLOTHING, and SAME recognizable physical characteristics. The ONLY intentional transformation is the subject's body position and pose.\n\nThe original background must remain unchanged.\n\nThe selected pose should be immediately recognizable as the famous muscle or wrestling pose being referenced. Reposition the subject's arms, hands, legs, torso, shoulders, head, and body orientation as necessary to accurately reproduce the selected pose while keeping the subject themselves unchanged.",
+    "options": [
+    {
+      "id": "001",
+      "text": "FRONT DOUBLE BICEPS — Classic bodybuilding pose facing forward with both arms raised and flexed symmetrically, fists near head level, elbows outward, displaying the classic double-biceps silhouette."
+    },
+    {
+      "id": "002",
+      "text": "SIDE CHEST — Classic bodybuilding side-chest pose with the torso turned sideways, chest expanded, one arm flexed across the body, and the other arm positioned to emphasize the chest and upper body."
+    },
+    {
+      "id": "003",
+      "text": "SIDE TRICEPS — Classic bodybuilding pose with the subject turned sideways, one arm extended downward and flexed while the opposite hand positions the arm to emphasize the triceps."
+    },
+    {
+      "id": "004",
+      "text": "MOST MUSCULAR — Aggressive classic bodybuilding stance with the subject leaning slightly forward, shoulders raised, arms brought inward, fists clenched, and body compressed into a powerful symmetrical pose."
+    },
+    {
+      "id": "005",
+      "text": "LAT SPREAD — Front-facing bodybuilding pose with both arms positioned outward and slightly forward, shoulders expanded and elbows angled to create the characteristic wide upper-body silhouette."
+    },
+    {
+      "id": "006",
+      "text": "REAR DOUBLE BICEPS — Subject facing away from the camera with both arms raised and flexed, elbows outward, displaying the classic rear double-biceps pose while preserving the subject's recognizable hair, clothing, and body."
+    },
+    {
+      "id": "007",
+      "text": "ABS AND THIGHS — Classic bodybuilding pose with both arms raised behind or beside the head, torso tightened, abdominal area emphasized, and one leg positioned forward to create the traditional competition silhouette."
+    },
+    {
+      "id": "008",
+      "text": "VACUUM POSE — Classic physique pose with the subject standing upright, arms positioned strategically, shoulders raised, and abdomen dramatically drawn inward to create the distinctive vacuum silhouette."
+    },
+    {
+      "id": "009",
+      "text": "ARNOLD-STYLE BICEPS — Dramatic classic bodybuilding stance with one arm raised and flexed while the other arm is positioned naturally to create an iconic old-school bodybuilding silhouette."
+    },
+    {
+      "id": "010",
+      "text": "FRONT MOST MUSCULAR — Subject faces the camera in a powerful stance with both fists brought inward near the waist or torso, shoulders raised, elbows outward, and an intense flexing posture."
+    },
+    {
+      "id": "011",
+      "text": "WRESTLING VICTORY POSE — Subject stands triumphantly with both arms raised overhead, fists clenched, chest forward, and an unmistakable professional-wrestling victory stance."
+    },
+    {
+      "id": "012",
+      "text": "WRESTLER FLEX — Subject strikes an exaggerated professional-wrestling flex with both arms bent and fists clenched, shoulders raised, chest forward, and an intense confident expression."
+    },
+    {
+      "id": "013",
+      "text": "CHAMPIONSHIP POSE — Subject stands with feet planted apart, one arm raised overhead as though celebrating a championship victory and the other arm flexed confidently."
+    },
+    {
+      "id": "014",
+      "text": "WRESTLING THREAT POSE — Subject leans forward slightly with fists clenched, elbows bent, shoulders squared, chest forward, and an intimidating professional-wrestling stance."
+    },
+    {
+      "id": "015",
+      "text": "WRESTLING CROUCH — Subject drops into a low athletic wrestling stance with knees bent, torso forward, arms positioned defensively, and body ready to charge."
+    },
+    {
+      "id": "016",
+      "text": "WRESTLER ROPE POSE — Subject leans backward dramatically against an implied wrestling-rope stance, chest raised, arms extended or gripping outward, creating an exaggerated arena-style wrestling pose."
+    },
+    {
+      "id": "017",
+      "text": "WRESTLING DOUBLE BICEPS — Subject combines a classic double-biceps bodybuilding flex with an exaggerated professional-wrestling presentation and confident championship stance."
+    },
+    {
+      "id": "018",
+      "text": "WRESTLING CHEST FLEX — Subject stands squarely toward the camera with arms bent, fists near the torso, shoulders raised, chest pushed forward, and an exaggerated wrestler's flex."
+    },
+    {
+      "id": "019",
+      "text": "POWER STANCE — Subject stands with legs spread apart, knees slightly bent, fists clenched at the sides, shoulders squared, chest forward, and an unmistakable larger-than-life wrestling entrance pose."
+    },
+    {
+      "id": "020",
+      "text": "TRIUMPHANT POINT — Subject strikes a dramatic wrestling victory pose while pointing upward with one arm and flexing or raising the opposite arm."
+    },
+    {
+      "id": "021",
+      "text": "FOUR-POINT FLEX — Subject creates a symmetrical bodybuilding-style pose with both arms bent outward and both legs positioned deliberately to create a powerful competition silhouette."
+    },
+    {
+      "id": "022",
+      "text": "SIDE BICEPS — Subject turns partially sideways and flexes one bicep dramatically toward the camera while keeping the torso and legs in a classic bodybuilding stance."
+    },
+    {
+      "id": "023",
+      "text": "CLASSIC FRONT POSE — Subject stands upright in a classic physique competition stance with one leg slightly forward, torso angled subtly, arms positioned naturally, and the entire silhouette emphasizing symmetry."
+    },
+    {
+      "id": "024",
+      "text": "WRESTLING ENTRANCE POSE — Subject stands in an exaggerated professional-wrestling entrance stance with legs apart, shoulders back, chest forward, and arms positioned dramatically as though introducing themselves to an arena."
+    },
+    {
+      "id": "025",
+      "text": "FIST-UP FLEX — Subject raises one clenched fist overhead while flexing the opposite arm, creating a powerful combination of bodybuilding and wrestling celebration."
+    },
+    {
+      "id": "026",
+      "text": "DOUBLE FIST FLEX — Subject bends both arms with fists clenched near shoulder height, shoulders raised and chest forward, creating an exaggerated powerful muscle pose."
+    },
+    {
+      "id": "027",
+      "text": "BACK LAT SPREAD — Subject faces away from the camera with arms positioned outward and slightly forward to emphasize the broad-back silhouette of a classic bodybuilding lat spread."
+    },
+    {
+      "id": "028",
+      "text": "ONE-ARM OVERHEAD FLEX — Subject raises one arm overhead and flexes the bicep while the other arm rests at the waist or hip, creating a classic physique-model pose."
+    },
+    {
+      "id": "029",
+      "text": "CHAMPION FLEX — Subject stands upright with both arms flexed, chest forward, shoulders back, fists clenched, and an unmistakable victorious champion pose."
+    },
+    {
+      "id": "030",
+      "text": "ULTIMATE POWER POSE — Subject combines the visual language of an elite bodybuilding pose and an exaggerated professional-wrestling victory stance: legs planted wide, torso forward, shoulders raised, both arms dramatically flexed, fists clenched, and an unmistakable larger-than-life pose."
+    },
+    {
+      "id": "031",
+      "text": "ONE-ARM OUTSIDE FLEX — Subject performs the iconic classic wrestling muscle pose with ONE ARM extended straight outward to the side at approximately shoulder height, palm or fist presented outward, while the OTHER ARM is bent sharply at the elbow and flexed beside the torso. The two arms must clearly form contrasting positions: one long and extended sideways, the other tightly flexed. The pose should have the unmistakable confident, exaggerated presentation of a legendary professional wrestler showing off his physique."
+    },
+    {
+      "id": "032",
+      "text": "EAR CUP — Subject performs the iconic wrestling crowd-hyping pose: ONE HAND is placed behind or beside the corresponding ear with the palm facing outward as though cupping the ear to hear the audience, while the opposite arm hangs naturally or is positioned confidently at the side. The subject's head is turned slightly toward the cupped hand and the body language clearly communicates 'I can't hear you!' and invites the imaginary crowd to become louder. The hand must be anatomically correct and clearly visible beside the ear."
+    }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "ABSOLUTE SUBJECT PRESERVATION:\n\n• Transform ONLY the subject's pose.\n• Preserve the subject's actual face exactly.\n• Preserve facial identity and recognizable facial features.\n• Preserve hairstyle and hair color.\n• Preserve body size, body shape, muscle mass, weight, height, and physical proportions.\n• Do NOT make the subject more muscular.\n• Do NOT make the subject thinner, heavier, younger, older, taller, or shorter.\n• Do NOT turn the subject into a bodybuilder or professional wrestler.\n• Do NOT replace the subject with an athlete.\n• Do NOT change the subject's clothing.\n• Do NOT change clothing colors, patterns, logos, or accessories.\n• Do NOT add wrestling gear, bodybuilding trunks, championship belts, or athletic clothing unless explicitly requested by the master prompt.\n• The subject remains the same person wearing the same clothes.\n\nPOSE TRANSFORMATION:\n\n• The selected option controls the pose ONLY.\n• Accurately reposition the subject's arms, hands, legs, torso, shoulders, head, and body orientation to reproduce the selected pose.\n• Hands and fingers must be anatomically correct.\n• Arms and legs must connect naturally to the subject's existing body.\n• Do not distort or duplicate limbs.\n• Do not add extra arms, legs, hands, or fingers.\n• Preserve the subject's existing body proportions while changing its position.\n• The pose must be physically plausible.\n• If the selected pose normally requires a body orientation different from the source image, rotate and reposition the subject naturally while preserving identity and appearance.\n\nSPECIAL POSE ACCURACY — OPTIONS 031 AND 032:\n\n• For ONE-ARM OUTSIDE FLEX, one arm MUST be clearly extended outward to the side while the opposite arm MUST be clearly bent and flexed.\n• Do not make both arms flexed.\n• Do not make both arms extended.\n• The contrast between the two arm positions is essential to the pose.\n• For EAR CUP, one hand MUST visibly cup the ear with the palm facing outward.\n• The hand must be beside the ear rather than covering the face.\n• The opposite arm must remain separate and naturally positioned.\n• Do not replace the ear-cup hand with a fist, wave, pointing gesture, or generic hand gesture.\n• The selected pose must be immediately recognizable from the silhouette and hand positioning alone.\n\nBACKGROUND PRESERVATION:\n\n• The ORIGINAL BACKGROUND MUST REMAIN UNCHANGED.\n• Do not replace the location.\n• Do not add an arena.\n• Do not add a gym.\n• Do not add a wrestling ring.\n• Do not add bodybuilding stage lighting.\n• Do not add crowds or spectators.\n• Do not add props.\n• Do not add visual effects.\n• Do not change architecture, scenery, furniture, vehicles, objects, or environmental details.\n• Preserve the original background exactly except for natural occlusion caused by the subject's new pose.\n\nPHYSICAL INTEGRATION:\n\n• The repositioned subject must remain physically grounded in the original environment.\n• Preserve realistic contact with the floor or other surfaces.\n• Maintain correct perspective.\n• Maintain realistic lighting and shadows from the original scene.\n• Maintain the original camera viewpoint.\n• The new pose must look as though the subject actually performed it while being photographed in the original location.\n• Do not make the subject look pasted into the image.\n\nMASTER PROMPT RULE:\n• Master prompt instructions always override conflicting instructions EXCEPT the mandatory pose-only transformation and background-preservation requirements.\n• If the master prompt specifies a particular pose, expression, camera angle, action, or composition, incorporate that information while preserving the subject's identity, appearance, clothing, body proportions, and original background.\n\nFINAL VALIDATION:\n\n✓ Only the subject's pose has changed.\n✓ Subject remains the exact same recognizable person.\n✓ Face remains unchanged and recognizable.\n✓ Body proportions remain unchanged.\n✓ Clothing remains unchanged.\n✓ No additional muscles have been added.\n✓ Selected pose is clearly recognizable.\n✓ Hands and limbs are anatomically correct.\n✓ One-arm-outside-flex option has one arm extended and the opposite arm flexed.\n✓ Ear-cup option has one hand clearly cupping the ear.\n✓ Original background remains unchanged.\n✓ No new props or environments have been introduced.\n✓ Subject appears physically present in the original scene.\n✓ If ANY answer is NO, regenerate until every requirement is satisfied."
+  },
+  {
     "name": "STRING ART",
     "category": [
       "CRAFT",
@@ -48721,6 +48985,78 @@
     ],
     "randomizeOptions": true,
     "additionalInstructions": "FINAL RESULT:\nThe final image must convincingly recreate the specific lighting conditions of the selected time of day — not just a color filter but authentic directional lighting, shadow behavior, and atmospheric quality. The subject must be clearly recognizable under the transformed lighting conditions."
+  },
+  {
+    "name": "TIME MACHINE",
+    "category": [
+      "HISTORY",
+      "TIME TRAVEL",
+      "PERIOD",
+      "TRANSFORMATION",
+      "PHOTOGRAPHY",
+      "OPTIONS"
+    ],
+    "message": "Take a picture and transport the SUBJECT and ENTIRE SCENE into the selected century.\n\nCOMPLETELY RECONSTRUCT THE IMAGE FOR THE SELECTED PERIOD.\n\nThe subject remains the same recognizable person or subject, but EVERYTHING ELSE visible in the image must be replaced by historically appropriate or plausibly futuristic equivalents for the selected century.\n\nBuildings, architecture, roads, vehicles, clothing, furniture, technology, signage, tools, street surfaces, lighting, infrastructure, objects, decorations, and environmental details must all belong to the selected period.\n\nThe image must look as though the photograph was genuinely captured in that century rather than as a modern photograph with historical objects pasted into it.",
+    "options": [
+    {
+      "id": "001",
+      "text": "1900s — Early 20th-century world with period architecture, horse-drawn transportation, early automobiles, gas and electric street lighting, period clothing, storefronts, signage, and technology."
+    },
+    {
+      "id": "002",
+      "text": "1910s — World War I-era environment with historically appropriate automobiles, architecture, clothing, transportation, streets, machinery, signage, and technology."
+    },
+    {
+      "id": "003",
+      "text": "1920s — Roaring Twenties environment with Art Deco influence, period automobiles, architecture, clothing, signage, interiors, transportation, and technology."
+    },
+    {
+      "id": "004",
+      "text": "1930s — Depression-era environment with period automobiles, architecture, storefronts, clothing, infrastructure, transportation, and technology."
+    },
+    {
+      "id": "005",
+      "text": "1940s — World War II-era environment with period vehicles, architecture, clothing, industrial technology, signage, streets, and infrastructure."
+    },
+    {
+      "id": "006",
+      "text": "1950s — Mid-century environment with classic automobiles, suburban architecture, diners, period clothing, appliances, signage, transportation, and technology."
+    },
+    {
+      "id": "007",
+      "text": "1960s — Space Age environment with period automobiles, architecture, fashion, technology, signage, furniture, transportation, and cultural design."
+    },
+    {
+      "id": "008",
+      "text": "1970s — Earth-tone and disco-era environment with period cars, architecture, clothing, technology, signage, interiors, and transportation."
+    },
+    {
+      "id": "009",
+      "text": "1980s — Neon-era environment with period automobiles, architecture, fashion, electronics, arcades, signage, transportation, and technology."
+    },
+    {
+      "id": "010",
+      "text": "1990s — Late 20th-century environment with period automobiles, architecture, clothing, consumer electronics, signage, transportation, and technology."
+    },
+    {
+      "id": "011",
+      "text": "2000s — Early digital-era environment with period automobiles, architecture, clothing, mobile phones, computers, signage, technology, and infrastructure."
+    },
+    {
+      "id": "012",
+      "text": "2100s — Plausible early-22nd-century future based on realistic technological extrapolation: autonomous transportation, advanced but believable architecture, adaptive infrastructure, sophisticated displays, renewable energy systems, advanced materials, and emerging technologies that could reasonably exist."
+    },
+    {
+      "id": "013",
+      "text": "2200s — Plausible 23rd-century future using scientifically and technologically reasonable extrapolations of transportation, architecture, computing, energy, materials, communication, and urban infrastructure."
+    },
+    {
+      "id": "014",
+      "text": "2300s — Plausible 24th-century future with radically advanced but internally coherent transportation, architecture, computing, energy, materials, communication, and environmental systems."
+    }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "HISTORICAL ACCURACY:\n\n• The selected century controls ALL visible environmental elements.\n• Replace modern objects with period-appropriate equivalents.\n• Do not leave modern cars, buildings, streetlights, signs, furniture, electronics, roads, or infrastructure in the historical versions.\n• Clothing must belong to the selected period unless the master prompt specifically requires otherwise.\n• Architecture must be appropriate to the selected period and location.\n• Vehicles must be appropriate to the selected period.\n• Technology must be appropriate to the selected period.\n• Avoid anachronisms.\n• Do not simply apply an antique color grade.\n• The actual physical objects and structures must change.\n\nFUTURE REQUIREMENTS:\n\n• Future centuries must be based on plausible technological extrapolation rather than arbitrary science fiction.\n• Re-imagine every visible object with a credible future replacement.\n• Preserve recognizable physical relationships between objects.\n• Avoid fantasy technology unless the master prompt requests it.\n• Future vehicles, buildings, interfaces, infrastructure, materials, and transportation should have believable engineering logic.\n\nSUBJECT REQUIREMENT:\n\n• Preserve the subject's recognizable identity.\n• The subject is physically transported into the selected period.\n• The subject must naturally exist within the transformed environment.\n• Do not simply paste the subject onto a historical background.\n• Lighting, shadows, perspective, atmosphere, and reflections must cause the subject and environment to appear physically present together.\n\nMASTER PROMPT RULE:\n• Master prompt instructions always override conflicting instructions.\n• The master prompt may specify a particular location, object, action, clothing item, or composition, which must be incorporated while maintaining the selected century.\n\nFINAL VALIDATION:\n✓ Entire environment reconstructed.\n✓ Every visible object is appropriate to the selected century.\n✓ Subject remains recognizable.\n✓ No obvious modern anachronisms remain in historical versions.\n✓ Future versions use plausible replacements.\n✓ Subject physically belongs in the new environment.\n✓ Result looks like a genuine photograph from that period or future period.\n✓ If ANY answer is NO, regenerate until every requirement is satisfied."
   },
   {
     "name": "TIME TRAVELER",
