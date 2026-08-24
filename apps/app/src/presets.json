@@ -39136,6 +39136,30 @@
     "additionalInstructions": "• Transform ONLY the subject.\n• Keep the background completely unchanged.\n• Preserve the original environment, lighting, perspective, colors, shadows, and every background object exactly as photographed.\n• Completely discard the original subject before reconstruction.\n• Do NOT place ramen noodles over the original person.\n• Do NOT blend photographic textures with noodles.\n• Every visible part of the subject must be created entirely from real ramen noodles.\n• Preserve the subject's exact identity, facial structure, hairstyle, hair color, expression, age, ethnicity, body proportions, pose, silhouette, and recognizable features.\n• Facial features must emerge solely through intelligent arrangement of noodle strands.\n• Every noodle must remain recognizable as real ramen.\n• Preserve authentic curly noodle shapes, thickness, fried texture, bends, overlaps, and natural variation.\n• Never flatten noodles into simple lines or digital patterns.\n• Never create a smooth synthetic noodle texture.\n• Use realistic layering, twisting, stacking, and three-dimensional depth.\n• Noodle strands should cast realistic shadows and show physical volume.\n• Hair must be reconstructed entirely from ramen noodles using appropriate strand direction and density.\n• Clothing must also be rebuilt entirely from ramen noodles.\n• Use smaller noodle sections for detailed facial areas and larger noodle structures for broad shapes.\n• Include authentic imperfections such as broken strands, uneven curls, and varied noodle placement.\n• The finished artwork should look like a real handcrafted ramen noodle sculpture photographed after completion.\n• Master prompt instructions always override the selected option whenever conflicts occur.\n\nFINAL VALIDATION — Before producing the final image, verify ALL of the following:\n\n✓ ONLY the subject has been transformed.\n✓ The background remains completely unchanged.\n✓ No original photographic pixels remain on the subject.\n✓ The subject is entirely reconstructed from real ramen noodles.\n✓ Ramen noodles are not simply placed over the original subject.\n✓ Individual noodle strands remain clearly visible.\n✓ Noodle texture, shape, and three-dimensional structure are realistic.\n✓ The subject remains immediately recognizable.\n✓ The artwork resembles a genuine handcrafted ramen sculpture.\n✓ If ANY answer is NO, regenerate the image until every requirement is satisfied."
   },
   {
+    "name": "RANDOM ART MEDIUM",
+    "category": [
+      "ART",
+      "MEDIUM",
+      "RANDOM",
+      "TRANSFORMATION",
+      "CREATIVE",
+      "OPTIONS"
+    ],
+    "message": "Take a picture and completely recreate the entire image using a randomly selected artistic medium. The subject and every element of the environment must be physically and visually rendered through the selected medium. The result must look like a genuine artwork created using that medium rather than a photograph with an artistic filter.",
+  "options": [
+    {
+      "id": "001",
+      "text": "COMMON — Randomly select a recognizable artistic medium such as oil paint, watercolor, acrylic, charcoal, pastel, ink, graphite, colored pencil, collage, or another established medium and recreate the entire image using it."
+    },
+    {
+      "id": "002",
+      "text": "OBSCURE — Randomly select a genuinely obscure, unusual, historical, experimental, or specialized artistic medium or technique and recreate the entire image using it."
+    }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "COMPLETE MEDIUM TRANSFORMATION:\n\n• Transform the entire image into artwork created using the selected medium.\n• The subject itself must be rendered using the medium.\n• The environment must also be rendered using the medium.\n• Do not simply apply an artistic filter.\n• Do not place the photograph onto a canvas or paper.\n• Do not leave photographic details intact underneath the artwork.\n• The selected medium must determine the marks, edges, textures, layering, color behavior, and surface appearance.\n\nMEDIUM FIDELITY:\n• Accurately reproduce the physical characteristics of the selected medium.\n• Oil should behave like oil paint; watercolor should behave like watercolor; charcoal should behave like charcoal, etc.\n• Preserve recognizable subject identity whenever compatible with the selected medium.\n\nOBSCURE OPTION:\n• Select a real medium or technique rather than an invented one.\n• Favor unusual historical and experimental methods.\n\nMASTER PROMPT RULE:\n• Master prompt instructions always override conflicting instructions except the mandatory artistic-medium transformation.\n• Incorporate master prompt information into the selected medium.\n\nFINAL VALIDATION:\n✓ The entire image is artwork created with the selected medium.\n✓ The subject is transformed into that medium.\n✓ The background is transformed too.\n✓ The result is not a filter over a photograph.\n✓ The selected medium is visually identifiable.\n✓ If ANY answer is NO, regenerate until every requirement is satisfied."
+  },
+  {
     "name": "RANDOM ARTISTIC STYLE",
     "category": [
       "ART",
@@ -39158,6 +39182,102 @@
     ],
     "randomizeOptions": true,
     "additionalInstructions": "RANDOMIZATION REQUIREMENTS:\n\n• Randomly select ONE artistic style or movement for the chosen option.\n• Do not allow the same obvious styles to dominate repeated generations.\n• The random selection should span different historical periods, geographic regions, artistic traditions, media, and approaches.\n• The transformation must be substantially different depending on the selected style.\n\nCOMMON OPTION:\n\n• May select famous and recognizable movements.\n• Do not restrict the selection to painting.\n• Styles may come from painting, sculpture, printmaking, illustration, photography, graphic design, collage, textile art, conceptual art, digital art, or other established visual-art traditions.\n\nOBSCURE OPTION:\n\n• Deliberately favor genuinely obscure or lesser-known movements.\n• Prefer movements that are historically real but unlikely to be selected by a typical user.\n• Consider obscure regional movements, short-lived movements, minor avant-garde movements, niche modernist movements, experimental collectives, overlooked historical schools, and unusual artistic practices.\n• Do NOT simply select a famous movement and call it obscure.\n• Do NOT invent a fictional movement.\n• Do NOT combine several unrelated movements unless the selected movement itself historically incorporated that combination.\n• The selected movement should have identifiable characteristics that can be visually reproduced.\n\nFULL-IMAGE TRANSFORMATION:\n\n• Transform the entire image.\n• Transform the subject itself into the selected artistic style.\n• Transform the environment itself into the selected artistic style.\n• Transform objects and background elements into the selected artistic style.\n• Do not leave the original photograph intact underneath the artistic effect.\n• Do not merely add artistic textures over the photograph.\n• Do not create a framed artwork containing the original photograph.\n• Do not add a gallery wall, museum frame, canvas, easel, or presentation surface unless the selected artistic movement specifically requires it.\n• The finished image itself must be the artwork.\n\nSUBJECT PRESERVATION:\n\n• Preserve the subject's recognizable identity unless the selected artistic movement inherently requires substantial abstraction.\n• Preserve important recognizable facial features, silhouette, pose, clothing characteristics, and distinguishing details whenever compatible with the selected style.\n• Do not replace the subject with a generic person.\n• The artistic transformation should change HOW the subject is depicted, not arbitrarily replace WHO the subject is.\n\nSTYLE FIDELITY:\n\n• Identify the defining visual characteristics of the randomly selected movement before constructing the transformation.\n• Apply those characteristics consistently throughout the entire image.\n• Reproduce appropriate composition, line quality, color relationships, geometry, brushwork, mark-making, abstraction, texture, perspective, material appearance, and visual language associated with the selected movement.\n• Avoid generic 'artistic' rendering that does not clearly correspond to the selected movement.\n• The result should be recognizable as an intentional example of the selected artistic style.\n\nMASTER PROMPT RULE:\n• Master prompt instructions always override conflicting instructions except the mandatory random-artistic-style transformation.\n• If the master prompt specifies a subject, pose, setting, action, composition, color, or other visual requirement, incorporate that information into the randomly selected artistic style.\n• If the master prompt explicitly names an artistic style, use that style rather than selecting another random style.\n\nFINAL VALIDATION:\n\n✓ Exactly one artistic style or movement has been selected.\n✓ The selection is genuinely random.\n✓ The entire image has been transformed.\n✓ The subject itself has been transformed rather than merely having an effect placed over it.\n✓ The background and environment have also been transformed.\n✓ The result strongly reflects the selected artistic movement.\n✓ The Common option may use established well-known styles.\n✓ The Obscure option uses a genuinely obscure real artistic movement or practice.\n✓ The Obscure option does not invent a fictional movement.\n✓ The original photograph does not remain visibly intact underneath the artwork.\n✓ No unnecessary frame, border, museum display, or presentation surface has been added.\n✓ The subject remains recognizable when compatible with the selected style.\n✓ If ANY answer is NO, regenerate until every requirement is satisfied."
+  },
+  {
+    "name": "RANDOM CRAFT",
+    "category": [
+      "CRAFT",
+      "RANDOM",
+      "HANDMADE",
+      "TRANSFORMATION",
+      "ART",
+      "OPTIONS"
+    ],
+    "message": "Take a picture and completely reconstruct the ENTIRE IMAGE as a handmade craft using a randomly selected craft tradition or technique. The subject, background, environment, and every visible element must become part of the handmade craft itself. Do not merely add craft textures to the original photograph.",
+    "options": [
+    {
+      "id": "001",
+      "text": "COMMON — Randomly select a recognizable craft such as quilting, embroidery, mosaic, paper cutting, origami, stained glass, pottery, beadwork, weaving, knitting, wood carving, or another established craft and reconstruct the entire image using it."
+    },
+    {
+      "id": "002",
+      "text": "OBSCURE — Randomly select a genuinely obscure historical, regional, traditional, or specialized craft technique and reconstruct the entire image using that craft."
+    }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "COMPLETE CRAFT TRANSFORMATION:\n\n• The ENTIRE image becomes the selected craft.\n• The subject itself must be constructed using the craft.\n• The background and environment must also be constructed using the craft.\n• Every visible element must participate in the handmade construction.\n• Do NOT simply photograph the original image and place a craft texture over it.\n• Do NOT place the subject on a craft background while leaving the subject photographic.\n• Do NOT create a framed craft containing the original photograph.\n\nHANDMADE APPEARANCE:\n• Preserve believable physical construction.\n• Show appropriate seams, cuts, joins, stitches, brush marks, pieces, fibers, grains, folds, or other characteristics appropriate to the selected craft.\n• Allow subtle handmade imperfections.\n• The craft must remain visually convincing rather than looking like CGI.\n\nOBSCURE OPTION:\n• Select a real craft tradition or technique.\n• Favor unusual regional, historical, endangered, specialized, or lesser-known crafts.\n• Do not invent a fictional craft.\n\nSUBJECT IDENTITY:\n• Preserve recognizable facial identity and important distinguishing characteristics whenever compatible with the craft.\n• Reconstruct those features using the selected craft rather than leaving the original face photographic.\n\nMASTER PROMPT RULE:\n• Master prompt instructions always override conflicting instructions except the mandatory complete craft transformation.\n\nFINAL VALIDATION:\n✓ The entire image is the selected craft.\n✓ The subject itself is made using the craft.\n✓ The environment is also made using the craft.\n✓ The result looks handmade.\n✓ The original photograph is not simply textured.\n✓ If ANY answer is NO, regenerate until every requirement is satisfied."
+  },
+  {
+    "name": "RANDOM PRINTING PROCESS",
+    "category": [
+      "PRINT",
+      "PRINTMAKING",
+      "RANDOM",
+      "TRANSFORMATION",
+      "ART",
+      "OPTIONS"
+    ],
+    "message": "Take a picture and completely transform the entire image into a print produced by a randomly selected printing or printmaking process. The subject and entire environment must be reconstructed according to the physical characteristics of the selected process. The final image must look like an authentic example of that printing process rather than a photograph with a print filter.",
+    "options": [
+    {
+      "id": "001",
+      "text": "COMMON — Randomly select a recognizable printing or printmaking process such as woodcut, linocut, engraving, etching, lithography, screen printing, letterpress, halftone printing, risograph, or another established process and recreate the entire image using it."
+    },
+    {
+      "id": "002",
+      "text": "OBSCURE — Randomly select a genuinely obscure historical, experimental, obsolete, regional, or specialized printing process and recreate the entire image as though it had actually been produced using that process."
+    }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "COMPLETE PRINT TRANSFORMATION:\n\n• Transform the ENTIRE image into the selected printing process.\n• The subject itself must be rendered through the printing process.\n• The background and environment must also be rendered through the process.\n• Do NOT simply apply a grain, paper texture, halftone filter, or color effect.\n• Do NOT leave the original photograph intact underneath the printing effect.\n• The final image must look like an actual physical print produced by the selected process.\n\nPROCESS FIDELITY:\n• Reproduce the characteristic marks, registration, ink behavior, impression, line quality, dot structure, layering, color separation, texture, and imperfections appropriate to the selected process.\n• Woodcut should have carved marks and relief-print characteristics.\n• Engraving should use fine incised lines.\n• Lithography should have appropriate drawn and printed tonal qualities.\n• Screen printing should show appropriate ink layering and graphic separation.\n• Halftone processes should construct imagery from appropriate dot patterns.\n• Other processes must similarly reproduce their defining physical characteristics.\n\nOBSCURE OPTION:\n• Select a real printing or printmaking process.\n• Favor unusual historical, obsolete, experimental, regional, or specialized processes.\n• Do not invent a fictional process.\n\nSUBJECT PRESERVATION:\n• Preserve recognizable subject identity whenever compatible with the selected printing process.\n• Reconstruct the subject's recognizable characteristics using the selected printing method.\n\nMASTER PROMPT RULE:\n• Master prompt instructions always override conflicting instructions except the mandatory complete printing-process transformation.\n• Incorporate master prompt information into the selected printing process.\n\nFINAL VALIDATION:\n✓ The entire image has been transformed into a print.\n✓ The subject itself is printed in the selected process.\n✓ The background is also transformed.\n✓ The physical characteristics of the process are clearly visible.\n✓ The result is not merely a photographic filter.\n✓ The original photograph is not visibly intact underneath the effect.\n✓ If ANY answer is NO, regenerate until every requirement is satisfied."
+  },
+  {
+    "name": "RANDOM MATERIAL",
+    "category": [
+      "MATERIAL",
+      "RANDOM",
+      "TRANSFORMATION",
+      "TEXTURE",
+      "ART",
+      "OPTIONS"
+    ],
+    "message": "Take a picture and completely reconstruct the ENTIRE IMAGE from a randomly selected material. The subject, background, environment, objects, surfaces, and every visible element must appear physically constructed from the selected material. The material is not an overlay or texture placed on the photograph — the image itself must be rebuilt from that material.",
+    "options": [
+    {
+      "id": "001",
+      "text": "COMMON — Randomly select a recognizable physical material such as wood, glass, metal, marble, stone, paper, clay, wax, plastic, ceramic, fabric, leather, or another familiar material and reconstruct the entire image from it."
+    },
+    {
+      "id": "002",
+      "text": "OBSCURE — Randomly select a genuinely unusual or uncommon physical material and reconstruct the entire image from it. The material must be real, visually distinctive, and capable of being represented convincingly."
+    }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "COMPLETE MATERIAL TRANSFORMATION:\n\n• EVERYTHING visible must be reconstructed from the selected material.\n• Transform the subject itself.\n• Transform the background itself.\n• Transform every visible object.\n• Transform surfaces, clothing, architecture, and environmental elements as appropriate.\n• Do NOT simply place a material texture over the original photograph.\n• Do NOT leave photographic subject details underneath the material.\n• The forms, shapes, shadows, highlights, edges, and surface characteristics must all behave as though physically made from the selected material.\n\nMATERIAL PHYSICS:\n• Accurately represent the selected material's characteristic weight, surface, reflectivity, translucency, roughness, grain, imperfections, thickness, and light interaction where applicable.\n• Do not give every material the same generic appearance.\n• The material should be immediately recognizable.\n\nOBSCURE MATERIAL:\n• Select a real unusual material rather than inventing one.\n• Favor materials with distinctive visual properties.\n\nMASTER PROMPT RULE:\n• Master prompt instructions always override conflicting instructions except the mandatory complete material transformation.\n• Incorporate master prompt subject, pose, composition, or setting information into the material reconstruction.\n\nFINAL VALIDATION:\n✓ The entire image has been reconstructed from the selected material.\n✓ The subject itself is made from the material.\n✓ The environment is also made from the material.\n✓ The material is physically convincing.\n✓ The original photograph has not simply been textured.\n✓ If ANY answer is NO, regenerate until every requirement is satisfied."
+  },
+  {
+    "name": "RANDOM PHOTOGRAPHY",
+    "category": [
+      "PHOTOGRAPHY",
+      "RANDOM",
+      "TRANSFORMATION",
+      "ART",
+      "EXPERIMENTAL",
+      "OPTIONS"
+    ],
+    "message": "Take a picture and completely transform the entire image into a randomly selected photographic style. The selected photographic style must determine how the subject, environment, composition, lighting, perspective, tonal treatment, texture, and photographic rendering appear. The result must look like the image was originally photographed using the selected photographic approach, not like a photographic effect or filter was placed over the original image.",
+    "options": [
+    {
+      "id": "001",
+      "text": "COMMON — Randomly select a recognizable photographic style, genre, technique, or established photographic approach and completely transform the image into it."
+    },
+    {
+      "id": "002",
+      "text": "OBSCURE — Randomly select a genuinely obscure historical or modern photographic process, technique, movement, genre, or experimental photographic approach and completely transform the image into it."
+    }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "FULL PHOTOGRAPHIC TRANSFORMATION:\n\n• Transform the ENTIRE image.\n• The subject itself must be transformed by the selected photographic approach.\n• Transform the background, environment, lighting, composition, tonal range, perspective, depth of field, texture, and photographic characteristics as appropriate.\n• Do NOT simply apply a color filter.\n• Do NOT add a photographic texture over the original photograph.\n• Do NOT leave the original photograph intact underneath an effect.\n• The finished image must look as though it was originally captured using the randomly selected photographic approach.\n\nCOMMON OPTION:\n• May select well-known photographic genres, movements, processes, or techniques.\n• Examples include documentary photography, fashion photography, street photography, studio portraiture, photojournalism, high-key photography, low-key photography, infrared photography, macro photography, long-exposure photography, architectural photography, cinematic photography, and other established approaches.\n\nOBSCURE OPTION:\n• Select a real but genuinely obscure photographic process, movement, technique, or historical approach.\n• Prefer unusual historical processes, experimental techniques, regional photographic movements, obsolete photographic technologies, and lesser-known photographic practices.\n• Do NOT invent a fictional photographic process.\n\nSUBJECT PRESERVATION:\n• Preserve the subject's recognizable identity.\n• Preserve important facial features and distinguishing characteristics.\n• Change the photographic treatment, not the identity of the subject.\n\nMASTER PROMPT RULE:\n• Master prompt instructions always override conflicting instructions except the mandatory random photographic transformation.\n• If the master prompt specifies pose, setting, lighting, composition, clothing, or other visual information, incorporate it into the selected photographic style.\n\nFINAL VALIDATION:\n✓ One photographic approach was randomly selected.\n✓ The entire image was transformed.\n✓ The result genuinely looks photographed using that approach.\n✓ The subject remains recognizable.\n✓ The result is not merely a filter or overlay.\n✓ If ANY answer is NO, regenerate until every requirement is satisfied."
   },
   {
     "name": "RANDOM PROFESSIONAL",
