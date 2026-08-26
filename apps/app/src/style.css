@@ -1,8 +1,7 @@
 /* Power Grotesk Font */
 @font-face {
     font-family: 'Power Grotesk';
-    src: url('./PowerGrotesk-Regular.woff') format('woff'),
-         url('https://fonts.cdnfonts.com/s/95219/PowerGrotesk-Regular.woff') format('woff');
+    src: url('./PowerGrotesk-Regular.woff') format('woff');
     font-weight: 400;
     font-style: normal;
     font-display: swap;
@@ -10,8 +9,7 @@
 
 @font-face {
     font-family: 'Power Grotesk';
-    src: url('./PowerGrotesk-Bold.woff') format('woff'),
-         url('https://fonts.cdnfonts.com/s/95219/PowerGrotesk-Bold.woff') format('woff');
+    src: url('./PowerGrotesk-Bold.woff') format('woff');
     font-weight: 700;
     font-style: normal;
     font-display: swap;
@@ -6234,7 +6232,7 @@ body {
     background-color: rgba(20, 100, 180, 0.92);
 }
 
-/* ═══════════════════════════════════
+/* ══════════════��════════════════════
    PERFORMANCE FIX 2: Replace transition:all with specific properties
    ═══════════════════════════════════ */
 
@@ -7459,4 +7457,86 @@ button, .touchable {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+}
+
+/* ===== PRESET EDITOR: option boxes match the message box ===== */
+/* They used to be single-line <input>s, so long option wording ran off the
+   side and could not be read. They are textareas now, sized and styled to
+   match #style-message, and they sit on their own full-width row. */
+.option-item {
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.option-item .option-text-input {
+    /* order:1 sends the text box below the checkbox/Remove row without having
+       to reorder the elements in JavaScript */
+    order: 1;
+    flex: 1 0 100%;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 2vw;
+    min-height: 30vh;
+    padding: 2vw;
+    font-size: 5vw;
+    background-color: #2a2a2a;
+    color: #fff;
+    border: 2px solid #444;
+    border-radius: 2vw;
+    font-family: inherit;
+    transition: border-color 0.2s ease;
+    resize: none;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+.option-item .option-text-input:focus {
+    outline: none;
+    border-color: #FE5F00;
+    box-shadow: 0 0 0 2px rgba(254, 95, 0, 0.2);
+}
+
+/* Remove sits on the top row, hard right, level with this option's own
+   checkbox — so it is nowhere near the NEXT option's checkbox below.
+   Sized to match .style-option-checkbox (5vw / 20px) rather than the taller
+   default, so the whole row lines up. */
+.option-item > button {
+    margin-left: auto;
+    height: 5vw;
+    min-height: 20px;
+    padding: 0 2.5vw;
+    font-size: 3.2vw;
+    border-radius: 1.2vw;
+    line-height: 1;
+}
+
+/* "OPTION 1", "OPTION 2"... centred in the gap between the checkbox and the
+   Remove button, so it is obvious which option that button belongs to.
+   flex:1 makes the label fill that gap; text-align centres it inside. */
+.option-item .option-number {
+    flex: 1;
+    min-width: 0;
+    text-align: center;
+    text-transform: uppercase;
+    color: #FE5F00;
+    font-size: 3.6vw;
+    font-weight: 600;
+    white-space: nowrap;
+    line-height: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* A full-width rule after every option except the last, so one option can
+   never be mistaken for the next. The containers hold nothing but option
+   rows (the "+ Add Option" buttons are siblings), so :last-child is safe. */
+.option-item:not(:last-child) {
+    border-bottom: 1px solid #4a4a4a;
+    padding-bottom: 4vw;
+}
+
+.option-item {
+    margin-bottom: 5vw;
 }
