@@ -337,6 +337,7 @@ const DB_NAME = 'R1CameraGallery';
 const DB_VERSION = 4;
 const STORE_NAME = 'images';
 let db = null;
+let _initDBPromise = null;
 let galleryImages = [];
 let _galleryHighlightIndex = 0;
 let _galleryTopNavIndex = -1;
@@ -1214,7 +1215,8 @@ function showStyleReveal(styleName) {
 
 // Initialize IndexedDB
 function initDB() {
-  return new Promise((resolve, reject) => {
+  if (_initDBPromise) return _initDBPromise;
+  _initDBPromise = new Promise((resolve, reject) => {
     const request = indexedDB.open(DB_NAME, DB_VERSION);
     
     request.onerror = () => {
@@ -1259,6 +1261,7 @@ function initDB() {
       }
     };
   });
+  return _initDBPromise;
 }
 
 // Migrate old localStorage data to IndexedDB (run once)
@@ -5957,7 +5960,10 @@ async function mergePresetsWithStorage() {
     .filter(preset => !deletedNames.has(preset.name))
     .map(preset => {
       if (modifiedData.has(preset.name)) {
-        return { ...preset, ...modifiedData.get(preset.name) };
+        // Keep a link back to the stored name. A modification can rename the
+        // preset, and every record on disk is keyed by the ORIGINAL name, so
+        // without this the row can never be matched to its record again.
+        return { ...preset, ...modifiedData.get(preset.name), _baseName: preset.name };
       }
       return { ...preset };
     });
@@ -13696,6 +13702,11 @@ YOU MUST RESTART PROGRAM!`];
     }
   } catch (e) { errors.push('Draw Settings: ' + e.message); }
 
+  // The reset can switch Master Prompt and Manual Options off, so re-light (or
+  // un-light) the camera carousel buttons. Done once here so it covers every
+  // reset branch above rather than needing a call in each one.
+  if (window._syncLeftCamBtns) window._syncLeftCamBtns();
+
   // ── Re-render all preset lists immediately ──────────────────────────────
   try {
     if (presetsNeedReload) {
@@ -15675,6 +15686,14 @@ function editStyle(index) {
       document.getElementById('style-single-options-container').style.display = 'block';
       document.getElementById('style-multi-options-container').style.display = 'none';
       preset.options.forEach(opt => addStyleSingleOption(opt.text, opt.enabled !== false));
+    } else {
+      // Randomize is ticked but nothing was stored — blank option rows are
+      // dropped on save. Without this the editor showed a ticked checkbox and
+      // no panel at all, so "+ Add Option" was unreachable and the preset could
+      // never get its options back.
+      selectionTypeEl.value = 'single';
+      document.getElementById('style-single-options-container').style.display = 'block';
+      document.getElementById('style-multi-options-container').style.display = 'none';
     }
   }
   
@@ -15716,16 +15735,21 @@ async function saveStyle() {
   
   if (editingStyleIndex >= 0) {
     const oldName = CAMERA_PRESETS[editingStyleIndex].name;
+    // The stored record is keyed by the name this preset had on disk, which is
+    // NOT oldName once it has been renamed once already. Renaming twice used to
+    // save a second, separate record and the preset appeared twice.
+    const baseName = CAMERA_PRESETS[editingStyleIndex]._baseName || oldName;
     const wasCustom = CAMERA_PRESETS[editingStyleIndex].internal === false;
-      CAMERA_PRESETS[editingStyleIndex] = { name, category, message, options, optionGroups, randomizeOptions, additionalInstructions, internal: wasCustom ? false : undefined };
-    
+
     // Check if it's a factory preset OR imported preset
-    const isFactoryPreset = factoryPresets.some(p => p.name === oldName);
-    const isImportedPreset = hasImportedPresets && presetImporter.getImportedPresets().some(p => p.name === oldName);
-    
+    const isFactoryPreset = factoryPresets.some(p => p.name === baseName);
+    const isImportedPreset = hasImportedPresets && presetImporter.getImportedPresets().some(p => p.name === baseName);
+
+      CAMERA_PRESETS[editingStyleIndex] = { name, category, message, options, optionGroups, randomizeOptions, additionalInstructions, internal: wasCustom ? false : undefined, _baseName: (isFactoryPreset || isImportedPreset) ? baseName : undefined };
+
     if (isFactoryPreset || isImportedPreset) {
       // Save as modification (doesn't change the original)
-      await presetStorage.saveModification(oldName, {
+      await presetStorage.saveModification(baseName, {
         name: name,
         message: message,
         category: category,
@@ -15734,8 +15758,16 @@ async function saveStyle() {
         randomizeOptions: randomizeOptions,
         additionalInstructions: additionalInstructions
       });
-    } else {
+        } else {
       // User-created preset - update it directly, preserving internal: false
+      // A rename writes a row under the NEW name, so the old row has to go or
+      // the preset shows up twice after a restart.
+      if (oldName !== name) {
+        try {
+          const _tx = presetStorage.db.transaction(['presets'], 'readwrite');
+          _tx.objectStore('presets').delete(`new_${oldName}`);
+        } catch (e) { console.error('Failed to remove renamed preset row:', e); }
+      }
       await presetStorage.saveNewPreset({ name, category, message, options, optionGroups, randomizeOptions, additionalInstructions, internal: false });
     }
     
@@ -15774,21 +15806,37 @@ async function deleteStyle() {
   if (editingStyleIndex >= 0 && CAMERA_PRESETS.length > 1) {
     if (await confirm('Delete this style?')) {
       const presetName = CAMERA_PRESETS[editingStyleIndex].name;
-      
+      // Records on disk are keyed by the ORIGINAL name. Looking them up by the
+      // current name finds nothing after a rename, so the row vanished from the
+      // list but the record survived and the preset came back on the next start.
+      const baseName = CAMERA_PRESETS[editingStyleIndex]._baseName || presetName;
+
       // Check if it's a factory preset, imported preset, or user-created
-      const isFactoryPreset = factoryPresets.some(p => p.name === presetName);
-      const isImportedPreset = hasImportedPresets && presetImporter.getImportedPresets().some(p => p.name === presetName);
-      
+      const isFactoryPreset = factoryPresets.some(p => p.name === baseName);
+      const isImportedPreset = hasImportedPresets && presetImporter.getImportedPresets().some(p => p.name === baseName);
+
+      // Clear any modification rows first, under both names. Before saveDeletion
+      // below, because removeModification also clears deleted_ rows.
+      await presetStorage.removeModification(baseName);
+      if (presetName !== baseName) await presetStorage.removeModification(presetName);
+
       if (isImportedPreset) {
         // Delete from imported presets
-        await presetImporter.deletePreset(presetName);
+        await presetImporter.deletePreset(baseName);
       } else if (isFactoryPreset) {
         // Mark factory preset as deleted
-        await presetStorage.saveDeletion(presetName);
+        await presetStorage.saveDeletion(baseName);
       } else {
         // User-created preset: save to trash so it can be restored, then remove
+        // its stored row. removeModification only clears modified_/deleted_, so
+        // the new_ row must go too or the preset returns on restart.
         saveToPresetTrash(CAMERA_PRESETS[editingStyleIndex]);
-        await presetStorage.removeModification(presetName);
+        try {
+          const _tx = presetStorage.db.transaction(['presets'], 'readwrite');
+          const _store = _tx.objectStore('presets');
+          _store.delete(`new_${baseName}`);
+          if (presetName !== baseName) _store.delete(`new_${presetName}`);
+        } catch (e) { console.error('Failed to remove stored preset:', e); }
       }
       
       CAMERA_PRESETS.splice(editingStyleIndex, 1);
@@ -19523,6 +19571,11 @@ const result = await presetImporter.import();
   loadManualOptionsMode();
   loadImportResolution();
 
+  // masterPromptEnabled and manualOptionsMode are only real once the two loaders
+  // above have run, so light the camera carousel buttons now rather than relying
+  // on the 200ms fallback timer winning the race.
+  if (window._syncLeftCamBtns) window._syncLeftCamBtns();
+
   const resetBtn = document.getElementById('reset-button');
   if (resetBtn) {
     resetBtn.addEventListener('click', resetToCamera);
@@ -21360,6 +21413,11 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   // Initial sync after a brief delay to ensure state is loaded
+  // Exposed so it can be re-run whenever masterPromptEnabled / manualOptionsMode
+  // change. The timer below is only a fallback: it fires 200ms after this script
+  // is evaluated, which on a slow start is BEFORE the load handler has read those
+  // two flags out of localStorage — that is why the buttons were sometimes dark.
+  window._syncLeftCamBtns = syncLeftCamBtns;
   setTimeout(syncLeftCamBtns, 200);
 })();
 
