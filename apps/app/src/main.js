@@ -337,7 +337,6 @@ const DB_NAME = 'R1CameraGallery';
 const DB_VERSION = 4;
 const STORE_NAME = 'images';
 let db = null;
-let _initDBPromise = null;
 let galleryImages = [];
 let _galleryHighlightIndex = 0;
 let _galleryTopNavIndex = -1;
@@ -1215,8 +1214,7 @@ function showStyleReveal(styleName) {
 
 // Initialize IndexedDB
 function initDB() {
-  if (_initDBPromise) return _initDBPromise;
-  _initDBPromise = new Promise((resolve, reject) => {
+  return new Promise((resolve, reject) => {
     const request = indexedDB.open(DB_NAME, DB_VERSION);
     
     request.onerror = () => {
@@ -1231,24 +1229,24 @@ function initDB() {
     };
     
     request.onupgradeneeded = (event) => {
-      const upgradeDb = event.target.result;
+      db = event.target.result;
       
       // Create object store if it doesn't exist
-      if (!upgradeDb.objectStoreNames.contains(STORE_NAME)) {
-        const objectStore = upgradeDb.createObjectStore(STORE_NAME, { keyPath: 'id' });
+      if (!db.objectStoreNames.contains(STORE_NAME)) {
+        const objectStore = db.createObjectStore(STORE_NAME, { keyPath: 'id' });
         objectStore.createIndex('timestamp', 'timestamp', { unique: false });
         console.log('Object store created');
       }
 
       // Create preview images store if it doesn't exist
-      if (!upgradeDb.objectStoreNames.contains('preview_images')) {
-        const pvStore = upgradeDb.createObjectStore('preview_images', { keyPath: 'id' });
+      if (!db.objectStoreNames.contains('preview_images')) {
+        const pvStore = db.createObjectStore('preview_images', { keyPath: 'id' });
         pvStore.createIndex('timestamp', 'timestamp', { unique: false });
       }
 
       // Create deleted images store for trash/restore functionality
-      if (!upgradeDb.objectStoreNames.contains('deleted_images')) {
-        const delStore = upgradeDb.createObjectStore('deleted_images', { keyPath: 'id' });
+      if (!db.objectStoreNames.contains('deleted_images')) {
+        const delStore = db.createObjectStore('deleted_images', { keyPath: 'id' });
         delStore.createIndex('deletedAt', 'deletedAt', { unique: false });
       }
 
@@ -1256,12 +1254,11 @@ function initDB() {
       // Key is the preset NAME; we deliberately store nothing but the name and
       // when it was added, so the preset itself stays the single source of
       // truth and removing a game can never delete preset data.
-      if (!upgradeDb.objectStoreNames.contains('custom_games')) {
-        upgradeDb.createObjectStore('custom_games', { keyPath: 'name' });
+      if (!db.objectStoreNames.contains('custom_games')) {
+        db.createObjectStore('custom_games', { keyPath: 'name' });
       }
     };
   });
-  return _initDBPromise;
 }
 
 // Migrate old localStorage data to IndexedDB (run once)
