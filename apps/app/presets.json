@@ -5052,6 +5052,122 @@
     "additionalInstructions": "FINAL RESULT:\nA complete vintage board game box design featuring the subject as the main illustrated character in classic board game art style, with humorous game title, fake details, and authentic retro packaging design that looks like it came straight from a toy store shelf.\n\nCORE REQUIREMENTS:"
   },
   {
+    "name": "BOARD GAME WORLD",
+    "category": [
+      "GAMES",
+      "BOARD GAME",
+      "TRANSFORMATION",
+      "FANTASY",
+      "MINIATURE",
+      "OPTIONS"
+    ],
+    "message": "Take a picture and completely transform the ENTIRE IMAGE into a photorealistic, physically believable WORLD based on the selected famous board game. The subject must become an actual character, playing piece, or game element from the selected game while remaining recognizable as the original subject. The ENTIRE environment must simultaneously be transformed into the physical world of that board game.\n\nThe goal is NOT to place the subject on top of a board game. The goal is to make it appear as though the board game has become a REAL, LIVING, THREE-DIMENSIONAL WORLD and the subject is physically inside that world.\n\nEvery visible element must be interpreted through the selected game's visual language. Floors, streets, buildings, vehicles, furniture, animals, signs, objects, landscape, architecture, clothing, and other environmental elements must become realistic physical equivalents of the corresponding game components.\n\nIf the selected game contains recognizable playing pieces, those pieces should become the visual basis for appropriate objects in the environment. If the selected game contains named locations, those names should appear naturally on appropriate locations or structures. If the game contains cards, tokens, money, ships, ladders, chutes, pawns, buildings, weapons, dice, or other distinctive components, incorporate them into the physical world wherever logically appropriate.\n\nThe finished image should look like a photograph taken INSIDE the selected board game after the game board has expanded into a complete physical world — not like a photograph with a board-game filter, overlay, border, or texture.",
+    "options": [
+    {
+      "id": "001",
+      "text": "MONOPOLY — Transform the subject into a Monopoly-style character while preserving recognizable facial identity. Transform the entire environment into a realistic three-dimensional Monopoly world. Streets, sidewalks, buildings, properties, railroad locations, utilities, houses, hotels, money, signs, and other visible objects should correspond to recognizable Monopoly components. Property and location names should mirror famous Monopoly names where appropriate. A visible dog should resemble the Scottie Dog playing piece, a shoe should resemble the iconic shoe piece, and other recognizable objects should become appropriate Monopoly tokens. The environment should look like Monopoly if the board were transformed into a real physical city."
+    },
+    {
+      "id": "002",
+      "text": "CHUTES AND LADDERS — Transform the subject into a physical playing piece within a giant realistic Chutes and Ladders world. The environment becomes a three-dimensional version of the game's numbered spaces, colorful ladders, chutes, illustrations, and game elements. Buildings, paths, playgrounds, objects, and structures should naturally correspond to the game's visual elements. The subject must appear physically inside this enormous playable world rather than standing on top of a flat board."
+    },
+    {
+      "id": "003",
+      "text": "THE GAME OF LIFE — Transform the subject into a realistic participant inside a full-scale Game of Life world. Roads, intersections, houses, careers, vehicles, money, family-related elements, destinations, and other recognizable components become real physical parts of the environment. The subject should appear to be living through the game rather than simply standing beside a board."
+    },
+    {
+      "id": "004",
+      "text": "BATTLESHIP — Transform the subject and entire environment into a realistic physical Battleship world. The environment becomes an enormous strategic naval battlefield with recognizable grid structure, ocean sectors, ships, aircraft, harbors, markers, and other Battleship-inspired elements integrated naturally into reality. The subject becomes an appropriate participant or game piece within the world."
+    },
+    {
+      "id": "005",
+      "text": "CLUE — Transform the subject into a character inside a realistic three-dimensional Clue mansion. The environment becomes the mansion and its recognizable rooms, corridors, weapons, objects, and visual game elements. Integrate iconic locations such as the Kitchen, Ballroom, Conservatory, Dining Room, Library, Billiard Room, Hall, Lounge, and Study naturally into the architecture. The subject becomes one of the game's recognizable character archetypes while retaining their facial identity."
+    },
+    {
+      "id": "006",
+      "text": "CANDY LAND — Transform the entire image into a photorealistic Candy Land world. The subject becomes a living character within a colorful physical candy landscape. Roads, buildings, trees, bridges, terrain, and objects become realistic candy-themed equivalents corresponding to the game's recognizable locations and characters. The world should feel physically inhabitable despite being constructed from the game's candy imagery."
+    },
+    {
+      "id": "007",
+      "text": "SORRY! — Transform the image into an enormous realistic Sorry! board world with colorful pawn paths, Start and Home zones, Safety Zones, cards, pawns, and especially the game's iconic slide spaces. Turn the slides into enormous physical structures that the subject can actually interact with or move through. The environment should look like the Sorry! board has expanded into a real three-dimensional world, with the subject physically participating as a recognizable game piece rather than simply standing on a flat board."
+    },
+    {
+      "id": "008",
+      "text": "RISK — Transform the subject into a participant in a realistic three-dimensional Risk world. The environment becomes a physical version of the world map, with recognizable territories, armies, military units, borders, strategic locations, and game pieces represented as real environmental elements."
+    },
+    {
+      "id": "009",
+      "text": "OPERATION — Transform the subject and environment into a realistic three-dimensional Operation game world. The subject becomes an appropriately scaled participant or character while the environment incorporates recognizable anatomy-themed game elements, instruments, treatment areas, and game-piece concepts as physically believable objects."
+    },
+    {
+      "id": "010",
+      "text": "TWISTER — Transform the entire environment into a gigantic realistic Twister playing surface. Floors, walls, furniture, and surroundings become physically integrated with the game's colored circular spaces while the subject remains recognizable and appears to be physically participating in the game."
+    },
+    {
+      "id": "011",
+      "text": "CONNECT FOUR — Transform the image into a giant three-dimensional Connect Four world. The subject becomes a physical red or yellow game piece while the environment incorporates enormous vertical grids, discs, columns, and recognizable game geometry."
+    },
+    {
+      "id": "012",
+      "text": "GUESS WHO? — Transform the subject into a recognizable Guess Who? character while preserving their actual facial identity. The environment becomes a realistic giant Guess Who? game world containing rows of character panels, hinged frames, facial clues, and recognizable game mechanics represented physically."
+    },
+    {
+      "id": "013",
+      "text": "MOUSE TRAP — Transform the entire environment into a gigantic functioning Mouse Trap game world. The subject becomes a character physically moving through the elaborate contraption while ramps, gears, buckets, cages, tracks, levers, and other recognizable components become real structures."
+    },
+    {
+      "id": "014",
+      "text": "JENGA — Transform the environment into a gigantic realistic Jenga world. Buildings, walls, bridges, furniture, and structures are constructed from recognizable wooden Jenga blocks. The subject physically exists within this precariously stacked environment."
+    },
+    {
+      "id": "015",
+      "text": "SCRABBLE — Transform the environment into a realistic Scrabble world. Floors, streets, walls, signs, buildings, and objects incorporate physical Scrabble tiles and board geometry. Words and locations should naturally correspond to recognizable Scrabble gameplay."
+    },
+    {
+      "id": "016",
+      "text": "TICKET TO RIDE — Transform the image into a realistic three-dimensional Ticket to Ride world. The subject becomes a participant traveling through recognizable railway routes, trains, stations, cities, tracks, and destination-card-inspired locations."
+    },
+    {
+      "id": "017",
+      "text": "TRIVIAL PURSUIT — Transform the image into a realistic Trivial Pursuit world. The subject becomes a playing piece while the environment incorporates recognizable colored category wedges, question cards, circular pathways, and game architecture."
+    },
+    {
+      "id": "018",
+      "text": "YAHTZEE — Transform the image into a giant physical Yahtzee world. Dice, score sheets, cups, numbers, and recognizable game components become enormous environmental structures while the subject remains physically integrated."
+    },
+    {
+      "id": "019",
+      "text": "MYSTERY DATE — Transform the subject into a participant in a realistic Mystery Date world. The environment becomes a physical version of the game's doors, date locations, clothing, characters, and recognizable game elements."
+    },
+    {
+      "id": "020",
+      "text": "PAY DAY — Transform the entire image into a realistic Pay Day world. Streets, houses, bills, mail, money, payday spaces, shopping locations, and financial game elements become real physical parts of the environment."
+    },
+    {
+      "id": "021",
+      "text": "FIREBALL ISLAND — Transform the image into a photorealistic three-dimensional Fireball Island. The subject becomes an adventurer within the island while bridges, paths, jungle, temple structures, treasure, marbles, and the island's recognizable game elements become physically real."
+    },
+    {
+      "id": "022",
+      "text": "AGGRAVATION — Transform the image into a giant realistic Aggravation board world. Colored paths, marbles, holes, home areas, and game geometry become physical environmental structures surrounding the subject."
+    },
+    {
+      "id": "023",
+      "text": "CATAN — Transform the entire image into a realistic three-dimensional world based on Catan. The subject becomes a settler, player piece, or other appropriate participant while the environment becomes the physical island of Catan. Roads, settlements, cities, forests, fields, hills, mountains, pastures, harbors, resource-producing terrain, development elements, and recognizable Catan-inspired structures should become real physical parts of the landscape. Resource environments should be visually distinct and naturally integrated: forests for lumber, fields for grain, hills for brick, mountains for ore, and pastures for wool. Settlements and cities should look like physical versions of Catan game pieces enlarged into real buildings. Roads should physically connect settlements across the landscape, and the overall environment should feel like the Catan board has expanded into a believable inhabited island."
+    },
+    {
+      "id": "024",
+      "text": "CROKINOLE — Transform the image into a realistic physical Crokinole world. The subject becomes part of an enormous wooden game surface with recognizable circular targets, pegs, discs, scoring zones, and surrounding game architecture."
+    },
+    {
+      "id": "025",
+      "text": "RANDOM FAMOUS BOARD GAME — Randomly select a famous, recognizable board game and transform the entire image into a realistic three-dimensional world based on that game. The selected game's characters, pieces, board, locations, mechanics, objects, colors, and distinctive visual elements must determine the transformation."
+    }
+    ],
+    "randomizeOptions": false,
+    "additionalInstructions": "WORLD TRANSFORMATION REQUIREMENTS:\n\n• TRANSFORM THE ENTIRE IMAGE.\n• The subject must be transformed into a genuine participant, character, pawn, token, or other appropriate game element from the selected board game.\n• Preserve the subject's recognizable facial identity whenever the selected game's character design permits it.\n• The environment must also be completely transformed.\n• Do NOT simply place the subject on a board game.\n• Do NOT put a flat board underneath the original photograph.\n• Do NOT add a board-game border around the photograph.\n• Do NOT use a simple board-game texture overlay.\n• Do NOT leave the original environment unchanged.\n• The entire scene must become a believable three-dimensional physical world based on the selected game.\n\nREAL-WORLD INTERPRETATION:\n\n• Imagine that the selected board game has physically expanded to the scale of the real world.\n• The camera is physically inside that world.\n• Floors should become appropriate board surfaces, pathways, spaces, terrain, or game components.\n• Buildings should become realistic physical interpretations of the game's buildings, properties, locations, or structures.\n• Vehicles should become appropriate game vehicles or tokens.\n• Animals should resemble corresponding animal-shaped game pieces when applicable.\n• Common objects should be reinterpreted as recognizable game components whenever an appropriate equivalent exists.\n• Signs, streets, locations, and environmental labels should use recognizable names from the selected game where appropriate.\n• Board geometry should become three-dimensional architecture, terrain, roads, rooms, or other physically plausible structures.\n\nSUBJECT TRANSFORMATION:\n\n• The subject is NOT merely wearing game-themed clothing.\n• The subject must become a genuine physical part of the selected game's world.\n• If the game has a recognizable character, transform the subject into that character while preserving their recognizable facial identity.\n• If the game primarily uses pawns or tokens, transform the subject into a realistic human-scale interpretation of the appropriate piece.\n• If the game has no human character, reinterpret the subject as the most appropriate game element while preserving recognizable identity where visually possible.\n\nENVIRONMENTAL INTEGRATION:\n\n• Every visible environmental element must belong naturally to the selected game's world.\n• Objects should be transformed according to their closest recognizable game equivalent.\n• Avoid random game symbols that have no logical relationship to the environment.\n• The transformation should feel internally consistent from foreground to background.\n• Lighting, shadows, reflections, perspective, scale, and depth must make all game elements appear physically present.\n\nPHOTOREALISTIC WORLD:\n\n• Unless the selected game's established visual identity specifically requires another rendering approach, create a photorealistic interpretation of the board game world.\n• The game board becomes reality.\n• Game pieces become real physical objects.\n• Printed illustrations become physical architecture, terrain, characters, and objects.\n• Preserve recognizable game design while making everything appear three-dimensional and physically present.\n\nMASTER PROMPT RULE:\n• Master prompt instructions always override conflicting instructions except the mandatory Board Game World transformation.\n• If the master prompt specifies a pose, expression, clothing, setting, action, camera angle, or other visual information, incorporate it into the selected board-game world.\n• The selected board game determines the transformation of the entire image.\n\nFINAL VALIDATION:\n\n✓ The selected board game is immediately recognizable.\n✓ The subject is physically part of the game world.\n✓ The subject remains recognizable when appropriate.\n✓ The environment has been completely transformed.\n✓ Buildings and objects correspond logically to the selected game.\n✓ The floor/environment reflects the game's physical board or world.\n✓ Game pieces have become realistic physical elements where appropriate.\n✓ Recognizable game names and locations are incorporated naturally where applicable.\n✓ The image looks like reality has become the board game.\n✓ The original environment has NOT simply been left intact.\n✓ The subject has NOT simply been placed on top of a board.\n✓ The result does NOT look like a photograph with a board-game filter.\n✓ The entire scene is internally consistent.\n✓ If ANY answer is NO, regenerate until every requirement is satisfied."
+  },
+  {
     "name": "BOBBIN LACE",
     "category": [
       "ART",
@@ -39149,7 +39265,7 @@
   "options": [
     {
       "id": "001",
-      "text": "COMMON — Randomly select a recognizable artistic medium such as oil paint, watercolor, acrylic, charcoal, pastel, ink, graphite, colored pencil, collage, or another established medium and recreate the entire image using it."
+      "text": "COMMON — Randomly select a recognizable artistic medium and recreate the entire image using it."
     },
     {
       "id": "002",
@@ -39157,7 +39273,7 @@
     }
     ],
     "randomizeOptions": true,
-    "additionalInstructions": "COMPLETE MEDIUM TRANSFORMATION:\n\n• Transform the entire image into artwork created using the selected medium.\n• The subject itself must be rendered using the medium.\n• The environment must also be rendered using the medium.\n• Do not simply apply an artistic filter.\n• Do not place the photograph onto a canvas or paper.\n• Do not leave photographic details intact underneath the artwork.\n• The selected medium must determine the marks, edges, textures, layering, color behavior, and surface appearance.\n\nMEDIUM FIDELITY:\n• Accurately reproduce the physical characteristics of the selected medium.\n• Oil should behave like oil paint; watercolor should behave like watercolor; charcoal should behave like charcoal, etc.\n• Preserve recognizable subject identity whenever compatible with the selected medium.\n\nOBSCURE OPTION:\n• Select a real medium or technique rather than an invented one.\n• Favor unusual historical and experimental methods.\n\nMASTER PROMPT RULE:\n• Master prompt instructions always override conflicting instructions except the mandatory artistic-medium transformation.\n• Incorporate master prompt information into the selected medium.\n\nFINAL VALIDATION:\n✓ The entire image is artwork created with the selected medium.\n✓ The subject is transformed into that medium.\n✓ The background is transformed too.\n✓ The result is not a filter over a photograph.\n✓ The selected medium is visually identifiable.\n✓ If ANY answer is NO, regenerate until every requirement is satisfied."
+    "additionalInstructions": "COMPLETE MEDIUM TRANSFORMATION:\n\n• Transform the entire image into artwork created using the selected medium.\n• The subject itself must be rendered using the medium.\n• The environment must also be rendered using the medium.\n• Do not simply apply an artistic filter.\n• Do not place the photograph onto a canvas or paper.\n• Do not leave photographic details intact underneath the artwork.\n• The selected medium must determine the marks, edges, textures, layering, color behavior, and surface appearance.\n\nMEDIUM FIDELITY:\n• Accurately reproduce the physical characteristics of the selected medium.\n• Preserve recognizable subject identity whenever compatible with the selected medium.\n\nOBSCURE OPTION:\n• Select a real medium or technique rather than an invented one.\n• Favor unusual historical and experimental methods.\n\nMASTER PROMPT RULE:\n• Master prompt instructions always override conflicting instructions except the mandatory artistic-medium transformation.\n• Incorporate master prompt information into the selected medium.\n\nFINAL VALIDATION:\n✓ The entire image is artwork created with the selected medium.\n✓ The subject is transformed into that medium.\n✓ The background is transformed too.\n✓ The result is not a filter over a photograph.\n✓ The selected medium is visually identifiable.\n✓ If ANY answer is NO, regenerate until every requirement is satisfied."
   },
   {
     "name": "RANDOM ARTISTIC STYLE",
@@ -39197,7 +39313,7 @@
     "options": [
     {
       "id": "001",
-      "text": "COMMON — Randomly select a recognizable craft such as quilting, embroidery, mosaic, paper cutting, origami, stained glass, pottery, beadwork, weaving, knitting, wood carving, or another established craft and reconstruct the entire image using it."
+      "text": "COMMON — Randomly select a recognizable craft and reconstruct the entire image using it."
     },
     {
       "id": "002",
@@ -39221,7 +39337,7 @@
     "options": [
     {
       "id": "001",
-      "text": "COMMON — Randomly select a recognizable printing or printmaking process such as woodcut, linocut, engraving, etching, lithography, screen printing, letterpress, halftone printing, risograph, or another established process and recreate the entire image using it."
+      "text": "COMMON — Randomly select a recognizable printing or printmaking process and recreate the entire image using it."
     },
     {
       "id": "002",
@@ -39229,7 +39345,7 @@
     }
     ],
     "randomizeOptions": true,
-    "additionalInstructions": "COMPLETE PRINT TRANSFORMATION:\n\n• Transform the ENTIRE image into the selected printing process.\n• The subject itself must be rendered through the printing process.\n• The background and environment must also be rendered through the process.\n• Do NOT simply apply a grain, paper texture, halftone filter, or color effect.\n• Do NOT leave the original photograph intact underneath the printing effect.\n• The final image must look like an actual physical print produced by the selected process.\n\nPROCESS FIDELITY:\n• Reproduce the characteristic marks, registration, ink behavior, impression, line quality, dot structure, layering, color separation, texture, and imperfections appropriate to the selected process.\n• Woodcut should have carved marks and relief-print characteristics.\n• Engraving should use fine incised lines.\n• Lithography should have appropriate drawn and printed tonal qualities.\n• Screen printing should show appropriate ink layering and graphic separation.\n• Halftone processes should construct imagery from appropriate dot patterns.\n• Other processes must similarly reproduce their defining physical characteristics.\n\nOBSCURE OPTION:\n• Select a real printing or printmaking process.\n• Favor unusual historical, obsolete, experimental, regional, or specialized processes.\n• Do not invent a fictional process.\n\nSUBJECT PRESERVATION:\n• Preserve recognizable subject identity whenever compatible with the selected printing process.\n• Reconstruct the subject's recognizable characteristics using the selected printing method.\n\nMASTER PROMPT RULE:\n• Master prompt instructions always override conflicting instructions except the mandatory complete printing-process transformation.\n• Incorporate master prompt information into the selected printing process.\n\nFINAL VALIDATION:\n✓ The entire image has been transformed into a print.\n✓ The subject itself is printed in the selected process.\n✓ The background is also transformed.\n✓ The physical characteristics of the process are clearly visible.\n✓ The result is not merely a photographic filter.\n✓ The original photograph is not visibly intact underneath the effect.\n✓ If ANY answer is NO, regenerate until every requirement is satisfied."
+    "additionalInstructions": "COMPLETE PRINT TRANSFORMATION:\n\n• Transform the ENTIRE image into the selected printing process.\n• The subject itself must be rendered through the printing process.\n• The background and environment must also be rendered through the process.\n• Do NOT simply apply a grain, paper texture, halftone filter, or color effect.\n• Do NOT leave the original photograph intact underneath the printing effect.\n• The final image must look like an actual physical print produced by the selected process.\n\nPROCESS FIDELITY:\n• Reproduce the characteristic marks, registration, ink behavior, impression, line quality, dot structure, layering, color separation, texture, and imperfections appropriate to the selected process.\n\nOBSCURE OPTION:\n• Select a real printing or printmaking process.\n• Favor unusual historical, obsolete, experimental, regional, or specialized processes.\n• Do not invent a fictional process.\n\nSUBJECT PRESERVATION:\n• Preserve recognizable subject identity whenever compatible with the selected printing process.\n• Reconstruct the subject's recognizable characteristics using the selected printing method.\n\nMASTER PROMPT RULE:\n• Master prompt instructions always override conflicting instructions except the mandatory complete printing-process transformation.\n• Incorporate master prompt information into the selected printing process.\n\nFINAL VALIDATION:\n✓ The entire image has been transformed into a print.\n✓ The subject itself is printed in the selected process.\n✓ The background is also transformed.\n✓ The physical characteristics of the process are clearly visible.\n✓ The result is not merely a photographic filter.\n✓ The original photograph is not visibly intact underneath the effect.\n✓ If ANY answer is NO, regenerate until every requirement is satisfied."
   },
   {
     "name": "RANDOM MATERIAL",
@@ -39245,7 +39361,7 @@
     "options": [
     {
       "id": "001",
-      "text": "COMMON — Randomly select a recognizable physical material such as wood, glass, metal, marble, stone, paper, clay, wax, plastic, ceramic, fabric, leather, or another familiar material and reconstruct the entire image from it."
+      "text": "COMMON — Randomly select a recognizable physical material and reconstruct the entire image from it."
     },
     {
       "id": "002",
