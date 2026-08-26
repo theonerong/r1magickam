@@ -1,0 +1,7544 @@
+/* Power Grotesk Font */
+@font-face {
+    font-family: 'Power Grotesk';
+    src: url('../PowerGrotesk-Regular.woff') format('woff'),
+         url('https://fonts.cdnfonts.com/s/95219/PowerGrotesk-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Power Grotesk';
+    src: url('../PowerGrotesk-Bold.woff') format('woff'),
+         url('https://fonts.cdnfonts.com/s/95219/PowerGrotesk-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Base styles for R1 device (240x320px portrait) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    background-color: #000;
+    color: #fff;
+    font-family: 'Power Grotesk', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 5vw; /* Base font size relative to viewport width */
+    overflow: hidden;
+    -webkit-user-select: none;
+    user-select: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.style-favorite {
+    padding: 0;
+    font-size: 7vw;
+    background-color: transparent;
+    border: none;
+    min-width: auto;
+    min-height: auto;
+    color: #FFD700;
+    margin-right: 2vw;
+    flex-shrink: 0;
+}
+
+.style-favorite:active {
+    transform: scale(1.2);
+}
+
+#app {
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+/* Camera container - fullscreen */
+.camera-container {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000;
+    overflow: hidden;
+}
+
+/* Video and image styling - simple fullscreen display */
+#video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    background-color: #000;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+}
+
+#video::before {
+    content: '';
+    position: absolute;
+}
+
+#captured-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    background-color: #000;
+}
+
+@keyframes capturePulse {
+    0% {
+        transform: translate(-50%, -50%) scale(0.5);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1.2);
+        opacity: 0;
+    }
+}
+
+/* Status text */
+.status-text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 3.5vw;
+    color: #FE5F00;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 1.5vw;
+    margin: 0 1vw;
+    border-radius: 2vw;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 100;
+}
+
+/* Style Name Reveal */
+.style-reveal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    font-size: 6vw;
+    font-weight: bold;
+    padding: 4vw 8vw;
+    border-radius: 3vw;
+    text-align: center;
+    z-index: 200;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.7);
+    animation: styleRevealAnimation 1.8s ease-out forwards;
+    pointer-events: none;
+}
+
+#style-reveal-text {
+    white-space: pre-line;
+    text-align: center;
+    display: block;
+    font-size: 4vw;
+    line-height: 1.4;
+}
+
+@keyframes styleRevealAnimation {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.8);
+    }
+    20% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1.05);
+    }
+    30% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+    90% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.9);
+    }
+}
+
+/* Reset button */
+.reset-button {
+    position: absolute;
+    bottom: 8vh;
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 40vw;
+    background-color: #FE5F00;
+    color: #000;
+    font-weight: bold;
+    z-index: 100;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+/* Start screen styles */
+.start-screen {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 5vw;
+    background: linear-gradient(135deg, #000 0%, #1a1a1a 50%, #000 100%);
+    overflow: hidden;
+}
+
+/* Camera Animation Container */
+.camera-animation {
+    position: relative;
+    width: 40vw;
+    height: 35vw;
+    margin-bottom: 4vh;
+    animation: floatCamera 3s ease-in-out infinite;
+}
+
+@keyframes floatCamera {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Camera Body */
+.camera-body {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
+    border-radius: 3vw;
+    box-shadow: 
+        0 8px 20px rgba(0, 0, 0, 0.6),
+        inset 0 2px 4px rgba(255, 255, 255, 0.1);
+    animation: cameraPulse 2s ease-in-out infinite;
+}
+
+@keyframes cameraPulse {
+    0%, 100% {
+        box-shadow: 
+            0 8px 20px rgba(0, 0, 0, 0.6),
+            inset 0 2px 4px rgba(255, 255, 255, 0.1),
+            0 0 0 rgba(254, 95, 0, 0);
+    }
+    50% {
+        box-shadow: 
+            0 8px 20px rgba(0, 0, 0, 0.6),
+            inset 0 2px 4px rgba(255, 255, 255, 0.1),
+            0 0 20px rgba(254, 95, 0, 0.4);
+    }
+}
+
+/* Camera Lens */
+.camera-lens {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20vw;
+    height: 20vw;
+    background: radial-gradient(circle, #1a1a1a 0%, #000 70%);
+    border-radius: 50%;
+    border: 2vw solid #333;
+    box-shadow: 
+        0 4px 15px rgba(0, 0, 0, 0.8),
+        inset 0 -3px 10px rgba(0, 0, 0, 0.9),
+        inset 0 3px 10px rgba(255, 255, 255, 0.1);
+    animation: lensRotate 4s linear infinite;
+}
+
+@keyframes lensRotate {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+/* Lens Inner Ring */
+.lens-inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 12vw;
+    height: 12vw;
+    background: radial-gradient(circle, #0a0a0a 0%, #000 100%);
+    border-radius: 50%;
+    border: 1vw solid #FE5F00;
+    box-shadow: 
+        0 0 10px rgba(254, 95, 0, 0.5),
+        inset 0 0 10px rgba(254, 95, 0, 0.3);
+    animation: lensPulse 2s ease-in-out infinite;
+}
+
+@keyframes lensPulse {
+    0%, 100% {
+        border-color: #FE5F00;
+        box-shadow: 
+            0 0 10px rgba(254, 95, 0, 0.5),
+            inset 0 0 10px rgba(254, 95, 0, 0.3);
+    }
+    50% {
+        border-color: #ff8800;
+        box-shadow: 
+            0 0 20px rgba(254, 95, 0, 0.8),
+            inset 0 0 15px rgba(254, 95, 0, 0.5);
+    }
+}
+
+/* Lens Reflection */
+.lens-reflection {
+    position: absolute;
+    top: 20%;
+    left: 20%;
+    width: 40%;
+    height: 40%;
+    background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.4) 0%, transparent 60%);
+    border-radius: 50%;
+    animation: reflectionShimmer 3s ease-in-out infinite;
+}
+
+@keyframes reflectionShimmer {
+    0%, 100% {
+        opacity: 0.6;
+    }
+    50% {
+        opacity: 0.9;
+    }
+}
+
+/* Camera Flash */
+.camera-flash {
+    position: absolute;
+    top: 8%;
+    right: 15%;
+    width: 6vw;
+    height: 4vw;
+    background: linear-gradient(180deg, #444 0%, #222 100%);
+    border-radius: 1vw;
+    box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.2);
+}
+
+.camera-flash::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 3vw;
+    height: 2vw;
+    background: #fff;
+    border-radius: 0.5vw;
+    opacity: 0;
+    animation: flashBlink 4s ease-in-out infinite;
+}
+
+@keyframes flashBlink {
+    0%, 90%, 100% {
+        opacity: 0;
+    }
+    92%, 96% {
+        opacity: 1;
+        box-shadow: 0 0 15px rgba(255, 255, 255, 0.9);
+    }
+    94% {
+        opacity: 0.3;
+    }
+}
+
+/* Camera Shutter Button */
+.camera-button-top {
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 8vw;
+    height: 3vw;
+    background: linear-gradient(180deg, #FE5F00 0%, #cc4c00 100%);
+    border-radius: 1vw 1vw 0 0;
+    box-shadow: 
+        0 2px 8px rgba(254, 95, 0, 0.4),
+        inset 0 1px 2px rgba(255, 255, 255, 0.3);
+}
+
+/* Camera Viewfinder */
+.camera-viewfinder {
+    position: absolute;
+    top: 8%;
+    left: 15%;
+    width: 5vw;
+    height: 3vw;
+    background: linear-gradient(135deg, #1a1a1a 0%, #000 100%);
+    border-radius: 0.5vw;
+    border: 1px solid #444;
+}
+
+/* Sparkles Animation */
+.sparkles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.sparkle {
+    position: absolute;
+    font-size: 6vw;
+    animation: sparkleFloat 3s ease-in-out infinite;
+    opacity: 0;
+}
+
+.sparkle-1 {
+    top: 10%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.sparkle-2 {
+    top: 15%;
+    right: 10%;
+    animation-delay: 0.5s;
+}
+
+.sparkle-3 {
+    bottom: 15%;
+    left: 5%;
+    animation-delay: 1s;
+}
+
+.sparkle-4 {
+    bottom: 10%;
+    right: 15%;
+    animation-delay: 1.5s;
+}
+
+@keyframes sparkleFloat {
+    0%, 100% {
+        opacity: 0;
+        transform: translateY(0) scale(0.5);
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(-10px) scale(1);
+    }
+}
+
+/* Magic Title Animation */
+.magic-title {
+    font-size: 8vw;
+    color: #FE5F00;
+    margin-bottom: 4vh;
+    text-shadow: 
+        0 0 20px rgba(254, 95, 0, 0.5),
+        0 0 40px rgba(254, 95, 0, 0.3),
+        0 2px 4px rgba(0, 0, 0, 0.8);
+    animation: titleGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes titleGlow {
+    0%, 100% {
+        text-shadow: 
+            0 2px 4px rgba(254, 95, 0, 0.3),
+            0 0 10px rgba(254, 95, 0, 0);
+    }
+    50% {
+        text-shadow: 
+            0 2px 4px rgba(254, 95, 0, 0.3),
+            0 0 20px rgba(254, 95, 0, 0.6);
+    }
+}
+
+.start-text {
+    font-size: 5vw;
+    margin-bottom: 8vh;
+    color: #ccc;
+}
+
+.start-button {
+    min-width: 60vw;
+    padding: 5vw 10vw;
+    font-size: 6vw;
+    font-weight: 700;
+    color: #ffffff;
+    background: linear-gradient(135deg, #FE5F00 0%, #cc4c00 100%);
+    border: 3px solid #ff7a33;
+    box-shadow: 0 6px 25px rgba(254, 95, 0, 0.5), 0 0 40px rgba(254, 95, 0, 0.2);
+    transition: all 0.2s ease;
+    letter-spacing: 0.5px;
+    z-index: 1;
+}
+
+.start-button:active {
+    transform: translateY(2px) scale(0.98);
+    box-shadow: 0 3px 15px rgba(254, 95, 0, 0.6);
+    background: linear-gradient(135deg, #ff7a33 0%, #FE5F00 100%);
+}
+
+/* Touch target minimum 44x44 CSS pixels */
+button, .touchable {
+    min-width: 44px;
+    min-height: 44px;
+    padding: 3vw 5vw;
+    font-size: 4vw;
+    background-color: #FE5F00;
+    color: #000;
+    border: none;
+    border-radius: 2vw;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    transition: all 0.2s ease;
+}
+
+button:active, .touchable:active {
+    opacity: 0.8;
+    transform: scale(0.98);
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Audio tour buttons — override global min-height so they stay compact */
+#tour-btn-skip,
+#tour-btn-sound,
+#tour-btn-back,
+#tour-btn-next {
+    min-height: 0;
+    min-width: 0;
+    height: 22px;
+    line-height: 1;
+    padding: 0 8px;
+    font-size: 10px;
+    border-radius: 4px;
+}
+
+/* Tutorial search buttons — override global min-height */
+#tutorial-search-prev,
+#tutorial-search-next,
+#tutorial-search-blur {
+    min-height: 0;
+    min-width: 0;
+    height: 24px;
+    line-height: 1;
+    padding: 0 7px;
+    font-size: 12px;
+    border-radius: 4px;
+    background: #333;
+    color: #fff;
+    border: 1px solid #444;
+}
+
+/* Menu button */
+.menu-button {
+    position: absolute;
+    top: 1vh;
+    left: 1vw;
+    width: 12vw;
+    height: 12vw;
+    min-width: 44px;
+    min-height: 44px;
+    background: transparent;
+    color: #FE5F00;
+    border: 2px solid #FE5F00;
+    border-radius: 2vw;
+    font-size: 6vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 101;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.2s ease;
+}
+
+.menu-button:active {
+    background: rgba(254, 95, 0, 0.9);
+    color: #000;
+    transform: scale(0.95);
+}
+
+/* Camera switch button */
+.camera-button {
+    position: absolute;
+    top: 1vh;
+    right: 1vw;
+    width: 12vw;
+    height: 12vw;
+    min-width: 44px;
+    min-height: 44px;
+    border-radius: 2vw;
+    background: transparent;
+    color: #FE5F00;
+    font-size: 6vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #FE5F00;
+    z-index: 101;
+    padding: 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.2s ease;
+}
+
+.camera-button:active {
+    background: rgba(254, 95, 0, 0.9);
+    color: #000;
+    transform: scale(0.95);
+}
+
+.camera-button:hover {
+    background-color: rgba(254, 95, 0, 1);
+}
+
+/* Connection Status */
+.connection-status {
+    position: absolute;
+    top: 8vh;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 1.5vw 3vw;
+    border-radius: 2vw;
+    font-size: 3vw;
+    font-weight: 600;
+    z-index: 101;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    transition: all 0.2s ease;
+    border: 2px solid;
+}
+
+.connection-status.online {
+    background-color: rgba(76, 175, 80, 0.15);
+    color: #fff;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(76, 175, 80, 0.3);
+}
+
+.connection-status.offline {
+    background-color: rgba(244, 67, 54, 0.9);
+    color: #fff;
+    border: 1px solid rgba(244, 67, 54, 0.5);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.7; }
+    100% { opacity: 1; }
+}
+
+/* Master Prompt Indicator - TOP position */
+.master-prompt-indicator {
+    position: absolute;
+    top: 1vh;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 1.5vw 3vw;
+    border-radius: 2vw;
+    font-size: 3vw;
+    font-weight: 600;
+    z-index: 101;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0);
+    background-color: rgba(255, 152, 0, 0);
+    color: #fff;
+    border: 1px solid rgba(255, 152, 0, 0.3);
+}
+
+/* Updates Indicator - Below online indicator */
+.updates-indicator {
+    position: absolute;
+    top: 15vh;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 1.5vw 3vw;
+    border-radius: 2vw;
+    font-size: 3vw;
+    font-weight: 600;
+    z-index: 101;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    background-color: rgba(255, 87, 34, 0.5);
+    color: #fff;
+    border: 1px solid rgba(255, 87, 34, 0.3);
+    animation: pulse 2s infinite;
+}
+
+@keyframes focusPulse {
+    0% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1.2);
+    }
+    50% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(0.9);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+/* Queue Status */
+.queue-status {
+    position: absolute;
+    top: 15vh;
+    left: 2vw;
+    padding: 2vw 3vw;
+    border-radius: 2vw;
+    font-size: 3vw;
+    font-weight: bold;
+    z-index: 100;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    background-color: rgba(33, 150, 243, 0.9);
+    color: #fff;
+    border: 1px solid rgba(33, 150, 243, 0.5);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.queue-status:active {
+    transform: scale(0.95);
+}
+
+/* Sync Button */
+.sync-button {
+    position: absolute;
+    bottom: 20vh;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(33, 150, 243, 0.9);
+    color: #fff;
+    font-weight: bold;
+    z-index: 100;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(33, 150, 243, 0.5);
+    padding: 3vw 6vw;
+    border-radius: 3vw;
+    font-size: 4vw;
+    box-shadow: 0 4px 15px rgba(33, 150, 243, 0.3);
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5vw;
+}
+
+.sync-button:active {
+    transform: translateX(-50%) scale(0.95);
+    box-shadow: 0 2px 10px rgba(33, 150, 243, 0.4);
+}
+
+.sync-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.sync-button.syncing {
+    opacity: 1;
+}
+
+.sync-spin-icon {
+    display: none;
+    width: 5vw;
+    height: 5vw;
+    border: 0.8vw solid rgba(255, 255, 255, 0.65);
+    border-top-color: #FE5F00;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.sync-button.syncing .sync-spin-icon {
+    display: inline-block;
+    animation: syncIconSpin 0.8s linear infinite;
+}
+
+.sync-button.syncing .sync-emoji-icon {
+    display: none;
+}
+
+@keyframes syncIconSpin {
+    to { transform: rotate(360deg); }
+}
+
+/* Styles Menu */
+.styles-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.95);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+}
+
+.styles-menu-content {
+    width: 98%;
+    height: 92%;
+    background-color: #111;
+    border-radius: 2vw;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.styles-menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1vw;
+    background-color: #000;
+    border-bottom: 1px solid #FE5F00;
+    flex-shrink: 0;
+    min-height: 32px;
+}
+
+.styles-menu-header h2 {
+    font-size: 5vw;
+    color: #FE5F00;
+    margin: 0;
+}
+
+.styles-menu-scroll-container {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 2vw;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-y;
+}
+
+.close-button {
+    width: 8vw;
+    height: 8vw;
+    min-width: 32px;
+    min-height: 32px;
+    border-radius: 1vw;
+    background-color: transparent;
+    color: #fff;
+    font-size: 6vw;
+    border: 2px solid #666;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.close-button:hover {
+    border-color: #FE5F00;
+    color: #FE5F00;
+}
+
+.menu-nav-buttons {
+    display: flex;
+    gap: 2vw;
+    align-items: center;
+}
+
+.menu-jump-button {
+    width: 8vw;
+    height: 8vw;
+    min-width: 32px;
+    min-height: 32px;
+    border-radius: 1vw;
+    background-color: #333;
+    color: #FE5F00;
+    font-size: 5vw;
+    border: 2px solid #666;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    font-weight: bold;
+}
+
+/* Wider buttons in preset builder header and Index button */
+#preset-builder-submenu .menu-jump-button,
+#back-to-glossary {
+    width: auto;
+    min-width: 60px;
+    padding: 0 12px;
+    white-space: nowrap;
+}
+
+.menu-jump-button:active {
+    background-color: #FE5F00;
+    color: #000;
+    border-color: #FE5F00;
+}
+
+.menu-jump-button-small {
+    width: 8vw;
+    height: 8vw;
+    min-width: 36px;
+    min-height: 36px;
+    border-radius: 1vw;
+    background-color: #333;
+    color: #FE5F00;
+    font-size: 5vw;
+    border: 2px solid #666;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    font-weight: bold;
+}
+
+.menu-jump-button-small:active {
+    background-color: #FE5F00;
+    color: #000;
+    border-color: #FE5F00;
+}
+
+.styles-list {
+    margin-bottom: 4vh;
+    max-height: 50vh;
+    overflow-y: auto;
+    /* Scrollable styles list */
+    scroll-behavior: smooth;
+}
+
+.style-item {
+    background-color: #222;
+    border-radius: 2vw;
+    padding: 1.5vw;
+    margin-bottom: 2vw;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 1px solid #444;
+    gap: 0;
+}
+
+.style-item:active {
+    background-color: #333;
+    border-color: #FE5F00;
+}
+
+.style-item.active {
+    background: linear-gradient(90deg, rgba(254,95,0,0.18) 0%, #222 100%);
+    border-left: 3px solid #FE5F00;
+    border-top-color: #444;
+    border-right-color: #444;
+    border-bottom-color: #444;
+    color: #fff;
+}
+
+.style-item.menu-selected {
+    background: linear-gradient(90deg, rgba(254,95,0,0.18) 0%, #222 100%);
+    border-left: 3px solid #FE5F00;
+    border-top-color: #444;
+    border-right-color: #444;
+    border-bottom-color: #444;
+    color: #fff;
+}
+
+.style-name {
+    font-size: 5vw;
+    font-weight: 600;
+    flex: 1;
+}
+
+.style-name-container {
+    display: flex;
+    align-items: flex-start;
+    flex: 1;
+    gap: 2vw;
+}
+
+.style-edit {
+    padding: 2vw 3vw;
+    font-size: 5vw;
+    background-color: rgba(254, 95, 0, 0.7);
+    border-radius: 2vw;
+    min-width: auto;
+    min-height: auto;
+    flex-shrink: 0;
+    margin-left: auto;
+}
+
+.add-style-button {
+    width: 100%;
+    padding: 4vw;
+    font-size: 5vw;
+    background-color: #FE5F00;
+    color: #000;
+    font-weight: bold;
+    border-radius: 2vw;
+    box-shadow: 0 2px 10px rgba(254, 95, 0, 0.3);
+    margin-bottom: 4vh; /* Add bottom margin so last button isn't cut off */
+}
+
+/* Style Editor */
+.style-editor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.98);
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+}
+
+.style-editor-content {
+    width: 98%;
+    height: 90vh;
+    max-height: 90vh;
+    background-color: #1a1a1a;
+    border-radius: 1vw;
+    padding: 0;
+    border: 1px solid rgba(254, 95, 0, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.style-editor-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    background-color: #1a1a1a;
+    z-index: 100;
+    padding: 2vw;
+    min-height: 32px;
+    flex-shrink: 0;
+    border-bottom: 2px solid #FE5F00;
+}
+
+.style-editor-header h3 {
+    font-size: 5vw;
+    color: #FE5F00;
+    margin: 0;
+    flex: 1;
+}
+
+.style-editor-header-buttons {
+    display: flex;
+    gap: 2vw;
+    align-items: center;
+}
+
+.save-button-header, .delete-button-header {
+    width: auto;
+    height: 8vw;
+    min-width: 44px;
+    min-height: 32px;
+    font-size: 4vw;
+    font-weight: bold;
+    border-radius: 2vw;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.save-button-header {
+    background-color: #4CAF50;
+    color: #fff;
+}
+
+.save-button-header:active {
+    background-color: #45a049;
+}
+
+.delete-button-header {
+    background-color: #d32f2f;
+    color: #fff;
+}
+
+.delete-button-header:active {
+    background-color: #b71c1c;
+}
+
+.style-editor-body {
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    flex: 1;
+    padding: 2vw;
+    padding-bottom: 1vw;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+}
+
+.style-editor-body:focus {
+    outline: none;
+}
+
+.style-input, .style-textarea {
+    width: 100%;
+    padding: 2vw;
+    font-size: 5vw;
+    background-color: #2a2a2a;
+    color: #fff;
+    border: 2px solid #444;
+    border-radius: 2vw;
+    font-family: inherit;
+    transition: border-color 0.2s ease;
+    flex-shrink: 0;
+}
+
+.style-input {
+    min-height: auto;
+}
+
+.style-textarea {
+    flex: 1;
+    min-height: 30vh;
+    resize: none;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.style-input:focus, .style-textarea:focus {
+    outline: none;
+    border-color: #FE5F00;
+    box-shadow: 0 0 0 2px rgba(254, 95, 0, 0.2);
+}
+
+/* Queue Manager */
+.queue-manager {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.95);
+    z-index: 1500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+}
+
+.queue-manager-content {
+    width: 98vw;
+    max-height: 92vh;
+    background-color: #1a1a1a;
+    border-radius: 1vw;
+    padding: 2vw;
+    overflow-y: auto;
+    border: 1px solid rgba(33, 150, 243, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+.queue-manager-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4vh;
+    padding-bottom: 2vh;
+    border-bottom: 1px solid #333;
+}
+
+.queue-manager-header h3 {
+    font-size: 6vw;
+    color: #2196F3;
+    margin: 0;
+}
+
+.queue-list {
+    margin-bottom: 4vh;
+    max-height: 50vh;
+    overflow-y: auto;
+}
+
+.queue-item {
+    background-color: #2a2a2a;
+    border-radius: 2vw;
+    padding: 3vw;
+    margin-bottom: 2vh;
+    border: 1px solid #444;
+    display: flex;
+    flex-direction: column;
+    gap: 2vw;
+}
+
+.queue-item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.queue-item-style {
+    font-size: 4vw;
+    font-weight: bold;
+    color: #2196F3;
+}
+
+.queue-item-time {
+    font-size: 3vw;
+    color: #999;
+}
+
+.queue-item-preview {
+    width: 100%;
+    max-height: 30vh;
+    object-fit: contain;
+    border-radius: 2vw;
+    border: 1px solid #444;
+}
+
+.queue-item-actions {
+    display: flex;
+    gap: 2vw;
+}
+
+.queue-item-actions button {
+    flex: 1;
+    padding: 2vw 3vw;
+    font-size: 3.5vw;
+}
+
+.queue-actions {
+    display: flex;
+    gap: 2vw;
+    padding-top: 2vh;
+    border-top: 1px solid #333;
+}
+
+.queue-actions button {
+    flex: 1;
+    padding: 4vw;
+    font-size: 4.5vw;
+    font-weight: bold;
+    border-radius: 2vw;
+}
+
+/* Empty queue state */
+.queue-empty {
+    text-align: center;
+    padding: 8vh 4vw;
+    color: #666;
+}
+
+.queue-empty h4 {
+    font-size: 5vw;
+    margin-bottom: 2vh;
+}
+
+.queue-empty p {
+    font-size: 3.5vw;
+}
+
+/* Responsive improvements for different screen sizes */
+@media (min-width: 480px) {
+    html, body {
+        font-size: 16px;
+    }
+    
+    .status-text {
+        font-size: 14px;
+    }
+    
+    .style-reveal {
+        font-size: 32px;
+        padding: 16px 32px;
+    }
+    
+    .styles-button, .camera-button {
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+    }
+    
+    .connection-status, .queue-status {
+        font-size: 12px;
+        padding: 8px 12px;
+    }
+    
+    .sync-button {
+        font-size: 14px;
+        padding: 12px 24px;
+    }
+}
+
+/* iOS Safari specific fixes for fullscreen camera */
+@supports (-webkit-touch-callout: none) {
+    .camera-container {
+        /* Fix for iOS Safari viewport issues */
+        height: 100vh;
+        height: -webkit-fill-available;
+    }
+    
+    #video, #captured-image {
+        /* Prevent iOS Safari from adding extra space */
+        width: 100vw;
+        height: 100vh;
+        height: -webkit-fill-available;
+    }
+}
+
+/* Resolution button */
+.resolution-button {
+    position: absolute;
+    top: 15vh;
+    left: 2vw;
+    width: 12vw;
+    height: 12vw;
+    min-width: 44px;
+    min-height: 44px;
+    border-radius: 50%;
+    background-color: rgba(254, 95, 0, 0.9);
+    color: #fff;
+    font-size: 5vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    z-index: 100;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.2s ease;
+}
+
+.resolution-button:active {
+    transform: scale(0.95);
+}
+
+.resolution-button:hover {
+    background-color: rgba(254, 95, 0, 1);
+}
+
+/* Resolution menu items */
+.resolution-item {
+    background-color: #2a2a2a;
+    border-radius: 2vw;
+    padding: 1.5vw;
+    margin-bottom: 2vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
+}
+
+.resolution-item:active {
+    background-color: #3a3a3a;
+    transform: scale(0.98);
+}
+
+.resolution-item.active {
+    background-color: #FE5F00;
+    color: #000;
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.resolution-name {
+    font-size: 5vw;
+    font-weight: 600;
+}
+
+/* Menu sections */
+.menu-section {
+    margin-bottom: 0;
+    padding-bottom: 3vh;
+    border-bottom: 1px solid #333;
+}
+
+.menu-section:last-of-type {
+    border-bottom: none;
+}
+
+.menu-section-title {
+    font-size: 4vw;
+    color: #FE5F00;
+    margin-bottom: 1vh;
+    font-weight: 600;
+}
+
+.menu-section-header {
+    font-size: 4vw;
+    color: #FE5F00;
+    margin: 1vh 0 0.5vh 0;
+    padding: 0;
+    font-weight: 600;
+}
+
+.menu-list {
+    margin-bottom: 0;
+}
+
+/* Burst settings */
+.burst-settings {
+    display: flex;
+    flex-direction: column;
+    gap: 3vh;
+}
+
+.burst-setting-item {
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+}
+
+.burst-setting-item label {
+    font-size: 4vw;
+    color: #ccc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.burst-setting-item input[type="range"] {
+    width: 100%;
+    height: 6vw;
+    -webkit-appearance: none;
+    appearance: none;
+    background: #2a2a2a;
+    outline: none;
+    border-radius: 3vw;
+}
+
+.burst-setting-item input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 8vw;
+    height: 8vw;
+    background: #FE5F00;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 2px solid #fff;
+}
+
+.burst-setting-item input[type="range"]::-moz-range-thumb {
+    width: 8vw;
+    height: 8vw;
+    background: #FE5F00;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 2px solid #fff;
+}
+
+.burst-speed-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 3vw;
+    color: #999;
+    margin-top: -1vh;
+}
+
+.timer-repeat-interval-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 3vw;
+    color: #999;
+    margin-top: -1vh;
+}
+
+#burst-count-value,
+#burst-speed-value {
+    color: #FE5F00;
+    font-weight: bold;
+}
+
+/* Timer Countdown Display */
+.timer-countdown {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.9);
+    color: #FE5F00;
+    font-size: 12vw;
+    font-weight: bold;
+    padding: 4vw;
+    border-radius: 50%;
+    text-align: center;
+    z-index: 200;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 4px solid #FE5F00;
+    box-shadow: 0 8px 32px rgba(254, 95, 0, 0.7);
+    width: 40vw;
+    height: 40vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    overflow: hidden;
+    word-break: break-all;
+}
+
+#timer-countdown-text {
+    max-width: 100%;
+    max-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: inherit;
+    line-height: 1;
+}
+
+.timer-countdown.countdown-fade-in {
+    animation: countdownFadeIn 0.5s ease-out;
+}
+
+.timer-countdown.countdown-fade-out {
+    animation: countdownFadeOut 0.5s ease-out;
+}
+
+@keyframes countdownFadeIn {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.5);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+@keyframes countdownFadeOut {
+    0% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(1.2);
+    }
+}
+
+/* Gallery button */
+.gallery-button {
+    position: absolute;
+    bottom: 8vh;
+    left: 1vw;
+    width: 12vw;
+    height: 12vw;
+    min-width: 44px;
+    min-height: 44px;
+    background: transparent;
+    color: #FE5F00;
+    border: 2px solid #FE5F00;
+    border-radius: 2vw;
+    font-size: 6vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 100;
+    padding: 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.2s ease;
+}
+
+.gallery-button:active {
+    background: rgba(254, 95, 0, 0.9);
+    color: #000;
+    transform: scale(0.95);
+}
+
+/* Left camera carousel — Menu, Gallery, Master Prompt, Options */
+/* Mirrors right carousel logic: container wider than buttons, buttons centered,
+   pull-tab outside container edge, hidden slides fully off screen leaving 8px tab */
+.left-cam-carousel {
+    position: absolute;
+    left: -2vw;
+    top: 0;
+    bottom: 8vh;
+    width: 24vw;
+    display: flex;
+    flex-direction: column;
+    z-index: 101;
+    overflow: visible;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateX(0);
+    pointer-events: auto;
+}
+
+/* Pull-tab on right edge — mirrors right carousel's left: -10px tab */
+.left-cam-carousel::after {
+    display: none;
+}
+
+.left-cam-carousel.hidden {
+    transform: translateX(calc(-100% + 8px));
+    pointer-events: none;
+}
+
+.left-cam-carousel.hidden::after {
+    opacity: 0.6;
+}
+
+/* Track: menu pinned top, gallery pinned bottom, middle two centred */
+.left-cam-carousel-track {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+/* All buttons centered in 24vw container — same as right carousel centering */
+.left-cam-carousel-track #menu-button {
+    position: absolute;
+    top: 1vh;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.left-cam-carousel-track #gallery-button {
+    position: absolute;
+    bottom: 2vh;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Master and Options centered in the space between menu bottom and gallery top */
+.left-cam-carousel-track #cam-master-prompt-btn {
+    position: absolute;
+    top: calc(1vh + 12vw + (100% - 1vh - 12vw - 12vw - 12vw - 12vw) / 3);
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.left-cam-carousel-track #cam-options-btn {
+    position: absolute;
+    top: calc(1vh + 12vw + (100% - 1vh - 12vw - 12vw - 12vw - 12vw) / 3 + 12vw + 8vw);
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.left-cam-btn {
+    position: relative;
+    box-sizing: border-box;
+    width: 12vw;
+    height: 12vw;
+    min-width: 44px;
+    min-height: 44px;
+    background: #000;
+    color: #fff;
+    border: 2px solid #FE5F00;
+    border-radius: 2vw;
+    font-size: 6vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 102;
+    padding: 1px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.2s ease;
+    gap: 0;
+}
+
+.left-cam-btn:active {
+    background: rgba(254, 95, 0, 0.9);
+    color: #000;
+    transform: scale(0.95);
+}
+
+.left-cam-btn.enabled {
+    background: rgba(76, 175, 80, 0.85);
+    border-color: #4CAF50;
+    color: #fff;
+    box-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
+}
+
+.left-cam-btn.enabled:active {
+    background-color: #4CAF50;
+    color: #000;
+}
+
+/* Mode Carousel Container */
+.mode-carousel {
+    position: absolute;
+    right: -2vw; 
+    top: 22vh;
+    bottom: 10vh;
+    width: 24vw; 
+    display: flex;
+    flex-direction: column;
+    z-index: 100;
+    overflow: visible; /* Changed to visible so the handle can stick out */
+    
+    /* Reveal Animation */
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateX(0);
+    pointer-events: auto; 
+}
+
+/* The visual "Pull-Tab" Indicator */
+.mode-carousel::before {
+    display: none;
+}
+
+.mode-carousel.show {
+    transform: translateX(0);
+    pointer-events: auto;
+}
+
+.mode-carousel.hidden {
+    transform: translateX(calc(100% + 8px));
+    pointer-events: none;
+}
+
+.mode-carousel.show::before {
+    display: none;
+}
+
+.mode-carousel-track {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* This centers the buttons and keeps borders safe */
+    gap: 2vw;
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior: none;
+    padding: 10px 0;
+    height: 100%;
+    width: 100%; /* Back to 100% - no more calc hacks */
+    /* Hide scrollbar */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.mode-carousel-track::-webkit-scrollbar {
+    display: none;
+}
+
+.mode-carousel-track {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+/* Mode Button Styles */
+.mode-button {
+    position: relative;
+    box-sizing: border-box;
+    width: 12vw;
+    height: 12vw;
+    min-width: 44px;
+    min-height: 44px;
+    flex-shrink: 0;
+    margin: 0;
+    border-radius: 2vw;
+    background: #000;
+    color: #fff;
+    border: 2px solid #FE5F00;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    padding: 1px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.2s ease;
+    cursor: pointer;
+    scroll-snap-align: center;
+}
+
+.mode-icon {
+    font-size: 4vw;
+    line-height: 1;
+}
+
+.mode-label {
+    display: block;
+    font-size: 1.8vw;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: 0.02em;
+    margin-top: 1.5vw;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+}
+
+.button-icon {
+    font-size: 4vw;
+    line-height: 1;
+}
+
+.button-label {
+    font-size: 1.8vw;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: 0.02em;
+    margin-top: 1.5vw;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+}
+
+.mode-button:active {
+    transform: scale(0.95);
+}
+
+/* Active States for Each Mode */
+.mode-button[data-mode="random"].random-active {
+    background: rgba(156, 39, 176, 0.7);
+    color: #fff;
+    border-color: rgba(156, 39, 176, 0.9);
+}
+
+.mode-button[data-mode="motion"].active {
+    background: rgba(254, 95, 0, 0.7);
+    color: #fff;
+    border-color: rgba(254, 95, 0, 0.9);
+}
+
+.mode-button[data-mode="burst"].burst-active {
+    background: rgba(76, 175, 80, 0.7);
+    color: #fff;
+    border-color: rgba(76, 175, 80, 0.9);
+}
+
+.mode-button[data-mode="timer"].timer-active {
+    background: rgba(33, 150, 243, 0.7);
+    color: #fff;
+    border-color: rgba(33, 150, 243, 0.9);
+}
+
+.mode-button[data-mode="camera-multi"].camera-multi-active {
+    background: rgba(255, 193, 7, 0.7);
+    color: #fff;
+    border-color: rgba(255, 193, 7, 0.9);
+}
+
+.mode-button[data-mode="camera-combine"].combine-active {
+    background: rgba(0, 188, 212, 0.7);
+    color: #fff;
+    border-color: rgba(0, 188, 212, 0.9);
+}
+
+.mode-button[data-mode="camera-layer"].layer-active {
+    background: rgba(156, 39, 176, 0.7);
+    color: #fff;
+    border-color: rgba(156, 39, 176, 0.9);
+}
+
+.layer-badge {
+    display: inline-block;
+    font-size: 9px;
+    font-weight: bold;
+    padding: 1px 5px;
+    border-radius: 8px;
+    margin-left: 5px;
+    vertical-align: middle;
+}
+.layer-badge-primary {
+    background: #9c27b0;
+    color: #fff;
+}
+.layer-badge-layer {
+    background: #555;
+    color: #ddd;
+}
+
+/* Gallery Modal */
+.gallery-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.gallery-content {
+    width: 98%;
+    height: 98%;
+    background-color: #111;
+    border-radius: 2vw;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.gallery-scroll-container {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+}
+
+.gallery-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1vw;
+    background-color: #000;
+    border-bottom: 1px solid #FE5F00;
+    min-height: 32px;
+}
+
+.gallery-header h3 {
+    font-size: 5vw;
+    color: #FE5F00;
+    margin: 0;
+}
+
+.gallery-grid {
+    padding: 2vw;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2vw;
+    align-content: start;
+    grid-auto-rows: auto;
+}
+
+.gallery-item {
+    width: 100%;
+    height: 30vw;
+    overflow: hidden;
+    border-radius: 2vw;
+    cursor: pointer;
+    border: 1px solid #2a2a2a;
+    position: relative;
+    background-color: #111;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.gallery-item:active {
+    border-color: #FE5F00;
+    box-shadow: 0 0 10px rgba(254, 95, 0, 0.4);
+}
+
+.gallery-item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    pointer-events: none;
+}
+
+.gallery-empty {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 10vw;
+    color: #888;
+    font-size: 4vw;
+}
+
+/* ===== GALLERY DATE DIVIDERS ===== */
+.gallery-date-divider {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    padding: 0.3vw 0;
+    margin: 0;
+}
+
+.gallery-date-divider::before,
+.gallery-date-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: #333;
+}
+
+.gallery-date-divider-text {
+    font-size: 2.8vw;
+    color: #888;
+    padding: 0 2.5vw;
+    white-space: nowrap;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+/* Gallery Controls */
+.gallery-controls {
+    display: flex;
+    flex-direction: row;
+    gap: 0;
+    padding: 2vw 3vw;
+    background-color: #000;
+    border-bottom: 1px solid #333;
+}
+
+.date-filter-buttons {
+    display: flex;
+    gap: 2vw;
+    width: 100%;
+}
+
+.date-filter-button {
+    flex: 1;
+    padding: 2.5vw;
+    background-color: #222;
+    color: #fff;
+    border: 2px solid #FE5F00;
+    border-radius: 1vw;
+    font-size: 3.5vw;
+    font-weight: bold;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.2s ease;
+    text-align: center;
+    min-height: 11vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.date-filter-button:active {
+    background-color: #FE5F00;
+    transform: scale(0.98);
+}
+
+.date-filter-button.has-date {
+    background-color: #2a2a2a;
+    border-color: #FE5F00;
+}
+
+.date-button-text {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.hidden-date-input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+    width: 0;
+    height: 0;
+}
+
+.gallery-filter-select {
+    width: 100%;
+    padding: 2vw;
+    background-color: #222;
+    color: #fff;
+    border: 1px solid #FE5F00;
+    border-radius: 1vw;
+    font-size: 3.5vw;
+    outline: none;
+}
+
+.gallery-filter-select:focus {
+    border-color: #FE5F00;
+    box-shadow: 0 0 0 1px #FE5F00;
+}
+
+/* ===== GALLERY SORT BUTTON (replaces native select) ===== */
+.gallery-sort-button {
+    flex: 1;
+    padding: 2.5vw;
+    background-color: #222;
+    color: #fff;
+    border: 2px solid #FE5F00;
+    border-radius: 1vw;
+    font-size: 3.5vw;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    outline: none;
+    transition: all 0.2s ease;
+    font-family: inherit;
+    min-height: 11vh;
+    gap: 1vw;
+}
+
+.gallery-sort-button:active {
+    background-color: #2a2a2a;
+    transform: scale(0.98);
+}
+
+.gallery-sort-chevron {
+    color: #FE5F00;
+    font-size: 4vw;
+    flex-shrink: 0;
+}
+
+/* ===== GALLERY CUSTOM MODALS (Sort Order + Date Picker) ===== */
+.gallery-custom-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10001;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.2s ease;
+}
+
+.gallery-custom-modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.82);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
+
+.gallery-custom-modal-content {
+    position: relative;
+    background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+    border-radius: 3vw;
+    width: 85%;
+    max-width: 340px;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.75);
+    border: 1px solid rgba(254, 95, 0, 0.35);
+    animation: slideUp 0.25s ease;
+    overflow: hidden;
+}
+
+.gallery-custom-modal-header {
+    background: #000;
+    border-bottom: 1px solid #FE5F00;
+    padding: 3vw 4vw;
+    text-align: center;
+}
+
+.gallery-custom-modal-header h3 {
+    color: #FE5F00;
+    font-size: 4.5vw;
+    margin: 0;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+}
+
+.gallery-custom-modal-list {
+    padding: 3vw;
+    display: flex;
+    flex-direction: column;
+    gap: 2vw;
+}
+
+.gallery-custom-modal-option {
+    width: 100%;
+    background: #2a2a2a;
+    border: 1px solid #333;
+    border-radius: 2vw;
+    color: #fff;
+    font-size: 4vw;
+    font-weight: 600;
+    padding: 3.5vw 4vw;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+    transition: all 0.2s ease;
+    font-family: inherit;
+}
+
+.gallery-custom-modal-option:active {
+    background: #3a3a3a;
+    transform: scale(0.98);
+}
+
+.gallery-custom-modal-option.active-sort {
+    background: #FE5F00;
+    color: #000;
+    border-color: #FE5F00;
+}
+
+.gallery-custom-modal-check {
+    font-size: 4.5vw;
+    font-weight: 900;
+}
+
+.gallery-custom-modal-cancel {
+    width: 100%;
+    padding: 3.5vw;
+    background: transparent;
+    border: none;
+    border-top: 1px solid #333;
+    color: #888;
+    font-size: 4vw;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.15s ease;
+    font-family: inherit;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.gallery-custom-modal-cancel:active {
+    color: #fff;
+    background: rgba(255,255,255,0.05);
+}
+
+/* Date Picker Modal body */
+.gallery-date-picker-body {
+    padding: 3vw 4vw 3vw;
+}
+
+.gallery-date-columns {
+    display: flex;
+    gap: 2vw;
+}
+
+.gallery-date-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5vw;
+}
+
+.gallery-date-select-label {
+    color: #FE5F00;
+    font-size: 3vw;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+}
+
+.gallery-date-col-list {
+    height: 30vw;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+    scrollbar-width: none;
+    border: 1px solid #333;
+    border-radius: 1.5vw;
+    padding: 1vw;
+    background: #111;
+}
+
+.gallery-date-col-list::-webkit-scrollbar {
+    display: none;
+}
+
+.gallery-date-option-btn {
+    background: transparent;
+    color: #bbb;
+    border: none;
+    border-radius: 1vw;
+    padding: 2vw 1vw;
+    font-size: 3.5vw;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+    font-family: inherit;
+    flex-shrink: 0;
+    width: 100%;
+    transition: all 0.1s ease;
+}
+
+.gallery-date-option-btn.date-selected {
+    background: #FE5F00;
+    color: #000;
+    border-radius: 1vw;
+}
+
+.gallery-date-option-btn:active {
+    opacity: 0.7;
+}
+
+.gallery-date-modal-actions {
+    display: flex;
+    border-top: 1px solid #333;
+}
+
+.gallery-date-modal-btn {
+    flex: 1;
+    padding: 3.5vw;
+    border: none;
+    font-size: 3.5vw;
+    font-weight: 700;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: all 0.15s ease;
+    font-family: inherit;
+}
+
+.gallery-date-modal-clear {
+    background: transparent;
+    color: #888;
+    border-right: 1px solid #333;
+}
+
+.gallery-date-modal-clear:active {
+    color: #fff;
+    background: rgba(255,255,255,0.05);
+}
+
+.gallery-date-modal-cancel {
+    background: transparent;
+    color: #aaa;
+    border-right: 1px solid #333;
+}
+
+.gallery-date-modal-cancel:active {
+    color: #fff;
+    background: rgba(255,255,255,0.05);
+}
+
+.gallery-date-modal-ok {
+    background: #FE5F00;
+    color: #000;
+}
+
+.gallery-date-modal-ok:active {
+    background: #e05400;
+    transform: scale(0.98);
+}
+
+/* Gallery Pagination */
+.gallery-pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1vw;
+    background-color: #000;
+    border-top: 1px solid #333;
+    min-height: 32px;
+}
+
+.pagination-button {
+    padding: 0 2.5vw;
+    background-color: #FE5F00;
+    color: #000;
+    border: none;
+    border-radius: 1vw;
+    font-size: 3.5vw;
+    font-weight: bold;
+    cursor: pointer;
+    height: 7vw;
+    min-height: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pagination-button:disabled {
+    background-color: #555;
+    color: #888;
+    cursor: not-allowed;
+}
+
+.pagination-button:active:not(:disabled) {
+    background-color: #ff7700;
+}
+
+.page-info {
+    font-size: 3.5vw;
+    color: #FE5F00;
+    font-weight: bold;
+}
+
+/* QR Import Button */
+.qr-import-button {
+    position: absolute;
+    bottom: 2vh;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 3vw;
+    padding: 2vw 6vw;
+    font-size: 4vw;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 110;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    animation: pulseGlow 2s ease-in-out infinite;
+}
+
+.qr-import-button:active {
+    transform: translateX(-50%) scale(0.95);
+    background-color: #45a049;
+}
+
+@keyframes pulseGlow {
+    0%, 100% {
+        box-shadow: 0 4px 8px rgba(76, 175, 80, 0.3);
+    }
+    50% {
+        box-shadow: 0 4px 16px rgba(76, 175, 80, 0.6);
+    }
+}
+
+/* Image Viewer Modal */
+.image-viewer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    display: none;
+    z-index: 2000;
+}
+
+.image-viewer-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+/* Combined image indicator — sits above the preset header */
+.viewer-combined-indicator {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5vw;
+    min-height: 20px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    color: #fff;
+    font-size: 2.5vw;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    z-index: 2003;
+}
+
+.viewer-combined-indicator.visible {
+    display: flex;
+}
+
+/* Preset name header at the very top center */
+.viewer-preset-header {
+    position: absolute;
+    top: 5vw;
+    left: calc(44px + 3vw);
+    right: calc(44px + 3vw);
+    height: 9vw;
+    min-height: 0;
+    display: block;
+    line-height: 9vw;
+    color: #FE5F00;
+    font-size: 3.5vw;
+    font-weight: bold;
+    text-align: center;
+    z-index: 2002;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding: 0 1vw;
+    box-sizing: border-box;
+}
+
+/* Small spinner shown next to "Submitting..." in the viewer header while the
+   gallery is actively sending presets. Same style family as the camera
+   screen's sync button spinner, recolored to fit the orange header text. */
+.header-spin-icon {
+    display: inline-block;
+    width: 3vw;
+    height: 3vw;
+    border: 0.45vw solid rgba(254, 95, 0, 0.3);
+    border-top-color: #FE5F00;
+    border-radius: 50%;
+    margin-right: 1.2vw;
+    vertical-align: -0.35vw;
+    animation: headerSpinIconSpin 0.8s linear infinite;
+}
+
+@keyframes headerSpinIconSpin {
+    to { transform: rotate(360deg); }
+}
+
+/* Delete button — top left */
+.viewer-delete-button {
+    position: absolute;
+    top: 1vh;
+    left: 1vw;
+    width: 12vw;
+    height: 12vw;
+    min-width: 44px;
+    min-height: 44px;
+    background: transparent;
+    color: #ff4444;
+    border: 2px solid #ff4444;
+    border-radius: 2vw;
+    font-size: 6vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 2001;
+    padding: 0;
+}
+
+.viewer-delete-button:active {
+    background-color: #ff4444;
+    color: #000;
+}
+
+/* Close button — top right */
+.viewer-close-button {
+    position: absolute;
+    top: 1vh;
+    right: 1vw;
+    width: 12vw;
+    height: 12vw;
+    min-width: 44px;
+    min-height: 44px;
+    background: transparent;
+    color: #FE5F00;
+    border: 2px solid #FE5F00;
+    border-radius: 1vw;
+    font-size: 8vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 2001;
+    padding: 0;
+}
+
+.viewer-close-button:active {
+    background-color: #FE5F00;
+    color: #000;
+}
+
+/* MASTER and OPTIONS moved to left carousel — stubs keep JS class toggling safe */
+.viewer-mp-button.enabled { background-color: rgba(76, 175, 80, 0.95); border-color: #4CAF50; }
+.viewer-options-button.enabled { background-color: rgba(76, 175, 80, 0.95); border-color: #4CAF50; }
+
+/* Left-side carousel for MASTER and OPTIONS — default visible, swipe left to hide */
+.viewer-left-carousel {
+    position: absolute;
+    left: -2vw;
+    top: 22vh;
+    bottom: 12vw;
+    width: 24vw;
+    display: flex;
+    flex-direction: column;
+    z-index: 2001;
+    overflow: visible;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateX(0);
+    pointer-events: auto;
+}
+
+.viewer-left-carousel::after {
+    display: none;
+}
+
+.viewer-left-carousel.hidden {
+    transform: translateX(calc(-100% + 8px));
+    pointer-events: none;
+}
+
+.viewer-left-carousel.hidden::after {
+    display: none;
+}
+
+.viewer-left-carousel-track {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6vw;
+    overflow-y: auto;
+    padding: 10px 0;
+    height: 100%;
+    width: 100%;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.viewer-left-carousel-track::-webkit-scrollbar {
+    display: none;
+}
+
+.viewer-left-carousel-btn {
+    width: 12vw;
+    height: 12vw;
+    min-height: 44px;
+    min-width: 44px;
+    flex-shrink: 0;
+    border-radius: 2vw;
+    background: rgba(30, 30, 30, 0.95);
+    color: #fff;
+    border: 2px solid #ff4444;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 3vw;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.viewer-left-carousel-btn:active {
+    background-color: #ff4444;
+    color: #000;
+}
+
+.viewer-left-carousel-btn.enabled {
+    background-color: rgba(76, 175, 80, 0.95);
+    border-color: #4CAF50;
+    color: #fff;
+    box-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
+}
+
+.viewer-left-carousel-btn.enabled:active {
+    background-color: #4CAF50;
+    color: #000;
+}
+
+/* Right-side carousel for Edit and Export — orange to match main camera */
+.viewer-carousel {
+    position: absolute;
+    right: -2vw;
+    top: 22vh;
+    bottom: 12vw;
+    width: 24vw;
+    display: flex;
+    flex-direction: column;
+    z-index: 2001;
+    overflow: visible;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateX(0);
+    pointer-events: auto;
+}
+
+.viewer-carousel::before {
+    display: none;
+}
+
+.viewer-carousel.show {
+    transform: translateX(0);
+    pointer-events: auto;
+}
+
+.viewer-carousel.hidden {
+    transform: translateX(calc(100% + 8px));
+    pointer-events: none;
+}
+
+.viewer-carousel.show::before {
+    display: none;
+}
+
+.viewer-carousel-track {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2vw;
+    overflow-y: auto;
+    padding: 10px 0;
+    height: 100%;
+    width: 100%;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.viewer-carousel-track::-webkit-scrollbar {
+    display: none;
+}
+
+.viewer-carousel-button {
+    width: 12vw;
+    height: 12vw;
+    min-width: 44px;
+    min-height: 44px;
+    flex-shrink: 0;
+    border-radius: 2vw;
+    background: rgba(30, 30, 30, 0.92);
+    color: #FE5F00;
+    border: 2px solid #FE5F00;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 6vw;
+    cursor: pointer;
+    z-index: 2001;
+    padding: 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.viewer-carousel-button:active {
+    background-color: #FE5F00;
+    color: #000;
+}
+
+.viewer-carousel-label {
+    font-size: 2.5vw;
+    line-height: 1;
+    color: #ffffff;
+    margin-top: 1.5vw;
+}
+
+/* Image fills space between header and bottom bar */
+.image-viewer-container {
+    position: absolute;
+    top: calc(1vh + max(12vw, 44px) + 1vw);
+    left: 0;
+    right: 0;
+    bottom: 12vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.viewer-image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    transition: transform 0.1s ease-out;
+}
+
+/* Hidden textarea keeps JS logic working without showing */
+.viewer-prompt-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+/* Bottom bar: PROMPT | LOAD | MULTI | ✨ MAGIC */
+.viewer-bottom-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 12vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background: transparent;
+    z-index: 2001;
+    gap: 2vw;
+    padding: 0 2vw;
+    box-sizing: border-box;
+}
+
+.viewer-bottom-btn {
+    flex: 1;
+    height: 7vw;
+    min-height: 0;
+    background: rgba(30, 30, 30, 0.75);
+    color: #ffffff;
+    border: 2px solid #FE5F00;
+    border-radius: 2vw;
+    font-size: 3vw;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 0 1vw;
+    white-space: nowrap;
+    text-align: center;
+}
+
+.viewer-bottom-btn:active {
+    background-color: #FE5F00;
+    color: #000;
+}
+
+/* Keep old class names working for any other references */
+.load-preset-button {
+    padding: 2vw 3vw;
+    font-size: 3.5vw;
+    background: transparent;
+    color: #FE5F00;
+    border: 1px solid #FE5F00;
+    border-radius: 2vw;
+    cursor: pointer;
+    min-width: 44px;
+    min-height: 32px;
+    white-space: nowrap;
+}
+
+.load-preset-button:active {
+    background-color: #FE5F00;
+    color: #000;
+}
+
+.magic-button {
+    padding: 2vw 3vw;
+    font-size: 3.5vw;
+    background: transparent;
+    color: #FE5F00;
+    border: 2px solid #FE5F00;
+    border-radius: 2vw;
+    cursor: pointer;
+    font-weight: bold;
+    min-width: 44px;
+    min-height: 32px;
+    white-space: nowrap;
+}
+
+.magic-button:active {
+    background-color: #FE5F00;
+    color: #000;
+}
+
+/* Preset Selector Modal */
+.preset-selector {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 3000;
+}
+
+.preset-selector-content button {
+    min-height: 32px;
+    padding: 0 8px;
+}
+
+.preset-selector-content {
+    width: 98%;
+    height: 92%;
+    background-color: #111;
+    border-radius: 1vw;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.preset-selector-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1vw;
+    background-color: #000;
+    border-bottom: 1px solid #FE5F00;
+    min-height: 32px;
+}
+
+.preset-selector-header .menu-nav-buttons {
+    display: flex;
+    gap: 2vw;
+    align-items: center;
+}
+
+.preset-selector-header h3 {
+    font-size: 5vw;
+    color: #FE5F00;
+    margin: 0;
+}
+
+.preset-list {
+    flex: 1;
+    overflow-y: auto;
+    padding: 2vw;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-y;
+}
+
+.preset-item {
+    padding: 1.5vw;
+    margin-bottom: 2vw;
+    background-color: #222;
+    border: 1px solid #444;
+    border-radius: 2vw;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.preset-item:active {
+    background-color: #333;
+    border-color: #FE5F00;
+}
+
+.preset-item.preset-selected {
+    background: linear-gradient(90deg, rgba(254,95,0,0.18) 0%, #222 100%);
+    border-left: 3px solid #FE5F00;
+    border-top-color: #444;
+    border-right-color: #444;
+    border-bottom-color: #444;
+    color: #fff;
+}
+
+.preset-item.preset-selected .preset-name {
+    color: #FE5F00;
+}
+
+.preset-item.preset-selected .preset-description {
+    color: #aaa;
+}
+
+.preset-name {
+    font-size: 4.5vw;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 1vw;
+}
+
+.preset-description-hidden {
+    display: none;
+}
+
+.preset-description {
+    font-size: 3.5vw;
+    color: #aaa;
+    line-height: 1.4;
+    max-height: 20vh;
+    overflow-y: auto;
+    word-wrap: break-word;
+}
+
+.preset-empty {
+    text-align: center;
+    padding: 10vw;
+    color: #888;
+    font-size: 4vw;
+}
+
+/* Style filter input */
+/* Wrapper that holds the filter input and blur button side by side */
+.filter-row {
+    display: flex;
+    align-items: center;
+    gap: 2vw;
+    margin-bottom: 3vw;
+}
+
+.style-filter {
+    flex: 1;
+    min-width: 0;
+    padding: 2vw;
+    font-size: 3.5vw;
+    background-color: #222;
+    color: #fff;
+    border: 1px solid #444;
+    border-radius: 2vw;
+    box-sizing: border-box;
+}
+
+.style-filter:focus {
+    outline: none;
+    border-color: #FE5F00;
+}
+
+/* Blur/dismiss button next to filter — same size as .close-button */
+.filter-blur-btn {
+    width: 8vw;
+    height: 8vw;
+    min-width: 32px;
+    min-height: 32px;
+    flex-shrink: 0;
+    border-radius: 1vw;
+    background-color: transparent;
+    color: #fff;
+    font-size: 6vw;
+    border: 2px solid #666;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    cursor: pointer;
+}
+
+.filter-blur-btn:active {
+    border-color: #FE5F00;
+    color: #FE5F00;
+}
+
+.menu-empty {
+    text-align: center;
+    padding: 5vw;
+    color: #888;
+    font-size: 4vw;
+}
+
+/* Menu section button (for resolution and burst) */
+.menu-section-button {
+    width: 100%;
+    padding: 2vw;
+    background: linear-gradient(180deg, #272727 0%, #1e1e1e 100%);
+    color: #fff;
+    border: 1px solid #3a3a3a;
+    border-radius: 2vw;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 4vw;
+    min-height: 44px;
+    text-align: left;
+}
+
+.menu-section-button:active {
+    background-color: #333;
+    border-color: #FE5F00;
+}
+
+.menu-section-button:active {
+    background-color: #333;
+    border-color: #FE5F00;
+}
+
+.menu-section-button .menu-section-title {
+    color: #fff;
+}
+
+.menu-section-button.menu-selected {
+    background: linear-gradient(90deg, rgba(254,95,0,0.18) 0%, #1e1e1e 100%);
+    box-shadow: inset 3px 0 0 #FE5F00;
+    border-color: #3a3a3a;
+    color: #fff;
+}
+
+.menu-section-button.menu-selected .menu-section-title {
+    color: #FE5F00;
+}
+
+.menu-section-button.menu-selected .menu-section-value {
+    color: #aaa;
+}
+
+.menu-section-button.menu-selected .menu-section-arrow {
+    color: #FE5F00;
+}
+
+.menu-section-title {
+    font-weight: bold;
+    color: #FE5F00;
+    font-size: 5vw;
+}
+
+.menu-section-value {
+    color: #aaa;
+    font-size: 4vw;
+}
+
+.menu-section-arrow {
+    color: #FE5F00;
+    font-size: 6vw;
+    font-weight: bold;
+}
+
+/* Submenu styles */
+.submenu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1100;
+}
+
+.submenu-content {
+    width: 98%;
+    height: 92%;
+    background-color: #111;
+    border-radius: 2vw;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.submenu-header {
+    display: flex;
+    align-items: center;
+    padding: 1vw;
+    background-color: #000;
+    border-bottom: 1px solid #FE5F00;
+    gap: 2vw;
+    justify-content: space-between;
+    min-height: 32px;
+}
+
+.submenu-header h3 {
+    font-size: 5vw;
+    color: #FE5F00;
+    margin: 0;
+}
+
+.back-button {
+    padding: 1vw 3vw;
+    font-size: 4vw;
+    background-color: transparent;
+    color: #FE5F00;
+    border: 1px solid #FE5F00;
+    border-radius: 1.5vw;
+    cursor: pointer;
+    min-width: 32px;
+    min-height: 32px;
+}
+
+.back-button:active {
+    background-color: #FE5F00;
+    color: #000;
+}
+
+.submenu-list {
+    flex: 1;
+    overflow-y: auto;
+    padding: 1vw;
+}
+
+/* Button Settings — tab bar */
+.btn-settings-tab-bar {
+    display: flex;
+    background: #000;
+    border-bottom: 1px solid #333;
+    flex-shrink: 0;
+}
+
+.btn-settings-tab {
+    flex: 1;
+    padding: 3vw 2vw;
+    font-size: 4vw;
+    background: #111;
+    color: #aaa;
+    border: none;
+    border-bottom: 3px solid transparent;
+    cursor: pointer;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    transition: color 0.15s, border-color 0.15s;
+}
+
+.btn-settings-tab.active {
+    color: #FE5F00;
+    border-bottom-color: #FE5F00;
+    background: #1a1a1a;
+}
+
+/* Button Settings — content panels */
+.btn-settings-panel {
+    display: none;
+    flex: 1;
+    overflow-y: auto;
+    padding: 1vw;
+}
+
+.btn-settings-panel.active {
+    display: block;
+}
+
+/* Focus pulse animation */
+@keyframes focusPulse {
+    0% {
+        transform: translate(-50%, -50%) scale(0.5);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1.5);
+        opacity: 0;
+    }
+}
+
+/* Force mirror for front camera */
+.mirror-video {
+    transform: scaleX(-1) translateZ(0) !important;
+    -webkit-transform: scaleX(-1) translateZ(0) !important;
+}
+
+.mirror-video-zoom {
+    transform: scaleX(-1) translateZ(0) !important;
+    -webkit-transform: scaleX(-1) translateZ(0) !important;
+}
+
+/* Master Prompt Submenu Styles */
+.master-prompt-setting-item {
+    margin-bottom: 4vw;
+}
+
+.master-prompt-checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 3vw;
+    font-size: 4vw;
+    color: #fff;
+    cursor: pointer;
+    padding: 3vw;
+    background-color: #222;
+    border: 1px solid #444;
+    border-radius: 2vw;
+}
+
+.master-prompt-checkbox {
+    width: 6vw;
+    height: 6vw;
+    min-width: 24px;
+    min-height: 24px;
+    cursor: pointer;
+    accent-color: #FE5F00;
+}
+
+.master-prompt-setting-item label:not(.master-prompt-checkbox-label) {
+    display: block;
+    font-size: 4vw;
+    color: #FE5F00;
+    margin-bottom: 2vw;
+    font-weight: bold;
+}
+
+.master-prompt-textarea {
+    width: 100%;
+    min-height: 30vh;
+    padding: 3vw;
+    font-size: 4vw;
+    background-color: #222;
+    color: #fff;
+    border: 1px solid #444;
+    border-radius: 2vw;
+    resize: vertical;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.4;
+}
+
+.master-prompt-textarea:focus {
+    outline: none;
+    border-color: #FE5F00;
+}
+
+.master-prompt-textarea:disabled {
+    opacity: 0.5;
+    background-color: #1a1a1a;
+    cursor: not-allowed;
+}
+
+.master-prompt-char-count {
+    text-align: right;
+    font-size: 3vw;
+    color: #888;
+    margin-top: 1vw;
+}
+
+.setting-hint {
+    font-size: 3.5vw;
+    color: #888;
+    margin-top: 2vw;
+    line-height: 1.4;
+    font-style: italic;
+}
+
+.preset-category-hint {
+    position: fixed;
+    bottom: 2vh;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 2vw 4vw;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: #FE5F00;
+    font-size: 3.5vw;
+    font-style: italic;
+    border: 1px solid #FE5F00;
+    border-radius: 2vw;
+    z-index: 1200;
+    pointer-events: none;
+    max-width: 80vw;
+    text-align: center;
+}
+
+.visible-presets-footer {
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 3vw;
+    background-color: #000;
+    color: #fff;
+    font-size: 4.5vw;
+    text-align: center;
+    border-top: 1px solid #FE5F00;
+    z-index: 100;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.menu-category-footer {
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 3vw;
+    background-color: #000;
+    color: #fff;
+    font-size: 4.5vw;
+    text-align: center;
+    border-top: 1px solid #FE5F00;
+    z-index: 100;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.preset-selector-category-footer {
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 3vw;
+    background-color: #000;
+    color: #fff;
+    font-size: 4.5vw;
+    text-align: center;
+    border-top: 1px solid #FE5F00;
+    z-index: 100;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Batch Mode - VERY COMPACT */
+.batch-toggle-button {
+    padding: 0 3vw;
+    background: rgba(30, 30, 30, 0.75);
+    color: #ffffff;
+    border: 2px solid #4CAF50;
+    border-radius: 2vw;
+    font-size: 3vw;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    height: 7vw;
+    min-height: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 6px;
+    white-space: nowrap;
+    box-sizing: border-box;
+}
+
+.batch-toggle-button:active {
+    background-color: #4CAF50;
+    color: #000;
+}
+
+.batch-toggle-button.active {
+    background: rgba(30, 30, 30, 0.75);
+    border-color: #f44336;
+    color: #ffffff;
+}
+
+.batch-controls {
+    display: flex;
+    gap: 4px;
+    padding: 0;
+    background: #000;
+    border-bottom: 1px solid #333;
+    align-items: stretch;
+}
+
+.batch-control-button {
+    padding: 6px 6px;
+    background: #111;
+    color: #FE5F00;
+    border: 1px solid #333;
+    border-radius: 3px;
+    font-size: 11px;
+    line-height: 1.1;
+    cursor: pointer;
+    min-width: unset;
+    min-height: unset;
+    height: 100%;
+    line-height: 1.2;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.batch-control-button:hover {
+    background: #f0f0f0;
+}
+
+/* Bottom Action Bar - MINIMAL */
+.batch-action-bar {
+    position: sticky;
+    bottom: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2vw;
+    gap: 2vw;
+    background: #000;
+    border-top: 1px solid #333;
+    box-sizing: border-box;
+}
+
+.batch-selected-count {
+    font-size: 3vw;
+    font-weight: 600;
+    color: #aaa;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.batch-actions-group {
+    display: flex;
+    flex: 1;
+    gap: 2vw;
+    justify-content: flex-end;
+}
+
+.batch-action-button {
+    flex: 1;
+    height: 7vw;
+    min-height: 0;
+    min-width: 0;
+    background: rgba(30, 30, 30, 0.75);
+    color: #ffffff;
+    border: 2px solid #4CAF50;
+    border-radius: 2vw;
+    font-size: 3vw;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 0 1vw;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.batch-action-button:active {
+    background-color: #4CAF50;
+    color: #000;
+}
+
+.batch-action-button.delete {
+    border-color: #f44336;
+    color: #ffffff;
+}
+
+.batch-action-button.delete:active {
+    background-color: #f44336;
+    color: #000;
+}
+
+.batch-action-button.combine {
+    border-color: #9C27B0;
+    color: #ffffff;
+}
+
+.batch-action-button.combine:active {
+    background-color: #9C27B0;
+    color: #000;
+}
+
+.batch-action-button:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+}
+
+/* ── GALLERY FOLDERS ─────────────────────────────── */
+
+.gallery-folder {
+    position: relative;
+    width: 100%;
+    height: 15vw;
+    min-height: 44px;
+    background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
+    border: 2px solid #FE5F00;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-sizing: border-box;
+    overflow: hidden;
+    padding: 4px;
+}
+
+/* The first photo after the folders always starts on a fresh row, so the
+   shorter folder rows can actually shrink — a row shared with a photo
+   would otherwise stretch back to full photo height. */
+.gallery-folder + .gallery-item:not(.gallery-folder) {
+    grid-column-start: 1;
+}
+
+.gallery-folder-icon {
+    font-size: 4vw;
+    line-height: 1;
+    flex-shrink: 0;
+}
+
+.gallery-folder-name {
+    font-family: 'Georgia', serif;
+    font-size: 2.4vw;
+    color: #ffffff;
+    text-align: center;
+    word-break: break-word;
+    overflow: hidden;
+    max-height: 2.4em;
+    line-height: 1.2;
+    padding: 0 2px;
+    width: 100%;
+    margin-top: 3px;
+}
+
+.gallery-folder.selected {
+    outline: 3px solid #FE5F00;
+    background: rgba(254, 95, 0, 0.15);
+}
+
+.gallery-folder-renaming .gallery-folder-name {
+    display: none;
+}
+
+.gallery-folder-rename-input {
+    width: 90%;
+    background: #111;
+    color: #FE5F00;
+    border: 1px solid #FE5F00;
+    border-radius: 3px;
+    font-size: 2.8vw;
+    text-align: center;
+    padding: 2px;
+    font-family: 'Georgia', serif;
+}
+
+/* Current folder breadcrumb bar */
+.gallery-folder-breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 1vw;
+    background: #111;
+    border-bottom: 1px solid #333;
+    font-size: 3vw;
+    color: #FE5F00;
+    min-height: 0;
+    box-sizing: border-box;
+}
+
+.gallery-folder-breadcrumb-back {
+    background: rgba(30, 30, 30, 0.75);
+    border: 2px solid #4CAF50;
+    color: #ffffff;
+    border-radius: 2vw;
+    font-size: 3vw;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 0 3vw;
+    height: 7vw;
+    min-height: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    box-sizing: border-box;
+    flex-shrink: 0;
+}
+
+/* Move to folder modal */
+.move-to-folder-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,0.75);
+}
+
+.move-to-folder-content {
+    background: #1a1a1a;
+    border: 1px solid #444;
+    border-radius: 8px;
+    width: 80vw;
+    max-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.move-to-folder-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 12px;
+    border-bottom: 1px solid #333;
+}
+
+.move-to-folder-header h4 {
+    margin: 0;
+    color: #fff;
+    font-size: 14px;
+}
+
+.move-to-folder-list {
+    overflow-y: auto;
+    flex: 1;
+}
+
+.move-to-folder-item {
+    padding: 12px 16px;
+    color: #fff;
+    font-size: 13px;
+    border-bottom: 1px solid #222;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.move-to-folder-item:active {
+    background: rgba(254, 95, 0, 0.2);
+}
+
+.move-to-folder-item.gallery-root {
+    color: #FE5F00;
+    font-weight: bold;
+}
+/* ── END GALLERY FOLDERS ─────────────────────────── */
+
+.gallery-item {
+    position: relative;
+}
+
+/* Checkbox */
+/* Batch-select checkbox — half size on both photos and folders.
+   Tapping anywhere on the tile still toggles selection; the box is
+   just the indicator. */
+.gallery-item-checkbox {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 12px;
+    height: 12px;
+    cursor: pointer;
+    z-index: 10;
+    accent-color: #4CAF50;
+    opacity: 1 !important;
+    appearance: auto;
+    -webkit-appearance: checkbox;
+}
+
+.gallery-item.selected {
+    outline: 3px solid #4CAF50;
+    outline-offset: -3px;
+}
+
+.gallery-item.nav-highlight {
+    outline: 3px solid #FE5F00;
+    outline-offset: -3px;
+}
+
+.nav-highlight-top {
+    outline: 3px solid #FFD700;
+    outline-offset: 2px;
+}
+
+/* Progress Overlay */
+.batch-progress-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.9);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    color: white;
+}
+
+.batch-progress-text {
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+
+.batch-progress-bar {
+    width: 80%;
+    max-width: 400px;
+    height: 6px;
+    background: rgba(255,255,255,0.3);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.batch-progress-fill {
+    height: 100%;
+    background: #4CAF50;
+    transition: width 0.3s ease;
+}
+
+/* Preset Builder Submenu */
+.preset-builder-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.preset-builder-sticky-prompt {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: #111;
+    padding: 2vw;
+    border-bottom: 2px solid #FE5F00;
+    flex-shrink: 0;
+}
+
+.preset-builder-prompt-sticky {
+    width: 100%;
+    padding: 2vw;
+    font-size: 3.5vw;
+    background: #1a1a1a;
+    color: #fff;
+    border: 2px solid #333;
+    border-radius: 2vw;
+    font-family: inherit;
+    resize: none;
+    height: 30vh;
+    min-height: 30vh;
+    line-height: 1.4;
+}
+
+.preset-builder-prompt-sticky:focus {
+    outline: none;
+    border-color: #FE5F00;
+}
+
+.preset-builder-form {
+    flex: 1;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 2vw;
+    display: flex;
+    flex-direction: column;
+    gap: 3vw;
+}
+
+.preset-builder-field {
+    display: flex;
+    flex-direction: column;
+    gap: 2vw;
+}
+
+.preset-builder-label {
+    font-size: 4.5vw;
+    font-weight: 600;
+    color: #FE5F00;
+    text-transform: uppercase;
+}
+
+.preset-builder-input,
+.preset-builder-select {
+    padding: 3vw;
+    font-size: 4.5vw;
+    background: #1a1a1a;
+    color: #fff;
+    border: 2px solid #333;
+    border-radius: 2vw;
+    font-family: inherit;
+}
+
+.preset-builder-input:focus,
+.preset-builder-select:focus,
+
+.preset-builder-tips {
+    background: #1a1a1a;
+    padding: 3vw;
+    border-radius: 2vw;
+    border-left: 4px solid #FE5F00;
+}
+
+.preset-builder-tip-title {
+    font-size: 4vw;
+    font-weight: 600;
+    color: #FE5F00;
+    margin-bottom: 2vw;
+}
+
+.preset-builder-tip-list {
+    font-size: 3.5vw;
+    color: #ccc;
+    margin: 0;
+    padding-left: 5vw;
+    line-height: 1.6;
+}
+
+.preset-builder-tip-list li {
+    margin-bottom: 1.5vw;
+}
+
+.preset-builder-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5vw;
+}
+
+.preset-chip {
+    padding: 1.5vw 2vw;
+    font-size: 3vw;
+    background: #333;
+    color: #fff;
+    border: 1px solid #555;
+    border-radius: 1vw;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.2s;
+    min-width: 44px;
+    min-height: 32px;
+}
+
+.preset-chip:active {
+    background: #FE5F00;
+    border-color: #FE5F00;
+    transform: scale(0.95);
+}
+
+.category-autocomplete {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: #1e1e1e;
+  border: 1px solid #FE5F00;
+  border-top: none;
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+  border-radius: 0 0 2vw 2vw;
+}
+
+.category-autocomplete-item {
+  padding: 8px 12px;
+  cursor: pointer;
+  border-bottom: 1px solid #2a2a2a;
+  color: #fff;
+  background: #1e1e1e;
+}
+
+.category-autocomplete-item:hover {
+  background: #2a2a2a;
+  color: #FE5F00;
+}
+
+.category-autocomplete-item:last-child {
+  border-bottom: none;
+}
+
+/* Collapsible Chip Sections */
+.chip-section {
+    margin-bottom: 2vw;
+}
+
+.chip-section-header {
+    width: 100%;
+    padding: 2.5vw;
+    background-color: #222;
+    color: #FE5F00;
+    border: 1px solid #444;
+    border-radius: 2vw;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 4vw;
+    font-weight: 600;
+    min-height: 44px;
+    text-align: left;
+    font-family: inherit;
+}
+
+.chip-section-header:active {
+    background-color: #333;
+    border-color: #FE5F00;
+}
+
+.chip-section-header.expanded {
+    background-color: #FE5F00;
+    color: #000;
+}
+
+.chip-section-header.expanded .chip-section-arrow {
+    transform: rotate(90deg);
+    color: #000;
+}
+
+.chip-section-arrow {
+    font-size: 6vw;
+    font-weight: bold;
+    transition: transform 0.2s ease;
+    color: #FE5F00;
+}
+
+.chip-section-content {
+    padding: 2vw;
+    background-color: #1a1a1a;
+    border: 1px solid #444;
+    border-top: none;
+    border-radius: 0 0 2vw 2vw;
+    margin-top: -2vw;
+}
+
+/* Tutorial Styles */
+.tutorial-glossary {
+    padding: 2vw;
+    background: #111;
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.glossary-title {
+    font-size: 13px;
+    font-weight: 600;
+    margin: 0 0 8px 0;
+    color: #FE5F00;
+    text-align: center;
+}
+
+.glossary-items {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.glossary-item {
+    padding: 2vw;
+    background: linear-gradient(180deg, #272727 0%, #1e1e1e 100%);
+    border: 1px solid #3a3a3a;
+    border-radius: 2vw;
+    text-align: left;
+    font-size: 4vw;
+    font-weight: 500;
+    color: #FE5F00;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+}
+
+.glossary-item:hover {
+    background: linear-gradient(180deg, #272727 0%, #1e1e1e 100%);
+    color: #fff;
+    border-color: #FE5F00;
+}
+
+.menu-item.menu-selected {
+  background: linear-gradient(90deg, rgba(254,95,0,0.18) 0%, #2a2a2a 100%);
+  border-left: 3px solid #FE5F00;
+  color: #fff;
+}
+.menu-item.menu-selected .import-preview-row {
+  color: #aaa;
+}
+
+.glossary-item.menu-selected {
+    background: linear-gradient(180deg, #272727 0%, #1e1e1e 100%);
+    color: #fff;
+    border-color: #FE5F00;
+}
+
+.tutorial-content-area {
+    display: flex;
+    flex-direction: column;
+    max-height: calc(100vh - 80px);
+    overflow: hidden;
+}
+
+.back-to-glossary {
+    padding: 1vw 3vw;
+    background: #FE5F00;
+    color: #000;
+    border: 2px solid #FE5F00;
+    border-radius: 1.5vw;
+    font-size: 4vw;
+    font-weight: 600;
+    cursor: pointer;
+    margin-left: auto;
+    text-align: center;
+    flex-shrink: 0;
+    min-width: 32px;
+    min-height: 32px;
+}
+
+.back-to-glossary:active {
+    background: #000;
+    color: #FE5F00;
+}
+
+.tutorial-content {
+    padding: 0;
+    overflow-y: auto;
+    flex: 1;
+    min-height: 0;
+    background: #111;
+}
+
+.tutorial-section {
+    padding: 20px 16px;
+    border-bottom: 2px solid #FE5F00;
+    background: #000;
+}
+
+.tutorial-section:last-child {
+    border-bottom: none;
+}
+
+.tutorial-heading {
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0 0 12px 0;
+    color: #FE5F00;
+}
+
+.tutorial-text {
+    font-size: 15px;
+    line-height: 1.7;
+    margin: 0;
+    color: #fff;
+    font-weight: 400;
+}
+
+.tutorial-text strong {
+    color: #FE5F00;
+    font-weight: 700;
+}
+
+.tutorial-text br {
+    margin-bottom: 8px;
+}
+
+/* Upload Button */
+.viewer-upload-button {
+    display: none;
+}
+
+/* QR Code Modal */
+.qr-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+}
+
+.qr-modal-content {
+    background: #1e1e1e;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 400px;
+    width: 90%;
+    text-align: center;
+}
+
+.qr-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.qr-modal-header h3 {
+    color: white;
+    margin: 0;
+    font-size: 18px;
+}
+
+.qr-code-container {
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+    display: inline-block;
+    margin: 10px auto;
+}
+
+.qr-url-text {
+    color: #4CAF50;
+    font-size: 12px;
+    word-break: break-all;
+    margin: 10px 0;
+    padding: 10px;
+    background: rgba(76, 175, 80, 0.1);
+    border-radius: 5px;
+}
+
+.qr-expiry-text {
+    color: #999;
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+/* QR Scanner Modal */
+.qr-scanner-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    display: none;
+    z-index: 3000;
+}
+
+.qr-scanner-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.qr-scanner-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2vw;
+    background-color: rgba(0, 0, 0, 0.9);
+    border-bottom: 2px solid #FE5F00;
+    min-height: 44px;
+}
+
+.qr-scanner-header h4 {
+    font-size: 5vw;
+    color: #FE5F00;
+    margin: 0;
+    flex: 1;
+}
+
+.qr-scanner-video-container {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000;
+}
+
+#qr-scanner-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.qr-scanner-status {
+    padding: 4vw;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: #FE5F00;
+    text-align: center;
+    font-size: 4vw;
+    border-top: 2px solid #FE5F00;
+    min-height: 44px;
+}
+
+.qr-scanner-status.success {
+    color: #4CAF50;
+    background-color: rgba(76, 175, 80, 0.2);
+}
+
+.qr-scanner-status.error {
+    color: #ff4444;
+    background-color: rgba(255, 68, 68, 0.2);
+}
+
+.qr-scan-button {
+    padding: 4vw;
+    margin: 2vw;
+    background-color: #FE5F00;
+    color: #fff;
+    border: none;
+    border-radius: 2vw;
+    font-size: 4.5vw;
+    font-weight: bold;
+    cursor: pointer;
+    min-height: 44px;
+}
+
+.qr-scan-button:active {
+    background-color: #ff7a33;
+    transform: scale(0.98);
+}
+
+.qr-scan-button:disabled {
+    background-color: #666;
+    cursor: not-allowed;
+}
+
+.factory-reset-btn {
+  background-color: #ff4444;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.factory-reset-btn:hover {
+  background-color: #cc0000;
+}
+
+.factory-reset-btn:active {
+  transform: scale(0.98);
+}
+
+/* Gallery Status Message */
+.gallery-status-message {
+  position: absolute;
+  bottom: 3vh;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.95);
+  color: #fff;
+  padding: 2vw 4vw;
+  border-radius: 1vw;
+  font-size: 3.5vw;
+  z-index: 1001;
+  max-width: 70%;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  border: 1px solid #FE5F00;
+}
+
+/* Image Metadata Tooltip — shown on gallery image long-press */
+.img-meta-tooltip {
+    position: fixed;
+    background: rgba(0, 0, 0, 0.90);
+    color: #fff;
+    border: 1px solid #FE5F00;
+    border-radius: 2vw;
+    padding: 2vw 3vw;
+    font-size: 3.5vw;
+    line-height: 1.8;
+    z-index: 9999;
+    pointer-events: none;
+    white-space: nowrap;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.6);
+}
+
+.gallery-status-message.error {
+  background: rgba(220, 38, 38, 0.95);
+  border-color: #ff6b6b;
+}
+
+.gallery-status-message.success {
+  background: rgba(34, 197, 94, 0.95);
+  border-color: #4ade80;
+}
+
+/* ========== IMAGE EDITOR MODAL ========== */
+.image-editor-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3000;
+}
+
+.image-editor-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #000;
+}
+
+.image-editor-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2vw;
+    background-color: #1a1a1a;
+    border-bottom: 2px solid #FE5F00;
+    min-height: 44px;
+    flex-shrink: 0;
+}
+
+.editor-header-buttons {
+    display: flex;
+    gap: 2vw;
+    align-items: center;
+}
+
+.image-editor-header h3 {
+    font-size: 5vw;
+    color: #FE5F00;
+    margin: 0;
+}
+
+/* Top Controls (Sliders on top of image) */
+.editor-top-controls {
+    display: flex;
+    gap: 2vw;
+    padding: 1.5vw;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-bottom: 1px solid #333;
+    flex-shrink: 0;
+}
+
+/* ===== DRAW MODE CONTROLS (replace brightness/contrast row) ===== */
+/* The draw controls row occupies the SAME vertical space as the slider row:
+   same padding, same background, same border, so the swap is seamless. */
+#editor-draw-controls {
+    align-items: center;
+    gap: 2vw;
+}
+
+/* Buttons lay out icon + label HORIZONTALLY and are height-capped to one
+   slider group's content (label 2.5vw + gap 0.5vw + input 5vw = 8vw), so
+   this row is exactly as tall as the brightness/contrast row it replaces. */
+.editor-draw-ctrl-btn {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1.2vw;
+    height: 8vw;
+    min-height: 32px;
+    background: rgba(30, 30, 30, 0.92);
+    color: #FE5F00;
+    border: 2px solid #FE5F00;
+    border-radius: 1.5vw;
+    font-size: 3.6vw;
+    line-height: 1;
+    padding: 0 1vw;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.editor-draw-ctrl-btn:active {
+    background-color: #FE5F00;
+    color: #000;
+}
+
+.draw-ctrl-icon {
+    font-size: 4vw;
+    line-height: 1;
+}
+
+.editor-draw-ctrl-label {
+    font-size: 2.6vw;
+    line-height: 1;
+    color: #ffffff;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.9);
+    white-space: nowrap;
+}
+
+/* Color button: a swatch square shows the chosen pencil color */
+.draw-ctrl-swatch {
+    width: 4vw;
+    height: 4vw;
+    min-width: 14px;
+    min-height: 14px;
+    border-radius: 1vw;
+    border: 1px solid rgba(255,255,255,0.6);
+    flex-shrink: 0;
+}
+
+/* Tip button: a dot reflecting the CURRENT COLOR (scales a little with size),
+   plus a numeric size readout on the right. */
+.draw-tip-preview {
+    display: inline-block;
+    width: 4vw;
+    height: 4vw;
+    min-width: 12px;
+    min-height: 12px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.6);
+    flex-shrink: 0;
+}
+
+.draw-tip-size-readout {
+    font-size: 2.6vw;
+    line-height: 1;
+    color: #FE5F00;
+    font-weight: bold;
+    margin-left: 0.6vw;
+    min-width: 5vw;
+    text-align: center;
+}
+
+.editor-draw-ctrl-btn:active .editor-draw-ctrl-label,
+.editor-draw-ctrl-btn:active .draw-tip-size-readout {
+    color: #000;
+}
+
+/* The Color button also carries .hsv-swatch-btn (to reuse the shared color
+   picker), and that class hard-codes width:52px; height:38px — which is
+   taller than the other two draw buttons and pushed the image/canvas down.
+   Re-assert the shared draw-button sizing on THIS button only, so all three
+   are identical. The swatch buttons on the button-color settings screens are
+   untouched and keep their original fixed size. */
+#draw-color-btn.hsv-swatch-btn {
+    width: auto;
+    height: 8vw;
+    min-height: 32px;
+    box-shadow: none;
+    /* Keep the editor's orange border — .hsv-swatch-btn otherwise forces gray */
+    border: 2px solid #FE5F00;
+    border-radius: 1.5vw;
+}
+#draw-color-btn.hsv-swatch-btn:hover {
+    border-color: #FE5F00;
+}
+
+/* Pencil tip size menu — small popup anchored under the Tip button */
+.draw-tip-menu {
+    position: absolute;
+    z-index: 200;
+    background: rgba(20, 20, 20, 0.98);
+    border: 2px solid #FE5F00;
+    border-radius: 2vw;
+    padding: 1.5vw;
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.7);
+}
+
+.draw-tip-option {
+    display: flex;
+    align-items: center;
+    gap: 2vw;
+    background: rgba(40, 40, 40, 0.9);
+    color: #fff;
+    border: 1px solid #555;
+    border-radius: 1.5vw;
+    padding: 2vw 3vw;
+    font-size: 3vw;
+    cursor: pointer;
+    min-width: 34vw;
+}
+
+.draw-tip-option:active,
+.draw-tip-option.active {
+    background: #FE5F00;
+    color: #000;
+    border-color: #FE5F00;
+}
+
+.draw-tip-dot {
+    display: inline-block;
+    border-radius: 50%;
+    background: currentColor;
+    flex-shrink: 0;
+}
+
+/* While drawing, the canvas takes raw pointer input (no scroll/zoom stealing) */
+.editor-canvas.draw-active {
+    touch-action: none;
+    cursor: crosshair;
+}
+
+/* ===== ZOOM / PAN MODE =====
+   Zoom is a VIEW-ONLY transform on the canvas element. It never touches the
+   canvas pixels, so saving is unaffected and the saved image is never zoomed. */
+.editor-image-container.zoom-panning {
+    touch-action: none;
+    cursor: grab;
+}
+.editor-image-container.zoom-panning:active {
+    cursor: grabbing;
+}
+/* Smooth the visual scale change while dragging the zoom slider */
+.editor-canvas.zoom-active {
+    transition: transform 0.08s linear;
+}
+
+/* ===== DRAW SETTINGS MODAL ===== */
+.draw-settings-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 400;
+    background: rgba(0, 0, 0, 0.75);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.draw-settings-panel {
+    width: 92vw;
+    max-width: 92vw;
+    max-height: 90vh;
+    background: #111;
+    border: 2px solid #FE5F00;
+    border-radius: 3vw;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.7);
+}
+
+.draw-settings-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3vw;
+    border-bottom: 1px solid #333;
+    flex-shrink: 0;
+}
+
+.draw-settings-header h3 {
+    margin: 0;
+    color: #FE5F00;
+    font-size: 4.5vw;
+}
+
+/* Let the title take remaining space so Default + close sit at the right */
+.draw-settings-header h3 { flex: 1; }
+
+/* Default (reset) button — same height as the close button */
+.draw-settings-default-btn {
+    height: 8vw;
+    min-height: 32px;
+    padding: 0 3vw;
+    margin-right: 2vw;
+    background-color: transparent;
+    color: #FE5F00;
+    border: 2px solid #FE5F00;
+    border-radius: 1vw;
+    font-size: 3.2vw;
+    font-weight: 700;
+    cursor: pointer;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.draw-settings-default-btn:active {
+    background-color: #FE5F00;
+    color: #000;
+}
+
+.draw-settings-body {
+    padding: 3vw;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.draw-settings-group-title {
+    color: #FE5F00;
+    font-size: 3.4vw;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 2vw 0 1.5vw 0;
+    border-bottom: 1px solid #333;
+    padding-bottom: 1vw;
+}
+
+.draw-settings-row {
+    margin-bottom: 3.5vw;
+}
+
+.draw-settings-row > label {
+    display: block;
+    color: #fff;
+    font-size: 3.4vw;
+    font-weight: 600;
+    margin-bottom: 1.5vw;
+}
+
+.draw-settings-hint {
+    display: block;
+    color: #999;
+    font-size: 2.6vw;
+    font-weight: 400;
+    margin-top: 0.4vw;
+}
+
+.draw-settings-control {
+    display: flex;
+    align-items: center;
+    gap: 3vw;
+}
+
+.draw-settings-control input[type="range"] {
+    flex: 1;
+    accent-color: #FE5F00;
+    height: 6vw;
+}
+
+.draw-settings-control input[type="checkbox"] {
+    width: 6vw;
+    height: 6vw;
+    accent-color: #FE5F00;
+}
+
+.draw-settings-val {
+    min-width: 18vw;
+    text-align: right;
+    color: #FE5F00;
+    font-weight: 700;
+    font-size: 3.2vw;
+}
+/* ===== END DRAW MODE CONTROLS ===== */
+
+.editor-slider-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5vw;
+}
+
+.editor-slider-group label {
+    font-size: 2.5vw;
+    color: #FE5F00;
+    font-weight: bold;
+}
+
+.editor-slider-group input[type="range"] {
+    width: 100%;
+    height: 5vw;
+    background: #333;
+    border-radius: 1vw;
+    outline: none;
+}
+
+.editor-slider-group input[type="range"]::-webkit-slider-thumb {
+    width: 4vw;
+    height: 4vw;
+    background: #FE5F00;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.editor-slider-group span {
+    font-size: 2.5vw;
+    color: #fff;
+    text-align: center;
+}
+
+/* Main Editor Area - Image Left, Buttons Right */
+.editor-main-area {
+    flex: 1;
+    display: flex;
+    gap: 1vw;
+    padding: 1vw;
+    background-color: #000;
+    overflow: hidden;
+    min-height: 0;
+}
+
+/* Image Container - Takes up left side */
+.editor-image-container {
+    flex: 1;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000;
+    overflow: hidden;
+    min-height: 0;
+    min-width: 0;
+}
+
+.editor-canvas {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+/* Crop Overlay */
+.crop-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.crop-corner {
+    position: absolute;
+    width: 12vw;
+    height: 12vw;
+    border: 4px solid #FE5F00;
+    background-color: rgba(254, 95, 0, 0.5);
+    pointer-events: auto;
+    cursor: pointer;
+    touch-action: none;
+    z-index: 100;
+    box-shadow: 0 0 10px rgba(254, 95, 0, 0.8);
+}
+
+.crop-top-left {
+    top: 10%;
+    left: 10%;
+    border-right: none;
+    border-bottom: none;
+}
+
+.crop-bottom-right {
+    bottom: 10%;
+    right: 10%;
+    border-left: none;
+    border-top: none;
+}
+
+.crop-hint {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #FE5F00;
+    padding: 2vw 4vw;
+    border-radius: 2vw;
+    font-size: 3vw;
+    pointer-events: none;
+}
+
+/* Right Side Button Column */
+.editor-button-column {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5vw;
+    width: 18vw;
+    flex-shrink: 0;
+}
+
+.editor-action-button {
+    width: 100%;
+    padding: 2vw 1vw;
+    background-color: #222;
+    color: #FE5F00;
+    border: 2px solid #FE5F00;
+    border-radius: 2vw;
+    font-size: 3vw;
+    font-weight: bold;
+    cursor: pointer;
+    min-height: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5vw;
+}
+
+.editor-action-button:active {
+    background-color: #FE5F00;
+    color: #000;
+}
+
+.editor-action-button.active {
+    background-color: #FE5F00;
+    color: #000;
+}
+
+/* ===== EDITOR BUTTON CAROUSEL ===== */
+/* Matches viewer-carousel style — always visible, no hide toggle */
+.editor-btn-carousel {
+    width: 20vw;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.editor-btn-carousel-track {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5vw;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 1vw 0;
+    height: 100%;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.editor-btn-carousel-track::-webkit-scrollbar {
+    display: none;
+}
+
+.editor-carousel-btn {
+    width: 14vw;
+    height: 14vw;
+    min-width: 44px;
+    min-height: 44px;
+    flex-shrink: 0;
+    border-radius: 2vw;
+    background: rgba(30, 30, 30, 0.92);
+    color: #FE5F00;
+    border: 2px solid #FE5F00;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 5vw;
+    cursor: pointer;
+    padding: 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.editor-carousel-btn:active {
+    background-color: #FE5F00;
+    color: #000;
+}
+
+.editor-carousel-btn.active {
+    background-color: #FE5F00;
+    color: #000;
+}
+
+.editor-carousel-label {
+    font-size: 2.5vw;
+    line-height: 1;
+    color: #ffffff;
+    margin-top: 1vw;
+    display: block;
+}
+/* ===== END EDITOR BUTTON CAROUSEL ===== */
+
+/* Bottom Controls removed since buttons are on the right */
+.editor-bottom-controls {
+    display: none;
+}
+
+/* Save/Undo in header */
+.editor-save-controls {
+    display: none;
+}
+
+.editor-header-undo-button {
+    width: 18vw;
+    height: 8vw;
+    min-height: 32px;
+    background-color: #222;
+    color: #ff9800;
+    border: 2px solid #ff9800;
+    border-radius: 2vw;
+    font-size: 3vw;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.editor-header-undo-button:active {
+    background-color: #ff9800;
+    color: #000;
+}
+
+.editor-header-undo-button:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.editor-header-save-button {
+    width: 18vw;
+    height: 8vw;
+    min-height: 32px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: 2px solid #4CAF50;
+    border-radius: 2vw;
+    font-size: 3vw;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.editor-header-save-button:active {
+    background-color: #45a049;
+    transform: scale(0.98);
+}
+
+/* ===== CUSTOM ALERT/CONFIRM MODAL ===== */
+
+.custom-alert-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.2s ease;
+}
+
+.custom-alert-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.custom-alert-content {
+  position: relative;
+  background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+  border-radius: 12px;
+  padding: 20px 24px;
+  max-width: 85%;
+  width: 340px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  animation: slideUp 0.25s ease;
+}
+
+.custom-alert-message {
+  font-family: 'Power Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 14px;
+  line-height: 1.4;
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 16px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.custom-alert-buttons {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.custom-alert-btn {
+  font-family: 'Power Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  min-width: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.custom-alert-btn-primary {
+  background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+  color: white;
+  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+}
+
+.custom-alert-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(76, 175, 80, 0.4);
+}
+
+.custom-alert-btn-primary:active {
+  transform: translateY(0);
+}
+
+.custom-alert-btn-secondary {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.custom-alert-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+.custom-alert-btn-secondary:active {
+  transform: translateY(0);
+}
+
+.custom-alert-btn-danger {
+  background: linear-gradient(135deg, #f44336 0%, #d32f2f 100%);
+  color: white;
+  box-shadow: 0 4px 12px rgba(244, 67, 54, 0.3);
+}
+
+.custom-alert-btn-danger:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(244, 67, 54, 0.4);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .custom-alert-content {
+    width: 80%;
+    padding: 16px 20px;
+  }
+  
+  .custom-alert-message {
+    font-size: 13px;
+  }
+  
+  .custom-alert-btn {
+    padding: 7px 16px;
+    font-size: 12px;
+    min-width: 70px;
+  }
+}
+
+/* ===== IMPORT PRESET TICKET BADGES ===== */
+
+.preset-ticket {
+  display: inline-block;
+  font-family: 'Power Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  padding: 3px 8px;
+  margin-left: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  position: relative;
+  line-height: 1;
+  clip-path: polygon(
+    0% 20%, 3% 0%, 97% 0%, 100% 20%,
+    100% 80%, 97% 100%, 3% 100%, 0% 80%
+  );
+}
+
+.preset-ticket-new {
+  background: linear-gradient(135deg, #f44336 0%, #d32f2f 100%);
+  color: white;
+  box-shadow: 0 2px 4px rgba(244, 67, 54, 0.3);
+}
+
+.preset-ticket-updated {
+  background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+  color: white;
+  box-shadow: 0 2px 4px rgba(76, 175, 80, 0.3);
+}
+
+/* Pulse animation for UPDATED tickets only */
+@keyframes ticketPulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.85;
+    transform: scale(1.05);
+  }
+}
+
+/* Preset Builder - Option Management */
+.option-item {
+    display: flex;
+    gap: 2vw;
+    margin-bottom: 2vw;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.option-item input[type="text"] {
+    flex: 1;
+    min-width: 0;
+    height: 8vw;
+    min-height: 32px;
+    padding: 0 2vw;
+    background: #2a2a2a;
+    border: 2px solid #444;
+    border-radius: 2vw;
+    color: #fff;
+    font-size: 4vw;
+    box-sizing: border-box;
+    font-family: inherit;
+}
+
+.option-item input[type="text"]:focus {
+    outline: none;
+    border-color: #FE5F00;
+}
+
+.option-item button {
+    flex-shrink: 0;
+    height: 8vw;
+    min-height: 32px;
+    min-width: 44px;
+    padding: 0 3vw;
+    background: #d32f2f;
+    color: white;
+    border: none;
+    border-radius: 2vw;
+    cursor: pointer;
+    font-size: 4vw;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+}
+
+.option-item button:active {
+    background: #b71c1c;
+}
+
+.option-group {
+    border: 1px solid #444;
+    border-radius: 2vw;
+    padding: 2vw;
+    margin-bottom: 2vw;
+    background: #1a1a1a;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.option-group-header {
+    display: flex;
+    gap: 2vw;
+    margin-bottom: 2vw;
+    align-items: center;
+}
+
+.option-group-header input {
+    flex: 1;
+    min-width: 0;
+    height: 8vw;
+    min-height: 32px;
+    padding: 0 2vw;
+    background: #2a2a2a;
+    border: 2px solid #444;
+    border-radius: 2vw;
+    color: #fff;
+    font-size: 4vw;
+    font-weight: bold;
+    box-sizing: border-box;
+    font-family: inherit;
+}
+
+.option-group-header input:focus {
+    outline: none;
+    border-color: #FE5F00;
+}
+
+.option-group-header button {
+    flex-shrink: 0;
+    height: 8vw;
+    min-height: 32px;
+    min-width: 44px;
+    padding: 0 3vw;
+    background: #d32f2f;
+    color: white;
+    border: none;
+    border-radius: 2vw;
+    cursor: pointer;
+    font-size: 4vw;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+}
+
+.option-group-header button:active {
+    background: #b71c1c;
+}
+
+.option-group-options {
+    margin-left: 2vw;
+    padding-left: 2vw;
+    border-left: 2px solid #444;
+}
+
+.add-group-option {
+    width: auto;
+    height: 5vw;
+    min-height: 22px;
+    padding: 0 3vw;
+    background: #2196F3;
+    color: white;
+    border: none;
+    border-radius: 2vw;
+    cursor: pointer;
+    font-size: 3vw;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2vw;
+    box-sizing: border-box;
+}
+
+.add-group-option:active {
+    background: #1976D2;
+}
+
+/* Style editor section labels */
+.style-section-label {
+    font-size: 4vw;
+    font-weight: 600;
+    color: #FE5F00;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    margin-top: 2vw;
+    margin-bottom: 1vw;
+}
+
+/* Style editor Add Option / Add Group buttons - matches save/delete header button height */
+.style-add-btn {
+    width: 100%;
+    height: 8vw;
+    min-height: 32px;
+    padding: 0 4vw;
+    background: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 2vw;
+    cursor: pointer;
+    font-size: 4vw;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2vw;
+    box-sizing: border-box;
+}
+
+.style-add-btn:active {
+    background: #45a049;
+}
+
+.style-option-label {
+    font-size: 4vw;
+    font-weight: 600;
+    color: #FE5F00;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    margin-top: 2vw;
+    margin-bottom: 1vw;
+}
+
+.style-option-checkbox {
+    width: 5vw;
+    height: 5vw;
+    min-width: 20px;
+    min-height: 20px;
+    margin-right: 2vw;
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+.style-option-add-btn {
+    width: auto;
+    height: 5vw;
+    min-height: 22px;
+    padding: 0 4vw;
+    background: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 2vw;
+    cursor: pointer;
+    font-size: 3vw;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2vw;
+    box-sizing: border-box;
+}
+
+.style-option-add-btn:active {
+    background: #45a049;
+}
+
+/* ── Loading Spinner Overlay ── */
+@keyframes mkSpin {
+    to { transform: rotate(360deg); }
+}
+
+.mk-loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.65);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 14px;
+    z-index: 99999;
+}
+
+.mk-loading-spinner {
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    min-height: 48px;
+    border: 5px solid #333;
+    border-top-color: #FE5F00;
+    border-radius: 50%;
+    animation: mkSpin 0.8s linear infinite;
+    flex-shrink: 0;
+    display: block;
+    aspect-ratio: 1 / 1;
+}
+
+.mk-loading-label {
+    color: #fff;
+    font-size: 14px;
+    letter-spacing: 0.05em;
+}
+
+/* Smaller inline spinner used inside modals (e.g. Select All) */
+.mk-loading-spinner-sm {
+    width: 28px;
+    height: 28px;
+    min-width: 28px;
+    min-height: 28px;
+    border: 4px solid #333;
+    border-top-color: #FE5F00;
+    border-radius: 50%;
+    animation: mkSpin 0.8s linear infinite;
+    flex-shrink: 0;
+    display: block;
+    aspect-ratio: 1 / 1;
+}
+
+/* ===== HSV COLOR PICKER ===== */
+.hsv-swatch-btn {
+    width: 52px;
+    height: 38px;
+    border: 2px solid #555;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 0;
+    flex-shrink: 0;
+    transition: border-color 0.15s, transform 0.1s;
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,0.08), 0 2px 6px rgba(0,0,0,0.4);
+}
+.hsv-swatch-btn:hover {
+    border-color: #FE5F00;
+}
+.hsv-swatch-btn:active {
+    transform: scale(0.93);
+}
+
+/* ===== VISUAL POLISH ===== */
+
+/* Slightly glowing orange border on all full-screen panel headers */
+.gallery-header,
+.styles-menu-header,
+.style-editor-header {
+    box-shadow: 0 1px 8px rgba(254, 95, 0, 0.18);
+}
+
+/* ── Gallery items: warmer press effect ── */
+.gallery-item:active {
+    border-color: #FE5F00;
+    box-shadow:
+        0 0 0 2px rgba(254,95,0,0.4),
+        0 0 16px rgba(254,95,0,0.3);
+    transform: scale(0.97);
+    transition: transform 0.08s ease, box-shadow 0.08s ease;
+}
+
+/* Preset list items: subtle left accent bar on selection */
+.menu-item.menu-selected {
+    border-left: 3px solid #FE5F00;
+}
+
+/* Style list items: inner glow when active */
+.style-item.active,
+.style-item.menu-selected {
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.25), 0 2px 8px rgba(254, 95, 0, 0.25);
+}
+
+/* Scrollbars — thin and orange-tinted throughout */
+::-webkit-scrollbar {
+    width: 3px;
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background: rgba(254, 95, 0, 0.45);
+    border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:active {
+    background: rgba(254, 95, 0, 0.8);
+}
+
+/* Preset tickets: sharper shadow and slightly raised look */
+.preset-ticket {
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.45), 0 1px 0 rgba(255,255,255,0.1) inset;
+}
+
+/* Panel backgrounds: very subtle warm gradient instead of flat black */
+.styles-menu-content,
+.gallery-content,
+.style-editor-content {
+    background: linear-gradient(160deg, #141414 0%, #111 100%);
+}
+
+/* Filter input: focus glow */
+.style-filter:focus,
+#import-preset-filter:focus {
+    border-color: rgba(254, 95, 0, 0.6);
+    box-shadow: 0 0 0 2px rgba(254, 95, 0, 0.12);
+    outline: none;
+}
+
+/* Jump buttons: slight glow on press */
+.menu-jump-button:active,
+.menu-jump-button-small:active {
+    box-shadow: 0 0 8px rgba(254, 95, 0, 0.4);
+}
+
+/* Close button: red tint on press */
+.close-button:active {
+    border-color: #f44336;
+    color: #f44336;
+    box-shadow: 0 0 6px rgba(244, 67, 54, 0.35);
+}
+
+/* ===== EXTENDED VISUAL POLISH ===== */
+
+/* ── Typography refinement ── */
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+/* ── Header: stronger separator line with orange underglow ── */
+.styles-menu-header,
+.gallery-header,
+.preset-selector-header {
+    border-bottom: 1px solid rgba(254, 95, 0, 0.35);
+    background: linear-gradient(180deg, #1f1f1f 0%, #191919 100%);
+}
+
+/* ── Menu items: refined hover/selected state with left glow bar ── */
+.menu-item {
+    border-left: 3px solid transparent;
+    transition: border-color 0.12s, background 0.12s;
+}
+
+.menu-item.menu-selected {
+    border-left-color: #FE5F00;
+    background: linear-gradient(90deg, rgba(254,95,0,0.09) 0%, transparent 100%);
+}
+
+/* ── Preset tickets: pill shape with sharper contrast ── */
+.preset-ticket-new {
+    border-radius: 9px;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.4);
+}
+
+.preset-ticket-updated {
+    border-radius: 9px;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.4);
+}
+
+/* ── Import footer buttons: more polished ── */
+#select-all-presets,
+#deselect-all-presets,
+#confirm-import-presets,
+#cancel-import-presets {
+    transition: filter 0.1s, transform 0.1s;
+    letter-spacing: 0.03em;
+}
+
+#select-all-presets:active,
+#deselect-all-presets:active,
+#cancel-import-presets:active {
+    filter: brightness(1.25);
+    transform: scale(0.96);
+}
+
+#confirm-import-presets:active {
+    filter: brightness(1.2);
+    transform: scale(0.96);
+}
+
+/* ── Credits display: subtle glow when credits are available ── */
+#import-credits-display {
+    letter-spacing: 0.04em;
+    text-shadow: 0 0 8px rgba(254, 95, 0, 0.3);
+}
+
+/* ── Filter input: pill shape and refined placeholder color ── */
+.style-filter,
+#import-preset-filter {
+    border-radius: 20px;
+    padding-left: 12px;
+    transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.style-filter::placeholder,
+#import-preset-filter::placeholder {
+    color: rgba(170, 170, 170, 0.5);
+    font-style: italic;
+}
+
+/* ── Gallery grid: refined gap and subtle inner shadow on modal ── */
+.gallery-modal {
+    box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.6);
+}
+
+.gallery-grid {
+    gap: 3px;
+}
+
+.gallery-item img {
+    transition: opacity 0.15s;
+}
+
+/* ── Spinner: orange pulse glow while loading ── */
+@keyframes mkSpinGlow {
+    0%   { box-shadow: 0 0 0px rgba(254, 95, 0, 0); }
+    50%  { box-shadow: 0 0 10px rgba(254, 95, 0, 0.5); }
+    100% { box-shadow: 0 0 0px rgba(254, 95, 0, 0); }
+}
+
+.mk-loading-spinner {
+    animation: mkSpin 0.8s linear infinite, mkSpinGlow 1.6s ease-in-out infinite;
+}
+
+/* ── Section dividers: thin warm line instead of flat grey ── */
+.menu-section {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+/* ── Menu section title: orange text with slight tracking ── */
+.menu-section-title {
+    letter-spacing: 0.02em;
+}
+
+/* ── HSV swatch button: more polished border ── */
+.hsv-swatch-btn {
+    border-radius: 6px;
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.12),
+        inset 0 -1px 0 rgba(0,0,0,0.25),
+        0 2px 8px rgba(0,0,0,0.5);
+}
+
+/* ── Close button: smooth color transition ── */
+.close-button {
+    transition: color 0.15s, border-color 0.15s, box-shadow 0.15s;
+}
+
+/* ── Submenu: deeper shadow for layered feel ── */
+.submenu {
+    box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.7);
+}
+
+/* ── Image viewer: vignette edge darkening ── */
+#image-viewer {
+    box-shadow: inset 0 0 60px rgba(0, 0, 0, 0.5);
+}
+
+/* ── Bottom bar / control row: subtle top separator glow ── */
+.bottom-controls,
+.viewer-bottom-controls {
+    border-top: 1px solid rgba(254, 95, 0, 0.15);
+    box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* ═══════════════════════════════════════════════════
+   DEFINITIVE UNIFIED THEME — final authority
+   All list items: dark gray · white text · orange left bar on select
+   ═══════════════════════════════════════════════════ */
+
+/* ── menu-item base: override global button orange background ── */
+.menu-item {
+    background-color: #2a2a2a;
+    color: #fff;
+    border-left: 3px solid transparent;
+    transition: none;
+    touch-action: manipulation;
+}
+
+/* ── style-item and preset-item base: reserve the left-bar slot ── */
+.style-item,
+.preset-item {
+    border-left: 3px solid transparent;
+    transition: none;
+}
+
+/* ── All selected/active background and bar — same everywhere ── */
+.menu-item.menu-selected,
+.style-item.active,
+.style-item.menu-selected,
+.preset-item.preset-selected {
+    background: linear-gradient(90deg, rgba(254,95,0,0.18) 0%, #222 100%);
+    border-left: 3px solid #FE5F00;
+    border-top-color: #444;
+    border-right-color: #444;
+    border-bottom-color: #444;
+    box-shadow: none;
+    color: #fff;
+}
+
+/* ── Name text turns orange when selected ── */
+.menu-item.menu-selected .menu-item-name {
+    color: #FE5F00;
+}
+
+.style-item.active .style-name,
+.style-item.menu-selected .style-name {
+    color: #FE5F00;
+}
+
+.preset-item.preset-selected .preset-name {
+    color: #FE5F00;
+}
+
+/* ── Preview / description text stays subtle ── */
+.menu-item.menu-selected .import-preview-row {
+    color: #aaa;
+}
+
+.preset-item.preset-selected .preset-description {
+    color: #aaa;
+}
+
+/* ── Jump buttons: instant orange, zero transition lag ── */
+.menu-jump-button,
+.menu-jump-button-small {
+    transition: none;
+}
+
+.menu-jump-button:active,
+.menu-jump-button-small:active {
+    background-color: #FE5F00;
+    color: #000;
+    border-color: #FE5F00;
+    box-shadow: none;
+    transform: none;
+    transition: none;
+}
+
+/* ── Override: Gold border for active preset ── */
+
+.style-item.active {
+    border: 3px solid #FFD700;
+}
+
+/* ═══════════════════════════════════
+   ✨ MAGIC KAMERA — FUN & BEAUTY PACK
+   ═══════════════════════════════════ */
+
+/* ── Start Screen: glowing orb behind the camera ── */
+.start-screen::before {
+    content: '';
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60vw;
+    height: 60vw;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(254,95,0,0.12) 0%, transparent 65%);
+    pointer-events: none;
+    animation: orbPulse 4s ease-in-out infinite;
+    z-index: 0;
+}
+
+@keyframes orbPulse {
+    0%, 100% { transform: translateX(-50%) scale(1);   opacity: 0.5; }
+    50%       { transform: translateX(-50%) scale(1.3); opacity: .8;   }
+}
+
+/* Make sure camera animation sits above the orb */
+.camera-animation, .magic-title, .start-text, .start-button, #app-version, #splash-tour-button {
+    position: relative;
+    z-index: 1;
+}
+
+/* ── Title: rainbow shimmer sweep ── */
+.magic-title {
+    background: linear-gradient(90deg, #FE5F00, #ff9500, #FFD700, #ff9500, #FE5F00);
+    background-size: 300% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: titleShimmer 3s linear infinite, titleGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes titleShimmer {
+    0%   { background-position: 0% center; }
+    100% { background-position: 300% center; }
+}
+
+/* ── Start buttons: pulsing ring on the "Start" button ── */
+.start-button {
+    position: relative;
+    overflow: visible;
+}
+
+.start-button::after {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border-radius: 3vw;
+    border: 2px solid rgba(254, 95, 0, 0.5);
+    animation: buttonRing 2s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes buttonRing {
+    0%, 100% { transform: scale(1);    opacity: 0.7; }
+    50%       { transform: scale(1.06); opacity: 0;   }
+}
+
+/* ── Status text: glowing orange border ── */
+.status-text {
+    border: 1px solid rgba(254, 95, 0, 0.4);
+    box-shadow:
+        0 0 10px rgba(254, 95, 0, 0.2),
+        0 4px 16px rgba(0,0,0,0.6);
+    letter-spacing: 0.03em;
+}
+
+/* ── Reset / New Photo button: glow on press ── */
+.reset-button:active {
+    box-shadow: 0 0 20px rgba(254, 95, 0, 0.8) !important;
+    transform: translateX(-50%) scale(0.97) !important;
+}
+
+/* ── Timer countdown: big glowing number ── */
+.timer-countdown {
+    text-shadow:
+        0 0 20px rgba(254, 95, 0, 0.9),
+        0 0 40px rgba(254, 95, 0, 0.5);
+}
+
+/* ── Camera switch button (📷 top right): glow on press ── */
+.camera-button:active {
+    box-shadow: 0 0 18px rgba(254, 95, 0, 0.7) !important;
+}
+
+/* ── Style reveal pop: orange border glow ── */
+.style-reveal {
+    border-color: rgba(254, 95, 0, 0.6);
+    box-shadow:
+        0 8px 32px rgba(0,0,0,0.7),
+        0 0 20px rgba(254, 95, 0, 0.3);
+}
+
+/* ── Menu section titles: orange underline accent ── */
+.menu-section-title {
+    border-bottom: 1px solid rgba(254, 95, 0, 0.3);
+    padding-bottom: 4px;
+    color: #FE5F00;
+}
+
+/* ── Mode buttons: permanent soft orange glow ── */
+.mode-button {
+    box-shadow:
+        0 2px 8px rgba(0,0,0,0.6),
+        0 0 8px rgba(254, 95, 0, 0.2),
+        inset 0 1px 0 rgba(255,255,255,0.06);
+}
+
+/* ═══════════════════════════════════
+   ✨ MENU · SETTINGS · GALLERY POLISH
+   ═══════════════════════════════════ */
+
+/* ── Menu & Settings panels: warmer dark background instead of flat black ── */
+.styles-menu-content,
+.submenu-content,
+.preset-selector-content {
+    background: linear-gradient(170deg, #181818 0%, #0f0f0f 100%);
+}
+
+/* ── Menu + submenu headers: stronger orange glow line underneath ── */
+.submenu-header {
+    background: linear-gradient(180deg, #1f1f1f 0%, #191919 100%);
+    border-bottom: 1px solid rgba(254, 95, 0, 0.5);
+    box-shadow: 0 2px 10px rgba(254, 95, 0, 0.12);
+}
+
+/* ── Menu section dividers: warm orange tint instead of cold grey ── */
+.menu-section {
+    border-bottom: 1px solid rgba(254, 95, 0, 0.12);
+}
+
+/* ── Menu section titles: left orange bar for visual anchoring ── */
+.menu-section-title {
+    padding-left: 8px;
+    border-left: 3px solid #FE5F00;
+}
+
+/* ── Menu items: subtle raised edge (top highlight, bottom shadow) ── */
+.menu-item {
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.05),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.3);
+}
+
+/* ── Style and preset list items: same raised edge ── */
+.style-item,
+.preset-item {
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.05),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.3);
+}
+
+/* ── Style/preset items: warmer border color ── */
+.style-item {
+    border-color: #333;
+}
+
+.preset-item {
+    border-color: #333;
+}
+
+/* ── Filter search boxes: deeper inset look ── */
+.style-filter,
+#import-preset-filter {
+    background-color: #1a1a1a;
+    border-color: #3a3a3a;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* ── Settings tab bar: active tab gets a warm gradient + text glow ── */
+.btn-settings-tab {
+    background: #0f0f0f;
+    border-bottom: 3px solid transparent;
+}
+
+.btn-settings-tab.active {
+    background: linear-gradient(180deg, #1f1f1f 0%, #141414 100%);
+    color: #FE5F00;
+    border-bottom-color: #FE5F00;
+    text-shadow: 0 0 8px rgba(254, 95, 0, 0.25);
+}
+
+/* ── Settings sliders: orange accent color on the thumb and track ── */
+.burst-setting-item input[type="range"] {
+    accent-color: #FE5F00;
+}
+
+/* ── Batch control buttons: fix the ugly white hover, add orange press ── */
+.batch-control-button:hover {
+    background: #252525;
+    border-color: rgba(254, 95, 0, 0.5);
+    color: #FE5F00;
+}
+
+.batch-control-button:active {
+    background: #FE5F00;
+    color: #000;
+    border-color: #FE5F00;
+}
+
+/* ── Gallery content: warmer dark background ── */
+.gallery-content {
+    background: linear-gradient(170deg, #181818 0%, #0f0f0f 100%);
+}
+
+/* ── Gallery items: subtle inner depth shadow ── */
+.gallery-item {
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.03);
+    border-color: #333;
+}
+
+/* ── Gallery folder cards: raised look with inner highlight ── */
+.gallery-folder {
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.08),
+        0 3px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* ── Gallery pagination bar: warm separator ── */
+.gallery-pagination {
+    border-top: 1px solid rgba(254, 95, 0, 0.2);
+    background: #0f0f0f;
+}
+
+/* ── Gallery controls (date filters area): warmer separator ── */
+.gallery-controls {
+    border-bottom: 1px solid rgba(254, 95, 0, 0.15);
+}
+
+/* ── Sticky footer bars (visible presets count, etc): orange top line ── */
+.visible-presets-footer,
+.menu-category-footer,
+.preset-selector-category-footer {
+    border-top: 1px solid rgba(254, 95, 0, 0.4);
+    background: #0d0d0d;
+}
+
+/* ═══════════════════════════════════
+   FIX 1: Settings buttons — two-line layout
+   (title top-left, hint bottom-right, no word wrap)
+   ═══════════════════════════════════ */
+
+.menu-section-button {
+    position: relative;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1vw;
+    padding-right: 10vw;
+}
+
+.menu-section-button .menu-section-title {
+    text-align: left;
+    width: 100%;
+    white-space: normal;
+    padding-left: 0;
+    border-left: none;
+    font-size: 4.5vw;
+    color: #fff;
+}
+
+.menu-section-button .menu-section-value {
+    text-align: right;
+    width: 100%;
+}
+
+.menu-section-button .menu-section-arrow {
+    position: absolute;
+    right: 2vw;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.menu-section-button.menu-selected .menu-section-title {
+    color: #FE5F00;
+}
+
+/* ═══════════════════════════════════
+   FIX 2: Tutorial buttons — match settings font size
+   ═══════════════════════════════════ */
+
+#start-guided-tour {
+    font-size: 5vw !important;
+}
+
+.glossary-item {
+    font-size: 5vw;
+}
+
+/* ── Hide the bottom two sparkles, keep only top two ── */
+.sparkle-3,
+.sparkle-4 {
+    display: none;
+}
+
+/* ── Date filter buttons: gradient fill for a more premium look ── */
+.date-filter-button {
+    background: linear-gradient(180deg, #2a2a2a 0%, #1a1a1a 100%);
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.06),
+        0 2px 6px rgba(0,0,0,0.4);
+}
+
+.date-filter-button.has-date {
+    background: linear-gradient(180deg, #2e1a00 0%, #1a0f00 100%);
+    box-shadow:
+        inset 0 1px 0 rgba(254,95,0,0.15),
+        0 0 8px rgba(254,95,0,0.2);
+}
+
+/* ── Close button: warmer border, matches the orange theme better ── */
+.close-button {
+    border-color: rgba(254, 95, 0, 0.4);
+    color: rgba(254, 95, 0, 0.8);
+}
+
+/* ── Image viewer buttons: glow feedback when pressed ── */
+.viewer-delete-button:active {
+    box-shadow: 0 0 16px rgba(255, 68, 68, 0.7);
+}
+
+.viewer-close-button:active {
+    box-shadow: 0 0 16px rgba(254, 95, 0, 0.7);
+}
+
+/* ── Style editor: orange left accent bar appears when you tap a field ── */
+.style-input:focus,
+.style-textarea:focus {
+    border-left-color: #FE5F00;
+    border-left-width: 3px;
+}
+
+/* ── Style editor header buttons: glow feedback ── */
+.save-button-header:active {
+    box-shadow: 0 0 14px rgba(76, 175, 80, 0.7);
+}
+
+.delete-button-header:active {
+    box-shadow: 0 0 14px rgba(211, 47, 47, 0.7);
+}
+
+/* ── Resolution items: active state gets a richer gradient ── */
+.resolution-item.active {
+    background: linear-gradient(135deg, #FE5F00 0%, #cc4c00 100%);
+    box-shadow:
+        0 2px 10px rgba(254, 95, 0, 0.4),
+        inset 0 1px 0 rgba(255,255,255,0.2);
+}
+
+/* ── Add Style button: satisfying press feel ── */
+.add-style-button:active {
+    background-color: #ff7a33;
+    box-shadow:
+        0 0 20px rgba(254, 95, 0, 0.6),
+        inset 0 2px 4px rgba(0,0,0,0.3);
+    transform: scale(0.98);
+}
+
+/* ── Image viewer: style name at top gets a subtle glow ── */
+.viewer-preset-header {
+    text-shadow: 0 0 10px rgba(254, 95, 0, 0.4);
+    letter-spacing: 0.08em;
+}
+
+/* ═══════════════════════════════════
+   ✨ SPLASH SCREEN BEAUTY UPGRADE
+   ═══════════════════════════════════ */
+
+/* ── Background: warm atmospheric depth instead of flat black ── */
+.start-screen {
+    background:
+        radial-gradient(ellipse at 50% 38%, #1c0e00 0%, #0d0600 45%, #000 100%);
+}
+
+/* ── Camera body: very subtle warm metallic tint ── */
+.camera-body {
+    background: linear-gradient(145deg, #2a2218 0%, #1a1510 50%, #111 100%);
+}
+
+/* ── Title: breathing room and decorative underline ── */
+.magic-title {
+    letter-spacing: 0.06em;
+    margin-bottom: 1vh;
+}
+
+.magic-title::after {
+    content: '';
+    display: block;
+    width: 50%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(254,95,0,0.7), transparent);
+    margin: 6px auto 0;
+}
+
+/* ── Subtitle text: smaller, refined, softer ── */
+.start-text {
+    font-size: 3.6vw;
+    color: #bbb;
+    letter-spacing: 0.04em;
+    line-height: 4vh;
+    margin-bottom: 5vh;
+}
+
+/* ── Start button: uppercase with tracking for a premium feel ── */
+#start-button {
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+/* ── Tour button: matching uppercase tracking ── */
+#splash-tour-button {
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+/* ── Sparkles: slightly larger with a warm glow ── */
+.sparkle-1, .sparkle-2 {
+    filter: drop-shadow(0 0 4px rgba(254, 95, 0, 0.5));
+}
+
+/* ── Lens inner ring: stronger orange glow for drama ── */
+.lens-inner {
+    box-shadow:
+        0 0 0 1px rgba(254, 95, 0, 0.3),
+        0 0 12px rgba(254, 95, 0, 0.2),
+        inset 0 0 8px rgba(0,0,0,0.9);
+}
+
+/* ── Camera viewfinder: warm tint instead of cold grey ── */
+.camera-viewfinder {
+    border-color: rgba(254, 95, 0, 0.3);
+    background: linear-gradient(135deg, #1a1208 0%, #000 100%);
+}
+
+/* ═══════════════════════════════════
+   PERFORMANCE FIX 1: Remove backdrop-blur from camera screen
+   ═══════════════════════════════════ */
+
+.status-text {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background-color: rgba(0, 0, 0, 0.88);
+}
+
+.reset-button {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background-color: #FE5F00;
+}
+
+.connection-status {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background-color: rgba(0, 0, 0, 0.85);
+}
+
+.connection-status.online {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background-color: rgba(30, 80, 32, 0.9);
+}
+
+.updates-indicator {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background-color: rgba(200, 70, 20, 0.92);
+}
+
+.queue-status {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background-color: rgba(20, 100, 180, 0.92);
+}
+
+.sync-button {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background-color: rgba(20, 100, 180, 0.92);
+}
+
+/* ═══════════════���═══════════════════
+   PERFORMANCE FIX 2: Replace transition:all with specific properties
+   ═══════════════════════════════════ */
+
+button, .touchable {
+    transition: transform 0.2s ease, opacity 0.2s ease, background-color 0.15s ease;
+}
+
+.menu-button,
+.camera-button,
+.style-item,
+.queue-status,
+.sync-button,
+.connection-status,
+.submenu,
+.progress-overlay {
+    transition: transform 0.2s ease, opacity 0.2s ease, background-color 0.15s ease;
+}
+
+/* ═══════════════════════════════════
+   PRESET FILE SETTINGS — source row buttons
+   ═══════════════════════════════════ */
+
+/* ON / OFF / EDIT — plain clickable text, no button styling */
+.preset-source-text-action {
+    font-size: 3.2vw;
+    font-weight: bold;
+    cursor: pointer;
+    white-space: nowrap;
+    flex-shrink: 0;
+    user-select: none;
+    -webkit-user-select: none;
+    line-height: 1;
+}
+
+/* Footer row: holds + Add Source and Convert GitHub to Raw side by side */
+.preset-source-footer-row {
+    display: flex;
+    gap: 8px;
+    margin-top: 8px;
+    align-items: stretch;
+}
+
+/* + Add Source / Save Changes button */
+.preset-source-add-btn {
+    flex: 1;
+    height: 8vw;
+    min-height: 32px;
+    border-radius: 1vw;
+    border: none;
+    font-size: 4vw;
+    font-weight: bold;
+    cursor: pointer;
+    background: #FE5F00;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Convert GitHub to Raw button */
+.preset-source-convert-btn {
+    height: 8vw;
+    min-height: 32px;
+    padding: 0 2.5vw;
+    border-radius: 1vw;
+    border: 2px solid #666;
+    font-size: 2.8vw;
+    font-weight: bold;
+    cursor: pointer;
+    background: transparent;
+    color: #aaa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.preset-source-convert-btn:hover {
+    border-color: #FE5F00;
+    color: #FE5F00;
+}
+
+/* ═══════════════════════════════════
+   PRESET FILE SETTINGS — tabs
+   ═══════════════════════════════════ */
+
+.pfs-tab-bar {
+    display: flex;
+    background: #000;
+    border-bottom: 1px solid #333;
+    flex-shrink: 0;
+}
+
+.pfs-tab {
+    flex: 1;
+    padding: 3vw 2vw;
+    font-size: 4vw;
+    background: #111;
+    color: #aaa;
+    border: none;
+    border-bottom: 3px solid transparent;
+    cursor: pointer;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-align: center;
+    user-select: none;
+    -webkit-user-select: none;
+    transition: color 0.15s, border-color 0.15s;
+}
+
+.pfs-tab.active {
+    color: #FE5F00;
+    border-bottom-color: #FE5F00;
+    background: #1a1a1a;
+}
+
+.pfs-tab-panel {
+    display: none;
+}
+
+.pfs-tab-panel.active {
+    display: block;
+}
+
+/* ===== MASTER PROMPT SLOTS ===== */
+.mp-slot {
+    background: #111;
+    border: 2px solid #333;
+    border-radius: 2vw;
+    padding: 2vw;
+    transition: border-color 0.2s, background 0.2s;
+}
+
+.mp-slot.mp-slot-active {
+    border-color: #4CAF50;
+    background: rgba(76, 175, 80, 0.08);
+}
+
+.mp-slot-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2vw;
+    min-height: 8vw;
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.mp-slot-status {
+    font-size: 3.5vw;
+    font-weight: 700;
+    padding: 1vw 2.5vw;
+    border-radius: 1.5vw;
+    background: #222;
+    color: #666;
+    transition: background 0.2s, color 0.2s;
+}
+
+.mp-slot-active .mp-slot-status {
+    background: #4CAF50;
+    color: #fff;
+}
+
+.mp-slot-label {
+    font-size: 3.5vw;
+    color: #888;
+    font-weight: 600;
+}
+
+.mp-slot-textarea {
+    width: 100%;
+    background: #000;
+    color: #fff;
+    border: 1px solid #444;
+    border-radius: 1.5vw;
+    padding: 2vw;
+    font-size: 3.8vw;
+    min-height: 20vw;
+    resize: vertical;
+    box-sizing: border-box;
+    font-family: inherit;
+    line-height: 1.4;
+}
+
+.mp-slot-textarea:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.mp-slot-char-count {
+    font-size: 3vw;
+    color: #555;
+    text-align: right;
+    margin-top: 1vw;
+}
+
+.mp-slot-check {
+    display: none;
+    width: 5vw;
+    height: 5vw;
+    min-width: 22px;
+    min-height: 22px;
+    accent-color: #FE5F00;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.mp-remove-mode .mp-slot-check {
+    display: block;
+}
+/* ===== END MASTER PROMPT SLOTS ===== */
+
+/* Preview image grid inside the Preview Images tab */
+.pv-img-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4px;
+    margin-top: 6px;
+}
+
+.pv-img-cell {
+    position: relative;
+    padding-bottom: 100%;
+    background: #222;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.pv-img-cell img {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+}
+
+.pv-img-delete {
+    position: absolute;
+    top: 3px; right: 3px;
+    width: 20px; height: 20px;
+    background: rgba(0, 0, 0, 0.72);
+    color: #fff;
+    font-size: 14px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    line-height: 1;
+    z-index: 2;
+}
+
+/* ═══════════════════════════════════════════════
+   ✨ SPLASH SCREEN ANIMATION SUITE — v2
+   All animations use transform/opacity only —
+   GPU-composited, zero layout or paint cost.
+   ═══════════════════════════════════════════════ */
+
+/* ── 1. Screen entrance — fade in from black on load ── */
+@keyframes screenFadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+#start-screen {
+    animation: screenFadeIn 0.9s ease-out both;
+}
+
+/* ── 2. Radar pulse rings ── */
+.radar-ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 24vw;
+    height: 24vw;
+    border-radius: 50%;
+    border: 1.5px solid rgba(254, 95, 0, 0.75);
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    animation: radarPulse 3.6s ease-out infinite;
+}
+
+.radar-ring-1 { animation-delay: 0s; }
+.radar-ring-2 { animation-delay: 1.2s; }
+.radar-ring-3 { animation-delay: 2.4s; }
+
+@keyframes radarPulse {
+    0%   { transform: translate(-50%, -50%) scale(0.5);  opacity: 0.85; }
+    100% { transform: translate(-50%, -50%) scale(2.2);  opacity: 0; }
+}
+
+/* ── 3. Floating background particles ── */
+.stars-bg {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    border-radius: 50%;
+    background: rgba(254, 95, 0, 0.75);
+    animation: starRise linear infinite;
+    bottom: -4px;
+}
+
+.star-1 { left: 8%;  animation-duration: 7s;   animation-delay: 0s;   }
+.star-2 { left: 22%; animation-duration: 9s;   animation-delay: 1.8s; width: 3px; height: 3px; }
+.star-3 { left: 40%; animation-duration: 6.5s; animation-delay: 0.7s; }
+.star-4 { left: 60%; animation-duration: 8.5s; animation-delay: 3.1s; }
+.star-5 { left: 76%; animation-duration: 7.5s; animation-delay: 1.4s; width: 3px; height: 3px; }
+.star-6 { left: 91%; animation-duration: 8s;   animation-delay: 4.5s; }
+
+@keyframes starRise {
+    0%   { transform: translateY(0);       opacity: 0;   }
+    8%   { opacity: 0.8; }
+    88%  { opacity: 0.7; }
+    100% { transform: translateY(-105vh);  opacity: 0;   }
+}
+
+/* ── 4. Shutter button press — syncs loosely with flash blink ── */
+.camera-button-top {
+    transform-origin: center bottom;
+    animation: shutterPress 5s ease-in-out 1.2s infinite;
+}
+
+@keyframes shutterPress {
+    0%, 78%, 100% { transform: translateX(-50%) scaleY(1);    }
+    85%           { transform: translateX(-50%) scaleY(0.72); }
+    92%           { transform: translateX(-50%) scaleY(1.05); }
+}
+
+/* ── 5. Rotating crosshair inside the lens ── */
+/* Rotates with the lens via the parent's lensRotate animation */
+.camera-lens::before,
+.camera-lens::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 55%;
+    height: 1px;
+    background: rgba(254, 95, 0, 0.18);
+}
+
+.camera-lens::before {
+    transform: translate(-50%, -50%);
+}
+
+.camera-lens::after {
+    transform: translate(-50%, -50%) rotate(90deg);
+}
+
+/* ═══════════════════════════════════════════════ */
+
+/* ─── Alpha Jump Letter Overlay ─── */
+#alpha-letter-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.alpha-overlay-letter {
+  font-size: 45vw;
+  font-weight: 900;
+  color: rgba(254, 95, 0, 0.85);
+  text-shadow: 0 0 80px rgba(254, 95, 0, 0.5), 0 0 20px rgba(254, 95, 0, 0.3);
+  line-height: 1;
+  user-select: none;
+}
+
+/* ===== RESET DATABASE SECTION ===== */
+.reset-db-item {
+    display: flex;
+    align-items: flex-start;
+    padding: 3.5vw 1vw;
+    border-bottom: 1px solid #222;
+    cursor: pointer;
+    gap: 3vw;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.reset-db-check {
+    width: 5vw;
+    height: 5vw;
+    min-width: 22px;
+    min-height: 22px;
+    accent-color: #FE5F00;
+    cursor: pointer;
+    flex-shrink: 0;
+    margin-top: 0.8vw;
+}
+
+.reset-db-label {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2vw;
+    flex: 1;
+}
+
+.reset-db-title {
+    font-size: 4vw;
+    font-weight: 600;
+    color: #fff;
+    line-height: 1.3;
+}
+
+.reset-db-desc {
+    font-size: 3.2vw;
+    color: #888;
+    line-height: 1.4;
+}
+/* ===== END RESET DATABASE SECTION ===== */
+
+/* ── FX 1: menus pop in ── */
+@keyframes fxMenuPop {
+  from { opacity: 0; transform: scale(0.96); }
+  to   { opacity: 1; transform: scale(1); }
+}
+.styles-menu-content { animation: fxMenuPop 0.22s ease-out; }
+
+/* ── FX 2: gallery rises in ── */
+@keyframes fxGalleryOpen {
+  from { opacity: 0; transform: translateY(2vw); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.gallery-content { animation: fxGalleryOpen 0.22s ease-out; }
+
+/* ── FX 3: image viewer zooms open ── */
+@keyframes fxViewerZoom {
+  from { opacity: 0; transform: scale(0.94); }
+  to   { opacity: 1; transform: scale(1); }
+}
+.image-viewer-content { animation: fxViewerZoom 0.24s ease-out; }
+
+/* ── FX 4: gallery thumbnails cascade in ── */
+@keyframes fxThumbIn {
+  from { opacity: 0; transform: translateY(3vw); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.gallery-item { animation: fxThumbIn 0.26s ease-out both; }
+.gallery-item:nth-child(2)  { animation-delay: 0.03s; }
+.gallery-item:nth-child(3)  { animation-delay: 0.06s; }
+.gallery-item:nth-child(4)  { animation-delay: 0.09s; }
+.gallery-item:nth-child(5)  { animation-delay: 0.12s; }
+.gallery-item:nth-child(6)  { animation-delay: 0.15s; }
+.gallery-item:nth-child(7)  { animation-delay: 0.18s; }
+.gallery-item:nth-child(8)  { animation-delay: 0.21s; }
+.gallery-item:nth-child(9)  { animation-delay: 0.24s; }
+.gallery-item:nth-child(10) { animation-delay: 0.27s; }
+.gallery-item:nth-child(11) { animation-delay: 0.30s; }
+.gallery-item:nth-child(12) { animation-delay: 0.33s; }
+
+/* ── FX 5: sync button drops in ── */
+/* @keyframes fxSyncDrop { */
+/*  0%   { opacity: 0; transform: translateX(-50%) translateY(-8vw) scale(0.9); } */
+/*  70%  { opacity: 1; transform: translateX(-50%) translateY(1vw) scale(1.02); } */
+/*  100% { opacity: 1; transform: translateX(-50%) translateY(0) scale(1); } */
+/* } */
+/* .sync-button { animation: fxSyncDrop 0.38s ease-out; } */
+
+/* ── FX 6: active mode pulse ring (opacity-only, zero-scale) ── */
+@keyframes fxModePulse {
+  from { opacity: 0.3; }
+  to   { opacity: 1; }
+}
+.mode-button[data-mode="random"].random-active::after,
+.mode-button[data-mode="motion"].active::after,
+.mode-button[data-mode="burst"].burst-active::after,
+.mode-button[data-mode="timer"].timer-active::after,
+.mode-button[data-mode="camera-multi"].camera-multi-active::after,
+.mode-button[data-mode="camera-combine"].combine-active::after,
+.mode-button[data-mode="camera-layer"].layer-active::after {
+  content: '';
+  position: absolute;
+  top: -3px; right: -3px; bottom: -3px; left: -3px;
+  border: 2px solid rgba(254, 95, 0, 0.9);
+  border-radius: inherit;
+  pointer-events: none;
+  animation: fxModePulse 1.2s ease-in-out infinite alternate;
+}
+
+/* While the Import Presets list is moving, rest the UPDATED-badge pulse.
+   Dozens of forever-pulsing badges repainting during a touch drag was a
+   large part of the choppy scrolling on big libraries; they resume the
+   instant the list stops, so the list looks identical whenever you're
+   actually reading it. */
+#import-scroll-container.import-scrolling .preset-ticket-updated {
+    animation-play-state: paused;
+}
+
+/* ═══════════════════════════════════
+   PERFORMANCE FIX: Import Presets menu
+   ═══════════════════════════════════ */
+
+/* The menu overlay is already 95% opaque black, and the content panel
+   inside it is solid — yet the device still computes a live 15px blur of
+   whatever sits behind the menu on every frame. That blur is invisible in
+   practice but very expensive, and scrolling a long list INSIDE a
+   backdrop-filtered surface is a worst-case rendering pattern. Removing
+   it looks the same and frees the graphics pipeline. */
+.styles-menu {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+}
+
+/* Import Presets: rows filtered out by the search are hidden, not removed.
+   Showing/hiding existing rows is what makes the search feel instant. */
+#import-presets-list .menu-item.import-row-hidden {
+    display: none !important;
+}
+
+/* Audio tour: the sound button pulses while speech is OFF, cueing the user
+   to press it. It stops pulsing and turns solid orange while speech is ON
+   (state handled in updateTourSoundButton). */
+@keyframes tourSoundPulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(254, 95, 0, 0.6); }
+    50%      { box-shadow: 0 0 0 6px rgba(254, 95, 0, 0); }
+}
+
+/* ===== GAME FRAMEWORK ===== */
+.game-modal {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.85);
+    z-index: 3000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.game-modal-content {
+    background: #1a1a1a;
+    border: 2px solid #FE5F00;
+    border-radius: 3vw;
+    width: 90vw;
+    max-width: 480px;
+    max-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+.game-modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3vw 4vw;
+    border-bottom: 1px solid #333;
+}
+#game-modal-title {
+    color: #FE5F00;
+    font-size: 4.5vw;
+    font-weight: bold;
+}
+.game-modal-close {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 6vw;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0 2vw;
+}
+.game-modal-body {
+    padding: 4vw;
+    overflow-y: auto;
+    flex: 1;
+}
+.game-picker-item {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 4vw;
+    margin-bottom: 3vw;
+    background: #2a2a2a;
+    color: #fff;
+    border: 2px solid #444;
+    border-radius: 2vw;
+    cursor: pointer;
+    font-size: 4vw;
+    font-weight: bold;
+}
+.game-picker-item.locked {
+    opacity: 0.6;
+    border-color: #663300;
+}
+.game-picker-item .game-sub {
+    display: block;
+    font-size: 3vw;
+    font-weight: normal;
+    color: #aaa;
+    margin-top: 1vw;
+}
+.game-group {
+    margin-bottom: 4vw;
+}
+.game-group-label {
+    color: #FE5F00;
+    font-size: 3.5vw;
+    font-weight: bold;
+    margin-bottom: 2vw;
+}
+.game-opt-btn {
+    display: inline-block;
+    padding: 2.5vw 3.5vw;
+    margin: 0 2vw 2vw 0;
+    background: #2a2a2a;
+    color: #fff;
+    border: 2px solid #444;
+    border-radius: 1.5vw;
+    cursor: pointer;
+    font-size: 3.3vw;
+}
+.game-opt-btn.selected {
+    background: #FE5F00;
+    border-color: #FE5F00;
+    color: #000;
+    font-weight: bold;
+}
+.game-modal-footer {
+    display: flex;
+    gap: 3vw;
+    padding: 3vw 4vw;
+    border-top: 1px solid #333;
+}
+.game-footer-btn {
+    flex: 1;
+    padding: 3.5vw;
+    border-radius: 2vw;
+    border: 2px solid #FE5F00;
+    background: #2a2a2a;
+    color: #FE5F00;
+    font-size: 3.8vw;
+    font-weight: bold;
+    cursor: pointer;
+}
+.game-footer-btn.game-submit {
+    background: #FE5F00;
+    color: #000;
+}
+.game-footer-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+/* ============================================================
+   R1 SPACE-SAVING PASS — appended last so it overrides the rules above.
+   ============================================================ */
+
+/* ---- 1. Lift BOTH viewer carousels by 3vw (1/4 of a 12vw button) ---- */
+.viewer-carousel,
+.viewer-left-carousel {
+    top: calc(22vh - 3vw);
+    bottom: 15vw;
+}
+
+/* ---- Shared metrics: every button in EITHER options modal ---- */
+:root {
+    --mk-btn-font:  4.5vw;
+    --mk-btn-pad-y: 2vw;
+    --mk-btn-pad-x: 3vw;
+    --mk-btn-min-h: 22px;
+    --mk-btn-min-w: 44px;
+    --mk-btn-line:  1.3;
+    --mk-label-font: 3.2vw;  /* group headings: LETTER 1, CHOOSE, GENDER... */
+}
+
+/* ---- 2 + 3. GAME MODAL ---- */
+.game-modal-content { max-height: 92vh; }
+.game-modal-header { padding: 1.8vw 3vw 1.2vw; }
+#game-modal-title  { font-size: 4.2vw; }
+.game-modal-close  { font-size: 5vw; padding: 0 1.5vw; }
+.game-modal-body   { padding: 2.5vw 3vw 3vw; }
+.game-group        { margin-bottom: 2.5vw; }
+.game-group-label  { font-size: var(--mk-label-font); margin-bottom: 1.5vw; }
+
+.game-opt-btn,
+.game-footer-btn {
+    box-sizing: border-box;
+    min-height: var(--mk-btn-min-h);
+    padding: var(--mk-btn-pad-y) var(--mk-btn-pad-x);
+    font-size: var(--mk-btn-font);
+    line-height: var(--mk-btn-line);
+}
+.game-opt-btn      { margin: 0 1.8vw 1.8vw 0; }
+.game-modal-footer { padding: 1.8vw 3vw; gap: 2.5vw; }
+
+/* ---- 4. PROGRAM OPTIONS MODAL ---- */
+#manual-options-modal .styles-menu-content {
+    width: 96%;
+    height: 96%;
+    background-color: #1a1a1a;
+    border: 2px solid #FE5F00;
+    border-radius: 3vw;
+}
+#manual-options-modal .styles-menu-header {
+    padding: 1.8vw 3vw 1.2vw;
+    min-height: 0;
+    background: transparent;
+    box-shadow: none;
+    border-bottom: 1px solid #333;
+}
+#manual-options-modal .styles-menu-header h2 { font-size: 4.2vw; }
+#manual-options-modal .close-button,
+#manual-options-modal .menu-jump-button {
+    width: 7vw;  height: 7vw;
+    min-width: 26px; min-height: 26px;
+    font-size: 4.2vw;
+}
+#manual-options-modal .menu-nav-buttons { gap: 1.5vw; }
+#manual-options-modal .styles-menu-scroll-container { padding: 2.5vw 3vw 3vw; }
+
+#manual-options-modal .mo-preset-name {
+    padding: 0 0 1.5vw;
+    margin-bottom: 1.5vw;
+    color: #aaa;
+    font-size: 3vw;
+    border-bottom: 1px solid #333;
+}
+#manual-options-modal .mo-group-label {
+    color: #FE5F00;
+    font-size: var(--mk-label-font);
+    font-weight: bold;
+    margin-bottom: 1.5vw;
+}
+#manual-options-modal .mo-group { margin-bottom: 2.5vw; }
+
+#manual-options-modal .style-item.mo-opt {
+    display: inline-block;
+    vertical-align: top;
+    max-width: 100%;
+    background: none;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    margin: 0 1.8vw 1.8vw 0;
+    gap: 0;
+    transition: none;
+}
+#manual-options-modal .style-item.mo-opt:active {
+    background: none;
+    border: none;
+}
+#manual-options-modal .mo-radio { display: none; }
+#manual-options-modal .mo-opt-label {
+    box-sizing: border-box;
+    display: block;
+    /* The game modal's options are <button> elements, so they inherit the
+       global `button, .touchable { min-width:44px }` tap-target rule and the
+       browser's default centred button text. A <label> gets neither, which is
+       why single-letter options rendered tiny here. Match them explicitly. */
+    min-width: var(--mk-btn-min-w);
+    text-align: left;
+    min-height: var(--mk-btn-min-h);
+    padding: var(--mk-btn-pad-y) var(--mk-btn-pad-x);
+    font-size: var(--mk-btn-font);
+    line-height: var(--mk-btn-line);
+    background: #2a2a2a;
+    color: #fff;
+    border: 2px solid #444;
+    border-radius: 1.5vw;
+    cursor: pointer;
+}
+#manual-options-modal .mo-radio:checked + .mo-opt-label {
+    background: #FE5F00;
+    border-color: #FE5F00;
+    color: #000;
+    font-weight: bold;
+}
+
+#manual-options-modal .mo-footer {
+    display: flex;
+    gap: 2.5vw;
+    padding: 1.8vw 3vw;
+    background: #1a1a1a;
+    border-top: 1px solid #333;
+}
+#manual-options-modal .mo-footer-btn {
+    box-sizing: border-box;
+    flex: 1;
+    min-height: var(--mk-btn-min-h);
+    padding: var(--mk-btn-pad-y) var(--mk-btn-pad-x);
+    font-size: var(--mk-btn-font);
+    line-height: var(--mk-btn-line);
+    border-radius: 1.5vw;
+    border: 2px solid #FE5F00;
+    background: #2a2a2a;
+    color: #FE5F00;
+    font-weight: bold;
+    cursor: pointer;
+}
+#manual-options-modal .mo-footer-btn.mo-send {
+    background: #FE5F00;
+    color: #000;
+}
+
+/* Scroll-wheel highlight in the Pick a Game list — matches the house style
+   used by .style-item.menu-selected in the main menu. */
+.game-picker-item.game-picker-selected {
+    background: linear-gradient(90deg, rgba(254,95,0,0.18) 0%, #2a2a2a 100%);
+    border-color: #FE5F00;
+    border-left: 3px solid #FE5F00;
+    color: #fff;
+}
+
+/* Add / Remove game panes — message shown when there is nothing to list */
+.game-manage-empty {
+    padding: 4vw 3vw;
+    color: #aaa;
+    font-size: var(--mk-label-font, 3.2vw);
+    line-height: 1.5;
+    text-align: center;
+}
+
+/* ── TUTORIAL ACCORDION ── */
+.tutorial-acc-head {
+    position: relative;
+    cursor: pointer;
+    padding-right: 8vw;
+    margin: 0 0 1vw;
+    padding-top: 2.5vw;
+    padding-bottom: 2.5vw;
+    border-bottom: 1px solid #333;
+    -webkit-tap-highlight-color: transparent;
+}
+.tutorial-acc-head::after {
+    content: '\25BC';
+    position: absolute;
+    right: 1vw;
+    top: 50%;
+    transform: translateY(-50%) rotate(-90deg);
+    font-size: 3vw;
+    color: #FE5F00;
+    transition: transform 0.18s ease;
+}
+.tutorial-section.tutorial-acc-open .tutorial-acc-head::after {
+    transform: translateY(-50%) rotate(0deg);
+}
+.tutorial-section.tutorial-acc-open .tutorial-acc-head {
+    border-bottom-color: #FE5F00;
+}
+.tutorial-acc-body {
+    display: none;
+}
+.tutorial-section.tutorial-acc-open .tutorial-acc-body {
+    display: block;
+}
+
+/* ── TUTORIAL "SHOW ME" ── */
+/* ============================================================
+   SIZE CONTROLS — change these four numbers to taste.
+   ============================================================ */
+:root {
+    --showme-height:   9vw;    /* button height        */
+    --showme-padding:  4vw;    /* left/right padding   */
+    --showme-font:     3.8vw;  /* "Show me" text size  */
+    --showme-radius:   3.5vw;  /* corner rounding      */
+}
+.tutorial-showme-btn {
+    /* min-height:0 is required — the global button rule forces 44px */
+    display: inline-block;
+    min-width: 0;
+    min-height: 0;
+    height: var(--showme-height);
+    line-height: 1;
+    margin: 0 0 0 2vw;
+    padding: 0 var(--showme-padding);
+    background: #2a2a2a;
+    color: #FE5F00;
+    border: 1px solid #FE5F00;
+    border-radius: var(--showme-radius);
+    font-size: var(--showme-font);
+    font-weight: 700;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+.tutorial-showme-btn:active { background: #FE5F00; color: #000; }
+
+/* Strong, unmistakable pulse on the button being shown */
+@keyframes tutorialPulse {
+    0%   { box-shadow: 0 0 0 0 rgba(254,95,0,0.95), 0 0 2vw 1vw rgba(254,95,0,0.55);
+           filter: brightness(1.9); }
+    60%  { box-shadow: 0 0 0 6vw rgba(254,95,0,0), 0 0 3vw 1.5vw rgba(254,95,0,0.25);
+           filter: brightness(1.15); }
+    100% { box-shadow: 0 0 0 0 rgba(254,95,0,0), 0 0 2vw 1vw rgba(254,95,0,0.55);
+           filter: brightness(1.9); }
+}
+.tutorial-pulse {
+    /* NO position or z-index here. Setting position:relative overrode
+       .viewer-carousel { position:absolute; right:-2vw } and dropped the right
+       carousel into normal flow on the LEFT side of the screen. The outline
+       and glow show up fine without changing positioning at all. */
+    animation: tutorialPulse 0.85s ease-in-out infinite;
+    outline: 4px solid #FE5F00 !important;
+    outline-offset: 2px;
+    border-radius: 2vw;
+}
+
+/* Accordion headings */
+.tutorial-acc-head {
+    font-size: 15px !important;
+    padding-top: 1.8vw !important;
+    padding-bottom: 1.8vw !important;
+    margin: 0 0 0.6vw !important;
+}
+
+/* Notice shown when a Show me target needs a photo first */
+#tutorial-showme-notice {
+    /* Centred box, not a full-width strip. Text wraps neatly inside it. */
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    right: auto;
+    bottom: auto;
+    transform: translate(-50%, -50%);
+    z-index: 100000;
+    display: none;
+    width: 58vw;
+    max-width: 78vw;
+    box-sizing: border-box;
+    padding: 4vw 3.5vw;
+    background: #1a1a1a;
+    color: #fff;
+    border: 2px solid #FE5F00;
+    border-radius: 3vw;
+    font-size: 3.6vw;
+    line-height: 1.4;
+    text-align: center;
+    white-space: normal;
+    box-shadow: 0 0.8vw 3vw rgba(0,0,0,0.8);
+}
+
+/* The notice is centred now, so there is nothing to flip. Kept as a no-op
+   so the JS class toggle has something harmless to target. */
+#tutorial-showme-notice.notice-bottom {
+    top: 50%;
+    bottom: auto;
+}
+
+/* ── TUTORIAL READABILITY ──────────────────────────────────────────
+   --tut-gap is the space BETWEEN paragraphs;
+   --tut-line is the space between lines inside one paragraph.
+   ------------------------------------------------------------------ */
+:root {
+    --tut-font:  15px;   /* body text size          */
+    --tut-line:  1.2;   /* line spacing            */
+    --tut-gap:   2.0vw;  /* gap between paragraphs  */
+}
+
+#tutorial-content-area .tutorial-text {
+    font-size: var(--tut-font);
+    line-height: var(--tut-line);
+
+    /* LEFT, not justified. On a 240px column justification has to stretch the
+       word gaps to reach both edges, and a single long word leaves a line with
+       huge holes in it. A clean ragged right edge reads better at this width. */
+    text-align: left;
+
+    /* No hyphens. */
+    hyphens: none;
+    -webkit-hyphens: none;
+
+    /* Do not break long words mid-word; wrap them whole instead. */
+    overflow-wrap: break-word;
+    word-break: normal;
+
+    margin: 0 0 var(--tut-gap);
+}
+
+/* Sub-headings.
+   MUST stay display:inline. Making these inline-block turned each one into an
+   unbreakable box, which let the line break immediately before it (leaving a
+   bullet stranded on the line above) and immediately after it (dropping a
+   comma onto its own line). Inline keeps them part of the normal text flow. */
+#tutorial-content-area .tutorial-text strong {
+    display: inline;
+    color: #FE5F00;
+    font-weight: 700;
+    font-size: calc(var(--tut-font) + 1px);
+}
+
+/* Keeps a bullet glued to the bold word that follows it. */
+#tutorial-content-area .tutorial-text {
+    /* nothing needed here — see the HTML note below */
+}
+
+#tutorial-content-area .tutorial-text em {
+    font-style: italic;
+    color: #ddd;
+}
+
+/* ===== SORT MODAL: FULL-SCREEN PANEL, FOLDERS / IMAGES TABS ===== */
+/* All rules scoped to #gallery-sort-modal so the date picker modal,
+   which shares these classes, is left exactly as it was. */
+
+/* Sized like .submenu-content in Button Settings, so the modal is the
+   same size no matter which tab is showing */
+#gallery-sort-modal .gallery-custom-modal-content {
+    width: 98%;
+    height: 92%;
+    max-width: none;
+    border-radius: 2vw;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background: linear-gradient(170deg, #181818 0%, #0f0f0f 100%);
+}
+
+/* Header matched to .submenu-header in Button Settings */
+#gallery-sort-modal .gallery-custom-modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2vw;
+    padding: 1vw;
+    min-height: 32px;
+    text-align: left;
+    flex-shrink: 0;
+    background: linear-gradient(180deg, #1f1f1f 0%, #191919 100%);
+    border-bottom: 1px solid rgba(254, 95, 0, 0.5);
+    box-shadow: 0 2px 10px rgba(254, 95, 0, 0.12);
+}
+
+#gallery-sort-modal .gallery-custom-modal-header h3 {
+    font-size: 5vw;
+}
+
+/* Tabs: identical height to the Button Settings tabs */
+#gallery-sort-modal .sort-modal-tab-bar {
+    flex-shrink: 0;
+}
+
+#gallery-sort-modal .sort-settings-tab {
+    white-space: nowrap;
+}
+
+/* The list fills all remaining height, so switching tabs never resizes it */
+#gallery-sort-modal .gallery-custom-modal-list {
+    position: relative;
+    flex: 1;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+#gallery-sort-modal .sort-settings-panel {
+    display: none;
+    flex-direction: column;
+    gap: 2vw;
+}
+
+#gallery-sort-modal .sort-settings-panel.active {
+    display: flex;
+}
+
+#gallery-sort-modal .sort-settings-tab.wheel-focus {
+    color: #fff;
+    box-shadow: inset 0 0 0 2px #FE5F00;
+}
+
+#gallery-sort-modal .gallery-custom-modal-option.wheel-focus {
+    outline: 2px solid #FE5F00;
+    outline-offset: -2px;
+    box-shadow: 0 0 0 3px rgba(254, 95, 0, 0.28);
+}
+
+#gallery-sort-modal .close-button.wheel-focus {
+    border-color: #FE5F00;
+    color: #FE5F00;
+    box-shadow: 0 0 8px rgba(254, 95, 0, 0.5);
+}
+
+/* ===== SETTINGS LISTS: SCROLL WHEEL HIGHLIGHT ===== */
+/* Resolution, Aspect Ratio and Import Resolution rows */
+.resolution-item.menu-selected {
+    background: linear-gradient(90deg, rgba(254, 95, 0, 0.18) 0%, #2a2a2a 100%);
+    border-color: #FE5F00;
+    box-shadow: inset 3px 0 0 #FE5F00, 0 0 10px rgba(254, 95, 0, 0.3);
+    color: #fff;
+}
+
+/* Import Resolution marks its current choice with .selected instead of
+   .active, which had no styling at all, so show it the same way */
+.resolution-item.selected {
+    background-color: #FE5F00;
+    color: #000;
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* When the highlighted row is also the one currently in use, keep the
+   orange fill readable and just add the outline */
+.resolution-item.active.menu-selected,
+.resolution-item.selected.menu-selected {
+    background: #FE5F00;
+    color: #000;
+    box-shadow: inset 0 0 0 2px #fff, 0 0 10px rgba(254, 95, 0, 0.5);
+}
+
+/* ===== SETTINGS SCREENS: SCROLL WHEEL HIGHLIGHT ===== */
+
+/* Reset Database checklist rows */
+.reset-db-item.wheel-focus {
+    background: linear-gradient(90deg, rgba(254, 95, 0, 0.18) 0%, rgba(42, 42, 42, 0) 100%);
+    box-shadow: inset 3px 0 0 #FE5F00;
+}
+
+/* Reset Database bottom buttons */
+#reset-db-clear-btn.wheel-focus,
+#reset-db-apply-btn.wheel-focus {
+    box-shadow: inset 0 0 0 2px #FE5F00, 0 0 8px rgba(254, 95, 0, 0.5);
+}
+
+/* Restore Deleted Items tab bar */
+.pfs-tab.wheel-focus {
+    color: #fff;
+    box-shadow: inset 0 0 0 2px #FE5F00;
+}
+
+/* ===== IMPORT LIST: "reading this preset" indicator ===== */
+/* Stays lit while the R1 fetches and speaks, so the hard press never looks
+   like it did nothing during the wait. The colour comes from the keyframes,
+   not from this rule, because !important would override the animation. */
+.menu-item.import-row-speaking {
+    box-shadow: inset 3px 0 0 #FE5F00;
+    animation: importSpeakingPulse 1.1s ease-in-out infinite;
+}
+
+@keyframes importSpeakingPulse {
+    0%, 100% { background-color: rgba(254, 95, 0, 0.32); }
+    50%      { background-color: rgba(254, 95, 0, 0.10); }
+}
+
+/* ===== MASTER PROMPT: NAMES, COLLAPSE, WHEEL FOCUS ===== */
+
+/* Name gets all the room left of the badge and clips with "..." */
+.mp-slot-label {
+    flex: 1;
+    min-width: 0;
+    margin-right: 2vw;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    /* Fill the header height so the whole area left of the badge is tappable */
+    align-self: stretch;
+    display: flex;
+    align-items: center;
+}
+
+.mp-slot-status {
+    flex-shrink: 0;
+}
+
+/* Caret shows whether the text box is open or collapsed */
+.mp-slot-label::before {
+    content: '\25BE\00A0';
+    color: #FE5F00;
+}
+.mp-slot-collapsed .mp-slot-label::before {
+    content: '\25B8\00A0';
+}
+
+/* Collapsed: only the name and the ACTIVE / OFF badge remain */
+.mp-slot.mp-slot-collapsed .mp-slot-textarea,
+.mp-slot.mp-slot-collapsed .mp-slot-char-count {
+    display: none;
+}
+.mp-slot.mp-slot-collapsed .mp-slot-header {
+    margin-bottom: 0;
+}
+
+/* Scroll-wheel highlight. Active prompts keep their green border and get an
+   orange ring outside it, so "active" and "highlighted" stay tellable apart. */
+.mp-slot.mp-slot-focus {
+    border-color: #FE5F00;
+    box-shadow: 0 0 0 2px rgba(254, 95, 0, 0.35);
+}
+.mp-slot.mp-slot-active.mp-slot-focus {
+    border-color: #4CAF50;
+    box-shadow: 0 0 0 2px #FE5F00;
+}
+
+/* Inline rename box */
+.mp-slot-rename-input {
+    flex: 1;
+    min-width: 0;
+    margin-right: 2vw;
+    background: #000;
+    color: #fff;
+    border: 1px solid #FE5F00;
+    border-radius: 1vw;
+    padding: 1vw 2vw;
+    font-size: 3.5vw;
+    font-weight: 600;
+    font-family: inherit;
+    box-sizing: border-box;
+}
+
+/* Lit while the R1 fetches and reads the prompt aloud. The colour lives in the
+   keyframes because !important would override the animation. */
+.mp-slot.mp-slot-speaking {
+    animation: mpSpeakingPulse 1.1s ease-in-out infinite;
+}
+@keyframes mpSpeakingPulse {
+    0%, 100% { background-color: rgba(254, 95, 0, 0.22); }
+    50%      { background-color: rgba(254, 95, 0, 0.06); }
+}
+
+/* Active prompt names on the settings button can get long */
+#current-master-prompt-display {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* ===== PRESET EDITOR: option boxes match the message box ===== */
+/* They used to be single-line <input>s, so long option wording ran off the
+   side and could not be read. They are textareas now, sized and styled to
+   match #style-message, and they sit on their own full-width row. */
+.option-item {
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.option-item .option-text-input {
+    /* order:1 sends the text box below the checkbox/Remove row without having
+       to reorder the elements in JavaScript */
+    order: 1;
+    flex: 1 0 100%;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 2vw;
+    min-height: 30vh;
+    padding: 2vw;
+    font-size: 5vw;
+    background-color: #2a2a2a;
+    color: #fff;
+    border: 2px solid #444;
+    border-radius: 2vw;
+    font-family: inherit;
+    transition: border-color 0.2s ease;
+    resize: none;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+.option-item .option-text-input:focus {
+    outline: none;
+    border-color: #FE5F00;
+    box-shadow: 0 0 0 2px rgba(254, 95, 0, 0.2);
+}
+
+/* Remove sits on the top row, hard right, level with this option's own
+   checkbox — so it is nowhere near the NEXT option's checkbox below.
+   Sized to match .style-option-checkbox (5vw / 20px) rather than the taller
+   default, so the whole row lines up. */
+.option-item > button {
+    margin-left: auto;
+    height: 5vw;
+    min-height: 20px;
+    padding: 0 2.5vw;
+    font-size: 3.2vw;
+    border-radius: 1.2vw;
+    line-height: 1;
+}
+
+/* "OPTION 1", "OPTION 2"... centred in the gap between the checkbox and the
+   Remove button, so it is obvious which option that button belongs to.
+   flex:1 makes the label fill that gap; text-align centres it inside. */
+.option-item .option-number {
+    flex: 1;
+    min-width: 0;
+    text-align: center;
+    text-transform: uppercase;
+    color: #FE5F00;
+    font-size: 3.6vw;
+    font-weight: 600;
+    white-space: nowrap;
+    line-height: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* A full-width rule after every option except the last, so one option can
+   never be mistaken for the next. The containers hold nothing but option
+   rows (the "+ Add Option" buttons are siblings), so :last-child is safe. */
+.option-item:not(:last-child) {
+    border-bottom: 1px solid #4a4a4a;
+    padding-bottom: 4vw;
+}
+
+.option-item {
+    margin-bottom: 5vw;
+}

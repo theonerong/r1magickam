@@ -1,0 +1,1825 @@
+// preset-import.js - Handle external preset importing
+
+// Deep comparison for UPDATED detection — checks all meaningful preset fields
+export function presetsAreDifferent(a, b) {
+  if (a.message !== b.message) return true;
+  if (a.additionalInstructions !== b.additionalInstructions) return true;
+  if (!!a.randomizeOptions !== !!b.randomizeOptions) return true;
+  if (JSON.stringify(a.category || []) !== JSON.stringify(b.category || [])) return true;
+  if (JSON.stringify(a.options || []) !== JSON.stringify(b.options || [])) return true;
+  if (JSON.stringify(a.optionGroups || []) !== JSON.stringify(b.optionGroups || [])) return true;
+  return false;
+}
+
+// Strip accents so searches work without typing them (e.g. "cafe" finds "café")
+function stripAccents(str) {
+  return (str || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+}
+
+const IMPORT_DB_NAME = 'ImportedPresetsDB';
+const IMPORT_DB_VERSION = 3;
+const IMPORT_STORE_NAME = 'imported_presets';
+// Local cache of custom preset SOURCES (the JSON fetched from each source URL)
+// plus the preview images referenced by those presets, saved as base64. This
+// lets sources keep working after their link dies, and keeps the presets
+// updatable while the link is alive (we still fetch first, cache on success,
+// and only fall back to this copy when the URL is unreachable).
+const SOURCE_CACHE_STORE_NAME = 'source_cache';
+
+// ===== CUSTOM PRESET SOURCES =====
+const CUSTOM_PRESET_SOURCES_KEY = 'mk_custom_preset_sources';
+const DEFAULT_PRESET_ENABLED_KEY = 'mk_default_preset_enabled';
+
+// Tracks any sources that failed during the most recent loadPresetsFromFile() call
+let _lastLoadFailures = [];
+export function getLastLoadFailures() { return [..._lastLoadFailures]; }
+
+export function getCustomPresetSources() {
+  try {
+    const raw = localStorage.getItem(CUSTOM_PRESET_SOURCES_KEY);
+    return raw ? JSON.parse(raw) : [];
+  } catch (e) {
+    return [];
+  }
+}
+
+export function saveCustomPresetSources(sources) {
+  try {
+    localStorage.setItem(CUSTOM_PRESET_SOURCES_KEY, JSON.stringify(sources));
+    // Clear the session cache so the next import/check picks up the new sources
+    window._cachedFactoryPresets = null;
+  } catch (e) {}
+}
+
+export function getDefaultPresetEnabled() {
+  try {
+    const val = localStorage.getItem(DEFAULT_PRESET_ENABLED_KEY);
+    return val === null ? true : val === 'true'; // defaults to true
+  } catch (e) {
+    return true;
+  }
+}
+
+export function saveDefaultPresetEnabled(enabled) {
+  try {
+    localStorage.setItem(DEFAULT_PRESET_ENABLED_KEY, enabled ? 'true' : 'false');
+    window._cachedFactoryPresets = null;
+  } catch (e) {}
+}
+// ===== END CUSTOM PRESET SOURCES =====
+
+// ===== PRESET UNLOCK GAME =====
+
+const UNLOCK_GAME_KEY = 'r1_preset_unlock_game';
+const STARTER_PRESETS = ['BATTLESHIP', 'CARICATURE', 'CLAYMATION', 'CLUE', 'GUESS WHO', 'HIDE AND SEEK', 'IMPRESSIONISM', 'LEGO', 'ROCK PAPER SCISSORS LIZARD SPOCK', 'SLOT MACHINE', 'WHACK-A-MOLE', 'WORDLE'];
+
+function loadUnlockState() {
+  try {
+    const raw = localStorage.getItem(UNLOCK_GAME_KEY);
+    if (raw) {
+      const state = JSON.parse(raw);
+      if (!state.credits) state.credits = 0;
+      if (!state.creditEarnedPresets) state.creditEarnedPresets = [];
+      if (!state.ownedPresets) state.ownedPresets = [];
+      // MIGRATION: ensure all starter presets are unlocked and permanently owned
+      let migrated = false;
+      STARTER_PRESETS.forEach(name => {
+        if (!state.unlockedPresets.includes(name)) {
+          state.unlockedPresets.push(name);
+          migrated = true;
+        }
+        if (!state.ownedPresets.includes(name)) {
+          state.ownedPresets.push(name);
+          migrated = true;
+        }
+      });
+      // MIGRATION: any preset already in unlockedPresets was previously paid for — make it permanently owned
+      state.unlockedPresets.forEach(name => {
+        if (!state.ownedPresets.includes(name)) {
+          state.ownedPresets.push(name);
+          migrated = true;
+        }
+      });
+      if (migrated) {
+        try { localStorage.setItem(UNLOCK_GAME_KEY, JSON.stringify(state)); } catch (e) {}
+      }
+      return state;
+    }
+  } catch (e) {}
+  return { credits: 0, creditEarnedPresets: [], unlockedPresets: [...STARTER_PRESETS], ownedPresets: [...STARTER_PRESETS] };
+}
+
+function saveUnlockState(state) {
+  try {
+    localStorage.setItem(UNLOCK_GAME_KEY, JSON.stringify(state));
+  } catch (e) {}
+}
+
+export function earnCredit(importedPresetName) {
+  const state = loadUnlockState();
+  if (!state.creditEarnedPresets) state.creditEarnedPresets = [];
+  if (state.creditEarnedPresets.includes(importedPresetName)) {
+    return false;
+  }
+  state.credits = (state.credits || 0) + 1;
+  state.creditEarnedPresets.push(importedPresetName);
+  saveUnlockState(state);
+  return true;
+}
+
+export function unlockPresetWithCredit(presetName) {
+  const state = loadUnlockState();
+  // If already unlocked, don't charge again — just confirm success
+  if (state.unlockedPresets.includes(presetName)) return true;
+  if ((state.credits || 0) < 1) return false;
+  state.credits -= 1;
+  state.unlockedPresets.push(presetName);
+  state.lastUnlocked = presetName;
+  saveUnlockState(state);
+  return true;
+}
+
+export function refundCredit(presetName) {
+  const state = loadUnlockState();
+  const idx = state.unlockedPresets.indexOf(presetName);
+  if (idx !== -1) {
+    state.unlockedPresets.splice(idx, 1);
+    state.credits = (state.credits || 0) + 1;
+    if (state.lastUnlocked === presetName) state.lastUnlocked = null;
+    saveUnlockState(state);
+  }
+}
+
+export function unlockAllPresets(allAvailablePresets) {
+  const state = loadUnlockState();
+  if (state.cheatActivated) {
+    // Second use — re-lock everything that was unlocked only by the cheat
+    state.unlockedPresets = state.preCheatUnlockedPresets || [...STARTER_PRESETS];
+    state.cheatActivated = false;
+    state.preCheatUnlockedPresets = null;
+    saveUnlockState(state);
+    return false; // signals "re-locked"
+  } else {
+    // First use — save current list, then unlock everything
+    state.preCheatUnlockedPresets = [...state.unlockedPresets];
+    allAvailablePresets.forEach(p => {
+      if (!state.unlockedPresets.includes(p.name)) {
+        state.unlockedPresets.push(p.name);
+      }
+    });
+    state.cheatActivated = true;
+    saveUnlockState(state);
+    return true; // signals "unlocked"
+  }
+}
+
+export function getCredits() {
+  return loadUnlockState().credits || 0;
+}
+
+export function resetCredits() {
+  const state = loadUnlockState();
+  state.credits = 0;
+  state.creditEarnedPresets = [];
+  saveUnlockState(state);
+}
+
+// ===== END PRESET UNLOCK GAME =====
+
+export class PresetImporter {
+  constructor() {
+    this.db = null;
+    this.importedPresets = [];
+    this.isImportModalOpen = false;
+    this.currentImportScrollIndex = 0;
+    this.importFilterText = '';
+    this.checkboxStates = new Map(); // Track checkbox states across filters
+
+    // Audio system for reading preset messages
+    this.isMuted = false;
+
+    this.speakMessage = (text) => {
+      if (this.isMuted) return;
+      // Take only the first sentence, capped at 200 characters, so the R1 finishes quickly
+      const firstSentence = text.split(/[.!?\n]/)[0].trim().substring(0, 200);
+      if (window.speechSynthesis) {
+        window.speechSynthesis.cancel();
+      }
+      if (typeof PluginMessageHandler !== 'undefined') {
+        PluginMessageHandler.postMessage(JSON.stringify({
+          message: firstSentence,
+          wantsR1Response: true
+        }));
+      } else if (window.speechSynthesis) {
+        const utterance = new SpeechSynthesisUtterance(firstSentence);
+        utterance.rate = 0.9;
+        utterance.pitch = 1.0;
+        window.speechSynthesis.speak(utterance);
+      }
+    };
+
+    this.stopSpeaking = () => {
+      if (window.speechSynthesis) {
+        window.speechSynthesis.cancel();
+      }
+    };
+  }
+
+  async init() {
+    return new Promise((resolve, reject) => {
+      const request = indexedDB.open(IMPORT_DB_NAME, IMPORT_DB_VERSION);
+
+      request.onerror = () => reject(request.error);
+      request.onsuccess = () => {
+        this.db = request.result;
+        resolve();
+      };
+
+      request.onupgradeneeded = (event) => {
+        const db = event.target.result;
+        if (!db.objectStoreNames.contains(IMPORT_STORE_NAME)) {
+          db.createObjectStore(IMPORT_STORE_NAME, { keyPath: 'id', autoIncrement: true });
+        }
+        // Source cache keyed by the source URL.
+        if (!db.objectStoreNames.contains(SOURCE_CACHE_STORE_NAME)) {
+          db.createObjectStore(SOURCE_CACHE_STORE_NAME, { keyPath: 'url' });
+        }
+      };
+    });
+  }
+
+  async loadImportedPresets() {
+    if (!this.db) {
+      await this.init();
+    }
+
+    return new Promise((resolve, reject) => {
+      const transaction = this.db.transaction([IMPORT_STORE_NAME], 'readonly');
+      const store = transaction.objectStore(IMPORT_STORE_NAME);
+      const request = store.getAll();
+
+      request.onsuccess = () => {
+        this.importedPresets = request.result.map(r => r.preset);
+        resolve(this.importedPresets);
+      };
+      request.onerror = () => {
+        console.error('Error loading imported presets:', request.error);
+        resolve([]);
+      };
+    });
+  }
+
+  async saveImportedPresets(presets) {
+    if (!this.db) {
+      await this.init();
+    }
+
+    return new Promise(async (resolve, reject) => {
+      const transaction = this.db.transaction([IMPORT_STORE_NAME], 'readwrite');
+      const store = transaction.objectStore(IMPORT_STORE_NAME);
+      
+      // Clear existing
+      const clearRequest = store.clear();
+      
+      clearRequest.onsuccess = () => {
+        // Add new presets
+        const addPromises = presets.map(preset => {
+          return new Promise((res, rej) => {
+            const addRequest = store.add({ preset });
+            addRequest.onsuccess = () => res();
+            addRequest.onerror = () => rej(addRequest.error);
+          });
+        });
+
+        Promise.all(addPromises)
+          .then(() => {
+            this.importedPresets = presets;
+            resolve();
+          })
+          .catch(reject);
+      };
+
+      clearRequest.onerror = () => reject(clearRequest.error);
+    });
+  }
+
+  // ---- Source cache (survives dead links) ----
+
+  // Save one source's fetched presets + downloaded preview images (base64),
+  // keyed by the source URL.
+  async saveSourceCache(url, presets, images) {
+    if (!this.db) { await this.init(); }
+    return new Promise((resolve) => {
+      try {
+        const tx = this.db.transaction([SOURCE_CACHE_STORE_NAME], 'readwrite');
+        const store = tx.objectStore(SOURCE_CACHE_STORE_NAME);
+        store.put({ url, presets, images: images || {}, timestamp: Date.now() });
+        tx.oncomplete = () => resolve(true);
+        tx.onerror = () => resolve(false);
+      } catch (e) { resolve(false); }
+    });
+  }
+
+  // Read one source's cached copy (or null if none saved yet).
+  async getSourceCache(url) {
+    if (!this.db) { await this.init(); }
+    return new Promise((resolve) => {
+      try {
+        const tx = this.db.transaction([SOURCE_CACHE_STORE_NAME], 'readonly');
+        const store = tx.objectStore(SOURCE_CACHE_STORE_NAME);
+        const req = store.get(url);
+        req.onsuccess = () => resolve(req.result || null);
+        req.onerror = () => resolve(null);
+      } catch (e) { resolve(null); }
+    });
+  }
+
+  // Remove a source's cached copy (used when the user deletes the source).
+  async deleteSourceCache(url) {
+    if (!this.db) { await this.init(); }
+    return new Promise((resolve) => {
+      try {
+        const tx = this.db.transaction([SOURCE_CACHE_STORE_NAME], 'readwrite');
+        const store = tx.objectStore(SOURCE_CACHE_STORE_NAME);
+        store.delete(url);
+        tx.oncomplete = () => resolve(true);
+        tx.onerror = () => resolve(false);
+      } catch (e) { resolve(false); }
+    });
+  }
+
+  // Wipe the ENTIRE source cache (every saved source copy + its images).
+  // Used by Reset Database so no orphaned cache survives a reset.
+  async clearAllSourceCache() {
+    if (!this.db) { await this.init(); }
+    return new Promise((resolve) => {
+      try {
+        const tx = this.db.transaction([SOURCE_CACHE_STORE_NAME], 'readwrite');
+        const store = tx.objectStore(SOURCE_CACHE_STORE_NAME);
+        store.clear();
+        tx.oncomplete = () => resolve(true);
+        tx.onerror = () => resolve(false);
+      } catch (e) { resolve(false); }
+    });
+  }
+
+  async loadPresetsFromFile() {
+    // If already loaded this session, return the cached copy instantly
+    if (window._cachedFactoryPresets) {
+      return window._cachedFactoryPresets;
+    }
+    // A load is already running. Join it rather than starting a second one —
+    // the cache is only set at the very end, so two callers that start together
+    // would otherwise both download and parse the whole file.
+    if (window._factoryPresetsLoading) {
+      return window._factoryPresetsLoading;
+    }
+    window._factoryPresetsLoading = this._loadPresetsFromFileUncached()
+      .finally(() => { window._factoryPresetsLoading = null; });
+    return window._factoryPresetsLoading;
+  }
+
+  async _loadPresetsFromFileUncached() {
+    try {
+      const allPresets = [];
+      const seenNames = new Set();
+
+      // --- Load default source (only if user has it enabled) ---
+      if (getDefaultPresetEnabled()) {
+        const response = await fetch('./presets.json');
+        if (!response.ok) {
+          throw new Error('Failed to load presets.json');
+        }
+        const defaultPresets = await response.json();
+        defaultPresets
+          .filter(p => p.name && Array.isArray(p.category))
+          .forEach(p => {
+            if (!seenNames.has(p.name)) {
+              seenNames.add(p.name);
+              allPresets.push(p);
+            }
+          });
+      }
+
+      // --- Load custom sources (user-added) ---
+      _lastLoadFailures = [];
+      const customSources = getCustomPresetSources();
+      for (const source of customSources) {
+        if (!source.enabled) continue;
+        let reachedServer = false;
+        try {
+          const resp = await fetch(source.url);
+          reachedServer = true; // we got a response object, so the URL is reachable
+          if (!resp.ok) {
+            // Reachable but the server returned an error (e.g. 403/404). Temp
+            // file hosts like catbox return this when a link expires or rate-
+            // limits, but our saved copy is still good — so fall back to it here
+            // too, and only show an error if there is no saved copy.
+            console.warn(`Custom preset source "${source.name}" returned ${resp.status}`);
+            const cachedErr = await this.getSourceCache(source.url);
+            if (cachedErr && Array.isArray(cachedErr.presets) && cachedErr.presets.length > 0) {
+              const base = source.url.substring(0, source.url.lastIndexOf('/') + 1) + 'public/';
+              cachedErr.presets.forEach(p => {
+                if (!seenNames.has(p.name)) {
+                  seenNames.add(p.name);
+                  allPresets.push(p.imageUrl ? p : { ...p, _sourcePublicBase: base });
+                }
+              });
+            } else {
+              _lastLoadFailures.push({ name: source.name, reason: `Server returned error ${resp.status} and no saved copy is available. Connect once while the link is live.` });
+            }
+            continue;
+          }
+          let customPresets;
+          try {
+            customPresets = await resp.json();
+          } catch (jsonErr) {
+            console.warn(`Custom preset source "${source.name}" is not valid JSON`);
+            _lastLoadFailures.push({ name: source.name, reason: 'File is not valid JSON. Make sure you are using the Raw file URL from GitHub.' });
+            continue;
+          }
+          if (!Array.isArray(customPresets)) {
+            console.warn(`Custom preset source "${source.name}" did not return an array`);
+            _lastLoadFailures.push({ name: source.name, reason: 'File is not a preset array. It must contain a JSON array of preset objects.' });
+            continue;
+          }
+          const validPresets = customPresets.filter(p => p.name && Array.isArray(p.category));
+          if (validPresets.length === 0) {
+            console.warn(`Custom preset source "${source.name}" had no valid presets`);
+            _lastLoadFailures.push({ name: source.name, reason: 'No valid presets found. Each preset must have a name and a category field.' });
+            continue;
+          }
+          // Derive the public folder sitting next to this source's JSON file
+          const sourcePublicBase = source.url.substring(0, source.url.lastIndexOf('/') + 1) + 'public/';
+
+          // Save ONLY the preset JSON to the local cache (small + fast) so the
+          // presets survive if the source link later dies. We do NOT download
+          // preview images: sources hosted on a plain file host (e.g. catbox)
+          // have no image folder, so those requests were pointless 404s and the
+          // cause of the slow loads. Preview images come from elsewhere anyway —
+          // a per-preset custom preview the user assigns, or the program's own
+          // ./public/ folder — neither of which depends on the source location.
+          await this.saveSourceCache(source.url, validPresets);
+
+          validPresets.forEach(p => {
+            if (!seenNames.has(p.name)) {
+              seenNames.add(p.name);
+              allPresets.push(p.imageUrl ? p : { ...p, _sourcePublicBase: sourcePublicBase });
+            }
+          });
+        } catch (e) {
+          console.warn(`Failed to load custom preset source "${source.name}":`, e);
+          // Only fall back to the local cache when the URL was UNREACHABLE
+          // (network error / dead link). A reachable-but-broken file already
+          // 'continue'd above and never gets here.
+          if (!reachedServer) {
+            const cached = await this.getSourceCache(source.url);
+            if (cached && Array.isArray(cached.presets) && cached.presets.length > 0) {
+              const base = source.url.substring(0, source.url.lastIndexOf('/') + 1) + 'public/';
+              cached.presets.forEach(p => {
+                if (!seenNames.has(p.name)) {
+                  seenNames.add(p.name);
+                  allPresets.push(p.imageUrl ? p : { ...p, _sourcePublicBase: base });
+                }
+              });
+              // Loaded from the saved copy — not an error the user needs to see.
+            } else {
+              _lastLoadFailures.push({ name: source.name, reason: 'Could not be reached and no saved copy is available yet. Connect once while the link is live to save a local copy.' });
+            }
+          } else {
+            _lastLoadFailures.push({ name: source.name, reason: 'Could not be read. Check the URL is correct and public.' });
+          }
+        }
+      }
+
+      // Safety net: if nothing loaded at all, fall back to default regardless
+      if (allPresets.length === 0) {
+        try {
+          const response = await fetch('./presets.json');
+          if (response.ok) {
+            const defaultPresets = await response.json();
+            defaultPresets
+              .filter(p => p.name && Array.isArray(p.category))
+              .forEach(p => {
+                if (!seenNames.has(p.name)) {
+                  seenNames.add(p.name);
+                  allPresets.push(p);
+                }
+              });
+          }
+        } catch (e) {
+          console.warn('Safety-net load of presets.json also failed:', e);
+        }
+      }
+
+      // Alphabetize presets by name
+      const sorted = allPresets.sort((a, b) => a.name.localeCompare(b.name));
+
+      // Store in memory so every other call this session skips the download
+      window._cachedFactoryPresets = sorted;
+      return sorted;
+    } catch (error) {
+      console.error('Error loading presets:', error);
+      throw new Error('Could not load presets.json file');
+    }
+  }
+
+  buildPresetIndex(availablePresets) {
+    // Build imported presets map once — O(n) instead of O(n²) per keypress
+    const importedMap = new Map(this.importedPresets.map(p => [p.name, p]));
+
+    const newPresets = [];
+    const updatedPresets = [];
+    const normalPresets = [];
+
+    availablePresets.forEach(preset => {
+      const existing = importedMap.get(preset.name);
+      if (!existing) {
+        newPresets.push(preset);
+      } else if (presetsAreDifferent(existing, preset)) {
+        updatedPresets.push(preset);
+      } else {
+        normalPresets.push(preset);
+      }
+    });
+
+    // Load unlock state so we can sort unlocked-but-not-imported presets to the top
+    const unlockState = loadUnlockState();
+    const unlockedNames = new Set(unlockState.unlockedPresets);
+    const lastUnlocked = unlockState.lastUnlocked || null;
+
+    newPresets.sort((a, b) => {
+      // Most recently unlocked preset goes first
+      if (a.name === lastUnlocked) return -1;
+      if (b.name === lastUnlocked) return 1;
+      // Then other unlocked-but-not-imported presets (alphabetical)
+      const aUnlocked = unlockedNames.has(a.name);
+      const bUnlocked = unlockedNames.has(b.name);
+      if (aUnlocked && !bUnlocked) return -1;
+      if (!aUnlocked && bUnlocked) return 1;
+      // For new users with no imports yet, put starter presets first (in array order)
+      if (this.importedPresets.length === 0) {
+        const aIdx = STARTER_PRESETS.indexOf(a.name);
+        const bIdx = STARTER_PRESETS.indexOf(b.name);
+        if (aIdx !== -1 && bIdx !== -1) return aIdx - bIdx; // both starters — use array order
+        if (aIdx !== -1) return -1; // only a is a starter
+        if (bIdx !== -1) return 1;  // only b is a starter
+      }
+      return a.name.localeCompare(b.name);
+    });
+    updatedPresets.sort((a, b) => a.name.localeCompare(b.name));
+    normalPresets.sort((a, b) => a.name.localeCompare(b.name));
+
+    this._sortedPresets = [...newPresets, ...updatedPresets, ...normalPresets];
+
+    // Pre-build lowercase search strings once — reused on every keypress
+    this._searchIndex = this._sortedPresets.map(preset => {
+      const name = stripAccents(preset.name.toLowerCase());
+      const message = stripAccents((preset.message || '').toLowerCase());
+      const cats = Array.isArray(preset.category) ? stripAccents(preset.category.join(' ').toLowerCase()) : '';
+      const opts = Array.isArray(preset.options) ? stripAccents(preset.options.map(o => o.text || '').join(' ').toLowerCase()) : '';
+      const groupOpts = Array.isArray(preset.optionGroups) ? stripAccents(preset.optionGroups.map(g => (g.title || '') + ' ' + (g.options ? g.options.map(o => o.text || '').join(' ') : '')).join(' ').toLowerCase()) : '';
+      const addl = stripAccents((preset.additionalInstructions || '').toLowerCase());
+      return name + ' ' + message + ' ' + cats + ' ' + opts + ' ' + groupOpts + ' ' + addl;
+    });
+  }
+
+  getFilteredPresets(availablePresets) {
+    // Build index only if not yet built for this session
+    if (!this._sortedPresets) {
+      this.buildPresetIndex(availablePresets);
+    }
+
+    if (!this.importFilterText.trim()) {
+      return this._sortedPresets;
+    }
+
+    const filterLower = stripAccents(this.importFilterText.toLowerCase());
+    return this._sortedPresets.filter((preset, i) =>
+      this._searchIndex[i].includes(filterLower)
+    );
+  }
+
+  async showPresetSelectionUI(availablePresets) {
+    return new Promise((resolve) => {
+      this.isImportModalOpen = true;
+      this.currentImportScrollIndex = 0;
+      this.importFilterText = '';
+      this._sortedPresets = null;
+      this._searchIndex = null;
+      
+      // Load the unlock game state for this session
+      const unlockState = loadUnlockState();
+      const unlockedNames = new Set(unlockState.unlockedPresets);
+      const permanentlyOwned = new Set(unlockState.ownedPresets || [...STARTER_PRESETS]);
+      // Tracks presets unlocked this session but not yet imported — refunded on cancel/close
+      const sessionUnlocked = new Set();
+
+      const updateCreditDisplay = () => {
+        const creditsEl = document.getElementById('import-credits-display');
+        if (creditsEl) creditsEl.textContent = `Credits: ${loadUnlockState().credits || 0}`;
+      };
+
+      // Initialize checkbox states - mark currently imported presets as checked
+      this.checkboxStates.clear();
+      availablePresets.forEach(preset => {
+        const isAlreadyImported = this.importedPresets.some(p => p.name === preset.name);
+        this.checkboxStates.set(preset.name, isAlreadyImported);
+      });
+
+      const modal = document.createElement('div');
+      modal.className = 'styles-menu';
+      modal.style.display = 'flex';
+      modal.style.zIndex = '10000';
+      modal.id = 'import-preset-modal';
+      modal.style.backdropFilter = 'none';
+      modal.style.webkitBackdropFilter = 'none';
+
+      const content = document.createElement('div');
+      content.className = 'styles-menu-content';
+
+      const header = document.createElement('div');
+      header.className = 'styles-menu-header';
+      header.style.marginBottom = '0'; // Ensure no gap below header
+      const currentCredits = loadUnlockState().credits || 0;
+      header.innerHTML = `
+        <div style="display:flex; flex-direction:column; gap:1px; line-height:1.1;">
+          <h2 style="font-size: 5vw; margin:0; padding:0;">IMPORT (<span id="import-preset-count">${availablePresets.length}</span>)</h2>
+          <span id="import-credits-display" style="font-size:5vw; color:#aaa; margin:0; padding:0;">Credits: ${currentCredits}</span>
+        </div>
+        <div class="menu-nav-buttons">
+          <button id="import-mute-toggle" class="menu-jump-button" title="Mute/Unmute">${this.isMuted ? '🔇' : '🔊'}</button>          
+          <button id="import-jump-to-top" class="menu-jump-button" title="Jump to top">↑</button>
+          <button id="import-jump-to-bottom" class="menu-jump-button" title="Jump to bottom">↓</button>
+          <button id="close-import-modal" class="close-button">×</button>
+        </div>
+      `;
+
+      const scrollContainer = document.createElement('div');
+      scrollContainer.className = 'styles-menu-scroll-container';
+      scrollContainer.id = 'import-scroll-container';
+      scrollContainer.style.paddingTop = '0'; // Remove top padding to close gap
+      scrollContainer.style.paddingBottom = '22px';
+
+      // The scroll-time class toggle that used to pause badge pulsing has
+      // been removed along with the pulse animation itself: recalculating
+      // styles across every row the instant a scroll began was itself a
+      // cause of the "stuck" feeling on the first touch-scroll.
+
+      // Filter input (sticky at top, immediately below header)
+      const filterSection = document.createElement('div');
+      filterSection.className = 'menu-section';
+      filterSection.style.cssText = 'background: #1a1a1a; padding: 5px 0; margin: 0; border-bottom: 1px solid #333; flex-shrink: 0;';
+      filterSection.innerHTML = `
+        <div class="filter-row" style="margin: 0; padding-right: calc(8vw + 2vw);">
+          <input type="text" id="import-preset-filter" class="style-filter" placeholder="Filter..." style="margin: 0; height: 24px; font-size: 12px;">
+          <button class="filter-blur-btn" id="import-filter-blur-btn" title="Dismiss keyboard">×</button>
+        </div>
+        <div id="import-lock-message" style="display:none; background:#8B0000; color:#fff; font-size:11px; padding:5px 10px; margin-top:3px; border-radius:3px; text-align:center;"></div>
+      `;
+
+      // Warning banner for any sources that failed to load — shown at top of scroll area
+      const loadFailures = getLastLoadFailures();
+      if (loadFailures.length > 0) {
+        const warningBanner = document.createElement('div');
+        warningBanner.style.cssText = 'background:#5a2d00; border:1px solid #FE5F00; border-radius:4px; padding:8px 12px; margin:6px 0 4px 0; font-size:11px; color:#fff; line-height:1.6;';
+        const failLines = loadFailures.map(f => `• <strong>${f.name}</strong>: ${f.reason}`).join('<br>');
+        warningBanner.innerHTML = `⚠️ <strong>Could not load:</strong><br>${failLines}`;
+        scrollContainer.appendChild(warningBanner);
+      }
+
+      // Helper to show a message inside the import modal (avoids z-index conflicts)
+      let lockMessageTimer = null;
+      const showImportMessage = (text) => {
+        const msgEl = document.getElementById('import-lock-message');
+        if (!msgEl) return;
+        msgEl.textContent = text;
+        msgEl.style.display = 'block';
+        if (lockMessageTimer) clearTimeout(lockMessageTimer);
+        lockMessageTimer = setTimeout(() => {
+          msgEl.style.display = 'none';
+        }, 3000);
+      };
+
+      // ===== SAMPLE IMAGE LONG-PRESS PREVIEW =====
+
+      // Create a full-screen overlay for showing sample images on long press
+
+      const previewOverlay = document.createElement('div');
+      previewOverlay.id = 'preset-image-preview-overlay';
+      previewOverlay.style.cssText = 'display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.88); z-index:99999; align-items:center; justify-content:center; flex-direction:column; pointer-events:all;';
+
+      const previewImgWrapper = document.createElement('div');
+      previewImgWrapper.style.cssText = 'width:92vw; height:72vh; display:flex; align-items:center; justify-content:center;';
+      const previewImg = document.createElement('img');
+      previewImg.id = 'preset-preview-img';
+      previewImg.style.cssText = 'width:100%; height:100%; object-fit:contain; border-radius:10px; border:2px solid #555;';
+
+      const previewLabel = document.createElement('div');
+      previewLabel.id = 'preset-preview-label';
+      previewLabel.style.cssText = 'color:#fff; font-size:11px; margin-top:6px; font-weight:bold; letter-spacing:1px;';
+
+      const previewCloseBtn = document.createElement('div');
+      previewCloseBtn.textContent = '×';
+      previewCloseBtn.style.cssText = 'position:absolute; top:10px; right:18px; color:#fff; font-size:28px; cursor:pointer; pointer-events:all; line-height:1;';
+      previewCloseBtn.addEventListener('touchstart', (e) => {
+        e.stopPropagation();
+        e.preventDefault();
+      });
+      previewCloseBtn.addEventListener('touchend', (e) => {
+        e.stopPropagation();
+        e.preventDefault();
+        hidePreview();
+      });
+      previewCloseBtn.addEventListener('mousedown', (e) => {
+        e.stopPropagation();
+        e.preventDefault();
+        hidePreview();
+      });
+      
+      const previewNoImg = document.createElement('div');
+      previewNoImg.id = 'preset-preview-no-img';
+      previewNoImg.style.cssText = 'color:#aaa; font-size:13px; display:none; margin-top:20px;';
+      previewNoImg.textContent = 'No sample image available';
+
+      previewOverlay.appendChild(previewCloseBtn);
+      previewImgWrapper.appendChild(previewImg);
+      previewOverlay.appendChild(previewImgWrapper);
+      previewOverlay.appendChild(previewLabel);
+      previewOverlay.appendChild(previewNoImg);
+
+      // ── Swipe-through state ──
+      // _lastRenderedPresets mirrors whatever renderPresetsList last put on
+      // screen, so the preview cycles through the same presets in the same
+      // order. Declared HERE, before anything can read it.
+      let _lastRenderedPresets = [];
+      let _previewSiblings = [];
+      let _previewIndex = -1;
+      // Bumped on every preview render so a slow image from a preset the user
+      // has already swiped past cannot overwrite the one now on screen.
+      let _previewImgRun = 0;
+
+      // Swipe UP = next preset, DOWN = previous. Wraps at both ends.
+      // The × close button stops its own touch events, so it is unaffected.
+      let _pvX = 0, _pvY = 0, _pvValid = false;
+      previewOverlay.addEventListener('touchstart', (e) => {
+        if (e.touches.length === 1) {
+          _pvX = e.touches[0].clientX;
+          _pvY = e.touches[0].clientY;
+          _pvValid = true;
+        } else {
+          _pvValid = false;
+        }
+      }, { passive: true });
+      previewOverlay.addEventListener('touchmove', (e) => {
+        if (e.touches.length > 1) _pvValid = false;
+      }, { passive: true });
+      previewOverlay.addEventListener('touchend', (e) => {
+        if (e.touches.length > 0) return;
+        if (!_pvValid) return;
+        _pvValid = false;
+        const t = e.changedTouches && e.changedTouches[0];
+        if (!t) return;
+        const dx = t.clientX - _pvX;
+        const dy = t.clientY - _pvY;
+        if (Math.abs(dy) >= 50 && Math.abs(dy) > Math.abs(dx) * 1.5) {
+          e.stopPropagation();
+          stepPreview(dy < 0 ? 1 : -1);
+        }
+      }, { passive: true });
+      previewOverlay.addEventListener('touchcancel', () => { _pvValid = false; }, { passive: true });
+
+      // NOTE: no 'wheel' listener. The R1 hardware wheel does NOT emit native
+      // wheel events — it dispatches custom scrollUp / scrollDown on window.
+      // main.js's global handlers call the two hooks exposed below.
+      this._previewImageOpen  = () => previewOverlay.style.display === 'flex';
+      this._stepPreviewImage  = (direction) => stepPreview(direction);
+
+      document.body.appendChild(previewOverlay);
+
+      // Paints one preset WITHOUT touching the sibling list.
+      const renderPreview = (preset) => {
+        if (!preset) return;
+        _previewIndex = _previewSiblings.indexOf(preset);
+        if (_previewIndex === -1) {
+          _previewIndex = _previewSiblings.findIndex(p => p && p.name === preset.name);
+        }
+        previewLabel.textContent = preset.name;
+        // Move the import list's highlight to match, so closing the preview
+        // leaves the user on the preset they swiped to. Located by name so it
+        // stays correct no matter which rows are currently filtered out.
+        const _rows = presetsList.querySelectorAll('.menu-item:not(.import-row-hidden)');
+        for (let i = 0; i < _rows.length; i++) {
+          if (_rows[i].dataset.presetName === preset.name) {
+            this.currentImportScrollIndex = i;
+            updateImportSelection();
+            break;
+          }
+        }
+        previewImg.style.display = 'none';
+        previewNoImg.style.display = 'none';
+
+        // Same source order as the rest of the program, best first:
+        //   1. the image the user set themselves in the preview modal (or by
+        //      QR) — read straight from localStorage, same key main.js writes
+        //   2. an explicit imageUrl written into the preset JSON
+        //   3. the public/ folder of the EXTERNAL source it came from
+        //   4. this program's own public/ folder
+        // Each is tried in turn so a missing file falls through instead of
+        // giving up on the first 404.
+        const safeName = preset.name.replace(/[\/\\:*?"<>|\s]/g, '_');
+        const candidates = [];
+        let customImg = null;
+        try { customImg = localStorage.getItem('r1_custom_preview_' + preset.name); } catch (e) {}
+        if (customImg) candidates.push(customImg);
+        if (preset.imageUrl) candidates.push(preset.imageUrl);
+        if (preset._sourcePublicBase) candidates.push(preset._sourcePublicBase + safeName + '.png');
+        candidates.push('./public/' + safeName + '.png');
+
+        _previewImgRun++;
+        const myRun = _previewImgRun;
+        let attempt = 0;
+        const tryNext = () => {
+          if (myRun !== _previewImgRun) return;
+          if (attempt >= candidates.length) {
+            previewImg.style.display = 'none';
+            previewNoImg.style.display = 'block';
+            return;
+          }
+          previewImg.src = candidates[attempt++];
+        };
+
+        previewImg.onload = () => {
+          if (myRun !== _previewImgRun) return;
+          previewImg.style.display = 'block';
+          previewNoImg.style.display = 'none';
+        };
+        previewImg.onerror = tryNext;
+        tryNext();
+      };
+
+      const stepPreview = (direction) => {
+        if (!_previewSiblings || _previewSiblings.length < 2) return;
+        if (_previewIndex < 0) return;
+        const len = _previewSiblings.length;
+        renderPreview(_previewSiblings[(_previewIndex + direction + len) % len]);
+      };
+
+      const showPreview = (preset) => {
+        _previewSiblings = (_lastRenderedPresets && _lastRenderedPresets.length)
+          ? _lastRenderedPresets : [preset];
+        renderPreview(preset);
+        previewOverlay.style.display = 'flex';
+      };
+
+      const hidePreview = () => {
+        previewOverlay.style.display = 'none';
+        previewImg.src = '';
+      };
+
+      // Clean up the overlay when the modal closes
+      const _originalCloseModal = () => {
+        if (document.body.contains(previewOverlay)) {
+          document.body.removeChild(previewOverlay);
+        }
+      };
+
+      // ===== END SAMPLE IMAGE LONG-PRESS PREVIEW =====
+
+      const presetsSection = document.createElement('div');
+      presetsSection.className = 'menu-section';
+      presetsSection.id = 'import-presets-section';
+      presetsSection.style.margin = '0';
+      
+      const presetsList = document.createElement('div');
+      presetsList.className = 'menu-list';
+      presetsList.id = 'import-presets-list';
+
+      // Single delegated long-press listener for the whole list (replaces per-item listeners)
+      const _presetsLookup = new Map(availablePresets.map(p => [p.name, p]));
+      let _delegatedLongPressTimer = null;
+      // Brief orange flash the moment the hard press registers. The R1's voice
+      // takes a beat to come back, so without this the press feels like it did
+      // nothing and you end up pressing again.
+      let _speakingRow = null;
+      let _speakingTimer = null;
+      const _clearSpeakingRow = () => {
+        clearTimeout(_speakingTimer);
+        _speakingTimer = null;
+        if (_speakingRow) _speakingRow.classList.remove('import-row-speaking');
+        _speakingRow = null;
+      };
+      const _flashSpeakingRow = (row) => {
+        _clearSpeakingRow();
+        if (!row) return;
+        _speakingRow = row;
+        row.classList.add('import-row-speaking');
+        // The R1 takes a second or two to answer, so this has to stay lit long
+        // enough to bridge the wait. It pulses so it reads as "working on it",
+        // not as a button that already finished.
+        _speakingTimer = setTimeout(_clearSpeakingRow, 6000);
+      };
+
+      // 500ms matches what phones use for a long press (iOS and Android both
+      // fire at ~500ms) while still being clearly longer than a tap, which
+      // toggles the row open/closed.
+      const LONG_PRESS_MS = 500;
+
+      // Cache each preset's NEW/UPDATED status for the life of this dialog.
+      // Computing it fresh meant thousands of deep text comparisons on every
+      // re-render (typing, clearing the search, select all) — the source of
+      // the freeze when clearing a search on large libraries. The status
+      // cannot change while the dialog is open, so compute it only once.
+      const _ticketStatusCache = new Map();
+      // Names of presets whose first-line reveal is currently open. Lives at
+      // dialog scope so open rows stay open across filter re-renders.
+      const _openPresetNames = new Set();
+      // Set right after a long-press action fires so the click that follows
+      // the finger lift doesn't also toggle the row or its checkbox.
+      let _suppressNextItemClick = false;
+      let _suppressExpiryTimer = null;
+      // Finished row elements, built once per dialog and reused by every
+      // later render. Re-arranging existing rows is what makes typing and
+      // clearing the search fast — instead of re-creating thousands of
+      // nodes, styles and handlers, renders just re-append what exists.
+      const _rowElementCache = new Map();
+      // True once the full list has been built and appended (this happens a
+      // single time, when the dialog opens, behind the loading spinner).
+      // From then on filtering never touches the DOM tree — it only shows
+      // and hides existing rows, exactly like the main menu and gallery
+      // preset searches do, which is why those feel instant.
+      let _allRowsBuilt = false;
+      // Handle for the in-progress chunked build, so a new render can cancel it
+      let _buildTimer = null;
+
+      // Tracks whether the user is touching or scrolling the list right now, so
+      // the background row build can shrink its bursts and stay out of the way.
+      let _userIsScrolling = false;
+      let _fingerDown = false;
+      let _scrollIdleTimer = null;
+      let _revealTimer = null;
+      const _markScrolling = () => {
+        _userIsScrolling = true;
+        clearTimeout(_scrollIdleTimer);
+        _scrollIdleTimer = setTimeout(() => { _userIsScrolling = false; }, 150);
+      };
+      // A finger resting on the list counts too. A hard press holds still for
+      // 600ms, so without this the background build goes back to big bursts
+      // mid-press and the long-press never gets a chance to fire on time.
+      const _listIsBusy = () => _userIsScrolling || _fingerDown;
+      scrollContainer.addEventListener('scroll', _markScrolling, { passive: true });
+      scrollContainer.addEventListener('touchmove', _markScrolling, { passive: true });
+      scrollContainer.addEventListener('touchstart', () => { _fingerDown = true; _markScrolling(); }, { passive: true });
+      scrollContainer.addEventListener('touchend', () => { _fingerDown = false; _markScrolling(); }, { passive: true });
+      scrollContainer.addEventListener('touchcancel', () => { _fingerDown = false; }, { passive: true });
+
+      presetsList.addEventListener('touchstart', (e) => {
+        const item = e.target.closest('.menu-item');
+        if (!item) return;
+        const preset = _presetsLookup.get(item.dataset.presetName);
+        if (!preset) return;
+        _clearSpeakingRow();   // a new press cancels the previous indicator
+        _delegatedLongPressTimer = setTimeout(() => {
+          if (_openPresetNames.has(preset.name)) {
+            // OPEN row: hard-press reads the preset aloud
+            _suppressNextItemClick = true;
+            _flashSpeakingRow(item);
+            this.speakMessage(preset.message);
+          } else {
+            // CLOSED row: hard-press shows the preview image (as before)
+            showPreview(preset);
+          }
+        }, LONG_PRESS_MS);
+      }, { passive: true });
+
+      presetsList.addEventListener('touchend', () => {
+        clearTimeout(_delegatedLongPressTimer);
+        _delegatedLongPressTimer = null;
+        // Start the click guard's countdown when the finger LIFTS, not when the
+        // press fired. Otherwise holding past ~900ms lets the click through and
+        // the row toggles open/closed right after it speaks.
+        if (_suppressNextItemClick) {
+          clearTimeout(_suppressExpiryTimer);
+          _suppressExpiryTimer = setTimeout(() => { _suppressNextItemClick = false; }, 400);
+        }
+      }, { passive: true });
+
+      presetsList.addEventListener('touchmove', () => {
+        clearTimeout(_delegatedLongPressTimer);
+        _delegatedLongPressTimer = null;
+      }, { passive: true });
+
+      presetsList.addEventListener('touchcancel', () => {
+        clearTimeout(_delegatedLongPressTimer);
+        _delegatedLongPressTimer = null;
+        hidePreview();
+      }, { passive: true });
+
+      presetsList.addEventListener('mousedown', (e) => {
+        const item = e.target.closest('.menu-item');
+        if (!item) return;
+        const preset = _presetsLookup.get(item.dataset.presetName);
+        if (!preset) return;
+        _delegatedLongPressTimer = setTimeout(() => {
+          if (_openPresetNames.has(preset.name)) {
+            _suppressNextItemClick = true;
+            setTimeout(() => { _suppressNextItemClick = false; }, 400);
+            _flashSpeakingRow(item);
+            this.speakMessage(preset.message);
+          } else {
+            showPreview(preset);
+          }
+        }, LONG_PRESS_MS);
+      });
+
+      presetsList.addEventListener('mouseup', () => {
+        clearTimeout(_delegatedLongPressTimer);
+        _delegatedLongPressTimer = null;
+      });
+
+      presetsList.addEventListener('mouseleave', () => {
+        clearTimeout(_delegatedLongPressTimer);
+        _delegatedLongPressTimer = null;
+      });
+
+      const renderPresetsList = () => {
+        const filteredPresets = this.getFilteredPresets(availablePresets);
+        _lastRenderedPresets = filteredPresets;   // keep the preview's swipe list in sync
+        const countElement = document.getElementById('import-preset-count');
+        if (countElement) countElement.textContent = filteredPresets.length;
+
+        // FAST PATH — every row already exists in the list (built once when
+        // the dialog opened). Filtering works like the main menu and gallery
+        // preset searches: nothing is created, destroyed or moved; matching
+        // rows are shown and the rest are hidden with a CSS class.
+        if (_allRowsBuilt) {
+          const _visibleNames = new Set(filteredPresets.map(p => p.name));
+          const _rows = Array.from(_rowElementCache.entries());
+          if (_revealTimer) { clearTimeout(_revealTimer); _revealTimer = null; }
+
+          // Showing ~1900 hidden rows in one go makes the browser lay out the
+          // whole list at once, which is the freeze when clearing the search.
+          // Do it in chunks: the top of the list updates immediately and the
+          // rest catches up over the next few frames.
+          const _revealChunk = (i) => {
+            if (!document.body.contains(presetsList)) { _revealTimer = null; return; }
+            const STEP = (i > 0 && _listIsBusy()) ? 60 : 250;
+            const end = Math.min(i + STEP, _rows.length);
+            for (; i < end; i++) {
+              const name = _rows[i][0];
+              const row = _rows[i][1];
+              row.classList.toggle('import-row-hidden', !_visibleNames.has(name));
+              if (row._importCheckbox) {
+                row._importCheckbox.checked = this.checkboxStates.get(name) || false;
+              }
+            }
+            if (i < _rows.length) {
+              _revealTimer = setTimeout(() => _revealChunk(i), 16);
+            } else {
+              _revealTimer = null;
+              if (scrollContainer.scrollTop === 0) updateImportSelection();
+            }
+          };
+          _revealChunk(0);
+          updateImportSelection();
+          return;
+        }
+
+        // --- Pre-build O(1) lookup maps once per render ---
+
+        const importedMap = new Map(this.importedPresets.map(p => [p.name, p]));
+        const availableSet = new Set(availablePresets.map(p => p.name));
+
+        // Presets from custom sources are always free — never locked
+        const customSourcePresetNames = new Set(
+          availablePresets.filter(p => p._sourcePublicBase).map(p => p.name)
+        );
+
+        // Fast credit count: count checked locked presets using Maps
+        const getLockedCheckedCount = () => {
+          let count = 0;
+          this.checkboxStates.forEach((checked, name) => {
+            if (!checked) return;
+            if (!availableSet.has(name)) return;
+            if (importedMap.has(name)) return; // already imported = not locked
+            if (unlockedNames.has(name)) return; // unlocked = not locked
+            if (permanentlyOwned.has(name)) return; // permanently owned = never locked
+            if (customSourcePresetNames.has(name)) return; // custom source = always free
+            count++;
+          });
+          return count;
+        };
+
+        // Build the rows a chunk at a time. The first chunk is enough to fill
+        // the screen, so the dialog appears immediately; the remaining rows are
+        // added in the background frames after that, keeping the UI responsive.
+        presetsList.innerHTML = '';
+        if (_buildTimer) { clearTimeout(_buildTimer); _buildTimer = null; }
+
+        const _buildChunk = (start) => {
+          // The dialog was closed, or another render restarted the build
+          if (!document.body.contains(presetsList)) { _buildTimer = null; return; }
+
+          // The first burst is always full size so the dialog never opens looking
+          // empty. After that: small bursts while the user is scrolling, so each
+          // one fits inside a single frame and the scroll stays smooth, and
+          // bigger bursts when the list is idle so it finishes quickly.
+          // A finger is on the list: stop appending until it lifts. Every append
+          // makes the browser re-lay-out all ~1900 rows to recompute the scroll
+          // height, and that is what makes the first drag feel stuck. Bounded by
+          // the gesture, and chunk 0 always runs so the list is never empty.
+          if (start > 0 && _fingerDown) {
+            _buildTimer = setTimeout(() => _buildChunk(start), 100);
+            return;
+          }
+
+          const CHUNK = (start > 0 && _listIsBusy()) ? 20 : 150;
+          const fragment = document.createDocumentFragment();
+
+          filteredPresets.slice(start, start + CHUNK).forEach((preset, _offset) => {
+          const index = start + _offset;
+          // Reuse the finished row if this preset was built before — just
+          // refresh the bits that can change between renders.
+          const _cachedRow = _rowElementCache.get(preset.name);
+          if (_cachedRow) {
+            _cachedRow.dataset.presetIndex = index;
+            if (_cachedRow._importCheckbox) {
+              _cachedRow._importCheckbox.checked = this.checkboxStates.get(preset.name) || false;
+            }
+            fragment.appendChild(_cachedRow);
+            return;
+          }
+          const isAlreadyImported = importedMap.has(preset.name);
+          const isLocked = !isAlreadyImported && !unlockedNames.has(preset.name) && !permanentlyOwned.has(preset.name) && !preset._sourcePublicBase;
+          const existingPreset = importedMap.get(preset.name);
+
+          const msg = preset.message || '';
+          const periodIndex = msg.indexOf('.');
+          const firstLine = periodIndex !== -1 ? msg.substring(0, periodIndex + 1).trim() : msg.substring(0, 160).trim();
+
+          const item = document.createElement('div');
+          item.className = 'menu-item';
+          item.dataset.presetIndex = index;
+          item.dataset.presetName = preset.name;
+          item.style.cssText = 'display: flex; align-items: flex-start; padding: 6px 15px; width: 100%; justify-content: flex-start; margin-bottom: 2px; touch-action: pan-y;';
+
+          const checkbox = document.createElement('input');
+          checkbox.type = 'checkbox';
+          checkbox.id = `import-preset-${index}`;
+          checkbox.checked = this.checkboxStates.get(preset.name) || false;
+          checkbox.style.cssText = 'width:18px;height:18px;min-width:18px;min-height:18px;margin-right:10px;cursor:pointer;accent-color:#4CAF50;flex-shrink:0;touch-action:pan-y;';
+
+          const nameSpan = document.createElement('span');
+          nameSpan.className = 'menu-item-name';
+          nameSpan.style.cssText = 'flex: 1; text-align: left; overflow: hidden; font-size: 12px; display: flex; flex-direction: column; align-items: flex-start; gap: 1px;';
+
+          const nameRow = document.createElement('span');
+          nameRow.textContent = preset.name;
+          nameRow.style.cssText = 'font-weight: bold; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; width: 100%; display: flex; align-items: center;';
+
+          nameSpan.appendChild(nameRow);
+
+          // Tap-to-reveal first line (accordion, like the gallery preset
+          // lists). The reveal element is created lazily on first open, so
+          // closed rows carry no preview text at all — that is the whole
+          // scrolling win: ~1700 blocks of wrapped text no longer exist.
+          let previewRow = null;
+          const openReveal = () => {
+            if (!previewRow) {
+              previewRow = document.createElement('span');
+              previewRow.textContent = firstLine;
+              previewRow.style.cssText = 'font-weight: normal; color: #fff; font-size: 10px; width: 100%; white-space: normal; word-break: break-word;';
+              previewRow.className = 'import-preview-row';
+              nameSpan.appendChild(previewRow);
+            }
+            previewRow.style.display = '';
+            _openPresetNames.add(preset.name);
+          };
+          const closeReveal = () => {
+            if (previewRow) previewRow.style.display = 'none';
+            _openPresetNames.delete(preset.name);
+          };
+          if (_openPresetNames.has(preset.name)) openReveal();
+
+          // NEW / UPDATED tickets — status computed once per preset per
+          // dialog session, then reused from the cache on every re-render
+
+          let _ticketStatus = _ticketStatusCache.get(preset.name);
+          if (_ticketStatus === undefined) {
+            if (!existingPreset) _ticketStatus = 'new';
+            else if (presetsAreDifferent(existingPreset, preset)) _ticketStatus = 'updated';
+            else _ticketStatus = '';
+            _ticketStatusCache.set(preset.name, _ticketStatus);
+          }
+
+          if (_ticketStatus === 'new') {
+            const ticket = document.createElement('span');
+            ticket.className = 'preset-ticket preset-ticket-new';
+            ticket.textContent = 'NEW';
+            nameRow.appendChild(ticket);
+          } else if (_ticketStatus === 'updated') {
+            const ticket = document.createElement('span');
+            ticket.className = 'preset-ticket preset-ticket-updated';
+            ticket.textContent = 'UPDATED';
+            nameRow.appendChild(ticket);
+          }
+
+          let lockIcon = null;
+          const isSessionUnlocked = sessionUnlocked.has(preset.name);
+          if (isLocked || isSessionUnlocked) {
+            const lockWrapper = document.createElement('span');
+            lockWrapper.style.cssText = 'margin-right: 4px; flex-shrink: 0; display: inline-flex; align-items: center;';
+
+            const lockSpan = document.createElement('span');
+            lockSpan.textContent = '🔒';
+            lockSpan.style.display = isSessionUnlocked ? 'none' : 'inline';
+
+            const unlockSpan = document.createElement('span');
+            unlockSpan.textContent = '🔓';
+            unlockSpan.style.display = isSessionUnlocked ? 'inline' : 'none';
+
+            lockWrapper.appendChild(lockSpan);
+            lockWrapper.appendChild(unlockSpan);
+            nameRow.insertBefore(lockWrapper, nameRow.firstChild);
+
+            lockIcon = {
+              showLocked:   () => { lockSpan.style.display = 'inline'; unlockSpan.style.display = 'none';   },
+              showUnlocked: () => { lockSpan.style.display = 'none';   unlockSpan.style.display = 'inline'; }
+            };
+          }
+
+          item.appendChild(checkbox);
+          item.appendChild(nameSpan);
+
+          // Spend credit immediately on check; refund immediately on uncheck (if not yet imported)
+
+          const handleLockToggle = (newChecked) => {
+            if (newChecked && isLocked && !sessionUnlocked.has(preset.name)) {
+              // Trying to check a locked preset — spend a credit now
+              const currentState = loadUnlockState();
+              if ((currentState.credits || 0) < 1) {
+                showImportMessage(`🔒 "${preset.name}" is locked. Earn credits by taking pictures with newly imported presets.`);
+                return false;
+              }
+              unlockPresetWithCredit(preset.name);
+              sessionUnlocked.add(preset.name);
+              unlockedNames.add(preset.name);
+              if (lockIcon) lockIcon.showUnlocked();
+              updateCreditDisplay();
+            } else if (!newChecked && sessionUnlocked.has(preset.name)) {
+              // Unchecking a session-unlocked preset that hasn't been imported — refund credit
+              refundCredit(preset.name);
+              sessionUnlocked.delete(preset.name);
+              unlockedNames.delete(preset.name);
+              if (lockIcon) lockIcon.showLocked();
+              updateCreditDisplay();
+            }
+            return true;
+          };
+
+          checkbox.onclick = (e) => {
+            e.stopPropagation();
+            if (_suppressNextItemClick) {
+              _suppressNextItemClick = false;
+              checkbox.checked = this.checkboxStates.get(preset.name) || false;
+              return;
+            }
+            const newChecked = checkbox.checked;
+            if (!handleLockToggle(newChecked)) {
+              checkbox.checked = false;
+              this.checkboxStates.set(preset.name, false);
+              return;
+            }
+            this.checkboxStates.set(preset.name, newChecked);
+          };
+
+          item.onclick = (e) => {
+            if (e.target === checkbox) return;
+            if (_suppressNextItemClick) { _suppressNextItemClick = false; return; }
+            // Tapping the row toggles the first-line reveal open/closed.
+            // Checking a preset for import now happens on the checkbox only,
+            // where the credit logic already lives.
+            if (_openPresetNames.has(preset.name)) {
+              closeReveal();
+            } else {
+              openReveal();
+            }
+          };
+
+          item._importCheckbox = checkbox;
+          _rowElementCache.set(preset.name, item);
+          fragment.appendChild(item);
+          });
+
+          presetsList.appendChild(fragment);
+          if (start === 0) updateImportSelection();
+
+          if (start + CHUNK < filteredPresets.length) {
+            // Leave a frame between bursts so touch input gets served first
+            _buildTimer = setTimeout(() => _buildChunk(start + CHUNK), 16);
+          } else {
+            _buildTimer = null;
+            // The full build is done; every render from here on uses the
+            // show/hide fast path above.
+            _allRowsBuilt = true;
+            // updateImportSelection() forces the scroll position (it snaps back
+            // to the top when the highlight is on row 0). Only safe to run while
+            // the user is still at the top, otherwise it yanks them back.
+            if (scrollContainer.scrollTop === 0) updateImportSelection();
+          }
+        };
+
+        _buildChunk(0);
+      };
+
+      const updateImportSelection = () => {
+        const items = presetsList.querySelectorAll('.menu-item:not(.import-row-hidden)');
+        items.forEach(item => item.classList.remove('menu-selected'));
+
+        if (this.currentImportScrollIndex >= 0 && this.currentImportScrollIndex < items.length) {
+          const currentItem = items[this.currentImportScrollIndex];
+          currentItem.classList.add('menu-selected');
+          if (this.currentImportScrollIndex === 0) {
+            scrollContainer.scrollTop = 0;
+          } else {
+            currentItem.scrollIntoView({ behavior: window._alphaLongPressActive ? 'instant' : 'smooth', block: 'nearest' });
+          }
+        }
+      };
+
+      presetsSection.appendChild(presetsList);
+
+      // Sticky footer with optimized height and no emojis
+      const footerSection = document.createElement('div');
+footerSection.style.cssText = `
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #1a1a1a;
+  z-index: 20;
+  padding: 2px;
+  border-top: 1px solid #333;
+  display: flex;
+  gap: 3px;
+`;
+
+footerSection.innerHTML = `
+  <button id="select-all-presets" style="flex: 1; padding: 0; background: #444; color: white; border: none; border-radius: 2px; font-size: 10px; cursor: pointer; height: 16px !important; min-height: 0 !important; line-height: 16px; box-sizing: border-box !important;">
+    ✓ All
+  </button>
+  <button id="deselect-all-presets" style="flex: 1; padding: 0; background: #444; color: white; border: none; border-radius: 2px; font-size: 10px; cursor: pointer; height: 16px !important; min-height: 0 !important; line-height: 16px; box-sizing: border-box !important;">
+    ✗ None
+  </button>
+  <button id="confirm-import-presets" style="flex: 1; padding: 0; background: #4CAF50; color: white; border: none; border-radius: 2px; font-size: 10px; font-weight: bold; cursor: pointer; height: 16px !important; min-height: 0 !important; line-height: 16px; box-sizing: border-box !important;">
+    Import
+  </button>
+  <button id="cancel-import-presets" style="flex: 1; padding: 0; background: #666; color: white; border: none; border-radius: 2px; font-size: 10px; cursor: pointer; height: 16px !important; min-height: 0 !important; line-height: 16px; box-sizing: border-box !important;">
+    Cancel
+  </button>
+`;
+
+      scrollContainer.appendChild(presetsSection);
+
+      content.appendChild(header);
+      content.appendChild(filterSection);
+      content.appendChild(scrollContainer);
+      modal.appendChild(content);
+      modal.appendChild(footerSection);
+      // Rest the live camera feed while this dialog is open — decoding and
+      // compositing video frames behind an opaque menu wastes the device's
+      // limited graphics power and makes list scrolling choppier. It resumes
+      // automatically in closeModal on every way out of this dialog.
+      const _cameraVideoEl = document.getElementById('video');
+      const _cameraWasPlaying = !!(_cameraVideoEl && !_cameraVideoEl.paused);
+      if (_cameraWasPlaying) { try { _cameraVideoEl.pause(); } catch (e) {} }
+
+      document.body.appendChild(modal);
+
+      renderPresetsList();
+      // Hide the loading spinner now that the list is fully rendered and visible
+      if (window._hideLoadingOverlay) window._hideLoadingOverlay();
+
+      // Event listeners
+      const importFilterBlurBtn = document.getElementById('import-filter-blur-btn');
+      if (importFilterBlurBtn) {
+        let importBlurClickCount = 0;
+        let importBlurClickTimer = null;
+        importFilterBlurBtn.addEventListener('click', () => {
+          importBlurClickCount++;
+          if (importBlurClickCount === 1) {
+            filterInput.blur();
+            importBlurClickTimer = setTimeout(() => { importBlurClickCount = 0; }, 1000);
+          } else {
+            clearTimeout(importBlurClickTimer);
+            importBlurClickCount = 0;
+            filterInput.value = '';
+            this.importFilterText = '';
+            this.currentImportScrollIndex = 0;
+            renderPresetsList();
+          }
+        });
+      }
+
+      const filterInput = document.getElementById('import-preset-filter');
+      let importFilterDebounce = null;
+      filterInput.addEventListener('input', (e) => {
+        this.importFilterText = e.target.value;
+        this.currentImportScrollIndex = 0;
+        if (importFilterDebounce) clearTimeout(importFilterDebounce);
+        importFilterDebounce = setTimeout(() => {
+          renderPresetsList();
+        }, 300);
+      });
+
+      document.getElementById('import-mute-toggle').onclick = () => {
+        this.isMuted = !this.isMuted;
+        if (this.isMuted) {
+          this.stopSpeaking();
+        }
+        document.getElementById('import-mute-toggle').textContent = this.isMuted ? '🔇' : '🔊';
+      };
+
+      // Visual feedback helper — flashes a button briefly when tapped
+      const flashBtn = (id, flashColor) => {
+        const btn = document.getElementById(id);
+        if (!btn) return;
+        const original = btn.style.background;
+        btn.style.transition = 'background 0.1s';
+        btn.style.background = flashColor;
+        setTimeout(() => {
+          btn.style.background = original;
+          btn.style.transition = '';
+        }, 180);
+      };
+
+      document.getElementById('select-all-presets').onclick = () => {
+        flashBtn('select-all-presets', '#aaa');
+        const filteredForCheck = this.getFilteredPresets(availablePresets);
+        const lockedPresets = [];
+        filteredForCheck.forEach(preset => {
+          const isAlreadyImported = this.importedPresets.some(p => p.name === preset.name);
+          const isLocked = !isAlreadyImported && !unlockedNames.has(preset.name) && !permanentlyOwned.has(preset.name) && !preset._sourcePublicBase;
+          if (isLocked) lockedPresets.push(preset);
+        });
+        const currentCredits = loadUnlockState().credits || 0;
+        const canSelectLocked = lockedPresets.length > 0 && currentCredits >= lockedPresets.length;
+        if (lockedPresets.length > 0 && !canSelectLocked) {
+          showImportMessage(
+            `${lockedPresets.length} locked preset${lockedPresets.length !== 1 ? 's' : ''} skipped — you have ${currentCredits} credit${currentCredits !== 1 ? 's' : ''} (need ${lockedPresets.length}). Select locked presets individually to use your credits.`
+          );
+        }
+        // Spend credits immediately for all locked presets if we can cover them all
+        if (canSelectLocked) {
+          lockedPresets.forEach(preset => {
+            if (sessionUnlocked.has(preset.name)) return; // already spent this session, skip
+            unlockPresetWithCredit(preset.name);
+            sessionUnlocked.add(preset.name);
+            unlockedNames.add(preset.name);
+          });
+          updateCreditDisplay();
+        }
+        // Flip the checkbox states and re-render directly. No spinner: the
+        // rows are already built, so this is instant (the show/hide fast path).
+        // The old spinner overwrote the list's innerHTML, which DETACHED the
+        // cached rows — then the fast path toggled classes on those detached
+        // rows without re-attaching them, leaving the spinner stuck forever.
+        const filteredPresets = this.getFilteredPresets(availablePresets);
+        filteredPresets.forEach(preset => {
+          const isAlreadyImported = this.importedPresets.some(p => p.name === preset.name);
+          const isNowLocked = !isAlreadyImported && !unlockedNames.has(preset.name) && !permanentlyOwned.has(preset.name) && !preset._sourcePublicBase;
+          if (!isNowLocked) {
+            this.checkboxStates.set(preset.name, true);
+          }
+        });
+        renderPresetsList();
+      };
+
+      document.getElementById('deselect-all-presets').onclick = () => {
+        flashBtn('deselect-all-presets', '#aaa');
+        // Flip states and re-render directly (see select-all note above: the
+        // spinner used to detach the cached rows and freeze the list).
+        const filteredPresets = this.getFilteredPresets(availablePresets);
+        filteredPresets.forEach(preset => {
+          // Refund credit if this preset was session-unlocked but not yet imported
+          if (sessionUnlocked.has(preset.name)) {
+            refundCredit(preset.name);
+            sessionUnlocked.delete(preset.name);
+            unlockedNames.delete(preset.name);
+          }
+          this.checkboxStates.set(preset.name, false);
+        });
+        updateCreditDisplay();
+        renderPresetsList();
+      };
+
+      const closeModal = () => {
+        // Refund credits for presets unlocked this session but never imported
+        sessionUnlocked.forEach(name => {
+          refundCredit(name);
+          unlockedNames.delete(name);
+        });
+        sessionUnlocked.clear();
+        this.isImportModalOpen = false;
+        this.stopSpeaking();
+        // Wake the camera feed back up (paused while this dialog was open)
+        if (_cameraWasPlaying && _cameraVideoEl) {
+          try { _cameraVideoEl.play().catch(() => {}); } catch (e) {}
+        }
+        document.body.removeChild(modal);
+      };
+
+      modal.querySelector('#close-import-modal').onclick = () => {
+        closeModal();
+        resolve(null);
+      };
+
+      document.getElementById('cancel-import-presets').onclick = () => {
+        flashBtn('cancel-import-presets', '#999');
+        setTimeout(() => {
+          closeModal();
+          resolve(null);
+        }, 200);
+      };
+
+      document.getElementById('confirm-import-presets').onclick = () => {
+        flashBtn('confirm-import-presets', '#80e880');
+        const checkedPresets = availablePresets.filter(preset =>
+          this.checkboxStates.get(preset.name) === true
+        );
+
+        // Credits were already spent when the user clicked each preset.
+        // Mark imported presets as owned so closeModal does not refund them.
+        // Also permanently record ownership — these presets are free to re-import forever.
+        const _ownState = loadUnlockState();
+        if (!_ownState.ownedPresets) _ownState.ownedPresets = [...STARTER_PRESETS];
+        let _ownershipChanged = false;
+        checkedPresets.forEach(preset => {
+          sessionUnlocked.delete(preset.name);
+          if (!_ownState.ownedPresets.includes(preset.name)) {
+            _ownState.ownedPresets.push(preset.name);
+            _ownershipChanged = true;
+          }
+        });
+        if (_ownershipChanged) saveUnlockState(_ownState);
+
+        setTimeout(() => {
+          closeModal();
+          resolve(checkedPresets);
+        }, 200);
+      };
+
+      // ── Reusable alpha jump functions (used by both double-tap and hard-press) ──
+      const _importJumpUp = () => {
+        const items = Array.from(presetsList.querySelectorAll('.menu-item:not(.import-row-hidden)'));
+        if (!items.length) return;
+        const idx = Math.max(0, Math.min(this.currentImportScrollIndex, items.length - 1));
+        const currentItem = items[idx];
+        const currentName = (currentItem.dataset.presetName || '').trim();
+        const currentLetter = stripAccents(currentName).toUpperCase().charAt(0);
+        const currentIsNewOrUpdated = !!currentItem.querySelector('.preset-ticket');
+        for (let i = idx - 1; i >= 0; i--) {
+          const item = items[i];
+          const isNewOrUpdated = !!item.querySelector('.preset-ticket');
+          const nm = (item.dataset.presetName || '').trim();
+          const letter = stripAccents(nm).toUpperCase().charAt(0);
+          // Jump on either a new letter OR crossing the new/updated vs installed boundary
+          if (letter !== currentLetter || isNewOrUpdated !== currentIsNewOrUpdated) {
+            let firstOfLetter = i;
+            while (firstOfLetter > 0) {
+              const prevItem = items[firstOfLetter - 1];
+              if (!!prevItem.querySelector('.preset-ticket') !== isNewOrUpdated) break;
+              const prevNm = (prevItem.dataset.presetName || '').trim();
+              if (stripAccents(prevNm).toUpperCase().charAt(0) !== letter) break;
+              firstOfLetter--;
+            }
+            this.currentImportScrollIndex = firstOfLetter;
+            updateImportSelection();
+            if (window._showAlphaOverlay) window._showAlphaOverlay(letter);
+            return;
+          }
+        }
+      };
+
+      const _importJumpDown = () => {
+        const items = Array.from(presetsList.querySelectorAll('.menu-item:not(.import-row-hidden)'));
+        if (!items.length) return;
+        const idx = Math.max(0, Math.min(this.currentImportScrollIndex, items.length - 1));
+        const currentItem = items[idx];
+        const currentName = (currentItem.dataset.presetName || '').trim();
+        const currentLetter = stripAccents(currentName).toUpperCase().charAt(0);
+        const currentIsNewOrUpdated = !!currentItem.querySelector('.preset-ticket');
+        for (let i = idx + 1; i < items.length; i++) {
+          const item = items[i];
+          const isNewOrUpdated = !!item.querySelector('.preset-ticket');
+          const nm = (item.dataset.presetName || '').trim();
+          const letter = stripAccents(nm).toUpperCase().charAt(0);
+          // Jump on either a new letter OR crossing the new/updated vs installed boundary
+          if (letter !== currentLetter || isNewOrUpdated !== currentIsNewOrUpdated) {
+            this.currentImportScrollIndex = i;
+            updateImportSelection();
+            if (window._showAlphaOverlay) window._showAlphaOverlay(letter);
+            return;
+          }
+        }
+      };
+
+      let importUpTimer = null;
+      let importUpCount = 0;
+      document.getElementById('import-jump-to-top').onclick = () => {
+        importUpCount++;
+        if (importUpTimer) clearTimeout(importUpTimer);
+        importUpTimer = setTimeout(() => {
+          importUpTimer = null;
+          const count = importUpCount;
+          importUpCount = 0;
+          if (count === 1) {
+            scrollContainer.scrollTop = Math.max(0, scrollContainer.scrollTop - scrollContainer.clientHeight);
+            const items = presetsList.querySelectorAll('.menu-item:not(.import-row-hidden)');
+            const containerTop = scrollContainer.getBoundingClientRect().top;
+            for (let i = 0; i < items.length; i++) {
+              if (items[i].getBoundingClientRect().top >= containerTop) {
+                this.currentImportScrollIndex = i;
+                break;
+              }
+            }
+            updateImportSelection();
+          } else if (count === 2) {
+            _importJumpUp();
+          } else {
+            scrollContainer.scrollTop = 0;
+            this.currentImportScrollIndex = 0;
+            updateImportSelection();
+          }
+        }, 300);
+      };
+
+      let importDownTimer = null;
+      let importDownCount = 0;
+      document.getElementById('import-jump-to-bottom').onclick = () => {
+        importDownCount++;
+        if (importDownTimer) clearTimeout(importDownTimer);
+        importDownTimer = setTimeout(() => {
+          importDownTimer = null;
+          const count = importDownCount;
+          importDownCount = 0;
+          if (count === 1) {
+            scrollContainer.scrollTop = Math.min(
+              scrollContainer.scrollHeight - scrollContainer.clientHeight,
+              scrollContainer.scrollTop + scrollContainer.clientHeight
+            );
+            const items = presetsList.querySelectorAll('.menu-item:not(.import-row-hidden)');
+            const containerTop = scrollContainer.getBoundingClientRect().top;
+            for (let i = 0; i < items.length; i++) {
+              if (items[i].getBoundingClientRect().top >= containerTop) {
+                this.currentImportScrollIndex = i;
+                break;
+              }
+            }
+            updateImportSelection();
+          } else if (count === 2) {
+            _importJumpDown();
+          } else {
+            scrollContainer.scrollTop = scrollContainer.scrollHeight;
+            const items = presetsList.querySelectorAll('.menu-item:not(.import-row-hidden)');
+            this.currentImportScrollIndex = items.length - 1;
+            updateImportSelection();
+          }
+        }, 300);
+      };
+
+      // Wire up hard-press (long press) jump for import buttons
+      if (window._addAlphaLongPress) {
+        window._addAlphaLongPress(
+          document.getElementById('import-jump-to-top'),
+          _importJumpUp
+        );
+        window._addAlphaLongPress(
+          document.getElementById('import-jump-to-bottom'),
+          _importJumpDown
+        );
+      }
+
+      this.scrollImportUp = () => {
+        const items = presetsList.querySelectorAll('.menu-item:not(.import-row-hidden)');
+        if (items.length === 0) return;
+        this.currentImportScrollIndex = Math.max(0, this.currentImportScrollIndex - 1);
+        updateImportSelection();
+      };
+
+      this.scrollImportDown = () => {
+        const items = presetsList.querySelectorAll('.menu-item:not(.import-row-hidden)');
+        if (items.length === 0) return;
+        this.currentImportScrollIndex = Math.min(items.length - 1, this.currentImportScrollIndex + 1);
+        updateImportSelection();
+      };
+
+      scrollContainer.style.overflowY = 'auto';
+      scrollContainer.style.overscrollBehavior = 'contain';
+    });
+  }
+
+  async import() {
+    try {
+      // The session cache is already cleared automatically whenever the preset
+      // file settings change (see saveCustomPresetSources / saveDefaultPresetEnabled),
+      // so there is no need to re-download every time this screen opens.
+      // The one exception: if a source failed on the last load, retry it now in
+      // case it was only a temporary network problem.
+      if (getLastLoadFailures().length > 0) {
+        window._cachedFactoryPresets = null;
+      }
+      const availablePresets = await this.loadPresetsFromFile();
+
+      // Load failures are shown as a banner inside the import modal below
+
+      if (availablePresets.length === 0) {
+        return { success: false, message: 'No presets found in any active source.' };
+      }
+
+      const selectedPresets = await this.showPresetSelectionUI(availablePresets);
+      
+      if (selectedPresets === null) {
+        return { success: false, message: 'cancelled' };
+      }
+
+      if (selectedPresets.length === 0) {
+        return { success: false, message: 'No presets selected' };
+      }
+
+      // NEW LOGIC: Replace existing presets with same name (updates), add new ones
+      const existingMap = new Map(this.importedPresets.map(p => [p.name, p]));
+      let updatedCount = 0;
+      let newCount = 0;
+      
+      selectedPresets.forEach(preset => {
+        if (existingMap.has(preset.name)) {
+          // Update existing preset
+          existingMap.set(preset.name, preset);
+          updatedCount++;
+        } else {
+          // Add new preset
+          existingMap.set(preset.name, preset);
+          newCount++;
+        }
+      });
+      
+      const allImported = Array.from(existingMap.values());
+      
+      await this.saveImportedPresets(allImported);
+
+      let message = '';
+      if (updatedCount > 0 && newCount > 0) {
+        message = `Updated ${updatedCount}, imported ${newCount} new. Total: ${allImported.length}`;
+      } else if (updatedCount > 0) {
+        message = `Updated ${updatedCount} preset(s). Total: ${allImported.length}`;
+      } else {
+        message = `Imported ${newCount} new preset(s). Total: ${allImported.length}`;
+      }
+
+      return { 
+        success: true, 
+        message: message,
+        updated: updatedCount,
+        new: newCount,
+        total: allImported.length
+      };
+    } catch (error) {
+      return { success: false, message: error.message };
+    }
+  }
+
+  async deletePreset(presetName) {
+    const index = this.importedPresets.findIndex(p => p.name === presetName);
+    if (index >= 0) {
+      this.importedPresets.splice(index, 1);
+      await this.saveImportedPresets(this.importedPresets);
+      return true;
+    }
+    return false;
+  }
+
+  async clearImportedPresets() {
+    if (!this.db) {
+      await this.init();
+    }
+
+    return new Promise((resolve, reject) => {
+      const transaction = this.db.transaction([IMPORT_STORE_NAME], 'readwrite');
+      const store = transaction.objectStore(IMPORT_STORE_NAME);
+      const request = store.clear();
+
+      request.onsuccess = () => {
+        this.importedPresets = [];
+        resolve();
+      };
+      request.onerror = () => reject(request.error);
+    });
+  }
+
+  getImportedPresets() {
+    return this.importedPresets;
+  }
+}
+
+export const presetImporter = new PresetImporter();
