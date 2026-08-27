@@ -13609,6 +13609,20 @@
     "additionalInstructions": "RESTRICTIONS:\n• No cartoon or illustrated styles\n• No text overlays or captions\n• No modern digital glitch effects\n\nFINAL RESULT:\nThe image should look like a rare, physically damaged film negative — unsettling, tactile, and visually haunting, while still clearly depicting the subject."
   },
   {
+    "name": "DITHERED PHOTOREALISM",
+    "category": [
+      "ART",
+      "DIGITAL",
+      "PRINTING",
+      "HALFTONE",
+      "TRANSFORMATION"
+    ],
+    "message": "Take a picture and completely reconstruct it using extremely fine photographic dithering. The subject and image must be rebuilt from intelligently distributed microscopic dots whose density, spacing, and clustering reproduce the original tonal information while making the underlying photograph disappear.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "• Every major tonal area must be reconstructed through dot density.\n• Use extremely fine dots for photographic detail.\n• Darker regions use greater dot density.\n• Lighter regions use sparse dot distributions.\n• Preserve facial identity and recognizable features.\n• Do not simply overlay dots on top of a photograph.\n• The underlying photograph must be replaced by the dithered reconstruction.\n• Use controlled tonal transitions.\n• Maintain photographic depth and detail through dot distribution.\n• Avoid obvious pixel blocks.\n• Avoid ordinary halftone newspaper dots unless they naturally arise from the dithering process.\n\nMASTER PROMPT RULE:\n• Incorporate master-prompt information while maintaining complete dither reconstruction.\n\nFINAL VALIDATION:\n✓ Photograph has been reconstructed from dots.\n✓ Original photographic surface is not simply visible underneath.\n✓ Dot density creates tonal detail.\n✓ Identity remains recognizable.\n✓ If ANY answer is NO, regenerate."
+  },
+  {
     "name": "DIVISIONISM",
     "category": [
       "ART",
@@ -21229,6 +21243,20 @@
     "additionalInstructions": "FINAL RESULT:\nAn authentic GoldSrc-era Half-Life gameplay screenshot where the entire original image has been converted into the visual language of the original 1998 game. Preserve composition while transforming all architecture, objects, environments, lighting, and characters into assets and aesthetics consistent with Black Mesa, Xen, military operations, and scientific experimentation. People become Gordon Freeman, scientists, security guards, HECU marines, or other authentic character types. Animals become actual Half-Life creatures. Objects become weapons, equipment, pickups, machinery, or scientific apparatus from the game world. Environments become believable Black Mesa sectors, industrial facilities, military areas, or Xen locations. The final image must convincingly appear as a genuine screenshot from the original Half-Life running on the GoldSrc engine, complete with period-accurate graphics, HUD, textures, lighting, geometry, and atmosphere."
   },
   {
+    "name": "HALFTONE SCULPTURE",
+    "category": [
+      "ART",
+      "SCULPTURE",
+      "HALFTONE",
+      "TYPOGRAPHIC",
+      "TRANSFORMATION"
+    ],
+    "message": "Take a picture and completely reconstruct the subject as a three-dimensional halftone sculpture. The subject must be physically formed from thousands of individual raised or recessed dots whose diameter, height, density, and spacing collectively reproduce the subject's volume, anatomy, texture, and tonal structure.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "• The subject itself must be made from three-dimensional dots.\n• Dots must have physical height or depth.\n• Larger or taller dots may describe darker or more prominent areas.\n• Smaller or shallower dots may describe lighter areas.\n• Vary dot density across the subject.\n• Use curved dot surfaces to model three-dimensional anatomy.\n• Preserve recognizable facial identity through the arrangement of dots.\n• Do not simply place a halftone texture over a normal object.\n• The original subject must disappear and be replaced by the dot sculpture.\n• Lighting must reveal the physical relief of the dots.\n• The result should appear physically manufactured or sculpted.\n\nMASTER PROMPT RULE:\n• Incorporate master-prompt information while maintaining the three-dimensional halftone construction.\n\nFINAL VALIDATION:\n✓ Subject is physically constructed from dots.\n✓ Dots have dimensional height/depth.\n✓ Dot density and size model the subject.\n✓ Original subject has been transformed rather than textured.\n✓ If ANY answer is NO, regenerate."
+  },
+  {
     "name": "HALITE CRYSTAL CLUSTER",
     "category": [
       "TRANSFORMATION",
@@ -23488,6 +23516,20 @@
     "additionalInstructions": "The paint texture must appear three-dimensional. Subject identity must be preserved through accurate proportions and value structure despite the bold, simplified application."
   },
   {
+    "name": "IMPOSSIBLE OBJECT",
+    "category": [
+      "ART",
+      "SURREALISM",
+      "GEOMETRIC",
+      "SCULPTURE",
+      "TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform the subject into a physically impossible object that nevertheless appears perfectly engineered and believable. Reconstruct the subject as one coherent object whose geometry, structure, surfaces, and spatial relationships could not physically exist under normal laws of perspective or geometry.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "• The subject itself must become the impossible object.\n• Do not merely place the subject beside an impossible object.\n• Use impossible connections, Penrose-like structures, contradictory surfaces, impossible openings, recursive geometry, or physically incompatible orientations.\n• Maintain convincing materials, lighting, shadows, and surface detail.\n• Preserve recognizable aspects of the original subject.\n• The impossibility should emerge from geometry rather than fantasy decoration.\n• The result should look engineered, deliberate, and physically convincing despite being impossible.\n• Avoid random deformation.\n\nMASTER PROMPT RULE:\n• Incorporate master-prompt information while maintaining the impossible-object transformation.\n\nFINAL VALIDATION:\n✓ Subject itself has become an impossible object.\n✓ Impossible geometry is deliberate.\n✓ Materials and lighting remain believable.\n✓ Original subject remains recognizable.\n✓ If ANY answer is NO, regenerate."
+  },
+  {
     "name": "INANIMATE INSANITY",
     "category": [
       "CARTOON",
@@ -23809,6 +23851,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "INVESTMENT CASTING ENFORCEMENT (FOR SUBJECT, CRITICAL):\n\n• The subject must immediately appear investment cast rather than sand cast or die cast.\n• Extremely fine sculptural detail on the subject is mandatory.\n• Preserve crisp edges and delicate features on the subject.\n• Maintain authentic lost-wax casting quality for the subject.\n\nFOUNDRY ENFORCEMENT (FOR SUBJECT):\n\n• Include subtle gate removal scars on the subject.\n• Include evidence of sprue removal on the subject.\n• Blend all finishing on the subject professionally.\n• Eliminate visible casting flash from the subject.\n• Preserve authentic ceramic-shell casting characteristics on the subject.\n\nMATERIAL ENFORCEMENT (FOR SUBJECT):\n\n• Every visible surface of the subject must be cast metal.\n• No paint on the subject.\n• No plastic on the subject.\n• No exposed organic material on the subject.\n• No realistic skin on the subject.\n• No realistic eyes on the subject.\n\nSURFACE ENFORCEMENT (FOR SUBJECT):\n\n• Preserve smooth satin cast finish on the subject.\n• Maintain exceptionally crisp detail reproduction on the subject.\n• Avoid rough sand-cast texture on the subject.\n• Avoid machining marks on the subject.\n\nBACKGROUND ENFORCEMENT (CRITICAL):\n\n• Retain the background exactly as it is in the original image. The transformation applies *only* to the subject.\n\nFINAL ENFORCEMENT:\n\n• The subject should be indistinguishable from a museum-quality precision investment casting produced by the traditional lost-wax process, displaying authentic manufacturing characteristics, exceptional detail fidelity, and professional foundry finishing throughout, all while integrated naturally into the original, unchanged background environment."
+  },
+  {
+    "name": "INVISIBLE SCULPTURE",
+    "category": [
+      "ART",
+      "SCULPTURE",
+      "OPTICAL",
+      "SURREALISM",
+      "TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform the subject into an almost invisible physical sculpture. Remove nearly all visible solid surface while preserving the subject's recognizable three-dimensional presence through displaced reflections, cast shadows, highlights, refractions, environmental distortions, condensation-like contours, and subtle interaction with surrounding light and surfaces.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "• The subject itself must become nearly invisible.\n• Do not simply make the subject transparent.\n• Do not leave a normal person or object visible underneath.\n• Represent the subject through its physical effect on the environment.\n• Use cast shadows corresponding precisely to the invisible form.\n• Use reflections corresponding to the invisible sculpture's surfaces.\n• Use subtle refraction and distortion of the background around the sculpture.\n• Use highlights along otherwise invisible contours.\n• Use environmental occlusion and displaced light.\n• The three-dimensional silhouette should remain inferable.\n• Preserve recognizable identity through the arrangement of shadows, reflections, distortions, and highlights.\n• The result should look like an actual invisible sculpture occupying physical space.\n• Avoid magical glowing outlines.\n• Avoid neon edges.\n• Avoid cartoon invisibility effects.\n• Avoid simply lowering opacity.\n\nMASTER PROMPT RULE:\n• Incorporate master-prompt information while maintaining the invisible-sculpture transformation.\n\nFINAL VALIDATION:\n✓ The visible solid subject has essentially disappeared.\n✓ Physical presence remains evident through shadows, reflections, highlights, and distortion.\n✓ The subject's three-dimensional form remains inferable.\n✓ The result does not look like a transparent person/object.\n✓ No glowing outline has been substituted for the sculpture.\n✓ If ANY answer is NO, regenerate."
   },
   {
     "name": "iPHONE CAMERA",
@@ -28858,6 +28914,20 @@
     ],
     "randomizeOptions": true,
     "additionalInstructions": "FINAL RESULT:\nThe image must depict the subject themselves physically melting — their body geometry collapsing, deforming, elongating, and dripping downward as a single continuous material — with no intact human surface remaining beneath the melt. The subject’s identity is preserved only through distorted form and proportion, while the body dissolves into flowing material and pools at the base, creating a convincing, gravity-driven melting transformation rather than a surface-level overlay."
+  },
+  {
+    "name": "MELTING GEOMETRY",
+    "category": [
+      "ART",
+      "SURREALISM",
+      "GEOMETRIC",
+      "ABSTRACT",
+      "TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform the subject into a mathematically perfect geometric structure that gradually melts into organic, flowing, liquid-like forms. The transformation must visibly progress across the subject from precise geometry into increasingly fluid and distorted matter.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "• Begin with mathematically precise geometric construction.\n• Use perfect circles, polygons, grids, planes, cubes, cylinders, and controlled symmetry.\n• Gradually transition these forms into flowing organic matter.\n• The melting should occur progressively rather than randomly.\n• Preserve recognizable identity through the underlying structure.\n• Allow edges to soften and flow as geometry transitions into organic forms.\n• Use realistic liquid/material behavior where appropriate.\n• Do not simply liquefy the photograph.\n• The geometric structure must be visible before and during the transformation.\n• The final image should contain a clear visual progression from mathematical order to organic disorder.\n\nMASTER PROMPT RULE:\n• Incorporate master-prompt information while maintaining the geometry-to-organic transformation.\n\nFINAL VALIDATION:\n✓ Subject begins as precise geometry.\n✓ Geometry visibly transitions into organic/melting forms.\n✓ Transformation is progressive.\n✓ Subject remains recognizable.\n✓ Result is not merely a liquify filter.\n✓ If ANY answer is NO, regenerate."
   },
   {
     "name": "MEME",
@@ -39978,6 +40048,274 @@
     ],
     "randomizeOptions": true,
     "additionalInstructions": "FINAL RESULT:\nThe image should show the subject as an actual contestant on the selected reality TV show with authentic set design, show graphics, appropriate wardrobe, and that signature reality TV dramatic moment - looking like a screenshot from an actual episode."
+  },
+  {
+    "name": "REAL LIFE EMOJI",
+    "category": [
+      "EMOJI",
+      "HUMOR",
+      "PORTRAIT",
+      "TRANSFORMATION",
+      "EXPRESSION",
+      "PHOTOREALISTIC"
+    ],
+    "message": "Take a picture and transform ONLY the subject into a photorealistic real-life interpretation of the selected emoji expression. Preserve the subject's recognizable identity, facial structure, hairstyle, clothing, body, and original environment unless the selected emoji expression requires a specific body or hand position.\n\nThe subject must NOT become an emoji, cartoon, illustration, or emoji graphic. Instead, make the ORIGINAL PERSON physically perform and embody the selected emoji's recognizable facial expression, eye configuration, mouth shape, tears, symbols, sweat, blush, or gesture as a believable real-world photographic transformation.\n\nThe transformation must be immediately recognizable as the selected emoji while still looking like the original subject.\n\nThe emoji effect must be physically integrated into the subject rather than pasted, composited, or overlaid as a graphic.\n\nMASTER PROMPT RULE:\n• If the master prompt specifies a particular emoji, expression, pose, action, clothing, setting, or visual direction, ALWAYS incorporate that information while maintaining the REAL LIFE EMOJI transformation.\n• The selected emoji option determines the required expression and physical transformation.\n• Preserve the subject's identity unless the selected emoji specifically requires a physical facial distortion.\n• Do not replace the subject with a generic person.",
+    "options": [
+    {
+      "id": "001",
+      "text": "ROFL 🤣 — Transform the subject into a real-life rolling-on-the-floor-laughing expression: head dramatically tilted sideways, mouth opened wide in uncontrollable laughter with clearly visible teeth, eyes squeezed or distorted from intense laughter, and two realistic exaggerated tear drops escaping from the outer corners of the eyes. Preserve the subject's identity."
+    },
+    {
+      "id": "002",
+      "text": "SOBBING 😭 — Transform the subject into an extreme real-life sobbing expression: eyes tightly closed with two enormous continuous streams of realistic tears pouring downward from the closed eyes, deeply distressed mouth and facial expression, while preserving the subject's recognizable face."
+    },
+    {
+      "id": "003",
+      "text": "THINKING 🤔 — Transform the subject into the classic thinking emoji pose: one eyebrow raised, eyes looking upward, lips pursed or slightly compressed, with one hand naturally touching the chin or mouth in a thoughtful pose. Preserve identity."
+    },
+    {
+      "id": "004",
+      "text": "ZANY FACE 🤪 — Transform the subject into a real-life zany face: one eye dramatically larger than the other, the smaller eye slightly squinted, mouth opened wide with tongue sticking out to one side, creating the unmistakable exaggerated goofy emoji expression while preserving recognizable identity."
+    },
+    {
+      "id": "005",
+      "text": "FACE WITH SYMBOLS OVER MOUTH 🤬 — Transform the subject into a furious real-life expression with a bright red flushed face and the mouth physically covered by clearly recognizable symbols such as @, #, %, &, and * integrated across the mouth area. The symbols must appear as part of the physical expression rather than printed graphics."
+    },
+    {
+      "id": "006",
+      "text": "GRINNING 😀 — Give the subject an enormous exaggerated toothy grin extending naturally across the face, with raised cheeks and intensely cheerful eyes while preserving identity."
+    },
+    {
+      "id": "007",
+      "text": "GRINNING WITH BIG EYES 😃 — Transform the subject into an exaggerated delighted expression with a huge toothy smile and unnaturally wide-open excited eyes, while retaining recognizable identity."
+    },
+    {
+      "id": "008",
+      "text": "GRINNING WITH SMILING EYES 😄 — Transform the subject into overwhelming genuine happiness: huge open smile, raised cheeks, bright sparkling eyes, lifted eyebrows, and an exaggerated joyful expression."
+    },
+    {
+      "id": "009",
+      "text": "TEARS OF JOY 😂 — Transform the subject into uncontrollable laughing happiness with a huge open smile and multiple realistic tears streaming from both eyes."
+    },
+    {
+      "id": "010",
+      "text": "LAUGHING 😆 — Give the subject an exaggerated open-mouth laughing expression with visible teeth, closed or nearly closed laughing eyes, raised cheeks, and natural laughter wrinkles."
+    },
+    {
+      "id": "011",
+      "text": "SMILING WITH SWEAT 😅 — Transform the subject into a nervous real-life smile: forced broad smile, slightly worried eyes, raised eyebrows, and one enormous realistic bead of sweat running down the side of the face."
+    },
+    {
+      "id": "012",
+      "text": "WINK 😉 — Transform the subject into a dramatic real-life wink: one eye completely closed, the other eye open and expressive, with one eyebrow slightly raised and a playful smile."
+    },
+    {
+      "id": "013",
+      "text": "KISSING FACE 😗 — Transform the subject into an exaggerated kissing expression: lips puckered forward into a pronounced kiss, slightly raised cheeks, relaxed eyes, and a playful romantic expression."
+    },
+    {
+      "id": "014",
+      "text": "KISSING WITH HEART 😘 — Give the subject an exaggerated puckered kissing face while a realistic red heart appears to emerge naturally from the subject's lips like a physical expression of affection."
+    },
+    {
+      "id": "015",
+      "text": "HEART EYES 😍 — Transform the subject's eyes into realistic heart-shaped pupils/irises while giving the subject an intensely delighted romantic expression and broad smile. The heart shapes must be physically integrated into the eyes, not graphic overlays."
+    },
+    {
+      "id": "016",
+      "text": "STAR-STRUCK 🤩 — Transform the subject's eyes into realistic glowing star-shaped highlights/pupils with an amazed open-mouth expression, raised eyebrows, and delighted astonishment."
+    },
+    {
+      "id": "017",
+      "text": "WOW 😮 — Transform the subject into an exaggerated astonished expression: eyes enormously widened, eyebrows raised extremely high, and mouth forming a large round O of amazement."
+    },
+    {
+      "id": "018",
+      "text": "SHOCKED 😲 — Give the subject a dramatic shocked expression: eyes wide open, eyebrows raised, mouth hanging open, jaw dropped, and facial muscles visibly frozen in disbelief."
+    },
+    {
+      "id": "019",
+      "text": "SCREAMING 😱 — Transform the subject into an exaggerated scream: eyes tightly squeezed or wildly opened, eyebrows raised, mouth stretched dramatically wide with visible teeth and tongue."
+    },
+    {
+      "id": "020",
+      "text": "FEAR 😨 — Give the subject a photorealistic extreme-fear emoji expression: eyes extremely wide, eyebrows raised and tense, mouth open in alarm, with subtle trembling facial tension."
+    },
+    {
+      "id": "021",
+      "text": "COLD SWEAT FEAR 😰 — Transform the subject into a terrified expression with wide eyes, tense mouth, raised eyebrows, pale anxious appearance, and multiple oversized realistic beads of sweat across the forehead and face."
+    },
+    {
+      "id": "022",
+      "text": "WORRIED 😟 — Transform the subject into a deeply worried emoji expression: eyebrows raised toward the center, tense eyes, slightly downturned mouth, and visibly anxious facial muscles."
+    },
+    {
+      "id": "023",
+      "text": "PLEADING 🥺 — Give the subject enormous watery pleading eyes, raised inner eyebrows, slightly puckered lips, and an exaggerated imploring expression as if silently begging for mercy."
+    },
+    {
+      "id": "024",
+      "text": "ANGRY 😠 — Transform the subject into an unmistakably furious real-life expression: sharply furrowed eyebrows, narrowed eyes, tense jaw, clenched teeth or tightly pressed lips, and intense facial tension."
+    },
+    {
+      "id": "025",
+      "text": "PENSIVE 😔 — Transform the subject into a deeply contemplative expression with lowered eyes, slightly furrowed eyebrows, pursed lips, and a distant thoughtful gaze."
+    },
+    {
+      "id": "026",
+      "text": "CONFUSED 😕 — Give the subject an exaggerated confused expression: one eyebrow raised substantially higher than the other, eyes looking in slightly different directions, and mouth crooked into an uncertain expression."
+    },
+    {
+      "id": "027",
+      "text": "UNAMUSED 😒 — Transform the subject into a completely deadpan real-life emoji expression: half-lidded eyes, straight mouth, lowered eyebrows, and an unmistakable 'I am not impressed' look."
+    },
+    {
+      "id": "028",
+      "text": "ROLLING EYES 🙄 — Transform the subject into an exaggerated eye-roll: eyes rotated dramatically upward so mostly the whites are visible, with an irritated closed-mouth expression."
+    },
+    {
+      "id": "029",
+      "text": "SMIRK 😏 — Give the subject a highly recognizable crooked smirk: one corner of the mouth raised, one eyebrow subtly lifted, and a knowing, mischievous expression."
+    },
+    {
+      "id": "030",
+      "text": "DEVILISH 😈 — Transform the subject into a mischievous devilish expression: broad wicked grin, raised eyebrows, narrowed playful eyes, and subtle realistic red coloration to the face without turning the subject into a demon."
+    },
+    {
+      "id": "031",
+      "text": "NERD 🤓 — Transform the subject into a real-life nerd emoji expression: large realistic round glasses, wide intelligent eyes, slightly awkward smile, and an exaggerated studious expression."
+    },
+    {
+      "id": "032",
+      "text": "MONOCLE 🧐 — Give the subject an exaggerated sophisticated expression with one large realistic monocle over one eye, raised eyebrow, and smugly composed mouth."
+    },
+    {
+      "id": "033",
+      "text": "MONEY FACE 🤑 — Transform the subject into a delighted money-expression: enormous excited grin and realistic green-tinted money-symbol pupils integrated into the eyes, while preserving the subject's identity."
+    },
+    {
+      "id": "034",
+      "text": "ZIPPER MOUTH 🤐 — Transform the subject into a real-life silent expression where the lips appear naturally sealed by a realistic zipper running across the mouth. Preserve the rest of the subject's actual face."
+    },
+    {
+      "id": "035",
+      "text": "MASKED MOUTH 😷 — Transform the subject into a real-life expression where a simple realistic medical-style mask covers the mouth while the eyes and eyebrows communicate an exaggerated expression of disbelief or annoyance."
+    },
+    {
+      "id": "036",
+      "text": "DIZZY 😵‍💫 — Transform the subject into a dizzy real-life emoji expression: eyes appearing as realistic spiraling patterns, unfocused expression, slightly tilted head, and open or slack mouth."
+    },
+    {
+      "id": "037",
+      "text": "SLEEPING 😴 — Transform the subject into an exaggerated sleeping emoji expression: eyes completely closed, relaxed facial muscles, open slack mouth, and realistic visual signs of deep sleep while preserving identity."
+    },
+    {
+      "id": "038",
+      "text": "RELIEVED 😌 — Give the subject a deeply relieved expression: closed smiling eyes, relaxed eyebrows, gentle smile, and an unmistakable sense of tension finally disappearing from the face."
+    },
+    {
+      "id": "039",
+      "text": "SHUSHING 🤫 — Transform the subject into a secretive 'keep quiet' emoji expression: one finger naturally held vertically against the lips, widened knowing eyes, and a subtle serious expression."
+    },
+    {
+      "id": "040",
+      "text": "PARTY FACE 🥳 — Transform the subject into an exuberant party expression: enormous joyful smile, excited wide eyes, celebratory facial expression, and a realistic party-hat appearance while preserving the subject's identity."
+    },
+    {
+      "id": "041",
+      "text": "COLD FACE 🥶 — Transform the subject into an exaggerated frozen expression: skin visibly covered with frost and ice crystals, eyebrows and eyelashes lightly frosted, lips blue-tinted and trembling, breath visibly freezing into mist, while preserving the subject's recognizable identity."
+    },
+    {
+      "id": "042",
+      "text": "EXPLODING HEAD 🤯 — Transform the subject so the top of the head appears to be explosively bursting apart in a spectacular but non-gory cloud of smoke, fragments, and exaggerated visual energy, while the face remains recognizable and intact."
+    },
+    {
+      "id": "043",
+      "text": "RAGE 😡 — Transform the subject into an extreme physical embodiment of rage: intensely red flushed face, veins visibly pronounced at the temples, bulging furious eyes, clenched teeth, wildly furrowed brows, and an explosively furious expression."
+    },
+    {
+      "id": "044",
+      "text": "HOT FACE 🥵 — Transform the subject into an exaggerated overheated expression: face intensely flushed, forehead covered in oversized beads of sweat, cheeks red, hair damp, mouth open while desperately trying to cool down, and visible heat haze immediately around the face."
+    },
+    {
+      "id": "045",
+      "text": "MELTING FACE 🫠 — Transform the subject's face into a surreal but photorealistic melting version of itself, with facial features visibly drooping and flowing downward like soft wax while retaining recognizable identity."
+    },
+    {
+      "id": "046",
+      "text": "STEAMING 😤 — Transform the subject into an exaggerated furious expression with visible steam physically rising from the ears and head, intensely flushed skin, narrowed eyes, clenched teeth, and an expression of extreme frustration."
+    },
+    {
+      "id": "047",
+      "text": "WOOZY FACE 🥴 — Transform the subject into the Woozy Face emoji: one eye partially closed, the other eye appearing unfocused, uneven raised eyebrows, and a crooked, drunken-looking grimace while preserving the subject's identity."
+    },
+    {
+      "id": "048",
+      "text": "EXHALING FACE 😮‍💨 — Transform the subject into the Face Exhaling emoji: eyes closed or nearly closed, relaxed eyebrows, cheeks slightly puffed, and a clearly visible stream of breath being exhaled from the mouth."
+    },
+    {
+      "id": "049",
+      "text": "FACE WITH UNEVEN EYES 😵 — Transform the subject into the Dizzy Face emoji: eyes dramatically misaligned and unfocused, raised eyebrows, open mouth, and an unmistakable severely dizzy expression."
+    },
+    {
+      "id": "050",
+      "text": "NAUSEATED FACE 🤢 — Transform the subject into the Nauseated Face emoji: intensely green-tinted sickly complexion, narrowed uncomfortable eyes, raised upper lip, and a visibly nauseated grimace."
+    },
+    {
+      "id": "051",
+      "text": "VOMITING 🤮 — Transform the subject into the Face Vomiting emoji: intensely sick expression with eyes squeezed shut and a large realistic stream of green-tinted vomit projecting outward from the mouth."
+    },
+    {
+      "id": "052",
+      "text": "SNEEZING 🤧 — Transform the subject into the Sneezing Face emoji: eyes tightly shut, nose visibly scrunched, mouth partially covered or distorted by a sneeze, and a dramatic visible burst of expelled breath and droplets."
+    },
+    {
+      "id": "053",
+      "text": "THERMOMETER FACE 🤒 — Transform the subject into the Face with Thermometer emoji: flushed feverish face, tired half-closed eyes, worried expression, and a realistic thermometer held naturally in the mouth or beside the face."
+    },
+    {
+      "id": "054",
+      "text": "HEAD BANDAGE 🤕 — Transform the subject into the Face with Head-Bandage emoji: a realistic white bandage wrapped around the head with one visible cheek or forehead bruise and a pained but non-graphic expression."
+    },
+    {
+      "id": "055",
+      "text": "DROOLING 🤤 — Transform the subject into the Drooling Face emoji: relaxed half-closed eyes, exaggerated satisfied smile, and a clearly visible strand of saliva naturally hanging from one corner of the mouth."
+    },
+    {
+      "id": "056",
+      "text": "MOUTH COVERED 🤭 — Transform the subject into the Face with Hand Over Mouth emoji: one hand naturally covering the mouth, widened amused eyes, raised eyebrows, and an expression suggesting suppressed laughter or surprise."
+    },
+    {
+      "id": "057",
+      "text": "SALUTE 🫡 — Transform the subject into the Saluting Face emoji: serious respectful facial expression with one hand raised in a precise military-style salute beside the forehead."
+    },
+    {
+      "id": "058",
+      "text": "HOLDING BACK TEARS 🥹 — Transform the subject into the Face Holding Back Tears emoji: enormous glossy eyes visibly filling with tears, raised inner eyebrows, trembling lower lip, and an intensely emotional expression."
+    },
+    {
+      "id": "059",
+      "text": "SILENT TEARS 😢 — Transform the subject into the Crying Face emoji: a clearly visible large tear running down one cheek while the subject has a deeply sad downturned expression."
+    },
+    {
+      "id": "060",
+      "text": "NEUTRAL 😐 — Transform the subject into the Neutral Face emoji: perfectly straight mouth, relaxed but expressionless eyes, and an exaggeratedly blank deadpan expression."
+    },
+    {
+      "id": "061",
+      "text": "EXPRESSIONLESS 😑 — Transform the subject into the Expressionless Face emoji: half-lidded eyes, completely straight mouth, lowered facial energy, and an exaggerated expression of utter indifference."
+    },
+    {
+      "id": "062",
+      "text": "DISAPPOINTED 😞 — Transform the subject into the Disappointed Face emoji: eyebrows angled upward toward the center, eyes lowered, mouth strongly downturned, and an unmistakable expression of deep disappointment."
+    },
+    {
+      "id": "063",
+      "text": "PERSEVERING FACE 😣 — Transform the subject into the Persevering Face emoji: eyes squeezed tightly shut, eyebrows strained downward, teeth clenched, and facial muscles visibly tense as though struggling intensely to endure something."
+    }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "IDENTITY PRESERVATION:\n\n• The ORIGINAL SUBJECT must remain recognizable.\n• Preserve the subject's actual facial structure, facial proportions, eye shape, nose, mouth, jaw, skin tone, hairstyle, and distinctive facial characteristics.\n• Preserve the subject's apparent age and identity.\n• Do not replace the subject with a generic person.\n• Do not turn the subject into an emoji character.\n• The goal is a REAL PERSON physically embodying the selected emoji.\n\nREAL-LIFE TRANSFORMATION:\n\n• The final image must look photographic and physically believable.\n• The selected emoji must be represented through the subject's actual face, body, eyes, mouth, expression, tears, sweat, gesture, or other physical characteristics.\n• Any unusual emoji feature must be physically integrated into the subject.\n• Do not simply place an emoji graphic over the subject.\n• Do not place the emoji beside the subject.\n• Do not add the selected emoji as a sticker, icon, caption, watermark, or floating graphic.\n• Do not put the emoji symbol in the corner of the image.\n• Do not turn the entire image into an emoji illustration.\n\nEXPRESSION PRIORITY:\n\n• The selected option's expression is mandatory.\n• Make the expression exaggerated enough to be immediately recognizable.\n• Facial anatomy must remain coherent despite the exaggeration.\n• Preserve the subject's identity underneath the expression.\n• The expression should resemble the selected emoji without becoming a cartoon.\n\nPHYSICAL INTEGRATION:\n\n• Tears must look like actual liquid.\n• Sweat must look like actual liquid on the skin.\n• Heart-shaped or star-shaped eyes must appear physically integrated into the eyes.\n• Unusual facial proportions must appear naturally integrated rather than pasted on.\n• Props or gestures specified by an option must physically interact with the subject.\n• Do not use flat graphic symbols unless the option specifically requires symbols physically associated with the face.\n\nSUBJECT AND BACKGROUND:\n\n• Transform ONLY the subject.\n• Preserve the original background and environment.\n• Do not transform the environment into an emoji world.\n• Do not add emoji patterns, emoji wallpaper, emoji objects, emoji text, or emoji graphics to the background.\n• The original photographic setting should remain intact unless the master prompt explicitly requests otherwise.\n\nMASTER PROMPT RULE:\n\n• Master prompt instructions always override conflicting instructions EXCEPT the mandatory requirement that the subject become a photorealistic real-life interpretation of the selected emoji.\n• If the master prompt specifies a pose, setting, clothing, camera angle, action, or expression, incorporate that information while preserving the selected emoji's defining characteristics.\n• If the master prompt specifies a different facial expression, combine it with the selected emoji transformation whenever possible.\n\nSTRICTLY PROHIBITED:\n\n• No cartoon subject.\n• No illustrated subject.\n• No animated character.\n• No emoji character replacing the person.\n• No emoji sticker overlays.\n• No emoji pasted over the face.\n• No emoji floating beside the subject.\n• No generic replacement face.\n• No identity loss.\n• No background transformation.\n• No text labels identifying the emoji.\n• No captions.\n• No emoji icons added to the image.\n• No artificial face-swap appearance.\n• No obvious Photoshop/compositing artifacts.\n\nFINAL VALIDATION:\n\n✓ The subject remains immediately recognizable.\n✓ The subject looks like a real person, not an emoji character.\n✓ The selected emoji expression is unmistakable.\n✓ The facial transformation is physically integrated.\n✓ The original facial identity remains recognizable.\n✓ The background remains unchanged.\n✓ No emoji graphics or stickers have been added.\n✓ Any tears, sweat, unusual eyes, symbols, or physical effects look integrated into the subject.\n✓ The result is photorealistic.\n✓ The selected option is clearly represented.\n✓ If ANY answer is NO, regenerate until every requirement is satisfied."
   },
   {
     "name": "REAL-TIME SHADER ART",
