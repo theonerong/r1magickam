@@ -1720,6 +1720,20 @@
     "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Waxy dull surface with no gloss\n• Marbled internal layering visible where broken\n• Color range grey to black-brown\n• Sand and salt crust in the pits"
   },
   {
+    "name": "AMBIGUOUS FIGURE",
+    "category": [
+      "ART",
+      "OPTICAL",
+      "PERCEPTION",
+      "MINIMALISM",
+      "TRANSFORMATION"
+    ],
+    "message": "Take a picture and completely reconstruct it as an ambiguous figure-ground artwork in which foreground and background continually exchange visual roles. The subject must simultaneously emerge as a positive figure and as negative space within the surrounding environment.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "• Create strong figure-ground ambiguity.\n• The subject should be recognizable from one perceptual reading.\n• The surrounding negative space should form meaningful secondary shapes.\n• Foreground and background should visually exchange roles.\n• Use carefully controlled silhouettes, cutouts, boundaries, and shared contours.\n• Avoid random hidden images.\n• The secondary interpretation should emerge naturally from the primary composition.\n• Preserve enough of the original subject for recognition.\n• The result should resemble sophisticated perceptual art rather than a puzzle graphic.\n\nMASTER PROMPT RULE:\n• Incorporate master-prompt information while maintaining the ambiguous figure-ground transformation.\n\nFINAL VALIDATION:\n✓ Foreground and background exchange perceptual roles.\n✓ Subject remains recognizable.\n✓ Negative space has structural meaning.\n✓ The composition is visually sophisticated.\n✓ If ANY answer is NO, regenerate."
+  },
+  {
     "name": "AMERICAN GIRL/BOY DOLL",
     "category": [
       "DOLL",
@@ -3028,6 +3042,20 @@
     "additionalInstructions": ""
   },
   {
+    "name": "ARCIMBOLDO",
+    "category": [
+      "ART",
+      "PORTRAIT",
+      "ASSEMBLAGE",
+      "RENAISSANCE",
+      "TRANSFORMATION"
+    ],
+    "message": "Take a picture and completely reconstruct the subject as an Arcimboldo-inspired composite portrait. The recognizable subject must be physically formed entirely from numerous objects associated with the subject, scene, occupation, personality, clothing, environment, or visual context. Fruit, vegetables, flowers, tools, books, machinery, food, household objects, natural materials, or other contextually appropriate objects must collectively form the subject's face and body.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "ABSOLUTE TRANSFORMATION:\n\n• The subject itself must be made entirely from associated objects.\n• Do NOT simply place objects around the subject.\n• Do NOT retain a normal human face underneath the objects.\n• Every major facial and bodily form must be constructed from individual objects.\n• Eyes must be made from appropriate objects.\n• Nose must be made from objects.\n• Mouth and lips must be made from objects.\n• Hair must be constructed from appropriate objects or materials.\n• Clothing must be represented through assembled objects where appropriate.\n• Objects must collectively reproduce the original subject's recognizable facial structure, silhouette, pose, and proportions.\n• Use dozens of individually recognizable objects when necessary.\n• Objects should be intelligently selected from the subject's visual context.\n• Objects must be physically arranged to create anatomy rather than simply floating around it.\n• Maintain strong resemblance to the original subject through the arrangement of the objects.\n• Use Renaissance-inspired painted realism and sophisticated compositional detail.\n• Do not make the result a modern collage.\n• Do not use random unrelated objects merely for decoration.\n\nMASTER PROMPT RULE:\n• Master prompt instructions always override conflicting instructions EXCEPT the requirement that the subject be reconstructed entirely from associated objects.\n• If the master prompt specifies a particular subject, profession, object, setting, or theme, use those details to determine the materials forming the portrait.\n\nFINAL VALIDATION:\n✓ The subject itself is made from objects.\n✓ No normal human face remains underneath.\n✓ Facial features are constructed from objects.\n✓ The objects are contextually meaningful.\n✓ The resulting arrangement resembles the original subject.\n✓ The image resembles a sophisticated Renaissance composite portrait.\n✓ If ANY answer is NO, regenerate."
+  },
+  {
     "name": "ART BRUT",
     "category": [
       "ART",
@@ -3568,6 +3596,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "BACON DISTORTION",
+    "category": [
+      "ART",
+      "PORTRAIT",
+      "EXPRESSIONISM",
+      "DISTORTION",
+      "TRANSFORMATION"
+    ],
+    "message": "Take a picture and completely reconstruct the subject as an intensely distorted figurative painting inspired by Francis Bacon's psychological portraiture. Preserve the subject's recognizable identity while violently warping anatomy, facial structure, surrounding space, and bodily planes into smeared, elongated, compressed, and psychologically charged forms.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "• Preserve recognizable identity despite severe distortion.\n• Warp facial planes without replacing the person with a generic face.\n• Stretch, compress, smear, elongate, and displace anatomical forms.\n• Use cage-like geometric spatial structures around or behind the subject.\n• Use isolated figures against sparse, unsettling spatial fields.\n• Distort mouths, eyes, cheeks, limbs, and bodily planes while retaining identity cues.\n• Use painterly smearing and dragged pigment.\n• Use intense but controlled color relationships.\n• Avoid cartoon caricature.\n• Avoid horror-gore imagery.\n• The distortion must feel psychologically expressive rather than random.\n• The subject must remain identifiable beneath the distortion.\n\nMASTER PROMPT RULE:\n• Master prompt instructions always override conflicting instructions EXCEPT the mandatory distorted figurative transformation.\n\nFINAL VALIDATION:\n✓ Subject is substantially transformed.\n✓ Identity remains recognizable.\n✓ Anatomy is visibly distorted.\n✓ Spatial structures contribute to the composition.\n✓ Distortion is painterly and psychologically expressive.\n✓ Result does not resemble a simple photo filter.\n✓ If ANY answer is NO, regenerate."
   },
   {
     "name": "BAD VICES",
@@ -11138,6 +11180,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "Cont\u00e9 marks should show their characteristic square-stick edge quality. Subject identity must be clearly preserved."
+  },
+  {
+    "name": "CONTINUOUS LINE",
+    "category": [
+      "ART",
+      "LINE ART",
+      "MINIMALISM",
+      "DRAWING",
+      "TRANSFORMATION"
+    ],
+    "message": "Take a picture and completely reconstruct the subject as an extraordinarily intricate continuous-line drawing. The entire recognizable subject must be created from one uninterrupted line that travels continuously through the composition without being broken into separate disconnected outlines.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "• Use one continuous unbroken line.\n• The line must construct the actual subject rather than merely outline it.\n• The line may loop, overlap, spiral, cross itself, change direction, and revisit areas.\n• Use varying line weight only if it can plausibly belong to the same continuous stroke.\n• Facial features must emerge from the continuous line.\n• Preserve recognizable identity.\n• Use intelligent crossings and overlaps to create depth.\n• Avoid multiple disconnected line drawings.\n• Avoid ordinary contour tracing.\n• The line should describe internal structures as well as outer contours.\n• The result should look like an accomplished continuous-line artwork.\n\nMASTER PROMPT RULE:\n• Incorporate master-prompt information while maintaining the single continuous-line construction.\n\nFINAL VALIDATION:\n✓ One continuous line constructs the subject.\n✓ The line is not broken into disconnected pieces.\n✓ Internal and external structures are represented.\n✓ Subject remains recognizable.\n✓ If ANY answer is NO, regenerate."
   },
   {
     "name": "COOKIE",
@@ -18861,6 +18917,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "FINAL RESULT:\nA single seamless image where the entire scene is built from recursive, self-similar patterns. The subject remains recognizable at first, but upon closer inspection, everything is composed of repeating structures that echo the whole image at smaller scales. There must be NO panels, NO separate zoom views, and NO cutaways—only one continuous fractal reality with infinite visual depth."
+  },
+  {
+    "name": "FRACTURED CUBISM",
+    "category": [
+      "ART",
+      "CUBISM",
+      "GEOMETRIC",
+      "PORTRAIT",
+      "TRANSFORMATION"
+    ],
+    "message": "Take a picture and completely reconstruct the subject through an extreme fractured Cubist composition. Break the subject into dozens of overlapping, displaced, semi-transparent geometric planes showing multiple viewpoints simultaneously. The subject must remain recognizable while its anatomy is reconstructed from competing perspectives.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "• Completely reconstruct the subject using overlapping geometric planes.\n• Use multiple simultaneous viewpoints.\n• Fragment facial and bodily forms into angular planes.\n• Allow front, side, three-quarter, and partial views to coexist.\n• Use transparent and semi-transparent planes.\n• Preserve recognizable facial identity through structural relationships.\n• Do not simply draw polygon outlines over the photograph.\n• The original photographic surface must disappear within the transformed subject.\n• Planes must actively form the subject.\n• Use overlapping geometry, displaced features, intersecting edges, and controlled fragmentation.\n• Preserve the original pose and major silhouette where possible.\n• The result should be sophisticated analytical Cubism rather than random geometric abstraction.\n\nMASTER PROMPT RULE:\n• Master prompt information must be incorporated while maintaining the fractured Cubist reconstruction.\n\nFINAL VALIDATION:\n✓ Subject has been reconstructed from multiple geometric viewpoints.\n✓ Dozens of planes are integrated into the subject.\n✓ Identity remains recognizable.\n✓ The result is unmistakably Cubist.\n✓ No simple polygon filter is used.\n✓ If ANY answer is NO, regenerate."
   },
   {
     "name": "FRAGGLE ROCK",
@@ -27221,6 +27291,20 @@
     "additionalInstructions": "• The captured photo MUST fill the entire screen — no letterboxing, no pillarboxing, no empty columns or bars beside the photo under any circumstances\n• ALL UI elements float directly on top of the full-screen photo\n• ALL buttons are BLACK with an orange #FE5F00 border — they are not amber, not orange-filled, not yellow\n• LEFT SIDE has exactly FOUR buttons top to bottom: ☰ MENU, 📝 MASTER, 🎛️ OPTIONS, 🖼️ GALLERY — no more, no fewer, no duplicates\n• RIGHT SIDE has exactly FIVE buttons top to bottom: 📸 no label, 🎲 RANDOM, 👁️ MOTION, 📸⚡ BURST, ⏱️ TIMER — no more, no fewer, no duplicates\n• Each button position has exactly ONE button with exactly ONE icon and ONE label — never create two versions of the same button\n• The OPTIONS 🎛️ button is the only button with a green background and green border\n• Bottom footer bar has a glowing orange border, semi-transparent black background, and orange text\n• The result must look like a real camera app screenshot with the photo fully visible behind all controls"
   },
   {
+    "name": "MAGICAL REALISM",
+    "category": [
+      "ART",
+      "SURREALISM",
+      "MAGICAL REALISM",
+      "PHOTOREALISTIC",
+      "TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform it into a photorealistic magical-realist scene. Preserve the recognizable subject and the visual realism of the original image, but introduce one or more impossible, extraordinary, or physically impossible transformations that are presented as completely normal within the scene. The impossible elements must look physically present and naturally integrated rather than digitally pasted into the photograph.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "TRANSFORMATION REQUIREMENTS:\n\n• The image must be genuinely transformed into magical realism.\n• Preserve the recognizable identity of the subject.\n• Introduce at least one clearly impossible visual occurrence.\n• The impossible occurrence must be treated visually as though it is completely ordinary.\n• Do not use obvious fantasy effects merely to announce that something is magical.\n• No magical sparkles, fantasy aura, decorative magic symbols, or generic fantasy effects unless specifically appropriate to the transformation.\n• The impossible object, event, scale relationship, physical property, or environmental condition must appear physically integrated into the real world.\n• Maintain realistic photography, lighting, perspective, materials, shadows, reflections, and depth of field.\n• The humor, wonder, or unease should come from the impossible thing being presented matter-of-factly.\n\nSUBJECT REQUIREMENTS:\n• Preserve facial identity when a person is present.\n• Preserve recognizable facial features, hairstyle, body proportions, clothing characteristics, and pose unless the impossible transformation specifically changes them.\n• The subject must participate in the magical-realist transformation rather than merely standing beside it.\n• Do not simply add a fantasy object to an otherwise unchanged photograph.\n\nMASTER PROMPT RULE:\n• Master prompt instructions always override conflicting instructions EXCEPT the mandatory magical-realism transformation.\n• Incorporate master-prompt subject, pose, setting, action, clothing, composition, and visual information into the transformation.\n\nFINAL VALIDATION:\n✓ The image has been genuinely transformed.\n✓ The result remains visually realistic.\n✓ At least one impossible element is physically integrated into the scene.\n✓ The impossible element is treated as ordinary rather than presented as a fantasy effect.\n✓ The original subject remains recognizable.\n✓ The result does not look like a pasted-on effect.\n✓ If ANY answer is NO, regenerate until satisfied."
+  },
+  {
     "name": "MAGNA DOODLE",
     "category": [
       "OPTIONS",
@@ -31663,6 +31747,20 @@
     "additionalInstructions": ""
   },
   {
+    "name": "MULTI-VANISHING POINT",
+    "category": [
+      "ART",
+      "PERSPECTIVE",
+      "GEOMETRIC",
+      "SURREALISM",
+      "TRANSFORMATION"
+    ],
+    "message": "Take a picture and completely reconstruct it using multiple deliberately conflicting vanishing points. The subject and environment must simultaneously obey several incompatible perspective systems, creating a sophisticated impossible spatial structure while remaining visually coherent.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "• Use several intentional vanishing points.\n• Different parts of the subject may obey different perspective systems.\n• Create intelligent spatial contradictions.\n• Maintain enough structural consistency for the image to remain visually understandable.\n• Preserve recognizable subject identity.\n• Use intersecting perspective grids and conflicting planes.\n• Do not make the image look like accidental distortion.\n• The impossible perspective must be deliberate and aesthetically controlled.\n• Reconstruct the subject itself through these competing perspective systems.\n\nMASTER PROMPT RULE:\n• Incorporate master-prompt information while maintaining deliberate multi-perspective construction.\n\nFINAL VALIDATION:\n✓ Multiple conflicting vanishing points are clearly present.\n✓ Perspective contradictions are intentional.\n✓ Subject remains recognizable.\n✓ The image feels like sophisticated impossible geometry.\n✓ If ANY answer is NO, regenerate."
+  },
+  {
     "name": "MULTIPLE EXPOSURE IN-CAMERA",
     "category": [
       "PHOTOGRAPHY",
@@ -32592,6 +32690,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "NEGATIVE SPACE PORTRAIT",
+    "category": [
+      "ART",
+      "MINIMALISM",
+      "NEGATIVE SPACE",
+      "PORTRAIT",
+      "TRANSFORMATION"
+    ],
+    "message": "Take a picture and reconstruct the subject primarily through precisely controlled negative space. The recognizable subject must emerge from carefully shaped empty areas, openings, gaps, cutouts, and contrasting surrounding forms rather than being described primarily by solid filled shapes.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "• The subject must be constructed primarily from absence rather than solid mass.\n• Use precisely shaped empty spaces to define facial features, limbs, clothing, silhouette, and major forms.\n• Surrounding material may provide the boundaries that reveal the subject.\n• Use extreme simplicity and precision.\n• Every important negative space should contribute to recognition.\n• Avoid simply making a black silhouette.\n• The subject should emerge because of strategically positioned empty areas.\n• Preserve recognizable identity through negative-space relationships.\n• Use strong figure-ground ambiguity where appropriate.\n• Do not clutter the image with unnecessary detail.\n\nMASTER PROMPT RULE:\n• Incorporate master-prompt information while maintaining negative-space construction.\n\nFINAL VALIDATION:\n✓ Subject is primarily defined through negative space.\n✓ Empty regions are intentional and structurally important.\n✓ Identity remains recognizable.\n✓ The result is minimalist and sophisticated.\n✓ It does not simply look like a silhouette.\n✓ If ANY answer is NO, regenerate."
   },
   {
   "name": "NEGATIVE SPACE SILHOUETTE",
@@ -33801,6 +33913,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Bold abstract patterns\n• Vibrant Post-Impressionist colors\n• Loose painterly brushwork\n• Decorative arts application\n• Artistic spontaneity and freedom"
+  },
+  {
+    "name": "ONE-POINT DRAWING",
+    "category": [
+      "ART",
+      "GEOMETRIC",
+      "PERSPECTIVE",
+      "DRAWING",
+      "TRANSFORMATION"
+    ],
+    "message": "Take a picture and completely reconstruct the image using a single dominant geometric vanishing point. Every major structural line, plane, surface, object, and spatial relationship must visually emerge from or converge toward one carefully controlled point in space.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "• Establish one dominant vanishing point.\n• Major perspective systems must converge toward it.\n• Reconstruct the subject and environment using perspective geometry.\n• Preserve recognizable subject identity.\n• Use radiating structural lines.\n• Use geometric planes that reinforce the single-point perspective.\n• Distort forms intelligently as they move toward or away from the vanishing point.\n• Do not use several unrelated perspective systems.\n• Do not simply draw perspective lines over a photograph.\n• The photograph must be reconstructed through the perspective system.\n\nMASTER PROMPT RULE:\n• Master prompt information must be preserved within the one-point perspective transformation.\n\nFINAL VALIDATION:\n✓ One dominant vanishing point controls the composition.\n✓ Major forms respond to that perspective.\n✓ Subject is reconstructed rather than filtered.\n✓ Identity remains recognizable.\n✓ If ANY answer is NO, regenerate."
   },
   {
     "name": "ONE SECOND BEFORE DISASTER",
@@ -36018,6 +36144,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "STYLE ENFORCEMENT:\n• Preserve subject identity across all grid cells\n• Systematic grid presentation: 3x3 or 4x4\n• Identical framing, angle, and lighting in every cell\n• One element varies while others remain constant\n• Reference Bernd and Hilla Becher's industrial typologies\n• Clinical, objective, documentary approach\n• No artistic lighting or dramatic composition\n• Frontal, centered, even lighting in every frame\n• The grid should reveal patterns through repetition\n• The overall effect should be systematic, encyclopedic, and revealing"
+  },
+  {
+    "name": "PHOTOKINETIC",
+    "category": [
+      "ART",
+      "OPTICAL",
+      "KINETIC",
+      "OP ART",
+      "TRANSFORMATION"
+    ],
+    "message": "Take a picture and reconstruct it as photokinetic optical art that appears capable of changing when viewed from different angles. Build the subject from layered, offset, interlaced, translucent, and displaced visual information so that apparent movement and alternate visual states emerge from the same image.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "• Use layered visual information at different apparent depths.\n• Offset portions of the subject horizontally or vertically.\n• Use interlacing, repeating lines, optical displacement, and selective duplication.\n• Create apparent movement when the viewer changes viewing angle.\n• Preserve recognizable subject identity.\n• Use parallax-like spatial separation.\n• Use subtle color separation where appropriate.\n• Avoid simply adding motion blur.\n• The subject itself must be reconstructed through the optical system.\n• The result should resemble sophisticated kinetic optical artwork.\n\nMASTER PROMPT RULE:\n• Incorporate master-prompt information while preserving the photokinetic transformation.\n\nFINAL VALIDATION:\n✓ Subject is reconstructed using layered optical information.\n✓ Apparent movement or alternate viewing states are present.\n✓ Depth and displacement are intentional.\n✓ Subject remains recognizable.\n✓ If ANY answer is NO, regenerate."
   },
   {
     "name": "PHOTOMANIPULATION",
@@ -47746,6 +47886,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "SURREALIST AUTOMATISM",
+    "category": [
+      "ART",
+      "SURREALISM",
+      "ABSTRACT",
+      "TRANSFORMATION",
+      "PSYCHOLOGICAL"
+    ],
+    "message": "Take a picture and completely reconstruct it through Surrealist Automatism. Transform the recognizable subject and/or scene into an unexpected subconscious-looking visual composition in which forms spontaneously evolve into unrelated, dreamlike, psychologically suggestive objects and structures. Preserve enough of the original subject to make its identity and source recognizable while allowing its forms to transform organically into surprising visual associations.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "• The source image must be actively reconstructed, not merely decorated.\n• Allow recognizable forms to mutate into unexpected objects.\n• Facial features may become architectural, organic, mechanical, symbolic, or abstract forms while retaining recognizable identity cues.\n• Objects may transform into other objects through visual association.\n• Use unexpected scale relationships.\n• Use dreamlike spatial relationships.\n• Use transformations that feel spontaneous rather than mechanically patterned.\n• Avoid generic psychedelic effects.\n• Avoid random visual noise.\n• Every strange transformation should remain visually connected to something in the source image.\n• Preserve recognizable fragments of the original subject so the viewer can identify what was transformed.\n• Use uncanny juxtaposition, unexpected substitutions, distorted anatomy, impossible environments, and subconscious-looking transitions.\n• The result should feel like an artwork discovered through automatic drawing rather than a deliberately designed fantasy scene.\n\nMASTER PROMPT RULE:\n• Master prompt instructions always override conflicting instructions EXCEPT the mandatory Surrealist Automatism transformation.\n• Incorporate master-prompt information into the surreal reconstruction.\n\nFINAL VALIDATION:\n✓ The source has been substantially reconstructed.\n✓ The transformation is surreal rather than merely filtered.\n✓ Unexpected forms emerge from recognizable source elements.\n✓ The original subject remains sufficiently recognizable.\n✓ The result feels subconscious and dreamlike rather than random.\n✓ If ANY answer is NO, regenerate."
   },
   {
     "name": "SURREALISTIC DREAMSCAPE",
