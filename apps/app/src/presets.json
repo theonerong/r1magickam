@@ -1894,6 +1894,33 @@
     "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Fragmented geometric facets\n• Multiple simultaneous viewpoints\n• Monochromatic palette (browns, grays, ochres)\n• Shattered intersecting planes\n• Intellectual deconstruction of form"
   },
   {
+    "name": "ANAMORPHOSIS",
+    "category": [
+      "ART",
+      "OPTICAL",
+      "ANAMORPHIC",
+      "PERSPECTIVE",
+      "TRANSFORMATION"
+    ],
+    "message": "Take a picture and completely reconstruct it as an anamorphic artwork designed to appear distorted from the normal viewpoint but resolve into a recognizable image from a specific virtual vantage point. Use cylindrical-mirror anamorphosis as the primary visual concept: the distorted artwork should contain a hidden recognizable portrait or scene that becomes clear when conceptually viewed through a virtual cylindrical mirror.",
+    "options": [
+    {
+      "id": "001",
+      "text": "Cylindrical Mirror — distort the source around a virtual cylinder so the recognizable image resolves in the imagined mirror reflection"
+    },
+    {
+      "id": "002",
+      "text": "Extreme Perspective — stretch and compress the source dramatically so it resolves only from one precise virtual viewing angle"
+    },
+    {
+      "id": "003",
+      "text": "Spiral Portrait — reconstruct the source as an abstract spiral distortion containing a recognizable portrait that resolves through a virtual cylindrical mirror"
+    }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "• Completely reconstruct the image as anamorphic geometry.\n• Use mathematically controlled distortion rather than random warping.\n• Stretch, compress, rotate, and redistribute existing forms according to a coherent anamorphic projection.\n• The distorted source must contain the information necessary to reconstruct the recognizable subject.\n• Cylindrical mirror mode should use a virtual cylindrical mirror as the intended decoding surface.\n• The recognizable image should resolve when viewed from the correct conceptual vantage point.\n• Do not simply add a cylinder to the photograph.\n• Do not create an unrelated abstract spiral.\n• The distortion itself must encode the original image.\n\nFINAL VALIDATION:\n✓ Anamorphic distortion is unmistakable.\n✓ Distortion follows coherent projection geometry.\n✓ Original subject is encoded within the distortion.\n✓ The intended viewing condition is visually understandable.\n✓ Result is an optical-art reconstruction rather than random warping."
+  },
+  {
     "name": "ANCHORMAN",
     "category": [
       "HUMOR",
@@ -7958,6 +7985,34 @@
     "additionalInstructions": ""
   },
   {
+    "name": "CHARCOAL & VOLCANIC ASH IMPASTO",
+    "category": [
+      "ART",
+      "PAINTING",
+      "CHARCOAL",
+      "IMPASTO",
+      "VOLCANIC",
+      "TEXTURE"
+    ],
+    "message": "Take a picture and completely reconstruct it as an ultra-heavy Charcoal & Volcanic Ash Impasto painting. The subject and entire environment must be rebuilt from massive palette-knife strokes, gritty charcoal particles, volcanic ash texture, fractured black pigment, and subtle glowing magma undertones embedded deep within the paint.",
+    "options": [
+    {
+      "id": "001",
+      "text": "Ash Black — overwhelmingly dark charcoal and volcanic grit with barely visible ember undertones"
+    },
+    {
+      "id": "002",
+      "text": "Magma Core — heavy black impasto fractured by deep red-orange magma-like undertones"
+    },
+    {
+      "id": "003",
+      "text": "Volcanic Relief — extremely thick palette-knife texture with cracked ash surfaces and buried incandescent accents"
+    }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "• Completely reconstruct the image as physical-looking impasto.\n• Use extremely thick palette-knife strokes.\n• Incorporate gritty charcoal and volcanic-ash particulate texture.\n• Build actual-looking raised paint relief.\n• Use dark blacks, charcoal grays, ash tones, and restrained magma reds/oranges.\n• Magma undertones must appear embedded within the paint, not as glowing special effects floating above it.\n• Preserve recognizable subject structure and identity through the paint relief.\n• Environment must also be reconstructed.\n• Do not leave photographic areas visible.\n• Do not use generic fire effects.\n• Do not add volcanoes, lava flows, or unrelated volcanic scenery unless already present.\n\nFINAL VALIDATION:\n✓ Entire image has become impasto.\n✓ Heavy physical paint texture is unmistakable.\n✓ Charcoal and ash texture are visible.\n✓ Magma undertones are embedded within the painting.\n✓ Source subject remains recognizable."
+  },
+  {
     "name": "CHARCOAL SMEAR",
     "category": [
       "ART",
@@ -11856,6 +11911,34 @@
     "additionalInstructions": "STYLE ENFORCEMENT:\n\u2022 Preserve recognizable subject identity\n\u2022 Show gravity-defying martial arts action (wire-fu aesthetic)\n\u2022 Include flowing silk robes and fabric in dramatic motion\n\u2022 Use painterly Chinese landscape backgrounds (mountains, bamboo, waterfalls)\n\u2022 Apply slow-motion photography aesthetic for fabric and hair\n\u2022 Include traditional weapons (sword, staff, fan)\n\u2022 Use dramatic color grading (rich greens, golds, reds)\n\u2022 Reference wuxia films (Crouching Tiger Hidden Dragon, Hero, House of Flying Daggers)\n\u2022 Show impossible physics (running on water, leaping between trees)\n\u2022 Create sense of grace, power, and poetic movement"
   },
   {
+    "name": "CRETAN-MYCENAEAN FRESCO",
+    "category": [
+      "ART",
+      "FRESCO",
+      "ANCIENT",
+      "MEDITERRANEAN",
+      "HISTORICAL",
+      "TRANSFORMATION"
+    ],
+    "message": "Take a picture and completely reconstruct the image as an authentic Cretan-Mycenaean fresco inspired by Bronze Age Aegean wall painting. Transform the subject and environment into fluid, stylized painted forms using vibrant natural pigments, lively movement, strong contours, and intentionally non-realistic skin tones.",
+    "options": [
+    {
+      "id": "001",
+      "text": "Palatial Fresco — flowing figures, strong blue-red-yellow accents, and lively architectural composition"
+    },
+    {
+      "id": "002",
+      "text": "Animal Movement — stylized existing animals and figures emphasized through energetic contours and dynamic poses"
+    },
+    {
+      "id": "003",
+      "text": "Aegean Narrative — entire source reconstructed as a lively Bronze Age wall painting with flattened forms and rhythmic movement"
+    }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "• Entire image becomes a fresco.\n• Use fluid, confident contour lines.\n• Use vibrant natural mineral-pigment colors, especially blue, red, yellow, ochre, black, and cream.\n• Human skin may use stylized non-realistic colors characteristic of ancient Aegean art.\n• Flatten conventional photographic perspective.\n• Emphasize movement and rhythmic gesture.\n• Stylize existing animals rather than inventing new ones.\n• Preserve the source composition and recognizable subject.\n• Use aged plaster, pigment variation, cracks, abrasion, and uneven fresco surface.\n• Do not create a generic Greek scene unrelated to the source.\n\nFINAL VALIDATION:\n✓ Entire source has become a Cretan-Mycenaean-inspired fresco.\n✓ Fluid linework is dominant.\n✓ Colors are vibrant but historically inspired.\n✓ Forms are stylized rather than photorealistic.\n✓ Subject and environment remain derived from the source."
+  },
+  {
     "name": "CRUSHED FOIL",
     "category": [
       "ART",
@@ -12555,6 +12638,18 @@
       {
         "id": "004",
         "text": "FULL CORRUPTION — Extreme datamosh combining all effects: pixel bleeding, block displacement, color channel errors, and compression artifacts. The image is barely holding together but the subject is still recognizable."
+      },
+      {
+        "id": "005",
+      "text": "Portrait Melt — the subject's existing facial and body forms drag laterally into digital compression streaks"
+      },
+      {
+        "id": "006",
+        "text": "Frame Collision — existing subject and environmental forms bleed into one another as incompatible video frames"
+      },
+      {
+        "id": "007",
+      "text": "Compression Collapse — severe macroblock artifacts, color-channel corruption, smearing, and fragmented motion-vector distortion"
       }
     ],
     "randomizeOptions": true,
@@ -26501,6 +26596,34 @@
     "additionalInstructions": "OPTION ENFORCEMENT:\n\n• The selected option MUST determine the final liquid material, reflections, splash physics, and visual identity\n• Do not ignore the selected option\n• Do not blend multiple liquid styles together\n• Do not generate generic water splashes\n\nCRITICAL SUBJECT TRANSFORMATION ENFORCEMENT:\n\n• The SUBJECT THEMSELVES must physically become liquid metal\n• The subject must NOT appear behind liquid\n• The subject must NOT merely have liquid splashed onto them\n• The subject's actual anatomy must be sculpted from liquid material\n• The face, eyes, mouth, nose, hair silhouette, arms, hands, torso, and clothing contours must all be visibly formed from flowing liquid structures\n• The liquid must define the subject's recognizable identity\n• The subject should resemble a living statue made entirely from explosive metallic fluid\n• Liquid anatomy must seamlessly transition into splash streams and droplets\n\nSUBJECT RECOGNITION ENFORCEMENT:\n\n• Preserve recognizable facial structure, expression, hairstyle silhouette, body proportions, posture, and pose\n• The viewer must instantly recognize the subject despite full liquid transformation\n• Important facial regions must remain readable and visually dominant\n• Avoid abstract blobs that lose the human form\n• The liquid geometry should reinforce the subject's identity rather than hide it\n\nDEPTH BLAST ENFORCEMENT:\n\n• The composition must create aggressive foreground-to-camera depth\n• Large foreground droplets and metallic streams should violently project toward the viewer\n• The nearest droplets should appear dangerously close to the camera lens\n• Use forced perspective and wide-angle exaggeration to amplify dimensional intensity\n• Splash structures should extend beyond the apparent screen plane\n• The image should feel like liquid metal is erupting out toward the viewer\n\nFOCUS SEPARATION ENFORCEMENT:\n\n• The liquid-metal subject must be ultra-high-resolution, razor sharp, crisp, and hyper-detailed\n• Foreground droplets should contain visible reflections and metallic detail\n• Midground splash structures should maintain dimensional continuity\n• The background must become soft, blurred, darker, lower-detail, and visually recessed\n• The background must never compete visually with the subject\n\nPHYSICS OF THE FREEZE:\n\n• Capture the exact microsecond of maximum outward liquid explosion\n• Streams must taper naturally from thick liquid bases to sharp splash tips\n• Droplets must vary in scale, spacing, and depth for realistic high-speed fluid physics\n• Surface tension and fluid cohesion must appear physically believable\n• Splash motion must radiate outward from the subject's body structure itself\n\nREFLECTION REQUIREMENTS:\n\n• Every liquid surface must contain realistic environmental reflections\n• Reflections must remain physically consistent across droplets and splash structures\n• Metallic highlights should appear elongated and cinematic\n• Curved liquid surfaces should visibly distort reflections realistically\n\nVISUAL STYLE:\n\n• Ultra-photorealistic high-speed photography\n• 1/1,000,000 second shutter-speed aesthetic\n• Hyper-detailed reflective liquid surfaces\n• Extreme cinematic depth\n• Aggressive 3D pop-out composition\n• Premium studio-lighting realism\n• Dramatic perspective exaggeration\n• Violent frozen motion energy\n\nANTI-CHEAT:\n\n• Do NOT place the subject behind a liquid splash\n• Do NOT merely pour liquid over a normal human subject\n• Do NOT generate random liquid blobs without recognizable anatomy\n• Do NOT hide the face behind abstract splash geometry\n• Do NOT flatten the composition into a normal portrait\n• Do NOT keep the background equally sharp as the subject\n• Do NOT reduce the effect to small decorative droplets\n\nFINAL RESULT:\nThe final image must resemble an ultra-photorealistic high-speed photograph of the recognizable subject physically transformed into explosive living liquid metal, with their entire anatomy constructed from reflective fluid structures erupting violently toward the viewer with extreme cinematic depth, aggressive 3D pop-out perspective, and frozen dynamic splash motion."
   },
   {
+    "name": "LIQUID QUARTZ GLITCH",
+    "category": [
+      "ART",
+      "CRYSTAL",
+      "GLITCH",
+      "REFRACTION",
+      "DIGITAL",
+      "TRANSFORMATION"
+    ],
+    "message": "Take a picture and completely reconstruct it as a surreal Liquid Quartz Glitch artwork. Existing subjects and environmental forms become semi-translucent crystalline structures resembling liquid quartz, with refractive surfaces, internal distortions, chromatic aberration, and precise neon laser-light passes flowing through the reconstructed forms.",
+    "options": [
+    {
+      "id": "001",
+      "text": "Molten Quartz — translucent crystalline forms appearing partially liquefied while refracting intense spectral light"
+    },
+    {
+      "id": "002",
+      "text": "Prismatic Fracture — existing forms reconstructed through sharp translucent crystal planes with severe chromatic displacement"
+    },
+    {
+      "id": "003",
+      "text": "Laser Quartz — flowing refractive structures crossed by thin, intense neon laser-light passes"
+    }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "• Completely reconstruct the source image rather than applying a crystal filter.\n• Existing forms determine the crystalline geometry.\n• Surfaces should be semi-translucent and optically refractive.\n• Use internal refraction, caustic-like highlights, spectral separation, and chromatic aberration.\n• Introduce controlled RGB channel displacement around existing forms.\n• Neon laser passes should travel through or across the reconstructed structures.\n• Crystalline geometry may simultaneously appear solid and fluid.\n• Preserve recognizable subject identity where possible.\n• Preserve the underlying composition.\n• Do not add unrelated crystals or objects.\n• Do not leave the original photograph intact underneath effects.\n• Avoid generic cyberpunk scenery.\n\nFINAL VALIDATION:\n✓ Source image has been substantially reconstructed.\n✓ Existing forms have become liquid-crystalline structures.\n✓ Refraction and translucency are unmistakable.\n✓ Chromatic aberration is structurally integrated.\n✓ Neon light passes interact with the forms.\n✓ Subject remains recognizable.\n✓ No unrelated imagery has been introduced."
+  },
+  {
     "name": "LIQUID TELEVISION",
     "category": [
       "MTV",
@@ -29408,6 +29531,34 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "FINAL RESULT:\nA convincing microscope view where the subject appears as a stained biological specimen with authentic microscopy optics, staining, and scientific labeling."
+  },
+  {
+    "name": "MICROSCOPIC BIOLUMINESCENT ETCHING",
+    "category": [
+      "ART",
+      "ETCHING",
+      "COPPERPLATE",
+      "MICROSCOPIC",
+      "BIOLUMINESCENT",
+      "TRANSFORMATION"
+    ],
+    "message": "Take a picture and completely reconstruct it as an extraordinarily fine microscopic copperplate etching on dark velvet paper, illuminated by faint deep-sea bioluminescence. The image must combine obsessive engraved linework with subtle blue-green luminous structures emerging from within the etched forms.",
+    "options": [
+    {
+      "id": "001",
+      "text": "Deep-Sea Etching — extremely fine copperplate lines with sparse cyan and blue bioluminescent illumination"
+    },
+    {
+      "id": "002",
+      "text": "Luminescent Engraving — dense engraved cross-hatching with glowing microscopic details embedded throughout"
+    },
+    {
+      "id": "003",
+      "text": "Velvet Plate — dark velvet ground, copperplate precision, and restrained points of deep-ocean fluorescence"
+    }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "• Completely reconstruct the source as engraved line art.\n• Use extraordinarily fine copperplate-style lines.\n• Use cross-hatching, stippling, engraved contours, and microscopic detail.\n• Dark velvet paper should provide the underlying ground.\n• Bioluminescence should be faint, localized, and integrated into the etched forms.\n• Favor deep cyan, blue-green, and subtle blue illumination.\n• Preserve recognizable subject identity through line structure.\n• Do not use generic neon effects.\n• Do not turn the image into a science-fiction poster.\n• Do not add microscopic organisms that were not derived from the source.\n\nFINAL VALIDATION:\n✓ Image has become engraved artwork.\n✓ Copperplate linework is dominant.\n✓ Fine cross-hatching is visible.\n✓ Dark velvet ground is apparent.\n✓ Bioluminescence is subtle and integrated.\n✓ Subject remains recognizable."
   },
   {
     "name": "MICROWAVED",
@@ -42661,14 +42812,30 @@
   {
     "name": "SCANOGRAPHY",
     "category": [
+      "ART",
       "PHOTOGRAPHY",
-      "DIGITAL",
-      "EXPERIMENTAL"
+      "SCANOGRAPHY",
+      "STILL LIFE",
+      "MACRO",
+      "TRANSFORMATION"
     ],
-    "message": "Take a picture and transform the image into Scanography (scanner photography). Preserve subject identity. Simulate the technique of using a flatbed scanner as a camera. Render with the characteristic shallow depth of field, ultra-high resolution surface detail, and the slightly distorted, dreamlike quality of scanner-captured imagery with rich, saturated colors.",
-    "options": [],
-    "randomizeOptions": false,
-    "additionalInstructions": ""
+    "message": "Take a picture and completely reconstruct it as scanography — an extreme flatbed-scanner artwork in which the subject and visible objects appear physically positioned directly against a scanner glass surface and captured by a scanning sensor. Preserve extraordinary detail on the focal plane while creating the characteristic harsh depth-of-field falloff toward the edges and a plain black or neutral surrounding field.",
+    "options": [
+    {
+      "id": "001",
+      "text": "Flatbed Contact — subject and existing objects appear pressed directly against the scanner glass with extreme planar detail"
+    },
+    {
+      "id": "002",
+      "text": "Scanner Depth — focal objects are razor sharp while portions farther from the glass fall dramatically out of focus"
+    },
+    {
+      "id": "003",
+      "text": "Black Scanner Field — reconstructed subject and objects isolated against a deep black scanner background with extreme surface detail"
+    }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "• Completely reconstruct the image as scanner art.\n• The scanner glass is the conceptual image plane.\n• Existing objects should appear physically placed on or extremely close to the glass.\n• Use extreme detail at the scanning plane.\n• Use severe depth-of-field falloff for objects farther from the glass.\n• Use a black, near-black, or plain neutral surrounding field.\n• Preserve recognizable subject identity.\n• Preserve recognizable objects from the source image.\n• Lighting should resemble a scanner sensor rather than ordinary photography.\n• Use subtle glass reflections and scanning illumination when appropriate.\n• Do not merely add a scanner texture to the original photograph.\n• Do not invent unrelated objects.\n\nFINAL VALIDATION:\n✓ Image looks like scanner art.\n✓ Extreme planar detail is visible.\n✓ Depth-of-field behavior is characteristic of scanography.\n✓ Background is plain or black.\n✓ Subject and objects remain recognizable.\n✓ Result looks physically scanned rather than digitally filtered."
   },
   {
     "name": "SCARECROW",
@@ -45958,6 +46125,34 @@
     "additionalInstructions": ""
   },
   {
+    "name": "STEREOSCOPIC ANAGLYPH CYANOTYPE",
+    "category": [
+      "ART",
+      "PHOTOGRAPHY",
+      "CYANOTYPE",
+      "STEREOSCOPIC",
+      "ANAGLYPH",
+      "TRANSFORMATION"
+    ],
+    "message": "Take a picture and completely reconstruct it as a stereoscopic anaglyph cyanotype — a 19th-century blue-monochrome photographic sun print combined with a precise red-cyan stereoscopic offset. The entire image must become a genuine cyanotype artwork on textured paper, with the subject and environment reconstructed through cyanotype chemistry, while a controlled red-cyan offset creates the illusion of dimensional depth.",
+    "options": [
+    {
+      "id": "001",
+      "text": "Classic Cyanotype — deep Prussian-blue monochrome with delicate photographic detail, paper grain, and subtle red-cyan stereoscopic separation"
+    },
+    {
+      "id": "002",
+      "text": "Botanical Archive — cyanotype-like paper texture, fine specimen-print detail, layered plant-like silhouettes derived only from visible source elements, and pronounced red-cyan depth offset"
+    },
+    {
+      "id": "003",
+      "text": "Extreme Anaglyph — intensely separated red and cyan image channels producing obvious stereoscopic depth while retaining the cyanotype's blue photographic character"
+    }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "• Completely reconstruct the selected image as cyanotype artwork.\n• Use the characteristic deep Prussian-blue cyanotype palette.\n• Preserve recognizable subject identity when a person is present.\n• Preserve the source composition and recognizable environmental content.\n• Introduce a precise red-cyan channel offset to create stereoscopic depth.\n• The offset must affect existing visual forms rather than adding unrelated objects.\n• Use authentic-looking cyanotype paper grain, uneven emulsion, subtle chemical staining, and sun-print characteristics.\n• Maintain fine photographic detail beneath the monochrome treatment.\n• Red and cyan should function as stereoscopic image channels, not decorative colors.\n• Avoid ordinary color photography.\n• Avoid generic blue filters.\n• Avoid simply placing red and cyan shadows around an unchanged photograph.\n• The entire image must be reconstructed in the combined cyanotype/anaglyph language.\n\nFINAL VALIDATION:\n✓ Entire image is cyanotype-like.\n✓ Deep blue monochrome dominates.\n✓ A genuine stereoscopic red-cyan offset is clearly visible.\n✓ Subject remains recognizable.\n✓ Paper/emulsion characteristics are visible.\n✓ No unrelated imagery has been invented.\n✓ The result looks like a deliberate historical photographic process combined with anaglyph 3D.\n✓ If ANY answer is NO, regenerate until satisfied."
+  },
+  {
     "name": "STEREOVIEW",
     "category": [
       "PHOTOGRAPHY",
@@ -46047,6 +46242,34 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "STIPPLING EXTREME",
+    "category": [
+      "ART",
+      "DRAWING",
+      "STIPPLING",
+      "DOTWORK",
+      "BLACK AND WHITE",
+      "TRANSFORMATION"
+    ],
+    "message": "Take a picture and completely reconstruct it as an extreme stippling artwork made entirely from precisely controlled dots. Every visible form, tonal transition, facial feature, texture, and environmental structure must be generated through the density, size, spacing, and distribution of individual dots rather than continuous shading or solid painted areas.",
+    "options": [
+    {
+      "id": "001",
+      "text": "Hyper-Detailed Stippling — microscopic dots vary in density and size to reproduce extraordinary tonal and structural detail"
+    },
+    {
+      "id": "002",
+      "text": "Variable Dot Stippling — deliberately varied dot sizes, spacing, and density create dimensional form and texture"
+    },
+    {
+      "id": "003",
+      "text": "ASCII Stippling — reconstruct the image using only tiny ASCII characters arranged as a controlled dot-like tonal field"
+    }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "• Completely reconstruct the image using dots.\n• No continuous painted shading.\n• No conventional line drawing as the primary rendering method.\n• Tonal value must be produced by dot density, size, spacing, and clustering.\n• Use extremely fine dots for highlights and denser/larger dots for shadows.\n• Preserve facial identity and recognizable subject structure.\n• Preserve environmental structure through the same dot-based language.\n• Maintain extremely sharp overall focus.\n• In ASCII mode, every tonal structure must be generated through arranged ASCII characters rather than ordinary pixels or drawn lines.\n• Do not leave photographic regions intact.\n• Do not simply apply a halftone filter.\n• The dots themselves must constitute the artwork.\n\nFINAL VALIDATION:\n✓ Entire image has been reconstructed from dots.\n✓ Tonal values are created by dot distribution.\n✓ Subject remains recognizable.\n✓ Detail is exceptionally high.\n✓ No substantial continuous shading remains.\n✓ Result looks like intentional extreme stippling rather than a generic halftone filter."
   },
   {
     "name": "STL FILE PREVIEW",
@@ -48854,16 +49077,30 @@
   {
     "name": "TANJORE PAINTING",
     "category": [
-      "INDIAN",
-      "PAINTING",
-      "RELIGIOUS",
-      "DECORATIVE",
-      "ART"
+      "ART",
+      "INDIAN ART",
+      "TANJORE",
+      "GOLD",
+      "ORNAMENTAL",
+      "TRANSFORMATION"
     ],
-    "message": "Take a picture and transform it into a Tanjore painting. Tanjore (Thanjavur) painting is a classical South Indian art form from Tamil Nadu dating to the 16th century, characterized by rich gold leaf overlay, semi-precious stone embellishments, vibrant colors, and three-dimensional surface decoration depicting Hindu deities and saints on wooden panels.",
-    "options": [],
-    "randomizeOptions": false,
-    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Rich gold leaf overlay and embossing\n• Semi-precious stone and glass bead embellishments\n• Vibrant colors on wooden panel\n• Three-dimensional raised surface decoration\n• Ornate arch frame and decorative border"
+    "message": "Take a picture and completely reconstruct the image as a traditional Tanjore painting. Transform the subject and environment into a compact, richly colored devotional-style composition characterized by iconic stylized figures, dimensional ornamental relief, luminous gold-leaf surfaces, and intricate semi-precious-stone-like inlays.",
+  "options": [
+    {
+      "id": "001",
+      "text": "Gold Relief — dominant raised gold ornamentation surrounding the reconstructed subject"
+    },
+    {
+      "id": "002",
+      "text": "Gemstone Tanjore — richly colored forms with elaborate jewel-like inlays and ornamental detailing"
+    },
+    {
+      "id": "003",
+      "text": "Iconic Composition — compact frontal arrangement with stylized figures, rich colors, gold ornament, and decorative borders"
+    }
+  ],
+    "randomizeOptions": true,
+    "additionalInstructions": "• Completely reconstruct the source as Tanjore-inspired artwork.\n• Use rich saturated colors.\n• Use extensive gold-leaf appearance.\n• Create raised ornamental relief and embossed-looking details.\n• Use jewel-like semi-precious stone inlays.\n• Stylize people into iconic frontal or carefully composed forms while preserving recognizable identity where possible.\n• Maintain a compact composition.\n• Use intricate ornamental borders and decorative structures when naturally derived from the source composition.\n• The gold must look like physical gold leaf, not metallic CGI.\n• Do not leave photographic regions visible.\n• Do not replace the source with an unrelated religious scene.\n\nFINAL VALIDATION:\n✓ Entire image has been transformed.\n✓ Tanjore visual language is unmistakable.\n✓ Rich colors, gold relief, and jewel-like details are present.\n✓ Subject remains recognizable.\n✓ Result looks handcrafted rather than digitally filtered."
   },
   {
     "name": "TANTRIC ART",
@@ -49618,6 +49855,34 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "THERMAL INFRARED STAINED GLASS",
+    "category": [
+      "ART",
+      "STAINED GLASS",
+      "THERMAL",
+      "MOSAIC",
+      "COLOR",
+      "TRANSFORMATION"
+    ],
+    "message": "Take a picture and completely reconstruct the entire image as monumental stained glass rendered through a thermal-infrared heat-map spectrum. Every visible subject, object, structure, and environmental form becomes a carefully fitted stained-glass mosaic panel, but traditional jewel tones are replaced by thermal colors ranging from deep purples through electric blues, searing magentas, incandescent reds, neon oranges, and brilliant yellows.",
+    "options": [
+    {
+      "id": "001",
+      "text": "Thermal Portrait — subject reconstructed as intricate heat-map stained glass with facial identity preserved through leaded geometry"
+    },
+    {
+      "id": "002",
+      "text": "Heat Map Mosaic — entire scene reconstructed as interconnected thermal-spectrum glass panels"
+    },
+    {
+      "id": "003",
+      "text": "Extreme Infrared — dramatic deep-purple shadows transitioning through magenta, red, orange, and incandescent yellow glass"
+    }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "• Transform the entire image into stained glass.\n• Existing forms determine the glass panel shapes.\n• Use black or dark lead came between panels.\n• Replace conventional stained-glass jewel tones with thermal infrared colors.\n• Use deep purple, violet, blue, magenta, red, orange, yellow, and white-hot highlights.\n• Color transitions should communicate apparent heat rather than arbitrary decoration.\n• Preserve recognizable subject identity through carefully constructed glass geometry.\n• Light should pass through the glass naturally.\n• Include subtle glass texture, translucency, imperfections, and lead seams.\n• Do not merely place a stained-glass filter over the photograph.\n• Do not invent unrelated stained-glass imagery.\n\nFINAL VALIDATION:\n✓ Entire image is reconstructed as stained glass.\n✓ Thermal infrared color logic dominates.\n✓ Existing forms determine the mosaic structure.\n✓ Subject remains recognizable.\n✓ Glass translucency and lead structure are visible.\n✓ No ordinary photographic regions remain."
   },
   {
     "name": "THERMAL PRINTER",
@@ -54595,14 +54860,29 @@
     "name": "VORTICISM",
     "category": [
       "ART",
-      "PAINTING",
-      "BRITISH",
-      "ABSTRACT"
+      "VORTICISM",
+      "MODERNISM",
+      "GEOMETRIC",
+      "AVANT-GARDE",
+      "TRANSFORMATION"
     ],
-    "message": "Take a picture and transform the image into a Vorticist artwork. Preserve subject identity. Use bold, angular, machine-like geometric forms inspired by Wyndham Lewis and the early 20th-century British avant-garde. Emphasize sharp diagonals, fragmented planes, dynamic energy, and an industrial aesthetic celebrating the modern machine age.",
-    "options": [],
-    "randomizeOptions": false,
-    "additionalInstructions": ""
+    "message": "Take a picture and completely reconstruct the entire image in the hard-edged, dynamic visual language of Vorticism. Existing subjects, objects, architecture, and environmental structures must be broken into angular machine-like planes, intersecting diagonals, compressed spatial structures, and powerful abstract forms conveying concentrated mechanical energy.",
+    "options": [
+    {
+      "id": "001",
+      "text": "Mechanical Vortex — existing forms compressed into sharp machine-like planes and intersecting diagonals"
+    },
+    {
+      "id": "002",
+      "text": "Angular Dynamism — strong directional geometry and hard-edged fragments create concentrated visual energy"
+    },
+    {
+      "id": "003",
+      "text": "Non-Objective Reconstruction — source forms dissolve further into severe geometric structures while retaining their underlying composition"
+    }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "• Transform the entire image, not just the subject.\n• Use hard edges, angular planes, sharp diagonals, faceted structures, and machine-like geometry.\n• Compress space rather than using soft organic abstraction.\n• Create dynamic energy through intersecting structural forms.\n• Existing visual elements must generate the abstraction.\n• Preserve recognizable subject structure where possible.\n• Avoid generic Cubism.\n• Avoid soft painterly abstraction.\n• Do not add unrelated machines or industrial objects.\n• The environment must participate in the same Vorticist reconstruction.\n\nFINAL VALIDATION:\n✓ Entire image is transformed.\n✓ Hard-edged Vorticist geometry dominates.\n✓ Mechanical energy is apparent.\n✓ Existing source content drives the abstraction.\n✓ No unrelated imagery has been added."
   },
   {
     "name": "VSCO FILM",
