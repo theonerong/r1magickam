@@ -1069,6 +1069,33 @@
     "additionalInstructions": "VISUAL REQUIREMENTS:\n• Hybrid of photographic detail and expressive digital painting\n• Visible transitions between rendered areas and loose painterly passages\n• Digital brush textures clearly visible: round brushes, texture brushes, palette knife strokes\n• Some areas highly rendered, others left as gestural color blocks\n• Artistic color choices departing from photographic reality\n• Visible canvas or paper texture beneath digital paint\n• Subject recognizable but artistically interpreted\n• Reference: concept art paintover techniques, Craig Mullins, Jaime Jones style digital painting"
   },
   {
+    "name": "AI HALLUCINATION",
+    "category": [
+      "ART",
+      "AI",
+      "SURREALISM",
+      "TRANSFORMATION",
+      "EXPERIMENTAL"
+    ],
+    "message": "Take a picture and reconstruct it as an AI hallucination: preserve the core identity and recognizable structure of the original subject and scene while allowing the visual interpretation of existing forms to become bizarre, unstable, and increasingly incorrect. The result must feel like an artificial intelligence attempting to reconstruct the image and confidently misunderstanding what it sees.",
+    "options": [
+      {
+        "id": "001",
+        "text": "Subtle Misrecognition — familiar forms contain strange but believable reinterpretations"
+      },
+      {
+        "id": "002",
+        "text": "Escalating Hallucination — recognizable source forms progressively mutate into impossible interpretations"
+      },
+      {
+        "id": "003",
+        "text": "Maximum Reconstruction Error — the image remains identifiable while existing forms become dramatically misinterpreted"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "• Preserve the core identity of the original subject.\n• Preserve the fundamental composition and recognizable environment.\n• Transform existing forms through increasingly bizarre reinterpretation.\n• Distort anatomy, materials, object identity, scale, texture, and structure in controlled ways.\n• The strange elements must derive from things actually present in the source image.\n• Do not randomly add unrelated objects or scenery.\n• Do not turn the result into generic surrealism.\n• The visual logic should resemble a machine confidently misunderstanding the source.\n• Maintain internal consistency within each hallucinated reinterpretation.\n• The subject must remain identifiable despite the distortions.\n\nFINAL VALIDATION:\n✓ The image is visibly transformed.\n✓ The transformation resembles AI misinterpretation.\n✓ Existing source elements are being misread rather than replaced by unrelated imagery.\n✓ Subject identity remains recognizable.\n✓ Environment remains recognizable.\n✓ No generic fantasy scenery has been invented."
+  },
+  {
     "name": "AIRBRUSH",
     "category": [
       "ART",
@@ -7994,6 +8021,20 @@
     "additionalInstructions": ""
   },
   {
+    "name": "CHARRED WOOD",
+    "category": [
+      "ART",
+      "MATERIAL",
+      "WOOD",
+      "SCULPTURE",
+      "TRANSFORMATION"
+    ],
+    "message": "Take a picture and completely reconstruct the image as an intricately carved and charred wooden artwork. The subject and environment must physically appear to have been carved from wood and heavily scorched, with wood grain, carved contours, cracks, burned recesses, and layered charcoal surfaces defining every form.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "• Reconstruct every visible element as wood.\n• Use realistic longitudinal wood grain that follows each object's form.\n• Use carved recesses and raised surfaces to reproduce facial features and structural details.\n• Charred areas should be blackened, cracked, brittle, and irregular.\n• Partially burned areas should transition naturally into exposed brown wood.\n• Preserve recognizable facial identity through carved anatomy and grain direction.\n• Environment and background objects must also become carved/charred wood.\n• Preserve original composition and spatial relationships.\n• Do not merely overlay wood texture.\n• Do not leave photographic surfaces visible.\n• Do not add flames, smoke, fire, or unrelated burning objects unless present in the source.\n\nFINAL VALIDATION:\n✓ Everything visible has been reconstructed as carved/charred wood.\n✓ Wood grain follows actual forms.\n✓ Subject remains recognizable.\n✓ Facial identity is preserved.\n✓ No simple texture filter has been used."
+  },
+  {
     "name": "CHAVO DEL OCHO",
     "category": [
       "TV",
@@ -9949,6 +9990,33 @@
     "additionalInstructions": "COLORED PENCIL ENFORCEMENT:\n\n• Simulate authentic colored-pencil illustration techniques\n• Include visible pencil strokes, layered shading, pigment overlap, and realistic hand-drawn texture\n• Preserve believable traditional-media realism\n• The image should feel physically drawn on paper rather than digitally filtered\n\nPENCIL STROKE ENFORCEMENT:\n\n• Pencil marks must remain visible throughout the image\n• Include directional stroke layering, crosshatching, blending, pressure variation, and sketch-like texture\n• Allow uneven pigment density and natural hand-drawn imperfection\n• Avoid perfectly smooth digital gradients\n\nTEXTURE ENFORCEMENT:\n\n• Include realistic waxy colored-pencil texture and pigment buildup\n• Add visible paper grain interacting with the pencil strokes\n• Preserve subtle tooth texture from the paper surface\n• Allow slight color inconsistencies and layered blending realism\n\nSUBJECT ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Maintain recognizable facial structure, hairstyle, posture, body shape, and clothing silhouette\n• The subject should appear naturally illustrated with hand-crafted artistic detail\n• Preserve readable anatomy and expressive features\n\nCOLOR ENFORCEMENT:\n\n• Use rich layered colored-pencil tones with realistic blending behavior\n• Colors should appear physically built from layered pencil applications\n• Avoid oversaturated synthetic digital color\n• Allow subtle pigment overlap and natural color mixing\n\nILLUSTRATION STYLE:\n\n• Professional illustrated-book aesthetic\n• Traditional fine-art drawing realism\n• Hand-rendered shading and texture\n• Expressive artistic linework\n• Detailed observational illustration\n• Rich tactile media appearance\n\nDEPTH AND COMPOSITION:\n\n• Preserve realistic depth and composition while translating the image into traditional illustration form\n• Keep the subject visually dominant and readable\n• Maintain believable lighting and shading structure\n• Use layered pencil rendering to enhance dimensionality\n\nANTI-CHEAT:\n\n• Do NOT generate smooth digital painting aesthetics\n• Do NOT remove visible pencil strokes\n• Do NOT create watercolor textures\n• Do NOT flatten the illustration into vector-like simplicity\n• Do NOT create airbrushed digital gradients\n• Do NOT lose realistic paper texture\n\nFINAL RESULT:\nThe final image must resemble an authentic ultra-detailed colored-pencil illustration featuring the recognizable subject with visible hand-drawn pencil strokes, waxy pigment texture, layered shading, realistic paper grain, tactile traditional-media realism, and premium illustrated-book artistic quality."
   },
   {
+    "name": "COLOR EXPLOSION",
+    "category": [
+      "ART",
+      "COLOR",
+      "VIBRANT",
+      "SPECTRUM",
+      "TRANSFORMATION"
+    ],
+    "message": "Take a picture and completely reconstruct it as an extraordinarily vivid COLOR EXPLOSION using an extreme full-spectrum palette. Every visible form must become intensely colorful, using virtually the entire visible color spectrum simultaneously while preserving the recognizable subject, objects, composition, and environment. Think Technicolor pushed far beyond normal photographic color into an overwhelmingly saturated, visually spectacular world of color.",
+    "options": [
+      {
+        "id": "001",
+        "text": "FULL SPECTRUM — Every major form contains an intense progression through the visible color spectrum from red through violet"
+      },
+      {
+        "id": "002",
+        "text": "RAINBOW FACETING — Existing forms are reconstructed from hundreds of intensely saturated color regions that shift continuously through the spectrum"
+      },
+      {
+        "id": "003",
+        "text": "TECHNICOLOR EXTREME — Preserve the original image's forms while pushing saturation, color separation, contrast, and chromatic intensity to an extraordinary level"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "CORE COLOR TRANSFORMATION:\n\n• The entire image must be genuinely reconstructed into an intensely colorful visual experience.\n• Use the complete visible color spectrum throughout the image.\n• Include saturated reds, oranges, yellows, greens, cyans, blues, violets, magentas, and transitional hues.\n• Do not restrict color to a few selected objects.\n• Allow colors to transition through multiple spectral hues across faces, clothing, objects, architecture, landscape, and background.\n• Existing forms must remain recognizable despite the extreme color transformation.\n• Preserve the subject's recognizable facial identity and structure.\n• Every color must contribute to the reconstruction of an existing visual form.\n• Use extreme saturation without simply turning the entire image into a featureless rainbow gradient.\n• Preserve dimensionality through color contrast, value structure, highlights, and shadows.\n• Use chromatic separation to make edges and forms visually explosive.\n• The result should feel like Technicolor on steroids: dramatically more colorful than ordinary photography, printing, or cinema.\n\nENTIRE IMAGE:\n• Transform both subject and environment.\n• Do not leave the background in normal photographic color.\n• Do not restrict the effect to the subject.\n• Existing objects and surfaces should become participants in the full-spectrum transformation.\n\nSTRICTLY PROHIBITED:\n• No monochrome regions unless required for essential contrast.\n• No ordinary naturalistic color grading.\n• No simple saturation filter.\n• No rainbow border.\n• No rainbow aura.\n• No rainbow background added independently of the source.\n• No colored smoke, magical energy, sparks, or fantasy effects merely to create color.\n• No unrelated objects or scenery.\n• No color effects floating above an otherwise unchanged photograph.\n\nFINAL VALIDATION:\n✓ The entire image has been transformed.\n✓ The visible spectrum is extensively represented.\n✓ Colors are extraordinarily vivid and saturated.\n✓ Existing forms remain recognizable.\n✓ Subject identity remains recognizable.\n✓ Background and environment are also transformed.\n✓ The result is dramatically more colorful than normal photography.\n✓ The effect is a genuine reconstruction, not merely a saturation adjustment.\n✓ No unrelated imagery has been added.\n✓ If ANY answer is NO, regenerate until satisfied."
+  },
+  {
     "name": "COLOR FIELD PAINTING",
     "category": [
       "ART",
@@ -11788,6 +11856,20 @@
     "additionalInstructions": "STYLE ENFORCEMENT:\n\u2022 Preserve recognizable subject identity\n\u2022 Show gravity-defying martial arts action (wire-fu aesthetic)\n\u2022 Include flowing silk robes and fabric in dramatic motion\n\u2022 Use painterly Chinese landscape backgrounds (mountains, bamboo, waterfalls)\n\u2022 Apply slow-motion photography aesthetic for fabric and hair\n\u2022 Include traditional weapons (sword, staff, fan)\n\u2022 Use dramatic color grading (rich greens, golds, reds)\n\u2022 Reference wuxia films (Crouching Tiger Hidden Dragon, Hero, House of Flying Daggers)\n\u2022 Show impossible physics (running on water, leaping between trees)\n\u2022 Create sense of grace, power, and poetic movement"
   },
   {
+    "name": "CRUSHED FOIL",
+    "category": [
+      "ART",
+      "MATERIAL",
+      "METALLIC",
+      "SCULPTURE",
+      "TRANSFORMATION"
+    ],
+    "message": "Take a picture and completely reconstruct the image from a physically crumpled and folded sheet-like metallic foil surface. The folds, creases, ridges, valleys, and changing reflections must collectively reproduce the subject and environment.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "• Every visible form must be reconstructed from crushed metallic foil.\n• Use dense micro-folds in detailed regions and larger structural folds in simple regions.\n• Facial identity must emerge from the actual arrangement of folds and reflections.\n• Highlights and shadows must follow the physical foil geometry.\n• Use realistic metallic reflectivity.\n• Preserve recognizable silhouettes and spatial relationships.\n• Transform the environment as well as the subject.\n• The foil must physically form the objects rather than simply cover them.\n• No smooth chrome surfaces.\n• No unchanged photograph underneath.\n• No random foil balls or unrelated metallic objects.\n\nFINAL VALIDATION:\n✓ The image is physically reconstructed from foil.\n✓ Folds create the actual forms.\n✓ Subject remains recognizable.\n✓ Environment is also reconstructed.\n✓ No simple metallic filter has been applied."
+  },
+  {
     "name": "CRYSTALLIZED",
     "category": [
       "OPTIONS",
@@ -12375,6 +12457,33 @@
     "additionalInstructions": "CORE TRANSFORMATION:\n\n• COMPLETELY RECONSTRUCT the selected image in the DARK GROTESQUE COMIC visual language.\n• Do NOT apply a superficial comic, ink, cartoon, or illustration filter to the photograph.\n• The original photographic rendering must disappear within the transformed area.\n• Every important visible form must be redrawn as illustrated artwork.\n• Skin, hair, eyes, teeth, clothing, objects, architecture, and environmental elements must all be reconstructed using the same dark grotesque illustration language.\n• The source image determines WHAT is depicted.\n• This preset determines HOW everything is depicted.\n• Do not replace the source subject with a generic comic character.\n• Do not invent a different character unrelated to the source.\n\nSUBJECT IDENTITY PRESERVATION:\n\n• Preserve the subject's recognizable identity.\n• Preserve distinctive facial geometry and characteristic features.\n• Preserve recognizable eye shape and spacing.\n• Preserve eyebrow shape and placement.\n• Preserve nose structure and distinctive proportions.\n• Preserve mouth shape and recognizable lip structure.\n• Preserve jaw and cheek structure.\n• Preserve distinctive facial asymmetries.\n• Preserve recognizable hairstyle, hair color, facial hair, and other identifying characteristics.\n• Preserve recognizable clothing characteristics when present.\n• The exaggerated comic treatment must still clearly represent the ORIGINAL SUBJECT.\n• Do not replace the subject's face with a generic horror face.\n• Do not make the subject unrecognizable merely for the sake of grotesque exaggeration.\n\nGROTESQUE CHARACTER DESIGN:\n\n• Exaggeration is REQUIRED but must remain visually coherent.\n• Enlarge or emphasize distinctive facial characteristics in a deliberate caricature-like manner.\n• Eyes may become dramatically larger and more expressive.\n• Nose may become more prominent or exaggerated.\n• Wrinkles, pores, facial creases, scars, beard hairs, eyelashes, and skin folds may be dramatically emphasized.\n• Teeth may become unusually prominent when visible.\n• Facial expressions should become highly expressive and theatrical.\n• Anatomical exaggeration may include enlarged hands, elongated fingers, exaggerated shoulders, unusual proportions, or other controlled comic distortions when appropriate.\n• Exaggeration must remain part of the illustrated character design rather than becoming random deformation.\n• Preserve the essential structure necessary for recognition.\n\nPEN-AND-INK RENDERING:\n\n• Use extremely dense fine black and dark-gray ink linework.\n• Use extensive cross-hatching.\n• Use layered directional hatching to describe three-dimensional form.\n• Use engraved-style parallel lines and curved contour hatching.\n• Use varied line weight to establish depth and emphasis.\n• Use tiny controlled marks for wrinkles, pores, hair, fabric, scratches, and surface imperfections.\n• Use dense ink accumulation in deep shadows.\n• Use sharply controlled outlines around important forms.\n• Combine fine precision with deliberately rough illustrated marks.\n• Linework should resemble an exceptionally accomplished comic or graphic-novel artist rather than computer-generated outlines.\n\nSKIN AND FACE RENDERING:\n\n• Skin must be constructed from thousands of illustrated marks rather than smooth photographic texture.\n• Emphasize wrinkles, pores, folds, creases, veins, facial planes, and irregularities.\n• Use dense cross-hatching to model facial volume.\n• Use dark ink around deep facial recesses.\n• Use carefully controlled highlights against heavily shaded areas.\n• Preserve recognizable facial landmarks while exaggerating them artistically.\n• Eyes should receive especially detailed rendering, including veins, reflections, eyelids, lashes, and surrounding wrinkles when appropriate.\n• Facial expression must remain immediately readable.\n\nHAIR AND FACIAL HAIR:\n\n• Hair must be individually constructed from thousands of expressive ink strokes.\n• Avoid smooth digital hair masses.\n• Use overlapping strands, clumps, stray hairs, highlights, and deep shadow regions.\n• Beards and moustaches should contain extensive individual hair detail.\n• Exaggerate density and texture when appropriate to the grotesque comic aesthetic.\n• Preserve the subject's actual hair characteristics and recognizable hairstyle.\n\nCOLOR AND LIGHTING:\n\n• Use sophisticated cinematic digital coloring layered over detailed ink rendering.\n• Dominant palette should be dark, muted, earthy, or dramatically saturated depending on the source.\n• Allow selected colors to become strong visual accents.\n• Use deep blacks and extremely dark shadow regions.\n• Use warm highlights against cool or neutral shadows when appropriate.\n• Maintain dramatic chiaroscuro.\n• Lighting should sculpt the illustrated anatomy rather than flatten it.\n• Highlights should appear painted into the ink rendering.\n• Avoid glossy modern digital-art rendering.\n• Avoid flat cartoon coloring.\n• Avoid pastel children's-book coloration.\n\nTEXTURE:\n\n• Make texture one of the defining characteristics of the artwork.\n• Skin should have pores, wrinkles, creases, scratches, and irregular surface detail.\n• Clothing should contain visible fibers, folds, seams, wear, and distressed surfaces.\n• Metal should contain scratches, oxidation, dents, and illustrated reflections where appropriate.\n• Wood, stone, glass, plastic, and other materials should each receive distinct illustrated textures.\n• Texture must be generated through intentional linework, stippling, cross-hatching, painted marks, and controlled tonal variation.\n• Do not use generic photographic texture.\n\nBACKGROUND AND ENVIRONMENT:\n\n• Preserve the recognizable environment from the original image unless the master prompt specifically requests a different setting.\n• Reconstruct existing environmental elements using the same dark grotesque comic rendering.\n• Existing buildings, furniture, vehicles, landscape, objects, and surfaces should become illustrated versions of themselves.\n• Do not automatically replace the environment with a generic horror background.\n• Do not invent unrelated scenery merely because the style is dark or grotesque.\n• Maintain the original composition and important spatial relationships.\n• Environmental detail should support the subject without overwhelming it.\n\nCOMPOSITION:\n\n• Maintain the original subject's fundamental pose and composition unless the selected option or master prompt specifies otherwise.\n• Use dramatic graphic-novel framing.\n• Establish a strong focal hierarchy around the subject.\n• Use deep shadows and concentrated detail to guide the eye.\n• Allow portions of the image to become extremely dark while preserving important forms.\n• Avoid making every area equally detailed.\n• Use dense detail where the viewer should look and controlled simplification elsewhere.\n\nDARK FANTASY / HORROR QUALITY:\n\n• The atmosphere may be ominous, macabre, bizarre, unsettling, or darkly humorous.\n• Grotesque does NOT automatically mean gore.\n• Do not add blood, wounds, mutilation, exposed organs, or graphic injury unless explicitly required by the master prompt.\n• The grotesque quality should primarily come from exaggerated anatomy, facial expression, texture, proportions, and rendering.\n• The result should feel like a sophisticated dark-fantasy graphic novel rather than a gore illustration.\n\nCOMIC ILLUSTRATION LANGUAGE:\n\n• Highly finished graphic-novel artwork.\n• Sophisticated character illustration.\n• Dramatic ink contours.\n• Extreme cross-hatching.\n• Engraved-style details.\n• Heavy chiaroscuro.\n• Cinematic color accents.\n• Distressed illustrated surfaces.\n• Controlled caricature.\n• Strong silhouette design.\n• Highly expressive faces.\n• Visually dense but intentionally composed artwork.\n\nSTRICTLY PROHIBITED:\n\n• No photographic appearance in the transformed area.\n• No simple photo-to-cartoon filter.\n• No generic comic filter.\n• No generic anime style.\n• No children's cartoon style.\n• No smooth 3D CGI appearance.\n• No plastic-looking digital character.\n• No generic horror monster replacing the subject.\n• No loss of subject identity.\n• No random facial deformation.\n• No meaningless anatomical distortion.\n• No unrelated fantasy characters.\n• No invented objects solely to make the scene look fantastical.\n• No unnecessary blood or gore.\n• No zombie transformation unless explicitly requested.\n• No automatic horns, fangs, claws, tentacles, or monster anatomy unless explicitly requested.\n• No excessive glowing eyes.\n• No magical effects merely because the style is dark fantasy.\n• No watermark.\n• No artificial artist signature.\n\nMASTER PROMPT RULE:\n\n• Master prompt instructions always override conflicting stylistic details EXCEPT the mandatory DARK GROTESQUE COMIC transformation and subject-identity requirements.\n• If the master prompt specifies clothing, pose, setting, action, camera angle, composition, objects, colors, or environment, incorporate that information into the dark grotesque comic reconstruction.\n• If the master prompt introduces another artistic direction, combine it with the dark grotesque comic rendering without allowing the image to revert to photography.\n• Do not allow master-prompt information to remove the core requirement that the image be completely reconstructed as dark grotesque comic artwork.\n\nFINAL VALIDATION:\n\n✓ The photographic appearance has been completely replaced by illustrated artwork.\n✓ The subject remains clearly recognizable as the original subject.\n✓ Facial identity has been preserved while allowing controlled grotesque exaggeration.\n✓ The image looks like sophisticated dark-fantasy graphic-novel artwork.\n✓ Dense pen-and-ink linework is clearly visible.\n✓ Extensive cross-hatching is clearly visible.\n✓ Facial and surface textures contain extraordinary illustrated detail.\n✓ Anatomy and facial characteristics are exaggerated in a deliberate, controlled manner.\n✓ Dramatic chiaroscuro is present.\n✓ Color is integrated with the ink rendering rather than appearing as a generic digital filter.\n✓ Existing environmental elements have been reconstructed in the same artistic language.\n✓ The image does not look like a photograph with a comic filter.\n✓ The image does not look like a generic cartoon.\n✓ The image does not replace the subject with a different character.\n✓ The grotesque quality comes primarily from artistic reconstruction, exaggerated anatomy, expression, and texture.\n✓ If ANY answer is NO, regenerate until every requirement is satisfied."
   },
   {
+    "name": "DARKROOM ACCIDENT",
+    "category": [
+      "PHOTOGRAPHY",
+      "DARKROOM",
+      "EXPERIMENTAL",
+      "ANALOG",
+      "TRANSFORMATION"
+    ],
+    "message": "Take a picture and completely reinterpret it as an extraordinary analog darkroom accident. The original photograph must be visibly transformed by physically plausible photographic-development abnormalities such as uneven chemical development, solarization, emulsion damage, chemical staining, exposure irregularities, density shifts, and accidental light exposure.",
+    "options": [
+      {
+        "id": "001",
+        "text": "Solarized Negative — extreme tonal reversal with partially inverted photographic values"
+      },
+      {
+        "id": "002",
+        "text": "Chemical Stain — irregular developer contamination creating dramatic pools, streaks, and tonal discoloration"
+      },
+      {
+        "id": "003",
+        "text": "Light Leak and Emulsion Damage — accidental exposure and damaged emulsion dramatically alter portions of the photograph"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "• The source photograph must be genuinely transformed.\n• The effect must resemble a physical analog photographic accident rather than a digital filter.\n• Preserve recognizable subject identity.\n• Preserve enough source content for the original image to remain identifiable.\n• Photographic density, emulsion, chemistry, exposure, and development must appear physically affected.\n• Use realistic film artifacts rather than generic digital glitches.\n• Do not add unrelated objects or scenery.\n• Do not turn the image into an abstract painting.\n• The selected accident must visibly affect the photograph.\n\nFINAL VALIDATION:\n✓ A clear darkroom accident is visibly present.\n✓ The transformation affects the actual photograph.\n✓ Subject remains recognizable.\n✓ The result resembles physical analog photography."
+  },
+  {
     "name": "DASHBOARD HULA DANCER",
     "category": [
       "NOVELTY",
@@ -12450,6 +12559,33 @@
     ],
     "randomizeOptions": true,
     "additionalInstructions": "IDENTITY PRESERVATION:\n• Subject must remain recognizable despite glitch effects\n• The corruption should look like authentic video compression artifacts, not random noise\n\nFINAL RESULT:\nThe image should look like a corrupted video frame — the kind of beautiful digital destruction that glitch artists deliberately create."
+  },
+  {
+    "name": "DATA SCULPTURE",
+    "category": [
+      "ART",
+      "DIGITAL",
+      "DATA",
+      "SCULPTURE",
+      "TRANSFORMATION"
+    ],
+    "message": "Take a picture and completely reconstruct the image as a three-dimensional sculpture generated from visual data extracted from the source. The subject, objects, and environment must become physical-looking structures composed of data streams, points, curves, surfaces, and volumetric information while retaining the recognizable geometry of the original image.",
+    "options": [
+      {
+        "id": "001",
+        "text": "Point Cloud Sculpture — forms reconstructed from millions of precisely positioned points"
+      },
+      {
+        "id": "002",
+        "text": "Data Threads — forms reconstructed from dense flowing lines and interconnected data paths"
+      },
+      {
+        "id": "003",
+        "text": "Volumetric Data — forms reconstructed as translucent three-dimensional data surfaces"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "• Source geometry determines the sculpture.\n• Every major visible form must be reconstructed from data-derived structures.\n• Preserve recognizable subject identity.\n• Facial features must emerge from the data geometry rather than being pasted into it.\n• Transform the environment using the same data language.\n• Use convincing depth, occlusion, scale, and three-dimensional structure.\n• Do not place data graphics over an unchanged photograph.\n• Do not add unrelated charts, graphs, numbers, interfaces, or scenery.\n• The final image should look like a photograph of a physical or volumetric data sculpture.\n\nFINAL VALIDATION:\n✓ Source image has been reconstructed as data geometry.\n✓ Subject remains recognizable.\n✓ Environment participates.\n✓ Data structures create the actual forms.\n✓ No simple digital overlay."
   },
   {
     "name": "DATING PROFILE",
@@ -12988,6 +13124,20 @@
     ],
     "randomizeOptions": true,
     "additionalInstructions": "FINAL RESULT:\nThe image should look like a sincere inspirational poster with the subject appearing thoughtful and composed, with one randomly selected Jack Handey 'Deep Thought' quote displayed clearly and readably - the humor coming entirely from the contrast between the earnest visual presentation and the unexpectedly absurd philosophical text."
+  },
+  {
+    "name": "DELAUNAY HUMAN",
+    "category": [
+      "ART",
+      "GEOMETRIC",
+      "MATHEMATICAL",
+      "PORTRAIT",
+      "TRANSFORMATION"
+    ],
+    "message": "Take a picture and completely reconstruct the image using Delaunay-style triangulation. Every visible form must be rebuilt from an intricate network of interconnected triangles whose vertices follow the actual geometry, contours, surfaces, facial features, objects, and spatial structure of the source image. The subject and environment must remain recognizable, but the original photographic surfaces must be replaced by a sophisticated triangulated construction. The triangles must behave as structural facets rather than a simple triangular overlay.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "CORE TRANSFORMATION:\n\n• Completely reconstruct the image from interconnected triangular geometry.\n• Use Delaunay-style triangulation as the fundamental construction system.\n• Triangle vertices must follow meaningful points in the original image rather than being randomly scattered.\n• Facial landmarks, body contours, object edges, architectural corners, and environmental structures should determine the triangulation.\n• Triangle sizes should vary according to visual complexity: smaller triangles around eyes, facial features, intricate objects, and important edges; larger triangles in simpler regions.\n• Each triangle should contribute to the actual reconstruction of the underlying form.\n• Use subtly varying tone, texture, opacity, and color between adjacent triangles to reproduce the original image.\n• The result must look like the image was constructed from the triangles themselves.\n\nSUBJECT IDENTITY:\n• Preserve recognizable facial identity when a person is present.\n• Preserve distinctive eyes, nose, mouth, facial proportions, hairstyle, silhouette, and important characteristics.\n• Facial features must be formed by the triangulation itself rather than painted over the triangles.\n• Do not replace the subject with a generic geometric person.\n\nENTIRE IMAGE:\n• Transform the entire visible image, not merely the subject.\n• Background, architecture, objects, surfaces, landscape, clothing, and environmental details must also be reconstructed through the same triangular system.\n• Do not leave photographic regions untouched.\n\nSTRICTLY PROHIBITED:\n• No simple low-poly filter.\n• No random triangle overlay.\n• No triangles floating above an unchanged photograph.\n• No invented objects or scenery.\n• No unrelated geometric artwork.\n• No collage.\n\nFINAL VALIDATION:\n✓ The entire image is reconstructed through interconnected triangles.\n✓ Triangles form the actual visual structure rather than an overlay.\n✓ Existing subject and environment remain recognizable.\n✓ Facial identity is preserved.\n✓ No substantial photographic regions remain.\n✓ No unrelated imagery has been invented.\n✓ If ANY answer is NO, regenerate until satisfied."
   },
   {
     "name": "DEMI-GODZILLA",
@@ -19534,14 +19684,28 @@
     "name": "FUTURISM STYLE",
     "category": [
       "ART",
-      "PAINTING",
-      "STYLE TRANSFORMATION",
-      "MODERN"
+      "FUTURIST",
+      "MOTION",
+      "AVANT-GARDE",
+      "TRANSFORMATION"
     ],
-    "message": "Take a picture and transform the image into a Futurism-style painting.\n\nCORE CONCEPT (CRITICAL):\n• The scene is reimagined with a strong sense of motion, speed, and energy\n• Subject(s) must remain recognizable but dynamically transformed\n• Emphasize movement, repetition, and technological dynamism\n\nSTYLE CHARACTERISTICS:\n• Repeated forms or overlapping silhouettes to suggest motion\n• Motion blur effects translated into painted form\n• Fragmented or angular shapes conveying speed and force\n• Dynamic lines and directional energy flows\n\nARTISTIC INTERPRETATION:\n• Objects and subjects may appear multiplied or stretched across space\n• Perspective may be distorted to emphasize motion\n• Mechanical or industrial elements may be enhanced\n\nTEXTURE & MEDIUM:\n• Bold, energetic brushstrokes\n• Layered paint suggesting movement and vibration\n• Oil or mixed-media canvas appearance\n\nENVIRONMENT:\n• Transform the background to reflect motion and energy\n• Surroundings may appear in flux, fragmented, or speed-driven\n\nSTYLE:\n• High contrast and vivid or metallic color tones\n• Energetic, chaotic, and forward-moving composition\n• Strong sense of rhythm and visual acceleration",
-    "options": [],
-    "randomizeOptions": false,
-    "additionalInstructions": "FINAL RESULT:\nThe image should look like a dynamic Futurist painting filled with motion, energy, and speed, with the subject appearing in motion through repetition and fragmentation."
+    "message": "Take a picture and completely reconstruct the image as a Futurist vision of movement, speed, simultaneity, mechanical energy, technological dynamism, and visual acceleration. Existing subjects, objects, and environmental forms must be fragmented into repeated directional planes, overlapping stages of motion, angular structures, energetic lines, and rhythmically repeated forms while remaining recognizable.\n\nThe image must embody the fundamental visual language of Futurism: movement made visible through repetition, simultaneity, fragmentation, dynamic diagonals, mechanical energy, technological force, distorted perspective, and overlapping phases of action. The scene should feel as though motion, vibration, speed, and energy have been physically translated into paint.\n\nDo not merely apply motion blur to the original photograph. Completely reconstruct the image as an energetic Futurist artwork in which the subject, objects, and environment are actively transformed by movement. Objects and subjects may appear multiplied, stretched, fragmented, repeated, or displaced across space to communicate motion and acceleration.\n\nThe final artwork should combine dynamic Futurist geometry with bold, energetic painted forms, layered brushwork, visual vibration, and a strong sense of forward-moving force. The environment must participate in the movement rather than remaining a static photographic backdrop.\n\nThe result should feel like an ambitious Futurist painting or mixed-media artwork that transforms the original image into a visual experience of speed, simultaneity, mechanical power, rhythm, and technological energy.",
+    "options": [
+    {
+      "id": "001",
+      "text": "Dynamic Motion — repeated positions of existing forms create intense forward movement"
+    },
+    {
+      "id": "002",
+      "text": "Mechanical Energy — angular planes and force lines reconstruct existing forms as powerful machinery-like motion"
+    },
+    {
+      "id": "003",
+      "text": "Simultaneous Movement — multiple stages of the subject's existing movement overlap within one unified composition"
+    }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "CORE FUTURIST TRANSFORMATION:\n\n• Completely reconstruct the image in a powerful Futurist visual language.\n• Use repetition, directional planes, fractured contours, overlapping stages of movement, dynamic diagonals, energetic lines, and visual rhythm.\n• Existing forms must generate the motion structures.\n• Preserve the recognizable identity and essential structure of the subject.\n• Transform the subject itself rather than merely surrounding it with motion effects.\n• Transform the environment as well as the subject.\n• Existing objects may appear multiplied, repeated, stretched, fragmented, displaced, or rhythmically overlapped when this communicates movement.\n• Perspective may be deliberately distorted to emphasize speed, force, depth, and acceleration.\n• Use simultaneous views or sequential positions of existing forms to suggest several moments occurring within one image.\n• Create the visual sensation of movement, vibration, and mechanical force even when the original subject was stationary.\n\nFUTURIST VISUAL LANGUAGE:\n\n• Strong sense of motion, speed, energy, rhythm, and acceleration.\n• Repeated forms or overlapping silhouettes should suggest successive stages of movement.\n• Fragmented and angular shapes should convey speed and force.\n• Dynamic lines should radiate, converge, sweep, or propel the eye through the composition.\n• Directional energy flows should follow the actual movement and structure of existing subjects and objects.\n• Use visual simultaneity: multiple related positions, contours, planes, or stages of an existing form may coexist.\n• Use fractured contours and overlapping planes to make movement visible.\n• Use mechanical and industrial visual language where appropriate.\n• Enhance existing technological, mechanical, architectural, automotive, or industrial elements when they are present.\n• Do not invent mechanical objects simply to create a Futurist appearance.\n\nPAINTED MOTION:\n\n• Translate photographic motion blur into expressive painted structures rather than digital blur.\n• Use bold, energetic brushstrokes integrated into the actual reconstruction.\n• Use layered paint to suggest movement, vibration, repetition, and acceleration.\n• Allow brushwork to follow directional movement through the composition.\n• Use overlapping painted forms to create visual rhythm.\n• Use varied line weight and brush density to emphasize force and speed.\n• Combine hard angular planes with energetic painted strokes.\n• The image should feel physically painted rather than digitally filtered.\n• Oil paint or sophisticated mixed-media canvas appearance is appropriate.\n• Preserve enough structural information that the original subject remains recognizable beneath the dynamic reconstruction.\n\nCOMPOSITION AND PERSPECTIVE:\n\n• Use strong diagonals and directional composition.\n• Avoid static, centered, symmetrical presentation unless dictated by the source image.\n• Perspective may be exaggerated or distorted to increase the sensation of acceleration.\n• Forms may appear to push toward, away from, or across the picture plane.\n• Overlapping forms should create depth and sequential movement.\n• The composition should guide the viewer's eye through a continuous visual trajectory.\n• Create a deliberate sense of visual acceleration rather than random chaos.\n• Motion structures must remain connected to recognizable source forms.\n\nCOLOR AND TONAL ENERGY:\n\n• Use high contrast.\n• Use vivid, energetic color relationships when appropriate.\n• Metallic tones may be incorporated to reinforce mechanical and technological energy.\n• Use strong color contrasts to separate successive stages of movement.\n• Color may intensify along directional paths to reinforce acceleration.\n• Dark and light regions should create rhythmic visual impact.\n• Do not reduce the image to a dull monochrome unless required by the master prompt.\n• Color should participate in the motion rather than simply decorate the image.\n\nENVIRONMENT:\n\n• Completely transform the background and environment into the same Futurist visual language.\n• Existing architecture, furniture, vehicles, landscape, objects, surfaces, and structures may become fragmented, repeated, elongated, angular, or directionally displaced.\n• Surroundings should appear to be in flux, fragmented, vibrating, or speed-driven.\n• Existing environmental lines should contribute to the overall directional movement.\n• The environment must not remain a static photographic backdrop.\n• Preserve the fundamental recognizable contents of the original environment.\n• Do not invent unrelated scenery or objects merely to create movement.\n\nSUBJECT IDENTITY:\n\n• Preserve recognizable subject identity.\n• Preserve distinctive facial structure and important identifying characteristics when a person is present.\n• The face may be repeated, fragmented, displaced, or shown through successive stages of movement, but enough information must remain for the subject to be unmistakably recognizable.\n• Do not replace the subject with a generic Futurist figure.\n• Do not turn the subject into an unrelated abstract shape.\n• The subject must remain the primary visual source of the transformation.\n\nSOURCE-CONTENT RULE:\n\n• Existing visual content should generate the Futurist reconstruction.\n• Do not invent unrelated objects merely to create dynamism.\n• Do not add random futuristic scenery.\n• Do not add arbitrary machinery, robots, vehicles, buildings, or technology that was not present in the source unless explicitly requested by the master prompt.\n• Motion effects must be generated from existing subjects, objects, structures, and environmental forms.\n• The source image determines WHAT is being transformed; Futurism determines HOW it is transformed.\n\nTRANSFORMATION REQUIREMENT:\n\n• Do not simply overlay Futurist effects onto the photograph.\n• Do not leave the original photograph underneath painted effects.\n• Completely reconstruct the visual appearance of the image through the Futurist artistic language.\n• The transformed image must cease to look like an ordinary photograph.\n• The subject, objects, and environment must all participate in the artistic reconstruction.\n• The final result must look like a deliberately created Futurist artwork rather than a photograph with motion effects applied.\n\nSTYLE ENFORCEMENT:\n\n• Futurist movement must be unmistakable.\n• Speed must be visually represented rather than merely implied.\n• Simultaneity must be visible through overlapping stages, repeated forms, or multiple positions of existing elements.\n• Mechanical and technological dynamism should be emphasized when supported by the source image.\n• Use fragmented geometry, angular planes, energetic lines, repetition, and directional force.\n• Use bold painted marks and layered color to reinforce the sensation of movement.\n• Maintain an energetic, chaotic, forward-moving composition while preserving deliberate artistic control.\n• The artwork should feel alive, vibrating, and in motion.\n\nSTRICTLY PROHIBITED:\n\n• No simple motion-blur filter.\n• No generic speed lines floating over the photograph.\n• No unchanged photographic subject surrounded by painted effects.\n• No static photographic background.\n• No random abstract shapes unrelated to existing forms.\n• No invented objects merely to make the scene look futuristic.\n• No generic sci-fi aesthetic replacing Futurism.\n• No photorealistic rendering with superficial Futurist effects.\n• No accidental-looking distortion.\n• No digital glitch aesthetic unless explicitly requested.\n• No unrelated collage imagery.\n\nMASTER PROMPT RULE:\n\n• Master prompt instructions always override conflicting instructions EXCEPT the mandatory requirement that the image be transformed into a Futurist artwork emphasizing movement, speed, simultaneity, and dynamic energy.\n• Incorporate master-prompt subject, pose, setting, action, clothing, composition, camera angle, and visual information into the Futurist reconstruction.\n• If the master prompt specifies a particular object, environment, action, or composition, preserve it while transforming its visual language through Futurist motion.\n• Do not allow the master prompt to cause the image to remain photographic.\n\nFINAL VALIDATION:\n\n✓ Futurist movement is unmistakable.\n✓ Speed and acceleration are visibly represented.\n✓ Simultaneity is visible through repetition, overlap, or successive stages.\n✓ Existing visual content has been completely reconstructed.\n✓ Subject remains recognizable.\n✓ Facial identity remains recognizable when applicable.\n✓ Environment participates in the Futurist transformation.\n✓ Dynamic diagonals and directional energy are present.\n✓ Fragmented and angular forms contribute to the sense of motion.\n✓ Painted or mixed-media qualities are visibly integrated into the reconstruction.\n✓ Repetition and overlapping forms derive from existing source elements.\n✓ Perspective may be distorted deliberately to reinforce movement.\n✓ Color and tonal contrast contribute to visual acceleration.\n✓ The result does not look like a photograph with a filter.\n✓ No unrelated imagery has been added.\n✓ No generic sci-fi imagery has replaced the source content.\n✓ The final image feels like a sophisticated, energetic Futurist artwork.\n✓ If ANY answer is NO, regenerate until every requirement is satisfied."
   },
   {
     "name": "GALVANIZED STEEL",
@@ -33554,6 +33718,33 @@
     "additionalInstructions": ""
   },
   {
+    "name": "NOUVEAU RÉALISME",
+    "category": [
+      "ART",
+      "NOUVEAU RÉALISME",
+      "ASSEMBLAGE",
+      "MATERIAL",
+      "TRANSFORMATION"
+    ],
+    "message": "Take a picture and completely reconstruct it as a Nouveau Réalisme-inspired assemblage using the visual language of real-world objects, found materials, consumer remnants, mechanical fragments, packaging, printed matter, and accumulated physical debris. Existing subject and environment must be reinterpreted through tangible assemblage while remaining recognizable.",
+    "options": [
+      {
+        "id": "001",
+        "text": "Found-Object Assemblage — reconstruct existing forms through ordinary discarded objects and materials"
+      },
+      {
+        "id": "002",
+        "text": "Consumer Accumulation — reconstruct the image through packaging, labels, containers, printed fragments, and manufactured remnants"
+      },
+      {
+        "id": "003",
+        "text": "Industrial Assemblage — reconstruct existing forms from metal, machinery fragments, hardware, wires, and mechanical remnants"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "• The image must become a physical-looking assemblage artwork.\n• Existing forms should determine the placement and selection of assemblage materials.\n• Subject identity must remain recognizable through the arrangement of physical objects.\n• Use convincing material texture, shadows, overlaps, attachment, wear, and physical depth.\n• Environment must also be reconstructed rather than left photographic.\n• Objects may be repurposed according to their visual properties.\n• Do not simply paste random objects over the photograph.\n• Do not create unrelated surreal scenery.\n• The finished image should look like a photographed physical assemblage artwork.\n\nFINAL VALIDATION:\n✓ Image is reconstructed as tangible assemblage.\n✓ Subject remains recognizable.\n✓ Environment is transformed.\n✓ Materials physically interact.\n✓ No simple collage/filter appearance."
+  },
+  {
     "name": "NORMAL MAP",
     "category": [
       "DIGITAL",
@@ -34385,6 +34576,20 @@
     }
   ],
   "additionalInstructions": "DEPTH CREATION RULES (CRITICAL):\n\n• Use LIGHT and SHADOW to define volume\n• Use contrast to separate foreground and background\n• Use perspective scaling where appropriate\n• Depth must be readable without special viewing tools\n\nANAGLYPH CONTROL (IF USED):\n\n• Red/cyan separation must be subtle and aligned with edges\n• DO NOT create full double images\n• Effect must enhance depth, not distort readability\n\nANTI-CHEAT RULES:\n\n• DO NOT rely on blur alone to simulate depth\n• DO NOT create a flat image with simple drop shadow\n• DO NOT produce a standard stereoscopic image requiring glasses\n\nDEPTH VALIDATION:\n\n• Subject must appear to extend forward or backward in space\n• Edges must show clear spatial separation\n• Lighting must reinforce 3D form\n\nFAIL CONDITIONS:\n\n• Image appears flat → FAIL\n• Excessive color separation causing double vision → FAIL\n• Depth only created by blur → FAIL\n• No clear foreground/background separation → FAIL\n\nQUALITY:\n\n• Strong illusion of depth\n• Clean edges and lighting\n• Visually striking 3D effect without distortion\n• High clarity and detail"
+  },
+  {
+    "name": "OPTICAL GRID",
+    "category": [
+      "ART",
+      "OPTICAL",
+      "GEOMETRIC",
+      "ILLUSION",
+      "TRANSFORMATION"
+    ],
+    "message": "Take a picture and completely reconstruct it through an extremely precise optical grid. The original subject and environment must be rebuilt from tightly controlled lines, cells, distortions, and spatial offsets so that the image changes perceptually when viewed from different distances while remaining recognizable.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "• Reconstruct the actual image through a dense optical grid.\n• Grid cells must contain information derived from the source image.\n• Use controlled variation in cell shape, density, spacing, and orientation.\n• Facial features must emerge from the grid structure itself.\n• At normal viewing distance the subject should resolve clearly.\n• Up close, the viewer should see the underlying geometric construction.\n• Transform the environment using the same visual system.\n• Do not place a grid over an unchanged photograph.\n• Do not add abstract imagery unrelated to the source.\n• Do not create random Op Art patterns that replace the subject.\n\nFINAL VALIDATION:\n✓ The grid is responsible for reconstructing the image.\n✓ Subject remains recognizable.\n✓ Environment participates in the grid.\n✓ The result has a genuine optical-illusion quality.\n✓ No unchanged photograph remains."
   },
   {
     "name": "OPTICAL ILLUSION",
@@ -35497,6 +35702,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "PARAMETRIC PORTRAIT",
+    "category": [
+      "ART",
+      "MATHEMATICAL",
+      "GEOMETRIC",
+      "DIGITAL",
+      "TRANSFORMATION"
+    ],
+    "message": "Take a picture and completely reconstruct it as a sophisticated parametric artwork. Every visible form is generated from precisely controlled mathematical curves, surfaces, contours, arcs, splines, and geometric relationships derived from the actual source image. The image must look as though the original subject and environment were mathematically modeled and regenerated rather than filtered.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "• Completely reconstruct the visible image using parametric geometry.\n• Use Bézier curves, splines, arcs, controlled surfaces, contour families, and mathematically related forms.\n• Geometry must follow the actual structure of the source image.\n• Facial features, anatomy, objects, architecture, and environmental forms must be generated from meaningful parameters derived from the source.\n• Preserve recognizable subject identity.\n• Preserve the original composition and major spatial relationships.\n• Use smooth but precisely controlled mathematical transitions.\n• Vary geometric density according to visual complexity.\n• The final result must feel engineered, calculated, and intentional.\n• Do not merely trace the photograph with lines.\n• Do not place mathematical graphics over an unchanged photograph.\n• Do not invent unrelated objects or scenery.\n• The entire visible image must participate in the reconstruction.\n\nFINAL VALIDATION:\n✓ Source forms have been mathematically reconstructed.\n✓ The image is not merely filtered or outlined.\n✓ Parametric curves and surfaces visibly create the forms.\n✓ Subject identity remains recognizable.\n✓ Environment is also transformed.\n✓ No unrelated mathematical diagrams or symbols have been added."
   },
   {
     "name": "PAREIDOLIA FIELD",
@@ -37069,6 +37288,33 @@
     }
     ],
     "additionalInstructions": "• Transform ONLY the subject.\n• Keep the background completely unchanged.\n• Preserve the original environment, perspective, lighting, colors, shadows, and every background object exactly as photographed.\n• Completely discard the original photographic subject before reconstruction.\n• NEVER pixelate the original photograph.\n• NEVER place pixel art over the original subject.\n• The original photographic subject must not remain visible anywhere.\n• Rebuild the subject entirely as authentic Pixel Chix LCD artwork.\n• Preserve the subject's exact identity through recognizable hairstyle, facial proportions, clothing style, body proportions, posture, and expression despite the extremely limited pixel resolution.\n• Use the authentic visual language of Pixel Chix toys including large blocky pixels, monochrome LCD graphics, simple animation frames, and toy-like proportions.\n• The subject should look like an official Pixel Chix character—not generic pixel art.\n• Maintain authentic LCD display limitations including low resolution, simple outlines, minimal shading, and limited animation detail.\n• Hair, eyes, clothing, shoes, and accessories must all be reconstructed entirely as Pixel Chix graphics.\n• Never use anti-aliasing, modern pixel-art techniques, high-resolution sprites, or realistic textures.\n• Preserve recognizable body language and expression using authentic Pixel Chix design.\n• The final image should appear to be an actual Pixel Chix toy screen photographed in real life.\n• Master prompt instructions always override the selected option whenever conflicts occur.\n\nFINAL VALIDATION — Before producing the final image, verify ALL of the following:\n\n✓ ONLY the subject has been transformed.\n✓ The background remains completely unchanged.\n✓ The original photographic subject has been completely removed.\n✓ The subject has been reconstructed entirely as authentic Pixel Chix artwork.\n✓ The result is NOT simply a pixelated photograph.\n✓ The graphics match the original Pixel Chix LCD toy style.\n✓ No realistic photographic textures remain on the subject.\n✓ The subject remains immediately recognizable.\n✓ The final image resembles an authentic Pixel Chix toy display.\n✓ If ANY answer is NO, regenerate the image until every requirement is satisfied."
+  },
+  {
+    "name": "PIXEL EVOLUTION",
+    "category": [
+      "ART",
+      "PIXEL",
+      "DIGITAL",
+      "EVOLUTION",
+      "TRANSFORMATION"
+    ],
+    "message": "Take a picture and completely reconstruct it as an evolutionary progression of pixels. The source image must remain recognizable while its visual information develops through multiple levels of pixel complexity, from large primitive blocks through increasingly refined pixel structures, creating the sensation that the image itself is evolving.",
+    "options": [
+      {
+        "id": "001",
+        "text": "Coarse to Fine — large pixels progressively become smaller and more detailed across the composition"
+      },
+      {
+        "id": "002",
+        "text": "Evolutionary Bands — different portions of the existing image exist at different stages of pixel development"
+      },
+      {
+        "id": "003",
+        "text": "Pixel Mutation — source forms progressively transform into increasingly complex pixel structures"
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "• Completely reconstruct the image using pixel structures.\n• Pixel scale must be deliberately varied.\n• Existing forms determine the pixel arrangement.\n• Preserve subject identity through pixel geometry.\n• Transform the environment using the same evolutionary process.\n• The progression must feel continuous and intentional.\n• Do not simply pixelate the photograph uniformly.\n• Do not overlay pixels onto an unchanged image.\n• Do not introduce unrelated digital imagery.\n\nFINAL VALIDATION:\n✓ Image has been genuinely reconstructed from pixels.\n✓ Pixel complexity visibly evolves.\n✓ Subject remains recognizable.\n✓ Environment participates.\n✓ No photographic regions simply remain underneath."
   },
   {
     "name": "PIXEL GAME STYLE",
@@ -44235,6 +44481,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "FINAL RESULT:\nA composition where the original background is seamlessly preserved, and the subject's form is replaced by glowing, detailed light streaks of smoke, which must perfectly maintain the subject's original pose and placement within the unaffected scene."
+  },
+  {
+    "name": "SMOKED GLASS",
+    "category": [
+      "ART",
+      "MATERIAL",
+      "GLASS",
+      "TRANSLUCENT",
+      "TRANSFORMATION"
+    ],
+    "message": "Take a picture and completely reconstruct the visible image as though every object and surface were physically made from smoked glass. The original subject, objects, and environment must become translucent, dark-tinted glass forms with realistic thickness, refraction, internal reflections, edge highlights, and subtle transparency.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "• Every major visible element must be physically reconstructed as smoked glass.\n• Use dark translucent gray, charcoal, brown-black, and subtly tinted glass.\n• Preserve recognizable subject identity through the glass structure itself.\n• Facial features must remain recognizable through refraction, thickness, and internal optical structure.\n• Glass edges must reveal realistic thickness.\n• Use physically believable reflections and refractions.\n• Internal surfaces may overlap optically.\n• Preserve the original composition and spatial relationships.\n• Background elements must also become smoked glass rather than remaining photographic.\n• Do not simply apply a glass filter to the photograph.\n• Do not add random glass objects.\n• Do not add fantasy crystals or decorative glass.\n• The entire image must appear physically reconstructed from smoked glass.\n\nFINAL VALIDATION:\n✓ Existing visual content has become glass.\n✓ Glass has believable thickness and refraction.\n✓ Subject remains recognizable.\n✓ Environment is also transformed.\n✓ No unchanged photographic areas remain."
   },
   {
     "name": "SMURFED!",
