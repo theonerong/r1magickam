@@ -4737,8 +4737,11 @@ function showMoveToFolderModal() {
   });
   list.appendChild(rootItem);
 
-  // Each folder
-  galleryFolders.forEach(folder => {
+  // Each folder — drawn in the same order the gallery is currently showing
+  // them, so this list follows whatever the user picked in the gallery's
+  // Sort modal (oldest, newest, A–Z, Z–A) instead of always being the order
+  // the folders happened to be created in.
+  getSortedFolders().forEach(folder => {
     const item = document.createElement('div');
     item.className = 'move-to-folder-item';
     item.innerHTML = `📁 ${folder.name}`;
