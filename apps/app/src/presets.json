@@ -4301,23 +4301,23 @@
       "TRANSFORMATION",
       "STAGE"
     ],
-    "message": "Take a picture and transform the subject into a dazzling contestant for 'MISS AMERICA' or 'MISS UNIVERSE,' completely ready for the stage, while strictly preserving their facial identity and likeness, regardless of their original gender. The subject must be wearing a glamorous outfit: a dramatic evening gown with heavy embellishment, or a pageant-style bathing suit. They are adorned with a magnificent, sparkling crown, and a prominent satin sash with the words 'MISS AMERICA' or 'MISS UNIVERSE' embroidered across the front. Their pose is confident, radiant, and stage-ready.",
-  "options": [
+    "message": "Take a picture and reconstruct the entire subject from the ground up to transform them into a dazzling beauty pageant contestant for 'MISS AMERICA' or 'MISS UNIVERSE'. Do not composite, cut-and-paste, or photoshop the original head onto a separate body model. Re-render the subject's neck, shoulders, chest, torso, skin tone, lighting, and posture as a fully integrated, unified body that naturally connects to their head and neck structure. The subject's face, neck, and body must share identical realistic skin textures, matching subsurface scattering, seamless color tones, and consistent stage spotlighting. The subject retains their core facial identity and natural gender traits while seamlessly wearing a dramatic pageant evening gown or swimsuit, a sparkling crown, and a satin pageant sash.",
+    "options": [
     {
       "id": "GLITTER GOWN",
-      "text": "Miss Universe Evening Gown - Transform the subject into a dazzling Miss Universe contestant on the catwalk, wearing a high-slit, heavily sequined gold evening gown with the crown and a red Miss Universe sash. CONFIDENT POSE."
+      "text": "Miss Universe Evening Gown - Fully reconstruct the subject as a dazzling Miss Universe contestant on the catwalk, wearing a high-slit, heavily sequined gold evening gown with the crown and a red Miss Universe sash. Ensure seamless neck and shoulder integration with uniform lighting."
     },
     {
       "id": "BATHING SUIT",
-      "text": "Miss America Swimsuit - Transform the subject into a radiant Miss America contestant, posing confidently on a sandy beach or poolside runway in a stylish, athletic one-piece pageant bathing suit, wearing the crown and a blue Miss America sash."
+      "text": "Miss America Swimsuit - Fully reconstruct the subject as a radiant Miss America contestant, posing confidently on a sandy beach or poolside runway in a stylish pageant one-piece swimsuit with crown and blue sash. Ensure skin tones and lighting across head, neck, and body are completely unified."
     },
     {
       "id": "RUNWAY",
-      "text": "Runway Beauty Queen - Transform the subject into a glamorous beauty queen walking the final runway, waves her hand, wearing a flowing white evening gown, a large crown, and the Miss America sash, looking victorious."
+      "text": "Runway Beauty Queen - Fully reconstruct the subject walking the final pageant runway in a flowing white embellished gown, waving victory, with complete lighting, neck, and skin texture continuity across head and body."
     }
     ],
     "randomizeOptions": true,
-    "additionalInstructions": "CORE STYLE:\n\n• Embrace a *high-glamour, high-fashion aesthetic* with bright, saturated colors and *glistening textures* (sequins, silk, crystals).\n• Ensure the *facial likeness* remains perfectly recognizable, even when applying dramatic makeup or stage lighting.\n• Preserve the *original gender* of the subject (male subjects should still be male under the gown, crown, and sash) but apply all pageant elements faithfully.\n• Stage environments (catwalk, runway lights, cheering crowds) must be included.\n• Maintain a *spotlight on glitter and shimmer*."
+    "additionalInstructions": "CORE STYLE:\n\n• MANDATORY: Rebuild the subject as a single, unified 3D/photographic render—never splice or composite a face onto a stock body.\n• Ensure continuous skin tone, texture, subsurface scattering, ambient occlusion, and rim lighting from the face down across the neck, clavicle, shoulders, and arms.\n• Preserve original facial identity, age cues, and natural gender characteristics while harmonizing neck and shoulder proportions to look natural in pageant attire.\n• Embrace high-glamour stage aesthetics with shimmering gown fabrics, bright spotlights, sequins, and a polished pageant setting."
   },
   {
     "name": "BEEHIVE FRAME",
@@ -31515,10 +31515,10 @@
       "SKIN",
       "TRANSFORMATION"
     ],
-    "message": "Take a picture of the subject and transform them completely into a 'morphsuit' (also known as a Zentai suit) of themselves, while preserving their facial identity and likeness strictly as a flat, printed design on the suit's fabric. The subject is encased from head to toe in a single-piece, skin-tight, elastane/spandex suit with a smooth, continuous hood that covers the entire head. The hood must be completely bald and featureless in terms of 3D geometry, with no actual 3D hair strands or dimensional facial features—all hair, eyebrows, eyes, nose contours, lips, clothing, and accessories are strictly 2D flat graphics printed directly onto the stretch fabric. *Their likeness must be printed into the suit's fabric mask in high detail*, making them recognizable while remaining entirely encased in a smooth spandex suit.",
+    "message": "Take a picture and transform the subject into a wearer dressed in an opaque, high-density spandex/elastane full-body Zentai morphsuit. The fabric must be thick, solid, completely opaque, and non-translucent—do NOT render a shear, pantyhose, nylon, or stocking-like texture over the skin. The suit features a vibrant, opaque 2D dye-sublimation graphic print covering every inch of the fabric, including the full-head hood. The graphic printed on the front of the hood is a crisp, flat 2D graphic illustration depicting the subject's face, features, and hair. The hood itself is a featureless, smooth, bald dome of opaque cloth, with no 3D facial relief or hair strands. The printed artwork on the opaque suit must clearly look like a custom costume graphic, not semi-transparent fabric stretched over a human head.",
     "options": [],
     "randomizeOptions": false,
-    "additionalInstructions": "CORE STYLE:\n\n• Focus on perfect skin-tight elastane/spandex fabric textures with realistic stretch lines, subtle sheen, and structural seams.\n• Ensure the hood is completely smooth and bald with zero 3D hair geometry; all hair must be depicted strictly as a 2D graphic image printed onto the fabric surface.\n• Maintain the subject's facial likeness integrated directly as a flat printed image on the front of the spandex mask so the person remains instantly identifiable.\n• Translate all visual elements of the original subject (clothing, hair texture, skin tones, accessories) into a single 2D graphic layer printed across the suit's continuous surface.\n• Preserve the original subject's exact body shape, pose, composition, and background setting unless instructed otherwise.\n• Lighting should emphasize the smooth, form-fitting contours of the full-body spandex material."
+    "additionalInstructions": "CORE STYLE:\n\n• Fabric MUST be thick, opaque, heavy-grade matte athletic spandex/elastane with high-definition dye-sublimation printing.\n• Strictly avoid shear, mesh, pantyhose, hosiery, translucent nylon, or semi-see-through materials over the head or body.\n• The entire body and head must be encased in a solid, opaque suit where the subject's likeness, hair, clothes, and skin tone are rendered entirely as a flat 2D printed graphic art layer on the fabric.\n• The head hood must be a completely smooth, featureless cloth dome with zero 3D hair geometry or 3D facial contours underneath.\n• Retain visible fabric seams, elastane stretch lines, and opaque material sheen to emphasize that it is a full-coverage printed costume suit.\n• Preserve original subject body shape, pose, and background context."
   },
   {
     "name": "MORSE CODED",
