@@ -967,11 +967,28 @@ export class PresetImporter {
       // 600ms, so without this the background build goes back to big bursts
       // mid-press and the long-press never gets a chance to fire on time.
       const _listIsBusy = () => _userIsScrolling || _fingerDown;
+      // If the row under the finger gets removed while the finger is still
+      // down (which happens every time the list rebuilds itself), the
+      // "finger lifted" event fires on a row that is no longer in the page
+      // and never reaches this container. _fingerDown then stays true
+      // forever and the background row build stalls permanently. This
+      // watchdog always releases it.
+      let _fingerWatchdog = null;
+      const _releaseFinger = () => {
+        _fingerDown = false;
+        clearTimeout(_fingerWatchdog);
+        _fingerWatchdog = null;
+      };
       scrollContainer.addEventListener('scroll', _markScrolling, { passive: true });
       scrollContainer.addEventListener('touchmove', _markScrolling, { passive: true });
-      scrollContainer.addEventListener('touchstart', () => { _fingerDown = true; _markScrolling(); }, { passive: true });
-      scrollContainer.addEventListener('touchend', () => { _fingerDown = false; _markScrolling(); }, { passive: true });
-      scrollContainer.addEventListener('touchcancel', () => { _fingerDown = false; }, { passive: true });
+      scrollContainer.addEventListener('touchstart', () => {
+        _fingerDown = true;
+        clearTimeout(_fingerWatchdog);
+        _fingerWatchdog = setTimeout(_releaseFinger, 2000);
+        _markScrolling();
+      }, { passive: true });
+      scrollContainer.addEventListener('touchend', () => { _releaseFinger(); _markScrolling(); }, { passive: true });
+      scrollContainer.addEventListener('touchcancel', _releaseFinger, { passive: true });
 
       presetsList.addEventListener('touchstart', (e) => {
         const item = e.target.closest('.menu-item');
@@ -1319,9 +1336,13 @@ export class PresetImporter {
             _buildTimer = setTimeout(() => _buildChunk(start + CHUNK), 16);
           } else {
             _buildTimer = null;
-            // The full build is done; every render from here on uses the
-            // show/hide fast path above.
-            _allRowsBuilt = true;
+            // Only switch on the fast path when this build actually laid out
+            // EVERY preset. A build that ran while a filter was active only
+            // puts the matching rows into the page — the rest are gone, and
+            // the fast path can never bring them back, which is why the
+            // search appears frozen. Staying on the slow path until a full,
+            // unfiltered build finishes keeps the list correct.
+            _allRowsBuilt = (filteredPresets.length === availablePresets.length);
             // updateImportSelection() forces the scroll position (it snaps back
             // to the top when the highlight is on row 0). Only safe to run while
             // the user is still at the top, otherwise it yanks them back.
@@ -1416,6 +1437,7 @@ footerSection.innerHTML = `
             filterInput.value = '';
             this.importFilterText = '';
             this.currentImportScrollIndex = 0;
+            hidePreview();   // never leave the full-screen preview covering the list
             renderPresetsList();
           }
         });
@@ -1426,6 +1448,7 @@ footerSection.innerHTML = `
       filterInput.addEventListener('input', (e) => {
         this.importFilterText = e.target.value;
         this.currentImportScrollIndex = 0;
+        hidePreview();   // never leave the full-screen preview covering the list
         if (importFilterDebounce) clearTimeout(importFilterDebounce);
         importFilterDebounce = setTimeout(() => {
           renderPresetsList();
