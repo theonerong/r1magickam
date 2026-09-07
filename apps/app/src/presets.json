@@ -4292,6 +4292,34 @@
     "additionalInstructions": "VISUAL REQUIREMENTS:\n• Extreme close-up framing: face fills entire frame\n• Flawless, luminous skin with visible healthy texture (not plastic)\n• Precise, editorial makeup visible in fine detail\n• Multiple light sources creating dimension without harsh shadows\n• Catchlights in eyes creating life and sparkle\n• Every eyelash, pore, and lip texture rendered in sharp detail\n• Clean, simple background (white, gradient, or colored)\n• Color accuracy critical for skin tones and makeup colors\n• Reference photographers: Mario Testino, Patrick Demarchelier, Solve Sundsbo (beauty work)"
   },
   {
+    "name": "BEAUTY QUEEN",
+    "category": [
+      "CHARACTER",
+      "COSTUME",
+      "FASHION",
+      "GLAMOUR",
+      "TRANSFORMATION",
+      "STAGE"
+    ],
+    "message": "Take a picture and transform the subject into a dazzling contestant for 'MISS AMERICA' or 'MISS UNIVERSE,' completely ready for the stage, while strictly preserving their facial identity and likeness, regardless of their original gender. The subject must be wearing a glamorous outfit: a dramatic evening gown with heavy embellishment, or a pageant-style bathing suit. They are adorned with a magnificent, sparkling crown, and a prominent satin sash with the words 'MISS AMERICA' or 'MISS UNIVERSE' embroidered across the front. Their pose is confident, radiant, and stage-ready.",
+  "options": [
+    {
+      "id": "GLITTER GOWN",
+      "text": "Miss Universe Evening Gown - Transform the subject into a dazzling Miss Universe contestant on the catwalk, wearing a high-slit, heavily sequined gold evening gown with the crown and a red Miss Universe sash. CONFIDENT POSE."
+    },
+    {
+      "id": "BATHING SUIT",
+      "text": "Miss America Swimsuit - Transform the subject into a radiant Miss America contestant, posing confidently on a sandy beach or poolside runway in a stylish, athletic one-piece pageant bathing suit, wearing the crown and a blue Miss America sash."
+    },
+    {
+      "id": "RUNWAY",
+      "text": "Runway Beauty Queen - Transform the subject into a glamorous beauty queen walking the final runway, waves her hand, wearing a flowing white evening gown, a large crown, and the Miss America sash, looking victorious."
+    }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "CORE STYLE:\n\n• Embrace a *high-glamour, high-fashion aesthetic* with bright, saturated colors and *glistening textures* (sequins, silk, crystals).\n• Ensure the *facial likeness* remains perfectly recognizable, even when applying dramatic makeup or stage lighting.\n• Preserve the *original gender* of the subject (male subjects should still be male under the gown, crown, and sash) but apply all pageant elements faithfully.\n• Stage environments (catwalk, runway lights, cheering crowds) must be included.\n• Maintain a *spotlight on glitter and shimmer*."
+  },
+  {
     "name": "BEEHIVE FRAME",
     "category": [
       "RURAL",
@@ -31478,6 +31506,21 @@
     "additionalInstructions": ""
   },
   {
+    "name": "MORPHSUIT",
+    "category": [
+      "CHARACTER",
+      "COSTUME",
+      "GLAMOUR",
+      "FUTURISTIC",
+      "SKIN",
+      "TRANSFORMATION"
+    ],
+    "message": "Take a picture of the subject and transform them completely into a 'morphsuit' (also known as a Zentai suit) of themselves, while preserving their facial identity and likeness strictly as a flat, printed design on the suit's fabric. The subject is encased from head to toe in a single-piece, skin-tight, elastane/spandex suit with a smooth, continuous hood that covers the entire head. The hood must be completely bald and featureless in terms of 3D geometry, with no actual 3D hair strands or dimensional facial features—all hair, eyebrows, eyes, nose contours, lips, clothing, and accessories are strictly 2D flat graphics printed directly onto the stretch fabric. *Their likeness must be printed into the suit's fabric mask in high detail*, making them recognizable while remaining entirely encased in a smooth spandex suit.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "CORE STYLE:\n\n• Focus on perfect skin-tight elastane/spandex fabric textures with realistic stretch lines, subtle sheen, and structural seams.\n• Ensure the hood is completely smooth and bald with zero 3D hair geometry; all hair must be depicted strictly as a 2D graphic image printed onto the fabric surface.\n• Maintain the subject's facial likeness integrated directly as a flat printed image on the front of the spandex mask so the person remains instantly identifiable.\n• Translate all visual elements of the original subject (clothing, hair texture, skin tones, accessories) into a single 2D graphic layer printed across the suit's continuous surface.\n• Preserve the original subject's exact body shape, pose, composition, and background setting unless instructed otherwise.\n• Lighting should emphasize the smooth, form-fitting contours of the full-body spandex material."
+  },
+  {
     "name": "MORSE CODED",
     "category": [
       "LANGUAGE",
@@ -40076,6 +40119,38 @@
     "additionalInstructions": "RESTRICTIONS:\n• No text overlays or captions\n• No cartoon effects\n• No modern tech outside the show’s era\n• No obvious parody distortion\n\nFINAL RESULT:\nThe image should look like a believable frame from an episode of Psych, with the subject naturally integrated into the scene alongside the characters. The pineapple is clearly visible as an intentional visual element. The overall effect should feel light, clever, and authentic — playful without breaking realism."
   },
   {
+    "name": "PSYCH WARD",
+    "category": [
+      "CHARACTER",
+      "COSTUME",
+      "PSYCHOLOGICAL",
+      "INSTITUTIONAL",
+      "TRANSFORMATION",
+      "ATMOSPHERIC"
+    ],
+    "message": "Take a picture and transform the subject into a mental patient confined within a stark, drab, institutional environment (like an old psych ward cell), while strictly preserving their facial identity and likeness. The subject must be visibly restrained by a thick, heavy, institutional straightjacket made of canvas and leather straps, buckled and tied across their torso and arms. Their pose must suggest confinement, perhaps slumped on a bare metal cot, leaning against a cold, cracked wall, or sitting awkwardly on the floor. Their expression should convey disorientation, distress, or vacancy.",
+    "options": [
+    {
+      "id": "SOLITARY",
+      "text": "The Padded Cell - Lock the subject alone in a padded cell, wrapped in a classic white straightjacket with a vacant stare, surrounded by soft, cushioned wall panels."
+    },
+    {
+      "id": "DRAB ROOM",
+      "text": "The Drab Ward Room - Place the subject, strapped in a dirty, worn straightjacket, in a bleak, gray institutional room with bare concrete walls and a small metal bed, looking lost."
+    },
+    {
+      "id": "GROUP THERAPY",
+      "text": "Group Therapy Restraint - Have the subject, visibly constrained in their straightjacket, sit awkwardly at a group therapy table with other patients, looking frustrated and confined."
+    },
+    {
+      "id": "DISTRESSED",
+      "text": "Distressed Confinement - Transform the subject, locked in a tight straightjacket, into a highly disoriented and distressed pose on the floor of a psych ward room, perhaps with a slight shadow effect to enhance the mood."
+    }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "CORE STYLE:\n\n• Utilize *heavy, dramatic, and desaturated lighting* to create a moody, institutional atmosphere.\n• Textures (canvas of the straightjacket, bare concrete, padded walls) must be highly detailed and tactile.\n• Maintain the *subject's facial identity* while ensuring their *pose and expression* are consistent with distress and confinement.\n• Limit the color palette to cold, institutional grays, greens, and browns.\n• Avoid all humor or lightheartedness in favor of a gritty, realistic, or dramatic interpretation."
+  },
+  {
     "name": "PSYCHEDELIC 60s",
     "category": [
       "ART",
@@ -43196,6 +43271,37 @@
     "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Everything must remain connected — no floating pieces\n• Cut edges clean and slightly lifted\n• Bridges integrated into the design, not obvious\n• Shadow falling through the openings"
   },
   {
+    "name": "SANTA CLAUS",
+    "category": [
+      "CHARACTER",
+      "COSTUME",
+      "HOLIDAY",
+      "TRANSFORMATION",
+      "SEASONAL"
+    ],  
+    "message": "Take a picture and transform the subject completely into Santa Claus while preserving their facial features and likeness. This means the subject, retaining their core identity, must now possess all the classic elements of Santa Claus: a flowing, long, voluminous, and soft white beard and mustache, thick white hair, and a significant, round, jolly Santa belly (which should be visible in their posture and clothing). They are dressed in a luxurious, traditional red velvet Santa suit with heavy white fur trim, a wide black leather belt with a gold buckle, and a red hat with fur. Their setting is festive.",
+    "options": [
+    {
+      "id": "JOLLY BELLY",
+      "text": "Jolly Bellied Santa - Focus on the subject’s iconic round belly as they sit with their hand on it, laughing heartily by a rustic, crackling fireplace, surrounded by gifts."
+    },
+    {
+      "id": "WORKSHOP",
+      "text": "Santa in the Workshop - Place the subject, with the full Santa beard, hair, and belly, working happily on a wooden toy at a detailed North Pole workshop table."
+    },
+    {
+      "id": "FLYING",
+      "text": "Sleigh Driver Santa - Transform the subject, with full beard and suit, into a heroic pose holding the reins of a high-flying sleigh against a snowy night sky and a large full moon."
+    },
+    {
+      "id": "PORTRAIT",
+      "text": "Classic Santa Portrait - Create a detailed, close-up portrait of the subject as Santa Claus, focused on their kind eyes and the high-quality textures of the fur, velvet, and massive beard."
+    }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "CORE STYLE:\n\n• Employ *soft, warm, and magical lighting* to enhance the holiday mood.\n• The beard must look realistic, soft, and well-integrated into the face, while *preserving the likeness* of the mouth and eyes.\n• Textures (velvet, wool, fur, leather) must be tactile and detailed.\n• Ensure the *significant Santa belly* is incorporated naturally into the subject’s physical presence and clothing fit.\n• The color palette is dominated by deep reds, greens, golds, and snowy whites."
+  },
+  {
     "name": "SASHIKO STITCHING",
     "category": [
       "JAPANESE",
@@ -45782,6 +45888,39 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "STYLE ENFORCEMENT:\n• Preserve subject identity through the pattern of cuts and punctures\n• Monochrome canvas surface — white, red, or gold\n• Cuts must appear clean, deliberate, and physical\n• Edges of cuts should curl slightly revealing depth behind\n• The void behind the canvas should be visible through the slashes\n• Reference Lucio Fontana's Concetto Spaziale works\n• Minimal, elegant composition\n• The canvas texture should be visible and tactile\n• No painted imagery — form is created only through physical intervention\n• The overall effect should transcend two-dimensional painting"
+  },
+  {
+    "name": "SPECIALIST",
+    "category": [
+      "CHARACTER",
+      "COSTUME",
+      "OCCUPATION",
+      "HUMOR",
+      "PROPS",
+      "TRANSFORMATION",
+      "MEDICAL"
+    ],
+    "message": "Take a picture of the subject and transform them into a specialized, highly stylized, and humorous physician in a classic medical environment, such as an exam room or clinic, while strictly preserving their facial identity and likeness. The subject must be wearing a standard white doctor's coat, perhaps with a name tag that reads 'THE SPECIALIST,' over professional attire. The key characteristic of the selected medical specialty must be rendered with an unmistakable, cartoonishly oversized, and humorous proportion, integrated seamlessly into the scene's realistic but stylized physics. The subject’s expression must convey humorous professionalism.",
+    "options": [
+    {
+      "id": "PROCTOLOGIST",
+      "text": "The Proctologist - Transform the subject into a proctologist. One hand, raised in a classic examining pose, is equipped with a gloved finger that is ridiculously large, cartoonishly oversized (think a massive foam finger, but realistic and gloved), and completely disproportionate to their body. Their expression is knowing and professionally goofy."
+    },
+    {
+      "id": "OPHTHALMOLOGIST",
+      "text": "The Ophthalmologist - Transform the subject into an ophthalmologist wearing massive, cartoonishly exaggerated, thick 'bottle-bottom' glasses that appear to be made for someone legally blind. Their face and eyes behind the lenses are comically magnified and distorted, filling the massive lenses with a wide, confused expression."
+    },
+    {
+      "id": "OTOLARYNGOLOGIST",
+      "text": "The Otolaryngologist (ENT) - Transform the subject into an ENT specialist. The subject’s own ears and nose are comically and cartoonishly oversized, looking like a whimsical cartoon character’s features, yet rendered with smooth skin texture and integrated into their face. They are wearing an otoscope head mirror and have a large, goofy ear and nose, perhaps with a large cartoonishly exaggerated scope instrument."
+    },
+    {
+      "id": "GYNECOLOGIST",
+      "text": "The Gynecologist - Transform the subject into a gynecologist with a face that is inherently goofy, with widely spaced, bulging, silly cartoon eyes and a comically oversized grin. They are standing awkwardly in an exam room, perhaps holding standard instruments that look small next to their exaggerated facial features."
+    }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "CORE STYLE:\n\n• Maintain the *photorealistic texture* and *cinematic lighting* while introducing *extreme anatomical and prop exaggeration*.\n• Ensure the subject's *facial likeness* remains perfectly recognizable underneath the extreme features.\n• Integrate the oversized elements (finger, glasses, ears/nose, face) with believable physics and shadows, rather than looking like a 2D cutout.\n• Medical environments (exam rooms, waiting areas) must be rendered in detail.\n• Focus on a *warm, humorous color palette*."
   },
   {
     "name": "SPEED PAINTING",
