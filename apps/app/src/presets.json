@@ -36,6 +36,55 @@
     "additionalInstructions": "IDENTITY PRESERVATION:\n• Subject must remain clearly recognizable\n• Do not replace the person\n• Do not alter ethnicity, age category, or core facial structure\n\nBEFORE PANEL REQUIREMENTS:\n• Before panel must appear completely unfiltered\n• Natural skin texture must remain visible\n• Preserve pores, fine lines, freckles, blemishes, wrinkles, texture variation, and realistic facial detail\n• Maintain authentic facial proportions\n• No skin smoothing\n• No face slimming\n• No eye enlargement\n• No lip enhancement\n• No beauty filters\n• No artificial glow\n• No retouching\n• No digital enhancement\n• Natural lighting only\n• Realistic smartphone photograph aesthetic\n\nAFTER PANEL REQUIREMENTS:\n• After panel must clearly represent heavy social-media beautification\n• Preserve subject identity while exaggerating beauty-filter effects\n• Skin should appear unnaturally smooth and poreless\n• Facial features may be subtly reshaped\n• Eyes may appear larger and glossier\n• Lips may appear fuller\n• Jawline may appear more sculpted\n• Skin tone may appear artificially perfected\n• Overall appearance should feel unrealistic compared to the Before panel\n\nOPTION 001 REQUIREMENTS:\n• Visible beauty-filter interface elements\n• Visible filter icons, sliders, sparkles, beauty controls, and enhancement indicators\n• Beauty settings should appear intentionally exaggerated\n• Satirical social-media aesthetic\n\nOPTION 002 REQUIREMENTS:\n• No visible beauty-filter interface\n• No visible sparkles or filter icons\n• Must appear to be a genuine unedited selfie\n• Alterations should remain obvious to the viewer despite the lack of visible filter indicators\n• Emphasize the irony of claiming '#NOFILTER'\n\nHUMOR GOAL:\n• Satirize exaggerated social-media beautification\n• Contrast honesty versus digital manipulation\n• Emphasize the absurdity of unrealistic beauty standards\n• Highlight the irony of heavily altered images being presented as natural\n\nFINAL RESULT:\nThe final image must clearly show a realistic Before panel beside a dramatically beautified #NOFILTER panel while preserving recognizable identity and emphasizing the humor and irony of social-media filtering culture."
   },
   {
+    "name": "2.5D ANIMATION",
+    "category": [
+      "ANIMATION",
+      "CGI",
+      "2.5D",
+      "CEL SHADING",
+      "ILLUSTRATION",
+      "CHARACTER ART",
+      "HYBRID"
+    ],
+    "message": "Take a picture and transform the entire image into a polished 2.5D animated film aesthetic that combines dimensional 3D CGI rendering with hand-drawn 2D illustration and graphic cel-shading. Reconstruct the existing subject, environment, objects, architecture, surfaces, and spatial relationships as if they were created for a high-budget stylized animated production. Characters must have convincingly modeled 3D forms, expressive cartoon anatomy, dimensional faces, sculpted hair, realistic volume, and cinematic lighting, while simultaneously incorporating deliberate hand-drawn linework, graphic contours, simplified cel-shaded shadow shapes, painted details, and illustrative surface treatment. The result must feel like genuine 2D/3D hybrid animation rather than a photographic image with a cartoon filter.",
+    "options": [
+      {
+        "id": "FULL HYBRID",
+        "text": "Full 2D/3D Hybrid - Transform the entire image into the complete hybrid aesthetic: dimensional 3D CGI forms, hand-drawn outlines, graphic cel-shaded shadows, painterly textures, stylized characters, and cinematic animated-film lighting."
+      },
+      {
+        "id": "CHARACTERS",
+        "text": "CGI Characters + Illustrated World - Make people and animals highly dimensional stylized 3D CGI characters with expressive animated faces, modeled anatomy, sculpted hair, and cel-shaded lighting. Render the existing environment with a softer illustrated/painterly treatment while maintaining the same location and composition."
+      },
+      {
+        "id": "EXTREME CEL SHADING",
+        "text": "Extreme Cel Shading - Push the graphic cel-shading strongly. Use clearly separated light, midtone, and shadow regions, crisp graphic shadow boundaries, simplified tonal shapes, selective black or dark contour lines, and highly controlled animated-film rendering while retaining convincing 3D volume."
+      },
+      {
+        "id": "HAND DRAWN",
+        "text": "Hand-Drawn CGI - Emphasize the collision between polished CGI and traditional 2D drawing. Add purposeful hand-drawn contour lines, expressive facial marks, illustrated edges, drawn interior details, and subtle irregularities over convincingly modeled 3D forms."
+      },
+      {
+        "id": "CINEMATIC",
+        "text": "Cinematic Animated Film - Create the appearance of a theatrical animated feature: sophisticated 3D character rendering, stylized proportions, cinematic depth, soft environmental illumination, controlled highlights, rich color separation, atmospheric perspective, and carefully composed animated-film lighting."
+      },
+      {
+        "id": "PAINTERLY",
+        "text": "Painterly 2.5D - Blend 3D CGI geometry with painterly illustration. Preserve dimensional forms and realistic light behavior while giving surfaces, backgrounds, clothing, hair, and selected details a softly painted, illustrated finish."
+      },
+      {
+        "id": "GRAPHIC",
+        "text": "Graphic Cartoon CGI - Favor bold graphic shapes, expressive silhouettes, simplified forms, strong contour drawing, clean cel-shaded planes, exaggerated but believable cartoon anatomy, and polished 3D rendering."
+      },
+      {
+        "id": "SOFT 3D",
+        "text": "Soft Stylized CGI" - Favor smooth, polished 3D forms with gentle cel-shaded transitions, soft illustrated contours, subtle painterly textures, rounded character design, expressive faces, and warm cinematic animated-film lighting."
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "CORE STYLE:\n\n• The defining aesthetic is a deliberate fusion of 3D CGI modeling and rendering with 2D hand-drawn illustration, graphic cel shading, painterly textures, and animated-film design.\n• Do not apply a generic cartoon filter to the original image.\n• Reconstruct the image as if every visible element were intentionally created for a stylized 2.5D animated production.\n• Characters must appear genuinely modeled in 3D with dimensional anatomy, volume, depth, sculpted forms, believable lighting, and expressive animated facial construction.\n• Integrate hand-drawn linework INTO the rendered forms rather than placing decorative outlines on top of an otherwise unchanged photograph.\n• Use selective drawn contours and interior lines. Lines may vary in thickness and intensity according to the importance, orientation, lighting, and depth of each form.\n• Cel shading must describe the actual 3D geometry. Shadows should follow the form, planes, folds, facial structure, hair masses, and environmental illumination.\n• Use graphic shadow shapes rather than simply reducing the number of colors in a photograph.\n• Preserve convincing three-dimensional volume beneath the stylization.\n• Use simplified but deliberate highlights, reflected light, ambient occlusion, rim lighting, and environmental illumination consistent with stylized CGI.\n• Faces must be fully reconstructed as stylized 3D animated faces, with dimensional noses, cheeks, mouths, eyes, eyelids, brows, ears, and facial planes.\n• Preserve the recognizable identity and defining physical characteristics of the original subject unless the selected transformation explicitly requires otherwise.\n• Hair must be reconstructed as dimensional stylized masses and strands rather than remaining photographic hair with an applied filter.\n• Clothing must become convincingly modeled animated fabric with stylized folds, seams, highlights, and cel-shaded planes.\n• Objects and environments must also receive the hybrid treatment. Do not transform only the people while leaving the background photographic.\n• Preserve the original composition, camera viewpoint, subject placement, pose, proportions, environment, objects, and important visual information unless an option explicitly changes them.\n• Do not invent additional characters, props, scenery, architecture, creatures, decorations, or environmental elements that are not present in the source image.\n• Do not convert the subject into an existing copyrighted animated character. Create an original animated-film interpretation of the source subject.\n• Do not imitate a specific studio, franchise, film, character, or identifiable artwork. Recreate the broader visual language of 2D/3D hybrid animation only.\n• Avoid photorealism. The final image should unmistakably read as stylized CGI animation with an illustrated component.\n• Avoid flat vector art. The result must retain substantial dimensional 3D form and cinematic depth.\n• Avoid conventional anime rendering unless the source image or selected option specifically calls for it.\n• Avoid plastic-looking generic 3D renders. The hand-drawn and cel-shaded components must remain visibly integrated throughout the image.\n• Avoid excessive black outlines around every object. Linework should be selective, purposeful, and integrated with the geometry.\n• Avoid excessive smooth gradients that make the image look like ordinary realistic CGI. Use graphic tonal organization while retaining dimensionality.\n• Use controlled stylization rather than random distortion.\n• Use physically coherent lighting underneath the graphic cel-shading so the image retains believable depth.\n• The final result should look like a frame captured from an original high-budget 2.5D animated feature that uses sophisticated CGI models enhanced by traditional illustration techniques.\n\nFINAL VALIDATION:\n\n✓ Confirm that the result contains BOTH convincing dimensional CGI construction AND clearly visible 2D/illustrative/cel-shaded characteristics.\n✓ Confirm that the source composition and recognizable subject have been reconstructed rather than merely filtered.\n✓ Confirm that the environment and existing objects participate in the same hybrid visual language.\n✓ Confirm that no unnecessary invented imagery, duplicate subjects, generic cartoon characters, photographic remnants, or flat-vector elements remain."
+  },
+  {
     "name": "18TH CENTURY DRAWING",
     "category": [
       "HISTORICAL",
