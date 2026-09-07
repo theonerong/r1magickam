@@ -1021,6 +1021,20 @@
     "additionalInstructions": "Transform the subject into the visual style of Aeon Flux using futuristic architecture, advanced technology, angular visual language, experimental composition, cinematic framing, sophisticated science-fiction worldbuilding, and authentic animation-frame aesthetics."
   },
   {
+    "name": "AEROCHROME",
+    "category": [
+      "PHOTOGRAPHY",
+      "COLOR",
+      "INFRARED",
+      "SURREAL",
+      "ANALOG"
+    ],
+    "message": "Take a picture and transform the EXISTING IMAGE into the visual appearance of Kodak Aerochrome color infrared film. Preserve every existing person, object, surface, structure, landscape element, and background element exactly as content. DO NOT add, remove, replace, invent, or reinterpret any objects. The transformation must come entirely from the characteristic color response, tonal rendering, infrared appearance, and analog film characteristics of Aerochrome. Existing colors are reinterpreted according to Aerochrome's distinctive false-color infrared response.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "CONTENT PRESERVATION — CRITICAL:\n\n• The source image determines WHAT IS IN THE IMAGE.\n• Aerochrome determines ONLY HOW THE EXISTING IMAGE IS RENDERED.\n• Do not create new objects.\n• Do not create foliage if foliage is not already visible.\n• Do not create a sky if a sky is not already visible.\n• Do not create clouds, trees, plants, flowers, grass, landscapes, buildings, people, vehicles, or other environmental elements that are absent from the source.\n• Do not replace existing objects with different objects.\n• Do not expand the environment beyond what is visible in the original image.\n• Do not interpret color-description words as instructions to add corresponding objects.\n• Words such as 'foliage,' 'sky,' 'skin,' and 'synthetic material' describe COLOR RESPONSE ONLY when those materials already exist in the source.\n• If a referenced material does not exist in the source image, do nothing to introduce it.\n\nAEROCHROME COLOR RESPONSE:\n\n• Reinterpret the colors of EXISTING visual elements according to Kodak Aerochrome color-infrared film characteristics.\n• Existing vegetation, when present, should shift dramatically toward vivid magenta, crimson, red, pink, and coral tones.\n• Existing blue sky, when present, should render as deep cyan, blue-cyan, turquoise, or related infrared false-color tones.\n• Existing human skin should take on a characteristic pale, waxy, slightly surreal infrared appearance.\n• Existing synthetic materials and surfaces that do not strongly respond to infrared should retain relatively natural or comparatively subdued colors.\n• Existing earth, wood, stone, architecture, clothing, vehicles, and manufactured objects should receive different false-color responses according to their apparent material rather than being uniformly recolored.\n• The color transformation must be selective and material-dependent rather than a simple global hue shift.\n• Preserve strong color separation between materials.\n• Produce the distinctive jarring but photographic false-color relationship associated with Aerochrome.\n\nINFRARED FILM CHARACTER:\n\n• Simulate genuine color infrared film rather than a conventional digital color filter.\n• Preserve fine photographic detail.\n• Introduce subtle analog film grain.\n• Use characteristic infrared tonal separation.\n• Slightly alter contrast and tonal response in a film-like manner.\n• Preserve realistic highlights and shadows.\n• Include subtle film latitude characteristics.\n• Maintain believable photographic exposure.\n• Avoid excessive digital saturation.\n• Avoid neon coloration unrelated to Aerochrome's photographic response.\n• Avoid posterization.\n• Avoid psychedelic rainbow coloration.\n• Avoid making the image look like a generic infrared filter.\n\nCOLOR TRANSFORMATION RULE:\n\n• Change COLORS, not CONTENT.\n• Change TONAL RESPONSE, not OBJECT IDENTITY.\n• Change FILM CHARACTER, not COMPOSITION.\n• Every pixel-level transformation must remain anchored to an existing visual element in the source image.\n• Existing shapes, silhouettes, people, objects, structures, and environmental features must remain spatially identifiable.\n• Preserve the original framing, camera viewpoint, composition, and spatial relationships.\n\nSUBJECT REQUIREMENTS:\n\n• Preserve the subject's recognizable identity.\n• Preserve facial structure and distinctive features.\n• Preserve hairstyle, clothing, pose, body position, and silhouette.\n• Do not transform the subject into a different person, creature, or object.\n• Apply the Aerochrome color response to the subject rather than redesigning the subject.\n• Human skin, when present, should exhibit the characteristic pale/waxy infrared rendering without changing the person's identity.\n\nENVIRONMENT REQUIREMENTS:\n\n• Preserve the existing environment exactly as source content.\n• Do not manufacture an Aerochrome-looking landscape.\n• Do not add vegetation merely because Aerochrome is famous for rendering vegetation magenta.\n• Do not add or enhance a blue sky unless a sky already exists.\n• Existing environmental elements should receive the appropriate false-color treatment based on their visible material.\n• Empty areas remain empty.\n• Background composition remains unchanged.\n\nSTRICTLY PROHIBITED:\n\n• No invented foliage.\n• No invented plants.\n• No invented trees.\n• No invented flowers.\n• No invented grass.\n• No invented sky.\n• No invented clouds.\n• No invented landscape.\n• No invented environmental scenery.\n• No replacement scenery.\n• No additional objects.\n• No decorative plants.\n• No fantasy elements.\n• No surreal objects.\n• No psychedelic imagery.\n• No rainbow effects.\n• No generic neon effect.\n• No digital color-overlay appearance.\n• No object duplication.\n• No compositional changes.\n\nMASTER PROMPT RULE:\n\n• Incorporate master-prompt instructions while maintaining the mandatory Aerochrome color/film transformation.\n• If the master prompt specifies a subject, pose, clothing, environment, object, or composition, preserve that information.\n• Do not interpret artistic wording as permission to invent additional imagery.\n• If the master prompt requests a particular object or environment that is explicitly intended to replace the existing source content, follow the master prompt; otherwise preserve the existing source content.\n\nFINAL VALIDATION:\n\n✓ The image contains the same visual objects and environment as the source.\n✓ No new scenery has been invented.\n✓ No plants or foliage have been added merely because Aerochrome is associated with magenta vegetation.\n✓ No sky has been added merely because Aerochrome is associated with cyan skies.\n✓ Existing foliage, if present, has a strong magenta/crimson/coral infrared response.\n✓ Existing sky, if present, has a deep cyan/cyan-blue infrared response.\n✓ Existing skin, if present, has a pale/waxy infrared appearance.\n✓ Synthetic materials retain comparatively natural or subdued coloration.\n✓ Different materials receive different infrared color responses.\n✓ The result looks like color-infrared film rather than a generic hue filter.\n✓ Subject identity remains recognizable.\n✓ Composition and spatial relationships remain intact.\n✓ Analog film grain and photographic characteristics are present.\n✓ The transformation is fundamentally COLOR + TONAL RESPONSE + FILM CHARACTER.\n✓ If ANY answer is NO, regenerate until every requirement is satisfied."
+  },
+  {
     "name": "AEROGEL",
     "category": [
       "TRANSFORMATION",
@@ -1058,6 +1072,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "AFFICHISTE",
+    "category": [
+      "ART",
+      "COLLAGE",
+      "STREET",
+      "DECOLLAGE",
+      "FRENCH"
+    ],
+    "message": "Take a picture and transform it into a decollage in the manner of the affichistes: layers of street posters torn back to reveal fragments of what was pasted beneath. Half-words, split faces and lost colours should collide in ragged torn edges, with damp staining, bleed-through and the rough wall showing through the deepest tears.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Layered posters torn to reveal earlier layers\n• Ragged, irregular torn edges\n• Fragmentary words and split images\n• Damp staining and bleed-through\n• Subject recognisable in fragments"
   },
   {
     "name": "AFRICAN TRIBAL MASK",
@@ -3749,6 +3777,20 @@
     "additionalInstructions": "• Transform ONLY the subject.\n• Preserve the original background unless small props naturally appear around the subject.\n• Preserve the subject's exact identity, facial structure, hairstyle, hair color, expression, age, ethnicity, body proportions, and recognizable features.\n• Never replace the subject with another person.\n• Facial expressions should match the selected vice.\n• Props should appear naturally used by the subject rather than floating or randomly placed.\n• Maintain realistic lighting, reflections, shadows, textures, and photographic quality.\n• Avoid cartoon or exaggerated caricature styling unless specifically requested by the master prompt.\n• The final image should resemble a professionally photographed humorous lifestyle portrait.\n• Master prompt instructions always override the selected option whenever conflicts occur.\n\nFINAL VALIDATION:\n\n✓ ONLY the subject has been transformed.\n✓ The subject remains immediately recognizable.\n✓ The selected vice is immediately obvious.\n✓ Props appear naturally integrated.\n✓ Lighting and realism remain photographic.\n✓ The transformation resembles a believable alternate lifestyle portrait rather than a costume.\n✓ If ANY answer is NO, regenerate until every requirement is satisfied."
   },
   {
+    "name": "BAIMIAO",
+    "category": [
+      "ART",
+      "DRAWING",
+      "CHINESE",
+      "LINE",
+      "INK"
+    ],
+    "message": "Take a picture and transform it into a baimiao ink drawing: pure outline with no shading, no wash and no colour at all. Every form should be described by an even, controlled, unbroken brush line of consistent weight, on plain paper, with the whole image carried by contour alone.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Pure contour line, no shading or wash\n• Even, controlled, unbroken line weight\n• No colour anywhere in the image\n• Plain paper ground\n• Subject fully described by outline alone"
+  },
+  {
     "name": "BALD",
     "category": [
       "HUMOR",
@@ -4005,6 +4047,20 @@
     "additionalInstructions": "FINAL RESULT:\nA fully reconstructed scene where all forms are created from vertically extruded basalt columns, forming a geological structure that defines the subject through height variation."
   }, 
   {
+    "name": "BASSE TAILLE",
+    "category": [
+      "ENAMEL",
+      "METALWORK",
+      "MEDIEVAL",
+      "CRAFT",
+      "LUXURY"
+    ],
+    "message": "Take a picture and transform the subject into basse-taille enamel: a design carved in low relief into silver, then flooded with translucent enamel so the metal shines through. Tone should come from the varying depth of the carving, colour should glow where the enamel is thin and darken where it pools, and polished silver should show at the edges.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Translucent enamel over engraved silver relief\n• Tone created by depth of carving\n• Metal glinting through the colour\n• Polished silver borders and edges\n• Subject recognisable in the relief"
+  },
+  {
     "name": "BATHYMETRIC CHART",
     "category": [
       "CARTOGRAPHY",
@@ -4073,6 +4129,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "FINAL RESULT:\nA Bauhaus-inspired composition where the subject and scene are reduced to geometric shapes and primary colors, creating a clean, functional, and modern design aesthetic."
+  },
+  {
+    "name": "BAYER DITHER",
+    "category": [
+      "DIGITAL",
+      "RETRO",
+      "PIXEL",
+      "GRAPHICS",
+      "TECHNIQUE"
+    ],
+    "message": "Take a picture and transform it into an ordered-dither image on a severely limited palette. Every gradient must be built from a regular Bayer matrix of hard pixels rather than smooth blending, the threshold grid should be plainly visible as a crosshatch in the midtones, and the palette should be restricted to a handful of colours.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Ordered Bayer matrix dithering, not noise\n• Regular crosshatch grid visible in midtones\n• Severely restricted palette\n• Hard pixel edges with no smooth blending\n• Subject recognisable through the dither"
   },
   {
     "name": "BAYEUX TAPESTRY",
@@ -5728,6 +5798,20 @@
   "additionalInstructions": "The final image must look like a real photograph of someone wearing the shirt, not a flat mockup. The shirt should have fabric texture, natural wrinkles, and realistic wear. The graphic must look genuinely screen-printed — not digitally perfect. Embrace imperfection: slightly misaligned layers, ink bleed, fading. The humor must be deadpan and absurdist — the more unrelated the mashed references the better. Never make it look polished or intentionally ironic. It must feel like someone genuinely thought this was a good idea."
   },
   {
+    "name": "BOROBUDUR",
+    "category": [
+      "SCULPTURE",
+      "RELIEF",
+      "STONE",
+      "JAVANESE",
+      "NARRATIVE"
+    ],
+    "message": "Take a picture and transform it into a Borobudur stone relief: a narrative panel carved in shallow relief in grey volcanic andesite. Figures should stand in graceful hipshot poses, layered in two or three shallow planes, framed by stylised trees and architecture, with lichen, weathering and chipped edges across the eroded stone.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Shallow relief in grey volcanic stone\n• Graceful hipshot figures in layered planes\n• Stylised trees and architecture framing the scene\n• Lichen, erosion and chipped edges\n• Subject recognisable among the carved figures"
+  },
+  {
     "name": "BOSS BATTLE",
     "category": [
       "OPTIONS",
@@ -6971,6 +7055,20 @@
     "additionalInstructions": "• Preserve recognizable identity\n• Subject redrawn in comic-strip style\n• Subject interacts naturally with Calvin\n• Subject interacts naturally with Hobbes\n• Newspaper-comic presentation\n• Hand-drawn ink lines\n• Watercolor-inspired coloring when appropriate\n• Expressive cartoon acting\n• Imaginative childhood adventures\n• Whimsical humor\n• Comic-strip panel layout\n• Speech balloons when appropriate\n• Classic newspaper-comic aesthetics\n• No photorealism\n• Final image should resemble an authentic Calvin & Hobbes comic strip"
   },
   {
+    "name": "CAMAIEU",
+    "category": [
+      "ART",
+      "PAINTING",
+      "MONOCHROME",
+      "TECHNIQUE",
+      "CLASSICAL"
+    ],
+    "message": "Take a picture and transform it into a camaieu painting: a full picture built in tints and shades of a single hue plus white. Modelling should be complete and sculptural, the range should run from the palest tint to the deepest shade of that one colour, and the effect should read as a considered painting rather than a desaturated photograph.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Single hue plus white across the whole image\n• Full sculptural modelling within that hue\n• Painted surface with visible brushwork\n• No stray colours anywhere in the frame\n• Subject recognisable and fully modelled"
+  },
+  {
     "name": "CAMERA LUCIDA DRAWING",
     "category": [
       "ART",
@@ -7493,6 +7591,20 @@
     "additionalInstructions": "IDENTITY PRESERVATION (CRITICAL):\n• For any carved wood element representing a subject, the face must be flawlessly sculpted by master carousel artisans to resemble that subject's unique eye shapes, jawlines, smiles, and hairstyles transformed into stylized carousel anatomy.\n• For any human rider element, the photographic realism and exact physical identity of the designated subject must be preserved flawlessly.\n• The final image must precisely execute the structural layout specified in the selected option."
   },
   {
+    "name": "CASEIN PAINT",
+    "category": [
+      "ART",
+      "PAINTING",
+      "MEDIUM",
+      "MATTE",
+      "ILLUSTRATION"
+    ],
+    "message": "Take a picture and transform it into a casein painting. The milk-protein binder dries fast to a completely matte, slightly chalky, velvety surface with a faint sheen only in the thickest passages. Colour should sit flat and opaque with crisp edges between shapes, and thick areas should show fine drying cracks.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Completely matte, chalky, velvety surface\n• Flat opaque colour with crisp shape edges\n• Fine drying cracks in the thickest passages\n• No glossy or transparent glazing\n• Subject recognisable and cleanly shaped"
+  },
+  {
     "name": "CASSETTE FUTURISM",
     "category": [
       "ART",
@@ -7530,6 +7642,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "CATADIOPTRIC",
+    "category": [
+      "PHOTOGRAPHY",
+      "LENS",
+      "BOKEH",
+      "OPTICAL",
+      "VINTAGE"
+    ],
+    "message": "Take a picture and reshoot it on a mirror telephoto lens. Out-of-focus highlights should render as bright rings with dark centres, backgrounds should compress and swirl, contrast should be a little flat and veiled, and the depth of field should be paper-thin behind a subject pulled tight against a distant background.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Ring-shaped doughnut bokeh with dark centres\n• Heavily compressed background\n• Slightly flat, veiled contrast\n• Extremely shallow depth of field\n• Subject clearly recognisable"
   },
   {
     "name": "CAUGHT IN THE ACT",
@@ -8812,6 +8938,20 @@
     "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Gold-tone palette: purple, plum, magenta, rose-grey\n• Matte cotton paper with visible fibre\n• Split tones between highlight and shadow\n• Hand-coated edges\n• Subject clearly recognisable"
   },
   {
+    "name": "CIBACHROME",
+    "category": [
+      "PHOTOGRAPHY",
+      "PROCESS",
+      "COLOR",
+      "GLOSSY",
+      "ANALOG"
+    ],
+    "message": "Take a picture and transform it into a Cibachrome print made directly from a colour slide. The image should be brilliantly saturated with an almost lacquered gloss, blacks that go genuinely dense, colours that lean pure and slightly cool, razor-sharp detail, and the mirror-like polyester surface that made these prints look wet.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Extremely saturated, slightly cool colour\n• Dense, glossy blacks\n• Mirror-bright lacquered surface\n• Very high micro-detail and edge sharpness\n• Subject clearly recognisable"
+  },
+  {
     "name": "CIGAR BAND PORTRAIT",
     "category": [
       "OPTIONS",
@@ -9250,6 +9390,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "CLICHE VERRE",
+    "category": [
+      "PHOTOGRAPHY",
+      "PRINTMAKING",
+      "HYBRID",
+      "DRAWING",
+      "HISTORICAL"
+    ],
+    "message": "Take a picture and transform it into a cliche verre, the hybrid used by Corot and Millet: an image drawn by hand into an opaque coating on glass, then printed as a photograph. The result should read as a freely scratched drawing rendered in photographic tones, with needle-thin bright lines, plate edges, dust and smears in the coating, and no photographic detail beyond the drawn marks.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Hand-scratched line quality throughout\n• Bright drawn lines against a dark ground\n• Plate edge, dust and coating smears visible\n• Photographic tonality, not ink\n• Subject recognisable through the drawn marks"
   },
   {
     "name": "CLOCKWORK AUTOMATON",
@@ -11995,6 +12149,20 @@
     "additionalInstructions": "STYLE ENFORCEMENT:\n\u2022 Preserve recognizable subject identity\n\u2022 Show gravity-defying martial arts action (wire-fu aesthetic)\n\u2022 Include flowing silk robes and fabric in dramatic motion\n\u2022 Use painterly Chinese landscape backgrounds (mountains, bamboo, waterfalls)\n\u2022 Apply slow-motion photography aesthetic for fabric and hair\n\u2022 Include traditional weapons (sword, staff, fan)\n\u2022 Use dramatic color grading (rich greens, golds, reds)\n\u2022 Reference wuxia films (Crouching Tiger Hidden Dragon, Hero, House of Flying Daggers)\n\u2022 Show impossible physics (running on water, leaping between trees)\n\u2022 Create sense of grace, power, and poetic movement"
   },
   {
+    "name": "CRAQUELURE",
+    "category": [
+      "ART",
+      "PAINTING",
+      "AGING",
+      "TEXTURE",
+      "CONSERVATION"
+    ],
+    "message": "Take a picture and transform it into an aged oil painting whose varnish and paint film have cracked. The craquelure pattern should follow the direction of the brushwork and the movement of the panel beneath, running fine and web-like in thin passages and wide and curling in thick ones, with darkened varnish pooling in the cracks.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Crack pattern following brushwork and panel movement\n• Fine webbing in thin paint, wide cracks in thick\n• Darkened varnish collecting in the fissures\n• Slight lifting and cupping at the crack edges\n• Subject clearly recognisable beneath the ageing"
+  },
+  {
     "name": "CRETAN-MYCENAEAN FRESCO",
     "category": [
       "ART",
@@ -12594,6 +12762,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "DANSAEKHWA",
+    "category": [
+      "ART",
+      "PAINTING",
+      "MONOCHROME",
+      "KOREAN",
+      "MINIMAL"
+    ],
+    "message": "Take a picture and transform it into a Dansaekhwa work: Korean monochrome painting made by pushing, soaking, dragging or pressing pigment through and across the surface over and over. Colour should be near-white, off-grey, ochre or deep blue, and the interest should lie entirely in repetition, absorption and the physical trace of the hand.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Near-monochrome: white, grey, ochre or deep blue\n• Repetitive physical process visible in the surface\n• Pigment pushed through or soaked into the support\n• Meditative, undramatic composition\n• Subject reduced to a faint physical trace"
   },
   {
     "name": "DARK ACADEMIA",
@@ -22356,6 +22538,19 @@
     "additionalInstructions": "STYLE ENFORCEMENT:\n• Preserve subject identity despite solar exposure effects\n• Warm, sun-bleached tones: amber, golden, burnt sienna\n• Areas of solarization from overexposure\n• Uneven exposure: darker edges, lighter centers\n• Reference experimental solar printing and sun-bleaching techniques\n• The warmth of direct sunlight should be felt in the tones\n• Unique, unrepeatable print quality\n• Extended exposure effects visible\n• Handmade, organic quality throughout\n• The overall effect should be warm, solar, and experimental"
   },
   {
+    "name": "HELIOGRAPH",
+    "category": [
+      "PHOTOGRAPHY",
+      "PROCESS",
+      "HISTORICAL",
+      "EXPERIMENTAL"
+    ],
+    "message": "Take a picture and transform it into a heliograph, the earliest photographic image, made by Niepce on a bitumen-coated pewter plate over an exposure of many hours. The result should be crude and barely legible: a metallic grey plate, forms suggested rather than described, light falling from several directions at once because the sun moved during the exposure, and patchy dissolved areas where the bitumen washed unevenly.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Barely legible, suggested forms\n• Metallic pewter plate surface\n• Contradictory light directions from a very long exposure\n• Patchy, uneven dissolved bitumen\n• Subject dimly but genuinely recognisable"
+  },
+  {
     "name": "HELIOGRAVURE",
     "category": [
       "PRINTMAKING",
@@ -26062,6 +26257,20 @@
     "additionalInstructions": "• Transform ONLY the subject.\n• Keep the background completely unchanged.\n• Preserve the original environment, lighting, perspective, colors, shadows, and every background object exactly as photographed.\n• Completely discard the original subject before reconstruction.\n• Do NOT place LEGO pieces over the original person.\n• Do NOT blend photographic textures with LEGO materials.\n• Every visible part of the subject must be constructed entirely from real LEGO pieces.\n• Preserve the subject's exact identity, facial structure, hairstyle, hair color, expression, age, ethnicity, body proportions, pose, silhouette, and recognizable features.\n• Facial features must emerge solely through intelligent LEGO placement.\n• Every LEGO element must remain recognizable as an authentic LEGO component.\n• Preserve realistic LEGO studs, connection points, plastic reflections, edges, seams, and manufacturing details.\n• Never flatten LEGO pieces into simple colored squares.\n• Never create a digital pixel filter.\n• Use thousands of individual LEGO pieces depending on image complexity.\n• Arrange LEGO pieces with realistic spacing, layering, and depth like a real LEGO artist would build.\n• LEGO pieces should have authentic glossy plastic surfaces and subtle shadows.\n• Recreate eyes, nose, mouth, and expression using carefully selected LEGO colors and piece placement.\n• Hair must be reconstructed entirely from LEGO pieces using appropriate colors and structural patterns.\n• Clothing must also be rebuilt entirely from LEGO pieces.\n• Use smaller LEGO tiles and plates for facial details and larger bricks for broad areas.\n• Avoid repeated artificial patterns unless required by LEGO construction.\n• The finished artwork should look like a real handcrafted LEGO mosaic photographed after completion.\n• Master prompt instructions always override the selected option whenever conflicts occur.\n\nFINAL VALIDATION — Before producing the final image, verify ALL of the following:\n\n✓ ONLY the subject has been transformed.\n✓ The background remains completely unchanged.\n✓ No original photographic pixels remain on the subject.\n✓ The subject is entirely reconstructed from real LEGO pieces.\n✓ LEGO pieces are not simply placed over the original subject.\n✓ Individual LEGO bricks, plates, tiles, and studs remain visible.\n✓ LEGO plastic texture, reflections, and construction details are realistic.\n✓ The subject remains immediately recognizable.\n✓ The artwork resembles a genuine handcrafted LEGO mosaic.\n✓ If ANY answer is NO, regenerate the image until every requirement is satisfied."
   },
   {
+    "name": "LENSBABY",
+    "category": [
+      "PHOTOGRAPHY",
+      "LENS",
+      "SELECTIVE FOCUS",
+      "DREAMY",
+      "ANALOG"
+    ],
+    "message": "Take a picture and reshoot it through a tilting selective-focus lens. One small sweet spot should be genuinely sharp while everything around it smears outward in radial blur that grows stronger toward the corners. The plane of focus should be tilted rather than parallel to the frame, and highlights outside the sweet spot should bloom softly.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• One small, genuinely sharp sweet spot\n• Radial smear increasing toward the corners\n• Tilted, non-parallel plane of focus\n• Soft blooming highlights in the blur\n• Subject's face inside the sharp zone"
+  },
+  {
     "name": "LENTICULAR INTERLACE",
     "category": [
       "OPTIONS",
@@ -26136,6 +26345,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "LETTERPRESS",
+    "category": [
+      "DESIGN",
+      "PRINT",
+      "TYPOGRAPHY",
+      "CRAFT",
+      "TEXTURE"
+    ],
+    "message": "Take a picture and transform it into a letterpress-printed piece. Type and image should be bitten physically into thick cotton paper so the impression casts its own shadow, ink should sit unevenly with heavier deposit at the edges of forms, register between colours should be very slightly off, and the paper should show a deckle edge.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Visible physical impression pressed into the sheet\n• Uneven ink with heavier edge deposit\n• Slight colour misregistration\n• Thick cotton paper with deckle edge\n• Any text correctly spelled and cleanly set"
   },
   {
     "name": "LET THEM EAT CAKE",
@@ -27434,6 +27657,46 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "FINAL RESULT:\nThe image must look like a real 1970s-era metal lunchbox product featuring the subject as the illustrated star, complete with bold retro artwork and printed branding text influenced by the external prompt or inferred from the subject."
+  },
+  {
+    "name": "LYNN GOLDSMITH PHOTOGRAPHY",
+    "category": [
+      "PHOTOGRAPHY",
+      "PORTRAIT",
+      "MUSIC PHOTOGRAPHY",
+      "DOCUMENTARY",
+      "EDITORIAL",
+      "BLACK AND WHITE"
+    ],
+    "message": "Take a picture and transform it into a candid, intimate photographic portrait inspired by the recognizable visual language of Lynn Goldsmith's music, celebrity, and documentary photography. The result should feel like an authentic photograph made by a perceptive documentary photographer rather than a staged studio portrait or a generic celebrity photograph.\n\nPHOTOGRAPHIC APPROACH:\n• Emphasize intimacy, spontaneity, personality, and psychological presence\n• Capture the subject as a real person rather than as a polished commercial model\n• Favor candid or semi-candid moments with a strong sense of personality\n• Make the photograph feel observed rather than manufactured\n• Preserve imperfections, natural expressions, and genuine human character\n• The subject should appear comfortable, expressive, and emotionally present\n• Avoid an overly posed, artificially glamorous, or fashion-catalog appearance\n\nSUBJECT:\n• Preserve the subject's recognizable identity, facial structure, hairstyle, age, body proportions, and distinctive physical characteristics\n• Do not replace the subject with a generic musician, celebrity, or model\n• Preserve recognizable clothing and accessories unless a photographic reinterpretation naturally requires adjustment\n• The personality of the subject should become the central visual element\n• Favor expressions and gestures that reveal character rather than generic smiling\n\nCOMPOSITION:\n• Use intimate portrait framing, environmental portraiture, or candid documentary composition\n• Favor close-ups, medium portraits, and spontaneous three-quarter compositions\n• Allow natural negative space when appropriate\n• Use slightly unconventional framing when it strengthens the documentary feeling\n• The subject does not always need to look directly into the camera\n• Off-camera glances, direct gazes, relaxed poses, movement, and transitional moments are encouraged\n• Avoid perfectly centered commercial headshots unless the source composition naturally calls for one\n\nCAMERA FEEL:\n• Simulate the character of an experienced documentary photographer working with professional 35mm film cameras\n• Favor natural perspective and authentic photographic depth\n• Use realistic shallow or moderate depth of field when appropriate\n• Preserve natural skin texture and fine facial detail\n• Allow subtle film grain, optical softness, and organic photographic imperfections\n• Avoid excessive digital sharpness\n• Avoid artificial HDR processing\n• Avoid plastic skin or computationally perfect facial rendering\n\nLIGHTING:\n• Favor available light and naturally motivated illumination\n• Use window light, practical indoor light, overcast daylight, street light, backstage light, or direct environmental light when appropriate to the source\n• Strong directional light may be used when it creates personality and atmosphere\n• Allow natural shadows and uneven illumination\n• Avoid generic three-point studio lighting\n• Avoid artificial beauty lighting that removes character from the face\n• Highlights and shadows should retain photographic detail\n\nBLACK AND WHITE / COLOR:\n• Use sophisticated photographic tonality rather than an obvious preset filter\n• When monochrome is appropriate, use rich black-and-white tonal separation with deep blacks, luminous highlights, and detailed midtones\n• When color is appropriate, use natural but expressive color with subtle film characteristics\n• Colors should feel photographic, slightly organic, and period-authentic rather than digitally saturated\n• Preserve believable skin tones\n\nFILM CHARACTER:\n• Introduce subtle analog film grain and organic photographic texture\n• Very subtle halation, lens character, grain structure, and tonal irregularity may be present\n• Preserve the feeling of a physical photographic negative or print\n• Do not overdo grain or scratches\n• Do not make the photograph look damaged, artificially aged, or like a generic vintage filter\n\nDOCUMENTARY REALISM:\n• The photograph should feel like a genuine moment from a person's life\n• Preserve environmental details that contribute to the subject's personality\n• If the source contains a room, street, backstage area, studio, venue, home, vehicle, or other environment, use that existing environment as the photographic context\n• Do not invent elaborate celebrity environments, concert stages, microphones, instruments, crowds, or recording studios unless they already exist in the source image\n• The photograph should communicate a sense of place without becoming a staged movie scene\n\nMUSIC / CELEBRITY PHOTOGRAPHY FEEL:\n• Capture the subject with the intimacy associated with photographing musicians and public figures away from conventional publicity imagery\n• Emphasize individuality, attitude, vulnerability, confidence, eccentricity, humor, or introspection depending on what the subject naturally communicates\n• The subject should feel like a real person caught in an authentic moment\n• Avoid turning the subject into a stereotypical rock star simply because of the photographic inspiration\n\nEMOTIONAL QUALITY:\n• Seek a psychologically revealing moment\n• Expression should feel natural and specific to the subject\n• Subtle gestures, posture, eye direction, hands, clothing, and body language should contribute to personality\n• Do not force an exaggerated emotion\n• A neutral or understated expression can be more powerful than a dramatic one\n\nIMAGE CHARACTER:\n• Intimate\n• Observational\n• Human\n• Unforced\n• Editorial\n• Candid\n• Slightly raw\n• Emotionally revealing\n• Sophisticated but not overly polished\n• Personal rather than commercial\n\nSTYLE RESTRICTIONS:\n• Do NOT turn the image into a generic celebrity portrait\n• Do NOT use glamour photography as the dominant aesthetic\n• Do NOT use fashion-editorial posing as the dominant aesthetic\n• Do NOT use artificial cinematic teal-and-orange grading\n• Do NOT use excessive lens flares, glow, bokeh, or artificial effects\n• Do NOT create a caricature\n• Do NOT make the subject look younger or older\n• Do NOT replace the subject's identity\n• Do NOT add unrelated props or environments\n• Do NOT make the photograph look like an AI-generated approximation of a famous photographer's signature image\n\nOVERALL TARGET:\nCreate a photograph with the intimacy, candid observation, humanism, spontaneity, and psychologically revealing quality associated with Lynn Goldsmith's photographic work, while making the resulting image an original photograph of the supplied subject rather than reproducing any specific existing photograph.",
+    "options": [
+      {
+        "id": "CANDID PORTRAIT",
+        "text": "CANDID PORTRAIT — Create an intimate, spontaneous portrait that feels like an unplanned moment captured while the subject is naturally being themselves."
+      },
+      {
+        "id": "MUSIC DOCUMENTARY",
+        "text": "MUSIC DOCUMENTARY — Give the photograph the intimate observational quality of a musician photographed away from conventional publicity imagery, using personality and environment as the focus."
+      },
+      {
+        "id": "BLACK AND WHITE",
+        "text": "BLACK AND WHITE — Use expressive monochrome photography with rich blacks, luminous highlights, detailed midtones, organic 35mm film grain, and strong documentary character."
+      },
+      {
+        "id": "ENVIRONMENTAL PORTRAIT",
+        "text": "ENVIRONMENTAL PORTRAIT — Photograph the subject naturally within the existing environment, using surroundings, available light, gestures, and composition to reveal personality."
+      },
+      {
+        "id": "INTIMATE CLOSEUP",
+        "text": "INTIMATE CLOSE-UP — Create a close, psychologically revealing portrait emphasizing the subject's eyes, expression, facial character, natural skin texture, and subtle emotion."
+      },
+      {
+        "id": "RAW FILM",
+        "text": "RAW FILM — Emphasize the spontaneous imperfections and tactile character of documentary 35mm photography, including organic grain, natural light, subtle optical imperfections, and unpolished realism."
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "MASTER PROMPT RULE: If the master prompt specifies a particular subject, pose, setting, mood, action, clothing detail, composition, or environment, preserve and incorporate that information whenever it does not conflict with the core photographic transformation.\n\nCRITICAL TRANSFORMATION RULES:\n• This must be a PHOTOGRAPHIC transformation, not an illustration or painting.\n• The subject must remain recognizable.\n• Prioritize candid human presence, intimacy, personality, and documentary observation.\n• The photograph should feel captured rather than posed.\n• Use naturalistic lighting and authentic photographic optics.\n• Film characteristics should be subtle and believable.\n• Preserve existing environmental context whenever possible.\n• Do not invent stereotypical music-photography props or locations.\n• Do not reproduce any specific Lynn Goldsmith photograph or identifiable composition; create an original image using the broader photographic qualities described above.\n\nFINAL VALIDATION:\n• Does this look like a genuine photograph rather than an illustration?\n• Does the subject remain clearly recognizable?\n• Does the photograph feel candid, intimate, and psychologically revealing?\n• Does the subject appear like a real person rather than a generic celebrity model?\n• Is the lighting naturalistic and photographically believable?\n• Is the composition observational rather than commercially staged?\n• Is the film grain subtle and authentic?\n• Are natural skin texture and photographic imperfections preserved?\n• Does the existing environment contribute to the documentary feeling?\n• Were no unnecessary music, celebrity, or studio clichés invented?\n• Does the result feel like an original documentary photograph inspired by the stated photographic qualities rather than a copy of a specific photograph?\n\nIf any answer is NO, correct the image before producing the final result."
   },
   {
     "name": "LYRICAL ABSTRACTION",
@@ -29526,6 +29789,20 @@
     "additionalInstructions": ""
   },
   {
+    "name": "METALPOINT",
+    "category": [
+      "ART",
+      "DRAWING",
+      "RENAISSANCE",
+      "TECHNIQUE",
+      "MONOCHROME"
+    ],
+    "message": "Take a picture and transform it into a silverpoint drawing on prepared ground. A metal stylus leaves a line that cannot be erased or varied much in weight, so tone is built entirely from patient hatching. The image should be delicate and silvery, warming to faint brown where the metal has tarnished, on a tinted ground with the paper's prepared coating visible.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Fine, uniform, unerasable line weight\n• Tone built only from patient hatching\n• Silvery grey warming to tarnished brown\n• Tinted prepared ground visible\n• Subject recognisable and delicately modelled"
+  },
+  {
     "name": "MET GALA",
     "category": [
       "FASHION",
@@ -30332,6 +30609,20 @@
     "additionalInstructions": "IDENTITY PRESERVATION:\n\n• Preserve the subject's recognizable facial identity beneath the theatrical makeup.\n• Preserve the subject's actual facial structure, eye shape, nose, mouth, jaw, hairstyle, and distinctive characteristics.\n• The white makeup must be applied TO the subject's actual face rather than replacing the face with a generic mime face.\n• Do not transform the subject into a different person.\n• Do not make the face younger, older, or anatomically different.\n\nMIME FACE:\n\n• Cover the face with traditional opaque theatrical white mime makeup.\n• White makeup should visibly cover the forehead, cheeks, nose, and chin while retaining the underlying facial structure.\n• Use classic black theatrical accents around the eyes and/or eyebrows.\n• Add a clearly defined dark mime mouth accent where appropriate.\n• Makeup should have the physical texture of real theatrical greasepaint or stage makeup.\n• Preserve realistic skin and facial texture beneath and around the makeup.\n• Do not create clown makeup.\n• Do not use colorful face paint.\n• Do not make the face look like a porcelain mask.\n• Do not replace the subject's face with an anonymous mime face.\n\nMIME COSTUME:\n\n• Transform the subject's clothing into a recognizable traditional mime costume.\n• Classic black-and-white visual palette.\n• Black-and-white horizontally striped shirt where appropriate.\n• Black trousers or similarly traditional dark mime clothing.\n• Black suspenders may be used.\n• White gloves when the hands are visible.\n• Black beret may be used where appropriate to the selected option.\n• Clothing must look like real fabric physically worn by the subject.\n• Do not make the costume look like a Halloween costume or theatrical caricature.\n\nPERFORMANCE LANGUAGE:\n\n• Use authentic mime body language.\n• Emphasize expressive hands, arms, posture, facial expression, and theatrical gestures.\n• Invisible objects must be communicated through physical performance rather than visual effects.\n• When performing an invisible-box, invisible-rope, wall, or wind routine, the imaginary object must NOT become visible.\n• The humor comes from the subject seriously performing an impossible silent action.\n• Keep gestures exaggerated enough to be immediately recognizable as mime performance.\n\nPHOTOREALISTIC TRANSFORMATION:\n\n• The final image must look like a genuine photograph of the subject performing as a professional mime.\n• Real theatrical makeup.\n• Real clothing and fabric.\n• Real gloves and accessories.\n• Realistic lighting, shadows, skin texture, and depth of field.\n• Preserve the original photographic quality where appropriate.\n• Do not use cartoon outlines.\n• Do not use illustration rendering.\n• Do not make the subject look like a painted animation character.\n• Do not create a mannequin, doll, or CGI character.\n\nBACKGROUND AND ENVIRONMENT:\n\n• Preserve the original background and environment unless the selected option or master prompt specifically requires an environmental change.\n• The subject must physically occupy the existing environment.\n• Do not automatically replace the background with a Paris street, circus, theater, or generic mime stage.\n• Do not add unrelated props.\n• Invisible objects remain invisible; communicate them only through the subject's mime performance.\n\nMASTER PROMPT RULE:\n\n• Master prompt instructions always override conflicting instructions EXCEPT the mandatory transformation into a realistic mime.\n• Incorporate master-prompt clothing, pose, setting, action, camera angle, composition, and other visual information while maintaining the mime transformation.\n• If the master prompt specifies an action, interpret it through authentic mime performance where appropriate.\n\nFINAL VALIDATION:\n\n✓ Subject is clearly transformed into a mime.\n✓ Subject's recognizable identity is preserved.\n✓ Actual facial structure remains intact beneath the makeup.\n✓ Face has unmistakable traditional white mime makeup.\n✓ Costume is recognizably traditional mime clothing.\n✓ Performance uses expressive mime body language.\n✓ Selected mime action is visually unmistakable when applicable.\n✓ Invisible objects remain invisible.\n✓ Background has not been unnecessarily replaced.\n✓ No clown makeup has been introduced.\n✓ Result is photorealistic.\n✓ Result looks like a real person performing as a mime rather than a cartoon or costume character.\n✓ If ANY answer is NO, regenerate until satisfied."
   },
   {
+    "name": "MIMEOGRAPH",
+    "category": [
+      "PRINT",
+      "RETRO",
+      "ZINE",
+      "TEXTURE",
+      "VINTAGE"
+    ],
+    "message": "Take a picture and transform it into a mimeograph stencil duplication. The image should print in that unmistakable purple-blue aniline ink, patchy and streaked, with clogged solid areas, dropped-out fine lines, ink bleed into cheap absorbent paper, and the faint chemical smell suggested by uneven saturation across the sheet.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Purple-blue aniline duplicator ink\n• Patchy, streaked coverage with clogged solids\n• Fine detail dropping out entirely\n• Bleed into cheap absorbent paper\n• Subject recognisable despite heavy loss"
+  },
+  {
     "name": "MINECRAFT",
     "category": [
       "GAMING",
@@ -30745,6 +31036,20 @@
     "additionalInstructions": "CORE RULE (ABSOLUTE):\n• The subject MUST be constructed entirely from the same continuous line system as the background\n• The image must NOT contain a drawn subject with lines placed on top\n• There must be no separation between subject and background systems\n\nFREQUENCY HIERARCHY (CRITICAL):\n• Background = very fine, tightly spaced lines\n• Subject = coarser, thicker, more widely spaced lines\n• This contrast MUST be clearly visible\n\n• The subject must emerge ONLY through this frequency shift\n• Do NOT use shading, fill, or tone to define the subject\n\nCONTINUITY ENFORCEMENT:\n• Lines must flow continuously through both background and subject regions\n• No breaks, gaps, or black bands around the subject\n• No halos, glows, or isolation zones\n\n• If a black aura or outline appears → REMOVE IT\n\nBACKGROUND DEPTH FIELD:\n• Background must create a receding depth effect (black hole or distance field)\n• Achieve this through gradual line compression and directional convergence\n• The depth must be created ONLY with line spacing and curvature\n\nSUBJECT FORMATION:\n• The subject must distort the background line field\n• Use displacement, thickness change, and spacing variation\n• The subject should feel like a structural disturbance in the field\n\n• The subject must NOT look drawn or illustrated\n\nINTERFERENCE LAYER (MOIRÉ GENERATION):\n• Apply a second line system across the entire image\n• This layer must be slightly coarser than the background but finer than the subject\n• Offset the two layers slightly to create visible moiré interaction\n\n• Keep interference stable — avoid chaotic vibration\n\nANTI-AURA / ANTI-OUTLINE (STRICT):\n• Do NOT create any black band, glow, or empty space around the subject\n• Do NOT outline the subject in any way\n• Do NOT isolate the subject from the background\n\n• Subject edges must be defined ONLY by frequency transition\n\nANTI-FAIL CONDITIONS:\n• Subject drawn separately from lines → FAIL\n• Any outline, halo, or aura → FAIL\n• Background and subject using same frequency → FAIL\n• Broken line continuity → FAIL\n\nQUALITY TARGET:\n• Subject clearly visible through line frequency contrast\n• Continuous line system across entire image\n• Strong depth in background\n• Clean, stable moiré shimmer\n• No artificial separation artifacts."
   },
   {
+    "name": "MOKULITO",
+    "category": [
+      "ART",
+      "PRINTMAKING",
+      "LITHOGRAPHY",
+      "WOOD",
+      "JAPANESE"
+    ],
+    "message": "Take a picture and transform it into a mokulito wood lithograph. Printed from a drawn plywood plate, it should show the wood grain running through the whole image, greasy crayon and wash marks, unpredictable breakdown and drop-out where the board rejected ink, and the flat matte deposit of lithographic ink on soft paper.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Wood grain printing through the entire image\n• Greasy crayon and tusche wash marks\n• Unpredictable ink breakdown and drop-out\n• Flat matte lithographic ink\n• Subject recognisable through the grain"
+  },
+  {
   "name": "MOKUME GANE",
   "category": [
     "OPTIONS",
@@ -30781,10 +31086,10 @@
       "APPLIQUÉ",
       "ART"
     ],
-    "message": "Take a picture and transform it into a Kuna Mola textile design. Molas are traditional reverse-appliqué textile panels made by the Guna (Kuna) people of Panama and Colombia, featuring multiple layers of brightly colored fabric cut away to reveal intricate geometric and figurative designs with characteristic narrow channels of color between layers.",
+    "message": "Take a picture and transform it into a Kuna Mola textile design. Molas are traditional reverse-appliqué textile panels made by the Guna (Kuna) people of Panama and Colombia, featuring multiple layers of brightly colored fabric cut away to reveal intricate geometric and figurative designs with characteristic narrow channels of color between layers, background gaps should be filled with fine slits and dots, and hand stitching should be visible throughout.",
     "options": [],
     "randomizeOptions": false,
-    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Multiple layers of colored fabric\n• Reverse-appliqué technique\n• Narrow channels revealing underlying colors\n• Bold geometric and figurative designs\n• Vibrant tropical color palette"
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Multiple layers of colored fabric\n• Reverse-appliqué technique\n• Narrow channels revealing underlying colors\n• Bold geometric and figurative designs\n• Vibrant tropical color palette\n• Background filled with fine slits and dots\n• Visible hand stitching along every edge\n• Subject recognisable in bold cut shapes."
   },
   {
     "name": "MOLTEN MAGMA FORM",
@@ -31028,6 +31333,20 @@
         }
       ],
     "additionalInstructions": "FINAL RESULT:\nThe selected option determines a specific Monopoly character and a specific official Monopoly illustration. The image should recreate that recognizable Monopoly artwork as faithfully as possible while replacing only the designated character's head and face with a Monopoly-style version of the subject. The pose, costume, props, composition, illustration layout, and Monopoly visual language should remain faithful to the original artwork. The result should look like an authentic Monopoly card, board illustration, rulebook image, advertisement, or box-art illustration that originally featured the subject as that Monopoly character."
+  },
+  {
+    "name": "MONOTYPE",
+    "category": [
+      "ART",
+      "PRINTMAKING",
+      "PAINTERLY",
+      "EXPERIMENTAL",
+      "INK"
+    ],
+    "message": "Take a picture and transform it into a monotype: ink painted, wiped and scraped directly on a smooth plate, then pulled once. The image should be unmistakably painterly rather than engraved, with brush and rag marks, soft blotted edges, fingerprints, a plate mark pressed into damp paper, and the slightly starved, uneven ink coverage of a single unrepeatable pull.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Painterly brush, rag and wipe marks\n• Soft blotted edges rather than incised lines\n• Visible plate mark in damp paper\n• Uneven, slightly starved ink coverage\n• Subject recognisable through the marks"
   },
   {
     "name": "MONSTER",
@@ -33269,7 +33588,21 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
-  },  
+  }, 
+  {
+    "name": "NAVAJO SANDPAINTING",
+    "category": [
+      "ART",
+      "INDIGENOUS",
+      "SOUTHWEST",
+      "PIGMENT",
+      "SYMMETRY"
+    ],
+    "message": "Take a picture and transform it into a Navajo sandpainting in the permanent commercial form that Diné artists make for sale — coloured sand fixed to a board rather than a ceremonial floor painting. The image should be built entirely from crushed sandstone, charcoal and mineral pigment in white, black, blue-grey, yellow ochre and red, poured by hand so every edge is slightly granular and no line is mechanically straight. Compose it with strict radial or four-fold symmetry around a central figure, elongated angular forms with squared shoulders, and a guardian element enclosing the design on three sides with an opening left at the east. As Diné artists do in work made for display, the design should be an original composition in the idiom rather than a copy of any ceremonial pattern.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Built from poured coloured sand — granular, hand-laid edges\n• White, black, blue-grey, yellow ochre and red mineral palette\n• Strict radial or four-fold symmetry around a central figure\n• Elongated angular forms with squared shoulders\n• Enclosing guardian element open on the east side\n• An original composition in the idiom, not a copy of a ceremonial design\n• Subject recognisable in the stylised central figure"
+  },
   {
     "name": "NAZCA LINES",
     "category": [
@@ -33396,6 +33729,20 @@
     ],
     "randomizeOptions": true,
     "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Forms derived from carving, with visible plane changes\n• Elongation and stylisation of proportion\n• Earth palette with strong black structure\n• Flat patterned ground behind the figure"
+  },
+  {
+    "name": "NEO-GEO",
+    "category": [
+      "ART",
+      "PAINTING",
+      "GEOMETRIC",
+      "1980S",
+      "CONCEPTUAL"
+    ],
+    "message": "Take a picture and transform it into a Neo-Geo painting of the 1980s: cold, hard-edged geometric abstraction that borrows the visual language of corporate graphics and simulation. Flat industrial colour, mechanical edges, repeating modular units and a deliberately synthetic, emotionless surface.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Hard-edged geometry with mechanical edges\n• Flat industrial colour, no gesture\n• Repeating modular units\n• Deliberately synthetic, cool surface\n• Subject abstracted but still traceable"
   },
   {
     "name": "NEO-EXPRESSIONISM",
@@ -34056,6 +34403,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "NKISI",
+    "category": [
+      "SCULPTURE",
+      "AFRICAN",
+      "CARVING",
+      "POWER FIGURE",
+      "CEREMONIAL"
+    ],
+    "message": "Take a picture and transform the subject into a Kongo nkisi power figure: a carved wooden figure standing frontally with an unwavering outward gaze, its torso studded with driven iron nails and blades, a resin-sealed cavity at the abdomen, and a surface darkened and encrusted by long use.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Frontal carved figure with fixed outward gaze\n• Iron nails and blades driven into the torso\n• Sealed cavity at the abdomen\n• Dark, encrusted, much-handled surface\n• Subject recognisable in the carved features"
   },
   {
     "name": "NOUVEAU RÉALISME",
@@ -36082,6 +36443,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "FINAL RESULT:\nThe image should feel like a normal photograph at first glance, with hidden faces gradually emerging from the environment the longer the viewer looks, subtly mirroring the subject without obvious intent."
+  },
+  {
+    "name": "PARFLECHE",
+    "category": [
+      "ART",
+      "INDIGENOUS",
+      "RAWHIDE",
+      "GEOMETRIC",
+      "CRAFT"
+    ],
+    "message": "Take a picture and transform it into a painted parfleche: a folded rawhide envelope painted with earth pigments. The design must be strictly geometric — triangles, hourglasses, bars and diamonds in red, yellow, blue-green and black outlined in dark line — laid out symmetrically across the stiff, slightly translucent hide with visible fold creases.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Strict geometric shapes, no figurative drawing\n• Earth-pigment red, yellow, blue-green and black\n• Dark outlining around every shape\n• Stiff rawhide with fold creases and edge holes\n• Subject abstracted entirely into geometry"
   },
   {
     "name": "PASSPORT PHOTO",
@@ -42785,6 +43160,20 @@
     "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• White running stitches on indigo fabric\n• Traditional geometric patterns\n• Hand-stitched quality with slight irregularities\n• Layered fabric texture\n• Functional-decorative aesthetic"
   },
   {
+    "name": "SATSUMA",
+    "category": [
+      "CERAMICS",
+      "JAPANESE",
+      "GOLD",
+      "ORNATE",
+      "CRAFT"
+    ],
+    "message": "Take a picture and transform the subject into Satsuma ware: an ivory-cream crackle glaze carrying extraordinarily fine enamel painting with raised gold. Detail should be miniature in scale, gold should stand physically above the surface, and the whole ground should be covered in a fine网 of crackle.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Ivory-cream ground with fine all-over crackle\n• Miniature-scale enamel detail\n• Raised gold standing above the surface\n• Dense but orderly decoration\n• Subject clearly recognisable at miniature scale"
+  },
+  {
     "name": "SATURDAY EVENING POST",
     "category": [
       "ART",
@@ -43467,6 +43856,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "AUTHENTICITY ENFORCEMENT:\n\n• The image must appear physically engraved rather than drawn\n• Every visible detail should emerge from engraved craftsmanship\n• The image should resemble a genuine antique maritime artifact\n• The artwork should feel historically authentic\n• Traditional Scrimshaw aesthetics must dominate the final image\n\nENGRAVING ENFORCEMENT:\n\n• Shading must be created through engraved line density\n• Fine etched detail should remain visible throughout the image\n• Engraved craftsmanship should be evident at all scales\n• The image should appear scratched into the material itself\n• Handcrafted engraving quality should be emphasized\n\nSURFACE ENFORCEMENT:\n\n• The engraved image must appear integrated into the surface\n• The artwork must not appear printed onto the surface\n• The material should feel like a collectible artifact\n• The object should feel tangible and physically carved\n• Antique patina should enhance authenticity where appropriate\n\nSCENE PRESERVATION:\n\n• Preserve subject recognition\n• Preserve object recognition\n• Preserve environmental recognition\n• Preserve scene readability\n• Preserve spatial relationships\n• Preserve storytelling\n\nVISUAL QUALITY:\n\n• Maintain high engraving detail\n• Maintain strong composition\n• Maintain historical authenticity\n• Maintain museum-quality presentation\n• Maintain collectible-artifact realism\n\nFINAL ENFORCEMENT:\n\n• The image must immediately evoke authentic Scrimshaw craftsmanship\n• The image must not resemble a sketch or illustration\n• The image must not resemble a filtered photograph\n• The image must look like a genuine engraved maritime collectible created by a skilled seafaring artisan."
+  },
+  {
+    "name": "SCUMBLING",
+    "category": [
+      "ART",
+      "PAINTING",
+      "TECHNIQUE",
+      "TEXTURE",
+      "OIL"
+    ],
+    "message": "Take a picture and transform it into an oil painting built by scumbling: dry, broken, semi-opaque light paint dragged over a darker underlayer so the colour beneath keeps flickering through. Edges should be soft and granular, highlights should sit on the tooth of the canvas, and the surface should look worked and atmospheric rather than blended smooth.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Dry, broken paint dragged over a darker ground\n• Underlayer flickering through the top colour\n• Highlights catching only the canvas tooth\n• Soft, granular edges throughout\n• Subject recognisable through the broken paint"
   },
   {
     "name": "SEA GLASS MOSAIC",
@@ -44650,6 +45053,20 @@
     "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Monkey performing human activities\n• Elegant Rococo costume and setting\n• Decorative pastel color palette\n• Playful satirical tone\n• French 18th-century decorative style"
   },
   {
+    "name": "SINOPIA",
+    "category": [
+      "ART",
+      "FRESCO",
+      "UNDERDRAWING",
+      "RED",
+      "TECHNIQUE"
+    ],
+    "message": "Take a picture and transform it into a sinopia: the full-size red earth underdrawing brushed onto the rough plaster before a fresco is painted. Only the drawing should remain, confident and economical in red ochre on grey-brown intonaco, with searching corrections, wash shading, and the plaster's grit and lost patches showing through.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Red ochre brush drawing on rough plaster\n• Confident economical line with visible corrections\n• Broad wash shading, no full colour\n• Grit, cracks and lost patches of plaster\n• Subject clearly recognisable from the drawing alone"
+  },
+  {
     "name": "SISTINE CHAPEL FRESCO",
     "category": [
       "ART STYLE",
@@ -44779,6 +45196,20 @@
     }
     ],
     "additionalInstructions": "• Transform ONLY the subject.\n• Keep the background completely unchanged.\n• Preserve the original environment, lighting, perspective, colors, shadows, and every background object exactly as photographed.\n• Completely discard the original photographic subject before reconstruction.\n• NEVER place Slinkys over the original subject.\n• NEVER blend photographic textures with Slinky coils.\n• The original subject must not remain visible anywhere.\n• Every visible part of the subject must be reconstructed entirely from authentic Slinky springs.\n• Preserve the subject's exact identity, facial structure, hairstyle, hair color (through spring coloration when appropriate), expression, age, ethnicity, body proportions, pose, silhouette, and recognizable features.\n• Facial features must emerge solely through the arrangement, spacing, compression, and curvature of the coils.\n• Hair must be recreated entirely from layered Slinky coils.\n• Clothing must also be reconstructed entirely from coils using changes in coil spacing and direction.\n• Every individual Slinky must remain immediately recognizable as a genuine Slinky toy.\n• Preserve authentic Slinky characteristics including continuous helical coils, spring steel, realistic thickness, metallic reflections, natural compression, stretching, gravity, and elasticity.\n• Never flatten coils into simple wire loops.\n• Never convert the coils into generic spirals.\n• Use realistic overlapping, nesting, and interwoven Slinkys to create depth.\n• Maintain believable mechanical behavior of every spring.\n• Preserve realistic shadows cast by the coils.\n• The sculpture should appear physically possible and professionally handcrafted.\n• The finished artwork should resemble a real museum sculpture photographed after completion.\n• Master prompt instructions always override the selected option whenever conflicts occur.\n\nFINAL VALIDATION — Before producing the final image, verify ALL of the following:\n\n✓ ONLY the subject has been transformed.\n✓ The background remains completely unchanged.\n✓ The original photographic subject has been completely removed.\n✓ Every visible part of the subject has been reconstructed entirely from real Slinky springs.\n✓ Slinkys have NOT been placed over the original subject.\n✓ Every coil remains recognizable as an authentic Slinky.\n✓ Coils exhibit realistic compression, stretching, thickness, and metallic reflections.\n✓ Facial features have been sculpted entirely from Slinky coils.\n✓ The subject remains immediately recognizable.\n✓ The artwork resembles a genuine handcrafted Slinky sculpture.\n✓ If ANY answer is NO, regenerate the image until every requirement is satisfied."
+  },
+  {
+    "name": "SLIPWARE",
+    "category": [
+      "CERAMICS",
+      "FOLK",
+      "ENGLISH",
+      "CRAFT",
+      "EARTHENWARE"
+    ],
+    "message": "Take a picture and transform the subject into English slipware: earthenware decorated with liquid clay trailed straight from a slip cup. Lines should stand slightly proud and slightly wobbly in cream on a warm red-brown body, feathered where a bristle was dragged through, under a honey-coloured lead glaze with crazing.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Trailed slip lines standing proud of the surface\n• Cream slip on warm red-brown earthenware\n• Feathered and combed decoration\n• Honey lead glaze with fine crazing\n• Subject recognisable in the trailed drawing"
   },
   {
     "name": "SLIT SCAN",
@@ -44998,6 +45429,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "IDENTITY PRESERVATION (CRITICAL):\n\n• The puppet must clearly resemble the subject\n• Preserve the subject's unique facial identity\n• Preserve distinctive facial structure\n• Preserve recognizable facial proportions\n• Preserve recognizable eye shape through puppet interpretation\n• Preserve recognizable nose shape through puppet interpretation\n• Preserve recognizable smile characteristics through puppet interpretation\n• Preserve recognizable hairstyle characteristics through puppet interpretation\n• Recognition must come from the puppet itself\n• The final puppet must simultaneously read as both the subject and an authentic sock puppet\n\nPUPPET ENFORCEMENT:\n\n• The puppet must clearly be constructed from a sock\n• The sock body must remain visible\n• The puppet mouth must be integrated into the sock structure\n• Facial features must be built from puppet materials\n• The puppet must feel handmade and handcrafted\n• The puppet must appear physically tangible and soft\n\nMATERIAL ENFORCEMENT:\n\n• Hair must be yarn, felt, thread, wool, tassels, fabric strips, or similar craft materials\n• Eyes must be puppet eyes rather than realistic eyes\n• Facial features must be sewn, stitched, stuffed, embroidered, glued, or crafted\n• Materials must remain consistent throughout the puppet\n• No realistic human materials may remain visible\n\nDISPLAY ENFORCEMENT:\n\n• The puppet should appear physically present in the environment\n• The puppet should cast realistic shadows appropriate for a fabric object\n• The puppet should feel like a genuine handcrafted creation\n• The environment should reinforce puppet performance or display\n\nFINAL ENFORCEMENT:\n\n• The image must immediately read as a sock puppet\n• The image must not resemble a stuffed animal\n• The image must not resemble a mascot costume\n• The image must not resemble a person in costume\n• The image must not resemble a ventriloquist dummy\n• The subject must remain recognizable while fully transformed into an authentic handmade sock puppet."
+  },
+  {
+    "name": "SOLARGRAPH",
+    "category": [
+      "PHOTOGRAPHY",
+      "PROCESS",
+      "PINHOLE",
+      "LONG EXPOSURE",
+      "EXPERIMENTAL"
+    ],
+    "message": "Take a picture and transform it into a solargraph: a pinhole exposure lasting weeks or months on paper, never developed, only scanned. Arcs of the sun should burn bright tracks across the sky, the landscape should sit ghostly and semi-transparent beneath them, colours should be inverted and strange in mauve, orange and cyan, and anything that moved should have vanished entirely.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Burned sun-arc tracks across the sky\n• Ghostly, semi-transparent static scene\n• Inverted mauve, orange and cyan palette\n• Moving elements absent or smeared away\n• Subject present but spectral"
   },
   {
     "name": "SOLARIZATION",
@@ -45486,6 +45931,20 @@
     }
     ],
     "additionalInstructions": "• Transform ONLY the subject.\n• Keep the background completely unchanged.\n• Preserve the original environment, lighting, perspective, colors, shadows, and every background object exactly as photographed.\n• Completely discard the original photographic subject before reconstruction.\n• NEVER draw Spirograph curves over the original photograph.\n• NEVER blend photographic textures with the line artwork.\n• The original subject must not remain visible anywhere.\n• Every visible part of the subject must be reconstructed entirely from authentic mathematically generated Spirograph curves.\n• Preserve the subject's exact identity, facial structure, hairstyle, expression, age, ethnicity, body proportions, pose, silhouette, and recognizable features.\n• Facial features must emerge solely through the careful density, spacing, layering, curvature, and orientation of authentic Spirograph curves.\n• Hair must be recreated entirely from overlapping Spirograph patterns while preserving the subject's recognizable hairstyle, flow, volume, and silhouette.\n• Clothing must also be reconstructed entirely from Spirograph curves while preserving folds, seams, wrinkles, texture, and overall shape.\n• Every individual curve must remain clearly visible and mathematically correct.\n• Curves must be true Spirograph hypotrochoids and epitrochoids created by rotating gears inside circular templates.\n• Preserve authentic pen characteristics including slight ink variation, realistic line intersections, occasional darker overlap, smooth continuous curves, and perfectly flowing mathematical geometry.\n• Use realistic variations in gear sizes, radii, pen colors, line density, curve complexity, and overlap.\n• Never substitute generic spirals, random loops, decorative swirls, scribbles, or abstract curves.\n• The finished artwork should appear physically possible and entirely created using a genuine Spirograph drawing toy.\n• Maintain realistic lighting, paper texture where visible, crisp line quality, and exceptional geometric precision.\n• The completed artwork should resemble a genuine handcrafted Spirograph portrait photographed after completion.\n• Master prompt instructions always override the selected option whenever conflicts occur.\n\nFINAL VALIDATION:\n\n✓ ONLY the subject has been transformed.\n✓ The background remains completely unchanged.\n✓ The original photographic subject has been completely removed.\n✓ Every visible part of the subject has been reconstructed entirely from authentic mathematically accurate Spirograph curves.\n✓ Every curve remains individually visible and recognizable.\n✓ No photographic textures remain.\n✓ The subject remains immediately recognizable.\n✓ The artwork resembles a genuine handcrafted Spirograph drawing rather than decorative spiral overlays.\n✓ If ANY answer is NO, regenerate until every requirement is satisfied."
+  },
+  {
+    "name": "SPIT BITE",
+    "category": [
+      "ART",
+      "PRINTMAKING",
+      "ETCHING",
+      "WATERCOLOR",
+      "INTAGLIO"
+    ],
+    "message": "Take a picture and transform it into a spit-bite aquatint, where acid is brushed straight onto the plate. Tones should pool and feather like watercolour washes, with soft irregular edges, blooms where the acid ran, and a wide delicate grey range printed intaglio on damp rag paper.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Washy, pooled tones with feathered edges\n• Blooms and tidelines where acid ran\n• Wide, delicate grey range\n• Plate mark and damp-paper texture\n• Subject recognisable through the washes"
   },
   {
     "name": "SPLIT TONING DARKROOM",
@@ -46930,6 +47389,20 @@
     "additionalInstructions": "IDENTITY PRESERVATION:\n• Subject’s likeness formed through intersecting lines\n• Facial features readable through string density\n• Simplification allowed, but identity must remain clear\n\nANTI-CHEATING RULES:\n• NO drawn outlines\n• NO painted shading\n• NO gradient fills\n• NO smooth digital curves\n\nCOMPOSITION:\n• Flat backing board (wood, cork, or foam)\n• Nails or anchor points may be visible at edges\n• Strings may fan outward or crisscross densely\n\nLIGHTING & REALISM:\n• Lighting reveals string shadows and depth\n• Slight irregularity in string spacing allowed\n\nFINAL RESULT:\nThe image must look like a real string art piece physically assembled from tensioned thread and anchor points, with the subject’s likeness emerging from layered straight lines."
   },
   {
+    "name": "STROBOSCOPIC",
+    "category": [
+      "PHOTOGRAPHY",
+      "MOTION",
+      "EXPERIMENTAL",
+      "SCIENCE",
+      "BLACK AND WHITE"
+    ],
+    "message": "Take a picture and transform it into a stroboscopic multiple-flash photograph in the manner of Harold Edgerton. A single frame should hold a sequence of frozen instants of the same subject, evenly spaced across the arc of the motion, each one sharp, overlapping where they cross, against a black background that swallows everything not lit by the flash.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Multiple sharp frozen instants in one frame\n• Even spacing along the arc of motion\n• Overlap and transparency where phases cross\n• Black background with hard flash falloff\n• Subject clearly recognisable in every phase"
+  },
+  {
     "name": "STRONGMAN",
     "category": [
       "HUMOR",
@@ -47089,6 +47562,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "SUGAR LIFT",
+    "category": [
+      "ART",
+      "PRINTMAKING",
+      "ETCHING",
+      "INTAGLIO",
+      "PAINTERLY"
+    ],
+    "message": "Take a picture and transform it into a sugar-lift aquatint. The technique records the artist's brushstroke as a positive mark: dense, liquid, confident strokes with soft feathered edges, sitting in a fine aquatint tone, printed in intaglio with a plate mark and the slight relief of ink standing above the paper.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Positive brushstrokes with soft feathered edges\n• Fine granular aquatint tone behind the marks\n• Plate mark and ink relief on damp paper\n• Rich blacks with visible grain structure\n• Subject recognisable through the brushwork"
   },
   {
     "name": "SUMINAGASHI",
@@ -49783,6 +50270,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "FINAL RESULT:\nThe image should resemble a dramatic Tenebrism painting, with the subject illuminated by a powerful light source against a dark, shadow-filled background."
+  },
+  {
+    "name": "TENMOKU",
+    "category": [
+      "CERAMICS",
+      "GLAZE",
+      "JAPANESE",
+      "MATERIAL",
+      "CRAFT"
+    ],
+    "message": "Take a picture and transform the subject into a tenmoku-glazed ceramic form. The iron glaze should run thick and glassy black-brown, breaking to rust and amber where it thins over the rims and edges, with hare's fur streaking down the vertical surfaces and a pooled dark well at the base.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Thick glassy black-brown iron glaze\n• Breaking to rust and amber over edges\n• Hare's-fur streaking running downward\n• Pooled dark glaze at the foot\n• Subject recognisable in the ceramic form"
   },
   {
     "name": "TERMINATOR VISION",
@@ -55117,6 +55618,20 @@
     "additionalInstructions": ""
   },
   {
+    "name": "VKHUTEMAS",
+    "category": [
+      "ART",
+      "DESIGN",
+      "CONSTRUCTIVIST",
+      "SOVIET",
+      "MODERNIST"
+    ],
+    "message": "Take a picture and transform it into a Vkhutemas studio exercise from the Soviet design school of the 1920s. The image should be analysed into pure spatial construction: axes, planes and volumes laid bare, dynamic diagonals, a restricted red-black-grey palette, and the cool investigative feel of a formal experiment rather than a picture.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Analysis into axes, planes and volumes\n• Strong dynamic diagonals\n• Restricted red, black, grey and buff palette\n• Diagrammatic, investigative feel\n• Subject recognisable through the construction"
+  },
+  {
     "name": "VOLCANIC OBSIDIAN FRACTURE",
     "category": [
       "ART",
@@ -56464,6 +56979,20 @@
     "additionalInstructions": "ABSOLUTE REQUIREMENT: The subject must be 100% wood — no skin, fabric, metal, plastic, or photographic texture may remain."
   },
   {
+    "name": "WOOD TYPE",
+    "category": [
+      "DESIGN",
+      "TYPOGRAPHY",
+      "PRINT",
+      "VINTAGE",
+      "POSTER"
+    ],
+    "message": "Take a picture and transform it into a nineteenth-century wood-type poster. Enormous condensed and slab-serif letterforms should fill the sheet in stacked bands, printed in one or two flat colours with grain, splits and chipped corners showing in the letters, on coarse newsprint that has yellowed and foxed.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Huge stacked bands of wood letterforms\n• Grain, splits and chipped corners in the type\n• One or two flat ink colours\n• Yellowed, foxed newsprint\n• Any text correctly spelled and cleanly set"
+  },
+  {
     "name": "WOODBURYTYPE",
     "category": [
       "PHOTOGRAPHY",
@@ -57207,6 +57736,34 @@
     "additionalInstructions": ""
   },
   {
+    "name": "XEROGRAPHY",
+    "category": [
+      "ART",
+      "PRINT",
+      "COPY ART",
+      "HIGH CONTRAST",
+      "EXPERIMENTAL"
+    ],
+    "message": "Take a picture and transform it into copier art: an image photocopied, re-copied and copied again. Midtones should collapse into harsh black and white, toner should smear and streak down the sheet, the platen edge should print as a black band, dust and hair should appear at full size, and the register should drift with each generation.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Midtones collapsed to harsh black and white\n• Toner streaking and drop-out\n• Black platen band at the edges\n• Dust, hair and register drift from re-copying\n• Subject recognisable despite degradation"
+  },
+  {
+    "name": "XIEYI",
+    "category": [
+      "ART",
+      "PAINTING",
+      "CHINESE",
+      "INK",
+      "EXPRESSIVE"
+    ],
+    "message": "Take a picture and transform it into xieyi freehand ink painting. Everything inessential should be discarded: a handful of loaded, decisive strokes should catch the spirit of the subject, ink should bleed and pool into raw paper, and the empty ground should carry as much weight as the marks.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Very few decisive, loaded strokes\n• Ink bleeding and pooling into raw paper\n• Large areas of active empty ground\n• Spirit captured rather than appearance described\n• Subject recognisable from minimal marks"
+  },
+  {
     "name": "YARD SALE ITEM",
     "category": [
       "HUMOR",
@@ -57581,6 +58138,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "OPTION ENFORCEMENT:\n\n• The preset must generate a catastrophic post-collapse survival environment\n• The subject MUST appear outbreak-affected, contaminated, corrupted, exhausted, altered, or apocalypse-survivor themed\n• Do not generate a perfectly healthy untouched subject\n• Do not create unrelated fantasy monsters or creatures\n• Do not blend unrelated themes together\n\nSUBJECT TRANSFORMATION ENFORCEMENT:\n\n• Preserve recognizable identity\n• Maintain recognizable facial structure, hairstyle, body shape, posture, and clothing silhouette\n• Add believable contamination or survival-transformation details\n\n• Allowed transformation effects include:\n  • pale unhealthy skin\n  • dark hollow eyes\n  • cloudy lifeless pupils\n  • glowing infected-looking eyes\n  • unfocused dead stare\n  • sunken eye sockets\n  • exhausted expression\n  • cracked skin\n  • dirt and ash\n  • scratches\n  • torn clothing\n  • contamination discoloration\n  • damaged survival gear\n  • eerie facial appearance\n  • cinematic corruption effects\n  • atmospheric grime\n  • survival exhaustion\n\n• The subject must remain clearly visible and recognizable\n• The transformation should feel cinematic, grounded, and believable\n\nENVIRONMENT ENFORCEMENT:\n\n• Include ruined streets, abandoned vehicles, smoke, sparks, damaged buildings, debris, barricades, emergency lighting, fog, haze, or urban destruction\n• The environment should feel abandoned, collapsing, hostile, and dangerous\n• Add cinematic environmental storytelling and survival atmosphere\n\nHORROR STYLE ENFORCEMENT:\n\n• Avoid cartoon aesthetics\n• Avoid parody or comedy styling\n• Avoid excessive gore or graphic injury detail\n• Threatening background figures should feel atmospheric, eerie, cinematic, and believable\n• Prioritize tension, dread, realism, and survival atmosphere\n\nVISUAL STYLE:\n\n• Ultra-photorealistic cinematic realism\n• Serious horror-film atmosphere\n• Dark dramatic lighting\n• Cinematic environmental destruction\n• Atmospheric fog, smoke, ash, rain, sparks, or haze encouraged\n• Realistic cinematic color grading\n• High-detail textures and believable environments\n\nDEPTH AND COMPOSITION:\n\n• Keep the subject as the primary focal point\n• Background hostile figures may appear behind or surrounding the subject\n• Use cinematic perspective and environmental depth\n• Ensure the subject remains readable despite the chaos\n\nANTI-CHEAT:\n\n• Do NOT generate only a normal portrait with minor dirt\n• Do NOT completely hide the subject\n• Do NOT create parody horror styling\n• Do NOT create clean untouched environments\n• Do NOT turn the subject into an unrecognizable creature\n\nFINAL RESULT:\nThe final image must resemble an ultra-photorealistic cinematic post-apocalyptic outbreak scenario where the recognizable subject appears contaminated or transformed within a collapsing world filled with atmospheric horror realism, environmental destruction, cinematic survival tension, and immersive end-of-world dread."
+  },
+  {
+    "name": "ZONE PLATE",
+    "category": [
+      "PHOTOGRAPHY",
+      "LENS",
+      "DIFFRACTION",
+      "SOFT FOCUS",
+      "EXPERIMENTAL"
+    ],
+    "message": "Take a picture and reshoot it through a zone plate rather than a lens. Focus by diffraction gives a glowing, veiled image: highlights bleed into the shadows, edges never fully resolve, the whole frame carries a soft luminous haze, and contrast stays low with a dreamlike lift in the blacks.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Glowing halation spreading from highlights\n• Edges that never fully resolve\n• Low contrast with lifted blacks\n• Even, luminous veil across the frame\n• Subject recognisable through the glow"
   },
   {
     "name": "ZONE SYSTEM PERFECTION",
