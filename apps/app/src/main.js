@@ -3020,6 +3020,13 @@ function populatePresetList() {
   if (presetCountElement) {
     presetCountElement.textContent = sorted.length;
   }
+
+  // The list above was just rebuilt from scratch, and rebuilding throws the
+  // green MULTI highlights and the purple LAYER badges away along with the
+  // old rows. Repaint them here so searching, tapping a category, or
+  // clearing the filter never makes the current selections vanish.
+  if (isMultiPresetMode) updateMultiPresetList();
+  if (isLayerPresetMode) updateLayerPresetList();
 }
 
 async function selectPreset(preset) {
@@ -8469,12 +8476,16 @@ function updateLayerPresetList() {
   const items = presetList.querySelectorAll('.preset-item');
 
   items.forEach(item => {
-    const presetName = item.querySelector('.preset-name').textContent;
-    const selectedIndex = layerSelectedPresets.findIndex(p => p.name === presetName);
-
-    // Remove old badges
+    // Take the old PRIMARY / Layer badge off FIRST. The badge sits inside
+    // the name element, so reading the name while the badge is still
+    // attached gives back "SUNSETPRIMARY" instead of "SUNSET" — that matches
+    // no preset at all, and the row silently loses its highlight the moment
+    // the user picks a second preset.
     const oldBadge = item.querySelector('.layer-badge');
     if (oldBadge) oldBadge.remove();
+
+    const presetName = item.querySelector('.preset-name').textContent;
+    const selectedIndex = layerSelectedPresets.findIndex(p => p.name === presetName);
 
     if (selectedIndex !== -1) {
       // Highlight selected
@@ -8653,7 +8664,11 @@ function clearGalleryMultiState() {
 function openGalleryLayerPresetSelector(imageId) {
   galleryLayerImageId  = imageId;
   isLayerPresetMode    = true;
-  layerSelectedPresets = [];
+  // Start with whatever layer presets are still active on this image, the
+  // same way the camera's Layer button already does. Starting empty is what
+  // made a still-active layer stack come back looking like nothing was
+  // chosen, leaving no way to see or undo the existing picks.
+  layerSelectedPresets = isGalleryLayerActive ? [...galleryLayerPresets] : [];
   
   // Clear gallery multi state — user is switching to layer mode
   clearGalleryMultiState();
