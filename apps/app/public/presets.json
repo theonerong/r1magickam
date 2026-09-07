@@ -56979,6 +56979,20 @@
     "additionalInstructions": "ABSOLUTE REQUIREMENT: The subject must be 100% wood — no skin, fabric, metal, plastic, or photographic texture may remain."
   },
   {
+    "name": "WOOD TYPE",
+    "category": [
+      "DESIGN",
+      "TYPOGRAPHY",
+      "PRINT",
+      "VINTAGE",
+      "POSTER"
+    ],
+    "message": "Take a picture and transform it into a nineteenth-century wood-type poster. Enormous condensed and slab-serif letterforms should fill the sheet in stacked bands, printed in one or two flat colours with grain, splits and chipped corners showing in the letters, on coarse newsprint that has yellowed and foxed.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Huge stacked bands of wood letterforms\n• Grain, splits and chipped corners in the type\n• One or two flat ink colours\n• Yellowed, foxed newsprint\n• Any text correctly spelled and cleanly set"
+  },
+  {
     "name": "WOODBURYTYPE",
     "category": [
       "PHOTOGRAPHY",
