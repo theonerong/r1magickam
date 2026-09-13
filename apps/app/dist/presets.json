@@ -14029,6 +14029,63 @@
     "additionalInstructions": "• The final image must appear as a physical dime novel cover rather than a poster or standalone illustration\n• Preserve recognizable subject identity while adapting them into the story role\n• Always include a large dramatic title prominently on the cover\n• Always include a randomly selected author credit from the approved author list\n• Always include visible ten-cent pricing somewhere on the cover\n• Use bold Victorian-era decorative typography\n• Use strong black outlines, wood-engraving style shading, and cross-hatching\n• Simulate cheap wood-pulp paper and vintage printing imperfections\n• Depict the most exciting climactic moment of the story\n• Maintain historical accuracy for clothing, architecture, weapons, vehicles, and environments\n• Avoid photographic realism; the image must appear hand-illustrated and mass-printed\n• Use bright saturated pulp-cover colors with strong visual contrast\n• Preserve the appearance of a collectible late-1800s newsstand publication\n• Avoid modern objects, technology, clothing, hairstyles, weapons, vehicles, or architecture\n• The final result should convincingly resemble an authentic nineteenth-century dime novel sold for ten cents"
   },
   {
+    "name": "DISCO MODE",
+    "category": [
+      "MATERIAL TRANSFORMATION",
+      "CGI",
+      "DISCO",
+      "REFLECTIVE",
+      "3D",
+      "GLAMOUR",
+      "1970S"
+    ],
+    "message": "Take a picture and transform the subject into a glamorous disco-ball version of itself while preserving the original silhouette, composition, key recognizable features, proportions, and subtle tonal colors. Reconstruct the entire subject as a polished 3D object made from thousands of tiny mirrored square tiles inspired by a classic 1970s disco ball, with chrome, silver, reflective glass, beveled tile edges, and subtle grout lines between individual tiles. Each mirrored tile must physically form the subject's surface rather than being pasted onto the original image. Add bright white sparkle flares and small iridescent highlights distributed naturally across the reflective surface. Place the transformed subject centered and iconic against a pure black background with dramatic studio lighting, extreme contrast, glossy reflections, luxurious nightclub atmosphere, and a sophisticated high-end 3D product-render appearance.",
+    "options": [
+    {
+      "id": "CLASSIC DISCO",
+      "text": "Classic Disco Ball",
+      "instructions": "Create the subject entirely from densely packed tiny square chrome and silver mirrored tiles with beveled edges, subtle grout lines, crisp reflections, bright sparkle flares, and authentic 1970s disco-ball character."
+    },
+    {
+      "id": "CHROME",
+      "text": "Chrome Mirror",
+      "instructions": "Emphasize brilliant polished chrome and silver mirror tiles with extremely sharp reflections, strong studio highlights, deep blacks, crisp beveled edges, and a luxurious metallic appearance."
+    },
+    {
+      "id": "IRIDESCENT",
+      "text": "Iridescent Disco",
+      "instructions": "Keep the mirrored chrome and silver foundation while introducing subtle rainbow iridescence into selected reflections and highlights, creating elegant shifting hints of cyan, magenta, violet, gold, and blue without losing the classic disco-ball appearance."
+    },
+    {
+      "id": "SPARKLE",
+      "text": "Maximum Sparkle",
+      "instructions": "Emphasize numerous bright white starburst sparkle flares and pinpoint highlights scattered across the mirrored tiles, with intense but controlled reflections that make the subject appear spectacularly luminous."
+    },
+    {
+      "id": "LUXURY",
+      "text": "Luxury Nightclub",
+      "instructions": "Create an exceptionally refined high-end disco aesthetic with flawless mirrored tiles, dramatic cinematic studio lighting, deep black surroundings, rich reflections, controlled sparkle, and an expensive luxury-nightclub presentation."
+    },
+    {
+      "id": "MICRO TILES",
+      "text": "Ultra-Fine Tiles",
+      "instructions": "Use extremely small individually visible mirrored square tiles packed tightly across the entire subject, creating a highly detailed mosaic-like reflective surface while preserving the original silhouette and recognizable features."
+    },
+    {
+      "id": "SOFT REFLECTIONS",
+      "text": "Soft Reflective Glow",
+      "instructions": "Use polished mirrored tiles with softer studio reflections, gentle luminous highlights, subtle iridescence, restrained sparkle flares, and elegant tonal transitions for a sophisticated dreamy disco appearance."
+    },
+    {
+      "id": "ICONIC",
+      "text": "Iconic Object",
+      "instructions": "Present the transformed subject as a centered, isolated, instantly readable iconic 3D object against pure black, emphasizing its original silhouette and recognizable features while making the disco-ball material the dominant visual statement."
+    }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "MATERIAL TRANSFORMATION (CRITICAL):\n\n• The subject itself must physically become a disco-ball object constructed from tiny mirrored square tiles\n• The original photograph must NOT remain visible beneath or behind the transformation\n• Do not simply overlay a disco-ball texture, reflection, or filter onto the original subject\n• Every visible portion of the subject must be reconstructed as the new reflective material\n• Preserve the original silhouette, proportions, composition, orientation, and key recognizable features so the transformed object is unmistakably based on the source subject\n• Recognition must come from the transformed disco-ball construction itself rather than from photographic remnants\n\nDISCO-BALL MATERIAL:\n\n• Construct the surface from numerous individual tiny square mirrored tiles\n• Tiles must be physically integrated into the subject's geometry\n• Use chrome, polished silver, reflective glass, and mirror-like surfaces\n• Give each tile subtle beveled edges and realistic thickness\n• Include delicate grout lines or narrow seams between adjacent tiles\n• Tiles must follow the underlying contours of the subject rather than forming a flat rectangular grid\n• Preserve enough tile definition that individual mirrored squares remain visibly readable\n• Use realistic reflections that vary from tile to tile according to surface orientation\n• Maintain subtle tonal color information from the original subject where possible while translating it into reflected and shaded material values\n\nLIGHTING AND REFLECTIONS:\n\n• Use dramatic professional studio lighting against a pure black background\n• Create extremely high contrast between bright reflections and deep black areas\n• Add bright white sparkle flares at selected reflective points\n• Include small iridescent highlights distributed naturally across the mirrored surface\n• Keep sparkle flares physically associated with reflective tile surfaces rather than floating independently\n• Use glossy reflections, sharp specular highlights, subtle reflected environment cues, and realistic metallic/glass behavior\n• Create a luxurious nightclub atmosphere without adding visible nightclub scenery\n• Maintain polished cinematic 3D rendering throughout\n\nCOMPOSITION:\n\n• Keep the transformed subject centered and iconic\n• Preserve the source composition and primary silhouette\n• Do not unnecessarily rotate, crop, stretch, duplicate, or redesign the subject\n• The subject should read immediately as the original subject transformed into a disco-ball version of itself\n• Use the pure black background to isolate the reflective subject and maximize contrast\n\nANTI-CHEAT:\n\n• Do not turn the subject into an ordinary disco ball with the subject's shape merely implied\n• Do not place the subject beside a disco ball\n• Do not place disco-ball tiles onto an otherwise unchanged photograph\n• Do not cover the subject with a generic silver texture while retaining photographic skin, clothing, fur, or surface detail underneath\n• Do not create a flat 2D mosaic\n• Do not use large polygonal mirrors instead of the required tiny square tiles\n• Do not add a literal disco ball hanging above, beside, or behind the subject\n• Do not add a nightclub, dance floor, crowd, stage, DJ booth, lasers, or other invented scenery\n• Do not create duplicate versions of the subject\n\nFINAL RESULT:\nThe subject must be a polished, glamorous 3D disco-ball version of itself, physically reconstructed from thousands of tiny beveled mirrored square tiles with chrome and silver reflections, subtle grout lines, bright white sparkle flares, and delicate iridescent highlights. It must remain unmistakably recognizable through its preserved silhouette, composition, proportions, and defining features while appearing as a luxurious iconic reflective object dramatically illuminated against a pure black background."
+  },
+  {
     "name": "DISCOUNT FLYER",
     "category": [
       "HUMOR",
@@ -43998,6 +44055,20 @@
     "additionalInstructions": "FINAL RESULT:\nA loose, expressive scribble drawing where the subject and environment are formed entirely from chaotic layered sketch lines."
   },
   {
+    "name": "SCRIBBLY",
+    "category": [
+      "DIGITAL ART",
+      "DRAWING",
+      "NAIVE ART",
+      "COMEDY",
+      "RETRO",
+      "PIXEL ART"
+    ],
+    "message": "Take a picture and redraw the entire image in the most clumsy, scribbly, awkward, low-quality, and hilariously pathetic way possible, as if someone attempted to recreate the photograph from memory using an old computer painting program and a mouse with absolutely no artistic ability. Use a plain white background and rebuild the subject and existing scene using crude mouse-drawn strokes, shaky outlines, uneven shapes, accidental overlaps, primitive fills, jagged edges, chunky pixels, crude color choices, and badly controlled proportions. The result should be vaguely recognizable as the original image while being unmistakably wrong in countless small and large ways, creating a confusing combination of resemblance and failure. Make it feel genuinely handmade by an inexperienced person using primitive digital drawing tools rather than professionally designed bad art. Embrace awkwardness, incompetence, visual mistakes, and ridiculous imperfections.",
+    "randomizeOptions": false,
+    "additionalInstructions": "DRAWING STYLE (CRITICAL):\n\n• Recreate the entire source image as an intentionally terrible computer drawing\n• The result must look like it was drawn with a mouse in an ancient basic computer painting program\n• Use crude freehand strokes, shaky mouse movements, uneven contours, awkward curves, primitive geometric shapes, rough fills, and badly controlled brushwork\n• Create obvious pixel-by-pixel imperfections and low-resolution digital artifacts\n• Use jagged edges, chunky pixels, stair-stepped diagonals, accidental gaps, uneven line thickness, and crude color boundaries\n• The drawing should look amateurish, careless, and genuinely difficult to look at in a funny way\n\nRECOGNITION THROUGH FAILURE:\n\n• The finished drawing should remain vaguely recognizable as the source image\n• Preserve enough major shapes, colors, poses, objects, and composition that viewers can tell what it was attempting to depict\n• Deliberately introduce inaccurate proportions, misplaced details, awkward geometry, strange perspective, and confusing visual substitutions\n• The resemblance should feel accidental and incomplete rather than precise\n• Some features should be approximately correct while others should be hilariously wrong\n• Do not simply abstract the image into random scribbles with no connection to the source\n\nWHITE BACKGROUND:\n\n• Use a completely plain white background\n• Recreate the important existing image content against the white background using the crude drawing style\n• Do not create a detailed realistic background\n• Do not add decorative textures, artistic scenery, or polished environmental elements\n\nRETRO COMPUTER LOOK:\n\n• Make the image feel as though it was created with primitive mouse-based computer painting software\n• Favor crude digital brushes, hard-edged fills, simple colors, limited control, and low-resolution rendering\n• Avoid modern digital illustration techniques\n• Avoid smooth professional vector paths\n• Avoid sophisticated digital painting\n• Avoid polished 3D rendering\n• Avoid realistic shading and professional lighting\n• The image should feel technologically primitive rather than intentionally designed to look like modern “bad art”\n\nANTI-CHEAT:\n\n• Do not simply apply a sketch filter to the original photograph\n• Do not preserve photographic details beneath the drawing\n• Do not create a professionally rendered illustration that happens to contain scribbles\n• Do not make the drawing clean, precise, symmetrical, polished, or aesthetically sophisticated\n• Do not make every element equally accurate\n• Do not make the result completely random or unrelated to the source\n• Do not add realistic textures, photographic lighting, cinematic effects, or high-resolution rendering\n• Do not turn the image into conventional children's crayon art or pencil drawing\n\nFINAL RESULT:\nThe final image should look like an unbelievably bad recreation of the original photograph made by an inexperienced person using a mouse and a primitive old computer painting program. It should be crude, scribbly, pixelated, awkward, badly proportioned, vaguely recognizable, confusingly similar yet obviously wrong, and so technically incompetent that the humor comes from how spectacularly poorly the source image has been redrawn."
+  },
+  {
     "name": "SCRIMSHAW",
     "category": [
       "ART",
@@ -51631,6 +51702,20 @@
     "additionalInstructions": "FINAL RESULT:\nThe image must depict the subject as a fully reconstructed, three-dimensional bubble sculpture — where bubbles replace all matter — with no photographic subject present at any level. The figure must exist solely as clustered soap bubbles forming a recognizable pose and identity through shape alone."
   },
   {
+    "name": "TINY MEs",
+    "category": [
+      "FANTASY",
+      "3D",
+      "MINIATURES",
+      "SURREAL",
+      "PLAYFUL",
+      "STORYTELLING"
+    ],
+    "message": "Take a picture and transform the photo into a magical “Mini Me” world where multiple tiny animated 3D versions of the subject come to life naturally throughout the existing photograph. Keep the original subject and photograph completely intact while introducing miniature versions of the same subject into the existing surroundings. The tiny characters must clearly resemble the subject through recognizable facial features, hairstyle, clothing, colors, proportions, and distinctive appearance. Have the miniature versions interact playfully and naturally with the subject and existing environment by climbing onto the subject’s shoulders, sitting on a bag, waving, playing, hiding, exploring, and copying the subject’s poses. Create a charming, social-media-story-worthy scene filled with personality, believable depth, realistic contact shadows, natural scale relationships, and a soft aesthetic vibe. The miniature characters should feel physically present within the original photograph rather than pasted onto it.",
+    "randomizeOptions": false,
+    "additionalInstructions": "ORIGINAL PHOTO PRESERVATION (CRITICAL):\n\n• The original photograph must remain completely intact and recognizable\n• Do not alter, repaint, replace, restyle, or transform the main subject\n• Do not alter the existing environment, background, objects, architecture, clothing, lighting, or composition except where naturally affected by the presence of the miniature characters\n• The tiny characters are additions to the photograph, not replacements for anything already present\n• All original visual content must remain visible unless naturally occluded by a miniature character\n\nTINY ME IDENTITY (CRITICAL):\n\n• Every miniature character must clearly be a tiny animated 3D version of the SAME subject from the source photograph\n• Preserve recognizable facial features, hairstyle, hair color, skin tone, clothing, colors, accessories, and distinctive physical characteristics\n• Do not create generic miniature people\n• Do not use unrelated characters\n• Do not make the tiny versions merely resemble the subject vaguely\n• Recognition must remain obvious even at miniature scale\n• Each tiny version should maintain the subject’s recognizable appearance while using charming stylized 3D animated proportions\n\nSCALE AND PHYSICAL PRESENCE:\n\n• The miniature characters must be genuinely tiny relative to the original subject and surrounding objects\n• Establish believable scale by having the tiny characters interact with real surfaces, edges, handles, clothing, furniture, bags, or other existing objects\n• Their feet, hands, bodies, and props must make physically believable contact with the environment\n• Use realistic contact shadows and ambient occlusion beneath and around each tiny character\n• Match the original photograph’s perspective, depth of field, lens characteristics, and lighting direction\n• Tiny characters farther from the camera must become appropriately smaller and less detailed\n• Do not make the miniature characters appear to float\n• Do not make them giant or human-sized\n\nINTERACTION AND STORY:\n\n• Give the tiny characters distinct actions and personalities\n• Some may climb, sit, wave, play, hide, balance, explore, point, laugh, or interact with one another\n• Some should interact directly with the main subject when appropriate\n• Tiny characters may copy the main subject’s pose, expression, gesture, or body language\n• Create a sense that the miniature versions have come alive inside the photograph\n• Favor spontaneous, charming, story-rich interactions over repetitive poses\n• Keep the interactions believable within the existing physical environment\n\n3D ANIMATION STYLE:\n\n• Render the tiny versions as polished stylized 3D animated characters\n• Use appealing facial expressions, expressive poses, dimensional anatomy, sculpted hair, modeled clothing, and soft polished materials\n• Maintain enough realism that the characters appear physically present in the photograph\n• Use subtle cinematic highlights and soft shading rather than flat cartoon rendering\n• Preserve the playful and cute quality without making the characters excessively childish or plastic-looking\n• The miniature characters should feel like high-quality animated figures integrated into a real photograph\n\nLIGHTING AND DEPTH:\n\n• Match every tiny character to the lighting conditions already present in the photograph\n• Create realistic cast shadows, contact shadows, reflected light, and subtle ambient occlusion\n• Match color temperature and exposure to the original scene\n• Use depth of field consistently with the source camera perspective\n• Allow foreground and background miniature characters to have naturally different sharpness and detail\n• Ensure the tiny characters occupy believable depth planes within the original scene\n\nANTI-CHEAT:\n\n• Do not replace the original subject with a giant miniature version\n• Do not create a miniature version beside the subject while ignoring the requested interactions\n• Do not create generic dolls, toys, figurines, action figures, or unrelated cartoon characters\n• Do not paste flat 2D miniature images into the photograph\n• Do not give every tiny character the exact same pose\n• Do not duplicate the subject photograph as tiny floating copies\n• Do not create clones that look like photographic cutouts\n• Do not alter the original photograph into an animated or CGI scene\n• Do not invent an entirely new miniature environment\n• Do not add buildings, vehicles, furniture, scenery, props, animals, or objects that are not already present in the photograph\n\nFINAL RESULT:\nThe original photograph must remain intact while multiple adorable, recognizable 3D animated Mini Me versions of the subject come alive throughout the existing scene. They must have believable miniature scale, physical contact, realistic shadows, matched lighting, convincing depth, expressive personalities, and varied interactions that create a magical, playful, emotional, social-media-story-worthy moment without destroying or replacing the original photograph."
+  },
+  {
     "name": "TINY SELVES",
     "category": [
       "ILLUSION",
@@ -54115,6 +54200,62 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "CORE TRANSFORMATION:\n\n• Completely reconstruct the image as an authentic artistic underdrawing.\n• Do not simply apply a pencil filter to the photograph.\n• The photographic image must be replaced by the drawing process.\n• Preserve the original subject, composition, pose, proportions, perspective, and recognizable visual information.\n• Show the underlying construction used to build the visible forms.\n• The artwork should feel like the viewer has been given access to the artist's working layer beneath a finished masterpiece.\n\nCONSTRUCTION:\n\n• Use light geometric construction for heads, bodies, objects, architecture, and perspective.\n• Use centerlines and axis lines where appropriate.\n• Use circles, ellipses, boxes, cylinders, spheres, and other primitive forms to establish complex objects.\n• Show proportional relationships and structural frameworks.\n• Use searching exploratory strokes where the artist has tested several contours.\n• Include selected corrections and abandoned lines.\n• Some forms should be more resolved than others.\n• Construction should remain purposeful rather than becoming random scribbling.\n\nLINE HIERARCHY:\n\n• Very light preliminary construction lines.\n• Medium exploratory contours.\n• Darker selected final contours.\n• Erased or faded lines beneath the final structure.\n• Vary line pressure naturally.\n• Allow the viewer to see how the final form emerged from earlier attempts.\n\nHUMAN SUBJECTS:\n\n• Preserve the subject's recognizable facial identity.\n• Construct the face using underlying anatomical and geometric relationships.\n• Preserve distinctive facial proportions, hairstyle, pose, and body structure.\n• Show facial centerlines, eye-line construction, jaw construction, and other appropriate guides subtly.\n• Do not replace the subject with a generic anatomical mannequin.\n\nOBJECTS AND ENVIRONMENT:\n\n• Construct every important existing object using appropriate geometric scaffolding.\n• Architecture should reveal perspective construction.\n• Mechanical objects should reveal axes, circles, structural frameworks, and component construction.\n• Organic objects should reveal contour studies and structural construction.\n• Do not invent objects merely to provide construction lines.\n\nMATERIAL:\n\n• Warm drawing paper, ivory paper, or lightly aged studio paper.\n• Graphite, charcoal, red chalk, black chalk, or restrained drawing media.\n• Natural paper grain.\n• Smudges and erased areas where appropriate.\n• Subtle fingerprints or handling marks may appear sparingly.\n• No polished digital rendering.\n\nARTISTIC INTENT:\n\n• The result should look unfinished in the deliberate sense of an artist's working drawing, not incomplete because of poor rendering.\n• It should demonstrate exceptional draftsmanship.\n• The construction should reveal how the image was built.\n• Preserve enough finished contour and tonal information that the original image remains immediately recognizable.\n\nSTRICTLY PROHIBITED:\n\n• No generic sketch filter.\n• No random scribbles.\n• No unrelated diagrams.\n• No labels or captions unless present in the source.\n• No blueprint aesthetic.\n• No botanical-plate aesthetic.\n• No invented objects.\n• No decorative borders.\n• No photographic areas remaining in the transformed image.\n• Do not turn the artwork into a finished polished illustration.\n\nMASTER PROMPT RULE:\n\n• Master prompt instructions always override conflicting instructions EXCEPT the mandatory underdrawing transformation.\n• Incorporate master-prompt subject, pose, clothing, environment, composition, and other visual information into the underlying construction drawing.\n\nFINAL VALIDATION:\n\n✓ The image has been completely reconstructed as an underdrawing.\n✓ The source subject remains recognizable.\n✓ Construction geometry is clearly visible.\n✓ Exploratory and corrected lines are present.\n✓ Line hierarchy suggests an authentic artistic working process.\n✓ The result looks like the preparatory layer beneath a sophisticated artwork.\n✓ No generic sketch-filter appearance remains.\n✓ If ANY answer is NO, regenerate until satisfied."
+  },
+  {
+    "name": "UNDERWATER",
+    "category": [
+      "PHOTOGRAPHY",
+      "PORTRAIT",
+      "UNDERWATER",
+      "CINEMATIC",
+      "FINE ART",
+      "ETHEREAL"
+    ],
+    "message": "Take a picture and transform it into an extreme close-up underwater portrait captured immediately after the subject has just entered a swimming pool or clear shallow water. Place the camera very close to the subject's face and upper head, partially or fully submerged at water level, with the subject suspended naturally beneath the surface in a calm, weightless moment. Preserve the subject's recognizable facial identity and defining physical characteristics while realistically adapting the face, hair, skin, and expression to being underwater. Create crystal-clear water with luminous caustic reflections, rippling highlights, refracted sunlight, soft underwater shadows, subtle suspended droplets, and shimmering patterns of light moving across the subject's face and surrounding water. The overall mood must be serene, weightless, quiet, dreamlike, and ethereal rather than dramatic or dangerous.",
+    "options": [
+    {
+      "id": "POOL",
+      "text": "Swimming Pool",
+      "instructions": "Place the subject immediately beneath the surface of a crystal-clear swimming pool with clean blue water, bright caustic reflections, soft rippling sunlight, and subtle pool-water coloration."
+    },
+    {
+      "id": "SHALLOW WATER",
+      "text": "Clear Shallow Water",
+      "instructions": "Place the subject just beneath the surface of exceptionally clear shallow water with sunlight penetrating from above and delicate refracted patterns illuminating the face and surrounding water."
+    },
+    {
+      "id": "SURFACE",
+      "text": "At the Waterline",
+      "instructions": "Position the camera at the waterline so the subject's face is viewed extremely close-up through and beneath the surface, with the waterline, ripples, refraction, and reflections becoming an integral part of the portrait."
+    },
+    {
+      "id": "CAUSTICS",
+      "text": "Extreme Light Reflections",
+      "instructions": "Emphasize extraordinary underwater caustics and moving reflected-light patterns across the subject's face, hair, skin, and nearby water while maintaining a calm and natural underwater environment."
+    },
+    {
+      "id": "WEIGHTLESS",
+      "text": "Weightless Portrait",
+      "instructions": "Emphasize the sensation of effortless suspension beneath the water, with relaxed facial expression, naturally floating hair, gentle body positioning, soft water movement, and an almost dreamlike absence of gravity."
+    },
+    {
+      "id": "ETHEREAL",
+      "text": "Ethereal Underwater",
+      "instructions": "Push the dreamlike quality with translucent water, luminous blue-green light, soft atmospheric diffusion, delicate reflections, floating hair, subtle haze, and an otherworldly but photorealistic underwater appearance."
+    },
+    {
+      "id": "SUNLIT",
+      "text": "Sunlit Pool",
+      "instructions": "Create a bright sunlit underwater portrait with strong natural sunlight penetrating the surface, dancing caustic patterns, brilliant highlights, and realistic refraction across the subject's face."
+    },
+    {
+      "id": "DEEP BLUE",
+      "text": "Deep Blue",
+      "instructions": "Create a cooler, more immersive underwater portrait with rich blue water, subdued ambient illumination, soft directional light from the surface, and luminous highlights concentrated across the subject's face."
+    }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "UNDERWATER TRANSFORMATION (CRITICAL):\n\n• The final image must be an actual underwater photograph, not a normal portrait with a blue filter or water effects added afterward\n• The subject must genuinely appear submerged beneath clear water immediately after entering it\n• Create an extreme close-up portrait with the camera positioned very close to the subject's face\n• Preserve the subject's recognizable identity, facial structure, facial proportions, skin characteristics, and defining features\n• Adapt the subject realistically to the underwater environment while maintaining unmistakable recognition\n• Hair should respond naturally to water, with individual strands and masses floating, drifting, or spreading according to the subject's position\n• Skin, eyes, lips, hair, and facial surfaces must exhibit realistic underwater refraction, reflection, diffusion, and color response\n\nMOOD AND POSE:\n\n• The subject must appear calm, relaxed, peaceful, and completely unthreatened\n• Convey effortless weightlessness and suspension beneath the water\n• The expression must be serene, contemplative, relaxed, or subtly dreamy\n• No panic, fear, distress, choking, struggling, gasping, or urgency\n• Do not depict drowning or an emergency situation\n• Avoid exaggerated underwater action or dramatic movement\n• The moment should feel like a quiet instant immediately after entering the water\n\nLIGHT AND WATER:\n\n• Emphasize spectacular natural underwater light reflections and caustic patterns\n• Use realistic sunlight or ambient light penetrating through the water surface\n• Create dancing rippled highlights across the face and surrounding water\n• Include realistic refraction, reflection, light diffusion, and subtle volumetric scattering\n• Keep the water exceptionally clear so the subject remains sharply recognizable\n• Use natural underwater color absorption rather than simply applying a blue color grade\n• Allow the water's optical properties to affect contrast, color, highlights, and edges realistically\n• Avoid artificial glowing effects that do not originate from believable underwater lighting\n\nCAMERA AND COMPOSITION:\n\n• The portrait must be an EXTREME close-up\n• Bring the camera substantially closer than a conventional portrait photograph\n• The face should dominate the composition while remaining naturally framed by the surrounding water\n• Use a believable underwater photographic perspective\n• Preserve realistic optical distortion caused by the water surface and submerged camera position\n• Maintain photographic detail in the eyes, skin, hair, and facial structure\n• Do not create a split-screen, collage, multiple exposures, or duplicate versions of the subject\n\nANTI-CHEAT:\n\n• Do not leave the original photograph unchanged and simply overlay water\n• Do not place the subject beside, behind, or in front of an underwater background\n• Do not add an artificial blue filter and call it underwater photography\n• Do not surround the subject with generic bubbles, fantasy effects, or decorative aquatic imagery\n• Do not invent scuba equipment, goggles, masks, diving gear, sea creatures, coral, plants, or underwater scenery unless such elements already exist in the source image or are explicitly required by the selected option\n• Do not depict the subject struggling to remain underwater\n• Do not create a drowning or distressed expression\n\nFINAL RESULT:\nThe final image must look like an authentic extreme close-up underwater portrait captured immediately after the subject has just entered a clear swimming pool or shallow water. The subject must appear naturally submerged, calm, weightless, and ethereal, with realistic underwater optics and exceptionally prominent reflected and refracted light patterns creating the defining visual character of the photograph."
   },
   {
     "name": "UNDERWATER PHOTOGRAPHY",
