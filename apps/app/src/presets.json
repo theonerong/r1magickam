@@ -26241,7 +26241,7 @@
       "MASTER PROMPT"
     ],
     "message": "Take a picture and place the subject naturally and photorealistically at the selected world-famous landmark in the selected location. Preserve the subject's recognizable facial features, proportions, identity, and appearance while matching the lighting, perspective, color temperature, atmospheric conditions, scale, shadows, reflections, and camera characteristics of the real landmark environment. The landmark and surrounding location must be authentic, recognizable, geographically appropriate, and visually convincing. The subject must appear physically present at the location rather than composited into it. Adapt clothing, posture, and environmental details subtly and naturally when appropriate for the location, climate, architecture, and viewing position.",
-    "randomizeOptions": true
+    "randomizeOptions": true,
     "optionGroups": [
     {
       "name": "LANDMARK",
