@@ -10334,6 +10334,20 @@
     "additionalInstructions": "IDENTITY PRESERVATION (CRITICAL):\n\n• The transformed souvenir spoon must clearly resemble the subject at first glance\n• Preserve the subject's unique facial identity\n• Preserve the subject's unique facial structure\n• Preserve distinctive facial traits\n• Preserve recognizable smile characteristics\n• Preserve recognizable facial proportions\n• Preserve recognizable eye shape\n• Preserve recognizable nose shape\n• Recognition must come from the sculpted ornamentation itself\n• The final collectible must simultaneously read as both the subject and an authentic souvenir spoon\n• The spoon should appear specifically designed and manufactured from the subject rather than selected from an existing souvenir collection\n\nANTI-CHEAT:\n\n• Do not place a photograph of the subject onto a spoon\n• Do not engrave a photographic portrait onto the spoon\n• Do not create a face swap\n• Do not paste the subject's face onto a decorative spoon\n• Do not create a real person holding a spoon\n• Do not create a real person standing beside a spoon\n• Do not ignore distinctive facial features\n• Do not replace the subject's identity with generic ornamentation\n• Do not create realistic skin\n• Do not create realistic eyes\n• Do not create photographic facial rendering\n• Do not create a generic souvenir spoon unrelated to the subject\n• The transformed collectible must be clearly identifiable as the subject\n• The subject must physically become part of the spoon's sculptural construction\n\nFINAL RESULT:\nThe subject must become an authentic collectible souvenir spoon rendered entirely as a professionally manufactured tourist keepsake. The spoon should feature ornate sculptural ornamentation derived directly from the subject's recognizable identity while remaining a genuine souvenir spoon. The final image should immediately evoke gift-shop collectibles, tourist souvenirs, commemorative keepsakes, and decorative metal craftsmanship while maintaining unmistakable recognition of the subject through sculptural transformation rather than photographic realism."
   },
   {
+    "name": "COLOR ANALYSIS",
+    "category": [
+      "FASHION", 
+      "COLOR THEORY", 
+      "PORTRAIT", 
+      "STYLE", 
+      "GRAPHIC DESIGN"
+    ],
+    "message": "Take a picture and transform it into a visual-first personal color analysis graphic centered on the subject. Preserve the subject's recognizable face, skin tone, hair, eyes, and overall appearance while presenting side-by-side clothing color comparisons that visibly demonstrate which colors harmonize best with the subject and which colors are less flattering. Create a polished professional personal-color-analysis presentation with the subject prominently visible and multiple realistic clothing-color variations arranged clearly for direct visual comparison. Use short labels only, such as color names or concise suitability indicators. Do not use paragraphs, lengthy explanations, or blocks of descriptive text.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "VISUAL-FIRST COLOR ANALYSIS:\n\n• The subject must remain the central visual focus\n• Analyze the subject's visible natural coloring including skin, hair, eyes, and overall undertone\n• Create realistic side-by-side comparisons showing the subject wearing different clothing colors\n• Make the differences between flattering and less harmonious colors immediately visible\n• Use actual clothing-color changes rather than colored overlays or swatches placed over the subject\n• Preserve the subject's identity and facial characteristics across every comparison\n\nCOLOR COMPARISONS:\n\n• Include a useful range of contrasting clothing colors\n• Show clearly harmonious colors alongside clearly less harmonious colors\n• Make each clothing color visually distinct\n• Keep lighting and facial appearance consistent between comparisons so color suitability can be judged directly\n• Do not change the subject's skin tone to artificially make a color appear more flattering\n• Do not use arbitrary fashion colors without considering the subject's actual coloring\n\nGRAPHIC DESIGN:\n\n• Present the comparisons as a clean professional color-analysis graphic\n• Use an organized grid or side-by-side comparison layout\n• Include clean color swatches or small supporting palette elements when useful\n• Keep typography minimal, elegant, and highly legible\n• Use short labels only: color names, season/category names, or concise suitability indicators\n• No paragraphs\n• No lengthy explanations\n• No essay-style analysis\n• No large blocks of text\n\nLABELS:\n\n• Keep all labels extremely short\n• Examples include: WARM, COOL, SOFT, BRIGHT, BEST, LESS IDEAL, NAVY, OLIVE, CORAL, IVORY\n• Labels must support the visual comparison rather than replace it\n• Do not clutter the graphic with unnecessary text\n\nANTI-CHEAT:\n\n• Do not simply place colored rectangles around the original photograph\n• Do not apply a color filter to the entire image\n• Do not change the subject's natural coloring to match a predetermined palette\n• Do not create generic fashion models unrelated to the source subject\n• Do not replace the subject with a different person\n• Clothing color must be changed on the actual subject for direct comparison\n\nFINAL RESULT:\nThe final image must read instantly as a polished personal color analysis graphic: the recognizable subject is shown in realistic side-by-side clothing-color variations, the most harmonious and less harmonious colors can be judged visually at a glance, and short labels provide minimal supporting information without paragraphs or lengthy text."
+  },
+  {
     "name": "COLOR BY NUMBERS",
     "category": [
       "ART",
@@ -31509,6 +31523,123 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "MONSTER SHADOW",
+    "category": [
+      "HORROR",
+      "CINEMATIC", 
+      "SHADOW", 
+      "MONSTERS", 
+      "COMEDY", 
+      "TRANSFORMATION", 
+      "POSTER ART"
+    ],
+    "message": "Take a picture and transform the image into a dramatic vintage cinematic monster-shadow composition. Preserve the subject as a realistic human figure while creating a large, unmistakable shadow behind or beside the subject that reveals a monstrous alternate form, transformation, creature, or humorous exaggerated version of the subject. The shadow must look physically cast by the subject and remain clearly connected to the subject's position, silhouette, lighting direction, and proportions. Use a sophisticated vintage horror-poster aesthetic with realistic photographic rendering, aged cream paper, dark brown and black tones, distressed print texture, dramatic directional lighting, deep shadows, subtle film grain, and restrained orange-red illumination. The finished image must contain NO text, titles, logos, credits, lettering, captions, or typography.",
+    "randomizeOptions": true,
+    "options": [
+    {
+      "id": "WEREWOLF",
+      "text": "Werewolf",
+      "instructions": "Create the subject's shadow as a powerful werewolf transformation with a lupine head, pointed ears, elongated muzzle, wild fur, claws, and an aggressive animalistic silhouette while the visible subject remains human."
+    },
+    {
+      "id": "DRACULA",
+      "text": "Dracula",
+      "instructions": "Create the subject's shadow as a classic Dracula transformation with a tall imposing vampire silhouette, pointed ears, swept-back hair, high collar, elongated fingers, and unmistakable vampiric posture while the visible subject remains human."
+    },
+    {
+      "id": "FRANKENSTEIN",
+      "text": "Frankenstein",
+      "instructions": "Create the subject's shadow as a towering Frankenstein's Monster silhouette with enormous shoulders, squared head, heavy brow, thick neck, and unmistakable classic monster proportions while the visible subject remains human."
+    },
+    {
+      "id": "MR HYDE",
+      "text": "Mr. Hyde",
+      "instructions": "Create the subject's shadow as a grotesquely enlarged Mr. Hyde transformation with hunched posture, oversized hands, exaggerated shoulders, wild hair, and a sinister distorted human-monster silhouette while the visible subject remains human."
+    },
+    {
+      "id": "MUMMY",
+      "text": "Mummy",
+      "instructions": "Create the subject's shadow as a terrifying ancient mummy with wrapped limbs, hanging bandages, sunken facial contours, and a stiff unnatural posture while the visible subject remains human."
+    },
+    {
+      "id": "CREATURE",
+      "text": "Creature",
+      "instructions": "Create the subject's shadow as a classic amphibious humanoid creature with webbed hands, broad shoulders, aquatic features, claws, and a strange predatory silhouette while the visible subject remains human."
+    },
+    {
+      "id": "SWAMP MONSTER",
+      "text": "Swamp Monster",
+      "instructions": "Create the subject's shadow as a hulking swamp monster covered in shaggy vegetation-like texture, with oversized hands, irregular limbs, and a primitive creature silhouette while the visible subject remains human."
+    },
+    {
+      "id": "GIANT MONSTER",
+      "text": "Giant Monster",
+      "instructions": "Create the subject's shadow as a gigantic kaiju-like monster towering far above the visible subject, with an enormous head, massive shoulders, claws, and an exaggerated creature silhouette while maintaining the same basic body orientation."
+    },
+    {
+      "id": "SKELETON",
+      "text": "Skeleton",
+      "instructions": "Create the subject's shadow as a sinister skeletal transformation with a clearly recognizable skull, ribcage, long bony limbs, skeletal hands, and hollow facial structure while the visible subject remains completely human."
+    },
+    {
+      "id": "ZOMBIE",
+      "text": "Zombie",
+      "instructions": "Create the subject's shadow as a decayed zombie version with torn clothing shapes, crooked posture, reaching hands, disordered hair, and an unmistakable undead silhouette while the visible subject remains human."
+    },
+    {
+      "id": "DEMON",
+      "text": "Demon",
+      "instructions": "Create the subject's shadow as a sinister humanoid demon with curved horns, elongated fingers, angular limbs, a powerful hunched posture, and an unmistakably supernatural silhouette while the visible subject remains human."
+    },
+    {
+      "id": "WITCH",
+      "text": "Witch",
+      "instructions": "Create the subject's shadow as a classic witch transformation with a pointed hat, hooked profile, crooked posture, long fingers, and exaggerated silhouette while the visible subject remains human."
+    },
+    {
+      "id": "GIANT BAT",
+      "text": "Giant Bat",
+      "instructions": "Create the subject's shadow as a giant bat-like transformation with enormous outstretched wings, pointed ears, clawed hands, and a dramatic airborne silhouette while the visible subject remains human."
+    },
+    {
+      "id": "VAMPIRE BAT",
+      "text": "Vampire Bat",
+      "instructions": "Create the subject's shadow as a monstrous vampire-bat transformation with folded wings, elongated ears, clawed limbs, and a predatory hunched silhouette while the visible subject remains human."
+    },
+    {
+      "id": "EVIL TWIN",
+      "text": "Evil Twin",
+      "instructions": "Create the subject's shadow as an exaggerated sinister version of the subject, copying the same basic pose while adding an evil grin, threatening posture, exaggerated hair, and theatrical villainous proportions."
+    },
+    {
+      "id": "GIANT HEAD",
+      "text": "Giant Head",
+      "instructions": "Create the subject's shadow as a hilariously oversized version of the subject's own head and facial features, dramatically enlarged behind the body with an absurd expression while remaining clearly connected to the subject's silhouette."
+    },
+    {
+      "id": "MUSCLE MONSTER",
+      "text": "Muscle Monster",
+      "instructions": "Create the subject's shadow as an absurdly muscular monster version with enormous shoulders, exaggerated arms, huge fists, powerful stance, and comically heroic proportions while the visible subject remains unchanged."
+    },
+    {
+      "id": "TINY MONSTER",
+      "text": "Tiny Monster",
+      "instructions": "Create the subject's shadow as a comically tiny but ferocious monster with an oversized monstrous head, tiny body, tiny claws, and exaggerated threatening pose, making the shadow humorously disproportionate to the subject."
+    },
+    {
+      "id": "MOCKING SHADOW",
+      "text": "Mocking Shadow",
+      "instructions": "Create the subject's shadow as a mischievous exaggerated version of the subject that deliberately mocks the visible pose, expression, or attitude with an absurd posture, ridiculous gesture, or theatrical parody while remaining physically connected to the subject."
+    },
+    {
+      "id": "ABSURD SHADOW",
+      "text": "Absurd Shadow",
+      "instructions": "Create the subject's shadow as a completely unexpected humorous transformation that exaggerates one recognizable characteristic of the subject into an absurd monster-like silhouette, creating a clever visual joke while remaining believable as a physically cast shadow."
+    }
+    ],
+    "additionalInstructions": "CORE CONCEPT:\n\n• The visible subject remains a realistic human\n• The transformation, monster, creature, or joke exists primarily within the subject's cast shadow\n• The shadow must appear to originate physically from the subject\n• The shadow must align convincingly with the subject's pose, body orientation, and lighting direction\n• The shadow should reveal an alternate monstrous identity rather than simply being a dark duplicate of the subject\n\nVISUAL STYLE:\n\n• Use a sophisticated vintage cinematic horror-poster aesthetic\n• Photographic realism rather than cartoon rendering\n• Aged cream or warm ivory paper surrounding the composition\n• Deep brown, black, charcoal, and muted sepia tonal range\n• Strong directional lighting with dramatic falloff\n• Restrained orange-red illumination or warm photographic glow where appropriate\n• Subtle distressed print texture\n• Fine film grain\n• Slightly weathered analog photographic character\n• Strong separation between the realistically illuminated subject and the enormous darker shadow\n• Elegant, serious cinematic composition even when the selected shadow is humorous\n\nSHADOW CONSTRUCTION:\n\n• The shadow must be large enough to read immediately\n• Preserve a believable connection between the subject and shadow\n• Match the shadow's direction to the apparent light source\n• Maintain convincing contact points and perspective\n• Allow the monster silhouette to exaggerate anatomy while still reading as the subject's transformation\n• The shadow must remain a silhouette or strongly shadow-based form rather than becoming a second fully rendered creature standing beside the subject\n\nTRANSFORMATION MONSTERS:\n\n• When the selected option represents a transformation monster, make the shadow communicate that the human subject could physically become the creature\n• Preserve recognizable elements of the subject's pose and proportions within the transformed silhouette\n• Werewolf, vampire, Frankenstein, Mr. Hyde, zombie, demon, and similar options should read as alternate monstrous forms of the same subject\n• Avoid generic unrelated monsters that have no visual connection to the subject\n\nFUNNY SHADOWS:\n\n• Humor must come from the shadow transformation itself\n• The visible subject should remain realistically photographed\n• Make the shadow dramatically exaggerate the selected joke\n• Keep the joke visually immediate and understandable without explanatory text\n• Funny does not mean cartoonish; retain the same sophisticated cinematic photographic presentation\n\nNO TEXT:\n\n• Absolutely no text anywhere in the finished image\n• No title\n• No subtitle\n• No movie title\n• No credits\n• No logos\n• No captions\n• No labels\n• No lettering\n• No typography\n• No watermarks\n\nANTI-CHEAT:\n\n• Do not place a separate monster beside the subject\n• Do not turn the entire subject into the monster\n• Do not create a second person wearing a monster costume\n• Do not use a generic monster silhouette unrelated to the subject\n• Do not paste a monster onto the background\n• Do not create multiple subjects or duplicate figures\n• Do not make the shadow float independently from the subject\n• Do not treat the effect as a simple dark drop shadow\n• Do not use cartoon or generic Halloween clip-art aesthetics\n\nFINAL VALIDATION:\n\n• One realistic human subject\n• One dominant transformation or humorous shadow\n• Shadow physically connected to the subject\n• Monster identity immediately recognizable\n• Shadow direction consistent with lighting\n• Vintage cinematic horror-poster presentation\n• Aged cream paper aesthetic\n• Dark photographic tones with restrained warm orange-red illumination\n• Sophisticated realistic texture and film grain\n• No text of any kind\n• No logos or typography\n• No separate monster standing beside the subject\n\nFINAL RESULT:\nThe final image must look like a sophisticated vintage cinematic portrait in which the subject's ordinary human shadow reveals an extraordinary alternate identity, ranging from classic transformation monsters to clever and absurd comedic shadows, while maintaining a dramatic photographic horror-poster aesthetic and absolutely no text."
   },
   { 
     "name": "MONTY PYTHON STYLE",
