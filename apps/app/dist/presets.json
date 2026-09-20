@@ -26236,12 +26236,291 @@
       "TRAVEL",
       "TOURIST",
       "LOCATION",
+      "LANDMARKS",
+      "PHOTOGRAPHY",
       "MASTER PROMPT"
     ],
-    "message": "Take a picture and place the subject naturally in front of a randomly selected famous world landmark. Preserve the subject’s recognizable facial features, proportions, and identity while matching the lighting, perspective, color temperature, and camera style of the landmark environment. Ensure correct scale, shadows, reflections, and atmospheric depth so the subject appears physically present at the location rather than composited. Adapt clothing, posture, and environment subtly to fit the climate, culture, and setting without turning it into a costume. The landmark and surroundings should remain authentic and recognizable, with the subject fully integrated into the scene. Render with photorealistic detail and travel-photography realism.",
-    "options": [],
-    "randomizeOptions": false,
-    "additionalInstructions": ""
+    "message": "Take a picture and place the subject naturally and photorealistically at the selected world-famous landmark in the selected location. Preserve the subject's recognizable facial features, proportions, identity, and appearance while matching the lighting, perspective, color temperature, atmospheric conditions, scale, shadows, reflections, and camera characteristics of the real landmark environment. The landmark and surrounding location must be authentic, recognizable, geographically appropriate, and visually convincing. The subject must appear physically present at the location rather than composited into it. Adapt clothing, posture, and environmental details subtly and naturally when appropriate for the location, climate, architecture, and viewing position.",
+    "optionGroups": [
+    {
+      "name": "LANDMARK",
+      "options": [
+        {
+          "id": "001",
+          "text": "Eiffel Tower",
+          "instructions": "Place the subject naturally at the Eiffel Tower in Paris, France, with authentic Parisian surroundings and architecture."
+        },
+        {
+          "id": "002",
+          "text": "Statue of Liberty",
+          "instructions": "Place the subject naturally at the Statue of Liberty in New York Harbor, with authentic harbor, Manhattan, and monument surroundings."
+        },
+        {
+          "id": "003",
+          "text": "Colosseum",
+          "instructions": "Place the subject naturally at the Colosseum in Rome, Italy, with authentic ancient Roman architecture and surrounding archaeological landscape."
+        },
+        {
+          "id": "004",
+          "text": "Taj Mahal",
+          "instructions": "Place the subject naturally at the Taj Mahal in Agra, India, with authentic Mughal architecture, gardens, reflecting pools, and surrounding grounds."
+        },
+        {
+          "id": "005",
+          "text": "Great Wall of China",
+          "instructions": "Place the subject naturally on or beside the Great Wall of China with authentic stone fortifications, watchtowers, mountains, and surrounding landscape."
+        },
+        {
+          "id": "006",
+          "text": "Machu Picchu",
+          "instructions": "Place the subject naturally within Machu Picchu in Peru, surrounded by authentic Inca stonework, terraces, mountains, and cloud forest."
+        },
+        {
+          "id": "007",
+          "text": "Christ the Redeemer",
+          "instructions": "Place the subject naturally at Christ the Redeemer in Rio de Janeiro, Brazil, with authentic monument surroundings and panoramic views of the city."
+        },
+        {
+          "id": "008",
+          "text": "Big Ben",
+          "instructions": "Place the subject naturally at Big Ben and the Palace of Westminster in London, England, with authentic Westminster architecture and London surroundings."
+        },
+        {
+          "id": "009",
+          "text": "Sydney Opera House",
+          "instructions": "Place the subject naturally at the Sydney Opera House in Sydney, Australia, with authentic sails, harbor, waterfront, and city surroundings."
+        },
+        {
+          "id": "010",
+          "text": "Burj Khalifa",
+          "instructions": "Place the subject naturally at the Burj Khalifa in Dubai, UAE, with authentic skyscraper architecture and Dubai surroundings."
+        },
+        {
+          "id": "011",
+          "text": "Golden Gate Bridge",
+          "instructions": "Place the subject naturally at the Golden Gate Bridge in San Francisco, California, with authentic bridge structure, bay, hills, and city surroundings."
+        },
+        {
+          "id": "012",
+          "text": "Sagrada Familia",
+          "instructions": "Place the subject naturally at the Sagrada Familia in Barcelona, Spain, with authentic Gaudí architecture and surrounding Barcelona streets."
+        },
+        {
+          "id": "013",
+          "text": "Angkor Wat",
+          "instructions": "Place the subject naturally at Angkor Wat in Cambodia, with authentic Khmer architecture, temple grounds, vegetation, and surrounding landscape."
+        },
+        {
+          "id": "014",
+          "text": "Petra",
+          "instructions": "Place the subject naturally at Petra in Jordan, surrounded by authentic rose-colored sandstone architecture, cliffs, pathways, and desert landscape."
+        },
+        {
+          "id": "015",
+          "text": "Acropolis of Athens",
+          "instructions": "Place the subject naturally at the Acropolis of Athens in Greece, with authentic ancient Greek architecture, stone ruins, and views across Athens."
+        },
+        {
+          "id": "016",
+          "text": "Mount Rushmore",
+          "instructions": "Place the subject naturally at Mount Rushmore in South Dakota, with the monumental carved faces, Black Hills landscape, and authentic visitor-area surroundings."
+        },
+        {
+          "id": "017",
+          "text": "Stonehenge",
+          "instructions": "Place the subject naturally at Stonehenge in England, with authentic prehistoric stones, grassy landscape, and atmospheric countryside."
+        },
+        {
+          "id": "018",
+          "text": "Leaning Tower of Pisa",
+          "instructions": "Place the subject naturally at the Leaning Tower of Pisa in Italy, with authentic Piazza dei Miracoli architecture and surrounding grounds."
+        },
+        {
+          "id": "019",
+          "text": "St. Basil's Cathedral",
+          "instructions": "Place the subject naturally at St. Basil's Cathedral in Moscow, Russia, with authentic colorful domes, Red Square, and surrounding architecture."
+        },
+        {
+          "id": "020",
+          "text": "Brandenburg Gate",
+          "instructions": "Place the subject naturally at the Brandenburg Gate in Berlin, Germany, with authentic neoclassical architecture and surrounding Berlin streets."
+        },
+        {
+          "id": "021",
+          "text": "Louvre Pyramid",
+          "instructions": "Place the subject naturally at the Louvre Pyramid in Paris, France, with authentic glass pyramid architecture, Louvre courtyards, and surrounding museum buildings."
+        },
+        {
+          "id": "022",
+          "text": "Hagia Sophia",
+          "instructions": "Place the subject naturally at Hagia Sophia in Istanbul, Türkiye, using authentic exterior or interior architectural surroundings as appropriate."
+        },
+        {
+          "id": "023",
+          "text": "Blue Mosque",
+          "instructions": "Place the subject naturally at the Blue Mosque in Istanbul, Türkiye, with authentic Ottoman architecture, domes, minarets, and surrounding square."
+        },
+        {
+          "id": "024",
+          "text": "Alhambra",
+          "instructions": "Place the subject naturally within or around the Alhambra in Granada, Spain, with authentic Nasrid architecture, courtyards, gardens, and mountain views."
+        },
+        {
+          "id": "025",
+          "text": "Neuschwanstein Castle",
+          "instructions": "Place the subject naturally at Neuschwanstein Castle in Bavaria, Germany, with authentic castle architecture, forested mountains, and surrounding landscape."
+        },
+        {
+          "id": "026",
+          "text": "Chichen Itza",
+          "instructions": "Place the subject naturally at Chichen Itza in Mexico, with authentic Maya architecture, El Castillo, stone structures, vegetation, and archaeological grounds."
+        },
+        {
+          "id": "027",
+          "text": "Empire State Building",
+          "instructions": "Place the subject naturally at the Empire State Building in New York City, with authentic Art Deco architecture and Manhattan surroundings."
+        },
+        {
+          "id": "028",
+          "text": "CN Tower",
+          "instructions": "Place the subject naturally at the CN Tower in Toronto, Canada, with authentic tower architecture, Toronto skyline, and surrounding cityscape."
+        },
+        {
+          "id": "029",
+          "text": "Gateway Arch",
+          "instructions": "Place the subject naturally at the Gateway Arch in St. Louis, Missouri, with authentic stainless-steel architecture, park grounds, and city surroundings."
+        },
+        {
+          "id": "030",
+          "text": "Hollywood Sign",
+          "instructions": "Place the subject naturally at the Hollywood Sign in Los Angeles, California, with authentic hillside terrain and panoramic Los Angeles surroundings."
+        },
+        {
+          "id": "031",
+          "text": "Arc de Triomphe",
+          "instructions": "Place the subject naturally at the Arc de Triomphe in Paris, France, with authentic monument architecture, Champs-Élysées, and surrounding Paris streets."
+        },
+        {
+          "id": "032",
+          "text": "Trevi Fountain",
+          "instructions": "Place the subject naturally at the Trevi Fountain in Rome, Italy, with authentic Baroque architecture, sculptures, fountain, and surrounding piazza."
+        },
+        {
+          "id": "033",
+          "text": "Buckingham Palace",
+          "instructions": "Place the subject naturally at Buckingham Palace in London, England, with authentic palace architecture, gates, forecourt, and surrounding London environment."
+        },
+        {
+          "id": "034",
+          "text": "Tower Bridge",
+          "instructions": "Place the subject naturally at Tower Bridge in London, England, with authentic bridge architecture, River Thames, and London skyline."
+        },
+        {
+          "id": "035",
+          "text": "Notre-Dame Cathedral",
+          "instructions": "Place the subject naturally at Notre-Dame Cathedral in Paris, France, with authentic Gothic architecture and surrounding Île de la Cité environment."
+        },
+        {
+          "id": "036",
+          "text": "Grand Palace Bangkok",
+          "instructions": "Place the subject naturally at the Grand Palace in Bangkok, Thailand, with authentic Thai architecture, ornate roofs, courtyards, and surrounding grounds."
+        },
+        {
+          "id": "037",
+          "text": "Forbidden City",
+          "instructions": "Place the subject naturally within the Forbidden City in Beijing, China, with authentic imperial architecture, courtyards, gates, and palace surroundings."
+        },
+        {
+          "id": "038",
+          "text": "Potala Palace",
+          "instructions": "Place the subject naturally at the Potala Palace in Lhasa, Tibet, with authentic Tibetan architecture, mountain atmosphere, and surrounding landscape."
+        },
+        {
+          "id": "039",
+          "text": "Marina Bay Sands",
+          "instructions": "Place the subject naturally at Marina Bay Sands in Singapore, with authentic three-tower architecture, rooftop structure, bay, and Singapore skyline."
+        },
+        {
+          "id": "040",
+          "text": "Tokyo Tower",
+          "instructions": "Place the subject naturally at Tokyo Tower in Tokyo, Japan, with authentic tower structure and Tokyo city surroundings."
+        },
+        {
+          "id": "041",
+          "text": "Fushimi Inari Shrine",
+          "instructions": "Place the subject naturally within Fushimi Inari Shrine in Kyoto, Japan, surrounded by authentic vermilion torii gates, pathways, and wooded hills."
+        },
+        {
+          "id": "042",
+          "text": "Atomium",
+          "instructions": "Place the subject naturally at the Atomium in Brussels, Belgium, with authentic spherical steel architecture and surrounding grounds."
+        },
+        {
+          "id": "043",
+          "text": "Mont Saint-Michel",
+          "instructions": "Place the subject naturally at Mont Saint-Michel in France, with authentic medieval architecture, rocky island setting, surrounding tidal landscape, and coastal atmosphere."
+        },
+        {
+          "id": "044",
+          "text": "Moai of Easter Island",
+          "instructions": "Place the subject naturally among the monumental Moai statues of Rapa Nui, Chile, with authentic volcanic landscape and archaeological surroundings."
+        },
+        {
+          "id": "045",
+          "text": "Burj Al Arab",
+          "instructions": "Place the subject naturally at or around the Burj Al Arab in Dubai, UAE, with authentic sail-shaped architecture, coastline, and Arabian Gulf surroundings."
+        },
+        {
+          "id": "046",
+          "text": "Victoria Falls",
+          "instructions": "Place the subject naturally at Victoria Falls on the Zambia-Zimbabwe border, with authentic waterfall, mist, cliffs, vegetation, and surrounding landscape."
+        },
+        {
+          "id": "047",
+          "text": "Christ Church Cathedral",
+          "instructions": "Place the subject naturally at Christ Church Cathedral in Dublin, Ireland, with authentic medieval architecture and surrounding historic Dublin environment."
+        },
+        {
+          "id": "048",
+          "text": "Palace of Versailles",
+          "instructions": "Place the subject naturally at the Palace of Versailles near Paris, France, with authentic palace architecture, gardens, fountains, and formal grounds."
+        },
+        {
+          "id": "049",
+          "text": "Santorini Oia",
+          "instructions": "Place the subject naturally within the iconic cliffside architecture of Oia, Santorini, Greece, with authentic white buildings, blue domes, Aegean views, and narrow pathways."
+        },
+        {
+          "id": "050",
+          "text": "Random Landmark",
+          "instructions": "Randomly select one famous, globally recognizable landmark and place the subject naturally and photorealistically at that landmark. Select from major internationally recognized architectural, historical, cultural, monumental, or natural landmarks and make the selected location immediately recognizable."
+        }
+      ],
+      "randomizeOptions": true
+    },
+    {
+      "name": "SUBJECT LOCATION",
+      "options": [
+        {
+          "id": "FRONT",
+          "text": "In Front",
+          "instructions": "Place the subject naturally in the most appropriate public viewing area directly in front of the selected landmark, with the landmark clearly visible behind the subject and the subject fully integrated into the real environment."
+        },
+        {
+          "id": "INSIDE OR WITHIN",
+          "text": "Inside or Within",
+          "instructions": "Place the subject naturally inside the selected landmark when a genuine interior or accessible internal space exists, using an authentic recognizable interior and physically plausible position. If the selected landmark has no meaningful interior location or cannot naturally contain the subject, place the subject very close to the landmark or standing immediately next to it while keeping the landmark prominently visible."
+        },
+        {
+          "id": "TOP VIEW",
+          "text": "On Top / Viewing Area",
+          "instructions": "Place the subject on top of, at the highest appropriate accessible point of, or within the designated elevated viewing area of the selected landmark, looking outward and downward over the surrounding city, landscape, or environment. Show an authentic elevated perspective with the landmark structure beneath or around the subject and the real surrounding area visible below. If the landmark does not have a safe or accessible top or elevated viewing area, use the highest visually appropriate location associated with the landmark that provides a comparable elevated view."
+        }
+      ],
+      "randomizeOptions": true
+    }
+    ],
+    "additionalInstructions": "OPTION GROUPS:\n\n• The first option group selects the specific landmark\n• The second option group selects where the subject is positioned relative to that landmark\n• Apply both selected options simultaneously\n• Do not allow one option group to override or replace the other\n• If RANDOM LANDMARK is selected, independently choose one famous globally recognizable landmark\n\nLANDMARK AUTHENTICITY:\n\n• The selected landmark must be immediately recognizable\n• Reconstruct the landmark accurately rather than creating a generic approximation\n• Use authentic architecture, geography, surrounding structures, terrain, vegetation, skyline, and environmental characteristics appropriate to the real location\n• Do not relocate the landmark into an incorrect city, country, climate, or landscape\n• Preserve recognizable landmark proportions and defining visual characteristics\n\nSUBJECT INTEGRATION:\n\n• Preserve the subject's recognizable facial features, proportions, identity, and appearance\n• Make the subject physically present within the selected location\n• Match perspective, scale, focal length, lighting direction, color temperature, atmospheric depth, shadows, reflections, and environmental illumination\n• Ensure contact shadows and environmental lighting convincingly connect the subject to the ground or surrounding architecture\n• Adapt clothing naturally when appropriate for climate or location, without turning the subject into a costume character\n• Do not make the subject appear pasted, cut out, floating, or artificially composited\n\nIN FRONT:\n\n• Use a natural tourist or environmental-portrait position\n• Keep the selected landmark prominent and recognizable behind or around the subject\n• Use realistic perspective and scale\n• Do not place the subject impossibly close to, inside, or intersecting the landmark unless physically plausible\n\nINSIDE OR WITHIN:\n\n• Use a genuine interior, courtyard, passage, chamber, observation area, or other meaningful internal space when the selected landmark actually provides one\n• Preserve recognizable interior architecture\n• If the landmark has no meaningful interior location, do not invent one\n• Instead place the subject very close to or standing directly next to the landmark\n• The landmark must remain clearly identifiable\n\nON TOP / VIEWING AREA:\n\n• Place the subject at an authentic elevated or high viewpoint associated with the selected landmark\n• The subject should be looking outward and downward toward the surrounding city, landscape, or environment\n• Show the surrounding area from an appropriately elevated perspective\n• Preserve believable physical access and structural positioning\n• Do not place the subject impossibly floating above the landmark\n• If a true top position is not physically accessible, use the highest appropriate real viewing area associated with the landmark\n\nRANDOM LANDMARK:\n\n• Randomly select exactly one landmark\n• Do not combine multiple landmarks\n• Do not create a fictional landmark\n• Do not select an obscure location that would undermine the purpose of a famous-landmark travel image\n• The selected landmark must be geographically and architecturally coherent with its real-world location\n\nMASTER PROMPT:\n\n• Any externally provided master prompt details about the subject, pose, clothing, action, mood, composition, camera, or artistic direction should be followed when compatible with the selected landmark and location\n• The selected landmark and selected subject-location option remain the required structural transformation\n• Resolve conflicting details naturally without losing the recognizable identity of the selected landmark or the subject\n\nANTI-CHEAT:\n\n• Do not use a generic travel background\n• Do not paste the subject over a landmark photograph\n• Do not create a miniature landmark beside the subject\n• Do not invent interiors for landmarks that do not have meaningful interiors\n• Do not place the subject in an impossible physical position\n• Do not duplicate the subject\n• Do not duplicate the landmark\n• Do not combine multiple landmarks unless the real-world location naturally contains them together\n\nFINAL RESULT:\nThe final image must look like an authentic, photorealistic travel photograph of the original subject physically present at the selected world-famous landmark, with the chosen subject location determining whether the subject is naturally in front of it, genuinely inside or within it, or positioned at an elevated top/viewing area looking down over the surrounding location."
   },
   {
     "name": "LASER INK",
@@ -31631,12 +31910,12 @@
     {
       "id": "MOCKING SHADOW",
       "text": "Mocking Shadow",
-      "instructions": "Create the subject's shadow as a mischievous exaggerated version of the subject that deliberately mocks the visible pose, expression, or attitude with an absurd posture, ridiculous gesture, or theatrical parody while remaining physically connected to the subject."
+      "instructions": "Create the subject's shadow as a humorous, exaggerated imitation of the subject that is deliberately mocking what the subject is doing. The shadow should perform a different, sarcastic, childish, theatrical, or intentionally ridiculous version of the subject's pose, gesture, activity, or body language while remaining clearly recognizable as the subject's own shadow. Do not make the shadow a monster, creature, supernatural being, or horror transformation. The humor must come entirely from the shadow behaving mockingly toward the visible subject."
     },
     {
       "id": "ABSURD SHADOW",
       "text": "Absurd Shadow",
-      "instructions": "Create the subject's shadow as a completely unexpected humorous transformation that exaggerates one recognizable characteristic of the subject into an absurd monster-like silhouette, creating a clever visual joke while remaining believable as a physically cast shadow."
+      "instructions": "Create the subject's shadow as an absurdly exaggerated version of the subject doing something completely unexpected, ridiculous, or physically impossible in a humorous way. The shadow should remain recognizably human and clearly represent the subject, but its pose, gesture, activity, proportions, or behavior should be wildly different from what the subject is actually doing. Do not make the shadow a monster, creature, supernatural being, or horror transformation. The absurdity must come entirely from the shadow itself behaving in an unexpected or ridiculous manner."
     }
     ],
     "additionalInstructions": "CORE CONCEPT:\n\n• The visible subject remains a realistic human\n• The transformation, monster, creature, or joke exists primarily within the subject's cast shadow\n• The shadow must appear to originate physically from the subject\n• The shadow must align convincingly with the subject's pose, body orientation, and lighting direction\n• The shadow should reveal an alternate monstrous identity rather than simply being a dark duplicate of the subject\n\nVISUAL STYLE:\n\n• Use a sophisticated vintage cinematic horror-poster aesthetic\n• Photographic realism rather than cartoon rendering\n• Aged cream or warm ivory paper surrounding the composition\n• Deep brown, black, charcoal, and muted sepia tonal range\n• Strong directional lighting with dramatic falloff\n• Restrained orange-red illumination or warm photographic glow where appropriate\n• Subtle distressed print texture\n• Fine film grain\n• Slightly weathered analog photographic character\n• Strong separation between the realistically illuminated subject and the enormous darker shadow\n• Elegant, serious cinematic composition even when the selected shadow is humorous\n\nSHADOW CONSTRUCTION:\n\n• The shadow must be large enough to read immediately\n• Preserve a believable connection between the subject and shadow\n• Match the shadow's direction to the apparent light source\n• Maintain convincing contact points and perspective\n• Allow the monster silhouette to exaggerate anatomy while still reading as the subject's transformation\n• The shadow must remain a silhouette or strongly shadow-based form rather than becoming a second fully rendered creature standing beside the subject\n\nTRANSFORMATION MONSTERS:\n\n• When the selected option represents a transformation monster, make the shadow communicate that the human subject could physically become the creature\n• Preserve recognizable elements of the subject's pose and proportions within the transformed silhouette\n• Werewolf, vampire, Frankenstein, Mr. Hyde, zombie, demon, and similar options should read as alternate monstrous forms of the same subject\n• Avoid generic unrelated monsters that have no visual connection to the subject\n\nFUNNY SHADOWS:\n\n• Humor must come from the shadow transformation itself\n• The visible subject should remain realistically photographed\n• Make the shadow dramatically exaggerate the selected joke\n• Keep the joke visually immediate and understandable without explanatory text\n• Funny does not mean cartoonish; retain the same sophisticated cinematic photographic presentation\n\nNO TEXT:\n\n• Absolutely no text anywhere in the finished image\n• No title\n• No subtitle\n• No movie title\n• No credits\n• No logos\n• No captions\n• No labels\n• No lettering\n• No typography\n• No watermarks\n\nANTI-CHEAT:\n\n• Do not place a separate monster beside the subject\n• Do not turn the entire subject into the monster\n• Do not create a second person wearing a monster costume\n• Do not use a generic monster silhouette unrelated to the subject\n• Do not paste a monster onto the background\n• Do not create multiple subjects or duplicate figures\n• Do not make the shadow float independently from the subject\n• Do not treat the effect as a simple dark drop shadow\n• Do not use cartoon or generic Halloween clip-art aesthetics\n\nFINAL VALIDATION:\n\n• One realistic human subject\n• One dominant transformation or humorous shadow\n• Shadow physically connected to the subject\n• Monster identity immediately recognizable\n• Shadow direction consistent with lighting\n• Vintage cinematic horror-poster presentation\n• Aged cream paper aesthetic\n• Dark photographic tones with restrained warm orange-red illumination\n• Sophisticated realistic texture and film grain\n• No text of any kind\n• No logos or typography\n• No separate monster standing beside the subject\n\nFINAL RESULT:\nThe final image must look like a sophisticated vintage cinematic portrait in which the subject's ordinary human shadow reveals an extraordinary alternate identity, ranging from classic transformation monsters to clever and absurd comedic shadows, while maintaining a dramatic photographic horror-poster aesthetic and absolutely no text."
