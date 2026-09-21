@@ -26240,7 +26240,7 @@
       "PHOTOGRAPHY",
       "MASTER PROMPT"
     ],
-    "message": "Take a picture and place the subject naturally and photorealistically at the selected world-famous landmark in the selected location. Preserve the subject's recognizable facial features, proportions, identity, and appearance while matching the lighting, perspective, color temperature, atmospheric conditions, scale, shadows, reflections, and camera characteristics of the real landmark environment. The landmark and surrounding location must be authentic, recognizable, geographically appropriate, and visually convincing. The subject must appear physically present at the location rather than composited into it. Adapt clothing, posture, and environmental details subtly and naturally when appropriate for the location, climate, architecture, and viewing position.",
+    "message": "Take a picture and place the subject naturally and photorealistically at the selected world-famous landmark in the selected location. Preserve the subject's recognizable facial features, proportions, identity, and appearance while matching the lighting, perspective, color temperature, atmospheric conditions, scale, shadows, reflections, and camera characteristics of the real landmark environment. The landmark and surrounding location must be authentic, recognizable, geographically appropriate, and visually convincing. The subject must appear physically present at the location rather than composited into it. Adapt clothing, posture, and environmental details subtly and naturally when appropriate for the location, climate, architecture, and viewing position. CRITICAL: When TOP VIEW is selected, the subject is physically located at the elevated viewing position of the selected landmark and the camera is positioned with the subject looking AWAY from the landmark toward the real surrounding city or landscape. The background must show the actual surrounding environment viewed from that elevated position, NOT another view of the selected landmark.",
     "randomizeOptions": true,
     "optionGroups": [
     {
@@ -26249,252 +26249,252 @@
         {
           "id": "001",
           "text": "Eiffel Tower",
-          "instructions": "Place the subject naturally at the Eiffel Tower in Paris, France, with authentic Parisian surroundings and architecture."
+          "instructions": "Select the Eiffel Tower in Paris, France. Use authentic Parisian architecture, streets, landmarks, skyline, and surrounding geography."
         },
         {
           "id": "002",
           "text": "Statue of Liberty",
-          "instructions": "Place the subject naturally at the Statue of Liberty in New York Harbor, with authentic harbor, Manhattan, and monument surroundings."
+          "instructions": "Select the Statue of Liberty in New York Harbor. Use authentic harbor, Manhattan skyline, waterways, islands, and surrounding geography."
         },
         {
           "id": "003",
           "text": "Colosseum",
-          "instructions": "Place the subject naturally at the Colosseum in Rome, Italy, with authentic ancient Roman architecture and surrounding archaeological landscape."
+          "instructions": "Select the Colosseum in Rome, Italy. Use authentic ancient Roman architecture, archaeological surroundings, streets, and Roman cityscape."
         },
         {
           "id": "004",
           "text": "Taj Mahal",
-          "instructions": "Place the subject naturally at the Taj Mahal in Agra, India, with authentic Mughal architecture, gardens, reflecting pools, and surrounding grounds."
+          "instructions": "Select the Taj Mahal in Agra, India. Use authentic Mughal architecture, gardens, reflecting pools, grounds, and surrounding Agra environment."
         },
         {
           "id": "005",
           "text": "Great Wall of China",
-          "instructions": "Place the subject naturally on or beside the Great Wall of China with authentic stone fortifications, watchtowers, mountains, and surrounding landscape."
+          "instructions": "Select the Great Wall of China. Use authentic stone fortifications, watchtowers, mountains, valleys, vegetation, and surrounding Chinese landscape."
         },
         {
           "id": "006",
           "text": "Machu Picchu",
-          "instructions": "Place the subject naturally within Machu Picchu in Peru, surrounded by authentic Inca stonework, terraces, mountains, and cloud forest."
+          "instructions": "Select Machu Picchu in Peru. Use authentic Inca stonework, terraces, mountains, valleys, and cloud-forest environment."
         },
         {
           "id": "007",
           "text": "Christ the Redeemer",
-          "instructions": "Place the subject naturally at Christ the Redeemer in Rio de Janeiro, Brazil, with authentic monument surroundings and panoramic views of the city."
+          "instructions": "Select Christ the Redeemer in Rio de Janeiro, Brazil. Use authentic monument surroundings and panoramic views of Rio de Janeiro, including mountains, coastline, and city."
         },
         {
           "id": "008",
           "text": "Big Ben",
-          "instructions": "Place the subject naturally at Big Ben and the Palace of Westminster in London, England, with authentic Westminster architecture and London surroundings."
+          "instructions": "Select Big Ben and the Palace of Westminster in London, England. Use authentic Westminster architecture, River Thames surroundings, and London cityscape."
         },
         {
           "id": "009",
           "text": "Sydney Opera House",
-          "instructions": "Place the subject naturally at the Sydney Opera House in Sydney, Australia, with authentic sails, harbor, waterfront, and city surroundings."
+          "instructions": "Select the Sydney Opera House in Sydney, Australia. Use authentic sails, Sydney Harbour, waterfront, harbor bridge, and city surroundings."
         },
         {
           "id": "010",
           "text": "Burj Khalifa",
-          "instructions": "Place the subject naturally at the Burj Khalifa in Dubai, UAE, with authentic skyscraper architecture and Dubai surroundings."
+          "instructions": "Select the Burj Khalifa in Dubai, UAE. Use authentic skyscraper architecture and the real Dubai skyline, streets, towers, and surrounding city."
         },
         {
           "id": "011",
           "text": "Golden Gate Bridge",
-          "instructions": "Place the subject naturally at the Golden Gate Bridge in San Francisco, California, with authentic bridge structure, bay, hills, and city surroundings."
+          "instructions": "Select the Golden Gate Bridge in San Francisco, California. Use authentic bridge structure, San Francisco Bay, hills, coastline, and city surroundings."
         },
         {
           "id": "012",
           "text": "Sagrada Familia",
-          "instructions": "Place the subject naturally at the Sagrada Familia in Barcelona, Spain, with authentic Gaudí architecture and surrounding Barcelona streets."
+          "instructions": "Select the Sagrada Familia in Barcelona, Spain. Use authentic Gaudí architecture and surrounding Barcelona streets and cityscape."
         },
         {
           "id": "013",
           "text": "Angkor Wat",
-          "instructions": "Place the subject naturally at Angkor Wat in Cambodia, with authentic Khmer architecture, temple grounds, vegetation, and surrounding landscape."
+          "instructions": "Select Angkor Wat in Cambodia. Use authentic Khmer architecture, temple grounds, vegetation, pathways, and surrounding landscape."
         },
         {
           "id": "014",
           "text": "Petra",
-          "instructions": "Place the subject naturally at Petra in Jordan, surrounded by authentic rose-colored sandstone architecture, cliffs, pathways, and desert landscape."
+          "instructions": "Select Petra in Jordan. Use authentic rose-colored sandstone architecture, cliffs, pathways, archaeological surroundings, and desert landscape."
         },
         {
           "id": "015",
           "text": "Acropolis of Athens",
-          "instructions": "Place the subject naturally at the Acropolis of Athens in Greece, with authentic ancient Greek architecture, stone ruins, and views across Athens."
+          "instructions": "Select the Acropolis of Athens in Greece. Use authentic ancient Greek architecture, stone ruins, surrounding Athens, and distant landscape."
         },
         {
           "id": "016",
           "text": "Mount Rushmore",
-          "instructions": "Place the subject naturally at Mount Rushmore in South Dakota, with the monumental carved faces, Black Hills landscape, and authentic visitor-area surroundings."
+          "instructions": "Select Mount Rushmore in South Dakota. Use authentic carved mountain faces, Black Hills terrain, forest, and visitor-area surroundings."
         },
         {
           "id": "017",
           "text": "Stonehenge",
-          "instructions": "Place the subject naturally at Stonehenge in England, with authentic prehistoric stones, grassy landscape, and atmospheric countryside."
+          "instructions": "Select Stonehenge in England. Use authentic prehistoric stones, surrounding grassland, countryside, and atmospheric landscape."
         },
         {
           "id": "018",
           "text": "Leaning Tower of Pisa",
-          "instructions": "Place the subject naturally at the Leaning Tower of Pisa in Italy, with authentic Piazza dei Miracoli architecture and surrounding grounds."
+          "instructions": "Select the Leaning Tower of Pisa in Italy. Use authentic Piazza dei Miracoli architecture, cathedral complex, lawns, and surrounding Pisa environment."
         },
         {
           "id": "019",
           "text": "St. Basil's Cathedral",
-          "instructions": "Place the subject naturally at St. Basil's Cathedral in Moscow, Russia, with authentic colorful domes, Red Square, and surrounding architecture."
+          "instructions": "Select St. Basil's Cathedral in Moscow, Russia. Use authentic colorful domes, Red Square, Kremlin surroundings, and Moscow architecture."
         },
         {
           "id": "020",
           "text": "Brandenburg Gate",
-          "instructions": "Place the subject naturally at the Brandenburg Gate in Berlin, Germany, with authentic neoclassical architecture and surrounding Berlin streets."
+          "instructions": "Select the Brandenburg Gate in Berlin, Germany. Use authentic neoclassical architecture, Pariser Platz, surrounding streets, and Berlin cityscape."
         },
         {
           "id": "021",
           "text": "Louvre Pyramid",
-          "instructions": "Place the subject naturally at the Louvre Pyramid in Paris, France, with authentic glass pyramid architecture, Louvre courtyards, and surrounding museum buildings."
+          "instructions": "Select the Louvre Pyramid in Paris, France. Use authentic glass pyramid architecture, Louvre courtyards, museum buildings, and Paris surroundings."
         },
         {
           "id": "022",
           "text": "Hagia Sophia",
-          "instructions": "Place the subject naturally at Hagia Sophia in Istanbul, Türkiye, using authentic exterior or interior architectural surroundings as appropriate."
+          "instructions": "Select Hagia Sophia in Istanbul, Türkiye. Use authentic exterior or interior architecture and surrounding Istanbul environment as appropriate."
         },
         {
           "id": "023",
           "text": "Blue Mosque",
-          "instructions": "Place the subject naturally at the Blue Mosque in Istanbul, Türkiye, with authentic Ottoman architecture, domes, minarets, and surrounding square."
+          "instructions": "Select the Blue Mosque in Istanbul, Türkiye. Use authentic Ottoman architecture, domes, minarets, courtyard, square, and surrounding Istanbul environment."
         },
         {
           "id": "024",
           "text": "Alhambra",
-          "instructions": "Place the subject naturally within or around the Alhambra in Granada, Spain, with authentic Nasrid architecture, courtyards, gardens, and mountain views."
+          "instructions": "Select the Alhambra in Granada, Spain. Use authentic Nasrid architecture, courtyards, gardens, palace interiors where applicable, and mountain views."
         },
         {
           "id": "025",
           "text": "Neuschwanstein Castle",
-          "instructions": "Place the subject naturally at Neuschwanstein Castle in Bavaria, Germany, with authentic castle architecture, forested mountains, and surrounding landscape."
+          "instructions": "Select Neuschwanstein Castle in Bavaria, Germany. Use authentic castle architecture, forested mountains, valleys, and surrounding Bavarian landscape."
         },
         {
           "id": "026",
           "text": "Chichen Itza",
-          "instructions": "Place the subject naturally at Chichen Itza in Mexico, with authentic Maya architecture, El Castillo, stone structures, vegetation, and archaeological grounds."
+          "instructions": "Select Chichen Itza in Mexico. Use authentic Maya architecture, El Castillo, stone structures, vegetation, archaeological grounds, and surrounding landscape."
         },
         {
           "id": "027",
           "text": "Empire State Building",
-          "instructions": "Place the subject naturally at the Empire State Building in New York City, with authentic Art Deco architecture and Manhattan surroundings."
+          "instructions": "Select the Empire State Building in New York City. Use authentic Art Deco architecture, Manhattan streets, surrounding skyscrapers, and New York skyline."
         },
         {
           "id": "028",
           "text": "CN Tower",
-          "instructions": "Place the subject naturally at the CN Tower in Toronto, Canada, with authentic tower architecture, Toronto skyline, and surrounding cityscape."
+          "instructions": "Select the CN Tower in Toronto, Canada. Use authentic tower architecture, Toronto skyline, Lake Ontario, and surrounding cityscape."
         },
         {
           "id": "029",
           "text": "Gateway Arch",
-          "instructions": "Place the subject naturally at the Gateway Arch in St. Louis, Missouri, with authentic stainless-steel architecture, park grounds, and city surroundings."
+          "instructions": "Select the Gateway Arch in St. Louis, Missouri. Use authentic stainless-steel arch architecture, surrounding park, Mississippi River, and St. Louis cityscape."
         },
         {
           "id": "030",
           "text": "Hollywood Sign",
-          "instructions": "Place the subject naturally at the Hollywood Sign in Los Angeles, California, with authentic hillside terrain and panoramic Los Angeles surroundings."
+          "instructions": "Select the Hollywood Sign in Los Angeles, California. Use authentic Hollywood Hills terrain and panoramic Los Angeles surroundings."
         },
         {
           "id": "031",
           "text": "Arc de Triomphe",
-          "instructions": "Place the subject naturally at the Arc de Triomphe in Paris, France, with authentic monument architecture, Champs-Élysées, and surrounding Paris streets."
+          "instructions": "Select the Arc de Triomphe in Paris, France. Use authentic monument architecture, Champs-Élysées, radial avenues, and Paris cityscape."
         },
         {
           "id": "032",
           "text": "Trevi Fountain",
-          "instructions": "Place the subject naturally at the Trevi Fountain in Rome, Italy, with authentic Baroque architecture, sculptures, fountain, and surrounding piazza."
+          "instructions": "Select the Trevi Fountain in Rome, Italy. Use authentic Baroque architecture, sculptures, fountain, piazza, and surrounding Roman streets."
         },
         {
           "id": "033",
           "text": "Buckingham Palace",
-          "instructions": "Place the subject naturally at Buckingham Palace in London, England, with authentic palace architecture, gates, forecourt, and surrounding London environment."
+          "instructions": "Select Buckingham Palace in London, England. Use authentic palace architecture, gates, forecourt, gardens, and surrounding London environment."
         },
         {
           "id": "034",
           "text": "Tower Bridge",
-          "instructions": "Place the subject naturally at Tower Bridge in London, England, with authentic bridge architecture, River Thames, and London skyline."
+          "instructions": "Select Tower Bridge in London, England. Use authentic bridge architecture, River Thames, London skyline, and surrounding waterfront."
         },
         {
           "id": "035",
           "text": "Notre-Dame Cathedral",
-          "instructions": "Place the subject naturally at Notre-Dame Cathedral in Paris, France, with authentic Gothic architecture and surrounding Île de la Cité environment."
+          "instructions": "Select Notre-Dame Cathedral in Paris, France. Use authentic Gothic architecture, Île de la Cité, Seine surroundings, and Paris environment."
         },
         {
           "id": "036",
           "text": "Grand Palace Bangkok",
-          "instructions": "Place the subject naturally at the Grand Palace in Bangkok, Thailand, with authentic Thai architecture, ornate roofs, courtyards, and surrounding grounds."
+          "instructions": "Select the Grand Palace in Bangkok, Thailand. Use authentic Thai architecture, ornate roofs, courtyards, temples, and surrounding Bangkok environment."
         },
         {
           "id": "037",
           "text": "Forbidden City",
-          "instructions": "Place the subject naturally within the Forbidden City in Beijing, China, with authentic imperial architecture, courtyards, gates, and palace surroundings."
+          "instructions": "Select the Forbidden City in Beijing, China. Use authentic imperial architecture, courtyards, gates, palace buildings, and Beijing surroundings."
         },
         {
           "id": "038",
           "text": "Potala Palace",
-          "instructions": "Place the subject naturally at the Potala Palace in Lhasa, Tibet, with authentic Tibetan architecture, mountain atmosphere, and surrounding landscape."
+          "instructions": "Select the Potala Palace in Lhasa, Tibet. Use authentic Tibetan architecture, surrounding mountains, plateau environment, and Lhasa landscape."
         },
         {
           "id": "039",
           "text": "Marina Bay Sands",
-          "instructions": "Place the subject naturally at Marina Bay Sands in Singapore, with authentic three-tower architecture, rooftop structure, bay, and Singapore skyline."
+          "instructions": "Select Marina Bay Sands in Singapore. Use authentic three-tower architecture, rooftop structure, Marina Bay, Singapore skyline, and surrounding city."
         },
         {
           "id": "040",
           "text": "Tokyo Tower",
-          "instructions": "Place the subject naturally at Tokyo Tower in Tokyo, Japan, with authentic tower structure and Tokyo city surroundings."
+          "instructions": "Select Tokyo Tower in Tokyo, Japan. Use authentic tower structure and Tokyo city surroundings."
         },
         {
           "id": "041",
           "text": "Fushimi Inari Shrine",
-          "instructions": "Place the subject naturally within Fushimi Inari Shrine in Kyoto, Japan, surrounded by authentic vermilion torii gates, pathways, and wooded hills."
+          "instructions": "Select Fushimi Inari Shrine in Kyoto, Japan. Use authentic vermilion torii gates, pathways, wooded hills, shrine architecture, and Kyoto environment."
         },
         {
           "id": "042",
           "text": "Atomium",
-          "instructions": "Place the subject naturally at the Atomium in Brussels, Belgium, with authentic spherical steel architecture and surrounding grounds."
+          "instructions": "Select the Atomium in Brussels, Belgium. Use authentic spherical steel architecture and surrounding Brussels grounds and cityscape."
         },
         {
           "id": "043",
           "text": "Mont Saint-Michel",
-          "instructions": "Place the subject naturally at Mont Saint-Michel in France, with authentic medieval architecture, rocky island setting, surrounding tidal landscape, and coastal atmosphere."
+          "instructions": "Select Mont Saint-Michel in France. Use authentic medieval architecture, rocky island, tidal landscape, coastline, and surrounding French countryside."
         },
         {
           "id": "044",
           "text": "Moai of Easter Island",
-          "instructions": "Place the subject naturally among the monumental Moai statues of Rapa Nui, Chile, with authentic volcanic landscape and archaeological surroundings."
+          "instructions": "Select the monumental Moai of Rapa Nui, Chile. Use authentic statues, volcanic landscape, grassland, coastline, and archaeological surroundings."
         },
         {
           "id": "045",
           "text": "Burj Al Arab",
-          "instructions": "Place the subject naturally at or around the Burj Al Arab in Dubai, UAE, with authentic sail-shaped architecture, coastline, and Arabian Gulf surroundings."
+          "instructions": "Select the Burj Al Arab in Dubai, UAE. Use authentic sail-shaped architecture, coastline, Arabian Gulf, and Dubai surroundings."
         },
         {
           "id": "046",
           "text": "Victoria Falls",
-          "instructions": "Place the subject naturally at Victoria Falls on the Zambia-Zimbabwe border, with authentic waterfall, mist, cliffs, vegetation, and surrounding landscape."
+          "instructions": "Select Victoria Falls on the Zambia-Zimbabwe border. Use authentic waterfall, cliffs, mist, vegetation, river, and surrounding landscape."
         },
         {
           "id": "047",
           "text": "Christ Church Cathedral",
-          "instructions": "Place the subject naturally at Christ Church Cathedral in Dublin, Ireland, with authentic medieval architecture and surrounding historic Dublin environment."
+          "instructions": "Select Christ Church Cathedral in Dublin, Ireland. Use authentic medieval architecture and surrounding historic Dublin environment."
         },
         {
           "id": "048",
           "text": "Palace of Versailles",
-          "instructions": "Place the subject naturally at the Palace of Versailles near Paris, France, with authentic palace architecture, gardens, fountains, and formal grounds."
+          "instructions": "Select the Palace of Versailles near Paris, France. Use authentic palace architecture, gardens, fountains, courtyards, and formal grounds."
         },
         {
           "id": "049",
           "text": "Santorini Oia",
-          "instructions": "Place the subject naturally within the iconic cliffside architecture of Oia, Santorini, Greece, with authentic white buildings, blue domes, Aegean views, and narrow pathways."
+          "instructions": "Select Oia in Santorini, Greece. Use authentic white cliffside buildings, blue domes, Aegean Sea, narrow pathways, and surrounding island landscape."
         },
         {
           "id": "050",
           "text": "Random Landmark",
-          "instructions": "Randomly select one famous, globally recognizable landmark and place the subject naturally and photorealistically at that landmark. Select from major internationally recognized architectural, historical, cultural, monumental, or natural landmarks and make the selected location immediately recognizable."
+          "instructions": "Randomly select exactly one famous, globally recognizable landmark anywhere in the world and use its authentic real-world location, architecture, geography, surrounding environment, and recognizable characteristics."
         }
       ]
     },
@@ -26504,22 +26504,22 @@
         {
           "id": "FRONT",
           "text": "In Front",
-          "instructions": "Place the subject naturally in the most appropriate public viewing area directly in front of the selected landmark, with the landmark clearly visible behind the subject and the subject fully integrated into the real environment."
+          "instructions": "Place the subject naturally in an appropriate public viewing area IN FRONT OF the selected landmark. The subject is facing the camera or naturally posed toward the landmark, and the selected landmark must be clearly visible BEHIND the subject in the same physical scene. The landmark is the destination being visited and must not appear as a second distant landmark."
         },
         {
           "id": "INSIDE OR WITHIN",
           "text": "Inside or Within",
-          "instructions": "Place the subject naturally inside the selected landmark when a genuine interior or accessible internal space exists, using an authentic recognizable interior and physically plausible position. If the selected landmark has no meaningful interior location or cannot naturally contain the subject, place the subject very close to the landmark or standing immediately next to it while keeping the landmark prominently visible."
+          "instructions": "Place the subject physically INSIDE, WITHIN, ON, OR IMMEDIATELY AMONG the architecture or grounds of the selected landmark when a genuine interior, courtyard, passage, chamber, observation area, pathway, platform, or other physically appropriate location exists. The camera must be positioned from within that same landmark environment. If the selected landmark does not have a meaningful interior or physically appropriate internal position, place the subject immediately beside or very close to the landmark. NEVER invent a separate interior. NEVER place a second copy of the landmark in the background."
         },
         {
           "id": "TOP VIEW",
           "text": "On Top / Viewing Area",
-          "instructions": "Place the subject on top of, at the highest appropriate accessible point of, or within the designated elevated viewing area of the selected landmark, looking outward and downward over the surrounding city, landscape, or environment. Show an authentic elevated perspective with the landmark structure beneath or around the subject and the real surrounding area visible below. If the landmark does not have a safe or accessible top or elevated viewing area, use the highest visually appropriate location associated with the landmark that provides a comparable elevated view."
+          "instructions": "CRITICAL CAMERA AND BACKGROUND RULE: Place the subject PHYSICALLY AT THE TOP, ROOFTOP, OBSERVATION DECK, SUMMIT, HIGH PLATFORM, OR OTHER AUTHENTIC ELEVATED VIEWING POSITION OF THE SELECTED LANDMARK. The CAMERA MUST ALSO BE AT THAT SAME ELEVATED LOCATION WITH THE SUBJECT. The subject is LOOKING AWAY FROM THE LANDMARK and OUTWARD over the surrounding city, landscape, coastline, valley, or environment. The ENTIRE BACKGROUND MUST SHOW THE REAL-WORLD SURROUNDING AREA AS SEEN FROM THE TOP OF THE SELECTED LANDMARK. DO NOT SHOW THE SELECTED LANDMARK STANDING IN THE DISTANCE. DO NOT SHOW A SECOND VIEW OF THE LANDMARK. DO NOT CREATE ANOTHER COPY OF THE LANDMARK. DO NOT POINT THE CAMERA TOWARD THE LANDMARK. The landmark is BELOW, BENEATH, OR IMMEDIATELY AROUND the subject because the subject is already standing on or within its elevated viewing area. For example, with the Eiffel Tower selected, place the subject on the Eiffel Tower's real observation deck and photograph the subject looking outward across PARIS, with Paris, the Seine, streets, buildings, and skyline filling the background. The Eiffel Tower itself must NOT appear as another Eiffel Tower in the distant background. The same rule applies to every landmark: the background is the surrounding world viewed FROM the landmark, not the landmark viewed FROM somewhere else."
         }
       ]
     }
     ],
-    "additionalInstructions": "OPTION GROUPS:\n\n• The first option group selects the specific landmark\n• The second option group selects where the subject is positioned relative to that landmark\n• Apply both selected options simultaneously\n• Do not allow one option group to override or replace the other\n• If RANDOM LANDMARK is selected, independently choose one famous globally recognizable landmark\n\nLANDMARK AUTHENTICITY:\n\n• The selected landmark must be immediately recognizable\n• Reconstruct the landmark accurately rather than creating a generic approximation\n• Use authentic architecture, geography, surrounding structures, terrain, vegetation, skyline, and environmental characteristics appropriate to the real location\n• Do not relocate the landmark into an incorrect city, country, climate, or landscape\n• Preserve recognizable landmark proportions and defining visual characteristics\n\nSUBJECT INTEGRATION:\n\n• Preserve the subject's recognizable facial features, proportions, identity, and appearance\n• Make the subject physically present within the selected location\n• Match perspective, scale, focal length, lighting direction, color temperature, atmospheric depth, shadows, reflections, and environmental illumination\n• Ensure contact shadows and environmental lighting convincingly connect the subject to the ground or surrounding architecture\n• Adapt clothing naturally when appropriate for climate or location, without turning the subject into a costume character\n• Do not make the subject appear pasted, cut out, floating, or artificially composited\n\nIN FRONT:\n\n• Use a natural tourist or environmental-portrait position\n• Keep the selected landmark prominent and recognizable behind or around the subject\n• Use realistic perspective and scale\n• Do not place the subject impossibly close to, inside, or intersecting the landmark unless physically plausible\n\nINSIDE OR WITHIN:\n\n• Use a genuine interior, courtyard, passage, chamber, observation area, or other meaningful internal space when the selected landmark actually provides one\n• Preserve recognizable interior architecture\n• If the landmark has no meaningful interior location, do not invent one\n• Instead place the subject very close to or standing directly next to the landmark\n• The landmark must remain clearly identifiable\n\nON TOP / VIEWING AREA:\n\n• Place the subject at an authentic elevated or high viewpoint associated with the selected landmark\n• The subject should be looking outward and downward toward the surrounding city, landscape, or environment\n• Show the surrounding area from an appropriately elevated perspective\n• Preserve believable physical access and structural positioning\n• Do not place the subject impossibly floating above the landmark\n• If a true top position is not physically accessible, use the highest appropriate real viewing area associated with the landmark\n\nRANDOM LANDMARK:\n\n• Randomly select exactly one landmark\n• Do not combine multiple landmarks\n• Do not create a fictional landmark\n• Do not select an obscure location that would undermine the purpose of a famous-landmark travel image\n• The selected landmark must be geographically and architecturally coherent with its real-world location\n\nMASTER PROMPT:\n\n• Any externally provided master prompt details about the subject, pose, clothing, action, mood, composition, camera, or artistic direction should be followed when compatible with the selected landmark and location\n• The selected landmark and selected subject-location option remain the required structural transformation\n• Resolve conflicting details naturally without losing the recognizable identity of the selected landmark or the subject\n\nANTI-CHEAT:\n\n• Do not use a generic travel background\n• Do not paste the subject over a landmark photograph\n• Do not create a miniature landmark beside the subject\n• Do not invent interiors for landmarks that do not have meaningful interiors\n• Do not place the subject in an impossible physical position\n• Do not duplicate the subject\n• Do not duplicate the landmark\n• Do not combine multiple landmarks unless the real-world location naturally contains them together\n\nFINAL RESULT:\nThe final image must look like an authentic, photorealistic travel photograph of the original subject physically present at the selected world-famous landmark, with the chosen subject location determining whether the subject is naturally in front of it, genuinely inside or within it, or positioned at an elevated top/viewing area looking down over the surrounding location."
+    "additionalInstructions": "OPTION GROUPS:\n\n• The first option group selects exactly one landmark\n• The second option group selects exactly one physical relationship between the subject and that landmark\n• Apply both selections simultaneously\n• The selected landmark exists at exactly one physical location in the scene\n• Never duplicate the selected landmark\n\nCRITICAL TOP VIEW LOGIC:\n\n• TOP VIEW means the SUBJECT IS ALREADY AT THE TOP OF THE SELECTED LANDMARK\n• The CAMERA is also physically at that same elevated position\n• The camera looks AWAY from the selected landmark\n• The subject looks OUTWARD over the surrounding environment\n• The background is the CITY, LANDSCAPE, COASTLINE, VALLEY, MOUNTAINS, BUILDINGS, STREETS, WATER, OR OTHER REAL ENVIRONMENT surrounding the landmark\n• The selected landmark must NOT appear as a separate structure in the distant background\n• The selected landmark must NOT be duplicated\n• Never create a second copy of the landmark in the background\n• Never photograph the subject from another building while showing the selected landmark in the distance\n• Never interpret TOP VIEW as 'show the top of the landmark from the outside'\n• Interpret TOP VIEW as 'the subject is standing at the top of the landmark and looking outward from that position'\n• The visual result should communicate what a person actually sees when standing at the landmark's elevated viewing area and looking outward\n\nEIFFEL TOWER EXAMPLE:\n\n• Selected landmark: Eiffel Tower\n• Selected location: On Top / Viewing Area\n• Subject is physically standing on an authentic Eiffel Tower observation deck\n• Camera is physically standing on that same observation deck\n• Subject looks outward toward Paris\n• Background contains Paris, the Seine, streets, buildings, parks, and skyline as seen from the Eiffel Tower\n• The Eiffel Tower does NOT appear in the distant background\n• There is NEVER a second Eiffel Tower\n• The image is a view FROM the Eiffel Tower, not a view OF the Eiffel Tower\n\nLANDMARK AUTHENTICITY:\n\n• Use exactly one selected landmark\n• Reconstruct the landmark accurately\n• Preserve its real architecture, geography, proportions, defining characteristics, and surroundings\n• Place it in its actual geographic location\n• Do not relocate it\n• Do not invent a duplicate landmark\n• Do not create a generic landmark substitute\n\nSUBJECT INTEGRATION:\n\n• Preserve the subject's recognizable facial features, proportions, identity, and appearance\n• Make the subject physically present at the selected location\n• Match perspective, scale, focal length, lighting direction, color temperature, atmospheric depth, shadows, reflections, and environmental illumination\n• Ensure realistic contact with floors, platforms, stairs, ground, architecture, or other physical surfaces\n• Do not make the subject appear pasted, cut out, floating, or artificially composited\n\nIN FRONT:\n\n• The landmark is behind the subject\n• The subject is in a genuine public viewing position\n• The landmark should be clearly recognizable\n• Do not place the subject impossibly inside or intersecting the landmark\n\nINSIDE OR WITHIN:\n\n• The subject is physically within the selected landmark or immediately among its authentic grounds or structures\n• Use genuine interiors when they actually exist\n• Use courtyards, pathways, chambers, platforms, observation areas, or other real internal spaces when appropriate\n• If no meaningful interior exists, place the subject very close to or immediately beside the landmark\n• Never invent a fictional interior\n• Never create a second landmark in the background\n\nTOP VIEW:\n\n• Subject physically occupies the highest appropriate authentic viewing location\n• Camera occupies the same elevated location\n• Subject looks outward and downward over the surrounding environment\n• Background represents the real environment viewed FROM the landmark\n• The landmark itself is not the distant subject of the photograph\n• Do not show another copy of the landmark\n• Do not show the landmark from outside in the background\n• Do not create an impossible floating viewpoint\n• Use an authentic accessible observation deck, rooftop, summit, platform, tower level, or equivalent elevated viewpoint when available\n• If no literal top exists, use the highest appropriate authentic viewing position associated with the landmark\n\nRANDOM LANDMARK:\n\n• Randomly select exactly one famous globally recognizable landmark\n• The selected landmark must have one coherent real-world location\n• Apply the selected SUBJECT LOCATION option to that landmark\n• If TOP VIEW is selected, determine the authentic elevated viewing position and show the surrounding environment from that position\n• Do not combine multiple landmarks\n\nMASTER PROMPT:\n\n• Master prompt instructions about the subject, pose, clothing, action, mood, composition, camera, or artistic direction should be followed when compatible with the selected landmark and location\n• The selected landmark and subject-location option remain mandatory\n• If a master prompt specifies looking outward, looking down, or viewing the surrounding area, preserve that directional relationship\n\nANTI-CHEAT:\n\n• Do not paste the subject over a landmark photograph\n• Do not create a generic travel background\n• Do not duplicate the selected landmark\n• Do not create a second copy of the selected landmark in the background\n• Do not place the subject on top of one landmark while showing another copy of that same landmark in the distance\n• Do not interpret TOP VIEW as a photograph of the landmark from another location\n• Do not point the TOP VIEW camera toward the landmark\n• Do not invent an interior when none exists\n• Do not make the subject float above the landmark\n• Do not duplicate the subject\n\nFINAL VALIDATION:\n\n• Exactly one selected landmark\n• Exactly one subject\n• Subject physically present at that landmark\n• Correct selected subject-location relationship\n• FRONT = landmark behind subject\n• INSIDE OR WITHIN = subject physically inside/within or immediately beside landmark when no interior exists\n• TOP VIEW = subject physically at elevated landmark viewpoint\n• TOP VIEW camera = physically at the same elevated viewpoint\n• TOP VIEW camera faces AWAY from landmark\n• TOP VIEW background = surrounding city/landscape viewed from landmark\n• TOP VIEW contains NO second copy of the selected landmark\n• TOP VIEW does NOT show the selected landmark in the distance\n• Photorealistic travel photography\n• Authentic geography and architecture\n• No compositing appearance\n\nFINAL RESULT:\nThe final image must look like an authentic travel photograph of the original subject physically visiting exactly one famous world landmark. FRONT shows the landmark behind the subject. INSIDE OR WITHIN places the subject physically within or immediately beside the landmark. TOP VIEW places the subject at the landmark's elevated viewing position and shows the real surrounding city or landscape from that exact viewpoint, looking AWAY from the landmark rather than showing another copy of the landmark in the background."
   },
   {
     "name": "LASER INK",
@@ -31806,118 +31806,118 @@
     "name": "MONSTER SHADOW",
     "category": [
       "HORROR",
-      "CINEMATIC", 
-      "SHADOW", 
-      "MONSTERS", 
-      "COMEDY", 
-      "TRANSFORMATION", 
+      "CINEMATIC",
+      "SHADOW",
+      "MONSTERS",
+      "COMEDY",
+      "TRANSFORMATION",
       "POSTER ART"
     ],
-    "message": "Take a picture and transform the image into a dramatic vintage cinematic monster-shadow composition. Preserve the subject as a realistic human figure while creating a large, unmistakable shadow behind or beside the subject that reveals a monstrous alternate form, transformation, creature, or humorous exaggerated version of the subject. The shadow must look physically cast by the subject and remain clearly connected to the subject's position, silhouette, lighting direction, and proportions. Use a sophisticated vintage horror-poster aesthetic with realistic photographic rendering, aged cream paper, dark brown and black tones, distressed print texture, dramatic directional lighting, deep shadows, subtle film grain, and restrained orange-red illumination. The finished image must contain NO text, titles, logos, credits, lettering, captions, or typography.",
+    "message": "Take a picture and transform the image into a dramatic vintage cinematic shadow composition. Preserve the subject as a realistic human figure while creating a large, unmistakable cast shadow behind or beside the subject. For the monster options, the shadow reveals a monstrous alternate transformation of the subject. HOWEVER, WHEN THE SELECTED OPTION IS MOCKING SHADOW OR ABSURD SHADOW, THE SHADOW MUST NOT BE A MONSTER, CREATURE, DEMON, ANIMAL, SUPERNATURAL BEING, OR HORROR TRANSFORMATION OF ANY KIND. MOCKING SHADOW AND ABSURD SHADOW MUST SHOW ONLY A NORMAL HUMAN SHADOW OF THE SUBJECT PERFORMING A DIFFERENT MOCKING, SILLY, RIDICULOUS, EXAGGERATED, OR ABSURD HUMAN ACTION. The selected option determines the type of shadow and must be followed exactly. Use a sophisticated vintage cinematic horror-poster aesthetic with realistic photographic rendering, aged cream paper, dark brown and black tones, distressed print texture, dramatic directional lighting, deep shadows, subtle film grain, and restrained orange-red illumination. The finished image must contain NO text, titles, logos, credits, lettering, captions, or typography.",
     "randomizeOptions": true,
     "options": [
     {
       "id": "WEREWOLF",
       "text": "Werewolf",
-      "instructions": "Create the subject's shadow as a powerful werewolf transformation with a lupine head, pointed ears, elongated muzzle, wild fur, claws, and an aggressive animalistic silhouette while the visible subject remains human."
+      "instructions": "Create the subject's cast shadow as a powerful werewolf transformation with a lupine head, pointed ears, elongated muzzle, wild fur, claws, and an aggressive animalistic silhouette while the visible subject remains human."
     },
     {
       "id": "DRACULA",
       "text": "Dracula",
-      "instructions": "Create the subject's shadow as a classic Dracula transformation with a tall imposing vampire silhouette, pointed ears, swept-back hair, high collar, elongated fingers, and unmistakable vampiric posture while the visible subject remains human."
+      "instructions": "Create the subject's cast shadow as a classic Dracula transformation with a tall imposing vampire silhouette, pointed ears, swept-back hair, high collar, elongated fingers, and unmistakable vampiric posture while the visible subject remains human."
     },
     {
       "id": "FRANKENSTEIN",
       "text": "Frankenstein",
-      "instructions": "Create the subject's shadow as a towering Frankenstein's Monster silhouette with enormous shoulders, squared head, heavy brow, thick neck, and unmistakable classic monster proportions while the visible subject remains human."
+      "instructions": "Create the subject's cast shadow as a towering Frankenstein's Monster transformation with enormous shoulders, squared head, heavy brow, thick neck, and unmistakable classic monster proportions while the visible subject remains human."
     },
     {
       "id": "MR HYDE",
       "text": "Mr. Hyde",
-      "instructions": "Create the subject's shadow as a grotesquely enlarged Mr. Hyde transformation with hunched posture, oversized hands, exaggerated shoulders, wild hair, and a sinister distorted human-monster silhouette while the visible subject remains human."
+      "instructions": "Create the subject's cast shadow as a grotesquely enlarged Mr. Hyde transformation with hunched posture, oversized hands, exaggerated shoulders, wild hair, and a sinister distorted human-monster silhouette while the visible subject remains human."
     },
     {
       "id": "MUMMY",
       "text": "Mummy",
-      "instructions": "Create the subject's shadow as a terrifying ancient mummy with wrapped limbs, hanging bandages, sunken facial contours, and a stiff unnatural posture while the visible subject remains human."
+      "instructions": "Create the subject's cast shadow as a terrifying ancient mummy transformation with wrapped limbs, hanging bandages, sunken facial contours, and a stiff unnatural posture while the visible subject remains human."
     },
     {
       "id": "CREATURE",
       "text": "Creature",
-      "instructions": "Create the subject's shadow as a classic amphibious humanoid creature with webbed hands, broad shoulders, aquatic features, claws, and a strange predatory silhouette while the visible subject remains human."
+      "instructions": "Create the subject's cast shadow as a classic amphibious humanoid creature transformation with webbed hands, broad shoulders, aquatic features, claws, and a strange predatory silhouette while the visible subject remains human."
     },
     {
       "id": "SWAMP MONSTER",
       "text": "Swamp Monster",
-      "instructions": "Create the subject's shadow as a hulking swamp monster covered in shaggy vegetation-like texture, with oversized hands, irregular limbs, and a primitive creature silhouette while the visible subject remains human."
+      "instructions": "Create the subject's cast shadow as a hulking swamp monster transformation with oversized hands, irregular limbs, shaggy creature-like texture, and a primitive monstrous silhouette while the visible subject remains human."
     },
     {
       "id": "GIANT MONSTER",
       "text": "Giant Monster",
-      "instructions": "Create the subject's shadow as a gigantic kaiju-like monster towering far above the visible subject, with an enormous head, massive shoulders, claws, and an exaggerated creature silhouette while maintaining the same basic body orientation."
+      "instructions": "Create the subject's cast shadow as a gigantic kaiju-like monster transformation towering far above the visible subject, with an enormous head, massive shoulders, claws, and exaggerated creature anatomy while maintaining the same basic body orientation."
     },
     {
       "id": "SKELETON",
       "text": "Skeleton",
-      "instructions": "Create the subject's shadow as a sinister skeletal transformation with a clearly recognizable skull, ribcage, long bony limbs, skeletal hands, and hollow facial structure while the visible subject remains completely human."
+      "instructions": "Create the subject's cast shadow as a sinister skeletal transformation with a recognizable skull, ribcage, long bony limbs, skeletal hands, and hollow facial structure while the visible subject remains completely human."
     },
     {
       "id": "ZOMBIE",
       "text": "Zombie",
-      "instructions": "Create the subject's shadow as a decayed zombie version with torn clothing shapes, crooked posture, reaching hands, disordered hair, and an unmistakable undead silhouette while the visible subject remains human."
+      "instructions": "Create the subject's cast shadow as a decayed zombie transformation with crooked posture, reaching hands, disordered hair, and an unmistakable undead silhouette while the visible subject remains human."
     },
     {
       "id": "DEMON",
       "text": "Demon",
-      "instructions": "Create the subject's shadow as a sinister humanoid demon with curved horns, elongated fingers, angular limbs, a powerful hunched posture, and an unmistakably supernatural silhouette while the visible subject remains human."
+      "instructions": "Create the subject's cast shadow as a sinister humanoid demon transformation with curved horns, elongated fingers, angular limbs, a powerful hunched posture, and an unmistakably supernatural silhouette while the visible subject remains human."
     },
     {
       "id": "WITCH",
       "text": "Witch",
-      "instructions": "Create the subject's shadow as a classic witch transformation with a pointed hat, hooked profile, crooked posture, long fingers, and exaggerated silhouette while the visible subject remains human."
+      "instructions": "Create the subject's cast shadow as a classic witch transformation with a pointed hat, hooked profile, crooked posture, long fingers, and exaggerated supernatural silhouette while the visible subject remains human."
     },
     {
       "id": "GIANT BAT",
       "text": "Giant Bat",
-      "instructions": "Create the subject's shadow as a giant bat-like transformation with enormous outstretched wings, pointed ears, clawed hands, and a dramatic airborne silhouette while the visible subject remains human."
+      "instructions": "Create the subject's cast shadow as a giant bat-like transformation with enormous outstretched wings, pointed ears, clawed hands, and a dramatic airborne silhouette while the visible subject remains human."
     },
     {
       "id": "VAMPIRE BAT",
       "text": "Vampire Bat",
-      "instructions": "Create the subject's shadow as a monstrous vampire-bat transformation with folded wings, elongated ears, clawed limbs, and a predatory hunched silhouette while the visible subject remains human."
+      "instructions": "Create the subject's cast shadow as a monstrous vampire-bat transformation with folded wings, elongated ears, clawed limbs, and a predatory hunched silhouette while the visible subject remains human."
     },
     {
       "id": "EVIL TWIN",
       "text": "Evil Twin",
-      "instructions": "Create the subject's shadow as an exaggerated sinister version of the subject, copying the same basic pose while adding an evil grin, threatening posture, exaggerated hair, and theatrical villainous proportions."
+      "instructions": "Create the subject's cast shadow as a sinister exaggerated HUMAN version of the subject, copying the same basic identity while adding an evil grin, threatening posture, exaggerated hair, and theatrical villainous human body language. Do not turn the shadow into a monster or supernatural creature."
     },
     {
       "id": "GIANT HEAD",
       "text": "Giant Head",
-      "instructions": "Create the subject's shadow as a hilariously oversized version of the subject's own head and facial features, dramatically enlarged behind the body with an absurd expression while remaining clearly connected to the subject's silhouette."
+      "instructions": "Create the subject's cast shadow as a normal human silhouette with an absurdly oversized version of the subject's own head and recognizable facial profile, dramatically enlarged behind the body with an exaggerated expression. This is a humorous human shadow, NOT a monster shadow and NOT a creature transformation."
     },
     {
       "id": "MUSCLE MONSTER",
       "text": "Muscle Monster",
-      "instructions": "Create the subject's shadow as an absurdly muscular monster version with enormous shoulders, exaggerated arms, huge fists, powerful stance, and comically heroic proportions while the visible subject remains unchanged."
+      "instructions": "Create the subject's cast shadow as an extremely muscular humanoid transformation with enormous shoulders, exaggerated arms, huge fists, powerful stance, and comically heroic proportions while the visible subject remains unchanged."
     },
     {
       "id": "TINY MONSTER",
       "text": "Tiny Monster",
-      "instructions": "Create the subject's shadow as a comically tiny but ferocious monster with an oversized monstrous head, tiny body, tiny claws, and exaggerated threatening pose, making the shadow humorously disproportionate to the subject."
+      "instructions": "Create the subject's cast shadow as a comically tiny but ferocious monster transformation with an oversized monstrous head, tiny body, tiny claws, and exaggerated threatening pose, making the shadow humorously disproportionate to the subject."
     },
     {
       "id": "MOCKING SHADOW",
       "text": "Mocking Shadow",
-      "instructions": "Create the subject's shadow as a humorous, exaggerated imitation of the subject that is deliberately mocking what the subject is doing. The shadow should perform a different, sarcastic, childish, theatrical, or intentionally ridiculous version of the subject's pose, gesture, activity, or body language while remaining clearly recognizable as the subject's own shadow. Do not make the shadow a monster, creature, supernatural being, or horror transformation. The humor must come entirely from the shadow of the subject behaving mockingly toward the visible subject."
+      "instructions": "CRITICAL: DO NOT CREATE A MONSTER SHADOW. DO NOT CREATE A CREATURE SHADOW. DO NOT CREATE A SUPERNATURAL SHADOW. DO NOT CREATE A HORROR TRANSFORMATION. Create ONLY the ordinary HUMAN SHADOW of the subject, but make that human shadow deliberately mock the visible subject by performing a sarcastic, childish, theatrical, silly, or ridiculous HUMAN version of what the subject is doing. The shadow must remain completely human in anatomy and silhouette. For example, if the subject is standing normally, the shadow could be exaggeratedly slouching, dancing, flexing, sticking out its tongue, giving an exaggerated thumbs-down, making a silly gesture, pretending to be bored, or dramatically imitating the subject. The joke must come from the human shadow's behavior, pose, gesture, or body language ONLY. NO claws, horns, fangs, wings, monster anatomy, animal anatomy, supernatural features, monstrous proportions, creature heads, or transformation effects."
     },
     {
       "id": "ABSURD SHADOW",
       "text": "Absurd Shadow",
-      "instructions": "Create the subject's shadow as an absurdly exaggerated version of the subject doing something completely unexpected, ridiculous, or physically impossible in a humorous way. The shadow should remain recognizably human and clearly represent the subject, but its pose, gesture, activity, proportions, or behavior should be wildly different from what the subject is actually doing. Do not make the shadow a monster, creature, supernatural being, or horror transformation. The absurdity must come entirely from the shadow of the subject itself behaving in an unexpected or ridiculous manner."
+      "instructions": "CRITICAL: DO NOT CREATE A MONSTER SHADOW. DO NOT CREATE A CREATURE SHADOW. DO NOT CREATE A SUPERNATURAL SHADOW. DO NOT CREATE A HORROR TRANSFORMATION. Create ONLY the ordinary HUMAN SHADOW of the subject, but make that human shadow perform an absurd, ridiculous, unexpected, or physically impossible HUMAN action. The shadow must remain completely human in anatomy and silhouette. For example, the subject could be standing still while the shadow is doing an exaggerated dance, performing a ridiculous yoga pose, riding an imaginary bicycle, pretending to conduct an orchestra, doing an absurdly dramatic runway pose, juggling imaginary objects, crawling, jumping, moonwalking, or performing another unmistakably human comedic action. The humor must come entirely from the human shadow's action, pose, gesture, or behavior. NO claws, horns, fangs, wings, monster anatomy, animal anatomy, supernatural features, monstrous proportions, creature heads, or transformation effects."
     }
     ],
-    "additionalInstructions": "CORE CONCEPT:\n\n• The visible subject remains a realistic human\n• The transformation, monster, creature, or joke exists primarily within the subject's cast shadow\n• The shadow must appear to originate physically from the subject\n• The shadow must align convincingly with the subject's pose, body orientation, and lighting direction\n• The shadow should reveal an alternate monstrous identity rather than simply being a dark duplicate of the subject\n\nVISUAL STYLE:\n\n• Use a sophisticated vintage cinematic horror-poster aesthetic\n• Photographic realism rather than cartoon rendering\n• Aged cream or warm ivory paper surrounding the composition\n• Deep brown, black, charcoal, and muted sepia tonal range\n• Strong directional lighting with dramatic falloff\n• Restrained orange-red illumination or warm photographic glow where appropriate\n• Subtle distressed print texture\n• Fine film grain\n• Slightly weathered analog photographic character\n• Strong separation between the realistically illuminated subject and the enormous darker shadow\n• Elegant, serious cinematic composition even when the selected shadow is humorous\n\nSHADOW CONSTRUCTION:\n\n• The shadow must be large enough to read immediately\n• Preserve a believable connection between the subject and shadow\n• Match the shadow's direction to the apparent light source\n• Maintain convincing contact points and perspective\n• Allow the monster silhouette to exaggerate anatomy while still reading as the subject's transformation\n• The shadow must remain a silhouette or strongly shadow-based form rather than becoming a second fully rendered creature standing beside the subject\n\nTRANSFORMATION MONSTERS:\n\n• When the selected option represents a transformation monster, make the shadow communicate that the human subject could physically become the creature\n• Preserve recognizable elements of the subject's pose and proportions within the transformed silhouette\n• Werewolf, vampire, Frankenstein, Mr. Hyde, zombie, demon, and similar options should read as alternate monstrous forms of the same subject\n• Avoid generic unrelated monsters that have no visual connection to the subject\n\nFUNNY SHADOWS:\n\n• Humor must come from the shadow transformation itself\n• The visible subject should remain realistically photographed\n• Make the shadow dramatically exaggerate the selected joke\n• Keep the joke visually immediate and understandable without explanatory text\n• Funny does not mean cartoonish; retain the same sophisticated cinematic photographic presentation\n\nNO TEXT:\n\n• Absolutely no text anywhere in the finished image\n• No title\n• No subtitle\n• No movie title\n• No credits\n• No logos\n• No captions\n• No labels\n• No lettering\n• No typography\n• No watermarks\n\nANTI-CHEAT:\n\n• Do not place a separate monster beside the subject\n• Do not turn the entire subject into the monster\n• Do not create a second person wearing a monster costume\n• Do not use a generic monster silhouette unrelated to the subject\n• Do not paste a monster onto the background\n• Do not create multiple subjects or duplicate figures\n• Do not make the shadow float independently from the subject\n• Do not treat the effect as a simple dark drop shadow\n• Do not use cartoon or generic Halloween clip-art aesthetics\n\nFINAL VALIDATION:\n\n• One realistic human subject\n• One dominant transformation or humorous shadow\n• Shadow physically connected to the subject\n• Monster identity immediately recognizable\n• Shadow direction consistent with lighting\n• Vintage cinematic horror-poster presentation\n• Aged cream paper aesthetic\n• Dark photographic tones with restrained warm orange-red illumination\n• Sophisticated realistic texture and film grain\n• No text of any kind\n• No logos or typography\n• No separate monster standing beside the subject\n\nFINAL RESULT:\nThe final image must look like a sophisticated vintage cinematic portrait in which the subject's ordinary human shadow reveals an extraordinary alternate identity, ranging from classic transformation monsters to clever and absurd comedic shadows, while maintaining a dramatic photographic horror-poster aesthetic and absolutely no text."
+    "additionalInstructions": "CORE CONCEPT:\n\n• The visible subject remains a realistic human\n• The selected option determines exactly what the cast shadow represents\n• Monster options create monstrous transformation shadows\n• MOCKING SHADOW and ABSURD SHADOW are deliberate exceptions and MUST NEVER create monster shadows\n• The shadow must appear to originate physically from the visible subject\n• The shadow must remain convincingly connected to the subject's position, lighting direction, perspective, and ground contact\n\nMOCKING SHADOW — ABSOLUTE RULE:\n\n• MOCKING SHADOW MUST BE A NORMAL HUMAN SHADOW\n• It must NOT be a monster\n• It must NOT be a creature\n• It must NOT be an animal\n• It must NOT be supernatural\n• It must NOT be a horror transformation\n• It must NOT have horns, claws, fangs, wings, tentacles, monster heads, animal features, or monstrous anatomy\n• It must NOT transform the subject into another species\n• The shadow must simply be the subject behaving mockingly through exaggerated HUMAN body language\n• The comedy comes from what the human shadow is doing, not from what the shadow has transformed into\n• Think: the subject's ordinary human shadow is sarcastically making fun of the subject\n\nABSURD SHADOW — ABSOLUTE RULE:\n\n• ABSURD SHADOW MUST BE A NORMAL HUMAN SHADOW\n• It must NOT be a monster\n• It must NOT be a creature\n• It must NOT be an animal\n• It must NOT be supernatural\n• It must NOT be a horror transformation\n• It must NOT have horns, claws, fangs, wings, tentacles, monster heads, animal features, or monstrous anatomy\n• It must NOT transform the subject into another species\n• The shadow must simply perform an absurd HUMAN action or pose that the visible subject is not performing\n• The comedy comes from the impossible or ridiculous HUMAN behavior of the shadow\n• Think: the subject's ordinary human shadow is independently doing something ridiculous\n\nOPTION PRIORITY:\n\n• When MOCKING SHADOW is selected, ignore all monster-shadow instructions and create ONLY a mocking human shadow\n• When ABSURD SHADOW is selected, ignore all monster-shadow instructions and create ONLY an absurd human shadow\n• These two options override the general monster-shadow concept\n• Never interpret the words \"shadow\" or \"transformation\" in these two options as permission to create a monster\n• The selected option's specific instructions have priority over generic monster language elsewhere in this preset\n\nVISUAL STYLE:\n\n• Use a sophisticated vintage cinematic horror-poster aesthetic\n• Photographic realism rather than cartoon rendering\n• Aged cream or warm ivory paper surrounding the composition\n• Deep brown, black, charcoal, and muted sepia tonal range\n• Strong directional lighting with dramatic falloff\n• Restrained orange-red illumination or warm photographic glow where appropriate\n• Subtle distressed print texture\n• Fine film grain\n• Slightly weathered analog photographic character\n• Strong separation between the realistically illuminated subject and the darker shadow\n• Maintain the same sophisticated cinematic presentation even for the humorous shadow options\n\nMONSTER TRANSFORMATIONS:\n\n• Werewolf, Dracula, Frankenstein, Mr. Hyde, Mummy, Creature, Swamp Monster, Giant Monster, Skeleton, Zombie, Demon, Witch, Giant Bat, Vampire Bat, Muscle Monster, and Tiny Monster are genuine transformation-monster options\n• These options may create monstrous anatomy because that is their explicit purpose\n• The monster must visually relate to the human subject as an alternate transformed identity\n• Preserve recognizable elements of the subject's original pose and body orientation where possible\n\nHUMAN COMEDIC SHADOWS:\n\n• MOCKING SHADOW and ABSURD SHADOW are NOT transformation-monster options\n• Their silhouettes must remain recognizably human\n• Exaggerate human poses, gestures, actions, and body language rather than anatomy\n• The visible subject remains unaware or unaffected by the shadow's behavior\n• The shadow itself provides the visual joke\n• Keep the humor immediately understandable without text\n\nSHADOW CONSTRUCTION:\n\n• The shadow must be large enough to read immediately\n• Preserve believable connection between subject and shadow\n• Match the shadow's direction to the apparent light source\n• Maintain convincing perspective and contact points\n• Do not make the shadow float independently\n• Do not place a separate creature or person beside the subject\n• The shadow must remain a cast shadow rather than becoming a separate physical character\n\nNO TEXT:\n\n• Absolutely no text anywhere in the finished image\n• No title\n• No subtitle\n• No movie title\n• No credits\n• No logos\n• No captions\n• No labels\n• No lettering\n• No typography\n• No watermarks\n\nANTI-CHEAT:\n\n• Do not place a separate monster beside the subject\n• Do not turn the entire subject into the monster\n• Do not create a second person wearing a monster costume\n• Do not paste a monster onto the background\n• Do not create multiple subjects or duplicate figures\n• Do not make the shadow float independently from the subject\n• Do not treat the effect as a simple generic drop shadow\n• Do not use cartoon or generic Halloween clip-art aesthetics\n• MOST IMPORTANT: When MOCKING SHADOW or ABSURD SHADOW is selected, absolutely do not generate ANY monster, creature, animal, supernatural being, horror transformation, or monstrous anatomy inside the shadow\n\nFINAL VALIDATION:\n\n• One realistic human subject\n• One dominant cast shadow\n• Shadow physically connected to the subject\n• Correct option-specific shadow behavior\n• Monster options = monster transformation shadow\n• MOCKING SHADOW = ordinary human shadow mocking the subject\n• ABSURD SHADOW = ordinary human shadow doing something absurd\n• MOCKING SHADOW contains ZERO monster characteristics\n• ABSURD SHADOW contains ZERO monster characteristics\n• Vintage cinematic horror-poster presentation\n• Aged cream paper aesthetic\n• Dark photographic tones with restrained warm orange-red illumination\n• Sophisticated realistic texture and film grain\n• No text of any kind\n• No logos or typography\n• No separate monster standing beside the subject\n\nFINAL RESULT:\nThe final image must look like a sophisticated vintage cinematic portrait built around one physically connected cast shadow. Monster selections reveal monstrous transformations of the subject, while MOCKING SHADOW and ABSURD SHADOW MUST remain completely ordinary human shadows whose humor comes exclusively from their mocking or absurd HUMAN actions, poses, gestures, and behavior—not from any monster or creature transformation."
   },
   { 
     "name": "MONTY PYTHON STYLE",
@@ -46812,6 +46812,72 @@
     ],
     "randomizeOptions": true,
     "additionalInstructions": "FINAL RESULT:\nThe image should show the subject - clearly recognizable - as a professional champion athlete frozen in the peak moment of their sport, with authentic professional gear, championship venue setting, and professional sports photography quality capturing them as the GOAT (Greatest Of All Time) in an inspirational, safe, and age-appropriate athletic achievement."
+  },
+  {
+    "name": "SPORTS HYPE GRAPHIC",
+    "category": [
+      "SPORTS",
+      "GRAPHIC DESIGN",
+      "POSTER",
+      "TYPOGRAPHY",
+      "OPTIONS",
+      "MASTER PROMPT"
+    ],
+    "message": "Take a picture and rebuild the subject as a modern athletic hype graphic — the layered, typographic composite a professional sports club posts to announce an honor, a signing, a stat line, or a matchup. This is a designed graphic, not a photograph with effects applied to it.\n\nThe defining visual language is: MULTI-SCALE CUTOUT + GIANT WOVEN TYPOGRAPHY + VENUE PLATE + SATURATED TEAM-COLOR GRADE.\n\nCut the subject out of the source image cleanly and place the same subject into the composition at two or more deliberately different scales — one dominant hero instance and at least one smaller secondary instance — each in an athletic pose appropriate to the sport. Behind and through them, set one enormous display word that spans nearly the full width of the frame, and weave the subject's limbs in front of some letterforms and behind others so the type and the athlete physically occupy the same space. Build the base from a darkened, shallow-focus venue plate, then add the small letterspaced micro-typography, the oversized stat numerals, the glow, the grain, and the color grade that make the piece read as a finished club graphic.\n\nPreserve the subject's recognizable identity in every instance. The source image determines WHO the subject is; this preset determines HOW the graphic is designed and assembled.",
+    "options": [
+    {
+      "id": "HONOR",
+      "text": "Player of the Week Honor",
+      "instructions": "Design the graphic as an award announcement. The giant display word names the honor and dominates the middle of the frame; a smaller condensed secondary line sits beneath it against a thin dark bar, and a short letterspaced kicker above it carries the week, round, or conference reference. Include the bottom stat block. The tone is celebratory and official."
+    },
+    {
+      "id": "STAT LINE",
+      "text": "Stat Line Drop",
+      "instructions": "Make the numbers the subject of the design. Run three to four oversized thin numerals across the lower third at very large size, each with a tiny letterspaced label beneath it and hairline rules bracketing the row, and let the stat block occupy as much visual weight as the display word above it. Keep the athlete cutouts cropped tighter so the numerals have room to breathe."
+    },
+    {
+      "id": "MATCHUP",
+      "text": "Gameday Matchup",
+      "instructions": "Design the graphic as a gameday announcement. Split the composition with a hard diagonal or a slash of light, set the display word across the seam, and place date, time, venue, and broadcast information as small letterspaced caps in a tidy row near the bottom. Use opposing color temperatures on either side of the seam."
+    },
+    {
+      "id": "COMMIT",
+      "text": "Commitment Announcement",
+      "instructions": "Design the graphic as a signing or commitment announcement. Feature a large hand-lettered brush-script wordmark sweeping across the middle of the frame with a hard offset shadow in a contrasting color, a smaller script or condensed line nested inside it, and the full-body cutout standing at exaggerated scale over the venue below. Include a class year or graduation-year numeral."
+    },
+    {
+      "id": "NEON",
+      "text": "Neon Tube Backdrop",
+      "instructions": "Build the type layer as glowing neon tubing. Render the largest numerals or letters as hand-bent illuminated tube light suspended in the sky or against the upper background, with visible tube thickness, hot white cores, colored bloom, and light spill onto the athlete and the surrounding surfaces. Push the sky toward a saturated dusk gradient."
+    },
+    {
+      "id": "TYPE WEAVE",
+      "text": "Maximum Type Weave",
+      "instructions": "Make the interlocking of athlete and typography the entire point. Fill the frame with one enormous rough-textured display word and thread arms, legs, equipment, and torso through the counters and gaps of the letterforms so the athlete is unmistakably inside the type rather than layered on top of it. Keep the background quiet and dark so the weave reads cleanly."
+    },
+    {
+      "id": "DUOTONE",
+      "text": "Duotone Spotlight",
+      "instructions": "Collapse the image into a two-color duotone of the primary and secondary team colors, holding only the athlete's skin and the brightest specular highlights near neutral. Use a hard spotlight pool, deep crushed blacks, an aggressive vignette, and a single bright accent color reserved for the display type."
+    },
+    {
+      "id": "SEASON",
+      "text": "Season Opener Hype",
+      "instructions": "Design the graphic as a season or campaign intro. Use a full-bleed venue plate at dusk under stadium lights, a heroic low-angle cutout, an enormous display word broken across two stacked lines, and a vertical column of one-word values in tiny letterspaced caps running up one edge of the frame."
+    },
+    {
+      "id": "PRINT RUN",
+      "text": "Halftone Print Finish",
+      "instructions": "Finish the graphic as an oversized screen-printed poster. Add visible halftone dot structure in the midtones, slight ink misregistration on the display type, paper tooth, edge wear, and a limited spot-color palette, while keeping the multi-scale cutout structure and giant typography intact."
+    },
+    {
+      "id": "RANDOM",
+      "text": "Random Treatment",
+      "instructions": "Randomly select one of the other treatments in this preset and execute it fully and committedly, without blending it with the others."
+    }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "IDENTITY PRESERVATION (CRITICAL):\n\n• Preserve the subject as the same recognizable person in every instance placed in the composition.\n• Preserve facial structure, eye shape and spacing, nose, mouth, jawline, skin tone, hair texture and hairstyle, body type, and apparent age.\n• The large instance and the smaller instance must be the SAME person, not two different people and not the same face pasted at two sizes with no change in pose.\n• Do not substitute a generic athlete, a stock model, or a real public figure for the subject.\n• If the source shows the subject's face clearly, at least one instance must show that face clearly.\n\nCORE STRUCTURE — THE MULTI-SCALE CUTOUT:\n\n• Mask the subject out of the source image with clean, hard, deliberate edges. This is a cutout composite, not a soft blend.\n• Place the same subject into the frame at two or more clearly different scales.\n• One instance is dominant: large, foregrounded, and the primary read of the graphic.\n• One or more secondary instances are smaller, set deeper in the composition, and partially overlapped by the dominant instance, the typography, or both.\n• Give each instance a distinct athletic pose appropriate to the sport — running, cutting, throwing, swinging, shooting, lifting, celebrating, or standing in a set stance — rather than repeating one identical pose at two sizes.\n• Vary the crop between instances: a tight portrait crop against a full or three-quarter body is the strongest pairing.\n• Ground each instance with contact shadow, occlusion, and matched lighting direction so the instances feel physically present in the same scene.\n• Never let the duplication read as an accident. It must read as an intentional design decision.\n\nTYPOGRAPHY WEAVE — THE SIGNATURE MOVE:\n\n• One enormous display word must span nearly the full width of the frame and sit between the layers of the composition, not on top of them.\n• The subject's limbs, equipment, and torso must pass IN FRONT OF some letterforms and BEHIND others within the same word.\n• Occlusion must be physically consistent: where a limb passes behind a letter it is cleanly cut by the letter's edge; where it passes in front it casts a soft shadow onto the letterform.\n• The weave is the element that separates this style from type simply laid over a photo. It is required.\n• Letterforms may be cropped by the frame edges. Partial letters are correct and desirable.\n\nTYPOGRAPHY SYSTEM:\n\n• Primary display: extremely large, heavy, tightly tracked condensed or extended sans, often with a rough brushed, chipped, stencil, or distressed texture eroding its edges.\n• Secondary line: a much smaller condensed italic or light caps line, frequently reversed out of a thin dark bar, set directly beneath or beside the primary word.\n• Kicker: a very small italic or letterspaced caps tag above the display word carrying the week, round, competition, or campaign reference.\n• Optional script layer: a hand-lettered brush script wordmark or a simulated autograph overlaid across the subject at an angle, with a hard offset shadow in a contrasting color.\n• Typography must behave as a structural element with real weight and depth — not as a caption placed in empty space.\n• Type may be flat, extruded, beveled, chrome-finished, or neon-tubed depending on the selected option, but it must always dominate the frame.\n\nMICRO-TYPOGRAPHY:\n\n• Set a name, position abbreviation, and jersey number in very small, widely letterspaced caps near the upper portion of the frame.\n• Run an optional vertical column of single-word values in tiny letterspaced caps up one edge of the frame.\n• Use hairline rules, small registration ticks, and tiny alignment marks to organize these elements.\n• Micro-type must be crisp, correctly spelled, legibly rendered, and small enough to contrast sharply against the display word.\n• Do not generate scrambled, melted, or nonsense lettering anywhere in the composition.\n\nSTAT BLOCK:\n\n• Place a row of two to four oversized numerals across the lower portion of the frame.\n• Set the numerals in a thin, light, wide-tracked face so they contrast with the heavy display word above.\n• Place a tiny letterspaced caps label directly beneath each numeral.\n• Bracket or separate the row with hairline rules.\n• Numerals and labels must be plausible for the sport depicted. Do not invent statistics that do not exist in that sport.\n\nVENUE PLATE AND BACKGROUND:\n\n• Build the base layer from a real, sport-appropriate venue — stadium, arena, field, court, track, pitch, or rink — with believable architecture, playing surface, markings, seating, and lighting.\n• Hold the venue in shallow focus, darkened and desaturated relative to the subject, so it reads as a plate rather than as the photograph's subject.\n• Crowd, floodlights, and environmental haze should be present but soft.\n• Heavy vignette at the corners. The center of the frame is the brightest region.\n• Environmental framing elements — foliage, structural edges, banners, light bars — may enter the extreme edges of the frame.\n• Integrate the subject into the venue. Do not place a cutout in front of an unrelated backdrop.\n\nCOLOR AND GRADE:\n\n• Grade the whole composition to a tight two- or three-color team palette. Every element should feel colored by the same hand.\n• Push saturation hard on the accent colors and crush the blacks deep.\n• Push the shadows toward a cool complementary hue and the highlights toward the warm primary, or invert that relationship — but commit to one direction across the entire frame.\n• Keep the subject's skin tone natural and correctly exposed even inside an aggressive grade. Skin is the anchor.\n• Reserve the brightest, most saturated value in the image for the typography or a single glowing accent.\n\nLIGHT, GLOW AND TEXTURE:\n\n• Rim-light the subject along one edge with a hot, colored, slightly blown-out highlight that separates the cutout from the plate.\n• Bleed soft colored glow inward from one or two corners of the frame, like a light leak.\n• Add halation and bloom around the brightest light sources and around illuminated type.\n• Overlay fine film grain, faint dust, and subtle scanned-print texture across the entire frame, including the typography.\n• Optional slight chromatic offset on the display type edges.\n• Effects must sit under the design, reinforcing depth. They must never obscure the subject's face or break the legibility of the type.\n\nMARKS AND LOCKUPS:\n\n• A small mark or wordmark may sit centered near the top of the frame inside a compact rounded container.\n• A narrow strip of small secondary marks may run along the very bottom edge.\n• All marks, logos, wordmarks, and team identities must be ORIGINAL inventions or must come from the master prompt.\n• Do not reproduce, imitate, or approximate real-world league, club, university, brand, or sponsor logos, wordmarks, or trade dress.\n\nCOMPOSITION AND FORMAT:\n\n• Vertical portrait format, approximately 4:5, suited to a social feed.\n• Read order from top to bottom: mark and micro-type, kicker, giant display word, athlete mass, stat block, mark strip.\n• Build genuine depth through overlap, scale change, occlusion, focus falloff, and shadow — never a flat stack of pasted layers.\n• Keep the subject's face unobstructed and the display word fully legible. Density is the goal; clutter is not.\n• Leave clean negative space around the frame edges so the composition does not feel crowded against the border.\n\nOPTION AUTHORITY:\n\n• The selected option determines the graphic's purpose, layout emphasis, type treatment, and finish.\n• Execute the selected option fully and distinctly. Do not average multiple options together.\n• All structural rules above remain in force regardless of which option is selected.\n\nMASTER PROMPT:\n\n• Any externally provided master prompt overrides preset defaults for sport, pose, action, uniform, team name, colors, jersey number, venue, statistics, wording, and artistic direction.\n• Exact words, names, numbers, and phrases supplied by the master prompt must be reproduced accurately and legibly in the graphic.\n• When the master prompt is silent, infer the sport from the source image, and invent a coherent team identity, palette, and wording that fit it.\n\nANTI-CHEAT:\n\n• Do not deliver the source photograph with a color filter and a word placed over it.\n• Do not place typography flatly on top of the subject with no weaving or occlusion.\n• Do not render the display word small, incidental, or decorative.\n• Do not show only one instance of the subject. The multi-scale repetition is mandatory.\n• Do not show two different people.\n• Do not scatter random duplicate figures. Every instance must serve the designed composition.\n• Do not use a plain gradient, studio sweep, or abstract backdrop in place of a real venue.\n• Do not flatten the piece into a cartoon, painting, or comic rendering. The athlete stays photographic.\n• Do not produce garbled, misspelled, or nonsense lettering.\n• Do not let glow, grain, or effects wash out the face or the type.\n\nFINAL RESULT:\n\nThe finished image must look like a professionally art-directed athletic hype graphic: the same recognizable subject cut out and staged at two or more deliberate scales, an enormous display word woven physically through the athlete's limbs, a darkened venue plate behind them, a disciplined system of tiny letterspaced micro-type and oversized stat numerals, a committed two- or three-color team grade, hot rim light, corner glow, and fine grain over the whole frame. It should look designed, layered, and built — never like a photograph with a filter applied."
   },
   {
     "name": "SPORTS TRADING CARD",
