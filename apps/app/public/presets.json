@@ -810,6 +810,21 @@
     "additionalInstructions": ""
   },
   {
+    "name": "ACRYLIC PAINTING",
+    "category": [
+      "ART",
+      "PAINTING",
+      "ACRYLIC",
+      "ILLUSTRATION",
+      "FINE ART",
+      "MASTER PROMPT"
+    ],
+    "message": "Take a picture and transform the entire image into a flattened, vibrant acrylic painting. Reinterpret every visible subject, object, and environmental element using simplified solid-color shapes. Reduce forms to their essential recognizable silhouettes and color regions. Use bold, opaque acrylic paint with strong, clean areas of color, imperfect hand-painted outlines, slightly wobbly edges, and minimal interior detail. Eliminate realistic shading, cast shadows, gradients, reflections, and dimensional lighting. Every form should read as a flat painted shape rather than a realistically rendered object. Use a lively, confident color palette and a deliberately simplified graphic composition. The result should look like an actual hand-painted acrylic artwork, not a photograph with an acrylic texture filter.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "FLATTENED PAINTING — CRITICAL:\n\n• Transform the entire image, not just the main subject\n• Reduce every visible element to simplified, recognizable shapes\n• Use solid, opaque areas of acrylic color\n• Keep forms visually flat and graphic\n• Use minimal detail and essential silhouettes\n• Simplify complex objects without making them unrecognizable\n\nCOLOR AND EDGES:\n\n• Use vibrant, confident colors\n• Use clearly separated color regions\n• Create hand-painted outlines with slight irregularities\n• Allow subtly wobbly edges and imperfect paint boundaries\n• Use visible but restrained acrylic brush texture\n• Avoid perfectly mechanical vector edges\n\nSTRICTLY FLAT COLOR:\n\n• No gradients\n• No realistic shading\n• No cast shadows\n• No dimensional lighting effects\n• No photorealistic reflections\n• No glossy 3D rendering\n• No airbrushed transitions\n• No elaborate surface detail\n\nANTI-CHEAT:\n\n• Do not simply place an acrylic texture over the original photograph\n• Do not preserve photographic detail\n• Do not use watercolor transparency or watercolor bleeding\n• Do not create an oil painting with thick impasto\n• Do not add unrelated decorative objects or patterns\n• Do not reduce the entire scene to abstract shapes that lose its recognizable content\n\nFINAL RESULT:\nA vibrant, simplified, completely flattened acrylic painting with opaque solid colors, minimal details, imperfect hand-painted outlines, and a distinctly handmade finish."
+  },
+  {
     "name": "ACRYLIC POUR FLUID ART",
     "category": [
       "ART",
@@ -15028,6 +15043,21 @@
     "additionalInstructions": "FINAL RESULT:\nA breathtaking nighttime aerial light display where hundreds of coordinated drones recreate the subject's face in the sky as a massive, glowing, three-dimensional portrait made entirely of individual points of colored light. The image is pointillistic and abstract—recognizable through the arrangement and color of light dots rather than photographic realism. Each drone is a visible pixel of light with dark sky between them, creating a floating constellation portrait that captures the subject's likeness through technological precision and artistic light arrangement. The effect should look like a real drone show, not a projected image or solid light sculpture."
   },
   {
+    "name": "DRONE VIEW",
+    "category": [
+      "PHOTOGRAPHY",
+      "AERIAL",
+      "DRONE",
+      "PERSPECTIVE",
+      "CINEMATIC",
+      "MASTER PROMPT"
+    ],
+    "message": "Take a picture and transform the camera perspective into a realistic aerial drone photograph. Recreate the same scene as if photographed by a drone positioned above the location, looking downward at the subject and surrounding environment. Use a convincing elevated aerial viewpoint, with a natural combination of overhead and oblique perspective depending on the scene. Preserve the identity and recognizable appearance of people, animals, objects, buildings, vehicles, and landscape features. Reconstruct their positions and spatial relationships from the new elevated camera angle. The result should look like an authentic photograph captured by a real drone, with realistic perspective, scale, depth, natural lighting, and photographic detail. Do not simply rotate or tilt the original image; genuinely reinterpret the scene from an elevated aerial camera position.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "DRONE CAMERA POSITION:\n\n• Move the camera to a believable elevated position above the scene\n• Look downward toward the subject and environment\n• Use a natural aerial angle appropriate to the scene\n• The viewpoint may be steep overhead or moderately oblique\n• Choose the angle that best communicates the scene's layout and depth\n• The image must clearly read as a drone photograph, not an ordinary eye-level photograph\n\nSCENE PRESERVATION:\n\n• Preserve the original subject's identity and recognizable appearance\n• Keep the same principal people, animals, objects, and environmental elements\n• Preserve the scene's important spatial relationships\n• Reconstruct visible surfaces and positions consistently from above\n• Maintain believable scale and perspective\n• Do not arbitrarily relocate subjects or objects\n\nAERIAL PHOTOGRAPHIC REALISM:\n\n• Realistic drone-camera optics\n• Natural perspective and depth\n• Convincing overhead shadows\n• Accurate relative scale\n• Natural atmospheric conditions\n• Authentic daylight or nighttime illumination appropriate to the original scene\n• Clear aerial detail without an artificial miniature effect\n\nCAMERA ANGLE:\n\n• For outdoor scenes, show meaningful surrounding ground, terrain, roads, buildings, or landscape\n• For indoor scenes, use a plausible elevated overhead camera position that reveals the room layout\n• For close subjects, retain enough recognizable detail to identify them from above\n• Do not force a perfectly vertical 90-degree angle when an oblique drone view would be more convincing\n\nANTI-CHEAT:\n\n• Do not simply apply a tilt-shift filter to the original image\n• Do not rotate the original image and call it an aerial view\n• Do not create an impossible floating camera position\n• Do not invent a new location or unrelated background\n• Do not duplicate people, animals, or objects to fill the aerial composition\n• Do not make the scene look like a satellite map or video game\n• Do not introduce miniature toy-like proportions unless explicitly present in the scene\n\nFINAL RESULT:\nA realistic aerial drone photograph of the same scene, captured from a believable elevated camera position with convincing downward perspective, preserved subject identity, and coherent spatial relationships."
+  },
+  {
     "name": "DROSTE EFFECT",
     "category": [
       "OPTIONS",
@@ -18386,6 +18416,21 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "FELTED MINIATURE",
+    "category": [
+      "CRAFT",
+      "FIBER ART",
+      "NEEDLE FELTING",
+      "MINIATURE",
+      "STOP MOTION",
+      "MASTER PROMPT"
+    ],
+    "message": "Take a picture and transform the entire scene into a handcrafted needle-felted wool miniature. Recreate the people, animals, objects, architecture, and surroundings as small handmade wool sculptures built from soft, densely felted fibers. Simplify forms into charming rounded shapes while preserving the recognizable identity, hairstyles, clothing, silhouettes, and defining features of the original subjects. Facial details should be minimal, delicately formed from small pieces of colored wool, with simple expressive eyes, noses, and mouths. Make the wool texture unmistakable, with fuzzy fibers, soft edges, tiny imperfections, visible needle-felted surfaces, and subtle variations in fiber direction. The entire environment should become a miniature felted diorama with cozy warm lighting, tactile handmade details, and a charming stop-motion animation aesthetic. The result should look physically crafted from wool, not like smooth plastic toys or digitally rendered cartoon characters.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "NEEDLE-FELTED MATERIAL — CRITICAL:\n\n• Every visible element must be transformed into needle-felted wool\n• People, animals, clothing, furniture, buildings, vegetation, and background elements must all use felted fiber construction\n• Show visible wool fibers and soft fuzzy surfaces\n• Use dense felted shapes with subtle irregularities\n• Include tiny stray fibers, uneven edges, and handmade imperfections\n• Avoid smooth, manufactured surfaces\n\nSUBJECT IDENTITY:\n\n• Preserve recognizable facial structure and distinguishing features\n• Retain recognizable hairstyles, clothing, accessories, and body silhouettes\n• Simplify facial features without making the people generic\n• Use small, delicately felted facial details\n• Keep expressions charming and readable\n\nMINIATURE WORLD:\n\n• Transform the complete scene into a cohesive miniature diorama\n• Maintain the original scene's important spatial relationships\n• Give objects believable miniature scale\n• Use layered felted elements to establish depth\n• Keep the environment consistent with the same handcrafted wool material\n\nVISUAL STYLE:\n\n• Rounded simplified forms\n• Soft fuzzy fibers\n• Warm, gentle illumination\n• Cozy handcrafted color palette\n• Tactile surface detail\n• Charming stop-motion miniature aesthetic\n\nANTI-CHEAT:\n\n• Do not leave any major part of the scene photorealistic\n• Do not use smooth plastic, ceramic, resin, or vinyl toy materials\n• Do not make the subjects look like generic plush toys with no recognizable identity\n• Do not add unrelated miniature props or characters\n• Do not use a flat illustration in place of three-dimensional felted forms\n\nFINAL RESULT:\nA cohesive, charming miniature world that looks entirely handmade from needle-felted wool, with recognizable subjects, visible fibers, rounded forms, and authentic craft imperfections."
   },
   {
     "name": "FERROFLUID SCULPTURE",
@@ -31434,6 +31479,21 @@
     "additionalInstructions": "FINAL RESULT:\nThe image must convincingly depict a genuine Moai statue carved from volcanic stone. The subject should be transformed into a monumental Rapa Nui sculpture whose recognizable facial characteristics have been translated into authentic Moai forms. No living skin, hair, eyes, clothing, or photographic textures should remain visible anywhere in the image."
   },
   {
+    "name": "MODEL KIT",
+    "category": [
+      "TOYS",
+      "MODEL MAKING",
+      "PLASTIC",
+      "MINIATURE",
+      "3D",
+      "MASTER PROMPT"
+    ],
+    "message": "Take a picture and transform the entire scene into a monochromatic plastic model-kit sprue card. Reconstruct the visible people, animals, objects, architecture, vehicles, and environmental details as molded plastic model components attached to an organized injection-molding sprue frame. Select ONE prominent, vibrant color already present in the scene and use that color as the primary plastic material for the entire sprue assembly. Keep people and animals as single, intact molded pieces rather than breaking their bodies into separate limbs or components. Arrange smaller objects and environmental details as individual molded parts attached to the sprue runners. Use realistic injection-molded plastic, fine seams, attachment gates, numbered part positions without readable labels, and subtle molded surface detail. Place the scene's background inside the sprue card as a darker shade of the selected primary color, making it visually distinct from the brighter molded components. The finished image should look like a real, unopened plastic model kit presented on its flat backing card, with the entire original scene reinterpreted as a collectible model kit.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "COLOR SELECTION — CRITICAL:\n\n• Identify one prominent, vibrant color already present in the scene\n• Use that color as the primary plastic color for the sprue components\n• Keep the entire kit monochromatic in that selected color family\n• Use a darker shade of the same color for the backing card and background\n• Do not introduce multiple unrelated plastic colors\n• Preserve enough tonal separation to make individual parts readable\n\nSPRUE CONSTRUCTION:\n\n• Create a recognizable injection-molding sprue frame\n• Include connected runners, branches, and attachment gates\n• Arrange molded components in an organized model-kit layout\n• Make the sprue frame physically plausible\n• Include subtle molded seams and plastic surface details\n• Components should appear manufactured as one-color plastic parts\n\nSUBJECT AND OBJECT CONSTRUCTION:\n\n• Keep each person as one intact molded piece\n• Keep each animal as one intact molded piece\n• Do not separate a person's head, torso, arms, or legs into individual kit parts\n• Reconstruct other scene objects as appropriate molded components\n• Preserve recognizable silhouettes and defining features\n• Retain the spatial and visual relationships that make the original scene recognizable\n\nBACKGROUND:\n\n• The backing card uses a darker shade of the chosen sprue color\n• Represent the scene's background as part of the backing card artwork or molded layout\n• Keep the background visually subordinate to the sprue components\n• The result should read as a model-kit package rather than loose objects on a table\n\nANTI-CHEAT:\n\n• Do not use multiple unrelated plastic colors\n• Do not turn people or animals into disassembled kits\n• Do not leave major scene elements photorealistic\n• Do not create a finished assembled model sitting outside the sprue\n• Do not use a generic toy packaging design unrelated to the scene\n• Do not add brand names, logos, or readable product labels\n\nFINAL RESULT:\nA convincing monochromatic injection-molded model-kit sprue card that reconstructs the original scene as collectible plastic components, with intact people and animals and a darker backing card in the same color family."
+  },
+  {
     "name": "MODERNISM",
     "category": [
       "ART",
@@ -34972,6 +35032,21 @@
     "additionalInstructions": ""
   },
   {
+    "name": "NIGHTTIME FLASH",
+    "category": [
+      "PHOTOGRAPHY",
+      "NIGHTLIFE",
+      "FASHION",
+      "EDITORIAL",
+      "FLASH",
+      "MASTER PROMPT"
+    ],
+    "message": "Take a picture and transform the image into chic, candid nighttime flash photography. Preserve the subject's recognizable identity, facial features, proportions, clothing, and defining appearance. Set the scene at night with a dark, atmospheric background while keeping realistic colors, materials, and environmental details. Illuminate the subject with harsh, direct, on-camera flash, creating strong highlights, glossy skin reflections, deep shadows, and slight flash overexposure. The subject should feel caught in a spontaneous moment rather than carefully posed, with natural expression, movement, and imperfect framing. Create a raw editorial fashion-nightlife aesthetic with high contrast, realistic skin texture, subtle analog film grain, and the unmistakable visual character of direct-flash photography. The result should feel like an intimate, stylish nightlife photograph captured in the middle of an event.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "NIGHTTIME ENVIRONMENT:\n\n• The scene must clearly take place at night\n• Keep the background dark, atmospheric, and naturally underexposed\n• Preserve recognizable existing environmental elements where possible\n• Use realistic nighttime ambient illumination\n• Avoid making the background look like a studio backdrop\n\nDIRECT FLASH — CRITICAL:\n\n• Use harsh direct on-camera flash\n• The subject is strongly illuminated relative to the background\n• Create bright specular highlights and glossy reflections\n• Allow slight overexposure on illuminated skin and clothing\n• Produce deep, defined shadows behind or around the subject\n• Preserve realistic skin texture and material detail\n• Flash should feel immediate, close, and photographic\n\nCANDID EDITORIAL CHARACTER:\n\n• Use spontaneous, unpolished framing\n• Allow slight cropping and imperfect composition\n• Capture natural expressions and energetic body language\n• Include a subtle sense of motion and nightlife activity\n• Avoid stiff studio posing\n• Maintain a stylish, intimate, editorial mood\n\nANALOG FINISH:\n\n• Subtle visible film grain\n• Natural color rendering\n• Strong contrast without artificial HDR\n• Realistic flash color and exposure behavior\n• Slight imperfections that make the photograph feel authentic\n\nANTI-CHEAT:\n\n• Do not turn the scene into a daytime photograph\n• Do not use soft studio lighting as the primary illumination\n• Do not make the background as bright as the flashed subject\n• Do not create an artificial neon cyberpunk environment unless it already exists\n• Do not excessively smooth skin\n• Do not add unrelated people, objects, or nightlife props\n• Do not add text, logos, watermarks, or typography\n\nFINAL RESULT:\nA raw, stylish, high-contrast nighttime photograph with unmistakable direct-flash illumination, spontaneous editorial energy, a dark atmospheric background, and subtle analog film character."
+  },
+  {
     "name": "NIHONGA",
     "category": [
       "ART",
@@ -35300,6 +35375,22 @@
     "randomizeOptions": false,
     "additionalInstructions": "FINAL RESULT:\nA fully reconstructed image formed from iridescent thin-film interference patterns."
   },
+  {
+    "name": "OKTOBERFEST",
+    "category": [
+      "TRAVEL",
+      "CULTURE",
+      "COMEDY",
+      "PHOTOGRAPHY",
+      "VINTAGE",
+      "MASTER PROMPT"
+    ],
+    "message": "Take a picture and transform the scene into a candid 1980s Oktoberfest snapshot. Use the identity of every foreground person as the identity reference, preserving recognizable facial features, facial structure, age, and appearance. Capture everyone mid-laugh, with open mouths, joyful expressions, and eyes crinkled from genuine happiness. Dress each person in traditional, modest Bavarian Oktoberfest attire, including authentic lederhosen, embroidered shirts, dirndls, aprons, and appropriate accessories. Each person is comically overloaded with TEN oversized glass beer steins: five clustered in each hand, with each hand gripping the stein handles. The oversized steins dominate the foreground and largely obscure the hands. Every stein is filled with golden beer and overflowing with thick white foam. Place the scene inside a bustling traditional Oktoberfest beer tent, with lederhosen-clad crowds, a brass band performing on a raised stage, hanging greenery, substantial wooden beams, a blue-and-white Bavarian canopy, and warm glowing bulbs. Use a waist-up, slightly wide-angle composition with the steins dramatically close to the camera. Create the unmistakable look of an authentic 1980s snapshot: warm amber tones, harsh direct camera flash, imperfect exposure, slight soft focus, analog film grain, faded colors, and casual candid framing. Add a period-accurate red-orange digital date stamp in one lower corner, styled like a genuine 1980s camera timestamp. No logos.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "IDENTITY AND PEOPLE:\n\n• Preserve each foreground person's recognizable facial identity\n• Keep the correct number of foreground people\n• Maintain natural human anatomy and believable expressions\n• Every person should appear genuinely delighted and caught in an unposed moment\n\nOKTOBERFEST ENVIRONMENT:\n\n• Create a convincing traditional Bavarian beer tent\n• Include authentic wooden construction, hanging greenery, blue-and-white canopy fabric, and warm bulbs\n• Include a lively crowd and a brass band on a raised stage\n• The environment should feel busy, celebratory, and lived-in rather than staged\n\nSTEINS — CRITICAL VISUAL FEATURE:\n\n• Each person carries five oversized beer steins in each hand, ten per person total\n• Each hand grips the handles of its cluster of steins\n• The steins are oversized, prominent, and packed closely together\n• Hands should be mostly hidden behind the glass steins\n• Beer is golden and the foam is abundant, thick, and visibly overflowing\n• The steins dominate the foreground and create exaggerated wide-angle depth\n• Do not replace the steins with ordinary drinking glasses, mugs without handles, or bottles\n• Make the deliberately excessive number of steins visually obvious\n\n1980s SNAPSHOT AESTHETIC:\n\n• Direct on-camera flash\n• Warm amber cast and faded analog color\n• Slightly soft focus and imperfect exposure\n• Visible film grain and subtle age-related print character\n• Casual, spontaneous framing rather than polished commercial photography\n• Red-orange digital date stamp in a lower corner\n• No modern smartphone-camera aesthetic\n\nANTI-CHEAT:\n\n• Do not turn the scene into a modern beer advertisement\n• Do not add brand names, logos, or readable promotional signage\n• Do not omit the oversized steins or reduce their quantity\n• Do not hide the steins behind the people\n• Do not make the crowd look like a staged costume party\n• Do not add unrelated fantasy or cartoon elements\n\nFINAL RESULT:\nAn exuberant, authentic-looking 1980s Oktoberfest snapshot, with laughing foreground subjects, an absurd abundance of overflowing beer steins, and a richly detailed Bavarian beer tent atmosphere."
+  },
+
   {
     "name": "OLD MACDONALD HAD A FARM",
     "category": [
@@ -37742,12 +37833,27 @@
     "category": [
       "HUMOR",
       "PHOTOGRAPHY",
-      "PORTRAIT"
+      "VINTAGE",
+      "BLACK AND WHITE",
+      "COLLAGE",
+      "PORTRAIT",
+      "MASTER PROMPT"
     ],
-    "message": "Take a picture of the subject(s) and turn it into a classic photo booth strip with 3-4 frames vertically aligned.\n\nEach frame should show a different funny or exaggerated pose or expression. Include props like hats, glasses, silly signs, or hand gestures to increase humor.\n\nBackground should resemble a traditional photo booth curtain, with soft lighting and simple textures. Include slight visual imperfections like film grain, light streaks, or small scratches to emulate a real photo strip.\n\nThe final result should feel like a tangible photo booth keepsake, with high readability, playful exaggeration, and a touch of nostalgia.",
-    "options": [],
-    "randomizeOptions": false,
-    "additionalInstructions": ""
+    "message": "Take a picture and transform it into an authentic, humorous vintage analog photo-booth strip collage in a vertical 9:16 composition. Create exactly THREE separate black-and-white photographic strips arranged side by side. Each strip contains exactly FOUR individual photographs, for a total of TWELVE frames. The strips should be slightly misaligned, individually tilted, and overlapping one another, with thick black borders separating the photographs. Preserve the recognizable facial identity, appearance, outfits, and hairstyles of every person throughout the sequence. Each frame must capture a different funny, spontaneous, exaggerated, or silly pose, expression, or moment. Follow the selected option exactly: WITH PROPS introduces playful photo-booth accessories; NO PROPS uses only the subjects' natural appearance, expressions, poses, and hand gestures, without introducing any new objects or accessories. Vary the framing dramatically: include close-ups, people leaning toward the camera, looking away, laughing, grimacing, making silly faces, interacting, or moving unexpectedly. Some frames may show people partially cropped, extremely close to the lens, or completely outside the frame, creating the unpredictable rhythm of a genuine photo-booth session. Use a traditional photo-booth curtain or simple understated booth background, with harsh direct flash, extreme black-and-white contrast, crushed blacks, blown whites, very few midtones, and occasional lost photographic detail. Add coarse film grain, uneven exposure, slight overexposure, subtle light streaks, small scratches, thick black borders, and very light physical print wear. The final result must look like a tangible, nostalgic analog photo-booth keepsake collage, not a digital contact sheet or polished modern graphic design.",
+    "options": [
+      {
+        "id": "001",
+        "text": "With Props",
+        "instructions": "Include amusing traditional photo-booth props throughout the twelve frames, such as oversized novelty glasses, ridiculous hats, feather boas, silly masks, and playful accessories. Vary which props appear and how the subjects interact with them. Props must be physically believable, naturally held or worn, and should add humor without obscuring recognizable facial features. Do not force props into every frame."
+      },
+      {
+        "id": "002",
+        "text": "No Props",
+        "instructions": "DO NOT ADD ANY NEW PROPS OR ACCESSORIES. Do not introduce hats, novelty glasses, masks, signs, costumes, feather boas, handheld objects, or decorative items. Preserve the subjects' original clothing, hairstyles, and existing accessories. Generate humor exclusively through varied facial expressions, poses, gestures, body language, interactions, and unexpected photographic framing. Keep hands empty unless the original image already shows an object being held."
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "COLLAGE STRUCTURE — ABSOLUTE:\n\n• Create exactly THREE separate vertical photo-booth strips\n• Each strip contains exactly FOUR individual photographs\n• Exactly TWELVE photographic frames in total\n• Arrange the three strips side by side in a vertical 9:16 composition\n• Slightly tilt and misalign the individual strips\n• Allow the strips to overlap one another\n• Give every frame a thick, clearly visible black border\n• Preserve the distinction between all twelve individual photographs\n• The result must read as three physical photo-booth strips arranged into one collage\n\nIDENTITY AND CONTINUITY:\n\n• Preserve the recognizable facial identity of every person across all frames\n• Preserve hairstyles, outfits, and distinguishing appearance\n• Keep the same people throughout the sequence\n• Do not introduce unrelated people or change anyone's identity\n• Expressions, poses, and framing may vary dramatically while identities remain recognizable\n\nSELECTED OPTION — WITH PROPS:\n\n• Include amusing traditional photo-booth accessories when this option is selected\n• Possible props include oversized glasses, ridiculous hats, novelty accessories, feather boas, and silly masks\n• Vary props between frames rather than repeating the same accessory throughout\n• Props must be physically held or worn naturally\n• Props should enhance the humor without hiding recognizable facial features\n• Do not force props into every frame\n\nSELECTED OPTION — NO PROPS:\n\n• Absolutely no new props or accessories may be introduced\n• Do not add hats, glasses, masks, signs, costumes, feather boas, handheld objects, or novelty items\n• Preserve the subjects' original clothing, hairstyles, and existing accessories\n• Generate humor exclusively through facial expressions, poses, gestures, body language, and framing\n• NO PROPS overrides any general instruction suggesting humorous accessories\n\nPHOTO BOOTH HUMOR:\n\n• Every frame should capture a different spontaneous moment\n• Include laughter, exaggerated expressions, silly faces, grimaces, awkward poses, and playful interactions\n• Use varied head positions, hand gestures, and body language\n• Vary camera distance and framing between frames\n• Include extreme close-ups, off-center portraits, partially cropped people, and unexpected compositions\n• Some frames may show only a partial glimpse of a person or may completely miss a person\n• The sequence should feel like a real group of people having fun inside a photo booth\n\nTRADITIONAL PHOTO BOOTH ENVIRONMENT:\n\n• Use a simple traditional photo-booth curtain or understated booth backdrop\n• Keep the background consistent with a real enclosed photo booth\n• Use simple fabric textures and subtle background imperfections\n• Do not create elaborate scenery or unrelated environments\n\nANALOG PHOTOGRAPHIC CHARACTER:\n\n• Strict black-and-white photography\n• Harsh direct on-camera flash\n• Extreme photographic contrast\n• Deep crushed blacks and bright blown-out whites\n• Very few midtones and occasional lost detail\n• Coarse, visible film grain\n• Slight overexposure and uneven exposure between frames\n• Occasional subtle light streaks and small scratches\n• Thick black borders around individual frames\n• Slight physical print wear and imperfect edges\n• Authentic vintage analog photo-booth appearance\n\nANTI-CHEAT:\n\n• Do not create fewer or more than three strips\n• Do not create fewer or more than four frames per strip\n• Do not create fewer or more than twelve frames total\n• Do not arrange the photographs as a regular digital contact sheet\n• Do not use color photography\n• Do not make every frame identical\n• Do not repeat the same pose or expression in every frame\n• Do not turn the result into a polished modern social-media collage\n• Respect the selected option without exception\n• NO PROPS means absolutely no newly introduced props or accessories\n• Do not add captions, labels, dates, logos, watermarks, readable signs, or decorative typography\n\nFINAL VALIDATION:\n\n• Three overlapping vertical photo-booth strips\n• Four distinct photographs per strip\n• Twelve frames total\n• Recognizable people throughout the sequence\n• Varied funny expressions, poses, and framing\n• Props included only when WITH PROPS is selected\n• No newly introduced props when NO PROPS is selected\n• Traditional photo-booth curtain or simple booth background\n• Black-and-white analog photography\n• Harsh direct flash and extreme contrast\n• Thick black borders, grain, and subtle print imperfections\n• Vertical 9:16 composition\n• No text or logos\n\nFINAL RESULT:\nA tangible-looking vintage black-and-white photo-booth collage made from three slightly crooked, overlapping vertical strips, each containing four distinct spontaneous snapshots. The selected option determines whether humorous accessories appear. The result should be funny, expressive, imperfect, heavily photographic, and unmistakably reminiscent of a real analog photo-booth keepsake."
   },
   {
     "name": "PHOTOCHROM LITHOGRAPH",
