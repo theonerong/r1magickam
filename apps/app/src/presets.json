@@ -45249,6 +45249,17 @@
     "additionalInstructions": "FINAL RESULT:\nA layered surface where the image is scratched into the top layer revealing contrasting colors below."
   },
   {
+    "name": "SHADOW",
+    "category": [
+      "ART",
+      "EFFECTS"
+    ],
+    "message": "Take a picture and transform the subject into a solid, opaque shadow figure, as if the subject exists only as a shadow. Preserve the subject's exact silhouette, pose, proportions, facial orientation, hairstyle, clothing outline, and recognizable physical features through their shadow shape. The entire subject must become a single cohesive, completely opaque shadow with no visible surface detail, color, texture, transparency, or photographic features. The shadow should appear naturally integrated into the original scene, while every other part of the photograph remains completely unchanged.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "SUBJECT TRANSFORMATION (CRITICAL):\n\n• Completely transform the subject into a solid, opaque shadow figure.\n• The subject must appear to exist only as a shadow, not as a person wearing dark clothing or covered in a shadow-like material.\n• Preserve the subject's recognizable outer silhouette, body proportions, pose, posture, head shape, hairstyle outline, clothing shape, and position.\n• The shadow must be uniformly dark black, completely opaque, and free of visible internal details.\n• No visible skin, eyes, facial features, clothing patterns, highlights, reflections, texture, or color may remain within the shadow figure.\n• Preserve the natural contours and separation of limbs, fingers, hair, and clothing wherever they are distinguishable in the original image.\n\nBACKGROUND PRESERVATION:\n\n• Everything outside the subject must remain exactly as it appears in the original photograph.\n• Preserve the original background, environment, objects, people, lighting, colors, textures, composition, perspective, and camera framing.\n• Do not turn the background into a shadow scene or apply a global darkening effect.\n• Do not add a wall, floor shadow, light source, spotlight, or other elements that were not present in the original photograph.\n\nANTI-CHEAT:\n\n• Do not simply darken the original photograph or apply a black silhouette filter over a still-visible subject.\n• Do not leave any photographic details visible inside the subject.\n• Do not turn the subject into a black statue, mannequin, sculpture, or person wearing a black bodysuit.\n• Do not alter, replace, embellish, or regenerate the surrounding scene.\n• The transformation applies exclusively to the subject.\n\nFINAL RESULT:\nThe original photograph remains visually unchanged everywhere except the subject, who is now a completely opaque, featureless black shadow figure retaining the exact recognizable silhouette and pose of the original subject."
+  },
+  {
     "name": "SHADOW ART",
     "category": [
       "OPTIONS",
