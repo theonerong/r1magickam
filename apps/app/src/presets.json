@@ -7407,6 +7407,19 @@
     "additionalInstructions": "STYLE ENFORCEMENT:\n• Preserve subject identity with rich tonal rendering\n• Extraordinarily deep, rich shadows\n• Subtle dimensional relief — shadows raised above highlights\n• Smooth continuous tones without grain\n• Reference the carbon transfer process and its practitioners\n• Any pigment color possible but traditionally black or sepia\n• Smooth, high-quality paper support\n• Permanent, archival quality\n• The overall effect should be rich, deep, and technically perfect\n• The deepest blacks achievable in any photographic process"
   },
   {
+    "name": "CARBORUNDUM PRINT",
+    "category": [
+      "ART", 
+      "PRINTMAKING", 
+      "INTAGLIO", 
+      "TEXTURE"
+    ],
+    "message": "Take a picture and transform the entire image into a richly textured carborundum intaglio print. Reconstruct the subject using the distinctive granular, velvety tonal fields produced by an abrasive printing plate. Build deep shadows from dense black ink deposits, midtones from varied granular densities, and highlights from areas where the plate holds little or no ink. Use rough mineral-like textures, irregular stippling, fine engraved contours, dense inked passages, and subtle variations in printed pressure. The subject should have the strong structural clarity of an intaglio print while retaining the tactile, almost sculptural surface quality associated with carborundum printing. Make facial features, anatomy, clothing, and other defining details legible through carefully controlled differences in ink density and grain. Use a limited but expressive printmaking palette, with rich blacks and paper tones as the foundation; restrained additional ink colors may be used where appropriate. The final image must look like a genuine handmade fine-art print pulled from a textured plate, not a photograph with a grain filter.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "The granular plate texture must form the tonal structure of the image. Preserve the subject's identity and recognizable details. Avoid ordinary halftone dots, digital noise, sandpaper pasted onto the image, or a generic distressed-paper effect. Show subtle physical ink character and paper texture without obscuring the subject. Master-prompt instructions concerning subject, pose, setting, mood, action, artistic direction, and selection override preset defaults."
+  },
+  {
     "name": "CARBRO",
     "category": [
       "PHOTOGRAPHY",
@@ -9001,6 +9014,19 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "AUTHENTICITY ENFORCEMENT:\n\n• The image must appear physically printed rather than digitally rendered\n• Colors should appear built from layered lithographic printing processes\n• Printing craftsmanship should be visible throughout the image\n• The final artwork should resemble a collectible nineteenth-century print\n• The image should feel historically authentic\n\nPRINTMAKING ENFORCEMENT:\n\n• Preserve the visual language of traditional chromolithography\n• Preserve antique printing characteristics\n• Preserve historic publishing aesthetics\n• Preserve lithographic craftsmanship\n• Preserve decorative printmaking qualities\n\nSCENE PRESERVATION:\n\n• Preserve subject recognition\n• Preserve object recognition\n• Preserve environmental recognition\n• Preserve scene readability\n• Preserve spatial relationships\n• Preserve storytelling\n\nVISUAL QUALITY:\n\n• Maintain high detail\n• Maintain strong composition\n• Maintain elegant color relationships\n• Maintain museum-quality presentation\n• Maintain period authenticity\n\nFINAL ENFORCEMENT:\n\n• The image must immediately evoke authentic nineteenth-century Chromolithography\n• The image must not resemble a modern digital effect\n• The image must not resemble a filtered photograph\n• The image must look like a genuine antique printed work created using traditional chromolithographic methods."
+  },
+  {
+    "name": "CHROMOSKEDASIC",
+    "category": [
+      "ART", 
+      "PHOTOGRAPHY", 
+      "CHEMICAL", 
+      "EXPERIMENTAL"
+    ],
+    "message": "Take a picture and reinterpret the entire image as an experimental chromoskedasic photographic print. Reconstruct the subject through unusual chemical color formations associated with experimental silver-based photographic processes. Create luminous metallic colors, iridescent edges, unexpected color transitions, delicate chemical halos, and intricate areas of interference-like coloration. Allow colors to shift through copper, bronze, violet, blue, gold, turquoise, and subtle silver tones, with the strongest metallic effects appearing around important contours and areas of tonal transition. Preserve the structure of the subject through carefully controlled light and dark values, even when the colors become highly unconventional. The image should feel like a rare handmade experimental photographic print whose colors emerged through chemical interaction rather than ordinary digital color grading. Maintain the subject's recognizable identity, expression, anatomy, and composition. Transform the complete image into this distinctive chemical photographic aesthetic.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "Make the metallic and iridescent coloration part of the photographic image itself. Do not simply apply a rainbow gradient, chrome material, holographic foil overlay, or metallic skin effect. Preserve tonal separation and recognizable details. Avoid turning the subject into a metallic statue. Master-prompt instructions concerning subject, pose, setting, mood, action, artistic direction, and selection override preset defaults."
   },
   {
     "name": "CHROMOSTEREOPSIS",
@@ -13183,6 +13209,19 @@
     ],
     "randomizeOptions": true,
     "additionalInstructions": "FINAL RESULT:\nThe image should look like an authentic photograph taken during that decade, with the subject fully integrated into the era's fashion, culture, and aesthetic. Every element must be period-accurate \u2014 photography technique, fashion, styling, pose, and presentation. The subject must be recognizable despite the era-appropriate styling. The image should feel genuinely from the period, not a costume party photo."
+  },
+  {
+    "name": "DECALCOMANIA",
+    "category": [
+       "ART", 
+       "SURREAL", 
+       "PAINTING", 
+       "EXPERIMENTAL"
+    ],
+    "message": "Take a picture and transform the entire image into a surrealist decalcomania painting created through the visual process of pressing and separating layers of wet paint. Reconstruct the subject from mirrored paint-transfer formations, branching pigment patterns, irregular pools of color, delicate vein-like structures, organic stains, and unexpected negative spaces. The paint should appear to have been pressed against another surface and peeled apart, leaving intricate accidental textures and symmetrical or partially symmetrical formations. Integrate the subject's recognizable silhouette and defining features into these transferred patterns. Use a rich variety of paint densities: opaque pigment for important structural areas, translucent washes for subtle transitions, and intricate branching textures where the paint has separated. The final result should feel like an authentic experimental surrealist painting, not a conventional portrait with a marbled texture applied over it. Preserve the subject's identity and recognizable anatomy while allowing the transferred paint patterns to become the actual image-making medium. Reconstruct the entire image as paint transfer artwork rather than retaining the original photograph.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "Use decalcomania as the construction method, not merely as a background texture. The subject must emerge from the paint-transfer patterns and remain recognizable. Avoid generic marble, agate, cracked earth, or simple inkblot appearances. Do not add unrelated faces or figures inside the paint patterns. Master-prompt instructions concerning subject, pose, setting, mood, action, artistic direction, and selection override preset defaults."
   },
   {
     "name": "DECOUPAGE",
@@ -20172,6 +20211,19 @@
     "additionalInstructions": "• Preserve recognizable identity while transforming the subject into a mature animated character\n• Apply the selected option exactly\n• Maintain cinematic storytelling and dramatic composition\n• Use strong silhouettes, angular forms, and expressive character acting\n• Create richly crafted environments featuring highways, industrial machinery, weathered architecture, biker culture, and desert landscapes\n• Emphasize neo-noir atmosphere, environmental storytelling, and cinematic mood\n• Preserve the mature animated aesthetic of the game universe\n• Original 1995 Full Throttle style must prioritize authentic VGA adventure-game graphics over illustration quality\n• Original 1995 Full Throttle style must resemble a screenshot from a DOS-era LucasArts adventure game\n• Visible pixel structure is required throughout the image\n• Characters must appear as cel-animated 2D sprites rather than digitally painted figures\n• Use flat-color sprite shading, thick outlines, simplified rendering, and limited-color palettes\n• Backgrounds must resemble Deluxe Paint production artwork with hand-painted scenery and environmental storytelling\n• Favor gameplay-screen aesthetics over promotional artwork aesthetics\n• Vehicles may resemble early polygon-assisted INSANE-engine sequences integrated into 2D scenes\n• Avoid concept-art aesthetics when the Original 1995 option is selected\n• Avoid HD rendering when the Original 1995 option is selected\n• Avoid modern digital painting when the Original 1995 option is selected\n• Avoid painterly character rendering when the Original 1995 option is selected\n• Full Throttle Remastered style should faithfully emulate modern restoration artwork, HD painterly rendering, atmospheric lighting, and contemporary remaster quality\n• Avoid anime, children's-cartoon styles, photorealism, and generic modern animation aesthetics\n• The final image should resemble production artwork, a gameplay screen, a cinematic frame, or an adventure-game scene from the selected option"
   },
   {
+    "name": "FUMAGE",
+    "category": [
+      "ART", 
+      "EXPERIMENTAL", 
+      "SMOKE", 
+      "DRAWING"
+    ],
+    "message": "Take a picture and completely reconstruct the image as a surrealist fumage artwork made with smoke and soot. The entire visible image must appear to have been drawn, deposited, and developed through the movement of smoke across a surface. Build the subject from expressive black soot deposits, delicate smoke trails, soft charcoal-like shadows, wispy edges, accidental smoky textures, and areas of translucent gray. Use the natural behavior of smoke to create both precise recognizable features and unpredictable organic marks. Allow smoke tendrils to follow the contours of the subject, while darker soot accumulations establish the important structural details. The result should resemble an authentic experimental fumage artwork on lightly textured paper, with dramatic tonal contrast and an elegant balance between controlled drawing and chance effects. Preserve the subject's identity, recognizable facial features, anatomy, proportions, and defining details. Reconstruct the subject entirely in the smoke-and-soot medium; do not leave the original photograph visible beneath the effect. Do not depict the subject merely standing in smoke, surrounded by smoke, or covered in soot.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "The subject itself must be created from smoke and soot marks, not presented as a normal photograph with a smoke overlay. Maintain enough tonal precision to make the subject immediately recognizable. Avoid flames, burning buildings, fire effects, or unrelated environmental smoke unless explicitly requested by the master prompt. Master-prompt instructions concerning subject, pose, setting, mood, action, artistic direction, and selection override preset defaults."
+  },
+  {
     "name": "FUN-FLATABLE",
     "category": [
       "FUN",
@@ -21541,6 +21593,19 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "FINAL RESULT:\nA fully transformed Grand Theft Auto-style world where the entire image becomes a realistic, cinematic urban environment. All objects are converted into detailed, real-world equivalents, and any people or animals are transformed into believable open-world characters. If no characters are present, none are added. The result should feel like a scene from a modern GTA game, with grounded realism, environmental detail, and cinematic presentation."
+  },
+  {
+    "name": "GRATTAGE",
+    "category": [
+      "ART", 
+      "PAINTING", 
+      "TEXTURE", 
+      "EXPERIMENTAL"
+    ],
+    "message": "Take a picture and completely reconstruct the image as a surrealist grattage painting. Build the artwork from multiple layers of richly colored paint that have been scraped, scratched, dragged, and selectively removed to reveal the layers underneath. The subject must be formed through this physical process of subtractive painting. Use broad scraped areas for large shapes, fine incised lines for facial features and small details, irregular paint ridges, exposed underlayers, rough pigment fragments, and expressive directional scratches. Let the scraping follow the structure and contours of the subject so that the marks help define its anatomy, expression, clothing, and recognizable features. Combine areas of dense impasto with thinner scraped passages and unexpected color discoveries beneath the surface. The finished image should look like an authentic experimental painting made by placing a textured surface beneath layers of paint and scraping across them to reveal the composition. Preserve the subject's identity and proportions while ensuring that the entire image is reconstructed through layered and scraped paint rather than retaining the original photograph.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "Scraping must actively create the subject's forms and details. Do not simply add scratches, distressed texture, or scratches over a finished photograph. Include visible differences in paint thickness and exposed underlying colors. Keep the subject readable and avoid making the entire image uniformly distressed. Master-prompt instructions concerning subject, pose, setting, mood, action, artistic direction, and selection override preset defaults."
   },
   {
     "name": "GRAVEL PORTRAIT",
@@ -27551,6 +27616,19 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Spontaneous expressive brushwork\n• Sparse elegant composition\n• Black ink with minimal color\n• Calligraphic inscription and seal stamps\n• Scholar's aesthetic sensibility"
+  },
+  {
+    "name": "LITH PRINT",
+    "category": [
+      "ART", 
+      "PHOTOGRAPHY", 
+      "DARKROOM", 
+      "BLACK AND WHITE"
+    ],
+    "message": "Take a picture and completely reinterpret the image as a dramatic lith print produced through the distinctive visual characteristics of lith darkroom printing. Reconstruct the subject with extreme tonal separation, gritty photographic grain, delicate highlight glow, deep inky shadows, and unusual transitions between light and dark. Use the characteristic warm tones of lith printing, including creamy highlights, warm gray midtones, and rich brown-black shadows. Allow grain to cluster into irregular, expressive patterns, especially in darker regions, while maintaining sufficient tonal detail to preserve the subject's recognizable features. Create a handmade darkroom-print appearance with subtle chemical irregularities, luminous edges, and a dramatic atmospheric quality. The subject should retain its identity, proportions, and defining details, but its entire photographic rendering must be rebuilt through the distinctive contrast and grain structure of lith printing. The result should look like a carefully made experimental darkroom photograph rather than a standard black-and-white conversion or a generic vintage filter.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "Emphasize the distinctive lith-print tonal behavior: warm highlights, compressed midtones, strong contrast, and expressive grain. Keep the subject recognizable and avoid losing essential facial details in blocked shadows. Do not substitute ordinary film grain, sepia toning, or a generic distressed vintage effect. Master-prompt instructions concerning subject, pose, setting, mood, action, artistic direction, and selection override preset defaults."
   },
   {
   "name": "LITHOGRAPH",
@@ -35396,6 +35474,19 @@
     "additionalInstructions": "FINAL RESULT:\nA thick oil painting with raised brush strokes and rich texture."
   },
   {
+    "name": "OIL PRINT",
+    "category": [
+      "ART", 
+      "PHOTOGRAPHY", 
+      "ALTERNATIVE PROCESS", 
+      "PRINTMAKING"
+    ],
+    "message": "Take a picture and transform the entire image into a traditional oil print, an alternative photographic printing process with a distinctive pigment-based, handmade appearance. Reconstruct the subject as a carefully printed image formed from dense, tactile pigment rather than ordinary photographic pixels. Use rich pigment deposits, softly blended tonal areas, delicate brush-like edges, subtle variations in ink density, and finely controlled highlights. Preserve the subject's recognizable facial features, anatomy, proportions, and defining details through differences in pigment coverage and tonal structure. The image should combine the tonal depth of a photograph with the tactile qualities of a handmade fine-art print. Include subtle paper texture and slight irregularities that suggest a physical printing process, while keeping the image refined and legible. Use a restrained, sophisticated palette appropriate to the original subject and setting. The result should resemble a genuine historical pictorialist oil print, not an oil painting, an oil-paint filter, or a photograph covered in brushstrokes.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "The subject must be reconstructed as a pigment-based photographic print. Preserve photographic structure and recognizable identity while introducing the handmade qualities of the oil-print process. Do not turn the image into a conventional oil painting or add thick painterly impasto. Avoid leaving the source photograph visible beneath a superficial texture. Master-prompt instructions concerning subject, pose, setting, mood, action, artistic direction, and selection override preset defaults."
+  },
+  {
     "name": "OIL SLICK INTERFERENCE",
     "category": [
       "ART",
@@ -35423,7 +35514,6 @@
     "randomizeOptions": false,
     "additionalInstructions": "IDENTITY AND PEOPLE:\n\n• Preserve each foreground person's recognizable facial identity\n• Keep the correct number of foreground people\n• Maintain natural human anatomy and believable expressions\n• Every person should appear genuinely delighted and caught in an unposed moment\n\nOKTOBERFEST ENVIRONMENT:\n\n• Create a convincing traditional Bavarian beer tent\n• Include authentic wooden construction, hanging greenery, blue-and-white canopy fabric, and warm bulbs\n• Include a lively crowd and a brass band on a raised stage\n• The environment should feel busy, celebratory, and lived-in rather than staged\n\nSTEINS — CRITICAL VISUAL FEATURE:\n\n• Each person carries five oversized beer steins in each hand, ten per person total\n• Each hand grips the handles of its cluster of steins\n• The steins are oversized, prominent, and packed closely together\n• Hands should be mostly hidden behind the glass steins\n• Beer is golden and the foam is abundant, thick, and visibly overflowing\n• The steins dominate the foreground and create exaggerated wide-angle depth\n• Do not replace the steins with ordinary drinking glasses, mugs without handles, or bottles\n• Make the deliberately excessive number of steins visually obvious\n\n1980s SNAPSHOT AESTHETIC:\n\n• Direct on-camera flash\n• Warm amber cast and faded analog color\n• Slightly soft focus and imperfect exposure\n• Visible film grain and subtle age-related print character\n• Casual, spontaneous framing rather than polished commercial photography\n• Red-orange digital date stamp in a lower corner\n• No modern smartphone-camera aesthetic\n\nANTI-CHEAT:\n\n• Do not turn the scene into a modern beer advertisement\n• Do not add brand names, logos, or readable promotional signage\n• Do not omit the oversized steins or reduce their quantity\n• Do not hide the steins behind the people\n• Do not make the crowd look like a staged costume party\n• Do not add unrelated fantasy or cartoon elements\n\nFINAL RESULT:\nAn exuberant, authentic-looking 1980s Oktoberfest snapshot, with laughing foreground subjects, an absurd abundance of overflowing beer steins, and a richly detailed Bavarian beer tent atmosphere."
   },
-
   {
     "name": "OLD MACDONALD HAD A FARM",
     "category": [
@@ -38324,6 +38414,19 @@
     ],
     "randomizeOptions": true,
     "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Each element rotated by the golden angle from the last\n• Spiral families emerge, never drawn explicitly\n• Element size grading smoothly outward\n• Packing tight with no overlaps"
+  },
+  {
+    "name": "PHYTOGRAM",
+    "category": [
+      "ART", 
+      "PHOTOGRAPHY", 
+      "BOTANICAL", 
+      "CAMERALLESS"
+    ],
+    "message": "Take a picture and reconstruct the image as an experimental botanical phytogram, inspired by cameraless photographic processes in which plant material and photochemical reactions create the image. Render the subject as though botanical forms have been placed directly onto photosensitive material and chemically developed. Use translucent leaf silhouettes, delicate veins, stems, petals, organic outlines, subtle chemical blooms, and areas of uneven photographic exposure to build the subject's recognizable features. Integrate botanical structures into the subject's form rather than simply placing leaves around it. Let leaf veins and plant silhouettes create facial contours, anatomy, clothing details, and tonal transitions. Use a restrained photographic palette of warm amber, earthy brown, muted green, cream, and deep botanical shadows, with occasional unexpected chemical color shifts. The result should resemble an experimental handmade photographic print in which plant matter and light have become the tools for constructing the image. Preserve the subject's identity and overall composition while replacing the original photographic rendering with botanical photochemical imagery.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "The botanical forms and photochemical traces must construct the subject itself. Do not simply add leaves, flowers, vines, or a botanical border around an otherwise unchanged photograph. Maintain recognizable facial features and anatomy through carefully arranged plant silhouettes and vein structures. Avoid turning the entire subject into an ordinary leafy sculpture. Master-prompt instructions concerning subject, pose, setting, mood, action, artistic direction, and selection override preset defaults."
   },
   {
     "name": "PI",
@@ -42604,6 +42707,19 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "VISUAL REQUIREMENTS:\n• Crystal-clear resin surface with mirror-like gloss finish\n• Multiple visible layers creating genuine optical depth\n• Tinted resin in jewel tones: deep blues, emeralds, ambers, violets\n• Metallic pigments (gold, copper, silver) creating veining and cellular patterns\n• Embedded elements visible at different depths: glitter, foil, dried flowers\n• Subject's features visible through the layered depth\n• Cell patterns and lacing effects from silicone or heat manipulation\n• Dramatic lighting showing the resin's transparency and depth\n• Reference: contemporary resin artists, geode-inspired resin art"
+  },
+  {
+    "name": "RETICULATION",
+    "category": [
+      "ART", 
+      "PHOTOGRAPHY", 
+      "DARKROOM", 
+      "TEXTURE"
+    ],
+    "message": "Take a picture and transform the image into an experimental darkroom photograph displaying authentic photographic-emulsion reticulation. Reconstruct the subject as a photographic image whose emulsion has developed an intricate network of irregular cells, wrinkles, and interconnected patterns. The reticulated structure must be integrated throughout the image, with its scale and density varying according to the subject's tonal values and surface details. Use fine, delicate networks in important facial and anatomical areas, larger irregular cellular formations in broader tonal regions, and dramatic interlocking patterns in the shadows. Preserve the underlying photographic tonal relationships so the subject remains immediately recognizable. The image should have the appearance of a real darkroom print with a chemically altered gelatin emulsion, including subtle variations in grain, contrast, and surface density. Avoid making the result look like cracked paint, dried mud, reptile scales, or a simple digital crack overlay. The entire image must be reconstructed as a reticulated photographic print rather than leaving the original photograph untouched.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "Reticulation is a photographic-emulsion effect. The irregular cellular network must feel embedded in the photographic image, not raised above it like cracked paint or reptile skin. Keep important identity features readable; do not allow the network to overwhelm eyes, mouths, or other defining details. Master-prompt instructions concerning subject, pose, setting, mood, action, artistic direction, and selection override preset defaults."
   },
   {
     "name": "RETRO COMPUTER INTERFACE",
@@ -54400,6 +54516,19 @@
     "additionalInstructions": "FINAL RESULT:\nAn authentic-looking pirate treasure map on aged parchment with hand-drawn illustrations, cryptic clues, compass rose, sea monsters, and the subject's location marked with a red X."
   },
   {
+    "name": "TRICHROME",
+    "category": [
+      "ART", 
+      "PRINTMAKING", 
+      "PHOTOGRAPHY", 
+      "COLOR"
+    ],
+    "message": "Take a picture and reconstruct the entire image as a traditional three-color trichrome print made from separate color-channel exposures. Build the image from three distinct color components: cyan, magenta, and yellow, each contributing its own shapes, tonal information, and details. Make the separate color layers visibly interact through precise overlaps, subtle registration shifts, and occasional exposed color fringes along contours. The subject must be constructed from the combined information of all three color separations, not simply tinted with three colors. Preserve realistic anatomy, facial features, depth, and recognizable identity by carefully aligning the most important structural details while allowing selected edges and smaller details to show deliberate misregistration. Create rich layered color, complex overlaps, and the distinctive visual character of a handmade three-color print. The final result should feel like an actual multi-pass printing process, with visible evidence of the separate plates and their interaction.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "The three color separations must each contribute to the image's construction. Do not create a simple RGB glitch, three offset copies of the entire subject, or a generic color-channel filter. Preserve legibility of the face and defining features while allowing controlled registration errors elsewhere. Master-prompt instructions concerning subject, pose, setting, mood, action, artistic direction, and selection override preset defaults."
+  },
+  {
     "name": "TRICK OR TREAT",
     "category": [
       "HALLOWEEN",
@@ -57348,6 +57477,19 @@
     }
     ],
     "additionalInstructions": "• Transform ONLY the subject.\n• Keep the background completely unchanged.\n• Preserve the original environment, lighting, perspective, colors, shadows, and every background object exactly as photographed.\n• Completely discard the original subject before reconstruction.\n• Do NOT place water effects over the original person.\n• Do NOT blend photographic textures with liquid effects.\n• Every visible part of the subject must be created entirely from realistic water structures.\n• Preserve the subject's exact identity, facial structure, hairstyle, hair color, expression, age, ethnicity, body proportions, pose, silhouette, and recognizable features.\n• Facial features must emerge solely through the arrangement of water droplets, streams, and liquid surfaces.\n• Every water element must appear physically connected and realistically affected by gravity and motion.\n• Preserve authentic water characteristics including transparency, refraction, surface tension, ripples, droplets, reflections, splashes, and fluid motion.\n• Never flatten water into a blue texture or transparent overlay.\n• Never create a simple splash effect around the original subject.\n• Use thousands of individual droplets and liquid structures depending on image complexity.\n• Recreate eyes, nose, mouth, expression, and facial structure using carefully shaped water forms.\n• Hair must be reconstructed entirely from flowing water strands, droplets, and liquid movement.\n• Clothing must also be rebuilt entirely from water structures.\n• Preserve realistic highlights, shadows, reflections, and depth created by translucent liquid.\n• Include natural water imperfections such as droplets separating, merging, and suspended motion.\n• The final sculpture should appear physically impossible but visually believable.\n• The finished artwork should look like a real high-speed photograph of a handcrafted water sculpture.\n• Master prompt instructions always override the selected option whenever conflicts occur.\n\nFINAL VALIDATION — Before producing the final image, verify ALL of the following:\n\n✓ ONLY the subject has been transformed.\n✓ The background remains completely unchanged.\n✓ No original photographic pixels remain on the subject.\n✓ The subject is entirely reconstructed from water.\n✓ Water is not simply placed over the original subject.\n✓ Individual droplets, streams, splashes, and liquid surfaces remain visible.\n✓ Transparency, reflections, refraction, and fluid physics are realistic.\n✓ Facial features are created through water structure, not retained photography.\n✓ The subject remains immediately recognizable.\n✓ The artwork resembles a genuine water sculpture captured in motion.\n✓ If ANY answer is NO, regenerate the image until every requirement is satisfied."
+  },
+  {
+    "name": "WATERGRAM",
+    "category": [
+      "ART", 
+      "PHOTOGRAPHY", 
+      "WATER", 
+      "EXPERIMENTAL"
+    ],
+    "message": "Take a picture and completely reconstruct the image as an experimental watergram: an image formed through the optical behavior of water, ripples, refraction, reflection, and moving light. The subject must appear to have been captured through a carefully controlled arrangement of water rather than through a conventional camera image. Build recognizable forms from refracted light, overlapping ripple patterns, fluid distortions, caustic highlights, translucent wave boundaries, and subtle reflections. Use concentrated bright lines and curved light patterns to define important contours, while softer fluid gradients establish volume and tonal transitions. The water should act as the image-forming medium, not merely appear as a background or transparent layer in front of the subject. Preserve the subject's identity, proportions, and defining features despite the optical distortions. Create a visually sophisticated experimental photographic artwork with a balance of clarity and fluid abstraction. The original photograph must not remain visible beneath the water effects.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "Treat Watergram as an experimental water-based optical image-making interpretation, not as a claim to reproduce one specific historical photographic process. Water refraction, caustics, and ripples must create the subject's visible structure. Do not simply depict the subject underwater, submerged, wet, or reflected in a puddle. Keep the subject recognizable. Master-prompt instructions concerning subject, pose, setting, mood, action, artistic direction, and selection override preset defaults."
   },
   {
     "name": "WEATHERVANE FIGURE",
