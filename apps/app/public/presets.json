@@ -8406,6 +8406,17 @@
     "additionalInstructions": "FINAL RESULT:\nThe image must look like genuine reality rendered with missing assets, placeholder geometry, and incomplete visual fidelity — as if the universe was released underfunded and unfinished, yet everyone inside it continues as if nothing is wrong."
   },
   {
+    "name": "CHECKERBOARD",
+    "category": [
+      "ART",
+      "EFFECTS"
+    ],
+    "message": "Take a picture and completely reconstruct the subject as a three-dimensional black-and-white checkerboard figure. The subject's entire body, face, hair, clothing, and recognizable features must be formed from a continuous pattern of alternating black and white squares that follows their actual anatomy and contours. Preserve the original subject's identity, proportions, pose, and position. Everything outside the subject must remain exactly as it appears in the original photograph.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "SUBJECT RECONSTRUCTION (CRITICAL):\n\n• Completely reconstruct the subject using a continuous black-and-white checkerboard pattern.\n• The entire subject must be formed from alternating black and white squares, including the head, face, hair, torso, clothing, arms, hands, legs, and all visible body parts.\n• Preserve the original subject's recognizable silhouette, facial structure, hairstyle, proportions, expression, pose, posture, and orientation.\n• The checkerboard pattern must follow the subject's three-dimensional anatomy, wrapping naturally around curved surfaces and changing perspective according to the form of the body.\n• Use clearly defined, consistently sized square tiles wherever possible. Squares may naturally compress, stretch, or change apparent shape to follow perspective and anatomy.\n• Create realistic depth and dimensionality through the geometry and arrangement of the squares, not through photographic skin or clothing details.\n• The pattern must remain strictly black and white, with no additional colors.\n• Ensure that the subject remains recognizable as the original person despite being entirely reconstructed from squares.\n\nBACKGROUND PRESERVATION:\n\n• Everything outside the subject must remain exactly as it appears in the original photograph.\n• Preserve the original background, environment, objects, people, lighting, colors, perspective, and composition.\n• Do not extend the checkerboard pattern onto the floor, walls, background, or surrounding objects.\n• Do not introduce a checkerboard floor or any other new patterned surfaces.\n\nANTI-CHEAT:\n\n• Do not simply apply a checkerboard texture over the original photograph.\n• Do not leave photographic skin, facial features, hair, or clothing visible between the squares.\n• Do not create a flat two-dimensional checkerboard silhouette.\n• Do not turn the subject into a chess piece, game token, or unrelated geometric sculpture.\n• Do not change the subject's original pose, proportions, position, or identity.\n\nFINAL RESULT:\nThe original photograph remains unchanged everywhere except the subject, who is completely reconstructed as a three-dimensional black-and-white checkerboard figure that retains the original person's recognizable identity, anatomy, and pose."
+  },
+  {
     "name": "CHECKMATE",
     "category": [
       "HUMOR",
@@ -34590,6 +34601,17 @@
     "additionalInstructions": "VISUAL REQUIREMENTS:\n• Saturated neon colors: hot pink, electric blue, toxic green, amber\n• Rain-wet surfaces reflecting and multiplying neon light sources\n• Deep shadows between pools of colored light\n• Urban night setting: alleys, storefronts, underpasses\n• Color contrast: warm neon against cool shadow\n• Subject's face lit by multiple colored sources creating split lighting\n• Atmospheric haze or rain catching colored light\n• Cinematic widescreen framing\n• Reference films: Drive, Only God Forgives, Blade Runner 2049, Collateral, Enter the Void"
   },
   {
+    "name": "NEON OUTLINE",
+    "category": [
+      "ART",
+      "EFFECTS"
+    ],
+    "message": "Take a picture and transform the subject into a glowing neon light sculpture made entirely from luminous neon tubes. Reconstruct the subject's complete silhouette, facial contours, hairstyle, clothing, and body details using continuous glowing neon lines. Preserve the original pose, proportions, and recognizable identity. The neon figure must occupy the exact same position as the original subject, while the entire background and everything outside the subject remain completely unchanged.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "SUBJECT RECONSTRUCTION (CRITICAL):\n\n• Completely reconstruct the subject using luminous neon tubing rather than applying a neon filter to the original photograph.\n• Use continuous, physically plausible neon tubes to define the subject's outer silhouette, facial contours, hair, clothing, limbs, fingers, and other recognizable features.\n• Preserve the subject's original identity, pose, posture, proportions, expression, orientation, and position.\n• The neon tubes must form a complete, recognizable three-dimensional figure, not merely an outline around an otherwise unchanged photograph.\n• Use intense luminous colors with realistic glass tubing, bright illuminated cores, colored light spill, and subtle atmospheric glow.\n• Allow different parts of the subject to use complementary neon colors while keeping the overall figure visually cohesive.\n• Ensure the neon construction follows the actual anatomy and clothing contours of the subject.\n\nBACKGROUND PRESERVATION:\n\n• Everything outside the subject must remain exactly as it appears in the original photograph.\n• Preserve the original environment, background, objects, people, lighting, colors, perspective, and composition.\n• Do not turn the scene into a nightclub, neon city, or artificial environment.\n• Neon illumination may subtly affect the immediate area around the subject, but must not replace or substantially alter the background.\n\nANTI-CHEAT:\n\n• Do not simply add a glowing outline around the original photographic subject.\n• Do not leave the original person visible inside the neon construction.\n• Do not turn the subject into a flat two-dimensional drawing or cartoon.\n• Do not add unrelated neon signs, lettering, symbols, or decorative objects.\n• Do not alter anything outside the subject except for subtle, physically plausible light spill.\n\nFINAL RESULT:\nThe original photograph remains unchanged outside the subject. The subject is completely reconstructed as a vivid, glowing, three-dimensional neon tube figure that retains the original person's recognizable identity, pose, and proportions."
+  }, 
+  {
     "name": "NEON SIGN",
     "category": [
       "NEON",
@@ -44164,6 +44186,17 @@
     "additionalInstructions": ""
   },
   {
+    "name": "SCANLINES",
+    "category": [
+      "ART",
+      "EFFECTS"
+    ],
+    "message": "Take a picture and completely reconstruct the subject from tightly spaced horizontal scanlines, as if the subject is a three-dimensional image being displayed through a malfunctioning analog television or electronic scanning system. The lines must collectively reproduce the subject's exact silhouette, facial features, hairstyle, clothing, proportions, and original pose. Create controlled interruptions, horizontal displacement, and subtle signal distortions within the subject while leaving the entire background and everything outside the subject completely unchanged.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "SUBJECT RECONSTRUCTION (CRITICAL):\n\n• Reconstruct the entire subject using hundreds of clearly visible horizontal lines.\n• The horizontal lines must collectively form the subject's complete silhouette, face, hair, clothing, limbs, and recognizable physical details.\n• Preserve the original subject's identity, expression, pose, proportions, orientation, and position.\n• Use tightly spaced horizontal bands that follow the subject's actual contours and create the impression of a complete figure constructed from electronic scanlines.\n• Introduce controlled horizontal displacement, broken lines, small gaps, and subtle signal interference within the subject to create a convincing electronic distortion effect.\n• The distortion must remain organized enough that the subject is immediately recognizable.\n• Use a restrained analog display palette, including black, white, gray, and subtle electronic color variation where appropriate.\n• The subject must be reconstructed from the lines themselves, not simply covered with a scanline texture.\n\nBACKGROUND PRESERVATION:\n\n• Everything outside the subject must remain exactly as it appears in the original photograph.\n• Preserve the original background, environment, objects, people, lighting, colors, perspective, and composition.\n• Do not apply scanlines, glitch effects, color distortion, or television interference to the background.\n• Do not turn the entire photograph into a television screen or add a television frame.\n\nANTI-CHEAT:\n\n• Do not simply overlay horizontal lines on the original photographic subject.\n• Do not leave the original face, skin, clothing, or photographic details visible between the lines.\n• Do not turn the subject into a flat rectangular television image.\n• Do not create random horizontal bars that fail to reconstruct the subject's actual anatomy.\n• Do not distort or replace the background.\n\nFINAL RESULT:\nThe original photograph remains unchanged outside the subject. The subject is entirely rebuilt from horizontal electronic scanlines, with controlled analog signal distortions that preserve the person's recognizable identity, silhouette, and original pose."
+  },
+  {
     "name": "SCANOGRAPHY",
     "category": [
       "ART",
@@ -50507,6 +50540,58 @@
     }
     ],
     "additionalInstructions": "• Transform ONLY the subject.\n• Keep the background completely unchanged.\n• Preserve the original environment, lighting, perspective, colors, shadows, and every background object exactly as photographed.\n• Completely discard the original subject before reconstruction.\n• Do NOT place sushi ingredients over the original person.\n• Do NOT blend photographic textures with food.\n• Every visible part of the subject must be created entirely from real sushi ingredients.\n• Preserve the subject's exact identity, facial structure, hairstyle, hair color, expression, age, ethnicity, body proportions, pose, silhouette, and recognizable features.\n• Facial features must emerge solely through intelligent placement of sushi ingredients.\n• Every ingredient must remain recognizable as real sushi material.\n• Preserve authentic rice texture, individual grains, nori sheets, fish texture, vegetable slices, and glossy food surfaces.\n• Never flatten ingredients into simple colors.\n• Never create a smooth digital food texture.\n• Use realistic layering, stacking, and three-dimensional depth.\n• Rice should remain visibly composed of individual grains.\n• Fish should retain realistic marbling and texture.\n• Nori should maintain its dark seaweed appearance.\n• Hair must be reconstructed entirely from appropriate sushi ingredients.\n• Clothing must also be rebuilt entirely from sushi ingredients.\n• Recreate eyes and facial details through careful ingredient placement while maintaining the subject's expression.\n• Include realistic shadows, moisture, and food texture.\n• The finished artwork should look like a real handcrafted sushi portrait photographed by a professional food photographer.\n• Master prompt instructions always override the selected option whenever conflicts occur.\n\nFINAL VALIDATION — Before producing the final image, verify ALL of the following:\n\n✓ ONLY the subject has been transformed.\n✓ The background remains completely unchanged.\n✓ No original photographic pixels remain on the subject.\n✓ The subject is entirely reconstructed from real sushi ingredients.\n✓ Sushi ingredients are not simply placed over the original subject.\n✓ Individual ingredients remain clearly visible.\n✓ Food textures and materials are realistic.\n✓ The subject remains immediately recognizable.\n✓ The artwork resembles a genuine handcrafted sushi mosaic.\n✓ If ANY answer is NO, regenerate the image until every requirement is satisfied."
+  },
+  {
+    "name": "SWARM",
+    "category": [
+      "ART", 
+      "EFFECTS"
+    ],
+    "message": "Take a picture and completely reconstruct the subject as a living formation of the selected swarming creatures. The creatures must collectively form the subject's exact recognizable silhouette, body proportions, facial contours, hairstyle, clothing shape, and original pose. The subject must be made entirely from the creatures rather than remaining visible beneath or behind them. Keep the original background and everything outside the subject completely unchanged.",
+    "randomizeOptions": true,
+    "options": [
+      {
+        "id": "BUTTERFLIES",
+        "text": "Reconstruct the entire subject from a dense, carefully arranged swarm of realistic butterflies. Use butterflies of varied sizes and natural wing positions to form the subject's complete silhouette, anatomy, face, hair, clothing, and pose. Their collective arrangement must clearly reproduce the original subject rather than simply surrounding them."
+    },
+    {
+      "id": "MOTHS",
+      "text": "Reconstruct the entire subject from a dense swarm of realistic moths. Use varied moth species, wing patterns, sizes, and overlapping wings to create the subject's recognizable silhouette, facial contours, hair, clothing, and original pose."
+    },
+    {
+      "id": "BIRDS",
+      "text": "Reconstruct the entire subject from a tightly coordinated flock of small realistic birds. Their bodies, wings, and overlapping forms must collectively define the subject's complete silhouette, anatomy, facial contours, clothing, and original pose."
+    },
+    {
+      "id": "FIREFLIES",
+      "text": "Reconstruct the entire subject from a dense swarm of tiny glowing fireflies. Their luminous bodies and carefully arranged positions must define the complete subject silhouette, facial contours, hair, clothing, limbs, and original pose. Use concentrated clusters of lights to make the subject clearly recognizable."
+    },
+    {
+      "id": "BEES",
+      "text": "Reconstruct the entire subject from a dense swarm of realistic honeybees. Their bodies, wings, and overlapping forms must collectively create the subject's complete silhouette, anatomy, face, hair, clothing, and original pose."
+    },
+    {
+      "id": "LADYBUGS",
+      "text": "Reconstruct the entire subject from hundreds of realistic ladybugs. Arrange their red shells and black markings tightly together to form the subject's complete silhouette, facial contours, hair, clothing, and original pose."
+    },
+    {
+      "id": "DRAGONFLIES",
+      "text": "Reconstruct the entire subject from a dense arrangement of realistic dragonflies. Their elongated bodies and delicate transparent wings must collectively define the subject's complete anatomy, silhouette, facial contours, clothing, and original pose."
+    },
+    {
+      "id": "LOCUSTS",
+      "text": "Reconstruct the entire subject from a dense swarm of realistic locusts. Their bodies, legs, and wings must overlap and interlock to form the subject's complete silhouette, facial contours, clothing, and original pose."
+    },
+    {
+      "id": "FISH",
+      "text": "Reconstruct the entire subject from a tightly coordinated school of small realistic fish. Their bodies, fins, and overlapping forms must collectively reproduce the subject's silhouette, anatomy, facial contours, clothing, and original pose."
+    },
+    {
+      "id": "BATS",
+      "text": "Reconstruct the entire subject from a dense swarm of realistic bats. Their bodies and folded or extended wings must collectively define the subject's complete silhouette, anatomy, facial contours, clothing, and original pose."
+    }
+  ],
+  "additionalInstructions": "SUBJECT RECONSTRUCTION (CRITICAL):\n\n• Completely replace the original subject with a dense, cohesive formation of the selected creatures.\n• The swarm itself must construct the subject's entire body, head, face, hair, clothing, limbs, and recognizable details.\n• Preserve the original subject's identity through their recognizable silhouette, facial structure, hairstyle outline, body proportions, pose, posture, and expression.\n• Arrange the creatures closely enough that their collective formation creates a solid, readable subject rather than a loose cloud or vague approximation.\n• Use the individual creatures' natural anatomy, colors, textures, wings, and body shapes. Do not turn them into abstract particles or generic dots.\n• The swarm must follow the actual contours of the subject. Maintain recognizable separation between arms, legs, fingers, head, and torso wherever visible in the original.\n• A small number of creatures may fly just beyond the subject's silhouette to suggest movement, but the main subject must remain clearly formed and recognizable.\n\nBACKGROUND PRESERVATION:\n\n• Everything outside the original subject must remain exactly as it appears in the source photograph.\n• Preserve the original background, environment, objects, people, lighting, colors, perspective, and framing.\n• Do not add a swarm throughout the background or introduce unrelated creatures.\n\nANTI-CHEAT:\n\n• Do not leave the original photographic subject visible underneath, inside, or between the creatures.\n• Do not merely surround the person with a swarm.\n• Do not create a cloud shaped vaguely like a person; the creatures themselves must form the complete subject.\n• Do not change the subject's pose, proportions, position, or identity.\n• Do not add extra body parts, duplicate limbs, or unrelated objects.\n\nFINAL RESULT:\nThe original scene remains intact, but the subject has been entirely reconstructed from the selected creatures, forming a detailed, recognizable living swarm sculpture that faithfully reproduces the original subject's appearance and pose."
   },
   {
     "name": "SYMBOLISM",
