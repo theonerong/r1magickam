@@ -13985,6 +13985,19 @@
     "additionalInstructions": "IDENTITY PRESERVATION (CRITICAL):\n\n• The transformed cartoon character must clearly resemble the subject\n• Preserve distinctive facial traits\n• Preserve facial proportions\n• Recognition must come from the transformed cartoon character itself\n\nANTI-CHEAT:\n\n• Do not create a generic cartoon character\n• Do not create a face swap\n• Do not paste the subject into animation artwork\n• Do not replace the subject's identity with existing franchise characters\n\nFINAL RESULT:\nThe subject must become an authentic DiC Entertainment cartoon character rendered entirely in the selected franchise universe while remaining immediately recognizable as the original subject."
   },
   {
+    "name": "DICHROIC GLASS",
+    "category": [
+      "TRANSFORMATION",
+      "GLASS",
+      "IRIDESCENT",
+      "SCULPTURE"
+    ],
+    "message": "Take a picture and completely reconstruct the subject as an extraordinary three-dimensional dichroic glass creation. The entire subject must be made from translucent, light-reactive dichroic glass, with different colors appearing to shift and change according to viewing angle, thickness, and the direction of illumination. Preserve the subject's recognizable identity, silhouette, facial features, anatomy, proportions, pose, and defining characteristics. Rebuild every visible part of the subject using carefully formed glass surfaces, curved transparent sections, layered glass structures, and sculptural contours. Create the distinctive optical behavior of dichroic glass: brilliant transitions between violet, blue, turquoise, emerald, gold, magenta, and other iridescent hues, with different colors visible in reflected and transmitted light. Incorporate realistic internal reflections, subtle refraction, transparent edges, thicker areas of concentrated color, delicate optical distortions, and luminous highlights. Allow the underlying structure to remain visible through translucent sections, while more substantial glass areas create rich, saturated color. The result should look like an exceptionally crafted contemporary glass sculpture photographed in a professional studio, with realistic glass thickness, physical depth, polished surfaces, and intricate optical behavior. The subject itself must be reconstructed from dichroic glass rather than simply coated in an iridescent finish.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "Every part of the subject must genuinely appear to be made from dichroic glass. Do not retain ordinary skin, hair, clothing, or other original materials beneath a rainbow-colored coating. Do not turn the subject into stained glass, a glass mosaic, a crystal sculpture, a hologram, or a metallic chrome object. Preserve recognizable facial structure and anatomy through the glass construction. Use physically believable transparency, reflection, refraction, and thickness. Avoid excessive rainbow effects that obscure the subject's identity. The background should remain unchanged unless the master prompt specifies a different environment. Master-prompt instructions concerning subject, pose, setting, mood, action, artistic direction, and selection override all preset defaults."
+  },
+  {
     "name": "DICTIONARY",
     "category": [
       "TEXT",
@@ -19357,6 +19370,19 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "HOLOGRAPHIC PANE ENGINE (ABSOLUTE):\n\n• Render the subject on or inside a large transparent glass/acrylic pane suspended in front of a dark distant background\n• The pane must be visibly detached from the rear environment by empty spatial gap\n\nGLASS PANE VISIBILITY:\n\n• Pane edges must be visible through reflections and faint glass borders\n• Subtle transparency mandatory\n• Pane should catch white specular reflections\n\nSUBJECT HOLOGRAM:\n\n• Subject appears luminous, crisp, and embedded on the pane surface\n• Subject should be brightest object in image\n• Subject must feel suspended in front of background space\n\nBACKGROUND RECESSION:\n\n• Background should be dark, low-detail, distant, and heavily recessed\n• Rear environment should feel several feet behind pane\n\nPANE SHADOW / LIGHT GAP:\n\n• Add faint shadow or light diffusion behind the glass to show pane separation from rear wall\n• There must be obvious air distance between pane and background\n\nEDGE LIGHTING:\n\n• Glass borders may glow subtly with reflected light\n• Subject edges can carry faint holographic luminosity\n\nSPATIAL EFFECT:\n\n• Viewer must feel they are looking at a foreground floating transparent screen with the subject trapped on it\n\nANTI-CHEAT:\n\n• Do not simply make a sci-fi portrait\n• Must visibly include the suspended pane plane\n• Background cannot remain attached to subject plane\n\nQUALITY:\n\n• Strong pane detachment\n• Crisp luminous foreground\n• Dark rear recession\n• Excellent optical hover depth"
+  },
+  {
+    "name": "FLOCKED VELVET",
+    "category": [
+      "TRANSFORMATION",
+      "TEXTURE",
+      "FIBERS",
+      "COLLECTIBLE"
+    ],
+    "message": "Take a picture and completely reconstruct the subject as a beautifully detailed flocked velvet object. The entire subject must be covered in densely packed microscopic fibers that create the distinctive soft, velvety surface of flocked collectibles, luxury packaging, miniature display figures, and tactile decorative objects. Preserve the subject's exact recognizable identity, silhouette, facial features, anatomy, proportions, pose, clothing, and defining characteristics. Rebuild the subject as a solid three-dimensional form with a uniform layer of extremely fine, short fibers bonded to its surface. The fibers should create a soft matte appearance with subtle directional variations, delicate light absorption, and gentle changes in shading as the fiber nap follows the contours of the form. Use realistic flocking density: smooth, even coverage across broad surfaces, with finer definition around facial features, hair, clothing boundaries, and small structural details. The subject should look and feel like a premium flocked figurine or sculptural collectible, with the recognizable original form preserved beneath the fiber construction. Create convincing tactile detail, realistic soft shadows, subtle fiber direction, and carefully controlled studio lighting. The final result must be a fully reconstructed flocked object, not an ordinary photograph with a fuzzy texture filter applied.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "The subject must be reconstructed as a flocked object, with densely packed short fibers forming its entire visible surface. Do not use long fur, wool, shag carpeting, feathers, plush fabric, or fuzzy cartoon textures. Flocking fibers should be short, fine, uniform, and densely distributed. Preserve the subject's identity and important small details; do not allow the fibers to erase eyes, facial expressions, fingers, or other defining features. The result should resemble a real manufactured flocked collectible with convincing three-dimensional structure, not a flat illustration. Do not change the subject's original color scheme unless necessary to reproduce the material realistically or explicitly directed by the master prompt. The background should remain unchanged unless the master prompt specifies a different environment. Master-prompt instructions concerning subject, pose, setting, mood, action, artistic direction, and selection override all preset defaults."
   },
   {
     "name": "FLUOROSCOPY",
@@ -35181,6 +35207,19 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "ABSOLUTE PROHIBITIONS:\n• Do NOT modernize the scene.\n• Do NOT add extra figures.\n• Do NOT exaggerate expressions.\n• Do NOT break Hopper’s geometry.\n\nFINAL RESULT:\nThe image must look like a faithful Hopper oil painting where the subject appears as if they were always part of Nighthawks — quiet, distant, and frozen in time — while the rest of the diner and exterior remain fully intact, unaltered, and visually consistent.\n\nCORE REQUIREMENT:"
+  },
+  {
+    "name": "NIGHT STREET PHOTOGRAPHY",
+    "category": [
+      "PHOTOGRAPHY",
+      "STREET",
+      "NIGHT",
+      "CINEMATIC"
+    ],
+    "message": "Take a picture and transform it into a sophisticated nighttime street photograph captured by an accomplished urban documentary photographer. Preserve the subject's exact identity, recognizable facial features, anatomy, proportions, clothing, expression, and defining characteristics. Place the subject naturally within a believable nighttime urban environment, using the visual atmosphere of real city streets after dark. Create a rich interplay of practical light sources: illuminated storefronts, streetlamps, traffic signals, passing headlights, window light, signs, and reflections from surrounding buildings. Wet pavement may create beautiful reflections when appropriate, but do not automatically make every street wet or rainy. Use a compelling photographic composition with authentic street-level perspective, carefully controlled highlights, deep but detailed shadows, and natural environmental depth. Incorporate subtle motion from passing vehicles or pedestrians when it enhances the scene, while keeping the main subject sharply and clearly captured. Use realistic low-light photographic characteristics, including controlled high-ISO grain, natural color separation, realistic exposure falloff, and nuanced mixed lighting. The color palette should emerge naturally from the actual light sources, combining warm tungsten illumination, cooler ambient shadows, and restrained urban color. The finished image should feel like an exceptional photograph captured on location in a vibrant city at night: atmospheric, spontaneous, visually layered, and completely believable.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "The subject must remain the unmistakable focal point while feeling naturally integrated into the nighttime environment. Do not automatically turn the scene into cyberpunk, science fiction, a neon-soaked fantasy city, or a rainy movie set. Avoid excessive neon, artificial glowing outlines, exaggerated lens flares, extreme color grading, and generic stock-photo compositions. Use believable city lighting and physically plausible reflections. Preserve the original subject's identity and appearance. If the master prompt specifies a particular location, setting, action, or atmosphere, use that instead of inventing an urban street scene. Master-prompt instructions concerning subject, pose, setting, mood, action, artistic direction, and selection override all preset defaults."
   },
   {
     "name": "NIGHT VISION",
