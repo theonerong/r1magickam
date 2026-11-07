@@ -4123,29 +4123,24 @@
     "message": "Take a picture and transform its appearance into a digital data-stream visualization. Preserve a recognizable reconstruction of the subject while covering and interweaving the image with dense, translucent rows of Base64-style encoded character sequences. The characters should resemble the raw encoded data of a digital image being streamed, with scrolling text fragments, overlapping data rows, and varying levels of transparency.",
     "options": [
       {
-        "id": "001",
-        "name": "DENSE DATA STREAM",
-        "description": "Heavy overlapping rows of Base64 characters with the subject partially obscured."
+        "id": ": "DENSE DATA STREAM",
+        "text": "Heavy overlapping rows of Base64 characters with the subject partially obscured."
       },
       {
-        "id": "002",
-        "name": "GHOST DATA",
-        "description": "Faint, translucent Base64 character streams with the subject clearly visible beneath them."
+        "id": "GHOST DATA",
+        "text": "Faint, translucent Base64 character streams with the subject clearly visible beneath them."
       },
       {
-        "id": "003",
-        "name": "CORRUPTED TRANSMISSION",
-        "description": "Broken character sequences, interrupted data rows, and fragmented streaming patterns."
+        "id": "CORRUPTED TRANSMISSION",
+        "text": "Broken character sequences, interrupted data rows, and fragmented streaming patterns."
       },
       {
-        "id": "004",
-        "name": "VERTICAL DATA RAIN",
-        "description": "Vertical columns of encoded characters cascading across the subject."
+        "id": "VERTICAL DATA RAIN",
+        "text": "Vertical columns of encoded characters cascading across the subject."
       },
       {
-        "id": "005",
-        "name": "DATA RECONSTRUCTION",
-        "description": "The subject appears to assemble from dense streams of encoded characters."
+        "id": "DATA RECONSTRUCTION",
+        "text": "The subject appears to assemble from dense streams of encoded characters."
       }
     ],
     "randomizeOptions": true,
@@ -5168,29 +5163,24 @@
     "message": "Take a picture and transform it into a visually corrupted digital image inspired by a bitwise XOR operation applied to raw pixel data. Reconstruct the subject with structured, grid-aligned disruptions, abruptly altered pixel values, broken rectangular image regions, and patterns resembling a corrupted computer memory buffer. The result should look like the image data itself has been mathematically altered, not like random static has been placed over a photograph.",
     "options": [
       {
-        "id": "001",
-        "name": "FIXED XOR MASK",
-        "description": "Consistent binary-pattern corruption producing repeated geometric disruptions."
+        "id": "FIXED XOR MASK",
+        "text": "Consistent binary-pattern corruption producing repeated geometric disruptions."
       },
       {
-        "id": "002",
-        "name": "MEMORY BUFFER FAILURE",
-        "description": "Large rectangular blocks of corrupted pixel information and abrupt data discontinuities."
+        "id": "MEMORY BUFFER FAILURE",
+        "text": "Large rectangular blocks of corrupted pixel information and abrupt data discontinuities."
       },
       {
-        "id": "003",
-        "name": "BIT PLANE CORRUPTION",
-        "description": "Selected binary significance patterns produce unusual tonal and color distortions."
+        "id": "BIT PLANE CORRUPTION",
+        "text": "Selected binary significance patterns produce unusual tonal and color distortions."
       },
       {
-        "id": "004",
-        "name": "XOR STRIPES",
-        "description": "Horizontal and vertical bands of mathematically patterned pixel corruption."
+        "id": "XOR STRIPES",
+        "text": "Horizontal and vertical bands of mathematically patterned pixel corruption."
       },
       {
-        "id": "005",
-        "name": "RECURSIVE XOR",
-        "description": "Repeated geometric corruption patterns at multiple scales."
+        "id": "RECURSIVE XOR",
+        "text": "Repeated geometric corruption patterns at multiple scales."
       }
     ],
     "randomizeOptions": true,
@@ -10072,29 +10062,24 @@
     "message": "Take a picture and reconstruct it as a luminance-driven transparency map. Convert the image's brightness values into transparency: dark regions progressively disappear while bright regions become increasingly solid and visible. The result should resemble a ghostly photographic stencil made from varying degrees of transparency, with the original subject reconstructed entirely through the relationship between light and opacity.",
     "options": [
       {
-        "id": "001",
-        "name": "BLACK DISAPPEARS",
-        "description": "Black vanishes completely, dark gray becomes transparent, and bright regions remain solid."
+        "id": "BLACK DISAPPEARS",
+        "text": "Black vanishes completely, dark gray becomes transparent, and bright regions remain solid."
       },
       {
-        "id": "002",
-        "name": "WHITE DISAPPEARS",
-        "description": "Bright regions vanish while dark regions become solid stencil shapes."
+        "id": "WHITE DISAPPEARS",
+        "text": "Bright regions vanish while dark regions become solid stencil shapes."
       },
       {
-        "id": "003",
-        "name": "GHOST GRADIENT",
-        "description": "A continuous transparency gradient creates a spectral, partially disappearing subject."
+        "id": "GHOST GRADIENT",
+        "text": "A continuous transparency gradient creates a spectral, partially disappearing subject."
       },
       {
-        "id": "004",
-        "name": "HARD ALPHA CUTOUT",
-        "description": "A strict brightness threshold creates sharply defined transparent and opaque regions."
+        "id": "HARD ALPHA CUTOUT",
+        "text": "A strict brightness threshold creates sharply defined transparent and opaque regions."
       },
       {
-        "id": "005",
-        "name": "INVERTED GHOST",
-        "description": "Use inverted luminance values to create an eerie transparency pattern."
+        "id": "INVERTED GHOST",
+        "text": "Use inverted luminance values to create an eerie transparency pattern."
       }
     ],
     "randomizeOptions": true,
@@ -15768,6 +15753,20 @@
     "additionalInstructions": "CHROME ENFORCEMENT (FOR SUBJECT, CRITICAL):\n\n• Mirror reflectivity on the subject is mandatory.\n• The finish on the subject must immediately appear electroplated.\n• Preserve perfectly smooth chrome throughout the subject.\n• Eliminate all visible material beneath the plating on the subject.\n\nBACKGROUND ENFORCEMENT (CRITICAL):\n\n• Retain the background exactly as it is in the original image. The transformation applies *only* to the subject.\n\nFINAL ENFORCEMENT:\n\n• The subject should be indistinguishable from a professionally triple-plated automotive chrome component, all while integrated naturally into the original, unchanged background environment."
   },
   {
+    "name": "ELECTROSTATIC PORTRAIT",
+    "category": [
+      "MATHEMATICAL", 
+      "GENERATIVE ART", 
+      "PORTRAIT", 
+      "FIELD LINES", 
+      "SCIENTIFIC ART"
+    ],
+    "message": "Take a picture and completely reconstruct the subject using intricate electrostatic field lines. Create a complex system of curved lines that bend, converge, diverge, and interact as though the subject's entire body were an extraordinary arrangement of electric charges. The field lines must form the subject's actual face, hairstyle, clothing, limbs, and body silhouette. Use tightly concentrated lines to define detailed facial features and broader sweeping curves to establish the larger anatomy. The result should resemble a mesmerizing scientific visualization in which an invisible electric field has taken the precise shape of the original subject.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "The electric field lines must reconstruct the subject rather than appear as electrical effects surrounding an unchanged photograph. Every visible part of the subject must be formed by the paths of the field lines. Use physically plausible field-line behavior wherever possible: smooth curves, coherent directional flow, convergence and divergence around implied positive and negative charge regions, and carefully controlled line spacing. Use the distribution of the field lines to establish facial structure, eyes, nose, mouth, hair, clothing folds, and body volume. Preserve the subject's identity and distinctive physical characteristics. The field lines should follow the actual form of the person, not merely create an abstract electrical diagram. Avoid lightning bolts, electrical sparks, glowing outlines, random energy effects, or a conventional portrait with field lines layered on top. Do not add visible charge symbols, equations, or labels unless requested. The original photograph must be completely replaced by the mathematical reconstruction. Preserve the original background unless the master prompt specifies otherwise. Any subject, pose, setting, mood, action, artistic direction, or selection specified by the master prompt overrides the defaults in this preset."
+  },
+  {
     "name": "ELEMENTAL DISSOLUTION",
     "category": [
       "TRANSFORMATION",
@@ -19878,6 +19877,20 @@
     "additionalInstructions": "IDENTITY PRESERVATION (CRITICAL):\n• Preserve identity strictly through fossilized skull proportions, jaw contours, and bone structure\n• Someone familiar with the subject should recognize them via the unique shape and alignment of the embedded skeletal features\n\nFOSSIL MATRIX ENFORCEMENT:\n• The specimen must look like a physical cast fossil discovery, with bones partially raised but firmly encrusted within a heavy stone slab\n• Treat the final image as a major natural-history museum exhibition piece, complete with proper lighting and geological authenticity"
   },
   {
+    "name": "FOURIER PORTRAIT",
+    "category": [
+      "MATHEMATICAL", 
+      "GENERATIVE ART", 
+      "PORTRAIT", 
+      "WAVEFORMS",
+      "LINE ART"
+    ],
+    "message": "Take a picture and completely reconstruct the subject using Fourier mathematics. Build the subject's face, hair, clothing, and entire body from layered sinusoidal waves and harmonic curves. Combine multiple frequencies, amplitudes, and phase relationships so that the overlapping waves collectively trace the subject's recognizable silhouette and detailed facial features. Use flowing oscillations, tightly packed waveforms, and intricate harmonic interference to create areas of fine detail and dimensional shading. The result should resemble an extraordinary mathematical waveform portrait in which the original subject has been translated into a complex system of interlocking frequencies.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "The subject must be reconstructed entirely from harmonic waveforms. Do not simply place sine waves over the original photograph or use wave distortion as a superficial filter. The actual contours, facial features, hair, clothing, and anatomy must be generated by the combined geometry of the waveforms. Use a wide range of frequencies: low-frequency curves establish major shapes and proportions, while higher-frequency oscillations reproduce eyes, nostrils, lips, hair strands, fabric folds, and other identifying details. Harmonics should overlap and interfere in a controlled manner, creating recognizable forms through their combined structure. Preserve the subject's identity, facial proportions, hairstyle, hair color, and distinctive features. Avoid turning the subject into a generic audio waveform, equalizer display, or collection of disconnected sound waves. The entire person must remain visually coherent and recognizable. Use elegant, flowing mathematical linework with convincing depth and carefully controlled density. The original photograph must not remain visible. Preserve the original background unless the master prompt specifies otherwise. Any subject, pose, setting, mood, action, artistic direction, or selection specified by the master prompt overrides the defaults in this preset."
+  },
+  {
     "name": "FPS",
     "category": [
       "GAMING",
@@ -23176,6 +23189,20 @@
     "additionalInstructions": "FINAL RESULT:\nThe image should show the subject and entire scene completely transformed into authentic ancient Egyptian hieroglyphic art - carved on stone or painted on papyrus - with the subject represented as hieroglyphic pictograms following Egyptian artistic conventions BUT with the subject's individual facial features, hair, and characteristics CLEARLY RECOGNIZABLE in the hieroglyphic style so that someone could identify this as the specific subject rendered in Egyptian art, NOT a generic pharaoh or Egyptian figure."
   },
   {
+    "name": "HILBERT CURVE PORTRAIT",
+    "category": [
+      "MATHEMATICAL", 
+      "GENERATIVE ART", 
+      "PORTRAIT", 
+      "FRACTAL", 
+      "LINE ART"
+    ],
+    "message": "Take a picture and completely reconstruct the subject using a continuous Hilbert space-filling curve. Create an extraordinarily intricate mathematical line that repeatedly folds and winds through space, filling the subject's face, hair, clothing, and body. The curve must follow the actual shapes and contours of the subject, with changes in its density, spacing, direction, and scale producing recognizable facial features, dimensional shading, and anatomical detail. Use the characteristic recursive geometry of a Hilbert curve to create an intricate, tightly organized portrait. The final image should look as though the subject has been drawn by one impossibly complex mathematical line.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "The subject must be reconstructed from the Hilbert curve itself, not from an unchanged photograph covered with a decorative maze pattern. Use a continuous or visually continuous recursive path that fills the subject's actual silhouette. The curve must adapt to the subject's anatomy, facial proportions, hairstyle, clothing, and pose. Dense, tightly packed sections should create darker regions and shadows; wider spacing should create highlights. Smaller recursive turns should provide fine detail around the eyes, nose, mouth, and other recognizable features, while larger folds establish the overall body shape. Preserve the original subject's identity and recognizable appearance. The path must remain mathematically organized and exhibit the characteristic space-filling behavior of a Hilbert curve. Do not create a generic square maze, unrelated geometric grid, barcode, or simple contour tracing. Do not place a Hilbert pattern over an otherwise unchanged subject. The original photograph must be completely replaced by the mathematical reconstruction. Preserve the original background unless the master prompt specifies otherwise. Any subject, pose, setting, mood, action, artistic direction, or selection specified by the master prompt overrides the defaults in this preset."
+  },
+  {
     "name": "HISTORY",
     "category": [
       "MASTER PROMPT",
@@ -24755,24 +24782,20 @@
     "message": "Take a picture and completely transform it into a dramatically color-quantized digital image inspired by early VGA graphics hardware. Reduce the entire image to a strict, limited palette of either 16 colors or 256 colors, using the visual characteristics of median-cut color quantization. Replace smooth gradients and subtle tonal transitions with distinct, sharply separated blocks of color. The result must look like an image reconstructed by an early indexed-color computer graphics system, not a photograph with a retro filter.",
     "options": [
       {
-        "id": "001",
-        "name": "16-COLOR VGA",
-        "description": "Extremely restricted 16-color palette with bold, chunky color regions and dramatic tonal simplification."
+        "id": "16-COLOR VGA",
+        "text": "Extremely restricted 16-color palette with bold, chunky color regions and dramatic tonal simplification."
       },
       {
-        "id": "002",
-        "name": "256-COLOR VGA",
-        "description": "Expanded 256-color palette with more tonal detail while retaining unmistakable indexed-color quantization."
+        "id": "256-COLOR VGA",
+        "text": "Expanded 256-color palette with more tonal detail while retaining unmistakable indexed-color quantization."
       },
       {
-        "id": "003",
-        "name": "16-COLOR HIGH CONTRAST",
-        "description": "Aggressive 16-color reduction with extreme separation between light and dark regions."
+        "id": "16-COLOR HIGH CONTRAST",
+        "text": "Aggressive 16-color reduction with extreme separation between light and dark regions."
       },
       {
-        "id": "004",
-        "name": "256-COLOR POSTERIZATION",
-        "description": "Clearly defined color bands with more nuanced color representation and minimal gradient transitions."
+        "id": "256-COLOR POSTERIZATION",
+        "text": "Clearly defined color bands with more nuanced color representation and minimal gradient transitions."
       }
     ],
     "randomizeOptions": true,
@@ -38242,6 +38265,19 @@
     "additionalInstructions": "The final dispenser must simultaneously read as both an authentic PEZ dispenser and the subject. Recognition must come from sculptural reinterpretation rather than face swapping."
   },
   {
+    "name": "PHASE SPACE PORTRAIT",
+    "category": [
+      "MATHEMATICAL", 
+      "GENERATIVE ART", 
+      "PORTRAIT", 
+      "DYNAMICAL SYSTEMS",
+      "LINE ART"],
+    "message": "Take a picture and completely reconstruct the subject as a multidimensional phase-space visualization. Form the subject's entire face, hair, clothing, and body from intricate phase trajectories, looping paths, orbital curves, and interconnected mathematical state-space patterns. Use complex trajectories that bend, spiral, intersect, and evolve through the image, with their density and direction defining the subject's actual anatomy. Different regions should contain distinct but coordinated trajectory patterns, creating an extraordinary portrait that looks like a mathematical system whose phase space has taken the shape of a human being.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "Reconstruct the subject itself from phase-space trajectories. Do not create a conventional portrait with a phase-space diagram floating behind it or superimposed over it. The curves must form the actual subject's silhouette, face, hair, clothing, and body. Use coherent mathematical trajectories with loops, spirals, attractor-like paths, orbital structures, and changes in direction that create dimensional form. Different parts of the subject may contain different trajectory behaviors, but all must work together as one unified mathematical reconstruction. Preserve the original subject's identity, facial characteristics, hairstyle, hair color, clothing, and body proportions. Use trajectory density to create highlights, shadows, and fine facial detail. Maintain a recognizable human figure rather than producing an abstract scientific graph. Avoid axes, labels, numerical annotations, coordinate grids, and unrelated scientific diagrams unless explicitly requested by the master prompt. The original photograph must not remain visible beneath the transformation. Preserve the original background unless the master prompt specifies otherwise. Any subject, pose, setting, mood, action, artistic direction, or selection specified by the master prompt overrides the defaults in this preset."
+  },
+  {
     "name": "PHENAKISTOSCOPE",
     "category": [
       "ART",
@@ -43171,34 +43207,28 @@
     "message": "Take a picture and transform it using RGB channel separation and horizontal phase displacement. Independently shift the red, green, and blue color information along the horizontal axis, creating pronounced chromatic misalignment, colored edge fringes, and an unmistakable digital chromatic aberration effect. The original subject must remain recognizable, but its color channels should appear physically displaced from one another.",
     "options": [
       {
-        "id": "001",
-        "name": "SUBTLE CHROMATIC SHIFT",
-        "description": "Small RGB displacements with restrained color fringing around edges."
+        "id": "SUBTLE CHROMATIC SHIFT",
+        "text": "Small RGB displacements with restrained color fringing around edges."
       },
       {
-        "id": "002",
-        "name": "EXTREME RGB SEPARATION",
-        "description": "Pronounced horizontal separation with strong red, green, and blue ghosting."
+        "id": "EXTREME RGB SEPARATION",
+        "text": "Pronounced horizontal separation with strong red, green, and blue ghosting."
       },
       {
-        "id": "003",
-        "name": "RED CHANNEL DISPLACEMENT",
-        "description": "The red channel is shifted independently while green and blue remain aligned."
+        "id": "RED CHANNEL DISPLACEMENT",
+        "text": "The red channel is shifted independently while green and blue remain aligned."
       },
       {
-        "id": "004",
-        "name": "BLUE CHANNEL DISPLACEMENT",
-        "description": "The blue channel is shifted independently while red and green remain aligned."
+        "id": "BLUE CHANNEL DISPLACEMENT",
+        "text": "The blue channel is shifted independently while red and green remain aligned."
       },
       {
-        "id": "005",
-        "name": "TRIPLE CHANNEL SPLIT",
-        "description": "All three channels shift in different horizontal directions."
+        "id": "TRIPLE CHANNEL SPLIT",
+        "text": "All three channels shift in different horizontal directions."
       },
       {
-        "id": "006",
-        "name": "PHASE WAVE",
-        "description": "RGB displacement varies across the image in a sweeping wave pattern."
+        "id": "PHASE WAVE",
+        "text": "RGB displacement varies across the image in a sweeping wave pattern."
       }
     ],
     "randomizeOptions": true,
@@ -48484,6 +48514,20 @@
     "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Extreme sharp focus throughout\n• Full tonal range from black to white\n• Precise geometric composition\n• No manipulation or soft effects\n• Pure photographic clarity"
   },
   {
+    "name": "STRANGE ATTRACTOR PORTRAIT",
+    "category": [
+      "MATHEMATICAL", 
+      "GENERATIVE ART", 
+      "PORTRAIT", 
+      "FRACTAL", 
+      "LINE ART"
+    ],
+    "message": "Take a picture and completely reconstruct the subject as an intricate mathematical strange-attractor visualization. Build the subject's entire face, hair, clothing, and body from thousands of continuous, interwoven trajectories generated by chaotic mathematical systems such as the Lorenz or Rössler attractors. The trajectories must follow the actual contours of the subject, forming recognizable facial features and anatomy through their density, curvature, and direction. Use sweeping loops, folded pathways, nested spirals, and tightly concentrated line clusters to create a complex three-dimensional impression. The finished image should look like a beautiful scientific visualization that has become a recognizable portrait.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "This is a complete reconstruction of the subject, not a mathematical overlay on the original photograph. Every visible part of the subject must be formed from the attractor trajectories themselves. Use the density and distribution of the paths to reproduce facial structure, eyes, nose, mouth, jawline, hairstyle, clothing, limbs, and body proportions. Preserve the original person's identity and distinctive characteristics. The trajectories should behave like coherent mathematical attractors, with repeating loops, sensitive variations, nested paths, and complex but organized motion. Use variations in line density and overlapping trajectories to establish highlights, shadows, depth, and dimensional form. The face must remain recognizable rather than dissolving into an abstract tangle. Avoid generic wireframe meshes, random scribbles, unrelated spirals, decorative lines floating around the subject, or a conventional photograph with attractor lines superimposed. The original photograph must not remain visible beneath the transformation. Maintain a sophisticated mathematical visualization aesthetic with a restrained, high-contrast palette unless the master prompt specifies otherwise. Preserve the original background unless the master prompt specifies a different setting. Any subject, pose, setting, mood, action, artistic direction, or selection specified by the master prompt overrides the defaults in this preset."
+  },
+  {
     "name": "STRANGER THINGS",
     "category": [
       "TV",
@@ -51130,34 +51174,28 @@
     "message": "Take a picture and completely reconstruct it as a simplified SVG-style vector illustration. Replace the original raster photograph with clean, closed geometric paths, smooth curves, connected outlines, and simplified color regions that resemble an image recreated through SVG path tracing. The subject must be built from vector shapes and paths rather than displayed as a photograph with wireframe outlines placed over it.",
     "options": [
       {
-        "id": "001",
-        "name": "CLEAN VECTOR PATHS",
-        "description": "Smooth, simplified closed paths with solid color regions and crisp edges."
+        "id": "CLEAN VECTOR PATHS",
+        "text": "Smooth, simplified closed paths with solid color regions and crisp edges."
       },
       {
-        "id": "002",
-        "name": "MINIMAL PATH OUTLINE",
-        "description": "A reduced number of carefully traced outlines with minimal interior detail."
+        "id": "MINIMAL PATH OUTLINE",
+        "text": "A reduced number of carefully traced outlines with minimal interior detail."
       },
       {
-        "id": "003",
-        "name": "GEOMETRIC PATH MAP",
-        "description": "Angular, simplified vector regions with visible geometric construction."
+        "id": "GEOMETRIC PATH MAP",
+        "text": "Angular, simplified vector regions with visible geometric construction."
       },
       {
-        "id": "004",
-        "name": "MULTICOLOR VECTOR",
-        "description": "Distinct, flat color regions separated by clean vector boundaries."
+        "id": "MULTICOLOR VECTOR",
+        "text": "Distinct, flat color regions separated by clean vector boundaries."
       },
       {
-        "id": "005",
-        "name": "RAW SVG WIREFRAME",
-        "description": "The subject reconstructed from visible vector paths and connected contour lines."
+        "id": "RAW SVG WIREFRAME",
+        "text": "The subject reconstructed from visible vector paths and connected contour lines."
       },
       {
-        "id": "006",
-        "name": "LOW-POLYGON VECTOR",
-        "description": "Simplified polygonal path regions with sharply defined geometric facets."
+        "id": "LOW-POLYGON VECTOR",
+        "text": "Simplified polygonal path regions with sharply defined geometric facets."
       }
     ],
     "randomizeOptions": true,
@@ -55289,6 +55327,20 @@
     ],
     "randomizeOptions": true,
     "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Surface porous and knobbly at every scale\n• Growth direction upward from the base\n• Pale cream to grey colour\n• Deep cavities and voids throughout"
+  },
+  {
+    "name": "TURING PATTERN PORTRAIT",
+    "category": [
+      "MATHEMATICAL", 
+      "GENERATIVE ART", 
+      "PORTRAIT", 
+      "REACTION DIFFUSION", 
+      "ORGANIC"
+    ],
+    "message": "Take a picture and completely reconstruct the subject using intricate reaction-diffusion patterns inspired by Alan Turing's mathematical models of biological pattern formation. Transform the face, hair, clothing, and body into a living system of naturally emerging spots, stripes, branching structures, and interlocking organic patterns. The patterns must follow the subject's actual anatomy and contours, changing scale and behavior across different regions to create recognizable facial features and dimensional form. Create a sophisticated, richly detailed image that looks like a mathematical simulation of a living organism, with the original subject emerging from the patterns themselves.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "This must be a complete reconstruction of the subject using reaction-diffusion pattern structures. Do not simply apply animal spots, stripes, camouflage, or a biological texture to an unchanged photograph. The patterns themselves must form the subject's anatomy and recognizable identity. Use authentic Turing-style pattern behavior, including interconnected spots, labyrinthine stripes, branching networks, and transitions between pattern types. Vary the pattern scale and density according to the underlying facial and anatomical structure. Preserve recognizable eyes, nose, mouth, facial proportions, hairstyle, hair color, clothing silhouette, and body shape. Patterns should flow naturally across the surface while responding to changes in form, curvature, and depth. Avoid making the subject look like a leopard, zebra, reptile, or other specific animal unless the master prompt requests it. The result should feel like an organic mathematical organism generated through a reaction-diffusion process, not a person wearing a patterned costume. The original photograph must not remain visible beneath the transformation. Preserve the original background unless the master prompt specifies otherwise. Any subject, pose, setting, mood, action, artistic direction, or selection specified by the master prompt overrides the defaults in this preset."
   },
   {
     "name": "TV DINNER BOX",
