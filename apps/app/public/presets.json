@@ -4112,6 +4112,46 @@
     "additionalInstructions": "FINAL RESULT:\nA fully reconstructed scene where all forms are created from vertically extruded basalt columns, forming a geological structure that defines the subject through height variation."
   }, 
   {
+    "name": "BASE64 ASCII DATA-STREAM OVERLAY",
+    "category": [
+      "DIGITAL",
+      "GLITCH",
+      "COMPUTER GRAPHICS",
+      "DATA VISUALIZATION",
+      "TYPOGRAPHY"
+    ],
+    "message": "Take a picture and transform its appearance into a digital data-stream visualization. Preserve a recognizable reconstruction of the subject while covering and interweaving the image with dense, translucent rows of Base64-style encoded character sequences. The characters should resemble the raw encoded data of a digital image being streamed, with scrolling text fragments, overlapping data rows, and varying levels of transparency.",
+    "options": [
+      {
+        "id": "001",
+        "name": "DENSE DATA STREAM",
+        "description": "Heavy overlapping rows of Base64 characters with the subject partially obscured."
+      },
+      {
+        "id": "002",
+        "name": "GHOST DATA",
+        "description": "Faint, translucent Base64 character streams with the subject clearly visible beneath them."
+      },
+      {
+        "id": "003",
+        "name": "CORRUPTED TRANSMISSION",
+        "description": "Broken character sequences, interrupted data rows, and fragmented streaming patterns."
+      },
+      {
+        "id": "004",
+        "name": "VERTICAL DATA RAIN",
+        "description": "Vertical columns of encoded characters cascading across the subject."
+      },
+      {
+        "id": "005",
+        "name": "DATA RECONSTRUCTION",
+        "description": "The subject appears to assemble from dense streams of encoded characters."
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "Create a sophisticated visual representation of Base64-encoded image data being transmitted across a digital canvas. The character streams should look like encoded binary data translated into Base64 text, using authentic Base64 character conventions: uppercase and lowercase letters, numbers, plus signs, forward slashes, and occasional equals signs for padding. Use plausible sequences rather than random decorative symbols or ordinary computer code.\n\nDATA OVERLAY: Layer numerous rows or columns of encoded character sequences across the image. Vary their opacity, spacing, size, alignment, and direction. Some sequences should be sharply legible while others become translucent, fragmented, or partially obscured. Create the impression of data moving across the visual field through repeated rows, interrupted sequences, and directional flow.\n\nSUBJECT INTEGRATION: The original subject must remain recognizable, but the data streams should interact with its visual structure. Allow characters to partially obscure facial features, follow contours, cross clothing, and vary in density according to different regions of the image. In DATA RECONSTRUCTION mode, make the subject appear to emerge from the encoded characters themselves rather than simply placing text over an intact photograph.\n\nIMPORTANT DATA ACCURACY: Do not claim that the displayed characters are the actual Base64 encoding of the source photograph. Unless the original image bytes are genuinely available for encoding, create visually plausible Base64-style sequences rather than inventing a supposedly exact data representation. Do not generate ordinary programming syntax, HTML, JSON, terminal windows, or unrelated readable sentences.\n\nMaintain a deliberate visual hierarchy so that the encoded data and subject form one coherent composition. Avoid turning the image into an illegible wall of random text. No added computer monitors, screens, or interface panels unless explicitly requested.\n\nIf a master prompt specifies text density, direction, color, subject visibility, or composition, follow those instructions while retaining the Base64 data-stream aesthetic."
+  },
+  {
     "name": "BASSE TAILLE",
     "category": [
       "ENAMEL",
@@ -5115,6 +5155,46 @@
     }
     ],
     "additionalInstructions": "SUBJECT TRANSFORMATION REQUIREMENTS:\n\n• THE ENTIRE SUBJECT MUST BECOME BISMUTH.\n• Do not merely cover the subject with a bismuth texture.\n• Do not leave normal skin underneath the crystal.\n• Do not leave normal hair underneath the crystal.\n• Do not leave normal clothing underneath the crystal.\n• Do not place a bismuth crystal around or behind the subject.\n• Do not show the subject holding a bismuth crystal.\n• Every visible portion of the subject must be reconstructed as solid bismuth crystal.\n• The original subject must become the physical crystal itself.\n• Preserve the subject's original pose and recognizable silhouette.\n• Preserve the subject's body proportions through the crystalline reconstruction.\n• Arms, hands, fingers, legs, feet, torso, hair, and clothing must all become crystalline bismuth.\n\nFACIAL IDENTITY REQUIREMENTS:\n\n• Use the subject's actual facial geometry as the three-dimensional blueprint for the crystal.\n• Preserve exact eye spacing and eye placement.\n• Preserve eye shape and relative size through crystalline recesses and planes.\n• Preserve eyebrow position and brow structure.\n• Preserve forehead shape.\n• Preserve nose length, width, bridge, tip, and overall geometry.\n• Preserve cheekbone position and facial contour.\n• Preserve mouth width, lip shape, and mouth placement.\n• Preserve jaw width and jawline.\n• Preserve chin shape and projection.\n• Preserve ear position and shape when visible.\n• Preserve distinctive facial asymmetry.\n• Preserve the subject's distinctive facial proportions and recognizable characteristics.\n• Facial identity must be encoded into the actual three-dimensional geometry of the crystal.\n• Do NOT create a generic human face and cover it with bismuth.\n• Do NOT create a generic crystal sculpture that merely resembles a person.\n• The subject must remain identifiable from the crystalline geometry alone.\n\nBISMUTH CRYSTAL REQUIREMENTS:\n\n• Use authentic hopper-crystal morphology.\n• Terraces must be physically stepped and three-dimensional.\n• Rectangular crystal steps should grow inward toward recessed areas.\n• Use genuine hopper-like hollowing rather than random geometric holes.\n• Crystal surfaces should be sharply defined and geometrically precise.\n• Individual terraces should have realistic thickness and depth.\n• Preserve physically believable crystal edges, corners, planes, cavities, and recesses.\n• Avoid ordinary quartz-like crystal points.\n• Avoid smooth glass-like surfaces.\n• Avoid generic faceted gemstones.\n• The structure must unmistakably resemble bismuth hopper crystals.\n\nIRIDESCENCE REQUIREMENTS:\n\n• Iridescence must appear to originate from the thin oxide film naturally present on bismuth.\n• Color should shift across surfaces according to viewing angle and surface orientation.\n• Use physically believable transitions among metallic gold, pink, blue, violet, green, cyan, and related spectral hues.\n• Do not use random rainbow coloring unrelated to surface orientation.\n• Metallic bismuth must remain visible beneath the oxide coloration.\n• Preserve a reflective metallic lustre.\n• Different terraces should catch and reflect light differently.\n\nDEPTH AND MATERIAL REQUIREMENTS:\n\n• The subject must be a solid three-dimensional crystal sculpture rather than a flat image.\n• Use strong directional lighting to reveal the stepped crystalline geometry.\n• Show realistic reflections along sharp metallic edges.\n• Show realistic shadows inside recessed hopper terraces.\n• Use depth-dependent highlights and reflections.\n• Preserve physically believable metallic behavior.\n• The crystal should feel heavy, dense, rigid, and solid.\n• Do not make the material look like plastic, glass, painted ceramic, or CGI chrome.\n• The final result should resemble an extraordinarily detailed physical bismuth specimen photographed with professional macro or studio photography.\n\nFINAL VALIDATION:\n\n✓ The entire subject has been transformed into bismuth.\n✓ No normal skin remains visible.\n✓ No normal hair remains visible.\n✓ No normal clothing remains visible.\n✓ The subject is not merely covered with bismuth.\n✓ The subject itself IS the bismuth crystal.\n✓ The subject's original pose and silhouette remain recognizable.\n✓ The subject's actual facial geometry is preserved.\n✓ The face does not become a generic human face.\n✓ Distinctive facial characteristics and asymmetries remain recognizable.\n✓ The crystal has authentic hopper morphology.\n✓ Rectangular terraces visibly step inward.\n✓ Recesses and cavities have genuine three-dimensional depth.\n✓ The material unmistakably resembles metallic bismuth.\n✓ Iridescence appears to come from an oxide surface film.\n✓ Metallic lustre remains visible beneath the coloration.\n✓ The final image looks like a real physical bismuth crystal specimen rather than a filter or texture overlay.\n✓ If ANY answer is NO, regenerate until every requirement is satisfied."
+  },
+  {
+    "name": "BITWISE XOR NOISE MASK",
+    "category": [
+      "DIGITAL",
+      "GLITCH",
+      "DATA CORRUPTION",
+      "COMPUTER GRAPHICS",
+      "DECONSTRUCTION"
+    ],
+    "message": "Take a picture and transform it into a visually corrupted digital image inspired by a bitwise XOR operation applied to raw pixel data. Reconstruct the subject with structured, grid-aligned disruptions, abruptly altered pixel values, broken rectangular image regions, and patterns resembling a corrupted computer memory buffer. The result should look like the image data itself has been mathematically altered, not like random static has been placed over a photograph.",
+    "options": [
+      {
+        "id": "001",
+        "name": "FIXED XOR MASK",
+        "description": "Consistent binary-pattern corruption producing repeated geometric disruptions."
+      },
+      {
+        "id": "002",
+        "name": "MEMORY BUFFER FAILURE",
+        "description": "Large rectangular blocks of corrupted pixel information and abrupt data discontinuities."
+      },
+      {
+        "id": "003",
+        "name": "BIT PLANE CORRUPTION",
+        "description": "Selected binary significance patterns produce unusual tonal and color distortions."
+      },
+      {
+        "id": "004",
+        "name": "XOR STRIPES",
+        "description": "Horizontal and vertical bands of mathematically patterned pixel corruption."
+      },
+      {
+        "id": "005",
+        "name": "RECURSIVE XOR",
+        "description": "Repeated geometric corruption patterns at multiple scales."
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "Create the visual appearance of image data altered by a bitwise exclusive-OR operation. XOR is a binary operation in which corresponding bits produce a changed result when their values differ. Translate this principle into a distinctive visual pattern of structured digital corruption.\n\nThe image must appear to have undergone changes to its actual pixel information. Do not simply add television static, random noise, scan lines, or a generic glitch overlay. The corruption must visibly alter the subject's shapes, colors, edges, and internal details.\n\nFIXED XOR MASK: Use a consistent repeating binary-inspired pattern that creates recognizable, repeated blocks of altered image information.\n\nMEMORY BUFFER FAILURE: Create large, sharply bounded rectangular regions where pixel information appears displaced, substituted, repeated, or corrupted. Make the boundaries align to a convincing digital grid.\n\nBIT PLANE CORRUPTION: Create distinctive tonal and color changes resembling the alteration of individual binary bit planes. Some regions may lose tonal precision while others develop exaggerated values or unexpected color relationships.\n\nXOR STRIPES: Introduce organized horizontal and vertical bands of altered pixel data. The bands must affect the actual appearance of the subject rather than simply sitting on top of it.\n\nRECURSIVE XOR: Use repeating corruption patterns at different scales, with smaller structured disruptions appearing within larger corrupted regions.\n\nMaintain enough recognizable information to identify the original subject, but allow portions of the image to become dramatically distorted. Use sharp rectangular boundaries, repeated pixel blocks, abrupt color substitutions, and grid-aligned discontinuities. Avoid excessive random scatter or decorative digital symbols.\n\nIMPORTANT: This is a visual simulation of XOR-style corruption, not a claim that the source image's actual binary data has been processed. Do not display fabricated technical readouts, binary code, or programming interfaces.\n\nIf a master prompt specifies corruption intensity, pattern, color, subject, or composition, follow it while retaining the XOR-inspired transformation."
   },
   {
     "name": "BIZARRO WORLD",
@@ -9979,6 +10059,46 @@
     ],
     "randomizeOptions": true,
     "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Base stained warm brown throughout\n• Grain coarse and pronounced\n• Contrast uneven across the frame\n• Highlights soft with a long shoulder"
+  },
+  {
+    "name": "CANVAS EDGE-ALPHA TRANSPARENCY MAP",
+    "category": [
+      "DIGITAL",
+      "COMPUTER GRAPHICS",
+      "TRANSPARENCY",
+      "STENCIL",
+      "IMAGE TRANSFORMATION"
+    ],
+    "message": "Take a picture and reconstruct it as a luminance-driven transparency map. Convert the image's brightness values into transparency: dark regions progressively disappear while bright regions become increasingly solid and visible. The result should resemble a ghostly photographic stencil made from varying degrees of transparency, with the original subject reconstructed entirely through the relationship between light and opacity.",
+    "options": [
+      {
+        "id": "001",
+        "name": "BLACK DISAPPEARS",
+        "description": "Black vanishes completely, dark gray becomes transparent, and bright regions remain solid."
+      },
+      {
+        "id": "002",
+        "name": "WHITE DISAPPEARS",
+        "description": "Bright regions vanish while dark regions become solid stencil shapes."
+      },
+      {
+        "id": "003",
+        "name": "GHOST GRADIENT",
+        "description": "A continuous transparency gradient creates a spectral, partially disappearing subject."
+      },
+      {
+        "id": "004",
+        "name": "HARD ALPHA CUTOUT",
+        "description": "A strict brightness threshold creates sharply defined transparent and opaque regions."
+      },
+      {
+        "id": "005",
+        "name": "INVERTED GHOST",
+        "description": "Use inverted luminance values to create an eerie transparency pattern."
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "Reconstruct the subject using the visual principle of an image alpha channel. Pixel brightness determines opacity rather than simply determining color. This must create the appearance of a true transparency map, not a conventional monochrome photograph or a translucent overlay placed over an unchanged image.\n\nBLACK DISAPPEARS: The darkest areas must become completely invisible. Midtones must become partially transparent. The brightest areas must become fully opaque and clearly defined. Use the original luminance distribution to determine the opacity of every region.\n\nWHITE DISAPPEARS: Reverse the relationship. Bright areas become invisible while dark areas become increasingly opaque.\n\nGHOST GRADIENT: Create a smooth transition from completely transparent to fully opaque based on brightness. The subject should appear partially erased, spectral, and suspended in the image.\n\nHARD ALPHA CUTOUT: Use a strict luminance threshold. Regions on one side of the threshold disappear completely, while regions on the other side remain solid. Avoid intermediate transparency.\n\nINVERTED GHOST: Reverse the brightness-to-opacity relationship to produce an inverted spectral effect.\n\nThe subject must be reconstructed through the transparency pattern itself. Preserve recognizable facial features, anatomy, silhouette, and defining details wherever the opacity allows. Do not simply make the entire subject uniformly translucent. Do not add fog, smoke, glowing outlines, or ghostly figures as substitutes for the actual transparency transformation.\n\nUse a clean, visually appropriate background that makes the transparency effect easy to understand. If actual transparent output is supported, use genuine alpha transparency; otherwise, visually represent the transparent regions with a consistent contrasting background. Do not pretend that a simulated checkerboard or dark region is an actual transparent channel.\n\nIf a master prompt specifies the transparency direction, threshold, subject, background, or artistic direction, follow it while retaining the luminance-to-opacity transformation."
   },
   {
     "name": "CAST CONCRETE FORMWORK",
@@ -23571,6 +23691,20 @@
     "additionalInstructions": "STYLE ENFORCEMENT:\n• Preserve subject identity through yarn line placement\n• Thin colored yarn lines following form contours\n• Intensely vivid, psychedelic color palette\n• Every surface covered — no empty space\n• Sacred Huichol symbols: deer, peyote, corn, eagles, sun\n• Reference Wixárika artists like José Benítez Sánchez\n• Yarn lines should be individually visible\n• Colors should be bold and non-naturalistic\n• The composition should feel visionary and sacred\n• The overall effect should be psychedelic, spiritual, and densely detailed."
   },
   {
+    "name": "HUMAN STAMPEDE",
+    "category": [
+      "SURREAL",
+      "CLONES",
+      "MULTIPLICATION",
+      "ACTION",
+      "SCENARIO TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform the scene into an overwhelming stampede of identical copies of the subject. Create a massive crowd of the same person, with dozens or hundreds of recognizable duplicates surging through the environment in a powerful, chaotic wave. The copies should be captured in varied running poses, directions, distances, and perspectives, creating the visual force of a stampede. Some copies should dominate the foreground while countless others fill the middle distance and background, making the crowd appear enormous. Every duplicate must clearly be the same individual, with matching facial identity, hairstyle, hair color, clothing, and defining physical characteristics. The result should feel like an extraordinary cinematic event in which the subject has multiplied beyond control.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "Create a convincing mass-multiplication scene, not a collage of unrelated people. Every person in the stampede must be an exact recognizable duplicate of the original subject. Preserve the subject's face, age appearance, hairstyle, hair color, skin appearance, clothing, accessories, and distinctive physical characteristics consistently across all copies. Do not gradually change the subject's identity or introduce different people. Use a strong sense of scale and depth: large, sharply detailed duplicates in the foreground, progressively smaller duplicates receding into the distance, and a dense mass of copies filling the available environment. Give the duplicates varied, believable running and rushing poses so the crowd feels like a genuine stampede rather than rows of static clones. Use overlapping bodies, natural perspective, realistic contact shadows, and consistent lighting to integrate the copies into the scene. The stampede should feel energetic, chaotic, and visually overwhelming, with the subject's duplicates appearing to surge through the environment as one enormous moving crowd. Avoid evenly spaced rows, repeated cutout silhouettes, transparent ghosts, or a simple mirrored reflection effect. Do not leave the original subject standing unchanged in front of the duplicates; the original must be one of the active participants in the stampede. Preserve the original setting where practical, expanding the scene only as necessary to accommodate the crowd. Any subject, pose, setting, mood, action, artistic direction, or selection specified by the master prompt overrides the defaults in this preset."
+  },
+  {
     "name": "HYPERBOLIC GEOMETRY",
     "category": [
       "TRANSFORMATION",
@@ -24608,6 +24742,41 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "INDEXEDDB COLOR QUANTIZER",
+    "category": [
+      "DIGITAL",
+      "RETRO",
+      "PIXEL ART",
+      "COLOR TRANSFORMATION",
+      "COMPUTER GRAPHICS"
+    ],
+    "message": "Take a picture and completely transform it into a dramatically color-quantized digital image inspired by early VGA graphics hardware. Reduce the entire image to a strict, limited palette of either 16 colors or 256 colors, using the visual characteristics of median-cut color quantization. Replace smooth gradients and subtle tonal transitions with distinct, sharply separated blocks of color. The result must look like an image reconstructed by an early indexed-color computer graphics system, not a photograph with a retro filter.",
+    "options": [
+      {
+        "id": "001",
+        "name": "16-COLOR VGA",
+        "description": "Extremely restricted 16-color palette with bold, chunky color regions and dramatic tonal simplification."
+      },
+      {
+        "id": "002",
+        "name": "256-COLOR VGA",
+        "description": "Expanded 256-color palette with more tonal detail while retaining unmistakable indexed-color quantization."
+      },
+      {
+        "id": "003",
+        "name": "16-COLOR HIGH CONTRAST",
+        "description": "Aggressive 16-color reduction with extreme separation between light and dark regions."
+      },
+      {
+        "id": "004",
+        "name": "256-COLOR POSTERIZATION",
+        "description": "Clearly defined color bands with more nuanced color representation and minimal gradient transitions."
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "Reconstruct the entire image using a limited indexed color palette. Simulate median-cut color quantization by grouping similar colors into representative color clusters and replacing the original colors with their nearest palette entries. The image must be rebuilt from these reduced color values rather than simply having a color filter applied.\n\n16-COLOR MODE: Use exactly 16 distinct palette colors wherever possible. Create large, clearly separated color regions. Simplify skin, hair, clothing, objects, and environmental details into chunky color groupings. Prioritize recognizable shapes and strong tonal separation over subtle detail.\n\n256-COLOR MODE: Use a maximum of 256 distinct colors. Retain greater detail than the 16-color version, but eliminate continuous photographic gradients in favor of visible quantized color transitions.\n\nCOLOR BEHAVIOR: Colors should form coherent regions based on the underlying image. Avoid arbitrary rainbow colors, random color substitutions, excessive dithering, or pixel noise. Preserve the subject's original color relationships as closely as the selected palette allows.\n\nThe subject must remain recognizable through its silhouette, facial features, pose, proportions, and defining characteristics. Apply quantization consistently to the entire image, including the background. Do not leave photographic gradients or smooth, unquantized areas. Do not add computer screens, pixel-art characters, game interfaces, text, or decorative graphics.\n\nThe final result should resemble an authentic image rendered by a limited-color computer graphics system, with the 16-color version appearing particularly bold and primitive.\n\nIf a master prompt specifies a palette, color scheme, subject, setting, or artistic direction, follow those instructions while retaining the selected color-quantization process."
   },
   {
     "name": "INEBRIATED DECISION",
@@ -42991,6 +43160,51 @@
     "additionalInstructions": "VISUAL REQUIREMENTS:\n• Portrait created by cleaning (removing dirt) rather than adding paint\n• Dirty, grimy surface as the 'canvas': tunnel walls, underpasses, neglected concrete\n• Clean areas forming the portrait against surrounding soot and grime\n• Visible cleaning technique: pressure washer lines, scrub brush marks\n• Limited tonal range: clean surface vs dirty surface (essentially two-tone)\n• Urban infrastructure setting: tunnels, highway underpasses, retaining walls\n• Subject recognizable through the contrast of clean vs dirty areas\n• Environmental commentary implicit in the medium\n• Reference artists: Paul 'Moose' Curtis, Alexandre Orion (Ossário project), Ben Long"
   },
   {
+    "name": "RGB CHANNEL PHASE-SHIFT",
+    "category": [
+      "DIGITAL",
+      "GLITCH",
+      "CHROMATIC",
+      "COLOR SEPARATION",
+      "IMAGE DISTORTION"
+    ],
+    "message": "Take a picture and transform it using RGB channel separation and horizontal phase displacement. Independently shift the red, green, and blue color information along the horizontal axis, creating pronounced chromatic misalignment, colored edge fringes, and an unmistakable digital chromatic aberration effect. The original subject must remain recognizable, but its color channels should appear physically displaced from one another.",
+    "options": [
+      {
+        "id": "001",
+        "name": "SUBTLE CHROMATIC SHIFT",
+        "description": "Small RGB displacements with restrained color fringing around edges."
+      },
+      {
+        "id": "002",
+        "name": "EXTREME RGB SEPARATION",
+        "description": "Pronounced horizontal separation with strong red, green, and blue ghosting."
+      },
+      {
+        "id": "003",
+        "name": "RED CHANNEL DISPLACEMENT",
+        "description": "The red channel is shifted independently while green and blue remain aligned."
+      },
+      {
+        "id": "004",
+        "name": "BLUE CHANNEL DISPLACEMENT",
+        "description": "The blue channel is shifted independently while red and green remain aligned."
+      },
+      {
+        "id": "005",
+        "name": "TRIPLE CHANNEL SPLIT",
+        "description": "All three channels shift in different horizontal directions."
+      },
+      {
+        "id": "006",
+        "name": "PHASE WAVE",
+        "description": "RGB displacement varies across the image in a sweeping wave pattern."
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "Simulate independent horizontal displacement of the red, green, and blue image channels. The effect must behave like actual channel misregistration rather than simply adding colored outlines or applying a rainbow filter.\n\nEach color channel should retain its own image information but occupy a slightly different horizontal position. Where the channels no longer align, create authentic chromatic fringes, colored duplicate edges, and areas of color separation. High-contrast boundaries should reveal the displacement most clearly.\n\nSUBTLE CHROMATIC SHIFT: Use minimal displacement for a restrained optical effect.\n\nEXTREME RGB SEPARATION: Use much larger offsets, creating obvious colored ghost images around the subject's contours and details.\n\nRED CHANNEL DISPLACEMENT: Move the red information horizontally while keeping green and blue comparatively aligned.\n\nBLUE CHANNEL DISPLACEMENT: Move the blue information horizontally while keeping red and green comparatively aligned.\n\nTRIPLE CHANNEL SPLIT: Displace all three channels independently, ensuring that red, green, and blue occupy visibly different horizontal positions.\n\nPHASE WAVE: Vary the horizontal displacement gradually across the image so that different areas experience different channel offsets. Create a continuous wave-like pattern rather than random distortion.\n\nPreserve the subject's overall identity, pose, silhouette, and recognizable details. The underlying image should remain coherent enough to identify, but the displaced channels must be unmistakable. Apply the transformation to the entire image unless the master prompt specifies a subject-only treatment.\n\nDo not add rainbow-colored objects, neon outlines, colored smoke, glowing borders, or decorative RGB graphics. The effect must come from the separation of the actual image information into misaligned color channels.\n\nIf a master prompt specifies channel direction, displacement intensity, color behavior, or subject treatment, follow it."
+  },
+  {
     "name": "RIBBON",
     "category": [
       "ART",
@@ -43982,6 +44196,20 @@
     }
     ],
     "additionalInstructions": "• Transform ONLY the subject.\n• Leave the background completely unchanged.\n• Preserve the original environment, lighting, perspective, colors, shadows, and every background object exactly as photographed.\n• Completely discard the original subject before reconstruction.\n• Do NOT place rubber stamp impressions over the original photograph.\n• Do NOT blend photographic textures with stamped artwork.\n• Every visible part of the subject must be recreated entirely from genuine rubber stamp impressions.\n• Preserve the subject's exact identity, facial proportions, hairstyle, hair color, expression, age, ethnicity, body proportions, pose, silhouette, and recognizable features.\n• Facial features must emerge solely from intelligent placement of stamp impressions.\n• Every individual stamp impression must remain recognizable.\n• Show realistic ink absorption into paper.\n• Include authentic uneven ink coverage, slight over-inking, under-inking, smudges, overlapping impressions, and handmade imperfections.\n• Rotate stamp impressions naturally to avoid repetition.\n• Vary ink density and pressure like real hand stamping.\n• Never simplify the artwork into abstract shapes or digital textures.\n• Preserve crisp stamp edges with occasional imperfect transfers.\n• The subject should immediately be recognizable while rewarding close inspection with individually identifiable stamp impressions.\n• The finished artwork should resemble a handcrafted printmaking masterpiece created entirely by hand.\n• Master prompt instructions always override the selected option whenever conflicts occur.\n\nFINAL VALIDATION — Before producing the final image, verify ALL of the following:\n\n✓ ONLY the subject has been transformed.\n✓ The background remains completely unchanged.\n✓ No original photographic pixels remain on the subject.\n✓ The subject is entirely reconstructed from authentic rubber stamp impressions.\n✓ No stamp impressions have simply been placed over the original subject.\n✓ Individual stamp designs remain recognizable.\n✓ Realistic ink transfer and handmade imperfections are visible.\n✓ The subject remains immediately recognizable.\n✓ The artwork resembles a genuine handcrafted rubber stamp collage.\n✓ If ANY answer is NO, regenerate the image until every requirement is satisfied."
+  },
+  {
+    "name": "RUBIK'S HUMAN",
+    "category": [
+      "TRANSFORMATION",
+      "SURREAL",
+      "GEOMETRIC",
+      "PUZZLE",
+      "3D"
+    ],
+    "message": "Take a picture and completely transform the subject into a living, three-dimensional Rubik's Cube. Reconstruct the subject's entire recognizable form as a large, intricate twisting puzzle made of interconnected square and rectangular sections. The subject's face, hair, clothing, limbs, and body must all become part of the puzzle's structure, with their recognizable features distributed across the turning geometric sections. Arrange the sections in multiple layers and orientations, as though the subject's body itself is a complex puzzle caught halfway through a rotation. Some sections should be visibly misaligned or rotated, creating dramatic changes in the subject's silhouette while preserving enough recognizable facial and physical features to identify them. The result should look like an extraordinary impossible puzzle sculpture that is still unmistakably the original subject.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "This must be a complete transformation and reconstruction of the subject. Do not simply place a Rubik's Cube beside the subject, turn the subject into a conventional cube, or cover the original photograph with a grid. The subject's actual anatomy, face, clothing, and silhouette must be reconstructed from interlocking three-dimensional puzzle sections. Every section must belong to the subject's body and contribute to its overall form. Use clearly defined square and rectangular puzzle segments with realistic depth, visible seams, rotational joints, and carefully aligned surfaces. The puzzle sections should twist and rotate in different directions, producing a convincing three-dimensional mechanical puzzle while retaining the subject's recognizable identity. Preserve the subject's characteristic facial features, hairstyle, hair color, clothing, and other distinguishing details by integrating them into the puzzle surfaces rather than replacing them with generic colored squares. The subject should remain a coherent, recognizable figure, not become an abstract pile of cubes. Do not add a separate Rubik's Cube, floating cubes, puzzle pieces surrounding the subject, a cube-shaped cage, or a grid superimposed over an otherwise unchanged photograph. The original subject must not remain visible beneath the transformation. Render the result as a highly detailed, physically convincing surreal sculpture with dramatic depth and lighting. Preserve the original background unless the master prompt specifies otherwise. Any subject, pose, setting, mood, action, artistic direction, or selection specified by the master prompt overrides the defaults in this preset."
   },
   {
     "name": "RUBY-SPEARS",
@@ -50889,6 +51117,51 @@
     }
     ],
     "additionalInstructions": "• Transform ONLY the subject.\n• Keep the background completely unchanged.\n• Preserve the original environment, lighting, perspective, colors, shadows, and every background object exactly as photographed.\n• Completely discard the original subject before reconstruction.\n• Do NOT place sushi ingredients over the original person.\n• Do NOT blend photographic textures with food.\n• Every visible part of the subject must be created entirely from real sushi ingredients.\n• Preserve the subject's exact identity, facial structure, hairstyle, hair color, expression, age, ethnicity, body proportions, pose, silhouette, and recognizable features.\n• Facial features must emerge solely through intelligent placement of sushi ingredients.\n• Every ingredient must remain recognizable as real sushi material.\n• Preserve authentic rice texture, individual grains, nori sheets, fish texture, vegetable slices, and glossy food surfaces.\n• Never flatten ingredients into simple colors.\n• Never create a smooth digital food texture.\n• Use realistic layering, stacking, and three-dimensional depth.\n• Rice should remain visibly composed of individual grains.\n• Fish should retain realistic marbling and texture.\n• Nori should maintain its dark seaweed appearance.\n• Hair must be reconstructed entirely from appropriate sushi ingredients.\n• Clothing must also be rebuilt entirely from sushi ingredients.\n• Recreate eyes and facial details through careful ingredient placement while maintaining the subject's expression.\n• Include realistic shadows, moisture, and food texture.\n• The finished artwork should look like a real handcrafted sushi portrait photographed by a professional food photographer.\n• Master prompt instructions always override the selected option whenever conflicts occur.\n\nFINAL VALIDATION — Before producing the final image, verify ALL of the following:\n\n✓ ONLY the subject has been transformed.\n✓ The background remains completely unchanged.\n✓ No original photographic pixels remain on the subject.\n✓ The subject is entirely reconstructed from real sushi ingredients.\n✓ Sushi ingredients are not simply placed over the original subject.\n✓ Individual ingredients remain clearly visible.\n✓ Food textures and materials are realistic.\n✓ The subject remains immediately recognizable.\n✓ The artwork resembles a genuine handcrafted sushi mosaic.\n✓ If ANY answer is NO, regenerate the image until every requirement is satisfied."
+  },
+  {
+    "name": "SVG PATH VECTOR APPROXIMATION",
+    "category": [
+      "DIGITAL",
+      "VECTOR ART",
+      "COMPUTER GRAPHICS",
+      "GEOMETRIC",
+      "IMAGE RECONSTRUCTION"
+    ],
+    "message": "Take a picture and completely reconstruct it as a simplified SVG-style vector illustration. Replace the original raster photograph with clean, closed geometric paths, smooth curves, connected outlines, and simplified color regions that resemble an image recreated through SVG path tracing. The subject must be built from vector shapes and paths rather than displayed as a photograph with wireframe outlines placed over it.",
+    "options": [
+      {
+        "id": "001",
+        "name": "CLEAN VECTOR PATHS",
+        "description": "Smooth, simplified closed paths with solid color regions and crisp edges."
+      },
+      {
+        "id": "002",
+        "name": "MINIMAL PATH OUTLINE",
+        "description": "A reduced number of carefully traced outlines with minimal interior detail."
+      },
+      {
+        "id": "003",
+        "name": "GEOMETRIC PATH MAP",
+        "description": "Angular, simplified vector regions with visible geometric construction."
+      },
+      {
+        "id": "004",
+        "name": "MULTICOLOR VECTOR",
+        "description": "Distinct, flat color regions separated by clean vector boundaries."
+      },
+      {
+        "id": "005",
+        "name": "RAW SVG WIREFRAME",
+        "description": "The subject reconstructed from visible vector paths and connected contour lines."
+      },
+      {
+        "id": "006",
+        "name": "LOW-POLYGON VECTOR",
+        "description": "Simplified polygonal path regions with sharply defined geometric facets."
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "Reconstruct the entire image as though a raster photograph has been algorithmically traced into a collection of simplified SVG vector paths. The output must be a vector-style reconstruction, not a photograph with vector outlines superimposed over it.\n\nPATH-BASED RECONSTRUCTION: Replace photographic pixels with clean, deliberate vector regions. Each major shape should be represented by a closed path or connected collection of paths. Use simplified contours, smooth Bézier-like curves, and carefully defined boundaries. Facial features, hair, clothing, body shapes, objects, and background elements must all be rebuilt using vector-style geometry.\n\nCLEAN VECTOR PATHS: Use smooth, simplified contours and solid fills. Retain the essential features of the subject while eliminating photographic texture and fine pixel-level detail.\n\nMINIMAL PATH OUTLINE: Reduce the image to a small number of meaningful contours. Use only the paths necessary to communicate the subject's identity, shape, and major details.\n\nGEOMETRIC PATH MAP: Build the subject from angular regions and connected geometric boundaries. The result should resemble a carefully simplified vector tracing with visible structural divisions.\n\nMULTICOLOR VECTOR: Separate the subject into clearly defined flat-color regions. Use clean boundaries between adjacent colors rather than gradients or photographic shading.\n\nRAW SVG WIREFRAME: Construct the subject from visible path outlines and connected contour networks. The lines must describe the subject's actual form and internal structure, not create an unrelated mesh placed over the photograph.\n\nLOW-POLYGON VECTOR: Use a limited number of large polygonal regions to reconstruct the subject. Preserve recognizable proportions and major facial characteristics through the placement and shape of the polygons.\n\nSTRICTLY FORBIDDEN: Do not leave the original photograph visible underneath the paths. Do not merely trace the outer silhouette while retaining photographic details inside. Do not add floating SVG code panels, HTML windows, editor interfaces, browser frames, or unrelated wireframe objects. Do not fill the image with literal programming text as a substitute for vector reconstruction.\n\nThe final result should look like a genuine vector illustration reconstructed from the original image. Preserve the subject's identity, pose, proportions, and defining features through the simplified paths. Apply the same vector treatment to the background unless the master prompt explicitly requests a subject-only transformation.\n\nIf a master prompt specifies the level of detail, path style, color palette, geometry, or subject treatment, follow it while retaining the SVG-style vector reconstruction."
   },
   {
     "name": "SWARM",
