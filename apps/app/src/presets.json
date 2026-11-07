@@ -9901,6 +9901,19 @@
     "additionalInstructions": "Each coffee ring must look like a real dried coffee stain \u2014 darker at edges, lighter in center. The portrait must emerge from ring placement, not from painting. The white paper should be visible between rings. Subject must be clearly recognizable from the ring pattern."
   },
   {
+    "name": "COLLOTYPE",
+    "category": [
+      "ART",
+      "PHOTOGRAPHY",
+      "PRINTMAKING",
+      "HISTORICAL PROCESS"
+    ],
+    "message": "Take a picture and completely reconstruct the image as an authentic collotype photographic print. The entire image must look as though it was produced through the historic photomechanical collotype process, using a gelatin-coated printing surface whose fine reticulated grain transfers continuous photographic tones onto paper. Preserve the subject's recognizable identity, facial features, anatomy, proportions, expression, clothing, and defining details. Reproduce subtle tonal gradations with extraordinary delicacy, using an intricate network of irregular, extremely fine grain structures rather than conventional halftone dots. Highlights should have soft, luminous transitions, midtones should contain delicate continuous tonal information, and shadows should develop rich, detailed depth without becoming featureless black. Include the characteristic fine collotype surface texture, subtle ink density variations, and the tactile appearance of a carefully printed historical fine-art photograph. The image should have the tonal richness and photographic realism of a high-quality collotype print, with the slight handmade irregularities of an actual physical printing process. Use a natural printmaking palette appropriate to the image, including traditional black ink, warm black, sepia, or restrained color where suitable. Reconstruct the complete image as a printed artwork; do not simply apply a grain filter or paper texture to the original photograph.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "The defining characteristic is continuous-tone photomechanical reproduction using fine, irregular collotype grain. Do not use visible regular halftone dots, newspaper screening, pixelation, crosshatching, or coarse stippling. The grain should be delicate and integrated into the tonal structure, not overpower the subject. Maintain fine details in eyes, facial features, hair, clothing, and other identity-defining areas. Avoid generic vintage-photo effects, artificial scratches, heavy aging, or excessive paper discoloration. The source photograph must be reconstructed as a collotype print rather than remain visible underneath a superficial effect. Master-prompt instructions concerning subject, pose, setting, mood, action, artistic direction, and selection override all preset defaults."
+  },
+  {
     "name": "CONSENT BANNER",
     "category": [
       "HUMOR",
@@ -15284,6 +15297,19 @@
     "additionalInstructions": ""
   },
   {
+    "name": "DYE TRANSFER PHOTOGRAPHY",
+    "category": [
+      "ART",
+      "PHOTOGRAPHY",
+      "COLOR",
+      "HISTORICAL PROCESS"
+    ],
+    "message": "Take a picture and completely reconstruct the image as a luxurious historical dye-transfer color photograph. Reproduce the distinctive appearance of the classic dye-transfer photographic printing process, in which separate color records are transferred in precise layers to create the finished image. Build the complete subject from carefully balanced cyan, magenta, and yellow dye information, with each color layer contributing to the final photographic detail. Preserve the subject's exact recognizable identity, facial features, anatomy, proportions, expression, clothing, and defining characteristics. Create exceptionally rich, deep, luminous color with smooth tonal transitions, precise color separation, subtle dye-layer interactions, and beautifully controlled shadow detail. Skin tones should remain natural and dimensional. Saturated colors should appear deep and pure rather than artificially fluorescent, while highlights retain delicate detail and shadows maintain richness without losing information. Introduce the subtle physical character of a traditional dye-transfer print, including extremely slight variations in color-layer registration, delicate pigment-like density transitions, and a refined photographic paper surface. The result should resemble a meticulously produced vintage fine-art color photograph with extraordinary color depth and tonal control. The entire image must be reconstructed as a dye-transfer print rather than simply receiving a vintage color grade.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "The defining feature is the construction of the image from separately transferred color records. The three color components must work together to create the subject, not appear as three visibly displaced copies or an RGB glitch. Prioritize accurate skin tones, natural color relationships, fine detail, and rich photographic depth. Keep registration imperfections extremely subtle; this is a precision printing process, not a deliberately misaligned poster. Avoid excessive grain, faded colors, sepia toning, artificial aging, and generic retro-film effects. Do not turn the image into a painting or illustration. The original photograph must be reconstructed as a dye-transfer photographic print. Master-prompt instructions concerning subject, pose, setting, mood, action, artistic direction, and selection override all preset defaults."
+  },
+  {
     "name": "DYSTOPIAN",
     "category": [
       "SCI-FI",
@@ -15434,6 +15460,19 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "• Preserve recognizable identity while adapting the subject into the Ed, Edd n Eddy universe\n• Transform the entire image into the Peach Creek neighborhood world\n• Apply visible boiling outlines throughout the image\n• Emphasize sketchy hand-drawn construction and imperfect linework\n• Include Ed, Edd, Eddy, and supporting characters when appropriate\n• Use exaggerated facial expressions and cartoon reactions\n• Employ squash-and-stretch animation principles\n• Incorporate watercolor-inspired background aesthetics\n• Use bright suburban summer color palettes\n• Favor visual humor, slapstick, and cartoon energy over realism\n• Avoid photorealism, anime, CGI rendering, modern vector art, or serious dramatic themes\n• Ensure the final image feels chaotic, funny, expressive, and unmistakably Ed, Edd n Eddy"
+  },
+  {
+    "name": "EDITORIAL LIFESTYLE PHOTOGRAPHY",
+    "category": [
+      "PHOTOGRAPHY",
+      "EDITORIAL",
+      "LIFESTYLE",
+      "CANDID"
+    ],
+    "message": "Take a picture and transform it into an exceptionally polished editorial lifestyle photograph, as if captured for a premium lifestyle magazine or sophisticated brand editorial. Preserve the subject's exact identity, recognizable facial features, body proportions, expression, and defining characteristics. Create an authentic, naturally engaging photographic moment that feels observed rather than rigidly posed. The subject should appear comfortably integrated into the environment, with believable body language, natural gestures, relaxed posture, and an expressive interaction with the surroundings when appropriate. Use thoughtful environmental composition, carefully selected camera angles, beautiful natural or convincingly motivated artificial light, and a sophisticated sense of timing. Incorporate the visual qualities of professional editorial photography: luminous but controlled exposure, natural skin tones, subtle filmic color, nuanced shadows, realistic textures, refined depth of field, and beautifully balanced composition. The setting should contribute to a sense of personality, atmosphere, and everyday life without becoming distracting. Use visual storytelling through small environmental details, spatial relationships, natural expressions, and authentic moments. The image should feel intimate, stylish, effortless, and visually sophisticated, with the quality of a photograph commissioned for an established lifestyle publication. Aim for an elevated but believable photographic aesthetic rather than an obvious advertisement or staged fashion shoot.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "Prioritize authenticity, atmosphere, personality, and visual storytelling. The result should feel like a real moment captured by an experienced editorial photographer, not a generic stock photo or posed corporate lifestyle advertisement. Do not automatically add people, pets, food, products, or decorative objects. Do not change the subject's clothing, age, identity, or appearance without direction from the master prompt. Avoid exaggerated fashion poses, runway aesthetics, artificial smiles, excessive retouching, and overly perfect staged environments. Use environmental context only when it supports the requested scene and subject. Master-prompt instructions concerning subject, pose, setting, mood, action, artistic direction, and selection override all preset defaults."
   },
   {
     "name": "EDO LANDSCAPE",
@@ -22889,6 +22928,19 @@
   "options": [],
   "randomizeOptions": false,
   "additionalInstructions": "CRITICAL: This must look like a real physical handmade artwork — not a painting or illustration of a scene. The flat painted canvas background and the physically mounted paper mache figurine and building elements must be clearly distinguishable. The subject must be a small compact paper mache figurine to scale with the miniature buildings. Real cast shadows from the three-dimensional elements onto the flat painted canvas are mandatory. Any result that looks like a drawing, painting, or flat digital art is completely wrong."
+  },
+  {
+    "name": "HERO SHOT PHOTOGRAPHY",
+    "category": [
+      "PHOTOGRAPHY",
+      "COMMERCIAL",
+      "CINEMATIC",
+      "PORTRAIT"
+    ],
+    "message": "Take a picture and transform it into a spectacular, high-end hero shot photograph worthy of a major advertising campaign. Photograph the subject as the undeniable focal point of a visually commanding, professionally art-directed image. Preserve the subject's exact identity, recognizable facial features, body proportions, expression, and defining characteristics. Create an exceptionally strong composition with deliberate subject placement, powerful visual hierarchy, confident framing, and carefully controlled negative space. Use sophisticated professional lighting with dimensional highlights, sculpted shadows, beautiful separation from the background, and carefully balanced exposure. The lighting should give the subject presence, depth, and visual authority without looking artificial or excessively theatrical. Use premium commercial photography techniques: exceptional sharpness on the subject, beautifully controlled depth of field, realistic skin and material textures, rich but natural color, refined contrast, and impeccable exposure. The environment should feel deliberately selected and art-directed to complement the subject, with every background element supporting the overall visual impact rather than competing for attention. The final image should have the polished visual quality of a global brand campaign, luxury advertising photograph, or striking cinematic promotional image. Make the photograph feel ambitious, memorable, and immediately attention-grabbing while remaining believable as a real professionally produced photograph.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "The subject must remain the unmistakable star of the photograph. Do not automatically turn every image into a superhero pose, fashion photograph, movie poster, or dramatic action scene. The term hero shot refers to the photographic composition and commercial visual impact, not necessarily a heroic character or action. Select lighting, camera angle, lens perspective, background treatment, and composition that best enhance the actual subject. Do not invent props, accessories, clothing, actions, or environmental details that change the subject's identity. Avoid generic stock photography, excessive HDR, artificial skin smoothing, exaggerated lens flares, and gratuitous visual effects. Preserve natural anatomy and realistic photographic proportions. Master-prompt instructions concerning subject, pose, setting, mood, action, artistic direction, and selection override all preset defaults."
   },
   {
     "name": "HIDDEN DETAILS",
@@ -51749,6 +51801,19 @@
     ],
     "randomizeOptions": true,
     "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Dithered dots only — no true greys\n• Slight fading toward one edge."
+  },
+  {
+    "name": "THERMOFAX PRINT",
+    "category": [
+      "ART",
+      "PRINTMAKING",
+      "GRAPHIC ART",
+      "EXPERIMENTAL"
+    ],
+    "message": "Take a picture and completely reconstruct the image as a handmade Thermofax stencil print. Create the image as though it were produced using a thermographic stencil-making process and printed through a fine mesh screen. Build the subject from bold, simplified shapes, carefully controlled areas of solid ink, delicate mesh textures, and layered translucent printing inks. Preserve the subject's recognizable identity, facial features, anatomy, proportions, pose, and defining details while translating them into a striking stencil-based graphic composition. Use carefully separated tonal regions rather than ordinary photographic shading. Important contours should be defined by clean stencil edges, while intermediate tones should be created through layered ink, fine mesh patterns, and controlled areas of partial coverage. Introduce subtle imperfections associated with handmade printing: slight ink buildup, tiny variations in coverage, delicate mesh impressions, and occasional imperfect registration between printed layers. Use a visually coherent combination of bold colors, translucent overlaps, and contrasting ink areas. The final image should feel like an authentic experimental stencil print produced through a physical printing process, not a photograph with a screen-print filter applied.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "The image must be constructed from stencil shapes and printed ink. Use a readable balance between solid areas and mesh-derived detail. Preserve enough facial and structural information to identify the subject immediately. Avoid turning the image into ordinary pop art, a comic-book illustration, a generic screen-print poster, or a halftone photograph. Do not add arbitrary lettering, labels, borders, logos, or decorative graphic elements. The original photograph must not remain visible beneath the printed treatment. Master-prompt instructions concerning subject, pose, setting, mood, action, artistic direction, and selection override all preset defaults."
   },
   {
     "name": "THERMOGRAPHIC PRINT",
