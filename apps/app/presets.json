@@ -7983,6 +7983,19 @@
     "additionalInstructions": ""
   },
   {
+    "name": "CELLULAR AUTOMATA",
+    "category": [
+      "TRANSFORMATION",
+      "MATHEMATICAL",
+      "COMPUTATIONAL",
+      "PATTERN"
+    ],
+    "message": "Take a picture and completely reconstruct the subject as an extraordinary cellular automata visualization. The entire subject must be formed from thousands of individual computational cells arranged in a structured grid, with each cell representing a state in a mathematical system. Use patterns inspired by cellular automata rules, including cell birth, survival, death, activation, and interaction with neighboring cells. The subject's recognizable silhouette, facial features, anatomy, clothing, and defining characteristics must emerge from the arrangement and distribution of these cells. Create areas of dense cellular activity, organized repeating structures, branching formations, isolated active cells, and intricate transitions between different states. Use variations in cell size, density, brightness, and color to establish tonal information, depth, and dimensional form. Some regions should exhibit orderly repeating patterns, while others should develop complex emergent structures that resemble computational growth. The overall result should feel like a living mathematical simulation in which a recognizable subject has emerged from simple rules governing thousands of interacting cells. The final image must be a complete cellular reconstruction rather than a photograph covered in a pixel grid.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "The individual cells must actively construct the subject. Do not create an ordinary pixel-art image, mosaic, halftone pattern, or random collection of squares. Use the distinctive behavior of cellular automata: localized interactions, evolving patterns, repeating structures, and emergent complexity. Preserve sufficient detail to identify the subject immediately. Vary the visual density and cell states to reproduce facial features and important anatomical details. The background should remain unchanged unless the master prompt specifies otherwise. Master-prompt instructions concerning subject, pose, setting, mood, action, artistic direction, and selection override all preset defaults."
+  },
+  {
     "name": "CELTIC ART",
     "category": [
       "ART",
@@ -18883,6 +18896,20 @@
     "additionalInstructions": "IDENTITY PRESERVATION (CRITICAL):\n\n• The transformed character must clearly resemble the subject\n• Preserve unique facial identity\n• Preserve distinctive facial traits\n• Preserve facial proportions\n• Preserve recognizable hairstyle characteristics\n• Recognition must come from the transformed cartoon character itself\n\nANTI-CHEAT:\n\n• Do not create a generic Filmation character\n• Do not create a face swap\n• Do not paste the subject into animation artwork\n• Do not use cartoon filters\n• Do not replace the subject's identity with existing franchise characters\n\nFINAL RESULT:\nThe subject must become an authentic Filmation cartoon character rendered entirely in the selected Filmation franchise while remaining immediately recognizable as the original subject."
   },
   {
+    "name": "FINAL DESTINATION",
+    "category": [
+      "CINEMATIC",
+      "SUSPENSE",
+      "THRILLER",
+      "DARK HUMOR",
+      "SCENARIO TRANSFORMATION"
+    ],
+    "message": "Take a picture and place the subject in an extraordinarily tense, cinematic disaster scenario inspired by the suspenseful chain-reaction accidents of FINAL DESTINATION. Capture the subject at the exact moment one second before an enormous, seemingly unavoidable catastrophe is about to occur. The subject must remain alive, unharmed, and visibly present in the scene. The image should communicate that something absolutely terrible is about to happen, with the impending disaster appearing overwhelmingly dangerous and the subject seemingly unaware of how little time remains.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "Create a photorealistic, theatrical disaster-thriller freeze-frame with the visual tension and elaborate chain-reaction scenarios associated with the FINAL DESTINATION film franchise. The subject is the central character in a spectacularly dangerous situation, captured approximately one second before the catastrophic event reaches them. The scene should suggest an imminent fatal outcome without actually depicting death, injury, physical impact, or bodily harm.\n\nInvent a dramatic, visually coherent accident scenario appropriate to the subject and setting. Possibilities include an enormous vehicle losing control directly behind the subject, a massive construction structure beginning to collapse overhead, an industrial machine malfunctioning with dangerous components breaking loose, a runaway object hurtling toward the scene, a bridge or elevated structure beginning to give way, a towering stack of objects tipping over, or an elaborate chain reaction involving several dangerous events about to converge. These are examples, not restrictions. Create an original scenario rather than automatically choosing the same type of accident every time.\n\nTHE ONE-SECOND RULE: The image must depict the precise instant before the catastrophe happens. Show objects suspended in motion, structural elements beginning to fail, debris flying through the air, sparks, smoke, shattered glass in the environment, failing machinery, imminent collisions, and other convincing signs of impending disaster. The danger must be unmistakable and extremely close to the subject. The subject must still be intact, alive, recognizable, and completely free of visible injuries. Do not show the aftermath.\n\nMAXIMUM SUSPENSE: Compose the scene so the viewer immediately understands that the subject is in an almost impossibly dangerous situation. Use dramatic perspective, cinematic lighting, realistic scale, environmental details, motion cues, and carefully arranged visual storytelling. The catastrophe should feel enormous and consequential, not like a minor mishap. Where appropriate, include multiple interconnected hazards that make the scene feel like an elaborate chain reaction.\n\nSUBJECT PRESERVATION: Preserve the subject's recognizable face, identity, age, hairstyle, facial features, body proportions, and other defining characteristics. Integrate the subject naturally into the disaster environment with correct perspective, lighting, scale, and shadows. Do not replace the subject with a generic actor or make the subject look like a different person.\n\nSAFETY AND VISUAL LIMITS: The subject must never be shown dead, injured, bleeding, dismembered, crushed, burned, impaled, or physically struck. Do not depict bodily destruction, graphic violence, wounds, or suffering. Do not show the actual fatal impact. The entire concept depends on anticipation: the viewer should understand that the impending catastrophe could be fatal, while the image itself remains a dramatic, non-graphic moment immediately before it happens.\n\nDo not turn this into a generic action movie poster, a disaster aftermath photograph, or a harmless everyday scene. The subject must be visibly positioned at the center of an imminent, potentially fatal catastrophe. Make the danger specific, dramatic, believable, and uncomfortably close. No captions, movie titles, logos, watermarks, or explanatory text.\n\nIf a master prompt specifies the type of accident, location, environment, mood, action, or other creative details, those instructions override all scenario defaults in this preset."
+  },
+  {
     "name": "FINAL FANTASY",
     "category": [
       "VIDEO GAME",
@@ -21708,6 +21735,20 @@
     "additionalInstructions": "• Transform ONLY the subject.\n• Keep the background completely unchanged.\n• Preserve the original environment, lighting, perspective, colors, shadows, and every background object exactly as photographed.\n• Completely discard the original photographic subject before reconstruction.\n• NEVER place gravel over the original subject.\n• NEVER blend photographic textures with gravel.\n• The original subject must not remain visible anywhere.\n• Every visible part of the subject must be reconstructed entirely from authentic individual gravel stones.\n• Preserve the subject's exact identity, facial structure, hairstyle, expression, age, ethnicity, body proportions, pose, silhouette, and recognizable features.\n• Facial features must emerge solely through the careful placement of individual gravel stones.\n• Hair must be recreated entirely from appropriately sized gravel pieces while preserving its recognizable shape and flow.\n• Clothing must also be reconstructed entirely from gravel while preserving folds, seams, wrinkles, and silhouette.\n• Every individual stone must remain clearly visible.\n• Use realistic variations in stone size, shape, thickness, color, weathering, and mineral composition.\n• Preserve authentic gravel characteristics including chipped edges, rounded stones, fractured surfaces, natural mineral coloration, dust, and weathered textures.\n• Never create polished marble, concrete, ceramic, gemstones, or sculpted rock.\n• Maintain realistic stone spacing with tiny visible gaps between adjacent pieces where appropriate.\n• The finished artwork should resemble a genuine handcrafted gravel mosaic portrait photographed after completion.\n• Master prompt instructions always override the selected option whenever conflicts occur.\n\nFINAL VALIDATION:\n\n✓ ONLY the subject has been transformed.\n✓ The background remains completely unchanged.\n✓ The original photographic subject has been completely removed.\n✓ Every visible part of the subject has been reconstructed entirely from authentic gravel stones.\n✓ Individual stones are clearly visible and distinguishable.\n✓ No photographic textures remain.\n✓ The subject remains immediately recognizable.\n✓ The artwork resembles a genuine handcrafted gravel portrait rather than a gravel texture overlay.\n✓ If ANY answer is NO, regenerate until every requirement is satisfied."
   },
   {
+    "name": "GRAVITATIONAL LENSING",
+    "category": [
+      "TRANSFORMATION",
+      "PHYSICS",
+      "SPACE",
+      "OPTICAL",
+      "SURREAL"
+    ],
+    "message": "Take a picture and transform the subject into a dramatic visualization of gravitational lensing caused by an immense concentration of mass. Reconstruct the subject as though its visible form and surrounding space are being distorted by an extraordinarily powerful gravitational field. Preserve the subject's recognizable identity, facial features, anatomy, proportions, and defining characteristics while introducing physically inspired distortions of light and spatial geometry. Create curved visual paths, warped contours, stretched regions, displaced features, and subtle duplicated image regions that resemble the effects of gravitational lensing. Parts of the subject may appear to wrap around an invisible gravitational center, producing curved arcs, partial Einstein-ring structures, and multiple distorted projections of the same recognizable form. Make the distortion vary according to the apparent gravitational field, with stronger bending near the center and progressively weaker distortion farther away. Use luminous curved highlights, subtle spatial warping, and realistic optical behavior to suggest extreme gravitational curvature. The subject must appear to be the actual source or central participant in this distorted spacetime geometry. The final image should resemble a sophisticated astrophysical visualization in which a recognizable subject is being viewed through an immense gravitational lens, not a photograph with a simple swirl effect.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "The effect must resemble gravitational lensing, not ordinary lens distortion, liquification, fisheye photography, or a spiral warp. Use curved light paths, controlled image duplication, arcs, and spatial displacement to suggest gravitational curvature. Keep the subject recognizable despite the distortions. Do not automatically add planets, galaxies, stars, black holes, or science-fiction scenery unless the master prompt requests them. The background should remain unchanged unless the master prompt specifies otherwise. Master-prompt instructions concerning subject, pose, setting, mood, action, artistic direction, and selection override all preset defaults."
+  },
+  {
     "name": "GRAVITY FALLS",
     "category": [
       "CARTOON",
@@ -23528,6 +23569,19 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "STYLE ENFORCEMENT:\n• Preserve subject identity through yarn line placement\n• Thin colored yarn lines following form contours\n• Intensely vivid, psychedelic color palette\n• Every surface covered — no empty space\n• Sacred Huichol symbols: deer, peyote, corn, eagles, sun\n• Reference Wixárika artists like José Benítez Sánchez\n• Yarn lines should be individually visible\n• Colors should be bold and non-naturalistic\n• The composition should feel visionary and sacred\n• The overall effect should be psychedelic, spiritual, and densely detailed."
+  },
+  {
+    "name": "HYPERBOLIC GEOMETRY",
+    "category": [
+      "TRANSFORMATION",
+      "MATHEMATICAL",
+      "NON-EUCLIDEAN",
+      "GEOMETRY"
+    ],
+    "message": "Take a picture and completely reconstruct the subject using the principles of hyperbolic geometry and non-Euclidean spatial relationships. Transform the subject as though it exists inside a hyperbolic space where distances, angles, and spatial relationships behave differently from ordinary Euclidean geometry. Preserve the subject's recognizable identity, silhouette, facial features, anatomy, and defining characteristics while allowing its proportions and surrounding geometry to undergo a mathematically inspired transformation. Create regions of progressive geometric expansion and compression, curved parallel structures, repeating forms that grow increasingly dense toward spatial boundaries, and complex relationships between near and distant regions. Use visual principles inspired by the Poincaré disk and hyperbolic tessellations, with repeating geometric patterns that become progressively smaller toward the edges. The subject should appear to occupy a coherent non-Euclidean environment in which its recognizable structure is transformed by the underlying geometry. Features may bend, expand, compress, or repeat in controlled ways while maintaining their connection to the original subject. The result should feel like an extraordinary visualization of a subject existing in a space where conventional geometry no longer applies, rather than a normal photograph with a circular distortion filter.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "Use recognizable hyperbolic geometry principles, particularly non-Euclidean distance relationships, curved spatial structures, and hyperbolic tessellation. The transformation must affect the subject itself, not just the background. Preserve enough identity-defining details to make the subject recognizable. Avoid ordinary fisheye distortion, kaleidoscopes, simple radial warping, and generic repeating patterns. The geometry should feel mathematically coherent rather than randomly distorted. The background should remain unchanged unless the master prompt specifies otherwise. Master-prompt instructions concerning subject, pose, setting, mood, action, artistic direction, and selection override all preset defaults."
   },
   {
     "name": "HYPERREALISM",
@@ -27668,6 +27722,19 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "Transform the subject into a Liquid Television-inspired world featuring experimental animation, MTV alternative-culture aesthetics, underground-comics influences, surreal visual storytelling, mixed-media techniques, and avant-garde artistic freedom."
+  },
+  {
+    "name": "LISSAJOUS PORTRAIT",
+    "category": [
+      "TRANSFORMATION",
+      "MATHEMATICAL",
+      "GEOMETRIC",
+      "LINE ART"
+    ],
+    "message": "Take a picture and completely reconstruct the subject as an intricate mathematical Lissajous portrait. The entire subject must be formed from thousands of interwoven parametric curves generated by mathematical oscillations at different frequencies, amplitudes, and phase relationships. These curves must collectively construct the subject's recognizable anatomy, facial features, expression, silhouette, clothing, and defining characteristics. Use continuous flowing paths that intersect, overlap, loop, and weave through one another, creating complex interference patterns and beautifully organized geometric structures. Vary the frequency and amplitude of the curves to establish different levels of detail: tightly packed oscillations should define areas requiring fine detail, while broader curves should establish large shapes and contours. Use carefully controlled line density to create highlights, shadows, depth, and dimensional volume. The curves should follow the actual structure of the subject rather than forming arbitrary decorative patterns. Create a sophisticated mathematical visualization with elegant symmetry, intricate intersections, and controlled color relationships. The final result should look like an extraordinary mathematical drawing generated by an elaborate oscillograph or parametric plotting system, with the subject clearly recognizable through the geometry of the curves. The original photograph must be completely replaced by the mathematical construction.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "The subject must be constructed from Lissajous-style mathematical curves, not simply outlined with decorative lines. Use multiple interacting frequencies and phase relationships to produce the intricate looping structures. Preserve recognizable facial features, anatomy, and proportions through variations in curve density and direction. Avoid ordinary contour drawing, random scribbles, generic wireframes, and simple concentric circles. Do not allow the curves to obscure the subject's identity. The background should remain unchanged unless the master prompt specifies otherwise. Master-prompt instructions concerning subject, pose, setting, mood, action, artistic direction, and selection override all preset defaults."
   },
   {
     "name": "LITE-BRITE",
@@ -36307,6 +36374,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Romanticized exotic setting\n• Rich warm color palette\n• Dramatic light effects\n• Detailed architectural elements\n• Academic oil painting technique"
+  },
+  {
+    "name": "OSCILLATION MAPPING",
+    "category": [
+      "TRANSFORMATION",
+      "MATHEMATICAL",
+      "PHYSICS",
+      "WAVEFORMS",
+      "ABSTRACT"
+    ],
+    "message": "Take a picture and completely reconstruct the subject as a complex oscillation mapping visualization. Build the entire subject from interacting waveforms, periodic trajectories, frequency variations, amplitude changes, and phase relationships. Each region of the subject should be represented by a different combination of oscillating patterns, with the resulting interference and wave interactions creating recognizable anatomy, facial features, contours, and dimensional structure. Use tightly spaced oscillations for fine details, broader wave patterns for major forms, and varying amplitudes to establish highlights, shadows, and depth. Allow waveforms to bend around the subject's contours and interact with neighboring regions, producing intricate interference patterns and organized areas of constructive and destructive overlap. The subject should appear as though its physical structure has been translated into a visual map of dynamic oscillatory behavior. Use elegant mathematical patterns, carefully controlled line density, and a sophisticated combination of color and tonal variation. The finished image should look like an extraordinary scientific visualization of a complex system of interacting waves, with the original subject clearly recognizable through the waveform structure. Reconstruct the complete subject from the oscillation patterns rather than applying wave distortion to an existing photograph.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "The waveforms must construct the subject, not simply distort it or appear as decorative lines. Use variations in frequency, amplitude, phase, and interference to create meaningful differences between anatomical regions. Avoid ordinary water ripples, sound-wave overlays, contour maps, and generic sine-wave graphics. Maintain recognizable identity and clear structural definition. The background should remain unchanged unless the master prompt specifies otherwise. Master-prompt instructions concerning subject, pose, setting, mood, action, artistic direction, and selection override all preset defaults."
   },
   {
     "name": "OSCILLOSCOPE DISPLAY",
@@ -46814,6 +46895,20 @@
     "additionalInstructions": "CORE STYLE:\n\n• Maintain the *photorealistic texture* and *cinematic lighting* while introducing *extreme anatomical and prop exaggeration*.\n• Ensure the subject's *facial likeness* remains perfectly recognizable underneath the extreme features.\n• Integrate the oversized elements (finger, glasses, ears/nose, face) with believable physics and shadows, rather than looking like a 2D cutout.\n• Medical environments (exam rooms, waiting areas) must be rendered in detail.\n• Focus on a *warm, humorous color palette*."
   },
   {
+    "name": "SPECTROGRAM PORTRAIT",
+    "category": [
+      "TRANSFORMATION",
+      "MATHEMATICAL",
+      "SOUND",
+      "DATA VISUALIZATION",
+      "ART"
+    ],
+    "message": "Take a picture and completely reconstruct the subject as an intricate spectrogram-inspired visual portrait. Translate the subject's entire visible form into a visual representation of frequency, intensity, and time. Construct recognizable anatomy, facial features, contours, clothing, and defining characteristics from carefully organized horizontal frequency bands, harmonic structures, spectral peaks, amplitude variations, and changing patterns of signal intensity. Use bright concentrated spectral regions to define important features, layered frequency bands to create broader tonal areas, and intricate transitions between high- and low-energy regions to establish dimensional structure. Create the appearance of a sophisticated scientific audio-analysis visualization, with carefully controlled gradients and detailed frequency structures. The image should have the visual language of a high-resolution spectrogram, where the distribution and intensity of spectral information combine to form a recognizable subject. Use a compelling color palette ranging from deep blacks and dark blues through cyan, green, yellow, orange, and red, with color intensity corresponding to signal energy. The final result must look like a complete subject encoded as a complex spectral data visualization rather than an ordinary portrait with colorful horizontal stripes.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "The subject must be constructed from spectrogram-like frequency and intensity structures. Do not simply add an equalizer, sound bars, audio waveform, or rainbow stripes over the photograph. Use varying frequency bands, spectral peaks, harmonic relationships, and energy distributions to reproduce the subject's features and silhouette. Preserve recognizable identity, especially facial structure and proportions. Avoid adding labels, numerical readouts, legends, or interface elements unless explicitly requested by the master prompt. The background should remain unchanged unless the master prompt specifies otherwise. Master-prompt instructions concerning subject, pose, setting, mood, action, artistic direction, and selection override all preset defaults."
+  },
+  {
     "name": "SPEED PAINTING",
     "category": [
       "DIGITAL",
@@ -46837,6 +46932,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "The mineral formations should be geologically plausible with realistic growth patterns, banding from seasonal deposition, and the characteristic translucent quality of clean calcite. Include cave lighting (warm spotlights) and the dark cave environment."
+  },
+  {
+    "name": "SPHERE EVERSION",
+    "category": [
+      "TRANSFORMATION",
+      "MATHEMATICAL",
+      "TOPOLOGY",
+      "SURREAL",
+      "GEOMETRY"
+    ],
+    "message": "Take a picture and transform the subject through a surreal topological sphere eversion, inspired by the mathematical process of turning a sphere inside out without cutting, tearing, or creating discontinuities. The subject's recognizable form must undergo a continuous spatial inversion in which surfaces fold, curve, pass through themselves, and emerge with their interior and exterior relationships reversed. Preserve the subject's identity, facial features, anatomy, and defining characteristics, but reinterpret the structure through impossible yet continuous topological deformation. Create dramatic inward and outward folds, complex surface inversions, smooth self-intersecting forms, and interconnected regions that appear to turn through one another. The transformation should suggest that the subject is being continuously turned inside out through higher-dimensional mathematical motion. Maintain continuity between all transformed regions: no disconnected pieces, random fragmentation, or ordinary tearing. The resulting image should be visually complex and surreal, with recognizable parts of the subject emerging from an extraordinary system of folded and inverted surfaces. Make the topological transformation the central visual event, not a simple mirror inversion or a hollow shell effect.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "The defining concept is continuous topological inversion without cutting or tearing. The subject must be transformed through connected folds and self-intersecting surfaces, not shattered, peeled, opened, or fragmented. Preserve recognizable identity wherever possible, especially facial features and silhouette. Avoid ordinary inside-out clothing, exposed anatomy, gore, or biological dissection. This is a mathematical and geometric transformation, not a physical injury. The background should remain unchanged unless the master prompt specifies otherwise. Master-prompt instructions concerning subject, pose, setting, mood, action, artistic direction, and selection override all preset defaults."
   },
   {
     "name": "SPIELBERG FILM",
@@ -51582,6 +51691,20 @@
     ],
     "randomizeOptions": true,
     "additionalInstructions": "GEOMETRY RULES:\n• Every tile must be identical in shape — only color and orientation may vary\n• The boundary of each tile must serve as the meaningful silhouette of the subject\n• No white space, no gaps — the entire image surface must be covered\n• Minimum 12 complete tiles visible in the image\n\nCOLOR SYSTEM:\n• Maximum 3 colors total\n• Adjacent tiles must always be different colors\n• Color alternation must follow a consistent pattern\n• Colors should be flat with minimal shading to keep tile boundaries legible\n\nQUALITY TARGET:\n• The eye should be able to lock onto one tile type and then suddenly see the other\n• Both tile forms must be equally recognizable\n• The transition between forms should feel magical, not forced\n• Lithograph or woodcut aesthetic — flat color, strong outline"
+  },
+  {
+    "name": "TESSERACT PROJECTION",
+    "category": [
+      "MATHEMATICAL",
+      "GEOMETRIC",
+      "DIMENSIONAL",
+      "SURREAL",
+      "TRANSFORMATION"
+    ],
+    "message": "Take a picture and completely reconstruct the subject as a physically impossible four-dimensional geometric structure, visualized through a tesseract projection. The subject's actual form, anatomy, features, and recognizable identity must be transformed into the geometry of a projected four-dimensional object. Do not add tesseract cubes, wireframe cubes, or geometric diagrams on top of the subject. The subject itself must become the tesseract.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "COMPLETE SUBJECT TRANSFORMATION — ABSOLUTELY ESSENTIAL: The original subject must be completely reconstructed as a four-dimensional geometric projection. This is not an image overlay, decoration, filter, costume, or composition featuring a tesseract. The subject's own body, face, limbs, clothing, and recognizable features must become the actual geometric structure.\n\nUse the visual logic of a tesseract: nested dimensional forms, interconnected spatial relationships, impossible perspective transitions, hypercube-like geometry, and multiple apparent spatial orientations existing simultaneously. Translate these properties directly into the subject's anatomy and silhouette.\n\nTRANSFORM THE ACTUAL FORM:\n- The subject's head and face must be reconstructed using interconnected dimensional planes and nested geometric volumes, while retaining recognizable facial characteristics.\n- The torso must become an integrated system of connected, dimensionally shifting geometric surfaces.\n- Arms and legs must become continuous parts of the same four-dimensional projection, with spatial relationships that appear to fold through additional dimensions.\n- Clothing, hair, and other defining features must follow the same geometric transformation rather than remaining ordinary photographic elements.\n- The subject's overall silhouette must communicate an impossible dimensional structure while remaining identifiable as the original subject.\n\nVISUALIZATION: Create the illusion of a four-dimensional object projected into three-dimensional space. Use perspective distortion, nested spatial relationships, connected structural transitions, repeated dimensional boundaries, and impossible depth relationships. Geometry must be integrated into the actual construction of the subject, not placed around or in front of it.\n\nSTRICTLY FORBIDDEN: Do not place a tesseract cube around the subject. Do not add floating cubes, transparent cubes, wireframe cubes, geometric cages, cube outlines, holograms, diagrams, or mathematical symbols. Do not leave the subject photograph intact and superimpose geometric structures over it. Do not merely turn the subject into a sculpture standing inside a cube. Do not use ordinary cube-shaped accessories as a substitute for the transformation.\n\nThe final image must show a completely transformed subject whose entire physical construction is based on a four-dimensional projection. If the original photograph is still recognizable as an unchanged photograph with geometry added over it, the transformation has failed.\n\nPreserve the subject's identity and defining characteristics through the geometry. Keep the original background unchanged unless the master prompt specifies otherwise. If a master prompt specifies the subject's appearance, pose, setting, mood, or artistic direction, those instructions override preset defaults while retaining the essential four-dimensional subject transformation."
   },
   {
     "name": "TEX COMICS",
