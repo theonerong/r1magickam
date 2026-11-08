@@ -110,137 +110,137 @@
     ],
     "message": "Take a picture and transform the image into the packaging, label, box, wrapper, bottle, game cover, tin, advertisement, retail display, or commercial presentation of a historically accurate late-19th-century or early-20th-century product.\n\nThe subject should replace the original mascot, spokesperson, character, portrait, model, celebrity figure, illustrated person, product representative, or featured character that originally appeared on the packaging.\n\nThe final image should look like an authentic surviving example of the original product rather than a modern parody, recreation, photograph, AI artwork, or contemporary redesign.\n\nMASTER PROMPT OVERRIDE LOGIC (CRITICAL):\n• If an external master prompt specifies a different historical era, print process, artistic movement, packaging style, advertising approach, retailer format, manufacturing period, or commercial-art style, USE that instead\n• Preserve the historical product-packaging identity even when adapting to overridden themes\n\nHISTORICAL PACKAGING TRANSFORMATION LOGIC:\n\n• Rebuild the entire product presentation using authentic period packaging design\n• Match the original package structure, proportions, materials, typography, illustration style, printing limitations, color palette, advertising language, branding approach, and package composition\n• Preserve all recognizable visual traits of the original product\n• Replace ONLY the original mascot, featured character, portrait, spokesperson, illustrated figure, or package representative with the subject\n• The replacement character must be illustrated using the artistic style originally used on the package\n• Reconstruct the original product's actual package artwork, typography, borders, logos, decorative elements, advertisements, slogans, framing devices, seals, banners, medallions, ornamental flourishes, and composition before replacing the featured character with the subject\n• The image should appear as if it were printed and sold during the original product's historical era\n• Do NOT create generic vintage packaging\n• Do NOT create fantasy packaging unrelated to the selected product\n• Do NOT modernize typography, branding, layout, illustration methods, or printing styles\n\nSUBJECT REPLACEMENT LOGIC:\n\n• Preserve recognizable facial features, expression, age, body language, personality cues, and defining characteristics of the subject\n• Translate the subject into the exact illustration style originally used by the selected product\n• If the original product used engraved portraits, create an engraved version of the subject\n• If the original product used painted illustrations, create a painted version of the subject\n• If the original product used lithography, create a lithographic version of the subject\n• If the original product used cartoon mascots, create a historically accurate period mascot version of the subject\n• If the selected product originally featured a mascot, spokesperson, chef, child character, doctor, fairy, clown, salesman, worker, shopper, messenger, game character, gentleman, lady, housewife, or other illustrated representative, transform the subject into that role while preserving recognizable identity\n• The subject must wear the historically accurate clothing, accessories, hairstyle, occupation, pose, and visual presentation associated with the original package character\n• If the selected product originally featured a portrait, transform the subject into an authentic period portrait rendered using the original illustration technique\n• Preserve the original package composition and replace only the featured character\n• The subject must appear as though they were the original mascot, spokesperson, portrait figure, or package character created by the original illustrator\n• The subject should appear naturally integrated into the package artwork rather than added afterward\n• Do NOT paste photographs onto packaging\n• Do NOT create modern clothing, hairstyles, cosmetics, photography, or graphic-design elements\n\nPRINTING AND MATERIAL AUTHENTICITY:\n\n• Simulate authentic historical printing methods\n• Use authentic chromolithography, engraving, wood engraving, woodblock printing, line engraving, halftone printing, early color printing, or commercial print methods when appropriate\n• Use authentic ink behavior, registration imperfections, color limitations, and printing artifacts\n• Simulate period-correct cardboard, paper labels, wrappers, cartons, tins, bottle labels, game boxes, display cards, and advertising materials\n• Preserve realistic aging, yellowing, wear, stains, oxidation, edge wear, creases, folds, printing imperfections, and historical material textures when appropriate\n• Use authentic paper-stock coloration and surface characteristics matching the era\n\nTYPOGRAPHY:\n\n• Use historically accurate typography matching the original product and publication period\n• Use authentic Victorian, Edwardian, Art Nouveau, chromolithographic, engraved, commercial-display, advertising, or packaging fonts where appropriate\n• Preserve authentic hierarchy, decorative lettering, product names, borders, and advertising copy placement\n• Typography should appear period-correct rather than digitally typeset\n\nSTYLE:\n• Authentic historical packaging\n• Museum-quality historical reconstruction\n• Period advertising illustration\n• Victorian commercial art\n• Edwardian commercial art\n• Antique packaging design\n• Chromolithography\n• Wood engraving\n• Lithographic printing\n• Historical typography\n• Product-label illustration\n• Retail advertising realism\n• Antique paper textures\n• Authentic commercial printing methods\n• Period-correct product presentation\n\nIMPORTANT:\n\n• The final image must appear to be a genuine surviving historical package, advertisement, label, wrapper, game box, or retail artifact\n• Historical accuracy takes priority over modern aesthetics\n• The subject must remain recognizable while fully replacing the original featured character\n• Preserve the original product's visual identity, packaging structure, and commercial-art style\n• Avoid modern photography aesthetics\n• Avoid contemporary packaging conventions\n• Avoid modern branding\n• Avoid modern printing techniques\n• Avoid parody styling\n• Avoid cartoon simplification unless historically accurate to the original product\n• The image should look as though it came directly from a museum collection, private archive, antique store, historical catalog, or preserved retail display\n\nThe final image should resemble a museum-quality historical reconstruction of an authentic late-19th-century or early-20th-century consumer product package featuring the subject in place of the original mascot, spokesperson, portrait figure, or package representative while preserving complete historical accuracy, authentic illustration techniques, original package composition, and period-correct commercial-art presentation.",
     "options": [
-  {
-    "id": "001",
-    "text": "Force Wheat Flakes package featuring the subject replacing Sunny Jim, rendered as a historically accurate 1902 illustrated cereal mascot wearing a top hat and period clothing on authentic Force Wheat Flakes packaging"
-  },
-  {
-    "id": "002",
-    "text": "Uneeda Biscuit package featuring the subject replacing the Uneeda Boy in the iconic yellow slicker and rain hat, illustrated using authentic early-1900s commercial packaging art"
-  },
-  {
-    "id": "003",
-    "text": "Dr. Kilmer's Swamp-Root medicine wrapper featuring the subject replacing the featured portrait or classical figure, rendered as an ornate Victorian patent-medicine illustration"
-  },
-  {
-    "id": "004",
-    "text": "Pears Soap advertisement or wrapper featuring the subject replacing the central artistic figure or cherub, rendered in authentic late-Victorian fine-art advertising style"
-  },
-  {
-    "id": "005",
-    "text": "H-O Oatmeal box featuring the subject replacing the featured chef character, recreated using historically accurate turn-of-the-century cereal-box illustration techniques"
-  },
-  {
-    "id": "006",
-    "text": "Cream of Wheat package featuring the subject replacing the featured chef illustration, rendered in authentic 1890s commercial packaging artwork"
-  },
-  {
-    "id": "007",
-    "text": "Dr. Bell's Pine-Tar Honey package featuring the subject replacing the featured doctor illustration, recreated using detailed engraved patent-medicine artwork"
-  },
-  {
-    "id": "008",
-    "text": "Ayer's Sarsaparilla package featuring the subject replacing the radiant healthy portrait figure, rendered as an authentic late-19th-century tonic advertisement"
-  },
-  {
-    "id": "009",
-    "text": "Lydia Pinkham's Vegetable Compound package featuring the subject replacing Lydia Pinkham's portrait while preserving complete historical packaging authenticity"
-  },
-  {
-    "id": "010",
-    "text": "Moxie Nerve Food package featuring the subject replacing the Moxie Boy, rendered in authentic turn-of-the-century advertising illustration style"
-  },
-  {
-    "id": "011",
-    "text": "Egg-O-See cereal package featuring the subject replacing the Egg-O-See Girl, illustrated using authentic 1906 cereal-box artwork"
-  },
-  {
-    "id": "012",
-    "text": "Zu Zu Ginger Snaps package featuring the subject replacing the Zu Zu Clown character, recreated using historically accurate Nabisco packaging illustration"
-  },
-  {
-    "id": "013",
-    "text": "Fairy Soap wrapper featuring the subject replacing the Fairy Soap Girl, rendered in authentic Victorian commercial illustration style"
-  },
-  {
-    "id": "014",
-    "text": "Pettijohn's Breakfast Food box featuring the subject replacing the Pettijohn Bears, rendered as anthropomorphic illustrated bear characters in authentic children's advertising style"
-  },
-  {
-    "id": "015",
-    "text": "Malt-Too Flakes cereal package featuring the subject replacing the Malt-Too Boy, recreated using authentic 1903 breakfast-food packaging artwork"
-  },
-  {
-    "id": "016",
-    "text": "Aunt Jemima Pancake Flour package featuring the subject replacing the featured package character while preserving complete historical packaging design and illustration methods"
-  },
-  {
-    "id": "017",
-    "text": "Mapl-Flake cereal package featuring the subject replacing the Art Nouveau breakfast hostess figure surrounded by autumn leaves"
-  },
-  {
-    "id": "018",
-    "text": "The Game of District Messenger Boy box cover featuring the subject replacing the messenger boy sprinting through bustling Victorian city streets"
-  },
-  {
-    "id": "019",
-    "text": "The Game of the Office Boy box cover featuring the subject replacing the ambitious office boy presenting a recommendation letter in a Victorian office"
-  },
-  {
-    "id": "020",
-    "text": "The Yellow Kid Card Game box featuring the subject replacing the Yellow Kid, rendered in authentic 1890s comic-strip and lithographic style"
-  },
-  {
+    {
+      "id": "001",
+      "text": "Force Wheat Flakes package featuring the subject replacing Sunny Jim, rendered as a historically accurate 1902 illustrated cereal mascot wearing a top hat and period clothing on authentic Force Wheat Flakes packaging"
+    },
+    {
+      "id": "002",
+      "text": "Uneeda Biscuit package featuring the subject replacing the Uneeda Boy in the iconic yellow slicker and rain hat, illustrated using authentic early-1900s commercial packaging art"
+    },
+    {
+      "id": "003",
+      "text": "Dr. Kilmer's Swamp-Root medicine wrapper featuring the subject replacing the featured portrait or classical figure, rendered as an ornate Victorian patent-medicine illustration"
+    },
+    {
+      "id": "004",
+      "text": "Pears Soap advertisement or wrapper featuring the subject replacing the central artistic figure or cherub, rendered in authentic late-Victorian fine-art advertising style"
+    },
+    {
+      "id": "005",
+      "text": "H-O Oatmeal box featuring the subject replacing the featured chef character, recreated using historically accurate turn-of-the-century cereal-box illustration techniques"
+    },
+    {
+      "id": "006",
+      "text": "Cream of Wheat package featuring the subject replacing the featured chef illustration, rendered in authentic 1890s commercial packaging artwork"
+    },
+    {
+      "id": "007",
+      "text": "Dr. Bell's Pine-Tar Honey package featuring the subject replacing the featured doctor illustration, recreated using detailed engraved patent-medicine artwork"
+    },
+    {
+      "id": "008",
+      "text": "Ayer's Sarsaparilla package featuring the subject replacing the radiant healthy portrait figure, rendered as an authentic late-19th-century tonic advertisement"
+    },
+    {
+      "id": "009",
+      "text": "Lydia Pinkham's Vegetable Compound package featuring the subject replacing Lydia Pinkham's portrait while preserving complete historical packaging authenticity"
+    },
+    {
+      "id": "010",
+      "text": "Moxie Nerve Food package featuring the subject replacing the Moxie Boy, rendered in authentic turn-of-the-century advertising illustration style"
+    },
+    {
+      "id": "011",
+      "text": "Egg-O-See cereal package featuring the subject replacing the Egg-O-See Girl, illustrated using authentic 1906 cereal-box artwork"
+    },
+    {
+      "id": "012",
+      "text": "Zu Zu Ginger Snaps package featuring the subject replacing the Zu Zu Clown character, recreated using historically accurate Nabisco packaging illustration"
+    },
+    {
+      "id": "013",
+      "text": "Fairy Soap wrapper featuring the subject replacing the Fairy Soap Girl, rendered in authentic Victorian commercial illustration style"
+    },
+    {
+      "id": "014",
+      "text": "Pettijohn's Breakfast Food box featuring the subject replacing the Pettijohn Bears, rendered as anthropomorphic illustrated bear characters in authentic children's advertising style"
+    },
+    {
+      "id": "015",
+      "text": "Malt-Too Flakes cereal package featuring the subject replacing the Malt-Too Boy, recreated using authentic 1903 breakfast-food packaging artwork"
+    },
+    {
+      "id": "016",
+      "text": "Aunt Jemima Pancake Flour package featuring the subject replacing the featured package character while preserving complete historical packaging design and illustration methods"
+    },
+    {
+      "id": "017",
+      "text": "Mapl-Flake cereal package featuring the subject replacing the Art Nouveau breakfast hostess figure surrounded by autumn leaves"
+    },
+    {
+      "id": "018",
+      "text": "The Game of District Messenger Boy box cover featuring the subject replacing the messenger boy sprinting through bustling Victorian city streets"
+    },
+    {
+      "id": "019",
+      "text": "The Game of the Office Boy box cover featuring the subject replacing the ambitious office boy presenting a recommendation letter in a Victorian office"
+    },
+    {
+      "id": "020",
+      "text": "The Yellow Kid Card Game box featuring the subject replacing the Yellow Kid, rendered in authentic 1890s comic-strip and lithographic style"
+    },
+    {
     "id": "021",
     "text": "The Game of Playing Department Store box featuring the subject replacing the central shopper or clerk figure inside a luxurious Victorian department store"
-  },
-  {
-    "id": "022",
-    "text": "Black Jack Stove Polish packaging featuring the subject replacing the Black Jack jack-in-the-box mascot in authentic product-label illustration style"
-  },
-  {
-    "id": "023",
-    "text": "Enameline Stove Polish packaging featuring the subject replacing the featured worker or housewife presenting a gleaming iron stove"
-  },
-  {
-    "id": "024",
-    "text": "Bixby's Aa Shoe Polish package featuring the subject replacing the energetic shoe-shine boy, rendered in authentic Edwardian advertising style"
-  },
-  {
-    "id": "025",
-    "text": "Whittemore's Elite Shoe Paste tin featuring the subject replacing the Elite Gentleman examining his polished boots"
-  },
-  {
-    "id": "026",
-    "text": "Dr. Lyon's Perfect Tooth Powder tin featuring the subject replacing Dr. Lyon's engraved portrait while preserving authentic medical-advertising design"
-  },
-  {
-    "id": "027",
-    "text": "Zonweiss Tooth Paste package featuring the subject replacing the radiant Victorian woman used to advertise the whitening product"
-  },
-  {
-    "id": "028",
-    "text": "Sozodont Tooth Paste and Powder package featuring the subject replacing the featured high-society woman or classical beauty illustration"
-  },
-  {
-    "id": "029",
-    "text": "Zeno Chewing Gum display tin featuring the subject replacing the Zeno Girl, illustrated in authentic chromolithographic advertising style"
-  },
-  {
-    "id": "030",
-    "text": "Adams' Pepsin Tutti-Frutti Gum package featuring the subject replacing the featured Victorian child or society figure used in the original advertising"
-  },
-  {
-    "id": "031",
-    "text": "Beeman's Pepsin Chewing Gum package featuring the subject replacing Dr. Beeman's portrait in authentic patent-medicine advertising style"
-  },
-  {
-    "id": "032",
-    "text": "Random historically accurate reconstruction of one discontinued late-19th-century or early-20th-century consumer product, cereal, medicine, game, soap, chewing gum, household product, or packaged good from the era with the subject replacing the original mascot, spokesperson, portrait figure, or featured character"
-  }
-  ],
-  "randomizeOptions": true,
-  "additionalInstructions": "• Subject replaces only the original mascot, portrait, spokesperson, or featured character\n• Preserve complete historical accuracy\n• Recreate original packaging structure and layout\n• Use authentic period typography\n• Use authentic printing techniques\n• Match original illustration methods\n• Simulate real paper, cardboard, tins, labels, wrappers, and box materials\n• Avoid modern photography pasted onto packaging\n• Avoid modern fonts\n• Avoid modern graphic design conventions\n• Preserve original color palettes\n• Preserve original advertising composition\n• Make the final image resemble a genuine surviving artifact from the period"
+    },
+    { 
+      "id": "022",
+      "text": "Black Jack Stove Polish packaging featuring the subject replacing the Black Jack jack-in-the-box mascot in authentic product-label illustration style"
+    },
+    {
+      "id": "023",
+      "text": "Enameline Stove Polish packaging featuring the subject replacing the featured worker or housewife presenting a gleaming iron stove"
+    },
+    {
+      "id": "024",
+      "text": "Bixby's Aa Shoe Polish package featuring the subject replacing the energetic shoe-shine boy, rendered in authentic Edwardian advertising style"
+    },
+    {
+      "id": "025",
+      "text": "Whittemore's Elite Shoe Paste tin featuring the subject replacing the Elite Gentleman examining his polished boots"
+    },
+    {
+      "id": "026",
+      "text": "Dr. Lyon's Perfect Tooth Powder tin featuring the subject replacing Dr. Lyon's engraved portrait while preserving authentic medical-advertising design"
+    },
+    {
+      "id": "027",
+      "text": "Zonweiss Tooth Paste package featuring the subject replacing the radiant Victorian woman used to advertise the whitening product"
+    },
+    {
+      "id": "028",
+      "text": "Sozodont Tooth Paste and Powder package featuring the subject replacing the featured high-society woman or classical beauty illustration"
+    },
+    {
+      "id": "029",
+      "text": "Zeno Chewing Gum display tin featuring the subject replacing the Zeno Girl, illustrated in authentic chromolithographic advertising style"
+    },
+    {
+      "id": "030",
+      "text": "Adams' Pepsin Tutti-Frutti Gum package featuring the subject replacing the featured Victorian child or society figure used in the original advertising"
+    },
+    {
+      "id": "031",
+      "text": "Beeman's Pepsin Chewing Gum package featuring the subject replacing Dr. Beeman's portrait in authentic patent-medicine advertising style"
+    },
+    {
+      "id": "032",
+      "text": "Random historically accurate reconstruction of one discontinued late-19th-century or early-20th-century consumer product, cereal, medicine, game, soap, chewing gum, household product, or packaged good from the era with the subject replacing the original mascot, spokesperson, portrait figure, or featured character"
+    }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "• Subject replaces only the original mascot, portrait, spokesperson, or featured character\n• Preserve complete historical accuracy\n• Recreate original packaging structure and layout\n• Use authentic period typography\n• Use authentic printing techniques\n• Match original illustration methods\n• Simulate real paper, cardboard, tins, labels, wrappers, and box materials\n• Avoid modern photography pasted onto packaging\n• Avoid modern fonts\n• Avoid modern graphic design conventions\n• Preserve original color palettes\n• Preserve original advertising composition\n• Make the final image resemble a genuine surviving artifact from the period"
   },
   {
     "name": "21st DOCTOR",
@@ -4123,7 +4123,7 @@
     "message": "Take a picture and transform its appearance into a digital data-stream visualization. Preserve a recognizable reconstruction of the subject while covering and interweaving the image with dense, translucent rows of Base64-style encoded character sequences. The characters should resemble the raw encoded data of a digital image being streamed, with scrolling text fragments, overlapping data rows, and varying levels of transparency.",
     "options": [
       {
-        "id": ": "DENSE DATA STREAM",
+        "id": "DENSE DATA STREAM",
         "text": "Heavy overlapping rows of Base64 characters with the subject partially obscured."
       },
       {
@@ -4546,6 +4546,20 @@
     ],
     "randomizeOptions": true,
     "additionalInstructions": "FINAL RESULT:\nThe image should show the subject transformed into or featured as a beverage brand mascot with their facial features clearly recognizable, styled as a professional advertising campaign that looks natural and authentic, not photoshopped or composited."
+  },
+  {
+    "name": "BÉZIER CURVE PORTRAIT",
+    "category": [
+      "MATHEMATICAL", 
+      "GENERATIVE ART", 
+      "PORTRAIT", 
+      "VECTOR ART", 
+      "LINE ART"
+    ],
+    "message": "Take a picture and completely reconstruct the subject using an elaborate system of mathematical Bézier curves. Build the subject's entire face, hair, clothing, and body from flowing vector paths, graceful curves, and carefully controlled intersections. Use smooth cubic and higher-order Bézier curves to reproduce the subject's exact contours, facial features, hairstyle, and anatomy. Layer the paths with varying thickness, curvature, and spacing to create dimensional shading and extraordinary detail. The final result should resemble a sophisticated generative vector portrait, as though the entire person were sculpted from an intricate network of mathematically controlled curves.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "The actual subject must be reconstructed from Bézier paths, not represented by an ordinary photograph with vector outlines placed over it. Use mathematically smooth curves with intentional control points and continuous transitions. The paths must create the full structure of the subject, including the silhouette, facial features, hair, clothing, limbs, and body proportions. Use nested curves and layered path density to create tonal variation, highlights, shadows, and depth. Preserve the original subject's identity and recognizable details. Facial features must be carefully constructed rather than reduced to generic symbols or a few simplified contour lines. Vary curve thickness and spacing in a controlled way to create a polished, sophisticated result. Avoid generic clip art, simplistic cartoon outlines, random scribbles, disconnected vector fragments, and decorative curves that do not contribute to the subject's anatomy. The original photograph must be completely replaced by the vector reconstruction. Preserve the original background unless the master prompt specifies otherwise. Any subject, pose, setting, mood, action, artistic direction, or selection specified by the master prompt overrides the defaults in this preset."
   },
   {
     "name": "BEZOLD-BRÜCKE EFFECT",
@@ -10731,7 +10745,7 @@
     "randomizeOptions": true,
     "additionalInstructions": ""
   },
-{
+  {
     "name": "COMIC BOOK COVER",
     "category": [
       "OPTIONS",
@@ -26407,6 +26421,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "KNOT THEORY PORTRAIT",
+    "category": [
+      "MATHEMATICAL", 
+      "GENERATIVE ART", 
+      "PORTRAIT", 
+      "TOPOLOGY", 
+      "GEOMETRIC"
+    ],
+    "message": "Take a picture and completely reconstruct the subject using intricate mathematical knots and interlocking parametric curves. Build the subject's entire face, hair, clothing, and body from continuous three-dimensional loops, torus knots, trefoil knots, interwoven strands, and complex closed mathematical paths. The curves must combine to form the subject's actual anatomy and recognizable silhouette, with tightly woven structures creating facial detail and larger interlocking loops defining the body. Use convincing over-under crossings, dimensional depth, and carefully organized geometric complexity to create a remarkable mathematical knot sculpture in the precise form of the original subject.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "The subject must be reconstructed entirely from mathematical knot structures. Do not place decorative knots around the person, create a knot-shaped frame, or simply apply a rope texture to the original photograph. The three-dimensional paths must form the actual face, hairstyle, clothing, limbs, and body. Use recognizable mathematical knot structures, including trefoil knots, torus knots, closed parametric curves, and interlocking loops. Create believable over-under crossings and continuous paths with consistent three-dimensional depth. Use tightly packed and smaller knot structures to reproduce the eyes, nose, mouth, and other fine identifying details. Larger loops and interlocking structures should establish the subject's proportions and silhouette. Preserve the subject's identity and distinctive physical characteristics. Avoid a generic human figure made from ordinary rope, random tangled cables, nets, or macramé. The result should feel like a sophisticated mathematical sculpture based on topology, not a person wrapped in cords. The original photograph must not remain visible beneath the transformation. Preserve the original background unless the master prompt specifies otherwise. Any subject, pose, setting, mood, action, artistic direction, or selection specified by the master prompt overrides the defaults in this preset."
   },
   {
     "name": "KODACHROME",
@@ -47310,6 +47338,20 @@
   "additionalInstructions": "SPIN PHYSICS (CRITICAL):\n\n• Apply ROTATIONAL TRANSFORMATION to existing pixels\n• Image must appear physically rotated and stretched from a central axis\n• DO NOT draw, paint, or overlay motion lines\n• DO NOT simulate motion using added streak graphics\n\nANTI-CHEAT RULE (STRICT):\n• Every streak or smear must come from displaced original image content\n• If streaks appear as separate drawn lines → FAIL\n• If background looks \"decorated\" instead of rotated → FAIL\n\nTARGET RULES (STRICT):\n\nIF \"SUBJECT ONLY\":\n• ONLY the subject pixels are rotationally distorted\n• Background pixels remain completely unchanged\n\nIF \"BACKGROUND ONLY\":\n• Background pixels must be physically rotated and stretched\n• Subject must remain sharp, undistorted, and NOT duplicated\n• NO spin lines behind subject — only warped background content\n\nIF \"ENTIRE SCENE\":\n• All pixels follow the same rotational transformation\n\nEDGE CONTROL:\n• Maintain detail near the spin center\n• Increase distortion gradually toward edges\n• Avoid uniform blur — must show directional rotation\n\nFAIL CONDITIONS:\n• No clear spin center → FAIL\n• Use of overlay streaks or drawn lines → FAIL\n• Background not actually warped in \"Background Only\" → FAIL\n• Subject distorted in \"Background Only\" → FAIL\n• Generic blur instead of rotational motion → FAIL\n\nQUALITY:\n• True radial motion\n• High detail\n• No artificial overlays\n• No pixel tearing or artifacts\n• Physically believable spin effect"
   },
   {
+    "name": "SPIRAL FIELD PORTRAIT",
+    "category": [
+      "MATHEMATICAL",
+      "GENERATIVE ART", 
+      "PORTRAIT", 
+      "SPIRALS", 
+      "GEOMETRIC"
+    ],
+    "message": "Take a picture and completely reconstruct the subject from an intricate field of interlocking mathematical spirals. Use logarithmic spirals, Archimedean spirals, expanding coils, and tightly nested rotational curves to form the subject's entire face, hair, clothing, and body. The spirals must adapt to the subject's actual anatomy, changing their size, spacing, curvature, and orientation to define facial features and dimensional structure. Combine large sweeping spirals with extremely fine nested coils to produce a mesmerizing mathematical portrait in which the original subject remains clearly recognizable.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "The subject must be constructed from the spirals themselves. Do not simply cover the original photograph with spiral graphics or place decorative spirals around the person. Use coherent mathematical spiral families with controlled curvature and spacing. Large spirals should establish the overall body and major shapes; smaller nested spirals should reproduce facial details, hair, clothing folds, and subtle changes in surface form. Spirals may intersect and interlock, but they must form an organized system rather than random circular decorations. Preserve the subject's identity, facial proportions, hairstyle, hair color, clothing, and body silhouette. Use differences in spiral density to produce convincing light, shadow, and depth. The finished portrait should be visually rich and intricate while remaining readable and recognizable. Avoid simple concentric circles, hypnotic tunnel patterns, isolated spiral ornaments, or a spiral background behind an unchanged person. The original photograph must not remain visible beneath the reconstruction. Preserve the original background unless the master prompt specifies otherwise. Any subject, pose, setting, mood, action, artistic direction, or selection specified by the master prompt overrides the defaults in this preset."
+  },
+  {
     "name": "SPIROGRAPH (IMAGE)",
     "category": [
       "OPTIONS",
@@ -48581,6 +48623,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "ABSOLUTE PROHIBITIONS:\n• DO NOT show a generic TV screen\n• DO NOT invent fake platforms\n• DO NOT ignore platform-specific UI styling\n• DO NOT place the subject outside the show artwork\n\nFINAL RESULT:\nThe image must look like a real screenshot of a streaming platform interface, featuring an actual show or movie with the subject seamlessly integrated as part of the cast — complete with authentic layout, platform-specific visual language, and humorous but believable streaming flavor text.\n\nCRITICAL PLATFORM UI REQUIREMENTS:"
+  },
+  {
+    "name": "STREAMLINE PORTRAIT",
+    "category": [
+      "MATHEMATICAL", 
+      "GENERATIVE ART", 
+      "PORTRAIT", 
+      "FLUID DYNAMICS", 
+      "LINE ART"
+    ],
+    "message": "Take a picture and completely reconstruct the subject using fluid-dynamics streamlines. Transform the entire face, hair, clothing, and body into a flowing field of continuous paths that behave like the streamlines of a complex moving fluid. The lines must follow the contours of the subject's anatomy, flowing around facial features, sweeping through the hairstyle, and tracing the structure of the body. Create regions of smooth parallel flow, turbulent curls, vortices, and tightly compressed streamlines to reproduce the subject's recognizable features and dimensional form. The finished image should look like a sophisticated computational fluid-dynamics visualization that has become a human portrait.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "This is a complete reconstruction of the subject from fluid-flow streamlines, not a water effect or a flow-field overlay on a photograph. The paths themselves must form the person's actual face, hair, clothing, limbs, and body. Use coherent streamline behavior: smooth directional flow, compression and expansion, curved trajectories, vortices, and localized turbulence. The flow should respond to the subject's contours and anatomical structures, creating the appearance of fluid moving through and around a human-shaped field. Use line density and directional changes to establish facial detail, shading, and three-dimensional volume. Preserve the subject's identity, facial proportions, hairstyle, hair color, clothing, and distinctive features. Avoid turning the subject into a water sculpture, liquid-metal figure, or generic swirling vortex. Do not add water splashes, waves, droplets, or unrelated fluid effects. The original photograph must not remain visible beneath the transformation. Preserve the original background unless the master prompt specifies otherwise. Any subject, pose, setting, mood, action, artistic direction, or selection specified by the master prompt overrides the defaults in this preset."
   },
   {
     "name": "STREET ART",
@@ -53167,35 +53223,35 @@
     "additionalInstructions": "• Transform ONLY the subject.\n• Keep the background completely unchanged.\n• Preserve the original environment, lighting, perspective, colors, shadows, and every background object exactly as photographed.\n• Completely discard the original photographic subject and replace it with a single, physical slice of toast.\n• The subject's identity, face, hairstyle, features, and expression must emerge purely from the varying degrees of toast browning, heat caramelization, and surface singeing on the bread slice.\n• Intelligently replace any cropped lower body lines by formatting the physical slice of bread to stand, prop, or sit naturally on whatever floor or surface the original subject occupied.\n• The portrait image on the bread must show realistic toast properties: the singed design must follow the contours of the bread's crumb holes, air pockets, and texture, fading naturally over larger gaps.\n• NEVER allow real human skin, real hair, or flat digital ink textures to be printed onto the toast.\n• The slice of toast must cast a realistic shadow onto the unedited background based on the existing lighting of the room.\n• Master prompt instructions always override the selected option whenever conflicts occur.\n\nFINAL VALIDATION — Before producing the final image, verify ALL of the following:\n\n✓ ONLY the subject has been transformed.\n✓ The background remains completely unchanged and photographic.\n✓ The subject has been replaced by a physical slice of toasted bread.\n✓ The identity is clearly recognizable as a seared, charred, or scorched image on the surface of the toast slice.\n✓ The result is NOT a person made out of bread blocks or statues.\n✓ Real crumb textures, air pockets, singe gradients, and crust borders are visible throughout the artwork.\n✓ If ANY answer is NO, regenerate the image until every requirement is satisfied."
   },
   {
-  "name": "TOEJAM & EARL",
-  "category": [
-    "1990S",
-    "VIDEO GAME",
-    "CARTOON",
-    "RETRO",
-    "SCI-FI"
+    "name": "TOEJAM & EARL",
+    "category": [
+      "1990S",
+      "VIDEO GAME",
+      "CARTOON",
+      "RETRO",
+      "SCI-FI"
     ],
-  "message": "Take a picture and transform the entire scene into the visual style of the ToeJam & Earl universe. Reimagine the subject as a resident of a surreal cartoon alien world inspired by street culture, funky science fiction, exaggerated animation, cartoon humor, and the distinctive artistic identity of the franchise. Preserve recognizable identity while adapting the subject into the visual language of the selected ToeJam & Earl era. The result should look like authentic promotional artwork, game artwork, cartoon artwork, packaging illustration, magazine advertisement, or marketing material from the specific ToeJam & Earl era selected by the active option.\n\nTRANSFORMATION LOGIC:\n• Transform the entire scene, not just the subject\n• Preserve recognizable facial identity\n• Adapt clothing, poses, expressions, and body language into the ToeJam & Earl aesthetic\n• Integrate the subject naturally into the bizarre alien environment\n• The final image should feel energetic, goofy, colorful, and unmistakably part of the franchise\n\nCHARACTER DESIGN:\n• Exaggerated cartoon anatomy\n• Bold silhouettes\n• Funky street-fashion influences\n• Playful alien aesthetics\n• Oversized accessories\n• Dynamic cartoon poses\n• Expressive facial features\n• Bright saturated colors\n• Strong outlines\n• Comic-book energy\n• Goofy visual humor\n• Cartoon physics\n\nART STYLE:\n• Vibrant cartoon visuals\n• Strong visual personality\n• Exaggerated proportions\n• Energetic design language\n• Playful visual storytelling\n• Lighthearted surrealism\n• Distinctive franchise aesthetics\n• Stylized rendering appropriate to the selected era\n\nENVIRONMENT:\n• Floating island landscapes\n• Surreal alien worlds\n• Fragmented terrain suspended in space\n• Bright grass islands\n• Sand patches\n• Small lakes and ponds\n• Cartoon cliffs\n• Cosmic voids between islands\n• Strange vegetation\n• Funky extraterrestrial scenery\n• Imaginative environmental design\n\nEARTHLING CHARACTERS:\n• Populate the scene with classic bizarre Earthlings from the ToeJam & Earl universe\n• Hula girls\n• Boogie Men\n• Dentists with drills\n• Giant hamsters\n• Nerds\n• Mailmen\n• Wizards\n• Cupid\n• Opera singers\n• Crazy shoppers\n• Random eccentric Earthlings\n• Earthlings should appear naturally integrated into the scene\n• Earthlings should support the humor of the image\n• Earthlings should never obscure the primary subject\n\nTOEJAM & EARL UNIVERSE CHARACTERS:\n• Include ToeJam when appropriate\n• Include Earl when appropriate\n• Include supporting franchise characters when appropriate\n• Characters should interact naturally with the scene\n• Characters should feel like part of the environment\n• Characters should reinforce franchise identity\n\nCOLOR PALETTE:\n• Bright greens\n• Electric blues\n• Vibrant reds\n• Saturated oranges\n• Bright yellows\n• Funky purples\n• Cartoon pinks\n• Cheerful color harmonies\n• High saturation\n• Playful color combinations\n\nATMOSPHERE:\n• Fun\n• Silly\n• Quirky\n• Lighthearted\n• Surreal\n• Funky\n• Energetic\n• Cartoonish\n• Imaginative\n• Comedic\n• Whimsical\n\nCOMPOSITION:\n• Dynamic action poses\n• Cartoon staging\n• Playful visual storytelling\n• Multiple humorous details\n• Animated energy\n• Clear readability\n• Strong focal point\n• Rich environmental storytelling\n\nANTI-CHEAT:\n• Do NOT create realistic science fiction\n• Do NOT create dark dystopian worlds\n• Do NOT create serious cyberpunk aesthetics\n• Do NOT create photorealistic humans\n• Do NOT create realistic alien biology\n• Do NOT create horror elements\n• Do NOT create realistic physics\n• Do NOT create modern CGI realism unless explicitly required by the selected era\n• Do NOT create gritty military science fiction\n• Do NOT blend multiple ToeJam & Earl eras together\n\nFINAL VALIDATION:\n• The subject must remain recognizable\n• The selected ToeJam & Earl era must be immediately recognizable\n• The image must immediately evoke the franchise\n• The environment must feel surreal and alien\n• Earthling characters must appear throughout the scene\n• Cartoon energy must dominate the image\n• Colors must be vibrant and playful\n• The image must feel like official franchise artwork\n• The selected option determines rendering technology, resolution, production era, and visual presentation",
-  "options": [
-  {
-  "id": "001",
-  "text": "ORIGINAL TOEJAM & EARL (1991 SEGA GENESIS). Transform the entire image into authentic 16-bit Sega Genesis artwork. Every object, character, environmental element, and visual effect must exhibit visible pixel structure. Do not smooth, anti-alias, upscale, vectorize, paint over, or modernize the pixel artwork. Use large visible pixels, low-resolution sprite graphics, limited Genesis-era color palettes, chunky character sprites, primitive isometric terrain, simple environmental textures, strong black outlines, flat shading, and classic early-1990s videogame rendering. Convert the scene into the floating-island world of the original game with disconnected land masses suspended over cosmic voids, simple lakes, bright grass patches, funky geometric patterns, and exaggerated Earthling sprites. The final image should resemble an actual Sega Genesis gameplay screen, box-art illustration, title-screen artwork, magazine advertisement, or promotional artwork from the 1991 release."
-  },
-  {
-  "id": "002",
-  "text": "TOEJAM & EARL: PANIC ON FUNKOTRON (1993 SEGA GENESIS). Transform the image into authentic 16-bit side-scrolling Genesis artwork featuring larger sprite work, brighter colors, more detailed backgrounds, smoother animation, cartoon suburbia environments, Earth-inspired scenery, exaggerated visual humor, and classic Saturday-morning-cartoon energy. Preserve visible pixel structure, sprite-based rendering, Genesis color limitations, and authentic early-1990s videogame production techniques. The final image should resemble an actual Panic on Funkotron gameplay screen, box illustration, promotional artwork, or magazine advertisement."
-  },
-  {
-  "id": "003",
-  "text": "TOEJAM & EARL III: MISSION TO EARTH. Transform the image into authentic early-2000s videogame artwork featuring stylized 3D characters, chunky cel-shading, comic-book proportions, exaggerated animation, hip-hop-inspired visual design, colorful science-fiction environments, arcade-like energy, and sixth-generation console aesthetics. Characters should appear as stylized 3D cartoon models rather than pixel sprites. The final image should resemble official Xbox-era promotional artwork, game art, packaging illustration, or marketing material."
-  },
-  {
-  "id": "004",
-  "text": "TOEJAM & EARL: BACK IN THE GROOVE. Transform the image into modern high-resolution hand-drawn cartoon artwork featuring crisp linework, expressive character acting, smooth contemporary illustration techniques, rich color palettes, polished animation aesthetics, detailed environmental design, and modern interpretations of the classic franchise. The final image should resemble official Back in the Groove artwork, promotional illustration, game art, packaging art, or contemporary franchise marketing materials."
-  }
-  ],
-  "randomizeOptions": true,
-  "additionalInstructions": "• Apply the selected option exactly\n• The selected option overrides rendering technology, production era, resolution level, sprite style, color limitations, and artistic presentation\n• Preserve recognizable identity across all options\n• Original Genesis options must emphasize visible pixels, sprite-based artwork, limited-color rendering, and authentic 16-bit production techniques\n• Mission to Earth must emphasize stylized early-2000s cel-shaded 3D videogame aesthetics\n• Back in the Groove must emphasize modern high-resolution hand-drawn cartoon illustration\n• Never blend multiple franchise eras together\n• Do not modernize Genesis-era options\n• Do not remove visible pixel structure from Genesis-era options\n• The selected era must be immediately recognizable to fans of the franchise\n• Preserve recognizable identity while adapting the subject into the ToeJam & Earl universe\n• Transform the entire image into a surreal cartoon alien world\n• Include classic Earthling characters throughout the scene\n• Include ToeJam, Earl, and supporting franchise characters when appropriate\n• Use bright saturated colors and cartoon rendering appropriate to the selected era\n• Employ exaggerated anatomy, expressive poses, and playful visual humor\n• Create floating-island environments suspended over cosmic voids when appropriate to the selected era\n• Maintain strong cartoon aesthetics\n• Avoid realism, horror, military science fiction, cyberpunk, or dark themes\n• Preserve the funky fusion of street culture and science fiction that defines the franchise\n• Ensure the final image feels joyful, bizarre, humorous, and unmistakably ToeJam & Earl"
+    "message": "Take a picture and transform the entire scene into the visual style of the ToeJam & Earl universe. Reimagine the subject as a resident of a surreal cartoon alien world inspired by street culture, funky science fiction, exaggerated animation, cartoon humor, and the distinctive artistic identity of the franchise. Preserve recognizable identity while adapting the subject into the visual language of the selected ToeJam & Earl era. The result should look like authentic promotional artwork, game artwork, cartoon artwork, packaging illustration, magazine advertisement, or marketing material from the specific ToeJam & Earl era selected by the active option.\n\nTRANSFORMATION LOGIC:\n• Transform the entire scene, not just the subject\n• Preserve recognizable facial identity\n• Adapt clothing, poses, expressions, and body language into the ToeJam & Earl aesthetic\n• Integrate the subject naturally into the bizarre alien environment\n• The final image should feel energetic, goofy, colorful, and unmistakably part of the franchise\n\nCHARACTER DESIGN:\n• Exaggerated cartoon anatomy\n• Bold silhouettes\n• Funky street-fashion influences\n• Playful alien aesthetics\n• Oversized accessories\n• Dynamic cartoon poses\n• Expressive facial features\n• Bright saturated colors\n• Strong outlines\n• Comic-book energy\n• Goofy visual humor\n• Cartoon physics\n\nART STYLE:\n• Vibrant cartoon visuals\n• Strong visual personality\n• Exaggerated proportions\n• Energetic design language\n• Playful visual storytelling\n• Lighthearted surrealism\n• Distinctive franchise aesthetics\n• Stylized rendering appropriate to the selected era\n\nENVIRONMENT:\n• Floating island landscapes\n• Surreal alien worlds\n• Fragmented terrain suspended in space\n• Bright grass islands\n• Sand patches\n• Small lakes and ponds\n• Cartoon cliffs\n• Cosmic voids between islands\n• Strange vegetation\n• Funky extraterrestrial scenery\n• Imaginative environmental design\n\nEARTHLING CHARACTERS:\n• Populate the scene with classic bizarre Earthlings from the ToeJam & Earl universe\n• Hula girls\n• Boogie Men\n• Dentists with drills\n• Giant hamsters\n• Nerds\n• Mailmen\n• Wizards\n• Cupid\n• Opera singers\n• Crazy shoppers\n• Random eccentric Earthlings\n• Earthlings should appear naturally integrated into the scene\n• Earthlings should support the humor of the image\n• Earthlings should never obscure the primary subject\n\nTOEJAM & EARL UNIVERSE CHARACTERS:\n• Include ToeJam when appropriate\n• Include Earl when appropriate\n• Include supporting franchise characters when appropriate\n• Characters should interact naturally with the scene\n• Characters should feel like part of the environment\n• Characters should reinforce franchise identity\n\nCOLOR PALETTE:\n• Bright greens\n• Electric blues\n• Vibrant reds\n• Saturated oranges\n• Bright yellows\n• Funky purples\n• Cartoon pinks\n• Cheerful color harmonies\n• High saturation\n• Playful color combinations\n\nATMOSPHERE:\n• Fun\n• Silly\n• Quirky\n• Lighthearted\n• Surreal\n• Funky\n• Energetic\n• Cartoonish\n• Imaginative\n• Comedic\n• Whimsical\n\nCOMPOSITION:\n• Dynamic action poses\n• Cartoon staging\n• Playful visual storytelling\n• Multiple humorous details\n• Animated energy\n• Clear readability\n• Strong focal point\n• Rich environmental storytelling\n\nANTI-CHEAT:\n• Do NOT create realistic science fiction\n• Do NOT create dark dystopian worlds\n• Do NOT create serious cyberpunk aesthetics\n• Do NOT create photorealistic humans\n• Do NOT create realistic alien biology\n• Do NOT create horror elements\n• Do NOT create realistic physics\n• Do NOT create modern CGI realism unless explicitly required by the selected era\n• Do NOT create gritty military science fiction\n• Do NOT blend multiple ToeJam & Earl eras together\n\nFINAL VALIDATION:\n• The subject must remain recognizable\n• The selected ToeJam & Earl era must be immediately recognizable\n• The image must immediately evoke the franchise\n• The environment must feel surreal and alien\n• Earthling characters must appear throughout the scene\n• Cartoon energy must dominate the image\n• Colors must be vibrant and playful\n• The image must feel like official franchise artwork\n• The selected option determines rendering technology, resolution, production era, and visual presentation",
+    "options": [
+    {
+      "id": "001",
+      "text": "ORIGINAL TOEJAM & EARL (1991 SEGA GENESIS). Transform the entire image into authentic 16-bit Sega Genesis artwork. Every object, character, environmental element, and visual effect must exhibit visible pixel structure. Do not smooth, anti-alias, upscale, vectorize, paint over, or modernize the pixel artwork. Use large visible pixels, low-resolution sprite graphics, limited Genesis-era color palettes, chunky character sprites, primitive isometric terrain, simple environmental textures, strong black outlines, flat shading, and classic early-1990s videogame rendering. Convert the scene into the floating-island world of the original game with disconnected land masses suspended over cosmic voids, simple lakes, bright grass patches, funky geometric patterns, and exaggerated Earthling sprites. The final image should resemble an actual Sega Genesis gameplay screen, box-art illustration, title-screen artwork, magazine advertisement, or promotional artwork from the 1991 release."
+    },
+    {
+      "id": "002",
+      "text": "TOEJAM & EARL: PANIC ON FUNKOTRON (1993 SEGA GENESIS). Transform the image into authentic 16-bit side-scrolling Genesis artwork featuring larger sprite work, brighter colors, more detailed backgrounds, smoother animation, cartoon suburbia environments, Earth-inspired scenery, exaggerated visual humor, and classic Saturday-morning-cartoon energy. Preserve visible pixel structure, sprite-based rendering, Genesis color limitations, and authentic early-1990s videogame production techniques. The final image should resemble an actual Panic on Funkotron gameplay screen, box illustration, promotional artwork, or magazine advertisement."
+    },
+    {
+      "id": "003",
+      "text": "TOEJAM & EARL III: MISSION TO EARTH. Transform the image into authentic early-2000s videogame artwork featuring stylized 3D characters, chunky cel-shading, comic-book proportions, exaggerated animation, hip-hop-inspired visual design, colorful science-fiction environments, arcade-like energy, and sixth-generation console aesthetics. Characters should appear as stylized 3D cartoon models rather than pixel sprites. The final image should resemble official Xbox-era promotional artwork, game art, packaging illustration, or marketing material."
+    },
+    {
+      "id": "004",
+      "text": "TOEJAM & EARL: BACK IN THE GROOVE. Transform the image into modern high-resolution hand-drawn cartoon artwork featuring crisp linework, expressive character acting, smooth contemporary illustration techniques, rich color palettes, polished animation aesthetics, detailed environmental design, and modern interpretations of the classic franchise. The final image should resemble official Back in the Groove artwork, promotional illustration, game art, packaging art, or contemporary franchise marketing materials."
+    }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "• Apply the selected option exactly\n• The selected option overrides rendering technology, production era, resolution level, sprite style, color limitations, and artistic presentation\n• Preserve recognizable identity across all options\n• Original Genesis options must emphasize visible pixels, sprite-based artwork, limited-color rendering, and authentic 16-bit production techniques\n• Mission to Earth must emphasize stylized early-2000s cel-shaded 3D videogame aesthetics\n• Back in the Groove must emphasize modern high-resolution hand-drawn cartoon illustration\n• Never blend multiple franchise eras together\n• Do not modernize Genesis-era options\n• Do not remove visible pixel structure from Genesis-era options\n• The selected era must be immediately recognizable to fans of the franchise\n• Preserve recognizable identity while adapting the subject into the ToeJam & Earl universe\n• Transform the entire image into a surreal cartoon alien world\n• Include classic Earthling characters throughout the scene\n• Include ToeJam, Earl, and supporting franchise characters when appropriate\n• Use bright saturated colors and cartoon rendering appropriate to the selected era\n• Employ exaggerated anatomy, expressive poses, and playful visual humor\n• Create floating-island environments suspended over cosmic voids when appropriate to the selected era\n• Maintain strong cartoon aesthetics\n• Avoid realism, horror, military science fiction, cyberpunk, or dark themes\n• Preserve the funky fusion of street culture and science fiction that defines the franchise\n• Ensure the final image feels joyful, bizarre, humorous, and unmistakably ToeJam & Earl"
   },
   {
     "name": "TONALISM",
@@ -53344,17 +53400,17 @@
     "additionalInstructions": ""
   },
   {
-  "name": "TOY FAIR PRIZE",
-  "category": [
-    "CARNIVAL",
-    "FAIR",
-    "PLUSH TOYS",
-    "PHOTO OP",
-    "CHARACTER TRANSFORMATION"
-  ],
-  "message": "Take a picture and transform the subject into a realistic carnival prize booth filled with plush toy versions of the subject.\n\nThe final image should depict a real fairground game booth where the original subject has been transformed into recognizable plush toy prizes hanging throughout the booth exactly as seen at county fairs, amusement parks, state fairs, boardwalk carnivals, and midway attractions.\n\nThe carnival game itself must remain clearly visible and occupy the center of the booth.\n\nThe plush toys should be displayed realistically around the game rather than overwhelming the booth.\n\nEvery plush toy should clearly resemble the original subject while appearing as a professionally manufactured stuffed animal or carnival prize.\n\nMASTER PROMPT OVERRIDE LOGIC (CRITICAL):\n• If an external master prompt specifies a different carnival era, fair style, geographic region, holiday theme, toy aesthetic, prize type, or amusement setting, USE that instead\n• External prompts may override booth design, carnival atmosphere, game type, materials, lighting, crowd density, or environmental details\n• Preserve the recognizable carnival-prize identity even when adapting to overridden themes\n\nTOY TRANSFORMATION LOGIC:\n\n• Transform the subject into plush toy prize versions of themselves\n• Every plush prize must remain recognizable as the original subject\n• Create a realistic number of prizes consistent with an authentic carnival booth\n• Do NOT fill the entire booth with duplicate toys\n• Display only the quantity normally found in real fairground prize booths\n• Include a variety of prize sizes:\n  - Small prizes\n  - Medium prizes\n  - Large prizes\n  - One or two oversized grand-prize versions\n• Most prizes should be arranged around the perimeter of the booth\n• Preserve open space so the carnival game remains visible and functional\n• The game itself should remain a primary visual focal point\n\nPLUSH DESIGN:\n\n• Cute plush interpretation of the subject\n• Embroidered facial features\n• Soft stuffed construction\n• Realistic plush manufacturing\n• Authentic stitching and seams\n• Carnival-quality fabrics\n• Soft plush textures\n• Recognizable subject features translated into toy form\n• Various prize sizes and poses\n• Professional amusement-prize appearance\n\nCARNIVAL GAME TYPES:\n\n• Ring toss booth\n• Balloon dart booth\n• Water gun race booth\n• Basketball challenge booth\n• Milk bottle knockdown booth\n• Duck pond booth\n• Midway game booth\n• County fair prize stand\n• Boardwalk carnival game\n• State fair attraction\n• Traveling carnival booth\n• Amusement park prize counter\n\nFUNNY ANTHROPOMORPHIC BEHAVIOR:\n\n• Some plush versions may appear posed playfully\n• Some may appear interacting with neighboring plush toys\n• Some may appear waving, cheering, sleeping, posing for photos, or playfully reacting to carnival guests\n• Maintain the illusion that the toys are carnival prizes rather than living creatures\n\nIMPORTANT:\n\n• The scene must remain photorealistic\n• The carnival game must be clearly visible\n• The game should occupy the center portion of the booth\n• Plush prizes should primarily hang from the top beam, side walls, corners, rear racks, hooks, shelves, and display bars\n• Do NOT completely cover the booth with prizes\n• Do NOT create unrealistic walls of identical plush toys\n• Maintain authentic carnival booth layouts\n• The subject must remain recognizable across all plush versions\n• The image should resemble a real carnival booth photographed in real life\n\nSTYLE:\n\n• Photorealistic carnival photography\n• Authentic midway atmosphere\n• Real amusement-park aesthetics\n• County fair realism\n• State fair culture\n• Bright carnival lighting\n• Professional plush manufacturing realism\n• Authentic prize-booth layouts\n• Real-world fairground presentation\n• Midway game realism\n• Genuine carnival architecture\n\nBACKGROUND AND ENVIRONMENT:\n\n• Include realistic carnival game booths\n• Include midway lights, colorful signs, game counters, carnival attractions, rides, ticket booths, banners, concession stands, and fairground details\n• Use realistic carnival lighting and atmosphere\n• Maintain focus on the game booth and prizes\n• Preserve realistic booth structure including hanging bars, poles, hooks, prize racks, shelves, counters, and support framing\n\nThe final image should look like a real photograph taken at a carnival or state fair where a functioning game booth is prominently displayed in the center while a realistic number of plush prize versions of the original subject hang from the top, sides, corners, shelves, and display racks exactly as seen in authentic fairground prize booths.",
-  "randomizeOptions": false,
-  "additionalInstructions": "• Every plush toy must resemble the original subject\n• Include realistic prize size variation\n• Show the carnival game prominently in the center of the booth\n• Prizes should frame the game rather than overwhelm it\n• Use authentic carnival booth layouts\n• Limit prize quantities to realistic real-world amounts\n• Include visible booth structure, support poles, hooks, shelves, hanging bars, and prize racks\n• One or two oversized grand-prize versions may appear near the upper corners\n• Avoid walls completely covered by identical plush toys\n• Maintain open booth space and realistic visual balance\n• Use realistic plush fabrics, embroidery, stitching, stuffing, and carnival manufacturing details\n• Maintain photorealistic realism throughout\n• Avoid cartoon rendering\n• The booth should look like a real carnival attraction that people could actually play"
+    "name": "TOY FAIR PRIZE",
+    "category": [
+      "CARNIVAL",
+      "FAIR",
+      "PLUSH TOYS",
+      "PHOTO OP",
+      "CHARACTER TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform the subject into a realistic carnival prize booth filled with plush toy versions of the subject.\n\nThe final image should depict a real fairground game booth where the original subject has been transformed into recognizable plush toy prizes hanging throughout the booth exactly as seen at county fairs, amusement parks, state fairs, boardwalk carnivals, and midway attractions.\n\nThe carnival game itself must remain clearly visible and occupy the center of the booth.\n\nThe plush toys should be displayed realistically around the game rather than overwhelming the booth.\n\nEvery plush toy should clearly resemble the original subject while appearing as a professionally manufactured stuffed animal or carnival prize.\n\nMASTER PROMPT OVERRIDE LOGIC (CRITICAL):\n• If an external master prompt specifies a different carnival era, fair style, geographic region, holiday theme, toy aesthetic, prize type, or amusement setting, USE that instead\n• External prompts may override booth design, carnival atmosphere, game type, materials, lighting, crowd density, or environmental details\n• Preserve the recognizable carnival-prize identity even when adapting to overridden themes\n\nTOY TRANSFORMATION LOGIC:\n\n• Transform the subject into plush toy prize versions of themselves\n• Every plush prize must remain recognizable as the original subject\n• Create a realistic number of prizes consistent with an authentic carnival booth\n• Do NOT fill the entire booth with duplicate toys\n• Display only the quantity normally found in real fairground prize booths\n• Include a variety of prize sizes:\n  - Small prizes\n  - Medium prizes\n  - Large prizes\n  - One or two oversized grand-prize versions\n• Most prizes should be arranged around the perimeter of the booth\n• Preserve open space so the carnival game remains visible and functional\n• The game itself should remain a primary visual focal point\n\nPLUSH DESIGN:\n\n• Cute plush interpretation of the subject\n• Embroidered facial features\n• Soft stuffed construction\n• Realistic plush manufacturing\n• Authentic stitching and seams\n• Carnival-quality fabrics\n• Soft plush textures\n• Recognizable subject features translated into toy form\n• Various prize sizes and poses\n• Professional amusement-prize appearance\n\nCARNIVAL GAME TYPES:\n\n• Ring toss booth\n• Balloon dart booth\n• Water gun race booth\n• Basketball challenge booth\n• Milk bottle knockdown booth\n• Duck pond booth\n• Midway game booth\n• County fair prize stand\n• Boardwalk carnival game\n• State fair attraction\n• Traveling carnival booth\n• Amusement park prize counter\n\nFUNNY ANTHROPOMORPHIC BEHAVIOR:\n\n• Some plush versions may appear posed playfully\n• Some may appear interacting with neighboring plush toys\n• Some may appear waving, cheering, sleeping, posing for photos, or playfully reacting to carnival guests\n• Maintain the illusion that the toys are carnival prizes rather than living creatures\n\nIMPORTANT:\n\n• The scene must remain photorealistic\n• The carnival game must be clearly visible\n• The game should occupy the center portion of the booth\n• Plush prizes should primarily hang from the top beam, side walls, corners, rear racks, hooks, shelves, and display bars\n• Do NOT completely cover the booth with prizes\n• Do NOT create unrealistic walls of identical plush toys\n• Maintain authentic carnival booth layouts\n• The subject must remain recognizable across all plush versions\n• The image should resemble a real carnival booth photographed in real life\n\nSTYLE:\n\n• Photorealistic carnival photography\n• Authentic midway atmosphere\n• Real amusement-park aesthetics\n• County fair realism\n• State fair culture\n• Bright carnival lighting\n• Professional plush manufacturing realism\n• Authentic prize-booth layouts\n• Real-world fairground presentation\n• Midway game realism\n• Genuine carnival architecture\n\nBACKGROUND AND ENVIRONMENT:\n\n• Include realistic carnival game booths\n• Include midway lights, colorful signs, game counters, carnival attractions, rides, ticket booths, banners, concession stands, and fairground details\n• Use realistic carnival lighting and atmosphere\n• Maintain focus on the game booth and prizes\n• Preserve realistic booth structure including hanging bars, poles, hooks, prize racks, shelves, counters, and support framing\n\nThe final image should look like a real photograph taken at a carnival or state fair where a functioning game booth is prominently displayed in the center while a realistic number of plush prize versions of the original subject hang from the top, sides, corners, shelves, and display racks exactly as seen in authentic fairground prize booths.",
+    "randomizeOptions": false,
+    "additionalInstructions": "• Every plush toy must resemble the original subject\n• Include realistic prize size variation\n• Show the carnival game prominently in the center of the booth\n• Prizes should frame the game rather than overwhelm it\n• Use authentic carnival booth layouts\n• Limit prize quantities to realistic real-world amounts\n• Include visible booth structure, support poles, hooks, shelves, hanging bars, and prize racks\n• One or two oversized grand-prize versions may appear near the upper corners\n• Avoid walls completely covered by identical plush toys\n• Maintain open booth space and realistic visual balance\n• Use realistic plush fabrics, embroidery, stitching, stuffing, and carnival manufacturing details\n• Maintain photorealistic realism throughout\n• Avoid cartoon rendering\n• The booth should look like a real carnival attraction that people could actually play"
   },
   {
     "name": "TRADING CARD GAME",
