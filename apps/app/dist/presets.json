@@ -4123,7 +4123,7 @@
     "message": "Take a picture and transform its appearance into a digital data-stream visualization. Preserve a recognizable reconstruction of the subject while covering and interweaving the image with dense, translucent rows of Base64-style encoded character sequences. The characters should resemble the raw encoded data of a digital image being streamed, with scrolling text fragments, overlapping data rows, and varying levels of transparency.",
     "options": [
       {
-        "id": ": "DENSE DATA STREAM",
+        "id": "DENSE DATA STREAM",
         "text": "Heavy overlapping rows of Base64 characters with the subject partially obscured."
       },
       {
