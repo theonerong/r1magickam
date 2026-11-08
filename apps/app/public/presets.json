@@ -22173,6 +22173,20 @@
     "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Grotesque refers to the historical artistic style of surreal ornamental hybridization\n• Emphasize decorative surrealism, uncanny beauty, and symbolic transformation\n• Avoid graphic gore, mutilation, explicit violence, or body-horror shock imagery\n• Preserve recognizable subject identity while integrating artistic grotesque transformations\n• Avoid cartoon aesthetics or simplistic fantasy styling\n\nGROTESQUE HYBRIDIZATION ENFORCEMENT:\n\n• Merge human, animal, plant, architectural, and ornamental forms together in surreal ways\n• Include transformations such as:\n  • vines merging into limbs\n  • decorative foliage growing from anatomy\n  • faces blending into carved ornamentation\n  • bodies transforming into symmetrical decorative structures\n  • hybrid mythical forms\n  • surreal masks and mascheroni\n  • flowing arabesques integrated into anatomy\n  • ornamental metamorphosis\n  • decorative hybrid creatures\n  • unnatural but elegant anatomical distortions\n\n• Transformations must feel artistic, symbolic, and visually integrated\n• The grotesque effect should feel elaborate, decorative, uncanny, and surreal rather than violent\n\nORNAMENTAL ENFORCEMENT:\n\n• Fill the composition with intricate decorative complexity\n• Include symmetrical ornamental layouts, carved patterns, ancient mural motifs, surreal botanical structures, decorative borders, mythical embellishments, symbolic geometry, and elaborate visual layering\n• The environment should feel like an ancient grotesque fresco, surreal palace mural, or impossible ornamental dream-world\n\nUNCANNY ATMOSPHERE ENFORCEMENT:\n\n• Blend beauty with discomfort\n• Create an atmosphere that feels alluring, mysterious, strange, unnatural, and dreamlike\n• Distortion and exaggeration should feel artistic and symbolic rather than monstrous\n• The image should feel visually immersive and psychologically uncanny\n\nVISUAL STYLE:\n\n• Ultra-detailed grotesque fine-art realism\n• Ornamental surrealism\n• Decorative metamorphic imagery\n• Ancient fresco and mural inspiration\n• Rich texture layering\n• Cinematic atmospheric lighting\n• Elegant but unsettling visual tone\n• Highly intricate symbolic detail\n\nDEPTH AND COMPOSITION:\n\n• Keep the subject visually recognizable despite transformation\n• Use layered ornamental foreground and background elements for immersive depth\n• Balance decorative complexity with readable composition\n• Allow the eye to continuously discover strange hybrid details throughout the image\n\nANTI-CHEAT:\n\n• Do NOT generate generic horror monsters\n• Do NOT create gore-heavy body horror\n• Do NOT flatten the composition into normal portrait photography\n• Do NOT use simple fantasy-creature aesthetics\n• Do NOT obscure the subject completely beneath ornamentation\n• Do NOT make the transformations random or chaotic without decorative intent\n\nFINAL RESULT:\nThe final image must resemble an ultra-detailed grotesque art masterpiece where the recognizable subject becomes integrated into a surreal ornamental world of hybrid anatomy, decorative metamorphosis, symbolic distortion, botanical-human fusion, mythical embellishment, and uncanny artistic beauty."
   },
   {
+    "name": "GRUNGE",
+    "category": [
+      "GRUNGE",
+      "DISTRESSED",
+      "URBAN",
+      "TEXTURE",
+      "ARTISTIC TRANSFORMATION"
+    ],
+    "message": "Take a picture and completely transform the image into a raw, distressed grunge artwork. Reconstruct the subject through a rebellious visual language of rough mark-making, weathered surfaces, scratched details, worn pigment, distressed edges, imperfect printing, and expressive urban decay. Give the image an unpolished, tactile character, as though it were created from layers of damaged posters, photocopied graphics, faded ink, scraped paint, torn paper, and years of accumulated wear. Use bold contrasts, irregular textures, imperfect contours, and gritty visual details to create an authentic underground aesthetic with attitude and personality.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "The grunge treatment must transform the image itself, not simply place scratches and stains over an otherwise unchanged photograph. Reconstruct the subject's face, hair, clothing, and visible body using a cohesive distressed graphic-art language. Preserve the subject's identity and recognizable facial features, hairstyle, hair color, clothing, and distinctive characteristics. Integrate rough textures into the actual visual construction: scraped pigment, cracked ink, worn printed surfaces, irregular halftones, faded color patches, torn contours, scuffed marks, imperfect registration, and fragmented edges. Use strong tonal contrast and an intentionally imperfect visual rhythm. The subject should remain clearly readable despite the distressed treatment. Balance areas of heavy visual damage with carefully preserved facial detail so that the person remains recognizable. The aesthetic should feel raw, rebellious, authentic, and art-directed rather than randomly dirty. Do not automatically add graffiti lettering, slogans, skulls, punk symbols, urban walls, or unrelated objects. Avoid making the image look like a clean photograph with a grunge texture overlay. The original photograph must not remain visible beneath the transformation. Preserve the original background unless the master prompt specifies otherwise. Any subject, pose, setting, mood, action, artistic direction, or selection specified by the master prompt overrides the defaults in this preset."
+  },
+  {
     "name": "GUESS WHO",
     "category": ["OPTIONS", "GAME", "CHARACTER", "PORTRAIT"],
     "message": "Take a picture and transform the subject into the described character while keeping the subject's real, recognizable face.\nIDENTITY RULES (NON-NEGOTIABLE):\n• MUST use the subject's real face\n• Facial structure, eyes, nose, and expression must remain clearly recognizable\n• Do NOT replace or blend the face with a generic illustration\n• Apply ONLY the selected traits below to style the character\n• The subject must appear as if they ARE this character\n\nSTYLE:\n• Clean, friendly, board-game character portrait\n• Bust/portrait framing on a simple background\n• Traits must be clearly visible and readable",
@@ -27673,6 +27687,20 @@
     }
     ],
     "additionalInstructions": "• Transform ONLY the subject.\n• Leave the background completely unchanged.\n• Preserve the original environment, lighting, perspective, colors, shadows, and every background object exactly as photographed.\n• Completely discard the original subject before reconstruction.\n• Do NOT place Lincoln Logs over the original person.\n• Do NOT blend photographic textures with wooden logs.\n• Every visible part of the subject must be physically built from authentic Lincoln Logs.\n• Preserve the subject's exact identity, facial proportions, hairstyle, expression, age, ethnicity, body proportions, pose, silhouette, and recognizable features.\n• Facial features must emerge solely from the arrangement of Lincoln Logs.\n• Preserve realistic cylindrical log shapes.\n• Every log must retain authentic wood grain, rounded ends, notches, cylindrical construction, and natural wood texture.\n• Interlocking corner joints should remain clearly visible wherever appropriate.\n• Never flatten logs into simple wooden blocks.\n• Never carve realistic skin or facial features into wood.\n• The face must be constructed entirely through intelligent placement of the logs themselves.\n• Hair should also be recreated from Lincoln Logs using thoughtful orientation and color variation.\n• Clothing must be reconstructed entirely from Lincoln Logs.\n• Use realistic shadows between stacked logs.\n• Include natural imperfections including knots, grain variations, minor scratches, and subtle wear.\n• The finished sculpture should resemble a handcrafted museum-quality Lincoln Log construction.\n• It should immediately be recognizable as both the subject and an authentic Lincoln Logs creation.\n• Master prompt instructions always override the selected option whenever conflicts occur.\n\nFINAL VALIDATION — Before producing the final image, verify ALL of the following:\n\n✓ ONLY the subject has been transformed.\n✓ The background remains completely unchanged.\n✓ No original photographic pixels remain on the subject.\n✓ The subject is entirely reconstructed from authentic Lincoln Logs.\n✓ No Lincoln Logs have simply been placed over the original person.\n✓ Every visible wooden piece is a genuine cylindrical Lincoln Log.\n✓ Interlocking log joints are visible.\n✓ Wood grain and natural wooden texture are clearly visible.\n✓ The subject remains immediately recognizable.\n✓ The artwork resembles a professionally handcrafted Lincoln Logs sculpture.\n✓ If ANY answer is NO, regenerate the image until every requirement is satisfied."
+  },
+  {
+    "name": "LINE ART ILLUSTRATION",
+    "category": [
+      "ILLUSTRATION",
+      "LINE ART",
+      "MINIMALISM",
+      "VECTOR ART",
+      "DESIGN"
+    ],
+    "message": "Take a picture and completely reconstruct the image as an elegant minimalist line-art illustration. Reduce the subject to beautifully controlled, clean, continuous linework, using simple forms, refined contours, and carefully selected interior details. Emphasize graceful outlines, balanced negative space, and a restrained visual vocabulary. Use consistent single-weight lines to describe the subject's silhouette, facial features, hair, clothing, and defining details without relying on realistic shading, gradients, or photographic textures. The result should feel like a sophisticated contemporary illustration with the clarity and elegance of expertly executed minimalist drawing.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "Reconstruct the entire image as a genuine line-art illustration. Do not simply trace the outside silhouette of the original photograph or place outlines over the unchanged image. Use clean, deliberate, predominantly single-weight lines to build the subject's recognizable structure. Preserve the person's identity through carefully chosen facial contours, eye placement, nose shape, mouth, hairstyle, hairline, and other distinctive characteristics. Use a consistent line thickness throughout, with only minimal variation when necessary to clarify overlapping forms. Simplify complex anatomy and clothing into elegant, readable shapes while retaining the subject's recognizable proportions and pose. Use negative space intelligently to separate forms and communicate depth. Keep the design restrained, polished, and intentional. Avoid sketchy construction marks, scribbles, crosshatching, heavy shading, gradients, excessive detail, or decorative patterns that undermine the minimalist aesthetic. Use a clean background with ample visual breathing room, preserving the original background only when it is important to the composition or specified by the master prompt. Do not add typography, frames, labels, or ornamental elements unless requested. The original photograph must be completely replaced by the illustration. Any subject, pose, setting, mood, action, artistic direction, or selection specified by the master prompt overrides the defaults in this preset."
   },
   {
     "name": "LINE DRAWING",
@@ -35840,6 +35868,20 @@
     "additionalInstructions": ""
   },
   {
+    "name": "OCTANE RENDER",
+    "category": [
+      "3D",
+      "CGI",
+      "PHOTOREALISTIC",
+      "RENDERING",
+      "CINEMATIC"
+    ],
+    "message": "Take a picture and completely reconstruct the image as a breathtaking high-end Octane Render-style 3D image. Create a fully realized computer-generated scene with exceptional photorealism, sophisticated path-traced lighting, physically accurate reflections and refractions, rich material detail, realistic subsurface scattering, and beautifully controlled illumination. Give the subject the refined visual quality of a premium architectural, product, or character visualization produced with a professional GPU path tracer. Use luminous highlights, nuanced shadows, realistic material behavior, and exceptionally polished rendering to create an image with remarkable depth, clarity, and dimensional presence.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "Completely reconstruct the image as a 3D rendered scene rather than applying a photographic filter. Rebuild the subject's actual geometry, face, hair, clothing, accessories, and visible surroundings. Preserve the original subject's identity and recognizable physical characteristics. Emphasize the visual qualities associated with high-end Octane rendering: physically based path tracing, realistic global illumination, multiple light bounces, accurate reflections and refractions, detailed material response, ambient occlusion, and subtle subsurface scattering where appropriate. Surfaces should exhibit convincing microdetail, natural roughness variation, realistic specular response, and appropriate material properties. Use carefully composed lighting with luminous highlights, rich shadow transitions, and sophisticated color interaction. Create a polished, premium computer-generated image with exceptional dimensionality and visual clarity. Do not automatically turn every surface into chrome, glass, or plastic. Materials must remain appropriate to the actual subject and setting. Avoid excessive bloom, artificial lens effects, oversaturated colors, and the generic appearance of a stock 3D demo. The result should look like a professionally art-directed path-traced render, not a photograph with enhanced contrast. The original photograph must not remain visible as a photographic layer. Preserve the original composition and background unless the master prompt specifies otherwise. Any subject, pose, setting, mood, action, artistic direction, or selection specified by the master prompt overrides the defaults in this preset."
+  },
+  {
     "name": "OFFSPRING",
     "category": [
       "FAMILY",
@@ -35864,6 +35906,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "FINAL RESULT:\nA thick oil painting with raised brush strokes and rich texture."
+  },
+  {
+    "name": "OIL PAINTING",
+    "category": [
+      "FINE ART",
+      "PAINTING",
+      "CLASSICAL",
+      "TRADITIONAL ART",
+      "TEXTURE"
+    ],
+    "message": "Take a picture and completely reinterpret the image as an exquisite traditional oil painting. Reconstruct the entire subject with rich, expressive brushwork, layered pigments, nuanced color mixing, painterly highlights, and dimensional shadows. Create the visual richness of classical fine art, with carefully modeled anatomy, sophisticated tonal relationships, subtle glazing, and a beautifully developed painted surface. Use visible but controlled brushstrokes, varied paint thickness, delicate transitions, and the luminous depth associated with traditional oil painting. The finished image should feel like an original work of fine art created by a highly accomplished painter rather than a photograph with a painting filter.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "Completely repaint and reconstruct the image as an authentic oil painting. The original photograph must not remain visible beneath the brushwork. Preserve the subject's identity, facial structure, expression, hairstyle, hair color, clothing, pose, and distinctive physical details. Use genuine oil-painting visual characteristics: layered pigments, visible directional brushstrokes, subtle impasto, transparent glazing, opaque highlights, rich color depth, and carefully developed tonal transitions. Brushwork should respond to the structure of the subject. Use controlled strokes around the eyes, nose, mouth, and other identifying features, with broader expressive strokes across larger areas of hair, clothing, and background. Create convincing form through painterly light and shadow rather than photographic detail. The overall aesthetic should have the sophistication, depth, and craftsmanship of classical fine art while allowing the master prompt to dictate a different period or painterly direction. Avoid the appearance of watercolor, acrylic illustration, digital airbrushing, or a generic oil-paint filter. Do not add an ornate frame, signature, artist's name, or museum setting unless requested. Preserve the original composition and background unless the master prompt specifies otherwise. Any subject, pose, setting, mood, action, artistic direction, or selection specified by the master prompt overrides the defaults in this preset."
   },
   {
     "name": "OIL PRINT",
@@ -47164,6 +47220,20 @@
     "additionalInstructions": "IDENTITY PRESERVATION:\n• Preserve recognizable identity\n• Subject replaces the hero\n• Subject remains clearly recognizable\n\nGAMEPLAY REQUIREMENTS:\n• Must look like an actual arcade gameplay screen\n• Laserdisc-video-game aesthetics\n• Hand-drawn animated backgrounds\n• Cinematic action framing\n• Animated science-fiction environments\n• Futuristic technology\n• Alien worlds\n• Space-opera atmosphere\n• Arcade-game composition\n\nCHARACTER REQUIREMENTS:\n• Subject rendered in authentic game animation style\n• Subject appears as a hand-drawn animated character\n• No photorealism\n• No pasted-in appearance\n• No modern CGI\n\nFINAL RESULT:\nThe final image must resemble an authentic gameplay screen from Space Ace featuring the subject as the game's animated protagonist."
   },
   {
+    "name": "SPACE OPERA",
+    "category": [
+      "SCIENCE FICTION",
+      "SPACE",
+      "CINEMATIC",
+      "EPIC",
+      "FANTASY"
+    ],
+    "message": "Take a picture and transform the subject into the central character of an epic space opera. Reconstruct the subject as a cinematic science-fiction protagonist within an immense cosmic setting filled with extraordinary scale, dramatic celestial environments, monumental spacecraft, distant worlds, and spectacular astronomical phenomena. Use powerful cinematic lighting, luminous nebulae, vast starfields, planetary horizons, colossal structures, and deep atmospheric perspective to create a sense of grandeur and adventure. Give the subject a commanding presence within a universe that feels ancient, mysterious, technologically advanced, and unimaginably vast. The final image should look like a breathtaking frame from a lavishly produced space-opera film.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "Transform the subject into the central character of a fully realized cinematic space-opera scene. Preserve the person's identity, face, hairstyle, hair color, and distinctive physical characteristics. Reconstruct the subject's appearance to integrate naturally into the science-fiction world. Wardrobe and equipment may be adapted to the requested setting, but do not automatically replace the subject with a generic armored soldier, alien, or space pilot. The environment should communicate extraordinary scale: enormous spacecraft, immense orbital structures, distant planets, moons, star systems, nebulae, cosmic dust, or other grand celestial features as appropriate. Use dramatic cinematic lighting, luminous atmospheric effects, strong silhouettes, volumetric beams, deep shadows, and carefully controlled color contrast. Create a sense of epic narrative and visual scale without overcrowding the composition. The subject must remain the clear focal character, with the environment supporting rather than obscuring them. Avoid generic video-game interface graphics, floating HUDs, random technological clutter, or a simple starfield background. Do not imitate specific copyrighted characters, costumes, or franchise imagery. The result should feel like an original, premium science-fiction film production with the scale and spectacle of classic space opera. Any setting, costume, spacecraft, celestial object, action, mood, or artistic direction specified by the master prompt takes priority over the defaults in this preset. Preserve the original subject's pose and composition where practical unless the master prompt requests a different scene. The original photograph must not remain visible beneath the transformation. Any subject, pose, setting, mood, action, artistic direction, or selection specified by the master prompt overrides the defaults in this preset."
+  },
+  {
     "name": "SPANISH BAROQUE",
     "category": [
       "ART",
@@ -49175,6 +49245,21 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "STYLIZED REALTIME GAME CHARACTER",
+    "category": [
+      "3D",
+      "CGI",
+      "GAMING",
+      "CHARACTER DESIGN",
+      "REALISM",
+      "DARK FANTASY"
+    ],
+    "message": "Take a picture and completely reconstruct the subject as a highly detailed, stylized-realistic 3D video game character. The result should look like a professionally modeled and rendered character from a premium modern action-adventure or dark fantasy video game. Preserve the subject's recognizable identity, facial structure, hairstyle, expression, body proportions, and defining characteristics while translating them into a sophisticated game-character aesthetic. Use beautifully sculpted 3D geometry, subtly stylized anatomy, realistic skin shading, individually modeled hair strands, detailed clothing construction, and cinematic real-time rendering. The final result must look like an actual 3D character model rendered inside a high-end video game, not a photograph, illustration, anime drawing, or ordinary 3D portrait.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "FULL 3D CHARACTER RECONSTRUCTION: Rebuild the entire visible subject as a three-dimensional game character. Do not simply apply a CGI filter to the original photograph, preserve photographic pixels, or place a 3D-looking effect over the source image. The original subject must be completely replaced by the newly rendered character.\n\nRENDERING STYLE: Use a stylized-realistic character aesthetic that balances believable human anatomy with slightly exaggerated, carefully designed game-character proportions. The character should have the visual quality of a premium modern console or PC game. Use smooth but detailed geometry, refined facial sculpting, realistic subsurface skin scattering, physically based materials, carefully controlled specular highlights, and subtle surface imperfections. Avoid the overly glossy, plastic appearance of inexpensive CGI.\n\nFACE AND IDENTITY: Preserve the subject's recognizable facial identity, facial proportions, age appearance, distinctive features, and expression. Translate the face into a polished 3D character model with naturally sculpted features, realistic eyes, detailed eyelids, dimensional lips, and softly rendered skin. Do not substitute a generic video game face or turn the subject into an unrelated character.\n\nHAIR: Reconstruct the hairstyle as actual dimensional 3D geometry. Hair should consist of sculpted, layered locks and carefully defined strands with believable volume, overlapping sections, natural flow, and individually readable shapes. Avoid flat hair textures, painted-on hair, or a single smooth helmet-like mass.\n\nCLOTHING AND MATERIALS: Rebuild clothing as fully dimensional garments with realistic folds, seams, layered construction, sculpted details, and believable fabric thickness. Materials should have the subtle visual complexity of premium game assets, including appropriate roughness, reflections, and surface detail. Preserve the subject's original clothing design unless the master prompt specifies a different outfit.\n\nLIGHTING AND CAMERA: Use dramatic, cinematic video game character lighting. Employ a controlled key light, soft fill, subtle rim lighting, and carefully placed highlights that reveal the character's facial structure, hair volume, clothing, and silhouette. Use a dark or atmospheric game-rendering environment when no setting is specified. Frame the subject like a professionally presented in-game character model, with a clear view of the face and upper body or the complete body when appropriate.\n\nVISUAL QUALITY: Produce crisp, refined real-time CGI with detailed character modeling, believable depth, dimensional shadows, ambient occlusion, physically based rendering, and polished material definition. Maintain the slightly stylized visual language of a high-budget game rather than pursuing absolute photographic realism.\n\nIMPORTANT RESTRICTIONS: Do not create a cartoon, anime illustration, 2D painting, action figure, toy, mannequin, or generic fantasy character. Do not add arbitrary armor, weapons, accessories, tattoos, or fantasy elements that are not present in the source or requested by the master prompt. Do not make the character look like a photograph with a game filter. The entire visible subject must be convincingly reconstructed as a cohesive 3D game character.\n\nMASTER PROMPT PRIORITY: Any externally provided master prompt specifying the character's appearance, pose, clothing, hairstyle, environment, lighting, mood, action, camera angle, or artistic direction overrides the corresponding defaults in this preset."
   },
   {
     "name": "SUBWAY AD",
@@ -55965,6 +56050,20 @@
     "additionalInstructions": "FINAL RESULT:\nThe image should show the subject with realistic visible signs of grooming neglect - subtle stubble (if male and clean-shaven), visible but not exaggerated nose/ear hair, bushy eyebrows, messy hair, and (for women) either bad makeup or natural unglamorous appearance with subtle facial hair - all photorealistic and believable, funny because it's relatable not because it's grotesque."
   },
   {
+    "name": "UNREAL ENGINE RENDER",
+    "category": [
+      "3D",
+      "CGI",
+      "REALISM",
+      "RENDERING",
+      "CINEMATIC"
+    ],
+    "message": "Take a picture and completely reconstruct the image as an extraordinarily realistic, high-end Unreal Engine 3D render. Transform the person, object, or scene into a fully realized computer-generated environment with physically based materials, sophisticated global illumination, realistic reflections, detailed surface geometry, ambient occlusion, volumetric lighting, and cinematic depth. Give the subject the visual quality of a meticulously produced real-time cinematic rendered in Unreal Engine, with exceptionally detailed modeling, lifelike materials, dramatic lighting, and polished environmental integration. The result should look like a premium next-generation game cinematic or virtual production frame rather than an ordinary photograph.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "Reconstruct the image as a genuine 3D computer-generated render. Do not merely apply sharpening, color grading, artificial depth of field, or a game-like filter to the original photograph. Rebuild the subject's geometry, facial features, hair, clothing, accessories, and visible environment as a cohesive rendered scene. Preserve the original subject's identity, facial proportions, hairstyle, hair color, distinctive features, and recognizable details. Use physically based rendering principles, including realistic material response, accurate reflections, subtle surface imperfections, convincing contact shadows, global illumination, ambient occlusion, and realistic light transport. Create detailed geometry with natural surface variation, believable material thickness, and convincing dimensionality. Lighting should feel professionally designed, with carefully controlled highlights, shadows, bounce light, and atmospheric depth. Use cinematic-quality rendering without automatically adding lens flares, holograms, futuristic interfaces, or science-fiction props. The result should resemble a high-budget Unreal Engine cinematic with exceptional visual fidelity, not a stylized cartoon or an obviously artificial plastic-looking render. The original photograph must not remain visible as a photographic layer. Preserve the original composition and background unless the master prompt specifies otherwise. Any subject, pose, setting, mood, action, artistic direction, or selection specified by the master prompt overrides the defaults in this preset."
+  },
+  {
     "name": "U.S. NATIONAL PARKS",
     "category": [
       "TRAVEL",
@@ -58061,7 +58160,7 @@
       "PAINTING",
       "WATERCOLOR"
     ],
-    "message": "Take a picture in the style of a Watercolor painting. The pigments are mixed with water and applied to paper, creating luminous, transparent washes of color.",
+    "message": "Take a picture in the style of a Watercolor painting. Gentle color blending. The pigments are mixed with water and applied to paper, creating luminous, soft, transparent washes of color. Visible paper texture.",
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
