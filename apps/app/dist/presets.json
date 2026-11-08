@@ -25563,6 +25563,20 @@
     "additionalInstructions": "• Transform ONLY the subject.\n• Keep the background completely unchanged.\n• Preserve the original environment, lighting, perspective, colors, shadows, and every background object exactly as photographed.\n• Completely discard the original photographic appearance of the subject before reconstruction.\n• NEVER place a green texture overlay over the original person.\n• The subject must become a physical gemstone sculpture with authentic mineral traits.\n• The final result must be a complete full-body figurine from head to toe.\n• Include complete legs, feet, and lower-body clothing/drapery even if those areas were not visible in the original image.\n• Preserve the subject's exact identity through facial structure, hairstyle, hair color, expression, age, ethnicity, and recognizable features.\n• Translate the subject's features into hand-carved gemstone contours, displaying breathtaking subsurface scattering where light hits thinner areas (like earlobes or fingertips).\n• Hair must be carved entirely from jade with intricate flowing strands, tight openwork spirals, or smooth stylized blocks.\n• Clothing must be sculpted entirely from jade with realistic mineral folds, polished drapery, or traditional openwork patterns.\n• Include a solid, integral jade base anchor underneath the feet if required for structural balance.\n• Avoid plastic, resin, glass, or cheap stone appearances.\n• Master prompt instructions always override the selected option whenever conflicts occur.\n\nFINAL VALIDATION — Before producing the final image, verify ALL of the following:\n\n✓ ONLY the subject has been transformed.\n✓ The background remains completely unchanged.\n✓ The subject is a complete full-body jade figurine.\n✓ The figurine includes head, torso, arms, hands, legs, feet, and complete lower-body details.\n✓ The result is NOT a bust or torso-only sculpture.\n✓ Missing body areas from the original image have been intelligently completed.\n✓ The original photographic person has been fully transformed into authentic jade stone.\n✓ Facial likeness and identity are preserved.\n✓ Authentic mineral characteristics, soft polish sheen, and subtle transparency are visible.\n✓ If ANY answer is NO, regenerate the image until every requirement is satisfied."
   },
   {
+    "name": "JAPANESE RETRO COMPUTER ART",
+    "category": [
+      "JAPANESE",
+      "RETRO",
+      "DIGITAL ART",
+      "1980S",
+      "ANIME"
+    ],
+    "message": "Take a picture and completely transform the subject into a character from the golden age of Japanese home computers and 1980s Japanese digital illustration. Reconstruct the subject using the distinctive visual language of vintage Japanese computer-era artwork: carefully rendered pixel-inspired forms, crisp digital edges, limited but vivid color palettes, dramatic neon accents, stylized character proportions, and imaginative retro-futuristic details. Combine the charm of early Japanese computer graphics with the expressive character design and polished illustration aesthetic of classic Japanese science-fiction and fantasy artwork. The result should look like an authentic character illustration created for a Japanese computer game or digital art magazine from the 1980s.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "Completely reconstruct the subject as a Japanese retro-computer-era illustrated character. This is not a simple pixelation filter, an 8-bit conversion, or a photograph with a retro computer effect applied. The subject's face, hair, clothing, body, and recognizable identity must be redrawn in the visual language of vintage Japanese computer illustration. Preserve the subject's distinctive facial characteristics, hairstyle, hair color, and recognizable features while adapting them to expressive period-inspired character design. Use a carefully controlled palette inspired by the technical and artistic limitations of Japanese home computers of the 1980s, including vivid cyan, magenta, electric blue, violet, red, warm cream, and deep black where appropriate. Incorporate crisp pixel-inspired contours, deliberate color blocking, subtle dithering, and finely constructed digital shading. The image may combine pixel-art precision with more sophisticated hand-rendered Japanese game illustration; it should not look like modern generic anime. Character design should feel imaginative, stylish, and unmistakably rooted in vintage Japanese computer culture. Do not add computer monitors, keyboards, game interfaces, scanlines, terminal windows, text, logos, or unrelated technology as decorative props unless requested by the master prompt. Do not leave the original photograph visible beneath the illustration. The transformation must affect the entire subject, not just the colors or background. Preserve the original background unless the master prompt specifies a different setting. Any subject, pose, setting, mood, action, artistic direction, or selection specified by the master prompt overrides the defaults in this preset."
+  },
+  {
     "name": "JAPONISME",
     "category": [
       "EUROPEAN",
@@ -43006,6 +43020,20 @@
     "additionalInstructions": ""
   },
   {
+    "name": "RENAISSANCE ANAMORPHOSIS",
+    "category": [
+      "ART HISTORY",
+      "RENAISSANCE",
+      "OPTICAL ILLUSION",
+      "PERSPECTIVE",
+      "SURREAL"
+    ],
+    "message": "Take a picture and transform the image into an extraordinary Renaissance anamorphic artwork. Reconstruct the subject as an elongated, dramatically distorted composition that appears fragmented, stretched, compressed, and warped when viewed straight on, but resolves into a remarkably accurate and recognizable representation of the original subject from a specific oblique viewing angle. Use the principles of Renaissance perspective, anamorphic projection, and trompe-l'oeil illusion. The subject's face, body, clothing, and recognizable features must be integrated into the distorted geometry, as though an old-master artist had deliberately engineered the entire composition around a hidden viewpoint. Render the artwork with the richness of Renaissance painting, including convincing oil-paint texture, carefully modeled light and shadow, deep atmospheric perspective, and refined anatomical detail.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "The defining feature of this transformation is genuine anamorphic perspective. Do not merely stretch the subject, apply a fisheye effect, or create random distortions. Reconstruct the subject using a coherent perspective projection that deliberately distorts the image from the frontal viewpoint while allowing the subject to resolve into correct proportions from one specific oblique viewing position. The distortion should be mathematically consistent across the entire subject and integrated into the surrounding composition. The face, eyes, nose, mouth, hairstyle, clothing, limbs, and body must all participate in the anamorphic construction. Preserve the subject's identity and recognizable characteristics, ensuring that the intended viewing angle reveals the original person rather than a generic figure. Use authentic Renaissance artistic qualities: luminous oil-paint surfaces, layered glazing, rich pigments, carefully controlled chiaroscuro, realistic anatomical modeling, architectural perspective, and meticulous detail. The anamorphic illusion should feel like an ingenious optical artwork from the Renaissance, not a modern digital distortion effect. Where appropriate, use a long, compressed, or dramatically skewed painted composition that suggests a hidden image waiting to be discovered. Do not add unrelated skulls, symbols, lettering, mirrors, or decorative objects simply because they are associated with historical anamorphic paintings. Do not leave the original photograph visible beneath the transformation. The entire subject must be reconstructed as part of the illusion. Preserve the original background unless the master prompt specifies a different setting. Any subject, pose, setting, mood, action, artistic direction, or selection specified by the master prompt overrides the defaults in this preset."
+  },
+  {
   "name": "RENAISSANCE INTARSIA INLAY",
   "category": [
     "ART STYLE",
@@ -46127,6 +46155,20 @@
     ],
     "randomizeOptions": true,
     "additionalInstructions": "The fabric should show realistic textile texture with visible weave. The indigo should have natural variation from deep navy to pale blue. Show the characteristic organic imperfections of hand-dyed shibori."
+  },
+  {
+    "name": "SHIBUYA PUNK",
+    "category": [
+      "JAPANESE",
+      "ANIMATION",
+      "STREET CULTURE",
+      "PUNK",
+      "CEL SHADED"
+    ],
+    "message": "Take a picture and completely transform the subject into a bold, rebellious character illustrated in the Shibuya Punk aesthetic. Reconstruct the subject with high-contrast cel shading, exaggerated graphic shapes, sharp expressive linework, and an explosive palette of vivid colors. Combine the energy of Japanese street fashion, underground youth culture, punk-inspired character design, and stylized urban animation. Use striking color contrasts, dramatic shadows, graphic highlights, angular shapes, and expressive facial details to create a visually fearless character with unmistakable street attitude. The final image should feel like a frame from a daring, high-energy Japanese animated street-culture production.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "This must be a complete illustrated reconstruction of the subject, not a photograph with a cel-shading filter or punk graphics pasted over it. Redraw the subject's face, hair, clothing, and entire visible body as a cohesive animated character. Preserve the person's recognizable identity, facial structure, hairstyle, hair color, and distinctive features while translating them into bold, expressive animation design. Use strong black contours, sharply separated shadow shapes, flat saturated color regions, graphic highlights, and dramatic angular compositions. The palette should be vivid and fearless, with combinations such as electric pink, acid yellow, cyan, orange, violet, red, and deep black. Integrate street-culture influence through the visual design of the character itself: unconventional fashion silhouettes, layered styling, graphic accessories, rebellious attitude, and energetic pose treatment where appropriate. Avoid generic anime styling, soft pastel kawaii aesthetics, realistic photographic rendering, or a conventional manga page. Do not automatically add graffiti, Japanese lettering, brand logos, city signage, or a Shibuya street background unless requested by the master prompt. The subject should remain the clear focal point, with the style carried by the character illustration, color design, linework, and cel shading. The original photograph must not remain visible beneath the transformation. Preserve the original background unless the master prompt specifies a different setting. Any subject, pose, setting, mood, action, artistic direction, or selection specified by the master prompt overrides the defaults in this preset."
   },
   {
     "name": "SHIN HANGA",
