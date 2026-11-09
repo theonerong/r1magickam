@@ -19518,6 +19518,38 @@
     "additionalInstructions": "The final image must simultaneously read as an authentic mechanical flip-dot matrix board and the subject. Recognition must come from strict structural grid plotting rather than face swapping."
   },
   {
+    "name": "FLIPBOOK SEQUENCE",
+    "category": [
+      "ANIMATION",
+      "SEQUENTIAL FRAMES",
+      "FLIPBOOK",
+      "STORYBOARD",
+      "FRAME SHEET",
+      "MOTION"
+    ],
+    "message": "Take a picture and create a complete sequential animation frame sheet designed to be cut into individual frames and assembled into a physical or digital flipbook. Reconstruct the subject as a consistent animated character or object and show 16 consecutive moments of a single continuous action, arranged in a perfectly aligned 4-column by 4-row grid. Each of the 16 panels must contain one distinct frame in chronological order, progressing smoothly from the beginning of the action to its completion. Every panel must have identical dimensions, camera perspective, subject scale, and background alignment. The movement between neighboring frames must be small, natural, and continuous so that the frames produce fluid motion when viewed rapidly in sequence. The result must be a clean, precisely organized animation contact sheet with no decorative borders, captions, labels, numbers, or extra artwork.",
+    "options": [
+      {
+        "id": "36 Frames — 6×6 Grid",
+        "text": "Thirty-six sequential frames for detailed animation and fluid movement."
+      },
+      {
+        "id": "25 Frames — 5×5 Grid",
+        "text": "Twenty-five sequential frames for smoother, more gradual motion."
+      },
+      {
+        "id": "16 Frames — 4×4 Grid",
+        "text": "Sixteen sequential frames arranged in four columns and four rows."
+      },
+      {
+        "id": "9 Frames — 3×3 Grid",
+        "text": "Nine sequential frames for a short, simple animation."
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "ANIMATION FRAME SHEET — NOT A COLLAGE: The entire output must be one precisely organized animation frame sheet. It is not a collection of unrelated poses, character variations, photographs, storyboard illustrations, or a decorative collage. Every cell represents the next consecutive moment in one continuous animation.\n\nFRAME COUNT AND GRID: Follow the selected frame-count option exactly. If the master prompt specifies a different frame count or grid arrangement, follow that instead. Use a perfectly regular grid with equal-sized rectangular cells. For a 4×4 sheet, read frames from left to right across each row, then continue from left to right on the next row. Maintain this chronological reading order throughout the sheet.\n\nCONTINUOUS MOTION: Create one clearly defined action that progresses across all frames. Every frame must represent a slightly later moment than the preceding frame. Movement must be incremental and continuous, with small changes in body position, limb placement, facial expression, object position, or other relevant motion. Do not jump between unrelated poses or repeat identical frames. The first frame should establish the starting position, the middle frames should show the action developing, and the final frame should show its natural completion or the intended ending of the motion.\n\nSUBJECT CONSISTENCY: The subject must remain visually identical throughout the entire sequence. Preserve the same face, identity, hairstyle, hair color, clothing, body proportions, accessories, object design, and distinguishing characteristics in every frame. Do not redesign, reinterpret, or randomly vary the subject between panels. The subject must not change age, clothing, appearance, or identity as the animation progresses unless explicitly requested by the master prompt.\n\nCAMERA AND COMPOSITION LOCK: Keep the camera completely stationary throughout the sequence unless camera movement is specifically requested. Maintain the same camera angle, focal perspective, framing, subject scale, and viewing distance in every frame. The subject must remain consistently positioned within each cell. Do not zoom, pan, rotate, crop differently, or change viewpoints between frames. If the action requires movement through the scene, move the subject while keeping the camera and environment consistent.\n\nBACKGROUND CONSISTENCY: Keep the background, lighting, environment, perspective, and all stationary objects identical in every frame. Do not generate a different background for each panel. Stationary elements must line up perfectly across cell boundaries when the frames are viewed individually. Only elements that are genuinely moving should change position.\n\nCELL ALIGNMENT: Every frame must occupy exactly the same amount of space. Use straight, evenly spaced horizontal and vertical divisions. Each cell must have identical width and height. Keep the full subject and all important moving elements inside their respective cell boundaries. Do not allow body parts, objects, shadows, or effects to spill into neighboring cells. Do not overlap panels.\n\nCUTTING AND ASSEMBLY: The sheet must be suitable for cutting into individual frames. Keep the cells cleanly separated by precise grid boundaries. Do not add decorative frames, drop shadows, rounded corners, perspective distortions, tilted panels, or overlapping images. Do not add gutters unless explicitly requested. Avoid any content that would interfere with cutting along the exact cell boundaries.\n\nNO TEXT OR DECORATION: Do not add frame numbers, captions, timestamps, arrows, labels, speech bubbles, logos, watermarks, instructions, or decorative graphics. Do not add a title or a separate cover image. The output should contain only the sequential animation frames.\n\nANIMATION DESIGN: Prioritize readable movement and smooth transitions over dramatic changes in individual frames. Use appropriate in-between poses so that rapid page flipping creates the illusion of continuous movement. Include natural anticipation, action, and follow-through when appropriate. Avoid abrupt teleportation, inconsistent anatomy, flickering details, and unexplained changes in object position.\n\nACTION SELECTION: If the master prompt specifies an action, animate that exact action. If no action is specified, choose a simple, visually clear action appropriate to the subject, such as waving, turning its head, blinking, walking, jumping, throwing, catching, opening, closing, bouncing, or another coherent movement. Do not invent elaborate story events or introduce unrelated characters.\n\nMASTER PROMPT PRIORITY: Any externally provided master prompt specifying the action, number of frames, grid dimensions, subject, pose, movement, direction, speed, environment, camera angle, visual style, or ending overrides the corresponding defaults in this preset."
+  },
+  {
     "name": "FLOATING HOLOGRAPHIC GLASS PANE",
     "category": [
       "DEPTH",
