@@ -1775,13 +1775,22 @@ footerSection.innerHTML = `
       let updatedCount = 0;
       let newCount = 0;
       
+      // Names of presets whose content really changed (or are brand new).
+      // Any old edits saved for these names must be cleared, or they would
+      // sit on top of the new version and hide the update.
+      const changedNames = [];
+
       selectedPresets.forEach(preset => {
         if (existingMap.has(preset.name)) {
           // Update existing preset
+          if (presetsAreDifferent(existingMap.get(preset.name), preset)) {
+            changedNames.push(preset.name);
+          }
           existingMap.set(preset.name, preset);
           updatedCount++;
         } else {
           // Add new preset
+          changedNames.push(preset.name);
           existingMap.set(preset.name, preset);
           newCount++;
         }
@@ -1805,7 +1814,8 @@ footerSection.innerHTML = `
         message: message,
         updated: updatedCount,
         new: newCount,
-        total: allImported.length
+        total: allImported.length,
+        changedNames: changedNames
       };
     } catch (error) {
       return { success: false, message: error.message };

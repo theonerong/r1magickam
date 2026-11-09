@@ -19076,6 +19076,14 @@ const result = await presetImporter.import();
         if (result.success) {
           // Save preset names that existed BEFORE import (to detect truly new presets)
           const presetsBeforeImport = new Set(CAMERA_PRESETS.map(p => p.name));
+
+          // An updated preset must replace the user's old edits, otherwise the
+          // old edits are laid on top and the update never shows up anywhere.
+          if (Array.isArray(result.changedNames)) {
+            for (const changedName of result.changedNames) {
+              try { await presetStorage.removeModification(changedName); } catch (e) {}
+            }
+          }
           
           // Reload presets (merges imported + modifications)
           CAMERA_PRESETS = await mergePresetsWithStorage();
