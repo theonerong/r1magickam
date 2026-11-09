@@ -15604,6 +15604,8 @@ function hideStyleEditor() {
     categoryInput.value = '';
   }
   document.getElementById('delete-style').style.display = 'none';
+  const revertBtnHide = document.getElementById('revert-style');
+  if (revertBtnHide) revertBtnHide.style.display = 'none';
   const savedEditingStyleIndex = editingStyleIndex;
   editingStyleIndex = -1;
   
@@ -15712,7 +15714,11 @@ function editStyle(index) {
     }
   }
   
-  document.getElementById('delete-style').style.display = 'block';
+    document.getElementById('delete-style').style.display = 'block';
+
+  // Revert only makes sense for an imported preset that has been edited
+  const revertBtn = document.getElementById('revert-style');
+  if (revertBtn) revertBtn.style.display = preset._baseName ? 'flex' : 'none';
   
   showStyleEditor('Edit Style');
 }
@@ -15810,6 +15816,46 @@ async function saveStyle() {
   // Remember the final (possibly renamed) name so the gallery viewer reloads
   // THIS preset by name, independent of the editing index.
   _savedPresetNameForViewer = name;
+  const cameFromViewer = returnToGalleryFromViewerEdit;
+  hideStyleEditor();
+  if (!cameFromViewer) {
+    showUnifiedMenu();
+  }
+}
+
+// Undo all edits to one imported preset and restore the original version
+async function revertStyle() {
+  if (editingStyleIndex < 0) return;
+  const current = CAMERA_PRESETS[editingStyleIndex];
+  if (!current) return;
+  const baseName = current._baseName || current.name;
+
+  const original =
+    presetImporter.getImportedPresets().find(p => p.name === baseName) ||
+    factoryPresets.find(p => p.name === baseName);
+
+  if (!original) {
+    alert('No original version was found for this preset.');
+    return;
+  }
+
+  if (!await confirm(`Undo all your edits to "${current.name}" and restore the original version?`)) return;
+
+  await presetStorage.removeModification(baseName);
+  if (current.name !== baseName) await presetStorage.removeModification(current.name);
+
+  CAMERA_PRESETS[editingStyleIndex] = { ...original };
+
+  // If the edit had renamed the preset, put the original name back in the visible list
+  if (current.name !== baseName) {
+    const visIndex = visiblePresets.indexOf(current.name);
+    if (visIndex > -1) visiblePresets[visIndex] = baseName;
+  }
+  saveVisiblePresets();
+
+  _savedPresetNameForViewer = baseName;
+  alert(`"${baseName}" has been restored to the original version.`);
+
   const cameFromViewer = returnToGalleryFromViewerEdit;
   hideStyleEditor();
   if (!cameFromViewer) {
@@ -19656,6 +19702,11 @@ const result = await presetImporter.import();
   const deleteStyleBtn = document.getElementById('delete-style');
   if (deleteStyleBtn) {
     deleteStyleBtn.addEventListener('click', deleteStyle);
+  }
+
+  const revertStyleBtn = document.getElementById('revert-style');
+  if (revertStyleBtn) {
+    revertStyleBtn.addEventListener('click', revertStyle);
   }
   
   connectionStatusElement = document.getElementById('connection-status');
