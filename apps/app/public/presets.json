@@ -58787,6 +58787,66 @@
     "additionalInstructions": ""
   },
   {
+    "name": "WHEN YOU GOTTA GO",
+    "category": [
+      "HUMOR",
+      "COMEDY",
+      "EXPRESSIONS",
+      "SURREAL",
+      "TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform the subject(s) into a hilariously desperate version of themselves who urgently needs to use the bathroom. Preserve each person's recognizable identity, but dramatically transform their facial expression and body language to communicate that they are seconds away from losing the battle. Their faces should show an exaggerated combination of clenched teeth, tightly pursed lips, bulging eyes, furrowed brows, strained cheeks, and sheer panic. Their bodies should look tense and uncomfortable, with knees pressed together, legs crossed, awkwardly shifting their weight, and hands instinctively clutching their abdomen or thighs. Make the situation unmistakably funny and visually exaggerated, as though the subject is desperately searching for the nearest bathroom.",
+    "randomizeOptions": true,
+    "options": [
+    {
+      "id": "001",
+      "label": "Desperate to Pee",
+      "description": "The subject is bursting to urinate, with tightly crossed legs, knees pressed together, a strained expression, and an unmistakable look of desperate urgency."
+    },
+    {
+      "id": "002",
+      "label": "The Fart Emergency",
+      "description": "The subject is desperately trying to hold in an enormous fart, with clenched buttocks, a rigid posture, puffed cheeks, and an intensely worried expression."
+    },
+    {
+      "id": "003",
+      "label": "Number Two Panic",
+      "description": "The subject desperately needs to defecate, with a severely strained face, hunched posture, clenched legs, and an almost comically overwhelmed expression."
+    },
+    {
+      "id": "004",
+      "label": "The Ultimate Emergency",
+      "description": "The subject is experiencing an all-out bathroom emergency, desperately needing to pee, fart, and defecate simultaneously. Their entire face and body communicate maximum panic."
+    },
+    {
+      "id": "005",
+      "label": "The Bathroom Dash",
+      "description": "The subject is caught mid-sprint, desperately racing toward an unseen bathroom, with frantic eyes, clenched posture, and exaggerated urgency."
+    },
+    {
+      "id": "006",
+      "label": "The Close Call",
+      "description": "The subject has just barely managed to hold on, frozen in an awkward, tense pose with a look of absolute relief mixed with lingering panic."
+    },
+    {
+      "id": "007",
+      "label": "Trying to Play It Cool",
+      "description": "The subject is attempting to pretend everything is normal despite desperately needing the bathroom. Their strained facial expression and stiff, unnatural posture give away the emergency."
+    },
+    {
+      "id": "008",
+      "label": "The Public Emergency",
+      "description": "The subject is desperately looking around in a public place for a restroom, visibly panicking while trying to maintain some dignity."
+    },
+    {
+      "id": "009",
+      "label": "About to Vomit",
+      "description": "The subject is desperately fighting off an imminent bout of vomiting. Their face shows intense nausea, with a pale or clammy complexion, watery wide eyes, furrowed brows, puffed cheeks, tightly pursed lips, and a mouth struggling to stay closed. Their body is hunched forward, one hand covering their mouth and the other clutching their stomach, looking seconds away from throwing up."
+    }
+    ],
+    "additionalInstructions": "FACIAL EXPRESSION IS THE PRIORITY. The transformation must dramatically alter the subject's expression to make the bathroom emergency immediately obvious. Do not settle for a mildly uncomfortable face or a generic smile. Use exaggerated, expressive facial acting: wide alarmed eyes, knitted eyebrows, tense forehead, clenched jaw, compressed lips, puffed cheeks, and visible facial strain. Make the expression funny, extreme, and unmistakable while retaining the subject's recognizable identity.\n\nBODY LANGUAGE: Use physically convincing comedic poses appropriate to the selected emergency. For urination, use tightly crossed legs, knees squeezed together, awkward foot positioning, and hands near the lower abdomen. For flatulence, use a rigid stance, clenched posture, and an expression of desperate restraint. For defecation, use a hunched, tense posture, compressed legs, and a visibly strained expression. For combined emergencies, exaggerate the entire body's tension. For vomiting, use a pronounced forward hunch, one hand clamped over the mouth, the other gripping the stomach, raised shoulders, and an unmistakable expression of nausea and imminent vomiting. The pose must communicate urgency without requiring explanatory text.\n\nPRESERVE IDENTITY: Keep the subject recognizable through their original facial structure, hairstyle, hair color, skin tone, and distinctive features, even while changing their expression and pose. For multiple people, transform every person individually and do not duplicate or omit anyone.\n\nCOMEDIC REALISM: Make the result look like a convincingly staged comedic photograph, with realistic anatomy, believable clothing, and expressive human body language. The humor should come from the subject's desperate expression and physical predicament, not from cartoon effects or graphic bodily functions. For the vomiting option, emphasize the hilarious moment immediately before vomiting, with exaggerated nausea and panic. Do not depict graphic vomit, exposed genitals, or visible bodily waste.\n\nKeep the original setting unless the master prompt specifies a different location. Do not automatically add toilets, bathroom signs, toilet paper, or other props. The master prompt overrides preset defaults for the type of emergency, pose, setting, expression, mood, and artistic direction."
+  },
+  {
     "name": "WHERE IN THE WORLD IS CARMEN SANDIEGO?",
     "category": [
       "ANIMATION",
