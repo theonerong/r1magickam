@@ -1231,6 +1231,44 @@
     "additionalInstructions": "• Preserve the core identity of the original subject.\n• Preserve the fundamental composition and recognizable environment.\n• Transform existing forms through increasingly bizarre reinterpretation.\n• Distort anatomy, materials, object identity, scale, texture, and structure in controlled ways.\n• The strange elements must derive from things actually present in the source image.\n• Do not randomly add unrelated objects or scenery.\n• Do not turn the result into generic surrealism.\n• The visual logic should resemble a machine confidently misunderstanding the source.\n• Maintain internal consistency within each hallucinated reinterpretation.\n• The subject must remain identifiable despite the distortions.\n\nFINAL VALIDATION:\n✓ The image is visibly transformed.\n✓ The transformation resembles AI misinterpretation.\n✓ Existing source elements are being misread rather than replaced by unrelated imagery.\n✓ Subject identity remains recognizable.\n✓ Environment remains recognizable.\n✓ No generic fantasy scenery has been invented."
   },
   {
+    "name": "AIR FRESHENER",
+    "category": [
+      "SURREAL",
+      "OBJECT TRANSFORMATION",
+      "HUMOR",
+      "COLLECTIBLES"
+    ],
+    "message": "Take a picture and transform the subject into an authentic novelty car air freshener shaped like the subject themselves. The subject must become the actual die-cut air freshener, not a photograph placed inside a package or a person holding an air freshener. Reconstruct the subject's recognizable face, hairstyle, expression, clothing, and defining features as a detailed printed illustration on a thin, absorbent, die-cut cardboard air freshener. The freshener must have the unmistakable physical appearance of a real hanging automotive air freshener, with a visible fibrous paper texture, slightly rounded cut edges, a small punched hanging hole, and a thin string attached through the hole. Show the finished air freshener dangling from a rearview mirror inside a vehicle, with the car interior and windshield visible behind it. Make the air freshener large and prominent in the foreground so the subject's likeness is immediately recognizable. Give it the amusing appearance of an actual novelty product featuring the subject as its design.",
+    "options": [
+      {
+        "id": "Classic Freshener",
+        "text": "Traditional flat, die-cut air freshener with a recognizable printed likeness of the subject."
+      },
+      {
+        "id": "Little Tree Style",
+        "text": "A novelty air freshener with a stylized evergreen-tree silhouette, incorporating the subject's recognizable face and features into the design."
+      },
+      {
+        "id": "Full Body Cutout",
+        "text": "The entire subject is reproduced as a full-body die-cut air freshener, including their recognizable clothing, pose, and footwear."
+      },
+      {
+        "id": "Oversized Freshener",
+        "text": "An unusually large, exaggerated air freshener featuring the subject, hanging prominently from the rearview mirror."
+      },
+      {
+        "id": "Novelty Product",
+        "text": "A professionally designed novelty air freshener with humorous product graphics, a playful name, and the subject as its central illustration."
+      },
+      {
+        "id": "Air Freshener Collection",
+        "text": "A small collection of differently shaped air fresheners featuring the same subject, displayed together as a novelty product assortment."
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "The subject's identity is essential. Preserve their recognizable facial structure, hairstyle, hair color, expression, distinctive features, and clothing wherever applicable. The result must look like a real manufactured air freshener, not a miniature human, figurine, photograph, sticker, or person standing inside a car. The subject must be reconstructed as the actual printed design of the absorbent air freshener material. Show realistic thin cardboard thickness, porous paper fibers, die-cut edges, a punched hanging hole, and a string. The rearview mirror attachment must be physically plausible. The air freshener must be the main subject of the image and large enough to clearly recognize the person. Do not simply shrink the original photograph or place the untouched source image on a rectangular card. Do not add extra people or duplicate the subject unless the selected option explicitly calls for a collection. Master prompt instructions override all preset defaults, including the subject's pose, appearance, setting, mood, and artistic direction."
+  },
+  {
     "name": "AIRBRUSH",
     "category": [
       "ART",
@@ -11882,14 +11920,40 @@
   {
     "name": "CONSTELLATION",
     "category": [
-      "SPACE",
-      "STARS",
-      "NIGHT SKY"
+      "SURREAL",
+      "CELESTIAL",
+      "MATHEMATICAL ART",
+      "TRANSFORMATION"
     ],
-    "message": "Take a picture and transform the subject into a living constellation in the night sky. Reimagine the subject’s silhouette, facial features, and pose as a pattern of glowing stars connected by faint celestial lines, while keeping their identity recognizable. Surround the subject with a deep, cosmic backdrop filled with nebulae, subtle stardust, and distant galaxies. Use soft glows, luminous highlights, and gentle gradients to create a magical, astronomical aesthetic. The subject should appear formed entirely from stars and light, as if they are part of the universe itself, rendered with crisp detail and awe-inspiring atmosphere.",
-    "options": [],
-    "randomizeOptions": false,
-    "additionalInstructions": ""
+    "message": "Take a picture and completely reconstruct the subject as a spectacular three-dimensional human constellation in the night sky. The subject's recognizable silhouette, face, hairstyle, body proportions, pose, and defining features must be formed entirely from carefully positioned stars of varying brightness and sizes. Individual stars must define the contours of the face, eyes, nose, mouth, hairline, shoulders, arms, torso, and other recognizable features. Connect selected stars with delicate, luminous astronomical chart lines to create a coherent constellation diagram that follows the subject's actual anatomy and silhouette. The result should look like an extraordinary newly discovered constellation, suspended across a deep, realistic night sky. Surround the constellation with subtle celestial depth, distant stars, faint nebulae, and delicate astronomical cartography. The human figure must be immediately recognizable from its arrangement of stars, not represented by an ordinary photograph, silhouette cutout, or glowing outline.",
+    "options": [
+      {
+        "id": "Ancient Star Chart",
+        "text": "An elaborate antique astronomical constellation chart, with fine engraved-style connecting lines, celestial markings, and an old-world star atlas appearance."
+      },
+      {
+        "id": "Brilliant Night Sky",
+        "text": "A breathtaking, photorealistic constellation made from brilliant individual stars against a vast, deep-black night sky."
+      },
+      {
+        "id": "Golden Constellation",
+        "text": "The subject is formed from brilliant golden stars and delicate gold connecting lines, resembling an extravagant celestial illustration."
+      },
+      {
+        "id": "Nebula Figure",
+        "text": "The constellation is surrounded by colorful cosmic nebula clouds, with luminous stars defining the subject's facial features and complete silhouette."
+      },
+      {
+        "id": "Scientific Star Map",
+        "text": "A sophisticated astronomical mapping visualization with precise star positions, fine coordinate markings, subtle grid lines, and technical chart details."
+      },
+      {
+        "id": "Living Constellation",
+        "text": "The stars forming the subject appear to shimmer and glow with extraordinary intensity, while faint streams of cosmic light flow between the connected points."
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "The subject must be completely reconstructed from stars. This is not a photo filter, a star overlay, a glowing human outline, or a photograph with stars added to it. The stars themselves must create the subject's recognizable anatomy and features. Use dense, carefully arranged star points to define facial structure, eyes, nose, mouth, hair, clothing contours, and body shape. Larger, brighter stars may define important anatomical landmarks, while smaller stars provide detail and smooth transitions. Connecting lines must follow meaningful anatomical and constellation paths rather than forming an arbitrary geometric web. Preserve the original subject's recognizable identity, hairstyle, hair shape, proportions, pose, and clothing silhouette through the star arrangement. If the source image shows multiple people, reconstruct each person as a separate constellation without merging or duplicating them. If the source image shows a full body, the constellation must represent the full body rather than cropping to a head or bust. Maintain a convincing astronomical appearance, with realistic star brightness, depth, and celestial atmosphere. The original photograph must not remain visible anywhere in the finished image. Master prompt instructions override all preset defaults, including subject, pose, setting, mood, action, artistic direction, and selections."
   },
   {
     "name": "CONSTRUCTIVISM",
@@ -16012,6 +16076,52 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "EMOJI ME",
+    "category": [
+      "EMOJI",
+      "AVATAR",
+      "CHARACTER TRANSFORMATION",
+      "GRAPHIC DESIGN"
+      ],
+      "message": "Take a picture and transform the subject into a polished, expressive, fully functional emoji that can be used in messaging apps, social media, and digital conversations. Reconstruct the subject as a compact, instantly recognizable emoji character, preserving their distinctive facial features, hairstyle, hair color, skin tone, and other identifying characteristics. The result should have the visual quality of a professionally designed modern emoji: clean dimensional shapes, appealing proportions, smooth surfaces, crisp edges, and expressive features. Simplify details intelligently so the subject remains recognizable even when displayed at a very small size. Frame the emoji as a standalone character with comfortable transparent space around its entire silhouette. The background MUST be completely transparent, with no colored background, white background, checkerboard pattern, shadow backdrop, border, or surrounding scene. Output the subject only, isolated on a genuine transparent alpha channel, suitable for saving as a standalone emoji sticker or PNG.",
+    "options": [
+      {
+        "id": "Classic Emoji",
+        "text": "A friendly, polished emoji with rounded shapes, simplified facial features, smooth dimensional shading, and a familiar modern emoji aesthetic."
+      },
+      {
+        "id": "3D Emoji",
+        "text": "A premium glossy three-dimensional emoji with softly rounded geometry, subtle reflections, dimensional facial features, and polished surfaces."
+      },
+      {
+        "id": "Apple-Style Emoji",
+        "text": "A sophisticated, highly polished emoji with expressive realistic proportions, smooth gradients, detailed facial features, and refined three-dimensional rendering."
+      },
+      {
+        "id": "Cartoon Emoji",
+        "text": "A playful, boldly expressive emoji with simplified cartoon proportions, clean outlines, exaggerated facial expression, and vibrant colors."
+      },
+      {
+        "id": "Bitmoji Style",
+        "text": "A personalized avatar emoji with recognizable facial features, simplified illustrated hair, expressive eyes, and a clean contemporary character-design aesthetic."
+      },
+      {
+        "id": "Mini Character",
+        "text": "A compact full-body emoji character with an oversized expressive head, simplified body, recognizable clothing, and a playful miniature appearance."
+      },
+      {
+        "id": "Reaction Emoji",
+        "text": "A close-up emoji head with an especially expressive face, emphasizing the subject's recognizable features and an exaggerated reaction."
+      },
+      {
+        "id": "Chibi Emoji",
+        "text": "A cute miniature character with a large head, small body, simplified anatomy, expressive eyes, and charming proportions while preserving the subject's identity."
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "TRANSPARENCY IS MANDATORY. The final output must contain a genuinely transparent background using an alpha channel, not a white, black, colored, blurred, or checkerboard background. Do not draw a checkerboard pattern to represent transparency. Do not include a canvas background, scene, floor, environment, frame, badge, speech bubble, decorative border, text, watermark, or unrelated graphic elements. The emoji itself must be completely visible, with no part of the head, hair, ears, body, or accessories accidentally cropped. Leave only a small amount of transparent padding around the character so it can be used as an emoji without excessive empty space. Preserve the subject's identity rather than generating a generic emoji face. Retain distinctive facial proportions, hairstyle, hair color, facial hair, glasses, and recognizable accessories. Simplify details only as necessary for legibility at small display sizes. If multiple people appear in the source, create one separate emoji for each person, keeping them visually distinct and avoiding duplication. If the source depicts an animal, transform that animal into its own recognizable emoji rather than turning it into a human character. Follow the selected visual style consistently. The original photograph must be completely reconstructed into the emoji and must not remain visible beneath or around it. Master prompt instructions override all preset defaults, including subject, expression, pose, clothing, visual style, and artistic direction."
   },
   {
     "name": "EMOJI THIS",
