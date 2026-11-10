@@ -5284,34 +5284,28 @@
     "randomizeOptions": true,
     "options": [
     {
-      "id": "001",
-      "label": "1980s Blockbuster Hit",
-      "description": "A spectacular 1980s theatrical blockbuster rental cover with dramatic painted movie artwork, bold typography, and classic adventure-film presentation."
+      "id": "1980s Blockbuster Hit",
+      "text": "A spectacular 1980s theatrical blockbuster rental cover with dramatic painted movie artwork, bold typography, and classic adventure-film presentation."
     },
     {
-      "id": "002",
-      "label": "1990s Action Movie",
-      "description": "A high-energy 1990s action VHS cover featuring explosive cinematic staging, dramatic lighting, and the subject as the unmistakable action hero."
+      "id": "1990s Action Movie",
+      "text": "A high-energy 1990s action VHS cover featuring explosive cinematic staging, dramatic lighting, and the subject as the unmistakable action hero."
     },
     {
-      "id": "003",
-      "label": "Horror Rental",
-      "description": "A chilling vintage horror VHS cover with ominous artwork, atmospheric shadows, and the subject starring in a fictional horror film."
+      "id": "Horror Rental",
+      "text": "A chilling vintage horror VHS cover with ominous artwork, atmospheric shadows, and the subject starring in a fictional horror film."
     },
     {
-      "id": "004",
-      "label": "Cult Comedy",
-      "description": "A colorful, irreverent 1990s comedy rental cover with expressive character poses, playful composition, and exaggerated cinematic humor."
+      "id": "Cult Comedy",
+      "text": "A colorful, irreverent 1990s comedy rental cover with expressive character poses, playful composition, and exaggerated cinematic humor."
     },
     {
-      "id": "005",
-      "label": "Sci-Fi Fantasy",
-      "description": "A lavish science-fiction or fantasy VHS cover with imaginative worlds, spectacular practical-effects-style artwork, and the subject as the central protagonist."
+      "id": "Sci-Fi Fantasy",
+      "text": "A lavish science-fiction or fantasy VHS cover with imaginative worlds, spectacular practical-effects-style artwork, and the subject as the central protagonist."
     },
     {
-      "id": "006",
-      "label": "Animated Feature",
-      "description": "A vintage animated-movie rental cover with the subject faithfully reimagined as the lead animated character, using polished hand-painted animation artwork."
+      "id": "Animated Feature",
+      "text": "A vintage animated-movie rental cover with the subject faithfully reimagined as the lead animated character, using polished hand-painted animation artwork."
     }
     ],
     "additionalInstructions": "The BLOCKBUSTER VIDEO branding is essential. Reproduce the recognizable Blockbuster Video logo prominently on the front cover, using its distinctive blue-and-yellow branding and characteristic logo treatment. The logo must be clearly legible, correctly spelled, and integrated into the printed cover design rather than appearing as a floating watermark. The case must convincingly resemble a physical VHS rental product from the 1980s or 1990s, not a DVD, Blu-ray, streaming thumbnail, modern poster, or generic video-store package. Include authentic VHS proportions, a visible spine, period-appropriate typography, printed artwork, and realistic plastic or cardboard packaging. The subject must be the actual star of the fictional movie depicted on the cover. Reconstruct the subject within the movie artwork, preserving their recognizable identity; never simply paste the original photograph onto the packaging. Invent an appropriate fictional movie title and tagline unless the master prompt specifies them. If a master prompt specifies a movie genre, title, setting, character, pose, mood, or visual direction, it overrides the preset defaults. Do not invent additional people or characters that compete with the subject as the star. The finished image should feel like a genuine collectible VHS rental discovered on a shelf at Blockbuster Video."
@@ -58799,49 +58793,40 @@
     "randomizeOptions": true,
     "options": [
     {
-      "id": "001",
-      "label": "Desperate to Pee",
-      "description": "The subject is bursting to urinate, with tightly crossed legs, knees pressed together, a strained expression, and an unmistakable look of desperate urgency."
+      "id": "Desperate to Pee",
+      "text": "The subject is bursting to urinate, with tightly crossed legs, knees pressed together, a strained expression, and an unmistakable look of desperate urgency."
     },
     {
-      "id": "002",
-      "label": "The Fart Emergency",
-      "description": "The subject is desperately trying to hold in an enormous fart, with clenched buttocks, a rigid posture, puffed cheeks, and an intensely worried expression."
+      "id": "The Fart Emergency",
+      "text": "The subject is desperately trying to hold in an enormous fart, with clenched buttocks, a rigid posture, puffed cheeks, and an intensely worried expression."
     },
     {
-      "id": "003",
-      "label": "Number Two Panic",
-      "description": "The subject desperately needs to defecate, with a severely strained face, hunched posture, clenched legs, and an almost comically overwhelmed expression."
+      "id": "Number Two Panic",
+      "text": "The subject desperately needs to defecate, with a severely strained face, hunched posture, clenched legs, and an almost comically overwhelmed expression."
     },
     {
-      "id": "004",
-      "label": "The Ultimate Emergency",
-      "description": "The subject is experiencing an all-out bathroom emergency, desperately needing to pee, fart, and defecate simultaneously. Their entire face and body communicate maximum panic."
+      "id": "The Ultimate Emergency",
+      "text": "The subject is experiencing an all-out bathroom emergency, desperately needing to pee, fart, and defecate simultaneously. Their entire face and body communicate maximum panic."
     },
     {
-      "id": "005",
-      "label": "The Bathroom Dash",
-      "description": "The subject is caught mid-sprint, desperately racing toward an unseen bathroom, with frantic eyes, clenched posture, and exaggerated urgency."
+      "id": "The Bathroom Dash",
+      "text": "The subject is caught mid-sprint, desperately racing toward an unseen bathroom, with frantic eyes, clenched posture, and exaggerated urgency."
     },
     {
-      "id": "006",
-      "label": "The Close Call",
-      "description": "The subject has just barely managed to hold on, frozen in an awkward, tense pose with a look of absolute relief mixed with lingering panic."
+      "id": "The Close Call",
+      "text": "The subject has just barely managed to hold on, frozen in an awkward, tense pose with a look of absolute relief mixed with lingering panic."
     },
     {
-      "id": "007",
-      "label": "Trying to Play It Cool",
-      "description": "The subject is attempting to pretend everything is normal despite desperately needing the bathroom. Their strained facial expression and stiff, unnatural posture give away the emergency."
+      "id": "Trying to Play It Cool",
+      "text": "The subject is attempting to pretend everything is normal despite desperately needing the bathroom. Their strained facial expression and stiff, unnatural posture give away the emergency."
     },
     {
-      "id": "008",
-      "label": "The Public Emergency",
-      "description": "The subject is desperately looking around in a public place for a restroom, visibly panicking while trying to maintain some dignity."
+      "id": "The Public Emergency",
+      "text": "The subject is desperately looking around in a public place for a restroom, visibly panicking while trying to maintain some dignity."
     },
     {
-      "id": "009",
-      "label": "About to Vomit",
-      "description": "The subject is desperately fighting off an imminent bout of vomiting. Their face shows intense nausea, with a pale or clammy complexion, watery wide eyes, furrowed brows, puffed cheeks, tightly pursed lips, and a mouth struggling to stay closed. Their body is hunched forward, one hand covering their mouth and the other clutching their stomach, looking seconds away from throwing up."
+      "id": "About to Vomit",
+      "text": "The subject is desperately fighting off an imminent bout of vomiting. Their face shows intense nausea, with a pale or clammy complexion, watery wide eyes, furrowed brows, puffed cheeks, tightly pursed lips, and a mouth struggling to stay closed. Their body is hunched forward, one hand covering their mouth and the other clutching their stomach, looking seconds away from throwing up."
     }
     ],
     "additionalInstructions": "FACIAL EXPRESSION IS THE PRIORITY. The transformation must dramatically alter the subject's expression to make the bathroom emergency immediately obvious. Do not settle for a mildly uncomfortable face or a generic smile. Use exaggerated, expressive facial acting: wide alarmed eyes, knitted eyebrows, tense forehead, clenched jaw, compressed lips, puffed cheeks, and visible facial strain. Make the expression funny, extreme, and unmistakable while retaining the subject's recognizable identity.\n\nBODY LANGUAGE: Use physically convincing comedic poses appropriate to the selected emergency. For urination, use tightly crossed legs, knees squeezed together, awkward foot positioning, and hands near the lower abdomen. For flatulence, use a rigid stance, clenched posture, and an expression of desperate restraint. For defecation, use a hunched, tense posture, compressed legs, and a visibly strained expression. For combined emergencies, exaggerate the entire body's tension. For vomiting, use a pronounced forward hunch, one hand clamped over the mouth, the other gripping the stomach, raised shoulders, and an unmistakable expression of nausea and imminent vomiting. The pose must communicate urgency without requiring explanatory text.\n\nPRESERVE IDENTITY: Keep the subject recognizable through their original facial structure, hairstyle, hair color, skin tone, and distinctive features, even while changing their expression and pose. For multiple people, transform every person individually and do not duplicate or omit anyone.\n\nCOMEDIC REALISM: Make the result look like a convincingly staged comedic photograph, with realistic anatomy, believable clothing, and expressive human body language. The humor should come from the subject's desperate expression and physical predicament, not from cartoon effects or graphic bodily functions. For the vomiting option, emphasize the hilarious moment immediately before vomiting, with exaggerated nausea and panic. Do not depict graphic vomit, exposed genitals, or visible bodily waste.\n\nKeep the original setting unless the master prompt specifies a different location. Do not automatically add toilets, bathroom signs, toilet paper, or other props. The master prompt overrides preset defaults for the type of emergency, pose, setting, expression, mood, and artistic direction."
