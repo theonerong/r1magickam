@@ -2275,12 +2275,6 @@ function showPresetSelector() {
   
   populatePresetList();
 
-  // Initialize preset count display
-  const presetCountElement = document.getElementById('preset-count');
-  if (presetCountElement) {
-    presetCountElement.textContent = CAMERA_PRESETS.length;
-  }
-
   modal.style.display = 'flex';
   isPresetSelectorOpen = true;
   currentPresetIndex_Gallery = 0;
@@ -13729,9 +13723,6 @@ YOU MUST RESTART PROGRAM!`];
       if (typeof populatePresetList         === 'function') populatePresetList();
       if (typeof populateVisiblePresetsList === 'function') populateVisiblePresetsList();
       updateVisiblePresetsDisplay();
-      // Update preset selector count if modal is open
-      const presetCountEl = document.getElementById('preset-count');
-      if (presetCountEl) presetCountEl.textContent = CAMERA_PRESETS.length;
     }
   } catch (e) { console.warn('resetDb re-render:', e); }
 
