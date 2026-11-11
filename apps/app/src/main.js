@@ -21668,6 +21668,11 @@ console.log('AI Camera Styles app initialized!');
   // It starts as null, meaning no field is active.
   let activePttField = null;
 
+  // Remembers which text field the user was in at the moment the side button
+  // was pressed, so the spoken words still land there even if the field
+  // briefly loses focus while the r1 is listening.
+  let pttLockedField = null;
+
   // The list of every text input and textarea in the app that should
   // support PTT. Each one is found by its id from the HTML.
   const pttFieldIds = [
@@ -21758,6 +21763,8 @@ console.log('AI Camera Styles app initialized!');
 
     // --- TEXT FIELD MODE ---
     // If the user is inside a text field, do speech-to-text into that field.
+    // Lock onto that field now, so it is still remembered when the words arrive.
+    pttLockedField = activePttField;
     if (activePttField) {
       CreationVoiceHandler.postMessage('start');
       return;
@@ -21791,7 +21798,7 @@ console.log('AI Camera Styles app initialized!');
   window.addEventListener('longPressEnd', function() {
 
     // --- TEXT FIELD MODE ---
-    if (activePttField) {
+    if (activePttField || pttLockedField) {
       CreationVoiceHandler.postMessage('stop');
       return;
     }
@@ -21822,9 +21829,17 @@ console.log('AI Camera Styles app initialized!');
     // --- PTT speech-to-text handling ---
     if (data.type === 'sttEnded' && data.transcript) {
 
-      // TEXT FIELD: insert spoken words into the active field
-      if (activePttField) {
-        const field = activePttField;
+      // TEXT FIELD: insert spoken words into the field that was active when
+      // the side button was pressed (only if that field is still on screen),
+      // otherwise into whichever field is active now.
+      const pttTarget = (pttLockedField &&
+                         document.body.contains(pttLockedField) &&
+                         pttLockedField.offsetParent !== null)
+        ? pttLockedField
+        : activePttField;
+      pttLockedField = null;
+      if (pttTarget) {
+        const field = pttTarget;
         const start = field.selectionStart;
         const end = field.selectionEnd;
         const before = field.value.substring(0, start);
