@@ -12432,6 +12432,19 @@
     "additionalInstructions": "Use vibrant healthy coral colors \u2014 electric blues, hot pinks, deep purples, and bright oranges. The underwater lighting should be natural with caustic light patterns. Include realistic marine life details."
   },
   {
+    "name": "CORK SCULPTURE",
+    "category": [
+      "ART",
+      "MATERIAL TRANSFORMATION",
+      "SCULPTURE",
+      "TEXTURE"
+    ],
+    "message": "Take a picture and completely reconstruct the subject as an intricately crafted three-dimensional sculpture made entirely from natural cork. Transform the subject's entire visible form into cork, preserving its recognizable identity, defining features, proportions, pose, clothing, and silhouette. Use a variety of authentic cork textures, from fine-grained natural cork to coarse granulated cork and layered compressed cork, to create a convincing sculptural interpretation.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "The subject must be genuinely reconstructed as a cork sculpture, not displayed as an ordinary photograph with cork texture applied over it. Every visible part of the subject must be made from cork, including facial features, hair, clothing, accessories, and body parts. Preserve the subject's recognizable face and identity through carefully sculpted cork contours, dimensional features, and variations in cork grain. Use natural cork coloration, including warm tan, honey, ochre, and deeper brown tones. Construct larger forms from solid cork sections and use smaller cork granules, compressed layers, and carefully fitted pieces for fine details. Cork's distinctive pores, pits, speckles, irregular grain, and compressed cellular structure should be clearly visible. The result should resemble a sophisticated contemporary gallery sculpture, with convincing physical depth, sculptural craftsmanship, and realistic material behavior. Avoid making the subject look like a corkboard covered in flat cork pieces, a collage, a miniature, or a toy. Do not leave recognizable photographic skin, fabric, or hair anywhere on the transformed subject. Keep the original background unchanged unless the master prompt specifies otherwise. Any subject, pose, clothing, setting, mood, or artistic direction specified in the master prompt takes priority over these defaults."
+  },
+  {
     "name": "COSMATI MOSAIC",
     "category": [
       "ITALIAN",
@@ -21045,6 +21058,19 @@
     }
     ],
     "additionalInstructions": "• Transform ONLY the subject.\n• Keep the background exactly unchanged.\n• Do NOT convert the background into fuse beads.\n• Do NOT overlay fuse beads on the original subject.\n• Completely reconstruct the subject from physical fuse beads.\n• Every part of the subject must be created from individual plastic beads.\n• Preserve the subject's recognizable identity, facial structure, hairstyle, hair color, expression, age, ethnicity, body proportions, pose, and silhouette.\n• The subject should look like a handmade craft interpretation of the person.\n• Individual fuse beads must remain visible.\n• Show realistic plastic texture, bead spacing, fused seams, and slight melting from ironing.\n• Avoid making the artwork appear like a smooth digital pixel image.\n• Preserve authentic craft imperfections.\n• Use bead color placement intelligently to recreate recognizable facial features and clothing.\n• The finished image should look like a real fuse bead artwork photographed after completion.\n• Master prompt instructions always override the selected option whenever conflicts occur.\n\nFINAL VALIDATION — Before producing the image, verify ALL of the following:\n\n✓ Only the subject has been transformed.\n✓ Background remains unchanged.\n✓ Subject is entirely reconstructed from physical fuse beads.\n✓ No original photographic subject pixels remain.\n✓ Individual beads and fused plastic texture are visible.\n✓ Subject remains recognizable.\n✓ Artwork looks handmade, not digitally generated.\n✓ If ANY answer is NO, regenerate the image."
+  },
+  {
+    "name": "FUSED PLASTIC SHEET ART",
+    "category": [
+      "ART",
+      "MATERIAL TRANSFORMATION",
+      "PLASTIC",
+      "SCULPTURE"
+    ],
+    "message": "Take a picture and completely transform the subject into a striking three-dimensional artwork constructed from heat-fused layers of translucent and opaque plastic sheets. Rebuild the subject's entire visible form using overlapping, melted, bonded, and sculpted plastic layers, preserving recognizable identity, facial features, proportions, pose, clothing, and silhouette. Create rich color transitions, translucent overlaps, irregular fused edges, glossy surfaces, and visible layered construction throughout the subject.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "The subject must be reconstructed from actual-looking fused plastic sheet material, not shown as a photograph with plastic film placed over it. Build the entire subject from multiple layers of colored plastic sheets that have been heated, softened, pressed, and fused together. The layers should follow the three-dimensional anatomy and contours of the subject, forming sculpted facial features, hair, clothing, limbs, and accessories. Make the layered construction clearly visible through overlapping translucent bands, embedded color layers, fused seams, softly melted boundaries, and subtle trapped air pockets. Use a sophisticated combination of transparent, translucent, and opaque plastic, allowing underlying layers to show through where appropriate. Create dimensional forms with curved, folded, and heat-shaped surfaces rather than flat stacked cutouts. Highlights should reveal a mixture of glossy and softly distorted plastic surfaces, with occasional ripples and slight heat-warped imperfections. Preserve the subject's recognizable face and identity through accurate sculptural modeling rather than relying on photographic facial details. The final result should resemble a bold contemporary mixed-material sculpture or experimental plastic-fusion artwork, with the plastic itself forming the subject. Avoid making it look like stained glass, resin, cellophane wrapped around the original subject, or a flat collage. Do not leave any recognizable original photographic material visible within the transformed subject. Keep the original background unchanged unless the master prompt specifies otherwise. Any subject, pose, clothing, setting, mood, or artistic direction specified in the master prompt takes priority over these defaults."
   },
   {
     "name": "FUTURAMA",
@@ -32651,6 +32677,19 @@
     "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Multiple layers of colored fabric\n• Reverse-appliqué technique\n• Narrow channels revealing underlying colors\n• Bold geometric and figurative designs\n• Vibrant tropical color palette\n• Background filled with fine slits and dots\n• Visible hand stitching along every edge\n• Subject recognisable in bold cut shapes."
   },
   {
+    "name": "MOLDED PAPER PULP",
+    "category": [
+      "ART",
+      "MATERIAL TRANSFORMATION",
+      "PAPER",
+      "SCULPTURE"
+    ],
+    "message": "Take a picture and completely reconstruct the subject as a highly detailed three-dimensional sculpture made from molded paper pulp. Transform the subject's entire visible form into dense, shaped cellulose fibers, preserving recognizable identity, facial features, proportions, pose, clothing, and silhouette. The result should look like an extraordinary hand-crafted molded-fiber sculpture with visible paper fibers, pressed contours, subtle surface irregularities, and convincing sculptural depth.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "The subject must be rebuilt entirely from molded paper pulp, as though wet paper fibers were shaped in custom molds, compressed, dried, and carefully finished into a dimensional sculpture. Do not simply apply a paper texture to the original photograph. Every visible part of the subject must become molded cellulose material, including the face, hair, clothing, accessories, and body. Preserve the subject's identity through accurately reconstructed facial proportions, recognizable features, hairstyle, and expression. Use dense, compacted fibers for structural areas and finer pulp textures for delicate details. Show subtle fiber strands, tiny embedded flecks, compressed layers, shallow molding marks, softly uneven edges, and natural variations in surface density. The material should feel substantial and sculptural, with rounded molded volumes and clearly defined contours. Use natural paper-pulp tones such as warm ivory, recycled beige, gray, and muted brown unless the master prompt calls for specific colors. The finished image should resemble a finely crafted contemporary molded-fiber art object, not papier-mâché, torn-paper collage, cardboard, or a flat paper cutout. Avoid leaving any photographic skin, fabric, or hair visible. Keep the original background unchanged unless the master prompt specifies otherwise. Any subject, pose, clothing, setting, mood, or artistic direction specified in the master prompt takes priority over these defaults."
+  },
+  {
     "name": "MOLTEN MAGMA FORM",
     "category": [
       "TRANSFORMATION",
@@ -38362,6 +38401,19 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "FINAL RESULT:\nThe image should look like a handcrafted patchwork quilt, with multiple stitched sections that each reinterpret the subject in different but cohesive ways, all integrated into a single fabric artwork."
+  },
+  {
+    "name": "PÂTE DE VERRE SCULPTURE",
+    "category": [
+      "ART",
+      "MATERIAL TRANSFORMATION",
+      "GLASS",
+      "SCULPTURE"
+    ],
+    "message": "Take a picture and completely transform the subject into a breathtaking pâte de verre glass sculpture. Reconstruct the entire subject from finely fused colored glass powder, creating rich translucent forms, luminous color gradients, granular glass surfaces, and intricate internal light diffusion. Preserve the subject's recognizable identity, defining features, proportions, and pose while making every part appear physically formed from this distinctive sculptural glass technique.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "Create an authentic pâte de verre sculpture, a specialized glassmaking process in which finely ground colored glass is packed into a mold and kiln-fired into a translucent, subtly textured glass object. The subject must be entirely reconstructed as glass, not merely covered with a transparent glass effect or rendered as an ordinary photograph behind glass. Facial features, hair, clothing, accessories, and all other visible parts must be sculpted from fused glass powder. Use varying degrees of translucency, layered glass coloration, subtle granular inclusions, delicate bubbles, and softly diffused internal illumination. Allow light to pass through thinner areas while thicker sections become richer, darker, and more saturated. Edges should have the softly irregular, hand-formed character of cast glass rather than the perfect uniformity of molded plastic. Preserve recognizable facial structure and expression through dimensional glass modeling, not photographic detail. The finished result should look like an extraordinary museum-quality glass sculpture, photographed with studio lighting that reveals its depth, translucency, and internal color. Avoid ordinary blown-glass shapes, smooth plastic, crystal-cut facets, stained-glass windows, or a glass overlay on the original image. Keep the original background unchanged unless the master prompt specifies otherwise. Any subject, pose, clothing, setting, mood, or artistic direction specified in the master prompt takes priority over these defaults."
   },
   {
     "name": "PATRON SAINT",
