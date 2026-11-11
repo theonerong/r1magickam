@@ -3952,6 +3952,44 @@
     "additionalInstructions": ""
   },
   {
+    "name": "BALL BEARING SCULPTURE",
+    "category": [
+      "MATERIAL TRANSFORMATION", 
+      "METAL SCULPTURE", 
+      "MECHANICAL ART", 
+      "3D ART"
+    ],
+    "message": "Take a picture and completely reconstruct the subject as a remarkable three-dimensional sculpture made entirely from hundreds or thousands of individual polished metal ball bearings. Each spherical bearing must contribute to the construction of the subject's recognizable face, hair, clothing, body, and complete silhouette. Arrange the spheres in carefully controlled sizes, densities, and positions to reproduce the subject's facial structure, eyes, nose, mouth, hairstyle, and anatomical contours. Use tightly packed small bearings for delicate details and larger spheres for broader sculptural surfaces. The individual balls should create a convincing continuous three-dimensional form while remaining visibly separate and spherical. Use realistic metallic reflections, subtle gaps, precise alignment, and dramatic studio lighting to reveal the extraordinary construction. The finished image should resemble a sophisticated kinetic-inspired metal sculpture made from thousands of polished precision bearings.",
+    "options": [
+      {
+        "id": "Chrome Bearings",
+        "text": "Highly polished chrome steel spheres with brilliant reflections and a mirror-like metallic finish."
+      },
+      {
+        "id": "Brushed Steel",
+        "text": "Satin-finished stainless-steel bearings with subtle brushed reflections and a refined industrial appearance."
+      },
+      {
+        "id": "Golden Bearings",
+        "text": "Polished gold-colored spheres create a luxurious sculptural portrait with warm metallic reflections."
+      },
+      {
+        "id": "Rainbow Bearings",
+        "text": "Iridescent, multicolored metallic spheres create a vibrant and visually striking sculpture."
+      },
+      {
+        "id": "Mixed Sizes",
+        "text": "A carefully varied combination of tiny, medium, and large ball bearings creates intricate facial detail and dramatic sculptural depth."
+      },
+      {
+        "id": "Industrial Bearings",
+        "text": "Dark, rugged precision steel bearings with a mechanical workshop aesthetic and subtle signs of wear."
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "The entire subject must be physically reconstructed from individual spherical metal ball bearings. Do not simply cover the original photograph with metallic spheres, place balls on top of a human body, or create a person wearing a bearing-covered costume. The bearings themselves must form the complete three-dimensional subject. Every sphere must remain recognizably spherical, with believable physical spacing, contact, reflections, and shadows. Preserve the subject's identity, facial structure, eyes, nose, mouth, hairstyle, expression, pose, body proportions, and clothing silhouette. Use small, densely arranged bearings around the face to preserve recognizable features, and larger bearings where appropriate for broad surfaces. The spheres must collectively describe the subject's anatomy rather than forming an arbitrary pile or abstract cluster. Maintain a coherent sculptural surface with convincing depth and physical weight. Avoid excessive gaps that break the subject's silhouette or oversized spheres that make the face unrecognizable. If the source depicts a full body, reconstruct the complete figure. The original photograph must not remain visible beneath the sculpture. Master prompt instructions override all preset defaults, including subject, pose, setting, mood, action, artistic direction, and material selections."
+  },
+  {
     "name": "BALLERINA",
     "category": [
       "HUMOR",
@@ -4083,6 +4121,44 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "BARCODE",
+    "category": [
+      "SURREAL",
+      "MATHEMATICAL ART",
+      "GRAPHIC DESIGN",
+      "TRANSFORMATION"
+    ],
+    "message": "Take a picture and completely reconstruct the subject as a living, three-dimensional barcode. The subject's entire recognizable form must be created from hundreds or thousands of precisely arranged vertical barcode bars of varying widths, lengths, spacing, and densities. These bars must physically construct the subject's face, eyes, nose, mouth, hair, clothing, limbs, and complete silhouette. The barcode lines must bend, curve, shorten, lengthen, and change density as necessary to accurately describe the subject's anatomy while retaining the unmistakable visual language of a real machine-readable barcode. From a distance, the subject should look like a coherent barcode composition; up close, the individual bars should reveal the subject's recognizable facial features and physical details. Create the illusion that the subject has been encoded into a gigantic physical barcode, with the bars forming a dimensional sculptural structure rather than simply being printed over a photograph. Use dramatic lighting to reveal the depth and dimensionality of the barcode construction. The finished image should be an extraordinary fusion of human portraiture and barcode design.",
+    "options": [
+      {
+        "id": "Classic Black and White",
+        "text": "A stark, high-contrast black-and-white barcode portrait with crisp vertical bars against a clean white background."
+      },
+      {
+        "id": "Three-Dimensional Barcode",
+        "text": "The barcode bars become solid, extruded black and white architectural elements that physically construct the subject in three dimensions."
+      },
+      {
+        "id": "Color Barcode",
+        "text": "Use a sophisticated range of colored vertical bars to reconstruct the subject, with different colors defining facial features, clothing, and anatomical details."
+      },
+      {
+        "id": "Glitch Barcode",
+        "text": "The subject is constructed from fragmented, distorted, misaligned barcode lines, with sections shifting and breaking apart like corrupted digital data."
+      },
+      {
+        "id": "Giant Product Label",
+        "text": "The subject becomes an enormous barcode printed across a physical product label, with the human likeness integrated into the barcode's structure."
+      },
+      {
+        "id": "Infinite Barcode",
+        "text": "The subject is reconstructed from an extraordinarily dense, intricate field of barcode lines that extend beyond the body and merge into an expansive barcode environment."
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "The transformation must reconstruct the actual subject from barcode elements. Never simply place barcode stripes over the original photograph, apply a barcode filter, or use vertical lines as a transparent overlay. The bars themselves must create the subject's complete recognizable anatomy. Their widths, spacing, lengths, curvature, and density must be carefully varied to produce facial structure, eyes, nose, mouth, hairstyle, clothing, and body contours. Do not allow the barcode pattern to destroy facial recognizability. The subject must remain identifiable, not become an abstract collection of stripes. Preserve the original pose, proportions, and composition unless the master prompt specifies otherwise. If the source contains multiple people, reconstruct each person individually. For full-body subjects, reconstruct the entire body rather than arbitrarily cropping to a portrait. Maintain coherent barcode geometry while allowing the bars to curve and change direction where necessary to describe three-dimensional anatomy. Avoid random stripes, generic equal-width lines, and decorative barcode patterns that do not contribute to the subject's construction. The original photograph must not remain visible beneath the transformation. Master prompt instructions override all preset defaults, including subject, pose, setting, mood, action, artistic direction, and selections."
   },
   {
     "name": "BARGELLO NEEDLEWORK",
@@ -4229,6 +4305,44 @@
     ],
     "randomizeOptions": true,
     "additionalInstructions": "Create a sophisticated visual representation of Base64-encoded image data being transmitted across a digital canvas. The character streams should look like encoded binary data translated into Base64 text, using authentic Base64 character conventions: uppercase and lowercase letters, numbers, plus signs, forward slashes, and occasional equals signs for padding. Use plausible sequences rather than random decorative symbols or ordinary computer code.\n\nDATA OVERLAY: Layer numerous rows or columns of encoded character sequences across the image. Vary their opacity, spacing, size, alignment, and direction. Some sequences should be sharply legible while others become translucent, fragmented, or partially obscured. Create the impression of data moving across the visual field through repeated rows, interrupted sequences, and directional flow.\n\nSUBJECT INTEGRATION: The original subject must remain recognizable, but the data streams should interact with its visual structure. Allow characters to partially obscure facial features, follow contours, cross clothing, and vary in density according to different regions of the image. In DATA RECONSTRUCTION mode, make the subject appear to emerge from the encoded characters themselves rather than simply placing text over an intact photograph.\n\nIMPORTANT DATA ACCURACY: Do not claim that the displayed characters are the actual Base64 encoding of the source photograph. Unless the original image bytes are genuinely available for encoding, create visually plausible Base64-style sequences rather than inventing a supposedly exact data representation. Do not generate ordinary programming syntax, HTML, JSON, terminal windows, or unrelated readable sentences.\n\nMaintain a deliberate visual hierarchy so that the encoded data and subject form one coherent composition. Avoid turning the image into an illegible wall of random text. No added computer monitors, screens, or interface panels unless explicitly requested.\n\nIf a master prompt specifies text density, direction, color, subject visibility, or composition, follow those instructions while retaining the Base64 data-stream aesthetic."
+  },
+  {
+    "name": "BASKETRY",
+    "category": [
+      "MATERIAL TRANSFORMATION", 
+      "NATURAL MATERIALS", 
+      "WEAVING", 
+      "3D SCULPTURE"
+    ],
+    "message": "Take a picture and completely reconstruct the subject as an intricate three-dimensional woven basketry sculpture. Build the entire subject from hundreds of interlaced natural fibers, including reeds, willow, cane, rattan, and flexible plant strips. The woven strands must form the subject's complete anatomy, facial features, hair, clothing, and recognizable silhouette. Use different weaving patterns, strand thicknesses, tightness, and directions to construct realistic contours and dimensional forms. Fine, tightly woven patterns should define facial details, while broader interlacing patterns create the larger body and clothing structures. The finished subject should look like an extraordinary handcrafted basketry sculpture, demonstrating authentic weaving techniques and remarkable attention to detail.",
+    "options": [
+      {
+        "id": "Willow Weave",
+        "text": "Natural willow rods and slender branches woven into a detailed sculptural figure with warm organic tones."
+      },
+      {
+        "id": "Rattan Weave",
+        "text": "Fine rattan strands with smooth, closely interlaced patterns and a refined handcrafted finish."
+      },
+      {
+        "id": "Reed Basketry",
+        "text": "Traditional reed weaving with visible natural fibers, intricate patterns, and earthy golden-brown colors."
+      },
+      {
+        "id": "Colorful Basketry",
+        "text": "Dyed natural fibers woven into carefully controlled colorful patterns that help define the subject's features and clothing."
+      },
+      {
+        "id": "Coiled Basketry",
+        "text": "Thick bundles of natural fibers coiled and stitched together to build the subject's complete sculptural form."
+      },
+      {
+        "id": "Fine Artisan Weave",
+        "text": "Extremely delicate, intricate weaving with small strands and refined patterns that preserve detailed facial characteristics."
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "The entire subject must be physically constructed from woven natural fibers. Do not simply cover the original photograph with a basket texture or turn the subject into a person wearing a woven costume. The weaving itself must create the subject's body, face, hair, clothing, and complete form. Preserve facial identity, hairstyle, expression, pose, and body proportions. Use fine weaving around the face so the eyes, nose, mouth, and other identifying features remain clearly recognizable. Show believable over-under weaving patterns, fiber thickness, natural bends, joins, and structural transitions. The construction must have genuine three-dimensional volume rather than appearing as a flat woven picture. Avoid making the entire subject look like a generic basket or a featureless wicker mannequin. Preserve the original background unless the master prompt specifies otherwise. The original photograph must not remain visible beneath the woven sculpture. Master prompt instructions override all preset defaults, including subject, pose, setting, mood, action, artistic direction, and material selections."
   },
   {
     "name": "BASSE TAILLE",
@@ -7957,6 +8071,44 @@
     "additionalInstructions": ""
   },
   {
+    "name": "CAST RESIN LAYERS",
+    "category": [
+      "MATERIAL TRANSFORMATION", 
+      "RESIN ART", 
+      "TRANSLUCENT SCULPTURE", 
+      "3D ART"
+    ],
+    "message": "Take a picture and completely reconstruct the subject as a spectacular three-dimensional sculpture made from individually cast layers of translucent resin. Build the subject from numerous precisely shaped resin sections stacked and fused together to create the complete recognizable anatomy, face, hair, clothing, and silhouette. Each layer should have its own depth, color, translucency, and internal optical characteristics. Use transparent, translucent, and opaque resin sections to model the subject's facial features and anatomical structure. Create realistic internal reflections, refraction, depth distortion, subtle bubbles, and luminous highlights within the resin. The finished subject should resemble an extraordinary gallery-quality cast-resin sculpture, with visible layered construction and remarkable optical depth.",
+    "options": [
+      {
+        "id": "Clear Crystal Resin",
+        "text": "Transparent resin layers with exceptional clarity, internal reflections, and realistic glass-like depth."
+      },
+      {
+        "id": "Colorful Resin",
+        "text": "Vibrant translucent colored resin layers create the subject's features through carefully controlled color and depth."
+      },
+      {
+        "id": "Iridescent Resin",
+        "text": "Pearlescent and iridescent resin layers shift through brilliant colors as light passes through the sculpture."
+      },
+      {
+        "id": "Smoky Resin",
+        "text": "Translucent smoky resin in dark gray, amber, and muted tones creates dramatic layered depth."
+      },
+      {
+        "id": "Embedded Layers",
+        "text": "Clear resin sections contain carefully embedded pigments, metallic particles, and decorative inclusions that help define the subject."
+      },
+      {
+        "id": "Neon Resin",
+        "text": "Luminous translucent resin layers in vivid neon colors create a striking futuristic sculpture."
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "The subject must be reconstructed as a solid, physically plausible cast-resin sculpture made from distinct layers. Do not simply apply a transparent resin coating, glass filter, or glossy effect to the original photograph. The resin layers must create the actual subject's form and recognizable anatomy. Preserve the subject's facial identity, hairstyle, expression, body proportions, pose, and clothing. Arrange the layers so that the subject's face and body remain clearly recognizable rather than becoming an abstract stack of colored slabs. Show genuine three-dimensional depth, layer boundaries, realistic resin thickness, internal refraction, reflections, and optical distortion. The layers should follow the contours of the subject's anatomy and work together as a coherent sculpture. Avoid excessive bubbles, random inclusions, or visual clutter that obscures the face. The sculpture must appear physically cast and assembled, not digitally transparent. The original photograph must not remain visible beneath the transformation. Master prompt instructions override all preset defaults, including subject, pose, setting, mood, action, artistic direction, and material selections."
+  },
+  {
     "name": "CATADIOPTRIC",
     "category": [
       "PHOTOGRAPHY",
@@ -8396,6 +8548,44 @@
       }
     ],
     "additionalInstructions": "FINAL RESULT:\nThe image should clearly depict a connected chain reaction where each step logically leads to the next, forming a complete and satisfying visual sequence from start to finish."
+  },
+  {
+    "name": "CHAINMAIL",
+    "category": [
+      "MATERIAL TRANSFORMATION", 
+      "METAL SCULPTURE", 
+      "ARMOR", 
+      "3D ART"
+    ],
+    "message": "Take a picture and completely reconstruct the subject as a highly detailed three-dimensional chainmail sculpture. The subject's entire form must be built from thousands of individual interlocking metal rings, woven together in authentic chainmail patterns. The rings must create the subject's recognizable face, hair, clothing, body, and complete silhouette. Use fine, tightly interlocked rings to describe facial anatomy and delicate details, while larger rings and denser metal sections construct broader body areas. Each ring should be individually visible, with realistic metallic reflections, shadows, overlaps, and structural connections. The result should resemble an extraordinary handcrafted chainmail sculpture, combining the intricacy of historical armor with the dimensionality of fine-art metalwork.",
+    "options": [
+      {
+        "id": "Silver Chainmail",
+        "text": "Traditional polished silver rings woven into a highly detailed, reflective chainmail sculpture."
+      },
+      {
+        "id": "Dark Iron",
+        "text": "Heavy dark iron rings with an aged, rugged, medieval appearance and deep metallic shadows."
+      },
+      {
+        "id": "Gold Chainmail",
+        "text": "Luxurious golden rings forming the entire subject with brilliant highlights and rich metallic color."
+      },
+      {
+        "id": "Copper Rings",
+        "text": "Warm copper-colored rings with subtle oxidation, patina, and handcrafted metalwork character."
+      },
+      {
+        "id": "Micro Chainmail",
+        "text": "Extremely small, tightly interlocking rings that allow exceptional facial detail and intricate sculptural definition."
+      },
+      {
+        "id": "Mixed Metal",
+        "text": "A carefully arranged combination of silver, bronze, copper, and dark steel rings used to define different parts of the subject."
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "The subject must be completely reconstructed from individual interlocking chainmail rings. Do not place chainmail armor over a human body, create a person wearing a chainmail costume, or apply a metallic ring texture to the original photograph. The rings themselves must form the subject's complete anatomy and recognizable features. Preserve the subject's identity, facial structure, hairstyle, expression, body proportions, pose, and clothing silhouette. Use extremely fine rings and carefully controlled patterns around the face so that eyes, nose, mouth, and other distinctive details remain recognizable. The rings must physically interlock in coherent, believable chainmail construction. Avoid disconnected rings, random metallic loops, flat wire mesh, and generic armor shapes. Maintain realistic metal thickness, weight, reflections, shadows, and three-dimensional volume. If the original shows a full body, reconstruct the entire body. The original photograph must not remain visible beneath the sculpture. Master prompt instructions override all preset defaults, including subject, pose, setting, mood, action, artistic direction, and material selections."
   },
   {
     "name": "CHALKBOARD ILLUSTRATION",
@@ -12879,6 +13069,19 @@
     "additionalInstructions": ""
   },
   {
+    "name": "CYANOTYPE ART",
+    "category": [
+      "ART STYLES", 
+      "PHOTOGRAPHIC PROCESSES", 
+      "BLUEPRINT", 
+      "PRINTMAKING"
+    ],
+    "message": "Take a picture and recreate the entire image as an authentic historical cyanotype photographic print. Transform the subject into the distinctive deep Prussian blue and pale cyan-white tonal palette of traditional iron-based cyanotype chemistry. The subject must be fully reconstructed through the characteristic tonal appearance of a cyanotype, with rich blue shadows, luminous pale highlights, delicate chemical variations, and the organic imperfections of a handmade photographic print. Preserve recognizable facial details, hair, clothing, anatomy, and textures through the blue-and-white tonal range. Give the finished image the unmistakable appearance of an original cyanotype artwork printed on sensitized paper and exposed to sunlight.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "Create a convincing cyanotype photographic process, not a simple blue color filter. The entire image must be reinterpreted using the characteristic chemistry and tonal behavior of traditional cyanotype printing. Use deep Prussian blue, intermediate blue tones, and pale cyan-white highlights. Include subtle variations in exposure, organic chemical edges, slight paper texture, and natural handmade print irregularities. Preserve the subject's identity, facial features, expression, hairstyle, pose, proportions, and clothing. Important details must remain recognizable despite the limited palette. Avoid adding artificial blueprint grids, technical annotations, measurements, labels, or diagrams unless the master prompt requests them. Do not turn the subject into a flat silhouette. Preserve dimensional form and readable detail. The original background should also be rendered as part of the cyanotype print unless the master prompt specifies a different setting. The original photograph must not remain visible beneath the transformation. Master prompt instructions override all preset defaults, including subject, pose, setting, mood, action, and artistic direction."
+  },
+  {
     "name": "CYBERPUNK",
     "category": [
       "SCI-FI",
@@ -16066,6 +16269,39 @@
     "additionalInstructions": "EL GRECO ENFORCEMENT (CRITICAL):\n\n• Use graceful, moderate anatomical elongation.\n• Never exaggerate the anatomy beyond believable human proportions.\n• The subject should appear naturally tall and elegant.\n• The anatomy should evoke spiritual transcendence rather than physical distortion.\n• Preserve recognizable identity throughout the transformation.\n\nMANNERIST ENFORCEMENT:\n\n• Introduce subtle twisting body posture.\n• Emphasize flowing movement.\n• Prioritize emotional and spiritual expression over physical realism.\n• Maintain elegance in every pose.\n\nPAINTING ENFORCEMENT:\n\n• Every visible element must be completely hand-painted.\n• Remove every photographic texture.\n• Use authentic Renaissance oil painting techniques.\n• Preserve expressive visible brushwork throughout.\n\nLIGHTING ENFORCEMENT:\n\n• Use supernatural white illumination.\n• Maintain dramatic chiaroscuro.\n• Create luminous highlights and deep shadows.\n• Reinforce the mystical atmosphere.\n\nFINAL ENFORCEMENT:\n\n• The finished image should be indistinguishable from a museum-quality El Greco painting.\n• The elongated anatomy should appear elegant, refined, and believable.\n• The symbolic colors, dramatic lighting, expressive brushwork, spiritual atmosphere, and graceful Mannerist proportions should immediately evoke the unmistakable style of El Greco."
   },
   {
+    "name": "EMBROIDERED RELIEF",
+    "category": ["MATERIAL TRANSFORMATION", "TEXTILE ART", "EMBROIDERY", "3D ART"],
+    "message": "Take a picture and completely reconstruct the subject as a richly detailed dimensional embroidery artwork. The entire subject must be created from actual-looking embroidery stitches, layered threads, and raised textile details. Use satin stitches, long-and-short stitches, French knots, chain stitches, couching, and other traditional embroidery techniques to construct the subject's facial features, hair, clothing, and anatomy. Threads must follow the natural contours of the subject, creating realistic shading, texture, highlights, and three-dimensional relief. Individual strands should be visible, with subtle variations in thickness, direction, tension, and sheen. The finished image should look like an extraordinary hand-embroidered portrait with richly textured raised stitching and exceptional craftsmanship.",
+    "options": [
+      {
+        "id": "Traditional Threadwork",
+        "text": "Classic hand embroidery using finely layered colored threads, delicate stitches, and detailed tonal shading."
+      },
+      {
+        "id": "Raised Embroidery",
+        "text": "Pronounced three-dimensional embroidery with thick raised stitches, padded details, and sculptural threadwork."
+      },
+      {
+        "id": "Goldwork Embroidery",
+        "text": "Luxurious gold and metallic threads arranged in intricate traditional decorative embroidery."
+      },
+      {
+        "id": "Cross-Stitch Portrait",
+        "text": "The subject is reconstructed from carefully arranged individual cross-stitches, with a recognizable counted-thread pattern."
+      },
+      {
+        "id": "Silk Thread Painting",
+        "text": "Fine silk threads create exceptionally smooth color transitions and realistic portrait details through directional stitching."
+      },
+      {
+        "id": "Mixed Stitchwork",
+        "text": "A sophisticated combination of embroidery techniques, including knots, loops, satin stitches, and raised thread details."
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "The subject must be entirely reconstructed from embroidery. This is not a photograph printed onto fabric, a textile filter, or an embroidered border around an unchanged photograph. The actual stitches and threads must create every part of the subject. Preserve the subject's recognizable identity, facial structure, hairstyle, expression, pose, proportions, and clothing. Use fine, precise stitching for facial features, with appropriate stitch direction to model cheeks, nose, lips, eyes, and hair. Use different embroidery techniques where they improve the representation of different materials and anatomical features. Individual threads and stitch paths must be visible at close range. Create convincing raised relief, thread tension, overlapping stitches, and subtle textile shadows. Avoid a flat printed appearance, oversized stitches that destroy facial detail, or random thread tangles. The fabric background may be visible, but it must not obscure the subject. Preserve the original background only if it can be convincingly incorporated into the embroidery artwork; otherwise create an appropriate embroidery fabric setting. The original photograph must not remain visible beneath the transformation. Master prompt instructions override all preset defaults, including subject, pose, setting, mood, action, artistic direction, and material selections."
+  },
+  {
     "name": "EMBROIDERY",
     "category": [
       "ART",
@@ -16134,6 +16370,19 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "ENAMEL PAINTING",
+    "category": [
+      "ART STYLES", 
+      "FINE ART", 
+      "ENAMEL", 
+      "DECORATIVE ART"
+    ],
+    "message": "Take a picture and completely reconstruct the subject as an exquisite traditional vitreous enamel artwork. Depict the subject as if painstakingly created using colored powdered glass fused onto a metal surface inside a high-temperature kiln. Build the entire subject from beautifully controlled areas of brilliant, glass-like enamel color, with precise boundaries, rich saturated pigments, smooth glossy surfaces, and subtle variations in translucency. Facial features, hair, clothing, and anatomical details must be carefully modeled through the arrangement of individual enamel color regions. Incorporate delicate metallic separations where appropriate, creating the refined appearance of traditional cloisonné or sophisticated painted enamel work. The finished image should look like an exceptionally detailed, physically crafted enamel artwork with brilliant color and luxurious glass-like depth.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "The subject must be reconstructed as an actual enamel artwork, not a photograph with a glossy coating or a generic glass filter. The enamel surfaces must form the subject's anatomy and recognizable details. Use distinct areas of fused glass color, carefully controlled boundaries, subtle glass depth, polished highlights, and authentic enamel craftsmanship. Preserve the subject's recognizable face, facial proportions, hairstyle, hair color, expression, pose, and clothing. Do not simplify the face into a generic decorative mask. Metallic outlines may separate enamel sections where appropriate, but they must follow meaningful design boundaries rather than forming an arbitrary grid. Avoid making the entire subject look like stained glass unless explicitly requested. The result should resemble high-quality traditional vitreous enamel art, with brilliant colors and refined workmanship. Preserve the original background unless the master prompt specifies otherwise, and render it in the same enamel technique. The original photograph must not remain visible beneath the artwork. Master prompt instructions override all preset defaults, including subject, pose, setting, mood, action, and artistic direction."
   },
   {
     "name": "ENCAUSTIC",
@@ -28369,6 +28618,19 @@
     }
   ],
   "additionalInstructions": "IDENTITY PRESERVATION (CRITICAL):\n• The cheap, stamped contours and retro litho paint layout must cleanly lock down the subject's unmistakable facial dimensions, eyes, and expression. It must read entirely as a genuine photograph of a rare mid-century pocket toy."
+  },
+  {
+    "name": "LITHOGRAPHIC CRAYON",
+    "category": [
+      "ART STYLES", 
+      "LITHOGRAPHY", 
+      "PRINTMAKING", 
+      "ILLUSTRATION" 
+    ],
+    "message": "Take a picture and reconstruct the subject as an expressive traditional lithographic crayon print. Recreate the entire image using rich, grainy lithographic crayon marks, textured strokes, broad tonal passages, and delicate hand-drawn details. The subject should have the distinctive appearance of a fine-art lithograph printed from a stone or metal plate, with expressive dark marks, velvety shadows, subtle tonal gradations, and the irregular grain of lithographic drawing materials. Use varied crayon pressure and stroke direction to describe the subject's facial features, hair, clothing, and anatomy. Create a sophisticated fine-art print with an authentic handmade quality, rich blacks, nuanced midtones, and beautifully textured highlights.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "The subject must be genuinely reconstructed as a lithographic crayon drawing and print, not merely covered with a crayon texture or converted into a generic sketch. Use expressive marks of varying pressure, density, direction, and grain. Include authentic lithographic surface characteristics, subtle printing irregularities, and natural tonal transitions. Preserve the subject's recognizable identity, facial structure, hairstyle, expression, pose, body proportions, and clothing. Do not exaggerate facial features or turn the subject into a caricature unless explicitly requested in the master prompt. Avoid the appearance of wax crayons on paper, children's drawings, pastel paintings, or ordinary pencil sketches. The result should resemble sophisticated traditional fine-art lithography. Preserve the original composition and background unless the master prompt specifies otherwise. The original photograph must not remain visible beneath the print. Master prompt instructions override all preset defaults, including subject, pose, setting, mood, action, and artistic direction."
   },
   { 
     "name": "LITTLE GOLDEN BOOK",
@@ -44416,6 +44678,44 @@
     "additionalInstructions": "SCENE CONSTRUCTION (MANDATORY):\n\n• Build ONE specific cinematic scene matching the selected option\n• The environment must dominate the composition\n• Use concrete physical objects and recognizable locations\n• Include believable props, costumes, architecture, vehicles, and supporting characters appropriate to the selected film\n\nCHARACTER INTEGRATION:\n\n• Subject must feel physically present inside the scene\n• Supporting characters from the selected movie may appear naturally nearby\n• Subject clothing and posture should match the environment\n\nVISUAL STYLE:\n\n• Warm cinematic lighting\n• Naturalistic emotional realism\n• Practical light sources\n• Atmospheric environmental depth\n• Polished mainstream Hollywood cinematography\n• Film-still realism\n\nANTI-CHEAT:\n\n• Do not generate vague generic drama scenes\n• Do not ignore the selected movie environment\n• Do not reuse the same composition for different options\n• Do not create abstract emotional symbolism without environmental storytelling\n\nQUALITY:\n\n• Highly recognizable movie-inspired environments\n• Strong cinematic storytelling\n• Authentic production design\n• Seamless subject integration\n• Emotionally readable scenes"
   },
   {
+    "name": "ROPE CONSTRUCTION",
+    "category": [
+      "MATERIAL TRANSFORMATION", 
+      "FIBER ART", 
+      "SCULPTURE", 
+      "3D ART"
+    ],
+    "message": "Take a picture and completely reconstruct the subject as an extraordinary three-dimensional sculpture made entirely from rope. Build the complete subject from thick and thin ropes, twisted cords, braided fibers, and carefully arranged strands. The ropes must form the subject's recognizable facial features, hair, clothing, limbs, and complete silhouette. Use tightly packed, fine cords to describe delicate facial details and larger braided ropes to construct broader anatomical areas. Individual rope fibers, twists, knots, loops, and overlapping strands should be clearly visible. The ropes must follow the subject's natural contours, creating convincing volume and sculptural depth. The finished artwork should look like an elaborate handcrafted rope sculpture, with intricate fiber construction and striking physical presence.",
+    "options": [
+      {
+        "id": "Natural Hemp",
+        "text": "Coarse natural hemp ropes in warm tan and earthy brown tones, with visible fibers and rugged texture."
+      },
+      {
+        "id": "Nautical Rope",
+        "text": "Thick, tightly twisted marine ropes with prominent braided construction and a maritime character."
+      },
+      {
+        "id": "Colorful Cord",
+        "text": "Brightly colored cords and ropes woven together to create detailed facial features and clothing."
+      },
+      {
+        "id": "White Cotton Rope",
+        "text": "Soft white cotton ropes with subtle fiber detail and carefully layered sculptural forms."
+      },
+      {
+        "id": "Macramé Sculpture",
+        "text": "Intricate macramé knots, loops, fringes, and woven cords form the complete subject."
+      },
+      {
+        "id": "Industrial Cable",
+        "text": "Heavy-duty industrial ropes and braided cables create a bold, rugged, mechanical-looking sculpture."
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "The subject must be completely constructed from physical ropes and cords. Do not simply wrap a human body in rope, create a rope costume, or apply rope textures over the original photograph. The ropes themselves must create the entire subject, including the face, hair, body, clothing, and recognizable silhouette. Preserve facial identity, hairstyle, expression, body proportions, and pose. Use sufficiently fine cords and intricate arrangements to retain recognizable facial features. Make rope twists, braids, individual fibers, knots, and overlaps physically believable. Use larger ropes for broad sculptural forms and finer strands for delicate anatomical details. Avoid making the result look like a featureless mannequin, a pile of tangled rope, or an ordinary rope-wrapped object. The sculpture must have convincing three-dimensional volume and structural continuity. Preserve the original background unless the master prompt specifies a different setting. The original photograph must not remain visible beneath the transformation. Master prompt instructions override all preset defaults, including subject, pose, setting, mood, action, artistic direction, and material selections."
+  },
+  {
     "name": "RORSCHACH TEST",
     "category": [
       "PSYCHOLOGY",
@@ -45597,6 +45897,19 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "SCREEN PRINT ENFORCEMENT:\n\n• Transform the image into authentic screen-print poster aesthetics\n• Preserve recognizable subject identity\n• Use simplified graphic shapes and layered ink regions\n• Add realistic print imperfections and ink texture\n\nHALFTONE ENFORCEMENT:\n\n• Use visible halftone dot patterns throughout the image\n• Vary dot density based on shadow and tonal regions\n• Emphasize authentic print-screen texture and ink layering\n\nPRINT REGISTRATION ENFORCEMENT:\n\n• Add subtle off-register color alignment imperfections\n• Slight color misalignment should feel intentional and handcrafted\n• Preserve overall readability while emphasizing analog print realism\n\nCOLOR ENFORCEMENT:\n\n• Limit the image to a small number of layered ink colors\n• Use bold poster-style color separation\n• Avoid full-spectrum photorealistic color rendering\n• Ink layers should feel physically printed rather than digitally painted\n\nTEXTURE ENFORCEMENT:\n\n• Add paper grain, ink bleed, print noise, roller texture, and screen-print imperfections\n• Surfaces should feel tactile and physically printed\n• Preserve strong graphic readability and composition\n\nVISUAL STYLE:\n\n• Authentic silkscreen poster realism\n• DIY print-shop aesthetic\n• Bold graphic composition\n• Layered ink textures\n• Halftone dot shading\n• Handmade poster imperfection\n• Retro graphic print atmosphere\n\nANTI-CHEAT:\n\n• Do NOT generate clean digital vector art\n• Do NOT create photorealistic rendering\n• Do NOT remove halftone texture\n• Do NOT use smooth airbrushed gradients\n• Do NOT create generic poster filters\n\nFINAL RESULT:\nThe final image must resemble a handcrafted professionally screen-printed poster featuring the recognizable subject with layered ink colors, authentic halftone textures, tactile print imperfections, bold graphic composition, and realistic silkscreen printing aesthetics."
+  },
+  {
+    "name": "SCRIBBLE DRAWING",
+    "category": [
+      "ART STYLES", 
+      "DRAWING", 
+      "LINE ART", 
+      "ILLUSTRATION"
+    ],
+    "message": "Take a picture and completely reconstruct the subject as an extraordinarily detailed scribble drawing. Build the entire subject from thousands of energetic, overlapping, interwoven hand-drawn lines and spontaneous pen strokes. The lines should accumulate into dense areas that define dark shadows, facial features, hair, clothing, and anatomical structure, while loose, open strokes create highlights and lighter areas. Use expressive changes in line direction, pressure, length, and density to create convincing depth and recognizable details. The finished image should look like an intricate drawing created by an exceptionally skilled artist who uses continuous, restless scribbling to construct realistic forms. Maintain a balance between energetic, spontaneous linework and precise recognizable portraiture.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "The subject must be constructed entirely from drawn lines and scribbles. Do not apply a sketch filter, trace the original photograph, or place random scribbles over the source image. Every recognizable feature must emerge from the accumulated linework. Use controlled density and directional strokes to describe the eyes, nose, mouth, facial contours, hair, clothing folds, and body shape. Preserve the subject's identity, facial proportions, hairstyle, expression, pose, and clothing. The scribbles should feel spontaneous and hand-drawn but must remain deliberately controlled enough to maintain anatomical accuracy and facial recognizability. Avoid turning the entire image into an unreadable mass of tangled lines. Use lighter, more open strokes for highlights and dense overlapping strokes for shadows. Preserve the original background unless the master prompt requests a change, and use compatible scribble drawing techniques for any retained background. The original photograph must not remain visible beneath the artwork. Master prompt instructions override all preset defaults, including subject, pose, setting, mood, action, and artistic direction."
   },
   {
     "name": "SCRIBBLE SKETCH",
@@ -48883,6 +49196,19 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "STIPPLE POINTILLISM",
+    "category": [
+      "ART STYLES",
+      "POINTILLISM", 
+      "ILLUSTRATION", 
+      "GRAPHIC ART"
+    ],
+    "message": "Take a picture and completely reconstruct the subject as an intricate stipple illustration made entirely from individual ink dots. Every part of the subject, including the face, eyes, nose, mouth, hair, clothing, and body, must be formed from thousands of carefully positioned dots. Use variations in dot size, spacing, density, and clustering to create realistic tonal transitions, highlights, shadows, and dimensional form. Closely spaced dots should create deep shadows and dark features, while widely spaced dots should create highlights and lighter areas. The dots must follow the subject's anatomy and contours, creating a convincing portrait with remarkable detail. The finished artwork should resemble painstaking traditional stipple drawing created by an expert illustrator using a fine technical pen.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "The subject must be constructed entirely from discrete, individually visible dots. Do not apply a generic halftone filter, pixelation, photographic dithering, or a dot-pattern overlay to the original photograph. Every tonal area must be rebuilt through the placement and density of dots. Use smaller dots for delicate facial details and larger or more densely packed dots for darker areas. Preserve the subject's identity, facial anatomy, hairstyle, expression, body proportions, pose, and clothing. Avoid making the dots so large that facial features become unreadable. Avoid uniform dot spacing or mechanically repetitive patterns. The result must have the organic precision and craftsmanship of traditional hand-rendered stipple artwork. Preserve the original background unless the master prompt requests a change, and render any retained background using the same dot-based technique. The original photograph must not remain visible beneath the illustration. Master prompt instructions override all preset defaults, including subject, pose, setting, mood, action, and artistic direction."
   },
   {
     "name": "STIPPLING EXTREME",
@@ -59946,6 +60272,39 @@
     ],
     "randomizeOptions": true,
     "additionalInstructions": "OPTION ENFORCEMENT:\n\n• The selected option MUST control the final environment\n• Do not generate random generic parks\n• Do not blend multiple parks together\n• Do not ignore the selected destination\n• Include recognizable location-specific landmarks and landscape design\n\nFINAL RESULT:\nThe image must clearly and unmistakably depict the specific selected world-famous park or garden as a real travel photograph."
+  },
+  {
+    "name": "WOVEN METAL",
+    "category": ["MATERIAL TRANSFORMATION", "METAL SCULPTURE", "WEAVING", "3D ART"],
+    "message": "Take a picture and completely reconstruct the subject as a spectacular three-dimensional sculpture made from intricately woven metal strands. The entire subject must be formed from hundreds or thousands of thin metallic wires, ribbons, and interlaced metal filaments. Weave the strands together to create the subject's recognizable facial structure, eyes, nose, mouth, hair, clothing, limbs, and complete silhouette. The strands should follow the natural contours of the anatomy, bending and overlapping to create volume, depth, and realistic structural detail. Use variations in strand thickness, weave density, direction, and metallic finish to distinguish different parts of the subject. The result should look like an extraordinary piece of handcrafted metal sculpture, with intricate woven construction, realistic reflections, and dramatic three-dimensional form.",
+    "options": [
+      {
+        "id": "Polished Steel",
+        "text": "Bright, polished stainless-steel strands with crisp reflections and a sophisticated silver finish."
+      },
+      {
+        "id": "Copper Weave",
+        "text": "Warm reddish copper strands with subtle oxidation, rich metallic color, and handcrafted detailing."
+      },
+      {
+        "id": "Gold Weave",
+        "text": "Luxurious golden metallic strands woven into an elaborate sculptural portrait."
+      },
+      {
+        "id": "Rainbow Titanium",
+        "text": "Iridescent titanium strands with vivid heat-treated colors and shifting metallic reflections."
+      },
+      {
+        "id": "Fine Wire Mesh",
+        "text": "An extremely intricate construction using tightly woven, delicate metallic wires that create fine anatomical detail."
+      },
+      {
+        "id": "Industrial Weave",
+        "text": "Thicker metal cables and heavy interlocking strands create a rugged, industrial sculpture."
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "The subject must be entirely constructed from physically woven metal strands. This is not a metallic skin, wireframe overlay, metal coating, or photograph covered in wires. The strands themselves must create the complete three-dimensional subject. Preserve recognizable facial anatomy, hairstyle, expression, body proportions, pose, and clothing through the woven structure. Use tight, fine weaving for facial features and more open or heavier weaving for larger body areas where appropriate. Ensure that eyes, nose, mouth, ears, hair, and other distinctive features remain recognizable. Strands must visibly pass over and under one another in a believable woven construction. Avoid random tangles, disconnected wire bundles, or an ordinary wireframe model. The sculpture must have convincing physical weight, structural continuity, metallic reflections, and dimensionality. If the source shows a full body, reconstruct the entire figure. Preserve the original background unless the master prompt requests a different setting. The original photograph must not remain visible beneath the sculpture. Master prompt instructions override all preset defaults, including subject, pose, setting, mood, action, artistic direction, and material selections."
   },
   {
     "name": "WRITING SYSTEM PORTRAIT",
