@@ -21664,17 +21664,20 @@ console.log('AI Camera Styles app initialized!');
 // r1 side button will start/stop speech-to-text and insert the result.
 
 (function() {
-  // This tracks whichever text field or textarea the user last tapped into.
-  // It starts as null, meaning no field is active.
+  // Shows small orange messages at the top of the screen so we can see
+  // where push-to-talk stops. Change true to false to turn them off.
+  const PTT_DEBUG = true;
+
+  // Whichever text field the user last tapped into (null = none).
   let activePttField = null;
-
-  // Remembers which text field the user was in at the moment the side button
-  // was pressed, so the spoken words still land there even if the field
-  // briefly loses focus while the r1 is listening.
+  // The field that was active at the moment the side button was pressed.
   let pttLockedField = null;
+  // True between pressing the button and the words arriving.
+  let pttWaitingForWords = false;
+  // A handler some other part of the program installed after ours, if any.
+  let pttOtherHandler = null;
 
-  // The list of every text input and textarea in the app that should
-  // support PTT. Each one is found by its id from the HTML.
+  // Every text input and textarea that supports PTT, by its id.
   const pttFieldIds = [
     'style-filter',           // Filter styles search box in the menu
     'visible-presets-filter', // Filter presets search box in settings
@@ -21691,160 +21694,159 @@ console.log('AI Camera Styles app initialized!');
     'style-additional'        // Additional rules textarea in edit style
   ];
 
-  // When the user taps INTO a field, remember it as the active PTT target.
-  // When the user taps AWAY from all fields, clear the active target so
-  // that the side button goes back to doing its normal camera functions.
-  function attachPttListeners() {
-    pttFieldIds.forEach(function(id) {
-      const field = document.getElementById(id);
-      if (!field) return;
+  // ---- on-screen diagnostic message ----
+  let pttDebugTimer = null;
+  function pttDebug(msg) {
+    if (!PTT_DEBUG) return;
+    let el = document.getElementById('_ptt-debug');
+    if (!el) {
+      el = document.createElement('div');
+      el.id = '_ptt-debug';
+      el.style.cssText = 'position:fixed;top:2px;left:50%;transform:translateX(-50%);' +
+        'z-index:2147483647;max-width:94vw;padding:4px 8px;background:#FE5F00;color:#000;' +
+        'font-size:11px;font-weight:bold;border-radius:6px;pointer-events:none;' +
+        'text-align:center;word-break:break-word;';
+      document.body.appendChild(el);
+    }
+    el.textContent = msg;
+    el.style.display = 'block';
+    clearTimeout(pttDebugTimer);
+    pttDebugTimer = setTimeout(function() { el.style.display = 'none'; }, 6000);
+  }
 
-      field.addEventListener('focus', function() {
-        activePttField = field;
-      });
+  // Is this element one of the text boxes that supports PTT?
+  function isPttField(el) {
+    if (!el || !el.tagName) return false;
+    const tag = el.tagName.toUpperCase();
+    if (tag !== 'INPUT' && tag !== 'TEXTAREA') return false;
+    if (pttFieldIds.indexOf(el.id) !== -1) return true;
+    if (el.id === 'import-preset-filter') return true;
+    return !!(el.classList && el.classList.contains('mp-slot-textarea'));
+  }
 
-      field.addEventListener('blur', function() {
-        // Small delay so a tap on the PTT button doesn't
-        // clear the field before the button event fires.
-        setTimeout(function() {
-          if (document.activeElement !== field) {
-            activePttField = null;
-          }
-        }, 300);
-      });
+  // Is this field still on screen?
+  function fieldIsUsable(el) {
+    return !!(el && document.body.contains(el) && el.getClientRects().length > 0);
+  }
+
+  // Works out which text box (if any) the spoken words belong in.
+  function resolvePttField() {
+    if (fieldIsUsable(activePttField)) return activePttField;
+    const focused = document.activeElement;
+    if (isPttField(focused) && fieldIsUsable(focused)) return focused;
+    return null;
+  }
+
+  // Talks to the r1's voice service without ever crashing the handler.
+  function voiceSend(cmd) {
+    if (typeof CreationVoiceHandler === 'undefined') {
+      pttDebug('PTT: r1 voice service not found');
+      return false;
+    }
+    try {
+      CreationVoiceHandler.postMessage(cmd);
+      return true;
+    } catch (e) {
+      pttDebug('PTT error: ' + e.message);
+      return false;
+    }
+  }
+
+  // Remember a field when the user taps INTO it; forget it when they tap AWAY.
+  const pttWired = new WeakSet();
+  function wirePttField(field) {
+    if (!field || pttWired.has(field)) return;
+    pttWired.add(field);
+
+    field.addEventListener('focus', function() {
+      activePttField = field;
+    });
+
+    field.addEventListener('blur', function() {
+      // Small delay so a press of the PTT button doesn't
+      // clear the field before the button event fires.
+      setTimeout(function() {
+        if (document.activeElement !== field && activePttField === field) {
+          activePttField = null;
+        }
+      }, 300);
     });
   }
 
-  // Run immediately for fields that exist on page load,
-  // and again after a short delay to catch fields that are
-  // built dynamically by the app after startup.
+  function attachPttListeners() {
+    pttFieldIds.forEach(function(id) {
+      wirePttField(document.getElementById(id));
+    });
+  }
+
+  // Run immediately for fields that exist on page load, and again after a
+  // short delay to catch fields that are built after startup.
   attachPttListeners();
   setTimeout(attachPttListeners, 2000);
 
-  // The import filter field is created dynamically when the import
-  // modal opens, so we watch for it and attach PTT when it appears.
+  // The import filter field and the master prompt boxes are created
+  // dynamically, so watch for them and wire them up when they appear.
   const importObserver = new MutationObserver(function() {
-    const importField = document.getElementById('import-preset-filter');
-    if (importField && !importField.dataset.pttAttached) {
-      importField.dataset.pttAttached = 'true';
-      importField.addEventListener('focus', function() {
-        activePttField = importField;
-      });
-      importField.addEventListener('blur', function() {
-        setTimeout(function() {
-          if (document.activeElement !== importField) {
-            activePttField = null;
-          }
-        }, 300);
-      });
-    }
-
-    // Attach PTT to any master prompt slot textareas that were just rendered
-    document.querySelectorAll('.mp-slot-textarea').forEach(function(textarea) {
-      if (!textarea.dataset.pttAttached) {
-        textarea.dataset.pttAttached = 'true';
-        textarea.addEventListener('focus', function() {
-          activePttField = textarea;
-        });
-        textarea.addEventListener('blur', function() {
-          setTimeout(function() {
-            if (document.activeElement !== textarea) {
-              activePttField = null;
-            }
-          }, 300);
-        });
-      }
-    });
+    wirePttField(document.getElementById('import-preset-filter'));
+    document.querySelectorAll('.mp-slot-textarea').forEach(wirePttField);
   });
   importObserver.observe(document.body, { childList: true, subtree: true });
 
-  // Listen for the r1 side button being pressed down.
-  window.addEventListener('longPressStart', function() {
-
-    // --- TEXT FIELD MODE ---
-    // If the user is inside a text field, do speech-to-text into that field.
-    // Lock onto that field now, so it is still remembered when the words arrive.
-    pttLockedField = activePttField;
-    if (activePttField) {
-      CreationVoiceHandler.postMessage('start');
-      return;
+  // ---- the message handler ----
+  function pttHandlePluginMessage(data) {
+    if (typeof data === 'string') {
+      try { data = JSON.parse(data); } catch (e) { data = { message: data }; }
     }
-
-    // --- CAMERA VOICE PRESET MODE ---
-    // If we are on the main camera screen (no menus open, no text field active),
-    // a long press starts listening to create a spoken custom preset.
-    // This does NOT work if No Magic Mode is on, Random Mode is on,
-    // or Multi-Preset Mode is active — those modes have their own behaviour.
-    const galleryOpen = document.getElementById('gallery-modal')?.style.display === 'flex';
-    const viewerOpen = document.getElementById('image-viewer')?.style.display === 'flex';
-    const menuOpen = document.getElementById('unified-menu')?.style.display === 'flex';
-    const settingsOpen = document.getElementById('settings-submenu')?.style.display === 'flex';
-    const masterPromptOpen = document.getElementById('master-prompt-submenu')?.style.display === 'flex';
-    const presetBuilderOpen = document.getElementById('preset-builder-submenu')?.style.display === 'flex';
-    const anyScreenOpen = galleryOpen || viewerOpen || menuOpen || settingsOpen || masterPromptOpen || presetBuilderOpen;
-
-    if (!anyScreenOpen && !noMagicMode && !isRandomMode && !isCameraMultiPresetActive && !isCameraLayerActive) {
-      window.isVoicePresetListening = true;
-      if (window.isCameraLiveCombineMode) {
-        statusElement.textContent = '🎙️ Listening... speak your combine preset';
-      } else {
-        statusElement.textContent = '🎙️ Listening... speak your preset';
-      }
-      CreationVoiceHandler.postMessage('start');
-    }
-  });
-
-  // Listen for the r1 side button being released.
-  window.addEventListener('longPressEnd', function() {
-
-    // --- TEXT FIELD MODE ---
-    if (activePttField || pttLockedField) {
-      CreationVoiceHandler.postMessage('stop');
-      return;
-    }
-
-    // --- CAMERA VOICE PRESET MODE ---
-    // Stop listening and wait for the transcript to come back via onPluginMessage.
-    if (window.isVoicePresetListening) {
-      CreationVoiceHandler.postMessage('stop');
-      // isVoicePresetListening stays true until the transcript arrives
-      // so onPluginMessage knows to treat the result as a camera preset
-    }
-  });
-
-  // When the r1 device finishes listening and sends back the
-  // spoken words, insert them into whichever field is active.
-  // This also keeps the original AI image response handling working.
-  window.onPluginMessage = function(data) {
+    if (!data) return;
 
     // --- Original AI image response handling ---
-    if (data && data.status === 'processing') {
-      statusElement.textContent = 'AI is processing your image...';
-    } else if (data && data.status === 'complete') {
-      statusElement.textContent = 'AI transformation complete!';
-    } else if (data && data.error) {
-      statusElement.textContent = 'Error: ' + data.error;
+    if (typeof statusElement !== 'undefined' && statusElement) {
+      if (data.status === 'processing') {
+        statusElement.textContent = 'AI is processing your image...';
+      } else if (data.status === 'complete') {
+        statusElement.textContent = 'AI transformation complete!';
+      } else if (data.error) {
+        statusElement.textContent = 'Error: ' + data.error;
+      }
+    }
+
+    // Read the message type and the spoken words, wherever the r1 put them.
+    let type = data.type;
+    let transcript = data.transcript;
+    if (!transcript && data.data) {
+      let inner = data.data;
+      if (typeof inner === 'string') {
+        try { inner = JSON.parse(inner); } catch (e) { inner = null; }
+      }
+      if (inner && typeof inner === 'object') {
+        if (inner.transcript) transcript = inner.transcript;
+        if (!type && inner.type) type = inner.type;
+      }
+    }
+
+    // Diagnostics: what did the r1 send back while we were waiting?
+    if (pttWaitingForWords) {
+      if (type === 'sttEnded' && !transcript) {
+        pttDebug('PTT: r1 finished but heard no words');
+      } else if (type !== 'sttEnded') {
+        pttDebug('PTT: r1 sent "' + (type || Object.keys(data).join(',')) + '"');
+      }
     }
 
     // --- PTT speech-to-text handling ---
-    if (data.type === 'sttEnded' && data.transcript) {
+    if (type === 'sttEnded' && transcript) {
 
-      // TEXT FIELD: insert spoken words into the field that was active when
-      // the side button was pressed (only if that field is still on screen),
-      // otherwise into whichever field is active now.
-      const pttTarget = (pttLockedField &&
-                         document.body.contains(pttLockedField) &&
-                         pttLockedField.offsetParent !== null)
-        ? pttLockedField
-        : activePttField;
+      const target = fieldIsUsable(pttLockedField) ? pttLockedField : resolvePttField();
       pttLockedField = null;
-      if (pttTarget) {
-        const field = pttTarget;
-        const start = field.selectionStart;
-        const end = field.selectionEnd;
+      pttWaitingForWords = false;
+
+      // TEXT FIELD: insert spoken words into the field
+      if (target) {
+        const field = target;
+        const start = (field.selectionStart != null) ? field.selectionStart : field.value.length;
+        const end = (field.selectionEnd != null) ? field.selectionEnd : field.value.length;
         const before = field.value.substring(0, start);
         const after = field.value.substring(end);
-        // Only keep trailing period in the master prompt field — strip it everywhere else
 
         // Keep trailing period in master prompt, edit style, and preset builder fields
         const keepPeriodFields = new Set([
@@ -21854,15 +21856,16 @@ console.log('AI Camera Styles app initialized!');
           'preset-builder-prompt',
           'preset-builder-additional'
         ]);
-        let insertText = data.transcript;
+        let insertText = transcript;
         const isMpSlot = field.classList && field.classList.contains('mp-slot-textarea');
         if (!keepPeriodFields.has(field.id) && !isMpSlot) {
           insertText = insertText.replace(/[.,!?;:]+\s*$/, '');
         }
         field.value = before + insertText + after;
         const newPos = start + insertText.length;
-        field.setSelectionRange(newPos, newPos);
+        try { field.setSelectionRange(newPos, newPos); } catch (e) {}
         field.dispatchEvent(new Event('input', { bubbles: true }));
+        pttDebug('✅ Typed: ' + insertText);
 
       // CAMERA VOICE PRESET: transcript becomes the custom preset,
       // then the camera fires immediately
@@ -21872,7 +21875,7 @@ console.log('AI Camera Styles app initialized!');
         // Build a one-time preset object from the spoken words
         window.voicePreset = {
           name: 'Voice Preset',
-          message: data.transcript,
+          message: transcript,
           options: [],
           randomizeOptions: false,
           additionalInstructions: ''
@@ -21919,9 +21922,96 @@ console.log('AI Camera Styles app initialized!');
         }
         // Motion detection: voicePreset is now set and will be picked up
         // automatically the next time motion triggers capturePhoto()
+      } else {
+        pttDebug('PTT: got words but no text box to put them in');
       }
     }
-  };
+  }
+
+  // Our handler, plus any handler another part of the program installed later.
+  function pttCombinedHandler(data) {
+    try {
+      pttHandlePluginMessage(data);
+    } catch (e) {
+      pttDebug('PTT error: ' + e.message);
+    }
+    if (pttOtherHandler) {
+      try { pttOtherHandler(data); } catch (e) {}
+    }
+  }
+
+  // Install our handler now.
+  window.onPluginMessage = pttCombinedHandler;
+
+  // If something replaced our handler after startup, put ours back
+  // (and keep calling theirs too, so nothing else stops working).
+  function ensurePttHandlerInstalled() {
+    const current = window.onPluginMessage;
+    if (current === pttCombinedHandler) return;
+    pttOtherHandler = (typeof current === 'function') ? current : null;
+    window.onPluginMessage = pttCombinedHandler;
+    pttDebug('PTT: listener had been replaced — restored');
+  }
+
+  // Listen for the r1 side button being pressed down.
+  window.addEventListener('longPressStart', function() {
+    ensurePttHandlerInstalled();
+
+    // --- TEXT FIELD MODE ---
+    // If the user is inside a text field, do speech-to-text into that field.
+    const field = resolvePttField();
+    pttLockedField = field;
+    if (field) {
+      pttWaitingForWords = true;
+      if (voiceSend('start')) {
+        pttDebug('🎙️ Listening... (' + (field.id || 'text box') + ')');
+      }
+      return;
+    }
+
+    // --- CAMERA VOICE PRESET MODE ---
+    // If we are on the main camera screen (no menus open, no text field active),
+    // a long press starts listening to create a spoken custom preset.
+    // This does NOT work if No Magic Mode is on, Random Mode is on,
+    // or Multi-Preset Mode is active — those modes have their own behaviour.
+    const galleryOpen = document.getElementById('gallery-modal')?.style.display === 'flex';
+    const viewerOpen = document.getElementById('image-viewer')?.style.display === 'flex';
+    const menuOpen = document.getElementById('unified-menu')?.style.display === 'flex';
+    const settingsOpen = document.getElementById('settings-submenu')?.style.display === 'flex';
+    const masterPromptOpen = document.getElementById('master-prompt-submenu')?.style.display === 'flex';
+    const presetBuilderOpen = document.getElementById('preset-builder-submenu')?.style.display === 'flex';
+    const anyScreenOpen = galleryOpen || viewerOpen || menuOpen || settingsOpen || masterPromptOpen || presetBuilderOpen;
+
+    if (!anyScreenOpen && !noMagicMode && !isRandomMode && !isCameraMultiPresetActive && !isCameraLayerActive) {
+      window.isVoicePresetListening = true;
+      if (window.isCameraLiveCombineMode) {
+        statusElement.textContent = '🎙️ Listening... speak your combine preset';
+      } else {
+        statusElement.textContent = '🎙️ Listening... speak your preset';
+      }
+      voiceSend('start');
+    } else if (anyScreenOpen) {
+      pttDebug('PTT: no text box active — tap a text box first');
+    }
+  });
+
+  // Listen for the r1 side button being released.
+  window.addEventListener('longPressEnd', function() {
+
+    // --- TEXT FIELD MODE ---
+    if (pttLockedField) {
+      if (voiceSend('stop')) pttDebug('⏳ Waiting for words...');
+      return;
+    }
+
+    // --- CAMERA VOICE PRESET MODE ---
+    // Stop listening and wait for the transcript to come back via onPluginMessage.
+    if (window.isVoicePresetListening) {
+      voiceSend('stop');
+      // isVoicePresetListening stays true until the transcript arrives
+      // so the message handler knows to treat the result as a camera preset
+    }
+  });
 
 })();
 
