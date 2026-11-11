@@ -5868,6 +5868,68 @@
     "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Earth-toned color palette (browns, blacks, creams)\n• Bold geometric symbolic patterns\n• Handwoven cotton cloth texture\n• Fermented mud paint appearance\n• Traditional Bambara symbolic motifs"
   },
   {
+    "name": "BOHEMIAN",
+    "category": [
+      "PHOTOGRAPHY",
+      "LIFESTYLE",
+      "FASHION",
+      "EDITORIAL"
+    ],
+    "message": "Take a picture and transform the scene into an evocative bohemian lifestyle photograph. Create relaxed, artfully styled imagery with flowing fabrics, earthy colors, natural textures, layered accessories, and an effortless festival-inspired atmosphere. Use warm natural light, organic surroundings, and a free-spirited editorial aesthetic. The result should feel like a beautifully photographed moment from a bohemian fashion or lifestyle campaign.",
+    "options": [
+      {
+        "id": "Boho Festival",
+        "text": "A relaxed outdoor music festival scene with flowing outfits, layered accessories, handmade details, and a sunlit crowd."
+      },
+      {
+        "id": "Desert Wanderer",
+        "text": "An atmospheric desert setting with flowing garments, earthy styling, sun-warmed landscapes, and a free-spirited mood."
+      },
+      {
+        "id": "Bohemian Portrait",
+        "text": "An intimate editorial portrait with natural textures, layered jewelry, relaxed styling, and warm directional light."
+      },
+      {
+        "id": "Meadow Dreamer",
+        "text": "A peaceful wildflower meadow with flowing fabrics, soft sunlight, and a romantic countryside atmosphere."
+      },
+      {
+        "id": "Coastal Boho",
+        "text": "A breezy coastal scene with linen garments, natural accessories, sandy tones, and windswept fabrics."
+      },
+      {
+        "id": "Vintage Bohemian",
+        "text": "A nostalgic bohemian fashion photograph with vintage-inspired garments, textured fabrics, and muted earthy colors."
+      },
+      {
+        "id": "Boho Chic",
+        "text": "A polished fashion editorial featuring layered jewelry, flowing silhouettes, artisan accessories, and sophisticated earthy styling."
+      },
+      {
+        "id": "Gypsy Caravan",
+        "text": "A whimsical outdoor setting near a decorated vintage caravan, with patterned textiles, lanterns, and relaxed festival styling."
+      },
+      {
+        "id": "Woodland Boho",
+        "text": "A serene forest setting with flowing natural fabrics, handmade accessories, and dappled sunlight."
+      },
+      {
+        "id": "Bohemian Couple",
+        "text": "A relaxed couple's lifestyle photograph with coordinated earthy outfits, natural interaction, and a romantic outdoor setting."
+      },
+      {
+        "id": "Artisan Market",
+        "text": "A colorful artisan market with handmade jewelry, woven textiles, pottery, and relaxed bohemian street-fashion styling."
+      },
+      {
+        "id": "Golden Hour Boho",
+        "text": "A cinematic golden-hour portrait with flowing fabrics, warm sunlight, soft shadows, and a dreamy outdoor atmosphere."
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "Create a believable, high-quality bohemian lifestyle or fashion photograph, not a costume illustration or generic fantasy scene. Preserve the subject's identity, facial features, age, body proportions, and recognizable appearance. Use natural styling elements such as flowing linen, cotton, gauze, crochet, fringe, embroidery, woven textures, layered necklaces, artisan jewelry, leather details, scarves, and relaxed silhouettes. Favor earthy tones including sand, terracotta, rust, cream, olive, warm brown, muted mustard, and dusty rose. Styling should feel curated but effortless, with fabrics that move naturally in the wind and accessories that sit realistically on the body. Environments may include desert landscapes, meadows, beaches, forests, rustic outdoor spaces, and music festivals. Use natural light, warm highlights, authentic skin texture, and editorial photographic composition. Avoid turning every scene into a music festival, adding excessive accessories, using stereotypical or culturally appropriative costume elements, or making the subject look like a fantasy character. The selected option guides the setting and styling unless the master prompt specifies a different location, outfit, activity, mood, pose, or artistic direction. Master-prompt instructions always take priority."
+  },
+  {
     "name": "BOJAGI PATCHWORK",
     "category": [
       "KOREAN",
@@ -19767,6 +19829,68 @@
     ],
     "randomizeOptions": true,
     "additionalInstructions": "EXCLUSIONS:\n• No cartoon effects\n• No exaggerated fantasy elements\n• No panic or horror tone\n• Subject not afraid of fish or water\n\nCOMPOSITION & FRAME:\n• Clear glass edges of the tank visible\n• Subject fully visible inside tank\n• FULL image visible with all four corners present\n• No cropping or zooming\n• Fish visible throughout the frame\n• Tank environment clearly established\n\nSTYLE:\n• Photorealistic surrealism\n• Clean, playful, and believable\n• Looks like an impossible but real photograph\n• Natural underwater lighting\n\nFINAL RESULT:\nThe image should show the subject convincingly inside a fish tank swimming calmly among real fish, as if they naturally belong there, with realistic underwater physics, lighting, multiple fish swimming around them, and appropriate aquarium decorations and environment."
+  },
+  {
+    "name": "FITNESS",
+    "category": [
+      "PHOTOGRAPHY",
+      "LIFESTYLE",
+      "FITNESS",
+      "PORTRAIT"
+    ],
+    "message": "Take a picture and create a realistic, premium fitness photograph featuring the subject as an athletic individual in a modern gym environment. Show the subject performing a believable strength-training exercise, such as lifting weights, using gym equipment, or preparing for a workout. Create a convincing fitness editorial image with natural anatomy, controlled athletic poses, realistic muscle definition, and believable gym lighting.",
+    "options": [
+      {
+        "id": "Dumbbell Curls",
+        "text": "The subject performing controlled standing dumbbell curls with proper posture and realistic arm positioning."
+      },
+      {
+        "id": "Bench Press",
+        "text": "The subject performing a bench press with a realistic barbell setup and believable lifting form."
+      },
+      {
+        "id": "Squats",
+        "text": "The subject performing a controlled barbell squat in a squat rack with correct athletic posture."
+      },
+      {
+        "id": "Deadlift",
+        "text": "The subject lifting a loaded barbell from the floor with realistic deadlift mechanics."
+      },
+      {
+        "id": "Shoulder Press",
+        "text": "The subject performing a standing or seated dumbbell shoulder press with controlled movement."
+      },
+      {
+        "id": "Cable Training",
+        "text": "The subject performing a strength exercise using a cable machine in a modern gym."
+      },
+      {
+        "id": "Pull-Ups",
+        "text": "The subject performing a strict pull-up on a gym bar with realistic body positioning."
+      },
+      {
+        "id": "Leg Press",
+        "text": "The subject using a professional leg press machine with believable positioning and equipment proportions."
+      },
+      {
+        "id": "Kettlebell Workout",
+        "text": "The subject performing a controlled kettlebell exercise in a functional training area."
+      },
+      {
+        "id": "Gym Portrait",
+        "text": "A confident athletic portrait of the subject standing among professional gym equipment."
+      },
+      {
+        "id": "Training in Action",
+        "text": "A dynamic editorial photograph capturing the subject mid-workout with natural movement and focused expression."
+      },
+      {
+        "id": "Post-Workout",
+        "text": "The subject taking a brief recovery moment after training, with a towel and water bottle in a realistic gym setting."
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "Create a high-end, photorealistic fitness campaign photograph. Preserve the subject's actual identity, facial features, age, and recognizable appearance. Reconstruct the body with realistic human anatomy, natural proportions, and believable muscle definition. Do not exaggerate musculature, alter body proportions into an unrealistic fitness-model physique, or create artificial bodybuilding anatomy. Athletic poses must be biomechanically plausible, with correct joint placement, grip, balance, and equipment interaction. The subject should look like a real person exercising, not a synthetic fitness avatar or plastic 3D character. Use authentic gym environments with weight racks, benches, dumbbells, barbells, cable machines, rubber flooring, mirrors, and other appropriate equipment. Lighting should resemble professional gym photography: directional overhead illumination, natural shadows, realistic skin texture, and controlled highlights. Clothing should be appropriate athletic apparel, fitted naturally without changing the subject's identity or imposing an unnecessarily revealing outfit. Avoid extra limbs, distorted hands, malformed weights, floating equipment, impossible grips, and incorrect exercise mechanics. The selected exercise should guide the scene unless the master prompt specifies a different activity, pose, location, outfit, or visual direction. Master-prompt instructions always take priority."
   },
   {
     "name": "FLAG",
@@ -45106,6 +45230,68 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Soft matte appearance\n• Warm reddish-brown tones\n• Paper fibers visible through image\n• Gentle diffused quality\n• 1840s-1860s photographic aesthetic"
+  },
+  {
+    "name": "SAKURA",
+    "category": [
+      "PHOTOGRAPHY",
+      "SEASONAL",
+      "SPRING",
+      "NATURE"
+    ],
+    "message": "Take a picture and transform the scene into a beautiful Sakura-inspired spring photograph celebrating cherry blossom season. Create an atmospheric seasonal setting filled with delicate cherry blossoms, soft spring colors, and the peaceful beauty of Japanese springtime. Incorporate natural cherry blossom trees, drifting petals, charming festival details, and serene outdoor scenery where appropriate. The result should feel like an authentic, beautifully composed spring travel photograph.",
+    "options": [
+      {
+        "id": "Cherry Blossom Walk",
+        "text": "A peaceful pathway beneath fully blooming cherry blossom trees, with petals scattered across the ground."
+      },
+      {
+        "id": "Hanami Picnic",
+        "text": "A traditional spring picnic beneath flowering cherry trees, with picnic blankets, seasonal treats, and falling petals."
+      },
+      {
+        "id": "Sakura Festival",
+        "text": "A lively Japanese cherry blossom festival with lanterns, food stalls, visitors, and illuminated blossom trees."
+      },
+      {
+        "id": "Petal Shower",
+        "text": "A breathtaking moment as a gentle breeze sends hundreds of delicate pink and white petals swirling through the air."
+      },
+      {
+        "id": "Traditional Japan",
+        "text": "A picturesque traditional Japanese street with wooden architecture, cherry blossoms, and subtle seasonal decorations."
+      },
+      {
+        "id": "Blossom Bridge",
+        "text": "A graceful bridge crossing a calm river beneath arching cherry blossom branches, with petals floating on the water."
+      },
+      {
+        "id": "Sakura Garden",
+        "text": "A meticulously landscaped Japanese garden featuring blooming cherry trees, stone paths, a tranquil pond, and soft spring light."
+      },
+      {
+        "id": "Spring Portrait",
+        "text": "An elegant seasonal portrait surrounded by delicate cherry blossoms and softly drifting petals."
+      },
+      {
+        "id": "Festival Evening",
+        "text": "A magical nighttime cherry blossom celebration with glowing paper lanterns, illuminated trees, and warm festival atmosphere."
+      },
+      {
+        "id": "Mount Fuji Spring",
+        "text": "A scenic spring landscape with Mount Fuji in the distance, flowering cherry trees, and a peaceful foreground."
+      },
+      {
+        "id": "Blossom Café",
+        "text": "A charming outdoor café terrace surrounded by cherry blossoms, delicate table settings, and relaxed springtime ambiance."
+      },
+      {
+        "id": "Sakura Rain",
+        "text": "A romantic spring scene with light rain, glistening cherry blossoms, wet pathways, and petals resting on reflective surfaces."
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "Create a visually rich, photorealistic spring photograph rather than an illustration or generic pink floral filter. Cherry blossoms should be recognizable as sakura, with delicate branching structures and clusters of small five-petaled flowers. Use a restrained seasonal palette of soft blush pink, pale ivory, fresh spring green, muted rose, and natural wood tones. Festival scenes may include authentic Japanese-inspired lanterns, food stalls, decorations, and crowds, but should feel believable rather than theme-park-like. Preserve the identity and recognizable appearance of any people in the original image. If the master prompt specifies a location, activity, composition, subject, mood, or artistic direction, follow it instead of the default scene. The selected option establishes the visual setting only when the master prompt does not specify one. Avoid excessive pink tinting, artificial flower overlays, fantasy architecture, stereotypical costume additions, and cluttered compositions. Keep lighting soft, natural, and seasonally appropriate, with realistic depth, color, and photographic detail."
   },
   {
     "name": "SAMURAI JACK",
