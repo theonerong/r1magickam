@@ -21666,7 +21666,7 @@ console.log('AI Camera Styles app initialized!');
 (function() {
   // Shows small orange messages at the top of the screen so we can see
   // where push-to-talk stops. Change true to false to turn them off.
-  const PTT_DEBUG = true;
+  const PTT_DEBUG = false;
 
   // Whichever text field the user last tapped into (null = none).
   let activePttField = null;
