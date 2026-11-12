@@ -7738,6 +7738,72 @@
     "additionalInstructions": "IMPORTANT:\n• Humor comes from specificity\n• Do not distort the subject unnaturally\n• Keep identity recognizable\n• Avoid meme-style graphics\n\nFINAL RESULT:\nThe image should convincingly look like an authentic CAPTCHA verification challenge featuring the subject divided into clickable squares with a hyper-specific observational instruction."
   },
   {
+    "name": "CAR ART",
+    "category": [
+      "PHOTOGRAPHY",
+      "VEHICLES",
+      "HUMOR",
+      "CUSTOM"
+    ],
+    "message": "Take a picture and create a creative, photorealistic automotive scene featuring the subject prominently placed on or with a car or truck. Analyze all available uploaded and combined images to identify vehicles and determine the most appropriate automotive setting. If a car or truck is visible in any of the supplied images, use that actual vehicle as the primary vehicle and naturally place the subject on or with it. Only create a new vehicle when no suitable vehicle appears in any supplied image. Analyze the imagery to infer an appropriate humorous, clever, or personality-driven automotive theme, then incorporate original flavor text into the vehicle's design.",
+    "options": [
+      {
+        "id": "Classic Muscle Car",
+        "text": "A powerful vintage American muscle car with bold custom graphics and personality-driven lettering."
+      },
+      {
+        "id": "Pickup Truck",
+        "text": "A customized pickup truck with distinctive paintwork, oversized tires, and clever personalized graphics."
+      },
+      {
+        "id": "Luxury Sports Car",
+        "text": "A sleek exotic sports car with sophisticated styling and custom details inspired by the subject."
+      },
+      {
+        "id": "Monster Truck",
+        "text": "An outrageous monster truck with enormous tires, exaggerated proportions, and humorous custom branding."
+      },
+      {
+        "id": "Vintage Hot Rod",
+        "text": "A classic hot rod with custom flames, polished chrome, retro lettering, and old-school automotive character."
+      },
+      {
+        "id": "Race Car",
+        "text": "A professional-looking race car with a custom racing number, sponsor-style graphics, and personalized livery."
+      },
+      {
+        "id": "Lowrider",
+        "text": "A beautifully customized lowrider with elaborate paintwork, chrome details, and distinctive artistic styling."
+      },
+      {
+        "id": "Off-Road 4x4",
+        "text": "A rugged adventure truck with lifted suspension, off-road tires, auxiliary lights, and personalized expedition graphics."
+      },
+      {
+        "id": "Delivery Truck",
+        "text": "A customized commercial delivery truck with humorous business branding and a personality-driven company slogan."
+      },
+      {
+        "id": "18 Wheeler",
+        "text": "A massive customized 18-wheel semi-truck with a detailed tractor cab, long trailer, bold personalized graphics, and clever flavor text displayed prominently across the trailer."
+      },
+      {
+        "id": "Vintage Station Wagon",
+        "text": "A nostalgic customized station wagon with retro paintwork, playful graphics, and classic road-trip character."
+      },
+      {
+        "id": "Custom Van",
+        "text": "A personalized custom van with elaborate exterior graphics, distinctive lettering, and imaginative styling."
+      },
+      {
+        "id": "Luxury SUV",
+        "text": "A premium customized SUV with elegant styling, distinctive detailing, and personalized automotive branding."
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "IMPORTANT VEHICLE SOURCE PRIORITY: This preset may be used alongside other presets that combine multiple uploaded images. Examine every available source image, including combined-image inputs, before choosing or generating a vehicle. If ANY supplied image contains a recognizable car or truck, prioritize using that actual vehicle rather than generating a vehicle based on the selected option. The vehicle may appear in the primary image or in any secondary or combined image. Identify its visible make-independent characteristics, body style, color, proportions, distinctive features, accessories, and overall appearance. Reproduce the vehicle as faithfully as possible, preserving its recognizable design and details. Place the primary subject naturally on or with that vehicle, choosing a physically believable interaction such as sitting on the hood, sitting on the truck bed, leaning against the side, standing on a running board, or appearing through an open window. Do not replace a visible source vehicle with a different vehicle simply because a random option was selected. If multiple vehicles are visible, choose the one that best suits the subject and composition, unless the master prompt specifies which vehicle to use. If no suitable car or truck appears in ANY supplied image, use the selected option to determine the vehicle type and create an original vehicle. \n ANALYZE THE IMAGE FOR FLAVOR TEXT: Look for visual clues about the subject's personality, expression, clothing, accessories, occupation, hobbies, activities, surroundings, and distinctive objects. Use those clues to invent original flavor text that feels specifically connected to the subject. The wording may take the form of a witty vehicle name, custom license plate, door decal, hood lettering, racing-team identity, business slogan, truck-side advertisement, or short personalized tagline. Use only information actually visible or reasonably suggested by the supplied images. Never invent personal facts, names, occupations, or relationships that cannot be supported by the imagery. If the images offer little specific information, create a playful automotive identity based on the subject's visible appearance or expression. \n The flavor text must be correctly spelled, readable, and integrated naturally into the vehicle's design. Use appropriate placement on the hood, doors, side panels, tailgate, racing graphics, or license plate. Avoid random extra text, misspellings, fake brand logos, watermarks, and unrelated slogans. \n Preserve the subject's identity, facial features, hairstyle, age, body proportions, clothing, and recognizable appearance. The subject must remain the clear focal point. Ensure the subject is physically supported by a believable vehicle surface and does not awkwardly merge into the vehicle or obscure important vehicle details. \n The vehicle must be fully realized, with convincing wheels, tires, windows, body panels, lighting, reflections, and realistic mechanical proportions. When using a vehicle from a supplied image, retain its actual visual identity rather than redesigning it into the selected option. Custom paintwork, decorative graphics, and flavor text may be added when they do not destroy the vehicle's recognizable appearance. \n Make the result look like a professionally photographed custom automotive campaign, not a cartoon, toy, or crude photomontage. Use a composition that shows enough of the vehicle to communicate its design while keeping the subject prominent. \n The selected option determines the vehicle style ONLY when no suitable car or truck is visible in any supplied image. A vehicle found in a source image always takes priority over the selected option. Master-prompt instructions regarding the subject, vehicle, pose, setting, mood, text, or artistic direction always take priority over preset defaults."
+  },
+  {
     "name": "CARAMEL SUGAR WORK",
     "category": [
       "TRANSFORMATION",
