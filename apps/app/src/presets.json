@@ -19267,6 +19267,44 @@
     "additionalInstructions": "IDENTITY PRESERVATION (CRITICAL):\n• The color intensities emitting from the cable grid must line up flawlessly to recreate the subject's signature open smile, jawline boundary, and gaze. It must read as an authentic photograph of a physical, illuminating high-tech installation."
   },
   {
+    "name": "FIBERGLASS",
+    "category": [
+      "ART",
+      "MATERIAL TRANSFORMATION",
+      "SCULPTURE",
+      "COMPOSITE MATERIALS"
+    ],
+    "message": "Take a picture and completely reconstruct the subject as a highly detailed fiberglass sculpture. Transform the entire visible subject into a convincing fiberglass composite, using layered glass fibers, resin-rich surfaces, subtle woven strand patterns, and translucent structural details. Preserve the subject's recognizable identity, facial features, proportions, pose, clothing, and silhouette while giving the entire figure the appearance of a professionally fabricated fiberglass sculpture.",
+    "options": [
+      {
+        "id": "Natural Fiberglass",
+        "text": "Visible pale glass fibers beneath a slightly translucent resin surface, with a raw composite finish."
+      },
+      {
+        "id": "Glossy Fiberglass",
+        "text": "A smooth, highly polished fiberglass sculpture with reflective resin highlights and subtle fiber details beneath the surface."
+      },
+      {
+        "id": "Exposed Fiber Layers",
+        "text": "Prominent overlapping glass-fiber strands and layered reinforcement patterns across the entire sculpture."
+      },
+      {
+        "id": "Colored Fiberglass",
+        "text": "Richly pigmented fiberglass composite with saturated colors and visible translucent resin depth."
+      },
+      {
+        "id": "Clear Fiberglass",
+        "text": "A translucent fiberglass sculpture with visible internal fiber structures and light passing through thinner sections."
+      },
+      {
+        "id": "Industrial Composite",
+        "text": "A rugged fabricated fiberglass form with visible reinforcement layers, resin seams, and carefully finished edges."
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "The subject must be completely reconstructed as a three-dimensional fiberglass composite sculpture, not left as a photograph with a fiberglass texture or transparent coating. Every visible part of the subject must be made from fiberglass, including facial features, hair, clothing, body parts, and accessories. Preserve the subject's recognizable identity through accurate sculptural facial geometry, expression, hairstyle, proportions, and silhouette. Show authentic fiberglass material characteristics: fine glass filaments, overlapping fiber mats, woven reinforcement patterns, resin saturation, subtle strand irregularities, and variations in translucency. The glass fibers should be visibly embedded within or integrated into the resin matrix, creating genuine composite depth. Some areas may reveal layered fibers beneath translucent resin, while others may have a smoother finished surface with faint fiber patterns visible underneath. Use realistic specular highlights and reflections appropriate to the selected finish. Construct the subject with convincing volume and dimensionality, as if it were fabricated in a professional composite workshop. Do not make it look like ordinary clear glass, crystal, plastic, ceramic, or a statue simply painted silver. Avoid random cracks, excessive bubbles, exposed sharp fibers, or a flat woven-fabric appearance. Facial features must remain recognizable and sculpturally defined, rather than obscured by fiber patterns. No original photographic skin, fabric, or hair should remain visible. Keep the original background unchanged unless the master prompt specifies otherwise. Any subject, pose, clothing, setting, mood, or artistic direction specified in the master prompt takes priority over these defaults."
+  },
+  {
     "name": "FIELD GUIDE",
     "category": [
       "NATURE",
@@ -43589,6 +43627,44 @@
     }
     ],
     "additionalInstructions": "• This preset contains TWO DIFFERENT recursion types:\n  1. IMAGE RECURSION — the entire image repeats inside itself.\n  2. FRACTAL RECURSION — individual parts recursively reproduce themselves.\n• When the Self-Similar Fractal Anatomy option is selected, FRACTAL RECURSION MUST OVERRIDE IMAGE RECURSION.\n\nSELF-SIMILAR FRACTAL REQUIREMENTS:\n• The entire composition must NOT repeat.\n• Do NOT create a normal Droste effect.\n• Do NOT place a smaller copy of the whole image inside the image.\n• Individual structures must recursively generate smaller copies of themselves.\n• Fingers must contain smaller hands.\n• Smaller hands must contain smaller hands on their fingers.\n• Each recursive generation must repeat the same structural rule.\n• Recursive structures must remain recognizable and anatomically or physically believable.\n• Continue recursion for as many visible levels as possible.\n\nGENERAL REQUIREMENTS:\n• Preserve the subject's exact identity, facial structure, hairstyle, hair color, expression, age, ethnicity, body proportions, pose, and recognizable features.\n• Maintain realistic perspective, lighting, depth, and shadows.\n• Avoid random repeated objects that do not match the original subject structure.\n• Avoid generic fractal textures.\n• The recursion must be an intentional self-similar transformation of the subject.\n• Master prompt instructions always override the selected option whenever conflicts occur.\n\nFINAL VALIDATION — Before producing the final image, verify ALL of the following:\n\n✓ The selected recursion type has been correctly applied.\n✓ If Self-Similar Fractal Anatomy is selected, the image is NOT a whole-image recursion.\n✓ The subject's individual components recursively contain smaller versions of themselves.\n✓ Hands contain smaller hands on fingertips when hands are present.\n✓ Each recursive generation follows the same structural rule.\n✓ The recursion continues for multiple visible generations.\n✓ The subject remains recognizable.\n✓ The result is a true fractal recursion and not a normal repeated image effect.\n✓ If ANY answer is NO, regenerate the image until every requirement is satisfied."
+  },
+  {
+    "name": "RECYCLED PLASTIC COMPOSITE",
+    "category": [
+      "ART",
+      "MATERIAL TRANSFORMATION",
+      "SCULPTURE",
+      "RECYCLED MATERIALS"
+    ],
+    "message": "Take a picture and completely reconstruct the subject as a three-dimensional sculpture made from compressed multicolored recycled plastic flakes. Every visible part of the subject must be formed from densely compacted fragments of colored plastic, creating a distinctive composite material with visible chips, irregular inclusions, and layered molded surfaces. Preserve the subject's recognizable identity, facial features, proportions, pose, clothing, and silhouette while transforming the entire subject into this striking recycled-material sculpture.",
+    "options": [
+      {
+        "id": "Mixed Plastic",
+        "text": "A dense mixture of brightly colored recycled plastic flakes, with an irregular multicolored terrazzo-like appearance."
+      },
+      {
+        "id": "Pastel Composite",
+        "text": "Soft pastel plastic fragments compressed into a subtle, sophisticated composite with visible individual flakes."
+      },
+      {
+        "id": "High Contrast",
+        "text": "Bold, saturated red, blue, yellow, green, and white plastic fragments with dramatic color variation."
+      },
+      {
+        "id": "Monochrome Composite",
+        "text": "Black, white, and gray recycled plastic flakes compressed into a striking tonal sculpture."
+      },
+      {
+        "id": "Translucent Flakes",
+        "text": "Colored translucent plastic fragments embedded in a dense composite with light passing through thinner areas."
+      },
+      {
+        "id": "Layered Compression",
+        "text": "Distinct compressed layers of differently colored plastic fragments, forming visible bands throughout the sculpture."
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "The subject must be completely reconstructed as a solid recycled-plastic composite sculpture. Do not simply overlay plastic flakes or a terrazzo texture onto the original photograph. Every visible part of the subject, including the face, hair, clothing, hands, limbs, and accessories, must be made from compressed plastic material. Preserve identity through accurately sculpted facial geometry, hairstyle, expression, body proportions, and recognizable clothing shapes. The plastic fragments must be individually visible as irregular chips, flakes, shards, and small colored pieces embedded throughout the material. Use varied fragment sizes, orientations, colors, and densities to create convincing depth and material complexity. The fragments should appear fused and compressed into a cohesive solid object, not loosely scattered, glued onto the surface, or floating around the subject. Include subtle compression lines, molded contours, occasional tiny air pockets, and slightly uneven cut edges where appropriate. The resulting material should resemble a premium recycled-plastic architectural composite or contemporary sustainable-material sculpture. Maintain clear sculptural definition even in small facial features. Avoid making the subject look like a mosaic, confetti collage, terrazzo floor, or ordinary plastic toy. No photographic skin, fabric, or hair should remain visible. Keep the original background unchanged unless the master prompt specifies otherwise. Any subject, pose, clothing, setting, mood, or artistic direction specified in the master prompt takes priority over these defaults."
   },
   {
     "name": "REDUCTIVE CHARCOAL",
