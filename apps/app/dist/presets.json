@@ -7745,63 +7745,75 @@
       "HUMOR",
       "CUSTOM"
     ],
-    "message": "Take a picture and create a creative, photorealistic automotive scene featuring the subject prominently placed on or with a car or truck. Analyze all available uploaded and combined images to identify vehicles and determine the most appropriate automotive setting. If a car or truck is visible in any of the supplied images, use that actual vehicle as the primary vehicle and naturally place the subject on or with it. Only create a new vehicle when no suitable vehicle appears in any supplied image. Analyze the imagery to infer an appropriate humorous, clever, or personality-driven automotive theme, then incorporate original flavor text into the vehicle's design.",
+    "message": "Take a picture and create a creative, photorealistic custom automotive artwork scene. Transform the subject into a personalized illustration, portrait, or graphic design that is physically incorporated into the exterior bodywork of a car or truck. The subject's likeness must appear as custom artwork painted, airbrushed, printed, or artistically rendered directly onto the vehicle's hood, doors, side panels, fenders, or trailer. The vehicle itself must be the canvas for the artwork. Analyze all available uploaded and combined images to identify vehicles and determine the most appropriate vehicle to use. If a car or truck is visible in any supplied image, use that actual vehicle as the primary vehicle. Only create a new vehicle when no suitable vehicle appears in any supplied image. Analyze the imagery to create original, personality-driven automotive artwork and incorporate clever flavor text into the vehicle's design.",
     "options": [
       {
         "id": "Classic Muscle Car",
-        "text": "A powerful vintage American muscle car with bold custom graphics and personality-driven lettering."
+        "text": "A powerful vintage American muscle car with bold custom airbrushed portraits, elaborate hood artwork, and personality-driven lettering."
       },
       {
         "id": "Pickup Truck",
-        "text": "A customized pickup truck with distinctive paintwork, oversized tires, and clever personalized graphics."
+        "text": "A customized pickup truck with distinctive paintwork, oversized tires, and large personalized subject artwork across its doors and body panels."
       },
       {
         "id": "Luxury Sports Car",
-        "text": "A sleek exotic sports car with sophisticated styling and custom details inspired by the subject."
+        "text": "A sleek exotic sports car with sophisticated custom portrait graphics, elegant bodywork artwork, and personalized detailing."
       },
       {
         "id": "Monster Truck",
-        "text": "An outrageous monster truck with enormous tires, exaggerated proportions, and humorous custom branding."
+        "text": "An outrageous monster truck with enormous tires, exaggerated proportions, and oversized humorous subject artwork across its body."
       },
       {
         "id": "Vintage Hot Rod",
-        "text": "A classic hot rod with custom flames, polished chrome, retro lettering, and old-school automotive character."
+        "text": "A classic hot rod with custom flames, polished chrome, retro airbrushed subject portraits, and old-school automotive lettering."
       },
       {
         "id": "Race Car",
-        "text": "A professional-looking race car with a custom racing number, sponsor-style graphics, and personalized livery."
+        "text": "A professional-looking race car with a custom racing number, sponsor-style graphics, and a large illustrated portrait of the subject integrated into its racing livery."
       },
       {
         "id": "Lowrider",
-        "text": "A beautifully customized lowrider with elaborate paintwork, chrome details, and distinctive artistic styling."
+        "text": "A beautifully customized lowrider with elaborate hand-painted murals, detailed subject portraits, decorative pinstriping, chrome details, and distinctive artistic styling."
       },
       {
         "id": "Off-Road 4x4",
-        "text": "A rugged adventure truck with lifted suspension, off-road tires, auxiliary lights, and personalized expedition graphics."
-      },
+        "text": "A rugged adventure truck with lifted suspension, off-road tires, auxiliary lights, and bold personalized expedition artwork featuring the subject across its exterior panels."
+      }, 
       {
         "id": "Delivery Truck",
-        "text": "A customized commercial delivery truck with humorous business branding and a personality-driven company slogan."
+        "text": "A customized commercial delivery truck with humorous business branding, a large illustrated subject portrait, and a personality-driven company slogan displayed prominently on its sides."
       },
       {
         "id": "18 Wheeler",
-        "text": "A massive customized 18-wheel semi-truck with a detailed tractor cab, long trailer, bold personalized graphics, and clever flavor text displayed prominently across the trailer."
+        "text": "A massive customized 18-wheel semi-truck with a detailed tractor cab and long trailer featuring enormous custom airbrushed subject portraits, elaborate illustrated murals, bold personalized graphics, and clever flavor text displayed prominently across the trailer."
       },
       {
         "id": "Vintage Station Wagon",
-        "text": "A nostalgic customized station wagon with retro paintwork, playful graphics, and classic road-trip character."
+        "text": "A nostalgic customized station wagon with retro paintwork, playful illustrated subject graphics, and classic road-trip character."
       },
       {
         "id": "Custom Van",
-        "text": "A personalized custom van with elaborate exterior graphics, distinctive lettering, and imaginative styling."
+        "text": "A personalized custom van with elaborate full-body illustrated murals, distinctive subject artwork, decorative lettering, and imaginative styling."
       },
       {
         "id": "Luxury SUV",
-        "text": "A premium customized SUV with elegant styling, distinctive detailing, and personalized automotive branding."
+        "text": "A premium customized SUV with elegant styling, sophisticated subject portrait graphics, distinctive detailing, and personalized automotive branding."
       }
     ],
     "randomizeOptions": true,
-    "additionalInstructions": "IMPORTANT VEHICLE SOURCE PRIORITY: This preset may be used alongside other presets that combine multiple uploaded images. Examine every available source image, including combined-image inputs, before choosing or generating a vehicle. If ANY supplied image contains a recognizable car or truck, prioritize using that actual vehicle rather than generating a vehicle based on the selected option. The vehicle may appear in the primary image or in any secondary or combined image. Identify its visible make-independent characteristics, body style, color, proportions, distinctive features, accessories, and overall appearance. Reproduce the vehicle as faithfully as possible, preserving its recognizable design and details. Place the primary subject naturally on or with that vehicle, choosing a physically believable interaction such as sitting on the hood, sitting on the truck bed, leaning against the side, standing on a running board, or appearing through an open window. Do not replace a visible source vehicle with a different vehicle simply because a random option was selected. If multiple vehicles are visible, choose the one that best suits the subject and composition, unless the master prompt specifies which vehicle to use. If no suitable car or truck appears in ANY supplied image, use the selected option to determine the vehicle type and create an original vehicle. \n ANALYZE THE IMAGE FOR FLAVOR TEXT: Look for visual clues about the subject's personality, expression, clothing, accessories, occupation, hobbies, activities, surroundings, and distinctive objects. Use those clues to invent original flavor text that feels specifically connected to the subject. The wording may take the form of a witty vehicle name, custom license plate, door decal, hood lettering, racing-team identity, business slogan, truck-side advertisement, or short personalized tagline. Use only information actually visible or reasonably suggested by the supplied images. Never invent personal facts, names, occupations, or relationships that cannot be supported by the imagery. If the images offer little specific information, create a playful automotive identity based on the subject's visible appearance or expression. \n The flavor text must be correctly spelled, readable, and integrated naturally into the vehicle's design. Use appropriate placement on the hood, doors, side panels, tailgate, racing graphics, or license plate. Avoid random extra text, misspellings, fake brand logos, watermarks, and unrelated slogans. \n Preserve the subject's identity, facial features, hairstyle, age, body proportions, clothing, and recognizable appearance. The subject must remain the clear focal point. Ensure the subject is physically supported by a believable vehicle surface and does not awkwardly merge into the vehicle or obscure important vehicle details. \n The vehicle must be fully realized, with convincing wheels, tires, windows, body panels, lighting, reflections, and realistic mechanical proportions. When using a vehicle from a supplied image, retain its actual visual identity rather than redesigning it into the selected option. Custom paintwork, decorative graphics, and flavor text may be added when they do not destroy the vehicle's recognizable appearance. \n Make the result look like a professionally photographed custom automotive campaign, not a cartoon, toy, or crude photomontage. Use a composition that shows enough of the vehicle to communicate its design while keeping the subject prominent. \n The selected option determines the vehicle style ONLY when no suitable car or truck is visible in any supplied image. A vehicle found in a source image always takes priority over the selected option. Master-prompt instructions regarding the subject, vehicle, pose, setting, mood, text, or artistic direction always take priority over preset defaults."
+    "additionalInstructions": "ABSOLUTE PRIORITY — THE SUBJECT MUST BECOME ARTWORK ON THE VEHICLE: This preset creates custom automotive artwork. It does NOT create a scene in which the subject is simply standing, sitting, posing, or leaning in front of a vehicle. The subject's recognizable likeness must be transformed into a large, prominent, professionally executed graphic that is physically incorporated into the vehicle's exterior bodywork. The subject must appear ON THE VEHICLE, not merely BESIDE the vehicle. Do not generate a separate full-size human figure next to, in front of, behind, or standing beside the vehicle. Do not place the subject on the hood, roof, truck bed, or running board as a substitute for the required artwork.
+
+VEHICLE SOURCE PRIORITY: This preset may be used alongside other presets that combine multiple uploaded images. Examine every available source image, including primary and secondary images and combined-image inputs. If ANY supplied image contains a recognizable car or truck, use that actual vehicle as the primary vehicle. Identify its body style, color, proportions, distinctive features, accessories, and overall appearance. Reproduce the vehicle as faithfully as possible. Do not replace a visible source vehicle with a different vehicle simply because a random option was selected. If multiple vehicles are visible, choose the one that best suits the artwork and composition, unless the master prompt specifies which vehicle to use. Only if no suitable car or truck appears in ANY supplied image should the selected option determine the vehicle type to create.
+
+SUBJECT AS CUSTOM VEHICLE ARTWORK: Analyze the subject's face, expression, hairstyle, clothing, distinctive features, and overall appearance. Recreate the subject as a recognizable custom portrait, illustration, airbrushed image, painted mural, or graphic composition directly on the vehicle's exterior. The artwork should be large enough to clearly recognize the subject. Use the vehicle's actual body panels as the canvas. Suitable locations include the hood, both doors, front fenders, rear quarter panels, tailgate, and the full side of a semi-trailer. Select the panel or combination of panels that provides the best available space for the artwork. The artwork must follow the contours and perspective of the vehicle's bodywork and appear physically painted, printed, or professionally applied to its surface.
+
+ARTISTIC TREATMENT: Create an impressive custom automotive paint job with detailed portrait artwork, complementary decorative elements, color gradients, pinstriping, flames, ornamental borders, illustrated scenery, or other graphics appropriate to the subject and vehicle. The portrait can be photorealistic airbrushing, detailed hand-painted illustration, stylized graphic art, or another suitable artistic treatment. Preserve the subject's recognizable identity. The result should resemble a professionally customized show car, custom lowrider mural, elaborate race-car livery, or professionally painted commercial vehicle. Do not simply paste a rectangular photograph onto the vehicle. Integrate the artwork into the surrounding paint design so that it looks like a cohesive, professionally designed automotive mural.
+
+FLAVOR TEXT: Analyze the supplied images for visual clues about the subject's personality, expression, clothing, accessories, occupation, hobbies, activities, surroundings, and distinctive objects. Invent original, clever, humorous, or personality-driven flavor text based on those clues. It may be a custom vehicle name, witty slogan, nickname, racing identity, business slogan, or short personalized tagline. Use only information actually visible or reasonably suggested by the images. Never invent personal facts, names, occupations, or relationships that cannot be supported by the imagery. Place the wording directly into the vehicle's paint design, alongside or around the portrait, on a door, hood, side panel, tailgate, or trailer. For an 18-wheeler, the trailer should provide a substantial canvas for a large portrait and prominent lettering. Ensure all text is correctly spelled, legible, and integrated into the artwork. Avoid random lettering, misspellings, fake brand logos, watermarks, and unrelated slogans.
+
+COMPOSITION: Show the vehicle prominently enough that viewers can clearly see the custom artwork covering its exterior. Use a three-quarter front or side view, or another angle that reveals the artwork effectively. The vehicle must remain a complete, recognizable vehicle with realistic wheels, tires, windows, body panels, lighting, reflections, and mechanical proportions. The subject's artwork must be visible on the vehicle's actual exterior surfaces. The original subject must not appear as a separate person in the foreground. Do not let the vehicle obscure, crop, or shrink the artwork into an insignificant detail.
+
+FINAL REQUIREMENT: The finished image must clearly communicate that the vehicle has been custom-painted or decorated with artwork depicting the subject. If the subject is standing in front of the vehicle, sitting beside it, leaning against it, or otherwise appearing as a separate person rather than as vehicle artwork, the result is incorrect and must be regenerated. The selected option determines the vehicle style ONLY when no suitable vehicle is visible in any supplied image. A vehicle found in a source image always takes priority over the selected option. Master-prompt instructions regarding the subject, vehicle, artistic style, setting, mood, text, or composition always take priority over preset defaults."
   },
   {
     "name": "CARAMEL SUGAR WORK",
