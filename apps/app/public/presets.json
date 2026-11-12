@@ -7745,63 +7745,274 @@
       "HUMOR",
       "CUSTOM"
     ],
-    "message": "Take a picture and create a creative, photorealistic custom automotive artwork scene. Transform the subject into a personalized illustration, portrait, or graphic design that is physically incorporated into the exterior bodywork of a car or truck. The subject's likeness must appear as custom artwork painted, airbrushed, printed, or artistically rendered directly onto the vehicle's hood, doors, side panels, fenders, or trailer. The vehicle itself must be the canvas for the artwork. Analyze all available uploaded and combined images to identify vehicles and determine the most appropriate vehicle to use. If a car or truck is visible in any supplied image, use that actual vehicle as the primary vehicle. Only create a new vehicle when no suitable vehicle appears in any supplied image. Analyze the imagery to create original, personality-driven automotive artwork and incorporate clever flavor text into the vehicle's design.",
+    "message": "Take a picture and create a creative, photorealistic custom automotive artwork scene. Transform the subject into ONE distinctive piece of professionally designed automotive artwork that is physically incorporated into the exterior bodywork of a car or truck. The subject must appear exactly once as the central illustrated character, mascot, or artistic focal point within a cohesive vehicle-specific paint scheme, mural, livery, or graphic design. Do not simply reproduce the subject as a photograph pasted onto the vehicle. The artwork must use the established decorative traditions and visual language appropriate to the particular vehicle selected, such as elaborate lowrider murals, hot rod pinstriping and flames, race-car graphics, commercial vehicle wraps, or custom semi-truck murals. Analyze all available uploaded and combined images to identify vehicles. If a car or truck is visible in any supplied image, use that actual vehicle as the primary vehicle. Only create a new vehicle when no suitable vehicle appears in any supplied image. Incorporate clever, personalized flavor text into the overall automotive design.",
     "options": [
       {
         "id": "Classic Muscle Car",
-        "text": "A powerful vintage American muscle car with bold custom airbrushed portraits, elaborate hood artwork, and personality-driven lettering."
+        "text": "A powerful vintage American muscle car with traditional custom hot rod paintwork, bold flames, elaborate hood graphics, classic pinstriping, and one prominent illustrated depiction of the subject integrated into the overall design."
       },
       {
         "id": "Pickup Truck",
-        "text": "A customized pickup truck with distinctive paintwork, oversized tires, and large personalized subject artwork across its doors and body panels."
+        "text": "A customized pickup truck with rugged custom graphics, detailed painted accents, personalized lettering, and one distinctive illustrated subject character incorporated into a cohesive exterior paint scheme."
       },
       {
         "id": "Luxury Sports Car",
-        "text": "A sleek exotic sports car with sophisticated custom portrait graphics, elegant bodywork artwork, and personalized detailing."
+        "text": "A sleek exotic sports car with sophisticated precision-designed graphics, elegant contrasting body accents, flowing lines, and one refined artistic interpretation of the subject incorporated into its exterior design."
       },
       {
         "id": "Monster Truck",
-        "text": "An outrageous monster truck with enormous tires, exaggerated proportions, and oversized humorous subject artwork across its body."
+        "text": "An outrageous monster truck with enormous tires, exaggerated proportions, bold competition-style graphics, dramatic lettering, and one oversized illustrated subject character designed as the truck's signature mascot."
       },
       {
         "id": "Vintage Hot Rod",
-        "text": "A classic hot rod with custom flames, polished chrome, retro airbrushed subject portraits, and old-school automotive lettering."
+        "text": "A classic hot rod with traditional hot rod flames, elaborate hand-painted pinstriping, scallops, vintage lettering, and one distinctive illustrated subject character incorporated into its old-school custom paintwork."
       },
       {
         "id": "Race Car",
-        "text": "A professional-looking race car with a custom racing number, sponsor-style graphics, and a large illustrated portrait of the subject integrated into its racing livery."
+        "text": "A professional-looking race car with authentic racing livery, competition numbers, sponsor-style graphic arrangements, aerodynamic stripes, and one stylized illustrated subject character integrated into the overall racing identity."
       },
       {
         "id": "Lowrider",
-        "text": "A beautifully customized lowrider with elaborate hand-painted murals, detailed subject portraits, decorative pinstriping, chrome details, and distinctive artistic styling."
+        "text": "A beautifully customized lowrider with elaborate traditional hand-painted mural artwork, ornamental borders, intricate scrollwork, decorative pinstriping, metallic flake paint, and one large central artistic depiction of the subject."
       },
       {
         "id": "Off-Road 4x4",
-        "text": "A rugged adventure truck with lifted suspension, off-road tires, auxiliary lights, and bold personalized expedition artwork featuring the subject across its exterior panels."
+        "text": "A rugged adventure truck with lifted suspension, off-road tires, expedition-inspired graphics, topographic design elements, bold lettering, and one illustrated subject character incorporated into a cohesive adventure-themed exterior design."
       },
       {
         "id": "Delivery Truck",
-        "text": "A customized commercial delivery truck with humorous business branding, a large illustrated subject portrait, and a personality-driven company slogan displayed prominently on its sides."
+        "text": "A customized commercial delivery truck with professional vehicle-wrap design, distinctive business-style branding, illustrated supporting graphics, memorable lettering, and one recognizable illustrated subject character as the central brand mascot."
       },
       {
         "id": "18 Wheeler",
-        "text": "A massive customized 18-wheel semi-truck with a detailed tractor cab and long trailer featuring enormous custom airbrushed subject portraits, elaborate illustrated murals, bold personalized graphics, and clever flavor text displayed prominently across the trailer."
+        "text": "A massive customized 18-wheel semi-truck with a detailed tractor cab and long trailer featuring an elaborate professionally airbrushed truck mural, dramatic illustrated scenery, ornamental borders, bold personalized lettering, and one large central depiction of the subject."
       },
       {
         "id": "Vintage Station Wagon",
-        "text": "A nostalgic customized station wagon with retro paintwork, playful illustrated subject graphics, and classic road-trip character."
+        "text": "A nostalgic customized station wagon with period-appropriate retro graphics, colorful sweeping stripes, vintage lettering, decorative side-panel artwork, and one playful illustrated depiction of the subject."
       },
       {
         "id": "Custom Van",
-        "text": "A personalized custom van with elaborate full-body illustrated murals, distinctive subject artwork, decorative lettering, and imaginative styling."
+        "text": "A personalized custom van with elaborate full-body custom paintwork, flowing mural compositions, decorative borders, retro graphic elements, imaginative lettering, and one distinctive illustrated depiction of the subject."
       },
       {
         "id": "Luxury SUV",
-        "text": "A premium customized SUV with elegant styling, sophisticated subject portrait graphics, distinctive detailing, and personalized automotive branding."
+        "text": "A premium customized SUV with elegant coordinated body graphics, sophisticated contrasting accents, precision pinstriping, distinctive personalized lettering, and one refined artistic depiction of the subject incorporated into the exterior design."
       }
     ],
     "randomizeOptions": true,
-    "additionalInstructions": "ABSOLUTE PRIORITY — THE SUBJECT MUST BECOME ARTWORK ON THE VEHICLE: This preset creates custom automotive artwork. It does NOT create a scene in which the subject is simply standing, sitting, posing, or leaning in front of a vehicle. The subject's recognizable likeness must be transformed into a large, prominent, professionally executed graphic that is physically incorporated into the vehicle's exterior bodywork. The subject must appear ON THE VEHICLE, not merely BESIDE the vehicle. Do not generate a separate full-size human figure next to, in front of, behind, or standing beside the vehicle. Do not place the subject on the hood, roof, truck bed, or running board as a substitute for the required artwork.\n\nVEHICLE SOURCE PRIORITY: This preset may be used alongside other presets that combine multiple uploaded images. Examine every available source image, including primary and secondary images and combined-image inputs. If ANY supplied image contains a recognizable car or truck, use that actual vehicle as the primary vehicle. Identify its body style, color, proportions, distinctive features, accessories, and overall appearance. Reproduce the vehicle as faithfully as possible. Do not replace a visible source vehicle with a different vehicle simply because a random option was selected. If multiple vehicles are visible, choose the one that best suits the artwork and composition, unless the master prompt specifies which vehicle to use. Only if no suitable car or truck appears in ANY supplied image should the selected option determine the vehicle type to create.\n\nSUBJECT AS CUSTOM VEHICLE ARTWORK: Analyze the subject's face, expression, hairstyle, clothing, distinctive features, and overall appearance. Recreate the subject as a recognizable custom portrait, illustration, airbrushed image, painted mural, or graphic composition directly on the vehicle's exterior. The artwork should be large enough to clearly recognize the subject. Use the vehicle's actual body panels as the canvas. Suitable locations include the hood, both doors, front fenders, rear quarter panels, tailgate, and the full side of a semi-trailer. Select the panel or combination of panels that provides the best available space for the artwork. The artwork must follow the contours and perspective of the vehicle's bodywork and appear physically painted, printed, or professionally applied to its surface.\n\nARTISTIC TREATMENT: Create an impressive custom automotive paint job with detailed portrait artwork, complementary decorative elements, color gradients, pinstriping, flames, ornamental borders, illustrated scenery, or other graphics appropriate to the subject and vehicle. The portrait can be photorealistic airbrushing, detailed hand-painted illustration, stylized graphic art, or another suitable artistic treatment. Preserve the subject's recognizable identity. The result should resemble a professionally customized show car, custom lowrider mural, elaborate race-car livery, or professionally painted commercial vehicle. Do not simply paste a rectangular photograph onto the vehicle. Integrate the artwork into the surrounding paint design so that it looks like a cohesive, professionally designed automotive mural.\n\nFLAVOR TEXT: Analyze the supplied images for visual clues about the subject's personality, expression, clothing, accessories, occupation, hobbies, activities, surroundings, and distinctive objects. Invent original, clever, humorous, or personality-driven flavor text based on those clues. It may be a custom vehicle name, witty slogan, nickname, racing identity, business slogan, or short personalized tagline. Use only information actually visible or reasonably suggested by the images. Never invent personal facts, names, occupations, or relationships that cannot be supported by the imagery. Place the wording directly into the vehicle's paint design, alongside or around the portrait, on a door, hood, side panel, tailgate, or trailer. For an 18-wheeler, the trailer should provide a substantial canvas for a large portrait and prominent lettering. Ensure all text is correctly spelled, legible, and integrated into the artwork. Avoid random lettering, misspellings, fake brand logos, watermarks, and unrelated slogans.\n\nCOMPOSITION: Show the vehicle prominently enough that viewers can clearly see the custom artwork covering its exterior. Use a three-quarter front or side view, or another angle that reveals the artwork effectively. The vehicle must remain a complete, recognizable vehicle with realistic wheels, tires, windows, body panels, lighting, reflections, and mechanical proportions. The subject's artwork must be visible on the vehicle's actual exterior surfaces. The original subject must not appear as a separate person in the foreground. Do not let the vehicle obscure, crop, or shrink the artwork into an insignificant detail.\n\nFINAL REQUIREMENT: The finished image must clearly communicate that the vehicle has been custom-painted or decorated with artwork depicting the subject. If the subject is standing in front of the vehicle, sitting beside it, leaning against it, or otherwise appearing as a separate person rather than as vehicle artwork, the result is incorrect and must be regenerated. The selected option determines the vehicle style ONLY when no suitable vehicle is visible in any supplied image. A vehicle found in a source image always takes priority over the selected option. Master-prompt instructions regarding the subject, vehicle, artistic style, setting, mood, text, or composition always take priority over preset defaults."
+    "additionalInstructions": "ABSOLUTE PRIORITY — THE SUBJECT MUST APPEAR AS VEHICLE ARTWORK, NOT AS A PERSON WITH A VEHICLE. The subject must be transformed into one single, distinctive piece of automotive artwork physically painted, airbrushed, illustrated, or professionally applied to the vehicle's exterior bodywork. The subject must not appear as a separate person standing, sitting, posing, or leaning beside the vehicle. Do not place the subject on the hood, roof, truck bed, or running board as a substitute for vehicle artwork.\n\nONE SUBJECT DEPICTION ONLY: The subject must appear exactly once in the entire vehicle artwork. Create one clear, prominent depiction of the subject as the central illustrated character, mascot, or artistic focal point. Never repeat the subject's face, portrait, body, character, or likeness elsewhere on the vehicle. Do not create multiple portraits across different doors or panels, mirrored duplicates, smaller repeated versions, background copies, or decorative patterns made from the subject. Do not include additional people who resemble the subject. If the vehicle has multiple decorated panels, treat them as parts of one coordinated design, with the single subject depiction occupying one principal location. Supporting decoration may include flames, stripes, scenery, mechanical motifs, ornamental flourishes, lettering, and other vehicle-appropriate graphics, but must not contain additional depictions of the subject.\n\nVEHICLE SOURCE PRIORITY: Examine every available source image, including primary and secondary images and combined-image inputs. If ANY supplied image contains a recognizable car or truck, use that actual vehicle as the primary vehicle. Reproduce its body style, color, proportions, distinctive features, accessories, and overall appearance as faithfully as possible. Do not replace a visible source vehicle with a different vehicle because a random option was selected. If multiple vehicles are visible, choose the one that best suits the artwork and composition unless the master prompt specifies which vehicle to use. Only if no suitable car or truck appears in ANY supplied image should the selected option determine the vehicle type. When a source vehicle is used, adapt the artwork to that vehicle's actual body shape, available panels, style, and proportions.\n\nAUTHENTIC VEHICLE-SPECIFIC ART DIRECTION: The artwork must look like the kind of custom automotive decoration genuinely used on the particular vehicle, not like a generic portrait or photograph pasted onto sheet metal. Select an appropriate visual tradition based on the vehicle. Lowriders should use elaborate hand-painted mural compositions, ornamental scrollwork, detailed backgrounds, fine-line borders, and traditional custom paint techniques. Classic hot rods should use period-appropriate flames, scallops, pinstriping, and vintage sign-painting aesthetics. Race cars should use authentic competition livery, dynamic stripes, racing numbers, sponsor-style graphic placement, and a cohesive team identity. Monster trucks should use bold illustrated mascots, exaggerated graphic lettering, and high-impact competition graphics. Semi-trucks should use traditional large-scale airbrushed truck murals, illustrated scenery, decorative borders, and prominent trailer lettering. Commercial trucks should use professionally designed vehicle-wrap graphics and coherent brand-style layouts. Luxury vehicles should use restrained, sophisticated, carefully integrated graphic treatments. Pickup trucks and off-road vehicles should use appropriate custom paint, expedition graphics, and rugged visual themes. These are artistic directions, not mandatory elements; use the style that best suits the actual vehicle and master prompt.\n\nTHE SUBJECT AS AN ILLUSTRATED CHARACTER: Analyze the subject's visible appearance, expression, hairstyle, clothing, accessories, distinctive features, and personality. Translate those characteristics into a professionally illustrated automotive character or artistic composition. The result may be a stylized hand-painted character, caricature, mascot, pin-up-inspired illustration where appropriate, fantasy character, dramatic action illustration, or another suitable artistic interpretation. Preserve enough distinctive characteristics to make the subject recognizable, but interpret them artistically as part of the vehicle's visual identity. Do not simply place an unmodified photograph of the subject on the vehicle. Do not use a rectangular photo panel, portrait sticker, photo cutout, or plain photographic image as the main artwork. The subject should look as though a skilled automotive mural artist designed and painted the character specifically for that vehicle.\n\nARTWORK INTEGRATION: Use the vehicle's actual exterior panels as the canvas. Appropriate locations include a hood, door, front fender, rear quarter panel, tailgate, or semi-trailer side. Choose ONE principal location or a continuous composition across adjoining panels that still contains only one depiction of the subject. The artwork must follow the vehicle's perspective, panel contours, curves, seams, and surface reflections. Integrate the illustration into the surrounding paint scheme with complementary colors, gradients, flames, pinstriping, decorative framing, illustrated scenery, and other appropriate design elements. It must look professionally executed and physically incorporated into the vehicle's finish, not like a flat image floating over the bodywork.\n\nFLAVOR TEXT: Analyze the supplied images for visual clues about the subject's personality, expression, clothing, accessories, occupation, hobbies, activities, surroundings, and distinctive objects. Invent original, clever, humorous, or personality-driven flavor text based only on information visible or reasonably suggested by the imagery. It may be a vehicle name, witty slogan, nickname, racing identity, business-style tagline, or short personalized phrase. Place the lettering directly into the automotive paint design in a style appropriate to the vehicle. Use a limited amount of text, with correct spelling and clear legibility. Avoid unsupported personal facts, invented names, fake brand logos, watermarks, random lettering, and unrelated slogans.\n\nCOMPOSITION: Show the vehicle prominently enough to establish its identity and clearly reveal the custom artwork. Prefer a three-quarter front or side view, or another angle that displays the principal decorated panel. The vehicle must remain complete and recognizable, with realistic wheels, tires, windows, lighting, body panels, reflections, and mechanical proportions. The single subject illustration must be large enough to recognize and must remain the unmistakable focal point of the artwork. Do not shrink it into an insignificant detail or obscure it with vehicle components.\n\nFINAL VALIDATION: Before completing the image, verify that the subject appears exactly once, that the subject is represented as an original illustration or artistic character rather than a pasted photograph, and that the artwork follows the authentic decorative style appropriate to the vehicle. If the subject appears as a separate person, if the subject is duplicated, or if the result is merely a photographic portrait pasted onto the vehicle, the result is incorrect and must be regenerated. The selected option determines the vehicle style ONLY when no suitable vehicle is visible in any supplied image. A vehicle found in a source image always takes priority over the selected option. Master-prompt instructions regarding the subject, vehicle, artistic style, setting, mood, text, or composition always take priority over preset defaults."
+  },
+  {
+    "name": "CAR EXTERIOR DECORATION",
+    "category": [
+      "VEHICLES",
+      "CUSTOM",
+      "HUMOR",
+      "SEASONAL",
+      "3D"
+    ],
+    "message": "Take a picture and transform the subject into a creative three-dimensional decoration that is physically attached to the exterior of a car or truck, similar to the novelty vehicle decorations used for holidays, celebrations, and themed events. Reimagine the subject as a distinctive vehicle-mounted accessory, character, prop, or decorative assembly that interacts with the vehicle's actual exterior features. The decoration must be a physical object attached to the vehicle, not a printed image, painted portrait, or person standing beside it. Preserve the subject's recognizable identity while adapting the subject into a playful, imaginative, vehicle-appropriate exterior decoration. Use the selected option to determine the type of decoration.",
+    "options": [
+      {
+        "id": "Holiday Reindeer",
+        "text": "Transform the subject into a festive reindeer-themed vehicle decoration, with large three-dimensional antlers mounted around the vehicle's windows and a bright red nose attached to the front grille, creating a coordinated holiday look."
+      },
+      {
+        "id": "Holiday Character",
+        "text": "Create a full holiday-themed exterior decoration featuring the subject as a recognizable festive character, with appropriate three-dimensional accessories attached to the vehicle's hood, grille, roof, and windows."
+      },
+      {
+        "id": "Wings",
+        "text": "Give the vehicle a pair of large sculptural wings inspired by the subject, mounted along its exterior sides or rear, with realistic feathers or imaginative decorative construction."
+      },
+      {
+        "id": "Dragon",
+        "text": "Transform the subject into a dramatic dragon-themed vehicle decoration, with a sculptural dragon head, horns, scales, and a winding tail attached to the vehicle's exterior."
+      },
+      {
+        "id": "Animal Ears and Tail",
+        "text": "Create a playful animal-themed vehicle decoration using large three-dimensional ears mounted around the roofline or windows and a matching sculptural tail attached to the rear."
+      },
+      {
+        "id": "Monster Vehicle",
+        "text": "Turn the vehicle into a playful monster-inspired creation using the subject's features to design a large sculptural grille mouth, expressive eyes above the windshield, and other coordinated exterior attachments."
+      },
+      {
+        "id": "Superhero",
+        "text": "Create a superhero-themed vehicle decoration inspired by the subject, with sculptural cape elements, a distinctive emblem, and dramatic three-dimensional accessories securely attached to the exterior."
+      },
+      {
+        "id": "Birthday Celebration",
+        "text": "Decorate the vehicle for a birthday celebration with oversized sculptural balloons, colorful dimensional streamers, a playful character representing the subject, and festive accessories attached to the exterior."
+      },
+      {
+        "id": "Wedding Celebration",
+        "text": "Create an elaborate wedding-themed vehicle decoration with sculptural floral arrangements, elegant ribbons, decorative fabric, and a personalized three-dimensional ornament inspired by the subject."
+      },
+      {
+        "id": "Underwater Creature",
+        "text": "Transform the vehicle into an underwater-themed spectacle with sculptural fins, tentacles, sea-creature features, and a distinctive aquatic character based on the subject attached to the exterior."
+      },
+      {
+        "id": "Robot",
+        "text": "Create a futuristic robot-themed vehicle decoration, with mechanical arms, antennae, panels, and a sculptural robot character incorporating the subject's recognizable features."
+      },
+      {
+        "id": "Pirate Ship",
+        "text": "Give the vehicle a playful pirate-themed exterior transformation with a sculptural ship figurehead based on the subject, decorative sails, ropes, and nautical accessories attached to the vehicle."
+      },
+      {
+        "id": "Spacecraft",
+        "text": "Turn the vehicle into a space-themed spectacle with sculptural rocket fins, antennae, futuristic panels, and a distinctive astronaut or alien character inspired by the subject."
+      },
+      {
+        "id": "Flaming Hot Rod",
+        "text": "Add dramatic three-dimensional flame-shaped exterior accessories inspired by the subject, with sculptural flame elements flowing along the sides, hood, and rear of the vehicle."
+      },
+      {
+        "id": "Giant Bow",
+        "text": "Decorate the vehicle with an enormous three-dimensional gift bow and coordinated decorative ribbons, incorporating a small sculptural character representing the subject into the arrangement."
+      },
+      {
+        "id": "Sports Fan",
+        "text": "Create a spirited sports-themed vehicle decoration inspired by the subject, with oversized sculptural fan accessories, team-color-inspired decorative elements, and a playful character attached to the exterior."
+      },
+      {
+        "id": "Safari Animal",
+        "text": "Transform the vehicle into a safari-inspired creation with sculptural animal ears, horns, a tail, and other dimensional animal features based on the subject's appearance."
+      },
+      {
+        "id": "Fantasy Creature",
+        "text": "Create an imaginative fantasy-creature vehicle decoration inspired by the subject, using sculptural horns, ears, scales, wings, or other coordinated physical accessories."
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "THE SUBJECT MUST BE TRANSFORMED INTO A PHYSICAL EXTERIOR VEHICLE DECORATION. This preset creates three-dimensional novelty accessories attached to a vehicle, similar to holiday reindeer antlers mounted around car windows and a red nose attached to the grille. The subject must be represented through the actual decorative objects. Do not simply put the subject's photograph, portrait, or printed likeness on the vehicle. Do not create a separate full-size person standing, sitting, or posing beside the vehicle.\n\nSUBJECT IDENTITY: Analyze the supplied image and preserve the subject's recognizable appearance, facial characteristics, hairstyle, expression, distinctive accessories, and other identifying features. Translate these into a playful physical decoration appropriate to the selected option. The subject may become a sculptural character, creature, mascot, face-shaped accessory, or coordinated set of decorative components. The subject must remain recognizable, but the decoration should be designed as a real-world novelty vehicle accessory rather than a normal portrait.\n\nVEHICLE SOURCE: If a car or truck is visible in any supplied image, use that actual vehicle and adapt the decoration to its body style, windows, grille, roofline, mirrors, doors, and other exterior features. If no vehicle is visible, create a suitable vehicle that provides enough visible exterior area for the selected decoration. Do not replace a visible source vehicle with another vehicle. The decoration must be designed around the actual vehicle's shape and must not interfere with its basic recognizable structure.\n\nPHYSICAL ATTACHMENT AND SCALE: All decorative elements must appear as real three-dimensional objects securely attached to appropriate exterior locations. Examples include antlers mounted around window frames, noses attached to grilles, ears positioned above windows, tails attached to rear bodywork, wings mounted along the sides, horns attached to the roofline, and sculptural figures mounted to the hood or grille. Use believable attachment points, brackets, straps, clips, suction mounts, molded bases, or other suitable mounting methods. The objects must follow the vehicle's perspective and have convincing contact shadows, reflections, depth, and scale. Do not make decorations float, hover, or appear to be digitally drawn onto the vehicle.\n\nCOORDINATED DESIGN: When the selected option calls for multiple components, create one cohesive decorative arrangement that clearly belongs together. Each component should contribute to the same theme and should be positioned on an appropriate part of the vehicle. For example, a reindeer decoration should coordinate the antlers, red nose, and any additional festive details into one recognizable holiday transformation. A monster decoration should coordinate its eyes, mouth, teeth, and other creature features so the vehicle appears to have become one unified character. Do not scatter unrelated accessories randomly around the vehicle.\n\nONE SUBJECT REPRESENTATION: The subject must appear only once as the recognizable character or identity represented by the decoration. Do not create multiple copies of the subject, repeated faces, duplicate figures, or several separate versions of the same character. Multiple accessory components are allowed when they form one unified decoration, but they must not create multiple depictions of the subject. For example, a pair of antlers and one nose can belong to one reindeer-themed transformation; they must not become several separate subject characters.\n\nREALISTIC DECORATIVE MATERIALS: Use materials appropriate to the selected theme, such as molded plastic, painted fiberglass, foam, rubber, fabric, plush, lightweight metal, faux fur, sculpted resin, or illuminated components. Show convincing construction, seams, attachment hardware, surface detail, and realistic lighting. The result should resemble a professionally made novelty vehicle decoration that could physically be installed on a real car or truck.\n\nCOMPOSITION: Show the vehicle and its exterior decorations clearly, preferably from a three-quarter front or side view that reveals the most important accessories. Keep the vehicle recognizable and preserve realistic wheels, windows, lights, grille, body panels, and proportions. Make the decoration large and visually obvious without obscuring the entire vehicle. The final image should immediately communicate that the vehicle has been physically decorated with a creative three-dimensional accessory based on the subject.\n\nMASTER PROMPT: The master prompt overrides all preset defaults, including the selected option, theme, materials, vehicle, decoration placement, setting, mood, and composition. If the master prompt specifies a particular holiday, event, creature, accessory, or decorative arrangement, follow that direction."
+  },
+  {
+    "name": "CAR GRILLE ORNAMENT",
+    "category": [
+      "VEHICLES",
+      "SCULPTURE",
+      "3D",
+      "CUSTOM"
+    ],
+    "message": "Take a picture and transform the subject into a distinctive three-dimensional automotive grille ornament or grille-mounted mascot. Create one sculptural representation of the subject that is physically integrated into the front grille of a car, truck, or other suitable vehicle. The design should draw inspiration from traditional grille mascots, decorative radiator badges, custom truck grille figures, and sculptural automotive emblems. The subject must become the actual ornament, not a person standing in front of the vehicle or a photograph attached to the grille. Preserve the subject's recognizable identity while adapting the design into a durable, professionally crafted automotive accessory.",
+    "options": [
+      {
+        "id": "Classic Grille Mascot",
+        "text": "A traditional sculpted grille mascot featuring the subject as a miniature three-dimensional figure mounted prominently at the center of the vehicle's front grille."
+      },
+      {
+        "id": "Keep On Truckin' Figure",
+        "text": "A playful, forward-striding sculptural figure inspired by vintage Keep On Truckin' imagery, with the subject's recognizable likeness transformed into a distinctive grille-mounted character."
+      },
+      {
+        "id": "Winged Grille Emblem",
+        "text": "A dimensional grille emblem with elegant outstretched wings and the subject's sculpted likeness integrated into its central design."
+      },
+      {
+        "id": "Chrome Character Badge",
+        "text": "A polished chrome grille ornament shaped as a stylized bust or head of the subject, with raised sculptural details and a premium automotive finish."
+      },
+      {
+        "id": "Vintage Truck Mascot",
+        "text": "A bold old-school truck grille mascot with a rugged cast-metal appearance, expressive sculptural details, and the subject transformed into a classic trucking character."
+      },
+      {
+        "id": "Custom Animal Mascot",
+        "text": "A custom animal-inspired grille figure that incorporates the subject's recognizable features into a single imaginative hybrid mascot."
+      },
+      {
+        "id": "Art Deco Grille Sculpture",
+        "text": "An elegant Art Deco grille ornament with geometric metal forms, symmetrical decorative elements, and a sculpted representation of the subject."
+      },
+      {
+        "id": "Three-Dimensional Bust",
+        "text": "A detailed miniature bust of the subject, sculpted in metal and mounted directly into the grille as a distinctive custom automotive accessory."
+      },
+      {
+        "id": "Vintage Radiator Cap Style",
+        "text": "A nostalgic radiator-style grille mascot with an ornate cast-metal base and a carefully sculpted figure representing the subject."
+      },
+      {
+        "id": "Industrial Truck Ornament",
+        "text": "A rugged industrial-style grille ornament with heavy-duty metal construction, bold sculptural forms, and the subject represented as a distinctive truck mascot."
+      },
+      {
+        "id": "Illuminated Grille Figure",
+        "text": "A futuristic grille-mounted sculpture with the subject's likeness formed from polished metal and subtle integrated illumination."
+      },
+      {
+        "id": "Abstract Custom Emblem",
+        "text": "An original sculptural grille emblem that interprets the subject's most recognizable features as a flowing, dimensional automotive design."
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "THE SUBJECT MUST BECOME ONE GRILLE-MOUNTED SCULPTURE. Create one physical, three-dimensional automotive ornament that incorporates the subject's recognizable likeness. The subject must be the ornament itself, not a separate person standing in front of the vehicle, not a photograph, and not a flat printed image. The sculpture must be mounted directly to or integrated into the vehicle's front grille, radiator grille, or grille surround.\n\nIDENTITY: Analyze the subject's face, hairstyle, expression, clothing, accessories, and distinctive characteristics. Preserve enough identifying details to make the sculpted figure unmistakably based on the supplied subject. Adapt the subject into an appropriate miniature automotive mascot, bust, character, or artistic emblem. Do not replace the subject with a generic figure. If an animal-inspired option is selected, create one cohesive hybrid design that retains recognizable features of the subject.\n\nGRILLE PLACEMENT: If a vehicle is visible in any supplied image, use that actual vehicle. Mount the ornament on the front grille in a believable position, typically centered or integrated into an appropriate grille section. Adapt the ornament's dimensions and mounting method to the actual grille design. If no vehicle is visible, create a suitable vehicle with a clearly visible front grille. The ornament must physically attach to the grille with a realistic base, bracket, mounting points, or integrated construction. It must not float in front of the grille or appear as a large freestanding statue. Keep the grille recognizable around the ornament.\n\nDISTINCTION FROM A HOOD ORNAMENT: This preset specifically creates a grille-mounted ornament. Do not place the sculpture on the hood, roof, bumper, dashboard, or license plate as a substitute. Its position must be visibly within or directly attached to the front grille. The ornament may project slightly outward from the grille, as traditional automotive mascots and truck accessories often do, but it must remain securely mounted and proportionate.\n\nMATERIAL AND DESIGN: Use realistic automotive ornament materials such as polished chrome, stainless steel, brass, bronze, cast aluminum, enamel, or combinations of metal and glass. Design the ornament with authentic sculptural depth, refined details, convincing highlights, realistic shadows, and a durable manufactured appearance. The selected option determines the artistic treatment, while the actual vehicle and master prompt determine the appropriate scale and placement.\n\nONE SUBJECT ONLY: Show exactly one representation of the subject, contained entirely within the single grille ornament. Do not repeat the subject elsewhere on the vehicle or in the background. Do not create multiple figures, multiple faces, mirrored copies, or additional subject-themed grille decorations. Supporting grille bars, factory emblems, and ordinary vehicle details may remain, but the subject itself must appear only once.\n\nCOMPOSITION: Use a frontal or three-quarter front view that clearly shows the vehicle's grille and the attached ornament. Make the ornament large enough to see its sculptural detail and recognize the subject. Maintain realistic vehicle proportions, grille construction, lighting, reflections, and perspective. The final image must unmistakably read as a custom grille ornament featuring the subject. The master prompt overrides all preset defaults, including the selected option."
+  },
+  {
+    "name": "CAR HOOD ORNAMENT",
+    "category": [
+      "VEHICLES",
+      "SCULPTURE",
+      "3D",
+      "CUSTOM"
+    ],
+    "message": "Take a picture and transform the subject into a beautifully crafted three-dimensional automotive hood ornament. Reimagine the subject as a miniature sculptural figure or symbolic form mounted on the front centerline of a vehicle's hood, in the traditional position of a classic hood mascot. Preserve the subject's recognizable identity and distinctive characteristics while adapting the pose and proportions into an elegant, dynamic, physically plausible automotive sculpture. The ornament must look like a professionally manufactured vehicle accessory, not a person standing on the hood.",
+    "options": [
+      {
+        "id": "Classic Chrome Mascot",
+        "text": "A traditional polished chrome hood mascot with elegant flowing contours, finely sculpted details, and the subject transformed into a distinctive automotive figure."
+      },
+      {
+        "id": "Luxury Flying Figure",
+        "text": "An elegant forward-reaching flying figure inspired by classic luxury automobile mascots, with the subject sculpted into a graceful streamlined pose."
+      },
+      {
+        "id": "Winged Emblem",
+        "text": "A sculptural winged hood ornament with the subject's recognizable head or upper-body likeness integrated into the center of sweeping automotive wings."
+      },
+      {
+        "id": "Art Deco Sculpture",
+        "text": "An elaborate Art Deco hood ornament with geometric forms, elegant stepped detailing, and a sophisticated sculptural interpretation of the subject."
+      },
+      {
+        "id": "Animal-Inspired Mascot",
+        "text": "A distinctive animal-inspired automotive mascot that combines the subject's recognizable facial characteristics with the form of an appropriate animal, creating one cohesive sculpture."
+      },
+      {
+        "id": "Sports Performance",
+        "text": "A dynamic aerodynamic hood ornament with the subject represented in an energetic forward-moving pose, sculpted with sleek performance-inspired contours."
+      },
+      {
+        "id": "Miniature Full Figure",
+        "text": "A finely detailed miniature full-body sculpture of the subject in a balanced, elegant pose, designed specifically as a traditional vehicle hood mascot."
+      },
+      {
+        "id": "Abstract Signature Form",
+        "text": "A unique abstract automotive sculpture that distills the subject's most recognizable features into a flowing, instantly identifiable sculptural form."
+      },
+      {
+        "id": "Vintage Cast Metal",
+        "text": "A traditional cast-metal hood ornament with a slightly aged finish, intricate sculptural details, and the subject portrayed as a classic automotive mascot."
+      },
+      {
+        "id": "Crystal and Chrome",
+        "text": "A premium hood ornament combining polished chrome structure with faceted crystal-like elements, with the subject's likeness sculpted into its central form."
+      },
+      {
+        "id": "Illuminated Mascot",
+        "text": "A futuristic hood ornament with a sculpted representation of the subject integrated into a refined illuminated automotive emblem."
+      },
+      {
+        "id": "Custom Character",
+        "text": "A playful, imaginative hood mascot that transforms the subject into a unique custom character with a distinctive pose and memorable sculptural silhouette."
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "THE SUBJECT MUST BECOME ONE PHYSICAL HOOD ORNAMENT. Create one single three-dimensional sculptural representation of the subject, mounted in the traditional hood ornament position at the front of the vehicle. Do not show the subject as a full-size person standing on, beside, or in front of the vehicle. Do not create a printed image, decal, painted portrait, flat emblem, or photograph of the subject. The subject must be physically sculpted into the ornament itself.\n\nIDENTITY AND SCULPTURAL INTERPRETATION: Study the supplied image carefully and preserve the subject's recognizable facial characteristics, hairstyle, expression, distinctive accessories, and other identifying features. Translate these into a miniature sculptural design that works at hood-ornament scale. The subject may be represented as a full miniature figure, bust, head, dynamic character, or artistic symbolic form depending on the selected option. Do not substitute an unrelated generic person or animal. If the option calls for an animal-inspired mascot, retain recognizable characteristics of the actual subject within the hybrid design.\n\nVEHICLE AND PLACEMENT: If a vehicle is visible in any supplied image, use that actual vehicle and mount the ornament on its front hood in a believable factory-style or custom accessory position. If no vehicle is visible, create a suitable vehicle that complements the selected ornament style. The ornament must be mounted on a small, realistic base attached to the hood, aligned with the vehicle's centerline where appropriate. Show enough of the vehicle's front hood, grille, windshield, and surrounding bodywork to make the placement unmistakable. The ornament must have believable scale, mounting hardware, contact shadows, reflections, and perspective. It must not float above the hood or appear to be a large statue placed on the car.\n\nMATERIAL AND CRAFTSMANSHIP: Create a convincing manufactured automotive sculpture. Use materials appropriate to the selected style, such as polished chrome, nickel, brass, bronze, cast aluminum, stainless steel, enamel, glass, crystal, or combinations of these. Show realistic metal reflections, sculpted contours, fine detailing, smooth transitions, and carefully finished surfaces. The ornament should look durable and professionally crafted, with the refinement of a genuine collectible automotive accessory.\n\nONE ORNAMENT ONLY: The subject must appear exactly once as the hood ornament. Do not duplicate the subject elsewhere on the vehicle, in the background, in the grille, or as a second ornament. Do not add multiple hood mascots. The vehicle may have ordinary factory badges and details, but no additional depiction of the subject.\n\nCOMPOSITION: Make the ornament the clear focal point while showing enough of the vehicle to establish that it is mounted on the hood. Use a close three-quarter view or a low front angle that reveals the ornament's sculptural depth and its attachment to the hood. Keep the ornament large and detailed enough to recognize the subject. Preserve realistic vehicle proportions and lighting. Do not obscure the ornament with the hood, grille, or other components. The master prompt overrides all preset defaults, including the selected option."
   },
   {
     "name": "CARAMEL SUGAR WORK",
@@ -16233,6 +16444,19 @@
     "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Metal grown, not cast — surface nodular and organic\n• Thicker deposit on protruding areas\n• Fine original detail preserved beneath\n• Warm copper color with directional lustre"
   },
   {
+    "name": "ELECTROLUMINESCENT WIRE",
+    "category": [
+      "LIGHT",
+      "MATERIALS",
+      "NEON",
+      "TRANSFORMATION"
+    ],
+    "message": "Take a picture and completely reconstruct the subject as a three-dimensional sculpture made entirely from glowing electroluminescent wire. Thousands of continuous luminous wire paths should bend, weave, overlap, and connect to create the subject's complete form. Use the glowing wires to construct the actual facial features, anatomy, hair, clothing, accessories, and surface details rather than merely tracing the subject's outline. Create a visually striking illuminated sculpture with realistic light emission, subtle bloom, overlapping wire structures, and dimensional depth.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "The original photograph must not remain visible. The subject must be rebuilt entirely from electroluminescent wire. Do not simply draw a glowing outline around the original photograph or create a neon contour illustration. The wire paths must construct the full volume and recognizable details of the subject. Use multiple closely spaced wire paths to define solid-looking areas, with tighter arrangements around facial features and intricate details. The wires should visibly bend around three-dimensional forms and follow anatomical contours. Create realistic continuous luminous tubing with consistent thickness, subtle connections, natural bends, and authentic light emission. Allow the emitted light to illuminate nearby wire sections and create restrained environmental glow. Keep the subject recognizable and fully formed rather than reducing it to a sparse line drawing. Preserve the original background unless the master prompt specifies otherwise. The master prompt overrides all preset defaults."
+  },
+  {
   "name": "ELECTRON MICROSCOPE SCAN",
   "category": [
     "MICROSCOPY",
@@ -20808,6 +21032,19 @@
     "additionalInstructions": "The focus plane must be clearly tilted \u2014 not just shallow DOF but a diagonal plane of focus. Light leaks should be warm and organic. The in-focus area should include the most important part of the subject. The effect should feel handmade and imperfect."
   },
   {
+    "name": "FREEZE-CAST CERAMIC",
+    "category": [
+      "MATERIALS",
+      "CERAMIC",
+      "SCULPTURE",
+      "TRANSFORMATION"
+    ],
+    "message": "Take a picture and completely reconstruct the subject as a sophisticated freeze-cast ceramic sculpture. Build the entire subject from porous ceramic material featuring intricate interconnected channels, directional pores, delicate cellular structures, and layered internal architecture inspired by the freeze-casting manufacturing process. The subject should retain its recognizable identity, anatomy, facial features, pose, clothing, proportions, and silhouette while appearing to be carved and formed from an extraordinary porous ceramic material.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "The original photograph must not remain visible. The entire subject must be reconstructed as a physical freeze-cast ceramic sculpture, not simply covered with a porous texture. Every visible part of the subject, including facial features, hair, clothing, and accessories, must be formed from the ceramic material. Create directional interconnected pores and channels that follow a consistent structural flow across the sculpture. Vary pore sizes and densities to produce intricate cellular architecture while maintaining the subject's recognizable shape. Include subtle ceramic grain, matte and satin surface variations, delicate edges, and realistic shadows within the porous openings. The pores must appear to extend into the material rather than being painted or printed onto the surface. Preserve enough solid ceramic structure to maintain accurate anatomy and fine details. Avoid making the subject look like a sponge, coral, or ordinary pumice stone. Preserve the original background unless the master prompt specifies otherwise. The master prompt overrides all preset defaults."
+  },
+  {
     "name": "FREEZE FRAME",
     "category": [
       "PHOTOGRAPHY",
@@ -21376,6 +21613,19 @@
     ],
     "randomizeOptions": true,
     "additionalInstructions": "CORE FUTURIST TRANSFORMATION:\n\n• Completely reconstruct the image in a powerful Futurist visual language.\n• Use repetition, directional planes, fractured contours, overlapping stages of movement, dynamic diagonals, energetic lines, and visual rhythm.\n• Existing forms must generate the motion structures.\n• Preserve the recognizable identity and essential structure of the subject.\n• Transform the subject itself rather than merely surrounding it with motion effects.\n• Transform the environment as well as the subject.\n• Existing objects may appear multiplied, repeated, stretched, fragmented, displaced, or rhythmically overlapped when this communicates movement.\n• Perspective may be deliberately distorted to emphasize speed, force, depth, and acceleration.\n• Use simultaneous views or sequential positions of existing forms to suggest several moments occurring within one image.\n• Create the visual sensation of movement, vibration, and mechanical force even when the original subject was stationary.\n\nFUTURIST VISUAL LANGUAGE:\n\n• Strong sense of motion, speed, energy, rhythm, and acceleration.\n• Repeated forms or overlapping silhouettes should suggest successive stages of movement.\n• Fragmented and angular shapes should convey speed and force.\n• Dynamic lines should radiate, converge, sweep, or propel the eye through the composition.\n• Directional energy flows should follow the actual movement and structure of existing subjects and objects.\n• Use visual simultaneity: multiple related positions, contours, planes, or stages of an existing form may coexist.\n• Use fractured contours and overlapping planes to make movement visible.\n• Use mechanical and industrial visual language where appropriate.\n• Enhance existing technological, mechanical, architectural, automotive, or industrial elements when they are present.\n• Do not invent mechanical objects simply to create a Futurist appearance.\n\nPAINTED MOTION:\n\n• Translate photographic motion blur into expressive painted structures rather than digital blur.\n• Use bold, energetic brushstrokes integrated into the actual reconstruction.\n• Use layered paint to suggest movement, vibration, repetition, and acceleration.\n• Allow brushwork to follow directional movement through the composition.\n• Use overlapping painted forms to create visual rhythm.\n• Use varied line weight and brush density to emphasize force and speed.\n• Combine hard angular planes with energetic painted strokes.\n• The image should feel physically painted rather than digitally filtered.\n• Oil paint or sophisticated mixed-media canvas appearance is appropriate.\n• Preserve enough structural information that the original subject remains recognizable beneath the dynamic reconstruction.\n\nCOMPOSITION AND PERSPECTIVE:\n\n• Use strong diagonals and directional composition.\n• Avoid static, centered, symmetrical presentation unless dictated by the source image.\n• Perspective may be exaggerated or distorted to increase the sensation of acceleration.\n• Forms may appear to push toward, away from, or across the picture plane.\n• Overlapping forms should create depth and sequential movement.\n• The composition should guide the viewer's eye through a continuous visual trajectory.\n• Create a deliberate sense of visual acceleration rather than random chaos.\n• Motion structures must remain connected to recognizable source forms.\n\nCOLOR AND TONAL ENERGY:\n\n• Use high contrast.\n• Use vivid, energetic color relationships when appropriate.\n• Metallic tones may be incorporated to reinforce mechanical and technological energy.\n• Use strong color contrasts to separate successive stages of movement.\n• Color may intensify along directional paths to reinforce acceleration.\n• Dark and light regions should create rhythmic visual impact.\n• Do not reduce the image to a dull monochrome unless required by the master prompt.\n• Color should participate in the motion rather than simply decorate the image.\n\nENVIRONMENT:\n\n• Completely transform the background and environment into the same Futurist visual language.\n• Existing architecture, furniture, vehicles, landscape, objects, surfaces, and structures may become fragmented, repeated, elongated, angular, or directionally displaced.\n• Surroundings should appear to be in flux, fragmented, vibrating, or speed-driven.\n• Existing environmental lines should contribute to the overall directional movement.\n• The environment must not remain a static photographic backdrop.\n• Preserve the fundamental recognizable contents of the original environment.\n• Do not invent unrelated scenery or objects merely to create movement.\n\nSUBJECT IDENTITY:\n\n• Preserve recognizable subject identity.\n• Preserve distinctive facial structure and important identifying characteristics when a person is present.\n• The face may be repeated, fragmented, displaced, or shown through successive stages of movement, but enough information must remain for the subject to be unmistakably recognizable.\n• Do not replace the subject with a generic Futurist figure.\n• Do not turn the subject into an unrelated abstract shape.\n• The subject must remain the primary visual source of the transformation.\n\nSOURCE-CONTENT RULE:\n\n• Existing visual content should generate the Futurist reconstruction.\n• Do not invent unrelated objects merely to create dynamism.\n• Do not add random futuristic scenery.\n• Do not add arbitrary machinery, robots, vehicles, buildings, or technology that was not present in the source unless explicitly requested by the master prompt.\n• Motion effects must be generated from existing subjects, objects, structures, and environmental forms.\n• The source image determines WHAT is being transformed; Futurism determines HOW it is transformed.\n\nTRANSFORMATION REQUIREMENT:\n\n• Do not simply overlay Futurist effects onto the photograph.\n• Do not leave the original photograph underneath painted effects.\n• Completely reconstruct the visual appearance of the image through the Futurist artistic language.\n• The transformed image must cease to look like an ordinary photograph.\n• The subject, objects, and environment must all participate in the artistic reconstruction.\n• The final result must look like a deliberately created Futurist artwork rather than a photograph with motion effects applied.\n\nSTYLE ENFORCEMENT:\n\n• Futurist movement must be unmistakable.\n• Speed must be visually represented rather than merely implied.\n• Simultaneity must be visible through overlapping stages, repeated forms, or multiple positions of existing elements.\n• Mechanical and technological dynamism should be emphasized when supported by the source image.\n• Use fragmented geometry, angular planes, energetic lines, repetition, and directional force.\n• Use bold painted marks and layered color to reinforce the sensation of movement.\n• Maintain an energetic, chaotic, forward-moving composition while preserving deliberate artistic control.\n• The artwork should feel alive, vibrating, and in motion.\n\nSTRICTLY PROHIBITED:\n\n• No simple motion-blur filter.\n• No generic speed lines floating over the photograph.\n• No unchanged photographic subject surrounded by painted effects.\n• No static photographic background.\n• No random abstract shapes unrelated to existing forms.\n• No invented objects merely to make the scene look futuristic.\n• No generic sci-fi aesthetic replacing Futurism.\n• No photorealistic rendering with superficial Futurist effects.\n• No accidental-looking distortion.\n• No digital glitch aesthetic unless explicitly requested.\n• No unrelated collage imagery.\n\nMASTER PROMPT RULE:\n\n• Master prompt instructions always override conflicting instructions EXCEPT the mandatory requirement that the image be transformed into a Futurist artwork emphasizing movement, speed, simultaneity, and dynamic energy.\n• Incorporate master-prompt subject, pose, setting, action, clothing, composition, camera angle, and visual information into the Futurist reconstruction.\n• If the master prompt specifies a particular object, environment, action, or composition, preserve it while transforming its visual language through Futurist motion.\n• Do not allow the master prompt to cause the image to remain photographic.\n\nFINAL VALIDATION:\n\n✓ Futurist movement is unmistakable.\n✓ Speed and acceleration are visibly represented.\n✓ Simultaneity is visible through repetition, overlap, or successive stages.\n✓ Existing visual content has been completely reconstructed.\n✓ Subject remains recognizable.\n✓ Facial identity remains recognizable when applicable.\n✓ Environment participates in the Futurist transformation.\n✓ Dynamic diagonals and directional energy are present.\n✓ Fragmented and angular forms contribute to the sense of motion.\n✓ Painted or mixed-media qualities are visibly integrated into the reconstruction.\n✓ Repetition and overlapping forms derive from existing source elements.\n✓ Perspective may be distorted deliberately to reinforce movement.\n✓ Color and tonal contrast contribute to visual acceleration.\n✓ The result does not look like a photograph with a filter.\n✓ No unrelated imagery has been added.\n✓ No generic sci-fi imagery has replaced the source content.\n✓ The final image feels like a sophisticated, energetic Futurist artwork.\n✓ If ANY answer is NO, regenerate until every requirement is satisfied."
+  },
+  {
+    "name": "GALLIUM SCULPTURE",
+    "category": [
+      "MATERIALS",
+      "METALLIC",
+      "SURREAL",
+      "SCULPTURE"
+    ],
+    "message": "Take a picture and completely transform the subject into a highly detailed three-dimensional sculpture made entirely from metallic gallium. Reconstruct the subject from flowing, sculptural masses of reflective liquid metal, with smooth rounded surfaces, organically merging forms, pooled edges, and extraordinary mirror-like reflections. The metal should appear to have flowed into the exact shape of the subject, capturing its recognizable identity, anatomy, proportions, pose, clothing, and defining features.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "The original photograph must not remain visible. The entire subject must be reconstructed from gallium-like metal rather than coated in a metallic effect. Create convincing liquid-metal geometry with reflective silver surfaces, fluid transitions, rounded bulges, stretched droplets, smooth folds, and areas where the material appears to have pooled and solidified. Preserve the subject's recognizable face and anatomy through carefully sculpted metallic forms. Hair should become flowing metallic strands or sculpted liquid-metal shapes. Clothing should become distinctive metallic folds and flowing surfaces that preserve the original outfit's silhouette. Use realistic reflections, highlights, subtle surface tension, and dimensional depth. The finished result must look like a physical metallic sculpture, not chrome-plated skin or a person covered in silver paint. Avoid melting the subject into an unrecognizable puddle. Preserve the original background unless the master prompt specifies otherwise. The master prompt overrides all preset defaults."
   },
   {
     "name": "GALVANIZED STEEL",
@@ -24532,6 +24782,19 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "Create a convincing mass-multiplication scene, not a collage of unrelated people. Every person in the stampede must be an exact recognizable duplicate of the original subject. Preserve the subject's face, age appearance, hairstyle, hair color, skin appearance, clothing, accessories, and distinctive physical characteristics consistently across all copies. Do not gradually change the subject's identity or introduce different people. Use a strong sense of scale and depth: large, sharply detailed duplicates in the foreground, progressively smaller duplicates receding into the distance, and a dense mass of copies filling the available environment. Give the duplicates varied, believable running and rushing poses so the crowd feels like a genuine stampede rather than rows of static clones. Use overlapping bodies, natural perspective, realistic contact shadows, and consistent lighting to integrate the copies into the scene. The stampede should feel energetic, chaotic, and visually overwhelming, with the subject's duplicates appearing to surge through the environment as one enormous moving crowd. Avoid evenly spaced rows, repeated cutout silhouettes, transparent ghosts, or a simple mirrored reflection effect. Do not leave the original subject standing unchanged in front of the duplicates; the original must be one of the active participants in the stampede. Preserve the original setting where practical, expanding the scene only as necessary to accommodate the crowd. Any subject, pose, setting, mood, action, artistic direction, or selection specified by the master prompt overrides the defaults in this preset."
+  },
+  {
+    "name": "HYDROGEL SCULPTURE",
+    "category": [
+      "MATERIALS",
+      "TRANSLUCENT",
+      "SCULPTURE",
+      "SURREAL"
+    ],
+    "message": "Take a picture and completely reconstruct the subject as a highly detailed three-dimensional hydrogel sculpture. Form the subject from translucent, water-rich polymer gel with soft rounded volumes, delicate internal structures, suspended microbubbles, subtle refraction, and luminous depth. The material should appear soft, hydrated, and slightly gelatinous while retaining the subject's recognizable identity, facial features, anatomy, pose, clothing, proportions, and defining details.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "The original photograph must not remain visible. Completely rebuild the subject from hydrogel material rather than applying a transparent gel coating to the original image. Every part of the subject must be made from the translucent polymer gel, including skin, hair, clothing, and accessories. Create realistic internal depth with suspended microbubbles, delicate inclusions, subtle layered density, soft refraction, and natural light scattering. Use smooth rounded forms and slightly elastic-looking transitions while maintaining accurate anatomy and recognizable facial details. Clothing must retain its recognizable shape but appear sculpted from translucent gel rather than fabric. Avoid making the subject look like an ordinary glass statue, ice sculpture, or cartoon gelatin character. The finished result should resemble a sophisticated physical hydrogel artwork with realistic material properties. Preserve the original background unless the master prompt specifies otherwise. The master prompt overrides all preset defaults."
   },
   {
     "name": "HYPERBOLIC GEOMETRY",
@@ -28621,6 +28884,19 @@
     }
     ],
     "additionalInstructions": "• Subject must appear made entirely of reflective chrome liquid\n• Surface must be mirror-like and glossy\n• No matte metal allowed\n• Maintain recognizable subject while allowing fluid melt behavior\n• Strong white specular highlights required\n• No non-metal textures"
+  },
+  {
+    "name": "LIQUID CRYSTAL",
+    "category": [
+      "MATERIALS",
+      "OPTICAL",
+      "SURREAL",
+      "TRANSFORMATION"
+    ],
+    "message": "Take a picture and completely reconstruct the subject from layered liquid-crystal material. Create a dimensional subject composed of flowing, translucent crystalline layers with mesmerizing polarized colors, optical interference patterns, and shifting bands of light. The material should produce rich spectral transitions, luminous internal reflections, and intricate flowing structures that follow the subject's anatomy and silhouette. Preserve the subject's recognizable identity, proportions, pose, facial features, clothing, and defining details.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "The original photograph must not remain visible. This is a complete reconstruction using liquid-crystal material, not a color filter or iridescent coating. Every visible part of the subject must be formed from the layered material. Create realistic liquid-crystal optical behavior with directional color shifts, polarized light effects, interference bands, translucent layers, and subtle internal reflections. The colors should transition naturally through the material rather than appearing as arbitrary rainbow gradients. Facial features, hair, clothing, fingers, and accessories must remain recognizable through the arrangement of the crystalline layers. Use realistic three-dimensional volume and carefully controlled translucency. Avoid making the subject look like ordinary glass, holographic foil, or a flat rainbow graphic. Preserve the original background unless the master prompt specifies otherwise. The master prompt overrides all preset defaults."
   },
   {
   "name": "LIQUID DISPLACEMENT",
@@ -35461,6 +35737,19 @@
     "additionalInstructions": "CHROMOSTEREOPSIS COLOR ENGINE (MANDATORY):\n\n• The subject must be rendered primarily in red tones — deep red, crimson, scarlet, warm red-orange — because the human visual system neurologically perceives red wavelengths as spatially closer than cool wavelengths\n• The background must be rendered primarily in blue tones — deep blue, cobalt, cool blue-black — because the human visual system neurologically perceives blue wavelengths as spatially farther away\n• This red/blue chromostereopsis split is the foundational depth engine of the entire image\n• Red must dominate the subject zone entirely — zero blue pixels within the subject's core area\n• Blue must dominate the background zone entirely — zero red pixels within the background core area\n• The subject and background must not use flat solid color — instead use a dense interspersed grain of red-and-black pixels for the subject and blue-and-black pixels for the background\n• The background grain must use a visibly coarser, blockier pixel scale than the subject grain — this texture scale difference reinforces perceptual distance\n• The subject grain must be finer, denser, and higher resolution than the background grain\n\nISOLATION BORDER (ABSOLUTE):\n\n• The subject must be enclosed in a thick, solid, continuous pitch-black border\n• This border is the only transition point between the red subject zone and the blue background zone\n• The border must be instantaneous with no halo, glow bleed, or color fringe crossing it\n• Zero anti-aliasing across the border — it must be a hard, clean, perfectly defined black line\n\nANAGLYPH COLOR FRINGING (CRITICAL NEW ELEMENT):\n\n• Apply a subtle red color fringe shifted slightly to the left outer edge of the subject's silhouette\n• Apply a subtle cyan or blue color fringe shifted slightly to the right outer edge of the subject's silhouette\n• This controlled chromatic aberration mimics the stereoscopic color offset of real anaglyph 3D photography and causes the brain to interpret the subject as having genuine binocular depth separation\n• The fringe must be subtle — present and readable but not cartoonish\n• The fringe sits outside the isolation border, within the near-background transition zone\n\nFORCED FOCAL DEPTH HIERARCHY (MANDATORY):\n\n• The subject must be rendered at maximum sharpness, highest clarity, and finest detail resolution\n• Every facial feature, texture edge, hair strand, clothing detail, and foreground surface must be razor-crisp\n• The background must be visibly defocused, blurred, and reduced in detail sharpness relative to the subject\n• Background blur must intensify with distance — the farther a background element is from the subject plane, the more blurred it becomes\n• Subject sharpness and background blur must create a dramatic readable contrast — not a subtle difference\n\nFOREGROUND SCALE DOMINANCE (CRITICAL):\n\n• The subject must occupy slightly more visual area than natural perspective geometry would suggest\n• This subtle enlargement makes the subject feel optically closer to the viewer than the background\n• The enlargement must remain believable — present and effective but not cartoonish or distorted\n• Background elements must feel comparatively reduced and distant in scale\n\nLUMINOUS EDGE ISOLATION:\n\n• Add a thin soft luminous glow border around the outer silhouette of the subject\n• Glow must be pale warm white or very light red-white only\n• The glow must sit outside the black isolation border as a secondary separation layer\n• Glow must remain controlled and thin — present enough to separate the subject from the background atmosphere but never neon or graphic\n\nHOVER SHADOW DETACHMENT:\n\n• Place a faint soft shadow recession directly behind the subject silhouette\n• This shadow must sit slightly behind and around the subject as if the subject is physically floating a small distance in front of the background plane\n• The shadow must be subtle dark gray diffusion — never a graphic drop shadow\n• The hover shadow combined with the luminous edge glow must create a sense that the subject is physically peeling off the background surface\n\nATMOSPHERIC BACKGROUND RECESSION:\n\n• Background contrast must be reduced relative to the subject — flatter, softer, lower energy\n• Background tonal intensity must feel muted and receding\n• Fine background textures must appear softened by atmospheric distance\n• The background must feel optically pushed away from the viewer while the subject remains contrast-rich and visually dominant\n\nVIGNETTE DEPTH ANCHORING (NEW):\n\n• Apply a strong dark vignette to the outer edges and corners of the entire image\n• This vignette creates a visual tunnel that draws the eye inward toward the subject and reinforces the perception that the subject is the nearest point in the depth field\n• The vignette must be heaviest at the corners and taper softly inward\n• The subject must sit inside the brightest and highest-contrast zone of the frame while the periphery darkens away\n\nLUMINANCE DEPTH STRATIFICATION (NEW):\n\n• The subject must be the brightest and most luminous element in the entire image\n• Background luminance must be visibly lower — darker, dimmer, and more recessed\n• This luminance hierarchy reinforces depth by making the subject feel lit from a closer light source while the background recedes into comparative darkness\n• Contrast stratification: subject carries the hardest local contrast — background carries the softest\n\nCONTRAST HIERARCHY:\n\n• Subject must carry the highest local contrast in the entire image\n• Subject edges must visually dominate the frame\n• Background contrast must be flat and receding\n• Every tonal relationship in the image must reinforce the subject as the nearest optical plane\n\nSPATIAL POP-OUT SYNTHESIS:\n\n• All depth cues must operate simultaneously:\n  — Chromostereopsis red/blue color depth\n  — Anaglyph fringe stereoscopic offset\n  — Focal hierarchy sharpness vs blur\n  — Foreground scale enlargement\n  — Luminous edge isolation\n  — Hover shadow detachment\n  — Atmospheric recession\n  — Vignette depth tunnel\n  — Luminance stratification\n  — Texture grain scale differential\n• The combination of every cue working together must make the subject feel physically separated from the image surface and floating toward the viewer\n\nANTI-CHEAT:\n\n• Do NOT simply apply a red tint to the subject and blue tint to the background without texture grain\n• Do NOT use flat solid colors — grain density is required throughout\n• Do NOT leave the background at equal sharpness to the subject\n• Do NOT make the anaglyph fringe so strong it looks like a printing error\n• Do NOT apply vignette so heavy it crushes background detail to pure black\n• Do NOT cartoonishly enlarge the subject\n• Do NOT allow red pixels into the background zone or blue pixels into the subject zone\n\nFAIL CONDITIONS:\n\n• Subject not substantially sharper than background → FAIL\n• Background still high resolution or high contrast → FAIL\n• No visible foreground detachment from background plane → FAIL\n• Chromostereopsis red/blue color split not present → FAIL\n• Anaglyph fringe missing → FAIL\n• Glow border missing or too weak → FAIL\n• Hover shadow missing → FAIL\n• Vignette depth tunnel missing → FAIL\n• Subject not the brightest and highest-contrast element → FAIL\n• Texture grain scale identical between subject and background → FAIL\n\nFINAL RESULT:\nThe subject must appear to physically exist in front of the image plane — visually detached, spatially dominant, chromatically advanced, and optically closer to the viewer than anything else in the frame. Every depth cue must reinforce every other depth cue. The result must feel genuinely three-dimensional to the naked eye."
   },
   {
+    "name": "NANOFIBER WEB",
+    "category": [
+      "MATERIALS",
+      "FIBER ART",
+      "SCULPTURE",
+      "TRANSFORMATION"
+    ],
+    "message": "Take a picture and completely reconstruct the subject from an extraordinarily dense network of ultrafine nanofibers. Build the subject from thousands upon thousands of delicate interwoven filaments, inspired by electrospun nanofiber materials. The fibers should form translucent layered membranes, intricate web-like structures, and dense areas that collectively reproduce the subject's anatomy, facial features, pose, clothing, and recognizable silhouette. Create an intricate three-dimensional fiber sculpture with delicate transparency and remarkable structural detail.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "The original photograph must not remain visible. The subject must be entirely reconstructed from nanofibers. Do not simply overlay a spiderweb pattern or place a web around the original photograph. Every part of the subject must be built from densely arranged ultrafine fibers. Use varying fiber density to create solid-looking areas, translucent membranes, layered contours, and delicate open spaces. Facial features must remain identifiable through carefully controlled fiber direction and density. Hair should become flowing bundles of fine filaments. Clothing should be reconstructed as layered fiber membranes that retain the original garment shapes and folds. Show realistic fiber intersections, overlapping strands, subtle shadows, and three-dimensional depth. The finished sculpture should look like a sophisticated microscopic material brought to life at full scale, not a cobweb-covered person. Preserve the original background unless the master prompt specifies otherwise. The master prompt overrides all preset defaults."
+  },
+  {
     "name": "NAPKIN DOODLE",
     "category": [
       "ART",
@@ -39648,6 +39937,19 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "STYLE ENFORCEMENT:\n• Preserve subject identity with obsessive detail\n• Every surface texture must be rendered with extreme precision\n• Skin pores, wrinkles, blemishes, and hair must be individually visible\n• Flat, clinical lighting — no dramatic shadows\n• Reference Duane Hanson, Ron Mueck, and Chuck Close\n• Details should be slightly amplified beyond photographic reality\n• The effect should be uncanny — too real, uncomfortably intimate\n• No idealization or beautification\n• Paint surface should be invisible — no visible brushwork\n• The overall feeling should be clinical, intimate, and slightly unsettling"
+  },
+  {
+    "name": "PHOTONIC CRYSTAL",
+    "category": [
+      "MATERIALS",
+      "OPTICAL",
+      "CRYSTALLINE",
+      "TRANSFORMATION"
+    ],
+    "message": "Take a picture and completely reconstruct the subject as a three-dimensional photonic crystal sculpture. Construct the entire subject from intricate microscopic repeating structures that manipulate light and produce brilliant structural colors without relying on ordinary pigments. Use carefully arranged nanoscale patterns, repeating lattices, layered optical structures, and crystalline geometry to create extraordinary color effects inspired by butterfly wings, iridescent beetle shells, and natural photonic materials. Preserve the subject's identity, recognizable features, proportions, pose, clothing, and silhouette.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "The original photograph must not remain visible. This must be a complete reconstruction from photonic crystal structures, not an iridescent filter or a conventional crystal sculpture. Every visible part of the subject must be constructed from repeating microscopic optical structures. Use realistic structural color behavior, including directional color shifts, wavelength-dependent reflections, interference effects, and intricate repeating patterns. The surface should reveal tiny organized geometric lattices and layered structures when viewed closely, while forming a coherent recognizable subject from a normal viewing distance. Facial features, hair, clothing, and accessories must all be reconstructed using these optical structures. Create convincing three-dimensional volume, realistic reflections, and complex optical depth. Do not use ordinary rainbow gradients as a substitute for structural color. Avoid turning the subject into a butterfly or beetle. Preserve the original background unless the master prompt specifies otherwise. The master prompt overrides all preset defaults."
   },
   {
     "name": "PHOTOREALISM",
@@ -44137,6 +44439,19 @@
     "additionalInstructions": "FINAL RESULT:\nA nostalgic futuristic scene inspired by mid-20th century visions of the future."
   },
   {
+    "name": "RETROREFLECTIVE MICROPRISM",
+    "category": [
+      "MATERIALS",
+      "SCULPTURE",
+      "OPTICAL",
+      "TRANSFORMATION"
+    ],
+    "message": "Take a picture and completely reconstruct the subject as an intricate three-dimensional sculpture made entirely from retroreflective microprismatic material. The subject must be formed from thousands of tiny precision-engineered reflective prisms, similar to the optical material used in high-visibility road signs and safety equipment. Each prism should catch and redirect light, producing an extraordinary surface of brilliant reflective highlights, geometric sparkle, and optical depth. Preserve the subject's recognizable identity, anatomy, proportions, pose, clothing, and defining details while rebuilding everything from this material.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "The original photograph must not remain visible. This is a complete material reconstruction, not a reflective filter or texture overlay. Every visible part of the subject, including skin, hair, clothing, accessories, and small details, must be constructed from densely packed microprismatic elements. The individual prisms should be discernible at close range, with tiny geometric facets that collectively form the larger recognizable subject. Use realistic retroreflective optical behavior: individual facets should produce intense directional highlights, while other areas remain comparatively subdued depending on their orientation to the light. Create convincing three-dimensional volume and realistic material depth. Do not turn the subject into a road sign, safety vest, or flat reflective graphic. Do not add text, logos, signage, or unrelated objects. Preserve the original background unless the master prompt specifies otherwise. The master prompt overrides all preset defaults."
+  },
+  {
   "name": "RETRO SQUEEZE TOY",
   "category": [
     "FUNNY",
@@ -47061,6 +47376,19 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "SHAPE-MEMORY ALLOY",
+    "category": [
+      "MATERIALS",
+      "SCULPTURE",
+      "METALLIC",
+      "TRANSFORMATION"
+    ],
+    "message": "Take a picture and completely reconstruct the subject as an extraordinary three-dimensional sculpture made entirely from shape-memory alloy. Build the subject from intricately bent, interwoven, and tensioned metallic wires, ribbons, and slender structural elements inspired by Nitinol, a metal alloy capable of returning to a remembered shape after deformation. The finished sculpture should appear as though countless flexible metal components have independently curled, twisted, and sprung into the subject's recognizable form. Preserve the subject's identity, proportions, pose, silhouette, clothing, and defining features.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "The original photograph must not remain visible. Completely reconstruct the subject from shape-memory alloy components rather than applying a metallic texture to the original image. Every part of the subject must be made from the material, including facial features, hair, clothing, and accessories. Use a sophisticated combination of fine metallic wires, broad curved metal ribbons, tightly coiled sections, and spring-like elements. The components must follow the actual anatomy and contours of the subject, creating recognizable eyes, nose, mouth, fingers, clothing folds, and other identifying details through their arrangement. Show realistic brushed metal, polished highlights, subtle surface imperfections, and convincing three-dimensional depth. The sculpture should feel physically engineered but retain an elegant organic appearance. Do not create a generic wireframe outline or a simple collection of springs. Preserve the original background unless the master prompt specifies otherwise. The master prompt overrides all preset defaults."
   },
   {
     "name": "SHAPED CANVAS ABSTRACTION",
@@ -53127,6 +53455,19 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Thick glassy black-brown iron glaze\n• Breaking to rust and amber over edges\n• Hare's-fur streaking running downward\n• Pooled dark glaze at the foot\n• Subject recognisable in the ceramic form"
+  },
+  {
+    "name": "TENSEGRITY STRUCTURE",
+    "category": [
+      "STRUCTURAL",
+      "SCULPTURE",
+      "GEOMETRIC",
+      "TRANSFORMATION"
+    ],
+    "message": "Take a picture and completely reconstruct the subject as an intricate three-dimensional tensegrity sculpture. Build the recognizable form of the subject from rigid rods, slender beams, and precisely tensioned cables that create the illusion of impossible balance and suspension. The structural elements must collectively form the subject's anatomy, pose, silhouette, clothing, and defining features. Create a visually sophisticated sculpture in which compression members appear to float within a carefully balanced network of tensile connections.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "The original photograph must not remain visible. Reconstruct the entire subject as a genuine tensegrity-inspired structure, not as an ordinary person surrounded by cables or a generic geometric framework. Use rigid rods and beams as compression elements and thin cables or wires as tension elements. The components must connect through carefully arranged junctions and appear to support one another through tension and compression. The subject's face, head, torso, arms, hands, legs, hair, and clothing must be recognizable through the structural arrangement. Preserve the original pose and proportions. Create convincing physical depth, visible cable tension, realistic connection points, and an elegant balance between open space and structural density. The structure should appear mechanically plausible while retaining the visually surprising floating appearance associated with tensegrity art. Do not create a simple stick figure or a collection of disconnected rods. Preserve the original background unless the master prompt specifies otherwise. The master prompt overrides all preset defaults."
   },
   {
     "name": "TERMINATOR VISION",
