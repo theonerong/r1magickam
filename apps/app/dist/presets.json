@@ -35883,131 +35883,131 @@
       "HISTORICAL",
       "TRADITIONAL ATTIRE"
     ],
-    "message": "Take a picture and transform the subject into a respectful, historically and culturally informed portrayal associated with the selected Native American nation. Preserve the subject's recognizable face, facial features, age, and identity. Dress the subject in nation-specific traditional or historically documented clothing, adornment, and accessories appropriate to the selected nation and chosen historical context. Transform the background into a richly detailed environment inspired by that nation's homeland, architecture, material culture, and history. The result should feel like a carefully researched cultural portrait, not a generic pan-Indigenous costume.",
+    "message": "Take a picture and transform the subject into a respectful, historically and culturally informed portrayal associated with the selected Native American nation. Preserve the subject's recognizable face, facial features, age, and identity. Dress the subject in nation-specific traditional or historically documented clothing, adornment, and accessories appropriate to the selected nation and chosen historical context. Where the selected option calls for it, add that nation's historically documented war paint or traditional face paint. Transform the background into a richly detailed environment inspired by that nation's homeland, architecture, material culture, and history. The result should feel like a carefully researched cultural portrait, not a generic pan-Indigenous costume.",
     "options": [
       {
         "id": "001",
-        "text": "Navajo (Diné) — Create a respectful Diné cultural portrait with historically informed clothing and details such as woven textiles, blankets, silverwork, and turquoise jewelry where appropriate. Set the scene in a landscape inspired by the Diné homeland of the American Southwest, with mesas, sandstone formations, and traditional architectural context. Avoid treating sacred objects or ceremonies as costume accessories."
+        "text": "Navajo (Diné) — Create a respectful Diné cultural portrait with historically informed clothing and details such as woven textiles, blankets, silverwork, and turquoise jewelry where appropriate. Set the scene in a landscape inspired by the Diné homeland of the American Southwest, with mesas, sandstone formations, and traditional architectural context. Avoid treating sacred objects or ceremonies as costume accessories. Do not add war paint or face paint: Diné face and body painting belongs to ceremonial contexts and must not be used as portrait decoration."
       },
       {
         "id": "002",
-        "text": "Cherokee — Create a historically informed Cherokee portrait using clothing, materials, and adornment appropriate to the selected historical period. Set the background in the southeastern woodlands or a historically appropriate Cherokee community setting. Avoid mixing in clothing or symbols from unrelated nations."
+        "text": "Cherokee — Create a historically informed Cherokee portrait using clothing, materials, and adornment appropriate to the selected historical period. Set the background in the southeastern woodlands or a historically appropriate Cherokee community setting. Avoid mixing in clothing or symbols from unrelated nations. Where the context is an eighteenth-century warrior, add historically documented Cherokee war paint in red and black, applied in simple bold areas or bands across the face; otherwise leave the face unpainted."
       },
       {
         "id": "003",
-        "text": "Lakota — Create a respectful Lakota portrait with historically grounded clothing and decorative details appropriate to the selected period and individual role. Set the background on the Northern Plains with prairie grasslands, open sky, and historically appropriate community surroundings. Do not use ceremonial regalia as generic decoration."
+        "text": "Lakota — Create a respectful Lakota portrait with historically grounded clothing and decorative details appropriate to the selected period and individual role. Set the background on the Northern Plains with prairie grasslands, open sky, and historically appropriate community surroundings. Do not use ceremonial regalia as generic decoration. Add traditional Lakota face paint where appropriate to the role, using simple stripes, bands, or areas of red, black, yellow, or white earth pigment. Lakota paint designs were personal and earned, so keep the design simple and dignified rather than inventing elaborate symbols."
       },
       {
         "id": "004",
-        "text": "Choctaw — Create a historically informed Choctaw portrait with clothing, textile details, and adornment appropriate to Choctaw history and the selected period. Set the scene in a southeastern woodland environment or a historically appropriate Choctaw community setting."
+        "text": "Choctaw — Create a historically informed Choctaw portrait with clothing, textile details, and adornment appropriate to Choctaw history and the selected period. Set the scene in a southeastern woodland environment or a historically appropriate Choctaw community setting. Where the context is a historical warrior or stickball player, add traditional Choctaw face paint in red and black with simple stripes or bands; otherwise leave the face unpainted."
       },
       {
         "id": "005",
-        "text": "Apache — Create a respectful Apache cultural portrait with clothing and practical adornment researched for the specific Apache community and historical period. Set the background in an appropriate Southwestern landscape of mountains, desert, and high desert vegetation."
+        "text": "Apache — Create a respectful Apache cultural portrait with clothing and practical adornment researched for the specific Apache community and historical period. Set the background in an appropriate Southwestern landscape of mountains, desert, and high desert vegetation. Where the context is a nineteenth-century warrior, add historically documented Apache war paint, such as a single horizontal band of white, yellow, or red pigment across the cheeks and bridge of the nose; otherwise leave the face unpainted."
       },
       {
         "id": "006",
-        "text": "Iroquois (Haudenosaunee) — Create a historically grounded Haudenosaunee portrait with clothing, materials, and adornment appropriate to the selected nation and period. Set the background in a northeastern woodland environment or historically appropriate longhouse community. Do not use sacred symbols or ceremonial objects as generic props."
+        "text": "Iroquois (Haudenosaunee) — Create a historically grounded Haudenosaunee portrait with clothing, materials, and adornment appropriate to the selected nation and period. Set the background in a northeastern woodland environment or historically appropriate longhouse community. Do not use sacred symbols or ceremonial objects as generic props. Where the context is a historical warrior, add traditional Haudenosaunee war paint in red and black, applied in simple bold areas or bands across the face; otherwise leave the face unpainted."
       },
       {
         "id": "007",
-        "text": "Comanche — Create a historically informed Comanche portrait with clothing and adornment appropriate to the person's role and historical period. Set the background on the Southern Plains with expansive grasslands, horses, and historically appropriate camp or community details."
+        "text": "Comanche — Create a historically informed Comanche portrait with clothing and adornment appropriate to the person's role and historical period. Set the background on the Southern Plains with expansive grasslands, horses, and historically appropriate camp or community details. Add traditional Comanche face paint, for which red was the characteristic color, applied across the face or forehead and along the hair parting, with black added for a war context."
       },
       {
         "id": "008",
-        "text": "Blackfeet (Siksikaitsitapi) — Create a respectful Blackfeet portrait with clothing, beadwork, and materials appropriate to the specific community and historical period. Set the background in the Northern Plains near the Rocky Mountains, with prairie and mountain scenery."
+        "text": "Blackfeet (Siksikaitsitapi) — Create a respectful Blackfeet portrait with clothing, beadwork, and materials appropriate to the specific community and historical period. Set the background in the Northern Plains near the Rocky Mountains, with prairie and mountain scenery. Add traditional Blackfeet face paint where appropriate, using red ochre applied across the face or forehead, with simple black or yellow accents for a warrior context. Do not reproduce sacred or society-specific paint designs."
       },
       {
         "id": "009",
-        "text": "Creek (Muscogee) — Create a historically grounded Muscogee portrait with clothing and adornment appropriate to the selected period. Set the background in a southeastern woodland or historically appropriate Muscogee town setting."
+        "text": "Creek (Muscogee) — Create a historically grounded Muscogee portrait with clothing and adornment appropriate to the selected period. Set the background in a southeastern woodland or historically appropriate Muscogee town setting. Where the context is a historical warrior, add traditional Muscogee war paint in red and black with simple stripes or bands; otherwise leave the face unpainted."
       },
       {
         "id": "010",
-        "text": "Seminole — Create a respectful Seminole portrait featuring historically informed clothing and distinctive patchwork textile traditions where appropriate. Set the background in a Florida Everglades or South Florida environment with cypress, palmettos, wetlands, and historically appropriate community details."
+        "text": "Seminole — Create a respectful Seminole portrait featuring historically informed clothing and distinctive patchwork textile traditions where appropriate. Set the background in a Florida Everglades or South Florida environment with cypress, palmettos, wetlands, and historically appropriate community details. Face paint was not a prominent part of Seminole dress, so leave the face unpainted unless the context is a Seminole Wars-era warrior, and then use only minimal, simple red or black paint."
       },
       {
         "id": "011",
-        "text": "Hopi — Create a culturally respectful Hopi portrait with clothing and textile details appropriate to the specific context and period. Set the background in a traditional Hopi Pueblo landscape with mesas and adobe architecture. Do not reproduce restricted ceremonial dress, masks, or sacred imagery."
+        "text": "Hopi — Create a culturally respectful Hopi portrait with clothing and textile details appropriate to the specific context and period. Set the background in a traditional Hopi Pueblo landscape with mesas and adobe architecture. Do not reproduce restricted ceremonial dress, masks, or sacred imagery. Do not add war paint or face paint: Hopi face and body painting belongs to restricted ceremonial contexts."
       },
       {
         "id": "012",
-        "text": "Zuni — Create a respectful Zuni portrait with historically informed clothing and jewelry traditions appropriate to the context. Set the background in a Pueblo community setting in the New Mexico landscape. Avoid depicting sacred ceremonial objects or restricted imagery."
+        "text": "Zuni — Create a respectful Zuni portrait with historically informed clothing and jewelry traditions appropriate to the context. Set the background in a Pueblo community setting in the New Mexico landscape. Avoid depicting sacred ceremonial objects or restricted imagery. Do not add war paint or face paint: Zuni face and body painting belongs to restricted ceremonial contexts."
       },
       {
         "id": "013",
-        "text": "Pueblo — Create a historically informed portrait associated with a specific Pueblo community, using appropriate clothing, textiles, and architectural context. Set the background among Pueblo-style adobe buildings in the Southwest. Avoid blending the traditions of different Pueblo communities into one generic costume."
+        "text": "Pueblo — Create a historically informed portrait associated with a specific Pueblo community, using appropriate clothing, textiles, and architectural context. Set the background among Pueblo-style adobe buildings in the Southwest. Avoid blending the traditions of different Pueblo communities into one generic costume. Do not add war paint or face paint: Pueblo face and body painting belongs to ceremonial dances and restricted religious contexts."
       },
       {
         "id": "014",
-        "text": "Ojibwe (Anishinaabe) — Create a respectful Anishinaabe portrait with clothing and adornment appropriate to the specific community and historical period, including beadwork or floral motifs where appropriate. Set the background near the Great Lakes with forests, lakeshore, and historically appropriate community details."
+        "text": "Ojibwe (Anishinaabe) — Create a respectful Anishinaabe portrait with clothing and adornment appropriate to the specific community and historical period, including beadwork or floral motifs where appropriate. Set the background near the Great Lakes with forests, lakeshore, and historically appropriate community details. Where the context is a historical warrior, add traditional Anishinaabe face paint in red vermilion and black, applied in simple bands or areas across the face; otherwise leave the face unpainted."
       },
       {
         "id": "015",
-        "text": "Cree — Create a historically grounded Cree portrait with clothing, materials, and practical adornment appropriate to the specific Cree community and period. Set the background in a northern woodland, boreal forest, or plains environment suited to the selected community."
+        "text": "Cree — Create a historically grounded Cree portrait with clothing, materials, and practical adornment appropriate to the specific Cree community and period. Set the background in a northern woodland, boreal forest, or plains environment suited to the selected community. Add traditional Cree face paint where appropriate, particularly for a Plains Cree warrior context, using red ochre with simple black accents; otherwise leave the face unpainted."
       },
       {
         "id": "016",
-        "text": "Pawnee — Create a respectful Pawnee portrait with clothing and adornment researched for the appropriate historical period. Set the background on the Central Plains with prairie grasslands and historically appropriate earth-lodge community architecture."
+        "text": "Pawnee — Create a respectful Pawnee portrait with clothing and adornment researched for the appropriate historical period. Set the background on the Central Plains with prairie grasslands and historically appropriate earth-lodge community architecture. Add traditional Pawnee face paint where appropriate to a warrior or scout context, using red pigment across the face or forehead with simple stripes; otherwise leave the face unpainted."
       },
       {
         "id": "017",
-        "text": "Shawnee — Create a historically informed Shawnee portrait with clothing and materials appropriate to the selected period. Set the background in an Eastern Woodlands environment with forest, river, and historically appropriate community details."
+        "text": "Shawnee — Create a historically informed Shawnee portrait with clothing and materials appropriate to the selected period. Set the background in an Eastern Woodlands environment with forest, river, and historically appropriate community details. Where the context is a historical warrior, add traditional Shawnee war paint in red and black, applied in simple bands or areas across the face; otherwise leave the face unpainted."
       },
       {
         "id": "018",
-        "text": "Arapaho — Create a respectful Arapaho portrait with historically grounded clothing and adornment appropriate to the selected period and role. Set the background on the Great Plains near the Rocky Mountains, with prairie and mountain scenery."
+        "text": "Arapaho — Create a respectful Arapaho portrait with historically grounded clothing and adornment appropriate to the selected period and role. Set the background on the Great Plains near the Rocky Mountains, with prairie and mountain scenery. Add traditional Arapaho face paint where appropriate to the role, using red, yellow, or black earth pigments in simple stripes or areas. Do not reproduce sacred or ceremony-specific paint designs."
       },
       {
         "id": "019",
-        "text": "Cheyenne — Create a historically informed Cheyenne portrait with clothing and decorative details appropriate to the selected historical period. Set the background on the Great Plains with open prairie, historically appropriate dwellings, and natural scenery."
+        "text": "Cheyenne — Create a historically informed Cheyenne portrait with clothing and decorative details appropriate to the selected historical period. Set the background on the Great Plains with open prairie, historically appropriate dwellings, and natural scenery. Add traditional Cheyenne face paint where appropriate to the role, using red, yellow, black, or white earth pigments in simple stripes or areas. Do not reproduce sacred or society-specific paint designs."
       },
       {
         "id": "020",
-        "text": "Crow (Apsáalooke) — Create a respectful Apsáalooke portrait with clothing, beadwork, and adornment appropriate to the specific historical context. Set the background in the Northern Plains and Montana landscape, with rolling grasslands and distant mountains."
+        "text": "Crow (Apsáalooke) — Create a respectful Apsáalooke portrait with clothing, beadwork, and adornment appropriate to the specific historical context. Set the background in the Northern Plains and Montana landscape, with rolling grasslands and distant mountains. Add traditional Apsáalooke face paint, such as the historically documented red pigment applied across the forehead and around the eyes, with simple additional stripes for a warrior context."
       },
       {
         "id": "021",
-        "text": "Nez Perce (Nimiipuu) — Create a historically grounded Nimiipuu portrait with clothing and adornment appropriate to the selected period. Set the background in the Pacific Northwest interior, with river valleys, mountains, and historically appropriate community surroundings."
+        "text": "Nez Perce (Nimiipuu) — Create a historically grounded Nimiipuu portrait with clothing and adornment appropriate to the selected period. Set the background in the Pacific Northwest interior, with river valleys, mountains, and historically appropriate community surroundings. Add traditional Nimiipuu face paint where appropriate, such as historically documented red pigment on the forehead and along the hair parting, with simple stripes for a warrior context."
       },
       {
         "id": "022",
-        "text": "Ute — Create a respectful Ute portrait with historically informed clothing and practical adornment appropriate to the specific Ute community and period. Set the background in the Rocky Mountain and Great Basin region with appropriate high-country scenery."
+        "text": "Ute — Create a respectful Ute portrait with historically informed clothing and practical adornment appropriate to the specific Ute community and period. Set the background in the Rocky Mountain and Great Basin region with appropriate high-country scenery. Add traditional Ute face paint where appropriate, using red, yellow, and black pigments in simple stripes or areas across the cheeks and forehead."
       },
       {
         "id": "023",
-        "text": "Paiute — Create a historically informed Paiute portrait with clothing and materials appropriate to the specific Paiute community and period. Set the background in a Great Basin landscape with mountains, sagebrush, and desert valleys."
+        "text": "Paiute — Create a historically informed Paiute portrait with clothing and materials appropriate to the specific Paiute community and period. Set the background in a Great Basin landscape with mountains, sagebrush, and desert valleys. Face paint was used sparingly; where appropriate to a dance or gathering context, add simple red ochre or white paint in modest stripes or dots, and otherwise leave the face unpainted."
       },
       {
         "id": "024",
-        "text": "Shoshone — Create a respectful Shoshone portrait with clothing and adornment grounded in the selected Shoshone community and historical period. Set the background in the Great Basin or Rocky Mountain region with historically appropriate landscape details."
+        "text": "Shoshone — Create a respectful Shoshone portrait with clothing and adornment grounded in the selected Shoshone community and historical period. Set the background in the Great Basin or Rocky Mountain region with historically appropriate landscape details. Add traditional Shoshone face paint where appropriate to the role, using red ochre with simple stripes or areas across the face."
       },
       {
         "id": "025",
-        "text": "Tlingit — Create a culturally informed Tlingit portrait with clothing and artistic details appropriate to the context, including carefully researched woven garments or designs where appropriate. Set the background in a coastal Southeast Alaska environment with forest, ocean, and architecture appropriate to Tlingit communities. Do not reproduce clan crests or ceremonial designs without context."
+        "text": "Tlingit — Create a culturally informed Tlingit portrait with clothing and artistic details appropriate to the context, including carefully researched woven garments or designs where appropriate. Set the background in a coastal Southeast Alaska environment with forest, ocean, and architecture appropriate to Tlingit communities. Do not reproduce clan crests or ceremonial designs without context. Tlingit face paint was traditionally black and red; if face paint is used, apply only simple areas of black or red pigment and never reproduce clan crest designs on the face."
       },
       {
         "id": "026",
-        "text": "Haida — Create a respectful Haida portrait with clothing and cultural details appropriate to the selected period. Set the background in the Pacific Northwest coastal environment, with ocean, rainforest, and historically appropriate village architecture. Do not use clan crests or sacred designs as generic decoration."
+        "text": "Haida — Create a respectful Haida portrait with clothing and cultural details appropriate to the selected period. Set the background in the Pacific Northwest coastal environment, with ocean, rainforest, and historically appropriate village architecture. Do not use clan crests or sacred designs as generic decoration. Haida face paint was traditionally black and red; if face paint is used, apply only simple areas of black or red pigment and never reproduce clan crest designs on the face."
       },
       {
         "id": "027",
-        "text": "Kwakwaka'wakw — Create a culturally informed Kwakwaka'wakw portrait with clothing and artistic details appropriate to the specific context. Set the background in a Pacific Northwest coastal community with rainforest, ocean, and historically appropriate architecture. Do not reproduce restricted ceremonial masks or regalia."
+        "text": "Kwakwaka'wakw — Create a culturally informed Kwakwaka'wakw portrait with clothing and artistic details appropriate to the specific context. Set the background in a Pacific Northwest coastal community with rainforest, ocean, and historically appropriate architecture. Do not reproduce restricted ceremonial masks or regalia. Kwakwaka'wakw face painting is tied to ceremonial contexts, so leave the face unpainted or use only minimal simple red ochre, and never reproduce ceremonial or crest designs."
       },
       {
         "id": "028",
-        "text": "Wampanoag — Create a historically informed Wampanoag portrait with clothing and materials appropriate to the selected historical period. Set the background in a coastal New England landscape with woodland, shoreline, and historically appropriate community details."
+        "text": "Wampanoag — Create a historically informed Wampanoag portrait with clothing and materials appropriate to the selected historical period. Set the background in a coastal New England landscape with woodland, shoreline, and historically appropriate community details. Add historically documented seventeenth-century Wampanoag face paint where appropriate, using red, black, white, or yellow pigment in simple bands or areas across the face."
       },
       {
         "id": "029",
-        "text": "Mi'kmaq — Create a respectful Mi'kmaq portrait with clothing and adornment grounded in the appropriate historical period and community. Set the background in the northeastern Atlantic coastal region with forests, waterways, and historically appropriate settlement details."
+        "text": "Mi'kmaq — Create a respectful Mi'kmaq portrait with clothing and adornment grounded in the appropriate historical period and community. Set the background in the northeastern Atlantic coastal region with forests, waterways, and historically appropriate settlement details. Add traditional Mi'kmaq face paint where appropriate to the period, using red ochre applied in simple areas or bands."
       },
       {
         "id": "030",
-        "text": "Diné (Navajo) Traditional Weaver — Create a respectful portrait of a Diné textile artist wearing historically informed everyday or work clothing, with a traditional weaving loom and a partially completed woven textile visible. Set the background in a culturally appropriate Southwestern home or weaving space, with careful attention to authentic weaving materials and patterns."
+        "text": "Diné (Navajo) Traditional Weaver — Create a respectful portrait of a Diné textile artist wearing historically informed everyday or work clothing, with a traditional weaving loom and a partially completed woven textile visible. Set the background in a culturally appropriate Southwestern home or weaving space, with careful attention to authentic weaving materials and patterns. Do not add war paint or face paint: this is an everyday portrait of a weaver at work."
       }
     ],
     "randomizeOptions": true,
-    "additionalInstructions": "CULTURAL ACCURACY AND RESPECT ARE ESSENTIAL. This preset creates a respectful cultural or historical portrait, not a caricature, costume-party stereotype, or generic Native American fantasy character. Preserve the subject's actual face, facial features, age, and identity. Do not change the subject's ethnicity or attempt to make the subject look like a stereotypical racial depiction. The transformation is achieved through historically and culturally informed clothing, materials, adornment, environment, and visual storytelling. Research the selected nation's distinct traditions rather than mixing clothing, hairstyles, beadwork, architecture, symbols, or objects from unrelated nations. Native American nations are distinct living peoples, not interchangeable styles. Use ordinary, documented clothing and appropriate material culture; do not invent sacred or restricted regalia, imitate ceremonial masks, reproduce sacred objects, or depict ceremonies as theatrical props. Do not assume every person from a nation wears the same clothing. Choose a plausible historical or contemporary context and keep the background consistent with it. Include recognizable regional landscape, architecture, crafts, textiles, and everyday community details where appropriate. Avoid generic tipis, feather headdresses, war paint, and other stereotypical Plains imagery unless specifically and historically appropriate to the selected nation and context. The subject must remain the clear focal point, with the background providing meaningful cultural and geographic context. The master prompt overrides preset defaults."
+    "additionalInstructions": "CULTURAL ACCURACY AND RESPECT ARE ESSENTIAL. This preset creates a respectful cultural or historical portrait, not a caricature, costume-party stereotype, or generic Native American fantasy character. Preserve the subject's actual face, facial features, age, and identity. Do not change the subject's ethnicity or attempt to make the subject look like a stereotypical racial depiction. The transformation is achieved through historically and culturally informed clothing, materials, adornment, environment, and visual storytelling. Research the selected nation's distinct traditions rather than mixing clothing, hairstyles, beadwork, architecture, symbols, or objects from unrelated nations. Native American nations are distinct living peoples, not interchangeable styles. Use ordinary, documented clothing and appropriate material culture; do not invent sacred or restricted regalia, imitate ceremonial masks, reproduce sacred objects, or depict ceremonies as theatrical props. Do not assume every person from a nation wears the same clothing. Choose a plausible historical or contemporary context and keep the background consistent with it. Include recognizable regional landscape, architecture, crafts, textiles, and everyday community details where appropriate. Avoid generic tipis, feather headdresses, and other stereotypical Plains imagery unless specifically and historically appropriate to the selected nation and context. WAR PAINT AND FACE PAINT: Follow the selected option's face-paint direction exactly. Where the option calls for war paint or traditional face paint, apply it as real hand-applied mineral or earth pigment with a matte, slightly uneven texture that follows the contours of the subject's face, using only the colors and simple placements described for that nation. Keep the subject's face, features, expression, and natural skin tone fully recognizable beneath the paint; the paint is applied on top of the skin and must never change the subject's skin color or ethnicity. Do not use generic Hollywood-style war paint, do not copy one nation's paint onto another, and do not invent elaborate symbols, sacred designs, or clan crests. Where the option says not to add face paint, or where the chosen context is an everyday or non-warrior portrait, leave the face completely unpainted. The subject must remain the clear focal point, with the background providing meaningful cultural and geographic context. The master prompt overrides preset defaults."
   },
   {
     "name": "NATURAL DISASTER",
