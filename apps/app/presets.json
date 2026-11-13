@@ -3171,6 +3171,60 @@
     "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Granular tonal areas characteristic of aquatint\n• Watercolor-like wash effects in print form\n• Visible plate tone and acid-bitten texture\n• Limited color palette typical of printmaking"
   },
   {
+    "name": "ARABIAN COSTUME",
+    "category": [
+      "OPTIONS",
+      "CULTURAL",
+      "COSTUMES",
+      "CHARACTERS"
+    ],
+    "message": "Take a picture and transform the subject into a character wearing an elaborate, visually authentic Arabian or Middle Eastern-inspired theatrical costume. Preserve the subject's recognizable face, facial features, age, and identity. The subject must be fully dressed in the selected costume, with the clothing, accessories, hairstyle, and setting working together to create a convincing character portrayal. Create a richly detailed cinematic scene with an appropriate background inspired by the selected character's cultural or historical setting.",
+    "options": [
+      {
+        "id": "001",
+        "text": "Arabian Sultan — Dress the subject in an elaborate royal sultan costume featuring a richly embroidered robe, ornate sash, jeweled accessories, and an impressive jeweled turban. Set the scene in a magnificent palace with Moorish arches, intricate geometric decoration, and luxurious furnishings."
+      },
+      {
+        "id": "002",
+        "text": "Arabian Princess — Dress the subject in an elegant royal gown with intricate embroidery, flowing fabrics, ornate jewelry, and a decorative jeweled headpiece. Set the scene in a luxurious palace courtyard with fountains, patterned tiles, and elegant Middle Eastern architecture."
+      },
+      {
+        "id": "003",
+        "text": "Arabian Belly Dancer — Dress the subject in a fully covered, elaborate theatrical belly-dance performance costume with a decorated fitted top, flowing layered skirt or harem-style trousers, jeweled belt, decorative veil, and ornate jewelry. Keep the costume tasteful and suitable for a staged dance performance. Set the scene on an ornate palace performance stage with colorful lanterns and rich decorative fabrics."
+      },
+      {
+        "id": "004",
+        "text": "Arabian Merchant — Dress the subject in traditional-inspired merchant clothing, a long robe, wrapped head covering, leather belt, and travel accessories. Set the scene in a bustling historic marketplace filled with colorful textiles, pottery, spices, and market stalls."
+      },
+      {
+        "id": "005",
+        "text": "Desert Nomad — Dress the subject in layered desert-travel clothing, a flowing robe, wrapped headscarf, protective face covering if appropriate, and practical leather accessories. Set the scene among dramatic desert dunes with a camel caravan and distant tents."
+      },
+      {
+        "id": "006",
+        "text": "Arabian Royal Guard — Dress the subject in an ornate historical palace-guard costume with a decorated tunic, embroidered sash, ceremonial armor details, and a decorative headpiece. Set the scene at the entrance to a grand palace."
+      },
+      {
+        "id": "007",
+        "text": "Arabian Storyteller — Dress the subject in a richly textured robe, embroidered vest, wrapped turban, and decorative belt. Set the scene in a traditional courtyard surrounded by carpets, lanterns, cushions, and intricate architecture."
+      },
+      {
+        "id": "008",
+        "text": "Arabian Magician — Dress the subject in an elaborate fantasy stage-magician costume inspired by Arabian folklore, with layered robes, embroidered patterns, a jeweled turban, and decorative accessories. Set the scene in a mysterious palace chamber filled with glowing lanterns and theatrical magical atmosphere."
+      },
+      {
+        "id": "009",
+        "text": "Arabian Noblewoman — Dress the subject in an elegant flowing gown, embroidered outer robe, ornate jewelry, and a decorative head covering or veil. Set the scene in a beautifully decorated historic residence with carved screens and patterned textiles."
+      },
+      {
+        "id": "010",
+        "text": "Arabian Palace Dancer — Dress the subject in a fully covered, elaborate traditional-inspired stage dance costume with flowing fabric, decorative embroidery, jewelry, and a coordinated headpiece. Set the scene in a lavish palace hall prepared for a theatrical performance."
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "This is a theatrical costume transformation. The subject is portraying a fictional character in a costume; do not change the subject's actual ethnicity, race, or identity. Preserve the subject's recognizable face and natural facial characteristics. The selected costume must be clearly visible and convincingly constructed, with realistic fabric, embroidery, layering, accessories, and appropriate footwear. For the belly-dancer option, create a fully dressed, tasteful stage-performance costume rather than nudity or revealing clothing. Avoid caricatures, exaggerated facial features, stereotypical depictions, or generic exoticized imagery. Use coherent architectural, decorative, and environmental details appropriate to the selected setting. The subject should remain the main focus of the image. The master prompt overrides preset defaults."
+  },
+  {
     "name": "ARCADE CABINET",
     "category": [
       "POP CULTURE",
@@ -3830,6 +3884,60 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "AVIATION CREW",
+    "category": [
+      "OPTIONS",
+      "OCCUPATIONS",
+      "UNIFORMS",
+      "PROFESSIONS"
+    ],
+    "message": "Take a picture and transform the subject into a professional aviation crew member wearing a complete, realistic airline uniform or aviation costume. Preserve the subject's recognizable face, facial features, age, and identity. Reconstruct the clothing as a convincing professional uniform, including appropriate accessories, insignia, and footwear. Create a realistic aviation environment that complements the selected role.",
+    "options": [
+      {
+        "id": "001",
+        "text": "Commercial Airline Captain — Dress the subject in a professional airline captain uniform with a tailored dark jacket, white shirt, tie, captain's shoulder stripes, and pilot hat. Place the subject in a modern aircraft cockpit with instrument panels and a view through the windshield."
+      },
+      {
+        "id": "002",
+        "text": "Commercial Airline First Officer — Dress the subject in a professional first-officer uniform with a tailored pilot jacket, white shirt, tie, and appropriate shoulder stripes. Set the scene inside a modern aircraft cockpit."
+      },
+      {
+        "id": "003",
+        "text": "Vintage Airline Pilot — Dress the subject in a classic mid-century airline pilot uniform with a double-breasted jacket, vintage pilot cap, polished shoes, and period-appropriate accessories. Set the scene beside a vintage passenger aircraft."
+      },
+      {
+        "id": "004",
+        "text": "Private Jet Pilot — Dress the subject in a sophisticated pilot uniform with a tailored jacket, crisp shirt, tie, and aviator sunglasses. Set the scene beside a luxurious private jet on an airport runway."
+      },
+      {
+        "id": "005",
+        "text": "Helicopter Pilot — Dress the subject in a practical flight suit, aviation headset, flight gloves, and pilot accessories. Set the scene beside or inside a helicopter at a landing pad."
+      },
+      {
+        "id": "006",
+        "text": "Military Aviation Pilot Costume — Dress the subject in a fictional military-inspired flight suit with flight patches, helmet, and aviation equipment. Make it a clearly theatrical costume rather than an actual official identity or credential. Set the scene beside a military-style aircraft."
+      },
+      {
+        "id": "007",
+        "text": "Classic Airline Stewardess — Dress the subject in an elegant vintage airline cabin-crew costume with a fitted tailored uniform, matching hat, scarf, gloves, and polished shoes. Set the scene inside a beautifully restored vintage passenger airplane."
+      },
+      {
+        "id": "008",
+        "text": "Modern Flight Attendant — Dress the subject in a polished contemporary airline cabin-crew uniform with a tailored jacket, coordinated shirt or blouse, scarf or tie, and professional accessories. Set the scene inside a modern aircraft cabin."
+      },
+      {
+        "id": "009",
+        "text": "Luxury First-Class Flight Attendant — Dress the subject in an elegant, upscale cabin-crew uniform with refined tailoring and tasteful accessories. Set the scene inside a luxurious first-class airplane cabin."
+      },
+      {
+        "id": "010",
+        "text": "Retro 1960s Stewardess — Dress the subject in a colorful, period-accurate 1960s airline stewardess costume with a tailored dress, matching hat, gloves, scarf, and vintage accessories. Set the scene in a retro airport terminal or vintage aircraft cabin."
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "The selected aviation role must be immediately recognizable from the complete uniform, accessories, and environment. Preserve the subject's actual face and identity; do not replace the subject with a generic stock-model face. Make the clothing look like real tailored fabric with accurate seams, buttons, collars, pockets, shoulder details, and accessories. Pilot options should look like pilots, not flight attendants; cabin-crew options should look like cabin crew, not pilots. Use fictional or generic airline insignia rather than inventing official credentials or falsely identifying the subject as a real employee. Show enough of the subject's body for the uniform to be clearly visible. The master prompt overrides preset defaults."
   },
   {
     "name": "BACK IN THE DAY POSTER",
@@ -7122,6 +7230,60 @@
     ],
     "randomizeOptions": true,
     "additionalInstructions": "FINAL RESULT:\nAn authentic-looking gameplay screenshot with the subject as the visible enemy/character sprite wearing predominantly green armor in a location-appropriate environment, complete with fully functional bottom status bar. Ensure the entire image reads clearly as a single authentic gameplay screenshot from a 1990s-era PC shooter, with crisp pixel edges, strong silhouette clarity, and cohesive retro aesthetics optimized for small screens."
+  },
+  {
+    "name": "BUTLER & MAID",
+    "category": [
+      "OPTIONS",
+      "OCCUPATIONS",
+      "COSTUMES",
+      "CHARACTERS"
+    ],
+    "message": "Take a picture and transform the subject into a professional household staff character wearing a complete, elegant butler or maid uniform. Preserve the subject's recognizable face, facial features, age, and identity. Reconstruct the subject's clothing as a convincing period-appropriate or contemporary household-service uniform, with realistic tailoring, accessories, and footwear. Create a detailed interior setting appropriate to the selected role.",
+    "options": [
+      {
+        "id": "001",
+        "text": "Classic English Butler — Dress the subject in a traditional black butler tailcoat or formal jacket, crisp white shirt, waistcoat, bow tie, and polished shoes. Add white gloves and a silver serving tray if appropriate. Set the scene in an elegant English manor with a grand staircase and polished wood interior."
+      },
+      {
+        "id": "002",
+        "text": "Modern Estate Butler — Dress the subject in a sophisticated contemporary butler uniform with a tailored dark suit, white shirt, understated tie, and immaculate shoes. Set the scene in a luxurious modern mansion or upscale estate."
+      },
+      {
+        "id": "003",
+        "text": "Victorian Butler — Dress the subject in a historically inspired Victorian household butler uniform with a formal dark coat, waistcoat, high-collared shirt, and carefully groomed appearance. Set the scene in a richly furnished Victorian mansion."
+      },
+      {
+        "id": "004",
+        "text": "Classic French Maid — Dress the subject in a traditional French maid theatrical costume with a black dress, white apron, modest neckline, decorative collar, and matching headpiece. Set the scene in an elegant historic mansion with polished furniture and refined interior details."
+      },
+      {
+        "id": "005",
+        "text": "Modern Housekeeper — Dress the subject in a neat professional housekeeping uniform with a coordinated tunic, apron, practical footwear, and cleaning accessories. Set the scene in a spotless upscale home."
+      },
+      {
+        "id": "006",
+        "text": "Victorian Housemaid — Dress the subject in a historically inspired Victorian maid uniform with a long modest dress, white apron, cuffs, collar, and simple cap. Set the scene in a grand Victorian household kitchen or service corridor."
+      },
+      {
+        "id": "007",
+        "text": "Royal Palace Butler — Dress the subject in an elaborate formal palace-household uniform with a tailored jacket, decorative trim, waistcoat, white gloves, and polished shoes. Set the scene in a magnificent royal palace interior."
+      },
+      {
+        "id": "008",
+        "text": "Luxury Hotel Concierge — Dress the subject in an immaculate formal hospitality uniform with a tailored jacket, decorative nameplate prop, and elegant accessories. Set the scene in the grand lobby of a luxury hotel."
+      },
+      {
+        "id": "009",
+        "text": "Household Staff Portrait — Dress the subject in a coordinated traditional household-service uniform with a formal jacket or modest dress, apron where appropriate, and polished accessories. Set the scene in a stately home with elegant furnishings."
+      },
+      {
+        "id": "010",
+        "text": "Comedic Butler — Dress the subject in an exaggerated but still recognizable formal butler uniform, complete with oversized bow tie, white gloves, and a silver serving tray. Set the scene in an extravagant mansion, with a playful, theatrical expression and humorous details."
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "The subject must clearly become the selected household-service character. Preserve the subject's real face and identity; do not substitute a generic model. The complete uniform must be visible and recognizable, with realistic tailoring, fabric, apron construction, collars, cuffs, buttons, accessories, and footwear. Keep maid costumes fully dressed and tasteful, without nudity or sexualized styling. Butler options should have formal, tailored menswear-inspired service uniforms unless the selected option specifies otherwise. Do not automatically change the subject's gender, body type, or facial features. Match the background to the selected setting, including appropriate furniture, lighting, architecture, and household details. The master prompt overrides preset defaults."
   },
   {
     "name": "BUTTERFLY WING SCALES",
@@ -19981,6 +20143,44 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "FINAL RESULT:\nA stunning nighttime portrait where the subject's face is masterfully recreated using a perfectly-timed orchestration of firework bursts at various stages and positions in the sky. The image captures the peak moment where dozens of coordinated pyrotechnic effects combine to form a recognizable likeness that is both ephemeral and spectacular—a face made entirely of light, color, and controlled fire in the darkness."
+  },
+  {
+    "name": "FIRST RESPONDER",
+    "category": [
+      "OPTIONS",
+      "OCCUPATIONS",
+      "UNIFORMS",
+      "PROFESSIONS"
+    ],
+    "message": "Take a picture and transform the subject into a recognizable first responder or medical professional wearing a complete, realistic professional uniform or theatrical occupational costume. Preserve the subject's recognizable face, facial features, age, and identity. Reconstruct the subject's clothing and accessories to match the selected profession. Create a detailed, believable professional environment in the background that reinforces the selected role.",
+    "options": [
+      {
+        "id": "001",
+        "text": "Police Officer — Dress the subject in a professional police uniform with a badge-style costume emblem, shoulder patches, utility belt, radio, and appropriate footwear. Set the scene on a city street beside a police cruiser. Use generic fictional department markings."
+      },
+      {
+        "id": "002",
+        "text": "SWAT Officer — Dress the subject in a tactical police-response costume with a protective vest, helmet, gloves, utility equipment, and appropriate boots. Set the scene near a specialized response vehicle in a controlled training environment. Use generic fictional markings."
+      },
+      {
+        "id": "003",
+        "text": "Firefighter — Dress the subject in authentic-looking firefighter turnout gear with a protective coat, reflective safety stripes, helmet, gloves, and heavy boots. Set the scene beside a fire engine at a fire station or controlled emergency-response training scene."
+      },
+      {
+        "id": "004",
+        "text": "EMT — Dress the subject in a professional emergency medical technician uniform with a medical-response shirt or jacket, reflective details, utility belt, and medical equipment. Set the scene beside an ambulance with emergency medical supplies visible."
+      },
+      {
+        "id": "005",
+        "text": "Nurse — Dress the subject in professional nursing scrubs, comfortable medical footwear, an identification-style badge prop, and a stethoscope if appropriate. Set the scene in a clean, modern hospital corridor or patient-care environment."
+      },
+      {
+        "id": "006",
+        "text": "Physician — Dress the subject in a professional white doctor's coat over medical scrubs or formal clothing, with a stethoscope and appropriate medical accessories. Set the scene in a modern examination room or hospital environment."
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "The subject must be transformed into the selected profession, not merely photographed wearing an unrelated outfit. Preserve the subject's real face and identity. Give the subject a complete, convincing uniform with realistic fabric, construction, protective equipment, accessories, and footwear. The background must clearly support the chosen profession: police station or patrol environment, controlled SWAT training environment, fire station or training scene, ambulance or emergency medical setting, hospital nursing environment, or physician's examination room. Do not depict graphic injuries, active violence, or dangerous emergency scenes. Use fictional or generic department, hospital, and agency markings; do not fabricate real credentials, official identification numbers, or claims of actual employment. Keep the result professional and respectful. The master prompt overrides preset defaults."
   },
   {
     "name": "FISH-EYE",
@@ -35676,6 +35876,140 @@
     "additionalInstructions": ""
   },
   {
+    "name": "NATIVE AMERICAN NATIONS",
+    "category": [
+      "OPTIONS",
+      "CULTURAL",
+      "HISTORICAL",
+      "TRADITIONAL ATTIRE"
+    ],
+    "message": "Take a picture and transform the subject into a respectful, historically and culturally informed portrayal associated with the selected Native American nation. Preserve the subject's recognizable face, facial features, age, and identity. Dress the subject in nation-specific traditional or historically documented clothing, adornment, and accessories appropriate to the selected nation and chosen historical context. Transform the background into a richly detailed environment inspired by that nation's homeland, architecture, material culture, and history. The result should feel like a carefully researched cultural portrait, not a generic pan-Indigenous costume.",
+    "options": [
+      {
+        "id": "001",
+        "text": "Navajo (Diné) — Create a respectful Diné cultural portrait with historically informed clothing and details such as woven textiles, blankets, silverwork, and turquoise jewelry where appropriate. Set the scene in a landscape inspired by the Diné homeland of the American Southwest, with mesas, sandstone formations, and traditional architectural context. Avoid treating sacred objects or ceremonies as costume accessories."
+      },
+      {
+        "id": "002",
+        "text": "Cherokee — Create a historically informed Cherokee portrait using clothing, materials, and adornment appropriate to the selected historical period. Set the background in the southeastern woodlands or a historically appropriate Cherokee community setting. Avoid mixing in clothing or symbols from unrelated nations."
+      },
+      {
+        "id": "003",
+        "text": "Lakota — Create a respectful Lakota portrait with historically grounded clothing and decorative details appropriate to the selected period and individual role. Set the background on the Northern Plains with prairie grasslands, open sky, and historically appropriate community surroundings. Do not use ceremonial regalia as generic decoration."
+      },
+      {
+        "id": "004",
+        "text": "Choctaw — Create a historically informed Choctaw portrait with clothing, textile details, and adornment appropriate to Choctaw history and the selected period. Set the scene in a southeastern woodland environment or a historically appropriate Choctaw community setting."
+      },
+      {
+        "id": "005",
+        "text": "Apache — Create a respectful Apache cultural portrait with clothing and practical adornment researched for the specific Apache community and historical period. Set the background in an appropriate Southwestern landscape of mountains, desert, and high desert vegetation."
+      },
+      {
+        "id": "006",
+        "text": "Iroquois (Haudenosaunee) — Create a historically grounded Haudenosaunee portrait with clothing, materials, and adornment appropriate to the selected nation and period. Set the background in a northeastern woodland environment or historically appropriate longhouse community. Do not use sacred symbols or ceremonial objects as generic props."
+      },
+      {
+        "id": "007",
+        "text": "Comanche — Create a historically informed Comanche portrait with clothing and adornment appropriate to the person's role and historical period. Set the background on the Southern Plains with expansive grasslands, horses, and historically appropriate camp or community details."
+      },
+      {
+        "id": "008",
+        "text": "Blackfeet (Siksikaitsitapi) — Create a respectful Blackfeet portrait with clothing, beadwork, and materials appropriate to the specific community and historical period. Set the background in the Northern Plains near the Rocky Mountains, with prairie and mountain scenery."
+      },
+      {
+        "id": "009",
+        "text": "Creek (Muscogee) — Create a historically grounded Muscogee portrait with clothing and adornment appropriate to the selected period. Set the background in a southeastern woodland or historically appropriate Muscogee town setting."
+      },
+      {
+        "id": "010",
+        "text": "Seminole — Create a respectful Seminole portrait featuring historically informed clothing and distinctive patchwork textile traditions where appropriate. Set the background in a Florida Everglades or South Florida environment with cypress, palmettos, wetlands, and historically appropriate community details."
+      },
+      {
+        "id": "011",
+        "text": "Hopi — Create a culturally respectful Hopi portrait with clothing and textile details appropriate to the specific context and period. Set the background in a traditional Hopi Pueblo landscape with mesas and adobe architecture. Do not reproduce restricted ceremonial dress, masks, or sacred imagery."
+      },
+      {
+        "id": "012",
+        "text": "Zuni — Create a respectful Zuni portrait with historically informed clothing and jewelry traditions appropriate to the context. Set the background in a Pueblo community setting in the New Mexico landscape. Avoid depicting sacred ceremonial objects or restricted imagery."
+      },
+      {
+        "id": "013",
+        "text": "Pueblo — Create a historically informed portrait associated with a specific Pueblo community, using appropriate clothing, textiles, and architectural context. Set the background among Pueblo-style adobe buildings in the Southwest. Avoid blending the traditions of different Pueblo communities into one generic costume."
+      },
+      {
+        "id": "014",
+        "text": "Ojibwe (Anishinaabe) — Create a respectful Anishinaabe portrait with clothing and adornment appropriate to the specific community and historical period, including beadwork or floral motifs where appropriate. Set the background near the Great Lakes with forests, lakeshore, and historically appropriate community details."
+      },
+      {
+        "id": "015",
+        "text": "Cree — Create a historically grounded Cree portrait with clothing, materials, and practical adornment appropriate to the specific Cree community and period. Set the background in a northern woodland, boreal forest, or plains environment suited to the selected community."
+      },
+      {
+        "id": "016",
+        "text": "Pawnee — Create a respectful Pawnee portrait with clothing and adornment researched for the appropriate historical period. Set the background on the Central Plains with prairie grasslands and historically appropriate earth-lodge community architecture."
+      },
+      {
+        "id": "017",
+        "text": "Shawnee — Create a historically informed Shawnee portrait with clothing and materials appropriate to the selected period. Set the background in an Eastern Woodlands environment with forest, river, and historically appropriate community details."
+      },
+      {
+        "id": "018",
+        "text": "Arapaho — Create a respectful Arapaho portrait with historically grounded clothing and adornment appropriate to the selected period and role. Set the background on the Great Plains near the Rocky Mountains, with prairie and mountain scenery."
+      },
+      {
+        "id": "019",
+        "text": "Cheyenne — Create a historically informed Cheyenne portrait with clothing and decorative details appropriate to the selected historical period. Set the background on the Great Plains with open prairie, historically appropriate dwellings, and natural scenery."
+      },
+      {
+        "id": "020",
+        "text": "Crow (Apsáalooke) — Create a respectful Apsáalooke portrait with clothing, beadwork, and adornment appropriate to the specific historical context. Set the background in the Northern Plains and Montana landscape, with rolling grasslands and distant mountains."
+      },
+      {
+        "id": "021",
+        "text": "Nez Perce (Nimiipuu) — Create a historically grounded Nimiipuu portrait with clothing and adornment appropriate to the selected period. Set the background in the Pacific Northwest interior, with river valleys, mountains, and historically appropriate community surroundings."
+      },
+      {
+        "id": "022",
+        "text": "Ute — Create a respectful Ute portrait with historically informed clothing and practical adornment appropriate to the specific Ute community and period. Set the background in the Rocky Mountain and Great Basin region with appropriate high-country scenery."
+      },
+      {
+        "id": "023",
+        "text": "Paiute — Create a historically informed Paiute portrait with clothing and materials appropriate to the specific Paiute community and period. Set the background in a Great Basin landscape with mountains, sagebrush, and desert valleys."
+      },
+      {
+        "id": "024",
+        "text": "Shoshone — Create a respectful Shoshone portrait with clothing and adornment grounded in the selected Shoshone community and historical period. Set the background in the Great Basin or Rocky Mountain region with historically appropriate landscape details."
+      },
+      {
+        "id": "025",
+        "text": "Tlingit — Create a culturally informed Tlingit portrait with clothing and artistic details appropriate to the context, including carefully researched woven garments or designs where appropriate. Set the background in a coastal Southeast Alaska environment with forest, ocean, and architecture appropriate to Tlingit communities. Do not reproduce clan crests or ceremonial designs without context."
+      },
+      {
+        "id": "026",
+        "text": "Haida — Create a respectful Haida portrait with clothing and cultural details appropriate to the selected period. Set the background in the Pacific Northwest coastal environment, with ocean, rainforest, and historically appropriate village architecture. Do not use clan crests or sacred designs as generic decoration."
+      },
+      {
+        "id": "027",
+        "text": "Kwakwaka'wakw — Create a culturally informed Kwakwaka'wakw portrait with clothing and artistic details appropriate to the specific context. Set the background in a Pacific Northwest coastal community with rainforest, ocean, and historically appropriate architecture. Do not reproduce restricted ceremonial masks or regalia."
+      },
+      {
+        "id": "028",
+        "text": "Wampanoag — Create a historically informed Wampanoag portrait with clothing and materials appropriate to the selected historical period. Set the background in a coastal New England landscape with woodland, shoreline, and historically appropriate community details."
+      },
+      {
+        "id": "029",
+        "text": "Mi'kmaq — Create a respectful Mi'kmaq portrait with clothing and adornment grounded in the appropriate historical period and community. Set the background in the northeastern Atlantic coastal region with forests, waterways, and historically appropriate settlement details."
+      },
+      {
+        "id": "030",
+        "text": "Diné (Navajo) Traditional Weaver — Create a respectful portrait of a Diné textile artist wearing historically informed everyday or work clothing, with a traditional weaving loom and a partially completed woven textile visible. Set the background in a culturally appropriate Southwestern home or weaving space, with careful attention to authentic weaving materials and patterns."
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "CULTURAL ACCURACY AND RESPECT ARE ESSENTIAL. This preset creates a respectful cultural or historical portrait, not a caricature, costume-party stereotype, or generic Native American fantasy character. Preserve the subject's actual face, facial features, age, and identity. Do not change the subject's ethnicity or attempt to make the subject look like a stereotypical racial depiction. The transformation is achieved through historically and culturally informed clothing, materials, adornment, environment, and visual storytelling. Research the selected nation's distinct traditions rather than mixing clothing, hairstyles, beadwork, architecture, symbols, or objects from unrelated nations. Native American nations are distinct living peoples, not interchangeable styles. Use ordinary, documented clothing and appropriate material culture; do not invent sacred or restricted regalia, imitate ceremonial masks, reproduce sacred objects, or depict ceremonies as theatrical props. Do not assume every person from a nation wears the same clothing. Choose a plausible historical or contemporary context and keep the background consistent with it. Include recognizable regional landscape, architecture, crafts, textiles, and everyday community details where appropriate. Avoid generic tipis, feather headdresses, war paint, and other stereotypical Plains imagery unless specifically and historically appropriate to the selected nation and context. The subject must remain the clear focal point, with the background providing meaningful cultural and geographic context. The master prompt overrides preset defaults."
+  },
+  {
     "name": "NATURAL DISASTER",
     "category": [
       "DISASTER",
@@ -46194,10 +46528,115 @@
       "TRANSFORMATION",
       "COSTUME"
     ],
-    "message": "Take a picture and transform the subject into a school boy or school girl wearing a culturally accurate school uniform.\n\nChoose or vary the style based on geography: Japanese, American, European, British, or other international school uniforms.\n\nUniforms should include appropriate elements such as blazers, ties, skirts, shorts, knee socks, backpacks, or loafers depending on region.\n\nThe subject should appear naturally dressed, not in cosplay. Clothing should fit realistically with proper fabric folds and wear.\n\nBackgrounds may include classrooms, hallways, schoolyards, or chalkboards.\n\nThe final image should be humorous due to contrast with the subject’s age or demeanor, but visually realistic.",
-    "options": [],
-    "randomizeOptions": false,
-    "additionalInstructions": ""
+    "message": "Take a picture and transform the subject into a school boy or school girl wearing a culturally accurate school uniform. Use the selected option to determine the country, era, and style of the uniform.\n\nUniforms should include the appropriate elements for the selected style, such as blazers, ties, skirts, shorts, trousers, knee socks, hats, backpacks, or loafers.\n\nThe subject should appear naturally dressed, not in cosplay. Clothing should fit realistically with proper fabric folds and wear.\n\nBackgrounds should match the selected style and may include classrooms, hallways, schoolyards, or chalkboards.\n\nThe final image should be humorous due to contrast with the subject’s age or demeanor, but visually realistic.",
+    "options": [
+      {
+        "id": "Japanese Sailor and Gakuran",
+        "text": "A Japanese school uniform: a navy sailor-style uniform with a neckerchief and pleated skirt, or a black high-collared gakuran with brass buttons, worn with a leather randoseru or school satchel, in a Japanese classroom with wooden desks or a schoolyard with cherry trees."
+      },
+      {
+        "id": "Japanese Blazer",
+        "text": "A modern Japanese blazer uniform with a crested navy blazer, white shirt, striped tie or ribbon bow, plaid skirt or grey trousers, loafers, and a shoulder school bag, in a bright Japanese school hallway lined with shoe lockers."
+      },
+      {
+        "id": "British Prep School",
+        "text": "A traditional British prep school uniform with a crested blazer, striped school tie, grey jumper, grey shorts, trousers, or pleated skirt, knee socks, polished black shoes, and a school cap or straw boater, in front of an old brick school building."
+      },
+      {
+        "id": "British Comprehensive",
+        "text": "An everyday British secondary school uniform with a slightly oversized black blazer, loosely knotted striped tie, untucked white shirt, dark trousers or skirt, scuffed black shoes, and a heavy backpack, in a crowded school corridor or rainy playground."
+      },
+      {
+        "id": "Scottish Tartan",
+        "text": "A Scottish school uniform with a tartan kilt or tartan pleated skirt, crested blazer, white shirt, school tie, knee socks, and black brogues, in the grounds of a grey stone school with misty hills behind."
+      },
+      {
+        "id": "Irish Convent School",
+        "text": "A traditional Irish school uniform with a wool V-neck jumper, white shirt, school tie, grey trousers or a long plaid skirt, dark tights or socks, and sensible black shoes, in a modest classroom or a green schoolyard."
+      },
+      {
+        "id": "American Parochial School",
+        "text": "An American parochial school uniform with a white polo or oxford shirt, plaid jumper dress or pleated skirt, or navy slacks with a clip-on tie and cardigan, knee socks, and saddle shoes or loafers, in a classroom with rows of desks and a flag in the corner."
+      },
+      {
+        "id": "American Prep Academy",
+        "text": "An American private academy uniform with a navy blazer and embroidered crest, khaki trousers or plaid skirt, button-down shirt, repp-stripe tie, and penny loafers, on a leafy campus with ivy-covered buildings."
+      },
+      {
+        "id": "American Public School Picture Day",
+        "text": "A classic American school picture day look with a neatly combed hairstyle, collared shirt or sweater, backpack, and lunch box, posed stiffly in front of a mottled blue studio portrait backdrop or beside a yellow school bus."
+      },
+      {
+        "id": "1950s American Schoolhouse",
+        "text": "A 1950s American school outfit with a short-sleeved plaid shirt, cuffed jeans, or a collared dress with a cardigan, saddle shoes, a leather book strap, and a tin lunch box, in a mid-century classroom with a green chalkboard and wooden desks."
+      },
+      {
+        "id": "Victorian Schoolroom",
+        "text": "A Victorian-era school outfit with a stiff white collar, dark wool jacket, knickerbockers, and cap, or a dark dress with a white pinafore and hair ribbons, holding a slate and chalk in a stern nineteenth-century schoolroom."
+      },
+      {
+        "id": "Australian Summer Uniform",
+        "text": "An Australian school uniform with a short-sleeved shirt and grey shorts or a checked cotton summer dress, long socks, black leather shoes, an oversized backpack, and a mandatory wide-brimmed school sun hat, in a sunny schoolyard with gum trees."
+      },
+      {
+        "id": "French Écolier",
+        "text": "A classic French schoolchild look with a buttoned school smock or neat navy cardigan, collared shirt, shorts or pleated skirt, ankle socks, leather shoes, and a boxy leather cartable satchel on the back, in a traditional French classroom or cobbled schoolyard."
+      },
+      {
+        "id": "German First Day of School",
+        "text": "A German first-day-of-school look with neat smart clothes, a large boxy Schulranzen backpack, and an enormous decorated Schultüte paper cone held proudly in both arms, posed outside a school entrance."
+      },
+      {
+        "id": "Soviet-Style First Bell",
+        "text": "A Soviet-style school uniform with a dark suit jacket and trousers, or a brown dress with a white lace apron and large white hair bows, holding a bouquet of flowers for the teacher at a first-day-of-school ceremony in a schoolyard."
+      },
+      {
+        "id": "Korean School Uniform",
+        "text": "A South Korean school uniform with a fitted crested blazer, white shirt, striped tie or ribbon, plaid skirt or grey trousers, a knit vest, name tag, and sneakers or loafers, in a modern classroom or a hallway with lockers."
+      },
+      {
+        "id": "Chinese Tracksuit Uniform",
+        "text": "A Chinese school uniform in the form of a loose, baggy blue-and-white zip-up tracksuit with a school crest, worn with a red neck scarf and sneakers, in a large schoolyard during morning exercises."
+      },
+      {
+        "id": "Indian School Uniform",
+        "text": "An Indian school uniform with a crisp white shirt, striped tie, school belt with a metal buckle, shorts, trousers, or a pleated pinafore, white socks, black shoes, a school badge, and neatly oiled hair or braids tied with ribbons, in a busy schoolyard."
+      },
+      {
+        "id": "Thai School Uniform",
+        "text": "A Thai school uniform with a white short-sleeved shirt embroidered with a school emblem, navy or khaki shorts or a navy pleated skirt, white ankle socks, and black or brown shoes, at morning assembly in an open-air schoolyard."
+      },
+      {
+        "id": "Vietnamese School Uniform",
+        "text": "A Vietnamese school uniform with a white shirt and red neck scarf with dark trousers, or a flowing white áo dài with white trousers, carrying a school bag beside a bicycle in a tree-lined school courtyard."
+      },
+      {
+        "id": "Malaysian and Indonesian Uniform",
+        "text": "A Southeast Asian school uniform with a white short-sleeved shirt and school badge, dark shorts or trousers, or a pinafore or baju kurung, white socks, white canvas shoes, and a school tie or cap, in a tropical school compound."
+      },
+      {
+        "id": "South African School Uniform",
+        "text": "A South African school uniform with a striped or crested blazer, white shirt, school tie, grey shorts or trousers or a tunic dress, long grey socks, and polished black shoes, on a sunny sports field beside brick school buildings."
+      },
+      {
+        "id": "East African School Uniform",
+        "text": "An East African school uniform with a brightly colored sweater, collared shirt, matching shorts or a pleated skirt, long socks, and black shoes, in a rural schoolyard with a simple classroom block and a painted school sign."
+      },
+      {
+        "id": "Caribbean School Uniform",
+        "text": "A Caribbean school uniform with a crisp short-sleeved shirt with epaulettes, khaki shorts or trousers, or a pleated tunic over a white blouse, school tie, white socks, and black shoes, in a breezy open-air school with palm trees outside."
+      },
+      {
+        "id": "Latin American School Uniform",
+        "text": "A Latin American school uniform with a white shirt, V-neck sweater or vest in the school color, dark trousers or a plaid pleated skirt, knee socks, and black shoes, lined up for a flag ceremony in a concrete school courtyard."
+      },
+      {
+        "id": "Cuban Pioneer Uniform",
+        "text": "A Cuban primary school uniform with a white short-sleeved shirt, red shorts or a red skirt with suspender straps, and a neatly tied neck scarf, in a sunlit schoolyard with pastel colonial buildings."
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "SELECTED OPTION: The selected option determines the country, era, uniform, and setting. Choose the boy's or girl's version of the uniform that best suits the subject. Reproduce the uniform accurately and respectfully, with the correct garments, colors, and accessories for that style, and do not mix elements from different options.\n\nSUBJECT: Preserve the subject's recognizable face, hairstyle, facial hair, body type, apparent age, and expression. Do not make the subject look younger. The humor comes from the subject's actual age or demeanor contrasting with the school uniform and setting.\n\nUNIFORM: The uniform must be complete, modest, properly sized, and worn as a real student would wear it, with realistic fabric, fit, folds, and wear. Replace the subject's original clothing entirely. The result must look like an authentic school uniform, not a costume, and must never be revealing or suggestive.\n\nSETTING: Place the subject in a believable school environment that matches the selected option, with realistic lighting, perspective, and shadows so the subject appears fully integrated into the scene.\n\nMASTER PROMPT: The master prompt overrides all preset defaults, including the selected option."
   },
   {
     "name": "SCHOOLHOUSE ROCK!",
@@ -54940,75 +55379,75 @@
     "options": [
       {
         "id": "001",
-        "text": "Cuba (Guayaberas, traditional Cuban dresses)"
+        "text": "Afghanistan (Perahan Tunban, Pakol hat)"
       },
       {
         "id": "002",
-        "text": "Dominican Republic (Traditional ceremonial attire)"
+        "text": "Albania (Fustanella, plis hat, xhubleta)"
       },
       {
         "id": "003",
-        "text": "Nicaragua (Traditional Nicaraguan dress)"
+        "text": "Algeria (Djellaba, haik, Karako, burnous)"
       },
       {
         "id": "004",
-        "text": "Mexico (Mariachi suits, Charras outfits, Tehuana dress)"
+        "text": "Angola (Pano cloth traditional dress)"
       },
       {
         "id": "005",
-        "text": "South Africa (Zulu attire, Ndebele beadwork, Xhosa blankets)"
-      },
-      {
-        "id": "006",
-        "text": "Norway (Bunad)"
-      },
-      {
-        "id": "007",
-        "text": "Jamaica (Quadrille dress, Rastafarian)"
-      },
-      {
-        "id": "008",
-        "text": "Japan (Kimono - long T-shaped silk robe, wide sleeves, seasonal patterns)"
-      },
-      {
-        "id": "009",
-        "text": "India (Sari, Sherwani, Salwar Kameez, Sikh attire)"
-      },
-      {
-        "id": "010",
-        "text": "Korea (Hanbok - jeogori jacket with chima skirt for women, baji pants for men)"
-      },
-      {
-        "id": "011",
-        "text": "Poland (White blouse with long skirt and apron for women, long-sleeved shirt with trousers for men)"
-      },
-      {
-        "id": "012",
-        "text": "Russia (Sarafan dress with kokoshnik for women, traditional embroidered menswear)"
-      },
-      {
-        "id": "013",
-        "text": "Mongolia (Colorful ethnic costumes with intricate patterns, deel robes)"
-      },
-      {
-        "id": "014",
-        "text": "Chile (Vibrant polleras, ponchos, huaso attire)"
-      },
-      {
-        "id": "015",
-        "text": "Ghana (Kente cloth attire, Smock)"
-      },
-      {
-        "id": "016",
-        "text": "UAE (Kandura for men, Abaya for women)"
-      },
-      {
-        "id": "017",
         "text": "Argentina (Poncho, bombacha trousers, wide-brimmed hat, pollera skirts, gaucho attire)"
       },
       {
+        "id": "006",
+        "text": "Armenia (Taraz attire, long embroidered robes)"
+      },
+      {
+        "id": "007",
+        "text": "Australia (Akubra hats, Aboriginal ceremonial wear, bush clothing)"
+      },
+      {
+        "id": "008",
+        "text": "Austria (Dirndl, Lederhosen, Tyrolean costume)"
+      },
+      {
+        "id": "009",
+        "text": "Azerbaijan (Traditional Azerbaijani dress)"
+      },
+      {
+        "id": "010",
+        "text": "Bahrain (Traditional Gulf dress)"
+      },
+      {
+        "id": "011",
+        "text": "Bangladesh (Sari, Punjabi, lungi)"
+      },
+      {
+        "id": "012",
+        "text": "Belarus (Traditional Belarusian embroidered shirt)"
+      },
+      {
+        "id": "013",
+        "text": "Belgium (Lace headdresses, traditional Flemish attire)"
+      },
+      {
+        "id": "014",
+        "text": "Belize (Garifuna traditional dress, Maya ceremonial attire)"
+      },
+      {
+        "id": "015",
+        "text": "Bhutan (Gho for men, Kira for women)"
+      },
+      {
+        "id": "016",
+        "text": "Bolivia (Aguayo textiles, chola dress with bowler hat, pollera skirt)"
+      },
+      {
+        "id": "017",
+        "text": "Bosnia and Herzegovina (Traditional šalvare, embroidered vest)"
+      },
+      {
         "id": "018",
-        "text": "Peru (Poncho, pollera, chullo hat, Andean textiles)"
+        "text": "Botswana (Leteise, German print dress)"
       },
       {
         "id": "019",
@@ -55016,527 +55455,527 @@
       },
       {
         "id": "020",
-        "text": "Colombia (Sombrero Vueltiao, colorful polleras, ruana)"
-      },
-      {
-        "id": "021",
-        "text": "Canada (Hudson's Bay blanket coats, buckskin dresses, Mackinaw jackets, Indigenous regalia)"
-      },
-      {
-        "id": "022",
-        "text": "USA (Colonial attire, Amish folk costumes, Native American regalia)"
-      },
-      {
-        "id": "023",
-        "text": "Algeria (Djellaba, haik, Karako, burnous)"
-      },
-      {
-        "id": "024",
-        "text": "Tunisia (Jebba, Kaftans, Djebba, Kamis)"
-      },
-      {
-        "id": "025",
-        "text": "Nigeria (Agbada, Isiagu, Babban Riga, Buba, Sokoto)"
-      },
-      {
-        "id": "026",
-        "text": "Morocco (Djellaba, Kaftan, Takchita)"
-      },
-      {
-        "id": "027",
-        "text": "Egypt (Kalasiris dress, Galabeya, tunics, head coverings)"
-      },
-      {
-        "id": "028",
-        "text": "Armenia (Taraz attire, long embroidered robes)"
-      },
-      {
-        "id": "029",
-        "text": "Malaysia (Baju Melayu for men, Baju Kurung for women)"
-      },
-      {
-        "id": "030",
-        "text": "Pakistan (Shalwar Kameez, Sherwani)"
-      },
-      {
-        "id": "031",
-        "text": "Iran (Qaba, Chador, Pirahan, Aba)"
-      },
-      {
-        "id": "032",
-        "text": "Turkey (Kaftan, Yelek, Şalvar, Fes)"
-      },
-      {
-        "id": "033",
-        "text": "Syria (Thoub robe, Sirwal pants, Bisht cloak, Abaya)"
-      },
-      {
-        "id": "034",
-        "text": "China (Hanfu, Zhongshan outfit, Cheongsam, Tang suit, Qipao)"
-      },
-      {
-        "id": "035",
-        "text": "Finland (Kalevala-inspired attire, traditional coastal dresses)"
-      },
-      {
-        "id": "036",
-        "text": "Sweden (Folkdräkt, Sami Gákti, Dala costume)"
-      },
-      {
-        "id": "037",
-        "text": "Germany (Lederhosen, Dirndl, Hessian Trachten)"
-      },
-      {
-        "id": "038",
-        "text": "Ireland (Aran sweater, brat cloak, traditional Celtic dress)"
-      },
-      {
-        "id": "039",
-        "text": "Romania (Fota, embroidered blouse dress combinations, Ie)"
-      },
-      {
-        "id": "040",
-        "text": "Denmark (Skjorte, Læderbukser, embroidered blouses with skirts)"
-      },
-      {
-        "id": "041",
         "text": "Britain (Tweed jackets, Barbour jackets, kilts, Morris dancer attire)"
       },
       {
-        "id": "042",
-        "text": "Switzerland (Dirndl, Appenzeller Tracht, Lederhosen)"
-      },
-      {
-        "id": "043",
-        "text": "Scotland (Kilt, Ghillie shirts, tartan patterns, sporran)"
-      },
-      {
-        "id": "044",
-        "text": "France (Paletot coats, Rococo gowns, Breton stripes)"
-      },
-      {
-        "id": "045",
-        "text": "Spain (Flamenco dress, Castilian dress, Baturro/Baturra costume, Chulapo/Chulapa costume, Baserritarra costume, Fallero/Fallera outfits)"
-      },
-      {
-        "id": "046",
-        "text": "Italy (Regional festival attire, lacework and vibrant southern patterns, Venetian carnival)"
-      },
-      {
-        "id": "047",
-        "text": "Portugal (Peasant dresses, nobility suits, embroidered wraps)"
-      },
-      {
-        "id": "048",
-        "text": "Greece (Chiton, Fustanella, himation, Evzone uniform)"
-      },
-      {
-        "id": "049",
-        "text": "Australia (Akubra hats, Aboriginal ceremonial wear, bush clothing)"
-      },
-      {
-        "id": "050",
-        "text": "Vietnam (Ao Dai - long silk tunic with pants)"
-      },
-      {
-        "id": "051",
-        "text": "Thailand (Chut Thai - traditional silk garments)"
-      },
-      {
-        "id": "052",
-        "text": "Indonesia (Kebaya, Batik, traditional Javanese attire)"
-      },
-      {
-        "id": "053",
-        "text": "Philippines (Barong Tagalog, Terno, Maria Clara)"
-      },
-      {
-        "id": "054",
-        "text": "Ethiopia (Habesha kemis, netela shawl)"
-      },
-      {
-        "id": "055",
-        "text": "Kenya (Kanga, Kitenge, Maasai shuka)"
-      },
-      {
-        "id": "056",
-        "text": "Senegal (Boubou, Grand Boubou)"
-      },
-      {
-        "id": "057",
-        "text": "Saudi Arabia (Thawb, Bisht, Ghutra)"
-      },
-      {
-        "id": "058",
-        "text": "Afghanistan (Perahan Tunban, Pakol hat)"
-      },
-      {
-        "id": "059",
-        "text": "Tibet (Chuba - long robe with wide sleeves)"
-      },
-      {
-        "id": "060",
-        "text": "Nepal (Daura Suruwal, Dhaka topi)"
-      },
-      {
-        "id": "061",
-        "text": "Bhutan (Gho for men, Kira for women)"
-      },
-      {
-        "id": "062",
-        "text": "Wales (Welsh costume with tall black hat)"
-      },
-      {
-        "id": "063",
-        "text": "Czech Republic (Moravian folk costume)"
-      },
-      {
-        "id": "064",
-        "text": "Hungary (Embroidered folk dress, Kalocsa patterns)"
-      },
-      {
-        "id": "065",
-        "text": "Bulgaria (Nosiya - colorful embroidered costume)"
-      },
-      {
-        "id": "066",
-        "text": "Croatia (Croatian costume with red caps)"
-      },
-      {
-        "id": "067",
-        "text": "Serbia (Šajkača cap, opanak shoes)"
-      },
-      {
-        "id": "068",
-        "text": "Georgia (Chokha - wool coat with cartridge holders)"
-      },
-      {
-        "id": "069",
-        "text": "Ukraine (Vyshyvanka embroidered shirt)"
-      },
-      {
-        "id": "070",
-        "text": "Lithuania (Sutartinės folk costume)"
-      },
-      {
-        "id": "071",
-        "text": "Estonia (Folk costume with ornate patterns)"
-      },
-      {
-        "id": "072",
-        "text": "Iceland (Þjóðbúningurinn - national costume)"
-      },
-      {
-        "id": "073",
-        "text": "New Zealand (Māori traditional dress, piupiu)"
-      },
-      {
-        "id": "074",
-        "text": "Samoa (Lavalava, Puletasi)"
-      },
-      {
-        "id": "075",
-        "text": "Guatemala (Huipil - embroidered blouse, corte skirt, colorful Maya textiles)"
-      },
-      {
-        "id": "076",
-        "text": "Honduras (Traditional Lenca attire, embroidered blouses)"
-      },
-      {
-        "id": "077",
-        "text": "El Salvador (Salvadoran folk dress, colorful skirts)"
-      },
-      {
-        "id": "078",
-        "text": "Costa Rica (Campesino attire, colorful ox-cart inspired patterns)"
-      },
-      {
-        "id": "079",
-        "text": "Panama (Pollera - elaborate embroidered dress, montuno, tembleques hair ornaments)"
-      },
-      {
-        "id": "080",
-        "text": "Belize (Garifuna traditional dress, Maya ceremonial attire)"
-      },
-      {
-        "id": "081",
-        "text": "Ecuador (Otavaleño poncho, felt hat, indigenous highland dress)"
-      },
-      {
-        "id": "082",
-        "text": "Bolivia (Aguayo textiles, chola dress with bowler hat, pollera skirt)"
-      },
-      {
-        "id": "083",
-        "text": "Paraguay (Ao Po'i - embroidered cotton, ñandutí lace)"
-      },
-      {
-        "id": "084",
-        "text": "Uruguay (Gaucho attire, bombacha, poncho)"
-      },
-      {
-        "id": "085",
-        "text": "Venezuela (Liqui liqui suit, joropo dance attire)"
-      },
-      {
-        "id": "086",
-        "text": "Guyana (Mashramani carnival costume, Indigenous Amerindian attire)"
-      },
-      {
-        "id": "087",
-        "text": "Suriname (Koto - Afro-Surinamese dress, angisa headwrap)"
-      },
-      {
-        "id": "088",
-        "text": "French Guiana (Creole traditional dress)"
-      },
-      {
-        "id": "089",
-        "text": "Haiti (Haitian folkloric dress, Carnival costume)"
-      },
-      {
-        "id": "090",
-        "text": "Trinidad and Tobago (Carnival costume, traditional East Indian wear)"
-      },
-      {
-        "id": "091",
-        "text": "Puerto Rico (Jíbaro attire - guayabera, pava hat, traditional bomba y plena dress)"
-      },
-      {
-        "id": "092",
-        "text": "Austria (Dirndl, Lederhosen, Tyrolean costume)"
-      },
-      {
-        "id": "093",
-        "text": "Netherlands (Volendam costume, wooden clogs, winged lace caps)"
-      },
-      {
-        "id": "094",
-        "text": "Belgium (Lace headdresses, traditional Flemish attire)"
-      },
-      {
-        "id": "095",
-        "text": "Luxembourg (Folk costume with embroidered apron)"
-      },
-      {
-        "id": "096",
-        "text": "Slovakia (Fujara folk costume, ornate embroidered vest)"
-      },
-      {
-        "id": "097",
-        "text": "Slovenia (Gorenjska costume, colorful embroidered aprons)"
-      },
-      {
-        "id": "098",
-        "text": "Bosnia and Herzegovina (Traditional šalvare, embroidered vest)"
-      },
-      {
-        "id": "099",
-        "text": "Albania (Fustanella, plis hat, xhubleta)"
-      },
-      {
-        "id": "100",
-        "text": "North Macedonia (Macedonian folk costume, traditional embroidery)"
-      },
-      {
-        "id": "101",
-        "text": "Bangladesh (Sari, Punjabi, lungi)"
-      },
-      {
-        "id": "102",
-        "text": "Sri Lanka (Kandyan sari, osariya)"
-      },
-      {
-        "id": "103",
-        "text": "Myanmar (Longyi, htamein)"
-      },
-      {
-        "id": "104",
-        "text": "Cambodia (Sampot, traditional Khmer silk)"
-      },
-      {
-        "id": "105",
-        "text": "Laos (Sinh skirt, pha biang sash)"
-      },
-      {
-        "id": "106",
-        "text": "Singapore (Peranakan kebaya)"
-      },
-      {
-        "id": "107",
+        "id": "021",
         "text": "Brunei (Baju Melayu, traditional songkok)"
       },
       {
-        "id": "108",
-        "text": "Papua New Guinea (Traditional highland dress, elaborate headdresses)"
+        "id": "022",
+        "text": "Bulgaria (Nosiya - colorful embroidered costume)"
       },
       {
-        "id": "109",
-        "text": "Fiji (Sulu, masi cloth)"
-      },
-      {
-        "id": "110",
-        "text": "Tonga (Ta'ovala mat, tupenu)"
-      },
-      {
-        "id": "111",
-        "text": "Solomon Islands (Traditional grass skirts, shell jewelry)"
-      },
-      {
-        "id": "112",
-        "text": "Vanuatu (Nambas, traditional island dress)"
-      },
-      {
-        "id": "113",
-        "text": "Tanzania (Kanga, kitenge)"
-      },
-      {
-        "id": "114",
-        "text": "Uganda (Gomesi, kanzu)"
-      },
-      {
-        "id": "115",
-        "text": "Rwanda (Mushanana, traditional Rwandan dress)"
-      },
-      {
-        "id": "116",
-        "text": "Cameroon (Toghu, traditional Bamileke attire)"
-      },
-      {
-        "id": "117",
-        "text": "Ivory Coast (Kente-inspired West African dress)"
-      },
-      {
-        "id": "118",
-        "text": "Mali (Boubou, mudcloth attire)"
-      },
-      {
-        "id": "119",
+        "id": "023",
         "text": "Burkina Faso (Faso Dan Fani woven cotton)"
       },
       {
-        "id": "120",
-        "text": "Niger (Traditional Tuareg dress, tagelmust)"
+        "id": "024",
+        "text": "Cambodia (Sampot, traditional Khmer silk)"
       },
       {
-        "id": "121",
+        "id": "025",
+        "text": "Cameroon (Toghu, traditional Bamileke attire)"
+      },
+      {
+        "id": "026",
+        "text": "Canada (Hudson's Bay blanket coats, buckskin dresses, Mackinaw jackets, Indigenous regalia)"
+      },
+      {
+        "id": "027",
         "text": "Chad (Boubou, traditional Muslim attire)"
       },
       {
-        "id": "122",
-        "text": "Somalia (Dirac, guntiino)"
+        "id": "028",
+        "text": "Chile (Vibrant polleras, ponchos, huaso attire)"
       },
       {
-        "id": "123",
-        "text": "Madagascar (Lamba, traditional wrap)"
+        "id": "029",
+        "text": "China (Hanfu, Zhongshan outfit, Cheongsam, Tang suit, Qipao)"
       },
       {
-        "id": "124",
-        "text": "Mozambique (Capulana wrap dress)"
+        "id": "030",
+        "text": "Colombia (Sombrero Vueltiao, colorful polleras, ruana)"
       },
       {
-        "id": "125",
-        "text": "Zimbabwe (Shweshwe fabric dress)"
+        "id": "031",
+        "text": "Costa Rica (Campesino attire, colorful ox-cart inspired patterns)"
       },
       {
-        "id": "126",
-        "text": "Botswana (Leteise, German print dress)"
+        "id": "032",
+        "text": "Croatia (Croatian costume with red caps)"
       },
       {
-        "id": "127",
-        "text": "Namibia (Herero dress, Victorian-inspired attire)"
+        "id": "033",
+        "text": "Cuba (Guayaberas, traditional Cuban dresses)"
       },
       {
-        "id": "128",
-        "text": "Angola (Pano cloth traditional dress)"
-      },
-      {
-        "id": "129",
-        "text": "Zambia (Chitenge wrap, traditional dress)"
-      },
-      {
-        "id": "130",
-        "text": "Malawi (Chitenje cloth dress)"
-      },
-      {
-        "id": "131",
-        "text": "Jordan (Traditional Bedouin dress, keffiyeh)"
-      },
-      {
-        "id": "132",
-        "text": "Lebanon (Traditional Lebanese mountain dress)"
-      },
-      {
-        "id": "133",
-        "text": "Iraq (Dishdasha, traditional Kurdish attire)"
-      },
-      {
-        "id": "134",
-        "text": "Kuwait (Traditional Gulf dress)"
-      },
-      {
-        "id": "135",
-        "text": "Oman (Dishdasha, kumma cap)"
-      },
-      {
-        "id": "136",
-        "text": "Qatar (Traditional Gulf attire)"
-      },
-      {
-        "id": "137",
-        "text": "Bahrain (Traditional Gulf dress)"
-      },
-      {
-        "id": "138",
-        "text": "Yemen (Traditional Yemeni dress, jambiya dagger)"
-      },
-      {
-        "id": "139",
-        "text": "Kazakhstan (Traditional Kazakh dress, saukele headdress)"
-      },
-      {
-        "id": "140",
-        "text": "Uzbekistan (Traditional atlas silk dress, doppi cap)"
-      },
-      {
-        "id": "141",
-        "text": "Turkmenistan (Traditional Turkmen dress, telpek hat)"
-      },
-      {
-        "id": "142",
-        "text": "Kyrgyzstan (Traditional Kyrgyz dress, kalpak hat)"
-      },
-      {
-        "id": "143",
-        "text": "Tajikistan (Traditional Tajik dress, embroidered coat)"
-      },
-      {
-        "id": "144",
-        "text": "Azerbaijan (Traditional Azerbaijani dress)"
-      },
-      {
-        "id": "145",
-        "text": "Belarus (Traditional Belarusian embroidered shirt)"
-      },
-      {
-        "id": "146",
-        "text": "Moldova (Traditional Moldovan ie blouse)"
-      },
-      {
-        "id": "147",
-        "text": "Latvia (Folk costume with elaborate patterns)"
-      },
-      {
-        "id": "148",
-        "text": "Malta (Għonnella traditional hooded dress)"
-      },
-      {
-        "id": "149",
+        "id": "034",
         "text": "Cyprus (Traditional Cypriot folk costume)"
       },
       {
-        "id": "150",
+        "id": "035",
+        "text": "Czech Republic (Moravian folk costume)"
+      },
+      {
+        "id": "036",
+        "text": "Denmark (Skjorte, Læderbukser, embroidered blouses with skirts)"
+      },
+      {
+        "id": "037",
+        "text": "Dominican Republic (Traditional ceremonial attire)"
+      },
+      {
+        "id": "038",
+        "text": "Ecuador (Otavaleño poncho, felt hat, indigenous highland dress)"
+      },
+      {
+        "id": "039",
+        "text": "Egypt (Kalasiris dress, Galabeya, tunics, head coverings)"
+      },
+      {
+        "id": "040",
+        "text": "El Salvador (Salvadoran folk dress, colorful skirts)"
+      },
+      {
+        "id": "041",
+        "text": "Estonia (Folk costume with ornate patterns)"
+      },
+      {
+        "id": "042",
+        "text": "Ethiopia (Habesha kemis, netela shawl)"
+      },
+      {
+        "id": "043",
+        "text": "Fiji (Sulu, masi cloth)"
+      },
+      {
+        "id": "044",
+        "text": "Finland (Kalevala-inspired attire, traditional coastal dresses)"
+      },
+      {
+        "id": "045",
+        "text": "France (Paletot coats, Rococo gowns, Breton stripes)"
+      },
+      {
+        "id": "046",
+        "text": "French Guiana (Creole traditional dress)"
+      },
+      {
+        "id": "047",
+        "text": "Georgia (Chokha - wool coat with cartridge holders)"
+      },
+      {
+        "id": "048",
+        "text": "Germany (Lederhosen, Dirndl, Hessian Trachten)"
+      },
+      {
+        "id": "049",
+        "text": "Ghana (Kente cloth attire, Smock)"
+      },
+      {
+        "id": "050",
+        "text": "Greece (Chiton, Fustanella, himation, Evzone uniform)"
+      },
+      {
+        "id": "051",
+        "text": "Guatemala (Huipil - embroidered blouse, corte skirt, colorful Maya textiles)"
+      },
+      {
+        "id": "052",
+        "text": "Guyana (Mashramani carnival costume, Indigenous Amerindian attire)"
+      },
+      {
+        "id": "053",
+        "text": "Haiti (Haitian folkloric dress, Carnival costume)"
+      },
+      {
+        "id": "054",
+        "text": "Honduras (Traditional Lenca attire, embroidered blouses)"
+      },
+      {
+        "id": "055",
+        "text": "Hungary (Embroidered folk dress, Kalocsa patterns)"
+      },
+      {
+        "id": "056",
+        "text": "Iceland (Þjóðbúningurinn - national costume)"
+      },
+      {
+        "id": "057",
+        "text": "India (Sari, Sherwani, Salwar Kameez, Sikh attire)"
+      },
+      {
+        "id": "058",
+        "text": "Indonesia (Kebaya, Batik, traditional Javanese attire)"
+      },
+      {
+        "id": "059",
+        "text": "Iran (Qaba, Chador, Pirahan, Aba)"
+      },
+      {
+        "id": "060",
+        "text": "Iraq (Dishdasha, traditional Kurdish attire)"
+      },
+      {
+        "id": "061",
+        "text": "Ireland (Aran sweater, brat cloak, traditional Celtic dress)"
+      },
+      {
+        "id": "062",
+        "text": "Italy (Regional festival attire, lacework and vibrant southern patterns, Venetian carnival)"
+      },
+      {
+        "id": "063",
+        "text": "Ivory Coast (Kente-inspired West African dress)"
+      },
+      {
+        "id": "064",
+        "text": "Jamaica (Quadrille dress, Rastafarian)"
+      },
+      {
+        "id": "065",
+        "text": "Japan (Kimono - long T-shaped silk robe, wide sleeves, seasonal patterns)"
+      },
+      {
+        "id": "066",
+        "text": "Jordan (Traditional Bedouin dress, keffiyeh)"
+      },
+      {
+        "id": "067",
+        "text": "Kazakhstan (Traditional Kazakh dress, saukele headdress)"
+      },
+      {
+        "id": "068",
+        "text": "Kenya (Kanga, Kitenge, Maasai shuka)"
+      },
+      {
+        "id": "069",
+        "text": "Korea (Hanbok - jeogori jacket with chima skirt for women, baji pants for men)"
+      },
+      {
+        "id": "070",
+        "text": "Kuwait (Traditional Gulf dress)"
+      },
+      {
+        "id": "071",
+        "text": "Kyrgyzstan (Traditional Kyrgyz dress, kalpak hat)"
+      },
+      {
+        "id": "072",
+        "text": "Laos (Sinh skirt, pha biang sash)"
+      },
+      {
+        "id": "073",
+        "text": "Latvia (Folk costume with elaborate patterns)"
+      },
+      {
+        "id": "074",
+        "text": "Lebanon (Traditional Lebanese mountain dress)"
+      },
+      {
+        "id": "075",
+        "text": "Lithuania (Sutartinės folk costume)"
+      },
+      {
+        "id": "076",
+        "text": "Luxembourg (Folk costume with embroidered apron)"
+      },
+      {
+        "id": "077",
+        "text": "Madagascar (Lamba, traditional wrap)"
+      },
+      {
+        "id": "078",
+        "text": "Malawi (Chitenje cloth dress)"
+      },
+      {
+        "id": "079",
+        "text": "Malaysia (Baju Melayu for men, Baju Kurung for women)"
+      },
+      {
+        "id": "080",
+        "text": "Mali (Boubou, mudcloth attire)"
+      },
+      {
+        "id": "081",
+        "text": "Malta (Għonnella traditional hooded dress)"
+      },
+      {
+        "id": "082",
+        "text": "Mexico (Mariachi suits, Charras outfits, Tehuana dress)"
+      },
+      {
+        "id": "083",
+        "text": "Moldova (Traditional Moldovan ie blouse)"
+      },
+      {
+        "id": "084",
+        "text": "Mongolia (Colorful ethnic costumes with intricate patterns, deel robes)"
+      },
+      {
+        "id": "085",
         "text": "Montenegro (Traditional Montenegrin costume)"
+      },
+      {
+        "id": "086",
+        "text": "Morocco (Djellaba, Kaftan, Takchita)"
+      },
+      {
+        "id": "087",
+        "text": "Mozambique (Capulana wrap dress)"
+      },
+      {
+        "id": "088",
+        "text": "Myanmar (Longyi, htamein)"
+      },
+      {
+        "id": "089",
+        "text": "Namibia (Herero dress, Victorian-inspired attire)"
+      },
+      {
+        "id": "090",
+        "text": "Nepal (Daura Suruwal, Dhaka topi)"
+      },
+      {
+        "id": "091",
+        "text": "Netherlands (Volendam costume, wooden clogs, winged lace caps)"
+      },
+      {
+        "id": "092",
+        "text": "New Zealand (Māori traditional dress, piupiu)"
+      },
+      {
+        "id": "093",
+        "text": "Nicaragua (Traditional Nicaraguan dress)"
+      },
+      {
+        "id": "094",
+        "text": "Niger (Traditional Tuareg dress, tagelmust)"
+      },
+      {
+        "id": "095",
+        "text": "Nigeria (Agbada, Isiagu, Babban Riga, Buba, Sokoto)"
+      },
+      {
+        "id": "096",
+        "text": "North Macedonia (Macedonian folk costume, traditional embroidery)"
+      },
+      {
+        "id": "097",
+        "text": "Norway (Bunad)"
+      },
+      {
+        "id": "098",
+        "text": "Oman (Dishdasha, kumma cap)"
+      },
+      {
+        "id": "099",
+        "text": "Pakistan (Shalwar Kameez, Sherwani)"
+      },
+      {
+        "id": "100",
+        "text": "Panama (Pollera - elaborate embroidered dress, montuno, tembleques hair ornaments)"
+      },
+      {
+        "id": "101",
+        "text": "Papua New Guinea (Traditional highland dress, elaborate headdresses)"
+      },
+      {
+        "id": "102",
+        "text": "Paraguay (Ao Po'i - embroidered cotton, ñandutí lace)"
+      },
+      {
+        "id": "103",
+        "text": "Peru (Poncho, pollera, chullo hat, Andean textiles)"
+      },
+      {
+        "id": "104",
+        "text": "Philippines (Barong Tagalog, Terno, Maria Clara)"
+      },
+      {
+        "id": "105",
+        "text": "Poland (White blouse with long skirt and apron for women, long-sleeved shirt with trousers for men)"
+      },
+      {
+        "id": "106",
+        "text": "Portugal (Peasant dresses, nobility suits, embroidered wraps)"
+      },
+      {
+        "id": "107",
+        "text": "Puerto Rico (Jíbaro attire - guayabera, pava hat, traditional bomba y plena dress)"
+      },
+      {
+        "id": "108",
+        "text": "Qatar (Traditional Gulf attire)"
+      },
+      {
+        "id": "109",
+        "text": "Romania (Fota, embroidered blouse dress combinations, Ie)"
+      },
+      {
+        "id": "110",
+        "text": "Russia (Sarafan dress with kokoshnik for women, traditional embroidered menswear)"
+      },
+      {
+        "id": "111",
+        "text": "Rwanda (Mushanana, traditional Rwandan dress)"
+      },
+      {
+        "id": "112",
+        "text": "Samoa (Lavalava, Puletasi)"
+      },
+      {
+        "id": "113",
+        "text": "Saudi Arabia (Thawb, Bisht, Ghutra)"
+      },
+      {
+        "id": "114",
+        "text": "Scotland (Kilt, Ghillie shirts, tartan patterns, sporran)"
+      },
+      {
+        "id": "115",
+        "text": "Senegal (Boubou, Grand Boubou)"
+      },
+      {
+        "id": "116",
+        "text": "Serbia (Šajkača cap, opanak shoes)"
+      },
+      {
+        "id": "117",
+        "text": "Singapore (Peranakan kebaya)"
+      },
+      {
+        "id": "118",
+        "text": "Slovakia (Fujara folk costume, ornate embroidered vest)"
+      },
+      {
+        "id": "119",
+        "text": "Slovenia (Gorenjska costume, colorful embroidered aprons)"
+      },
+      {
+        "id": "120",
+        "text": "Solomon Islands (Traditional grass skirts, shell jewelry)"
+      },
+      {
+        "id": "121",
+        "text": "Somalia (Dirac, guntiino)"
+      },
+      {
+        "id": "122",
+        "text": "South Africa (Zulu attire, Ndebele beadwork, Xhosa blankets)"
+      },
+      {
+        "id": "123",
+        "text": "Spain (Flamenco dress, Castilian dress, Baturro/Baturra costume, Chulapo/Chulapa costume, Baserritarra costume, Fallero/Fallera outfits)"
+      },
+      {
+        "id": "124",
+        "text": "Sri Lanka (Kandyan sari, osariya)"
+      },
+      {
+        "id": "125",
+        "text": "Suriname (Koto - Afro-Surinamese dress, angisa headwrap)"
+      },
+      {
+        "id": "126",
+        "text": "Sweden (Folkdräkt, Sami Gákti, Dala costume)"
+      },
+      {
+        "id": "127",
+        "text": "Switzerland (Dirndl, Appenzeller Tracht, Lederhosen)"
+      },
+      {
+        "id": "128",
+        "text": "Syria (Thoub robe, Sirwal pants, Bisht cloak, Abaya)"
+      },
+      {
+        "id": "129",
+        "text": "Tajikistan (Traditional Tajik dress, embroidered coat)"
+      },
+      {
+        "id": "130",
+        "text": "Tanzania (Kanga, kitenge)"
+      },
+      {
+        "id": "131",
+        "text": "Thailand (Chut Thai - traditional silk garments)"
+      },
+      {
+        "id": "132",
+        "text": "Tibet (Chuba - long robe with wide sleeves)"
+      },
+      {
+        "id": "133",
+        "text": "Tonga (Ta'ovala mat, tupenu)"
+      },
+      {
+        "id": "134",
+        "text": "Trinidad and Tobago (Carnival costume, traditional East Indian wear)"
+      },
+      {
+        "id": "135",
+        "text": "Tunisia (Jebba, Kaftans, Djebba, Kamis)"
+      },
+      {
+        "id": "136",
+        "text": "Turkey (Kaftan, Yelek, Şalvar, Fes)"
+      },
+      {
+        "id": "137",
+        "text": "Turkmenistan (Traditional Turkmen dress, telpek hat)"
+      },
+      {
+        "id": "138",
+        "text": "UAE (Kandura for men, Abaya for women)"
+      },
+      {
+        "id": "139",
+        "text": "Uganda (Gomesi, kanzu)"
+      },
+      {
+        "id": "140",
+        "text": "Ukraine (Vyshyvanka embroidered shirt)"
+      },
+      {
+        "id": "141",
+        "text": "Uruguay (Gaucho attire, bombacha, poncho)"
+      },
+      {
+        "id": "142",
+        "text": "USA (Colonial attire, Amish folk costumes, Native American regalia)"
+      },
+      {
+        "id": "143",
+        "text": "Uzbekistan (Traditional atlas silk dress, doppi cap)"
+      },
+      {
+        "id": "144",
+        "text": "Vanuatu (Nambas, traditional island dress)"
+      },
+      {
+        "id": "145",
+        "text": "Venezuela (Liqui liqui suit, joropo dance attire)"
+      },
+      {
+        "id": "146",
+        "text": "Vietnam (Ao Dai - long silk tunic with pants)"
+      },
+      {
+        "id": "147",
+        "text": "Wales (Welsh costume with tall black hat)"
+      },
+      {
+        "id": "148",
+        "text": "Yemen (Traditional Yemeni dress, jambiya dagger)"
+      },
+      {
+        "id": "149",
+        "text": "Zambia (Chitenge wrap, traditional dress)"
+      },
+      {
+        "id": "150",
+        "text": "Zimbabwe (Shweshwe fabric dress)"
       }
     ],
     "randomizeOptions": true,
