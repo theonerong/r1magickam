@@ -11338,6 +11338,82 @@
     "additionalInstructions": ""
   }, 
   {
+    "name": "COMBAT",
+    "category": [
+      "OPTIONS",
+      "MILITARY",
+      "HISTORICAL",
+      "COMBAT",
+      "ACTION",
+      "TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform the subject into a combat participant in a dramatic, cinematic military scenario. Preserve the subject's recognizable face, facial features, age, and identity. Dress the subject in a complete, period-appropriate or modern combat uniform with realistic protective equipment and a visible weapon appropriate to the selected scenario. Place the subject directly within the action environment, with convincing terrain, military equipment, atmosphere, and cinematic lighting. The subject must look like an active participant in the scenario rather than a person posing in front of a battlefield background.",
+    "options": [
+      {
+        "id": "001",
+        "text": "World War I Trench Soldier — Dress the subject in historically inspired World War I infantry uniform, steel helmet, webbing, and field equipment. Show the subject inside a muddy trench with sandbags, wooden supports, barbed wire, and a period-appropriate rifle."
+      },
+      {
+        "id": "002",
+        "text": "World War II Infantry Soldier — Dress the subject in a historically inspired World War II combat uniform, helmet, field pack, webbing, and boots. Show the subject advancing through a wartime battlefield with military vehicles and ruined buildings in the distance, holding a period-appropriate rifle."
+      },
+      {
+        "id": "003",
+        "text": "Modern Infantry Soldier — Dress the subject in a contemporary combat uniform, tactical vest, helmet, protective eyewear, gloves, and field equipment. Show the subject in a realistic modern military training or combat environment, carrying a modern service rifle."
+      },
+      {
+        "id": "004",
+        "text": "Sniper in Position — Dress the subject in a camouflage combat uniform with helmet, protective gear, and field accessories. Show the subject lying in a concealed observation position behind natural cover, looking through a scoped precision rifle in a cinematic military scene. Keep the scene non-graphic."
+      },
+      {
+        "id": "005",
+        "text": "Soldier in a Foxhole — Dress the subject in a complete combat uniform with helmet, protective equipment, and field gear. Show the subject crouched inside a muddy foxhole with sandbags, earth walls, and a period-appropriate rifle, surrounded by a dramatic battlefield atmosphere."
+      },
+      {
+        "id": "006",
+        "text": "Urban Combat Soldier — Dress the subject in a modern military combat uniform with tactical vest, helmet, gloves, and protective eyewear. Show the subject moving through a damaged urban training environment with concrete barriers, dust, and a service rifle."
+      },
+      {
+        "id": "007",
+        "text": "Jungle Warfare Soldier — Dress the subject in jungle camouflage, field equipment, helmet or appropriate headgear, and combat boots. Show the subject moving through dense tropical vegetation with a period-appropriate rifle and humid jungle atmosphere."
+      },
+      {
+        "id": "008",
+        "text": "Desert Combat Soldier — Dress the subject in desert camouflage, tactical vest, helmet, goggles, gloves, and field equipment. Set the scene in a dusty desert military environment with rugged terrain and military vehicles."
+      },
+      {
+        "id": "009",
+        "text": "Paratrooper — Dress the subject in a complete airborne infantry uniform with helmet, harness, parachute pack, and military equipment. Show the subject descending under an open parachute over a distant military landing zone."
+      },
+      {
+        "id": "010",
+        "text": "Machine Gunner — Dress the subject in a complete combat uniform with helmet, protective equipment, and ammunition-carrying gear. Show the subject in a supported defensive position operating a historically appropriate machine gun in a cinematic, non-graphic battlefield scene."
+      },
+      {
+        "id": "011",
+        "text": "Military Medic Under Fire — Dress the subject in a recognizable combat medic uniform with medical markings, helmet, medical pack, and first-aid supplies. Show the subject providing medical assistance in a protected battlefield aid position, with no graphic injuries."
+      },
+      {
+        "id": "012",
+        "text": "Military Commander — Dress the subject in a historically or contemporary appropriate command uniform with field jacket, map case, and communication equipment. Show the subject directing a military operation from a field command post."
+      },
+      {
+        "id": "013",
+        "text": "Special Operations Soldier — Dress the subject in a modern specialized military field uniform with protective vest, helmet, communications headset, gloves, and equipment. Set the scene in a dramatic military training environment with tactical vehicles."
+      },
+      {
+        "id": "014",
+        "text": "Civil War Soldier — Dress the subject in a historically inspired American Civil War military uniform appropriate to the selected side, with period coat, trousers, belt, boots, kepi or period headgear, and a period rifle. Set the scene in a historical battlefield encampment."
+      },
+      {
+        "id": "015",
+        "text": "Napoleonic Infantry Soldier — Dress the subject in a historically inspired Napoleonic-era military uniform with period coat, cross-belts, trousers, tall shako, and period musket. Set the scene on a dramatic European battlefield with period military formations."
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "• Preserve the subject's actual face, facial features, age, and identity. Do not replace the subject with a generic soldier.\n• Completely reconstruct the subject's clothing into the selected military uniform. Include appropriate headgear, footwear, protective equipment, webbing, packs, and other visible accessories.\n• The subject must be an active participant in the selected scenario, not simply standing in front of a military background.\n• Include a clearly visible, historically or contextually appropriate weapon when specified by the option. Weapons must be carried naturally and safely, with believable proportions and positioning.\n• Keep weapons and combat action fictional and cinematic. Do not show graphic wounds, gore, executions, or identifiable real-world combatants.\n• Match the uniform, weapon, equipment, terrain, vehicles, and architecture to the selected historical period or modern scenario. Do not mix modern equipment into historical scenes.\n• Use convincing body posture, environmental interaction, lighting, depth, and atmospheric effects such as dust, smoke, rain, or battlefield haze where appropriate.\n• Preserve the subject's face clearly; helmets, goggles, and other equipment must not unnecessarily obscure identity.\n• Do not make the subject appear to be an actual named military service member or fabricate real military credentials.\n• The master prompt overrides preset defaults.\n\nFINAL VALIDATION:\n✓ Subject is dressed in a complete, coherent combat uniform.\n✓ Subject is visibly participating in the selected scenario.\n✓ Weapon and equipment match the period and role.\n✓ Background supports the scenario.\n✓ Subject's identity remains recognizable.\n✓ No graphic violence or gore."
+  },
+  {
     "name": "COMEDY CLASSIC",
     "category": [
       "OPTIONS",
@@ -23002,6 +23078,82 @@
     "additionalInstructions": ""
   },
   {
+    "name": "GREEKS/ROMANS",
+    "category": [
+      "OPTIONS",
+      "HISTORICAL",
+      "ANCIENT GREECE",
+      "ANCIENT ROME",
+      "COSTUMES",
+      "TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform the subject into a historically inspired character from Ancient Greece or Ancient Rome. Preserve the subject's recognizable face, facial features, age, and identity. Completely reconstruct the subject's clothing, hairstyle, accessories, and surroundings to portray the selected historical role. Create an immersive ancient-world environment with architecture, landscapes, furnishings, and details appropriate to the selected civilization and character.",
+    "options": [
+      {
+        "id": "001",
+        "text": "Greek Nobleman — Transform the subject into an aristocratic Greek man wearing an elegant chiton or himation, finely draped fabrics, leather sandals, and tasteful jewelry. Set the scene in an upscale ancient Greek residence with marble columns and classical sculpture."
+      },
+      {
+        "id": "002",
+        "text": "Greek Noblewoman — Transform the subject into an aristocratic Greek woman wearing a beautifully draped peplos or chiton, an ornate belt, jewelry, sandals, and an elegant hairstyle. Set the scene in a luxurious Greek courtyard with columns, gardens, and classical architecture."
+      },
+      {
+        "id": "003",
+        "text": "Greek Peasant — Transform the subject into an everyday ancient Greek villager wearing simple linen or wool garments, a practical tunic, sandals, and a rustic belt. Set the scene in a working village with stone buildings, pottery, baskets, and agricultural surroundings."
+      },
+      {
+        "id": "004",
+        "text": "Greek Warrior — Transform the subject into an ancient Greek hoplite wearing a bronze helmet, protective cuirass, greaves, tunic, and carrying a round shield and spear. Set the scene on an ancient battlefield with Greek soldiers and classical terrain."
+      },
+      {
+        "id": "005",
+        "text": "Spartan Warrior — Transform the subject into a formidable Spartan warrior wearing a historically inspired bronze helmet, red cloak, leather and bronze armor, greaves, and carrying a round shield and spear. Set the scene among Spartan warriors in an ancient Greek military encampment."
+      },
+      {
+        "id": "006",
+        "text": "Athenian Citizen — Transform the subject into an ancient Athenian citizen wearing a refined Greek tunic and himation with sandals and historically appropriate accessories. Set the scene in ancient Athens near the Acropolis, surrounded by temples, marble architecture, and bustling streets."
+      },
+      {
+        "id": "007",
+        "text": "Greek Philosopher — Transform the subject into a distinguished ancient Greek philosopher wearing a draped himation, with a thoughtful expression and historically appropriate hairstyle. Set the scene in a classical academy or open-air gathering surrounded by columns, scrolls, and students."
+      },
+      {
+        "id": "008",
+        "text": "Greek Goddess or God — Transform the subject into a majestic mythological Greek deity wearing elaborate classical robes, a decorative crown or laurel wreath, and symbolic accessories appropriate to a fictionalized mythological portrayal. Set the scene on Mount Olympus with monumental Greek architecture and dramatic celestial lighting."
+      },
+      {
+        "id": "009",
+        "text": "Roman Nobleman — Transform the subject into a wealthy Roman aristocrat wearing a finely tailored toga with a purple border, elegant tunic, leather sandals, and refined accessories. Set the scene in a luxurious Roman villa with marble columns, mosaics, and frescoes."
+      },
+      {
+        "id": "010",
+        "text": "Roman Noblewoman — Transform the subject into an elegant Roman aristocratic woman wearing a finely layered stola and palla, elaborate jewelry, decorated sandals, and a carefully styled Roman hairstyle. Set the scene in a luxurious Roman villa or garden courtyard."
+      },
+      {
+        "id": "011",
+        "text": "Roman Emperor — Transform the subject into a powerful Roman Emperor wearing an imperial toga with purple accents, ornate ceremonial armor or formal robes, a laurel wreath, and imperial accessories. Set the scene in a grand Roman palace or imperial forum with monumental architecture."
+      },
+      {
+        "id": "012",
+        "text": "Roman Empress — Transform the subject into a regal Roman Empress wearing an elaborate imperial stola and palla, intricate gold jewelry, a refined Roman hairstyle, and a decorative diadem. Set the scene in an opulent imperial palace with marble columns and Roman mosaics."
+      },
+      {
+        "id": "013",
+        "text": "Roman Gladiator — Transform the subject into a muscular-looking but identity-preserving Roman gladiator wearing historically inspired arena armor, leather protection, arm guards, and carrying a gladius and shield. Set the scene inside the Colosseum with spectators and dramatic arena lighting."
+      },
+      {
+        "id": "014",
+        "text": "Roman Legionary — Transform the subject into a Roman soldier wearing segmented or historically appropriate legionary armor, a helmet, red tunic, military sandals, and carrying a shield and spear. Set the scene in a Roman military camp or along a fortified frontier."
+      },
+      {
+        "id": "015",
+        "text": "Roman Senator — Transform the subject into a distinguished Roman senator wearing a formal white toga with a broad purple stripe, traditional sandals, and refined accessories. Set the scene inside the Roman Senate chamber or a monumental civic building."
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "• Preserve the subject's actual face, facial features, age, and recognizable identity. Do not replace the subject with a generic historical character.\n• Transform the subject's entire visible outfit into clothing appropriate to the selected ancient Greek or Roman role.\n• Use historically informed garments, fabrics, armor, footwear, hairstyles, jewelry, and accessories.\n• Greek and Roman clothing, armor, architecture, and cultural details must remain distinct; do not mix the two civilizations indiscriminately.\n• Match the background to the selected role and civilization, including architecture, landscape, furnishings, props, and other people where appropriate.\n• Show enough of the subject's body for the costume to be clearly visible. Do not default to a head-and-shoulders portrait when the selected role requires a full-body portrayal.\n• Weapons and armor should be appropriate to the selected historical character. Combat scenes may be dramatic but should not obscure the subject.\n• Avoid modern objects, modern clothing, fantasy armor, and anachronistic accessories unless explicitly requested by the master prompt.\n• Do not turn every Greek character into a warrior or every Roman character into an emperor. Follow the selected option precisely.\n• The master prompt overrides preset defaults.\n\nFINAL VALIDATION:\n✓ Subject's identity remains recognizable.\n✓ Costume clearly represents the selected Greek or Roman role.\n✓ Background reflects the correct ancient civilization.\n✓ Clothing, armor, and accessories are historically inspired and coherent.\n✓ Subject is fully integrated into the scene rather than pasted over it."
+  },
+  {
     "name": "GREEK/ROMAN GOD",
     "category": [
       "MYTHOLOGY",
@@ -24366,6 +24518,110 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "The subject must be reconstructed from the Hilbert curve itself, not from an unchanged photograph covered with a decorative maze pattern. Use a continuous or visually continuous recursive path that fills the subject's actual silhouette. The curve must adapt to the subject's anatomy, facial proportions, hairstyle, clothing, and pose. Dense, tightly packed sections should create darker regions and shadows; wider spacing should create highlights. Smaller recursive turns should provide fine detail around the eyes, nose, mouth, and other recognizable features, while larger folds establish the overall body shape. Preserve the original subject's identity and recognizable appearance. The path must remain mathematically organized and exhibit the characteristic space-filling behavior of a Hilbert curve. Do not create a generic square maze, unrelated geometric grid, barcode, or simple contour tracing. Do not place a Hilbert pattern over an otherwise unchanged subject. The original photograph must be completely replaced by the mathematical reconstruction. Preserve the original background unless the master prompt specifies otherwise. Any subject, pose, setting, mood, action, artistic direction, or selection specified by the master prompt overrides the defaults in this preset."
+  },
+  {
+    "name": "HISTORICAL FIGURE FLASH CARD",
+    "category": [
+      "OPTIONS",
+      "EDUCATIONAL",
+      "HISTORICAL",
+      "BIOGRAPHICAL",
+      "FAMOUS FIGURES",
+      "TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform the subject into a historically significant, famous, or legendary figure selected from the category specified below. Preserve the subject's recognizable facial identity while transforming their appearance, clothing, hairstyle, accessories, surroundings, and overall presentation to accurately represent the selected figure.\n\nThe final image must resemble a beautifully designed, educational historical flash card. It must include a compelling portrait of the transformed subject along with clearly legible written information identifying the selected figure and explaining their historical significance, major contributions, achievements, and important facts about their life.\n\nRandomly select a specific individual or character from the selected category. Do not simply choose the most obvious or commonly depicted person every time. Use a varied selection of figures from different countries, civilizations, cultures, and historical periods.",
+    "randomizeOptions": true,
+    "options": [
+      {
+        "id": "001",
+        "text": "Mythology — Randomly select a significant figure from world mythology, including Greek and Roman gods and goddesses, demigods, mythological heroes, legendary warriors, mythical kings and queens, and supernatural figures. Draw from a broad range of mythological traditions and civilizations. Transform the subject into the selected mythological figure using recognizable traditional clothing, armor, hairstyle, attributes, symbolic objects, and mythological surroundings. Include the figure's name, mythology or cultural tradition, powers or attributes, major myths, legendary deeds, relationships, and historical or cultural significance."
+      },
+      {
+        "id": "002",
+        "text": "Politician — Randomly select a historically significant political figure from any country, government, civilization, or historical period. This category includes presidents, prime ministers, monarchs who exercised political authority, diplomats, statesmen, heads of government, ambassadors, foreign ministers, peace negotiators, and influential political leaders. Transform the subject into the selected figure with historically appropriate clothing, hairstyle, accessories, official surroundings, and recognizable period details. Include the person's name, country or political institution, years in office or period of influence, political achievements, major policies, diplomatic accomplishments, important events, and historical legacy."
+      },
+      {
+        "id": "003",
+        "text": "Ruler — Randomly select a historically significant sovereign ruler from any country, civilization, or historical period, including emperors, empresses, kings, queens, pharaohs, sultans, tsars, czars, monarchs, and other heads of sovereign states or empires. Select a ruler appropriate to the subject's gender presentation when possible, but do not exclude historically significant rulers based solely on gender. Transform the subject into the selected ruler using historically accurate royal or imperial clothing, crown or headwear, hairstyle, skin tone, jewelry, regalia, and surroundings. Include the ruler's name, kingdom, empire, dynasty, or civilization, reign dates, important achievements, major historical events, military or political accomplishments, dynastic significance, and notable facts about their rule."
+      },
+      {
+        "id": "004",
+        "text": "Revolutionary Figure — Randomly select a historically significant revolutionary, rebel, resistance leader, freedom fighter, revolutionary thinker, or influential figure associated with a major political, social, ideological, or cultural revolution. Include people who led uprisings, organized resistance movements, challenged established governments, fought colonial rule, inspired revolutions, or developed ideas that transformed societies. Transform the subject into the selected figure using historically appropriate clothing, hairstyle, accessories, period details, and a setting associated with their movement or cause. Include the person's name, movement, country, historical period, beliefs or objectives, major actions, important events, and lasting influence. Do not portray every revolutionary as a military combatant; reflect the individual's actual historical role."
+      },
+      {
+        "id": "005",
+        "text": "Scientist — Randomly select a historically significant scientist, researcher, medical pioneer, physician, surgeon, epidemiologist, or medical innovator from any scientific discipline or historical period. Include influential figures in physics, chemistry, biology, astronomy, medicine, genetics, neuroscience, and other scientific fields, as well as pioneers responsible for major medical discoveries and advances. Transform the subject into the selected scientist using historically appropriate clothing, hairstyle, tools, laboratory equipment, medical instruments, and surroundings. Include the person's name, field of study, major discoveries, scientific or medical contributions, important experiments, notable publications, and lasting impact on science or human health."
+      },
+      {
+        "id": "006",
+        "text": "Artist — Randomly select a historically significant artist or entertainer from any country, culture, or historical period. This category includes musicians, composers, singers, actors, actresses, writers, poets, painters, sculptors, photographers, dancers, theatrical performers, comedians, and other influential creative or performing artists. Transform the subject into the selected person using historically appropriate clothing, hairstyle, accessories, artistic tools, instruments, costumes, and surroundings associated with their profession and era. Include the person's name, creative discipline, notable works or performances, major achievements, important events in their career, and cultural influence."
+      },
+      {
+        "id": "007",
+        "text": "Pioneer — Randomly select a historically significant pioneer, explorer, navigator, expedition leader, polar explorer, trailblazer, or pioneering traveler. Include people who discovered or mapped new territories, crossed oceans, explored remote regions, led important expeditions, opened new routes, or broke significant barriers in exploration and discovery. Also include pioneers who were first to achieve important milestones in their respective fields. Transform the subject into the selected person using historically accurate expedition clothing, travel equipment, navigational instruments, maps, accessories, and surroundings appropriate to their era and accomplishments. Include the person's name, nationality, expedition or pioneering achievement, places explored, important discoveries, major challenges, and historical significance."
+      },
+      {
+        "id": "008",
+        "text": "Military Figure — Randomly select a historically significant military figure from any country, civilization, or historical period. Include generals, admirals, commanders, military strategists, decorated soldiers, battlefield heroes, naval heroes, and legendary warriors. Transform the subject into the selected individual using historically accurate military uniforms, armor, rank insignia, weapons, medals, equipment, and surroundings appropriate to their actual military service and era. Include the person's name, rank or military role, country or allegiance, wars and battles, military accomplishments, strategic contributions, notable events, and historical legacy. Do not assign fictional medals, ranks, or accomplishments."
+      },
+      {
+        "id": "009",
+        "text": "Philosopher — Randomly select a historically significant philosopher, philosophical thinker, or influential intellectual from any civilization or historical period. Include figures associated with ancient, classical, medieval, Renaissance, Enlightenment, modern, and contemporary philosophy, as well as influential political, ethical, existential, and social thinkers. Transform the subject into the selected philosopher using historically appropriate clothing, hairstyle, accessories, books, manuscripts, and surroundings associated with their life and era. Include the person's name, philosophical tradition, major ideas, influential writings, central beliefs, important debates, and lasting intellectual influence."
+      },
+      {
+        "id": "010",
+        "text": "Religious Leader — Randomly select a historically significant religious leader, founder of a religion, prophet, spiritual teacher, theologian, missionary, reformer, or influential religious figure from any faith or spiritual tradition. Include people who founded or shaped religious movements, established spiritual teachings, led religious communities, or significantly influenced religious history. Transform the subject into the selected individual using historically appropriate clothing, hairstyle, religious objects, surroundings, and cultural details. Treat religious traditions and their figures respectfully. Include the person's name, religious or spiritual tradition, historical period, teachings, important events, major contributions, followers or movement, and lasting religious or cultural significance."
+      },
+      {
+        "id": "011",
+        "text": "Inventor — Randomly select a historically significant inventor or technological innovator from any country, civilization, or historical period. Include inventors responsible for important machines, devices, tools, transportation systems, communication technologies, industrial processes, and other transformative innovations. Transform the subject into the selected inventor using historically appropriate clothing, hairstyle, workshop or laboratory surroundings, tools, prototypes, and recognizable inventions. Include the person's name, invention or inventions, approximate dates, how the invention worked, the problem it addressed, important milestones, and its impact on society and technological development."
+      },
+      {
+        "id": "012",
+        "text": "Industry Leader — Randomly select a historically significant industrialist, entrepreneur, business magnate, corporate founder, or influential figure in commerce and industry. Include people who transformed manufacturing, transportation, finance, energy, communications, technology, retail, or other major industries. Transform the subject into the selected individual using historically appropriate business attire, hairstyle, accessories, offices, factories, industrial facilities, or other surroundings associated with their career and era. Include the person's name, company or enterprise, industry, major business achievements, innovations, important milestones, and economic or social impact."
+      },
+      {
+        "id": "013",
+        "text": "Social and Civil Rights Leader — Randomly select a historically significant social reformer, civil rights leader, abolitionist, emancipation leader, suffragist, equality advocate, or champion of human rights. Include people who fought slavery, forced labor, discrimination, segregation, oppression, and other forms of social injustice, as well as people who campaigned for voting rights, women's rights, workers' rights, and equal treatment. Transform the subject into the selected individual using historically appropriate clothing, hairstyle, accessories, and surroundings associated with their life and movement. Include the person's name, cause or movement, historical period, major campaigns, important speeches or actions, significant achievements, and lasting impact on society and human rights."
+      },
+      { 
+        "id": "014",
+        "text": "Architect and Builder — Randomly select a historically significant architect, master builder, structural engineer, civil engineer, or designer responsible for influential buildings, monuments, bridges, infrastructure, or architectural movements. Include figures from ancient civilizations through modern history and draw from architectural traditions around the world. Transform the subject into the selected individual using historically appropriate clothing, hairstyle, architectural tools, drawings, plans, models, and surroundings. Include the person's name, architectural style or discipline, notable structures, major projects, engineering or design innovations, and influence on architecture and the built environment."
+      },
+      {
+        "id": "015",
+        "text": "Mathematician — Randomly select a historically significant mathematician or mathematical thinker from any civilization or historical period. Include pioneers in algebra, geometry, calculus, number theory, statistics, probability, logic, and other mathematical disciplines. Transform the subject into the selected mathematician using historically appropriate clothing, hairstyle, mathematical instruments, diagrams, manuscripts, equations, and surroundings. Include the person's name, nationality or civilization, mathematical field, major discoveries, influential theorems or methods, important publications, and lasting contributions to mathematics and science."
+      },
+      {
+        "id": "016",
+        "text": "Athlete and Sports Figure — Randomly select a historically significant athlete, champion, coach, or sports pioneer from any country, culture, or historical period. Include influential figures from individual and team sports such as athletics, boxing, wrestling, football, soccer, basketball, baseball, tennis, swimming, gymnastics, motorsports, and other sporting disciplines. Transform the subject into the selected figure using historically accurate athletic clothing, uniforms, equipment, accessories, and a recognizable sporting setting from their era. Include the person's name, sport, team or country where relevant, major victories, records, championships, pioneering achievements, and impact on the history of sports. Do not invent records or awards."
+      },
+      {
+        "id": "017",
+        "text": "Journalist and Publisher — Randomly select a historically significant journalist, newspaper editor, publisher, war correspondent, investigative reporter, or influential figure in print and media history. Include people who exposed major events, documented wars, influenced public opinion, established important publications, or advanced freedom of the press. Transform the subject into the selected person using historically appropriate clothing, hairstyle, writing instruments, notebooks, printing equipment, newspapers, and surroundings associated with their work and era. Include the person's name, publication or media organization, major reporting or publishing achievements, important stories, historical events covered, and influence on journalism and public communication."
+      },
+      {
+        "id": "018",
+        "text": "Educator and Reformer — Randomly select a historically significant educator, teacher, education reformer, scholar, school founder, or pioneer in the development of educational systems. Include people who transformed teaching methods, expanded access to education, established influential schools or universities, advanced literacy, or championed educational equality. Transform the subject into the selected person using historically appropriate clothing, hairstyle, books, teaching materials, writing instruments, and surroundings such as a classroom, lecture hall, or historic institution. Include the person's name, educational philosophy, institutions or movements, major reforms, important writings, accomplishments, and lasting influence on education."
+      },
+      {
+        "id": "019",
+        "text": "Humanitarian — Randomly select a historically significant humanitarian, philanthropist, relief organizer, social worker, or advocate for human welfare. Include figures who dedicated their lives to alleviating poverty, famine, disease, displacement, suffering, and social hardship, as well as those who established influential charitable or relief organizations. Transform the subject into the selected individual using historically appropriate clothing, hairstyle, accessories, and surroundings connected to their humanitarian work. Include the person's name, organization or cause, historical period, major relief efforts, important achievements, people or communities helped, and lasting humanitarian legacy."
+      },
+      {
+        "id": "020",
+        "text": "Legendary and Literary Figure — Randomly select a famous character from world literature, folklore, mythology-inspired storytelling, epic poetry, traditional legends, or classic fictional works. This category may include legendary heroes, literary protagonists, famous fictional rulers, iconic adventurers, folklore characters, and figures from influential novels, plays, poems, and oral traditions. Select a recognizable character with a well-established identity and visual tradition. Transform the subject into that character using recognizable clothing, hairstyle, accessories, symbolic objects, and a setting drawn from the relevant story or tradition. Include the character's name, the title and author or cultural origin of the work, historical or literary period, role in the story, defining characteristics, major adventures or events, and cultural or literary significance. Clearly identify the figure as fictional, legendary, or folkloric rather than presenting them as a documented historical person."
+      },
+      {
+        "id": "021",
+        "text": "Judge and Legal Pioneer — Randomly select a historically significant judge, jurist, legal scholar, constitutional thinker, or pioneer in the development of legal systems and institutions. Include figures who shaped constitutional law, criminal law, civil rights law, international law, legal philosophy, and landmark judicial decisions. Transform the subject into the selected individual using historically appropriate judicial or professional attire, hairstyle, legal documents, books, accessories, and surroundings such as a courtroom, chambers, or legal institution. Include the person's name, country or legal system, judicial or legal role, important cases or writings, major legal contributions, landmark decisions, and lasting influence on law and justice."
+      },
+      {
+        "id": "022",
+        "text": "Cultural Icon — Randomly select a historically significant cultural figure whose influence transformed the customs, traditions, fashion, cuisine, design, lifestyle, entertainment, or popular culture of a society or era. Include influential trendsetters, fashion pioneers, cultural tastemakers, designers, culinary figures, and individuals whose work became an enduring symbol of a particular cultural movement or period. Transform the subject into the selected figure using recognizable period clothing, hairstyle, accessories, signature visual details, and surroundings associated with their cultural influence. Include the person's name, cultural field, historical period, signature achievements or contributions, defining innovations or trends, and lasting influence on society and popular culture."
+      }
+    ],
+    "additionalInstructions": "HISTORICAL FIGURE SELECTION AND RANDOMIZATION:\n\n1. The selected option determines the category of person or character to portray. Randomly select a specific individual within that category. Do not interpret the option text as the name of the person to portray.\n2. Use genuine variety when selecting figures. Draw from different countries, continents, cultures, civilizations, and historical periods. Do not repeatedly select the same handful of famous Western European or American figures. Include influential people from Africa, Asia, the Middle East, Europe, Oceania, and the Americas whenever historically appropriate.\n3. Use randomized selection with a fresh random seed for each generation. Avoid repeating the same individual across generations whenever possible. Do not always select the most famous or obvious example in a category.\n4. Select a figure whose historical identity and appearance can be represented with reasonable accuracy. Do not invent historical individuals or combine multiple real people into one fictional identity.\n5. If the source image contains multiple people, transform each person into a different historically significant figure from the selected category whenever possible. Do not duplicate the same historical figure across multiple subjects in the same image unless explicitly requested.\n6. If the selected category includes a gender-specific historical role, select an appropriate figure for the subject when practical. However, do not unnecessarily restrict the selection or exclude historically significant figures based solely on gender.\n\nSUBJECT TRANSFORMATION AND IDENTITY:\n\n7. Preserve each subject's recognizable facial identity, facial structure, eyes, nose, mouth, and defining facial features. The transformed person must still look like the person in the original image, not like an unrelated portrait of the historical figure. Adapt the subject's face naturally to the historical portrayal while maintaining their recognizable identity.\n8. Transform the subject beyond a superficial costume overlay. Reconstruct the subject's hair, hairstyle, clothing, body presentation, accessories, and surrounding environment to convincingly portray the selected figure. The result must look like a newly created historical portrait, not the original photograph with a costume or filter placed over it.\n9. Adapt skin tone, hair texture, hairstyle, facial hair, clothing, and other visible characteristics to reflect the selected historical figure's documented appearance and cultural background, while preserving the subject's recognizable facial identity as much as possible.\n10. Use historically appropriate clothing, materials, accessories, jewelry, uniforms, armor, tools, instruments, and objects. Avoid modern objects, contemporary fashion, and anachronistic details unless the selected figure's actual historical context requires them.\n11. Reconstruct the background to suit the selected figure. Use historically appropriate architecture, landscapes, interiors, workplaces, battlefields, laboratories, royal courts, temples, classrooms, studios, or other relevant surroundings. Do not simply retain an unrelated modern background.\n12. The subject should be presented in a convincing pose and setting appropriate to the selected individual's life and accomplishments. Include recognizable objects or visual details associated with the person's historical identity when appropriate.\n\nEDUCATIONAL FLASH CARD DESIGN:\n\n13. The finished image MUST clearly look like an educational historical flash card, not merely a historical portrait. Combine the transformed subject with a thoughtfully designed informational layout containing the person's name and concise, meaningful historical information.\n14. Display the selected figure's name prominently and accurately. Include their country, civilization, historical period, occupation or role, and the most important contributions or achievements relevant to the selected category.\n15. Include several concise factual details such as significant dates, major events, discoveries, accomplishments, important works, influential ideas, battles, inventions, reigns, expeditions, reforms, or other relevant milestones. Select facts appropriate to the individual rather than forcing irrelevant information into every card.\n16. Use clear headings, short descriptions, readable labels, and a well-organized information hierarchy. The text must be large enough to read comfortably. Do not use tiny decorative text, illegible pseudo-writing, random letters, or meaningless symbols as substitutes for factual information.\n17. Use a visually appealing educational design with a strong portrait, balanced composition, clear information panels, and appropriate historical design elements. The layout may resemble a premium museum information card, illustrated encyclopedia entry, collectible educational card, or beautifully designed historical reference card.\n18. Ensure the text does not obscure the subject's face or important visual details. Keep the person's portrait and the educational information visually balanced.\n19. Verify historical names, dates, places, titles, achievements, and descriptions to the best of the model's knowledge. Do not fabricate quotations, awards, discoveries, battles, offices, reign dates, or accomplishments. If a precise detail is uncertain, omit it rather than inventing it.\n20. For Legendary and Literary Figure, clearly distinguish fictional, folkloric, and legendary characters from real historical individuals. Identify the source work, author, or cultural tradition when known.\n\nMASTER PROMPT PRIORITY:\n\n21. Any externally supplied master prompt or user-provided instruction takes priority over the preset's default choices. If the master prompt specifies a particular historical figure, character, country, civilization, era, gender, pose, action, setting, mood, clothing, artistic direction, or selection, follow that instruction instead of randomly choosing or imposing a conflicting default.\n22. If the master prompt specifies a particular person, do not replace that person with a random selection from the category. Use the requested person and apply the flash-card presentation to them.\n23. If the master prompt requests a particular visual style or layout, follow it while retaining the essential educational flash-card content unless the master prompt explicitly instructs otherwise.\n\nFINAL VALIDATION:\n\n24. Confirm that the selected individual or character genuinely belongs to the requested category.\n25. Confirm that the transformed subject remains recognizable as the person in the source image.\n26. Confirm that the clothing, hairstyle, accessories, objects, and environment convincingly represent the selected figure and historical period.\n27. Confirm that the final composition is a complete educational flash card with the figure's name and useful, legible historical information.\n28. Confirm that all written information is relevant, factually grounded, spelled correctly, and large enough to read.\n29. Do not leave the original photograph visibly intact beneath a filter or costume overlay. Reconstruct the image as a coherent historical portrait and educational card."
   },
   {
     "name": "HISTORY",
@@ -31681,6 +31937,82 @@
     ],
     "randomizeOptions": true,
     "additionalInstructions": "FINAL RESULT: Apply ONLY the selected condition. The effect must feel medically grounded and perceptually realistic, not artistic or stylized. Preserve the original scene while overlaying or altering vision in a way that accurately reflects how the condition impacts sight."
+  },
+  {
+    "name": "MEDIEVAL",
+    "category": [
+      "OPTIONS",
+      "HISTORICAL",
+      "MEDIEVAL",
+      "COSTUMES",
+      "CHARACTERS",
+      "TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform the subject into a character from the European Middle Ages. Preserve the subject's recognizable face, facial features, age, and identity. Automatically interpret the subject as a medieval gentleman or lady where the selected role has a gender-specific presentation. Completely reconstruct the subject's clothing, hairstyle, accessories, and surroundings to match the selected medieval character. Create an immersive medieval environment with historically inspired architecture, furnishings, objects, and atmosphere.",
+    "options": [
+      {
+        "id": "001",
+        "text": "Medieval Peasant — Transform the subject into an everyday medieval villager wearing simple, practical clothing appropriate to the subject's gender presentation: a rough linen tunic, woolen outer garment, belt, hose, and boots for a man; or a modest long dress, apron, head covering, and practical shoes for a woman. Set the scene in a rustic medieval village with thatched cottages, dirt paths, and farm animals."
+      },
+      {
+        "id": "002",
+        "text": "Medieval Tavern Patron — Transform the subject into a medieval tavern character wearing practical period clothing appropriate to the subject's gender presentation. Set the scene inside a bustling timber-and-stone tavern with wooden tables, tankards, candles, a large fireplace, and other medieval patrons."
+      },
+      {
+        "id": "003",
+        "text": "Medieval Prince — Transform the male subject into a royal medieval prince wearing an elaborate tunic, embroidered surcoat, fine cloak, decorated belt, hose, and elegant boots. Set the scene in a magnificent stone castle with heraldic banners, tapestries, and royal furnishings."
+      },
+      {
+        "id": "004",
+        "text": "Medieval Princess — Transform the female subject into a royal medieval princess wearing an elegant floor-length gown with richly embroidered fabric, fitted bodice, flowing sleeves, jeweled belt, and an ornate circlet or period headdress. Set the scene in a magnificent castle chamber or royal garden."
+      },
+      {
+        "id": "005",
+        "text": "Medieval Nobleman — Transform the male subject into a distinguished medieval nobleman wearing a luxurious tunic, embroidered surcoat, mantle, decorated belt, hose, and fine boots. Set the scene in a grand castle hall with stone architecture, tapestries, and a long banquet table."
+      },
+      {
+        "id": "006",
+        "text": "Medieval Noblewoman — Transform the female subject into an aristocratic medieval lady wearing a richly detailed gown with elegant sleeves, embroidered trim, a decorative belt, jewelry, and a historically inspired veil or headdress. Set the scene in an opulent castle chamber or garden."
+      },
+      {
+        "id": "007",
+        "text": "Medieval Knight — Transform the subject into a medieval knight wearing chain mail or plate armor appropriate to the selected period, a surcoat, gauntlets, armored footwear, and a helmet. Include a sword and shield with heraldic decoration. Set the scene in a castle courtyard or tournament ground."
+      },
+      {
+        "id": "008",
+        "text": "Medieval Archer — Transform the subject into a medieval longbow archer wearing a practical tunic, leather protection, belt, boots, and period-appropriate archery equipment. Show the subject holding a longbow and quiver in a castle battlement or wooded military training ground."
+      },
+      {
+        "id": "009",
+        "text": "Medieval Soldier — Transform the subject into a medieval foot soldier wearing a practical gambeson, chain mail or other appropriate protective armor, helmet, belt, boots, and carrying a period-appropriate sword or spear. Set the scene in a medieval military encampment."
+      },
+      {
+        "id": "010",
+        "text": "Medieval Blacksmith — Transform the subject into a medieval village blacksmith wearing a work tunic, leather apron, protective gloves, and sturdy boots. Show the subject in a forge with an anvil, hammer, glowing furnace, tools, and sparks."
+      },
+      {
+        "id": "011",
+        "text": "Medieval Merchant — Transform the subject into a prosperous medieval merchant wearing period-appropriate clothing, a decorated belt, cloak, and practical accessories. Set the scene in a bustling medieval marketplace with wooden stalls, fabrics, barrels, pottery, and goods."
+      },
+      {
+        "id": "012",
+        "text": "Medieval Monk or Scholar — Transform the subject into a medieval monk or scholar wearing a simple historical robe or scholarly garment appropriate to the selected role. Set the scene in a candlelit monastery library or scriptorium with parchment manuscripts, wooden desks, and stone architecture."
+      },
+      {
+        "id": "013",
+        "text": "Medieval Royal Court — Transform the subject into a distinguished member of a medieval royal court, adapting the clothing to the subject's gender presentation. Dress the subject in luxurious court attire with embroidered fabrics, fine jewelry, and elegant accessories. Set the scene in a grand castle throne room with banners, tapestries, and other courtiers."
+      },
+      {
+        "id": "014",
+        "text": "Medieval Queen or King — Transform the subject into a majestic medieval monarch, adapting the royal clothing to the subject's gender presentation. Include a richly embroidered royal robe, fur-trimmed mantle, jeweled crown, ceremonial accessories, and regal footwear. Set the scene in a monumental castle throne room."
+      },
+      {
+        "id": "015",
+        "text": "Medieval Tournament Champion — Transform the subject into a medieval tournament competitor wearing decorative jousting armor or a padded tournament costume, heraldic surcoat, helmet, and gloves. Show the subject in a castle tournament arena with spectators, banners, and horses."
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "• Preserve the subject's actual face, facial features, age, and recognizable identity.\n• Automatically adapt gender-specific roles to the subject's presentation. Prince, nobleman, knight, archer, or soldier options should be adapted to a female subject where appropriate; princess, noblewoman, or queen options should be adapted to a male subject where appropriate, unless the master prompt specifies otherwise.\n• Completely reconstruct the subject's visible clothing into the selected medieval costume. Do not simply add a cape, crown, or helmet to modern clothing.\n• Use historically informed medieval garments, armor, fabrics, tailoring, footwear, hairstyles, and accessories.\n• Distinguish ordinary peasants, tavern patrons, merchants, craftspeople, soldiers, knights, nobles, and royalty. Do not make every character look like a king or queen.\n• Match the background to the selected role, with appropriate medieval villages, taverns, castles, markets, workshops, libraries, courtyards, or tournament grounds.\n• Armor and weapons must be appropriate to the medieval period and selected role. Avoid mixing in Renaissance plate styles or modern military equipment.\n• Avoid generic fantasy armor, modern objects, anachronistic clothing, and stereotypical fantasy imagery unless requested by the master prompt.\n• Show enough of the subject's body for the selected clothing and role to be clearly recognizable.\n• The master prompt overrides preset defaults.\n\nFINAL VALIDATION:\n✓ Subject's identity is preserved.\n✓ Costume clearly represents the selected medieval role.\n✓ Background and clothing belong to a coherent medieval setting.\n✓ Gender-specific clothing is adapted appropriately.\n✓ The subject is integrated naturally into the historical environment."
   },
   {
     "name": "MEDIEVAL KNIGHT",
@@ -44558,6 +44890,74 @@
     "additionalInstructions": ""
   },
   {
+    "name": "RENAISSANCE PERIOD",
+    "category": [
+      "OPTIONS",
+      "HISTORICAL",
+      "RENAISSANCE",
+      "COSTUMES",
+      "CHARACTERS",
+      "TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform the subject into a character living during the European Renaissance. Preserve the subject's recognizable face, facial features, age, and identity. Automatically interpret the subject as a Renaissance gentleman or lady where the selected role has a gender-specific presentation. Completely reconstruct the subject's clothing, hairstyle, accessories, and surroundings to match the selected Renaissance character. Create an immersive historical scene with architecture, furnishings, objects, and atmosphere appropriate to the period.",
+    "options": [
+      {
+        "id": "001",
+        "text": "Renaissance Peasant — Transform the subject into an everyday Renaissance villager wearing simple period clothing appropriate to the subject's gender presentation: a plain linen shirt, wool vest, breeches, and boots for a man; or a modest blouse, fitted bodice, long skirt, and apron for a woman. Set the scene in a rustic European village with timber-framed houses, market stalls, and cobblestone streets."
+      },
+      {
+        "id": "002",
+        "text": "Renaissance Tavern Patron — Transform the subject into a Renaissance tavern character wearing practical period clothing appropriate to the subject's gender presentation. Show the subject inside a lively medieval-to-Renaissance tavern with wooden tables, tankards, candles, barrels, and other historically dressed patrons."
+      },
+      {
+        "id": "003",
+        "text": "Renaissance Prince — Transform the male subject into a wealthy Renaissance prince wearing a luxurious doublet, embroidered velvet clothing, decorative hose, fine shoes, jeweled accessories, and an ornate cape. Set the scene in a magnificent Renaissance palace with painted ceilings and elaborate furnishings."
+      },
+      {
+        "id": "004",
+        "text": "Renaissance Princess — Transform the female subject into a regal Renaissance princess wearing an elaborate gown with a structured bodice, richly embroidered fabric, jeweled accessories, elegant sleeves, and a refined period hairstyle. Set the scene in a magnificent Renaissance palace or formal garden."
+      },
+      {
+        "id": "005",
+        "text": "Renaissance Nobleman — Transform the male subject into a distinguished Renaissance nobleman wearing a finely tailored doublet, decorated hose, velvet or brocade outer garment, cape, and elegant footwear. Set the scene in a grand Renaissance residence with ornate furniture, paintings, and architectural details."
+      },
+      {
+        "id": "006",
+        "text": "Renaissance Noblewoman — Transform the female subject into an aristocratic Renaissance woman wearing an opulent gown with a fitted bodice, elaborate sleeves, embroidered fabrics, fine jewelry, and a carefully styled period hairstyle. Set the scene in an elegant palace chamber or garden."
+      },
+      {
+        "id": "007",
+        "text": "Renaissance Soldier — Transform the subject into a Renaissance-era combatant wearing period-appropriate padded clothing, protective armor, helmet, leather belt, and boots. Include a historically inspired sword or polearm. Set the scene in a fortified European town or military encampment."
+      },
+      {
+        "id": "008",
+        "text": "Renaissance Knight — Transform the subject into a Renaissance knight wearing historically inspired plate armor, a decorative helmet, gauntlets, and a flowing heraldic surcoat. Include a sword and place the subject in a castle courtyard or tournament ground."
+      },
+      {
+        "id": "009",
+        "text": "Renaissance Lady-in-Waiting — Transform the female subject into a refined court attendant wearing a beautifully tailored Renaissance gown, decorative sleeves, a modest headdress, and elegant accessories. Set the scene in a royal palace chamber with rich tapestries and period furnishings."
+      },
+      {
+        "id": "010",
+        "text": "Renaissance Courtier — Transform the male subject into a fashionable Renaissance courtier wearing a decorated doublet, fitted hose, elegant cape, fine shoes, and refined accessories. Set the scene in a lavish royal court with nobles and elaborate Renaissance architecture."
+      },
+      {
+        "id": "011",
+        "text": "Renaissance Merchant — Transform the subject into a prosperous Renaissance merchant wearing clothing appropriate to the subject's gender presentation, with rich fabrics, a decorated belt, and practical accessories. Set the scene in a busy European trading market with textiles, spices, crates, and merchant stalls."
+      },
+      {
+        "id": "012",
+        "text": "Renaissance Artist — Transform the subject into a Renaissance painter or sculptor wearing period work clothing appropriate to the subject's gender presentation. Show the subject in an artist's workshop with canvases, pigments, brushes, sculptural studies, and natural window light."
+      },
+      {
+        "id": "013",
+        "text": "Renaissance Royal Portrait — Create a formal aristocratic Renaissance portrait, portraying the subject as a noble man or woman according to the subject's gender presentation. Dress the subject in luxurious period clothing and place them in a richly decorated palace interior, with the composition and lighting inspired by classical Renaissance portraiture."
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "• Preserve the subject's actual face, facial features, age, and identity.\n• Automatically interpret gender-specific roles in accordance with the subject's presentation in the source image. A prince, nobleman, soldier, or courtier option should be adapted to a female subject as appropriate when necessary; princess, noblewoman, and lady-in-waiting should be adapted to a male subject when necessary, unless the master prompt specifies otherwise.\n• Completely reconstruct the subject's visible clothing. Do not leave modern clothing intact beneath added Renaissance accessories.\n• Use historically informed Renaissance garments, silhouettes, fabrics, tailoring, footwear, hairstyles, and accessories.\n• Distinguish peasant, merchant, tavern, noble, royal, artistic, and military clothing. Do not make every character look like royalty.\n• Create a background that supports the selected role, with period-appropriate European architecture, interiors, furnishings, streets, workshops, markets, or fortifications.\n• Keep armor, weapons, and military accessories appropriate to the Renaissance period.\n• Avoid fantasy costumes, modern objects, modern hairstyles, and anachronistic accessories unless specified by the master prompt.\n• Show enough of the subject's body to make the selected costume recognizable.\n• The master prompt overrides preset defaults.\n\nFINAL VALIDATION:\n✓ Subject's identity is preserved.\n✓ Costume clearly represents the selected Renaissance role.\n✓ Clothing and background belong to the same historical period.\n✓ Gender-specific clothing is adapted appropriately.\n✓ The subject is integrated naturally into the historical environment."
+  },
+  {
     "name": "RENAISSANCE ANAMORPHOSIS",
     "category": [
       "ART HISTORY",
@@ -48825,6 +49225,62 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "SOUTHERN GENTLEMAN & BELLE",
+    "category": [
+      "OPTIONS",
+      "CULTURAL",
+      "HISTORICAL",
+      "SOUTHERN",
+      "COSTUMES",
+      "TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform the subject into a character from the American Southern tradition. Preserve the subject's recognizable face, facial features, age, and identity. If the subject is male, portray him as a Southern gentleman; if the subject is female, portray her as a Southern belle. Reconstruct the subject's clothing, hairstyle, accessories, pose, and surroundings to create an authentic, detailed Southern portrait. Match the costume and setting to the selected option and the subject's gender presentation.",
+    "options": [
+      {
+        "id": "001",
+        "text": "Southern Gentleman — Dress a male subject in a refined 19th-century Southern gentleman outfit featuring a tailored waistcoat, formal shirt, cravat, dark trousers, polished boots, and an elegant jacket. Set the scene on the veranda of a grand Southern plantation-era mansion, with sweeping columns and oak trees."
+      },
+      {
+        "id": "002",
+        "text": "Southern Belle — Dress a female subject in an elegant antebellum-inspired Southern belle gown with a full skirt, fitted bodice, delicate lace, gloves, and an elaborate period hairstyle. Set the scene in a grand Southern mansion garden with magnolia trees and a columned veranda."
+      },
+      {
+        "id": "003",
+        "text": "Southern Gentleman Farmer — Dress a male subject in practical but refined rural Southern attire, including a cotton shirt, suspenders, waistcoat, trousers, boots, and a broad-brimmed hat. Set the scene on a historic Southern farm with barns, fields, and wooden fencing."
+      },
+      {
+        "id": "004",
+        "text": "Southern Belle Garden Party — Dress a female subject in a beautifully detailed garden-party gown with a full skirt, lace parasol, gloves, and delicate accessories. Set the scene at an elegant outdoor gathering with flowers, fountains, and a grand Southern estate in the background."
+      },
+      {
+        "id": "005",
+        "text": "Southern Gentleman in Seersucker — Dress a male subject in a classic light-colored seersucker suit, crisp shirt, bow tie, and polished shoes. Set the scene on a charming Charleston-style street or elegant veranda."
+      },
+      {
+        "id": "006",
+        "text": "Southern Belle in a Vintage Portrait — Dress a female subject in a richly detailed 19th-century Southern gown with delicate jewelry, lace details, and an elaborate hairstyle. Create a formal painted-portrait atmosphere with a refined mansion interior."
+      },
+      {
+        "id": "007",
+        "text": "Southern Gentleman on Horseback — Dress a male subject in refined historical riding attire with a tailored jacket, riding trousers, boots, and a traditional hat. Show the subject mounted on a horse in front of a grand Southern estate."
+      },
+      {
+        "id": "008",
+        "text": "Southern Belle on Horseback — Dress a female subject in a historically inspired riding habit with a fitted jacket, long riding skirt, gloves, and riding hat. Show the subject riding a horse along a tree-lined Southern estate lane."
+      },
+      {
+        "id": "009",
+        "text": "Southern Gentleman at a Garden Party — Dress a male subject in a formal summer suit with a waistcoat, bow tie, pocket square, and polished shoes. Set the scene at an elegant Southern garden party with guests, flowers, and period architecture."
+      },
+      {
+        "id": "010",
+        "text": "Southern Belle at a Grand Ball — Dress a female subject in a lavish formal ball gown with a voluminous skirt, embroidered bodice, elegant gloves, and refined jewelry. Set the scene in a grand ballroom with chandeliers, polished floors, and period decorations."
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "• Preserve the subject's actual face, facial features, age, and identity.\n• Automatically determine whether to portray the subject as a Southern gentleman or Southern belle based on the subject's presentation in the source image. Do not randomly switch the subject's gender presentation.\n• The selected option determines the specific outfit, activity, and setting, while the subject's gender presentation determines the appropriate gentleman or belle interpretation.\n• Reconstruct the entire visible outfit, including clothing, footwear, hairstyle, and accessories. Do not simply add a hat or accessory to the original clothing.\n• Use historically informed Southern fashion, fabrics, tailoring, hairstyles, and architecture appropriate to the selected period.\n• Create a convincing Southern environment with appropriate homes, gardens, streets, farms, furnishings, and landscape details.\n• Avoid caricature, exaggerated accents or stereotypes, and generic costume-store clothing.\n• Do not depict enslaved people or romanticize slavery. Historical settings must not glorify or sanitize the history of slavery.\n• Show enough of the subject's body to make the selected outfit recognizable.\n• The master prompt overrides preset defaults.\n\nFINAL VALIDATION:\n✓ Male subjects are portrayed as Southern gentlemen.\n✓ Female subjects are portrayed as Southern belles.\n✓ Subject's identity is preserved.\n✓ Costume and setting match the selected option.\n✓ The result feels like a convincing Southern character portrait."
   },
   {
     "name": "SOUVENIR GONE WRONG",
@@ -53603,6 +54059,45 @@
     ],
     "randomizeOptions": true,
     "additionalInstructions": "The tarot symbolism must be accurate to traditional meanings. The card layout must follow standard tarot card proportions and formatting. The subject must be recognizable as the central figure. Hidden symbolic details should reward close inspection."
+  },
+  {
+    "name": "TARZAN",
+    "category": [
+      "OPTIONS",
+      "ADVENTURE",
+      "JUNGLE",
+      "CHARACTERS",
+      "TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform the subject into Tarzan, the legendary jungle adventurer, captured dynamically swinging through a lush tropical jungle while gripping a long hanging vine. Preserve the subject's recognizable face, facial features, age, and identity. Reconstruct the subject's clothing, pose, and surroundings into a convincing cinematic jungle adventure scene. The subject must visibly be airborne and swinging from the vine, with the body, legs, and free arm responding naturally to the motion.",
+    "options": [
+      {
+        "id": "001",
+        "text": "Classic Tarzan — Dress the subject in a classic rugged jungle loincloth costume and simple leather accessories. Show the subject swinging dramatically from a vine high above the jungle floor, with dense tropical foliage and sunlight filtering through the canopy."
+      },
+      {
+        "id": "002",
+        "text": "Vintage Adventure Tarzan — Create a nostalgic vintage adventure-film interpretation with a rugged jungle costume, dramatic swinging pose, and an expansive tropical jungle setting."
+      },
+      {
+        "id": "003",
+        "text": "Tarzan Over the Waterfall — Show the subject swinging on a vine across a spectacular jungle waterfall, suspended above rushing water with mist, cliffs, and lush vegetation."
+      },
+      {
+        "id": "004",
+        "text": "Tarzan Through the Canopy — Show the subject swinging rapidly between enormous jungle trees, surrounded by tangled vines, branches, tropical birds, and shafts of sunlight."
+      },
+      {
+        "id": "005",
+        "text": "Tarzan Above the Animals — Show the subject swinging from a vine above a jungle clearing where elephants, giraffes, zebras, and other African wildlife gather below."
+      },
+      {
+        "id": "006",
+        "text": "Tarzan in a Jungle Storm — Show the subject gripping a thick vine and swinging through a rain-soaked jungle during a dramatic tropical storm, with windblown foliage, rain, and distant lightning."
+      }
+    ],
+    "randomizeOptions": true,
+    "additionalInstructions": "• Preserve the subject's real face and identity. The subject must unmistakably remain the person in the source image.\n• Transform the subject into a Tarzan-inspired jungle adventurer, not simply a person standing in a jungle.\n• The subject must be actively swinging from a clearly visible vine. The vine must be visibly gripped by at least one hand and extend upward to a tree branch or overhead support.\n• Create a dynamic airborne pose with believable body weight, bent or extended legs, and natural movement through the air.\n• Reconstruct the clothing as a recognizable rugged jungle-adventurer costume. Keep the costume practical and non-explicit.\n• The background must show a lush, immersive tropical jungle with layered trees, hanging vines, dense foliage, and atmospheric depth.\n• Use cinematic action photography, convincing perspective, natural motion, and realistic lighting.\n• Do not show the subject merely standing, sitting, or posing beside a vine.\n• Do not create a vine that appears to float without being attached to the environment.\n• The master prompt overrides preset defaults.\n\nFINAL VALIDATION:\n✓ Subject is visibly swinging from a vine.\n✓ Subject's face and identity are preserved.\n✓ Body pose communicates real motion and suspension.\n✓ Jungle environment is immersive and convincing.\n✓ Result looks like a cinematic jungle adventure scene."
   },
   {
     "name": "TATTOO'D",
