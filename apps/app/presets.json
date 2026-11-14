@@ -9803,6 +9803,51 @@
     "additionalInstructions": "IDENTITY PRESERVATION:\n• Subject must remain clearly recognizable despite the color distortion\n• The effect should enhance the image artistically, not destroy legibility\n\nFINAL RESULT:\nThe image should look like a deliberate artistic application of chromatic aberration, not a camera malfunction."
   },
   {
+    "name": "CHROMATIC DEPTH REVERSAL 3D",
+    "category": [
+      "ART",
+      "OPTICAL ILLUSION",
+      "3D ILLUSION",
+      "CHROMOSTEREOPSIS",
+      "DEPTH REVERSAL",
+      "COLOR PERCEPTION",
+      "CONCAVE",
+      "CONVEX",
+      "STEREOSCOPIC EFFECT",
+      "VISUAL PERCEPTION"
+    ],
+    "message": "Take a picture and completely reconstruct the subject as a striking CHROMATIC DEPTH REVERSAL 3D optical illusion, combining chromostereopsis with concave-convex depth reversal. Create the perception of three-dimensional depth through the interaction of carefully separated colors and deliberately manipulated light-and-shadow relationships. Use chromatic depth cues, especially contrasting red and blue regions, to encourage different parts of the subject to appear at different distances from the picture plane. Simultaneously manipulate highlights, shadows, tonal gradients, and contour transitions so that surfaces appear to sink inward like deep craters or project outward like raised volcanic domes. The color-based depth separation and reversed surface shading must work together as one coherent optical illusion, not as two unrelated effects. Reconstruct the entire subject using this combined visual language while preserving its recognizable identity, essential features, proportions, pose, and silhouette. The finished image should have a powerful dimensional appearance, as though the subject's forms are shifting between forward projection and deep recession within a flat image. This must be a deliberate optical depth illusion, not an ordinary photograph with red-and-blue outlines, a color filter, or a conventional 3D render.",
+    "randomizeOptions": true,
+    "options": [
+      {
+        "id": "001",
+        "label": "CHROMATIC CONCAVE",
+        "description": "Make the subject appear to sink deeply inward into the image. Combine chromostereoscopic color separation with inverted concave shading. Use red-forward and blue-receding color relationships where appropriate, while placing highlights and shadows to suggest hollowed, sunken, inward-facing surfaces. Emphasize crater-like depressions, recessed contours, and deep cavities formed from the subject's actual structure. The result should look as though the subject is carved into the picture plane."
+      },
+      {
+        "id": "002",
+        "label": "CHROMATIC CONVEX",
+        "description": "Make the subject appear to project outward from the image surface. Combine chromatic depth separation with conventional convex shading. Use red-forward and blue-receding color relationships to create spatial layering, while highlights, shadows, and tonal gradients make the subject's forms appear rounded, raised, and protruding. Emphasize dimensional volume and outward-projecting contours without turning the subject into a conventional 3D render."
+      },
+      {
+        "id": "003",
+        "label": "DUAL DEPTH",
+        "description": "Create an intricate combination of concave and convex depth interpretations throughout the subject. Some features should appear deeply recessed while neighboring features project outward. Use chromatic separation to distinguish apparent depth layers and carefully coordinated shading reversals to make the surface geometry feel complex and dimensional. Maintain coherent transitions between recessed and projecting regions so the subject remains recognizable."
+      },
+      {
+        "id": "004",
+        "label": "EXTREME 3D",
+        "description": "Push the combined chromostereopsis and depth-reversal effects to maximum visual intensity. Use vivid red, cyan, and blue color separation, pronounced chromatic depth layers, dramatic inverted highlights and shadows, strong concave-convex transitions, and sharply defined contours. Make the subject appear to plunge far behind the picture plane in some regions while projecting dramatically forward in others. Preserve clear subject recognition and avoid reducing the result to simple red-and-blue edge offsets."
+      },
+      {
+        "id": "005",
+        "label": "CHROMATIC AMBIGUITY",
+        "description": "Create a sophisticated ambiguous-depth illusion in which the same forms can be interpreted as either recessed or projecting. Combine carefully balanced red-blue chromatic separation with ambiguous or reversible shading cues. Avoid making every surface clearly concave or convex. Instead, create visual uncertainty and competing depth interpretations across the subject, encouraging the viewer's perception to flip between inward and outward forms."
+      }
+    ],
+    "additionalInstructions": "CORE OBJECTIVE:\nCreate a unified two-dimensional optical illusion that combines chromostereopsis with crater-volcano concave-convex depth reversal. These techniques must interact and reinforce one another. Do not simply apply a chromatic aberration effect to an image that already has reversed shading. The subject itself must be reconstructed around the combined color-depth and surface-depth principles.\n\nCHROMOSTEREOPSIS REQUIREMENTS:\n- Use carefully organized red and blue color regions to encourage chromatic depth perception. Red commonly appears closer and blue farther away to many viewers, but the effect is viewer-dependent and must not be treated as universally consistent.\n- Use strong, deliberate color separation between selected foreground, middle-depth, and background-facing surfaces.\n- Cyan, blue, and related cool hues may be used to establish receding regions, while red, scarlet, and warm hues may be used to emphasize forward regions.\n- Use clean, intentional color boundaries and sufficiently large color regions. Do not rely on tiny red-blue fringes or conventional anaglyph outlines.\n- Color placement must follow the subject's actual forms and contours. Do not randomly color different parts of the image.\n- Preserve sufficient color contrast for the depth organization to remain visible at normal display size.\n\nCONCAVE-CONVEX DEPTH REVERSAL REQUIREMENTS:\n- Manipulate the direction and placement of highlights, shadows, and tonal gradients to reverse the viewer's interpretation of surface orientation.\n- Concave regions should use inverted shading cues that make familiar raised forms appear hollowed or sunken.\n- Convex regions should use conventional shading cues that make surfaces appear to bulge or project outward.\n- Where the selected option calls for ambiguity, balance the competing cues so that the same contours can support alternative depth interpretations.\n- Use actual subject features and contours to create the illusion. Do not introduce unrelated craters, volcanoes, mountains, or geological scenery.\n\nCOMBINING THE TWO EFFECTS:\n- Chromatic depth separation must correspond to the perceived spatial organization established by the shading and contours.\n- Avoid contradictory color placement that undermines the intended depth interpretation.\n- The red-blue separation should reinforce the concave-convex structure rather than merely decorate its edges.\n- Build multiple apparent depth layers where appropriate, but retain a coherent relationship between color, lighting, contours, and perceived surface orientation.\n- Do not simulate the effect by duplicating the subject, shifting a second copy sideways, or adding simple red and blue outlines.\n\nSUBJECT RECONSTRUCTION AND PRESERVATION:\n- Reconstruct the entire visible subject using the combined optical technique. The original photograph must not remain visibly intact beneath a filter or overlay.\n- Preserve the subject's identity, recognizable facial features, proportions, pose, anatomy, clothing, silhouette, and essential details.\n- Do not distort the subject beyond recognition merely to exaggerate the depth effect.\n- Preserve the original background unless the master prompt explicitly requests a change. Apply the combined treatment to the background only when appropriate to the composition or specifically requested.\n- Do not add unrelated objects, decorative elements, text, or scenery.\n\nMASTER PROMPT PRIORITY:\n- Any externally provided master prompt specifying subject, pose, action, setting, mood, composition, colors, lighting, or artistic direction takes priority over preset defaults.\n- Preserve all externally specified details while applying the combined chromatic depth and concave-convex illusion.\n- If the master prompt specifies particular colors, use those colors as the primary palette while retaining meaningful chromatic depth separation wherever possible.\n\nTECHNICAL LIMITATIONS:\n- This is a single-image optical depth illusion. It does not create physical relief, actual screen protrusion, motion parallax, or guaranteed binocular stereoscopic depth.\n- Chromostereopsis varies with individual visual perception, display characteristics, color luminance, and viewing conditions. Do not promise that every viewer will perceive the same depth direction or intensity.\n- The objective is to maximize the combined perceptual cues in a flat image, not to falsely claim that the image contains actual 3D geometry.\n\nFINAL QUALITY REQUIREMENTS:\n- The combined color separation and concave-convex shading must be immediately apparent and visually integrated.\n- The result must look like a deliberate, sophisticated optical illusion rather than a standard photograph with color fringing, anaglyph treatment, embossing, or a generic 3D filter.\n- Avoid excessive color noise, random gradients, muddy color transitions, and inconsistent lighting cues.\n- Keep the subject recognizable and the depth structure visually coherent.\n- Prioritize a convincing dimensional illusion over decorative effects."
+  },
+  {
     "name": "CHROMATIC HOLOGRAPHY",
     "category": [
       "HOLOGRAPHIC",
