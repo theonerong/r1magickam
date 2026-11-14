@@ -24899,49 +24899,92 @@
     "name": "HOLLOW DEPTH ILLUSION",
     "category": [
       "OPTIONS",
+      "ART",
       "OPTICAL",
       "ILLUSION",
       "DEPTH",
-      "PERCEPTION"
+      "PERCEPTION",
+      "CONCAVE",
+      "TROMPE-L'OEIL",
+      "MOTION PARALLAX"
     ],
-    "message": "Take a picture and transform the subject into a hollow (concave) depth illusion where the subject appears carved inward, creating a visual effect where the subject seems to follow the viewer as they move.\n\nThe illusion must work on a flat image using reversed depth cues.\n\nMASTER PROMPT RULE:\n• If a master prompt specifies intensity or focus — PRIORITIZE and USE that information\n\nGENERAL REQUIREMENTS:\n• Maintain recognizable subject\n• Create illusion of inward (concave) structure\n• Visual effect must suggest the subject is tracking the viewer\n",
+    "message": "Take a picture and transform the subject into a convincing hollow (concave) depth illusion. Reconstruct the subject as an inward-curving, recessed structure that creates the visual contradiction of a three-dimensional form appearing to project outward toward the viewer.\n\nThe actual illustrated geometry must be concave, but carefully arranged perspective, facial structure, and reversed depth cues should trick the brain into interpreting the form as convex. The illusion should feel like a hollow mask, an inward-carved sculpture, or an inverted relief that appears to follow the viewer as they move.\n\nFor faces, create a continuous concave facial structure with a sunken-looking nose, inverted or raised-looking eye sockets, inward-curving cheeks, and carefully arranged facial features. Both eyes must look directly toward the viewer, with centered pupils and a stable frontal gaze, creating the Mona Lisa or following-eyes effect.\n\nUse simulated concave shading with deliberately reversed highlights and shadows. The nose must appear recessed rather than projecting outward, while the eye sockets and surrounding facial structures use contradictory depth cues that reinforce the hollow geometry.\n\nThe illusion must work as a static 2D image through carefully constructed perspective, inverted shading, and perceptual ambiguity. Exploit the viewer's expectations of motion parallax without pretending that a flat image can produce actual viewpoint-dependent movement.\n\nThe final image should create a striking, convincing, and slightly unsettling optical illusion while preserving the recognizable identity and essential visual characteristics of the original subject.",
     "randomizeOptions": true,
     "optionGroups": [
-    {
-      "title": "DEPTH STYLE",
-      "options": [
-        { "id": "001", "text": "Hollow Face — concave facial structure illusion" },
-        { "id": "002", "text": "Relief Carving — subject appears carved into surface" },
-        { "id": "003", "text": "Inverted Sculpture — full subject appears inside-out" }
-      ]
-    },
-    {
-      "title": "ILLUSION STRENGTH",
-      "options": [
-        { "id": "001", "text": "Subtle — slight inward depth" },
-        { "id": "002", "text": "Medium — clear concave illusion" },
-        { "id": "003", "text": "Strong — pronounced hollow effect" },
-        { "id": "004", "text": "Extreme — deeply inverted structure" }
-      ]
-    },
-    {
-      "title": "SURFACE STYLE",
-      "options": [
-        { "id": "001", "text": "Smooth — soft sculpted surface" },
-        { "id": "002", "text": "Carved — chiseled or engraved look" },
-        { "id": "003", "text": "Painted Illusion — flat surface painted to simulate depth" }
-      ]
-    },
-    {
-      "title": "LIGHTING DIRECTION",
-      "options": [
-        { "id": "001", "text": "Top Light — inverted highlights and shadows" },
-        { "id": "002", "text": "Side Light — strong directional illusion" },
-        { "id": "003", "text": "Spotlight — dramatic theatrical lighting" }
-      ]
-    }
-  ],
-    "additionalInstructions": "CORE ILLUSION RULES (CRITICAL):\n\n• The subject must appear physically concave (curving inward)\n• Lighting must be REVERSED compared to normal depth\n• Highlights and shadows must contradict actual form\n\nPERCEPTION TRICK:\n\n• Human brain should interpret the concave shape as convex\n• This creates the illusion that the subject follows the viewer\n\nANTI-CHEAT RULES:\n\n• DO NOT create a normal 3D face or raised surface\n• DO NOT rely on blur or perspective alone\n• DO NOT produce a flat image without depth cues\n\nDEPTH CONSTRUCTION:\n\n• Eye sockets, cheeks, and facial structure must curve inward\n• Shadows must fall in unnatural directions for convex interpretation\n\nFOLLOW EFFECT REQUIREMENT:\n\n• Subject gaze must be centered and forward-facing\n• Depth cues must support perceived rotation when viewer moves\n\nFAIL CONDITIONS:\n\n• Face appears convex (normal) → FAIL\n• Lighting matches real-world depth → FAIL\n• No inward curvature visible → FAIL\n• No illusion of tracking/following → FAIL\n\nQUALITY:\n\n• Strong perceptual illusion\n• Clean shading transitions\n• Convincing concave structure\n• Recognizable subject with distorted depth"
+      {
+        "title": "DEPTH STYLE",
+        "options": [
+          {
+            "id": "001",
+            "text": "Hollow Face — concave facial structure with a sunken nose, inverted eye sockets, and inward-curving cheeks"
+          },
+          {
+            "id": "002",
+            "text": "Relief Carving — subject appears carved inward into a flat surface, as though recessed into the material"
+          },
+          {
+            "id": "003",
+            "text": "Inverted Sculpture — entire subject appears hollowed inward, with reversed three-dimensional depth"
+          }
+        ]
+      },
+      {
+        "title": "ILLUSION STRENGTH",
+        "options": [
+          {
+            "id": "001",
+            "text": "Subtle — gentle inward curvature with restrained reversed depth cues"
+          },
+          {
+            "id": "002",
+            "text": "Medium — clearly visible concavity with convincing convex-perception ambiguity"
+          },
+          {
+            "id": "003",
+            "text": "Strong — pronounced hollow geometry and unmistakable inverted depth"
+          },
+          {
+            "id": "004",
+            "text": "Extreme — dramatically recessed structure with highly contradictory spatial cues"
+          }
+        ]
+      },
+      {
+        "title": "SURFACE STYLE",
+        "options": [
+          {
+            "id": "001",
+            "text": "Smooth — continuous, softly sculpted concave surface"
+          },
+          {
+            "id": "002",
+            "text": "Carved — chiseled, engraved, or sculpted recessed surface"
+          },
+          {
+            "id": "003",
+            "text": "Painted Illusion — flat 2D artwork using inverted shading to simulate concave depth"
+          }
+        ]
+      },
+      {
+        "title": "LIGHTING DIRECTION",
+        "options": [
+          {
+            "id": "001",
+            "text": "Inverted Top Light — reversed highlights and shadows that make the nose appear recessed and the eye sockets appear raised"
+          },
+          {
+            "id": "002",
+            "text": "Inverted Side Light — contradictory lateral highlights and shadows that reinforce inward curvature"
+          },
+          {
+            "id": "003",
+            "text": "Inverted Spotlight — concentrated reversed illumination emphasizing the hollow structure"
+          }
+        ]
+      }
+    ],
+    "additionalInstructions": "CORE ILLUSION PRINCIPLE — CRITICAL:\n\n1. The defining objective is a genuine visual Hollow-Depth Illusion, based on concave geometry and reversed depth perception.\n2. The subject must appear physically hollow, recessed, or curved inward. Do not simply darken the subject or create ordinary shadows and cavities.\n3. The actual illustrated surface must describe inward-facing geometry, while its visual cues encourage the brain to interpret it as an outward-projecting convex form.\n4. This distinction is essential: the physical appearance must communicate concavity, while the perceptual interpretation should remain ambiguous or deceptively convex.\n5. Construct the illusion through coherent geometry, carefully arranged perspective, inverted shading, and familiar structural relationships.\n6. Do not rely on blur, distortion, perspective alone, or generic 3D effects.\n7. The result must be a deliberate optical illusion, not simply an unusual sculpture or an ordinary recessed object.\n\nDEPTH STYLE — HOLLOW FACE:\n\n8. When Hollow Face is selected, reconstruct the entire face as a continuous inward-curving facial surface, like the inside of a molded mask.\n9. The forehead, brow, eye sockets, cheeks, nose, mouth, chin, and jaw must all participate in the concave structure.\n10. The nose must appear sunken into the face rather than projecting outward as it would on an ordinary convex portrait.\n11. The bridge and tip of the nose must follow the inward-facing surface, with reversed tonal transitions that reinforce recession.\n12. The eye sockets must appear inverted, raised, or spatially reversed relative to ordinary facial anatomy while retaining the recognizable placement of the original eyes.\n13. The cheeks must curve inward toward the nose and mouth, creating a continuous concave facial surface.\n14. The brow, forehead, mouth, chin, and jaw must reinforce the same inward-facing geometry. Do not limit the effect to the nose and eye sockets.\n15. Preserve the recognizable identity, facial proportions, expression, and distinguishing characteristics of the original subject.\n16. Do not turn the face into a skull, skeleton, zombie, damaged face, or collection of unrelated holes.\n17. Do not create a literal opening through the face. The illusion must be a continuous recessed surface.\n18. Avoid making the face look like an ordinary convex portrait with dark eye sockets and a shadowed nose.\n\nDEPTH STYLE — RELIEF CARVING:\n\n19. When Relief Carving is selected, make the subject appear recessed into a continuous flat surface, as though its shape has been carved inward into a material.\n20. The subject's contours and internal features must be described through recessed depth rather than raised relief.\n21. Use inverted edge shading, recessed contours, and carefully controlled highlights to make the carving appear to sink into the surface.\n22. Preserve the original subject's recognizable silhouette and important internal features.\n23. The surrounding surface should remain visually coherent and should not become an unrelated environment or decorative frame.\n24. Do not create conventional raised bas-relief. The defining effect is inward carving.\n\nDEPTH STYLE — INVERTED SCULPTURE:\n\n25. When Inverted Sculpture is selected, transform the entire subject into an inward-facing or hollowed three-dimensional structure.\n26. Apply the concave construction consistently across the subject rather than limiting it to the face.\n27. Body contours, limbs, clothing, folds, objects, and other visible structures should appear to recede inward or form an inverted sculptural surface.\n28. Preserve the original subject's recognizable anatomy, proportions, pose, and important visual characteristics.\n29. Do not simply create a normal raised sculpture with exaggerated shadows. The actual visual construction must suggest reversed depth.\n\nCONVEX-PERCEPTION TRICK:\n\n30. Arrange familiar structural features so the visual system is encouraged to interpret the concave surface as convex.\n31. Preserve recognizable proportions, coherent feature placement, bilateral symmetry where appropriate, and continuous surface transitions.\n32. Create a perceptual conflict between the actual inward curvature and the brain's expectation that familiar subjects, particularly faces, project outward.\n33. Use reversed highlights, shadows, perspective, and surface transitions to strengthen this contradiction.\n34. The viewer should be able to experience the unsettling impression that the hollow subject is projecting outward despite its inward-facing construction.\n35. Do not make the illusion so distorted that the original subject becomes unrecognizable.\n36. Do not resolve the contradiction by rendering an ordinary convex subject.\n\nFOLLOWING-EYES EFFECT — MONA LISA EFFECT:\n\n37. When the original subject has a visible face, both eyes must look directly outward toward the viewer.\n38. Position the pupils and irises to create a centered, frontal, direct gaze.\n39. Keep the pupils aligned and the gaze symmetrical, unless the original subject's natural facial structure requires a slight asymmetry.\n40. The eyes must appear to maintain eye contact when the viewer changes position relative to the displayed image.\n41. Preserve the correct relationship between pupils, irises, eyelids, and eye sockets while incorporating the concave facial geometry.\n42. The gaze should feel stable, direct, and subtly unsettling, as though the subject is watching the viewer.\n43. Avoid eyes looking off to the side, upward, or downward unless explicitly required by the master prompt.\n44. Do not duplicate pupils, create multiple eye positions, or depict motion trails.\n45. Do not force a face onto subjects that do not naturally have one. For non-facial subjects, create the hollow-depth illusion through their own recognizable structural features.\n\nSIMULATED CONCAVE SHADING — INVERTED LIGHTING:\n\n46. Lighting must reinforce the inward-facing geometry rather than describe ordinary outward-projecting surfaces.\n47. Reverse the expected light-and-shadow relationships across the concave structure.\n48. For a face, make the nose appear sunken, the eye sockets appear inverted or raised, and the cheeks appear to curve inward.\n49. Use contradictory highlights and shadows around the brow, nose, cheeks, mouth, and chin to maintain the hollow interpretation.\n50. Apply the reversed shading consistently across the entire face or subject. Do not reverse only isolated details.\n51. Use the selected lighting option to determine the direction and concentration of the inverted illumination.\n52. The inverted lighting must remain consistent with the actual concave construction.\n53. Do not simply invert all image colors or produce a photographic negative. Only reverse the lighting and depth cues.\n54. Avoid conventional highlights and shadows that accidentally make the subject appear normally convex.\n55. Use smooth, controlled tonal transitions where appropriate to make the surface appear sculptural and continuous.\n\nILLUSION STRENGTH:\n\n56. Subtle should retain gentle inward curvature and restrained but visible reversed depth cues.\n57. Medium should make the concave construction readily identifiable while preserving a convincing perceptual ambiguity.\n58. Strong should produce unmistakable inward geometry and clearly contradictory convex-perception cues.\n59. Extreme should exaggerate the recessed construction and reversed depth relationships while retaining the original subject's recognizability.\n60. Intensity must change the strength of the illusion, not replace it with unrelated distortion or abstraction.\n\nSURFACE STYLE:\n\n61. Smooth should use continuous, clean, softly sculpted surfaces with clearly readable concave geometry.\n62. Carved should use recessed edges, engraved contours, and chiseled surface transitions that reinforce inward depth.\n63. Painted Illusion should use a flat 2D rendering with carefully painted inverted highlights and shadows to simulate a hollow surface.\n64. Regardless of surface style, the concave depth construction must remain the defining feature.\n65. Do not allow surface texture to obscure the geometry or make the subject appear normally convex.\n\nMOTION PARALLAX AND STATIC 2D LIMITATIONS:\n\n66. Genuine motion parallax occurs when the relative positions of visible surfaces change as the viewer moves in relation to a three-dimensional object.\n67. A single static 2D image cannot produce genuine viewpoint-dependent motion parallax because its perspective and visible features do not physically change when the viewer moves.\n68. Nevertheless, exploit the perceptual expectations associated with motion parallax through fixed perspective, contradictory depth cues, coherent concave geometry, and direct eye contact.\n69. For faces, the following-eyes effect should create the impression of continued visual attention as the viewer moves from side to side.\n70. Use a frontal, visually stable construction that remains convincing from the fixed perspective of the image.\n71. Do not depict multiple viewpoints, duplicated subjects, changing facial positions, arrows, camera diagrams, or motion trails to simulate parallax.\n72. The result must remain one coherent static image.\n\nSUBJECT PRESERVATION AND COMPOSITION:\n\n73. Preserve the original subject's identity, recognizable characteristics, essential visual content, and important structural details.\n74. Preserve the original composition, framing, pose, and orientation as much as possible while creating the illusion.\n75. Transform the subject itself. Do not simply place an unrelated hollow mask or concave object beside the original subject.\n76. Preserve original background content unless the selected style or master prompt specifically requires a different presentation.\n77. Do not add unrelated objects, decorations, creatures, plants, flowers, branches, or fantasy elements.\n78. Do not add explanatory text, labels, arrows, diagrams, logos, or borders unless requested by the master prompt.\n79. Do not allow the original photograph to remain visible as an unchanged layer beneath a superficial shading effect.\n\nMASTER PROMPT RULE:\n\n80. Any externally supplied master prompt overrides preset defaults and must be prioritized.\n81. If a master prompt specifies the subject, pose, expression, setting, material, artistic medium, colors, lighting, or visual emphasis, use that information.\n82. If a master prompt specifies a particular illusion intensity or focal area, prioritize it over the randomized default.\n83. If the master prompt specifies a particular depth style, prioritize that instruction over the randomly selected Depth Style option.\n84. If the master prompt specifies a particular surface style or lighting direction, prioritize those instructions over the corresponding options.\n85. Do not allow randomized options to contradict explicit master prompt instructions.\n86. Preserve the defining concave-depth illusion unless the master prompt explicitly requests a different transformation.\n\nFINAL VALIDATION — FAIL CONDITIONS:\n\n87. Actual subject geometry appears normally convex with no convincing inward-facing construction: FAIL.\n88. The subject has only dark shadows or hollow-looking eye sockets without a coherent concave structure: FAIL.\n89. The nose appears conventionally raised when Hollow Face is selected: FAIL.\n90. The eye sockets, cheeks, and surrounding facial structures do not support the inverted depth illusion: FAIL.\n91. Reversed lighting is inconsistent or applied only to isolated facial features: FAIL.\n92. The subject's eyes look away from the viewer when a frontal face is present: FAIL.\n93. The image is merely a flat, unconvincing drawing with no readable depth cues: FAIL.\n94. The result is an ordinary raised sculpture or conventional bas-relief instead of the selected inward-facing effect: FAIL.\n95. The original subject becomes unrecognizable or is replaced by an unrelated object: FAIL.\n96. The final result must communicate actual concavity while creating a convincing illusion of convexity, with the following-eyes effect where applicable."
   },
   {
     "name": "HOLOGRAPHIC FOIL SHIFT",
