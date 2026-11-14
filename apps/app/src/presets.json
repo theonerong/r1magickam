@@ -13050,6 +13050,57 @@
     "additionalInstructions": "Completely transform the subject into an authentic automotive crash-test dummy. Replace all visible skin, hair, facial hair, eyebrows, eyelashes, and organic body surfaces with molded safety-yellow crash-test-dummy materials. The entire head, face, and body must appear professionally manufactured with black calibration targets, articulated joints, testing instrumentation, and authentic automotive-industry crash-test-dummy construction while preserving recognizable identity through proportions and expression."
   },
   {
+    "name": "CRATER-VOLCANO DEPTH REVERSAL",
+    "category": [
+      "ART",
+      "OPTICAL ILLUSION",
+      "DEPTH ILLUSION",
+      "2D ILLUSION",
+      "CONCAVE",
+      "CONVEX",
+      "DEPTH REVERSAL",
+      "LIGHTING ILLUSION",
+      "PERCEPTION"
+    ],
+    "message": "Take a picture and transform the subject into a powerful crater-volcano depth reversal illusion. Reconstruct the subject as a carefully designed two-dimensional optical illusion in which the same surface contours, shading, and tonal structures can be interpreted as either deeply recessed inward or dramatically raised outward. Use inverted depth cues to make the subject appear to sink into the image as a deep crater, hollow, cavity, or concave formation, while simultaneously suggesting the opposite interpretation: a raised, protruding, convex structure emerging from the surface. Create the illusion primarily through precisely reversed light-and-shadow relationships, contour transitions, tonal gradients, and carefully controlled highlights and dark regions. The result must look like a deliberate optical depth experiment, not an ordinary photograph with exaggerated shadows or a conventional 3D render. Preserve the recognizable identity and essential structure of the original subject while rebuilding its visible surfaces to support the depth-reversal illusion. The viewer should be able to experience a strong perceptual ambiguity in which raised forms can appear recessed and recessed forms can appear raised, depending on how the visual cues are interpreted.",
+    "randomizeOptions": true,
+    "options": [
+      {
+        "id": "CRATER / CONCAVE",
+        "text": "Make the subject appear deeply recessed into the image surface. Use inverted shading, darkened central regions, strategically placed highlights, and contours that suggest a deep inward depression. The subject should look carved, hollowed, or sunken into the picture plane."
+      },
+      {
+        "id": "VOLCANO / CONVEX",
+        "text": "Make the subject appear to bulge outward from the image surface like a raised volcanic dome or protruding relief. Use conventional convex depth cues, rounded highlights, darker contour transitions, and tonal gradients that suggest an outward-projecting form."
+      },
+      {
+        "id": "AMBIGUOUS DEPTH REVERSAL",
+        "text": "Create an intentionally ambiguous image that supports both concave and convex interpretations. Carefully balance the shading and contour cues so the perceived depth can flip between an inward crater and an outward protrusion without changing the underlying image."
+      },
+      {
+        "id": "EXTREME DEPTH",
+        "text": "Push the apparent depth to an extreme. Use dramatic tonal separation, strong inverted highlights and shadows, pronounced contour transitions, and deep-looking recesses or strongly projecting surfaces. Keep the subject recognizable and avoid turning it into an unrelated landscape."
+      },
+      {
+        "id": "SUBTLE DEPTH",
+        "text": "Use restrained shading reversals and gentle contour transitions to create a sophisticated, understated concave-convex ambiguity. Preserve the original subject's details and avoid exaggerated relief."
+      },
+      {
+        "id": "CRATER RIM",
+        "text": "Emphasize a raised outer rim surrounding a deeply recessed central region. Use a convincing transition from illuminated or shadowed rim edges into the sunken interior. Apply this structure to the subject's actual contours rather than adding an unrelated crater."
+      },
+      {
+        "id": "INVERTED LIGHTING",
+        "text": "Use deliberately reversed illumination cues. Position highlights and shadows where the visual system would normally interpret them as evidence of the opposite surface orientation. The result should make familiar shapes appear to turn inward instead of outward, or outward instead of inward."
+      },
+      {
+        "id": "MULTIPLE DEPTH REVERSALS",
+        "text": "Apply several interacting concave and convex interpretations across different regions of the subject. Some forms should appear sunken while neighboring forms appear raised, creating a complex but coherent depth-perception puzzle."
+      }
+    ],
+    "additionalInstructions": "The central objective is a two-dimensional depth-perception illusion based on the reversal or ambiguity of concave and convex shading cues. This is not a request to create an actual volcano, crater landscape, or unrelated geological scene. The volcano and crater terminology describes the visual behavior of the subject's surfaces, not new subject matter.\n\nSUBJECT PRESERVATION:\n- Preserve the original subject's identity, recognizable features, proportions, pose, silhouette, and essential details.\n- Reconstruct the subject's visible forms using the optical illusion technique rather than simply applying a darkening, embossing, or shadow filter to the original photograph.\n- Do not replace the subject with a generic crater, mountain, volcano, moon surface, or abstract landscape.\n- Preserve the original background unless the master prompt explicitly requests a background change.\n\nDEPTH-CUE CONTROL:\n- Use carefully controlled luminance gradients, contour shading, highlights, shadows, and edge transitions to manipulate perceived surface orientation.\n- For concave interpretations, reverse the familiar shading cues that normally make a rounded surface appear convex.\n- For convex interpretations, restore the conventional shading relationships that make a surface appear to project outward.\n- For ambiguous interpretations, keep the underlying contours and tonal relationships sufficiently balanced that the visual system can interpret the same shapes in opposite ways.\n- Avoid relying solely on dark outlines, drop shadows, bevel effects, or exaggerated edge contrast. The illusion must arise from the overall organization of the surface shading.\n- Keep the illusion legible at normal viewing size, with enough tonal separation to make the depth cues immediately apparent.\n\nIMPORTANT TECHNICAL LIMITATION:\n- This preset creates a flat-image perceptual depth illusion. It does not produce actual stereoscopic depth, binocular disparity, motion parallax, or physical relief extending beyond the screen.\n- Do not claim that the image literally changes shape or moves. The intended effect is a reversal in how the viewer interprets the same two-dimensional shading and contours.\n\nMASTER PROMPT PRIORITY:\n- Any externally supplied master prompt specifying the subject, pose, action, setting, mood, composition, colors, lighting, or artistic direction takes priority over the defaults in this preset.\n- Apply the depth-reversal technique to the subject and visual direction specified by the master prompt without introducing unrelated content.\n\nFINAL QUALITY REQUIREMENTS:\n- The finished image must clearly demonstrate a concave-versus-convex depth illusion, not merely look like a heavily shaded or embossed picture.\n- Maintain recognizable subject identity and coherent geometry.\n- Avoid photorealistic 3D rendering, plastic-looking extrusions, generic bevel filters, unrelated geological scenery, and decorative elements that weaken the optical illusion.\n- Prioritize the perceptual reversal of depth over decorative styling."
+  },
+  {
     "name": "CRAYON DRAWING",
     "category": [
       "ART",
