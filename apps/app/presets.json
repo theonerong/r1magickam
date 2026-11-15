@@ -2857,21 +2857,6 @@
     "additionalInstructions": ""
   },
   {
-    "name": "ANIMANIACS",
-    "category": [
-      "CARTOON", 
-      "TELEVISION CARTOON", 
-      "WARNER BROS", 
-      "SLAPSTICK", 
-      "CLASSIC ANIMATION", 
-      "1990S ANIMATION"
-    ],
-    "message": "Take a picture and transform the subject into a character in the energetic cartoon world of Animaniacs. Reconstruct the subject in the show's theatrical-cartoon-inspired 2D animation style, with rubber-hose movement, exaggerated expressions, elastic anatomy, bold outlines, and bright classic cartoon colors. Include Yakko, Wakko, Dot, and other recognizable Animaniacs characters. Place the subject at the Warner Bros. studio water tower, studio lot, or another iconic setting from the show. Show the subject caught up in a lively slapstick gag or interacting directly with the Warner siblings.",
-    "randomizeOptions": false,
-    "options": [],
-    "additionalInstructions": "Use theatrical-cartoon character construction: elastic limbs, exaggerated facial expressions, flexible anatomy, energetic poses, strong silhouettes, clean ink outlines, and bright cel colors. Include Yakko, Wakko, and Dot with recognizable designs. The Warner Bros. studio lot and iconic water tower should be primary setting choices, with other recognizable show environments when appropriate. Integrate the subject as a cartoon character in the same action and visual space as the Warners. Use lively slapstick, visual comedy, exaggerated gestures, and expressive reactions. Preserve recognizable identity while adapting proportions and expressions to the show's animation style. Avoid photorealism, static portrait composition, or generic contemporary vector cartoon design."
-  },
-  {
     "name": "ANIMATION STYLE TRIBUTE",
     "category": [
       "ART",
@@ -16454,20 +16439,6 @@
     "additionalInstructions": "FINAL RESULT — APPLIES TO BOTH NORMAL USE AND GAME MODE:\nShow only the three characters in the clearing. No other figures. The sign must always be present and readable, and the hunter must always be pointing at the animal the sign names.\n\nNORMAL USE (no game result below): draw the scene exactly as the chosen option describes, with no verdict word and no captions.\n\nOVERRIDE — GAME MODE: if a section headed \"=== GAME RESULT ===\" appears below, draw the scene for the CORRECT ANSWER it names, then add its verdict word in large hand-lettered cartoon type across the top of the frame, and show the small captions it specifies. A win should read as triumphant; a loss should show the hunter looking bewildered while both animals smirk."
   },
   {
-    "name": "DUCKTALES",
-    "category": [
-      "CARTOON", 
-      "TELEVISION CARTOON", 
-      "DISNEY ANIMATION", 
-      "ADVENTURE", 
-      "1980S ANIMATION"
-    ],
-    "message": "Take a picture and transform the subject into a character in the classic animated adventure world of DuckTales. Reconstruct the subject in the original television series' expressive Disney-style 2D animation, with rounded character construction, clean outlines, lively poses, and traditional cel colors. Include Scrooge McDuck, Huey, Dewey, Louie, and other familiar characters. Place the subject in iconic DuckTales locations such as McDuck Manor, the Money Bin, or an adventurous treasure-hunting setting. Show the subject joining the Duck family in a recognizable adventure or humorous situation.",
-    "randomizeOptions": false,
-    "options": [],
-    "additionalInstructions": "Use the original DuckTales television animation aesthetic: clean hand-drawn contours, rounded expressive forms, lively character poses, classic cel shading, and colorful adventure backgrounds. Include recognizable Scrooge McDuck and the nephews Huey, Dewey, and Louie. Launchpad McQuack, Webby, or other recurring characters may appear when appropriate. Use McDuck Manor, the Money Bin, Duckburg, or a distinctive treasure-hunting environment. The subject must be integrated into the adventure as a genuine member of the scene. If the subject is human, adapt them to the show's human-character style; if an animal, integrate them into the anthropomorphic cast. Preserve the subject's identity through recognizable features and clothing. Avoid modern 3D rendering and unrelated Disney characters."
-  },
-  {
     "name": "DUKE NUKEM 3D NPC",
     "category": [
       "VIDEO GAME",
@@ -24767,16 +24738,16 @@
   {
     "name": "HEY ARNOLD!",
     "category": [
-      "CARTOON", 
-      "TELEVISION CARTOON", 
-      "NICKELODEON", 
-      "1990S ANIMATION", 
-      "URBAN CARTOON"
+      "TV",
+      "CARTOON",
+      "ANIMATION",
+      "1990s",
+      "URBAN"
     ],
-    "message": "Take a picture and transform the subject into a character in the animated world of Hey Arnold! Reconstruct the subject in the show's distinctive hand-drawn urban cartoon style, with unusual head shapes, elongated silhouettes, expressive faces, clean outlines, and muted city-inspired colors. Include Arnold, Gerald, Helga, and other familiar characters. Place the subject in recognizable settings such as Arnold's boarding house, the school playground, the neighborhood streets, or the city stoop. Show the subject naturally interacting with the characters as a friend, neighbor, classmate, or visitor.",
+    "message": "Take a picture and transform the subject into a fully hand-drawn character in the distinctive urban cartoon world of Hey Arnold! Reconstruct the subject using the show's recognizable 1990s 2D animation style: simplified geometric character shapes, expressive oval and angular faces, clean dark outlines, flat colors, distinctive hair silhouettes, and carefully restrained cel shading. Place the subject alongside familiar neighborhood characters in a recognizable city neighborhood, school, boarding-house interior, or urban street setting. The subject must be drawn in precisely the same simplified hand-drawn style as the other characters, looking like a natural resident of Arnold's neighborhood rather than a realistic person inserted into an animated background.",
     "randomizeOptions": false,
     "options": [],
-    "additionalInstructions": "Use the recognizable Hey Arnold! visual design: unusual geometric head shapes, elongated body proportions, expressive facial features, hand-drawn contours, simple shading, and subdued urban color palettes. Include Arnold, Gerald, Helga, and appropriate recurring characters. Use recognizable environments such as the boarding house, school, playground, city streets, neighborhood stoops, and local hangouts. The subject must be redesigned as a resident of this animated city and participate in a believable interaction with the cast. Preserve the subject's distinguishing facial characteristics while adapting their silhouette and proportions to fit the show's visual language. Create a warm, humorous, character-driven scene. Do not use generic anime or modern glossy 3D animation."
+    "additionalInstructions": "AUTHENTIC 2D CARTOON STYLE:\n- Recreate the distinctive hand-drawn 1990s urban television-animation aesthetic associated with Hey Arnold!\n- Use clean dark outlines, simplified geometric forms, flat color fills, restrained cel shading, and carefully controlled details.\n- Use the show's distinctive character proportions: stylized heads, simplified facial structures, expressive eyes, compact bodies, and recognizable silhouettes.\n- Maintain the show's understated, warm, slightly quirky visual personality.\n- Use hand-drawn 2D animation rather than photorealism, 3D rendering, anime, glossy digital illustration, or generic modern cartoon styling.\n\nSUBJECT MUST MATCH THE CARTOON:\n- Completely redraw the subject as a native character in the show's visual universe.\n- Translate the subject's facial identity, hairstyle, complexion, clothing, accessories, and recognizable features into the simplified geometric character design language.\n- Adapt the subject's head shape, eyes, nose, mouth, body proportions, and hair silhouette to match the established animation style.\n- The subject's face must be just as simplified and stylized as the faces of the surrounding characters.\n- Use the same line weight, flat color fills, shadow treatment, proportions, and level of detail for the subject as for every other character.\n- Do not preserve realistic facial anatomy or photographic skin texture.\n- Do not make the subject a semi-realistic illustration surrounded by simplified cartoon characters.\n\nCHARACTERS AND WORLD:\n- Include familiar neighborhood characters as recognizable supporting figures.\n- Preserve their established visual designs, silhouettes, hairstyles, clothing, and personalities.\n- Use recognizable locations such as the city neighborhood, school corridors, streets, playground, or boarding-house interior.\n- Give the subject a natural place within the neighborhood and a direct interaction with the other characters.\n- Avoid generic city backgrounds that lack the show's distinctive urban atmosphere.\n\nENVIRONMENT:\n- Use simplified architectural shapes, urban streetscapes, brick buildings, stoops, sidewalks, school interiors, and neighborhood details.\n- Render the background in the same hand-drawn 2D visual language.\n- Use muted but appealing colors and clear graphic composition.\n- Maintain a warm, lived-in neighborhood atmosphere.\n\nSCENE COMPOSITION:\n- Make the subject a prominent member of the scene.\n- Use a natural interaction with the established characters rather than a static lineup.\n- Match character scale, perspective, outlines, colors, and shading throughout.\n- Give the subject an expressive but believable pose consistent with the show's understated comedic style.\n\nSTRICT FINAL REQUIREMENTS:\n- The subject must look as though they were designed and drawn for the original animated series.\n- Every part of the subject must use the same visual style as the surrounding cast.\n- The original photographic rendering must be completely removed from the transformed subject.\n- No realistic face, photographic hair, realistic skin, or semi-realistic body is permitted.\n- Do not place a differently styled character into the cartoon world.\n- The final image must read as one coherent hand-drawn animated scene."
   },
   {
     "name": "HIDDEN DETAILS",
@@ -29998,17 +29969,16 @@
   {
     "name": "LITTLE NEMO IN SLUMBERLAND",
     "category": [
-      "CARTOON", 
-      "COMIC STRIP", 
-      "NEWSPAPER COMICS", 
-      "VINTAGE ILLUSTRATION", 
-      "ART NOUVEAU", 
-      "FANTASY"
+      "COMIC",
+      "CARTOON",
+      "CLASSIC COMICS",
+      "FANTASY",
+      "SILENT COMICS"
     ],
-    "message": "Take a picture and transform the subject into a character in the fantastical dream world of Little Nemo in Slumberland. Reconstruct the subject in the ornate early-comic illustration style of Winsor McCay, with elegant ink outlines, intricate decorative details, elaborate architecture, delicate color, and Art Nouveau-inspired visual design. Include Little Nemo, Princess Camille, King Morpheus, Flip, or other recognizable characters. Place the subject in a spectacular Slumberland dream setting, such as the palace, fantastical streets, impossible stairways, or a surreal dream landscape. The subject must appear as a genuine participant in Nemo's dream adventure.",
+    "message": "Take a picture and transform the subject into a fully illustrated character in the fantastical dream world of Little Nemo in Slumberland. Reconstruct the subject in the distinctive early-20th-century hand-drawn comic illustration style: delicate yet expressive ink contours, ornate decorative details, elegant character anatomy, intricate architectural environments, rich storybook colors, and imaginative dreamlike compositions. Place the subject alongside recognizable characters from the Slumberland adventures in an elaborate dream setting, such as a fantastical palace, whimsical city, or impossible architectural landscape. The subject must be illustrated in exactly the same period comic-art style as the other characters and scenery, appearing as though they belong in an authentic illustrated episode of the classic dream adventure.",
     "randomizeOptions": false,
     "options": [],
-    "additionalInstructions": "Emphasize the elaborate early twentieth-century comic illustration aesthetic: refined pen-and-ink contours, intricate architectural ornament, elegant decorative patterns, finely drawn details, imaginative perspective, and delicate vintage color. Use Art Nouveau-inspired curves and ornamental structures where appropriate. Include recognizable Little Nemo characters such as Nemo, Princess Camille, Flip, and King Morpheus. Use iconic Slumberland imagery: the palace, grand staircases, dreamlike streets, fantastical rooms, impossible architecture, and surreal landscapes. The subject must be fully drawn in the same period-inspired illustration technique and integrated into the dream narrative. Preserve the subject's identity while adapting clothing and proportions to the fantastical setting. Create a richly composed, visually elaborate scene rather than a modern cartoon or generic fantasy painting. Do not reproduce an existing panel exactly."
+    "additionalInstructions": "DISTINCTIVE PERIOD ILLUSTRATION STYLE:\n- Recreate the ornate early-20th-century hand-drawn comic aesthetic associated with Little Nemo in Slumberland.\n- Use delicate but confident ink outlines, finely controlled contour work, intricate decorative details, expressive linework, and elegant illustrated forms.\n- Use imaginative architectural designs, elaborate ornamental patterns, unusual perspectives, and richly composed fantasy environments.\n- Favor sophisticated storybook color, luminous pastels, jewel tones, and carefully layered painted color areas.\n- Preserve the visual character of traditional printed comic illustration rather than creating modern digital fantasy art, anime, 3D animation, or photorealism.\n\nSUBJECT RECONSTRUCTION:\n- Completely redraw the subject as a character in the same period illustration style.\n- Preserve recognizable identity through facial structure, hairstyle, complexion, clothing characteristics, accessories, and distinctive features.\n- Translate these details into the period's illustrated character-design language.\n- Use the same delicate ink contours, stylized anatomy, expressive facial treatment, color handling, and fine illustration detail used for the other characters.\n- The subject must not retain photographic skin, realistic hair rendering, modern digital portrait treatment, or contemporary cartoon anatomy.\n- Do not merely place the original photograph into an illustrated fantasy setting.\n\nDREAM-WORLD CHARACTERS:\n- Include recognizable characters from the classic Slumberland adventures as supporting figures.\n- Preserve their distinctive period character designs and illustrated appearance.\n- Give the subject a natural role in the dream adventure and have the characters interact with them.\n- Use expressive gestures and imaginative poses appropriate to the dreamlike story.\n\nSLUMBERLAND ENVIRONMENT:\n- Create an elaborate fantasy setting inspired by the comic's distinctive dream architecture.\n- Possible environments include monumental palaces, fanciful staircases, impossible towers, ornate halls, whimsical streets, floating structures, and surreal dream landscapes.\n- Use intricate decorative architecture, elaborate furnishings, ornamental patterns, and imaginative spatial arrangements.\n- The environment must be rendered with the same period illustration techniques as the characters.\n\nCOMPOSITION:\n- Treat the image as a fully illustrated comic scene rather than a modern character portrait.\n- Make the subject a prominent participant in the dream adventure.\n- Use a strong narrative composition with layered depth, carefully arranged figures, and elaborate environmental detail.\n- Keep the subject, supporting characters, and scenery consistent in linework, color, texture, and period illustration style.\n\nSTRICT FINAL REQUIREMENTS:\n- The subject must be completely redrawn in the same illustrated style as the Slumberland characters.\n- Do not render the subject photorealistically or in a different cartoon style.\n- Do not combine modern digital character rendering with period comic backgrounds.\n- The original photograph must not remain visible in the transformed subject.\n- Preserve the ornate, imaginative, dreamlike atmosphere and distinctive early comic-art character of Little Nemo in Slumberland."
   },
   {
     "name": "LITTLE ORPHAN ANNIE",
@@ -55169,21 +55139,6 @@
     ],
     "randomizeOptions": true,
     "additionalInstructions": "FINAL RESULT:\nThe image should clearly show textile construction with visible fiber/thread/stitch details. The subject should look like a handcrafted textile art piece."
-  },
-  {
-    "name": "THE AMAZING WORLD OF GUMBALL",
-    "category": [
-      "CARTOON", 
-      "TELEVISION CARTOON", 
-      "CARTOON NETWORK", 
-      "MIXED MEDIA", 
-      "2D ANIMATION", 
-      "3D-STYLE ANIMATION"
-    ],
-    "message": "Take a picture and transform the subject into a fully integrated character in The Amazing World of Gumball. Reconstruct the subject using the show's distinctive mixed-media visual style, combining expressive 2D cartoon character design with varied textures, dimensional-looking elements, and its unusual blend of animation techniques. Include Gumball, Darwin, Anais, Nicole, and Richard Watterson as recognizable characters. Place the subject in iconic Elmore settings such as the Watterson home, Elmore Junior High, or the neighborhood. Show the subject interacting with the family and cast in a playful, surreal situation that looks like an actual scene from the show.",
-    "randomizeOptions": false,
-    "options": [],
-    "additionalInstructions": "The defining feature is the show's mixed-media world. Recreate its distinctive combination of flat 2D cartoon characters, varied character-rendering approaches, graphic shapes, textured surfaces, and dimensional-looking visual elements. Do not make the entire image uniformly 3D or uniformly flat vector art. Include recognizable Gumball, Darwin, Anais, Nicole, and Richard, preserving their distinctive appearances. Use Elmore Junior High, the Watterson home, the neighborhood, or other recognizable Elmore locations. Integrate the subject into the same mixed-media environment and visual logic. The subject should have a character design that fits naturally among the established cast, with consistent perspective, scale, lighting, and rendering treatment. Preserve identity while adapting the subject's design to the show's unusual visual language. The scene should feel playful, surreal, colorful, and unmistakably part of Elmore."
   },
   {
     "name": "THE BIGGEST LOSER",
