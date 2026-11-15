@@ -5903,6 +5903,35 @@ async function recheckForUpdates() {
   }
 }
 
+// Shows the "Updates" badge on the camera screen for 3 seconds. If a menu or
+// another screen is covering the camera, it waits and shows the badge as soon
+// as the camera screen is visible again, so the badge is never missed.
+function showUpdatesIndicatorWhenVisible() {
+  if (window._updatesIndicatorPending) return;
+  window._updatesIndicatorPending = true;
+  let tries = 0;
+  const attempt = () => {
+    const el = document.getElementById('updates-indicator');
+    if (!el || !window.hasPresetsUpdates || tries++ > 600) {
+      window._updatesIndicatorPending = false;
+      return;
+    }
+    el.style.display = 'block';
+    const r = el.getBoundingClientRect();
+    const top = r.width > 0
+      ? document.elementFromPoint(r.left + r.width / 2, r.top + r.height / 2)
+      : null;
+    if (top && (top === el || el.contains(top))) {
+      window._updatesIndicatorPending = false;
+      setTimeout(() => { el.style.display = 'none'; }, 3000);
+    } else {
+      el.style.display = 'none';
+      setTimeout(attempt, 1000);
+    }
+  };
+  attempt();
+}
+
 // Update master prompt indicator visibility
 function updateMasterPromptIndicator() {
   const mpIndicator = document.getElementById('master-prompt-indicator');
@@ -11275,20 +11304,11 @@ async function initCamera() {
       }, 3000);
     }
     
-    // Wait for the update check to finish (if still running), then show indicator
-    if (window._presetsUpdateCheckPromise) {
-      await window._presetsUpdateCheckPromise;
-      window._presetsUpdateCheckPromise = null;
-    }
-    if (window.hasPresetsUpdates) {
-      const updatesIndicator = document.getElementById('updates-indicator');
-      if (updatesIndicator) {
-        updatesIndicator.style.display = 'block';
-        setTimeout(() => {
-          updatesIndicator.style.display = 'none';
-        }, 3000);
-      }
-    }
+    // When the update check finishes (it may still be running), show the
+    // indicator. If a menu is open at that moment, it waits for the camera screen.
+    const _updateCheck = window._presetsUpdateCheckPromise;
+    window._presetsUpdateCheckPromise = null;
+    Promise.resolve(_updateCheck).then(() => showUpdatesIndicatorWhenVisible());
     
     // Show master prompt indicator if enabled
     updateMasterPromptIndicator();
@@ -13744,6 +13764,12 @@ YOU MUST RESTART PROGRAM!`];
 // Show Settings submenu
 function showSettingsSubmenu() {
   const submenu = document.getElementById('settings-submenu');
+
+  // If the startup update check could not download the preset list, try again now.
+  if (!window._cachedFactoryPresets && !window._factoryPresetsLoading &&
+      presetImporter.getImportedPresets().length > 0) {
+    recheckForUpdates();
+  }
   const menu = document.getElementById('unified-menu');
   
   updateResolutionDisplay();
@@ -19161,6 +19187,9 @@ const result = await presetImporter.import();
                      alert(result.message);
                   } else if (result.message !== 'cancelled' && result.message !== 'No presets selected') {
                      alert('Import failed: ' + result.message);
+                  } else if (presetImporter.getImportedPresets().length > 0) {
+                     // Closed without importing — refresh the notification text
+                     recheckForUpdates();
                   }
       } catch (error) {
         alert('Import error: ' + error.message);
