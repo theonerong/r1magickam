@@ -2857,6 +2857,21 @@
     "additionalInstructions": ""
   },
   {
+    "name": "ANIMANIACS",
+    "category": [
+      "CARTOON", 
+      "TELEVISION CARTOON", 
+      "WARNER BROS", 
+      "SLAPSTICK", 
+      "CLASSIC ANIMATION", 
+      "1990S ANIMATION"
+    ],
+    "message": "Take a picture and transform the subject into a character in the energetic cartoon world of Animaniacs. Reconstruct the subject in the show's theatrical-cartoon-inspired 2D animation style, with rubber-hose movement, exaggerated expressions, elastic anatomy, bold outlines, and bright classic cartoon colors. Include Yakko, Wakko, Dot, and other recognizable Animaniacs characters. Place the subject at the Warner Bros. studio water tower, studio lot, or another iconic setting from the show. Show the subject caught up in a lively slapstick gag or interacting directly with the Warner siblings.",
+    "randomizeOptions": false,
+    "options": [],
+    "additionalInstructions": "Use theatrical-cartoon character construction: elastic limbs, exaggerated facial expressions, flexible anatomy, energetic poses, strong silhouettes, clean ink outlines, and bright cel colors. Include Yakko, Wakko, and Dot with recognizable designs. The Warner Bros. studio lot and iconic water tower should be primary setting choices, with other recognizable show environments when appropriate. Integrate the subject as a cartoon character in the same action and visual space as the Warners. Use lively slapstick, visual comedy, exaggerated gestures, and expressive reactions. Preserve recognizable identity while adapting proportions and expressions to the show's animation style. Avoid photorealism, static portrait composition, or generic contemporary vector cartoon design."
+  },
+  {
     "name": "ANIMATION STYLE TRIBUTE",
     "category": [
       "ART",
@@ -3267,6 +3282,21 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "ARCHER",
+    "category": [
+      "CARTOON", 
+      "TELEVISION CARTOON", 
+      "ADULT ANIMATION", 
+      "ESPIONAGE", 
+      "EDITORIAL ILLUSTRATION", 
+      "STYLIZED"
+    ],
+    "message": "Take a picture and transform the subject into a character in the sophisticated animated spy-comedy world of Archer. Reconstruct the subject in the show's polished graphic 2D animation style, with sharply defined angular features, precise contours, carefully controlled shading, elegant proportions, and a refined color palette. Include Sterling Archer, Lana Kane, Malory Archer, Pam Poovey, Cheryl, and other recognizable characters as appropriate. Place the subject in the spy agency office, a stylish bar, a mission location, or another iconic Archer environment. Show the subject participating in a spy mission or interacting naturally with the cast.",
+    "randomizeOptions": false,
+    "options": [],
+    "additionalInstructions": "Use the show's distinctive polished adult-animation aesthetic: clean angular character construction, precise outlines, graphic shadow shapes, controlled gradients, sophisticated color palettes, and fashion-conscious character design. Include recognizable Archer characters, especially Sterling Archer and Lana Kane, with other recurring cast members where appropriate. Use the agency office, conference room, stylish bars, vehicles, or recognizable mission environments. Integrate the subject as an agent, contact, colleague, or participant in the scene. Preserve the subject's facial identity while translating their features into the show's angular illustrated design. Clothing should fit the spy-comedy world, unless the master prompt specifies otherwise. Avoid photorealistic skin, generic superhero styling, and crude cartoon proportions."
   },
   {
     "name": "ARCHIE COMICS",
@@ -4581,6 +4611,21 @@
     "additionalInstructions": ""
   },
   {
+    "name": "B.C.",
+    "category": [
+      "CARTOON", 
+      "COMIC STRIP", 
+      "NEWSPAPER COMICS", 
+      "CLASSIC COMICS", 
+      "PREHISTORIC", 
+      "MINIMALIST"
+    ],
+    "message": "Take a picture and transform the subject into a character in the prehistoric comic-strip world of B.C. Reconstruct the subject in Johnny Hart's distinctive minimalist cartoon language, with simple rounded forms, economical black linework, expressive faces, and uncluttered color. Place the subject among B.C., Peter, Wiley, the other familiar characters, and the recognizable prehistoric landscape. Show the subject participating in a humorous stone-age situation involving the characters, their primitive inventions, or everyday prehistoric life. The result must look like an authentic character and scene from the comic strip.",
+    "randomizeOptions": false,
+    "options": [],
+    "additionalInstructions": "Use minimalist prehistoric comic-strip drawing: simple shapes, compact character construction, clean black outlines, limited details, expressive gestures, and straightforward coloring. Include recognizable B.C. characters such as B.C., Peter, Wiley, and other appropriate recurring figures. Use the familiar prehistoric landscape, rocks, caves, primitive shelters, beach, and open natural surroundings. Make the subject a genuine member of this world, dressed and proportioned to fit the comic's prehistoric setting. Create a humorous interaction or visual gag rather than a generic group portrait. Keep the scene uncluttered and readable. Preserve the subject's recognizable facial characteristics through simplified cartoon design. Do not add modern objects unless the master prompt specifically requests them. Master-prompt instructions override optional scene choices."
+  },
+  {
     "name": "BEAM ME UP SCOTTY",
     "category": [
       "OPTIONS",
@@ -4706,6 +4751,20 @@
     ],
     "randomizeOptions": true,
     "additionalInstructions": "SUBJECT RECONSTRUCTION REQUIREMENTS:\n\n• THE ENTIRE SUBJECT MUST BECOME THE HONEYCOMB FRAME.\n• Do not merely place honeycomb over the subject.\n• Do not apply a honeycomb texture to normal human skin or clothing.\n• Do not leave the original subject underneath the effect.\n• Do not place a normal person inside or in front of a honeycomb frame.\n• Every visible portion of the subject must be constructed from beeswax comb.\n\nFACIAL IDENTITY REQUIREMENTS:\n\n• PRESERVE THE SUBJECT'S EXACT FACIAL GEOMETRY.\n• Use the subject's actual face as the three-dimensional blueprint for the honeycomb reconstruction.\n• Preserve the subject's exact eye spacing.\n• Preserve the subject's eye shape and relative size.\n• Preserve eyebrow position and brow structure.\n• Preserve forehead shape and proportions.\n• Preserve nose length, width, bridge shape, tip shape, nostril placement, and overall nose geometry.\n• Preserve cheekbone position and structure.\n• Preserve cheek volume and facial contour.\n• Preserve mouth width, mouth shape, lip proportions, and lip placement.\n• Preserve jaw width and jawline shape.\n• Preserve chin shape and projection.\n• Preserve ear shape, position, and size when visible.\n• Preserve the subject's overall facial proportions.\n• Preserve distinctive facial asymmetries.\n• Preserve distinctive facial characteristics that make the subject recognizable.\n• The honeycomb cells must physically follow the subject's actual facial contours rather than forming generic facial proportions.\n• Use cell density, cell depth, cell orientation, wax thickness, openings, caps, honey contents, shadows, and highlights to reproduce the subject's facial structure.\n• Do NOT generate a generic human face and cover it with honeycomb.\n• Do NOT approximate the face using generic human proportions.\n• The subject must remain identifiable from the facial structure of the honeycomb alone.\n\nBODY RECONSTRUCTION REQUIREMENTS:\n\n• Hair must be formed entirely from honeycomb structure.\n• Clothing must be formed entirely from honeycomb structure.\n• Arms, hands, fingers, legs, feet, and torso must all be constructed from honeycomb.\n• Preserve the subject's original pose.\n• Preserve the subject's original body proportions.\n• Preserve the subject's recognizable silhouette.\n• Use variations in cell density and depth to reproduce clothing folds and body contours.\n• No original skin, hair, fabric, or other material may remain visible.\n\nHONEYCOMB MATERIAL REQUIREMENTS:\n\n• Hexagonal cells must physically follow the contours of the subject rather than simply appearing as a flat repeating texture.\n• Cells must have real three-dimensional walls, depth, openings, caps, and irregularities.\n• Cells must share physical walls and form one continuous connected comb structure.\n• Individual cells should naturally vary in size, depth, orientation, transparency, wax color, and state of completion.\n• Avoid perfectly uniform computer-generated hexagon patterns.\n• Wax should appear translucent, organic, slightly irregular, and physically believable.\n• Honey-filled cells should contain realistic amber honey where appropriate.\n• Capped cells should have naturally uneven wax caps.\n• Empty cells should reveal genuine cell depth.\n• The honeycomb must appear physically constructed rather than digitally tiled.\n\nFRAME REQUIREMENTS:\n\n• A genuine wooden beehive frame must surround and support the honeycomb structure.\n• The wooden frame should appear physically separate from the transformed subject while holding the continuous comb.\n• The subject itself must be part of the honeycomb contained within the wooden frame.\n• The final composition must look like a real physical beehive frame photographed in three dimensions.\n\nPHOTOGRAPHIC REQUIREMENTS:\n\n• Preserve realistic lighting, shadows, reflections, depth, and material behavior.\n• Use realistic macro-level detail where appropriate.\n• Preserve convincing three-dimensional depth throughout the comb.\n• Make the wax, honey, wooden frame, and shadows physically believable.\n• Master prompt instructions always override conflicting instructions.\n\nFINAL VALIDATION:\n\n✓ The entire subject has been transformed into honeycomb.\n✓ No normal skin remains visible.\n✓ No normal hair remains visible.\n✓ No normal clothing remains visible.\n✓ The subject is NOT merely covered with honeycomb.\n✓ The subject's actual facial geometry is preserved.\n✓ Eye spacing and eye shape remain faithful to the subject.\n✓ Nose structure remains faithful to the subject.\n✓ Mouth and lip structure remain faithful to the subject.\n✓ Cheekbones and jawline remain faithful to the subject.\n✓ Distinctive facial asymmetries are preserved.\n✓ The face does not resemble a generic person made from honeycomb.\n✓ The subject remains identifiable from facial structure alone.\n✓ The body, pose, proportions, clothing, and silhouette remain recognizable through the honeycomb structure.\n✓ Hexagonal cells are connected into one continuous physical structure.\n✓ The honeycomb is genuinely three-dimensional.\n✓ Wax, honey, caps, shadows, and cell depth appear physically realistic.\n✓ The wooden frame surrounds the completed comb.\n✓ The final result looks like a physical beehive frame rather than a photographic filter.\n✓ If ANY answer is NO, regenerate until every requirement is satisfied."
+  },
+  {
+    "name": "BEETLE BAILEY",
+    "category": [
+      "CARTOON", 
+      "COMIC STRIP", 
+      "NEWSPAPER COMICS", 
+      "CLASSIC COMICS", 
+      "MILITARY HUMOR"
+    ],
+    "message": "Take a picture and transform the subject into a character at Camp Swampy in the world of Beetle Bailey. Reconstruct the subject in Mort Walker's loose, economical newspaper-comic style, with expressive caricatures, relaxed poses, simple ink contours, and classic comic coloring. Include Beetle Bailey, Sergeant Snorkel, General Halftrack, and other familiar members of the camp. Place the subject in an iconic military-camp setting such as the barracks, mess hall, training field, or headquarters, participating in a humorous military mishap or interaction. Make the subject look like a long-established member of the comic strip.",
+    "randomizeOptions": false,
+    "options": [],
+    "additionalInstructions": "Use the recognizable Beetle Bailey visual language: economical hand-drawn lines, relaxed and exaggerated body language, simple facial features, distinctive character silhouettes, and classic newspaper-strip coloring. Include recognizable recurring characters, especially Beetle Bailey and Sergeant Snorkel, with General Halftrack or other camp personnel where appropriate. Use Camp Swampy's barracks, mess hall, obstacle course, parade ground, office, or training area. Dress the subject as a member of the camp when appropriate, but preserve identifying facial features and personal characteristics. Build a humorous interaction with the established cast; the subject should be participating in the action. Maintain consistent line weight, scale, perspective, and color treatment across every character. Do not turn the scene into a realistic military photograph or a generic military cartoon."
   },
   {
     "name": "BEHIND BARS",
@@ -5575,6 +5634,35 @@
     "additionalInstructions": "The BLOCKBUSTER VIDEO branding is essential. Reproduce the recognizable Blockbuster Video logo prominently on the front cover, using its distinctive blue-and-yellow branding and characteristic logo treatment. The logo must be clearly legible, correctly spelled, and integrated into the printed cover design rather than appearing as a floating watermark. The case must convincingly resemble a physical VHS rental product from the 1980s or 1990s, not a DVD, Blu-ray, streaming thumbnail, modern poster, or generic video-store package. Include authentic VHS proportions, a visible spine, period-appropriate typography, printed artwork, and realistic plastic or cardboard packaging. The subject must be the actual star of the fictional movie depicted on the cover. Reconstruct the subject within the movie artwork, preserving their recognizable identity; never simply paste the original photograph onto the packaging. Invent an appropriate fictional movie title and tagline unless the master prompt specifies them. If a master prompt specifies a movie genre, title, setting, character, pose, mood, or visual direction, it overrides the preset defaults. Do not invent additional people or characters that compete with the subject as the star. The finished image should feel like a genuine collectible VHS rental discovered on a shelf at Blockbuster Video."
   },
   {
+    "name": "BLONDIE",
+    "category": [
+      "CARTOON", 
+      "COMIC STRIP", 
+      "NEWSPAPER COMICS", 
+      "CLASSIC COMICS", 
+      "FAMILY HUMOR"
+    ],
+    "message": "Take a picture and transform the subject into a fully integrated character in the world of Blondie. Reconstruct the subject in the classic newspaper-comic illustration style, with rounded expressive characters, clean ink contours, appealing proportions, and traditional comic-strip colors. Include Blondie, Dagwood, and other familiar characters in a recognizable setting such as the Bumstead family home, kitchen, office, or neighborhood. Show the subject naturally interacting with the characters in a humorous domestic or everyday situation. The finished image should look like a genuine Blondie comic-strip scene.",
+    "randomizeOptions": false,
+    "options": [],
+    "additionalInstructions": "Recreate the classic Blondie comic-strip appearance with clean hand-drawn outlines, rounded anatomy, expressive faces, simplified but recognizable clothing, and traditional newspaper-comic coloring. Include Blondie and Dagwood as recognizable characters, with appropriate supporting characters such as Daisy, Alexander, Cookie, or Mr. Dithers when suitable. Favor iconic domestic and workplace locations: the Bumstead kitchen, dining room, living room, office, or neighborhood. A humorous food-related situation, domestic misunderstanding, or workplace gag is appropriate. Integrate the subject into the same drawing style, perspective, lighting, and action as the established characters. Do not make the subject look like a photograph pasted into a drawing. Preserve identity while adapting the subject to the strip's character proportions. Do not copy an existing panel exactly."
+  },
+  {
+    "name": "BLOOM COUNTY",
+    "category": [
+      "CARTOON", 
+      "COMIC STRIP", 
+      "NEWSPAPER COMICS", 
+      "EDITORIAL CARTOON", 
+      "WATERCOLOR", 
+      "CARICATURE"
+    ],
+    "message": "Take a picture and transform the subject into a character in the eccentric world of Bloom County. Reconstruct the subject in its distinctive expressive ink-and-watercolor newspaper-comic aesthetic, with loose hand-drawn contours, quirky caricature, lively facial expressions, and painterly color. Include recognizable characters such as Opus, Bill the Cat, Milo, Binkley, and other familiar residents. Place the subject in a recognizable Bloom County environment, such as the town, Milo's surroundings, or a character gathering, and show a humorous interaction with the cast. The result should look like an original Bloom County comic-strip scene.",
+    "randomizeOptions": false,
+    "options": [],
+    "additionalInstructions": "Emulate the strip's expressive, loose, painterly illustration: visible ink contours, lively brushwork, watercolor-like color variation, irregular shapes, and distinctive caricature. Include recognizable Bloom County characters such as Opus and Bill the Cat, with Milo, Binkley, or other recurring figures as appropriate. Keep the characters' defining visual traits recognizable. Use the strip's quirky small-town and domestic environments, including familiar character hangouts and gathering places. Integrate the subject into the scene as a new resident, friend, visitor, or participant in the absurd situation. The subject must be drawn with the same loose ink and watercolor treatment as the cast. Retain recognizable facial features while translating them into expressive caricature. Use witty visual storytelling and avoid generic polished vector-cartoon rendering."
+  },
+  {
     "name": "BLOW MOLD",
     "category": [
       "HOLIDAY",
@@ -5927,6 +6015,20 @@
     "additionalInstructions": "• Preserve original composition exactly\n• Preserve original background rather than inventing new scenery\n• Preserve recognizable identity\n• Subject appears only inside painted canvas\n• Entire canvas artwork rendered as authentic oil paint\n• No photographic textures inside painting\n• No photobashing\n• No compositing\n• No pasted-in subjects\n• Use visible brush strokes throughout entire painting\n• Use wet-on-wet blending\n• Use thick oil-paint textures\n• Use palette-knife effects when appropriate\n• Use traditional alla prima techniques\n• Emphasize hand-painted craftsmanship\n• Emphasize canvas texture\n• Bob Ross must be visible beside easel\n• Bob Ross must be holding painting tools\n• Final image should resemble a genuine episode of The Joy of Painting"
   },
   {
+    "name": "BOB'S BURGERS",
+    "category": [
+      "CARTOON", 
+      "TELEVISION CARTOON", 
+      "ADULT ANIMATION", 
+      "SITCOM", 
+      "COMEDY"
+    ],
+    "message": "Take a picture and transform the subject into a character in the animated world of Bob's Burgers. Reconstruct the subject in the show's distinctive simple 2D animation style, with rounded facial shapes, clean thin outlines, flat colors, minimal shading, and expressive understated features. Include Bob, Linda, Tina, Gene, and Louise Belcher, along with other familiar characters when appropriate. Place the subject in the iconic Bob's Burgers restaurant, the apartment above it, or the boardwalk and neighborhood. Show the subject interacting naturally with the Belcher family in a humorous restaurant or everyday situation.",
+    "randomizeOptions": false,
+    "options": [],
+    "additionalInstructions": "Use the recognizable Bob's Burgers character design: simple rounded shapes, distinctive head silhouettes, thin clean outlines, flat colors, minimal shading, and expressive but understated facial features. Include the Belcher family with recognizable designs and personalities. Use the restaurant counter, dining area, kitchen, apartment, storefront, or boardwalk as recognizable settings. Integrate the subject as a customer, friend, neighbor, employee, or participant in the family's activity. Keep the scene character-driven, warm, and humorous. Preserve the subject's identity while adapting their face and body proportions to the show's simple design language. Ensure the subject and established characters share consistent linework, scale, perspective, and color treatment. Avoid glossy 3D, photorealism, and generic vector art."
+  },
+  {
     "name": "BODY PAINT",
     "category": [
       "ART",
@@ -6040,6 +6142,21 @@
     ],
     "randomizeOptions": true,
     "additionalInstructions": "Create a believable, high-quality bohemian lifestyle or fashion photograph, not a costume illustration or generic fantasy scene. Preserve the subject's identity, facial features, age, body proportions, and recognizable appearance. Use natural styling elements such as flowing linen, cotton, gauze, crochet, fringe, embroidery, woven textures, layered necklaces, artisan jewelry, leather details, scarves, and relaxed silhouettes. Favor earthy tones including sand, terracotta, rust, cream, olive, warm brown, muted mustard, and dusty rose. Styling should feel curated but effortless, with fabrics that move naturally in the wind and accessories that sit realistically on the body. Environments may include desert landscapes, meadows, beaches, forests, rustic outdoor spaces, and music festivals. Use natural light, warm highlights, authentic skin texture, and editorial photographic composition. Avoid turning every scene into a music festival, adding excessive accessories, using stereotypical or culturally appropriative costume elements, or making the subject look like a fantasy character. The selected option guides the setting and styling unless the master prompt specifies a different location, outfit, activity, mood, pose, or artistic direction. Master-prompt instructions always take priority."
+  },
+  {
+    "name": "BOJACK HORSEMAN",
+    "category": [
+      "CARTOON", 
+      "TELEVISION CARTOON", 
+      "ADULT ANIMATION", 
+      "ANTHROPOMORPHIC", 
+      "SATIRE", 
+      "DRAMA"
+    ],
+    "message": "Take a picture and transform the subject into a character in the animated world of BoJack Horseman. Reconstruct the subject in the show's distinctive flat graphic animation style, with clean outlines, simplified shapes, expressive human-like character anatomy, and the series' recognizable combination of human and anthropomorphic characters. Include BoJack, Diane, Princess Carolyn, Todd, and Mr. Peanutbutter as appropriate. Place the subject in recognizable Hollywoo settings such as BoJack's house, a studio lot, a restaurant, or a familiar city location. Show the subject naturally interacting with the cast in a character-driven scene.",
+    "randomizeOptions": false,
+    "options": [],
+    "additionalInstructions": "Use the show's clean, flat 2D animation language, distinctive character silhouettes, simplified facial features, controlled outlines, and graphic color treatment. The world includes both humans and anthropomorphic animal characters. Preserve the subject's species and identity; do not automatically turn a human into an animal or an animal into a human. Include recognizable characters such as BoJack, Diane, Princess Carolyn, Todd, or Mr. Peanutbutter. Use recognizable Hollywoo locations such as BoJack's house, the studio environment, city streets, restaurants, or entertainment-industry settings. Integrate the subject into a natural interaction with the cast, with consistent scale and perspective. Preserve the show's mixture of comedy and emotional character storytelling. Avoid photorealism and generic children's cartoon styling."
   },
   {
     "name": "BOJAGI PATCHWORK",
@@ -13005,6 +13122,21 @@
     "additionalInstructions": "FINAL RESULT:\nThe final image should resemble a romantic pastoral illustration celebrating rural simplicity."
   },
   {
+    "name": "COURAGE THE COWARDLY DOG",
+    "category": [
+      "CARTOON", 
+      "TELEVISION CARTOON", 
+      "CARTOON NETWORK", 
+      "SURREAL", 
+      "COMEDY HORROR", 
+      "1990S ANIMATION"
+    ],
+    "message": "Take a picture and transform the subject into a character in the bizarre world of Courage the Cowardly Dog. Reconstruct the subject in the show's distinctive surreal 2D animation style, with exaggerated anatomy, expressive distorted faces, unusual shapes, bold outlines, strange textures, and eerie yet colorful environments. Include Courage, Muriel, and Eustace as recognizable characters. Place the subject at the Bagge farmhouse or in a bizarre supernatural situation in the surrounding desert. Show the subject interacting with the family and Courage during a strange, humorous, or mildly spooky adventure.",
+    "randomizeOptions": false,
+    "options": [],
+    "additionalInstructions": "Use the distinctive Courage aesthetic: unusual character proportions, expressive and sometimes distorted facial features, hand-drawn outlines, unconventional shapes, eerie color combinations, surreal visual textures, and a mixture of cartoon simplicity and unsettling detail. Include Courage, Muriel, and Eustace with recognizable appearances and personalities. Use the isolated Bagge farmhouse, surrounding desert, farmhouse interior, or a surreal location connected to a strange visitor or mystery. The subject must be drawn in the same visual language and participate in the situation with the cast. A humorous supernatural encounter or bizarre everyday incident is appropriate. Preserve subject identity while allowing the show's expressive distortion. Avoid realistic horror, gore, or generic cute-cartoon styling."
+  },
+  {
     "name": "COURTROOM SKETCH",
     "category": [
       "HUMOR",
@@ -15096,6 +15228,21 @@
     "additionalInstructions": "Every part of the subject must genuinely appear to be made from dichroic glass. Do not retain ordinary skin, hair, clothing, or other original materials beneath a rainbow-colored coating. Do not turn the subject into stained glass, a glass mosaic, a crystal sculpture, a hologram, or a metallic chrome object. Preserve recognizable facial structure and anatomy through the glass construction. Use physically believable transparency, reflection, refraction, and thickness. Avoid excessive rainbow effects that obscure the subject's identity. The background should remain unchanged unless the master prompt specifies a different environment. Master-prompt instructions concerning subject, pose, setting, mood, action, artistic direction, and selection override all preset defaults."
   },
   {
+    "name": "DICK TRACY",
+    "category": [
+      "CARTOON", 
+      "COMIC STRIP", 
+      "NEWSPAPER COMICS", 
+      "NOIR", 
+      "CRIME COMIC", 
+      "BLACK AND WHITE"
+    ],
+    "message": "Take a picture and transform the subject into a character in the hard-edged comic-strip world of Dick Tracy. Reconstruct the subject using bold graphic ink, angular caricature, dramatic black shadows, strong geometric facial features, and the distinctive vintage crime-comic aesthetic. Include Dick Tracy and recognizable supporting characters such as Sam Catchem, Tess Trueheart, or appropriate classic villains. Place the subject in a recognizable noir city environment with dramatic streets, alleys, offices, rooftops, or police headquarters. Show the subject participating in a detective story, investigation, or dramatic encounter with the established characters.",
+    "randomizeOptions": false,
+    "options": [],
+    "additionalInstructions": "Use bold, graphic, angular comic-strip drawing with strong black shapes, high-contrast shadows, simplified but distinctive facial structures, and restrained vintage color or black-and-white treatment. Include Dick Tracy as a recognizable character, with suitable supporting figures such as Sam Catchem or Tess Trueheart. Use a stylized crime-comic city: urban streets, alleys, rooftops, offices, police headquarters, or shadowy interiors. Integrate the subject as a detective, witness, ally, suspect, or participant in the story, depending on the master prompt. Maintain dramatic noir composition and clear storytelling. Preserve the subject's recognizable features while translating them into angular comic caricature. Avoid photographic realism, modern superhero styling, and generic action-movie imagery."
+  },
+  {
     "name": "DICTIONARY",
     "category": [
       "TEXT",
@@ -15756,6 +15903,21 @@
     "additionalInstructions": "FINAL RESULT:\nAn authentic-looking 1993-era FPS gameplay screenshot where the entire original image has been transformed into a retro 3D shooter environment using ONLY elements that actually appear in the game. If people or animals are present in the original image, they are converted to space marines or enemy creature types from the actual game roster. If no people or animals are present, NO characters are added - the scene remains an empty but atmospheric DOOM environment. Every object becomes an actual weapon or pickup item from the game, and every environmental element becomes the actual textures, architecture, and level design elements found in the original game. The result is a cohesive, immersive scene that looks like genuine gameplay footage from the classic DOS-era first-person shooter, complete with chunky pixel graphics, dramatic lighting, ominous atmosphere, and the mandatory bottom status bar. The entire image must read as a single unified retro gaming experience with perfect period-accurate aesthetics using only authentic game elements."
   },
   {
+    "name": "DOONESBURY",
+    "category": [
+      "CARTOON", 
+      "COMIC STRIP", 
+      "NEWSPAPER COMICS", 
+      "EDITORIAL CARTOON", 
+      "SATIRE", 
+      "CARICATURE"
+    ],
+    "message": "Take a picture and transform the subject into a character in the world of Doonesbury. Reconstruct the subject in its distinctive editorial newspaper-comic illustration style, with carefully observed caricature, expressive but restrained faces, clean ink contours, and understated color. Include familiar Doonesbury characters such as Mike Doonesbury, Zonker Harris, B.D., Joanie Caucus, or other appropriate recurring figures. Place the subject in a recognizable setting such as the characters' homes, workplace, campus, or social surroundings. Show the subject naturally participating in a conversation, gathering, or satirical everyday situation with the established cast.",
+    "randomizeOptions": false,
+    "options": [],
+    "additionalInstructions": "Use a sophisticated editorial-cartoon approach: recognizable caricature, carefully drawn facial features, restrained expressions, clean outlines, naturalistic but simplified proportions, and understated color. Include recognizable recurring Doonesbury characters and preserve their established appearances. Choose a suitable familiar environment such as a home, office, university, social gathering, or public setting. The subject should be integrated into the cast's conversation or activity, with believable eye contact, gestures, and spatial relationships. Keep the tone observant, conversational, and satirical rather than slapstick. Preserve the subject's identity and distinguishing facial features. Avoid photorealism, exaggerated fantasy anatomy, and generic comic-book action effects. Do not reproduce a specific published strip panel."
+  },
+  {
     "name": "DOOR TO ANOTHER REALM",
     "category": [
       "SCI-FI",
@@ -16290,6 +16452,20 @@
     }
     ],
     "additionalInstructions": "FINAL RESULT — APPLIES TO BOTH NORMAL USE AND GAME MODE:\nShow only the three characters in the clearing. No other figures. The sign must always be present and readable, and the hunter must always be pointing at the animal the sign names.\n\nNORMAL USE (no game result below): draw the scene exactly as the chosen option describes, with no verdict word and no captions.\n\nOVERRIDE — GAME MODE: if a section headed \"=== GAME RESULT ===\" appears below, draw the scene for the CORRECT ANSWER it names, then add its verdict word in large hand-lettered cartoon type across the top of the frame, and show the small captions it specifies. A win should read as triumphant; a loss should show the hunter looking bewildered while both animals smirk."
+  },
+  {
+    "name": "DUCKTALES",
+    "category": [
+      "CARTOON", 
+      "TELEVISION CARTOON", 
+      "DISNEY ANIMATION", 
+      "ADVENTURE", 
+      "1980S ANIMATION"
+    ],
+    "message": "Take a picture and transform the subject into a character in the classic animated adventure world of DuckTales. Reconstruct the subject in the original television series' expressive Disney-style 2D animation, with rounded character construction, clean outlines, lively poses, and traditional cel colors. Include Scrooge McDuck, Huey, Dewey, Louie, and other familiar characters. Place the subject in iconic DuckTales locations such as McDuck Manor, the Money Bin, or an adventurous treasure-hunting setting. Show the subject joining the Duck family in a recognizable adventure or humorous situation.",
+    "randomizeOptions": false,
+    "options": [],
+    "additionalInstructions": "Use the original DuckTales television animation aesthetic: clean hand-drawn contours, rounded expressive forms, lively character poses, classic cel shading, and colorful adventure backgrounds. Include recognizable Scrooge McDuck and the nephews Huey, Dewey, and Louie. Launchpad McQuack, Webby, or other recurring characters may appear when appropriate. Use McDuck Manor, the Money Bin, Duckburg, or a distinctive treasure-hunting environment. The subject must be integrated into the adventure as a genuine member of the scene. If the subject is human, adapt them to the show's human-character style; if an animal, integrate them into the anthropomorphic cast. Preserve the subject's identity through recognizable features and clothing. Avoid modern 3D rendering and unrelated Disney characters."
   },
   {
     "name": "DUKE NUKEM 3D NPC",
@@ -22033,6 +22209,21 @@
     "additionalInstructions": "RESTRICTIONS:\n• No cartoon or Disney-style rendering\n• No fully demonic or evil appearance\n• No text overlays or captions\n• No modern buildings unless appropriate to location\n• No unrealistic colors (keep stone natural)\n• No wings so large they dominate scene\n• Gargoyle should look architecturally integrated\n\nFINAL RESULT:\nThe image should convincingly show the subject transformed into an ancient stone gargoyle on the selected cathedral, a permanent guardian watching over the city below. The stone texture, weathering, pose, and cathedral setting should create a photorealistic scene that looks like the gargoyle has been there for centuries."
   },
   {
+    "name": "GARGOYLES",
+    "category": [
+      "CARTOON", 
+      "TELEVISION CARTOON", 
+      "DISNEY ANIMATION", 
+      "DARK FANTASY", 
+      "1990S ANIMATION", 
+      "ACTION"
+    ],
+    "message": "Take a picture and transform the subject into a character in the dark fantasy world of Gargoyles. Reconstruct the subject in the show's dramatic 1990s hand-drawn animation style, with angular anatomy, strong silhouettes, expressive faces, detailed character designs, and moody cinematic colors. Include Goliath, Demona, Brooklyn, Lexington, Broadway, or other recognizable gargoyles and human characters. Place the subject on the castle rooftops, at the clock tower, or in the atmospheric nighttime city of Manhattan. Show the subject interacting with the clan during a dramatic but character-focused moment.",
+    "randomizeOptions": false,
+    "options": [],
+    "additionalInstructions": "Use the distinctive Gargoyles animation language: angular anatomy, muscular but stylized forms, dramatic silhouettes, detailed wings and costume elements where appropriate, strong ink contours, and cinematic shadow and color. Include recognizable members of the Manhattan clan, especially Goliath, with Brooklyn, Lexington, Broadway, or other characters as appropriate. Use the castle rooftop, clock tower, nighttime Manhattan skyline, or another recognizable urban fantasy location. If the subject is human, adapt them to the show's human-character design; if the subject is an animal, retain its identity while integrating it into the world. Do not automatically turn every subject into a gargoyle unless the master prompt requests that transformation. Create a coherent interaction with the established characters. Avoid photorealistic fantasy rendering and generic superhero aesthetics."
+  },
+  {
   "name": "GAUGING",
   "category": [
     "BODY MODIFICATION",
@@ -23699,6 +23890,21 @@
     "additionalInstructions": ""
   },
   {
+    "name": "HÄGAR THE HORRIBLE",
+    "category": [
+      "CARTOON", 
+      "COMIC STRIP", 
+      "NEWSPAPER COMICS", 
+      "CLASSIC COMICS", 
+      "VIKING", 
+      "HUMOR"
+    ],
+    "message": "Take a picture and transform the subject into a fully integrated character in the world of Hägar the Horrible. Recreate the subject as a Viking in the distinctive hand-drawn newspaper-comic style, with rounded caricatured anatomy, expressive faces, bold clean outlines, simple shapes, and traditional comic-strip coloring. Place the subject alongside Hägar, Helga, Lucky Eddie, and other familiar characters in a recognizable Viking village, tavern, feast hall, or medieval setting. Show the subject participating in a humorous Viking adventure or everyday mishap with the established characters. The subject must look as though it was originally drawn for the comic strip.",
+    "randomizeOptions": false,
+    "options": [],
+    "additionalInstructions": "Use the recognizable visual language of Hägar the Horrible: rounded, slightly exaggerated bodies; simple expressive faces; bold, confident contour lines; compact cartoon proportions; clean color fills; and humorous medieval character design. Include Hägar and other appropriate recurring characters, retaining their recognizable appearances. Use authentic-feeling Viking settings such as Hägar's home, the village, a tavern, a ship, or a feast hall. Integrate the subject as a participating character, not a visitor pasted into the scene. Give the subject Viking clothing and accessories appropriate to the scene, without obscuring identity. Create a coherent comic-strip composition with clear visual storytelling and gentle slapstick humor. Do not reproduce an existing comic panel verbatim. Preserve the subject's recognizable face, distinguishing features, and identity while adapting the anatomy and drawing style. Master-prompt details about pose, action, mood, clothing, and composition take priority where compatible with the cartoon setting."
+  },
+  {
     "name": "HAIDA FORMLINE",
     "category": [
       "INDIGENOUS",
@@ -24557,6 +24763,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "The subject must remain the unmistakable star of the photograph. Do not automatically turn every image into a superhero pose, fashion photograph, movie poster, or dramatic action scene. The term hero shot refers to the photographic composition and commercial visual impact, not necessarily a heroic character or action. Select lighting, camera angle, lens perspective, background treatment, and composition that best enhance the actual subject. Do not invent props, accessories, clothing, actions, or environmental details that change the subject's identity. Avoid generic stock photography, excessive HDR, artificial skin smoothing, exaggerated lens flares, and gratuitous visual effects. Preserve natural anatomy and realistic photographic proportions. Master-prompt instructions concerning subject, pose, setting, mood, action, artistic direction, and selection override all preset defaults."
+  },
+  {
+    "name": "HEY ARNOLD!",
+    "category": [
+      "CARTOON", 
+      "TELEVISION CARTOON", 
+      "NICKELODEON", 
+      "1990S ANIMATION", 
+      "URBAN CARTOON"
+    ],
+    "message": "Take a picture and transform the subject into a character in the animated world of Hey Arnold! Reconstruct the subject in the show's distinctive hand-drawn urban cartoon style, with unusual head shapes, elongated silhouettes, expressive faces, clean outlines, and muted city-inspired colors. Include Arnold, Gerald, Helga, and other familiar characters. Place the subject in recognizable settings such as Arnold's boarding house, the school playground, the neighborhood streets, or the city stoop. Show the subject naturally interacting with the characters as a friend, neighbor, classmate, or visitor.",
+    "randomizeOptions": false,
+    "options": [],
+    "additionalInstructions": "Use the recognizable Hey Arnold! visual design: unusual geometric head shapes, elongated body proportions, expressive facial features, hand-drawn contours, simple shading, and subdued urban color palettes. Include Arnold, Gerald, Helga, and appropriate recurring characters. Use recognizable environments such as the boarding house, school, playground, city streets, neighborhood stoops, and local hangouts. The subject must be redesigned as a resident of this animated city and participate in a believable interaction with the cast. Preserve the subject's distinguishing facial characteristics while adapting their silhouette and proportions to fit the show's visual language. Create a warm, humorous, character-driven scene. Do not use generic anime or modern glossy 3D animation."
   },
   {
     "name": "HIDDEN DETAILS",
@@ -27966,6 +28186,20 @@
     "additionalInstructions": "FINAL RESULT:\nThe final image must be constructed entirely from typographic elements — letters, words, and text arranged to form the subject's likeness while suggesting dynamic motion. The subject must be clearly recognizable through the text composition. The overall effect should feel like a sophisticated motion graphics freeze-frame."
   },
   {
+    "name": "KING OF THE HILL",
+    "category": [
+      "CARTOON", 
+      "TELEVISION CARTOON", 
+      "ADULT ANIMATION", 
+      "SITCOM", 
+      "AMERICAN CARTOON"
+    ],
+    "message": "Take a picture and transform the subject into a character in the understated animated world of King of the Hill. Reconstruct the subject in the show's recognizable flat 2D television-animation style, with naturalistic simplified proportions, clean outlines, restrained expressions, and muted suburban colors. Include Hank, Peggy, Bobby, Dale, Bill, Boomhauer, or other familiar characters. Place the subject in recognizable Arlen settings such as the Hill family's backyard, the alley, the driveway, or a local neighborhood gathering. Show the subject naturally interacting with the characters in an everyday suburban situation.",
+    "randomizeOptions": false,
+    "options": [],
+    "additionalInstructions": "Use the show's understated animation design: simplified naturalistic anatomy, clean outlines, restrained facial expressions, flat color fills, and familiar suburban visual details. Include recognizable characters such as Hank, Peggy, Bobby, Dale, Bill, and Boomhauer. Use the Hill home, backyard, alley, driveway, local street, or familiar neighborhood environment. Integrate the subject into the group as a neighbor, friend, visitor, or participant in an everyday activity. Keep the humor observational and character-driven rather than exaggerated slapstick. Preserve the subject's identity and recognizable facial structure while adapting the drawing to the show's visual language. Do not make the subject look like a photograph pasted into a cartoon background."
+  },
+  {
     "name": "KING OF THE WORLD!",
     "category": [
       "HUMOR",
@@ -28175,6 +28409,21 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "The light should be warm and golden with green-tinted shadows from chlorophyll filtering. Bokeh circles of light should appear in out-of-focus areas. The overall mood should be peaceful and contemplative \u2014 a quiet forest moment."
+  },
+  {
+    "name": "KRAZY KAT",
+    "category": [
+      "CARTOON", 
+      "COMIC STRIP", 
+      "NEWSPAPER COMICS", 
+      "VINTAGE CARTOON", 
+      "SURREAL", 
+      "EXPERIMENTAL INK"
+    ],
+    "message": "Take a picture and transform the subject into a character in the surreal desert world of Krazy Kat. Reconstruct the subject using George Herriman's distinctive experimental newspaper-cartoon language, with loose expressive ink lines, unusual proportions, playful visual distortions, simplified forms, and whimsical color. Include Krazy Kat, Ignatz Mouse, and Offissa Pupp as recognizable characters. Place the subject in the iconic desert landscape of Coconino County, with its shifting rock formations, sparse scenery, and surreal visual composition. Show the subject interacting with the established characters in a playful, absurd comic-strip situation.",
+    "randomizeOptions": false,
+    "options": [],
+    "additionalInstructions": "Use experimental, expressive vintage cartoon linework with loose contours, simplified forms, unusual proportions, and whimsical visual transformations. The environment should evoke the iconic shifting desert landscapes of Coconino County, including stylized rocks, open desert, and surreal scenery. Include Krazy Kat, Ignatz Mouse, and Offissa Pupp, retaining their recognizable character designs and relationships. Integrate the subject as another character in the surreal comic world, with a clear interaction involving the established cast. Preserve the subject's identity while adapting the face and body to the strip's unconventional cartoon language. Use playful composition and visual absurdity. Do not substitute generic modern cartoon styling or realistic desert photography."
   },
   {
     "name": "KUBA RAFFIA",
@@ -29745,6 +29994,21 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "IDENTITY PRESERVATION (CRITICAL):\n\n• The illustrated character must clearly resemble the subject\n• Preserve the subject's unique facial identity\n• Preserve distinctive facial structure\n• Preserve facial proportions\n• Preserve recognizable expression characteristics\n• Recognition must come from the illustration itself\n• The final book cover must simultaneously read as both the subject and an authentic Little Golden Book\n• The subject should appear to be the original inspiration for the illustrated character\n\nFLAVOR TEXT USAGE:\n\n• Use the user's flavor text as the official title of the Little Golden Book\n• The title should be prominently displayed on the cover\n• The title should be rendered as a professionally designed children's book title\n• The flavor text should never be ignored"
+  },
+  {
+    "name": "LITTLE NEMO IN SLUMBERLAND",
+    "category": [
+      "CARTOON", 
+      "COMIC STRIP", 
+      "NEWSPAPER COMICS", 
+      "VINTAGE ILLUSTRATION", 
+      "ART NOUVEAU", 
+      "FANTASY"
+    ],
+    "message": "Take a picture and transform the subject into a character in the fantastical dream world of Little Nemo in Slumberland. Reconstruct the subject in the ornate early-comic illustration style of Winsor McCay, with elegant ink outlines, intricate decorative details, elaborate architecture, delicate color, and Art Nouveau-inspired visual design. Include Little Nemo, Princess Camille, King Morpheus, Flip, or other recognizable characters. Place the subject in a spectacular Slumberland dream setting, such as the palace, fantastical streets, impossible stairways, or a surreal dream landscape. The subject must appear as a genuine participant in Nemo's dream adventure.",
+    "randomizeOptions": false,
+    "options": [],
+    "additionalInstructions": "Emphasize the elaborate early twentieth-century comic illustration aesthetic: refined pen-and-ink contours, intricate architectural ornament, elegant decorative patterns, finely drawn details, imaginative perspective, and delicate vintage color. Use Art Nouveau-inspired curves and ornamental structures where appropriate. Include recognizable Little Nemo characters such as Nemo, Princess Camille, Flip, and King Morpheus. Use iconic Slumberland imagery: the palace, grand staircases, dreamlike streets, fantastical rooms, impossible architecture, and surreal landscapes. The subject must be fully drawn in the same period-inspired illustration technique and integrated into the dream narrative. Preserve the subject's identity while adapting clothing and proportions to the fantastical setting. Create a richly composed, visually elaborate scene rather than a modern cartoon or generic fantasy painting. Do not reproduce an existing panel exactly."
   },
   {
     "name": "LITTLE ORPHAN ANNIE",
@@ -36001,6 +36265,21 @@
     "additionalInstructions": "IDENTITY PRESERVATION (CRITICAL):\n\n• The figurine must clearly resemble the subject\n• Preserve the subject's unique facial identity\n• Preserve distinctive facial structure\n• Preserve recognizable facial proportions\n• Preserve recognizable eye shape through sculptural interpretation\n• Preserve recognizable nose shape through sculptural interpretation\n• Preserve recognizable smile characteristics through sculptural interpretation\n• Preserve recognizable hairstyle characteristics through sculptural interpretation\n• Recognition must come from the figurine itself\n• The final figurine must simultaneously read as both the subject and an authentic music box figurine\n\nFIGURINE ENFORCEMENT:\n\n• The subject must be the figurine itself\n• The figurine must be permanently attached to the music box\n• The figurine must appear professionally sculpted\n• The figurine must appear delicate and collectible\n• The figurine must feel physically tangible and three-dimensional\n• The figurine must be the focal point of the image\n\nMUSIC BOX ENFORCEMENT:\n\n• A genuine music box base must be present\n• The base must appear decorative and functional\n• The figurine must appear designed specifically for the music box\n• The music box must enhance the collectible presentation\n• Traditional music-box craftsmanship should be visible\n\nMATERIAL ENFORCEMENT:\n\n• The face must be sculpted directly into the figurine\n• Hair must be sculpted into the figurine material\n• Clothing folds must be sculpted rather than real fabric\n• Materials must remain consistent throughout the figurine\n• No realistic human materials may remain visible\n\nDISPLAY ENFORCEMENT:\n\n• The music box should appear physically present in the environment\n• The figurine should cast realistic shadows appropriate for a collectible object\n• The music box should feel like a genuine decorative keepsake\n• The environment should reinforce collectible-display storytelling\n\nFINAL ENFORCEMENT:\n\n• The image must immediately read as a music box figurine\n• The image must not resemble a doll\n• The image must not resemble an action figure\n• The image must not resemble a person in costume\n• The subject must remain recognizable while fully transformed into an authentic collectible music box figurine."
   },
   {
+    "name": "MUTTS",
+    "category": [
+      "CARTOON", 
+      "COMIC STRIP", 
+      "NEWSPAPER COMICS", 
+      "MINIMALIST", 
+      "ANIMAL CARTOON", 
+      "INK DRAWING"
+    ],
+    "message": "Take a picture and transform the subject into a character in the gentle, charming world of Mutts. Reconstruct the subject using delicate minimalist ink drawing, simple elegant shapes, expressive gestures, clean contours, and restrained color. Include Earl, Mooch, and other familiar animal characters in recognizable everyday settings such as the neighborhood, front porch, garden, sidewalk, or home. Show the subject interacting warmly and naturally with the established characters. If the subject is human, portray them as a character who belongs in the Mutts world; if the subject is an animal, integrate them as another member of the animal cast. The result should resemble an original Mutts comic-strip illustration.",
+    "randomizeOptions": false,
+    "options": [],
+    "additionalInstructions": "Use the strip's distinctive delicate, minimalist drawing language: simple forms, expressive posture, clean fine ink contours, limited detail, and gentle color. Include Earl and Mooch as recognizable recurring characters, with other animal characters where appropriate. Use familiar neighborhood locations such as a front porch, garden, sidewalk, home interior, or outdoor gathering place. The subject must share the same visual scale, line quality, and simplified design as the cast. Give the scene a warm, affectionate, humorous moment rather than an action-heavy composition. For human subjects, retain recognizable facial identity while simplifying features; for animal subjects, preserve their species and distinctive markings. Do not turn the scene into photorealistic animal imagery or generic children's clip art."
+  },
+  {
     "name": "MYCELIUM NETWORK",
     "category": [
       "TRANSFORMATION",
@@ -39876,6 +40155,21 @@
     "additionalInstructions": ""
   },
   {
+    "name": "PEARLS BEFORE SWINE",
+    "category": [
+      "CARTOON", 
+      "COMIC STRIP", 
+      "NEWSPAPER COMICS", 
+      "MINIMALIST", 
+      "SATIRE", 
+      "HUMOR"
+    ],
+    "message": "Take a picture and transform the subject into a character in the irreverent comic-strip world of Pearls Before Swine. Reconstruct the subject using the strip's intentionally simple, loose, hand-drawn cartoon construction, basic shapes, imperfect outlines, minimal shading, and flat colors. Include familiar characters such as Rat, Pig, Goat, Zebra, and the Crocodiles. Place the subject in a recognizable everyday setting or absurd comic situation alongside the established cast. The subject must look as though it was drawn by the same deliberately informal cartoon hand and belongs in the strip.",
+    "randomizeOptions": false,
+    "options": [],
+    "additionalInstructions": "Use deliberately simple, informal cartoon drawing: basic shapes, loose black outlines, minimal facial details, flat color fills, and intentionally unpolished linework. Include recognizable Pearls Before Swine characters such as Rat, Pig, Goat, Zebra, and the Crocodiles. Preserve their recognizable designs and personalities. Use simple everyday environments such as a living room, neighborhood, outdoor setting, or an intentionally sparse comic-strip background. Build an amusing interaction or visual gag with the subject participating in the scene. The subject's design should be simplified to match the strip's intentionally crude visual language without losing recognizable identity. Avoid polished animation rendering, realistic textures, complex gradients, and elaborate backgrounds. The humor should come from the characters' expressions, poses, and situation."
+  },
+  {
     "name": "PEBBLE MOSAIC",
     "category": [
       "OPTIONS",
@@ -41194,6 +41488,21 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "PINKY AND THE BRAIN",
+    "category": [
+      "CARTOON", 
+      "TELEVISION CARTOON", 
+      "WARNER BROS", 
+      "1990S ANIMATION", 
+      "COMEDY", 
+      "SCIENCE FICTION"
+    ],
+    "message": "Take a picture and transform the subject into a character in the animated world of Pinky and the Brain. Reconstruct the subject in the show's clean, expressive 1990s Warner-style animation, with distinctive character proportions, smooth outlines, clear shapes, and polished cel coloring. Include Pinky and the Brain as recognizable characters. Place the subject in the laboratory, the familiar cage setting, or one of the Brain's elaborate world-domination schemes. Show the subject interacting with the mice as a fellow experiment, assistant, accidental obstacle, or participant in the plan.",
+    "randomizeOptions": false,
+    "options": [],
+    "additionalInstructions": "Use the show's recognizable polished 2D animation design: clean outlines, rounded but distinctive anatomy, expressive faces, simple shading, and strong cel-color separation. Include Pinky and the Brain with their recognizable proportions and personalities. Use the laboratory, mouse cage, or a setting associated with one of the Brain's grand schemes. Make the subject an active participant in the scene, with natural scale and perspective relative to the mice. If the subject is human, portray them in the show's human-character design style; if an animal, adapt them to the same animated world. Create a humorous visual situation involving the Brain's ambition and Pinky's eccentricity. Do not turn the scene into generic laboratory science fiction."
   },
   {
     "name": "PIP-BOY",
@@ -44950,6 +45259,20 @@
     "additionalInstructions": ""
   },
   {
+    "name": "REGULAR SHOW",
+    "category": [
+      "CARTOON", 
+      "TELEVISION CARTOON", 
+      "CARTOON NETWORK", 
+      "SURREAL COMEDY", 
+      "GEOMETRIC CHARACTER DESIGN"
+    ],
+    "message": "Take a picture and transform the subject into a character in the surreal animated world of Regular Show. Reconstruct the subject in the show's distinctive simple 2D cartoon style, with geometric character shapes, bold clean outlines, flat colors, and expressive minimalist faces. Include Mordecai, Rigby, Benson, Skips, Pops, and other recognizable park characters. Place the subject in the familiar park setting, the house, the snack bar, or another recognizable location. Show the subject participating with the cast in an ordinary activity that develops into a bizarre, over-the-top cartoon situation.",
+    "randomizeOptions": false,
+    "options": [],
+    "additionalInstructions": "Use the show's distinctive minimalist character construction: simple geometric silhouettes, clean dark outlines, flat color fields, limited facial detail, and expressive body language. Include Mordecai and Rigby, with Benson, Skips, Pops, or other recurring characters where appropriate. Use the park, park house, snack bar, or other recognizable locations. Integrate the subject as a coworker, friend, visitor, or park employee. Preserve the subject's identity while translating their appearance into the show's simplified character design. Do not automatically turn every subject into a bird or raccoon; preserve their recognizable species or human identity unless the master prompt requests otherwise. Create a humorous scene that can escalate into surreal cartoon action, while keeping the subject naturally integrated with the cast."
+  },
+  {
     "name": "RELIGIOUS CONVERSION",
     "category": [
       "CULTURAL",
@@ -46572,6 +46895,20 @@
     }
     ],
     "additionalInstructions": "IDENTITY PRESERVATION (CRITICAL):\n\n• The transformed cartoon character must clearly resemble the subject\n• Preserve distinctive facial traits\n• Preserve facial proportions\n• Recognition must come from the transformed cartoon character itself\n\nANTI-CHEAT:\n\n• Do not create a generic cartoon character\n• Do not create a face swap\n• Do not paste the subject into animation artwork\n• Do not replace the subject's identity with existing franchise characters\n\nFINAL RESULT:\nThe subject must become an authentic Ruby-Spears cartoon character rendered entirely in the selected franchise universe while remaining immediately recognizable as the original subject."
+  },
+  {
+    "name": "RUGRATS",
+    "category": [
+      "CARTOON", 
+      "TELEVISION CARTOON", 
+      "1990S ANIMATION", 
+      "NICKTOONS", 
+      "CLASSIC ANIMATION"
+    ],
+    "message": "Take a picture and transform the subject into a fully integrated character in the world of Rugrats. Reconstruct the subject in the show's distinctive 1990s hand-drawn animation style, with oversized heads, unusual proportions, expressive faces, irregular outlines, simple shading, and characteristic color design. Include Tommy Pickles, Chuckie Finster, Phil and Lil, Angelica, and other familiar characters as appropriate. Place the subject in recognizable Rugrats locations such as the Pickles family home, playroom, backyard, or a toddler-sized imaginative adventure. Make the subject part of the gang's activity, interacting naturally with the classic characters.",
+    "randomizeOptions": false,
+    "options": [],
+    "additionalInstructions": "Recreate the distinctive original Rugrats television-animation aesthetic: exaggerated head-to-body proportions, quirky facial construction, expressive eyes and mouths, slightly irregular linework, flat hand-painted-looking color, and characteristic 1990s cel-animation appearance. Include recognizable Rugrats characters such as Tommy, Chuckie, Phil, Lil, and Angelica, with Stu, Didi, or other adults where appropriate. Use iconic locations such as the Pickles house, playroom, backyard, kitchen, or a child's imaginative interpretation of an ordinary environment. The subject must be adapted into the same cartoon universe and participate in the scene, not simply stand beside the characters. If the subject is an adult, retain their recognizable identity while translating them into the show's adult-character design language. If the subject is an animal, integrate them naturally into the household. Keep the scene playful, colorful, and unmistakably Rugrats."
   },
   {
     "name": "RUNNING FROM THE BULLS",
@@ -54834,6 +55171,21 @@
     "additionalInstructions": "FINAL RESULT:\nThe image should clearly show textile construction with visible fiber/thread/stitch details. The subject should look like a handcrafted textile art piece."
   },
   {
+    "name": "THE AMAZING WORLD OF GUMBALL",
+    "category": [
+      "CARTOON", 
+      "TELEVISION CARTOON", 
+      "CARTOON NETWORK", 
+      "MIXED MEDIA", 
+      "2D ANIMATION", 
+      "3D-STYLE ANIMATION"
+    ],
+    "message": "Take a picture and transform the subject into a fully integrated character in The Amazing World of Gumball. Reconstruct the subject using the show's distinctive mixed-media visual style, combining expressive 2D cartoon character design with varied textures, dimensional-looking elements, and its unusual blend of animation techniques. Include Gumball, Darwin, Anais, Nicole, and Richard Watterson as recognizable characters. Place the subject in iconic Elmore settings such as the Watterson home, Elmore Junior High, or the neighborhood. Show the subject interacting with the family and cast in a playful, surreal situation that looks like an actual scene from the show.",
+    "randomizeOptions": false,
+    "options": [],
+    "additionalInstructions": "The defining feature is the show's mixed-media world. Recreate its distinctive combination of flat 2D cartoon characters, varied character-rendering approaches, graphic shapes, textured surfaces, and dimensional-looking visual elements. Do not make the entire image uniformly 3D or uniformly flat vector art. Include recognizable Gumball, Darwin, Anais, Nicole, and Richard, preserving their distinctive appearances. Use Elmore Junior High, the Watterson home, the neighborhood, or other recognizable Elmore locations. Integrate the subject into the same mixed-media environment and visual logic. The subject should have a character design that fits naturally among the established cast, with consistent perspective, scale, lighting, and rendering treatment. Preserve identity while adapting the subject's design to the show's unusual visual language. The scene should feel playful, surreal, colorful, and unmistakably part of Elmore."
+  },
+  {
     "name": "THE BIGGEST LOSER",
     "category": [
       "TRANSFORMATION",
@@ -62687,6 +63039,20 @@
     }
     ],
     "additionalInstructions": "• Transform ONLY the subject.\n• Keep the background completely unchanged.\n• Preserve the original environment, lighting, perspective, colors, shadows, and every background object exactly as photographed.\n• Completely discard the original subject before reconstruction.\n• Do NOT place zippers over the original person.\n• Do NOT blend photographic textures with zipper materials.\n• Every visible part of the subject must be created entirely from real physical zippers.\n• Preserve the subject's exact identity, facial structure, hairstyle, hair color, expression, age, ethnicity, body proportions, pose, silhouette, and recognizable features.\n• Facial features must emerge solely through intelligent arrangement of zipper components.\n• Every zipper must remain recognizable as a real functional zipper.\n• Preserve authentic zipper details including teeth, sliders, pulls, fabric tape, stitching, seams, metallic reflections, and material texture.\n• Never flatten zippers into simple lines or patterns.\n• Never create a digital zipper effect.\n• Use hundreds or thousands of zipper sections depending on image complexity.\n• Arrange zippers like a real textile artist constructing a physical portrait.\n• Zippers should overlap, curve, fold, and follow the contours of the subject realistically.\n• Use smaller zipper details for eyes, facial features, and fine areas.\n• Use larger zipper sections for clothing and broad body regions.\n• Hair must be reconstructed entirely from zipper components using appropriate colors, directions, and flowing arrangements.\n• Clothing must also be rebuilt entirely from zippers.\n• Preserve realistic zipper thickness, shadows, highlights, and three-dimensional depth.\n• Include authentic handmade imperfections such as slight variation in placement and alignment.\n• The finished artwork should look like a real handcrafted zipper portrait photographed after completion.\n• Master prompt instructions always override the selected option whenever conflicts occur.\n\nFINAL VALIDATION — Before producing the final image, verify ALL of the following:\n\n✓ ONLY the subject has been transformed.\n✓ The background remains completely unchanged.\n✓ No original photographic pixels remain on the subject.\n✓ The subject is entirely reconstructed from real zippers.\n✓ Zippers are not simply placed over the original subject.\n✓ Individual zipper teeth, sliders, pulls, fabric tape, and stitching remain visible.\n✓ Zipper material, reflections, and physical depth are realistic.\n✓ Facial features are created through zipper arrangement, not retained photography.\n✓ The subject remains immediately recognizable.\n✓ The artwork resembles a genuine handcrafted zipper portrait.\n✓ If ANY answer is NO, regenerate the image until every requirement is satisfied."
+  },
+  {
+    "name": "ZITS",
+    "category": [
+      "CARTOON", 
+      "COMIC STRIP", 
+      "NEWSPAPER COMICS", 
+      "CONTEMPORARY CARTOON", 
+      "TEEN HUMOR"
+    ],
+    "message": "Take a picture and transform the subject into a character in the contemporary comic-strip world of Zits. Reconstruct the subject in its energetic, expressive newspaper-cartoon style, with lively ink contours, exaggerated teenage expressions, natural poses, and richly colored but hand-drawn character artwork. Include Jeremy Duncan, his parents Connie and Walt, and other familiar characters where appropriate. Place the subject in recognizable Zits environments such as the Duncan family home, Jeremy's bedroom, school, or neighborhood. Show the subject interacting naturally with Jeremy and the cast in a humorous everyday situation.",
+    "randomizeOptions": false,
+    "options": [],
+    "additionalInstructions": "Use expressive contemporary newspaper-comic illustration with lively linework, natural but exaggerated anatomy, expressive faces, fluid poses, and hand-drawn color. Include Jeremy Duncan and appropriate members of the recurring cast, preserving their recognizable designs. Use recognizable settings such as Jeremy's bedroom, the Duncan home, school, garage, or neighborhood. The subject should appear to be a friend, classmate, neighbor, or family acquaintance participating in the action. Capture the strip's energetic everyday humor and teenage social situations. Preserve the subject's age presentation and identity appropriately; do not automatically turn every subject into a teenager. Integrate all characters with consistent drawing style, scale, perspective, and lighting. Avoid photorealism and generic anime styling."
   },
   {
     "name": "ZODIAC SIGN",
