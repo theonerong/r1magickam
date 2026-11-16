@@ -3824,7 +3824,10 @@ button:disabled {
 }
 
 .preset-builder-input:focus,
-.preset-builder-select:focus,
+.preset-builder-select:focus {
+    outline: none;
+    border-color: #FE5F00;
+}
 
 .preset-builder-tips {
     background: #1a1a1a;
@@ -7541,4 +7544,17 @@ button, .touchable {
 
 .option-item {
     margin-bottom: 5vw;
+}
+
+
+/* Queued Photos screen: keep "Sync All" inside the bottom button row
+   instead of floating on top of the list */
+.queue-actions .sync-button {
+    position: static;
+    transform: none;
+    min-width: 0;
+}
+
+.queue-actions .sync-button:active {
+    transform: scale(0.98);
 }

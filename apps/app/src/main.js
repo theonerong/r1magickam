@@ -1229,8 +1229,8 @@ function initDB() {
     };
     
     request.onupgradeneeded = (event) => {
-      db = event.target.result;
-      
+      const db = event.target.result; 
+     
       // Create object store if it doesn't exist
       if (!db.objectStoreNames.contains(STORE_NAME)) {
         const objectStore = db.createObjectStore(STORE_NAME, { keyPath: 'id' });
@@ -5721,8 +5721,12 @@ async function loadStyles() {
             const shouldImport = await confirm('Welcome! You should import a preset to get started. Would you like to import now?');
             if (shouldImport) {
                 // Initialize the camera first so the user can exit the menu normally after importing
-                document.getElementById('start-screen').style.display = 'none';
-                await initCamera();
+                const _welcomeSplash = document.getElementById('start-screen');
+                const _welcomeStartBtn = document.getElementById('start-button');
+                if (_welcomeSplash && !(_welcomeStartBtn && _welcomeStartBtn.disabled)) {
+                    _welcomeSplash.style.display = 'none';
+                    await initCamera();
+                }
                 // Now open the menu straight to the import screen
                 document.getElementById('menu-button').click();
                 setTimeout(() => {
@@ -9908,7 +9912,7 @@ const TOUR_STEPS = [
   { section: 'Special Modes', title: '🎯 Special Modes — How to Access', body: 'Both carousels are default visible on the main camera screen. The Special Modes carousel is on the right.  Single click (default) on the main camera screen to hide/reveal the carousel buttons. This may be adjusted in settings.' },
   { section: 'Special Modes', title: '🎲 Random Mode', body: 'Picks a random preset for every photo you take. If you have favorites selected it draws only from those, otherwise from all visible presets.' },
   { section: 'Special Modes', title: '⏱️ Timer Mode', body: 'Set a countdown of 3, 5, or 10 seconds before each shot. Enable repeat mode so it automatically keeps taking photos at a set interval.' },
-  { section: 'Special Modes', title: '📸⚡ Burst Mode', body: 'Captures 3 to 10 photos rapidly in one press. Choose slow, medium, or fast burst speed in Settings. Great for action shots or getting multiple variations.' },
+  { section: 'Special Modes', title: '📸⚡ Burst Mode', body: 'Captures 2 to 10 photos rapidly in one press. Choose slow, medium, or fast burst speed in Settings. Great for action shots or getting multiple variations.' },
   { section: 'Special Modes', title: '👁️ Motion Detection', body: 'Automatically captures when movement is detected in frame. Set sensitivity, start delay, and cooldown interval. The eye icon pulses when motion detection is triggered.' },
   { section: 'Special Modes', title: '🎞️ Multi Preset', body: 'Select up to 20 presets to apply to a single photo. Tap the film strip button in the carousel, choose presets, and tap Apply Selected. When you take a photo, each preset is sent in order with a 3 second gap between them. Triple click the x next to the text field to clear picks.' },
   { section: 'Special Modes', title: '🖼️🖼️ Combine images:', body: 'Located near the bottom of the right carousel. Click to take two images and apply a combined image preset instruction with your selected preset or speak the preset with long press of the side button.' },
@@ -9956,7 +9960,7 @@ const TOUR_STEPS = [
   { section: 'Settings', title: '🚫 No Magic Mode', body: 'Disables AI processing and works as a regular camera. Photos save only to the plugin gallery, not to the rabbit hole or magic gallery.' },
   { section: 'Settings', title: '🎛️ Manually Select Options Mode', body: 'When enabled and you choose a preset with options, a popup asks you to pick which option to use rather than a randomized option. Can also be toggled from the OPTIONS button inside the image viewer or on the main camera screen.' },
   { section: 'Settings', title: '🗑️ Restore Deleted Items', body: 'Restore custom or modified presets (Presets tab), images (Images tab)  and/or master prompts (Master tab) deleted from their sections. Will not restore presets that were deleted using the Reset Database.' },
-  { section: 'Settings', title: '📥 Import Presets (Starting Style)', body: 'You begin with four unlocked presets-Caricature, Claymation, Impressionism and LEGO. Import them from the Import Presets section to capture photos and begin the fun journey of unlocking your imported artistic library.' },
+  { section: 'Settings', title: '📥 Import Presets (Starting Style)', body: 'You begin with twelve unlocked starter presets, including Caricature, Claymation, Impressionism and LEGO. Import them from the Import Presets section to capture photos and begin the fun journey of unlocking your imported artistic library.' },
   { section: 'Settings', title: '📥 Import Presets (Import Art)', body: 'Browse our external library in Settings. Check individual unlocked styles or use the All checkmark to select all  presets to import (assuming you have the credits).' },
   { section: 'Settings', title: '📥 Import Presets (New/Updated Presets)', body: 'Button indicates if there are any new/updated presets. Any updates are flagged so you can re-import changed/updated presets that you own. If you do not import updated presets, the preset will not be updated. New presets appear locked.' },
   { section: 'Settings', title: '📥 Import Presets (Unlock)', body: 'Imported styles first appear locked. To unlock one, you need a credit. Take a photo with any preset you own, or reprompt a gallery image, to earn one credit. Each unique preset earns one credit — no repeats. Use credits to unlock new presets from the import list. Check regularly for newly added styles.' },
@@ -10181,6 +10185,7 @@ function hideImportResolutionSubmenu() {
 }
 
 function startMotionDetection() {
+  stopMotionDetection(); // never run two detectors at the same time
   if (!video || !canvas) return;
   
   lastFrameData = null;
@@ -10923,6 +10928,8 @@ function toggleTimerMode() {
 
 // Start timer countdown
 function startTimerCountdown(captureCallback) {
+  // A countdown (or the wait between repeats) is already running - ignore extra presses
+  if (timerCountdown) return;
   let remainingSeconds = timerDelay;
   const countdownElement = document.getElementById('timer-countdown');
   const countdownText = document.getElementById('timer-countdown-text');
@@ -10982,7 +10989,8 @@ function startTimerCountdown(captureCallback) {
           }, 500);
           
           // Continue timer loop
-          setTimeout(() => {
+          timerCountdown = setTimeout(() => {
+            timerCountdown = null;
             if (isTimerMode) {
               startTimerCountdown(captureCallback);
             }
@@ -11278,7 +11286,7 @@ async function initCamera() {
       };
     });
     
-    document.getElementById('start-screen').remove(); // Deletes from memory
+    document.getElementById('start-screen')?.remove(); // Deletes from memory
     document.getElementById('camera-container').style.display = 'flex';
     statusElement.style.display = 'block';
 
@@ -11332,7 +11340,9 @@ async function initCamera() {
     }
     const startScreen = document.getElementById('start-screen');
     if (startScreen) {
-      startScreen.style.display = 'block';
+      startScreen.style.display = 'flex';
+      const _failText = startScreen.querySelector('.start-text');
+      if (_failText) _failText.textContent = 'Camera could not start. Tap Start to try again.';
     }
     
     if (typeof PluginMessageHandler !== 'undefined') {
@@ -12003,7 +12013,7 @@ async function syncQueuedPhotos(fromAutoRetry) {
     updateGallerySubmittingIndicator(item.preset && item.preset.name);
     
     try {
-      statusElement.textContent = `Syncing ${successCount + 1}/${originalCount}...`;
+      statusElement.textContent = `Syncing ${successCount + 1}/${successCount + photoQueue.length}...`;
       
       if (typeof PluginMessageHandler !== 'undefined' && !noMagicMode) {
         if (item.isCombined) window.isCombinedMode = true;
@@ -12434,6 +12444,7 @@ window.addEventListener('sideClick', () => {
     if (isMotionDetectionMode) {
       // Show countdown and start motion detection after delay
       if (motionStartDelay > 0) {
+        if (motionStartInterval) return; // start countdown already running - ignore extra presses
         let remainingSeconds = motionStartDelay;
         const countdownElement = document.getElementById('timer-countdown');
         const countdownText = document.getElementById('timer-countdown-text');
@@ -12468,6 +12479,7 @@ window.addEventListener('sideClick', () => {
               clearInterval(motionStartInterval);
               
               // Start motion detection
+              motionStartInterval = null;
               if (isMotionDetectionMode && video && video.readyState >= 2) {
                 startMotionDetection();
                 if (statusElement) statusElement.textContent = 'Motion Detection active - Move in front of camera';

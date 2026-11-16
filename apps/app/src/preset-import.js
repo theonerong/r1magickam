@@ -1549,6 +1549,7 @@ footerSection.innerHTML = `
         if (_cameraWasPlaying && _cameraVideoEl) {
           try { _cameraVideoEl.play().catch(() => {}); } catch (e) {}
         }
+        _originalCloseModal(); // remove the preview overlay too
         document.body.removeChild(modal);
       };
 
