@@ -3756,6 +3756,19 @@
     "additionalInstructions": "Individual materials must be clearly identifiable. The assemblage should feel intentionally composed, not randomly piled. Subject identity must be preserved through the arrangement of materials."
   },
   {
+    "name": "ASTERIX",
+    "category": [
+      "COMICS", 
+      "CARTOON", 
+      "EUROPEAN COMICS", 
+      "CLASSIC COMIC ART"
+    ],
+    "message": "Take a picture and completely redraw the subject as a native character in the classic Asterix comic-book universe. Recreate the subject using the distinctive expressive cartoon drawing, exaggerated anatomy, lively facial expressions, bold ink contours, clean shapes, and vibrant flat coloring of the original Asterix comics. Integrate the character into an amusing adventure in the ancient Gaulish village, interacting naturally with Asterix, Obelix, and other familiar characters, with Roman soldiers, village huts, forests, or other recognizable settings.",
+    "randomizeOptions": false,
+    "options": [],
+    "additionalInstructions": "The entire subject must be redrawn from scratch in the authentic visual language of the classic Asterix comics. Do not retain photographic skin, realistic facial features, photographic hair, realistic clothing, or 3D rendering. Translate the subject's recognizable face, hairstyle, expression, and clothing into the comic's simplified, exaggerated cartoon anatomy. Match the proportions, outline weight, facial construction, color treatment, and humorous expressions of the established characters. The subject must look like a character drawn by the same comic artists, not a realistic person pasted into an illustrated scene. Use a lively ancient Gaul setting with recognizable village architecture and familiar characters. Preserve the subject's identity through stylized features. Make the subject an active participant in a humorous story moment. The master prompt controls pose, action, expression, and scene details, while the Asterix visual style remains mandatory. No photorealistic elements."
+  },
+  {
     "name": "ATLANTIS WORLD",
     "category": [
       "FANTASY",
@@ -4343,6 +4356,19 @@
     "additionalInstructions": ""
   },
   {
+    "name": "BARNEY GOOGLE AND SNUFFY SMITH",
+    "category": [
+      "COMICS", 
+      "NEWSPAPER COMICS", 
+      "RURAL HUMOR", 
+      "CLASSIC CARTOON"
+    ],
+    "message": "Take a picture and transform the subject into a fully illustrated character in the classic Barney Google and Snuffy Smith comic-strip universe. Recreate the subject using the strip's distinctive humorous rural cartooning, expressive faces, compact caricatured proportions, bold hand-drawn outlines, and lively Appalachian village atmosphere. Integrate the subject into a funny scene with Snuffy Smith, Barney Google, Loweezy, Jughaid, or other familiar characters in Hootin' Holler or another recognizable setting.",
+    "randomizeOptions": false,
+    "options": [],
+    "additionalInstructions": "The subject must be completely redrawn in the comic's characteristic cartoon style. No realistic photographic face or body may remain. Use simplified caricatured anatomy, expressive eyes and mouths, clear ink contours, humorous proportions, and the familiar hand-drawn newspaper-strip appearance. Preserve identity through stylized facial features, hairstyle, and recognizable details. Create a coherent rural setting with cabins, porches, country roads, barns, and appropriate props. Include familiar characters in their recognizable cartoon forms when appropriate. Do not create a realistic person standing among cartoon characters. Every figure must share the same drawing technique. Avoid exaggerated stereotypes beyond the established comic's own visual language. Master prompt details override defaults."
+  },
+  {
     "name": "BAROQUE",
     "category": [
       "ART",
@@ -4637,6 +4663,20 @@
     "randomizeOptions": false,
     "options": [],
     "additionalInstructions": "Use minimalist prehistoric comic-strip drawing: simple shapes, compact character construction, clean black outlines, limited details, expressive gestures, and straightforward coloring. Include recognizable B.C. characters such as B.C., Peter, Wiley, and other appropriate recurring figures. Use the familiar prehistoric landscape, rocks, caves, primitive shelters, beach, and open natural surroundings. Make the subject a genuine member of this world, dressed and proportioned to fit the comic's prehistoric setting. Create a humorous interaction or visual gag rather than a generic group portrait. Keep the scene uncluttered and readable. Preserve the subject's recognizable facial characteristics through simplified cartoon design. Do not add modern objects unless the master prompt specifically requests them. Master-prompt instructions override optional scene choices."
+  },
+  {
+    "name": "BEADED HUMAN",
+    "category": [
+      "ART", 
+      "MATERIAL TRANSFORMATION", 
+      "BEAD ART", 
+      "SCULPTURE", 
+      "MOSAIC"
+    ],
+    "message": "Take a picture and completely reconstruct the subject as a highly detailed three-dimensional Beaded Human sculpture. The entire subject must be built from individually visible beads, carefully arranged and fitted together to create the face, hair, clothing, hands, body, and every visible feature. Use thousands of beads with varied colors, sizes, shapes, and reflective surfaces to recreate the subject's recognizable identity. The beads must form the actual subject, not merely decorate or cover a photograph.",
+    "randomizeOptions": false,
+    "options": [],
+    "additionalInstructions": "The subject must be entirely reconstructed from individual physical beads. Every visible surface, including the face, eyes, nose, mouth, hair, ears, neck, clothing, hands, and body, must consist of clearly distinguishable beads. Use controlled bead placement, varied bead colors, subtle size variation, and carefully arranged tonal transitions to reproduce the subject's identity and anatomy. Facial features must be built from bead patterns and bead density, never left as realistic photographic features. Hair must be formed from tightly arranged beads following the hairstyle. Clothing must also be made entirely of beads, with patterns and folds expressed through their arrangement. Create a coherent three-dimensional sculpture with visible bead boundaries, natural highlights, and dimensional shadows. Avoid tiny bead overlays on an intact photograph, bead jewelry worn by a realistic person, or a flat printed bead pattern. Preserve the original pose and recognizable proportions. Keep the background unchanged unless the master prompt requests otherwise."
   },
   {
     "name": "BEAM ME UP SCOTTY",
@@ -6738,6 +6778,32 @@
     "additionalInstructions": ""
   },
   {
+    "name": "BRENDA STARR",
+    "category": [
+      "COMICS",
+      "NEWSPAPER COMICS", 
+      "ADVENTURE", 
+      "VINTAGE ILLUSTRATION"
+    ],
+    "message": "Take a picture and transform the subject into a fully illustrated character in the classic Brenda Starr comic-strip universe. Recreate the subject using glamorous vintage adventure-comic illustration, expressive ink contours, elegant character drawing, dramatic poses, stylish clothing, and richly drawn settings. Integrate the subject into a reporter's adventure alongside Brenda Starr and other recognizable characters, with a newsroom, city streets, international locations, or dramatic story settings.",
+    "randomizeOptions": false,
+    "options": [],
+    "additionalInstructions": "Completely redraw the subject in the classic Brenda Starr comic illustration style. Use elegant vintage character drawing, expressive faces, clean ink lines, carefully illustrated hairstyles, stylish period clothing, and dramatic newspaper-adventure compositions. Do not retain the original photograph or any photographic face, skin, hair, or clothing details. Preserve recognizable identity through stylized facial structure, hairstyle, and distinguishing features. Create an appropriate reporter/adventure environment with newsrooms, city streets, offices, travel locations, and period details. The subject must be drawn with the same technique and level of stylization as Brenda Starr and the other characters. Avoid modern anime, photorealism, and generic 3D illustration. Master prompt details take priority."
+  },
+  {
+    "name": "BRINGING UP FATHER",
+    "category": [
+      "COMICS", 
+      "VINTAGE NEWSPAPER COMICS", 
+      "CLASSIC CARTOON", 
+      "HUMOR"
+    ],
+    "message": "Take a picture and transform the subject into a fully illustrated character in the classic Bringing Up Father comic-strip style. Recreate the subject with the distinctive early newspaper-cartoon drawing, elegant caricature, expressive faces, decorative clothing, and elaborate vintage domestic and social settings. Integrate the subject into a humorous scene with Jiggs, Maggie, and other recognizable characters, using the comic's characteristic contrast between everyday life and high society.",
+    "randomizeOptions": false,
+    "options": [],
+    "additionalInstructions": "Completely redraw the subject in the original vintage comic's visual language. Use expressive caricature, clear ink outlines, stylized faces, carefully drawn clothing, period hairstyles, and the decorative early twentieth-century environments associated with the strip. The subject must not remain photorealistic. Translate identity into the comic's distinctive caricature proportions while preserving recognizable facial characteristics and hairstyle. Use period-appropriate interiors, elaborate furniture, fashionable clothing, restaurants, and social settings. Integrate the subject into a humorous interaction with the familiar cast. Ensure the subject and all other characters share the same hand-drawn treatment. Avoid modern cartoon styling, anime, and realistic photographic composites. Master prompt details override default scene choices."
+  },
+  {
     "name": "BRITTO ART STYLE",
     "category": [
       "ART",
@@ -6989,6 +7055,19 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "• Preserve recognizable identity\n• Transform ONLY the subject\n• Leave background unchanged\n• Leave environment unchanged\n• Leave surrounding objects unchanged\n• Leave scenery unchanged\n• Leave architecture unchanged\n• Leave landscape unchanged\n• Leave room unchanged\n• Entire subject constructed from bubble wrap\n• Bubble-wrap skin\n• Bubble-wrap hair\n• Bubble-wrap clothing\n• Bubble-wrap accessories\n• Thousands of visible air bubbles\n• Transparent plastic materials\n• Realistic reflections\n• Realistic translucency\n• Plastic highlights\n• Physical-material realism\n• Detailed bubble texture\n• Subject remains recognizable\n• No ordinary skin visible on subject\n• No ordinary clothing visible on subject\n• Entire subject made of bubble wrap\n• Bubble wrap should follow anatomy and facial features\n• Bubble wrap should preserve facial recognition\n• Subject should appear naturally integrated into the original scene\n• Background must remain normal\n• Environment must remain normal\n• Only the subject receives the transformation"
+  },
+  {
+    "name": "BUCK ROGERS",
+    "category": [
+      "COMICS", 
+      "SCIENCE FICTION", 
+      "RETRO FUTURISM", 
+      "CLASSIC NEWSPAPER COMICS"
+    ],
+    "message": "Take a picture and transform the subject into a fully illustrated character from the classic Buck Rogers science-fiction comic-strip universe. Reconstruct the subject with vintage space-adventure artwork, streamlined futuristic clothing, ray guns, rocket ships, imaginative machinery, dramatic poses, and the distinctive retro-futuristic visual language of early science-fiction comics. Integrate the subject into an adventure alongside Buck Rogers, Wilma Deering, and other characters in a recognizable futuristic setting.",
+    "randomizeOptions": false,
+    "options": [],
+    "additionalInstructions": "Completely redraw every visible part of the subject in a consistent vintage comic illustration style. Do not preserve the source photograph or any photorealistic facial, skin, hair, or clothing details. Use period-inspired science-fiction illustration, clean ink contours, expressive faces, simplified but dynamic anatomy, colorful futuristic uniforms, streamlined equipment, and imaginative early space-age technology. Preserve the subject's identity through recognizable stylized facial features, hairstyle, and other distinguishing details. The subject must look like an original character belonging to the Buck Rogers comic universe. Create an appropriate setting with rocket ships, futuristic cities, laboratories, or alien environments. All characters and objects must share one coherent illustration style. Avoid modern cinematic science-fiction realism, anime, and 3D game aesthetics. Master prompt details take priority."
   },
   {
     "name": "BULLET TIME",
@@ -7317,6 +7396,19 @@
     ],
     "randomizeOptions": true,
     "additionalInstructions": "FINAL RESULT:\nThe subject caught in a realistic criminal situation with appropriate law enforcement response, serious dramatic tone, clear evidence of wrongdoing, and professional documentation style — presented as actual crime footage or arrest scenario without any humor or comedy.\n\nCORE REQUIREMENTS:"
+  },
+  {
+    "name": "BUSTER BROWN",
+    "category": [
+      "COMICS", 
+      "VINTAGE COMICS", 
+      "EARLY NEWSPAPER CARTOONS", 
+      "CLASSIC CARTOON"
+    ],
+    "message": "Take a picture and completely redraw the subject as a character in the vintage Buster Brown comic-strip universe. Use the distinctive early twentieth-century cartoon illustration, rounded caricature, expressive faces, decorative period clothing, lively poses, and charming hand-drawn settings. Integrate the subject into a playful scene with Buster Brown, Tige, and other recognizable characters.",
+    "randomizeOptions": false,
+    "options": [],
+    "additionalInstructions": "Reconstruct the subject completely as a vintage hand-drawn cartoon character. Match the early newspaper-comic visual language, including rounded caricature forms, expressive facial features, period clothing, clean but lively outlines, and carefully illustrated backgrounds. The original photograph must not remain visible. Preserve recognizable identity through the cartoon interpretation of facial structure, hairstyle, and distinctive features. Use period-appropriate costumes, streets, homes, shops, and other settings. Include familiar characters where appropriate, illustrated consistently with the same style. Avoid modern vector cartoon styling, anime, photorealism, and glossy 3D. The master prompt controls the subject's action, pose, and scene details."
   },
   {
     "name": "BUT CAN IT PLAY DOOM?",
@@ -11068,6 +11160,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "COIN MOSAIC HUMAN",
+    "category": [
+      "ART", 
+      "MOSAIC", 
+      "COIN ART", 
+      "MATERIAL TRANSFORMATION", 
+      "SCULPTURE"
+    ],
+    "message": "Take a picture and completely reconstruct the subject as an intricate Coin Mosaic Human sculpture made entirely from real coins. Use overlapping and carefully arranged coins of different denominations, sizes, metallic tones, and orientations to create the subject's face, hair, clothing, hands, and entire body. The coins must form the actual recognizable subject, with facial features and anatomy emerging from their arrangement, highlights, and shadows. Do not simply cover the original photograph with coins.",
+    "randomizeOptions": false,
+    "options": [],
+    "additionalInstructions": "The entire subject must be reconstructed from physical coins. Use individually distinguishable coins arranged in dense, carefully controlled patterns that follow the subject's anatomy and silhouette. Use different coin sizes, metallic tones, denominations, orientations, and degrees of overlap to create highlights, shadows, contours, and recognizable facial features. The face must be formed entirely from coins; do not leave photographic eyes, nose, mouth, or skin visible underneath. Hair, clothing, hands, and body must also be made from coins. Use smaller coins in areas requiring fine detail and larger coins in broader areas, while keeping the subject recognizable. Show authentic metallic reflections, engraved coin details, overlapping edges, and dimensional relief. The arrangement must create one continuous, coherent subject rather than scattered coins or detached body parts. Do not use generic round metal tokens in place of recognizable coins. Preserve the original pose and background unless instructed otherwise."
   },
   {
     "name": "COINS",
@@ -16530,7 +16636,7 @@
     "message": "Take a picture and transform it into a drypoint etching. Drypoint is an intaglio printmaking technique where the artist scratches directly into a metal plate with a sharp needle, creating a characteristic soft, velvety burr along the incised lines. The image should have rich, feathery lines with soft edges and limited edition print quality.",
     "options": [],
     "randomizeOptions": false,
-    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Characteristic burr creating soft, fuzzy line edges\n• Rich ink accumulation along scratched lines\n• Plate tone visible in background\n• Hand-pulled print appearance on dampened paper"
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• The complete subject must be reconstructed using the physical visual language of drypoint printmaking. Simulate direct needle incisions into a metal plate, retaining the characteristic raised burr that produces soft, velvety, slightly irregular printed lines. Use varied line pressure, direction, density, crosshatching, and overlapping engraved marks to describe every form. Facial features must be created by engraved lines and tonal accumulation, not photographic skin texture. Hair must be built from flowing incised strokes. Clothing, body contours, and shadows must also be engraved. Preserve the subject's recognizable identity through careful placement of lines and tonal values. Use a restrained print palette, primarily black ink on warm or neutral paper, unless the master prompt specifies otherwise. Show subtle paper grain and authentic print imperfections. Avoid ordinary pencil shading, vector line art, halftone-only effects, photorealistic imagery, and a filter placed over the original photo. The background remains unchanged unless the master prompt requests a different setting. Hand-pulled print appearance on dampened paper"
   },
   {
     "name": "DUCK SEASON OR WABBIT SEASON",
@@ -20942,6 +21048,19 @@
     "additionalInstructions": "FLASH-AND-DRAG PHOTOGRAPHIC TECHNIQUE:\n\n1. Recreate the image as a genuine-looking flash-and-drag photograph, combining a short flash-frozen exposure with a longer ambient-light shutter exposure.\n2. The subject must be sharply frozen by a strong direct flash at one identifiable moment.\n3. The longer exposure must record movement and ambient light separately from the flash-frozen subject.\n4. The result must visibly combine a crisp subject with flowing motion and light trails around or behind it.\n5. The flash exposure should define the subject's final recognizable position. The dragged exposure should reveal the movement that occurred during the longer shutter interval.\n6. The two exposures must feel like components of one photographic capture, not separate images pasted together.\n\nFLASH-FROZEN SUBJECT:\n\n7. Keep the main subject sharply focused, clearly recognizable, and visually dominant.\n8. Use direct on-camera flash characteristics, including bright highlights, strong specular reflections, crisp edges, and distinct flash illumination.\n9. Preserve facial features, expression, hairstyle, clothing, anatomy, proportions, and defining details.\n10. The flash-frozen subject must remain substantially sharper than the ambient-motion portions of the photograph.\n11. Do not blur the entire subject. The flash must visibly freeze the dominant moment.\n12. Retain believable skin texture, fabric detail, and surface characteristics.\n\nDRAGGED SHUTTER AND AMBIENT MOVEMENT:\n\n13. Create a longer-exposure appearance in the background and moving elements while the flash-frozen subject remains sharp.\n14. Use directional movement trails, ambient-light streaks, subtle ghosted motion, and exposure accumulation where appropriate.\n15. Trails must follow plausible movement paths and should communicate the direction and character of the motion.\n16. Background lights may stretch into colorful streaks or short trails depending on the original scene.\n17. Moving background elements may become softly displaced or repeated through exposure accumulation.\n18. Keep the movement visually integrated with the original scene. Do not add arbitrary neon ribbons, magical energy, or science-fiction effects.\n19. The dragged exposure should remain visible but must not overwhelm the sharply frozen subject.\n\nLIGHTING AND COLOR:\n\n20. Use a strong direct flash as the principal illumination on the subject.\n21. Preserve the character of the original ambient lighting while allowing it to accumulate during the longer exposure.\n22. Create contrast between the crisp flash-lit subject and the softer, more fluid ambient background.\n23. Allow realistic flash highlights, reflective surfaces, mixed color temperatures, and subtle exposure irregularities.\n24. Do not force every image into a nighttime setting. The technique can be used in dim interiors, nightlife scenes, events, or other environments where ambient exposure and flash can be distinguished.\n25. Do not automatically turn a daytime scene into a nightclub or dark street.\n\nDISTINCTION FROM OTHER PHOTOGRAPHIC EFFECTS:\n\n26. This is not ordinary motion blur applied uniformly to the image.\n27. This is not a motion-trail composition made from a line of duplicated subjects and photon effects.\n28. This is not simply a direct-flash nighttime photograph with a dark background.\n29. The key characteristic is the simultaneous presence of a sharp flash-frozen subject and a longer ambient exposure showing movement.\n30. Do not create multiple equally sharp copies of the subject.\n31. Do not make the flash-frozen subject translucent or subordinate to the motion trails.\n\nSUBJECT AND SCENE PRESERVATION:\n\n32. Preserve the original subject's identity, appearance, clothing, pose, and recognizable characteristics.\n33. Preserve the original environment, objects, and overall composition.\n34. Do not invent a new location, nightlife event, crowd, or background just to create motion.\n35. If the original image contains multiple people, preserve their identities and original relationships. Apply flash and dragged exposure coherently to the scene.\n36. Do not add text, logos, captions, decorative borders, or graphic elements.\n\nMASTER PROMPT PRIORITY:\n\n37. Any externally supplied master prompt overrides the default movement direction, flash intensity, ambient exposure, light-trail color, and photographic mood.\n38. Follow any specified action, pose, setting, or camera perspective while retaining the flash-and-drag technique.\n39. If the master prompt specifies a particular subject or environment, do not replace it with a generic nightlife scene.\n\nFINAL VALIDATION:\n\n40. Confirm that the main subject is sharply frozen by flash.\n41. Confirm that the longer exposure creates visible ambient movement or light trails.\n42. Confirm that the subject and dragged exposure are integrated into one believable photograph.\n43. Confirm that the image does not look like ordinary uniform motion blur, a simple flash portrait, or a duplicated motion-trail effect.\n44. Confirm that the original subject and environment remain recognizable."
   },
   {
+    "name": "FLASH GORDON",
+    "category": [
+      "COMICS", 
+      "SCIENCE FICTION", 
+      "RETRO FUTURISM", 
+      "ADVENTURE"
+    ],
+    "message": "Take a picture and transform the subject into a native character in the classic Flash Gordon comic-strip universe. Completely redraw the subject in the dramatic vintage science-fiction adventure illustration style: elegant ink drawing, expressive anatomy, heroic poses, elaborate futuristic costumes, dramatic lighting, strange alien architecture, and richly imagined planetary environments. Integrate the subject into an exciting scene with Flash Gordon, Dale Arden, Dr. Zarkov, or other recognizable characters and settings.",
+    "randomizeOptions": false,
+    "options": [],
+    "additionalInstructions": "The subject must be fully reconstructed as a hand-drawn comic character, never retained as a realistic photograph or photographic cutout. Match the classic vintage Flash Gordon aesthetic, including carefully drawn contours, expressive faces, dramatic poses, stylized but convincing anatomy, elaborate retro-futuristic costume design, and richly illustrated science-fiction environments. Preserve identity through recognizable facial structure, hairstyle, and distinctive features, adapted to the comic's drawing technique. Give the subject a costume and role that fit the adventure when the master prompt does not specify them. Use alien cities, space vessels, exotic planets, futuristic machinery, or other suitable environments. The subject and all other characters must share the same illustration technique. Avoid contemporary glossy 3D science-fiction rendering, anime, and photorealism. Master prompt details override default scene choices."
+  },
+  {
     "name": "FLAT DESIGN",
     "category": [
       "MINIMAL",
@@ -22346,6 +22465,19 @@
     "randomizeOptions": false,
     "options": [],
     "additionalInstructions": "Use the distinctive Gargoyles animation language: angular anatomy, muscular but stylized forms, dramatic silhouettes, detailed wings and costume elements where appropriate, strong ink contours, and cinematic shadow and color. Include recognizable members of the Manhattan clan, especially Goliath, with Brooklyn, Lexington, Broadway, or other characters as appropriate. Use the castle rooftop, clock tower, nighttime Manhattan skyline, or another recognizable urban fantasy location. If the subject is human, adapt them to the show's human-character design; if the subject is an animal, retain its identity while integrating it into the world. Do not automatically turn every subject into a gargoyle unless the master prompt requests that transformation. Create a coherent interaction with the established characters. Avoid photorealistic fantasy rendering and generic superhero aesthetics."
+  },
+  {
+    "name": "GASOLINE ALLEY",
+    "category": [
+      "COMICS", 
+      "CLASSIC NEWSPAPER COMICS", 
+      "VINTAGE CARTOON", 
+      "SLICE OF LIFE"
+    ],
+    "message": "Take a picture and redraw the subject as a native character in the classic Gasoline Alley newspaper comic strip. Use its warm, approachable, hand-drawn everyday cartoon style, expressive character faces, natural poses, simple ink outlines, and recognizable small-town atmosphere. Place the subject naturally among the familiar Gasoline Alley characters in a scene involving the garage, automobiles, neighborhood, home, or other everyday setting.",
+    "randomizeOptions": false,
+    "options": [],
+    "additionalInstructions": "The subject must be completely redrawn in the same vintage newspaper-cartoon language as the Gasoline Alley characters. Do not retain realistic photographic details or paste a photo into the comic. Use expressive but understated cartoon anatomy, hand-drawn outlines, simplified facial features, approachable proportions, and a warm everyday atmosphere. Preserve the subject's identity through stylized facial structure, hairstyle, and recognizable clothing details. The scene should feel like a genuine moment in the Gasoline Alley world, with period-appropriate cars, garages, homes, streets, and neighborhood details. All people must share the same drawing style. Avoid modern vector cartoons, anime, photorealism, and glossy 3D rendering. The master prompt controls the subject's action and other creative details."
   },
   {
   "name": "GAUGING",
@@ -24362,6 +24494,19 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "HAPPY HOOLIGAN",
+    "category": [
+      "COMICS", 
+      "VINTAGE NEWSPAPER COMICS", 
+      "EARLY CARTOON ART", 
+      "HUMOR"
+    ],
+    "message": "Take a picture and transform the subject into a native character in the early comic-strip world of Happy Hooligan. Recreate the subject in the distinctive turn-of-the-century newspaper cartoon style, with loose expressive ink drawing, exaggerated caricature, simple shapes, lively gestures, and humorous old-fashioned street scenes. Integrate the subject into a comical encounter with Happy Hooligan and other characters in a recognizable vintage setting.",
+    "randomizeOptions": false,
+    "options": [],
+    "additionalInstructions": "Completely redraw the subject in the early newspaper-comic style associated with Happy Hooligan. Use period caricature, simplified anatomy, expressive gestures, hand-drawn outlines, and the visual conventions of early comic strips. Do not retain photographic facial details, realistic skin, or photographic clothing. Preserve identity through a stylized interpretation of the subject's face, hairstyle, and distinctive features. Use period clothing, street scenes, shops, and old-fashioned props. The subject must appear to belong naturally in the same comic panel as Happy Hooligan. Avoid modern cartoon polish, anime, and photorealistic rendering. Master prompt details take priority."
   },
   {
     "name": "HAPPY MEAL PROMO",
@@ -27724,6 +27869,20 @@
     "additionalInstructions": "• Preserve recognizable identity while adapting the subject into the Jet Set Radio universe\n• Transform the entire image into a vibrant graffiti-covered urban world\n• Apply authentic cel-shaded rendering throughout the image\n• Emphasize street culture, fashion, creativity, and movement\n• Include Beat, Gum, Tab, Combo, Corn, and other franchise characters when appropriate\n• Integrate graffiti, murals, street art, and urban visual expression throughout the environment\n• Use bold graphic outlines and comic-book-inspired design\n• Incorporate dynamic action poses and exaggerated perspective\n• Use bright highly saturated urban color palettes\n• Favor stylized visual energy over realism\n• Avoid photorealism, gritty crime aesthetics, military themes, realistic shading, or modern CGI realism\n• Ensure the final image feels stylish, rebellious, energetic, colorful, and unmistakably Jet Set Radio"
   },
   {
+    "name": "JIGSAW HUMAN",
+    "category": [
+      "ART", 
+      "PUZZLE ART", 
+      "MOSAIC", 
+      "MATERIAL TRANSFORMATION",
+      "3D SCULPTURE"
+    ],
+    "message": "Take a picture and completely reconstruct the subject as a detailed Jigsaw Human sculpture made entirely from interlocking jigsaw puzzle pieces. Every part of the subject, including the face, hair, clothing, hands, and body, must be formed from individual puzzle pieces fitted together into a coherent three-dimensional shape. Use carefully selected colors, printed patterns, and piece orientation to reproduce the subject's recognizable identity. The finished result must look like a physical puzzle-piece sculpture, not a photograph covered with puzzle outlines.",
+    "randomizeOptions": false,
+    "options": [],
+    "additionalInstructions": "Reconstruct the entire subject from individual interlocking jigsaw puzzle pieces. Each piece must have a recognizable puzzle-tab and socket shape, with visible boundaries and slight physical thickness. Use hundreds or thousands of appropriately sized pieces, with smaller pieces around detailed facial features and larger pieces across broader areas. The face, eyes, nose, mouth, hair, clothing, hands, and body must all be made from puzzle pieces. Use color, printed imagery, and tonal variation on the pieces to recreate the subject's identity. The pieces must fit together into one continuous anatomically coherent subject. Do not leave realistic photographic facial features visible underneath. Do not merely draw puzzle outlines over the photograph. Show subtle dimensional shadows and physical piece edges. Avoid scattered loose pieces, missing body parts, or a flat puzzle-board appearance. Preserve the subject's pose and recognizable proportions. Background remains unchanged unless instructed otherwise."
+  },
+  {
     "name": "JIM DAVIS STYLE",
     "category": [
       "CARTOON",
@@ -29192,6 +29351,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "SUBJECT RECONSTRUCTION (CRITICAL):\n\n• Completely replace the original subject with a physical sculpture constructed from hundreds of thin, stacked horizontal layers.\n• Every layer must contribute to the actual three-dimensional shape of the subject, following the contours of the head, face, hair, neck, clothing, torso, arms, hands, and legs.\n• Preserve the original subject's identity, recognizable facial structure, hairstyle, expression, body proportions, pose, posture, and orientation.\n• The layers must be individually visible, with consistent thickness, clearly defined edges, and subtle gaps or shadows between them.\n• Use a material and color palette that complements the original subject while making the layered construction unmistakable.\n• The layers must wrap around the subject's actual anatomy rather than appearing as flat stripes placed across a photograph.\n• Reproduce fine facial and clothing details through changes in the contours, thickness, and arrangement of the stacked layers.\n• The finished figure should resemble an intricate physical 3D-printed sculpture viewed in the original photographic scene.\n\nBACKGROUND PRESERVATION:\n\n• Everything outside the original subject must remain exactly as it appears in the source photograph.\n• Preserve the original background, environment, objects, people, lighting, colors, perspective, and framing.\n• Do not turn the background into a 3D-printing workshop or add printers, platforms, tools, or manufacturing equipment.\n• Do not apply the layered effect to surrounding objects or scenery.\n\nANTI-CHEAT:\n\n• Do not simply overlay horizontal lines or stripes on the original photograph.\n• Do not leave the original photographic subject visible underneath or between the layers.\n• Do not create a flat stack of unrelated sheets that fails to reproduce the subject's anatomy.\n• Do not turn the subject into a cake, pastry, or food item.\n• Do not add a display stand or base unless one exists in the original image.\n\nFINAL RESULT:\nThe original photograph remains unchanged everywhere except the subject, who is completely rebuilt as a detailed three-dimensional sculpture made from hundreds of individually visible stacked layers."
+  },
+  {
+    "name": "LAYERED ACRYLIC HUMAN",
+    "category": [
+      "ART", 
+      "SCULPTURE", 
+      "ACRYLIC ART", 
+      "3D TRANSFORMATION", 
+      "MATERIAL ART"
+    ],
+    "message": "Take a picture and completely reconstruct the subject as a sophisticated three-dimensional sculpture made from stacked transparent, translucent, and colored acrylic sheets. Build the face, hair, clothing, body, and all visible features from precisely cut acrylic layers, with visible sheet edges, internal color transitions, transparent overlaps, and dimensional depth. The subject must be physically constructed from acrylic layers, not shown as a photograph behind or beneath acrylic panels.",
+    "randomizeOptions": false,
+    "options": [],
+    "additionalInstructions": "Create the entire subject as a layered acrylic sculpture. Use numerous individually cut acrylic sheets, each contributing a portion of the subject's contours, anatomy, facial structure, hair, clothing, and color. Show visible edges, transparent and translucent layers, colored acrylic sections, overlapping planes, internal reflections, and realistic optical depth. The subject must remain recognizable through the arrangement and color of the layers. Facial features must be constructed from acrylic shapes and layered color, not retained as photographic skin or realistic facial details. Hair and clothing must also be formed from acrylic sheets. Use clean precision-cut edges and a polished finish. The sheets should form one coherent continuous sculpture with convincing three-dimensional depth and natural cast shadows. Avoid flat stained-glass appearance, ordinary plastic wrapping, or a photograph with acrylic panels placed in front. Preserve the original pose and background unless the master prompt specifies otherwise."
   },
   {
     "name": "LCARS",
@@ -31637,6 +31810,19 @@
     "additionalInstructions": "FINAL RESULT:\nThe image should confidently depict the wrong version of reality as if it were always correct, with strong variety across uses and no single Mandela Effect dominating the output."
   },
   {
+    "name": "MANDRAKE THE MAGICIAN",
+    "category": [
+      "COMICS", 
+      "FANTASY", 
+      "MAGIC", 
+      "CLASSIC ADVENTURE COMICS"
+    ],
+    "message": "Take a picture and transform the subject into a fully illustrated character in the classic Mandrake the Magician comic-strip universe. Reconstruct the subject using vintage adventure-comic illustration, elegant ink contours, dramatic theatrical poses, expressive faces, mysterious magical effects, and richly drawn fantasy-adventure environments. Place the subject alongside Mandrake, Lothar, Narda, or other recognizable characters in a magical performance, mysterious encounter, or adventure.",
+    "randomizeOptions": false,
+    "options": [],
+    "additionalInstructions": "The subject must be completely redrawn as a native character in the classic Mandrake comic's illustration style. No photographic face, realistic skin, photographic hair, or photographic clothing may remain. Use expressive vintage comic anatomy, clear ink outlines, elegant character poses, carefully drawn costumes, and dramatic but controlled magical visual effects. Preserve the subject's recognizable identity through stylized facial features, hairstyle, and distinctive characteristics. Use theatrical stages, mysterious interiors, exotic locations, or magical adventure settings. Any magic effects must be integrated into the illustrated scene and must not obscure the subject. All characters must have consistent linework, proportions, and color treatment. Avoid photorealism, anime, modern superhero rendering, and generic 3D fantasy art. The master prompt takes priority for action, mood, and setting."
+  },
+  {
     "name": "MANGA PAGE",
     "category": [
       "MANGA",
@@ -32185,6 +32371,19 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "FINAL RESULT:\nThe image should look like a whimsical, colorful illustration with simplified shapes and bold design, capturing a playful mid-century artistic style while keeping the subject recognizable."
+  },
+  {
+    "name": "MARY WORTH",
+    "category": [
+      "COMICS", 
+      "NEWSPAPER COMICS", 
+      "DRAMA", 
+      "CLASSIC ILLUSTRATION"
+    ],
+    "message": "Take a picture and transform the subject into a fully illustrated character in the classic Mary Worth newspaper comic-strip style. Redraw the subject with the strip's clean, carefully observed character illustration, natural expressions, refined facial features, restrained outlines, and realistic everyday environments. Integrate the subject into a dramatic or conversational scene with Mary Worth and other characters, as though appearing in an authentic installment of the strip.",
+    "randomizeOptions": false,
+    "options": [],
+    "additionalInstructions": "This is an illustration conversion, not a photographic composite. Completely redraw the subject's face, hair, body, and clothing using the clean, controlled, traditionally illustrated newspaper-comic style associated with Mary Worth. The subject may have more natural proportions than a broad caricature, but must still be visibly drawn, with illustrated skin, hair, eyes, clothing, and outlines. Do not leave the original photographic face or realistic photographic textures intact. Preserve identity through recognizable facial structure and hairstyle. Use everyday interiors, homes, restaurants, offices, and neighborhood settings. Integrate the subject naturally into a character interaction or dramatic moment. All people must share consistent illustration treatment. Avoid anime, glossy 3D, and photographic realism. The master prompt controls the action and scene."
   },
   {
     "name": "MASCOT",
@@ -36486,6 +36685,19 @@
     "additionalInstructions": "IDENTITY PRESERVATION (CRITICAL):\n\n• The figurine must clearly resemble the subject\n• Preserve the subject's unique facial identity\n• Preserve distinctive facial structure\n• Preserve recognizable facial proportions\n• Preserve recognizable eye shape through sculptural interpretation\n• Preserve recognizable nose shape through sculptural interpretation\n• Preserve recognizable smile characteristics through sculptural interpretation\n• Preserve recognizable hairstyle characteristics through sculptural interpretation\n• Recognition must come from the figurine itself\n• The final figurine must simultaneously read as both the subject and an authentic music box figurine\n\nFIGURINE ENFORCEMENT:\n\n• The subject must be the figurine itself\n• The figurine must be permanently attached to the music box\n• The figurine must appear professionally sculpted\n• The figurine must appear delicate and collectible\n• The figurine must feel physically tangible and three-dimensional\n• The figurine must be the focal point of the image\n\nMUSIC BOX ENFORCEMENT:\n\n• A genuine music box base must be present\n• The base must appear decorative and functional\n• The figurine must appear designed specifically for the music box\n• The music box must enhance the collectible presentation\n• Traditional music-box craftsmanship should be visible\n\nMATERIAL ENFORCEMENT:\n\n• The face must be sculpted directly into the figurine\n• Hair must be sculpted into the figurine material\n• Clothing folds must be sculpted rather than real fabric\n• Materials must remain consistent throughout the figurine\n• No realistic human materials may remain visible\n\nDISPLAY ENFORCEMENT:\n\n• The music box should appear physically present in the environment\n• The figurine should cast realistic shadows appropriate for a collectible object\n• The music box should feel like a genuine decorative keepsake\n• The environment should reinforce collectible-display storytelling\n\nFINAL ENFORCEMENT:\n\n• The image must immediately read as a music box figurine\n• The image must not resemble a doll\n• The image must not resemble an action figure\n• The image must not resemble a person in costume\n• The subject must remain recognizable while fully transformed into an authentic collectible music box figurine."
   },
   {
+    "name": "MUTT AND JEFF",
+    "category": [
+      "COMICS", 
+      "VINTAGE NEWSPAPER COMICS", 
+      "CLASSIC CARTOON", 
+      "HUMOR"
+    ],
+    "message": "Take a picture and transform the subject into a native character in the classic Mutt and Jeff comic-strip universe. Completely redraw the subject in the strip's vintage caricature style, using expressive ink outlines, simplified forms, exaggerated cartoon proportions, and humorous everyday situations. Integrate the subject into a scene alongside Mutt, Jeff, and other familiar characters, using their distinctive contrasting heights and personalities as part of the visual comedy.",
+    "randomizeOptions": false,
+    "options": [],
+    "additionalInstructions": "Reconstruct the entire subject as a vintage newspaper cartoon character. Use expressive hand-drawn contours, simple shapes, stylized faces, and the classic caricature proportions of the strip. Do not preserve photographic rendering or realistic anatomy. Preserve identity through simplified facial structure, hairstyle, and distinctive features. The subject must share the same drawing style, line weight, color or monochrome treatment, and visual proportions as Mutt and Jeff. Make the height contrast or physical comedy relevant to the scene without distorting the subject into disconnected or malformed anatomy. Use period-appropriate environments and props. Avoid modern generic cartoon design, anime, and photorealism. Master prompt details take priority."
+  },
+  {
     "name": "MUTTS",
     "category": [
       "CARTOON", 
@@ -37239,6 +37451,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "FINAL RESULT:\nThe image should look like a handcrafted needlepoint artwork, with visible stitches, fabric texture, and the subject clearly recognizable through the stitched design."
+  },
+  {
+    "name": "NEEDOH",
+    "category": [
+      "TOYS",
+      "SENSORY TOYS",
+      "SQUISHY",
+      "3D TRANSFORMATION",
+      "MATERIAL TRANSFORMATION"
+    ],
+    "message": "Take a picture and completely transform the subject into an adorable, squeezable NeeDoh sensory toy inspired by Schylling's iconic soft, squishy toys. The subject must be entirely recreated as the physical toy itself, with a soft, rounded, palm-sized, organically molded body made from smooth, flexible, slightly translucent or softly colored TPR-like material. Sculpt the subject's recognizable face, facial features, hairstyle, head, and body directly into the toy's continuous three-dimensional shape. The subject must look like a real manufactured NeeDoh character toy that can be squeezed, stretched, squashed, and kneaded, then slowly returns to its original shape. Do NOT place the original photograph, a face photograph, or a printed portrait on the surface of a NeeDoh ball. The entire subject must become the NeeDoh.",
+    "randomizeOptions": false,
+    "options": [],
+    "additionalInstructions": "ABSOLUTE TRANSFORMATION REQUIREMENT: The subject must become the actual physical NeeDoh toy. This is not a photograph printed on a squishy ball, not a photo decal, not a sticker, not a face pasted onto a toy, and not a realistic person wearing or holding a NeeDoh. The subject's complete identity must be reconstructed as a unified, three-dimensional, soft sensory toy character.\n\n1. COMPLETE SUBJECT RECONSTRUCTION: Transform the entire visible subject into one cohesive, palm-sized NeeDoh-style squishy toy. The head, face, hair, neck, torso, arms, hands, legs, and feet must all be incorporated into the toy's molded form where visible. Do not retain any realistic human body parts. Do not place a separate human head or photograph on a spherical toy. The subject itself is the toy.\n\n2. SCULPTED FACIAL IDENTITY: Recreate the subject's recognizable face as part of the actual three-dimensional molded material. Sculpt the forehead, cheeks, chin, nose, eye shapes, eyelids, mouth, ears, and other recognizable facial characteristics directly into the soft toy form. Facial features must have physical volume and smoothly molded contours. They must not look like a photograph, printed image, sticker, decal, flat illustration, or painted photographic portrait. Preserve recognizable identity through the shape and arrangement of the features, translated into a cute, simplified toy design.\n\n3. HAIR AND DISTINCTIVE FEATURES: Recreate the subject's hairstyle and distinctive hair shape as molded extensions and contours of the soft toy material. Hair must be physically integrated into the toy, not realistic individual strands pasted onto the surface. Preserve recognizable hair shape, parting, volume, and color where possible. Any distinctive accessories or features should also be recreated as integrated toy details when practical.\n\n4. SOFT NEE DOH MATERIAL: The toy must have the distinctive smooth, flexible, squishy appearance of a NeeDoh sensory toy. Use a soft thermoplastic-rubber-like outer shell, with a slightly glossy or satin finish, gentle translucency where appropriate, and a pliable, dough-like filled interior. The surface should look smooth, resilient, and squeezable, not hard plastic, ceramic, metal, or rigid vinyl. Do not imply that the toy is made from actual food or that its contents are exposed.\n\n5. SQUISHY SHAPE AND DEFORMATION: Give the toy a soft, rounded, slightly irregular, organically molded silhouette. It should appear capable of being squeezed, compressed, stretched, and kneaded. Show gentle natural bulging, rounded indentations, and subtle deformation where appropriate, while keeping the subject's identity and anatomy recognizable. The toy should appear to slowly recover its original shape. Do not deform the face into an unrecognizable blob or detach body parts.\n\n6. SUBJECT-SPECIFIC TOY SHAPE: Do not automatically turn every subject into a plain round ball. The toy's overall silhouette must be based on the subject. A person's head and hair should contribute to the molded shape; the torso and limbs should be simplified and incorporated into one continuous soft toy design. The result should look like a purpose-designed NeeDoh character version of the subject, rather than a generic ball with a face.\n\n7. AUTHENTIC PRODUCT APPEARANCE: The finished object should resemble a real commercially manufactured sensory toy: compact, palm-sized, smooth, colorful, soft, tactile, and appealing. Use clean molded transitions, subtle highlights, gentle surface reflections, and believable material thickness. A product-style presentation is acceptable, but the toy itself must remain the subject. Do not add packaging, logos, brand marks, text, or accessories unless requested by the master prompt.\n\n8. PRESERVE RECOGNIZABILITY: The toy must remain identifiable as the original subject. Preserve recognizable facial proportions, hairstyle, hair color, and distinctive visual characteristics, but translate them into simplified, soft, molded toy geometry. Do not use the original face as a surface image. Do not simply turn the photograph into a glossy cartoon or vinyl figure; the defining material and squeezable construction must read unmistakably as a NeeDoh-style sensory toy.\n\n9. BACKGROUND AND COMPOSITION: The original background should remain unchanged unless the master prompt specifies a different setting. The transformed toy should occupy the position of the original subject. If the master prompt requests a product photograph or a different environment, follow those instructions.\n\n10. MASTER PROMPT PRIORITY: Any externally supplied master prompt specifying pose, expression, action, colors, shape, setting, mood, or composition takes priority over preset defaults, while the complete NeeDoh toy transformation remains mandatory.\n\nFINAL VALIDATION: The result must look like a real, soft, squeezable NeeDoh character toy whose entire three-dimensional form is based on the original subject. There must be no photograph of the subject printed, pasted, projected, or otherwise displayed on the toy. The face, hair, and body must be physically recreated as part of the toy itself."
   },
   {
     "name": "NEGATIVE SPACE",
@@ -43208,6 +43434,19 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "• Preserve recognizable identity while converting everything into unfinished CGI\n• Use gray proxy geometry and temporary materials\n• Simulate authentic visual-effects previsualization workflows\n• Emphasize rough development-stage rendering\n• Use simplified assets, placeholder effects, and production-planning aesthetics\n• Make the image appear unfinished, technical, and functional\n• Avoid polished or photorealistic CGI"
+  },
+  {
+    "name": "PRINCE VALIANT",
+    "category": [
+      "COMICS", 
+      "CLASSIC NEWSPAPER COMICS", 
+      "ADVENTURE", 
+      "MEDIEVAL ILLUSTRATION"
+    ],
+    "message": "Take a picture and transform the subject into a fully illustrated character in the classic Prince Valiant Sunday comic-strip tradition. Recreate the subject with richly drawn medieval adventure illustration, expressive ink contours, carefully rendered anatomy, elaborate period clothing, detailed armor and fabrics, and the dramatic storytelling compositions of the classic strip. Place the subject in an Arthurian world of castles, knights, forests, battles, and royal courts, alongside recognizable characters from the Prince Valiant universe.",
+    "randomizeOptions": false,
+    "options": [],
+    "additionalInstructions": "Completely redraw the subject as an illustrated character. The source photograph must not remain visible. Use the classic Prince Valiant visual language: detailed hand-drawn forms, strong contours, carefully observed faces, rich but controlled colors, elaborate medieval costume details, and expansive storybook environments. The subject must be illustrated with the same technique and level of detail as every other character. Preserve recognizable identity through facial structure, hairstyle, and distinctive features, but interpret them as period comic illustration. Adapt modern clothing into plausible medieval garments or armor when appropriate, unless the master prompt specifies otherwise. Avoid modern superhero styling, generic fantasy game rendering, anime, and photorealistic composites. Integrate the subject into a dramatic but coherent Arthurian scene. The master prompt takes priority over default action, pose, and setting."
   },
   {
     "name": "PRINTMAKING TECHNIQUE",
@@ -52457,10 +52696,10 @@
       "INK",
       "ART"
     ],
-    "message": "Take a picture and transform it into a Japanese Suminagashi (floating ink) artwork. Suminagashi is the ancient Japanese art of marbling paper by floating sumi ink and pine resin on water, creating delicate concentric ring patterns. The image should feature the characteristic subtle, meditative patterns of floating ink rings in black and indigo on white washi paper.",
+    "message": "Take a picture and completely reconstruct the image as an intricate Suminagashi Japanese floating-ink marbling artwork. The subject's recognizable silhouette, facial features, hair, clothing, and anatomy must emerge from flowing concentric ink rings, delicate ripples, branching currents, and organically drifting marbled patterns. Use the characteristic interaction of floating ink and water to create a beautiful, fluid image in which the subject is formed by the marbling itself, not a photograph covered by a swirl effect. The image should feature the characteristic subtle, meditative patterns of floating ink rings in black and indigo on white washi paper.",
     "options": [],
     "randomizeOptions": false,
-    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Delicate concentric ink ring patterns\n• Subtle black and indigo tones\n• White washi paper surface\n• Meditative floating quality\n• Organic water-movement patterns"
+    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Rebuild the complete image using Suminagashi-inspired floating-ink patterns. Use delicate concentric rings, irregular circular ripples, flowing contour lines, drifting ink veins, organic branching patterns, and subtle water-driven distortions. The subject must remain clearly recognizable: facial structure, eyes, nose, mouth, hairstyle, body contours, and clothing should be defined by the placement, density, and direction of the ink patterns. The ink patterns must form the subject rather than simply cover a photograph. Maintain a harmonious balance between recognizable anatomy and fluid abstraction. Use traditional Japanese marbling aesthetics, with black or dark ink and restrained additional colors when appropriate. Show the appearance of ink floating and spreading on a pale absorbent paper surface. Do not create a generic psychedelic swirl, digital liquid filter, or photographic overlay."
   },
   {
     "name": "SUPERFAN (COLLEGE)",
@@ -55726,6 +55965,19 @@
     "randomizeOptions": false,
     "options": [],
     "additionalInstructions": "ABSOLUTE STYLE REQUIREMENT: The subject and the entire scene must be illustrated in the authentic, unmistakable visual style of the original Wizard of Id comic strip. This is a complete illustration-style conversion, NOT a photographic composite, photo filter, or background replacement.\n\n1. COMPLETELY REDRAW THE SUBJECT: Discard the original photograph's photographic rendering. Reconstruct the subject as a hand-drawn comic character. Every visible part of the subject must be illustrated in the same cartoon language as the original Wizard of Id characters. This includes the face, eyes, nose, mouth, ears, skin, hair, head shape, neck, hands, body, clothing, and footwear. Do not retain realistic skin texture, photographic lighting, realistic hair strands, photographic facial detail, or any other photographic rendering.\n\n2. MATCH THE DISTINCTIVE WIZARD OF ID ART STYLE: Use the original comic's characteristic simple, humorous, slightly irregular hand-drawn cartoon construction. Employ compact, rounded, exaggerated character proportions; simplified faces; expressive eyes and mouths; distinctive noses; economical black ink outlines; loose but controlled hand-drawn contours; uncomplicated shapes; and flat, restrained comic-strip colors. Match the proportions, line weight, facial construction, and overall drawing style of the established characters. The result must look like an actual panel from the original newspaper comic, not a modern generic cartoon, anime, 3D character, or polished digital illustration.\n\n3. NO REALISTIC SUBJECT: This requirement is absolute. Never render the subject as a realistic human, photorealistic portrait, realistic 3D model, or photographic cutout. Do not preserve the original face as a realistic face. Translate the person's recognizable identity into the simplified cartoon vocabulary of the comic. The subject must have the same degree of stylization as the Wizard, the King, the Jester, and every other character in the panel.\n\n4. PRESERVE RECOGNIZABLE IDENTITY: Retain the subject's recognizable identity through the cartoon interpretation of their facial structure, hairstyle, hair color, distinctive features, and recognizable clothing. Simplify these features to match the comic's drawing style rather than reproducing them realistically. Do not sacrifice the comic's authentic style in an attempt to preserve photographic detail.\n\n5. INTEGRATE THE SUBJECT INTO THE COMIC: Place the subject naturally among the established Wizard of Id characters in the medieval kingdom. The subject must share the same illustrated environment, scale, perspective, outlines, colors, and visual treatment. Have the characters interact naturally in a humorous situation appropriate to the comic's world. Do not simply place the subject in front of a comic-strip background.\n\n6. AUTHENTIC COMIC ENVIRONMENT: Use the recognizable medieval kingdom setting, including its castle, throne room, stone walls, dungeon, village, or other appropriate locations. Include familiar characters where appropriate, illustrated in their recognizable original designs. Maintain the simple, humorous newspaper-comic composition.\n\n7. CLOTHING AND BODY: Redraw all clothing as simplified cartoon garments using the comic's characteristic shapes and linework. Preserve recognizable outfit details where possible, but adapt their construction to the medieval comic setting when appropriate. The entire visible body must receive the same cartoon conversion as the face.\n\n8. CONSISTENCY CHECK: Before completing the image, compare the subject's rendering with the other characters in the scene. If the subject looks more realistic, more detailed, more three-dimensional, more polished, or stylistically different from the established Wizard of Id characters, redraw the subject until the styles match. There must be no photographic or realistic elements remaining in the subject.\n\n9. MASTER PROMPT PRIORITY: Any externally supplied master prompt specifying the subject's pose, action, expression, clothing, setting, mood, composition, or other creative details takes priority over conflicting preset defaults. However, the authentic Wizard of Id drawing style is mandatory and must never be overridden by a request to preserve photographic rendering.\n\nFINAL REQUIREMENT: The finished image must look like an original Wizard of Id comic-strip panel, with the photographed subject completely transformed into a native Wizard of Id cartoon character. If the subject can still be mistaken for a real person photographed and inserted into a cartoon, the transformation has failed."
+  },
+  {
+    "name": "THE YELLOW KID",
+    "category": [
+      "COMICS", 
+      "EARLY NEWSPAPER COMICS", 
+      "VINTAGE ILLUSTRATION", 
+      "HISTORICAL CARTOON"
+    ],
+    "message": "Take a picture and transform the subject into a character in the pioneering Yellow Kid newspaper-comic world. Recreate the subject as a hand-drawn early newspaper cartoon with broad caricature, expressive faces, simple graphic shapes, vintage ink contours, and the distinctive crowded urban street scenes of the comic's original era. Integrate the subject into a lively scene alongside the Yellow Kid and other characters, using period clothing, storefronts, signs, and street details.",
+    "randomizeOptions": false,
+    "options": [],
+    "additionalInstructions": "Completely reconstruct the subject as an early newspaper cartoon character. Use broad turn-of-the-century caricature, simplified anatomy, expressive faces, hand-drawn ink contours, and the distinctive visual character of early printed comic art. Do not retain photographic facial details or realistic rendering. Preserve identity through simplified recognizable features and hairstyle. Use period-appropriate urban settings, crowded streets, storefronts, old-fashioned objects, and vintage printed color treatment. The subject must be fully integrated into the same visual world as the Yellow Kid. Do not turn the image into a modern cartoon or merely apply an aged-paper filter. The subject and environment must both look like authentic early comic illustration. Master prompt details override defaults."
   },
   {
     "name": "THEME PARK MAP",
@@ -62990,6 +63242,20 @@
     ],
     "randomizeOptions": true,
     "additionalInstructions": "OPTION ENFORCEMENT:\n\n• The selected option MUST control the final environment\n• Do not generate random generic parks\n• Do not blend multiple parks together\n• Do not ignore the selected destination\n• Include recognizable location-specific landmarks and landscape design\n\nFINAL RESULT:\nThe image must clearly and unmistakably depict the specific selected world-famous park or garden as a real travel photograph."
+  },
+  {
+    "name": "WOVEN HUMAN",
+    "category": [
+      "ART", 
+      "TEXTILE ART", 
+      "WEAVING", 
+      "MATERIAL TRANSFORMATION", 
+      "TAPESTRY"
+    ],
+    "message": "Take a picture and completely reconstruct the subject as an intricate woven textile artwork. Build the entire subject from interlaced threads, yarns, fibers, and woven strands, with the face, hair, clothing, hands, and body formed by the actual weave. Use visible warp and weft structures, varied thread colors, tight and loose weaving, and carefully controlled textile patterns to preserve the subject's recognizable identity. The result must look like a handcrafted woven portrait or textile sculpture, not a photograph with a fabric filter.",
+    "randomizeOptions": false,
+    "options": [],
+    "additionalInstructions": "The entire subject must be made from woven threads and fibers. Use a clearly visible warp-and-weft construction, with individual strands passing over and under one another. Construct facial features from thread colors, weave density, and directional changes. Hair must be woven from fibers following the original hairstyle. Clothing and body must also be woven, with the weave following the subject's anatomy and folds. Preserve recognizable identity through careful color placement and the woven interpretation of facial proportions. Show tactile textile depth, thread crossings, subtle fiber irregularities, and dimensional surface relief. The weave must form the actual subject rather than sit over an intact photograph. Do not substitute knitted fabric, crochet, embroidery alone, or a printed textile texture. Maintain anatomical continuity and the original pose. Keep the background unchanged unless instructed otherwise."
   },
   {
     "name": "WOVEN METAL",
