@@ -1786,6 +1786,20 @@
     "additionalInstructions": "• Preserve recognizable identity\n• Transform the entire image into an oil painting\n• Use authentic alla prima techniques\n• Use wet-on-wet painting methods\n• Complete appearance of a single-session painting\n• Use energetic brushwork\n• Use expressive painterly strokes\n• Use direct painting techniques\n• Mix colors directly on the canvas\n• Preserve visible brush marks\n• Preserve painterly texture\n• Use thick and thin paint variation\n• Use confident brush application\n• Use broken color techniques\n• Use visible paint edges\n• Use natural oil-paint blending\n• Use traditional artist materials\n• Use realistic canvas texture\n• Use authentic fine-art presentation\n• Use painterly interpretation rather than photographic rendering\n• Avoid airbrushed appearance\n• Avoid digital-art aesthetics\n• Avoid CGI rendering\n• Avoid vector-art appearance\n• Avoid excessive smoothing\n• Avoid photographic sharpness\n• Avoid artificial filters\n• Emphasize hand-painted craftsmanship\n• Emphasize wet paint interaction\n• Emphasize direct observation painting\n• Emphasize expressive mark-making\n• Emphasize authentic oil-paint surface qualities\n• Final image should resemble a professionally executed alla prima oil painting created by a skilled traditional painter in a single sitting"
   },
   {
+    "name": "ALLEY OOP",
+    "category": [
+      "COMIC",
+      "COMIC STRIP",
+      "ADVENTURE",
+      "PREHISTORIC",
+      "SCIENCE FICTION"
+    ],
+    "message": "Take a picture and transform the subject into a character in the classic Alley Oop comic strip universe. Recreate the subject in the strip's distinctive adventure-comic illustration style and integrate them into the prehistoric world of Moo alongside Alley Oop, dinosaurs, and other familiar characters. Create an exciting and humorous adventure scene involving prehistoric creatures, ancient landscapes, time-travel mishaps, or encounters with the modern world. The subject must be fully redrawn in the same visual language as the established comic characters.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "Use the recognizable adventure-comic appearance of Alley Oop, with expressive hand-drawn linework, dynamic poses, strong silhouettes, traditional comic coloring, and lively prehistoric settings. Include Alley Oop as a recognizable caveman adventurer, with his characteristic appearance and clothing. Dinny the dinosaur and other familiar characters may appear when appropriate. Settings can include prehistoric Moo, jungles, caves, ancient settlements, or time-travel environments. The subject must be naturally integrated into the adventure, not positioned as an unrelated photographic visitor. Preserve their recognizable face and identity while adapting clothing and anatomy to the comic's style and the chosen scene. Do not turn the image into photorealistic prehistoric fantasy or generic modern superhero art."
+  },
+  {
     "name": "ALTER EGO",
     "category": [
       "PERSONALITY",
@@ -6922,6 +6936,20 @@
     "additionalInstructions": "STYLE ENFORCEMENT:\n• Preserve subject identity with soft, painterly rendering\n• Visible brush marks from hand-applied ink\n• Slightly uneven tonal coverage — handmade quality\n• Warm, rich tones of oil-based pigment\n• Paper texture visible in highlights\n• Reference the bromoil process popular 1907-1940s\n• Soft focus quality inherent to the process\n• The image should clearly be handmade — no two prints identical\n• Warm brown or sepia tones from oil-based inks\n• The overall effect should bridge photography and painting"
   },
   {
+    "name": "BROOM-HILDA",
+    "category": [
+      "COMIC",
+      "COMIC STRIP",
+      "FANTASY",
+      "WITCHES",
+      "HUMOR"
+    ],
+    "message": "Take a picture and transform the subject into a character in the Broom-Hilda comic strip universe. Recreate the subject in the strip's distinctive expressive hand-drawn cartoon style, surrounded by Broom-Hilda and her eccentric supernatural woodland companions. Create a humorous magical scene involving the witch's unconventional personality, bizarre spells, woodland antics, and absurd everyday problems. The subject must be completely redrawn in the same comic style and naturally integrated into the established characters and setting.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "Broom-Hilda should be recognizable as the unconventional, long-nosed, green-skinned witch with her distinctive wild appearance and irreverent personality. Include familiar companions such as Irwin, the well-meaning but dim-witted troll; Gaylord, the cynical vulture; and other appropriate woodland characters. Use the strip's expressive hand-drawn outlines, exaggerated facial expressions, loose cartoon anatomy, and humorous fantasy atmosphere. The subject may become a witch, woodland character, magical visitor, or another fitting participant, depending on the source image and master prompt. Preserve recognizable identity through the comic's simplified character design. Use a woodland setting, witch's home, or another appropriate environment. Avoid photorealistic subjects, generic fantasy illustration, and unrelated magical decorations."
+  },
+  {
     "name": "BRUCE GILDEN PHOTOJOURNALIST",
     "category": [
       "PHOTOGRAPHY",
@@ -6974,6 +7002,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "FINAL RESULT:\nA cinematic frame showing the subject as the main character performing the iconic Matrix dodge, with their body in extreme backward lean, projectiles frozen in mid-flight around them, rendered in The Matrix's distinctive green-tinted visual style with authentic time-freeze effects. The subject must look like they were the original actor in the film, seamlessly integrated into the scene.\n\nCORE REQUIREMENTS:"
+  },
+  {
+    "name": "BULLETISM",
+    "category": [
+      "ART", 
+      "DRAWING", 
+      "SURREALISM", 
+      "INK ART", 
+      "SPLATTER ART"
+    ],
+    "message": "Take a picture and reconstruct the entire subject as a dramatic bulletism-inspired ink and pigment splatter artwork. Build the subject's recognizable face, hair, body, clothing, and silhouette from explosive clusters of ink droplets, sprayed pigment, scattered marks, concentrated splashes, and radiating bursts. Use dense and sparse deposits to create tonal structure and dimensional form. The splatter patterns must resolve into a clearly recognizable subject rather than becoming random abstract marks. Create a dynamic, expressive, high-contrast fine-art composition.",
+    "randomizeOptions": false,
+    "options": [],
+    "additionalInstructions": "Use the visual concept of images emerging from explosive ink and pigment deposits. Construct recognizable anatomy from carefully controlled splashes, droplets, speckles, radiating marks, and irregular pigment clusters. Concentrate the marks around important facial features and defining contours so the subject remains identifiable. Vary droplet sizes, densities, directions, and overlap to create tonal gradients and depth. Allow energetic splatter to extend beyond the silhouette without obscuring the subject. Use a restrained palette or strong contrasting colors as appropriate to the source and master prompt. This is a painterly splatter-art technique, not a literal depiction of weapons, projectiles, injuries, or violence. Do not simply place random splashes over an unchanged photograph. The entire subject must be constructed from the splatter marks."
   },
   {
     "name": "BULLFIGHTER",
@@ -13121,6 +13163,20 @@
     "additionalInstructions": "FINAL RESULT:\nThe final image should resemble a romantic pastoral illustration celebrating rural simplicity."
   },
   {
+    "name": "COULAGE",
+    "category": [
+      "ART", 
+      "PAINTING", 
+      "SURREALISM", 
+      "ABSTRACT", 
+      "LIQUID ART"
+    ],
+    "message": "Take a picture and transform the entire subject into a striking coulage painting, constructed from flowing, poured, pooled, and cascading liquid pigment. Rebuild the subject's recognizable form through controlled streams of paint, irregular pools, flowing contours, overlapping liquid layers, and organic color transitions. The liquid paint must define the face, hair, anatomy, clothing, and silhouette while preserving the subject's identity. Create an expressive fine-art image in which the subject appears to have emerged from a dynamic process of poured and flowing paint.",
+    "randomizeOptions": false,
+    "options": [],
+    "additionalInstructions": "COULAGE TECHNIQUE: Use the visual language of poured and flowing paint, including gravity-driven drips, rivulets, spreading pools, fluid boundaries, marbled transitions, and organic pigment concentrations. The subject must be reconstructed from these paint formations, not left as a photograph covered with liquid effects. Maintain a recognizable subject silhouette and clearly defined facial features. Use controlled flow directions and carefully arranged color boundaries so the subject remains identifiable. Allow some flowing pigment to extend beyond contours, but do not let random drips destroy the subject's anatomy or obscure the face. Create depth through overlapping paint layers, glossy and matte pigment variations, and subtle shadows. Avoid making the image look like ordinary acrylic-pour abstract art with no recognizable subject. The result should be a deliberate figurative artwork made through the coulage technique."
+  },
+  {
     "name": "COURAGE THE COWARDLY DOG",
     "category": [
       "CARTOON", 
@@ -13719,6 +13775,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Angular geometric fragmentation\n• Dynamic diagonal compositions\n• Metallic and industrial colors\n• Sense of speed and energy\n• Russian avant-garde aesthetic"
+  },
+  {
+    "name": "CUBOMANIA",
+    "category": [
+      "ART", 
+      "COLLAGE", 
+      "SURREALISM", 
+      "GEOMETRIC", 
+      "MOSAIC"
+    ],
+    "message": "Take a picture and transform the subject into a surreal cubomania artwork, reconstructed from square and rectangular image fragments that have been rearranged into an unexpected composition. Divide the subject into numerous geometric pieces and reposition them in a deliberate, fragmented arrangement. Preserve recognizable facial features, clothing, body details, and identity through carefully selected fragments, even when their positions and orientations create an uncanny surrealist effect. The result should resemble a sophisticated cut-and-rearranged photographic collage, with visible fragment boundaries and an intentionally dislocated visual structure.",
+    "randomizeOptions": false,
+    "options": [],
+    "additionalInstructions": "CUBOMANIA CONSTRUCTION: Build the artwork from distinct square and rectangular fragments, each with visible boundaries. The fragments should look like pieces cut from an image and rearranged into a new composition. Vary their size, orientation, spacing, and placement. Some areas may remain relatively aligned while others become displaced, rotated, or exchanged, creating controlled visual disorientation. Preserve enough recognizable information to identify the original subject. Keep eyes, nose, mouth, hairstyle, and other defining details recognizable, even when fragmented. Do not randomly scatter pieces so extensively that the subject becomes completely unrecognizable. Do not substitute a conventional pixel mosaic, uniform checkerboard, or tiled filter. The result must look like a handmade surrealist cut-and-rearranged collage. Unless the master prompt specifies otherwise, apply the technique to the subject while retaining the original background."
   },
   {
     "name": "CUERDA SECA",
@@ -21779,6 +21849,20 @@
     "additionalInstructions": ""
   },
   {
+    "name": "FROISSAGE",
+    "category": [
+      "ART", 
+      "PAPER ART", 
+      "SURREALISM", 
+      "TEXTURE", 
+      "MIXED MEDIA"
+    ],
+    "message": "Take a picture and completely reconstruct the subject as an intricate froissage artwork made from crumpled, crushed, folded, and flattened paper. The entire subject must emerge from the physical creases, wrinkles, ridges, folds, and irregular surfaces of the paper. Use variations in paper depth, overlapping folds, compressed areas, torn-looking edges, and subtle ink or pigment to define the subject's recognizable features, anatomy, clothing, and expression. Create the appearance of a sophisticated tactile paper artwork rather than an ordinary photograph with a crumpled-paper texture applied over it.",
+    "randomizeOptions": false,
+    "options": [],
+    "additionalInstructions": "The subject must be reconstructed from the paper itself. Do not retain the original photograph underneath a paper texture. Every recognizable feature must be formed by the physical arrangement of the paper, including facial contours, eyes, nose, mouth, hair, clothing, and body shape. Use authentic-looking crumpling, irregular creases, compressed folds, ridges, valleys, and overlapping paper layers. Paper should appear physically manipulated rather than digitally embossed. Preserve the subject's identity and recognizable proportions. Use shadows within the folds to establish dimensionality. The paper may be white, cream, gray, or subtly tinted, with restrained pigment and ink accents where helpful. Do not turn the result into origami, a paper-cut collage, or a generic wrinkled-paper background. The entire composition should read as a deliberate fine-art froissage construction."
+  },
+  {
     "name": "FROST FORMATION",
     "category": [
       "ART",
@@ -24831,6 +24915,20 @@
     "randomizeOptions": false,
     "options": [],
     "additionalInstructions": "AUTHENTIC 2D CARTOON STYLE:\n- Recreate the distinctive hand-drawn 1990s urban television-animation aesthetic associated with Hey Arnold!\n- Use clean dark outlines, simplified geometric forms, flat color fills, restrained cel shading, and carefully controlled details.\n- Use the show's distinctive character proportions: stylized heads, simplified facial structures, expressive eyes, compact bodies, and recognizable silhouettes.\n- Maintain the show's understated, warm, slightly quirky visual personality.\n- Use hand-drawn 2D animation rather than photorealism, 3D rendering, anime, glossy digital illustration, or generic modern cartoon styling.\n\nSUBJECT MUST MATCH THE CARTOON:\n- Completely redraw the subject as a native character in the show's visual universe.\n- Translate the subject's facial identity, hairstyle, complexion, clothing, accessories, and recognizable features into the simplified geometric character design language.\n- Adapt the subject's head shape, eyes, nose, mouth, body proportions, and hair silhouette to match the established animation style.\n- The subject's face must be just as simplified and stylized as the faces of the surrounding characters.\n- Use the same line weight, flat color fills, shadow treatment, proportions, and level of detail for the subject as for every other character.\n- Do not preserve realistic facial anatomy or photographic skin texture.\n- Do not make the subject a semi-realistic illustration surrounded by simplified cartoon characters.\n\nCHARACTERS AND WORLD:\n- Include familiar neighborhood characters as recognizable supporting figures.\n- Preserve their established visual designs, silhouettes, hairstyles, clothing, and personalities.\n- Use recognizable locations such as the city neighborhood, school corridors, streets, playground, or boarding-house interior.\n- Give the subject a natural place within the neighborhood and a direct interaction with the other characters.\n- Avoid generic city backgrounds that lack the show's distinctive urban atmosphere.\n\nENVIRONMENT:\n- Use simplified architectural shapes, urban streetscapes, brick buildings, stoops, sidewalks, school interiors, and neighborhood details.\n- Render the background in the same hand-drawn 2D visual language.\n- Use muted but appealing colors and clear graphic composition.\n- Maintain a warm, lived-in neighborhood atmosphere.\n\nSCENE COMPOSITION:\n- Make the subject a prominent member of the scene.\n- Use a natural interaction with the established characters rather than a static lineup.\n- Match character scale, perspective, outlines, colors, and shading throughout.\n- Give the subject an expressive but believable pose consistent with the show's understated comedic style.\n\nSTRICT FINAL REQUIREMENTS:\n- The subject must look as though they were designed and drawn for the original animated series.\n- Every part of the subject must use the same visual style as the surrounding cast.\n- The original photographic rendering must be completely removed from the transformed subject.\n- No realistic face, photographic hair, realistic skin, or semi-realistic body is permitted.\n- Do not place a differently styled character into the cartoon world.\n- The final image must read as one coherent hand-drawn animated scene."
+  },
+  {
+    "name": "HI AND LOIS",
+    "category": [
+      "COMIC",
+      "COMIC STRIP",
+      "FAMILY CARTOON",
+      "CLASSIC CARTOON",
+      "HUMOR"
+    ],
+    "message": "Take a picture and transform the subject into a fully integrated character in the Hi and Lois comic strip. Recreate the subject in the strip's recognizable warm, clean, traditional newspaper-cartoon style, with rounded character designs, expressive faces, clear ink outlines, and colorful suburban family settings. Place the subject naturally alongside Hi, Lois, and their family in a humorous domestic situation. The subject must be completely redrawn in the same visual style and appear to belong in the comic's established world.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "Use the recognizable character-design language of Hi and Lois: warm family-comic illustration, rounded forms, clean outlines, simple expressive faces, and bright but restrained colors. Include Hi and Lois and appropriate family members such as Chip, Dot, Ditto, or Trixie. Set the scene in a recognizable suburban home, kitchen, living room, yard, or neighborhood. Give the subject a natural relationship to the family and a role in the humorous situation. Preserve the subject's identity while translating facial features, hairstyle, body proportions, and clothing into the comic's simplified drawing style. Every person must share the same illustration treatment. Avoid photorealism, anime, and generic modern cartoon rendering."
   },
   {
     "name": "HIDDEN DETAILS",
@@ -30064,6 +30162,20 @@
     "additionalInstructions": "IDENTITY PRESERVATION (CRITICAL):\n\n• The illustrated character must clearly resemble the subject\n• Preserve the subject's unique facial identity\n• Preserve distinctive facial structure\n• Preserve facial proportions\n• Preserve recognizable expression characteristics\n• Recognition must come from the illustration itself\n• The final book cover must simultaneously read as both the subject and an authentic Little Golden Book\n• The subject should appear to be the original inspiration for the illustrated character\n\nFLAVOR TEXT USAGE:\n\n• Use the user's flavor text as the official title of the Little Golden Book\n• The title should be prominently displayed on the cover\n• The title should be rendered as a professionally designed children's book title\n• The flavor text should never be ignored"
   },
   {
+    "name": "LITTLE LULU",
+    "category": [
+      "COMIC",
+      "COMIC STRIP",
+      "CLASSIC CARTOON",
+      "VINTAGE",
+      "HUMOR"
+    ],
+    "message": "Take a picture and transform the subject into a character in the classic Little Lulu comic-book and newspaper-comic universe. Recreate the subject in its distinctive vintage cartoon illustration style, with rounded expressive characters, clean ink outlines, lively facial expressions, simple coloring, and playful neighborhood humor. Integrate the subject naturally into a scene with Little Lulu, Tubby, and their familiar neighborhood friends, participating in a mischievous childhood adventure or funny everyday situation. The subject must look like an original character drawn for the comic.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "Use the recognizable visual language of classic Little Lulu illustrations: rounded simplified character shapes, expressive faces, clean hand-drawn outlines, carefully defined hairstyles, period-appropriate clothing, and lively comic staging. Include Little Lulu and Tubby when suitable, with their recognizable personalities and designs. Set the scene in a neighborhood, home, playground, clubhouse, or another fitting everyday environment. Give the subject a natural role in the story rather than placing them as an unrelated visitor. Redraw the entire subject, including face, hair, body, and clothing, to match the comic's illustration style. Preserve identity through distinctive facial features and hairstyle while adapting proportions to the comic's character design. Avoid photorealism, modern anime, and generic vector cartoon styling."
+  },
+  {
     "name": "LITTLE NEMO IN SLUMBERLAND",
     "category": [
       "COMIC",
@@ -30256,6 +30368,20 @@
     ],
     "randomizeOptions": true,
     "additionalInstructions": "FINAL RESULT:\nThe subject wearing an authentic SNL character costume with their real face clearly visible, fully integrated into the original sketch's set and staging, appearing as if you're watching the classic SNL skit but with the subject performing the iconic role in place of the original cast member.\n\nCORE REQUIREMENTS:"
+  },
+  {
+    "name": "LIVING PAPER CUTOUT",
+    "category": [
+      "ART",
+      "PAPER ART",
+      "PAPER SCULPTURE",
+      "3D TRANSFORMATION",
+      "MIXED MEDIA"
+    ],
+    "message": "Take a picture and completely reconstruct the subject as a dimensional living paper-cut sculpture. The entire subject must be formed from carefully cut, shaped, layered, and overlapping pieces of colored paper, creating a cohesive three-dimensional figure with recognizable anatomy, facial features, hairstyle, clothing, and expression. Use precisely cut paper shapes, curved paper sections, folded edges, overlapping layers, and subtle raised elements to build the subject's complete form. Make the paper pieces follow the actual contours of the subject rather than appearing as flat decorations pasted onto a photograph. Create convincing depth through layered construction, realistic paper thickness, cast shadows, and dimensional shaping. The result should look like an elaborate handcrafted paper sculpture that has come to life.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "COMPLETE SUBJECT RECONSTRUCTION: The original subject must be entirely rebuilt from paper. Do not retain the original photograph underneath the paper construction, and do not simply apply a paper texture, cutout filter, or collage effect over the source image. Every visible part of the subject must be constructed from physical-looking paper pieces, including the face, hair, neck, torso, arms, hands, legs, feet, clothing, and accessories. Preserve the subject's identity, recognizable facial features, hairstyle, body proportions, pose, and distinctive clothing details.\n\nTHREE-DIMENSIONAL PAPER CONSTRUCTION: Create a genuine dimensional paper sculpture, not a flat illustration. Use multiple layers of cut paper at different depths, with visible paper thickness along edges, overlapping sections, raised details, folded shapes, curved paper surfaces, and subtle creases. Paper elements should cast realistic shadows onto the layers beneath them. The subject should have a clearly dimensional silhouette and occupy believable three-dimensional space.\n\nCOHESIVE ANATOMY: Paper pieces must follow the subject's actual anatomy. Facial features must remain in their correct positions and proportions. The head must connect naturally to the neck and torso; shoulders must connect to arms; hands must connect to wrists; hips must connect to legs. Do not scatter body parts into unrelated paper shapes or create floating facial features. Use shaped and layered paper sections to construct the subject as one complete, connected figure.\n\nFACIAL DETAIL: Build the eyes, eyebrows, nose, mouth, ears, and other distinctive facial features from small but carefully shaped paper elements. Maintain a recognizable likeness. Use subtle raised paper layers to create facial depth without making the face look like a random collection of geometric patches. Hair should be formed from individually shaped and overlapping paper sections that preserve the subject's hairstyle and direction of flow.\n\nCLOTHING AND MATERIAL: Reconstruct clothing from paper as well, preserving recognizable garments, patterns, collars, sleeves, folds, seams, and accessories. Use different paper colors, weights, finishes, and textures where appropriate. Paper can be matte, lightly textured, translucent, metallic, or patterned, but the overall construction must remain unmistakably cut and layered paper. Avoid substituting cardboard, fabric, plastic, foam, or wood for the paper material.\n\nCUT-PAPER CHARACTER: Use a sophisticated handcrafted aesthetic with clean scissor-cut contours, carefully arranged shapes, layered silhouettes, subtle folds, and sculptural depth. The paper construction may combine smooth flowing curves with angular cut shapes, but it must not become a generic polygonal low-poly model, origami figure, or flat scrapbook collage.\n\nBACKGROUND: Preserve the original background unless the master prompt requests a different setting or a transparent background. If the background is retained, it may remain photographic while the subject becomes the dimensional paper sculpture. Ensure the paper subject is clearly separated from the background through realistic lighting and cast shadows. Do not convert the background into paper unless explicitly requested.\n\nFINAL VALIDATION: The finished image must depict one complete, recognizable subject whose entire visible body is constructed from layered, shaped, dimensional paper. The paper must define the subject's actual form, not merely cover it. Maintain anatomical continuity, recognizable identity, convincing paper thickness, visible layering, and strong three-dimensional depth. The master prompt takes priority for pose, action, expression, clothing, colors, and setting, while the paper-cut sculpture construction remains the defining transformation."
   },
   {
     "name": "LIVING TATTOO",
@@ -31857,6 +31983,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "MARMADUKE",
+    "category": [
+      "COMIC",
+      "COMIC STRIP",
+      "ANIMAL CARTOON",
+      "CLASSIC CARTOON",
+      "HUMOR"
+    ],
+    "message": "Take a picture and transform the subject into a character in the Marmaduke comic strip universe. Recreate the subject in the strip's expressive newspaper-cartoon style, alongside Marmaduke, the enormous Great Dane, and the Winslow family. Create a funny domestic scene featuring Marmaduke's oversized presence, exaggerated canine behavior, household chaos, and the family's reactions. The subject must be fully redrawn in the same comic style and integrated naturally into the scene as though they belong in the original strip.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "Marmaduke must be recognizable as a huge, expressive Great Dane with his characteristic oversized proportions and playful, disruptive personality. Include members of the Winslow family when appropriate. Use the comic's traditional newspaper-strip drawing style, expressive ink contours, simplified forms, lively gestures, and clear visual storytelling. The subject must be fully converted into the same illustration style, not retained as a photograph. Preserve their recognizable face, hair, clothing, and identity. The humor should come from the interaction between the subject, Marmaduke, and the household situation. Use believable domestic environments such as a living room, kitchen, yard, or neighborhood. Avoid making Marmaduke an ordinary-sized dog or substituting a generic cartoon dog."
   },
   {
     "name": "MARQUETRY",
@@ -34818,6 +34958,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "FINAL RESULT:\nThe final image must look like genuine moss graffiti on an urban wall — living green moss grown in the shape of the subject against weathered concrete or brick. The moss must appear three-dimensional and alive, with realistic botanical detail. The subject must be clearly recognizable in the moss growth pattern."
+  },
+  {
+    "name": "MOTHER GOOSE AND GRIMM",
+    "category": [
+      "COMIC",
+      "COMIC STRIP",
+      "ANIMAL CARTOON",
+      "SATIRE",
+      "HUMOR"
+    ],
+    "message": "Take a picture and transform the subject into a character in the Mother Goose and Grimm comic strip universe. Recreate the subject in the strip's expressive, colorful newspaper-cartoon style, alongside Grimm the mischievous dog, Mother Goose, and the other familiar animal characters. Create an absurd, funny scene involving animal behavior, sarcastic reactions, domestic chaos, or surreal everyday situations. The subject must be completely redrawn in the same visual style and integrated naturally into the comic's world.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "Grimm must be recognizable as the strip's mischievous, expressive dog, with his characteristic personality and comic appearance. Include Mother Goose and other familiar characters where appropriate. Use lively cartoon contours, expressive faces, simplified anatomy, bold color, and the strip's irreverent humor. If the subject is human, retain them as a human character drawn in the comic's style unless the master prompt requests otherwise. If the subject is an animal, translate its appearance into the same expressive character language. Preserve recognizable identity, hairstyle, clothing, and distinctive features. Place the subject in a fitting everyday or absurd environment and create a clear interaction with the established cast. Do not simply paste a photograph into a cartoon scene."
   },
   {
     "name": "MOTHER GOOSE PAGE",
@@ -49130,6 +49284,20 @@
     "additionalInstructions": "The patterns should be authentic to Shipibo-Conibo artistic traditions \u2014 precise, geometric, and flowing simultaneously. Use the traditional color palette of black/dark brown lines on natural cream background with occasional red-brown accents. The patterns should follow the subject's contours."
   },
   {
+    "name": "SHOE",
+    "category": [
+      "COMIC",
+      "COMIC STRIP",
+      "ANIMAL CARTOON",
+      "SATIRE",
+      "HUMOR"
+    ],
+    "message": "Take a picture and transform the subject into a character in the classic Shoe comic strip. Recreate the subject in the strip's distinctive newspaper-cartoon style, as an anthropomorphic bird character integrated into the eccentric newsroom world of Shoe. Include Shoe, the grumpy bird editor, and other familiar bird characters in a humorous newspaper-office scene. The subject should be transformed into an appropriate bird character while retaining recognizable facial characteristics, hairstyle cues, clothing details, and personal identity through the comic's visual language.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "The subject must become an anthropomorphic bird character, not a human photograph with a bird costume. Translate recognizable facial features into the bird character's beak, eyes, expression, head shape, and plumage while retaining recognizable identity. Use the comic's expressive newspaper-cartoon drawing style, clear outlines, simple color treatment, and dry satirical humor. Integrate Shoe and other familiar characters into a newsroom environment, with desks, newspapers, office clutter, and editorial conversations. The subject should interact naturally with the other characters as a colleague, visitor, or participant in an absurd newsroom situation. Redraw the entire subject consistently. Do not use generic realistic birds or a photorealistic human against cartoon characters."
+  },
+  {
     "name": "SHOPPING LIST",
     "category": [
       "UTILITY",
@@ -49261,6 +49429,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "FINAL RESULT:\nThe final image must look like a real photograph of a city sidewalk where a skilled street artist has created a large-scale 3D chalk illusion, with the subject physically present on the real pavement and playfully interacting with the artwork."
+  },
+  {
+    "name": "SIFFLAGE",
+    "category": [
+      "ART", 
+      "PAINTING", 
+      "INK ART", 
+      "SURREALISM", 
+      "FLUID ART"
+    ],
+    "message": "Take a picture and transform the entire subject into an intricate sifflage-inspired artwork formed by blowing liquid ink and pigment across a surface. Reconstruct the subject using delicate branching streams, feathered edges, wind-swept trails, spreading tendrils, and organic pigment formations. The blown ink must create the recognizable facial features, hair, clothing, anatomy, and overall silhouette. Combine fine branching details with concentrated pigment areas to create a beautiful and expressive image that appears to have been formed through the movement of air across wet ink.",
+    "randomizeOptions": false,
+    "options": [],
+    "additionalInstructions": "The defining technique is the physical appearance of liquid pigment being blown across a surface. Use branching ink trails, irregular feathering, fine tendrils, directional streaks, spreading edges, and organic branching structures. The direction and density of these marks should describe the subject's form. Use dense pigment deposits for darker areas and delicate branching trails for lighter areas. Facial features must remain recognizable and correctly positioned. Hair may be represented by flowing, branching ink formations, but must retain the subject's hairstyle and silhouette. Avoid turning the result into generic smoke, flames, lightning, tree branches, or ordinary airbrush painting. The subject must be built from blown liquid pigment, not simply decorated with it. Maintain sufficient tonal contrast and detail to preserve identity."
   },
   {
     "name": "SIGNWRITING",
@@ -55465,6 +55647,34 @@
     "additionalInstructions": "FINAL RESULT:\nThe image should depict a convincing human–fly hybrid where the subject’s recognizable human head is attached to a realistic fly body — disturbing, believable, and cinematic — with the entire form fully visible and framed like a serious science fiction transformation scene.\n\nFLY BODY REQUIREMENTS:"
   },
   {
+    "name": "THE KATZENJAMMER KIDS",
+    "category": [
+      "COMIC",
+      "COMIC STRIP",
+      "CLASSIC CARTOON",
+      "VINTAGE",
+      "HUMOR"
+    ],
+    "message": "Take a picture and transform the subject into a fully integrated character in the classic newspaper comic strip The Katzenjammer Kids. Recreate the subject in the strip's distinctive vintage hand-drawn comic language, with expressive faces, lively poses, bold ink contours, simple coloring, and exaggerated slapstick physical comedy. Place the subject alongside Hans and Fritz, interacting with them in a mischievous, chaotic adventure inspired by the strip's classic settings and situations. The subject must look as though they were originally drawn as part of the actual comic strip.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "Recreate the recognizable visual identity of The Katzenjammer Kids: early newspaper-comic illustration, expressive hand-drawn outlines, simplified but lively character anatomy, exaggerated gestures, mischievous expressions, and old-fashioned comic staging. Integrate the subject naturally with Hans and Fritz and, when appropriate, their familiar family and authority figures. Use period-appropriate clothing, settings, and slapstick situations. The subject must be redrawn completely in the same visual language as the established characters. Do not leave the subject photorealistic while the other characters are illustrated. Preserve the subject's recognizable face, hairstyle, and defining features through the comic's simplified design. Make the scene feel like an authentic vintage newspaper strip, not a modern generic cartoon."
+  },
+  {
+    "name": "THE LOCKHORNS",
+    "category": [
+      "COMIC",
+      "COMIC STRIP",
+      "FAMILY CARTOON",
+      "SATIRE",
+      "HUMOR"
+    ],
+    "message": "Take a picture and transform the subject into a character in The Lockhorns comic strip. Recreate the subject in the strip's recognizable traditional newspaper-cartoon style, with clean expressive outlines, caricatured faces, and familiar domestic settings. Integrate the subject into a humorous scene alongside Leroy and Loretta Lockhorn, featuring dry marital humor, sarcastic exchanges, awkward social situations, or everyday domestic frustrations. The subject must be completely redrawn in the same comic style and belong naturally in the scene.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "Use the distinctive newspaper-cartoon visual language of The Lockhorns: clean linework, expressive caricature, recognizable facial expressions, simple backgrounds, and compact comic-strip composition. Include Leroy and Loretta Lockhorn with their recognizable designs and contrasting personalities. The humor should be dry, sarcastic, and based on relationships, misunderstandings, domestic situations, or social awkwardness. Integrate the subject as a friend, neighbor, relative, guest, or participant in the exchange. Preserve the subject's identity through recognizable facial characteristics, hairstyle, and clothing, adapted to the strip's drawing style. Avoid generic cartoon rendering, photorealism, or an unrelated slapstick scene."
+  },
+  {
     "name": "THE MAXX",
     "category": [
       "COMIC",
@@ -55479,6 +55689,20 @@
     "additionalInstructions": "Transform the subject into the visual style of The Maxx using scratchy ink rendering, painterly textures, expressive linework, symbolic environments, surreal visual storytelling, graphic-novel craftsmanship, and authentic hand-drawn comic-book aesthetics."
   },
   {
+    "name": "THE PHANTOM",
+    "category": [
+      "COMIC",
+      "COMIC STRIP",
+      "ADVENTURE",
+      "SUPERHERO",
+      "CLASSIC COMIC"
+    ],
+    "message": "Take a picture and transform the subject into a fully integrated character in The Phantom comic strip universe. Recreate the subject in the classic adventure-comic illustration style, with confident ink contours, dramatic anatomy, expressive poses, strong shadows, and richly illustrated jungle environments. Integrate the subject naturally alongside the Phantom, the legendary Ghost Who Walks, and other familiar characters in a dramatic adventure involving the Skull Cave, the Deep Woods, or another recognizable setting. The subject must be completely redrawn in the same visual language as the original comic.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "Use the recognizable classic Phantom adventure-comic aesthetic: carefully inked outlines, dramatic black shadows, expressive character anatomy, dynamic action poses, and detailed but controlled background illustration. The Phantom should retain his recognizable purple costume, black mask, distinctive belt, and iconic appearance. Include Diana Palmer, Guran, or other established characters when appropriate. Use recognizable settings such as the Skull Cave, the Deep Woods, or the Phantom's jungle territory. The subject must be integrated as a genuine participant in the adventure, with a coherent role and natural interaction with the established cast. Preserve the subject's identity, face, hairstyle, and distinctive characteristics while fully converting them into the comic's drawing style. Do not leave the subject photorealistic, use generic superhero artwork, or simply place a Phantom character beside the original photograph."
+  },
+  {
     "name": "THE RING",
     "category": [
       "CINEMATIC",
@@ -55489,6 +55713,21 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "• Reconstruct the entire scene: set the environment, lighting, room, analog TV screen, and full character body to match the precise aesthetic of the movie frame.\n• FACIAL INTEGRATION MANDATE: Swap ONLY the facial identity. Map the subject's face onto the spectral character with perfect physical integration, match lighting, depth, and skin texture—avoiding any digital cut-out or photoshopped appearance.\n• HAIR CONSTRAINTS: The iconic long, wet, stringy dark hair must frame the subject's head authentic to the character, but must be styled far enough back from the forehead and cheeks so that the subject's facial features remain fully exposed and clearly recognizable.\n• Ensure the character appears physically emerging out of the glowing CRT television screen onto the floor, casting realistic long shadows based on the ambient room lighting and screen glow.\n• Maintain high visual quality: match the original film's muted color palette, cool shadow tones, and analog camera grain.\n• Master prompt instructions always override any downstream engine assumptions.\n\nFINAL VALIDATION — Before producing the final image, verify ALL of the following:\n\n✓ The entire scene (TV, background room, clothing, atmosphere) matches the film sequence.\n✓ The subject's facial identity is seamlessly mapped onto the creepy girl's head.\n✓ The facial features are fully visible and NOT hidden or obscured by the dark wet hair.\n✓ The integration looks entirely physical and photographic, with zero visible Photoshop artifacts.\n✓ If ANY answer is NO, reject and regenerate immediately."
+  },
+  {
+    "name": "THE WIZARD OF ID",
+    "category": [
+      "COMIC",
+      "COMIC STRIP",
+      "MEDIEVAL",
+      "FANTASY",
+      "SATIRE",
+      "HUMOR"
+    ],
+    "message": "Take a picture and transform the subject into a character in The Wizard of Id comic strip. Recreate the subject in the strip's distinctive medieval newspaper-cartoon style, with expressive caricature, bold outlines, simplified forms, and colorful storybook kingdom settings. Integrate the subject naturally into the kingdom of Id alongside the King, the Wizard, the Jester, and other familiar characters. Create a humorous medieval situation involving royal absurdity, incompetent authority, ridiculous laws, dungeon mishaps, or courtly foolishness. The subject must look as though they were originally drawn as part of the strip.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "Use the recognizable visual language of The Wizard of Id: compact newspaper-comic composition, expressive caricature, bold clean outlines, simplified medieval clothing, and flat traditional comic colors. Include recognizable established characters such as the King, the Wizard, the Jester, and appropriate knights, guards, or peasants. The setting should resemble the absurd medieval kingdom of Id, with its castle, throne room, village, dungeon, or royal court. Integrate the subject into the story as a visitor, courtier, prisoner, royal advisor, knight, or another fitting role. Preserve the subject's identity through the comic's stylized facial and body design. Keep the humor satirical and visually clear. Do not create generic fantasy concept art or leave the subject in photorealistic form."
   },
   {
     "name": "THEME PARK MAP",
@@ -63175,6 +63414,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "VISUAL REQUIREMENTS:\n• Monochromatic surface (white, silver, or gold) with subtle textural variation\n• Repetitive elements creating systematic patterns: nails, pins, perforations, slits\n• Light and shadow as primary compositional elements\n• Sense of vibration or movement through optical effects of repeated forms\n• Clean, impersonal execution — no emotional gesture\n• Subject's presence suggested through the pattern's density and rhythm\n• Meditative, contemplative quality through systematic repetition\n• Reference artists: Heinz Mack, Otto Piene, Günther Uecker, Lucio Fontana."
+  },
+  {
+    "name": "ZIGGY",
+    "category": [
+      "COMIC",
+      "COMIC STRIP",
+      "CLASSIC CARTOON",
+      "HUMOR",
+      "EVERYDAY LIFE"
+    ],
+    "message": "Take a picture and transform the subject into a character in the Ziggy comic strip universe. Recreate the subject in its distinctive minimalist newspaper-cartoon style, with simple rounded forms, clean outlines, expressive facial features, and understated everyday humor. Integrate the subject naturally alongside Ziggy, the lovable bald underdog, in a funny everyday situation involving life's frustrations, misunderstandings, awkward encounters, or absurd little disappointments. The subject must be completely redrawn in the same visual style and look like an original character in the strip.",
+    "options": [],
+    "randomizeOptions": false,
+    "additionalInstructions": "Ziggy must be recognizable by his characteristic bald head, rounded body, simple clothing, and expressive but understated facial expressions. Use the strip's minimalist cartoon language, uncluttered compositions, clean outlines, and restrained color palette. Build the humor around an immediately understandable everyday predicament, with the subject and Ziggy interacting naturally. Preserve the subject's recognizable facial features, hairstyle, and clothing where possible, translating them into the strip's simplified visual design. Do not turn the subject into a copy of Ziggy unless the master prompt explicitly requests it. Keep the artwork simple and expressive rather than adding unnecessary detail, textures, or elaborate backgrounds."
   },
   {
     "name": "ZINE COLLAGE",
