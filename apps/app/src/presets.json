@@ -59037,6 +59037,125 @@
     "additionalInstructions": "FINAL RESULT:\nA fully cohesive neon digital computer world where every object, character, and environmental element has been transformed into a glowing grid-based sci-fi environment. If people are present, they are converted into digital programs with identity discs. If vehicles are present, they become light cycles. No real-world materials remain."
   },
   {
+    "name": "TROPHY",
+    "category": [
+      "HUMOR",
+      "AWARDS",
+      "TROPHIES",
+      "3D TRANSFORMATION",
+      "SATIRE"
+    ],
+    "message": "Take a picture and transform the subject into a funny, custom-designed award trophy honoring the subject for the ridiculous, ironic, sarcastic, or deliberately unimpressive achievement specified by the selected award option. The subject must become the actual trophy itself, not simply stand next to a trophy or have an award graphic placed over the photograph. Reconstruct the subject as a recognizable three-dimensional trophy figure, sculpture, or award centerpiece, incorporating the subject's recognizable face, hairstyle, clothing, pose, and defining features into the trophy design. Give the trophy an appropriate base, metallic or sculptural finish, engraved award title, and humorous visual details that make the joke immediately understandable. The selected award must be prominently displayed and spelled exactly as specified, including intentional misspellings. Make the result look like a real, professionally manufactured award with an unmistakably funny concept.",
+    "randomizeOptions": true,
+    "options": [
+    {
+      "id": "Sports – Spectacular Runner-Up",
+      "text": "Create a sports achievement trophy celebrating the subject as the spectacular runner-up. Sculpt the subject into a triumphant-looking sports trophy figure, but make the award title proudly read \"SPECTACULAR RUNNER-UP\". Include a large silver second-place medal or oversized number 2, with a slightly ridiculous celebratory pose. The humor comes from treating coming in second as an extraordinary accomplishment."
+    },
+    {
+      "id": "Participation Trophy – LOSER!",
+      "text": "Create an intentionally insulting participation trophy featuring the subject as the trophy sculpture. The base must prominently display the exact word \"LOSER!\". Include a clearly recognizable hand making the classic L-shaped loser gesture, with the thumb and index finger forming an L against the forehead or as part of the trophy sculpture. Make the subject look as though they have received an award for simply showing up and accomplishing absolutely nothing."
+    },
+    {
+      "id": "Better Luck Next Time",
+      "text": "Create a consolation trophy for the subject, with the exact engraved title \"BETTER LUCK NEXT TIME\". Sculpt the subject into a comically disappointed award figure, perhaps with slumped shoulders, a forced smile, or an awkward thumbs-up. Use polished metal and an elaborate award base that makes this thoroughly unimpressive achievement look absurdly prestigious."
+    },
+    {
+      "id": "Spelling Bee – TROPHEE",
+      "text": "Create a spelling-bee championship trophy featuring the subject as the central trophy figure. The award must prominently display the intentionally misspelled word \"TROPHEE\" instead of TROPHY. Include bee-themed sculptural details such as a golden bee, honeycomb patterns, tiny wings, or a spelling-bee medal. Make the misspelling unmistakable and central to the joke."
+    },
+    {
+      "id": "Spelling Bee – BEA",
+      "text": "Create a spelling-bee trophy featuring the subject as the central award sculpture. The award must prominently display the intentionally misspelled word \"BEA\" instead of BEE. Incorporate a large sculpted bee, honeycomb details, and an elaborate golden trophy base. The joke is that the spelling-bee award itself cannot spell the word bee correctly."
+    },
+    {
+      "id": "Oscar – Most Forgettable Actor",
+      "text": "Create a parody of an extravagant golden film-award statuette, with the subject transformed into the actual award figure. The base must read exactly \"MOST FORGETTABLE ACTOR\". Give the subject a dramatic, polished gold statuette pose, as if receiving Hollywood's highest honor for a performance nobody remembers. The design should evoke a prestigious movie award without copying an exact official statuette."
+    },
+    {
+      "id": "Pulitzer Prize – Greatest Misinformation Article",
+      "text": "Create a satirical journalism award trophy with the subject sculpted as the central figure, holding an absurdly oversized newspaper or microphone. The base must prominently read exactly \"GREATEST MISINFORMATION ARTICLE\". Add newspaper-inspired details, tiny headlines, and a prestigious gold-and-dark-metal finish. Make the award look grand and authoritative while its title reveals the joke."
+    },
+    {
+      "id": "Nobel Prize – Caused Global Warming",
+      "text": "Create a satirical science award trophy featuring the subject as the central sculpted figure. The base must prominently read exactly \"CAUSED GLOBAL WARMING\". Incorporate a miniature melting globe, tiny rising heat waves, a smoking planet, or a dramatically overheated Earth as part of the trophy sculpture. Give it the luxurious appearance of an internationally prestigious scientific award, making the ridiculous achievement the punchline."
+    },
+    {
+      "id": "World's Okayest Person",
+      "text": "Create an elaborate trophy honoring the subject as the \"WORLD'S OKAYEST PERSON\". Make the subject the central sculpted trophy figure, with an expression and pose suggesting modest, barely adequate accomplishment. Use shiny gold plating, a decorative pedestal, and an unnecessarily grand award presentation for an achievement that is merely average."
+    },
+    {
+      "id": "Gold Medal in Procrastination",
+      "text": "Create a prestigious-looking trophy honoring the subject for \"GOLD MEDAL IN PROCRASTINATION\". Sculpt the subject into a figure lounging, snoozing, or casually putting off an imaginary task. Include a large gold medal, a tiny unfinished checklist, or a clock as integrated trophy details. Make the award look lavish despite celebrating the art of doing nothing."
+    },
+    {
+      "id": "Professional Couch Potato",
+      "text": "Create a humorous trophy honoring the subject as \"PROFESSIONAL COUCH POTATO\". Transform the subject into a sculpted award figure slumped comfortably in a miniature armchair or sofa, perhaps holding a remote control or snack. Integrate the furniture into the trophy sculpture rather than placing the subject beside it. Use a polished metallic finish and an impressive award base."
+    },
+    {
+      "id": "Most Likely to Be Late",
+      "text": "Create a trophy honoring the subject as \"MOST LIKELY TO BE LATE\". Sculpt the subject running frantically, looking at an oversized watch, or arriving comically late. Incorporate a clock, motion details, and a decorative award pedestal. The trophy should look prestigious while clearly celebrating the subject's inability to arrive on time."
+    },
+    {
+      "id": "World's Worst Driver",
+      "text": "Create a satirical driving award trophy with the subject as the central sculpted figure. The base must read exactly \"WORLD'S WORST DRIVER\". Incorporate a tiny crooked steering wheel, a traffic cone, or a comically dented miniature car as part of the sculpture. Keep the tone playful and cartoonishly exaggerated rather than depicting a real accident."
+    },
+    {
+      "id": "Master of Excuses",
+      "text": "Create a trophy honoring the subject as \"MASTER OF EXCUSES\". Sculpt the subject in an exaggeratedly innocent pose, perhaps shrugging, pointing elsewhere, or holding a stack of absurd excuse notes. Integrate speech bubbles or miniature excuse slips into the trophy design, with the subject remaining the central three-dimensional award figure."
+    },
+    {
+      "id": "The Big Mouth Award",
+      "text": "Create a humorous trophy titled exactly \"THE BIG MOUTH AWARD\". Transform the subject into a sculpted trophy figure with an exaggeratedly large open mouth, as though talking nonstop. Preserve enough of the subject's recognizable facial features and hairstyle to identify them. Make the oversized mouth an intentional sculptural feature, not a distorted photographic overlay."
+    },
+    {
+      "id": "Expert Button Pusher",
+      "text": "Create a trophy honoring the subject as \"EXPERT BUTTON PUSHER\". Sculpt the subject operating an absurdly oversized button mounted into the trophy pedestal. Add a dramatic illuminated button, tiny control-panel details, and a grand metallic finish. The subject must be part of the award sculpture."
+    },
+    {
+      "id": "Lifetime Achievement in Doing Nothing",
+      "text": "Create an extravagant lifetime achievement trophy with the exact title \"LIFETIME ACHIEVEMENT IN DOING NOTHING\". Sculpt the subject in an extremely relaxed pose, perhaps reclining, yawning, or resting their head on one hand. Include an elaborate gold laurel wreath and prestigious award base, making the contrast between the grand presentation and the nonexistent achievement the joke."
+    },
+    {
+      "id": "Almost Famous",
+      "text": "Create a glamorous entertainment-industry trophy titled exactly \"ALMOST FAMOUS\". Sculpt the subject as a miniature celebrity award figure, posing dramatically beneath a spotlight, with a tiny red-carpet or star motif integrated into the base. Make the trophy look expensive and prestigious, but subtly underwhelming, as if the subject nearly became a star."
+    },
+    {
+      "id": "World's Most Average Human",
+      "text": "Create a trophy honoring the subject as \"WORLD'S MOST AVERAGE HUMAN\". Sculpt the subject in a perfectly ordinary, unremarkable pose, with deliberately unexceptional trophy details. Present this aggressively average achievement in an absurdly lavish gold-plated award with a grand pedestal and ornamental trim."
+    },
+    {
+      "id": "Certified Know-It-All",
+      "text": "Create a trophy titled exactly \"CERTIFIED KNOW-IT-ALL\". Sculpt the subject in an overly confident pose, perhaps pointing upward as if delivering an unsolicited lecture, with an oversized miniature book or diploma integrated into the trophy. Use an ornate metallic finish and a grand award base."
+    },
+    {
+      "id": "World's Greatest Selfie",
+      "text": "Create a trophy titled exactly \"WORLD'S GREATEST SELFIE\". Transform the subject into a sculpted award figure holding an oversized smartphone at the perfect selfie angle. Include a miniature camera lens, flash details, and a dramatic starburst or frame motif. The subject must be the actual trophy sculpture, not a photograph displayed on a phone."
+    },
+    {
+      "id": "Gold Star for Trying",
+      "text": "Create a funny consolation award titled exactly \"GOLD STAR FOR TRYING\". Sculpt the subject as a trophy figure making an earnest but visibly unsuccessful effort, such as pushing an oversized object or reaching for something just out of reach. Include an enormous gold star and an elaborate award base. The humor should be affectionate and teasing."
+    },
+    {
+      "id": "Champion of Bad Decisions",
+      "text": "Create a trophy titled exactly \"CHAMPION OF BAD DECISIONS\". Sculpt the subject as a confident champion holding a ridiculous symbolic object, such as a crossed-out checklist, a broken compass, or a miniature warning sign. Give the trophy a grand championship appearance, with a metallic finish and decorative base."
+    },
+    {
+      "id": "World's Slowest Thinker",
+      "text": "Create a trophy titled exactly \"WORLD'S SLOWEST THINKER\". Sculpt the subject in a thoughtful but comically puzzled pose, with a tiny snail, slowly turning gears, or an oversized question mark integrated into the trophy design. The subject must remain recognizable and form the central award figure."
+    },
+    {
+      "id": "Unqualified Expert",
+      "text": "Create a satirical trophy titled exactly \"UNQUALIFIED EXPERT\". Sculpt the subject as an overly self-assured authority figure, perhaps holding a crooked diploma, an absurdly large pointer, or a book with a deliberately ridiculous title. Use an ornate academic award style, making the contrast between the prestigious appearance and the title the joke."
+    },
+    {
+      "id": "World's Greatest Dad – Semi-finalist",
+      "text": "Create a humorous dad-themed trophy honoring the subject with the exact award title \"WORLD'S GREATEST DAD\" and the prominently displayed designation \"SEMI-FINALIST\". Sculpt the subject as the central figure of an elaborate, gold-plated Father's Day trophy, with a proud but slightly sheepish expression. Include classic dad-themed details such as a barbecue spatula, a coffee mug, a necktie, or a miniature grill as integrated sculptural elements. The trophy should look like an extravagant, prestigious fatherhood award, but the \"SEMI-FINALIST\" designation must be unmistakably visible and large enough to read. The joke is that the subject nearly achieved the title of World's Greatest Dad, but only made it to the semi-finals."
+    }
+    ],
+    "additionalInstructions": "The subject must be physically transformed into the trophy's central sculptural figure. Do not simply place a miniature trophy beside the subject, put the subject's photograph on a trophy, or leave the subject standing normally behind an award. Reconstruct the subject as a cohesive three-dimensional award sculpture, preserving recognizable facial structure, hairstyle, defining features, and characteristic clothing while adapting their pose and proportions to the selected trophy concept. The subject's head and body must be integrated into one continuous trophy design, attached naturally to the award pedestal or its sculptural elements. The result should look like a real manufactured trophy photographed as an object, with convincing material, weight, reflections, shadows, and dimensionality. Use gold, silver, bronze, chrome, enamel, crystal, or combinations appropriate to the award. Engrave the selected award title clearly and legibly on the base or an integrated plaque. Reproduce every specified title exactly, including capitalization, punctuation, and intentional misspellings such as TROPHEE and BEA. Never silently correct the joke spelling. Keep lettering large enough to read and avoid invented words, gibberish, extra slogans, or misspelled text beyond the intentional joke. Make the humor visually obvious through the trophy sculpture and its details, not merely through the wording. Each option must have its own distinctive trophy design and should not default to the same generic cup with a plaque. Preserve the subject's identity even when exaggerating their pose or expression. Unless the master prompt explicitly requests a different setting or background, present the completed trophy as a standalone award object against a clean, understated display background. Any subject, pose, setting, mood, wording, or artistic direction explicitly supplied in the master prompt takes priority over the preset defaults, while retaining the selected award concept wherever compatible."
+  },
+  {
     "name": "TRUCHET TILE",
     "category": [
       "MATHEMATICAL",
