@@ -61098,7 +61098,7 @@
     "additionalInstructions": "• Add authentic product label typography\n• Subject becomes central illustrated mascot or emblem\n• Decorative border and printed wear encouraged\n• Must look like vintage commercial packaging."
   },
   {
-    "name": "VINTAGE POSTER",
+    "name": "VINTAGE MOVIE POSTER",
     "category": [
       "ART",
       "VINTAGE",
@@ -61110,6 +61110,102 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "VINTAGE POSTER",
+    "category": [
+      "ART",
+      "VINTAGE",
+      "POSTER ART",
+      "GRAPHIC DESIGN",
+      "TYPOGRAPHY",
+      "ILLUSTRATION"
+    ],
+    "message": "Take a picture and completely reinterpret the image as an authentic vintage illustrated poster. Reconstruct the subject, setting, and composition using the distinctive illustration techniques, graphic design conventions, color palettes, typography, and printing characteristics of the selected historical poster style. The finished image must look like an actual period poster designed and printed during its respective era, not a modern photograph with an aged filter. Integrate the subject naturally into a carefully composed poster illustration, using period-appropriate lettering as a major design element. Create a strong visual hierarchy with a prominent headline, supporting text where appropriate, and balanced illustrated artwork. Use authentic-looking lithographic printing, screen printing, letterpress, or other historically appropriate print aesthetics. Give the poster the visual character of a genuine vintage printed collectible.",
+    "randomizeOptions": true,
+    "options": [
+    {
+      "id": "Art Nouveau – Belle Époque Advertising",
+      "text": "Recreate the image as a lavish late-19th-century or early-20th-century Art Nouveau advertising poster, inspired by the Belle Époque poster tradition and the elegant lithographic advertising of artists such as Alphonse Mucha. Use flowing organic outlines, graceful stylized figures, decorative botanical ornamentation, elaborate borders, ornamental frames, and rich but slightly muted colors. Use elegant custom lettering with elaborate curved serifs, decorative capitals, and beautifully integrated typography. Arrange the subject as a central illustrated figure surrounded by flowing decorative elements. Give the poster the appearance of a hand-drawn, hand-colored lithographic print on aged paper."
+    },
+    {
+      "id": "Art Deco – Vintage Exhibition Poster",
+      "text": "Recreate the image as a sophisticated 1920s–1930s Art Deco exhibition poster. Use monumental geometric shapes, symmetrical arrangements, streamlined architecture, sunbursts, stepped forms, elegant silhouettes, and dramatic vertical composition. Use a restrained palette of deep red, gold, cream, black, and other period-appropriate colors. Typography should feature bold geometric sans-serif capitals, carefully spaced lettering, and striking scale contrasts. Make the subject and surrounding imagery part of a crisp, highly designed graphic composition with the visual authority of a historic World's Fair poster."
+    },
+    {
+      "id": "Vintage Commercial Advertising",
+      "text": "Recreate the image as an early-1900s commercial advertising poster, inspired by vintage European product advertisements. Use bold hand-drawn lithographic illustration, expressive figures, rich contrasting colors, decorative lettering, and a dramatic central composition. Make the subject the star of the advertisement, as though promoting a fashionable product, luxury brand, food, drink, service, or lifestyle. Use oversized display typography, ornamental details, and a memorable advertising slogan. The result should resemble an original antique commercial lithograph rather than a modern advertisement made to look old."
+    },
+    {
+      "id": "Vintage Movie Poster – Silent Film Era",
+      "text": "Recreate the image as an elaborate theatrical poster for a fictional silent-era motion picture from approximately 1910–1925. Render the subject as a dramatic hand-painted or lithographically illustrated movie star, using expressive poses, theatrical gestures, stylized facial features, and dramatic storytelling. Use large decorative title lettering, ornamental frames, dramatic contrasts, and a limited but rich period palette. Include a compelling fictional film title and small supporting billing-style text when appropriate. The composition should feel like an authentic early cinema poster."
+    },
+    {
+      "id": "Vintage Movie Poster – Golden Age Hollywood",
+      "text": "Recreate the image as a glamorous 1930s–1950s Hollywood movie poster. Use dramatic hand-painted illustration, theatrical lighting, romantic or adventurous poses, expressive faces, cinematic composition, and rich saturated colors. Give the subject the appearance of a leading film star in a fictional motion picture. Use oversized painted movie-title lettering, dramatic taglines, supporting character or scene illustrations where appropriate, and classic studio-poster layout conventions. The finished artwork should look like a genuine vintage cinema one-sheet, not a contemporary movie poster with retro styling."
+    },
+    {
+      "id": "Vintage Movie Poster – Pulp Noir",
+      "text": "Recreate the image as a gritty 1940s–1950s pulp crime, mystery, or film-noir poster. Use dramatic chiaroscuro, hard shadows, angular compositions, expressive hand-painted figures, suspenseful imagery, and a limited palette of black, cream, blood red, mustard yellow, and muted blue. Use bold condensed lettering, rough painted title treatments, and dramatic tagline placement. Make the subject the central character in a mysterious fictional cinematic story. The print should have the bold, slightly rough quality of a vintage illustrated movie poster."
+    },
+    {
+      "id": "Vintage Book Poster",
+      "text": "Recreate the image as a beautifully designed early-20th-century literary or book-promotion poster. Use sophisticated illustrated imagery, decorative borders, expressive hand-drawn lettering, and a composition that suggests a classic novel, adventure story, mystery, biography, or literary masterpiece. Make the subject the central illustrated character or symbolic figure from a fictional book. Use elegant title typography, carefully arranged supporting text, and the visual character of an antique publisher's promotional lithograph. Avoid modern book-cover conventions."
+    },
+    {
+      "id": "Vintage Travel Poster",
+      "text": "Recreate the image as a classic 1920s–1950s travel-promotion poster. Use simplified but striking illustrated forms, bold flat colors, elegant silhouettes, dramatic perspective, and beautifully composed scenery. Make the subject part of an inviting travel destination or memorable travel experience. Use large, clean, period-appropriate display lettering for a destination or travel slogan, with smaller supporting text. Favor simplified shapes, carefully controlled color fields, and the distinctive graphic impact of historic railway, airline, ocean-liner, and tourism posters."
+    },
+    {
+      "id": "Vintage Broadway Poster",
+      "text": "Recreate the image as a vintage Broadway or West End theatrical poster from approximately the 1920s–1960s. Use dramatic stage-inspired illustration, expressive performers, theatrical gestures, spotlights, curtains, ornamental borders, and bold visual storytelling. Make the subject the star of a fictional stage production. Use oversized theatrical title lettering, dramatic supporting typography, and a striking composition designed to attract attention from across a theater lobby. The artwork should resemble a genuine vintage play or musical promotional poster."
+    },
+    {
+      "id": "Vintage Propaganda – Constructivist",
+      "text": "Recreate the image as a bold early-to-mid-20th-century Constructivist-inspired public information or civic campaign poster. Use dramatic diagonal geometry, simplified figures, powerful graphic silhouettes, strong red, black, cream, and limited accent colors, and oversized block lettering. Build a visually forceful composition with the subject integrated into the graphic design. Use bold condensed sans-serif typography and concise slogan placement. The result should evoke the historical visual language of early modernist political and public-information posters without reproducing extremist symbols, slogans, or specific political propaganda."
+    },
+    {
+      "id": "Vintage Propaganda – Wartime Recruitment",
+      "text": "Recreate the image as a historical-style wartime recruitment or home-front public service poster from the 1940s. Use confident illustrated figures, strong poses, simplified painterly forms, limited colors, dramatic lighting, and bold headline lettering. Make the subject the central figure in a fictional, nonpartisan civic campaign about courage, community service, preparedness, or helping others. Use a short, memorable period-style slogan and authentic vintage print texture. Do not include real-world extremist insignia, hateful messaging, or actual recruitment for a modern armed organization."
+    },
+    {
+      "id": "Vintage Circus & Sideshow",
+      "text": "Recreate the image as a spectacular late-19th-century or early-20th-century circus, carnival, or sideshow poster. Use extravagant hand-painted lettering, elaborate decorative frames, dramatic illustrated figures, exaggerated poses, starbursts, ornamental flourishes, and vibrant colors such as red, yellow, blue, and cream. Make the subject the featured attraction, with a theatrical presentation and an amusing or intriguing show title. Use the dense, energetic composition and distinctive hand-lettered display typography of authentic antique circus advertising."
+    },
+    {
+      "id": "Vintage Railway & Ocean Liner Poster",
+      "text": "Recreate the image as an elegant 1920s–1950s railway, steamship, or ocean-liner promotional poster. Use simplified scenic illustration, monumental vehicles or architecture where relevant, dramatic perspective, clean color blocks, and sophisticated period typography. Integrate the subject as a traveler, celebrated passenger, or central figure in an evocative journey. Use bold destination lettering, refined supporting text, and the polished graphic composition of historic travel-company advertising."
+    },
+    {
+      "id": "World's Fair – Century of Progress",
+      "text": "Recreate the image as a striking 1930s World's Fair or industrial exposition poster. Use monumental futuristic architecture, geometric towers, streamlined forms, sunbursts, stylized cityscapes, and bold architectural silhouettes. Apply a limited palette of vivid red, gold, cream, blue, and black, with crisp flat areas of color and simplified illustrative details. Integrate the subject into the exhibition's visual story. Use large, widely spaced geometric lettering and a strong symmetrical or vertically organized composition reminiscent of historic World's Fair promotional graphics."
+    },
+    {
+      "id": "Vintage French Lithographic Poster",
+      "text": "Recreate the image as an expressive French advertising lithograph from approximately 1890–1915. Use broad areas of vivid flat color, elegant hand-drawn figures, strong silhouettes, simplified but expressive facial features, decorative lettering, and bold asymmetrical composition. Draw inspiration from the visual language of Jules Chéret, Henri de Toulouse-Lautrec, and the era's theatrical and commercial street posters without copying a specific existing poster. Use large custom lettering integrated into the illustration, with a slightly rough printed texture and aged paper."
+    },
+    {
+      "id": "Vintage Jazz & Music Poster",
+      "text": "Recreate the image as a mid-century jazz club, concert, or music-event poster. Use expressive hand-drawn lettering, dynamic graphic shapes, stylized musician or performer imagery, bold color contrasts, and a lively composition. Draw from the visual language of 1940s–1960s music promotion, including screen-printed textures, simplified silhouettes, irregular display type, and energetic arrangements. Make the subject the featured performer or personality, with a fictional event title and supporting performance details."
+    },
+    {
+      "id": "Vintage Pin-Up & Garage Advertising",
+      "text": "Recreate the image as a playful 1940s–1950s American commercial poster or garage-service advertisement. Use confident illustrated figures, hand-painted shading, bold outlines, vintage sign-painting typography, warm saturated colors, and a lively promotional composition. Make the subject the central personality in a fictional advertisement for a product, workshop, service, or lifestyle. Use a catchy headline and period-style supporting copy, with the polished but slightly cheeky character of classic mid-century commercial illustration."
+    },
+    {
+      "id": "Vintage Children's Storybook Poster",
+      "text": "Recreate the image as an illustrated vintage children's book promotional poster from approximately the 1920s–1950s. Use charming hand-painted or hand-inked imagery, whimsical scenery, decorative lettering, warm colors, and a storybook-like composition. Make the subject the central character in an imaginary children's story. Use large, playful title lettering and carefully balanced supporting illustrations. Preserve the subject's recognizable identity while translating the appearance into the gentle illustrated language of an antique storybook print."
+    },
+    {
+      "id": "Vintage Food & Beverage Poster",
+      "text": "Recreate the image as an early-1900s food, drink, restaurant, or beverage advertising poster. Use bold lithographic illustration, appetizing colors, expressive figures, decorative borders, and prominent hand-drawn product-style lettering. Integrate the subject into the advertisement as its central personality or ambassador. Use an attractive promotional headline and supporting copy, with the visual richness and craftsmanship of antique European and American commercial posters."
+    },
+    {
+      "id": "Mid-Century Modern Graphic Poster",
+      "text": "Recreate the image as a refined 1950s–1960s mid-century graphic poster. Use simplified geometric illustration, flat color fields, abstract shapes, stylized figures, elegant negative space, and carefully balanced asymmetry. Use clean modernist typography, distinctive sans-serif lettering, and a limited palette of period colors. The result should look like an authentic mid-century cultural, commercial, or public-event poster, with the subject integrated into the graphic artwork rather than rendered as a photograph."
+    }
+    ],
+    "additionalInstructions": "The entire image must be re-created as a vintage poster. Do not simply apply sepia, faded colors, paper grain, scratches, or an antique border to the original photograph. Do not retain the original photograph as the main image. Redraw the subject and all relevant visual elements using the selected poster's authentic illustration and graphic-design language. The subject must be visually integrated into the poster composition as though the poster was originally designed around them. Preserve the subject's recognizable identity, facial features, hairstyle, clothing cues, and defining characteristics, but translate them into the chosen historical illustration style. Avoid mixing unrelated eras or combining Art Nouveau ornamentation with Art Deco geometry unless the selected option calls for it. Typography is an essential part of the design, not an afterthought: use period-appropriate display lettering, custom letterforms, distinctive serif or sans-serif styles, spacing, scale, alignment, and hierarchy. Create a prominent headline or title and, when appropriate, supporting slogans, dates, venue details, publisher information, product descriptions, or small promotional copy. If the master prompt supplies exact wording, reproduce it exactly and prioritize it over invented text. If no wording is supplied, create a short, contextually appropriate headline that complements the subject and selected poster category. Keep all lettering large, clean, correctly spelled, and legible; do not fill the poster with random pseudo-text, gibberish, or meaningless decorative characters. Use authentic-looking print processes appropriate to the selected era, such as stone lithography, chromolithography, letterpress, screen printing, or hand-painted poster illustration. Subtle aged paper, ink texture, slight registration imperfections, and natural wear are welcome, but must never obscure the artwork or lettering. Use a convincing poster layout with intentional margins, a clear visual hierarchy, balanced negative space, and a cohesive color palette. The final image should look like a genuine vintage printed poster that could plausibly have been produced in the historical period represented by the selected option. Unless the master prompt specifies otherwise, use a portrait-oriented poster composition. The master prompt always takes priority for subject, pose, setting, mood, story, text, colors, and artistic direction, while the selected poster option determines the historical graphic-design treatment wherever compatible."
   },
   {
     "name": "VINTAGE SEED PACKET",
