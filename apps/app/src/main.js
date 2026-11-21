@@ -19780,13 +19780,19 @@ const result = await presetImporter.import();
   
   const galleryBtn = document.getElementById('gallery-button');
   if (galleryBtn) {
-    // Wrapped in an arrow function ON PURPOSE. Passing showGallery directly
-    // handed it the click event as its first argument (renderOnly). An event
-    // object counts as "true", so the gallery skipped reloading the photos
-    // from storage and just drew whatever was already in memory — which is
-    // nothing if the startup gallery load hasn't finished yet. That is why the
-    // gallery came up empty when opened right after the program started.
-    galleryBtn.addEventListener('click', () => showGallery());
+    // Opens the gallery from the photos already in memory (fast — no reread of
+    // every image from storage, and the camera is left alone, exactly as the
+    // button always behaved). The one gap: if the button is tapped right after
+    // startup, before the first gallery load has finished, memory is still
+    // empty. In that case only, wait for that first load before drawing.
+    galleryBtn.addEventListener('click', async () => {
+      const _firstLoad = window._galleryInitialLoad;
+      if (_firstLoad) {
+        await _firstLoad;
+        window._galleryInitialLoad = null;  // finished — never wait again
+      }
+      showGallery(true);
+    });
   }
   
   const closeGalleryBtn = document.getElementById('close-gallery');
@@ -20415,7 +20421,9 @@ const result = await presetImporter.import();
   loadFolders();
 
   // Initialize IndexedDB and load gallery
-  initDB().then(async () => {
+  // Kept so the Gallery button can wait for this first load if it is tapped
+  // before the photos have finished loading (see the gallery button handler).
+  window._galleryInitialLoad = initDB().then(async () => {
     // Check if we need to migrate from localStorage
     const oldIndexJson = localStorage.getItem('r1_gallery_index');
     if (oldIndexJson) {
