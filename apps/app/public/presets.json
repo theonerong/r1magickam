@@ -3146,6 +3146,54 @@
     "additionalInstructions": "FINAL RESULT:\nThe final image should resemble a rebellious, anti-minimalist graphic design piece."
   },
   {
+    "name": "ANTIQUE STORYBOOK ART STYLE",
+    "category": [
+      "OPTIONS",
+      "ART STYLE",
+      "VINTAGE",
+      "ILLUSTRATION",
+      "TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform it into an illustration in the style of a 19th- or early-20th-century storybook, as if it were the original artwork from an antique book.\nIDENTITY RULES (NON-NEGOTIABLE):\n• Every person’s real face must remain clearly recognizable — facial structure, eyes, nose, mouth, expression, skin tone, age and hairstyle carry over from the photo\n• Faces are re-rendered IN the selected art style — never a pasted photograph, never a generic or blended face\n\nTRANSFORMATION RULES (CRITICAL):\n• Transform the ENTIRE photo — people, clothing, objects and background — into the selected art style\n• Keep the original composition, framing, poses, clothing and setting; reinterpret them through the style rather than replacing them\n• The background may be simplified, stylized or given the style’s signature treatment (texture, color field, ornament), but it should still read as the original setting\n• The result must look like a genuine, hand-made original artwork in that style, not a photo filter\n\nNO TEXT:\n• Do NOT add titles, lettering, logos, credits, borders that imitate a book cover or poster layout, award seals or any typography\n• Borrow only technique, palette, line, texture and mood — do not reproduce any existing artwork or its characters",
+    "randomizeOptions": true,
+    "optionGroups": [
+      {
+        "title": "ART STYLE",
+        "options": [
+          {
+            "id": "001",
+            "text": "Art Nouveau Gold-Stamped — render the scene as a design stamped in tarnished gold and one muted ink on deep oxblood, olive or forest-green book cloth. Draw the people in sinuous whiplash contour lines, letting hair, clothing and drapery flow into swirling arabesques, curling vines and stylized blossoms that fill the background. Show the woven cloth texture with rubbed, faded gilt and worn edges."
+          },
+          {
+            "id": "002",
+            "text": "Victorian Chromolithograph — render the scene with densely layered printed color and grainy, stippled shading in a warm aged palette of brick red, mustard, sage, dusty blue and cream. Give the faces rosy cheeks and soft modeling, and fabrics rich folds and fussy detail. Treat backgrounds like theatrical Victorian parlors or gardens. Finish with slight registration offsets, foxing, age stains and yellowed paper."
+          },
+          {
+            "id": "003",
+            "text": "Hand-Colored Steel Engraving — render everything in fine engraved line work: parallel hatching, crosshatching and stipple for every tone. Then hand-tint it with thin watercolor washes of rust, slate blue, moss and flesh tones. Give it dramatic, romantic lighting and heightened texture in rocks, water, fabric and hair. Sit the image within a subtle arched vignette fading to the dark green of an embossed cloth surround."
+          },
+          {
+            "id": "004",
+            "text": "Lush Naturalist Ornament — render the people in rich late-Victorian painted illustration, with the scene around them filled with exquisitely detailed birds, animals, ferns, wild roses and grape clusters that frame and overlap the figures. Use a saturated yet aged palette of teal, plum, rose, olive and old gold. Show fine highlights on feathers and petals and a worn, printed-board surface."
+          },
+          {
+            "id": "005",
+            "text": "Edwardian Nursery Watercolor — render the scene in soft, airy watercolor and fine ink line on cream paper, with powder pink, mint, butter yellow and sky blue. Simplify the faces gently, with rosy cheeks and delicate features that keep the likeness. Paint clothing with soft folds and small patterns, and backgrounds as light, sunny washes (picket fences, gardens, sky). Add a thin decorative patterned border around the image."
+          },
+          {
+            "id": "006",
+            "text": "Gold-Foil Line Engraving — render the entire scene as fine-line metallic gold foil on a solid jewel-tone cloth ground (jade green, navy or oxblood). Delicate gold contour and hatch lines describe the faces, hair and clothing. Turn the background into radiating sunbursts, tiny scattered stars, sparkles and minute decorative detail. Let light catch the foil so it shimmers."
+          },
+          {
+            "id": "007",
+            "text": "Hand-Tinted Pen Line — render the scene with confident early-1900s black dip-pen line and simple hatching, then add flat, transparent spot tints (marigold, scarlet, slate, leaf green) that sit slightly off the lines. Give it a sunny pale-yellow or mint paper ground and generous white space, with tiny decorative accents such as bees, stars or leaves around the figures. The effect is charming, simple and classic."
+          }
+        ]
+      }
+    ],
+    "additionalInstructions": "FINAL RESULT:\nThe whole photo must look like an original antique storybook illustration — for example: a family portrait reimagined as a Victorian Chromolithograph — with every face clearly recognizable, the original composition intact, authentic period technique and age, and no text."
+  },
+  {
     "name": "ANTIQUES",
     "category": [
       "VINTAGE",
@@ -6898,6 +6946,78 @@
     "additionalInstructions": ""
   },
   {
+    "name": "BROADWAY POSTER ART STYLE",
+    "category": [
+      "OPTIONS",
+      "ART STYLE",
+      "BROADWAY",
+      "THEATER",
+      "TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform it into artwork in the style of iconic Broadway musical poster art.\nIDENTITY RULES (NON-NEGOTIABLE):\n• Every person’s real face must remain clearly recognizable — facial structure, eyes, nose, mouth, expression, skin tone, age and hairstyle carry over from the photo\n• Faces are re-rendered IN the selected art style — never a pasted photograph, never a generic or blended face\n• In silhouette-led styles, each person’s profile, hairstyle and posture must be unmistakable, and rim light or a partial reveal must show enough of the face to recognize them\n\nTRANSFORMATION RULES (CRITICAL):\n• Transform the ENTIRE photo — people, clothing, objects and background — into the selected art style\n• Keep the original composition, framing, poses, clothing and setting; reinterpret them through the style rather than replacing them\n• The background may be simplified, stylized or given the style’s signature treatment (texture, color field, ornament), but it should still read as the original setting\n• The result must look like a genuine, hand-made original artwork in that style, not a photo filter\n\nNO TEXT:\n• Do NOT add titles, lettering, logos, credits, borders that imitate a book cover or poster layout, award seals or any typography\n• Borrow only technique, palette, line, texture and mood — do not reproduce any existing artwork or its characters",
+    "randomizeOptions": true,
+    "optionGroups": [
+      {
+        "title": "ART STYLE",
+        "options": [
+          {
+            "id": "001",
+            "text": "Gilded Silhouette — render the people as solid black silhouettes with a faint warm rim light tracing their recognizable profiles, against a distressed, burnished gold-leaf background with mottled metallic texture. Use bold, heroic, monumental minimalism, with the rest of the scene reduced to simple black geometric shapes."
+          },
+          {
+            "id": "002",
+            "text": "Starry Double-Exposure — render the people as large silhouettes or profiles filled with a glowing turquoise-and-violet night scene drawn from the photo’s setting, on a deep midnight-indigo field. Sparkling stardust and glitter trails drift off the edges, and the faces stay recognizable through the luminous fill and profile edges."
+          },
+          {
+            "id": "003",
+            "text": "Romantic Night Painting — render in a saturated cobalt and ultramarine night palette with soft painterly silhouettes of the background and streetlamp glow. The people are rendered with elegant, simplified painted forms, with one bright accent color (a sunny yellow) on a key garment. The mood is dreamy and romantic."
+          },
+          {
+            "id": "004",
+            "text": "Two-Tone Graphic Portrait — render on a stark black background with high-contrast graphic faces, half in deep shadow and half in a vivid, unexpected tint (emerald, violet or crimson). Use sharp, stylized eye and lip details and a crisp illustrated finish, keeping it bold, theatrical and slightly mysterious."
+          },
+          {
+            "id": "005",
+            "text": "Painterly Backlit — render as a lush digital oil painting lit from behind by a violet-and-amber sunset glow, with the people’s hair and clothing edged in warm light and flowing with movement. Use soft, atmospheric depth and a cinematic, romantic, sweeping feel."
+          },
+          {
+            "id": "006",
+            "text": "Etched Halftone — render the people as gritty engraving-like black-and-white halftone portraits with coarse dot and line texture, on a dark charcoal ground. Smear rough, expressive brush strokes of color (blue, red, gold) behind or across the image like a tattered banner. The mood is soulful and dramatic."
+          },
+          {
+            "id": "007",
+            "text": "Fashion Ink-Wash — render as an elegant fashion illustration on white: fluid black ink wash with clothing that dissolves into watery smoke and splashes, and faces drawn with refined minimal line. Add a single hot-pink or magenta accent, with sparkling diamond or glitter accents scattered around."
+          },
+          {
+            "id": "008",
+            "text": "Ink-Splatter Stencil — render the people as dynamic black stencil silhouettes on a solid fire-engine-red background, with a few crisp white accents (cuffs, socks, gloves, highlights) and ink spatter and grunge texture flying off their movement. Keep the profiles recognizable under the bold shadow shapes."
+          },
+          {
+            "id": "009",
+            "text": "Woodcut Mask — render the faces as bold carved-woodcut designs in pure black on an intense saffron-gold ground: radiating gouged strokes in the hair, and strong graphic planes for the brow, nose and cheeks, with the eyes keeping their exact shape and spacing. Reduce the rest of the scene to rhythmic carved marks."
+          },
+          {
+            "id": "010",
+            "text": "Mid-Century Caricature — render as a 1950s musical-comedy brush-and-ink caricature: lively, elongated limbs and exaggerated but recognizable features, and flat kelly green, violet, coral and plaid fills on a cream ground. Sprinkle in starbursts and confetti lines, with poses pushed into joyful, dancing energy."
+          },
+          {
+            "id": "011",
+            "text": "Jazzy Leap Silhouette — render on a solid chartreuse or olive-green field, with the people as black-and-white figures in energetic, exaggerated motion and a single element of clothing made wildly patterned (a sunburst, a floral print) in hot yellow and red. The feel is groovy 1970s."
+          },
+          {
+            "id": "012",
+            "text": "Art Deco Poster — render with bold black contour lines and flat, saturated color: navy, white, red and sun-yellow, with stripes and strong graphic shapes. Give the figures glamorous, streamlined forms in a 1930s ocean-liner travel-poster style."
+          },
+          {
+            "id": "013",
+            "text": "Neon Marquee Lithograph — render as a 1930s–40s printed theater-district postcard: a glowing palette of orange, magenta, emerald and gold against night blue, with halftone grain. The people are lit by spotlight and marquee-bulb glow, set in a dramatic, vertiginous perspective."
+          }
+        ]
+      }
+    ],
+    "additionalInstructions": "FINAL RESULT:\nThe whole photo must look like original Broadway poster artwork — for example: a dancing photo reimagined as Mid-Century Caricature, or a portrait reimagined as Etched Halftone — with every face recognizable, the original composition intact, the bold theatrical style applied throughout, and no text, titles or billing."
+  },
+  {
     "name": "BROKEN CAMERA",
     "category": [
       "PHOTOGRAPHY",
@@ -10452,6 +10572,82 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "CLASSIC PICTURE BOOK ART STYLE",
+    "category": [
+      "OPTIONS",
+      "ART STYLE",
+      "CHILDREN'S BOOK",
+      "ILLUSTRATION",
+      "TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform it into an illustration in the style of a beloved children’s picture book, as if it were a page from the book.\nIDENTITY RULES (NON-NEGOTIABLE):\n• Every person’s real face must remain clearly recognizable — facial structure, eyes, nose, mouth, expression, skin tone, age and hairstyle carry over from the photo\n• Faces are re-rendered IN the selected art style — never a pasted photograph, never a generic or blended face\n• Even in very simplified styles (collage, loose ink, cartoon), keep each person’s signature features (face shape, eyes, hair, glasses, freckles, smile) so friends would instantly recognize them\n\nTRANSFORMATION RULES (CRITICAL):\n• Transform the ENTIRE photo — people, clothing, objects and background — into the selected art style\n• Keep the original composition, framing, poses, clothing and setting; reinterpret them through the style rather than replacing them\n• The background may be simplified, stylized or given the style’s signature treatment (texture, color field, ornament), but it should still read as the original setting\n• The result must look like a genuine, hand-made original artwork in that style, not a photo filter\n\nNO TEXT:\n• Do NOT add titles, lettering, logos, credits, borders that imitate a book cover or poster layout, award seals or any typography\n• Borrow only technique, palette, line, texture and mood — do not reproduce any existing artwork or its characters",
+    "randomizeOptions": true,
+    "optionGroups": [
+      {
+        "title": "ART STYLE",
+        "options": [
+          {
+            "id": "001",
+            "text": "Cut-Paper Collage — rebuild the scene from flat shapes of cut and torn paper, some hand-printed or patterned (spattered, marbled, stamped). Use bold, simple silhouettes in vivid solid colors against large plain fields of white or saturated color, with torn, slightly fuzzy edges and subtle paper shadows. Faces are simplified to a few shapes while keeping each person’s key features."
+          },
+          {
+            "id": "002",
+            "text": "Loose Ink & Watercolor Wash — render with a quick, wobbly, confident black ink contour and bright, loose washes of green, yellow, pink and blue that pool and spill past the lines onto white paper. Sketch background buildings, furniture and trees in a few lively scribbles. Faces are expressive and cartoonish but unmistakably the subject."
+          },
+          {
+            "id": "003",
+            "text": "Gouache Folk Painting — render in opaque gouache with visible dry-brush texture on toned paper, in warm ochre, rust, crimson, olive and teal. Make figures rounded and sturdy with rosy cheeks, and decorate clothing with dots, checks and stitched patterns. Paint trees, leaves and backgrounds in a painterly, naive way."
+          },
+          {
+            "id": "004",
+            "text": "Crosshatched Pen & Ink — render with energetic, scratchy dip-pen line and layers of crosshatching, giving hair, fur, beards and textures a hairy, lively quality. Add one or two flat spot colors (teal, mustard, tan) laid behind the line work. Exaggerate proportions slightly for whimsy while keeping the likeness."
+          },
+          {
+            "id": "005",
+            "text": "Soft Pencil & Watercolor — render in delicate colored pencil over gentle watercolor in warm honey, sepia, rose and soft blue, with tender, natural light. Draw faces with sensitive realism, fabrics and backgrounds in fine but soft detail, and let the edges fade out into cream paper."
+          },
+          {
+            "id": "006",
+            "text": "Pastel Romantic Storybook — render as smooth painted illustration with soft, airbrush-like gradients in lilac, sky blue, rose and peach. Treat light as dreamy and glowing, add drifting blossoms or petals in the air, and keep the faces gently idealized but recognizable, with a nostalgic mid-century storybook charm."
+          },
+          {
+            "id": "007",
+            "text": "Minimal Watercolor with Space — render the people as small, delicate watercolor figures with fine ink outlines and pale washes. Reduce the background to a calm, mostly empty pale-blue or ivory ground with only a few essential elements and a scatter of tiny red, blue and gold stars, leaving lots of quiet negative space."
+          },
+          {
+            "id": "008",
+            "text": "Paper Pop-Up — render the scene as a dimensional paper-engineered pop-up: layered die-cut paper planes at different depths casting real soft shadows, with crisp cut edges and folded tabs. Use saturated flat colors (magenta, teal, leaf green, gold), and build the people as cut-paper figures that keep their faces recognizable."
+          },
+          {
+            "id": "009",
+            "text": "Textured Retro Digital — render as a mid-century-inspired digital painting with grainy print texture and a muted palette of teal, tan, rust, olive and cream. Use soft dimensional shading and simple, sweet character design, and make the backgrounds architectural and slightly monumental, with a gentle, wistful mood."
+          },
+          {
+            "id": "010",
+            "text": "Middle-Grade Painterly — render as a rich contemporary digital painting with dramatic lantern or magical glow, deep indigo and teal shadows and warm amber highlights. Give the characters slightly stylized, expressive faces with big eyes and bold shapes, add floating sparks, dust motes or magical particles, and make it cinematic and adventurous."
+          },
+          {
+            "id": "011",
+            "text": "Monochrome Sketch with Red Accent — render in clean black ink line and soft grey wash on white, in a friendly contemporary comic style with cozy, detailed clutter in the background. The only color is a single crimson accent on one element (a scarf, a cup, a book, lips or a bow)."
+          },
+          {
+            "id": "012",
+            "text": "Bright Cartoon — render with clean, even-weight cartoon outlines and saturated flat color (tomato red, mustard, cobalt, kelly green) with minimal shading. Give it big, friendly expressions and lively, slightly exaggerated poses, with the background simplified into bold color fields or patterned shapes."
+          },
+          {
+            "id": "013",
+            "text": "Mid-Century Geometric — render in the style of a 1950s–60s travel picture book: flat, stylized gouache shapes, buildings and objects as simple geometric blocks with tiny repeated window or pattern grids, and a palette of navy, mustard, charcoal, tomato red and cream. Characters get big noses, rosy cheeks and simple dot eyes while staying recognizable, with bold stripes and playful tilted angles."
+          },
+          {
+            "id": "014",
+            "text": "Naive Folk Panorama — render as a jewel-box naive gouache painting with crisp edges, bright pinks, greens, yellows and blues, and doll-like figures. Fill the background with tiny, meticulous detail: windows, trees, flowers, umbrellas and miniature passersby. The effect is cheerful, flat and decorative."
+          }
+        ]
+      }
+    ],
+    "additionalInstructions": "FINAL RESULT:\nThe whole photo must look like an original page from a classic picture book — for example: a photo of a kid on a snowy street reimagined as Cut-Paper Collage — with every face recognizable, the original composition intact, authentic hand-made texture, and no text."
   },
   {
     "name": "CLASSIC TV COMMERCIAL-ADAPTATION",
@@ -34390,6 +34586,86 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "COLOR SELECTION — CRITICAL:\n\n• Identify one prominent, vibrant color already present in the scene\n• Use that color as the primary plastic color for the sprue components\n• Keep the entire kit monochromatic in that selected color family\n• Use a darker shade of the same color for the backing card and background\n• Do not introduce multiple unrelated plastic colors\n• Preserve enough tonal separation to make individual parts readable\n\nSPRUE CONSTRUCTION:\n\n• Create a recognizable injection-molding sprue frame\n• Include connected runners, branches, and attachment gates\n• Arrange molded components in an organized model-kit layout\n• Make the sprue frame physically plausible\n• Include subtle molded seams and plastic surface details\n• Components should appear manufactured as one-color plastic parts\n\nSUBJECT AND OBJECT CONSTRUCTION:\n\n• Keep each person as one intact molded piece\n• Keep each animal as one intact molded piece\n• Do not separate a person's head, torso, arms, or legs into individual kit parts\n• Reconstruct other scene objects as appropriate molded components\n• Preserve recognizable silhouettes and defining features\n• Retain the spatial and visual relationships that make the original scene recognizable\n\nBACKGROUND:\n\n• The backing card uses a darker shade of the chosen sprue color\n• Represent the scene's background as part of the backing card artwork or molded layout\n• Keep the background visually subordinate to the sprue components\n• The result should read as a model-kit package rather than loose objects on a table\n\nANTI-CHEAT:\n\n• Do not use multiple unrelated plastic colors\n• Do not turn people or animals into disassembled kits\n• Do not leave major scene elements photorealistic\n• Do not create a finished assembled model sitting outside the sprue\n• Do not use a generic toy packaging design unrelated to the scene\n• Do not add brand names, logos, or readable product labels\n\nFINAL RESULT:\nA convincing monochromatic injection-molded model-kit sprue card that reconstructs the original scene as collectible plastic components, with intact people and animals and a darker backing card in the same color family."
+  },
+  {
+    "name": "MODERN BOOK COVER ART STYLE",
+    "category": [
+      "OPTIONS",
+      "ART STYLE",
+      "GRAPHIC DESIGN",
+      "ILLUSTRATION",
+      "TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform it into artwork in the style of contemporary and modern-classic book cover illustration.\nIDENTITY RULES (NON-NEGOTIABLE):\n• Every person’s real face must remain clearly recognizable — facial structure, eyes, nose, mouth, expression, skin tone, age and hairstyle carry over from the photo\n• Faces are re-rendered IN the selected art style — never a pasted photograph, never a generic or blended face\n\nTRANSFORMATION RULES (CRITICAL):\n• Transform the ENTIRE photo — people, clothing, objects and background — into the selected art style\n• Keep the original composition, framing, poses, clothing and setting; reinterpret them through the style rather than replacing them\n• The background may be simplified, stylized or given the style’s signature treatment (texture, color field, ornament), but it should still read as the original setting\n• The result must look like a genuine, hand-made original artwork in that style, not a photo filter\n\nNO TEXT:\n• Do NOT add titles, lettering, logos, credits, borders that imitate a book cover or poster layout, award seals or any typography\n• Borrow only technique, palette, line, texture and mood — do not reproduce any existing artwork or its characters",
+    "randomizeOptions": true,
+    "optionGroups": [
+      {
+        "title": "ART STYLE",
+        "options": [
+          {
+            "id": "001",
+            "text": "Folk Floral Gouache — render the people in flat, hand-painted gouache and surround and frame them with a dense, joyful wall of flowers, berries, leaves and slender tree trunks in coral, blush, teal, mustard and forest green on a dusty-blue ground. Give it naive, decorative charm, with gold accents in the foliage."
+          },
+          {
+            "id": "002",
+            "text": "Ornate Heraldic Gouache — render in flat gouache-and-ink with metallic gold accents on rich saffron, burgundy, ochre and forest green. Add Victorian-inspired ornament, patterned clothing and decorative framing details woven around the figures. The look is maximalist, theatrical and storybook-heraldic."
+          },
+          {
+            "id": "003",
+            "text": "Pastel Botanical — render in soft watercolor on a pale sage or celadon ground, with delicate flowers, curling vines, fern fronds and tiny fluttering wings around the figures. Add fine gold linework accents and a slight cloth-texture finish. The mood is whimsical and airy."
+          },
+          {
+            "id": "004",
+            "text": "Linocut Block Print — render as a carved linocut print in a limited palette of black, forest green, slate, rust and cream. Use bold carved shapes and gouge marks, stylized layered landscapes, and faces carved with strong planes that keep the likeness. Show slight ink-coverage irregularities and paper texture."
+          },
+          {
+            "id": "005",
+            "text": "Retro Two-Tone Screenprint — render as a crisp, minimal screenprint with a bold vermilion or tomato-red field, flat black and white figures and one pale mint accent. Use strong graphic shadows, including faces split by a hard vertical light and shadow edge. Keep the shapes sharp and simple, with a witty, stylish feel."
+          },
+          {
+            "id": "006",
+            "text": "Mid-Century Pulp Painting — render with loose, energetic gouache and rough brushwork in burnt orange, tomato red, teal and cream. Use dramatic angles, dynamic foreshortening and bold shadow shapes, with visible brush texture and slight print scuffing, so it feels like vintage paperback art."
+          },
+          {
+            "id": "007",
+            "text": "Epic Cinematic Gradient — render with a vast heat gradient sky from scorched orange to deep amber, rim-lit figures in partial silhouette with windswept hair and clothing, and painterly atmosphere with drifting dust or haze. The people stay recognizable through dramatic edge light on their profiles."
+          },
+          {
+            "id": "008",
+            "text": "Art Deco Minimalist — render as a 1920s–30s Deco design: a deep teal or midnight ground, figures reduced to elegant gold geometric line art with stylized faces that keep the likeness, a sparse starfield of short gold dashes, and sleek symmetry and streamlined forms."
+          },
+          {
+            "id": "009",
+            "text": "Jazz Age Watercolor Comic — render as airy pen-and-wash graphic-novel art: sketchy, lively ink lines with pale aqua, sand, peach and coral washes, and an elegant, breezy 1920s mood. Give the people a slightly elongated, stylish comic-book likeness."
+          },
+          {
+            "id": "010",
+            "text": "Fine Graphite Portrait — render as a highly realistic, sensitive pencil and charcoal drawing on warm cream paper, with precise detail in the faces and eyes and expressive, looser strokes fading away toward the edges. Keep it monochrome, with no color."
+          },
+          {
+            "id": "011",
+            "text": "Typographic Word Portrait — render the people’s faces and bodies built entirely from thousands of tiny, illegible micro-text words in varied weights of grey ink, with text density creating the light and shadow. One signature element (a collar, glasses, a scarf) is picked out in a single accent color, on a pale grey textured ground. No readable words."
+          },
+          {
+            "id": "012",
+            "text": "Doodle Line on Solid Color — render the scene as loose white hand-drawn line doodles on a single flat, saturated background (cherry red, cobalt or emerald), with the people drawn in clean, playful single-weight line. Only one key object or element is filled with full color."
+          },
+          {
+            "id": "013",
+            "text": "Paper-Cut Night Silhouette — render as crisp white paper-cut shapes on a stark black night background, with a periwinkle accent for water, sky or ground. Give the figures elegant cut-out silhouettes with visible profile and hair detail, include tiny cut windows and details in the surroundings, and add a crescent moon and stars."
+          },
+          {
+            "id": "014",
+            "text": "Neon Lithograph — render as a vintage 1930s–40s printed postcard: glowing electric orange, magenta, emerald and gold light against deep night blue, a halftone dot and grain texture, and the people lit by colorful signage glow and dramatic deep perspective."
+          },
+          {
+            "id": "015",
+            "text": "Modern Travel Poster — render in a contemporary screen-printed travel-poster aesthetic: clean shapes, layered flat planes of color, crisp sunlight with long shadows, a saturated palette (autumn reds, teal sky, golden yellow) and dramatic perspective. Simplify the faces into clean planes while keeping the likeness."
+          }
+        ]
+      }
+    ],
+    "additionalInstructions": "FINAL RESULT:\nThe whole photo must look like a striking piece of original book-jacket illustration — for example: a couple’s photo reimagined as a Retro Two-Tone Screenprint — with every face recognizable, the original composition intact, the chosen style’s technique and palette applied throughout, and no text."
   },
   {
     "name": "MODERNISM",
