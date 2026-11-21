@@ -1,13 +1,51 @@
 // preset-import.js - Handle external preset importing
 
-// Deep comparison for UPDATED detection — checks all meaningful preset fields
+// Keys the program adds itself (never part of the preset file) — ignored when
+// deciding whether a preset was UPDATED.
+const PRESET_COMPARE_IGNORED_KEYS = new Set(['_sourcePublicBase', '_baseName']);
+
+// JSON.stringify with object keys sorted, so two presets that hold the same
+// data with their keys written in a different order still compare as equal.
+function _stableStringify(value) {
+  if (Array.isArray(value)) {
+    return '[' + value.map(_stableStringify).join(',') + ']';
+  }
+  if (value && typeof value === 'object') {
+    return '{' + Object.keys(value).sort()
+      .filter(k => value[k] !== undefined)
+      .map(k => JSON.stringify(k) + ':' + _stableStringify(value[k]))
+      .join(',') + '}';
+  }
+  return JSON.stringify(value);
+}
+
+// A missing key, null, '' and [] all mean "nothing here", so adding an empty
+// field to the file doesn't flag every preset as UPDATED.
+function _isEmptyPresetValue(v) {
+  return v === undefined || v === null || v === '' || (Array.isArray(v) && v.length === 0);
+}
+
+// Deep comparison for UPDATED detection. Compares EVERY field in the preset
+// (message, options, optionGroups, gameRoster, gameType, beats, verdicts,
+// imageUrl and any field added in future) rather than a fixed list — the old
+// fixed list missed the game fields, so editing a game preset's roster or
+// rules never showed as UPDATED.
 export function presetsAreDifferent(a, b) {
-  if (a.message !== b.message) return true;
-  if (a.additionalInstructions !== b.additionalInstructions) return true;
+  if (!a || !b) return a !== b;
+  // Cheap checks first — most real updates change the prompt text
+  if ((a.message || '') !== (b.message || '')) return true;
+  if ((a.additionalInstructions || '') !== (b.additionalInstructions || '')) return true;
   if (!!a.randomizeOptions !== !!b.randomizeOptions) return true;
-  if (JSON.stringify(a.category || []) !== JSON.stringify(b.category || [])) return true;
-  if (JSON.stringify(a.options || []) !== JSON.stringify(b.options || [])) return true;
-  if (JSON.stringify(a.optionGroups || []) !== JSON.stringify(b.optionGroups || [])) return true;
+
+  const keys = new Set([...Object.keys(a), ...Object.keys(b)]);
+  for (const key of keys) {
+    if (PRESET_COMPARE_IGNORED_KEYS.has(key)) continue;
+    if (key === 'message' || key === 'additionalInstructions' || key === 'randomizeOptions') continue;
+    const va = a[key];
+    const vb = b[key];
+    if (_isEmptyPresetValue(va) && _isEmptyPresetValue(vb)) continue;
+    if (_stableStringify(va) !== _stableStringify(vb)) return true;
+  }
   return false;
 }
 
@@ -386,7 +424,11 @@ export class PresetImporter {
 
       // --- Load default source (only if user has it enabled) ---
       if (getDefaultPresetEnabled()) {
-        const response = await fetch('./presets.json');
+        // 'no-cache' makes the webview check with the server every time
+        // (a quick "not modified" answer when nothing changed) instead of
+        // quietly reusing an old saved copy of presets.json — which is why an
+        // edited file sometimes did not show its updates.
+        const response = await fetch('./presets.json', { cache: 'no-cache' });
         if (!response.ok) {
           throw new Error('Failed to load presets.json');
         }
@@ -408,7 +450,7 @@ export class PresetImporter {
         if (!source.enabled) continue;
         let reachedServer = false;
         try {
-          const resp = await fetch(source.url);
+          const resp = await fetch(source.url, { cache: 'no-cache' });
           reachedServer = true; // we got a response object, so the URL is reachable
           if (!resp.ok) {
             // Reachable but the server returned an error (e.g. 403/404). Temp
@@ -495,7 +537,7 @@ export class PresetImporter {
       // Safety net: if nothing loaded at all, fall back to default regardless
       if (allPresets.length === 0) {
         try {
-          const response = await fetch('./presets.json');
+          const response = await fetch('./presets.json', { cache: 'no-cache' });
           if (response.ok) {
             const defaultPresets = await response.json();
             defaultPresets
@@ -517,6 +559,9 @@ export class PresetImporter {
 
       // Store in memory so every other call this session skips the download
       window._cachedFactoryPresets = sorted;
+      // Remember when this copy was downloaded so Settings can refresh it if
+      // the program has been left open for a long time (see main.js).
+      window._cachedFactoryPresetsAt = Date.now();
       return sorted;
     } catch (error) {
       console.error('Error loading presets:', error);

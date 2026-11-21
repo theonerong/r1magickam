@@ -13777,6 +13777,16 @@ YOU MUST RESTART PROGRAM!`];
 function showSettingsSubmenu() {
   const submenu = document.getElementById('settings-submenu');
 
+  // The preset list is downloaded once and kept for the session. The R1 can
+  // leave the program open for hours, so if that copy is more than 5 minutes
+  // old, drop it and check again — otherwise an edited presets.json would not
+  // show its new/updated presets until the program was fully restarted.
+  const _PRESET_LIST_MAX_AGE_MS = 5 * 60 * 1000;
+  if (window._cachedFactoryPresets && !window._factoryPresetsLoading &&
+      Date.now() - (window._cachedFactoryPresetsAt || 0) > _PRESET_LIST_MAX_AGE_MS) {
+    window._cachedFactoryPresets = null;
+  }
+
   // If the startup update check could not download the preset list, try again now.
   if (!window._cachedFactoryPresets && !window._factoryPresetsLoading &&
       presetImporter.getImportedPresets().length > 0) {
@@ -19770,7 +19780,13 @@ const result = await presetImporter.import();
   
   const galleryBtn = document.getElementById('gallery-button');
   if (galleryBtn) {
-    galleryBtn.addEventListener('click', showGallery);
+    // Wrapped in an arrow function ON PURPOSE. Passing showGallery directly
+    // handed it the click event as its first argument (renderOnly). An event
+    // object counts as "true", so the gallery skipped reloading the photos
+    // from storage and just drew whatever was already in memory — which is
+    // nothing if the startup gallery load hasn't finished yet. That is why the
+    // gallery came up empty when opened right after the program started.
+    galleryBtn.addEventListener('click', () => showGallery());
   }
   
   const closeGalleryBtn = document.getElementById('close-gallery');
