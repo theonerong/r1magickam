@@ -14098,6 +14098,20 @@
     "additionalInstructions": "The subject must be genuinely reconstructed as a cork sculpture, not displayed as an ordinary photograph with cork texture applied over it. Every visible part of the subject must be made from cork, including facial features, hair, clothing, accessories, and body parts. Preserve the subject's recognizable face and identity through carefully sculpted cork contours, dimensional features, and variations in cork grain. Use natural cork coloration, including warm tan, honey, ochre, and deeper brown tones. Construct larger forms from solid cork sections and use smaller cork granules, compressed layers, and carefully fitted pieces for fine details. Cork's distinctive pores, pits, speckles, irregular grain, and compressed cellular structure should be clearly visible. The result should resemble a sophisticated contemporary gallery sculpture, with convincing physical depth, sculptural craftsmanship, and realistic material behavior. Avoid making the subject look like a corkboard covered in flat cork pieces, a collage, a miniature, or a toy. Do not leave recognizable photographic skin, fabric, or hair anywhere on the transformed subject. Keep the original background unchanged unless the master prompt specifies otherwise. Any subject, pose, clothing, setting, mood, or artistic direction specified in the master prompt takes priority over these defaults."
   },
   {
+    "name": "CORTO MALTESE",
+    "category": [
+      "COMICS",
+      "EUROPEAN COMICS",
+      "WATERCOLOR",
+      "INK ILLUSTRATION",
+      "ART STYLE"
+    ],
+    "message": "Take a picture and transform the entire image into an authentic Corto Maltese comic illustration inspired by Hugo Pratt's distinctive artwork. Completely redraw the subject and environment using expressive, economical ink linework, loose watercolor washes, muted and atmospheric colors, simplified but characterful anatomy, and sophisticated hand-drawn compositions. Integrate the subject into Corto Maltese's world of mysterious voyages, exotic locations, historical adventures, and intriguing encounters. Include Corto Maltese himself as a recognizable, naturally integrated character. The finished image should look like an original illustrated panel from a Corto Maltese adventure, not a photograph with watercolor applied.",
+    "randomizeOptions": false,
+    "options": [],
+    "additionalInstructions": "Reconstruct the subject entirely in Hugo Pratt's distinctive comic illustration language. The subject's face, hair, expression, anatomy, clothing, and pose must all be redrawn rather than preserved as photographic material. Reproduce the characteristic balance of sparse but highly expressive black ink contours, loose watercolor washes, delicate tonal variation, simplified shapes, subtle imperfections, and atmospheric visual storytelling. Use a restrained, sophisticated palette with muted earth tones, dusty blues, faded greens, warm ochres, and watercolor paper character. Avoid excessive detail, glossy digital rendering, thick modern cartoon outlines, photorealism, anime, or generic watercolor portraiture. Integrate Corto Maltese into the same scene as a recognizable illustrated character, retaining his distinctive dark hair, sailor-inspired appearance, earrings, and adventurous demeanor. Create a believable setting inspired by the series' maritime journeys, historic cities, ports, remote islands, or exotic locations, while respecting any setting specified by the master prompt. All figures and environmental elements must share the same ink-and-watercolor technique. Preserve the subject's identity through the illustrated interpretation. Any master prompt specifying the subject's pose, action, setting, mood, or other details takes priority over preset defaults."
+  },
+  {
     "name": "COSMATI MOSAIC",
     "category": [
       "ITALIAN",
@@ -30069,6 +30083,20 @@
     "additionalInstructions": ""
   },
   {
+    "name": "JUDGE DREDD",
+    "category": [
+      "COMICS",
+      "SCI-FI",
+      "BRITISH COMICS",
+      "GRAPHIC NOVEL",
+      "ART STYLE"
+    ],
+    "message": "Take a picture and transform the entire image into an authentic Judge Dredd comic-book illustration inspired by the gritty visual tradition of 2000 AD. Completely redraw the subject as a native character in this dark futuristic comic world, using sharply defined ink contours, dramatic shadows, highly detailed mechanical and architectural elements, muscular graphic compositions, and intense science-fiction atmosphere. Integrate Judge Dredd himself into the scene in his unmistakable helmet, armored uniform, eagle insignia, and Lawgiver-equipped appearance. Place the subject within a visually convincing Mega-City One environment or another setting appropriate to the master prompt. The result must look like an original illustrated comic panel, not a photograph with a comic filter.",
+    "randomizeOptions": false,
+    "options": [],
+    "additionalInstructions": "The entire subject must be reconstructed as a hand-drawn character in the visual tradition of Judge Dredd and 2000 AD. Do not leave the subject photorealistic, place a comic costume over a photograph, or simply apply an ink filter. Redraw the face, hair, expression, anatomy, clothing, and body proportions using the comic's gritty, highly detailed illustration style. Use strong black ink contours, dramatic shadow masses, angular forms, intense lighting, detailed surfaces, and sophisticated comic-book rendering. The overall appearance should evoke the distinctive British science-fiction comic aesthetic rather than generic American superhero artwork. Integrate Judge Dredd as a recognizable character with his iconic helmet, dark visor, armored uniform, eagle insignia, and Lawgiver. Do not replace him with a generic futuristic police officer. The environment should feel like Mega-City One when no other setting is specified, with monumental architecture, futuristic streets, imposing structures, and dystopian atmosphere. The subject must be visually integrated into the same illustrated world, sharing its anatomy, lighting, ink treatment, and color palette. Avoid anime, cute cartoon styling, smooth 3D rendering, photorealism, and generic cyberpunk imagery. Any master prompt specifying the subject's pose, action, setting, mood, or other details takes priority over preset defaults."
+  },
+  {
     "name": "JUMP THE SHARK",
     "category": [
       "TELEVISION",
@@ -32328,16 +32356,16 @@
   {
     "name": "LITTLE LULU",
     "category": [
-      "COMIC",
-      "COMIC STRIP",
-      "CLASSIC CARTOON",
-      "VINTAGE",
-      "HUMOR"
+      "COMICS",
+      "COMIC STRIPS",
+      "VINTAGE CARTOON",
+      "ILLUSTRATION",
+      "ART STYLE"
     ],
-    "message": "Take a picture and transform the subject into a character in the classic Little Lulu comic-book and newspaper-comic universe. Recreate the subject in its distinctive vintage cartoon illustration style, with rounded expressive characters, clean ink outlines, lively facial expressions, simple coloring, and playful neighborhood humor. Integrate the subject naturally into a scene with Little Lulu, Tubby, and their familiar neighborhood friends, participating in a mischievous childhood adventure or funny everyday situation. The subject must look like an original character drawn for the comic.",
-    "options": [],
+    "message": "Take a picture and transform the entire image into an authentic Little Lulu comic illustration. Redraw the subject as a native character in the classic vintage comic's distinctive playful drawing style, with expressive faces, rounded cartoon anatomy, clean hand-drawn outlines, simple but lively shapes, and cheerful period-appropriate colors. Integrate the subject naturally into Little Lulu's world, alongside Little Lulu and other recognizable characters in a mischievous neighborhood adventure or humorous everyday situation. The subject must look as though they were originally drawn for the comic, not like a photograph pasted into a cartoon.",
     "randomizeOptions": false,
-    "additionalInstructions": "Use the recognizable visual language of classic Little Lulu illustrations: rounded simplified character shapes, expressive faces, clean hand-drawn outlines, carefully defined hairstyles, period-appropriate clothing, and lively comic staging. Include Little Lulu and Tubby when suitable, with their recognizable personalities and designs. Set the scene in a neighborhood, home, playground, clubhouse, or another fitting everyday environment. Give the subject a natural role in the story rather than placing them as an unrelated visitor. Redraw the entire subject, including face, hair, body, and clothing, to match the comic's illustration style. Preserve identity through distinctive facial features and hairstyle while adapting proportions to the comic's character design. Avoid photorealism, modern anime, and generic vector cartoon styling."
+    "options": [],
+    "additionalInstructions": "The subject must be completely redrawn as a native Little Lulu comic character. Translate the subject's facial structure, hairstyle, expression, body proportions, clothing, and pose into the vintage comic's recognizable drawing style. Use the characteristic clean black outlines, rounded simplified anatomy, expressive facial features, lively gestures, flat colors, and charming vintage comic-book presentation. Preserve enough distinctive facial and visual characteristics for the subject to remain recognizable, but do not retain photographic realism. Integrate Little Lulu herself into the scene as a recognizable character, using her classic appearance, hairstyle, and clothing. Include other familiar characters when appropriate, but do not overcrowd the composition. Use a setting that feels authentic to the comic's world, such as a neighborhood street, school, playground, home, or clubhouse. The subject and all other characters must share the same illustration technique, proportions, line weight, and color treatment. Avoid modern anime, generic contemporary cartoon styling, 3D animation, photorealistic characters, and photographic backgrounds. The result should resemble an authentic vintage Little Lulu comic illustration. Any master prompt specifying the subject's pose, action, setting, mood, or other details takes priority over preset defaults."
   },
   {
     "name": "LITTLE NEMO IN SLUMBERLAND",
@@ -37382,6 +37410,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "FINAL RESULT:\nThe image should transform the subject into Terry Gilliam's distinctive Monty Python cutout animation style - appearing as a Victorian-era illustration or photograph integrated into a surreal collage with aged paper textures, ornate typography, impossible juxtapositions, and that flat 2D stop-motion aesthetic that defined Python's visual identity."
+  },
+  {
+    "name": "MOOMIN",
+    "category": [
+      "COMICS",
+      "ILLUSTRATED STORIES",
+      "VINTAGE ILLUSTRATION",
+      "FANTASY",
+      "ART STYLE"
+    ],
+    "message": "Take a picture and transform the entire image into an authentic Moomin illustration inspired by Tove Jansson's distinctive artwork. Completely redraw the subject as a native character in the Moomin world, using delicate hand-drawn outlines, soft rounded forms, expressive simplicity, gentle watercolor or ink-and-wash textures, and a whimsical storybook atmosphere. Integrate the subject naturally alongside recognizable Moomin characters, including Moomintroll and other inhabitants of Moominvalley when appropriate. Create a charming illustrated scene that feels like an original Moomin storybook or comic illustration. The subject must be fully illustrated and must not remain photographic.",
+    "randomizeOptions": false,
+    "options": [],
+    "additionalInstructions": "Reconstruct the entire subject as a native illustrated character in Tove Jansson's Moomin visual world. Translate the subject's recognizable face, hairstyle, expression, body, clothing, and pose into the simple, expressive, gently rounded forms characteristic of the original illustrations. Preserve recognizable identity through carefully adapted facial features and distinctive visual details without retaining photographic skin, realistic anatomy, or photographic textures. Use delicate hand-drawn ink contours, subtle line variation, soft watercolor or ink-and-wash coloring, restrained natural colors, and the quiet charm of traditional illustrated storytelling. Integrate Moomintroll and other recognizable Moominvalley characters naturally into the scene. Moomintroll must retain his familiar white, rounded hippopotamus-like appearance, expressive eyes, and characteristic silhouette. Do not turn the subject into an unrelated animal simply because Moomin characters are animal-like; adapt the subject into the Moomin illustration style while retaining their recognizable identity. Create an environment consistent with Moominvalley, such as its distinctive house, forest, river, seaside, meadow, or other storybook setting, unless the master prompt specifies a different setting. Every character and background element must share the same hand-drawn illustration technique. Avoid generic children's cartoons, modern 3D animation, anime, glossy digital painting, photorealism, and overly simplified clip-art. The result should feel like an authentic Tove Jansson Moomin illustration. Any master prompt specifying the subject's pose, action, setting, mood, or other details takes priority over preset defaults."
   },
   {
     "name": "MOON",
@@ -59003,6 +59045,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "• Reconstruct the entire scene: set the environment, lighting, room, analog TV screen, and full character body to match the precise aesthetic of the movie frame.\n• FACIAL INTEGRATION MANDATE: Swap ONLY the facial identity. Map the subject's face onto the spectral character with perfect physical integration, match lighting, depth, and skin texture—avoiding any digital cut-out or photoshopped appearance.\n• HAIR CONSTRAINTS: The iconic long, wet, stringy dark hair must frame the subject's head authentic to the character, but must be styled far enough back from the forehead and cheeks so that the subject's facial features remain fully exposed and clearly recognizable.\n• Ensure the character appears physically emerging out of the glowing CRT television screen onto the floor, casting realistic long shadows based on the ambient room lighting and screen glow.\n• Maintain high visual quality: match the original film's muted color palette, cool shadow tones, and analog camera grain.\n• Master prompt instructions always override any downstream engine assumptions.\n\nFINAL VALIDATION — Before producing the final image, verify ALL of the following:\n\n✓ The entire scene (TV, background room, clothing, atmosphere) matches the film sequence.\n✓ The subject's facial identity is seamlessly mapped onto the creepy girl's head.\n✓ The facial features are fully visible and NOT hidden or obscured by the dark wet hair.\n✓ The integration looks entirely physical and photographic, with zero visible Photoshop artifacts.\n✓ If ANY answer is NO, reject and regenerate immediately."
+  },
+  {
+    "name": "THE SPIRIT",
+    "category": [
+      "COMICS",
+      "COMIC STRIPS",
+      "NOIR",
+      "ILLUSTRATION",
+      "ART STYLE"
+    ],
+    "message": "Take a picture and transform the entire image into an authentic The Spirit comic-book illustration inspired by Will Eisner's distinctive visual storytelling and artwork. Completely redraw the subject and surrounding scene in the original comic's expressive noir style, with bold hand-inked contours, dramatic black shadows, high-contrast lighting, atmospheric textures, cinematic perspectives, and richly detailed urban environments. Preserve the subject's recognizable identity while making them look like a character who genuinely belongs in The Spirit's comic-book world. Integrate The Spirit himself into the scene when appropriate, using his recognizable costume and appearance. The result must look like an actual illustrated comic page or panel from this visual tradition, not a photograph with a noir filter.",
+    "randomizeOptions": false,
+    "options": [],
+    "additionalInstructions": "Reconstruct the entire subject as a hand-drawn comic character. Do not retain photographic facial features, realistic skin texture, photographic clothing, or photographic body details. Translate the subject's face, hairstyle, expression, anatomy, clothing, and pose into the distinctive expressive drawing language of The Spirit. Emphasize Will Eisner's recognizable visual techniques: dramatic chiaroscuro, deep black shapes, sharp pools of light, expressive ink contours, atmospheric shadows, textured architectural backgrounds, and cinematic staging. Use sophisticated black-and-white comic illustration or restrained period-appropriate color where suitable. The subject must remain recognizable through the illustrated interpretation. When The Spirit appears, depict him as a properly integrated comic character wearing his recognizable blue suit, fedora, domino mask, and gloves where appropriate. Do not substitute a generic masked superhero. Make the environment part of the same illustrated world, with period-appropriate city streets, interiors, rooftops, or other settings suited to the scene. Avoid generic superhero comic aesthetics, modern glossy digital coloring, anime, photorealism, and simple grayscale photo effects. The entire image must be redrawn in the comic's visual language. Any master prompt specifying the subject's pose, action, setting, mood, or other details takes priority over preset defaults."
   },
   {
     "name": "THE WIZARD OF ID",
