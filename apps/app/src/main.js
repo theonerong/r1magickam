@@ -5694,6 +5694,7 @@ async function loadStyles() {
     // Neither is on screen while the camera starts, and the "has the user got any
     // imports?" decision below reads IndexedDB, not this file. So load it in the
     // background and let the user into the program straight away.
+    window._presetsUpdateCheckRunning = true;
     window._presetsUpdateCheckPromise = (async () => {
       try {
         const loaded = await presetImporter.loadPresetsFromFile();
@@ -5703,6 +5704,17 @@ async function loadStyles() {
         await checkForPresetsUpdates(loaded);
       } catch (e) {
         console.log('Could not fetch preset count:', e);
+      } finally {
+        window._presetsUpdateCheckRunning = false;
+        // If Settings is showing "Checking for updates..." and nothing was
+        // found (or the check failed), put the normal text back.
+        const hintEl = document.getElementById('import-presets-hint');
+        if (hintEl && !window.hasPresetsUpdates && hintEl.dataset.checking === '1') {
+          hintEl.textContent = 'Load from our Library';
+          hintEl.style.color = '';
+          hintEl.style.fontWeight = '';
+        }
+        if (hintEl) delete hintEl.dataset.checking;
       }
     })();
 
@@ -5854,7 +5866,13 @@ async function checkForPresetsUpdates(preloadedPresets) {
         hintEl.textContent = `🔴 ${parts.join(' and ')} preset${(newCount + updatedCount) !== 1 ? 's' : ''} available`;
         hintEl.style.color = '#FF5722';
         hintEl.style.fontWeight = 'bold';
+        delete hintEl.dataset.checking;
       }
+      // The camera may already have started (and looked for this result)
+      // before this check finished. If so, show the camera-screen badge now
+      // instead of waiting for the camera to restart. If the camera has not
+      // started yet, initCamera will show it when it does.
+      if (window._cameraStartedOnce) showUpdatesIndicatorWhenVisible();
     }
   } catch (error) {
     console.log('Could not check for updates:', error);
@@ -5901,9 +5919,16 @@ async function recheckForUpdates() {
         hintEl.style.color = '';
         hintEl.style.fontWeight = '';
       }
+      delete hintEl.dataset.checking;
     }
   } catch (error) {
     console.log('Could not recheck for updates:', error);
+    // Don't leave "Checking for updates..." on screen if the check failed
+    const hintEl = document.getElementById('import-presets-hint');
+    if (hintEl && hintEl.dataset.checking === '1') {
+      hintEl.textContent = 'Load from our Library';
+      delete hintEl.dataset.checking;
+    }
   }
 }
 
@@ -11314,6 +11339,10 @@ async function initCamera() {
     
     // When the update check finishes (it may still be running), show the
     // indicator. If a menu is open at that moment, it waits for the camera screen.
+    // If the update check has not even started yet (Start was tapped quickly),
+    // the check shows the badge itself when it finishes — see the
+    // _cameraStartedOnce line in checkForPresetsUpdates.
+    window._cameraStartedOnce = true;
     const _updateCheck = window._presetsUpdateCheckPromise;
     window._presetsUpdateCheckPromise = null;
     Promise.resolve(_updateCheck).then(() => showUpdatesIndicatorWhenVisible());
@@ -13788,9 +13817,26 @@ function showSettingsSubmenu() {
   }
 
   // If the startup update check could not download the preset list, try again now.
+  let _startedRecheck = false;
   if (!window._cachedFactoryPresets && !window._factoryPresetsLoading &&
       presetImporter.getImportedPresets().length > 0) {
     recheckForUpdates();
+    _startedRecheck = true;
+  }
+
+  // While a check is still running, say so — otherwise the button shows the
+  // normal "Load from our Library" text and looks like there are no updates.
+  // The text is replaced as soon as the check finishes.
+  if (!window.hasPresetsUpdates &&
+      (_startedRecheck || window._presetsUpdateCheckRunning) &&
+      presetImporter.getImportedPresets().length > 0) {
+    const hintEl = document.getElementById('import-presets-hint');
+    if (hintEl) {
+      hintEl.textContent = 'Checking for updates...';
+      hintEl.style.color = '';
+      hintEl.style.fontWeight = '';
+      hintEl.dataset.checking = '1';
+    }
   }
   const menu = document.getElementById('unified-menu');
   

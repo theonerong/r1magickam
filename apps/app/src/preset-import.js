@@ -32,7 +32,11 @@ function _isEmptyPresetValue(v) {
 // rules never showed as UPDATED.
 export function presetsAreDifferent(a, b) {
   if (!a || !b) return a !== b;
-  // Cheap checks first — most real updates change the prompt text
+  // Fastest check first: a preset imported from the file and not changed since
+  // is written out exactly the same, so one native string comparison settles
+  // the vast majority of presets without the slower key-by-key check below.
+  try { if (JSON.stringify(a) === JSON.stringify(b)) return false; } catch (e) {}
+  // Cheap checks next — most real updates change the prompt text
   if ((a.message || '') !== (b.message || '')) return true;
   if ((a.additionalInstructions || '') !== (b.additionalInstructions || '')) return true;
   if (!!a.randomizeOptions !== !!b.randomizeOptions) return true;
