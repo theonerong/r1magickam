@@ -3463,13 +3463,15 @@
     "name": "ART BRUT",
     "category": [
       "ART",
-      "NAIVE",
-      "OUTSIDER"
+      "OUTSIDER ART",
+      "ART BRUT",
+      "EXPRESSIONISM",
+      "ILLUSTRATION"
     ],
-    "message": "Take a picture and transform the image into Art Brut (outsider art) style painting. Use raw lines, naive proportions, uneven coloring, and spontaneous visual energy while preserving the subject.",
-    "options": [],
+    "message": "Take a picture and transform the entire image into an expressive Art Brut artwork. Reconstruct the subject using unconventional anatomy, raw hand-drawn contours, bold symbolic marks, irregular shapes, tactile surfaces, and deliberately unpolished visual construction. Preserve the subject's recognizable identity while embracing the spontaneous, individual, unconventional character of outsider art. The result should look like an original expressive artwork rather than a polished digital illustration.",
     "randomizeOptions": false,
-    "additionalInstructions": ""
+    "options": [],
+    "additionalInstructions": "Completely reconstruct the subject using a raw, individualistic outsider-art visual language. Preserve recognizable identity through distinctive facial characteristics, hairstyle, pose, and silhouette, but allow proportions and anatomy to become deliberately unconventional. Use irregular hand-drawn lines, uneven contours, layered pigments, rough textures, symbolic marks, unusual color combinations, and expressive simplification. Maintain a coherent composition and ensure that the subject remains the clear focal point. The background may contain expressive patterns, symbols, and loosely constructed environmental details, but these must not obscure the subject. Avoid generic children's drawings, polished vector art, stereotyped depictions of mental illness, and imitation of any specific living artist. The result should feel spontaneous, personal, tactile, and artistically intentional. Any master prompt specifying the subject, pose, action, setting, mood, colors, or artistic direction overrides preset defaults."
   },
   {
     "name": "ART DECO",
@@ -3483,6 +3485,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "ART DECO PORTRAITURE",
+    "category": [
+      "ART",
+      "ART DECO",
+      "PORTRAIT",
+      "PAINTING",
+      "GEOMETRIC ART"
+    ],
+    "message": "Take a picture and transform the entire image into an elegant Art Deco portrait painting inspired by Tamara de Lempicka. Completely reconstruct the subject with sculptural geometric anatomy, sleek contours, polished painterly surfaces, elegant curves, dramatic directional lighting, and sophisticated 1920s–1930s glamour. Use carefully balanced geometric composition, rich colors, luxurious materials, and striking highlights. The subject should look like a figure painted for an iconic Art Deco portrait rather than a photograph with a stylized finish.",
+    "randomizeOptions": false,
+    "options": [],
+    "additionalInstructions": "Redraw the subject completely in the distinctive Art Deco portrait style associated with Tamara de Lempicka. Preserve recognizable identity while adapting facial structure, hairstyle, expression, anatomy, clothing, and pose into sleek sculptural forms. Use smooth but visibly painted surfaces, simplified geometric planes, carefully modeled curves, dramatic highlights, and controlled shadows. Favor sophisticated emerald, teal, cream, black, burgundy, gold, and other luxurious period-appropriate colors. Give fabrics, jewelry, hair, and architectural details a polished, sculptural appearance. The background must be designed as part of the same Art Deco composition, with elegant geometric architecture and carefully arranged forms when appropriate. Avoid generic retro posters, flat vector graphics, photorealism, anime, and modern glossy 3D rendering. Do not merely place an Art Deco frame around the original photograph. Any master prompt specifying the subject, pose, action, setting, mood, colors, or artistic direction overrides preset defaults."
   },
   {
     "name": "ARTE MADI",
@@ -3524,6 +3540,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Use clean professional comic-style rendering with polished digital painting techniques\n• Emphasize luminous skin rendering, elegant anatomy, and cinematic lighting\n• Preserve recognizable subject identity\n• Include premium illustration quality and stylized realism\n\nVISUAL STYLE:\n\n• High-end comic illustration realism\n• Clean digital rendering\n• Cinematic portrait lighting\n• Refined anatomy and facial structure\n• Professional cover-art appearance\n\nANTI-CHEAT:\n\n• Do NOT generate rough sketch aesthetics\n• Do NOT flatten the lighting\n• Do NOT create cartoon simplification\n• Do NOT remove polished rendering quality\n\nFINAL RESULT:\nThe final image must resemble a premium comic-book cover illustration featuring the recognizable subject with polished luminous rendering, cinematic lighting, refined anatomy, and elegant stylized realism."
+  },
+  {
+    "name": "ARTHUR RACKHAM FAIRYTALE",
+    "category": [
+      "ART",
+      "FAIRYTALE",
+      "BOOK ILLUSTRATION",
+      "PEN AND INK",
+      "WATERCOLOR"
+    ],
+    "message": "Take a picture and transform the entire image into an enchanting fairytale illustration inspired by Arthur Rackham. Completely redraw the subject with delicate pen-and-ink contours, expressive silhouettes, intricate natural forms, muted watercolor washes, whimsical details, and an atmospheric storybook composition. Integrate the subject into an enchanted illustrated world filled with twisted branches, mysterious foliage, fantastical architecture, and other appropriate fairytale elements. The finished image must resemble a beautifully crafted antique storybook illustration.",
+    "randomizeOptions": false,
+    "options": [],
+    "additionalInstructions": "Reconstruct the subject entirely in Arthur Rackham-inspired pen-and-ink and watercolor illustration. Preserve recognizable facial identity, hairstyle, expression, anatomy, clothing, and pose while adapting them into the distinctive storybook drawing style. Use delicate but expressive ink outlines, intricate crosshatching, twisted organic forms, unusual silhouettes, and carefully applied watercolor washes. Favor muted greens, browns, ochres, dusty blues, warm creams, and subtle accent colors. Natural forms may become whimsical and slightly anthropomorphic where appropriate, but must not overwhelm the subject. The background must be fully illustrated in the same technique. Avoid modern fantasy concept art, anime, glossy digital painting, and generic children's cartoon styles. Do not leave the subject photorealistic. Any master prompt specifying the subject, pose, action, setting, mood, colors, or artistic direction overrides preset defaults."
   },
   {
     "name": "ART MASHUP",
@@ -4701,6 +4731,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "BAROQUE (CANDLELIGHT)",
+    "category": [
+      "ART",
+      "FINE ART",
+      "BAROQUE",
+      "CHIAROSCURO",
+      "OIL PAINTING"
+    ],
+    "message": "Take a picture and transform the entire image into a dramatic Baroque painting built around candlelight and chiaroscuro, inspired by Georges de La Tour. Reconstruct the subject and environment through deep velvety darkness, warm concentrated illumination, sculptural shadows, subtle reflected light, and carefully modeled painted forms. The subject should emerge dramatically from the darkness, illuminated by a convincing candle or flame source when appropriate. Create an intimate, mysterious, timeless oil painting with extraordinary control of light and shadow.",
+    "randomizeOptions": false,
+    "options": [],
+    "additionalInstructions": "Repaint the entire subject and background. Preserve the subject's identity while reconstructing the face, anatomy, clothing, and surroundings using traditional Baroque oil-painting techniques. Lighting is the defining characteristic: use a concentrated warm flame-like light source, gradual falloff, deep shadows, warm reflected illumination, and carefully controlled highlights. Use dark brown, black, muted red, ochre, amber, and warm cream tones. Shadows must describe the actual form of the subject rather than obscure or deform it. When a candle is included, make it a physically plausible source of illumination rather than an arbitrary decorative object. Maintain a restrained, intimate composition and avoid excessive theatrical ornamentation. Do not leave the original photographic lighting or textures intact. Avoid modern cinematic color grading, digital glow effects, and photorealistic rendering. Any master prompt specifying the subject, pose, action, setting, mood, colors, or artistic direction overrides preset defaults."
   },
   {
     "name": "BAS-RELIEF",
@@ -10178,6 +10222,34 @@
     "additionalInstructions": "• Transform ONLY the subject.\n• Keep the background completely unchanged.\n• The entire subject must become a physical composition of food items resting flat on a thick, dark wood or slate charcuterie board that is grounded realistically in the environment.\n• No human tissue, eyes, hair or clothing fabric may remain; every feature must be substituted with real, texturally accurate food elements (glistening marbled fats, coarse cracker grains, waxy cheese rinds).\n• Identity must remain humorously yet accurately recognizable through the precise placement and contrast of the food items—using darker items like olives or folds of prosciutto to define eyes, eye sockets, jawlines, nose bridges, and expressions.\n• Maintain sharp, clean object boundaries where the gourmet ingredients meet the edges of the wooden board, showing no digital airbrush blending into the background.\n\nFINAL VALIDATION — Before producing the final image, verify ALL of the following:\n\n✓ ONLY the subject has been transformed.\n✓ The background remains completely unchanged.\n✓ The subject is a complete full-body charcuterie board arrangement.\n✓ The components are strictly authentic grazing board ingredients (cured meats, cheeses, crackers, fruits, nuts).\n✓ The layout accurately forms a recognizable facial likeness and identity.\n✓ If ANY answer is NO, regenerate the image until every requirement is satisfied."
   },
   {
+    "name": "CHARDIN REALISM",
+    "category": [
+      "ART",
+      "FINE ART",
+      "OIL PAINTING",
+      "REALISM",
+      "HISTORICAL ART"
+    ],
+    "message": "Take a picture and completely transform the entire image into an oil painting inspired by Jean-Baptiste-Siméon Chardin. Reconstruct the subject and environment using Chardin's intimate painterly realism, subtle natural lighting, carefully observed forms, restrained colors, tactile surfaces, delicate tonal transitions, and beautifully controlled brushwork. Give the subject a convincing physical presence within a quiet, sophisticated fine-art composition. The result must look like an authentic traditional oil painting rather than a photograph with a painted effect.",
+    "randomizeOptions": false,
+    "options": [],
+    "additionalInstructions": "Completely repaint the subject, including the face, hair, anatomy, clothing, and visible details. Preserve the subject's recognizable identity while translating their features into Chardin's traditional oil-painting technique. Use subtle warm browns, muted reds, soft creams, earthy greens, natural grays, and carefully balanced highlights. Emphasize convincing volume, delicate brushwork, understated reflections, and the tactile qualities of fabric, skin, wood, metal, and other surfaces. Avoid exaggerated impressionistic brushstrokes, modern digital painting, glossy photorealism, and generic portrait-painting conventions. Reconstruct the background in the same painterly language so the subject and environment belong to one coherent painting. Do not leave any portion of the original photograph visible. Any master prompt specifying the subject, pose, action, setting, mood, colors, or artistic direction overrides preset defaults."
+  },
+  {
+    "name": "CHARLEY HARPER MODERNIST ILLUSTRATION",
+    "category": [
+      "ART",
+      "MODERNIST ILLUSTRATION",
+      "GEOMETRIC ART",
+      "MINIMALISM",
+      "GRAPHIC ART"
+    ],
+    "message": "Take a picture and transform the entire subject into a clean, clever modernist illustration inspired by Charley Harper. Reconstruct the subject using simplified geometric shapes, carefully arranged color blocks, elegant silhouettes, precise curves, minimal visual elements, and playful but sophisticated stylization. Reduce complex anatomy and surface details into carefully designed shapes while preserving the subject's recognizable identity. The result should resemble a beautifully composed modernist illustration rather than a photograph with geometric shapes placed over it.",
+    "randomizeOptions": false,
+    "options": [],
+    "additionalInstructions": "Completely reconstruct the subject using a geometric modernist illustration language inspired by Charley Harper. Preserve the subject's identity through a recognizable silhouette, distinctive facial features, hairstyle, pose, and characteristic details. Simplify anatomy into carefully designed circles, curves, triangles, ovals, and other geometric shapes. Use clean edges, flat color fields, restrained shading, and a limited but expressive palette. The result should be visually intelligent and carefully composed, with no unnecessary details. If the subject is an animal, preserve species-specific anatomy while using the same simplified geometry. The background should be equally simplified and integrated into the composition. Avoid generic clip-art, crude vector icons, photorealism, anime, and random low-poly fragmentation. Do not simply place geometric shapes on top of the original image. Any master prompt specifying the subject, pose, action, setting, mood, colors, or artistic direction overrides preset defaults."
+  },
+  {
     "name": "CHARLIE'S ANGELS POSE",
     "category": [
       "TV",
@@ -12562,6 +12634,20 @@
     "additionalInstructions": "• Preserve the subject's actual face, facial features, age, and identity. Do not replace the subject with a generic soldier.\n• Completely reconstruct the subject's clothing into the selected military uniform. Include appropriate headgear, footwear, protective equipment, webbing, packs, and other visible accessories.\n• The subject must be an active participant in the selected scenario, not simply standing in front of a military background.\n• Include a clearly visible, historically or contextually appropriate weapon when specified by the option. Weapons must be carried naturally and safely, with believable proportions and positioning.\n• Keep weapons and combat action fictional and cinematic. Do not show graphic wounds, gore, executions, or identifiable real-world combatants.\n• Match the uniform, weapon, equipment, terrain, vehicles, and architecture to the selected historical period or modern scenario. Do not mix modern equipment into historical scenes.\n• Use convincing body posture, environmental interaction, lighting, depth, and atmospheric effects such as dust, smoke, rain, or battlefield haze where appropriate.\n• Preserve the subject's face clearly; helmets, goggles, and other equipment must not unnecessarily obscure identity.\n• Do not make the subject appear to be an actual named military service member or fabricate real military credentials.\n• The master prompt overrides preset defaults.\n\nFINAL VALIDATION:\n✓ Subject is dressed in a complete, coherent combat uniform.\n✓ Subject is visibly participating in the selected scenario.\n✓ Weapon and equipment match the period and role.\n✓ Background supports the scenario.\n✓ Subject's identity remains recognizable.\n✓ No graphic violence or gore."
   },
   {
+    "name": "COMBINE ART",
+    "category": [
+      "ART",
+      "MIXED MEDIA",
+      "COLLAGE",
+      "ASSEMBLAGE",
+      "EXPERIMENTAL ART"
+    ],
+    "message": "Take a picture and transform the entire image into a sophisticated mixed-media Combine artwork inspired by Robert Rauschenberg. Reconstruct the subject and environment as an integrated composition of painted surfaces, printed imagery, textured materials, layered visual fragments, and dimensional found-object elements. Combine drawing, painting, collage, and assemblage into one cohesive artwork. The subject must be actively reconstructed from the mixed media rather than remaining an unchanged photograph surrounded by pasted objects.",
+    "randomizeOptions": false,
+    "options": [],
+    "additionalInstructions": "Create a complete mixed-media reconstruction of the subject. Preserve recognizable identity while allowing the face, anatomy, clothing, and surroundings to be formed from a thoughtful combination of painted areas, printed textures, paper fragments, transferred imagery, drawn marks, and dimensional materials. The materials must be integrated into the physical and visual structure of the subject, not randomly attached as decoration. Use layered composition, unexpected material relationships, expressive color, rough textures, and deliberate visual contrasts. The result should evoke the experimental spirit of Combine painting while remaining visually coherent. Do not copy a specific existing Rauschenberg artwork or reproduce recognizable copyrighted compositions. Avoid generic scrapbook collage, simple photo cutouts, and untouched photographic faces. All parts must look like one intentional mixed-media artwork. Any master prompt specifying the subject, pose, action, setting, mood, colors, or artistic direction overrides preset defaults."
+  },
+  {
     "name": "COMEDY CLASSIC",
     "category": [
       "OPTIONS",
@@ -13821,6 +13907,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "• Use one continuous unbroken line.\n• The line must construct the actual subject rather than merely outline it.\n• The line may loop, overlap, spiral, cross itself, change direction, and revisit areas.\n• Use varying line weight only if it can plausibly belong to the same continuous stroke.\n• Facial features must emerge from the continuous line.\n• Preserve recognizable identity.\n• Use intelligent crossings and overlaps to create depth.\n• Avoid multiple disconnected line drawings.\n• Avoid ordinary contour tracing.\n• The line should describe internal structures as well as outer contours.\n• The result should look like an accomplished continuous-line artwork.\n\nMASTER PROMPT RULE:\n• Incorporate master-prompt information while maintaining the single continuous-line construction.\n\nFINAL VALIDATION:\n✓ One continuous line constructs the subject.\n✓ The line is not broken into disconnected pieces.\n✓ Internal and external structures are represented.\n✓ Subject remains recognizable.\n✓ If ANY answer is NO, regenerate."
+  },
+  {
+    "name": "CONTINUOUS-LINE DRAWING",
+    "category": [
+      "ART",
+      "DRAWING",
+      "LINE ART",
+      "MINIMALISM",
+      "ILLUSTRATION"
+    ],
+    "message": "Take a picture and transform the subject into an expressive continuous-line drawing. Reconstruct the subject using elegant flowing lines that travel through the composition, describing the face, hair, anatomy, clothing, and pose through connected, deliberate strokes. Use graceful curves, overlapping contours, carefully controlled line weight, and intentional negative space. The result should be a sophisticated hand-drawn artwork that remains recognizable, not a random tangle of lines.",
+    "randomizeOptions": false,
+    "options": [],
+    "additionalInstructions": "The subject must be reconstructed from continuous or visually connected flowing linework. Preserve recognizable identity by accurately describing the facial outline, eyes, nose, mouth, hairstyle, distinctive features, body proportions, and pose. Lines should travel naturally through the composition, connecting forms where artistically possible while remaining readable and controlled. Use variations in thickness, curvature, density, and direction to create depth and emphasis. The drawing may use a restrained monochrome palette or a small number of carefully selected colors. Do not fill the image with random scribbles, disconnected doodles, or decorative loops that obscure the subject. Avoid photorealism, ordinary contour tracing, clip-art, and generic wireframe rendering. The background should remain minimal or be reconstructed with the same flowing-line approach. The finished image must look intentionally composed and artistically elegant. Any master prompt specifying the subject, pose, action, setting, mood, colors, or artistic direction overrides preset defaults."
   },
   {
     "name": "COOKIE",
@@ -17889,6 +17989,20 @@
     "additionalInstructions": "Prioritize authenticity, atmosphere, personality, and visual storytelling. The result should feel like a real moment captured by an experienced editorial photographer, not a generic stock photo or posed corporate lifestyle advertisement. Do not automatically add people, pets, food, products, or decorative objects. Do not change the subject's clothing, age, identity, or appearance without direction from the master prompt. Avoid exaggerated fashion poses, runway aesthetics, artificial smiles, excessive retouching, and overly perfect staged environments. Use environmental context only when it supports the requested scene and subject. Master-prompt instructions concerning subject, pose, setting, mood, action, artistic direction, and selection override all preset defaults."
   },
   {
+    "name": "EDMUND DULAC ILLUSTRATION",
+    "category": [
+      "ART",
+      "FAIRYTALE",
+      "BOOK ILLUSTRATION",
+      "WATERCOLOR",
+      "DECORATIVE ART"
+    ],
+    "message": "Take a picture and transform the entire image into an ornate fairytale illustration inspired by Edmund Dulac. Completely reconstruct the subject and environment using luminous watercolor, jewel-like pigments, elegant decorative patterns, stylized figures, intricate details, and refined storybook composition. Create an atmosphere of exotic fantasy and timeless illustrated storytelling, with richly layered color and beautifully controlled decorative surfaces.",
+    "randomizeOptions": false,
+    "options": [],
+    "additionalInstructions": "Completely redraw and repaint the subject in the distinctive illustrated tradition associated with Edmund Dulac. Preserve the subject's recognizable identity while adapting facial features, hairstyle, anatomy, clothing, and pose into elegant stylized forms. Use luminous watercolor, carefully layered pigments, rich jewel tones, decorative details, delicate contours, and sophisticated color transitions. Use intricate ornamental patterns and atmospheric environments where appropriate, but keep the subject clearly recognizable and central. The background must be reconstructed in the same visual language, with consistent watercolor texture and decorative treatment. Avoid modern fantasy digital art, anime, photorealism, and generic children's illustration. Do not simply apply a watercolor filter to the original photograph. Any master prompt specifying the subject, pose, action, setting, mood, colors, or artistic direction overrides preset defaults."
+  },
+  {
     "name": "EDO LANDSCAPE",
     "category": [
       "ART",
@@ -19546,6 +19660,20 @@
     ],
     "randomizeOptions": true,
     "additionalInstructions": "The subject's core identity and recognizable features must always be preserved. Only the facial expression changes. The transformation must be dramatic and exaggerated enough that the expression is immediately and unmistakably readable. Do not make subtle changes — the expression should be the most extreme possible version of itself while still looking like the same person."
+  },
+  {
+    "name": "EXPRESSIVE INK STORYBOOK",
+    "category": [
+      "ART",
+      "ILLUSTRATION",
+      "INK DRAWING",
+      "STORYBOOK",
+      "BLACK AND WHITE"
+    ],
+    "message": "Take a picture and transform the entire image into a richly expressive hand-inked storybook illustration. Completely reconstruct the subject and environment using confident flowing contours, varied line weights, intricate ink details, expressive black shapes, delicate hatching, and carefully controlled negative space. Create the appearance of an original traditional illustrated story, with personality, movement, and atmosphere conveyed through the drawing itself.",
+    "randomizeOptions": false,
+    "options": [],
+    "additionalInstructions": "Redraw the entire subject using expressive traditional ink illustration. Preserve recognizable facial identity, hairstyle, expression, anatomy, clothing, and pose while translating every feature into deliberate hand-drawn marks. Use varied line weights, expressive contours, fine hatching, crosshatching, carefully placed black shapes, and subtle imperfections associated with hand-created ink artwork. Linework should describe the actual structure and volume of the subject rather than becoming random decorative scribbling. Use monochrome black ink or restrained color washes if appropriate to the master prompt. Reconstruct the background using the same illustrative technique. Avoid generic comic-book styling, mechanical vector lines, photorealism, anime, and simple edge-detection filters. The final image should look like a complete, carefully illustrated storybook plate. Any master prompt specifying the subject, pose, action, setting, mood, colors, or artistic direction overrides preset defaults."
   },
   {
     "name": "EXTREME DETAIL MODE",
@@ -24992,6 +25120,20 @@
     "additionalInstructions": "The engraving style must be authentic to 19th-century book illustration. The Gothic atmosphere should be genuine — romantic, mysterious, slightly threatening."
   },
   {
+    "name": "GOUACHE EDITORIAL ILLUSTRATION",
+    "category": [
+      "ART",
+      "ILLUSTRATION",
+      "GOUACHE",
+      "EDITORIAL ART",
+      "PAINTING"
+    ],
+    "message": "Take a picture and transform the entire image into a sophisticated gouache editorial illustration. Completely redraw the subject using opaque matte paint, confident brushstrokes, simplified but expressive shapes, layered pigments, and carefully composed color fields. Use the tactile quality of traditional gouache, with crisp painted edges, subtle brush texture, and rich opaque colors. The result should look like an original commissioned editorial illustration, not a photograph with a painted filter.",
+    "randomizeOptions": false,
+    "options": [],
+    "additionalInstructions": "Completely reconstruct the subject and background in traditional gouache. Translate the subject's face, hairstyle, expression, anatomy, clothing, and pose into expressive painted forms while preserving recognizable identity. Use opaque paint layers, matte surfaces, confident brushstrokes, controlled edges, simplified shapes, and carefully balanced color relationships. Maintain enough facial detail to identify the subject without retaining photographic skin texture or photographic realism. Use subtle variations in pigment, visible brush marks, and layered color transitions. The background must be painted in the same editorial illustration style and should complement the subject. Avoid glossy digital painting, watercolor transparency, photorealism, anime, and generic vector artwork. Do not simply paint over the original photograph with a translucent effect. Any master prompt specifying the subject, pose, action, setting, mood, colors, or artistic direction overrides preset defaults."
+  },
+  {
     "name": "GOUACHE ILLUSTRATION",
     "category": [
       "ART",
@@ -26000,6 +26142,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "IDENTITY PRESERVATION:\n• Facial structure, proportions, and expression must remain clearly recognizable\n• No generic gummy humanoids\n• No simplification of facial features\n• The subject must still look unmistakably like themselves\n\nANTI-LAZINESS RULES:\n• NO real skin visible anywhere\n• NO realistic hair mixed with candy\n• NO smooth plastic or wax textures\n• NO partial transformations\n• Every visible surface must be candy-based\n\nLIGHTING & REALISM:\n• Studio-style lighting emphasizing translucency and gloss\n• Subsurface scattering visible through the gummy material\n• Sticky reflections and soft highlights\n• Slight imperfections like bubbles or sugar granules\n\nPOSE & PRESENTATION:\n• Subject posed like a product reveal or character portrait\n• Neutral or playful expression\n• Clean background or candy-factory-style environment\n\nFINAL RESULT:\nThe image should look like a hyper-realistic photograph of a life-sized gummy candy sculpture manufactured to resemble the subject exactly — fully edible, glossy, translucent, and unmistakably made of gummies."
+  },
+  {
+    "name": "GUSTAVE DORÉ ENGRAVING",
+    "category": [
+      "ART",
+      "ENGRAVING",
+      "BLACK AND WHITE",
+      "ILLUSTRATION",
+      "CLASSICAL ART"
+    ],
+    "message": "Take a picture and transform the entire image into an extraordinarily detailed black-and-white engraving inspired by Gustave Doré. Reconstruct the subject and environment entirely through fine engraved lines, intricate crosshatching, layered tonal marks, dramatic black shadows, luminous highlights, and monumental illustrative composition. Create the appearance of an original nineteenth-century engraved book illustration, with extraordinary detail and dramatic visual storytelling.",
+    "randomizeOptions": false,
+    "options": [],
+    "additionalInstructions": "The entire image must be rebuilt using engraving marks. Do not retain photographic pixels, grayscale photography, or a simple crosshatch filter. Construct the subject's face, hair, anatomy, clothing, and surrounding environment from dense networks of carefully directed engraved lines. Use varied line thickness, fine parallel hatching, crosshatching, stippled tonal transitions, deep black masses, and precise white highlights. Maintain recognizable facial identity and subject details through the engraved interpretation. Use the dramatic contrast, elaborate compositions, monumental scale, and intricate craftsmanship associated with Gustave Doré's nineteenth-century illustrations. Avoid modern comic-book inking, rough sketching, vector line art, and digital grayscale painting. The background must use the same engraving technique. The final result should resemble a genuine antique illustrated book plate. Any master prompt specifying the subject, pose, action, setting, mood, or artistic direction overrides preset defaults."
   },
   {
     "name": "GUTAI GROUP",
@@ -34464,7 +34620,7 @@
     "message": "Take a picture and transform the image into the artistic style inspired by Mary Blair.\n\nCORE CONCEPT (CRITICAL):\n• The scene is reinterpreted in a whimsical, mid-century modern illustration style\n• Subject(s) remain recognizable but stylized\n• Emphasis on bold color, simple shapes, and playful composition\n\nSTYLE CHARACTERISTICS:\n• Flat or minimally shaded shapes\n• Strong geometric simplification\n• Stylized proportions and forms\n• Decorative and graphic composition\n\nCOLOR & TONE:\n• Bright, vibrant, and unexpected color combinations\n• High contrast with harmonious palettes\n• Use of solid color blocks\n\nARTISTIC INTERPRETATION:\n• Simplify details into bold shapes and patterns\n• Add whimsical or storybook-like elements\n• Emphasize charm, imagination, and visual rhythm\n\nENVIRONMENT:\n• Backgrounds become stylized and graphic\n• Elements may appear flattened or layered decoratively\n\nSTYLE:\n• Playful, imaginative, and iconic\n• Clean, bold, and highly stylized\n• Mid-century illustration aesthetic",
     "options": [],
     "randomizeOptions": false,
-    "additionalInstructions": "FINAL RESULT:\nThe image should look like a whimsical, colorful illustration with simplified shapes and bold design, capturing a playful mid-century artistic style while keeping the subject recognizable."
+    "additionalInstructions": "Reconstruct the subject entirely using a Mary Blair-inspired color and illustration language. Preserve recognizable identity while simplifying facial features, hairstyle, anatomy, clothing, and pose into stylized geometric forms. Use bold flat colors, unusual but harmonious color combinations, strong silhouettes, playful proportions, simplified perspective, and carefully arranged shapes. The artwork should have the charm and visual confidence of mid-century concept illustration, with a clear sense of design and composition. Reconstruct the background using the same color-block approach, with expressive architecture, landscapes, or environmental shapes as appropriate. Avoid generic Disney-like character copying, modern 3D animation, photorealism, anime, and glossy digital rendering. Do not reproduce a specific existing Mary Blair illustration. The subject and setting must share one consistent visual language. Any master prompt specifying the subject, pose, action, setting, mood, colors, or artistic direction overrides preset defaults. \n FINAL RESULT:\nThe image should look like a whimsical, colorful illustration with simplified shapes and bold design, capturing a playful mid-century artistic style while keeping the subject recognizable."
   },
   {
     "name": "MARY WORTH",
@@ -37420,10 +37576,10 @@
       "FANTASY",
       "ART STYLE"
     ],
-    "message": "Take a picture and transform the entire image into an authentic Moomin illustration inspired by Tove Jansson's distinctive artwork. Completely redraw the subject as a native character in the Moomin world, using delicate hand-drawn outlines, soft rounded forms, expressive simplicity, gentle watercolor or ink-and-wash textures, and a whimsical storybook atmosphere. Integrate the subject naturally alongside recognizable Moomin characters, including Moomintroll and other inhabitants of Moominvalley when appropriate. Create a charming illustrated scene that feels like an original Moomin storybook or comic illustration. The subject must be fully illustrated and must not remain photographic.",
+    "message": "Take a picture and transform the entire image into a hand-drawn mid-century Nordic storybook illustration, as if drawn with a fine dip pen by a Finnish illustrator of the 1940s to 1960s for a classic children's novel or a daily newspaper comic strip. Completely redraw the subject as a charming storybook character: a soft, rounded, gently simplified figure with a slightly large head, small dot or oval eyes, a tiny understated mouth, short rounded limbs, and an expressive posture that carries most of the emotion. Render everything in delicate, slightly trembling black ink line with fine hatching and crosshatching, deep pools of solid black for night, forest, and shadow, and generous areas of plain white paper. Where color is used, apply it as quiet, transparent watercolor or flat, muted printed color. The mood is gentle, curious, a little melancholy, and full of quiet wonder. The subject must be fully illustrated and must not remain photographic.",
     "randomizeOptions": false,
     "options": [],
-    "additionalInstructions": "Reconstruct the entire subject as a native illustrated character in Tove Jansson's Moomin visual world. Translate the subject's recognizable face, hairstyle, expression, body, clothing, and pose into the simple, expressive, gently rounded forms characteristic of the original illustrations. Preserve recognizable identity through carefully adapted facial features and distinctive visual details without retaining photographic skin, realistic anatomy, or photographic textures. Use delicate hand-drawn ink contours, subtle line variation, soft watercolor or ink-and-wash coloring, restrained natural colors, and the quiet charm of traditional illustrated storytelling. Integrate Moomintroll and other recognizable Moominvalley characters naturally into the scene. Moomintroll must retain his familiar white, rounded hippopotamus-like appearance, expressive eyes, and characteristic silhouette. Do not turn the subject into an unrelated animal simply because Moomin characters are animal-like; adapt the subject into the Moomin illustration style while retaining their recognizable identity. Create an environment consistent with Moominvalley, such as its distinctive house, forest, river, seaside, meadow, or other storybook setting, unless the master prompt specifies a different setting. Every character and background element must share the same hand-drawn illustration technique. Avoid generic children's cartoons, modern 3D animation, anime, glossy digital painting, photorealism, and overly simplified clip-art. The result should feel like an authentic Tove Jansson Moomin illustration. Any master prompt specifying the subject's pose, action, setting, mood, or other details takes priority over preset defaults."
+    "additionalInstructions": "LINE AND TECHNIQUE: Use a thin, flexible dip-pen line that swells and tapers slightly, with small natural wobbles and broken strokes that show the hand of the artist. Build tone only through ink: parallel hatching, crosshatching, scribbled texture for grass and foliage, stippled dots for sand and mist, and bold solid black shapes for night skies, dense pine forests, dark water, and interior shadows. Leave large areas of untouched cream or white paper so the drawing breathes. Outlines are clean and economical; never over-render. COLOR: Choose one approach and keep it consistent. Either pure black ink on cream paper, or ink with soft transparent watercolor washes, or the flat limited palette of a vintage printed comic strip. Favor muted sea blues, slate grey-blues, moss and pine greens, ochre, sandy beige, dusty rose, pale butter yellow, and soft lavender, with occasional small accents of warm red. No saturated or neon color, no gradients, no glossy highlights. THE SUBJECT: Translate the subject into a simplified, rounded storybook figure while keeping them recognizable: keep their hairstyle as a distinctive simplified shape, their glasses, beard, freckles, or other signature features as small clear marks, their clothing as simple shapes with one or two characteristic details (a striped scarf, a wide-brimmed hat, a knitted jumper, an apron, a cap), and their real pose and expression. Faces are minimal, with small eyes and a few lines, but the subject's character and likeness must still read clearly. Keep the subject human; do not turn them into an animal or creature. Small props add personality: a lantern, a fishing rod, a basket, a book, a walking stick, a mug, a harmonica, a butterfly net. SETTING AND COMPOSITION: Redraw the background as a hand-drawn Nordic landscape that suits the photo: rocky granite islands of a Finnish archipelago, a small wooden jetty with a rowing boat, a lonely lighthouse, wind-bent pines, birch woods, wildflower meadows, a cozy wooden cottage interior with a tiled stove and patterned rugs, or a stormy sea under a vast sky. Figures are often small within large, atmospheric spaces, with weather and seasons strongly felt: snowfall, summer twilight, fog, rain, moonlight, the first spring sun. Compositions may use comic-strip framing, with a simple ruled panel border, or a single full-page book illustration vignette with edges that fade into the paper. Everything, including people, objects, plants, and sky, must share the same hand-drawn ink technique so the image reads as one coherent drawing. AVOID: Do not include any existing cartoon characters, creatures, or mascots from any published book, comic, or animation; any additional figures must be original. Avoid modern digital cartoons, anime, 3D rendering, glossy digital painting, vector clip art, heavy uniform outlines, photographic textures, and photorealism. Do not add text, titles, signatures, or speech bubbles unless the master prompt asks for them. Any master prompt specifying the subject's pose, action, setting, mood, or other details takes priority over preset defaults."
   },
   {
     "name": "MOON",
@@ -39648,6 +39804,20 @@
     "additionalInstructions": "RESTRICTIONS:\n• No cartoon or animated style\n• No modern elements or anachronisms\n• No text overlays or captions\n• Subject must remain recognizable\n• Respect cultural mythology authentically\n• No mixing incompatible mythologies\n• Photorealistic, not stylized\n\nFINAL RESULT:\nThe image should transform the subject into the selected authentic mythological creature while maintaining their recognizable identity. The creature, setting, and atmosphere should reflect genuine mythological traditions from the appropriate culture."
   },
   {
+    "name": "N. C. WYETH ADVENTURE ILLUSTRATION",
+    "category": [
+      "ART",
+      "ADVENTURE ILLUSTRATION",
+      "BOOK ILLUSTRATION",
+      "PAINTING",
+      "CLASSIC ART"
+    ],
+    "message": "Take a picture and transform the entire image into a dramatic adventure-book illustration inspired by N. C. Wyeth. Completely reconstruct the subject using expressive painterly brushwork, powerful poses, dynamic composition, bold lighting, rich colors, and strong narrative storytelling. Give the subject the commanding presence of a central character in a classic illustrated adventure, with a fully painted environment that supports the action and atmosphere.",
+    "randomizeOptions": false,
+    "options": [],
+    "additionalInstructions": "Repaint the subject entirely in the tradition of N. C. Wyeth's classic adventure illustrations. Preserve recognizable identity, facial characteristics, hairstyle, anatomy, clothing, and pose while translating them into expressive traditional painting. Use bold but controlled brushwork, strong directional lighting, rich colors, dramatic shadows, dynamic gestures, and carefully composed narrative staging. The subject must look like a character in a story rather than a photograph with paint applied. The background should establish a convincing adventure setting when appropriate, with carefully painted architecture, landscapes, ships, interiors, or other environmental elements. Maintain a strong focal hierarchy and readable silhouette. Avoid modern digital fantasy art, glossy photorealism, anime, and generic movie-poster compositions. Reconstruct the complete image as one unified traditional illustration. Any master prompt specifying the subject, pose, action, setting, mood, colors, or artistic direction overrides preset defaults."
+  },
+  {
     "name": "N64 BLUR FILTER",
     "category": [
       "RETRO",
@@ -41815,7 +41985,7 @@
     "message": "Take a picture and transform the image into an Op Art optical illusion composition.\n• Replace forms with repeating patterns\n• Create visual vibration and motion illusions\n\nSCENE COMPOSITION:\n• Pattern-dominated layout\n• Illusion of depth or movement\n\nCAMERA & EFFECTS:\n• High contrast rendering\n• Pattern distortion effects\n\nSTYLE:\n• Black and white or limited palette\n• Geometric repetition\n• Optical illusion focus",
     "options": [],
     "randomizeOptions": false,
-    "additionalInstructions": "FINAL RESULT:\nA visually dynamic image that appears to move or vibrate due to optical illusion patterns.\n\nCORE REQUIREMENTS:\n• STRONG optical illusion\n• HIGH contrast\n• PATTERN dominance"
+    "additionalInstructions": "The subject must be reconstructed from optical patterns that conform to the subject's actual forms. Use repeated lines, curved grids, concentric patterns, geometric bands, alternating light and dark areas, and carefully controlled distortions. Pattern direction must follow facial structure, limbs, torso, clothing, and other anatomical features so the subject remains identifiable. Use strong contrast and precise spatial relationships to create vibration, apparent movement, and optical depth. The patterns must form the subject itself, not act as a decorative overlay. Preserve the original subject's recognizable silhouette and essential facial characteristics through the optical construction. Avoid random stripes, simple moiré overlays, generic psychedelic effects, and patterns that completely destroy the subject's anatomy. The background should complement the optical composition without competing with the subject. Any master prompt specifying the subject, pose, action, setting, mood, colors, or artistic direction overrides preset defaults.\n FINAL RESULT:\nA visually dynamic image that appears to move or vibrate due to optical illusion patterns.\n\nCORE REQUIREMENTS:\n• STRONG optical illusion\n• HIGH contrast\n• PATTERN dominance"
   },
   {
     "name": "OPALOTYPE",
@@ -43271,6 +43441,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "PAUL KLEE WHIMSICAL ART",
+    "category": [
+      "ART",
+      "MODERN ART",
+      "ILLUSTRATION",
+      "ABSTRACT FIGURATION",
+      "FINE ART"
+    ],
+    "message": "Take a picture and transform the entire image into a whimsical figurative painting inspired by Paul Klee. Completely reconstruct the subject using playful geometric forms, delicate hand-drawn lines, symbolic shapes, translucent color blocks, unusual proportions, and imaginative visual relationships. Blend abstraction and recognizable figurative elements into a sophisticated, poetic artwork with the charm of a hand-created modernist painting.",
+    "randomizeOptions": false,
+    "options": [],
+    "additionalInstructions": "Redraw the subject entirely in a Paul Klee-inspired visual language. Preserve recognizable identity through adapted facial features, hairstyle, silhouette, pose, and distinctive visual characteristics. Use simplified geometric anatomy, symbolic marks, delicate linework, playful shapes, translucent or softly layered colors, and carefully balanced abstract forms. The subject must remain recognizable even though its anatomy is stylized. Use a thoughtful palette of warm earth tones, muted reds, yellows, blues, greens, and carefully placed contrasting colors. Reconstruct the background as part of the same imaginative composition. Avoid generic children's drawings, crude stick figures, random abstract shapes, photorealism, and modern cartoon styles. The final artwork should feel playful but artistically sophisticated, with visible hand-drawn character. Any master prompt specifying the subject, pose, action, setting, mood, colors, or artistic direction overrides preset defaults."
   },
   {
     "name": "PEACOCKING",
@@ -45289,15 +45473,28 @@
   {
     "name": "POCHOIR STENCIL PRINT",
     "category": [
+      "OPTIONS",
       "ART",
       "PRINTMAKING",
+      "STENCIL ART",
       "DECORATIVE",
-      "ART DECO"
+      "ART DECO",
+      "VINTAGE ILLUSTRATION",
+      "FASHION ART"
     ],
-    "message": "Take a picture and transform the image into a pochoir stencil print — the luxurious hand-colored printing technique used for Art Deco fashion plates and fine art reproductions in 1920s-30s Paris. The image should show the characteristic qualities: perfectly flat, opaque gouache colors applied through hand-cut metal stencils with razor-sharp edges, rich saturated pigments, and the slight buildup of paint at stencil edges. Colors should be the sophisticated Art Deco palette: gold, black, coral, jade green, and silver. The overall effect should be luxurious, precise, and unmistakably Art Deco — the highest quality of hand-colored printing.",
-    "options": [],
-    "randomizeOptions": false,
-    "additionalInstructions": "STYLE ENFORCEMENT:\n• Preserve subject identity in pochoir stencil style\n• Perfectly flat, opaque gouache colors\n• Razor-sharp stencil edges\n• Rich, saturated pigments with slight edge buildup\n• Art Deco palette: gold, black, coral, jade, silver\n• Reference Gazette du Bon Ton and George Barbier fashion plates\n• Hand-cut metal stencil precision\n• Luxurious, sophisticated aesthetic\n• Multiple stencil layers creating complex color compositions\n• The overall effect should be luxurious, precise, and Art Deco"
+    "message": "Take a picture and transform the entire image into a refined vintage pochoir stencil print — the hand-colored printing technique of early twentieth-century French fashion plates, decorative art publications, and fine art reproductions. Reconstruct the subject and environment using individually applied stencil colors: opaque gouache laid through hand-cut stencils, crisp hand-colored shapes, elegant outlines, carefully separated color areas, graceful silhouettes, and subtle paper texture, combined into a beautifully controlled color composition.\nIDENTITY & RECONSTRUCTION RULES (NON-NEGOTIABLE):\n• Completely reconstruct the subject through the traditional pochoir stencil-coloring technique — not a photograph with flat colors applied\n• Redraw the face, hair, anatomy, clothing, and accessories as carefully defined shapes with distinct hand-applied color areas\n• Preserve subject identity through recognizable facial structure, hairstyle, expression, and silhouette\n• Reconstruct the background through the same stencil-like shapes and carefully arranged color areas\n\nTECHNIQUE (ALL OPTIONS):\n• Clean, sharp boundaries between pigments, with delicate outlines\n• Multiple stencil layers building up complex color compositions\n• A refined printed-paper surface with subtle texture\n• Apply the selected option for palette, finish, and mood",
+    "randomizeOptions": true,
+    "options": [
+      {
+        "id": "001",
+        "text": "Art Deco Luxury Plate — the most luxurious 1920s–1930s Paris fashion-plate look, in the manner of the Gazette du Bon Ton and George Barbier. Use perfectly flat, opaque gouache applied through hand-cut metal stencils, with razor-sharp edges, rich saturated pigments, and a slight buildup of paint along every stencil edge. Keep strictly to the Art Deco palette of gold, black, coral, jade green, and silver, with metallic gold and silver as true printed surfaces. Give the subject a glamorous, elongated fashion-plate silhouette with stylized drapery, fans, feathers, jewelry, or sleek period accessories where they suit the image. Make the background a stylized Deco setting of geometric patterns, sunbursts, arches, or decorative panels. The effect is luxurious, precise, sophisticated, and unmistakably Art Deco — the highest quality of hand-colored printing."
+      },
+      {
+        "id": "002",
+        "text": "Period Pochoir Illustration — a quieter, more versatile early-twentieth-century French illustrated-print look that suits any subject and setting without turning it into a fashion plate. Use flat, hand-applied stencil colors with subtle hand-dabbed tonal variation inside selected shapes (a softly graded cheek, a shaded fold, a gently mottled sky), but never airbrushed gradients. Choose an elegant period-inspired palette that fits the photo, such as soft rose, lavender, sage, butter yellow, powder blue, terracotta, and ivory, accented with black line. Keep the subject's own clothing, pose, and surroundings, translated into graceful simplified shapes. Show the printed paper softly between and beneath the colors. The effect is refined, delicate, and charming, like a hand-colored plate from a decorative arts book of the period."
+      }
+    ],
+    "additionalInstructions": "FINAL RESULT:\nThe whole image must look like a genuine hand-colored pochoir print in the selected style — for example: a portrait reimagined as an Art Deco Luxury Plate, or a street scene reimagined as a Period Pochoir Illustration — with the subject clearly recognizable and every part of the image rebuilt in stencil color. Avoid airbrushed gradients, generic watercolor, modern vector graphics, and photographic textures. Any master prompt specifying the subject, pose, action, setting, mood, colors, or artistic direction overrides preset defaults."
   },
   {
     "name": "POINTILLISM",
@@ -46043,10 +46240,10 @@
       "PAINTING",
       "ROMANTIC"
     ],
-    "message": "Take a picture and transform the image into Pre-Raphaelite style painting. Vivid colors, detailed textures, medieval or literary elements, and highly idealized subject portrayal.",
-    "options": [],
+    "message": "Take a picture and transform the entire image into a richly detailed Pre-Raphaelite painting. Reconstruct the subject with the intricate realism, luminous colors, romantic atmosphere, expressive poses, flowing fabrics, elaborate natural details, and meticulous craftsmanship associated with the Pre-Raphaelite movement. Use jewel-like colors, detailed botanical elements, carefully rendered hair, decorative patterns, and richly composed backgrounds. The subject must look like the central figure in an authentic nineteenth-century Pre-Raphaelite painting.",
     "randomizeOptions": false,
-    "additionalInstructions": ""
+    "options": [],
+    "additionalInstructions": "Redraw and repaint the entire subject rather than applying a painting filter. Preserve recognizable facial identity, hairstyle, expression, body structure, and distinctive characteristics while translating them into the Pre-Raphaelite visual language. Use meticulous naturalistic detail, luminous skin tones, elaborate hair, intricate textiles, delicate flowers, foliage, and carefully observed natural surroundings. Favor rich emerald greens, ruby reds, deep blues, golds, and other saturated jewel tones. Give the composition the refined, romantic, highly detailed quality of historical Pre-Raphaelite painting. Avoid generic fantasy art, modern digital illustration, anime, exaggerated beauty filters, and loose impressionistic brushwork. The background must be fully reconstructed using the same artistic technique. Do not retain photographic portions of the source image. Any master prompt specifying the subject, pose, action, setting, mood, colors, or artistic direction overrides preset defaults."
   },
   {
     "name": "PRECIOUS MOMENTS",
@@ -49310,6 +49507,20 @@
     ],
     "randomizeOptions": true,
     "additionalInstructions": "SCENE CONSTRUCTION (MANDATORY):\n\n• Build ONE specific cinematic scene matching the selected option\n• The environment must dominate the composition\n• Use concrete visual objects instead of vague cinematic wording\n• Include recognizable props, architecture, vehicles, clothing, and atmosphere appropriate to the selected film\n\nCHARACTER INTEGRATION:\n\n• Subject must feel physically present inside the scene\n• Supporting characters from the selected movie may appear naturally nearby\n• Subject should wear clothing appropriate to the environment\n\nVISUAL STYLE:\n\n• Strong environmental depth\n• Atmospheric haze and volumetric lighting\n• Large-scale cinematic composition\n• Rich textured realism\n• Practical light sources\n• Film-still realism\n\nANTI-CHEAT:\n\n• Do not reuse generic battle compositions\n• Do not force warfare into peaceful options\n• Do not ignore the selected environment\n• Do not generate vague generic movie scenes\n\nQUALITY:\n\n• Highly recognizable movie-inspired environments\n• Strong visual storytelling\n• Authentic cinematic production design\n• Seamless integration of subject into scene"
+  },
+  {
+    "name": "RIMPA PAINTING",
+    "category": [
+      "ART",
+      "JAPANESE ART",
+      "DECORATIVE PAINTING",
+      "GOLD LEAF",
+      "HISTORICAL ART"
+    ],
+    "message": "Take a picture and transform the entire image into a traditional Japanese Rimpa-school painting. Reconstruct the subject and environment with bold flowing shapes, elegant natural motifs, stylized flowers and foliage, decorative patterns, refined negative space, and luminous gold or silver decorative surfaces. Use the distinctive combination of simplified forms, expressive brushwork, rich pigments, and sophisticated decorative composition associated with Rimpa art.",
+    "randomizeOptions": false,
+    "options": [],
+    "additionalInstructions": "Completely redraw the subject in the visual language of traditional Japanese Rimpa painting. Preserve recognizable identity, pose, and important visual characteristics while translating anatomy, clothing, hair, and expression into elegant stylized forms. Use sweeping organic contours, carefully placed color fields, stylized plants, flowers, waves, clouds, and other decorative motifs where appropriate. Gold and silver leaf effects may be used as actual compositional surfaces, not merely as a frame or overlay. Favor rich mineral pigments, deep greens, blues, reds, black ink, gold, and silver. Use deliberate negative space and asymmetrical balance. Reconstruct the background in the same decorative painting tradition. Avoid generic anime, modern Japanese cartoon styling, photographic textures, and random ornamental overlays. The subject must remain the central recognizable figure. Any master prompt specifying the subject, pose, action, setting, mood, colors, or artistic direction overrides preset defaults."
   },
   {
     "name": "RING FLASH FASHION",
@@ -63346,6 +63557,20 @@
     "additionalInstructions": ""
   },
   {
+    "name": "VASARELY GEOMETRIC ILLUSION",
+    "category": [
+      "ART",
+      "OP ART",
+      "GEOMETRIC ART",
+      "OPTICAL ILLUSION",
+      "ABSTRACT ART"
+    ],
+    "message": "Take a picture and transform the entire image into a sophisticated geometric optical artwork inspired by Victor Vasarely. Reconstruct the subject from precisely arranged geometric shapes, tessellations, curved grids, dimensional color transitions, and warped spatial patterns. Make the subject appear to bulge, recede, bend, or emerge from a mathematically controlled geometric surface while remaining recognizable. The subject itself must become the optical construction rather than being placed on top of an abstract background.",
+    "randomizeOptions": false,
+    "options": [],
+    "additionalInstructions": "Rebuild the subject entirely through geometric optical forms. Use repeated squares, circles, diamonds, curved grids, tessellations, and carefully controlled color transitions to describe the face, anatomy, clothing, and silhouette. Create convincing optical depth through changes in scale, spacing, curvature, contrast, and color. Use a deliberate geometric system rather than random polygon fragmentation. Preserve recognizable facial features and subject identity through the arrangement of the geometry. The artwork should evoke Vasarely's precise optical constructions without copying a specific existing work. Avoid generic low-poly filters, random geometric overlays, simple checkerboard backgrounds, and photorealistic subjects. Ensure the background and subject form a coherent geometric composition. Any master prompt specifying the subject, pose, action, setting, mood, colors, or artistic direction overrides preset defaults."
+  },
+  {
     "name": "VECTOR ARCADE MONITOR",
     "category": [
       "RETRO GAMING",
@@ -64235,6 +64460,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "• Use strong vintage-film texture and grain\n• Apply a single monochrome tint across the image\n• Preserve recognizable facial structure and silhouette\n• Emphasize cinematic contrast and nostalgic mood\n• Add realistic analog imperfections and archival-film character\n• Maintain old-movie realism throughout the image"
+  },
+  {
+    "name": "VINTAGE LITHOGRAPHY",
+    "category": [
+      "ART",
+      "PRINTMAKING",
+      "LITHOGRAPHY",
+      "VINTAGE ART",
+      "ILLUSTRATION"
+    ],
+    "message": "Take a picture and transform the entire image into a vintage color lithographic print. Reconstruct the subject and environment as a traditional multi-color stone lithograph, using layered printing colors, subtle ink grain, slight registration imperfections, textured paper, and carefully drawn contours. Create the distinctive appearance of an authentic old printed illustration or poster, with rich but slightly softened pigments and visible printmaking character.",
+    "randomizeOptions": false,
+    "options": [],
+    "additionalInstructions": "Rebuild the entire subject as a printed lithographic image. Do not simply add paper grain or a vintage color filter to the source photograph. Construct the face, anatomy, clothing, and environment using layered flat and semi-tonal printing colors, hand-drawn contours, subtle lithographic grain, and authentic print texture. Introduce restrained registration variations between color layers, but do not allow misalignment to destroy the subject's features. Use a cohesive period-appropriate palette and maintain strong readable forms. The background must be printed using the same technique. Avoid modern digital poster effects, photographic halftone overlays, distressed filters that obscure the image, and generic vector artwork. The result should resemble a genuine vintage lithographic print. Any master prompt specifying the subject, pose, action, setting, mood, colors, or artistic direction overrides preset defaults."
   },
   {
     "name": "VINTAGE MATCHBOX LABEL",
@@ -65715,6 +65954,20 @@
     "additionalInstructions": "ABSOLUTE PROHIBITIONS:\n• No surreal or exaggerated weather\n• No partial transformations (everything must obey the new weather)\n• No time-of-day change unless required by realism\n\nFINAL RESULT:\nThe image must look like the exact same photograph taken at the same moment and location — but under completely opposite, fully believable weather conditions.\n\nPHOTOREALISM REQUIREMENT:"
   },
   {
+    "name": "WILLIAM BLAKE VISIONARY ART",
+    "category": [
+      "ART",
+      "VISIONARY ART",
+      "ILLUSTRATION",
+      "FANTASY",
+      "HISTORICAL ART"
+    ],
+    "message": "Take a picture and transform the entire image into a visionary illustrated artwork inspired by William Blake. Completely reconstruct the subject using expressive human forms, luminous colors, symbolic visual elements, dramatic gestures, flowing contours, and mystical atmospheric compositions. Blend the qualities of hand-colored engraving, watercolor, and visionary illustration to create an image that feels like an extraordinary illuminated work of art from another world.",
+    "randomizeOptions": false,
+    "options": [],
+    "additionalInstructions": "Reconstruct the subject completely as a hand-illustrated figure inspired by William Blake's distinctive visionary art. Preserve recognizable facial identity and important physical characteristics while adapting anatomy, pose, clothing, and expression into expressive, symbolic, sometimes elongated forms. Use luminous color, delicate engraved or drawn outlines, hand-colored surfaces, and dramatic interplay between light and shadow. The composition may include symbolic imagery, ethereal atmospheres, celestial or architectural forms, and visionary surroundings when appropriate, but these must support rather than overwhelm the subject. Avoid generic fantasy concept art, glossy digital painting, photorealism, and modern cartoon styling. All environmental elements must share the same hand-illustrated technique. Do not leave any original photographic details visible. Any master prompt specifying the subject, pose, action, setting, mood, colors, or artistic direction overrides preset defaults."
+  },
+  {
     "name": "WHIRLIGIG",
     "category": [
       "FOLK ART",
@@ -66067,6 +66320,34 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "ABSOLUTE REQUIREMENT: The subject must be 100% wood — no skin, fabric, metal, plastic, or photographic texture may remain."
+  },
+  {
+    "name": "WOOD ENGRAVING",
+    "category": [
+      "ART",
+      "ENGRAVING",
+      "WOODCUT",
+      "BLACK AND WHITE",
+      "ILLUSTRATION"
+    ],
+    "message": "Take a picture and transform the entire image into a traditional wood-engraved illustration. Reconstruct the subject and surroundings from intricate carved-looking lines, precise hatching, strong black-and-white contrast, fine directional marks, and carefully controlled tonal patterns. Create the appearance of a detailed antique book illustration printed from an engraved wood block, with the subject clearly recognizable through the carved linework.",
+    "randomizeOptions": false,
+    "options": [],
+    "additionalInstructions": "The entire image must be constructed from the visual marks of traditional wood engraving. Completely redraw the subject's face, hair, anatomy, clothing, and surroundings using fine carved lines and carefully controlled areas of black and white. Use parallel strokes, crosshatching, fine contour lines, dense shadow patterns, and precise white highlights. Line direction must follow the form of the subject, describing volume, facial structure, fabric folds, and surface textures. Preserve identity through the engraving rather than through photographic detail. Use a traditional monochrome appearance unless the master prompt specifies color. Avoid simple black-and-white filters, charcoal smudging, modern comic-book inking, and digital vector outlines. Reconstruct the background using the same engraving language so the image looks like one complete printed illustration. Any master prompt specifying the subject, pose, action, setting, mood, colors, or artistic direction overrides preset defaults."
+  },
+  {
+    "name": "WOOD MARQUETRY PORTRAIT",
+    "category": [
+      "ART",
+      "WOODWORK",
+      "MARQUETRY",
+      "MATERIAL TRANSFORMATION",
+      "CRAFT ART"
+    ],
+    "message": "Take a picture and completely reconstruct the subject as an intricate wood-marquetry artwork. Build the entire subject from individually cut pieces of natural wood veneer, using different wood species, grain directions, tones, and carefully fitted shapes to create recognizable facial features, anatomy, clothing, and dimensional details. The subject must be physically formed from the wood inlay itself, not a photograph printed onto wood or decorated with wooden pieces.",
+    "randomizeOptions": false,
+    "options": [],
+    "additionalInstructions": "The subject must be entirely reconstructed from individual pieces of wood veneer. Do not retain any photographic portions of the original image. Use natural variations in wood species, color, grain, and texture to form the subject's face, hair, eyes, nose, mouth, anatomy, clothing, and other distinctive characteristics. Arrange the grain direction deliberately to describe the form of each feature. Use carefully cut and fitted shapes with precise joints and believable craftsmanship. Preserve recognizable identity through the marquetry construction. Use light maple, walnut, mahogany, cherry, oak, ebony, and other plausible wood tones as appropriate. Subtle differences in wood color should create tonal depth without relying on painted photographic shading. The background may also be built from complementary veneer patterns, but the subject must remain clearly visible. Avoid wood-burned photography, printed wood textures, wooden sculpture, parquet flooring patterns that obscure the subject, and generic mosaic effects. The result must look like a genuine handmade marquetry portrait or figurative artwork. Any master prompt specifying the subject, pose, action, setting, mood, colors, or artistic direction overrides preset defaults."
   },
   {
     "name": "WOOD TYPE",
