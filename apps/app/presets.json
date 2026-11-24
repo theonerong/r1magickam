@@ -27690,6 +27690,70 @@
     "additionalInstructions": "FINAL RESULT:\nThe image should show the subject with their real face sticking through a circular hole in a large novelty costume of an inanimate object (hot dog, pizza, toilet, fruit, etc.), with silly wholesome humor - the face integrated into the object design in a kitschy, fun, family-friendly way."
   },
   {
+    "name": "HOLIDAY GREETINGS",
+    "category": [
+      "OPTIONS",
+      "HOLIDAY",
+      "GREETING CARD",
+      "HUMOR",
+      "COSTUME",
+      "SEASONAL"
+    ],
+    "message": "Take a picture and transform the subject or subjects into a festive holiday greeting-card photo for the selected holiday. Keep every person from the photo, each with their own recognizable face, likeness, and expression, dressed and posed as the selected option describes, in a bright, cheerful, professionally lit holiday photo set. Lay the image out as a finished holiday greeting card, with the selected caption printed clearly and exactly as written, in festive typography that suits the holiday, placed in a clean band or open area where it does not cover anyone's face. If the master prompt gives a family name, insert it into the caption where indicated.",
+    "randomizeOptions": true,
+    "options": [
+      {
+        "id": "001",
+        "text": "CHRISTMAS - The subject or subjects sit on Santa's lap or knee, or gather together in front of a beautifully decorated Christmas tree with twinkling lights, ornaments, and wrapped presents, in a cozy festive living room. Caption: 'HAPPY HOLIDAYS FROM THE [NAME] FAMILY', using the family name from the master prompt. If no family name is given, the caption reads exactly: 'HAPPY HOLIDAYS FROM OUR FAMILY'."
+      },
+      {
+        "id": "002",
+        "text": "THANKSGIVING - The subject or subjects are seated together around a festive Thanksgiving dinner table with a large, golden, perfectly roasted turkey as the centerpiece, surrounded by stuffing, mashed potatoes, cranberry sauce, pies, autumn leaves, and candles, in a warm, glowing dining room. Caption: 'HAPPY THANKSGIVING - THE [NAME] FAMILY IS THANKFUL FOR YOU', using the family name from the master prompt. If no family name is given, the caption reads exactly: 'HAPPY THANKSGIVING - OUR FAMILY IS THANKFUL FOR YOU'."
+      },
+      {
+        "id": "003",
+        "text": "THANKSGIVING (FUNNY) - The subject or subjects are dressed in full, silly, plush turkey costumes, with their faces fully visible: round brown feathered bodies, huge fanned tail feathers in brown, orange, red, and gold, a turkey-head hood with a beak and red wattle above the face, and orange turkey-foot shoes, posing with comically proud or embarrassed expressions in an autumn harvest setting with pumpkins and hay bales. Caption: 'WE GIVE THANKS WE ONLY HAVE TO DRESS LIKE THIS ONCE A YEAR'."
+      },
+      {
+        "id": "004",
+        "text": "HANUKKAH - The subject or subjects are dressed as Blue Santas: a classic Santa-style suit and hat in rich royal blue velvet with white fur trim, a white sash or trim decorated with silver Stars of David, a wide belt, and, for adults, a full fluffy white beard (for children, a fluffy white costume beard with ear loops). They pose in a cozy room with a glowing lit menorah, blue-and-silver decorations, dreidels, chocolate gelt, and a plate of latkes and jelly doughnuts. Caption: 'HAPPY HANUKKAH!'."
+      },
+      {
+        "id": "005",
+        "text": "NEW YEAR'S - The subject or subjects are dressed as Baby New Year, as a cute, fully covering costume worn over their clothes: a white baby-style onesie or romper costume, a baby bonnet or tiny top hat, a white sash across the chest, an oversized pacifier or rattle as a prop, and a large, shiny gold medallion necklace hanging from their neck showing the new year in big numerals. Use the year given in the master prompt; if none is given, use the year that is about to begin (the current year plus one). They pose amid confetti, streamers, balloons, noisemakers, and a clock striking midnight. Caption: 'HAPPY NEW YEAR - WE WERE FORCED TO STAY UP LATE'."
+      },
+      {
+        "id": "006",
+        "text": "ST. PATRICK'S DAY - The subject or subjects are dressed as leprechauns: green tailcoats or jackets with gold buttons, green waistcoats, green top hats with a gold buckle, green bow ties, buckled shoes, and, for adults, a bushy orange beard if they don't already have one, posing beside a big black cauldron overflowing with shining gold coins, with shamrocks, clover fields, and a rainbow behind them. Caption: 'ERIN GO BRAGH OR ERIN GO WITHOUT A BRAGH - EITHER WAY - HAPPY ST. PATTY'S DAY!'."
+      },
+      {
+        "id": "007",
+        "text": "MARDI GRAS - The subject or subjects are in colorful, festive Mardi Gras attire in purple, green, and gold, such as sequined jackets, jester hats, feathered masks pushed up on the forehead or held on a stick (faces fully visible), and feather boas, with huge, piled-up masses of shiny Mardi Gras bead necklaces around their necks, posing on a festive New Orleans street with wrought-iron balconies, parade floats, and confetti. Caption: 'WE CANNOT REVEAL WHAT WE DID TO GET ALL THESE BEADS'."
+      },
+      {
+        "id": "008",
+        "text": "EASTER - The subject or subjects are dressed in fluffy, full-body Easter Bunny costumes in white, pastel pink, or pastel blue, with their faces fully exposed inside a snug bunny hood topped with huge, tall, floppy bunny ears, plus a fluffy cottontail and bunny-paw mittens, posing in a spring garden with tulips, daffodils, a basket of colorful painted Easter eggs, and chocolate bunnies. Caption: 'EARS TO A HOPPY EASTER!'."
+      },
+      {
+        "id": "009",
+        "text": "VALENTINE'S DAY - The subject or subjects are dressed as Cupid, in a fully covering costume: a flowing white or pale-pink tunic or toga worn over their clothes, a pink sash, small feathered angel wings, a golden laurel or heart headband, and a toy gold bow with a heart-tipped arrow, posing playfully amid red and pink hearts, rose petals, and soft clouds. Caption: 'BE MY VALENTINE - OR A NAKED BABY WILL SHOOT YOU WITH AN ARROW'."
+      },
+      {
+        "id": "010",
+        "text": "CINCO DE MAYO - The subject or subjects wear big, colorful, festive sombreros with embroidered brims and pom-pom fringe, and bright festive clothing, holding drinks in hand (margaritas for adults; colorful non-alcoholic agua fresca or soda for children), at a lively fiesta with papel picado banners, piñatas, and a table of tacos, chips, and guacamole. Caption: 'HAPPY CINCO DE MAYO - OR BEST EXCUSE TO DRINK EVER CREATED!'."
+      },
+      {
+        "id": "011",
+        "text": "4TH OF JULY - Each male subject is dressed as Uncle Sam: a tall star-spangled top hat with red and white stripes, a blue tailcoat, a red-and-white striped vest or trousers, a bow tie, and, for adults, a white goatee. Each female subject is dressed as the Statue of Liberty: a flowing seafoam-green robe, a spiked green crown, a torch raised high, and a tablet in the other arm, with seafoam-green face makeup optional. They pose in front of a waving American flag with fireworks bursting in the night sky. Caption: 'HAPPY 4TH - USA! USA! USA!'."
+      },
+      {
+        "id": "012",
+        "text": "OKTOBERFEST - Each male subject wears traditional Bavarian lederhosen with suspenders, a checked shirt, knee socks, and a feathered alpine hat. Each female subject wears a traditional dirndl with a fitted bodice, a white blouse, a full skirt, and an apron. They pose in a festive beer hall or beer garden with blue-and-white Bavarian diamond banners, long wooden tables, giant pretzels, and sausages, holding big beer steins (adults) or pretzels and root-beer mugs (children). Caption: 'HAPPY ~~OCTOBER~~ BEER CELEBRATION', with the word 'OCTOBER' clearly crossed out with a single line, placed between 'HAPPY' and 'BEER CELEBRATION'."
+      }
+    ],
+    "additionalInstructions": "SUBJECTS:\n• Include every person from the photo, each with their own recognizable face, likeness, hairstyle, and expression. Do not add or remove people, except Santa in the Christmas option when he is used.\n• Generate each person as one complete, naturally proportioned figure, with the head correctly sized for the body, neck, and shoulders and realistic, age-appropriate proportions. Never paste or composite a face or head onto a new body.\n• Match all people, costumes, and the set in lighting, color, shadows, focus, perspective, and photographic grain, so the result looks like one real, professionally shot holiday photo.\n• Keep every subject's real age, size, and build. Costumes are worn over normal clothing, are fully covering, and are cheerful and family-friendly.\n• Children: no alcohol; give them the non-alcoholic alternatives described in the options. Children's beards are fluffy costume beards with ear loops.\n• In options that differ by sex (4th of July, Oktoberfest), dress each person according to their apparent sex; in groups, dress each person individually.\n\nCAPTION AND CARD LAYOUT:\n• Present the result as a finished, printed holiday greeting card: the photo with the caption in a clean band, border, or open area, in festive typography matching the holiday's colors and mood.\n• Render the caption EXACTLY as written in the selected option, with correct spelling and punctuation, all text legible, and no extra words.\n• Replace [NAME] with the family name from the master prompt, in capital letters. If no family name is given, use the alternate caption written in the option.\n• For the New Year's option, the year on the necklace comes from the master prompt; if none is given, use the year that is about to begin.\n• The caption must never cover anyone's face.\n\nSTYLE:\n• Bright, cheerful, high-quality holiday photo with warm, flattering, studio-quality lighting and rich, festive colors.\n• Costumes and props are detailed, colorful, and funny where the option calls for humor.\n\nThe master prompt takes priority over preset defaults, including family name, year, costumes, poses, setting, and caption."
+  },
+  {
     "name": "HOLLOW DEPTH ILLUSION",
     "category": [
       "OPTIONS",
@@ -51163,10 +51227,10 @@
       },
       {
         "id": "005",
-        "text": "Classic Santa Photo - In this option the subject is NOT dressed as Santa. The subject appears as themselves, in their own clothing, with their real face, age, and expression, posing for a traditional holiday photo with a separate, jolly Santa Claus in a red velvet suit with white fur trim, a full white beard, and twinkling eyes. Santa sits in a grand red-and-gold throne-style chair on a festive Santa's-village set with a decorated Christmas tree, twinkling lights, wrapped presents, candy canes, and artificial snow. A child sits on Santa's knee or stands right beside him, both smiling at the camera; an adult stands or sits beside Santa, sharing a cheerful moment. Bright, even, studio-style lighting gives it the look of a classic professional holiday photo with Santa."
+        "text": "Classic Santa Photo - In this option the subject is NOT dressed as Santa. The subject appears as themselves, in their own clothing, with their real face, age, and expression, posing for a traditional holiday photo with a separate, jolly Santa Claus in a red velvet suit with white fur trim, a full white beard, and twinkling eyes. Santa sits in a grand red-and-gold throne-style chair on a festive Santa's-village set with a decorated Christmas tree, twinkling lights, wrapped presents, candy canes, and artificial snow. A child sits on Santa's knee or stands right beside him, both smiling at the camera; an adult stands or sits beside Santa, sharing a cheerful moment. Render the subject as one complete, naturally proportioned person photographed in the scene, never a face or head placed onto another body: the head must be correctly sized for the subject's body, neck, and shoulders, with realistic proportions for their age, and the subject must be correctly scaled next to Santa, as a real child or adult would be. The subject and Santa share the same camera angle, focus, perspective, lighting direction, color, shadows, and photographic grain, as if both were captured together in a single shot. Bright, even, studio-style lighting gives it the look of a classic professional holiday photo with Santa."
       }
     ],
-    "additionalInstructions": "CORE STYLE:\n\n• Employ soft, warm, and magical lighting to enhance the holiday mood.\n• Preserve the subject's face, likeness, and expression, especially the eyes and mouth.\n• Adults: the white beard, mustache, and hair must look realistic, soft, and well integrated into the face.\n• Children: keep the child's real age, face, size, and build completely unchanged. Do not age them, add wrinkles, or change their body. The beard is a fluffy, clearly costume-style white beard with ear loops, the suit is a child-sized Santa costume, and the round Santa front comes from the costume's padding. The result should feel like a sweet, cheerful holiday photo of a child dressed as Santa.\n• The round, jolly Santa shape always comes from the padded suit, never from altering anyone's body.\n• Classic Santa Photo option: the subject keeps their own clothing and appearance and is not given a beard, suit, or Santa hat. Santa Claus is a separate person. Keep the scene wholesome, cheerful, and family-friendly, like a traditional holiday photo.\n• Textures (velvet, wool, fur, leather) must be tactile and detailed.\n• The color palette is dominated by deep reds, greens, golds, and snowy whites."
+    "additionalInstructions": "CORE STYLE:\n\n• Employ soft, warm, and magical lighting to enhance the holiday mood.\n• Preserve the subject's face, likeness, and expression, especially the eyes and mouth.\n• Adults: the white beard, mustache, and hair must look realistic, soft, and well integrated into the face.\n• Children: keep the child's real age, face, size, and build completely unchanged. Do not age them, add wrinkles, or change their body. The beard is a fluffy, clearly costume-style white beard with ear loops, the suit is a child-sized Santa costume, and the round Santa front comes from the costume's padding. The result should feel like a sweet, cheerful holiday photo of a child dressed as Santa.\n• The round, jolly Santa shape always comes from the padded suit, never from altering anyone's body.\n• Classic Santa Photo option: the subject keeps their own clothing and appearance and is not given a beard, suit, or Santa hat. Santa Claus is a separate person. Generate the subject's entire figure, head, neck, shoulders, body, arms, and legs, as one coherent person with natural, age-appropriate head-to-body proportions; never paste or composite the original face or head onto a new body. Match the subject's scale to Santa's, and match the lighting, color, shadows, focus, perspective, and grain across the subject, Santa, and the set so the result looks like one real, unedited photograph. Keep the scene wholesome, cheerful, and family-friendly, like a traditional holiday photo.\n• Textures (velvet, wool, fur, leather) must be tactile and detailed.\n• The color palette is dominated by deep reds, greens, golds, and snowy whites."
   },
   {
     "name": "SASHIKO STITCHING",
