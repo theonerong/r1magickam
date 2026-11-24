@@ -23407,15 +23407,42 @@
   {
     "name": "FUNHOUSE MIRROR",
     "category": [
+      "OPTIONS",
       "DISTORTION",
       "OPTICAL",
       "CARNIVAL",
+      "MIRROR",
       "SURREAL"
     ],
-    "message": "Take a picture and transform the subject as if reflected in a carnival funhouse mirror.\n\nMIRROR DISTORTION SELECTION (CRITICAL):• If no mirror distortion is provided externally, SELECT EXACTLY ONE distortion using the RANDOM SEED\n• If the RANDOM SEED ends in 0,1: SELECT vertical concave (tall and pinched inward)\n• If the RANDOM SEED ends in 2,3: SELECT vertical convex (short and wide)\n• If the RANDOM SEED ends in 4,5: SELECT horizontal concave (squeezed side-to-side)\n• If the RANDOM SEED ends in 6,7: SELECT horizontal convex (stretched side-to-side)\n• If the RANDOM SEED ends in 8: SELECT concave-convex (pinched center with expanded ends)\n• If the RANDOM SEED ends in 9: SELECT convex-concave (expanded center with pinched ends)\n\nThe distortion must affect the ENTIRE subject and scene consistently, as true optical glass distortion — not digital warping.\n\nFacial features, body proportions, and environment must bend smoothly and continuously according to the mirror curvature.\n\nDO NOT crop the subject.\nDO NOT break anatomy or introduce glitches.\nDO NOT apply multiple distortions at once.\n\nLighting, reflections, and perspective must behave like reflective glass, with subtle highlights and edge reflections.\n\nThe final image must look like a real photograph taken of a funhouse mirror reflection.",
-    "options": [],
-    "randomizeOptions": false,
-    "additionalInstructions": ""
+    "message": "Take a picture and transform the entire subject and visible scene into a realistic photographic reflection in a carnival funhouse mirror. Apply the selected mirror's specific optical curvature to the complete reflection, including the subject's face, body, clothing, and surrounding environment. The distortion must look like genuine reflective glass with continuous optical deformation, not a digital stretching effect. Preserve the subject's identity and keep the entire distorted subject visible.",
+    "randomizeOptions": true,
+    "options": [
+      {
+        "id": "001",
+        "text": "VERTICAL CONCAVE — A vertically concave mirror makes the subject appear unusually tall, narrow, and pinched inward from side to side. The entire reflected figure and scene follow the same inward-curving optical geometry."
+      },
+      {
+        "id": "002",
+        "text": "VERTICAL CONVEX — A vertically convex mirror makes the subject appear unusually short and wide, compressing the reflected height while expanding the figure horizontally."
+      },
+      {
+        "id": "003",
+        "text": "HORIZONTAL CONCAVE — A horizontally concave mirror squeezes the subject from side to side, making the reflected figure unusually narrow while preserving its full height."
+      },
+      {
+        "id": "004",
+        "text": "HORIZONTAL CONVEX — A horizontally convex mirror stretches the subject from side to side, making the reflected figure unusually broad and wide."
+      },
+      {
+        "id": "005",
+        "text": "CONCAVE-CONVEX — A compound funhouse mirror pinches the center of the reflected subject inward while expanding the upper and lower portions. The transition must be smooth and continuous."
+      },
+      {
+        "id": "006",
+        "text": "CONVEX-CONCAVE — A compound funhouse mirror expands the center of the reflected subject while pinching the upper and lower portions. The transition must be smooth and continuous."
+      }
+    ],
+    "additionalInstructions": "The selected distortion must affect the ENTIRE visible subject and reflected environment consistently, as if the image were optically reflected by a specially curved funhouse mirror. Do not apply multiple distortion types simultaneously. Do not crop the subject or allow body parts to detach, duplicate, or become anatomically disconnected. Preserve the subject's recognizable face, expression, clothing, and pose as much as the selected optical distortion permits. The reflected environment must bend consistently with the subject; it must not remain perfectly straight while the subject is distorted. Use smooth continuous optical curvature, realistic reflective highlights, subtle glass reflections, and believable perspective. The result must look like a real photograph of a person reflected in a carnival funhouse mirror, not a photograph with a digital warp filter. The master prompt takes priority over preset defaults."
   },
   {
     "name": "FUNKO POP",
@@ -27661,6 +27688,70 @@
     ],
     "randomizeOptions": true,
     "additionalInstructions": "FINAL RESULT:\nThe image should show the subject with their real face sticking through a circular hole in a large novelty costume of an inanimate object (hot dog, pizza, toilet, fruit, etc.), with silly wholesome humor - the face integrated into the object design in a kitschy, fun, family-friendly way."
+  },
+  {
+    "name": "HOLIDAY GREETINGS",
+    "category": [
+      "OPTIONS",
+      "HOLIDAY",
+      "GREETING CARD",
+      "HUMOR",
+      "COSTUME",
+      "SEASONAL"
+    ],
+    "message": "Take a picture and transform the subject or subjects into a festive holiday greeting-card photo for the selected holiday. Keep every person from the photo, each with their own recognizable face, likeness, and expression, dressed and posed as the selected option describes, in a bright, cheerful, professionally lit holiday photo set. Lay the image out as a finished holiday greeting card, with the selected caption printed clearly and exactly as written, in festive typography that suits the holiday, placed in a clean band or open area where it does not cover anyone's face. If the master prompt gives a family name, insert it into the caption where indicated.",
+    "randomizeOptions": true,
+    "options": [
+      {
+        "id": "001",
+        "text": "CHRISTMAS - The subject or subjects sit on Santa's lap or knee, or gather together in front of a beautifully decorated Christmas tree with twinkling lights, ornaments, and wrapped presents, in a cozy festive living room. Caption: 'HAPPY HOLIDAYS FROM THE [NAME] FAMILY', using the family name from the master prompt. If no family name is given, the caption reads exactly: 'HAPPY HOLIDAYS FROM OUR FAMILY'."
+      },
+      {
+        "id": "002",
+        "text": "THANKSGIVING - The subject or subjects are seated together around a festive Thanksgiving dinner table with a large, golden, perfectly roasted turkey as the centerpiece, surrounded by stuffing, mashed potatoes, cranberry sauce, pies, autumn leaves, and candles, in a warm, glowing dining room. Caption: 'HAPPY THANKSGIVING - THE [NAME] FAMILY IS THANKFUL FOR YOU', using the family name from the master prompt. If no family name is given, the caption reads exactly: 'HAPPY THANKSGIVING - OUR FAMILY IS THANKFUL FOR YOU'."
+      },
+      {
+        "id": "003",
+        "text": "THANKSGIVING (FUNNY) - The subject or subjects are dressed in full, silly, plush turkey costumes, with their faces fully visible: round brown feathered bodies, huge fanned tail feathers in brown, orange, red, and gold, a turkey-head hood with a beak and red wattle above the face, and orange turkey-foot shoes, posing with comically proud or embarrassed expressions in an autumn harvest setting with pumpkins and hay bales. Caption: 'WE GIVE THANKS WE ONLY HAVE TO DRESS LIKE THIS ONCE A YEAR'."
+      },
+      {
+        "id": "004",
+        "text": "HANUKKAH - The subject or subjects are dressed as Blue Santas: a classic Santa-style suit and hat in rich royal blue velvet with white fur trim, a white sash or trim decorated with silver Stars of David, a wide belt, and, for adults, a full fluffy white beard (for children, a fluffy white costume beard with ear loops). They pose in a cozy room with a glowing lit menorah, blue-and-silver decorations, dreidels, chocolate gelt, and a plate of latkes and jelly doughnuts. Caption: 'HAPPY HANUKKAH!'."
+      },
+      {
+        "id": "005",
+        "text": "NEW YEAR'S - The subject or subjects are dressed as Baby New Year, as a cute, fully covering costume worn over their clothes: a white baby-style onesie or romper costume, a baby bonnet or tiny top hat, a white sash across the chest, an oversized pacifier or rattle as a prop, and a large, shiny gold medallion necklace hanging from their neck showing the new year in big numerals. Use the year given in the master prompt; if none is given, use the year that is about to begin (the current year plus one). They pose amid confetti, streamers, balloons, noisemakers, and a clock striking midnight. Caption: 'HAPPY NEW YEAR - WE WERE FORCED TO STAY UP LATE'."
+      },
+      {
+        "id": "006",
+        "text": "ST. PATRICK'S DAY - The subject or subjects are dressed as leprechauns: green tailcoats or jackets with gold buttons, green waistcoats, green top hats with a gold buckle, green bow ties, buckled shoes, and, for adults, a bushy orange beard if they don't already have one, posing beside a big black cauldron overflowing with shining gold coins, with shamrocks, clover fields, and a rainbow behind them. Caption: 'ERIN GO BRAGH OR ERIN GO WITHOUT A BRAGH - EITHER WAY - HAPPY ST. PATTY'S DAY!'."
+      },
+      {
+        "id": "007",
+        "text": "MARDI GRAS - The subject or subjects are in colorful, festive Mardi Gras attire in purple, green, and gold, such as sequined jackets, jester hats, feathered masks pushed up on the forehead or held on a stick (faces fully visible), and feather boas, with huge, piled-up masses of shiny Mardi Gras bead necklaces around their necks, posing on a festive New Orleans street with wrought-iron balconies, parade floats, and confetti. Caption: 'WE CANNOT REVEAL WHAT WE DID TO GET ALL THESE BEADS'."
+      },
+      {
+        "id": "008",
+        "text": "EASTER - The subject or subjects are dressed in fluffy, full-body Easter Bunny costumes in white, pastel pink, or pastel blue, with their faces fully exposed inside a snug bunny hood topped with huge, tall, floppy bunny ears, plus a fluffy cottontail and bunny-paw mittens, posing in a spring garden with tulips, daffodils, a basket of colorful painted Easter eggs, and chocolate bunnies. Caption: 'EARS TO A HOPPY EASTER!'."
+      },
+      {
+        "id": "009",
+        "text": "VALENTINE'S DAY - The subject or subjects are dressed as Cupid, in a fully covering costume: a flowing white or pale-pink tunic or toga worn over their clothes, a pink sash, small feathered angel wings, a golden laurel or heart headband, and a toy gold bow with a heart-tipped arrow, posing playfully amid red and pink hearts, rose petals, and soft clouds. Caption: 'BE MY VALENTINE - OR A NAKED BABY WILL SHOOT YOU WITH AN ARROW'."
+      },
+      {
+        "id": "010",
+        "text": "CINCO DE MAYO - The subject or subjects wear big, colorful, festive sombreros with embroidered brims and pom-pom fringe, and bright festive clothing, holding drinks in hand (margaritas for adults; colorful non-alcoholic agua fresca or soda for children), at a lively fiesta with papel picado banners, piñatas, and a table of tacos, chips, and guacamole. Caption: 'HAPPY CINCO DE MAYO - OR BEST EXCUSE TO DRINK EVER CREATED!'."
+      },
+      {
+        "id": "011",
+        "text": "4TH OF JULY - Each male subject is dressed as Uncle Sam: a tall star-spangled top hat with red and white stripes, a blue tailcoat, a red-and-white striped vest or trousers, a bow tie, and, for adults, a white goatee. Each female subject is dressed as the Statue of Liberty: a flowing seafoam-green robe, a spiked green crown, a torch raised high, and a tablet in the other arm, with seafoam-green face makeup optional. They pose in front of a waving American flag with fireworks bursting in the night sky. Caption: 'HAPPY 4TH - USA! USA! USA!'."
+      },
+      {
+        "id": "012",
+        "text": "OKTOBERFEST - Each male subject wears traditional Bavarian lederhosen with suspenders, a checked shirt, knee socks, and a feathered alpine hat. Each female subject wears a traditional dirndl with a fitted bodice, a white blouse, a full skirt, and an apron. They pose in a festive beer hall or beer garden with blue-and-white Bavarian diamond banners, long wooden tables, giant pretzels, and sausages, holding big beer steins (adults) or pretzels and root-beer mugs (children). Caption: 'HAPPY ~~OCTOBER~~ BEER CELEBRATION', with the word 'OCTOBER' clearly crossed out with a single line, placed between 'HAPPY' and 'BEER CELEBRATION'."
+      }
+    ],
+    "additionalInstructions": "SUBJECTS:\n• Include every person from the photo, each with their own recognizable face, likeness, hairstyle, and expression. Do not add or remove people, except Santa in the Christmas option when he is used.\n• Generate each person as one complete, naturally proportioned figure, with the head correctly sized for the body, neck, and shoulders and realistic, age-appropriate proportions. Never paste or composite a face or head onto a new body.\n• Match all people, costumes, and the set in lighting, color, shadows, focus, perspective, and photographic grain, so the result looks like one real, professionally shot holiday photo.\n• Keep every subject's real age, size, and build. Costumes are worn over normal clothing, are fully covering, and are cheerful and family-friendly.\n• Children: no alcohol; give them the non-alcoholic alternatives described in the options. Children's beards are fluffy costume beards with ear loops.\n• In options that differ by sex (4th of July, Oktoberfest), dress each person according to their apparent sex; in groups, dress each person individually.\n\nCAPTION AND CARD LAYOUT:\n• Present the result as a finished, printed holiday greeting card: the photo with the caption in a clean band, border, or open area, in festive typography matching the holiday's colors and mood.\n• Render the caption EXACTLY as written in the selected option, with correct spelling and punctuation, all text legible, and no extra words.\n• Replace [NAME] with the family name from the master prompt, in capital letters. If no family name is given, use the alternate caption written in the option.\n• For the New Year's option, the year on the necklace comes from the master prompt; if none is given, use the year that is about to begin.\n• The caption must never cover anyone's face.\n\nSTYLE:\n• Bright, cheerful, high-quality holiday photo with warm, flattering, studio-quality lighting and rich, festive colors.\n• Costumes and props are detailed, colorful, and funny where the option calls for humor.\n\nThe master prompt takes priority over preset defaults, including family name, year, costumes, poses, setting, and caption."
   },
   {
     "name": "HOLLOW DEPTH ILLUSION",
@@ -32812,6 +32903,83 @@
     "additionalInstructions": "COMPLETE SUBJECT RECONSTRUCTION: The original subject must be entirely rebuilt from paper. Do not retain the original photograph underneath the paper construction, and do not simply apply a paper texture, cutout filter, or collage effect over the source image. Every visible part of the subject must be constructed from physical-looking paper pieces, including the face, hair, neck, torso, arms, hands, legs, feet, clothing, and accessories. Preserve the subject's identity, recognizable facial features, hairstyle, body proportions, pose, and distinctive clothing details.\n\nTHREE-DIMENSIONAL PAPER CONSTRUCTION: Create a genuine dimensional paper sculpture, not a flat illustration. Use multiple layers of cut paper at different depths, with visible paper thickness along edges, overlapping sections, raised details, folded shapes, curved paper surfaces, and subtle creases. Paper elements should cast realistic shadows onto the layers beneath them. The subject should have a clearly dimensional silhouette and occupy believable three-dimensional space.\n\nCOHESIVE ANATOMY: Paper pieces must follow the subject's actual anatomy. Facial features must remain in their correct positions and proportions. The head must connect naturally to the neck and torso; shoulders must connect to arms; hands must connect to wrists; hips must connect to legs. Do not scatter body parts into unrelated paper shapes or create floating facial features. Use shaped and layered paper sections to construct the subject as one complete, connected figure.\n\nFACIAL DETAIL: Build the eyes, eyebrows, nose, mouth, ears, and other distinctive facial features from small but carefully shaped paper elements. Maintain a recognizable likeness. Use subtle raised paper layers to create facial depth without making the face look like a random collection of geometric patches. Hair should be formed from individually shaped and overlapping paper sections that preserve the subject's hairstyle and direction of flow.\n\nCLOTHING AND MATERIAL: Reconstruct clothing from paper as well, preserving recognizable garments, patterns, collars, sleeves, folds, seams, and accessories. Use different paper colors, weights, finishes, and textures where appropriate. Paper can be matte, lightly textured, translucent, metallic, or patterned, but the overall construction must remain unmistakably cut and layered paper. Avoid substituting cardboard, fabric, plastic, foam, or wood for the paper material.\n\nCUT-PAPER CHARACTER: Use a sophisticated handcrafted aesthetic with clean scissor-cut contours, carefully arranged shapes, layered silhouettes, subtle folds, and sculptural depth. The paper construction may combine smooth flowing curves with angular cut shapes, but it must not become a generic polygonal low-poly model, origami figure, or flat scrapbook collage.\n\nBACKGROUND: Preserve the original background unless the master prompt requests a different setting or a transparent background. If the background is retained, it may remain photographic while the subject becomes the dimensional paper sculpture. Ensure the paper subject is clearly separated from the background through realistic lighting and cast shadows. Do not convert the background into paper unless explicitly requested.\n\nFINAL VALIDATION: The finished image must depict one complete, recognizable subject whose entire visible body is constructed from layered, shaped, dimensional paper. The paper must define the subject's actual form, not merely cover it. Maintain anatomical continuity, recognizable identity, convincing paper thickness, visible layering, and strong three-dimensional depth. The master prompt takes priority for pose, action, expression, clothing, colors, and setting, while the paper-cut sculpture construction remains the defining transformation."
   },
   {
+    "name": "LIVING T-SHIRT",
+    "category": [
+      "OPTIONS",
+      "HUMOR",
+      "FANTASY",
+      "TRANSFORMATION",
+      "T-SHIRT",
+      "3D",
+      "SURREAL"
+    ],
+    "message": "Take a picture and transform the image or graphic printed on the subject's T-shirt into a living three-dimensional creature or object that is physically emerging from a cutout in the center of the shirt. The printed image must become a real, dimensional living form that pushes outward through the shirt, with part of its body emerging into the space in front of the subject while remaining visibly connected to the graphic or opening in the shirt. If the shirt has no usable image or graphic, use the selected creature or object option instead. Preserve the subject's identity, pose, and the rest of the clothing while creating a convincing, humorous, three-dimensional interaction.",
+    "randomizeOptions": true,
+    "options": [
+      {
+        "id": "001",
+        "text": "ALIEN BURSTING OUT — A small, terrifying science-fiction alien creature emerges from a ragged opening in the center of the shirt. Its head, claws, and upper body protrude into the foreground while its lower body remains attached inside the shirt. Use a recognizable cinematic creature-horror aesthetic without copying a specific movie character."
+      },
+      {
+        "id": "002",
+        "text": "GUTS SHOWING — A humorous, non-graphic Halloween-style cutout reveals exaggerated cartoonish internal anatomy beneath the shirt. Colorful, rubbery-looking guts and organs appear to push outward through the opening. Keep the effect playful and theatrical, with no realistic blood or gore."
+      },
+      {
+        "id": "003",
+        "text": "MINI DINOSAUR — A miniature dinosaur emerges from the shirt, pushing its head, neck, tiny arms, and upper body through a central cutout. Its body remains visibly connected inside the shirt."
+      },
+      {
+        "id": "004",
+        "text": "MYSTERIOUS HAND — A realistic-looking hand and forearm emerge from the center of the shirt through a cutout. The hand reaches outward toward the viewer while the arm remains visibly attached inside the shirt."
+      },
+      {
+        "id": "005",
+        "text": "MONSTER MOUTH — A large, bizarre monster mouth with teeth, gums, and a moving tongue emerges from the shirt opening. The mouth is a three-dimensional creature feature attached to the shirt, not merely a printed mouth."
+      },
+      {
+        "id": "006",
+        "text": "OCTOPUS TENTACLES — Several curling octopus tentacles emerge from a central shirt opening. Their bases remain attached inside the shirt while the tentacles curl outward around the subject."
+      },
+      {
+        "id": "007",
+        "text": "BABY DRAGON — A colorful baby dragon pushes its head, wings, and front claws through a cutout in the shirt. Its lower body remains inside the shirt, making it look as though the subject is carrying a tiny living dragon."
+      },
+      {
+        "id": "008",
+        "text": "GIANT SPIDER — A large, detailed but humorous spider emerges from the shirt opening. Its head and front legs protrude into the foreground while its abdomen remains visibly inside the shirt."
+      },
+      {
+        "id": "009",
+        "text": "SNAKE ESCAPING — A colorful snake emerges from the shirt's center opening, with its head and upper body rising outward and its remaining body disappearing inside the shirt."
+      },
+      {
+        "id": "010",
+        "text": "ROBOT ARM — A mechanical robotic arm emerges from the shirt opening, complete with articulated fingers, pistons, joints, and metallic components. Its base remains connected inside the shirt."
+      },
+      {
+        "id": "011",
+        "text": "CUTE BABY MONSTER — A funny, expressive baby monster peeks and crawls out of the shirt opening, with its head, arms, and upper body protruding while its lower body remains inside."
+      },
+      {
+        "id": "012",
+        "text": "BIRD ESCAPING — A colorful bird emerges from the shirt opening, spreading its wings and raising its head into the space in front of the subject. Its lower body remains attached inside the shirt."
+      },
+      {
+        "id": "013",
+        "text": "SHARK ATTACK — A miniature shark emerges headfirst from the shirt opening, with its mouth open, fins visible, and body extending back into the shirt."
+      },
+      {
+        "id": "014",
+        "text": "GHOST POPPING OUT — A comical ghost with a flowing, semi-translucent body emerges from the shirt opening, reaching outward with its arms while its lower portion remains connected inside."
+      },
+      {
+        "id": "015",
+        "text": "FLOWER BLOOM — A large, colorful living flower grows out of the shirt opening. Its stem emerges from the center of the shirt, with a dimensional flower head, leaves, and curling tendrils."
+      }
+    ],
+    "additionalInstructions": "FIRST DETERMINE WHETHER THE SHIRT HAS A GRAPHIC:\n- If the visible T-shirt has a recognizable image, illustration, logo, character, animal, object, or other graphic, that existing design MUST be the source of the living transformation. Do not ignore it and substitute a random option.\n- Reconstruct the actual printed design as a three-dimensional living version of the same subject. Preserve its recognizable identity, colors, patterns, and defining characteristics while giving it physical depth, anatomy, and movement.\n- If the shirt has no usable image or graphic, use the selected option to determine what emerges.\n- If multiple shirts or multiple usable graphics are visible, prioritize the most prominent shirt graphic unless the master prompt specifies otherwise.\n\nTHE CUTOUT AND PHYSICAL CONNECTION:\n- Create a believable opening in the center area of the shirt, as though the creature or object is physically pushing through the fabric.\n- The opening must be integrated into the shirt's fabric, with visible torn, stretched, folded, or pulled-back fabric edges appropriate to the emerging subject.\n- The emerging subject must remain physically attached to or visibly continuous with the portion still inside the shirt. It must not appear to float independently in front of the person.\n- The creature or object must have genuine three-dimensional volume, anatomy, depth, highlights, and shadows.\n- Its emerging parts must overlap the shirt naturally and cast believable shadows on the fabric and the subject's body.\n- The cutout should be large enough for the emerging creature or object to be clearly visible. Do not make the result look like a tiny sticker or miniature figurine glued onto the shirt.\n- The original shirt graphic must not remain flat and visible underneath the emerging creature. It becomes the creature or object itself.\n\nSUBJECT PRESERVATION:\n- Keep the wearer recognizable and preserve their face, hairstyle, expression, body, pose, and other clothing.\n- Do not transform the wearer into the creature. Only the shirt graphic or selected option becomes the living thing.\n- Keep the rest of the shirt and surrounding clothing intact except where the cutout is required.\n- Do not create unrelated holes, extra limbs, duplicated creatures, or disconnected anatomy.\n\nVISUAL QUALITY:\n- The emerging creature or object must look genuinely dimensional and physically present, with convincing material, texture, lighting, and depth.\n- The interaction should be visually funny, surprising, or fantastical, as appropriate to the selected option.\n- Avoid flat printed graphics, stickers, patches, decals, appliqués, or creatures merely sitting on top of the shirt.\n- For the guts option, keep the effect cartoonish and non-graphic.\n\nThe master prompt takes priority over preset defaults, including the creature or object, its appearance, pose, colors, expression, and degree of emergence."
+  },
+  {
     "name": "LIVING TATTOO",
     "category": [
       "TATTOO",
@@ -36911,6 +37079,122 @@
       }
     ],
     "additionalInstructions": "IDENTITY PRESERVATION (CRITICAL):\n\n• The mirror image must clearly resemble the subject at first glance\n• Preserve the subject's unique facial identity\n• Preserve the subject's unique facial structure\n• Preserve the subject's distinctive facial traits\n• Preserve the subject's actual eye shape\n• Preserve the subject's actual nose shape\n• Preserve the subject's actual smile characteristics\n• Preserve the subject's actual jawline\n• Preserve the subject's actual facial proportions\n• Preserve the subject's recognizable hairstyle characteristics\n• Preserve the subject's recognizable body proportions\n• Recognition must come from the mirror image itself\n• The mirror image must unmistakably be the subject\n• Someone familiar with the subject should immediately recognize both figures as the same person\n\nLOCATION GROUP REQUIREMENTS:\n\n• The selected location option determines where the mirror image appears\n• The mirror image must fully conform to the selected location scenario\n• Reflections must obey the physical behavior of reflective surfaces\n• Mirror scenarios must look like genuine mirror reflections when appropriate\n• Standing-beside scenarios must appear physically present in the same environment\n• Interaction scenarios must involve meaningful interaction between the subject and mirror image\n• Portal scenarios must appear magical, supernatural, or dimensional\n• Background scenarios must remain visually believable\n\nCOLOR GROUP REQUIREMENTS:\n\n• The selected appearance option determines the visual rendering of the mirror image\n• The original subject should remain normally rendered unless the selected scenario requires otherwise\n• Color effects should apply primarily to the mirror image counterpart\n• The selected appearance must remain visually convincing and integrated into the scene\n\nANTI-CHEAT:\n\n• Do not split the image into panels\n• Do not create side-by-side photographs\n• Do not create comparison layouts\n• Do not create collages\n• Do not create visible divider lines\n• Do not create before-and-after compositions\n• Do not paste a duplicated subject into the image\n• Do not create artificial scene boundaries\n• Do not create obvious cloning artifacts\n• Do not generate two unrelated people\n• Do not ignore the selected location option\n• Do not ignore the selected appearance option\n• The final image must remain a single continuous scene\n\nFINAL RESULT:\nThe final image must contain both the original subject and a clearly recognizable mirror-image counterpart rendered according to the selected location option and selected appearance option. Both versions must coexist naturally within a single continuous environment. The image must never resemble two photographs placed together or a split-screen composition. The mirror image should feel like a true counterpart, reflection, doppelganger, alternate reality version, or supernatural manifestation of the subject while maintaining unmistakable recognition of the subject through identity rather than simple duplication."
+  },
+  {
+    "name": "MIRRORS",
+    "category": [
+      "OPTIONS",
+      "MIRROR",
+      "REFLECTION",
+      "OPTICAL",
+      "PHOTOGRAPHY",
+      "PERSPECTIVE"
+    ],
+    "message": "Take a picture and create a realistic scene involving the subject and the selected type of mirror. Show the correct physical mirror, its reflective surface, and a believable reflection with accurate perspective, lighting, and positioning. The reflection must correspond to the subject's actual position and appearance. Reconstruct the reflected image as a genuine mirror reflection, not as a second unrelated copy of the subject.",
+    "randomizeOptions": true,
+    "options": [
+      {
+        "id": "001",
+        "text": "REGULAR MIRROR — Show the subject standing in front of a conventional wall mirror and looking into it. The composition must show both the actual subject from behind or at a rear three-quarter angle and the subject's recognizable face and front reflected in the mirror. The reflection must have correct left-right mirror orientation, matching clothing, pose, expression, and position."
+      },
+      {
+        "id": "002",
+        "text": "REARVIEW MIRROR — Show the subject's face reflected in a vehicle's interior rearview mirror. The mirror occupies a recognizable foreground position inside the vehicle, with a believable view of the subject behind the wheel or in the appropriate seat. The surrounding vehicle interior and view through the windows establish the setting."
+      },
+      {
+        "id": "003",
+        "text": "CAR SIDE MIRROR — Show the subject reflected in an exterior vehicle side-view mirror. Include enough of the vehicle door and mirror housing to establish the correct perspective. The reflection should show the subject or the relevant scene behind the vehicle. Include the familiar warning text 'OBJECTS IN MIRROR ARE CLOSER THAN THEY APPEAR' on the mirror, correctly positioned and legible."
+      },
+      {
+        "id": "004",
+        "text": "FULL-LENGTH MIRROR — Show the subject standing in front of a tall, full-length standing mirror. The composition includes the actual subject and a complete head-to-toe reflection, with consistent posture, clothing, and proportions."
+      },
+      {
+        "id": "005",
+        "text": "BATHROOM MIRROR — Show the subject facing a bathroom vanity mirror, with the subject's reflection visible above or behind the sink. Include realistic bathroom fixtures, countertop details, and believable mirror lighting."
+      },
+      {
+        "id": "006",
+        "text": "MAKEUP MIRROR — Show the subject looking into a tabletop or vanity makeup mirror. The mirror reflection is clearly visible, with the subject positioned naturally in front of it. Include a realistic vanity setting and appropriate lighting."
+      },
+      {
+        "id": "007",
+        "text": "MAGNIFYING MIRROR — Show the subject looking into a magnifying cosmetic mirror. The reflected facial area appears optically enlarged according to the mirror's magnification, while the physical mirror and surrounding scene remain normally proportioned."
+      },
+      {
+        "id": "008",
+        "text": "COMPACT MIRROR — Show the subject holding an open handheld makeup compact and looking into its small circular or oval mirror. The reflection of the subject's face must be visible inside the compact mirror."
+      },
+      {
+        "id": "009",
+        "text": "HAND MIRROR — Show the subject holding a traditional handheld mirror and looking into it. The reflective surface must show the subject's face from the appropriate angle, with the hand, handle, and mirror positioned realistically."
+      },
+      {
+        "id": "010",
+        "text": "TWO-MIRROR REFLECTION — Show the subject between two facing mirrors, creating a sequence of progressively smaller reflections extending into the distance. Maintain consistent mirror geometry and believable repeated reflections."
+      },
+      {
+        "id": "011",
+        "text": "THREE-WAY MIRROR — Show the subject standing before a three-panel dressing-room mirror. The center panel shows the front reflection, while the angled side panels reveal believable side and rear views of the subject."
+      },
+      {
+        "id": "012",
+        "text": "BARBER SHOP MIRROR — Show the subject in a barber shop facing a large wall mirror, with a second mirror behind them producing a deep sequence of reflections. Include recognizable barber-shop surroundings."
+      },
+      {
+        "id": "013",
+        "text": "ELEVATOR MIRROR — Show the subject inside a modern elevator with mirrored walls. The subject and elevator interior are reflected naturally, with realistic metallic surfaces and repeated perspectives."
+      },
+      {
+        "id": "014",
+        "text": "DANCE STUDIO MIRROR — Show the subject in front of a large wall of studio mirrors, with their reflection reproducing the same pose and movement. Include a believable dance or rehearsal studio."
+      },
+      {
+        "id": "015",
+        "text": "GYM MIRROR — Show the subject looking at their reflection in a large gym mirror. Include recognizable exercise equipment and a realistic fitness-center environment."
+      },
+      {
+        "id": "016",
+        "text": "DENTAL MIRROR — Show a close-up dental examination scene in which the subject's teeth or mouth are visible through a small round dental inspection mirror. The reflection must be physically plausible and recognizable as a dentist's instrument."
+      },
+      {
+        "id": "017",
+        "text": "SECURITY DOME MIRROR — Show the subject reflected in a ceiling-mounted convex security mirror in a store, warehouse, or public building. The mirror's wide-angle reflection shows a broad area with the subject appearing smaller and optically compressed."
+      },
+      {
+        "id": "018",
+        "text": "CONVEX SAFETY MIRROR — Show the subject reflected in a large circular convex safety mirror mounted at a blind corner, driveway, parking garage, or intersection. The wide-angle reflection shows the surrounding area with realistic convex curvature."
+      },
+      {
+        "id": "019",
+        "text": "PARKING GARAGE MIRROR — Show the subject reflected in a large traffic-safety mirror inside a parking garage. Include the curved mirror housing, concrete surroundings, and a wide-angle view of the area."
+      },
+      {
+        "id": "020",
+        "text": "PERISCOPE MIRROR — Show the subject using a periscope with its two angled internal mirrors. Present a believable view through the periscope and show enough of the device to establish its construction."
+      },
+      {
+        "id": "021",
+        "text": "ONE-WAY MIRROR — Show the subject on one side of a one-way observation mirror, with the reflective surface showing the subject while a dim observation room is subtly visible on the other side where appropriate. Maintain the characteristic reflective appearance."
+      },
+      {
+        "id": "022",
+        "text": "ANTIQUE ORNATE MIRROR — Show the subject reflected in a large antique mirror with an elaborate carved frame. The mirror reflection is realistic and correctly aligned, while the surrounding room has an elegant historical atmosphere."
+      },
+      {
+        "id": "023",
+        "text": "CLOSET MIRROR — Show the subject looking into a full-height mirror mounted on a closet door. Include the actual subject and the reflection, with a believable bedroom or dressing-room environment."
+      },
+      {
+        "id": "024",
+        "text": "MIRRORED SUNGLASSES — Show a close-up of the subject wearing reflective sunglasses. The lenses contain small, recognizable reflections of the surrounding scene, positioned and curved according to the lenses."
+      },
+      {
+        "id": "025",
+        "text": "MIRROR WALL — Show the subject standing in front of a large seamless mirrored wall. The reflection reproduces the subject and surroundings with realistic scale, perspective, and lighting."
+      }
+    ],
+    "additionalInstructions": "The selected mirror type must be immediately recognizable from its physical design, placement, and reflection. This preset is about believable mirror scenes, not funhouse distortions. Do not use carnival mirror warping, exaggerated stretching, pinching, or surreal distortion.\n\nREFLECTION ACCURACY:\n- Reflections must correspond to the subject's actual position, pose, clothing, expression, and physical appearance.\n- A reflection is not a second independent person. It must be the optically correct mirrored view of the same subject.\n- Respect mirror orientation, viewing angle, perspective, distance, and visible field of view.\n- Do not show the reflection from an impossible camera position or reveal details that the mirror could not physically reflect.\n- Do not reverse text on the mirror housing or warning labels unless the text is physically part of the reflected scene.\n- The actual subject and reflection must be positioned consistently. Do not create duplicated or disconnected body parts.\n- For the regular mirror option, clearly show the back or rear three-quarter view of the actual subject AND the subject's face in the mirror. This front-and-reflection relationship is essential.\n- For vehicle mirrors, show the correct mirror housing and location. The rearview mirror is inside the vehicle; the side mirror is mounted outside the vehicle.\n- For the car side mirror, include the exact warning 'OBJECTS IN MIRROR ARE CLOSER THAN THEY APPEAR'. Do not substitute unrelated wording.\n- For magnifying, convex, security, and safety mirrors, use the appropriate optical field of view and curvature without turning the result into a funhouse mirror.\n- Use realistic glass reflections, subtle surface highlights, believable environmental lighting, and appropriate reflections of nearby objects.\n- Do not paste the original photograph into the mirror. Reconstruct the reflected subject as a coherent optical reflection.\n\nThe master prompt takes priority over preset defaults, including mirror type, subject position, vehicle type, environment, pose, and composition."
   },
   {
     "name": "MIRROR WORLD",
@@ -44904,6 +45188,22 @@
     "additionalInstructions": "Create exactly eight separate enamel pins, all visible together in one cohesive collection. Each must have a distinct silhouette, design, and purpose. The collection must include these three required pins:\n\n1. SUBJECT PORTRAIT PIN: One medium-sized pin featuring a recognizable illustrated portrait of the actual subject. Preserve defining facial features, hairstyle, expression, distinctive appearance, and other recognizable characteristics. The portrait must be an illustration designed as an enamel pin, not a photograph printed inside a pin.\n2. DESCRIPTIVE WORD PIN: One small pin displaying exactly one concise word that describes the subject. Derive the word from visible photographic cues or explicit master-prompt information. Make the lettering large, clear, correctly spelled, and easy to read.\n3. NAME PIN: One small pin displaying the subject's name. Infer the name only if it is explicitly supplied or reliably available in the master prompt; otherwise use a suitable name-free identifying label rather than inventing a personal name. If the master prompt specifies a different name, nickname, title, or wording, use that instead. Keep the lettering clear and correctly spelled.\n\nThe remaining five pins must be original designs derived from the actual photograph or master prompt. Look for meaningful visual clues such as clothing, accessories, objects, occupation, hobbies, activities, setting, animals, distinctive colors, personality cues, or recognizable props. Translate those clues into compact, clever enamel-pin illustrations. Do not fill the collection with generic stars, hearts, smiley faces, or unrelated decorative filler when meaningful subject-specific details are available. Do not invent unsupported biographical facts or interests.\n\nAll eight pins must look like real manufactured hard-enamel pins: bold flat color fills, smooth polished enamel, clearly raised metallic borders separating color regions, crisp outlines, subtle dimensional metal edges, and convincing reflective highlights. Use bright, saturated, coordinated colors and visually engaging graphic design. Vary the pin silhouettes and sizes while keeping the portrait pin medium-sized and the word and name pins small. Ensure that every pin is individually visible, separated from the others, and not obscured or cropped. Present the complete collection in a clean product-display arrangement against a simple background that does not compete with the pins. The pins themselves must be the focus.\n\nDo not create eight copies of the portrait, eight unrelated generic badges, flat stickers, buttons, patches, printed paper illustrations, or ordinary metal charms without enamel. Do not place the original photograph inside a pin. Every design must be newly illustrated and physically constructed as an enamel pin. All text must be legible and correctly spelled. The master prompt takes priority over preset defaults, including the subject's name, descriptive wording, requested objects, themes, colors, and design direction."
   },
   {
+    "name": "PIÑATA",
+    "category": [
+      "TRANSFORMATION",
+      "PARTY",
+      "FIESTA",
+      "PAPER CRAFT",
+      "MEXICAN FOLK ART",
+      "3D",
+      "COLLECTIBLE"
+    ],
+    "message": "Take a picture and completely transform the subject into a real, three-dimensional piñata. Rebuild the entire subject as a recognizable piñata sculpture made from a papier-mâché or cardboard body covered in layers of brightly colored tissue-paper fringe. The subject's actual face, hair, body, clothing, and recognizable features must all become part of the piñata's physical construction. Preserve the subject's identity and recognizable silhouette while giving the entire figure the authentic handmade appearance, colorful layered fringe, slightly irregular construction, and festive character of a real party piñata. The result must look like an actual piñata photographed in the real world, not a photograph of the subject with tissue paper pasted onto it.",
+    "randomizeOptions": false,
+    "options": [],
+    "additionalInstructions": "COMPLETE PHYSICAL TRANSFORMATION — NOT A DECORATIVE OVERLAY:\n- Reconstruct the entire subject as a real piñata object. The original photograph must not remain visible beneath, inside, or behind the piñata surface.\n- The face must become a piñata face. Rebuild the eyes, nose, mouth, cheeks, ears, hair, and other recognizable features using layered paper, shaped papier-mâché, colored tissue paper, and carefully arranged craft details.\n- The body, arms, hands, legs, clothing, and accessories must all become parts of the piñata's physical structure.\n- Preserve the subject's recognizable identity, hairstyle, expression, pose, body shape, clothing colors, and defining details through the piñata construction.\n- Do not simply attach paper fringe to a photograph or wrap the original person in tissue paper. The subject itself must become the piñata.\n\nAUTHENTIC PIÑATA MATERIALS:\n- Use a convincing papier-mâché or cardboard foundation with a slightly irregular handmade sculptural form.\n- Cover the surface with numerous overlapping strips of brightly colored tissue paper, cut into fine fringe or scalloped layers.\n- The fringe must be visibly separate, layered, and dimensional, with individual paper strips and edges.\n- Use vivid festive colors, including combinations of red, yellow, orange, green, blue, purple, pink, and other bright hues as appropriate.\n- Create volume with shaped paper, folded cardboard, layered tissue, and handmade construction techniques.\n- The face and body must have recognizable sculptural features rather than being a flat printed picture.\n- Hair may be formed from layered paper fringe, curled tissue strips, or shaped paper pieces.\n- Clothing should be represented through color-blocked fringe and paper construction, preserving recognizable outfit details where possible.\n\nFORM AND PRESENTATION:\n- The result must have the physical volume and silhouette of a real piñata, not a flat illustration.\n- Preserve the subject's recognizable overall shape. If the source shows a person, create a full-body or appropriately framed human-shaped piñata rather than an unrelated animal piñata.\n- Use believable seams, overlapping paper, small construction irregularities, and subtle handmade imperfections.\n- A hanging loop or suspension string may be included when appropriate, but it must not obscure the subject.\n- The piñata may be shown hanging at a party or displayed as a finished handmade object, but do not add a person hitting it or show it being destroyed unless the master prompt requests that.\n- Use realistic lighting, shadows, and depth so the final image looks like a photograph of an actual handmade piñata.\n\nSTRICTLY AVOID:\n- A photograph with tissue paper pasted onto the surface.\n- A human wearing a piñata costume.\n- A flat printed image of a person on a piñata.\n- A normal person covered in fringe while retaining photographic skin or anatomy.\n- A generic star-shaped piñata that loses the subject's identity.\n- Smooth plastic, fabric, plush, or metallic surfaces in place of tissue-paper construction.\n- Unrelated decorative party props that distract from the piñata.\n\nFINAL TEST: The result must be immediately recognizable as a real handmade piñata whose shape and design are based on the original subject. Every visible part of the subject must be constructed from piñata materials. The master prompt takes priority over preset defaults, including pose, expression, colors, clothing, shape, and presentation."
+  },
+  {
     "name": "PINBALL MACHINE PORTRAIT",
     "category": [
       "OPTIONS",
@@ -46335,11 +46635,11 @@
       "PAINTING",
       "ROMANTIC"
     ],
-    "message": "Take a picture and transform the entire image into a richly detailed Pre-Raphaelite painting. Reconstruct the subject with the intricate realism, luminous colors, romantic atmosphere, expressive poses, flowing fabrics, elaborate natural details, and meticulous craftsmanship associated with the Pre-Raphaelite movement. Use jewel-like colors, detailed botanical elements, carefully rendered hair, decorative patterns, and richly composed backgrounds. The subject must look like the central figure in an authentic nineteenth-century Pre-Raphaelite painting.",
+    "message": "Take a picture and repaint it as an original Pre-Raphaelite oil painting from about 1850–1880, in which the subject is reinterpreted by the painter as a Pre-Raphaelite figure, the way those artists transformed every model who sat for them into their own ideal type. THE FACE MUST BE REPAINTED AND RESHAPED, NOT COPIED FROM THE PHOTO: give it the classic Pre-Raphaelite facial type, with a strong, sculpted jaw and chin, full, sharply sculpted lips with a pronounced bow, heavy-lidded, deep-set, softly shadowed eyes, a long, straight, strongly modeled nose, clearly arched brows, a long, solid, columnar neck, and smooth, porcelain-pale painted flesh with cool pearly highlights and greenish-violet half-tones, all built with the same visible, careful oil brushwork and glazes as the clothing and background. The subject stays recognizable only through hairstyle and hair color, glasses, general face shape, and the same expression and gesture, re-created by the painter. Paint the hair as rippling, crimped, flowing waves of individually painted strands. Use brilliant, jewel-like oil glazes over a white ground: emerald, moss, ruby, crimson, sapphire, ultramarine, purple, and gold. Use clear, even daylight, crisp hard-edged contours, and equally sharp detail everywhere, with no photographic blur. Present the figure as a painted half-length or three-quarter-length portrait at natural proportions, not a close-up selfie. Surround the figure with a shallow, tapestry-like setting of flowing fabrics, rich textiles, and botanically precise flowers and foliage. The result must look like a museum canvas from 1865, with no trace of the original photograph anywhere, especially in the face.",
     "randomizeOptions": false,
     "options": [],
-    "additionalInstructions": "Redraw and repaint the entire subject rather than applying a painting filter. Preserve recognizable facial identity, hairstyle, expression, body structure, and distinctive characteristics while translating them into the Pre-Raphaelite visual language. Use meticulous naturalistic detail, luminous skin tones, elaborate hair, intricate textiles, delicate flowers, foliage, and carefully observed natural surroundings. Favor rich emerald greens, ruby reds, deep blues, golds, and other saturated jewel tones. Give the composition the refined, romantic, highly detailed quality of historical Pre-Raphaelite painting. Avoid generic fantasy art, modern digital illustration, anime, exaggerated beauty filters, and loose impressionistic brushwork. The background must be fully reconstructed using the same artistic technique. Do not retain photographic portions of the source image. Any master prompt specifying the subject, pose, action, setting, mood, colors, or artistic direction overrides preset defaults."
-  },
+    "additionalInstructions": "THE FACE IS WHERE THIS KEEPS FAILING. Previous results painted the clothing and background beautifully but left the face as the original photograph with a light paint texture. That is a failure. The face must be completely repainted and reshaped by the painter's hand, at exactly the same level of painted stylization and brushwork as the robe and flowers beside it. If the face could be cut out and recognized as the original photo, the transformation has failed.\n\n1. THE PRE-RAPHAELITE FACE — HIGHEST PRIORITY:\n- Reconstruct the face's structure in the Pre-Raphaelite ideal, as these painters did with every sitter: a strong, sculpted jaw and chin; full, sharply defined, sculpted lips with a pronounced cupid's bow; heavy-lidded, deep-set eyes in softly shadowed sockets, with clearly painted lids and creases; a long, straight, strongly modeled nose; clearly arched, sharply drawn brows; and a long, solid, columnar neck.\n- Paint the flesh as smooth, porcelain-pale oil paint built from thin glazes: cool pearly highlights, rosy cheeks and lips, and greenish and violet half-tones in the shadows. The face must show the same painted surface, brushwork, and canvas texture as every other part of the picture.\n- No photographic skin, pores, camera sharpness, photographic catchlights, or photographic lighting on the face.\n- Recognizability comes only from: hairstyle and hair color, glasses (repainted with fine, clearly drawn frames and softly painted lenses, no glare), general face shape, and the same expression and gesture as the photo, all re-created in paint. Likeness to the photo is secondary to the face being a true Pre-Raphaelite painted face.\n- Paint the hair as abundant, rippling, crimped, flowing waves with individually painted strands and glowing color.\n\n2. THE FIGURE AND COMPOSITION:\n- Present the subject as a painted half-length or three-quarter-length figure at natural proportions, as in a Pre-Raphaelite portrait, never as a close-up, front-facing selfie with wide-angle distortion.\n- Keep the subject's gesture and expression, re-created as a painter would pose and paint a model.\n- Hands, if visible, are long, elegant, and carefully painted.\n- Use a shallow, flattened, densely detailed space, with forms arranged parallel to the picture plane like a tapestry or medieval painting.\n\n3. LIGHT, COLOR, AND SURFACE:\n- Clear, even, diffused daylight, as from a north-facing window or open air, with soft, shallow, luminous shadows. No flash, glare, lens flare, or harsh directional photographic light.\n- Brilliant, jewel-like color in transparent glazes over a luminous white ground: emerald and moss greens, ruby and crimson reds, sapphire and ultramarine blues, royal purples, copper and auburn, and burnished gold, harmonized with the photo's own colors.\n- Fine, smooth, careful oil brushwork and a faint canvas texture across the ENTIRE image, face included.\n- Crisp, hard-edged, precisely drawn contours, and equally sharp, minute detail from foreground to background, with no photographic depth of field or blur.\n\n4. SETTING AND CLOTHING:\n- Reconstruct the setting from the photo in the same painted manner, enriched with flowing fabrics, intricate textiles, decorative patterns, and botanically precise flowers, leaves, and foliage.\n- Clothing may become richly painted, flowing, medieval-inspired or romantic garments with embroidery, brocade, and velvet, keeping the subject's own colors and character.\n\n5. STRICTLY AVOID:\n- A face copied from the photograph, with or without paint texture. This is the number one failure.\n- A painted body and background with a photographic face.\n- Selfie framing, wide-angle distortion, or photographic lighting.\n- Blurred backgrounds or photographic depth of field.\n- Loose impressionistic brushwork, generic fantasy art, modern digital painting, anime, and beauty filters.\n- Text, signatures, or monograms.\n\nFINAL CHECK: Compare the face to the robe beside it. If the face looks more photographic than the robe, or looks like the original photo, the transformation has failed. The face must be a fully repainted Pre-Raphaelite face, sculpted, heavy-lidded, full-lipped, and porcelain-glazed, in the same brushwork as the rest of the canvas. Any master prompt specifying the subject, pose, action, setting, mood, colors, or artistic direction overrides preset defaults."
+  },  
   {
     "name": "PRECIOUS MOMENTS",
     "category": [
@@ -50899,33 +51199,38 @@
   {
     "name": "SANTA CLAUS",
     "category": [
+      "OPTIONS",
       "CHARACTER",
       "COSTUME",
       "HOLIDAY",
       "TRANSFORMATION",
       "SEASONAL"
     ],
-    "message": "Take a picture and transform the subject completely into Santa Claus while preserving their facial features and likeness. This means the subject, retaining their core identity, must now possess all the classic elements of Santa Claus: a flowing, long, voluminous, and soft white beard and mustache, thick white hair, and a significant, round, jolly Santa belly (which should be visible in their posture and clothing). They are dressed in a luxurious, traditional red velvet Santa suit with heavy white fur trim, a wide black leather belt with a gold buckle, and a red hat with fur. Their setting is festive.",
+    "message": "Take a picture and dress the subject up as Santa Claus while keeping their own face, likeness, and expression clearly recognizable. The subject wears a luxurious, traditional red velvet Santa suit with heavy white fur trim, a generously padded, round, jolly Santa-style front built into the suit, a wide black leather belt with a gold buckle, black boots, and a red Santa hat with a white fur brim and pom-pom. If the subject is an adult, give them a full, flowing, long, voluminous, soft white beard and mustache and thick white hair, for a complete classic Santa Claus look. If the subject is a child, keep them exactly their real age, size, and build, as an adorable child dressed in a Santa costume: a fluffy white costume beard with ear loops, and their own hair peeking out from under the Santa hat. The setting is warm, festive, and magical. If the selected option is the Classic Santa Photo, follow that option instead: the subject appears as themselves beside a separate Santa Claus.",
+    "randomizeOptions": true,
     "options": [
       {
         "id": "001",
-        "text": "Jolly Bellied Santa - Focus on the subject’s iconic round belly as they sit with their hand on it, laughing heartily by a rustic, crackling fireplace, surrounded by gifts."
+        "text": "Fireside Santa - The subject sits in a big armchair by a rustic, crackling fireplace, one hand resting on the round padded front of the Santa suit, laughing heartily, surrounded by wrapped gifts and stockings."
       },
       {
         "id": "002",
-        "text": "Santa in the Workshop - Place the subject, with the full Santa beard, hair, and belly, working happily on a wooden toy at a detailed North Pole workshop table."
+        "text": "Santa in the Workshop - The subject, in the full Santa outfit, works happily on a wooden toy at a detailed North Pole workshop table filled with tools, paint pots, and half-finished toys."
       },
       {
         "id": "003",
-        "text": "Sleigh Driver Santa - Transform the subject, with full beard and suit, into a heroic pose holding the reins of a high-flying sleigh against a snowy night sky and a large full moon."
+        "text": "Sleigh Driver Santa - The subject, in the full Santa outfit, strikes a heroic pose holding the reins of a high-flying sleigh piled with presents, against a snowy night sky and a large full moon."
       },
       {
         "id": "004",
-        "text": "Classic Santa Portrait - Create a detailed, close-up portrait of the subject as Santa Claus, focused on their kind eyes and the high-quality textures of the fur, velvet, and massive beard."
+        "text": "Classic Santa Portrait - A detailed, close-up holiday portrait of the subject as Santa Claus, focused on their kind, twinkling eyes and the rich textures of the fur, velvet, and white beard."
+      },
+      {
+        "id": "005",
+        "text": "Classic Santa Photo - In this option the subject is NOT dressed as Santa. The subject appears as themselves, in their own clothing, with their real face, age, and expression, posing for a traditional holiday photo with a separate, jolly Santa Claus in a red velvet suit with white fur trim, a full white beard, and twinkling eyes. Santa sits in a grand red-and-gold throne-style chair on a festive Santa's-village set with a decorated Christmas tree, twinkling lights, wrapped presents, candy canes, and artificial snow. A child sits on Santa's knee or stands right beside him, both smiling at the camera; an adult stands or sits beside Santa, sharing a cheerful moment. Render the subject as one complete, naturally proportioned person photographed in the scene, never a face or head placed onto another body: the head must be correctly sized for the subject's body, neck, and shoulders, with realistic proportions for their age, and the subject must be correctly scaled next to Santa, as a real child or adult would be. The subject and Santa share the same camera angle, focus, perspective, lighting direction, color, shadows, and photographic grain, as if both were captured together in a single shot. Bright, even, studio-style lighting gives it the look of a classic professional holiday photo with Santa."
       }
     ],
-    "randomizeOptions": true,
-    "additionalInstructions": "CORE STYLE:\n\n• Employ *soft, warm, and magical lighting* to enhance the holiday mood.\n• The beard must look realistic, soft, and well-integrated into the face, while *preserving the likeness* of the mouth and eyes.\n• Textures (velvet, wool, fur, leather) must be tactile and detailed.\n• Ensure the *significant Santa belly* is incorporated naturally into the subject’s physical presence and clothing fit.\n• The color palette is dominated by deep reds, greens, golds, and snowy whites."
+    "additionalInstructions": "CORE STYLE:\n\n• Employ soft, warm, and magical lighting to enhance the holiday mood.\n• Preserve the subject's face, likeness, and expression, especially the eyes and mouth.\n• Adults: the white beard, mustache, and hair must look realistic, soft, and well integrated into the face.\n• Children: keep the child's real age, face, size, and build completely unchanged. Do not age them, add wrinkles, or change their body. The beard is a fluffy, clearly costume-style white beard with ear loops, the suit is a child-sized Santa costume, and the round Santa front comes from the costume's padding. The result should feel like a sweet, cheerful holiday photo of a child dressed as Santa.\n• The round, jolly Santa shape always comes from the padded suit, never from altering anyone's body.\n• Classic Santa Photo option: the subject keeps their own clothing and appearance and is not given a beard, suit, or Santa hat. Santa Claus is a separate person. Generate the subject's entire figure, head, neck, shoulders, body, arms, and legs, as one coherent person with natural, age-appropriate head-to-body proportions; never paste or composite the original face or head onto a new body. Match the subject's scale to Santa's, and match the lighting, color, shadows, focus, perspective, and grain across the subject, Santa, and the set so the result looks like one real, unedited photograph. Keep the scene wholesome, cheerful, and family-friendly, like a traditional holiday photo.\n• Textures (velvet, wool, fur, leather) must be tactile and detailed.\n• The color palette is dominated by deep reds, greens, golds, and snowy whites."
   },
   {
     "name": "SASHIKO STITCHING",
@@ -52955,6 +53260,223 @@
     "randomizeOptions": false,
     "options": [],
     "additionalInstructions": "The defining technique is the physical appearance of liquid pigment being blown across a surface. Use branching ink trails, irregular feathering, fine tendrils, directional streaks, spreading edges, and organic branching structures. The direction and density of these marks should describe the subject's form. Use dense pigment deposits for darker areas and delicate branching trails for lighter areas. Facial features must remain recognizable and correctly positioned. Hair may be represented by flowing, branching ink formations, but must retain the subject's hairstyle and silhouette. Avoid turning the result into generic smoke, flames, lightning, tree branches, or ordinary airbrush painting. The subject must be built from blown liquid pigment, not simply decorated with it. Maintain sufficient tonal contrast and detail to preserve identity."
+  },
+{
+    "name": "SIGNS",
+    "category": [
+      "OPTIONS",
+      "HUMOR",
+      "SIGNS",
+      "TRANSFORMATION",
+      "GRAPHIC DESIGN",
+      "ILLUSTRATION",
+      "PUBLIC NOTICES"
+    ],
+    "message": "Take a picture and transform the subject into the selected type of sign, using the authentic design, layout, typography, colors, symbols, pictograms, and visual conventions of that particular sign. The subject must be redrawn or stylized as an integral part of the sign's graphic design. Do not simply paste the original photograph onto a sign. Use flavor text, visible details, and context from the source image to create appropriate wording when the selected sign calls for it. Preserve the subject's recognizable identity through a sign-appropriate illustration, silhouette, pictogram, or graphic representation. The finished image must look like a real, recognizable sign with a humorous subject-specific message.",
+    "randomizeOptions": true,
+    "options": [
+      {
+        "id": "001",
+        "text": "BEWARE OF BOY — Create a classic warning sign reading 'BEWARE OF BOY' with a bold silhouette or graphic illustration of the subject in the style of a beware-of-dog sign. If the subject is an adult man or woman, adapt the wording to 'BEWARE OF MAN' or 'BEWARE OF WOMAN'. Use the subject's recognizable silhouette and visual characteristics."
+      },
+      {
+        "id": "002",
+        "text": "DANGER: WILD HUMAN — Create a yellow-and-black industrial danger sign with the wording 'DANGER: WILD HUMAN'. Show a warning pictogram of the subject behaving wildly, using a bold recognizable silhouette."
+      },
+      {
+        "id": "003",
+        "text": "CAUTION: UNSTABLE — Create a yellow caution sign with a black warning triangle and a stylized silhouette of the subject wobbling, stumbling, or losing balance. Use the wording 'CAUTION: UNSTABLE'."
+      },
+      {
+        "id": "004",
+        "text": "ROAD CROSSING — Create a standard pedestrian-crossing road sign, but replace the conventional walking-person pictogram with a recognizable simplified silhouette of the subject walking across the road. Retain the authentic road-sign shape, colors, and graphic simplicity."
+      },
+      {
+        "id": "005",
+        "text": "SLOW: SUBJECT CROSSING — Create a yellow diamond road warning sign showing the subject crossing the road in a recognizable silhouette. Use a short warning such as 'SLOW: SUBJECT CROSSING'."
+      },
+      {
+        "id": "006",
+        "text": "SLIPPERY WHEN WET — Create a standard yellow slippery-road warning sign, but replace the generic slipping-person pictogram with a stylized silhouette of the subject slipping dramatically. Preserve the familiar warning-sign visual language."
+      },
+      {
+        "id": "007",
+        "text": "MEN AT WORK — Create an orange road-work sign using the traditional worker-with-shovel pictogram, but redraw the worker as a recognizable silhouette of the subject. Adapt the wording to 'SUBJECT AT WORK' when appropriate."
+      },
+      {
+        "id": "008",
+        "text": "NO RUNNING — Create a standard prohibition sign with a red circle and diagonal slash over a pictogram of the subject running. The silhouette must resemble the subject rather than a generic stick figure."
+      },
+      {
+        "id": "009",
+        "text": "NO PHOTOGRAPHY — Create a standard no-photography sign, but use a simplified recognizable illustration of the subject holding a camera beneath the red prohibition slash."
+      },
+      {
+        "id": "010",
+        "text": "WATCH FOR SUBJECT — Create a yellow animal-crossing-style road warning sign showing the subject in a walking or crossing pose instead of an animal. Use the wording 'WATCH FOR SUBJECT' or an appropriate concise warning."
+      },
+      {
+        "id": "011",
+        "text": "FOR SALE — Create a traditional real-estate-style 'FOR SALE' sign with the subject represented as the item being sold. Use a small illustrated portrait, silhouette, or stylized graphic of the subject integrated into the sign's layout. Add humorous supporting details derived from the photo, such as personality traits or fictional selling points. Do not paste the original photograph onto the sign."
+      },
+      {
+        "id": "012",
+        "text": "FOR RENT — Create a traditional 'FOR RENT' sign advertising the subject as the item available for rent. Use a stylized subject illustration integrated into the sign. Add a humorous short description or rental terms based on flavor text."
+      },
+      {
+        "id": "013",
+        "text": "OPEN FOR BUSINESS — Create a storefront sign reading 'OPEN FOR BUSINESS' with the subject illustrated as the proprietor or business itself. Use authentic shop-sign typography and a small graphic representation of the subject."
+      },
+      {
+        "id": "014",
+        "text": "CLOSED: OUT OF ORDER — Create a recognizable red-and-white 'OUT OF ORDER' notice featuring a humorous illustration of the subject as the malfunctioning item or reason the establishment is closed."
+      },
+      {
+        "id": "015",
+        "text": "WET FLOOR — Create a classic yellow folding supermarket wet-floor warning sign. Show a black pictogram of the subject in the act of urinating on the floor, with a small puddle beneath the silhouette. The image should be humorous and non-explicit, using the simple graphic language of standard wet-floor signs."
+      },
+      {
+        "id": "016",
+        "text": "CAUTION: HALF PRICE — Create a supermarket half-off promotional sign featuring the subject as the featured discounted product. Use large '50% OFF' or 'HALF PRICE' lettering and a stylized subject illustration integrated into the retail sign design."
+      },
+      {
+        "id": "017",
+        "text": "CLEARANCE: FINAL SALE — Create a bold retail clearance sign advertising the subject as a final-sale item. Use large red or yellow sale lettering, a recognizable subject illustration, and humorous flavor-text details."
+      },
+      {
+        "id": "018",
+        "text": "MISSING PERSON — Create a classic missing-person notice with a stylized illustrated portrait of the subject, a large 'MISSING' headline, and humorous last-seen details derived from the image or master prompt. Do not use the original photograph as a pasted image."
+      },
+      {
+        "id": "019",
+        "text": "WANTED — Create an old-fashioned wanted poster featuring the subject as the wanted individual. Redraw the subject as a period-style engraved or illustrated portrait, with a large 'WANTED' heading and humorous charges based on flavor text."
+      },
+      {
+        "id": "020",
+        "text": "LOST: HAVE YOU SEEN ME? — Create a humorous lost-person sign featuring a simplified illustrated likeness of the subject and the wording 'HAVE YOU SEEN ME?' Add a playful description based on visible details or master-prompt flavor text."
+      },
+      {
+        "id": "021",
+        "text": "KEEP OUT — Create a classic red-and-white 'KEEP OUT' warning sign with a bold silhouette of the subject blocking entry. The subject should be illustrated as part of the sign's graphic, not pasted onto it."
+      },
+      {
+        "id": "022",
+        "text": "AUTHORIZED PERSONNEL ONLY — Create an industrial access-restriction sign showing the subject as the only person authorized to enter. Use a recognizable silhouette and authentic industrial typography."
+      },
+      {
+        "id": "023",
+        "text": "NO LOITERING — Create a standard no-loitering sign with a red prohibition circle and slash over a recognizable silhouette of the subject standing around casually."
+      },
+      {
+        "id": "024",
+        "text": "NO FOOD OR DRINK — Create a standard prohibition sign featuring the subject eating or drinking, with the action crossed out by the familiar red circle and diagonal slash."
+      },
+      {
+        "id": "025",
+        "text": "NO TALKING — Create a recognizable no-talking sign with a pictogram of the subject speaking, surrounded by a red prohibition circle and diagonal slash."
+      },
+      {
+        "id": "026",
+        "text": "QUIET PLEASE — Create a library or hospital-style 'QUIET PLEASE' sign showing the subject making an exaggerated shushing gesture. Use a clear, simple illustrated silhouette."
+      },
+      {
+        "id": "027",
+        "text": "SPEED LIMIT — Create a standard circular speed-limit sign with the subject's face or recognizable head illustrated in place of the number. Use a humorous speed designation derived from flavor text, such as 'SPEED LIMIT: 1 MPH' or '100 MPH'."
+      },
+      {
+        "id": "028",
+        "text": "DEAD END — Create a standard dead-end road sign featuring a small, recognizable silhouette of the subject standing at the end of a road or blocking the route."
+      },
+      {
+        "id": "029",
+        "text": "WRONG WAY — Create a bold red-and-white WRONG WAY road sign showing the subject walking or driving in the wrong direction as a simple graphic pictogram."
+      },
+      {
+        "id": "030",
+        "text": "DO NOT DISTURB — Create a hotel-style 'DO NOT DISTURB' door sign with a humorous illustrated depiction of the subject sleeping, relaxing, or refusing to be interrupted."
+      },
+      {
+        "id": "031",
+        "text": "RESTROOM SIGN — Create a familiar restroom sign using male, female, or neutral human pictograms, but redesign the figure as a simplified silhouette recognizable as the subject. Use the appropriate restroom symbol and authentic sign layout."
+      },
+      {
+        "id": "032",
+        "text": "EXIT SIGN — Create a standard illuminated EXIT sign with the subject's silhouette replacing the conventional running-person pictogram, showing the subject heading toward the exit."
+      },
+      {
+        "id": "033",
+        "text": "EMERGENCY EXIT — Create an emergency-exit instruction sign with a recognizable silhouette of the subject escaping through a doorway. Use the visual conventions of official safety pictograms."
+      },
+      {
+        "id": "034",
+        "text": "FIRE WARNING — Create a red-and-white fire warning sign showing the subject as the cause of a comical fire hazard, using a simplified pictogram and a short warning such as 'CAUTION: SUBJECT MAY CAUSE SPARKS'."
+      },
+      {
+        "id": "035",
+        "text": "HIGH VOLTAGE — Create a yellow triangular high-voltage danger sign with a lightning bolt and a stylized silhouette of the subject surrounded by electrical sparks. The subject is depicted as the source of the electrical hazard."
+      },
+      {
+        "id": "036",
+        "text": "BIOHAZARD — Create a recognizable yellow-and-black biohazard warning sign featuring the subject's simplified silhouette or illustrated face within the central hazard graphic. Use humorous flavor text such as 'BIOHAZARD: EXTREME PERSONALITY'."
+      },
+      {
+        "id": "037",
+        "text": "RADIOACTIVE — Create a standard radiation warning sign with the familiar radiation trefoil and a stylized subject silhouette in the center. Add humorous wording suggesting the subject is unusually radioactive or has dangerous energy."
+      },
+      {
+        "id": "038",
+        "text": "CAUTION: EXPLOSIVE — Create a yellow industrial warning sign showing a stylized silhouette of the subject with a cartoon explosion symbol. Use humorous wording such as 'CAUTION: EXPLOSIVE PERSONALITY'."
+      },
+      {
+        "id": "039",
+        "text": "BEWARE: HOT STUFF — Create a warning sign with a flame symbol and a stylized illustrated portrait or silhouette of the subject. Use the wording 'BEWARE: HOT STUFF' or a similar playful warning."
+      },
+      {
+        "id": "040",
+        "text": "FRAGILE — Create a shipping-label-style FRAGILE sign featuring a pictogram of the subject inside a breakable package. Use the familiar wineglass symbol and humorous handling instructions."
+      },
+      {
+        "id": "041",
+        "text": "HANDLE WITH CARE — Create a shipping or handling sign showing the subject as a delicate or unusually difficult-to-handle package. Use a stylized subject pictogram and authentic handling symbols."
+      },
+      {
+        "id": "042",
+        "text": "THIS SIDE UP — Create a cardboard shipping label with THIS SIDE UP arrows and a humorous silhouette of the subject positioned in the correct orientation. The subject is illustrated as the contents of the package."
+      },
+      {
+        "id": "043",
+        "text": "NO PARKING — Create a standard no-parking sign with a recognizable silhouette of the subject standing or sitting in a parking space, crossed out by the red prohibition symbol."
+      },
+      {
+        "id": "044",
+        "text": "RESERVED PARKING — Create a blue reserved-parking sign with the subject's silhouette or simplified portrait replacing the conventional parking symbol. Use wording such as 'RESERVED FOR [SUBJECT NAME]' when the name is known."
+      },
+      {
+        "id": "045",
+        "text": "ONE WAY — Create a standard black-and-white ONE WAY road sign with the subject illustrated as a small silhouette traveling in the direction of the arrow. The subject's pose and direction must match the arrow."
+      },
+      {
+        "id": "046",
+        "text": "CAUTION: LOW CLEARANCE — Create a yellow low-clearance road warning sign showing the subject ducking beneath a low beam or overhead obstruction. Use a recognizable simplified silhouette."
+      },
+      {
+        "id": "047",
+        "text": "SCHOOL CROSSING — Create a standard school-crossing warning sign with a recognizable subject silhouette replacing the usual walking children pictogram. Use the familiar yellow pentagon or diamond sign design."
+      },
+      {
+        "id": "048",
+        "text": "ANIMAL CROSSING — Create a standard animal-crossing road sign, but replace the animal pictogram with a recognizable silhouette of the subject walking across the road. Use humorous wording such as 'SUBJECT CROSSING'."
+      },
+      {
+        "id": "049",
+        "text": "CAUTION: UNDER CONSTRUCTION — Create an orange construction warning sign featuring the subject as a simplified worker or partially constructed figure. Use the wording 'CAUTION: UNDER CONSTRUCTION' and appropriate construction pictograms."
+      },
+      {
+        "id": "050",
+        "text": "OFFICIAL WARNING: EXTREME CHARACTER — Create a bold, official-looking warning sign featuring a stylized portrait or silhouette of the subject. Use the wording 'WARNING: EXTREME CHARACTER' and humorous supporting flavor text describing the subject's visible personality, expression, or behavior."
+      }
+    ],
+    "additionalInstructions": "THE SIGN'S AUTHENTIC DESIGN MUST BE PRESERVED. Each option must look like the actual type of sign it describes, not a generic poster with words placed over a photograph. Reproduce the recognizable shape, color scheme, typography, graphic conventions, symbols, layout, and visual hierarchy of the selected sign.\n\n1. SUBJECT MUST BE PART OF THE SIGN GRAPHIC:\n- Never simply paste the original photograph onto the sign.\n- Redraw the subject as a sign-appropriate illustration, silhouette, pictogram, icon, engraved portrait, or simplified graphic.\n- Preserve the subject's recognizable characteristics through the shape of the head, hairstyle, clothing silhouette, posture, accessories, and other distinctive visual details.\n- For pictogram-based signs, simplify the subject into bold, immediately readable shapes while retaining enough distinctive characteristics to identify the person.\n- For portrait-based signs, use a deliberately illustrated likeness that matches the sign's graphic style.\n- The subject must be integrated into the sign's original visual structure, not added as an unrelated decoration.\n\n2. AUTHENTIC SIGN DESIGN:\n- Use the correct sign shape and proportions: diamond, rectangle, circle, triangle, folding floor sign, real-estate post sign, retail placard, shipping label, or other appropriate format.\n- Use the recognizable color conventions of the selected sign. Examples include yellow-and-black caution signs, red-and-white prohibition signs, orange construction signs, blue information signs, green emergency-exit signs, and bold retail sale colors.\n- Use appropriate typography, spacing, borders, pictograms, arrows, and graphic hierarchy.\n- Keep important wording large, readable, correctly spelled, and appropriately placed.\n- Do not add random text, fake company logos, unrelated symbols, or unnecessary decorative borders.\n\n3. FLAVOR TEXT:\n- Derive humorous descriptions, warnings, selling points, charges, and supporting phrases from visible clues in the photograph or from the master prompt.\n- If the subject's name is visible or supplied by the master prompt, use it where appropriate.\n- A master-prompt name may replace the subject's name in the wording.\n- Do not invent personal facts that cannot reasonably be inferred from the image or master prompt.\n- If no useful flavor text is available, use concise wording appropriate to the selected sign rather than inventing a biography.\n- Never let small supporting text compete with the main sign message.\n\n4. OPTION-SPECIFIC REQUIREMENTS:\n- WARNING and DANGER signs must use authentic warning graphics and recognizable subject silhouettes.\n- ROAD signs must use the visual simplicity of actual road-sign pictograms. Do not turn them into elaborate portraits or posters.\n- FOR SALE and FOR RENT signs must represent the subject as the advertised item using a stylized graphic, not a pasted photograph.\n- WET FLOOR must resemble a real folding supermarket caution sign, with a humorous non-explicit silhouette depicting the subject urinating and a small puddle symbol.\n- Retail SALE and CLEARANCE signs must use authentic retail lettering, price emphasis, discount symbols, and a graphic representation of the subject as the featured product.\n- WANTED and MISSING notices may use more detailed illustrated portraits, but must still retain the layout and visual conventions of the selected notice.\n- Prohibition signs must use the recognizable red circle and diagonal slash over the subject's pictogram.\n- EXIT, RESTROOM, and emergency signs must use simple, high-contrast pictograms that remain legible at a glance.\n\n5. STRICTLY PROHIBITED:\n- A photograph of the subject pasted onto a sign.\n- A generic sign with the subject's name added as an afterthought.\n- A poster or advertisement that does not resemble the selected sign type.\n- Inconsistent or incorrect sign colors and symbols.\n- Unreadable or misspelled primary wording.\n- Overly elaborate subject illustrations on signs that normally use simple pictograms.\n- Generic stick figures when a recognizable subject silhouette can be created.\n- Unrelated flavor text, invented personal details, or random slogans.\n\nFINAL QUALITY TEST: The result must be immediately recognizable as the selected real-world sign type, and the subject must be an integral part of its graphic design. A viewer should understand both the sign's intended message and the humorous transformation without needing an explanation.\n\nThe master prompt takes priority over preset defaults, including wording, subject name, sign message, pose, expression, colors, and any requested visual direction."
   },
   {
     "name": "SIGNWRITING",
