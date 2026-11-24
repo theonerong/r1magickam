@@ -42792,6 +42792,71 @@
     "additionalInstructions": "• Transform ONLY the subject.\n• Keep the background completely unchanged.\n• Preserve the original environment, lighting, perspective, colors, shadows, and every background object exactly as photographed.\n• Completely discard the original photographic subject before reconstruction.\n• NEVER draw oscilloscope lines over the original subject.\n• NEVER blend photographic textures with CRT graphics.\n• The original subject must not remain visible anywhere.\n• Every visible part of the subject must be reconstructed entirely from authentic oscilloscope vector traces.\n• Preserve the subject's exact identity, facial structure, hairstyle, expression, age, ethnicity, body proportions, pose, silhouette, and recognizable features.\n• Facial features must emerge solely through the arrangement of glowing electron-beam traces.\n• Hair, clothing, hands, and all anatomical features must also be formed entirely from vector traces.\n• Use continuous analog line rendering rather than disconnected pixels.\n• Include authentic CRT characteristics including phosphor glow, beam bloom, intensity falloff, persistence, slight analog wobble, brightness variation, and subtle trace flicker.\n• Preserve realistic oscilloscope geometry including smoothly flowing curves, vector line intersections, continuous beam movement, and analog precision.\n• Never create raster graphics, pixel art, wireframe models, or neon tubing.\n• Never display a photograph on a monitor.\n• The subject should appear to exist entirely as live oscilloscope graphics.\n• The oscilloscope traces should remain physically plausible according to analog vector CRT behavior.\n• The final artwork should resemble a genuine oscilloscope displaying an incredibly complex vector portrait.\n• Master prompt instructions always override the selected option whenever conflicts occur.\n\nFINAL VALIDATION — Before producing the final image, verify ALL of the following:\n\n✓ ONLY the subject has been transformed.\n✓ The background remains completely unchanged.\n✓ The original photographic subject has been completely removed.\n✓ Every visible part of the subject has been reconstructed entirely from glowing oscilloscope vector traces.\n✓ Oscilloscope lines have NOT been drawn over the original subject.\n✓ Authentic CRT phosphor glow, persistence, bloom, and analog characteristics are clearly visible.\n✓ Facial features have been recreated entirely through vector traces.\n✓ No photographic textures remain.\n✓ The subject remains immediately recognizable.\n✓ The artwork resembles a genuine analog oscilloscope display rather than a neon illustration or wireframe drawing.\n✓ If ANY answer is NO, regenerate the image until every requirement is satisfied."
   },
   {
+    "name": "OSCILLOSCOPE PORTRAIT",
+    "category": [
+      "OPTIONS",
+      "ART",
+      "ELECTRONIC ART",
+      "SCIENTIFIC VISUALIZATION",
+      "WAVEFORMS",
+      "RETRO TECHNOLOGY",
+      "PORTRAIT"
+    ],
+    "message": "Take a picture and completely reconstruct the subject as an oscilloscope-generated vector portrait, as though the subject is being drawn directly on the screen of an analog electronic oscilloscope using electrical waveforms. The entire subject must be formed from luminous, continuously connected waveform traces, not from a photograph with lines drawn over it. Use the distinctive appearance of an actual analog oscilloscope: a nearly black display, a fine phosphor-green glow, subtle CRT scan lines, and precise luminous vector traces. Construct the subject's recognizable face, facial features, hair, clothing, body contours, and other defining details from carefully controlled waveform paths. The waveforms must follow the actual shapes of the subject, creating a convincing recognizable portrait through electronic signal patterns. Use varying waveform frequencies, amplitudes, and trace densities to describe contours, shading, depth, and detail. The result should look like a sophisticated electronic portrait being generated live by an oscilloscope, not a conventional digital illustration, wireframe model, audio equalizer, or random collection of squiggly lines.",
+    "randomizeOptions": true,
+    "options": [
+      {
+        "id": "001",
+        "text": "Classic Green Oscilloscope — Use the classic analog oscilloscope appearance with luminous phosphor-green vector traces on a deep black CRT screen. Build the entire subject from precise green waveform paths, with a subtle green phosphor glow and authentic vintage electronic instrumentation appearance."
+      },
+      {
+        "id": "002",
+        "text": "Multicolor Oscilloscope — Construct the subject using multiple luminous waveform colors, including green, cyan, yellow, orange, and magenta. Use color differences to distinguish facial features, contours, clothing, and depth while retaining the authentic analog oscilloscope appearance."
+      },
+      {
+        "id": "003",
+        "text": "XY Vector Portrait — Create the subject using XY-mode oscilloscope vector drawing. The horizontal and vertical signal inputs must trace continuous paths that directly form the subject's recognizable facial features, silhouette, hair, and clothing. Emphasize the smooth, controlled curves characteristic of an XY vector display rather than a conventional left-to-right waveform."
+      },
+      {
+        "id": "004",
+        "text": "Waveform Contours — Construct the subject entirely from tightly controlled, nested waveform contours. The traces must follow the three-dimensional forms of the face, head, hair, and body, using variations in frequency, amplitude, spacing, and curvature to communicate volume and depth."
+      },
+      {
+        "id": "005",
+        "text": "Audio Signal Portrait — Create the subject as though their likeness has been encoded into an elaborate audio signal and displayed on an oscilloscope. Use complex modulated waveforms that follow and define the subject's facial features and anatomy. Do not create ordinary music visualizer bars or equalizer graphics."
+      },
+      {
+        "id": "006",
+        "text": "Dual-Trace Portrait — Use two distinct synchronized oscilloscope traces to construct the portrait. The two traces should complement one another, defining different structural aspects of the subject, such as outer contours and internal facial features. Keep the resulting portrait coherent and recognizable."
+      },
+      {
+        "id": "007",
+        "text": "Oscilloscope Full Body — Reconstruct the subject's complete visible body, including the full pose, clothing, arms, hands, legs, and footwear where visible, using luminous oscilloscope vector traces. Preserve the original framing and do not crop the subject into a head-and-shoulders portrait."
+      },
+      {
+        "id": "008",
+        "text": "Oscilloscope Face — Concentrate the waveform construction on the subject's face. Use precise vector traces to define the eyes, eyebrows, nose, mouth, ears, facial contours, and hairline. Preserve the subject's exact recognizable facial identity and expression."
+      },
+      {
+        "id": "009",
+        "text": "Retro CRT Display — Present the oscilloscope portrait as a close-up photograph of a vintage cathode-ray oscilloscope screen. Include authentic CRT curvature, subtle scan lines, phosphor persistence, slight screen bloom, and restrained electronic display artifacts. The waveform portrait itself must remain crisp and recognizable."
+      },
+      {
+        "id": "010",
+        "text": "High-Precision Vector — Use exceptionally fine, controlled, high-density vector traces to reconstruct the subject with remarkable detail. Precisely define facial anatomy, hair texture, clothing folds, and small identifying features while maintaining the appearance of an actual oscilloscope display."
+      },
+      {
+        "id": "011",
+        "text": "Chaotic Signal — Create a more experimental oscilloscope portrait using complex modulated and intersecting waveforms. Allow controlled signal complexity and interference around the subject, but keep the facial features, body silhouette, and identity clearly readable."
+      },
+      {
+        "id": "012",
+        "text": "Oscilloscope on Instrument — Show the subject's waveform portrait on the screen of a complete vintage electronic oscilloscope instrument. Include a recognizable CRT display, authentic control knobs, buttons, calibration markings, and input connectors. The screen must clearly display the subject reconstructed from vector waveforms."
+      }
+    ],
+    "additionalInstructions": "The defining requirement is that the subject must be DRAWN BY ELECTRONIC WAVEFORMS, as though an actual oscilloscope is generating the image. This is a complete reconstruction, not a photograph with a waveform effect, green filter, neon outline, or decorative electronic graphics layered over the original image.\n\n1. SUBJECT RECONSTRUCTION: Rebuild the entire visible subject using luminous waveform traces. The face must be formed by the traces themselves, including recognizable eyes, eyebrows, nose, nostrils, mouth, lips, ears, jawline, facial expression, and other identifying characteristics. Hair must be constructed from waveform paths that communicate its actual shape and hairstyle. Clothing, accessories, hands, and body contours must also be drawn by the electronic traces. Do not leave any part of the subject as an ordinary photograph.\n\n2. ACTUAL OSCILLOSCOPE CHARACTER: Use the visual language of an analog electronic oscilloscope, particularly XY vector mode. XY mode is especially important: the signal controls the horizontal and vertical position of a luminous trace, allowing the trace to draw recognizable outlines and shapes. Use smooth curves, controlled paths, and carefully modulated waveforms rather than random oscillations. The result should resemble a sophisticated electronic vector drawing on a CRT display.\n\n3. WAVEFORM DETAIL: Vary frequency, amplitude, phase, density, and trace spacing to describe different features. Use smooth, tightly controlled traces for facial contours and sharp details; denser patterns for shadowed areas; and broader curves for larger forms. The waveform paths must follow the subject's actual anatomy and geometry. Avoid indiscriminate squiggles that obscure the face.\n\n4. DISPLAY APPEARANCE: Use a deep black or very dark display background with luminous phosphor traces. The classic green phosphor appearance is the default unless an option or master prompt specifies another color. Add subtle CRT scan lines, restrained phosphor bloom, slight persistence, and authentic electronic display characteristics. Do not overdo screen distortion, noise, or glitches.\n\n5. PRESERVE IDENTITY AND PROPORTIONS: The subject must remain immediately recognizable. Preserve facial structure, age appearance, hairstyle, expression, clothing, pose, body proportions, and distinctive accessories. Do not replace the subject with a generic geometric face, anonymous silhouette, robot, or unrelated electronic symbol.\n\n6. COMPOSITION: Preserve the original subject's framing and visible body extent unless the selected option or master prompt explicitly requests a different composition. If the source shows a full-body subject, reconstruct the full body rather than producing only a face. If the source contains multiple people, reconstruct each person as a distinct, recognizable waveform portrait.\n\n7. AVOID INCORRECT INTERPRETATIONS: Do not produce an audio equalizer, music visualization bars, random sound waves, a conventional wireframe mesh, a laser hologram, a neon line drawing, or a photograph covered in electronic effects. Do not merely draw a waveform beside the subject. The waveforms must actually create the subject.\n\n8. VISUAL CLARITY: Maintain sufficient waveform precision and contrast to make the subject's features readable. Do not let excessive overlapping traces, chaotic interference, or decorative grid lines destroy facial recognition. The portrait must be the clear focal point.\n\n9. MASTER PROMPT PRIORITY: Any subject, pose, action, expression, setting, color, waveform style, composition, or artistic direction explicitly specified by the master prompt overrides the preset defaults and selected option. Apply the oscilloscope reconstruction to the requested subject and scene while preserving the defining electronic waveform technique."
+  },
+  {
     "name": "OSHIKURU: DEMON SAMURAI",
     "category": [
       "ANIME",
