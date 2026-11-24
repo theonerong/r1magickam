@@ -2004,6 +2004,7 @@
   {
     "name": "AMES ROOM ILLUSION",
     "category": [
+      "OPTIONS",
       "OPTICAL ILLUSION",
       "PERSPECTIVE",
       "FORCED PERSPECTIVE",
@@ -2015,43 +2016,35 @@
     "options": [
       {
         "id": "001",
-        "label": "Giant and Tiny",
-        "prompt": "Show two apparent versions of the same subject at opposite ends of the Ames room: one appears enormous and the other appears tiny. Both are actually the same physical size in the distorted room. Preserve identity and make the perspective illusion convincing."
+        "text": "Giant and Tiny — Show two apparent versions of the same subject at opposite ends of the Ames room: one appears enormous and the other appears tiny. Both are actually the same physical size in the distorted room. Preserve identity and make the perspective illusion convincing."
       },
       {
         "id": "002",
-        "label": "Giant Subject",
-        "prompt": "Place the subject at the large end of the Ames room so they appear impossibly gigantic in comparison with the room's furniture, doors, windows, and architectural features."
+        "text": "Giant Subject — Place the subject at the large end of the Ames room so they appear impossibly gigantic in comparison with the room's furniture, doors, windows, and architectural features."
       },
       {
         "id": "003",
-        "label": "Tiny Subject",
-        "prompt": "Place the subject at the small end of the Ames room so they appear extraordinarily tiny in comparison with the room's furniture, doors, windows, and architectural features."
+        "text": "Tiny Subject — Place the subject at the small end of the Ames room so they appear extraordinarily tiny in comparison with the room's furniture, doors, windows, and architectural features."
       },
       {
         "id": "004",
-        "label": "Two People, One Illusion",
-        "prompt": "If two or more people are visible in the source image, position them at opposite ends of the distorted room so that one appears gigantic and the other appears tiny. Preserve each person's identity and make the size difference unmistakable."
+        "text": "Two People, One Illusion — If two or more people are visible in the source image, position them at opposite ends of the distorted room so that one appears gigantic and the other appears tiny. Preserve each person's identity and make the size difference unmistakable."
       },
       {
         "id": "005",
-        "label": "Furniture Scale Trick",
-        "prompt": "Make the subject appear to change size in relation to dramatically distorted furniture. Include a chair, table, doorway, and other familiar objects whose apparent scale reveals the room's impossible geometry."
+        "text": "Furniture Scale Trick — Make the subject appear to change size in relation to dramatically distorted furniture. Include a chair, table, doorway, and other familiar objects whose apparent scale reveals the room's impossible geometry."
       },
       {
         "id": "006",
-        "label": "Giant at the Door",
-        "prompt": "Place the subject near the oversized end of the Ames room, appearing gigantic while standing beside a doorway that looks ordinary from the camera position. Make the distorted architecture reveal the actual perspective trick."
+        "text": "Giant at the Door — Place the subject near the oversized end of the Ames room, appearing gigantic while standing beside a doorway that looks ordinary from the camera position. Make the distorted architecture reveal the actual perspective trick."
       },
       {
         "id": "007",
-        "label": "Tiny in the Corner",
-        "prompt": "Place the subject at the miniature end of the room, near a corner that appears to be the same distance from the camera as the opposite corner. Make the subject appear dramatically smaller without shrinking the subject artificially."
+        "text": "Tiny in the Corner — Place the subject at the miniature end of the room, near a corner that appears to be the same distance from the camera as the opposite corner. Make the subject appear dramatically smaller without shrinking the subject artificially."
       },
       {
         "id": "008",
-        "label": "Impossible Roommates",
-        "prompt": "Show the subject interacting with another apparent version of themselves at the opposite end of the Ames room. One appears gigantic and the other tiny, while both occupy the same physically distorted room."
+        "text": "Impossible Roommates — Show the subject interacting with another apparent version of themselves at the opposite end of the Ames room. One appears gigantic and the other tiny, while both occupy the same physically distorted room."
       }
     ],
     "additionalInstructions": "The defining feature must be the genuine Ames room illusion, not an ordinary forced-perspective photograph, a giant-versus-miniature composite, or a digitally resized person. Construct a single continuous, asymmetrical trapezoidal room with a carefully chosen viewpoint. The room's floor, ceiling, walls, corners, windows, doors, and furniture must be geometrically distorted so that the room appears rectangular and normal from the camera's exact viewing position. The two rear corners must appear to be at approximately the same distance from the camera even though one is physically much closer and the other much farther away. This deceptive geometry is essential. The subject must remain physically proportionate and correctly scaled within their actual position in the room. The apparent size difference must be produced by the room's geometry and forced perspective, not by enlarging or shrinking the subject independently. Include recognizable architectural references, such as doors, windows, floorboards, tiles, or furniture, that make the illusion immediately understandable. Maintain one consistent camera viewpoint; do not use multiple camera angles or a split-screen comparison. Avoid floating subjects, distorted anatomy, detached body parts, or inconsistent shadows. The final image should look like a photograph taken from the one special viewing position where the impossible room appears normal. If the master prompt specifies the room design, subject placement, number of people, interaction, or visual direction, it overrides the default option."
@@ -6121,6 +6114,7 @@
   {
     "name": "BLACKLIGHT REVEAL",
     "category": [
+      "OPTIONS",
       "ART",
       "PHOTOGRAPHY",
       "ULTRAVIOLET",
@@ -6133,63 +6127,51 @@
     "options": [
       {
         "id": "001",
-        "label": "Neon Fluorescent",
-        "prompt": "Illuminate the subject with intense fluorescent pink, electric blue, ultraviolet purple, and acid green accents. Create a vivid blacklight color spectacle with strong contrast against darkness."
+        "text": "Neon Fluorescent — Illuminate the subject with intense fluorescent pink, electric blue, ultraviolet purple, and acid green accents. Create a vivid blacklight color spectacle with strong contrast against darkness."
       },
       {
         "id": "002",
-        "label": "Fluorescent Body Paint",
-        "prompt": "Make the subject appear covered in elaborate ultraviolet-reactive body paint. The paint should glow intensely in intricate patterns while the unpainted skin remains comparatively subdued."
+        "text": "Fluorescent Body Paint — Make the subject appear covered in elaborate ultraviolet-reactive body paint. The paint should glow intensely in intricate patterns while the unpainted skin remains comparatively subdued."
       },
       {
         "id": "003",
-        "label": "Blacklight Clothing",
-        "prompt": "Make the subject's clothing the primary fluorescent element. Transform the garments into convincing ultraviolet-reactive fabrics with glowing patterns, seams, graphics, and vivid fluorescent colors."
+        "text": "Blacklight Clothing — Make the subject's clothing the primary fluorescent element. Transform the garments into convincing ultraviolet-reactive fabrics with glowing patterns, seams, graphics, and vivid fluorescent colors."
       },
       {
         "id": "004",
-        "label": "Fluorescent Skeleton",
-        "prompt": "Reveal a luminous fluorescent skeletal design aligned accurately with the subject's anatomy, as though an ultraviolet-reactive skeleton graphic is glowing through or painted onto the subject. Preserve the subject's exterior appearance."
+        "text": "Fluorescent Skeleton — Reveal a luminous fluorescent skeletal design aligned accurately with the subject's anatomy, as though an ultraviolet-reactive skeleton graphic is glowing through or painted onto the subject. Preserve the subject's exterior appearance."
       },
       {
         "id": "005",
-        "label": "Cosmic Blacklight",
-        "prompt": "Create a cosmic ultraviolet atmosphere with fluorescent stars, nebula-like patterns, and glowing celestial accents. Keep the subject clearly recognizable and make the fluorescent elements appear illuminated by blacklight."
+        "text": "Cosmic Blacklight — Create a cosmic ultraviolet atmosphere with fluorescent stars, nebula-like patterns, and glowing celestial accents. Keep the subject clearly recognizable and make the fluorescent elements appear illuminated by blacklight."
       },
       {
         "id": "006",
-        "label": "Fluorescent Floral",
-        "prompt": "Surround the subject with ultraviolet-reactive flowers, leaves, vines, and botanical patterns. Make the flowers glow in vivid fluorescent colors against a dark environment."
+        "text": "Fluorescent Floral — Surround the subject with ultraviolet-reactive flowers, leaves, vines, and botanical patterns. Make the flowers glow in vivid fluorescent colors against a dark environment."
       },
       {
         "id": "007",
-        "label": "Blacklight Graffiti",
-        "prompt": "Transform the setting into a dark blacklight graffiti environment with fluorescent spray-painted lettering, murals, symbols, and vivid ultraviolet-reactive artwork. Keep the subject integrated naturally into the scene."
+        "text": "Blacklight Graffiti — Transform the setting into a dark blacklight graffiti environment with fluorescent spray-painted lettering, murals, symbols, and vivid ultraviolet-reactive artwork. Keep the subject integrated naturally into the scene."
       },
       {
         "id": "008",
-        "label": "Fluorescent Face Art",
-        "prompt": "Apply intricate fluorescent blacklight face paint to the subject, following the contours of the face without distorting facial anatomy or identity. Make the painted designs glow intensely under ultraviolet illumination."
+        "text": "Fluorescent Face Art — Apply intricate fluorescent blacklight face paint to the subject, following the contours of the face without distorting facial anatomy or identity. Make the painted designs glow intensely under ultraviolet illumination."
       },
       {
         "id": "009",
-        "label": "Underwater Fluorescence",
-        "prompt": "Create an underwater blacklight-inspired environment with fluorescent coral, luminous marine organisms, and ultraviolet-reactive details. Keep the subject naturally integrated into the scene."
+        "text": "Underwater Fluorescence — Create an underwater blacklight-inspired environment with fluorescent coral, luminous marine organisms, and ultraviolet-reactive details. Keep the subject naturally integrated into the scene."
       },
       {
         "id": "010",
-        "label": "Fluorescent Outline",
-        "prompt": "Use fluorescent light to trace the subject's silhouette, facial features, clothing contours, and important details. The glowing outlines should be precise and anatomically aligned, while the interior remains mostly dark."
+        "text": "Fluorescent Outline — Use fluorescent light to trace the subject's silhouette, facial features, clothing contours, and important details. The glowing outlines should be precise and anatomically aligned, while the interior remains mostly dark."
       },
       {
         "id": "011",
-        "label": "Blacklight Party",
-        "prompt": "Place the subject in a lively blacklight party environment with ultraviolet lighting, fluorescent clothing, glowing decorations, and vivid reactive colors. The scene should look like a real blacklight event."
+        "text": "Blacklight Party — Place the subject in a lively blacklight party environment with ultraviolet lighting, fluorescent clothing, glowing decorations, and vivid reactive colors. The scene should look like a real blacklight event."
       },
       {
         "id": "012",
-        "label": "Fluorescent Patterns",
-        "prompt": "Cover selected areas of the subject's clothing and visible skin with elaborate symmetrical and geometric ultraviolet-reactive patterns. Use crisp fluorescent lines and shapes that glow against the dark environment."
+        "text": "Fluorescent Patterns — Cover selected areas of the subject's clothing and visible skin with elaborate symmetrical and geometric ultraviolet-reactive patterns. Use crisp fluorescent lines and shapes that glow against the dark environment."
       }
     ],
     "additionalInstructions": "The defining visual effect is ultraviolet-induced fluorescence, not generic neon lighting. Fluorescent materials absorb ultraviolet light and emit visible bright colors; depict this as localized luminous color against a dark environment. Do not simply color the entire photograph purple, blue, or pink. Do not apply a uniform neon outline to everything. Distinguish fluorescent materials from ordinary materials: fluorescent paint, fabrics, inks, and decorations should glow intensely, while non-reactive surfaces should remain dark, muted, or naturally illuminated. The subject must remain anatomically correct and recognizable. Preserve facial identity and do not create glowing facial blemishes, random luminous spots, or artificial skin texture. Fluorescent details must follow the actual contours and surfaces of the subject. Use realistic blacklight contrast, deep shadows, saturated fluorescence, and controlled highlights. The scene should feel like it is genuinely illuminated by ultraviolet lamps in a dark room. If the master prompt specifies a particular color scheme, fluorescent material, setting, subject treatment, or artistic direction, follow it instead of the default option. Do not allow the original photograph to remain as an unchanged image with a color filter applied."
@@ -43666,6 +43648,54 @@
     "additionalInstructions": "FINAL RESULT:\nA realistic photo where the subject has been transformed into a physical paper cutout placed within the scene, with proper shadows, texture, and depth. The contrast between the real environment and the handmade subject must be clear and convincing."
   },
   {
+    "name": "PAPER DOLLS",
+    "category": [
+      "OPTIONS",
+      "TOYS",
+      "PAPER CRAFT",
+      "VINTAGE",
+      "DRESS-UP",
+      "TRANSFORMATION"
+    ],
+    "message": "Take a picture and transform the subject into a printed paper-doll set: a dress-up and imaginative-play toy in which a paper or cardstock figure is cut out and clothed in removable paper outfits held in place by folded tabs. Show the complete set laid out as a printed sheet or sheets, photographed flat on a table. The DOLL is the subject, printed in the selected era's illustration and printing style, standing upright in a neutral pose with arms slightly away from the body, with a fold-back cardstock stand or slotted base so it can stand up. The doll's recognizable face, hairstyle, and features come from the photo, drawn in the era's style. The doll wears only a modest, fully covering base layer suited to the era, such as a plain chemise, slip, or simple undershirt and shorts. Around the doll, print the separate cut-out pieces: several outfits, hairstyles or hats, shoes, and accessories, each with small white folding tabs at the shoulders, waist, and feet, and dotted or solid cut lines around every piece. One outfit faithfully recreates the clothing the subject is wearing in the photo, and the accessories are made from items visible in the photo (such as glasses, a bag, a phone, jewelry, a toy, or a hat), drawn as paper cut-outs in the same style. The remaining outfits suit the selected era and options for different occasions, eras, or careers for mix-and-match play and storytelling.",
+    "randomizeOptions": true,
+    "options": [
+      {
+        "id": "001",
+        "text": "EARLY EUROPEAN PAPER DOLL CARD (c. 1650) - A single small 17th-century card printed in Southern Germany: a hand-colored copperplate engraving with fine black line work and crosshatching, colored by hand in soft washes of red, ochre, green, and blue on thick, aged, cream laid paper with foxing and worn edges. The subject is drawn as a 1650s figure in a simple shift, surrounded by baroque costume cut-outs: a stiff-bodiced gown with a lace collar, a doublet and breeches, a cloak, a plumed hat, a lace cap, shoes, and small period accessories, plus the photo's own outfit and accessories redrawn as engraved cut-outs. Small engraved tabs, simple cut lines, and an ornate engraved border."
+      },
+      {
+        "id": "002",
+        "text": "18TH-CENTURY PANTIN (JOINTED PAPER PUPPET) - An 18th-century French pantin: the subject is drawn as a jointed paper puppet in hand-colored engraving style, with separate cut-out head, torso, upper and lower arms, and legs joined by small brass paper fasteners at the shoulders, elbows, hips, and knees, and a pull-string threaded behind so the limbs dance when pulled. Pieces are printed on aged cream paper with cut lines and small circles marking the joint holes. Separate dress-up overlays include a powdered wig, a tricorn hat, a frock coat or a panniered gown, the photo's own outfit and accessories redrawn in period engraving style, and a few theatrical costumes such as a harlequin and a shepherdess."
+      },
+      {
+        "id": "003",
+        "text": "18TH-CENTURY FASHION FIGURE - A refined paper fashion figure of the kind used in 1700s Paris and London to show the latest clothing trends to adult customers: an elegant, hand-colored engraved figure of the subject on fine paper, with a set of the season's latest fashions as separate tabbed cut-outs, such as a silk robe à la française with lace sleeves, a riding habit, a court suit with an embroidered waistcoat, towering hairstyles and wigs, hats with plumes and ribbons, fans, shoes, and gloves, plus the photo's own outfit and accessories reinterpreted as an elegant period fashion piece. Labeled in small engraved script captions."
+      },
+      {
+        "id": "004",
+        "text": "FIRST COMMERCIAL PAPER DOLL BOOKLET (1810, LONDON) - A Regency-era boxed paper-doll story set in the style of the first commercially produced children's paper dolls: a small slipcase and a little hand-colored storybook with rhyming verse beside the cut-outs. As in the original sets, the doll is a separate cut-out head and neck, drawn as the subject in delicate hand-colored engraving, that slots into the necks of several full-figure costume pieces, each a complete standing figure with its own stand. The costumes tell a little story through Regency life: a plain everyday frock or suit, a walking outfit with a bonnet or top hat, a ragged outfit from a hard-luck moment, a fine party outfit, and the photo's own outfit redrawn in Regency style. Soft watercolor tints on cream paper."
+      },
+      {
+        "id": "005",
+        "text": "FIRST AMERICAN PAPER DOLL STORY SET (1812, BOSTON) - An early American paper-doll story set in the style of the first American commercial paper doll, which followed a boy's adventures: a small hand-colored storybook with verse and a set of interchangeable cut-out figures. The subject's cut-out head slots into a series of full-figure costume pieces that follow the subject through a little adventure story, such as everyday clothes, a sailor's outfit, a soldier's uniform, a schoolroom outfit, a Sunday-best outfit, and the photo's own outfit redrawn in early-1800s style. Delicate hand-colored engraving on aged cream paper, with simple cut lines and stands."
+      },
+      {
+        "id": "006",
+        "text": "VICTORIAN CHROMOLITHOGRAPH PAPER DOLLS (c. 1870–1900) - A lavish Victorian paper-doll set printed in rich chromolithography with embossed, gilded details on glossy card: the subject as an elegant Victorian doll in a chemise and petticoat, with ornate, highly detailed outfits in deep jewel colors, such as a bustle gown with lace and ribbons, a sailor suit, a velvet coat with a fur muff, a riding outfit, and a party dress or suit, plus feathered and flowered hats, boots, parasols, and fans, plus the photo's own outfit and accessories redrawn in Victorian chromolithograph style. Lettered with a decorative Victorian title banner and ornate borders."
+      },
+      {
+        "id": "007",
+        "text": "MAGAZINE PAPER DOLL PAGE (c. 1900–1930) - A full color page from an early 20th-century women's or children's magazine, printed in flat, slightly off-register halftone color on thin, yellowed newsprint-like paper: the subject as a cheerful paper doll with outfits for a week of activities (school or work, play, a party, a rainy day, a holiday), each with white tabs and dotted cut lines, plus the photo's own outfit and accessories. Includes a short story caption and a headline banner announcing the doll's adventures, with page number and magazine-style column borders."
+      },
+      {
+        "id": "008",
+        "text": "GOLDEN AGE PAPER DOLL BOOK (c. 1930s–1950s) - A classic mid-century paper doll book: a stiff cardboard front cover with the subject as a die-cut, press-out doll with a fold-back easel stand, printed in bright, cheerful, mid-century illustration style, with inside pages of colorful outfits for every occasion, such as a school outfit, a party dress or suit, pajamas, a swimsuit with a cover-up for girls or trunks with a T-shirt for boys, a winter coat with a hat and mittens, a career outfit (nurse, pilot, doctor, firefighter, teacher), a cowboy or cowgirl costume, and the photo's own outfit and accessories, all with white tabs and dotted cut lines. Shown with a few pieces already cut out and a pair of child's scissors on the table."
+      }
+    ],
+    "additionalInstructions": "PAPER-DOLL CONSTRUCTION:\n• The result must look like a real, physical printed paper-doll toy photographed on a table, not a digital illustration of a person.\n• The doll is a flat, printed, front-facing figure with a clean white or cream cut border, standing in a neutral pose (arms slightly away from the body, feet slightly apart) so the outfits fit over it. Include a stand: a fold-back cardstock easel, a slotted base, or a tab-stand, as suits the era.\n• Every outfit, hairstyle, hat, shoe, and accessory is a separate printed piece with clearly visible white folding tabs (at the shoulders, waist, sides, and feet) and dotted or solid cut lines.\n• Outfits are drawn as flat garment fronts shaped to fit exactly over the doll's body and pose.\n• Show the printed sheet or sheets, cover, booklet, or case appropriate to the selected era, with some pieces optionally already cut out, folded, and placed on the doll to show how play works.\n• Add authentic printed details for the era: titles, small captions, short story verses, page borders, and printer's marks, all invented and correctly spelled, never real brand names or logos.\n\nTHE SUBJECT AS THE DOLL:\n• The doll is clearly recognizable as the subject: face shape, features, expression, skin tone, hairstyle, and hair color from the photo, drawn and printed in the selected era's illustration and printing technique, not a pasted photograph.\n• Keep the subject's real age, build, and proportions in the doll, with the head correctly proportioned to the body.\n• The doll's base layer is always a modest, fully covering, era-appropriate undergarment, such as a plain chemise, shift, slip, petticoat, or simple undershirt and shorts. Never draw the doll in underwear only, nude, or in revealing clothing. This applies especially to children.\n• If the photo contains more than one person, make a separate doll for each person, each with its own outfits.\n\nUSING ITEMS FROM THE PHOTO:\n• One outfit must faithfully recreate the clothing the subject wears in the photo (colors, patterns, logos simplified, and shape), drawn in the era's style.\n• Turn items visible in the photo (glasses, hats, bags, jewelry, phones, toys, sports equipment, pets, food, and so on) into tabbed paper accessories in the same printed style.\n• The other outfits suit the selected era and offer variety for mix-and-match play: everyday wear, special occasions, historical costumes, and career or adventure outfits.\n\nPRINT AND MATERIAL:\n• Reproduce the selected era's print technique and paper convincingly: engraving and hand coloring for the 1600s–1810s, chromolithography with embossing for the Victorian era, halftone magazine printing for the early 1900s, and bright offset printing on cardboard for the mid-century.\n• Show realistic paper aging where appropriate (yellowing, foxing, soft creases, worn edges), with soft natural lighting and gentle shadows from the table.\n\nThe master prompt takes priority over preset defaults, including era, outfits, accessories, number of dolls, and layout."
+  },
+  {
     "name": "PAPER MACHE ART",
     "category": [
       "ART",
@@ -56523,76 +56553,64 @@
   {
     "name": "STROBOSCOPIC",
     "category": [
+      "OPTIONS",
       "ART",
       "PHOTOGRAPHY",
       "MOTION",
       "TIME",
       "MULTIPLE EXPOSURE",
-      "VISUAL EFFECT",
-      "BLACK AND WHITE"
+      "VISUAL EFFECT"
     ],
-    "message": "Take a picture and transform the subject into a dramatic stroboscopic motion photograph in the manner of Harold Edgerton, showing multiple sharply defined, sequential positions of the same subject within one continuous composition. Reconstruct the subject as a series of distinct temporal snapshots that reveal movement through space, as though photographed under a rapid flashing strobe light. Each successive position must show a believable progression of the subject's actual movement, with the positions arranged along a clear and coherent motion path. Preserve the subject's recognizable identity, anatomy, clothing, and defining features in every position. The repeated figures must look like successive moments of one moving subject, not separate people, clones, or randomly scattered copies. Create a striking sense of time being divided into visible increments, with crisp individual exposures and a dark or visually restrained setting that makes the sequence easy to read.",
+    "message": "Take a picture and transform the subject into a dramatic stroboscopic motion photograph, showing multiple sharply defined, sequential positions of the same subject within one continuous composition. Reconstruct the subject as a series of distinct temporal snapshots that reveal movement through space, as though photographed under a rapid flashing strobe light. Each successive position must show a believable progression of the subject's actual movement, with the positions arranged along a clear and coherent motion path. Preserve the subject's recognizable identity, anatomy, clothing, and defining features in every position. The repeated figures must look like successive moments of one moving subject, not separate people, clones, or randomly scattered copies. Create a striking sense of time being divided into visible increments, with crisp individual exposures and a dark or visually restrained setting that makes the sequence easy to read.",
     "randomizeOptions": true,
     "options": [
       {
         "id": "001",
-        "label": "Walking Sequence",
-        "prompt": "Show the subject in a sequence of distinct walking positions, from one step to the next, with the legs, arms, and body posture changing naturally in each successive exposure."
+        "text": "Walking Sequence — Show the subject in a sequence of distinct walking positions, from one step to the next, with the legs, arms, and body posture changing naturally in each successive exposure."
       },
       {
         "id": "002",
-        "label": "Running Sequence",
-        "prompt": "Show the subject running through a complete stride, with multiple clearly separated body positions progressing through the running cycle. Make the changing leg positions and arm movements unmistakable."
+        "text": "Running Sequence — Show the subject running through a complete stride, with multiple clearly separated body positions progressing through the running cycle. Make the changing leg positions and arm movements unmistakable."
       },
       {
         "id": "003",
-        "label": "Jumping Sequence",
-        "prompt": "Show the subject performing a jump, progressing from takeoff through the airborne phase to landing. Each exposure must occupy a different, physically believable position."
+        "text": "Jumping Sequence — Show the subject performing a jump, progressing from takeoff through the airborne phase to landing. Each exposure must occupy a different, physically believable position."
       },
       {
         "id": "004",
-        "label": "Dancing Sequence",
-        "prompt": "Show the subject performing a dynamic dance movement, with successive exposures revealing changing poses, arm positions, footwork, and body angles."
+        "text": "Dancing Sequence — Show the subject performing a dynamic dance movement, with successive exposures revealing changing poses, arm positions, footwork, and body angles."
       },
       {
         "id": "005",
-        "label": "Turning Sequence",
-        "prompt": "Show the subject rotating through a complete turn, with each exposure revealing a different orientation of the head and body, progressing smoothly from the starting position to the final position."
+        "text": "Turning Sequence — Show the subject rotating through a complete turn, with each exposure revealing a different orientation of the head and body, progressing smoothly from the starting position to the final position."
       },
       {
         "id": "006",
-        "label": "Throwing Sequence",
-        "prompt": "Show the subject performing a throwing motion, from preparation through arm acceleration and release to the follow-through. Include a coherent trajectory for any visible thrown object."
+        "text": "Throwing Sequence — Show the subject performing a throwing motion, from preparation through arm acceleration and release to the follow-through. Include a coherent trajectory for any visible thrown object."
       },
       {
         "id": "007",
-        "label": "Kicking Sequence",
-        "prompt": "Show the subject performing a kick, with successive exposures revealing the leg moving from its initial position through the raised kicking position and follow-through."
+        "text": "Kicking Sequence — Show the subject performing a kick, with successive exposures revealing the leg moving from its initial position through the raised kicking position and follow-through."
       },
       {
         "id": "008",
-        "label": "Hair in Motion",
-        "prompt": "Keep the subject's body in approximately the same location while showing successive positions of the head and hair as the subject rapidly shakes or turns their head. The changing hair shapes must communicate motion."
+        "text": "Hair in Motion — Keep the subject's body in approximately the same location while showing successive positions of the head and hair as the subject rapidly shakes or turns their head. The changing hair shapes must communicate motion."
       },
       {
         "id": "009",
-        "label": "Sports Action",
-        "prompt": "Show the subject performing a dynamic athletic movement appropriate to the visible activity, with successive exposures documenting the actual progression of the action."
+        "text": "Sports Action — Show the subject performing a dynamic athletic movement appropriate to the visible activity, with successive exposures documenting the actual progression of the action."
       },
       {
         "id": "010",
-        "label": "Object in Motion",
-        "prompt": "Apply the stroboscopic sequence to the primary visible moving object rather than duplicating the person. Show its successive positions along a physically believable trajectory while keeping the surrounding scene coherent."
+        "text": "Object in Motion — Apply the stroboscopic sequence to the primary visible moving object rather than duplicating the person. Show its successive positions along a physically believable trajectory while keeping the surrounding scene coherent."
       },
       {
         "id": "011",
-        "label": "Full-Body Spin",
-        "prompt": "Show the subject completing a full-body spin, with a series of clearly separated exposures arranged around the rotational movement. Preserve consistent scale and anatomy throughout."
+        "text": "Full-Body Spin — Show the subject completing a full-body spin, with a series of clearly separated exposures arranged around the rotational movement. Preserve consistent scale and anatomy throughout."
       },
       {
         "id": "012",
-        "label": "Gesture Sequence",
-        "prompt": "Show the subject performing a recognizable hand or arm gesture, with each exposure revealing a different stage of the movement. Keep the face and body relatively stationary."
+        "text": "Gesture Sequence — Show the subject performing a recognizable hand or arm gesture, with each exposure revealing a different stage of the movement. Keep the face and body relatively stationary."
       }
     ],
     "additionalInstructions": "The defining effect is a true stroboscopic time-sequence photograph: several discrete, sharply resolved exposures of one moving subject, captured at successive moments and combined into one frame. It is not a motion blur effect, ghosting filter, transparent afterimage, mirror effect, or ordinary multiple-person composite. Every repeated position must represent a different point in the same continuous action. Keep the exposures distinct and sufficiently separated so the viewer can read each pose independently. Maintain consistent subject identity, clothing, proportions, scale, and lighting across the sequence. The motion must be anatomically and physically plausible, with a logical beginning, progression, and ending. Do not invent detached limbs, floating body parts, disconnected heads, or overlapping anatomical fragments. Avoid random duplication, arbitrary placement, and repeated identical poses. The subject must remain recognizable in every exposure. Use a restrained background so the sequence remains the dominant visual element. The original photograph must not remain visible as an unchanged photograph beneath the effect; reconstruct the composition as a coherent stroboscopic photograph. If the master prompt specifies the action, movement, setting, composition, or artistic direction, it overrides the default options and instructions."
