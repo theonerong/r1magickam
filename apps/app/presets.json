@@ -2002,6 +2002,61 @@
     "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Preserve recognizable subject identity\n• Clear realistic composition\n• Strong sculptural forms\n• Distinctly American subject matter\n• Accessible narrative style\n• 1930s-40s American aesthetic"
   },
   {
+    "name": "AMES ROOM ILLUSION",
+    "category": [
+      "OPTICAL ILLUSION",
+      "PERSPECTIVE",
+      "FORCED PERSPECTIVE",
+      "SPATIAL DISTORTION",
+      "PHOTOGRAPHY"
+    ],
+    "message": "Take a picture and transform the scene into a convincing Ames room optical illusion. Place the subject inside a specially constructed, geometrically distorted room that appears to be an ordinary rectangular room when viewed from one precise camera position, but is actually an irregular trapezoidal space. Use forced perspective to make one side of the room physically much smaller or farther away than the other, even though both sides appear equally distant in the final camera view. The subject's apparent size must change dramatically depending on which side of the room they occupy: the subject on the smaller side should appear tiny, while the same subject on the larger side should appear enormous. The room must provide clear visual evidence of the perspective trick through its distorted floor, ceiling, walls, corners, windows, and architectural features. Preserve the subject's identity and make the illusion look like a real person photographed inside a carefully engineered optical-illusion room.",
+    "randomizeOptions": true,
+    "options": [
+      {
+        "id": "001",
+        "label": "Giant and Tiny",
+        "prompt": "Show two apparent versions of the same subject at opposite ends of the Ames room: one appears enormous and the other appears tiny. Both are actually the same physical size in the distorted room. Preserve identity and make the perspective illusion convincing."
+      },
+      {
+        "id": "002",
+        "label": "Giant Subject",
+        "prompt": "Place the subject at the large end of the Ames room so they appear impossibly gigantic in comparison with the room's furniture, doors, windows, and architectural features."
+      },
+      {
+        "id": "003",
+        "label": "Tiny Subject",
+        "prompt": "Place the subject at the small end of the Ames room so they appear extraordinarily tiny in comparison with the room's furniture, doors, windows, and architectural features."
+      },
+      {
+        "id": "004",
+        "label": "Two People, One Illusion",
+        "prompt": "If two or more people are visible in the source image, position them at opposite ends of the distorted room so that one appears gigantic and the other appears tiny. Preserve each person's identity and make the size difference unmistakable."
+      },
+      {
+        "id": "005",
+        "label": "Furniture Scale Trick",
+        "prompt": "Make the subject appear to change size in relation to dramatically distorted furniture. Include a chair, table, doorway, and other familiar objects whose apparent scale reveals the room's impossible geometry."
+      },
+      {
+        "id": "006",
+        "label": "Giant at the Door",
+        "prompt": "Place the subject near the oversized end of the Ames room, appearing gigantic while standing beside a doorway that looks ordinary from the camera position. Make the distorted architecture reveal the actual perspective trick."
+      },
+      {
+        "id": "007",
+        "label": "Tiny in the Corner",
+        "prompt": "Place the subject at the miniature end of the room, near a corner that appears to be the same distance from the camera as the opposite corner. Make the subject appear dramatically smaller without shrinking the subject artificially."
+      },
+      {
+        "id": "008",
+        "label": "Impossible Roommates",
+        "prompt": "Show the subject interacting with another apparent version of themselves at the opposite end of the Ames room. One appears gigantic and the other tiny, while both occupy the same physically distorted room."
+      }
+    ],
+    "additionalInstructions": "The defining feature must be the genuine Ames room illusion, not an ordinary forced-perspective photograph, a giant-versus-miniature composite, or a digitally resized person. Construct a single continuous, asymmetrical trapezoidal room with a carefully chosen viewpoint. The room's floor, ceiling, walls, corners, windows, doors, and furniture must be geometrically distorted so that the room appears rectangular and normal from the camera's exact viewing position. The two rear corners must appear to be at approximately the same distance from the camera even though one is physically much closer and the other much farther away. This deceptive geometry is essential. The subject must remain physically proportionate and correctly scaled within their actual position in the room. The apparent size difference must be produced by the room's geometry and forced perspective, not by enlarging or shrinking the subject independently. Include recognizable architectural references, such as doors, windows, floorboards, tiles, or furniture, that make the illusion immediately understandable. Maintain one consistent camera viewpoint; do not use multiple camera angles or a split-screen comparison. Avoid floating subjects, distorted anatomy, detached body parts, or inconsistent shadows. The final image should look like a photograph taken from the one special viewing position where the impossible room appears normal. If the master prompt specifies the room design, subject placement, number of people, interaction, or visual direction, it overrides the default option."
+  },
+  {
     "name": "AMBROTYPE",
     "category": [
       "PHOTOGRAPHY",
@@ -6062,6 +6117,82 @@
     "message": "Take a picture and transform the entire image into a cinematic photorealistic version of Bizarro World — an absurd opposite-reality parallel universe where all structures, people, animals, objects, and environments appear reconstructed incorrectly using cubic, block-like geometric forms while remaining fully recognizable.\n\nThe final image should resemble a live-action superhero movie production. The transformation must preserve the recognizable identity, proportions, silhouette, and visual characteristics of the original subjects while converting them into believable Bizarro World counterparts.\n\nMASTER PROMPT OVERRIDE LOGIC (CRITICAL):\n• If an external master prompt specifies a different cinematic era, sci-fi tone, dystopian atmosphere, alien-world aesthetic, lighting style, or superhero-film mood, USE that instead\n• External prompts may override weather, architecture, cinematic palette, realism level, environmental density, or atmospheric intensity\n• Preserve the recognizable Bizarro World identity even when adapting to overridden themes\n\nBIZARRO WORLD TRANSFORMATION LOGIC:\n• Transform the ENTIRE world into a physically believable Bizarro World environment\n• ALL objects, buildings, vehicles, roads, furniture, landscapes, technology, architecture, and environmental structures must appear reconstructed using cubic, angular, block-like geometric forms\n• The environment should resemble a photorealistic cubic reconstruction of reality\n• Preserve recognizable object identity while converting surfaces and structures into angular geometric forms\n• Objects should feel physically assembled from interlocking cubic masses, block structures, angular planes, and hard-edged construction\n• Every object that is round, circular, spherical, cylindrical, or curved in the real world MUST become cubic or rectangular in Bizarro World — tires are square blocks, wheels are cubic, balls are cubes, pipes are rectangular, circular openings are square, rounded edges become sharp corners — there are NO curves, NO circles, NO spheres, and NO cylinders anywhere in the Bizarro World environment\n• Preserve realistic scale, proportions, and environmental layout despite the cubic transformation\n• The world should feel uncanny, opposite, unfinished, anti-logical, and physically unusual while remaining cinematically believable\n• The cubic transformation should feel cinematic, substantial, realistic, and physically grounded\n• Apply cinematic superhero-film aesthetic throughout — the result must look like a high-budget live-action production\n\nHUMAN TRANSFORMATION REQUIREMENTS:\n• ALL humans in the image must transform into live-action photorealistic parallel-universe counterparts styled as cinematic anti-hero characters\n• Subjects must remain clearly recognizable as the original people despite the transformation\n• Preserve recognizable facial structure, identity, proportions, posture, hairstyle silhouette, body type, and expression\n• Convert facial surfaces into angular, cubic, block-like hard-surface geometric forms while maintaining recognizable identity\n• Skin should become pale gray, chalky white, or stone-textured with an angular geometric surface quality consistent with a cinematic superhero aesthetic\n• Facial features should appear asymmetrical, imperfect, partially offset, angular, or incorrectly reassembled in a parallel-universe style\n• The transformation is a cinematic parallel-universe reconstruction — all subjects must remain heroic, stylized, and cinematically appropriate for a high-budget live-action superhero film\n• All subjects must appear as living, physical, action-ready cinematic characters\n\nANTI-HERO COSTUME REQUIREMENTS:\n• Human subjects should wear a cinematic parallel-universe anti-hero uniform\n• The main bodysuit should be primarily deep purple\n• The cape should be rich indigo\n• - The chest emblem should contain a yellow shield background with a red outer border and a bold red Bizarro mirrored \"S\" chest symbol\n• The costume should appear cinematic, textured, realistic, battle-ready, and physically integrated into the live-action world\n• The suit should resemble a high-budget superhero movie costume\n• Preserve recognizable subject proportions and body structure beneath the suit\n• The costume may appear slightly imperfect, asymmetrical, or oddly reconstructed to fit the parallel-universe aesthetic\n\nANIMAL TRANSFORMATION REQUIREMENTS:\n• Animals should transform into cubic, angular, photorealistic Bizarro-world versions of themselves\n• Preserve recognizable species identity while converting anatomy into geometric angular forms\n• Fur, feathers, scales, and anatomy should appear reconstructed from angular hard-surface geometry\n• Animal faces should appear uncanny, asymmetrical, cubic, and imperfectly reassembled while remaining recognizable\n• Animals must appear as living physical cinematic creatures consistent with a superhero movie world\n\nOBJECT AND ENVIRONMENT TRANSFORMATION:\n• Buildings should appear massive, cubic, asymmetrical, angular, reversed, or imperfectly reconstructed\n• Vehicles should appear rebuilt using hard-edged geometric forms and cubic body construction\n• Roads, signs, lights, furniture, and environmental structures should feel anti-logical, distorted, inverted, or physically inconsistent\n• The world should feel like reality was reconstructed incorrectly using giant cubic geometric forms\n• Preserve believable cinematic lighting, atmosphere, and physical realism\n• Environmental physics should feel subtly unusual but cinematically believable\n\nSTYLE:\n• Cinematic photorealistic superhero-movie aesthetic\n• Live-action parallel-universe realism\n• Cubic hard-surface reconstruction design\n• Angular geometric construction\n• Opposite-world environmental logic\n• Pale stone-textured skin surfaces\n• Angular asymmetrical anatomy\n• Dystopian superhero atmosphere\n• Parallel-universe realism\n• Cinematic science-fiction lighting\n• Physically grounded cubic structures\n• Realistic superhero costume design\n• Heavy geometric environmental reconstruction\n• Anti-natural world logic\n• High-budget live-action visual effects aesthetic\n\nBACKGROUND AND ENVIRONMENT:\n• Include cubic cities, angular skyscrapers, geometric landscapes, distorted roads, anti-logical architecture, geometric environmental reconstruction, reversed signage, floating cubic structures, impossible urban planning, and opposite-world city environments\n• Use cinematic sci-fi lighting, atmospheric haze, environmental depth, volumetric lighting, and dystopian atmosphere\n• Maintain focus on the transformed subject within the Bizarro environment\n• The world should feel physically reconstructed incorrectly but believable within a cinematic superhero universe\n\nThe final image should look like a high-budget live-action superhero movie scene taking place in Bizarro World where all people, animals, objects, and environments have been reconstructed into cubic angular parallel-world versions of themselves while preserving recognizable identity and cinematic realism.",
     "randomizeOptions": false,
     "additionalInstructions": "• ALL humans must transform into photorealistic live-action parallel-universe anti-hero counterparts consistent with a high-budget superhero film\n• ALL objects and environments must become cubic, angular, geometric reconstructions of themselves\n• Preserve recognizable identity, silhouette, proportions, and visual structure during transformation\n• Human subjects must wear a cinematic anti-hero costume with a deep purple suit, indigo cape, yellow chest emblem with red border, and a bold red Bizarro mirrored \"S\" chest symbol\n• All subjects must appear as living, physically present, action-ready cinematic characters appropriate for a superhero movie production\n• Preserve realistic cinematic superhero-movie realism throughout\n• Maintain physically grounded cubic world reconstruction\n• Preserve cinematic atmospheric lighting and environmental depth\n• Ensure subjects remain recognizable despite the cubic Bizarro transformation\n• Use angular geometric hard-surface construction rather than organic realism\n• Preserve believable scale, proportions, and environmental composition\n• The final image should resemble a live-action cinematic depiction of Bizarro World from a high-budget superhero film"
+  },
+  {
+    "name": "BLACKLIGHT REVEAL",
+    "category": [
+      "ART",
+      "PHOTOGRAPHY",
+      "ULTRAVIOLET",
+      "BLACKLIGHT",
+      "FLUORESCENCE",
+      "LIGHTING"
+    ],
+    "message": "Take a picture and transform the scene into a dramatic ultraviolet blacklight environment. Make the subject and selected elements appear as though illuminated by genuine ultraviolet blacklight, revealing vivid fluorescent colors that glow intensely against a deep, nearly black background. The fluorescence must appear to originate from the materials themselves, with luminous electric colors, sharply defined fluorescent edges, and realistic ultraviolet lighting behavior. Preserve the subject's recognizable identity, anatomy, clothing, pose, and defining features. Make the blacklight transformation visually convincing: ordinary non-fluorescent areas remain dark or subdued, while fluorescent materials and details become brilliantly illuminated. The result should resemble a striking blacklight installation or an authentic photograph taken inside a dark ultraviolet-lit room, not an ordinary image with neon colors applied indiscriminately.",
+    "randomizeOptions": true,
+    "options": [
+      {
+        "id": "001",
+        "label": "Neon Fluorescent",
+        "prompt": "Illuminate the subject with intense fluorescent pink, electric blue, ultraviolet purple, and acid green accents. Create a vivid blacklight color spectacle with strong contrast against darkness."
+      },
+      {
+        "id": "002",
+        "label": "Fluorescent Body Paint",
+        "prompt": "Make the subject appear covered in elaborate ultraviolet-reactive body paint. The paint should glow intensely in intricate patterns while the unpainted skin remains comparatively subdued."
+      },
+      {
+        "id": "003",
+        "label": "Blacklight Clothing",
+        "prompt": "Make the subject's clothing the primary fluorescent element. Transform the garments into convincing ultraviolet-reactive fabrics with glowing patterns, seams, graphics, and vivid fluorescent colors."
+      },
+      {
+        "id": "004",
+        "label": "Fluorescent Skeleton",
+        "prompt": "Reveal a luminous fluorescent skeletal design aligned accurately with the subject's anatomy, as though an ultraviolet-reactive skeleton graphic is glowing through or painted onto the subject. Preserve the subject's exterior appearance."
+      },
+      {
+        "id": "005",
+        "label": "Cosmic Blacklight",
+        "prompt": "Create a cosmic ultraviolet atmosphere with fluorescent stars, nebula-like patterns, and glowing celestial accents. Keep the subject clearly recognizable and make the fluorescent elements appear illuminated by blacklight."
+      },
+      {
+        "id": "006",
+        "label": "Fluorescent Floral",
+        "prompt": "Surround the subject with ultraviolet-reactive flowers, leaves, vines, and botanical patterns. Make the flowers glow in vivid fluorescent colors against a dark environment."
+      },
+      {
+        "id": "007",
+        "label": "Blacklight Graffiti",
+        "prompt": "Transform the setting into a dark blacklight graffiti environment with fluorescent spray-painted lettering, murals, symbols, and vivid ultraviolet-reactive artwork. Keep the subject integrated naturally into the scene."
+      },
+      {
+        "id": "008",
+        "label": "Fluorescent Face Art",
+        "prompt": "Apply intricate fluorescent blacklight face paint to the subject, following the contours of the face without distorting facial anatomy or identity. Make the painted designs glow intensely under ultraviolet illumination."
+      },
+      {
+        "id": "009",
+        "label": "Underwater Fluorescence",
+        "prompt": "Create an underwater blacklight-inspired environment with fluorescent coral, luminous marine organisms, and ultraviolet-reactive details. Keep the subject naturally integrated into the scene."
+      },
+      {
+        "id": "010",
+        "label": "Fluorescent Outline",
+        "prompt": "Use fluorescent light to trace the subject's silhouette, facial features, clothing contours, and important details. The glowing outlines should be precise and anatomically aligned, while the interior remains mostly dark."
+      },
+      {
+        "id": "011",
+        "label": "Blacklight Party",
+        "prompt": "Place the subject in a lively blacklight party environment with ultraviolet lighting, fluorescent clothing, glowing decorations, and vivid reactive colors. The scene should look like a real blacklight event."
+      },
+      {
+        "id": "012",
+        "label": "Fluorescent Patterns",
+        "prompt": "Cover selected areas of the subject's clothing and visible skin with elaborate symmetrical and geometric ultraviolet-reactive patterns. Use crisp fluorescent lines and shapes that glow against the dark environment."
+      }
+    ],
+    "additionalInstructions": "The defining visual effect is ultraviolet-induced fluorescence, not generic neon lighting. Fluorescent materials absorb ultraviolet light and emit visible bright colors; depict this as localized luminous color against a dark environment. Do not simply color the entire photograph purple, blue, or pink. Do not apply a uniform neon outline to everything. Distinguish fluorescent materials from ordinary materials: fluorescent paint, fabrics, inks, and decorations should glow intensely, while non-reactive surfaces should remain dark, muted, or naturally illuminated. The subject must remain anatomically correct and recognizable. Preserve facial identity and do not create glowing facial blemishes, random luminous spots, or artificial skin texture. Fluorescent details must follow the actual contours and surfaces of the subject. Use realistic blacklight contrast, deep shadows, saturated fluorescence, and controlled highlights. The scene should feel like it is genuinely illuminated by ultraviolet lamps in a dark room. If the master prompt specifies a particular color scheme, fluorescent material, setting, subject treatment, or artistic direction, follow it instead of the default option. Do not allow the original photograph to remain as an unchanged image with a color filter applied."
   },
   {
     "name": "BLADE RUNNER",
@@ -56392,16 +56523,79 @@
   {
     "name": "STROBOSCOPIC",
     "category": [
+      "ART",
       "PHOTOGRAPHY",
       "MOTION",
-      "EXPERIMENTAL",
-      "SCIENCE",
+      "TIME",
+      "MULTIPLE EXPOSURE",
+      "VISUAL EFFECT",
       "BLACK AND WHITE"
     ],
-    "message": "Take a picture and transform it into a stroboscopic multiple-flash photograph in the manner of Harold Edgerton. A single frame should hold a sequence of frozen instants of the same subject, evenly spaced across the arc of the motion, each one sharp, overlapping where they cross, against a black background that swallows everything not lit by the flash.",
-    "options": [],
-    "randomizeOptions": false,
-    "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Multiple sharp frozen instants in one frame\n• Even spacing along the arc of motion\n• Overlap and transparency where phases cross\n• Black background with hard flash falloff\n• Subject clearly recognisable in every phase"
+    "message": "Take a picture and transform the subject into a dramatic stroboscopic motion photograph in the manner of Harold Edgerton, showing multiple sharply defined, sequential positions of the same subject within one continuous composition. Reconstruct the subject as a series of distinct temporal snapshots that reveal movement through space, as though photographed under a rapid flashing strobe light. Each successive position must show a believable progression of the subject's actual movement, with the positions arranged along a clear and coherent motion path. Preserve the subject's recognizable identity, anatomy, clothing, and defining features in every position. The repeated figures must look like successive moments of one moving subject, not separate people, clones, or randomly scattered copies. Create a striking sense of time being divided into visible increments, with crisp individual exposures and a dark or visually restrained setting that makes the sequence easy to read.",
+    "randomizeOptions": true,
+    "options": [
+      {
+        "id": "001",
+        "label": "Walking Sequence",
+        "prompt": "Show the subject in a sequence of distinct walking positions, from one step to the next, with the legs, arms, and body posture changing naturally in each successive exposure."
+      },
+      {
+        "id": "002",
+        "label": "Running Sequence",
+        "prompt": "Show the subject running through a complete stride, with multiple clearly separated body positions progressing through the running cycle. Make the changing leg positions and arm movements unmistakable."
+      },
+      {
+        "id": "003",
+        "label": "Jumping Sequence",
+        "prompt": "Show the subject performing a jump, progressing from takeoff through the airborne phase to landing. Each exposure must occupy a different, physically believable position."
+      },
+      {
+        "id": "004",
+        "label": "Dancing Sequence",
+        "prompt": "Show the subject performing a dynamic dance movement, with successive exposures revealing changing poses, arm positions, footwork, and body angles."
+      },
+      {
+        "id": "005",
+        "label": "Turning Sequence",
+        "prompt": "Show the subject rotating through a complete turn, with each exposure revealing a different orientation of the head and body, progressing smoothly from the starting position to the final position."
+      },
+      {
+        "id": "006",
+        "label": "Throwing Sequence",
+        "prompt": "Show the subject performing a throwing motion, from preparation through arm acceleration and release to the follow-through. Include a coherent trajectory for any visible thrown object."
+      },
+      {
+        "id": "007",
+        "label": "Kicking Sequence",
+        "prompt": "Show the subject performing a kick, with successive exposures revealing the leg moving from its initial position through the raised kicking position and follow-through."
+      },
+      {
+        "id": "008",
+        "label": "Hair in Motion",
+        "prompt": "Keep the subject's body in approximately the same location while showing successive positions of the head and hair as the subject rapidly shakes or turns their head. The changing hair shapes must communicate motion."
+      },
+      {
+        "id": "009",
+        "label": "Sports Action",
+        "prompt": "Show the subject performing a dynamic athletic movement appropriate to the visible activity, with successive exposures documenting the actual progression of the action."
+      },
+      {
+        "id": "010",
+        "label": "Object in Motion",
+        "prompt": "Apply the stroboscopic sequence to the primary visible moving object rather than duplicating the person. Show its successive positions along a physically believable trajectory while keeping the surrounding scene coherent."
+      },
+      {
+        "id": "011",
+        "label": "Full-Body Spin",
+        "prompt": "Show the subject completing a full-body spin, with a series of clearly separated exposures arranged around the rotational movement. Preserve consistent scale and anatomy throughout."
+      },
+      {
+        "id": "012",
+        "label": "Gesture Sequence",
+        "prompt": "Show the subject performing a recognizable hand or arm gesture, with each exposure revealing a different stage of the movement. Keep the face and body relatively stationary."
+      }
+    ],
+    "additionalInstructions": "The defining effect is a true stroboscopic time-sequence photograph: several discrete, sharply resolved exposures of one moving subject, captured at successive moments and combined into one frame. It is not a motion blur effect, ghosting filter, transparent afterimage, mirror effect, or ordinary multiple-person composite. Every repeated position must represent a different point in the same continuous action. Keep the exposures distinct and sufficiently separated so the viewer can read each pose independently. Maintain consistent subject identity, clothing, proportions, scale, and lighting across the sequence. The motion must be anatomically and physically plausible, with a logical beginning, progression, and ending. Do not invent detached limbs, floating body parts, disconnected heads, or overlapping anatomical fragments. Avoid random duplication, arbitrary placement, and repeated identical poses. The subject must remain recognizable in every exposure. Use a restrained background so the sequence remains the dominant visual element. The original photograph must not remain visible as an unchanged photograph beneath the effect; reconstruct the composition as a coherent stroboscopic photograph. If the master prompt specifies the action, movement, setting, composition, or artistic direction, it overrides the default options and instructions."
   },
   {
     "name": "STRONGMAN",
