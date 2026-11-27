@@ -17596,6 +17596,106 @@
     "additionalInstructions": "FINAL RESULT:\nThe image should look like a real photograph capturing the exact moment the subject steps through a physical door from another realm into the viewer’s reality, with their face visible and both worlds clearly connected by the doorway."
   },
   {
+    "name": "DOORBELL CAM",
+    "category": [
+      "OPTIONS",
+      "HUMOR",
+      "SATIRE",
+      "SURVEILLANCE",
+      "DOMESTIC",
+      "PHOTOGRAPHY"
+    ],
+    "message": "Take a picture and turn it into the single frame a cheap porch video doorbell recorded of the subject. The camera is mounted high on the door and off to one side, so the whole porch bends around the subject through a wide fisheye lens: the overhead beam bows, the doorframe curves, the walkway leans away and compresses into the distance. The subject is caught in the middle of an ordinary action, one hand half raised in a wave or one foot just leaving the step, held in the exact position the recording stopped in. A timestamp and the line PERSON DETECTED sit burned into a corner, and the frame carries the flat, low-range compression of a small camera doing its best. Nothing in the picture finds any of this funny.",
+    "options": [],
+    "randomizeOptions": true,
+    "optionGroups": [
+      {
+        "title": "THE FROZEN MOMENT",
+        "options": [
+          {
+            "id": "001",
+            "text": "Halfway through a wave, hand open and still up, the arm not yet lowered"
+          },
+          {
+            "id": "002",
+            "text": "Mid-step onto the top stair, one foot down, one still coming, weight not yet transferred"
+          },
+          {
+            "id": "003",
+            "text": "Body still facing the walk, head alone turned toward the lens, caught in the turn"
+          },
+          {
+            "id": "004",
+            "text": "One hand on the door handle and not yet turning it, standing square to the door"
+          },
+          {
+            "id": "005",
+            "text": "Leaning toward a parcel on the mat, one knee bent, one arm reaching, stopped before the lift"
+          },
+          {
+            "id": "006",
+            "text": "Stepping back off the mat, one arm out for balance, the other still holding the door open"
+          }
+        ]
+      },
+      {
+        "title": "THE PORCH",
+        "options": [
+          {
+            "id": "001",
+            "text": "Covered concrete porch, house number screwed beside the door, dead porch light"
+          },
+          {
+            "id": "002",
+            "text": "Open walkway with a low hedge, a doormat worn thin in the middle and a sagging gutter overhead"
+          },
+          {
+            "id": "003",
+            "text": "Apartment landing with painted brick, a bank of metal mailboxes and a fluorescent tube above"
+          },
+          {
+            "id": "004",
+            "text": "Screened porch with a storm door, a folding chair against the wall and a recycling bin"
+          },
+          {
+            "id": "005",
+            "text": "Wide suburban stoop at night, two steps, a potted plant and a plaster pillar at the frame edge"
+          }
+        ]
+      },
+      {
+        "title": "THE SLIGHTLY WRONG DETAIL",
+        "options": [
+          {
+            "id": "001",
+            "text": "The porch light is on, and the daylight behind the subject plainly says mid-afternoon"
+          },
+          {
+            "id": "002",
+            "text": "A second pair of shoes sits at the edge of the frame with nobody in them"
+          },
+          {
+            "id": "003",
+            "text": "The doormat is turned ninety degrees from the door, as though recently kicked"
+          },
+          {
+            "id": "004",
+            "text": "A parcel has been left on the mat and the subject stands directly beside it, ignoring it"
+          },
+          {
+            "id": "005",
+            "text": "The house number on the wall is the same digit twice and nobody has ever fixed it"
+          },
+          {
+            "id": "006",
+            "text": "The timestamp in the corner is a few minutes earlier than the light in the picture"
+          }
+        ]
+      }
+    ],
+    "additionalInstructions": "THE GENRE IS THE DOORBELL RECORDING:\n1. The image must read as a single frame captured by a cheap consumer video doorbell, not a security control room, a film still, a poster or a product photograph.\n2. The frame shape must be that of a doorbell camera: roughly square or a shallow wide rectangle, with the lens's barrel curvature intact.\n3. The camera must sit high on the door, off to one side, angled down and across the porch, so the subject is viewed slightly from above.\n4. The subject must be close to the lens and therefore large and a little stretched in the near half of the frame, while the walk, the street and the far porch compress small behind them.\n5. The exposure must be flat and low in range, slightly blown near the door where the camera's own light washes the wall, and falling off quickly past it.\n6. The image must show the sensor's own failures: mild banding, blocky compression in the dark areas, faint colour fringing along the doorframe.\n7. The colour must be muted and slightly wrong to the eye: the washed amber and grey of a white LED, or the flat grey of infrared rendered without a tint.\n8. No film grain, no cinematic grade, no shallow depth of field, no lens flare and no designer colour palette.\n\nTHE FISHEYE IS STRUCTURAL, NOT DECORATIVE:\n9. The wide lens must bend real structure: the overhead beam, the doorframe uprights, the edge of the wall and the walkway lines must all curve.\n10. The centre of the frame must stay the least distorted area, with the distortion increasing toward the edges.\n11. The bend must be consistent across the whole frame, as one lens produces, not applied to one prop for effect.\n12. The porch must be physically correct under the distortion: a real door, frame, threshold, doormat, walkway edge and any mailbox or house number, all meeting where they should.\n13. Nothing may float, intersect or break perspective; the floor, the wall and the subject must be grounded with consistent contact shadows.\n\nTHE SUBJECT FROZEN AT THE CUT:\n14. The subject must be mid-action and only mid-action: the pose must be one a body genuinely passes through for a fraction of a second, never a held pose.\n15. The weight must be distributed as though the movement continues past the edge of the frame: a foot not yet landed, a hand not yet lowered, a turn not yet finished.\n16. Exactly one person may appear. Do not add a second figure, a reflection of a figure, a silhouette in the doorway or a person in the street.\n17. Preserve the subject's identity, features, hair and clothing.\n18. The subject must not be blurred; this is a frozen frame, not a long exposure. Only the surroundings may soften.\n19. The face must be legible at the size the lens gives it, and must carry no fear, no guilt, no surprise and no performance.\n20. The subject must not be looking at the lens on purpose; any look toward it is the ordinary look of a person who has just noticed a small light.\n21. Do not give the subject a prop beyond those the porch or the moment requires; never a weapon, a mask or a comedy object.\n22. Where the source is not a person, freeze the subject object in its own mid-action with the same lack of commentary.\n\nTHE BURNED-IN OVERLAY:\n23. A timestamp must be present in a corner, in simple blocky digital type, date above or beside time, internally consistent.\n24. A caption line reading PERSON DETECTED must be present in a corner, in the same plain type, set as the device sets it.\n25. A small camera label and a signal or battery indicator may appear beside the caption, in the same understated style.\n26. The overlay must sit on top of the image like an overlay: slightly soft, evenly lit, faintly washed where the picture behind it is bright.\n27. The overlay must be legible at the size it appears but must never read as a headline, a title card or a designed graphic.\n28. No real doorbell brand, company, app name, logo or phone interface may appear anywhere in the frame.\n\nTONE - DEADPAN:\n29. Nothing in the image may acknowledge that it is funny: no comic expression, no gag prop, no winking caption, no exaggerated fisheye.\n30. The humour must come only from an ordinary person, an ordinary porch, an ordinary interruption, and the exact instant the recording stopped.\n31. Do not add menace: no shadowy figure, no raised hand in the dark, no threat, no intrusion, no horror cue, no flickering light.\n32. Do not include gore, injury, distress or anything the subject needs to be rescued from.\n33. The subject is a person at their own door on an unremarkable day, and the image must treat that as entirely worth recording.\n34. The small wrongness must be discovered, never announced.\n\nMASTER PROMPT RULE:\n35. Any externally supplied master prompt overrides these defaults and takes priority.\n36. If the master prompt names the frozen moment, the porch or the small wrong detail, use it instead of the selected option.\n37. If the master prompt names a time of day, use it and keep the overlay, the porch light and the exposure consistent with it.\n38. If the master prompt names a name, an address or a house number, set it exactly as given.\n39. Do not let a randomised option contradict an explicit master prompt instruction.\n\nFINAL VALIDATION - FAIL CONDITIONS:\n40. The image does not read as a doorbell camera frame: FAIL.\n41. The fisheye is absent, cosmetic, or applied to one object rather than to the whole scene: FAIL.\n42. The subject is not mid-action, or reads as posing for the camera: FAIL.\n43. The timestamp or the PERSON DETECTED caption is missing, illegible or set as a poster title: FAIL.\n44. A real brand, app interface or logo appears: FAIL.\n45. Anyone other than the subject appears in the frame: FAIL.\n46. The scene reads as sinister, comic or knowingly funny, or the subject looks aware of the joke: FAIL.\n47. The porch light, the exposure and the timestamp disagree about the time of day: FAIL."
+  },
+  {
     "name": "DOUBLE EXPOSURE",
     "category": [
       "PHOTOGRAPHY",
