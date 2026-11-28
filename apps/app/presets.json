@@ -4095,6 +4095,20 @@
     "additionalInstructions": "FINAL RESULT:\nA raw, tactile composition where everything appears constructed from rough, everyday materials.\n\nCORE REQUIREMENTS:\n• NO polished surfaces\n• HEAVY texture\n• IMPERFECTION required"
   },
   {
+    "name": "ARTHUR SZYK",
+    "category": [
+      "ART",
+      "ILLUSTRATION",
+      "MINIATURE",
+      "DECORATIVE",
+      "HISTORICAL"
+    ],
+    "message": "Take a picture and completely redraw the subject as an intricately detailed miniature-style illustration inspired by Arthur Szyk. Reconstruct the subject's face, body, hair, and clothing with precise contours, carefully delineated features, richly patterned garments, and jewel-like color. The subject must become an illustrated figure built from meticulous hand-rendered detail, not a photograph with ornamental decoration added. Use refined miniature painting craftsmanship, intricate decorative motifs, precise linework, luminous color accents, and carefully balanced compositions. Where appropriate, integrate ornate borders and ornamental framing that complement the figure without overwhelming it.",
+    "randomizeOptions": false,
+    "options": [],
+    "additionalInstructions": "STYLE ENFORCEMENT:\n• Completely redraw every visible part of the subject in a highly detailed miniature-illustration style.\n• Construct the face with precise illustrated contours, clearly defined features, and finely controlled painted details.\n• Preserve identity through the shape of the face, eyes, nose, mouth, hairstyle, and recognizable characteristics.\n• Rebuild the body and clothing with precise outlines, intricate decorative patterns, and carefully separated color areas.\n• Use elaborate jewel-like colors, fine detailing, and meticulously organized ornament.\n• Hair must be redrawn as carefully designed illustrated forms, not photographic strands.\n• Use precise miniature-style linework and tightly controlled detail throughout the subject.\n• Decorative framing may be used where compositionally appropriate, but the subject remains the main artwork.\n• Ensure ornamentation follows the actual structure of the clothing and figure rather than randomly covering the image.\n\nSTRICT EXCLUSIONS:\n• NO photorealism.\n• NO generic medieval fantasy painting.\n• NO loose watercolor, impressionism, anime, or CGI.\n• NO photographic faces surrounded by decorative borders.\n• NO indiscriminate pattern overlays that obscure the subject's anatomy.\n\nFINAL VALIDATION:\nThe subject must appear to have been painstakingly illustrated as a miniature artwork, with precise contours, intricate detail, carefully constructed facial features, and richly controlled decorative color."
+  },
+  {
     "name": "ASCII ART",
     "category": [
       "ART",
@@ -17596,6 +17610,106 @@
     "additionalInstructions": "FINAL RESULT:\nThe image should look like a real photograph capturing the exact moment the subject steps through a physical door from another realm into the viewer’s reality, with their face visible and both worlds clearly connected by the doorway."
   },
   {
+    "name": "DOORBELL CAM",
+    "category": [
+      "OPTIONS",
+      "HUMOR",
+      "SATIRE",
+      "SURVEILLANCE",
+      "DOMESTIC",
+      "PHOTOGRAPHY"
+    ],
+    "message": "Take a picture and turn it into the single frame a cheap porch video doorbell recorded of the subject. The camera is mounted high on the door and off to one side, so the whole porch bends around the subject through a wide fisheye lens: the overhead beam bows, the doorframe curves, the walkway leans away and compresses into the distance. The subject is caught in the middle of an ordinary action, one hand half raised in a wave or one foot just leaving the step, held in the exact position the recording stopped in. A timestamp and the line PERSON DETECTED sit burned into a corner, and the frame carries the flat, low-range compression of a small camera doing its best. Nothing in the picture finds any of this funny.",
+    "options": [],
+    "randomizeOptions": true,
+    "optionGroups": [
+      {
+        "title": "THE FROZEN MOMENT",
+        "options": [
+          {
+            "id": "001",
+            "text": "Halfway through a wave, hand open and still up, the arm not yet lowered"
+          },
+          {
+            "id": "002",
+            "text": "Mid-step onto the top stair, one foot down, one still coming, weight not yet transferred"
+          },
+          {
+            "id": "003",
+            "text": "Body still facing the walk, head alone turned toward the lens, caught in the turn"
+          },
+          {
+            "id": "004",
+            "text": "One hand on the door handle and not yet turning it, standing square to the door"
+          },
+          {
+            "id": "005",
+            "text": "Leaning toward a parcel on the mat, one knee bent, one arm reaching, stopped before the lift"
+          },
+          {
+            "id": "006",
+            "text": "Stepping back off the mat, one arm out for balance, the other still holding the door open"
+          }
+        ]
+      },
+      {
+        "title": "THE PORCH",
+        "options": [
+          {
+            "id": "001",
+            "text": "Covered concrete porch, house number screwed beside the door, dead porch light"
+          },
+          {
+            "id": "002",
+            "text": "Open walkway with a low hedge, a doormat worn thin in the middle and a sagging gutter overhead"
+          },
+          {
+            "id": "003",
+            "text": "Apartment landing with painted brick, a bank of metal mailboxes and a fluorescent tube above"
+          },
+          {
+            "id": "004",
+            "text": "Screened porch with a storm door, a folding chair against the wall and a recycling bin"
+          },
+          {
+            "id": "005",
+            "text": "Wide suburban stoop at night, two steps, a potted plant and a plaster pillar at the frame edge"
+          }
+        ]
+      },
+      {
+        "title": "THE SLIGHTLY WRONG DETAIL",
+        "options": [
+          {
+            "id": "001",
+            "text": "The porch light is on, and the daylight behind the subject plainly says mid-afternoon"
+          },
+          {
+            "id": "002",
+            "text": "A second pair of shoes sits at the edge of the frame with nobody in them"
+          },
+          {
+            "id": "003",
+            "text": "The doormat is turned ninety degrees from the door, as though recently kicked"
+          },
+          {
+            "id": "004",
+            "text": "A parcel has been left on the mat and the subject stands directly beside it, ignoring it"
+          },
+          {
+            "id": "005",
+            "text": "The house number on the wall is the same digit twice and nobody has ever fixed it"
+          },
+          {
+            "id": "006",
+            "text": "The timestamp in the corner is a few minutes earlier than the light in the picture"
+          }
+        ]
+      }
+    ],
+    "additionalInstructions": "THE GENRE IS THE DOORBELL RECORDING:\n1. The image must read as a single frame captured by a cheap consumer video doorbell, not a security control room, a film still, a poster or a product photograph.\n2. The frame shape must be that of a doorbell camera: roughly square or a shallow wide rectangle, with the lens's barrel curvature intact.\n3. The camera must sit high on the door, off to one side, angled down and across the porch, so the subject is viewed slightly from above.\n4. The subject must be close to the lens and therefore large and a little stretched in the near half of the frame, while the walk, the street and the far porch compress small behind them.\n5. The exposure must be flat and low in range, slightly blown near the door where the camera's own light washes the wall, and falling off quickly past it.\n6. The image must show the sensor's own failures: mild banding, blocky compression in the dark areas, faint colour fringing along the doorframe.\n7. The colour must be muted and slightly wrong to the eye: the washed amber and grey of a white LED, or the flat grey of infrared rendered without a tint.\n8. No film grain, no cinematic grade, no shallow depth of field, no lens flare and no designer colour palette.\n\nTHE FISHEYE IS STRUCTURAL, NOT DECORATIVE:\n9. The wide lens must bend real structure: the overhead beam, the doorframe uprights, the edge of the wall and the walkway lines must all curve.\n10. The centre of the frame must stay the least distorted area, with the distortion increasing toward the edges.\n11. The bend must be consistent across the whole frame, as one lens produces, not applied to one prop for effect.\n12. The porch must be physically correct under the distortion: a real door, frame, threshold, doormat, walkway edge and any mailbox or house number, all meeting where they should.\n13. Nothing may float, intersect or break perspective; the floor, the wall and the subject must be grounded with consistent contact shadows.\n\nTHE SUBJECT FROZEN AT THE CUT:\n14. The subject must be mid-action and only mid-action: the pose must be one a body genuinely passes through for a fraction of a second, never a held pose.\n15. The weight must be distributed as though the movement continues past the edge of the frame: a foot not yet landed, a hand not yet lowered, a turn not yet finished.\n16. Exactly one person may appear. Do not add a second figure, a reflection of a figure, a silhouette in the doorway or a person in the street.\n17. Preserve the subject's identity, features, hair and clothing.\n18. The subject must not be blurred; this is a frozen frame, not a long exposure. Only the surroundings may soften.\n19. The face must be legible at the size the lens gives it, and must carry no fear, no guilt, no surprise and no performance.\n20. The subject must not be looking at the lens on purpose; any look toward it is the ordinary look of a person who has just noticed a small light.\n21. Do not give the subject a prop beyond those the porch or the moment requires; never a weapon, a mask or a comedy object.\n22. Where the source is not a person, freeze the subject object in its own mid-action with the same lack of commentary.\n\nTHE BURNED-IN OVERLAY:\n23. A timestamp must be present in a corner, in simple blocky digital type, date above or beside time, internally consistent.\n24. A caption line reading PERSON DETECTED must be present in a corner, in the same plain type, set as the device sets it.\n25. A small camera label and a signal or battery indicator may appear beside the caption, in the same understated style.\n26. The overlay must sit on top of the image like an overlay: slightly soft, evenly lit, faintly washed where the picture behind it is bright.\n27. The overlay must be legible at the size it appears but must never read as a headline, a title card or a designed graphic.\n28. No real doorbell brand, company, app name, logo or phone interface may appear anywhere in the frame.\n\nTONE - DEADPAN:\n29. Nothing in the image may acknowledge that it is funny: no comic expression, no gag prop, no winking caption, no exaggerated fisheye.\n30. The humour must come only from an ordinary person, an ordinary porch, an ordinary interruption, and the exact instant the recording stopped.\n31. Do not add menace: no shadowy figure, no raised hand in the dark, no threat, no intrusion, no horror cue, no flickering light.\n32. Do not include gore, injury, distress or anything the subject needs to be rescued from.\n33. The subject is a person at their own door on an unremarkable day, and the image must treat that as entirely worth recording.\n34. The small wrongness must be discovered, never announced.\n\nMASTER PROMPT RULE:\n35. Any externally supplied master prompt overrides these defaults and takes priority.\n36. If the master prompt names the frozen moment, the porch or the small wrong detail, use it instead of the selected option.\n37. If the master prompt names a time of day, use it and keep the overlay, the porch light and the exposure consistent with it.\n38. If the master prompt names a name, an address or a house number, set it exactly as given.\n39. Do not let a randomised option contradict an explicit master prompt instruction.\n\nFINAL VALIDATION - FAIL CONDITIONS:\n40. The image does not read as a doorbell camera frame: FAIL.\n41. The fisheye is absent, cosmetic, or applied to one object rather than to the whole scene: FAIL.\n42. The subject is not mid-action, or reads as posing for the camera: FAIL.\n43. The timestamp or the PERSON DETECTED caption is missing, illegible or set as a poster title: FAIL.\n44. A real brand, app interface or logo appears: FAIL.\n45. Anyone other than the subject appears in the frame: FAIL.\n46. The scene reads as sinister, comic or knowingly funny, or the subject looks aware of the joke: FAIL.\n47. The porch light, the exposure and the timestamp disagree about the time of day: FAIL."
+  },
+  {
     "name": "DOUBLE EXPOSURE",
     "category": [
       "PHOTOGRAPHY",
@@ -23241,6 +23355,20 @@
     "additionalInstructions": "• Transform the subject into a Fraggle-style puppet character\n• Authentic Jim Henson puppet construction\n• Soft fabric textures\n• Expressive puppet eyes\n• Colorful Fraggle hair\n• Cheerful puppet proportions\n• Underground cave environments\n• Crystal formations\n• Rope bridges\n• Musical atmosphere\n• Include Gobo, Red, Mokey, Wembley, and Boober when appropriate\n• Include Doozers and Doozer architecture\n• Include Gorgs when appropriate\n• Emphasize friendship, adventure, music, and exploration\n• Recreate authentic practical puppet filmmaking techniques\n• The final image should instantly resemble Fraggle Rock"
   },
   {
+    "name": "FRANKLIN BOOTH",
+    "category": [
+      "ART",
+      "ILLUSTRATION",
+      "PEN AND INK",
+      "LINE ART",
+      "CLASSIC"
+    ],
+    "message": "Take a picture and completely redraw the subject as an extraordinarily intricate pen-and-ink illustration inspired by Franklin Booth. Reconstruct the subject's face, hair, anatomy, clothing, and contours entirely through exceptionally fine, carefully controlled parallel lines, curved line groupings, delicate cross-contours, and layered ink strokes. The lines must construct the actual form and volume of the subject rather than decorate a photograph. Use intricate tonal architecture, carefully varied line density, crisp ink boundaries, and elegant illustrative detail. Preserve recognizable identity while transforming every visible feature into a highly refined hand-drawn ink construction.",
+    "randomizeOptions": false,
+    "options": [],
+    "additionalInstructions": "MANDATORY LINE-CONSTRUCTION STYLE:\n• Completely redraw the subject using intricate pen-and-ink line construction.\n• Every visible form must be created from deliberate ink lines; no photographic surfaces may remain.\n• Construct facial anatomy with fine curved lines that follow the forehead, cheeks, nose, lips, chin, and jaw.\n• Use exceptionally fine parallel strokes, layered hatching, curved contour lines, and varying line density to create tonal volume.\n• Line direction must follow the actual three-dimensional structure of the face and body.\n• Use precise, intricate hair construction with flowing lines and carefully designed dark masses.\n• Rebuild clothing, folds, and texture using dense but controlled line systems.\n• Preserve recognizable facial identity through the placement and shape of the illustrated features.\n• Maintain crisp edges and exceptionally fine detail without allowing the lines to become random scribbles.\n• Use black ink on a light paper-like ground, with tonal depth produced by line density rather than grayscale painting.\n\nSTRICT EXCLUSIONS:\n• NO photorealism.\n• NO ordinary pencil sketch or charcoal drawing.\n• NO rough scribbling or loose gesture drawing.\n• NO simple outline drawing with flat gray shading.\n• NO digital gradients, color painting, anime, or CGI.\n\nFINAL VALIDATION:\nThe subject must look painstakingly hand-drawn through elaborate, precise, flowing parallel ink lines. The linework must construct the face, anatomy, clothing, and volume rather than merely outline them."
+  },
+  {
     "name": "FRANQUIN-ERA COMIC ART",
     "category": [
       "ART",
@@ -24100,10 +24228,10 @@
       "DRAMA",
       "BLACK AND WHITE"
     ],
-    "message": "Take a picture and completely redraw the entire image, subject and setting, as a printed page from a 1960s–1970s Japanese gekiga manga, the gritty, cinematic, adult 'dramatic pictures' style, printed in black ink on off-white manga paper. It must look unmistakably like a hand-drawn manga page: thin panel borders with white gutters; one large dominant panel showing the subject, with one to three smaller panels showing a dramatic close-up, a detail of hands or an object, or a wide establishing view of the setting. Everything is drawn in black ink only: sharp, angular, gritty pen and brush lines; dense dark hatching and crosshatching; heavy solid brush blacks; mechanical dot screentone for gray areas; and bold speed lines and focus lines radiating from the subject. NO gray photographic tones, NO pencil shading, NO soft gradients anywhere. The subject becomes a hand-drawn gekiga character with grounded adult realism: a hard, angular face built from ink lines, sharp cheekbones and jaw, narrow intense eyes with heavy upper lids, a nose defined by a black shadow shape, hatched shadows on the cheeks and neck, and hair as bold black brush masses with white streaks, keeping them recognizable and their exact expression. The result must look like a real printed gekiga manga page, never a photo with a manga filter.",
+    "message": "Take a picture and completely redraw it as a printed page from a 1960s–1970s Japanese gekiga ('dramatic pictures') manga: the gritty, cinematic, realistic comics for older readers, drawn in black ink with pen and brush and printed on off-white newsprint. The page tells a short, tense, silent STORY like a scene from a crime or noir film, starring the subject: four to six panels, each showing a different moment and a different camera shot of the same scene, for example a wide establishing shot of the place, the subject walking or arriving, something catching their attention (a figure in the shadows, a ringing phone, a sudden downpour, a passing train, a letter), the subject reacting in a medium shot, and a final dramatic shot of the subject with the exact expression from the photo. The story grows out of the photo's setting and mood, moved into a moody postwar Japanese city atmosphere where it fits. The subject is drawn in the gekiga way: realistic, grounded proportions; a face built from firm, confident contour lines rather than shading, with defined eyelids, small dark pupils, thick brows, and a solid black shadow shape on one side; hair as heavy black brush strokes. Rough, dynamic diagonal lines, dark backgrounds, heavy brush blacks, and mechanical dot screentone create the mood. Black ink only. The result must look like a real printed gekiga page telling a story, never a photo, never a pencil sketch, and never panels of body-part close-ups.",
     "randomizeOptions": false,
     "options": [],
-    "additionalInstructions": "THE SUBJECT'S FACE IS WHERE THIS STYLE FAILS. Earlier results redrew the background and clothing but left the subject's face, skin, and hands as the original photograph with a light gekiga manga texture on top, like a layered photo. That is a failure. The face, hair, skin, eyes, glasses, hands, and clothing must be completely redrawn by hand in exactly the same black ink line, hatching, solid blacks, and dot screentone as everything else, at exactly the same level of stylization as the clothing and background beside them. Recognizability comes only from the subject's face shape, hairstyle and hair color, glasses, distinctive features, and the exact expression and pose from the photo, all re-created in the style; likeness is secondary to the face being a true gekiga manga drawing. Remove any close-up selfie or wide-angle lens distortion and redraw the figure with natural proportions for the style.\n\n1. IT MUST LOOK LIKE A MANGA PAGE: Present the image as a printed manga page with thin black panel borders and white gutters: one large dominant panel featuring the subject, plus one to three smaller panels (an extreme close-up of the eyes or face, a detail of hands or an object, or a wide establishing shot of the setting), all drawn in the same style. Panels may be angled or overlapping. Printed in black on slightly off-white paper.\n\n2. BLACK INK ONLY: Every tone is made from ink: hatching, crosshatching, solid brush blacks, and mechanical dot screentone (visible round dots) for midtones. There must be NO continuous gray shading, NO pencil or graphite rendering, NO airbrushed gradients, and NO photographic tones anywhere, especially on the face.\n\n3. THE GEKIGA FACE: Grounded, adult, and realistic but fully drawn: a hard, angular face construction; sharp cheekbones and jawline; narrow, intense eyes with heavy, dark upper lids and small irises; a strong nose shaped by a solid black shadow; deep hatched shadows under the brow, cheekbones, and chin; creases and lines drawn in ink; hair as bold black brush masses with sharp white highlights. Glasses are drawn with crisp black lines and small white reflections. Keep the subject's exact expression, drawn with dramatic seriousness. No large sparkling eyes, no cute features.\n\n4. LINE QUALITY: Sharp angles, gritty, energetic pen and brush lines with strong thick-thin variation; rough dry-brush strokes in shadows and hair; diagonal energy.\n\n5. CINEMATIC EFFECTS: Speed lines and radiating focus lines behind the subject, dramatic camera angles (low angle, extreme close-up, wide shot), and heavy shadow (kage) creating tension and claustrophobia.\n\n6. SETTING: Redraw the photo's setting with gritty, detailed, realistic manga backgrounds: urban grime, wires, signs, walls, and interiors in ink hatching and screentone.\n\n7. NO TEXT: Do not add speech balloons, sound effects, captions, or lettering unless the master prompt asks for them.\n\n8. AVOID: A photographic or pencil-shaded face, soft gray gradients, modern anime or moe styling, big shiny eyes, color, glossy digital art, and any signature.\n\nFINAL CHECK: Compare the subject's face with the clothing and background beside it. If the face looks smoother, more realistic, or more photographic than the rest of the image, or could be mistaken for the original photo, the transformation has failed. The whole image, face included, must look like an original printed black-and-white gekiga manga page made entirely by hand. Keep the subject's exact facial expression and pose from the photo. The master prompt takes priority over preset defaults, including subject, pose, action, setting, mood, colors, and artistic direction."
+    "additionalInstructions": "THE SUBJECT'S FACE IS WHERE THIS STYLE FAILS. Earlier results redrew the background and clothing but left the subject's face, skin, and hands as the original photograph with a light gekiga manga texture on top, like a layered photo. That is a failure. The face, hair, skin, eyes, glasses, hands, and clothing must be completely redrawn by hand in exactly the same black ink contour line, brush blacks, and dot screentone as everything else, at exactly the same level of stylization as the clothing and background beside them. Recognizability comes only from the subject's face shape, hairstyle and hair color, glasses, distinctive features, and the exact expression and pose from the photo, all re-created in the style; likeness is secondary to the face being a true gekiga manga drawing. Remove any close-up selfie or wide-angle lens distortion and redraw the figure with natural proportions for the style.\n\n1. A STORY, NOT A BREAKDOWN: The page is a cinematic sequence telling one short, silent scene with the subject as the protagonist. Every panel shows a different moment and a different shot, like film editing: an establishing wide shot (the street, room, station, or building from the photo, seen from a high or low angle), a full or medium shot of the subject moving through it, a cutaway to what they see or hear (a shadowy figure, headlights, rain on a window, a clock, a door opening, a cat on a wall), a medium shot of their reaction, and a climactic panel of the subject's face and upper body with the exact expression from the photo. NEVER fill panels with isolated fragments of the subject (just the eyes, just the mouth, just a hand) or the same pose repeated. The mood is tense, suspenseful, and atmospheric, without violence or weapons. The subject keeps their real age and body; a child stays a child in a dramatic, mysterious scene.\n\n2. PAGE LAYOUT: A Japanese manga page read right to left, top to bottom: four to six rectangular panels of varied sizes with thin black borders and narrow white gutters, including at least one wide horizontal panel and one tall or large dramatic panel. A panel may bleed to the page edge. Several panels are silent, letting the images carry the drama.\n\n3. THE GEKIGA FACE AND FIGURE: Realistic, grounded anatomy and proportions, never cute or chibi. Following the Japanese painting tradition, form is described by LINE, not by photographic shading: a firm, confident outline of the jaw, cheek, and ear; clearly drawn upper and lower eyelids; small, solid black pupils with a tiny white highlight or none; thick, expressive eyebrows; a nose drawn with a few precise lines and a black shadow shape; lips drawn with a clean line. Shadow is placed as flat black shapes and hatching on one side of the face and under the brow and chin. Hair is a heavy mass of black brush strokes with white streaks. Glasses are clean black lines with small white glints. Clothing has bold, angular folds. The face uses the same line, blacks, and screentone as the clothing; no pencil rendering, no smooth gray skin.\n\n4. LINE QUALITY: Rough, dynamic, energetic pen and brush lines with strong thick-thin variation; many diagonal lines; dry-brush texture in shadows and hair; quick, gritty strokes in backgrounds.\n\n5. MOOD AND TONE: Dark backgrounds and heavy shadow dominate: night streets, dim rooms, rain, smoke, harsh streetlights, deep black shadows. Midtones only as mechanical round-dot screentone and hatching. Rain as long ruled diagonal lines; tension as focus lines radiating from the subject in one panel at most.\n\n6. SETTING: Redraw the photo's setting as a gritty, realistic, detailed ink background in precise perspective: walls, signs without readable text, wires, wet pavement, shop fronts, interiors, all in hatching, screentone, and solid black, with the atmosphere of a postwar Japanese city.\n\n7. NO TEXT: No speech balloons, sound effects, captions, or lettering unless the master prompt asks for them.\n\n8. AVOID: Panels of isolated eyes, mouths, or hands; repeating the same pose; pencil or graphite shading; photographic or soft gray faces; gradients; modern anime or moe styling; big shiny eyes; color; glossy digital art; violence, weapons, or adult content; signatures.\n\nFINAL CHECK: Compare the subject's face with the clothing and background beside it. If the face looks smoother, more realistic, or more photographic than the rest of the image, or could be mistaken for the original photo, the transformation has failed. The whole image, face included, must look like an original printed black-and-white gekiga manga page made entirely by hand. Keep the subject's exact facial expression and pose from the photo. The master prompt takes priority over preset defaults, including subject, pose, action, setting, mood, colors, and artistic direction."
   },
   {
     "name": "GELATIN ASPIC",
@@ -24933,6 +25061,20 @@
     ],
     "randomizeOptions": true,
     "additionalInstructions": ""
+  },
+  {
+    "name": "GEORGE BARBIER",
+    "category": [
+      "ART",
+      "ILLUSTRATION",
+      "ART DECO",
+      "FASHION",
+      "DECORATIVE"
+    ],
+    "message": "Take a picture and completely redraw the subject as an elegant Art Deco fashion illustration inspired by George Barbier. Transform the subject into a stylized, elongated fashion figure with graceful anatomy, refined facial features, elegant posture, carefully designed clothing, and sophisticated decorative composition. Use clean contours, elongated silhouettes, refined flat color areas, delicate ornamental details, and polished pochoir-like color application. The face and body must be genuinely redrawn in the period illustration style, not left realistic. The final result should look like an authentic illustrated fashion plate from the Art Deco era, with sophisticated design, controlled ornament, and graceful visual rhythm.",
+    "randomizeOptions": false,
+    "options": [],
+    "additionalInstructions": "MANDATORY CHARACTER TRANSFORMATION:\n• Completely reconstruct the subject as a stylized Art Deco fashion-illustration figure.\n• Use elongated, graceful proportions and elegant, deliberately posed anatomy.\n• Redraw the face with refined stylized features, clean contours, simplified facial planes, and period-appropriate elegance.\n• Hair must become carefully designed graphic shapes or flowing stylized forms.\n• Reconstruct clothing as sophisticated fashion illustration, emphasizing silhouette, drape, decorative pattern, and elegant shape.\n• Use crisp contours, flat or subtly layered color, refined tonal accents, and carefully controlled pochoir-like rendering.\n• Incorporate geometric ornament, stylized pattern, and balanced decorative framing only where appropriate.\n• Use a sophisticated period palette with carefully coordinated colors rather than arbitrary bright colors.\n• Preserve the subject's recognizable identity within the stylized facial design.\n\nSTRICT EXCLUSIONS:\n• NO photorealistic face or body.\n• NO modern fashion photography.\n• NO generic Art Deco poster with a realistic person pasted into it.\n• NO 3D CGI, anime, or modern cartoon design.\n• NO excessive ornamental clutter that obscures the figure.\n\nFINAL VALIDATION:\nThe subject must be an actual Art Deco fashion illustration character, with elongated proportions, elegant posture, stylized facial design, crisp contours, and refined decorative color."
   },
   {
     "name": "GERMAN WOOD CARVING",
@@ -28388,6 +28530,20 @@
     "additionalInstructions": "• Transform ONLY the subject.\n• Keep the background completely unchanged.\n• Preserve the original environment, lighting, perspective, colors, shadows, and every background object exactly as photographed.\n• Completely discard the original subject before reconstruction.\n• Do NOT apply hot glue over the original person.\n• Do NOT blend photographic textures with glue.\n• Every visible part of the subject must be created entirely from real hardened hot glue.\n• Preserve the subject's exact identity, facial structure, hairstyle, hair color, expression, age, ethnicity, body proportions, pose, silhouette, and recognizable features.\n• Facial features must emerge solely through careful shaping and placement of hot glue.\n• Every glue strand, drip, and hardened section must remain recognizable as real hot glue.\n• Preserve authentic glue characteristics including transparency, gloss, bubbles, ridges, strands, uneven thickness, and hardened edges.\n• Never flatten hot glue into a smooth plastic texture.\n• Never create a digital glass or plastic effect.\n• Use realistic layered glue construction with physical depth.\n• Glue should show natural imperfections from a glue gun application.\n• Include thin strands, thicker deposits, overlaps, and raised areas created during crafting.\n• Recreate eyes, mouth, expression, and facial structure using carefully shaped glue forms.\n• Hair must be reconstructed entirely from hot glue strands using realistic direction and flow.\n• Clothing must also be rebuilt entirely from hot glue structures.\n• Maintain realistic shadows and reflections caused by the transparent material.\n• The final artwork should look like a real handcrafted hot glue sculpture photographed after completion.\n• Master prompt instructions always override the selected option whenever conflicts occur.\n\nFINAL VALIDATION — Before producing the final image, verify ALL of the following:\n\n✓ ONLY the subject has been transformed.\n✓ The background remains completely unchanged.\n✓ No original photographic pixels remain on the subject.\n✓ The subject is entirely reconstructed from real hot glue.\n✓ Hot glue is not simply applied over the original subject.\n✓ Individual glue strands, drips, and layers are visible.\n✓ Transparency, gloss, and physical depth are realistic.\n✓ The subject remains immediately recognizable.\n✓ The artwork resembles a genuine handcrafted hot glue sculpture.\n✓ If ANY answer is NO, regenerate the image until every requirement is satisfied."
   },
   {
+    "name": "HOWARD PYLE",
+    "category": [
+      "ART",
+      "ILLUSTRATION",
+      "HISTORICAL",
+      "ADVENTURE",
+      "PAINTING"
+    ],
+    "message": "Take a picture and completely reconstruct the subject as a dramatic historical adventure-illustration figure inspired by Howard Pyle. Redraw the subject's face, anatomy, costume, hair, and pose using convincing historical illustration design, strong silhouettes, expressive gestures, and carefully structured painterly forms. Use dramatic theatrical lighting, rich but controlled colors, bold light-dark relationships, and traditional narrative painting. The subject must become an illustrated character with a deliberately constructed face and body, not a photograph with an old-fashioned painted background. Create a strong sense of narrative action, character, and historical adventure through the figure's pose, expression, clothing, and visual staging.",
+    "randomizeOptions": false,
+    "options": [],
+    "additionalInstructions": "MANDATORY STYLE TRANSFORMATION:\n• Reconstruct the subject completely as a traditional historical adventure illustration.\n• Redraw facial features with convincing painted structure, expressive character, and period-appropriate illustrative treatment.\n• Preserve recognizable identity without retaining photographic facial texture.\n• Use strong, believable anatomy, deliberate posture, expressive hands, and theatrical gesture.\n• Rebuild clothing as historically convincing illustrated garments with substantial folds, layered forms, and painted texture.\n• Use rich traditional pigments, strong silhouettes, controlled brushwork, and dramatic directional lighting.\n• Create bold contrasts between illuminated forms and deep shadows.\n• Emphasize narrative clarity: the subject should look like a character caught in a significant moment of an illustrated adventure story.\n• Keep the original subject and composition unless the master prompt explicitly requests a different setting or action.\n\nSTRICT EXCLUSIONS:\n• NO photorealistic subject.\n• NO generic fantasy digital painting.\n• NO anime, cartoon, comic-book superhero style, or CGI.\n• NO modern cinematic photography treatment.\n• NO generic pirate or medieval imagery unless appropriate to the actual subject or master prompt.\n\nFINAL VALIDATION:\nThe subject must be visibly reconstructed with traditional painterly anatomy, expressive historical character design, strong theatrical composition, and the narrative intensity of classic adventure illustration."
+  },
+  {
     "name": "H.R. GIGER STYLE",
     "category": [
       "SCI-FI",
@@ -30273,6 +30429,20 @@
     "additionalInstructions": "• Preserve recognizable facial identity while transforming the subject into a psychologically disturbing cinematic character\n• Maintain believable anatomy, proportions, and photorealistic realism\n• Use gritty institutional horror aesthetics rather than cartoon horror styling\n• Emphasize tension, instability, emotional intensity, and psychological unease\n• Avoid parody, comedy-horror, goofy expressions, or exaggerated caricatures\n• Preserve cinematic thriller atmosphere and realistic lighting\n• Use disturbing asylum environments, institutional settings, and claustrophobic horror composition\n• Maintain strong facial intensity and emotional realism\n• Ensure the final image resembles a high-budget cinematic psychological thriller or horror film scene"
   },
   {
+    "name": "J.C. LEYENDECKER ILLUSTRATION",
+    "category": [
+      "ART",
+      "ILLUSTRATION",
+      "CLASSIC AMERICAN",
+      "COMMERCIAL ART",
+      "PAINTING"
+    ],
+    "message": "Take a picture and completely redraw the subject as a J.C. Leyendecker-style painted illustration. The subject must become a convincingly hand-painted, stylized illustrative character, not a photorealistic person with painterly texture. Reconstruct the face, head, anatomy, clothing, hair, and visible body using the distinctive sculptural design and controlled exaggeration of classic Leyendecker illustration. Use simplified but powerful anatomical forms, carefully constructed facial planes, strong shoulders, expressive hands, clean silhouettes, and confident, elegant poses. Build volume through deliberate directional brushwork, broad shaped planes, carefully controlled highlights, and rich painterly transitions. Facial features must be painted and structurally simplified rather than photographically reproduced. Use sophisticated commercial-illustration composition, polished surfaces, dramatic but controlled lighting, and a refined early twentieth-century American magazine-illustration aesthetic.",
+    "randomizeOptions": false,
+    "options": [],
+    "additionalInstructions": "MANDATORY STYLE TRANSFORMATION:\n• Completely reconstruct the subject as an illustrated character in the distinctive visual language of classic J.C. Leyendecker magazine illustration.\n• The face must be redrawn with sculptural planes, simplified facial geometry, carefully shaped features, and deliberately painted highlights and shadows.\n• Use strong, idealized anatomy, broad structural forms, expressive hands, confident posture, and elegant character posing.\n• Hair must be painted as designed sculptural masses and deliberate brush shapes, not photographic strands.\n• Clothing must be reconstructed with crisp folds, strong shapes, controlled highlights, and confident brushwork.\n• Use directional, visible painterly strokes that help construct the subject's form rather than simply adding surface texture.\n• Create the characteristic polished, sculptural, carefully designed appearance of classic American magazine illustration.\n• Preserve the subject's recognizable identity through the illustrated facial structure, hairstyle, and defining features.\n• Keep the original pose and scene unless the master prompt specifies otherwise.\n\nSTRICT STYLE EXCLUSIONS:\n• NO photorealistic face or anatomy.\n• NO photographic skin texture with paint applied over it.\n• NO generic digital painting, generic oil painting, or loose impressionist brushwork.\n• NO cartoon, anime, comic-book, or 3D CGI appearance.\n• NO generic vintage poster treatment in place of the actual character transformation.\n\nFINAL VALIDATION:\nThe subject must look as though originally conceived and painted as a character for a classic Leyendecker-era magazine illustration. The defining sculptural anatomy, stylized facial construction, confident posing, and controlled painterly forms must be visible throughout the subject."
+  },
+  {
     "name": "JACK IN THE BOX",
     "category": [
       "TOY",
@@ -30468,6 +30638,20 @@
     ],
     "randomizeOptions": true,
     "additionalInstructions": "FINAL RESULT:\nThe image should show the subject(s) transformed into translucent glowing blue Jedi Force Ghost apparitions wearing Jedi robes - either appearing in a Star Wars location OR remaining in their original photo background as ethereal spirits - with soft luminous glow, semi-transparent ghostly presence, and that distinctive Force Ghost effect from the films."
+  },
+  {
+    "name": "JESSIE WILLCOX SMITH",
+    "category": [
+      "ART",
+      "ILLUSTRATION",
+      "CHILDREN'S BOOK",
+      "CLASSIC PAINTING",
+      "NARRATIVE"
+    ],
+    "message": "Take a picture and completely redraw the subject as a warm, expressive character in the tradition of Jessie Willcox Smith's classic children's-book illustrations. Reconstruct the subject's face, anatomy, hair, clothing, and expression with naturalistic but unmistakably illustrated forms. Emphasize gentle, emotionally readable facial expressions, believable human gestures, carefully observed hands, soft rounded modeling, and warm, intimate character presence. Use traditional narrative illustration painting, delicate tonal transitions, carefully controlled edges, soft natural light, and a refined, inviting palette. The subject must be fully painted and illustrated, never left photorealistic. The final image should feel like an authentic character illustration from a beautifully produced early twentieth-century storybook.",
+    "randomizeOptions": false,
+    "options": [],
+    "additionalInstructions": "STYLE ENFORCEMENT:\n• Completely redraw the subject as a traditional narrative storybook illustration.\n• Reconstruct the face with painted facial planes, natural proportions, gentle expression, and carefully observed features.\n• Preserve identity while translating the subject into the warm, softly modeled illustrative character design.\n• Use natural, believable anatomy and expressive but restrained gestures.\n• Redraw hair with painterly masses and carefully shaped highlights rather than photographic strands.\n• Repaint clothing with soft, convincing folds and traditional illustrative brushwork.\n• Use warm, gentle lighting, delicate shadows, subtle tonal transitions, and a carefully balanced palette.\n• Emphasize emotional storytelling through the subject's expression, posture, and gesture.\n• Retain the original scene and composition unless the master prompt directs otherwise.\n\nSTRICT EXCLUSIONS:\n• NO photorealistic face, skin, hair, or clothing.\n• NO photographic portrait with a soft-focus or vintage filter.\n• NO generic children's cartoon, anime, or modern 3D animation.\n• NO exaggerated caricature that destroys the subject's recognizable identity.\n• NO overly decorative fantasy treatment replacing the natural narrative illustration style.\n\nFINAL VALIDATION:\nThe subject must look hand-painted as a character in a classic illustrated storybook, with warm natural expression, soft modeling, carefully observed anatomy, and authentic traditional illustration craftsmanship."
   },
   {
     "name": "JET SET RADIO",
@@ -30958,6 +31142,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "STYLE ENFORCEMENT:\n\n• Transform the subject into a stylized toy-inspired contemporary-art figure\n• Include smooth sculptural surfaces, rounded anatomy, exaggerated proportions, and simplified cartoon styling\n• Preserve recognizable subject identity\n• Emphasize playful contemporary-art aesthetics and gallery-style presentation\n\nVISUAL STYLE:\n\n• Contemporary pop-art realism\n• Designer collectible aesthetics\n• Street-art and fine-art fusion\n• Smooth sculptural rendering\n• Premium gallery atmosphere\n• Stylized cartoon-inspired forms\n\nANTI-CHEAT:\n\n• Do NOT generate generic anime characters\n• Do NOT create rough graffiti-only artwork\n• Do NOT remove the sculptural toy-like appearance\n• Do NOT make the character fully photorealistic\n\nFINAL RESULT:\nThe final image must resemble a premium contemporary pop-art sculpture scene featuring the recognizable subject transformed into a stylized toy-inspired art figure with smooth sculptural design, modern gallery aesthetics, and playful street-art influence."
+  },
+  {
+    "name": "KAY NIELSEN",
+    "category": [
+      "ART",
+      "ILLUSTRATION",
+      "FAIRY TALE",
+      "DECORATIVE",
+      "GOLDEN AGE"
+    ],
+    "message": "Take a picture and completely redraw the subject as a figure in an elegant, highly decorative early twentieth-century fairy-tale illustration inspired by Kay Nielsen. Transform the subject's anatomy, face, clothing, hair, and silhouette into elongated, graceful, stylized forms. Use slender proportions, elegant gestures, elongated necks and limbs where appropriate, carefully simplified facial features, and striking silhouettes. Construct the subject with delicate, precise outlines and beautifully controlled flat or subtly layered colors. Incorporate intricate decorative patterning, stylized botanical shapes, geometric ornament, and dramatic negative space as part of the illustration's composition. The subject must become an actual illustrated fairy-tale character rather than a realistic person placed in a decorative fantasy background.",
+    "randomizeOptions": false,
+    "options": [],
+    "additionalInstructions": "MANDATORY CHARACTER REDESIGN:\n• Rebuild the entire subject as an elongated, elegant, decorative fairy-tale illustration figure.\n• Change the subject's proportions into graceful stylized forms while retaining recognizable identity.\n• Use long, flowing silhouettes, slender limbs, elegant hands, and deliberate theatrical gestures.\n• Redraw facial features with simplified, refined, stylized construction. Do not retain photographic facial detail.\n• Design hair as flowing ornamental shapes and elegant masses.\n• Reconstruct clothing into decorative silhouettes with elaborate patterning, stylized folds, and flowing contours.\n• Use fine, controlled outlines, refined color areas, decorative pattern, and carefully composed negative space.\n• The illustration should feel like a complete designed page from an early twentieth-century fairy-tale book.\n• Use a sophisticated palette of muted jewel tones, deep blues, greens, reds, golds, and delicate contrasting accents.\n• Preserve the original subject's recognizable identity through stylized facial structure and defining features.\n\nSTRICT EXCLUSIONS:\n• NO photorealistic faces or bodies.\n• NO generic fantasy painting.\n• NO realistic subject with decorative floral borders added around it.\n• NO anime, manga, modern cartoon, or 3D CGI.\n• NO random ornamental clutter that obscures the subject.\n\nFINAL VALIDATION:\nThe subject must itself have elongated proportions, elegant silhouettes, stylized facial construction, flowing forms, and refined decorative design. The result must read as a genuine fairy-tale illustration, not a photograph with a fantasy background."
   },
   {
     "name": "KEEP ON TRUCKIN'",
@@ -33735,6 +33933,20 @@
     "additionalInstructions": "FINAL RESULT:\nThe image must look like a real 1970s-era metal lunchbox product featuring the subject as the illustrated star, complete with bold retro artwork and printed branding text influenced by the external prompt or inferred from the subject."
   },
   {
+    "name": "LYND WARD WOOD-ENGRAVING NARRATIVE",
+    "category": [
+      "ART",
+      "ILLUSTRATION",
+      "WOOD ENGRAVING",
+      "BLACK AND WHITE",
+      "GRAPHIC ART"
+    ],
+    "message": "Take a picture and completely reconstruct the subject as a dramatic black-and-white wood-engraved narrative illustration inspired by Lynd Ward. The entire subject must be redrawn from carved-looking black and white shapes, intricate parallel lines, directional hatching, bold silhouettes, and dramatic contrasts. Facial features, hair, anatomy, clothing, and shadows must all be constructed from the engraved linework itself. Use expressive black masses, fine white cuts, carefully controlled tonal transitions, and powerful narrative composition. Do not leave any photographic detail in the subject. The final image must look like a genuine hand-carved black-and-white illustration from a classic wordless graphic novel.",
+    "randomizeOptions": false,
+    "options": [],
+    "additionalInstructions": "MANDATORY ENGRAVING TRANSFORMATION:\n• Reconstruct the entire subject from black-and-white engraved forms.\n• Every facial feature must be redrawn using engraved contours, fine cuts, parallel lines, and controlled shadow masses.\n• Build the eyes, nose, mouth, cheeks, and facial planes with deliberate wood-engraving marks rather than photographic grayscale.\n• Use directional hatching that follows the structure and volume of the face and body.\n• Hair must become a carefully carved arrangement of black masses and fine white cuts.\n• Clothing must be reconstructed with bold engraved contours, directional linework, and carefully organized shadow patterns.\n• Use dramatic high-contrast composition with strong silhouettes and powerful areas of solid black.\n• Preserve the subject's recognizable identity through the arrangement of engraved facial and structural forms.\n• The image must feel physically carved and printed, with the tonal language created by line density and cut marks.\n\nSTRICT EXCLUSIONS:\n• NO grayscale photograph.\n• NO photographic face with an engraving filter.\n• NO soft pencil drawing, charcoal, generic cross-hatching, or digital sketch effect.\n• NO color.\n• NO smooth digital gradients or 3D rendering.\n\nFINAL VALIDATION:\nThe subject must be entirely constructed from unmistakable wood-engraving marks, with bold black masses, fine white cuts, directional hatching, and dramatic narrative contrast."
+  },
+  {
     "name": "LYNN GOLDSMITH PHOTOGRAPHY",
     "category": [
       "PHOTOGRAPHY",
@@ -34379,6 +34591,34 @@
       }
     ],
     "additionalInstructions": "• Transform ONLY the subject.\n• Keep the background completely unchanged.\n• Preserve the original environment, lighting, perspective, colors, shadows, and every background object exactly as photographed.\n• Completely discard the original subject before reconstruction.\n• Do NOT place marbles over the original person.\n• Do NOT blend photographic textures with marble materials.\n• Every visible part of the subject must be created entirely from real glass marbles.\n• Preserve the subject's exact identity, facial structure, hairstyle, hair color, expression, age, ethnicity, body proportions, pose, silhouette, and recognizable features.\n• Facial features must emerge solely through intelligent placement of individual marbles.\n• Every marble must remain recognizable as a real physical glass marble.\n• Preserve authentic marble details including spherical shape, glass transparency, internal swirls, reflections, highlights, surface imperfections, and thickness.\n• Never flatten marbles into simple colored circles.\n• Never create a digital bubble or dot pattern effect.\n• Use thousands of individual marbles depending on image complexity.\n• Arrange marbles with realistic spacing, stacking, and depth like a real handcrafted sculpture.\n• Marbles should cast realistic shadows and create believable three-dimensional volume.\n• Use smaller marbles for eyes, facial details, and fine features.\n• Use larger marbles for broader areas such as clothing and body shapes.\n• Hair must be reconstructed entirely from marbles using appropriate colors, placement, and density.\n• Clothing must also be rebuilt entirely from marbles.\n• Preserve realistic glass reflections and light interaction across the sculpture.\n• Avoid repeated identical marble patterns unless naturally required.\n• The finished artwork should look like a real handcrafted marble portrait photographed after completion.\n• Master prompt instructions always override the selected option whenever conflicts occur.\n\nFINAL VALIDATION — Before producing the final image, verify ALL of the following:\n\n✓ ONLY the subject has been transformed.\n✓ The background remains completely unchanged.\n✓ No original photographic pixels remain on the subject.\n✓ The subject is entirely reconstructed from real marbles.\n✓ Marbles are not simply placed over the original subject.\n✓ Individual marbles, glass reflections, swirls, and spherical shapes remain visible.\n✓ Marble texture, transparency, and physical depth are realistic.\n✓ Facial features are created through marble placement, not retained photography.\n✓ The subject remains immediately recognizable.\n✓ The artwork resembles a genuine handcrafted marble sculpture.\n✓ If ANY answer is NO, regenerate the image until every requirement is satisfied."
+  },
+  {
+    "name": "MARGINALIA DOODLE WORLD",
+    "category": [
+      "ILLUSTRATION",
+      "DOODLE ART",
+      "NOTEBOOK ART",
+      "WHIMSICAL",
+      "TRANSFORMATION"
+    ],
+    "message": "Take a picture and completely redraw the subject as the central character in an elaborate hand-doodled notebook world. The subject itself must be transformed into a coherent illustrated doodle character using expressive black pen outlines, simplified anatomy, stylized facial features, playful linework, and deliberately hand-drawn forms. Integrate the character into a surrounding world of spontaneous notebook doodles, handwritten annotations, arrows, diagrams, little illustrated objects, visual jokes, and interconnected sketch elements. The doodles must interact meaningfully with the subject rather than simply decorate empty space. The entire image should resemble an imaginative page from a well-used sketchbook or notebook, with the subject and the surrounding doodles drawn by the same hand.",
+    "randomizeOptions": false,
+    "options": [],
+    "additionalInstructions": "MANDATORY SUBJECT TRANSFORMATION:\n• Completely redraw the subject as a hand-drawn doodle character.\n• The face must be reconstructed with simplified expressive features, readable eyes, nose, mouth, and distinctive identity cues.\n• Convert the subject's anatomy, hair, clothing, and pose into coherent pen-drawn forms.\n• Use consistent black pen outlines, variable line weight, simple hatching, and intentionally spontaneous sketch marks.\n• The subject must look as though it was drawn directly into the notebook, not cut out from a photograph and placed on a doodle background.\n• Preserve the subject's recognizable identity through the simplified face, hairstyle, clothing, and defining features.\n\nDOODLE WORLD:\n• Build a connected world of small hand-drawn doodles around and interacting with the subject.\n• Use handwritten arrows, labels, thought bubbles, small diagrams, visual symbols, tiny illustrated objects, and playful annotations.\n• Doodles should respond to the subject's pose, clothing, expression, or recognizable features.\n• Make the surrounding doodles feel spontaneous, clever, and visually interconnected.\n• Use notebook-paper texture, ruled lines, margins, or sketchbook marks only when they support the composition.\n• Keep the main subject large, clear, and visually dominant.\n• Avoid covering the face or obscuring the subject with excessive doodles.\n• Any readable words must be intentional, correctly spelled, and relevant. Do not generate meaningless pseudo-text.\n\nSTRICT EXCLUSIONS:\n• NO photorealistic subject.\n• NO photograph with doodles drawn around it.\n• NO generic vector clip art or polished corporate infographic.\n• NO unrelated random doodle clutter.\n• NO 3D CGI, anime, or realistic digital painting.\n\nFINAL VALIDATION:\nThe subject and the surrounding notebook world must look like one unified hand-drawn illustration. The subject must be genuinely redrawn in doodle form, and the surrounding annotations and sketches must interact with the character in a playful, coherent way."
+  },
+  {
+    "name": "MAXFIELD PARRISH",
+    "category": [
+      "ART",
+      "ILLUSTRATION",
+      "FANTASY",
+      "CLASSIC PAINTING",
+      "COLOR"
+    ],
+    "message": "Take a picture and completely reconstruct the subject as a Maxfield Parrish-inspired figure in a luminous, meticulously finished fantasy illustration. The subject must be redrawn as an idealized painted figure with carefully designed anatomy, elegant proportions, smoothly modeled facial features, and polished, sculptural surfaces. Use the characteristic luminous color, layered glazing, crisp contours, rich blue skies, warm golden illumination, and extraordinary depth associated with Parrish's distinctive illustrative world. The subject must be painted as part of the artwork, not remain a photograph. Use carefully controlled highlights and shadows, jewel-like color relationships, and theatrical compositions that make the figure appear integrated into a beautifully constructed painted image.",
+    "randomizeOptions": false,
+    "options": [],
+    "additionalInstructions": "STYLE ENFORCEMENT:\n• Completely redraw the subject as a painted, idealized fantasy-illustration figure.\n• Construct the face from smoothly modeled painted forms with refined proportions, clear facial planes, and carefully controlled expression.\n• Rebuild the body with elegant, idealized anatomy and sculptural volume.\n• Repaint hair as carefully shaped masses with smooth, polished transitions.\n• Reconstruct clothing with clean contours, flowing forms, and meticulously rendered highlights.\n• Use luminous, layered color with carefully controlled glazing-like transitions.\n• Create deep, rich blues, luminous turquoise, golden light, warm amber, and other jewel-like colors where appropriate.\n• Use crisp edges and polished surfaces rather than loose, impressionistic brushwork.\n• Integrate the subject into the original composition unless the master prompt directs a different setting.\n• The subject must have the distinctive idealized, theatrical, luminous quality of classic Parrish-inspired illustration.\n\nDO NOT:\n• Leave the original photographic face intact.\n• Apply only a blue-and-gold color grade to the photograph.\n• Use generic fantasy concept art, anime, cartooning, or CGI.\n• Replace the style with generic oil painting or impressionism.\n• Use blurred, muddy, or rough painterly rendering.\n\nFINAL VALIDATION:\nThe subject itself must be unmistakably reconstructed as a polished, idealized, luminous painted figure. The characteristic smooth modeling, carefully designed anatomy, crisp forms, and radiant color must affect the subject, not just the background."
   },
   {
     "name": "MAXIMALISM",
@@ -36209,6 +36449,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": "IDENTITY PRESERVATION (CRITICAL):\n\n• The Alebrije must clearly resemble the subject\n• Preserve the subject's unique facial identity\n• Preserve distinctive facial structure\n• Preserve recognizable facial proportions\n• Preserve recognizable eye shape through Alebrije interpretation\n• Preserve recognizable nose shape through Alebrije interpretation\n• Preserve recognizable smile characteristics through Alebrije interpretation\n• Preserve recognizable hairstyle characteristics through Alebrije interpretation\n• Recognition must come from the Alebrije itself\n• The final sculpture must simultaneously read as both the subject and an authentic Alebrije\n\nALEBRIJE ENFORCEMENT:\n\n• The subject must be the Alebrije itself\n• The creature must appear handcrafted by skilled artisans\n• The creature must feel magical, imaginative, and joyful\n• Decorative artistry must cover the entire sculpture\n• The Alebrije must appear physically tangible and three-dimensional\n• The Alebrije must be the focal point of the image\n\nPATTERN ENFORCEMENT:\n\n• Decorative painting must be applied directly to the sculpture\n• Intricate patterns should enhance every major surface\n• Patterns must feel hand-painted rather than printed\n• Ornamentation should celebrate traditional Alebrije craftsmanship\n• Decorative details should remain crisp and highly visible\n\nMATERIAL ENFORCEMENT:\n\n• The face must be sculpted directly into the Alebrije\n• Hair characteristics must be translated into sculptural and decorative features\n• Materials must remain consistent throughout the creature\n• No realistic human materials may remain visible\n• The Alebrije must feel like a genuine handcrafted collectible\n\nDISPLAY ENFORCEMENT:\n\n• The Alebrije should appear physically present in the environment\n• The sculpture should cast realistic shadows appropriate for a handcrafted object\n• The environment should reinforce artisan craftsmanship and folk-art authenticity\n• The final presentation should feel museum-quality or collector-quality\n\nFINAL ENFORCEMENT:\n\n• The image must immediately read as an authentic Mexican Alebrije\n• The image must not resemble a costume\n• The image must not resemble a mascot\n• The image must not resemble a painted human\n• The subject must remain recognizable while fully transformed into a handcrafted Alebrije sculpture."
+  },
+  {
+    "name": "MEXICAN EX-VOTO PAINTING",
+    "category": [
+      "ART",
+      "FOLK ART",
+      "MEXICAN",
+      "NAIVE PAINTING",
+      "NARRATIVE"
+    ],
+    "message": "Take a picture and completely redraw the subject as the central figure in an authentic Mexican ex-voto retablo painting. The subject must be reconstructed as a hand-painted folk-art figure with simplified anatomy, direct expressive facial features, flat perspective, clearly outlined forms, and vivid traditional colors. Create the visual language of a small devotional narrative painting on a metal panel: direct storytelling, compact composition, simplified spatial depth, and a deliberately handmade appearance. The subject must look painted in the folk-art tradition rather than photographed. When appropriate, include a small narrative scene and a traditional devotional inscription area, but do not invent a miraculous event, religious figure, or personal story that the source image does not support.",
+    "randomizeOptions": false,
+    "options": [],
+    "additionalInstructions": "STYLE ENFORCEMENT:\n• Completely redraw the subject as a hand-painted Mexican ex-voto figure.\n• Use simplified, direct, expressive facial construction with visible painted contours and intentionally naive proportions.\n• Replace photographic anatomy with flat, simplified folk-art shapes while keeping the subject recognizable.\n• Use clearly defined outlines, flat color regions, limited perspective, and straightforward spatial relationships.\n• Give the subject the characteristic handmade appearance of traditional retablo painting, including slightly irregular painted edges and simple modeling.\n• Use vivid but controlled traditional colors, with strong separation between forms.\n• The subject must be the central figure of the small narrative painting.\n• A metal-panel appearance may be visible around the artwork, but it must not replace the actual folk-art transformation.\n• A devotional inscription area may be included if appropriate, but do not fabricate names, dates, testimonials, or claims of miracles.\n• Keep the original subject's identity and defining characteristics recognizable through the simplified painted design.\n\nSTRICT EXCLUSIONS:\n• NO photorealistic subject.\n• NO generic Mexican-themed poster or decorative border around an unchanged photograph.\n• NO polished digital illustration, anime, or 3D CGI.\n• NO invented religious iconography or miraculous event.\n• NO excessive decorative elements that compete with the subject.\n\nFINAL VALIDATION:\nThe subject itself must look like a genuine hand-painted ex-voto figure, with naive folk-art anatomy, expressive simplified features, flat perspective, bold outlines, and vivid painted color."
   },
   {
     "name": "MEXICAN LUCHA LIBRE COMIC",
@@ -65304,6 +65558,20 @@
     "options": [],
     "randomizeOptions": false,
     "additionalInstructions": ""
+  },
+  {
+    "name": "VICTORIAN GHOST-STORY ILLUSTRATION",
+    "category": [
+      "ART",
+      "ILLUSTRATION",
+      "VICTORIAN",
+      "GOTHIC",
+      "SUPERNATURAL"
+    ],
+    "message": "Take a picture and completely redraw the subject as a character in a nineteenth-century Victorian ghost-story book illustration. The subject must be reconstructed using authentic period pen-and-ink and engraved illustration techniques, with carefully drawn facial features, expressive anatomy, dramatic silhouettes, dense cross-hatching, and atmospheric chiaroscuro. Use the visual language of illustrated Victorian supernatural fiction: restrained monochrome or muted period color, finely engraved textures, carefully controlled shadows, theatrical compositions, and a sense of psychological unease. The subject itself must become a period-appropriate illustrated figure, not remain a realistic photograph surrounded by a spooky background. Preserve the original identity and pose unless the master prompt specifies otherwise.",
+    "randomizeOptions": false,
+    "options": [],
+    "additionalInstructions": "MANDATORY STYLE TRANSFORMATION:\n• Completely redraw the subject as a nineteenth-century book-illustration character.\n• Reconstruct the face using period-appropriate pen-and-ink contours, engraved shading, delicate hatching, and carefully shaped facial features.\n• Build the subject's anatomy from illustrative linework and tonal masses rather than photographic detail.\n• Use strong chiaroscuro, deep shadows, fine engraved highlights, and carefully controlled cross-hatching.\n• Hair must be reconstructed as engraved masses and fine flowing ink strokes.\n• Clothing must be redrawn with period-appropriate folds, silhouettes, and engraved fabric detail.\n• Use a restrained palette: primarily black and ivory, with optional muted sepia or subdued Victorian colors where appropriate.\n• Create a haunting, suspenseful atmosphere through composition and lighting, not through random horror decorations.\n• Keep the subject recognizable and preserve the source composition unless directed otherwise.\n• If a supernatural element is present in the source or explicitly requested by the master prompt, illustrate it with the same period techniques. Do not invent a ghost or supernatural event automatically.\n\nSTRICT EXCLUSIONS:\n• NO photorealistic face or body.\n• NO modern horror movie poster appearance.\n• NO generic dark-fantasy digital painting.\n• NO CGI, anime, or contemporary comic-book styling.\n• NO simple sepia filter applied to a photograph.\n• NO random skulls, bats, ghosts, or haunted-house props unless requested.\n\nFINAL VALIDATION:\nThe subject must look as though it was originally drawn for an illustrated Victorian supernatural story, with authentic period linework, engraved tonal construction, dramatic chiaroscuro, and unmistakably nineteenth-century illustrative character."
   },
   {
     "name": "VICTORIAN PHOTO",
